@@ -11,7 +11,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
-        <child id="1169127546356" name="extends" index="PrDN!" />
+        <child id="1169127546356" name="extends" index="PrDN$" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -23,9 +23,9 @@
       </concept>
     </language>
   </registry>
-  <node concept="PlHQZ" id="946964771156905387">
+  <node concept="PlHQZ" id="O$iR4JBsQF">
     <property role="TrG5h" value="IGeneratedToClass" />
-    <node concept="PrWs8" id="946964771156905388" role="PrDN!">
+    <node concept="PrWs8" id="O$iR4JBsQG" role="PrDN$">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>

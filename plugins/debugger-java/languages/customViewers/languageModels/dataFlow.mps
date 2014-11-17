@@ -14,7 +14,7 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -41,14 +41,14 @@
       </concept>
     </language>
   </registry>
-  <node concept="3_zdsH" id="1702017979374406642">
+  <node concept="3_zdsH" id="1uuM5m_W8JM">
     <reference role="3_znuS" target="kisg.43370322128285902" resolve="HighLevelWatchableCreator" />
-    <node concept="3__wT9" id="1702017979374406643" role="3_A6iZ">
-      <node concept="3clFbS" id="1702017979374406644" role="2VODD2">
-        <node concept="3AgYrR" id="523663634252216243" role="3cqZAp">
-          <node concept="2OqwBi" id="523663634252216246" role="3Ah4Yx">
-            <node concept="3__QtB" id="523663634252216245" role="2Oq!k0" />
-            <node concept="3TrEf2" id="523663634252216250" role="2OqNvi">
+    <node concept="3__wT9" id="1uuM5m_W8JN" role="3_A6iZ">
+      <node concept="3clFbS" id="1uuM5m_W8JO" role="2VODD2">
+        <node concept="3AgYrR" id="t4rkO5pbuN" role="3cqZAp">
+          <node concept="2OqwBi" id="t4rkO5pbuQ" role="3Ah4Yx">
+            <node concept="3__QtB" id="t4rkO5pbuP" role="2Oq$k0" />
+            <node concept="3TrEf2" id="t4rkO5pbuU" role="2OqNvi">
               <reference role="3Tt5mk" target="kisg.43370322128311163" />
             </node>
           </node>

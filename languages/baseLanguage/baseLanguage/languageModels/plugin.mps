@@ -50,7 +50,7 @@
         <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
       </concept>
       <concept id="8974276187400029888" name="jetbrains.mps.lang.resources.structure.IconResourceDeclaration" flags="ng" index="1QGGT_">
-        <child id="8974276187400029889" name="iconExpression" index="1QGGT!" />
+        <child id="8974276187400029889" name="iconExpression" index="1QGGT$" />
       </concept>
       <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="nn" index="1QGGTA">
         <child id="8974276187400029893" name="icon" index="1QGGTw" />
@@ -65,35 +65,35 @@
       </concept>
     </language>
   </registry>
-  <node concept="1QGGSo" id="2990235398088186554">
+  <node concept="1QGGSo" id="2_ZsO1DQ5EU">
     <property role="TrG5h" value="Behavior" />
-    <node concept="1QGGT_" id="2990235398088186555" role="1QGGSr">
+    <node concept="1QGGT_" id="2_ZsO1DQ5EV" role="1QGGSr">
       <property role="TrG5h" value="FINALMARK" />
-      <node concept="1QGGTA" id="2990235398088186556" role="1QGGT!">
-        <node concept="1QGGSu" id="4483014192701782225" role="1QGGTw">
-          <node concept="10M0yZ" id="4483014192701782861" role="3xaMm5">
+      <node concept="1QGGTA" id="2_ZsO1DQ5EW" role="1QGGT$">
+        <node concept="1QGGSu" id="3SQRqvZ1zzh" role="1QGGTw">
+          <node concept="10M0yZ" id="3SQRqvZ1zHd" role="3xaMm5">
             <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
             <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dFinalMark" resolve="FinalMark" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1QGGT_" id="2990235398088186559" role="1QGGSr">
+    <node concept="1QGGT_" id="2_ZsO1DQ5EZ" role="1QGGSr">
       <property role="TrG5h" value="STATICMARK" />
-      <node concept="1QGGTA" id="2990235398088186560" role="1QGGT!">
-        <node concept="1QGGSu" id="4483014192701783541" role="1QGGTw">
-          <node concept="10M0yZ" id="4483014192701783757" role="3xaMm5">
+      <node concept="1QGGTA" id="2_ZsO1DQ5F0" role="1QGGT$">
+        <node concept="1QGGSu" id="3SQRqvZ1zRP" role="1QGGTw">
+          <node concept="10M0yZ" id="3SQRqvZ1zVd" role="3xaMm5">
             <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
             <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dStaticMark" resolve="StaticMark" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1QGGT_" id="2990235398088186567" role="1QGGSr">
+    <node concept="1QGGT_" id="2_ZsO1DQ5F7" role="1QGGSr">
       <property role="TrG5h" value="RUNNABLEMARK" />
-      <node concept="1QGGTA" id="2990235398088186568" role="1QGGT!">
-        <node concept="1QGGSu" id="4483014192701784307" role="1QGGTw">
-          <node concept="10M0yZ" id="4483014192701784322" role="3xaMm5">
+      <node concept="1QGGTA" id="2_ZsO1DQ5F8" role="1QGGT$">
+        <node concept="1QGGSu" id="3SQRqvZ1$3N" role="1QGGTw">
+          <node concept="10M0yZ" id="3SQRqvZ1$42" role="3xaMm5">
             <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
             <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dRunnableMark" resolve="RunnableMark" />
           </node>
@@ -101,46 +101,46 @@
       </node>
     </node>
   </node>
-  <node concept="1QGGSo" id="349375443596798661">
+  <node concept="1QGGSo" id="jpeLPCPeF5">
     <property role="TrG5h" value="Visibility" />
-    <node concept="1QGGT_" id="349375443596798662" role="1QGGSr">
+    <node concept="1QGGT_" id="jpeLPCPeF6" role="1QGGSr">
       <property role="TrG5h" value="PACKAGE_LOCAL" />
-      <node concept="1QGGTA" id="349375443596798663" role="1QGGT!">
-        <node concept="1QGGSu" id="4483014192701790505" role="1QGGTw">
-          <node concept="10M0yZ" id="4483014192701790506" role="3xaMm5">
+      <node concept="1QGGTA" id="jpeLPCPeF7" role="1QGGT$">
+        <node concept="1QGGSu" id="3SQRqvZ1_$D" role="1QGGTw">
+          <node concept="10M0yZ" id="3SQRqvZ1_$E" role="3xaMm5">
             <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
             <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dC_plocal" resolve="C_plocal" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1QGGT_" id="349375443596798665" role="1QGGSr">
+    <node concept="1QGGT_" id="jpeLPCPeF9" role="1QGGSr">
       <property role="TrG5h" value="PUBLIC" />
-      <node concept="1QGGTA" id="349375443596798666" role="1QGGT!">
-        <node concept="1QGGSu" id="4483014192701785305" role="1QGGTw">
-          <node concept="10M0yZ" id="4483014192701785323" role="3xaMm5">
+      <node concept="1QGGTA" id="jpeLPCPeFa" role="1QGGT$">
+        <node concept="1QGGSu" id="3SQRqvZ1$jp" role="1QGGTw">
+          <node concept="10M0yZ" id="3SQRqvZ1$jF" role="3xaMm5">
             <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
             <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dC_public" resolve="C_public" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1QGGT_" id="349375443596798668" role="1QGGSr">
+    <node concept="1QGGT_" id="jpeLPCPeFc" role="1QGGSr">
       <property role="TrG5h" value="PRIVATE" />
-      <node concept="1QGGTA" id="349375443596798669" role="1QGGT!">
-        <node concept="1QGGSu" id="4483014192701788100" role="1QGGTw">
-          <node concept="10M0yZ" id="4483014192701788101" role="3xaMm5">
+      <node concept="1QGGTA" id="jpeLPCPeFd" role="1QGGT$">
+        <node concept="1QGGSu" id="3SQRqvZ1$Z4" role="1QGGTw">
+          <node concept="10M0yZ" id="3SQRqvZ1$Z5" role="3xaMm5">
             <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
             <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dC_private" resolve="C_private" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1QGGT_" id="349375443596798671" role="1QGGSr">
+    <node concept="1QGGT_" id="jpeLPCPeFf" role="1QGGSr">
       <property role="TrG5h" value="PROTECTED" />
-      <node concept="1QGGTA" id="349375443596798672" role="1QGGT!">
-        <node concept="1QGGSu" id="4483014192701789389" role="1QGGTw">
-          <node concept="10M0yZ" id="4483014192701789390" role="3xaMm5">
+      <node concept="1QGGTA" id="jpeLPCPeFg" role="1QGGT$">
+        <node concept="1QGGSu" id="3SQRqvZ1_jd" role="1QGGTw">
+          <node concept="10M0yZ" id="3SQRqvZ1_je" role="3xaMm5">
             <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
             <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dC_protected" resolve="C_protected" />
           </node>

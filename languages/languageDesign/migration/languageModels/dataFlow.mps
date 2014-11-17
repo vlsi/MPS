@@ -20,7 +20,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -49,20 +49,20 @@
       </concept>
     </language>
   </registry>
-  <node concept="3_zdsH" id="7153805464398885487">
+  <node concept="3_zdsH" id="6d7r2FpJB9J">
     <property role="3GE5qa" value="member" />
     <reference role="3_znuS" target="53vh.7153805464398780214" resolve="DataDependencyReference" />
-    <node concept="3__wT9" id="7153805464398885488" role="3_A6iZ">
-      <node concept="3clFbS" id="7153805464398885489" role="2VODD2">
-        <node concept="3_DX4M" id="7153805464398885508" role="3cqZAp">
-          <node concept="2OqwBi" id="7153805464398885669" role="3_H1SZ">
-            <node concept="3__QtB" id="7153805464398885534" role="2Oq!k0" />
-            <node concept="3TrEf2" id="7153805464398886849" role="2OqNvi">
+    <node concept="3__wT9" id="6d7r2FpJB9K" role="3_A6iZ">
+      <node concept="3clFbS" id="6d7r2FpJB9L" role="2VODD2">
+        <node concept="3_DX4M" id="6d7r2FpJBa4" role="3cqZAp">
+          <node concept="2OqwBi" id="6d7r2FpJBc_" role="3_H1SZ">
+            <node concept="3__QtB" id="6d7r2FpJBau" role="2Oq$k0" />
+            <node concept="3TrEf2" id="6d7r2FpJBv1" role="2OqNvi">
               <reference role="3Tt5mk" target="53vh.7153805464398780217" />
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="7153805464398886969" role="3cqZAp" />
+        <node concept="3clFbH" id="6d7r2FpJBwT" role="3cqZAp" />
       </node>
     </node>
   </node>

@@ -52,7 +52,7 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -64,7 +64,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1163670490218" name="jetbrains.mps.baseLanguage.structure.SwitchStatement" flags="nn" index="3KaCP!">
+      <concept id="1163670490218" name="jetbrains.mps.baseLanguage.structure.SwitchStatement" flags="nn" index="3KaCP$">
         <child id="1163670592366" name="defaultBlock" index="3Kb1Dw" />
         <child id="1163670766145" name="expression" index="3KbGdf" />
         <child id="1163670772911" name="case" index="3KbHQx" />
@@ -83,43 +83,43 @@
       </concept>
     </language>
   </registry>
-  <node concept="312cEu" id="616711547385063562">
+  <node concept="312cEu" id="yeZYa6Laya">
     <property role="TrG5h" value="TestClass" />
-    <node concept="3Tm1VV" id="616711547385063563" role="1B3o_S" />
-    <node concept="3clFbW" id="616711547385063564" role="jymVt">
-      <node concept="3cqZAl" id="616711547385063565" role="3clF45" />
-      <node concept="3Tm1VV" id="616711547385063566" role="1B3o_S" />
-      <node concept="3clFbS" id="616711547385063567" role="3clF47" />
+    <node concept="3Tm1VV" id="yeZYa6Layb" role="1B3o_S" />
+    <node concept="3clFbW" id="yeZYa6Layc" role="jymVt">
+      <node concept="3cqZAl" id="yeZYa6Layd" role="3clF45" />
+      <node concept="3Tm1VV" id="yeZYa6Laye" role="1B3o_S" />
+      <node concept="3clFbS" id="yeZYa6Layf" role="3clF47" />
     </node>
-    <node concept="2YIFZL" id="616711547385064601" role="jymVt">
+    <node concept="2YIFZL" id="yeZYa6LaMp" role="jymVt">
       <property role="TrG5h" value="main" />
-      <node concept="3cqZAl" id="616711547385064602" role="3clF45" />
-      <node concept="3Tm1VV" id="616711547385064603" role="1B3o_S" />
-      <node concept="3clFbS" id="616711547385064604" role="3clF47">
-        <node concept="3cpWs8" id="616711547385064606" role="3cqZAp">
-          <node concept="3cpWsn" id="616711547385064607" role="3cpWs9">
+      <node concept="3cqZAl" id="yeZYa6LaMq" role="3clF45" />
+      <node concept="3Tm1VV" id="yeZYa6LaMr" role="1B3o_S" />
+      <node concept="3clFbS" id="yeZYa6LaMs" role="3clF47">
+        <node concept="3cpWs8" id="yeZYa6LaMu" role="3cqZAp">
+          <node concept="3cpWsn" id="yeZYa6LaMv" role="3cpWs9">
             <property role="TrG5h" value="t" />
-            <node concept="17QB3L" id="616711547385064608" role="1tU5fm" />
-            <node concept="Xl_RD" id="616711547385064609" role="33vP2m">
+            <node concept="17QB3L" id="yeZYa6LaMw" role="1tU5fm" />
+            <node concept="Xl_RD" id="yeZYa6LaMx" role="33vP2m">
               <property role="Xl_RC" value="1" />
             </node>
           </node>
         </node>
-        <node concept="2ignYC" id="616711547385064610" role="3cqZAp">
-          <node concept="3KbdKl" id="616711547385064611" role="3KbHQx">
-            <node concept="Xl_RD" id="616711547385064612" role="3Kbmr1">
+        <node concept="2ignYC" id="yeZYa6LaMy" role="3cqZAp">
+          <node concept="3KbdKl" id="yeZYa6LaMz" role="3KbHQx">
+            <node concept="Xl_RD" id="yeZYa6LaM$" role="3Kbmr1">
               <property role="Xl_RC" value="1" />
             </node>
-            <node concept="3clFbS" id="616711547385064613" role="3Kbo56">
-              <node concept="3clFbF" id="616711547385064614" role="3cqZAp">
-                <node concept="2OqwBi" id="616711547385064615" role="3clFbG">
-                  <node concept="10M0yZ" id="616711547385064616" role="2Oq!k0">
+            <node concept="3clFbS" id="yeZYa6LaM_" role="3Kbo56">
+              <node concept="3clFbF" id="yeZYa6LaMA" role="3cqZAp">
+                <node concept="2OqwBi" id="yeZYa6LaMB" role="3clFbG">
+                  <node concept="10M0yZ" id="yeZYa6LaMC" role="2Oq$k0">
                     <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
                     <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
                   </node>
-                  <node concept="liA8E" id="616711547385064617" role="2OqNvi">
+                  <node concept="liA8E" id="yeZYa6LaMD" role="2OqNvi">
                     <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
-                    <node concept="Xl_RD" id="616711547385064618" role="37wK5m">
+                    <node concept="Xl_RD" id="yeZYa6LaME" role="37wK5m">
                       <property role="Xl_RC" value="Hello World" />
                     </node>
                   </node>
@@ -127,20 +127,20 @@
               </node>
             </node>
           </node>
-          <node concept="3KbdKl" id="616711547385064619" role="3KbHQx">
-            <node concept="Xl_RD" id="616711547385064620" role="3Kbmr1">
+          <node concept="3KbdKl" id="yeZYa6LaMF" role="3KbHQx">
+            <node concept="Xl_RD" id="yeZYa6LaMG" role="3Kbmr1">
               <property role="Xl_RC" value="2" />
             </node>
-            <node concept="3clFbS" id="616711547385064621" role="3Kbo56">
-              <node concept="3clFbF" id="616711547385064622" role="3cqZAp">
-                <node concept="2OqwBi" id="616711547385064623" role="3clFbG">
-                  <node concept="10M0yZ" id="616711547385064624" role="2Oq!k0">
+            <node concept="3clFbS" id="yeZYa6LaMH" role="3Kbo56">
+              <node concept="3clFbF" id="yeZYa6LaMI" role="3cqZAp">
+                <node concept="2OqwBi" id="yeZYa6LaMJ" role="3clFbG">
+                  <node concept="10M0yZ" id="yeZYa6LaMK" role="2Oq$k0">
                     <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
                     <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
                   </node>
-                  <node concept="liA8E" id="616711547385064625" role="2OqNvi">
+                  <node concept="liA8E" id="yeZYa6LaML" role="2OqNvi">
                     <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
-                    <node concept="Xl_RD" id="616711547385064626" role="37wK5m">
+                    <node concept="Xl_RD" id="yeZYa6LaMM" role="37wK5m">
                       <property role="Xl_RC" value=":-(" />
                     </node>
                   </node>
@@ -148,19 +148,19 @@
               </node>
             </node>
           </node>
-          <node concept="37vLTw" id="4265636116363109225" role="3KbGdf">
+          <node concept="37vLTw" id="3GM_nagTAdD" role="3KbGdf">
             <reference role="3cqZAo" target="616711547385064607" resolve="t" />
           </node>
-          <node concept="3clFbS" id="616711547385064628" role="3Kb1Dw">
-            <node concept="3clFbF" id="616711547385064629" role="3cqZAp">
-              <node concept="2OqwBi" id="616711547385064630" role="3clFbG">
-                <node concept="10M0yZ" id="616711547385064631" role="2Oq!k0">
+          <node concept="3clFbS" id="yeZYa6LaMO" role="3Kb1Dw">
+            <node concept="3clFbF" id="yeZYa6LaMP" role="3cqZAp">
+              <node concept="2OqwBi" id="yeZYa6LaMQ" role="3clFbG">
+                <node concept="10M0yZ" id="yeZYa6LaMR" role="2Oq$k0">
                   <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
                   <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
                 </node>
-                <node concept="liA8E" id="616711547385064632" role="2OqNvi">
+                <node concept="liA8E" id="yeZYa6LaMS" role="2OqNvi">
                   <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
-                  <node concept="Xl_RD" id="616711547385064633" role="37wK5m">
+                  <node concept="Xl_RD" id="yeZYa6LaMT" role="37wK5m">
                     <property role="Xl_RC" value=":-( again" />
                   </node>
                 </node>

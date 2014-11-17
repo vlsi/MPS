@@ -40,73 +40,73 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
-      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi!J">
+      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" flags="ln" index="VPxyj" />
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
     </language>
   </registry>
-  <node concept="24kQdi" id="1186667875272">
+  <node concept="24kQdi" id="hhaUGJ8">
     <reference role="1XX52x" target="tp7v.1186667651178" resolve="MoneyLiteral" />
-    <node concept="3EZMnI" id="1186668017411" role="2wV5jI">
+    <node concept="3EZMnI" id="hhaVfs3" role="2wV5jI">
       <property role="3EZMnw" value="false" />
-      <node concept="3F0A7n" id="1186668023743" role="3EZMnx">
+      <node concept="3F0A7n" id="hhaVgYZ" role="3EZMnx">
         <reference role="1NtTu8" target="tp7v.1186667962877" resolve="amount" />
       </node>
-      <node concept="3F0A7n" id="1186668032201" role="3EZMnx">
+      <node concept="3F0A7n" id="hhaVj39" role="3EZMnx">
         <reference role="1NtTu8" target="tp7v.1186667945792" resolve="currency" />
       </node>
-      <node concept="l2Vlx" id="1237811521778" role="2iSdaV" />
+      <node concept="l2Vlx" id="i0NkezM" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="1187343582397">
+  <node concept="24kQdi" id="hhNckiX">
     <reference role="1XX52x" target="tp7v.1187340310888" resolve="MoneyCreator" />
-    <node concept="3EZMnI" id="1187343594899" role="2wV5jI">
+    <node concept="3EZMnI" id="hhNcnmj" role="2wV5jI">
       <property role="3EZMnw" value="false" />
-      <node concept="3F0ifn" id="1187343609605" role="3EZMnx">
+      <node concept="3F0ifn" id="hhNcqW5" role="3EZMnx">
         <property role="3F0ifm" value="Money" />
       </node>
-      <node concept="3F0ifn" id="1187343622248" role="3EZMnx">
+      <node concept="3F0ifn" id="hhNcu1C" role="3EZMnx">
         <property role="3F0ifm" value="(" />
         <reference role="1k5W1q" target="tpen.1238143818889" resolve="Matching" />
       </node>
-      <node concept="3F1sOY" id="1187344116411" role="3EZMnx">
+      <node concept="3F1sOY" id="hhNemEV" role="3EZMnx">
         <reference role="1NtTu8" target="tp7v.1187344039345" />
       </node>
-      <node concept="3F0ifn" id="1187344249463" role="3EZMnx">
+      <node concept="3F0ifn" id="hhNeR9R" role="3EZMnx">
         <property role="3F0ifm" value="," />
       </node>
-      <node concept="3F1sOY" id="1187344118569" role="3EZMnx">
+      <node concept="3F1sOY" id="hhNencD" role="3EZMnx">
         <reference role="1NtTu8" target="tp7v.1187344093002" />
       </node>
-      <node concept="3F0ifn" id="1187343637158" role="3EZMnx">
+      <node concept="3F0ifn" id="hhNcxEA" role="3EZMnx">
         <property role="3F0ifm" value=")" />
         <reference role="1k5W1q" target="tpen.1238143818889" resolve="Matching" />
       </node>
-      <node concept="l2Vlx" id="1237811521776" role="2iSdaV" />
+      <node concept="l2Vlx" id="i0NkezK" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="1187703306349">
+  <node concept="24kQdi" id="hi8CzxH">
     <reference role="1XX52x" target="tp7v.1187357857395" resolve="MoneyMethodCall" />
-    <node concept="3EZMnI" id="1187703319820" role="2wV5jI">
+    <node concept="3EZMnI" id="hi8CAOc" role="2wV5jI">
       <property role="3EZMnw" value="false" />
-      <node concept="3F1sOY" id="1187703323463" role="3EZMnx">
+      <node concept="3F1sOY" id="hi8CBH7" role="3EZMnx">
         <reference role="1NtTu8" target="tp7v.1187358164451" />
       </node>
-      <node concept="PMmxH" id="2886182022232400445" role="3EZMnx">
+      <node concept="PMmxH" id="2wdLO7KhY8X" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
-        <node concept="VPxyj" id="2886182022232400446" role="3F10Kt">
+        <node concept="VPxyj" id="2wdLO7KhY8Y" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
       </node>
-      <node concept="l2Vlx" id="1237811521780" role="2iSdaV" />
+      <node concept="l2Vlx" id="i0NkezO" role="2iSdaV" />
     </node>
   </node>
 </model>

@@ -28,20 +28,20 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="3978102045101855363">
+  <node concept="1TIwiD" id="3sP3FIIzha3">
     <property role="TrG5h" value="Button" />
     <property role="34LRSv" value="button" />
     <reference role="1TJDcQ" target="dghb.1225239603390" resolve="ElementPart" />
-    <node concept="1TJgyi" id="3978102045101855475" role="1TKVEl">
+    <node concept="1TJgyi" id="3sP3FIIzhbN" role="1TKVEl">
       <property role="TrG5h" value="text" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3978102045101856876">
+  <node concept="1TIwiD" id="3sP3FIIzhxG">
     <property role="TrG5h" value="Label" />
     <property role="34LRSv" value="label" />
     <reference role="1TJDcQ" target="dghb.1225239603390" resolve="ElementPart" />
-    <node concept="1TJgyi" id="3978102045101856886" role="1TKVEl">
+    <node concept="1TJgyi" id="3sP3FIIzhxQ" role="1TKVEl">
       <property role="TrG5h" value="text" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>

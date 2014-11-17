@@ -36,7 +36,7 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
-        <property id="4276006055363816570" name="isSynchronized" index="od!2w" />
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
@@ -47,47 +47,47 @@
       </concept>
     </language>
   </registry>
-  <node concept="3HP615" id="5294483648489409055">
+  <node concept="3HP615" id="4_TMdeLkOCv">
     <property role="TrG5h" value="IRefactoringTester" />
-    <node concept="3Tm1VV" id="5294483648489409057" role="1B3o_S" />
-    <node concept="3clFb_" id="5294483648489409058" role="jymVt">
+    <node concept="3Tm1VV" id="4_TMdeLkOCx" role="1B3o_S" />
+    <node concept="3clFb_" id="4_TMdeLkOCy" role="jymVt">
       <property role="1EzhhJ" value="true" />
-      <property role="od!2w" value="false" />
+      <property role="od$2w" value="false" />
       <property role="TrG5h" value="testRefactoring" />
       <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="5294483648489409059" role="1B3o_S" />
-      <node concept="37vLTG" id="5294483648489409060" role="3clF46">
+      <node concept="3Tm1VV" id="4_TMdeLkOCz" role="1B3o_S" />
+      <node concept="37vLTG" id="4_TMdeLkOC$" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="5294483648489409061" role="1tU5fm">
+        <node concept="3uibUv" id="4_TMdeLkOC_" role="1tU5fm">
           <reference role="3uigEE" target="vsqj.~Project" resolve="Project" />
         </node>
       </node>
-      <node concept="37vLTG" id="5294483648489409062" role="3clF46">
+      <node concept="37vLTG" id="4_TMdeLkOCA" role="3clF46">
         <property role="TrG5h" value="sandbox1" />
-        <node concept="3uibUv" id="5294483648489409063" role="1tU5fm">
+        <node concept="3uibUv" id="4_TMdeLkOCB" role="1tU5fm">
           <reference role="3uigEE" target="ec5l.~SModel" resolve="SModel" />
         </node>
       </node>
-      <node concept="37vLTG" id="5294483648489409064" role="3clF46">
+      <node concept="37vLTG" id="4_TMdeLkOCC" role="3clF46">
         <property role="TrG5h" value="sandbox2" />
-        <node concept="3uibUv" id="5294483648489409065" role="1tU5fm">
+        <node concept="3uibUv" id="4_TMdeLkOCD" role="1tU5fm">
           <reference role="3uigEE" target="ec5l.~SModel" resolve="SModel" />
         </node>
       </node>
-      <node concept="37vLTG" id="5294483648489409066" role="3clF46">
+      <node concept="37vLTG" id="4_TMdeLkOCE" role="3clF46">
         <property role="TrG5h" value="testRefactoringlanguage" />
-        <node concept="3uibUv" id="5294483648489409067" role="1tU5fm">
+        <node concept="3uibUv" id="4_TMdeLkOCF" role="1tU5fm">
           <reference role="3uigEE" target="cu2c.~Language" resolve="Language" />
         </node>
       </node>
-      <node concept="37vLTG" id="5294483648489409068" role="3clF46">
+      <node concept="37vLTG" id="4_TMdeLkOCG" role="3clF46">
         <property role="TrG5h" value="testRefactoringTargetLanguage" />
-        <node concept="3uibUv" id="5294483648489409069" role="1tU5fm">
+        <node concept="3uibUv" id="4_TMdeLkOCH" role="1tU5fm">
           <reference role="3uigEE" target="cu2c.~Language" resolve="Language" />
         </node>
       </node>
-      <node concept="3clFbS" id="5294483648489409070" role="3clF47" />
-      <node concept="10P_77" id="5294483648489409071" role="3clF45" />
+      <node concept="3clFbS" id="4_TMdeLkOCI" role="3clF47" />
+      <node concept="10P_77" id="4_TMdeLkOCJ" role="3clF45" />
     </node>
   </node>
 </model>

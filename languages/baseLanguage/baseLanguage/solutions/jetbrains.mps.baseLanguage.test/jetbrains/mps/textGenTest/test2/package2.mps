@@ -33,19 +33,19 @@
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
     </language>
   </registry>
-  <node concept="312cEu" id="1440921264474787839">
+  <node concept="312cEu" id="1fZb$5QkSZZ">
     <property role="TrG5h" value="Class3" />
-    <node concept="3Tm1VV" id="1440921264474787840" role="1B3o_S" />
-    <node concept="3clFbW" id="1440921264474787841" role="jymVt">
-      <node concept="3cqZAl" id="1440921264474787842" role="3clF45" />
-      <node concept="3Tm1VV" id="1440921264474787843" role="1B3o_S" />
-      <node concept="3clFbS" id="1440921264474787844" role="3clF47" />
+    <node concept="3Tm1VV" id="1fZb$5QkT00" role="1B3o_S" />
+    <node concept="3clFbW" id="1fZb$5QkT01" role="jymVt">
+      <node concept="3cqZAl" id="1fZb$5QkT02" role="3clF45" />
+      <node concept="3Tm1VV" id="1fZb$5QkT03" role="1B3o_S" />
+      <node concept="3clFbS" id="1fZb$5QkT04" role="3clF47" />
     </node>
-    <node concept="2YIFZL" id="1440921264474787849" role="jymVt">
+    <node concept="2YIFZL" id="1fZb$5QkT09" role="jymVt">
       <property role="TrG5h" value="method" />
-      <node concept="3cqZAl" id="1440921264474787850" role="3clF45" />
-      <node concept="3Tm1VV" id="1440921264474787851" role="1B3o_S" />
-      <node concept="3clFbS" id="1440921264474787852" role="3clF47" />
+      <node concept="3cqZAl" id="1fZb$5QkT0a" role="3clF45" />
+      <node concept="3Tm1VV" id="1fZb$5QkT0b" role="1B3o_S" />
+      <node concept="3clFbS" id="1fZb$5QkT0c" role="3clF47" />
     </node>
   </node>
 </model>

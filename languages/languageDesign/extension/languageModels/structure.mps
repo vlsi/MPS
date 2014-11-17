@@ -14,8 +14,8 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -44,125 +44,125 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="3729007189729192404">
+  <node concept="1TIwiD" id="3f064wGFUBk">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="ExtensionDeclaration" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="8029776554053057811" role="1TKVEi">
+    <node concept="1TJgyj" id="6XJvNHU5VOj" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="objectGetter" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="8029776554053043557" resolve="ExtensionObjectGetter" />
     </node>
-    <node concept="1TJgyj" id="7036359038356050926" role="1TKVEi">
+    <node concept="1TJgyj" id="66AaOfxk_fI" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="activator" />
       <reference role="20lvS9" target="7036359038356050927" resolve="ExtensionFunction" />
     </node>
-    <node concept="1TJgyj" id="7036359038356050934" role="1TKVEi">
+    <node concept="1TJgyj" id="66AaOfxk_fQ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="deactivator" />
       <reference role="20lvS9" target="7036359038356050927" resolve="ExtensionFunction" />
     </node>
-    <node concept="1TJgyj" id="7036359038356115164" role="1TKVEi">
+    <node concept="1TJgyj" id="66AaOfxkOVs" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="fieldDeclaration" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="7036359038356115097" resolve="ExtensionFieldDeclaration" />
     </node>
-    <node concept="1TJgyj" id="3729007189729192405" role="1TKVEi">
+    <node concept="1TJgyj" id="3f064wGFUBl" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="extensionPoint" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="3729007189729192406" resolve="ExtensionPointDeclaration" />
     </node>
-    <node concept="PrWs8" id="5911785528834372348" role="PzmwI">
+    <node concept="PrWs8" id="58aSpRitVbW" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3729007189729192406">
+  <node concept="1TIwiD" id="3f064wGFUBm">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="ExtensionPointDeclaration" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5911785528834333590" role="1TKVEl">
+    <node concept="1TJgyi" id="58aSpRitLIm" role="1TKVEl">
       <property role="TrG5h" value="extensionName" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
-    <node concept="1TJgyj" id="8029776554053057803" role="1TKVEi">
+    <node concept="1TJgyj" id="6XJvNHU5VOb" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="objectType" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
     </node>
-    <node concept="PrWs8" id="3729007189729192407" role="PzmwI">
+    <node concept="PrWs8" id="3f064wGFUBn" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="8029776554053043557">
+  <node concept="1TIwiD" id="6XJvNHU5Sl_">
     <property role="TrG5h" value="ExtensionObjectGetter" />
     <property role="2_RsDV" value="none" />
     <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="6626851894249711936">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="5JRjEZJSe_0">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ExtensionPointExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="extensionPoint" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="6626851894249712469" role="1TKVEi">
+    <node concept="1TJgyj" id="5JRjEZJSeHl" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="extensionPoint" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="3729007189729192406" resolve="ExtensionPointDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7036359038356050927">
+  <node concept="1TIwiD" id="66AaOfxk_fJ">
     <property role="TrG5h" value="ExtensionFunction" />
     <property role="2_RsDV" value="none" />
     <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="7036359038356115097">
+  <node concept="1TIwiD" id="66AaOfxkOUp">
     <property role="TrG5h" value="ExtensionFieldDeclaration" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="7036359038356115101" role="1TKVEi">
+    <node concept="1TJgyj" id="66AaOfxkOUt" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="fieldType" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
     </node>
-    <node concept="PrWs8" id="7036359038356115099" role="PzmwI">
+    <node concept="PrWs8" id="66AaOfxkOUr" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7036359038356115102">
+  <node concept="1TIwiD" id="66AaOfxkOUu">
     <property role="TrG5h" value="ExtensionFieldReference" />
     <property role="2_RsDV" value="none" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="7036359038356115103" role="1TKVEi">
+    <node concept="1TJgyj" id="66AaOfxkOUv" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="7036359038356115097" resolve="ExtensionFieldDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3175313036448544056">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2KgYA8kbFkS">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ExtensionPointType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="extensionPoint" />
     <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
-    <node concept="1TJgyj" id="3175313036448544057" role="1TKVEi">
+    <node concept="1TJgyj" id="2KgYA8kbFkT" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="extensionPoint" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="3729007189729192406" resolve="ExtensionPointDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3175313036448560967">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2KgYA8kbJt7">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="GetExtensionObjectsOperation" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="objects" />

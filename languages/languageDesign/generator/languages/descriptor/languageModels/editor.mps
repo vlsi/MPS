@@ -27,21 +27,21 @@
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" index="3F1sOY" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
     </language>
   </registry>
-  <node concept="24kQdi" id="9020561928507175846">
+  <node concept="24kQdi" id="7OJukvJ5jeA">
     <reference role="1XX52x" target="yv2q.9020561928507175845" resolve="LanguageDescriptor" />
-    <node concept="3EZMnI" id="1698302279987270972" role="2wV5jI">
-      <node concept="2iRkQZ" id="1698302279987270973" role="2iSdaV" />
-      <node concept="3F0ifn" id="1698302279987270974" role="3EZMnx">
+    <node concept="3EZMnI" id="1uh_eNRS9kW" role="2wV5jI">
+      <node concept="2iRkQZ" id="1uh_eNRS9kX" role="2iSdaV" />
+      <node concept="3F0ifn" id="1uh_eNRS9kY" role="3EZMnx">
         <property role="3F0ifm" value="language descriptor" />
       </node>
-      <node concept="3EZMnI" id="1698302279987270977" role="3EZMnx">
-        <node concept="l2Vlx" id="1698302279987270978" role="2iSdaV" />
-        <node concept="3F1sOY" id="1698302279987270976" role="3EZMnx">
+      <node concept="3EZMnI" id="1uh_eNRS9l1" role="3EZMnx">
+        <node concept="l2Vlx" id="1uh_eNRS9l2" role="2iSdaV" />
+        <node concept="3F1sOY" id="1uh_eNRS9l0" role="3EZMnx">
           <reference role="1NtTu8" target="yv2q.1698302279987270971" />
         </node>
       </node>

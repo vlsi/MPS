@@ -27,7 +27,7 @@
     <language id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script">
       <concept id="1177457067821" name="jetbrains.mps.lang.script.structure.MigrationScript" flags="ig" index="_UgoZ">
         <property id="5299416737274925395" name="type" index="2BwPSy" />
-        <property id="5299416737274925397" name="toBuild" index="2BwPS!" />
+        <property id="5299416737274925397" name="toBuild" index="2BwPS$" />
         <property id="1177457669450" name="title" index="_Wzho" />
         <child id="1177458178889" name="part" index="_YvDr" />
       </concept>
@@ -62,7 +62,7 @@
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -85,40 +85,40 @@
       </concept>
     </language>
   </registry>
-  <node concept="_UgoZ" id="2034046503360381622">
+  <node concept="_UgoZ" id="1KUoCipqWaQ">
     <property role="2BwPSy" value="migration" />
     <property role="TrG5h" value="SubstituteGenericAccessBlocks" />
-    <property role="2BwPS!" value="MPS 3.0" />
+    <property role="2BwPS$" value="MPS 3.0" />
     <property role="_Wzho" value="Substitute generic access blocks" />
-    <node concept="_XfAh" id="2034046503360381675" role="_YvDr">
+    <node concept="_XfAh" id="1KUoCipqWbF" role="_YvDr">
       <property role="_XH9r" value="read action { }" />
       <reference role="_XDHR" target="qff7.8974276187400348181" resolve="ExecuteLightweightCommandStatement" />
-      <node concept="_ZGcI" id="2034046503360381676" role="_XPhp">
-        <node concept="3clFbS" id="2034046503360381677" role="2VODD2">
-          <node concept="3clFbF" id="2034046503360585965" role="3cqZAp">
-            <node concept="2OqwBi" id="2034046503360586641" role="3clFbG">
-              <node concept="_YI3z" id="2034046503360585964" role="2Oq!k0" />
-              <node concept="1P9Npp" id="2034046503360600949" role="2OqNvi">
-                <node concept="2c44tf" id="2034046503360601029" role="1P9ThW">
-                  <node concept="3clFbF" id="2034046503360829387" role="2c44tc">
-                    <node concept="2OqwBi" id="2034046503360601490" role="3clFbG">
-                      <node concept="2YIFZM" id="2034046503360604184" role="2Oq!k0">
+      <node concept="_ZGcI" id="1KUoCipqWbG" role="_XPhp">
+        <node concept="3clFbS" id="1KUoCipqWbH" role="2VODD2">
+          <node concept="3clFbF" id="1KUoCiprI3H" role="3cqZAp">
+            <node concept="2OqwBi" id="1KUoCiprIeh" role="3clFbG">
+              <node concept="_YI3z" id="1KUoCiprI3G" role="2Oq$k0" />
+              <node concept="1P9Npp" id="1KUoCiprLHP" role="2OqNvi">
+                <node concept="2c44tf" id="1KUoCiprLJ5" role="1P9ThW">
+                  <node concept="3clFbF" id="1KUoCipsDvb" role="2c44tc">
+                    <node concept="2OqwBi" id="1KUoCiprLQi" role="3clFbG">
+                      <node concept="2YIFZM" id="1KUoCiprMwo" role="2Oq$k0">
                         <reference role="37wK5l" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolve="instance" />
                         <reference role="1Pybhc" target="cu2c.~ModelAccess" resolve="ModelAccess" />
                       </node>
-                      <node concept="liA8E" id="2034046503360606361" role="2OqNvi">
+                      <node concept="liA8E" id="1KUoCiprN2p" role="2OqNvi">
                         <reference role="37wK5l" target="cu2c.~ModelCommandExecutor%drunReadAction(java%dlang%dRunnable)%cvoid" resolve="runReadAction" />
-                        <node concept="1bVj0M" id="2034046503360606549" role="37wK5m">
-                          <node concept="3clFbS" id="2034046503360606550" role="1bW5cS">
-                            <node concept="2c44te" id="2034046503360750261" role="lGtFl">
-                              <node concept="2OqwBi" id="2034046503360634892" role="2c44t1">
-                                <node concept="2OqwBi" id="2034046503360610589" role="2Oq!k0">
-                                  <node concept="_YI3z" id="2034046503360609913" role="2Oq!k0" />
-                                  <node concept="3TrEf2" id="2034046503360625849" role="2OqNvi">
+                        <node concept="1bVj0M" id="1KUoCiprN5l" role="37wK5m">
+                          <node concept="3clFbS" id="1KUoCiprN5m" role="1bW5cS">
+                            <node concept="2c44te" id="1KUoCipsmaP" role="lGtFl">
+                              <node concept="2OqwBi" id="1KUoCiprU0c" role="2c44t1">
+                                <node concept="2OqwBi" id="1KUoCiprO4t" role="2Oq$k0">
+                                  <node concept="_YI3z" id="1KUoCiprNTT" role="2Oq$k0" />
+                                  <node concept="3TrEf2" id="1KUoCiprRMT" role="2OqNvi">
                                     <reference role="3Tt5mk" target="qff7.8974276187400348171" />
                                   </node>
                                 </node>
-                                <node concept="3TrEf2" id="2034046503360672757" role="2OqNvi">
+                                <node concept="3TrEf2" id="1KUoCips3fP" role="2OqNvi">
                                   <reference role="3Tt5mk" target="tp2c.1199569916463" />
                                 </node>
                               </node>
@@ -135,35 +135,35 @@
         </node>
       </node>
     </node>
-    <node concept="_XfAh" id="2034046503372957232" role="_YvDr">
+    <node concept="_XfAh" id="1KUoCiqaUoK" role="_YvDr">
       <property role="_XH9r" value="write action { }" />
       <reference role="_XDHR" target="qff7.8974276187400348183" resolve="ExecuteWriteActionStatement" />
-      <node concept="_ZGcI" id="2034046503372957233" role="_XPhp">
-        <node concept="3clFbS" id="2034046503372957234" role="2VODD2">
-          <node concept="3clFbF" id="2034046503372957235" role="3cqZAp">
-            <node concept="2OqwBi" id="2034046503372957236" role="3clFbG">
-              <node concept="_YI3z" id="2034046503372957237" role="2Oq!k0" />
-              <node concept="1P9Npp" id="2034046503372957238" role="2OqNvi">
-                <node concept="2c44tf" id="2034046503372957239" role="1P9ThW">
-                  <node concept="3clFbF" id="2034046503372957240" role="2c44tc">
-                    <node concept="2OqwBi" id="2034046503372957241" role="3clFbG">
-                      <node concept="2YIFZM" id="2034046503372957242" role="2Oq!k0">
+      <node concept="_ZGcI" id="1KUoCiqaUoL" role="_XPhp">
+        <node concept="3clFbS" id="1KUoCiqaUoM" role="2VODD2">
+          <node concept="3clFbF" id="1KUoCiqaUoN" role="3cqZAp">
+            <node concept="2OqwBi" id="1KUoCiqaUoO" role="3clFbG">
+              <node concept="_YI3z" id="1KUoCiqaUoP" role="2Oq$k0" />
+              <node concept="1P9Npp" id="1KUoCiqaUoQ" role="2OqNvi">
+                <node concept="2c44tf" id="1KUoCiqaUoR" role="1P9ThW">
+                  <node concept="3clFbF" id="1KUoCiqaUoS" role="2c44tc">
+                    <node concept="2OqwBi" id="1KUoCiqaUoT" role="3clFbG">
+                      <node concept="2YIFZM" id="1KUoCiqaUoU" role="2Oq$k0">
                         <reference role="37wK5l" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolve="instance" />
                         <reference role="1Pybhc" target="cu2c.~ModelAccess" resolve="ModelAccess" />
                       </node>
-                      <node concept="liA8E" id="2034046503372957243" role="2OqNvi">
+                      <node concept="liA8E" id="1KUoCiqaUoV" role="2OqNvi">
                         <reference role="37wK5l" target="cu2c.~ModelCommandExecutor%drunWriteAction(java%dlang%dRunnable)%cvoid" resolve="runWriteAction" />
-                        <node concept="1bVj0M" id="2034046503372957244" role="37wK5m">
-                          <node concept="3clFbS" id="2034046503372957245" role="1bW5cS">
-                            <node concept="2c44te" id="2034046503372957246" role="lGtFl">
-                              <node concept="2OqwBi" id="2034046503372957247" role="2c44t1">
-                                <node concept="2OqwBi" id="2034046503372957248" role="2Oq!k0">
-                                  <node concept="_YI3z" id="2034046503372957249" role="2Oq!k0" />
-                                  <node concept="3TrEf2" id="2034046503372957250" role="2OqNvi">
+                        <node concept="1bVj0M" id="1KUoCiqaUoW" role="37wK5m">
+                          <node concept="3clFbS" id="1KUoCiqaUoX" role="1bW5cS">
+                            <node concept="2c44te" id="1KUoCiqaUoY" role="lGtFl">
+                              <node concept="2OqwBi" id="1KUoCiqaUoZ" role="2c44t1">
+                                <node concept="2OqwBi" id="1KUoCiqaUp0" role="2Oq$k0">
+                                  <node concept="_YI3z" id="1KUoCiqaUp1" role="2Oq$k0" />
+                                  <node concept="3TrEf2" id="1KUoCiqaUp2" role="2OqNvi">
                                     <reference role="3Tt5mk" target="qff7.8974276187400348171" />
                                   </node>
                                 </node>
-                                <node concept="3TrEf2" id="2034046503372957251" role="2OqNvi">
+                                <node concept="3TrEf2" id="1KUoCiqaUp3" role="2OqNvi">
                                   <reference role="3Tt5mk" target="tp2c.1199569916463" />
                                 </node>
                               </node>
@@ -180,35 +180,35 @@
         </node>
       </node>
     </node>
-    <node concept="_XfAh" id="2034046503372974309" role="_YvDr">
+    <node concept="_XfAh" id="1KUoCiqaYz_" role="_YvDr">
       <property role="_XH9r" value="command action { }" />
       <reference role="_XDHR" target="qff7.8974276187400348177" resolve="ExecuteCommandStatement" />
-      <node concept="_ZGcI" id="2034046503372974310" role="_XPhp">
-        <node concept="3clFbS" id="2034046503372974311" role="2VODD2">
-          <node concept="3clFbF" id="2034046503372974312" role="3cqZAp">
-            <node concept="2OqwBi" id="2034046503372974313" role="3clFbG">
-              <node concept="_YI3z" id="2034046503372974314" role="2Oq!k0" />
-              <node concept="1P9Npp" id="2034046503372974315" role="2OqNvi">
-                <node concept="2c44tf" id="2034046503372974316" role="1P9ThW">
-                  <node concept="3clFbF" id="2034046503372974317" role="2c44tc">
-                    <node concept="2OqwBi" id="2034046503372974318" role="3clFbG">
-                      <node concept="2YIFZM" id="2034046503372974319" role="2Oq!k0">
+      <node concept="_ZGcI" id="1KUoCiqaYzA" role="_XPhp">
+        <node concept="3clFbS" id="1KUoCiqaYzB" role="2VODD2">
+          <node concept="3clFbF" id="1KUoCiqaYzC" role="3cqZAp">
+            <node concept="2OqwBi" id="1KUoCiqaYzD" role="3clFbG">
+              <node concept="_YI3z" id="1KUoCiqaYzE" role="2Oq$k0" />
+              <node concept="1P9Npp" id="1KUoCiqaYzF" role="2OqNvi">
+                <node concept="2c44tf" id="1KUoCiqaYzG" role="1P9ThW">
+                  <node concept="3clFbF" id="1KUoCiqaYzH" role="2c44tc">
+                    <node concept="2OqwBi" id="1KUoCiqaYzI" role="3clFbG">
+                      <node concept="2YIFZM" id="1KUoCiqaYzJ" role="2Oq$k0">
                         <reference role="37wK5l" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolve="instance" />
                         <reference role="1Pybhc" target="cu2c.~ModelAccess" resolve="ModelAccess" />
                       </node>
-                      <node concept="liA8E" id="2034046503372974320" role="2OqNvi">
+                      <node concept="liA8E" id="1KUoCiqaYzK" role="2OqNvi">
                         <reference role="37wK5l" target="cu2c.~ModelCommandExecutor%drunWriteActionInCommand(java%dlang%dRunnable)%cvoid" resolve="runWriteActionInCommand" />
-                        <node concept="1bVj0M" id="2034046503372974321" role="37wK5m">
-                          <node concept="3clFbS" id="2034046503372974322" role="1bW5cS">
-                            <node concept="2c44te" id="2034046503372974323" role="lGtFl">
-                              <node concept="2OqwBi" id="2034046503372974324" role="2c44t1">
-                                <node concept="2OqwBi" id="2034046503372974325" role="2Oq!k0">
-                                  <node concept="_YI3z" id="2034046503372974326" role="2Oq!k0" />
-                                  <node concept="3TrEf2" id="2034046503372974327" role="2OqNvi">
+                        <node concept="1bVj0M" id="1KUoCiqaYzL" role="37wK5m">
+                          <node concept="3clFbS" id="1KUoCiqaYzM" role="1bW5cS">
+                            <node concept="2c44te" id="1KUoCiqaYzN" role="lGtFl">
+                              <node concept="2OqwBi" id="1KUoCiqaYzO" role="2c44t1">
+                                <node concept="2OqwBi" id="1KUoCiqaYzP" role="2Oq$k0">
+                                  <node concept="_YI3z" id="1KUoCiqaYzQ" role="2Oq$k0" />
+                                  <node concept="3TrEf2" id="1KUoCiqaYzR" role="2OqNvi">
                                     <reference role="3Tt5mk" target="qff7.8974276187400348171" />
                                   </node>
                                 </node>
-                                <node concept="3TrEf2" id="2034046503372974328" role="2OqNvi">
+                                <node concept="3TrEf2" id="1KUoCiqaYzS" role="2OqNvi">
                                   <reference role="3Tt5mk" target="tp2c.1199569916463" />
                                 </node>
                               </node>
@@ -225,35 +225,35 @@
         </node>
       </node>
     </node>
-    <node concept="_XfAh" id="2034046503381267267" role="_YvDr">
+    <node concept="_XfAh" id="1KUoCiqEBd3" role="_YvDr">
       <property role="_XH9r" value="undo-transparent command action { }" />
       <reference role="_XDHR" target="qff7.5332677359380589431" resolve="ExecuteTransparentCommandStatement" />
-      <node concept="_ZGcI" id="2034046503381267268" role="_XPhp">
-        <node concept="3clFbS" id="2034046503381267269" role="2VODD2">
-          <node concept="3clFbF" id="2034046503381267270" role="3cqZAp">
-            <node concept="2OqwBi" id="2034046503381267271" role="3clFbG">
-              <node concept="_YI3z" id="2034046503381267272" role="2Oq!k0" />
-              <node concept="1P9Npp" id="2034046503381267273" role="2OqNvi">
-                <node concept="2c44tf" id="2034046503381267274" role="1P9ThW">
-                  <node concept="3clFbF" id="2034046503381267275" role="2c44tc">
-                    <node concept="2OqwBi" id="2034046503381267276" role="3clFbG">
-                      <node concept="2YIFZM" id="2034046503381267277" role="2Oq!k0">
+      <node concept="_ZGcI" id="1KUoCiqEBd4" role="_XPhp">
+        <node concept="3clFbS" id="1KUoCiqEBd5" role="2VODD2">
+          <node concept="3clFbF" id="1KUoCiqEBd6" role="3cqZAp">
+            <node concept="2OqwBi" id="1KUoCiqEBd7" role="3clFbG">
+              <node concept="_YI3z" id="1KUoCiqEBd8" role="2Oq$k0" />
+              <node concept="1P9Npp" id="1KUoCiqEBd9" role="2OqNvi">
+                <node concept="2c44tf" id="1KUoCiqEBda" role="1P9ThW">
+                  <node concept="3clFbF" id="1KUoCiqEBdb" role="2c44tc">
+                    <node concept="2OqwBi" id="1KUoCiqEBdc" role="3clFbG">
+                      <node concept="2YIFZM" id="1KUoCiqEBdd" role="2Oq$k0">
                         <reference role="37wK5l" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolve="instance" />
                         <reference role="1Pybhc" target="cu2c.~ModelAccess" resolve="ModelAccess" />
                       </node>
-                      <node concept="liA8E" id="2034046503381267278" role="2OqNvi">
+                      <node concept="liA8E" id="1KUoCiqEBde" role="2OqNvi">
                         <reference role="37wK5l" target="cu2c.~ModelCommandExecutor%drunUndoTransparentCommand(java%dlang%dRunnable)%cvoid" resolve="runUndoTransparentCommand" />
-                        <node concept="1bVj0M" id="2034046503381267279" role="37wK5m">
-                          <node concept="3clFbS" id="2034046503381267280" role="1bW5cS">
-                            <node concept="2c44te" id="2034046503381267281" role="lGtFl">
-                              <node concept="2OqwBi" id="2034046503381267282" role="2c44t1">
-                                <node concept="2OqwBi" id="2034046503381267283" role="2Oq!k0">
-                                  <node concept="_YI3z" id="2034046503381267284" role="2Oq!k0" />
-                                  <node concept="3TrEf2" id="2034046503381267285" role="2OqNvi">
+                        <node concept="1bVj0M" id="1KUoCiqEBdf" role="37wK5m">
+                          <node concept="3clFbS" id="1KUoCiqEBdg" role="1bW5cS">
+                            <node concept="2c44te" id="1KUoCiqEBdh" role="lGtFl">
+                              <node concept="2OqwBi" id="1KUoCiqEBdi" role="2c44t1">
+                                <node concept="2OqwBi" id="1KUoCiqEBdj" role="2Oq$k0">
+                                  <node concept="_YI3z" id="1KUoCiqEBdk" role="2Oq$k0" />
+                                  <node concept="3TrEf2" id="1KUoCiqEBdl" role="2OqNvi">
                                     <reference role="3Tt5mk" target="qff7.8974276187400348171" />
                                   </node>
                                 </node>
-                                <node concept="3TrEf2" id="2034046503381267286" role="2OqNvi">
+                                <node concept="3TrEf2" id="1KUoCiqEBdm" role="2OqNvi">
                                   <reference role="3Tt5mk" target="tp2c.1199569916463" />
                                 </node>
                               </node>

@@ -23,7 +23,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
@@ -63,26 +63,26 @@
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
     </language>
   </registry>
-  <node concept="13h7C7" id="3041831561922029481">
+  <node concept="13h7C7" id="2CQKr1MVMuD">
     <reference role="13h7C2" target="fbxt.526936149311701954" resolve="CustomConstructor" />
-    <node concept="13i0hz" id="3041831561922044924" role="13h7CS">
+    <node concept="13i0hz" id="2CQKr1MVQfW" role="13h7CS">
       <property role="TrG5h" value="getExpectedReturnType" />
       <reference role="13i0hy" target="tpek.1213877374441" resolve="getExpectedReturnType" />
-      <node concept="3clFbS" id="3041831561922044925" role="3clF47">
-        <node concept="3cpWs6" id="3041831561922044926" role="3cqZAp">
-          <node concept="2OqwBi" id="3041831561922044927" role="3cqZAk">
-            <node concept="13iPFW" id="3041831561922044928" role="2Oq!k0" />
-            <node concept="3TrEf2" id="3330196687714068333" role="2OqNvi">
+      <node concept="3clFbS" id="2CQKr1MVQfX" role="3clF47">
+        <node concept="3cpWs6" id="2CQKr1MVQfY" role="3cqZAp">
+          <node concept="2OqwBi" id="2CQKr1MVQfZ" role="3cqZAk">
+            <node concept="13iPFW" id="2CQKr1MVQg0" role="2Oq$k0" />
+            <node concept="3TrEf2" id="2SRf3TboitH" role="2OqNvi">
               <reference role="3Tt5mk" target="fbxt.3330196687714050067" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="3Tqbb2" id="3041831561922044930" role="3clF45" />
-      <node concept="3Tm1VV" id="3041831561922044931" role="1B3o_S" />
+      <node concept="3Tqbb2" id="2CQKr1MVQg2" role="3clF45" />
+      <node concept="3Tm1VV" id="2CQKr1MVQg3" role="1B3o_S" />
     </node>
-    <node concept="13hLZK" id="3041831561922029482" role="13h7CW">
-      <node concept="3clFbS" id="3041831561922029483" role="2VODD2" />
+    <node concept="13hLZK" id="2CQKr1MVMuE" role="13h7CW">
+      <node concept="3clFbS" id="2CQKr1MVMuF" role="2VODD2" />
     </node>
   </node>
 </model>

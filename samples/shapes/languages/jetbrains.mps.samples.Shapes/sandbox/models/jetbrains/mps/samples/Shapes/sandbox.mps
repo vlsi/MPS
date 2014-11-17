@@ -12,21 +12,21 @@
   </imports>
   <registry>
     <language id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f" name="jetbrains.mps.samples.Shapes">
-      <concept id="5898776707557467933" name="jetbrains.mps.samples.Shapes.structure.Canvas" flags="ng" index="36!KOO">
-        <child id="5898776707557489223" name="shapes" index="36!P1I" />
+      <concept id="5898776707557467933" name="jetbrains.mps.samples.Shapes.structure.Canvas" flags="ng" index="36$KOO">
+        <child id="5898776707557489223" name="shapes" index="36$P1I" />
       </concept>
-      <concept id="5898776707557474657" name="jetbrains.mps.samples.Shapes.structure.Shape" flags="ng" index="36!QH8">
+      <concept id="5898776707557474657" name="jetbrains.mps.samples.Shapes.structure.Shape" flags="ng" index="36$QH8">
         <child id="4191445539799470732" name="color" index="3_3Tce" />
       </concept>
-      <concept id="5898776707557474722" name="jetbrains.mps.samples.Shapes.structure.Square" flags="ng" index="36!QIb">
-        <property id="5898776707557474728" name="size" index="36!QI1" />
-        <property id="5898776707557474723" name="upperLeftX" index="36!QIa" />
-        <property id="5898776707557474725" name="upperLeftY" index="36!QIc" />
+      <concept id="5898776707557474722" name="jetbrains.mps.samples.Shapes.structure.Square" flags="ng" index="36$QIb">
+        <property id="5898776707557474728" name="size" index="36$QI1" />
+        <property id="5898776707557474723" name="upperLeftX" index="36$QIa" />
+        <property id="5898776707557474725" name="upperLeftY" index="36$QIc" />
       </concept>
-      <concept id="5898776707557474712" name="jetbrains.mps.samples.Shapes.structure.Circle" flags="ng" index="36!QIL">
-        <property id="5898776707557474713" name="x" index="36!QIK" />
-        <property id="5898776707557474715" name="y" index="36!QIM" />
-        <property id="5898776707557474718" name="radius" index="36!QIR" />
+      <concept id="5898776707557474712" name="jetbrains.mps.samples.Shapes.structure.Circle" flags="ng" index="36$QIL">
+        <property id="5898776707557474713" name="x" index="36$QIK" />
+        <property id="5898776707557474715" name="y" index="36$QIM" />
+        <property id="5898776707557474718" name="radius" index="36$QIR" />
       </concept>
       <concept id="4191445539799302575" name="jetbrains.mps.samples.Shapes.structure.ColorReference" flags="ng" index="3_2g0H">
         <reference id="4191445539799302810" name="color" index="3_2gco" />
@@ -38,29 +38,29 @@
       </concept>
     </language>
   </registry>
-  <node concept="36!KOO" id="5898776707557509373">
+  <node concept="36$KOO" id="57sEyAnk4zX">
     <property role="TrG5h" value="MyDrawing" />
-    <node concept="36!QIL" id="4191445539799725021" role="36!P1I">
-      <property role="36!QIK" value="200" />
-      <property role="36!QIM" value="300" />
-      <property role="36!QIR" value="100" />
-      <node concept="3_2g0H" id="4191445539799725029" role="3_3Tce">
+    <node concept="36$QIL" id="3CF0obva7ft" role="36$P1I">
+      <property role="36$QIK" value="200" />
+      <property role="36$QIM" value="300" />
+      <property role="36$QIR" value="100" />
+      <node concept="3_2g0H" id="3CF0obva7f_" role="3_3Tce">
         <reference role="3_2gco" target="1t7x.~Color%dBLUE" resolve="BLUE" />
       </node>
     </node>
-    <node concept="36!QIb" id="4191445539799725037" role="36!P1I">
-      <property role="36!QIa" value="50" />
-      <property role="36!QIc" value="150" />
-      <property role="36!QI1" value="100" />
-      <node concept="3_2g0H" id="4191445539799725047" role="3_3Tce">
+    <node concept="36$QIb" id="3CF0obva7fH" role="36$P1I">
+      <property role="36$QIa" value="50" />
+      <property role="36$QIc" value="150" />
+      <property role="36$QI1" value="100" />
+      <node concept="3_2g0H" id="3CF0obva7fR" role="3_3Tce">
         <reference role="3_2gco" target="1t7x.~Color%dGREEN" resolve="GREEN" />
       </node>
     </node>
-    <node concept="36!QIb" id="2601511096305620288" role="36!P1I">
-      <property role="36!QIa" value="350" />
-      <property role="36!QIc" value="150" />
-      <property role="36!QI1" value="100" />
-      <node concept="3_2g0H" id="2601511096305632882" role="3_3Tce">
+    <node concept="36$QIb" id="2gqr8W6y9l0" role="36$P1I">
+      <property role="36$QIa" value="350" />
+      <property role="36$QIc" value="150" />
+      <property role="36$QI1" value="100" />
+      <node concept="3_2g0H" id="2gqr8W6ycpM" role="3_3Tce">
         <reference role="3_2gco" target="1t7x.~Color%dRED" resolve="RED" />
       </node>
     </node>

@@ -59,7 +59,7 @@
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
@@ -67,23 +67,23 @@
       </concept>
     </language>
   </registry>
-  <node concept="2S6QgY" id="1195647359270">
+  <node concept="2S6QgY" id="hpy8H$A">
     <property role="TrG5h" value="ToggleExceptionSection" />
     <property role="2ZfUl3" value="false" />
     <reference role="2ZfgGC" target="tpib.1167227138527" resolve="LogStatement" />
-    <node concept="2S6ZIM" id="1195647359324" role="2ZfVej">
-      <node concept="3clFbS" id="1195647359325" role="2VODD2">
-        <node concept="3clFbF" id="1210175212718" role="3cqZAp">
-          <node concept="3K4zz7" id="1210175229392" role="3clFbG">
-            <node concept="Xl_RD" id="1210175233396" role="3K4E3e">
+    <node concept="2S6ZIM" id="hpy8H_s" role="2ZfVej">
+      <node concept="3clFbS" id="hpy8H_t" role="2VODD2">
+        <node concept="3clFbF" id="hB444MI" role="3cqZAp">
+          <node concept="3K4zz7" id="hB448Rg" role="3clFbG">
+            <node concept="Xl_RD" id="hB449PO" role="3K4E3e">
               <property role="Xl_RC" value="Hide Exception Section" />
             </node>
-            <node concept="Xl_RD" id="1210175245765" role="3K4GZi">
+            <node concept="Xl_RD" id="hB44cR5" role="3K4GZi">
               <property role="Xl_RC" value="Show Exception Section" />
             </node>
-            <node concept="2OqwBi" id="1210175214523" role="3K4Cdx">
-              <node concept="2Sf5sV" id="1210175212719" role="2Oq!k0" />
-              <node concept="3TrcHB" id="1210175216706" role="2OqNvi">
+            <node concept="2OqwBi" id="hB445eV" role="3K4Cdx">
+              <node concept="2Sf5sV" id="hB444MJ" role="2Oq$k0" />
+              <node concept="3TrcHB" id="hB445L2" role="2OqNvi">
                 <reference role="3TsBF5" target="tpib.1167228628751" resolve="hasException" />
               </node>
             </node>
@@ -91,21 +91,21 @@
         </node>
       </node>
     </node>
-    <node concept="2Sbjvc" id="1195647359365" role="2ZfgGD">
-      <node concept="3clFbS" id="1195647359366" role="2VODD2">
-        <node concept="3clFbF" id="1195647359367" role="3cqZAp">
-          <node concept="2OqwBi" id="1204227867900" role="3clFbG">
-            <node concept="2OqwBi" id="1204227923273" role="2Oq!k0">
-              <node concept="2Sf5sV" id="1195647359370" role="2Oq!k0" />
-              <node concept="3TrcHB" id="1195647359371" role="2OqNvi">
+    <node concept="2Sbjvc" id="hpy8HA5" role="2ZfgGD">
+      <node concept="3clFbS" id="hpy8HA6" role="2VODD2">
+        <node concept="3clFbF" id="hpy8HA7" role="3cqZAp">
+          <node concept="2OqwBi" id="hxx$KjW" role="3clFbG">
+            <node concept="2OqwBi" id="hxx$XP9" role="2Oq$k0">
+              <node concept="2Sf5sV" id="hpy8HAa" role="2Oq$k0" />
+              <node concept="3TrcHB" id="hpy8HAb" role="2OqNvi">
                 <reference role="3TsBF5" target="tpib.1167228628751" resolve="hasException" />
               </node>
             </node>
-            <node concept="tyxLq" id="1195647359372" role="2OqNvi">
-              <node concept="3fqX7Q" id="1210175291538" role="tz02z">
-                <node concept="2OqwBi" id="1210175291539" role="3fr31v">
-                  <node concept="2Sf5sV" id="1210175291540" role="2Oq!k0" />
-                  <node concept="3TrcHB" id="1210175291541" role="2OqNvi">
+            <node concept="tyxLq" id="hpy8HAc" role="2OqNvi">
+              <node concept="3fqX7Q" id="hB44o2i" role="tz02z">
+                <node concept="2OqwBi" id="hB44o2j" role="3fr31v">
+                  <node concept="2Sf5sV" id="hB44o2k" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="hB44o2l" role="2OqNvi">
                     <reference role="3TsBF5" target="tpib.1167228628751" resolve="hasException" />
                   </node>
                 </node>

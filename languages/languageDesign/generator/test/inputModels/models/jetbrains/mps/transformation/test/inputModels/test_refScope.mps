@@ -25,43 +25,43 @@
       <concept id="3315811491560119808" name="jetbrains.mps.transformation.test.inputLang.structure.RefTestParam" flags="ng" index="3YBnVV" />
     </language>
   </registry>
-  <node concept="3YBnO0" id="3315811491560187089">
+  <node concept="3YBnO0" id="2S48fJgAAjh">
     <property role="TrG5h" value="BaseCl" />
-    <node concept="3YBnO5" id="3315811491560187090" role="3YBnVt">
+    <node concept="3YBnO5" id="2S48fJgAAji" role="3YBnVt">
       <property role="TrG5h" value="equals" />
-      <node concept="3YBnVV" id="3315811491560194572" role="3YBnUV">
+      <node concept="3YBnVV" id="2S48fJgAC8c" role="3YBnUV">
         <property role="TrG5h" value="target" />
       </node>
     </node>
-    <node concept="3YBnO5" id="3315811491560194573" role="3YBnVt">
+    <node concept="3YBnO5" id="2S48fJgAC8d" role="3YBnVt">
       <property role="TrG5h" value="hashCode" />
     </node>
   </node>
-  <node concept="3YBnO0" id="3315811491560194589">
+  <node concept="3YBnO0" id="2S48fJgAC8t">
     <property role="TrG5h" value="SubClass" />
     <reference role="3YBnO6" target="3315811491560187089" resolve="BaseCl" />
-    <node concept="3YBnO5" id="3315811491560194590" role="3YBnVt">
+    <node concept="3YBnO5" id="2S48fJgAC8u" role="3YBnVt">
       <property role="TrG5h" value="work" />
-      <node concept="3YBnVV" id="3315811491560194593" role="3YBnUV">
+      <node concept="3YBnVV" id="2S48fJgAC8x" role="3YBnUV">
         <property role="TrG5h" value="a" />
       </node>
-      <node concept="3YBnVV" id="3315811491560194594" role="3YBnUV">
+      <node concept="3YBnVV" id="2S48fJgAC8y" role="3YBnUV">
         <property role="TrG5h" value="b" />
       </node>
-      <node concept="3YBnVV" id="3315811491560194595" role="3YBnUV">
+      <node concept="3YBnVV" id="2S48fJgAC8z" role="3YBnUV">
         <property role="TrG5h" value="c" />
       </node>
     </node>
-    <node concept="3YBnO5" id="3315811491560194597" role="3YBnVt">
+    <node concept="3YBnO5" id="2S48fJgAC8_" role="3YBnVt">
       <property role="TrG5h" value="work2" />
-      <node concept="3YBnVV" id="3315811491560194598" role="3YBnUV">
+      <node concept="3YBnVV" id="2S48fJgAC8A" role="3YBnUV">
         <property role="TrG5h" value="a" />
       </node>
     </node>
   </node>
-  <node concept="3YBnO0" id="3715568794894764201">
+  <node concept="3YBnO0" id="3egmy8eeCyD">
     <property role="TrG5h" value="WrongEqualsContainer" />
-    <node concept="3YBnO5" id="3715568794894764202" role="3YBnVt">
+    <node concept="3YBnO5" id="3egmy8eeCyE" role="3YBnVt">
       <property role="TrG5h" value="equals" />
     </node>
   </node>

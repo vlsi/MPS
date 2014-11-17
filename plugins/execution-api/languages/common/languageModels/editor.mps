@@ -30,7 +30,7 @@
         <property id="1186403771423" name="style" index="Vbekb" />
       </concept>
       <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
-      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi!J">
+      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" flags="ln" index="11L4FC" />
@@ -46,84 +46,84 @@
       </concept>
     </language>
   </registry>
-  <node concept="V5hpn" id="946964771156905360">
+  <node concept="V5hpn" id="O$iR4JBsQg">
     <property role="TrG5h" value="RunConfigurations" />
-    <node concept="14StLt" id="946964771156905361" role="V601i">
+    <node concept="14StLt" id="O$iR4JBsQh" role="V601i">
       <property role="TrG5h" value="lessThen" />
-      <node concept="11LMrY" id="946964771156905362" role="3F10Kt">
+      <node concept="11LMrY" id="O$iR4JBsQi" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>
-      <node concept="11L4FC" id="946964771156905363" role="3F10Kt">
+      <node concept="11L4FC" id="O$iR4JBsQj" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>
-      <node concept="3mYdg7" id="946964771156905364" role="3F10Kt">
+      <node concept="3mYdg7" id="O$iR4JBsQk" role="3F10Kt">
         <property role="1413C4" value="type.brace" />
       </node>
     </node>
-    <node concept="14StLt" id="946964771156905365" role="V601i">
+    <node concept="14StLt" id="O$iR4JBsQl" role="V601i">
       <property role="TrG5h" value="greaterThen" />
-      <node concept="11L4FC" id="946964771156905366" role="3F10Kt">
+      <node concept="11L4FC" id="O$iR4JBsQm" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>
-      <node concept="3mYdg7" id="946964771156905367" role="3F10Kt">
+      <node concept="3mYdg7" id="O$iR4JBsQn" role="3F10Kt">
         <property role="1413C4" value="type.brace" />
       </node>
     </node>
-    <node concept="14StLt" id="946964771156905368" role="V601i">
+    <node concept="14StLt" id="O$iR4JBsQo" role="V601i">
       <property role="TrG5h" value="operation" />
-      <node concept="Vb9p2" id="946964771156905369" role="3F10Kt">
+      <node concept="Vb9p2" id="O$iR4JBsQp" role="3F10Kt">
         <property role="Vbekb" value="PLAIN" />
       </node>
-      <node concept="VechU" id="946964771156905370" role="3F10Kt">
+      <node concept="VechU" id="O$iR4JBsQq" role="3F10Kt">
         <property role="Vb096" value="DARK_BLUE" />
       </node>
     </node>
-    <node concept="14StLt" id="946964771156905371" role="V601i">
+    <node concept="14StLt" id="O$iR4JBsQr" role="V601i">
       <property role="TrG5h" value="leftOperationBrace" />
-      <node concept="3Xmtl4" id="4284599143868091670" role="3F10Kt">
-        <node concept="1wgc9g" id="4284599143868091671" role="3XvnJa">
+      <node concept="3Xmtl4" id="3HPX3xRcOOm" role="3F10Kt">
+        <node concept="1wgc9g" id="3HPX3xRcOOn" role="3XvnJa">
           <reference role="1wgcnl" target="946964771156905368" resolve="operation" />
         </node>
       </node>
-      <node concept="11L4FC" id="946964771156905372" role="3F10Kt">
+      <node concept="11L4FC" id="O$iR4JBsQs" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>
-      <node concept="11LMrY" id="946964771156905373" role="3F10Kt">
+      <node concept="11LMrY" id="O$iR4JBsQt" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>
-      <node concept="3mYdg7" id="946964771156905374" role="3F10Kt">
+      <node concept="3mYdg7" id="O$iR4JBsQu" role="3F10Kt">
         <property role="1413C4" value="operation.brace" />
       </node>
     </node>
-    <node concept="14StLt" id="946964771156905376" role="V601i">
+    <node concept="14StLt" id="O$iR4JBsQw" role="V601i">
       <property role="TrG5h" value="rightOperationBrace" />
-      <node concept="3Xmtl4" id="4284599143868091664" role="3F10Kt">
-        <node concept="1wgc9g" id="4284599143868091665" role="3XvnJa">
+      <node concept="3Xmtl4" id="3HPX3xRcOOg" role="3F10Kt">
+        <node concept="1wgc9g" id="3HPX3xRcOOh" role="3XvnJa">
           <reference role="1wgcnl" target="946964771156905368" resolve="operation" />
         </node>
       </node>
-      <node concept="11L4FC" id="946964771156905377" role="3F10Kt">
+      <node concept="11L4FC" id="O$iR4JBsQx" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>
-      <node concept="3mYdg7" id="946964771156905378" role="3F10Kt">
+      <node concept="3mYdg7" id="O$iR4JBsQy" role="3F10Kt">
         <property role="1413C4" value="operation.brace" />
       </node>
     </node>
-    <node concept="14StLt" id="946964771156905380" role="V601i">
+    <node concept="14StLt" id="O$iR4JBsQ$" role="V601i">
       <property role="TrG5h" value="constructorParameter" />
-      <node concept="3Xmtl4" id="4284599143868091683" role="3F10Kt">
-        <node concept="1wgc9g" id="4284599143868091684" role="3XvnJa">
+      <node concept="3Xmtl4" id="3HPX3xRcOOz" role="3F10Kt">
+        <node concept="1wgc9g" id="3HPX3xRcOO$" role="3XvnJa">
           <reference role="1wgcnl" target="tpen.1198595398954" resolve="Field" />
         </node>
       </node>
-      <node concept="Vb9p2" id="946964771156905382" role="3F10Kt" />
+      <node concept="Vb9p2" id="O$iR4JBsQA" role="3F10Kt" />
     </node>
-    <node concept="14StLt" id="946964771156905383" role="V601i">
+    <node concept="14StLt" id="O$iR4JBsQB" role="V601i">
       <property role="TrG5h" value="conceptFunctionHeader" />
-      <node concept="VechU" id="946964771156905384" role="3F10Kt">
+      <node concept="VechU" id="O$iR4JBsQC" role="3F10Kt">
         <property role="Vb096" value="DARK_BLUE" />
       </node>
-      <node concept="Vb9p2" id="946964771156905385" role="3F10Kt">
+      <node concept="Vb9p2" id="O$iR4JBsQD" role="3F10Kt">
         <property role="Vbekb" value="ITALIC" />
       </node>
     </node>

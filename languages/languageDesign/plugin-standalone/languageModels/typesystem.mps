@@ -37,7 +37,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
@@ -79,109 +79,109 @@
       </concept>
       <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
-        <child id="1174660783413" name="leftExpression" index="1ZfhK!" />
+        <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
     </language>
   </registry>
-  <node concept="2sgARr" id="481983775135178859">
+  <node concept="2sgARr" id="qKmr2orM1F">
     <property role="TrG5h" value="Typeof_ProjectPluginType" />
     <property role="3GE5qa" value="Custom" />
-    <node concept="3clFbS" id="481983775135178860" role="2sgrp5">
-      <node concept="3cpWs6" id="481983775135178861" role="3cqZAp">
-        <node concept="2c44tf" id="481983775135178862" role="3cqZAk">
-          <node concept="3uibUv" id="481983775135178863" role="2c44tc">
+    <node concept="3clFbS" id="qKmr2orM1G" role="2sgrp5">
+      <node concept="3cpWs6" id="qKmr2orM1H" role="3cqZAp">
+        <node concept="2c44tf" id="qKmr2orM1I" role="3cqZAk">
+          <node concept="3uibUv" id="qKmr2orM1J" role="2c44tc">
             <reference role="3uigEE" target="hm52.~BaseCustomProjectPlugin" resolve="BaseCustomProjectPlugin" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="481983775135178864" role="1YuTPh">
+    <node concept="1YaCAy" id="qKmr2orM1K" role="1YuTPh">
       <property role="TrG5h" value="pluginType" />
       <reference role="1YaFvo" target="tgbt.481983775135178856" resolve="ProjectPluginType" />
     </node>
   </node>
-  <node concept="2sgARr" id="481983775135178865">
+  <node concept="2sgARr" id="qKmr2orM1L">
     <property role="TrG5h" value="Typeof_ApplicationPluginType" />
     <property role="3GE5qa" value="Custom" />
-    <node concept="3clFbS" id="481983775135178866" role="2sgrp5">
-      <node concept="3cpWs6" id="481983775135178867" role="3cqZAp">
-        <node concept="2c44tf" id="481983775135178868" role="3cqZAk">
-          <node concept="3uibUv" id="4543772620559925688" role="2c44tc">
+    <node concept="3clFbS" id="qKmr2orM1M" role="2sgrp5">
+      <node concept="3cpWs6" id="qKmr2orM1N" role="3cqZAp">
+        <node concept="2c44tf" id="qKmr2orM1O" role="3cqZAk">
+          <node concept="3uibUv" id="3WeIhZsBG6S" role="2c44tc">
             <reference role="3uigEE" target="hm52.~BaseCustomApplicationPlugin" resolve="BaseCustomApplicationPlugin" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="481983775135178870" role="1YuTPh">
+    <node concept="1YaCAy" id="qKmr2orM1Q" role="1YuTPh">
       <property role="TrG5h" value="customApplicationPluginType" />
       <reference role="1YaFvo" target="tgbt.481983775135178831" resolve="ApplicationPluginType" />
     </node>
   </node>
-  <node concept="1YbPZF" id="681855071694758171">
+  <node concept="1YbPZF" id="_QrTcSEy4r">
     <property role="TrG5h" value="typeof_GetToolInProjectOperation" />
     <property role="3GE5qa" value="Tool.Operations" />
-    <node concept="3clFbS" id="681855071694758172" role="18ibNy">
-      <node concept="1Z5TYs" id="681855071694758173" role="3cqZAp">
-        <node concept="mw_s8" id="681855071694758174" role="1ZfhKB">
-          <node concept="2OqwBi" id="681855071694758175" role="mwGJk">
-            <node concept="2OqwBi" id="681855071694758176" role="2Oq!k0">
-              <node concept="1YBJjd" id="681855071694758177" role="2Oq!k0">
+    <node concept="3clFbS" id="_QrTcSEy4s" role="18ibNy">
+      <node concept="1Z5TYs" id="_QrTcSEy4t" role="3cqZAp">
+        <node concept="mw_s8" id="_QrTcSEy4u" role="1ZfhKB">
+          <node concept="2OqwBi" id="_QrTcSEy4v" role="mwGJk">
+            <node concept="2OqwBi" id="_QrTcSEy4w" role="2Oq$k0">
+              <node concept="1YBJjd" id="_QrTcSEy4x" role="2Oq$k0">
                 <reference role="1YBMHb" target="681855071694758183" resolve="operation" />
               </node>
-              <node concept="3TrEf2" id="681855071694758178" role="2OqNvi">
+              <node concept="3TrEf2" id="_QrTcSEy4y" role="2OqNvi">
                 <reference role="3Tt5mk" target="tgbt.681855071694758166" />
               </node>
             </node>
-            <node concept="2qgKlT" id="681855071694758179" role="2OqNvi">
+            <node concept="2qgKlT" id="_QrTcSEy4z" role="2OqNvi">
               <reference role="37wK5l" target="tp4h.1213877527970" resolve="createType" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="681855071694758180" role="1ZfhK!">
-          <node concept="1Z2H0r" id="681855071694758181" role="mwGJk">
-            <node concept="1YBJjd" id="681855071694758182" role="1Z2MuG">
+        <node concept="mw_s8" id="_QrTcSEy4$" role="1ZfhK$">
+          <node concept="1Z2H0r" id="_QrTcSEy4_" role="mwGJk">
+            <node concept="1YBJjd" id="_QrTcSEy4A" role="1Z2MuG">
               <reference role="1YBMHb" target="681855071694758183" resolve="operation" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="681855071694758183" role="1YuTPh">
+    <node concept="1YaCAy" id="_QrTcSEy4B" role="1YuTPh">
       <property role="TrG5h" value="operation" />
       <reference role="1YaFvo" target="tgbt.681855071694758165" resolve="GetToolInProjectOperation" />
     </node>
   </node>
-  <node concept="1YbPZF" id="681855071694758184">
+  <node concept="1YbPZF" id="_QrTcSEy4C">
     <property role="TrG5h" value="typeof_GetPreferencesComponentInProjectOperation" />
     <property role="3GE5qa" value="Preference" />
-    <node concept="3clFbS" id="681855071694758185" role="18ibNy">
-      <node concept="1Z5TYs" id="681855071694758186" role="3cqZAp">
-        <node concept="mw_s8" id="681855071694758187" role="1ZfhKB">
-          <node concept="2OqwBi" id="681855071694758188" role="mwGJk">
-            <node concept="2OqwBi" id="681855071694758189" role="2Oq!k0">
-              <node concept="1YBJjd" id="681855071694758190" role="2Oq!k0">
+    <node concept="3clFbS" id="_QrTcSEy4D" role="18ibNy">
+      <node concept="1Z5TYs" id="_QrTcSEy4E" role="3cqZAp">
+        <node concept="mw_s8" id="_QrTcSEy4F" role="1ZfhKB">
+          <node concept="2OqwBi" id="_QrTcSEy4G" role="mwGJk">
+            <node concept="2OqwBi" id="_QrTcSEy4H" role="2Oq$k0">
+              <node concept="1YBJjd" id="_QrTcSEy4I" role="2Oq$k0">
                 <reference role="1YBMHb" target="681855071694758196" resolve="operation" />
               </node>
-              <node concept="3TrEf2" id="681855071694758191" role="2OqNvi">
+              <node concept="3TrEf2" id="_QrTcSEy4J" role="2OqNvi">
                 <reference role="3Tt5mk" target="tgbt.681855071694758169" />
               </node>
             </node>
-            <node concept="2qgKlT" id="681855071694758192" role="2OqNvi">
+            <node concept="2qgKlT" id="_QrTcSEy4K" role="2OqNvi">
               <reference role="37wK5l" target="tp4h.1213877527970" resolve="createType" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="681855071694758193" role="1ZfhK!">
-          <node concept="1Z2H0r" id="681855071694758194" role="mwGJk">
-            <node concept="1YBJjd" id="681855071694758195" role="1Z2MuG">
+        <node concept="mw_s8" id="_QrTcSEy4L" role="1ZfhK$">
+          <node concept="1Z2H0r" id="_QrTcSEy4M" role="mwGJk">
+            <node concept="1YBJjd" id="_QrTcSEy4N" role="1Z2MuG">
               <reference role="1YBMHb" target="681855071694758196" resolve="operation" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="681855071694758196" role="1YuTPh">
+    <node concept="1YaCAy" id="_QrTcSEy4O" role="1YuTPh">
       <property role="TrG5h" value="operation" />
       <reference role="1YaFvo" target="tgbt.681855071694758168" resolve="GetPreferencesComponentInProjectOperation" />
     </node>

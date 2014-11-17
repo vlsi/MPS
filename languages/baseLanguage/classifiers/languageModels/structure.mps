@@ -15,12 +15,12 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
-        <child id="1169127546356" name="extends" index="PrDN!" />
+        <child id="1169127546356" name="extends" index="PrDN$" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -47,149 +47,149 @@
       </concept>
     </language>
   </registry>
-  <node concept="PlHQZ" id="1205751982837">
+  <node concept="PlHQZ" id="hyWqMFP">
     <property role="TrG5h" value="IClassifier" />
-    <node concept="PrWs8" id="1205752941102" role="PrDN!">
+    <node concept="PrWs8" id="hyWusCI" role="PrDN$">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="PrWs8" id="1221661913106" role="PrDN!">
+    <node concept="PrWs8" id="hLKIn0i" role="PrDN$">
       <reference role="PrY4T" target="tpee.1221393582612" resolve="IExtractMethodAvailable" />
     </node>
   </node>
-  <node concept="PlHQZ" id="1205752032448">
+  <node concept="PlHQZ" id="hyWqYN0">
     <property role="TrG5h" value="IMember" />
-    <node concept="PrWs8" id="1205765564563" role="PrDN!">
+    <node concept="PrWs8" id="hyXeAyj" role="PrDN$">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="PlHQZ" id="1205752174734">
+  <node concept="PlHQZ" id="hyWrxye">
     <property role="TrG5h" value="IClassifierPart" />
   </node>
-  <node concept="1TIwiD" id="1205752633985">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hyWthE1">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="this classifier" />
     <property role="TrG5h" value="ThisClassifierExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="this" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1218736638915" role="1TKVEi">
+    <node concept="1TJgyj" id="hJ2nkJ3" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="classifier" />
       <reference role="20lvS9" target="1205751982837" resolve="IClassifier" />
     </node>
-    <node concept="PrWs8" id="1227903702915" role="PzmwI">
+    <node concept="PrWs8" id="hR$KTu3" role="PzmwI">
       <reference role="PrY4T" target="tpee.1224609861009" resolve="IThisExpression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1205752813637">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hyWtXx5">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="BaseClassifierType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Types" />
     <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
   </node>
-  <node concept="1TIwiD" id="1205752906494">
+  <node concept="1TIwiD" id="hyWukbY">
     <property role="TrG5h" value="DefaultClassifierType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Types" />
     <reference role="1TJDcQ" target="1205752813637" resolve="BaseClassifierType" />
-    <node concept="1TJgyj" id="1205752917136" role="1TKVEi">
+    <node concept="1TJgyj" id="hyWumMg" role="1TKVEi">
       <property role="20kJfa" value="classifier" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="1205751982837" resolve="IClassifier" />
     </node>
   </node>
-  <node concept="PlHQZ" id="1205756064662">
+  <node concept="PlHQZ" id="hyWEnem">
     <property role="TrG5h" value="IMemberOperation" />
-    <node concept="1TJgyj" id="1205756909548" role="1TKVEi">
+    <node concept="1TJgyj" id="hyWH_vG" role="1TKVEi">
       <property role="20kJfa" value="member" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="1205752032448" resolve="IMember" />
     </node>
-    <node concept="PrWs8" id="1205756760046" role="PrDN!">
+    <node concept="PrWs8" id="hyWH0ZI" role="PrDN$">
       <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1205769003971">
+  <node concept="1TIwiD" id="hyXrIf3">
     <property role="TrG5h" value="DefaultClassifierMethodDeclaration" />
     <property role="3GE5qa" value="Methods" />
     <reference role="1TJDcQ" target="tpee.1068580123132" resolve="BaseMethodDeclaration" />
-    <node concept="PrWs8" id="1205769489840" role="PzmwI">
+    <node concept="PrWs8" id="hyXt$QK" role="PzmwI">
       <reference role="PrY4T" target="1205752032448" resolve="IMember" />
     </node>
-    <node concept="PrWs8" id="1219229880090" role="PzmwI">
+    <node concept="PrWs8" id="hJvKSWq" role="PzmwI">
       <reference role="PrY4T" target="tpee.1178549954367" resolve="IVisible" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1205769149993">
+  <node concept="1TIwiD" id="hyXshSD">
     <property role="TrG5h" value="DefaultClassifierMethodCallOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Methods" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="1205770614681" role="1TKVEi">
+    <node concept="1TJgyj" id="hyXxRup" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="actualArgument" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1205769403793" role="1TKVEi">
+    <node concept="1TJgyj" id="hyXtfQh" role="1TKVEi">
       <property role="20kJfa" value="method" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="1205769003971" resolve="DefaultClassifierMethodDeclaration" />
       <reference role="20ksaX" target="1205756909548" />
     </node>
-    <node concept="PrWs8" id="1205769163590" role="PzmwI">
+    <node concept="PrWs8" id="hyXsld6" role="PzmwI">
       <reference role="PrY4T" target="1205756064662" resolve="IMemberOperation" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1213999088275">
+  <node concept="1TIwiD" id="hEBZ0aj">
     <property role="TrG5h" value="DefaultClassifierFieldDeclaration" />
     <property role="3GE5qa" value="Fields" />
     <reference role="1TJDcQ" target="tpee.1068390468200" resolve="FieldDeclaration" />
-    <node concept="PrWs8" id="1213999088276" role="PzmwI">
+    <node concept="PrWs8" id="hEBZ0ak" role="PzmwI">
       <reference role="PrY4T" target="1205752032448" resolve="IMember" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1213999117680">
+  <node concept="1TIwiD" id="hEBZ7lK">
     <property role="TrG5h" value="DefaultClassifierFieldAccessOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Fields" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1213999117682" role="PzmwI">
+    <node concept="PrWs8" id="hEBZ7lM" role="PzmwI">
       <reference role="PrY4T" target="1205756064662" resolve="IMemberOperation" />
     </node>
-    <node concept="1TJgyj" id="1213999117683" role="1TKVEi">
+    <node concept="1TJgyj" id="hEBZ7lN" role="1TKVEi">
       <property role="20kJfa" value="field" />
       <property role="20lbJX" value="1" />
       <reference role="20ksaX" target="1205756909548" />
       <reference role="20lvS9" target="1213999088275" resolve="DefaultClassifierFieldDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1217433449852">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hHOG3lW">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="super classifier" />
     <property role="TrG5h" value="SuperClassifierExpresson" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="super" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
   </node>
-  <node concept="1TIwiD" id="1029302639053433191">
+  <node concept="1TIwiD" id="T8OkJR9I_B">
     <property role="TrG5h" value="DefaultClassifier" />
     <property role="3GE5qa" value="Base" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1029302639053433192" role="PzmwI">
+    <node concept="PrWs8" id="T8OkJR9I_C" role="PzmwI">
       <reference role="PrY4T" target="1205751982837" resolve="IClassifier" />
     </node>
-    <node concept="1TJgyj" id="1029302639053435660" role="1TKVEi">
+    <node concept="1TJgyj" id="T8OkJR9Jcc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="field" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="1213999088275" resolve="DefaultClassifierFieldDeclaration" />
     </node>
-    <node concept="1TJgyj" id="1029302639053435661" role="1TKVEi">
+    <node concept="1TJgyj" id="T8OkJR9Jcd" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="method" />
       <property role="20lbJX" value="0..n" />

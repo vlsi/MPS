@@ -49,7 +49,7 @@
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
@@ -85,12 +85,12 @@
       </concept>
       <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
-        <child id="1174660783413" name="leftExpression" index="1ZfhK!" />
+        <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
       <concept id="1174665551739" name="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" flags="ng" index="1ZxtTE" />
-      <concept id="1174666260556" name="jetbrains.mps.lang.typesystem.structure.TypeVarReference" flags="nn" index="1Z!b5t">
-        <reference id="1174666276259" name="typeVarDeclaration" index="1Z!eMM" />
+      <concept id="1174666260556" name="jetbrains.mps.lang.typesystem.structure.TypeVarReference" flags="nn" index="1Z$b5t">
+        <reference id="1174666276259" name="typeVarDeclaration" index="1Z$eMM" />
       </concept>
       <concept id="1179832490862" name="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" flags="nn" index="2NvLDW" />
     </language>
@@ -100,40 +100,40 @@
       </concept>
     </language>
   </registry>
-  <node concept="1YbPZF" id="1381762044504275935">
+  <node concept="1YbPZF" id="1cH0k8MMRJv">
     <property role="18ip37" value="true" />
     <property role="TrG5h" value="typeof_Node_CopyWithTraceOperation" />
-    <node concept="3clFbS" id="1381762044504275936" role="18ibNy">
-      <node concept="1ZxtTE" id="1205967749950" role="3cqZAp">
+    <node concept="3clFbS" id="1cH0k8MMRJw" role="18ibNy">
+      <node concept="1ZxtTE" id="hz9hScY" role="3cqZAp">
         <property role="TrG5h" value="Concept" />
       </node>
-      <node concept="3clFbF" id="1206100005686" role="3cqZAp">
-        <node concept="2YIFZM" id="1206100006641" role="3clFbG">
+      <node concept="3clFbF" id="hzhapcQ" role="3cqZAp">
+        <node concept="2YIFZM" id="hzhaprL" role="3clFbG">
           <reference role="37wK5l" target="tpeq.1178287490309" resolve="equate_inputNodeConcept" />
           <reference role="1Pybhc" target="tpeq.1178287490257" resolve="RulesUtil" />
-          <node concept="1YBJjd" id="1206100006642" role="37wK5m">
+          <node concept="1YBJjd" id="hzhaprM" role="37wK5m">
             <reference role="1YBMHb" target="1381762044504275937" resolve="node" />
           </node>
-          <node concept="1Z!b5t" id="1206100006643" role="37wK5m">
-            <reference role="1Z!eMM" target="1205967749950" resolve="Concept" />
+          <node concept="1Z$b5t" id="hzhaprN" role="37wK5m">
+            <reference role="1Z$eMM" target="1205967749950" resolve="Concept" />
           </node>
         </node>
       </node>
-      <node concept="1Z5TYs" id="1205967749964" role="3cqZAp">
-        <node concept="mw_s8" id="1205967749965" role="1ZfhK!">
-          <node concept="1Z2H0r" id="1205967749966" role="mwGJk">
-            <node concept="1YBJjd" id="1205967749967" role="1Z2MuG">
+      <node concept="1Z5TYs" id="hz9hSdc" role="3cqZAp">
+        <node concept="mw_s8" id="hz9hSdd" role="1ZfhK$">
+          <node concept="1Z2H0r" id="hz9hSde" role="mwGJk">
+            <node concept="1YBJjd" id="hz9hSdf" role="1Z2MuG">
               <reference role="1YBMHb" target="1381762044504275937" resolve="node" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="1205967749968" role="1ZfhKB">
-          <node concept="2c44tf" id="1205967780461" role="mwGJk">
-            <node concept="3Tqbb2" id="1205967780462" role="2c44tc">
-              <node concept="2c44tb" id="1205967815072" role="lGtFl">
+        <node concept="mw_s8" id="hz9hSdg" role="1ZfhKB">
+          <node concept="2c44tf" id="hz9hZDH" role="mwGJk">
+            <node concept="3Tqbb2" id="hz9hZDI" role="2c44tc">
+              <node concept="2c44tb" id="hz9i86w" role="lGtFl">
                 <property role="2qtEX8" value="concept" />
-                <node concept="1Z!b5t" id="1225300140407" role="2c44t1">
-                  <reference role="1Z!eMM" target="1205967749950" resolve="Concept" />
+                <node concept="1Z$b5t" id="hP9_65R" role="2c44t1">
+                  <reference role="1Z$eMM" target="1205967749950" resolve="Concept" />
                 </node>
               </node>
             </node>
@@ -141,53 +141,53 @@
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="1381762044504275937" role="1YuTPh">
+    <node concept="1YaCAy" id="1cH0k8MMRJx" role="1YuTPh">
       <property role="TrG5h" value="node" />
       <reference role="1YaFvo" target="lyxe.6942529559415680891" resolve="Node_CopyWithTraceOperation" />
     </node>
   </node>
-  <node concept="1YbPZF" id="2603522263179374361">
+  <node concept="1YbPZF" id="2gx$rhdCaWp">
     <property role="TrG5h" value="typeof_NList_CopyWithTraceOperation" />
-    <node concept="3clFbS" id="2603522263179374362" role="18ibNy">
-      <node concept="1Z5TYs" id="2603522263179374388" role="3cqZAp">
-        <node concept="mw_s8" id="2603522263179374392" role="1ZfhKB">
-          <node concept="2c44tf" id="2603522263179374393" role="mwGJk">
-            <node concept="_YKpA" id="2603522263179374395" role="2c44tc">
-              <node concept="3Tqbb2" id="2603522263179374397" role="_ZDj9" />
+    <node concept="3clFbS" id="2gx$rhdCaWq" role="18ibNy">
+      <node concept="1Z5TYs" id="2gx$rhdCaWO" role="3cqZAp">
+        <node concept="mw_s8" id="2gx$rhdCaWS" role="1ZfhKB">
+          <node concept="2c44tf" id="2gx$rhdCaWT" role="mwGJk">
+            <node concept="_YKpA" id="2gx$rhdCaWV" role="2c44tc">
+              <node concept="3Tqbb2" id="2gx$rhdCaWX" role="_ZDj9" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="2603522263179374391" role="1ZfhK!">
-          <node concept="1Z2H0r" id="2603522263179374365" role="mwGJk">
-            <node concept="1YBJjd" id="2603522263179374367" role="1Z2MuG">
+        <node concept="mw_s8" id="2gx$rhdCaWR" role="1ZfhK$">
+          <node concept="1Z2H0r" id="2gx$rhdCaWt" role="mwGJk">
+            <node concept="1YBJjd" id="2gx$rhdCaWv" role="1Z2MuG">
               <reference role="1YBMHb" target="2603522263179374363" resolve="operation" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="2NvLDW" id="2603522263179406444" role="3cqZAp">
-        <node concept="mw_s8" id="2603522263179406447" role="1ZfhK!">
-          <node concept="1Z2H0r" id="2603522263179374400" role="mwGJk">
-            <node concept="2OqwBi" id="2603522263179374423" role="1Z2MuG">
-              <node concept="1YBJjd" id="2603522263179374402" role="2Oq!k0">
+      <node concept="2NvLDW" id="2gx$rhdCiLG" role="3cqZAp">
+        <node concept="mw_s8" id="2gx$rhdCiLJ" role="1ZfhK$">
+          <node concept="1Z2H0r" id="2gx$rhdCaX0" role="mwGJk">
+            <node concept="2OqwBi" id="2gx$rhdCaXn" role="1Z2MuG">
+              <node concept="1YBJjd" id="2gx$rhdCaX2" role="2Oq$k0">
                 <reference role="1YBMHb" target="2603522263179374363" resolve="operation" />
               </node>
-              <node concept="3TrEf2" id="2603522263179406419" role="2OqNvi">
+              <node concept="3TrEf2" id="2gx$rhdCiLj" role="2OqNvi">
                 <reference role="3Tt5mk" target="lyxe.2603522263179374348" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="2603522263179406451" role="1ZfhKB">
-          <node concept="2c44tf" id="2603522263179406452" role="mwGJk">
-            <node concept="_YKpA" id="2603522263179406453" role="2c44tc">
-              <node concept="3Tqbb2" id="2603522263179406454" role="_ZDj9" />
+        <node concept="mw_s8" id="2gx$rhdCiLN" role="1ZfhKB">
+          <node concept="2c44tf" id="2gx$rhdCiLO" role="mwGJk">
+            <node concept="_YKpA" id="2gx$rhdCiLP" role="2c44tc">
+              <node concept="3Tqbb2" id="2gx$rhdCiLQ" role="_ZDj9" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="2603522263179374363" role="1YuTPh">
+    <node concept="1YaCAy" id="2gx$rhdCaWr" role="1YuTPh">
       <property role="TrG5h" value="operation" />
       <reference role="1YaFvo" target="lyxe.2603522263179374343" resolve="NList_CopyWithTraceOperation" />
     </node>

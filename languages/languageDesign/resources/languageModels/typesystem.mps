@@ -32,7 +32,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
@@ -65,56 +65,56 @@
       <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
         <property id="1206359757216" name="checkOnly" index="3wDh2S" />
-        <child id="1174660783413" name="leftExpression" index="1ZfhK!" />
+        <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
       <concept id="1174663118805" name="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" flags="nn" index="1ZobV4" />
     </language>
   </registry>
-  <node concept="1YbPZF" id="8974276187400030193">
+  <node concept="1YbPZF" id="7Mb2akaesvL">
     <property role="TrG5h" value="typeof_IconResourceExpression" />
-    <node concept="3clFbS" id="8974276187400030194" role="18ibNy">
-      <node concept="1Z5TYs" id="8974276187400030195" role="3cqZAp">
-        <node concept="mw_s8" id="8974276187400030196" role="1ZfhKB">
-          <node concept="2c44tf" id="8974276187400030197" role="mwGJk">
-            <node concept="3uibUv" id="8974276187400030198" role="2c44tc">
+    <node concept="3clFbS" id="7Mb2akaesvM" role="18ibNy">
+      <node concept="1Z5TYs" id="7Mb2akaesvN" role="3cqZAp">
+        <node concept="mw_s8" id="7Mb2akaesvO" role="1ZfhKB">
+          <node concept="2c44tf" id="7Mb2akaesvP" role="mwGJk">
+            <node concept="3uibUv" id="7Mb2akaesvQ" role="2c44tc">
               <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="8974276187400030199" role="1ZfhK!">
-          <node concept="1Z2H0r" id="8974276187400030200" role="mwGJk">
-            <node concept="1YBJjd" id="8974276187400030201" role="1Z2MuG">
+        <node concept="mw_s8" id="7Mb2akaesvR" role="1ZfhK$">
+          <node concept="1Z2H0r" id="7Mb2akaesvS" role="mwGJk">
+            <node concept="1YBJjd" id="7Mb2akaesvT" role="1Z2MuG">
               <reference role="1YBMHb" target="8974276187400030202" resolve="icon" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="8974276187400030202" role="1YuTPh">
+    <node concept="1YaCAy" id="7Mb2akaesvU" role="1YuTPh">
       <property role="TrG5h" value="icon" />
       <reference role="1YaFvo" target="1oap.8974276187400029891" resolve="IconResourceExpression" />
     </node>
   </node>
-  <node concept="1YbPZF" id="8974276187400030203">
+  <node concept="1YbPZF" id="7Mb2akaesvV">
     <property role="TrG5h" value="typeof_IconResourceDeclaration" />
-    <node concept="3clFbS" id="8974276187400030204" role="18ibNy">
-      <node concept="1ZobV4" id="8974276187400030205" role="3cqZAp">
+    <node concept="3clFbS" id="7Mb2akaesvW" role="18ibNy">
+      <node concept="1ZobV4" id="7Mb2akaesvX" role="3cqZAp">
         <property role="3wDh2S" value="true" />
-        <node concept="mw_s8" id="8974276187400030206" role="1ZfhKB">
-          <node concept="2c44tf" id="8974276187400030207" role="mwGJk">
-            <node concept="3uibUv" id="8974276187400030208" role="2c44tc">
+        <node concept="mw_s8" id="7Mb2akaesvY" role="1ZfhKB">
+          <node concept="2c44tf" id="7Mb2akaesvZ" role="mwGJk">
+            <node concept="3uibUv" id="7Mb2akaesw0" role="2c44tc">
               <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="8974276187400030209" role="1ZfhK!">
-          <node concept="1Z2H0r" id="8974276187400030210" role="mwGJk">
-            <node concept="2OqwBi" id="8974276187400030211" role="1Z2MuG">
-              <node concept="1YBJjd" id="8974276187400030212" role="2Oq!k0">
+        <node concept="mw_s8" id="7Mb2akaesw1" role="1ZfhK$">
+          <node concept="1Z2H0r" id="7Mb2akaesw2" role="mwGJk">
+            <node concept="2OqwBi" id="7Mb2akaesw3" role="1Z2MuG">
+              <node concept="1YBJjd" id="7Mb2akaesw4" role="2Oq$k0">
                 <reference role="1YBMHb" target="8974276187400030214" resolve="ird" />
               </node>
-              <node concept="3TrEf2" id="8974276187400030213" role="2OqNvi">
+              <node concept="3TrEf2" id="7Mb2akaesw5" role="2OqNvi">
                 <reference role="3Tt5mk" target="1oap.8974276187400029889" />
               </node>
             </node>
@@ -122,32 +122,32 @@
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="8974276187400030214" role="1YuTPh">
+    <node concept="1YaCAy" id="7Mb2akaesw6" role="1YuTPh">
       <property role="TrG5h" value="ird" />
       <reference role="1YaFvo" target="1oap.8974276187400029888" resolve="IconResourceDeclaration" />
     </node>
   </node>
-  <node concept="1YbPZF" id="8974276187400030215">
+  <node concept="1YbPZF" id="7Mb2akaesw7">
     <property role="TrG5h" value="typeof_IconResourceReference" />
-    <node concept="3clFbS" id="8974276187400030216" role="18ibNy">
-      <node concept="1Z5TYs" id="8974276187400030217" role="3cqZAp">
-        <node concept="mw_s8" id="8974276187400030218" role="1ZfhKB">
-          <node concept="2c44tf" id="8974276187400030219" role="mwGJk">
-            <node concept="3uibUv" id="8974276187400030220" role="2c44tc">
+    <node concept="3clFbS" id="7Mb2akaesw8" role="18ibNy">
+      <node concept="1Z5TYs" id="7Mb2akaesw9" role="3cqZAp">
+        <node concept="mw_s8" id="7Mb2akaeswa" role="1ZfhKB">
+          <node concept="2c44tf" id="7Mb2akaeswb" role="mwGJk">
+            <node concept="3uibUv" id="7Mb2akaeswc" role="2c44tc">
               <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="8974276187400030221" role="1ZfhK!">
-          <node concept="1Z2H0r" id="8974276187400030222" role="mwGJk">
-            <node concept="1YBJjd" id="8974276187400030223" role="1Z2MuG">
+        <node concept="mw_s8" id="7Mb2akaeswd" role="1ZfhK$">
+          <node concept="1Z2H0r" id="7Mb2akaeswe" role="mwGJk">
+            <node concept="1YBJjd" id="7Mb2akaeswf" role="1Z2MuG">
               <reference role="1YBMHb" target="8974276187400030224" resolve="irr" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="8974276187400030224" role="1YuTPh">
+    <node concept="1YaCAy" id="7Mb2akaeswg" role="1YuTPh">
       <property role="TrG5h" value="irr" />
       <reference role="1YaFvo" target="1oap.8974276187400029895" resolve="IconResourceReference" />
     </node>

@@ -16,8 +16,8 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -46,157 +46,157 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="481983775135178819">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="qKmr2orM13">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ProjectPluginDisposeBlock" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ProjectPlugin" />
     <property role="34LRSv" value="dispose" />
     <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="481983775135178825">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="qKmr2orM19">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ProjectPluginInitBlock" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ProjectPlugin" />
     <property role="34LRSv" value="init" />
     <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="481983775135178831">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="qKmr2orM1f">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ApplicationPluginType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ApplicationPlugin" />
     <property role="34LRSv" value="application plugin&lt;&gt;" />
     <reference role="1TJDcQ" target="tp4f.1205752813637" resolve="BaseClassifierType" />
-    <node concept="1TJgyj" id="481983775135178833" role="1TKVEi">
+    <node concept="1TJgyj" id="qKmr2orM1h" role="1TKVEi">
       <property role="20kJfa" value="plugin" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="481983775135178840" resolve="ApplicationPluginDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="481983775135178834">
-    <property role="R5!K7" value="false" />
+  <node concept="1TIwiD" id="qKmr2orM1i">
+    <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
-    <property role="R5!K2" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="MwhBj" value="${language_descriptor}/icons/projectPlugin.png" />
     <property role="TrG5h" value="ProjectPluginDeclaration" />
     <property role="3GE5qa" value="Custom.ProjectPlugin" />
     <property role="34LRSv" value="Project Plugin" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="481983775135178835" role="PzmwI">
+    <node concept="PrWs8" id="qKmr2orM1j" role="PzmwI">
       <reference role="PrY4T" target="tp4f.1205751982837" resolve="IClassifier" />
     </node>
-    <node concept="1TJgyj" id="481983775135178836" role="1TKVEi">
+    <node concept="1TJgyj" id="qKmr2orM1k" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="initBlock" />
       <reference role="20lvS9" target="481983775135178825" resolve="ProjectPluginInitBlock" />
     </node>
-    <node concept="1TJgyj" id="481983775135178837" role="1TKVEi">
+    <node concept="1TJgyj" id="qKmr2orM1l" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="disposeBlock" />
       <reference role="20lvS9" target="481983775135178819" resolve="ProjectPluginDisposeBlock" />
     </node>
-    <node concept="1TJgyj" id="481983775135178838" role="1TKVEi">
+    <node concept="1TJgyj" id="qKmr2orM1m" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="fieldDeclaration" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="tp4f.1213999088275" resolve="DefaultClassifierFieldDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="481983775135178840">
-    <property role="R5!K7" value="false" />
+  <node concept="1TIwiD" id="qKmr2orM1o">
+    <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
-    <property role="R5!K2" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="MwhBj" value="${language_descriptor}/icons/applicationPlugin.png" />
     <property role="TrG5h" value="ApplicationPluginDeclaration" />
     <property role="3GE5qa" value="Custom.ApplicationPlugin" />
     <property role="34LRSv" value="Application Plugin" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="481983775135178841" role="PzmwI">
+    <node concept="PrWs8" id="qKmr2orM1p" role="PzmwI">
       <reference role="PrY4T" target="tp4f.1205751982837" resolve="IClassifier" />
     </node>
-    <node concept="1TJgyj" id="481983775135178842" role="1TKVEi">
+    <node concept="1TJgyj" id="qKmr2orM1q" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="initBlock" />
       <reference role="20lvS9" target="481983775135178851" resolve="ApplicationPluginInitBlock" />
     </node>
-    <node concept="1TJgyj" id="481983775135178843" role="1TKVEi">
+    <node concept="1TJgyj" id="qKmr2orM1r" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="disposeBlock" />
       <reference role="20lvS9" target="481983775135178846" resolve="ApplicationPluginDisposeBlock" />
     </node>
-    <node concept="1TJgyj" id="481983775135178844" role="1TKVEi">
+    <node concept="1TJgyj" id="qKmr2orM1s" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="fieldDeclaration" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="tp4f.1213999088275" resolve="DefaultClassifierFieldDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="481983775135178846">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="qKmr2orM1u">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ApplicationPluginDisposeBlock" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ApplicationPlugin" />
     <property role="34LRSv" value="dispose" />
     <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="481983775135178851">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="qKmr2orM1z">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ApplicationPluginInitBlock" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ApplicationPlugin" />
     <property role="34LRSv" value="init" />
     <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="481983775135178856">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="qKmr2orM1C">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ProjectPluginType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ProjectPlugin" />
     <property role="34LRSv" value="project plugin&lt;&gt;" />
     <reference role="1TJDcQ" target="tp4f.1205752813637" resolve="BaseClassifierType" />
-    <node concept="1TJgyj" id="481983775135178858" role="1TKVEi">
+    <node concept="1TJgyj" id="qKmr2orM1E" role="1TKVEi">
       <property role="20kJfa" value="plugin" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="481983775135178834" resolve="ProjectPluginDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="681855071694758165">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="_QrTcSEy4l">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="GetToolInProjectOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Tool" />
     <property role="34LRSv" value="tool&lt;&lt;{tool}&gt;&gt;" />
     <reference role="1TJDcQ" target="tp4k.3339131993542057767" resolve="BaseProjectOperation" />
-    <node concept="1TJgyj" id="681855071694758166" role="1TKVEi">
+    <node concept="1TJgyj" id="_QrTcSEy4m" role="1TKVEi">
       <property role="20kJfa" value="tool" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tp4k.6547237850567458268" resolve="BaseToolDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="681855071694758168">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="_QrTcSEy4o">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="GetPreferencesComponentInProjectOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Preference" />
     <property role="34LRSv" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
     <reference role="1TJDcQ" target="tp4k.3339131993542057767" resolve="BaseProjectOperation" />
-    <node concept="1TJgyj" id="681855071694758169" role="1TKVEi">
+    <node concept="1TJgyj" id="_QrTcSEy4p" role="1TKVEi">
       <property role="20kJfa" value="componentDeclaration" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tp4k.1210179134063" resolve="PreferencesComponentDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7520713872864775836">
+  <node concept="1TIwiD" id="6xuWmJ1tgUs">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="StandalonePluginDescriptor" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />

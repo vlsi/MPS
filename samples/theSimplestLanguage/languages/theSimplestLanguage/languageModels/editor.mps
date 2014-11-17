@@ -30,57 +30,57 @@
       <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
-      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi!J">
+      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
     </language>
   </registry>
-  <node concept="24kQdi" id="1222954953898">
+  <node concept="24kQdi" id="hMXMUME">
     <reference role="1XX52x" target="jfvl.1222954937628" resolve="TheSimplestConcept" />
-    <node concept="3EZMnI" id="1222954956119" role="2wV5jI">
+    <node concept="3EZMnI" id="hMXMVln" role="2wV5jI">
       <property role="3EZMnw" value="true" />
-      <node concept="3EZMnI" id="1222954963357" role="3EZMnx">
+      <node concept="3EZMnI" id="hMXMX6t" role="3EZMnx">
         <property role="3EZMnw" value="false" />
-        <node concept="VPM3Z" id="1222954963358" role="3F10Kt">
+        <node concept="VPM3Z" id="hMXMX6u" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
-        <node concept="3F0ifn" id="1222954963359" role="3EZMnx">
+        <node concept="3F0ifn" id="hMXMX6v" role="3EZMnx">
           <property role="3F0ifm" value="the simplest concept instance" />
         </node>
-        <node concept="3F0A7n" id="1222954965284" role="3EZMnx">
+        <node concept="3F0A7n" id="hMXMX$$" role="3EZMnx">
           <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
         </node>
-        <node concept="VPM3Z" id="1222954963360" role="3F10Kt">
+        <node concept="VPM3Z" id="hMXMX6w" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
-        <node concept="2iRfu4" id="1239884183212" role="2iSdaV" />
+        <node concept="2iRfu4" id="i2IQNqG" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="1222954972334" role="3EZMnx">
-        <node concept="VPM3Z" id="1222954975788" role="3F10Kt" />
+      <node concept="3F0ifn" id="hMXMZiI" role="3EZMnx">
+        <node concept="VPM3Z" id="hMXN08G" role="3F10Kt" />
       </node>
-      <node concept="3EZMnI" id="1222954986672" role="3EZMnx">
+      <node concept="3EZMnI" id="hMXN2MK" role="3EZMnx">
         <property role="3EZMnw" value="false" />
-        <node concept="VPM3Z" id="1222954986673" role="3F10Kt">
+        <node concept="VPM3Z" id="hMXN2ML" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
-        <node concept="3F0ifn" id="1222954986674" role="3EZMnx">
+        <node concept="3F0ifn" id="hMXN2MM" role="3EZMnx">
           <property role="3F0ifm" value="text = " />
         </node>
-        <node concept="3F0A7n" id="1222954988615" role="3EZMnx">
+        <node concept="3F0A7n" id="hMXN3h7" role="3EZMnx">
           <reference role="1NtTu8" target="jfvl.1222954945083" resolve="text" />
         </node>
-        <node concept="VPM3Z" id="1222954986675" role="3F10Kt">
+        <node concept="VPM3Z" id="hMXN2MN" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
-        <node concept="2iRfu4" id="1239884183213" role="2iSdaV" />
+        <node concept="2iRfu4" id="i2IQNqH" role="2iSdaV" />
       </node>
-      <node concept="2iRkQZ" id="1239884183210" role="2iSdaV" />
+      <node concept="2iRkQZ" id="i2IQNqE" role="2iSdaV" />
     </node>
   </node>
 </model>

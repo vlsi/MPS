@@ -25,23 +25,23 @@
       <concept id="1195171011194" name="jetbrains.mps.transformation.test.inputLang.structure.InputNode_A" flags="ng" index="15J_HG" />
     </language>
   </registry>
-  <node concept="15_jI_" id="1202252822820">
+  <node concept="15_jI_" id="hvFQz$$">
     <property role="TrG5h" value="Input_root_1" />
     <property role="3FifNy" value="getPrevInputTest" />
-    <node concept="15J_HG" id="1202252885400" role="15EZgy">
+    <node concept="15J_HG" id="hvFQMQo" role="15EZgy">
       <property role="TrG5h" value="LEVEl 1 (1)" />
-      <node concept="15J_HG" id="1202255039141" role="3FV4tz">
+      <node concept="15J_HG" id="hvFZ0E_" role="3FV4tz">
         <property role="TrG5h" value="LEVEL 2 (1.1)" />
-        <node concept="15J_HG" id="1202255079285" role="3FV4tz">
+        <node concept="15J_HG" id="hvFZatP" role="3FV4tz">
           <property role="TrG5h" value="LEVEL 3 (1.1.1)" />
         </node>
       </node>
     </node>
-    <node concept="15J_HG" id="1202252892215" role="15EZgy">
+    <node concept="15J_HG" id="hvFQOwR" role="15EZgy">
       <property role="TrG5h" value="LEVEl 1 (2)" />
-      <node concept="15J_HG" id="1202255059189" role="3FV4tz">
+      <node concept="15J_HG" id="hvFZ5zP" role="3FV4tz">
         <property role="TrG5h" value="LEVEL 2 (2.1)" />
-        <node concept="15J_HG" id="1202255097756" role="3FV4tz">
+        <node concept="15J_HG" id="hvFZeYs" role="3FV4tz">
           <property role="TrG5h" value="LEVEL 3 (2.1.1)" />
         </node>
       </node>

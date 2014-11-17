@@ -20,7 +20,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -55,32 +55,32 @@
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
     </language>
   </registry>
-  <node concept="13h7C7" id="3175567003993184846">
+  <node concept="13h7C7" id="2KhSlQ1tLDe">
     <property role="3GE5qa" value="newBlocks" />
     <reference role="13h7C2" target="adck.2353136177974080669" resolve="BlockInstance" />
-    <node concept="13hLZK" id="3175567003993184998" role="13h7CW">
-      <node concept="3clFbS" id="3175567003993184999" role="2VODD2">
-        <node concept="3clFbF" id="3175567003993185080" role="3cqZAp">
-          <node concept="37vLTI" id="3175567003993188818" role="3clFbG">
-            <node concept="3cmrfG" id="3175567003993216208" role="37vLTx">
+    <node concept="13hLZK" id="2KhSlQ1tLFA" role="13h7CW">
+      <node concept="3clFbS" id="2KhSlQ1tLFB" role="2VODD2">
+        <node concept="3clFbF" id="2KhSlQ1tLGS" role="3cqZAp">
+          <node concept="37vLTI" id="2KhSlQ1tMBi" role="3clFbG">
+            <node concept="3cmrfG" id="2KhSlQ1tTjg" role="37vLTx">
               <property role="3cmrfH" value="40" />
             </node>
-            <node concept="2OqwBi" id="3175567003993185179" role="37vLTJ">
-              <node concept="13iPFW" id="3175567003993185078" role="2Oq!k0" />
-              <node concept="3TrcHB" id="3175567003993186325" role="2OqNvi">
+            <node concept="2OqwBi" id="2KhSlQ1tLIr" role="37vLTJ">
+              <node concept="13iPFW" id="2KhSlQ1tLGQ" role="2Oq$k0" />
+              <node concept="3TrcHB" id="2KhSlQ1tM0l" role="2OqNvi">
                 <reference role="3TsBF5" target="adck.3175567003993184638" resolve="width" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3175567003993189884" role="3cqZAp">
-          <node concept="37vLTI" id="3175567003993189885" role="3clFbG">
-            <node concept="3cmrfG" id="3175567003993217674" role="37vLTx">
+        <node concept="3clFbF" id="2KhSlQ1tMRW" role="3cqZAp">
+          <node concept="37vLTI" id="2KhSlQ1tMRX" role="3clFbG">
+            <node concept="3cmrfG" id="2KhSlQ1tTEa" role="37vLTx">
               <property role="3cmrfH" value="50" />
             </node>
-            <node concept="2OqwBi" id="3175567003993189887" role="37vLTJ">
-              <node concept="13iPFW" id="3175567003993189888" role="2Oq!k0" />
-              <node concept="3TrcHB" id="3175567003993191600" role="2OqNvi">
+            <node concept="2OqwBi" id="2KhSlQ1tMRZ" role="37vLTJ">
+              <node concept="13iPFW" id="2KhSlQ1tMS0" role="2Oq$k0" />
+              <node concept="3TrcHB" id="2KhSlQ1tNiK" role="2OqNvi">
                 <reference role="3TsBF5" target="adck.3175567003993184686" resolve="height" />
               </node>
             </node>

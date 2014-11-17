@@ -58,7 +58,7 @@
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" index="3F1sOY" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
@@ -70,46 +70,46 @@
       <concept id="4490468428501056077" name="jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel" flags="in" index="2XI2dN" />
     </language>
   </registry>
-  <node concept="24kQdi" id="1987251859606934921">
+  <node concept="24kQdi" id="1Ik8KAj6Lm9">
     <reference role="1XX52x" target="278c.1987251859606934913" resolve="DecisionTable" />
-    <node concept="3EZMnI" id="1987251859606934923" role="2wV5jI">
-      <node concept="3F1sOY" id="1987251859606934926" role="3EZMnx">
+    <node concept="3EZMnI" id="1Ik8KAj6Lmb" role="2wV5jI">
+      <node concept="3F1sOY" id="1Ik8KAj6Lme" role="3EZMnx">
         <reference role="1NtTu8" target="278c.1987251859606934914" />
       </node>
-      <node concept="3F0ifn" id="8238782355405136128" role="3EZMnx">
+      <node concept="3F0ifn" id="79m2eqVFu40" role="3EZMnx">
         <property role="3F0ifm" value="Default:" />
       </node>
-      <node concept="3F1sOY" id="1987251859606934928" role="3EZMnx">
+      <node concept="3F1sOY" id="1Ik8KAj6Lmg" role="3EZMnx">
         <reference role="1NtTu8" target="278c.1987251859606934915" />
       </node>
-      <node concept="1CiYdB" id="1987251859606934930" role="3EZMnx">
-        <node concept="2XI2dN" id="1987251859606934931" role="2XI0mt">
-          <node concept="3clFbS" id="1987251859606934932" role="2VODD2">
-            <node concept="3cpWs6" id="1987251859606942532" role="3cqZAp">
-              <node concept="2ShNRf" id="1987251859606942534" role="3cqZAk">
-                <node concept="1pGfFk" id="1987251859606942536" role="2ShVmc">
+      <node concept="1CiYdB" id="1Ik8KAj6Lmi" role="3EZMnx">
+        <node concept="2XI2dN" id="1Ik8KAj6Lmj" role="2XI0mt">
+          <node concept="3clFbS" id="1Ik8KAj6Lmk" role="2VODD2">
+            <node concept="3cpWs6" id="1Ik8KAj6Nd4" role="3cqZAp">
+              <node concept="2ShNRf" id="1Ik8KAj6Nd6" role="3cqZAk">
+                <node concept="1pGfFk" id="1Ik8KAj6Nd8" role="2ShVmc">
                   <reference role="37wK5l" target="squ6.941853673534992554" resolve="XYCTableModel" />
-                  <node concept="pncrf" id="1987251859606942537" role="37wK5m" />
-                  <node concept="28GBK8" id="1987251859606942539" role="37wK5m">
+                  <node concept="pncrf" id="1Ik8KAj6Nd9" role="37wK5m" />
+                  <node concept="28GBK8" id="1Ik8KAj6Ndb" role="37wK5m">
                     <reference role="28GBKb" target="278c.1987251859606934913" resolve="DecisionTable" />
                     <reference role="28H3Ia" target="278c.1987251859606934916" />
                   </node>
-                  <node concept="28GBK8" id="1987251859606942541" role="37wK5m">
+                  <node concept="28GBK8" id="1Ik8KAj6Ndd" role="37wK5m">
                     <reference role="28GBKb" target="278c.1987251859606934913" resolve="DecisionTable" />
                     <reference role="28H3Ia" target="278c.1987251859606934917" />
                   </node>
-                  <node concept="28GBK8" id="1987251859606942543" role="37wK5m">
+                  <node concept="28GBK8" id="1Ik8KAj6Ndf" role="37wK5m">
                     <reference role="28GBKb" target="278c.1987251859606934913" resolve="DecisionTable" />
                     <reference role="28H3Ia" target="278c.1987251859606934918" />
                   </node>
-                  <node concept="1Q80Hx" id="1987251859606942545" role="37wK5m" />
+                  <node concept="1Q80Hx" id="1Ik8KAj6Ndh" role="37wK5m" />
                 </node>
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="l2Vlx" id="1987251859606934925" role="2iSdaV" />
+      <node concept="l2Vlx" id="1Ik8KAj6Lmd" role="2iSdaV" />
     </node>
   </node>
 </model>

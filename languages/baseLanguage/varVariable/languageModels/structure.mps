@@ -16,8 +16,8 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -33,14 +33,14 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="1236693300889">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hZKEzqp">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="var definition" />
     <property role="TrG5h" value="VarVariableDeclaration" />
     <property role="34LRSv" value="var" />
     <reference role="1TJDcQ" target="tpee.1068581242863" resolve="LocalVariableDeclaration" />
-    <node concept="PrWs8" id="1236693493939" role="PzmwI">
+    <node concept="PrWs8" id="hZKFiyN" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>

@@ -15,7 +15,7 @@
     <language id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script">
       <concept id="1177457067821" name="jetbrains.mps.lang.script.structure.MigrationScript" flags="ig" index="_UgoZ">
         <property id="5299416737274925395" name="type" index="2BwPSy" />
-        <property id="5299416737274925397" name="toBuild" index="2BwPS!" />
+        <property id="5299416737274925397" name="toBuild" index="2BwPS$" />
         <property id="1177457669450" name="title" index="_Wzho" />
         <child id="1177458178889" name="part" index="_YvDr" />
       </concept>
@@ -66,27 +66,27 @@
       </concept>
     </language>
   </registry>
-  <node concept="_UgoZ" id="825821767789110605">
+  <node concept="_UgoZ" id="HPU8mWQIld">
     <property role="_Wzho" value="Fix plugin kind of solutions with MPS related test cases (editor/node tests)" />
     <property role="TrG5h" value="FixPluginKindForMPSTestCases" />
-    <property role="2BwPS!" value="MPS 3.0" />
+    <property role="2BwPS$" value="MPS 3.0" />
     <property role="2BwPSy" value="migration" />
-    <node concept="_XfAh" id="825821767789131668" role="_YvDr">
+    <node concept="_XfAh" id="HPU8mWQNuk" role="_YvDr">
       <property role="_XH9r" value="fix" />
       <reference role="_XDHR" target="tpe3.1216130694486" resolve="ITestCase" />
-      <node concept="_ZGcI" id="825821767789131669" role="_XPhp">
-        <node concept="3clFbS" id="825821767789131670" role="2VODD2">
-          <node concept="3clFbJ" id="825821767789192620" role="3cqZAp">
-            <node concept="3fqX7Q" id="825821767789192644" role="3clFbw">
-              <node concept="2YIFZM" id="825821767789192565" role="3fr31v">
+      <node concept="_ZGcI" id="HPU8mWQNul" role="_XPhp">
+        <node concept="3clFbS" id="HPU8mWQNum" role="2VODD2">
+          <node concept="3clFbJ" id="HPU8mWR2mG" role="3cqZAp">
+            <node concept="3fqX7Q" id="HPU8mWR2n4" role="3clFbw">
+              <node concept="2YIFZM" id="HPU8mWR2lP" role="3fr31v">
                 <reference role="37wK5l" target="pb7l.825821767789047256" resolve="fixPluginKindForMPSTestCase" />
                 <reference role="1Pybhc" target="pb7l.8797237962361650880" resolve="CheckUtils" />
-                <node concept="_YI3z" id="825821767789192585" role="37wK5m" />
+                <node concept="_YI3z" id="HPU8mWR2m9" role="37wK5m" />
               </node>
             </node>
-            <node concept="3clFbS" id="825821767789192622" role="3clFbx">
-              <node concept="3SKdUt" id="825821767789192750" role="3cqZAp">
-                <node concept="3SKdUq" id="825821767789192753" role="3SKWNk">
+            <node concept="3clFbS" id="HPU8mWR2mI" role="3clFbx">
+              <node concept="3SKdUt" id="HPU8mWR2oI" role="3cqZAp">
+                <node concept="3SKdUq" id="HPU8mWR2oL" role="3SKWNk">
                   <property role="3SKdUp" value="todo: ?" />
                 </node>
               </node>
@@ -94,14 +94,14 @@
           </node>
         </node>
       </node>
-      <node concept="_Y34e" id="825821767789135608" role="_XDHO">
-        <node concept="3clFbS" id="825821767789135609" role="2VODD2">
-          <node concept="3clFbF" id="825821767789141847" role="3cqZAp">
-            <node concept="3fqX7Q" id="825821767789188940" role="3clFbG">
-              <node concept="2YIFZM" id="825821767789191315" role="3fr31v">
+      <node concept="_Y34e" id="HPU8mWQOrS" role="_XDHO">
+        <node concept="3clFbS" id="HPU8mWQOrT" role="2VODD2">
+          <node concept="3clFbF" id="HPU8mWQPXn" role="3cqZAp">
+            <node concept="3fqX7Q" id="HPU8mWR1tc" role="3clFbG">
+              <node concept="2YIFZM" id="HPU8mWR22j" role="3fr31v">
                 <reference role="37wK5l" target="pb7l.8797237962361664470" resolve="checkPluginKindForMPSTestCase" />
                 <reference role="1Pybhc" target="pb7l.8797237962361650880" resolve="CheckUtils" />
-                <node concept="_YI3z" id="825821767789192507" role="37wK5m" />
+                <node concept="_YI3z" id="HPU8mWR2kV" role="37wK5m" />
               </node>
             </node>
           </node>

@@ -15,12 +15,12 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
-        <child id="1169127546356" name="extends" index="PrDN!" />
+        <child id="1169127546356" name="extends" index="PrDN$" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -42,45 +42,45 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="8077936094962850237">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="70qA1hy$hAX">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="CompositeWithParentScopeExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="composite with" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="8077936094962969171" role="1TKVEi">
+    <node concept="1TJgyj" id="70qA1hy$IDj" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expr" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="8077936094962911282">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="70qA1hy$wwM">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ParentScope" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="parent scope" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
   </node>
-  <node concept="1TIwiD" id="8077936094962944991">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="70qA1hy$CJv">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ComeFromExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="come from" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="8077936094962945822" role="1TKVEi">
+    <node concept="1TJgyj" id="70qA1hy$CWu" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="link" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpce.1071489288298" resolve="LinkDeclaration" />
     </node>
   </node>
-  <node concept="PlHQZ" id="2995585510566823808">
+  <node concept="PlHQZ" id="2AitiqbD8u0">
     <property role="TrG5h" value="UniformScopeProvider" />
-    <node concept="PrWs8" id="2995585510566823812" role="PrDN!">
+    <node concept="PrWs8" id="2AitiqbD8u4" role="PrDN$">
       <reference role="PrY4T" target="tpck.3734116213129792499" resolve="ScopeProvider" />
     </node>
   </node>

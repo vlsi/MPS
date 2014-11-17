@@ -13,8 +13,8 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
@@ -35,20 +35,20 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="1185806650601">
+  <node concept="1TIwiD" id="hgn_oND">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="AConcept" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="1185806674055" role="1TKVEi">
+    <node concept="1TJgyj" id="hgn_uy7" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1185959958415">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hgwIduf">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="BConcept" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="BCONCEPT" />

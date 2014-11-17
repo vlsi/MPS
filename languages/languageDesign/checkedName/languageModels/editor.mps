@@ -20,10 +20,10 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="1215007762405" name="jetbrains.mps.lang.editor.structure.FloatStyleClassItem" flags="ln" index="3!6MrZ">
-        <property id="1215007802031" name="value" index="3!6WeP" />
+      <concept id="1215007762405" name="jetbrains.mps.lang.editor.structure.FloatStyleClassItem" flags="ln" index="3$6MrZ">
+        <property id="1215007802031" name="value" index="3$6WeP" />
       </concept>
-      <concept id="1215007897487" name="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" flags="ln" index="3!7jql" />
+      <concept id="1215007897487" name="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" flags="ln" index="3$7jql" />
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" index="3EZMnI">
         <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
@@ -49,8 +49,8 @@
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
-        <property id="1139852716018" name="noTargetText" index="1!x2rV" />
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
+        <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
@@ -61,62 +61,62 @@
       </concept>
     </language>
   </registry>
-  <node concept="24kQdi" id="4844813484172611392">
+  <node concept="24kQdi" id="4cWf37B8oX0">
     <property role="3GE5qa" value="CheckedName" />
     <reference role="1XX52x" target="4j10.4844813484172611385" resolve="PropertyRefExpression" />
-    <node concept="3EZMnI" id="4844813484172611393" role="2wV5jI">
+    <node concept="3EZMnI" id="4cWf37B8oX1" role="2wV5jI">
       <property role="3EZMnw" value="false" />
-      <node concept="3F0ifn" id="4844813484172611394" role="3EZMnx">
+      <node concept="3F0ifn" id="4cWf37B8oX2" role="3EZMnx">
         <property role="3F0ifm" value="property" />
         <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
-        <node concept="3!7jql" id="4844813484172611395" role="3F10Kt">
-          <property role="3!6WeP" value="0.0" />
+        <node concept="3$7jql" id="4cWf37B8oX3" role="3F10Kt">
+          <property role="3$6WeP" value="0.0" />
         </node>
       </node>
-      <node concept="3F0ifn" id="4844813484172611396" role="3EZMnx">
+      <node concept="3F0ifn" id="4cWf37B8oX4" role="3EZMnx">
         <property role="3F0ifm" value="/" />
         <reference role="1k5W1q" target="tpen.1234958090348" resolve="LeftParenAfterName" />
       </node>
-      <node concept="3F1sOY" id="4844813484172611397" role="3EZMnx">
+      <node concept="3F1sOY" id="4cWf37B8oX5" role="3EZMnx">
         <reference role="1NtTu8" target="4j10.4844813484172611386" />
       </node>
-      <node concept="3F0ifn" id="4844813484172611398" role="3EZMnx">
+      <node concept="3F0ifn" id="4cWf37B8oX6" role="3EZMnx">
         <property role="3F0ifm" value="|" />
-        <node concept="VechU" id="4844813484172611399" role="3F10Kt">
+        <node concept="VechU" id="4cWf37B8oX7" role="3F10Kt">
           <property role="Vb096" value="DARK_MAGENTA" />
         </node>
-        <node concept="3!7jql" id="4844813484172611400" role="3F10Kt">
-          <property role="3!6WeP" value="0.0" />
+        <node concept="3$7jql" id="4cWf37B8oX8" role="3F10Kt">
+          <property role="3$6WeP" value="0.0" />
         </node>
       </node>
-      <node concept="1iCGBv" id="4844813484172611401" role="3EZMnx">
-        <property role="1!x2rV" value="link" />
+      <node concept="1iCGBv" id="4cWf37B8oX9" role="3EZMnx">
+        <property role="1$x2rV" value="link" />
         <reference role="1NtTu8" target="4j10.4844813484172611387" />
-        <node concept="1sVBvm" id="4844813484172611402" role="1sWHZn">
-          <node concept="3F0A7n" id="4844813484172611403" role="2wV5jI">
+        <node concept="1sVBvm" id="4cWf37B8oXa" role="1sWHZn">
+          <node concept="3F0A7n" id="4cWf37B8oXb" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <reference role="1k5W1q" target="tpd3.1221170124867" resolve="ReferenceOnConceptualFeature" />
             <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
-            <node concept="3!7jql" id="4844813484172611404" role="3F10Kt">
-              <property role="3!6WeP" value="0.0" />
+            <node concept="3$7jql" id="4cWf37B8oXc" role="3F10Kt">
+              <property role="3$6WeP" value="0.0" />
             </node>
           </node>
         </node>
-        <node concept="3!7jql" id="4844813484172611405" role="3F10Kt">
-          <property role="3!6WeP" value="0.0" />
+        <node concept="3$7jql" id="4cWf37B8oXd" role="3F10Kt">
+          <property role="3$6WeP" value="0.0" />
         </node>
       </node>
-      <node concept="3F0ifn" id="4844813484172611406" role="3EZMnx">
+      <node concept="3F0ifn" id="4cWf37B8oXe" role="3EZMnx">
         <property role="3F0ifm" value="/" />
         <reference role="1k5W1q" target="tpen.1215088010675" resolve="RightParen" />
       </node>
-      <node concept="l2Vlx" id="4844813484172611407" role="2iSdaV" />
+      <node concept="l2Vlx" id="4cWf37B8oXf" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="4844813484172611408">
+  <node concept="24kQdi" id="4cWf37B8oXg">
     <property role="3GE5qa" value="CheckedName" />
     <reference role="1XX52x" target="4j10.4844813484172611390" resolve="PropertyRefType" />
-    <node concept="3F0ifn" id="4844813484172611409" role="2wV5jI">
+    <node concept="3F0ifn" id="4cWf37B8oXh" role="2wV5jI">
       <property role="3F0ifm" value="propRef" />
     </node>
   </node>

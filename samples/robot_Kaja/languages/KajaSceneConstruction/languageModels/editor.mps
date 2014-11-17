@@ -38,7 +38,7 @@
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
@@ -49,79 +49,79 @@
       </concept>
     </language>
   </registry>
-  <node concept="24kQdi" id="3210697320273550868">
+  <node concept="24kQdi" id="2MeG3eCd1Sk">
     <reference role="1XX52x" target="rvtb.3210697320273550864" resolve="BuildWall" />
-    <node concept="3EZMnI" id="3210697320273550870" role="2wV5jI">
-      <node concept="PMmxH" id="3177886886427958438" role="3EZMnx">
+    <node concept="3EZMnI" id="2MeG3eCd1Sm" role="2wV5jI">
+      <node concept="PMmxH" id="2Kq7O$TUhMA" role="3EZMnx">
         <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
         <reference role="1k5W1q" target="e118.7446293342517118458" resolve="Command" />
       </node>
-      <node concept="PMmxH" id="3210697320273870303" role="3EZMnx">
+      <node concept="PMmxH" id="2MeG3eCefRv" role="3EZMnx">
         <reference role="PMmxG" target="3210697320273608259" resolve="Position" />
       </node>
-      <node concept="l2Vlx" id="3210697320273550872" role="2iSdaV" />
+      <node concept="l2Vlx" id="2MeG3eCd1So" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="3210697320273607257">
+  <node concept="24kQdi" id="2MeG3eCdfDp">
     <reference role="1XX52x" target="rvtb.3210697320273607253" resolve="DestroyWall" />
-    <node concept="3EZMnI" id="3210697320273607259" role="2wV5jI">
-      <node concept="PMmxH" id="3177886886427958459" role="3EZMnx">
+    <node concept="3EZMnI" id="2MeG3eCdfDr" role="2wV5jI">
+      <node concept="PMmxH" id="2Kq7O$TUhMV" role="3EZMnx">
         <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
         <reference role="1k5W1q" target="e118.7446293342517118458" resolve="Command" />
       </node>
-      <node concept="PMmxH" id="3210697320273611252" role="3EZMnx">
+      <node concept="PMmxH" id="2MeG3eCdgBO" role="3EZMnx">
         <reference role="PMmxG" target="3210697320273608259" resolve="Position" />
       </node>
-      <node concept="l2Vlx" id="3210697320273607261" role="2iSdaV" />
+      <node concept="l2Vlx" id="2MeG3eCdfDt" role="2iSdaV" />
     </node>
   </node>
-  <node concept="PKFIW" id="3210697320273608259">
+  <node concept="PKFIW" id="2MeG3eCdfT3">
     <property role="TrG5h" value="Position" />
     <reference role="1XX52x" target="rvtb.3210697320273608255" resolve="AbstractBuilderCommand" />
-    <node concept="3EZMnI" id="3210697320273608261" role="2wV5jI">
-      <node concept="3F0ifn" id="3210697320273608264" role="3EZMnx">
+    <node concept="3EZMnI" id="2MeG3eCdfT5" role="2wV5jI">
+      <node concept="3F0ifn" id="2MeG3eCdfT8" role="3EZMnx">
         <property role="3F0ifm" value="at" />
         <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
       </node>
-      <node concept="3F0ifn" id="3210697320273608269" role="3EZMnx">
+      <node concept="3F0ifn" id="2MeG3eCdfTd" role="3EZMnx">
         <property role="3F0ifm" value="row:" />
       </node>
-      <node concept="3F0A7n" id="3210697320273608271" role="3EZMnx">
+      <node concept="3F0A7n" id="2MeG3eCdfTf" role="3EZMnx">
         <reference role="1NtTu8" target="rvtb.3210697320273608256" resolve="row" />
       </node>
-      <node concept="3F0ifn" id="3210697320273608273" role="3EZMnx">
+      <node concept="3F0ifn" id="2MeG3eCdfTh" role="3EZMnx">
         <property role="3F0ifm" value="col:" />
       </node>
-      <node concept="3F0A7n" id="3210697320273608275" role="3EZMnx">
+      <node concept="3F0A7n" id="2MeG3eCdfTj" role="3EZMnx">
         <reference role="1NtTu8" target="rvtb.3210697320273608257" resolve="col" />
       </node>
-      <node concept="2iRfu4" id="3210697320273608263" role="2iSdaV" />
+      <node concept="2iRfu4" id="2MeG3eCdfT7" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="3210697320273608277">
+  <node concept="24kQdi" id="2MeG3eCdfTl">
     <reference role="1XX52x" target="rvtb.3210697320273608254" resolve="DropMark" />
-    <node concept="3EZMnI" id="3210697320273608279" role="2wV5jI">
-      <node concept="PMmxH" id="3177886886427958465" role="3EZMnx">
+    <node concept="3EZMnI" id="2MeG3eCdfTn" role="2wV5jI">
+      <node concept="PMmxH" id="2Kq7O$TUhN1" role="3EZMnx">
         <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
         <reference role="1k5W1q" target="e118.7446293342517118458" resolve="Command" />
       </node>
-      <node concept="PMmxH" id="3210697320273609888" role="3EZMnx">
+      <node concept="PMmxH" id="2MeG3eCdgiw" role="3EZMnx">
         <reference role="PMmxG" target="3210697320273608259" resolve="Position" />
       </node>
-      <node concept="l2Vlx" id="3210697320273608281" role="2iSdaV" />
+      <node concept="l2Vlx" id="2MeG3eCdfTp" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="3210697320273614433">
+  <node concept="24kQdi" id="2MeG3eCdhpx">
     <reference role="1XX52x" target="rvtb.3210697320273614431" resolve="PickMark" />
-    <node concept="3EZMnI" id="3210697320273614435" role="2wV5jI">
-      <node concept="PMmxH" id="3177886886427958471" role="3EZMnx">
+    <node concept="3EZMnI" id="2MeG3eCdhpz" role="2wV5jI">
+      <node concept="PMmxH" id="2Kq7O$TUhN7" role="3EZMnx">
         <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
         <reference role="1k5W1q" target="e118.7446293342517118458" resolve="Command" />
       </node>
-      <node concept="PMmxH" id="3210697320273614440" role="3EZMnx">
+      <node concept="PMmxH" id="2MeG3eCdhpC" role="3EZMnx">
         <reference role="PMmxG" target="3210697320273608259" resolve="Position" />
       </node>
-      <node concept="l2Vlx" id="3210697320273614437" role="2iSdaV" />
+      <node concept="l2Vlx" id="2MeG3eCdhp_" role="2iSdaV" />
     </node>
   </node>
 </model>

@@ -31,7 +31,7 @@
       </concept>
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
@@ -63,31 +63,31 @@
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
     </language>
   </registry>
-  <node concept="13h7C7" id="3191472212106638383">
+  <node concept="13h7C7" id="2LaoL5p9ngJ">
     <reference role="13h7C2" target="tpo2.1197246912613" resolve="StateMachineTest" />
-    <node concept="13i0hz" id="1197251245696" role="13h7CS">
+    <node concept="13i0hz" id="hr1J3q0" role="13h7CS">
       <property role="TrG5h" value="getStateMachineName" />
       <property role="13i0is" value="false" />
-      <node concept="17QB3L" id="8227296800200424294" role="3clF45" />
-      <node concept="3clFbS" id="1197251245698" role="3clF47">
-        <node concept="3clFbF" id="1197251292013" role="3cqZAp">
-          <node concept="2OqwBi" id="1217625358599" role="3clFbG">
-            <node concept="2OqwBi" id="1217625373486" role="2Oq!k0">
-              <node concept="13iPFW" id="1197251292014" role="2Oq!k0" />
-              <node concept="3TrEf2" id="1197251294815" role="2OqNvi">
+      <node concept="17QB3L" id="78HeHA5DRHA" role="3clF45" />
+      <node concept="3clFbS" id="hr1J3q2" role="3clF47">
+        <node concept="3clFbF" id="hr1JeHH" role="3cqZAp">
+          <node concept="2OqwBi" id="hI08847" role="3clFbG">
+            <node concept="2OqwBi" id="hI08bGI" role="2Oq$k0">
+              <node concept="13iPFW" id="hr1JeHI" role="2Oq$k0" />
+              <node concept="3TrEf2" id="hr1Jfpv" role="2OqNvi">
                 <reference role="3Tt5mk" target="tpo2.1197247793411" />
               </node>
             </node>
-            <node concept="3TrcHB" id="1197251298381" role="2OqNvi">
+            <node concept="3TrcHB" id="hr1Jghd" role="2OqNvi">
               <reference role="3TsBF5" target="tpo2.1197166557152" resolve="stateMachineName" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="1219155724110" role="1B3o_S" />
+      <node concept="3Tm1VV" id="hJrm0te" role="1B3o_S" />
     </node>
-    <node concept="13hLZK" id="3191472212106638384" role="13h7CW">
-      <node concept="3clFbS" id="3191472212106638385" role="2VODD2" />
+    <node concept="13hLZK" id="2LaoL5p9ngK" role="13h7CW">
+      <node concept="3clFbS" id="2LaoL5p9ngL" role="2VODD2" />
     </node>
   </node>
 </model>

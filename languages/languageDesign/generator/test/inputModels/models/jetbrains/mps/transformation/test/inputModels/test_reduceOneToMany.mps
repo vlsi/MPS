@@ -22,10 +22,10 @@
       <concept id="1195171011194" name="jetbrains.mps.transformation.test.inputLang.structure.InputNode_A" flags="ng" index="15J_HG" />
     </language>
   </registry>
-  <node concept="15_jI_" id="341670684286865619">
+  <node concept="15_jI_" id="iXQUPn5l3j">
     <property role="TrG5h" value="Input_root_1" />
     <property role="3FifNy" value="reduceOneToMany" />
-    <node concept="15J_HG" id="341670684286865621" role="15EZgy">
+    <node concept="15J_HG" id="iXQUPn5l3l" role="15EZgy">
       <property role="TrG5h" value="reduce this to many" />
     </node>
   </node>

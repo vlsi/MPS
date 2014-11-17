@@ -37,7 +37,7 @@
         <child id="5164819300892346417" name="addMenu_wrapperSubstitute" index="1Dq1vV" />
         <child id="2534942168331159850" name="addMenu_simpleItemSubstitute" index="2eD6li" />
         <child id="3286607483605022921" name="addMenu_parameterizedSubstitute" index="3PXDzu" />
-        <child id="2870536390414919847" name="addMenu_wrapperSubstituteDefaultSelection" index="1ell!4" />
+        <child id="2870536390414919847" name="addMenu_wrapperSubstituteDefaultSelection" index="1ell$4" />
       </concept>
       <concept id="2550657305103442169" name="jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1" flags="ng" index="P5Y6R">
         <child id="9187447745748951875" name="child1" index="1il3Lf" />
@@ -93,7 +93,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
@@ -113,11 +113,11 @@
       </concept>
     </language>
   </registry>
-  <node concept="LiM7Y" id="2550657305103524282">
+  <node concept="LiM7Y" id="2d_KkSmsQ6U">
     <property role="3YCmrE" value="All default substitutions should be removed from substitute menu for ActionTestAbstractChild concept instance" />
     <property role="TrG5h" value="DontSubstiuteByDefault" />
-    <node concept="P5awx" id="2550657305103547991" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755917295" role="lGtFl">
+    <node concept="P5awx" id="2d_KkSmsVTn" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyHgnJ" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -125,77 +125,77 @@
         <property role="LIFWd" value="empty_abstractChild" />
       </node>
     </node>
-    <node concept="P5awx" id="2550657305103548219" role="LiZbd" />
-    <node concept="3clFbS" id="2550657305103568266" role="LjaKd">
-      <node concept="yd1bK" id="2550657305103844989" role="3cqZAp">
-        <node concept="pLAjd" id="2550657305103844990" role="yd6KS">
+    <node concept="P5awx" id="2d_KkSmsVWV" role="LiZbd" />
+    <node concept="3clFbS" id="2d_KkSmt0Qa" role="LjaKd">
+      <node concept="yd1bK" id="2d_KkSmu4pX" role="3cqZAp">
+        <node concept="pLAjd" id="2d_KkSmu4pY" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="2550657305104001899" role="3cqZAp">
-        <node concept="2OqwBi" id="2550657305103997363" role="3vwVQn">
-          <node concept="liA8E" id="2550657305103999384" role="2OqNvi">
+      <node concept="3vwNmj" id="2d_KkSmuEHF" role="3cqZAp">
+        <node concept="2OqwBi" id="2d_KkSmuDAN" role="3vwVQn">
+          <node concept="liA8E" id="2d_KkSmuE6o" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="2550657305103985955" role="2Oq!k0">
-            <node concept="liA8E" id="2550657305103997135" role="2OqNvi">
+          <node concept="2OqwBi" id="2d_KkSmuAOz" role="2Oq$k0">
+            <node concept="liA8E" id="2d_KkSmuDzf" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="2550657305103982417" role="2Oq!k0" />
+            <node concept="369mXd" id="2d_KkSmu_Xh" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="6866660893594420694" role="3cqZAp">
-        <node concept="2OqwBi" id="2550657305104011511" role="3vwVQn">
-          <node concept="liA8E" id="6866660893594420201" role="2OqNvi">
+      <node concept="3vwNmj" id="5XbhVerKKnm" role="3cqZAp">
+        <node concept="2OqwBi" id="2d_KkSmuH3R" role="3vwVQn">
+          <node concept="liA8E" id="5XbhVerKKfD" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="2550657305104006090" role="2Oq!k0">
-            <node concept="liA8E" id="2550657305104011320" role="2OqNvi">
+          <node concept="2OqwBi" id="2d_KkSmuFJa" role="2Oq$k0">
+            <node concept="liA8E" id="2d_KkSmuH0S" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="2550657305104003884" role="2Oq!k0" />
+            <node concept="369mXd" id="2d_KkSmuFcG" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="6866660893594421553" role="3cqZAp">
-        <node concept="2OqwBi" id="6866660893594470549" role="3clFbG">
-          <node concept="liA8E" id="6866660893594472224" role="2OqNvi">
+      <node concept="3clFbF" id="5XbhVerKK$L" role="3cqZAp">
+        <node concept="2OqwBi" id="5XbhVerKWyl" role="3clFbG">
+          <node concept="liA8E" id="5XbhVerKWWw" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="6866660893594472322" role="37wK5m">
+            <node concept="3clFbT" id="5XbhVerKWY2" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="6866660893594458131" role="2Oq!k0">
-            <node concept="liA8E" id="6866660893594470349" role="2OqNvi">
+          <node concept="2OqwBi" id="5XbhVerKTwj" role="2Oq$k0">
+            <node concept="liA8E" id="5XbhVerKWvd" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="6866660893594421703" role="2Oq!k0" />
+            <node concept="369mXd" id="5XbhVerKKB7" role="2Oq$k0" />
           </node>
         </node>
       </node>
     </node>
   </node>
-  <node concept="2XOHcx" id="2550657305103528938">
+  <node concept="2XOHcx" id="2d_KkSmsRfE">
     <property role="2XOHcw" value="${mps_home}" />
   </node>
-  <node concept="LiM7Y" id="6866660893594595018">
+  <node concept="LiM7Y" id="5XbhVerLqVa">
     <property role="3YCmrE" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild1 concept specified in corresponsing &quot;add concept&quot; substitute menu part" />
     <property role="TrG5h" value="ConceptSubstitutePart" />
-    <node concept="3clFbS" id="3213804652571125192" role="LjaKd">
-      <node concept="2TK7Tu" id="3213804652571125191" role="3cqZAp">
+    <node concept="3clFbS" id="2MpI$RlZYn8" role="LjaKd">
+      <node concept="2TK7Tu" id="2MpI$RlZYn7" role="3cqZAp">
         <property role="2TTd_B" value="chil" />
       </node>
-      <node concept="yd1bK" id="3213804652571125198" role="3cqZAp">
-        <node concept="pLAjd" id="3213804652571125200" role="yd6KS">
+      <node concept="yd1bK" id="2MpI$RlZYne" role="3cqZAp">
+        <node concept="pLAjd" id="2MpI$RlZYng" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
     </node>
-    <node concept="P5awx" id="3213804652589456691" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755916939" role="lGtFl">
+    <node concept="P5awx" id="2MpI$Rn5TON" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyHgib" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -203,9 +203,9 @@
         <property role="LIFWd" value="empty_conceptSubstitutePart" />
       </node>
     </node>
-    <node concept="P5awx" id="3213804652589456739" role="LiZbd">
-      <node concept="P5Y6R" id="3213804652591652729" role="P5Y28">
-        <node concept="LIFWc" id="3213804652591652732" role="lGtFl">
+    <node concept="P5awx" id="2MpI$Rn5TPz" role="LiZbd">
+      <node concept="P5Y6R" id="2MpI$RnehXT" role="P5Y28">
+        <node concept="LIFWc" id="2MpI$RnehXW" role="lGtFl">
           <property role="p6zMs" value="0" />
           <property role="LIFWd" value="property_name" />
           <property role="p6zMq" value="0" />
@@ -215,20 +215,20 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3213804652589013780">
+  <node concept="LiM7Y" id="2MpI$Rn4dGk">
     <property role="3YCmrE" value="Substituting ActionTestChild1 concept instance with ActionTestChild1SubConcept concept specified in corresponsing &quot;concepts menu&quot; item of custom add menu part" />
     <property role="TrG5h" value="AddMenuPart_ConceptSubstitute" />
-    <node concept="P5awx" id="3213804652589599685" role="LiRBU">
-      <node concept="P5Y6R" id="3213804652592951665" role="3VwsLG">
-        <node concept="LIFWc" id="3213804652592951667" role="lGtFl">
+    <node concept="P5awx" id="2MpI$Rn6sJ5" role="LiRBU">
+      <node concept="P5Y6R" id="2MpI$Rnjf5L" role="3VwsLG">
+        <node concept="LIFWc" id="2MpI$Rnjf5N" role="lGtFl">
           <property role="LIFWd" value="Collection_ynwskn_a" />
           <property role="LIFWa" value="0" />
         </node>
       </node>
     </node>
-    <node concept="P5awx" id="3213804652589599692" role="LiZbd">
-      <node concept="3TpDXY" id="3213804652592951671" role="3VwsLG">
-        <node concept="LIFWc" id="3213804652592951674" role="lGtFl">
+    <node concept="P5awx" id="2MpI$Rn6sJc" role="LiZbd">
+      <node concept="3TpDXY" id="2MpI$Rnjf5R" role="3VwsLG">
+        <node concept="LIFWc" id="2MpI$Rnjf5U" role="lGtFl">
           <property role="p6zMs" value="0" />
           <property role="LIFWd" value="property_name" />
           <property role="p6zMq" value="0" />
@@ -237,26 +237,26 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="3213804652589599697" role="LjaKd">
-      <node concept="yd1bK" id="3213804652589599703" role="3cqZAp">
-        <node concept="pLAjd" id="3213804652589599705" role="yd6KS">
+    <node concept="3clFbS" id="2MpI$Rn6sJh" role="LjaKd">
+      <node concept="yd1bK" id="2MpI$Rn6sJn" role="3cqZAp">
+        <node concept="pLAjd" id="2MpI$Rn6sJp" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="yd1bK" id="3213804652592951689" role="3cqZAp">
-        <node concept="pLAjd" id="3213804652592951691" role="yd6KS">
+      <node concept="yd1bK" id="2MpI$Rnjf69" role="3cqZAp">
+        <node concept="pLAjd" id="2MpI$Rnjf6b" role="yd6KS">
           <property role="pLAjf" value="VK_ENTER" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3213804652590377019">
+  <node concept="LiM7Y" id="2MpI$Rn9qwV">
     <property role="3YCmrE" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild1 concept specified in corresponsing &quot;generic query&quot; item of custom add menu part" />
     <property role="TrG5h" value="AddMenuPart_GenericQuery" />
-    <node concept="P5awx" id="3213804652593639396" role="LiZbd">
-      <node concept="P5Y6R" id="441141899446191026" role="3VESvQ" />
-      <node concept="LIFWc" id="441141899446191028" role="lGtFl">
+    <node concept="P5awx" id="2MpI$RnlQZ$" role="LiZbd">
+      <node concept="P5Y6R" id="ovg3x$20eM" role="3VESvQ" />
+      <node concept="LIFWc" id="ovg3x$20eO" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -264,8 +264,8 @@
         <property role="LIFWd" value="property_name" />
       </node>
     </node>
-    <node concept="P5awx" id="3213804652591558449" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755814231" role="lGtFl">
+    <node concept="P5awx" id="2MpI$RndUWL" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyGRdn" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -273,23 +273,23 @@
         <property role="LIFWd" value="empty_addMenu_genericQuery" />
       </node>
     </node>
-    <node concept="3clFbS" id="3213804652593639404" role="LjaKd">
-      <node concept="2TK7Tu" id="3213804652593639403" role="3cqZAp">
+    <node concept="3clFbS" id="2MpI$RnlQZG" role="LjaKd">
+      <node concept="2TK7Tu" id="2MpI$RnlQZF" role="3cqZAp">
         <property role="2TTd_B" value="chil" />
       </node>
-      <node concept="yd1bK" id="3213804652593639410" role="3cqZAp">
-        <node concept="pLAjd" id="3213804652593639412" role="yd6KS">
+      <node concept="yd1bK" id="2MpI$RnlQZM" role="3cqZAp">
+        <node concept="pLAjd" id="2MpI$RnlQZO" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3286607483605154581">
+  <node concept="LiM7Y" id="2Qso1vorfGl">
     <property role="3YCmrE" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild2 concept specified in corresponsing &quot;parameterized item&quot; item of custom add menu part" />
     <property role="TrG5h" value="AddMenuPart_ParameterizedSubstitute" />
-    <node concept="P5awx" id="3286607483605166060" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755814269" role="lGtFl">
+    <node concept="P5awx" id="2Qso1vorivG" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyGRdX" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -297,9 +297,9 @@
         <property role="LIFWd" value="empty_addMenu_parameterizedSubstitute" />
       </node>
     </node>
-    <node concept="P5awx" id="3286607483605909808" role="LiZbd">
-      <node concept="P5Yc3" id="8227139554962525337" role="3PXDzu">
-        <node concept="LIFWc" id="8227139554962525345" role="lGtFl">
+    <node concept="P5awx" id="2Qso1vou84K" role="LiZbd">
+      <node concept="P5Yc3" id="78GEXo36OMp" role="3PXDzu">
+        <node concept="LIFWc" id="78GEXo36OMx" role="lGtFl">
           <property role="LIFWa" value="3" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="3" />
@@ -308,17 +308,17 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="3286607483605917229" role="LjaKd">
-      <node concept="2TK7Tu" id="3286607483605960932" role="3cqZAp">
+    <node concept="3clFbS" id="2Qso1vou9SH" role="LjaKd">
+      <node concept="2TK7Tu" id="2Qso1voukz$" role="3cqZAp">
         <property role="2TTd_B" value="ActionTestChild2" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="2534942168317963684">
+  <node concept="LiM7Y" id="2cHV7yGK2Q$">
     <property role="TrG5h" value="AddMenuPart_ParameterizedSubstitute_smartComplete" />
     <property role="3YCmrE" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild1 concept specified in corresponsing &quot;parameterized item&quot; item of custom add menu part using smart complete" />
-    <node concept="P5awx" id="2534942168317963978" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755916463" role="lGtFl">
+    <node concept="P5awx" id="2cHV7yGK2Va" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyHgaJ" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -326,10 +326,10 @@
         <property role="LIFWd" value="empty_addMenu_parameterizedSubstitute" />
       </node>
     </node>
-    <node concept="P5awx" id="2534942168317964289" role="LiZbd">
-      <node concept="P5Y6R" id="8227139554962697718" role="3PXDzu">
-        <node concept="1il0h2" id="8227139554962697719" role="1il3Lf">
-          <node concept="LIFWc" id="8227139554962697728" role="lGtFl">
+    <node concept="P5awx" id="2cHV7yGK301" role="LiZbd">
+      <node concept="P5Y6R" id="78GEXo37uRQ" role="3PXDzu">
+        <node concept="1il0h2" id="78GEXo37uRR" role="1il3Lf">
+          <node concept="LIFWc" id="78GEXo37uS0" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="0" />
@@ -339,58 +339,58 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="2534942168317967779" role="LjaKd">
-      <node concept="2TK7Tu" id="2534942168317967778" role="3cqZAp">
+    <node concept="3clFbS" id="2cHV7yGK3Qz" role="LjaKd">
+      <node concept="2TK7Tu" id="2cHV7yGK3Qy" role="3cqZAp">
         <property role="2TTd_B" value="ActionTestChild1" />
       </node>
-      <node concept="yd1bK" id="2534942168317967846" role="3cqZAp">
-        <node concept="pLAjd" id="2534942168317967848" role="yd6KS">
+      <node concept="yd1bK" id="2cHV7yGK3RA" role="3cqZAp">
+        <node concept="pLAjd" id="2cHV7yGK3RC" role="yd6KS">
           <property role="pLAjc" value="ctrl" />
           <property role="pLAjf" value="VK_SPACE" />
         </node>
       </node>
-      <node concept="3vwNmj" id="2534942168318029728" role="3cqZAp">
-        <node concept="2OqwBi" id="2534942168318029729" role="3vwVQn">
-          <node concept="liA8E" id="2534942168318029730" role="2OqNvi">
+      <node concept="3vwNmj" id="2cHV7yGKiYw" role="3cqZAp">
+        <node concept="2OqwBi" id="2cHV7yGKiYx" role="3vwVQn">
+          <node concept="liA8E" id="2cHV7yGKiYy" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="2534942168318029731" role="2Oq!k0">
-            <node concept="liA8E" id="2534942168318029732" role="2OqNvi">
+          <node concept="2OqwBi" id="2cHV7yGKiYz" role="2Oq$k0">
+            <node concept="liA8E" id="2cHV7yGKiY$" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="2534942168318029733" role="2Oq!k0" />
+            <node concept="369mXd" id="2cHV7yGKiY_" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="2534942168318030531" role="3cqZAp">
-        <node concept="2OqwBi" id="2534942168318030532" role="3clFbG">
-          <node concept="liA8E" id="2534942168318030533" role="2OqNvi">
+      <node concept="3clFbF" id="2cHV7yGKjb3" role="3cqZAp">
+        <node concept="2OqwBi" id="2cHV7yGKjb4" role="3clFbG">
+          <node concept="liA8E" id="2cHV7yGKjb5" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="2534942168318030534" role="37wK5m">
+            <node concept="3clFbT" id="2cHV7yGKjb6" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="2534942168318030535" role="2Oq!k0">
-            <node concept="liA8E" id="2534942168318030536" role="2OqNvi">
+          <node concept="2OqwBi" id="2cHV7yGKjb7" role="2Oq$k0">
+            <node concept="liA8E" id="2cHV7yGKjb8" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="2534942168318030537" role="2Oq!k0" />
+            <node concept="369mXd" id="2cHV7yGKjb9" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="2534942168318030798" role="3cqZAp">
-        <node concept="pLAjd" id="2534942168318030800" role="yd6KS">
+      <node concept="yd1bK" id="2cHV7yGKjfe" role="3cqZAp">
+        <node concept="pLAjd" id="2cHV7yGKjfg" role="yd6KS">
           <property role="pLAjc" value="ctrl+shift" />
           <property role="pLAjf" value="VK_SPACE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="2534942168331319973">
+  <node concept="LiM7Y" id="2cHV7yHyZE_">
     <property role="TrG5h" value="AddMenuPart_SimpleItemSubstitute" />
     <property role="3YCmrE" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild2 concept specified in corresponsing &quot;simple item&quot; item of custom add menu part" />
-    <node concept="P5awx" id="2534942168331329397" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755916567" role="lGtFl">
+    <node concept="P5awx" id="2cHV7yHz1XP" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyHgcn" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -398,9 +398,9 @@
         <property role="LIFWd" value="empty_addMenu_simpleItemSubstitute" />
       </node>
     </node>
-    <node concept="P5awx" id="5164819300891517121" role="LiZbd">
-      <node concept="P5Yc3" id="9187447745746005092" role="2eD6li">
-        <node concept="LIFWc" id="9187447745746005100" role="lGtFl">
+    <node concept="P5awx" id="4uH7WCII631" role="LiZbd">
+      <node concept="P5Yc3" id="7Y0nKKHDQL$" role="2eD6li">
+        <node concept="LIFWc" id="7Y0nKKHDQLG" role="lGtFl">
           <property role="LIFWa" value="3" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="3" />
@@ -409,17 +409,17 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="5164819300891971615" role="LjaKd">
-      <node concept="2TK7Tu" id="5164819300891971614" role="3cqZAp">
+    <node concept="3clFbS" id="4uH7WCIJP0v" role="LjaKd">
+      <node concept="2TK7Tu" id="4uH7WCIJP0u" role="3cqZAp">
         <property role="2TTd_B" value="newChild2" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="5164819300891972344">
+  <node concept="LiM7Y" id="4uH7WCIJPbS">
     <property role="TrG5h" value="AddMenuPart_SimpleItemSubstitute_smartComplete" />
     <property role="3YCmrE" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild1 concept specified in corresponsing &quot;simple item&quot; item of custom add menu part using smart complete" />
-    <node concept="P5awx" id="5164819300891972345" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755916865" role="lGtFl">
+    <node concept="P5awx" id="4uH7WCIJPbT" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyHgh1" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -427,10 +427,10 @@
         <property role="LIFWd" value="empty_addMenu_simpleItemSubstitute" />
       </node>
     </node>
-    <node concept="P5awx" id="5164819300891972348" role="LiZbd">
-      <node concept="P5Y6R" id="9187447745749749012" role="2eD6li">
-        <node concept="1il0h2" id="9187447745749749013" role="1il3Lf">
-          <node concept="LIFWc" id="9187447745749749022" role="lGtFl">
+    <node concept="P5awx" id="4uH7WCIJPbW" role="LiZbd">
+      <node concept="P5Y6R" id="7Y0nKKHS8Ok" role="2eD6li">
+        <node concept="1il0h2" id="7Y0nKKHS8Ol" role="1il3Lf">
+          <node concept="LIFWc" id="7Y0nKKHS8Ou" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="0" />
@@ -440,59 +440,59 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="5164819300891972351" role="LjaKd">
-      <node concept="2TK7Tu" id="5164819300891972352" role="3cqZAp">
+    <node concept="3clFbS" id="4uH7WCIJPbZ" role="LjaKd">
+      <node concept="2TK7Tu" id="4uH7WCIJPc0" role="3cqZAp">
         <property role="2TTd_B" value="new" />
       </node>
-      <node concept="yd1bK" id="5164819300891979047" role="3cqZAp">
-        <node concept="pLAjd" id="5164819300891979048" role="yd6KS">
+      <node concept="yd1bK" id="4uH7WCIJQOB" role="3cqZAp">
+        <node concept="pLAjd" id="4uH7WCIJQOC" role="yd6KS">
           <property role="pLAjc" value="ctrl" />
           <property role="pLAjf" value="VK_SPACE" />
         </node>
       </node>
-      <node concept="3vwNmj" id="5164819300891979049" role="3cqZAp">
-        <node concept="2OqwBi" id="5164819300891979050" role="3vwVQn">
-          <node concept="liA8E" id="5164819300891979051" role="2OqNvi">
+      <node concept="3vwNmj" id="4uH7WCIJQOD" role="3cqZAp">
+        <node concept="2OqwBi" id="4uH7WCIJQOE" role="3vwVQn">
+          <node concept="liA8E" id="4uH7WCIJQOF" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="5164819300891979052" role="2Oq!k0">
-            <node concept="liA8E" id="5164819300891979053" role="2OqNvi">
+          <node concept="2OqwBi" id="4uH7WCIJQOG" role="2Oq$k0">
+            <node concept="liA8E" id="4uH7WCIJQOH" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="5164819300891979054" role="2Oq!k0" />
+            <node concept="369mXd" id="4uH7WCIJQOI" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="5164819300891979055" role="3cqZAp">
-        <node concept="2OqwBi" id="5164819300891979056" role="3clFbG">
-          <node concept="liA8E" id="5164819300891979057" role="2OqNvi">
+      <node concept="3clFbF" id="4uH7WCIJQOJ" role="3cqZAp">
+        <node concept="2OqwBi" id="4uH7WCIJQOK" role="3clFbG">
+          <node concept="liA8E" id="4uH7WCIJQOL" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="5164819300891979058" role="37wK5m">
+            <node concept="3clFbT" id="4uH7WCIJQOM" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="5164819300891979059" role="2Oq!k0">
-            <node concept="liA8E" id="5164819300891979060" role="2OqNvi">
+          <node concept="2OqwBi" id="4uH7WCIJQON" role="2Oq$k0">
+            <node concept="liA8E" id="4uH7WCIJQOO" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="5164819300891979061" role="2Oq!k0" />
+            <node concept="369mXd" id="4uH7WCIJQOP" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="5164819300891979062" role="3cqZAp">
-        <node concept="pLAjd" id="5164819300891979063" role="yd6KS">
+      <node concept="yd1bK" id="4uH7WCIJQOQ" role="3cqZAp">
+        <node concept="pLAjd" id="4uH7WCIJQOR" role="yd6KS">
           <property role="pLAjc" value="ctrl+shift" />
           <property role="pLAjf" value="VK_SPACE" />
         </node>
       </node>
-      <node concept="3clFbH" id="5164819300891978182" role="3cqZAp" />
+      <node concept="3clFbH" id="4uH7WCIJQB6" role="3cqZAp" />
     </node>
   </node>
-  <node concept="LiM7Y" id="5164819300892646889">
+  <node concept="LiM7Y" id="4uH7WCIMpRD">
     <property role="TrG5h" value="AddMenuPart_WrapperSubstitute" />
     <property role="3YCmrE" value="Substituting ActionTestAbstractChildWrapper concept instance with ActionTestChildWrapper concept specified in corresponsing &quot;wrap item&quot;" />
-    <node concept="P5awx" id="5164819300892650549" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755916933" role="lGtFl">
+    <node concept="P5awx" id="4uH7WCIMqKP" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyHgi5" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -500,10 +500,10 @@
         <property role="LIFWd" value="empty_addMenu_wrapperSubstitute" />
       </node>
     </node>
-    <node concept="P5awx" id="2747974755163732990" role="LiZbd">
-      <node concept="1Dpba7" id="2870536390414518251" role="1Dq1vV">
-        <node concept="1DiwhB" id="2870536390414518250" role="1Dpbal" />
-        <node concept="LIFWc" id="2870536390414518254" role="lGtFl">
+    <node concept="P5awx" id="2oyL7FXhBJY" role="LiZbd">
+      <node concept="1Dpba7" id="2vmcqdDvkvF" role="1Dq1vV">
+        <node concept="1DiwhB" id="2vmcqdDvkvE" role="1Dpbal" />
+        <node concept="LIFWc" id="2vmcqdDvkvI" role="lGtFl">
           <property role="LIFWa" value="2" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="2" />
@@ -512,25 +512,25 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="2747974755163736571" role="LjaKd">
-      <node concept="yd1bK" id="8064223962396962407" role="3cqZAp">
-        <node concept="pLAjd" id="8064223962396962409" role="yd6KS">
+    <node concept="3clFbS" id="2oyL7FXhCBV" role="LjaKd">
+      <node concept="yd1bK" id="6ZDSfuVRiTB" role="3cqZAp">
+        <node concept="pLAjd" id="6ZDSfuVRiTD" role="yd6KS">
           <property role="pLAjc" value="ctrl" />
           <property role="pLAjf" value="VK_SPACE" />
         </node>
       </node>
-      <node concept="yd1bK" id="8064223962396962880" role="3cqZAp">
-        <node concept="pLAjd" id="8064223962396962882" role="yd6KS">
+      <node concept="yd1bK" id="6ZDSfuVRj10" role="3cqZAp">
+        <node concept="pLAjd" id="6ZDSfuVRj12" role="yd6KS">
           <property role="pLAjf" value="VK_ENTER" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="8349639607716109534">
+  <node concept="LiM7Y" id="7fvSfK$sPNu">
     <property role="TrG5h" value="AddMenuPart_WrapperSubstitute_returnSmallPart" />
     <property role="3YCmrE" value="Substituting ActionTestAbstractChildWrapper concept instance with ActionTestChildWrapper concept specified in corresponsing &quot;wrap item&quot; and setting selection to wrapped element in accordance with &quot;return small part&quot; query" />
-    <node concept="P5awx" id="8349639607716109535" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755916937" role="lGtFl">
+    <node concept="P5awx" id="7fvSfK$sPNv" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyHgi9" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -538,10 +538,10 @@
         <property role="LIFWd" value="empty_addMenu_wrapperSubstitute" />
       </node>
     </node>
-    <node concept="P5awx" id="8349639607716109538" role="LiZbd">
-      <node concept="1Dpba7" id="8749184937172588726" role="1Dq1vV">
-        <node concept="3rooIC" id="8749184937172588725" role="1Dpbal">
-          <node concept="LIFWc" id="8749184937172588729" role="lGtFl">
+    <node concept="P5awx" id="7fvSfK$sPNy" role="LiZbd">
+      <node concept="1Dpba7" id="7_FmlxunHyQ" role="1Dq1vV">
+        <node concept="3rooIC" id="7_FmlxunHyP" role="1Dpbal">
+          <node concept="LIFWc" id="7_FmlxunHyT" role="lGtFl">
             <property role="LIFWa" value="5" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="5" />
@@ -551,17 +551,17 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="8349639607716109542" role="LjaKd">
-      <node concept="2TK7Tu" id="8349639607716109543" role="3cqZAp">
+    <node concept="3clFbS" id="7fvSfK$sPNA" role="LjaKd">
+      <node concept="2TK7Tu" id="7fvSfK$sPNB" role="3cqZAp">
         <property role="2TTd_B" value="wrappedChild2" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="8349639607730863318">
+  <node concept="LiM7Y" id="7fvSfK_l7Nm">
     <property role="TrG5h" value="RemoveByConditionPart" />
     <property role="3YCmrE" value="Substituting ActionTestDefaultAbstractChild concept instance with ActionTestDefaultChild2 concept, checking if ActionTestDefaultChild1 concept was excluded from substitution menu by corresponding &quot;remove by condition&quot; block" />
-    <node concept="P5awx" id="8349639607730865472" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755917385" role="lGtFl">
+    <node concept="P5awx" id="7fvSfK_l8l0" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyHgp9" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -569,9 +569,9 @@
         <property role="LIFWd" value="empty_removeByConditionPart" />
       </node>
     </node>
-    <node concept="P5awx" id="8349639607731509523" role="LiZbd">
-      <node concept="1mzCOD" id="8349639607731509529" role="1mzgrQ">
-        <node concept="LIFWc" id="8349639607731509531" role="lGtFl">
+    <node concept="P5awx" id="7fvSfK_n_$j" role="LiZbd">
+      <node concept="1mzCOD" id="7fvSfK_n_$p" role="1mzgrQ">
+        <node concept="LIFWc" id="7fvSfK_n_$r" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -580,23 +580,23 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="8349639607731509562" role="LjaKd">
-      <node concept="2TK7Tu" id="8349639607731509561" role="3cqZAp">
+    <node concept="3clFbS" id="7fvSfK_n_$U" role="LjaKd">
+      <node concept="2TK7Tu" id="7fvSfK_n_$T" role="3cqZAp">
         <property role="2TTd_B" value="chil" />
       </node>
-      <node concept="yd1bK" id="8349639607731509568" role="3cqZAp">
-        <node concept="pLAjd" id="8349639607731509570" role="yd6KS">
+      <node concept="yd1bK" id="7fvSfK_n__0" role="3cqZAp">
+        <node concept="pLAjd" id="7fvSfK_n__2" role="yd6KS">
           <property role="pLAjc" value="ctrl" />
           <property role="pLAjf" value="VK_SPACE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="8349639607733366556">
+  <node concept="LiM7Y" id="7fvSfK_uEWs">
     <property role="TrG5h" value="RemovePart" />
     <property role="3YCmrE" value="Substituting ActionTestDefaultAbstractChild concept instance with ActionTestDefaultChild1 concept, checking if ActionTestDefaultChild2 concept was excluded from substitution menu by corresponding &quot;remove concept&quot; block" />
-    <node concept="P5awx" id="8349639607733366776" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755917831" role="lGtFl">
+    <node concept="P5awx" id="7fvSfK_uEZS" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyHgw7" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -604,9 +604,9 @@
         <property role="LIFWd" value="empty_removePart" />
       </node>
     </node>
-    <node concept="P5awx" id="8349639607733366962" role="LiZbd">
-      <node concept="1mzCvf" id="8349639607733366968" role="1mEsYz">
-        <node concept="LIFWc" id="8349639607733366970" role="lGtFl">
+    <node concept="P5awx" id="7fvSfK_uF2M" role="LiZbd">
+      <node concept="1mzCvf" id="7fvSfK_uF2S" role="1mEsYz">
+        <node concept="LIFWc" id="7fvSfK_uF2U" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -615,22 +615,22 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="8349639607733366973" role="LjaKd">
-      <node concept="2TK7Tu" id="8349639607733366972" role="3cqZAp">
+    <node concept="3clFbS" id="7fvSfK_uF2X" role="LjaKd">
+      <node concept="2TK7Tu" id="7fvSfK_uF2W" role="3cqZAp">
         <property role="2TTd_B" value="chil" />
       </node>
-      <node concept="yd1bK" id="8349639607733366979" role="3cqZAp">
-        <node concept="pLAjd" id="8349639607733366981" role="yd6KS">
+      <node concept="yd1bK" id="7fvSfK_uF33" role="3cqZAp">
+        <node concept="pLAjd" id="7fvSfK_uF35" role="yd6KS">
           <property role="pLAjc" value="ctrl" />
           <property role="pLAjf" value="VK_SPACE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="8349639607733719183">
+  <node concept="LiM7Y" id="7fvSfK_w12f">
     <property role="TrG5h" value="RemoveDefaultsPart" />
-    <node concept="P5awx" id="8349639607733719236" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755917741" role="lGtFl">
+    <node concept="P5awx" id="7fvSfK_w134" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyHguH" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -638,63 +638,63 @@
         <property role="LIFWd" value="empty_removeDefaultsPart" />
       </node>
     </node>
-    <node concept="P5awx" id="8349639607733719255" role="LiZbd" />
-    <node concept="3clFbS" id="8349639607733720718" role="LjaKd">
-      <node concept="yd1bK" id="8349639607733720783" role="3cqZAp">
-        <node concept="pLAjd" id="8349639607733720784" role="yd6KS">
+    <node concept="P5awx" id="7fvSfK_w13n" role="LiZbd" />
+    <node concept="3clFbS" id="7fvSfK_w1qe" role="LjaKd">
+      <node concept="yd1bK" id="7fvSfK_w1rf" role="3cqZAp">
+        <node concept="pLAjd" id="7fvSfK_w1rg" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="8349639607733720785" role="3cqZAp">
-        <node concept="2OqwBi" id="8349639607733720786" role="3vwVQn">
-          <node concept="liA8E" id="8349639607733720787" role="2OqNvi">
+      <node concept="3vwNmj" id="7fvSfK_w1rh" role="3cqZAp">
+        <node concept="2OqwBi" id="7fvSfK_w1ri" role="3vwVQn">
+          <node concept="liA8E" id="7fvSfK_w1rj" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="8349639607733720788" role="2Oq!k0">
-            <node concept="liA8E" id="8349639607733720789" role="2OqNvi">
+          <node concept="2OqwBi" id="7fvSfK_w1rk" role="2Oq$k0">
+            <node concept="liA8E" id="7fvSfK_w1rl" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="8349639607733720790" role="2Oq!k0" />
+            <node concept="369mXd" id="7fvSfK_w1rm" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="8349639607733720791" role="3cqZAp">
-        <node concept="2OqwBi" id="8349639607733720792" role="3vwVQn">
-          <node concept="liA8E" id="8349639607733720793" role="2OqNvi">
+      <node concept="3vwNmj" id="7fvSfK_w1rn" role="3cqZAp">
+        <node concept="2OqwBi" id="7fvSfK_w1ro" role="3vwVQn">
+          <node concept="liA8E" id="7fvSfK_w1rp" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="8349639607733720794" role="2Oq!k0">
-            <node concept="liA8E" id="8349639607733720795" role="2OqNvi">
+          <node concept="2OqwBi" id="7fvSfK_w1rq" role="2Oq$k0">
+            <node concept="liA8E" id="7fvSfK_w1rr" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="8349639607733720796" role="2Oq!k0" />
+            <node concept="369mXd" id="7fvSfK_w1rs" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="8349639607733720797" role="3cqZAp">
-        <node concept="2OqwBi" id="8349639607733720798" role="3clFbG">
-          <node concept="liA8E" id="8349639607733720799" role="2OqNvi">
+      <node concept="3clFbF" id="7fvSfK_w1rt" role="3cqZAp">
+        <node concept="2OqwBi" id="7fvSfK_w1ru" role="3clFbG">
+          <node concept="liA8E" id="7fvSfK_w1rv" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="8349639607733720800" role="37wK5m">
+            <node concept="3clFbT" id="7fvSfK_w1rw" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="8349639607733720801" role="2Oq!k0">
-            <node concept="liA8E" id="8349639607733720802" role="2OqNvi">
+          <node concept="2OqwBi" id="7fvSfK_w1rx" role="2Oq$k0">
+            <node concept="liA8E" id="7fvSfK_w1ry" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="8349639607733720803" role="2Oq!k0" />
+            <node concept="369mXd" id="7fvSfK_w1rz" role="2Oq$k0" />
           </node>
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="2870536390420394081">
+  <node concept="LiM7Y" id="2vmcqdDPJ1x">
     <property role="TrG5h" value="AddMenuPart_WrapperSubstituteDefaultSelection" />
     <property role="3YCmrE" value="Substituting ActionTestAbstractChildWrapper concept instance with ActionTestChildWrapper concept specified in corresponsing &quot;wrap item&quot;" />
-    <node concept="P5awx" id="2870536390420394082" role="LiRBU">
-      <node concept="LIFWc" id="6181220842755916935" role="lGtFl">
+    <node concept="P5awx" id="2vmcqdDPJ1y" role="LiRBU">
+      <node concept="LIFWc" id="5n86THyHgi7" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -702,10 +702,10 @@
         <property role="LIFWd" value="empty_addMenu_wrapperSubstituteDefaultSelection" />
       </node>
     </node>
-    <node concept="P5awx" id="2870536390420394085" role="LiZbd">
-      <node concept="1Dpba7" id="3887084466904921547" role="1ell!4">
-        <node concept="1DiwhB" id="3887084466904921546" role="1Dpbal" />
-        <node concept="LIFWc" id="3887084466904921550" role="lGtFl">
+    <node concept="P5awx" id="2vmcqdDPJ1_" role="LiZbd">
+      <node concept="1Dpba7" id="3nLGFDtNBnb" role="1ell$4">
+        <node concept="1DiwhB" id="3nLGFDtNBna" role="1Dpbal" />
+        <node concept="LIFWc" id="3nLGFDtNBne" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -714,8 +714,8 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="2870536390420394089" role="LjaKd">
-      <node concept="2TK7Tu" id="2870536390420394090" role="3cqZAp">
+    <node concept="3clFbS" id="2vmcqdDPJ1D" role="LjaKd">
+      <node concept="2TK7Tu" id="2vmcqdDPJ1E" role="3cqZAp">
         <property role="2TTd_B" value="wrappedChild1" />
       </node>
     </node>

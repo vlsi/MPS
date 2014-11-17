@@ -60,35 +60,35 @@
       </concept>
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
     </language>
   </registry>
-  <node concept="_UgoZ" id="6243486444683604044">
+  <node concept="_UgoZ" id="5q_ktuflj1c">
     <property role="TrG5h" value="ShowGetNameUsages" />
     <property role="_Wzho" value="Show getters for name property" />
-    <node concept="_XfAh" id="6243486444683604045" role="_YvDr">
+    <node concept="_XfAh" id="5q_ktuflj1d" role="_YvDr">
       <property role="_XH9r" value="Show getters for name property" />
       <reference role="_XDHR" target="tp1t.1147467115080" resolve="NodePropertyConstraint" />
-      <node concept="_ZGcI" id="6243486444683604046" role="_XPhp">
-        <node concept="3clFbS" id="6243486444683604047" role="2VODD2" />
+      <node concept="_ZGcI" id="5q_ktuflj1e" role="_XPhp">
+        <node concept="3clFbS" id="5q_ktuflj1f" role="2VODD2" />
       </node>
-      <node concept="_Y34e" id="6243486444683690985" role="_XDHO">
-        <node concept="3clFbS" id="6243486444683690986" role="2VODD2">
-          <node concept="3clFbF" id="6243486444683698873" role="3cqZAp">
-            <node concept="17R0WA" id="6243486444683713666" role="3clFbG">
-              <node concept="Xl_RD" id="6243486444683713669" role="3uHU7w">
+      <node concept="_Y34e" id="5q_ktuflCfD" role="_XDHO">
+        <node concept="3clFbS" id="5q_ktuflCfE" role="2VODD2">
+          <node concept="3clFbF" id="5q_ktuflEaT" role="3cqZAp">
+            <node concept="17R0WA" id="5q_ktuflHM2" role="3clFbG">
+              <node concept="Xl_RD" id="5q_ktuflHM5" role="3uHU7w">
                 <property role="Xl_RC" value="name" />
               </node>
-              <node concept="2OqwBi" id="6243486444683713661" role="3uHU7B">
-                <node concept="2OqwBi" id="6243486444683698875" role="2Oq!k0">
-                  <node concept="_YI3z" id="6243486444683698874" role="2Oq!k0" />
-                  <node concept="3TrEf2" id="6243486444683713660" role="2OqNvi">
+              <node concept="2OqwBi" id="5q_ktuflHLX" role="3uHU7B">
+                <node concept="2OqwBi" id="5q_ktuflEaV" role="2Oq$k0">
+                  <node concept="_YI3z" id="5q_ktuflEaU" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="5q_ktuflHLW" role="2OqNvi">
                     <reference role="3Tt5mk" target="tp1t.1147467295099" />
                   </node>
                 </node>
-                <node concept="3TrcHB" id="6243486444683713665" role="2OqNvi">
+                <node concept="3TrcHB" id="5q_ktuflHM1" role="2OqNvi">
                   <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
                 </node>
               </node>

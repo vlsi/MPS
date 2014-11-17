@@ -82,7 +82,7 @@
         <child id="1173175577737" name="index" index="AHEQo" />
         <child id="1173175590490" name="array" index="AHHXb" />
       </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8!">
+      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
@@ -110,7 +110,7 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx!" />
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -118,7 +118,7 @@
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
@@ -169,66 +169,66 @@
       </concept>
     </language>
   </registry>
-  <node concept="312cEu" id="4346819404427368280">
+  <node concept="312cEu" id="3Lj0jv7ELto">
     <property role="TrG5h" value="MPSSourceRevision" />
-    <node concept="3Tm1VV" id="4346819404427368420" role="1B3o_S" />
-    <node concept="3uibUv" id="4346819404427368429" role="1zkMxy">
+    <node concept="3Tm1VV" id="3Lj0jv7ELv$" role="1B3o_S" />
+    <node concept="3uibUv" id="3Lj0jv7ELvH" role="1zkMxy">
       <reference role="3uigEE" target="3hgr.~SourceRevision" resolve="SourceRevision" />
     </node>
-    <node concept="3clFbW" id="4346819404427368421" role="jymVt">
-      <node concept="3cqZAl" id="4346819404427368422" role="3clF45" />
-      <node concept="3Tm1VV" id="4346819404427368423" role="1B3o_S" />
-      <node concept="3clFbS" id="4346819404427368424" role="3clF47">
-        <node concept="3SKdUt" id="4346819404427368425" role="3cqZAp">
-          <node concept="3SKdUq" id="4346819404427368426" role="3SKWNk">
+    <node concept="3clFbW" id="3Lj0jv7ELv_" role="jymVt">
+      <node concept="3cqZAl" id="3Lj0jv7ELvA" role="3clF45" />
+      <node concept="3Tm1VV" id="3Lj0jv7ELvB" role="1B3o_S" />
+      <node concept="3clFbS" id="3Lj0jv7ELvC" role="3clF47">
+        <node concept="3SKdUt" id="3Lj0jv7ELvD" role="3cqZAp">
+          <node concept="3SKdUq" id="3Lj0jv7ELvE" role="3SKWNk">
             <property role="3SKdUp" value="This class is put in mergedriver module just to avoid creating new module for only one class." />
           </node>
         </node>
-        <node concept="3SKdUt" id="4346819404427368427" role="3cqZAp">
-          <node concept="3SKdUq" id="4346819404427368428" role="3SKWNk">
+        <node concept="3SKdUt" id="3Lj0jv7ELvF" role="3cqZAp">
+          <node concept="3SKdUq" id="3Lj0jv7ELvG" role="3SKWNk">
             <property role="3SKdUp" value="It cannot be put to vcs module, because the latter should not depend on git4idea plugin." />
           </node>
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="4346819404427368430" role="jymVt">
+    <node concept="3clFb_" id="3Lj0jv7ELvI" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="get" />
       <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="4346819404427368431" role="1B3o_S" />
-      <node concept="17QB3L" id="4346819404427368432" role="3clF45" />
-      <node concept="2AHcQZ" id="4346819404427368433" role="2AJF6D">
+      <node concept="3Tm1VV" id="3Lj0jv7ELvJ" role="1B3o_S" />
+      <node concept="17QB3L" id="3Lj0jv7ELvK" role="3clF45" />
+      <node concept="2AHcQZ" id="3Lj0jv7ELvL" role="2AJF6D">
         <reference role="2AI5Lk" target="as9o.~Nullable" resolve="Nullable" />
       </node>
-      <node concept="3clFbS" id="4346819404427368434" role="3clF47">
-        <node concept="3clFbJ" id="4346819404427368435" role="3cqZAp">
-          <node concept="3fqX7Q" id="4346819404427368436" role="3clFbw">
-            <node concept="2YIFZM" id="4346819404427368437" role="3fr31v">
+      <node concept="3clFbS" id="3Lj0jv7ELvM" role="3clF47">
+        <node concept="3clFbJ" id="3Lj0jv7ELvN" role="3cqZAp">
+          <node concept="3fqX7Q" id="3Lj0jv7ELvO" role="3clFbw">
+            <node concept="2YIFZM" id="3Lj0jv7ELvP" role="3fr31v">
               <reference role="37wK5l" target="4rb9.6933307669479741751" resolve="isGitPluginEnabled" />
               <reference role="1Pybhc" target="4rb9.6933307669479741720" resolve="PluginUtil" />
             </node>
           </node>
-          <node concept="3clFbS" id="4346819404427368438" role="3clFbx">
-            <node concept="3cpWs6" id="4346819404427368439" role="3cqZAp">
-              <node concept="10Nm6u" id="4346819404427368440" role="3cqZAk" />
+          <node concept="3clFbS" id="3Lj0jv7ELvQ" role="3clFbx">
+            <node concept="3cpWs6" id="3Lj0jv7ELvR" role="3cqZAp">
+              <node concept="10Nm6u" id="3Lj0jv7ELvS" role="3cqZAk" />
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="4346819404427368441" role="3cqZAp">
-          <node concept="3cpWsn" id="4346819404427368442" role="3cpWs9">
+        <node concept="3cpWs8" id="3Lj0jv7ELvT" role="3cqZAp">
+          <node concept="3cpWsn" id="3Lj0jv7ELvU" role="3cpWs9">
             <property role="TrG5h" value="mpsHome" />
-            <node concept="3uibUv" id="4346819404427368443" role="1tU5fm">
+            <node concept="3uibUv" id="3Lj0jv7ELvV" role="1tU5fm">
               <reference role="3uigEE" target="3df7.~VirtualFile" resolve="VirtualFile" />
             </node>
-            <node concept="2OqwBi" id="4346819404427368444" role="33vP2m">
-              <node concept="2YIFZM" id="4346819404427368445" role="2Oq!k0">
+            <node concept="2OqwBi" id="3Lj0jv7ELvW" role="33vP2m">
+              <node concept="2YIFZM" id="3Lj0jv7ELvX" role="2Oq$k0">
                 <reference role="37wK5l" target="3df7.~LocalFileSystem%dgetInstance()%ccom%dintellij%dopenapi%dvfs%dLocalFileSystem" resolve="getInstance" />
                 <reference role="1Pybhc" target="3df7.~LocalFileSystem" resolve="LocalFileSystem" />
               </node>
-              <node concept="liA8E" id="4346819404427368446" role="2OqNvi">
+              <node concept="liA8E" id="3Lj0jv7ELvY" role="2OqNvi">
                 <reference role="37wK5l" target="3df7.~VirtualFileSystem%dfindFileByPath(java%dlang%dString)%ccom%dintellij%dopenapi%dvfs%dVirtualFile" resolve="findFileByPath" />
-                <node concept="2YIFZM" id="4346819404427368447" role="37wK5m">
+                <node concept="2YIFZM" id="3Lj0jv7ELvZ" role="37wK5m">
                   <reference role="37wK5l" target="yla8.~PathManager%dgetHomePath()%cjava%dlang%dString" resolve="getHomePath" />
                   <reference role="1Pybhc" target="yla8.~PathManager" resolve="PathManager" />
                 </node>
@@ -236,142 +236,142 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="4346819404427368448" role="3cqZAp">
-          <node concept="3clFbS" id="4346819404427368449" role="3clFbx">
-            <node concept="3cpWs6" id="4346819404427368450" role="3cqZAp">
-              <node concept="10Nm6u" id="4346819404427368451" role="3cqZAk" />
+        <node concept="3clFbJ" id="3Lj0jv7ELw0" role="3cqZAp">
+          <node concept="3clFbS" id="3Lj0jv7ELw1" role="3clFbx">
+            <node concept="3cpWs6" id="3Lj0jv7ELw2" role="3cqZAp">
+              <node concept="10Nm6u" id="3Lj0jv7ELw3" role="3cqZAk" />
             </node>
           </node>
-          <node concept="3clFbC" id="4346819404427368452" role="3clFbw">
-            <node concept="37vLTw" id="4265636116363092900" role="3uHU7B">
+          <node concept="3clFbC" id="3Lj0jv7ELw4" role="3clFbw">
+            <node concept="37vLTw" id="3GM_nagTye$" role="3uHU7B">
               <reference role="3cqZAo" target="4346819404427368442" resolve="mpsHome" />
             </node>
-            <node concept="10Nm6u" id="4346819404427368454" role="3uHU7w" />
+            <node concept="10Nm6u" id="3Lj0jv7ELw6" role="3uHU7w" />
           </node>
         </node>
-        <node concept="3cpWs8" id="4346819404427368455" role="3cqZAp">
-          <node concept="3cpWsn" id="4346819404427368456" role="3cpWs9">
+        <node concept="3cpWs8" id="3Lj0jv7ELw7" role="3cqZAp">
+          <node concept="3cpWsn" id="3Lj0jv7ELw8" role="3cpWs9">
             <property role="TrG5h" value="project" />
-            <node concept="3uibUv" id="4346819404427368457" role="1tU5fm">
+            <node concept="3uibUv" id="3Lj0jv7ELw9" role="1tU5fm">
               <reference role="3uigEE" target="b2mh.~Project" resolve="Project" />
             </node>
-            <node concept="AH0OO" id="4346819404427368458" role="33vP2m">
-              <node concept="3cmrfG" id="4346819404427368459" role="AHEQo">
+            <node concept="AH0OO" id="3Lj0jv7ELwa" role="33vP2m">
+              <node concept="3cmrfG" id="3Lj0jv7ELwb" role="AHEQo">
                 <property role="3cmrfH" value="0" />
               </node>
-              <node concept="2OqwBi" id="4346819404427368460" role="AHHXb">
-                <node concept="2YIFZM" id="4346819404427368461" role="2Oq!k0">
+              <node concept="2OqwBi" id="3Lj0jv7ELwc" role="AHHXb">
+                <node concept="2YIFZM" id="3Lj0jv7ELwd" role="2Oq$k0">
                   <reference role="1Pybhc" target="b2mh.~ProjectManager" resolve="ProjectManager" />
                   <reference role="37wK5l" target="b2mh.~ProjectManager%dgetInstance()%ccom%dintellij%dopenapi%dproject%dProjectManager" resolve="getInstance" />
                 </node>
-                <node concept="liA8E" id="4346819404427368462" role="2OqNvi">
+                <node concept="liA8E" id="3Lj0jv7ELwe" role="2OqNvi">
                   <reference role="37wK5l" target="b2mh.~ProjectManager%dgetOpenProjects()%ccom%dintellij%dopenapi%dproject%dProject[]" resolve="getOpenProjects" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="SfApY" id="4346819404427368463" role="3cqZAp">
-          <node concept="3clFbS" id="4346819404427368464" role="SfCbr">
-            <node concept="3cpWs8" id="4346819404427368465" role="3cqZAp">
-              <node concept="3cpWsn" id="4346819404427368466" role="3cpWs9">
+        <node concept="SfApY" id="3Lj0jv7ELwf" role="3cqZAp">
+          <node concept="3clFbS" id="3Lj0jv7ELwg" role="SfCbr">
+            <node concept="3cpWs8" id="3Lj0jv7ELwh" role="3cqZAp">
+              <node concept="3cpWsn" id="3Lj0jv7ELwi" role="3cpWs9">
                 <property role="TrG5h" value="currentBranchName" />
-                <node concept="17QB3L" id="4346819404427368467" role="1tU5fm" />
-                <node concept="2EnYce" id="4346819404427368468" role="33vP2m">
-                  <node concept="2YIFZM" id="4730325800956967047" role="2Oq!k0">
+                <node concept="17QB3L" id="3Lj0jv7ELwj" role="1tU5fm" />
+                <node concept="2EnYce" id="3Lj0jv7ELwk" role="33vP2m">
+                  <node concept="2YIFZM" id="46_v$3HTVy7" role="2Oq$k0">
                     <reference role="37wK5l" target="r17x.~GitBranchUtil%dgetCurrentBranch(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile)%cgit4idea%dGitLocalBranch" resolve="getCurrentBranch" />
                     <reference role="1Pybhc" target="r17x.~GitBranchUtil" resolve="GitBranchUtil" />
-                    <node concept="37vLTw" id="4265636116363084910" role="37wK5m">
+                    <node concept="37vLTw" id="3GM_nagTwhI" role="37wK5m">
                       <reference role="3cqZAo" target="4346819404427368456" resolve="project" />
                     </node>
-                    <node concept="37vLTw" id="4265636116363076457" role="37wK5m">
+                    <node concept="37vLTw" id="3GM_nagTudD" role="37wK5m">
                       <reference role="3cqZAo" target="4346819404427368442" resolve="mpsHome" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="4346819404427368472" role="2OqNvi">
+                  <node concept="liA8E" id="3Lj0jv7ELwo" role="2OqNvi">
                     <reference role="37wK5l" target="wcn7.~GitReference%dgetName()%cjava%dlang%dString" resolve="getName" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="4346819404427368473" role="3cqZAp">
-              <node concept="3cpWsn" id="4346819404427368474" role="3cpWs9">
+            <node concept="3cpWs8" id="3Lj0jv7ELwp" role="3cqZAp">
+              <node concept="3cpWsn" id="3Lj0jv7ELwq" role="3cpWs9">
                 <property role="TrG5h" value="currentRevision" />
-                <node concept="17QB3L" id="4346819404427368475" role="1tU5fm" />
-                <node concept="1rXfSq" id="4923130412071496644" role="33vP2m">
+                <node concept="17QB3L" id="3Lj0jv7ELwr" role="1tU5fm" />
+                <node concept="1rXfSq" id="4hiugqysqJ4" role="33vP2m">
                   <reference role="37wK5l" target="4346819404427368281" resolve="getCurrentRevision" />
-                  <node concept="37vLTw" id="4265636116363092553" role="37wK5m">
+                  <node concept="37vLTw" id="3GM_nagTy99" role="37wK5m">
                     <reference role="3cqZAo" target="4346819404427368456" resolve="project" />
                   </node>
-                  <node concept="37vLTw" id="4265636116363114386" role="37wK5m">
+                  <node concept="37vLTw" id="3GM_nagTBui" role="37wK5m">
                     <reference role="3cqZAo" target="4346819404427368442" resolve="mpsHome" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="4346819404427368479" role="3cqZAp">
-              <node concept="3cpWsn" id="4346819404427368480" role="3cpWs9">
+            <node concept="3cpWs8" id="3Lj0jv7ELwv" role="3cqZAp">
+              <node concept="3cpWsn" id="3Lj0jv7ELww" role="3cpWs9">
                 <property role="TrG5h" value="mergeBase" />
-                <node concept="17QB3L" id="4346819404427368481" role="1tU5fm" />
-                <node concept="1rXfSq" id="4923130412071464732" role="33vP2m">
+                <node concept="17QB3L" id="3Lj0jv7ELwx" role="1tU5fm" />
+                <node concept="1rXfSq" id="4hiugqysiWs" role="33vP2m">
                   <reference role="37wK5l" target="4346819404427368320" resolve="getMergeBase" />
-                  <node concept="37vLTw" id="4265636116363077107" role="37wK5m">
+                  <node concept="37vLTw" id="3GM_nagTunN" role="37wK5m">
                     <reference role="3cqZAo" target="4346819404427368456" resolve="project" />
                   </node>
-                  <node concept="37vLTw" id="4265636116363083944" role="37wK5m">
+                  <node concept="37vLTw" id="3GM_nagTw2C" role="37wK5m">
                     <reference role="3cqZAo" target="4346819404427368442" resolve="mpsHome" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="4346819404427368485" role="3cqZAp">
-              <node concept="3cpWsn" id="4346819404427368486" role="3cpWs9">
+            <node concept="3cpWs8" id="3Lj0jv7ELw_" role="3cqZAp">
+              <node concept="3cpWsn" id="3Lj0jv7ELwA" role="3cpWs9">
                 <property role="TrG5h" value="distance" />
-                <node concept="10Oyi0" id="4346819404427368487" role="1tU5fm" />
-                <node concept="1rXfSq" id="4923130412071490021" role="33vP2m">
+                <node concept="10Oyi0" id="3Lj0jv7ELwB" role="1tU5fm" />
+                <node concept="1rXfSq" id="4hiugqysp7_" role="33vP2m">
                   <reference role="37wK5l" target="4346819404427368376" resolve="getDistance" />
-                  <node concept="37vLTw" id="4265636116363112194" role="37wK5m">
+                  <node concept="37vLTw" id="3GM_nagTAW2" role="37wK5m">
                     <reference role="3cqZAo" target="4346819404427368456" resolve="project" />
                   </node>
-                  <node concept="37vLTw" id="4265636116363091050" role="37wK5m">
+                  <node concept="37vLTw" id="3GM_nagTxLE" role="37wK5m">
                     <reference role="3cqZAo" target="4346819404427368442" resolve="mpsHome" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="4346819404427368491" role="3cqZAp" />
-            <node concept="3cpWs8" id="4346819404427368492" role="3cqZAp">
-              <node concept="3cpWsn" id="4346819404427368493" role="3cpWs9">
+            <node concept="3clFbH" id="3Lj0jv7ELwF" role="3cqZAp" />
+            <node concept="3cpWs8" id="3Lj0jv7ELwG" role="3cqZAp">
+              <node concept="3cpWsn" id="3Lj0jv7ELwH" role="3cpWs9">
                 <property role="TrG5h" value="headDescription" />
-                <node concept="17QB3L" id="4346819404427368494" role="1tU5fm" />
-                <node concept="37vLTw" id="4265636116363109442" role="33vP2m">
+                <node concept="17QB3L" id="3Lj0jv7ELwI" role="1tU5fm" />
+                <node concept="37vLTw" id="3GM_nagTAh2" role="33vP2m">
                   <reference role="3cqZAo" target="4346819404427368474" resolve="currentRevision" />
                 </node>
               </node>
             </node>
-            <node concept="3clFbJ" id="4346819404427368496" role="3cqZAp">
-              <node concept="3clFbS" id="4346819404427368497" role="3clFbx">
-                <node concept="3clFbF" id="4346819404427368498" role="3cqZAp">
-                  <node concept="d57v9" id="4346819404427368499" role="3clFbG">
-                    <node concept="37vLTw" id="4265636116363101627" role="37vLTJ">
+            <node concept="3clFbJ" id="3Lj0jv7ELwK" role="3cqZAp">
+              <node concept="3clFbS" id="3Lj0jv7ELwL" role="3clFbx">
+                <node concept="3clFbF" id="3Lj0jv7ELwM" role="3cqZAp">
+                  <node concept="d57v9" id="3Lj0jv7ELwN" role="3clFbG">
+                    <node concept="37vLTw" id="3GM_nagT$mV" role="37vLTJ">
                       <reference role="3cqZAo" target="4346819404427368493" resolve="headDescription" />
                     </node>
-                    <node concept="2YIFZM" id="4346819404427368501" role="37vLTx">
+                    <node concept="2YIFZM" id="3Lj0jv7ELwP" role="37vLTx">
                       <reference role="1Pybhc" target="e2lb.~String" resolve="String" />
                       <reference role="37wK5l" target="e2lb.~String%dformat(java%dlang%dString,java%dlang%dObject%d%d%d)%cjava%dlang%dString" resolve="format" />
-                      <node concept="Xl_RD" id="4346819404427368502" role="37wK5m">
+                      <node concept="Xl_RD" id="3Lj0jv7ELwQ" role="37wK5m">
                         <property role="Xl_RC" value=", origin/master@%s + %s" />
                       </node>
-                      <node concept="37vLTw" id="4265636116363108488" role="37wK5m">
+                      <node concept="37vLTw" id="3GM_nagTA28" role="37wK5m">
                         <reference role="3cqZAo" target="4346819404427368480" resolve="mergeBase" />
                       </node>
-                      <node concept="2YIFZM" id="4346819404427368504" role="37wK5m">
+                      <node concept="2YIFZM" id="3Lj0jv7ELwS" role="37wK5m">
                         <reference role="37wK5l" target="msyo.~NameUtil%dformatNumericalString(int,java%dlang%dString)%cjava%dlang%dString" resolve="formatNumericalString" />
                         <reference role="1Pybhc" target="msyo.~NameUtil" resolve="NameUtil" />
-                        <node concept="37vLTw" id="4265636116363091189" role="37wK5m">
+                        <node concept="37vLTw" id="3GM_nagTxNP" role="37wK5m">
                           <reference role="3cqZAo" target="4346819404427368486" resolve="distance" />
                         </node>
-                        <node concept="Xl_RD" id="4346819404427368506" role="37wK5m">
+                        <node concept="Xl_RD" id="3Lj0jv7ELwU" role="37wK5m">
                           <property role="Xl_RC" value="commit" />
                         </node>
                       </node>
@@ -379,98 +379,98 @@
                   </node>
                 </node>
               </node>
-              <node concept="22lmx!" id="4346819404427368507" role="3clFbw">
-                <node concept="3clFbC" id="4346819404427368508" role="3uHU7w">
-                  <node concept="3cmrfG" id="4346819404427368509" role="3uHU7w">
+              <node concept="22lmx$" id="3Lj0jv7ELwV" role="3clFbw">
+                <node concept="3clFbC" id="3Lj0jv7ELwW" role="3uHU7w">
+                  <node concept="3cmrfG" id="3Lj0jv7ELwX" role="3uHU7w">
                     <property role="3cmrfH" value="0" />
                   </node>
-                  <node concept="37vLTw" id="4265636116363106484" role="3uHU7B">
+                  <node concept="37vLTw" id="3GM_nagT_yO" role="3uHU7B">
                     <reference role="3cqZAo" target="4346819404427368486" resolve="distance" />
                   </node>
                 </node>
-                <node concept="3y3z36" id="4346819404427368511" role="3uHU7B">
-                  <node concept="37vLTw" id="4265636116363086589" role="3uHU7B">
+                <node concept="3y3z36" id="3Lj0jv7ELwZ" role="3uHU7B">
+                  <node concept="37vLTw" id="3GM_nagTwFX" role="3uHU7B">
                     <reference role="3cqZAo" target="4346819404427368480" resolve="mergeBase" />
                   </node>
-                  <node concept="10Nm6u" id="4346819404427368513" role="3uHU7w" />
+                  <node concept="10Nm6u" id="3Lj0jv7ELx1" role="3uHU7w" />
                 </node>
               </node>
             </node>
-            <node concept="3clFbJ" id="4346819404427368514" role="3cqZAp">
-              <node concept="3clFbS" id="4346819404427368515" role="3clFbx">
-                <node concept="3clFbF" id="4346819404427368516" role="3cqZAp">
-                  <node concept="37vLTI" id="4346819404427368517" role="3clFbG">
-                    <node concept="37vLTw" id="4265636116363064128" role="37vLTJ">
+            <node concept="3clFbJ" id="3Lj0jv7ELx2" role="3cqZAp">
+              <node concept="3clFbS" id="3Lj0jv7ELx3" role="3clFbx">
+                <node concept="3clFbF" id="3Lj0jv7ELx4" role="3cqZAp">
+                  <node concept="37vLTI" id="3Lj0jv7ELx5" role="3clFbG">
+                    <node concept="37vLTw" id="3GM_nagTrd0" role="37vLTJ">
                       <reference role="3cqZAo" target="4346819404427368493" resolve="headDescription" />
                     </node>
-                    <node concept="2YIFZM" id="4346819404427368519" role="37vLTx">
+                    <node concept="2YIFZM" id="3Lj0jv7ELx7" role="37vLTx">
                       <reference role="37wK5l" target="e2lb.~String%dformat(java%dlang%dString,java%dlang%dObject%d%d%d)%cjava%dlang%dString" resolve="format" />
                       <reference role="1Pybhc" target="e2lb.~String" resolve="String" />
-                      <node concept="Xl_RD" id="4346819404427368520" role="37wK5m">
+                      <node concept="Xl_RD" id="3Lj0jv7ELx8" role="37wK5m">
                         <property role="Xl_RC" value="%s (%s)" />
                       </node>
-                      <node concept="37vLTw" id="4265636116363069463" role="37wK5m">
+                      <node concept="37vLTw" id="3GM_nagTswn" role="37wK5m">
                         <reference role="3cqZAo" target="4346819404427368466" resolve="currentBranchName" />
                       </node>
-                      <node concept="37vLTw" id="4265636116363098510" role="37wK5m">
+                      <node concept="37vLTw" id="3GM_nagTzAe" role="37wK5m">
                         <reference role="3cqZAo" target="4346819404427368493" resolve="headDescription" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="3y3z36" id="4346819404427368523" role="3clFbw">
-                <node concept="10Nm6u" id="4346819404427368524" role="3uHU7w" />
-                <node concept="37vLTw" id="4265636116363076389" role="3uHU7B">
+              <node concept="3y3z36" id="3Lj0jv7ELxb" role="3clFbw">
+                <node concept="10Nm6u" id="3Lj0jv7ELxc" role="3uHU7w" />
+                <node concept="37vLTw" id="3GM_nagTuc_" role="3uHU7B">
                   <reference role="3cqZAo" target="4346819404427368466" resolve="currentBranchName" />
                 </node>
               </node>
             </node>
-            <node concept="3cpWs6" id="4346819404427368526" role="3cqZAp">
-              <node concept="37vLTw" id="4265636116363077197" role="3cqZAk">
+            <node concept="3cpWs6" id="3Lj0jv7ELxe" role="3cqZAp">
+              <node concept="37vLTw" id="3GM_nagTupd" role="3cqZAk">
                 <reference role="3cqZAo" target="4346819404427368493" resolve="headDescription" />
               </node>
             </node>
           </node>
-          <node concept="TDmWw" id="4346819404427368528" role="TEbGg">
-            <node concept="3cpWsn" id="4346819404427368529" role="TDEfY">
+          <node concept="TDmWw" id="3Lj0jv7ELxg" role="TEbGg">
+            <node concept="3cpWsn" id="3Lj0jv7ELxh" role="TDEfY">
               <property role="TrG5h" value="e" />
-              <node concept="3uibUv" id="4346819404427368530" role="1tU5fm">
+              <node concept="3uibUv" id="3Lj0jv7ELxi" role="1tU5fm">
                 <reference role="3uigEE" target="3dcm.~VcsException" resolve="VcsException" />
               </node>
             </node>
-            <node concept="3clFbS" id="4346819404427368531" role="TDEfX" />
+            <node concept="3clFbS" id="3Lj0jv7ELxj" role="TDEfX" />
           </node>
         </node>
-        <node concept="3cpWs6" id="4346819404427368532" role="3cqZAp">
-          <node concept="10Nm6u" id="4346819404427368533" role="3cqZAk" />
+        <node concept="3cpWs6" id="3Lj0jv7ELxk" role="3cqZAp">
+          <node concept="10Nm6u" id="3Lj0jv7ELxl" role="3cqZAk" />
         </node>
       </node>
-      <node concept="2AHcQZ" id="3998760702358642668" role="2AJF6D">
+      <node concept="2AHcQZ" id="3tYsUK_SdZG" role="2AJF6D">
         <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2YIFZL" id="4346819404427368281" role="jymVt">
+    <node concept="2YIFZL" id="3Lj0jv7ELtp" role="jymVt">
       <property role="TrG5h" value="getCurrentRevision" />
-      <node concept="17QB3L" id="4346819404427368282" role="3clF45" />
-      <node concept="3Tm6S6" id="4346819404427368283" role="1B3o_S" />
-      <node concept="3clFbS" id="4346819404427368284" role="3clF47">
-        <node concept="3cpWs8" id="4346819404427368285" role="3cqZAp">
-          <node concept="3cpWsn" id="4346819404427368286" role="3cpWs9">
+      <node concept="17QB3L" id="3Lj0jv7ELtq" role="3clF45" />
+      <node concept="3Tm6S6" id="3Lj0jv7ELtr" role="1B3o_S" />
+      <node concept="3clFbS" id="3Lj0jv7ELts" role="3clF47">
+        <node concept="3cpWs8" id="3Lj0jv7ELtt" role="3cqZAp">
+          <node concept="3cpWsn" id="3Lj0jv7ELtu" role="3cpWs9">
             <property role="TrG5h" value="h" />
-            <node concept="3uibUv" id="4346819404427368287" role="1tU5fm">
+            <node concept="3uibUv" id="3Lj0jv7ELtv" role="1tU5fm">
               <reference role="3uigEE" target="xl3n.~GitSimpleHandler" resolve="GitSimpleHandler" />
             </node>
-            <node concept="2ShNRf" id="4346819404427368288" role="33vP2m">
-              <node concept="1pGfFk" id="4346819404427368289" role="2ShVmc">
+            <node concept="2ShNRf" id="3Lj0jv7ELtw" role="33vP2m">
+              <node concept="1pGfFk" id="3Lj0jv7ELtx" role="2ShVmc">
                 <reference role="37wK5l" target="xl3n.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolve="GitSimpleHandler" />
-                <node concept="37vLTw" id="3021153905151725944" role="37wK5m">
+                <node concept="37vLTw" id="2BHiRxgm_5S" role="37wK5m">
                   <reference role="3cqZAo" target="4346819404427368315" resolve="project" />
                 </node>
-                <node concept="37vLTw" id="3021153905151611736" role="37wK5m">
+                <node concept="37vLTw" id="2BHiRxgm9do" role="37wK5m">
                   <reference role="3cqZAo" target="4346819404427368317" resolve="root" />
                 </node>
-                <node concept="10M0yZ" id="4346819404427368292" role="37wK5m">
+                <node concept="10M0yZ" id="3Lj0jv7ELt$" role="37wK5m">
                   <reference role="1PxDUh" target="xl3n.~GitCommand" resolve="GitCommand" />
                   <reference role="3cqZAo" target="xl3n.~GitCommand%dLOG" resolve="LOG" />
                 </node>
@@ -478,100 +478,100 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4346819404427368298" role="3cqZAp">
-          <node concept="2OqwBi" id="4346819404427368299" role="3clFbG">
-            <node concept="37vLTw" id="4265636116363071665" role="2Oq!k0">
+        <node concept="3clFbF" id="3Lj0jv7ELtE" role="3cqZAp">
+          <node concept="2OqwBi" id="3Lj0jv7ELtF" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagTt2L" role="2Oq$k0">
               <reference role="3cqZAo" target="4346819404427368286" resolve="h" />
             </node>
-            <node concept="liA8E" id="4346819404427368301" role="2OqNvi">
+            <node concept="liA8E" id="3Lj0jv7ELtH" role="2OqNvi">
               <reference role="37wK5l" target="xl3n.~GitHandler%dsetSilent(boolean)%cvoid" resolve="setSilent" />
-              <node concept="3clFbT" id="4346819404427368302" role="37wK5m">
+              <node concept="3clFbT" id="3Lj0jv7ELtI" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4346819404427368303" role="3cqZAp">
-          <node concept="2OqwBi" id="4346819404427368304" role="3clFbG">
-            <node concept="37vLTw" id="4265636116363114504" role="2Oq!k0">
+        <node concept="3clFbF" id="3Lj0jv7ELtJ" role="3cqZAp">
+          <node concept="2OqwBi" id="3Lj0jv7ELtK" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagTBw8" role="2Oq$k0">
               <reference role="3cqZAo" target="4346819404427368286" resolve="h" />
             </node>
-            <node concept="liA8E" id="4346819404427368306" role="2OqNvi">
+            <node concept="liA8E" id="3Lj0jv7ELtM" role="2OqNvi">
               <reference role="37wK5l" target="xl3n.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolve="addParameters" />
-              <node concept="Xl_RD" id="4346819404427368307" role="37wK5m">
+              <node concept="Xl_RD" id="3Lj0jv7ELtN" role="37wK5m">
                 <property role="Xl_RC" value="--max-count=1" />
               </node>
-              <node concept="Xl_RD" id="4346819404427368308" role="37wK5m">
+              <node concept="Xl_RD" id="3Lj0jv7ELtO" role="37wK5m">
                 <property role="Xl_RC" value="--pretty=%h" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="4346819404427368309" role="3cqZAp">
-          <node concept="2EnYce" id="4346819404427368310" role="3cqZAk">
-            <node concept="2OqwBi" id="4346819404427368311" role="2Oq!k0">
-              <node concept="37vLTw" id="4265636116363110918" role="2Oq!k0">
+        <node concept="3cpWs6" id="3Lj0jv7ELtP" role="3cqZAp">
+          <node concept="2EnYce" id="3Lj0jv7ELtQ" role="3cqZAk">
+            <node concept="2OqwBi" id="3Lj0jv7ELtR" role="2Oq$k0">
+              <node concept="37vLTw" id="3GM_nagTAC6" role="2Oq$k0">
                 <reference role="3cqZAo" target="4346819404427368286" resolve="h" />
               </node>
-              <node concept="liA8E" id="4346819404427368313" role="2OqNvi">
+              <node concept="liA8E" id="3Lj0jv7ELtT" role="2OqNvi">
                 <reference role="37wK5l" target="xl3n.~GitSimpleHandler%drun()%cjava%dlang%dString" resolve="run" />
               </node>
             </node>
-            <node concept="liA8E" id="4346819404427368314" role="2OqNvi">
+            <node concept="liA8E" id="3Lj0jv7ELtU" role="2OqNvi">
               <reference role="37wK5l" target="e2lb.~String%dtrim()%cjava%dlang%dString" resolve="trim" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="4346819404427368315" role="3clF46">
+      <node concept="37vLTG" id="3Lj0jv7ELtV" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="4346819404427368316" role="1tU5fm">
+        <node concept="3uibUv" id="3Lj0jv7ELtW" role="1tU5fm">
           <reference role="3uigEE" target="b2mh.~Project" resolve="Project" />
         </node>
       </node>
-      <node concept="37vLTG" id="4346819404427368317" role="3clF46">
+      <node concept="37vLTG" id="3Lj0jv7ELtX" role="3clF46">
         <property role="TrG5h" value="root" />
-        <node concept="3uibUv" id="4346819404427368318" role="1tU5fm">
+        <node concept="3uibUv" id="3Lj0jv7ELtY" role="1tU5fm">
           <reference role="3uigEE" target="3df7.~VirtualFile" resolve="VirtualFile" />
         </node>
       </node>
-      <node concept="3uibUv" id="4346819404427368319" role="Sfmx6">
+      <node concept="3uibUv" id="3Lj0jv7ELtZ" role="Sfmx6">
         <reference role="3uigEE" target="3dcm.~VcsException" resolve="VcsException" />
       </node>
     </node>
-    <node concept="2YIFZL" id="4346819404427368320" role="jymVt">
+    <node concept="2YIFZL" id="3Lj0jv7ELu0" role="jymVt">
       <property role="TrG5h" value="getMergeBase" />
-      <node concept="37vLTG" id="4346819404427368321" role="3clF46">
+      <node concept="37vLTG" id="3Lj0jv7ELu1" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="4346819404427368322" role="1tU5fm">
+        <node concept="3uibUv" id="3Lj0jv7ELu2" role="1tU5fm">
           <reference role="3uigEE" target="b2mh.~Project" resolve="Project" />
         </node>
       </node>
-      <node concept="37vLTG" id="4346819404427368323" role="3clF46">
+      <node concept="37vLTG" id="3Lj0jv7ELu3" role="3clF46">
         <property role="TrG5h" value="root" />
-        <node concept="3uibUv" id="4346819404427368324" role="1tU5fm">
+        <node concept="3uibUv" id="3Lj0jv7ELu4" role="1tU5fm">
           <reference role="3uigEE" target="3df7.~VirtualFile" resolve="VirtualFile" />
         </node>
       </node>
-      <node concept="17QB3L" id="4346819404427368325" role="3clF45" />
-      <node concept="3Tm1VV" id="4346819404427368326" role="1B3o_S" />
-      <node concept="3clFbS" id="4346819404427368327" role="3clF47">
-        <node concept="3cpWs8" id="4346819404427368328" role="3cqZAp">
-          <node concept="3cpWsn" id="4346819404427368329" role="3cpWs9">
+      <node concept="17QB3L" id="3Lj0jv7ELu5" role="3clF45" />
+      <node concept="3Tm1VV" id="3Lj0jv7ELu6" role="1B3o_S" />
+      <node concept="3clFbS" id="3Lj0jv7ELu7" role="3clF47">
+        <node concept="3cpWs8" id="3Lj0jv7ELu8" role="3cqZAp">
+          <node concept="3cpWsn" id="3Lj0jv7ELu9" role="3cpWs9">
             <property role="TrG5h" value="h" />
-            <node concept="3uibUv" id="4346819404427368330" role="1tU5fm">
+            <node concept="3uibUv" id="3Lj0jv7ELua" role="1tU5fm">
               <reference role="3uigEE" target="xl3n.~GitSimpleHandler" resolve="GitSimpleHandler" />
             </node>
-            <node concept="2ShNRf" id="4346819404427368331" role="33vP2m">
-              <node concept="1pGfFk" id="4346819404427368332" role="2ShVmc">
+            <node concept="2ShNRf" id="3Lj0jv7ELub" role="33vP2m">
+              <node concept="1pGfFk" id="3Lj0jv7ELuc" role="2ShVmc">
                 <reference role="37wK5l" target="xl3n.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolve="GitSimpleHandler" />
-                <node concept="37vLTw" id="3021153905151612934" role="37wK5m">
+                <node concept="37vLTw" id="2BHiRxgm9w6" role="37wK5m">
                   <reference role="3cqZAo" target="4346819404427368321" resolve="project" />
                 </node>
-                <node concept="37vLTw" id="3021153905151613976" role="37wK5m">
+                <node concept="37vLTw" id="2BHiRxgm9Ko" role="37wK5m">
                   <reference role="3cqZAo" target="4346819404427368323" resolve="root" />
                 </node>
-                <node concept="10M0yZ" id="4346819404427368335" role="37wK5m">
+                <node concept="10M0yZ" id="3Lj0jv7ELuf" role="37wK5m">
                   <reference role="1PxDUh" target="xl3n.~GitCommand" resolve="GitCommand" />
                   <reference role="3cqZAo" target="xl3n.~GitCommand%dMERGE_BASE" resolve="MERGE_BASE" />
                 </node>
@@ -579,127 +579,127 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4346819404427368341" role="3cqZAp">
-          <node concept="2OqwBi" id="4346819404427368342" role="3clFbG">
-            <node concept="37vLTw" id="4265636116363071385" role="2Oq!k0">
+        <node concept="3clFbF" id="3Lj0jv7ELul" role="3cqZAp">
+          <node concept="2OqwBi" id="3Lj0jv7ELum" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagTsYp" role="2Oq$k0">
               <reference role="3cqZAo" target="4346819404427368329" resolve="h" />
             </node>
-            <node concept="liA8E" id="4346819404427368344" role="2OqNvi">
+            <node concept="liA8E" id="3Lj0jv7ELuo" role="2OqNvi">
               <reference role="37wK5l" target="xl3n.~GitHandler%dsetSilent(boolean)%cvoid" resolve="setSilent" />
-              <node concept="3clFbT" id="4346819404427368345" role="37wK5m">
+              <node concept="3clFbT" id="3Lj0jv7ELup" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4346819404427368346" role="3cqZAp">
-          <node concept="2OqwBi" id="4346819404427368347" role="3clFbG">
-            <node concept="37vLTw" id="4265636116363072960" role="2Oq!k0">
+        <node concept="3clFbF" id="3Lj0jv7ELuq" role="3cqZAp">
+          <node concept="2OqwBi" id="3Lj0jv7ELur" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagTtn0" role="2Oq$k0">
               <reference role="3cqZAo" target="4346819404427368329" resolve="h" />
             </node>
-            <node concept="liA8E" id="4346819404427368349" role="2OqNvi">
+            <node concept="liA8E" id="3Lj0jv7ELut" role="2OqNvi">
               <reference role="37wK5l" target="xl3n.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolve="addParameters" />
-              <node concept="Xl_RD" id="4346819404427368350" role="37wK5m">
+              <node concept="Xl_RD" id="3Lj0jv7ELuu" role="37wK5m">
                 <property role="Xl_RC" value="origin/master" />
               </node>
-              <node concept="Xl_RD" id="4346819404427368351" role="37wK5m">
+              <node concept="Xl_RD" id="3Lj0jv7ELuv" role="37wK5m">
                 <property role="Xl_RC" value="HEAD" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="4346819404427368352" role="3cqZAp">
-          <node concept="3cpWsn" id="4346819404427368353" role="3cpWs9">
+        <node concept="3cpWs8" id="3Lj0jv7ELuw" role="3cqZAp">
+          <node concept="3cpWsn" id="3Lj0jv7ELux" role="3cpWs9">
             <property role="TrG5h" value="longRev" />
-            <node concept="17QB3L" id="4346819404427368354" role="1tU5fm" />
-            <node concept="2OqwBi" id="4346819404427368355" role="33vP2m">
-              <node concept="37vLTw" id="4265636116363095121" role="2Oq!k0">
+            <node concept="17QB3L" id="3Lj0jv7ELuy" role="1tU5fm" />
+            <node concept="2OqwBi" id="3Lj0jv7ELuz" role="33vP2m">
+              <node concept="37vLTw" id="3GM_nagTyLh" role="2Oq$k0">
                 <reference role="3cqZAo" target="4346819404427368329" resolve="h" />
               </node>
-              <node concept="liA8E" id="4346819404427368357" role="2OqNvi">
+              <node concept="liA8E" id="3Lj0jv7ELu_" role="2OqNvi">
                 <reference role="37wK5l" target="xl3n.~GitSimpleHandler%drun()%cjava%dlang%dString" resolve="run" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="4346819404427368358" role="3cqZAp">
-          <node concept="3clFbS" id="4346819404427368359" role="3clFbx">
-            <node concept="3cpWs6" id="4346819404427368360" role="3cqZAp">
-              <node concept="2OqwBi" id="4346819404427368361" role="3cqZAk">
-                <node concept="37vLTw" id="4265636116363095672" role="2Oq!k0">
+        <node concept="3clFbJ" id="3Lj0jv7ELuA" role="3cqZAp">
+          <node concept="3clFbS" id="3Lj0jv7ELuB" role="3clFbx">
+            <node concept="3cpWs6" id="3Lj0jv7ELuC" role="3cqZAp">
+              <node concept="2OqwBi" id="3Lj0jv7ELuD" role="3cqZAk">
+                <node concept="37vLTw" id="3GM_nagTyTS" role="2Oq$k0">
                   <reference role="3cqZAo" target="4346819404427368353" resolve="longRev" />
                 </node>
-                <node concept="liA8E" id="4346819404427368363" role="2OqNvi">
+                <node concept="liA8E" id="3Lj0jv7ELuF" role="2OqNvi">
                   <reference role="37wK5l" target="e2lb.~String%dsubstring(int,int)%cjava%dlang%dString" resolve="substring" />
-                  <node concept="3cmrfG" id="4346819404427368364" role="37wK5m">
+                  <node concept="3cmrfG" id="3Lj0jv7ELuG" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
-                  <node concept="3cmrfG" id="4346819404427368365" role="37wK5m">
+                  <node concept="3cmrfG" id="3Lj0jv7ELuH" role="37wK5m">
                     <property role="3cmrfH" value="8" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3eOSWO" id="4346819404427368366" role="3clFbw">
-            <node concept="3cmrfG" id="4346819404427368367" role="3uHU7w">
+          <node concept="3eOSWO" id="3Lj0jv7ELuI" role="3clFbw">
+            <node concept="3cmrfG" id="3Lj0jv7ELuJ" role="3uHU7w">
               <property role="3cmrfH" value="20" />
             </node>
-            <node concept="2OqwBi" id="4346819404427368368" role="3uHU7B">
-              <node concept="37vLTw" id="4265636116363105146" role="2Oq!k0">
+            <node concept="2OqwBi" id="3Lj0jv7ELuK" role="3uHU7B">
+              <node concept="37vLTw" id="3GM_nagT_dU" role="2Oq$k0">
                 <reference role="3cqZAo" target="4346819404427368353" resolve="longRev" />
               </node>
-              <node concept="liA8E" id="4346819404427368370" role="2OqNvi">
+              <node concept="liA8E" id="3Lj0jv7ELuM" role="2OqNvi">
                 <reference role="37wK5l" target="e2lb.~String%dlength()%cint" resolve="length" />
               </node>
             </node>
           </node>
-          <node concept="9aQIb" id="4346819404427368371" role="9aQIa">
-            <node concept="3clFbS" id="4346819404427368372" role="9aQI4">
-              <node concept="3cpWs6" id="4346819404427368373" role="3cqZAp">
-                <node concept="10Nm6u" id="4346819404427368374" role="3cqZAk" />
+          <node concept="9aQIb" id="3Lj0jv7ELuN" role="9aQIa">
+            <node concept="3clFbS" id="3Lj0jv7ELuO" role="9aQI4">
+              <node concept="3cpWs6" id="3Lj0jv7ELuP" role="3cqZAp">
+                <node concept="10Nm6u" id="3Lj0jv7ELuQ" role="3cqZAk" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="4346819404427368375" role="Sfmx6">
+      <node concept="3uibUv" id="3Lj0jv7ELuR" role="Sfmx6">
         <reference role="3uigEE" target="3dcm.~VcsException" resolve="VcsException" />
       </node>
     </node>
-    <node concept="2YIFZL" id="4346819404427368376" role="jymVt">
+    <node concept="2YIFZL" id="3Lj0jv7ELuS" role="jymVt">
       <property role="TrG5h" value="getDistance" />
-      <node concept="37vLTG" id="4346819404427368377" role="3clF46">
+      <node concept="37vLTG" id="3Lj0jv7ELuT" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="4346819404427368378" role="1tU5fm">
+        <node concept="3uibUv" id="3Lj0jv7ELuU" role="1tU5fm">
           <reference role="3uigEE" target="b2mh.~Project" resolve="Project" />
         </node>
       </node>
-      <node concept="37vLTG" id="4346819404427368379" role="3clF46">
+      <node concept="37vLTG" id="3Lj0jv7ELuV" role="3clF46">
         <property role="TrG5h" value="root" />
-        <node concept="3uibUv" id="4346819404427368380" role="1tU5fm">
+        <node concept="3uibUv" id="3Lj0jv7ELuW" role="1tU5fm">
           <reference role="3uigEE" target="3df7.~VirtualFile" resolve="VirtualFile" />
         </node>
       </node>
-      <node concept="10Oyi0" id="4346819404427368381" role="3clF45" />
-      <node concept="3Tm1VV" id="4346819404427368382" role="1B3o_S" />
-      <node concept="3clFbS" id="4346819404427368383" role="3clF47">
-        <node concept="3cpWs8" id="4346819404427368384" role="3cqZAp">
-          <node concept="3cpWsn" id="4346819404427368385" role="3cpWs9">
+      <node concept="10Oyi0" id="3Lj0jv7ELuX" role="3clF45" />
+      <node concept="3Tm1VV" id="3Lj0jv7ELuY" role="1B3o_S" />
+      <node concept="3clFbS" id="3Lj0jv7ELuZ" role="3clF47">
+        <node concept="3cpWs8" id="3Lj0jv7ELv0" role="3cqZAp">
+          <node concept="3cpWsn" id="3Lj0jv7ELv1" role="3cpWs9">
             <property role="TrG5h" value="h" />
-            <node concept="3uibUv" id="4346819404427368386" role="1tU5fm">
+            <node concept="3uibUv" id="3Lj0jv7ELv2" role="1tU5fm">
               <reference role="3uigEE" target="xl3n.~GitSimpleHandler" resolve="GitSimpleHandler" />
             </node>
-            <node concept="2ShNRf" id="4346819404427368387" role="33vP2m">
-              <node concept="1pGfFk" id="4346819404427368388" role="2ShVmc">
+            <node concept="2ShNRf" id="3Lj0jv7ELv3" role="33vP2m">
+              <node concept="1pGfFk" id="3Lj0jv7ELv4" role="2ShVmc">
                 <reference role="37wK5l" target="xl3n.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolve="GitSimpleHandler" />
-                <node concept="37vLTw" id="3021153905151297930" role="37wK5m">
+                <node concept="37vLTw" id="2BHiRxgkWAa" role="37wK5m">
                   <reference role="3cqZAo" target="4346819404427368377" resolve="project" />
                 </node>
-                <node concept="37vLTw" id="3021153905151605772" role="37wK5m">
+                <node concept="37vLTw" id="2BHiRxgm7Kc" role="37wK5m">
                   <reference role="3cqZAo" target="4346819404427368379" resolve="root" />
                 </node>
-                <node concept="10M0yZ" id="4346819404427368391" role="37wK5m">
+                <node concept="10M0yZ" id="3Lj0jv7ELv7" role="37wK5m">
                   <reference role="1PxDUh" target="xl3n.~GitCommand" resolve="GitCommand" />
                   <reference role="3cqZAo" target="xl3n.~GitCommand%dREV_LIST" resolve="REV_LIST" />
                 </node>
@@ -707,110 +707,110 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4346819404427368397" role="3cqZAp">
-          <node concept="2OqwBi" id="4346819404427368398" role="3clFbG">
-            <node concept="37vLTw" id="4265636116363064548" role="2Oq!k0">
+        <node concept="3clFbF" id="3Lj0jv7ELvd" role="3cqZAp">
+          <node concept="2OqwBi" id="3Lj0jv7ELve" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagTrj$" role="2Oq$k0">
               <reference role="3cqZAo" target="4346819404427368385" resolve="h" />
             </node>
-            <node concept="liA8E" id="4346819404427368400" role="2OqNvi">
+            <node concept="liA8E" id="3Lj0jv7ELvg" role="2OqNvi">
               <reference role="37wK5l" target="xl3n.~GitHandler%dsetSilent(boolean)%cvoid" resolve="setSilent" />
-              <node concept="3clFbT" id="4346819404427368401" role="37wK5m">
+              <node concept="3clFbT" id="3Lj0jv7ELvh" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4346819404427368402" role="3cqZAp">
-          <node concept="2OqwBi" id="4346819404427368403" role="3clFbG">
-            <node concept="37vLTw" id="4265636116363073259" role="2Oq!k0">
+        <node concept="3clFbF" id="3Lj0jv7ELvi" role="3cqZAp">
+          <node concept="2OqwBi" id="3Lj0jv7ELvj" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagTtrF" role="2Oq$k0">
               <reference role="3cqZAo" target="4346819404427368385" resolve="h" />
             </node>
-            <node concept="liA8E" id="4346819404427368405" role="2OqNvi">
+            <node concept="liA8E" id="3Lj0jv7ELvl" role="2OqNvi">
               <reference role="37wK5l" target="xl3n.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolve="addParameters" />
-              <node concept="Xl_RD" id="4346819404427368406" role="37wK5m">
+              <node concept="Xl_RD" id="3Lj0jv7ELvm" role="37wK5m">
                 <property role="Xl_RC" value="origin/master..HEAD" />
               </node>
-              <node concept="Xl_RD" id="4346819404427368407" role="37wK5m">
+              <node concept="Xl_RD" id="3Lj0jv7ELvn" role="37wK5m">
                 <property role="Xl_RC" value="--count" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="4346819404427368408" role="3cqZAp">
-          <node concept="3cpWsn" id="4346819404427368409" role="3cpWs9">
+        <node concept="3cpWs8" id="3Lj0jv7ELvo" role="3cqZAp">
+          <node concept="3cpWsn" id="3Lj0jv7ELvp" role="3cpWs9">
             <property role="TrG5h" value="count" />
-            <node concept="17QB3L" id="4346819404427368410" role="1tU5fm" />
-            <node concept="2OqwBi" id="4346819404427368411" role="33vP2m">
-              <node concept="37vLTw" id="4265636116363100013" role="2Oq!k0">
+            <node concept="17QB3L" id="3Lj0jv7ELvq" role="1tU5fm" />
+            <node concept="2OqwBi" id="3Lj0jv7ELvr" role="33vP2m">
+              <node concept="37vLTw" id="3GM_nagTzXH" role="2Oq$k0">
                 <reference role="3cqZAo" target="4346819404427368385" resolve="h" />
               </node>
-              <node concept="liA8E" id="4346819404427368413" role="2OqNvi">
+              <node concept="liA8E" id="3Lj0jv7ELvt" role="2OqNvi">
                 <reference role="37wK5l" target="xl3n.~GitSimpleHandler%drun()%cjava%dlang%dString" resolve="run" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="4346819404427368414" role="3cqZAp">
-          <node concept="2YIFZM" id="4346819404427368415" role="3cqZAk">
+        <node concept="3cpWs6" id="3Lj0jv7ELvu" role="3cqZAp">
+          <node concept="2YIFZM" id="3Lj0jv7ELvv" role="3cqZAk">
             <reference role="37wK5l" target="e2lb.~Integer%dparseInt(java%dlang%dString)%cint" resolve="parseInt" />
             <reference role="1Pybhc" target="e2lb.~Integer" resolve="Integer" />
-            <node concept="2OqwBi" id="4346819404427368416" role="37wK5m">
-              <node concept="37vLTw" id="4265636116363111413" role="2Oq!k0">
+            <node concept="2OqwBi" id="3Lj0jv7ELvw" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTAJP" role="2Oq$k0">
                 <reference role="3cqZAo" target="4346819404427368409" resolve="count" />
               </node>
-              <node concept="liA8E" id="4346819404427368418" role="2OqNvi">
+              <node concept="liA8E" id="3Lj0jv7ELvy" role="2OqNvi">
                 <reference role="37wK5l" target="e2lb.~String%dtrim()%cjava%dlang%dString" resolve="trim" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="4346819404427368419" role="Sfmx6">
+      <node concept="3uibUv" id="3Lj0jv7ELvz" role="Sfmx6">
         <reference role="3uigEE" target="3dcm.~VcsException" resolve="VcsException" />
       </node>
     </node>
   </node>
-  <node concept="312cEu" id="4346819404427339851">
+  <node concept="312cEu" id="3Lj0jv7EExb">
     <property role="TrG5h" value="GitUtils" />
-    <node concept="3Tm1VV" id="4346819404427339852" role="1B3o_S" />
-    <node concept="3clFbW" id="4346819404427339853" role="jymVt">
-      <node concept="3cqZAl" id="4346819404427339854" role="3clF45" />
-      <node concept="3Tm6S6" id="4346819404427342445" role="1B3o_S" />
-      <node concept="3clFbS" id="4346819404427339856" role="3clF47" />
+    <node concept="3Tm1VV" id="3Lj0jv7EExc" role="1B3o_S" />
+    <node concept="3clFbW" id="3Lj0jv7EExd" role="jymVt">
+      <node concept="3cqZAl" id="3Lj0jv7EExe" role="3clF45" />
+      <node concept="3Tm6S6" id="3Lj0jv7EF9H" role="1B3o_S" />
+      <node concept="3clFbS" id="3Lj0jv7EExg" role="3clF47" />
     </node>
-    <node concept="2YIFZL" id="4346819404427342446" role="jymVt">
+    <node concept="2YIFZL" id="3Lj0jv7EF9I" role="jymVt">
       <property role="TrG5h" value="uncommmit" />
-      <node concept="37vLTG" id="4346819404427342453" role="3clF46">
+      <node concept="37vLTG" id="3Lj0jv7EF9P" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="4346819404427342455" role="1tU5fm">
+        <node concept="3uibUv" id="3Lj0jv7EF9R" role="1tU5fm">
           <reference role="3uigEE" target="b2mh.~Project" resolve="Project" />
         </node>
       </node>
-      <node concept="37vLTG" id="4346819404427342450" role="3clF46">
+      <node concept="37vLTG" id="3Lj0jv7EF9M" role="3clF46">
         <property role="TrG5h" value="gitRoot" />
-        <node concept="3uibUv" id="4346819404427342452" role="1tU5fm">
+        <node concept="3uibUv" id="3Lj0jv7EF9O" role="1tU5fm">
           <reference role="3uigEE" target="3df7.~VirtualFile" resolve="VirtualFile" />
         </node>
       </node>
-      <node concept="3cqZAl" id="4346819404427342447" role="3clF45" />
-      <node concept="3Tm1VV" id="4346819404427342448" role="1B3o_S" />
-      <node concept="3clFbS" id="4346819404427342449" role="3clF47">
-        <node concept="3cpWs8" id="4346819404427345646" role="3cqZAp">
-          <node concept="3cpWsn" id="4346819404427345647" role="3cpWs9">
+      <node concept="3cqZAl" id="3Lj0jv7EF9J" role="3clF45" />
+      <node concept="3Tm1VV" id="3Lj0jv7EF9K" role="1B3o_S" />
+      <node concept="3clFbS" id="3Lj0jv7EF9L" role="3clF47">
+        <node concept="3cpWs8" id="3Lj0jv7EFVI" role="3cqZAp">
+          <node concept="3cpWsn" id="3Lj0jv7EFVJ" role="3cpWs9">
             <property role="TrG5h" value="h" />
-            <node concept="3uibUv" id="4346819404427345648" role="1tU5fm">
+            <node concept="3uibUv" id="3Lj0jv7EFVK" role="1tU5fm">
               <reference role="3uigEE" target="xl3n.~GitSimpleHandler" resolve="GitSimpleHandler" />
             </node>
-            <node concept="2ShNRf" id="4346819404427345649" role="33vP2m">
-              <node concept="1pGfFk" id="4346819404427345650" role="2ShVmc">
+            <node concept="2ShNRf" id="3Lj0jv7EFVL" role="33vP2m">
+              <node concept="1pGfFk" id="3Lj0jv7EFVM" role="2ShVmc">
                 <reference role="37wK5l" target="xl3n.~GitSimpleHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile,git4idea%dcommands%dGitCommand)" resolve="GitSimpleHandler" />
-                <node concept="37vLTw" id="3021153905150304631" role="37wK5m">
+                <node concept="37vLTw" id="2BHiRxgha5R" role="37wK5m">
                   <reference role="3cqZAo" target="4346819404427342453" resolve="project" />
                 </node>
-                <node concept="37vLTw" id="3021153905151712196" role="37wK5m">
+                <node concept="37vLTw" id="2BHiRxgmxJ4" role="37wK5m">
                   <reference role="3cqZAo" target="4346819404427342450" resolve="gitRoot" />
                 </node>
-                <node concept="10M0yZ" id="4346819404427345653" role="37wK5m">
+                <node concept="10M0yZ" id="3Lj0jv7EFVP" role="37wK5m">
                   <reference role="1PxDUh" target="xl3n.~GitCommand" resolve="GitCommand" />
                   <reference role="3cqZAo" target="xl3n.~GitCommand%dRESET" resolve="RESET" />
                 </node>
@@ -818,34 +818,34 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4346819404427345637" role="3cqZAp">
-          <node concept="2OqwBi" id="4346819404427345655" role="3clFbG">
-            <node concept="37vLTw" id="4265636116363071829" role="2Oq!k0">
+        <node concept="3clFbF" id="3Lj0jv7EFV_" role="3cqZAp">
+          <node concept="2OqwBi" id="3Lj0jv7EFVR" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagTt5l" role="2Oq$k0">
               <reference role="3cqZAo" target="4346819404427345647" resolve="h" />
             </node>
-            <node concept="liA8E" id="4346819404427345659" role="2OqNvi">
+            <node concept="liA8E" id="3Lj0jv7EFVV" role="2OqNvi">
               <reference role="37wK5l" target="xl3n.~GitHandler%daddParameters(java%dlang%dString%d%d%d)%cvoid" resolve="addParameters" />
-              <node concept="Xl_RD" id="4346819404427345660" role="37wK5m">
+              <node concept="Xl_RD" id="3Lj0jv7EFVW" role="37wK5m">
                 <property role="Xl_RC" value="--mixed" />
               </node>
-              <node concept="Xl_RD" id="4346819404427345662" role="37wK5m">
+              <node concept="Xl_RD" id="3Lj0jv7EFVY" role="37wK5m">
                 <property role="Xl_RC" value="HEAD^" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4346819404427345664" role="3cqZAp">
-          <node concept="2OqwBi" id="4346819404427345666" role="3clFbG">
-            <node concept="37vLTw" id="4265636116363074212" role="2Oq!k0">
+        <node concept="3clFbF" id="3Lj0jv7EFW0" role="3cqZAp">
+          <node concept="2OqwBi" id="3Lj0jv7EFW2" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagTtE$" role="2Oq$k0">
               <reference role="3cqZAo" target="4346819404427345647" resolve="h" />
             </node>
-            <node concept="liA8E" id="4346819404427345670" role="2OqNvi">
+            <node concept="liA8E" id="3Lj0jv7EFW6" role="2OqNvi">
               <reference role="37wK5l" target="xl3n.~GitSimpleHandler%drun()%cjava%dlang%dString" resolve="run" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="4346819404427345671" role="Sfmx6">
+      <node concept="3uibUv" id="3Lj0jv7EFW7" role="Sfmx6">
         <reference role="3uigEE" target="3dcm.~VcsException" resolve="VcsException" />
       </node>
     </node>

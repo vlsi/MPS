@@ -72,7 +72,7 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -88,48 +88,48 @@
       </concept>
     </language>
   </registry>
-  <node concept="2S6QgY" id="305848682816615072">
+  <node concept="2S6QgY" id="gY_W6Ijzaw">
     <property role="TrG5h" value="convertToNamed" />
     <reference role="2ZfgGC" target="tpfo.1174491169200" resolve="ParensRegexp" />
-    <node concept="2S6ZIM" id="305848682816615073" role="2ZfVej">
-      <node concept="3clFbS" id="305848682816615074" role="2VODD2">
-        <node concept="3clFbF" id="305848682816636323" role="3cqZAp">
-          <node concept="Xl_RD" id="305848682816636324" role="3clFbG">
+    <node concept="2S6ZIM" id="gY_W6Ijzax" role="2ZfVej">
+      <node concept="3clFbS" id="gY_W6Ijzay" role="2VODD2">
+        <node concept="3clFbF" id="gY_W6IjCmz" role="3cqZAp">
+          <node concept="Xl_RD" id="gY_W6IjCm$" role="3clFbG">
             <property role="Xl_RC" value="Convert parentheses to named capturing group" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2Sbjvc" id="305848682816615075" role="2ZfgGD">
-      <node concept="3clFbS" id="305848682816615076" role="2VODD2">
-        <node concept="3cpWs8" id="305848682817096248" role="3cqZAp">
-          <node concept="3cpWsn" id="305848682817096249" role="3cpWs9">
+    <node concept="2Sbjvc" id="gY_W6Ijzaz" role="2ZfgGD">
+      <node concept="3clFbS" id="gY_W6Ijza$" role="2VODD2">
+        <node concept="3cpWs8" id="gY_W6IloCS" role="3cqZAp">
+          <node concept="3cpWsn" id="gY_W6IloCT" role="3cpWs9">
             <property role="TrG5h" value="n" />
-            <node concept="3Tqbb2" id="305848682817096250" role="1tU5fm">
+            <node concept="3Tqbb2" id="gY_W6IloCU" role="1tU5fm">
               <reference role="ehGHo" target="tpfo.1174564062919" resolve="MatchParensRegexp" />
             </node>
-            <node concept="2OqwBi" id="305848682817096257" role="33vP2m">
-              <node concept="2Sf5sV" id="305848682817096258" role="2Oq!k0" />
-              <node concept="2DeJnW" id="6357564549601506850" role="2OqNvi">
+            <node concept="2OqwBi" id="gY_W6IloD1" role="33vP2m">
+              <node concept="2Sf5sV" id="gY_W6IloD2" role="2Oq$k0" />
+              <node concept="2DeJnW" id="5wUAOoBBjoy" role="2OqNvi">
                 <reference role="1_rbq0" target="tpfo.1174564062919" resolve="MatchParensRegexp" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="305848682817096658" role="3cqZAp">
-          <node concept="2OqwBi" id="305848682817096660" role="3clFbG">
-            <node concept="1XNTG" id="305848682817096659" role="2Oq!k0" />
-            <node concept="liA8E" id="305848682817096664" role="2OqNvi">
+        <node concept="3clFbF" id="gY_W6IloJi" role="3cqZAp">
+          <node concept="2OqwBi" id="gY_W6IloJk" role="3clFbG">
+            <node concept="1XNTG" id="gY_W6IloJj" role="2Oq$k0" />
+            <node concept="liA8E" id="gY_W6IloJo" role="2OqNvi">
               <reference role="37wK5l" target="srng.~EditorContext%dflushEvents()%cvoid" resolve="flushEvents" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="305848682817096269" role="3cqZAp">
-          <node concept="2OqwBi" id="305848682817096271" role="3clFbG">
-            <node concept="1XNTG" id="305848682817096270" role="2Oq!k0" />
-            <node concept="liA8E" id="305848682817096655" role="2OqNvi">
+        <node concept="3clFbF" id="gY_W6IloDd" role="3cqZAp">
+          <node concept="2OqwBi" id="gY_W6IloDf" role="3clFbG">
+            <node concept="1XNTG" id="gY_W6IloDe" role="2Oq$k0" />
+            <node concept="liA8E" id="gY_W6IloJf" role="2OqNvi">
               <reference role="37wK5l" target="srng.~EditorContext%dselectWRTFocusPolicy(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolve="selectWRTFocusPolicy" />
-              <node concept="37vLTw" id="4265636116363067101" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTrVt" role="37wK5m">
                 <reference role="3cqZAo" target="305848682817096249" resolve="n" />
               </node>
             </node>

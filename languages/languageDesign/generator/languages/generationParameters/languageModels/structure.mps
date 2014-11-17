@@ -15,8 +15,8 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -45,54 +45,54 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="8484425748929510068">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="7mYJ4gC7JEO">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="generation parameter" />
     <property role="TrG5h" value="DefaultGeneratorParameter" />
     <property role="3GE5qa" value="parameter" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="8484425748929510069" role="PzmwI">
+    <node concept="PrWs8" id="7mYJ4gC7JEP" role="PzmwI">
       <reference role="PrY4T" target="tpf8.650531548511609556" resolve="IGeneratorParameter" />
     </node>
-    <node concept="PrWs8" id="8484425748929510070" role="PzmwI">
+    <node concept="PrWs8" id="7mYJ4gC7JEQ" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="8484425748929510072">
-    <property role="R5!K7" value="false" />
+  <node concept="1TIwiD" id="7mYJ4gC7JES">
+    <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
-    <property role="R5!K2" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="MwhBj" value="${language_descriptor}/icons/parameters.png" />
     <property role="TrG5h" value="DefaultGeneratorParameterContainer" />
     <property role="3GE5qa" value="parameter" />
     <property role="34LRSv" value="generator parameters" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="8484425748929510073" role="1TKVEi">
+    <node concept="1TJgyj" id="7mYJ4gC7JET" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="parameters" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="8484425748929510068" resolve="DefaultGeneratorParameter" />
     </node>
-    <node concept="PrWs8" id="8484425748929510074" role="PzmwI">
+    <node concept="PrWs8" id="7mYJ4gC7JEU" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3064182000795631740">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2E6akI4$s1W">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="DefaultGenerationParameterId" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="parameter" />
     <property role="34LRSv" value="genParameter&lt;..&gt;" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="3064182000795631810" role="1TKVEi">
+    <node concept="1TJgyj" id="2E6akI4$s32" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="container" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="8484425748929510072" resolve="DefaultGeneratorParameterContainer" />
     </node>
-    <node concept="1TJgyj" id="3064182000795631811" role="1TKVEi">
+    <node concept="1TJgyj" id="2E6akI4$s33" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="parameter" />
       <property role="20lbJX" value="1" />

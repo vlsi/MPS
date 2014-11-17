@@ -21,7 +21,7 @@
       <concept id="1161622665029" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" flags="nn" index="1Q6Npb" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx!" />
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
@@ -47,7 +47,7 @@
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
@@ -65,26 +65,26 @@
       </concept>
     </language>
   </registry>
-  <node concept="1M2fIO" id="1227089946706">
+  <node concept="1M2fIO" id="hQOgExi">
     <reference role="1M2myG" target="tp3j.1192794744107" resolve="IntentionDeclaration" />
-    <node concept="2NXJUA" id="1227089959348" role="2NY200">
-      <node concept="3clFbS" id="1227089959349" role="2VODD2">
-        <node concept="3clFbF" id="1227089964162" role="3cqZAp">
-          <node concept="22lmx!" id="3074702196782954166" role="3clFbG">
-            <node concept="2YIFZM" id="3074702196782955454" role="3uHU7w">
+    <node concept="2NXJUA" id="hQOgHAO" role="2NY200">
+      <node concept="3clFbS" id="hQOgHAP" role="2VODD2">
+        <node concept="3clFbF" id="hQOgIM2" role="3cqZAp">
+          <node concept="22lmx$" id="2EFylI5n7qQ" role="3clFbG">
+            <node concept="2YIFZM" id="2EFylI5n7IY" role="3uHU7w">
               <reference role="1Pybhc" target="cu2c.~SModelStereotype" resolve="SModelStereotype" />
               <reference role="37wK5l" target="cu2c.~SModelStereotype%disGeneratorModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="isGeneratorModel" />
-              <node concept="1Q6Npb" id="3074702196782955455" role="37wK5m" />
+              <node concept="1Q6Npb" id="2EFylI5n7IZ" role="37wK5m" />
             </node>
-            <node concept="2OqwBi" id="1227089967071" role="3uHU7B">
-              <node concept="Rm8GO" id="1227089966477" role="2Oq!k0">
+            <node concept="2OqwBi" id="hQOgJvv" role="3uHU7B">
+              <node concept="Rm8GO" id="hQOgJmd" role="2Oq$k0">
                 <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dINTENTIONS" resolve="INTENTIONS" />
                 <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
               </node>
-              <node concept="liA8E" id="1227089990662" role="2OqNvi">
+              <node concept="liA8E" id="hQOgPg6" role="2OqNvi">
                 <reference role="37wK5l" target="cu2c.~LanguageAspect%dis(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="is" />
-                <node concept="2JrnkZ" id="7830785300025757730" role="37wK5m">
-                  <node concept="1Q6Npb" id="1227089991413" role="2JrQYb" />
+                <node concept="2JrnkZ" id="6MGyrQSoH0y" role="37wK5m">
+                  <node concept="1Q6Npb" id="hQOgPrP" role="2JrQYb" />
                 </node>
               </node>
             </node>
@@ -93,28 +93,28 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="6263518417926802270">
+  <node concept="1M2fIO" id="5rGvd38DcHu">
     <reference role="1M2myG" target="tp3j.2522969319638198293" resolve="SurroundWithIntentionDeclaration" />
-    <node concept="2NXJUA" id="6263518417926802272" role="2NY200">
-      <node concept="3clFbS" id="6263518417926802273" role="2VODD2">
-        <node concept="3clFbF" id="6263518417926802274" role="3cqZAp">
-          <node concept="22lmx!" id="2029765972765351827" role="3clFbG">
-            <node concept="2OqwBi" id="6263518417926802275" role="3uHU7B">
-              <node concept="Rm8GO" id="6263518417926802276" role="2Oq!k0">
+    <node concept="2NXJUA" id="5rGvd38DcHw" role="2NY200">
+      <node concept="3clFbS" id="5rGvd38DcHx" role="2VODD2">
+        <node concept="3clFbF" id="5rGvd38DcHy" role="3cqZAp">
+          <node concept="22lmx$" id="1KFbmnBQDYj" role="3clFbG">
+            <node concept="2OqwBi" id="5rGvd38DcHz" role="3uHU7B">
+              <node concept="Rm8GO" id="5rGvd38DcH$" role="2Oq$k0">
                 <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
                 <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dINTENTIONS" resolve="INTENTIONS" />
               </node>
-              <node concept="liA8E" id="6263518417926802277" role="2OqNvi">
+              <node concept="liA8E" id="5rGvd38DcH_" role="2OqNvi">
                 <reference role="37wK5l" target="cu2c.~LanguageAspect%dis(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="is" />
-                <node concept="2JrnkZ" id="7830785300025762585" role="37wK5m">
-                  <node concept="1Q6Npb" id="6263518417926802278" role="2JrQYb" />
+                <node concept="2JrnkZ" id="6MGyrQSoIcp" role="37wK5m">
+                  <node concept="1Q6Npb" id="5rGvd38DcHA" role="2JrQYb" />
                 </node>
               </node>
             </node>
-            <node concept="2YIFZM" id="2029765972765351833" role="3uHU7w">
+            <node concept="2YIFZM" id="1KFbmnBQDYp" role="3uHU7w">
               <reference role="1Pybhc" target="cu2c.~SModelStereotype" resolve="SModelStereotype" />
               <reference role="37wK5l" target="cu2c.~SModelStereotype%disGeneratorModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="isGeneratorModel" />
-              <node concept="1Q6Npb" id="2029765972765351834" role="37wK5m" />
+              <node concept="1Q6Npb" id="1KFbmnBQDYq" role="37wK5m" />
             </node>
           </node>
         </node>

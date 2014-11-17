@@ -33,16 +33,16 @@
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
       </concept>
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
-        <property id="1139852716018" name="noTargetText" index="1!x2rV" />
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
+        <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
-      <concept id="1215007762405" name="jetbrains.mps.lang.editor.structure.FloatStyleClassItem" flags="ln" index="3!6MrZ">
-        <property id="1215007802031" name="value" index="3!6WeP" />
+      <concept id="1215007762405" name="jetbrains.mps.lang.editor.structure.FloatStyleClassItem" flags="ln" index="3$6MrZ">
+        <property id="1215007802031" name="value" index="3$6WeP" />
       </concept>
-      <concept id="1215007883204" name="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" flags="ln" index="3!7fVu" />
-      <concept id="1215007897487" name="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" flags="ln" index="3!7jql" />
+      <concept id="1215007883204" name="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" flags="ln" index="3$7fVu" />
+      <concept id="1215007897487" name="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" flags="ln" index="3$7jql" />
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" index="3F0A7n" />
       <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
@@ -54,61 +54,61 @@
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
     </language>
   </registry>
-  <node concept="24kQdi" id="8077936094962911308">
+  <node concept="24kQdi" id="70qA1hy$wxc">
     <reference role="1XX52x" target="genb.8077936094962911282" resolve="ParentScope" />
-    <node concept="3F0ifn" id="8077936094962911310" role="2wV5jI">
+    <node concept="3F0ifn" id="70qA1hy$wxe" role="2wV5jI">
       <property role="3F0ifm" value="parent scope" />
     </node>
   </node>
-  <node concept="24kQdi" id="8077936094962958437">
+  <node concept="24kQdi" id="70qA1hy$G1_">
     <reference role="1XX52x" target="genb.8077936094962944991" resolve="ComeFromExpression" />
-    <node concept="3EZMnI" id="8077936094962958451" role="2wV5jI">
-      <node concept="l2Vlx" id="8077936094962958452" role="2iSdaV" />
-      <node concept="3F0ifn" id="8077936094962958453" role="3EZMnx">
+    <node concept="3EZMnI" id="70qA1hy$G1N" role="2wV5jI">
+      <node concept="l2Vlx" id="70qA1hy$G1O" role="2iSdaV" />
+      <node concept="3F0ifn" id="70qA1hy$G1P" role="3EZMnx">
         <property role="3F0ifm" value="come from" />
       </node>
-      <node concept="1iCGBv" id="5253134957341697449" role="3EZMnx">
-        <property role="1!x2rV" value="link" />
+      <node concept="1iCGBv" id="4zASA_hyumD" role="3EZMnx">
+        <property role="1$x2rV" value="link" />
         <reference role="1NtTu8" target="genb.8077936094962945822" />
-        <node concept="1sVBvm" id="5253134957341697450" role="1sWHZn">
-          <node concept="3F0A7n" id="5253134957341697451" role="2wV5jI">
+        <node concept="1sVBvm" id="4zASA_hyumE" role="1sWHZn">
+          <node concept="3F0A7n" id="4zASA_hyumF" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <reference role="1NtTu8" target="tpce.1071599776563" resolve="role" />
             <reference role="1k5W1q" target="tpd3.1221170124867" resolve="ReferenceOnConceptualFeature" />
-            <node concept="3!7jql" id="5253134957341697452" role="3F10Kt">
-              <property role="3!6WeP" value="0.0" />
+            <node concept="3$7jql" id="4zASA_hyumG" role="3F10Kt">
+              <property role="3$6WeP" value="0.0" />
             </node>
           </node>
         </node>
-        <node concept="3!7jql" id="5253134957341697453" role="3F10Kt">
-          <property role="3!6WeP" value="0.0" />
+        <node concept="3$7jql" id="4zASA_hyumH" role="3F10Kt">
+          <property role="3$6WeP" value="0.0" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="8077936094962969173">
+  <node concept="24kQdi" id="70qA1hy$IDl">
     <reference role="1XX52x" target="genb.8077936094962850237" resolve="CompositeWithParentScopeExpression" />
-    <node concept="3EZMnI" id="8077936094962969175" role="2wV5jI">
-      <node concept="l2Vlx" id="8077936094962969176" role="2iSdaV" />
-      <node concept="3F0ifn" id="8077936094962969189" role="3EZMnx">
+    <node concept="3EZMnI" id="70qA1hy$IDn" role="2wV5jI">
+      <node concept="l2Vlx" id="70qA1hy$IDo" role="2iSdaV" />
+      <node concept="3F0ifn" id="70qA1hy$ID_" role="3EZMnx">
         <property role="3F0ifm" value="composite" />
-        <node concept="3!7fVu" id="8077936094962969190" role="3F10Kt">
-          <property role="3!6WeP" value="0.5" />
+        <node concept="3$7fVu" id="70qA1hy$IDA" role="3F10Kt">
+          <property role="3$6WeP" value="0.5" />
         </node>
-        <node concept="3!7jql" id="8077936094962969191" role="3F10Kt">
-          <property role="3!6WeP" value="0.5" />
+        <node concept="3$7jql" id="70qA1hy$IDB" role="3F10Kt">
+          <property role="3$6WeP" value="0.5" />
         </node>
       </node>
-      <node concept="3F1sOY" id="8077936094962969206" role="3EZMnx">
+      <node concept="3F1sOY" id="70qA1hy$IDQ" role="3EZMnx">
         <reference role="1NtTu8" target="genb.8077936094962969171" />
       </node>
-      <node concept="3F0ifn" id="8077936094962969192" role="3EZMnx">
+      <node concept="3F0ifn" id="70qA1hy$IDC" role="3EZMnx">
         <property role="3F0ifm" value="with parent scope" />
-        <node concept="3!7fVu" id="8077936094962969193" role="3F10Kt">
-          <property role="3!6WeP" value="0.5" />
+        <node concept="3$7fVu" id="70qA1hy$IDD" role="3F10Kt">
+          <property role="3$6WeP" value="0.5" />
         </node>
-        <node concept="3!7jql" id="8077936094962969194" role="3F10Kt">
-          <property role="3!6WeP" value="0.5" />
+        <node concept="3$7jql" id="70qA1hy$IDE" role="3F10Kt">
+          <property role="3$6WeP" value="0.5" />
         </node>
       </node>
     </node>

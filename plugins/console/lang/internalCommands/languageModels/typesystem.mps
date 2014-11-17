@@ -57,53 +57,53 @@
       </concept>
       <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
-        <child id="1174660783413" name="leftExpression" index="1ZfhK!" />
+        <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
     </language>
   </registry>
-  <node concept="1YbPZF" id="8829647120617324600">
+  <node concept="1YbPZF" id="7E9dkpks$0S">
     <property role="TrG5h" value="typeof_InternalMode" />
-    <node concept="3clFbS" id="8829647120617324601" role="18ibNy">
-      <node concept="1Z5TYs" id="8829647120617325128" role="3cqZAp">
-        <node concept="mw_s8" id="8829647120617325131" role="1ZfhK!">
-          <node concept="1Z2H0r" id="8829647120617324661" role="mwGJk">
-            <node concept="1YBJjd" id="8829647120617324704" role="1Z2MuG">
+    <node concept="3clFbS" id="7E9dkpks$0T" role="18ibNy">
+      <node concept="1Z5TYs" id="7E9dkpks$98" role="3cqZAp">
+        <node concept="mw_s8" id="7E9dkpks$9b" role="1ZfhK$">
+          <node concept="1Z2H0r" id="7E9dkpks$1P" role="mwGJk">
+            <node concept="1YBJjd" id="7E9dkpks$2w" role="1Z2MuG">
               <reference role="1YBMHb" target="8829647120617324603" resolve="internalMode" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="8829647120617325531" role="1ZfhKB">
-          <node concept="2c44tf" id="8829647120617325529" role="mwGJk">
-            <node concept="10P_77" id="8829647120617325566" role="2c44tc" />
+        <node concept="mw_s8" id="7E9dkpks$fr" role="1ZfhKB">
+          <node concept="2c44tf" id="7E9dkpks$fp" role="mwGJk">
+            <node concept="10P_77" id="7E9dkpks$fY" role="2c44tc" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="8829647120617324603" role="1YuTPh">
+    <node concept="1YaCAy" id="7E9dkpks$0V" role="1YuTPh">
       <property role="TrG5h" value="internalMode" />
       <reference role="1YaFvo" target="wns9.8829647120617316889" resolve="InternalMode" />
     </node>
   </node>
-  <node concept="1YbPZF" id="5582028874770305470">
+  <node concept="1YbPZF" id="4PRmqZeE56Y">
     <property role="TrG5h" value="typeof_ConsoleModelExpression" />
-    <node concept="3clFbS" id="5582028874770305471" role="18ibNy">
-      <node concept="1Z5TYs" id="5582028874770305472" role="3cqZAp">
-        <node concept="mw_s8" id="5582028874770305473" role="1ZfhKB">
-          <node concept="2c44tf" id="5582028874770305474" role="mwGJk">
-            <node concept="H_c77" id="5582028874770305475" role="2c44tc" />
+    <node concept="3clFbS" id="4PRmqZeE56Z" role="18ibNy">
+      <node concept="1Z5TYs" id="4PRmqZeE570" role="3cqZAp">
+        <node concept="mw_s8" id="4PRmqZeE571" role="1ZfhKB">
+          <node concept="2c44tf" id="4PRmqZeE572" role="mwGJk">
+            <node concept="H_c77" id="4PRmqZeE573" role="2c44tc" />
           </node>
         </node>
-        <node concept="mw_s8" id="5582028874770305476" role="1ZfhK!">
-          <node concept="1Z2H0r" id="5582028874770305477" role="mwGJk">
-            <node concept="1YBJjd" id="5582028874770305478" role="1Z2MuG">
+        <node concept="mw_s8" id="4PRmqZeE574" role="1ZfhK$">
+          <node concept="1Z2H0r" id="4PRmqZeE575" role="mwGJk">
+            <node concept="1YBJjd" id="4PRmqZeE576" role="1Z2MuG">
               <reference role="1YBMHb" target="5582028874770305479" resolve="consoleModelExpression" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="5582028874770305479" role="1YuTPh">
+    <node concept="1YaCAy" id="4PRmqZeE577" role="1YuTPh">
       <property role="TrG5h" value="consoleModelExpression" />
       <reference role="1YaFvo" target="wns9.5582028874770305469" resolve="ConsoleModelExpression" />
     </node>

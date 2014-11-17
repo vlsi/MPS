@@ -15,8 +15,8 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -44,73 +44,73 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="5898776707557467933">
+  <node concept="1TIwiD" id="57sEyAnjUst">
     <property role="TrG5h" value="Canvas" />
     <property role="19KtqR" value="true" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5898776707557489223" role="1TKVEi">
+    <node concept="1TJgyj" id="57sEyAnjZD7" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="shapes" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="5898776707557474657" resolve="Shape" />
     </node>
-    <node concept="PrWs8" id="5898776707557474655" role="PzmwI">
+    <node concept="PrWs8" id="57sEyAnjW5v" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="PrWs8" id="3628014067759002798" role="PzmwI">
+    <node concept="PrWs8" id="39piTakTjiI" role="PzmwI">
       <reference role="PrY4T" target="4fqr.4666195181811081429" resolve="IMainClass" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5898776707557474657">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="57sEyAnjW5x">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="Shape" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="4191445539799470732" role="1TKVEi">
+    <node concept="1TJgyj" id="3CF0obv99ac" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="color" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="4191445539799302575" resolve="ColorReference" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5898776707557474712">
+  <node concept="1TIwiD" id="57sEyAnjW6o">
     <property role="TrG5h" value="Circle" />
     <property role="34LRSv" value="circle" />
     <reference role="1TJDcQ" target="5898776707557474657" resolve="Shape" />
-    <node concept="1TJgyi" id="5898776707557474713" role="1TKVEl">
+    <node concept="1TJgyi" id="57sEyAnjW6p" role="1TKVEl">
       <property role="TrG5h" value="x" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="5898776707557474715" role="1TKVEl">
+    <node concept="1TJgyi" id="57sEyAnjW6r" role="1TKVEl">
       <property role="TrG5h" value="y" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="5898776707557474718" role="1TKVEl">
+    <node concept="1TJgyi" id="57sEyAnjW6u" role="1TKVEl">
       <property role="TrG5h" value="radius" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5898776707557474722">
+  <node concept="1TIwiD" id="57sEyAnjW6y">
     <property role="TrG5h" value="Square" />
     <property role="34LRSv" value="square" />
     <reference role="1TJDcQ" target="5898776707557474657" resolve="Shape" />
-    <node concept="1TJgyi" id="5898776707557474723" role="1TKVEl">
+    <node concept="1TJgyi" id="57sEyAnjW6z" role="1TKVEl">
       <property role="TrG5h" value="upperLeftX" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="5898776707557474725" role="1TKVEl">
+    <node concept="1TJgyi" id="57sEyAnjW6_" role="1TKVEl">
       <property role="TrG5h" value="upperLeftY" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="5898776707557474728" role="1TKVEl">
+    <node concept="1TJgyi" id="57sEyAnjW6C" role="1TKVEl">
       <property role="TrG5h" value="size" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4191445539799302575">
+  <node concept="1TIwiD" id="3CF0obv8w6J">
     <property role="TrG5h" value="ColorReference" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="4191445539799302810" role="1TKVEi">
+    <node concept="1TJgyj" id="3CF0obv8waq" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="color" />
       <property role="20lbJX" value="1" />

@@ -47,7 +47,7 @@
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
     </language>
@@ -74,7 +74,7 @@
       </concept>
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
         <property id="1206359757216" name="checkOnly" index="3wDh2S" />
-        <child id="1174660783413" name="leftExpression" index="1ZfhK!" />
+        <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
         <child id="1180447237840" name="errorString" index="3o8Qv2" />
       </concept>
@@ -84,38 +84,38 @@
       </concept>
     </language>
   </registry>
-  <node concept="1YbPZF" id="5540778578667537766">
+  <node concept="1YbPZF" id="4N$Ncbg$ClA">
     <property role="TrG5h" value="typeof_DefaultGeneratorParameter" />
     <property role="3GE5qa" value="parameter" />
-    <node concept="3clFbS" id="5540778578667537767" role="18ibNy">
-      <node concept="1ZobV4" id="5540778578667542587" role="3cqZAp">
+    <node concept="3clFbS" id="4N$Ncbg$ClB" role="18ibNy">
+      <node concept="1ZobV4" id="4N$Ncbg$DwV" role="3cqZAp">
         <property role="3wDh2S" value="true" />
-        <node concept="KNH2X" id="5540778578667542588" role="KNH20" />
-        <node concept="mw_s8" id="5540778578667542600" role="1ZfhKB">
-          <node concept="2c44tf" id="5540778578667542601" role="mwGJk">
-            <node concept="2usRSg" id="5540778578667542603" role="2c44tc">
-              <node concept="17QB3L" id="5540778578667542605" role="2usUpS" />
-              <node concept="10P_77" id="5540778578667542607" role="2usUpS" />
-              <node concept="10Oyi0" id="5540778578667542609" role="2usUpS" />
+        <node concept="KNH2X" id="4N$Ncbg$DwW" role="KNH20" />
+        <node concept="mw_s8" id="4N$Ncbg$Dx8" role="1ZfhKB">
+          <node concept="2c44tf" id="4N$Ncbg$Dx9" role="mwGJk">
+            <node concept="2usRSg" id="4N$Ncbg$Dxb" role="2c44tc">
+              <node concept="17QB3L" id="4N$Ncbg$Dxd" role="2usUpS" />
+              <node concept="10P_77" id="4N$Ncbg$Dxf" role="2usUpS" />
+              <node concept="10Oyi0" id="4N$Ncbg$Dxh" role="2usUpS" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="5540778578667542591" role="1ZfhK!">
-          <node concept="2OqwBi" id="5540778578667542582" role="mwGJk">
-            <node concept="1YBJjd" id="5540778578667542581" role="2Oq!k0">
+        <node concept="mw_s8" id="4N$Ncbg$DwZ" role="1ZfhK$">
+          <node concept="2OqwBi" id="4N$Ncbg$DwQ" role="mwGJk">
+            <node concept="1YBJjd" id="4N$Ncbg$DwP" role="2Oq$k0">
               <reference role="1YBMHb" target="5540778578667537768" resolve="parameter" />
             </node>
-            <node concept="3TrEf2" id="5540778578667542586" role="2OqNvi">
+            <node concept="3TrEf2" id="4N$Ncbg$DwU" role="2OqNvi">
               <reference role="3Tt5mk" target="tpf8.650531548511609557" />
             </node>
           </node>
         </node>
-        <node concept="Xl_RD" id="5540778578667542611" role="3o8Qv2">
+        <node concept="Xl_RD" id="4N$Ncbg$Dxj" role="3o8Qv2">
           <property role="Xl_RC" value="Type of generation parameter should be string, boolean or int" />
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="5540778578667537768" role="1YuTPh">
+    <node concept="1YaCAy" id="4N$Ncbg$ClC" role="1YuTPh">
       <property role="TrG5h" value="parameter" />
       <reference role="1YaFvo" target="q5cj.8484425748929510068" resolve="DefaultGeneratorParameter" />
     </node>

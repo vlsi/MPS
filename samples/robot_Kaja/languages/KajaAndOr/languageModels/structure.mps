@@ -14,8 +14,8 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -38,34 +38,34 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="1904811872814253578">
+  <node concept="1TIwiD" id="1DJg4Tz2$oa">
     <property role="TrG5h" value="And" />
     <property role="34LRSv" value="and" />
     <reference role="1TJDcQ" target="1904811872814253785" resolve="LogicalOperator" />
   </node>
-  <node concept="1TIwiD" id="1904811872814253755">
+  <node concept="1TIwiD" id="1DJg4Tz2$qV">
     <property role="TrG5h" value="Or" />
     <property role="34LRSv" value="or" />
     <reference role="1TJDcQ" target="1904811872814253785" resolve="LogicalOperator" />
   </node>
-  <node concept="1TIwiD" id="1904811872814253785">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="1DJg4Tz2$rp">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="LogicalOperator" />
     <reference role="1TJDcQ" target="c2kz.3308300503039647681" resolve="LogicalExpression" />
-    <node concept="1TJgyj" id="1904811872814253580" role="1TKVEi">
+    <node concept="1TJgyj" id="1DJg4Tz2$oc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="left" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="c2kz.3308300503039647681" resolve="LogicalExpression" />
     </node>
-    <node concept="1TJgyj" id="1904811872814253581" role="1TKVEi">
+    <node concept="1TJgyj" id="1DJg4Tz2$od" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="right" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="c2kz.3308300503039647681" resolve="LogicalExpression" />
     </node>
-    <node concept="PrWs8" id="642541832611532987" role="PzmwI">
+    <node concept="PrWs8" id="zEL6hQ8T2V" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>

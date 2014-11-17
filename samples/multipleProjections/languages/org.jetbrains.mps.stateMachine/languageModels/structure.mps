@@ -12,8 +12,8 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -40,88 +40,88 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="763922957008726945">
+  <node concept="1TIwiD" id="EpZY78hmIx">
     <property role="TrG5h" value="StateMachine" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="763922957008726947" role="1TKVEi">
+    <node concept="1TJgyj" id="EpZY78hmIz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="events" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="763922957008729147" resolve="Event" />
     </node>
-    <node concept="1TJgyj" id="763922957008726948" role="1TKVEi">
+    <node concept="1TJgyj" id="EpZY78hmI$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="transitions" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="763922957008729149" resolve="Transition" />
     </node>
-    <node concept="1TJgyj" id="763922957008726949" role="1TKVEi">
+    <node concept="1TJgyj" id="EpZY78hmI_" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="states" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="763922957008729154" resolve="State" />
     </node>
   </node>
-  <node concept="1TIwiD" id="763922957008729147">
+  <node concept="1TIwiD" id="EpZY78hngV">
     <property role="TrG5h" value="Event" />
     <reference role="1TJDcQ" target="7943979732673457898" resolve="AbstractStateMachineElement" />
-    <node concept="PrWs8" id="763922957008729148" role="PzmwI">
+    <node concept="PrWs8" id="EpZY78hngW" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="763922957008729149">
+  <node concept="1TIwiD" id="EpZY78hngX">
     <property role="TrG5h" value="Transition" />
     <reference role="1TJDcQ" target="7943979732673457898" resolve="AbstractStateMachineElement" />
-    <node concept="1TJgyj" id="763922957008729150" role="1TKVEi">
+    <node concept="1TJgyj" id="EpZY78hngY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="fromState" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="763922957008729156" resolve="StateReference" />
     </node>
-    <node concept="1TJgyj" id="763922957008729152" role="1TKVEi">
+    <node concept="1TJgyj" id="EpZY78hnh0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="toState" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="763922957008729156" resolve="StateReference" />
     </node>
-    <node concept="1TJgyj" id="763922957008729151" role="1TKVEi">
+    <node concept="1TJgyj" id="EpZY78hngZ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="trigger" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="763922957008729158" resolve="EventReference" />
     </node>
-    <node concept="1TJgyi" id="763922957008729153" role="1TKVEl">
+    <node concept="1TJgyi" id="EpZY78hnh1" role="1TKVEl">
       <property role="TrG5h" value="condition" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="763922957008729154">
+  <node concept="1TIwiD" id="EpZY78hnh2">
     <property role="TrG5h" value="State" />
     <reference role="1TJDcQ" target="7943979732673457898" resolve="AbstractStateMachineElement" />
-    <node concept="PrWs8" id="763922957008729155" role="PzmwI">
+    <node concept="PrWs8" id="EpZY78hnh3" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7943979732673457898">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="6SYFRDkTQVE">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AbstractStateMachineElement" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
   </node>
-  <node concept="1TIwiD" id="763922957008729156">
+  <node concept="1TIwiD" id="EpZY78hnh4">
     <property role="TrG5h" value="StateReference" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="763922957008729157" role="1TKVEi">
+    <node concept="1TJgyj" id="EpZY78hnh5" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="state" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="763922957008729154" resolve="State" />
     </node>
   </node>
-  <node concept="1TIwiD" id="763922957008729158">
+  <node concept="1TIwiD" id="EpZY78hnh6">
     <property role="TrG5h" value="EventReference" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="763922957008729159" role="1TKVEi">
+    <node concept="1TJgyj" id="EpZY78hnh7" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="event" />
       <property role="20lbJX" value="1" />

@@ -32,13 +32,13 @@
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
     </language>
   </registry>
-  <node concept="312cEu" id="5257650213624905139">
+  <node concept="312cEu" id="4zQVgdonBQN">
     <property role="TrG5h" value="Clazz" />
-    <node concept="3Tm1VV" id="5257650213624905140" role="1B3o_S" />
-    <node concept="3clFbW" id="5257650213624905141" role="jymVt">
-      <node concept="3cqZAl" id="5257650213624905142" role="3clF45" />
-      <node concept="3Tm1VV" id="5257650213624905143" role="1B3o_S" />
-      <node concept="3clFbS" id="5257650213624905144" role="3clF47" />
+    <node concept="3Tm1VV" id="4zQVgdonBQO" role="1B3o_S" />
+    <node concept="3clFbW" id="4zQVgdonBQP" role="jymVt">
+      <node concept="3cqZAl" id="4zQVgdonBQQ" role="3clF45" />
+      <node concept="3Tm1VV" id="4zQVgdonBQR" role="1B3o_S" />
+      <node concept="3clFbS" id="4zQVgdonBQS" role="3clF47" />
     </node>
   </node>
 </model>

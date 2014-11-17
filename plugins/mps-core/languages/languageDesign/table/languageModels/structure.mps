@@ -17,8 +17,8 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -42,51 +42,51 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="4677325677876400523">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="43DcIKCCH6b">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="CellModel_Table" />
     <property role="34LRSv" value="table" />
     <reference role="1TJDcQ" target="tpc2.1073389214265" resolve="EditorCellModel" />
-    <node concept="1TJgyj" id="4490468428501048483" role="1TKVEi">
+    <node concept="1TJgyj" id="3ThmjU3UlMz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="tableModel" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="4490468428501056077" resolve="QueryFunction_TableModel" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4490468428501056077">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="3ThmjU3UnDd">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="QueryFunction_TableModel" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="getTableModel" />
     <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="2253133157536766818">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="1X4JaHeCxHy">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="CellModel_HierarchycalTable" />
     <property role="34LRSv" value="hierarchycal table" />
     <reference role="1TJDcQ" target="tpc2.1073389214265" resolve="EditorCellModel" />
-    <node concept="1TJgyj" id="6216065619544939793" role="1TKVEi">
+    <node concept="1TJgyj" id="5p3TFWLvDOh" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="headerRowLinkDeclaration" />
       <reference role="20lvS9" target="tpce.1071489288298" resolve="LinkDeclaration" />
     </node>
-    <node concept="1TJgyj" id="6216065619544939794" role="1TKVEi">
+    <node concept="1TJgyj" id="5p3TFWLvDOi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="rowsLinkDeclaration" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpce.1071489288298" resolve="LinkDeclaration" />
     </node>
-    <node concept="1TJgyj" id="6216065619544939795" role="1TKVEi">
+    <node concept="1TJgyj" id="5p3TFWLvDOj" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="cellsInRowLinkDeclaration" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpce.1071489288298" resolve="LinkDeclaration" />
     </node>
-    <node concept="1TJgyi" id="2253133157537011702" role="1TKVEl">
+    <node concept="1TJgyi" id="1X4JaHeDtvQ" role="1TKVEl">
       <property role="TrG5h" value="myProp" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>

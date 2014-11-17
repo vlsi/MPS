@@ -28,7 +28,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -65,7 +65,7 @@
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
-      <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H!t8">
+      <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
         <child id="1167169362365" name="conditionFunction" index="30HLyM" />
       </concept>
@@ -80,23 +80,23 @@
       </concept>
     </language>
   </registry>
-  <node concept="bUwia" id="1209604518979">
+  <node concept="bUwia" id="hAy33h3">
     <property role="TrG5h" value="main" />
-    <node concept="3lhOvk" id="1209604563573" role="3lj3bC">
+    <node concept="3lhOvk" id="hAy3e9P" role="3lj3bC">
       <reference role="30HIoZ" target="tpm0.1195168316083" resolve="InputRoot" />
       <reference role="3lhOvi" target="1209605205934" resolve="outputRoot" />
-      <node concept="30G5F_" id="1209604575152" role="30HLyM">
-        <node concept="3clFbS" id="1209604575153" role="2VODD2">
-          <node concept="3clFbF" id="1209604582248" role="3cqZAp">
-            <node concept="2OqwBi" id="1209604592988" role="3clFbG">
-              <node concept="2OqwBi" id="1209604582375" role="2Oq!k0">
-                <node concept="30H73N" id="1209604582249" role="2Oq!k0" />
-                <node concept="3TrcHB" id="1209604589425" role="2OqNvi">
+      <node concept="30G5F_" id="hAy3gYK" role="30HLyM">
+        <node concept="3clFbS" id="hAy3gYL" role="2VODD2">
+          <node concept="3clFbF" id="hAy3iHC" role="3cqZAp">
+            <node concept="2OqwBi" id="hAy3lls" role="3clFbG">
+              <node concept="2OqwBi" id="hAy3iJB" role="2Oq$k0">
+                <node concept="30H73N" id="hAy3iHD" role="2Oq$k0" />
+                <node concept="3TrcHB" id="hAy3ktL" role="2OqNvi">
                   <reference role="3TsBF5" target="tpm0.1202243304949" resolve="useInTest" />
                 </node>
               </node>
-              <node concept="3t7uKx" id="1209604595873" role="2OqNvi">
-                <node concept="uoxfO" id="1209604595874" role="3t7uKA">
+              <node concept="3t7uKx" id="hAy3m2x" role="2OqNvi">
+                <node concept="uoxfO" id="hAy3m2y" role="3t7uKA">
                   <reference role="uo_Cq" target="tpm0.1209603553188" />
                 </node>
               </node>
@@ -106,13 +106,13 @@
       </node>
     </node>
   </node>
-  <node concept="15npcT" id="1209605205934">
+  <node concept="15npcT" id="hAy5EYI">
     <property role="TrG5h" value="outputRoot" />
     <property role="15nCFB" value="output for 'don't apply reduction rule twice' test" />
-    <node concept="n94m4" id="1209605205935" role="lGtFl">
+    <node concept="n94m4" id="hAy5EYJ" role="lGtFl">
       <reference role="n9lRv" target="tpm0.1195168316083" resolve="InputRoot" />
     </node>
-    <node concept="2y1bA8" id="1209605724998" role="15EkXs">
+    <node concept="2y1bA8" id="hAy7DH6" role="15EkXs">
       <property role="15Hqq1" value="this is OutputNode_forDontApplyReductionTwice_test actually" />
     </node>
   </node>

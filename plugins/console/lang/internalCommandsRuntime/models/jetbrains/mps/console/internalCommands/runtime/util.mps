@@ -41,7 +41,7 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
@@ -49,7 +49,7 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
-        <property id="4276006055363816570" name="isSynchronized" index="od!2w" />
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
@@ -66,60 +66,60 @@
       </concept>
     </language>
   </registry>
-  <node concept="312cEu" id="8829647120617550906">
+  <node concept="312cEu" id="7E9dkpktrgU">
     <property role="TrG5h" value="InternalUtil" />
-    <node concept="2tJIrI" id="8829647120617550987" role="jymVt" />
-    <node concept="2YIFZL" id="8829647120617551037" role="jymVt">
+    <node concept="2tJIrI" id="7E9dkpktrib" role="jymVt" />
+    <node concept="2YIFZL" id="7E9dkpktriX" role="jymVt">
       <property role="TrG5h" value="getInternalFlag" />
-      <property role="od!2w" value="false" />
+      <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <node concept="3clFbS" id="8829647120617551040" role="3clF47">
-        <node concept="3cpWs6" id="8829647120617551057" role="3cqZAp">
-          <node concept="2YIFZM" id="8829647120617554491" role="3cqZAk">
+      <node concept="3clFbS" id="7E9dkpktrj0" role="3clF47">
+        <node concept="3cpWs6" id="7E9dkpktrjh" role="3cqZAp">
+          <node concept="2YIFZM" id="7E9dkpkts8V" role="3cqZAk">
             <reference role="37wK5l" target="1p1s.~InternalFlag%disInternalMode()%cboolean" resolve="isInternalMode" />
             <reference role="1Pybhc" target="1p1s.~InternalFlag" resolve="InternalFlag" />
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="8829647120617551006" role="1B3o_S" />
-      <node concept="10P_77" id="8829647120617551030" role="3clF45" />
+      <node concept="3Tm1VV" id="7E9dkpktriu" role="1B3o_S" />
+      <node concept="10P_77" id="7E9dkpktriQ" role="3clF45" />
     </node>
-    <node concept="2tJIrI" id="8829647120617554522" role="jymVt" />
-    <node concept="2YIFZL" id="8829647120617554594" role="jymVt">
+    <node concept="2tJIrI" id="7E9dkpkts9q" role="jymVt" />
+    <node concept="2YIFZL" id="7E9dkpktsay" role="jymVt">
       <property role="TrG5h" value="setInternalFlag" />
-      <property role="od!2w" value="false" />
+      <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <node concept="3clFbS" id="8829647120617554597" role="3clF47">
-        <node concept="3clFbF" id="8829647120617554660" role="3cqZAp">
-          <node concept="2OqwBi" id="8829647120617554954" role="3clFbG">
-            <node concept="2YIFZM" id="8829647120617554673" role="2Oq!k0">
+      <node concept="3clFbS" id="7E9dkpktsa_" role="3clF47">
+        <node concept="3clFbF" id="7E9dkpktsb$" role="3cqZAp">
+          <node concept="2OqwBi" id="7E9dkpktsga" role="3clFbG">
+            <node concept="2YIFZM" id="7E9dkpktsbL" role="2Oq$k0">
               <reference role="37wK5l" target="1p1s.~InternalFlag%dgetInstance()%cjetbrains%dmps%dInternalFlag" resolve="getInstance" />
               <reference role="1Pybhc" target="1p1s.~InternalFlag" resolve="InternalFlag" />
             </node>
-            <node concept="liA8E" id="8829647120617557760" role="2OqNvi">
+            <node concept="liA8E" id="7E9dkpktsW0" role="2OqNvi">
               <reference role="37wK5l" target="1p1s.~InternalFlag%dsetInternalFlag(boolean)%cvoid" resolve="setInternalFlag" />
-              <node concept="37vLTw" id="8829647120617557919" role="37wK5m">
+              <node concept="37vLTw" id="7E9dkpktsYv" role="37wK5m">
                 <reference role="3cqZAo" target="8829647120617554621" resolve="flag" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="8829647120617557997" role="3cqZAp">
-          <node concept="1rXfSq" id="8829647120617558105" role="3cqZAk">
+        <node concept="3cpWs6" id="7E9dkpktsZH" role="3cqZAp">
+          <node concept="1rXfSq" id="7E9dkpktt1p" role="3cqZAk">
             <reference role="37wK5l" target="8829647120617551037" resolve="getInternalFlag" />
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="8829647120617554561" role="1B3o_S" />
-      <node concept="10P_77" id="8829647120617554588" role="3clF45" />
-      <node concept="37vLTG" id="8829647120617554621" role="3clF46">
+      <node concept="3Tm1VV" id="7E9dkpktsa1" role="1B3o_S" />
+      <node concept="10P_77" id="7E9dkpktsas" role="3clF45" />
+      <node concept="37vLTG" id="7E9dkpktsaX" role="3clF46">
         <property role="TrG5h" value="flag" />
-        <node concept="10P_77" id="8829647120617554620" role="1tU5fm" />
+        <node concept="10P_77" id="7E9dkpktsaW" role="1tU5fm" />
       </node>
     </node>
-    <node concept="2tJIrI" id="2849748491601138670" role="jymVt" />
-    <node concept="2tJIrI" id="8829647120617550997" role="jymVt" />
-    <node concept="3Tm1VV" id="8829647120617550907" role="1B3o_S" />
+    <node concept="2tJIrI" id="2uclMud5PfI" role="jymVt" />
+    <node concept="2tJIrI" id="7E9dkpktril" role="jymVt" />
+    <node concept="3Tm1VV" id="7E9dkpktrgV" role="1B3o_S" />
   </node>
 </model>
 

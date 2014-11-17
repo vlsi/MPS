@@ -71,7 +71,7 @@
         <property id="6655351613569904549" name="defaultProperty" index="2Mta2y" />
         <property id="5950344441601550575" name="compactProperty" index="usFph" />
       </concept>
-      <concept id="5861024100072045177" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeRoot" flags="ng" index="3xAF0!">
+      <concept id="5861024100072045177" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeRoot" flags="ng" index="3xAF0$">
         <property id="1947450138886755613" name="projectAsCompact" index="199YU8" />
         <property id="1947450138886755612" name="projectionType" index="199YU9" />
         <child id="5861024100072084610" name="compactChild" index="3xA_Vv" />
@@ -80,7 +80,7 @@
         <child id="1947450138886755528" name="conditionallyProjectedChild" index="199YXt" />
       </concept>
       <concept id="7279578193768898412" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeListRoot" flags="ng" index="7g1Uw">
-        <property id="5613016763942517158" name="projectionType" index="2KZ!yB" />
+        <property id="5613016763942517158" name="projectionType" index="2KZ$yB" />
         <property id="554589055677247838" name="projectAsCompact" index="3ch7Eg" />
         <child id="5613016763942533640" name="conditionallyProjectedChildren" index="2KZwG9" />
         <child id="554589055677215272" name="conditionallyRichOrCompactChildren" index="3chZBA" />
@@ -95,14 +95,14 @@
       </concept>
     </language>
   </registry>
-  <node concept="LiM7Y" id="5950344441601491241">
+  <node concept="LiM7Y" id="5ajRFTcS84D">
     <property role="TrG5h" value="EditorSpecifiedBy_add_context_hints" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestChild child concept instance using rich editor (rich context hint was pushed into context by parent collection)" />
-    <node concept="2MuQ0i" id="7636045212390385561" role="LiRBU">
-      <node concept="2MuRF6" id="7636045212390385564" role="2Mt0WF">
+    <node concept="2MuQ0i" id="6BSFEB5muup" role="LiRBU">
+      <node concept="2MuRF6" id="6BSFEB5muus" role="2Mt0WF">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2w" value="initValue" />
-        <node concept="LIFWc" id="7279578193766803276" role="lGtFl">
+        <node concept="LIFWc" id="6k6gsLy9Atc" role="lGtFl">
           <property role="LIFWa" value="4" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="4" />
@@ -111,16 +111,16 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="5950344441601663777" role="LjaKd">
-      <node concept="2TK7Tu" id="5950344441601663779" role="3cqZAp">
+    <node concept="3clFbS" id="5ajRFTcSMcx" role="LjaKd">
+      <node concept="2TK7Tu" id="5ajRFTcSMcz" role="3cqZAp">
         <property role="2TTd_B" value="ial" />
       </node>
     </node>
-    <node concept="2MuQ0i" id="7636045212390385580" role="LiZbd">
-      <node concept="2MuRF6" id="7636045212390385581" role="2Mt0WF">
+    <node concept="2MuQ0i" id="6BSFEB5muuG" role="LiZbd">
+      <node concept="2MuRF6" id="6BSFEB5muuH" role="2Mt0WF">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2w" value="initialValue" />
-        <node concept="LIFWc" id="7279578193766803462" role="lGtFl">
+        <node concept="LIFWc" id="6k6gsLy9Aw6" role="lGtFl">
           <property role="LIFWa" value="7" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="7" />
@@ -130,17 +130,17 @@
       </node>
     </node>
   </node>
-  <node concept="2XOHcx" id="5950344441601613251">
+  <node concept="2XOHcx" id="5ajRFTcS_R3">
     <property role="2XOHcw" value="${mps_home}" />
   </node>
-  <node concept="LiM7Y" id="5950344441601668447">
+  <node concept="LiM7Y" id="5ajRFTcSNlv">
     <property role="TrG5h" value="DefaultEditor" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestChild child concept instance using default editor (no context hints specified)" />
-    <node concept="2MuQ0i" id="5950344441601668448" role="LiRBU">
-      <node concept="2MuRF6" id="5950344441601668449" role="usPXg">
+    <node concept="2MuQ0i" id="5ajRFTcSNlw" role="LiRBU">
+      <node concept="2MuRF6" id="5ajRFTcSNlx" role="usPXg">
         <property role="TrG5h" value="ChildWithDefaultEditor" />
         <property role="2Mta2y" value="initialValue" />
-        <node concept="LIFWc" id="5950344441601668450" role="lGtFl">
+        <node concept="LIFWc" id="5ajRFTcSNly" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -149,11 +149,11 @@
         </node>
       </node>
     </node>
-    <node concept="2MuQ0i" id="5950344441601668451" role="LiZbd">
-      <node concept="2MuRF6" id="5950344441601668452" role="usPXg">
+    <node concept="2MuQ0i" id="5ajRFTcSNlz" role="LiZbd">
+      <node concept="2MuRF6" id="5ajRFTcSNl$" role="usPXg">
         <property role="TrG5h" value="ChildWithDefaultEditor" />
         <property role="2Mta2y" value="newValue" />
-        <node concept="LIFWc" id="5950344441601668453" role="lGtFl">
+        <node concept="LIFWc" id="5ajRFTcSNl_" role="lGtFl">
           <property role="LIFWa" value="3" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="3" />
@@ -162,20 +162,20 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="5950344441601668454" role="LjaKd">
-      <node concept="2TK7Tu" id="5950344441601668455" role="3cqZAp">
+    <node concept="3clFbS" id="5ajRFTcSNlA" role="LjaKd">
+      <node concept="2TK7Tu" id="5ajRFTcSNlB" role="3cqZAp">
         <property role="2TTd_B" value="new" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="5950344441601676487">
+  <node concept="LiM7Y" id="5ajRFTcSPj7">
     <property role="TrG5h" value="EditorSpecifiedBy_add_remove_context_hints" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestChild child concept instance using compact editor (rich context hint was removed from the context &amp; compact pushed instead by parent collection)" />
-    <node concept="2MuQ0i" id="7636045212390307723" role="LiRBU">
-      <node concept="2MuRF6" id="7636045212390307726" role="2dhxlo">
+    <node concept="2MuQ0i" id="6BSFEB5mbub" role="LiRBU">
+      <node concept="2MuRF6" id="6BSFEB5mbue" role="2dhxlo">
         <property role="TrG5h" value="CompactChild" />
         <property role="usFph" value="value" />
-        <node concept="LIFWc" id="7279578193766803868" role="lGtFl">
+        <node concept="LIFWc" id="6k6gsLy9AAs" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -184,16 +184,16 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="5950344441601676491" role="LjaKd">
-      <node concept="2TK7Tu" id="5950344441601676492" role="3cqZAp">
+    <node concept="3clFbS" id="5ajRFTcSPjb" role="LjaKd">
+      <node concept="2TK7Tu" id="5ajRFTcSPjc" role="3cqZAp">
         <property role="2TTd_B" value="newValue" />
       </node>
     </node>
-    <node concept="2MuQ0i" id="7636045212390317719" role="LiZbd">
-      <node concept="2MuRF6" id="7636045212390317720" role="2dhxlo">
+    <node concept="2MuQ0i" id="6BSFEB5mdUn" role="LiZbd">
+      <node concept="2MuRF6" id="6BSFEB5mdUo" role="2dhxlo">
         <property role="TrG5h" value="CompactChild" />
         <property role="usFph" value="newValue" />
-        <node concept="LIFWc" id="7279578193766803870" role="lGtFl">
+        <node concept="LIFWc" id="6k6gsLy9AAu" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="8" />
@@ -203,14 +203,14 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="7636045212390392321">
+  <node concept="LiM7Y" id="6BSFEB5mw81">
     <property role="TrG5h" value="ConditionalPresentation_addQuery_default" />
     <property role="3YCmrE" value="Testing if default conditional presentation works as expected (add hint query works properly)" />
-    <node concept="2MuQ0i" id="7636045212390401301" role="LiRBU">
-      <node concept="2MuRF6" id="7636045212390401304" role="2KvMtK">
+    <node concept="2MuQ0i" id="6BSFEB5mykl" role="LiRBU">
+      <node concept="2MuRF6" id="6BSFEB5myko" role="2KvMtK">
         <property role="TrG5h" value="DefaultChildPresentation" />
         <property role="2Mta2y" value="defaultPropertyValue" />
-        <node concept="LIFWc" id="7636045212390401339" role="lGtFl">
+        <node concept="LIFWc" id="6BSFEB5mykV" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -219,11 +219,11 @@
         </node>
       </node>
     </node>
-    <node concept="2MuQ0i" id="7636045212390401353" role="LiZbd">
-      <node concept="2MuRF6" id="7636045212390401354" role="2KvMtK">
+    <node concept="2MuQ0i" id="6BSFEB5myl9" role="LiZbd">
+      <node concept="2MuRF6" id="6BSFEB5myla" role="2KvMtK">
         <property role="TrG5h" value="DefaultChildPresentation" />
         <property role="2Mta2y" value="newPropertyValue" />
-        <node concept="LIFWc" id="7636045212390401395" role="lGtFl">
+        <node concept="LIFWc" id="6BSFEB5mylN" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="16" />
@@ -232,21 +232,21 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="7636045212390401432" role="LjaKd">
-      <node concept="2TK7Tu" id="7636045212390401434" role="3cqZAp">
+    <node concept="3clFbS" id="6BSFEB5mymo" role="LjaKd">
+      <node concept="2TK7Tu" id="6BSFEB5mymq" role="3cqZAp">
         <property role="2TTd_B" value="newPropertyValue" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="7636045212390401481">
+  <node concept="LiM7Y" id="6BSFEB5myn9">
     <property role="TrG5h" value="ConditionalPresentation_addQuery_rich" />
     <property role="3YCmrE" value="Testing if rich conditional presentation works as expected (add hint query works properly)" />
-    <node concept="2MuQ0i" id="7636045212390401569" role="LiRBU">
+    <node concept="2MuQ0i" id="6BSFEB5myox" role="LiRBU">
       <property role="2KvMrY" value="rich" />
-      <node concept="2MuRF6" id="7636045212390411160" role="2KvMtK">
+      <node concept="2MuRF6" id="6BSFEB5m$Io" role="2KvMtK">
         <property role="TrG5h" value="RichChildPresentation" />
         <property role="2Mta2w" value="oldValue" />
-        <node concept="LIFWc" id="7279578193766804211" role="lGtFl">
+        <node concept="LIFWc" id="6k6gsLy9AFN" role="lGtFl">
           <property role="LIFWa" value="3" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="3" />
@@ -255,17 +255,17 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="7636045212390401764" role="LjaKd">
-      <node concept="2TK7Tu" id="7636045212390401766" role="3cqZAp">
+    <node concept="3clFbS" id="6BSFEB5myr$" role="LjaKd">
+      <node concept="2TK7Tu" id="6BSFEB5myrA" role="3cqZAp">
         <property role="2TTd_B" value="Property" />
       </node>
     </node>
-    <node concept="2MuQ0i" id="7636045212390411176" role="LiZbd">
+    <node concept="2MuQ0i" id="6BSFEB5m$IC" role="LiZbd">
       <property role="2KvMrY" value="rich" />
-      <node concept="2MuRF6" id="7636045212390411177" role="2KvMtK">
+      <node concept="2MuRF6" id="6BSFEB5m$ID" role="2KvMtK">
         <property role="TrG5h" value="RichChildPresentation" />
         <property role="2Mta2w" value="oldPropertyValue" />
-        <node concept="LIFWc" id="7279578193766804213" role="lGtFl">
+        <node concept="LIFWc" id="6k6gsLy9AFP" role="lGtFl">
           <property role="LIFWa" value="11" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="11" />
@@ -275,19 +275,19 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="7636045212390410965">
+  <node concept="LiM7Y" id="6BSFEB5m$Fl">
     <property role="TrG5h" value="ConditionalPresentation_removeQuery_compact" />
     <property role="3YCmrE" value="Testing if compact conditional presentation works as expected (remove hint query works properly)" />
-    <node concept="3clFbS" id="7636045212390410972" role="LjaKd">
-      <node concept="2TK7Tu" id="7636045212390410973" role="3cqZAp">
+    <node concept="3clFbS" id="6BSFEB5m$Fs" role="LjaKd">
+      <node concept="2TK7Tu" id="6BSFEB5m$Ft" role="3cqZAp">
         <property role="2TTd_B" value="propValue" />
       </node>
     </node>
-    <node concept="2MuQ0i" id="7636045212393354549" role="LiRBU">
+    <node concept="2MuQ0i" id="6BSFEB5xNkP" role="LiRBU">
       <property role="2GCwbj" value="true" />
-      <node concept="2MuRF6" id="7636045212393354551" role="2GCwbk">
+      <node concept="2MuRF6" id="6BSFEB5xNkR" role="2GCwbk">
         <property role="TrG5h" value="CompactChild" />
-        <node concept="LIFWc" id="7279578193766804554" role="lGtFl">
+        <node concept="LIFWc" id="6k6gsLy9ALa" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -296,12 +296,12 @@
         </node>
       </node>
     </node>
-    <node concept="2MuQ0i" id="7636045212393354567" role="LiZbd">
+    <node concept="2MuQ0i" id="6BSFEB5xNl7" role="LiZbd">
       <property role="2GCwbj" value="true" />
-      <node concept="2MuRF6" id="7636045212393354568" role="2GCwbk">
+      <node concept="2MuRF6" id="6BSFEB5xNl8" role="2GCwbk">
         <property role="TrG5h" value="CompactChild" />
         <property role="usFph" value="propValue" />
-        <node concept="LIFWc" id="7279578193766804556" role="lGtFl">
+        <node concept="LIFWc" id="6k6gsLy9ALc" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="9" />
@@ -311,14 +311,14 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="7636045212390416608">
+  <node concept="LiM7Y" id="6BSFEB5mA3w">
     <property role="TrG5h" value="ConditionalPresentation_addQuery_switch" />
     <property role="3YCmrE" value="Testing if child element projection will be switched from default to rich type on switching corresponding model property (add context hint query re-evaluated no model changes)" />
-    <node concept="2MuQ0i" id="7636045212390416912" role="LiRBU">
-      <node concept="2MuRF6" id="7636045212393354248" role="2KvMtK">
+    <node concept="2MuQ0i" id="6BSFEB5mA8g" role="LiRBU">
+      <node concept="2MuRF6" id="6BSFEB5xNg8" role="2KvMtK">
         <property role="TrG5h" value="RichChild" />
       </node>
-      <node concept="LIFWc" id="7636045212393354318" role="lGtFl">
+      <node concept="LIFWc" id="6BSFEB5xNhe" role="lGtFl">
         <property role="LIFWa" value="2" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -326,30 +326,30 @@
         <property role="LIFWd" value="property_projectionType" />
       </node>
     </node>
-    <node concept="3clFbS" id="7636045212390416995" role="LjaKd">
-      <node concept="2TK7Tu" id="7636045212390416999" role="3cqZAp">
+    <node concept="3clFbS" id="6BSFEB5mA9z" role="LjaKd">
+      <node concept="2TK7Tu" id="6BSFEB5mA9B" role="3cqZAp">
         <property role="2TTd_B" value="rich" />
       </node>
-      <node concept="2HxZob" id="2601164129532540603" role="3cqZAp">
-        <node concept="1iFQzN" id="2601164129532540615" role="3iKnsn">
+      <node concept="2HxZob" id="2gpcfU7hBqV" role="3cqZAp">
+        <node concept="1iFQzN" id="2gpcfU7hBr7" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2HxZob" id="2601164129532784640" role="3cqZAp">
-        <node concept="1iFQzN" id="2601164129532784641" role="3iKnsn">
+      <node concept="2HxZob" id="2gpcfU7iz00" role="3cqZAp">
+        <node concept="1iFQzN" id="2gpcfU7iz01" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2TK7Tu" id="7636045212390417648" role="3cqZAp">
+      <node concept="2TK7Tu" id="6BSFEB5mAjK" role="3cqZAp">
         <property role="2TTd_B" value="richPropertyValue" />
       </node>
     </node>
-    <node concept="2MuQ0i" id="7636045212393354332" role="LiZbd">
+    <node concept="2MuQ0i" id="6BSFEB5xNhs" role="LiZbd">
       <property role="2KvMrY" value="rich" />
-      <node concept="2MuRF6" id="7636045212393354333" role="2KvMtK">
+      <node concept="2MuRF6" id="6BSFEB5xNht" role="2KvMtK">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2w" value="richPropertyValue" />
-        <node concept="LIFWc" id="7279578193766808673" role="lGtFl">
+        <node concept="LIFWc" id="6k6gsLy9BLx" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="17" />
@@ -359,33 +359,33 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="7636045212393364917">
+  <node concept="LiM7Y" id="6BSFEB5xPQP">
     <property role="TrG5h" value="ConditionalPresentation_removeQuery_switch" />
     <property role="3YCmrE" value="Testing if child element projection will be switched from compact to rich type on changing corresponding model property (remove context hint query re-evaluated no model changes)" />
-    <node concept="3clFbS" id="7636045212393364918" role="LjaKd">
-      <node concept="2TK7Tu" id="7636045212393365029" role="3cqZAp">
+    <node concept="3clFbS" id="6BSFEB5xPQQ" role="LjaKd">
+      <node concept="2TK7Tu" id="6BSFEB5xPS_" role="3cqZAp">
         <property role="2TTd_B" value="false" />
       </node>
-      <node concept="2HxZob" id="2601164129532808938" role="3cqZAp">
-        <node concept="1iFQzN" id="2601164129532808939" role="3iKnsn">
+      <node concept="2HxZob" id="2gpcfU7iCVE" role="3cqZAp">
+        <node concept="1iFQzN" id="2gpcfU7iCVF" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2HxZob" id="2601164129532808955" role="3cqZAp">
-        <node concept="1iFQzN" id="2601164129532808956" role="3iKnsn">
+      <node concept="2HxZob" id="2gpcfU7iCVV" role="3cqZAp">
+        <node concept="1iFQzN" id="2gpcfU7iCVW" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2TK7Tu" id="7636045212393364919" role="3cqZAp">
+      <node concept="2TK7Tu" id="6BSFEB5xPQR" role="3cqZAp">
         <property role="2TTd_B" value="propValue" />
       </node>
     </node>
-    <node concept="2MuQ0i" id="7636045212393364920" role="LiRBU">
+    <node concept="2MuQ0i" id="6BSFEB5xPQS" role="LiRBU">
       <property role="2GCwbj" value="true" />
-      <node concept="2MuRF6" id="7636045212393364921" role="2GCwbk">
+      <node concept="2MuRF6" id="6BSFEB5xPQT" role="2GCwbk">
         <property role="TrG5h" value="CompactChild" />
       </node>
-      <node concept="LIFWc" id="7636045212393365004" role="lGtFl">
+      <node concept="LIFWc" id="6BSFEB5xPSc" role="lGtFl">
         <property role="LIFWa" value="3" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -393,11 +393,11 @@
         <property role="LIFWd" value="property_projectAsCompact" />
       </node>
     </node>
-    <node concept="2MuQ0i" id="7636045212393365018" role="LiZbd">
-      <node concept="2MuRF6" id="7636045212393365019" role="2GCwbk">
+    <node concept="2MuQ0i" id="6BSFEB5xPSq" role="LiZbd">
+      <node concept="2MuRF6" id="6BSFEB5xPSr" role="2GCwbk">
         <property role="TrG5h" value="CompactChild" />
         <property role="2Mta2w" value="propValue" />
-        <node concept="LIFWc" id="7279578193766809014" role="lGtFl">
+        <node concept="LIFWc" id="6k6gsLy9BQQ" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="9" />
@@ -407,14 +407,14 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="2601164129533059968">
+  <node concept="LiM7Y" id="2gpcfU7jAe0">
     <property role="TrG5h" value="UnsupportedPresentation" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestChild child concept instance using default editor (there is no editor associted with unsupported contxt hint pushed down to this child, so default editor should be used here)" />
-    <node concept="2MuQ0i" id="2601164129533059969" role="LiRBU">
-      <node concept="2MuRF6" id="2601164129533496811" role="2zkSAk">
+    <node concept="2MuQ0i" id="2gpcfU7jAe1" role="LiRBU">
+      <node concept="2MuRF6" id="2gpcfU7lgRF" role="2zkSAk">
         <property role="TrG5h" value="DefaultChild" />
         <property role="2Mta2y" value="oldProperty" />
-        <node concept="LIFWc" id="2601164129533496813" role="lGtFl">
+        <node concept="LIFWc" id="2gpcfU7lgRH" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -423,16 +423,16 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="2601164129533059975" role="LjaKd">
-      <node concept="2TK7Tu" id="2601164129533059976" role="3cqZAp">
+    <node concept="3clFbS" id="2gpcfU7jAe7" role="LjaKd">
+      <node concept="2TK7Tu" id="2gpcfU7jAe8" role="3cqZAp">
         <property role="2TTd_B" value="new" />
       </node>
     </node>
-    <node concept="2MuQ0i" id="2601164129533496827" role="LiZbd">
-      <node concept="2MuRF6" id="2601164129533496828" role="2zkSAk">
+    <node concept="2MuQ0i" id="2gpcfU7lgRV" role="LiZbd">
+      <node concept="2MuRF6" id="2gpcfU7lgRW" role="2zkSAk">
         <property role="TrG5h" value="DefaultChild" />
         <property role="2Mta2y" value="newProperty" />
-        <node concept="LIFWc" id="2601164129533496833" role="lGtFl">
+        <node concept="LIFWc" id="2gpcfU7lgS1" role="lGtFl">
           <property role="LIFWa" value="3" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="3" />
@@ -442,14 +442,14 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="7279578193769046188">
+  <node concept="LiM7Y" id="6k6gsLyia2G">
     <property role="TrG5h" value="EditorSpecifiedBy_add_context_hints_RefNodeList" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestChild child concept instance using rich editor (rich context hint was pushed into context by RefNodeList editor cell)" />
-    <node concept="7g1Uw" id="7279578193769147367" role="LiRBU">
-      <node concept="2MuRF6" id="5613016763942491367" role="7gbJm">
+    <node concept="7g1Uw" id="6k6gsLyiyJB" role="LiRBU">
+      <node concept="2MuRF6" id="4R_sg7X6HjB" role="7gbJm">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2w" value="richProperty" />
-        <node concept="LIFWc" id="5613016763942491369" role="lGtFl">
+        <node concept="LIFWc" id="4R_sg7X6HjD" role="lGtFl">
           <property role="LIFWa" value="4" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="4" />
@@ -458,11 +458,11 @@
         </node>
       </node>
     </node>
-    <node concept="7g1Uw" id="5613016763942491383" role="LiZbd">
-      <node concept="2MuRF6" id="5613016763942491384" role="7gbJm">
+    <node concept="7g1Uw" id="4R_sg7X6HjR" role="LiZbd">
+      <node concept="2MuRF6" id="4R_sg7X6HjS" role="7gbJm">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2w" value="richNewProperty" />
-        <node concept="LIFWc" id="5613016763942491389" role="lGtFl">
+        <node concept="LIFWc" id="4R_sg7X6HjX" role="lGtFl">
           <property role="LIFWa" value="7" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="7" />
@@ -471,20 +471,20 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="5613016763942494753" role="LjaKd">
-      <node concept="2TK7Tu" id="5613016763942494752" role="3cqZAp">
+    <node concept="3clFbS" id="4R_sg7X6I8x" role="LjaKd">
+      <node concept="2TK7Tu" id="4R_sg7X6I8w" role="3cqZAp">
         <property role="2TTd_B" value="New" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="7279578193769147476">
+  <node concept="LiM7Y" id="6k6gsLyiyLk">
     <property role="TrG5h" value="EditorSpecifiedBy_add_remove_context_hints_RefNodeList" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestChild child concept instance using compact editor (rich context hint was removed from the context &amp; compact pushed instead by RefNodeList editor cell)" />
-    <node concept="7g1Uw" id="7279578193769147477" role="LiRBU">
-      <node concept="2MuRF6" id="5613016763942494859" role="7gbJn">
+    <node concept="7g1Uw" id="6k6gsLyiyLl" role="LiRBU">
+      <node concept="2MuRF6" id="4R_sg7X6Iab" role="7gbJn">
         <property role="TrG5h" value="CompactChild" />
         <property role="usFph" value="compactProperty" />
-        <node concept="LIFWc" id="5613016763942494861" role="lGtFl">
+        <node concept="LIFWc" id="4R_sg7X6Iad" role="lGtFl">
           <property role="LIFWa" value="7" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="7" />
@@ -493,11 +493,11 @@
         </node>
       </node>
     </node>
-    <node concept="7g1Uw" id="5613016763942494875" role="LiZbd">
-      <node concept="2MuRF6" id="5613016763942494876" role="7gbJn">
+    <node concept="7g1Uw" id="4R_sg7X6Iar" role="LiZbd">
+      <node concept="2MuRF6" id="4R_sg7X6Ias" role="7gbJn">
         <property role="TrG5h" value="CompactChild" />
         <property role="usFph" value="compactNewProperty" />
-        <node concept="LIFWc" id="5613016763942494881" role="lGtFl">
+        <node concept="LIFWc" id="4R_sg7X6Iax" role="lGtFl">
           <property role="LIFWa" value="10" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="10" />
@@ -506,25 +506,25 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="5613016763942494884" role="LjaKd">
-      <node concept="2TK7Tu" id="5613016763942494883" role="3cqZAp">
+    <node concept="3clFbS" id="4R_sg7X6Ia$" role="LjaKd">
+      <node concept="2TK7Tu" id="4R_sg7X6Iaz" role="3cqZAp">
         <property role="2TTd_B" value="New" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="5613016763942508875">
+  <node concept="LiM7Y" id="4R_sg7X6L_b">
     <property role="TrG5h" value="ConditionalPresentation_addQuery_RefNodeList_rich" />
     <property role="3YCmrE" value="Testing if rich conditional presentation works as expected (add hint query works properly in RefNodeList cell)" />
-    <node concept="3clFbS" id="5613016763942508879" role="LjaKd">
-      <node concept="2TK7Tu" id="5613016763942508880" role="3cqZAp">
+    <node concept="3clFbS" id="4R_sg7X6L_f" role="LjaKd">
+      <node concept="2TK7Tu" id="4R_sg7X6L_g" role="3cqZAp">
         <property role="2TTd_B" value="Property" />
       </node>
     </node>
-    <node concept="7g1Uw" id="554589055677210619" role="LiRBU">
-      <property role="2KZ!yB" value="rich" />
-      <node concept="2MuRF6" id="554589055677210621" role="2KZwG9">
+    <node concept="7g1Uw" id="uMiWVbXpZV" role="LiRBU">
+      <property role="2KZ$yB" value="rich" />
+      <node concept="2MuRF6" id="uMiWVbXpZX" role="2KZwG9">
         <property role="TrG5h" value="RichChild" />
-        <node concept="LIFWc" id="554589055677210623" role="lGtFl">
+        <node concept="LIFWc" id="uMiWVbXpZZ" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -533,12 +533,12 @@
         </node>
       </node>
     </node>
-    <node concept="7g1Uw" id="554589055677210637" role="LiZbd">
-      <property role="2KZ!yB" value="rich" />
-      <node concept="2MuRF6" id="554589055677210638" role="2KZwG9">
+    <node concept="7g1Uw" id="uMiWVbXq0d" role="LiZbd">
+      <property role="2KZ$yB" value="rich" />
+      <node concept="2MuRF6" id="uMiWVbXq0e" role="2KZwG9">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2w" value="Property" />
-        <node concept="LIFWc" id="554589055677210643" role="lGtFl">
+        <node concept="LIFWc" id="uMiWVbXq0j" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="8" />
@@ -548,19 +548,19 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="554589055677209880">
+  <node concept="LiM7Y" id="uMiWVbXpOo">
     <property role="TrG5h" value="ConditionalPresentation_addQuery_RefNodeList_default" />
     <property role="3YCmrE" value="Testing if default conditional presentation works as expected (add hint query works properly in RefNodeList cell)" />
-    <node concept="3clFbS" id="554589055677209887" role="LjaKd">
-      <node concept="2TK7Tu" id="554589055677209888" role="3cqZAp">
+    <node concept="3clFbS" id="uMiWVbXpOv" role="LjaKd">
+      <node concept="2TK7Tu" id="uMiWVbXpOw" role="3cqZAp">
         <property role="2TTd_B" value="newPropertyValue" />
       </node>
     </node>
-    <node concept="7g1Uw" id="554589055677210232" role="LiRBU">
-      <node concept="2MuRF6" id="554589055677210234" role="2KZwG9">
+    <node concept="7g1Uw" id="uMiWVbXpTS" role="LiRBU">
+      <node concept="2MuRF6" id="uMiWVbXpTU" role="2KZwG9">
         <property role="TrG5h" value="DefaultChild" />
         <property role="2Mta2y" value="propertyValue" />
-        <node concept="LIFWc" id="554589055677210475" role="lGtFl">
+        <node concept="LIFWc" id="uMiWVbXpXF" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -569,11 +569,11 @@
         </node>
       </node>
     </node>
-    <node concept="7g1Uw" id="554589055677210489" role="LiZbd">
-      <node concept="2MuRF6" id="554589055677210490" role="2KZwG9">
+    <node concept="7g1Uw" id="uMiWVbXpXT" role="LiZbd">
+      <node concept="2MuRF6" id="uMiWVbXpXU" role="2KZwG9">
         <property role="TrG5h" value="DefaultChild" />
         <property role="2Mta2y" value="newPropertyValue" />
-        <node concept="LIFWc" id="554589055677210495" role="lGtFl">
+        <node concept="LIFWc" id="uMiWVbXpXZ" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="16" />
@@ -583,15 +583,15 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="554589055677210829">
+  <node concept="LiM7Y" id="uMiWVbXq3d">
     <property role="TrG5h" value="ConditionalPresentation_addQuery_RefNodeList_switch" />
     <property role="3YCmrE" value="Testing if child element projection will be switched from default to rich type on switching corresponding model property (add context hint query in RefNodeList cell re-evaluated no model changes)" />
-    <node concept="7g1Uw" id="554589055677214880" role="LiRBU">
-      <node concept="2MuRF6" id="554589055677214883" role="2KZwG9">
+    <node concept="7g1Uw" id="uMiWVbXr2w" role="LiRBU">
+      <node concept="2MuRF6" id="uMiWVbXr2z" role="2KZwG9">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2y" value="defaultProperty" />
       </node>
-      <node concept="LIFWc" id="554589055677215046" role="lGtFl">
+      <node concept="LIFWc" id="uMiWVbXr56" role="lGtFl">
         <property role="LIFWa" value="10" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -599,31 +599,31 @@
         <property role="LIFWd" value="property_projectionType" />
       </node>
     </node>
-    <node concept="3clFbS" id="554589055677210833" role="LjaKd">
-      <node concept="2TK7Tu" id="554589055677210834" role="3cqZAp">
+    <node concept="3clFbS" id="uMiWVbXq3h" role="LjaKd">
+      <node concept="2TK7Tu" id="uMiWVbXq3i" role="3cqZAp">
         <property role="2TTd_B" value="rich" />
       </node>
-      <node concept="2HxZob" id="554589055677210835" role="3cqZAp">
-        <node concept="1iFQzN" id="554589055677210836" role="3iKnsn">
+      <node concept="2HxZob" id="uMiWVbXq3j" role="3cqZAp">
+        <node concept="1iFQzN" id="uMiWVbXq3k" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2HxZob" id="554589055677210837" role="3cqZAp">
-        <node concept="1iFQzN" id="554589055677210838" role="3iKnsn">
+      <node concept="2HxZob" id="uMiWVbXq3l" role="3cqZAp">
+        <node concept="1iFQzN" id="uMiWVbXq3m" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2TK7Tu" id="554589055677210839" role="3cqZAp">
+      <node concept="2TK7Tu" id="uMiWVbXq3n" role="3cqZAp">
         <property role="2TTd_B" value="richPropertyValue" />
       </node>
     </node>
-    <node concept="7g1Uw" id="554589055677215040" role="LiZbd">
-      <property role="2KZ!yB" value="rich" />
-      <node concept="2MuRF6" id="554589055677215041" role="2KZwG9">
+    <node concept="7g1Uw" id="uMiWVbXr50" role="LiZbd">
+      <property role="2KZ$yB" value="rich" />
+      <node concept="2MuRF6" id="uMiWVbXr51" role="2KZwG9">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2y" value="defaultProperty" />
         <property role="2Mta2w" value="richPropertyValue" />
-        <node concept="LIFWc" id="554589055677215048" role="lGtFl">
+        <node concept="LIFWc" id="uMiWVbXr58" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="17" />
@@ -633,19 +633,19 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="554589055677397793">
+  <node concept="LiM7Y" id="uMiWVbY7Gx">
     <property role="TrG5h" value="ConditionalPresentation_removeQuery_RefNodeList_compact" />
     <property role="3YCmrE" value="Testing if compact conditional presentation works as expected (remove hint query works properly in RefNodeList cell)" />
-    <node concept="3clFbS" id="554589055677397794" role="LjaKd">
-      <node concept="2TK7Tu" id="554589055677397795" role="3cqZAp">
+    <node concept="3clFbS" id="uMiWVbY7Gy" role="LjaKd">
+      <node concept="2TK7Tu" id="uMiWVbY7Gz" role="3cqZAp">
         <property role="2TTd_B" value="propValue" />
       </node>
     </node>
-    <node concept="7g1Uw" id="554589055677398353" role="LiRBU">
+    <node concept="7g1Uw" id="uMiWVbY7Ph" role="LiRBU">
       <property role="3ch7Eg" value="true" />
-      <node concept="2MuRF6" id="554589055677398355" role="3chZBA">
+      <node concept="2MuRF6" id="uMiWVbY7Pj" role="3chZBA">
         <property role="TrG5h" value="CompactChild" />
-        <node concept="LIFWc" id="554589055677398357" role="lGtFl">
+        <node concept="LIFWc" id="uMiWVbY7Pl" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -654,12 +654,12 @@
         </node>
       </node>
     </node>
-    <node concept="7g1Uw" id="554589055677398371" role="LiZbd">
+    <node concept="7g1Uw" id="uMiWVbY7Pz" role="LiZbd">
       <property role="3ch7Eg" value="true" />
-      <node concept="2MuRF6" id="554589055677398372" role="3chZBA">
+      <node concept="2MuRF6" id="uMiWVbY7P$" role="3chZBA">
         <property role="TrG5h" value="CompactChild" />
         <property role="usFph" value="propValue" />
-        <node concept="LIFWc" id="554589055677398377" role="lGtFl">
+        <node concept="LIFWc" id="uMiWVbY7PD" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="9" />
@@ -669,15 +669,15 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="554589055677398009">
+  <node concept="LiM7Y" id="uMiWVbY7JT">
     <property role="TrG5h" value="ConditionalPresentation_removeQuery_RefNodeList_switch" />
     <property role="3YCmrE" value="Testing if child element projection will be switched from compact to rich type on changing corresponding model property (remove context hint query in RefNodeList cell re-evaluated no model changes)" />
-    <node concept="7g1Uw" id="554589055677398727" role="LiZbd">
-      <node concept="2MuRF6" id="554589055677398728" role="3chZBA">
+    <node concept="7g1Uw" id="uMiWVbY7V7" role="LiZbd">
+      <node concept="2MuRF6" id="uMiWVbY7V8" role="3chZBA">
         <property role="TrG5h" value="RichChild" />
         <property role="usFph" value="compactProperty" />
         <property role="2Mta2w" value="propValue" />
-        <node concept="LIFWc" id="554589055677398733" role="lGtFl">
+        <node concept="LIFWc" id="uMiWVbY7Vd" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="9" />
@@ -686,52 +686,52 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="554589055677398010" role="LjaKd">
-      <node concept="2TK7Tu" id="554589055677398011" role="3cqZAp">
+    <node concept="3clFbS" id="uMiWVbY7JU" role="LjaKd">
+      <node concept="2TK7Tu" id="uMiWVbY7JV" role="3cqZAp">
         <property role="2TTd_B" value="false" />
       </node>
-      <node concept="2HxZob" id="554589055677398012" role="3cqZAp">
-        <node concept="1iFQzN" id="554589055677398013" role="3iKnsn">
+      <node concept="2HxZob" id="uMiWVbY7JW" role="3cqZAp">
+        <node concept="1iFQzN" id="uMiWVbY7JX" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2HxZob" id="554589055677398014" role="3cqZAp">
-        <node concept="1iFQzN" id="554589055677398015" role="3iKnsn">
+      <node concept="2HxZob" id="uMiWVbY7JY" role="3cqZAp">
+        <node concept="1iFQzN" id="uMiWVbY7JZ" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2TK7Tu" id="554589055677398016" role="3cqZAp">
+      <node concept="2TK7Tu" id="uMiWVbY7K0" role="3cqZAp">
         <property role="2TTd_B" value="propValue" />
       </node>
     </node>
-    <node concept="7g1Uw" id="554589055677398709" role="LiRBU">
+    <node concept="7g1Uw" id="uMiWVbY7UP" role="LiRBU">
       <property role="3ch7Eg" value="true" />
-      <node concept="LIFWc" id="554589055677398713" role="lGtFl">
+      <node concept="LIFWc" id="uMiWVbY7UT" role="lGtFl">
         <property role="LIFWa" value="3" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="4" />
         <property role="LIFWd" value="property_projectAsCompact" />
       </node>
-      <node concept="2MuRF6" id="554589055677398711" role="3chZBA">
+      <node concept="2MuRF6" id="uMiWVbY7UR" role="3chZBA">
         <property role="TrG5h" value="RichChild" />
         <property role="usFph" value="compactProperty" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="5861024100074454462">
+  <node concept="LiM7Y" id="55my_QKWfQY">
     <property role="TrG5h" value="EditorSpecifiedBy_add_context_hints_RefNode" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestChild child concept instance using rich editor (rich context hint was pushed into context by RefNode editor cell)" />
-    <node concept="3clFbS" id="5861024100074454469" role="LjaKd">
-      <node concept="2TK7Tu" id="5861024100074454470" role="3cqZAp">
+    <node concept="3clFbS" id="55my_QKWfR5" role="LjaKd">
+      <node concept="2TK7Tu" id="55my_QKWfR6" role="3cqZAp">
         <property role="2TTd_B" value="New" />
       </node>
     </node>
-    <node concept="3xAF0!" id="5861024100074595796" role="LiRBU">
-      <node concept="2MuRF6" id="5861024100074595798" role="3xAIfz">
+    <node concept="3xAF0$" id="55my_QKWMnk" role="LiRBU">
+      <node concept="2MuRF6" id="55my_QKWMnm" role="3xAIfz">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2w" value="richProperty" />
-        <node concept="LIFWc" id="1947450138886734141" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli8g4X" role="lGtFl">
           <property role="LIFWa" value="4" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="4" />
@@ -740,11 +740,11 @@
         </node>
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138886734155" role="LiZbd">
-      <node concept="2MuRF6" id="1947450138886734156" role="3xAIfz">
+    <node concept="3xAF0$" id="1G6ITli8g5b" role="LiZbd">
+      <node concept="2MuRF6" id="1G6ITli8g5c" role="3xAIfz">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2w" value="richNewProperty" />
-        <node concept="LIFWc" id="1947450138886734161" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli8g5h" role="lGtFl">
           <property role="LIFWa" value="7" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="7" />
@@ -754,19 +754,19 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="5861024100074455062">
+  <node concept="LiM7Y" id="55my_QKWg0m">
     <property role="TrG5h" value="EditorSpecifiedBy_add_remove_context_hints_RefNode" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestChild child concept instance using compact editor (rich context hint was removed from the context &amp; compact pushed instead by RefNode editor cell)" />
-    <node concept="3clFbS" id="5861024100074455069" role="LjaKd">
-      <node concept="2TK7Tu" id="5861024100074455070" role="3cqZAp">
+    <node concept="3clFbS" id="55my_QKWg0t" role="LjaKd">
+      <node concept="2TK7Tu" id="55my_QKWg0u" role="3cqZAp">
         <property role="2TTd_B" value="New" />
       </node>
     </node>
-    <node concept="3xAF0!" id="5861024100074596340" role="LiRBU">
-      <node concept="2MuRF6" id="5861024100074596519" role="3xA_Vv">
+    <node concept="3xAF0$" id="55my_QKWMvO" role="LiRBU">
+      <node concept="2MuRF6" id="55my_QKWMyB" role="3xA_Vv">
         <property role="TrG5h" value="CompactChild" />
         <property role="usFph" value="compactProperty" />
-        <node concept="LIFWc" id="1947450138886734342" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli8g86" role="lGtFl">
           <property role="LIFWa" value="7" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="7" />
@@ -775,11 +775,11 @@
         </node>
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138886734356" role="LiZbd">
-      <node concept="2MuRF6" id="1947450138886734357" role="3xA_Vv">
+    <node concept="3xAF0$" id="1G6ITli8g8k" role="LiZbd">
+      <node concept="2MuRF6" id="1G6ITli8g8l" role="3xA_Vv">
         <property role="TrG5h" value="CompactChild" />
         <property role="usFph" value="compactNewProperty" />
-        <node concept="LIFWc" id="1947450138886734362" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli8g8q" role="lGtFl">
           <property role="LIFWa" value="10" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="10" />
@@ -789,19 +789,19 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="1947450138886989116">
+  <node concept="LiM7Y" id="1G6ITli9ekW">
     <property role="TrG5h" value="ConditionalPresentation_addQuery_RefNode_default" />
     <property role="3YCmrE" value="Testing if default conditional presentation works as expected (add hint query works properly in RefNode cell)" />
-    <node concept="3clFbS" id="1947450138886989117" role="LjaKd">
-      <node concept="2TK7Tu" id="1947450138886989118" role="3cqZAp">
+    <node concept="3clFbS" id="1G6ITli9ekX" role="LjaKd">
+      <node concept="2TK7Tu" id="1G6ITli9ekY" role="3cqZAp">
         <property role="2TTd_B" value="newPropertyValue" />
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138886993285" role="LiRBU">
-      <node concept="2MuRF6" id="1947450138886993287" role="199YXt">
+    <node concept="3xAF0$" id="1G6ITli9fm5" role="LiRBU">
+      <node concept="2MuRF6" id="1G6ITli9fm7" role="199YXt">
         <property role="TrG5h" value="DefaultChild" />
         <property role="2Mta2y" value="propertyValue" />
-        <node concept="LIFWc" id="1947450138886993289" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli9fm9" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -810,11 +810,11 @@
         </node>
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138886993303" role="LiZbd">
-      <node concept="2MuRF6" id="1947450138886993304" role="199YXt">
+    <node concept="3xAF0$" id="1G6ITli9fmn" role="LiZbd">
+      <node concept="2MuRF6" id="1G6ITli9fmo" role="199YXt">
         <property role="TrG5h" value="DefaultChild" />
         <property role="2Mta2y" value="newPropertyValue" />
-        <node concept="LIFWc" id="1947450138886993309" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli9fmt" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="16" />
@@ -824,19 +824,19 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="1947450138886989214">
+  <node concept="LiM7Y" id="1G6ITli9emu">
     <property role="TrG5h" value="ConditionalPresentation_addQuery_RefNode_rich" />
     <property role="3YCmrE" value="Testing if rich conditional presentation works as expected (add hint query works properly in RefNode cell)" />
-    <node concept="3clFbS" id="1947450138886989215" role="LjaKd">
-      <node concept="2TK7Tu" id="1947450138886989216" role="3cqZAp">
+    <node concept="3clFbS" id="1G6ITli9emv" role="LjaKd">
+      <node concept="2TK7Tu" id="1G6ITli9emw" role="3cqZAp">
         <property role="2TTd_B" value="Property" />
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138886993741" role="LiRBU">
+    <node concept="3xAF0$" id="1G6ITli9ftd" role="LiRBU">
       <property role="199YU9" value="rich" />
-      <node concept="2MuRF6" id="1947450138886993743" role="199YXt">
+      <node concept="2MuRF6" id="1G6ITli9ftf" role="199YXt">
         <property role="TrG5h" value="RichChild" />
-        <node concept="LIFWc" id="1947450138886993745" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli9fth" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -845,12 +845,12 @@
         </node>
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138886993759" role="LiZbd">
+    <node concept="3xAF0$" id="1G6ITli9ftv" role="LiZbd">
       <property role="199YU9" value="rich" />
-      <node concept="2MuRF6" id="1947450138886993760" role="199YXt">
+      <node concept="2MuRF6" id="1G6ITli9ftw" role="199YXt">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2w" value="Property" />
-        <node concept="LIFWc" id="1947450138886993765" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli9ft_" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="8" />
@@ -860,33 +860,33 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="1947450138886989480">
+  <node concept="LiM7Y" id="1G6ITli9eqC">
     <property role="TrG5h" value="ConditionalPresentation_addQuery_RefNode_switch" />
     <property role="3YCmrE" value="Testing if child element projection will be switched from default to rich type on switching corresponding model property (add context hint query in RefNode cell re-evaluated no model changes)" />
-    <node concept="3clFbS" id="1947450138886989484" role="LjaKd">
-      <node concept="2TK7Tu" id="1947450138886989485" role="3cqZAp">
+    <node concept="3clFbS" id="1G6ITli9eqG" role="LjaKd">
+      <node concept="2TK7Tu" id="1G6ITli9eqH" role="3cqZAp">
         <property role="2TTd_B" value="rich" />
       </node>
-      <node concept="2HxZob" id="1947450138886989486" role="3cqZAp">
-        <node concept="1iFQzN" id="1947450138886989487" role="3iKnsn">
+      <node concept="2HxZob" id="1G6ITli9eqI" role="3cqZAp">
+        <node concept="1iFQzN" id="1G6ITli9eqJ" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2HxZob" id="1947450138886989488" role="3cqZAp">
-        <node concept="1iFQzN" id="1947450138886989489" role="3iKnsn">
+      <node concept="2HxZob" id="1G6ITli9eqK" role="3cqZAp">
+        <node concept="1iFQzN" id="1G6ITli9eqL" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2TK7Tu" id="1947450138886989490" role="3cqZAp">
+      <node concept="2TK7Tu" id="1G6ITli9eqM" role="3cqZAp">
         <property role="2TTd_B" value="richPropertyValue" />
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138886994197" role="LiRBU">
-      <node concept="2MuRF6" id="1947450138886994199" role="199YXt">
+    <node concept="3xAF0$" id="1G6ITli9f$l" role="LiRBU">
+      <node concept="2MuRF6" id="1G6ITli9f$n" role="199YXt">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2y" value="defaultProperty" />
       </node>
-      <node concept="LIFWc" id="1947450138886994221" role="lGtFl">
+      <node concept="LIFWc" id="1G6ITli9f$H" role="lGtFl">
         <property role="LIFWa" value="7" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -894,13 +894,13 @@
         <property role="LIFWd" value="property_projectionType" />
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138886994215" role="LiZbd">
+    <node concept="3xAF0$" id="1G6ITli9f$B" role="LiZbd">
       <property role="199YU9" value="rich" />
-      <node concept="2MuRF6" id="1947450138886994216" role="199YXt">
+      <node concept="2MuRF6" id="1G6ITli9f$C" role="199YXt">
         <property role="TrG5h" value="RichChild" />
         <property role="2Mta2y" value="defaultProperty" />
         <property role="2Mta2w" value="richPropertyValue" />
-        <node concept="LIFWc" id="1947450138886994223" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli9f$J" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="17" />
@@ -910,19 +910,19 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="1947450138886994476">
+  <node concept="LiM7Y" id="1G6ITli9fCG">
     <property role="TrG5h" value="ConditionalPresentation_removeQuery_RefNode_compact" />
     <property role="3YCmrE" value="Testing if compact conditional presentation works as expected (remove hint query works properly in RefNode cell)" />
-    <node concept="3clFbS" id="1947450138886994477" role="LjaKd">
-      <node concept="2TK7Tu" id="1947450138886994478" role="3cqZAp">
+    <node concept="3clFbS" id="1G6ITli9fCH" role="LjaKd">
+      <node concept="2TK7Tu" id="1G6ITli9fCI" role="3cqZAp">
         <property role="2TTd_B" value="propValue" />
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138886995496" role="LiRBU">
+    <node concept="3xAF0$" id="1G6ITli9fSC" role="LiRBU">
       <property role="199YU8" value="true" />
-      <node concept="2MuRF6" id="1947450138886995498" role="199YXs">
+      <node concept="2MuRF6" id="1G6ITli9fSE" role="199YXs">
         <property role="TrG5h" value="CompactChlid" />
-        <node concept="LIFWc" id="1947450138886995500" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli9fSG" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -931,12 +931,12 @@
         </node>
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138886995514" role="LiZbd">
+    <node concept="3xAF0$" id="1G6ITli9fSU" role="LiZbd">
       <property role="199YU8" value="true" />
-      <node concept="2MuRF6" id="1947450138886995515" role="199YXs">
+      <node concept="2MuRF6" id="1G6ITli9fSV" role="199YXs">
         <property role="TrG5h" value="CompactChlid" />
         <property role="usFph" value="propValue" />
-        <node concept="LIFWc" id="1947450138886995520" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli9fT0" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="9" />
@@ -946,34 +946,34 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="1947450138886994765">
+  <node concept="LiM7Y" id="1G6ITli9fHd">
     <property role="TrG5h" value="ConditionalPresentation_removeQuery_RefNode_switch" />
     <property role="3YCmrE" value="Testing if child element projection will be switched from compact to rich type on changing corresponding model property (remove context hint query in RefNode cell re-evaluated no model changes)" />
-    <node concept="3clFbS" id="1947450138886994766" role="LjaKd">
-      <node concept="2TK7Tu" id="1947450138886994767" role="3cqZAp">
+    <node concept="3clFbS" id="1G6ITli9fHe" role="LjaKd">
+      <node concept="2TK7Tu" id="1G6ITli9fHf" role="3cqZAp">
         <property role="2TTd_B" value="false" />
       </node>
-      <node concept="2HxZob" id="1947450138886994768" role="3cqZAp">
-        <node concept="1iFQzN" id="1947450138886994769" role="3iKnsn">
+      <node concept="2HxZob" id="1G6ITli9fHg" role="3cqZAp">
+        <node concept="1iFQzN" id="1G6ITli9fHh" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2HxZob" id="1947450138886994770" role="3cqZAp">
-        <node concept="1iFQzN" id="1947450138886994771" role="3iKnsn">
+      <node concept="2HxZob" id="1G6ITli9fHi" role="3cqZAp">
+        <node concept="1iFQzN" id="1G6ITli9fHj" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.991796682690297090" resolve="MoveDown" />
         </node>
       </node>
-      <node concept="2TK7Tu" id="1947450138886994772" role="3cqZAp">
+      <node concept="2TK7Tu" id="1G6ITli9fHk" role="3cqZAp">
         <property role="2TTd_B" value="propValue" />
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138887018621" role="LiRBU">
+    <node concept="3xAF0$" id="1G6ITli9lxX" role="LiRBU">
       <property role="199YU8" value="true" />
-      <node concept="2MuRF6" id="1947450138887018623" role="199YXs">
+      <node concept="2MuRF6" id="1G6ITli9lxZ" role="199YXs">
         <property role="TrG5h" value="RichChild" />
         <property role="usFph" value="compactProperty" />
       </node>
-      <node concept="LIFWc" id="1947450138887018637" role="lGtFl">
+      <node concept="LIFWc" id="1G6ITli9lyd" role="lGtFl">
         <property role="LIFWa" value="2" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -981,12 +981,12 @@
         <property role="LIFWd" value="property_projectAsCompact" />
       </node>
     </node>
-    <node concept="3xAF0!" id="1947450138887018633" role="LiZbd">
-      <node concept="2MuRF6" id="1947450138887018634" role="199YXs">
+    <node concept="3xAF0$" id="1G6ITli9ly9" role="LiZbd">
+      <node concept="2MuRF6" id="1G6ITli9lya" role="199YXs">
         <property role="TrG5h" value="RichChild" />
         <property role="usFph" value="compactProperty" />
         <property role="2Mta2w" value="propValue" />
-        <node concept="LIFWc" id="1947450138887018639" role="lGtFl">
+        <node concept="LIFWc" id="1G6ITli9lyf" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="9" />
@@ -996,14 +996,14 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="6355695904178436203">
+  <node concept="LiM7Y" id="5wNXW0WXvxF">
     <property role="TrG5h" value="MostSpecificEditor" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestMostSpecificChild child concept instance using editor applicable to both compact &amp; rich context hints. This editor is specified in a sub-language + there are &quot;less-specific&quot; editors specified for &quot;rich&quot; or &quot;compact&quot; hints" />
-    <node concept="tJ_u8" id="6355695904178436590" role="LiRBU">
-      <node concept="tJAI_" id="6355695904178436835" role="tJAGL">
+    <node concept="tJ_u8" id="5wNXW0WXvBI" role="LiRBU">
+      <node concept="tJAI_" id="5wNXW0WXvFz" role="tJAGL">
         <property role="TrG5h" value="RichCompactChild" />
         <property role="tJAfQ" value="richCompactProperty" />
-        <node concept="LIFWc" id="6355695904178436837" role="lGtFl">
+        <node concept="LIFWc" id="5wNXW0WXvF_" role="lGtFl">
           <property role="LIFWa" value="11" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -1012,11 +1012,11 @@
         </node>
       </node>
     </node>
-    <node concept="tJ_u8" id="6355695904178436851" role="LiZbd">
-      <node concept="tJAI_" id="6355695904178436852" role="tJAGL">
+    <node concept="tJ_u8" id="5wNXW0WXvFN" role="LiZbd">
+      <node concept="tJAI_" id="5wNXW0WXvFO" role="tJAGL">
         <property role="TrG5h" value="RichCompactChild" />
         <property role="tJAfQ" value="newPropertyValue" />
-        <node concept="LIFWc" id="6355695904178436857" role="lGtFl">
+        <node concept="LIFWc" id="5wNXW0WXvFT" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="16" />
@@ -1025,8 +1025,8 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="6355695904178440221" role="LjaKd">
-      <node concept="2TK7Tu" id="6355695904178440220" role="3cqZAp">
+    <node concept="3clFbS" id="5wNXW0WXwwt" role="LjaKd">
+      <node concept="2TK7Tu" id="5wNXW0WXwws" role="3cqZAp">
         <property role="2TTd_B" value="newPropertyValue" />
       </node>
     </node>

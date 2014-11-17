@@ -35,20 +35,20 @@
       <concept id="1233749247888" name="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" flags="in" index="11bSqf" />
     </language>
   </registry>
-  <node concept="WtQ9Q" id="7287346816896128678">
+  <node concept="WtQ9Q" id="6kxQP7CaHqA">
     <reference role="WuzLi" target="qq7j.7287346816896104019" resolve="ErrorReportingRoot" />
-    <node concept="11bSqf" id="7287346816896128679" role="11c4hB">
-      <node concept="3clFbS" id="7287346816896128680" role="2VODD2">
-        <node concept="lc7rE" id="7287346816896135357" role="3cqZAp">
-          <node concept="la8eA" id="7287346816896135359" role="lcghm">
+    <node concept="11bSqf" id="6kxQP7CaHqB" role="11c4hB">
+      <node concept="3clFbS" id="6kxQP7CaHqC" role="2VODD2">
+        <node concept="lc7rE" id="6kxQP7CaJ2X" role="3cqZAp">
+          <node concept="la8eA" id="6kxQP7CaJ2Z" role="lcghm">
             <property role="lacIc" value="error reporting root {" />
           </node>
         </node>
-        <node concept="lc7rE" id="7287346816896135365" role="3cqZAp">
-          <node concept="l8MVK" id="7287346816896135367" role="lcghm" />
+        <node concept="lc7rE" id="6kxQP7CaJ35" role="3cqZAp">
+          <node concept="l8MVK" id="6kxQP7CaJ37" role="lcghm" />
         </node>
-        <node concept="lc7rE" id="7287346816896135370" role="3cqZAp">
-          <node concept="la8eA" id="7287346816896135372" role="lcghm">
+        <node concept="lc7rE" id="6kxQP7CaJ3a" role="3cqZAp">
+          <node concept="la8eA" id="6kxQP7CaJ3c" role="lcghm">
             <property role="lacIc" value="}" />
           </node>
         </node>

@@ -52,7 +52,7 @@ public class ModelWriter9bis implements IModelWriter {
 
   private IdInfoCollector myMetaInfo;
   private ImportsHelper myImportsHelper;
-  private final IdEncoder myIdEncoder = new IdEncoder();
+  private final IdEncoder myIdEncoder = new IdEncoder(true);
 
   @Override
   public Document saveModel(SModel sourceModel) {
@@ -79,11 +79,11 @@ public class ModelWriter9bis implements IModelWriter {
   }
 
   private void saveModelProperties(SModel sourceModel, Element rootElement) {
-    // model properties
-    saveAdditionalProps(sourceModel, rootElement);
-
     // persistence tag
     rootElement.addContent(createPersistenceElement());
+
+    // model properties
+    saveAdditionalProps(sourceModel, rootElement);
 
     // languages
     Element languagesElement = new Element(ModelPersistence9.LANGUAGES);
@@ -157,6 +157,9 @@ public class ModelWriter9bis implements IModelWriter {
     rootElement.setAttribute(ModelPersistence9.OPTION_CONCISE, Boolean.TRUE.toString());
 
     for (Map.Entry<String, String> en : header.getOptionalProperties().entrySet()) {
+      if (ModelPersistence9.OPTION_CONCISE.equals(en.getKey()) || "compactIds".equals(en.getKey())) {
+        continue;
+      }
       Element attr = new Element("attribute");
       attr.setAttribute(ModelPersistence.NAME, en.getKey());
       attr.setAttribute(ModelPersistence.VALUE, en.getValue());
@@ -208,7 +211,7 @@ public class ModelWriter9bis implements IModelWriter {
 
     for (SLanguage l : usedLangs.keySet()) {
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
-      languageElem.setAttribute(ModelPersistence9.ID, IdHelper.getLanguageId(l).serialize());
+      languageElem.setAttribute(ModelPersistence9.ID, myIdEncoder.toText(IdHelper.getLanguageId(l)));
       // although there's name of the language in the registry, don't want to rely on it:
       // (a) the language might not be necessarily in actual use (thus registry won't list it)
       // (b) in multi-stream persistence, registry is saved per-root, while usedLanguages are saved once for header stream

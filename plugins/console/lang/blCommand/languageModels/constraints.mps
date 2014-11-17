@@ -41,7 +41,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -87,68 +87,68 @@
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
   </registry>
-  <node concept="1M2fIO" id="7284872370239728884">
+  <node concept="1M2fIO" id="6kp4dbAcANO">
     <property role="3GE5qa" value="expression.query" />
     <reference role="1M2myG" target="3xdn.4307205004131544317" resolve="QueryExpression" />
-    <node concept="Um2eU" id="7284872370239728936" role="1kkKnR">
-      <node concept="3clFbS" id="7284872370239728937" role="2VODD2">
-        <node concept="3SKdUt" id="5389944367239985853" role="3cqZAp">
-          <node concept="3SKdUq" id="5389944367239986613" role="3SKWNk">
+    <node concept="Um2eU" id="6kp4dbAcAOC" role="1kkKnR">
+      <node concept="3clFbS" id="6kp4dbAcAOD" role="2VODD2">
+        <node concept="3SKdUt" id="4FcVtx8tfEX" role="3cqZAp">
+          <node concept="3SKdUq" id="4FcVtx8tfQP" role="3SKWNk">
             <property role="3SKdUp" value="QueryParameter is abstract, so it is already highlighted as invalid" />
           </node>
         </node>
-        <node concept="3clFbJ" id="7284872370244286872" role="3cqZAp">
-          <node concept="3clFbS" id="7284872370244286875" role="3clFbx">
-            <node concept="3cpWs6" id="7284872370244295072" role="3cqZAp">
-              <node concept="3clFbT" id="7284872370244297595" role="3cqZAk">
+        <node concept="3clFbJ" id="6kp4dbAtZAo" role="3cqZAp">
+          <node concept="3clFbS" id="6kp4dbAtZAr" role="3clFbx">
+            <node concept="3cpWs6" id="6kp4dbAu1Aw" role="3cqZAp">
+              <node concept="3clFbT" id="6kp4dbAu2dV" role="3cqZAk">
                 <property role="3clFbU" value="true" />
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="7284872370244289972" role="3clFbw">
-            <node concept="otxO1" id="7284872370244288147" role="2Oq!k0" />
-            <node concept="3O6GUB" id="7284872370244292287" role="2OqNvi">
-              <node concept="chp4Y" id="7284872370244293548" role="3QVz_e">
+          <node concept="2OqwBi" id="6kp4dbAu0mO" role="3clFbw">
+            <node concept="otxO1" id="6kp4dbAtZUj" role="2Oq$k0" />
+            <node concept="3O6GUB" id="6kp4dbAu0UZ" role="2OqNvi">
+              <node concept="chp4Y" id="6kp4dbAu1eG" role="3QVz_e">
                 <reference role="cht4Q" target="3xdn.4307205004131544565" resolve="QueryParameter" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="7284872370239729758" role="3cqZAp">
-          <node concept="3clFbS" id="7284872370239729759" role="3clFbx">
-            <node concept="3cpWs6" id="7284872370239740852" role="3cqZAp">
-              <node concept="2OqwBi" id="7284872370240368791" role="3cqZAk">
-                <node concept="2OqwBi" id="7284872370240334917" role="2Oq!k0">
-                  <node concept="2OqwBi" id="7284872370239767966" role="2Oq!k0">
-                    <node concept="EsrRn" id="7284872370239767596" role="2Oq!k0" />
-                    <node concept="3NT_Vc" id="7284872370239772003" role="2OqNvi" />
+        <node concept="3clFbJ" id="6kp4dbAcB1u" role="3cqZAp">
+          <node concept="3clFbS" id="6kp4dbAcB1v" role="3clFbx">
+            <node concept="3cpWs6" id="6kp4dbAcDIO" role="3cqZAp">
+              <node concept="2OqwBi" id="6kp4dbAf32n" role="3cqZAk">
+                <node concept="2OqwBi" id="6kp4dbAeUL5" role="2Oq$k0">
+                  <node concept="2OqwBi" id="6kp4dbAcKmu" role="2Oq$k0">
+                    <node concept="EsrRn" id="6kp4dbAcKgG" role="2Oq$k0" />
+                    <node concept="3NT_Vc" id="6kp4dbAcLlz" role="2OqNvi" />
                   </node>
-                  <node concept="2qgKlT" id="7284872370240340678" role="2OqNvi">
+                  <node concept="2qgKlT" id="6kp4dbAeWb6" role="2OqNvi">
                     <reference role="37wK5l" target="fq2o.4307205004146936444" resolve="getSupportedParameters" />
                   </node>
                 </node>
-                <node concept="3JPx81" id="7284872370240377604" role="2OqNvi">
-                  <node concept="10QFUN" id="7284872370240407451" role="25WWJ7">
-                    <node concept="3THzug" id="7284872370240409936" role="10QFUM">
+                <node concept="3JPx81" id="6kp4dbAf5c4" role="2OqNvi">
+                  <node concept="10QFUN" id="6kp4dbAfcur" role="25WWJ7">
+                    <node concept="3THzug" id="6kp4dbAfd5g" role="10QFUM">
                       <reference role="3qa414" target="3xdn.4307205004131544565" resolve="QueryParameter" />
                     </node>
-                    <node concept="otxO1" id="7284872370240407456" role="10QFUP" />
+                    <node concept="otxO1" id="6kp4dbAfcuw" role="10QFUP" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="7284872370239732003" role="3clFbw">
-            <node concept="otxO1" id="7284872370239730594" role="2Oq!k0" />
-            <node concept="2Zo12i" id="7284872370239734952" role="2OqNvi">
-              <node concept="chp4Y" id="7284872370239735797" role="2Zo12j">
+          <node concept="2OqwBi" id="6kp4dbAcB$z" role="3clFbw">
+            <node concept="otxO1" id="6kp4dbAcBey" role="2Oq$k0" />
+            <node concept="2Zo12i" id="6kp4dbAcCiC" role="2OqNvi">
+              <node concept="chp4Y" id="6kp4dbAcCvP" role="2Zo12j">
                 <reference role="cht4Q" target="3xdn.4307205004131544565" resolve="QueryParameter" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="7284872370239738311" role="3cqZAp">
-          <node concept="3clFbT" id="7284872370239739992" role="3cqZAk">
+        <node concept="3cpWs6" id="6kp4dbAcD77" role="3cqZAp">
+          <node concept="3clFbT" id="6kp4dbAcDxo" role="3cqZAk">
             <property role="3clFbU" value="true" />
           </node>
         </node>

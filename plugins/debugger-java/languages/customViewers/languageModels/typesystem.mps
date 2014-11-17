@@ -21,7 +21,7 @@
   <registry>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
-        <child id="1207343664468" name="conceptArgument" index="ri!Ld" />
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
@@ -71,7 +71,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
@@ -108,7 +108,7 @@
       </concept>
       <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
-        <child id="1174660783413" name="leftExpression" index="1ZfhK!" />
+        <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
       <concept id="1175147569072" name="jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule" flags="ig" index="2sgdUx">
@@ -117,88 +117,88 @@
       <concept id="1175147670730" name="jetbrains.mps.lang.typesystem.structure.SubtypingRule" flags="ig" index="2sgARr" />
     </language>
   </registry>
-  <node concept="1YbPZF" id="43370322128290635">
+  <node concept="1YbPZF" id="2q5hg4g4db">
     <property role="TrG5h" value="typeof_HighLevelWatchableCreator" />
     <property role="3GE5qa" value="highLevel" />
-    <node concept="3clFbS" id="43370322128290636" role="18ibNy">
-      <node concept="1Z5TYs" id="43370322128303929" role="3cqZAp">
-        <node concept="mw_s8" id="43370322128303933" role="1ZfhKB">
-          <node concept="2pJPEk" id="9116681015574451954" role="mwGJk">
-            <node concept="2pJPED" id="9116681015574451953" role="2pJPEn">
+    <node concept="3clFbS" id="2q5hg4g4dc" role="18ibNy">
+      <node concept="1Z5TYs" id="2q5hg4g7sT" role="3cqZAp">
+        <node concept="mw_s8" id="2q5hg4g7sX" role="1ZfhKB">
+          <node concept="2pJPEk" id="7U4XhjnRdrM" role="mwGJk">
+            <node concept="2pJPED" id="7U4XhjnRdrL" role="2pJPEn">
               <reference role="2pJxaS" target="kisg.5117350825036256333" resolve="WatchableType" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="43370322128303932" role="1ZfhK!">
-          <node concept="1Z2H0r" id="43370322128293457" role="mwGJk">
-            <node concept="1YBJjd" id="43370322128303928" role="1Z2MuG">
+        <node concept="mw_s8" id="2q5hg4g7sW" role="1ZfhK$">
+          <node concept="1Z2H0r" id="2q5hg4g4Th" role="mwGJk">
+            <node concept="1YBJjd" id="2q5hg4g7sS" role="1Z2MuG">
               <reference role="1YBMHb" target="43370322128290637" resolve="highLevelWatchableCreator" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="43370322128290637" role="1YuTPh">
+    <node concept="1YaCAy" id="2q5hg4g4dd" role="1YuTPh">
       <property role="TrG5h" value="highLevelWatchableCreator" />
       <reference role="1YaFvo" target="kisg.43370322128285902" resolve="HighLevelWatchableCreator" />
     </node>
   </node>
-  <node concept="1YbPZF" id="43370322128303938">
+  <node concept="1YbPZF" id="2q5hg4g7t2">
     <property role="TrG5h" value="typeof_HighLevelValue_ConceptFunctionParameter" />
     <property role="3GE5qa" value="highLevel" />
-    <node concept="3clFbS" id="43370322128303939" role="18ibNy">
-      <node concept="1Z5TYs" id="43370322128303945" role="3cqZAp">
-        <node concept="mw_s8" id="43370322128303949" role="1ZfhKB">
-          <node concept="2EnYce" id="43370322128304578" role="mwGJk">
-            <node concept="2OqwBi" id="43370322128303951" role="2Oq!k0">
-              <node concept="1YBJjd" id="43370322128303950" role="2Oq!k0">
+    <node concept="3clFbS" id="2q5hg4g7t3" role="18ibNy">
+      <node concept="1Z5TYs" id="2q5hg4g7t9" role="3cqZAp">
+        <node concept="mw_s8" id="2q5hg4g7td" role="1ZfhKB">
+          <node concept="2EnYce" id="2q5hg4g7B2" role="mwGJk">
+            <node concept="2OqwBi" id="2q5hg4g7tf" role="2Oq$k0">
+              <node concept="1YBJjd" id="2q5hg4g7te" role="2Oq$k0">
                 <reference role="1YBMHb" target="43370322128303940" resolve="highLevelValue_ConceptFunctionParameter" />
               </node>
-              <node concept="2Xjw5R" id="43370322128303955" role="2OqNvi">
-                <node concept="1xMEDy" id="43370322128303956" role="1xVPHs">
-                  <node concept="chp4Y" id="43370322128303959" role="ri!Ld">
+              <node concept="2Xjw5R" id="2q5hg4g7tj" role="2OqNvi">
+                <node concept="1xMEDy" id="2q5hg4g7tk" role="1xVPHs">
+                  <node concept="chp4Y" id="2q5hg4g7tn" role="ri$Ld">
                     <reference role="cht4Q" target="kisg.680105146889009728" resolve="HighLevelCustomViewer" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3TrEf2" id="43370322128304581" role="2OqNvi">
+            <node concept="3TrEf2" id="2q5hg4g7B5" role="2OqNvi">
               <reference role="3Tt5mk" target="kisg.43370322128256026" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="43370322128303948" role="1ZfhK!">
-          <node concept="1Z2H0r" id="43370322128303942" role="mwGJk">
-            <node concept="1YBJjd" id="43370322128303944" role="1Z2MuG">
+        <node concept="mw_s8" id="2q5hg4g7tc" role="1ZfhK$">
+          <node concept="1Z2H0r" id="2q5hg4g7t6" role="mwGJk">
+            <node concept="1YBJjd" id="2q5hg4g7t8" role="1Z2MuG">
               <reference role="1YBMHb" target="43370322128303940" resolve="highLevelValue_ConceptFunctionParameter" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="43370322128303940" role="1YuTPh">
+    <node concept="1YaCAy" id="2q5hg4g7t4" role="1YuTPh">
       <property role="TrG5h" value="highLevelValue_ConceptFunctionParameter" />
       <reference role="1YaFvo" target="kisg.43370322128272301" resolve="HighLevelValue_ConceptFunctionParameter" />
     </node>
   </node>
-  <node concept="2sgARr" id="1842653058274902924">
+  <node concept="2sgARr" id="1AiqN6mKOec">
     <property role="TrG5h" value="WatchableListIsAListOrWatchables" />
     <property role="3GE5qa" value="types" />
-    <node concept="3clFbS" id="1842653058274902925" role="2sgrp5">
-      <node concept="3cpWs6" id="1842653058274918903" role="3cqZAp">
-        <node concept="2pJPEk" id="9116681015574412896" role="3cqZAk">
-          <node concept="2pJPED" id="9116681015574412890" role="2pJPEn">
+    <node concept="3clFbS" id="1AiqN6mKOed" role="2sgrp5">
+      <node concept="3cpWs6" id="1AiqN6mKS7R" role="3cqZAp">
+        <node concept="2pJPEk" id="7U4XhjnR3Tw" role="3cqZAk">
+          <node concept="2pJPED" id="7U4XhjnR3Tq" role="2pJPEn">
             <reference role="2pJxaS" target="tpee.1107535904670" resolve="ClassifierType" />
-            <node concept="2pIpSj" id="9116681015574412891" role="2pJxcM">
+            <node concept="2pIpSj" id="7U4XhjnR3Tr" role="2pJxcM">
               <reference role="2pIpSl" target="tpee.1107535924139" />
-              <node concept="36bGnv" id="9116681015574412892" role="2pJxcZ">
+              <node concept="36bGnv" id="7U4XhjnR3Ts" role="2pJxcZ">
                 <reference role="36bGnp" target="k7g3.~List" resolve="List" />
               </node>
             </node>
-            <node concept="2pIpSj" id="9116681015574412894" role="2pJxcM">
+            <node concept="2pIpSj" id="7U4XhjnR3Tu" role="2pJxcM">
               <reference role="2pIpSl" target="tpee.1109201940907" />
-              <node concept="36be1Y" id="9116681015574412895" role="2pJxcZ">
-                <node concept="2pJPED" id="9116681015574412893" role="36be1Z">
+              <node concept="36be1Y" id="7U4XhjnR3Tv" role="2pJxcZ">
+                <node concept="2pJPED" id="7U4XhjnR3Tt" role="36be1Z">
                   <reference role="2pJxaS" target="kisg.5117350825036256333" resolve="WatchableType" />
                 </node>
               </node>
@@ -207,51 +207,51 @@
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="1842653058274902926" role="1YuTPh">
+    <node concept="1YaCAy" id="1AiqN6mKOee" role="1YuTPh">
       <property role="TrG5h" value="watchableListType" />
       <reference role="1YaFvo" target="kisg.1842653058274900915" resolve="WatchableListType" />
     </node>
   </node>
-  <node concept="2sgARr" id="1842653058275008950">
+  <node concept="2sgARr" id="1AiqN6mLe6Q">
     <property role="TrG5h" value="WatchableListIsAList" />
     <property role="3GE5qa" value="highLevel" />
-    <node concept="3clFbS" id="1842653058275008951" role="2sgrp5">
-      <node concept="3cpWs6" id="1842653058275008953" role="3cqZAp">
-        <node concept="2c44tf" id="1842653058275008955" role="3cqZAk">
-          <node concept="3uibUv" id="6113252630645067443" role="2c44tc">
+    <node concept="3clFbS" id="1AiqN6mLe6R" role="2sgrp5">
+      <node concept="3cpWs6" id="1AiqN6mLe6T" role="3cqZAp">
+        <node concept="2c44tf" id="1AiqN6mLe6V" role="3cqZAk">
+          <node concept="3uibUv" id="5jmCI3fO$UN" role="2c44tc">
             <reference role="3uigEE" target="k7g3.~List" resolve="List" />
-            <node concept="3qTvmN" id="6113252630645067447" role="11_B2D" />
+            <node concept="3qTvmN" id="5jmCI3fO$UR" role="11_B2D" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="1842653058275008952" role="1YuTPh">
+    <node concept="1YaCAy" id="1AiqN6mLe6S" role="1YuTPh">
       <property role="TrG5h" value="watchableListType" />
       <reference role="1YaFvo" target="kisg.1842653058274900915" resolve="WatchableListType" />
     </node>
   </node>
-  <node concept="1YbPZF" id="1842653058275013459">
+  <node concept="1YbPZF" id="1AiqN6mLfdj">
     <property role="TrG5h" value="typeof_WatchablesListCreator" />
     <property role="3GE5qa" value="highLevel" />
-    <node concept="3clFbS" id="1842653058275013460" role="18ibNy">
-      <node concept="1Z5TYs" id="1842653058275013466" role="3cqZAp">
-        <node concept="mw_s8" id="1842653058275013470" role="1ZfhKB">
-          <node concept="2pJPEk" id="9116681015574437833" role="mwGJk">
-            <node concept="2pJPED" id="9116681015574437832" role="2pJPEn">
+    <node concept="3clFbS" id="1AiqN6mLfdk" role="18ibNy">
+      <node concept="1Z5TYs" id="1AiqN6mLfdq" role="3cqZAp">
+        <node concept="mw_s8" id="1AiqN6mLfdu" role="1ZfhKB">
+          <node concept="2pJPEk" id="7U4XhjnR9Z9" role="mwGJk">
+            <node concept="2pJPED" id="7U4XhjnR9Z8" role="2pJPEn">
               <reference role="2pJxaS" target="kisg.1842653058274900915" resolve="WatchableListType" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="1842653058275013469" role="1ZfhK!">
-          <node concept="1Z2H0r" id="1842653058275013463" role="mwGJk">
-            <node concept="1YBJjd" id="1842653058275013465" role="1Z2MuG">
+        <node concept="mw_s8" id="1AiqN6mLfdt" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1AiqN6mLfdn" role="mwGJk">
+            <node concept="1YBJjd" id="1AiqN6mLfdp" role="1Z2MuG">
               <reference role="1YBMHb" target="1842653058275013461" resolve="watchablesListCreator" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="1842653058275013461" role="1YuTPh">
+    <node concept="1YaCAy" id="1AiqN6mLfdl" role="1YuTPh">
       <property role="TrG5h" value="watchablesListCreator" />
       <reference role="1YaFvo" target="kisg.1842653058274900914" resolve="WatchablesListCreator" />
     </node>

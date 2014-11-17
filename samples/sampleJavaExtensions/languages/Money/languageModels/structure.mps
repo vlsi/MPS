@@ -16,8 +16,8 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -49,121 +49,121 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="5447719361346490674">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="4IqbYlp4P4M">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MoneyLiteral" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="money" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyi" id="5447719361346490755" role="1TKVEl">
+    <node concept="1TJgyi" id="4IqbYlp4P63" role="1TKVEl">
       <property role="TrG5h" value="amount" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
-    <node concept="1TJgyj" id="3607579524910560680" role="1TKVEi">
+    <node concept="1TJgyj" id="38gGBrhh3mC" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="unit" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="3607579524910560663" resolve="CurrencyUnit" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5447719361346490730">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="4IqbYlp4P5E">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MoneyType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="Money" />
     <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
   </node>
-  <node concept="1TIwiD" id="5447719361346519865">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="4IqbYlp4WcT">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="GetAmount" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="amount" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="5447719361346519866" role="PzmwI">
+    <node concept="PrWs8" id="4IqbYlp4WcU" role="PzmwI">
       <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1790427706118304177">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="1zoS8cVcJ6L">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="GetCurrency" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="currency" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1790427706118304178" role="PzmwI">
+    <node concept="PrWs8" id="1zoS8cVcJ6M" role="PzmwI">
       <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1790427706118381722">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="1zoS8cVd22q">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ConvertTo" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="convert to" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="1790427706118386783" role="1TKVEl">
+    <node concept="1TJgyi" id="1zoS8cVd3hv" role="1TKVEl">
       <property role="TrG5h" value="targetCurrency" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
-    <node concept="PrWs8" id="1790427706118381723" role="PzmwI">
+    <node concept="PrWs8" id="1zoS8cVd22r" role="PzmwI">
       <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3607579524910560662">
+  <node concept="1TIwiD" id="38gGBrhh3mm">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="CurrencyDefTable" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="3607579524910560668" role="1TKVEi">
+    <node concept="1TJgyj" id="38gGBrhh3ms" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="units" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="3607579524910560663" resolve="CurrencyUnit" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3607579524910560663">
+  <node concept="1TIwiD" id="38gGBrhh3mn">
     <property role="TrG5h" value="CurrencyUnit" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="3607579524910560664" role="PzmwI">
+    <node concept="PrWs8" id="38gGBrhh3mo" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4001135958233291203">
+  <node concept="1TIwiD" id="3u6SZi0ypB3">
     <property role="TrG5h" value="CurrentStockPrice" />
     <property role="34LRSv" value="current stock price" />
     <property role="3GE5qa" value="stock" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="4001135958235845226" role="1TKVEi">
+    <node concept="1TJgyj" id="3u6SZi0G99E" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="symbol" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="4001135958235394442" resolve="StockSymbol" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4001135958235394442">
+  <node concept="1TIwiD" id="3u6SZi0Er6a">
     <property role="3GE5qa" value="stock" />
     <property role="TrG5h" value="StockSymbol" />
     <property role="34LRSv" value="symbol" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="4001135958235786331" role="1TKVEl">
+    <node concept="1TJgyi" id="3u6SZi0FULr" role="1TKVEl">
       <property role="TrG5h" value="symbol" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4001135958235922842">
+  <node concept="1TIwiD" id="3u6SZi0Gs6q">
     <property role="3GE5qa" value="stock" />
     <property role="TrG5h" value="MovingAverage" />
     <property role="34LRSv" value="moving average" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="4001135958235924176" role="1TKVEi">
+    <node concept="1TJgyj" id="3u6SZi0Gsrg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="symbol" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="4001135958235394442" resolve="StockSymbol" />
     </node>
-    <node concept="1TJgyi" id="4001135958235922843" role="1TKVEl">
+    <node concept="1TJgyi" id="3u6SZi0Gs6r" role="1TKVEl">
       <property role="TrG5h" value="period" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>

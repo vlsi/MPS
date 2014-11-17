@@ -32,14 +32,14 @@
       <concept id="1209604028561" name="jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test" flags="ng" index="2y1bA8" />
     </language>
   </registry>
-  <node concept="15_jI_" id="1209605989135">
+  <node concept="15_jI_" id="hAy8Ecf">
     <property role="TrG5h" value="Input_root_1" />
     <property role="3FifNy" value="dontApplyReductionTwice" />
   </node>
-  <node concept="15npcT" id="1209658576147">
+  <node concept="15npcT" id="hA_hgOj">
     <property role="TrG5h" value="Root_ToCopy" />
     <property role="15nCFB" value="this root will be copied to output " />
-    <node concept="2y1bA8" id="1209658659867" role="15EkXs">
+    <node concept="2y1bA8" id="hA_h_gr" role="15EkXs">
       <property role="15Hqq1" value="this node will be reduced to itself but that must not lead to a cycling" />
     </node>
   </node>

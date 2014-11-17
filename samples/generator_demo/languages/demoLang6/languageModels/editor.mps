@@ -25,40 +25,40 @@
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" index="3F0A7n" />
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
     </language>
   </registry>
-  <node concept="24kQdi" id="3978102045101855484">
+  <node concept="24kQdi" id="3sP3FIIzhbW">
     <reference role="1XX52x" target="2k81.3978102045101855363" resolve="Button" />
-    <node concept="3EZMnI" id="3978102045101856684" role="2wV5jI">
-      <node concept="3F0ifn" id="3978102045101856691" role="3EZMnx">
+    <node concept="3EZMnI" id="3sP3FIIzhuG" role="2wV5jI">
+      <node concept="3F0ifn" id="3sP3FIIzhuN" role="3EZMnx">
         <property role="3F0ifm" value="button (" />
       </node>
-      <node concept="3F0A7n" id="3978102045101856697" role="3EZMnx">
+      <node concept="3F0A7n" id="3sP3FIIzhuT" role="3EZMnx">
         <reference role="1NtTu8" target="2k81.3978102045101855475" resolve="text" />
       </node>
-      <node concept="3F0ifn" id="3978102045101856726" role="3EZMnx">
+      <node concept="3F0ifn" id="3sP3FIIzhvm" role="3EZMnx">
         <property role="3F0ifm" value=")" />
       </node>
-      <node concept="2iRfu4" id="3978102045101856687" role="2iSdaV" />
+      <node concept="2iRfu4" id="3sP3FIIzhuJ" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="3978102045101877183">
+  <node concept="24kQdi" id="3sP3FIIzmuZ">
     <reference role="1XX52x" target="2k81.3978102045101856876" resolve="Label" />
-    <node concept="3EZMnI" id="3978102045101877236" role="2wV5jI">
-      <node concept="3F0ifn" id="3978102045101877243" role="3EZMnx">
+    <node concept="3EZMnI" id="3sP3FIIzmvO" role="2wV5jI">
+      <node concept="3F0ifn" id="3sP3FIIzmvV" role="3EZMnx">
         <property role="3F0ifm" value="label (" />
       </node>
-      <node concept="3F0A7n" id="3978102045101877249" role="3EZMnx">
+      <node concept="3F0A7n" id="3sP3FIIzmw1" role="3EZMnx">
         <reference role="1NtTu8" target="2k81.3978102045101856886" resolve="text" />
       </node>
-      <node concept="3F0ifn" id="3978102045101877256" role="3EZMnx">
+      <node concept="3F0ifn" id="3sP3FIIzmw8" role="3EZMnx">
         <property role="3F0ifm" value=")" />
       </node>
-      <node concept="2iRfu4" id="3978102045101877239" role="2iSdaV" />
+      <node concept="2iRfu4" id="3sP3FIIzmvR" role="2iSdaV" />
     </node>
   </node>
 </model>

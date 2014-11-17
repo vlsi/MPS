@@ -37,7 +37,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
     </language>
@@ -60,20 +60,20 @@
       </concept>
     </language>
   </registry>
-  <node concept="1M2fIO" id="1213107435705">
+  <node concept="1M2fIO" id="hDMPByT">
     <reference role="1M2myG" target="tpo2.1197149564476" resolve="StateMachine" />
-    <node concept="EnEH3" id="1213107435706" role="1MhHOB">
+    <node concept="EnEH3" id="hDMPByU" role="1MhHOB">
       <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
-      <node concept="Eqf_E" id="1213107435707" role="EtsB7">
-        <node concept="3clFbS" id="1213107435708" role="2VODD2">
-          <node concept="3clFbF" id="1213107435709" role="3cqZAp">
-            <node concept="3cpWs3" id="1213107435710" role="3clFbG">
-              <node concept="Xl_RD" id="1213107435711" role="3uHU7w">
+      <node concept="Eqf_E" id="hDMPByV" role="EtsB7">
+        <node concept="3clFbS" id="hDMPByW" role="2VODD2">
+          <node concept="3clFbF" id="hDMPByX" role="3cqZAp">
+            <node concept="3cpWs3" id="hDMPByY" role="3clFbG">
+              <node concept="Xl_RD" id="hDMPByZ" role="3uHU7w">
                 <property role="Xl_RC" value=" State Machine" />
               </node>
-              <node concept="2OqwBi" id="1217625366446" role="3uHU7B">
-                <node concept="EsrRn" id="1213107435714" role="2Oq!k0" />
-                <node concept="3TrcHB" id="1213107435713" role="2OqNvi">
+              <node concept="2OqwBi" id="hI089YI" role="3uHU7B">
+                <node concept="EsrRn" id="hDMPBz2" role="2Oq$k0" />
+                <node concept="3TrcHB" id="hDMPBz1" role="2OqNvi">
                   <reference role="3TsBF5" target="tpo2.1197166557152" resolve="stateMachineName" />
                 </node>
               </node>
@@ -83,20 +83,20 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="1213107435908">
+  <node concept="1M2fIO" id="hDMPBA4">
     <reference role="1M2myG" target="tpo2.1197246912613" resolve="StateMachineTest" />
-    <node concept="EnEH3" id="1213107435909" role="1MhHOB">
+    <node concept="EnEH3" id="hDMPBA5" role="1MhHOB">
       <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
-      <node concept="Eqf_E" id="1213107435910" role="EtsB7">
-        <node concept="3clFbS" id="1213107435911" role="2VODD2">
-          <node concept="3clFbF" id="1213107435912" role="3cqZAp">
-            <node concept="3cpWs3" id="1213107435913" role="3clFbG">
-              <node concept="Xl_RD" id="1213107435914" role="3uHU7w">
+      <node concept="Eqf_E" id="hDMPBA6" role="EtsB7">
+        <node concept="3clFbS" id="hDMPBA7" role="2VODD2">
+          <node concept="3clFbF" id="hDMPBA8" role="3cqZAp">
+            <node concept="3cpWs3" id="hDMPBA9" role="3clFbG">
+              <node concept="Xl_RD" id="hDMPBAa" role="3uHU7w">
                 <property role="Xl_RC" value=" State Machine Test" />
               </node>
-              <node concept="2OqwBi" id="1217625357995" role="3uHU7B">
-                <node concept="EsrRn" id="1213107435917" role="2Oq!k0" />
-                <node concept="2qgKlT" id="3191472212106638416" role="2OqNvi">
+              <node concept="2OqwBi" id="hI087UF" role="3uHU7B">
+                <node concept="EsrRn" id="hDMPBAd" role="2Oq$k0" />
+                <node concept="2qgKlT" id="2LaoL5p9nhg" role="2OqNvi">
                   <reference role="37wK5l" target="3ehf.1197251245696" resolve="getStateMachineName" />
                 </node>
               </node>
@@ -106,16 +106,16 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="1213107436125">
+  <node concept="1M2fIO" id="hDMPBDt">
     <reference role="1M2myG" target="tpo2.1197169363230" resolve="Event" />
-    <node concept="EnEH3" id="1213107436126" role="1MhHOB">
+    <node concept="EnEH3" id="hDMPBDu" role="1MhHOB">
       <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
-      <node concept="Eqf_E" id="1213107436127" role="EtsB7">
-        <node concept="3clFbS" id="1213107436128" role="2VODD2">
-          <node concept="3clFbF" id="1213107436129" role="3cqZAp">
-            <node concept="2OqwBi" id="1217625354232" role="3clFbG">
-              <node concept="EsrRn" id="1213107436132" role="2Oq!k0" />
-              <node concept="3TrcHB" id="1213107436131" role="2OqNvi">
+      <node concept="Eqf_E" id="hDMPBDv" role="EtsB7">
+        <node concept="3clFbS" id="hDMPBDw" role="2VODD2">
+          <node concept="3clFbF" id="hDMPBDx" role="3cqZAp">
+            <node concept="2OqwBi" id="hI086ZS" role="3clFbG">
+              <node concept="EsrRn" id="hDMPBD$" role="2Oq$k0" />
+              <node concept="3TrcHB" id="hDMPBDz" role="2OqNvi">
                 <reference role="3TsBF5" target="tpo2.1197169389356" resolve="eventName" />
               </node>
             </node>
@@ -124,16 +124,16 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="1213107437474">
+  <node concept="1M2fIO" id="hDMPBYy">
     <reference role="1M2myG" target="tpo2.1197170590231" resolve="State" />
-    <node concept="EnEH3" id="1213107437475" role="1MhHOB">
+    <node concept="EnEH3" id="hDMPBYz" role="1MhHOB">
       <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
-      <node concept="Eqf_E" id="1213107437476" role="EtsB7">
-        <node concept="3clFbS" id="1213107437477" role="2VODD2">
-          <node concept="3clFbF" id="1213107437478" role="3cqZAp">
-            <node concept="2OqwBi" id="1217625354486" role="3clFbG">
-              <node concept="EsrRn" id="1213107437481" role="2Oq!k0" />
-              <node concept="3TrcHB" id="1213107437480" role="2OqNvi">
+      <node concept="Eqf_E" id="hDMPBY$" role="EtsB7">
+        <node concept="3clFbS" id="hDMPBY_" role="2VODD2">
+          <node concept="3clFbF" id="hDMPBYA" role="3cqZAp">
+            <node concept="2OqwBi" id="hI0873Q" role="3clFbG">
+              <node concept="EsrRn" id="hDMPBYD" role="2Oq$k0" />
+              <node concept="3TrcHB" id="hDMPBYC" role="2OqNvi">
                 <reference role="3TsBF5" target="tpo2.1197170631630" resolve="stateName" />
               </node>
             </node>

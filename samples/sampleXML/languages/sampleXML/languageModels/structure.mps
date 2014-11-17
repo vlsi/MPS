@@ -13,8 +13,8 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -42,77 +42,77 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="1225239603361">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hP5Yayx">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="attribute" />
     <property role="TrG5h" value="Attribute" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1225239603362" role="PzmwI">
+    <node concept="PrWs8" id="hP5Yayy" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyi" id="1225239603363" role="1TKVEl">
+    <node concept="1TJgyi" id="hP5Yayz" role="1TKVEl">
       <property role="TrG5h" value="value" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
-    <node concept="PrWs8" id="1262430001741643009" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvANO1" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1225239603382">
+  <node concept="1TIwiD" id="hP5YayQ">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="Document" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1225239603383" role="PzmwI">
+    <node concept="PrWs8" id="hP5YayR" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="1225239603384" role="1TKVEi">
+    <node concept="1TJgyj" id="hP5YayS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="rootElement" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="1225239603385" resolve="Element" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1225239603385">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hP5YayT">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="element" />
     <property role="TrG5h" value="Element" />
     <property role="34LRSv" value="&lt;" />
     <reference role="1TJDcQ" target="1225239603390" resolve="ElementPart" />
-    <node concept="1TJgyj" id="1225239603386" role="1TKVEi">
+    <node concept="1TJgyj" id="hP5YayU" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="attribute" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="1225239603361" resolve="Attribute" />
     </node>
-    <node concept="1TJgyj" id="1225239603387" role="1TKVEi">
+    <node concept="1TJgyj" id="hP5YayV" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="content" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="1225239603390" resolve="ElementPart" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1225239603390">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hP5YayY">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ElementPart" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1225239603391" role="PzmwI">
+    <node concept="PrWs8" id="hP5YayZ" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1225239603393">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hP5Yaz1">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="text" />
     <property role="TrG5h" value="Text" />
     <reference role="1TJDcQ" target="1225239603390" resolve="ElementPart" />
-    <node concept="1TJgyi" id="1225239603394" role="1TKVEl">
+    <node concept="1TJgyi" id="hP5Yaz2" role="1TKVEl">
       <property role="TrG5h" value="text" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
-    <node concept="PrWs8" id="1262430001741704540" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvB2Ps" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>

@@ -227,59 +227,32 @@ public class IdInfoCollector {
     HashSet<String> usedAssociationIndexes = new HashSet<String>();
     HashSet<String> usedAggregationIndexes = new HashSet<String>();
     // iterate from language to ensure the same order (and same hash conflict resolution result) for subsequent runs
+    IdEncoder indexEncoder = new IdEncoder();
     for (LangInfo langInfo : getLanguagesInUse()) {
       for (ConceptInfo ci : langInfo.getConceptsInUse()) {
-        fill(usedConceptIndexes, ci);
+        fill(usedConceptIndexes, ci, indexEncoder);
         for (PropertyInfo pi : ci.getPropertiesInUse()) {
-          fill(usedPropertyIndexes, pi);
+          fill(usedPropertyIndexes, pi, indexEncoder);
         }
         for (AssociationLinkInfo li : ci.getAssociationsInUse()) {
-          fill(usedAssociationIndexes, li);
+          fill(usedAssociationIndexes, li, indexEncoder);
         }
         for (AggregationLinkInfo li : ci.getAggregationsInUse()) {
-          fill(usedAggregationIndexes, li);
+          fill(usedAggregationIndexes, li, indexEncoder);
         }
       }
     }
   }
 
-  private static void fill(HashSet<String> usedIndexes, BaseInfo bi) {
+  private static void fill(HashSet<String> usedIndexes, BaseInfo bi, IdEncoder indexEncoder) {
     int v = bi.internalKey();
     String s;
     do {
-      s = indexValue(v);
+      s = indexEncoder.indexValue(v);
       v++;
     } while (!usedIndexes.add(s));
     bi.setIndex(s);
   }
-
-  // length shall be 2^^6 = 64 (10 digits + 2x26 letters + '!' and '_')
-  private static char[] ourIndexChars = "0123456789abcdefghijklmnopqrstuvwxyz!_ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-
-  // at least 5, at most 6 character string encoding. Leading zero is removed only if it's sixth symbol.
-  // FIXME refactor, move together with model import hash algorithm - separate (thread unsafe) class with non-static fields and field for rv.
-  private static String indexValue(int v) {
-    // 32 bits / 6 = 5.33 bytes
-    char[] rv = new char[6];
-    rv[5] = ourIndexChars[v & 0x3F];
-    v >>= 6;
-    rv[4] = ourIndexChars[v & 0x3F];
-    v >>= 6;
-    rv[3] = ourIndexChars[v & 0x3F];
-    v >>= 6;
-    rv[2] = ourIndexChars[v & 0x3F];
-    v >>= 6;
-    rv[1] = ourIndexChars[v & 0x3F];
-    v >>= 6;
-    // 5 times x 6 bits = we've got only 2 bits left of integer's total 32
-    v &= 0x3;
-    if (v != 0) {
-      rv[0] = ourIndexChars[v];
-      return new String(rv);
-    }
-    return new String(rv, 1, 5);
-  }
-
 
   /*package*/ static final class LangInfo implements Comparable<LangInfo> {
     private final SLanguageId myLanguageId;

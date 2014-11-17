@@ -29,14 +29,14 @@
       <concept id="1702123884811416051" name="jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAbstractChild" flags="ng" index="2UuP_k" />
       <concept id="1702123884811354597" name="jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer" flags="ng" index="2Uva_2">
         <child id="1702123884811416165" name="abstractChild" index="2UuPF2" />
-        <child id="3185679905990201576" name="anotherAbstractChild" index="3g!9Sm" />
-        <child id="3185679905990201679" name="anotherAbstractChildConstrained" index="3g!9YL" />
+        <child id="3185679905990201576" name="anotherAbstractChild" index="3g$9Sm" />
+        <child id="3185679905990201679" name="anotherAbstractChildConstrained" index="3g$9YL" />
         <child id="4942308145798610513" name="abstractChildConstrained" index="3WjIl3" />
         <child id="4886882084760491410" name="abstractChildAddConcept" index="2zMjf" />
       </concept>
-      <concept id="3185679905990200726" name="jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherAbstractChild" flags="ng" index="3g!8dC" />
-      <concept id="3185679905990201789" name="jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild2" flags="ng" index="3g!9X3" />
-      <concept id="3185679905990201737" name="jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild1" flags="ng" index="3g!9XR" />
+      <concept id="3185679905990200726" name="jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherAbstractChild" flags="ng" index="3g$8dC" />
+      <concept id="3185679905990201789" name="jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild2" flags="ng" index="3g$9X3" />
+      <concept id="3185679905990201737" name="jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild1" flags="ng" index="3g$9XR" />
       <concept id="3185679905989655160" name="jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestAncestor" flags="ng" index="3gEji6">
         <child id="3185679905989655255" name="container" index="3gEjgD" />
       </concept>
@@ -84,7 +84,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
@@ -103,15 +103,15 @@
       </concept>
     </language>
   </registry>
-  <node concept="2XOHcx" id="1702123884811135651">
+  <node concept="2XOHcx" id="1uvaauHS2Ez">
     <property role="2XOHcw" value="${mps_home}" />
   </node>
-  <node concept="LiM7Y" id="1702123884811614561">
+  <node concept="LiM7Y" id="1uvaauHTR_x">
     <property role="TrG5h" value="RightTransformWithCustomItem_Simple" />
-    <node concept="2Uva_2" id="4942308145796889677" role="LiRBU">
-      <node concept="2UuP_k" id="4942308145796905296" role="2UuPF2">
+    <node concept="2Uva_2" id="4imALaSJzLd" role="LiRBU">
+      <node concept="2UuP_k" id="4imALaSJB_g" role="2UuPF2">
         <property role="TrG5h" value="child1" />
-        <node concept="LIFWc" id="4942308145798537335" role="lGtFl">
+        <node concept="LIFWc" id="4imALaSPQ1R" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="28" />
@@ -120,9 +120,9 @@
         </node>
       </node>
     </node>
-    <node concept="2Uva_2" id="4942308145798537754" role="LiZbd">
-      <node concept="3WnXs9" id="4942308145798537760" role="2UuPF2">
-        <node concept="LIFWc" id="4942308145798537763" role="lGtFl">
+    <node concept="2Uva_2" id="4imALaSPQ8q" role="LiZbd">
+      <node concept="3WnXs9" id="4imALaSPQ8w" role="2UuPF2">
+        <node concept="LIFWc" id="4imALaSPQ8z" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -131,17 +131,17 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="4942308145798537766" role="LjaKd">
-      <node concept="2TK7Tu" id="4942308145798537829" role="3cqZAp">
+    <node concept="3clFbS" id="4imALaSPQ8A" role="LjaKd">
+      <node concept="2TK7Tu" id="4imALaSPQ9_" role="3cqZAp">
         <property role="2TTd_B" value=" child1" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="4942308145798660281">
+  <node concept="LiM7Y" id="4imALaSQk2T">
     <property role="TrG5h" value="RightTransformWithCustomItem_Simple_checkCanBeParent" />
-    <node concept="2Uva_2" id="4942308145798660282" role="LiRBU">
-      <node concept="2UuP_k" id="7308648901267997314" role="3WjIl3">
-        <node concept="LIFWc" id="7308648901269010991" role="lGtFl">
+    <node concept="2Uva_2" id="4imALaSQk2U" role="LiRBU">
+      <node concept="2UuP_k" id="6lHynfG8ca2" role="3WjIl3">
+        <node concept="LIFWc" id="6lHynfGc3CJ" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="28" />
@@ -150,74 +150,74 @@
         </node>
       </node>
     </node>
-    <node concept="2Uva_2" id="4942308145798660285" role="LiZbd">
-      <node concept="2UuP_k" id="3185679905989333869" role="3WjIl3" />
+    <node concept="2Uva_2" id="4imALaSQk2X" role="LiZbd">
+      <node concept="2UuP_k" id="2KPNJVWA1dH" role="3WjIl3" />
     </node>
-    <node concept="3clFbS" id="4942308145798660288" role="LjaKd">
-      <node concept="2TK7Tu" id="3185679905989355995" role="3cqZAp">
+    <node concept="3clFbS" id="4imALaSQk30" role="LjaKd">
+      <node concept="2TK7Tu" id="2KPNJVWA6Br" role="3cqZAp">
         <property role="2TTd_B" value=" " />
       </node>
-      <node concept="yd1bK" id="2550657305103844989" role="3cqZAp">
-        <node concept="pLAjd" id="2550657305103844990" role="yd6KS">
+      <node concept="yd1bK" id="2d_KkSmu4pX" role="3cqZAp">
+        <node concept="pLAjd" id="2d_KkSmu4pY" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="2550657305104001899" role="3cqZAp">
-        <node concept="2OqwBi" id="2550657305103997363" role="3vwVQn">
-          <node concept="liA8E" id="2550657305103999384" role="2OqNvi">
+      <node concept="3vwNmj" id="2d_KkSmuEHF" role="3cqZAp">
+        <node concept="2OqwBi" id="2d_KkSmuDAN" role="3vwVQn">
+          <node concept="liA8E" id="2d_KkSmuE6o" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="2550657305103985955" role="2Oq!k0">
-            <node concept="liA8E" id="2550657305103997135" role="2OqNvi">
+          <node concept="2OqwBi" id="2d_KkSmuAOz" role="2Oq$k0">
+            <node concept="liA8E" id="2d_KkSmuDzf" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="2550657305103982417" role="2Oq!k0" />
+            <node concept="369mXd" id="2d_KkSmu_Xh" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="6866660893594420694" role="3cqZAp">
-        <node concept="2OqwBi" id="2550657305104011511" role="3vwVQn">
-          <node concept="liA8E" id="6866660893594420201" role="2OqNvi">
+      <node concept="3vwNmj" id="5XbhVerKKnm" role="3cqZAp">
+        <node concept="2OqwBi" id="2d_KkSmuH3R" role="3vwVQn">
+          <node concept="liA8E" id="5XbhVerKKfD" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="2550657305104006090" role="2Oq!k0">
-            <node concept="liA8E" id="2550657305104011320" role="2OqNvi">
+          <node concept="2OqwBi" id="2d_KkSmuFJa" role="2Oq$k0">
+            <node concept="liA8E" id="2d_KkSmuH0S" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="2550657305104003884" role="2Oq!k0" />
+            <node concept="369mXd" id="2d_KkSmuFcG" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="6866660893594421553" role="3cqZAp">
-        <node concept="2OqwBi" id="6866660893594470549" role="3clFbG">
-          <node concept="liA8E" id="6866660893594472224" role="2OqNvi">
+      <node concept="3clFbF" id="5XbhVerKK$L" role="3cqZAp">
+        <node concept="2OqwBi" id="5XbhVerKWyl" role="3clFbG">
+          <node concept="liA8E" id="5XbhVerKWWw" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="6866660893594472322" role="37wK5m">
+            <node concept="3clFbT" id="5XbhVerKWY2" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="6866660893594458131" role="2Oq!k0">
-            <node concept="liA8E" id="6866660893594470349" role="2OqNvi">
+          <node concept="2OqwBi" id="5XbhVerKTwj" role="2Oq$k0">
+            <node concept="liA8E" id="5XbhVerKWvd" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="6866660893594421703" role="2Oq!k0" />
+            <node concept="369mXd" id="5XbhVerKKB7" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="3185679905989363848" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905989363850" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWA8y8" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWA8ya" role="yd6KS">
           <property role="pLAjf" value="VK_ESCAPE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3185679905989925287">
+  <node concept="LiM7Y" id="2KPNJVWChAB">
     <property role="TrG5h" value="RightTransformWithCustomItem_Simple_checkCanBeAncestor" />
-    <node concept="3gEji6" id="3185679905989925383" role="LiRBU">
-      <node concept="2Uva_2" id="3185679905989925385" role="3gEjgD">
-        <node concept="2UuP_k" id="3185679905989925389" role="2UuPF2">
-          <node concept="LIFWc" id="3185679905989925391" role="lGtFl">
+    <node concept="3gEji6" id="2KPNJVWChC7" role="LiRBU">
+      <node concept="2Uva_2" id="2KPNJVWChC9" role="3gEjgD">
+        <node concept="2UuP_k" id="2KPNJVWChCd" role="2UuPF2">
+          <node concept="LIFWc" id="2KPNJVWChCf" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="28" />
@@ -227,10 +227,10 @@
         </node>
       </node>
     </node>
-    <node concept="3gEji6" id="3185679905989925455" role="LiZbd">
-      <node concept="2Uva_2" id="3185679905989925456" role="3gEjgD">
-        <node concept="2UuP_k" id="3185679905989925457" role="2UuPF2">
-          <node concept="LIFWc" id="3185679905989926338" role="lGtFl">
+    <node concept="3gEji6" id="2KPNJVWChDf" role="LiZbd">
+      <node concept="2Uva_2" id="2KPNJVWChDg" role="3gEjgD">
+        <node concept="2UuP_k" id="2KPNJVWChDh" role="2UuPF2">
+          <node concept="LIFWc" id="2KPNJVWChR2" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="28" />
@@ -240,71 +240,71 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="3185679905989925814" role="LjaKd">
-      <node concept="2TK7Tu" id="3185679905989925888" role="3cqZAp">
+    <node concept="3clFbS" id="2KPNJVWChIQ" role="LjaKd">
+      <node concept="2TK7Tu" id="2KPNJVWChK0" role="3cqZAp">
         <property role="2TTd_B" value=" " />
       </node>
-      <node concept="yd1bK" id="3185679905989925889" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905989925890" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWChK1" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWChK2" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905989925891" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905989925892" role="3vwVQn">
-          <node concept="liA8E" id="3185679905989925893" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWChK3" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWChK4" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWChK5" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="3185679905989925894" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905989925895" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWChK6" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWChK7" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905989925896" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWChK8" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905989925897" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905989925898" role="3vwVQn">
-          <node concept="liA8E" id="3185679905989925899" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWChK9" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWChKa" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWChKb" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="3185679905989925900" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905989925901" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWChKc" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWChKd" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905989925902" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWChKe" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="3185679905989925903" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905989925904" role="3clFbG">
-          <node concept="liA8E" id="3185679905989925905" role="2OqNvi">
+      <node concept="3clFbF" id="2KPNJVWChKf" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWChKg" role="3clFbG">
+          <node concept="liA8E" id="2KPNJVWChKh" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="3185679905989925906" role="37wK5m">
+            <node concept="3clFbT" id="2KPNJVWChKi" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="3185679905989925907" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905989925908" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWChKj" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWChKk" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905989925909" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWChKl" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="3185679905989925910" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905989925911" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWChKm" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWChKn" role="yd6KS">
           <property role="pLAjf" value="VK_ESCAPE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3185679905989954102">
+  <node concept="LiM7Y" id="2KPNJVWCoCQ">
     <property role="TrG5h" value="LeftTransformWithCustomItem_Simple" />
-    <node concept="2Uva_2" id="3185679905989954103" role="LiRBU">
-      <node concept="2UuP_k" id="3185679905989954104" role="2UuPF2">
+    <node concept="2Uva_2" id="2KPNJVWCoCR" role="LiRBU">
+      <node concept="2UuP_k" id="2KPNJVWCoCS" role="2UuPF2">
         <property role="TrG5h" value="child1" />
-        <node concept="LIFWc" id="3185679905989954195" role="lGtFl">
+        <node concept="LIFWc" id="2KPNJVWCoEj" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -313,9 +313,9 @@
         </node>
       </node>
     </node>
-    <node concept="2Uva_2" id="3185679905989954106" role="LiZbd">
-      <node concept="3WnXs9" id="3185679905990187624" role="2UuPF2">
-        <node concept="LIFWc" id="3185679905990187627" role="lGtFl">
+    <node concept="2Uva_2" id="2KPNJVWCoCU" role="LiZbd">
+      <node concept="3WnXs9" id="2KPNJVWDhDC" role="2UuPF2">
+        <node concept="LIFWc" id="2KPNJVWDhDF" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -324,17 +324,17 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="3185679905989954109" role="LjaKd">
-      <node concept="2TK7Tu" id="3185679905989954110" role="3cqZAp">
+    <node concept="3clFbS" id="2KPNJVWCoCX" role="LjaKd">
+      <node concept="2TK7Tu" id="2KPNJVWCoCY" role="3cqZAp">
         <property role="2TTd_B" value=" child1" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3185679905990188312">
+  <node concept="LiM7Y" id="2KPNJVWDhOo">
     <property role="TrG5h" value="LeftTransformWithCustomItem_Simple_checkCanBeParent" />
-    <node concept="2Uva_2" id="3185679905990188313" role="LiRBU">
-      <node concept="2UuP_k" id="3185679905990188314" role="3WjIl3">
-        <node concept="LIFWc" id="3185679905990189052" role="lGtFl">
+    <node concept="2Uva_2" id="2KPNJVWDhOp" role="LiRBU">
+      <node concept="2UuP_k" id="2KPNJVWDhOq" role="3WjIl3">
+        <node concept="LIFWc" id="2KPNJVWDhZW" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -343,74 +343,74 @@
         </node>
       </node>
     </node>
-    <node concept="2Uva_2" id="3185679905990188316" role="LiZbd">
-      <node concept="2UuP_k" id="3185679905990188317" role="3WjIl3" />
+    <node concept="2Uva_2" id="2KPNJVWDhOs" role="LiZbd">
+      <node concept="2UuP_k" id="2KPNJVWDhOt" role="3WjIl3" />
     </node>
-    <node concept="3clFbS" id="3185679905990188318" role="LjaKd">
-      <node concept="2TK7Tu" id="3185679905990188319" role="3cqZAp">
+    <node concept="3clFbS" id="2KPNJVWDhOu" role="LjaKd">
+      <node concept="2TK7Tu" id="2KPNJVWDhOv" role="3cqZAp">
         <property role="2TTd_B" value=" " />
       </node>
-      <node concept="yd1bK" id="3185679905990188320" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905990188321" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWDhOw" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWDhOx" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905990188322" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905990188323" role="3vwVQn">
-          <node concept="liA8E" id="3185679905990188324" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWDhOy" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWDhOz" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWDhO$" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="3185679905990188325" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905990188326" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWDhO_" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWDhOA" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905990188327" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWDhOB" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905990188328" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905990188329" role="3vwVQn">
-          <node concept="liA8E" id="3185679905990188330" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWDhOC" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWDhOD" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWDhOE" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="3185679905990188331" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905990188332" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWDhOF" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWDhOG" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905990188333" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWDhOH" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="3185679905990188334" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905990188335" role="3clFbG">
-          <node concept="liA8E" id="3185679905990188336" role="2OqNvi">
+      <node concept="3clFbF" id="2KPNJVWDhOI" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWDhOJ" role="3clFbG">
+          <node concept="liA8E" id="2KPNJVWDhOK" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="3185679905990188337" role="37wK5m">
+            <node concept="3clFbT" id="2KPNJVWDhOL" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="3185679905990188338" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905990188339" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWDhOM" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWDhON" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905990188340" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWDhOO" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="3185679905990188341" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905990188342" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWDhOP" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWDhOQ" role="yd6KS">
           <property role="pLAjf" value="VK_ESCAPE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3185679905990189305">
+  <node concept="LiM7Y" id="2KPNJVWDi3T">
     <property role="TrG5h" value="LeftTransformWithCustomItem_Simple_checkCanBeAncestor" />
-    <node concept="3gEji6" id="3185679905990189306" role="LiRBU">
-      <node concept="2Uva_2" id="3185679905990189307" role="3gEjgD">
-        <node concept="2UuP_k" id="3185679905990189308" role="2UuPF2">
-          <node concept="LIFWc" id="3185679905990189914" role="lGtFl">
+    <node concept="3gEji6" id="2KPNJVWDi3U" role="LiRBU">
+      <node concept="2Uva_2" id="2KPNJVWDi3V" role="3gEjgD">
+        <node concept="2UuP_k" id="2KPNJVWDi3W" role="2UuPF2">
+          <node concept="LIFWc" id="2KPNJVWDidq" role="lGtFl">
             <property role="LIFWa" value="0" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="0" />
@@ -420,75 +420,75 @@
         </node>
       </node>
     </node>
-    <node concept="3gEji6" id="3185679905990189310" role="LiZbd">
-      <node concept="2Uva_2" id="3185679905990189311" role="3gEjgD">
-        <node concept="2UuP_k" id="3185679905990189312" role="2UuPF2" />
+    <node concept="3gEji6" id="2KPNJVWDi3Y" role="LiZbd">
+      <node concept="2Uva_2" id="2KPNJVWDi3Z" role="3gEjgD">
+        <node concept="2UuP_k" id="2KPNJVWDi40" role="2UuPF2" />
       </node>
     </node>
-    <node concept="3clFbS" id="3185679905990189314" role="LjaKd">
-      <node concept="2TK7Tu" id="3185679905990189315" role="3cqZAp">
+    <node concept="3clFbS" id="2KPNJVWDi42" role="LjaKd">
+      <node concept="2TK7Tu" id="2KPNJVWDi43" role="3cqZAp">
         <property role="2TTd_B" value=" " />
       </node>
-      <node concept="yd1bK" id="3185679905990189316" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905990189317" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWDi44" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWDi45" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905990189318" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905990189319" role="3vwVQn">
-          <node concept="liA8E" id="3185679905990189320" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWDi46" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWDi47" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWDi48" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="3185679905990189321" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905990189322" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWDi49" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWDi4a" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905990189323" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWDi4b" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905990189324" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905990189325" role="3vwVQn">
-          <node concept="liA8E" id="3185679905990189326" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWDi4c" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWDi4d" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWDi4e" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="3185679905990189327" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905990189328" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWDi4f" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWDi4g" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905990189329" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWDi4h" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="3185679905990189330" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905990189331" role="3clFbG">
-          <node concept="liA8E" id="3185679905990189332" role="2OqNvi">
+      <node concept="3clFbF" id="2KPNJVWDi4i" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWDi4j" role="3clFbG">
+          <node concept="liA8E" id="2KPNJVWDi4k" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="3185679905990189333" role="37wK5m">
+            <node concept="3clFbT" id="2KPNJVWDi4l" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="3185679905990189334" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905990189335" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWDi4m" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWDi4n" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905990189336" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWDi4o" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="3185679905990189337" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905990189338" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWDi4p" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWDi4q" role="yd6KS">
           <property role="pLAjf" value="VK_ESCAPE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3185679905990915389">
+  <node concept="LiM7Y" id="2KPNJVWG3kX">
     <property role="TrG5h" value="RightTransformWithCustomItems_Parameterized" />
-    <node concept="2Uva_2" id="3185679905990915390" role="LiRBU">
-      <node concept="3g!8dC" id="3185679905992033615" role="3g!9Sm">
-        <node concept="LIFWc" id="3185679905992387012" role="lGtFl">
+    <node concept="2Uva_2" id="2KPNJVWG3kY" role="LiRBU">
+      <node concept="3g$8dC" id="2KPNJVWKklf" role="3g$9Sm">
+        <node concept="LIFWc" id="2KPNJVWLEB4" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="36" />
@@ -497,9 +497,9 @@
         </node>
       </node>
     </node>
-    <node concept="2Uva_2" id="3185679905990915393" role="LiZbd">
-      <node concept="3g!9XR" id="3185679905992033619" role="3g!9Sm">
-        <node concept="LIFWc" id="3185679905992033621" role="lGtFl">
+    <node concept="2Uva_2" id="2KPNJVWG3l1" role="LiZbd">
+      <node concept="3g$9XR" id="2KPNJVWKklj" role="3g$9Sm">
+        <node concept="LIFWc" id="2KPNJVWKkll" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="40" />
@@ -508,17 +508,17 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="3185679905990915396" role="LjaKd">
-      <node concept="2TK7Tu" id="3185679905990915397" role="3cqZAp">
+    <node concept="3clFbS" id="2KPNJVWG3l4" role="LjaKd">
+      <node concept="2TK7Tu" id="2KPNJVWG3l5" role="3cqZAp">
         <property role="2TTd_B" value=" anotherChild1" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3185679905991685372">
+  <node concept="LiM7Y" id="2KPNJVWIZjW">
     <property role="TrG5h" value="RightTransformWithCustomItems_Parameterized_checkCanBeParent" />
-    <node concept="2Uva_2" id="3185679905991685373" role="LiRBU">
-      <node concept="3g!8dC" id="3185679905991689710" role="3g!9YL">
-        <node concept="LIFWc" id="3185679905992058104" role="lGtFl">
+    <node concept="2Uva_2" id="2KPNJVWIZjX" role="LiRBU">
+      <node concept="3g$8dC" id="2KPNJVWJ0nI" role="3g$9YL">
+        <node concept="LIFWc" id="2KPNJVWKqjS" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="36" />
@@ -527,74 +527,74 @@
         </node>
       </node>
     </node>
-    <node concept="2Uva_2" id="3185679905991685376" role="LiZbd">
-      <node concept="3g!8dC" id="3185679905992034062" role="3g!9YL" />
+    <node concept="2Uva_2" id="2KPNJVWIZk0" role="LiZbd">
+      <node concept="3g$8dC" id="2KPNJVWKkse" role="3g$9YL" />
     </node>
-    <node concept="3clFbS" id="3185679905991685378" role="LjaKd">
-      <node concept="2TK7Tu" id="3185679905991685379" role="3cqZAp">
+    <node concept="3clFbS" id="2KPNJVWIZk2" role="LjaKd">
+      <node concept="2TK7Tu" id="2KPNJVWIZk3" role="3cqZAp">
         <property role="2TTd_B" value=" " />
       </node>
-      <node concept="yd1bK" id="3185679905991685380" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905991685381" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWIZk4" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWIZk5" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905991685382" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905991685383" role="3vwVQn">
-          <node concept="liA8E" id="3185679905991685384" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWIZk6" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWIZk7" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWIZk8" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="3185679905991685385" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905991685386" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWIZk9" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWIZka" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905991685387" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWIZkb" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905991685388" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905991685389" role="3vwVQn">
-          <node concept="liA8E" id="3185679905991685390" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWIZkc" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWIZkd" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWIZke" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="3185679905991685391" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905991685392" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWIZkf" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWIZkg" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905991685393" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWIZkh" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="3185679905991685394" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905991685395" role="3clFbG">
-          <node concept="liA8E" id="3185679905991685396" role="2OqNvi">
+      <node concept="3clFbF" id="2KPNJVWIZki" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWIZkj" role="3clFbG">
+          <node concept="liA8E" id="2KPNJVWIZkk" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="3185679905991685397" role="37wK5m">
+            <node concept="3clFbT" id="2KPNJVWIZkl" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="3185679905991685398" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905991685399" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWIZkm" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWIZkn" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905991685400" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWIZko" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="3185679905991685401" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905991685402" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWIZkp" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWIZkq" role="yd6KS">
           <property role="pLAjf" value="VK_ESCAPE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3185679905992058594">
+  <node concept="LiM7Y" id="2KPNJVWKqry">
     <property role="TrG5h" value="RightTransformWithCustomItems_Parameterized_checkCanBeAncestor" />
-    <node concept="3gEji6" id="3185679905992058595" role="LiRBU">
-      <node concept="2Uva_2" id="3185679905992058596" role="3gEjgD">
-        <node concept="3g!8dC" id="3185679905992081010" role="3g!9Sm">
-          <node concept="LIFWc" id="3185679905992081012" role="lGtFl">
+    <node concept="3gEji6" id="2KPNJVWKqrz" role="LiRBU">
+      <node concept="2Uva_2" id="2KPNJVWKqr$" role="3gEjgD">
+        <node concept="3g$8dC" id="2KPNJVWKvTM" role="3g$9Sm">
+          <node concept="LIFWc" id="2KPNJVWKvTO" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="36" />
@@ -604,75 +604,75 @@
         </node>
       </node>
     </node>
-    <node concept="3gEji6" id="3185679905992058599" role="LiZbd">
-      <node concept="2Uva_2" id="3185679905992058600" role="3gEjgD">
-        <node concept="3g!8dC" id="3185679905992081014" role="3g!9Sm" />
+    <node concept="3gEji6" id="2KPNJVWKqrB" role="LiZbd">
+      <node concept="2Uva_2" id="2KPNJVWKqrC" role="3gEjgD">
+        <node concept="3g$8dC" id="2KPNJVWKvTQ" role="3g$9Sm" />
       </node>
     </node>
-    <node concept="3clFbS" id="3185679905992058603" role="LjaKd">
-      <node concept="2TK7Tu" id="3185679905992058604" role="3cqZAp">
+    <node concept="3clFbS" id="2KPNJVWKqrF" role="LjaKd">
+      <node concept="2TK7Tu" id="2KPNJVWKqrG" role="3cqZAp">
         <property role="2TTd_B" value=" " />
       </node>
-      <node concept="yd1bK" id="3185679905992058605" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905992058606" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWKqrH" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWKqrI" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905992058607" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905992058608" role="3vwVQn">
-          <node concept="liA8E" id="3185679905992058609" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWKqrJ" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWKqrK" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWKqrL" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="3185679905992058610" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905992058611" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWKqrM" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWKqrN" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905992058612" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWKqrO" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905992058613" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905992058614" role="3vwVQn">
-          <node concept="liA8E" id="3185679905992058615" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWKqrP" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWKqrQ" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWKqrR" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="3185679905992058616" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905992058617" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWKqrS" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWKqrT" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905992058618" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWKqrU" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="3185679905992058619" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905992058620" role="3clFbG">
-          <node concept="liA8E" id="3185679905992058621" role="2OqNvi">
+      <node concept="3clFbF" id="2KPNJVWKqrV" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWKqrW" role="3clFbG">
+          <node concept="liA8E" id="2KPNJVWKqrX" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="3185679905992058622" role="37wK5m">
+            <node concept="3clFbT" id="2KPNJVWKqrY" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="3185679905992058623" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905992058624" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWKqrZ" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWKqs0" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905992058625" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWKqs1" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="3185679905992058626" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905992058627" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWKqs2" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWKqs3" role="yd6KS">
           <property role="pLAjf" value="VK_ESCAPE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3185679905992082137">
+  <node concept="LiM7Y" id="2KPNJVWKwbp">
     <property role="TrG5h" value="LeftTransformWithCustomItems_Parameterized" />
-    <node concept="2Uva_2" id="3185679905992082138" role="LiRBU">
-      <node concept="3g!8dC" id="3185679905992082139" role="3g!9Sm">
-        <node concept="LIFWc" id="3185679905992365787" role="lGtFl">
+    <node concept="2Uva_2" id="2KPNJVWKwbq" role="LiRBU">
+      <node concept="3g$8dC" id="2KPNJVWKwbr" role="3g$9Sm">
+        <node concept="LIFWc" id="2KPNJVWL_rr" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -681,9 +681,9 @@
         </node>
       </node>
     </node>
-    <node concept="2Uva_2" id="3185679905992082140" role="LiZbd">
-      <node concept="3g!9X3" id="3185679905992365791" role="3g!9Sm">
-        <node concept="LIFWc" id="3185679905992365793" role="lGtFl">
+    <node concept="2Uva_2" id="2KPNJVWKwbs" role="LiZbd">
+      <node concept="3g$9X3" id="2KPNJVWL_rv" role="3g$9Sm">
+        <node concept="LIFWc" id="2KPNJVWL_rx" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="40" />
@@ -692,18 +692,18 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="3185679905992082143" role="LjaKd">
-      <node concept="2TK7Tu" id="3185679905992082144" role="3cqZAp">
+    <node concept="3clFbS" id="2KPNJVWKwbv" role="LjaKd">
+      <node concept="2TK7Tu" id="2KPNJVWKwbw" role="3cqZAp">
         <property role="2TTd_B" value=" anotherChild2" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3185679905992082145">
+  <node concept="LiM7Y" id="2KPNJVWKwbx">
     <property role="TrG5h" value="LeftTransformWithCustomItems_Parameterized_checkCanBeAncestor" />
-    <node concept="3gEji6" id="3185679905992082146" role="LiRBU">
-      <node concept="2Uva_2" id="3185679905992082147" role="3gEjgD">
-        <node concept="3g!8dC" id="3185679905992082148" role="3g!9Sm">
-          <node concept="LIFWc" id="3185679905992366342" role="lGtFl">
+    <node concept="3gEji6" id="2KPNJVWKwby" role="LiRBU">
+      <node concept="2Uva_2" id="2KPNJVWKwbz" role="3gEjgD">
+        <node concept="3g$8dC" id="2KPNJVWKwb$" role="3g$9Sm">
+          <node concept="LIFWc" id="2KPNJVWL_$6" role="lGtFl">
             <property role="LIFWa" value="0" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="0" />
@@ -713,75 +713,75 @@
         </node>
       </node>
     </node>
-    <node concept="3gEji6" id="3185679905992082150" role="LiZbd">
-      <node concept="2Uva_2" id="3185679905992082151" role="3gEjgD">
-        <node concept="3g!8dC" id="3185679905992082152" role="3g!9Sm" />
+    <node concept="3gEji6" id="2KPNJVWKwbA" role="LiZbd">
+      <node concept="2Uva_2" id="2KPNJVWKwbB" role="3gEjgD">
+        <node concept="3g$8dC" id="2KPNJVWKwbC" role="3g$9Sm" />
       </node>
     </node>
-    <node concept="3clFbS" id="3185679905992082153" role="LjaKd">
-      <node concept="2TK7Tu" id="3185679905992082154" role="3cqZAp">
+    <node concept="3clFbS" id="2KPNJVWKwbD" role="LjaKd">
+      <node concept="2TK7Tu" id="2KPNJVWKwbE" role="3cqZAp">
         <property role="2TTd_B" value=" " />
       </node>
-      <node concept="yd1bK" id="3185679905992082155" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905992082156" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWKwbF" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWKwbG" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905992082157" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905992082158" role="3vwVQn">
-          <node concept="liA8E" id="3185679905992082159" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWKwbH" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWKwbI" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWKwbJ" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="3185679905992082160" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905992082161" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWKwbK" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWKwbL" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905992082162" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWKwbM" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905992082163" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905992082164" role="3vwVQn">
-          <node concept="liA8E" id="3185679905992082165" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWKwbN" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWKwbO" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWKwbP" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="3185679905992082166" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905992082167" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWKwbQ" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWKwbR" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905992082168" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWKwbS" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="3185679905992082169" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905992082170" role="3clFbG">
-          <node concept="liA8E" id="3185679905992082171" role="2OqNvi">
+      <node concept="3clFbF" id="2KPNJVWKwbT" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWKwbU" role="3clFbG">
+          <node concept="liA8E" id="2KPNJVWKwbV" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="3185679905992082172" role="37wK5m">
+            <node concept="3clFbT" id="2KPNJVWKwbW" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="3185679905992082173" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905992082174" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWKwbX" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWKwbY" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905992082175" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWKwbZ" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="3185679905992082176" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905992082177" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWKwc0" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWKwc1" role="yd6KS">
           <property role="pLAjf" value="VK_ESCAPE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3185679905992082178">
+  <node concept="LiM7Y" id="2KPNJVWKwc2">
     <property role="TrG5h" value="LeftTransformWithCustomItems_Parameterized_checkCanBeParent" />
-    <node concept="2Uva_2" id="3185679905992082179" role="LiRBU">
-      <node concept="3g!8dC" id="3185679905992082180" role="3g!9YL">
-        <node concept="LIFWc" id="3185679905992366891" role="lGtFl">
+    <node concept="2Uva_2" id="2KPNJVWKwc3" role="LiRBU">
+      <node concept="3g$8dC" id="2KPNJVWKwc4" role="3g$9YL">
+        <node concept="LIFWc" id="2KPNJVWL_GF" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -790,73 +790,73 @@
         </node>
       </node>
     </node>
-    <node concept="2Uva_2" id="3185679905992082182" role="LiZbd">
-      <node concept="3g!8dC" id="3185679905992082183" role="3g!9YL" />
+    <node concept="2Uva_2" id="2KPNJVWKwc6" role="LiZbd">
+      <node concept="3g$8dC" id="2KPNJVWKwc7" role="3g$9YL" />
     </node>
-    <node concept="3clFbS" id="3185679905992082184" role="LjaKd">
-      <node concept="2TK7Tu" id="3185679905992082185" role="3cqZAp">
+    <node concept="3clFbS" id="2KPNJVWKwc8" role="LjaKd">
+      <node concept="2TK7Tu" id="2KPNJVWKwc9" role="3cqZAp">
         <property role="2TTd_B" value=" " />
       </node>
-      <node concept="yd1bK" id="3185679905992082186" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905992082187" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWKwca" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWKwcb" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905992082188" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905992082189" role="3vwVQn">
-          <node concept="liA8E" id="3185679905992082190" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWKwcc" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWKwcd" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWKwce" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="3185679905992082191" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905992082192" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWKwcf" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWKwcg" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905992082193" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWKwch" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="3185679905992082194" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905992082195" role="3vwVQn">
-          <node concept="liA8E" id="3185679905992082196" role="2OqNvi">
+      <node concept="3vwNmj" id="2KPNJVWKwci" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWKwcj" role="3vwVQn">
+          <node concept="liA8E" id="2KPNJVWKwck" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="3185679905992082197" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905992082198" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWKwcl" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWKwcm" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905992082199" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWKwcn" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="3185679905992082200" role="3cqZAp">
-        <node concept="2OqwBi" id="3185679905992082201" role="3clFbG">
-          <node concept="liA8E" id="3185679905992082202" role="2OqNvi">
+      <node concept="3clFbF" id="2KPNJVWKwco" role="3cqZAp">
+        <node concept="2OqwBi" id="2KPNJVWKwcp" role="3clFbG">
+          <node concept="liA8E" id="2KPNJVWKwcq" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="3185679905992082203" role="37wK5m">
+            <node concept="3clFbT" id="2KPNJVWKwcr" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="3185679905992082204" role="2Oq!k0">
-            <node concept="liA8E" id="3185679905992082205" role="2OqNvi">
+          <node concept="2OqwBi" id="2KPNJVWKwcs" role="2Oq$k0">
+            <node concept="liA8E" id="2KPNJVWKwct" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3185679905992082206" role="2Oq!k0" />
+            <node concept="369mXd" id="2KPNJVWKwcu" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="3185679905992082207" role="3cqZAp">
-        <node concept="pLAjd" id="3185679905992082208" role="yd6KS">
+      <node concept="yd1bK" id="2KPNJVWKwcv" role="3cqZAp">
+        <node concept="pLAjd" id="2KPNJVWKwcw" role="yd6KS">
           <property role="pLAjf" value="VK_ESCAPE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="4886882084760491503">
+  <node concept="LiM7Y" id="4fhGlP1nDnJ">
     <property role="TrG5h" value="LeftTransformWithAddConcept" />
-    <node concept="2Uva_2" id="4886882084760491504" role="LiRBU">
-      <node concept="2zNNt" id="4022889280611417801" role="2zMjf">
-        <node concept="LIFWc" id="6500338114639040353" role="lGtFl">
+    <node concept="2Uva_2" id="4fhGlP1nDnK" role="LiRBU">
+      <node concept="2zNNt" id="3vkb7Md$vV9" role="2zMjf">
+        <node concept="LIFWc" id="5CPPLcMZwXx" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -865,9 +865,9 @@
         </node>
       </node>
     </node>
-    <node concept="2Uva_2" id="4886882084760491507" role="LiZbd">
-      <node concept="2IhlV" id="6500338114639040658" role="2zMjf">
-        <node concept="LIFWc" id="6500338114639040660" role="lGtFl">
+    <node concept="2Uva_2" id="4fhGlP1nDnN" role="LiZbd">
+      <node concept="2IhlV" id="5CPPLcMZx2i" role="2zMjf">
+        <node concept="LIFWc" id="5CPPLcMZx2k" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="43" />
@@ -876,17 +876,17 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="4886882084760491510" role="LjaKd">
-      <node concept="2TK7Tu" id="4886882084760491511" role="3cqZAp">
+    <node concept="3clFbS" id="4fhGlP1nDnQ" role="LjaKd">
+      <node concept="2TK7Tu" id="4fhGlP1nDnR" role="3cqZAp">
         <property role="2TTd_B" value=" addConceptChild" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="6500338114639041001">
+  <node concept="LiM7Y" id="5CPPLcMZx7D">
     <property role="TrG5h" value="RightTransformWithAddConcept" />
-    <node concept="2Uva_2" id="6500338114639041002" role="LiRBU">
-      <node concept="2zNNt" id="6500338114639041003" role="2zMjf">
-        <node concept="LIFWc" id="6500338114639041322" role="lGtFl">
+    <node concept="2Uva_2" id="5CPPLcMZx7E" role="LiRBU">
+      <node concept="2zNNt" id="5CPPLcMZx7F" role="2zMjf">
+        <node concept="LIFWc" id="5CPPLcMZxcE" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="40" />
@@ -895,9 +895,9 @@
         </node>
       </node>
     </node>
-    <node concept="2Uva_2" id="6500338114639041005" role="LiZbd">
-      <node concept="2IhlV" id="6500338114639041326" role="2zMjf">
-        <node concept="LIFWc" id="6500338114639041328" role="lGtFl">
+    <node concept="2Uva_2" id="5CPPLcMZx7H" role="LiZbd">
+      <node concept="2IhlV" id="5CPPLcMZxcI" role="2zMjf">
+        <node concept="LIFWc" id="5CPPLcMZxcK" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="43" />
@@ -906,18 +906,18 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="6500338114639041008" role="LjaKd">
-      <node concept="2TK7Tu" id="6500338114639041009" role="3cqZAp">
+    <node concept="3clFbS" id="5CPPLcMZx7K" role="LjaKd">
+      <node concept="2TK7Tu" id="5CPPLcMZx7L" role="3cqZAp">
         <property role="2TTd_B" value=" addConceptChild" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="6500338114639041774">
+  <node concept="LiM7Y" id="5CPPLcMZxjI">
     <property role="TrG5h" value="LeftTransformWithAddConcept_checkCanBeAncestor" />
-    <node concept="3gEji6" id="6500338114639041775" role="LiRBU">
-      <node concept="2Uva_2" id="6500338114639041776" role="3gEjgD">
-        <node concept="2zNNt" id="6500338114639043104" role="2zMjf">
-          <node concept="LIFWc" id="6500338114639044483" role="lGtFl">
+    <node concept="3gEji6" id="5CPPLcMZxjJ" role="LiRBU">
+      <node concept="2Uva_2" id="5CPPLcMZxjK" role="3gEjgD">
+        <node concept="2zNNt" id="5CPPLcMZxCw" role="2zMjf">
+          <node concept="LIFWc" id="5CPPLcMZxY3" role="lGtFl">
             <property role="LIFWa" value="0" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="0" />
@@ -927,76 +927,76 @@
         </node>
       </node>
     </node>
-    <node concept="3gEji6" id="6500338114639041779" role="LiZbd">
-      <node concept="2Uva_2" id="6500338114639041780" role="3gEjgD">
-        <node concept="2zNNt" id="6500338114639044137" role="2zMjf" />
+    <node concept="3gEji6" id="5CPPLcMZxjN" role="LiZbd">
+      <node concept="2Uva_2" id="5CPPLcMZxjO" role="3gEjgD">
+        <node concept="2zNNt" id="5CPPLcMZxSD" role="2zMjf" />
       </node>
     </node>
-    <node concept="3clFbS" id="6500338114639041782" role="LjaKd">
-      <node concept="2TK7Tu" id="6500338114639041783" role="3cqZAp">
+    <node concept="3clFbS" id="5CPPLcMZxjQ" role="LjaKd">
+      <node concept="2TK7Tu" id="5CPPLcMZxjR" role="3cqZAp">
         <property role="2TTd_B" value=" " />
       </node>
-      <node concept="yd1bK" id="6500338114639041784" role="3cqZAp">
-        <node concept="pLAjd" id="6500338114639041785" role="yd6KS">
+      <node concept="yd1bK" id="5CPPLcMZxjS" role="3cqZAp">
+        <node concept="pLAjd" id="5CPPLcMZxjT" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="6500338114639041786" role="3cqZAp">
-        <node concept="2OqwBi" id="6500338114639041787" role="3vwVQn">
-          <node concept="liA8E" id="6500338114639041788" role="2OqNvi">
+      <node concept="3vwNmj" id="5CPPLcMZxjU" role="3cqZAp">
+        <node concept="2OqwBi" id="5CPPLcMZxjV" role="3vwVQn">
+          <node concept="liA8E" id="5CPPLcMZxjW" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="6500338114639041789" role="2Oq!k0">
-            <node concept="liA8E" id="6500338114639041790" role="2OqNvi">
+          <node concept="2OqwBi" id="5CPPLcMZxjX" role="2Oq$k0">
+            <node concept="liA8E" id="5CPPLcMZxjY" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="6500338114639041791" role="2Oq!k0" />
+            <node concept="369mXd" id="5CPPLcMZxjZ" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="6500338114639041792" role="3cqZAp">
-        <node concept="2OqwBi" id="6500338114639041793" role="3vwVQn">
-          <node concept="liA8E" id="6500338114639041794" role="2OqNvi">
+      <node concept="3vwNmj" id="5CPPLcMZxk0" role="3cqZAp">
+        <node concept="2OqwBi" id="5CPPLcMZxk1" role="3vwVQn">
+          <node concept="liA8E" id="5CPPLcMZxk2" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="6500338114639041795" role="2Oq!k0">
-            <node concept="liA8E" id="6500338114639041796" role="2OqNvi">
+          <node concept="2OqwBi" id="5CPPLcMZxk3" role="2Oq$k0">
+            <node concept="liA8E" id="5CPPLcMZxk4" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="6500338114639041797" role="2Oq!k0" />
+            <node concept="369mXd" id="5CPPLcMZxk5" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="6500338114639041798" role="3cqZAp">
-        <node concept="2OqwBi" id="6500338114639041799" role="3clFbG">
-          <node concept="liA8E" id="6500338114639041800" role="2OqNvi">
+      <node concept="3clFbF" id="5CPPLcMZxk6" role="3cqZAp">
+        <node concept="2OqwBi" id="5CPPLcMZxk7" role="3clFbG">
+          <node concept="liA8E" id="5CPPLcMZxk8" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="6500338114639041801" role="37wK5m">
+            <node concept="3clFbT" id="5CPPLcMZxk9" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="6500338114639041802" role="2Oq!k0">
-            <node concept="liA8E" id="6500338114639041803" role="2OqNvi">
+          <node concept="2OqwBi" id="5CPPLcMZxka" role="2Oq$k0">
+            <node concept="liA8E" id="5CPPLcMZxkb" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="6500338114639041804" role="2Oq!k0" />
+            <node concept="369mXd" id="5CPPLcMZxkc" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="6500338114639041805" role="3cqZAp">
-        <node concept="pLAjd" id="6500338114639041806" role="yd6KS">
+      <node concept="yd1bK" id="5CPPLcMZxkd" role="3cqZAp">
+        <node concept="pLAjd" id="5CPPLcMZxke" role="yd6KS">
           <property role="pLAjf" value="VK_ESCAPE" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="3959984916895237523">
+  <node concept="LiM7Y" id="3rOGkOfswmj">
     <property role="TrG5h" value="RightTransformWithAddConcept_checkCanBeAncestor" />
-    <node concept="3gEji6" id="3959984916895237524" role="LiRBU">
-      <node concept="2Uva_2" id="3959984916895237525" role="3gEjgD">
-        <node concept="2zNNt" id="3959984916895237526" role="2zMjf">
-          <node concept="LIFWc" id="3959984916895239322" role="lGtFl">
+    <node concept="3gEji6" id="3rOGkOfswmk" role="LiRBU">
+      <node concept="2Uva_2" id="3rOGkOfswml" role="3gEjgD">
+        <node concept="2zNNt" id="3rOGkOfswmm" role="2zMjf">
+          <node concept="LIFWc" id="3rOGkOfswMq" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="40" />
@@ -1006,65 +1006,65 @@
         </node>
       </node>
     </node>
-    <node concept="3gEji6" id="3959984916895237528" role="LiZbd">
-      <node concept="2Uva_2" id="3959984916895237529" role="3gEjgD">
-        <node concept="2zNNt" id="3959984916895237530" role="2zMjf" />
+    <node concept="3gEji6" id="3rOGkOfswmo" role="LiZbd">
+      <node concept="2Uva_2" id="3rOGkOfswmp" role="3gEjgD">
+        <node concept="2zNNt" id="3rOGkOfswmq" role="2zMjf" />
       </node>
     </node>
-    <node concept="3clFbS" id="3959984916895237531" role="LjaKd">
-      <node concept="2TK7Tu" id="3959984916895237532" role="3cqZAp">
+    <node concept="3clFbS" id="3rOGkOfswmr" role="LjaKd">
+      <node concept="2TK7Tu" id="3rOGkOfswms" role="3cqZAp">
         <property role="2TTd_B" value=" " />
       </node>
-      <node concept="yd1bK" id="3959984916895237533" role="3cqZAp">
-        <node concept="pLAjd" id="3959984916895237534" role="yd6KS">
+      <node concept="yd1bK" id="3rOGkOfswmt" role="3cqZAp">
+        <node concept="pLAjd" id="3rOGkOfswmu" role="yd6KS">
           <property role="pLAjf" value="VK_SPACE" />
           <property role="pLAjc" value="ctrl" />
         </node>
       </node>
-      <node concept="3vwNmj" id="3959984916895237535" role="3cqZAp">
-        <node concept="2OqwBi" id="3959984916895237536" role="3vwVQn">
-          <node concept="liA8E" id="3959984916895237537" role="2OqNvi">
+      <node concept="3vwNmj" id="3rOGkOfswmv" role="3cqZAp">
+        <node concept="2OqwBi" id="3rOGkOfswmw" role="3vwVQn">
+          <node concept="liA8E" id="3rOGkOfswmx" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolve="isVisible" />
           </node>
-          <node concept="2OqwBi" id="3959984916895237538" role="2Oq!k0">
-            <node concept="liA8E" id="3959984916895237539" role="2OqNvi">
+          <node concept="2OqwBi" id="3rOGkOfswmy" role="2Oq$k0">
+            <node concept="liA8E" id="3rOGkOfswmz" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3959984916895237540" role="2Oq!k0" />
+            <node concept="369mXd" id="3rOGkOfswm$" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="3959984916895237541" role="3cqZAp">
-        <node concept="2OqwBi" id="3959984916895237542" role="3vwVQn">
-          <node concept="liA8E" id="3959984916895237543" role="2OqNvi">
+      <node concept="3vwNmj" id="3rOGkOfswm_" role="3cqZAp">
+        <node concept="2OqwBi" id="3rOGkOfswmA" role="3vwVQn">
+          <node concept="liA8E" id="3rOGkOfswmB" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%disMenuEmpty()%cboolean" resolve="isMenuEmpty" />
           </node>
-          <node concept="2OqwBi" id="3959984916895237544" role="2Oq!k0">
-            <node concept="liA8E" id="3959984916895237545" role="2OqNvi">
+          <node concept="2OqwBi" id="3rOGkOfswmC" role="2Oq$k0">
+            <node concept="liA8E" id="3rOGkOfswmD" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3959984916895237546" role="2Oq!k0" />
+            <node concept="369mXd" id="3rOGkOfswmE" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="3clFbF" id="3959984916895237547" role="3cqZAp">
-        <node concept="2OqwBi" id="3959984916895237548" role="3clFbG">
-          <node concept="liA8E" id="3959984916895237549" role="2OqNvi">
+      <node concept="3clFbF" id="3rOGkOfswmF" role="3cqZAp">
+        <node concept="2OqwBi" id="3rOGkOfswmG" role="3clFbG">
+          <node concept="liA8E" id="3rOGkOfswmH" role="2OqNvi">
             <reference role="37wK5l" target="4ky7.~NodeSubstituteChooser%dsetVisible(boolean)%cvoid" resolve="setVisible" />
-            <node concept="3clFbT" id="3959984916895237550" role="37wK5m">
+            <node concept="3clFbT" id="3rOGkOfswmI" role="37wK5m">
               <property role="3clFbU" value="false" />
             </node>
           </node>
-          <node concept="2OqwBi" id="3959984916895237551" role="2Oq!k0">
-            <node concept="liA8E" id="3959984916895237552" role="2OqNvi">
+          <node concept="2OqwBi" id="3rOGkOfswmJ" role="2Oq$k0">
+            <node concept="liA8E" id="3rOGkOfswmK" role="2OqNvi">
               <reference role="37wK5l" target="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
             </node>
-            <node concept="369mXd" id="3959984916895237553" role="2Oq!k0" />
+            <node concept="369mXd" id="3rOGkOfswmL" role="2Oq$k0" />
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="3959984916895237554" role="3cqZAp">
-        <node concept="pLAjd" id="3959984916895237555" role="yd6KS">
+      <node concept="yd1bK" id="3rOGkOfswmM" role="3cqZAp">
+        <node concept="pLAjd" id="3rOGkOfswmN" role="yd6KS">
           <property role="pLAjf" value="VK_ESCAPE" />
         </node>
       </node>

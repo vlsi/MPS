@@ -20,8 +20,8 @@
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -54,199 +54,199 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="3157158168562217892">
-    <property role="R5!K7" value="false" />
+  <node concept="1TIwiD" id="2JguE20RVe$">
+    <property role="R5$K7" value="false" />
     <property role="19KtqR" value="true" />
-    <property role="R5!K2" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="BreakpointCreator" />
     <property role="3GE5qa" value="breakpoints" />
     <property role="34LRSv" value="breakpoint creators" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="1270798772176052787" role="1TKVEi">
+    <node concept="1TJgyj" id="16yMc0kzA8N" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="breakpointableConcepts" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="3157158168562219319" resolve="BreakpointableNodeItem" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3157158168562219319">
+  <node concept="1TIwiD" id="2JguE20RV$R">
     <property role="TrG5h" value="BreakpointableNodeItem" />
     <property role="3GE5qa" value="breakpoints" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="3157158168562219320" role="1TKVEi">
+    <node concept="1TJgyj" id="2JguE20RV$S" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="createBreakpoint" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="3157158168562219322" resolve="ConceptFunction_CreateBreakpoint" />
     </node>
-    <node concept="1TJgyj" id="8751745335399632085" role="1TKVEi">
+    <node concept="1TJgyj" id="7_Oswe9bkNl" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="isApplicable" />
       <reference role="20lvS9" target="8751745335399632073" resolve="ConceptFunction_IsApplicableToConcept" />
-      <node concept="asaX9" id="3104811047188238397" role="lGtFl" />
+      <node concept="asaX9" id="2Gmwjaanh0X" role="lGtFl" />
     </node>
-    <node concept="1TJgyj" id="3104811047188238838" role="1TKVEi">
+    <node concept="1TJgyj" id="2Gmwjaanh7Q" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="isApplicableBreakpoint" />
       <reference role="20lvS9" target="3104811047188253540" resolve="ConceptFunction_IsApplicableBreakpoint" />
     </node>
-    <node concept="1TJgyj" id="5789575999242884576" role="1TKVEi">
+    <node concept="1TJgyj" id="51oHb9yZXnw" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conceptsToCreateBreakpoint" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="5789575999242884574" resolve="ConceptDeclarationReference" />
     </node>
-    <node concept="1TJgyj" id="3157158168562219321" role="1TKVEi">
+    <node concept="1TJgyj" id="2JguE20RV$T" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="0..1" />
       <reference role="20lvS9" target="tpce.1071489090640" resolve="ConceptDeclaration" />
     </node>
-    <node concept="1TJgyi" id="8751745335399632086" role="1TKVEl">
+    <node concept="1TJgyi" id="7_Oswe9bkNm" role="1TKVEl">
       <property role="TrG5h" value="isComplex" />
       <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3157158168562219322">
+  <node concept="1TIwiD" id="2JguE20RV$U">
     <property role="TrG5h" value="ConceptFunction_CreateBreakpoint" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="1270798772176052876">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="16yMc0kzAac">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ConceptFunctionParameter_Debug_Project" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="project" />
     <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
   </node>
-  <node concept="1TIwiD" id="1270798772176052880">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="16yMc0kzAag">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ConceptFunctionParameter_DebuggableNode" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="debuggableNode" />
     <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
   </node>
-  <node concept="1TIwiD" id="5789575999242884574">
+  <node concept="1TIwiD" id="51oHb9yZXnu">
     <property role="TrG5h" value="ConceptDeclarationReference" />
     <property role="3GE5qa" value="breakpoints" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5789575999242884575" role="1TKVEi">
+    <node concept="1TJgyj" id="51oHb9yZXnv" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="conceptDeclaration" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpce.1071489090640" resolve="ConceptDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1104094430779063683">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="Xiy0zT4FQ3">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="DebuggerType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="settings" />
     <property role="34LRSv" value="debugger type" />
     <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
-    <node concept="1TJgyi" id="2569394751388009837" role="1TKVEl">
+    <node concept="1TJgyi" id="2eCkIB4f4lH" role="1TKVEl">
       <property role="TrG5h" value="name" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1104094430779068753">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="Xiy0zT4H5h">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="DebuggerReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="settings" />
     <property role="34LRSv" value="debugger" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyi" id="1104094430779068757" role="1TKVEl">
+    <node concept="1TJgyi" id="Xiy0zT4H5l" role="1TKVEl">
       <property role="TrG5h" value="debuggerName" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="2569394751387978473">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2eCkIB4eWFD">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="CreateBreakpointOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints" />
     <property role="34LRSv" value="create breakpoint" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="2569394751387978474" role="PzmwI">
+    <node concept="PrWs8" id="2eCkIB4eWFE" role="PzmwI">
       <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
     </node>
-    <node concept="1TJgyi" id="2569394751387978475" role="1TKVEl">
+    <node concept="1TJgyi" id="2eCkIB4eWFF" role="1TKVEl">
       <property role="TrG5h" value="kindName" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
-    <node concept="1TJgyi" id="2569394751387978476" role="1TKVEl">
+    <node concept="1TJgyi" id="2eCkIB4eWFG" role="1TKVEl">
       <property role="TrG5h" value="kindPresentation" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
-    <node concept="1TJgyj" id="2569394751387978492" role="1TKVEi">
+    <node concept="1TJgyj" id="2eCkIB4eWFW" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="nodeExpression" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="2569394751387978493" role="1TKVEi">
+    <node concept="1TJgyj" id="2eCkIB4eWFX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="projectExpression" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="6720907903633266914">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="5P5ty4$bhzy">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="GetDebuggerSettings_Function" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="settings" />
     <property role="34LRSv" value="get debugger settings" />
     <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="6720907903633266421">
+  <node concept="1TIwiD" id="5P5ty4$bhrP">
     <property role="TrG5h" value="DebuggerConfiguration" />
     <property role="3GE5qa" value="settings" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="6720907903633266912" role="1TKVEi">
+    <node concept="1TJgyj" id="5P5ty4$bhzw" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="debugger" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="6720907903633266913" role="1TKVEi">
+    <node concept="1TJgyj" id="5P5ty4$bhzx" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="getSettings" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="6720907903633266914" resolve="GetDebuggerSettings_Function" />
     </node>
   </node>
-  <node concept="1TIwiD" id="8751745335399632073">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="7_Oswe9bkN9">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ConceptFunction_IsApplicableToConcept" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="isApplicable" />
     <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="8751745335399632077">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="7_Oswe9bkNd">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ConceptFunctionParameter_Concept" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />
     <property role="34LRSv" value="concept" />
     <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
   </node>
-  <node concept="1TIwiD" id="3104811047188253540">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2GmwjaankH$">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ConceptFunction_IsApplicableBreakpoint" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="breakpoints.conceptFunctions" />

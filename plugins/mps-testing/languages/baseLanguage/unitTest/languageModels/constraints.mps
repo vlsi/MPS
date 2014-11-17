@@ -34,7 +34,7 @@
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
     </language>
@@ -56,20 +56,20 @@
       </concept>
     </language>
   </registry>
-  <node concept="1M2fIO" id="1213104846868">
+  <node concept="1M2fIO" id="hDMFJwk">
     <reference role="1M2myG" target="tpe3.1171931851043" resolve="BTestCase" />
-    <node concept="EnEH3" id="1213104846869" role="1MhHOB">
+    <node concept="EnEH3" id="hDMFJwl" role="1MhHOB">
       <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
-      <node concept="Eqf_E" id="1213104846870" role="EtsB7">
-        <node concept="3clFbS" id="1213104846871" role="2VODD2">
-          <node concept="3clFbF" id="1213104846872" role="3cqZAp">
-            <node concept="3cpWs3" id="1213104846873" role="3clFbG">
-              <node concept="Xl_RD" id="1213104846874" role="3uHU7w">
+      <node concept="Eqf_E" id="hDMFJwm" role="EtsB7">
+        <node concept="3clFbS" id="hDMFJwn" role="2VODD2">
+          <node concept="3clFbF" id="hDMFJwo" role="3cqZAp">
+            <node concept="3cpWs3" id="hDMFJwp" role="3clFbG">
+              <node concept="Xl_RD" id="hDMFJwq" role="3uHU7w">
                 <property role="Xl_RC" value="_Test" />
               </node>
-              <node concept="2OqwBi" id="1213104846875" role="3uHU7B">
-                <node concept="EsrRn" id="1213104846876" role="2Oq!k0" />
-                <node concept="3TrcHB" id="1213104846877" role="2OqNvi">
+              <node concept="2OqwBi" id="hDMFJwr" role="3uHU7B">
+                <node concept="EsrRn" id="hDMFJws" role="2Oq$k0" />
+                <node concept="3TrcHB" id="hDMFJwt" role="2OqNvi">
                   <reference role="3TsBF5" target="tpe3.1171931851045" resolve="testCaseName" />
                 </node>
               </node>
@@ -79,21 +79,21 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="1213104847596">
+  <node concept="1M2fIO" id="hDMFJFG">
     <reference role="1M2myG" target="tpe3.1171931690126" resolve="TestMethod" />
-    <node concept="EnEH3" id="1213104847597" role="1MhHOB">
+    <node concept="EnEH3" id="hDMFJFH" role="1MhHOB">
       <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
-      <node concept="Eqf_E" id="1213104847598" role="EtsB7">
-        <node concept="3clFbS" id="1213104847599" role="2VODD2">
-          <node concept="3clFbF" id="1213104847600" role="3cqZAp">
-            <node concept="3cpWs3" id="1213104847601" role="3clFbG">
-              <node concept="2OqwBi" id="1213104847602" role="3uHU7w">
-                <node concept="EsrRn" id="1213104847603" role="2Oq!k0" />
-                <node concept="3TrcHB" id="1213104847604" role="2OqNvi">
+      <node concept="Eqf_E" id="hDMFJFI" role="EtsB7">
+        <node concept="3clFbS" id="hDMFJFJ" role="2VODD2">
+          <node concept="3clFbF" id="hDMFJFK" role="3cqZAp">
+            <node concept="3cpWs3" id="hDMFJFL" role="3clFbG">
+              <node concept="2OqwBi" id="hDMFJFM" role="3uHU7w">
+                <node concept="EsrRn" id="hDMFJFN" role="2Oq$k0" />
+                <node concept="3TrcHB" id="hDMFJFO" role="2OqNvi">
                   <reference role="3TsBF5" target="tpe3.1171931690128" resolve="methodName" />
                 </node>
               </node>
-              <node concept="Xl_RD" id="1213104847605" role="3uHU7B">
+              <node concept="Xl_RD" id="hDMFJFP" role="3uHU7B">
                 <property role="Xl_RC" value="test_" />
               </node>
             </node>

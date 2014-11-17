@@ -28,7 +28,7 @@
       </concept>
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
@@ -90,36 +90,36 @@
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
-        <child id="1237721435808" name="initValue" index="HW!Y0" />
-        <child id="1237721435807" name="elementType" index="HW!YZ" />
+        <child id="1237721435808" name="initValue" index="HW$Y0" />
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
     </language>
   </registry>
-  <node concept="3FK_9_" id="7806358006983765718">
+  <node concept="3FK_9_" id="6LlKjXrMMVm">
     <property role="3GE5qa" value="execution" />
     <property role="TrG5h" value="ConfigurationFromExecutorReference" />
-    <node concept="3FOIzC" id="7806358006983765719" role="3FOPby">
+    <node concept="3FOIzC" id="6LlKjXrMMVn" role="3FOPby">
       <reference role="3FOWKa" target="uhxm.7806358006983738927" resolve="ConfigurationFromExecutorReference" />
-      <node concept="tYCnQ" id="7806358006983765720" role="tZc4B">
+      <node concept="tYCnQ" id="6LlKjXrMMVo" role="tZc4B">
         <reference role="uz4UX" target="uhxm.7806358006983738927" resolve="ConfigurationFromExecutorReference" />
-        <node concept="uMFAO" id="7806358006983766882" role="uz6Si">
-          <node concept="17QB3L" id="7806358006983766888" role="uMOYW" />
-          <node concept="uNCsQ" id="7806358006983766884" role="uO7ob">
-            <node concept="3clFbS" id="7806358006983766885" role="2VODD2">
-              <node concept="3clFbF" id="7806358006983766889" role="3cqZAp">
-                <node concept="2ShNRf" id="7806358006983766890" role="3clFbG">
-                  <node concept="Tc6Ow" id="7806358006983766892" role="2ShVmc">
-                    <node concept="17QB3L" id="7806358006983766894" role="HW!YZ" />
-                    <node concept="2OqwBi" id="7806358006983766896" role="HW!Y0">
-                      <node concept="1PxgMI" id="7806358006983766897" role="2Oq!k0">
+        <node concept="uMFAO" id="6LlKjXrMNdy" role="uz6Si">
+          <node concept="17QB3L" id="6LlKjXrMNdC" role="uMOYW" />
+          <node concept="uNCsQ" id="6LlKjXrMNd$" role="uO7ob">
+            <node concept="3clFbS" id="6LlKjXrMNd_" role="2VODD2">
+              <node concept="3clFbF" id="6LlKjXrMNdD" role="3cqZAp">
+                <node concept="2ShNRf" id="6LlKjXrMNdE" role="3clFbG">
+                  <node concept="Tc6Ow" id="6LlKjXrMNdG" role="2ShVmc">
+                    <node concept="17QB3L" id="6LlKjXrMNdI" role="HW$YZ" />
+                    <node concept="2OqwBi" id="6LlKjXrMNdK" role="HW$Y0">
+                      <node concept="1PxgMI" id="6LlKjXrMNdL" role="2Oq$k0">
                         <reference role="1PxNhF" target="uhxm.2401501559171392633" resolve="AbstractRunConfigurationExecutor" />
-                        <node concept="2OqwBi" id="7806358006983766898" role="1PxMeX">
-                          <node concept="3bvxqY" id="7806358006983766899" role="2Oq!k0" />
-                          <node concept="2Rxl7S" id="7806358006983766900" role="2OqNvi" />
+                        <node concept="2OqwBi" id="6LlKjXrMNdM" role="1PxMeX">
+                          <node concept="3bvxqY" id="6LlKjXrMNdN" role="2Oq$k0" />
+                          <node concept="2Rxl7S" id="6LlKjXrMNdO" role="2OqNvi" />
                         </node>
                       </node>
-                      <node concept="3TrcHB" id="1931462339887551742" role="2OqNvi">
+                      <node concept="3TrcHB" id="1FdVGfa2HjY" role="2OqNvi">
                         <reference role="3TsBF5" target="uhxm.1931462339887551644" resolve="configurationName" />
                       </node>
                     </node>
@@ -128,12 +128,12 @@
               </node>
             </node>
           </node>
-          <node concept="uSIkt" id="7806358006983766886" role="uTubQ">
-            <node concept="3clFbS" id="7806358006983766887" role="2VODD2">
-              <node concept="3clFbF" id="7806358006983766902" role="3cqZAp">
-                <node concept="2ShNRf" id="7806358006983766903" role="3clFbG">
-                  <node concept="2fJWfE" id="7806358006983766904" role="2ShVmc">
-                    <node concept="3Tqbb2" id="7806358006983766905" role="3zrR0E">
+          <node concept="uSIkt" id="6LlKjXrMNdA" role="uTubQ">
+            <node concept="3clFbS" id="6LlKjXrMNdB" role="2VODD2">
+              <node concept="3clFbF" id="6LlKjXrMNdQ" role="3cqZAp">
+                <node concept="2ShNRf" id="6LlKjXrMNdR" role="3clFbG">
+                  <node concept="2fJWfE" id="6LlKjXrMNdS" role="2ShVmc">
+                    <node concept="3Tqbb2" id="6LlKjXrMNdT" role="3zrR0E">
                       <reference role="ehGHo" target="uhxm.7806358006983738927" resolve="ConfigurationFromExecutorReference" />
                     </node>
                   </node>
@@ -143,16 +143,16 @@
           </node>
         </node>
       </node>
-      <node concept="3buRE8" id="2186841766260429985" role="3bvWUf">
-        <node concept="3clFbS" id="2186841766260429986" role="2VODD2">
-          <node concept="3clFbF" id="2186841766260430072" role="3cqZAp">
-            <node concept="2OqwBi" id="2186841766260430079" role="3clFbG">
-              <node concept="2OqwBi" id="2186841766260430074" role="2Oq!k0">
-                <node concept="3bvxqY" id="2186841766260430073" role="2Oq!k0" />
-                <node concept="2Rxl7S" id="2186841766260430078" role="2OqNvi" />
+      <node concept="3buRE8" id="1Tpeg01Wdix" role="3bvWUf">
+        <node concept="3clFbS" id="1Tpeg01Wdiy" role="2VODD2">
+          <node concept="3clFbF" id="1Tpeg01WdjS" role="3cqZAp">
+            <node concept="2OqwBi" id="1Tpeg01WdjZ" role="3clFbG">
+              <node concept="2OqwBi" id="1Tpeg01WdjU" role="2Oq$k0">
+                <node concept="3bvxqY" id="1Tpeg01WdjT" role="2Oq$k0" />
+                <node concept="2Rxl7S" id="1Tpeg01WdjY" role="2OqNvi" />
               </node>
-              <node concept="1mIQ4w" id="2186841766260430083" role="2OqNvi">
-                <node concept="chp4Y" id="8852113381329489243" role="cj9EA">
+              <node concept="1mIQ4w" id="1Tpeg01Wdk3" role="2OqNvi">
+                <node concept="chp4Y" id="7Fp1zx5C4Pr" role="cj9EA">
                   <reference role="cht4Q" target="uhxm.2401501559171392633" resolve="AbstractRunConfigurationExecutor" />
                 </node>
               </node>

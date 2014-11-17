@@ -13,7 +13,7 @@
   </imports>
   <registry>
     <language id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML">
-      <concept id="1225239603385" name="jetbrains.mps.sampleXML.structure.Element" flags="ng" index="15YaA!">
+      <concept id="1225239603385" name="jetbrains.mps.sampleXML.structure.Element" flags="ng" index="15YaA$">
         <child id="1225239603387" name="content" index="15YaAA" />
         <child id="1225239603386" name="attribute" index="15YaAB" />
       </concept>
@@ -41,49 +41,49 @@
       </concept>
     </language>
   </registry>
-  <node concept="15YaAF" id="1228679850889">
+  <node concept="15YaAF" id="hSj1EI9">
     <property role="TrG5h" value="Button" />
-    <node concept="15YaA!" id="1228679850890" role="15YaA_">
+    <node concept="15YaA$" id="hSj1EIa" role="15YaA_">
       <property role="TrG5h" value="button" />
-      <node concept="15YaAW" id="1228679850891" role="15YaAB">
+      <node concept="15YaAW" id="hSj1EIb" role="15YaAB">
         <property role="TrG5h" value="text" />
         <property role="15YaAY" value="Hello" />
       </node>
-      <node concept="15YaAW" id="1228679850892" role="15YaAB">
+      <node concept="15YaAW" id="hSj1EIc" role="15YaAB">
         <property role="TrG5h" value="enabled" />
         <property role="15YaAY" value="false" />
       </node>
     </node>
   </node>
-  <node concept="15YaAF" id="1228679850893">
+  <node concept="15YaAF" id="hSj1EId">
     <property role="TrG5h" value="Label" />
-    <node concept="15YaA!" id="1228679850894" role="15YaA_">
+    <node concept="15YaA$" id="hSj1EIe" role="15YaA_">
       <property role="TrG5h" value="label" />
-      <node concept="15YaAW" id="1228679850895" role="15YaAB">
+      <node concept="15YaAW" id="hSj1EIf" role="15YaAB">
         <property role="TrG5h" value="text" />
         <property role="15YaAY" value="world!" />
       </node>
-      <node concept="15YaAW" id="1228679850896" role="15YaAB">
+      <node concept="15YaAW" id="hSj1EIg" role="15YaAB">
         <property role="TrG5h" value="background" />
         <property role="15YaAY" value="orange" />
       </node>
     </node>
   </node>
-  <node concept="15YaAF" id="1228679864085">
+  <node concept="15YaAF" id="hSj1HWl">
     <property role="TrG5h" value="Panel" />
-    <node concept="15YaA!" id="1228679864086" role="15YaA_">
+    <node concept="15YaA$" id="hSj1HWm" role="15YaA_">
       <property role="TrG5h" value="panel" />
-      <node concept="2pI1KS" id="3978102045101880060" role="15YaAA">
+      <node concept="2pI1KS" id="3sP3FIIznbW" role="15YaAA">
         <property role="2pI1L8" value="Hello" />
       </node>
-      <node concept="2pI1rn" id="3978102045101880030" role="15YaAA">
+      <node concept="2pI1rn" id="3sP3FIIznbu" role="15YaAA">
         <property role="2pI1rd" value="MPS!" />
       </node>
-      <node concept="15YaAW" id="1228679883415" role="15YaAB">
+      <node concept="15YaAW" id="hSj1MEn" role="15YaAB">
         <property role="TrG5h" value="background" />
         <property role="15YaAY" value="white" />
       </node>
-      <node concept="15YaBs" id="3978102045101460160" role="15YaAA">
+      <node concept="15YaBs" id="3sP3FIIxKF0" role="15YaAA">
         <property role="15YaBv" value="Hello everybody!" />
         <property role="TrG5h" value="" />
       </node>

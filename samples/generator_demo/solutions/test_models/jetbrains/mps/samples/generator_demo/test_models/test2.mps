@@ -11,7 +11,7 @@
   </imports>
   <registry>
     <language id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML">
-      <concept id="1225239603385" name="jetbrains.mps.sampleXML.structure.Element" flags="ng" index="15YaA!" />
+      <concept id="1225239603385" name="jetbrains.mps.sampleXML.structure.Element" flags="ng" index="15YaA$" />
       <concept id="1225239603382" name="jetbrains.mps.sampleXML.structure.Document" flags="ng" index="15YaAF">
         <child id="1225239603384" name="rootElement" index="15YaA_" />
       </concept>
@@ -22,15 +22,15 @@
       </concept>
     </language>
   </registry>
-  <node concept="15YaAF" id="1228518293172">
+  <node concept="15YaAF" id="hS9pnUO">
     <property role="TrG5h" value="Button" />
-    <node concept="15YaA!" id="1228518293173" role="15YaA_">
+    <node concept="15YaA$" id="hS9pnUP" role="15YaA_">
       <property role="TrG5h" value="button" />
     </node>
   </node>
-  <node concept="15YaAF" id="1228518293174">
+  <node concept="15YaAF" id="hS9pnUQ">
     <property role="TrG5h" value="Label" />
-    <node concept="15YaA!" id="1228518293175" role="15YaA_">
+    <node concept="15YaA$" id="hS9pnUR" role="15YaA_">
       <property role="TrG5h" value="label" />
     </node>
   </node>

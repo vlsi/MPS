@@ -49,31 +49,31 @@
         <child id="930174696942541360" name="variable" index="1EIrV5" />
         <child id="930174696942541362" name="expression" index="1EIrV7" />
       </concept>
-      <concept id="2073504467210944676" name="jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant" flags="ng" index="2!zt7R">
-        <property id="2073504467210944677" name="value" index="2!zt7Q" />
+      <concept id="2073504467210944676" name="jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant" flags="ng" index="2$zt7R">
+        <property id="2073504467210944677" name="value" index="2$zt7Q" />
       </concept>
-      <concept id="2073504467207869132" name="jetbrains.mps.samples.Expressions.structure.BinarySimpleMathExpression" flags="ng" index="2!QGev">
-        <child id="2073504467207935094" name="left" index="2!QWk_" />
-        <child id="2073504467207935096" name="right" index="2!QWkF" />
+      <concept id="2073504467207869132" name="jetbrains.mps.samples.Expressions.structure.BinarySimpleMathExpression" flags="ng" index="2$QGev">
+        <child id="2073504467207935094" name="left" index="2$QWk_" />
+        <child id="2073504467207935096" name="right" index="2$QWkF" />
       </concept>
-      <concept id="2073504467208541194" name="jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant" flags="ng" index="2!S0lp">
-        <property id="2073504467208541195" name="value" index="2!S0lo" />
+      <concept id="2073504467208541194" name="jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant" flags="ng" index="2$S0lp">
+        <property id="2073504467208541195" name="value" index="2$S0lo" />
       </concept>
-      <concept id="2073504467208542432" name="jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType" flags="ng" index="2!S0AN" />
-      <concept id="2073504467208335362" name="jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper" flags="ng" index="2!Tu5h">
-        <child id="2073504467208335735" name="expressions" index="2!Tu0!" />
+      <concept id="2073504467208542432" name="jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType" flags="ng" index="2$S0AN" />
+      <concept id="2073504467208335362" name="jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper" flags="ng" index="2$Tu5h">
+        <child id="2073504467208335735" name="expressions" index="2$Tu0$" />
       </concept>
-      <concept id="2073504467208672407" name="jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression" flags="nn" index="2!Vwn4">
-        <property id="2073504467208672490" name="operator" index="2!VwmT" />
+      <concept id="2073504467208672407" name="jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression" flags="nn" index="2$Vwn4">
+        <property id="2073504467208672490" name="operator" index="2$VwmT" />
       </concept>
-      <concept id="2073504467209342143" name="jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration" flags="ng" index="2!X5RG">
-        <child id="2073504467209342228" name="initializer" index="2!X5L7" />
+      <concept id="2073504467209342143" name="jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration" flags="ng" index="2$X5RG">
+        <child id="2073504467209342228" name="initializer" index="2$X5L7" />
       </concept>
-      <concept id="2073504467209348321" name="jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference" flags="ng" index="2!X7mM">
-        <reference id="2073504467209348322" name="declaration" index="2!X7mL" />
+      <concept id="2073504467209348321" name="jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference" flags="ng" index="2$X7mM">
+        <reference id="2073504467209348322" name="declaration" index="2$X7mL" />
       </concept>
-      <concept id="2073504467209943018" name="jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant" flags="ng" index="2!ZmqT">
-        <property id="2073504467209943070" name="value" index="2!Zm_d" />
+      <concept id="2073504467209943018" name="jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant" flags="ng" index="2$ZmqT">
+        <property id="2073504467209943070" name="value" index="2$Zm_d" />
       </concept>
       <concept id="8620208551721374838" name="jetbrains.mps.samples.Expressions.structure.SimpleMathTypedVarDeclaration" flags="ng" index="3KwzpR">
         <child id="8620208551721379933" name="type" index="3KwwDs" />
@@ -81,8 +81,8 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
-      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P!AiS">
-        <child id="8465538089690331502" name="body" index="TZ5H!" />
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
@@ -92,167 +92,167 @@
       </concept>
     </language>
   </registry>
-  <node concept="312cEu" id="2073504467208336329">
+  <node concept="312cEu" id="1N6$leS8Rf9">
     <property role="TrG5h" value="Main" />
-    <node concept="3KIgzJ" id="3453667744252543337" role="jymVt">
-      <node concept="3clFbS" id="3453667744252543339" role="3KIlGz">
-        <node concept="2!Tu5h" id="2073504467208336681" role="3cqZAp">
-          <node concept="2!X5RG" id="2073504467209441359" role="2!Tu0!">
+    <node concept="3KIgzJ" id="2ZHT8fsps5D" role="jymVt">
+      <node concept="3clFbS" id="2ZHT8fsps5F" role="3KIlGz">
+        <node concept="2$Tu5h" id="1N6$leS8RkD" role="3cqZAp">
+          <node concept="2$X5RG" id="1N6$leSd51f" role="2$Tu0$">
             <property role="TrG5h" value="A" />
-            <node concept="2!Vwn4" id="2073504467209502377" role="2!X5L7">
-              <property role="2!VwmT" value="+" />
-              <node concept="2!S0lp" id="2073504467209502445" role="2!QWk_">
-                <property role="2!S0lo" value="10" />
+            <node concept="2$Vwn4" id="1N6$leSdjUD" role="2$X5L7">
+              <property role="2$VwmT" value="+" />
+              <node concept="2$S0lp" id="1N6$leSdjVH" role="2$QWk_">
+                <property role="2$S0lo" value="10" />
               </node>
-              <node concept="2!S0lp" id="3453667744252541094" role="2!QWkF">
-                <property role="2!S0lo" value="11" />
+              <node concept="2$S0lp" id="2ZHT8fspryA" role="2$QWkF">
+                <property role="2$S0lo" value="11" />
               </node>
             </node>
           </node>
-          <node concept="2!X5RG" id="2073504467209502868" role="2!Tu0!">
+          <node concept="2$X5RG" id="1N6$leSdk2k" role="2$Tu0$">
             <property role="TrG5h" value="B" />
-            <node concept="2!Vwn4" id="2073504467210168970" role="2!X5L7">
-              <property role="2!VwmT" value="+" />
-              <node concept="2!ZmqT" id="2073504467210169564" role="2!QWkF">
-                <property role="2!Zm_d" value="200" />
+            <node concept="2$Vwn4" id="1N6$leSfQEa" role="2$X5L7">
+              <property role="2$VwmT" value="+" />
+              <node concept="2$ZmqT" id="1N6$leSfQNs" role="2$QWkF">
+                <property role="2$Zm_d" value="200" />
               </node>
-              <node concept="2!ZmqT" id="2073504467210169200" role="2!QWk_">
-                <property role="2!Zm_d" value="100" />
+              <node concept="2$ZmqT" id="1N6$leSfQHK" role="2$QWk_">
+                <property role="2$Zm_d" value="100" />
               </node>
             </node>
           </node>
-          <node concept="2!X5RG" id="2073504467210938823" role="2!Tu0!">
+          <node concept="2$X5RG" id="1N6$leSiMB7" role="2$Tu0$">
             <property role="TrG5h" value="C" />
-            <node concept="2!Vwn4" id="2073504467210938918" role="2!X5L7">
-              <property role="2!VwmT" value="-" />
-              <node concept="2!S0lp" id="2073504467210939176" role="2!QWkF">
-                <property role="2!S0lo" value="20" />
+            <node concept="2$Vwn4" id="1N6$leSiMCA" role="2$X5L7">
+              <property role="2$VwmT" value="-" />
+              <node concept="2$S0lp" id="1N6$leSiMGC" role="2$QWkF">
+                <property role="2$S0lo" value="20" />
               </node>
-              <node concept="2!ZmqT" id="2073504467210939014" role="2!QWk_">
-                <property role="2!Zm_d" value="300" />
+              <node concept="2$ZmqT" id="1N6$leSiME6" role="2$QWk_">
+                <property role="2$Zm_d" value="300" />
               </node>
             </node>
           </node>
-          <node concept="2!X5RG" id="2073504467211039079" role="2!Tu0!">
+          <node concept="2$X5RG" id="1N6$leSjb5B" role="2$Tu0$">
             <property role="TrG5h" value="D" />
-            <node concept="2!Vwn4" id="2073504467211039144" role="2!X5L7">
-              <property role="2!VwmT" value="*" />
-              <node concept="2!S0lp" id="2073504467211042657" role="2!QWk_">
-                <property role="2!S0lo" value="10" />
+            <node concept="2$Vwn4" id="1N6$leSjb6C" role="2$X5L7">
+              <property role="2$VwmT" value="*" />
+              <node concept="2$S0lp" id="1N6$leSjbXx" role="2$QWk_">
+                <property role="2$S0lo" value="10" />
               </node>
-              <node concept="2!zt7R" id="2073504467211039639" role="2!QWkF">
-                <property role="2!zt7Q" value="2.6" />
+              <node concept="2$zt7R" id="1N6$leSjben" role="2$QWkF">
+                <property role="2$zt7Q" value="2.6" />
               </node>
             </node>
           </node>
-          <node concept="2!X5RG" id="8620208551721818923" role="2!Tu0!">
+          <node concept="2$X5RG" id="7ux8w67atGF" role="2$Tu0$">
             <property role="TrG5h" value="E" />
-            <node concept="2!S0lp" id="8620208551721818964" role="2!X5L7">
-              <property role="2!S0lo" value="10" />
+            <node concept="2$S0lp" id="7ux8w67atHk" role="2$X5L7">
+              <property role="2$S0lo" value="10" />
             </node>
           </node>
-          <node concept="1EIqaT" id="8620208551721819391" role="2!Tu0!">
-            <node concept="2!X7mM" id="8620208551721819466" role="1EIrV7">
-              <reference role="2!X7mL" target="2073504467211039079" resolve="D" />
+          <node concept="1EIqaT" id="7ux8w67atNZ" role="2$Tu0$">
+            <node concept="2$X7mM" id="7ux8w67atPa" role="1EIrV7">
+              <reference role="2$X7mL" target="2073504467211039079" resolve="D" />
             </node>
-            <node concept="2!X7mM" id="8620208551721819432" role="1EIrV5">
-              <reference role="2!X7mL" target="8620208551721818923" resolve="E" />
+            <node concept="2$X7mM" id="7ux8w67atOC" role="1EIrV5">
+              <reference role="2$X7mL" target="8620208551721818923" resolve="E" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="3Tm1VV" id="2073504467208336330" role="1B3o_S" />
-    <node concept="3UR2Jj" id="8620208551721908613" role="lGtFl">
-      <node concept="TZ5HA" id="8620208551721908614" role="TZ5H!">
-        <node concept="1dT_AC" id="8620208551721908615" role="1dT_Ay">
+    <node concept="3Tm1VV" id="1N6$leS8Rfa" role="1B3o_S" />
+    <node concept="3UR2Jj" id="7ux8w67aNA5" role="lGtFl">
+      <node concept="TZ5HA" id="7ux8w67aNA6" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNA7" role="1dT_Ay">
           <property role="1dT_AB" value="Illustrates type inference using a dedicated simplified expression language." />
         </node>
       </node>
-      <node concept="TZ5HA" id="8620208551721909760" role="TZ5H!">
-        <node concept="1dT_AC" id="8620208551721909761" role="1dT_Ay">
+      <node concept="TZ5HA" id="7ux8w67aNS0" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNS1" role="1dT_Ay">
           <property role="1dT_AB" value="Check types of the variables by inspecting their type - Control/Cmd + Shift + T." />
         </node>
       </node>
-      <node concept="TZ5HA" id="8620208551721909741" role="TZ5H!">
-        <node concept="1dT_AC" id="8620208551721909742" role="1dT_Ay">
+      <node concept="TZ5HA" id="7ux8w67aNRH" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNRI" role="1dT_Ay">
           <property role="1dT_AB" value="You may also debug the typesystem engine using Type-system Trace - Control/Cmd + Shift + X." />
         </node>
       </node>
     </node>
   </node>
-  <node concept="312cEu" id="3453667744252544858">
+  <node concept="312cEu" id="2ZHT8fspstq">
     <property role="TrG5h" value="Simple" />
-    <node concept="3KIgzJ" id="3453667744252544873" role="jymVt">
-      <node concept="3clFbS" id="3453667744252544875" role="3KIlGz">
-        <node concept="2!Tu5h" id="3453667744252544930" role="3cqZAp">
-          <node concept="2!X5RG" id="3453667744252544931" role="2!Tu0!">
+    <node concept="3KIgzJ" id="2ZHT8fspstD" role="jymVt">
+      <node concept="3clFbS" id="2ZHT8fspstF" role="3KIlGz">
+        <node concept="2$Tu5h" id="2ZHT8fspsuy" role="3cqZAp">
+          <node concept="2$X5RG" id="2ZHT8fspsuz" role="2$Tu0$">
             <property role="TrG5h" value="aValue" />
-            <node concept="2!Vwn4" id="3453667744252544932" role="2!X5L7">
-              <property role="2!VwmT" value="+" />
-              <node concept="2!zt7R" id="3453667744252545487" role="2!QWkF">
-                <property role="2!zt7Q" value="1.3" />
+            <node concept="2$Vwn4" id="2ZHT8fspsu$" role="2$X5L7">
+              <property role="2$VwmT" value="+" />
+              <node concept="2$zt7R" id="2ZHT8fspsBf" role="2$QWkF">
+                <property role="2$zt7Q" value="1.3" />
               </node>
-              <node concept="2!S0lp" id="3453667744252544933" role="2!QWk_">
-                <property role="2!S0lo" value="10" />
+              <node concept="2$S0lp" id="2ZHT8fspsu_" role="2$QWk_">
+                <property role="2$S0lo" value="10" />
               </node>
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="3Tm1VV" id="3453667744252544859" role="1B3o_S" />
-    <node concept="3UR2Jj" id="8620208551721910208" role="lGtFl">
-      <node concept="TZ5HA" id="8620208551721910235" role="TZ5H!">
-        <node concept="1dT_AC" id="8620208551721910236" role="1dT_Ay">
+    <node concept="3Tm1VV" id="2ZHT8fspstr" role="1B3o_S" />
+    <node concept="3UR2Jj" id="7ux8w67aNZ0" role="lGtFl">
+      <node concept="TZ5HA" id="7ux8w67aNZr" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNZs" role="1dT_Ay">
           <property role="1dT_AB" value="Illustrates type inference using a dedicated simplified expression language." />
         </node>
       </node>
-      <node concept="TZ5HA" id="8620208551721910237" role="TZ5H!">
-        <node concept="1dT_AC" id="8620208551721910238" role="1dT_Ay">
+      <node concept="TZ5HA" id="7ux8w67aNZt" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNZu" role="1dT_Ay">
           <property role="1dT_AB" value="Check types of the variables by inspecting their type - Control/Cmd + Shift + T." />
         </node>
       </node>
-      <node concept="TZ5HA" id="8620208551721910239" role="TZ5H!">
-        <node concept="1dT_AC" id="8620208551721910240" role="1dT_Ay">
+      <node concept="TZ5HA" id="7ux8w67aNZv" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNZw" role="1dT_Ay">
           <property role="1dT_AB" value="You may also debug the typesystem engine using Type-system Trace - Control/Cmd + Shift + X." />
         </node>
       </node>
     </node>
   </node>
-  <node concept="312cEu" id="3453667744252546022">
+  <node concept="312cEu" id="2ZHT8fspsJA">
     <property role="TrG5h" value="TypeError" />
-    <node concept="3KIgzJ" id="3453667744252546042" role="jymVt">
-      <node concept="3clFbS" id="3453667744252546044" role="3KIlGz">
-        <node concept="3SKdUt" id="1962809150991769646" role="3cqZAp">
-          <node concept="3SKWN0" id="1962809150991769647" role="3SKWNk">
-            <node concept="2!Tu5h" id="3453667744252546099" role="3SKWNf">
-              <node concept="3KwzpR" id="8620208551721817373" role="2!Tu0!">
+    <node concept="3KIgzJ" id="2ZHT8fspsJU" role="jymVt">
+      <node concept="3clFbS" id="2ZHT8fspsJW" role="3KIlGz">
+        <node concept="3SKdUt" id="1GXj8nYK20I" role="3cqZAp">
+          <node concept="3SKWN0" id="1GXj8nYK20J" role="3SKWNk">
+            <node concept="2$Tu5h" id="2ZHT8fspsKN" role="3SKWNf">
+              <node concept="3KwzpR" id="7ux8w67atkt" role="2$Tu0$">
                 <property role="TrG5h" value="anotherInt" />
-                <node concept="2!zt7R" id="8620208551721817443" role="2!X5L7">
-                  <property role="2!zt7Q" value="1.3" />
+                <node concept="2$zt7R" id="7ux8w67atlz" role="2$X5L7">
+                  <property role="2$zt7Q" value="1.3" />
                 </node>
-                <node concept="2!S0AN" id="8620208551721817398" role="3KwwDs" />
+                <node concept="2$S0AN" id="7ux8w67atkQ" role="3KwwDs" />
               </node>
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="3Tm1VV" id="3453667744252546023" role="1B3o_S" />
-    <node concept="3UR2Jj" id="8620208551721910297" role="lGtFl">
-      <node concept="TZ5HA" id="8620208551721910329" role="TZ5H!">
-        <node concept="1dT_AC" id="8620208551721910330" role="1dT_Ay">
+    <node concept="3Tm1VV" id="2ZHT8fspsJB" role="1B3o_S" />
+    <node concept="3UR2Jj" id="7ux8w67aO0p" role="lGtFl">
+      <node concept="TZ5HA" id="7ux8w67aO0T" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aO0U" role="1dT_Ay">
           <property role="1dT_AB" value="Illustrates type inference using a dedicated simplified expression language." />
         </node>
       </node>
-      <node concept="TZ5HA" id="8620208551721910331" role="TZ5H!">
-        <node concept="1dT_AC" id="8620208551721910332" role="1dT_Ay">
+      <node concept="TZ5HA" id="7ux8w67aO0V" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aO0W" role="1dT_Ay">
           <property role="1dT_AB" value="Check types of the variables by inspecting their type - Control/Cmd + Shift + T." />
         </node>
       </node>
-      <node concept="TZ5HA" id="8620208551721910333" role="TZ5H!">
-        <node concept="1dT_AC" id="8620208551721910334" role="1dT_Ay">
+      <node concept="TZ5HA" id="7ux8w67aO0X" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aO0Y" role="1dT_Ay">
           <property role="1dT_AB" value="You may also debug the typesystem engine using Type-system Trace - Control/Cmd + Shift + X." />
         </node>
       </node>

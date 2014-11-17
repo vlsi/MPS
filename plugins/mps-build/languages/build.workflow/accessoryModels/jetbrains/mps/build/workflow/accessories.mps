@@ -39,68 +39,68 @@
       </concept>
     </language>
   </registry>
-  <node concept="yghi3" id="7306485738221408314">
+  <node concept="yghi3" id="6l_Qx579h0U">
     <property role="TrG5h" value="java" />
-    <node concept="2VaFvF" id="7306485738221390862" role="yghi5">
+    <node concept="2VaFvF" id="6l_Qx579cKe" role="yghi5">
       <property role="TrG5h" value="compileJava" />
     </node>
-    <node concept="2VaFvF" id="7306485738221390870" role="yghi5">
+    <node concept="2VaFvF" id="6l_Qx579cKm" role="yghi5">
       <property role="TrG5h" value="processResources" />
     </node>
-    <node concept="2VaFvF" id="7306485738221390868" role="yghi5">
+    <node concept="2VaFvF" id="6l_Qx579cKk" role="yghi5">
       <property role="TrG5h" value="classes" />
-      <node concept="2VaxJe" id="7306485738221390872" role="2VaxJ6">
+      <node concept="2VaxJe" id="6l_Qx579cKo" role="2VaxJ6">
         <reference role="2VaxJf" target="7306485738221390862" resolve="compileJava" />
       </node>
-      <node concept="2VaxJe" id="7306485738221390874" role="2VaxJ6">
+      <node concept="2VaxJe" id="6l_Qx579cKq" role="2VaxJ6">
         <reference role="2VaxJf" target="7306485738221390870" resolve="processResources" />
       </node>
     </node>
-    <node concept="3bMsLL" id="4701820937132277086" role="yghi5">
+    <node concept="3bMsLL" id="450ejGzgRPu" role="yghi5">
       <reference role="3bMsLK" target="4701820937132277082" resolve="assemble" />
-      <node concept="2VaxJe" id="4701820937132277088" role="3bNaKb">
+      <node concept="2VaxJe" id="450ejGzgRPw" role="3bNaKb">
         <reference role="2VaxJf" target="7306485738221390868" resolve="classes" />
       </node>
     </node>
-    <node concept="2VaFvF" id="7306485738221390885" role="yghi5">
+    <node concept="2VaFvF" id="6l_Qx579cK_" role="yghi5">
       <property role="TrG5h" value="test" />
-      <node concept="2VaxJe" id="7306485738221390894" role="2VaxJ6">
+      <node concept="2VaxJe" id="6l_Qx579cKI" role="2VaxJ6">
         <reference role="2VaxJf" target="7306485738221390868" resolve="classes" />
       </node>
     </node>
-    <node concept="2VaFvF" id="7306485738221390881" role="yghi5">
+    <node concept="2VaFvF" id="6l_Qx579cKx" role="yghi5">
       <property role="TrG5h" value="check" />
-      <node concept="2VaxJe" id="7306485738221390896" role="2VaxJ6">
+      <node concept="2VaxJe" id="6l_Qx579cKK" role="2VaxJ6">
         <reference role="2VaxJf" target="7306485738221390885" resolve="test" />
       </node>
     </node>
-    <node concept="ygXWA" id="7306485738221487426" role="yg1MB">
+    <node concept="ygXWA" id="6l_Qx579$l2" role="yg1MB">
       <reference role="ygXWD" target="7306485738221408315" resolve="common" />
     </node>
   </node>
-  <node concept="yghi3" id="7306485738221408315">
+  <node concept="yghi3" id="6l_Qx579h0V">
     <property role="TrG5h" value="common" />
-    <node concept="1_4tnW" id="7306485738221314459" role="yghi5">
+    <node concept="1_4tnW" id="6l_Qx578U6r" role="yghi5">
       <property role="1_4tnV" value="true" />
       <property role="TrG5h" value="build.dir" />
       <property role="1_4tnY" value="build" />
     </node>
-    <node concept="2VaFvF" id="4701820937132277082" role="yghi5">
+    <node concept="2VaFvF" id="450ejGzgRPq" role="yghi5">
       <property role="TrG5h" value="assemble" />
     </node>
-    <node concept="2VaFvF" id="6520682027041193815" role="yghi5">
+    <node concept="2VaFvF" id="5DY7s5F47Xn" role="yghi5">
       <property role="TrG5h" value="buildDependents" />
     </node>
-    <node concept="2VaFvF" id="7128123785277844790" role="yghi5">
+    <node concept="2VaFvF" id="6bGbH3SvUOQ" role="yghi5">
       <property role="TrG5h" value="fetchDependencies" />
     </node>
-    <node concept="2VaFvF" id="7306485738221408317" role="yghi5">
+    <node concept="2VaFvF" id="6l_Qx579h0X" role="yghi5">
       <property role="TrG5h" value="build" />
-      <node concept="2VaxJe" id="4701820937132277093" role="2VaxJ6">
+      <node concept="2VaxJe" id="450ejGzgRP_" role="2VaxJ6">
         <reference role="2VaxJf" target="4701820937132277082" resolve="assemble" />
       </node>
     </node>
-    <node concept="2VaFvF" id="7306485738221390898" role="yghi5">
+    <node concept="2VaFvF" id="6l_Qx579cKM" role="yghi5">
       <property role="TrG5h" value="clean" />
     </node>
   </node>

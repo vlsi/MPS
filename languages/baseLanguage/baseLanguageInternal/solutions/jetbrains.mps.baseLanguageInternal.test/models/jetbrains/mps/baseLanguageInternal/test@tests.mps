@@ -79,7 +79,7 @@
     </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
       <concept id="1173996401517" name="jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression" flags="nn" index="1nCR9W">
-        <property id="1173996588177" name="fqClassName" index="1nD!Q0" />
+        <property id="1173996588177" name="fqClassName" index="1nD$Q0" />
         <child id="1179332974947" name="type" index="2lIhxL" />
       </concept>
       <concept id="1174914042989" name="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType" flags="in" index="2eloPW">
@@ -87,38 +87,38 @@
       </concept>
     </language>
   </registry>
-  <node concept="1lH9Xt" id="1293230950168428284">
+  <node concept="1lH9Xt" id="17MuFa5l7VW">
     <property role="TrG5h" value="InternalClassifier" />
-    <node concept="1qefOq" id="1293230950168439294" role="1SKRRt">
-      <node concept="312cEu" id="1293230950168439296" role="1qenE9">
+    <node concept="1qefOq" id="17MuFa5laBY" role="1SKRRt">
+      <node concept="312cEu" id="17MuFa5laC0" role="1qenE9">
         <property role="2bfB8j" value="true" />
         <property role="TrG5h" value="Context" />
-        <node concept="3Tm1VV" id="1293230950168439297" role="1B3o_S" />
-        <node concept="3clFb_" id="1293230950168446415" role="jymVt">
+        <node concept="3Tm1VV" id="17MuFa5laC1" role="1B3o_S" />
+        <node concept="3clFb_" id="17MuFa5lcnf" role="jymVt">
           <property role="TrG5h" value="mps19129" />
-          <node concept="3cqZAl" id="1293230950168446417" role="3clF45" />
-          <node concept="3Tm1VV" id="1293230950168446418" role="1B3o_S" />
-          <node concept="3clFbS" id="1293230950168446419" role="3clF47">
-            <node concept="3cpWs8" id="1293230950168446494" role="3cqZAp">
-              <node concept="3cpWsn" id="1293230950168446497" role="3cpWs9">
+          <node concept="3cqZAl" id="17MuFa5lcnh" role="3clF45" />
+          <node concept="3Tm1VV" id="17MuFa5lcni" role="1B3o_S" />
+          <node concept="3clFbS" id="17MuFa5lcnj" role="3clF47">
+            <node concept="3cpWs8" id="17MuFa5lcou" role="3cqZAp">
+              <node concept="3cpWsn" id="17MuFa5lcox" role="3cpWs9">
                 <property role="TrG5h" value="foo" />
-                <node concept="2eloPW" id="1293230950168446493" role="1tU5fm">
+                <node concept="2eloPW" id="17MuFa5lcot" role="1tU5fm">
                   <property role="2ely0U" value="foo.bar" />
                   <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
                 </node>
-                <node concept="1nCR9W" id="1293230950168446664" role="33vP2m">
-                  <property role="1nD!Q0" value="baz.qux" />
-                  <node concept="3uibUv" id="1293230950168446720" role="2lIhxL">
+                <node concept="1nCR9W" id="17MuFa5lcr8" role="33vP2m">
+                  <property role="1nD$Q0" value="baz.qux" />
+                  <node concept="3uibUv" id="17MuFa5lcs0" role="2lIhxL">
                     <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbJ" id="1293230950168526390" role="3cqZAp">
-              <node concept="3clFbS" id="1293230950168526393" role="3clFbx" />
-              <node concept="3clFbC" id="1293230950168526615" role="3clFbw">
-                <node concept="10Nm6u" id="1293230950168526652" role="3uHU7w" />
-                <node concept="37vLTw" id="1293230950168526476" role="3uHU7B">
+            <node concept="3clFbJ" id="17MuFa5lvSQ" role="3cqZAp">
+              <node concept="3clFbS" id="17MuFa5lvST" role="3clFbx" />
+              <node concept="3clFbC" id="17MuFa5lvWn" role="3clFbw">
+                <node concept="10Nm6u" id="17MuFa5lvWW" role="3uHU7w" />
+                <node concept="37vLTw" id="17MuFa5lvUc" role="3uHU7B">
                   <reference role="3cqZAo" target="1293230950168446497" resolve="foo" />
                 </node>
               </node>
@@ -128,7 +128,7 @@
       </node>
     </node>
   </node>
-  <node concept="2XOHcx" id="1293230950168512377">
+  <node concept="2XOHcx" id="17MuFa5lstT">
     <property role="2XOHcw" value="${mps_home}" />
   </node>
 </model>

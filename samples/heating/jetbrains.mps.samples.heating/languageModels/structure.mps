@@ -23,8 +23,8 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -52,151 +52,151 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="5063359128232698866">
+  <node concept="1TIwiD" id="4p4E$NwyEfM">
     <property role="TrG5h" value="HeatingPlan" />
     <property role="19KtqR" value="true" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5063359128232717389" role="1TKVEi">
+    <node concept="1TJgyj" id="4p4E$NwyILd" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="dailyPlans" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="5063359128232717391" resolve="DailyPlan" />
     </node>
-    <node concept="PrWs8" id="5063359128232717383" role="PzmwI">
+    <node concept="PrWs8" id="4p4E$NwyIL7" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5063359128232717391">
+  <node concept="1TIwiD" id="4p4E$NwyILf">
     <property role="TrG5h" value="DailyPlan" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="2161719505004866676" role="1TKVEl">
+    <node concept="1TJgyi" id="1RZY6YZQiLO" role="1TKVEl">
       <property role="TrG5h" value="displayName" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
-    <node concept="1TJgyj" id="5063359128232717399" role="1TKVEi">
+    <node concept="1TJgyj" id="4p4E$NwyILn" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="items" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="5726447348463731062" resolve="Slot" />
     </node>
-    <node concept="1TJgyj" id="4664795093170417662" role="1TKVEi">
+    <node concept="1TJgyj" id="42WFAKeq6ZY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="applicability" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="4664795093170414652" resolve="Applicability" />
     </node>
-    <node concept="1TJgyj" id="935069066462790136" role="1TKVEi">
+    <node concept="1TJgyj" id="NU25MqY87S" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="customizes" />
       <reference role="20lvS9" target="935069066462619696" resolve="DailyPlanReference" />
     </node>
-    <node concept="PrWs8" id="5063359128232717397" role="PzmwI">
+    <node concept="PrWs8" id="4p4E$NwyILl" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5063359128232717410">
+  <node concept="1TIwiD" id="4p4E$NwyILy">
     <property role="TrG5h" value="ChangeEvent" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5063359128232717424" role="1TKVEl">
+    <node concept="1TJgyi" id="4p4E$NwyILK" role="1TKVEl">
       <property role="TrG5h" value="temperature" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
   </node>
-  <node concept="AxPO7" id="5063359128233346660">
+  <node concept="AxPO7" id="4p4E$Nw_8p$">
     <property role="TrG5h" value="DayDataType" />
     <property role="PDuV0" value="false" />
     <property role="3lZH7k" value="derive_from_presentation" />
     <reference role="M4eZT" target="tpck.1082983041843" resolve="string" />
-    <node concept="M4N5e" id="5063359128233346661" role="M5hS2">
+    <node concept="M4N5e" id="4p4E$Nw_8p_" role="M5hS2">
       <property role="1uS6qo" value="Monday" />
       <property role="1uS6qv" value="monday" />
     </node>
-    <node concept="M4N5e" id="5063359128233346662" role="M5hS2">
+    <node concept="M4N5e" id="4p4E$Nw_8pA" role="M5hS2">
       <property role="1uS6qo" value="Tuesday" />
       <property role="1uS6qv" value="tuesday" />
     </node>
-    <node concept="M4N5e" id="5063359128233346665" role="M5hS2">
+    <node concept="M4N5e" id="4p4E$Nw_8pD" role="M5hS2">
       <property role="1uS6qo" value="Wednesday" />
       <property role="1uS6qv" value="wednesday" />
     </node>
-    <node concept="M4N5e" id="5063359128233346669" role="M5hS2">
+    <node concept="M4N5e" id="4p4E$Nw_8pH" role="M5hS2">
       <property role="1uS6qo" value="Thursday" />
       <property role="1uS6qv" value="thursday" />
     </node>
-    <node concept="M4N5e" id="5063359128233346674" role="M5hS2">
+    <node concept="M4N5e" id="4p4E$Nw_8pM" role="M5hS2">
       <property role="1uS6qo" value="Friday" />
       <property role="1uS6qv" value="friday" />
     </node>
-    <node concept="M4N5e" id="5063359128233346680" role="M5hS2">
+    <node concept="M4N5e" id="4p4E$Nw_8pS" role="M5hS2">
       <property role="1uS6qo" value="Saturday" />
       <property role="1uS6qv" value="saturday" />
     </node>
-    <node concept="M4N5e" id="5063359128233346687" role="M5hS2">
+    <node concept="M4N5e" id="4p4E$Nw_8pZ" role="M5hS2">
       <property role="1uS6qo" value="Sunday" />
       <property role="1uS6qv" value="sunday" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4664795093170414652">
+  <node concept="1TIwiD" id="42WFAKeq6gW">
     <property role="TrG5h" value="Applicability" />
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
   </node>
-  <node concept="1TIwiD" id="4664795093170436280">
+  <node concept="1TIwiD" id="42WFAKeqbyS">
     <property role="TrG5h" value="NotSpecified" />
     <property role="34LRSv" value="not specified" />
     <reference role="1TJDcQ" target="4664795093170414652" resolve="Applicability" />
   </node>
-  <node concept="1TIwiD" id="4664795093170436346">
+  <node concept="1TIwiD" id="42WFAKeqbzU">
     <property role="TrG5h" value="WeekendDay" />
     <property role="34LRSv" value="weekend day" />
     <reference role="1TJDcQ" target="4664795093170414652" resolve="Applicability" />
   </node>
-  <node concept="1TIwiD" id="4664795093170605733">
+  <node concept="1TIwiD" id="42WFAKeqOU_">
     <property role="TrG5h" value="WeekDays" />
     <property role="34LRSv" value="week days" />
     <reference role="1TJDcQ" target="4664795093170414652" resolve="Applicability" />
   </node>
-  <node concept="1TIwiD" id="4664795093170605734">
+  <node concept="1TIwiD" id="42WFAKeqOUA">
     <property role="TrG5h" value="SpecificDay" />
     <property role="34LRSv" value="specific day" />
     <reference role="1TJDcQ" target="4664795093170414652" resolve="Applicability" />
-    <node concept="1TJgyi" id="4664795093170605735" role="1TKVEl">
+    <node concept="1TJgyi" id="42WFAKeqOUB" role="1TKVEl">
       <property role="TrG5h" value="day" />
       <reference role="AX2Wp" target="5063359128233346660" resolve="DayDataType" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4664795093170636139">
+  <node concept="1TIwiD" id="42WFAKeqWlF">
     <property role="TrG5h" value="DayRange" />
     <property role="34LRSv" value="range" />
     <reference role="1TJDcQ" target="4664795093170414652" resolve="Applicability" />
-    <node concept="1TJgyi" id="4664795093170636191" role="1TKVEl">
+    <node concept="1TJgyi" id="42WFAKeqWmv" role="1TKVEl">
       <property role="TrG5h" value="start" />
       <reference role="AX2Wp" target="5063359128233346660" resolve="DayDataType" />
     </node>
-    <node concept="1TJgyi" id="4664795093170636193" role="1TKVEl">
+    <node concept="1TJgyi" id="42WFAKeqWmx" role="1TKVEl">
       <property role="TrG5h" value="end" />
       <reference role="AX2Wp" target="5063359128233346660" resolve="DayDataType" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5726447348463731062">
+  <node concept="1TIwiD" id="4XSronYa85Q">
     <property role="TrG5h" value="Slot" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5726447348463738321" role="1TKVEi">
+    <node concept="1TJgyj" id="4XSronYa9Rh" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="event" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="5063359128232717410" resolve="ChangeEvent" />
     </node>
-    <node concept="1TJgyi" id="5726447348463731324" role="1TKVEl">
+    <node concept="1TJgyi" id="4XSronYa89W" role="1TKVEl">
       <property role="TrG5h" value="start" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
   </node>
-  <node concept="1TIwiD" id="935069066462619696">
+  <node concept="1TIwiD" id="NU25MqXuwK">
     <property role="TrG5h" value="DailyPlanReference" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="935069066462619697" role="1TKVEi">
+    <node concept="1TJgyj" id="NU25MqXuwL" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />

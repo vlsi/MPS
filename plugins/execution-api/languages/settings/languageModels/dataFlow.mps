@@ -14,7 +14,7 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -39,22 +39,22 @@
       <concept id="1206454052847" name="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" flags="nn" index="3AgYrR">
         <child id="1206454079161" name="codeFor" index="3Ah4Yx" />
       </concept>
-      <concept id="1206462858103" name="jetbrains.mps.lang.dataFlow.structure.EmitRetStatement" flags="nn" index="3AM!9J" />
+      <concept id="1206462858103" name="jetbrains.mps.lang.dataFlow.structure.EmitRetStatement" flags="nn" index="3AM$9J" />
     </language>
   </registry>
-  <node concept="3_zdsH" id="946964771156067208">
+  <node concept="3_zdsH" id="O$iR4J$ge8">
     <reference role="3_znuS" target="fb9u.946964771156066563" resolve="ReportConfigurationErrorStatement" />
-    <node concept="3__wT9" id="946964771156067209" role="3_A6iZ">
-      <node concept="3clFbS" id="946964771156067210" role="2VODD2">
-        <node concept="3AgYrR" id="946964771156067211" role="3cqZAp">
-          <node concept="2OqwBi" id="946964771156067212" role="3Ah4Yx">
-            <node concept="3__QtB" id="946964771156067213" role="2Oq!k0" />
-            <node concept="3TrEf2" id="946964771156067214" role="2OqNvi">
+    <node concept="3__wT9" id="O$iR4J$ge9" role="3_A6iZ">
+      <node concept="3clFbS" id="O$iR4J$gea" role="2VODD2">
+        <node concept="3AgYrR" id="O$iR4J$geb" role="3cqZAp">
+          <node concept="2OqwBi" id="O$iR4J$gec" role="3Ah4Yx">
+            <node concept="3__QtB" id="O$iR4J$ged" role="2Oq$k0" />
+            <node concept="3TrEf2" id="O$iR4J$gee" role="2OqNvi">
               <reference role="3Tt5mk" target="fb9u.946964771156066565" />
             </node>
           </node>
         </node>
-        <node concept="3AM!9J" id="946964771156067215" role="3cqZAp" />
+        <node concept="3AM$9J" id="O$iR4J$gef" role="3cqZAp" />
       </node>
     </node>
   </node>

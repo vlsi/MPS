@@ -10,8 +10,8 @@
   </imports>
   <registry>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
-      <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu!B">
-        <reference id="8401916545537438643" name="kind" index="1dDu!A" />
+      <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
+        <reference id="8401916545537438643" name="kind" index="1dDu$A" />
       </concept>
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
@@ -23,15 +23,15 @@
       </concept>
     </language>
   </registry>
-  <node concept="1M2fIO" id="2001769927721048297">
+  <node concept="1M2fIO" id="1J7HMiRRPzD">
     <reference role="1M2myG" target="nd9w.1494751830318912537" resolve="Constant" />
   </node>
-  <node concept="1M2fIO" id="3990190717072399938">
+  <node concept="1M2fIO" id="3tw0l3PalT2">
     <reference role="1M2myG" target="nd9w.3990190717072393829" resolve="ConstantReference" />
-    <node concept="1N5Pfh" id="3990190717072399939" role="1Mr941">
+    <node concept="1N5Pfh" id="3tw0l3PalT3" role="1Mr941">
       <reference role="1N5Vy1" target="nd9w.3990190717072393830" />
-      <node concept="1dDu!B" id="5956117492787420277" role="1N6uqs">
-        <reference role="1dDu!A" target="nd9w.1494751830318912537" resolve="Constant" />
+      <node concept="1dDu$B" id="5aCokQ65pLP" role="1N6uqs">
+        <reference role="1dDu$A" target="nd9w.1494751830318912537" resolve="Constant" />
       </node>
     </node>
   </node>

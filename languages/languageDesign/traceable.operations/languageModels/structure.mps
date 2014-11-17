@@ -16,8 +16,8 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
@@ -37,24 +37,24 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="6942529559415680891">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="61oOtBBBIXV">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="copy a node with trace" />
     <property role="TrG5h" value="Node_CopyWithTraceOperation" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="copy with trace" />
     <reference role="1TJDcQ" target="tp25.1138411891628" resolve="SNodeOperation" />
   </node>
-  <node concept="1TIwiD" id="2603522263179374343">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2gx$rhdCaW7">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="copies a list of nodes with trace" />
     <property role="TrG5h" value="NList_CopyWithTraceOperation" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="copy list with trace" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="2603522263179374348" role="1TKVEi">
+    <node concept="1TJgyj" id="2gx$rhdCaWc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="argument" />
       <property role="20lbJX" value="1" />

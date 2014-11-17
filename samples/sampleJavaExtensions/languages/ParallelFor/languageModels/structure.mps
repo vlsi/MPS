@@ -20,8 +20,8 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -52,85 +52,85 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="8923957828369477802">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="7Joh5OuxR2E">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ParallelFor" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="parallelFor" />
     <reference role="1TJDcQ" target="tpee.1154032098014" resolve="AbstractLoopStatement" />
-    <node concept="1TJgyi" id="8374756414438970116" role="1TKVEl">
+    <node concept="1TJgyi" id="7gT79pF3Lc4" role="1TKVEl">
       <property role="TrG5h" value="nowait" />
       <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
     </node>
-    <node concept="1TJgyj" id="8923957828369518786" role="1TKVEi">
+    <node concept="1TJgyj" id="7Joh5Ouy132" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="loopVariable" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="8923957828369477803" resolve="ParallelLoopVariable" />
     </node>
-    <node concept="1TJgyj" id="8923957828369550462" role="1TKVEi">
+    <node concept="1TJgyj" id="7Joh5Ouy8LY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="inputSequence" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="4659204813808501246" role="1TKVEi">
+    <node concept="1TJgyj" id="42COxuQQ87Y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="threadPool" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="5337045848190935661" role="PzmwI">
+    <node concept="PrWs8" id="4CgZIKbpe9H" role="PzmwI">
       <reference role="PrY4T" target="tpee.1239354281271" resolve="IMethodLike" />
     </node>
-    <node concept="PrWs8" id="3988640388184810143" role="PzmwI">
+    <node concept="PrWs8" id="3tqvONyy2av" role="PzmwI">
       <reference role="PrY4T" target="tpee.1199653749349" resolve="IStatementListContainer" />
     </node>
   </node>
-  <node concept="1TIwiD" id="8923957828369477803">
+  <node concept="1TIwiD" id="7Joh5OuxR2F">
     <property role="TrG5h" value="ParallelLoopVariable" />
     <reference role="1TJDcQ" target="tpee.1068581242863" resolve="LocalVariableDeclaration" />
   </node>
-  <node concept="1TIwiD" id="633195941006921788">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="z9$5E0VX0W">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ThreadPool" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="thread pool" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyi" id="633195941006921797" role="1TKVEl">
+    <node concept="1TJgyi" id="z9$5E0VX15" role="1TKVEl">
       <property role="TrG5h" value="numberOfThreads" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
   </node>
-  <node concept="1TIwiD" id="2975785153735111398">
+  <node concept="1TIwiD" id="2_c7diSgNbA">
     <property role="TrG5h" value="ThreadSafe" />
     <reference role="1TJDcQ" target="tpck.3364660638048049748" resolve="NodeAttribute" />
-    <node concept="M6xJ_" id="7588821453551758737" role="lGtFl">
+    <node concept="M6xJ_" id="6_gUeuqOeQh" role="lGtFl">
       <property role="Hh88m" value="threadSafe" />
-      <node concept="trNpa" id="1262857012849338823" role="EQaZv">
+      <node concept="trNpa" id="166$sc$ZIB7" role="EQaZv">
         <reference role="trN6q" target="tpee.1068431474542" resolve="VariableDeclaration" />
       </node>
-      <node concept="trNpa" id="1262857012849338824" role="EQaZv">
+      <node concept="trNpa" id="166$sc$ZIB8" role="EQaZv">
         <reference role="trN6q" target="tpee.1081236700937" resolve="StaticMethodCall" />
       </node>
-      <node concept="trNpa" id="1262857012849338825" role="EQaZv">
+      <node concept="trNpa" id="166$sc$ZIB9" role="EQaZv">
         <reference role="trN6q" target="tpee.7812454656619025412" resolve="LocalMethodCall" />
       </node>
-      <node concept="trNpa" id="1262857012849338826" role="EQaZv">
+      <node concept="trNpa" id="166$sc$ZIBa" role="EQaZv">
         <reference role="trN6q" target="tpee.1197027756228" resolve="DotExpression" />
       </node>
-      <node concept="trNpa" id="1262857012849338827" role="EQaZv">
+      <node concept="trNpa" id="166$sc$ZIBb" role="EQaZv">
         <reference role="trN6q" target="tpee.1068390468198" resolve="ClassConcept" />
       </node>
     </node>
   </node>
-  <node concept="1TIwiD" id="2975785153735230336">
+  <node concept="1TIwiD" id="2_c7diShge0">
     <property role="TrG5h" value="NonThreadSafeClass" />
     <reference role="1TJDcQ" target="tpck.3364660638048049748" resolve="NodeAttribute" />
-    <node concept="M6xJ_" id="7588821453551758688" role="lGtFl">
+    <node concept="M6xJ_" id="6_gUeuqOePw" role="lGtFl">
       <property role="Hh88m" value="nonThreadSafe" />
-      <node concept="trNpa" id="1262857012849338811" role="EQaZv">
+      <node concept="trNpa" id="166$sc$ZIAV" role="EQaZv">
         <reference role="trN6q" target="tpee.1068390468198" resolve="ClassConcept" />
       </node>
     </node>

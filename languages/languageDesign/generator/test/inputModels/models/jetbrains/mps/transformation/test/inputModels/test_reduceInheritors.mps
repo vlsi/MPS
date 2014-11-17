@@ -24,16 +24,16 @@
       <concept id="1195171011194" name="jetbrains.mps.transformation.test.inputLang.structure.InputNode_A" flags="ng" index="15J_HG" />
     </language>
   </registry>
-  <node concept="15_jI_" id="1206460631011">
+  <node concept="15_jI_" id="hzAE4vz">
     <property role="3FifNy" value="reduceInheritors" />
     <property role="TrG5h" value="Input_root_1" />
-    <node concept="15J_HG" id="1206460664263" role="15EZgy">
+    <node concept="15J_HG" id="hzAEcB7" role="15EZgy">
       <property role="TrG5h" value="input A" />
     </node>
-    <node concept="3ABbii" id="1206460677406" role="15EZgy">
+    <node concept="3ABbii" id="hzAEfOu" role="15EZgy">
       <property role="TrG5h" value="input B" />
     </node>
-    <node concept="3AMHlM" id="1206463170092" role="15EZgy">
+    <node concept="3AMHlM" id="hzANKoG" role="15EZgy">
       <property role="TrG5h" value="input C" />
     </node>
   </node>

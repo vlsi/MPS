@@ -26,28 +26,28 @@
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" index="3F1sOY" />
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
     </language>
   </registry>
-  <node concept="24kQdi" id="1185806720454">
+  <node concept="24kQdi" id="hgn_DR6">
     <reference role="1XX52x" target="tplg.1185806650601" resolve="AConcept" />
-    <node concept="3EZMnI" id="1185806723144" role="2wV5jI">
+    <node concept="3EZMnI" id="hgn_Ex8" role="2wV5jI">
       <property role="3EZMnw" value="false" />
-      <node concept="3F0ifn" id="1185806725771" role="3EZMnx">
+      <node concept="3F0ifn" id="hgn_Fab" role="3EZMnx">
         <property role="3F0ifm" value="ACONCEPT" />
       </node>
-      <node concept="3F1sOY" id="1185806734444" role="3EZMnx">
+      <node concept="3F1sOY" id="hgn_HhG" role="3EZMnx">
         <reference role="1NtTu8" target="tplg.1185806674055" />
       </node>
-      <node concept="2iRfu4" id="1239879949822" role="2iSdaV" />
+      <node concept="2iRfu4" id="i2IADRY" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="1185959968556">
+  <node concept="24kQdi" id="hgwIfWG">
     <reference role="1XX52x" target="tplg.1185959958415" resolve="BConcept" />
-    <node concept="3F0ifn" id="1185959974511" role="2wV5jI">
+    <node concept="3F0ifn" id="hgwIhpJ" role="2wV5jI">
       <property role="3F0ifm" value="BCONCEPT" />
     </node>
   </node>

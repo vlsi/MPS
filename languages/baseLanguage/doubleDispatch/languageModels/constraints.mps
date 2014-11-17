@@ -16,7 +16,7 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -52,23 +52,23 @@
       </concept>
     </language>
   </registry>
-  <node concept="1M2fIO" id="2403002034744707266">
+  <node concept="1M2fIO" id="25pbpTNvWz2">
     <reference role="1M2myG" target="spkm.2403002034744698617" resolve="DispatchModifier" />
-    <node concept="nKS2y" id="2403002034744707318" role="1MLUbF">
-      <node concept="3clFbS" id="2403002034744707319" role="2VODD2">
-        <node concept="3SKdUt" id="2323553266854773026" role="3cqZAp">
-          <node concept="3SKdUq" id="2323553266854773555" role="3SKWNk">
+    <node concept="nKS2y" id="25pbpTNvWzQ" role="1MLUbF">
+      <node concept="3clFbS" id="25pbpTNvWzR" role="2VODD2">
+        <node concept="3SKdUt" id="20YUQaJ$W4y" role="3cqZAp">
+          <node concept="3SKdUq" id="20YUQaJ$WcN" role="3SKWNk">
             <property role="3SKdUp" value="applicable only to java methods" />
           </node>
         </node>
-        <node concept="3clFbF" id="2403002034744707506" role="3cqZAp">
-          <node concept="2OqwBi" id="2403002034744708118" role="3clFbG">
-            <node concept="1mIQ4w" id="2403002034744708561" role="2OqNvi">
-              <node concept="chp4Y" id="2403002034744709110" role="cj9EA">
+        <node concept="3clFbF" id="25pbpTNvWAM" role="3cqZAp">
+          <node concept="2OqwBi" id="25pbpTNvWKm" role="3clFbG">
+            <node concept="1mIQ4w" id="25pbpTNvWRh" role="2OqNvi">
+              <node concept="chp4Y" id="25pbpTNvWZQ" role="cj9EA">
                 <reference role="cht4Q" target="tpee.7812454656619025416" resolve="MethodDeclaration" />
               </node>
             </node>
-            <node concept="nLn13" id="2403002034744707505" role="2Oq!k0" />
+            <node concept="nLn13" id="25pbpTNvWAL" role="2Oq$k0" />
           </node>
         </node>
       </node>

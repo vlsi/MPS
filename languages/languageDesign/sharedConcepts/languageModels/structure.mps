@@ -30,8 +30,8 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -48,121 +48,121 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="1161622665029">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="gTQ6Nt5">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="model of the reference node" />
     <property role="TrG5h" value="ConceptFunctionParameter_model" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="model" />
     <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1262430001741718508" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvB6fG" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1161622753914">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="gTQ799U">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="IOperationContext" />
     <property role="TrG5h" value="ConceptFunctionParameter_operationContext" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="operationContext" />
     <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1262430001741704577" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvB2Q1" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1161622878565">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="gTQ7B__">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="context (SearchScope)" />
     <property role="TrG5h" value="ConceptFunctionParameter_scope" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="scope" />
     <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1262430001741647447" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvAOTn" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="AxPO7" id="1161807239261">
+  <node concept="AxPO7" id="gU16Txt">
     <property role="3lZH7k" value="custom" />
     <property role="TrG5h" value="Options_DefaultCustom" />
     <reference role="M4eZT" target="tpck.1082983041843" resolve="string" />
     <reference role="Qgau1" target="1161807239262" resolve="default_" />
-    <node concept="M4N5e" id="1161807239262" role="M5hS2">
+    <node concept="M4N5e" id="gU16Txu" role="M5hS2">
       <property role="2fHolG" value="default_" />
       <property role="1uS6qo" value="default_" />
     </node>
-    <node concept="M4N5e" id="1161807432013" role="M5hS2">
+    <node concept="M4N5e" id="gU17C_d" role="M5hS2">
       <property role="1uS6qv" value="custom" />
       <property role="2fHolG" value="custom_" />
       <property role="1uS6qo" value="custom_" />
     </node>
   </node>
-  <node concept="AxPO7" id="1165007009656">
+  <node concept="AxPO7" id="gWZP3tS">
     <property role="3lZH7k" value="custom" />
     <property role="TrG5h" value="NodePresentationOptions" />
     <reference role="M4eZT" target="tpck.1082983041843" resolve="string" />
     <reference role="Qgau1" target="1165007009657" resolve="default_" />
-    <node concept="M4N5e" id="1165007009657" role="M5hS2">
+    <node concept="M4N5e" id="gWZP3tT" role="M5hS2">
       <property role="2fHolG" value="default_" />
       <property role="1uS6qo" value="default" />
     </node>
-    <node concept="M4N5e" id="1165007068491" role="M5hS2">
+    <node concept="M4N5e" id="gWZPhPb" role="M5hS2">
       <property role="1uS6qv" value="default_referent" />
       <property role="2fHolG" value="referent_" />
       <property role="1uS6qo" value="referent" />
     </node>
-    <node concept="M4N5e" id="1165007009658" role="M5hS2">
+    <node concept="M4N5e" id="gWZP3tU" role="M5hS2">
       <property role="1uS6qv" value="custom" />
       <property role="2fHolG" value="custom_" />
       <property role="1uS6qo" value="custom" />
     </node>
   </node>
-  <node concept="AxPO7" id="1177964585679">
+  <node concept="AxPO7" id="h94aibf">
     <property role="3lZH7k" value="custom" />
     <property role="TrG5h" value="Options_DefaultTrue" />
     <reference role="M4eZT" target="tpck.1082983041843" resolve="string" />
     <reference role="Qgau1" target="1177964585680" resolve="default_" />
-    <node concept="M4N5e" id="1177964585680" role="M5hS2">
+    <node concept="M4N5e" id="h94aibg" role="M5hS2">
       <property role="2fHolG" value="default_" />
       <property role="1uS6qo" value="default" />
     </node>
-    <node concept="M4N5e" id="1177964653995" role="M5hS2">
+    <node concept="M4N5e" id="h94ayQF" role="M5hS2">
       <property role="1uS6qv" value="true" />
       <property role="2fHolG" value="true_" />
       <property role="1uS6qo" value="true" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1194033889146">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="ho1XNXU">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ConceptFunctionParameter_editorContext" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="editorContext" />
     <property role="R4oN_" value="current EditorContext instance" />
     <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1262430001741718466" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvB6f2" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1206467714548">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hzB55RO">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ConceptFunctionParameter_node" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="node" />
     <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1262430001741638296" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvAMEo" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="558005353046640020">
+  <node concept="1TIwiD" id="uYrIA378mk">
     <property role="R4oN_" value="progress monitor" />
     <property role="TrG5h" value="ConceptFunctionParameter_progressMonitor" />
     <property role="34LRSv" value="monitor" />
     <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="558005353046652675" role="PzmwI">
+    <node concept="PrWs8" id="uYrIA37bs3" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>

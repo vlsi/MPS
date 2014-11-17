@@ -60,7 +60,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1145552809883" name="jetbrains.mps.baseLanguage.structure.AbstractCreator" flags="nn" index="2ShaUh" />
@@ -78,24 +78,24 @@
       </concept>
     </language>
   </registry>
-  <node concept="LiM7Y" id="1835794636205154554">
+  <node concept="LiM7Y" id="1_U3nV3$Q3U">
     <property role="TrG5h" value="InsertPrevSiblingOperation_Focus" />
-    <node concept="3clFbS" id="1835794636205189187" role="LjaKd">
-      <node concept="2TK7Tu" id="4997106363361386792" role="3cqZAp">
+    <node concept="3clFbS" id="1_U3nV3$Yx3" role="LjaKd">
+      <node concept="2TK7Tu" id="4lpisbWZY4C" role="3cqZAp">
         <property role="2TTd_B" value="node.add next-sibling" />
       </node>
-      <node concept="2TK7Tu" id="4997106363361416683" role="3cqZAp">
+      <node concept="2TK7Tu" id="4lpisbX05nF" role="3cqZAp">
         <property role="2TTd_B" value="new" />
       </node>
     </node>
-    <node concept="2S6QgY" id="1835794636205189194" role="LiRBU">
+    <node concept="2S6QgY" id="1_U3nV3$Yxa" role="LiRBU">
       <property role="TrG5h" value="Test" />
-      <node concept="2S6ZIM" id="1835794636205189195" role="2ZfVej">
-        <node concept="3clFbS" id="1835794636205189196" role="2VODD2" />
+      <node concept="2S6ZIM" id="1_U3nV3$Yxb" role="2ZfVej">
+        <node concept="3clFbS" id="1_U3nV3$Yxc" role="2VODD2" />
       </node>
-      <node concept="2Sbjvc" id="1835794636205189197" role="2ZfgGD">
-        <node concept="3clFbS" id="1835794636205189198" role="2VODD2">
-          <node concept="LIFWc" id="1835794636205189204" role="lGtFl">
+      <node concept="2Sbjvc" id="1_U3nV3$Yxd" role="2ZfgGD">
+        <node concept="3clFbS" id="1_U3nV3$Yxe" role="2VODD2">
+          <node concept="LIFWc" id="1_U3nV3$Yxk" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="0" />
@@ -105,20 +105,20 @@
         </node>
       </node>
     </node>
-    <node concept="2S6QgY" id="1835794636205189199" role="LiZbd">
+    <node concept="2S6QgY" id="1_U3nV3$Yxf" role="LiZbd">
       <property role="TrG5h" value="Test" />
-      <node concept="2S6ZIM" id="1835794636205189200" role="2ZfVej">
-        <node concept="3clFbS" id="1835794636205189201" role="2VODD2" />
+      <node concept="2S6ZIM" id="1_U3nV3$Yxg" role="2ZfVej">
+        <node concept="3clFbS" id="1_U3nV3$Yxh" role="2VODD2" />
       </node>
-      <node concept="2Sbjvc" id="1835794636205189202" role="2ZfgGD">
-        <node concept="3clFbS" id="1835794636205189203" role="2VODD2">
-          <node concept="3clFbF" id="4997106363361386784" role="3cqZAp">
-            <node concept="2OqwBi" id="4997106363361386786" role="3clFbG">
-              <node concept="2Sf5sV" id="4997106363361386785" role="2Oq!k0" />
-              <node concept="HtI8k" id="4997106363361386790" role="2OqNvi">
-                <node concept="2ShNRf" id="4997106363361416679" role="HtI8F">
-                  <node concept="2ShaUh" id="4997106363361416680" role="2ShVmc">
-                    <node concept="LIFWc" id="4997106363361416681" role="lGtFl">
+      <node concept="2Sbjvc" id="1_U3nV3$Yxi" role="2ZfgGD">
+        <node concept="3clFbS" id="1_U3nV3$Yxj" role="2VODD2">
+          <node concept="3clFbF" id="4lpisbWZY4w" role="3cqZAp">
+            <node concept="2OqwBi" id="4lpisbWZY4y" role="3clFbG">
+              <node concept="2Sf5sV" id="4lpisbWZY4x" role="2Oq$k0" />
+              <node concept="HtI8k" id="4lpisbWZY4A" role="2OqNvi">
+                <node concept="2ShNRf" id="4lpisbX05nB" role="HtI8F">
+                  <node concept="2ShaUh" id="4lpisbX05nC" role="2ShVmc">
+                    <node concept="LIFWc" id="4lpisbX05nD" role="lGtFl">
                       <property role="ZRATv" value="true" />
                       <property role="OXtK3" value="true" />
                       <property role="p6zMq" value="0" />
@@ -134,7 +134,7 @@
       </node>
     </node>
   </node>
-  <node concept="2XOHcx" id="5097124989039381425">
+  <node concept="2XOHcx" id="4qWC2JVtoIL">
     <property role="2XOHcw" value="${mps_home}" />
   </node>
 </model>

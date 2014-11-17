@@ -16,8 +16,8 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -33,36 +33,36 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="8483375838963818252">
+  <node concept="1TIwiD" id="7mV0m3L$tWc">
     <property role="TrG5h" value="ShowRepositoryCommand" />
     <property role="34LRSv" value="#show repository" />
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <reference role="1TJDcQ" target="eynw.1769790395579407461" resolve="InterpretedCommand" />
-    <node concept="PrWs8" id="7820875636624659282" role="PzmwI">
+    <node concept="PrWs8" id="6M9lfhDxhdi" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="8483375838963817777">
+  <node concept="1TIwiD" id="7mV0m3L$tOL">
     <property role="TrG5h" value="ReloadClassesCommand" />
     <property role="34LRSv" value="#reloadClasses" />
     <reference role="1TJDcQ" target="eynw.1769790395579407461" resolve="InterpretedCommand" />
   </node>
-  <node concept="1TIwiD" id="8829647120617316889">
+  <node concept="1TIwiD" id="7E9dkpksy8p">
     <property role="TrG5h" value="InternalMode" />
     <property role="34LRSv" value="#internalMode" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="PrWs8" id="748410583119698876" role="PzmwI">
+    <node concept="PrWs8" id="DySRn8ZxIW" role="PzmwI">
       <reference role="PrY4T" target="3xdn.7006261637496548496" resolve="ConsoleExpression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5582028874770305469">
+  <node concept="1TIwiD" id="4PRmqZeE56X">
     <property role="TrG5h" value="ConsoleModelExpression" />
     <property role="34LRSv" value="#consoleModel" />
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <reference role="1TJDcQ" target="3xdn.4307205004131544317" resolve="QueryExpression" />
-    <node concept="PrWs8" id="7185170375692959306" role="PzmwI">
+    <node concept="PrWs8" id="6eQQAdlPFTa" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>

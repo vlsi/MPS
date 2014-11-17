@@ -16,8 +16,8 @@
       </concept>
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
-      <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu!B">
-        <reference id="8401916545537438643" name="kind" index="1dDu!A" />
+      <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
+        <reference id="8401916545537438643" name="kind" index="1dDu$A" />
       </concept>
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
@@ -29,23 +29,23 @@
       </concept>
     </language>
   </registry>
-  <node concept="1M2fIO" id="3315811491560252601">
+  <node concept="1M2fIO" id="2S48fJgAQiT">
     <property role="3GE5qa" value="RefTest" />
     <reference role="1M2myG" target="tpm0.3315811491560119815" resolve="RefTestParamRef" />
-    <node concept="1N5Pfh" id="3315811491560252602" role="1Mr941">
+    <node concept="1N5Pfh" id="2S48fJgAQiU" role="1Mr941">
       <reference role="1N5Vy1" target="tpm0.3315811491560119816" />
-      <node concept="1dDu!B" id="3315811491560252603" role="1N6uqs">
-        <reference role="1dDu!A" target="tpm0.3315811491560119808" resolve="RefTestParam" />
+      <node concept="1dDu$B" id="2S48fJgAQiV" role="1N6uqs">
+        <reference role="1dDu$A" target="tpm0.3315811491560119808" resolve="RefTestParam" />
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="5934496548013477090">
+  <node concept="1M2fIO" id="59r$iG980Ny">
     <property role="3GE5qa" value="RefTest" />
     <reference role="1M2myG" target="tpm0.3315811491560119817" resolve="RefTestMethodCall" />
-    <node concept="1N5Pfh" id="5934496548013477091" role="1Mr941">
+    <node concept="1N5Pfh" id="59r$iG980Nz" role="1Mr941">
       <reference role="1N5Vy1" target="tpm0.3315811491560119818" />
-      <node concept="1dDu!B" id="5934496548013477092" role="1N6uqs">
-        <reference role="1dDu!A" target="tpm0.3315811491560119806" resolve="RefTestMethod" />
+      <node concept="1dDu$B" id="59r$iG980N$" role="1N6uqs">
+        <reference role="1dDu$A" target="tpm0.3315811491560119806" resolve="RefTestMethod" />
       </node>
     </node>
   </node>

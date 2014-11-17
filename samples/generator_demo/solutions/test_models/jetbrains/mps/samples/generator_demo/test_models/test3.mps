@@ -11,7 +11,7 @@
   </imports>
   <registry>
     <language id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML">
-      <concept id="1225239603385" name="jetbrains.mps.sampleXML.structure.Element" flags="ng" index="15YaA!">
+      <concept id="1225239603385" name="jetbrains.mps.sampleXML.structure.Element" flags="ng" index="15YaA$">
         <child id="1225239603386" name="attribute" index="15YaAB" />
       </concept>
       <concept id="1225239603382" name="jetbrains.mps.sampleXML.structure.Document" flags="ng" index="15YaAF">
@@ -27,29 +27,29 @@
       </concept>
     </language>
   </registry>
-  <node concept="15YaAF" id="1228530125337">
+  <node concept="15YaAF" id="hSa6wCp">
     <property role="TrG5h" value="Button" />
-    <node concept="15YaA!" id="1228530125338" role="15YaA_">
+    <node concept="15YaA$" id="hSa6wCq" role="15YaA_">
       <property role="TrG5h" value="button" />
-      <node concept="15YaAW" id="1228530262748" role="15YaAB">
+      <node concept="15YaAW" id="hSa72bs" role="15YaAB">
         <property role="TrG5h" value="text" />
         <property role="15YaAY" value="Hello" />
       </node>
-      <node concept="15YaAW" id="1228532516124" role="15YaAB">
+      <node concept="15YaAW" id="hSafCks" role="15YaAB">
         <property role="TrG5h" value="enabled" />
         <property role="15YaAY" value="false" />
       </node>
     </node>
   </node>
-  <node concept="15YaAF" id="1228530125339">
+  <node concept="15YaAF" id="hSa6wCr">
     <property role="TrG5h" value="Label" />
-    <node concept="15YaA!" id="1228530125340" role="15YaA_">
+    <node concept="15YaA$" id="hSa6wCs" role="15YaA_">
       <property role="TrG5h" value="label" />
-      <node concept="15YaAW" id="1228530285546" role="15YaAB">
+      <node concept="15YaAW" id="hSa77JE" role="15YaAB">
         <property role="TrG5h" value="text" />
         <property role="15YaAY" value="world!" />
       </node>
-      <node concept="15YaAW" id="1228532861376" role="15YaAB">
+      <node concept="15YaAW" id="hSagWB0" role="15YaAB">
         <property role="TrG5h" value="background" />
         <property role="15YaAY" value="orange" />
       </node>

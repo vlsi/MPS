@@ -25,8 +25,8 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
@@ -54,109 +54,109 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="785823818609017605">
+  <node concept="1TIwiD" id="FBND_WeOc5">
     <property role="TrG5h" value="Figure" />
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
   </node>
-  <node concept="1TIwiD" id="2178507174411801538">
+  <node concept="1TIwiD" id="1SVBbIvt9f2">
     <property role="TrG5h" value="ExternalViewFigure" />
     <property role="19KtqR" value="true" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="2178507174411801664" role="1TKVEi">
+    <node concept="1TJgyj" id="1SVBbIvt9h0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="0..n" />
       <property role="20kJfa" value="fields" />
       <reference role="20lvS9" target="2178507174411801606" resolve="ExternalViewFigureParameter" />
     </node>
-    <node concept="1TJgyj" id="2178507174411801591" role="1TKVEi">
+    <node concept="1TJgyj" id="1SVBbIvt9fR" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="classifier" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068390468198" resolve="ClassConcept" />
     </node>
-    <node concept="PrWs8" id="1094405431463463150" role="PzmwI">
+    <node concept="PrWs8" id="WK6Z46COzI" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="PrWs8" id="5422656561918019412" role="PzmwI">
+    <node concept="PrWs8" id="4H19mAw48tk" role="PzmwI">
       <reference role="PrY4T" target="tpck.3734116213129792499" resolve="ScopeProvider" />
     </node>
   </node>
-  <node concept="1TIwiD" id="2178507174411801606">
+  <node concept="1TIwiD" id="1SVBbIvt9g6">
     <property role="TrG5h" value="ExternalViewFigureParameter" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="2178507174411801649" role="1TKVEi">
+    <node concept="1TJgyj" id="1SVBbIvt9gL" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="fieldDeclaration" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068390468200" resolve="FieldDeclaration" />
     </node>
-    <node concept="PrWs8" id="1094405431463513113" role="PzmwI">
+    <node concept="PrWs8" id="WK6Z46D0Kp" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="PrWs8" id="342110547581235602" role="PzmwI">
+    <node concept="PrWs8" id="iZqVFYvB6i" role="PzmwI">
       <reference role="PrY4T" target="342110547581235541" resolve="FigureParameter" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5422656561926747556">
+  <node concept="1TIwiD" id="4H19mAw_rm$">
     <property role="TrG5h" value="FigureAttribute" />
     <property role="34LRSv" value="@Figure" />
     <reference role="1TJDcQ" target="tpck.3364660638048049748" resolve="NodeAttribute" />
-    <node concept="M6xJ_" id="5422656561926747673" role="lGtFl">
+    <node concept="M6xJ_" id="4H19mAw_rop" role="lGtFl">
       <property role="Hh88m" value="figure" />
-      <node concept="tn0Fv" id="5422656561926747686" role="HhnKV">
+      <node concept="tn0Fv" id="4H19mAw_roA" role="HhnKV">
         <property role="tnX3d" value="false" />
       </node>
-      <node concept="trNpa" id="5422656561926747712" role="EQaZv">
+      <node concept="trNpa" id="4H19mAw_rp0" role="EQaZv">
         <reference role="trN6q" target="tpee.1068390468198" resolve="ClassConcept" />
       </node>
     </node>
   </node>
-  <node concept="1TIwiD" id="5422656561929884641">
+  <node concept="1TIwiD" id="4H19mAwLpfx">
     <property role="TrG5h" value="FigureParameterAttribute" />
-    <property role="R5!K7" value="true" />
+    <property role="R5$K7" value="true" />
     <reference role="1TJDcQ" target="tpck.3364660638048049748" resolve="NodeAttribute" />
-    <node concept="M6xJ_" id="5422656561929884670" role="lGtFl">
-      <node concept="tn0Fv" id="5422656561929922318" role="HhnKV">
+    <node concept="M6xJ_" id="4H19mAwLpfY" role="lGtFl">
+      <node concept="tn0Fv" id="4H19mAwLyse" role="HhnKV">
         <property role="tnX3d" value="false" />
       </node>
     </node>
-    <node concept="PrWs8" id="342110547581235570" role="PzmwI">
+    <node concept="PrWs8" id="iZqVFYvB5M" role="PzmwI">
       <reference role="PrY4T" target="342110547581235541" resolve="FigureParameter" />
     </node>
   </node>
-  <node concept="1TIwiD" id="2084788800270473556">
+  <node concept="1TIwiD" id="1NIE5SZPp_k">
     <property role="TrG5h" value="FigureParameterAttributeMethod" />
     <reference role="1TJDcQ" target="5422656561929884641" resolve="FigureParameterAttribute" />
-    <node concept="M6xJ_" id="2084788800270509543" role="lGtFl">
+    <node concept="M6xJ_" id="1NIE5SZPynB" role="lGtFl">
       <property role="Hh88m" value="figureParameterMethod" />
-      <node concept="trNpa" id="2084788800270510719" role="EQaZv">
+      <node concept="trNpa" id="1NIE5SZPyDZ" role="EQaZv">
         <reference role="trN6q" target="tpee.1068580123165" resolve="InstanceMethodDeclaration" />
       </node>
     </node>
   </node>
-  <node concept="1TIwiD" id="2084788800270473590">
+  <node concept="1TIwiD" id="1NIE5SZPp_Q">
     <property role="TrG5h" value="FigureParameterAttributeField" />
     <reference role="1TJDcQ" target="5422656561929884641" resolve="FigureParameterAttribute" />
-    <node concept="M6xJ_" id="2084788800270473591" role="lGtFl">
+    <node concept="M6xJ_" id="1NIE5SZPp_R" role="lGtFl">
       <property role="Hh88m" value="figureParameterField" />
-      <node concept="trNpa" id="2084788800270473593" role="EQaZv">
+      <node concept="trNpa" id="1NIE5SZPp_T" role="EQaZv">
         <reference role="trN6q" target="tpee.1068390468200" resolve="FieldDeclaration" />
       </node>
     </node>
   </node>
-  <node concept="1TIwiD" id="7319867929567295724">
+  <node concept="1TIwiD" id="6mlphA0CvzG">
     <property role="TrG5h" value="FigureParameterAttributeViewProperty" />
     <reference role="1TJDcQ" target="5422656561929884641" resolve="FigureParameterAttribute" />
-    <node concept="M6xJ_" id="7319867929567394587" role="lGtFl">
+    <node concept="M6xJ_" id="6mlphA0CRGr" role="lGtFl">
       <property role="Hh88m" value="figureParameterPropertySpecification" />
-      <node concept="trNpa" id="7319867929567417477" role="EQaZv">
+      <node concept="trNpa" id="6mlphA0CXi5" role="EQaZv">
         <reference role="trN6q" target="tpee.1070462154015" resolve="StaticFieldDeclaration" />
       </node>
     </node>
   </node>
-  <node concept="PlHQZ" id="342110547581235541">
+  <node concept="PlHQZ" id="iZqVFYvB5l">
     <property role="TrG5h" value="FigureParameter" />
   </node>
 </model>

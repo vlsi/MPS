@@ -22,8 +22,8 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -51,70 +51,70 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="1167227138527">
+  <node concept="1TIwiD" id="gZ4ab7v">
     <property role="TrG5h" value="LogStatement" />
     <property role="2_RsDV" value="none" />
     <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
-    <node concept="1TJgyj" id="1167227463056" role="1TKVEi">
+    <node concept="1TJgyj" id="gZ4bqmg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="logExpression" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1167227561449" role="1TKVEi">
+    <node concept="1TJgyj" id="gZ4bMnD" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="exception" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyi" id="1167228628751" role="1TKVEl">
+    <node concept="1TJgyi" id="gZ4fQWf" role="1TKVEl">
       <property role="TrG5h" value="hasException" />
       <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
     </node>
-    <node concept="1TJgyi" id="1167245565795" role="1TKVEl">
+    <node concept="1TJgyi" id="gZ5gtXz" role="1TKVEl">
       <property role="TrG5h" value="severity" />
       <reference role="AX2Wp" target="1167245107475" resolve="Severity" />
     </node>
-    <node concept="PrWs8" id="1262430001741523455" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvAmBZ" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="AxPO7" id="1167245107475">
+  <node concept="AxPO7" id="gZ5eI4j">
     <property role="TrG5h" value="Severity" />
     <reference role="M4eZT" target="tpck.1082983041843" resolve="string" />
     <reference role="Qgau1" target="1167245288119" resolve="debug" />
-    <node concept="M4N5e" id="1167245107476" role="M5hS2">
+    <node concept="M4N5e" id="gZ5eI4k" role="M5hS2">
       <property role="1uS6qv" value="fatal" />
       <property role="1uS6qo" value="fatal" />
     </node>
-    <node concept="M4N5e" id="1167245252932" role="M5hS2">
+    <node concept="M4N5e" id="gZ5fh_4" role="M5hS2">
       <property role="1uS6qv" value="error" />
       <property role="1uS6qo" value="error" />
     </node>
-    <node concept="M4N5e" id="1167245264682" role="M5hS2">
+    <node concept="M4N5e" id="gZ5fksE" role="M5hS2">
       <property role="1uS6qv" value="warn" />
       <property role="1uS6qo" value="warn" />
     </node>
-    <node concept="M4N5e" id="1167245288119" role="M5hS2">
+    <node concept="M4N5e" id="gZ5fqaR" role="M5hS2">
       <property role="1uS6qv" value="debug" />
       <property role="1uS6qo" value="debug" />
     </node>
-    <node concept="M4N5e" id="1169477928086" role="M5hS2">
+    <node concept="M4N5e" id="h1akgim" role="M5hS2">
       <property role="1uS6qv" value="info" />
       <property role="1uS6qo" value="info" />
     </node>
-    <node concept="M4N5e" id="1167245293010" role="M5hS2">
+    <node concept="M4N5e" id="gZ5frni" role="M5hS2">
       <property role="1uS6qv" value="trace" />
       <property role="1uS6qo" value="trace" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1168401810208">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="h0abccw">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="PrintStatement" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="print" />
     <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
-    <node concept="1TJgyj" id="1168401864803" role="1TKVEi">
+    <node concept="1TJgyj" id="h0abpxz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="textExpression" />
       <property role="20lbJX" value="0..n" />

@@ -21,7 +21,7 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
-        <child id="1169127546356" name="extends" index="PrDN!" />
+        <child id="1169127546356" name="extends" index="PrDN$" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -45,51 +45,51 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="1734392475491228778">
+  <node concept="1TIwiD" id="1whNchEKXLE">
     <property role="TrG5h" value="Execute" />
     <property role="34LRSv" value="#exec" />
     <property role="R4oN_" value="execute a script" />
     <reference role="1TJDcQ" target="eynw.1769790395579407473" resolve="GeneratedCommand" />
-    <node concept="1TJgyj" id="1734392475491228779" role="1TKVEi">
+    <node concept="1TJgyj" id="1whNchEKXLF" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="script" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="1734392475491235545" resolve="AbstractConsoleScript" />
     </node>
   </node>
-  <node concept="PlHQZ" id="1734392475491235545">
+  <node concept="PlHQZ" id="1whNchEKZrp">
     <property role="TrG5h" value="AbstractConsoleScript" />
-    <node concept="PrWs8" id="1734392475491235546" role="PrDN!">
+    <node concept="PrWs8" id="1whNchEKZrq" role="PrDN$">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1734392475491235550">
+  <node concept="1TIwiD" id="1whNchEKZru">
     <property role="TrG5h" value="ConsoleScript" />
     <property role="19KtqR" value="true" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="1734392475491235551" role="1TKVEi">
+    <node concept="1TJgyj" id="1whNchEKZrv" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="command" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="eynw.6854397602732214175" resolve="Command" />
     </node>
-    <node concept="PrWs8" id="1734392475491235552" role="PzmwI">
+    <node concept="PrWs8" id="1whNchEKZrw" role="PzmwI">
       <reference role="PrY4T" target="1734392475491235545" resolve="AbstractConsoleScript" />
     </node>
   </node>
-  <node concept="1TIwiD" id="2377091791517030718">
+  <node concept="1TIwiD" id="23X86fnRD$Y">
     <property role="TrG5h" value="RefactorOperation" />
     <property role="34LRSv" value="refactor" />
     <property role="R4oN_" value="perform changes on selected nodes" />
     <reference role="1TJDcQ" target="tp2q.1204796164442" resolve="InternalSequenceOperation" />
-    <node concept="1TJgyj" id="2377091791517030782" role="1TKVEi">
+    <node concept="1TJgyj" id="23X86fnRD_Y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="refactoring" />
       <property role="20lbJX" value="1" />
       <reference role="20ksaX" target="tp2q.1204796294226" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="5932042262275682987" role="PzmwI">
+    <node concept="PrWs8" id="59iQg8ryZaF" role="PzmwI">
       <reference role="PrY4T" target="3xdn.5932042262275648515" resolve="ConsoleOperation" />
     </node>
   </node>

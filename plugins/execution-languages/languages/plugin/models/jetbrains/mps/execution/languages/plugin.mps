@@ -37,7 +37,7 @@
       </concept>
     </language>
   </registry>
-  <node concept="9BnSX" id="6863272677075182370">
+  <node concept="9BnSX" id="5WZfybTHucy">
     <property role="9BnSZ" value="jetbrains.mps.execution.languages" />
     <property role="TrG5h" value="Execution Languages" />
     <property role="9BnSL" value="Languages and libraries for implementing execution configurations for MPS" />
@@ -48,16 +48,16 @@
     <property role="2PJ1tZ" value="true" />
     <property role="3FCvg6" value="true" />
     <property role="1qHB85" value="/MPS_16.png" />
-    <node concept="2Tc6Op" id="375000982841836968" role="2Tc6Ou">
+    <node concept="2Tc6Op" id="kOhmwOHsmC" role="2Tc6Ou">
       <property role="2Tc6Oq" value="jetbrains.mps.debugger.java" />
     </node>
-    <node concept="2Tc6Op" id="375000982841836970" role="2Tc6Ou">
+    <node concept="2Tc6Op" id="kOhmwOHsmE" role="2Tc6Ou">
       <property role="2Tc6Oq" value="jetbrains.mps.debugger.api" />
     </node>
-    <node concept="2Tc6Op" id="4606196714809431209" role="2Tc6Ou">
+    <node concept="2Tc6Op" id="3ZGvS7BMpiD" role="2Tc6Ou">
       <property role="2Tc6Oq" value="jetbrains.mps.execution-api" />
     </node>
   </node>
-  <node concept="2DaZZR" id="7162597690968035968" />
+  <node concept="2DaZZR" id="6dAEaqvbHa0" />
 </model>
 

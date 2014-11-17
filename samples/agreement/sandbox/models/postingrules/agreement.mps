@@ -77,123 +77,123 @@
       <concept id="1116445695828" name="jetbrains.mps.samples.agreementLanguage.structure.Date_Past" flags="ng" index="3LmlTn" />
     </language>
   </registry>
-  <node concept="3rTTFW" id="1112303557868">
+  <node concept="3rTTFW" id="gbUtlNG">
     <property role="TrG5h" value="Regular" />
-    <node concept="3rUf6m" id="1112383986387" role="3rUq8J">
+    <node concept="3rUf6m" id="gbZg9Fj" role="3rUq8J">
       <reference role="3s4h4A" target="tpnb.1112316681746" resolve="USAGE" />
-      <node concept="3s8lnl" id="1112384017937" role="3s7ZqP">
-        <node concept="3s8V7o" id="1112384017938" role="3rZEZz">
+      <node concept="3s8lnl" id="gbZghoh" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZghoi" role="3rZEZz">
           <reference role="3sa9MU" target="tpnb.1112315990977" resolve="base-usage" />
-          <node concept="3Zh43v" id="1112384394412" role="3rwfVG">
-            <node concept="3EE14I" id="1112384405975" role="3rxIiL">
+          <node concept="3Zh43v" id="gbZhHiG" role="3rwfVG">
+            <node concept="3EE14I" id="gbZhK7n" role="3rxIiL">
               <reference role="3EE5kD" target="1112383765038" resolve="BASE_RATE" />
             </node>
-            <node concept="3EyzOP" id="1112384408586" role="3rxQxD">
+            <node concept="3EyzOP" id="gbZhKKa" role="3rxQxD">
               <reference role="3EyEe1" target="tpnb.1112316685513" resolve="usage" />
             </node>
           </node>
         </node>
-        <node concept="3rZoNf" id="1112383994545" role="3rZkH9">
+        <node concept="3rZoNf" id="gbZgbEL" role="3rZkH9">
           <property role="3rZtGF" value="1999" />
           <property role="3rZvIh" value="10" />
           <property role="3rZvQP" value="01" />
         </node>
       </node>
     </node>
-    <node concept="3rUf6m" id="1112384423559" role="3rUq8J">
+    <node concept="3rUf6m" id="gbZhOq7" role="3rUq8J">
       <reference role="3s4h4A" target="tpnb.1112316021402" resolve="SERVICE CALL" />
-      <node concept="3s8lnl" id="1112384647065" role="3s7ZqP">
-        <node concept="3s8V7o" id="1112384488572" role="3rZEZz">
+      <node concept="3s8lnl" id="gbZiEYp" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZi4hW" role="3rZEZz">
           <reference role="3sa9MU" target="tpnb.1112316007244" resolve="service" />
-          <node concept="3rCauv" id="1112384458969" role="3rwfVG">
-            <node concept="3Zh43v" id="1112384462940" role="3rxIiL">
-              <node concept="3EyzOP" id="1112384464879" role="3rxIiL">
+          <node concept="3rCauv" id="gbZhX3p" role="3rwfVG">
+            <node concept="3Zh43v" id="gbZhY1s" role="3rxIiL">
+              <node concept="3EyzOP" id="gbZhYvJ" role="3rxIiL">
                 <reference role="3EyEe1" target="tpnb.1112316252581" resolve="fee" />
               </node>
-              <node concept="3ryUCY" id="1112384472881" role="3rxQxD">
+              <node concept="3ryUCY" id="gbZi0sL" role="3rxQxD">
                 <property role="NirYL" value="0.5" />
               </node>
             </node>
-            <node concept="3rYiDE" id="1112384483477" role="3rxQxD">
+            <node concept="3rYiDE" id="gbZi32l" role="3rxQxD">
               <property role="3s35g1" value="USD" />
-              <node concept="3ryUCY" id="1112384483476" role="3s36Cv">
+              <node concept="3ryUCY" id="gbZi32k" role="3s36Cv">
                 <property role="NirYL" value="10.0" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3rZoNf" id="1112384434482" role="3rZkH9">
+        <node concept="3rZoNf" id="gbZhR4M" role="3rZkH9">
           <property role="3rZtGF" value="1999" />
           <property role="3rZvIh" value="10" />
           <property role="3rZvQP" value="01" />
         </node>
       </node>
-      <node concept="3s8lnl" id="1112384647066" role="3s7ZqP">
-        <node concept="3s8V7o" id="1112384560413" role="3rZEZz">
+      <node concept="3s8lnl" id="gbZiEYq" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZilOt" role="3rZEZz">
           <reference role="3sa9MU" target="tpnb.1112316007244" resolve="service" />
-          <node concept="3rCauv" id="1112384540389" role="3rwfVG">
-            <node concept="3Zh43v" id="1112384543203" role="3rxIiL">
-              <node concept="3EyzOP" id="1112384548298" role="3rxIiL">
+          <node concept="3rCauv" id="gbZigV_" role="3rwfVG">
+            <node concept="3Zh43v" id="gbZihBz" role="3rxIiL">
+              <node concept="3EyzOP" id="gbZiiRa" role="3rxIiL">
                 <reference role="3EyEe1" target="tpnb.1112316252581" resolve="fee" />
               </node>
-              <node concept="3ryUCY" id="1112384551659" role="3rxQxD">
+              <node concept="3ryUCY" id="gbZijFF" role="3rxQxD">
                 <property role="NirYL" value="0.5" />
               </node>
             </node>
-            <node concept="3rYiDE" id="1112384556772" role="3rxQxD">
+            <node concept="3rYiDE" id="gbZikV$" role="3rxQxD">
               <property role="3s35g1" value="USD" />
-              <node concept="3ryUCY" id="1112384556771" role="3s36Cv">
+              <node concept="3ryUCY" id="gbZikVz" role="3s36Cv">
                 <property role="NirYL" value="15.0" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3rZoNf" id="1112384528448" role="3rZkH9">
+        <node concept="3rZoNf" id="gbZie10" role="3rZkH9">
           <property role="3rZtGF" value="1999" />
           <property role="3rZvIh" value="12" />
           <property role="3rZvQP" value="01" />
         </node>
       </node>
     </node>
-    <node concept="3rUf6m" id="1112384607478" role="3rUq8J">
+    <node concept="3rUf6m" id="gbZixjQ" role="3rUq8J">
       <property role="3GIgXV" value="false" />
       <reference role="3s4h4A" target="tpnb.1112316644479" resolve="TAX" />
-      <node concept="3s8lnl" id="1112384647067" role="3s7ZqP">
-        <node concept="3s8V7o" id="1112384638486" role="3rZEZz">
+      <node concept="3s8lnl" id="gbZiEYr" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZiCSm" role="3rZEZz">
           <reference role="3sa9MU" target="tpnb.1112316013167" resolve="tax" />
-          <node concept="3Zh43v" id="1112384627513" role="3rwfVG">
-            <node concept="3EyzOP" id="1112384629280" role="3rxIiL">
+          <node concept="3Zh43v" id="gbZiAcT" role="3rwfVG">
+            <node concept="3EyzOP" id="gbZiACw" role="3rxIiL">
               <reference role="3EyEe1" target="tpnb.1112316673589" resolve="fee" />
             </node>
-            <node concept="3ryUCY" id="1112384632188" role="3rxQxD">
+            <node concept="3ryUCY" id="gbZiBlW" role="3rxQxD">
               <property role="NirYL" value="0.055" />
             </node>
           </node>
         </node>
-        <node concept="3rZoNf" id="1112384610291" role="3rZkH9">
+        <node concept="3rZoNf" id="gbZixZN" role="3rZkH9">
           <property role="3rZtGF" value="1999" />
           <property role="3rZvIh" value="10" />
           <property role="3rZvQP" value="01" />
         </node>
       </node>
     </node>
-    <node concept="3rUaCc" id="1112383765038" role="3rUlpv">
+    <node concept="3rUaCc" id="gbZfjCI" role="3rUlpv">
       <property role="TrG5h" value="BASE_RATE" />
-      <node concept="3rZSLJ" id="1112383882932" role="3rXftW">
-        <node concept="3rYiDE" id="1112383882933" role="3rZEZz">
-          <node concept="3ryUCY" id="1112383772351" role="3s36Cv">
+      <node concept="3rZSLJ" id="gbZfKqO" role="3rXftW">
+        <node concept="3rYiDE" id="gbZfKqP" role="3rZEZz">
+          <node concept="3ryUCY" id="gbZflqZ" role="3s36Cv">
             <property role="NirYL" value="10.0" />
           </node>
         </node>
-        <node concept="3LmlTn" id="1116446878604" role="3rZkH9" />
+        <node concept="3LmlTn" id="gfLqQIc" role="3rZkH9" />
       </node>
-      <node concept="3rZSLJ" id="1112383979448" role="3rXftW">
-        <node concept="3rYiDE" id="1112383979449" role="3rZEZz">
-          <node concept="3ryUCY" id="1112383963275" role="3s36Cv">
+      <node concept="3rZSLJ" id="gbZg7YS" role="3rXftW">
+        <node concept="3rYiDE" id="gbZg7YT" role="3rZEZz">
+          <node concept="3ryUCY" id="gbZg42b" role="3s36Cv">
             <property role="NirYL" value="12.0" />
           </node>
         </node>
-        <node concept="3rZoNf" id="1112383954446" role="3rZkH9">
+        <node concept="3rZoNf" id="gbZg1Se" role="3rZkH9">
           <property role="3rZtGF" value="1999" />
           <property role="3rZvIh" value="12" />
           <property role="3rZvQP" value="01" />
@@ -201,129 +201,129 @@
       </node>
     </node>
   </node>
-  <node concept="3rTTFW" id="1112304761925">
+  <node concept="3rTTFW" id="gbUxVL5">
     <property role="TrG5h" value="LowPay" />
-    <node concept="3rUf6m" id="1112393068783" role="3rUq8J">
+    <node concept="3rUf6m" id="gbZMN3J" role="3rUq8J">
       <reference role="3s4h4A" target="tpnb.1112316681746" resolve="USAGE" />
-      <node concept="3s8lnl" id="1112393265148" role="3s7ZqP">
-        <node concept="3s8V7o" id="1112393120898" role="3rZEZz">
+      <node concept="3s8lnl" id="gbZNyZW" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZMZM2" role="3rZEZz">
           <reference role="3sa9MU" target="tpnb.1112315990977" resolve="base-usage" />
-          <node concept="3rzkeq" id="1112393084582" role="3rwfVG">
-            <node concept="3Zh43v" id="1112393099763" role="3rzzea">
-              <node concept="3EE14I" id="1112407052649" role="3rxIiL">
+          <node concept="3rzkeq" id="gbZMQUA" role="3rwfVG">
+            <node concept="3Zh43v" id="gbZMUBN" role="3rzzea">
+              <node concept="3EE14I" id="gc0C95D" role="3rxIiL">
                 <reference role="3EE5kD" target="1112392957192" resolve="BASE_RATE" />
               </node>
-              <node concept="3EyzOP" id="1112393104282" role="3rxQxD">
+              <node concept="3EyzOP" id="gbZMVIq" role="3rxQxD">
                 <reference role="3EyEe1" target="tpnb.1112316685513" resolve="usage" />
               </node>
             </node>
-            <node concept="3Zh43v" id="1112393106926" role="3rzF0H">
-              <node concept="3EE14I" id="1112407055697" role="3rxIiL">
+            <node concept="3Zh43v" id="gbZMWnI" role="3rzF0H">
+              <node concept="3EE14I" id="gc0C9Ph" role="3rxIiL">
                 <reference role="3EE5kD" target="1112393006024" resolve="REDUCED_RATE" />
               </node>
-              <node concept="3EyzOP" id="1112393114163" role="3rxQxD">
+              <node concept="3EyzOP" id="gbZMY8N" role="3rxQxD">
                 <reference role="3EyEe1" target="tpnb.1112316685513" resolve="usage" />
               </node>
             </node>
-            <node concept="0B_Zz" id="1112717731865" role="3rznCc">
-              <node concept="3EyzOP" id="1112717731270" role="3rxIiL">
+            <node concept="0B_Zz" id="gcj9iwp" role="3rznCc">
+              <node concept="3EyzOP" id="gcj9in6" role="3rxIiL">
                 <reference role="3EyEe1" target="tpnb.1112316685513" resolve="usage" />
               </node>
-              <node concept="3EE14I" id="1112717733617" role="3rxQxD">
+              <node concept="3EE14I" id="gcj9iVL" role="3rxQxD">
                 <reference role="3EE5kD" target="1112393034216" resolve="CAP" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3rZoNf" id="1112393071752" role="3rZkH9">
+        <node concept="3rZoNf" id="gbZMNM8" role="3rZkH9">
           <property role="3rZtGF" value="1999" />
           <property role="3rZvIh" value="10" />
           <property role="3rZvQP" value="01" />
         </node>
       </node>
     </node>
-    <node concept="3rUf6m" id="1112393126916" role="3rUq8J">
+    <node concept="3rUf6m" id="gbZN1g4" role="3rUq8J">
       <reference role="3s4h4A" target="tpnb.1112316021402" resolve="SERVICE CALL" />
-      <node concept="3s8lnl" id="1112393265149" role="3s7ZqP">
-        <node concept="3s8V7o" id="1112393162687" role="3rZEZz">
+      <node concept="3s8lnl" id="gbZNyZX" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZN9YZ" role="3rZEZz">
           <reference role="3sa9MU" target="tpnb.1112316007244" resolve="service" />
-          <node concept="3rYiDE" id="1112393154670" role="3rwfVG">
+          <node concept="3rYiDE" id="gbZN81I" role="3rwfVG">
             <property role="3s35g1" value="USD" />
-            <node concept="3ryUCY" id="1112393154669" role="3s36Cv">
+            <node concept="3ryUCY" id="gbZN81H" role="3s36Cv">
               <property role="NirYL" value="10.0" />
             </node>
           </node>
         </node>
-        <node concept="3rZoNf" id="1112393138448" role="3rZkH9">
+        <node concept="3rZoNf" id="gbZN44g" role="3rZkH9">
           <property role="3rZtGF" value="1999" />
           <property role="3rZvIh" value="10" />
           <property role="3rZvQP" value="01" />
         </node>
       </node>
     </node>
-    <node concept="3rUf6m" id="1112393222389" role="3rUq8J">
+    <node concept="3rUf6m" id="gbZNozP" role="3rUq8J">
       <property role="3GIgXV" value="false" />
       <reference role="3s4h4A" target="tpnb.1112316644479" resolve="TAX" />
-      <node concept="3s8lnl" id="1112393265151" role="3s7ZqP">
-        <node concept="3s8V7o" id="1112393255131" role="3rZEZz">
+      <node concept="3s8lnl" id="gbZNyZZ" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZNwzr" role="3rZEZz">
           <reference role="3sa9MU" target="tpnb.1112316013167" resolve="tax" />
-          <node concept="3Zh43v" id="1112393235456" role="3rwfVG">
-            <node concept="3EyzOP" id="1112393237535" role="3rxIiL">
+          <node concept="3Zh43v" id="gbZNrK0" role="3rwfVG">
+            <node concept="3EyzOP" id="gbZNsgv" role="3rxIiL">
               <reference role="3EyEe1" target="tpnb.1112316673589" resolve="fee" />
             </node>
-            <node concept="3ryUCY" id="1112393248818" role="3rxQxD">
+            <node concept="3ryUCY" id="gbZNv0M" role="3rxQxD">
               <property role="NirYL" value="0.055" />
             </node>
           </node>
         </node>
-        <node concept="3rZoNf" id="1112393225124" role="3rZkH9">
+        <node concept="3rZoNf" id="gbZNpe$" role="3rZkH9">
           <property role="3rZtGF" value="1999" />
           <property role="3rZvIh" value="10" />
           <property role="3rZvQP" value="01" />
         </node>
       </node>
     </node>
-    <node concept="3rUaCc" id="1112392957192" role="3rUlpv">
+    <node concept="3rUaCc" id="gbZMnO8" role="3rUlpv">
       <property role="TrG5h" value="BASE_RATE" />
-      <node concept="3rZSLJ" id="1112393265152" role="3rXftW">
-        <node concept="3rYiDE" id="1112393265153" role="3rZEZz">
-          <node concept="3ryUCY" id="1112392991085" role="3s36Cv">
+      <node concept="3rZSLJ" id="gbZNz00" role="3rXftW">
+        <node concept="3rYiDE" id="gbZNz01" role="3rZEZz">
+          <node concept="3ryUCY" id="gbZMw5H" role="3s36Cv">
             <property role="NirYL" value="10.0" />
           </node>
         </node>
-        <node concept="3LmlTn" id="1116446666034" role="3rZkH9" />
+        <node concept="3LmlTn" id="gfLq2OM" role="3rZkH9" />
       </node>
     </node>
-    <node concept="3rUaCc" id="1112393006024" role="3rUlpv">
+    <node concept="3rUaCc" id="gbZMzJ8" role="3rUlpv">
       <property role="TrG5h" value="REDUCED_RATE" />
-      <node concept="3rZSLJ" id="1112393265154" role="3rXftW">
-        <node concept="3rYiDE" id="1112393034215" role="3rZEZz">
-          <node concept="3ryUCY" id="1112393022197" role="3s36Cv">
+      <node concept="3rZSLJ" id="gbZNz02" role="3rXftW">
+        <node concept="3rYiDE" id="gbZMEBB" role="3rZEZz">
+          <node concept="3ryUCY" id="gbZMBFP" role="3s36Cv">
             <property role="NirYL" value="5.0" />
           </node>
         </node>
-        <node concept="3LmlTn" id="1116446834806" role="3rZkH9" />
+        <node concept="3LmlTn" id="gfLqG1Q" role="3rZkH9" />
       </node>
     </node>
-    <node concept="3rUaCc" id="1112393034216" role="3rUlpv">
+    <node concept="3rUaCc" id="gbZMEBC" role="3rUlpv">
       <property role="TrG5h" value="CAP" />
-      <node concept="3rZSLJ" id="1112393265155" role="3rXftW">
-        <node concept="3rYiDE" id="1112393052453" role="3rZEZz">
+      <node concept="3rZSLJ" id="gbZNz03" role="3rXftW">
+        <node concept="3rYiDE" id="gbZMJ4_" role="3rZEZz">
           <property role="3s35g1" value="KWH" />
-          <node concept="3ryUCY" id="1112393046749" role="3s36Cv">
+          <node concept="3ryUCY" id="gbZMHFt" role="3s36Cv">
             <property role="NirYL" value="50.0" />
           </node>
         </node>
-        <node concept="3LmlTn" id="1116446763488" role="3rZkH9" />
+        <node concept="3LmlTn" id="gfLqqBw" role="3rZkH9" />
       </node>
-      <node concept="3rZSLJ" id="1116446773943" role="3rXftW">
-        <node concept="3rYiDE" id="1116446773945" role="3rZEZz">
+      <node concept="3rZSLJ" id="gfLqtaR" role="3rXftW">
+        <node concept="3rYiDE" id="gfLqtaT" role="3rZEZz">
           <property role="3s35g1" value="KWH" />
-          <node concept="3ryUCY" id="1116446773946" role="3s36Cv">
+          <node concept="3ryUCY" id="gfLqtaU" role="3s36Cv">
             <property role="NirYL" value="60.0" />
           </node>
         </node>
-        <node concept="3rZoNf" id="1116446773944" role="3rZkH9">
+        <node concept="3rZoNf" id="gfLqtaS" role="3rZkH9">
           <property role="3rZtGF" value="1999" />
           <property role="3rZvIh" value="12" />
           <property role="3rZvQP" value="01" />

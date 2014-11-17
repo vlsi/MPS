@@ -37,26 +37,26 @@
       </concept>
     </language>
   </registry>
-  <node concept="yghi3" id="398731435597190701">
+  <node concept="yghi3" id="m8_23bzloH">
     <property role="TrG5h" value="module-tests" />
-    <node concept="ygXWA" id="6354776497041189990" role="yg1MB">
+    <node concept="ygXWA" id="5wKGSSl92LA" role="yg1MB">
       <reference role="ygXWD" target="tnlc.7306485738221408315" resolve="common" />
     </node>
-    <node concept="ygXWA" id="4005526075820146212" role="yg1MB">
+    <node concept="ygXWA" id="3umvbTBOJS$" role="yg1MB">
       <reference role="ygXWD" target="tnlc.7306485738221408314" resolve="java" />
     </node>
-    <node concept="ygXWA" id="4005526075820146219" role="yg1MB">
+    <node concept="ygXWA" id="3umvbTBOJSF" role="yg1MB">
       <reference role="ygXWD" target="zwni.398731435597190701" resolve="mps" />
     </node>
-    <node concept="2VaFvF" id="4005526075820145805" role="yghi5">
+    <node concept="2VaFvF" id="3umvbTBOJMd" role="yghi5">
       <property role="TrG5h" value="module-tests" />
-      <node concept="2VaxJe" id="4005526075820146280" role="2VaxJ6">
+      <node concept="2VaxJe" id="3umvbTBOJTC" role="2VaxJ6">
         <reference role="2VaxJf" target="tnlc.4701820937132277082" resolve="assemble" />
       </node>
     </node>
-    <node concept="3bMsLL" id="4005526075820146200" role="yghi5">
+    <node concept="3bMsLL" id="3umvbTBOJSo" role="yghi5">
       <reference role="3bMsLK" target="tnlc.7306485738221390885" resolve="test" />
-      <node concept="2VaxJe" id="4005526075820146206" role="3bNaKb">
+      <node concept="2VaxJe" id="3umvbTBOJSu" role="3bNaKb">
         <reference role="2VaxJf" target="4005526075820145805" resolve="module-tests" />
       </node>
     </node>

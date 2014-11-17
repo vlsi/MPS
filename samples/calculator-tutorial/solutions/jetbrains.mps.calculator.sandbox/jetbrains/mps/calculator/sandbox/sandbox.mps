@@ -41,32 +41,32 @@
       <concept id="1092119917967" name="jetbrains.mps.baseLanguage.structure.MulExpression" flags="nn" index="17qRlL" />
     </language>
   </registry>
-  <node concept="6YmkL" id="1241366278147">
+  <node concept="6YmkL" id="i47cz03">
     <property role="TrG5h" value="mySalary" />
-    <node concept="6ZlIT" id="1241366333402" role="6ZtTK">
-      <node concept="3cpWs3" id="1241366339999" role="70dZf">
-        <node concept="17qRlL" id="1241370253229" role="3uHU7w">
-          <node concept="3cmrfG" id="1241370253810" role="3uHU7w">
+    <node concept="6ZlIT" id="i47cKvq" role="6ZtTK">
+      <node concept="3cpWs3" id="i47cM6v" role="70dZf">
+        <node concept="17qRlL" id="i47rHuH" role="3uHU7w">
+          <node concept="3cmrfG" id="i47rHBM" role="3uHU7w">
             <property role="3cmrfH" value="5" />
           </node>
-          <node concept="70n5B" id="1241370253181" role="3uHU7B">
+          <node concept="70n5B" id="i47rHtX" role="3uHU7B">
             <reference role="70ssT" target="1241366331479" resolve="PHP Hours" />
           </node>
         </node>
-        <node concept="17qRlL" id="1241370251287" role="3uHU7B">
-          <node concept="3cmrfG" id="1241370251415" role="3uHU7w">
+        <node concept="17qRlL" id="i47rH0n" role="3uHU7B">
+          <node concept="3cmrfG" id="i47rH2n" role="3uHU7w">
             <property role="3cmrfH" value="10" />
           </node>
-          <node concept="70n5B" id="1241370251129" role="3uHU7B">
+          <node concept="70n5B" id="i47rGXT" role="3uHU7B">
             <reference role="70ssT" target="1241366328869" resolve="Java Hours" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="6Yz2K" id="1241366328869" role="6YMv9">
+    <node concept="6Yz2K" id="i47cJo_" role="6YMv9">
       <property role="TrG5h" value="Java Hours" />
     </node>
-    <node concept="6Yz2K" id="1241366331479" role="6YMv9">
+    <node concept="6Yz2K" id="i47cK1n" role="6YMv9">
       <property role="TrG5h" value="PHP Hours" />
     </node>
   </node>

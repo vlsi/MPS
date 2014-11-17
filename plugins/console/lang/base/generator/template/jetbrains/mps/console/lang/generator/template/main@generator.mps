@@ -26,7 +26,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -35,7 +35,7 @@
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
-        <property id="4276006055363816570" name="isSynchronized" index="od!2w" />
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
@@ -69,7 +69,7 @@
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
-      <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H!t8">
+      <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
       </concept>
@@ -77,7 +77,7 @@
         <reference id="1167514355421" name="template" index="3lhOvi" />
       </concept>
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
-        <property id="1184950341882" name="topPriorityGroup" index="3!yP7D" />
+        <property id="1184950341882" name="topPriorityGroup" index="3$yP7D" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
@@ -90,32 +90,32 @@
       </concept>
     </language>
   </registry>
-  <node concept="bUwia" id="5336086527852717845">
+  <node concept="bUwia" id="4Cd_ANvqasl">
     <property role="TrG5h" value="main" />
-    <property role="3!yP7D" value="true" />
-    <node concept="3lhOvk" id="5336086527852743314" role="3lj3bC">
+    <property role="3$yP7D" value="true" />
+    <node concept="3lhOvk" id="4Cd_ANvqgEi" role="3lj3bC">
       <property role="36QftV" value="true" />
       <reference role="30HIoZ" target="eynw.1583916890557930028" resolve="ConsoleRoot" />
       <reference role="3lhOvi" target="5336086527852743855" resolve="Main" />
     </node>
   </node>
-  <node concept="312cEu" id="5336086527852743855">
+  <node concept="312cEu" id="4Cd_ANvqgMJ">
     <property role="TrG5h" value="Main" />
-    <node concept="2YIFZL" id="1583916890562946184" role="jymVt">
+    <node concept="2YIFZL" id="1nVd0kvJIi8" role="jymVt">
       <property role="TrG5h" value="execute" />
-      <property role="od!2w" value="false" />
+      <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <node concept="29HgVG" id="1583916890562946185" role="lGtFl">
-        <node concept="3NFfHV" id="1583916890562946186" role="3NFExx">
-          <node concept="3clFbS" id="1583916890562946187" role="2VODD2">
-            <node concept="3clFbF" id="1583916890562946188" role="3cqZAp">
-              <node concept="2OqwBi" id="1583916890562946189" role="3clFbG">
-                <node concept="3TrEf2" id="1583916890562967953" role="2OqNvi">
+      <node concept="29HgVG" id="1nVd0kvJIi9" role="lGtFl">
+        <node concept="3NFfHV" id="1nVd0kvJIia" role="3NFExx">
+          <node concept="3clFbS" id="1nVd0kvJIib" role="2VODD2">
+            <node concept="3clFbF" id="1nVd0kvJIic" role="3cqZAp">
+              <node concept="2OqwBi" id="1nVd0kvJIid" role="3clFbG">
+                <node concept="3TrEf2" id="1nVd0kvJNAh" role="2OqNvi">
                   <reference role="3Tt5mk" target="eynw.351968380916615460" />
                 </node>
-                <node concept="2OqwBi" id="1583916890562961837" role="2Oq!k0">
-                  <node concept="30H73N" id="1583916890562946191" role="2Oq!k0" />
-                  <node concept="3TrEf2" id="1583916890562964396" role="2OqNvi">
+                <node concept="2OqwBi" id="1nVd0kvJM6H" role="2Oq$k0">
+                  <node concept="30H73N" id="1nVd0kvJIif" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="1nVd0kvJMIG" role="2OqNvi">
                     <reference role="3Tt5mk" target="eynw.1583916890557930417" />
                   </node>
                 </node>
@@ -124,18 +124,18 @@
           </node>
         </node>
       </node>
-      <node concept="3clFbS" id="1583916890562946192" role="3clF47" />
-      <node concept="3Tm1VV" id="1583916890562946193" role="1B3o_S" />
-      <node concept="3cqZAl" id="1583916890562946194" role="3clF45" />
-      <node concept="37vLTG" id="1583916890562946195" role="3clF46">
+      <node concept="3clFbS" id="1nVd0kvJIig" role="3clF47" />
+      <node concept="3Tm1VV" id="1nVd0kvJIih" role="1B3o_S" />
+      <node concept="3cqZAl" id="1nVd0kvJIii" role="3clF45" />
+      <node concept="37vLTG" id="1nVd0kvJIij" role="3clF46">
         <property role="TrG5h" value="console" />
-        <node concept="3uibUv" id="1583916890562946196" role="1tU5fm">
+        <node concept="3uibUv" id="1nVd0kvJIik" role="1tU5fm">
           <reference role="3uigEE" target="qgo0.6852607286009617748" resolve="ConsoleStream" />
         </node>
       </node>
     </node>
-    <node concept="3Tm1VV" id="5336086527852743856" role="1B3o_S" />
-    <node concept="n94m4" id="5336086527852743857" role="lGtFl">
+    <node concept="3Tm1VV" id="4Cd_ANvqgMK" role="1B3o_S" />
+    <node concept="n94m4" id="4Cd_ANvqgML" role="lGtFl">
       <reference role="n9lRv" target="eynw.1583916890557930028" resolve="ConsoleRoot" />
     </node>
   </node>

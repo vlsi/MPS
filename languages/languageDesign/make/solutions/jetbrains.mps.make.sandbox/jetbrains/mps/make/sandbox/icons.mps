@@ -55,29 +55,29 @@
       </concept>
     </language>
   </registry>
-  <node concept="sE7Ow" id="4176072814906255307">
+  <node concept="sE7Ow" id="3BOp1_KDMvb">
     <property role="TrG5h" value="DummyAction" />
     <property role="2uzpH1" value="Dummy" />
-    <node concept="tnohg" id="4176072814906255308" role="tncku">
-      <node concept="3clFbS" id="4176072814906255309" role="2VODD2" />
+    <node concept="tnohg" id="3BOp1_KDMvc" role="tncku">
+      <node concept="3clFbS" id="3BOp1_KDMvd" role="2VODD2" />
     </node>
-    <node concept="1QGGSu" id="4176072814906255310" role="3Uehp1">
+    <node concept="1QGGSu" id="3BOp1_KDMve" role="3Uehp1">
       <property role="1QGGTI" value="${mps_home}/workbench/mps-icons/source/mpsHome.png" />
     </node>
   </node>
-  <node concept="312cEu" id="3564595993453230683">
+  <node concept="312cEu" id="35RZiI5zRDr">
     <property role="TrG5h" value="Foo" />
-    <node concept="3Tm1VV" id="3564595993453230684" role="1B3o_S" />
-    <node concept="3clFbW" id="3564595993453230685" role="jymVt">
-      <node concept="3cqZAl" id="3564595993453230686" role="3clF45" />
-      <node concept="3Tm1VV" id="3564595993453230687" role="1B3o_S" />
-      <node concept="3clFbS" id="3564595993453230688" role="3clF47" />
+    <node concept="3Tm1VV" id="35RZiI5zRDs" role="1B3o_S" />
+    <node concept="3clFbW" id="35RZiI5zRDt" role="jymVt">
+      <node concept="3cqZAl" id="35RZiI5zRDu" role="3clF45" />
+      <node concept="3Tm1VV" id="35RZiI5zRDv" role="1B3o_S" />
+      <node concept="3clFbS" id="35RZiI5zRDw" role="3clF47" />
     </node>
-    <node concept="3clFb_" id="3489438476157002972" role="jymVt">
+    <node concept="3clFb_" id="31GYsT$UMjs" role="jymVt">
       <property role="TrG5h" value="bar" />
-      <node concept="3cqZAl" id="3489438476157002973" role="3clF45" />
-      <node concept="3Tm1VV" id="3489438476157002974" role="1B3o_S" />
-      <node concept="3clFbS" id="3489438476157002975" role="3clF47" />
+      <node concept="3cqZAl" id="31GYsT$UMjt" role="3clF45" />
+      <node concept="3Tm1VV" id="31GYsT$UMju" role="1B3o_S" />
+      <node concept="3clFbS" id="31GYsT$UMjv" role="3clF47" />
     </node>
   </node>
 </model>

@@ -22,7 +22,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
@@ -65,7 +65,7 @@
       <concept id="1177498227294" name="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" flags="in" index="Cnhdc" />
       <concept id="5979988948250981289" name="jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer" flags="nn" index="2fJWfE" />
       <concept id="1196433923911" name="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" flags="nn" index="2h1dTh">
-        <property id="1196433942569" name="text" index="2h1i!Z" />
+        <property id="1196433942569" name="text" index="2h1i$Z" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -80,27 +80,27 @@
       </concept>
     </language>
   </registry>
-  <node concept="3UOs0u" id="137546700134038987">
+  <node concept="3UOs0u" id="7CEvUTx3Rb">
     <property role="TrG5h" value="InsertPosition" />
-    <node concept="3UNGvq" id="137546700134038988" role="3UOs0v">
+    <node concept="3UNGvq" id="7CEvUTx3Rc" role="3UOs0v">
       <property role="7I3sp" value="left" />
       <reference role="3UNGvu" target="tp41.1206443583064" resolve="EmitStatement" />
-      <node concept="tYCnQ" id="137546700134038991" role="_1QTJ">
+      <node concept="tYCnQ" id="7CEvUTx3Rf" role="_1QTJ">
         <reference role="uz4UX" target="tp41.1206443583064" resolve="EmitStatement" />
-        <node concept="Cmt7Y" id="137546700134038993" role="uz6Si">
-          <node concept="Cnhdc" id="137546700134038994" role="Cncma">
-            <node concept="3clFbS" id="137546700134038995" role="2VODD2">
-              <node concept="3clFbF" id="137546700134039056" role="3cqZAp">
-                <node concept="37vLTI" id="137546700134039063" role="3clFbG">
-                  <node concept="2OqwBi" id="137546700134039058" role="37vLTJ">
-                    <node concept="Cj7Ep" id="137546700134039057" role="2Oq!k0" />
-                    <node concept="3TrEf2" id="137546700134039062" role="2OqNvi">
+        <node concept="Cmt7Y" id="7CEvUTx3Rh" role="uz6Si">
+          <node concept="Cnhdc" id="7CEvUTx3Ri" role="Cncma">
+            <node concept="3clFbS" id="7CEvUTx3Rj" role="2VODD2">
+              <node concept="3clFbF" id="7CEvUTx3Sg" role="3cqZAp">
+                <node concept="37vLTI" id="7CEvUTx3Sn" role="3clFbG">
+                  <node concept="2OqwBi" id="7CEvUTx3Si" role="37vLTJ">
+                    <node concept="Cj7Ep" id="7CEvUTx3Sh" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="7CEvUTx3Sm" role="2OqNvi">
                       <reference role="3Tt5mk" target="tp41.78261276407124230" />
                     </node>
                   </node>
-                  <node concept="2ShNRf" id="137546700134039068" role="37vLTx">
-                    <node concept="2fJWfE" id="6357564549601490386" role="2ShVmc">
-                      <node concept="3Tqbb2" id="6357564549601490387" role="3zrR0E">
+                  <node concept="2ShNRf" id="7CEvUTx3Ss" role="37vLTx">
+                    <node concept="2fJWfE" id="5wUAOoBBfni" role="2ShVmc">
+                      <node concept="3Tqbb2" id="5wUAOoBBfnj" role="3zrR0E">
                         <reference role="ehGHo" target="tp41.8486807419021026918" resolve="InsertPosition" />
                       </node>
                     </node>
@@ -109,8 +109,8 @@
               </node>
             </node>
           </node>
-          <node concept="2h1dTh" id="137546700134039071" role="Cn2iK">
-            <property role="2h1i!Z" value="insert" />
+          <node concept="2h1dTh" id="7CEvUTx3Sv" role="Cn2iK">
+            <property role="2h1i$Z" value="insert" />
           </node>
         </node>
       </node>

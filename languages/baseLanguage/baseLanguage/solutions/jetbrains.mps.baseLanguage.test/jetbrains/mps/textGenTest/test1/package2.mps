@@ -33,22 +33,22 @@
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
     </language>
   </registry>
-  <node concept="312cEu" id="5257650213624905145">
+  <node concept="312cEu" id="4zQVgdonBQT">
     <property role="TrG5h" value="Clazz" />
-    <node concept="3Tm1VV" id="5257650213624905146" role="1B3o_S" />
-    <node concept="3clFbW" id="5257650213624905147" role="jymVt">
-      <node concept="3cqZAl" id="5257650213624905148" role="3clF45" />
-      <node concept="3Tm1VV" id="5257650213624905149" role="1B3o_S" />
-      <node concept="3clFbS" id="5257650213624905150" role="3clF47" />
+    <node concept="3Tm1VV" id="4zQVgdonBQU" role="1B3o_S" />
+    <node concept="3clFbW" id="4zQVgdonBQV" role="jymVt">
+      <node concept="3cqZAl" id="4zQVgdonBQW" role="3clF45" />
+      <node concept="3Tm1VV" id="4zQVgdonBQX" role="1B3o_S" />
+      <node concept="3clFbS" id="4zQVgdonBQY" role="3clF47" />
     </node>
-    <node concept="312cEu" id="5257650213624905153" role="jymVt">
+    <node concept="312cEu" id="4zQVgdonBR1" role="jymVt">
       <property role="TrG5h" value="Nested" />
       <property role="2bfB8j" value="true" />
-      <node concept="3Tm1VV" id="5257650213624905154" role="1B3o_S" />
-      <node concept="3clFbW" id="5257650213624905155" role="jymVt">
-        <node concept="3cqZAl" id="5257650213624905156" role="3clF45" />
-        <node concept="3Tm1VV" id="5257650213624905157" role="1B3o_S" />
-        <node concept="3clFbS" id="5257650213624905158" role="3clF47" />
+      <node concept="3Tm1VV" id="4zQVgdonBR2" role="1B3o_S" />
+      <node concept="3clFbW" id="4zQVgdonBR3" role="jymVt">
+        <node concept="3cqZAl" id="4zQVgdonBR4" role="3clF45" />
+        <node concept="3Tm1VV" id="4zQVgdonBR5" role="1B3o_S" />
+        <node concept="3clFbS" id="4zQVgdonBR6" role="3clF47" />
       </node>
     </node>
   </node>

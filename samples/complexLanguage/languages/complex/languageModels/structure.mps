@@ -16,8 +16,8 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
@@ -37,83 +37,83 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="1196259557930">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hq6C48E">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ComplexType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="complex" />
     <reference role="1TJDcQ" target="tpee.1164118113764" resolve="PrimitiveType" />
   </node>
-  <node concept="1TIwiD" id="1196260743057">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hq6G_uh">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ReExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="re" />
     <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
   </node>
-  <node concept="1TIwiD" id="1196260832413">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hq6GVit">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="SingleComplexExpression" />
     <property role="2_RsDV" value="none" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1196260892801" role="1TKVEi">
+    <node concept="1TJgyj" id="hq6Ha21" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="complexExpression" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1196263843100">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hq6Sqks">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ArgExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="arg" />
     <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
   </node>
-  <node concept="1TIwiD" id="1196264034207">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hq6T8Yv">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AbsExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="abs" />
     <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
   </node>
-  <node concept="1TIwiD" id="1196261859224">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hq6KPYo">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ImExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="im" />
     <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
   </node>
-  <node concept="1TIwiD" id="1196418881524">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hqg7PvO">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ConjugateComplexExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="conj" />
     <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
   </node>
-  <node concept="1TIwiD" id="1196421957108">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hqgj$nO">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="DegreeComplexExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="deg" />
     <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
-    <node concept="1TJgyj" id="1196422043474" role="1TKVEi">
+    <node concept="1TJgyj" id="hqgjTti" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="degree" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1179362310214" resolve="IntegerLiteral" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1196434001121">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hqh1wNx">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="complex imaginary unit" />
     <property role="TrG5h" value="ImaginaryUnit" />
     <property role="2_RsDV" value="none" />

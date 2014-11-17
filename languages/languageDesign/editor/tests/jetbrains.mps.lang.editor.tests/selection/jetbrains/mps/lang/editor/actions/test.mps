@@ -61,14 +61,14 @@
       </concept>
     </language>
   </registry>
-  <node concept="LiM7Y" id="7803854675609827855">
+  <node concept="LiM7Y" id="6LcR7GqvFCf">
     <property role="TrG5h" value="DelOnChild1ReplaceItWithLinkTarget" />
     <property role="3GE5qa" value="delete" />
     <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 then it should be replaced by link target concept in pressing &quot;del&quot; by-default" />
-    <node concept="1QLem1" id="7803854675610517462" role="LiRBU">
-      <node concept="1QM1Tp" id="7803854675610517936" role="1QLepd">
-        <node concept="1QM1zV" id="7803854675610517946" role="1QM1y8">
-          <node concept="LIFWc" id="7803854675610517963" role="lGtFl">
+    <node concept="1QLem1" id="6LcR7GqyjZm" role="LiRBU">
+      <node concept="1QM1Tp" id="6LcR7Gqyk6K" role="1QLepd">
+        <node concept="1QM1zV" id="6LcR7Gqyk6U" role="1QM1y8">
+          <node concept="LIFWc" id="6LcR7Gqyk7b" role="lGtFl">
             <property role="LIFWa" value="0" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="0" />
@@ -78,10 +78,10 @@
         </node>
       </node>
     </node>
-    <node concept="1QLem1" id="7803854675610518814" role="LiZbd">
-      <node concept="1QM1Tp" id="7803854675610518815" role="1QLepd">
-        <node concept="1QM1wW" id="7803854675610518839" role="1QM1y8">
-          <node concept="LIFWc" id="7803854675610518841" role="lGtFl">
+    <node concept="1QLem1" id="6LcR7Gqykku" role="LiZbd">
+      <node concept="1QM1Tp" id="6LcR7Gqykkv" role="1QLepd">
+        <node concept="1QM1wW" id="6LcR7GqykkR" role="1QM1y8">
+          <node concept="LIFWc" id="6LcR7GqykkT" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="23" />
@@ -91,22 +91,22 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="7803854675610518854" role="LjaKd">
-      <node concept="2HxZob" id="7803854675610518852" role="3cqZAp">
-        <node concept="1iFQzN" id="7803854675610518858" role="3iKnsn">
+    <node concept="3clFbS" id="6LcR7Gqykl6" role="LjaKd">
+      <node concept="2HxZob" id="6LcR7Gqykl4" role="3cqZAp">
+        <node concept="1iFQzN" id="6LcR7Gqykla" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.8896169282213320720" resolve="Delete" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="7803854675610520166">
+  <node concept="LiM7Y" id="6LcR7GqykDA">
     <property role="TrG5h" value="DelOnChild1DeleteParent" />
     <property role="3GE5qa" value="delete" />
     <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
-    <node concept="1QLem1" id="7803854675610520167" role="LiRBU">
-      <node concept="1QM1Tp" id="7803854675610520168" role="1QLepd">
-        <node concept="1QM1wW" id="7803854675610520204" role="1QM1y8">
-          <node concept="LIFWc" id="7803854675610520206" role="lGtFl">
+    <node concept="1QLem1" id="6LcR7GqykDB" role="LiRBU">
+      <node concept="1QM1Tp" id="6LcR7GqykDC" role="1QLepd">
+        <node concept="1QM1wW" id="6LcR7GqykEc" role="1QM1y8">
+          <node concept="LIFWc" id="6LcR7GqykEe" role="lGtFl">
             <property role="LIFWa" value="0" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="0" />
@@ -116,8 +116,8 @@
         </node>
       </node>
     </node>
-    <node concept="1QLem1" id="7803854675610520171" role="LiZbd">
-      <node concept="LIFWc" id="7803854675610520208" role="lGtFl">
+    <node concept="1QLem1" id="6LcR7GqykDF" role="LiZbd">
+      <node concept="LIFWc" id="6LcR7GqykEg" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
@@ -125,9 +125,9 @@
         <property role="LIFWd" value="empty_container" />
       </node>
     </node>
-    <node concept="3clFbS" id="7803854675610520175" role="LjaKd">
-      <node concept="2HxZob" id="7803854675610520176" role="3cqZAp">
-        <node concept="1iFQzN" id="7803854675610520177" role="3iKnsn">
+    <node concept="3clFbS" id="6LcR7GqykDJ" role="LjaKd">
+      <node concept="2HxZob" id="6LcR7GqykDK" role="3cqZAp">
+        <node concept="1iFQzN" id="6LcR7GqykDL" role="3iKnsn">
           <reference role="1iFR8X" target="ekwn.8896169282213320720" resolve="Delete" />
         </node>
       </node>

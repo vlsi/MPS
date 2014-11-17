@@ -14,8 +14,8 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -46,90 +46,90 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="1238852151516">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1LlUzs">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="indexed tuple type" />
     <property role="TrG5h" value="IndexedTupleType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="[" />
     <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
-    <node concept="1TJgyj" id="1238852204892" role="1TKVEi">
+    <node concept="1TJgyj" id="i1Lm7_s" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="componentType" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
     </node>
-    <node concept="PrWs8" id="9033423951286858655" role="PzmwI">
+    <node concept="PrWs8" id="7PtaNzTXnev" role="PzmwI">
       <reference role="PrY4T" target="tpee.4107091686347010317" resolve="IGenericType" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238853782547">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1Ls8Kj">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="indexed tuple" />
     <property role="TrG5h" value="IndexedTupleLiteral" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="[" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1238853845806" role="1TKVEi">
+    <node concept="1TJgyj" id="i1LsocI" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="component" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238857743184">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1LFfHg">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="access tuple member by index" />
     <property role="TrG5h" value="IndexedTupleMemberAccessExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="[" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1238857764950" role="1TKVEi">
+    <node concept="1TJgyj" id="i1LFl1m" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="tuple" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1238857834412" role="1TKVEi">
+    <node concept="1TJgyj" id="i1LF_YG" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="index" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="1262430001741718433" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvB6ex" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1239360506533">
+  <node concept="1TIwiD" id="i2fD8E_">
     <property role="19KtqR" value="true" />
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="MwhBj" value="${language_descriptor}/icons/namedTuple.png" />
     <property role="R4oN_" value="Named tuple declaration" />
     <property role="TrG5h" value="NamedTupleDeclaration" />
     <property role="34LRSv" value="Tuple" />
     <reference role="1TJDcQ" target="tpee.1107461130800" resolve="Classifier" />
-    <node concept="1TJgyj" id="1239529553065" role="1TKVEi">
+    <node concept="1TJgyj" id="i2pHZMD" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="component" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="1239462176079" resolve="NamedTupleComponentDeclaration" />
     </node>
-    <node concept="1TJgyj" id="322547369016009796" role="1TKVEi">
+    <node concept="1TJgyj" id="hTULY9rUh4" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="extended" />
       <reference role="20lvS9" target="1239531918181" resolve="NamedTupleType" />
     </node>
-    <node concept="1TJgyj" id="2423993921025641700" role="1TKVEi">
+    <node concept="1TJgyj" id="26zKq3os8N$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="implements" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="tpee.1107535904670" resolve="ClassifierType" />
     </node>
-    <node concept="1TJgyj" id="1500000307918327556" role="1TKVEi">
+    <node concept="1TJgyj" id="1jh4_kGsGW4" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="method" />
       <property role="20lbJX" value="0..n" />
@@ -137,109 +137,109 @@
       <reference role="20ksaX" target="tpee.1107880067339" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1239462176079">
+  <node concept="1TIwiD" id="i2lGYlf">
     <property role="TrG5h" value="NamedTupleComponentDeclaration" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="1240400839614" role="1TKVEl">
+    <node concept="1TJgyi" id="i3dDGeY" role="1TKVEl">
       <property role="TrG5h" value="final" />
       <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
     </node>
-    <node concept="1TJgyj" id="1239462974287" role="1TKVEi">
+    <node concept="1TJgyj" id="i2lK1df" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="type" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
     </node>
-    <node concept="PrWs8" id="1239462414586" role="PzmwI">
+    <node concept="PrWs8" id="i2lHSzU" role="PzmwI">
       <reference role="PrY4T" target="tpee.1212170275853" resolve="IValidIdentifier" />
     </node>
-    <node concept="PrWs8" id="1239462414587" role="PzmwI">
+    <node concept="PrWs8" id="i2lHSzV" role="PzmwI">
       <reference role="PrY4T" target="tpee.1188208481402" resolve="HasAnnotation" />
     </node>
-    <node concept="PrWs8" id="1239462414588" role="PzmwI">
+    <node concept="PrWs8" id="i2lHSzW" role="PzmwI">
       <reference role="PrY4T" target="tpee.1201183863028" resolve="TypeDerivable" />
     </node>
-    <node concept="PrWs8" id="1239462414589" role="PzmwI">
+    <node concept="PrWs8" id="i2lHSzX" role="PzmwI">
       <reference role="PrY4T" target="tpee.1233920926773" resolve="TypeAnnotable" />
     </node>
-    <node concept="PrWs8" id="1239462445302" role="PzmwI">
+    <node concept="PrWs8" id="i2lI03Q" role="PzmwI">
       <reference role="PrY4T" target="tpck.1196978630214" resolve="IResolveInfo" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1239531918181">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i2pR1d_">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="reference to named tuple declaration" />
     <property role="TrG5h" value="NamedTupleType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="&lt;{tupleDeclaration}&gt; type" />
     <reference role="1TJDcQ" target="tpee.1107535904670" resolve="ClassifierType" />
-    <node concept="1TJgyj" id="1239548562987" role="1TKVEi">
+    <node concept="1TJgyj" id="i2qQwSF" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="parameterType" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
       <reference role="20ksaX" target="tpee.1109201940907" />
     </node>
-    <node concept="1TJgyj" id="1239531948650" role="1TKVEi">
+    <node concept="1TJgyj" id="i2pR8DE" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="tupleDeclaration" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="1239360506533" resolve="NamedTupleDeclaration" />
       <reference role="20ksaX" target="tpee.1107535924139" />
     </node>
-    <node concept="PrWs8" id="9160639926734969758" role="PzmwI">
+    <node concept="PrWs8" id="7Wx8nDGj5Iu" role="PzmwI">
       <reference role="PrY4T" target="tpee.4107091686347010317" resolve="IGenericType" />
     </node>
-    <node concept="PrWs8" id="1262430001741703345" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvB2yL" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1239559992092">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i2ry7cs">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="tuple literal" />
     <property role="TrG5h" value="NamedTupleLiteral" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="&lt;{tupleDeclaration}&gt; literal" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1239560910577" role="1TKVEi">
+    <node concept="1TJgyj" id="i2r_BrL" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="componentRef" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="1239560581441" resolve="NamedTupleComponentReference" />
     </node>
-    <node concept="1TJgyj" id="1239560008022" role="1TKVEi">
+    <node concept="1TJgyj" id="i2ryb5m" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="tupleDeclaration" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="1239360506533" resolve="NamedTupleDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1239560581441">
+  <node concept="1TIwiD" id="i2r$n51">
     <property role="TrG5h" value="NamedTupleComponentReference" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="1239560837729" role="1TKVEi">
+    <node concept="1TJgyj" id="i2r_lDx" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="value" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1239560595302" role="1TKVEi">
+    <node concept="1TJgyj" id="i2r$qtA" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="componentDeclaration" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="1239462176079" resolve="NamedTupleComponentDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1239576519914">
+  <node concept="1TIwiD" id="i2sxajE">
     <property role="TrG5h" value="NamedTupleComponentAccessOperation" />
     <property role="2_RsDV" value="none" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1239576533734" role="PzmwI">
+    <node concept="PrWs8" id="i2sxdFA" role="PzmwI">
       <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
     </node>
-    <node concept="1TJgyj" id="1239576542472" role="1TKVEi">
+    <node concept="1TJgyj" id="i2sxfO8" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="component" />
       <property role="20lbJX" value="1" />

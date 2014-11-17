@@ -22,13 +22,13 @@
       <concept id="1195171011194" name="jetbrains.mps.transformation.test.inputLang.structure.InputNode_A" flags="ng" index="15J_HG" />
     </language>
   </registry>
-  <node concept="15_jI_" id="1218736612860">
+  <node concept="15_jI_" id="hJ2nenW">
     <property role="TrG5h" value="Input_root_1" />
     <property role="3FifNy" value="weaveManyToSingularChild" />
-    <node concept="15J_HG" id="1218736739780" role="15EZgy">
+    <node concept="15J_HG" id="hJ2nHn4" role="15EZgy">
       <property role="TrG5h" value="weave as special child 1" />
     </node>
-    <node concept="15J_HG" id="1218736796610" role="15EZgy">
+    <node concept="15J_HG" id="hJ2nVf2" role="15EZgy">
       <property role="TrG5h" value="weave as special child 2" />
     </node>
   </node>

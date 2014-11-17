@@ -29,7 +29,7 @@
       </concept>
       <concept id="1197246912613" name="jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest" flags="ng" index="31ux_N">
         <reference id="1197247793411" name="stateMachine" index="31xSwl" />
-        <child id="1197252952541" name="testMethod" index="31P!3b" />
+        <child id="1197252952541" name="testMethod" index="31P$3b" />
       </concept>
       <concept id="1197252718474" name="jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod" flags="ng" index="31OEUs">
         <property id="1197252760325" name="methodName" index="31OP8j" />
@@ -41,62 +41,62 @@
       </concept>
     </language>
   </registry>
-  <node concept="2VFaWE" id="1197150020790">
+  <node concept="2VFaWE" id="hqVGUiQ">
     <property role="2WFZrQ" value="MrsH" />
     <reference role="311S5R" target="1197223600313" resolve="idle" />
-    <node concept="2WVoc1" id="1197223600313" role="303EYT">
+    <node concept="2WVoc1" id="hr05A2T" role="303EYT">
       <property role="2WVybo" value="idle" />
-      <node concept="314JWW" id="1197240843830" role="315Sed">
+      <node concept="314JWW" id="hr17nSQ" role="315Sed">
         <reference role="314QsE" target="1197169658976" resolve="doorClosed" />
         <reference role="314S4V" target="1197240913970" resolve="doorClosed" />
       </node>
     </node>
-    <node concept="2WVoc1" id="1197240913970" role="303EYT">
+    <node concept="2WVoc1" id="hr17D0M" role="303EYT">
       <property role="2WVybo" value="doorClosed" />
-      <node concept="314JWW" id="1197242140286" role="315Sed">
+      <node concept="314JWW" id="hr1ckpY" role="315Sed">
         <reference role="314QsE" target="1197169676040" resolve="drawOpened" />
         <reference role="314S4V" target="1197242143240" resolve="drawOpened" />
       </node>
     </node>
-    <node concept="2WVoc1" id="1197242143240" role="303EYT">
+    <node concept="2WVoc1" id="hr1cl88" role="303EYT">
       <property role="2WVybo" value="drawOpened" />
-      <node concept="314JWW" id="1197242172476" role="315Sed">
+      <node concept="314JWW" id="hr1csgW" role="315Sed">
         <reference role="314QsE" target="1197169688807" resolve="lightOn" />
         <reference role="314S4V" target="1197242160585" resolve="panelUnlocked" />
       </node>
     </node>
-    <node concept="2WVoc1" id="1197242160585" role="303EYT">
+    <node concept="2WVoc1" id="hr1cpn9" role="303EYT">
       <property role="2WVybo" value="panelUnlocked" />
     </node>
-    <node concept="2WQGw8" id="1197169658976" role="2WRr8g">
+    <node concept="2WQGw8" id="hqWROLw" role="2WRr8g">
       <property role="2WQMSU" value="doorClosed" />
       <property role="2WQOmf" value="D1CL" />
     </node>
-    <node concept="2WQGw8" id="1197169676040" role="2WRr8g">
+    <node concept="2WQGw8" id="hqWRSW8" role="2WRr8g">
       <property role="2WQMSU" value="drawOpened" />
       <property role="2WQOmf" value="D2OP" />
     </node>
-    <node concept="2WQGw8" id="1197169688807" role="2WRr8g">
+    <node concept="2WQGw8" id="hqWRW3B" role="2WRr8g">
       <property role="2WQMSU" value="lightOn" />
       <property role="2WQOmf" value="L1ON" />
     </node>
-    <node concept="2WQGw8" id="1197169702886" role="2WRr8g">
+    <node concept="2WQGw8" id="hqWRZvA" role="2WRr8g">
       <property role="2WQMSU" value="doorOpened" />
       <property role="2WQOmf" value="D1OP" />
     </node>
   </node>
-  <node concept="31ux_N" id="1197247437082">
+  <node concept="31ux_N" id="hr1wx$q">
     <reference role="31xSwl" target="1197150020790" resolve="MrsH State Machine" />
-    <node concept="31OEUs" id="1197253131013" role="31P!3b">
+    <node concept="31OEUs" id="hr1QfG5" role="31P$3b">
       <property role="31OP8j" value="A" />
       <reference role="31YeOX" target="1197242160585" resolve="panelUnlocked" />
-      <node concept="320lw_" id="1197255880355" role="320vKD">
+      <node concept="320lw_" id="hr20IUz" role="320vKD">
         <reference role="320neu" target="1197169658976" resolve="doorClosed" />
       </node>
-      <node concept="320lw_" id="1197255894825" role="320vKD">
+      <node concept="320lw_" id="hr20MsD" role="320vKD">
         <reference role="320neu" target="1197169676040" resolve="drawOpened" />
       </node>
-      <node concept="320lw_" id="1197255910138" role="320vKD">
+      <node concept="320lw_" id="hr20QbU" role="320vKD">
         <reference role="320neu" target="1197169688807" resolve="lightOn" />
       </node>
     </node>

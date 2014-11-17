@@ -14,7 +14,7 @@
     <language id="530533ee-f789-4c1e-ba56-de1bbf3afda7" name="jetbrains.mps.samples.multipleProjections.stateMachine">
       <concept id="763922957008729154" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.State" flags="ng" index="32R8Iz" />
       <concept id="763922957008729156" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference" flags="ng" index="32R8I_">
-        <reference id="763922957008729157" name="state" index="32R8I!" />
+        <reference id="763922957008729157" name="state" index="32R8I$" />
       </concept>
       <concept id="763922957008729158" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference" flags="ng" index="32R8IB">
         <reference id="763922957008729159" name="event" index="32R8IA" />
@@ -47,118 +47,118 @@
       </concept>
     </language>
   </registry>
-  <node concept="3OONte" id="3675491646420810827">
+  <node concept="3OONte" id="3c1Y2R7OZLb">
     <property role="TrG5h" value="org.jetbrains.workflow" />
-    <node concept="3OOLNr" id="3675491646420826293" role="3OOLFz">
+    <node concept="3OOLNr" id="3c1Y2R7P3yP" role="3OOLFz">
       <property role="TrG5h" value="simpleIssueTracking" />
       <property role="3OPhhx" value="tabular" />
-      <node concept="32R9h0" id="3675491646420826294" role="3OOLOy">
-        <node concept="32R8Js" id="3675491646420854483" role="32R9h5">
+      <node concept="32R9h0" id="3c1Y2R7P3yQ" role="3OOLOy">
+        <node concept="32R8Js" id="3c1Y2R7Parj" role="32R9h5">
           <property role="32R8Iw" value="in Open state" />
-          <node concept="32R8I_" id="3675491646420854495" role="32R8Ix">
-            <reference role="32R8I!" target="3675491646420854475" resolve="Closed" />
+          <node concept="32R8I_" id="3c1Y2R7Parv" role="32R8Ix">
+            <reference role="32R8I$" target="3675491646420854475" resolve="Closed" />
           </node>
-          <node concept="32R8I_" id="3675491646420854493" role="32R8Jv">
-            <reference role="32R8I!" target="3675491646420854469" resolve="Open" />
+          <node concept="32R8I_" id="3c1Y2R7Part" role="32R8Jv">
+            <reference role="32R8I$" target="3675491646420854469" resolve="Open" />
           </node>
-          <node concept="32R8IB" id="3675491646420854491" role="32R8Ju">
+          <node concept="32R8IB" id="3c1Y2R7Parr" role="32R8Ju">
             <reference role="32R8IA" target="3675491646420854478" resolve="Close" />
           </node>
         </node>
-        <node concept="32R8Js" id="3675491646420854497" role="32R9h5">
+        <node concept="32R8Js" id="3c1Y2R7Parx" role="32R9h5">
           <property role="32R8Iw" value="in Closed state" />
-          <node concept="32R8I_" id="3675491646420854513" role="32R8Ix">
-            <reference role="32R8I!" target="3675491646420854469" resolve="Open" />
+          <node concept="32R8I_" id="3c1Y2R7ParL" role="32R8Ix">
+            <reference role="32R8I$" target="3675491646420854469" resolve="Open" />
           </node>
-          <node concept="32R8I_" id="3675491646420854511" role="32R8Jv">
-            <reference role="32R8I!" target="3675491646420854475" resolve="Closed" />
+          <node concept="32R8I_" id="3c1Y2R7ParJ" role="32R8Jv">
+            <reference role="32R8I$" target="3675491646420854475" resolve="Closed" />
           </node>
-          <node concept="32R8IB" id="3675491646420854509" role="32R8Ju">
+          <node concept="32R8IB" id="3c1Y2R7ParH" role="32R8Ju">
             <reference role="32R8IA" target="3675491646420854480" resolve="Reopen" />
           </node>
         </node>
-        <node concept="32R8Jq" id="3675491646420854478" role="32R9h2">
+        <node concept="32R8Jq" id="3c1Y2R7Pare" role="32R9h2">
           <property role="TrG5h" value="Close" />
         </node>
-        <node concept="32R8Jq" id="3675491646420854480" role="32R9h2">
+        <node concept="32R8Jq" id="3c1Y2R7Parg" role="32R9h2">
           <property role="TrG5h" value="Reopen" />
         </node>
-        <node concept="32R8Iz" id="3675491646420854469" role="32R9h4">
+        <node concept="32R8Iz" id="3c1Y2R7Par5" role="32R9h4">
           <property role="TrG5h" value="Open" />
         </node>
-        <node concept="32R8Iz" id="3675491646420854475" role="32R9h4">
+        <node concept="32R8Iz" id="3c1Y2R7Parb" role="32R9h4">
           <property role="TrG5h" value="Closed" />
         </node>
       </node>
     </node>
-    <node concept="3OOLNr" id="3675491646420854554" role="3OOLFz">
+    <node concept="3OOLNr" id="3c1Y2R7Pasq" role="3OOLFz">
       <property role="TrG5h" value="advancedIssueTracking" />
       <property role="3OPhhx" value="structural" />
-      <node concept="32R9h0" id="3675491646420854555" role="3OOLOy">
-        <node concept="32R8Js" id="3675491646420854607" role="32R9h5">
+      <node concept="32R9h0" id="3c1Y2R7Pasr" role="3OOLOy">
+        <node concept="32R8Js" id="3c1Y2R7Patf" role="32R9h5">
           <property role="32R8Iw" value="in Open state" />
-          <node concept="32R8I_" id="3675491646420854646" role="32R8Ix">
-            <reference role="32R8I!" target="3675491646420854591" resolve="WaitingVerification" />
+          <node concept="32R8I_" id="3c1Y2R7PatQ" role="32R8Ix">
+            <reference role="32R8I$" target="3675491646420854591" resolve="WaitingVerification" />
           </node>
-          <node concept="32R8I_" id="3675491646420854644" role="32R8Jv">
-            <reference role="32R8I!" target="3675491646420854589" resolve="Open" />
+          <node concept="32R8I_" id="3c1Y2R7PatO" role="32R8Jv">
+            <reference role="32R8I$" target="3675491646420854589" resolve="Open" />
           </node>
-          <node concept="32R8IB" id="3675491646420854615" role="32R8Ju">
+          <node concept="32R8IB" id="3c1Y2R7Patn" role="32R8Ju">
             <reference role="32R8IA" target="3675491646420854598" resolve="Close" />
           </node>
         </node>
-        <node concept="32R8Js" id="3675491646420854697" role="32R9h5">
+        <node concept="32R8Js" id="3c1Y2R7PauD" role="32R9h5">
           <property role="32R8Iw" value="in WaitingVerification state" />
-          <node concept="32R8I_" id="3675491646420854822" role="32R8Ix">
-            <reference role="32R8I!" target="3675491646420854594" resolve="Closed" />
+          <node concept="32R8I_" id="3c1Y2R7PawA" role="32R8Ix">
+            <reference role="32R8I$" target="3675491646420854594" resolve="Closed" />
           </node>
-          <node concept="32R8I_" id="3675491646420854820" role="32R8Jv">
-            <reference role="32R8I!" target="3675491646420854591" resolve="WaitingVerification" />
+          <node concept="32R8I_" id="3c1Y2R7Paw$" role="32R8Jv">
+            <reference role="32R8I$" target="3675491646420854591" resolve="WaitingVerification" />
           </node>
-          <node concept="32R8IB" id="3675491646420854713" role="32R8Ju">
+          <node concept="32R8IB" id="3c1Y2R7PauT" role="32R8Ju">
             <reference role="32R8IA" target="3675491646420854600" resolve="Verify" />
           </node>
         </node>
-        <node concept="32R8Js" id="3675491646420854648" role="32R9h5">
+        <node concept="32R8Js" id="3c1Y2R7PatS" role="32R9h5">
           <property role="32R8Iw" value="in WaitingVerification state" />
-          <node concept="32R8I_" id="3675491646420854664" role="32R8Ix">
-            <reference role="32R8I!" target="3675491646420854589" resolve="Open" />
+          <node concept="32R8I_" id="3c1Y2R7Pau8" role="32R8Ix">
+            <reference role="32R8I$" target="3675491646420854589" resolve="Open" />
           </node>
-          <node concept="32R8I_" id="3675491646420854662" role="32R8Jv">
-            <reference role="32R8I!" target="3675491646420854591" resolve="WaitingVerification" />
+          <node concept="32R8I_" id="3c1Y2R7Pau6" role="32R8Jv">
+            <reference role="32R8I$" target="3675491646420854591" resolve="WaitingVerification" />
           </node>
-          <node concept="32R8IB" id="3675491646420854660" role="32R8Ju">
+          <node concept="32R8IB" id="3c1Y2R7Pau4" role="32R8Ju">
             <reference role="32R8IA" target="3675491646420854603" resolve="Reopen" />
           </node>
         </node>
-        <node concept="32R8Js" id="3675491646420854859" role="32R9h5">
+        <node concept="32R8Js" id="3c1Y2R7Paxb" role="32R9h5">
           <property role="32R8Iw" value="in Closed state" />
-          <node concept="32R8I_" id="3675491646420854922" role="32R8Ix">
-            <reference role="32R8I!" target="3675491646420854589" resolve="Open" />
+          <node concept="32R8I_" id="3c1Y2R7Paya" role="32R8Ix">
+            <reference role="32R8I$" target="3675491646420854589" resolve="Open" />
           </node>
-          <node concept="32R8I_" id="3675491646420854920" role="32R8Jv">
-            <reference role="32R8I!" target="3675491646420854594" resolve="Closed" />
+          <node concept="32R8I_" id="3c1Y2R7Pay8" role="32R8Jv">
+            <reference role="32R8I$" target="3675491646420854594" resolve="Closed" />
           </node>
-          <node concept="32R8IB" id="3675491646420854879" role="32R8Ju">
+          <node concept="32R8IB" id="3c1Y2R7Paxv" role="32R8Ju">
             <reference role="32R8IA" target="3675491646420854603" resolve="Reopen" />
           </node>
         </node>
-        <node concept="32R8Jq" id="3675491646420854598" role="32R9h2">
+        <node concept="32R8Jq" id="3c1Y2R7Pat6" role="32R9h2">
           <property role="TrG5h" value="Close" />
         </node>
-        <node concept="32R8Jq" id="3675491646420854600" role="32R9h2">
+        <node concept="32R8Jq" id="3c1Y2R7Pat8" role="32R9h2">
           <property role="TrG5h" value="Verify" />
         </node>
-        <node concept="32R8Jq" id="3675491646420854603" role="32R9h2">
+        <node concept="32R8Jq" id="3c1Y2R7Patb" role="32R9h2">
           <property role="TrG5h" value="Reopen" />
         </node>
-        <node concept="32R8Iz" id="3675491646420854589" role="32R9h4">
+        <node concept="32R8Iz" id="3c1Y2R7PasX" role="32R9h4">
           <property role="TrG5h" value="Open" />
         </node>
-        <node concept="32R8Iz" id="3675491646420854591" role="32R9h4">
+        <node concept="32R8Iz" id="3c1Y2R7PasZ" role="32R9h4">
           <property role="TrG5h" value="WaitingVerification" />
         </node>
-        <node concept="32R8Iz" id="3675491646420854594" role="32R9h4">
+        <node concept="32R8Iz" id="3c1Y2R7Pat2" role="32R9h4">
           <property role="TrG5h" value="Closed" />
         </node>
       </node>

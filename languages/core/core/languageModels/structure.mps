@@ -25,13 +25,13 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
-        <child id="1169127546356" name="extends" index="PrDN!" />
+        <child id="1169127546356" name="extends" index="PrDN$" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -63,231 +63,231 @@
       <concept id="2565736246230036150" name="jetbrains.mps.lang.core.structure.ExportScopePublic" flags="ig" index="24uvON" />
     </language>
   </registry>
-  <node concept="QkHVr" id="1082983041843">
+  <node concept="QkHVr" id="fKAOsGN">
     <property role="TrG5h" value="string" />
   </node>
-  <node concept="QkHVr" id="1082983657062">
+  <node concept="QkHVr" id="fKAQMTA">
     <property role="TrG5h" value="integer" />
   </node>
-  <node concept="QkHVr" id="1082983657063">
+  <node concept="QkHVr" id="fKAQMTB">
     <property role="TrG5h" value="boolean" />
   </node>
-  <node concept="1TIwiD" id="1133920641626">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="gw2VY9q">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="BaseConcept" />
-    <node concept="1TJgyj" id="5169995583184591170" role="1TKVEi">
+    <node concept="1TJgyj" id="4uZwTti3__2" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="smodelAttribute" />
       <property role="20lbJX" value="0..n" />
       <reference role="20lvS9" target="5169995583184591161" resolve="Attribute" />
     </node>
-    <node concept="1TJgyi" id="1156234966388" role="1TKVEl">
+    <node concept="1TJgyi" id="gOOYnlO" role="1TKVEl">
       <property role="TrG5h" value="shortDescription" />
       <reference role="AX2Wp" target="1082983041843" resolve="string" />
     </node>
-    <node concept="1TJgyi" id="1156235010670" role="1TKVEl">
+    <node concept="1TJgyi" id="gOOYy9I" role="1TKVEl">
       <property role="TrG5h" value="alias" />
       <reference role="AX2Wp" target="1082983041843" resolve="string" />
     </node>
-    <node concept="1TJgyi" id="1193676396447" role="1TKVEl">
+    <node concept="1TJgyi" id="hnGE5uv" role="1TKVEl">
       <property role="TrG5h" value="virtualPackage" />
       <reference role="AX2Wp" target="1082983041843" resolve="string" />
     </node>
   </node>
-  <node concept="PlHQZ" id="1169194658468">
+  <node concept="PlHQZ" id="h0TrEE$">
     <property role="TrG5h" value="INamedConcept" />
-    <node concept="1TJgyi" id="1169194664001" role="1TKVEl">
+    <node concept="1TJgyi" id="h0TrG11" role="1TKVEl">
       <property role="TrG5h" value="name" />
       <reference role="AX2Wp" target="1082983041843" resolve="string" />
     </node>
   </node>
-  <node concept="PlHQZ" id="1196978630214">
+  <node concept="PlHQZ" id="hqLv6T6">
     <property role="TrG5h" value="IResolveInfo" />
-    <node concept="1TJgyi" id="1196978656277" role="1TKVEl">
+    <node concept="1TJgyi" id="hqLvdgl" role="1TKVEl">
       <property role="TrG5h" value="resolveInfo" />
       <reference role="AX2Wp" target="1082983041843" resolve="string" />
     </node>
   </node>
-  <node concept="PlHQZ" id="1221647093812">
+  <node concept="PlHQZ" id="hLJPP0O">
     <property role="TrG5h" value="IWrapper" />
   </node>
-  <node concept="PlHQZ" id="1224608834445">
+  <node concept="PlHQZ" id="hOwnYed">
     <property role="TrG5h" value="IDeprecatable" />
   </node>
-  <node concept="PlHQZ" id="1233160296597">
+  <node concept="PlHQZ" id="hWu5dyl">
     <property role="TrG5h" value="IContainer" />
   </node>
-  <node concept="PlHQZ" id="1234971358450">
+  <node concept="PlHQZ" id="hYa1RjM">
     <property role="TrG5h" value="IType" />
     <property role="3GE5qa" value="types" />
   </node>
-  <node concept="PlHQZ" id="201537367881071930">
+  <node concept="PlHQZ" id="bc0iGlxbOU">
     <property role="TrG5h" value="IMetaLevelChanger" />
-    <node concept="asaX9" id="8087047305080758029" role="lGtFl" />
+    <node concept="asaX9" id="70UXEPd7_Wd" role="lGtFl" />
   </node>
-  <node concept="1TIwiD" id="5425021671150136555">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="4H9z7u7GMNF">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ExportScope" />
     <property role="3GE5qa" value="export" />
     <reference role="1TJDcQ" target="3364660638048049748" resolve="NodeAttribute" />
-    <node concept="PrWs8" id="2120388412647142047" role="PzmwI">
+    <node concept="PrWs8" id="1PH8wrDFZav" role="PzmwI">
       <reference role="PrY4T" target="1319728274784973096" resolve="InterfacePart" />
     </node>
-    <node concept="M6xJ_" id="7588821453551758953" role="lGtFl">
+    <node concept="M6xJ_" id="6_gUeuqOeTD" role="lGtFl">
       <property role="Hh88m" value="export" />
-      <node concept="trNpa" id="1262857012849338787" role="EQaZv">
+      <node concept="trNpa" id="166$sc$ZIAz" role="EQaZv">
         <reference role="trN6q" target="1133920641626" resolve="BaseConcept" />
       </node>
     </node>
   </node>
-  <node concept="1TIwiD" id="2565736246230036150">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2erkSmBSEUQ">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ExportScopePublic" />
     <property role="3GE5qa" value="export" />
     <property role="34LRSv" value="@export(public)" />
     <reference role="1TJDcQ" target="5425021671150136555" resolve="ExportScope" />
-    <node concept="24uvON" id="4075196924244431954" role="lGtFl" />
-    <node concept="M6xJ_" id="7588821453551758661" role="lGtFl">
+    <node concept="24uvON" id="3ye0wbzmDhi" role="lGtFl" />
+    <node concept="M6xJ_" id="6_gUeuqOeP5" role="lGtFl">
       <property role="Hh88m" value="" />
     </node>
   </node>
-  <node concept="1TIwiD" id="2565736246230036151">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2erkSmBSEUR">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ExportScopeNamespace" />
     <property role="3GE5qa" value="export" />
     <property role="34LRSv" value="@export(namespace)" />
     <reference role="1TJDcQ" target="5425021671150136555" resolve="ExportScope" />
-    <node concept="1TJgyi" id="2565736246230036153" role="1TKVEl">
+    <node concept="1TJgyi" id="2erkSmBSEUT" role="1TKVEl">
       <property role="TrG5h" value="namespace" />
       <reference role="AX2Wp" target="1082983041843" resolve="string" />
     </node>
-    <node concept="24uvON" id="4075196924244431953" role="lGtFl" />
-    <node concept="M6xJ_" id="7588821453551758934" role="lGtFl">
+    <node concept="24uvON" id="3ye0wbzmDhh" role="lGtFl" />
+    <node concept="M6xJ_" id="6_gUeuqOeTm" role="lGtFl">
       <property role="Hh88m" value="" />
     </node>
   </node>
-  <node concept="1TIwiD" id="2565736246230036154">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2erkSmBSEUU">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ExportScopeModule" />
     <property role="3GE5qa" value="export" />
     <property role="34LRSv" value="@export(module)" />
     <reference role="1TJDcQ" target="5425021671150136555" resolve="ExportScope" />
-    <node concept="24uvON" id="4075196924244431952" role="lGtFl" />
-    <node concept="M6xJ_" id="7588821453551758722" role="lGtFl">
+    <node concept="24uvON" id="3ye0wbzmDhg" role="lGtFl" />
+    <node concept="M6xJ_" id="6_gUeuqOeQ2" role="lGtFl">
       <property role="Hh88m" value="" />
     </node>
   </node>
-  <node concept="1TIwiD" id="5169995583184591161">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="4uZwTti3_$T">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="MwhBj" value="${module}/icons/annotationLink.png" />
     <property role="TrG5h" value="Attribute" />
     <property role="3GE5qa" value="attributes" />
     <reference role="1TJDcQ" target="1133920641626" resolve="BaseConcept" />
-    <node concept="M6xJ_" id="7588821453551758854" role="lGtFl">
+    <node concept="M6xJ_" id="6_gUeuqOeS6" role="lGtFl">
       <property role="Hh88m" value="" />
-      <node concept="tn0Fv" id="1262857012846245233" role="HhnKV">
+      <node concept="tn0Fv" id="166$sc$NVlL" role="HhnKV">
         <property role="tnX3d" value="false" />
       </node>
     </node>
   </node>
-  <node concept="1TIwiD" id="3364660638048049745">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2ULFgo8_XDh">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="LinkAttribute" />
     <property role="3GE5qa" value="attributes" />
     <reference role="1TJDcQ" target="5169995583184591161" resolve="Attribute" />
-    <node concept="1TJgyi" id="1757699476691236116" role="1TKVEl">
+    <node concept="1TJgyi" id="1x$A_M24zkk" role="1TKVEl">
       <property role="TrG5h" value="linkRole" />
       <reference role="AX2Wp" target="1082983041843" resolve="string" />
     </node>
-    <node concept="M6xJ_" id="7588821453551758659" role="lGtFl">
+    <node concept="M6xJ_" id="6_gUeuqOeP3" role="lGtFl">
       <property role="Hh88m" value="" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3364660638048049748">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2ULFgo8_XDk">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="NodeAttribute" />
     <property role="3GE5qa" value="attributes" />
     <reference role="1TJDcQ" target="5169995583184591161" resolve="Attribute" />
-    <node concept="M6xJ_" id="7588821453551758700" role="lGtFl">
+    <node concept="M6xJ_" id="6_gUeuqOePG" role="lGtFl">
       <property role="Hh88m" value="" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3364660638048049750">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2ULFgo8_XDm">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="PropertyAttribute" />
     <property role="3GE5qa" value="attributes" />
     <reference role="1TJDcQ" target="5169995583184591161" resolve="Attribute" />
-    <node concept="1TJgyi" id="1757699476691236117" role="1TKVEl">
+    <node concept="1TJgyi" id="1x$A_M24zkl" role="1TKVEl">
       <property role="TrG5h" value="propertyName" />
       <reference role="AX2Wp" target="1082983041843" resolve="string" />
     </node>
-    <node concept="M6xJ_" id="7588821453551758783" role="lGtFl">
+    <node concept="M6xJ_" id="6_gUeuqOeQZ" role="lGtFl">
       <property role="Hh88m" value="" />
     </node>
   </node>
-  <node concept="PlHQZ" id="3734116213129792499">
+  <node concept="PlHQZ" id="3fifI_xCcJN">
     <property role="TrG5h" value="ScopeProvider" />
   </node>
-  <node concept="PlHQZ" id="1047408822409601647">
+  <node concept="PlHQZ" id="U99cpalq9J">
     <property role="TrG5h" value="IAntisuppressErrors" />
     <property role="3GE5qa" value="types" />
   </node>
-  <node concept="PlHQZ" id="3393165121846091586">
+  <node concept="PlHQZ" id="2WmWrdnSpX2">
     <property role="TrG5h" value="ICanSuppressErrors" />
     <property role="3GE5qa" value="types" />
   </node>
-  <node concept="PlHQZ" id="3393165121846091587">
+  <node concept="PlHQZ" id="2WmWrdnSpX3">
     <property role="TrG5h" value="ISuppressErrors" />
     <property role="3GE5qa" value="types" />
   </node>
-  <node concept="1TIwiD" id="4222318806802425298">
+  <node concept="1TIwiD" id="3EoG9lZUeni">
     <property role="TrG5h" value="SuppressErrorsAnnotation" />
     <property role="3GE5qa" value="types" />
     <reference role="1TJDcQ" target="3364660638048049748" resolve="NodeAttribute" />
-    <node concept="PrWs8" id="2942851545184997136" role="PzmwI">
+    <node concept="PrWs8" id="2zn6YdLtwWg" role="PzmwI">
       <reference role="PrY4T" target="3393165121846091587" resolve="ISuppressErrors" />
     </node>
-    <node concept="M6xJ_" id="7588821453551758765" role="lGtFl">
+    <node concept="M6xJ_" id="6_gUeuqOeQH" role="lGtFl">
       <property role="Hh88m" value="suppress" />
-      <node concept="trNpa" id="1262857012849338793" role="EQaZv">
+      <node concept="trNpa" id="166$sc$ZIAD" role="EQaZv">
         <reference role="trN6q" target="3393165121846091586" resolve="ICanSuppressErrors" />
       </node>
     </node>
   </node>
-  <node concept="PlHQZ" id="1835621062190663819">
+  <node concept="PlHQZ" id="1_TrU5E6oyb">
     <property role="TrG5h" value="IDontSubstituteByDefault" />
   </node>
-  <node concept="PlHQZ" id="3361475375157466558">
+  <node concept="PlHQZ" id="2UAn0GTuXmY">
     <property role="TrG5h" value="ScopeFacade" />
   </node>
-  <node concept="PlHQZ" id="1319728274783077719">
+  <node concept="PlHQZ" id="19gBtYEv0ln">
     <property role="TrG5h" value="ImplementationPart" />
-    <node concept="PrWs8" id="1319728274783095066" role="PrDN!">
+    <node concept="PrWs8" id="19gBtYEv4$q" role="PrDN$">
       <reference role="PrY4T" target="3361475375157466558" resolve="ScopeFacade" />
     </node>
   </node>
-  <node concept="PlHQZ" id="1319728274783151479">
+  <node concept="PlHQZ" id="19gBtYEvilR">
     <property role="TrG5h" value="ImplementationContainer" />
   </node>
-  <node concept="PlHQZ" id="1319728274784973096">
+  <node concept="PlHQZ" id="19gBtYEAf4C">
     <property role="TrG5h" value="InterfacePart" />
   </node>
-  <node concept="PlHQZ" id="6999738288738427190">
+  <node concept="PlHQZ" id="64$4ecGX64Q">
     <property role="TrG5h" value="ImplementationWithStubPart" />
-    <node concept="PrWs8" id="6999738288738427191" role="PrDN!">
+    <node concept="PrWs8" id="64$4ecGX64R" role="PrDN$">
       <reference role="PrY4T" target="1319728274783077719" resolve="ImplementationPart" />
     </node>
   </node>
-  <node concept="PlHQZ" id="155087542027447621">
+  <node concept="PlHQZ" id="8AYOKVCAP5">
     <property role="TrG5h" value="IStubForAnotherConcept" />
   </node>
 </model>

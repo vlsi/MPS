@@ -26,8 +26,8 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -60,9 +60,9 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="1235747354980">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hYSi3_$">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="is in interval" />
     <property role="TrG5h" value="InIntervalExpression" />
     <property role="2_RsDV" value="none" />
@@ -70,9 +70,9 @@
     <property role="34LRSv" value=":in:" />
     <reference role="1TJDcQ" target="tpee.1081773326031" resolve="BinaryOperation" />
   </node>
-  <node concept="1TIwiD" id="1235747354984">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hYSi3_C">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="(?) interval contains" />
     <property role="TrG5h" value="IntervalContainsExpression" />
     <property role="2_RsDV" value="none" />
@@ -80,209 +80,209 @@
     <property role="34LRSv" value=":contains:" />
     <reference role="1TJDcQ" target="tpee.1081773326031" resolve="BinaryOperation" />
   </node>
-  <node concept="1TIwiD" id="1235747354988">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hYSi3_G">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Interval literal" />
     <property role="TrG5h" value="IntervalLiteral" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="interval" />
     <property role="34LRSv" value="interval" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1235747354989" role="1TKVEi">
+    <node concept="1TJgyj" id="hYSi3_H" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="start" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1235747354990" role="1TKVEi">
+    <node concept="1TJgyj" id="hYSi3_I" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="end" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyi" id="1235747354991" role="1TKVEl">
+    <node concept="1TJgyi" id="hYSi3_J" role="1TKVEl">
       <property role="TrG5h" value="startIncluded" />
       <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
     </node>
-    <node concept="1TJgyi" id="1235747354992" role="1TKVEl">
+    <node concept="1TJgyi" id="hYSi3_K" role="1TKVEl">
       <property role="TrG5h" value="endIncluded" />
       <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1235747354994">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hYSi3_M">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Interval type" />
     <property role="TrG5h" value="IntervalType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="interval" />
     <property role="34LRSv" value="interval" />
     <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
-    <node concept="1TJgyj" id="1235747354995" role="1TKVEi">
+    <node concept="1TJgyj" id="hYSi3_N" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="elementType" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238338031059">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1iGGRj">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Power expression" />
     <property role="TrG5h" value="PowExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="methods" />
     <property role="34LRSv" value="^" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1238338314123" role="1TKVEi">
+    <node concept="1TJgyj" id="i1iHLYb" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="base" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1238338314983" role="1TKVEi">
+    <node concept="1TJgyj" id="i1iHMbB" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="exponent" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4815887568697232005">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="4blu3DyqKE5">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Matrix row constructor" />
     <property role="TrG5h" value="MatrixConstructor" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <property role="34LRSv" value="[" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="4815887568697232013" role="1TKVEi">
+    <node concept="1TJgyj" id="4blu3DyqKEd" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="components" />
       <property role="20lbJX" value="1..n" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyi" id="3498370411873418560" role="1TKVEl">
+    <node concept="1TJgyi" id="32cHlEWsVP0" role="1TKVEl">
       <property role="TrG5h" value="column" />
       <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4815887568697030517">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="4blu3DypZtP">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="VectorType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <property role="34LRSv" value="vector" />
     <reference role="1TJDcQ" target="1237218038292" resolve="MathPrimitiveType" />
-    <node concept="1TJgyj" id="4815887568697050735" role="1TKVEi">
+    <node concept="1TJgyj" id="4blu3Dyq4pJ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="elementType" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
     </node>
-    <node concept="1TJgyi" id="4815887568697050734" role="1TKVEl">
+    <node concept="1TJgyi" id="4blu3Dyq4pI" role="1TKVEl">
       <property role="TrG5h" value="height" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
-    <node concept="PrWs8" id="5853558151363197546" role="PzmwI">
+    <node concept="PrWs8" id="54W120c67DE" role="PzmwI">
       <reference role="PrY4T" target="5853558151363197539" resolve="MatrixOrVectorType" />
     </node>
   </node>
-  <node concept="1TIwiD" id="920952925470358962">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="N7SsTDx7QM">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MatrixNorm" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <property role="34LRSv" value="norm" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyi" id="758819215871550447" role="1TKVEl">
+    <node concept="1TJgyi" id="E7RwTMKUfJ" role="1TKVEl">
       <property role="TrG5h" value="deg" />
       <reference role="AX2Wp" target="758819215871666038" resolve="MatrixNormKind" />
     </node>
-    <node concept="1TJgyj" id="758819215871053777" role="1TKVEi">
+    <node concept="1TJgyj" id="E7RwTMJ0Zh" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="mat" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4815887568697030518">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="4blu3DypZtQ">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MatrixType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <property role="34LRSv" value="matrix" />
     <reference role="1TJDcQ" target="1237218038292" resolve="MathPrimitiveType" />
-    <node concept="1TJgyj" id="4815887568697050707" role="1TKVEi">
+    <node concept="1TJgyj" id="4blu3Dyq4pj" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="elementType" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
     </node>
-    <node concept="PrWs8" id="5853558151363197540" role="PzmwI">
+    <node concept="PrWs8" id="54W120c67D$" role="PzmwI">
       <reference role="PrY4T" target="5853558151363197539" resolve="MatrixOrVectorType" />
     </node>
-    <node concept="1TJgyi" id="4815887568697048492" role="1TKVEl">
+    <node concept="1TJgyi" id="4blu3Dyq3QG" role="1TKVEl">
       <property role="TrG5h" value="rows" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="4815887568697048493" role="1TKVEl">
+    <node concept="1TJgyi" id="4blu3Dyq3QH" role="1TKVEl">
       <property role="TrG5h" value="columns" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
   </node>
-  <node concept="PlHQZ" id="5853558151363197539">
+  <node concept="PlHQZ" id="54W120c67Dz">
     <property role="TrG5h" value="MatrixOrVectorType" />
     <property role="3GE5qa" value="matrix" />
   </node>
-  <node concept="1TIwiD" id="1904947163751448715">
+  <node concept="1TIwiD" id="1DJIPD3iK2b">
     <property role="TrG5h" value="MathContext" />
     <property role="3GE5qa" value="highPrecisionArithmetic" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="1904947163751462195" role="1TKVEl">
+    <node concept="1TJgyi" id="1DJIPD3iNkN" role="1TKVEl">
       <property role="TrG5h" value="roundingMode" />
       <reference role="AX2Wp" target="1238402737615" resolve="RoundingMode" />
     </node>
-    <node concept="1TJgyi" id="1904947163751462196" role="1TKVEl">
+    <node concept="1TJgyi" id="1DJIPD3iNkO" role="1TKVEl">
       <property role="TrG5h" value="precision" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="1904947163751462197" role="1TKVEl">
+    <node concept="1TJgyi" id="1DJIPD3iNkP" role="1TKVEl">
       <property role="TrG5h" value="precisionSetting" />
       <reference role="AX2Wp" target="1238404910647" resolve="PrecisionSetting" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3922637823318870907">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="3pK0_4TrGHV">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Zero matrix" />
     <property role="TrG5h" value="MatrixZero" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <property role="34LRSv" value="zero" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyi" id="3922637823319028534" role="1TKVEl">
+    <node concept="1TJgyi" id="3pK0_4TsjcQ" role="1TKVEl">
       <property role="TrG5h" value="square" />
       <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
     </node>
-    <node concept="1TJgyj" id="3922637823319028532" role="1TKVEi">
+    <node concept="1TJgyj" id="3pK0_4TsjcO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="rows" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="3922637823319028533" role="1TKVEi">
+    <node concept="1TJgyj" id="3pK0_4TsjcP" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="columns" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238326494701">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1i0GnH">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Imaginary unit" />
     <property role="TrG5h" value="LiteralI" />
     <property role="2_RsDV" value="none" />
@@ -290,9 +290,9 @@
     <property role="34LRSv" value="I" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
   </node>
-  <node concept="1TIwiD" id="1238940287286">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1QA84Q">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="minus operation for big decimal types" />
     <property role="TrG5h" value="DecimalMinusExpression" />
     <property role="2_RsDV" value="none" />
@@ -300,89 +300,89 @@
     <property role="34LRSv" value=":-d" />
     <reference role="1TJDcQ" target="1238402702427" resolve="DecimalBinaryOperation" />
   </node>
-  <node concept="1TIwiD" id="1236426976680">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hZwMAQC">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="iterate over arbitrary iterable class" />
     <property role="TrG5h" value="MathSymbolIndex" />
     <property role="3GE5qa" value="bigSymbols" />
     <reference role="1TJDcQ" target="1236589266912" resolve="AbstractIndex" />
-    <node concept="1TJgyj" id="1236427140288" role="1TKVEi">
+    <node concept="1TJgyj" id="hZwNeN0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="iterable" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238402702427">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1mzpLr">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="DecimalBinaryOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="highPrecisionArithmetic" />
     <reference role="1TJDcQ" target="tpee.1081773326031" resolve="BinaryOperation" />
-    <node concept="1TJgyj" id="1904947163751462528" role="1TKVEi">
+    <node concept="1TJgyj" id="1DJIPD3iNq0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="context" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="1904947163751448715" resolve="MathContext" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238343594087">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1j1V1B">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MathFuncExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="methods" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1238343896784" role="1TKVEi">
+    <node concept="1TJgyj" id="i1j34Vg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="param" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="AxPO7" id="1238402737615">
+  <node concept="AxPO7" id="i1mzynf">
     <property role="TrG5h" value="RoundingMode" />
     <property role="3GE5qa" value="highPrecisionArithmetic" />
     <reference role="M4eZT" target="tpck.1082983657062" resolve="integer" />
     <reference role="Qgau1" target="1238402767339" />
-    <node concept="M4N5e" id="1238402737616" role="M5hS2">
+    <node concept="M4N5e" id="i1mzyng" role="M5hS2">
       <property role="1uS6qv" value="0" />
       <property role="1uS6qo" value="CEILING" />
     </node>
-    <node concept="M4N5e" id="1238402766914" role="M5hS2">
+    <node concept="M4N5e" id="i1mzDx2" role="M5hS2">
       <property role="1uS6qv" value="1" />
       <property role="1uS6qo" value="DOWN" />
     </node>
-    <node concept="M4N5e" id="1238402767056" role="M5hS2">
+    <node concept="M4N5e" id="i1mzDzg" role="M5hS2">
       <property role="1uS6qv" value="2" />
       <property role="1uS6qo" value="FLOOR" />
     </node>
-    <node concept="M4N5e" id="1238402767229" role="M5hS2">
+    <node concept="M4N5e" id="i1mzD_X" role="M5hS2">
       <property role="1uS6qv" value="3" />
       <property role="1uS6qo" value="HALF_DOWN" />
     </node>
-    <node concept="M4N5e" id="1238402767339" role="M5hS2">
+    <node concept="M4N5e" id="i1mzDBF" role="M5hS2">
       <property role="1uS6qv" value="4" />
       <property role="1uS6qo" value="HALF_EVEN" />
     </node>
-    <node concept="M4N5e" id="1238402799184" role="M5hS2">
+    <node concept="M4N5e" id="i1mzLpg" role="M5hS2">
       <property role="1uS6qv" value="5" />
       <property role="1uS6qo" value="HALF_UP" />
     </node>
-    <node concept="M4N5e" id="1238402803795" role="M5hS2">
+    <node concept="M4N5e" id="i1mzMxj" role="M5hS2">
       <property role="1uS6qv" value="6" />
       <property role="1uS6qo" value="UNNECCESARY" />
     </node>
-    <node concept="M4N5e" id="1238402809265" role="M5hS2">
+    <node concept="M4N5e" id="i1mzNQL" role="M5hS2">
       <property role="1uS6qv" value="7" />
       <property role="1uS6qo" value="UP" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238344212558">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1j4i1e">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Trigonometric sine of a value" />
     <property role="TrG5h" value="SineExpression" />
     <property role="2_RsDV" value="none" />
@@ -390,9 +390,9 @@
     <property role="34LRSv" value="sin" />
     <reference role="1TJDcQ" target="1238343594087" resolve="MathFuncExpression" />
   </node>
-  <node concept="1TIwiD" id="1238940210376">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1Q_Pj8">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="multiplication operation for big decimal types" />
     <property role="TrG5h" value="DecimalMulExpression" />
     <property role="2_RsDV" value="none" />
@@ -400,111 +400,111 @@
     <property role="34LRSv" value=":*d" />
     <reference role="1TJDcQ" target="1238402702427" resolve="DecimalBinaryOperation" />
   </node>
-  <node concept="1TIwiD" id="8365454432008500948">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="7go47Js_nrk">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Transpose operation" />
     <property role="TrG5h" value="TransposeOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <reference role="1TJDcQ" target="7255837154369580413" resolve="MatrixExponentialOperation" />
   </node>
-  <node concept="1TIwiD" id="6219660258344738888">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="5pgF0P2ga18">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Matrix initializer" />
     <property role="TrG5h" value="MatrixInitializer" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <property role="34LRSv" value="matrix" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="6219660258344759899" role="1TKVEi">
+    <node concept="1TJgyj" id="5pgF0P2gf9r" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="rowIndex" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="6219660258344759893" resolve="MatrixInitializerIndex" />
     </node>
-    <node concept="1TJgyj" id="6219660258344759900" role="1TKVEi">
+    <node concept="1TJgyj" id="5pgF0P2gf9s" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="colIndex" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="6219660258344759893" resolve="MatrixInitializerIndex" />
     </node>
-    <node concept="1TJgyj" id="6219660258345039001" role="1TKVEi">
+    <node concept="1TJgyj" id="5pgF0P2hjip" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="rowsCount" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="6219660258345039002" role="1TKVEi">
+    <node concept="1TJgyj" id="5pgF0P2hjiq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="colsCount" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="6219660258344753239" role="1TKVEi">
+    <node concept="1TJgyj" id="5pgF0P2gdxn" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="3361677252835112455" role="PzmwI">
+    <node concept="PrWs8" id="2UB4Uq8JRo7" role="PzmwI">
       <reference role="PrY4T" target="6219660258345570625" resolve="MatrixOrVectorInitializer" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1418611629042457277">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="1eJUWaJk5EX">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="LinearSolveOperation" />
     <property role="3GE5qa" value="matrix" />
     <property role="34LRSv" value="lsolve" />
     <reference role="1TJDcQ" target="tpee.1068581242863" resolve="LocalVariableDeclaration" />
-    <node concept="1TJgyj" id="1418611629042608218" role="1TKVEi">
+    <node concept="1TJgyj" id="1eJUWaJkExq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="type_M" />
       <reference role="20ksaX" target="tpee.5680397130376446158" />
       <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
     </node>
-    <node concept="1TJgyj" id="1418611629042470806" role="1TKVEi">
+    <node concept="1TJgyj" id="1eJUWaJk8Ym" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="matrix" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1418611629042470807" role="1TKVEi">
+    <node concept="1TJgyj" id="1eJUWaJk8Yn" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="vector" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1904947163751468044" role="1TKVEi">
+    <node concept="1TJgyj" id="1DJIPD3iOKc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="context" />
       <reference role="20lvS9" target="1904947163751448715" resolve="MathContext" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1237214346477">
+  <node concept="1TIwiD" id="i0fIbNH">
     <property role="TrG5h" value="MathTypeCast" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="internals" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1237546614691" role="1TKVEi">
+    <node concept="1TJgyj" id="i0zxFYz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="castedExpr" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyi" id="1237214516967" role="1TKVEl">
+    <node concept="1TJgyi" id="i0fIPrB" role="1TKVEl">
       <property role="TrG5h" value="target" />
       <reference role="AX2Wp" target="1237214452656" resolve="CastTargetDescriptor" />
     </node>
-    <node concept="PrWs8" id="1262430001741703941" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvB2G5" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238344256342">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1j4sHm">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Trigonometric tangent of a value" />
     <property role="TrG5h" value="TangentExpression" />
     <property role="2_RsDV" value="none" />
@@ -512,60 +512,60 @@
     <property role="34LRSv" value="tan" />
     <reference role="1TJDcQ" target="1238343594087" resolve="MathFuncExpression" />
   </node>
-  <node concept="1TIwiD" id="1237100849157">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i08Xew5">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="DivExpressionFraction" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="bigSymbols" />
     <property role="34LRSv" value="frac" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1237102925695" role="1TKVEi">
+    <node concept="1TJgyj" id="i0959tZ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="numerator" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1237102926618" role="1TKVEi">
+    <node concept="1TJgyj" id="i0959Gq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="denominator" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238325050905">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1hVbSp">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Absolute value of a number" />
     <property role="TrG5h" value="AbsExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="methods" />
     <property role="34LRSv" value="abs" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1238325188444" role="1TKVEi">
+    <node concept="1TJgyj" id="i1hVHts" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expr" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1236589239536">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hZEt_NK">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="iterate over interval of integers" />
     <property role="TrG5h" value="MathSymbolFromToIndex" />
     <property role="3GE5qa" value="bigSymbols" />
     <reference role="1TJDcQ" target="1236589266912" resolve="AbstractIndex" />
-    <node concept="1TJgyj" id="1236589606450" role="1TKVEi">
+    <node concept="1TJgyj" id="hZEuZoM" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="from" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238344268031">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1j4vzZ">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Natural logarithm of a value" />
     <property role="TrG5h" value="LogExpression" />
     <property role="2_RsDV" value="none" />
@@ -573,9 +573,9 @@
     <property role="34LRSv" value="ln" />
     <reference role="1TJDcQ" target="1238343594087" resolve="MathFuncExpression" />
   </node>
-  <node concept="1TIwiD" id="1238940192891">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1Q_L1V">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="divide operation for big decimal types" />
     <property role="TrG5h" value="DecimalDivExpression" />
     <property role="2_RsDV" value="none" />
@@ -583,119 +583,119 @@
     <property role="34LRSv" value=":/d" />
     <reference role="1TJDcQ" target="1238402702427" resolve="DecimalBinaryOperation" />
   </node>
-  <node concept="1TIwiD" id="1236428507726">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hZwSsDe">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ExtrSymbol" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="bigSymbols" />
     <reference role="1TJDcQ" target="1236426954905" resolve="MathSymbol" />
   </node>
-  <node concept="AxPO7" id="1237214452656">
+  <node concept="AxPO7" id="i0fI_IK">
     <property role="TrG5h" value="CastTargetDescriptor" />
     <property role="3GE5qa" value="internals" />
     <reference role="M4eZT" target="tpck.1082983657062" resolve="integer" />
     <reference role="Qgau1" target="1237214452657" />
-    <node concept="M4N5e" id="1237537073390" role="M5hS2">
+    <node concept="M4N5e" id="i0yXizI" role="M5hS2">
       <property role="1uS6qv" value="0" />
       <property role="1uS6qo" value="unknown" />
     </node>
-    <node concept="M4N5e" id="1237214452657" role="M5hS2">
+    <node concept="M4N5e" id="i0fI_IL" role="M5hS2">
       <property role="1uS6qv" value="1" />
       <property role="1uS6qo" value="primitive-&gt;biginteger" />
     </node>
-    <node concept="M4N5e" id="1237214465095" role="M5hS2">
+    <node concept="M4N5e" id="i0fICL7" role="M5hS2">
       <property role="1uS6qv" value="2" />
       <property role="1uS6qo" value="primitive-&gt;complex" />
     </node>
-    <node concept="M4N5e" id="1238313482654" role="M5hS2">
+    <node concept="M4N5e" id="i1hf3Au" role="M5hS2">
       <property role="1uS6qv" value="3" />
       <property role="1uS6qo" value="double-&gt;bigdecimal" />
     </node>
-    <node concept="M4N5e" id="1238400736819" role="M5hS2">
+    <node concept="M4N5e" id="i1mrTSN" role="M5hS2">
       <property role="1uS6qv" value="4" />
       <property role="1uS6qo" value="biginteger-&gt;bigdecimal" />
     </node>
-    <node concept="M4N5e" id="1238419058703" role="M5hS2">
+    <node concept="M4N5e" id="i1nxN0f" role="M5hS2">
       <property role="1uS6qv" value="5" />
       <property role="1uS6qo" value="double-&gt;bigcomplex" />
     </node>
-    <node concept="M4N5e" id="1238419065079" role="M5hS2">
+    <node concept="M4N5e" id="i1nxOzR" role="M5hS2">
       <property role="1uS6qv" value="6" />
       <property role="1uS6qo" value="biginteger-&gt;bigcomplex" />
     </node>
-    <node concept="M4N5e" id="1238419087110" role="M5hS2">
+    <node concept="M4N5e" id="i1nxTW6" role="M5hS2">
       <property role="1uS6qv" value="7" />
       <property role="1uS6qo" value="bigdecimal-&gt;bigcomplex" />
     </node>
-    <node concept="M4N5e" id="1238419103532" role="M5hS2">
+    <node concept="M4N5e" id="i1nxXWG" role="M5hS2">
       <property role="1uS6qv" value="8" />
       <property role="1uS6qo" value="complex-&gt;bigcomplex" />
     </node>
-    <node concept="M4N5e" id="5217243589490813621" role="M5hS2">
+    <node concept="M4N5e" id="4xBnQsaiaEP" role="M5hS2">
       <property role="1uS6qv" value="9" />
       <property role="1uS6qo" value="...-&gt;matrix&lt;integer&gt;" />
     </node>
-    <node concept="M4N5e" id="5217243589490813622" role="M5hS2">
+    <node concept="M4N5e" id="4xBnQsaiaEQ" role="M5hS2">
       <property role="1uS6qv" value="10" />
       <property role="1uS6qo" value="...-&gt;matrix&lt;long&gt;" />
     </node>
-    <node concept="M4N5e" id="5217243589490813623" role="M5hS2">
+    <node concept="M4N5e" id="4xBnQsaiaER" role="M5hS2">
       <property role="1uS6qv" value="11" />
       <property role="1uS6qo" value="...-&gt;matrix&lt;float&gt;" />
     </node>
-    <node concept="M4N5e" id="5217243589490813624" role="M5hS2">
+    <node concept="M4N5e" id="4xBnQsaiaES" role="M5hS2">
       <property role="1uS6qv" value="12" />
       <property role="1uS6qo" value="...-&gt;matrix&lt;double&gt;" />
     </node>
-    <node concept="M4N5e" id="5217243589490813625" role="M5hS2">
+    <node concept="M4N5e" id="4xBnQsaiaET" role="M5hS2">
       <property role="1uS6qv" value="13" />
       <property role="1uS6qo" value="...-&gt;matrix&lt;biginteger&gt;" />
     </node>
-    <node concept="M4N5e" id="5217243589490813626" role="M5hS2">
+    <node concept="M4N5e" id="4xBnQsaiaEU" role="M5hS2">
       <property role="1uS6qv" value="14" />
       <property role="1uS6qo" value="...-&gt;matrix&lt;bigdecimal&gt;" />
     </node>
-    <node concept="M4N5e" id="5217243589490813627" role="M5hS2">
+    <node concept="M4N5e" id="4xBnQsaiaEV" role="M5hS2">
       <property role="1uS6qv" value="15" />
       <property role="1uS6qo" value="...-&gt;matrix&lt;complex&gt;" />
     </node>
-    <node concept="M4N5e" id="5217243589490813628" role="M5hS2">
+    <node concept="M4N5e" id="4xBnQsaiaEW" role="M5hS2">
       <property role="1uS6qv" value="16" />
       <property role="1uS6qo" value="...-&gt;matrix&lt;bigcomplex&gt;" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1236427936913">
+  <node concept="1TIwiD" id="hZwQhih">
     <property role="TrG5h" value="MathSymbolIndexReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="bigSymbols" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1236427955167" role="1TKVEi">
+    <node concept="1TJgyj" id="hZwQlJv" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="indexRef" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="1236589266912" resolve="AbstractIndex" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1418611629041138655">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="1eJUWaJf3Jv">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Identity matrix" />
     <property role="TrG5h" value="MatrixUnit" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <property role="34LRSv" value="identity" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1418611629041138656" role="1TKVEi">
+    <node concept="1TJgyj" id="1eJUWaJf3Jw" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="size" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="263012178968580053">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="eAq2VF1wZl">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Matrix determinant" />
     <property role="TrG5h" value="Determinant" />
     <property role="2_RsDV" value="none" />
@@ -703,9 +703,9 @@
     <property role="34LRSv" value="det" />
     <reference role="1TJDcQ" target="1238343594087" resolve="MathFuncExpression" />
   </node>
-  <node concept="1TIwiD" id="1236428466848">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hZwSiEw">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Product of expressions" />
     <property role="TrG5h" value="BigProdExpression" />
     <property role="2_RsDV" value="none" />
@@ -713,9 +713,9 @@
     <property role="34LRSv" value="prod" />
     <reference role="1TJDcQ" target="1236428893250" resolve="ArithmSymbol" />
   </node>
-  <node concept="1TIwiD" id="1236439460603">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hZxyeFV">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Sum of expressions" />
     <property role="TrG5h" value="BigSumExpression" />
     <property role="2_RsDV" value="none" />
@@ -723,23 +723,23 @@
     <property role="34LRSv" value="sum" />
     <reference role="1TJDcQ" target="1236428893250" resolve="ArithmSymbol" />
   </node>
-  <node concept="1TIwiD" id="1418611629042457276">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="1eJUWaJk5EW">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Matrix inverse operation" />
     <property role="TrG5h" value="MatrixInverseOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <reference role="1TJDcQ" target="7255837154369580413" resolve="MatrixExponentialOperation" />
-    <node concept="1TJgyj" id="1904947163751464663" role="1TKVEi">
+    <node concept="1TJgyj" id="1DJIPD3iNVn" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="context" />
       <reference role="20lvS9" target="1904947163751448715" resolve="MathContext" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238344223606">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1j4kHQ">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Trigonometric cosine of a value" />
     <property role="TrG5h" value="CosineExpression" />
     <property role="2_RsDV" value="none" />
@@ -747,9 +747,9 @@
     <property role="34LRSv" value="cos" />
     <reference role="1TJDcQ" target="1238343594087" resolve="MathFuncExpression" />
   </node>
-  <node concept="1TIwiD" id="1237106070629">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i09h9h_">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Arbitrary precision signed decimal number" />
     <property role="TrG5h" value="BigDecimalType" />
     <property role="2_RsDV" value="none" />
@@ -757,9 +757,9 @@
     <property role="34LRSv" value="bigdecimal" />
     <reference role="1TJDcQ" target="1237218038292" resolve="MathPrimitiveType" />
   </node>
-  <node concept="1TIwiD" id="1237108887116">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i09rSTc">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Arbitrary precision complex number" />
     <property role="TrG5h" value="BigComplexType" />
     <property role="2_RsDV" value="none" />
@@ -767,9 +767,9 @@
     <property role="34LRSv" value="bigcomplex" />
     <reference role="1TJDcQ" target="1237218038292" resolve="MathPrimitiveType" />
   </node>
-  <node concept="1TIwiD" id="1236428482381">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hZwSmtd">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Minimum of expressions" />
     <property role="TrG5h" value="BigMinExpression" />
     <property role="2_RsDV" value="none" />
@@ -777,92 +777,92 @@
     <property role="34LRSv" value="min" />
     <reference role="1TJDcQ" target="1236428507726" resolve="ExtrSymbol" />
   </node>
-  <node concept="1TIwiD" id="1236428893250">
-    <property role="R5!K7" value="true" />
+  <node concept="1TIwiD" id="hZwTUL2">
+    <property role="R5$K7" value="true" />
     <property role="TrG5h" value="ArithmSymbol" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="bigSymbols" />
     <reference role="1TJDcQ" target="1236426954905" resolve="MathSymbol" />
   </node>
-  <node concept="1TIwiD" id="1236426954905">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hZwMxyp">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MathSymbol" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="bigSymbols" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1236427007990" role="1TKVEi">
+    <node concept="1TJgyj" id="hZwMIvQ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="var" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="1236589266912" resolve="AbstractIndex" />
     </node>
-    <node concept="1TJgyj" id="1236427008116" role="1TKVEi">
+    <node concept="1TJgyj" id="hZwMIxO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1236427162021" role="1TKVEi">
+    <node concept="1TJgyj" id="hZwNk6_" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="precondition" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1236594888470" role="1TKVEi">
+    <node concept="1TJgyj" id="hZEN8Wm" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="upperBound" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238328560395">
+  <node concept="1TIwiD" id="i1i8$Gb">
     <property role="TrG5h" value="ComplexLiteral" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="internals" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1238328589271" role="1TKVEi">
+    <node concept="1TJgyj" id="i1i8FJn" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="real" />
       <property role="20lbJX" value="0..1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1238328589757" role="1TKVEi">
+    <node concept="1TJgyj" id="i1i8FQX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="imag" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="1262430001741643088" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvANPg" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="AxPO7" id="1238404910647">
+  <node concept="AxPO7" id="i1mFOSR">
     <property role="TrG5h" value="PrecisionSetting" />
     <property role="3GE5qa" value="highPrecisionArithmetic" />
     <reference role="M4eZT" target="tpck.1082983657062" resolve="integer" />
-    <node concept="M4N5e" id="1238404910648" role="M5hS2">
+    <node concept="M4N5e" id="i1mFOSS" role="M5hS2">
       <property role="1uS6qv" value="0" />
       <property role="1uS6qo" value="CUSTOM" />
     </node>
-    <node concept="M4N5e" id="1238404936480" role="M5hS2">
+    <node concept="M4N5e" id="i1mFVcw" role="M5hS2">
       <property role="1uS6qv" value="1" />
       <property role="1uS6qo" value="DECIMAL32" />
     </node>
-    <node concept="M4N5e" id="1238404929837" role="M5hS2">
+    <node concept="M4N5e" id="i1mFT$H" role="M5hS2">
       <property role="1uS6qv" value="2" />
       <property role="1uS6qo" value="DECIMAL64" />
     </node>
-    <node concept="M4N5e" id="1238404929994" role="M5hS2">
+    <node concept="M4N5e" id="i1mFTBa" role="M5hS2">
       <property role="1uS6qv" value="3" />
       <property role="1uS6qo" value="DECIMAL128" />
     </node>
-    <node concept="M4N5e" id="1238404930917" role="M5hS2">
+    <node concept="M4N5e" id="i1mFTP_" role="M5hS2">
       <property role="1uS6qv" value="4" />
       <property role="1uS6qo" value="UNLIMITED" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1237107700024">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i09nn4S">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Double precision complex number" />
     <property role="TrG5h" value="ComplexType" />
     <property role="2_RsDV" value="none" />
@@ -870,9 +870,9 @@
     <property role="34LRSv" value="complex" />
     <reference role="1TJDcQ" target="1237218038292" resolve="MathPrimitiveType" />
   </node>
-  <node concept="1TIwiD" id="6389121991274611513">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="5yEI9AszOcT">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Wildcard index" />
     <property role="TrG5h" value="MatrixIndexWildcard" />
     <property role="2_RsDV" value="none" />
@@ -880,40 +880,40 @@
     <property role="34LRSv" value="*" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
   </node>
-  <node concept="1TIwiD" id="6219660258345553845">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="5pgF0P2jgYP">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Vector initializer" />
     <property role="TrG5h" value="VectorInitializer" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <property role="34LRSv" value="vector" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="6219660258345553847" role="1TKVEi">
+    <node concept="1TJgyj" id="5pgF0P2jgYR" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="rowIndex" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="6219660258344759893" resolve="MatrixInitializerIndex" />
     </node>
-    <node concept="1TJgyj" id="6219660258345553848" role="1TKVEi">
+    <node concept="1TJgyj" id="5pgF0P2jgYS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="6219660258345553849" role="1TKVEi">
+    <node concept="1TJgyj" id="5pgF0P2jgYT" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="rowsCount" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="6219660258345570628" role="PzmwI">
+    <node concept="PrWs8" id="5pgF0P2jl54" role="PzmwI">
       <reference role="PrY4T" target="6219660258345570625" resolve="MatrixOrVectorInitializer" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1237106079927">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i09hbyR">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Arbitrary precision integer" />
     <property role="TrG5h" value="BigIntegerType" />
     <property role="2_RsDV" value="none" />
@@ -921,9 +921,9 @@
     <property role="34LRSv" value="biginteger" />
     <reference role="1TJDcQ" target="1237218038292" resolve="MathPrimitiveType" />
   </node>
-  <node concept="1TIwiD" id="1238345083695">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1j7AGJ">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Exponent of a value" />
     <property role="TrG5h" value="ExponentExpression" />
     <property role="2_RsDV" value="none" />
@@ -931,36 +931,36 @@
     <property role="34LRSv" value="exp" />
     <reference role="1TJDcQ" target="1238343594087" resolve="MathFuncExpression" />
   </node>
-  <node concept="AxPO7" id="758819215871666038">
+  <node concept="AxPO7" id="E7RwTMLmtQ">
     <property role="3lZH7k" value="custom" />
     <property role="TrG5h" value="MatrixNormKind" />
     <property role="3GE5qa" value="matrix" />
     <reference role="M4eZT" target="tpck.1082983657062" resolve="integer" />
     <reference role="Qgau1" target="758819215871666040" />
-    <node concept="M4N5e" id="758819215871666039" role="M5hS2">
+    <node concept="M4N5e" id="E7RwTMLmtR" role="M5hS2">
       <property role="1uS6qv" value="0" />
       <property role="2fHolG" value="norm1" />
       <property role="1uS6qo" value="1" />
     </node>
-    <node concept="M4N5e" id="758819215871666040" role="M5hS2">
+    <node concept="M4N5e" id="E7RwTMLmtS" role="M5hS2">
       <property role="1uS6qv" value="1" />
       <property role="2fHolG" value="normInfty" />
       <property role="1uS6qo" value="∞" />
     </node>
-    <node concept="M4N5e" id="758819215871666041" role="M5hS2">
+    <node concept="M4N5e" id="E7RwTMLmtT" role="M5hS2">
       <property role="1uS6qv" value="2" />
       <property role="2fHolG" value="norm2F" />
       <property role="1uS6qo" value="F" />
     </node>
-    <node concept="M4N5e" id="758819215871666042" role="M5hS2">
+    <node concept="M4N5e" id="E7RwTMLmtU" role="M5hS2">
       <property role="1uS6qv" value="3" />
       <property role="2fHolG" value="normMax" />
       <property role="1uS6qo" value="max" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1236428480583">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hZwSm17">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Maximum of expressions" />
     <property role="TrG5h" value="BigMaxExpression" />
     <property role="2_RsDV" value="none" />
@@ -968,19 +968,19 @@
     <property role="34LRSv" value="max" />
     <reference role="1TJDcQ" target="1236428507726" resolve="ExtrSymbol" />
   </node>
-  <node concept="1TIwiD" id="1236589266912">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hZEtGvw">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AbstractIndex" />
     <property role="3GE5qa" value="bigSymbols" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1236589341082" role="PzmwI">
+    <node concept="PrWs8" id="hZEtYAq" role="PzmwI">
       <reference role="PrY4T" target="tpee.1212170275853" resolve="IValidIdentifier" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1238940230440">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i1Q_UcC">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="plus operation for bigdecimal types" />
     <property role="TrG5h" value="DecimalPlusExpression" />
     <property role="2_RsDV" value="none" />
@@ -988,94 +988,94 @@
     <property role="34LRSv" value=":+d" />
     <reference role="1TJDcQ" target="1238402702427" resolve="DecimalBinaryOperation" />
   </node>
-  <node concept="PlHQZ" id="6219660258345570625">
+  <node concept="PlHQZ" id="5pgF0P2jl51">
     <property role="TrG5h" value="MatrixOrVectorInitializer" />
     <property role="3GE5qa" value="matrix" />
   </node>
-  <node concept="1TIwiD" id="6219660258344759893">
+  <node concept="1TIwiD" id="5pgF0P2gf9l">
     <property role="TrG5h" value="MatrixInitializerIndex" />
     <property role="3GE5qa" value="matrix" />
     <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
-    <node concept="PrWs8" id="6219660258344759894" role="PzmwI">
+    <node concept="PrWs8" id="5pgF0P2gf9m" role="PzmwI">
       <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
     </node>
-    <node concept="PrWs8" id="6219660258345570627" role="PzmwI">
+    <node concept="PrWs8" id="5pgF0P2jl53" role="PzmwI">
       <reference role="PrY4T" target="6219660258345570625" resolve="MatrixOrVectorInitializer" />
     </node>
   </node>
-  <node concept="1TIwiD" id="6389121991274611498">
+  <node concept="1TIwiD" id="5yEI9AszOcE">
     <property role="TrG5h" value="MatrixElementAccessExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="6389121991274611516" role="1TKVEi">
+    <node concept="1TJgyj" id="5yEI9AszOcW" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="6389121991274611517" role="1TKVEi">
+    <node concept="1TJgyj" id="5yEI9AszOcX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="rowIndex" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="6389121991274611518" role="1TKVEi">
+    <node concept="1TJgyj" id="5yEI9AszOcY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="colIndex" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="1262430001741718676" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvB6ik" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="6219660258344759890">
+  <node concept="1TIwiD" id="5pgF0P2gf9i">
     <property role="TrG5h" value="MatrixInitializerIndexReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="6219660258344759925" role="1TKVEi">
+    <node concept="1TJgyj" id="5pgF0P2gf9P" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="index" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="6219660258344759893" resolve="MatrixInitializerIndex" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1237218038292">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="i0fWh8k">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MathPrimitiveType" />
     <property role="2_RsDV" value="none" />
     <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
   </node>
-  <node concept="1TIwiD" id="7255837154369354272">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="6iLUnbAh3Cw">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ExponentialOperation" />
     <property role="2_RsDV" value="none" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="7255837154369354274" role="1TKVEi">
+    <node concept="1TJgyj" id="6iLUnbAh3Cy" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expr" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="1262430001741720055" role="PzmwI">
+    <node concept="PrWs8" id="1653mnvB6BR" role="PzmwI">
       <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7255837154369580413">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="6iLUnbAhUPX">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MatrixExponentialOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="matrix" />
     <reference role="1TJDcQ" target="7255837154369354272" resolve="ExponentialOperation" />
   </node>
-  <node concept="1TIwiD" id="7255837154369797715">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="6iLUnbAiJTj">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="Matrix conjugate" />
     <property role="TrG5h" value="ConjugateOperation" />
     <property role="2_RsDV" value="none" />

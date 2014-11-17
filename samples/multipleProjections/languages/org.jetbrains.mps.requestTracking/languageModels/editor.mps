@@ -45,10 +45,10 @@
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" index="3F0A7n" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
-      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi!J">
+      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="sg" index="2czfm3">
@@ -64,7 +64,7 @@
         <property id="168363875802087287" name="showInUI" index="2gpH_U" />
         <property id="5944657839012629576" name="presentation" index="2BUmq6" />
       </concept>
-      <concept id="6150987479542522273" name="jetbrains.mps.lang.editor.structure.QueryHintsSpecification" flags="ig" index="2Hnlc!" />
+      <concept id="6150987479542522273" name="jetbrains.mps.lang.editor.structure.QueryHintsSpecification" flags="ig" index="2Hnlc$" />
       <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
@@ -100,7 +100,7 @@
         <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
@@ -112,92 +112,92 @@
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
-        <child id="1237721435808" name="initValue" index="HW!Y0" />
-        <child id="1237721435807" name="elementType" index="HW!YZ" />
+        <child id="1237721435808" name="initValue" index="HW$Y0" />
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
     </language>
   </registry>
-  <node concept="24kQdi" id="3675491646420733859">
+  <node concept="24kQdi" id="3c1Y2R7OGYz">
     <reference role="1XX52x" target="f4vt.3675491646420733795" resolve="WorkflowContainer" />
-    <node concept="3EZMnI" id="3675491646420739446" role="2wV5jI">
-      <node concept="l2Vlx" id="3675491646420739447" role="2iSdaV" />
-      <node concept="3F0ifn" id="3675491646420739448" role="3EZMnx">
+    <node concept="3EZMnI" id="3c1Y2R7OIlQ" role="2wV5jI">
+      <node concept="l2Vlx" id="3c1Y2R7OIlR" role="2iSdaV" />
+      <node concept="3F0ifn" id="3c1Y2R7OIlS" role="3EZMnx">
         <property role="3F0ifm" value="workflow container" />
       </node>
-      <node concept="3F0A7n" id="3675491646420739449" role="3EZMnx">
+      <node concept="3F0A7n" id="3c1Y2R7OIlT" role="3EZMnx">
         <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
-        <node concept="ljvvj" id="3675491646420810978" role="3F10Kt">
+        <node concept="ljvvj" id="3c1Y2R7OZNy" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F2HdR" id="3675491646420739460" role="3EZMnx">
+      <node concept="3F2HdR" id="3c1Y2R7OIm4" role="3EZMnx">
         <reference role="1NtTu8" target="f4vt.3675491646420738766" />
-        <node concept="l2Vlx" id="3675491646420739461" role="2czzBx" />
-        <node concept="pj6Ft" id="3675491646420739462" role="3F10Kt">
+        <node concept="l2Vlx" id="3c1Y2R7OIm5" role="2czzBx" />
+        <node concept="pj6Ft" id="3c1Y2R7OIm6" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="lj46D" id="3675491646420739463" role="3F10Kt">
+        <node concept="lj46D" id="3c1Y2R7OIm7" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="ljvvj" id="3675491646420739464" role="3F10Kt">
+        <node concept="ljvvj" id="3c1Y2R7OIm8" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="3675491646420739356">
+  <node concept="24kQdi" id="3c1Y2R7OIks">
     <reference role="1XX52x" target="f4vt.3675491646420739318" resolve="Workflow" />
-    <node concept="3EZMnI" id="3675491646420739358" role="2wV5jI">
-      <node concept="3F0A7n" id="3675491646420872302" role="3EZMnx">
+    <node concept="3EZMnI" id="3c1Y2R7OIku" role="2wV5jI">
+      <node concept="3F0A7n" id="3c1Y2R7PeLI" role="3EZMnx">
         <reference role="1NtTu8" target="f4vt.3675491646420872268" resolve="presentation" />
       </node>
-      <node concept="l2Vlx" id="3675491646420739359" role="2iSdaV" />
-      <node concept="3F0ifn" id="3675491646420739360" role="3EZMnx">
+      <node concept="l2Vlx" id="3c1Y2R7OIkv" role="2iSdaV" />
+      <node concept="3F0ifn" id="3c1Y2R7OIkw" role="3EZMnx">
         <property role="3F0ifm" value="workflow" />
       </node>
-      <node concept="3F0A7n" id="3675491646420739361" role="3EZMnx">
+      <node concept="3F0A7n" id="3c1Y2R7OIkx" role="3EZMnx">
         <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
-        <node concept="ljvvj" id="3675491646420842291" role="3F10Kt">
+        <node concept="ljvvj" id="3c1Y2R7P7sN" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3EZMnI" id="3675491646420891325" role="3EZMnx">
-        <node concept="l2Vlx" id="3675491646420891326" role="2iSdaV" />
-        <node concept="3F1sOY" id="3675491646420739372" role="3EZMnx">
+      <node concept="3EZMnI" id="3c1Y2R7PjqX" role="3EZMnx">
+        <node concept="l2Vlx" id="3c1Y2R7PjqY" role="2iSdaV" />
+        <node concept="3F1sOY" id="3c1Y2R7OIkG" role="3EZMnx">
           <reference role="1NtTu8" target="f4vt.3675491646420739343" />
-          <node concept="ljvvj" id="3675491646420739374" role="3F10Kt">
+          <node concept="ljvvj" id="3c1Y2R7OIkI" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
         </node>
-        <node concept="2Hnlc!" id="3675491646420891402" role="2whIAn">
-          <node concept="3clFbS" id="3675491646420891403" role="2VODD2">
-            <node concept="3cpWs6" id="3675491646420892155" role="3cqZAp">
-              <node concept="3K4zz7" id="3675491646420925497" role="3cqZAk">
-                <node concept="2YIFZM" id="3675491646421138944" role="3K4GZi">
+        <node concept="2Hnlc$" id="3c1Y2R7Pjsa" role="2whIAn">
+          <node concept="3clFbS" id="3c1Y2R7Pjsb" role="2VODD2">
+            <node concept="3cpWs6" id="3c1Y2R7PjBV" role="3cqZAp">
+              <node concept="3K4zz7" id="3c1Y2R7PrKT" role="3cqZAk">
+                <node concept="2YIFZM" id="3c1Y2R7QfS0" role="3K4GZi">
                   <reference role="37wK5l" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolve="emptyList" />
                   <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
-                  <node concept="17QB3L" id="3675491646421285756" role="3PaCim" />
+                  <node concept="17QB3L" id="3c1Y2R7QNHW" role="3PaCim" />
                 </node>
-                <node concept="2ShNRf" id="3675491646420926745" role="3K4E3e">
-                  <node concept="Tc6Ow" id="3675491646420938778" role="2ShVmc">
-                    <node concept="2pYGij" id="3675491646420951315" role="HW!Y0">
+                <node concept="2ShNRf" id="3c1Y2R7Ps4p" role="3K4E3e">
+                  <node concept="Tc6Ow" id="3c1Y2R7Pv0q" role="2ShVmc">
+                    <node concept="2pYGij" id="3c1Y2R7Py4j" role="HW$Y0">
                       <reference role="2pYH_C" target="3675491646420891365" resolve="tabular" />
                     </node>
-                    <node concept="17QB3L" id="3675491646420943586" role="HW!YZ" />
+                    <node concept="17QB3L" id="3c1Y2R7Pwby" role="HW$YZ" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="3675491646420906990" role="3K4Cdx">
-                  <node concept="3t7uKx" id="3675491646420922265" role="2OqNvi">
-                    <node concept="uoxfO" id="3675491646420922267" role="3t7uKA">
+                <node concept="2OqwBi" id="3c1Y2R7PnfI" role="3K4Cdx">
+                  <node concept="3t7uKx" id="3c1Y2R7PqYp" role="2OqNvi">
+                    <node concept="uoxfO" id="3c1Y2R7PqYr" role="3t7uKA">
                       <reference role="uo_Cq" target="f4vt.3675491646420867327" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="3675491646420893507" role="2Oq!k0">
-                    <node concept="3TrcHB" id="3675491646420900854" role="2OqNvi">
+                  <node concept="2OqwBi" id="3c1Y2R7PjX3" role="2Oq$k0">
+                    <node concept="3TrcHB" id="3c1Y2R7PlJQ" role="2OqNvi">
                       <reference role="3TsBF5" target="f4vt.3675491646420872268" resolve="presentation" />
                     </node>
-                    <node concept="pncrf" id="3675491646420893093" role="2Oq!k0" />
+                    <node concept="pncrf" id="3c1Y2R7PjQ_" role="2Oq$k0" />
                   </node>
                 </node>
               </node>
@@ -205,14 +205,14 @@
           </node>
         </node>
       </node>
-      <node concept="3F0ifn" id="3675491646420826368" role="3EZMnx">
+      <node concept="3F0ifn" id="3c1Y2R7P3$0" role="3EZMnx">
         <property role="3F0ifm" value="" />
       </node>
     </node>
   </node>
-  <node concept="2ABfQD" id="3675491646420891362">
+  <node concept="2ABfQD" id="3c1Y2R7Pjry">
     <property role="TrG5h" value="WorkflowPresentations" />
-    <node concept="2BsEeg" id="3675491646420891365" role="2ABdcP">
+    <node concept="2BsEeg" id="3c1Y2R7Pjr_" role="2ABdcP">
       <property role="TrG5h" value="tabular" />
       <property role="2BUmq6" value="Use tabular notation for workflow presentation" />
       <property role="2gpH_U" value="true" />

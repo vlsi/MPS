@@ -43,7 +43,7 @@
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1205250923097" name="caption" index="2uzpH1" />
-        <property id="1211298967294" name="outsideCommandExecution" index="72QZ!" />
+        <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1217413222820" name="parameter" index="1NuT2Z" />
       </concept>
@@ -57,7 +57,7 @@
         <reference id="1203088061055" name="action" index="tCJdB" />
       </concept>
       <concept id="1203092361741" name="jetbrains.mps.lang.plugin.structure.ModificationStatement" flags="lg" index="tT9cl">
-        <reference id="1203092736097" name="modifiedGroup" index="tU!_T" />
+        <reference id="1203092736097" name="modifiedGroup" index="tU$_T" />
       </concept>
       <concept id="5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" flags="ng" index="1oajcY" />
       <concept id="1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" flags="ng" index="1DS2jV">
@@ -87,7 +87,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -109,46 +109,46 @@
       </concept>
     </language>
   </registry>
-  <node concept="tC5Ba" id="7834630562321988169">
+  <node concept="tC5Ba" id="6MUcJMtBJD9">
     <property role="TrG5h" value="MigationAssistantActions" />
     <property role="3OnEW4" value="true" />
-    <node concept="ftmFs" id="7834630562322129876" role="ftER_">
-      <node concept="tCFHf" id="7834630562322129879" role="ftvYc">
+    <node concept="ftmFs" id="6MUcJMtCifk" role="ftER_">
+      <node concept="tCFHf" id="6MUcJMtCifn" role="ftvYc">
         <reference role="tCJdB" target="7834630562321988558" resolve="ExecuteMigrationAssistant" />
       </node>
     </node>
-    <node concept="tT9cl" id="7834630562322129881" role="2f5YQi">
-      <reference role="tU!_T" target="tprs.1215012161252" resolve="IDEATools" />
+    <node concept="tT9cl" id="6MUcJMtCifp" role="2f5YQi">
+      <reference role="tU$_T" target="tprs.1215012161252" resolve="IDEATools" />
     </node>
   </node>
-  <node concept="sE7Ow" id="7834630562321988558">
+  <node concept="sE7Ow" id="6MUcJMtBJJe">
     <property role="TrG5h" value="ExecuteMigrationAssistant" />
     <property role="2uzpH1" value="Run Migration Assistant" />
-    <property role="72QZ!" value="true" />
-    <node concept="1DS2jV" id="3366942412399973392" role="1NuT2Z">
+    <property role="72QZ$" value="true" />
+    <node concept="1DS2jV" id="2UTM4$6j1gg" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <reference role="1DUlNI" target="nx1.~CommonDataKeys%dPROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="8898893144448210490" role="1oa70y" />
+      <node concept="1oajcY" id="7HZe2EwZDoU" role="1oa70y" />
     </node>
-    <node concept="tnohg" id="7834630562321988559" role="tncku">
-      <node concept="3clFbS" id="7834630562321988560" role="2VODD2">
-        <node concept="3clFbF" id="7834630562322086058" role="3cqZAp">
-          <node concept="2OqwBi" id="7834630562322122778" role="3clFbG">
-            <node concept="2OqwBi" id="7834630562322118736" role="2Oq!k0">
-              <node concept="2OqwBi" id="7834630562322086052" role="2Oq!k0">
-                <node concept="2WthIp" id="7834630562322086055" role="2Oq!k0" />
-                <node concept="1DTwFV" id="7834630562322086057" role="2OqNvi">
+    <node concept="tnohg" id="6MUcJMtBJJf" role="tncku">
+      <node concept="3clFbS" id="6MUcJMtBJJg" role="2VODD2">
+        <node concept="3clFbF" id="6MUcJMtC7yE" role="3cqZAp">
+          <node concept="2OqwBi" id="6MUcJMtCgwq" role="3clFbG">
+            <node concept="2OqwBi" id="6MUcJMtCfxg" role="2Oq$k0">
+              <node concept="2OqwBi" id="6MUcJMtC7y$" role="2Oq$k0">
+                <node concept="2WthIp" id="6MUcJMtC7yB" role="2Oq$k0" />
+                <node concept="1DTwFV" id="6MUcJMtC7yD" role="2OqNvi">
                   <reference role="2WH_rO" target="3366942412399973392" resolve="project" />
                 </node>
               </node>
-              <node concept="liA8E" id="7834630562322121448" role="2OqNvi">
+              <node concept="liA8E" id="6MUcJMtCgbC" role="2OqNvi">
                 <reference role="37wK5l" target="iiw6.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolve="getComponent" />
-                <node concept="3VsKOn" id="7834630562322121998" role="37wK5m">
+                <node concept="3VsKOn" id="6MUcJMtCgke" role="37wK5m">
                   <reference role="3VsUkX" target="bim2.6781485246382122239" resolve="StartupMigrationExecutor" />
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="7834630562322128075" role="2OqNvi">
+            <node concept="liA8E" id="6MUcJMtChNb" role="2OqNvi">
               <reference role="37wK5l" target="bim2.7834630562321954018" resolve="executeWizard" />
             </node>
           </node>
@@ -156,7 +156,7 @@
       </node>
     </node>
   </node>
-  <node concept="9BnSX" id="1453248744423272128">
+  <node concept="9BnSX" id="1gEYwydCqV0">
     <property role="9BnSZ" value="jetbrains.mps.ide.migrationAssist" />
     <property role="3FCvg6" value="true" />
     <property role="9BnSP" value="http://www.jetbrains.com/mps/" />
@@ -166,8 +166,8 @@
     <property role="TrG5h" value="Migration Assistant" />
     <property role="9BnSO" value="139.1" />
     <property role="9BnSK" value="3.2" />
-    <node concept="2zDL_w" id="410076905192262197" role="2zDKky">
-      <node concept="2zDL_x" id="410076905192263352" role="2zDL_s">
+    <node concept="2zDL_w" id="mKSGn8$SCP" role="2zDKky">
+      <node concept="2zDL_x" id="mKSGn8$SUS" role="2zDL_s">
         <reference role="2zDL_u" target="7834630562321988169" resolve="MigationAssistantActions" />
       </node>
     </node>

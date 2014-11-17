@@ -65,14 +65,14 @@
       </concept>
     </language>
   </registry>
-  <node concept="LiM7Y" id="6420745394459121798">
+  <node concept="LiM7Y" id="5$r4uFHXxy6">
     <property role="TrG5h" value="DefaultEditorComponent" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestEditorComponentChild child concept instance using default editor component (no context hints specified)" />
-    <node concept="1PpWQE" id="6420745394459121831" role="LiRBU">
-      <node concept="1PpQz0" id="6420745394459121834" role="1PpP87">
+    <node concept="1PpWQE" id="5$r4uFHXxyB" role="LiRBU">
+      <node concept="1PpQz0" id="5$r4uFHXxyE" role="1PpP87">
         <property role="TrG5h" value="defaultChild" />
         <property role="1PpD5E" value="propertyValue" />
-        <node concept="LIFWc" id="5326871522109732953" role="lGtFl">
+        <node concept="LIFWc" id="4BGQmOBvFxp" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -81,11 +81,11 @@
         </node>
       </node>
     </node>
-    <node concept="1PpWQE" id="6420745394459121850" role="LiZbd">
-      <node concept="1PpQz0" id="6420745394459121851" role="1PpP87">
+    <node concept="1PpWQE" id="5$r4uFHXxyU" role="LiZbd">
+      <node concept="1PpQz0" id="5$r4uFHXxyV" role="1PpP87">
         <property role="TrG5h" value="defaultChild" />
         <property role="1PpD5E" value="newValue" />
-        <node concept="LIFWc" id="5326871522109732955" role="lGtFl">
+        <node concept="LIFWc" id="4BGQmOBvFxr" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="8" />
@@ -94,22 +94,22 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="6420745394459121858" role="LjaKd">
-      <node concept="2TK7Tu" id="6420745394459121860" role="3cqZAp">
+    <node concept="3clFbS" id="5$r4uFHXxz2" role="LjaKd">
+      <node concept="2TK7Tu" id="5$r4uFHXxz4" role="3cqZAp">
         <property role="2TTd_B" value="newValue" />
       </node>
     </node>
   </node>
-  <node concept="2XOHcx" id="5950344441601613251">
+  <node concept="2XOHcx" id="5ajRFTcS_R3">
     <property role="2XOHcw" value="${mps_home}" />
   </node>
-  <node concept="LiM7Y" id="6420745394459130152">
+  <node concept="LiM7Y" id="5$r4uFHXz$C">
     <property role="TrG5h" value="EditorComponentSpecifiedBy_context_hint" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestEditorComponentChild child concept instance using rich editor component (rich context hint was pushed into context by parent collection)" />
-    <node concept="1PpWQE" id="6420745394459130178" role="LiRBU">
-      <node concept="1PpQz0" id="6420745394459130193" role="1PpFXZ">
+    <node concept="1PpWQE" id="5$r4uFHXz_2" role="LiRBU">
+      <node concept="1PpQz0" id="5$r4uFHXz_h" role="1PpFXZ">
         <property role="TrG5h" value="richChid" />
-        <node concept="LIFWc" id="5326871522109732994" role="lGtFl">
+        <node concept="LIFWc" id="4BGQmOBvFy2" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -118,11 +118,11 @@
         </node>
       </node>
     </node>
-    <node concept="1PpWQE" id="6420745394459130209" role="LiZbd">
-      <node concept="1PpQz0" id="6420745394459130210" role="1PpFXZ">
+    <node concept="1PpWQE" id="5$r4uFHXz_x" role="LiZbd">
+      <node concept="1PpQz0" id="5$r4uFHXz_y" role="1PpFXZ">
         <property role="TrG5h" value="richChid" />
         <property role="1PpD5G" value="propertyValue" />
-        <node concept="LIFWc" id="5326871522109733033" role="lGtFl">
+        <node concept="LIFWc" id="4BGQmOBvFyD" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="13" />
@@ -131,19 +131,19 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="6420745394459130215" role="LjaKd">
-      <node concept="2TK7Tu" id="6420745394459130217" role="3cqZAp">
+    <node concept="3clFbS" id="5$r4uFHXz_B" role="LjaKd">
+      <node concept="2TK7Tu" id="5$r4uFHXz_D" role="3cqZAp">
         <property role="2TTd_B" value="propertyValue" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="6420745394459130264">
+  <node concept="LiM7Y" id="5$r4uFHXzAo">
     <property role="TrG5h" value="MostSpecificEditorComponent" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestEditorComponentChild child concept instance using editor component applicable to both compact &amp; rich context hints. This editor is specified in a sub-language + there are &quot;less-specific&quot; editor components specified for &quot;rich&quot; or &quot;compact&quot; hints" />
-    <node concept="1PpWQE" id="6420745394459131049" role="LiRBU">
-      <node concept="1PpQz0" id="6420745394459131073" role="1PpFXP">
+    <node concept="1PpWQE" id="5$r4uFHXzMD" role="LiRBU">
+      <node concept="1PpQz0" id="5$r4uFHXzN1" role="1PpFXP">
         <property role="TrG5h" value="mostSpecificChild" />
-        <node concept="LIFWc" id="5326871522109733072" role="lGtFl">
+        <node concept="LIFWc" id="4BGQmOBvFzg" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -152,11 +152,11 @@
         </node>
       </node>
     </node>
-    <node concept="1PpWQE" id="6420745394459384378" role="LiZbd">
-      <node concept="1PpQz0" id="6420745394459384379" role="1PpFXP">
+    <node concept="1PpWQE" id="5$r4uFHYxCU" role="LiZbd">
+      <node concept="1PpQz0" id="5$r4uFHYxCV" role="1PpFXP">
         <property role="TrG5h" value="mostSpecificChild" />
         <property role="1PpD5J" value="propertyValue" />
-        <node concept="LIFWc" id="5326871522109733074" role="lGtFl">
+        <node concept="LIFWc" id="4BGQmOBvFzi" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="13" />
@@ -165,20 +165,20 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="6420745394459384386" role="LjaKd">
-      <node concept="2TK7Tu" id="6420745394459384388" role="3cqZAp">
+    <node concept="3clFbS" id="5$r4uFHYxD2" role="LjaKd">
+      <node concept="2TK7Tu" id="5$r4uFHYxD4" role="3cqZAp">
         <property role="2TTd_B" value="propertyValue" />
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="6420745394459902267">
+  <node concept="LiM7Y" id="5$r4uFI0w4V">
     <property role="TrG5h" value="OverridenEditorComponent" />
     <property role="3YCmrE" value="Editing MultipleEditorsTestEditorComponentChildSubconcept child concept instance using editor component attached to this concept and overriding corresponding editor component for MultipleEditorsTestEditorComponentChild concept" />
-    <node concept="1PpWQE" id="6420745394459902384" role="LiRBU">
-      <node concept="2OSjA2" id="6420745394460144856" role="2OSjjI">
+    <node concept="1PpWQE" id="5$r4uFI0w6K" role="LiRBU">
+      <node concept="2OSjA2" id="5$r4uFI1rjo" role="2OSjjI">
         <property role="TrG5h" value="DefaultChildSubconcept" />
         <property role="2OTjak" value="oldPropertyValue" />
-        <node concept="LIFWc" id="5326871522109733113" role="lGtFl">
+        <node concept="LIFWc" id="4BGQmOBvFzT" role="lGtFl">
           <property role="LIFWa" value="3" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -187,11 +187,11 @@
         </node>
       </node>
     </node>
-    <node concept="1PpWQE" id="6420745394460144872" role="LiZbd">
-      <node concept="2OSjA2" id="6420745394460144873" role="2OSjjI">
+    <node concept="1PpWQE" id="5$r4uFI1rjC" role="LiZbd">
+      <node concept="2OSjA2" id="5$r4uFI1rjD" role="2OSjjI">
         <property role="TrG5h" value="DefaultChildSubconcept" />
         <property role="2OTjak" value="newPropertyValue" />
-        <node concept="LIFWc" id="5326871522109733115" role="lGtFl">
+        <node concept="LIFWc" id="4BGQmOBvFzV" role="lGtFl">
           <property role="LIFWa" value="3" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="3" />
@@ -200,8 +200,8 @@
         </node>
       </node>
     </node>
-    <node concept="3clFbS" id="6420745394460144882" role="LjaKd">
-      <node concept="2TK7Tu" id="6420745394460144884" role="3cqZAp">
+    <node concept="3clFbS" id="5$r4uFI1rjM" role="LjaKd">
+      <node concept="2TK7Tu" id="5$r4uFI1rjO" role="3cqZAp">
         <property role="2TTd_B" value="new" />
       </node>
     </node>

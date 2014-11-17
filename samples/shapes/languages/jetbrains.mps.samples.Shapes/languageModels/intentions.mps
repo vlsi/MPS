@@ -51,30 +51,30 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
     </language>
   </registry>
-  <node concept="2S6QgY" id="1082824515535656124">
+  <node concept="2S6QgY" id="W6XMzE__iW">
     <property role="TrG5h" value="PreviewScene" />
     <property role="2ZfUl0" value="true" />
     <reference role="2ZfgGC" target="lpry.5898776707557467933" resolve="Canvas" />
-    <node concept="2S6ZIM" id="1082824515535656125" role="2ZfVej">
-      <node concept="3clFbS" id="1082824515535656126" role="2VODD2">
-        <node concept="3clFbF" id="1082824515535657920" role="3cqZAp">
-          <node concept="Xl_RD" id="1082824515535657919" role="3clFbG">
+    <node concept="2S6ZIM" id="W6XMzE__iX" role="2ZfVej">
+      <node concept="3clFbS" id="W6XMzE__iY" role="2VODD2">
+        <node concept="3clFbF" id="W6XMzE__J0" role="3cqZAp">
+          <node concept="Xl_RD" id="W6XMzE__IZ" role="3clFbG">
             <property role="Xl_RC" value="Preview Scene" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2Sbjvc" id="1082824515535656127" role="2ZfgGD">
-      <node concept="3clFbS" id="1082824515535656128" role="2VODD2">
-        <node concept="3clFbF" id="1082824515535661049" role="3cqZAp">
-          <node concept="2OqwBi" id="1082824515535661165" role="3clFbG">
-            <node concept="2Sf5sV" id="1082824515535661048" role="2Oq!k0" />
-            <node concept="2qgKlT" id="1082824515535661860" role="2OqNvi">
+    <node concept="2Sbjvc" id="W6XMzE__iZ" role="2ZfgGD">
+      <node concept="3clFbS" id="W6XMzE__j0" role="2VODD2">
+        <node concept="3clFbF" id="W6XMzE_AvT" role="3cqZAp">
+          <node concept="2OqwBi" id="W6XMzE_AxH" role="3clFbG">
+            <node concept="2Sf5sV" id="W6XMzE_AvS" role="2Oq$k0" />
+            <node concept="2qgKlT" id="W6XMzE_AG$" role="2OqNvi">
               <reference role="37wK5l" target="g5uf.1082824515535528722" resolve="interpret" />
             </node>
           </node>

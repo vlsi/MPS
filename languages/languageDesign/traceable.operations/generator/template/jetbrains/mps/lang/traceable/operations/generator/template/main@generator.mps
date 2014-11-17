@@ -30,7 +30,7 @@
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -58,7 +58,7 @@
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
-      <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H!t8">
+      <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
         <child id="1167169362365" name="conditionFunction" index="30HLyM" />
       </concept>
@@ -69,7 +69,7 @@
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
       </concept>
       <concept id="1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" flags="lg" index="gft3U">
-        <child id="1177093586806" name="templateNode" index="gfFT!" />
+        <child id="1177093586806" name="templateNode" index="gfFT$" />
       </concept>
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
         <child id="1168024447342" name="sourceNodeQuery" index="3NFExx" />
@@ -79,22 +79,22 @@
       <concept id="1168024337012" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" flags="in" index="3NFfHV" />
     </language>
   </registry>
-  <node concept="bUwia" id="6942529559415687114">
+  <node concept="bUwia" id="61oOtBBBKva">
     <property role="TrG5h" value="main" />
-    <node concept="3aamgX" id="6942529559415687115" role="3acgRq">
+    <node concept="3aamgX" id="61oOtBBBKvb" role="3acgRq">
       <reference role="30HIoZ" target="tpee.1197027756228" resolve="DotExpression" />
-      <node concept="gft3U" id="1381762044504204472" role="1lVwrX">
-        <node concept="2YIFZM" id="1381762044504211657" role="gfFT!">
+      <node concept="gft3U" id="1cH0k8MMAiS" role="1lVwrX">
+        <node concept="2YIFZM" id="1cH0k8MMC39" role="gfFT$">
           <reference role="1Pybhc" target="ierg.~TracingUtil" resolve="TracingUtil" />
           <reference role="37wK5l" target="ierg.~TracingUtil%dcopyWithTrace(java%dutil%dList)%cjava%dutil%dList" resolve="copyWithTrace" />
-          <node concept="10Nm6u" id="1381762044504211658" role="37wK5m">
-            <node concept="29HgVG" id="1381762044504211660" role="lGtFl">
-              <node concept="3NFfHV" id="1381762044504211661" role="3NFExx">
-                <node concept="3clFbS" id="1381762044504211662" role="2VODD2">
-                  <node concept="3clFbF" id="1381762044504211663" role="3cqZAp">
-                    <node concept="2OqwBi" id="7529650772944783833" role="3clFbG">
-                      <node concept="30H73N" id="1381762044504211664" role="2Oq!k0" />
-                      <node concept="3TrEf2" id="7529650772944783839" role="2OqNvi">
+          <node concept="10Nm6u" id="1cH0k8MMC3a" role="37wK5m">
+            <node concept="29HgVG" id="1cH0k8MMC3c" role="lGtFl">
+              <node concept="3NFfHV" id="1cH0k8MMC3d" role="3NFExx">
+                <node concept="3clFbS" id="1cH0k8MMC3e" role="2VODD2">
+                  <node concept="3clFbF" id="1cH0k8MMC3f" role="3cqZAp">
+                    <node concept="2OqwBi" id="6xYGnJO7CBp" role="3clFbG">
+                      <node concept="30H73N" id="1cH0k8MMC3g" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="6xYGnJO7CBv" role="2OqNvi">
                         <reference role="3Tt5mk" target="tpee.1197027771414" />
                       </node>
                     </node>
@@ -105,18 +105,18 @@
           </node>
         </node>
       </node>
-      <node concept="30G5F_" id="7529650772944783750" role="30HLyM">
-        <node concept="3clFbS" id="7529650772944783751" role="2VODD2">
-          <node concept="3clFbF" id="7529650772944783752" role="3cqZAp">
-            <node concept="2OqwBi" id="7529650772944783804" role="3clFbG">
-              <node concept="2OqwBi" id="7529650772944783774" role="2Oq!k0">
-                <node concept="30H73N" id="7529650772944783753" role="2Oq!k0" />
-                <node concept="3TrEf2" id="7529650772944783782" role="2OqNvi">
+      <node concept="30G5F_" id="6xYGnJO7CA6" role="30HLyM">
+        <node concept="3clFbS" id="6xYGnJO7CA7" role="2VODD2">
+          <node concept="3clFbF" id="6xYGnJO7CA8" role="3cqZAp">
+            <node concept="2OqwBi" id="6xYGnJO7CAW" role="3clFbG">
+              <node concept="2OqwBi" id="6xYGnJO7CAu" role="2Oq$k0">
+                <node concept="30H73N" id="6xYGnJO7CA9" role="2Oq$k0" />
+                <node concept="3TrEf2" id="6xYGnJO7CAA" role="2OqNvi">
                   <reference role="3Tt5mk" target="tpee.1197027833540" />
                 </node>
               </node>
-              <node concept="1mIQ4w" id="7529650772944783810" role="2OqNvi">
-                <node concept="chp4Y" id="7529650772944783812" role="cj9EA">
+              <node concept="1mIQ4w" id="6xYGnJO7CB2" role="2OqNvi">
+                <node concept="chp4Y" id="6xYGnJO7CB4" role="cj9EA">
                   <reference role="cht4Q" target="lyxe.6942529559415680891" resolve="Node_CopyWithTraceOperation" />
                 </node>
               </node>
@@ -125,20 +125,20 @@
         </node>
       </node>
     </node>
-    <node concept="3aamgX" id="2603522263179413925" role="3acgRq">
+    <node concept="3aamgX" id="2gx$rhdCkA_" role="3acgRq">
       <reference role="30HIoZ" target="lyxe.2603522263179374343" resolve="NList_CopyWithTraceOperation" />
-      <node concept="gft3U" id="2603522263179413927" role="1lVwrX">
-        <node concept="2YIFZM" id="2603522263179413970" role="gfFT!">
+      <node concept="gft3U" id="2gx$rhdCkAB" role="1lVwrX">
+        <node concept="2YIFZM" id="2gx$rhdCkBi" role="gfFT$">
           <reference role="1Pybhc" target="ierg.~TracingUtil" resolve="TracingUtil" />
           <reference role="37wK5l" target="ierg.~TracingUtil%dcopyWithTrace(java%dutil%dList)%cjava%dutil%dList" resolve="copyWithTrace" />
-          <node concept="10Nm6u" id="2603522263179413971" role="37wK5m">
-            <node concept="29HgVG" id="2603522263179413972" role="lGtFl">
-              <node concept="3NFfHV" id="2603522263179413973" role="3NFExx">
-                <node concept="3clFbS" id="2603522263179413974" role="2VODD2">
-                  <node concept="3clFbF" id="2603522263179413975" role="3cqZAp">
-                    <node concept="2OqwBi" id="2603522263179413976" role="3clFbG">
-                      <node concept="30H73N" id="2603522263179413977" role="2Oq!k0" />
-                      <node concept="3TrEf2" id="2603522263179413978" role="2OqNvi">
+          <node concept="10Nm6u" id="2gx$rhdCkBj" role="37wK5m">
+            <node concept="29HgVG" id="2gx$rhdCkBk" role="lGtFl">
+              <node concept="3NFfHV" id="2gx$rhdCkBl" role="3NFExx">
+                <node concept="3clFbS" id="2gx$rhdCkBm" role="2VODD2">
+                  <node concept="3clFbF" id="2gx$rhdCkBn" role="3cqZAp">
+                    <node concept="2OqwBi" id="2gx$rhdCkBo" role="3clFbG">
+                      <node concept="30H73N" id="2gx$rhdCkBp" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="2gx$rhdCkBq" role="2OqNvi">
                         <reference role="3Tt5mk" target="lyxe.2603522263179374348" />
                       </node>
                     </node>

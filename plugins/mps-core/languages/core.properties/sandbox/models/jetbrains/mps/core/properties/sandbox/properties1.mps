@@ -27,75 +27,75 @@
       </concept>
     </language>
   </registry>
-  <node concept="3bKiEt" id="6896005762093430084">
+  <node concept="3bKiEt" id="5YNybgUC3l4">
     <property role="TrG5h" value="build1" />
-    <node concept="3bKjsg" id="6896005762093550210" role="3bKjsa">
+    <node concept="3bKjsg" id="5YNybgUCwE2" role="3bKjsa">
       <property role="3bKjsj" value="##########################" />
     </node>
-    <node concept="3bKjsg" id="6896005762093550193" role="3bKjsa">
+    <node concept="3bKjsg" id="5YNybgUCwDL" role="3bKjsa">
       <property role="3bKjsj" value="Copyright JetBrains s.r.o." />
     </node>
-    <node concept="3bKjsg" id="6896005762093550208" role="3bKjsa">
+    <node concept="3bKjsg" id="5YNybgUCwE0" role="3bKjsa">
       <property role="3bKjsj" value="Apache 2.0" />
     </node>
-    <node concept="3bKjsb" id="6896005762093550198" role="3bKjsa" />
-    <node concept="3bKjs8" id="6896005762093550200" role="3bKjsa">
+    <node concept="3bKjsb" id="5YNybgUCwDQ" role="3bKjsa" />
+    <node concept="3bKjs8" id="5YNybgUCwDS" role="3bKjsa">
       <property role="TrG5h" value="mps_home" />
       <property role="3bKjsH" value="/Applications/MPS.app" />
     </node>
-    <node concept="3bKjs8" id="6896005762093550202" role="3bKjsa">
+    <node concept="3bKjs8" id="5YNybgUCwDU" role="3bKjsa">
       <property role="TrG5h" value="deploy.dir" />
       <property role="3bKjsH" value="./artifacts" />
     </node>
-    <node concept="3bKjsb" id="6896005762093550204" role="3bKjsa" />
-    <node concept="3bKjsg" id="6896005762093550206" role="3bKjsa">
+    <node concept="3bKjsb" id="5YNybgUCwDW" role="3bKjsa" />
+    <node concept="3bKjsg" id="5YNybgUCwDY" role="3bKjsa">
       <property role="3bKjsj" value="locale" />
     </node>
-    <node concept="3bKjs8" id="6896005762093550212" role="3bKjsa">
+    <node concept="3bKjs8" id="5YNybgUCwE4" role="3bKjsa">
       <property role="TrG5h" value="encoding" />
       <property role="3bKjsH" value="utf-8" />
     </node>
-    <node concept="3bKjs8" id="6896005762093550214" role="3bKjsa">
+    <node concept="3bKjs8" id="5YNybgUCwE6" role="3bKjsa">
       <property role="TrG5h" value="locale" />
       <property role="3bKjsH" value="en_US" />
     </node>
-    <node concept="3bKjsb" id="6896005762093550203" role="3bKjsa" />
-    <node concept="3bKjsg" id="6896005762093550216" role="3bKjsa">
+    <node concept="3bKjsb" id="5YNybgUCwDV" role="3bKjsa" />
+    <node concept="3bKjsg" id="5YNybgUCwE8" role="3bKjsa">
       <property role="3bKjsj" value="escaping test" />
     </node>
-    <node concept="3bKjs8" id="6896005762093550220" role="3bKjsa">
+    <node concept="3bKjs8" id="5YNybgUCwEc" role="3bKjsa">
       <property role="TrG5h" value="ns:abc" />
       <property role="3bKjsH" value="Colon in key" />
     </node>
-    <node concept="3bKjs8" id="6896005762093550223" role="3bKjsa">
+    <node concept="3bKjs8" id="5YNybgUCwEf" role="3bKjsa">
       <property role="TrG5h" value="ns=abc" />
       <property role="3bKjsH" value="Equal in key" />
     </node>
-    <node concept="3bKjs8" id="6896005762093550225" role="3bKjsa">
+    <node concept="3bKjs8" id="5YNybgUCwEh" role="3bKjsa">
       <property role="TrG5h" value="\tinkey" />
       <property role="3bKjsH" value="Well" />
     </node>
-    <node concept="3bKjsb" id="6896005762093567711" role="3bKjsa" />
-    <node concept="3bKjsg" id="6896005762093567713" role="3bKjsa">
+    <node concept="3bKjsb" id="5YNybgUC$Vv" role="3bKjsa" />
+    <node concept="3bKjsg" id="5YNybgUC$Vx" role="3bKjsa">
       <property role="3bKjsj" value="greek: Έκτακτη" />
     </node>
-    <node concept="3bKjs8" id="6896005762093567715" role="3bKjsa">
+    <node concept="3bKjs8" id="5YNybgUC$Vz" role="3bKjsa">
       <property role="TrG5h" value="greekValue" />
       <property role="3bKjsH" value="Έκτακτη" />
     </node>
-    <node concept="3bKjsb" id="6896005762093550226" role="3bKjsa" />
-    <node concept="3bKjsg" id="6896005762093567716" role="3bKjsa">
+    <node concept="3bKjsb" id="5YNybgUCwEi" role="3bKjsa" />
+    <node concept="3bKjsg" id="5YNybgUC$V$" role="3bKjsa">
       <property role="3bKjsj" value="russian: Привет" />
     </node>
-    <node concept="3bKjs8" id="6896005762093567718" role="3bKjsa">
+    <node concept="3bKjs8" id="5YNybgUC$VA" role="3bKjsa">
       <property role="TrG5h" value="ruValue" />
       <property role="3bKjsH" value="Привет" />
     </node>
-    <node concept="3bKjsb" id="6896005762093567719" role="3bKjsa" />
-    <node concept="3bKjsg" id="6896005762093567722" role="3bKjsa">
+    <node concept="3bKjsb" id="5YNybgUC$VB" role="3bKjsa" />
+    <node concept="3bKjsg" id="5YNybgUC$VE" role="3bKjsa">
       <property role="3bKjsj" value="regexp [\w+=?]" />
     </node>
-    <node concept="3bKjs8" id="6896005762093567725" role="3bKjsa">
+    <node concept="3bKjs8" id="5YNybgUC$VH" role="3bKjsa">
       <property role="TrG5h" value="regexp" />
       <property role="3bKjsH" value="[\w+=?]" />
     </node>

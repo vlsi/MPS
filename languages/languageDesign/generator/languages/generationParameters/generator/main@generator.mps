@@ -38,7 +38,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -55,7 +55,7 @@
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
-      <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H!t8">
+      <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
       </concept>
       <concept id="1167327847730" name="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" flags="lg" index="3aamgX">
@@ -70,7 +70,7 @@
         <child id="1219952894531" name="dropRootRule" index="aQYdv" />
       </concept>
       <concept id="1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" flags="lg" index="gft3U">
-        <child id="1177093586806" name="templateNode" index="gfFT!" />
+        <child id="1177093586806" name="templateNode" index="gfFT$" />
       </concept>
       <concept id="1087833241328" name="jetbrains.mps.lang.generator.structure.PropertyMacro" flags="ln" index="17Uvod">
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
@@ -78,29 +78,29 @@
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
     </language>
   </registry>
-  <node concept="bUwia" id="650531548512001932">
+  <node concept="bUwia" id="$79JWCfxYc">
     <property role="TrG5h" value="main" />
-    <node concept="aNPBN" id="650531548512004043" role="aQYdv">
+    <node concept="aNPBN" id="$79JWCfyvb" role="aQYdv">
       <reference role="aOQi4" target="q5cj.8484425748929510072" resolve="DefaultGeneratorParameterContainer" />
     </node>
-    <node concept="3aamgX" id="3064182000795632404" role="3acgRq">
+    <node concept="3aamgX" id="2E6akI4$sck" role="3acgRq">
       <reference role="30HIoZ" target="q5cj.3064182000795631740" resolve="DefaultGenerationParameterId" />
-      <node concept="gft3U" id="3064182000795632405" role="1lVwrX">
+      <node concept="gft3U" id="2E6akI4$scl" role="1lVwrX">
         <property role="3GE5qa" value="parameter" />
-        <node concept="Xl_RD" id="3064182000795632406" role="gfFT!">
-          <node concept="17Uvod" id="3064182000795632407" role="lGtFl">
+        <node concept="Xl_RD" id="2E6akI4$scm" role="gfFT$">
+          <node concept="17Uvod" id="2E6akI4$scn" role="lGtFl">
             <property role="2qtEX9" value="value" />
-            <node concept="3zFVjK" id="3064182000795632408" role="3zH0cK">
-              <node concept="3clFbS" id="3064182000795632409" role="2VODD2">
-                <node concept="3clFbF" id="3064182000795633770" role="3cqZAp">
-                  <node concept="2OqwBi" id="3064182000795633777" role="3clFbG">
-                    <node concept="2OqwBi" id="3064182000795633772" role="2Oq!k0">
-                      <node concept="30H73N" id="3064182000795633771" role="2Oq!k0" />
-                      <node concept="3TrEf2" id="3064182000795633776" role="2OqNvi">
+            <node concept="3zFVjK" id="2E6akI4$sco" role="3zH0cK">
+              <node concept="3clFbS" id="2E6akI4$scp" role="2VODD2">
+                <node concept="3clFbF" id="2E6akI4$sxE" role="3cqZAp">
+                  <node concept="2OqwBi" id="2E6akI4$sxL" role="3clFbG">
+                    <node concept="2OqwBi" id="2E6akI4$sxG" role="2Oq$k0">
+                      <node concept="30H73N" id="2E6akI4$sxF" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="2E6akI4$sxK" role="2OqNvi">
                         <reference role="3Tt5mk" target="q5cj.3064182000795631811" />
                       </node>
                     </node>
-                    <node concept="2qgKlT" id="3064182000795633782" role="2OqNvi">
+                    <node concept="2qgKlT" id="2E6akI4$sxQ" role="2OqNvi">
                       <reference role="37wK5l" target="tpfh.650531548511609559" resolve="getUniqueId" />
                     </node>
                   </node>

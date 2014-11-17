@@ -38,7 +38,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -52,32 +52,32 @@
       </concept>
     </language>
   </registry>
-  <node concept="_UgoZ" id="7286989617095153002">
+  <node concept="_UgoZ" id="6kw_BboUDlE">
     <property role="TrG5h" value="RemoveDependencies" />
     <property role="_Wzho" value="Remove instances of obsolete concepts in typesystem" />
-    <node concept="_XfAh" id="7286989617095153003" role="_YvDr">
+    <node concept="_XfAh" id="6kw_BboUDlF" role="_YvDr">
       <property role="_XH9r" value="Remove Dependency" />
       <reference role="_XDHR" target="tpd4.1193733698246" resolve="Dependency" />
-      <node concept="_ZGcI" id="7286989617095153004" role="_XPhp">
-        <node concept="3clFbS" id="7286989617095153005" role="2VODD2">
-          <node concept="3clFbF" id="7286989617095153006" role="3cqZAp">
-            <node concept="2OqwBi" id="7286989617095153028" role="3clFbG">
-              <node concept="_YI3z" id="7286989617095153007" role="2Oq!k0" />
-              <node concept="1PgB_6" id="7286989617095185024" role="2OqNvi" />
+      <node concept="_ZGcI" id="6kw_BboUDlG" role="_XPhp">
+        <node concept="3clFbS" id="6kw_BboUDlH" role="2VODD2">
+          <node concept="3clFbF" id="6kw_BboUDlI" role="3cqZAp">
+            <node concept="2OqwBi" id="6kw_BboUDm4" role="3clFbG">
+              <node concept="_YI3z" id="6kw_BboUDlJ" role="2Oq$k0" />
+              <node concept="1PgB_6" id="6kw_BboULa0" role="2OqNvi" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="_XfAh" id="7034072325014751502" role="_YvDr">
+    <node concept="_XfAh" id="66u2SbKUg$e" role="_YvDr">
       <property role="_XH9r" value="Remove DependentComputationItem" />
       <reference role="_XDHR" target="tpd4.8058965347377019242" resolve="DependentComputationItem" />
-      <node concept="_ZGcI" id="7034072325014751503" role="_XPhp">
-        <node concept="3clFbS" id="7034072325014751504" role="2VODD2">
-          <node concept="3clFbF" id="7034072325014751505" role="3cqZAp">
-            <node concept="2OqwBi" id="7034072325014751527" role="3clFbG">
-              <node concept="_YI3z" id="7034072325014751506" role="2Oq!k0" />
-              <node concept="1PgB_6" id="7034072325014751532" role="2OqNvi" />
+      <node concept="_ZGcI" id="66u2SbKUg$f" role="_XPhp">
+        <node concept="3clFbS" id="66u2SbKUg$g" role="2VODD2">
+          <node concept="3clFbF" id="66u2SbKUg$h" role="3cqZAp">
+            <node concept="2OqwBi" id="66u2SbKUg$B" role="3clFbG">
+              <node concept="_YI3z" id="66u2SbKUg$i" role="2Oq$k0" />
+              <node concept="1PgB_6" id="66u2SbKUg$G" role="2OqNvi" />
             </node>
           </node>
         </node>

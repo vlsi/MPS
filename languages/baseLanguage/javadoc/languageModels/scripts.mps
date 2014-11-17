@@ -46,7 +46,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -60,38 +60,38 @@
       </concept>
     </language>
   </registry>
-  <node concept="_UgoZ" id="992603585967257187">
+  <node concept="_UgoZ" id="R6rVfgmRpz">
     <property role="TrG5h" value="UpdateDeprecatedBlockDocTags" />
     <property role="_Wzho" value="UpdateDeprecatedBlockDocTags" />
-    <node concept="_XfAh" id="992603585967261966" role="_YvDr">
+    <node concept="_XfAh" id="R6rVfgmS$e" role="_YvDr">
       <property role="_XH9r" value="Adds the new CommentLine child to all DeprecatedBlockDocTag instance that miss it" />
       <reference role="_XDHR" target="m373.8465538089690331492" resolve="DeprecatedBlockDocTag" />
-      <node concept="_ZGcI" id="992603585967261967" role="_XPhp">
-        <node concept="3clFbS" id="992603585967261968" role="2VODD2">
-          <node concept="3clFbF" id="992603585967423760" role="3cqZAp">
-            <node concept="2OqwBi" id="992603585967425229" role="3clFbG">
-              <node concept="2OqwBi" id="992603585967424040" role="2Oq!k0">
-                <node concept="_YI3z" id="992603585967423759" role="2Oq!k0" />
-                <node concept="3TrEf2" id="992603585967424607" role="2OqNvi">
+      <node concept="_ZGcI" id="R6rVfgmS$f" role="_XPhp">
+        <node concept="3clFbS" id="R6rVfgmS$g" role="2VODD2">
+          <node concept="3clFbF" id="R6rVfgnw4g" role="3cqZAp">
+            <node concept="2OqwBi" id="R6rVfgnwrd" role="3clFbG">
+              <node concept="2OqwBi" id="R6rVfgnw8C" role="2Oq$k0">
+                <node concept="_YI3z" id="R6rVfgnw4f" role="2Oq$k0" />
+                <node concept="3TrEf2" id="R6rVfgnwhv" role="2OqNvi">
                   <reference role="3Tt5mk" target="m373.2667874559098216723" />
                 </node>
               </node>
-              <node concept="2DeJnY" id="992603585967428004" role="2OqNvi" />
+              <node concept="2DeJnY" id="R6rVfgnx6$" role="2OqNvi" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="_Y34e" id="992603585967339883" role="_XDHO">
-        <node concept="3clFbS" id="992603585967339884" role="2VODD2">
-          <node concept="3clFbF" id="992603585967339909" role="3cqZAp">
-            <node concept="2OqwBi" id="992603585967423122" role="3clFbG">
-              <node concept="2OqwBi" id="992603585967420388" role="2Oq!k0">
-                <node concept="_YI3z" id="992603585967339908" role="2Oq!k0" />
-                <node concept="3TrEf2" id="992603585967422304" role="2OqNvi">
+      <node concept="_Y34e" id="R6rVfgnb_F" role="_XDHO">
+        <node concept="3clFbS" id="R6rVfgnb_G" role="2VODD2">
+          <node concept="3clFbF" id="R6rVfgnbA5" role="3cqZAp">
+            <node concept="2OqwBi" id="R6rVfgnvUi" role="3clFbG">
+              <node concept="2OqwBi" id="R6rVfgnvf$" role="2Oq$k0">
+                <node concept="_YI3z" id="R6rVfgnbA4" role="2Oq$k0" />
+                <node concept="3TrEf2" id="R6rVfgnvHw" role="2OqNvi">
                   <reference role="3Tt5mk" target="m373.2667874559098216723" />
                 </node>
               </node>
-              <node concept="3w_OXm" id="992603585967423753" role="2OqNvi" />
+              <node concept="3w_OXm" id="R6rVfgnw49" role="2OqNvi" />
             </node>
           </node>
         </node>

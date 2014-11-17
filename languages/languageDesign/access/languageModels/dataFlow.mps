@@ -28,7 +28,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -52,7 +52,7 @@
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
-        <child id="1154032183016" name="body" index="2LFqv!" />
+        <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
@@ -87,59 +87,59 @@
       </concept>
     </language>
   </registry>
-  <node concept="3_zdsH" id="8974276187400348263">
+  <node concept="3_zdsH" id="7Mb2akafE9B">
     <property role="3GE5qa" value="Command" />
     <reference role="3_znuS" target="qff7.8974276187400348170" resolve="BaseExecuteCommandStatement" />
-    <node concept="3__wT9" id="8974276187400348264" role="3_A6iZ">
-      <node concept="3clFbS" id="8974276187400348265" role="2VODD2" />
+    <node concept="3__wT9" id="7Mb2akafE9C" role="3_A6iZ">
+      <node concept="3clFbS" id="7Mb2akafE9D" role="2VODD2" />
     </node>
   </node>
-  <node concept="3_zdsH" id="8974276187400348266">
+  <node concept="3_zdsH" id="7Mb2akafE9E">
     <property role="3GE5qa" value="Command" />
     <reference role="3_znuS" target="qff7.8974276187400348173" resolve="CommandClosureLiteral" />
-    <node concept="3__wT9" id="8974276187400348267" role="3_A6iZ">
-      <node concept="3clFbS" id="8974276187400348268" role="2VODD2">
-        <node concept="3clFbJ" id="8974276187400348269" role="3cqZAp">
-          <node concept="3clFbS" id="8974276187400348270" role="3clFbx">
-            <node concept="3AgYrR" id="8974276187400348271" role="3cqZAp">
-              <node concept="2OqwBi" id="8974276187400348272" role="3Ah4Yx">
-                <node concept="3__QtB" id="8974276187400348273" role="2Oq!k0" />
-                <node concept="3TrEf2" id="8974276187400348274" role="2OqNvi">
+    <node concept="3__wT9" id="7Mb2akafE9F" role="3_A6iZ">
+      <node concept="3clFbS" id="7Mb2akafE9G" role="2VODD2">
+        <node concept="3clFbJ" id="7Mb2akafE9H" role="3cqZAp">
+          <node concept="3clFbS" id="7Mb2akafE9I" role="3clFbx">
+            <node concept="3AgYrR" id="7Mb2akafE9J" role="3cqZAp">
+              <node concept="2OqwBi" id="7Mb2akafE9K" role="3Ah4Yx">
+                <node concept="3__QtB" id="7Mb2akafE9L" role="2Oq$k0" />
+                <node concept="3TrEf2" id="7Mb2akafE9M" role="2OqNvi">
                   <reference role="3Tt5mk" target="tp2c.1199569916463" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="8974276187400348275" role="3clFbw">
-            <node concept="3__QtB" id="8974276187400348276" role="2Oq!k0" />
-            <node concept="2qgKlT" id="8974276187400348277" role="2OqNvi">
+          <node concept="2OqwBi" id="7Mb2akafE9N" role="3clFbw">
+            <node concept="3__QtB" id="7Mb2akafE9O" role="2Oq$k0" />
+            <node concept="2qgKlT" id="7Mb2akafE9P" role="2OqNvi">
               <reference role="37wK5l" target="tpek.1230212745736" resolve="isExecuteSynchronous" />
             </node>
           </node>
-          <node concept="9aQIb" id="8974276187400348278" role="9aQIa">
-            <node concept="3clFbS" id="8974276187400348279" role="9aQI4">
-              <node concept="1DcWWT" id="8974276187400348280" role="3cqZAp">
-                <node concept="3clFbS" id="8974276187400348281" role="2LFqv!">
-                  <node concept="3_DX4M" id="8974276187400348282" role="3cqZAp">
-                    <node concept="37vLTw" id="4265636116363094714" role="3_H1SZ">
+          <node concept="9aQIb" id="7Mb2akafE9Q" role="9aQIa">
+            <node concept="3clFbS" id="7Mb2akafE9R" role="9aQI4">
+              <node concept="1DcWWT" id="7Mb2akafE9S" role="3cqZAp">
+                <node concept="3clFbS" id="7Mb2akafE9T" role="2LFqv$">
+                  <node concept="3_DX4M" id="7Mb2akafE9U" role="3cqZAp">
+                    <node concept="37vLTw" id="3GM_nagTyEU" role="3_H1SZ">
                       <reference role="3cqZAo" target="8974276187400348284" resolve="var" />
                     </node>
                   </node>
                 </node>
-                <node concept="3cpWsn" id="8974276187400348284" role="1Duv9x">
+                <node concept="3cpWsn" id="7Mb2akafE9W" role="1Duv9x">
                   <property role="TrG5h" value="var" />
-                  <node concept="3Tqbb2" id="8974276187400348285" role="1tU5fm">
+                  <node concept="3Tqbb2" id="7Mb2akafE9X" role="1tU5fm">
                     <reference role="ehGHo" target="tpee.5432666129547687712" resolve="IVariableDeclaration" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="8974276187400348286" role="1DdaDG">
-                  <node concept="2OqwBi" id="8974276187400348287" role="2Oq!k0">
-                    <node concept="3__QtB" id="8974276187400348288" role="2Oq!k0" />
-                    <node concept="3TrEf2" id="8974276187400348289" role="2OqNvi">
+                <node concept="2OqwBi" id="7Mb2akafE9Y" role="1DdaDG">
+                  <node concept="2OqwBi" id="7Mb2akafE9Z" role="2Oq$k0">
+                    <node concept="3__QtB" id="7Mb2akafEa0" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="7Mb2akafEa1" role="2OqNvi">
                       <reference role="3Tt5mk" target="tp2c.1199569916463" />
                     </node>
                   </node>
-                  <node concept="2qgKlT" id="8974276187400348290" role="2OqNvi">
+                  <node concept="2qgKlT" id="7Mb2akafEa2" role="2OqNvi">
                     <reference role="37wK5l" target="tpek.1214501165480" resolve="getExternalVariablesDeclarations" />
                   </node>
                 </node>
@@ -150,20 +150,20 @@
       </node>
     </node>
   </node>
-  <node concept="3_zdsH" id="8974276187400348291">
+  <node concept="3_zdsH" id="7Mb2akafEa3">
     <property role="3GE5qa" value="Command" />
     <reference role="3_znuS" target="qff7.8974276187400348172" resolve="BaseExecuteCommandStatementSync" />
-    <node concept="3__wT9" id="8974276187400348292" role="3_A6iZ">
-      <node concept="3clFbS" id="8974276187400348293" role="2VODD2">
-        <node concept="3AgYrR" id="8974276187400348294" role="3cqZAp">
-          <node concept="2OqwBi" id="8974276187400348295" role="3Ah4Yx">
-            <node concept="2OqwBi" id="8974276187400348296" role="2Oq!k0">
-              <node concept="3__QtB" id="8974276187400348297" role="2Oq!k0" />
-              <node concept="3TrEf2" id="8974276187400348298" role="2OqNvi">
+    <node concept="3__wT9" id="7Mb2akafEa4" role="3_A6iZ">
+      <node concept="3clFbS" id="7Mb2akafEa5" role="2VODD2">
+        <node concept="3AgYrR" id="7Mb2akafEa6" role="3cqZAp">
+          <node concept="2OqwBi" id="7Mb2akafEa7" role="3Ah4Yx">
+            <node concept="2OqwBi" id="7Mb2akafEa8" role="2Oq$k0">
+              <node concept="3__QtB" id="7Mb2akafEa9" role="2Oq$k0" />
+              <node concept="3TrEf2" id="7Mb2akafEaa" role="2OqNvi">
                 <reference role="3Tt5mk" target="qff7.8974276187400348171" />
               </node>
             </node>
-            <node concept="3TrEf2" id="8974276187400348299" role="2OqNvi">
+            <node concept="3TrEf2" id="7Mb2akafEab" role="2OqNvi">
               <reference role="3Tt5mk" target="tp2c.1199569916463" />
             </node>
           </node>

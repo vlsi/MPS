@@ -14,8 +14,8 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
@@ -31,36 +31,36 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="3210697320273550864">
+  <node concept="1TIwiD" id="2MeG3eCd1Sg">
     <property role="TrG5h" value="BuildWall" />
     <property role="34LRSv" value="build wall" />
     <reference role="1TJDcQ" target="3210697320273608255" resolve="AbstractBuilderCommand" />
   </node>
-  <node concept="1TIwiD" id="3210697320273607253">
+  <node concept="1TIwiD" id="2MeG3eCdfDl">
     <property role="TrG5h" value="DestroyWall" />
     <property role="34LRSv" value="destroy wall" />
     <reference role="1TJDcQ" target="3210697320273608255" resolve="AbstractBuilderCommand" />
   </node>
-  <node concept="1TIwiD" id="3210697320273608254">
+  <node concept="1TIwiD" id="2MeG3eCdfSY">
     <property role="TrG5h" value="DropMark" />
     <property role="34LRSv" value="drop mark" />
     <reference role="1TJDcQ" target="3210697320273608255" resolve="AbstractBuilderCommand" />
   </node>
-  <node concept="1TIwiD" id="3210697320273608255">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="2MeG3eCdfSZ">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AbstractBuilderCommand" />
     <reference role="1TJDcQ" target="c2kz.3265739055509559114" resolve="AbstractCommand" />
-    <node concept="1TJgyi" id="3210697320273608256" role="1TKVEl">
+    <node concept="1TJgyi" id="2MeG3eCdfT0" role="1TKVEl">
       <property role="TrG5h" value="row" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="3210697320273608257" role="1TKVEl">
+    <node concept="1TJgyi" id="2MeG3eCdfT1" role="1TKVEl">
       <property role="TrG5h" value="col" />
       <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3210697320273614431">
+  <node concept="1TIwiD" id="2MeG3eCdhpv">
     <property role="TrG5h" value="PickMark" />
     <property role="34LRSv" value="pick mark" />
     <reference role="1TJDcQ" target="3210697320273608255" resolve="AbstractBuilderCommand" />

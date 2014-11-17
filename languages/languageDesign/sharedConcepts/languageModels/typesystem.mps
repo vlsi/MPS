@@ -57,57 +57,57 @@
       </concept>
       <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
-        <child id="1174660783413" name="leftExpression" index="1ZfhK!" />
+        <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
     </language>
   </registry>
-  <node concept="1YbPZF" id="2893726635884034887">
+  <node concept="1YbPZF" id="2wC_gGKX3H7">
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_scope" />
-    <node concept="3clFbS" id="2893726635884034888" role="18ibNy">
-      <node concept="1Z5TYs" id="2893726635884035517" role="3cqZAp">
-        <node concept="mw_s8" id="2893726635884035578" role="1ZfhKB">
-          <node concept="2c44tf" id="2893726635884035574" role="mwGJk">
-            <node concept="3uibUv" id="7807451582400158257" role="2c44tc">
+    <node concept="3clFbS" id="2wC_gGKX3H8" role="18ibNy">
+      <node concept="1Z5TYs" id="2wC_gGKX3QX" role="3cqZAp">
+        <node concept="mw_s8" id="2wC_gGKX3RU" role="1ZfhKB">
+          <node concept="2c44tf" id="2wC_gGKX3RQ" role="mwGJk">
+            <node concept="3uibUv" id="6LpCX$U1tCL" role="2c44tc">
               <reference role="3uigEE" target="88zw.~SearchScope" resolve="SearchScope" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="2893726635884035520" role="1ZfhK!">
-          <node concept="1Z2H0r" id="2893726635884035008" role="mwGJk">
-            <node concept="1YBJjd" id="2893726635884035059" role="1Z2MuG">
+        <node concept="mw_s8" id="2wC_gGKX3R0" role="1ZfhK$">
+          <node concept="1Z2H0r" id="2wC_gGKX3J0" role="mwGJk">
+            <node concept="1YBJjd" id="2wC_gGKX3JN" role="1Z2MuG">
               <reference role="1YBMHb" target="2893726635884034890" resolve="node" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="2893726635884034890" role="1YuTPh">
+    <node concept="1YaCAy" id="2wC_gGKX3Ha" role="1YuTPh">
       <property role="TrG5h" value="node" />
       <reference role="1YaFvo" target="tpcw.1161622878565" resolve="ConceptFunctionParameter_scope" />
     </node>
   </node>
-  <node concept="1YbPZF" id="558005353046665155">
+  <node concept="1YbPZF" id="uYrIA37ev3">
     <property role="TrG5h" value="typeof_ConceptFunctionParameter_progressMonitor" />
-    <node concept="3clFbS" id="558005353046665156" role="18ibNy">
-      <node concept="1Z5TYs" id="558005353046665205" role="3cqZAp">
-        <node concept="mw_s8" id="558005353046665206" role="1ZfhKB">
-          <node concept="2c44tf" id="558005353046665207" role="mwGJk">
-            <node concept="3uibUv" id="558005353046666871" role="2c44tc">
+    <node concept="3clFbS" id="uYrIA37ev4" role="18ibNy">
+      <node concept="1Z5TYs" id="uYrIA37evP" role="3cqZAp">
+        <node concept="mw_s8" id="uYrIA37evQ" role="1ZfhKB">
+          <node concept="2c44tf" id="uYrIA37evR" role="mwGJk">
+            <node concept="3uibUv" id="uYrIA37eTR" role="2c44tc">
               <reference role="3uigEE" target="z8de.~ProgressMonitor" resolve="ProgressMonitor" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="558005353046665209" role="1ZfhK!">
-          <node concept="1Z2H0r" id="558005353046665210" role="mwGJk">
-            <node concept="1YBJjd" id="558005353046667045" role="1Z2MuG">
+        <node concept="mw_s8" id="uYrIA37evT" role="1ZfhK$">
+          <node concept="1Z2H0r" id="uYrIA37evU" role="mwGJk">
+            <node concept="1YBJjd" id="uYrIA37eW_" role="1Z2MuG">
               <reference role="1YBMHb" target="558005353046665158" resolve="node" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="558005353046665158" role="1YuTPh">
+    <node concept="1YaCAy" id="uYrIA37ev6" role="1YuTPh">
       <property role="TrG5h" value="node" />
       <reference role="1YaFvo" target="tpcw.558005353046640020" resolve="ConceptFunctionParameter_progressMonitor" />
     </node>

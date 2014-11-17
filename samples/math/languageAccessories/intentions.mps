@@ -32,7 +32,7 @@
       </concept>
     </language>
     <language id="3304fc6e-7c6b-401e-a016-b944934bb21f" name="jetbrains.mps.baseLanguage.math">
-      <concept id="1237100849157" name="jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction" flags="nn" index="8Xe!_">
+      <concept id="1237100849157" name="jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction" flags="nn" index="8Xe$_">
         <child id="1237102925695" name="numerator" index="959pv" />
         <child id="1237102926618" name="denominator" index="959CU" />
       </concept>
@@ -82,7 +82,7 @@
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
@@ -100,42 +100,42 @@
       </concept>
     </language>
   </registry>
-  <node concept="2S6QgY" id="1237104496404">
+  <node concept="2S6QgY" id="i09b8Wk">
     <property role="TrG5h" value="DivExpressionFractionToDiv" />
     <property role="3GE5qa" value="operations.arithmetic" />
     <reference role="2ZfgGC" target="39kg.1237100849157" resolve="DivExpressionFraction" />
-    <node concept="2S6ZIM" id="1237104496405" role="2ZfVej">
-      <node concept="3clFbS" id="1237104496406" role="2VODD2">
-        <node concept="3clFbF" id="1237104536961" role="3cqZAp">
-          <node concept="Xl_RD" id="1237104536962" role="3clFbG">
+    <node concept="2S6ZIM" id="i09b8Wl" role="2ZfVej">
+      <node concept="3clFbS" id="i09b8Wm" role="2VODD2">
+        <node concept="3clFbF" id="i09biQ1" role="3cqZAp">
+          <node concept="Xl_RD" id="i09biQ2" role="3clFbG">
             <property role="Xl_RC" value="Use java notation for division operation" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2Sbjvc" id="1237104496407" role="2ZfgGD">
-      <node concept="3clFbS" id="1237104496408" role="2VODD2">
-        <node concept="3clFbF" id="1237104573699" role="3cqZAp">
-          <node concept="2OqwBi" id="1237104573795" role="3clFbG">
-            <node concept="2Sf5sV" id="1237104573700" role="2Oq!k0" />
-            <node concept="1P9Npp" id="1237104577512" role="2OqNvi">
-              <node concept="2c44tf" id="1237104580217" role="1P9ThW">
-                <node concept="FJ1c_" id="1237104584157" role="2c44tc">
-                  <node concept="33vP2n" id="1237104584158" role="3uHU7w">
-                    <node concept="2c44te" id="1237104586615" role="lGtFl">
-                      <node concept="2OqwBi" id="1237104594390" role="2c44t1">
-                        <node concept="2Sf5sV" id="1237104594311" role="2Oq!k0" />
-                        <node concept="3TrEf2" id="1237104596253" role="2OqNvi">
+    <node concept="2Sbjvc" id="i09b8Wn" role="2ZfgGD">
+      <node concept="3clFbS" id="i09b8Wo" role="2VODD2">
+        <node concept="3clFbF" id="i09brO3" role="3cqZAp">
+          <node concept="2OqwBi" id="i09brPz" role="3clFbG">
+            <node concept="2Sf5sV" id="i09brO4" role="2Oq$k0" />
+            <node concept="1P9Npp" id="i09bsJC" role="2OqNvi">
+              <node concept="2c44tf" id="i09btpT" role="1P9ThW">
+                <node concept="FJ1c_" id="i09bunt" role="2c44tc">
+                  <node concept="33vP2n" id="i09bunu" role="3uHU7w">
+                    <node concept="2c44te" id="i09buXR" role="lGtFl">
+                      <node concept="2OqwBi" id="i09bwRm" role="2c44t1">
+                        <node concept="2Sf5sV" id="i09bwQ7" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="i09bxkt" role="2OqNvi">
                           <reference role="3Tt5mk" target="39kg.1237102926618" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="33vP2n" id="1237104584159" role="3uHU7B">
-                    <node concept="2c44te" id="1237104585535" role="lGtFl">
-                      <node concept="2OqwBi" id="1237104590165" role="2c44t1">
-                        <node concept="2Sf5sV" id="1237104590055" role="2Oq!k0" />
-                        <node concept="3TrEf2" id="1237104591888" role="2OqNvi">
+                  <node concept="33vP2n" id="i09bunv" role="3uHU7B">
+                    <node concept="2c44te" id="i09buGZ" role="lGtFl">
+                      <node concept="2OqwBi" id="i09bvPl" role="2c44t1">
+                        <node concept="2Sf5sV" id="i09bvNB" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="i09bwgg" role="2OqNvi">
                           <reference role="3Tt5mk" target="39kg.1237102925695" />
                         </node>
                       </node>
@@ -149,42 +149,42 @@
       </node>
     </node>
   </node>
-  <node concept="2S6QgY" id="1237104500799">
+  <node concept="2S6QgY" id="i09ba0Z">
     <property role="TrG5h" value="DivExpressionDivToFraction" />
     <property role="3GE5qa" value="operations.arithmetic" />
     <reference role="2ZfgGC" target="tpee.1095950406618" resolve="DivExpression" />
-    <node concept="2S6ZIM" id="1237104500800" role="2ZfVej">
-      <node concept="3clFbS" id="1237104500801" role="2VODD2">
-        <node concept="3clFbF" id="1237104548275" role="3cqZAp">
-          <node concept="Xl_RD" id="1237104548276" role="3clFbG">
+    <node concept="2S6ZIM" id="i09ba10" role="2ZfVej">
+      <node concept="3clFbS" id="i09ba11" role="2VODD2">
+        <node concept="3clFbF" id="i09blAN" role="3cqZAp">
+          <node concept="Xl_RD" id="i09blAO" role="3clFbG">
             <property role="Xl_RC" value="Use fraction notation for division operation" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2Sbjvc" id="1237104500802" role="2ZfgGD">
-      <node concept="3clFbS" id="1237104500803" role="2VODD2">
-        <node concept="3clFbF" id="1237104473680" role="3cqZAp">
-          <node concept="2OqwBi" id="1237104473854" role="3clFbG">
-            <node concept="2Sf5sV" id="1237104473681" role="2Oq!k0" />
-            <node concept="1P9Npp" id="1237104476587" role="2OqNvi">
-              <node concept="2c44tf" id="1237104520251" role="1P9ThW">
-                <node concept="8Xe!_" id="1237104708152" role="2c44tc">
-                  <node concept="33vP2n" id="1237104708153" role="959pv">
-                    <node concept="2c44te" id="1237104729015" role="lGtFl">
-                      <node concept="2OqwBi" id="1237104734301" role="2c44t1">
-                        <node concept="2Sf5sV" id="1237104733894" role="2Oq!k0" />
-                        <node concept="3TrEf2" id="1237104736283" role="2OqNvi">
+    <node concept="2Sbjvc" id="i09ba12" role="2ZfgGD">
+      <node concept="3clFbS" id="i09ba13" role="2VODD2">
+        <node concept="3clFbF" id="i09b3pg" role="3cqZAp">
+          <node concept="2OqwBi" id="i09b3rY" role="3clFbG">
+            <node concept="2Sf5sV" id="i09b3ph" role="2Oq$k0" />
+            <node concept="1P9Npp" id="i09b46F" role="2OqNvi">
+              <node concept="2c44tf" id="i09beKV" role="1P9ThW">
+                <node concept="8Xe$_" id="i09bWCS" role="2c44tc">
+                  <node concept="33vP2n" id="i09bWCT" role="959pv">
+                    <node concept="2c44te" id="i09c1IR" role="lGtFl">
+                      <node concept="2OqwBi" id="i09c31t" role="2c44t1">
+                        <node concept="2Sf5sV" id="i09c2V6" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="i09c3wr" role="2OqNvi">
                           <reference role="3Tt5mk" target="tpee.1081773367580" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="33vP2n" id="1237104708154" role="959CU">
-                    <node concept="2c44te" id="1237104729704" role="lGtFl">
-                      <node concept="2OqwBi" id="1237104738145" role="2c44t1">
-                        <node concept="2Sf5sV" id="1237104738050" role="2Oq!k0" />
-                        <node concept="3TrEf2" id="1237104740539" role="2OqNvi">
+                  <node concept="33vP2n" id="i09bWCU" role="959CU">
+                    <node concept="2c44te" id="i09c1TC" role="lGtFl">
+                      <node concept="2OqwBi" id="i09c3Xx" role="2c44t1">
+                        <node concept="2Sf5sV" id="i09c3W2" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="i09c4yV" role="2OqNvi">
                           <reference role="3Tt5mk" target="tpee.1081773367579" />
                         </node>
                       </node>
@@ -198,30 +198,30 @@
       </node>
     </node>
   </node>
-  <node concept="2S6QgY" id="1238402928175">
+  <node concept="2S6QgY" id="i1m$gSJ">
     <property role="TrG5h" value="SpecifyMathContext" />
     <reference role="2ZfgGC" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="2S6ZIM" id="1238402928176" role="2ZfVej">
-      <node concept="3clFbS" id="1238402928177" role="2VODD2">
-        <node concept="3clFbF" id="1238402935919" role="3cqZAp">
-          <node concept="Xl_RD" id="1238402955733" role="3clFbG">
+    <node concept="2S6ZIM" id="i1m$gSK" role="2ZfVej">
+      <node concept="3clFbS" id="i1m$gSL" role="2VODD2">
+        <node concept="3clFbF" id="i1m$iLJ" role="3cqZAp">
+          <node concept="Xl_RD" id="i1m$nBl" role="3clFbG">
             <property role="Xl_RC" value="Explicitly specify math context for operation with big decimals" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2Sbjvc" id="1238402928178" role="2ZfgGD">
-      <node concept="3clFbS" id="1238402928179" role="2VODD2">
-        <node concept="3clFbF" id="1238939673072" role="3cqZAp">
-          <node concept="2OqwBi" id="1238939673277" role="3clFbG">
-            <node concept="2Sf5sV" id="1238939673073" role="2Oq!k0" />
-            <node concept="1P9Npp" id="1238939684204" role="2OqNvi">
-              <node concept="2YIFZM" id="1238942970980" role="1P9ThW">
+    <node concept="2Sbjvc" id="i1m$gSM" role="2ZfgGD">
+      <node concept="3clFbS" id="i1m$gSN" role="2VODD2">
+        <node concept="3clFbF" id="i1QzM7K" role="3cqZAp">
+          <node concept="2OqwBi" id="i1QzMaX" role="3clFbG">
+            <node concept="2Sf5sV" id="i1QzM7L" role="2Oq$k0" />
+            <node concept="1P9Npp" id="i1QzOPG" role="2OqNvi">
+              <node concept="2YIFZM" id="i1QKnh$" role="1P9ThW">
                 <reference role="37wK5l" target="r3rn.1238942053978" resolve="convert2" />
                 <reference role="1Pybhc" target="r3rn.1238406290274" resolve="MathUtil" />
-                <node concept="1PxgMI" id="1238942970981" role="37wK5m">
+                <node concept="1PxgMI" id="i1QKnh_" role="37wK5m">
                   <reference role="1PxNhF" target="tpee.1081773326031" resolve="BinaryOperation" />
-                  <node concept="2Sf5sV" id="1238942970982" role="1PxMeX" />
+                  <node concept="2Sf5sV" id="i1QKnhA" role="1PxMeX" />
                 </node>
               </node>
             </node>
@@ -229,40 +229,40 @@
         </node>
       </node>
     </node>
-    <node concept="2SaL7w" id="1238402953459" role="2ZfVeh">
-      <node concept="3clFbS" id="1238402953460" role="2VODD2">
-        <node concept="3clFbF" id="1238406535875" role="3cqZAp">
-          <node concept="2YIFZM" id="1238406536737" role="3clFbG">
+    <node concept="2SaL7w" id="i1m$n3N" role="2ZfVeh">
+      <node concept="3clFbS" id="i1m$n3O" role="2VODD2">
+        <node concept="3clFbF" id="i1mM1F3" role="3cqZAp">
+          <node concept="2YIFZM" id="i1mM1Sx" role="3clFbG">
             <reference role="37wK5l" target="r3rn.1238406301498" resolve="applicable" />
             <reference role="1Pybhc" target="r3rn.1238406290274" resolve="MathUtil" />
-            <node concept="2Sf5sV" id="1238406539003" role="37wK5m" />
+            <node concept="2Sf5sV" id="i1mM2rV" role="37wK5m" />
           </node>
         </node>
       </node>
     </node>
   </node>
-  <node concept="2S6QgY" id="1238942880468">
+  <node concept="2S6QgY" id="i1QK1bk">
     <property role="TrG5h" value="DeleteMathContext" />
     <reference role="2ZfgGC" target="39kg.1238402702427" resolve="DecimalBinaryOperation" />
-    <node concept="2S6ZIM" id="1238942880469" role="2ZfVej">
-      <node concept="3clFbS" id="1238942880470" role="2VODD2">
-        <node concept="3clFbF" id="1238942930189" role="3cqZAp">
-          <node concept="Xl_RD" id="1238942930190" role="3clFbG">
+    <node concept="2S6ZIM" id="i1QK1bl" role="2ZfVej">
+      <node concept="3clFbS" id="i1QK1bm" role="2VODD2">
+        <node concept="3clFbF" id="i1QKdkd" role="3cqZAp">
+          <node concept="Xl_RD" id="i1QKdke" role="3clFbG">
             <property role="Xl_RC" value="Use default math context" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2Sbjvc" id="1238942880471" role="2ZfgGD">
-      <node concept="3clFbS" id="1238942880472" role="2VODD2">
-        <node concept="3clFbF" id="1238942949580" role="3cqZAp">
-          <node concept="2OqwBi" id="1238942949785" role="3clFbG">
-            <node concept="2Sf5sV" id="1238942949581" role="2Oq!k0" />
-            <node concept="1P9Npp" id="1238942951820" role="2OqNvi">
-              <node concept="2YIFZM" id="1238942956089" role="1P9ThW">
+    <node concept="2Sbjvc" id="i1QK1bn" role="2ZfgGD">
+      <node concept="3clFbS" id="i1QK1bo" role="2VODD2">
+        <node concept="3clFbF" id="i1QKi3c" role="3cqZAp">
+          <node concept="2OqwBi" id="i1QKi6p" role="3clFbG">
+            <node concept="2Sf5sV" id="i1QKi3d" role="2Oq$k0" />
+            <node concept="1P9Npp" id="i1QKiAc" role="2OqNvi">
+              <node concept="2YIFZM" id="i1QKjCT" role="1P9ThW">
                 <reference role="37wK5l" target="r3rn.1238942002669" resolve="convert1" />
                 <reference role="1Pybhc" target="r3rn.1238406290274" resolve="MathUtil" />
-                <node concept="2Sf5sV" id="1238942957699" role="37wK5m" />
+                <node concept="2Sf5sV" id="i1QKk23" role="37wK5m" />
               </node>
             </node>
           </node>

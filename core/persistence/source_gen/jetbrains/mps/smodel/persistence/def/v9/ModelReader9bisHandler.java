@@ -162,7 +162,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
-      my_idEncoderField = new IdEncoder();
+      my_idEncoderField = new IdEncoder(true);
       SModelReference ref = my_idEncoderField.parseModelReference(attrs.getValue("ref"));
       my_modelField = new DefaultSModel(ref, my_headerParam);
       my_modelField.getSModelHeader().setPersistenceVersion(9);
@@ -193,6 +193,24 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected ModelReader9bisHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
+      if ("node".equals(tagName) && checknode_8237920533349931304(resultObject, attrs)) {
+        myChildHandlersStack.push(new ModelReader9bisHandler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_8237920533349931271(resultObject, value);
+          }
+        });
+        return ignoredNodeHandler;
+      }
+      if ("node".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader9bisHandler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_8237920533349931307(resultObject, value);
+          }
+        });
+        return nodeHandler;
+      }
       if ("persistence".equals(tagName)) {
         myChildHandlersStack.push(null);
         return persistenceHandler;
@@ -212,24 +230,6 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
       if ("registry".equals(tagName)) {
         myChildHandlersStack.push(null);
         return registryHandler;
-      }
-      if ("node".equals(tagName) && checknode_8237920533349931304(resultObject, attrs)) {
-        myChildHandlersStack.push(new ModelReader9bisHandler.ChildHandler() {
-          @Override
-          public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_8237920533349931271(resultObject, value);
-          }
-        });
-        return ignoredNodeHandler;
-      }
-      if ("node".equals(tagName)) {
-        myChildHandlersStack.push(new ModelReader9bisHandler.ChildHandler() {
-          @Override
-          public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_8237920533349931307(resultObject, value);
-          }
-        });
-        return nodeHandler;
       }
       return super.createChild(resultObject, tagName, attrs);
     }
@@ -393,7 +393,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      SLanguageId langId = SLanguageId.deserialize(attrs.getValue("id"));
+      SLanguageId langId = my_idEncoderField.parseLanguageId(attrs.getValue("id"));
       int langVersion = Integer.parseInt(attrs.getValue("version"));
       my_modelField.addLanguage(my_idHelperField.getLanguage(langId, attrs.getValue("name")), langVersion);
       return null;

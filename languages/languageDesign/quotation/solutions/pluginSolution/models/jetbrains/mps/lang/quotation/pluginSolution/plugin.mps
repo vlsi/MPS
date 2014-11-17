@@ -29,7 +29,7 @@
     </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
       <concept id="1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" flags="nn" index="1DTwFV" />
-      <concept id="1205679047295" name="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" flags="ig" index="2S4!dB" />
+      <concept id="1205679047295" name="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" flags="ig" index="2S4$dB" />
       <concept id="1206092561075" name="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" flags="nn" index="3gHZIF" />
       <concept id="1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" flags="ng" index="ftmFs">
         <child id="1207145201301" name="reference" index="ftvYc" />
@@ -48,7 +48,7 @@
         <reference id="1203088061055" name="action" index="tCJdB" />
       </concept>
       <concept id="1203092361741" name="jetbrains.mps.lang.plugin.structure.ModificationStatement" flags="lg" index="tT9cl">
-        <reference id="1203092736097" name="modifiedGroup" index="tU!_T" />
+        <reference id="1203092736097" name="modifiedGroup" index="tU$_T" />
       </concept>
       <concept id="5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" flags="ng" index="1oajcY" />
       <concept id="1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" flags="ng" index="1DS2jV">
@@ -96,7 +96,7 @@
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
@@ -113,52 +113,52 @@
       </concept>
     </language>
   </registry>
-  <node concept="sE7Ow" id="5487985028841901770">
+  <node concept="sE7Ow" id="4KDfkUwM8Va">
     <property role="TrG5h" value="ShowMetaLevel" />
     <property role="2uzpH1" value="Show Quotation Metalevel" />
-    <node concept="2S4!dB" id="5487985028841901771" role="1NuT2Z">
+    <node concept="2S4$dB" id="4KDfkUwM8Vb" role="1NuT2Z">
       <property role="TrG5h" value="currentNode" />
-      <node concept="3Tm6S6" id="5487985028841901772" role="1B3o_S" />
-      <node concept="3Tqbb2" id="5487985028841901773" role="1tU5fm">
+      <node concept="3Tm6S6" id="4KDfkUwM8Vc" role="1B3o_S" />
+      <node concept="3Tqbb2" id="4KDfkUwM8Vd" role="1tU5fm">
         <reference role="ehGHo" target="tpck.1133920641626" resolve="BaseConcept" />
       </node>
-      <node concept="1oajcY" id="5487985028841901774" role="1oa70y" />
+      <node concept="1oajcY" id="4KDfkUwM8Ve" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="5487985028841901775" role="1NuT2Z">
+    <node concept="1DS2jV" id="4KDfkUwM8Vf" role="1NuT2Z">
       <property role="TrG5h" value="component" />
       <reference role="1DUlNI" target="nx1.~PlatformDataKeys%dCONTEXT_COMPONENT" resolve="CONTEXT_COMPONENT" />
-      <node concept="1oajcY" id="5487985028841901776" role="1oa70y" />
+      <node concept="1oajcY" id="4KDfkUwM8Vg" role="1oa70y" />
     </node>
-    <node concept="tnohg" id="5487985028841901777" role="tncku">
-      <node concept="3clFbS" id="5487985028841901778" role="2VODD2">
-        <node concept="3cpWs8" id="5487985028841901779" role="3cqZAp">
-          <node concept="3cpWsn" id="5487985028841901780" role="3cpWs9">
+    <node concept="tnohg" id="4KDfkUwM8Vh" role="tncku">
+      <node concept="3clFbS" id="4KDfkUwM8Vi" role="2VODD2">
+        <node concept="3cpWs8" id="4KDfkUwM8Vj" role="3cqZAp">
+          <node concept="3cpWsn" id="4KDfkUwM8Vk" role="3cpWs9">
             <property role="TrG5h" value="metaLevel" />
-            <node concept="10Oyi0" id="5487985028841901781" role="1tU5fm" />
-            <node concept="2OqwBi" id="5487985028841901782" role="33vP2m">
-              <node concept="2OqwBi" id="5487985028841901783" role="2Oq!k0">
-                <node concept="2WthIp" id="5487985028841901784" role="2Oq!k0" />
-                <node concept="3gHZIF" id="5487985028841901785" role="2OqNvi">
+            <node concept="10Oyi0" id="4KDfkUwM8Vl" role="1tU5fm" />
+            <node concept="2OqwBi" id="4KDfkUwM8Vm" role="33vP2m">
+              <node concept="2OqwBi" id="4KDfkUwM8Vn" role="2Oq$k0">
+                <node concept="2WthIp" id="4KDfkUwM8Vo" role="2Oq$k0" />
+                <node concept="3gHZIF" id="4KDfkUwM8Vp" role="2OqNvi">
                   <reference role="2WH_rO" target="5487985028841901771" resolve="currentNode" />
                 </node>
               </node>
-              <node concept="2qgKlT" id="5487985028841901786" role="2OqNvi">
+              <node concept="2qgKlT" id="4KDfkUwM8Vq" role="2OqNvi">
                 <reference role="37wK5l" target="tpcu.3981318653438234726" resolve="getMetaLevel" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5487985028841901787" role="3cqZAp">
-          <node concept="2YIFZM" id="5487985028841901788" role="3clFbG">
+        <node concept="3clFbF" id="4KDfkUwM8Vr" role="3cqZAp">
+          <node concept="2YIFZM" id="4KDfkUwM8Vs" role="3clFbG">
             <reference role="37wK5l" target="dbrf.~JOptionPane%dshowMessageDialog(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolve="showMessageDialog" />
             <reference role="1Pybhc" target="dbrf.~JOptionPane" resolve="JOptionPane" />
-            <node concept="2OqwBi" id="5487985028841901789" role="37wK5m">
-              <node concept="2WthIp" id="5487985028841901790" role="2Oq!k0" />
-              <node concept="1DTwFV" id="5487985028841901791" role="2OqNvi">
+            <node concept="2OqwBi" id="4KDfkUwM8Vt" role="37wK5m">
+              <node concept="2WthIp" id="4KDfkUwM8Vu" role="2Oq$k0" />
+              <node concept="1DTwFV" id="4KDfkUwM8Vv" role="2OqNvi">
                 <reference role="2WH_rO" target="5487985028841901775" resolve="component" />
               </node>
             </node>
-            <node concept="37vLTw" id="4265636116363068828" role="37wK5m">
+            <node concept="37vLTw" id="3GM_nagTsms" role="37wK5m">
               <reference role="3cqZAo" target="5487985028841901780" resolve="metaLevel" />
             </node>
           </node>
@@ -166,17 +166,17 @@
       </node>
     </node>
   </node>
-  <node concept="tC5Ba" id="5487985028841901793">
+  <node concept="tC5Ba" id="4KDfkUwM8Vx">
     <property role="TrG5h" value="MetaLevelActions" />
-    <node concept="tT9cl" id="5487985028841901794" role="2f5YQi">
-      <reference role="tU!_T" target="tprs.1951613054411714136" resolve="DebugActions" />
+    <node concept="tT9cl" id="4KDfkUwM8Vy" role="2f5YQi">
+      <reference role="tU$_T" target="tprs.1951613054411714136" resolve="DebugActions" />
     </node>
-    <node concept="ftmFs" id="5487985028841901795" role="ftER_">
-      <node concept="tCFHf" id="5487985028841901796" role="ftvYc">
+    <node concept="ftmFs" id="4KDfkUwM8Vz" role="ftER_">
+      <node concept="tCFHf" id="4KDfkUwM8V$" role="ftvYc">
         <reference role="tCJdB" target="5487985028841901770" resolve="ShowMetaLevel" />
       </node>
     </node>
   </node>
-  <node concept="2DaZZR" id="7162597690967660606" />
+  <node concept="2DaZZR" id="6dAEaqvahwY" />
 </model>
 

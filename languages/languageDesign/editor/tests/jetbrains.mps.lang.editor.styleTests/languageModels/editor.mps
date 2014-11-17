@@ -64,7 +64,7 @@
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
       </concept>
-      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi!J">
+      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
@@ -83,7 +83,7 @@
       <concept id="9122903797276194520" name="jetbrains.mps.lang.editor.structure.StyleClassReferenceList" flags="ng" index="1ybEpN">
         <child id="9122903797276195161" name="element" index="1ybEBM" />
       </concept>
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="sg" index="2czfm3">
@@ -128,65 +128,65 @@
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
     </language>
   </registry>
-  <node concept="24kQdi" id="6609104295326650827">
+  <node concept="24kQdi" id="5ISglset17b">
     <reference role="1XX52x" target="dekf.6609104295326650728" resolve="TestConceptWithStyleAttributes" />
-    <node concept="3EZMnI" id="6609104295326650886" role="2wV5jI">
-      <node concept="3F0ifn" id="6609104295326650897" role="3EZMnx">
+    <node concept="3EZMnI" id="5ISglset186" role="2wV5jI">
+      <node concept="3F0ifn" id="5ISglset18h" role="3EZMnx">
         <property role="3F0ifm" value="do" />
       </node>
-      <node concept="3EZMnI" id="6609104295326650907" role="3EZMnx">
-        <node concept="VPM3Z" id="6609104295326650909" role="3F10Kt">
+      <node concept="3EZMnI" id="5ISglset18r" role="3EZMnx">
+        <node concept="VPM3Z" id="5ISglset18t" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
-        <node concept="3tD6jV" id="6609104295326653988" role="3F10Kt">
+        <node concept="3tD6jV" id="5ISglset1S$" role="3F10Kt">
           <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
-          <node concept="3sjG9q" id="6609104295326653989" role="3tD6jU">
-            <node concept="3clFbS" id="6609104295326653990" role="2VODD2">
-              <node concept="3clFbF" id="6609104295326654656" role="3cqZAp">
-                <node concept="Xl_RD" id="6609104295326654655" role="3clFbG">
+          <node concept="3sjG9q" id="5ISglset1S_" role="3tD6jU">
+            <node concept="3clFbS" id="5ISglset1SA" role="2VODD2">
+              <node concept="3clFbF" id="5ISglset230" role="3cqZAp">
+                <node concept="Xl_RD" id="5ISglset22Z" role="3clFbG">
                   <property role="Xl_RC" value="Bye!" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3tD6jV" id="6609104295326666685" role="3F10Kt">
+        <node concept="3tD6jV" id="5ISglset4YX" role="3F10Kt">
           <reference role="3tD7wE" target="6609104295326651003" resolve="test-simple-attribute" />
-          <node concept="3sjG9q" id="6609104295326666686" role="3tD6jU">
-            <node concept="3clFbS" id="6609104295326666687" role="2VODD2">
-              <node concept="3clFbF" id="6609104295326667687" role="3cqZAp">
-                <node concept="3clFbT" id="6609104295326667686" role="3clFbG">
+          <node concept="3sjG9q" id="5ISglset4YY" role="3tD6jU">
+            <node concept="3clFbS" id="5ISglset4YZ" role="2VODD2">
+              <node concept="3clFbF" id="5ISglset5eB" role="3cqZAp">
+                <node concept="3clFbT" id="5ISglset5eA" role="3clFbG">
                   <property role="3clFbU" value="true" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3F0ifn" id="6609104295326650921" role="3EZMnx">
+        <node concept="3F0ifn" id="5ISglset18D" role="3EZMnx">
           <property role="3F0ifm" value="re" />
-          <node concept="3tD6jV" id="6609104295326657500" role="3F10Kt">
+          <node concept="3tD6jV" id="5ISglset2Js" role="3F10Kt">
             <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
-            <node concept="3sjG9q" id="6609104295326657501" role="3tD6jU">
-              <node concept="3clFbS" id="6609104295326657502" role="2VODD2">
-                <node concept="3clFbF" id="6609104295326658166" role="3cqZAp">
-                  <node concept="Xl_RD" id="6609104295326658165" role="3clFbG">
+            <node concept="3sjG9q" id="5ISglset2Jt" role="3tD6jU">
+              <node concept="3clFbS" id="5ISglset2Ju" role="2VODD2">
+                <node concept="3clFbF" id="5ISglset2TQ" role="3cqZAp">
+                  <node concept="Xl_RD" id="5ISglset2TP" role="3clFbG">
                     <property role="Xl_RC" value="Yeah!" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3tD6jV" id="6609104295326661377" role="3F10Kt">
+          <node concept="3tD6jV" id="5ISglset3G1" role="3F10Kt">
             <reference role="3tD7wE" target="6609104295326651003" resolve="test-simple-attribute" />
-            <node concept="3sjG9q" id="6609104295326661378" role="3tD6jU">
-              <node concept="3clFbS" id="6609104295326661379" role="2VODD2">
-                <node concept="3clFbF" id="6609104295326664922" role="3cqZAp">
-                  <node concept="3clFbT" id="6609104295326664921" role="3clFbG">
+            <node concept="3sjG9q" id="5ISglset3G2" role="3tD6jU">
+              <node concept="3clFbS" id="5ISglset3G3" role="2VODD2">
+                <node concept="3clFbF" id="5ISglset4zq" role="3cqZAp">
+                  <node concept="3clFbT" id="5ISglset4zp" role="3clFbG">
                     <property role="3clFbU" value="false" />
                   </node>
                 </node>
@@ -194,45 +194,45 @@
             </node>
           </node>
         </node>
-        <node concept="3F0ifn" id="6609104295326650929" role="3EZMnx">
+        <node concept="3F0ifn" id="5ISglset18L" role="3EZMnx">
           <property role="3F0ifm" value="mi" />
         </node>
-        <node concept="3EZMnI" id="7571028832046340360" role="3EZMnx">
+        <node concept="3EZMnI" id="6$hGDKmnd$8" role="3EZMnx">
           <reference role="1k5W1q" target="7571028832046676331" resolve="priorityStyle" />
-          <node concept="VPM3Z" id="7571028832046340362" role="3F10Kt">
+          <node concept="VPM3Z" id="6$hGDKmnd$a" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
-          <node concept="3F0ifn" id="7571028832046340389" role="3EZMnx">
+          <node concept="3F0ifn" id="6$hGDKmnd$_" role="3EZMnx">
             <property role="3F0ifm" value="fa" />
           </node>
-          <node concept="3F0ifn" id="7571028832046340397" role="3EZMnx">
+          <node concept="3F0ifn" id="6$hGDKmnd$H" role="3EZMnx">
             <property role="3F0ifm" value="sol" />
             <reference role="1k5W1q" target="7571028832046235254" resolve="hugePriorityStyle" />
           </node>
-          <node concept="3EZMnI" id="7571028832046341173" role="3EZMnx">
+          <node concept="3EZMnI" id="6$hGDKmndKP" role="3EZMnx">
             <reference role="1k5W1q" target="7571028832047359190" resolve="unapplyPriorityStyleCopy" />
-            <node concept="VPM3Z" id="7571028832046341175" role="3F10Kt">
+            <node concept="VPM3Z" id="6$hGDKmndKR" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
-            <node concept="3F0ifn" id="7571028832046341288" role="3EZMnx">
+            <node concept="3F0ifn" id="6$hGDKmndMC" role="3EZMnx">
               <property role="3F0ifm" value="la" />
             </node>
-            <node concept="3F0ifn" id="7571028832046341296" role="3EZMnx">
+            <node concept="3F0ifn" id="6$hGDKmndMK" role="3EZMnx">
               <property role="3F0ifm" value="ti" />
             </node>
-            <node concept="l2Vlx" id="7571028832046341178" role="2iSdaV" />
+            <node concept="l2Vlx" id="6$hGDKmndKU" role="2iSdaV" />
           </node>
-          <node concept="l2Vlx" id="7571028832046340365" role="2iSdaV" />
+          <node concept="l2Vlx" id="6$hGDKmnd$d" role="2iSdaV" />
         </node>
-        <node concept="l2Vlx" id="6609104295326650912" role="2iSdaV" />
+        <node concept="l2Vlx" id="5ISglset18w" role="2iSdaV" />
       </node>
-      <node concept="l2Vlx" id="6609104295326650889" role="2iSdaV" />
-      <node concept="3tD6jV" id="6609104295326651157" role="3F10Kt">
+      <node concept="l2Vlx" id="5ISglset189" role="2iSdaV" />
+      <node concept="3tD6jV" id="5ISglset1cl" role="3F10Kt">
         <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
-        <node concept="3sjG9q" id="6609104295326651158" role="3tD6jU">
-          <node concept="3clFbS" id="6609104295326651159" role="2VODD2">
-            <node concept="3clFbF" id="6609104295326651821" role="3cqZAp">
-              <node concept="Xl_RD" id="6609104295326651820" role="3clFbG">
+        <node concept="3sjG9q" id="5ISglset1cm" role="3tD6jU">
+          <node concept="3clFbS" id="5ISglset1cn" role="2VODD2">
+            <node concept="3clFbF" id="5ISglset1mH" role="3cqZAp">
+              <node concept="Xl_RD" id="5ISglset1mG" role="3clFbG">
                 <property role="Xl_RC" value="Hey!" />
               </node>
             </node>
@@ -241,213 +241,213 @@
       </node>
     </node>
   </node>
-  <node concept="V5hpn" id="6609104295326650955">
+  <node concept="V5hpn" id="5ISglset19b">
     <property role="TrG5h" value="TestStylesheet" />
-    <node concept="3t5Usi" id="6609104295326650972" role="V601i">
+    <node concept="3t5Usi" id="5ISglset19s" role="V601i">
       <property role="TrG5h" value="test-inherited-attribute" />
-      <node concept="17QB3L" id="6609104295326650992" role="3t5Oan" />
+      <node concept="17QB3L" id="5ISglset19K" role="3t5Oan" />
     </node>
-    <node concept="3t5Usi" id="6609104295326651003" role="V601i">
+    <node concept="3t5Usi" id="5ISglset19V" role="V601i">
       <property role="iBDjm" value="false" />
       <property role="TrG5h" value="test-simple-attribute" />
-      <node concept="10P_77" id="6609104295326651023" role="3t5Oan" />
-      <node concept="3clFbT" id="6609104295326651032" role="3t49C2">
+      <node concept="10P_77" id="5ISglset1af" role="3t5Oan" />
+      <node concept="3clFbT" id="5ISglset1ao" role="3t49C2">
         <property role="3clFbU" value="true" />
       </node>
     </node>
-    <node concept="14StLt" id="7571028832046676331" role="V601i">
+    <node concept="14StLt" id="6$hGDKmov_F" role="V601i">
       <property role="TrG5h" value="priorityStyle" />
-      <node concept="3tD6jV" id="7571028832046676332" role="3F10Kt">
+      <node concept="3tD6jV" id="6$hGDKmov_G" role="3F10Kt">
         <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
-        <node concept="3sjG9q" id="7571028832046676333" role="3tD6jU">
-          <node concept="3clFbS" id="7571028832046676334" role="2VODD2">
-            <node concept="3clFbF" id="7571028832046676335" role="3cqZAp">
-              <node concept="Xl_RD" id="7571028832046676336" role="3clFbG">
+        <node concept="3sjG9q" id="6$hGDKmov_H" role="3tD6jU">
+          <node concept="3clFbS" id="6$hGDKmov_I" role="2VODD2">
+            <node concept="3clFbF" id="6$hGDKmov_J" role="3cqZAp">
+              <node concept="Xl_RD" id="6$hGDKmov_K" role="3clFbG">
                 <property role="Xl_RC" value="Priority" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="2lhJJ2" id="7571028832046676337" role="14Sbyx" />
+      <node concept="2lhJJ2" id="6$hGDKmov_L" role="14Sbyx" />
     </node>
-    <node concept="14StLt" id="5446045291972765404" role="V601i">
+    <node concept="14StLt" id="4IkflqMIqrs" role="V601i">
       <property role="TrG5h" value="priorityStyleCopy" />
-      <node concept="3Xmtl4" id="5446045291972765431" role="3F10Kt">
-        <node concept="1wgc9g" id="5446045291972765435" role="3XvnJa">
+      <node concept="3Xmtl4" id="4IkflqMIqrR" role="3F10Kt">
+        <node concept="1wgc9g" id="4IkflqMIqrV" role="3XvnJa">
           <reference role="1wgcnl" target="7571028832046676331" resolve="priorityStyle" />
         </node>
       </node>
     </node>
-    <node concept="14StLt" id="7571028832046235254" role="V601i">
+    <node concept="14StLt" id="6$hGDKmmNTQ" role="V601i">
       <property role="TrG5h" value="hugePriorityStyle" />
-      <node concept="3tD6jV" id="7571028832046360135" role="3F10Kt">
+      <node concept="3tD6jV" id="6$hGDKmnip7" role="3F10Kt">
         <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
-        <node concept="3sjG9q" id="7571028832046360136" role="3tD6jU">
-          <node concept="3clFbS" id="7571028832046360137" role="2VODD2">
-            <node concept="3clFbF" id="7571028832046360796" role="3cqZAp">
-              <node concept="Xl_RD" id="7571028832046360795" role="3clFbG">
+        <node concept="3sjG9q" id="6$hGDKmnip8" role="3tD6jU">
+          <node concept="3clFbS" id="6$hGDKmnip9" role="2VODD2">
+            <node concept="3clFbF" id="6$hGDKmnizs" role="3cqZAp">
+              <node concept="Xl_RD" id="6$hGDKmnizr" role="3clFbG">
                 <property role="Xl_RC" value="Huge" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="2lhJJ2" id="7571028832046672374" role="14Sbyx">
-        <node concept="1ybEpN" id="7571028832046677423" role="2lhEPC">
-          <node concept="14SbXO" id="7571028832046677422" role="1ybEBM">
+      <node concept="2lhJJ2" id="6$hGDKmouBQ" role="14Sbyx">
+        <node concept="1ybEpN" id="6$hGDKmovQJ" role="2lhEPC">
+          <node concept="14SbXO" id="6$hGDKmovQI" role="1ybEBM">
             <reference role="14SbXR" target="7571028832046676331" resolve="priorityStyle" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="14StLt" id="7571028832047359190" role="V601i">
+    <node concept="14StLt" id="6$hGDKmr6jm" role="V601i">
       <property role="TrG5h" value="unapplyPriorityStyleCopy" />
-      <node concept="3XB9Gl" id="7571028832047359191" role="3F10Kt">
-        <node concept="1wgc9g" id="5446045291972765437" role="3XB9FH">
+      <node concept="3XB9Gl" id="6$hGDKmr6jn" role="3F10Kt">
+        <node concept="1wgc9g" id="4IkflqMIqrX" role="3XB9FH">
           <reference role="1wgcnl" target="5446045291972765404" resolve="priorityStyleCopy" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="PKFIW" id="4078300376847951548">
+  <node concept="PKFIW" id="3yp29n1niqW">
     <property role="TrG5h" value="StyleTest_EditorComponent" />
     <reference role="1XX52x" target="dekf.8422442021223268684" resolve="NodeContainer" />
-    <node concept="3EZMnI" id="4078300376847951549" role="2wV5jI">
-      <node concept="3EZMnI" id="4078300376847951550" role="3EZMnx">
-        <node concept="3F0ifn" id="4078300376847951551" role="3EZMnx">
+    <node concept="3EZMnI" id="3yp29n1niqX" role="2wV5jI">
+      <node concept="3EZMnI" id="3yp29n1niqY" role="3EZMnx">
+        <node concept="3F0ifn" id="3yp29n1niqZ" role="3EZMnx">
           <property role="3F0ifm" value="&lt;" />
           <reference role="1k5W1q" target="tp2u.1215709345400" resolve="LeftAngleBracket" />
         </node>
-        <node concept="PMmxH" id="4078300376847974720" role="3EZMnx">
+        <node concept="PMmxH" id="3yp29n1no50" role="3EZMnx">
           <reference role="PMmxG" target="4078300376847974718" resolve="StyleTestElement_EditorComponent" />
         </node>
-        <node concept="3F0ifn" id="4078300376847951553" role="3EZMnx">
+        <node concept="3F0ifn" id="3yp29n1nir1" role="3EZMnx">
           <property role="3F0ifm" value="&gt;" />
           <reference role="1k5W1q" target="tp2u.1215709621223" resolve="RightAngleBracket" />
-          <node concept="ljvvj" id="4078300376847951554" role="3F10Kt">
+          <node concept="ljvvj" id="3yp29n1nir2" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
         </node>
-        <node concept="3F2HdR" id="4078300376847951555" role="3EZMnx">
+        <node concept="3F2HdR" id="3yp29n1nir3" role="3EZMnx">
           <reference role="1NtTu8" target="dekf.8422442021223269806" />
-          <node concept="2iRkQZ" id="4078300376847951556" role="2czzBx" />
-          <node concept="VPM3Z" id="4078300376847951557" role="3F10Kt">
+          <node concept="2iRkQZ" id="3yp29n1nir4" role="2czzBx" />
+          <node concept="VPM3Z" id="3yp29n1nir5" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
-          <node concept="ljvvj" id="4078300376847951558" role="3F10Kt">
+          <node concept="ljvvj" id="3yp29n1nir6" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
-          <node concept="lj46D" id="4078300376847951559" role="3F10Kt">
+          <node concept="lj46D" id="3yp29n1nir7" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
         </node>
-        <node concept="3F0ifn" id="4078300376847951560" role="3EZMnx">
+        <node concept="3F0ifn" id="3yp29n1nir8" role="3EZMnx">
           <property role="3F0ifm" value="&lt;" />
           <reference role="1k5W1q" target="tp2u.1215709345400" resolve="LeftAngleBracket" />
         </node>
-        <node concept="3F0ifn" id="4078300376847951561" role="3EZMnx">
+        <node concept="3F0ifn" id="3yp29n1nir9" role="3EZMnx">
           <property role="3F0ifm" value="/" />
-          <node concept="11LMrY" id="4078300376847951562" role="3F10Kt">
+          <node concept="11LMrY" id="3yp29n1nira" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
         </node>
-        <node concept="PMmxH" id="4078300376847951563" role="3EZMnx">
+        <node concept="PMmxH" id="3yp29n1nirb" role="3EZMnx">
           <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
         </node>
-        <node concept="3F0ifn" id="4078300376847951564" role="3EZMnx">
+        <node concept="3F0ifn" id="3yp29n1nirc" role="3EZMnx">
           <property role="3F0ifm" value="&gt;" />
           <reference role="1k5W1q" target="tp2u.1215709621223" resolve="RightAngleBracket" />
         </node>
-        <node concept="l2Vlx" id="4078300376847951565" role="2iSdaV" />
+        <node concept="l2Vlx" id="3yp29n1nird" role="2iSdaV" />
       </node>
-      <node concept="2iRkQZ" id="4078300376847951566" role="2iSdaV" />
+      <node concept="2iRkQZ" id="3yp29n1nire" role="2iSdaV" />
     </node>
   </node>
-  <node concept="PKFIW" id="4078300376847974718">
+  <node concept="PKFIW" id="3yp29n1no4Y">
     <property role="TrG5h" value="StyleTestElement_EditorComponent" />
     <reference role="1XX52x" target="dekf.8422442021223268684" resolve="NodeContainer" />
-    <node concept="PMmxH" id="4078300376847974719" role="2wV5jI">
+    <node concept="PMmxH" id="3yp29n1no4Z" role="2wV5jI">
       <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
     </node>
   </node>
-  <node concept="PKFIW" id="4078300376847989961">
+  <node concept="PKFIW" id="3yp29n1nrN9">
     <property role="TrG5h" value="TestInheritedAttibute_EditorComponent" />
     <reference role="1XX52x" target="dekf.8917170296719630045" resolve="TestInheritedAttribute" />
-    <node concept="3EZMnI" id="4078300376847989962" role="2wV5jI">
-      <node concept="VPM3Z" id="4078300376847989963" role="3F10Kt">
+    <node concept="3EZMnI" id="3yp29n1nrNa" role="2wV5jI">
+      <node concept="VPM3Z" id="3yp29n1nrNb" role="3F10Kt">
         <property role="VOm3f" value="false" />
       </node>
-      <node concept="PMmxH" id="4078300376847989964" role="3EZMnx">
+      <node concept="PMmxH" id="3yp29n1nrNc" role="3EZMnx">
         <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
       </node>
-      <node concept="3F0ifn" id="4078300376847989965" role="3EZMnx">
+      <node concept="3F0ifn" id="3yp29n1nrNd" role="3EZMnx">
         <property role="3F0ifm" value="=" />
       </node>
-      <node concept="3F0A7n" id="4078300376847989966" role="3EZMnx">
+      <node concept="3F0A7n" id="3yp29n1nrNe" role="3EZMnx">
         <reference role="1NtTu8" target="dekf.8917170296719630046" resolve="value" />
       </node>
-      <node concept="l2Vlx" id="4078300376847989967" role="2iSdaV" />
+      <node concept="l2Vlx" id="3yp29n1nrNf" role="2iSdaV" />
     </node>
-    <node concept="1PE4EZ" id="4078300376848002767" role="1PM95z">
+    <node concept="1PE4EZ" id="3yp29n1nuVf" role="1PM95z">
       <reference role="1PE7su" target="4078300376847974718" resolve="StyleTestElement_EditorComponent" />
     </node>
   </node>
-  <node concept="PKFIW" id="4078300376848002931">
+  <node concept="PKFIW" id="3yp29n1nuXN">
     <property role="TrG5h" value="TestISimpleAttribute_EditorComponent" />
     <reference role="1XX52x" target="dekf.8917170296719628637" resolve="TestSimpleAttribute" />
-    <node concept="3EZMnI" id="4078300376848002932" role="2wV5jI">
-      <node concept="VPM3Z" id="4078300376848002933" role="3F10Kt">
+    <node concept="3EZMnI" id="3yp29n1nuXO" role="2wV5jI">
+      <node concept="VPM3Z" id="3yp29n1nuXP" role="3F10Kt">
         <property role="VOm3f" value="false" />
       </node>
-      <node concept="PMmxH" id="4078300376848002934" role="3EZMnx">
+      <node concept="PMmxH" id="3yp29n1nuXQ" role="3EZMnx">
         <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
       </node>
-      <node concept="3F0ifn" id="4078300376848002935" role="3EZMnx">
+      <node concept="3F0ifn" id="3yp29n1nuXR" role="3EZMnx">
         <property role="3F0ifm" value="=" />
       </node>
-      <node concept="3F0A7n" id="4078300376848002936" role="3EZMnx">
+      <node concept="3F0A7n" id="3yp29n1nuXS" role="3EZMnx">
         <reference role="1NtTu8" target="dekf.8917170296719630035" resolve="value" />
       </node>
-      <node concept="l2Vlx" id="4078300376848002937" role="2iSdaV" />
+      <node concept="l2Vlx" id="3yp29n1nuXT" role="2iSdaV" />
     </node>
-    <node concept="1PE4EZ" id="4078300376848002938" role="1PM95z">
+    <node concept="1PE4EZ" id="3yp29n1nuXU" role="1PM95z">
       <reference role="1PE7su" target="4078300376847974718" resolve="StyleTestElement_EditorComponent" />
     </node>
   </node>
-  <node concept="24kQdi" id="4078300376848315382">
+  <node concept="24kQdi" id="3yp29n1oFfQ">
     <reference role="1XX52x" target="dekf.8917170296719625334" resolve="PriorityStyle" />
-    <node concept="PMmxH" id="4078300376848315384" role="2wV5jI">
+    <node concept="PMmxH" id="3yp29n1oFfS" role="2wV5jI">
       <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
       <reference role="1k5W1q" target="7571028832046676331" resolve="priorityStyle" />
     </node>
   </node>
-  <node concept="24kQdi" id="4078300376848327533">
+  <node concept="24kQdi" id="3yp29n1oIdH">
     <reference role="1XX52x" target="dekf.8917170296719632906" resolve="HugePriorityStyle" />
-    <node concept="PMmxH" id="4078300376848327535" role="2wV5jI">
+    <node concept="PMmxH" id="3yp29n1oIdJ" role="2wV5jI">
       <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
       <reference role="1k5W1q" target="7571028832046235254" resolve="hugePriorityStyle" />
     </node>
   </node>
-  <node concept="24kQdi" id="4078300376848327560">
+  <node concept="24kQdi" id="3yp29n1oIe8">
     <reference role="1XX52x" target="dekf.8917170296719632542" resolve="PriorityStyleCopy" />
-    <node concept="PMmxH" id="4078300376848327562" role="2wV5jI">
+    <node concept="PMmxH" id="3yp29n1oIea" role="2wV5jI">
       <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
       <reference role="1k5W1q" target="5446045291972765404" resolve="priorityStyleCopy" />
     </node>
   </node>
-  <node concept="24kQdi" id="4078300376848327587">
+  <node concept="24kQdi" id="3yp29n1oIez">
     <reference role="1XX52x" target="dekf.8917170296719630045" resolve="TestInheritedAttribute" />
-    <node concept="PMmxH" id="4078300376848327589" role="2wV5jI">
+    <node concept="PMmxH" id="3yp29n1oIe_" role="2wV5jI">
       <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
-      <node concept="3tD6jV" id="4078300376848327695" role="3F10Kt">
+      <node concept="3tD6jV" id="3yp29n1oIgf" role="3F10Kt">
         <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
-        <node concept="3sjG9q" id="4078300376848327696" role="3tD6jU">
-          <node concept="3clFbS" id="4078300376848327697" role="2VODD2">
-            <node concept="3clFbF" id="4078300376848328757" role="3cqZAp">
-              <node concept="2OqwBi" id="4078300376848329025" role="3clFbG">
-                <node concept="pncrf" id="4078300376848328756" role="2Oq!k0" />
-                <node concept="3TrcHB" id="4078300376848373389" role="2OqNvi">
+        <node concept="3sjG9q" id="3yp29n1oIgg" role="3tD6jU">
+          <node concept="3clFbS" id="3yp29n1oIgh" role="2VODD2">
+            <node concept="3clFbF" id="3yp29n1oIwP" role="3cqZAp">
+              <node concept="2OqwBi" id="3yp29n1oI_1" role="3clFbG">
+                <node concept="pncrf" id="3yp29n1oIwO" role="2Oq$k0" />
+                <node concept="3TrcHB" id="3yp29n1oTqd" role="2OqNvi">
                   <reference role="3TsBF5" target="dekf.8917170296719630046" resolve="value" />
                 </node>
               </node>
@@ -457,18 +457,18 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="4078300376848374175">
+  <node concept="24kQdi" id="3yp29n1oTAv">
     <reference role="1XX52x" target="dekf.8917170296719628637" resolve="TestSimpleAttribute" />
-    <node concept="PMmxH" id="4078300376848374177" role="2wV5jI">
+    <node concept="PMmxH" id="3yp29n1oTAx" role="2wV5jI">
       <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
-      <node concept="3tD6jV" id="4078300376848374283" role="3F10Kt">
+      <node concept="3tD6jV" id="3yp29n1oTCb" role="3F10Kt">
         <reference role="3tD7wE" target="6609104295326651003" resolve="test-simple-attribute" />
-        <node concept="3sjG9q" id="4078300376848374284" role="3tD6jU">
-          <node concept="3clFbS" id="4078300376848374285" role="2VODD2">
-            <node concept="3clFbF" id="4078300376848374940" role="3cqZAp">
-              <node concept="2OqwBi" id="4078300376848375229" role="3clFbG">
-                <node concept="pncrf" id="4078300376848374939" role="2Oq!k0" />
-                <node concept="3TrcHB" id="4078300376848377125" role="2OqNvi">
+        <node concept="3sjG9q" id="3yp29n1oTCc" role="3tD6jU">
+          <node concept="3clFbS" id="3yp29n1oTCd" role="2VODD2">
+            <node concept="3clFbF" id="3yp29n1oTMs" role="3cqZAp">
+              <node concept="2OqwBi" id="3yp29n1oTQX" role="3clFbG">
+                <node concept="pncrf" id="3yp29n1oTMr" role="2Oq$k0" />
+                <node concept="3TrcHB" id="3yp29n1oUk_" role="2OqNvi">
                   <reference role="3TsBF5" target="dekf.8917170296719630035" resolve="value" />
                 </node>
               </node>
@@ -478,34 +478,34 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="4078300376848377899">
+  <node concept="24kQdi" id="3yp29n1oUwF">
     <reference role="1XX52x" target="dekf.8917170296719632911" resolve="UnapplyPriorityStyleCopy" />
-    <node concept="PMmxH" id="4078300376848377901" role="2wV5jI">
+    <node concept="PMmxH" id="3yp29n1oUwH" role="2wV5jI">
       <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
       <reference role="1k5W1q" target="7571028832047359190" resolve="unapplyPriorityStyleCopy" />
     </node>
   </node>
-  <node concept="24kQdi" id="4078300376848435026">
+  <node concept="24kQdi" id="3yp29n1p8ti">
     <reference role="1XX52x" target="dekf.4078300376848435002" resolve="LeafNode" />
-    <node concept="3EZMnI" id="4078300376848538553" role="2wV5jI">
-      <node concept="3EZMnI" id="4078300376848487787" role="3EZMnx">
-        <node concept="VPM3Z" id="4078300376848487789" role="3F10Kt">
+    <node concept="3EZMnI" id="3yp29n1pxIT" role="2wV5jI">
+      <node concept="3EZMnI" id="3yp29n1pllF" role="3EZMnx">
+        <node concept="VPM3Z" id="3yp29n1pllH" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
-        <node concept="3F0ifn" id="4078300376848487791" role="3EZMnx">
+        <node concept="3F0ifn" id="3yp29n1pllJ" role="3EZMnx">
           <property role="3F0ifm" value="&lt;" />
           <reference role="1k5W1q" target="tp2u.1215709345400" resolve="LeftAngleBracket" />
         </node>
-        <node concept="PMmxH" id="4078300376848487803" role="3EZMnx">
+        <node concept="PMmxH" id="3yp29n1pllV" role="3EZMnx">
           <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
         </node>
-        <node concept="3F0ifn" id="4078300376848487812" role="3EZMnx">
+        <node concept="3F0ifn" id="3yp29n1plm4" role="3EZMnx">
           <property role="3F0ifm" value="&gt;" />
           <reference role="1k5W1q" target="tp2u.1215709621223" resolve="RightAngleBracket" />
         </node>
-        <node concept="l2Vlx" id="4078300376848487792" role="2iSdaV" />
+        <node concept="l2Vlx" id="3yp29n1pllK" role="2iSdaV" />
       </node>
-      <node concept="2iRfu4" id="4078300376848538556" role="2iSdaV" />
+      <node concept="2iRfu4" id="3yp29n1pxIW" role="2iSdaV" />
     </node>
   </node>
 </model>

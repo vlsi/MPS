@@ -12,7 +12,7 @@
   </imports>
   <registry>
     <language id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML">
-      <concept id="1225239603385" name="jetbrains.mps.sampleXML.structure.Element" flags="ng" index="15YaA!">
+      <concept id="1225239603385" name="jetbrains.mps.sampleXML.structure.Element" flags="ng" index="15YaA$">
         <child id="1225239603386" name="attribute" index="15YaAB" />
       </concept>
       <concept id="1225239603361" name="jetbrains.mps.sampleXML.structure.Attribute" flags="ng" index="15YaAW">
@@ -30,25 +30,25 @@
       </concept>
     </language>
   </registry>
-  <node concept="Disgg" id="3618324829955935393">
-    <node concept="15YaA!" id="3618324829955941167" role="Divzz">
+  <node concept="Disgg" id="38QROcrvWMx">
+    <node concept="15YaA$" id="38QROcrvYcJ" role="Divzz">
       <property role="TrG5h" value="button" />
-      <node concept="15YaAW" id="3618324829955941168" role="15YaAB">
+      <node concept="15YaAW" id="38QROcrvYcK" role="15YaAB">
         <property role="TrG5h" value="text" />
         <property role="15YaAY" value="Hello" />
       </node>
-      <node concept="15YaAW" id="3618324829955941169" role="15YaAB">
+      <node concept="15YaAW" id="38QROcrvYcL" role="15YaAB">
         <property role="TrG5h" value="enabled" />
         <property role="15YaAY" value="false" />
       </node>
     </node>
-    <node concept="15YaA!" id="3618324829955941195" role="Divzz">
+    <node concept="15YaA$" id="38QROcrvYdb" role="Divzz">
       <property role="TrG5h" value="label" />
-      <node concept="15YaAW" id="3618324829955941196" role="15YaAB">
+      <node concept="15YaAW" id="38QROcrvYdc" role="15YaAB">
         <property role="TrG5h" value="text" />
         <property role="15YaAY" value="world!" />
       </node>
-      <node concept="15YaAW" id="3618324829955941197" role="15YaAB">
+      <node concept="15YaAW" id="38QROcrvYdd" role="15YaAB">
         <property role="TrG5h" value="background" />
         <property role="15YaAY" value="orange" />
       </node>

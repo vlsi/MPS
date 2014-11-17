@@ -12,8 +12,8 @@
   </imports>
   <registry>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
-      <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu!B">
-        <reference id="8401916545537438643" name="kind" index="1dDu!A" />
+      <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
+        <reference id="8401916545537438643" name="kind" index="1dDu$A" />
       </concept>
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
@@ -25,12 +25,12 @@
       </concept>
     </language>
   </registry>
-  <node concept="1M2fIO" id="1241364804758">
+  <node concept="1M2fIO" id="i476Vim">
     <reference role="1M2myG" target="64en.1241363083334" resolve="InputFieldReference" />
-    <node concept="1N5Pfh" id="1241364811072" role="1Mr941">
+    <node concept="1N5Pfh" id="i476WP0" role="1Mr941">
       <reference role="1N5Vy1" target="64en.1241363105304" />
-      <node concept="1dDu!B" id="4159153485696906648" role="1N6uqs">
-        <reference role="1dDu!A" target="64en.1241362608529" resolve="InputField" />
+      <node concept="1dDu$B" id="3ASi0WxiFmo" role="1N6uqs">
+        <reference role="1dDu$A" target="64en.1241362608529" resolve="InputField" />
       </node>
     </node>
   </node>

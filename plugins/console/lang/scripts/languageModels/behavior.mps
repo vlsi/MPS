@@ -23,7 +23,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
@@ -82,99 +82,99 @@
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
     </language>
   </registry>
-  <node concept="13h7C7" id="1734392475491235553">
+  <node concept="13h7C7" id="1whNchEKZrx">
     <reference role="13h7C2" target="z2sp.1734392475491235545" resolve="AbstractConsoleScript" />
-    <node concept="13i0hz" id="1734392475491235554" role="13h7CS">
+    <node concept="13i0hz" id="1whNchEKZry" role="13h7CS">
       <property role="13i0iv" value="true" />
       <property role="13i0it" value="true" />
       <property role="TrG5h" value="getCommands" />
-      <node concept="3Tm1VV" id="1734392475491235555" role="1B3o_S" />
-      <node concept="A3Dl8" id="1734392475491235556" role="3clF45">
-        <node concept="3Tqbb2" id="1734392475491235557" role="A3Ik2">
+      <node concept="3Tm1VV" id="1whNchEKZrz" role="1B3o_S" />
+      <node concept="A3Dl8" id="1whNchEKZr$" role="3clF45">
+        <node concept="3Tqbb2" id="1whNchEKZr_" role="A3Ik2">
           <reference role="ehGHo" target="eynw.6854397602732214175" resolve="Command" />
         </node>
       </node>
-      <node concept="3clFbS" id="1734392475491235558" role="3clF47" />
+      <node concept="3clFbS" id="1whNchEKZrA" role="3clF47" />
     </node>
-    <node concept="13hLZK" id="1734392475491235559" role="13h7CW">
-      <node concept="3clFbS" id="1734392475491235560" role="2VODD2" />
+    <node concept="13hLZK" id="1whNchEKZrB" role="13h7CW">
+      <node concept="3clFbS" id="1whNchEKZrC" role="2VODD2" />
     </node>
   </node>
-  <node concept="13h7C7" id="1734392475491235576">
+  <node concept="13h7C7" id="1whNchEKZrS">
     <reference role="13h7C2" target="z2sp.1734392475491235550" resolve="ConsoleScript" />
-    <node concept="13hLZK" id="1734392475491235577" role="13h7CW">
-      <node concept="3clFbS" id="1734392475491235578" role="2VODD2" />
+    <node concept="13hLZK" id="1whNchEKZrT" role="13h7CW">
+      <node concept="3clFbS" id="1whNchEKZrU" role="2VODD2" />
     </node>
-    <node concept="13i0hz" id="1734392475491235579" role="13h7CS">
+    <node concept="13i0hz" id="1whNchEKZrV" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getCommands" />
       <reference role="13i0hy" target="1734392475491235554" resolve="getCommands" />
-      <node concept="3Tm1VV" id="1734392475491235580" role="1B3o_S" />
-      <node concept="3clFbS" id="1734392475491235581" role="3clF47">
-        <node concept="3clFbF" id="1734392475491235582" role="3cqZAp">
-          <node concept="2OqwBi" id="1734392475491235583" role="3clFbG">
-            <node concept="13iPFW" id="1734392475491235584" role="2Oq!k0" />
-            <node concept="3Tsc0h" id="1734392475491235585" role="2OqNvi">
+      <node concept="3Tm1VV" id="1whNchEKZrW" role="1B3o_S" />
+      <node concept="3clFbS" id="1whNchEKZrX" role="3clF47">
+        <node concept="3clFbF" id="1whNchEKZrY" role="3cqZAp">
+          <node concept="2OqwBi" id="1whNchEKZrZ" role="3clFbG">
+            <node concept="13iPFW" id="1whNchEKZs0" role="2Oq$k0" />
+            <node concept="3Tsc0h" id="1whNchEKZs1" role="2OqNvi">
               <reference role="3TtcxE" target="z2sp.1734392475491235551" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="A3Dl8" id="1734392475491235586" role="3clF45">
-        <node concept="3Tqbb2" id="1734392475491235587" role="A3Ik2">
+      <node concept="A3Dl8" id="1whNchEKZs2" role="3clF45">
+        <node concept="3Tqbb2" id="1whNchEKZs3" role="A3Ik2">
           <reference role="ehGHo" target="eynw.6854397602732214175" resolve="Command" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="13h7C7" id="748410583119789988">
+  <node concept="13h7C7" id="DySRn8ZRY$">
     <reference role="13h7C2" target="z2sp.1734392475491228778" resolve="Execute" />
-    <node concept="13hLZK" id="748410583119789989" role="13h7CW">
-      <node concept="3clFbS" id="748410583119789990" role="2VODD2" />
+    <node concept="13hLZK" id="DySRn8ZRY_" role="13h7CW">
+      <node concept="3clFbS" id="DySRn8ZRYA" role="2VODD2" />
     </node>
   </node>
-  <node concept="13h7C7" id="2663801026049983654">
+  <node concept="13h7C7" id="2jRIeHQ1WiA">
     <reference role="13h7C2" target="z2sp.2377091791517030718" resolve="RefactorOperation" />
-    <node concept="13hLZK" id="2663801026049983809" role="13h7CW">
-      <node concept="3clFbS" id="2663801026049983810" role="2VODD2" />
+    <node concept="13hLZK" id="2jRIeHQ1Wl1" role="13h7CW">
+      <node concept="3clFbS" id="2jRIeHQ1Wl2" role="2VODD2" />
     </node>
-    <node concept="13i0hz" id="2663801026049990426" role="13h7CS">
+    <node concept="13i0hz" id="2jRIeHQ1XWq" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getShortHelp" />
       <property role="2Ki8OM" value="true" />
       <reference role="13i0hy" target="zyb2.473081947982699339" resolve="getShortHelp" />
-      <node concept="3Tm1VV" id="2663801026049990427" role="1B3o_S" />
-      <node concept="3clFbS" id="2663801026049990430" role="3clF47">
-        <node concept="3clFbF" id="2663801026050030057" role="3cqZAp">
-          <node concept="Xl_RD" id="2663801026050030056" role="3clFbG">
+      <node concept="3Tm1VV" id="2jRIeHQ1XWr" role="1B3o_S" />
+      <node concept="3clFbS" id="2jRIeHQ1XWu" role="3clF47">
+        <node concept="3clFbF" id="2jRIeHQ27BD" role="3cqZAp">
+          <node concept="Xl_RD" id="2jRIeHQ27BC" role="3clFbG">
             <property role="Xl_RC" value="apply a function to manually selected nodes" />
           </node>
         </node>
       </node>
-      <node concept="17QB3L" id="2663801026049990431" role="3clF45" />
+      <node concept="17QB3L" id="2jRIeHQ1XWv" role="3clF45" />
     </node>
-    <node concept="13i0hz" id="2663801026050030071" role="13h7CS">
+    <node concept="13i0hz" id="2jRIeHQ27BR" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
       <property role="2Ki8OM" value="true" />
       <property role="TrG5h" value="getHelpPage" />
       <reference role="13i0hy" target="zyb2.7006261637493125297" resolve="getHelpPage" />
-      <node concept="3Tm1VV" id="2663801026050030072" role="1B3o_S" />
-      <node concept="3clFbS" id="2663801026050030077" role="3clF47">
-        <node concept="3clFbF" id="2663801026050030496" role="3cqZAp">
-          <node concept="3cpWs3" id="2663801026050032259" role="3clFbG">
-            <node concept="Xl_RD" id="2663801026050032280" role="3uHU7w">
+      <node concept="3Tm1VV" id="2jRIeHQ27BS" role="1B3o_S" />
+      <node concept="3clFbS" id="2jRIeHQ27BX" role="3clF47">
+        <node concept="3clFbF" id="2jRIeHQ27Iw" role="3cqZAp">
+          <node concept="3cpWs3" id="2jRIeHQ28a3" role="3clFbG">
+            <node concept="Xl_RD" id="2jRIeHQ28ao" role="3uHU7w">
               <property role="Xl_RC" value="Refactoring is not applied immediately, but after a random delay due to using Java's invokelater.\nMultiple usages of the command within a single query may result in consistency issues and are discouraged." />
             </node>
-            <node concept="Xl_RD" id="2663801026050030495" role="3uHU7B">
+            <node concept="Xl_RD" id="2jRIeHQ27Iv" role="3uHU7B">
               <property role="Xl_RC" value="Operates like the forEach operation, but additionally asks the user to include/exclude nodes before starting the refactoring.\n" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="17QB3L" id="2663801026050030078" role="3clF45" />
+      <node concept="17QB3L" id="2jRIeHQ27BY" role="3clF45" />
     </node>
   </node>
 </model>

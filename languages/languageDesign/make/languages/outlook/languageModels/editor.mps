@@ -31,11 +31,11 @@
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" index="3F0A7n" />
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" index="3F2HdR" />
       <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="sg" index="3XFhqQ" />
-      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi!J">
+      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
@@ -47,40 +47,40 @@
       </concept>
     </language>
   </registry>
-  <node concept="24kQdi" id="5608160002100058532">
+  <node concept="24kQdi" id="4RkbWW0I_A$">
     <reference role="1XX52x" target="z5g5.5608160002100057298" resolve="Outlook" />
-    <node concept="3EZMnI" id="5608160002100058534" role="2wV5jI">
-      <node concept="3EZMnI" id="5608160002100058537" role="3EZMnx">
-        <node concept="VPM3Z" id="5608160002100058538" role="3F10Kt">
+    <node concept="3EZMnI" id="4RkbWW0I_AA" role="2wV5jI">
+      <node concept="3EZMnI" id="4RkbWW0I_AD" role="3EZMnx">
+        <node concept="VPM3Z" id="4RkbWW0I_AE" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
-        <node concept="3F0ifn" id="5608160002100058541" role="3EZMnx">
+        <node concept="3F0ifn" id="4RkbWW0I_AH" role="3EZMnx">
           <property role="3F0ifm" value="make outlook" />
         </node>
-        <node concept="3F0A7n" id="5608160002100105975" role="3EZMnx">
+        <node concept="3F0A7n" id="4RkbWW0ILbR" role="3EZMnx">
           <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
         </node>
-        <node concept="3F0ifn" id="5608160002100105977" role="3EZMnx">
+        <node concept="3F0ifn" id="4RkbWW0ILbT" role="3EZMnx">
           <property role="3F0ifm" value=":" />
         </node>
-        <node concept="2iRfu4" id="5608160002100058540" role="2iSdaV" />
+        <node concept="2iRfu4" id="4RkbWW0I_AG" role="2iSdaV" />
       </node>
-      <node concept="3EZMnI" id="5608160002100058543" role="3EZMnx">
-        <node concept="VPM3Z" id="5608160002100058544" role="3F10Kt">
+      <node concept="3EZMnI" id="4RkbWW0I_AJ" role="3EZMnx">
+        <node concept="VPM3Z" id="4RkbWW0I_AK" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
-        <node concept="3XFhqQ" id="5608160002100058547" role="3EZMnx" />
-        <node concept="3F2HdR" id="5608160002100058554" role="3EZMnx">
+        <node concept="3XFhqQ" id="4RkbWW0I_AN" role="3EZMnx" />
+        <node concept="3F2HdR" id="4RkbWW0I_AU" role="3EZMnx">
           <reference role="1NtTu8" target="z5g5.5608160002100058529" />
-          <node concept="2iRkQZ" id="5608160002100058556" role="2czzBx" />
-          <node concept="3F0ifn" id="5608160002100058558" role="2czzBI">
+          <node concept="2iRkQZ" id="4RkbWW0I_AW" role="2czzBx" />
+          <node concept="3F0ifn" id="4RkbWW0I_AY" role="2czzBI">
             <property role="3F0ifm" value="" />
             <property role="ilYzB" value="&lt;no facets&gt;" />
           </node>
         </node>
-        <node concept="2iRfu4" id="5608160002100058546" role="2iSdaV" />
+        <node concept="2iRfu4" id="4RkbWW0I_AM" role="2iSdaV" />
       </node>
-      <node concept="2iRkQZ" id="5608160002100058536" role="2iSdaV" />
+      <node concept="2iRkQZ" id="4RkbWW0I_AC" role="2iSdaV" />
     </node>
   </node>
 </model>

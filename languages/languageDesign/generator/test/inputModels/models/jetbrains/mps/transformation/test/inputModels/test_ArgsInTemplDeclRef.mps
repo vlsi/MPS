@@ -26,24 +26,24 @@
       <concept id="1195171011194" name="jetbrains.mps.transformation.test.inputLang.structure.InputNode_A" flags="ng" index="15J_HG" />
     </language>
   </registry>
-  <node concept="15_jI_" id="7496726876599962828">
+  <node concept="15_jI_" id="6w9IlZTRkNc">
     <property role="TrG5h" value="MyInputRoot1" />
     <property role="3FifNy" value="argsInTemplDeclRef" />
-    <node concept="15J_HG" id="4142802410168797714" role="15EZgy">
+    <node concept="15J_HG" id="3_YcduKJ$Ci" role="15EZgy">
       <property role="TrG5h" value="NodeA" />
     </node>
-    <node concept="3ABbii" id="4142802410168797729" role="15EZgy">
+    <node concept="3ABbii" id="3_YcduKJ$Cx" role="15EZgy">
       <property role="TrG5h" value="NodeB" />
     </node>
-    <node concept="3AMHlM" id="4142802410168797742" role="15EZgy">
+    <node concept="3AMHlM" id="3_YcduKJ$CI" role="15EZgy">
       <property role="TrG5h" value="NodeC_1" />
       <property role="3Uovei" value="1" />
     </node>
-    <node concept="3AMHlM" id="4929591503636861225" role="15EZgy">
+    <node concept="3AMHlM" id="4hDrlEY3L4D" role="15EZgy">
       <property role="3Uovei" value="2" />
       <property role="TrG5h" value="NodeC_2" />
     </node>
-    <node concept="3AMHlM" id="4929591503636861266" role="15EZgy">
+    <node concept="3AMHlM" id="4hDrlEY3L5i" role="15EZgy">
       <property role="3Uovei" value="3" />
       <property role="TrG5h" value="NodeC_3" />
     </node>

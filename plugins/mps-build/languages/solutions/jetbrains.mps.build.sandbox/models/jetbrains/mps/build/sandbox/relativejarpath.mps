@@ -41,25 +41,25 @@
       </concept>
     </language>
   </registry>
-  <node concept="1l3spW" id="867429721720070735">
+  <node concept="1l3spW" id="K9IFLIJq9f">
     <property role="2DA0ip" value="../" />
     <property role="TrG5h" value="testjarpath" />
     <property role="turDy" value="testjarpath.xml" />
-    <node concept="1l3spV" id="867429721720070737" role="1l3spN">
-      <node concept="28jJK3" id="867429721720070738" role="39821P">
-        <node concept="30tkmh" id="867429721720070731" role="28jJRO">
-          <node concept="55IIr" id="2896281290944804906" role="30tYEP">
-            <node concept="2Ry0Ak" id="2896281290944804907" role="iGT6I">
+    <node concept="1l3spV" id="K9IFLIJq9h" role="1l3spN">
+      <node concept="28jJK3" id="K9IFLIJq9i" role="39821P">
+        <node concept="30tkmh" id="K9IFLIJq9b" role="28jJRO">
+          <node concept="55IIr" id="2wLE7OGnZwE" role="30tYEP">
+            <node concept="2Ry0Ak" id="2wLE7OGnZwF" role="iGT6I">
               <property role="2Ry0Am" value=".." />
-              <node concept="2Ry0Ak" id="2896281290944804908" role="2Ry0An">
+              <node concept="2Ry0Ak" id="2wLE7OGnZwG" role="2Ry0An">
                 <property role="2Ry0Am" value=".." />
-                <node concept="2Ry0Ak" id="2896281290944804909" role="2Ry0An">
+                <node concept="2Ry0Ak" id="2wLE7OGnZwH" role="2Ry0An">
                   <property role="2Ry0Am" value=".." />
-                  <node concept="2Ry0Ak" id="2896281290944804910" role="2Ry0An">
+                  <node concept="2Ry0Ak" id="2wLE7OGnZwI" role="2Ry0An">
                     <property role="2Ry0Am" value=".." />
-                    <node concept="2Ry0Ak" id="2896281290944804911" role="2Ry0An">
+                    <node concept="2Ry0Ak" id="2wLE7OGnZwJ" role="2Ry0An">
                       <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="2896281290944804912" role="2Ry0An">
+                      <node concept="2Ry0Ak" id="2wLE7OGnZwK" role="2Ry0An">
                         <property role="2Ry0Am" value="annotations.jar" />
                       </node>
                     </node>
@@ -68,15 +68,15 @@
               </node>
             </node>
           </node>
-          <node concept="2Ry0Ak" id="867429721720070733" role="iGT6I">
+          <node concept="2Ry0Ak" id="K9IFLIJq9d" role="iGT6I">
             <property role="2Ry0Am" value="org" />
-            <node concept="2Ry0Ak" id="867429721720070734" role="2Ry0An">
+            <node concept="2Ry0Ak" id="K9IFLIJq9e" role="2Ry0An">
               <property role="2Ry0Am" value="intellij" />
-              <node concept="2Ry0Ak" id="715289236985652099" role="2Ry0An">
+              <node concept="2Ry0Ak" id="BHdWlMcae3" role="2Ry0An">
                 <property role="2Ry0Am" value="lang" />
-                <node concept="2Ry0Ak" id="715289236985652100" role="2Ry0An">
+                <node concept="2Ry0Ak" id="BHdWlMcae4" role="2Ry0An">
                   <property role="2Ry0Am" value="annotations" />
-                  <node concept="2Ry0Ak" id="715289236985652101" role="2Ry0An">
+                  <node concept="2Ry0Ak" id="BHdWlMcae5" role="2Ry0An">
                     <property role="2Ry0Am" value="Identifier.class" />
                   </node>
                 </node>
@@ -86,10 +86,10 @@
         </node>
       </node>
     </node>
-    <node concept="55IIr" id="3189788309732144700" role="auvoZ">
-      <node concept="2Ry0Ak" id="5780287594867900360" role="iGT6I">
+    <node concept="55IIr" id="2L4pT56hNoW" role="auvoZ">
+      <node concept="2Ry0Ak" id="50RHf4RGFZ8" role="iGT6I">
         <property role="2Ry0Am" value="jetbrains.mps.build.sandbox" />
-        <node concept="2Ry0Ak" id="5780287594867900361" role="2Ry0An">
+        <node concept="2Ry0Ak" id="50RHf4RGFZ9" role="2Ry0An">
           <property role="2Ry0Am" value="samples" />
         </node>
       </node>

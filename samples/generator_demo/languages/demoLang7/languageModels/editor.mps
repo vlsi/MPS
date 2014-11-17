@@ -25,11 +25,11 @@
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" index="3F2HdR" />
-      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi!J">
+      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1!h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="sg" index="2czfm3">
@@ -41,23 +41,23 @@
       </concept>
     </language>
   </registry>
-  <node concept="24kQdi" id="3618324829955893159">
+  <node concept="24kQdi" id="38QROcrvMuB">
     <reference role="1XX52x" target="e3ke.3618324829955890003" resolve="XMLDocument" />
-    <node concept="3EZMnI" id="3618324829955894218" role="2wV5jI">
-      <node concept="3F0ifn" id="3618324829955894225" role="3EZMnx">
+    <node concept="3EZMnI" id="38QROcrvMJa" role="2wV5jI">
+      <node concept="3F0ifn" id="38QROcrvMJh" role="3EZMnx">
         <property role="3F0ifm" value="XML Document" />
       </node>
-      <node concept="3EZMnI" id="3618324829955894231" role="3EZMnx">
-        <node concept="3F2HdR" id="3618324829955894243" role="3EZMnx">
+      <node concept="3EZMnI" id="38QROcrvMJn" role="3EZMnx">
+        <node concept="3F2HdR" id="38QROcrvMJz" role="3EZMnx">
           <reference role="1NtTu8" target="e3ke.3618324829955893152" />
-          <node concept="2iRkQZ" id="3618324829955894244" role="2czzBx" />
+          <node concept="2iRkQZ" id="38QROcrvMJ$" role="2czzBx" />
         </node>
-        <node concept="VPM3Z" id="3618324829955894233" role="3F10Kt">
+        <node concept="VPM3Z" id="38QROcrvMJp" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
-        <node concept="2iRkQZ" id="3618324829955894236" role="2iSdaV" />
+        <node concept="2iRkQZ" id="38QROcrvMJs" role="2iSdaV" />
       </node>
-      <node concept="2iRkQZ" id="3618324829955894221" role="2iSdaV" />
+      <node concept="2iRkQZ" id="38QROcrvMJd" role="2iSdaV" />
     </node>
   </node>
 </model>

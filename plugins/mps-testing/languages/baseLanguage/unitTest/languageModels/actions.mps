@@ -22,7 +22,7 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -39,7 +39,7 @@
       <concept id="5584396657084912703" name="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode" flags="nn" index="1r4Lsj" />
       <concept id="767145758118872830" name="jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation" flags="nn" index="2DeJnY" />
       <concept id="1158700664498" name="jetbrains.mps.lang.actions.structure.NodeFactories" flags="ng" index="37WguZ">
-        <child id="1158700779049" name="nodeFactory" index="37WGs!" />
+        <child id="1158700779049" name="nodeFactory" index="37WGs$" />
       </concept>
       <concept id="1158700725281" name="jetbrains.mps.lang.actions.structure.NodeFactory" flags="ig" index="37WvkG">
         <reference id="1158700943156" name="applicableConcept" index="37XkoT" />
@@ -75,26 +75,26 @@
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
-        <child id="1207343664468" name="conceptArgument" index="ri!Ld" />
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
     </language>
   </registry>
-  <node concept="37WguZ" id="1198167751204">
+  <node concept="37WguZ" id="hrSnfC$">
     <property role="TrG5h" value="unitTest_Factory" />
-    <node concept="37WvkG" id="1198167764446" role="37WGs!">
+    <node concept="37WvkG" id="hrSniRu" role="37WGs$">
       <reference role="37XkoT" target="tpe3.1171931690126" resolve="TestMethod" />
-      <node concept="37Y9Zx" id="1198167764447" role="37ZfLb">
-        <node concept="3clFbS" id="1198167764448" role="2VODD2">
-          <node concept="3clFbF" id="1198167785565" role="3cqZAp">
-            <node concept="2OqwBi" id="1204227842325" role="3clFbG">
-              <node concept="2OqwBi" id="1204227893081" role="2Oq!k0">
-                <node concept="1r4Lsj" id="1198167785566" role="2Oq!k0" />
-                <node concept="3TrEf2" id="1198167899254" role="2OqNvi">
+      <node concept="37Y9Zx" id="hrSniRv" role="37ZfLb">
+        <node concept="3clFbS" id="hrSniRw" role="2VODD2">
+          <node concept="3clFbF" id="hrSno1t" role="3cqZAp">
+            <node concept="2OqwBi" id="hxx$E4l" role="3clFbG">
+              <node concept="2OqwBi" id="hxx$Qtp" role="2Oq$k0">
+                <node concept="1r4Lsj" id="hrSno1u" role="2Oq$k0" />
+                <node concept="3TrEf2" id="hrSnNLQ" role="2OqNvi">
                   <reference role="3Tt5mk" target="tpee.1068580123133" />
                 </node>
               </node>
-              <node concept="2DeJnY" id="6357564549601506862" role="2OqNvi">
+              <node concept="2DeJnY" id="5wUAOoBBjoI" role="2OqNvi">
                 <reference role="1A9B2P" target="tpee.1068581517677" resolve="VoidType" />
               </node>
             </node>
@@ -103,30 +103,30 @@
       </node>
     </node>
   </node>
-  <node concept="3FK_9_" id="589054057631277539">
+  <node concept="3FK_9_" id="wGJoHyBm7z">
     <property role="TrG5h" value="removeAssert" />
-    <node concept="3FOIzC" id="589054057631277540" role="3FOPby">
+    <node concept="3FOIzC" id="wGJoHyBm7$" role="3FOPby">
       <reference role="3FOWKa" target="tpee.1160998861373" resolve="AssertStatement" />
-      <node concept="3buRE8" id="589054057631277541" role="3bvWUf">
-        <node concept="3clFbS" id="589054057631277542" role="2VODD2">
-          <node concept="3clFbF" id="589054057631277619" role="3cqZAp">
-            <node concept="2OqwBi" id="589054057631277630" role="3clFbG">
-              <node concept="2OqwBi" id="589054057631277621" role="2Oq!k0">
-                <node concept="3bvxqY" id="589054057631277620" role="2Oq!k0" />
-                <node concept="2Xjw5R" id="589054057631277625" role="2OqNvi">
-                  <node concept="1xMEDy" id="589054057631277626" role="1xVPHs">
-                    <node concept="chp4Y" id="589054057631277629" role="ri!Ld">
+      <node concept="3buRE8" id="wGJoHyBm7_" role="3bvWUf">
+        <node concept="3clFbS" id="wGJoHyBm7A" role="2VODD2">
+          <node concept="3clFbF" id="wGJoHyBm8N" role="3cqZAp">
+            <node concept="2OqwBi" id="wGJoHyBm8Y" role="3clFbG">
+              <node concept="2OqwBi" id="wGJoHyBm8P" role="2Oq$k0">
+                <node concept="3bvxqY" id="wGJoHyBm8O" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="wGJoHyBm8T" role="2OqNvi">
+                  <node concept="1xMEDy" id="wGJoHyBm8U" role="1xVPHs">
+                    <node concept="chp4Y" id="wGJoHyBm8X" role="ri$Ld">
                       <reference role="cht4Q" target="tpe3.1171931690126" resolve="TestMethod" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="3x8VRR" id="589054057631278823" role="2OqNvi" />
+              <node concept="3x8VRR" id="wGJoHyBmrB" role="2OqNvi" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="z64au" id="589054057631277543" role="tZc4B">
+      <node concept="z64au" id="wGJoHyBm7B" role="tZc4B">
         <reference role="z65TK" target="tpee.1160998861373" resolve="AssertStatement" />
       </node>
     </node>

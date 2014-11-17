@@ -17,8 +17,8 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
-        <property id="4628067390765956807" name="final" index="R5!K2" />
-        <property id="4628067390765956802" name="abstract" index="R5!K7" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -42,84 +42,84 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="1186667651178">
+  <node concept="1TIwiD" id="hhaTQ1E">
     <property role="TrG5h" value="MoneyLiteral" />
     <property role="2_RsDV" value="none" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyi" id="1186667945792" role="1TKVEl">
+    <node concept="1TJgyi" id="hhaUXX0" role="1TKVEl">
       <property role="TrG5h" value="currency" />
       <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
     </node>
-    <node concept="1TJgyi" id="1186667962877" role="1TKVEl">
+    <node concept="1TJgyi" id="hhaV27X" role="1TKVEl">
       <property role="TrG5h" value="amount" />
       <reference role="AX2Wp" target="1186668138191" resolve="BigDecimal" />
     </node>
   </node>
-  <node concept="Az7Fb" id="1186668138191">
+  <node concept="Az7Fb" id="hhaVGVf">
     <property role="TrG5h" value="BigDecimal" />
     <property role="FLfZY" value="[0-9]+(.[0-9]+)?" />
   </node>
-  <node concept="1TIwiD" id="1186669599053">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hhb1h_d">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MoneyType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="Money" />
     <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
   </node>
-  <node concept="1TIwiD" id="1187340310888">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hhMZP_C">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="R4oN_" value="money type constructor" />
     <property role="TrG5h" value="MoneyCreator" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="Money" />
     <reference role="1TJDcQ" target="tpee.1145552809883" resolve="AbstractCreator" />
-    <node concept="1TJgyj" id="1187344039345" role="1TKVEi">
+    <node concept="1TJgyj" id="hhNe3QL" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="amount" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1187344093002" role="1TKVEi">
+    <node concept="1TJgyj" id="hhNegXa" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="currency" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1187357857395">
-    <property role="R5!K7" value="true" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hhO2LpN">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MoneyMethodCall" />
     <property role="2_RsDV" value="none" />
     <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
-    <node concept="1TJgyj" id="1187358164451" role="1TKVEi">
+    <node concept="1TJgyj" id="hhO3Wnz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="instance" />
       <property role="20lbJX" value="1" />
       <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1187357875552">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hhO2PPw">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MoneyGetAmountMethodCall" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value=". amount" />
     <reference role="1TJDcQ" target="1187357857395" resolve="MoneyMethodCall" />
   </node>
-  <node concept="1TIwiD" id="1187357945755">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hhO36Yr">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MoneyGetCurrencyMethodCall" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value=". currency" />
     <reference role="1TJDcQ" target="1187357857395" resolve="MoneyMethodCall" />
   </node>
-  <node concept="1TIwiD" id="1187617584208">
-    <property role="R5!K7" value="false" />
-    <property role="R5!K2" value="false" />
+  <node concept="1TIwiD" id="hi3xzhg">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MoneyIsZeroMethodCall" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value=". isZero" />

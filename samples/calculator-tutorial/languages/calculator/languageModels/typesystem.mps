@@ -53,30 +53,30 @@
       </concept>
       <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
-        <child id="1174660783413" name="leftExpression" index="1ZfhK!" />
+        <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
     </language>
   </registry>
-  <node concept="1YbPZF" id="1241364865026">
+  <node concept="1YbPZF" id="i477a02">
     <property role="TrG5h" value="typeof_InputFieldReference" />
-    <node concept="3clFbS" id="1241364865027" role="18ibNy">
-      <node concept="1Z5TYs" id="1241364869216" role="3cqZAp">
-        <node concept="mw_s8" id="1241364873813" role="1ZfhK!">
-          <node concept="1Z2H0r" id="1241364873814" role="mwGJk">
-            <node concept="1YBJjd" id="1241364874801" role="1Z2MuG">
+    <node concept="3clFbS" id="i477a03" role="18ibNy">
+      <node concept="1Z5TYs" id="i477b1w" role="3cqZAp">
+        <node concept="mw_s8" id="i477c9l" role="1ZfhK$">
+          <node concept="1Z2H0r" id="i477c9m" role="mwGJk">
+            <node concept="1YBJjd" id="i477coL" role="1Z2MuG">
               <reference role="1YBMHb" target="1241364865028" resolve="reference" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="1241364883333" role="1ZfhKB">
-          <node concept="2c44tf" id="1241364883334" role="mwGJk">
-            <node concept="10Oyi0" id="1241364890790" role="2c44tc" />
+        <node concept="mw_s8" id="i477eu5" role="1ZfhKB">
+          <node concept="2c44tf" id="i477eu6" role="mwGJk">
+            <node concept="10Oyi0" id="i477giA" role="2c44tc" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="1241364865028" role="1YuTPh">
+    <node concept="1YaCAy" id="i477a04" role="1YuTPh">
       <property role="TrG5h" value="reference" />
       <reference role="1YaFvo" target="64en.1241363083334" resolve="InputFieldReference" />
     </node>

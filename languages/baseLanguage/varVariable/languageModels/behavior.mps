@@ -15,7 +15,7 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -45,19 +45,19 @@
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
     </language>
   </registry>
-  <node concept="13h7C7" id="8425555512443914486">
+  <node concept="13h7C7" id="7jH_x$qzszQ">
     <reference role="13h7C2" target="dvap.1236693300889" resolve="VarVariableDeclaration" />
-    <node concept="13hLZK" id="8425555512443914487" role="13h7CW">
-      <node concept="3clFbS" id="8425555512443914488" role="2VODD2">
-        <node concept="3clFbF" id="8425555512443914489" role="3cqZAp">
-          <node concept="2OqwBi" id="8425555512443914528" role="3clFbG">
-            <node concept="2OqwBi" id="8425555512443914493" role="2Oq!k0">
-              <node concept="13iPFW" id="8425555512443914490" role="2Oq!k0" />
-              <node concept="3TrEf2" id="8425555512443914499" role="2OqNvi">
+    <node concept="13hLZK" id="7jH_x$qzszR" role="13h7CW">
+      <node concept="3clFbS" id="7jH_x$qzszS" role="2VODD2">
+        <node concept="3clFbF" id="7jH_x$qzszT" role="3cqZAp">
+          <node concept="2OqwBi" id="7jH_x$qzs$w" role="3clFbG">
+            <node concept="2OqwBi" id="7jH_x$qzszX" role="2Oq$k0">
+              <node concept="13iPFW" id="7jH_x$qzszU" role="2Oq$k0" />
+              <node concept="3TrEf2" id="7jH_x$qzs$3" role="2OqNvi">
                 <reference role="3Tt5mk" target="tpee.5680397130376446158" />
               </node>
             </node>
-            <node concept="zfrQC" id="8425555512443914539" role="2OqNvi">
+            <node concept="zfrQC" id="7jH_x$qzs$F" role="2OqNvi">
               <reference role="1A9B2P" target="tpee.4836112446988635817" resolve="UndefinedType" />
             </node>
           </node>

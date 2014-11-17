@@ -31,29 +31,29 @@
       </concept>
     </language>
   </registry>
-  <node concept="V5hpn" id="1203541329669">
+  <node concept="V5hpn" id="hwSDOs5">
     <property role="TrG5h" value="SharedStyles" />
-    <node concept="14StLt" id="1203541368202" role="V601i">
+    <node concept="14StLt" id="hwSDXQa" role="V601i">
       <property role="TrG5h" value="ReferenceDecorated" />
-      <node concept="VechU" id="1203541368203" role="3F10Kt">
+      <node concept="VechU" id="hwSDXQb" role="3F10Kt">
         <property role="Vb096" value="DARK_BLUE" />
       </node>
-      <node concept="Vb9p2" id="1203541368204" role="3F10Kt">
+      <node concept="Vb9p2" id="hwSDXQc" role="3F10Kt">
         <property role="Vbekb" value="ITALIC" />
       </node>
     </node>
-    <node concept="14StLt" id="1203541385314" role="V601i">
+    <node concept="14StLt" id="hwSE21y" role="V601i">
       <property role="TrG5h" value="ReferenceOnConcept" />
-      <node concept="VechU" id="1203541509378" role="3F10Kt">
+      <node concept="VechU" id="hwSEwk2" role="3F10Kt">
         <property role="Vb096" value="DARK_MAGENTA" />
       </node>
     </node>
-    <node concept="14StLt" id="1221170124867" role="V601i">
+    <node concept="14StLt" id="hLjqlx3" role="V601i">
       <property role="TrG5h" value="ReferenceOnConceptualFeature" />
-      <node concept="VechU" id="1221170124868" role="3F10Kt">
+      <node concept="VechU" id="hLjqlx4" role="3F10Kt">
         <property role="Vb096" value="DARK_MAGENTA" />
       </node>
-      <node concept="Vb9p2" id="1221170145073" role="3F10Kt">
+      <node concept="Vb9p2" id="hLjqqsL" role="3F10Kt">
         <property role="Vbekb" value="ITALIC" />
       </node>
     </node>

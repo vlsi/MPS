@@ -27,10 +27,10 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
-        <child id="1154032183016" name="body" index="2LFqv!" />
+        <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq!k0" />
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
@@ -68,25 +68,25 @@
       </concept>
     </language>
   </registry>
-  <node concept="3_zdsH" id="4531786690998643506">
+  <node concept="3_zdsH" id="3V$8ZKEOiGM">
     <property role="3GE5qa" value="MethodParameters" />
     <reference role="3_znuS" target="tpc2.4531786690998636238" resolve="AbstractStyledTextOperation" />
-    <node concept="3__wT9" id="4531786690998643507" role="3_A6iZ">
-      <node concept="3clFbS" id="4531786690998643508" role="2VODD2">
-        <node concept="3_DlnG" id="4531786690998643509" role="3cqZAp" />
-        <node concept="2Gpval" id="4531786690998643511" role="3cqZAp">
-          <node concept="2GrKxI" id="4531786690998643512" role="2Gsz3X">
+    <node concept="3__wT9" id="3V$8ZKEOiGN" role="3_A6iZ">
+      <node concept="3clFbS" id="3V$8ZKEOiGO" role="2VODD2">
+        <node concept="3_DlnG" id="3V$8ZKEOiGP" role="3cqZAp" />
+        <node concept="2Gpval" id="3V$8ZKEOiGR" role="3cqZAp">
+          <node concept="2GrKxI" id="3V$8ZKEOiGS" role="2Gsz3X">
             <property role="TrG5h" value="argument" />
           </node>
-          <node concept="2OqwBi" id="4531786690998643518" role="2GsD0m">
-            <node concept="3__QtB" id="4531786690998643516" role="2Oq!k0" />
-            <node concept="3Tsc0h" id="4531786690998643523" role="2OqNvi">
+          <node concept="2OqwBi" id="3V$8ZKEOiGY" role="2GsD0m">
+            <node concept="3__QtB" id="3V$8ZKEOiGW" role="2Oq$k0" />
+            <node concept="3Tsc0h" id="3V$8ZKEOiH3" role="2OqNvi">
               <reference role="3TtcxE" target="tpc2.4531786690998636240" />
             </node>
           </node>
-          <node concept="3clFbS" id="4531786690998643514" role="2LFqv!">
-            <node concept="3AgYrR" id="4531786690998643525" role="3cqZAp">
-              <node concept="2GrUjf" id="4531786690998643527" role="3Ah4Yx">
+          <node concept="3clFbS" id="3V$8ZKEOiGU" role="2LFqv$">
+            <node concept="3AgYrR" id="3V$8ZKEOiH5" role="3cqZAp">
+              <node concept="2GrUjf" id="3V$8ZKEOiH7" role="3Ah4Yx">
                 <reference role="2Gs0qQ" target="4531786690998643512" resolve="argument" />
               </node>
             </node>
