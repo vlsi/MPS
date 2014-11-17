@@ -162,7 +162,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
-      my_idEncoderField = new IdEncoder(true);
+      my_idEncoderField = new IdEncoder();
       SModelReference ref = my_idEncoderField.parseModelReference(attrs.getValue("ref"));
       my_modelField = new DefaultSModel(ref, my_headerParam);
       my_modelField.getSModelHeader().setPersistenceVersion(9);

@@ -52,7 +52,7 @@ public class ModelWriter9bis implements IModelWriter {
 
   private IdInfoCollector myMetaInfo;
   private ImportsHelper myImportsHelper;
-  private final IdEncoder myIdEncoder = new IdEncoder(true);
+  private final IdEncoder myIdEncoder = new IdEncoder();
 
   @Override
   public Document saveModel(SModel sourceModel) {

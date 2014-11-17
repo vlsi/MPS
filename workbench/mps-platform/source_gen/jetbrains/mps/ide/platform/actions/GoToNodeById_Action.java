@@ -14,7 +14,9 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.persistence.def.v9.IdEncoder;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -72,17 +74,21 @@ public class GoToNodeById_Action extends BaseAction {
         return;
       }
       value = ((value == null ? null : value.trim()));
-      final SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(value);
-      if (id == null) {
+      final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>(jetbrains.mps.smodel.SNodeId.fromString(value));
+      if (id.value == null) {
+        // try new nodeId presentation format 
+        id.value = new IdEncoder().parseNodeId(value);
+      }
+      if (id.value == null) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + value);
         return;
       }
       final String trimmedValue = value;
 
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runWriteInEDT(new Runnable() {
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runWriteInEDT(new Runnable() {
         public void run() {
           SNode node;
-          node = ((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getNode(id);
+          node = ((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getNode(id.value);
           if (node == null) {
             JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + trimmedValue);
             return;

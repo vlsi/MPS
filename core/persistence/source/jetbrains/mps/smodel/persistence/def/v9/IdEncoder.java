@@ -35,17 +35,14 @@ import java.util.Arrays;
 /**
  * Intention is to keep all serialize/de-serialize code in a single place.
  *
+ * FIXME this class is public merely for the sake of GoToNodeById action. Once this encoder is part of persistence API, action shall use API, not this class
+ *
  * This class is not thread-safe, uses internal buffers to save memory on (de-)serialize, do not share it between thread (although unlikely to happen as
  * persistence demands single thread access).
  */
-final class IdEncoder {
-  private final boolean myUseNew;
+public final class IdEncoder {
 
   public IdEncoder() {
-    this(false);
-  }
-  public IdEncoder(boolean useNew) {
-    myUseNew = useNew;
   }
 
   public String toText(SLanguageId langId) {
@@ -212,9 +209,10 @@ final class IdEncoder {
 
   public static void main(String[] args) {
     IdEncoder x = new IdEncoder();
-    for (long l : new long[]{0, 1, 15, 63, 64, 65, 123, 9834503475l, Long.MAX_VALUE, Long.MIN_VALUE}) {
+    final long[] test = {0, 1, 15, 63, 64, 65, 123, 9834503475l, Long.MAX_VALUE, Long.MIN_VALUE};
+    for (long l : test) {
       final String s = x.toStringB64(l);
-      System.out.printf("0x%x: toString: %s, fromString:%x\n", l, s, x.parseLongB64(s));
+      System.out.printf("%d: toString: %s, fromString:%d\n", l, s, x.parseLongB64(s));
     }
   }
 }

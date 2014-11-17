@@ -4817,10 +4817,7 @@
             <node concept="37vLTI" id="5$D2sKZKY5a" role="3clFbG">
               <node concept="2ShNRf" id="5$D2sKZKYaZ" role="37vLTx">
                 <node concept="1pGfFk" id="5$D2sKZL4Bt" role="2ShVmc">
-                  <reference role="37wK5l" target="fo6t.~IdEncoder%d&lt;init&gt;(boolean)" resolve="IdEncoder" />
-                  <node concept="3clFbT" id="1dLehEwr6gT" role="37wK5m">
-                    <property role="3clFbU" value="true" />
-                  </node>
+                  <reference role="37wK5l" target="fo6t.~IdEncoder%d&lt;init&gt;()" resolve="IdEncoder" />
                 </node>
               </node>
               <node concept="CQp63" id="5$D2sKZKXRl" role="37vLTJ">
