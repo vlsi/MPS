@@ -35,7 +35,7 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   public InspectorEditorComponent(@NotNull SRepository repository, boolean rightToLeft) {
-    super(repository, false, rightToLeft);
+    super(repository, true, rightToLeft);
     myNode = null;
     myNodePointer = null;
     myContainingRoot = null;

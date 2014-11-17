@@ -132,7 +132,7 @@ public class DiffEditor implements EditorMessageOwner {
   public class MainEditorComponent extends EditorComponent {
     private DiffFileEditor myDiffFileEditor;
     public MainEditorComponent(SRepository repository, boolean rightToLeft) {
-      super(repository, false, rightToLeft);
+      super(repository, true, rightToLeft);
       myDiffFileEditor = new DiffFileEditor(this);
     }
 
