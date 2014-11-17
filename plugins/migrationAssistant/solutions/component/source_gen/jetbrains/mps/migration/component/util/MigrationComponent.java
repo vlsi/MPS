@@ -19,6 +19,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
@@ -30,7 +31,6 @@ import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -106,39 +106,39 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     MapSequence.fromMap(loadedDescriptors).clear();
   }
 
-  public MigrationScript fetchScriptForModule(AbstractModule module, Tuples._3<SModule, Integer, Integer> usedLanguage) {
-    SModule depModule = usedLanguage._0();
+  public MigrationScript fetchScriptForModule(AbstractModule module, Tuples._2<SLanguage, Integer> usedLanguage) {
+    SLanguage depLanguage = usedLanguage._0();
     int current = (int) usedLanguage._1();
-    MigrationDescriptor md = getMigrationDescriptor(depModule);
+    MigrationDescriptor md = getMigrationDescriptor(depLanguage.getSourceModule());
     if (md == null) {
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Could not load migration descriptor for language " + depModule + ".");
+        LOG.warn("Could not load migration descriptor for language " + depLanguage + ".");
       }
     }
     MigrationScript script = check_gd1mrb_a0e0s(md, current);
     if (script == null) {
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Could not load migration script for language " + depModule + ", version " + current + ".");
+        LOG.warn("Could not load migration script for language " + depLanguage + ", version " + current + ".");
       }
       return null;
     }
     return script;
   }
 
-  public boolean isAvailable(final ScriptApplied p, final Map<AbstractModule, Iterable<Tuples._3<SModule, Integer, Integer>>> langaugeVersions) {
+  public boolean isAvailable(final ScriptApplied p) {
     if (!(p.getScript().isApplicable(p.getModule()))) {
       return true;
     }
     Iterable<MigrationScriptReference> requiresData = p.getScript().requiresData();
     boolean dataDeps = Sequence.fromIterable(requiresData).all(new IWhereFilter<MigrationScriptReference>() {
       public boolean accept(MigrationScriptReference it) {
-        return MigrationsUtil.isAppliedForAllMyDeps(it, p.getModule(), langaugeVersions);
+        return MigrationsUtil.isAppliedForAllMyDeps(it, p.getModule());
       }
     });
     Iterable<MigrationScriptReference> executeAfter = p.getScript().executeAfter();
     boolean orderDeps = Sequence.fromIterable(executeAfter).all(new IWhereFilter<MigrationScriptReference>() {
       public boolean accept(MigrationScriptReference it) {
-        return MigrationsUtil.isApplied(it, (AbstractModule) p.getModule(), MapSequence.fromMap(langaugeVersions).get((AbstractModule) p.getModule()));
+        return MigrationsUtil.isApplied(it, (AbstractModule) p.getModule());
       }
     });
     if (dataDeps && orderDeps) {
@@ -168,8 +168,8 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         });
         boolean languageMig = Sequence.fromIterable(modules).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
           public boolean accept(final AbstractModule module) {
-            return Sequence.fromIterable(MigrationsUtil.getLanguageVersions(module)).where(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
-              public boolean accept(Tuples._3<SModule, Integer, Integer> item) {
+            return Sequence.fromIterable(MigrationsUtil.getLanguageVersions(module)).where(new IWhereFilter<Tuples._2<SLanguage, Integer>>() {
+              public boolean accept(Tuples._2<SLanguage, Integer> item) {
                 return MigrationsUtil.isMigrationNeeded(module, item);
               }
             }).isNotEmpty();
@@ -253,9 +253,9 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public MigrationManager.MigrationState nextStep() {
-    final Wrappers._T<MigrationManager.MigrationState> lastState = new Wrappers._T<MigrationManager.MigrationState>();
+    final Wrappers._T<MigrationManager.MigrationState> result = new Wrappers._T<MigrationManager.MigrationState>();
 
-    final Map<AbstractModule, Iterable<Tuples._3<SModule, Integer, Integer>>> languageVersions = MapSequence.fromMap(new HashMap<AbstractModule, Iterable<Tuples._3<SModule, Integer, Integer>>>());
+    final Map<SModule, Iterable<Tuples._2<SLanguage, Integer>>> languageVersions = MapSequence.fromMap(new HashMap<SModule, Iterable<Tuples._2<SLanguage, Integer>>>());
     final Wrappers._T<Iterable<? extends SModule>> projectModules = new Wrappers._T<Iterable<? extends SModule>>();
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -274,12 +274,12 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     });
     final Iterable<ScriptApplied> allStepScripts = Sequence.fromIterable(projectModules.value).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, ScriptApplied>() {
       public Iterable<ScriptApplied> translate(final AbstractModule module) {
-        return Sequence.fromIterable(MapSequence.fromMap(languageVersions).get(module)).where(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
-          public boolean accept(Tuples._3<SModule, Integer, Integer> it) {
+        return Sequence.fromIterable(MapSequence.fromMap(languageVersions).get(module)).where(new IWhereFilter<Tuples._2<SLanguage, Integer>>() {
+          public boolean accept(Tuples._2<SLanguage, Integer> it) {
             return MigrationsUtil.isMigrationNeeded(module, it);
           }
-        }).select(new ISelector<Tuples._3<SModule, Integer, Integer>, MigrationScript>() {
-          public MigrationScript select(Tuples._3<SModule, Integer, Integer> it) {
+        }).select(new ISelector<Tuples._2<SLanguage, Integer>, MigrationScript>() {
+          public MigrationScript select(Tuples._2<SLanguage, Integer> it) {
             return fetchScriptForModule(module, it);
           }
         }).where(new IWhereFilter<MigrationScript>() {
@@ -295,71 +295,39 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     }).toListSequence();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        final Iterable<ScriptApplied> availableScripts = Sequence.fromIterable(allStepScripts).where(new IWhereFilter<ScriptApplied>() {
-          public boolean accept(ScriptApplied it) {
-            return isAvailable(it, languageVersions);
-          }
-        });
-        final ScriptApplied scriptToExecute = Sequence.fromIterable(availableScripts).first();
-        if (scriptToExecute != null) {
-          lastState.value = new MigrationManager.Step() {
+        final ScriptApplied nextScript = calculateNextMigration(allStepScripts);
+        if (nextScript == null) {
+          result.value = new MigrationManager.Step() {
             public String getDescription() {
-              return scriptToExecute.toString();
+              return nextScript.toString();
             }
             public boolean execute() {
               final Wrappers._boolean res = new Wrappers._boolean();
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
-                  res.value = executeScript(Sequence.fromIterable(availableScripts).first());
+                  res.value = executeScript(nextScript);
                 }
               });
               return res.value;
             }
           };
-        } else {
-          if (Sequence.fromIterable(allStepScripts).isEmpty()) {
-            if (Sequence.fromIterable(projectModules.value).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
-              public boolean accept(final AbstractModule module) {
-                return Sequence.fromIterable(MapSequence.fromMap(languageVersions).get(module)).where(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
-                  public boolean accept(Tuples._3<SModule, Integer, Integer> item) {
-                    return MigrationsUtil.isMigrationNeeded(module, item);
-                  }
-                }).isNotEmpty();
-              }
-            })) {
-              lastState.value = new MigrationManager.Error() {
-                public String getErrorMessage() {
-                  return "Some migration scripts are missing";
-                }
-              };
-            } else {
-              lastState.value = new MigrationManager.Finished() {};
-            }
-          } else {
-            lastState.value = new MigrationManager.Conflict() {
-              public Iterable<ScriptApplied> getConflictingScripts() {
-                return allStepScripts;
-              }
-              public boolean forceExecution(ScriptApplied scriptApplied) {
-                final Wrappers._boolean res = new Wrappers._boolean();
-                ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                  public void run() {
-                    res.value = executeScript(Sequence.fromIterable(availableScripts).first());
-                  }
-                });
-                return res.value;
-              }
-            };
-          }
         }
       }
     });
 
-    return lastState.value;
+    return result.value;
+  }
+  private ScriptApplied calculateNextMigration(final Iterable<ScriptApplied> allStepScripts) {
+    Iterable<ScriptApplied> availableScripts = Sequence.fromIterable(allStepScripts).where(new IWhereFilter<ScriptApplied>() {
+      public boolean accept(ScriptApplied it) {
+        return isAvailable(it);
+      }
+    });
+    return Sequence.fromIterable(availableScripts).first();
   }
 
   public Map<SModule, SNode> collectData(SModule myModule, final MigrationScriptReference scriptReference) {
-    MigrationScript script = check_gd1mrb_a0a0fb(getMigrationDescriptor(scriptReference.getModuleReference().resolve(mpsProject.getRepository())), scriptReference, this);
+    MigrationScript script = check_gd1mrb_a0a0gb(getMigrationDescriptor(scriptReference.getModuleReference().resolve(mpsProject.getRepository())), scriptReference, this);
     final Map<SModule, SNode> requiredData = MapSequence.fromMap(new HashMap<SModule, SNode>());
     SetSequence.fromSet(MigrationsUtil.getModuleDependencies(myModule)).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
@@ -378,7 +346,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     }
     return null;
   }
-  private static MigrationScript check_gd1mrb_a0a0fb(MigrationDescriptor checkedDotOperand, MigrationScriptReference scriptReference, MigrationComponent checkedDotThisExpression) {
+  private static MigrationScript check_gd1mrb_a0a0gb(MigrationDescriptor checkedDotOperand, MigrationScriptReference scriptReference, MigrationComponent checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(scriptReference.getFromVersion());
     }

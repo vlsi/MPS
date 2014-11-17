@@ -16,13 +16,6 @@ public interface MigrationManager {
     public String getDescription();
     public boolean execute();
   }
-  public static interface Conflict extends MigrationManager.MigrationState {
-    public Iterable<ScriptApplied> getConflictingScripts();
-    public boolean forceExecution(ScriptApplied next);
-  }
   public static interface Finished extends MigrationManager.MigrationState {
-  }
-  public static interface Error extends MigrationManager.MigrationState {
-    public String getErrorMessage();
   }
 }
