@@ -7,8 +7,15 @@ import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public void init() {
+<<<<<<< HEAD:languages/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/intentions/IntentionsDescriptor.java
     IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveSeparator_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SetUniqueNameInFile_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SetWithIndent_Intention());
+=======
+    IntentionsManager.getInstance().registerIntentionFactory(new AddMissingDependency_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddMissingLanguageImport_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SetExportAnnotation_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SuppressErrors_Intention());
+>>>>>>> Transferring AddMissingDependency action to lang.core intention:languages/core/core/source_gen/jetbrains/mps/lang/core/intentions/IntentionsDescriptor.java
   }
 }

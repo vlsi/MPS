@@ -8,7 +8,6 @@
     <lang id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" />
     <lang id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" />
     <model ref="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)" name="jetbrains.mps.tool.builder.util" />
     <model ref="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" name="jetbrains.mps.tool.builder" />
     <model ref="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)" name="jetbrains.mps.tool.common.util" />
@@ -117,7 +116,6 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1240216724530" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/779128492853369165" name="jetbrains.mps.lang.editor.structure.SideTransformInfo" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" />
     <concept id="f2801650-65d5-424e-bb1b-463a8781b786/2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/2526372162255441536" name="jetbrains.mps.baseLanguage.collections.structure.AsUnmodifiableOperation" />
@@ -142,9 +140,6 @@
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224848483129/1224848525476" name="isDeprecated" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200/1240249534625" name="isVolatile" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/521412098689998745" name="nonStatic" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/779128492853369165/779128492853699361" name="side" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/779128492853369165/779128492853934523" name="cellId" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/779128492853369165/779128492853935960" name="anchorTag" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/4276006055363816570" name="isSynchronized" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957/6329021646629104958" name="text" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200/8606350594693632173" name="isTransient" />
@@ -232,7 +227,6 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="0" implicit="true" index="j0ph" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" version="0" implicit="true" index="ae39" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="0" implicit="true" index="9wj7" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -260,7 +254,6 @@
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="tpib" ref="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" implicit="true" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
-    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
   </imports>
   <contents>
     <node concept="vg0i.1068390468198" id="4417301346392321475" info="ig">
@@ -405,11 +398,6 @@
         <node concept="vg0i.1070534644030" id="4590871013634748630" role="vg0i.1068580123132.1068580123133" info="in" />
         <node concept="vg0i.1146644602865" id="4590871013634748598" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1068580123136" id="4590871013634748599" role="vg0i.1068580123132.1068580123135" info="sn" />
-        <node concept="9wj7.779128492853369165" id="8288560421792104134" role="asn4.1133920641626.5169995583184591170" info="ng">
-          <property role="9wj7.779128492853369165.779128492853934523" value="Constant_359zr8_k0" />
-          <property role="9wj7.779128492853369165.779128492853935960" value="default_RTransform" />
-          <property role="9wj7.779128492853369165.779128492853699361" value="right" />
-        </node>
       </node>
       <node concept="vg0i.1465982738277781862" id="4590871013634748568" role="vg0i.1107461130800.5375687026011219971" info="ngu" />
       <node concept="vg0i.1068580123165" id="7413225496542954500" role="vg0i.1107461130800.5375687026011219971" info="igu">
