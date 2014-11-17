@@ -1016,7 +1016,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
 
-    if (firstChild == null) return Collections.emptyList();
+    if (firstChild == null)  return Collections.emptyList();
 
     return new ChildrenList(firstChild, role);
   }
