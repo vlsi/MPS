@@ -130,8 +130,10 @@ public class ModulesWatcher {
   private void refillStatusMap(Collection<? extends SModuleReference> invalidModules) {
     myStatusMap.clear();
     for (SModuleReference mRef : getAllModules()) myStatusMap.put(mRef, VALID);
-    for (SModuleReference mRef : getBackDependencies(invalidModules)) myStatusMap.put(mRef, INVALID);
-    LOG.debug(invalidModules.size() + " modules marked invalid for class loading out of " + getAllModules().size() + " modules totally");
+    Collection<? extends SModuleReference> allInvalidModules = getBackDependencies(invalidModules);
+    for (SModuleReference mRef : allInvalidModules) myStatusMap.put(mRef, INVALID);
+    LOG.debug(invalidModules.size() + " modules are marked as invalid roots for class loading out of " + getAllModules().size() + " modules [totally in the repository]");
+    LOG.debug("Totally " + allInvalidModules.size() + " modules are marked invalid for class loading");
 
     checkStatusMapCorrectness();
   }
@@ -163,7 +165,7 @@ public class ModulesWatcher {
 
   private boolean isModuleInvalid(SModuleReference mRef) {
     if (isModuleDisposed(mRef)) {
-      LOG.trace("Module " + mRef + " is disposed and therefore was marked invalid for class loading");
+      LOG.trace("Module " + mRef.getModuleName() + " is disposed and therefore was marked invalid for class loading");
       return true;
     }
     ReloadableModuleBase module = resolveRef(mRef);
@@ -171,7 +173,7 @@ public class ModulesWatcher {
     Collection<? extends SModuleReference> deps = getModuleDescriptorDeps(module);
     for (SModuleReference dep : deps) {
       if (isModuleDisposed(dep)) {
-        LOG.trace("Module " + mRef + " depends on a disposed module " + dep + " and therefore was marked invalid for class loading");
+        LOG.trace("Module " + mRef.getModuleName() + " depends on a disposed module " + dep.getModuleName() + " and therefore was marked invalid for class loading");
         return true;
       }
     }

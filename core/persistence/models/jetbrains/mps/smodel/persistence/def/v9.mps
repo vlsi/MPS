@@ -24,8 +24,11 @@
     <import index="t3eg" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="as9o" ref="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
-    <import index="fo6t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence.def.v9(MPS.Core/jetbrains.mps.smodel.persistence.def.v9@java_stub)" />
     <import index="hy6y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure(MPS.Core/jetbrains.mps.smodel.adapter.structure@java_stub)" />
+    <import index="fo6t" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence.def.v9(jetbrains.mps.smodel.persistence.def.v9@java_stub)" />
+    <import index="bco1" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.migration.global(jetbrains.mps.migration.global@java_stub)" />
+    <import index="kgxg" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(jetbrains.mps.components@java_stub)" />
+    <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tpib" ref="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
@@ -1241,18 +1244,20 @@
           <node concept="3clFbS" id="6dQUqCkLg3K" role="2VODD2">
             <node concept="3clFbF" id="6dQUqCkLg3L" role="3cqZAp">
               <node concept="3fqX7Q" id="6dQUqCkLg3M" role="3clFbG">
-                <node concept="1Wc70l" id="6dQUqCkLg3N" role="3fr31v">
-                  <node concept="CQp63" id="6dQUqCkLg3O" role="3uHU7B">
-                    <reference role="CQp62" target="7167172773708890189" resolve="stripImplementation" />
-                  </node>
-                  <node concept="2OqwBi" id="6dQUqCkLg3P" role="3uHU7w">
-                    <node concept="CQp63" id="6dQUqCkLg3Q" role="2Oq$k0">
-                      <reference role="CQp62" target="7167172773708890195" resolve="helper" />
+                <node concept="1eOMI4" id="3oQppiZffRL" role="3fr31v">
+                  <node concept="1Wc70l" id="6dQUqCkLg3N" role="1eOMHV">
+                    <node concept="CQp63" id="6dQUqCkLg3O" role="3uHU7B">
+                      <reference role="CQp62" target="7167172773708890189" resolve="stripImplementation" />
                     </node>
-                    <node concept="liA8E" id="6dQUqCkLg3R" role="2OqNvi">
-                      <reference role="37wK5l" target="1768088633166236888" resolve="isImplementationNode" />
-                      <node concept="CQp6E" id="6dQUqCkLg3S" role="37wK5m">
-                        <reference role="CQp6D" target="7167172773708890768" resolve="info" />
+                    <node concept="2OqwBi" id="6dQUqCkLg3P" role="3uHU7w">
+                      <node concept="CQp63" id="6dQUqCkLg3Q" role="2Oq$k0">
+                        <reference role="CQp62" target="7167172773708890195" resolve="helper" />
+                      </node>
+                      <node concept="liA8E" id="6dQUqCkLg3R" role="2OqNvi">
+                        <reference role="37wK5l" target="1768088633166236888" resolve="isImplementationNode" />
+                        <node concept="CQp6E" id="6dQUqCkLg3S" role="37wK5m">
+                          <reference role="CQp6D" target="7167172773708890768" resolve="info" />
+                        </node>
                       </node>
                     </node>
                   </node>

@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.IdHelper;
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
@@ -28,6 +29,8 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -73,6 +76,15 @@ public class IdInfoCollector {
         }
       }
     }
+  }
+
+  // FIXME think if I shall take here similar approach
+  private static String getConceptName(SConceptId conceptId) {
+    ConceptDescriptor descriptor = ConceptRegistryUtil.getConceptDescriptor(conceptId);
+    if (descriptor != null) {
+      return descriptor.getConceptFqName();
+    }
+    return DebugRegistry.getInstance().getConceptName(conceptId);
   }
 
   ////////////////////////

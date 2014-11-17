@@ -288,13 +288,13 @@
     <file name="check_ClassLikeMethod_NonTypesystemRule.java">
       <node id="1901385213798168414" at="28,128,29,26" concept="6" />
       <node id="1901385213798167055" at="29,26,30,0" concept="9" />
-      <node id="1901385213798375921" at="33,794,34,1960" concept="2" />
-      <node id="1901385213798176394" at="35,16,36,1016" concept="2" />
+      <node id="1901385213798375921" at="33,794,34,1962" concept="2" />
+      <node id="1901385213798176394" at="35,16,36,1018" concept="2" />
       <node id="1901385213798181032" at="37,9,38,980" concept="2" />
       <node id="1901385213798185379" at="40,12,41,19" concept="2" />
       <node id="3501922262355364723" at="42,5,43,0" concept="9" />
-      <node id="3501922262355365670" at="44,468,45,1212" concept="2" />
-      <node id="3501922262355180226" at="46,12,47,479" concept="2" />
+      <node id="3501922262355365670" at="44,468,45,1214" concept="2" />
+      <node id="3501922262355180226" at="46,12,47,481" concept="2" />
       <node id="1901385213798188600" at="48,5,49,0" concept="9" />
       <node id="1901385213796809109" at="51,7,52,60" concept="6" />
       <node id="1901385213796809109" at="52,60,53,56" concept="2" />
@@ -324,11 +324,11 @@
       <node id="1901385213796806153" at="30,0,42,5" concept="4" />
       <node id="3855110916779792457" at="28,0,62,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="3855110916779792457" at="26,52,26,52" />
-      <scope id="1901385213797837190" at="33,794,34,1960" />
-      <scope id="1901385213797885555" at="35,16,36,1016" />
+      <scope id="1901385213797837190" at="33,794,34,1962" />
+      <scope id="1901385213797885555" at="35,16,36,1018" />
       <scope id="1901385213796808592" at="40,12,41,19" />
-      <scope id="3501922262355365669" at="44,468,45,1212" />
-      <scope id="3501922262355365706" at="46,12,47,479" />
+      <scope id="3501922262355365669" at="44,468,45,1214" />
+      <scope id="3501922262355365706" at="46,12,47,481" />
       <scope id="3855110916779792457" at="62,46,63,68" />
       <scope id="3855110916779792457" at="71,30,72,17" />
       <scope id="1901385213798445801" at="74,68,75,51" />
@@ -387,7 +387,7 @@
       <node id="3855110916780273812" at="30,342,34,9" concept="0" />
       <node id="3855110916779806178" at="41,68,45,5" concept="0" />
       <node id="3855110916779806178" at="41,0,47,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="3855110916780273812" at="26,725,35,7" concept="0" />
+      <node id="3855110916780273812" at="26,727,35,7" concept="0" />
       <node id="3855110916780272755" at="25,130,36,5" concept="4" />
       <node id="3855110916779806178" at="25,0,38,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="3855110916779806178" at="23,54,23,54" />
@@ -410,7 +410,7 @@
         <var name="_reporter_2309309498" id="3855110916780273812" />
         <var name="errorTarget" id="3855110916780273812" />
       </scope>
-      <scope id="3855110916780272758" at="26,725,35,7" />
+      <scope id="3855110916780272758" at="26,727,35,7" />
       <scope id="3855110916779806179" at="25,130,36,5" />
       <scope id="3855110916779806178" at="25,0,38,0">
         <var name="classLikeProperty" id="3855110916779806178" />

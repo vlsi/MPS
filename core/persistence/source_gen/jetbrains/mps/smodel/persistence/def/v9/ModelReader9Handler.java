@@ -442,7 +442,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       return super.createChild(resultObject, tagName, attrs);
     }
     private boolean checknode_7167172773708890351(Object resultObject, Attributes attrs) {
-      return !(my_stripImplementationParam && my_helperField.isImplementationNode(attrs.getValue("info")));
+      return !((my_stripImplementationParam && my_helperField.isImplementationNode(attrs.getValue("info"))));
     }
     private void handleChild_7167172773708890339(Object resultObject, Object value) throws SAXException {
       Tuples._2<SNode, SContainmentLinkId> child = (Tuples._2<SNode, SContainmentLinkId>) value;
