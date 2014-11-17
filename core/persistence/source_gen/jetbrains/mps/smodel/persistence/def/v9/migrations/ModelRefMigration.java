@@ -33,7 +33,7 @@ import org.apache.log4j.LogManager;
   @Override
   public boolean shouldBeExecuted(Project p) {
     String value = MigrationPropertiesManager.getInstance().getProperties(p).getProperty(EXECUTED_PROPERTY);
-    return !(EXECUTED_VALUE.equals(value));
+    return !((EXECUTED_VALUE.equals(value)));
   }
   public void execute(Project project) {
     saveAll(project);

@@ -6,12 +6,12 @@ import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.migration.global.MigrationPropertiesManager;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.persistence.PersistenceVersionAware;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -28,7 +28,25 @@ public class Name2IdMigration implements ProjectMigration {
   @Override
   public boolean shouldBeExecuted(Project p) {
     String value = MigrationPropertiesManager.getInstance().getProperties(p).getProperty(Name2IdMigration.EXECUTED_PROPERTY);
-    return !(EXECUTED_VALUE.equals(value));
+    if (EXECUTED_VALUE.equals(value)) {
+      return false;
+    }
+
+    for (SModule module : Sequence.fromIterable(p.getModules())) {
+      for (SModel model : Sequence.fromIterable(module.getModels())) {
+        if (model.isReadOnly()) {
+          continue;
+        }
+        if (!((model instanceof PersistenceVersionAware))) {
+          continue;
+        }
+        if (((PersistenceVersionAware) model).getPersistenceVersion() != 9) {
+          return true;
+        }
+      }
+    }
+    MigrationPropertiesManager.getInstance().getProperties(p).setProperty(EXECUTED_PROPERTY, EXECUTED_VALUE);
+    return false;
   }
   @Override
   public void execute(Project p) {
@@ -39,7 +57,11 @@ public class Name2IdMigration implements ProjectMigration {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
       }
-    }).ofType(EditableSModel.class).ofType(PersistenceVersionAware.class).where(new IWhereFilter<PersistenceVersionAware>() {
+    }).ofType(EditableSModel.class).where(new IWhereFilter<EditableSModel>() {
+      public boolean accept(EditableSModel it) {
+        return !(it.isReadOnly());
+      }
+    }).ofType(PersistenceVersionAware.class).where(new IWhereFilter<PersistenceVersionAware>() {
       public boolean accept(PersistenceVersionAware it) {
         return it.getModelFactory() == defaultModelFactory && it.getPersistenceVersion() < 9;
       }
