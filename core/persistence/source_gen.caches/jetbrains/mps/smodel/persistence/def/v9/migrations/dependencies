@@ -48,7 +48,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationsRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.migrations.ModelRefMigration" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.migrations.Name2IdMigration" />
     <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>

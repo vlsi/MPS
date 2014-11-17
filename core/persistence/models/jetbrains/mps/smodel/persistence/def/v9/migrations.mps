@@ -1194,11 +1194,6 @@
                 <reference role="vg0i.2820489544401957797.2820489544401957798" target="2400678414103309023" resolveInfo="Name2IdMigration" />
               </node>
             </node>
-            <node concept="vg0i.1145552977093" id="2400678414103324255" role="vg0i.1154542696413.1154542803372" info="nn">
-              <node concept="vg0i.2820489544401957797" id="2400678414103324256" role="vg0i.1145552977093.1145553007750" info="nn">
-                <reference role="vg0i.2820489544401957797.2820489544401957798" target="2400678414103310969" resolveInfo="ModelRefMigration" />
-              </node>
-            </node>
             <node concept="vg0i.1107535904670" id="2400678414103294611" role="vg0i.1154542696413.1154542793668" info="in">
               <reference role="vg0i.1107535904670.1107535924139" target="bco1.~ProjectMigration" resolveInfo="ProjectMigration" />
             </node>
