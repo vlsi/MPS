@@ -8,25 +8,23 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddMissingLanguageImport_Intention implements IntentionFactory {
+public class AddMissingDependency_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-  public AddMissingLanguageImport_Intention() {
+  public AddMissingDependency_Intention() {
   }
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
   public String getPresentation() {
-    return "AddMissingLanguageImport";
+    return "AddMissingDependency";
   }
   public String getPersistentStateKey() {
-    return "jetbrains.mps.lang.core.intentions.AddMissingLanguageImport_Intention";
+    return "jetbrains.mps.lang.core.intentions.AddMissingDependency_Intention";
   }
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.core";
@@ -44,17 +42,17 @@ public class AddMissingLanguageImport_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ((AbstractModule) node.getConcept().getLanguage().getSourceModule()) == null;
+    return new DependencyHelper(node, editorContext).isApplicable();
   }
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "1209383918929");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "5513877538266515775");
   }
   public boolean isSurroundWith() {
     return false;
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddMissingLanguageImport_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddMissingDependency_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -62,17 +60,13 @@ public class AddMissingLanguageImport_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add language " + node.getConcept().getLanguage().getQualifiedName() + " to the current module";
+      return "Add missing dependency " + node.getConcept().getLanguage().getQualifiedName() + " to the current module";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SModuleReference moduleRef = ((AbstractModule) node.getConcept().getLanguage().getSourceModule()).getModuleReference();
-      if (moduleRef == null) {
-        return;
-      }
-      ((AbstractModule) editorContext.getOperationContext().getModule()).addUsedLanguage(moduleRef);
+      new DependencyHelper(node, editorContext).execute();
     }
     public IntentionDescriptor getDescriptor() {
-      return AddMissingLanguageImport_Intention.this;
+      return AddMissingDependency_Intention.this;
     }
   }
 }
