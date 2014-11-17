@@ -39,7 +39,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * Facility to read meta-model information persisted in a model file, to fill {@link jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector} back from the
@@ -53,6 +52,7 @@ import java.util.UUID;
  */
 class IdInfoReadHelper {
   private final IdInfoCollector myInfoCollector;
+  private final IdEncoder myIdEncoder;
   private LangInfo myActualLang;
   private ConceptInfo myActualConcept;
   private final Map<String, SConcept> myConcepts = new HashMap<String, SConcept>();
@@ -63,14 +63,15 @@ class IdInfoReadHelper {
   // IdInfoCollector is about actual nodes and concepts in use, while this map is for model's used languages (that might be quite different)
   private final Map<SLanguageId, String> myKnownNames = new HashMap<SLanguageId, String>();
 
-  public IdInfoReadHelper() {
+  public IdInfoReadHelper(@NotNull IdEncoder idEncoder) {
+    myIdEncoder = idEncoder;
     myInfoCollector = new IdInfoCollector();
   }
 
   // Fill methods, populate myInfoCollector with persisted meta-model info
 
   public void withLanguage(String id, String name) {
-    final SLanguageId languageId = new SLanguageId(UUID.fromString(id));
+    final SLanguageId languageId = myIdEncoder.parseLanguageId(id);
     myActualLang = myInfoCollector.registerLanguage(languageId);
     myActualLang.setName(name);
     myKnownNames.put(languageId, name);
@@ -78,8 +79,7 @@ class IdInfoReadHelper {
 
   public void withConcept(String id, String name, String index, String nodeInfo) {
     assert myActualLang != null;
-    final long l = Long.parseLong(id);
-    SConceptId conceptId = new SConceptId(myActualLang.getLanguageId(), l);
+    SConceptId conceptId = myIdEncoder.parseConceptId(myActualLang.getLanguageId(), id);
     myActualConcept = myInfoCollector.registerConcept(conceptId);
     myActualConcept.setName(name);
     myActualConcept.setConceptImplementationKind(nodeInfo);
@@ -88,24 +88,21 @@ class IdInfoReadHelper {
 
   public void property(String id, String name, String index) {
     assert myActualConcept != null;
-    final long l = Long.parseLong(id);
-    SPropertyId propertyId = new SPropertyId(myActualConcept.getConceptId(), l);
+    SPropertyId propertyId = myIdEncoder.parsePropertyId(myActualConcept.getConceptId(), id);
     myActualConcept.addProperty(propertyId, name);
     myProperties.put(index, new SPropertyAdapterById(propertyId, name));
   }
 
   public void association(String id, String name, String index) {
     assert myActualConcept != null;
-    final long l = Long.parseLong(id);
-    SReferenceLinkId linkId = new SReferenceLinkId(myActualConcept.getConceptId(), l);
+    SReferenceLinkId linkId = myIdEncoder.parseAssociation(myActualConcept.getConceptId(), id);
     myActualConcept.addLink(linkId, name);
     myAssociations.put(index, new SReferenceLinkAdapterById(linkId, name));
   }
 
   public void aggregation(String id, String name, String index, boolean unordered) {
     assert myActualConcept != null;
-    final long l = Long.parseLong(id);
-    SContainmentLinkId linkId = new SContainmentLinkId(myActualConcept.getConceptId(), l);
+    SContainmentLinkId linkId = myIdEncoder.parseAggregation(myActualConcept.getConceptId(), id);
     myActualConcept.addLink(linkId, name);
     myAggregations.put(index, new SContainmentLinkAdapterById(linkId, name));
   }

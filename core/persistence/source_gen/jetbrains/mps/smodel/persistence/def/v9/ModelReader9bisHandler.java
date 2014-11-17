@@ -12,7 +12,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -21,16 +20,17 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.InterfaceSNode;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Pair;
 
 public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
   private ModelReader9bisHandler.ModelElementHandler modelHandler = new ModelReader9bisHandler.ModelElementHandler();
   private ModelReader9bisHandler.PersistenceElementHandler persistenceHandler = new ModelReader9bisHandler.PersistenceElementHandler();
+  private ModelReader9bisHandler.Model_attributeElementHandler model_attributeHandler = new ModelReader9bisHandler.Model_attributeElementHandler();
   private ModelReader9bisHandler.RegistryElementHandler registryHandler = new ModelReader9bisHandler.RegistryElementHandler();
   private ModelReader9bisHandler.Registry_languageElementHandler registry_languageHandler = new ModelReader9bisHandler.Registry_languageElementHandler();
   private ModelReader9bisHandler.Registry_conceptElementHandler registry_conceptHandler = new ModelReader9bisHandler.Registry_conceptElementHandler();
@@ -60,6 +60,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
   private ReadHelper9 my_helperField;
   private IdInfoReadHelper my_idHelperField;
   private ImportsHelper my_importHelperField;
+  private IdEncoder my_idEncoderField;
   public ModelReader9bisHandler(boolean interfaceOnly, boolean stripImplementation, SModelHeader header) {
     my_interfaceOnlyParam = interfaceOnly;
     my_stripImplementationParam = stripImplementation;
@@ -161,10 +162,11 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
-      SModelReference ref = PersistenceFacade.getInstance().createModelReference(attrs.getValue("ref"));
+      my_idEncoderField = new IdEncoder();
+      SModelReference ref = my_idEncoderField.parseModelReference(attrs.getValue("ref"));
       my_modelField = new DefaultSModel(ref, my_headerParam);
       my_modelField.getSModelHeader().setPersistenceVersion(9);
-      my_idHelperField = new IdInfoReadHelper();
+      my_idHelperField = new IdInfoReadHelper(my_idEncoderField);
       my_importHelperField = new ImportsHelper(ref);
       ModelLoadResult result = new ModelLoadResult(my_modelField, ModelLoadingState.NOT_LOADED);
       result.setState((my_interfaceOnlyParam ? ModelLoadingState.INTERFACE_LOADED : ((my_stripImplementationParam ? ModelLoadingState.NO_IMPLEMENTATION : ModelLoadingState.FULLY_LOADED))));
@@ -194,6 +196,10 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
       if ("persistence".equals(tagName)) {
         myChildHandlersStack.push(null);
         return persistenceHandler;
+      }
+      if ("attribute".equals(tagName)) {
+        myChildHandlersStack.push(null);
+        return model_attributeHandler;
       }
       if ("languages".equals(tagName)) {
         myChildHandlersStack.push(null);
@@ -245,6 +251,16 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
   }
   public class PersistenceElementHandler extends ModelReader9bisHandler.ElementHandler {
     public PersistenceElementHandler() {
+    }
+  }
+  public class Model_attributeElementHandler extends ModelReader9bisHandler.ElementHandler {
+    public Model_attributeElementHandler() {
+      setRequiredAttributes("name", "value");
+    }
+    @Override
+    protected Object createObject(Attributes attrs) throws SAXException {
+      my_modelField.getSModelHeader().setOptionalProperty(attrs.getValue("name"), attrs.getValue("value"));
+      return null;
     }
   }
   public class RegistryElementHandler extends ModelReader9bisHandler.ElementHandler {
@@ -389,7 +405,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected SModuleReference createObject(Attributes attrs) throws SAXException {
-      return PersistenceFacade.getInstance().createModuleReference(attrs.getValue("ref"));
+      return my_idEncoderField.parseModuleReference(attrs.getValue("ref"));
     }
   }
   public class ImportsElementHandler extends ModelReader9bisHandler.ElementHandler {
@@ -410,7 +426,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(attrs.getValue("ref"));
+      SModelReference modelRef = my_idEncoderField.parseModelReference(attrs.getValue("ref"));
       my_importHelperField.addModelImport(attrs.getValue("index"), modelRef);
       if (Boolean.parseBoolean(attrs.getValue("implicit"))) {
         my_modelField.addAdditionalModelVersion(modelRef, -1);
@@ -432,7 +448,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
         interfaceNode = (my_idHelperField.isInterface(concept) || attrs.getValue("role") == null);
       }
       SNode result = (interfaceNode ? new InterfaceSNode(concept) : new SNode(concept));
-      result.setId(SNodeId.fromString(attrs.getValue("id")));
+      result.setId(my_idEncoderField.parseNodeId(attrs.getValue("id")));
       // can be root 
       return MultiTuple.<org.jetbrains.mps.openapi.model.SNode,SContainmentLink>from(((org.jetbrains.mps.openapi.model.SNode) result), my_idHelperField.readAggregation(attrs.getValue("role")));
     }
@@ -491,9 +507,9 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_5480414999147804199(Object resultObject, Object value) throws SAXException {
       Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink> result = (Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink>) resultObject;
-      Tuples._4<SReferenceLink, SModelReference, org.jetbrains.mps.openapi.model.SNodeId, String> child = (Tuples._4<SReferenceLink, SModelReference, org.jetbrains.mps.openapi.model.SNodeId, String>) value;
+      Tuples._4<SReferenceLink, SModelReference, SNodeId, String> child = (Tuples._4<SReferenceLink, SModelReference, SNodeId, String>) value;
       SModelReference targetModel = child._1();
-      org.jetbrains.mps.openapi.model.SNodeId nodeId = child._2();
+      SNodeId nodeId = child._2();
       SReferenceLink link = child._0();
       String resolveInfo = child._3();
       StaticReference ref = new StaticReference(link, result._0(), targetModel, nodeId, resolveInfo);
@@ -534,9 +550,9 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
       setRequiredAttributes("role", "target");
     }
     @Override
-    protected Tuples._4<SReferenceLink, SModelReference, org.jetbrains.mps.openapi.model.SNodeId, String> createObject(Attributes attrs) throws SAXException {
-      Pair<SModelReference, org.jetbrains.mps.openapi.model.SNodeId> r = my_importHelperField.parseReference(attrs.getValue("target"));
-      return MultiTuple.<SReferenceLink,SModelReference,org.jetbrains.mps.openapi.model.SNodeId,String>from(my_idHelperField.readAssociation(attrs.getValue("role")), r.o1, r.o2, attrs.getValue("resolve"));
+    protected Tuples._4<SReferenceLink, SModelReference, SNodeId, String> createObject(Attributes attrs) throws SAXException {
+      Pair<SModelReference, SNodeId> r = my_idEncoderField.parseNodeReference(my_importHelperField, attrs.getValue("target"));
+      return MultiTuple.<SReferenceLink,SModelReference,SNodeId,String>from(my_idHelperField.readAssociation(attrs.getValue("role")), r.o1, r.o2, attrs.getValue("resolve"));
     }
   }
   public class IgnoredNodeElementHandler extends ModelReader9bisHandler.ElementHandler {

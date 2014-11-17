@@ -75,7 +75,7 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public IModelWriter getModelWriter() {
-    return new ModelWriter9();
+    return new ModelWriter9bis();
   }
 
   @Override

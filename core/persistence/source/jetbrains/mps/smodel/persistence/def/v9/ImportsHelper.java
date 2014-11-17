@@ -15,19 +15,19 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
-import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.HashMap;
 import java.util.Set;
 
 /**
- * Keeps information about model imports, helps to serialize and de-serialize references to nodes from imported models.
+ * Keeps information about model imports. Both write and read code use this to track
+ * model imports and their respective index values.
+ *
+ * The way model imports as well as node references utilizing these imports get serialized
+ * is external to this class (see {@link jetbrains.mps.smodel.persistence.def.v9.IdEncoder#toText(ImportsHelper, org.jetbrains.mps.openapi.model.SReference)}
  *
  * Alternative to StorageIndexHelper9, index generation code (although questionable) is identical.
  */
@@ -61,7 +61,7 @@ class ImportsHelper {
   }
 
   public String getIndex(@NotNull SModelReference modelReference) {
-    assert myModel2Index.containsKey(modelReference);
+    assert myModel2Index.containsKey(modelReference) : String.valueOf(modelReference);
     return myModel2Index.get(modelReference);
   }
 
@@ -90,29 +90,12 @@ class ImportsHelper {
     myModel2Index.put(modelReference, index);
   }
 
-
-  // copied from StorageIndexHelper9.getRefTarget
-  public String getReferenceTarget(SReference ref) {
-    String target = (ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : StorageIndexHelper9.DYNAMIC_REFERENCE_ID);
-    SModelReference targetModel = ref.getTargetSModelReference();
-
-    if (targetModel == null) return target;
-
-    if (targetModel.equals(myModelRef)) return StorageIndexHelper9.encode(target);
-
-    String index = getIndex(targetModel);
-    assert index != null : "model " + targetModel + " not found in index";
-    return index + StorageIndexHelper9.MODEL_SEPARATOR_CHAR + StorageIndexHelper9.encode(target);
+  public boolean needsIndex(SModelReference targetModel) {
+    return !targetModel.equals(myModelRef);
   }
 
-  // copied from ReadHelper9.readLink(), to keep serialization/de-serialization of a reference in a single place
-  public Pair<SModelReference,SNodeId> parseReference(String referenceTarget) {
-    int dotIndex = referenceTarget.indexOf(StorageIndexHelper9.MODEL_SEPARATOR_CHAR);
-    String text = StorageIndexHelper9.decode(referenceTarget.substring(dotIndex + 1, referenceTarget.length()));
-    final boolean isDynamic = StorageIndexHelper9.DYNAMIC_REFERENCE_ID.equals(text);
-    SModelReference modelRef = dotIndex < 0 ? myModelRef : getModelReference(referenceTarget.substring(0, dotIndex));
-    SNodeId nodeId = (isDynamic ? null : jetbrains.mps.smodel.SNodeId.fromString(text));
-    return new Pair<SModelReference, SNodeId>(modelRef, nodeId);
-
+  public SModelReference modelWithoutIndex() {
+    // XXX not quite nice, needIndex not necessarily means there would be single model to use without index
+    return myModelRef;
   }
 }

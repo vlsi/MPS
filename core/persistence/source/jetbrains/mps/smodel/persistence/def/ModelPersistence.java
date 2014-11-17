@@ -458,6 +458,8 @@ public class ModelPersistence {
           } catch (NumberFormatException ignored) {
           }
         }
+      } else if ("attribute".equals(qName)) {
+        myResult.setOptionalProperty(attributes.getValue(ModelPersistence.NAME), attributes.getValue(ModelPersistence.VALUE));
       } else {
         throw new BreakParseSAXException();
       }
