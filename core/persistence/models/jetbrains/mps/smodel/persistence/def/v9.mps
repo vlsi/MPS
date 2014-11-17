@@ -4527,12 +4527,6 @@
         <reference role="3uigEE" target="cu2c.~DefaultSModel" resolve="DefaultSModel" />
       </node>
     </node>
-    <node concept="CQp6Y" id="4Kem6uXVngU" role="CQp1A">
-      <property role="TrG5h" value="helper" />
-      <node concept="3uibUv" id="4Kem6uXVngV" role="CQp6X">
-        <reference role="3uigEE" target="4362914091961475519" resolve="ReadHelper9" />
-      </node>
-    </node>
     <node concept="CQp6Y" id="4Kem6uXVngW" role="CQp1A">
       <property role="TrG5h" value="idHelper" />
       <node concept="3uibUv" id="4Kem6uXVngX" role="CQp6X">
@@ -5337,6 +5331,7 @@
       </node>
       <node concept="CQp6C" id="T2d52N4HO6" role="CQp6n">
         <property role="TrG5h" value="name" />
+        <property role="CQp6J" value="true" />
       </node>
       <node concept="3uibUv" id="4Kem6uXVRH7" role="CQp6g">
         <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />

@@ -22,11 +22,6 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.LangInfo;
 import org.jetbrains.annotations.NotNull;
@@ -47,6 +42,8 @@ import java.util.Map;
  * Deals with the way meta-object identifiers are de-serialized, although marshal/unmarshal code shall be kept together, pending refactoring.
  * I'd prefer to have utility objects being used both from read and write, rather than dedicated set of reader utilities and writer utilities as it used to be.
  *
+ * In addition, bears responsibility to integrate with DebugRegistry, which utility is uncertain and might fade away eventually.
+ *
  * Stateful, withLanguage() identifies language for subsequent withConcept, which, furthermore, identify concept for any
  * subsequent #property(), #association() and #aggregation call.
  */
@@ -59,9 +56,6 @@ class IdInfoReadHelper {
   private final Map<String, SProperty> myProperties = new HashMap<String, SProperty>();
   private final Map<String, SReferenceLink> myAssociations = new HashMap<String, SReferenceLink>();
   private final Map<String, SContainmentLink> myAggregations = new HashMap<String, SContainmentLink>();
-  // although pretty much the same map is in IdInfoCollector, don't want to use it, because
-  // IdInfoCollector is about actual nodes and concepts in use, while this map is for model's used languages (that might be quite different)
-  private final Map<SLanguageId, String> myKnownNames = new HashMap<SLanguageId, String>();
 
   public IdInfoReadHelper(@NotNull IdEncoder idEncoder) {
     myIdEncoder = idEncoder;
@@ -74,7 +68,7 @@ class IdInfoReadHelper {
     final SLanguageId languageId = myIdEncoder.parseLanguageId(id);
     myActualLang = myInfoCollector.registerLanguage(languageId);
     myActualLang.setName(name);
-    myKnownNames.put(languageId, name);
+    DebugRegistry.getInstance().addLanguageName(languageId, name);
   }
 
   public void withConcept(String id, String name, String index, String nodeInfo) {
@@ -83,28 +77,32 @@ class IdInfoReadHelper {
     myActualConcept = myInfoCollector.registerConcept(conceptId);
     myActualConcept.setName(name);
     myActualConcept.setConceptImplementationKind(nodeInfo);
-    myConcepts.put(index, new SConceptAdapterById(conceptId, name));
+    myConcepts.put(index, MetaAdapterFactory.getConcept(conceptId, name));
+    DebugRegistry.getInstance().addConceptName(conceptId, name);
   }
 
   public void property(String id, String name, String index) {
     assert myActualConcept != null;
     SPropertyId propertyId = myIdEncoder.parsePropertyId(myActualConcept.getConceptId(), id);
     myActualConcept.addProperty(propertyId, name);
-    myProperties.put(index, new SPropertyAdapterById(propertyId, name));
+    myProperties.put(index, MetaAdapterFactory.getProperty(propertyId, name));
+    DebugRegistry.getInstance().addPropertyName(propertyId, name);
   }
 
   public void association(String id, String name, String index) {
     assert myActualConcept != null;
     SReferenceLinkId linkId = myIdEncoder.parseAssociation(myActualConcept.getConceptId(), id);
     myActualConcept.addLink(linkId, name);
-    myAssociations.put(index, new SReferenceLinkAdapterById(linkId, name));
+    myAssociations.put(index, MetaAdapterFactory.getReferenceLink(linkId, name));
+    DebugRegistry.getInstance().addRefName(linkId, name);
   }
 
   public void aggregation(String id, String name, String index, boolean unordered) {
     assert myActualConcept != null;
     SContainmentLinkId linkId = myIdEncoder.parseAggregation(myActualConcept.getConceptId(), id);
     myActualConcept.addLink(linkId, name);
-    myAggregations.put(index, new SContainmentLinkAdapterById(linkId, name));
+    myAggregations.put(index, MetaAdapterFactory.getContainmentLink(linkId, name));
+    DebugRegistry.getInstance().addLinkName(linkId, name);
   }
 
   // Query. De-serialize ids, resolve indexes and retrieve meta-objects according to myInfoCollector state
@@ -156,19 +154,11 @@ class IdInfoReadHelper {
     return ReadHelper9.createStubConcept(ci.getName());
   }
 
-  public SLanguage getLanguage(@NotNull SLanguageId langId, @Nullable String langName) {
-    // first, check if it's one of actual languages being used, and then we can take its name from model's local registry
-    if (langName == null) {
-      langName = myKnownNames.get(langId);
-    }
-    if (langName == null) {
-      // if not, use general mechanism
-      langName = DebugRegistry.getInstance().getLanguageName(langId);
-    }
-    // FIXME fallback unless ModelReader8Bis reads name attr in <use language>
-    if (langName == null) {
-      langName = LanguageRegistry.getInstance().getLanguage(langId).getNamespace();
-    }
+  public SLanguage getLanguage(@NotNull SLanguageId langId, @NotNull String langName) {
+    // used languages is a subset of languages detected for meta-registry, don't want to use
+    // set of languages available from myInfoCollector, which might not be yet ready, unless we ensure
+    // proper read order (first registry, then used languages). It's even more complicated for per-root
+    // persistence, where usedLanguages are kept in a header file only, while registry spans few.
     return MetaAdapterFactory.getLanguage(langId, langName);
   }
 }

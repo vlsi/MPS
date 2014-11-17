@@ -89,7 +89,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.IdEncoder" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.IdInfoReadHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.ImportsHelper" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.ReadHelper9" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />

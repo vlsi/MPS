@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -52,6 +53,7 @@ public abstract class MetaAdapterFactory {
   private static final ConcurrentMap<Pair<SContainmentLinkId, String>, SContainmentLink> ourLinkIds =
       new ConcurrentHashMap<Pair<SContainmentLinkId, String>, SContainmentLink>();
 
+  @NotNull
   public static SLanguage getLanguage(SLanguageId id, String langName) {
     SLanguageAdapterById l = new SLanguageAdapterById(id, langName);
     Pair<SLanguageId, String> p = new Pair<SLanguageId, String>(id, langName);
@@ -59,10 +61,12 @@ public abstract class MetaAdapterFactory {
     return ourLanguageIds.get(p);
   }
 
+  @NotNull
   public static SLanguage getLanguage(UUID lang, String langName) {
     return getLanguage(MetaIdFactory.langId(lang), langName);
   }
 
+  @NotNull
   public static SConcept getConcept(SConceptId id, String conceptName) {
     SConceptAdapterById c = new SConceptAdapterById(id, conceptName);
     Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
@@ -70,10 +74,12 @@ public abstract class MetaAdapterFactory {
     return ourConceptIds.get(p);
   }
 
+  @NotNull
   public static SConcept getConcept(UUID lang, long concept, String conceptName) {
     return getConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
   }
 
+  @NotNull
   public static SInterfaceConcept getInterfaceConcept(SConceptId id, String conceptName) {
     SInterfaceConceptAdapterById c = new SInterfaceConceptAdapterById(id, conceptName);
     Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
@@ -81,10 +87,12 @@ public abstract class MetaAdapterFactory {
     return ourIntfcConceptIds.get(p);
   }
 
+  @NotNull
   public static SInterfaceConcept getInterfaceConcept(UUID lang, long concept, String conceptName) {
     return getInterfaceConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
   }
 
+  @NotNull
   public static SProperty getProperty(SPropertyId id, String propName) {
     SPropertyAdapterById c = new SPropertyAdapterById(id, propName);
     Pair<SPropertyId, String> p = new Pair<SPropertyId, String>(id, propName);
@@ -92,10 +100,12 @@ public abstract class MetaAdapterFactory {
     return ourPropertyIds.get(p);
   }
 
+  @NotNull
   public static SProperty getProperty(UUID lang, long concept, long prop, String propName) {
     return getProperty(MetaIdFactory.propId(lang, concept, prop), propName);
   }
 
+  @NotNull
   public static SReferenceLink getReferenceLink(SReferenceLinkId id, String refName) {
     SReferenceLinkAdapterById c = new SReferenceLinkAdapterById(id, refName);
     Pair<SReferenceLinkId, String> p = new Pair<SReferenceLinkId, String>(id, refName);
@@ -103,10 +113,12 @@ public abstract class MetaAdapterFactory {
     return ourRefIds.get(p);
   }
 
+  @NotNull
   public static SReferenceLink getReferenceLink(UUID lang, long concept, long ref, String refName) {
     return getReferenceLink(MetaIdFactory.refId(lang, concept, ref), refName);
   }
 
+  @NotNull
   public static SContainmentLink getContainmentLink(SContainmentLinkId id, String linkName) {
     SContainmentLinkAdapterById c = new SContainmentLinkAdapterById(id, linkName);
     Pair<SContainmentLinkId, String> p = new Pair<SContainmentLinkId, String>(id, linkName);
@@ -114,10 +126,12 @@ public abstract class MetaAdapterFactory {
     return ourLinkIds.get(p);
   }
 
+  @NotNull
   public static SContainmentLink getContainmentLink(UUID lang, long concept, long link, String linkName) {
     return getContainmentLink(MetaIdFactory.linkId(lang, concept, link), linkName);
   }
 
+  @NotNull
   public static SAbstractConcept getAbstractConcept(ConceptDescriptor descriptor) {
     if (descriptor.isInterfaceConcept()) {
       return getInterfaceConcept(descriptor.getId(), descriptor.getConceptFqName());

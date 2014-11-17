@@ -57,7 +57,6 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
   private boolean my_stripImplementationParam;
   private SModelHeader my_headerParam;
   private DefaultSModel my_modelField;
-  private ReadHelper9 my_helperField;
   private IdInfoReadHelper my_idHelperField;
   private ImportsHelper my_importHelperField;
   private IdEncoder my_idEncoderField;
@@ -389,7 +388,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
   }
   public class Used_languageElementHandler extends ModelReader9bisHandler.ElementHandler {
     public Used_languageElementHandler() {
-      setRequiredAttributes("id", "version");
+      setRequiredAttributes("id", "version", "name");
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
