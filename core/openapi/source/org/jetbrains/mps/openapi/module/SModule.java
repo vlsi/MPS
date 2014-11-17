@@ -72,6 +72,11 @@ public interface SModule {
   Set<SLanguage> getUsedLanguages();
 
   /**
+   * Returns version of used language
+   */
+  int getUsedLanguageVersion(SLanguage usedLanguage);
+
+  /**
    * Find the specified model among the dependencies.
    *
    * @return The desired model or null, if not found.
