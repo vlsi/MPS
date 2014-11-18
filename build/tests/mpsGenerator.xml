@@ -61,15 +61,15 @@
     </echoxml>
     <jar destfile="${build.layout}/generator/jetbrains.mps.generator.tests.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.generator.tests" />
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.generator.tests" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/languageDesign/generator-tests" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.generator.tests.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.generator.tests-models">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.generator.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-tests-models">
+      <fileset dir="${basedir}/languages/languageDesign/generator-tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/generator/jetbrains.mps.generator.tests-src.jar">
-      <zipfileset file="${basedir}/testbench/testsolutions/jetbrains.mps.generator.tests/jetbrains.mps.generator.tests.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.generator.tests-models" prefix="module/models" />
+      <zipfileset file="${basedir}/languages/languageDesign/generator-tests/jetbrains.mps.generator.tests.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-generator-tests-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.jar/META-INF" />
@@ -116,18 +116,18 @@
     </echoxml>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeaving.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeaving" />
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.traceInfo.testWeaving.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.traceInfo.testWeaving-models">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-jetbrains.mps.traceInfo.testWeaving-models">
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeaving-src.jar">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/source_gen">
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/source_gen">
         <exclude name="**/trace.info" />
       </fileset>
-      <zipfileset file="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/jetbrains.mps.traceInfo.testWeaving.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.traceInfo.testWeaving-models" prefix="module/models" />
+      <zipfileset file="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/jetbrains.mps.traceInfo.testWeaving.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceinfo-jetbrains.mps.traceInfo.testWeaving-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.traceInfo.testWeavingGenerated.data.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.traceInfo.testWeavingGenerated.data.jar/META-INF" />
@@ -317,12 +317,12 @@
       <library file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <chunk>
         <module file="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.msd" />
-        <module file="${basedir}/testbench/testsolutions/jetbrains.mps.generator.tests/jetbrains.mps.generator.tests.msd" />
+        <module file="${basedir}/languages/languageDesign/generator-tests/jetbrains.mps.generator.tests.msd" />
         <module file="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/jetbrains.mps.traceInfo.testWeavingGenerated.data.mpl" />
         <module file="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/jetbrains.mps.traceInfo.testWeavingInterpreted.data.mpl" />
       </chunk>
       <chunk>
-        <module file="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/jetbrains.mps.traceInfo.testWeaving.msd" />
+        <module file="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/jetbrains.mps.traceInfo.testWeaving.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -382,7 +382,7 @@
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.generator.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.generator.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${basedir}/testbench/testsolutions/jetbrains.mps.generator.tests/test_gen/" />
+      <src path="${basedir}/languages/languageDesign/generator-tests/test_gen/" />
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
@@ -418,18 +418,18 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.generator.tests">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.generator.tests/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/languages/languageDesign/generator-tests/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.traceInfo.testWeaving" depends="java.compile.jetbrains.mps.traceInfo.testWeavingGenerated.data, java.compile.jetbrains.mps.traceInfo.testWeavingInterpreted.data, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/source_gen" />
+    <mkdir dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeaving" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeaving" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/source_gen" />
-        <pathelement path="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/test_gen/" />
+        <path location="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/source_gen" />
+        <pathelement path="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/test_gen/" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
@@ -476,8 +476,8 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeaving">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -773,8 +773,8 @@
     <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/generator/source_gen" />
-    <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/source_gen" />
-    <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.generator.tests/test_gen" />
-    <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/test_gen" />
+    <delete dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/source_gen" />
+    <delete dir="${basedir}/languages/languageDesign/generator-tests/test_gen" />
+    <delete dir="${basedir}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/test_gen" />
   </target>
 </project>
