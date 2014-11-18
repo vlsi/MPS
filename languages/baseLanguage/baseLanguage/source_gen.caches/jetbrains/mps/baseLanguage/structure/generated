@@ -388,7 +388,6 @@
     <dep root="1168622733562" />
     <dep root="1202948039474" />
     <dep root="6329021646629104954" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_FPNumber_String_PropertySupport.java" />
   </source>
   <source id="1116615150612" name="ClassifierClassExpression" />
@@ -825,6 +824,7 @@
     <dep root="1168622733562" />
     <dep root="1202948039474" />
     <dep root="6329021646629104954" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_LongType_String_PropertySupport.java" />
   </source>
   <source id="5279705229678483898" name="_FloatNumberValue">
