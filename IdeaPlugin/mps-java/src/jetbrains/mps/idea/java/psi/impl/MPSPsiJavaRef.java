@@ -98,6 +98,10 @@ public abstract class MPSPsiJavaRef extends MPSPsiRef {
             assert newTargetModel instanceof jetbrains.mps.smodel.SModelReference;
 
             ((SModelInternal) model).addModelImport(newTargetModel, true);
+
+            if (oldNode.getModelReference().resolve(MPSModuleRepository.getInstance()) == null) {
+              ((SModelInternal) model).deleteModelImport(oldNode.getModelReference());
+            }
           }
         }
       });

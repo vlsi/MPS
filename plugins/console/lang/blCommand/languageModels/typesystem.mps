@@ -88,6 +88,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/5686963296372573083" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/7125221305512719026" name="jetbrains.mps.baseLanguage.collections.structure.CollectionType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/8758390115029295477" name="jetbrains.mps.lang.smodel.structure.SReferenceType" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020/1068580320021" name="value" />
@@ -275,7 +276,7 @@
           </node>
           <node concept="swut.1185788614172" id="7057947030084342104" role="swut.1174660718586.1174660783414" info="ng">
             <node concept="le35.1196350785113" id="7057947030084342100" role="swut.1185788614172.1185788644032" info="nn">
-              <node concept="4ia1.1172420572800" id="7057947030084342139" role="le35.1196350785113.1196350785114" info="in" />
+              <node concept="4ia1.6677504323281689838" id="6963130675034082836" role="le35.1196350785113.1196350785114" info="in" />
             </node>
           </node>
         </node>
@@ -306,10 +307,10 @@
                       <node concept="vg0i.1068581242863" id="6864030874024291263" role="vg0i.1068581242864.1068581242865" info="nr">
                         <property role="asn4.1169194658468.1169194664001" value="conceptType" />
                         <node concept="4ia1.1138055754698" id="6864030874024291264" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                          <reference role="4ia1.1138055754698.1138405853777" target="tp25.1172420572800" resolveInfo="SConceptType" />
+                          <reference role="4ia1.1138055754698.1138405853777" target="tp25.6677504323281689838" resolveInfo="SConceptTypeSConcept" />
                         </node>
                         <node concept="4ia1.1140137987495" id="6864030874024291265" role="vg0i.1068431474542.1068431790190" info="nn">
-                          <reference role="4ia1.1140137987495.1140138128738" target="tp25.1172420572800" resolveInfo="SConceptType" />
+                          <reference role="4ia1.1140137987495.1140138128738" target="tp25.6677504323281689838" resolveInfo="SConceptTypeSConcept" />
                           <node concept="swut.1205762656241" id="6864030874024291266" role="4ia1.1140137987495.1140138123956" info="nn">
                             <reference role="swut.1205762656241.1205762683928" target="6864030874024291283" resolveInfo="conceptParameterType" />
                           </node>
@@ -341,8 +342,8 @@
                           <node concept="vg0i.1068498886296" id="6864030874024607370" role="vg0i.1197027756228.1197027771414" info="nn">
                             <reference role="vg0i.1068498886296.1068581517664" target="6864030874024291263" resolveInfo="conceptType" />
                           </node>
-                          <node concept="4ia1.1138056143562" id="6864030874024673535" role="vg0i.1197027756228.1197027833540" info="nn">
-                            <reference role="4ia1.1138056143562.1138056516764" target="tp25.1180481110358" />
+                          <node concept="4ia1.1138056143562" id="6963130675034169927" role="vg0i.1197027756228.1197027833540" info="nn">
+                            <reference role="4ia1.1138056143562.1138056516764" target="tp25.6677504323281689839" />
                           </node>
                         </node>
                       </node>
@@ -366,8 +367,8 @@
                                         <node concept="vg0i.1068498886296" id="6864030874024315750" role="vg0i.1197027756228.1197027771414" info="nn">
                                           <reference role="vg0i.1068498886296.1068581517664" target="6864030874024291263" resolveInfo="conceptType" />
                                         </node>
-                                        <node concept="4ia1.1138056143562" id="6864030874024683590" role="vg0i.1197027756228.1197027833540" info="nn">
-                                          <reference role="4ia1.1138056143562.1138056516764" target="tp25.1180481110358" />
+                                        <node concept="4ia1.1138056143562" id="6963130675034084934" role="vg0i.1197027756228.1197027833540" info="nn">
+                                          <reference role="4ia1.1138056143562.1138056516764" target="tp25.6677504323281689839" />
                                         </node>
                                       </node>
                                     </node>
@@ -385,8 +386,8 @@
                       <reference role="swut.1205762656241.1205762683928" target="6864030874024291283" resolveInfo="conceptParameterType" />
                     </node>
                     <node concept="4ia1.1139621453865" id="6864030874024291277" role="vg0i.1197027756228.1197027833540" info="nn">
-                      <node concept="4ia1.1177026924588" id="6864030874024291278" role="4ia1.1139621453865.1177027386292" info="nn">
-                        <reference role="4ia1.1177026924588.1177026940964" target="tp25.1172420572800" resolveInfo="SConceptType" />
+                      <node concept="4ia1.1177026924588" id="6963130675034083299" role="4ia1.1139621453865.1177027386292" info="nn">
+                        <reference role="4ia1.1177026924588.1177026940964" target="tp25.6677504323281689838" resolveInfo="SConceptTypeSConcept" />
                       </node>
                     </node>
                   </node>
