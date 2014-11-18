@@ -9816,6 +9816,12 @@
               <reference role="bxtc.5253498789149585690.5253498789149547705" target="8939513996048535685" resolveInfo="jetbrains.mps.baseLanguage.jdk7" />
             </node>
           </node>
+          <node concept="bxtc.7259033139236285166" id="8322085906525447450" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+            <node concept="bxtc.5253498789149585690" id="8322085906525447451" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
+              <reference role="bxtc.5253498789149585690.5253498789149547705" target="4372437818007979949" resolveInfo="jetbrains.mps.editor.runtime" />
+            </node>
+          </node>
         </node>
         <node concept="bxtc.3189788309731840248" id="8939513996048536302" role="bxtc.1500819558095907805.1500819558095907806" info="ng">
           <property role="bxtc.322010710375871467.8369506495128725901" value="true" />
