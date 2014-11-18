@@ -6733,30 +6733,6 @@
               </node>
             </node>
           </node>
-          <node concept="bxtc.7259033139236285166" id="8100167580857235332" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-            <node concept="bxtc.5253498789149585690" id="8100167580857235333" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-              <reference role="bxtc.5253498789149585690.5253498789149547705" target="1480008320050917282" resolveInfo="MPS.IDEA" />
-            </node>
-          </node>
-          <node concept="bxtc.7259033139236285166" id="8100167580857235334" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-            <node concept="bxtc.5253498789149585690" id="8100167580857235335" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-              <reference role="bxtc.5253498789149585690.5253498789149547705" target="413682502717652307" resolveInfo="JDK" />
-            </node>
-          </node>
-          <node concept="bxtc.7259033139236285166" id="8100167580857235336" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-            <node concept="bxtc.5253498789149585690" id="8100167580857235337" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-              <reference role="bxtc.5253498789149585690.5253498789149547705" target="2182758403694705611" resolveInfo="MPS.Platform" />
-            </node>
-          </node>
-          <node concept="bxtc.7259033139236285166" id="8100167580857235338" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
-            <node concept="bxtc.5253498789149585690" id="8100167580857235339" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
-              <property role="bxtc.5253498789149585690.5253498789149547713" value="false" />
-              <reference role="bxtc.5253498789149585690.5253498789149547705" target="4697806380739460690" resolveInfo="Annotations" />
-            </node>
-          </node>
         </node>
         <node concept="bxtc.3189788309731840248" id="8939513996048535827" role="bxtc.1500819558095907805.1500819558095907806" info="ng">
           <property role="bxtc.322010710375871467.8369506495128725901" value="true" />
