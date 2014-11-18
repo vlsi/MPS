@@ -389,24 +389,37 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
-  public void execute(@Nullable SNode command, @Nullable final Runnable executeBefore, @Nullable final Runnable executeAfter) {
-    final SNode typedCommand = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder")));
-    if (command != null) {
-      addNodeImports(command);
-      SLinkOperations.setTarget(typedCommand, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"))));
-      SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SNodeOperations.copyNode(command));
-    }
+  public void execute(@Nullable final SNode command, @Nullable final Runnable executeBefore, @Nullable final Runnable executeAfter) {
     myTool.selectTab(this);
+    final SNode[] typedCommand = new SNode[1];
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        typedCommand[0] = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder")));
+        if (command != null) {
+          addNodeImports(command);
+          SLinkOperations.setTarget(typedCommand[0], MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"))));
+          SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SNodeOperations.copyNode(command));
+        }
+      }
+    });
     BehaviorReflection.invokeVirtual(Void.class, SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command")), "virtual_execute_6854397602732226506", new Object[]{getConsoleContext(), getConsoleStream(), new Runnable() {
       public void run() {
-        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930415l, "history")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 757553790980850366l, 7195119950189425818l, "item"))).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder"))));
-        SNodeOperations.deleteNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command")));
-        check_6q36mf_a2a0a0c0a3a85(executeBefore);
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930415l, "history")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 757553790980850366l, 7195119950189425818l, "item"))).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder"))));
+            SNodeOperations.deleteNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command")));
+            check_6q36mf_a2a0a0a0a2a0d0gc(executeBefore);
+          }
+        });
       }
     }, new Runnable() {
       public void run() {
-        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SLinkOperations.getTarget(typedCommand, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command")));
-        check_6q36mf_a1a0a0d0a3a85(executeAfter);
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SLinkOperations.getTarget(typedCommand[0], MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command")));
+            check_6q36mf_a1a0a0a0a3a0d0gc(executeAfter);
+          }
+        });
       }
     }});
   }
@@ -507,13 +520,13 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     }
     return null;
   }
-  private static void check_6q36mf_a2a0a0c0a3a85(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a2a0a0a0a2a0d0gc(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
 
   }
-  private static void check_6q36mf_a1a0a0d0a3a85(Runnable checkedDotOperand) {
+  private static void check_6q36mf_a1a0a0a0a3a0d0gc(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
