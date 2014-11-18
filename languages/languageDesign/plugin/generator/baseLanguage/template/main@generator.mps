@@ -258,7 +258,6 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1227022179634" name="jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation" />
     <concept id="d7706f63-9be2-479c-a3da-ae92af1e64d5/1229477454423" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1241540912639" name="jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/982871510064032177" name="jetbrains.mps.lang.generator.structure.IParameterizedTemplate" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" />

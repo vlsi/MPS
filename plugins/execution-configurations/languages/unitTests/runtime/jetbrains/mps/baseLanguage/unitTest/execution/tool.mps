@@ -214,7 +214,6 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237909114519" name="jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1240325842691" name="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1241540912639" name="jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1522217801069396578" name="jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
