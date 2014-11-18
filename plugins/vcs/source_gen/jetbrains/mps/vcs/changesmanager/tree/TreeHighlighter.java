@@ -202,8 +202,8 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
   }
   private void updatePresentation(final MPSTreeNode treeNode) {
-    // schedules node update to run in correct thread 
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+    // schedules node update to run in correct thread
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         treeNode.renewPresentation();
       }
