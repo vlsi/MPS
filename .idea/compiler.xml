@@ -97,6 +97,7 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/dataFlow/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.styleTests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/extension/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/extension/solutions/jetbrains.mps.lang.extension.tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/extension/solutions/jetbrains.mps.lang.extension.tests/test_gen" includeSubdirectories="true" />
@@ -560,7 +561,6 @@
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.mult.ext.testLang/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.mult.testLang/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.mult.testLang/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.style.testLang/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.tableTests.testLang/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/lang.actions.testLang/source_gen" includeSubdirectories="true" />
     </excludeFromCompile>
