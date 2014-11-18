@@ -69,7 +69,6 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     myEditorComponent = editorComponent;
     myRightToLeft = rightToLeft;
 
-    myEditorComponent.getVerticalScrollBar().setPersistentUI(this);
     myUpdateQueue = new MergingUpdateQueue("MessagesGutter", 500, true, editorComponent, null, null, true);
     myUpdateQueue.setRestartTimerOnAdd(true);
     // TODO add update queue to the disposables tree
@@ -102,7 +101,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
-    int shift = myRightToLeft ? -9 : 9;
+    int shift = myRightToLeft ? 5 : -5;
     g.translate(shift, 0);
     super.paintThumb(g, c, thumbBounds);
     g.translate(-shift, 0);
