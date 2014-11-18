@@ -42,6 +42,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class TypeContextManager implements CoreComponent {
 
@@ -55,7 +56,8 @@ public class TypeContextManager implements CoreComponent {
 
   private TypeChecker myTypeChecker;
 
-  private AtomicBoolean myDisposed = new AtomicBoolean(false);
+  private AtomicBoolean myDisposeRequested = new AtomicBoolean(false);
+  private AtomicInteger myExecuting = new AtomicInteger(0);
 
   //TypeContextManager is a singleton, so we can omit remove() here though the field is not static
   private ThreadLocal<ITypeContextOwner> myTypecheckingContextOwner = new ThreadLocal<ITypeContextOwner>() {
@@ -85,8 +87,16 @@ public class TypeContextManager implements CoreComponent {
 
   @Override
   public void dispose() {
-    if (!myDisposed.compareAndSet(false, true)) return;
+    // signal to the Executor
+    if (!myDisposeRequested.compareAndSet(false, true)) return;
 
+    // if busy, bail
+    if (myExecuting.get() > 0) return;
+
+    doDispose();
+  }
+
+  private void doDispose() {
     for (Map.Entry<ITypeContextOwner, TypecheckingContextHolder> entry: myTypeCheckingContexts.entrySet()) {
       entry.getValue().dispose();
     }
@@ -214,6 +224,12 @@ public class TypeContextManager implements CoreComponent {
       myRunnable = runnable;
     }
     T execute() {
+      // dispose has been called? no-no-no
+      if (myDisposeRequested.get()) return null;
+
+      // one more task executing
+      myExecuting.incrementAndGet();
+
       final ITypeContextOwner savedOwner = myTypecheckingContextOwner.get();
       if (myContextOwner != null) {
         myTypecheckingContextOwner.set(myContextOwner);
@@ -241,6 +257,12 @@ public class TypeContextManager implements CoreComponent {
 
         if (myContextOwner != null) {
           myTypecheckingContextOwner.set(savedOwner);
+        }
+
+        // do dispose on last task finished
+        int executingTasks = myExecuting.decrementAndGet();
+        if (myDisposeRequested.get() && executingTasks == 0) {
+          doDispose();
         }
       }
     }
