@@ -12,9 +12,9 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="4n024cqumk2xdsxlg8oilpaq9otsc22" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="1r1tx0ou7eqb5i0g3mza1vswb1mzq4w" />
   <dep model="r:00000000-0000-4000-0000-011c895902ce(jetbrains.mps.baseLanguage.generator.java.closures.util)" hash="-8mkexjec3zour0t7z7n4ees6n7rm882" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="877x1rtvvonc6iu9qeypuwbi1f92gqn" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="5sf055vpkaxsivbfhb9hcwjl54hyfhn" />
-  <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="aw4px04uey6y2767xauwwgrh3lvk87j" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="93z9rxva6annhnvhc7x1m8tmyh3il36" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-eiemezirstcb3rx2nnd0cuulvllvckl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="-6oc37ezygk2hhlsmpmapb0hm076u4em" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-7h66s9djjwo3ce7s2fqno41xyko44yh" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="9e7zjd0zln3yockj5ozp0somf6hd02s" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="ap7kkbjep0v1fuwrsssvbt509rkw79s" />
@@ -25,7 +25,10 @@
     <dep root="1152552655480" />
     <dep root="1152719449373" />
     <dep root="1152729181498" />
+    <dep root="1152740850684" />
+    <dep root="1152741220170" />
     <dep root="1152742153585" />
+    <dep root="1152742286993" />
     <dep root="1152750787488" />
     <dep root="1152823060739" />
     <dep root="1153259191716" />
@@ -61,6 +64,7 @@
   </source>
   <source id="1152719449373" name="reduce_bodyOfContextOwner_insertClosureContextVar">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1152729181498" name="weave_ClosureAdapter_members">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />

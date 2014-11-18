@@ -3,6 +3,7 @@
   <persistence version="9" />
   <debugInfo>
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
+    <lang id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" />
     <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
     <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" />
@@ -110,6 +111,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" />
@@ -121,6 +123,7 @@
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1240930444878" name="jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" />
+    <concept id="774bf8a0-62e5-41e1-af63-f4812e60e48b/4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" />
@@ -199,6 +202,8 @@
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
     <childRole id="fd392034-7849-419d-9071-12563d152375/1199569711397/1199569916463" name="body" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494/1212687122400" name="typeParameter" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224071154655/1224071154656" name="expression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224071154655/1224071154657" name="classifierType" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1226511727824/1226511765987" name="elementType" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592/1237721435807" name="elementType" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592/1237731803878" name="copyFrom" />
@@ -210,6 +215,7 @@
   </debugInfo>
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" version="0" index="zscr" />
     <use id="fd392034-7849-419d-9071-12563d152375" version="-1" index="cakq" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="-1" index="j0ph" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" version="-1" index="ae39" />
@@ -247,6 +253,7 @@
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
     <import index="fwv2" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)" implicit="true" />
+    <import index="pxpg" ref="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" implicit="true" />
   </imports>
   <contents>
     <node concept="vg0i.1068390468198" id="1237995590703" info="ig">
@@ -344,31 +351,24 @@
             </node>
           </node>
           <node concept="vg0i.1068581242878" id="6963130675032333233" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1070534934090" id="6963130675032333234" role="vg0i.1068581242878.1068581517676" info="nn">
-              <node concept="vg0i.1197027756228" id="6963130675032333235" role="vg0i.1070534934090.1070534934092" info="nn">
-                <node concept="vg0i.1197027756228" id="6963130675032333236" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <node concept="vg0i.1081236700937" id="6963130675032343245" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1081236700937.1144433194310" target="62l1.~MetaAdapterByDeclaration" resolveInfo="MetaAdapterByDeclaration" />
-                    <reference role="vg0i.1204053956946.1068499141037" target="62l1.~MetaAdapterByDeclaration%dgetConcept(jetbrains%dmps%dsmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept" resolveInfo="getConcept" />
-                    <node concept="vg0i.1070534934090" id="6963130675032343246" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <node concept="vg0i.1068498886296" id="6963130675032343247" role="vg0i.1070534934090.1070534934092" info="nn">
-                        <reference role="vg0i.1068498886296.1068581517664" target="1237995590885" resolveInfo="concept" />
-                      </node>
-                      <node concept="vg0i.1107535904670" id="6963130675032343248" role="vg0i.1070534934090.1070534934091" info="in">
-                        <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~SNode" resolveInfo="SNode" />
-                      </node>
+            <node concept="vg0i.1224071154655" id="6615675907568469572" role="vg0i.1068581242878.1068581517676" info="nn">
+              <node concept="vg0i.1107535904670" id="6615675907568469575" role="vg0i.1224071154655.1224071154657" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~Language" resolveInfo="Language" />
+              </node>
+              <node concept="zscr.4079382982702596667" id="6615675907568469000" role="vg0i.1224071154655.1224071154656" info="nn">
+                <node concept="vg0i.1197027756228" id="6615675907568464521" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <node concept="4ia1.1145404486709" id="6615675907568462408" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <node concept="vg0i.1068498886296" id="6615675907568452914" role="4ia1.1145404486709.1145404616321" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="1237995590885" resolveInfo="concept" />
                     </node>
                   </node>
-                  <node concept="vg0i.1202948039474" id="6963130675032333241" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SAbstractConcept%dgetLanguage()%corg%djetbrains%dmps%dopenapi%dlanguage%dSLanguage" resolveInfo="getLanguage" />
+                  <node concept="vg0i.1202948039474" id="6615675907568465226" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
                   </node>
                 </node>
-                <node concept="vg0i.1202948039474" id="6963130675032333242" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SLanguage%dgetSourceModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getSourceModule" />
+                <node concept="vg0i.1202948039474" id="6615675907568466224" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
                 </node>
-              </node>
-              <node concept="vg0i.1107535904670" id="6963130675032333243" role="vg0i.1070534934090.1070534934091" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~Language" resolveInfo="Language" />
               </node>
             </node>
           </node>

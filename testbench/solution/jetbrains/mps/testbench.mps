@@ -1110,7 +1110,7 @@
             <node concept="vg0i.1197027756228" id="7550149668844548557" role="j0ph.1153943597977.1153944424730" info="nn">
               <node concept="vg0i.1197027756228" id="7550149668844548558" role="vg0i.1197027756228.1197027771414" info="nn">
                 <node concept="vg0i.1202948039474" id="7550149668844548559" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="79ha.106664114202363337" resolveInfo="macros" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="79ha.106664114202363337" resolveInfo="getMacros" />
                 </node>
                 <node concept="vg0i.1068498886296" id="7550149668844548575" role="vg0i.1197027756228.1197027771414" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="7550149668844548572" resolveInfo="config" />
@@ -1134,7 +1134,7 @@
                     </node>
                     <node concept="vg0i.1197027756228" id="7550149668844548569" role="j0ph.1197932370469.1197932505799" info="nn">
                       <node concept="vg0i.1202948039474" id="7550149668844548570" role="vg0i.1197027756228.1197027833540" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="79ha.106664114202363337" resolveInfo="macros" />
+                        <reference role="vg0i.1204053956946.1068499141037" target="79ha.106664114202363337" resolveInfo="getMacros" />
                       </node>
                       <node concept="vg0i.1068498886296" id="7550149668844548574" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1068498886296.1068581517664" target="7550149668844548572" resolveInfo="config" />
@@ -1249,7 +1249,7 @@
                 <reference role="vg0i.1081236700937.1144433194310" target="79ha.6170820365631519376" resolveInfo="EnvironmentUtils" />
                 <node concept="vg0i.1197027756228" id="2654128911717083383" role="vg0i.1204053956946.1068499141038" info="nn">
                   <node concept="vg0i.1202948039474" id="2654128911717083384" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="79ha.106664114202436231" resolveInfo="libs" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="79ha.106664114202436231" resolveInfo="getLibs" />
                   </node>
                   <node concept="vg0i.1068498886296" id="2654128911717083385" role="vg0i.1197027756228.1197027771414" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="2654128911716525200" resolveInfo="config" />

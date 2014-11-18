@@ -7,6 +7,7 @@ import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public void init() {
+    IntentionsManager.getInstance().registerIntentionFactory(new AddMissingDependency_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddMissingLanguageImport_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SetExportAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SuppressErrors_Intention());

@@ -247,7 +247,6 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1240217271293" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1241540912639" name="jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/202934866059043946" name="jetbrains.mps.build.structure.BuildLayout_EchoProperties" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/202934866059043959" name="jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/244868996532454372" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithDate" />

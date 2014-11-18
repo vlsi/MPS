@@ -4142,7 +4142,7 @@
             <node concept="vg0i.1144226303539" id="1117107720588641500" role="vg0i.1068580123136.1068581517665" info="nn">
               <node concept="vg0i.1197027756228" id="6132171475558877226" role="vg0i.1144226303539.1144226360166" info="nn">
                 <node concept="vg0i.1202948039474" id="6132171475558883373" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="79ha.106664114202436231" resolveInfo="libs" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="79ha.106664114202436231" resolveInfo="getLibs" />
                 </node>
                 <node concept="vg0i.1068498886296" id="6132171475558877011" role="vg0i.1197027756228.1197027771414" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="6132171475558831714" resolveInfo="config" />

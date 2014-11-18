@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.Iterator;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 
 public class IntentionUtils {
   private IntentionUtils() {
@@ -194,6 +195,7 @@ public class IntentionUtils {
       } else {
         SNode notNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, "jetbrains.mps.baseLanguage.structure.NotExpression")), null);
         SLinkOperations.setTarget(notNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"), clone);
+        IntentionUtils.addParensToNotIfNeeded(notNode);
         return notNode;
       }
       SLinkOperations.setTarget(replacement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), SLinkOperations.getTarget(SNodeOperations.cast(clone, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
@@ -202,7 +204,16 @@ public class IntentionUtils {
     }
     SNode notNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, "jetbrains.mps.baseLanguage.structure.NotExpression")), null);
     SLinkOperations.setTarget(notNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"), clone);
+    IntentionUtils.addParensToNotIfNeeded(notNode);
     return notNode;
+  }
+
+  public static void addParensToNotIfNeeded(SNode notExpr) {
+    if (PrecedenceUtil.needsParensAroundNotExpression(notExpr)) {
+      SNode childExpr = SLinkOperations.getTarget(notExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"));
+      SNode parens = SNodeFactoryOperations.replaceWithNewChild(childExpr, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
+      SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), childExpr);
+    }
   }
   private static boolean neq_k79hya_a0a0g(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
