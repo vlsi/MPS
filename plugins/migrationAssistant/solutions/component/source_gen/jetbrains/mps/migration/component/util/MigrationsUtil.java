@@ -8,15 +8,13 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.apache.log4j.Level;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.Language;
 import java.util.Set;
@@ -33,19 +31,19 @@ public class MigrationsUtil {
   public static String getDescriptorFQName(SModule module) {
     return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript")), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
   }
-  public static boolean isMigrationNeeded(AbstractModule module, Tuples._2<SLanguage, Integer> languageVersions) {
-    int currentVersion = languageVersions._0().getLanguageVersion();
-    if ((int) languageVersions._1() > currentVersion) {
+  public static boolean isMigrationNeeded(AbstractModule module, MigrationScriptReference languageVersions) {
+    int currentVersion = languageVersions.getLanguage().getLanguageVersion();
+    if (languageVersions.getFromVersion() > currentVersion) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("Module " + module + " depends on version " + (int) languageVersions._1() + " of module " + languageVersions._0() + " which is higher than available version (" + currentVersion + ")");
+        LOG.error("Module " + module + " depends on version " + languageVersions.getFromVersion() + " of module " + languageVersions.getLanguage() + " which is higher than available version (" + currentVersion + ")");
       }
-    } else if ((int) languageVersions._1() < currentVersion) {
+    } else if (languageVersions.getFromVersion() < currentVersion) {
       return true;
     }
     return false;
   }
-  public static Iterable<Tuples._2<SLanguage, Integer>> getLanguageVersions(SModule module) {
-    List<Tuples._2<SLanguage, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<SLanguage, Integer>>());
+  public static Iterable<MigrationScriptReference> getLanguageVersions(SModule module) {
+    List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());
     for (SLanguage lang : SetSequence.fromSet(module.getUsedLanguages())) {
       Integer ver = ((AbstractModule) module).getModuleDescriptor().getLanguageVersions().get(lang);
       if (ver == null) {
@@ -54,14 +52,14 @@ public class MigrationsUtil {
         }
       } else {
         if (ver != lang.getLanguageVersion()) {
-          ListSequence.fromList(result).addElement(MultiTuple.<SLanguage,Integer>from(lang, ver));
+          ListSequence.fromList(result).addElement(new MigrationScriptReference(lang, ver));
         }
       }
     }
     return result;
   }
   public static boolean isApplied(MigrationScriptReference script, SModule module) {
-    return script.getFromVersion() < module.getUsedLanguageVersion(MetaAdapterByDeclaration.getLanguage((Language) script.getModuleReference()));
+    return script.getFromVersion() < module.getUsedLanguageVersion(MetaAdapterByDeclaration.getLanguage((Language) script.getLanguage()));
   }
   public static Set<SModule> getModuleDependencies(final SModule module) {
     Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();

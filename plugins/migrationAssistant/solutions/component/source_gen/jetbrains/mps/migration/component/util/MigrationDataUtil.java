@@ -22,6 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import java.util.Collections;
@@ -29,12 +30,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.smodel.SModelUtil_new;
 
 public class MigrationDataUtil {
   public static void saveData(AbstractModule module, SModule dataModule, Iterable<Tuples._2<MigrationScriptReference, SNode>> data) {
@@ -50,7 +48,7 @@ public class MigrationDataUtil {
     }
     for (Tuples._2<MigrationScriptReference, SNode> p : Sequence.fromIterable(data)) {
       SNode stepData = SModelOperations.createNewRootNode(model, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, "jetbrains.mps.lang.migration.util.structure.StepData")));
-      SLinkOperations.setTarget(stepData, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725796l, "script"), createMigrationScriptReference_hzite5_a0b0g0a(p._0().getModuleReference().toString(), p._0().getFromVersion()));
+      SPropertyOperations.set(stepData, MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 1973338949477451252l, "script"), p._0().serialize());
       SLinkOperations.setTarget(stepData, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725798l, "data"), p._1());
     }
     try {
@@ -78,7 +76,7 @@ public class MigrationDataUtil {
     }
 
     for (SNode root : ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, "jetbrains.mps.lang.migration.util.structure.StepData")))) {
-      ListSequence.fromList(result).addElement(MultiTuple.<MigrationScriptReference,SNode>from(new MigrationScriptReference(PersistenceFacade.getInstance().createModuleReference(SPropertyOperations.getString(SLinkOperations.getTarget(root, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725796l, "script")), MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922909370996l, "module"))), SPropertyOperations.getInteger(SLinkOperations.getTarget(root, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725796l, "script")), MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922908725794l, "fromVersion"))), SLinkOperations.getTarget(root, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725798l, "data"))));
+      ListSequence.fromList(result).addElement(MultiTuple.<MigrationScriptReference,SNode>from(MigrationScriptReference.deserialize(SPropertyOperations.getString(root, MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 1973338949477451252l, "script"))), SLinkOperations.getTarget(root, MetaAdapterFactory.getContainmentLink(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908669705l, 7417095922908725798l, "data"))));
     }
     return result;
   }
@@ -101,13 +99,6 @@ public class MigrationDataUtil {
   }
   public static IFile getDataFile(AbstractModule module) {
     return FileSystem.getInstance().getFileByPath(FileUtil.getNameWithoutExtension(module.getDescriptorFile().getPath()) + ".migration");
-  }
-  private static SNode createMigrationScriptReference_hzite5_a0b0g0a(Object p0, Object p1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.migration.util.structure.MigrationScriptReference", null, false);
-    n1.setProperty(MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922909370996l, "module"), String.valueOf(p0));
-    n1.setProperty(MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922908725794l, "fromVersion"), String.valueOf(p1));
-    return n1;
   }
   private static boolean eq_hzite5_a0a0a0a0a0a0c0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
