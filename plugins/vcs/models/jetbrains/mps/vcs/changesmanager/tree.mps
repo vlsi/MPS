@@ -3532,19 +3532,24 @@
               <property role="vg0i.6329021646629104957.6329021646629104958" value="schedules node update to run in correct thread" />
             </node>
           </node>
-          <node concept="vg0i.1068580123155" id="5463596285346253096" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="5463596285346260114" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1204053956946.1068499141037" target="86um.~ThreadUtils%drunInUIThreadNoWait(java%dlang%dRunnable)%cvoid" resolveInfo="runInUIThreadNoWait" />
-              <reference role="vg0i.1081236700937.1144433194310" target="86um.~ThreadUtils" resolveInfo="ThreadUtils" />
-              <node concept="cakq.1199569711397" id="5463596285346260170" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068580123136" id="5463596285346260171" role="cakq.1199569711397.1199569916463" info="sn">
-                  <node concept="vg0i.1068580123155" id="5463596285346213471" role="vg0i.1068580123136.1068581517665" info="nn">
-                    <node concept="vg0i.1197027756228" id="5463596285346215302" role="vg0i.1068580123155.1068580123156" info="nn">
-                      <node concept="vg0i.1068498886296" id="5463596285346213470" role="vg0i.1197027756228.1197027771414" info="nn">
-                        <reference role="vg0i.1068498886296.1068581517664" target="5463596285346199302" resolveInfo="treeNode" />
-                      </node>
-                      <node concept="vg0i.1202948039474" id="5463596285346223414" role="vg0i.1197027756228.1197027833540" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="mlq0.~MPSTreeNode%drenewPresentation()%cvoid" resolveInfo="renewPresentation" />
+          <node concept="vg0i.1068580123155" id="4715587641031047197" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="4715587641031047282" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1081236700937" id="4715587641031047210" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolveInfo="instance" />
+                <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~ModelAccess" resolveInfo="ModelAccess" />
+              </node>
+              <node concept="vg0i.1202948039474" id="4715587641031047780" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~ModelCommandExecutor%drunReadInEDT(java%dlang%dRunnable)%cvoid" resolveInfo="runReadInEDT" />
+                <node concept="cakq.1199569711397" id="5463596285346260170" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <node concept="vg0i.1068580123136" id="5463596285346260171" role="cakq.1199569711397.1199569916463" info="sn">
+                    <node concept="vg0i.1068580123155" id="5463596285346213471" role="vg0i.1068580123136.1068581517665" info="nn">
+                      <node concept="vg0i.1197027756228" id="5463596285346215302" role="vg0i.1068580123155.1068580123156" info="nn">
+                        <node concept="vg0i.1068498886296" id="5463596285346213470" role="vg0i.1197027756228.1197027771414" info="nn">
+                          <reference role="vg0i.1068498886296.1068581517664" target="5463596285346199302" resolveInfo="treeNode" />
+                        </node>
+                        <node concept="vg0i.1202948039474" id="5463596285346223414" role="vg0i.1197027756228.1197027833540" info="nn">
+                          <reference role="vg0i.1204053956946.1068499141037" target="mlq0.~MPSTreeNode%drenewPresentation()%cvoid" resolveInfo="renewPresentation" />
+                        </node>
                       </node>
                     </node>
                   </node>

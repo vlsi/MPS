@@ -98,21 +98,20 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
         public void run() {
           myCursor = null;
           TemporaryModels.getInstance().addMissingImports(myModel);
-          final SNode lastCmd = SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"));
-          if ((lastCmd == null)) {
+          if ((SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command")) == null)) {
             return;
           }
-          execute(null, new Runnable() {
+        }
+      });
+      execute(null, new Runnable() {
+        public void run() {
+          myNewCommand = null;
+        }
+      }, new Runnable() {
+        public void run() {
+          SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-              myNewCommand = null;
-            }
-          }, new Runnable() {
-            public void run() {
-              SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                  setSelection();
-                }
-              });
+              setSelection();
             }
           });
         }

@@ -27,7 +27,6 @@ import jetbrains.mps.util.AbstractComputeRunnable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
-import jetbrains.mps.ide.ThreadUtils;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -202,7 +201,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
   }
   private void updatePresentation(final MPSTreeNode treeNode) {
-    // schedules node update to run in correct thread
+    // schedules node update to run in correct thread 
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         treeNode.renewPresentation();
