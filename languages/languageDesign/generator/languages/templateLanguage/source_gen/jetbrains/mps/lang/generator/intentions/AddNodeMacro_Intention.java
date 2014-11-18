@@ -66,11 +66,7 @@ public class AddNodeMacro_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-<<<<<<< HEAD:languages/languageDesign/generator/languages/templateLanguage/source_gen/jetbrains/mps/lang/generator/intentions/AddNodeMacro_Intention.java
       return "Add Node Macro";
-=======
-      return "Add language " + node.getConcept().getLanguage().getQualifiedName() + " to the current module";
->>>>>>> Transferring AddMissingDependency action to lang.core intention:languages/core/core/source_gen/jetbrains/mps/lang/core/intentions/AddMissingLanguageImport_Intention.java
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode nodeMacro = EditingUtil.addNodeMacro(node);
