@@ -62,7 +62,7 @@ public class AddMissingLanguageImport_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Language " + node.getConcept().getLanguage().getQualifiedName() + " to Current Module";
+      return "Add language " + node.getConcept().getLanguage().getQualifiedName() + " to the current module";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SModuleReference moduleRef = ((AbstractModule) node.getConcept().getLanguage().getSourceModule()).getModuleReference();
