@@ -368,10 +368,10 @@
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.pattern.test/jetbrains.mps.lang.pattern.test.msd" folder="core.languages.pattern" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.traceInfo.test/jetbrains.mps.traceInfo.test.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/jetbrains.mps.traceInfo.testWeaving.msd" folder="platform.traceInfo" />
-      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.mult.ext.testLang/jetbrains.mps.lang.editor.multiple.extension.testLanguage.mpl" folder="core.aspects.editor" />
-      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.mult.testLang/jetbrains.mps.lang.editor.multiple.testLanguage.mpl" folder="core.aspects.editor" />
-      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.tableTests.testLang/jetbrains.mps.lang.editor.tableTests.mpl" folder="core.aspects.editor" />
-      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/lang.actions.testLang/jetbrains.mps.lang.actions.testLanguage.mpl" folder="core.aspects.actions" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.actions.testLanguage/jetbrains.mps.lang.actions.testLanguage.mpl" folder="core.aspects.actions" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.multiple.extension.testLanguage/jetbrains.mps.lang.editor.multiple.extension.testLanguage.mpl" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.multiple.testLanguage/jetbrains.mps.lang.editor.multiple.testLanguage.mpl" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.tableTests/jetbrains.mps.lang.editor.tableTests.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-debugger/jetbrains.mps.debugger.core.msd" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench.editor" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-platform/jetbrains.mps.ide.platform.msd" folder="workbench.platform" />
