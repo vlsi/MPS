@@ -22,12 +22,12 @@
     <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" name="jetbrains.mps.util@java_stub" />
     <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" name="jetbrains.mps.vfs@java_stub" />
     <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" name="jetbrains.mps@java_stub" />
-    <model ref="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)" name="jetbrains.mps.ide.editor.util" />
     <model ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" name="jetbrains.mps.ide.actions@java_stub" />
     <model ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.keymaps(MPS.Editor/jetbrains.mps.nodeEditor.keymaps@java_stub)" name="jetbrains.mps.nodeEditor.keymaps@java_stub" />
     <model ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" name="org.jetbrains.mps.openapi.module@java_stub" />
     <model ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" name="org.jetbrains.mps.openapi.model@java_stub" />
     <model ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" name="jetbrains.mps.lang.core.editor" />
+    <model ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" name="jetbrains.mps.editor.runtime" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
@@ -298,12 +298,12 @@
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
     <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" />
     <import index="1p1s" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" />
-    <import index="7lvn" ref="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)" />
     <import index="5xh9" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" />
     <import index="oz2g" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.keymaps(MPS.Editor/jetbrains.mps.nodeEditor.keymaps@java_stub)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
+    <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
@@ -1756,15 +1756,15 @@
               <node concept="9wj7.1176474535556" id="1210687257462" role="9wj7.1103016434866.1176475119347" info="in">
                 <node concept="vg0i.1068580123136" id="1210687257463" role="vg0i.1137021947720.1137022507850" info="sn">
                   <node concept="vg0i.1068581242878" id="1210687257464" role="vg0i.1068580123136.1068581517665" info="nn">
-                    <node concept="vg0i.1081236700937" id="220011692205372470" role="vg0i.1068581242878.1068581517676" info="nn">
-                      <reference role="vg0i.1081236700937.1144433194310" target="7lvn.7973955287399271868" resolveInfo="EditorUtil" />
-                      <reference role="vg0i.1204053956946.1068499141037" target="7lvn.1684996642972608268" resolveInfo="createSelectIconButton" />
-                      <node concept="9wj7.1142886811589" id="220011692205372471" role="vg0i.1204053956946.1068499141038" info="nn" />
-                      <node concept="4ia1.5253134957341870583" id="2582471686862383065" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1081236700937" id="1304546202460527284" role="vg0i.1068581242878.1068581517676" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="7a0s.1684996642972608268" resolveInfo="createSelectIconButton" />
+                      <reference role="vg0i.1081236700937.1144433194310" target="7a0s.7973955287399271868" resolveInfo="EditorUtil" />
+                      <node concept="9wj7.1142886811589" id="1304546202460527285" role="vg0i.1204053956946.1068499141038" info="nn" />
+                      <node concept="4ia1.5253134957341870583" id="1304546202460527286" role="vg0i.1204053956946.1068499141038" info="nn">
                         <reference role="4ia1.5253134957341870583.5253134957341870584" target="tp4k.1210684385183" resolveInfo="PreferencePage" />
                         <reference role="4ia1.5253134957341870583.5253134957341870585" target="tp4k.1210686783787" resolveInfo="icon" />
                       </node>
-                      <node concept="9wj7.1161622981231" id="220011692205372473" role="vg0i.1204053956946.1068499141038" info="nn" />
+                      <node concept="9wj7.1161622981231" id="1304546202460527287" role="vg0i.1204053956946.1068499141038" info="nn" />
                     </node>
                   </node>
                 </node>

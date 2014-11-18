@@ -26,7 +26,7 @@
     <model ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" name="jetbrains.mps.lang.core.editor" />
     <model ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.cells(MPS.Editor/jetbrains.mps.editor.runtime.cells@java_stub)" name="jetbrains.mps.editor.runtime.cells@java_stub" />
     <model ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" name="jetbrains.mps.openapi.editor.cells@java_stub" />
-    <model ref="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)" name="jetbrains.mps.ide.editor.util" />
+    <model ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" name="jetbrains.mps.editor.runtime" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
@@ -372,7 +372,7 @@
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="bzqj" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.cells(MPS.Editor/jetbrains.mps.editor.runtime.cells@java_stub)" />
     <import index="nu8v" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
-    <import index="7lvn" ref="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)" />
+    <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
@@ -2149,12 +2149,12 @@
             <node concept="9wj7.1176474535556" id="1176492331666" role="9wj7.1103016434866.1176475119347" info="in">
               <node concept="vg0i.1068580123136" id="1176492331667" role="vg0i.1137021947720.1137022507850" info="sn">
                 <node concept="vg0i.1068581242878" id="1176492672998" role="vg0i.1068580123136.1068581517665" info="nn">
-                  <node concept="vg0i.1081236700937" id="1176492693378" role="vg0i.1068581242878.1068581517676" info="nn">
-                    <reference role="vg0i.1081236700937.1144433194310" target="7lvn.7973955287399271868" resolveInfo="EditorUtil" />
-                    <reference role="vg0i.1204053956946.1068499141037" target="7lvn.1684996642972287821" resolveInfo="createSelectIconButton" />
-                    <node concept="9wj7.1142886811589" id="1176492696394" role="vg0i.1204053956946.1068499141038" info="nn" />
-                    <node concept="9wj7.1161622981231" id="1176493020466" role="vg0i.1204053956946.1068499141038" info="nn" />
-                    <node concept="vg0i.1068580123137" id="1684996642972738321" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <node concept="vg0i.1081236700937" id="1304546202461446154" role="vg0i.1068581242878.1068581517676" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="7a0s.1684996642972287821" resolveInfo="createSelectIconButton" />
+                    <reference role="vg0i.1081236700937.1144433194310" target="7a0s.7973955287399271868" resolveInfo="EditorUtil" />
+                    <node concept="9wj7.1142886811589" id="1304546202461446155" role="vg0i.1204053956946.1068499141038" info="nn" />
+                    <node concept="9wj7.1161622981231" id="1304546202461446156" role="vg0i.1204053956946.1068499141038" info="nn" />
+                    <node concept="vg0i.1068580123137" id="1304546202461446157" role="vg0i.1204053956946.1068499141038" info="nn">
                       <property role="vg0i.1068580123137.1068580123138" value="true" />
                     </node>
                   </node>

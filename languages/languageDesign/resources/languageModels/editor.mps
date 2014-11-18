@@ -10,7 +10,7 @@
     <model ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" name="jetbrains.mps.baseLanguage.editor" />
     <model ref="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)" name="jetbrains.mps.lang.resources.behavior" />
     <model ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" name="jetbrains.mps.lang.core.editor" />
-    <model ref="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)" name="jetbrains.mps.ide.editor.util" />
+    <model ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" name="jetbrains.mps.editor.runtime" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -119,7 +119,7 @@
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="3767" ref="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
-    <import index="7lvn" ref="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)" />
+    <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
@@ -219,8 +219,8 @@
                 <node concept="vg0i.1068580123136" id="8974276187400029934" role="vg0i.1137021947720.1137022507850" info="sn">
                   <node concept="vg0i.1068581242878" id="8974276187400029935" role="vg0i.1068580123136.1068581517665" info="nn">
                     <node concept="vg0i.1081236700937" id="8974276187400029936" role="vg0i.1068581242878.1068581517676" info="nn">
-                      <reference role="vg0i.1081236700937.1144433194310" target="7lvn.7973955287399271868" resolveInfo="EditorUtil" />
-                      <reference role="vg0i.1204053956946.1068499141037" target="7lvn.1684996642972608268" resolveInfo="createSelectIconButton" />
+                      <reference role="vg0i.1081236700937.1144433194310" target="7a0s.7973955287399271868" resolveInfo="EditorUtil" />
+                      <reference role="vg0i.1204053956946.1068499141037" target="7a0s.1684996642972608268" resolveInfo="createSelectIconButton" />
                       <node concept="9wj7.1142886811589" id="8974276187400029937" role="vg0i.1204053956946.1068499141038" info="nn" />
                       <node concept="4ia1.5253134957341870583" id="8974276187400029938" role="vg0i.1204053956946.1068499141038" info="nn">
                         <reference role="4ia1.5253134957341870583.5253134957341870584" target="1oap.8974276187400029883" resolveInfo="IconResource" />

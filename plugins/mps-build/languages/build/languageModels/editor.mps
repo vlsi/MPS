@@ -26,6 +26,7 @@
     <model ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" name="jetbrains.mps.lang.core.editor" />
     <model ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" name="org.jetbrains.mps.openapi.model@java_stub" />
     <model ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" name="jetbrains.mps.editor.runtime.style@java_stub" />
+    <model ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" name="jetbrains.mps.editor.runtime" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
@@ -416,6 +417,7 @@
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="ejnv" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
+    <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
@@ -569,8 +571,8 @@
                   </node>
                   <node concept="vg0i.1068581242878" id="4241251026052580120" role="vg0i.1068580123136.1068581517665" info="nn">
                     <node concept="vg0i.1081236700937" id="8172593683334095845" role="vg0i.1068581242878.1068581517676" info="nn">
-                      <reference role="vg0i.1081236700937.1144433194310" target="7lvn.7973955287399271868" resolveInfo="EditorUtil" />
-                      <reference role="vg0i.1204053956946.1068499141037" target="7lvn.1684996642972517973" resolveInfo="createSelectButton" />
+                      <reference role="vg0i.1081236700937.1144433194310" target="7a0s.7973955287399271868" resolveInfo="EditorUtil" />
+                      <reference role="vg0i.1204053956946.1068499141037" target="7a0s.1684996642972517973" resolveInfo="createSelectButton" />
                       <node concept="9wj7.1142886811589" id="8172593683334095846" role="vg0i.1204053956946.1068499141038" info="nn" />
                       <node concept="4ia1.5253134957341870583" id="8172593683334095847" role="vg0i.1204053956946.1068499141038" info="nn">
                         <reference role="4ia1.5253134957341870583.5253134957341870585" target="3ior.5204048710541015587" resolveInfo="internalBaseDirectory" />
