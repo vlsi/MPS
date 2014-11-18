@@ -116,9 +116,9 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="3CF0obv8waN">
-    <reference role="1M2myG" target="lpry.4191445539799302575" resolve="ColorReference" />
+    <ref role="1M2myG" to="lpry:3CF0obv8w6J" resolve="ColorReference" />
     <node concept="1N5Pfh" id="3CF0obv8wbN" role="1Mr941">
-      <reference role="1N5Vy1" target="lpry.4191445539799302810" />
+      <ref role="1N5Vy1" to="lpry:3CF0obv8waq" />
       <node concept="13QW63" id="3CF0obv8$fN" role="1N6uqs">
         <node concept="3clFbS" id="3CF0obv8$fP" role="2VODD2">
           <node concept="3clFbF" id="3CF0obv8$R$" role="3cqZAp">
@@ -126,8 +126,8 @@
               <node concept="YeOm9" id="3CF0obv8Xxs" role="2ShVmc">
                 <node concept="1Y3b0j" id="3CF0obv8Xxv" role="YeSDq">
                   <property role="2bfB8j" value="true" />
-                  <reference role="1Y3XeK" target="o8zo.5455284157994035575" resolve="ListScope" />
-                  <reference role="37wK5l" target="o8zo.5455284157994035577" resolve="ListScope" />
+                  <ref role="1Y3XeK" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
+                  <ref role="37wK5l" to="o8zo:4IP40Bi3e_T" resolve="ListScope" />
                   <node concept="3Tm1VV" id="3CF0obv8Xxw" role="1B3o_S" />
                   <node concept="3clFb_" id="3CF0obv8XxF" role="jymVt">
                     <property role="1EzhhJ" value="false" />
@@ -142,13 +142,13 @@
                       <node concept="3clFbF" id="3CF0obv96o8" role="3cqZAp">
                         <node concept="2OqwBi" id="3CF0obv96Ef" role="3clFbG">
                           <node concept="1PxgMI" id="3CF0obv96rV" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpee.1070462154015" resolve="StaticFieldDeclaration" />
+                            <ref role="1PxNhF" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
                             <node concept="37vLTw" id="3CF0obv96o7" role="1PxMeX">
-                              <reference role="3cqZAo" target="4191445539799423087" resolve="child" />
+                              <ref role="3cqZAo" node="3CF0obv8XxJ" resolve="child" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3CF0obv98rF" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
                       </node>
@@ -156,10 +156,10 @@
                   </node>
                   <node concept="2OqwBi" id="3CF0obv8ZXQ" role="37wK5m">
                     <node concept="3B5_sB" id="3CF0obv8ZCr" role="2Oq$k0">
-                      <reference role="3B5MYn" target="1t7x.~Color" resolve="Color" />
+                      <ref role="3B5MYn" to="1t7x:~Color" resolve="Color" />
                     </node>
                     <node concept="2qgKlT" id="3CF0obv94Ln" role="2OqNvi">
-                      <reference role="37wK5l" target="tpek.5292274854859223538" resolve="staticFields" />
+                      <ref role="37wK5l" to="tpek:4_LVZ3pBr7M" resolve="staticFields" />
                     </node>
                   </node>
                 </node>
@@ -171,9 +171,9 @@
     </node>
   </node>
   <node concept="1M2fIO" id="W6XMzExVXc">
-    <reference role="1M2myG" target="lpry.5898776707557474722" resolve="Square" />
+    <ref role="1M2myG" to="lpry:57sEyAnjW6y" resolve="Square" />
     <node concept="EnEH3" id="W6XMzExVYn" role="1MhHOB">
-      <reference role="EomxK" target="lpry.5898776707557474728" resolve="size" />
+      <ref role="EomxK" to="lpry:57sEyAnjW6C" resolve="size" />
       <node concept="1LLf8_" id="W6XMzExVYK" role="1LXaQT">
         <node concept="3clFbS" id="W6XMzExVYL" role="2VODD2">
           <node concept="3clFbF" id="W6XMzExWv2" role="3cqZAp">
@@ -184,7 +184,7 @@
               <node concept="2OqwBi" id="W6XMzExWww" role="37vLTJ">
                 <node concept="EsrRn" id="W6XMzExWv1" role="2Oq$k0" />
                 <node concept="3TrcHB" id="W6XMzExWMo" role="2OqNvi">
-                  <reference role="3TsBF5" target="lpry.5898776707557474728" resolve="size" />
+                  <ref role="3TsBF5" to="lpry:57sEyAnjW6C" resolve="size" />
                 </node>
               </node>
             </node>
@@ -195,7 +195,7 @@
               <node concept="2OqwBi" id="W6XMzEykHa" role="37vLTJ">
                 <node concept="EsrRn" id="W6XMzEykHb" role="2Oq$k0" />
                 <node concept="3TrcHB" id="W6XMzEykHc" role="2OqNvi">
-                  <reference role="3TsBF5" target="lpry.5898776707557474728" resolve="size" />
+                  <ref role="3TsBF5" to="lpry:57sEyAnjW6C" resolve="size" />
                 </node>
               </node>
             </node>
@@ -205,9 +205,9 @@
     </node>
   </node>
   <node concept="1M2fIO" id="W6XMzEz0Q$">
-    <reference role="1M2myG" target="lpry.5898776707557474712" resolve="Circle" />
+    <ref role="1M2myG" to="lpry:57sEyAnjW6o" resolve="Circle" />
     <node concept="EnEH3" id="W6XMzEz0Ro" role="1MhHOB">
-      <reference role="EomxK" target="lpry.5898776707557474718" resolve="radius" />
+      <ref role="EomxK" to="lpry:57sEyAnjW6u" resolve="radius" />
       <node concept="1LLf8_" id="W6XMzEz0Rq" role="1LXaQT">
         <node concept="3clFbS" id="W6XMzEz0Rr" role="2VODD2">
           <node concept="3clFbF" id="W6XMzEz0Rz" role="3cqZAp">
@@ -218,7 +218,7 @@
               <node concept="2OqwBi" id="W6XMzEz0Tp" role="37vLTJ">
                 <node concept="EsrRn" id="W6XMzEz0Ry" role="2Oq$k0" />
                 <node concept="3TrcHB" id="W6XMzEz12B" role="2OqNvi">
-                  <reference role="3TsBF5" target="lpry.5898776707557474718" resolve="radius" />
+                  <ref role="3TsBF5" to="lpry:57sEyAnjW6u" resolve="radius" />
                 </node>
               </node>
             </node>
@@ -229,7 +229,7 @@
               <node concept="2OqwBi" id="W6XMzEz2gE" role="37vLTJ">
                 <node concept="EsrRn" id="W6XMzEz2f7" role="2Oq$k0" />
                 <node concept="3TrcHB" id="W6XMzEz2q1" role="2OqNvi">
-                  <reference role="3TsBF5" target="lpry.5898776707557474718" resolve="radius" />
+                  <ref role="3TsBF5" to="lpry:57sEyAnjW6u" resolve="radius" />
                 </node>
               </node>
             </node>

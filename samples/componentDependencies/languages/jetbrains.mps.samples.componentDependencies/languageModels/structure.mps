@@ -46,91 +46,91 @@
   <node concept="1TIwiD" id="5pu6noS52gF">
     <property role="TrG5h" value="ComponentSet" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6sC7QXwR9qu" role="1TKVEl">
       <property role="TrG5h" value="query" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyj" id="5pu6noS56YC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="component" />
       <property role="20lbJX" value="1..n" />
-      <reference role="20lvS9" target="6223439730610336068" resolve="Component" />
+      <ref role="20lvS9" node="5pu6noS5f54" resolve="Component" />
     </node>
     <node concept="PrWs8" id="5pu6noS5f52" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="5pu6noS5f54">
     <property role="TrG5h" value="Component" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5pu6noS6XHd" role="1TKVEl">
       <property role="TrG5h" value="x" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="5pu6noS6XHf" role="1TKVEl">
       <property role="TrG5h" value="y" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="74C6il$sxI8" role="1TKVEl">
       <property role="TrG5h" value="width" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="74C6il$sxIf" role="1TKVEl">
       <property role="TrG5h" value="heigh" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="74C6il$sxIF" role="1TKVEl">
       <property role="TrG5h" value="subsystem" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyj" id="5pu6noS5f57" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="dep" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6223439730610762144" resolve="Dependency" />
+      <ref role="20lvS9" node="5pu6noS6R6w" resolve="Dependency" />
     </node>
     <node concept="1TJgyj" id="5pu6noS6Y52" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="in" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6223439730610790758" resolve="InPort" />
+      <ref role="20lvS9" node="5pu6noS6Y5A" resolve="InPort" />
     </node>
     <node concept="1TJgyj" id="5pu6noS6Y56" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="out" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6223439730610790725" resolve="OutPort" />
+      <ref role="20lvS9" node="5pu6noS6Y55" resolve="OutPort" />
     </node>
     <node concept="PrWs8" id="5pu6noS5f55" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="5pu6noS6R6w">
     <property role="TrG5h" value="Dependency" />
     <property role="34LRSv" value="depends on" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5pu6noS6Rpk" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="to" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="6223439730610336068" resolve="Component" />
+      <ref role="20lvS9" node="5pu6noS5f54" resolve="Component" />
     </node>
   </node>
   <node concept="1TIwiD" id="5pu6noS6Y55">
     <property role="TrG5h" value="OutPort" />
     <property role="3GE5qa" value="" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="74C6il$gx0s" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="5pu6noS6Y5A">
     <property role="TrG5h" value="InPort" />
     <property role="3GE5qa" value="" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="74C6il$gx0a" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
 </model>

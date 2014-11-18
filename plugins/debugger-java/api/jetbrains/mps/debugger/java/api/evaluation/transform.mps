@@ -102,7 +102,7 @@
       <property role="TrG5h" value="INSTANCE" />
       <node concept="3Tmbuc" id="6dm0XGkq9d7" role="1B3o_S" />
       <node concept="3uibUv" id="4ermu79GPfV" role="1tU5fm">
-        <reference role="3uigEE" target="4871586248217809898" resolve="TransformatorBuilder" />
+        <ref role="3uigEE" node="4ermu79GPfE" resolve="TransformatorBuilder" />
       </node>
     </node>
     <node concept="Wx3nA" id="6w0uxLH27wC" role="jymVt">
@@ -110,11 +110,11 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tmbuc" id="6w0uxLH27wF" role="1B3o_S" />
       <node concept="3uibUv" id="6w0uxLH27wG" role="1tU5fm">
-        <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
       </node>
       <node concept="2ShNRf" id="6w0uxLH27wI" role="33vP2m">
         <node concept="1pGfFk" id="6w0uxLH27wK" role="2ShVmc">
-          <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+          <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
         </node>
       </node>
     </node>
@@ -129,7 +129,7 @@
       <node concept="3Tm1VV" id="7dWYa4zfZez" role="1B3o_S" />
       <node concept="3clFbS" id="7dWYa4zfZe$" role="3clF47" />
       <node concept="3uibUv" id="7dWYa4zfZe_" role="3clF45">
-        <reference role="3uigEE" target="8321799582438650756" resolve="TransformatorBuilder.Transformator" />
+        <ref role="3uigEE" node="7dWYa4zfZe4" resolve="TransformatorBuilder.Transformator" />
       </node>
       <node concept="37vLTG" id="7dWYa4zfZeA" role="3clF46">
         <property role="TrG5h" value="node" />
@@ -149,7 +149,7 @@
       <node concept="37vLTG" id="1SP_k6WAUnx" role="3clF46">
         <property role="TrG5h" value="type" />
         <node concept="3Tqbb2" id="1SP_k6WAUny" role="1tU5fm">
-          <reference role="ehGHo" target="tpee.1068431790189" resolve="Type" />
+          <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
         </node>
       </node>
     </node>
@@ -157,7 +157,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getProxyTypeFromType" />
       <node concept="3Tqbb2" id="1SP_k6WAUn$" role="3clF45">
-        <reference role="ehGHo" target="tpee.1107535904670" resolve="ClassifierType" />
+        <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
       </node>
       <node concept="3Tm1VV" id="1SP_k6WAUn_" role="1B3o_S" />
       <node concept="3clFbS" id="1SP_k6WAUnA" role="3clF47" />
@@ -186,19 +186,19 @@
       <node concept="3clFbS" id="4ermu79GPfQ" role="3clF47">
         <node concept="1HWtB8" id="6w0uxLH2hKj" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeooYY" role="1HWFw0">
-            <reference role="3cqZAo" target="7494124042451449896" resolve="LOCK" />
+            <ref role="3cqZAo" node="6w0uxLH27wC" resolve="LOCK" />
           </node>
           <node concept="3clFbS" id="6w0uxLH2hKl" role="1HWHxc">
             <node concept="3cpWs6" id="6w0uxLH2hKn" role="3cqZAp">
               <node concept="37vLTw" id="2BHiRxeoh9R" role="3cqZAk">
-                <reference role="3cqZAo" target="4871586248217809912" resolve="INSTANCE" />
+                <ref role="3cqZAo" node="4ermu79GPfS" resolve="INSTANCE" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="4ermu79GPfR" role="3clF45">
-        <reference role="3uigEE" target="4871586248217809898" resolve="TransformatorBuilder" />
+        <ref role="3uigEE" node="4ermu79GPfE" resolve="TransformatorBuilder" />
       </node>
     </node>
     <node concept="312cEu" id="7dWYa4zfZe4" role="jymVt">
@@ -232,11 +232,11 @@
           <node concept="2OqwBi" id="5Si385jKmFs" role="3clFbG">
             <node concept="2ShNRf" id="5Si385jKmFp" role="2Oq$k0">
               <node concept="1pGfFk" id="5Si385jKmFr" role="2ShVmc">
-                <reference role="37wK5l" target="cvs4.7157912897227100957" resolve="TransformatorBuilderImpl" />
+                <ref role="37wK5l" to="cvs4:6dm0XGkq9ct" resolve="TransformatorBuilderImpl" />
               </node>
             </node>
             <node concept="liA8E" id="5Si385jKmFw" role="2OqNvi">
-              <reference role="37wK5l" target="cvs4.7157912897227100995" resolve="init" />
+              <ref role="37wK5l" to="cvs4:6dm0XGkq9d3" resolve="init" />
             </node>
           </node>
         </node>

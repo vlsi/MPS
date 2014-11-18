@@ -80,33 +80,33 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="smodelAttribute" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="5169995583184591161" resolve="Attribute" />
+      <ref role="20lvS9" node="4uZwTti3_$T" resolve="Attribute" />
     </node>
     <node concept="1TJgyi" id="gOOYnlO" role="1TKVEl">
       <property role="TrG5h" value="shortDescription" />
-      <reference role="AX2Wp" target="1082983041843" resolve="string" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="gOOYy9I" role="1TKVEl">
       <property role="TrG5h" value="alias" />
-      <reference role="AX2Wp" target="1082983041843" resolve="string" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="hnGE5uv" role="1TKVEl">
       <property role="TrG5h" value="virtualPackage" />
-      <reference role="AX2Wp" target="1082983041843" resolve="string" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="PlHQZ" id="h0TrEE$">
     <property role="TrG5h" value="INamedConcept" />
     <node concept="1TJgyi" id="h0TrG11" role="1TKVEl">
       <property role="TrG5h" value="name" />
-      <reference role="AX2Wp" target="1082983041843" resolve="string" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="PlHQZ" id="hqLv6T6">
     <property role="TrG5h" value="IResolveInfo" />
     <node concept="1TJgyi" id="hqLvdgl" role="1TKVEl">
       <property role="TrG5h" value="resolveInfo" />
-      <reference role="AX2Wp" target="1082983041843" resolve="string" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="PlHQZ" id="hLJPP0O">
@@ -131,14 +131,14 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ExportScope" />
     <property role="3GE5qa" value="export" />
-    <reference role="1TJDcQ" target="3364660638048049748" resolve="NodeAttribute" />
+    <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="PrWs8" id="1PH8wrDFZav" role="PzmwI">
-      <reference role="PrY4T" target="1319728274784973096" resolve="InterfacePart" />
+      <ref role="PrY4T" node="19gBtYEAf4C" resolve="InterfacePart" />
     </node>
     <node concept="M6xJ_" id="6_gUeuqOeTD" role="lGtFl">
       <property role="Hh88m" value="export" />
       <node concept="trNpa" id="166$sc$ZIAz" role="EQaZv">
-        <reference role="trN6q" target="1133920641626" resolve="BaseConcept" />
+        <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
       </node>
     </node>
   </node>
@@ -148,7 +148,7 @@
     <property role="TrG5h" value="ExportScopePublic" />
     <property role="3GE5qa" value="export" />
     <property role="34LRSv" value="@export(public)" />
-    <reference role="1TJDcQ" target="5425021671150136555" resolve="ExportScope" />
+    <ref role="1TJDcQ" node="4H9z7u7GMNF" resolve="ExportScope" />
     <node concept="24uvON" id="3ye0wbzmDhi" role="lGtFl" />
     <node concept="M6xJ_" id="6_gUeuqOeP5" role="lGtFl">
       <property role="Hh88m" value="" />
@@ -160,10 +160,10 @@
     <property role="TrG5h" value="ExportScopeNamespace" />
     <property role="3GE5qa" value="export" />
     <property role="34LRSv" value="@export(namespace)" />
-    <reference role="1TJDcQ" target="5425021671150136555" resolve="ExportScope" />
+    <ref role="1TJDcQ" node="4H9z7u7GMNF" resolve="ExportScope" />
     <node concept="1TJgyi" id="2erkSmBSEUT" role="1TKVEl">
       <property role="TrG5h" value="namespace" />
-      <reference role="AX2Wp" target="1082983041843" resolve="string" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
     <node concept="24uvON" id="3ye0wbzmDhh" role="lGtFl" />
     <node concept="M6xJ_" id="6_gUeuqOeTm" role="lGtFl">
@@ -176,7 +176,7 @@
     <property role="TrG5h" value="ExportScopeModule" />
     <property role="3GE5qa" value="export" />
     <property role="34LRSv" value="@export(module)" />
-    <reference role="1TJDcQ" target="5425021671150136555" resolve="ExportScope" />
+    <ref role="1TJDcQ" node="4H9z7u7GMNF" resolve="ExportScope" />
     <node concept="24uvON" id="3ye0wbzmDhg" role="lGtFl" />
     <node concept="M6xJ_" id="6_gUeuqOeQ2" role="lGtFl">
       <property role="Hh88m" value="" />
@@ -188,7 +188,7 @@
     <property role="MwhBj" value="${module}/icons/annotationLink.png" />
     <property role="TrG5h" value="Attribute" />
     <property role="3GE5qa" value="attributes" />
-    <reference role="1TJDcQ" target="1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="gw2VY9q" resolve="BaseConcept" />
     <node concept="M6xJ_" id="6_gUeuqOeS6" role="lGtFl">
       <property role="Hh88m" value="" />
       <node concept="tn0Fv" id="166$sc$NVlL" role="HhnKV">
@@ -201,10 +201,10 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="LinkAttribute" />
     <property role="3GE5qa" value="attributes" />
-    <reference role="1TJDcQ" target="5169995583184591161" resolve="Attribute" />
+    <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="1TJgyi" id="1x$A_M24zkk" role="1TKVEl">
       <property role="TrG5h" value="linkRole" />
-      <reference role="AX2Wp" target="1082983041843" resolve="string" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
     <node concept="M6xJ_" id="6_gUeuqOeP3" role="lGtFl">
       <property role="Hh88m" value="" />
@@ -215,7 +215,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="NodeAttribute" />
     <property role="3GE5qa" value="attributes" />
-    <reference role="1TJDcQ" target="5169995583184591161" resolve="Attribute" />
+    <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="M6xJ_" id="6_gUeuqOePG" role="lGtFl">
       <property role="Hh88m" value="" />
     </node>
@@ -225,10 +225,10 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="PropertyAttribute" />
     <property role="3GE5qa" value="attributes" />
-    <reference role="1TJDcQ" target="5169995583184591161" resolve="Attribute" />
+    <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="1TJgyi" id="1x$A_M24zkl" role="1TKVEl">
       <property role="TrG5h" value="propertyName" />
-      <reference role="AX2Wp" target="1082983041843" resolve="string" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
     <node concept="M6xJ_" id="6_gUeuqOeQZ" role="lGtFl">
       <property role="Hh88m" value="" />
@@ -252,14 +252,14 @@
   <node concept="1TIwiD" id="3EoG9lZUeni">
     <property role="TrG5h" value="SuppressErrorsAnnotation" />
     <property role="3GE5qa" value="types" />
-    <reference role="1TJDcQ" target="3364660638048049748" resolve="NodeAttribute" />
+    <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="PrWs8" id="2zn6YdLtwWg" role="PzmwI">
-      <reference role="PrY4T" target="3393165121846091587" resolve="ISuppressErrors" />
+      <ref role="PrY4T" node="2WmWrdnSpX3" resolve="ISuppressErrors" />
     </node>
     <node concept="M6xJ_" id="6_gUeuqOeQH" role="lGtFl">
       <property role="Hh88m" value="suppress" />
       <node concept="trNpa" id="166$sc$ZIAD" role="EQaZv">
-        <reference role="trN6q" target="3393165121846091586" resolve="ICanSuppressErrors" />
+        <ref role="trN6q" node="2WmWrdnSpX2" resolve="ICanSuppressErrors" />
       </node>
     </node>
   </node>
@@ -272,7 +272,7 @@
   <node concept="PlHQZ" id="19gBtYEv0ln">
     <property role="TrG5h" value="ImplementationPart" />
     <node concept="PrWs8" id="19gBtYEv4$q" role="PrDN$">
-      <reference role="PrY4T" target="3361475375157466558" resolve="ScopeFacade" />
+      <ref role="PrY4T" node="2UAn0GTuXmY" resolve="ScopeFacade" />
     </node>
   </node>
   <node concept="PlHQZ" id="19gBtYEvilR">
@@ -284,7 +284,7 @@
   <node concept="PlHQZ" id="64$4ecGX64Q">
     <property role="TrG5h" value="ImplementationWithStubPart" />
     <node concept="PrWs8" id="64$4ecGX64R" role="PrDN$">
-      <reference role="PrY4T" target="1319728274783077719" resolve="ImplementationPart" />
+      <ref role="PrY4T" node="19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
   </node>
   <node concept="PlHQZ" id="8AYOKVCAP5">

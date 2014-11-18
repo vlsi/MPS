@@ -39,33 +39,33 @@
     <node concept="1TJgyj" id="ftl0ImzDZ0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="grandChild_0_1" />
-      <reference role="20lvS9" target="278471160714141636" resolve="GrandChild" />
+      <ref role="20lvS9" node="ftl0ImzDZ4" resolve="GrandChild" />
     </node>
     <node concept="1TJgyj" id="ftl0ImzDZ1" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="grandChild_1" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="278471160714141636" resolve="GrandChild" />
+      <ref role="20lvS9" node="ftl0ImzDZ4" resolve="GrandChild" />
     </node>
     <node concept="1TJgyj" id="ftl0ImzDZ2" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="grandChild_0_n" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="278471160714141636" resolve="GrandChild" />
+      <ref role="20lvS9" node="ftl0ImzDZ4" resolve="GrandChild" />
     </node>
     <node concept="1TJgyj" id="ftl0ImzDZ3" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="grandChild_1_n" />
       <property role="20lbJX" value="1..n" />
-      <reference role="20lvS9" target="278471160714141636" resolve="GrandChild" />
+      <ref role="20lvS9" node="ftl0ImzDZ4" resolve="GrandChild" />
     </node>
     <node concept="PrWs8" id="4WQQT1VPPnb" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="ftl0ImzDZ4">
     <property role="TrG5h" value="GrandChild" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="ftl0ImzDZ5">
     <property role="TrG5h" value="Root" />
@@ -73,62 +73,62 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="child_0_n" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="278471160714141631" resolve="Child" />
+      <ref role="20lvS9" node="ftl0ImzDYZ" resolve="Child" />
     </node>
     <node concept="1TJgyj" id="ftl0ImzDZ7" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="child_1_n" />
       <property role="20lbJX" value="1..n" />
-      <reference role="20lvS9" target="278471160714141631" resolve="Child" />
+      <ref role="20lvS9" node="ftl0ImzDYZ" resolve="Child" />
     </node>
     <node concept="1TJgyj" id="1U0BydTaHg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="childSubConcept_0_n" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="34342663958604621" resolve="ChildSubConcept" />
+      <ref role="20lvS9" node="1U0BydTaHd" resolve="ChildSubConcept" />
     </node>
     <node concept="PrWs8" id="4WQQT1VPPnx" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="1U0BydTaHd">
     <property role="TrG5h" value="ChildSubConcept" />
-    <reference role="1TJDcQ" target="278471160714141631" resolve="Child" />
+    <ref role="1TJDcQ" node="ftl0ImzDYZ" resolve="Child" />
     <node concept="1TJgyj" id="1U0BydTaHe" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="specializedGranChild_0_1" />
-      <reference role="20lvS9" target="278471160714141636" resolve="GrandChild" />
-      <reference role="20ksaX" target="278471160714141632" />
+      <ref role="20lvS9" node="ftl0ImzDZ4" resolve="GrandChild" />
+      <ref role="20ksaX" node="ftl0ImzDZ0" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Ac3mvq__F6">
     <property role="TrG5h" value="ReferenceContainer" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7Ac3mvq__F7" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="root" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="278471160714141637" resolve="Root" />
+      <ref role="20lvS9" node="ftl0ImzDZ5" resolve="Root" />
     </node>
     <node concept="1TJgyj" id="7Ac3mvq__F8" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="leftChild" />
-      <reference role="20lvS9" target="278471160714141631" resolve="Child" />
+      <ref role="20lvS9" node="ftl0ImzDYZ" resolve="Child" />
     </node>
     <node concept="1TJgyj" id="7Ac3mvq__F9" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="rightChild" />
-      <reference role="20lvS9" target="278471160714141631" resolve="Child" />
+      <ref role="20lvS9" node="ftl0ImzDYZ" resolve="Child" />
     </node>
   </node>
   <node concept="1TIwiD" id="2urHzIcEbvY">
     <property role="TrG5h" value="ReferenceContainerSubConcept" />
-    <reference role="1TJDcQ" target="8758390115028851398" resolve="ReferenceContainer" />
+    <ref role="1TJDcQ" node="7Ac3mvq__F6" resolve="ReferenceContainer" />
     <node concept="1TJgyj" id="2urHzIcEbw0" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="specializedRightChild" />
-      <reference role="20lvS9" target="34342663958604621" resolve="ChildSubConcept" />
-      <reference role="20ksaX" target="8758390115028851401" />
+      <ref role="20lvS9" node="1U0BydTaHd" resolve="ChildSubConcept" />
+      <ref role="20ksaX" node="7Ac3mvq__F9" />
     </node>
   </node>
 </model>

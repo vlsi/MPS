@@ -83,8 +83,8 @@
   <node concept="bUwia" id="hAy33h3">
     <property role="TrG5h" value="main" />
     <node concept="3lhOvk" id="hAy3e9P" role="3lj3bC">
-      <reference role="30HIoZ" target="tpm0.1195168316083" resolve="InputRoot" />
-      <reference role="3lhOvi" target="1209605205934" resolve="outputRoot" />
+      <ref role="30HIoZ" to="tpm0:hp5_jEN" resolve="InputRoot" />
+      <ref role="3lhOvi" node="hAy5EYI" resolve="outputRoot" />
       <node concept="30G5F_" id="hAy3gYK" role="30HLyM">
         <node concept="3clFbS" id="hAy3gYL" role="2VODD2">
           <node concept="3clFbF" id="hAy3iHC" role="3cqZAp">
@@ -92,12 +92,12 @@
               <node concept="2OqwBi" id="hAy3iJB" role="2Oq$k0">
                 <node concept="30H73N" id="hAy3iHD" role="2Oq$k0" />
                 <node concept="3TrcHB" id="hAy3ktL" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpm0.1202243304949" resolve="useInTest" />
+                  <ref role="3TsBF5" to="tpm0:hvFifRP" resolve="useInTest" />
                 </node>
               </node>
               <node concept="3t7uKx" id="hAy3m2x" role="2OqNvi">
                 <node concept="uoxfO" id="hAy3m2y" role="3t7uKA">
-                  <reference role="uo_Cq" target="tpm0.1209603553188" />
+                  <ref role="uo_Cq" to="tpm0:hAxZnu$" />
                 </node>
               </node>
             </node>
@@ -110,7 +110,7 @@
     <property role="TrG5h" value="outputRoot" />
     <property role="15nCFB" value="output for 'don't apply reduction rule twice' test" />
     <node concept="n94m4" id="hAy5EYJ" role="lGtFl">
-      <reference role="n9lRv" target="tpm0.1195168316083" resolve="InputRoot" />
+      <ref role="n9lRv" to="tpm0:hp5_jEN" resolve="InputRoot" />
     </node>
     <node concept="2y1bA8" id="hAy7DH6" role="15EkXs">
       <property role="15Hqq1" value="this is OutputNode_forDontApplyReductionTwice_test actually" />

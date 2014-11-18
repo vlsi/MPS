@@ -78,7 +78,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="4IqbYlp54qR">
-    <reference role="1M2myG" target="v0h4.5447719361346519865" resolve="GetAmount" />
+    <ref role="1M2myG" to="v0h4:4IqbYlp4WcT" resolve="GetAmount" />
     <node concept="nKS2y" id="4IqbYlp54qS" role="1MLUbF">
       <node concept="3clFbS" id="4IqbYlp54qT" role="2VODD2">
         <node concept="3clFbF" id="4IqbYlp54qU" role="3cqZAp">
@@ -88,16 +88,16 @@
               <node concept="1UaxmW" id="hP7R8Tb" role="3uHU7B">
                 <node concept="1YaCAy" id="hP7R8Tc" role="1Ub_4A">
                   <property role="TrG5h" value="moneyType" />
-                  <reference role="1YaFvo" target="v0h4.5447719361346490730" resolve="MoneyType" />
+                  <ref role="1YaFvo" to="v0h4:4IqbYlp4P5E" resolve="MoneyType" />
                 </node>
                 <node concept="2OqwBi" id="hP7R8Td" role="1Ub_4B">
                   <node concept="2OqwBi" id="hP7R8Te" role="2Oq$k0">
                     <node concept="1PxgMI" id="hP7R8Tf" role="2Oq$k0">
-                      <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                      <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                       <node concept="nLn13" id="hP7R8Tg" role="1PxMeX" />
                     </node>
                     <node concept="3TrEf2" id="hP7R8Th" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpee.1197027771414" />
+                      <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                     </node>
                   </node>
                   <node concept="3JvlWi" id="hP7R8Ti" role="2OqNvi" />
@@ -108,7 +108,7 @@
               <node concept="nLn13" id="hP7R8Tk" role="2Oq$k0" />
               <node concept="1mIQ4w" id="hP7R8Tl" role="2OqNvi">
                 <node concept="chp4Y" id="hP7R8Tm" role="cj9EA">
-                  <reference role="cht4Q" target="tpee.1197027756228" resolve="DotExpression" />
+                  <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
                 </node>
               </node>
             </node>
@@ -118,7 +118,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="1zoS8cVcJ6R">
-    <reference role="1M2myG" target="v0h4.1790427706118304177" resolve="GetCurrency" />
+    <ref role="1M2myG" to="v0h4:1zoS8cVcJ6L" resolve="GetCurrency" />
     <node concept="nKS2y" id="1zoS8cVcJ6S" role="1MLUbF">
       <node concept="3clFbS" id="1zoS8cVcJ6T" role="2VODD2">
         <node concept="3clFbF" id="1zoS8cVcJ6U" role="3cqZAp">
@@ -128,16 +128,16 @@
               <node concept="1UaxmW" id="1zoS8cVcJ76" role="3uHU7B">
                 <node concept="1YaCAy" id="1zoS8cVcRQT" role="1Ub_4A">
                   <property role="TrG5h" value="moneyType" />
-                  <reference role="1YaFvo" target="v0h4.5447719361346490730" resolve="MoneyType" />
+                  <ref role="1YaFvo" to="v0h4:4IqbYlp4P5E" resolve="MoneyType" />
                 </node>
                 <node concept="2OqwBi" id="1zoS8cVcRQO" role="1Ub_4B">
                   <node concept="2OqwBi" id="1zoS8cVcRQJ" role="2Oq$k0">
                     <node concept="1PxgMI" id="1zoS8cVcRQH" role="2Oq$k0">
-                      <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                      <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                       <node concept="nLn13" id="1zoS8cVcJ79" role="1PxMeX" />
                     </node>
                     <node concept="3TrEf2" id="1zoS8cVcRQN" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpee.1197027771414" />
+                      <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                     </node>
                   </node>
                   <node concept="3JvlWi" id="1zoS8cVcRQS" role="2OqNvi" />
@@ -148,7 +148,7 @@
               <node concept="nLn13" id="1zoS8cVcJ6V" role="2Oq$k0" />
               <node concept="1mIQ4w" id="1zoS8cVcJ70" role="2OqNvi">
                 <node concept="chp4Y" id="1zoS8cVcJ72" role="cj9EA">
-                  <reference role="cht4Q" target="tpee.1197027756228" resolve="DotExpression" />
+                  <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
                 </node>
               </node>
             </node>
@@ -158,7 +158,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="1zoS8cVd22w">
-    <reference role="1M2myG" target="v0h4.1790427706118381722" resolve="ConvertTo" />
+    <ref role="1M2myG" to="v0h4:1zoS8cVd22q" resolve="ConvertTo" />
     <node concept="nKS2y" id="1zoS8cVd22x" role="1MLUbF">
       <node concept="3clFbS" id="1zoS8cVd22y" role="2VODD2">
         <node concept="3clFbF" id="1zoS8cVd22z" role="3cqZAp">
@@ -167,7 +167,7 @@
               <node concept="nLn13" id="1zoS8cVd22$" role="2Oq$k0" />
               <node concept="1mIQ4w" id="1zoS8cVd22D" role="2OqNvi">
                 <node concept="chp4Y" id="1zoS8cVd22F" role="cj9EA">
-                  <reference role="cht4Q" target="tpee.1197027756228" resolve="DotExpression" />
+                  <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
                 </node>
               </node>
             </node>
@@ -176,16 +176,16 @@
               <node concept="1UaxmW" id="1zoS8cVd3gR" role="3uHU7B">
                 <node concept="1YaCAy" id="1zoS8cVd3h4" role="1Ub_4A">
                   <property role="TrG5h" value="moneyType" />
-                  <reference role="1YaFvo" target="v0h4.5447719361346490730" resolve="MoneyType" />
+                  <ref role="1YaFvo" to="v0h4:4IqbYlp4P5E" resolve="MoneyType" />
                 </node>
                 <node concept="2OqwBi" id="1zoS8cVd3gZ" role="1Ub_4B">
                   <node concept="2OqwBi" id="1zoS8cVd3gU" role="2Oq$k0">
                     <node concept="1PxgMI" id="1zoS8cVd3gK" role="2Oq$k0">
-                      <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                      <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                       <node concept="nLn13" id="1zoS8cVd3gJ" role="1PxMeX" />
                     </node>
                     <node concept="3TrEf2" id="1zoS8cVd3gY" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpee.1197027771414" />
+                      <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                     </node>
                   </node>
                   <node concept="3JvlWi" id="1zoS8cVd3h3" role="2OqNvi" />
@@ -198,7 +198,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="38gGBrhh2Ub">
-    <reference role="1M2myG" target="v0h4.5447719361346490674" resolve="MoneyLiteral" />
+    <ref role="1M2myG" to="v0h4:4IqbYlp4P4M" resolve="MoneyLiteral" />
   </node>
 </model>
 

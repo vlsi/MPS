@@ -31,21 +31,21 @@
   </registry>
   <node concept="1M2fIO" id="2S48fJgAQiT">
     <property role="3GE5qa" value="RefTest" />
-    <reference role="1M2myG" target="tpm0.3315811491560119815" resolve="RefTestParamRef" />
+    <ref role="1M2myG" to="tpm0:2S48fJgAlS7" resolve="RefTestParamRef" />
     <node concept="1N5Pfh" id="2S48fJgAQiU" role="1Mr941">
-      <reference role="1N5Vy1" target="tpm0.3315811491560119816" />
+      <ref role="1N5Vy1" to="tpm0:2S48fJgAlS8" />
       <node concept="1dDu$B" id="2S48fJgAQiV" role="1N6uqs">
-        <reference role="1dDu$A" target="tpm0.3315811491560119808" resolve="RefTestParam" />
+        <ref role="1dDu$A" to="tpm0:2S48fJgAlS0" resolve="RefTestParam" />
       </node>
     </node>
   </node>
   <node concept="1M2fIO" id="59r$iG980Ny">
     <property role="3GE5qa" value="RefTest" />
-    <reference role="1M2myG" target="tpm0.3315811491560119817" resolve="RefTestMethodCall" />
+    <ref role="1M2myG" to="tpm0:2S48fJgAlS9" resolve="RefTestMethodCall" />
     <node concept="1N5Pfh" id="59r$iG980Nz" role="1Mr941">
-      <reference role="1N5Vy1" target="tpm0.3315811491560119818" />
+      <ref role="1N5Vy1" to="tpm0:2S48fJgAlSa" />
       <node concept="1dDu$B" id="59r$iG980N$" role="1N6uqs">
-        <reference role="1dDu$A" target="tpm0.3315811491560119806" resolve="RefTestMethod" />
+        <ref role="1dDu$A" to="tpm0:2S48fJgAlRY" resolve="RefTestMethod" />
       </node>
     </node>
   </node>

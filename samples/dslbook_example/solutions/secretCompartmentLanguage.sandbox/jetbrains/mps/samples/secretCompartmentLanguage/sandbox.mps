@@ -43,26 +43,26 @@
   </registry>
   <node concept="2VFaWE" id="hqVGUiQ">
     <property role="2WFZrQ" value="MrsH" />
-    <reference role="311S5R" target="1197223600313" resolve="idle" />
+    <ref role="311S5R" node="hr05A2T" resolve="idle" />
     <node concept="2WVoc1" id="hr05A2T" role="303EYT">
       <property role="2WVybo" value="idle" />
       <node concept="314JWW" id="hr17nSQ" role="315Sed">
-        <reference role="314QsE" target="1197169658976" resolve="doorClosed" />
-        <reference role="314S4V" target="1197240913970" resolve="doorClosed" />
+        <ref role="314QsE" node="hqWROLw" resolve="doorClosed" />
+        <ref role="314S4V" node="hr17D0M" resolve="doorClosed" />
       </node>
     </node>
     <node concept="2WVoc1" id="hr17D0M" role="303EYT">
       <property role="2WVybo" value="doorClosed" />
       <node concept="314JWW" id="hr1ckpY" role="315Sed">
-        <reference role="314QsE" target="1197169676040" resolve="drawOpened" />
-        <reference role="314S4V" target="1197242143240" resolve="drawOpened" />
+        <ref role="314QsE" node="hqWRSW8" resolve="drawOpened" />
+        <ref role="314S4V" node="hr1cl88" resolve="drawOpened" />
       </node>
     </node>
     <node concept="2WVoc1" id="hr1cl88" role="303EYT">
       <property role="2WVybo" value="drawOpened" />
       <node concept="314JWW" id="hr1csgW" role="315Sed">
-        <reference role="314QsE" target="1197169688807" resolve="lightOn" />
-        <reference role="314S4V" target="1197242160585" resolve="panelUnlocked" />
+        <ref role="314QsE" node="hqWRW3B" resolve="lightOn" />
+        <ref role="314S4V" node="hr1cpn9" resolve="panelUnlocked" />
       </node>
     </node>
     <node concept="2WVoc1" id="hr1cpn9" role="303EYT">
@@ -86,18 +86,18 @@
     </node>
   </node>
   <node concept="31ux_N" id="hr1wx$q">
-    <reference role="31xSwl" target="1197150020790" resolve="MrsH State Machine" />
+    <ref role="31xSwl" node="hqVGUiQ" resolve="MrsH State Machine" />
     <node concept="31OEUs" id="hr1QfG5" role="31P$3b">
       <property role="31OP8j" value="A" />
-      <reference role="31YeOX" target="1197242160585" resolve="panelUnlocked" />
+      <ref role="31YeOX" node="hr1cpn9" resolve="panelUnlocked" />
       <node concept="320lw_" id="hr20IUz" role="320vKD">
-        <reference role="320neu" target="1197169658976" resolve="doorClosed" />
+        <ref role="320neu" node="hqWROLw" resolve="doorClosed" />
       </node>
       <node concept="320lw_" id="hr20MsD" role="320vKD">
-        <reference role="320neu" target="1197169676040" resolve="drawOpened" />
+        <ref role="320neu" node="hqWRSW8" resolve="drawOpened" />
       </node>
       <node concept="320lw_" id="hr20QbU" role="320vKD">
-        <reference role="320neu" target="1197169688807" resolve="lightOn" />
+        <ref role="320neu" node="hqWRW3B" resolve="lightOn" />
       </node>
     </node>
   </node>

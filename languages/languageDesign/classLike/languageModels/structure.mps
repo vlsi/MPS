@@ -63,124 +63,124 @@
   <node concept="1TIwiD" id="3geGFOI0X5k">
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="ClassLikeMethod" />
-    <reference role="1TJDcQ" target="tpee.1068580123165" resolve="InstanceMethodDeclaration" />
+    <ref role="1TJDcQ" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
     <node concept="1TJgyj" id="14fCAVcxkR" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="decl" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="3751132065236767079" resolve="MethodDescriptor" />
+      <ref role="20lvS9" node="3geGFOI0X5B" resolve="MethodDescriptor" />
     </node>
     <node concept="PrWs8" id="5BD$AU43p5W" role="PzmwI">
-      <reference role="PrY4T" target="6478870542308708729" resolve="ClassLikeMemberInstance" />
+      <ref role="PrY4T" node="5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
     </node>
     <node concept="PrWs8" id="3m06JgsoqNo" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="3geGFOI0X5s">
     <property role="3GE5qa" value="member.methodDeclaration" />
     <property role="TrG5h" value="DependentTypeDeclaration" />
     <property role="34LRSv" value="deptype" />
-    <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
     <node concept="1TJgyj" id="3geGFOI0X5t" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="getter" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tp2c.1199569711397" resolve="ClosureLiteral" />
+      <ref role="20lvS9" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
     </node>
   </node>
   <node concept="1TIwiD" id="3geGFOI0X5w">
     <property role="TrG5h" value="ClassLikeDescriptor" />
     <property role="3GE5qa" value="" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1_lSsE3TuQi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="preferredConcept" />
-      <reference role="20lvS9" target="tpce.1071489090640" resolve="ConceptDeclaration" />
+      <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
     </node>
     <node concept="1TJgyj" id="1_lSsE3UM8e" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="initializer" />
-      <reference role="20lvS9" target="tp2c.1199569711397" resolve="ClosureLiteral" />
+      <ref role="20lvS9" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
     </node>
     <node concept="1TJgyj" id="7aMlq14vYj8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="member" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="8264762413010642119" resolve="ClassLikeMember" />
+      <ref role="20lvS9" node="7aMlq14vYj7" resolve="ClassLikeMember" />
     </node>
     <node concept="PrWs8" id="3geGFOI0X5z" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="3geGFOI0X5$">
     <property role="3GE5qa" value="member.methodDeclaration" />
     <property role="TrG5h" value="ParameterDescriptor" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="3geGFOI0X5_" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1TJgyj" id="3geGFOI0X5A" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="type" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
   </node>
   <node concept="1TIwiD" id="3geGFOI0X5B">
     <property role="3GE5qa" value="member.methodDeclaration" />
     <property role="TrG5h" value="MethodDescriptor" />
     <property role="34LRSv" value="method" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3geGFOI0X5C" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="param" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="3751132065236767076" resolve="ParameterDescriptor" />
+      <ref role="20lvS9" node="3geGFOI0X5$" resolve="ParameterDescriptor" />
     </node>
     <node concept="1TJgyj" id="3geGFOI0X5D" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="retType" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
     <node concept="PrWs8" id="3geGFOI0X5E" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="7aMlq14w47F" role="PzmwI">
-      <reference role="PrY4T" target="8264762413010642119" resolve="ClassLikeMember" />
+      <ref role="PrY4T" node="7aMlq14vYj7" resolve="ClassLikeMember" />
     </node>
   </node>
   <node concept="1TIwiD" id="3geGFOI0X5F">
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="DependentTypeInstance" />
-    <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
     <node concept="1TJgyj" id="3geGFOI0X5G" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="decl" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="3751132065236767068" resolve="DependentTypeDeclaration" />
+      <ref role="20lvS9" node="3geGFOI0X5s" resolve="DependentTypeDeclaration" />
     </node>
     <node concept="1TJgyj" id="7T23sO8AqCe" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="point" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpck.1133920641626" resolve="BaseConcept" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
     <node concept="PrWs8" id="7T23sO8sTX6" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="36gOZBLMF3a">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="ClassLikeAnnotation" />
-    <reference role="1TJDcQ" target="tpck.3364660638048049748" resolve="NodeAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1TJgyj" id="36gOZBLMG9R" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="descriptor" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="3751132065236767072" resolve="ClassLikeDescriptor" />
+      <ref role="20lvS9" node="3geGFOI0X5w" resolve="ClassLikeDescriptor" />
     </node>
     <node concept="M6xJ_" id="36gOZBLMG9N" role="lGtFl">
       <property role="Hh88m" value="classLike" />
@@ -188,7 +188,7 @@
         <property role="tnX3d" value="false" />
       </node>
       <node concept="trNpa" id="36gOZBLMGb7" role="EQaZv">
-        <reference role="trN6q" target="tpee.1068390468198" resolve="ClassConcept" />
+        <ref role="trN6q" to="tpee:fz12cDA" resolve="ClassConcept" />
       </node>
     </node>
   </node>
@@ -200,9 +200,9 @@
     <property role="3GE5qa" value="member" />
     <property role="TrG5h" value="RequiredModifier" />
     <property role="34LRSv" value="required" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="2WSWNq1TGon" role="PzmwI">
-      <reference role="PrY4T" target="3402736933911578110" resolve="MemberModifier" />
+      <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="7aMlq14vVGL">
@@ -211,18 +211,18 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="34LRSv" value="property" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4ubqdNOGnoZ" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="type" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpce.1083243159079" resolve="PrimitiveDataTypeDeclaration" />
+      <ref role="20lvS9" to="tpce:fKQkHSB" resolve="PrimitiveDataTypeDeclaration" />
     </node>
     <node concept="PrWs8" id="7aMlq14w4aX" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="7aMlq14w4b2" role="PzmwI">
-      <reference role="PrY4T" target="8264762413010642119" resolve="ClassLikeMember" />
+      <ref role="PrY4T" node="7aMlq14vYj7" resolve="ClassLikeMember" />
     </node>
   </node>
   <node concept="PlHQZ" id="7aMlq14vYj7">
@@ -232,59 +232,59 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="modifier" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="3402736933911578110" resolve="MemberModifier" />
+      <ref role="20lvS9" node="2WSWNq1TGnY" resolve="MemberModifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="7aMlq14w4WD">
     <property role="3GE5qa" value="member" />
     <property role="TrG5h" value="PlaceholderModifier" />
     <property role="34LRSv" value="placeholder" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7aMlq14w51l" role="1TKVEl">
       <property role="TrG5h" value="caption" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="7aMlq14w4WE" role="PzmwI">
-      <reference role="PrY4T" target="3402736933911578110" resolve="MemberModifier" />
+      <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="7aMlq14w5Qs">
     <property role="3GE5qa" value="member.customMemberDeclaration" />
     <property role="TrG5h" value="CustomMemberDescriptor" />
     <property role="34LRSv" value="custom member" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7aMlq14w5Qv" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="cncpt" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpce.1071489090640" resolve="ConceptDeclaration" />
+      <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
     </node>
     <node concept="PrWs8" id="7aMlq14w5Qt" role="PzmwI">
-      <reference role="PrY4T" target="8264762413010642119" resolve="ClassLikeMember" />
+      <ref role="PrY4T" node="7aMlq14vYj7" resolve="ClassLikeMember" />
     </node>
   </node>
   <node concept="1TIwiD" id="5BD$AU43nQM">
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="ClassLikeMemberPlaceholder" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5BD$AU43nQP" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="decl" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="8264762413010642119" resolve="ClassLikeMember" />
+      <ref role="20lvS9" node="7aMlq14vYj7" resolve="ClassLikeMember" />
     </node>
     <node concept="1TJgyi" id="5BD$AU43nQN" role="1TKVEl">
       <property role="TrG5h" value="caption" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="5BD$AU43p5U" role="PzmwI">
-      <reference role="PrY4T" target="6478870542308708729" resolve="ClassLikeMemberInstance" />
+      <ref role="PrY4T" node="5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
     </node>
     <node concept="PrWs8" id="5BD$AU43DLe" role="PzmwI">
-      <reference role="PrY4T" target="tpee.1178285077437" resolve="ClassifierMember" />
+      <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
     <node concept="PrWs8" id="7ay_HjINhyL" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="5BD$AU43p5h">
@@ -292,18 +292,18 @@
     <property role="TrG5h" value="ClassLikeProperty" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <reference role="1TJDcQ" target="tpee.1068390468200" resolve="FieldDeclaration" />
+    <ref role="1TJDcQ" to="tpee:fz12cDC" resolve="FieldDeclaration" />
     <node concept="1TJgyj" id="7s$_UJMTR_D" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="decl" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="8264762413010631473" resolve="PropertyDescriptor" />
+      <ref role="20lvS9" node="7aMlq14vVGL" resolve="PropertyDescriptor" />
     </node>
     <node concept="PrWs8" id="5BD$AU43p5Y" role="PzmwI">
-      <reference role="PrY4T" target="6478870542308708729" resolve="ClassLikeMemberInstance" />
+      <ref role="PrY4T" node="5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
     </node>
     <node concept="PrWs8" id="3m06Jgsnez1" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="PlHQZ" id="5BD$AU43p5T">
@@ -313,50 +313,50 @@
   <node concept="1TIwiD" id="5BD$AU440O4">
     <property role="3GE5qa" value="instances.property" />
     <property role="TrG5h" value="ClassLikeStringProperty" />
-    <reference role="1TJDcQ" target="6478870542308708689" resolve="ClassLikeProperty" />
+    <ref role="1TJDcQ" node="5BD$AU43p5h" resolve="ClassLikeProperty" />
     <node concept="1TJgyi" id="5BD$AU440O5" role="1TKVEl">
       <property role="TrG5h" value="value" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="5BD$AU440V3">
     <property role="3GE5qa" value="instances.property" />
     <property role="TrG5h" value="ClassLikeBooleanProperty" />
-    <reference role="1TJDcQ" target="6478870542308708689" resolve="ClassLikeProperty" />
+    <ref role="1TJDcQ" node="5BD$AU43p5h" resolve="ClassLikeProperty" />
     <node concept="1TJgyi" id="5BD$AU440V4" role="1TKVEl">
       <property role="TrG5h" value="value" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="5BD$AU440V5">
     <property role="3GE5qa" value="instances.property" />
     <property role="TrG5h" value="ClassLikeIntegerProperty" />
-    <reference role="1TJDcQ" target="6478870542308708689" resolve="ClassLikeProperty" />
+    <ref role="1TJDcQ" node="5BD$AU43p5h" resolve="ClassLikeProperty" />
     <node concept="1TJgyi" id="5BD$AU440V6" role="1TKVEl">
       <property role="TrG5h" value="value" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="536fTXa3uDv">
     <property role="3GE5qa" value="member" />
     <property role="TrG5h" value="EmptyMember" />
     <property role="34LRSv" value="empty line" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="536fTXa3uEm" role="PzmwI">
-      <reference role="PrY4T" target="8264762413010642119" resolve="ClassLikeMember" />
+      <ref role="PrY4T" node="7aMlq14vYj7" resolve="ClassLikeMember" />
     </node>
   </node>
   <node concept="1TIwiD" id="3crTN2XY8Qo">
     <property role="3GE5qa" value="member" />
     <property role="TrG5h" value="GenerateModifier" />
     <property role="34LRSv" value="generate" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3m06JgscQVS" role="1TKVEl">
       <property role="TrG5h" value="name" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="3crTN2XY8Qq" role="PzmwI">
-      <reference role="PrY4T" target="3402736933911578110" resolve="MemberModifier" />
+      <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
     </node>
   </node>
 </model>

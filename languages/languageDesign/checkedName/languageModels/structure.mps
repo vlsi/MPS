@@ -52,18 +52,18 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="CheckedName" />
     <property role="34LRSv" value="property/&lt;node&gt;,&lt;role&gt;/" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="4cWf37B8oWU" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="nodeExpr" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="1TJgyj" id="4cWf37B8oWV" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="propertyDeclaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpce.1071489288299" resolve="PropertyDeclaration" />
+      <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="4cWf37B8oWY">
@@ -73,7 +73,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="CheckedName" />
     <property role="34LRSv" value="propRef" />
-    <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
   </node>
 </model>
 

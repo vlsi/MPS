@@ -129,7 +129,7 @@
     <property role="1sVAO0" value="true" />
     <node concept="3Tm1VV" id="51NkKCgB4kf" role="1B3o_S" />
     <node concept="3uibUv" id="51NkKCgB4kg" role="1zkMxy">
-      <reference role="3uigEE" target="nx1.~ToggleAction" resolve="ToggleAction" />
+      <ref role="3uigEE" to="nx1:~ToggleAction" resolve="ToggleAction" />
     </node>
     <node concept="312cEg" id="51NkKCgB4kh" role="jymVt">
       <property role="TrG5h" value="mySelected" />
@@ -140,7 +140,7 @@
     <node concept="312cEg" id="51NkKCgB4kl" role="jymVt">
       <property role="TrG5h" value="myGroup" />
       <node concept="3uibUv" id="51NkKCgB4km" role="1tU5fm">
-        <reference role="3uigEE" target="5797068448049415641" resolve="ToggleActionGroup" />
+        <ref role="3uigEE" node="51NkKCgB4np" resolve="ToggleActionGroup" />
       </node>
       <node concept="3Tm6S6" id="51NkKCgB4kn" role="1B3o_S" />
       <node concept="10Nm6u" id="51NkKCgB4ko" role="33vP2m" />
@@ -159,7 +159,7 @@
       <node concept="37vLTG" id="51NkKCgB4kw" role="3clF46">
         <property role="TrG5h" value="icon" />
         <node concept="3uibUv" id="51NkKCgB4kx" role="1tU5fm">
-          <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+          <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
         </node>
       </node>
       <node concept="37vLTG" id="51NkKCgB4ky" role="3clF46">
@@ -168,24 +168,24 @@
       </node>
       <node concept="3clFbS" id="51NkKCgB4k$" role="3clF47">
         <node concept="XkiVB" id="51NkKCgB4k_" role="3cqZAp">
-          <reference role="37wK5l" target="nx1.~ToggleAction%d&lt;init&gt;(java%dlang%dString,java%dlang%dString,javax%dswing%dIcon)" resolve="ToggleAction" />
+          <ref role="37wK5l" to="nx1:~ToggleAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolve="ToggleAction" />
           <node concept="37vLTw" id="2BHiRxgmheB" role="37wK5m">
-            <reference role="3cqZAo" target="5797068448049415452" resolve="text" />
+            <ref role="3cqZAo" node="51NkKCgB4ks" resolve="text" />
           </node>
           <node concept="37vLTw" id="2BHiRxgm6yB" role="37wK5m">
-            <reference role="3cqZAo" target="5797068448049415454" resolve="description" />
+            <ref role="3cqZAo" node="51NkKCgB4ku" resolve="description" />
           </node>
           <node concept="37vLTw" id="2BHiRxgmaR9" role="37wK5m">
-            <reference role="3cqZAo" target="5797068448049415456" resolve="icon" />
+            <ref role="3cqZAo" node="51NkKCgB4kw" resolve="icon" />
           </node>
         </node>
         <node concept="3clFbF" id="51NkKCgB4kD" role="3cqZAp">
           <node concept="37vLTI" id="51NkKCgB4kE" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeufAE" role="37vLTJ">
-              <reference role="3cqZAo" target="5797068448049415441" resolve="mySelected" />
+              <ref role="3cqZAo" node="51NkKCgB4kh" resolve="mySelected" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmrik" role="37vLTx">
-              <reference role="3cqZAo" target="5797068448049415458" resolve="initiallySelected" />
+              <ref role="3cqZAo" node="51NkKCgB4ky" resolve="initiallySelected" />
             </node>
           </node>
         </node>
@@ -198,17 +198,17 @@
       <node concept="37vLTG" id="51NkKCgB4kK" role="3clF46">
         <property role="TrG5h" value="group" />
         <node concept="3uibUv" id="51NkKCgB4kL" role="1tU5fm">
-          <reference role="3uigEE" target="5797068448049415641" resolve="ToggleActionGroup" />
+          <ref role="3uigEE" node="51NkKCgB4np" resolve="ToggleActionGroup" />
         </node>
       </node>
       <node concept="3clFbS" id="51NkKCgB4kM" role="3clF47">
         <node concept="3clFbF" id="51NkKCgB4kN" role="3cqZAp">
           <node concept="37vLTI" id="51NkKCgB4kO" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuhSg" role="37vLTJ">
-              <reference role="3cqZAo" target="5797068448049415445" resolve="myGroup" />
+              <ref role="3cqZAo" node="51NkKCgB4kl" resolve="myGroup" />
             </node>
             <node concept="37vLTw" id="2BHiRxgllil" role="37vLTx">
-              <reference role="3cqZAo" target="5797068448049415472" resolve="group" />
+              <ref role="3cqZAo" node="51NkKCgB4kK" resolve="group" />
             </node>
           </node>
         </node>
@@ -221,18 +221,18 @@
       <node concept="37vLTG" id="51NkKCgB4kU" role="3clF46">
         <property role="TrG5h" value="e" />
         <node concept="3uibUv" id="51NkKCgB4kV" role="1tU5fm">
-          <reference role="3uigEE" target="nx1.~AnActionEvent" resolve="AnActionEvent" />
+          <ref role="3uigEE" to="nx1:~AnActionEvent" resolve="AnActionEvent" />
         </node>
       </node>
       <node concept="3clFbS" id="51NkKCgB4kW" role="3clF47">
         <node concept="3cpWs6" id="51NkKCgB4kX" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeuoMF" role="3cqZAk">
-            <reference role="3cqZAo" target="5797068448049415441" resolve="mySelected" />
+            <ref role="3cqZAo" node="51NkKCgB4kh" resolve="mySelected" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RXSd" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="51NkKCgB4kZ" role="jymVt">
@@ -242,7 +242,7 @@
       <node concept="37vLTG" id="51NkKCgB4l2" role="3clF46">
         <property role="TrG5h" value="e" />
         <node concept="3uibUv" id="51NkKCgB4l3" role="1tU5fm">
-          <reference role="3uigEE" target="nx1.~AnActionEvent" resolve="AnActionEvent" />
+          <ref role="3uigEE" to="nx1:~AnActionEvent" resolve="AnActionEvent" />
         </node>
       </node>
       <node concept="37vLTG" id="51NkKCgB4l4" role="3clF46">
@@ -253,7 +253,7 @@
         <node concept="3clFbJ" id="51NkKCgB4l7" role="3cqZAp">
           <node concept="3fqX7Q" id="51NkKCgB4l8" role="3clFbw">
             <node concept="37vLTw" id="2BHiRxgmaTs" role="3fr31v">
-              <reference role="3cqZAo" target="5797068448049415492" resolve="state" />
+              <ref role="3cqZAo" node="51NkKCgB4l4" resolve="state" />
             </node>
           </node>
           <node concept="3clFbS" id="51NkKCgB4la" role="3clFbx">
@@ -263,7 +263,7 @@
         <node concept="3clFbF" id="51NkKCgB4lc" role="3cqZAp">
           <node concept="37vLTI" id="51NkKCgB4ld" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuW3$" role="37vLTJ">
-              <reference role="3cqZAo" target="5797068448049415441" resolve="mySelected" />
+              <ref role="3cqZAo" node="51NkKCgB4kh" resolve="mySelected" />
             </node>
             <node concept="3clFbT" id="51NkKCgB4lf" role="37vLTx">
               <property role="3clFbU" value="true" />
@@ -273,7 +273,7 @@
         <node concept="3clFbJ" id="51NkKCgB4lg" role="3cqZAp">
           <node concept="3y3z36" id="51NkKCgB4lh" role="3clFbw">
             <node concept="37vLTw" id="2BHiRxeuwv0" role="3uHU7B">
-              <reference role="3cqZAo" target="5797068448049415445" resolve="myGroup" />
+              <ref role="3cqZAo" node="51NkKCgB4kl" resolve="myGroup" />
             </node>
             <node concept="10Nm6u" id="51NkKCgB4lj" role="3uHU7w" />
           </node>
@@ -281,10 +281,10 @@
             <node concept="3clFbF" id="51NkKCgB4ll" role="3cqZAp">
               <node concept="2OqwBi" id="51NkKCgB4lm" role="3clFbG">
                 <node concept="37vLTw" id="2BHiRxeuTrT" role="2Oq$k0">
-                  <reference role="3cqZAo" target="5797068448049415445" resolve="myGroup" />
+                  <ref role="3cqZAo" node="51NkKCgB4kl" resolve="myGroup" />
                 </node>
                 <node concept="liA8E" id="51NkKCgB4lo" role="2OqNvi">
-                  <reference role="37wK5l" target="5797068448049415670" resolve="changeSelection" />
+                  <ref role="37wK5l" node="51NkKCgB4nQ" resolve="changeSelection" />
                   <node concept="Xjq3P" id="51NkKCgB4lp" role="37wK5m" />
                 </node>
               </node>
@@ -293,12 +293,12 @@
         </node>
         <node concept="3clFbF" id="51NkKCgB4lq" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyyIfM" role="3clFbG">
-            <reference role="37wK5l" target="5797068448049415526" resolve="select" />
+            <ref role="37wK5l" node="51NkKCgB4lA" resolve="select" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RXSc" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="51NkKCgB4ls" role="jymVt">
@@ -309,14 +309,14 @@
         <node concept="3clFbF" id="51NkKCgB4lw" role="3cqZAp">
           <node concept="37vLTI" id="51NkKCgB4lx" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuxdJ" role="37vLTJ">
-              <reference role="3cqZAo" target="5797068448049415441" resolve="mySelected" />
+              <ref role="3cqZAo" node="51NkKCgB4kh" resolve="mySelected" />
             </node>
             <node concept="3clFbT" id="51NkKCgB4lz" role="37vLTx" />
           </node>
         </node>
         <node concept="3clFbF" id="51NkKCgB4l$" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyyUGL" role="3clFbG">
-            <reference role="37wK5l" target="5797068448049415530" resolve="unselect" />
+            <ref role="37wK5l" node="51NkKCgB4lE" resolve="unselect" />
           </node>
         </node>
       </node>
@@ -341,17 +341,17 @@
     <node concept="312cEg" id="51NkKCgB4nr" role="jymVt">
       <property role="TrG5h" value="myActions" />
       <node concept="3uibUv" id="51NkKCgB4ns" role="1tU5fm">
-        <reference role="3uigEE" target="k7g3.~List" resolve="List" />
+        <ref role="3uigEE" to="k7g3:~List" resolve="List" />
         <node concept="3uibUv" id="51NkKCgB4nt" role="11_B2D">
-          <reference role="3uigEE" target="5797068448049410625" resolve="GroupedToggleAction" />
+          <ref role="3uigEE" node="51NkKCgB391" resolve="GroupedToggleAction" />
         </node>
       </node>
       <node concept="3Tm6S6" id="51NkKCgB4nu" role="1B3o_S" />
       <node concept="2ShNRf" id="51NkKCgB4nv" role="33vP2m">
         <node concept="1pGfFk" id="51NkKCgB4nw" role="2ShVmc">
-          <reference role="37wK5l" target="k7g3.~ArrayList%d&lt;init&gt;()" resolve="ArrayList" />
+          <ref role="37wK5l" to="k7g3:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
           <node concept="3uibUv" id="51NkKCgB4nx" role="1pMfVU">
-            <reference role="3uigEE" target="5797068448049410625" resolve="GroupedToggleAction" />
+            <ref role="3uigEE" node="51NkKCgB391" resolve="GroupedToggleAction" />
           </node>
         </node>
       </node>
@@ -368,17 +368,17 @@
       <node concept="37vLTG" id="51NkKCgB4nD" role="3clF46">
         <property role="TrG5h" value="action" />
         <node concept="3uibUv" id="51NkKCgB4nE" role="1tU5fm">
-          <reference role="3uigEE" target="5797068448049410625" resolve="GroupedToggleAction" />
+          <ref role="3uigEE" node="51NkKCgB391" resolve="GroupedToggleAction" />
         </node>
       </node>
       <node concept="3clFbS" id="51NkKCgB4nF" role="3clF47">
         <node concept="3clFbF" id="51NkKCgB4nG" role="3cqZAp">
           <node concept="2OqwBi" id="51NkKCgB4nH" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm6dr" role="2Oq$k0">
-              <reference role="3cqZAo" target="5797068448049415657" resolve="action" />
+              <ref role="3cqZAo" node="51NkKCgB4nD" resolve="action" />
             </node>
             <node concept="liA8E" id="51NkKCgB4nJ" role="2OqNvi">
-              <reference role="37wK5l" target="5797068448049415469" resolve="setGroup" />
+              <ref role="37wK5l" node="51NkKCgB4kH" resolve="setGroup" />
               <node concept="Xjq3P" id="51NkKCgB4nK" role="37wK5m" />
             </node>
           </node>
@@ -386,12 +386,12 @@
         <node concept="3clFbF" id="51NkKCgB4nL" role="3cqZAp">
           <node concept="2OqwBi" id="51NkKCgB4nM" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeurqx" role="2Oq$k0">
-              <reference role="3cqZAo" target="5797068448049415643" resolve="myActions" />
+              <ref role="3cqZAo" node="51NkKCgB4nr" resolve="myActions" />
             </node>
             <node concept="liA8E" id="51NkKCgB4nO" role="2OqNvi">
-              <reference role="37wK5l" target="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolve="add" />
+              <ref role="37wK5l" to="k7g3:~List.add(java.lang.Object):boolean" resolve="add" />
               <node concept="37vLTw" id="2BHiRxgmLpI" role="37wK5m">
-                <reference role="3cqZAo" target="5797068448049415657" resolve="action" />
+                <ref role="3cqZAo" node="51NkKCgB4nD" resolve="action" />
               </node>
             </node>
           </node>
@@ -405,38 +405,38 @@
       <node concept="37vLTG" id="51NkKCgB4nT" role="3clF46">
         <property role="TrG5h" value="action" />
         <node concept="3uibUv" id="51NkKCgB4nU" role="1tU5fm">
-          <reference role="3uigEE" target="5797068448049410625" resolve="GroupedToggleAction" />
+          <ref role="3uigEE" node="51NkKCgB391" resolve="GroupedToggleAction" />
         </node>
       </node>
       <node concept="3clFbS" id="51NkKCgB4nV" role="3clF47">
         <node concept="1DcWWT" id="51NkKCgB4nW" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeuFGh" role="1DdaDG">
-            <reference role="3cqZAo" target="5797068448049415643" resolve="myActions" />
+            <ref role="3cqZAo" node="51NkKCgB4nr" resolve="myActions" />
           </node>
           <node concept="3cpWsn" id="51NkKCgB4nY" role="1Duv9x">
             <property role="TrG5h" value="child" />
             <node concept="3uibUv" id="51NkKCgB4nZ" role="1tU5fm">
-              <reference role="3uigEE" target="5797068448049410625" resolve="GroupedToggleAction" />
+              <ref role="3uigEE" node="51NkKCgB391" resolve="GroupedToggleAction" />
             </node>
           </node>
           <node concept="3clFbS" id="51NkKCgB4o0" role="2LFqv$">
             <node concept="3clFbJ" id="51NkKCgB4o1" role="3cqZAp">
               <node concept="3y3z36" id="51NkKCgB4o2" role="3clFbw">
                 <node concept="37vLTw" id="3GM_nagTsnh" role="3uHU7B">
-                  <reference role="3cqZAo" target="5797068448049415678" resolve="child" />
+                  <ref role="3cqZAo" node="51NkKCgB4nY" resolve="child" />
                 </node>
                 <node concept="37vLTw" id="2BHiRxgl9t5" role="3uHU7w">
-                  <reference role="3cqZAo" target="5797068448049415673" resolve="action" />
+                  <ref role="3cqZAo" node="51NkKCgB4nT" resolve="action" />
                 </node>
               </node>
               <node concept="3clFbS" id="51NkKCgB4o5" role="3clFbx">
                 <node concept="3clFbF" id="51NkKCgB4o6" role="3cqZAp">
                   <node concept="2OqwBi" id="51NkKCgB4o7" role="3clFbG">
                     <node concept="37vLTw" id="3GM_nagTxnp" role="2Oq$k0">
-                      <reference role="3cqZAo" target="5797068448049415678" resolve="child" />
+                      <ref role="3cqZAo" node="51NkKCgB4nY" resolve="child" />
                     </node>
                     <node concept="liA8E" id="51NkKCgB4o9" role="2OqNvi">
-                      <reference role="37wK5l" target="5797068448049415516" resolve="deselect" />
+                      <ref role="37wK5l" node="51NkKCgB4ls" resolve="deselect" />
                     </node>
                   </node>
                 </node>

@@ -211,9 +211,9 @@
     <property role="TrG5h" value="add_reexport" />
     <node concept="3UNGvq" id="4zCbl23d1Nx" role="3UOs0v">
       <property role="2uHTBK" value="ext_2_RTransform" />
-      <reference role="3UNGvu" target="kdzh.5253498789149585690" resolve="BuildMps_ModuleDependencyOnModule" />
+      <ref role="3UNGvu" to="kdzh:4zCbl23db4q" resolve="BuildMps_ModuleDependencyOnModule" />
       <node concept="tYCnQ" id="4zCbl23d1Oa" role="_1QTJ">
-        <reference role="uz4UX" target="kdzh.5253498789149585690" resolve="BuildMps_ModuleDependencyOnModule" />
+        <ref role="uz4UX" to="kdzh:4zCbl23db4q" resolve="BuildMps_ModuleDependencyOnModule" />
         <node concept="Cmt7Y" id="4zCbl23d1Ob" role="uz6Si">
           <node concept="Cnhdc" id="4zCbl23d1Oc" role="Cncma">
             <node concept="3clFbS" id="4zCbl23d1Od" role="2VODD2">
@@ -222,7 +222,7 @@
                   <node concept="2OqwBi" id="4zCbl23d1Ox" role="37vLTJ">
                     <node concept="Cj7Ep" id="4zCbl23d1Oi" role="2Oq$k0" />
                     <node concept="3TrcHB" id="4zCbl23d1OB" role="2OqNvi">
-                      <reference role="3TsBF5" target="kdzh.5253498789149547713" resolve="reexport" />
+                      <ref role="3TsBF5" to="kdzh:4zCbl23d1N1" resolve="reexport" />
                     </node>
                   </node>
                   <node concept="3clFbT" id="4zCbl23d1OF" role="37vLTx">
@@ -247,7 +247,7 @@
               <node concept="2OqwBi" id="4zCbl23d1O7" role="3fr31v">
                 <node concept="Cj7Ep" id="4zCbl23d1O8" role="2Oq$k0" />
                 <node concept="3TrcHB" id="4zCbl23d1O9" role="2OqNvi">
-                  <reference role="3TsBF5" target="kdzh.5253498789149547713" resolve="reexport" />
+                  <ref role="3TsBF5" to="kdzh:4zCbl23d1N1" resolve="reexport" />
                 </node>
               </node>
             </node>
@@ -257,9 +257,9 @@
     </node>
     <node concept="3UNGvq" id="2L4pT56gZVA" role="3UOs0v">
       <property role="2uHTBK" value="ext_2_RTransform" />
-      <reference role="3UNGvu" target="kdzh.3189788309731928315" resolve="BuildMps_ModuleDependencyOnJavaModule" />
+      <ref role="3UNGvu" to="kdzh:2L4pT56gYzV" resolve="BuildMps_ModuleDependencyOnJavaModule" />
       <node concept="tYCnQ" id="2L4pT56gZVB" role="_1QTJ">
-        <reference role="uz4UX" target="kdzh.3189788309731928315" resolve="BuildMps_ModuleDependencyOnJavaModule" />
+        <ref role="uz4UX" to="kdzh:2L4pT56gYzV" resolve="BuildMps_ModuleDependencyOnJavaModule" />
         <node concept="Cmt7Y" id="2L4pT56gZVC" role="uz6Si">
           <node concept="Cnhdc" id="2L4pT56gZVD" role="Cncma">
             <node concept="3clFbS" id="2L4pT56gZVE" role="2VODD2">
@@ -268,7 +268,7 @@
                   <node concept="2OqwBi" id="2L4pT56gZVH" role="37vLTJ">
                     <node concept="Cj7Ep" id="2L4pT56gZVI" role="2Oq$k0" />
                     <node concept="3TrcHB" id="2L4pT56h7Cc" role="2OqNvi">
-                      <reference role="3TsBF5" target="kdzh.3189788309731928316" resolve="reexport" />
+                      <ref role="3TsBF5" to="kdzh:2L4pT56gYzW" resolve="reexport" />
                     </node>
                   </node>
                   <node concept="3clFbT" id="2L4pT56gZVK" role="37vLTx">
@@ -293,7 +293,7 @@
               <node concept="2OqwBi" id="2L4pT56gZVS" role="3fr31v">
                 <node concept="Cj7Ep" id="2L4pT56gZVT" role="2Oq$k0" />
                 <node concept="3TrcHB" id="2L4pT56h7Ca" role="2OqNvi">
-                  <reference role="3TsBF5" target="kdzh.3189788309731928316" resolve="reexport" />
+                  <ref role="3TsBF5" to="kdzh:2L4pT56gYzW" resolve="reexport" />
                 </node>
               </node>
             </node>
@@ -305,23 +305,23 @@
   <node concept="3FK_9_" id="2L4pT56haYj">
     <property role="TrG5h" value="add_moduleSources" />
     <node concept="3FOIzC" id="2L4pT56haYk" role="3FOPby">
-      <reference role="3FOWKa" target="kdzh.5253498789149547823" resolve="BuildMps_ModuleSource" />
+      <ref role="3FOWKa" to="kdzh:4zCbl23d1OJ" resolve="BuildMps_ModuleSource" />
       <node concept="tYCnQ" id="2L4pT56haYn" role="tZc4B">
-        <reference role="uz4UX" target="kdzh.5253498789149588970" resolve="BuildMps_ModuleJavaSource" />
+        <ref role="uz4UX" to="kdzh:4zCbl23dbRE" resolve="BuildMps_ModuleJavaSource" />
         <node concept="yEb5T" id="2L4pT56haYo" role="uz6Si">
-          <reference role="yEYPM" target="3ior.2303926226081001727" resolve="BuildInputSingleFolder" />
+          <ref role="yEYPM" to="3ior:1ZTcb8AgV3Z" resolve="BuildInputSingleFolder" />
           <node concept="yEnE0" id="2L4pT56haYp" role="yEVE$">
             <node concept="3clFbS" id="2L4pT56haYq" role="2VODD2">
               <node concept="3cpWs8" id="2L4pT56haYr" role="3cqZAp">
                 <node concept="3cpWsn" id="2L4pT56haYs" role="3cpWs9">
                   <property role="TrG5h" value="res" />
                   <node concept="3Tqbb2" id="2L4pT56haYt" role="1tU5fm">
-                    <reference role="ehGHo" target="kdzh.5253498789149588970" resolve="BuildMps_ModuleJavaSource" />
+                    <ref role="ehGHo" to="kdzh:4zCbl23dbRE" resolve="BuildMps_ModuleJavaSource" />
                   </node>
                   <node concept="2OqwBi" id="2L4pT56haYI" role="33vP2m">
                     <node concept="1Q6Npb" id="2L4pT56haYv" role="2Oq$k0" />
                     <node concept="I8ghe" id="2L4pT56haYP" role="2OqNvi">
-                      <reference role="I8UWU" target="kdzh.5253498789149588970" resolve="BuildMps_ModuleJavaSource" />
+                      <ref role="I8UWU" to="kdzh:4zCbl23dbRE" resolve="BuildMps_ModuleJavaSource" />
                     </node>
                   </node>
                 </node>
@@ -330,10 +330,10 @@
                 <node concept="2OqwBi" id="2L4pT56haZA" role="3clFbG">
                   <node concept="2OqwBi" id="2L4pT56haZf" role="2Oq$k0">
                     <node concept="37vLTw" id="3GM_nagT_9J" role="2Oq$k0">
-                      <reference role="3cqZAo" target="3189788309731979164" resolve="res" />
+                      <ref role="3cqZAo" node="2L4pT56haYs" resolve="res" />
                     </node>
                     <node concept="3TrEf2" id="2L4pT56haZl" role="2OqNvi">
-                      <reference role="3Tt5mk" target="kdzh.5253498789149588972" />
+                      <ref role="3Tt5mk" to="kdzh:4zCbl23dbRG" />
                     </node>
                   </node>
                   <node concept="2oxUTD" id="2L4pT56haZG" role="2OqNvi">
@@ -343,7 +343,7 @@
               </node>
               <node concept="3clFbF" id="2L4pT56haYS" role="3cqZAp">
                 <node concept="37vLTw" id="3GM_nagTBjC" role="3clFbG">
-                  <reference role="3cqZAo" target="3189788309731979164" resolve="res" />
+                  <ref role="3cqZAo" node="2L4pT56haYs" resolve="res" />
                 </node>
               </node>
             </node>
@@ -356,7 +356,7 @@
     <property role="TrG5h" value="add_moduleLocationAndFlags" />
     <node concept="3UNGvq" id="2L4pT56heE6" role="3UOs0v">
       <property role="2uHTBK" value="ext_4_RTransform" />
-      <reference role="3UNGvu" target="kdzh.5253498789149381388" resolve="BuildMps_Module" />
+      <ref role="3UNGvu" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
       <node concept="3kRJcU" id="2L4pT56heEb" role="3kShCk">
         <node concept="3clFbS" id="2L4pT56heEc" role="2VODD2">
           <node concept="3clFbF" id="2L4pT56heEd" role="3cqZAp">
@@ -364,7 +364,7 @@
               <node concept="2OqwBi" id="1jjYQYSiQYu" role="3fr31v">
                 <node concept="Cj7Ep" id="1jjYQYSiQYv" role="2Oq$k0" />
                 <node concept="3TrcHB" id="1jjYQYSiQYw" role="2OqNvi">
-                  <reference role="3TsBF5" target="kdzh.1500819558096356884" resolve="doNotCompile" />
+                  <ref role="3TsBF5" to="kdzh:1jjYQYSiGok" resolve="doNotCompile" />
                 </node>
               </node>
             </node>
@@ -372,7 +372,7 @@
         </node>
       </node>
       <node concept="tYCnQ" id="2L4pT56heEU" role="_1QTJ">
-        <reference role="uz4UX" target="kdzh.5253498789149381388" resolve="BuildMps_Module" />
+        <ref role="uz4UX" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
         <node concept="Cmt7Y" id="2L4pT56heEV" role="uz6Si">
           <node concept="Cnhdc" id="2L4pT56heEW" role="Cncma">
             <node concept="3clFbS" id="2L4pT56heEX" role="2VODD2">
@@ -381,7 +381,7 @@
                   <node concept="2OqwBi" id="1jjYQYSiQYN" role="37vLTJ">
                     <node concept="Cj7Ep" id="1jjYQYSiQYy" role="2Oq$k0" />
                     <node concept="3TrcHB" id="1jjYQYSiQYT" role="2OqNvi">
-                      <reference role="3TsBF5" target="kdzh.1500819558096356884" resolve="doNotCompile" />
+                      <ref role="3TsBF5" to="kdzh:1jjYQYSiGok" resolve="doNotCompile" />
                     </node>
                   </node>
                   <node concept="3clFbT" id="1jjYQYSiQZe" role="37vLTx">
@@ -402,14 +402,14 @@
     </node>
     <node concept="3UNGvq" id="1jjYQYSiQY2" role="3UOs0v">
       <property role="2uHTBK" value="ext_3_RTransform" />
-      <reference role="3UNGvu" target="kdzh.322010710375871467" resolve="BuildMps_AbstractModule" />
+      <ref role="3UNGvu" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
       <node concept="3kRJcU" id="1jjYQYSiQY3" role="3kShCk">
         <node concept="3clFbS" id="1jjYQYSiQY4" role="2VODD2">
           <node concept="3clFbF" id="1jjYQYSiQY5" role="3cqZAp">
             <node concept="2OqwBi" id="1jjYQYSiQY6" role="3clFbG">
               <node concept="2OqwBi" id="1jjYQYSiQY7" role="2Oq$k0">
                 <node concept="3TrEf2" id="7gAtt1jueA9" role="2OqNvi">
-                  <reference role="3Tt5mk" target="kdzh.322010710375956261" />
+                  <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" />
                 </node>
                 <node concept="Cj7Ep" id="1jjYQYSiQY8" role="2Oq$k0" />
               </node>
@@ -419,7 +419,7 @@
         </node>
       </node>
       <node concept="tYCnQ" id="1jjYQYSiQYb" role="_1QTJ">
-        <reference role="uz4UX" target="kdzh.322010710375871467" resolve="BuildMps_AbstractModule" />
+        <ref role="uz4UX" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
         <node concept="Cmt7Y" id="1jjYQYSiQYc" role="uz6Si">
           <node concept="Cnhdc" id="1jjYQYSiQYd" role="Cncma">
             <node concept="3clFbS" id="1jjYQYSiQYe" role="2VODD2">
@@ -427,7 +427,7 @@
                 <node concept="2OqwBi" id="1jjYQYSiQYg" role="3clFbG">
                   <node concept="2OqwBi" id="1jjYQYSiQYh" role="2Oq$k0">
                     <node concept="3TrEf2" id="7gAtt1jueAb" role="2OqNvi">
-                      <reference role="3Tt5mk" target="kdzh.322010710375956261" />
+                      <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" />
                     </node>
                     <node concept="Cj7Ep" id="1jjYQYSiQYi" role="2Oq$k0" />
                   </node>
@@ -447,9 +447,9 @@
     </node>
     <node concept="3UNGvq" id="eYcmka0vtv" role="3UOs0v">
       <property role="2uHTBK" value="ext_4_RTransform" />
-      <reference role="3UNGvu" target="kdzh.3189788309731840247" resolve="BuildMps_Solution" />
+      <ref role="3UNGvu" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
       <node concept="tYCnQ" id="eYcmka0C3k" role="_1QTJ">
-        <reference role="uz4UX" target="kdzh.3189788309731840247" resolve="BuildMps_Solution" />
+        <ref role="uz4UX" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
         <node concept="CZtCh" id="eYcmka0C3T" role="uz6Si">
           <node concept="CmF0q" id="eYcmka0C64" role="D06XQ">
             <node concept="3clFbS" id="eYcmka0C66" role="2VODD2">
@@ -472,7 +472,7 @@
             </node>
           </node>
           <node concept="2ZThk1" id="eYcmka0C49" role="D02tZ">
-            <reference role="2ZWj4r" target="kdzh.269707337715631379" resolve="BuildMps_ModuleSourcesKind" />
+            <ref role="2ZWj4r" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
           </node>
           <node concept="CZKQA" id="eYcmka0C3V" role="D04br">
             <node concept="3clFbS" id="eYcmka0C3W" role="2VODD2">
@@ -482,19 +482,19 @@
                   <node concept="2ShNRf" id="eYcmk9SWj6" role="2Oq$k0">
                     <node concept="3g6Rrh" id="eYcmk9SYyM" role="2ShVmc">
                       <node concept="3HcIyF" id="eYcmk9Wbnm" role="3g7hyw">
-                        <reference role="3HcIyG" target="kdzh.269707337715631379" resolve="BuildMps_ModuleSourcesKind" />
+                        <ref role="3HcIyG" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
                         <node concept="3HdYuL" id="eYcmk9WbvJ" role="3Hdvt7">
-                          <reference role="3HdYuM" target="kdzh.269707337715631452" />
+                          <ref role="3HdYuM" to="kdzh:eYcmk9QOls" />
                         </node>
                       </node>
                       <node concept="3HcIyF" id="eYcmk9WbC_" role="3g7hyw">
-                        <reference role="3HcIyG" target="kdzh.269707337715631379" resolve="BuildMps_ModuleSourcesKind" />
+                        <ref role="3HcIyG" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
                         <node concept="3HdYuL" id="eYcmk9WbCA" role="3Hdvt7">
-                          <reference role="3HdYuM" target="kdzh.269707337715631443" />
+                          <ref role="3HdYuM" to="kdzh:eYcmk9QOlj" />
                         </node>
                       </node>
                       <node concept="2ZThk1" id="eYcmk9SY3_" role="3g7fb8">
-                        <reference role="2ZWj4r" target="kdzh.269707337715631379" resolve="BuildMps_ModuleSourcesKind" />
+                        <ref role="2ZWj4r" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
                       </node>
                     </node>
                   </node>
@@ -511,7 +511,7 @@
                   </node>
                   <node concept="2OqwBi" id="eYcmk9T9kz" role="2Oq$k0">
                     <node concept="3TrcHB" id="eYcmk9TcU5" role="2OqNvi">
-                      <reference role="3TsBF5" target="kdzh.269707337715731330" resolve="sourcesKind" />
+                      <ref role="3TsBF5" to="kdzh:eYcmk9RcI2" resolve="sourcesKind" />
                     </node>
                     <node concept="Cj7Ep" id="eYcmka0HP5" role="2Oq$k0" />
                   </node>
@@ -532,7 +532,7 @@
               <node concept="17QB3L" id="eYcmk9W_dj" role="1tU5fm" />
               <node concept="2OqwBi" id="eYcmk9W_dm" role="33vP2m">
                 <node concept="3TrcHB" id="eYcmk9W_dn" role="2OqNvi">
-                  <reference role="3TsBF5" target="kdzh.269707337715731330" resolve="sourcesKind" />
+                  <ref role="3TsBF5" to="kdzh:eYcmk9RcI2" resolve="sourcesKind" />
                 </node>
                 <node concept="Cj7Ep" id="eYcmk9W_do" role="2Oq$k0" />
               </node>
@@ -543,18 +543,18 @@
               <node concept="2OqwBi" id="eYcmk9W_AW" role="3uHU7B">
                 <node concept="17RlXB" id="eYcmk9WCWP" role="2OqNvi" />
                 <node concept="37vLTw" id="eYcmk9W_lO" role="2Oq$k0">
-                  <reference role="3cqZAo" target="269707337717142357" resolve="sourcesKind" />
+                  <ref role="3cqZAo" node="eYcmk9W_dl" resolve="sourcesKind" />
                 </node>
               </node>
               <node concept="2OqwBi" id="eYcmk9WxB4" role="3uHU7w">
                 <node concept="37vLTw" id="eYcmk9W_dp" role="2Oq$k0">
-                  <reference role="3cqZAo" target="269707337717142357" resolve="sourcesKind" />
+                  <ref role="3cqZAo" node="eYcmk9W_dl" resolve="sourcesKind" />
                 </node>
                 <node concept="liA8E" id="eYcmk9W$Vj" role="2OqNvi">
-                  <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+                  <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
                   <node concept="3f7Wdw" id="6ogfLD6dlHo" role="37wK5m">
-                    <reference role="3f7vo2" target="kdzh.269707337715631379" resolve="BuildMps_ModuleSourcesKind" />
-                    <reference role="3f7u_j" target="kdzh.269707337715631442" />
+                    <ref role="3f7vo2" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
+                    <ref role="3f7u_j" to="kdzh:eYcmk9QOli" />
                   </node>
                 </node>
               </node>
@@ -567,7 +567,7 @@
   <node concept="37WguZ" id="7gAtt1juf1V">
     <property role="TrG5h" value="constructors_BuildMps" />
     <node concept="37WvkG" id="7gAtt1juf1W" role="37WGs$">
-      <reference role="37XkoT" target="kdzh.322010710375871467" resolve="BuildMps_AbstractModule" />
+      <ref role="37XkoT" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
       <node concept="37Y9Zx" id="7gAtt1juf1X" role="37ZfLb">
         <node concept="3clFbS" id="7gAtt1jufwa" role="2VODD2">
           <node concept="3clFbF" id="7gAtt1jufwb" role="3cqZAp">
@@ -575,7 +575,7 @@
               <node concept="2OqwBi" id="7gAtt1jufwt" role="37vLTJ">
                 <node concept="1r4Lsj" id="7gAtt1jufwc" role="2Oq$k0" />
                 <node concept="3TrcHB" id="7gAtt1jufwz" role="2OqNvi">
-                  <reference role="3TsBF5" target="kdzh.8369506495128725901" resolve="compact" />
+                  <ref role="3TsBF5" to="kdzh:7gAtt1jueAd" resolve="compact" />
                 </node>
               </node>
               <node concept="3clFbT" id="7gAtt1jufwB" role="37vLTx">
@@ -588,7 +588,7 @@
               <node concept="2OqwBi" id="7gAtt1jufwZ" role="2Oq$k0">
                 <node concept="1r4Lsj" id="7gAtt1jufwI" role="2Oq$k0" />
                 <node concept="3TrEf2" id="7gAtt1jufx5" role="2OqNvi">
-                  <reference role="3Tt5mk" target="kdzh.322010710375956261" />
+                  <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" />
                 </node>
               </node>
               <node concept="2DeJnY" id="7gAtt1jufxt" role="2OqNvi" />
@@ -598,7 +598,7 @@
       </node>
     </node>
     <node concept="37WvkG" id="1OSlDLmrFUy" role="37WGs$">
-      <reference role="37XkoT" target="kdzh.1692280246134781712" resolve="BuildMpsLayout_ModuleSources" />
+      <ref role="37XkoT" to="kdzh:1tWbYFNhzsg" resolve="BuildMpsLayout_ModuleSources" />
       <node concept="37Y9Zx" id="1OSlDLmrFUz" role="37ZfLb">
         <node concept="3clFbS" id="1OSlDLmrFU$" role="2VODD2">
           <node concept="3clFbJ" id="1OSlDLmrFU_" role="3cqZAp">
@@ -606,7 +606,7 @@
               <node concept="1r4N5L" id="1OSlDLmrFUC" role="2Oq$k0" />
               <node concept="1mIQ4w" id="1OSlDLmrFUW" role="2OqNvi">
                 <node concept="chp4Y" id="1OSlDLmrFUY" role="cj9EA">
-                  <reference role="cht4Q" target="kdzh.1692280246134781712" resolve="BuildMpsLayout_ModuleSources" />
+                  <ref role="cht4Q" to="kdzh:1tWbYFNhzsg" resolve="BuildMpsLayout_ModuleSources" />
                 </node>
               </node>
             </node>
@@ -616,16 +616,16 @@
                   <node concept="2OqwBi" id="1OSlDLmrFVf" role="37vLTJ">
                     <node concept="1r4Lsj" id="1OSlDLmrFV0" role="2Oq$k0" />
                     <node concept="3TrEf2" id="1OSlDLmrFVl" role="2OqNvi">
-                      <reference role="3Tt5mk" target="kdzh.1692280246134781713" />
+                      <ref role="3Tt5mk" to="kdzh:1tWbYFNhzsh" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="1OSlDLmrFW8" role="37vLTx">
                     <node concept="1PxgMI" id="1OSlDLmrFVS" role="2Oq$k0">
-                      <reference role="1PxNhF" target="kdzh.1692280246134781712" resolve="BuildMpsLayout_ModuleSources" />
+                      <ref role="1PxNhF" to="kdzh:1tWbYFNhzsg" resolve="BuildMpsLayout_ModuleSources" />
                       <node concept="1r4N5L" id="1OSlDLmrFVD" role="1PxMeX" />
                     </node>
                     <node concept="3TrEf2" id="1OSlDLmrFWe" role="2OqNvi">
-                      <reference role="3Tt5mk" target="kdzh.1692280246134781713" />
+                      <ref role="3Tt5mk" to="kdzh:1tWbYFNhzsh" />
                     </node>
                   </node>
                 </node>
@@ -640,9 +640,9 @@
     <property role="TrG5h" value="add_fromPluginXml" />
     <node concept="3UNGvq" id="14LJu4ZfVVD" role="3UOs0v">
       <property role="2uHTBK" value="ext_3_RTransform" />
-      <reference role="3UNGvu" target="kdzh.6592112598314498932" resolve="BuildMps_IdeaPlugin" />
+      <ref role="3UNGvu" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
       <node concept="tYCnQ" id="14LJu4ZfVWE" role="_1QTJ">
-        <reference role="uz4UX" target="kdzh.6592112598314498932" resolve="BuildMps_IdeaPlugin" />
+        <ref role="uz4UX" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
         <node concept="Cmt7Y" id="14LJu4ZfVWL" role="uz6Si">
           <node concept="Cnhdc" id="14LJu4ZfVWM" role="Cncma">
             <node concept="3clFbS" id="14LJu4ZfVWN" role="2VODD2">
@@ -651,7 +651,7 @@
                   <node concept="2OqwBi" id="14LJu4ZfVXb" role="2Oq$k0">
                     <node concept="Cj7Ep" id="14LJu4ZfVWQ" role="2Oq$k0" />
                     <node concept="3TrEf2" id="14LJu4ZfVXg" role="2OqNvi">
-                      <reference role="3Tt5mk" target="kdzh.1238980147629899306" />
+                      <ref role="3Tt5mk" to="kdzh:14LJu4ZfrSE" />
                     </node>
                   </node>
                   <node concept="2DeJnY" id="14LJu4ZfVXG" role="2OqNvi" />
@@ -671,7 +671,7 @@
               <node concept="2OqwBi" id="14LJu4ZfVW2" role="2Oq$k0">
                 <node concept="Cj7Ep" id="14LJu4ZfVVH" role="2Oq$k0" />
                 <node concept="3TrEf2" id="14LJu4ZfVW8" role="2OqNvi">
-                  <reference role="3Tt5mk" target="kdzh.1238980147629899306" />
+                  <ref role="3Tt5mk" to="kdzh:14LJu4ZfrSE" />
                 </node>
               </node>
               <node concept="3w_OXm" id="14LJu4ZfVWC" role="2OqNvi" />
@@ -684,9 +684,9 @@
   <node concept="3UOs0u" id="3vXGXT8bfcd">
     <property role="TrG5h" value="add_CustomPackaging" />
     <node concept="3UNGvq" id="3vXGXT8bfce" role="3UOs0v">
-      <reference role="3UNGvu" target="kdzh.6592112598314499036" resolve="BuildMps_IdeaPluginModule" />
+      <ref role="3UNGvu" to="kdzh:5HVSRHdUrJs" resolve="BuildMps_IdeaPluginModule" />
       <node concept="tYCnQ" id="3vXGXT8bgqy" role="_1QTJ">
-        <reference role="uz4UX" target="kdzh.6592112598314499036" resolve="BuildMps_IdeaPluginModule" />
+        <ref role="uz4UX" to="kdzh:5HVSRHdUrJs" resolve="BuildMps_IdeaPluginModule" />
         <node concept="Cmt7Y" id="3vXGXT8bgqz" role="uz6Si">
           <node concept="Cnhdc" id="3vXGXT8bgq$" role="Cncma">
             <node concept="3clFbS" id="3vXGXT8bgq_" role="2VODD2">
@@ -695,7 +695,7 @@
                   <node concept="2OqwBi" id="3vXGXT8bgqY" role="37vLTJ">
                     <node concept="Cj7Ep" id="3vXGXT8bgqD" role="2Oq$k0" />
                     <node concept="3TrcHB" id="3vXGXT8bgr4" role="2OqNvi">
-                      <reference role="3TsBF5" target="kdzh.4034578608468849375" resolve="customPackaging" />
+                      <ref role="3TsBF5" to="kdzh:3vXGXT8bfbv" resolve="customPackaging" />
                     </node>
                   </node>
                   <node concept="3clFbT" id="3vXGXT8bgrt" role="37vLTx">
@@ -720,7 +720,7 @@
               <node concept="2OqwBi" id="3vXGXT8bgqu" role="3fr31v">
                 <node concept="Cj7Ep" id="3vXGXT8bgqv" role="2Oq$k0" />
                 <node concept="3TrcHB" id="3vXGXT8bgqw" role="2OqNvi">
-                  <reference role="3TsBF5" target="kdzh.4034578608468849375" resolve="customPackaging" />
+                  <ref role="3TsBF5" to="kdzh:3vXGXT8bfbv" resolve="customPackaging" />
                 </node>
               </node>
             </node>
@@ -729,9 +729,9 @@
       </node>
     </node>
     <node concept="3UNGvq" id="3vXGXT8bRLx" role="3UOs0v">
-      <reference role="3UNGvu" target="kdzh.6592112598314586625" resolve="BuildMps_IdeaPluginGroup" />
+      <ref role="3UNGvu" to="kdzh:5HVSRHdUL81" resolve="BuildMps_IdeaPluginGroup" />
       <node concept="tYCnQ" id="3vXGXT8bRLy" role="_1QTJ">
-        <reference role="uz4UX" target="kdzh.6592112598314586625" resolve="BuildMps_IdeaPluginGroup" />
+        <ref role="uz4UX" to="kdzh:5HVSRHdUL81" resolve="BuildMps_IdeaPluginGroup" />
         <node concept="Cmt7Y" id="3vXGXT8bRLz" role="uz6Si">
           <node concept="Cnhdc" id="3vXGXT8bRL$" role="Cncma">
             <node concept="3clFbS" id="3vXGXT8bRL_" role="2VODD2">
@@ -740,7 +740,7 @@
                   <node concept="2OqwBi" id="3vXGXT8bRLC" role="2Oq$k0">
                     <node concept="Cj7Ep" id="3vXGXT8bRLD" role="2Oq$k0" />
                     <node concept="3Tsc0h" id="3vXGXT8bRMK" role="2OqNvi">
-                      <reference role="3TtcxE" target="kdzh.4034578608468929327" />
+                      <ref role="3TtcxE" to="kdzh:3vXGXT8byGJ" />
                     </node>
                   </node>
                   <node concept="WFELt" id="3vXGXT8bRNi" role="2OqNvi" />
@@ -763,7 +763,7 @@
               <node concept="2OqwBi" id="3vXGXT8bRMc" role="2Oq$k0">
                 <node concept="Cj7Ep" id="3vXGXT8bRLR" role="2Oq$k0" />
                 <node concept="3Tsc0h" id="3vXGXT8bRMi" role="2OqNvi">
-                  <reference role="3TtcxE" target="kdzh.4034578608468929327" />
+                  <ref role="3TtcxE" to="kdzh:3vXGXT8byGJ" />
                 </node>
               </node>
               <node concept="1v1jN8" id="3vXGXT8bRMI" role="2OqNvi" />

@@ -80,7 +80,7 @@
   </registry>
   <node concept="2S6QgY" id="7YdSxSAfUv$">
     <property role="TrG5h" value="ToggleDeprecatedAnnotation" />
-    <reference role="2ZfgGC" target="fb9u.946964771156066336" resolve="PersistentConfiguration" />
+    <ref role="2ZfgGC" to="fb9u:O$iR4J$g0w" resolve="PersistentConfiguration" />
     <node concept="2S6ZIM" id="7YdSxSAfUv_" role="2ZfVej">
       <node concept="3clFbS" id="7YdSxSAfUvA" role="2VODD2">
         <node concept="3clFbJ" id="7YdSxSAfUxu" role="3cqZAp">
@@ -90,7 +90,7 @@
                 <node concept="2OqwBi" id="7YdSxSAfUwn" role="3uHU7w">
                   <node concept="2Sf5sV" id="7YdSxSAfUw2" role="2Oq$k0" />
                   <node concept="3TrcHB" id="7YdSxSAfUwt" role="2OqNvi">
-                    <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                   </node>
                 </node>
                 <node concept="Xl_RD" id="7YdSxSAfUvE" role="3uHU7B">
@@ -104,7 +104,7 @@
               <node concept="2Sf5sV" id="7YdSxSAfUwy" role="2Oq$k0" />
               <node concept="3CFZ6_" id="7YdSxSAfUwW" role="2OqNvi">
                 <node concept="3CFYIy" id="7YdSxSAfUx0" role="3CFYIz">
-                  <reference role="3CFYIx" target="fb9u.9191251033651632153" resolve="DeprecatedAnnotation" />
+                  <ref role="3CFYIx" to="fb9u:7YdSxSAfPwp" resolve="DeprecatedAnnotation" />
                 </node>
               </node>
             </node>
@@ -128,7 +128,7 @@
                   <node concept="2Sf5sV" id="7YdSxSAfUxY" role="2Oq$k0" />
                   <node concept="3CFZ6_" id="7YdSxSAfUyo" role="2OqNvi">
                     <node concept="3CFYIy" id="7YdSxSAfUys" role="3CFYIz">
-                      <reference role="3CFYIx" target="fb9u.9191251033651632153" resolve="DeprecatedAnnotation" />
+                      <ref role="3CFYIx" to="fb9u:7YdSxSAfPwp" resolve="DeprecatedAnnotation" />
                     </node>
                   </node>
                 </node>
@@ -141,7 +141,7 @@
               <node concept="2Sf5sV" id="7YdSxSAfUxP" role="2Oq$k0" />
               <node concept="3CFZ6_" id="7YdSxSAfUxQ" role="2OqNvi">
                 <node concept="3CFYIy" id="7YdSxSAfUxR" role="3CFYIz">
-                  <reference role="3CFYIx" target="fb9u.9191251033651632153" resolve="DeprecatedAnnotation" />
+                  <ref role="3CFYIx" to="fb9u:7YdSxSAfPwp" resolve="DeprecatedAnnotation" />
                 </node>
               </node>
             </node>
@@ -155,7 +155,7 @@
                     <node concept="2Sf5sV" id="7YdSxSAfUyX" role="2Oq$k0" />
                     <node concept="3CFZ6_" id="7YdSxSAfUzo" role="2OqNvi">
                       <node concept="3CFYIy" id="7YdSxSAfUzr" role="3CFYIz">
-                        <reference role="3CFYIx" target="fb9u.9191251033651632153" resolve="DeprecatedAnnotation" />
+                        <ref role="3CFYIx" to="fb9u:7YdSxSAfPwp" resolve="DeprecatedAnnotation" />
                       </node>
                     </node>
                   </node>

@@ -66,12 +66,12 @@
     </language>
   </registry>
   <node concept="24kQdi" id="hP5Yl59">
-    <reference role="1XX52x" target="dghb.1225239603361" resolve="Attribute" />
+    <ref role="1XX52x" to="dghb:hP5Yayx" resolve="Attribute" />
     <node concept="3EZMnI" id="hP5Yl5a" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="hP5Yl5b" role="3EZMnx">
         <property role="1cu_pB" value="1" />
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="Vb9p2" id="hP5Yl5c" role="3F10Kt">
           <property role="Vbekb" value="BOLD" />
         </node>
@@ -92,7 +92,7 @@
         </node>
       </node>
       <node concept="3F0A7n" id="hP5Yl5i" role="3EZMnx">
-        <reference role="1NtTu8" target="dghb.1225239603363" resolve="value" />
+        <ref role="1NtTu8" to="dghb:hP5Yayz" resolve="value" />
         <node concept="Vb9p2" id="hP5Yl5j" role="3F10Kt">
           <property role="Vbekb" value="BOLD" />
         </node>
@@ -113,7 +113,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="hP5Yl5o">
-    <reference role="1XX52x" target="dghb.1225239603382" resolve="Document" />
+    <ref role="1XX52x" to="dghb:hP5YayQ" resolve="Document" />
     <node concept="3EZMnI" id="hP5Yl5p" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hP5Yl5q" role="3EZMnx">
@@ -129,7 +129,7 @@
         </node>
         <node concept="3F0A7n" id="hP5Yl5u" role="3EZMnx">
           <property role="1$x2rV" value="?name?" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="Vb9p2" id="hP5Yl5v" role="3F10Kt">
             <property role="Vbekb" value="BOLD" />
           </node>
@@ -149,19 +149,19 @@
       </node>
       <node concept="3F1sOY" id="hP5Yl5$" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no root element&gt;" />
-        <reference role="1NtTu8" target="dghb.1225239603384" />
+        <ref role="1NtTu8" to="dghb:hP5YayS" />
       </node>
       <node concept="2iRkQZ" id="i2IQmIb" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="hP5Yl5_">
-    <reference role="1XX52x" target="dghb.1225239603390" resolve="ElementPart" />
+    <ref role="1XX52x" to="dghb:hP5YayY" resolve="ElementPart" />
     <node concept="1xolST" id="hP5Yl5A" role="2wV5jI">
       <property role="1xolSY" value="&lt;choose content&gt;" />
     </node>
   </node>
   <node concept="24kQdi" id="hP5Yl5B">
-    <reference role="1XX52x" target="dghb.1225239603385" resolve="Element" />
+    <ref role="1XX52x" to="dghb:hP5YayT" resolve="Element" />
     <node concept="3EZMnI" id="hP5Yl5C" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hP5Yl5D" role="3EZMnx">
@@ -174,7 +174,7 @@
         </node>
         <node concept="3F0A7n" id="hP5Yl5G" role="3EZMnx">
           <property role="1cu_pB" value="1" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="Vb9p2" id="hP5Yl5H" role="3F10Kt">
             <property role="Vbekb" value="BOLD" />
           </node>
@@ -184,7 +184,7 @@
         </node>
         <node concept="3F2HdR" id="hP5Yl5J" role="3EZMnx">
           <property role="2czwfN" value="false" />
-          <reference role="1NtTu8" target="dghb.1225239603386" />
+          <ref role="1NtTu8" to="dghb:hP5YayU" />
           <node concept="3F0ifn" id="hP5Yl5K" role="2czzBI">
             <property role="ilYzB" value="..." />
             <node concept="VPxyj" id="hP5Yl5L" role="3F10Kt">
@@ -207,7 +207,7 @@
         <node concept="3XFhqQ" id="hP5Yl5Q" role="3EZMnx" />
         <node concept="3F2HdR" id="hP5Yl5R" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <reference role="1NtTu8" target="dghb.1225239603387" />
+          <ref role="1NtTu8" to="dghb:hP5YayV" />
           <node concept="3F0ifn" id="hP5Yl5S" role="2czzBI">
             <property role="ilYzB" value="..." />
             <node concept="VPxyj" id="hP5Yl5T" role="3F10Kt">
@@ -228,7 +228,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="hP5Yl5Y" role="3EZMnx">
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="Vb9p2" id="hP5Yl5Z" role="3F10Kt">
             <property role="Vbekb" value="BOLD" />
           </node>
@@ -249,9 +249,9 @@
     </node>
   </node>
   <node concept="24kQdi" id="hP5Yl6k">
-    <reference role="1XX52x" target="dghb.1225239603393" resolve="Text" />
+    <ref role="1XX52x" to="dghb:hP5Yaz1" resolve="Text" />
     <node concept="3F0A7n" id="hP5Yl6l" role="2wV5jI">
-      <reference role="1NtTu8" target="dghb.1225239603394" resolve="text" />
+      <ref role="1NtTu8" to="dghb:hP5Yaz2" resolve="text" />
       <node concept="Vb9p2" id="hP5Yl6m" role="3F10Kt">
         <property role="Vbekb" value="ITALIC" />
       </node>

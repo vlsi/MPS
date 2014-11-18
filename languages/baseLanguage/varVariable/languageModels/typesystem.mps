@@ -138,17 +138,17 @@
           <node concept="1Z2H0r" id="hZKR8_E" role="mwGJk">
             <node concept="2OqwBi" id="hZKRa86" role="1Z2MuG">
               <node concept="1YBJjd" id="hZKR9Zd" role="2Oq$k0">
-                <reference role="1YBMHb" target="1236696569512" resolve="varVariableDeclaration" />
+                <ref role="1YBMHb" node="hZKR1qC" resolve="varVariableDeclaration" />
               </node>
               <node concept="3TrEf2" id="6ZQeJ8QF88Z" role="2OqNvi">
-                <reference role="3Tt5mk" target="tpee.1068431790190" />
+                <ref role="3Tt5mk" to="tpee:fz3vP1I" />
               </node>
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="hZKR5wk" role="1ZfhK$">
           <node concept="1Z$b5t" id="7jH_x$qzxVI" role="mwGJk">
-            <reference role="1Z$eMM" target="8425555512443936489" resolve="initializerType" />
+            <ref role="1Z$eMM" node="7jH_x$qzxVD" resolve="initializerType" />
           </node>
         </node>
       </node>
@@ -158,12 +158,12 @@
             <node concept="3cpWsn" id="7jH_x$qzxIA" role="3cpWs9">
               <property role="TrG5h" value="concreteInitializerType" />
               <node concept="3Tqbb2" id="7jH_x$qzxJ7" role="1tU5fm">
-                <reference role="ehGHo" target="tpee.1068431790189" resolve="Type" />
+                <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
               </node>
               <node concept="1PxgMI" id="7jH_x$qzxWb" role="33vP2m">
-                <reference role="1PxNhF" target="tpee.1068431790189" resolve="Type" />
+                <ref role="1PxNhF" to="tpee:fz3vP1H" resolve="Type" />
                 <node concept="2X3wrD" id="7jH_x$qzxW8" role="1PxMeX">
-                  <reference role="2X3Bk0" target="8425555512443936500" resolve="_concreteInitializerType" />
+                  <ref role="2X3Bk0" node="7jH_x$qzxVO" resolve="_concreteInitializerType" />
                 </node>
               </node>
             </node>
@@ -171,16 +171,16 @@
           <node concept="3clFbF" id="7jH_x$qzxJ9" role="3cqZAp">
             <node concept="37vLTI" id="7jH_x$qzxJd" role="3clFbG">
               <node concept="37vLTw" id="3GM_nagTBWT" role="37vLTJ">
-                <reference role="3cqZAo" target="8425555512443935654" resolve="concreteInitializerType" />
+                <ref role="3cqZAo" node="7jH_x$qzxIA" resolve="concreteInitializerType" />
               </node>
               <node concept="2YIFZM" id="hTOPiGs" role="37vLTx">
-                <reference role="1Pybhc" target="tp2g.1201536121399" resolve="ClassifierTypeUtil" />
-                <reference role="37wK5l" target="tp2g.1202763885217" resolve="copyTypeRecursively" />
+                <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
+                <ref role="37wK5l" to="tp2g:hwak6Ex" resolve="copyTypeRecursively" />
                 <node concept="2YIFZM" id="7jH_x$qzxFe" role="37wK5m">
-                  <reference role="1Pybhc" target="tp2g.1201536121399" resolve="ClassifierTypeUtil" />
-                  <reference role="37wK5l" target="tp2g.1201536134312" resolve="getTypeCoercedToClassifierType" />
+                  <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
+                  <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
                   <node concept="37vLTw" id="3GM_nagTAmw" role="37wK5m">
-                    <reference role="3cqZAo" target="8425555512443935654" resolve="concreteInitializerType" />
+                    <ref role="3cqZAo" node="7jH_x$qzxIA" resolve="concreteInitializerType" />
                   </node>
                 </node>
               </node>
@@ -189,20 +189,20 @@
           <node concept="1Z5TYs" id="7jH_x$qzxWl" role="3cqZAp">
             <node concept="mw_s8" id="7jH_x$qzxWp" role="1ZfhKB">
               <node concept="37vLTw" id="3GM_nagTzit" role="mwGJk">
-                <reference role="3cqZAo" target="8425555512443935654" resolve="concreteInitializerType" />
+                <ref role="3cqZAo" node="7jH_x$qzxIA" resolve="concreteInitializerType" />
               </node>
             </node>
             <node concept="mw_s8" id="7jH_x$qzxWo" role="1ZfhK$">
               <node concept="1Z2H0r" id="7jH_x$qzxWg" role="mwGJk">
                 <node concept="1YBJjd" id="7jH_x$qzxWi" role="1Z2MuG">
-                  <reference role="1YBMHb" target="1236696569512" resolve="varVariableDeclaration" />
+                  <ref role="1YBMHb" node="hZKR1qC" resolve="varVariableDeclaration" />
                 </node>
               </node>
             </node>
           </node>
         </node>
         <node concept="1Z$b5t" id="7jH_x$qzxVN" role="nvjzm">
-          <reference role="1Z$eMM" target="8425555512443936489" resolve="initializerType" />
+          <ref role="1Z$eMM" node="7jH_x$qzxVD" resolve="initializerType" />
         </node>
         <node concept="2X1qdy" id="7jH_x$qzxVO" role="2X0Ygz">
           <property role="TrG5h" value="_concreteInitializerType" />
@@ -212,7 +212,7 @@
     </node>
     <node concept="1YaCAy" id="hZKR1qC" role="1YuTPh">
       <property role="TrG5h" value="varVariableDeclaration" />
-      <reference role="1YaFvo" target="dvap.1236693300889" resolve="VarVariableDeclaration" />
+      <ref role="1YaFvo" to="dvap:hZKEzqp" resolve="VarVariableDeclaration" />
     </node>
   </node>
   <node concept="18kY7G" id="6ZQeJ8QF890">
@@ -222,10 +222,10 @@
         <node concept="2OqwBi" id="6ZQeJ8QF8BP" role="2MkoU_">
           <node concept="2OqwBi" id="6ZQeJ8QF8BG" role="2Oq$k0">
             <node concept="1YBJjd" id="6ZQeJ8QF8BD" role="2Oq$k0">
-              <reference role="1YBMHb" target="8067700594454594114" resolve="declaration" />
+              <ref role="1YBMHb" node="6ZQeJ8QF892" resolve="declaration" />
             </node>
             <node concept="3TrEf2" id="6ZQeJ8QF8BL" role="2OqNvi">
-              <reference role="3Tt5mk" target="tpee.1068431790190" />
+              <ref role="3Tt5mk" to="tpee:fz3vP1I" />
             </node>
           </node>
           <node concept="3x8VRR" id="6ZQeJ8QF8BV" role="2OqNvi" />
@@ -234,13 +234,13 @@
           <property role="Xl_RC" value="Initializer should not be empty" />
         </node>
         <node concept="1YBJjd" id="6ZQeJ8QF8BW" role="2OEOjV">
-          <reference role="1YBMHb" target="8067700594454594114" resolve="declaration" />
+          <ref role="1YBMHb" node="6ZQeJ8QF892" resolve="declaration" />
         </node>
       </node>
     </node>
     <node concept="1YaCAy" id="6ZQeJ8QF892" role="1YuTPh">
       <property role="TrG5h" value="declaration" />
-      <reference role="1YaFvo" target="dvap.1236693300889" resolve="VarVariableDeclaration" />
+      <ref role="1YaFvo" to="dvap:hZKEzqp" resolve="VarVariableDeclaration" />
     </node>
   </node>
 </model>

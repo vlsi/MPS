@@ -38,12 +38,12 @@
   <node concept="1TIwiD" id="hgn_oND">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="AConcept" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hgn_uy7" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="hgwIduf">
@@ -52,7 +52,7 @@
     <property role="TrG5h" value="BConcept" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="BCONCEPT" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
 </model>
 

@@ -55,7 +55,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getIcon" />
       <node concept="3uibUv" id="6KNGF9gVer" role="3clF45">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="6KNGF9gVes" role="1B3o_S" />
       <node concept="3clFbS" id="6KNGF9gVet" role="3clF47" />
@@ -80,7 +80,7 @@
       <node concept="3Tm1VV" id="6KNGF9gVeE" role="1B3o_S" />
       <node concept="10Q1$e" id="6KNGF9gVeF" role="3clF45">
         <node concept="3uibUv" id="6KNGF9gVeG" role="10Q1$1">
-          <reference role="3uigEE" target="121824560294376345" resolve="PaletteElement" />
+          <ref role="3uigEE" node="6KNGF9gVep" resolve="PaletteElement" />
         </node>
       </node>
     </node>
@@ -93,13 +93,13 @@
     </node>
     <node concept="3Tm1VV" id="6KNGF9gVeM" role="1B3o_S" />
     <node concept="3uibUv" id="6KNGF9gVeN" role="3HQHJm">
-      <reference role="3uigEE" target="121824560294376345" resolve="PaletteElement" />
+      <ref role="3uigEE" node="6KNGF9gVep" resolve="PaletteElement" />
     </node>
   </node>
   <node concept="3HP615" id="6KNGF9gVeO">
     <property role="TrG5h" value="PaletteAction" />
     <node concept="3uibUv" id="6KNGF9gVeQ" role="3HQHJm">
-      <reference role="3uigEE" target="121824560294376345" resolve="PaletteElement" />
+      <ref role="3uigEE" node="6KNGF9gVep" resolve="PaletteElement" />
     </node>
     <node concept="3clFb_" id="4ttM7y2hSPp" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -115,21 +115,21 @@
     <property role="TrG5h" value="PaletteSimpleAction" />
     <node concept="3Tm1VV" id="6KNGF9gVeW" role="1B3o_S" />
     <node concept="3uibUv" id="6KNGF9gVeX" role="3HQHJm">
-      <reference role="3uigEE" target="121824560294376372" resolve="PaletteAction" />
+      <ref role="3uigEE" node="6KNGF9gVeO" resolve="PaletteAction" />
     </node>
   </node>
   <node concept="3HP615" id="6KNGF9gVeY">
     <property role="TrG5h" value="PaletteToggleAction" />
     <node concept="3Tm1VV" id="6KNGF9gVf3" role="1B3o_S" />
     <node concept="3uibUv" id="6KNGF9gVf4" role="3HQHJm">
-      <reference role="3uigEE" target="121824560294376372" resolve="PaletteAction" />
+      <ref role="3uigEE" node="6KNGF9gVeO" resolve="PaletteAction" />
     </node>
   </node>
   <node concept="3HP615" id="3NXJmdrkE32">
     <property role="TrG5h" value="PaletteSeparator" />
     <node concept="3Tm1VV" id="3NXJmdrkE33" role="1B3o_S" />
     <node concept="3uibUv" id="3NXJmdrkE3S" role="3HQHJm">
-      <reference role="3uigEE" target="121824560294376345" resolve="PaletteElement" />
+      <ref role="3uigEE" node="6KNGF9gVep" resolve="PaletteElement" />
     </node>
   </node>
 </model>

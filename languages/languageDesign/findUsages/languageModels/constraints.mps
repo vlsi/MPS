@@ -87,7 +87,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="hDMPBmV">
-    <reference role="1M2myG" target="tp3b.1206197741569" resolve="ExecuteFinderExpression" />
+    <ref role="1M2myG" to="tp3b:hzmZew1" resolve="ExecuteFinderExpression" />
     <node concept="nKS2y" id="hDMPBnc" role="1MLUbF">
       <node concept="3clFbS" id="hDMPBnd" role="2VODD2">
         <node concept="3clFbF" id="hDMPBne" role="3cqZAp">
@@ -98,10 +98,10 @@
               <node concept="2Xjw5R" id="hDMPBnj" role="2OqNvi">
                 <node concept="3gmYPX" id="hDMPBnk" role="1xVPHs">
                   <node concept="3gn64h" id="hDMPBnl" role="3gmYPZ">
-                    <reference role="3gnhBz" target="tp3b.1197044488840" resolve="FindBlock" />
+                    <ref role="3gnhBz" to="tp3b:hqPqlE8" resolve="FindBlock" />
                   </node>
                   <node concept="3gn64h" id="hDMPBnm" role="3gmYPZ">
-                    <reference role="3gnhBz" target="tp3b.1206461516825" resolve="SearchedNodesBlock" />
+                    <ref role="3gnhBz" to="tp3b:hzAHsKp" resolve="SearchedNodesBlock" />
                   </node>
                 </node>
               </node>
@@ -112,7 +112,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMPBzY">
-    <reference role="1M2myG" target="tp3b.1200242336756" resolve="ResultStatement" />
+    <ref role="1M2myG" to="tp3b:htO1afO" resolve="ResultStatement" />
     <node concept="nKS2y" id="hDMPBzZ" role="1MLUbF">
       <node concept="3clFbS" id="hDMPB$0" role="2VODD2">
         <node concept="3clFbF" id="hDMPB$1" role="3cqZAp">
@@ -123,7 +123,7 @@
               <node concept="2Xjw5R" id="hDMPB$6" role="2OqNvi">
                 <node concept="1xMEDy" id="hDMPB$7" role="1xVPHs">
                   <node concept="chp4Y" id="hDMPB$8" role="ri$Ld">
-                    <reference role="cht4Q" target="tp3b.1197044488840" resolve="FindBlock" />
+                    <ref role="cht4Q" to="tp3b:hqPqlE8" resolve="FindBlock" />
                   </node>
                 </node>
               </node>
@@ -134,7 +134,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMPC0K">
-    <reference role="1M2myG" target="tp3b.1200242562138" resolve="NodeStatement" />
+    <ref role="1M2myG" to="tp3b:htO21hq" resolve="NodeStatement" />
     <node concept="nKS2y" id="hDMPC0L" role="1MLUbF">
       <node concept="3clFbS" id="hDMPC0M" role="2VODD2">
         <node concept="3clFbF" id="hDMPC0N" role="3cqZAp">
@@ -145,7 +145,7 @@
               <node concept="2Xjw5R" id="hDMPC0S" role="2OqNvi">
                 <node concept="1xMEDy" id="hDMPC0T" role="1xVPHs">
                   <node concept="chp4Y" id="hDMPC0U" role="ri$Ld">
-                    <reference role="cht4Q" target="tp3b.1206461516825" resolve="SearchedNodesBlock" />
+                    <ref role="cht4Q" to="tp3b:hzAHsKp" resolve="SearchedNodesBlock" />
                   </node>
                 </node>
               </node>
@@ -156,7 +156,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMPC2W">
-    <reference role="1M2myG" target="tp3b.1207141825411" resolve="CheckCancelledStatusStatement" />
+    <ref role="1M2myG" to="tp3b:h$fgBI3" resolve="CheckCancelledStatusStatement" />
     <node concept="nKS2y" id="hDMPC2X" role="1MLUbF">
       <node concept="3clFbS" id="hDMPC2Y" role="2VODD2">
         <node concept="3clFbF" id="hDMPC2Z" role="3cqZAp">
@@ -167,7 +167,7 @@
               <node concept="2Xjw5R" id="hDMPC34" role="2OqNvi">
                 <node concept="1xMEDy" id="hDMPC35" role="1xVPHs">
                   <node concept="chp4Y" id="hDMPC36" role="ri$Ld">
-                    <reference role="cht4Q" target="tp3b.1197044488840" resolve="FindBlock" />
+                    <ref role="cht4Q" to="tp3b:hqPqlE8" resolve="FindBlock" />
                   </node>
                 </node>
               </node>
@@ -178,26 +178,26 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQOeiUJ">
-    <reference role="1M2myG" target="tp3b.1197044488845" resolve="FinderDeclaration" />
+    <ref role="1M2myG" to="tp3b:hqPqlEd" resolve="FinderDeclaration" />
     <node concept="2NXJUA" id="hQOejm_" role="2NY200">
       <node concept="3clFbS" id="hQOejmA" role="2VODD2">
         <node concept="3clFbF" id="hQOek7V" role="3cqZAp">
           <node concept="22lmx$" id="1KFbmnBQDOW" role="3clFbG">
             <node concept="2OqwBi" id="hQOel8c" role="3uHU7B">
               <node concept="Rm8GO" id="hQOek_K" role="2Oq$k0">
-                <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dFIND_USAGES" resolve="FIND_USAGES" />
-                <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.FIND_USAGES" resolve="FIND_USAGES" />
+                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
               </node>
               <node concept="liA8E" id="hQOelwq" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~LanguageAspect%dis(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="is" />
+                <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
                 <node concept="2JrnkZ" id="6MGyrQSoFKy" role="37wK5m">
                   <node concept="1Q6Npb" id="hQOem2A" role="2JrQYb" />
                 </node>
               </node>
             </node>
             <node concept="2YIFZM" id="1KFbmnBQr8p" role="3uHU7w">
-              <reference role="1Pybhc" target="cu2c.~SModelStereotype" resolve="SModelStereotype" />
-              <reference role="37wK5l" target="cu2c.~SModelStereotype%disGeneratorModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
               <node concept="1Q6Npb" id="1KFbmnBQr8r" role="37wK5m" />
             </node>
           </node>

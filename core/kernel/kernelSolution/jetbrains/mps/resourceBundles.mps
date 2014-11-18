@@ -57,9 +57,9 @@
     <property role="TrG5h" value="IconResourceBundle" />
     <node concept="3Tm1VV" id="2zasvyEsu6B" role="1B3o_S" />
     <node concept="3uibUv" id="2zasvyEsu6C" role="3HQHJm">
-      <reference role="3uigEE" target="2939287019638088106" resolve="PluginResourceBundle" />
+      <ref role="3uigEE" node="2zasvyEsu6E" resolve="PluginResourceBundle" />
       <node concept="3uibUv" id="2zasvyEsu6D" role="11_B2D">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
     </node>
   </node>
@@ -75,9 +75,9 @@
       <node concept="3Tm1VV" id="2zasvyEsu6G" role="1B3o_S" />
       <node concept="3clFbS" id="2zasvyEsu6H" role="3clF47" />
       <node concept="3uibUv" id="2zasvyEsu6I" role="3clF45">
-        <reference role="3uigEE" target="e2lb.~Iterable" resolve="Iterable" />
+        <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
         <node concept="3uibUv" id="2zasvyEsu6J" role="11_B2D">
-          <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
         </node>
       </node>
     </node>
@@ -87,12 +87,12 @@
       <node concept="3Tm1VV" id="2zasvyEsu6L" role="1B3o_S" />
       <node concept="3clFbS" id="2zasvyEsu6M" role="3clF47" />
       <node concept="16syzq" id="2zasvyEsu6N" role="3clF45">
-        <reference role="16sUi3" target="2939287019638088119" resolve="T" />
+        <ref role="16sUi3" node="2zasvyEsu6R" resolve="T" />
       </node>
       <node concept="37vLTG" id="2zasvyEsu6O" role="3clF46">
         <property role="TrG5h" value="key" />
         <node concept="3uibUv" id="2zasvyEsu6P" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
         </node>
       </node>
     </node>

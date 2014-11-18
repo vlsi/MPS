@@ -57,7 +57,7 @@
       <node concept="37vLTG" id="339CWspuKFD" role="3clF46">
         <property role="TrG5h" value="targetClass" />
         <node concept="3uibUv" id="339CWspuKFE" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Class" resolve="Class" />
+          <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
         </node>
       </node>
       <node concept="3clFbS" id="339CWspuKFF" role="3clF47" />
@@ -96,7 +96,7 @@
       <node concept="37vLTG" id="339CWspuKG5" role="3clF46">
         <property role="TrG5h" value="strategy" />
         <node concept="3uibUv" id="339CWspuKG6" role="1tU5fm">
-          <reference role="3uigEE" target="3515521059660696290" resolve="ReaderStrategy" />
+          <ref role="3uigEE" node="339CWspuKFy" resolve="ReaderStrategy" />
         </node>
       </node>
       <node concept="3clFbS" id="339CWspuKG7" role="3clF47" />

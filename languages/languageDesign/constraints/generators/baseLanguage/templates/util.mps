@@ -114,7 +114,7 @@
     <node concept="2YIFZL" id="hfg36_3" role="jymVt">
       <property role="TrG5h" value="get_registerSelf_body" />
       <node concept="3Tqbb2" id="hfg43Vz" role="3clF45">
-        <reference role="ehGHo" target="tpee.1068580123136" resolve="StatementList" />
+        <ref role="ehGHo" to="tpee:fzclF80" resolve="StatementList" />
       </node>
       <node concept="3Tm1VV" id="hfg36_5" role="1B3o_S" />
       <node concept="3clFbS" id="hfg36_6" role="3clF47">
@@ -122,16 +122,16 @@
           <node concept="3cpWsn" id="hfg3Xqb" role="3cpWs9">
             <property role="TrG5h" value="regiserSelfMethod" />
             <node concept="3Tqbb2" id="hfg3Xqc" role="1tU5fm">
-              <reference role="ehGHo" target="tpee.1068580123165" resolve="InstanceMethodDeclaration" />
+              <ref role="ehGHo" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
             </node>
             <node concept="2OqwBi" id="h_YjYFC" role="33vP2m">
               <node concept="2OqwBi" id="h_YjYE2" role="2Oq$k0">
                 <node concept="2OqwBi" id="hxx$PV2" role="2Oq$k0">
                   <node concept="2qgKlT" id="2oLu0Jc28Ne" role="2OqNvi">
-                    <reference role="37wK5l" target="tpek.5292274854859311639" resolve="methods" />
+                    <ref role="37wK5l" to="tpek:4_LVZ3pBKCn" resolve="methods" />
                   </node>
                   <node concept="37vLTw" id="2BHiRxglp6I" role="2Oq$k0">
-                    <reference role="3cqZAo" target="1184606569681" resolve="clazz" />
+                    <ref role="3cqZAo" node="hfg3sjh" resolve="clazz" />
                   </node>
                 </node>
                 <node concept="3zZkjj" id="hRzagYU" role="2OqNvi">
@@ -147,13 +147,13 @@
                             <property role="Xl_RC" value="registerSelf" />
                           </node>
                           <node concept="liA8E" id="hRzagZ2" role="2OqNvi">
-                            <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="hRzagZ3" role="37wK5m">
                               <node concept="37vLTw" id="2BHiRxgm6Or" role="2Oq$k0">
-                                <reference role="3cqZAo" target="1227876798396" resolve="it" />
+                                <ref role="3cqZAo" node="hRzagYW" resolve="it" />
                               </node>
                               <node concept="3TrcHB" id="hRzagZ5" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                               </node>
                             </node>
                           </node>
@@ -170,10 +170,10 @@
         <node concept="3cpWs6" id="hfg416k" role="3cqZAp">
           <node concept="2OqwBi" id="hxx$XH1" role="3cqZAk">
             <node concept="37vLTw" id="3GM_nagTzF6" role="2Oq$k0">
-              <reference role="3cqZAo" target="1184606705291" resolve="regiserSelfMethod" />
+              <ref role="3cqZAo" node="hfg3Xqb" resolve="regiserSelfMethod" />
             </node>
             <node concept="3TrEf2" id="hfg416l" role="2OqNvi">
-              <reference role="3Tt5mk" target="tpee.1068580123135" />
+              <ref role="3Tt5mk" to="tpee:fzclF7Z" />
             </node>
           </node>
         </node>
@@ -181,14 +181,14 @@
       <node concept="37vLTG" id="hfg3sjh" role="3clF46">
         <property role="TrG5h" value="clazz" />
         <node concept="3Tqbb2" id="hfg3sji" role="1tU5fm">
-          <reference role="ehGHo" target="tpee.1068390468198" resolve="ClassConcept" />
+          <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
         </node>
       </node>
     </node>
     <node concept="2YIFZL" id="hfg4dk2" role="jymVt">
       <property role="TrG5h" value="get_unRegisterSelf_body" />
       <node concept="3Tqbb2" id="hfg4dk3" role="3clF45">
-        <reference role="ehGHo" target="tpee.1068580123136" resolve="StatementList" />
+        <ref role="ehGHo" to="tpee:fzclF80" resolve="StatementList" />
       </node>
       <node concept="3Tm1VV" id="hfg4dk4" role="1B3o_S" />
       <node concept="3clFbS" id="hfg4dk5" role="3clF47">
@@ -196,16 +196,16 @@
           <node concept="3cpWsn" id="hfg4dk7" role="3cpWs9">
             <property role="TrG5h" value="unRegiserSelfMethod" />
             <node concept="3Tqbb2" id="hfg4dk8" role="1tU5fm">
-              <reference role="ehGHo" target="tpee.1068580123165" resolve="InstanceMethodDeclaration" />
+              <ref role="ehGHo" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
             </node>
             <node concept="2OqwBi" id="h_YjYDd" role="33vP2m">
               <node concept="2OqwBi" id="h_YjYE$" role="2Oq$k0">
                 <node concept="2OqwBi" id="hxx$PG2" role="2Oq$k0">
                   <node concept="2qgKlT" id="2oLu0Jc29xq" role="2OqNvi">
-                    <reference role="37wK5l" target="tpek.5292274854859311639" resolve="methods" />
+                    <ref role="37wK5l" to="tpek:4_LVZ3pBKCn" resolve="methods" />
                   </node>
                   <node concept="37vLTw" id="2BHiRxgha0Q" role="2Oq$k0">
-                    <reference role="3cqZAo" target="1184606770461" resolve="clazz" />
+                    <ref role="3cqZAo" node="hfg4dkt" resolve="clazz" />
                   </node>
                 </node>
                 <node concept="3zZkjj" id="hRzaip5" role="2OqNvi">
@@ -221,13 +221,13 @@
                             <property role="Xl_RC" value="unRegisterSelf" />
                           </node>
                           <node concept="liA8E" id="hRzaipd" role="2OqNvi">
-                            <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="hRzaipe" role="37wK5m">
                               <node concept="37vLTw" id="2BHiRxgm1AH" role="2Oq$k0">
-                                <reference role="3cqZAo" target="1227876804167" resolve="it" />
+                                <ref role="3cqZAo" node="hRzaip7" resolve="it" />
                               </node>
                               <node concept="3TrcHB" id="hRzaipg" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                               </node>
                             </node>
                           </node>
@@ -244,10 +244,10 @@
         <node concept="3cpWs6" id="hfg4dkp" role="3cqZAp">
           <node concept="2OqwBi" id="hxx$N7e" role="3cqZAk">
             <node concept="37vLTw" id="3GM_nagTBZ4" role="2Oq$k0">
-              <reference role="3cqZAo" target="1184606770439" resolve="unRegiserSelfMethod" />
+              <ref role="3cqZAo" node="hfg4dk7" resolve="unRegiserSelfMethod" />
             </node>
             <node concept="3TrEf2" id="hfg4dkr" role="2OqNvi">
-              <reference role="3Tt5mk" target="tpee.1068580123135" />
+              <ref role="3Tt5mk" to="tpee:fzclF7Z" />
             </node>
           </node>
         </node>
@@ -255,7 +255,7 @@
       <node concept="37vLTG" id="hfg4dkt" role="3clF46">
         <property role="TrG5h" value="clazz" />
         <node concept="3Tqbb2" id="hfg4dku" role="1tU5fm">
-          <reference role="ehGHo" target="tpee.1068390468198" resolve="ClassConcept" />
+          <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
         </node>
       </node>
     </node>

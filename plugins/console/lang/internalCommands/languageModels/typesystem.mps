@@ -69,7 +69,7 @@
         <node concept="mw_s8" id="7E9dkpks$9b" role="1ZfhK$">
           <node concept="1Z2H0r" id="7E9dkpks$1P" role="mwGJk">
             <node concept="1YBJjd" id="7E9dkpks$2w" role="1Z2MuG">
-              <reference role="1YBMHb" target="8829647120617324603" resolve="internalMode" />
+              <ref role="1YBMHb" node="7E9dkpks$0V" resolve="internalMode" />
             </node>
           </node>
         </node>
@@ -82,7 +82,7 @@
     </node>
     <node concept="1YaCAy" id="7E9dkpks$0V" role="1YuTPh">
       <property role="TrG5h" value="internalMode" />
-      <reference role="1YaFvo" target="wns9.8829647120617316889" resolve="InternalMode" />
+      <ref role="1YaFvo" to="wns9:7E9dkpksy8p" resolve="InternalMode" />
     </node>
   </node>
   <node concept="1YbPZF" id="4PRmqZeE56Y">
@@ -97,7 +97,7 @@
         <node concept="mw_s8" id="4PRmqZeE574" role="1ZfhK$">
           <node concept="1Z2H0r" id="4PRmqZeE575" role="mwGJk">
             <node concept="1YBJjd" id="4PRmqZeE576" role="1Z2MuG">
-              <reference role="1YBMHb" target="5582028874770305479" resolve="consoleModelExpression" />
+              <ref role="1YBMHb" node="4PRmqZeE577" resolve="consoleModelExpression" />
             </node>
           </node>
         </node>
@@ -105,7 +105,7 @@
     </node>
     <node concept="1YaCAy" id="4PRmqZeE577" role="1YuTPh">
       <property role="TrG5h" value="consoleModelExpression" />
-      <reference role="1YaFvo" target="wns9.5582028874770305469" resolve="ConsoleModelExpression" />
+      <ref role="1YaFvo" to="wns9:4PRmqZeE56X" resolve="ConsoleModelExpression" />
     </node>
   </node>
 </model>

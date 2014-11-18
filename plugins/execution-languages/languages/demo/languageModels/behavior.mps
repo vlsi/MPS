@@ -64,7 +64,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="7id_T6FmIv$">
-    <reference role="13h7C2" target="f1er.4928971978190304900" resolve="SomeConcept" />
+    <ref role="13h7C2" to="f1er:4hBeuoVSNq4" resolve="SomeConcept" />
     <node concept="13hLZK" id="7id_T6FmIv_" role="13h7CW">
       <node concept="3clFbS" id="7id_T6FmIvA" role="2VODD2" />
     </node>
@@ -72,14 +72,14 @@
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="isNodeRunnable" />
       <property role="13i0iv" value="false" />
-      <reference role="13i0hy" target="nlf1.4666195181811081448" resolve="isNodeRunnable" />
+      <ref role="13i0hy" to="nlf1:431DWIovi3C" resolve="isNodeRunnable" />
       <node concept="3Tm1VV" id="7id_T6FmIvC" role="1B3o_S" />
       <node concept="3clFbS" id="7id_T6FmIvD" role="3clF47">
         <node concept="3clFbF" id="7id_T6FmJIJ" role="3cqZAp">
           <node concept="2OqwBi" id="7id_T6FmJIL" role="3clFbG">
             <node concept="13iPFW" id="7id_T6FmJIK" role="2Oq$k0" />
             <node concept="3TrcHB" id="7id_T6FmJIP" role="2OqNvi">
-              <reference role="3TsBF5" target="f1er.4928971978190605252" resolve="valid" />
+              <ref role="3TsBF5" to="f1er:4hBeuoVTWJ4" resolve="valid" />
             </node>
           </node>
         </node>

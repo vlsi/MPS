@@ -45,14 +45,14 @@
   <node concept="1TIwiD" id="hhaTQ1E">
     <property role="TrG5h" value="MoneyLiteral" />
     <property role="2_RsDV" value="none" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="hhaUXX0" role="1TKVEl">
       <property role="TrG5h" value="currency" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="hhaV27X" role="1TKVEl">
       <property role="TrG5h" value="amount" />
-      <reference role="AX2Wp" target="1186668138191" resolve="BigDecimal" />
+      <ref role="AX2Wp" node="hhaVGVf" resolve="BigDecimal" />
     </node>
   </node>
   <node concept="Az7Fb" id="hhaVGVf">
@@ -65,7 +65,7 @@
     <property role="TrG5h" value="MoneyType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="Money" />
-    <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
   </node>
   <node concept="1TIwiD" id="hhMZP_C">
     <property role="R5$K7" value="false" />
@@ -74,18 +74,18 @@
     <property role="TrG5h" value="MoneyCreator" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="Money" />
-    <reference role="1TJDcQ" target="tpee.1145552809883" resolve="AbstractCreator" />
+    <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
     <node concept="1TJgyj" id="hhNe3QL" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="amount" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="1TJgyj" id="hhNegXa" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="currency" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="hhO2LpN">
@@ -93,12 +93,12 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MoneyMethodCall" />
     <property role="2_RsDV" value="none" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="hhO3Wnz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="instance" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="hhO2PPw">
@@ -107,7 +107,7 @@
     <property role="TrG5h" value="MoneyGetAmountMethodCall" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value=". amount" />
-    <reference role="1TJDcQ" target="1187357857395" resolve="MoneyMethodCall" />
+    <ref role="1TJDcQ" node="hhO2LpN" resolve="MoneyMethodCall" />
   </node>
   <node concept="1TIwiD" id="hhO36Yr">
     <property role="R5$K7" value="false" />
@@ -115,7 +115,7 @@
     <property role="TrG5h" value="MoneyGetCurrencyMethodCall" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value=". currency" />
-    <reference role="1TJDcQ" target="1187357857395" resolve="MoneyMethodCall" />
+    <ref role="1TJDcQ" node="hhO2LpN" resolve="MoneyMethodCall" />
   </node>
   <node concept="1TIwiD" id="hi3xzhg">
     <property role="R5$K7" value="false" />
@@ -123,7 +123,7 @@
     <property role="TrG5h" value="MoneyIsZeroMethodCall" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value=". isZero" />
-    <reference role="1TJDcQ" target="1187357857395" resolve="MoneyMethodCall" />
+    <ref role="1TJDcQ" node="hhO2LpN" resolve="MoneyMethodCall" />
   </node>
 </model>
 

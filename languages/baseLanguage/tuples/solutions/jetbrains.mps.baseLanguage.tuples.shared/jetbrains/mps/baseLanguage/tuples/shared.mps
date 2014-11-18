@@ -45,14 +45,14 @@
       <property role="3dDGau" value="false" />
       <property role="TrG5h" value="first" />
       <node concept="16syzq" id="i3LVy2T" role="2lK19J">
-        <reference role="16sUi3" target="1241009470756" resolve="A" />
+        <ref role="16sUi3" node="i3LVrO$" resolve="A" />
       </node>
     </node>
     <node concept="2lGYhJ" id="i3LVyta" role="2pHZQ9">
       <property role="3dDGau" value="false" />
       <property role="TrG5h" value="second" />
       <node concept="16syzq" id="i3LVyD_" role="2lK19J">
-        <reference role="16sUi3" target="1241009486191" resolve="B" />
+        <ref role="16sUi3" node="i3LVv_J" resolve="B" />
       </node>
     </node>
     <node concept="3Tm1VV" id="i3LVjGL" role="1B3o_S" />

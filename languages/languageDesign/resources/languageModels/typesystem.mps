@@ -78,14 +78,14 @@
         <node concept="mw_s8" id="7Mb2akaesvO" role="1ZfhKB">
           <node concept="2c44tf" id="7Mb2akaesvP" role="mwGJk">
             <node concept="3uibUv" id="7Mb2akaesvQ" role="2c44tc">
-              <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+              <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="7Mb2akaesvR" role="1ZfhK$">
           <node concept="1Z2H0r" id="7Mb2akaesvS" role="mwGJk">
             <node concept="1YBJjd" id="7Mb2akaesvT" role="1Z2MuG">
-              <reference role="1YBMHb" target="8974276187400030202" resolve="icon" />
+              <ref role="1YBMHb" node="7Mb2akaesvU" resolve="icon" />
             </node>
           </node>
         </node>
@@ -93,7 +93,7 @@
     </node>
     <node concept="1YaCAy" id="7Mb2akaesvU" role="1YuTPh">
       <property role="TrG5h" value="icon" />
-      <reference role="1YaFvo" target="1oap.8974276187400029891" resolve="IconResourceExpression" />
+      <ref role="1YaFvo" to="1oap:7Mb2akaesr3" resolve="IconResourceExpression" />
     </node>
   </node>
   <node concept="1YbPZF" id="7Mb2akaesvV">
@@ -104,7 +104,7 @@
         <node concept="mw_s8" id="7Mb2akaesvY" role="1ZfhKB">
           <node concept="2c44tf" id="7Mb2akaesvZ" role="mwGJk">
             <node concept="3uibUv" id="7Mb2akaesw0" role="2c44tc">
-              <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+              <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
             </node>
           </node>
         </node>
@@ -112,10 +112,10 @@
           <node concept="1Z2H0r" id="7Mb2akaesw2" role="mwGJk">
             <node concept="2OqwBi" id="7Mb2akaesw3" role="1Z2MuG">
               <node concept="1YBJjd" id="7Mb2akaesw4" role="2Oq$k0">
-                <reference role="1YBMHb" target="8974276187400030214" resolve="ird" />
+                <ref role="1YBMHb" node="7Mb2akaesw6" resolve="ird" />
               </node>
               <node concept="3TrEf2" id="7Mb2akaesw5" role="2OqNvi">
-                <reference role="3Tt5mk" target="1oap.8974276187400029889" />
+                <ref role="3Tt5mk" to="1oap:7Mb2akaesr1" />
               </node>
             </node>
           </node>
@@ -124,7 +124,7 @@
     </node>
     <node concept="1YaCAy" id="7Mb2akaesw6" role="1YuTPh">
       <property role="TrG5h" value="ird" />
-      <reference role="1YaFvo" target="1oap.8974276187400029888" resolve="IconResourceDeclaration" />
+      <ref role="1YaFvo" to="1oap:7Mb2akaesr0" resolve="IconResourceDeclaration" />
     </node>
   </node>
   <node concept="1YbPZF" id="7Mb2akaesw7">
@@ -134,14 +134,14 @@
         <node concept="mw_s8" id="7Mb2akaeswa" role="1ZfhKB">
           <node concept="2c44tf" id="7Mb2akaeswb" role="mwGJk">
             <node concept="3uibUv" id="7Mb2akaeswc" role="2c44tc">
-              <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+              <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="7Mb2akaeswd" role="1ZfhK$">
           <node concept="1Z2H0r" id="7Mb2akaeswe" role="mwGJk">
             <node concept="1YBJjd" id="7Mb2akaeswf" role="1Z2MuG">
-              <reference role="1YBMHb" target="8974276187400030224" resolve="irr" />
+              <ref role="1YBMHb" node="7Mb2akaeswg" resolve="irr" />
             </node>
           </node>
         </node>
@@ -149,7 +149,7 @@
     </node>
     <node concept="1YaCAy" id="7Mb2akaeswg" role="1YuTPh">
       <property role="TrG5h" value="irr" />
-      <reference role="1YaFvo" target="1oap.8974276187400029895" resolve="IconResourceReference" />
+      <ref role="1YaFvo" to="1oap:7Mb2akaesr7" resolve="IconResourceReference" />
     </node>
   </node>
 </model>

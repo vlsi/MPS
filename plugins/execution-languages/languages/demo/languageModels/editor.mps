@@ -42,11 +42,11 @@
     </language>
   </registry>
   <node concept="24kQdi" id="4hBeuoVSNq6">
-    <reference role="1XX52x" target="f1er.4928971978190304900" resolve="SomeConcept" />
+    <ref role="1XX52x" to="f1er:4hBeuoVSNq4" resolve="SomeConcept" />
     <node concept="3EZMnI" id="4hBeuoVTWJ5" role="2wV5jI">
       <node concept="2iRkQZ" id="4hBeuoVTWJ6" role="2iSdaV" />
       <node concept="3F0A7n" id="4hBeuoVSNq8" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3EZMnI" id="4hBeuoVTWJ8" role="3EZMnx">
         <node concept="VPM3Z" id="4hBeuoVTWJ9" role="3F10Kt">
@@ -57,7 +57,7 @@
           <property role="3F0ifm" value="is valid" />
         </node>
         <node concept="3F0A7n" id="4hBeuoVTWJg" role="3EZMnx">
-          <reference role="1NtTu8" target="f1er.4928971978190605252" resolve="valid" />
+          <ref role="1NtTu8" to="f1er:4hBeuoVTWJ4" resolve="valid" />
         </node>
         <node concept="2iRfu4" id="4hBeuoVTWJb" role="2iSdaV" />
       </node>

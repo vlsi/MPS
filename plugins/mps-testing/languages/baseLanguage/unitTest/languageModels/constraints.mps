@@ -57,9 +57,9 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="hDMFJwk">
-    <reference role="1M2myG" target="tpe3.1171931851043" resolve="BTestCase" />
+    <ref role="1M2myG" to="tpe3:h3s_e$z" resolve="BTestCase" />
     <node concept="EnEH3" id="hDMFJwl" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="Eqf_E" id="hDMFJwm" role="EtsB7">
         <node concept="3clFbS" id="hDMFJwn" role="2VODD2">
           <node concept="3clFbF" id="hDMFJwo" role="3cqZAp">
@@ -70,7 +70,7 @@
               <node concept="2OqwBi" id="hDMFJwr" role="3uHU7B">
                 <node concept="EsrRn" id="hDMFJws" role="2Oq$k0" />
                 <node concept="3TrcHB" id="hDMFJwt" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpe3.1171931851045" resolve="testCaseName" />
+                  <ref role="3TsBF5" to="tpe3:h3s_e$_" resolve="testCaseName" />
                 </node>
               </node>
             </node>
@@ -80,9 +80,9 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFJFG">
-    <reference role="1M2myG" target="tpe3.1171931690126" resolve="TestMethod" />
+    <ref role="1M2myG" to="tpe3:h3s$Bie" resolve="TestMethod" />
     <node concept="EnEH3" id="hDMFJFH" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="Eqf_E" id="hDMFJFI" role="EtsB7">
         <node concept="3clFbS" id="hDMFJFJ" role="2VODD2">
           <node concept="3clFbF" id="hDMFJFK" role="3cqZAp">
@@ -90,7 +90,7 @@
               <node concept="2OqwBi" id="hDMFJFM" role="3uHU7w">
                 <node concept="EsrRn" id="hDMFJFN" role="2Oq$k0" />
                 <node concept="3TrcHB" id="hDMFJFO" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpe3.1171931690128" resolve="methodName" />
+                  <ref role="3TsBF5" to="tpe3:h3s$Big" resolve="methodName" />
                 </node>
               </node>
               <node concept="Xl_RD" id="hDMFJFP" role="3uHU7B">

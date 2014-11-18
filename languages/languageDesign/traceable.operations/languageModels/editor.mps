@@ -48,7 +48,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="61oOtBBBKv3">
-    <reference role="1XX52x" target="lyxe.6942529559415680891" resolve="Node_CopyWithTraceOperation" />
+    <ref role="1XX52x" to="lyxe:61oOtBBBIXV" resolve="Node_CopyWithTraceOperation" />
     <node concept="3F0ifn" id="gD$rYqB" role="2wV5jI">
       <property role="1cu_pB" value="1" />
       <property role="3F0ifm" value="copy with trace" />
@@ -61,21 +61,21 @@
     </node>
   </node>
   <node concept="24kQdi" id="2gx$rhdCaWd">
-    <reference role="1XX52x" target="lyxe.2603522263179374343" resolve="NList_CopyWithTraceOperation" />
+    <ref role="1XX52x" to="lyxe:2gx$rhdCaW7" resolve="NList_CopyWithTraceOperation" />
     <node concept="3EZMnI" id="2gx$rhdCaWf" role="2wV5jI">
       <node concept="3F0ifn" id="2gx$rhdCaWi" role="3EZMnx">
         <property role="3F0ifm" value="copy with trace" />
       </node>
       <node concept="3F0ifn" id="2gx$rhdCaWk" role="3EZMnx">
         <property role="3F0ifm" value="(" />
-        <reference role="1k5W1q" target="tpen.1234958090348" resolve="LeftParenAfterName" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
       </node>
       <node concept="3F1sOY" id="2gx$rhdCaWm" role="3EZMnx">
-        <reference role="1NtTu8" target="lyxe.2603522263179374348" />
+        <ref role="1NtTu8" to="lyxe:2gx$rhdCaWc" />
       </node>
       <node concept="3F0ifn" id="2gx$rhdCaWo" role="3EZMnx">
         <property role="3F0ifm" value=")" />
-        <reference role="1k5W1q" target="tpen.1215088010675" resolve="RightParen" />
+        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
       </node>
       <node concept="l2Vlx" id="2gx$rhdCaWh" role="2iSdaV" />
     </node>

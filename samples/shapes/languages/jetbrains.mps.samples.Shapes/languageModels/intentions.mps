@@ -59,7 +59,7 @@
   <node concept="2S6QgY" id="W6XMzE__iW">
     <property role="TrG5h" value="PreviewScene" />
     <property role="2ZfUl0" value="true" />
-    <reference role="2ZfgGC" target="lpry.5898776707557467933" resolve="Canvas" />
+    <ref role="2ZfgGC" to="lpry:57sEyAnjUst" resolve="Canvas" />
     <node concept="2S6ZIM" id="W6XMzE__iX" role="2ZfVej">
       <node concept="3clFbS" id="W6XMzE__iY" role="2VODD2">
         <node concept="3clFbF" id="W6XMzE__J0" role="3cqZAp">
@@ -75,7 +75,7 @@
           <node concept="2OqwBi" id="W6XMzE_AxH" role="3clFbG">
             <node concept="2Sf5sV" id="W6XMzE_AvS" role="2Oq$k0" />
             <node concept="2qgKlT" id="W6XMzE_AG$" role="2OqNvi">
-              <reference role="37wK5l" target="g5uf.1082824515535528722" resolve="interpret" />
+              <ref role="37wK5l" to="g5uf:W6XMzE_6ci" resolve="interpret" />
             </node>
           </node>
         </node>

@@ -42,7 +42,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="hMXMUME">
-    <reference role="1XX52x" target="jfvl.1222954937628" resolve="TheSimplestConcept" />
+    <ref role="1XX52x" to="jfvl:hMXMQOs" resolve="TheSimplestConcept" />
     <node concept="3EZMnI" id="hMXMVln" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hMXMX6t" role="3EZMnx">
@@ -54,7 +54,7 @@
           <property role="3F0ifm" value="the simplest concept instance" />
         </node>
         <node concept="3F0A7n" id="hMXMX$$" role="3EZMnx">
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="VPM3Z" id="hMXMX6w" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -73,7 +73,7 @@
           <property role="3F0ifm" value="text = " />
         </node>
         <node concept="3F0A7n" id="hMXN3h7" role="3EZMnx">
-          <reference role="1NtTu8" target="jfvl.1222954945083" resolve="text" />
+          <ref role="1NtTu8" to="jfvl:hMXMSCV" resolve="text" />
         </node>
         <node concept="VPM3Z" id="hMXN2MN" role="3F10Kt">
           <property role="VOm3f" value="false" />

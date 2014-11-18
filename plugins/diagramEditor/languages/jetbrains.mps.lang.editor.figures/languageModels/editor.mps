@@ -122,17 +122,17 @@
     </language>
   </registry>
   <node concept="24kQdi" id="1SVBbIvt9it">
-    <reference role="1XX52x" target="ny2.2178507174411801538" resolve="ExternalViewFigure" />
+    <ref role="1XX52x" to="ny2:1SVBbIvt9f2" resolve="ExternalViewFigure" />
     <node concept="3EZMnI" id="1SVBbIvt9k0" role="2wV5jI">
       <node concept="l2Vlx" id="1SVBbIvt9k1" role="2iSdaV" />
       <node concept="3F0ifn" id="1SVBbIvt9k2" role="3EZMnx">
         <property role="3F0ifm" value="view class" />
       </node>
       <node concept="1iCGBv" id="1SVBbIvt9k3" role="3EZMnx">
-        <reference role="1NtTu8" target="ny2.2178507174411801591" />
+        <ref role="1NtTu8" to="ny2:1SVBbIvt9fR" />
         <node concept="1sVBvm" id="1SVBbIvt9k4" role="1sWHZn">
           <node concept="3F0A7n" id="1SVBbIvt9k5" role="2wV5jI">
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
@@ -146,7 +146,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="1SVBbIvt9k9" role="3EZMnx">
-        <reference role="1NtTu8" target="ny2.2178507174411801664" />
+        <ref role="1NtTu8" to="ny2:1SVBbIvt9h0" />
         <node concept="l2Vlx" id="1SVBbIvt9ka" role="2czzBx" />
         <node concept="pj6Ft" id="1SVBbIvt9kb" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -167,14 +167,14 @@
     </node>
   </node>
   <node concept="24kQdi" id="1SVBbIvt9np">
-    <reference role="1XX52x" target="ny2.2178507174411801606" resolve="ExternalViewFigureParameter" />
+    <ref role="1XX52x" to="ny2:1SVBbIvt9g6" resolve="ExternalViewFigureParameter" />
     <node concept="3EZMnI" id="1SVBbIvt9o6" role="2wV5jI">
       <node concept="l2Vlx" id="1SVBbIvt9o7" role="2iSdaV" />
       <node concept="1iCGBv" id="1SVBbIvt9oa" role="3EZMnx">
-        <reference role="1NtTu8" target="ny2.2178507174411801649" />
+        <ref role="1NtTu8" to="ny2:1SVBbIvt9gL" />
         <node concept="1sVBvm" id="1SVBbIvt9ob" role="1sWHZn">
           <node concept="3F0A7n" id="1SVBbIvt9oc" role="2wV5jI">
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
@@ -187,11 +187,11 @@
     </node>
   </node>
   <node concept="24kQdi" id="4H19mAw_rXL">
-    <reference role="1XX52x" target="ny2.5422656561926747556" resolve="FigureAttribute" />
+    <ref role="1XX52x" to="ny2:4H19mAw_rm$" resolve="FigureAttribute" />
     <node concept="3EZMnI" id="4H19mAw_stP" role="2wV5jI">
       <node concept="PMmxH" id="4H19mAwPo7T" role="3EZMnx">
-        <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
-        <reference role="1ERwB7" target="5422656561928696623" resolve="AttributeDelete_Actions" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1ERwB7" node="4H19mAwGRcJ" resolve="AttributeDelete_Actions" />
         <node concept="VPxyj" id="4H19mAwPEVZ" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -205,7 +205,7 @@
   </node>
   <node concept="1h_SRR" id="4H19mAwGRcJ">
     <property role="TrG5h" value="AttributeDelete_Actions" />
-    <reference role="1h_SK9" target="tpck.3364660638048049748" resolve="NodeAttribute" />
+    <ref role="1h_SK9" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1hA7zw" id="4H19mAwGRdg" role="1h_SK8">
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="4H19mAwGRdh" role="1hA7z_">
@@ -229,7 +229,7 @@
           <node concept="3clFbF" id="4H19mAwQsoZ" role="3cqZAp">
             <node concept="2OqwBi" id="4H19mAwQsrD" role="3clFbG">
               <node concept="37vLTw" id="4H19mAwQsoY" role="2Oq$k0">
-                <reference role="3cqZAo" target="5422656561931207972" resolve="nodeToSelect" />
+                <ref role="3cqZAo" node="4H19mAwQsk$" resolve="nodeToSelect" />
               </node>
               <node concept="1OKiuA" id="4H19mAwQsTh" role="2OqNvi">
                 <node concept="1Q80Hx" id="4H19mAwQsTY" role="lBI5i" />
@@ -244,7 +244,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4H19mAwRXY0">
-    <reference role="1XX52x" target="ny2.5422656561929884641" resolve="FigureParameterAttribute" />
+    <ref role="1XX52x" to="ny2:4H19mAwLpfx" resolve="FigureParameterAttribute" />
     <node concept="3EZMnI" id="4H19mAwRXY2" role="2wV5jI">
       <node concept="3F0ifn" id="6mlphA0Doad" role="3EZMnx">
         <property role="3F0ifm" value="@FigureParameter" />

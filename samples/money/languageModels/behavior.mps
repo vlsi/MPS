@@ -78,31 +78,31 @@
     </language>
   </registry>
   <node concept="13h7C7" id="hEwIis2">
-    <reference role="13h7C2" target="tp7v.1186667651178" resolve="MoneyLiteral" />
+    <ref role="13h7C2" to="tp7v:hhaTQ1E" resolve="MoneyLiteral" />
     <node concept="13hLZK" id="hEwIis3" role="13h7CW">
       <node concept="3clFbS" id="hEwIis4" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="hEwInER">
-    <reference role="13h7C2" target="tp7v.1186669599053" resolve="MoneyType" />
+    <ref role="13h7C2" to="tp7v:hhb1h_d" resolve="MoneyType" />
     <node concept="13hLZK" id="hEwInES" role="13h7CW">
       <node concept="3clFbS" id="hEwInET" role="2VODD2" />
     </node>
     <node concept="13i0hz" id="hEwInEU" role="13h7CS">
       <property role="TrG5h" value="getAbstractCreator" />
       <property role="13i0is" value="false" />
-      <reference role="13i0hy" target="tpek.1213877337340" resolve="getAbstractCreator" />
+      <ref role="13i0hy" to="tpek:hEwIzNW" resolve="getAbstractCreator" />
       <node concept="3clFbS" id="hEwInEV" role="3clF47">
         <node concept="3cpWs8" id="hEwInEW" role="3cqZAp">
           <node concept="3cpWsn" id="hEwInEX" role="3cpWs9">
             <property role="TrG5h" value="creator" />
             <node concept="3Tqbb2" id="hEwInEY" role="1tU5fm">
-              <reference role="ehGHo" target="tp7v.1187340310888" resolve="MoneyCreator" />
+              <ref role="ehGHo" to="tp7v:hhMZP_C" resolve="MoneyCreator" />
             </node>
             <node concept="2ShNRf" id="hEwInEZ" role="33vP2m">
               <node concept="3zrR0B" id="hEwInF0" role="2ShVmc">
                 <node concept="3Tqbb2" id="hEwInF1" role="3zrR0E">
-                  <reference role="ehGHo" target="tp7v.1187340310888" resolve="MoneyCreator" />
+                  <ref role="ehGHo" to="tp7v:hhMZP_C" resolve="MoneyCreator" />
                 </node>
               </node>
             </node>
@@ -110,24 +110,24 @@
         </node>
         <node concept="3clFbF" id="hEwInF2" role="3cqZAp">
           <node concept="37vLTw" id="3GM_nagTxmI" role="3clFbG">
-            <reference role="3cqZAo" target="1213877287613" resolve="creator" />
+            <ref role="3cqZAo" node="hEwInEX" resolve="creator" />
           </node>
         </node>
       </node>
       <node concept="3Tqbb2" id="hEwInF4" role="3clF45">
-        <reference role="ehGHo" target="tpee.1145552809883" resolve="AbstractCreator" />
+        <ref role="ehGHo" to="tpee:gEShaYr" resolve="AbstractCreator" />
       </node>
       <node concept="3Tm1VV" id="hJrm0v$" role="1B3o_S" />
     </node>
   </node>
   <node concept="13h7C7" id="hEwIqG$">
-    <reference role="13h7C2" target="tp7v.1187357945755" resolve="MoneyGetCurrencyMethodCall" />
+    <ref role="13h7C2" to="tp7v:hhO36Yr" resolve="MoneyGetCurrencyMethodCall" />
     <node concept="13hLZK" id="hEwIqG_" role="13h7CW">
       <node concept="3clFbS" id="hEwIqGA" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="hEwIutV">
-    <reference role="13h7C2" target="tp7v.1187340310888" resolve="MoneyCreator" />
+    <ref role="13h7C2" to="tp7v:hhMZP_C" resolve="MoneyCreator" />
     <node concept="13hLZK" id="hEwIutW" role="13h7CW">
       <node concept="3clFbS" id="hEwIutX" role="2VODD2" />
     </node>

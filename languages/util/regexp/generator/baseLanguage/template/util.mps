@@ -98,14 +98,14 @@
     <property role="TrG5h" value="Flags" />
     <node concept="QsSxf" id="67iNJ0IVn4T" role="Qtgdg">
       <property role="TrG5h" value="ADD_VARS" />
-      <reference role="37wK5l" target="7048923897762709723" resolve="Flags" />
+      <ref role="37wK5l" node="67iNJ0IU83r" resolve="Flags" />
       <node concept="Xl_RD" id="67iNJ0IVn4U" role="37wK5m">
         <property role="Xl_RC" value="add_vars" />
       </node>
     </node>
     <node concept="QsSxf" id="6XlzavgcWPj" role="Qtgdg">
       <property role="TrG5h" value="REGEXP_NEED_VAR" />
-      <reference role="37wK5l" target="7048923897762709723" resolve="Flags" />
+      <ref role="37wK5l" node="67iNJ0IU83r" resolve="Flags" />
       <node concept="Xl_RD" id="6XlzavgcWPk" role="37wK5m">
         <property role="Xl_RC" value="needvar" />
       </node>
@@ -138,11 +138,11 @@
           <node concept="2OqwBi" id="67iNJ0IU83Q" role="3clFbG">
             <node concept="2JrnkZ" id="67iNJ0IU83R" role="2Oq$k0">
               <node concept="37vLTw" id="2BHiRxgmFa_" role="2JrQYb">
-                <reference role="3cqZAo" target="7048923897762709744" resolve="node" />
+                <ref role="3cqZAo" node="67iNJ0IU83K" resolve="node" />
               </node>
             </node>
             <node concept="liA8E" id="67iNJ0IU83T" role="2OqNvi">
-              <reference role="37wK5l" target="ec5l.~SNode%dputUserObject(java%dlang%dObject,java%dlang%dObject)%cvoid" resolve="putUserObject" />
+              <ref role="37wK5l" to="ec5l:~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolve="putUserObject" />
               <node concept="Xjq3P" id="67iNJ0IU83U" role="37wK5m" />
               <node concept="3clFbT" id="67iNJ0IU84H" role="37wK5m">
                 <property role="3clFbU" value="true" />
@@ -161,11 +161,11 @@
           <node concept="2OqwBi" id="67iNJ0IU841" role="3clFbG">
             <node concept="2JrnkZ" id="67iNJ0IU842" role="2Oq$k0">
               <node concept="37vLTw" id="2BHiRxgmn$r" role="2JrQYb">
-                <reference role="3cqZAo" target="7048923897762709767" resolve="node" />
+                <ref role="3cqZAo" node="67iNJ0IU847" resolve="node" />
               </node>
             </node>
             <node concept="liA8E" id="67iNJ0IU844" role="2OqNvi">
-              <reference role="37wK5l" target="ec5l.~SNode%dputUserObject(java%dlang%dObject,java%dlang%dObject)%cvoid" resolve="putUserObject" />
+              <ref role="37wK5l" to="ec5l:~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolve="putUserObject" />
               <node concept="Xjq3P" id="67iNJ0IU845" role="37wK5m" />
               <node concept="10Nm6u" id="67iNJ0IU846" role="37wK5m" />
             </node>
@@ -191,11 +191,11 @@
             <node concept="2OqwBi" id="67iNJ0IU84h" role="3uHU7B">
               <node concept="2JrnkZ" id="67iNJ0IU84i" role="2Oq$k0">
                 <node concept="37vLTw" id="2BHiRxglZ3u" role="2JrQYb">
-                  <reference role="3cqZAo" target="7048923897762709770" resolve="node" />
+                  <ref role="3cqZAo" node="67iNJ0IU84a" resolve="node" />
                 </node>
               </node>
               <node concept="liA8E" id="67iNJ0IU84k" role="2OqNvi">
-                <reference role="37wK5l" target="ec5l.~SNode%dgetUserObject(java%dlang%dObject)%cjava%dlang%dObject" resolve="getUserObject" />
+                <ref role="37wK5l" to="ec5l:~SNode.getUserObject(java.lang.Object):java.lang.Object" resolve="getUserObject" />
                 <node concept="Xjq3P" id="67iNJ0IU84l" role="37wK5m" />
               </node>
             </node>
@@ -211,7 +211,7 @@
         <node concept="3clFbF" id="67iNJ0IU84q" role="3cqZAp">
           <node concept="2OqwBi" id="67iNJ0IU84r" role="3clFbG">
             <node concept="2OwXpG" id="67iNJ0IU84$" role="2OqNvi">
-              <reference role="2Oxat5" target="7048923897762709793" resolve="name" />
+              <ref role="2Oxat5" node="67iNJ0IU84x" resolve="name" />
             </node>
             <node concept="Xjq3P" id="67iNJ0IU84t" role="2Oq$k0" />
           </node>
@@ -226,7 +226,7 @@
         <node concept="3clFbF" id="67iNJ0IU83_" role="3cqZAp">
           <node concept="3cpWs3" id="67iNJ0IU83A" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm6Hl" role="3uHU7w">
-              <reference role="3cqZAo" target="7048923897762709738" resolve="str" />
+              <ref role="3cqZAo" node="67iNJ0IU83E" resolve="str" />
             </node>
             <node concept="Xl_RD" id="67iNJ0IU83C" role="3uHU7B">
               <property role="Xl_RC" value="jetbrains.mps.baselanguage.regexp.generator." />

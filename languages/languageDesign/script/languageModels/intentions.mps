@@ -99,7 +99,7 @@
   </registry>
   <node concept="2S6QgY" id="4HFrnGEwy9X">
     <property role="TrG5h" value="ConvertToClassifierFQNameSpecification" />
-    <reference role="2ZfgGC" target="tp33.5434557751112207651" resolve="DirectClassifierSpecification" />
+    <ref role="2ZfgGC" to="tp33:4HFrnGEoSOz" resolve="DirectClassifierSpecification" />
     <node concept="2S6ZIM" id="4HFrnGEwy9Y" role="2ZfVej">
       <node concept="3clFbS" id="4HFrnGEwy9Z" role="2VODD2">
         <node concept="3clFbF" id="4HFrnGEwyqC" role="3cqZAp">
@@ -115,11 +115,11 @@
           <node concept="3cpWsn" id="4HFrnGEw$CL" role="3cpWs9">
             <property role="TrG5h" value="classifierSpecification" />
             <node concept="3Tqbb2" id="4HFrnGEw$CG" role="1tU5fm">
-              <reference role="ehGHo" target="tp33.5434557751112207835" resolve="FQNameClassifierSpecification" />
+              <ref role="ehGHo" to="tp33:4HFrnGEoSRr" resolve="FQNameClassifierSpecification" />
             </node>
             <node concept="2OqwBi" id="4HFrnGEw$CM" role="33vP2m">
               <node concept="2DeJnW" id="4HFrnGEw$CN" role="2OqNvi">
-                <reference role="1_rbq0" target="tp33.5434557751112207835" resolve="FQNameClassifierSpecification" />
+                <ref role="1_rbq0" to="tp33:4HFrnGEoSRr" resolve="FQNameClassifierSpecification" />
               </node>
               <node concept="2Sf5sV" id="4HFrnGEw$CO" role="2Oq$k0" />
             </node>
@@ -129,16 +129,16 @@
           <node concept="37vLTI" id="4HFrnGEw_Cq" role="3clFbG">
             <node concept="2OqwBi" id="4HFrnGEwDr3" role="37vLTx">
               <node concept="2qgKlT" id="4HFrnGEwDHl" role="2OqNvi">
-                <reference role="37wK5l" target="36cd.5434557751112930827" resolve="getClassifierFqName" />
+                <ref role="37wK5l" to="36cd:4HFrnGErDob" resolve="getClassifierFqName" />
               </node>
               <node concept="2Sf5sV" id="4HFrnGEwDkx" role="2Oq$k0" />
             </node>
             <node concept="2OqwBi" id="4HFrnGEw$W3" role="37vLTJ">
               <node concept="3TrcHB" id="4HFrnGEw_bx" role="2OqNvi">
-                <reference role="3TsBF5" target="tp33.5434557751112752962" resolve="classifierFQName" />
+                <ref role="3TsBF5" to="tp33:4HFrnGEqXX2" resolve="classifierFQName" />
               </node>
               <node concept="37vLTw" id="4HFrnGEw$CP" role="2Oq$k0">
-                <reference role="3cqZAo" target="5434557751114222129" resolve="classifierSpecification" />
+                <ref role="3cqZAo" node="4HFrnGEw$CL" resolve="classifierSpecification" />
               </node>
             </node>
           </node>
@@ -147,16 +147,16 @@
           <node concept="37vLTI" id="4HFrnGEwAOG" role="3clFbG">
             <node concept="2OqwBi" id="4HFrnGEwDWC" role="37vLTx">
               <node concept="2qgKlT" id="4HFrnGEwEeU" role="2OqNvi">
-                <reference role="37wK5l" target="36cd.5434557751113441014" resolve="getSModelReference" />
+                <ref role="37wK5l" to="36cd:4HFrnGEt_VQ" resolve="getSModelReference" />
               </node>
               <node concept="2Sf5sV" id="4HFrnGEwDQa" role="2Oq$k0" />
             </node>
             <node concept="2OqwBi" id="4HFrnGEw_OV" role="37vLTJ">
               <node concept="37vLTw" id="4HFrnGEw_Hb" role="2Oq$k0">
-                <reference role="3cqZAo" target="5434557751114222129" resolve="classifierSpecification" />
+                <ref role="3cqZAo" node="4HFrnGEw$CL" resolve="classifierSpecification" />
               </node>
               <node concept="3TrcHB" id="4HFrnGEwAow" role="2OqNvi">
-                <reference role="3TsBF5" target="tp33.5434557751113468451" resolve="smodelReference" />
+                <ref role="3TsBF5" to="tp33:4HFrnGEtGCz" resolve="smodelReference" />
               </node>
             </node>
           </node>
@@ -165,16 +165,16 @@
           <node concept="37vLTI" id="7IU6uRvzpz1" role="3clFbG">
             <node concept="2OqwBi" id="7IU6uRvzrfB" role="37vLTx">
               <node concept="liA8E" id="7IU6uRvzrwk" role="2OqNvi">
-                <reference role="37wK5l" target="e2lb.~Object%dtoString()%cjava%dlang%dString" resolve="toString" />
+                <ref role="37wK5l" to="e2lb:~Object.toString():java.lang.String" resolve="toString" />
               </node>
               <node concept="2OqwBi" id="7IU6uRvzqFG" role="2Oq$k0">
                 <node concept="liA8E" id="24cAaiUz$hP" role="2OqNvi">
-                  <reference role="37wK5l" target="ec5l.~SNode%dgetNodeId()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeId" resolve="getNodeId" />
+                  <ref role="37wK5l" to="ec5l:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
                 </node>
                 <node concept="2JrnkZ" id="7IU6uRvzqrO" role="2Oq$k0">
                   <node concept="2OqwBi" id="3_4HNaPNm$$" role="2JrQYb">
                     <node concept="3TrEf2" id="3_4HNaPNnWs" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tp33.5434557751112207965" />
+                      <ref role="3Tt5mk" to="tp33:4HFrnGEoSTt" />
                     </node>
                     <node concept="2Sf5sV" id="7IU6uRvzpAP" role="2Oq$k0" />
                   </node>
@@ -183,10 +183,10 @@
             </node>
             <node concept="2OqwBi" id="7IU6uRvzoRd" role="37vLTJ">
               <node concept="3TrcHB" id="7IU6uRvzp79" role="2OqNvi">
-                <reference role="3TsBF5" target="tp33.8915466921781754528" resolve="snodeId" />
+                <ref role="3TsBF5" to="tp33:7IU6uRvyZEw" resolve="snodeId" />
               </node>
               <node concept="37vLTw" id="7IU6uRvzoJ2" role="2Oq$k0">
-                <reference role="3cqZAo" target="5434557751114222129" resolve="classifierSpecification" />
+                <ref role="3cqZAo" node="4HFrnGEw$CL" resolve="classifierSpecification" />
               </node>
             </node>
           </node>
@@ -202,7 +202,7 @@
   </node>
   <node concept="2S6QgY" id="3_4HNaP$svf">
     <property role="TrG5h" value="ConvertToMethodFQNameSpecification" />
-    <reference role="2ZfgGC" target="tp33.2291767839159498115" resolve="DirectMethodSpecification" />
+    <ref role="2ZfgGC" to="tp33:1ZdZFkoL3m3" resolve="DirectMethodSpecification" />
     <node concept="2S6ZIM" id="3_4HNaP$svg" role="2ZfVej">
       <node concept="3clFbS" id="3_4HNaP$svh" role="2VODD2">
         <node concept="3clFbF" id="3_4HNaP$w91" role="3cqZAp">
@@ -218,11 +218,11 @@
           <node concept="3cpWsn" id="3_4HNaP$wBF" role="3cpWs9">
             <property role="TrG5h" value="methodSpecification" />
             <node concept="3Tqbb2" id="3_4HNaP$wBG" role="1tU5fm">
-              <reference role="ehGHo" target="tp33.4774682482449847011" resolve="FQNameMethodSpecification" />
+              <ref role="ehGHo" to="tp33:49356IxH1bz" resolve="FQNameMethodSpecification" />
             </node>
             <node concept="2OqwBi" id="3_4HNaP$wBH" role="33vP2m">
               <node concept="2DeJnW" id="3_4HNaP$wBI" role="2OqNvi">
-                <reference role="1_rbq0" target="tp33.4774682482449847011" resolve="FQNameMethodSpecification" />
+                <ref role="1_rbq0" to="tp33:49356IxH1bz" resolve="FQNameMethodSpecification" />
               </node>
               <node concept="2Sf5sV" id="3_4HNaP$wBJ" role="2Oq$k0" />
             </node>
@@ -232,24 +232,24 @@
           <node concept="37vLTI" id="3_4HNaP$zKd" role="3clFbG">
             <node concept="2OqwBi" id="3_4HNaP$wBP" role="37vLTJ">
               <node concept="37vLTw" id="3_4HNaP$wBR" role="2Oq$k0">
-                <reference role="3cqZAo" target="4126624587000711659" resolve="methodSpecification" />
+                <ref role="3cqZAo" node="3_4HNaP$wBF" resolve="methodSpecification" />
               </node>
               <node concept="3TrcHB" id="3_4HNaP$yLD" role="2OqNvi">
-                <reference role="3TsBF5" target="tp33.2291767839160466985" resolve="snodeId" />
+                <ref role="3TsBF5" to="tp33:1ZdZFkoOJSD" resolve="snodeId" />
               </node>
             </node>
             <node concept="2OqwBi" id="3_4HNaP$zQ_" role="37vLTx">
               <node concept="liA8E" id="3_4HNaP$zQA" role="2OqNvi">
-                <reference role="37wK5l" target="e2lb.~Object%dtoString()%cjava%dlang%dString" resolve="toString" />
+                <ref role="37wK5l" to="e2lb:~Object.toString():java.lang.String" resolve="toString" />
               </node>
               <node concept="2OqwBi" id="3_4HNaP$zQB" role="2Oq$k0">
                 <node concept="liA8E" id="3_4HNaP$zQC" role="2OqNvi">
-                  <reference role="37wK5l" target="ec5l.~SNode%dgetNodeId()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeId" resolve="getNodeId" />
+                  <ref role="37wK5l" to="ec5l:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
                 </node>
                 <node concept="2JrnkZ" id="3_4HNaP$zQD" role="2Oq$k0">
                   <node concept="2OqwBi" id="3_4HNaP$$j0" role="2JrQYb">
                     <node concept="3TrEf2" id="3_4HNaP$_ET" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tp33.2291767839159499865" />
+                      <ref role="3Tt5mk" to="tp33:1ZdZFkoL3Lp" />
                     </node>
                     <node concept="2Sf5sV" id="3_4HNaP$zQE" role="2Oq$k0" />
                   </node>

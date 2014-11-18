@@ -215,7 +215,7 @@
   <node concept="312cEu" id="h3sA56A">
     <property role="TrG5h" value="BTestCaseImpl" />
     <node concept="n94m4" id="h3sA56N" role="lGtFl">
-      <reference role="n9lRv" target="tpe3.1171931851043" resolve="BTestCase" />
+      <ref role="n9lRv" to="tpe3:h3s_e$z" resolve="BTestCase" />
     </node>
     <node concept="17Uvod" id="h3sA56O" role="lGtFl">
       <property role="2qtEX9" value="name" />
@@ -225,7 +225,7 @@
             <node concept="2OqwBi" id="hxx$YMi" role="3cqZAk">
               <node concept="30H73N" id="h3KBiCK" role="2Oq$k0" />
               <node concept="3TrcHB" id="hDfAPsw" role="2OqNvi">
-                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
           </node>
@@ -233,7 +233,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="h3sA56X" role="1zkMxy">
-      <reference role="3uigEE" target="eupq.~TestCase" resolve="TestCase" />
+      <ref role="3uigEE" to="eupq:~TestCase" resolve="TestCase" />
       <node concept="29HgVG" id="h3sA56Y" role="lGtFl">
         <node concept="3NFfHV" id="h3sA56Z" role="3NFExx">
           <node concept="3clFbS" id="h3sA570" role="2VODD2">
@@ -241,12 +241,12 @@
               <node concept="3cpWsn" id="h3vgiR7" role="3cpWs9">
                 <property role="TrG5h" value="superclass" />
                 <node concept="3Tqbb2" id="h3vgiR9" role="1tU5fm">
-                  <reference role="ehGHo" target="tpee.1107535904670" resolve="ClassifierType" />
+                  <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
                 </node>
                 <node concept="2OqwBi" id="hxx_6Qv" role="33vP2m">
                   <node concept="30H73N" id="h3sA573" role="2Oq$k0" />
                   <node concept="3TrEf2" id="h3sA574" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1165602531693" />
+                    <ref role="3Tt5mk" to="tpee:gXzkM_H" />
                   </node>
                 </node>
               </node>
@@ -256,21 +256,21 @@
                 <node concept="3cpWs6" id="h_VzkFx" role="3cqZAp">
                   <node concept="2c44tf" id="h_Vzn6O" role="3cqZAk">
                     <node concept="3uibUv" id="h_VzorW" role="2c44tc">
-                      <reference role="3uigEE" target="eupq.~TestCase" resolve="TestCase" />
+                      <ref role="3uigEE" to="eupq:~TestCase" resolve="TestCase" />
                     </node>
                   </node>
                 </node>
               </node>
               <node concept="2OqwBi" id="hxx_3gm" role="3clFbw">
                 <node concept="37vLTw" id="3GM_nagT_tc" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1171976695239" resolve="superclass" />
+                  <ref role="3cqZAo" node="h3vgiR7" resolve="superclass" />
                 </node>
                 <node concept="3w_OXm" id="h3wEQe7" role="2OqNvi" />
               </node>
             </node>
             <node concept="3cpWs6" id="h3sA571" role="3cqZAp">
               <node concept="37vLTw" id="3GM_nagTxUD" role="3cqZAk">
-                <reference role="3cqZAo" target="1171976695239" resolve="superclass" />
+                <ref role="3cqZAo" node="h3vgiR7" resolve="superclass" />
               </node>
             </node>
           </node>
@@ -286,7 +286,7 @@
               <node concept="2OqwBi" id="7THlWl_mJ$F" role="3clFbG">
                 <node concept="30H73N" id="7THlWl_mJ$E" role="2Oq$k0" />
                 <node concept="3Tsc0h" id="7THlWl_mJ$J" role="2OqNvi">
-                  <reference role="3TtcxE" target="tpee.1188208488637" />
+                  <ref role="3TtcxE" to="tpee:hiAJF2X" />
                 </node>
               </node>
             </node>
@@ -301,7 +301,7 @@
           <node concept="3clFbF" id="4qmQLVZ4uhD" role="3cqZAp">
             <node concept="2OqwBi" id="4qmQLVZ4uhE" role="3clFbG">
               <node concept="3TrcHB" id="4qmQLVZ4uhF" role="2OqNvi">
-                <reference role="3TsBF5" target="tpee.1075300953594" resolve="abstractClass" />
+                <ref role="3TsBF5" to="tpee:fDsVARU" resolve="abstractClass" />
               </node>
               <node concept="30H73N" id="4qmQLVZ4uhG" role="2Oq$k0" />
             </node>
@@ -320,7 +320,7 @@
               <node concept="2OqwBi" id="1v1xy0K0gW0" role="3clFbG">
                 <node concept="30H73N" id="1v1xy0K0g$4" role="2Oq$k0" />
                 <node concept="2qgKlT" id="1v1xy0K0EGz" role="2OqNvi">
-                  <reference role="37wK5l" target="tpek.5292274854859223538" resolve="staticFields" />
+                  <ref role="37wK5l" to="tpek:4_LVZ3pBr7M" resolve="staticFields" />
                 </node>
               </node>
             </node>
@@ -341,7 +341,7 @@
               <node concept="2OqwBi" id="1v1xy0K0xUP" role="3clFbG">
                 <node concept="30H73N" id="1v1xy0K0xzv" role="2Oq$k0" />
                 <node concept="2qgKlT" id="1v1xy0K0BDx" role="2OqNvi">
-                  <reference role="37wK5l" target="tpek.5292274854859383272" resolve="fields" />
+                  <ref role="37wK5l" to="tpek:4_LVZ3pC27C" resolve="fields" />
                 </node>
               </node>
             </node>
@@ -361,11 +361,11 @@
                 <node concept="2OqwBi" id="hxx$ZoV" role="2Oq$k0">
                   <node concept="30H73N" id="h3sA56K" role="2Oq$k0" />
                   <node concept="3TrEf2" id="h3sA56L" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpe3.1171931851044" />
+                    <ref role="3Tt5mk" to="tpe3:h3s_e$$" />
                   </node>
                 </node>
                 <node concept="3Tsc0h" id="hI0tKyJ" role="2OqNvi">
-                  <reference role="3TtcxE" target="tpe3.1171931858462" />
+                  <ref role="3TtcxE" to="tpe3:h3s_gou" />
                 </node>
               </node>
             </node>
@@ -387,11 +387,11 @@
                   <node concept="2OqwBi" id="79C96s2c6An" role="2Oq$k0">
                     <node concept="30H73N" id="79C96s2c6Am" role="2Oq$k0" />
                     <node concept="3TrEf2" id="79C96s2c6Ar" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.8243879142738613219" />
+                      <ref role="3Tt5mk" to="tpe3:79C96s2bXfz" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="79C96s2c6Aw" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1137022507850" />
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
                   </node>
                 </node>
               </node>
@@ -407,7 +407,7 @@
                 <node concept="2OqwBi" id="79C96s2c6A6" role="2Oq$k0">
                   <node concept="30H73N" id="79C96s2c6A5" role="2Oq$k0" />
                   <node concept="3TrEf2" id="79C96s2c6Aa" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpe3.8243879142738613219" />
+                    <ref role="3Tt5mk" to="tpe3:79C96s2bXfz" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="79C96s2c6Af" role="2OqNvi" />
@@ -430,11 +430,11 @@
                   <node concept="2OqwBi" id="79C96s2c6AN" role="2Oq$k0">
                     <node concept="30H73N" id="79C96s2c6AO" role="2Oq$k0" />
                     <node concept="3TrEf2" id="79C96s2c6B1" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.8243879142738613220" />
+                      <ref role="3Tt5mk" to="tpe3:79C96s2bXf$" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="79C96s2c6AQ" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1137022507850" />
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
                   </node>
                 </node>
               </node>
@@ -450,7 +450,7 @@
                 <node concept="2OqwBi" id="79C96s2c6AW" role="2Oq$k0">
                   <node concept="30H73N" id="79C96s2c6AX" role="2Oq$k0" />
                   <node concept="3TrEf2" id="79C96s2c6B0" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpe3.8243879142738613220" />
+                    <ref role="3Tt5mk" to="tpe3:79C96s2bXf$" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="79C96s2c6AZ" role="2OqNvi" />
@@ -472,7 +472,7 @@
                 <node concept="2OqwBi" id="1v1xy0K0FiW" role="2Oq$k0">
                   <node concept="2OqwBi" id="hxx$Vd4" role="2Oq$k0">
                     <node concept="2qgKlT" id="4sqSVTcpR_1" role="2OqNvi">
-                      <reference role="37wK5l" target="tpek.1465982738252129704" resolve="members" />
+                      <ref role="37wK5l" to="tpek:1hodSy8nQmC" resolve="members" />
                     </node>
                     <node concept="30H73N" id="h3vKa28" role="2Oq$k0" />
                   </node>
@@ -480,7 +480,7 @@
                     <node concept="2OqwBi" id="1v1xy0K0HIu" role="576Qk">
                       <node concept="30H73N" id="1v1xy0K0HnA" role="2Oq$k0" />
                       <node concept="2qgKlT" id="1v1xy0K0NDB" role="2OqNvi">
-                        <reference role="37wK5l" target="tpek.5292274854859383272" resolve="fields" />
+                        <ref role="37wK5l" to="tpek:4_LVZ3pC27C" resolve="fields" />
                       </node>
                     </node>
                   </node>
@@ -489,7 +489,7 @@
                   <node concept="2OqwBi" id="1v1xy0K0Qst" role="576Qk">
                     <node concept="30H73N" id="1v1xy0K0Q3T" role="2Oq$k0" />
                     <node concept="2qgKlT" id="1v1xy0K0Wqv" role="2OqNvi">
-                      <reference role="37wK5l" target="tpek.5292274854859223538" resolve="staticFields" />
+                      <ref role="37wK5l" to="tpek:4_LVZ3pBr7M" resolve="staticFields" />
                     </node>
                   </node>
                 </node>
@@ -505,81 +505,81 @@
     <property role="TrG5h" value="main_unitTest" />
     <node concept="3aamgX" id="h3vogXH" role="3acgRq">
       <property role="3GE5qa" value="assert" />
-      <reference role="30HIoZ" target="tpe3.1171978097730" resolve="AssertEquals" />
+      <ref role="30HIoZ" to="tpe3:h3vlDh2" resolve="AssertEquals" />
       <node concept="j$656" id="h3vomye" role="1lVwrX">
-        <reference role="v9R2y" target="1171978794607" resolve="reduce_AssertEquals" />
+        <ref role="v9R2y" node="h3vojpJ" resolve="reduce_AssertEquals" />
       </node>
     </node>
     <node concept="3aamgX" id="h3vFM9W" role="3acgRq">
       <property role="3GE5qa" value="assert" />
-      <reference role="30HIoZ" target="tpe3.1171983834376" resolve="AssertFalse" />
+      <ref role="30HIoZ" to="tpe3:h3vFxO8" resolve="AssertFalse" />
       <node concept="j$656" id="h3vFUP1" role="1lVwrX">
-        <reference role="v9R2y" target="1171983925138" resolve="reduce_AssertFalse" />
+        <ref role="v9R2y" node="h3vFRYi" resolve="reduce_AssertFalse" />
       </node>
     </node>
     <node concept="3aamgX" id="692cUnf6I4G" role="3acgRq">
       <property role="3GE5qa" value="assert" />
-      <reference role="30HIoZ" target="tpe3.7080278351417106679" resolve="AssertInNotNull" />
+      <ref role="30HIoZ" to="tpe3:692cUnf6I3R" resolve="AssertInNotNull" />
       <node concept="j$656" id="692cUnf6I4I" role="1lVwrX">
-        <reference role="v9R2y" target="7080278351417106707" resolve="reduce_AssertInNotNull" />
+        <ref role="v9R2y" node="692cUnf6I4j" resolve="reduce_AssertInNotNull" />
       </node>
     </node>
     <node concept="3aamgX" id="h3yld7$" role="3acgRq">
       <property role="3GE5qa" value="assert" />
-      <reference role="30HIoZ" target="tpe3.1172028177041" resolve="AssertIsNull" />
+      <ref role="30HIoZ" to="tpe3:h3ykFEh" resolve="AssertIsNull" />
       <node concept="j$656" id="h3ylmf2" role="1lVwrX">
-        <reference role="v9R2y" target="1172028338402" resolve="reduce_AssertIsNull" />
+        <ref role="v9R2y" node="h3ylj3y" resolve="reduce_AssertIsNull" />
       </node>
     </node>
     <node concept="3aamgX" id="h3vN73c" role="3acgRq">
       <property role="3GE5qa" value="assert" />
-      <reference role="30HIoZ" target="tpe3.1171985735491" resolve="AssertSame" />
+      <ref role="30HIoZ" to="tpe3:h3vMLX3" resolve="AssertSame" />
       <node concept="j$656" id="h3vNdkM" role="1lVwrX">
-        <reference role="v9R2y" target="1171985835469" resolve="reduce_AssertSame" />
+        <ref role="v9R2y" node="h3vNand" resolve="reduce_AssertSame" />
       </node>
     </node>
     <node concept="3aamgX" id="h3$R7fd" role="3acgRq">
       <property role="3GE5qa" value="assert" />
-      <reference role="30HIoZ" target="tpe3.1172069869612" resolve="AssertThrows" />
+      <ref role="30HIoZ" to="tpe3:h3$NIwG" resolve="AssertThrows" />
       <node concept="j$656" id="h3$Rf1G" role="1lVwrX">
-        <reference role="v9R2y" target="1172070774330" resolve="reduce_AssertThrows" />
+        <ref role="v9R2y" node="h3$RboU" resolve="reduce_AssertThrows" />
       </node>
     </node>
     <node concept="3aamgX" id="h3vx7xC" role="3acgRq">
       <property role="3GE5qa" value="assert" />
-      <reference role="30HIoZ" target="tpe3.1171981022339" resolve="AssertTrue" />
+      <ref role="30HIoZ" to="tpe3:h3vwNi3" resolve="AssertTrue" />
       <node concept="j$656" id="h3vxgl4" role="1lVwrX">
-        <reference role="v9R2y" target="1171981127059" resolve="reduce_AssertTrue" />
+        <ref role="v9R2y" node="h3vxcQj" resolve="reduce_AssertTrue" />
       </node>
     </node>
     <node concept="3aamgX" id="h3xFKjb" role="3acgRq">
       <property role="3GE5qa" value="assert" />
-      <reference role="30HIoZ" target="tpe3.1172017222794" resolve="Fail" />
+      <ref role="30HIoZ" to="tpe3:h3xETia" resolve="Fail" />
       <node concept="j$656" id="h3xFOmU" role="1lVwrX">
-        <reference role="v9R2y" target="1172017454869" resolve="reduce_Fail" />
+        <ref role="v9R2y" node="h3xFLWl" resolve="reduce_Fail" />
       </node>
     </node>
     <node concept="3aamgX" id="h3sA576" role="3acgRq">
-      <reference role="30HIoZ" target="tpe3.1171931690126" resolve="TestMethod" />
+      <ref role="30HIoZ" to="tpe3:h3s$Bie" resolve="TestMethod" />
       <node concept="j$656" id="h3sA577" role="1lVwrX">
-        <reference role="v9R2y" target="1171932074441" resolve="reduce_TestMethod" />
+        <ref role="v9R2y" node="h3sA579" resolve="reduce_TestMethod" />
       </node>
     </node>
     <node concept="3lhOvk" id="h3sA578" role="3lj3bC">
-      <reference role="3lhOvi" target="1171932074406" resolve="BTestCaseImpl" />
-      <reference role="30HIoZ" target="tpe3.1171931851043" resolve="BTestCase" />
+      <ref role="3lhOvi" node="h3sA56A" resolve="BTestCaseImpl" />
+      <ref role="30HIoZ" to="tpe3:h3s_e$z" resolve="BTestCase" />
     </node>
     <node concept="3aamgX" id="692cUnf6I4g" role="3acgRq">
       <property role="3GE5qa" value="assert" />
-      <reference role="30HIoZ" target="tpe3.7080278351417106679" resolve="AssertInNotNull" />
+      <ref role="30HIoZ" to="tpe3:692cUnf6I3R" resolve="AssertInNotNull" />
       <node concept="j$656" id="692cUnf6I4i" role="1lVwrX">
-        <reference role="v9R2y" target="7080278351417106707" resolve="reduce_AssertInNotNull" />
+        <ref role="v9R2y" node="692cUnf6I4j" resolve="reduce_AssertInNotNull" />
       </node>
     </node>
   </node>
   <node concept="13MO4I" id="h3sA579">
     <property role="TrG5h" value="reduce_TestMethod" />
-    <reference role="3gUMe" target="tpe3.1171931690126" resolve="TestMethod" />
+    <ref role="3gUMe" to="tpe3:h3s$Bie" resolve="TestMethod" />
     <node concept="3clFb_" id="h3sA57a" role="13RCb5">
       <property role="TrG5h" value="method" />
       <node concept="3clFbS" id="h3sA57b" role="3clF47">
@@ -595,7 +595,7 @@
                 <node concept="2OqwBi" id="hxx$VPf" role="3clFbG">
                   <node concept="30H73N" id="h3sA57k" role="2Oq$k0" />
                   <node concept="3TrEf2" id="h8hkk1T" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1068580123135" />
+                    <ref role="3Tt5mk" to="tpee:fzclF7Z" />
                   </node>
                 </node>
               </node>
@@ -613,7 +613,7 @@
               <node concept="2OqwBi" id="hxx$NWO" role="3clFbG">
                 <node concept="30H73N" id="h8hmiW8" role="2Oq$k0" />
                 <node concept="3TrcHB" id="h8hmjSe" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -621,7 +621,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="h3sA57w" role="Sfmx6">
-        <reference role="3uigEE" target="e2lb.~Exception" resolve="Exception" />
+        <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
       </node>
       <node concept="3Tm1VV" id="h9AOQsg" role="1B3o_S" />
       <node concept="2AHcQZ" id="7THlWl_mYjQ" role="2AJF6D">
@@ -632,7 +632,7 @@
                 <node concept="2OqwBi" id="7THlWl_mYjX" role="3clFbG">
                   <node concept="30H73N" id="7THlWl_mYjW" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="7THlWl_mYk1" role="2OqNvi">
-                    <reference role="3TtcxE" target="tpee.1188208488637" />
+                    <ref role="3TtcxE" to="tpee:hiAJF2X" />
                   </node>
                 </node>
               </node>
@@ -645,11 +645,11 @@
   <node concept="13MO4I" id="h3vojpJ">
     <property role="TrG5h" value="reduce_AssertEquals" />
     <property role="3GE5qa" value="assert" />
-    <reference role="3gUMe" target="tpe3.1171978097730" resolve="AssertEquals" />
+    <ref role="3gUMe" to="tpe3:h3vlDh2" resolve="AssertEquals" />
     <node concept="3clFbF" id="h3vovNO" role="13RCb5">
       <node concept="2YIFZM" id="UtZ9hSL7jt" role="3clFbG">
-        <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-        <reference role="37wK5l" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString,java%dlang%dString)%cvoid" resolve="assertEquals" />
+        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String,java.lang.String):void" resolve="assertEquals" />
         <node concept="Xl_RD" id="UtZ9hSL7ju" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="UtZ9hSL7jv" role="lGtFl">
@@ -661,11 +661,11 @@
                       <node concept="2OqwBi" id="UtZ9hSL7j_" role="2Oq$k0">
                         <node concept="30H73N" id="UtZ9hSL7jA" role="2Oq$k0" />
                         <node concept="3TrEf2" id="UtZ9hSL7jB" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                          <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="UtZ9hSL7jC" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                        <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                       </node>
                     </node>
                     <node concept="3x8VRR" id="UtZ9hSL7jD" role="2OqNvi" />
@@ -682,11 +682,11 @@
                     <node concept="2OqwBi" id="UtZ9hSL7jJ" role="2Oq$k0">
                       <node concept="30H73N" id="UtZ9hSL7jK" role="2Oq$k0" />
                       <node concept="3TrEf2" id="UtZ9hSL7jL" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                        <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="UtZ9hSL7jM" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                      <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                     </node>
                   </node>
                 </node>
@@ -703,7 +703,7 @@
                   <node concept="2OqwBi" id="UtZ9hSL7jS" role="3cqZAk">
                     <node concept="30H73N" id="UtZ9hSL7jT" role="2Oq$k0" />
                     <node concept="3TrEf2" id="UtZ9hSL7jU" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.8427750732757990724" />
+                      <ref role="3Tt5mk" to="tpe3:7jPoEeD$ZP4" />
                     </node>
                   </node>
                 </node>
@@ -720,7 +720,7 @@
                   <node concept="2OqwBi" id="UtZ9hSL7k0" role="3cqZAk">
                     <node concept="30H73N" id="UtZ9hSL7k1" role="2Oq$k0" />
                     <node concept="3TrEf2" id="UtZ9hSL7k2" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.8427750732757990725" />
+                      <ref role="3Tt5mk" to="tpe3:7jPoEeD$ZP5" />
                     </node>
                   </node>
                 </node>
@@ -735,11 +735,11 @@
   <node concept="13MO4I" id="h3vxcQj">
     <property role="TrG5h" value="reduce_AssertTrue" />
     <property role="3GE5qa" value="assert" />
-    <reference role="3gUMe" target="tpe3.1171981022339" resolve="AssertTrue" />
+    <ref role="3gUMe" to="tpe3:h3vwNi3" resolve="AssertTrue" />
     <node concept="3clFbF" id="h3vxiIU" role="13RCb5">
       <node concept="2YIFZM" id="h3vxknF" role="3clFbG">
-        <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-        <reference role="37wK5l" target="eupq.~Assert%dassertTrue(java%dlang%dString,boolean)%cvoid" resolve="assertTrue" />
+        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="eupq:~Assert.assertTrue(java.lang.String,boolean):void" resolve="assertTrue" />
         <node concept="Xl_RD" id="692cUnf6U8x" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf6U8y" role="lGtFl">
@@ -751,11 +751,11 @@
                       <node concept="2OqwBi" id="692cUnf6U8C" role="2Oq$k0">
                         <node concept="30H73N" id="692cUnf6U8D" role="2Oq$k0" />
                         <node concept="3TrEf2" id="692cUnf6U8E" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                          <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="692cUnf6U8F" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                        <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                       </node>
                     </node>
                     <node concept="3x8VRR" id="692cUnf6U8G" role="2OqNvi" />
@@ -772,11 +772,11 @@
                     <node concept="2OqwBi" id="692cUnf6U8M" role="2Oq$k0">
                       <node concept="30H73N" id="692cUnf6U8N" role="2Oq$k0" />
                       <node concept="3TrEf2" id="692cUnf6U8O" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                        <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="692cUnf6U8P" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                      <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                     </node>
                   </node>
                 </node>
@@ -793,7 +793,7 @@
                   <node concept="2OqwBi" id="hxx$T_Y" role="3cqZAk">
                     <node concept="30H73N" id="h3vxqtn" role="2Oq$k0" />
                     <node concept="3TrEf2" id="h3vxrwy" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.1171981057159" />
+                      <ref role="3Tt5mk" to="tpe3:h3vwVM7" />
                     </node>
                   </node>
                 </node>
@@ -808,11 +808,11 @@
   <node concept="13MO4I" id="h3vFRYi">
     <property role="TrG5h" value="reduce_AssertFalse" />
     <property role="3GE5qa" value="assert" />
-    <reference role="3gUMe" target="tpe3.1171983834376" resolve="AssertFalse" />
+    <ref role="3gUMe" to="tpe3:h3vFxO8" resolve="AssertFalse" />
     <node concept="3clFbF" id="h3vFX7j" role="13RCb5">
       <node concept="2YIFZM" id="h3vFY6N" role="3clFbG">
-        <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-        <reference role="37wK5l" target="eupq.~Assert%dassertFalse(java%dlang%dString,boolean)%cvoid" resolve="assertFalse" />
+        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="eupq:~Assert.assertFalse(java.lang.String,boolean):void" resolve="assertFalse" />
         <node concept="Xl_RD" id="692cUnf6TM8" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf6TM9" role="lGtFl">
@@ -824,11 +824,11 @@
                       <node concept="2OqwBi" id="692cUnf6TMf" role="2Oq$k0">
                         <node concept="30H73N" id="692cUnf6TMg" role="2Oq$k0" />
                         <node concept="3TrEf2" id="692cUnf6TMh" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                          <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="692cUnf6TMi" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                        <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                       </node>
                     </node>
                     <node concept="3x8VRR" id="692cUnf6TMj" role="2OqNvi" />
@@ -845,11 +845,11 @@
                     <node concept="2OqwBi" id="692cUnf6TMp" role="2Oq$k0">
                       <node concept="30H73N" id="692cUnf6TMq" role="2Oq$k0" />
                       <node concept="3TrEf2" id="692cUnf6TMr" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                        <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="692cUnf6TMs" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                      <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                     </node>
                   </node>
                 </node>
@@ -866,7 +866,7 @@
                   <node concept="2OqwBi" id="hxx_5Wn" role="3cqZAk">
                     <node concept="30H73N" id="h3vG2pw" role="2Oq$k0" />
                     <node concept="3TrEf2" id="h3vG34w" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.1171983854940" />
+                      <ref role="3Tt5mk" to="tpe3:h3vFAPs" />
                     </node>
                   </node>
                 </node>
@@ -881,11 +881,11 @@
   <node concept="13MO4I" id="h3vNand">
     <property role="TrG5h" value="reduce_AssertSame" />
     <property role="3GE5qa" value="assert" />
-    <reference role="3gUMe" target="tpe3.1171985735491" resolve="AssertSame" />
+    <ref role="3gUMe" to="tpe3:h3vMLX3" resolve="AssertSame" />
     <node concept="3clFbF" id="h3vNfvf" role="13RCb5">
       <node concept="2YIFZM" id="h3vNgBy" role="3clFbG">
-        <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-        <reference role="37wK5l" target="eupq.~Assert%dassertSame(java%dlang%dString,java%dlang%dObject,java%dlang%dObject)%cvoid" resolve="assertSame" />
+        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="eupq:~Assert.assertSame(java.lang.String,java.lang.Object,java.lang.Object):void" resolve="assertSame" />
         <node concept="Xl_RD" id="692cUnf6TNc" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf6TNd" role="lGtFl">
@@ -897,11 +897,11 @@
                       <node concept="2OqwBi" id="692cUnf6TNj" role="2Oq$k0">
                         <node concept="30H73N" id="692cUnf6TNk" role="2Oq$k0" />
                         <node concept="3TrEf2" id="692cUnf6TNl" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                          <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="692cUnf6TNm" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                        <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                       </node>
                     </node>
                     <node concept="3x8VRR" id="692cUnf6TNn" role="2OqNvi" />
@@ -918,11 +918,11 @@
                     <node concept="2OqwBi" id="692cUnf6TNt" role="2Oq$k0">
                       <node concept="30H73N" id="692cUnf6TNu" role="2Oq$k0" />
                       <node concept="3TrEf2" id="692cUnf6TNv" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                        <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="692cUnf6TNw" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                      <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                     </node>
                   </node>
                 </node>
@@ -939,7 +939,7 @@
                   <node concept="2OqwBi" id="hxx$VEH" role="3cqZAk">
                     <node concept="30H73N" id="h3vNpjR" role="2Oq$k0" />
                     <node concept="3TrEf2" id="7jPoEeD_jQ9" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.8427750732757990724" />
+                      <ref role="3Tt5mk" to="tpe3:7jPoEeD$ZP4" />
                     </node>
                   </node>
                 </node>
@@ -956,7 +956,7 @@
                   <node concept="2OqwBi" id="hxx_0aJ" role="3cqZAk">
                     <node concept="30H73N" id="h3vNtci" role="2Oq$k0" />
                     <node concept="3TrEf2" id="7jPoEeD_jQa" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.8427750732757990725" />
+                      <ref role="3Tt5mk" to="tpe3:7jPoEeD$ZP5" />
                     </node>
                   </node>
                 </node>
@@ -971,11 +971,11 @@
   <node concept="13MO4I" id="h3xFLWl">
     <property role="TrG5h" value="reduce_Fail" />
     <property role="3GE5qa" value="assert" />
-    <reference role="3gUMe" target="tpe3.1172017222794" resolve="Fail" />
+    <ref role="3gUMe" to="tpe3:h3xETia" resolve="Fail" />
     <node concept="3clFbF" id="h3xFRgJ" role="13RCb5">
       <node concept="2YIFZM" id="h3xFS9q" role="3clFbG">
-        <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-        <reference role="37wK5l" target="eupq.~Assert%dfail(java%dlang%dString)%cvoid" resolve="fail" />
+        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="eupq:~Assert.fail(java.lang.String):void" resolve="fail" />
         <node concept="Xl_RD" id="692cUnf72hy" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf72hC" role="lGtFl">
@@ -987,11 +987,11 @@
                       <node concept="2OqwBi" id="692cUnf72hT" role="2Oq$k0">
                         <node concept="30H73N" id="692cUnf72hS" role="2Oq$k0" />
                         <node concept="3TrEf2" id="692cUnf72hX" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                          <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="692cUnf72i2" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                        <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                       </node>
                     </node>
                     <node concept="3x8VRR" id="692cUnf72i7" role="2OqNvi" />
@@ -1008,11 +1008,11 @@
                     <node concept="2OqwBi" id="692cUnf72hH" role="2Oq$k0">
                       <node concept="30H73N" id="692cUnf72hG" role="2Oq$k0" />
                       <node concept="3TrEf2" id="692cUnf72hL" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                        <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="692cUnf72hQ" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                      <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                     </node>
                   </node>
                 </node>
@@ -1027,11 +1027,11 @@
   <node concept="13MO4I" id="h3ylj3y">
     <property role="TrG5h" value="reduce_AssertIsNull" />
     <property role="3GE5qa" value="assert" />
-    <reference role="3gUMe" target="tpe3.1172028177041" resolve="AssertIsNull" />
+    <ref role="3gUMe" to="tpe3:h3ykFEh" resolve="AssertIsNull" />
     <node concept="3clFbF" id="h3ylpCm" role="13RCb5">
       <node concept="2YIFZM" id="h3ylt6M" role="3clFbG">
-        <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-        <reference role="37wK5l" target="eupq.~Assert%dassertNull(java%dlang%dString,java%dlang%dObject)%cvoid" resolve="assertNull" />
+        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="eupq:~Assert.assertNull(java.lang.String,java.lang.Object):void" resolve="assertNull" />
         <node concept="Xl_RD" id="692cUnf6TMO" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf6TMP" role="lGtFl">
@@ -1043,11 +1043,11 @@
                       <node concept="2OqwBi" id="692cUnf6TMV" role="2Oq$k0">
                         <node concept="30H73N" id="692cUnf6TMW" role="2Oq$k0" />
                         <node concept="3TrEf2" id="692cUnf6TMX" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                          <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="692cUnf6TMY" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                        <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                       </node>
                     </node>
                     <node concept="3x8VRR" id="692cUnf6TMZ" role="2OqNvi" />
@@ -1064,11 +1064,11 @@
                     <node concept="2OqwBi" id="692cUnf6TN5" role="2Oq$k0">
                       <node concept="30H73N" id="692cUnf6TN6" role="2Oq$k0" />
                       <node concept="3TrEf2" id="692cUnf6TN7" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                        <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="692cUnf6TN8" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                      <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                     </node>
                   </node>
                 </node>
@@ -1085,7 +1085,7 @@
                   <node concept="2OqwBi" id="hxx$T4V" role="3cqZAk">
                     <node concept="30H73N" id="h3ylKS6" role="2Oq$k0" />
                     <node concept="3TrEf2" id="h3ylLoA" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.1172028236559" />
+                      <ref role="3Tt5mk" to="tpe3:h3ykUcf" />
                     </node>
                   </node>
                 </node>
@@ -1100,7 +1100,7 @@
   <node concept="13MO4I" id="h3$RboU">
     <property role="TrG5h" value="reduce_AssertThrows" />
     <property role="3GE5qa" value="assert" />
-    <reference role="3gUMe" target="tpe3.1172069869612" resolve="AssertThrows" />
+    <ref role="3gUMe" to="tpe3:h3$NIwG" resolve="AssertThrows" />
     <node concept="SfApY" id="h3_k8lh" role="13RCb5">
       <node concept="3clFbS" id="h3_k8li" role="SfCbr">
         <node concept="3clFbF" id="h3_k8lj" role="3cqZAp">
@@ -1114,7 +1114,7 @@
                   <node concept="2OqwBi" id="hxx$Uv$" role="3cqZAk">
                     <node concept="30H73N" id="h3_k8lq" role="2Oq$k0" />
                     <node concept="3TrEf2" id="h3_k8lr" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.1172070029086" />
+                      <ref role="3Tt5mk" to="tpe3:h3$Olsu" />
                     </node>
                   </node>
                 </node>
@@ -1134,7 +1134,7 @@
                     <node concept="2OqwBi" id="hxx$E1t" role="3cqZAk">
                       <node concept="30H73N" id="h3_k8l$" role="2Oq$k0" />
                       <node concept="3TrEf2" id="h3_k8l_" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                        <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                       </node>
                     </node>
                   </node>
@@ -1148,7 +1148,7 @@
         <node concept="3cpWsn" id="h3_k8lB" role="TDEfY">
           <property role="TrG5h" value="e" />
           <node concept="3uibUv" id="h3_k8lC" role="1tU5fm">
-            <reference role="3uigEE" target="e2lb.~Exception" resolve="Exception" />
+            <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
             <node concept="29HgVG" id="h3_k8lD" role="lGtFl">
               <node concept="3NFfHV" id="h3_k8lE" role="3NFExx">
                 <node concept="3clFbS" id="h3_k8lF" role="2VODD2">
@@ -1156,7 +1156,7 @@
                     <node concept="2OqwBi" id="hxx$Pzi" role="3cqZAk">
                       <node concept="30H73N" id="h3_k8lI" role="2Oq$k0" />
                       <node concept="3TrEf2" id="h3_k8lJ" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172070532815" />
+                        <ref role="3Tt5mk" to="tpe3:h3$Qgrf" />
                       </node>
                     </node>
                   </node>
@@ -1179,11 +1179,11 @@
   <node concept="13MO4I" id="692cUnf6I4j">
     <property role="TrG5h" value="reduce_AssertInNotNull" />
     <property role="3GE5qa" value="assert" />
-    <reference role="3gUMe" target="tpe3.7080278351417106679" resolve="AssertInNotNull" />
+    <ref role="3gUMe" to="tpe3:692cUnf6I3R" resolve="AssertInNotNull" />
     <node concept="3clFbF" id="692cUnf6I4l" role="13RCb5">
       <node concept="2YIFZM" id="692cUnf6I4x" role="3clFbG">
-        <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-        <reference role="37wK5l" target="eupq.~Assert%dassertNotNull(java%dlang%dString,java%dlang%dObject)%cvoid" resolve="assertNotNull" />
+        <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+        <ref role="37wK5l" to="eupq:~Assert.assertNotNull(java.lang.String,java.lang.Object):void" resolve="assertNotNull" />
         <node concept="Xl_RD" id="692cUnf6TMu" role="37wK5m">
           <property role="Xl_RC" value="message" />
           <node concept="1W57fq" id="692cUnf6TMv" role="lGtFl">
@@ -1195,11 +1195,11 @@
                       <node concept="2OqwBi" id="692cUnf6TM_" role="2Oq$k0">
                         <node concept="30H73N" id="692cUnf6TMA" role="2Oq$k0" />
                         <node concept="3TrEf2" id="692cUnf6TMB" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                          <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="692cUnf6TMC" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                        <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                       </node>
                     </node>
                     <node concept="3x8VRR" id="692cUnf6TMD" role="2OqNvi" />
@@ -1216,11 +1216,11 @@
                     <node concept="2OqwBi" id="692cUnf6TMJ" role="2Oq$k0">
                       <node concept="30H73N" id="692cUnf6TMK" role="2Oq$k0" />
                       <node concept="3TrEf2" id="692cUnf6TML" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpe3.1172075534298" />
+                        <ref role="3Tt5mk" to="tpe3:h3_9lvq" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="692cUnf6TMM" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                      <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
                     </node>
                   </node>
                 </node>
@@ -1237,7 +1237,7 @@
                   <node concept="2OqwBi" id="692cUnf6I4B" role="3cqZAk">
                     <node concept="30H73N" id="692cUnf6I4C" role="2Oq$k0" />
                     <node concept="3TrEf2" id="692cUnf6I4D" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpe3.7080278351417106681" />
+                      <ref role="3Tt5mk" to="tpe3:692cUnf6I3T" />
                     </node>
                   </node>
                 </node>

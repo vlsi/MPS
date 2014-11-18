@@ -41,23 +41,23 @@
     <node concept="2VaFvF" id="m8_23bzoyR" role="yghi5">
       <property role="TrG5h" value="generate" />
       <node concept="2VaxJe" id="m8_23bSm_s" role="2VaxJ6">
-        <reference role="2VaxJf" target="398731435597652957" resolve="declare-mps-tasks" />
+        <ref role="2VaxJf" node="m8_23b_6ft" resolve="declare-mps-tasks" />
       </node>
     </node>
     <node concept="2VaFvF" id="m8_23b_6ft" role="yghi5">
       <property role="TrG5h" value="declare-mps-tasks" />
     </node>
     <node concept="3bMsLL" id="5wKGSSolK5D" role="yghi5">
-      <reference role="3bMsLK" target="tnlc.4701820937132277082" resolve="assemble" />
+      <ref role="3bMsLK" to="tnlc:450ejGzgRPq" resolve="assemble" />
       <node concept="2VaxJe" id="5wKGSSolK61" role="3bNaKb">
-        <reference role="2VaxJf" target="398731435597652957" resolve="declare-mps-tasks" />
+        <ref role="2VaxJf" node="m8_23b_6ft" resolve="declare-mps-tasks" />
       </node>
     </node>
     <node concept="2VaFvF" id="3zFnP6MHc0r" role="yghi5">
       <property role="TrG5h" value="makeDependents" />
     </node>
     <node concept="ygXWA" id="5wKGSSl92LA" role="yg1MB">
-      <reference role="ygXWD" target="tnlc.7306485738221408315" resolve="common" />
+      <ref role="ygXWD" to="tnlc:6l_Qx579h0V" resolve="common" />
     </node>
   </node>
 </model>

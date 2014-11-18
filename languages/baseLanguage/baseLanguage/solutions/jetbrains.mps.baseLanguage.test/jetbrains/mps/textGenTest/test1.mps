@@ -61,7 +61,7 @@
           <node concept="3cpWsn" id="4zQVgdonBRg" role="3cpWs9">
             <property role="TrG5h" value="clazz" />
             <node concept="3uibUv" id="4zQVgdonBRh" role="1tU5fm">
-              <reference role="3uigEE" target="ryr7.5257650213624905139" resolve="Clazz" />
+              <ref role="3uigEE" to="ryr7:4zQVgdonBQN" resolve="Clazz" />
             </node>
             <node concept="10Nm6u" id="4zQVgdonBRj" role="33vP2m" />
           </node>
@@ -70,7 +70,7 @@
           <node concept="3cpWsn" id="4zQVgdonBRo" role="3cpWs9">
             <property role="TrG5h" value="nested" />
             <node concept="3uibUv" id="4zQVgdonBRp" role="1tU5fm">
-              <reference role="3uigEE" target="wc7h.5257650213624905153" resolve="Clazz.Nested" />
+              <ref role="3uigEE" to="wc7h:4zQVgdonBR1" resolve="Clazz.Nested" />
             </node>
             <node concept="10Nm6u" id="4zQVgdonBRr" role="33vP2m" />
           </node>

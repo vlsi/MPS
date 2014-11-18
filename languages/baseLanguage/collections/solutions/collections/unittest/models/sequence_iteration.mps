@@ -138,7 +138,7 @@
   <node concept="312cEu" id="gXqcsRK">
     <property role="TrG5h" value="Sequence_iteration1" />
     <node concept="3uibUv" id="gXIuYRB" role="1zkMxy">
-      <reference role="3uigEE" target="eupq.~TestCase" resolve="TestCase" />
+      <ref role="3uigEE" to="eupq:~TestCase" resolve="TestCase" />
     </node>
     <node concept="3Tm1VV" id="huxpBAw" role="1B3o_S" />
     <node concept="3clFbW" id="3o1sp_RDcRE" role="jymVt">
@@ -210,28 +210,28 @@
             <property role="TrG5h" value="s" />
           </node>
           <node concept="37vLTw" id="3GM_nagTtiL" role="2GsD0m">
-            <reference role="3cqZAo" target="1165449466318" resolve="ss" />
+            <ref role="3cqZAo" node="gXqcT7e" resolve="ss" />
           </node>
           <node concept="3clFbS" id="gXqdlVg" role="2LFqv$">
             <node concept="3clFbF" id="gXqdqi_" role="3cqZAp">
               <node concept="2YIFZM" id="gXqdPC8" role="3clFbG">
-                <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-                <reference role="37wK5l" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolve="assertEquals" />
+                <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
                 <node concept="3cpWs3" id="gXqe49N" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTynO" role="3uHU7w">
-                    <reference role="3cqZAo" target="1165449748240" resolve="count" />
+                    <ref role="3cqZAo" node="gXqdXWg" resolve="count" />
                   </node>
                   <node concept="Xl_RD" id="gXqe2j8" role="3uHU7B" />
                 </node>
                 <node concept="2GrUjf" id="gXqe88K" role="37wK5m">
-                  <reference role="2Gs0qQ" target="1165449584334" resolve="s" />
+                  <ref role="2Gs0qQ" node="gXqdlVe" resolve="s" />
                 </node>
               </node>
             </node>
             <node concept="3clFbF" id="gXqfgcE" role="3cqZAp">
               <node concept="3uNrnE" id="i17fRR$" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTs3n" role="2$L3a6">
-                  <reference role="3cqZAo" target="1165449748240" resolve="count" />
+                  <ref role="3cqZAo" node="gXqdXWg" resolve="count" />
                 </node>
               </node>
             </node>
@@ -239,10 +239,10 @@
         </node>
         <node concept="3clFbF" id="gXqjjsR" role="3cqZAp">
           <node concept="2YIFZM" id="UtZ9hSL7jf" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTy9F" role="37wK5m">
-              <reference role="3cqZAo" target="1165449748240" resolve="count" />
+              <ref role="3cqZAo" node="gXqdXWg" resolve="count" />
             </node>
             <node concept="3cmrfG" id="UtZ9hSL7jh" role="37wK5m">
               <property role="3cmrfH" value="5" />
@@ -254,13 +254,13 @@
             <property role="TrG5h" value="s" />
           </node>
           <node concept="37vLTw" id="3GM_nagTxoX" role="2GsD0m">
-            <reference role="3cqZAo" target="1165449466318" resolve="ss" />
+            <ref role="3cqZAo" node="gXqcT7e" resolve="ss" />
           </node>
           <node concept="3clFbS" id="gXqsPtO" role="2LFqv$">
             <node concept="3clFbF" id="gXqsPtP" role="3cqZAp">
               <node concept="2YIFZM" id="UtZ9hSL7ji" role="3clFbG">
-                <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-                <reference role="37wK5l" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolve="assertEquals" />
+                <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
                 <node concept="3cpWs3" id="UtZ9hSL7jj" role="37wK5m">
                   <node concept="1eOMI4" id="UtZ9hSL7jk" role="3uHU7w">
                     <node concept="3cpWsd" id="UtZ9hSL7jl" role="1eOMHV">
@@ -268,21 +268,21 @@
                         <property role="3cmrfH" value="5" />
                       </node>
                       <node concept="37vLTw" id="3GM_nagTz5y" role="3uHU7B">
-                        <reference role="3cqZAo" target="1165449748240" resolve="count" />
+                        <ref role="3cqZAo" node="gXqdXWg" resolve="count" />
                       </node>
                     </node>
                   </node>
                   <node concept="Xl_RD" id="UtZ9hSL7jo" role="3uHU7B" />
                 </node>
                 <node concept="2GrUjf" id="UtZ9hSL7jp" role="37wK5m">
-                  <reference role="2Gs0qQ" target="1165453645682" resolve="s" />
+                  <ref role="2Gs0qQ" node="gXqsPtM" resolve="s" />
                 </node>
               </node>
             </node>
             <node concept="3clFbF" id="gXqsPtV" role="3cqZAp">
               <node concept="3uNrnE" id="i17fRQL" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTzda" role="2$L3a6">
-                  <reference role="3cqZAo" target="1165449748240" resolve="count" />
+                  <ref role="3cqZAo" node="gXqdXWg" resolve="count" />
                 </node>
               </node>
             </node>
@@ -290,10 +290,10 @@
         </node>
         <node concept="3clFbF" id="gXqsPu1" role="3cqZAp">
           <node concept="2YIFZM" id="UtZ9hSL7jq" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTt06" role="37wK5m">
-              <reference role="3cqZAo" target="1165449748240" resolve="count" />
+              <ref role="3cqZAo" node="gXqdXWg" resolve="count" />
             </node>
             <node concept="3cmrfG" id="UtZ9hSL7js" role="37wK5m">
               <property role="3cmrfH" value="10" />
@@ -344,7 +344,7 @@
                         <node concept="2n63Yl" id="hOvDAHN" role="3cqZAp">
                           <node concept="3cpWs3" id="hOvDAHO" role="2n6tg2">
                             <node concept="37vLTw" id="3GM_nagTxAw" role="3uHU7w">
-                              <reference role="3cqZAo" target="1165453934276" resolve="yield_count" />
+                              <ref role="3cqZAo" node="gXqtVV4" resolve="yield_count" />
                             </node>
                             <node concept="Xl_RD" id="hOvDAHQ" role="3uHU7B" />
                           </node>
@@ -352,7 +352,7 @@
                         <node concept="3clFbF" id="hOvD_Fr" role="3cqZAp">
                           <node concept="3uNrnE" id="i17fQZ4" role="3clFbG">
                             <node concept="37vLTw" id="3GM_nagTyq1" role="2$L3a6">
-                              <reference role="3cqZAo" target="1165453934276" resolve="yield_count" />
+                              <ref role="3cqZAo" node="gXqtVV4" resolve="yield_count" />
                             </node>
                           </node>
                         </node>
@@ -362,12 +362,12 @@
                           <property role="3cmrfH" value="5" />
                         </node>
                         <node concept="37vLTw" id="3GM_nagTBin" role="3uHU7B">
-                          <reference role="3cqZAo" target="1224596675283" resolve="i" />
+                          <ref role="3cqZAo" node="hOvD_Fj" resolve="i" />
                         </node>
                       </node>
                       <node concept="3uNrnE" id="i17fRnR" role="1Dwrff">
                         <node concept="37vLTw" id="3GM_nagTB8a" role="2$L3a6">
-                          <reference role="3cqZAo" target="1224596675283" resolve="i" />
+                          <ref role="3cqZAo" node="hOvD_Fj" resolve="i" />
                         </node>
                       </node>
                     </node>
@@ -391,28 +391,28 @@
             <property role="TrG5h" value="s" />
           </node>
           <node concept="37vLTw" id="3GM_nagT_Z1" role="2GsD0m">
-            <reference role="3cqZAo" target="1165453981204" resolve="ss" />
+            <ref role="3cqZAo" node="gXqu7ok" resolve="ss" />
           </node>
           <node concept="3clFbS" id="gXqvjeZ" role="2LFqv$">
             <node concept="3clFbF" id="gXqvjf0" role="3cqZAp">
               <node concept="2YIFZM" id="gXqvjf1" role="3clFbG">
-                <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-                <reference role="37wK5l" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolve="assertEquals" />
+                <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
                 <node concept="3cpWs3" id="gXqvjf2" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTwfV" role="3uHU7w">
-                    <reference role="3cqZAo" target="1165454291897" resolve="count" />
+                    <ref role="3cqZAo" node="gXqvjeT" resolve="count" />
                   </node>
                   <node concept="Xl_RD" id="gXqvjf4" role="3uHU7B" />
                 </node>
                 <node concept="2GrUjf" id="gXqvjf5" role="37wK5m">
-                  <reference role="2Gs0qQ" target="1165454291901" resolve="s" />
+                  <ref role="2Gs0qQ" node="gXqvjeX" resolve="s" />
                 </node>
               </node>
             </node>
             <node concept="3clFbF" id="gXqvjf6" role="3cqZAp">
               <node concept="3uNrnE" id="i17fQOz" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTwnh" role="2$L3a6">
-                  <reference role="3cqZAo" target="1165454291897" resolve="count" />
+                  <ref role="3cqZAo" node="gXqvjeT" resolve="count" />
                 </node>
               </node>
             </node>
@@ -420,10 +420,10 @@
         </node>
         <node concept="3clFbF" id="gXqvjfc" role="3cqZAp">
           <node concept="2YIFZM" id="gXqvjfd" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTBCv" role="37wK5m">
-              <reference role="3cqZAo" target="1165454291897" resolve="count" />
+              <ref role="3cqZAo" node="gXqvjeT" resolve="count" />
             </node>
             <node concept="3cmrfG" id="gXqvjff" role="37wK5m">
               <property role="3cmrfH" value="5" />
@@ -432,10 +432,10 @@
         </node>
         <node concept="3clFbF" id="gXqvpDc" role="3cqZAp">
           <node concept="2YIFZM" id="gXqvpDd" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTzyj" role="37wK5m">
-              <reference role="3cqZAo" target="1165453934276" resolve="yield_count" />
+              <ref role="3cqZAo" node="gXqtVV4" resolve="yield_count" />
             </node>
             <node concept="3cmrfG" id="gXqvpDf" role="37wK5m">
               <property role="3cmrfH" value="5" />
@@ -447,28 +447,28 @@
             <property role="TrG5h" value="s" />
           </node>
           <node concept="37vLTw" id="3GM_nagTtJO" role="2GsD0m">
-            <reference role="3cqZAo" target="1165453981204" resolve="ss" />
+            <ref role="3cqZAo" node="gXqu7ok" resolve="ss" />
           </node>
           <node concept="3clFbS" id="gXqvjfj" role="2LFqv$">
             <node concept="3clFbF" id="gXqvjfk" role="3cqZAp">
               <node concept="2YIFZM" id="gXqvjfl" role="3clFbG">
-                <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-                <reference role="37wK5l" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolve="assertEquals" />
+                <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
                 <node concept="3cpWs3" id="gXqvjfm" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagT_gj" role="3uHU7w">
-                    <reference role="3cqZAo" target="1165454291897" resolve="count" />
+                    <ref role="3cqZAo" node="gXqvjeT" resolve="count" />
                   </node>
                   <node concept="Xl_RD" id="gXqvjfr" role="3uHU7B" />
                 </node>
                 <node concept="2GrUjf" id="gXqvjfs" role="37wK5m">
-                  <reference role="2Gs0qQ" target="1165454291921" resolve="s" />
+                  <ref role="2Gs0qQ" node="gXqvjfh" resolve="s" />
                 </node>
               </node>
             </node>
             <node concept="3clFbF" id="gXqvjft" role="3cqZAp">
               <node concept="3uNrnE" id="i17fRLK" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagT$h9" role="2$L3a6">
-                  <reference role="3cqZAo" target="1165454291897" resolve="count" />
+                  <ref role="3cqZAo" node="gXqvjeT" resolve="count" />
                 </node>
               </node>
             </node>
@@ -476,10 +476,10 @@
         </node>
         <node concept="3clFbF" id="gXqvjfz" role="3cqZAp">
           <node concept="2YIFZM" id="gXqvjf$" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTw$m" role="37wK5m">
-              <reference role="3cqZAo" target="1165454291897" resolve="count" />
+              <ref role="3cqZAo" node="gXqvjeT" resolve="count" />
             </node>
             <node concept="3cmrfG" id="gXqvjfA" role="37wK5m">
               <property role="3cmrfH" value="10" />
@@ -488,10 +488,10 @@
         </node>
         <node concept="3clFbF" id="gXqvDjC" role="3cqZAp">
           <node concept="2YIFZM" id="gXqvDjD" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTwyw" role="37wK5m">
-              <reference role="3cqZAo" target="1165453934276" resolve="yield_count" />
+              <ref role="3cqZAo" node="gXqtVV4" resolve="yield_count" />
             </node>
             <node concept="3cmrfG" id="gXqvDjF" role="37wK5m">
               <property role="3cmrfH" value="10" />
@@ -542,7 +542,7 @@
                         <node concept="2n63Yl" id="hOvDATs" role="3cqZAp">
                           <node concept="3cpWs3" id="hOvDATt" role="2n6tg2">
                             <node concept="37vLTw" id="3GM_nagTAK6" role="3uHU7w">
-                              <reference role="3cqZAo" target="1224596674695" resolve="i" />
+                              <ref role="3cqZAo" node="hOvD_y7" resolve="i" />
                             </node>
                             <node concept="Xl_RD" id="hOvDATv" role="3uHU7B" />
                           </node>
@@ -550,15 +550,15 @@
                       </node>
                       <node concept="3eOVzh" id="hOvD_yf" role="1Dwp0S">
                         <node concept="37vLTw" id="3GM_nagTtNH" role="3uHU7w">
-                          <reference role="3cqZAo" target="1165597202157" resolve="sequence_size" />
+                          <ref role="3cqZAo" node="gXz0trH" resolve="sequence_size" />
                         </node>
                         <node concept="37vLTw" id="3GM_nagTrKM" role="3uHU7B">
-                          <reference role="3cqZAo" target="1224596674695" resolve="i" />
+                          <ref role="3cqZAo" node="hOvD_y7" resolve="i" />
                         </node>
                       </node>
                       <node concept="3uNrnE" id="i17fRbb" role="1Dwrff">
                         <node concept="37vLTw" id="3GM_nagTtmI" role="2$L3a6">
-                          <reference role="3cqZAo" target="1224596674695" resolve="i" />
+                          <ref role="3cqZAo" node="hOvD_y7" resolve="i" />
                         </node>
                       </node>
                     </node>
@@ -582,28 +582,28 @@
             <property role="TrG5h" value="s" />
           </node>
           <node concept="37vLTw" id="3GM_nagTvkk" role="2GsD0m">
-            <reference role="3cqZAo" target="1165597014899" resolve="ss" />
+            <ref role="3cqZAo" node="gXyZJHN" resolve="ss" />
           </node>
           <node concept="3clFbS" id="gXyZJIb" role="2LFqv$">
             <node concept="3clFbF" id="gXyZJIc" role="3cqZAp">
               <node concept="2YIFZM" id="gXyZJId" role="3clFbG">
-                <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-                <reference role="37wK5l" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolve="assertEquals" />
+                <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
                 <node concept="3cpWs3" id="gXyZJIe" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTAzW" role="3uHU7w">
-                    <reference role="3cqZAo" target="1165597014917" resolve="count" />
+                    <ref role="3cqZAo" node="gXyZJI5" resolve="count" />
                   </node>
                   <node concept="Xl_RD" id="gXyZJIg" role="3uHU7B" />
                 </node>
                 <node concept="2GrUjf" id="gXyZJIh" role="37wK5m">
-                  <reference role="2Gs0qQ" target="1165597014921" resolve="s" />
+                  <ref role="2Gs0qQ" node="gXyZJI9" resolve="s" />
                 </node>
               </node>
             </node>
             <node concept="3clFbF" id="gXyZJIi" role="3cqZAp">
               <node concept="3uNrnE" id="i17fS5n" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagT$si" role="2$L3a6">
-                  <reference role="3cqZAo" target="1165597014917" resolve="count" />
+                  <ref role="3cqZAo" node="gXyZJI5" resolve="count" />
                 </node>
               </node>
             </node>
@@ -611,13 +611,13 @@
         </node>
         <node concept="3clFbF" id="gXyZJIo" role="3cqZAp">
           <node concept="2YIFZM" id="gXyZJIp" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTw0E" role="37wK5m">
-              <reference role="3cqZAo" target="1165597014917" resolve="count" />
+              <ref role="3cqZAo" node="gXyZJI5" resolve="count" />
             </node>
             <node concept="37vLTw" id="3GM_nagTBfU" role="37wK5m">
-              <reference role="3cqZAo" target="1165597202157" resolve="sequence_size" />
+              <ref role="3cqZAo" node="gXz0trH" resolve="sequence_size" />
             </node>
           </node>
         </node>
@@ -626,35 +626,35 @@
             <property role="TrG5h" value="s" />
           </node>
           <node concept="37vLTw" id="3GM_nagTBs5" role="2GsD0m">
-            <reference role="3cqZAo" target="1165597014899" resolve="ss" />
+            <ref role="3cqZAo" node="gXyZJHN" resolve="ss" />
           </node>
           <node concept="3clFbS" id="gXyZJIv" role="2LFqv$">
             <node concept="3clFbF" id="gXyZJIw" role="3cqZAp">
               <node concept="2YIFZM" id="gXyZJIx" role="3clFbG">
-                <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-                <reference role="37wK5l" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolve="assertEquals" />
+                <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
                 <node concept="3cpWs3" id="gXyZJIy" role="37wK5m">
                   <node concept="1eOMI4" id="gXyZJIz" role="3uHU7w">
                     <node concept="3cpWsd" id="gXyZJI$" role="1eOMHV">
                       <node concept="37vLTw" id="3GM_nagTxbw" role="3uHU7w">
-                        <reference role="3cqZAo" target="1165597202157" resolve="sequence_size" />
+                        <ref role="3cqZAo" node="gXz0trH" resolve="sequence_size" />
                       </node>
                       <node concept="37vLTw" id="3GM_nagTAtk" role="3uHU7B">
-                        <reference role="3cqZAo" target="1165597014917" resolve="count" />
+                        <ref role="3cqZAo" node="gXyZJI5" resolve="count" />
                       </node>
                     </node>
                   </node>
                   <node concept="Xl_RD" id="gXyZJIB" role="3uHU7B" />
                 </node>
                 <node concept="2GrUjf" id="gXyZJIC" role="37wK5m">
-                  <reference role="2Gs0qQ" target="1165597014941" resolve="s" />
+                  <ref role="2Gs0qQ" node="gXyZJIt" resolve="s" />
                 </node>
               </node>
             </node>
             <node concept="3clFbF" id="gXyZJID" role="3cqZAp">
               <node concept="3uNrnE" id="i17fQQp" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagT$HU" role="2$L3a6">
-                  <reference role="3cqZAo" target="1165597014917" resolve="count" />
+                  <ref role="3cqZAo" node="gXyZJI5" resolve="count" />
                 </node>
               </node>
             </node>
@@ -662,17 +662,17 @@
         </node>
         <node concept="3clFbF" id="gXyZJIJ" role="3cqZAp">
           <node concept="2YIFZM" id="gXyZJIK" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTrBe" role="37wK5m">
-              <reference role="3cqZAo" target="1165597014917" resolve="count" />
+              <ref role="3cqZAo" node="gXyZJI5" resolve="count" />
             </node>
             <node concept="17qRlL" id="gXz0Tr8" role="37wK5m">
               <node concept="3cmrfG" id="gXz0TYO" role="3uHU7w">
                 <property role="3cmrfH" value="2" />
               </node>
               <node concept="37vLTw" id="3GM_nagTub4" role="3uHU7B">
-                <reference role="3cqZAo" target="1165597202157" resolve="sequence_size" />
+                <ref role="3cqZAo" node="gXz0trH" resolve="sequence_size" />
               </node>
             </node>
           </node>
@@ -730,7 +730,7 @@
                         <node concept="2n63Yl" id="hOvDAU4" role="3cqZAp">
                           <node concept="3cpWs3" id="hOvDAU5" role="2n6tg2">
                             <node concept="37vLTw" id="3GM_nagTx6$" role="3uHU7w">
-                              <reference role="3cqZAo" target="1165597014971" resolve="yield_count" />
+                              <ref role="3cqZAo" node="gXyZJIV" resolve="yield_count" />
                             </node>
                             <node concept="Xl_RD" id="hOvDAU7" role="3uHU7B" />
                           </node>
@@ -738,22 +738,22 @@
                         <node concept="3clFbF" id="hOvD_wt" role="3cqZAp">
                           <node concept="3uNrnE" id="i17fReC" role="3clFbG">
                             <node concept="37vLTw" id="3GM_nagTz8k" role="2$L3a6">
-                              <reference role="3cqZAo" target="1165597014971" resolve="yield_count" />
+                              <ref role="3cqZAo" node="gXyZJIV" resolve="yield_count" />
                             </node>
                           </node>
                         </node>
                       </node>
                       <node concept="3eOVzh" id="hOvD_wz" role="1Dwp0S">
                         <node concept="37vLTw" id="3GM_nagT_Jk" role="3uHU7w">
-                          <reference role="3cqZAo" target="1165597357930" resolve="sequence_size" />
+                          <ref role="3cqZAo" node="gXz13tE" resolve="sequence_size" />
                         </node>
                         <node concept="37vLTw" id="3GM_nagTzr7" role="3uHU7B">
-                          <reference role="3cqZAo" target="1224596674581" resolve="i" />
+                          <ref role="3cqZAo" node="hOvD_wl" resolve="i" />
                         </node>
                       </node>
                       <node concept="3uNrnE" id="i17fQRt" role="1Dwrff">
                         <node concept="37vLTw" id="3GM_nagT_fh" role="2$L3a6">
-                          <reference role="3cqZAo" target="1224596674581" resolve="i" />
+                          <ref role="3cqZAo" node="hOvD_wl" resolve="i" />
                         </node>
                       </node>
                     </node>
@@ -777,28 +777,28 @@
             <property role="TrG5h" value="s" />
           </node>
           <node concept="37vLTw" id="3GM_nagTsUG" role="2GsD0m">
-            <reference role="3cqZAo" target="1165597014975" resolve="ss" />
+            <ref role="3cqZAo" node="gXyZJIZ" resolve="ss" />
           </node>
           <node concept="3clFbS" id="gXyZJJ$" role="2LFqv$">
             <node concept="3clFbF" id="gXyZJJ_" role="3cqZAp">
               <node concept="2YIFZM" id="gXyZJJA" role="3clFbG">
-                <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-                <reference role="37wK5l" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolve="assertEquals" />
+                <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
                 <node concept="3cpWs3" id="gXyZJJB" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTwI4" role="3uHU7w">
-                    <reference role="3cqZAo" target="1165597015006" resolve="count" />
+                    <ref role="3cqZAo" node="gXyZJJu" resolve="count" />
                   </node>
                   <node concept="Xl_RD" id="gXyZJJD" role="3uHU7B" />
                 </node>
                 <node concept="2GrUjf" id="gXyZJJE" role="37wK5m">
-                  <reference role="2Gs0qQ" target="1165597015010" resolve="s" />
+                  <ref role="2Gs0qQ" node="gXyZJJy" resolve="s" />
                 </node>
               </node>
             </node>
             <node concept="3clFbF" id="gXyZJJF" role="3cqZAp">
               <node concept="3uNrnE" id="i17fQUQ" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTxD1" role="2$L3a6">
-                  <reference role="3cqZAo" target="1165597015006" resolve="count" />
+                  <ref role="3cqZAo" node="gXyZJJu" resolve="count" />
                 </node>
               </node>
             </node>
@@ -806,25 +806,25 @@
         </node>
         <node concept="3clFbF" id="gXyZJJL" role="3cqZAp">
           <node concept="2YIFZM" id="gXyZJJM" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTAro" role="37wK5m">
-              <reference role="3cqZAo" target="1165597015006" resolve="count" />
+              <ref role="3cqZAo" node="gXyZJJu" resolve="count" />
             </node>
             <node concept="37vLTw" id="3GM_nagTzHi" role="37wK5m">
-              <reference role="3cqZAo" target="1165597357930" resolve="sequence_size" />
+              <ref role="3cqZAo" node="gXz13tE" resolve="sequence_size" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="gXyZJJP" role="3cqZAp">
           <node concept="2YIFZM" id="gXyZJJQ" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTAB6" role="37wK5m">
-              <reference role="3cqZAo" target="1165597014971" resolve="yield_count" />
+              <ref role="3cqZAo" node="gXyZJIV" resolve="yield_count" />
             </node>
             <node concept="37vLTw" id="3GM_nagT$RK" role="37wK5m">
-              <reference role="3cqZAo" target="1165597357930" resolve="sequence_size" />
+              <ref role="3cqZAo" node="gXz13tE" resolve="sequence_size" />
             </node>
           </node>
         </node>
@@ -833,28 +833,28 @@
             <property role="TrG5h" value="s" />
           </node>
           <node concept="37vLTw" id="3GM_nagTvIV" role="2GsD0m">
-            <reference role="3cqZAo" target="1165597014975" resolve="ss" />
+            <ref role="3cqZAo" node="gXyZJIZ" resolve="ss" />
           </node>
           <node concept="3clFbS" id="gXyZJJW" role="2LFqv$">
             <node concept="3clFbF" id="gXyZJJX" role="3cqZAp">
               <node concept="2YIFZM" id="gXyZJJY" role="3clFbG">
-                <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-                <reference role="37wK5l" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolve="assertEquals" />
+                <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
                 <node concept="3cpWs3" id="gXyZJJZ" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTx_f" role="3uHU7w">
-                    <reference role="3cqZAo" target="1165597015006" resolve="count" />
+                    <ref role="3cqZAo" node="gXyZJJu" resolve="count" />
                   </node>
                   <node concept="Xl_RD" id="gXyZJK1" role="3uHU7B" />
                 </node>
                 <node concept="2GrUjf" id="gXyZJK2" role="37wK5m">
-                  <reference role="2Gs0qQ" target="1165597015034" resolve="s" />
+                  <ref role="2Gs0qQ" node="gXyZJJU" resolve="s" />
                 </node>
               </node>
             </node>
             <node concept="3clFbF" id="gXyZJK3" role="3cqZAp">
               <node concept="3uNrnE" id="i17fRV1" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagT$ET" role="2$L3a6">
-                  <reference role="3cqZAo" target="1165597015006" resolve="count" />
+                  <ref role="3cqZAo" node="gXyZJJu" resolve="count" />
                 </node>
               </node>
             </node>
@@ -862,34 +862,34 @@
         </node>
         <node concept="3clFbF" id="gXyZJK9" role="3cqZAp">
           <node concept="2YIFZM" id="gXyZJKa" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTwCe" role="37wK5m">
-              <reference role="3cqZAo" target="1165597015006" resolve="count" />
+              <ref role="3cqZAo" node="gXyZJJu" resolve="count" />
             </node>
             <node concept="17qRlL" id="gXz1ixD" role="37wK5m">
               <node concept="3cmrfG" id="gXz1iQs" role="3uHU7w">
                 <property role="3cmrfH" value="2" />
               </node>
               <node concept="37vLTw" id="3GM_nagTAk8" role="3uHU7B">
-                <reference role="3cqZAo" target="1165597357930" resolve="sequence_size" />
+                <ref role="3cqZAo" node="gXz13tE" resolve="sequence_size" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="gXyZJKd" role="3cqZAp">
           <node concept="2YIFZM" id="gXyZJKe" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTxgL" role="37wK5m">
-              <reference role="3cqZAo" target="1165597014971" resolve="yield_count" />
+              <ref role="3cqZAo" node="gXyZJIV" resolve="yield_count" />
             </node>
             <node concept="17qRlL" id="gXz1kRC" role="37wK5m">
               <node concept="3cmrfG" id="gXz1laX" role="3uHU7w">
                 <property role="3cmrfH" value="2" />
               </node>
               <node concept="37vLTw" id="3GM_nagTxCz" role="3uHU7B">
-                <reference role="3cqZAo" target="1165597357930" resolve="sequence_size" />
+                <ref role="3cqZAo" node="gXz13tE" resolve="sequence_size" />
               </node>
             </node>
           </node>
@@ -902,7 +902,7 @@
   <node concept="312cEu" id="gXzdckN">
     <property role="TrG5h" value="Sequence_iteration2" />
     <node concept="3uibUv" id="gXIv1uo" role="1zkMxy">
-      <reference role="3uigEE" target="eupq.~TestCase" resolve="TestCase" />
+      <ref role="3uigEE" to="eupq:~TestCase" resolve="TestCase" />
     </node>
     <node concept="3Tm1VV" id="huxpGyh" role="1B3o_S" />
     <node concept="3clFbW" id="3o1sp_RDcRI" role="jymVt">
@@ -974,28 +974,28 @@
             <property role="TrG5h" value="s" />
           </node>
           <node concept="37vLTw" id="3GM_nagT_0E" role="2GsD0m">
-            <reference role="3cqZAo" target="1165600539963" resolve="ss" />
+            <ref role="3cqZAo" node="gXzdckV" resolve="ss" />
           </node>
           <node concept="3clFbS" id="gXzdclj" role="2LFqv$">
             <node concept="3clFbF" id="gXzdclk" role="3cqZAp">
               <node concept="2YIFZM" id="gXzdcll" role="3clFbG">
-                <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-                <reference role="37wK5l" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolve="assertEquals" />
+                <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
                 <node concept="3cpWs3" id="gXzdclm" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTAFd" role="3uHU7w">
-                    <reference role="3cqZAo" target="1165600539981" resolve="count" />
+                    <ref role="3cqZAo" node="gXzdcld" resolve="count" />
                   </node>
                   <node concept="Xl_RD" id="gXzdclo" role="3uHU7B" />
                 </node>
                 <node concept="2GrUjf" id="gXzdclp" role="37wK5m">
-                  <reference role="2Gs0qQ" target="1165600539985" resolve="s" />
+                  <ref role="2Gs0qQ" node="gXzdclh" resolve="s" />
                 </node>
               </node>
             </node>
             <node concept="3clFbF" id="gXzdclq" role="3cqZAp">
               <node concept="3uNrnE" id="i17fRpb" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTtnr" role="2$L3a6">
-                  <reference role="3cqZAo" target="1165600539981" resolve="count" />
+                  <ref role="3cqZAo" node="gXzdcld" resolve="count" />
                 </node>
               </node>
             </node>
@@ -1013,28 +1013,28 @@
                 <property role="TrG5h" value="s_inner" />
               </node>
               <node concept="37vLTw" id="3GM_nagTthG" role="2GsD0m">
-                <reference role="3cqZAo" target="1165600539963" resolve="ss" />
+                <ref role="3cqZAo" node="gXzdckV" resolve="ss" />
               </node>
               <node concept="3clFbS" id="gXzdrbH" role="2LFqv$">
                 <node concept="3clFbF" id="gXzgL4M" role="3cqZAp">
                   <node concept="2YIFZM" id="gXzgL4N" role="3clFbG">
-                    <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-                    <reference role="37wK5l" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolve="assertEquals" />
+                    <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+                    <ref role="37wK5l" to="eupq:~Assert.assertEquals(java.lang.String,java.lang.String):void" resolve="assertEquals" />
                     <node concept="3cpWs3" id="gXzgL4O" role="37wK5m">
                       <node concept="37vLTw" id="3GM_nagT$yd" role="3uHU7w">
-                        <reference role="3cqZAo" target="1165600619520" resolve="count_inner" />
+                        <ref role="3cqZAo" node="gXzdvK0" resolve="count_inner" />
                       </node>
                       <node concept="Xl_RD" id="gXzgL4Q" role="3uHU7B" />
                     </node>
                     <node concept="2GrUjf" id="gXzgL4R" role="37wK5m">
-                      <reference role="2Gs0qQ" target="1165600600811" resolve="s_inner" />
+                      <ref role="2Gs0qQ" node="gXzdrbF" resolve="s_inner" />
                     </node>
                   </node>
                 </node>
                 <node concept="3clFbF" id="gXzdznT" role="3cqZAp">
                   <node concept="3uNrnE" id="i17fRBb" role="3clFbG">
                     <node concept="37vLTw" id="3GM_nagTwdG" role="2$L3a6">
-                      <reference role="3cqZAo" target="1165600619520" resolve="count_inner" />
+                      <ref role="3cqZAo" node="gXzdvK0" resolve="count_inner" />
                     </node>
                   </node>
                 </node>
@@ -1042,10 +1042,10 @@
             </node>
             <node concept="3clFbF" id="gXzgQz9" role="3cqZAp">
               <node concept="2YIFZM" id="gXzgQza" role="3clFbG">
-                <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-                <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+                <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
                 <node concept="37vLTw" id="3GM_nagTvyL" role="37wK5m">
-                  <reference role="3cqZAo" target="1165600619520" resolve="count_inner" />
+                  <ref role="3cqZAo" node="gXzdvK0" resolve="count_inner" />
                 </node>
                 <node concept="3cmrfG" id="gXzgQzc" role="37wK5m">
                   <property role="3cmrfH" value="5" />
@@ -1056,10 +1056,10 @@
         </node>
         <node concept="3clFbF" id="gXzdclw" role="3cqZAp">
           <node concept="2YIFZM" id="gXzdclx" role="3clFbG">
-            <reference role="1Pybhc" target="eupq.~Assert" resolve="Assert" />
-            <reference role="37wK5l" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolve="assertEquals" />
+            <ref role="1Pybhc" to="eupq:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="eupq:~Assert.assertEquals(int,int):void" resolve="assertEquals" />
             <node concept="37vLTw" id="3GM_nagTAm0" role="37wK5m">
-              <reference role="3cqZAo" target="1165600539981" resolve="count" />
+              <ref role="3cqZAo" node="gXzdcld" resolve="count" />
             </node>
             <node concept="3cmrfG" id="gXzdclz" role="37wK5m">
               <property role="3cmrfH" value="5" />

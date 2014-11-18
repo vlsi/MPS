@@ -101,16 +101,16 @@
                   <node concept="3JvlWi" id="2uZW74tBc7g" role="2OqNvi" />
                   <node concept="2OqwBi" id="4IqbYlp54r4" role="2Oq$k0">
                     <node concept="3TrEf2" id="2uZW74tBbLu" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpee.1081773367580" />
+                      <ref role="3Tt5mk" to="tpee:fJuHU4s" />
                     </node>
                     <node concept="37vLTw" id="2uZW74tBbxQ" role="2Oq$k0">
-                      <reference role="3cqZAo" target="2864272256649704804" resolve="node" />
+                      <ref role="3cqZAo" node="2uZW74tBbl$" resolve="node" />
                     </node>
                   </node>
                 </node>
                 <node concept="1YaCAy" id="4IqbYlp54ra" role="1Ub_4A">
                   <property role="TrG5h" value="moneyType" />
-                  <reference role="1YaFvo" target="v0h4.5447719361346490730" resolve="MoneyType" />
+                  <ref role="1YaFvo" to="v0h4:4IqbYlp4P5E" resolve="MoneyType" />
                 </node>
               </node>
               <node concept="10Nm6u" id="4IqbYlp54re" role="3uHU7w" />
@@ -122,16 +122,16 @@
                   <node concept="3JvlWi" id="2uZW74tBcdw" role="2OqNvi" />
                   <node concept="2OqwBi" id="2uZW74tBcdx" role="2Oq$k0">
                     <node concept="3TrEf2" id="2uZW74tBcmO" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpee.1081773367579" />
+                      <ref role="3Tt5mk" to="tpee:fJuHU4r" />
                     </node>
                     <node concept="37vLTw" id="2uZW74tBcdz" role="2Oq$k0">
-                      <reference role="3cqZAo" target="2864272256649704804" resolve="node" />
+                      <ref role="3cqZAo" node="2uZW74tBbl$" resolve="node" />
                     </node>
                   </node>
                 </node>
                 <node concept="1YaCAy" id="2uZW74tBcd$" role="1Ub_4A">
                   <property role="TrG5h" value="moneyType" />
-                  <reference role="1YaFvo" target="v0h4.5447719361346490730" resolve="MoneyType" />
+                  <ref role="1YaFvo" to="v0h4:4IqbYlp4P5E" resolve="MoneyType" />
                 </node>
               </node>
             </node>
@@ -141,7 +141,7 @@
       <node concept="37vLTG" id="2uZW74tBbl$" role="3clF46">
         <property role="TrG5h" value="node" />
         <node concept="3Tqbb2" id="2uZW74tBblz" role="1tU5fm">
-          <reference role="ehGHo" target="tpee.1081773326031" resolve="BinaryOperation" />
+          <ref role="ehGHo" to="tpee:fJuHJVf" resolve="BinaryOperation" />
         </node>
       </node>
     </node>

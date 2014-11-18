@@ -148,11 +148,11 @@
         <node concept="3vwNmj" id="5Kxyj$3A5gl" role="3cqZAp">
           <node concept="2OqwBi" id="5Kxyj$3A5gm" role="3vwVQn">
             <node concept="35c_gC" id="5Kxyj$3A5gn" role="2Oq$k0">
-              <reference role="35c_gD" target="tpck.1169194658468" resolve="INamedConcept" />
+              <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
             </node>
             <node concept="2Zo12i" id="5Kxyj$3A5go" role="2OqNvi">
               <node concept="chp4Y" id="5Kxyj$3A5gp" role="2Zo12j">
-                <reference role="cht4Q" target="tpck.1133920641626" resolve="BaseConcept" />
+                <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
               </node>
             </node>
           </node>
@@ -160,12 +160,12 @@
         <node concept="3vwNmj" id="5Kxyj$3A5v6" role="3cqZAp">
           <node concept="2OqwBi" id="5Kxyj$3A5v7" role="3vwVQn">
             <node concept="35c_gC" id="5Kxyj$3A5v8" role="2Oq$k0">
-              <reference role="35c_gD" target="tpck.1169194658468" resolve="INamedConcept" />
+              <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
             </node>
             <node concept="liA8E" id="5Kxyj$3A5v9" role="2OqNvi">
-              <reference role="37wK5l" target="t3eg.~SAbstractConcept%disSubConceptOf(org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept)%cboolean" resolve="isSubConceptOf" />
+              <ref role="37wK5l" to="t3eg:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
               <node concept="35c_gC" id="5Kxyj$3A5va" role="37wK5m">
-                <reference role="35c_gD" target="tpck.1133920641626" resolve="BaseConcept" />
+                <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
               </node>
             </node>
           </node>
@@ -173,11 +173,11 @@
         <node concept="3vFxKo" id="5Kxyj$3A5Xr" role="3cqZAp">
           <node concept="2OqwBi" id="5Kxyj$3A5Xs" role="3vFALc">
             <node concept="35c_gC" id="5Kxyj$3A5Xt" role="2Oq$k0">
-              <reference role="35c_gD" target="tpck.1133920641626" resolve="BaseConcept" />
+              <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
             </node>
             <node concept="2Zo12i" id="5Kxyj$3A5Xu" role="2OqNvi">
               <node concept="chp4Y" id="5Kxyj$3A5Xv" role="2Zo12j">
-                <reference role="cht4Q" target="tpck.1169194658468" resolve="INamedConcept" />
+                <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
               </node>
             </node>
           </node>
@@ -185,12 +185,12 @@
         <node concept="3vwNmj" id="5Kxyj$3A6UX" role="3cqZAp">
           <node concept="2OqwBi" id="5Kxyj$3A6UY" role="3vwVQn">
             <node concept="35c_gC" id="5Kxyj$3A6UZ" role="2Oq$k0">
-              <reference role="35c_gD" target="tpck.1169194658468" resolve="INamedConcept" />
+              <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
             </node>
             <node concept="2Zo12i" id="5Kxyj$3A6V0" role="2OqNvi">
               <node concept="25Kdxt" id="5Kxyj$3A6V1" role="2Zo12j">
                 <node concept="35c_gC" id="5Kxyj$3A6V2" role="25KhWn">
-                  <reference role="35c_gD" target="tpck.1169194658468" resolve="INamedConcept" />
+                  <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
                 </node>
               </node>
             </node>
@@ -199,10 +199,10 @@
         <node concept="3vwNmj" id="jWvgfwd24C" role="3cqZAp">
           <node concept="2ZW3vV" id="jWvgfwd24D" role="3vwVQn">
             <node concept="35c_gC" id="jWvgfwd24E" role="2ZW6bz">
-              <reference role="35c_gD" target="tpck.1169194658468" resolve="INamedConcept" />
+              <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
             </node>
             <node concept="3uibUv" id="jWvgfwd24F" role="2ZW6by">
-              <reference role="3uigEE" target="t3eg.~SInterfaceConcept" resolve="SInterfaceConcept" />
+              <ref role="3uigEE" to="t3eg:~SInterfaceConcept" resolve="SInterfaceConcept" />
             </node>
           </node>
         </node>
@@ -218,12 +218,12 @@
               <node concept="3clFbF" id="6nHw_VAJhDy" role="3cqZAp">
                 <node concept="37vLTI" id="6nHw_VAJhFd" role="3clFbG">
                   <node concept="37vLTw" id="6nHw_VAJhDx" role="37vLTJ">
-                    <reference role="3cqZAo" target="359299525883522056" resolve="defaultIfaceConcept" />
+                    <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
                   </node>
                   <node concept="2OqwBi" id="6nHw_VAJi9d" role="37vLTx">
                     <node concept="2OqwBi" id="6nHw_VAJhRo" role="2Oq$k0">
                       <node concept="35c_gC" id="6nHw_VAJhPJ" role="2Oq$k0">
-                        <reference role="35c_gD" target="tpck.1169194658468" resolve="INamedConcept" />
+                        <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
                       </node>
                       <node concept="LFhST" id="6nHw_VAJi6e" role="2OqNvi" />
                     </node>
@@ -237,11 +237,11 @@
         <node concept="3vwNmj" id="jWvgfwgg4N" role="3cqZAp">
           <node concept="2OqwBi" id="jWvgfwgg4O" role="3vwVQn">
             <node concept="37vLTw" id="jWvgfwgg4P" role="2Oq$k0">
-              <reference role="3cqZAo" target="359299525883522056" resolve="defaultIfaceConcept" />
+              <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
             </node>
             <node concept="2Zo12i" id="jWvgfwgg4Q" role="2OqNvi">
               <node concept="chp4Y" id="jWvgfwgg4R" role="2Zo12j">
-                <reference role="cht4Q" target="tpck.1169194658468" resolve="INamedConcept" />
+                <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
               </node>
             </node>
           </node>
@@ -249,11 +249,11 @@
         <node concept="3vwNmj" id="jWvgfwgfgt" role="3cqZAp">
           <node concept="2OqwBi" id="jWvgfwgfVf" role="3vwVQn">
             <node concept="37vLTw" id="jWvgfwgfT4" role="2Oq$k0">
-              <reference role="3cqZAo" target="359299525883522056" resolve="defaultIfaceConcept" />
+              <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
             </node>
             <node concept="2Zo12i" id="jWvgfwgg2Y" role="2OqNvi">
               <node concept="chp4Y" id="jWvgfwggli" role="2Zo12j">
-                <reference role="cht4Q" target="tpck.1133920641626" resolve="BaseConcept" />
+                <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
               </node>
             </node>
           </node>
@@ -261,12 +261,12 @@
         <node concept="3vFxKo" id="jWvgfwghxj" role="3cqZAp">
           <node concept="2OqwBi" id="jWvgfwghxk" role="3vFALc">
             <node concept="37vLTw" id="jWvgfwghxl" role="2Oq$k0">
-              <reference role="3cqZAo" target="359299525883522056" resolve="defaultIfaceConcept" />
+              <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
             </node>
             <node concept="liA8E" id="jWvgfwghxm" role="2OqNvi">
-              <reference role="37wK5l" target="e2lb.~Object%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+              <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="35c_gC" id="jWvgfwghxn" role="37wK5m">
-                <reference role="35c_gD" target="tpck.1169194658468" resolve="INamedConcept" />
+                <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
               </node>
             </node>
           </node>
@@ -274,12 +274,12 @@
         <node concept="3vFxKo" id="jWvgfwgiXR" role="3cqZAp">
           <node concept="2OqwBi" id="jWvgfwgjbt" role="3vFALc">
             <node concept="35c_gC" id="jWvgfwgj7s" role="2Oq$k0">
-              <reference role="35c_gD" target="tpck.1169194658468" resolve="INamedConcept" />
+              <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
             </node>
             <node concept="liA8E" id="jWvgfwgjsO" role="2OqNvi">
-              <reference role="37wK5l" target="t3eg.~SAbstractConcept%disSubConceptOf(org%djetbrains%dmps%dopenapi%dlanguage%dSAbstractConcept)%cboolean" resolve="isSubConceptOf" />
+              <ref role="37wK5l" to="t3eg:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
               <node concept="37vLTw" id="jWvgfwgoIh" role="37wK5m">
-                <reference role="3cqZAo" target="359299525883522056" resolve="defaultIfaceConcept" />
+                <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
               </node>
             </node>
           </node>
@@ -288,10 +288,10 @@
         <node concept="3vwNmj" id="4All8U4xZK9" role="3cqZAp">
           <node concept="2ZW3vV" id="4All8U4xZKa" role="3vwVQn">
             <node concept="3uibUv" id="4All8U4xZKb" role="2ZW6by">
-              <reference role="3uigEE" target="t3eg.~SConcept" resolve="SConcept" />
+              <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
             </node>
             <node concept="37vLTw" id="4All8U4xZKc" role="2ZW6bz">
-              <reference role="3cqZAo" target="359299525883522056" resolve="defaultIfaceConcept" />
+              <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
             </node>
           </node>
         </node>
@@ -301,21 +301,21 @@
               <node concept="1eOMI4" id="4All8U4y1U1" role="2Oq$k0">
                 <node concept="10QFUN" id="4All8U4y1U2" role="1eOMHV">
                   <node concept="3uibUv" id="4All8U4y1U3" role="10QFUM">
-                    <reference role="3uigEE" target="t3eg.~SConcept" resolve="SConcept" />
+                    <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
                   </node>
                   <node concept="37vLTw" id="4All8U4y1U4" role="10QFUP">
-                    <reference role="3cqZAo" target="359299525883522056" resolve="defaultIfaceConcept" />
+                    <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="4All8U4y1U5" role="2OqNvi">
-                <reference role="37wK5l" target="t3eg.~SConcept%dgetSuperConcept()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolve="getSuperConcept" />
+                <ref role="37wK5l" to="t3eg:~SConcept.getSuperConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getSuperConcept" />
               </node>
             </node>
             <node concept="liA8E" id="4All8U4y1U6" role="2OqNvi">
-              <reference role="37wK5l" target="e2lb.~Object%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+              <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="35c_gC" id="4All8U4y1U7" role="37wK5m">
-                <reference role="35c_gD" target="tpck.1133920641626" resolve="BaseConcept" />
+                <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
               </node>
             </node>
           </node>
@@ -324,26 +324,26 @@
           <node concept="3clFbC" id="4All8U4yIGD" role="3vwVQn">
             <node concept="2OqwBi" id="4All8U4ynkv" role="3uHU7B">
               <node concept="2YIFZM" id="4All8U4ynkw" role="2Oq$k0">
-                <reference role="37wK5l" target="msyo.~IterableUtil%dasCollection(java%dlang%dIterable)%cjava%dutil%dCollection" resolve="asCollection" />
-                <reference role="1Pybhc" target="msyo.~IterableUtil" resolve="IterableUtil" />
+                <ref role="37wK5l" to="msyo:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
+                <ref role="1Pybhc" to="msyo:~IterableUtil" resolve="IterableUtil" />
                 <node concept="2OqwBi" id="4All8U4ynkx" role="37wK5m">
                   <node concept="1eOMI4" id="4All8U4ynky" role="2Oq$k0">
                     <node concept="10QFUN" id="4All8U4ynkz" role="1eOMHV">
                       <node concept="3uibUv" id="4All8U4ynk$" role="10QFUM">
-                        <reference role="3uigEE" target="t3eg.~SConcept" resolve="SConcept" />
+                        <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
                       </node>
                       <node concept="37vLTw" id="4All8U4ynk_" role="10QFUP">
-                        <reference role="3cqZAo" target="359299525883522056" resolve="defaultIfaceConcept" />
+                        <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="4All8U4ynkA" role="2OqNvi">
-                    <reference role="37wK5l" target="t3eg.~SConcept%dgetSuperInterfaces()%cjava%dlang%dIterable" resolve="getSuperInterfaces" />
+                    <ref role="37wK5l" to="t3eg:~SConcept.getSuperInterfaces():java.lang.Iterable" resolve="getSuperInterfaces" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="4All8U4ynkB" role="2OqNvi">
-                <reference role="37wK5l" target="k7g3.~Collection%dsize()%cint" resolve="size" />
+                <ref role="37wK5l" to="k7g3:~Collection.size():int" resolve="size" />
               </node>
             </node>
             <node concept="3cmrfG" id="4All8U4ynku" role="3uHU7w">
@@ -359,29 +359,29 @@
                   <node concept="1eOMI4" id="4All8U4y0yO" role="2Oq$k0">
                     <node concept="10QFUN" id="4All8U4y0yL" role="1eOMHV">
                       <node concept="3uibUv" id="4All8U4y0AX" role="10QFUM">
-                        <reference role="3uigEE" target="t3eg.~SConcept" resolve="SConcept" />
+                        <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
                       </node>
                       <node concept="37vLTw" id="4All8U4y0Bi" role="10QFUP">
-                        <reference role="3cqZAo" target="359299525883522056" resolve="defaultIfaceConcept" />
+                        <ref role="3cqZAo" node="jWvgfwgeK8" resolve="defaultIfaceConcept" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="4All8U4y13B" role="2OqNvi">
-                    <reference role="37wK5l" target="t3eg.~SConcept%dgetSuperInterfaces()%cjava%dlang%dIterable" resolve="getSuperInterfaces" />
+                    <ref role="37wK5l" to="t3eg:~SConcept.getSuperInterfaces():java.lang.Iterable" resolve="getSuperInterfaces" />
                   </node>
                 </node>
                 <node concept="liA8E" id="4All8U4yu91" role="2OqNvi">
-                  <reference role="37wK5l" target="e2lb.~Iterable%diterator()%cjava%dutil%dIterator" resolve="iterator" />
+                  <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
                 </node>
               </node>
               <node concept="liA8E" id="4All8U4yuKh" role="2OqNvi">
-                <reference role="37wK5l" target="k7g3.~Iterator%dnext()%cjava%dlang%dObject" resolve="next" />
+                <ref role="37wK5l" to="k7g3:~Iterator.next():java.lang.Object" resolve="next" />
               </node>
             </node>
             <node concept="liA8E" id="4All8U4yv$t" role="2OqNvi">
-              <reference role="37wK5l" target="e2lb.~Object%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+              <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="35c_gC" id="4All8U4yvFU" role="37wK5m">
-                <reference role="35c_gD" target="tpck.1169194658468" resolve="INamedConcept" />
+                <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
               </node>
             </node>
           </node>

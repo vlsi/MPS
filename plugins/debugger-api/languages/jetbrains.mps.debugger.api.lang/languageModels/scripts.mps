@@ -81,7 +81,7 @@
     <node concept="_XfAh" id="1v8opC8VtMR" role="_YvDr">
       <property role="_XH9r" value="Migrates breakpoint creators" />
       <property role="1iWc8x" value="true" />
-      <reference role="_XDHR" target="86gq.3157158168562219319" resolve="BreakpointableNodeItem" />
+      <ref role="_XDHR" to="86gq:2JguE20RV$R" resolve="BreakpointableNodeItem" />
       <node concept="_ZGcI" id="1v8opC8VtMS" role="_XPhp">
         <node concept="3clFbS" id="1v8opC8VtMT" role="2VODD2">
           <node concept="3clFbF" id="1v8opC8VxpA" role="3cqZAp">
@@ -89,11 +89,11 @@
               <node concept="2OqwBi" id="1v8opC8VxqI" role="2Oq$k0">
                 <node concept="_YI3z" id="1v8opC8Vxp_" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1v8opC8VxG0" role="2OqNvi">
-                  <reference role="3Tt5mk" target="86gq.3104811047188238838" />
+                  <ref role="3Tt5mk" to="86gq:2Gmwjaanh7Q" />
                 </node>
               </node>
               <node concept="zfrQC" id="1v8opC8Vytm" role="2OqNvi">
-                <reference role="1A9B2P" target="86gq.3104811047188253540" resolve="ConceptFunction_IsApplicableBreakpoint" />
+                <ref role="1A9B2P" to="86gq:2GmwjaankH$" resolve="ConceptFunction_IsApplicableBreakpoint" />
               </node>
             </node>
           </node>
@@ -103,11 +103,11 @@
                 <node concept="2OqwBi" id="1v8opC8Vz5u" role="2Oq$k0">
                   <node concept="_YI3z" id="1v8opC8Vz4h" role="2Oq$k0" />
                   <node concept="3TrEf2" id="1v8opC8Vzm5" role="2OqNvi">
-                    <reference role="3Tt5mk" target="86gq.3104811047188238838" />
+                    <ref role="3Tt5mk" to="86gq:2Gmwjaanh7Q" />
                   </node>
                 </node>
                 <node concept="3TrEf2" id="1v8opC8V$2n" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1137022507850" />
+                  <ref role="3Tt5mk" to="tpee:gyVODHa" />
                 </node>
               </node>
               <node concept="2oxUTD" id="1v8opC8V_7q" role="2OqNvi">
@@ -115,11 +115,11 @@
                   <node concept="2OqwBi" id="1v8opC8V_k6" role="2Oq$k0">
                     <node concept="_YI3z" id="1v8opC8V_en" role="2Oq$k0" />
                     <node concept="3TrEf2" id="1v8opC8V__m" role="2OqNvi">
-                      <reference role="3Tt5mk" target="86gq.8751745335399632085" />
+                      <ref role="3Tt5mk" to="86gq:7_Oswe9bkNl" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="1v8opC8VAkK" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1137022507850" />
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
                   </node>
                 </node>
               </node>
@@ -130,7 +130,7 @@
               <node concept="2OqwBi" id="1v8opC8VAvv" role="2Oq$k0">
                 <node concept="_YI3z" id="1v8opC8VAtL" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1v8opC8VAMK" role="2OqNvi">
-                  <reference role="3Tt5mk" target="86gq.8751745335399632085" />
+                  <ref role="3Tt5mk" to="86gq:7_Oswe9bkNl" />
                 </node>
               </node>
               <node concept="2oxUTD" id="1v8opC8VBv2" role="2OqNvi">
@@ -148,7 +148,7 @@
                 <node concept="2OqwBi" id="1v8opC8VvsX" role="2Oq$k0">
                   <node concept="_YI3z" id="1v8opC8Vvo_" role="2Oq$k0" />
                   <node concept="3TrEf2" id="1v8opC8VvTd" role="2OqNvi">
-                    <reference role="3Tt5mk" target="86gq.8751745335399632085" />
+                    <ref role="3Tt5mk" to="86gq:7_Oswe9bkNl" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="1v8opC8Vx4E" role="2OqNvi" />
@@ -156,7 +156,7 @@
               <node concept="2OqwBi" id="1v8opC8VulF" role="3uHU7B">
                 <node concept="_YI3z" id="1v8opC8Vuhw" role="2Oq$k0" />
                 <node concept="3TrcHB" id="1v8opC8VuKp" role="2OqNvi">
-                  <reference role="3TsBF5" target="86gq.8751745335399632086" resolve="isComplex" />
+                  <ref role="3TsBF5" to="86gq:7_Oswe9bkNm" resolve="isComplex" />
                 </node>
               </node>
             </node>

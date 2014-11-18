@@ -72,7 +72,7 @@
         <property role="TrG5h" value="context" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="3SnNvqCaJu7" role="1tU5fm">
-          <reference role="3uigEE" target="cu2c.~IOperationContext" resolve="IOperationContext" />
+          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
         </node>
       </node>
       <node concept="3clFbS" id="3SnNvqCaJu8" role="3clF47" />
@@ -87,16 +87,16 @@
         <property role="TrG5h" value="context" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="3SnNvqCaJud" role="1tU5fm">
-          <reference role="3uigEE" target="cu2c.~IOperationContext" resolve="IOperationContext" />
+          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
         </node>
       </node>
       <node concept="37vLTG" id="3SnNvqCaJue" role="3clF46">
         <property role="TrG5h" value="selectedNodes" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="3SnNvqCaJuf" role="1tU5fm">
-          <reference role="3uigEE" target="k7g3.~List" resolve="List" />
+          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
           <node concept="3uibUv" id="3SnNvqCaJug" role="11_B2D">
-            <reference role="3uigEE" target="ec5l.~SNodeReference" resolve="SNodeReference" />
+            <ref role="3uigEE" to="ec5l:~SNodeReference" resolve="SNodeReference" />
           </node>
         </node>
       </node>
@@ -108,11 +108,11 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="3SnNvqCaJuj" role="1B3o_S" />
       <node concept="3uibUv" id="3SnNvqCaJuk" role="3clF45">
-        <reference role="3uigEE" target="dbrf.~JComponent" resolve="JComponent" />
+        <ref role="3uigEE" to="dbrf:~JComponent" resolve="JComponent" />
       </node>
       <node concept="3clFbS" id="3SnNvqCaJul" role="3clF47" />
       <node concept="2AHcQZ" id="3SnNvqCaJum" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="3clFb_" id="3SnNvqCaJun" role="jymVt">

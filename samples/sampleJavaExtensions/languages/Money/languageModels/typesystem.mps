@@ -115,7 +115,7 @@
         <node concept="mw_s8" id="4IqbYlp4P5R" role="1ZfhK$">
           <node concept="1Z2H0r" id="4IqbYlp4P5L" role="mwGJk">
             <node concept="1YBJjd" id="4IqbYlp4P5N" role="1Z2MuG">
-              <reference role="1YBMHb" target="5447719361346490735" resolve="ml" />
+              <ref role="1YBMHb" node="4IqbYlp4P5J" resolve="ml" />
             </node>
           </node>
         </node>
@@ -128,7 +128,7 @@
     </node>
     <node concept="1YaCAy" id="4IqbYlp4P5J" role="1YuTPh">
       <property role="TrG5h" value="ml" />
-      <reference role="1YaFvo" target="v0h4.5447719361346490674" resolve="MoneyLiteral" />
+      <ref role="1YaFvo" to="v0h4:4IqbYlp4P4M" resolve="MoneyLiteral" />
     </node>
   </node>
   <node concept="3hdX5o" id="4IqbYlp547P">
@@ -138,10 +138,10 @@
         <node concept="iynUf" id="4IqbYlp5488" role="2c44tc" />
       </node>
       <node concept="3gn64h" id="4IqbYlp5480" role="32tDTA">
-        <reference role="3gnhBz" target="tpee.1068581242875" resolve="PlusExpression" />
+        <ref role="3gnhBz" to="tpee:fzcpWvV" resolve="PlusExpression" />
       </node>
       <node concept="3gn64h" id="4IqbYlp5482" role="32tDTA">
-        <reference role="3gnhBz" target="tpee.1068581242869" resolve="MinusExpression" />
+        <ref role="3gnhBz" to="tpee:fzcpWvP" resolve="MinusExpression" />
       </node>
       <node concept="3ciZUL" id="4IqbYlp547Y" role="32tDT$">
         <node concept="3clFbS" id="4IqbYlp547Z" role="2VODD2">
@@ -161,16 +161,16 @@
         <node concept="iynUf" id="2uZW74tBayq" role="2c44tc" />
       </node>
       <node concept="3gn64h" id="2uZW74tBawh" role="32tDTA">
-        <reference role="3gnhBz" target="tpee.1081506762703" resolve="GreaterThanExpression" />
+        <ref role="3gnhBz" to="tpee:fJeOSZf" resolve="GreaterThanExpression" />
       </node>
       <node concept="3gn64h" id="2uZW74tBawI" role="32tDTA">
-        <reference role="3gnhBz" target="tpee.1153417849900" resolve="GreaterThanOrEqualsExpression" />
+        <ref role="3gnhBz" to="tpee:gMd3UKG" resolve="GreaterThanOrEqualsExpression" />
       </node>
       <node concept="3gn64h" id="2uZW74tBaxd" role="32tDTA">
-        <reference role="3gnhBz" target="tpee.1081506773034" resolve="LessThanExpression" />
+        <ref role="3gnhBz" to="tpee:fJeOVwE" resolve="LessThanExpression" />
       </node>
       <node concept="3gn64h" id="2uZW74tBaxI" role="32tDTA">
-        <reference role="3gnhBz" target="tpee.1153422305557" resolve="LessThanOrEqualsExpression" />
+        <ref role="3gnhBz" to="tpee:gMdkU$l" resolve="LessThanOrEqualsExpression" />
       </node>
       <node concept="3ciZUL" id="2uZW74tB9XB" role="32tDT$">
         <node concept="3clFbS" id="2uZW74tB9XG" role="2VODD2">
@@ -192,14 +192,14 @@
       <node concept="3cpWs6" id="3d6x66$tF6P" role="3cqZAp">
         <node concept="2c44tf" id="3d6x66$tF6R" role="3cqZAk">
           <node concept="3uibUv" id="3d6x66$tF6U" role="2c44tc">
-            <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
           </node>
         </node>
       </node>
     </node>
     <node concept="1YaCAy" id="3d6x66$tEdy" role="1YuTPh">
       <property role="TrG5h" value="moneyType" />
-      <reference role="1YaFvo" target="v0h4.5447719361346490730" resolve="MoneyType" />
+      <ref role="1YaFvo" to="v0h4:4IqbYlp4P5E" resolve="MoneyType" />
     </node>
   </node>
   <node concept="1YbPZF" id="$lsh0EhEBi">
@@ -209,14 +209,14 @@
         <node concept="mw_s8" id="$lsh0EhDby" role="1ZfhKB">
           <node concept="2c44tf" id="$lsh0EhDbu" role="mwGJk">
             <node concept="3uibUv" id="$lsh0EhEWE" role="2c44tc">
-              <reference role="3uigEE" target="epq1.~BigDecimal" resolve="BigDecimal" />
+              <ref role="3uigEE" to="epq1:~BigDecimal" resolve="BigDecimal" />
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="$lsh0EhD9f" role="1ZfhK$">
           <node concept="1Z2H0r" id="$lsh0EhCZM" role="mwGJk">
             <node concept="1YBJjd" id="$lsh0EhD0M" role="1Z2MuG">
-              <reference role="1YBMHb" target="654553635094964693" resolve="op" />
+              <ref role="1YBMHb" node="$lsh0EhEBl" resolve="op" />
             </node>
           </node>
         </node>
@@ -224,7 +224,7 @@
     </node>
     <node concept="1YaCAy" id="$lsh0EhEBl" role="1YuTPh">
       <property role="TrG5h" value="op" />
-      <reference role="1YaFvo" target="v0h4.5447719361346519865" resolve="GetAmount" />
+      <ref role="1YaFvo" to="v0h4:4IqbYlp4WcT" resolve="GetAmount" />
     </node>
   </node>
   <node concept="1YbPZF" id="$lsh0EhF6N">
@@ -239,7 +239,7 @@
         <node concept="mw_s8" id="$lsh0EhFfP" role="1ZfhK$">
           <node concept="1Z2H0r" id="$lsh0EhF7o" role="mwGJk">
             <node concept="1YBJjd" id="$lsh0EhF82" role="1Z2MuG">
-              <reference role="1YBMHb" target="654553635094966710" resolve="op" />
+              <ref role="1YBMHb" node="$lsh0EhF6Q" resolve="op" />
             </node>
           </node>
         </node>
@@ -247,14 +247,14 @@
     </node>
     <node concept="1YaCAy" id="$lsh0EhF6Q" role="1YuTPh">
       <property role="TrG5h" value="op" />
-      <reference role="1YaFvo" target="v0h4.1790427706118304177" resolve="GetCurrency" />
+      <ref role="1YaFvo" to="v0h4:1zoS8cVcJ6L" resolve="GetCurrency" />
     </node>
   </node>
   <node concept="1YbPZF" id="1Bl50iLW0mK">
     <property role="TrG5h" value="typeof_ConvertTo" />
     <node concept="1YaCAy" id="1Bl50iLW1yQ" role="1YuTPh">
       <property role="TrG5h" value="conversion" />
-      <reference role="1YaFvo" target="v0h4.1790427706118381722" resolve="ConvertTo" />
+      <ref role="1YaFvo" to="v0h4:1zoS8cVd22q" resolve="ConvertTo" />
     </node>
     <node concept="3clFbS" id="1Bl50iLW0nG" role="18ibNy">
       <node concept="1Z5TYs" id="$lsh0EhvjK" role="3cqZAp">
@@ -266,7 +266,7 @@
         <node concept="mw_s8" id="$lsh0EhvjN" role="1ZfhK$">
           <node concept="1Z2H0r" id="$lsh0Ehvah" role="mwGJk">
             <node concept="1YBJjd" id="1Bl50iLW1C1" role="1Z2MuG">
-              <reference role="1YBMHb" target="1861416031385295030" resolve="conversion" />
+              <ref role="1YBMHb" node="1Bl50iLW1yQ" resolve="conversion" />
             </node>
           </node>
         </node>
@@ -286,7 +286,7 @@
         <node concept="mw_s8" id="3u6SZi0ypSH" role="1ZfhK$">
           <node concept="1Z2H0r" id="3u6SZi0ypOX" role="mwGJk">
             <node concept="1YBJjd" id="3u6SZi0ypQH" role="1Z2MuG">
-              <reference role="1YBMHb" target="4001135958233292023" resolve="stockPriceInquiry" />
+              <ref role="1YBMHb" node="3u6SZi0ypNR" resolve="stockPriceInquiry" />
             </node>
           </node>
         </node>
@@ -294,7 +294,7 @@
     </node>
     <node concept="1YaCAy" id="3u6SZi0ypNR" role="1YuTPh">
       <property role="TrG5h" value="stockPriceInquiry" />
-      <reference role="1YaFvo" target="v0h4.4001135958233291203" resolve="CurrentStockPrice" />
+      <ref role="1YaFvo" to="v0h4:3u6SZi0ypB3" resolve="CurrentStockPrice" />
     </node>
   </node>
   <node concept="1YbPZF" id="3u6SZi0Gssv">
@@ -305,7 +305,7 @@
         <node concept="mw_s8" id="3u6SZi0GsvT" role="1ZfhK$">
           <node concept="1Z2H0r" id="3u6SZi0GstC" role="mwGJk">
             <node concept="1YBJjd" id="3u6SZi0Gsuf" role="1Z2MuG">
-              <reference role="1YBMHb" target="4001135958235924258" resolve="movingAverage" />
+              <ref role="1YBMHb" node="3u6SZi0Gssy" resolve="movingAverage" />
             </node>
           </node>
         </node>
@@ -313,7 +313,7 @@
           <node concept="2c44tf" id="3u6SZi0GsxR" role="mwGJk">
             <node concept="A3Dl8" id="3u6SZi0Gszv" role="2c44tc">
               <node concept="3uibUv" id="3u6SZi0Gs$k" role="A3Ik2">
-                <reference role="3uigEE" target="epq1.~BigDecimal" resolve="BigDecimal" />
+                <ref role="3uigEE" to="epq1:~BigDecimal" resolve="BigDecimal" />
               </node>
             </node>
           </node>
@@ -322,7 +322,7 @@
     </node>
     <node concept="1YaCAy" id="3u6SZi0Gssy" role="1YuTPh">
       <property role="TrG5h" value="movingAverage" />
-      <reference role="1YaFvo" target="v0h4.4001135958235922842" resolve="MovingAverage" />
+      <ref role="1YaFvo" to="v0h4:3u6SZi0Gs6q" resolve="MovingAverage" />
     </node>
   </node>
 </model>

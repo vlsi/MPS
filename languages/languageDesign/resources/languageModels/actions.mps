@@ -109,12 +109,12 @@
   <node concept="3FK_9_" id="7DkMEQRMfQb">
     <property role="TrG5h" value="IconResourceReference_subs" />
     <node concept="3FOIzC" id="7DkMEQRMfQc" role="3FOPby">
-      <reference role="3FOWKa" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="3FOWKa" to="tpee:fz3vP1J" resolve="Expression" />
       <node concept="tYCnQ" id="7DkMEQRMfQe" role="tZc4B">
-        <reference role="uz4UX" target="1oap.8974276187400029895" resolve="IconResourceReference" />
+        <ref role="uz4UX" to="1oap:7Mb2akaesr7" resolve="IconResourceReference" />
         <node concept="uMFAO" id="7DkMEQRMfQf" role="uz6Si">
           <node concept="3Tqbb2" id="7DkMEQRMfQl" role="uMOYW">
-            <reference role="ehGHo" target="1oap.8974276187400029888" resolve="IconResourceDeclaration" />
+            <ref role="ehGHo" to="1oap:7Mb2akaesr0" resolve="IconResourceDeclaration" />
           </node>
           <node concept="uNCsQ" id="7DkMEQRMfQh" role="uO7ob">
             <node concept="3clFbS" id="7DkMEQRMfQi" role="2VODD2">
@@ -122,7 +122,7 @@
                 <node concept="2OqwBi" id="7DkMEQRMfQy" role="3clFbG">
                   <node concept="1Q6Npb" id="7DkMEQRMfQv" role="2Oq$k0" />
                   <node concept="1j9C0f" id="7DkMEQRMfQC" role="2OqNvi">
-                    <reference role="1j9C0d" target="1oap.8974276187400029888" resolve="IconResourceDeclaration" />
+                    <ref role="1j9C0d" to="1oap:7Mb2akaesr0" resolve="IconResourceDeclaration" />
                   </node>
                 </node>
               </node>
@@ -153,10 +153,10 @@
                     <node concept="3cpWs3" id="7DkMEQRMfQY" role="3uHU7B">
                       <node concept="2OqwBi" id="2wdLO7Kh2ID" role="3uHU7B">
                         <node concept="3TrcHB" id="2wdLO7Kh2IE" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpce.5092175715804935370" resolve="conceptAlias" />
+                          <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
                         </node>
                         <node concept="3TUQnm" id="2wdLO7Kh2IF" role="2Oq$k0">
-                          <reference role="3TV0OU" target="1oap.8974276187400029895" resolve="IconResourceReference" />
+                          <ref role="3TV0OU" to="1oap:7Mb2akaesr7" resolve="IconResourceReference" />
                         </node>
                       </node>
                       <node concept="Xl_RD" id="7DkMEQRMfR1" role="3uHU7w">
@@ -166,7 +166,7 @@
                     <node concept="2OqwBi" id="7DkMEQRMfRv" role="3uHU7w">
                       <node concept="uNquD" id="7DkMEQRMfRf" role="2Oq$k0" />
                       <node concept="3TrcHB" id="7DkMEQRMfR$" role="2OqNvi">
-                        <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                       </node>
                     </node>
                   </node>

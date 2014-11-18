@@ -39,9 +39,9 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="7BqJJVi3vjJ">
-    <reference role="1M2myG" target="yv2q.9020561928507175845" resolve="LanguageDescriptor" />
+    <ref role="1M2myG" to="yv2q:7OJukvJ5je_" resolve="LanguageDescriptor" />
     <node concept="EnEH3" id="7BqJJVi3vjK" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="Eqf_E" id="7BqJJVi3vjL" role="EtsB7">
         <node concept="3clFbS" id="7BqJJVi3vjM" role="2VODD2">
           <node concept="3clFbF" id="7BqJJVi3vjN" role="3cqZAp">

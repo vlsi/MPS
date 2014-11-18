@@ -48,12 +48,12 @@
     </language>
   </registry>
   <node concept="24kQdi" id="hq6TiAZ">
-    <reference role="1XX52x" target="tpo9.1196260832413" resolve="SingleComplexExpression" />
+    <ref role="1XX52x" to="tpo9:hq6GVit" resolve="SingleComplexExpression" />
     <node concept="3EZMnI" id="hqgeSBc" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhY3C" role="3EZMnx">
         <property role="1cu_pB" value="0" />
-        <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <node concept="3$7jql" id="2wdLO7KhY3D" role="3F10Kt">
           <property role="3$6WeP" value="0.0" />
         </node>
@@ -65,7 +65,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="hqgeYNf" role="3EZMnx">
-        <reference role="1NtTu8" target="tpo9.1196260892801" />
+        <ref role="1NtTu8" to="tpo9:hq6Ha21" />
       </node>
       <node concept="3F0ifn" id="hqgf0Ag" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -77,14 +77,14 @@
     </node>
   </node>
   <node concept="24kQdi" id="hqgkfBz">
-    <reference role="1XX52x" target="tpo9.1196421957108" resolve="DegreeComplexExpression" />
+    <ref role="1XX52x" to="tpo9:hqgj$nO" resolve="DegreeComplexExpression" />
     <node concept="3EZMnI" id="hqgkgIS" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hqgki_$" role="3EZMnx">
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F1sOY" id="hqgkjOd" role="3EZMnx">
-        <reference role="1NtTu8" target="tpo9.1196260892801" />
+        <ref role="1NtTu8" to="tpo9:hq6Ha21" />
       </node>
       <node concept="3F0ifn" id="hqgklfM" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -93,13 +93,13 @@
         <property role="3F0ifm" value="^" />
       </node>
       <node concept="3F1sOY" id="hqgkog0" role="3EZMnx">
-        <reference role="1NtTu8" target="tpo9.1196422043474" />
+        <ref role="1NtTu8" to="tpo9:hqgjTti" />
       </node>
       <node concept="l2Vlx" id="i0NrEhv" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="hqh2Cxh">
-    <reference role="1XX52x" target="tpo9.1196434001121" resolve="ImaginaryUnit" />
+    <ref role="1XX52x" to="tpo9:hqh1wNx" resolve="ImaginaryUnit" />
     <node concept="3F0ifn" id="hqh2DZj" role="2wV5jI">
       <property role="3F0ifm" value="i" />
     </node>

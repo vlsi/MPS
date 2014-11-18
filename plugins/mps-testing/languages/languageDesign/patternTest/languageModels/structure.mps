@@ -40,132 +40,132 @@
   <node concept="1TIwiD" id="7zmQ_SRAuG8">
     <property role="TrG5h" value="PatternTest" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7zmQ_SRAuG9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="nodeToMatch" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpck.1133920641626" resolve="BaseConcept" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
     <node concept="1TJgyj" id="7zmQ_SRAuGa" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="pattern" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tp3t.1136720037777" resolve="PatternExpression" />
+      <ref role="20lvS9" to="tp3t:gyDMOuh" resolve="PatternExpression" />
     </node>
     <node concept="1TJgyj" id="7zmQ_SRAuGb" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="matches" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068580123137" resolve="BooleanConstant" />
+      <ref role="20lvS9" to="tpee:fzclF81" resolve="BooleanConstant" />
     </node>
     <node concept="1TJgyj" id="3f8gaaJnmTG" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="0..n" />
       <property role="20kJfa" value="variable" />
-      <reference role="20lvS9" target="8707387027762047758" resolve="VariableValue" />
+      <ref role="20lvS9" node="7zmQ_SRAuGe" resolve="VariableValue" />
     </node>
     <node concept="1TJgyj" id="1mO8VfSO4br" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="property" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1563914226484921014" resolve="PropertyValue" />
+      <ref role="20lvS9" node="1mO8VfSO4aQ" resolve="PropertyValue" />
     </node>
     <node concept="1TJgyj" id="1mO8VfSO68N" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="list" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1563914226484928842" resolve="ListValue" />
+      <ref role="20lvS9" node="1mO8VfSO65a" resolve="ListValue" />
     </node>
     <node concept="PrWs8" id="7zmQ_SRAuGc" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="6PHzvTW0Oi6" role="PzmwI">
-      <reference role="PrY4T" target="tpe3.1216130694486" resolve="ITestCase" />
+      <ref role="PrY4T" to="tpe3:hGB2rPm" resolve="ITestCase" />
     </node>
     <node concept="PrWs8" id="6PHzvTW0Oic" role="PzmwI">
-      <reference role="PrY4T" target="tpe3.1216134482493" resolve="ITestMethod" />
+      <ref role="PrY4T" to="tpe3:hGBgSCX" resolve="ITestMethod" />
     </node>
     <node concept="PrWs8" id="2deFRo6cC5B" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1319728274783077719" resolve="ImplementationPart" />
+      <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
   </node>
   <node concept="1TIwiD" id="7zmQ_SRAuGe">
     <property role="TrG5h" value="VariableValue" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3f8gaaJnmTD" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="value" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpck.1133920641626" resolve="BaseConcept" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
     <node concept="1TJgyj" id="7zmQ_SRAuGf" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="1" />
       <property role="20kJfa" value="variable" />
-      <reference role="20lvS9" target="8707387027762047761" resolve="TestVariableReference" />
+      <ref role="20lvS9" node="7zmQ_SRAuGh" resolve="TestVariableReference" />
     </node>
   </node>
   <node concept="1TIwiD" id="7zmQ_SRAuGh">
     <property role="TrG5h" value="TestVariableReference" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7zmQ_SRAuGi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tp3t.1136720037779" resolve="PatternVariableDeclaration" />
+      <ref role="20lvS9" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="1mO8VfSNYIS">
     <property role="TrG5h" value="TestPropertyVariableReference" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1mO8VfSNYIY" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tp3t.1136720037781" resolve="PropertyPatternVariableDeclaration" />
+      <ref role="20lvS9" to="tp3t:gyDMOul" resolve="PropertyPatternVariableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="1mO8VfSO4aQ">
     <property role="TrG5h" value="PropertyValue" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1mO8VfSO4aR" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="1" />
       <property role="20kJfa" value="variable" />
-      <reference role="20lvS9" target="1563914226484898744" resolve="TestPropertyVariableReference" />
+      <ref role="20lvS9" node="1mO8VfSNYIS" resolve="TestPropertyVariableReference" />
     </node>
     <node concept="1TJgyj" id="1mO8VfSO4aS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="1" />
       <property role="20kJfa" value="value" />
-      <reference role="20lvS9" target="tpee.1070475926800" resolve="StringLiteral" />
+      <ref role="20lvS9" to="tpee:f$Xl_Og" resolve="StringLiteral" />
     </node>
   </node>
   <node concept="1TIwiD" id="1mO8VfSO65a">
     <property role="TrG5h" value="ListValue" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1mO8VfSO65c" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="variable" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="1563914226484928843" resolve="TestListReference" />
+      <ref role="20lvS9" node="1mO8VfSO65b" resolve="TestListReference" />
     </node>
     <node concept="1TJgyj" id="1mO8VfSO65d" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="value" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="tpck.1133920641626" resolve="BaseConcept" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="1mO8VfSO65b">
     <property role="TrG5h" value="TestListReference" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1mO8VfSO68w" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="listPattern" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tp3t.1136727061274" resolve="ListPattern" />
+      <ref role="20lvS9" to="tp3t:gyEdBcq" resolve="ListPattern" />
     </node>
   </node>
 </model>

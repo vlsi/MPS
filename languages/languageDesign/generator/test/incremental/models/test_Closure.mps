@@ -179,11 +179,11 @@
           <node concept="3cpWsn" id="7a0yVg7GDSi" role="3cpWs9">
             <property role="TrG5h" value="l" />
             <node concept="3uibUv" id="7a0yVg7GDSj" role="1tU5fm">
-              <reference role="3uigEE" target="8250748122682163163" resolve="Library" />
+              <ref role="3uigEE" node="7a0yVg7GfZr" resolve="Library" />
             </node>
             <node concept="2ShNRf" id="7a0yVg7GDSl" role="33vP2m">
               <node concept="1pGfFk" id="7a0yVg7GDSn" role="2ShVmc">
-                <reference role="37wK5l" target="8250748122682163165" resolve="Library" />
+                <ref role="37wK5l" node="7a0yVg7GfZt" resolve="Library" />
               </node>
             </node>
           </node>
@@ -202,10 +202,10 @@
           <node concept="2OqwBi" id="7a0yVg7GDUs" role="3clFbG">
             <node concept="2OqwBi" id="7a0yVg7GDUn" role="2Oq$k0">
               <node concept="37vLTw" id="3GM_nagTB$4" role="2Oq$k0">
-                <reference role="3cqZAo" target="8250748122682269202" resolve="l" />
+                <ref role="3cqZAo" node="7a0yVg7GDSi" resolve="l" />
               </node>
               <node concept="2OwXpG" id="7a0yVg7GDUr" role="2OqNvi">
-                <reference role="2Oxat5" target="8250748122682163172" resolve="user" />
+                <ref role="2Oxat5" node="7a0yVg7GfZ$" resolve="user" />
               </node>
             </node>
             <node concept="TSZUe" id="7a0yVg7GDUw" role="2OqNvi">
@@ -214,10 +214,10 @@
                   <node concept="3clFbF" id="7a0yVg7GDU$" role="3cqZAp">
                     <node concept="1Ls8ON" id="7a0yVg7GDU_" role="3clFbG">
                       <node concept="37vLTw" id="3GM_nagTzE6" role="1Lso8e">
-                        <reference role="3cqZAo" target="8250748122682269352" resolve="res" />
+                        <ref role="3cqZAo" node="7a0yVg7GDUC" resolve="res" />
                       </node>
                       <node concept="1rXfSq" id="4hiugqyz5FU" role="1Lso8e">
-                        <reference role="37wK5l" target="8250748122682269364" resolve="getName" />
+                        <ref role="37wK5l" node="7a0yVg7GDUO" resolve="getName" />
                       </node>
                     </node>
                   </node>
@@ -229,10 +229,10 @@
         <node concept="3clFbF" id="7a0yVg7GDUd" role="3cqZAp">
           <node concept="2OqwBi" id="7a0yVg7GDUf" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagT$ql" role="2Oq$k0">
-              <reference role="3cqZAo" target="8250748122682269202" resolve="l" />
+              <ref role="3cqZAo" node="7a0yVg7GDSi" resolve="l" />
             </node>
             <node concept="liA8E" id="7a0yVg7GDUj" role="2OqNvi">
-              <reference role="37wK5l" target="8250748122682168215" resolve="invoke" />
+              <ref role="37wK5l" node="7a0yVg7Ghen" resolve="invoke" />
             </node>
           </node>
         </node>
@@ -245,10 +245,10 @@
             </node>
             <node concept="2OqwBi" id="7a0yVg7GDV8" role="33vP2m">
               <node concept="37vLTw" id="3GM_nagTyjX" role="2Oq$k0">
-                <reference role="3cqZAo" target="8250748122682269202" resolve="l" />
+                <ref role="3cqZAo" node="7a0yVg7GDSi" resolve="l" />
               </node>
               <node concept="liA8E" id="7a0yVg7GDVc" role="2OqNvi">
-                <reference role="37wK5l" target="8250748122682269302" resolve="getFirst" />
+                <ref role="37wK5l" node="7a0yVg7GDTQ" resolve="getFirst" />
               </node>
             </node>
           </node>
@@ -302,7 +302,7 @@
             <property role="TrG5h" value="a" />
           </node>
           <node concept="37vLTw" id="2BHiRxeufSV" role="2GsD0m">
-            <reference role="3cqZAo" target="8250748122682163172" resolve="user" />
+            <ref role="3cqZAo" node="7a0yVg7GfZ$" resolve="user" />
           </node>
           <node concept="3clFbS" id="7a0yVg7Gheu" role="2LFqv$">
             <node concept="3cpWs8" id="7a0yVg7Ghg9" role="3cqZAp">
@@ -314,7 +314,7 @@
                 </node>
                 <node concept="2Sg_IR" id="7a0yVg7GDTO" role="33vP2m">
                   <node concept="2GrUjf" id="7a0yVg7GDTP" role="2SgG2M">
-                    <reference role="2Gs0qQ" target="8250748122682168220" resolve="a" />
+                    <ref role="2Gs0qQ" node="7a0yVg7Ghes" resolve="a" />
                   </node>
                 </node>
               </node>
@@ -322,14 +322,14 @@
             <node concept="3clFbF" id="7a0yVg7Ghgn" role="3cqZAp">
               <node concept="2OqwBi" id="7a0yVg7GDsn" role="3clFbG">
                 <node concept="10M0yZ" id="7a0yVg7Ghgo" role="2Oq$k0">
-                  <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-                  <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+                  <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+                  <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
                 </node>
                 <node concept="liA8E" id="7a0yVg7GDsr" role="2OqNvi">
-                  <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+                  <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
                   <node concept="1LFfDK" id="7a0yVg7GDS5" role="37wK5m">
                     <node concept="37vLTw" id="3GM_nagTsH7" role="1LFl5Q">
-                      <reference role="3cqZAo" target="8250748122682168330" resolve="res" />
+                      <ref role="3cqZAo" node="7a0yVg7Ghga" resolve="res" />
                     </node>
                     <node concept="3cmrfG" id="7a0yVg7GDS9" role="1LF_Uc">
                       <property role="3cmrfH" value="1" />
@@ -354,7 +354,7 @@
           <node concept="2OqwBi" id="7a0yVg7GDU6" role="3clFbG">
             <node concept="2OqwBi" id="7a0yVg7GDU1" role="2Oq$k0">
               <node concept="37vLTw" id="2BHiRxeuTqV" role="2Oq$k0">
-                <reference role="3cqZAo" target="8250748122682163172" resolve="user" />
+                <ref role="3cqZAo" node="7a0yVg7GfZ$" resolve="user" />
               </node>
               <node concept="1uHKPH" id="7a0yVg7GDU5" role="2OqNvi" />
             </node>

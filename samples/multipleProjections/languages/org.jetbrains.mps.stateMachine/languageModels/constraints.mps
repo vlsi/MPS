@@ -64,7 +64,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="6SYFRDkTQVH">
-    <reference role="1M2myG" target="owg1.7943979732673457898" resolve="AbstractStateMachineElement" />
+    <ref role="1M2myG" to="owg1:6SYFRDkTQVE" resolve="AbstractStateMachineElement" />
     <node concept="nKS2y" id="6SYFRDkTQVI" role="1MLUbF">
       <node concept="3clFbS" id="6SYFRDkTQVJ" role="2VODD2">
         <node concept="3clFbF" id="6SYFRDkTQVK" role="3cqZAp">
@@ -72,7 +72,7 @@
             <node concept="nLn13" id="6SYFRDkTQVL" role="2Oq$k0" />
             <node concept="1mIQ4w" id="6SYFRDkTQVQ" role="2OqNvi">
               <node concept="chp4Y" id="3c1Y2R7M2kE" role="cj9EA">
-                <reference role="cht4Q" target="owg1.763922957008726945" resolve="StateMachine" />
+                <ref role="cht4Q" to="owg1:EpZY78hmIx" resolve="StateMachine" />
               </node>
             </node>
           </node>
@@ -81,22 +81,22 @@
     </node>
   </node>
   <node concept="1M2fIO" id="6SYFRDkTatp">
-    <reference role="1M2myG" target="owg1.763922957008729158" resolve="EventReference" />
+    <ref role="1M2myG" to="owg1:EpZY78hnh6" resolve="EventReference" />
     <node concept="1N5Pfh" id="6SYFRDkTaDH" role="1Mr941">
-      <reference role="1N5Vy1" target="owg1.763922957008729159" />
+      <ref role="1N5Vy1" to="owg1:EpZY78hnh7" />
       <node concept="1MUpDS" id="6SYFRDkTaDI" role="1N6uqs">
         <node concept="3clFbS" id="6SYFRDkTaDJ" role="2VODD2">
           <node concept="3clFbF" id="5RFOWxSxOqH" role="3cqZAp">
             <node concept="2OqwBi" id="5RFOWxSxOqQ" role="3clFbG">
               <node concept="3Tsc0h" id="3c1Y2R7MJPf" role="2OqNvi">
-                <reference role="3TtcxE" target="owg1.763922957008726947" />
+                <ref role="3TtcxE" to="owg1:EpZY78hmIz" />
               </node>
               <node concept="2OqwBi" id="5RFOWxSxOqL" role="2Oq$k0">
                 <node concept="2qgKlT" id="3c1Y2R7M_HL" role="2OqNvi">
-                  <reference role="37wK5l" target="nfvt.7943979732673457916" resolve="getStateMachine" />
+                  <ref role="37wK5l" to="nfvt:6SYFRDkTQVW" resolve="getStateMachine" />
                 </node>
                 <node concept="1PxgMI" id="5RFOWxSxOqJ" role="2Oq$k0">
-                  <reference role="1PxNhF" target="owg1.763922957008729149" resolve="Transition" />
+                  <ref role="1PxNhF" to="owg1:EpZY78hngX" resolve="Transition" />
                   <node concept="21POm0" id="5RFOWxSxOqI" role="1PxMeX" />
                 </node>
               </node>
@@ -112,7 +112,7 @@
             <node concept="nLn13" id="5RFOWxSxOqy" role="2Oq$k0" />
             <node concept="1mIQ4w" id="5RFOWxSxOqz" role="2OqNvi">
               <node concept="chp4Y" id="3c1Y2R7MfiG" role="cj9EA">
-                <reference role="cht4Q" target="owg1.763922957008729149" resolve="Transition" />
+                <ref role="cht4Q" to="owg1:EpZY78hngX" resolve="Transition" />
               </node>
             </node>
           </node>
@@ -121,22 +121,22 @@
     </node>
   </node>
   <node concept="1M2fIO" id="6SYFRDkU0Ch">
-    <reference role="1M2myG" target="owg1.763922957008729156" resolve="StateReference" />
+    <ref role="1M2myG" to="owg1:EpZY78hnh4" resolve="StateReference" />
     <node concept="1N5Pfh" id="6SYFRDkU0Ci" role="1Mr941">
-      <reference role="1N5Vy1" target="owg1.763922957008729157" />
+      <ref role="1N5Vy1" to="owg1:EpZY78hnh5" />
       <node concept="1MUpDS" id="6SYFRDkU0Cj" role="1N6uqs">
         <node concept="3clFbS" id="6SYFRDkU0Ck" role="2VODD2">
           <node concept="3clFbF" id="5RFOWxSxDL8" role="3cqZAp">
             <node concept="2OqwBi" id="5RFOWxSxLFN" role="3clFbG">
               <node concept="3Tsc0h" id="3c1Y2R7NC8t" role="2OqNvi">
-                <reference role="3TtcxE" target="owg1.763922957008726949" />
+                <ref role="3TtcxE" to="owg1:EpZY78hmI_" />
               </node>
               <node concept="2OqwBi" id="5RFOWxSxDLh" role="2Oq$k0">
                 <node concept="2qgKlT" id="3c1Y2R7Nwo9" role="2OqNvi">
-                  <reference role="37wK5l" target="nfvt.7943979732673457916" resolve="getStateMachine" />
+                  <ref role="37wK5l" to="nfvt:6SYFRDkTQVW" resolve="getStateMachine" />
                 </node>
                 <node concept="1PxgMI" id="5RFOWxSxDLf" role="2Oq$k0">
-                  <reference role="1PxNhF" target="owg1.763922957008729149" resolve="Transition" />
+                  <ref role="1PxNhF" to="owg1:EpZY78hngX" resolve="Transition" />
                   <node concept="21POm0" id="5RFOWxSxDL9" role="1PxMeX" />
                 </node>
               </node>
@@ -152,7 +152,7 @@
             <node concept="nLn13" id="5RFOWxSxOqD" role="2Oq$k0" />
             <node concept="1mIQ4w" id="5RFOWxSxOqE" role="2OqNvi">
               <node concept="chp4Y" id="3c1Y2R7NcE5" role="cj9EA">
-                <reference role="cht4Q" target="owg1.763922957008729149" resolve="Transition" />
+                <ref role="cht4Q" to="owg1:EpZY78hngX" resolve="Transition" />
               </node>
             </node>
           </node>

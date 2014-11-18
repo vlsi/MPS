@@ -91,11 +91,11 @@
   <node concept="bUwia" id="4lITsQs52AB">
     <property role="TrG5h" value="mc_CheckedName" />
     <node concept="3aamgX" id="4lITsQs52AC" role="3acgRq">
-      <reference role="30HIoZ" target="4j10.4844813484172611385" resolve="PropertyRefExpression" />
+      <ref role="30HIoZ" to="4j10:4cWf37B8oWT" resolve="PropertyRefExpression" />
       <node concept="gft3U" id="4lITsQs52AD" role="1lVwrX">
         <node concept="2ShNRf" id="4lITsQs52AE" role="gfFT$">
           <node concept="1pGfFk" id="4lITsQs52AF" role="2ShVmc">
-            <reference role="37wK5l" target="y51d.~PropertyReference%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)" resolve="PropertyReference" />
+            <ref role="37wK5l" to="y51d:~PropertyReference.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String)" resolve="PropertyReference" />
             <node concept="10Nm6u" id="4lITsQs52AG" role="37wK5m">
               <node concept="29HgVG" id="4lITsQs52AH" role="lGtFl">
                 <node concept="3NFfHV" id="4lITsQs52AI" role="3NFExx">
@@ -104,7 +104,7 @@
                       <node concept="2OqwBi" id="4lITsQs52AL" role="3clFbG">
                         <node concept="30H73N" id="4lITsQs52AM" role="2Oq$k0" />
                         <node concept="3TrEf2" id="4lITsQs52AN" role="2OqNvi">
-                          <reference role="3Tt5mk" target="4j10.4844813484172611386" />
+                          <ref role="3Tt5mk" to="4j10:4cWf37B8oWU" />
                         </node>
                       </node>
                     </node>
@@ -123,11 +123,11 @@
                         <node concept="2OqwBi" id="4lITsQs52AU" role="2Oq$k0">
                           <node concept="30H73N" id="4lITsQs52AV" role="2Oq$k0" />
                           <node concept="3TrEf2" id="4lITsQs52AW" role="2OqNvi">
-                            <reference role="3Tt5mk" target="4j10.4844813484172611387" />
+                            <ref role="3Tt5mk" to="4j10:4cWf37B8oWV" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="4lITsQs52AX" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                         </node>
                       </node>
                     </node>
@@ -140,10 +140,10 @@
       </node>
     </node>
     <node concept="3aamgX" id="4lITsQs52AY" role="3acgRq">
-      <reference role="30HIoZ" target="4j10.4844813484172611390" resolve="PropertyRefType" />
+      <ref role="30HIoZ" to="4j10:4cWf37B8oWY" resolve="PropertyRefType" />
       <node concept="gft3U" id="4lITsQs52AZ" role="1lVwrX">
         <node concept="3uibUv" id="4lITsQs52B0" role="gfFT$">
-          <reference role="3uigEE" target="y51d.~PropertyReference" resolve="PropertyReference" />
+          <ref role="3uigEE" to="y51d:~PropertyReference" resolve="PropertyReference" />
         </node>
       </node>
     </node>

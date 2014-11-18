@@ -56,35 +56,35 @@
     </language>
   </registry>
   <node concept="24kQdi" id="1iYrdV1xxgs">
-    <reference role="1XX52x" target="nd9w.1494751830318912537" resolve="Constant" />
+    <ref role="1XX52x" to="nd9w:1iYrdV1xxgp" resolve="Constant" />
     <node concept="3EZMnI" id="1iYrdV1xxgu" role="2wV5jI">
       <node concept="3F0ifn" id="1iYrdV1xxgx" role="3EZMnx">
         <property role="3F0ifm" value="My Constant:" />
       </node>
       <node concept="3F0A7n" id="1iYrdV1xxgz" role="3EZMnx">
         <property role="1cu_pB" value="1" />
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="1iYrdV1xxg_" role="3EZMnx">
         <property role="3F0ifm" value=":" />
       </node>
       <node concept="3F1sOY" id="1J7HMiRRGnz" role="3EZMnx">
-        <reference role="1NtTu8" target="nd9w.2001769927721010657" />
+        <ref role="1NtTu8" to="nd9w:1J7HMiRRGnx" />
       </node>
       <node concept="l2Vlx" id="1iYrdV1xxgw" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="1iYrdV1xxgD">
-    <reference role="1XX52x" target="nd9w.1494751830318912535" resolve="Constants" />
+    <ref role="1XX52x" to="nd9w:1iYrdV1xxgn" resolve="Constants" />
     <node concept="3EZMnI" id="1iYrdV1xxgF" role="2wV5jI">
       <node concept="3F0ifn" id="1iYrdV1xxgI" role="3EZMnx">
         <property role="3F0ifm" value="Constants" />
       </node>
       <node concept="3F0A7n" id="1iYrdV1xxgK" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F2HdR" id="1iYrdV1y5_F" role="3EZMnx">
-        <reference role="1NtTu8" target="nd9w.1494751830318912552" />
+        <ref role="1NtTu8" to="nd9w:1iYrdV1xxgC" />
         <node concept="2iRkQZ" id="1iYrdV1y5_G" role="2czzBx" />
         <node concept="lj46D" id="1iYrdV1y5_J" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -100,13 +100,13 @@
     </node>
   </node>
   <node concept="24kQdi" id="3tw0l3PakpB">
-    <reference role="1XX52x" target="nd9w.3990190717072393829" resolve="ConstantReference" />
+    <ref role="1XX52x" to="nd9w:3tw0l3Pakp_" resolve="ConstantReference" />
     <node concept="1iCGBv" id="3tw0l3PakpD" role="2wV5jI">
-      <reference role="1NtTu8" target="nd9w.3990190717072393830" />
+      <ref role="1NtTu8" to="nd9w:3tw0l3PakpA" />
       <node concept="1sVBvm" id="3tw0l3PakpE" role="1sWHZn">
         <node concept="3F0A7n" id="3tw0l3PakpG" role="2wV5jI">
           <property role="1Intyy" value="true" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
       </node>
     </node>

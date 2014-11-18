@@ -38,15 +38,15 @@
   <node concept="1TIwiD" id="4RkbWW0I_ji">
     <property role="TrG5h" value="Outlook" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4RkbWW0I_Ax" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="facet" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="vvvw.6447445394688422642" resolve="FacetReference" />
+      <ref role="20lvS9" to="vvvw:5_TVmOF8rbM" resolve="FacetReference" />
     </node>
     <node concept="PrWs8" id="4RkbWW0ILbP" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
 </model>

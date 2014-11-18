@@ -134,7 +134,7 @@
     <property role="TrG5h" value="MPSProgramRunner" />
     <node concept="3Tm1VV" id="4tDMPuHd$WY" role="1B3o_S" />
     <node concept="3uibUv" id="4tDMPuHd$WZ" role="1zkMxy">
-      <reference role="3uigEE" target="f8sb.~DefaultProgramRunner" resolve="DefaultProgramRunner" />
+      <ref role="3uigEE" to="f8sb:~DefaultProgramRunner" resolve="DefaultProgramRunner" />
     </node>
     <node concept="3clFbW" id="4tDMPuHd$X0" role="jymVt">
       <node concept="3Tm1VV" id="4tDMPuHd$X1" role="1B3o_S" />
@@ -153,10 +153,10 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="4tDMPuHd$Xa" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_mU" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="4tDMPuHd$Xb" role="jymVt">
@@ -167,16 +167,16 @@
         <property role="TrG5h" value="executorId" />
         <node concept="17QB3L" id="66CJzfk0KXM" role="1tU5fm" />
         <node concept="2AHcQZ" id="4tDMPuHd$Xg" role="2AJF6D">
-          <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="37vLTG" id="4tDMPuHd$Xh" role="3clF46">
         <property role="TrG5h" value="profile" />
         <node concept="3uibUv" id="4tDMPuHd$Xi" role="1tU5fm">
-          <reference role="3uigEE" target="jj9h.~RunProfile" resolve="RunProfile" />
+          <ref role="3uigEE" to="jj9h:~RunProfile" resolve="RunProfile" />
         </node>
         <node concept="2AHcQZ" id="4tDMPuHd$Xj" role="2AJF6D">
-          <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="3clFbS" id="4tDMPuHd$Xk" role="3clF47">
@@ -186,13 +186,13 @@
               <node concept="1Wc70l" id="4tDMPuHd$Xm" role="3cqZAk">
                 <node concept="2OqwBi" id="4tDMPuHd$Xn" role="3uHU7B">
                   <node concept="37vLTw" id="2BHiRxglVuK" role="2Oq$k0">
-                    <reference role="3cqZAo" target="5145867626676113230" resolve="executorId" />
+                    <ref role="3cqZAo" node="4tDMPuHd$Xe" resolve="executorId" />
                   </node>
                   <node concept="liA8E" id="4tDMPuHd$Xp" role="2OqNvi">
-                    <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
                     <node concept="10M0yZ" id="4tDMPuHd$Xq" role="37wK5m">
-                      <reference role="1PxDUh" target="wut4.~DefaultRunExecutor" resolve="DefaultRunExecutor" />
-                      <reference role="3cqZAo" target="wut4.~DefaultRunExecutor%dEXECUTOR_ID" resolve="EXECUTOR_ID" />
+                      <ref role="1PxDUh" to="wut4:~DefaultRunExecutor" resolve="DefaultRunExecutor" />
+                      <ref role="3cqZAo" to="wut4:~DefaultRunExecutor.EXECUTOR_ID" resolve="EXECUTOR_ID" />
                     </node>
                   </node>
                 </node>
@@ -202,10 +202,10 @@
                       <node concept="1eOMI4" id="4tDMPuHd$Xu" role="3fr31v">
                         <node concept="2ZW3vV" id="4tDMPuHd$Xv" role="1eOMHV">
                           <node concept="37vLTw" id="2BHiRxgmaZQ" role="2ZW6bz">
-                            <reference role="3cqZAo" target="5145867626676113233" resolve="profile" />
+                            <ref role="3cqZAo" node="4tDMPuHd$Xh" resolve="profile" />
                           </node>
                           <node concept="3uibUv" id="4tDMPuHdX47" role="2ZW6by">
-                            <reference role="3uigEE" target="eibu.3908032508224771122" resolve="BaseMpsRunConfiguration" />
+                            <ref role="3uigEE" to="eibu:3oW7HLfqDgM" resolve="BaseMpsRunConfiguration" />
                           </node>
                         </node>
                       </node>
@@ -214,17 +214,17 @@
                       <node concept="1eOMI4" id="4tDMPuHd$Xz" role="2Oq$k0">
                         <node concept="10QFUN" id="4tDMPuHd$X$" role="1eOMHV">
                           <node concept="37vLTw" id="2BHiRxgheX7" role="10QFUP">
-                            <reference role="3cqZAo" target="5145867626676113233" resolve="profile" />
+                            <ref role="3cqZAo" node="4tDMPuHd$Xh" resolve="profile" />
                           </node>
                           <node concept="3uibUv" id="4tDMPuHdX48" role="10QFUM">
-                            <reference role="3uigEE" target="eibu.3908032508224771122" resolve="BaseMpsRunConfiguration" />
+                            <ref role="3uigEE" to="eibu:3oW7HLfqDgM" resolve="BaseMpsRunConfiguration" />
                           </node>
                         </node>
                       </node>
                       <node concept="liA8E" id="4tDMPuHd$XB" role="2OqNvi">
-                        <reference role="37wK5l" target="eibu.3908032508224771123" resolve="canExecute" />
+                        <ref role="37wK5l" to="eibu:3oW7HLfqDgN" resolve="canExecute" />
                         <node concept="37vLTw" id="2BHiRxgm9Pi" role="37wK5m">
-                          <reference role="3cqZAo" target="5145867626676113230" resolve="executorId" />
+                          <ref role="3cqZAo" node="4tDMPuHd$Xe" resolve="executorId" />
                         </node>
                       </node>
                     </node>
@@ -237,7 +237,7 @@
             <node concept="3cpWsn" id="3z1yrVbxhrf" role="TDEfY">
               <property role="TrG5h" value="throwable" />
               <node concept="3uibUv" id="3z1yrVbxhri" role="1tU5fm">
-                <reference role="3uigEE" target="e2lb.~Throwable" resolve="Throwable" />
+                <ref role="3uigEE" to="e2lb:~Throwable" resolve="Throwable" />
               </node>
             </node>
             <node concept="3clFbS" id="3z1yrVbxhrh" role="TDEfX">
@@ -253,12 +253,12 @@
                       <property role="Xl_RC" value="Run configuration " />
                     </node>
                     <node concept="37vLTw" id="2BHiRxgldnc" role="3uHU7w">
-                      <reference role="3cqZAo" target="5145867626676113233" resolve="profile" />
+                      <ref role="3cqZAo" node="4tDMPuHd$Xh" resolve="profile" />
                     </node>
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTxby" role="34bMjA">
-                  <reference role="3cqZAo" target="4089701389180409551" resolve="throwable" />
+                  <ref role="3cqZAo" node="3z1yrVbxhrf" resolve="throwable" />
                 </node>
               </node>
               <node concept="3cpWs6" id="3z1yrVbxznt" role="3cqZAp">
@@ -271,7 +271,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U_mV" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
   </node>

@@ -59,7 +59,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="gfQFgCX">
-    <reference role="1XX52x" target="tpnu.1116534870455" resolve="ReaderConfiguration" />
+    <ref role="1XX52x" to="tpnu:gfQEx6R" resolve="ReaderConfiguration" />
     <node concept="3EZMnI" id="gfQFiF7" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="gfQFkbm" role="3EZMnx">
@@ -69,7 +69,7 @@
         </node>
         <node concept="3F0A7n" id="gfQFqfm" role="3EZMnx">
           <property role="1$x2rV" value="&lt;no name&gt;" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="VPM3Z" id="hF4QVG3" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -90,7 +90,7 @@
           <property role="2czwfO" value="-------" />
           <property role="2czwfN" value="true" />
           <property role="2czwfM" value="true" />
-          <reference role="1NtTu8" target="tpnu.1116535202619" />
+          <ref role="1NtTu8" to="tpnu:gfQFMcV" />
           <node concept="3F0ifn" id="gfQGkja" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;-&lt;Enter&gt; to add mapping" />
             <node concept="Vb9p2" id="hF4QVNT" role="3F10Kt">
@@ -108,7 +108,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="gfQGwMY">
-    <reference role="1XX52x" target="tpnu.1116534914096" resolve="Mapping" />
+    <ref role="1XX52x" to="tpnu:gfQEFKK" resolve="Mapping" />
     <node concept="3EZMnI" id="gfQG_FZ" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="gfQGBUA" role="3EZMnx">
@@ -118,11 +118,11 @@
         </node>
         <node concept="3F0A7n" id="gfQGE5P" role="3EZMnx">
           <property role="1$x2rV" value="&lt;no code&gt;" />
-          <reference role="1NtTu8" target="tpnu.1116534988614" resolve="code" />
+          <ref role="1NtTu8" to="tpnu:gfQEXX6" resolve="code" />
         </node>
         <node concept="3F0A7n" id="gfQGOw7" role="3EZMnx">
           <property role="1$x2rV" value="&lt;no target class&gt;" />
-          <reference role="1NtTu8" target="tpnu.1116534997224" resolve="targetClass" />
+          <ref role="1NtTu8" to="tpnu:gfQF03C" resolve="targetClass" />
         </node>
         <node concept="VPM3Z" id="hF4QVIH" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -140,7 +140,7 @@
         <node concept="3F2HdR" id="gfQHjVs" role="3EZMnx">
           <property role="2czwfN" value="true" />
           <property role="2czwfM" value="true" />
-          <reference role="1NtTu8" target="tpnu.1116535614925" />
+          <ref role="1NtTu8" to="tpnu:gfQHmRd" />
           <node concept="3F0ifn" id="gfQHya7" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;-&lt;Enter&gt; to add field" />
             <node concept="Vb9p2" id="hF4QVO0" role="3F10Kt">
@@ -161,12 +161,12 @@
     </node>
   </node>
   <node concept="24kQdi" id="gfQHOyp">
-    <reference role="1XX52x" target="tpnu.1116534962441" resolve="Field" />
+    <ref role="1XX52x" to="tpnu:gfQER$9" resolve="Field" />
     <node concept="3EZMnI" id="gfQIbzl" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="gfQIhi4" role="3EZMnx">
         <property role="1$x2rV" value="?start?" />
-        <reference role="1NtTu8" target="tpnu.1116535027491" resolve="start" />
+        <ref role="1NtTu8" to="tpnu:gfQF7sz" resolve="start" />
       </node>
       <node concept="3F0ifn" id="gfQImdL" role="3EZMnx">
         <property role="3F0ifm" value="-" />
@@ -176,7 +176,7 @@
       </node>
       <node concept="3F0A7n" id="gfQIoyI" role="3EZMnx">
         <property role="1$x2rV" value="?end?" />
-        <reference role="1NtTu8" target="tpnu.1116535032695" resolve="end" />
+        <ref role="1NtTu8" to="tpnu:gfQF8HR" resolve="end" />
       </node>
       <node concept="3F0ifn" id="gfQIw3X" role="3EZMnx">
         <property role="3F0ifm" value=":" />
@@ -186,7 +186,7 @@
       </node>
       <node concept="3F0A7n" id="gfQIAqv" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no name&gt;" />
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="2iRfu4" id="i2IQHvk" role="2iSdaV" />
     </node>

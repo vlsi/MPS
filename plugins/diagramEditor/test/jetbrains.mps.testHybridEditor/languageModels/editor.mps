@@ -191,14 +191,14 @@
   </node>
   <node concept="24kQdi" id="3NXJmdrtjrL">
     <property role="3GE5qa" value="newBlocks" />
-    <reference role="1XX52x" target="adck.2353136177973871304" resolve="MetaBlock" />
+    <ref role="1XX52x" to="adck:22C1ebGgcb8" resolve="MetaBlock" />
     <node concept="3EZMnI" id="3NXJmdrtjua" role="2wV5jI">
       <node concept="l2Vlx" id="3NXJmdrtjub" role="2iSdaV" />
       <node concept="3F0ifn" id="3NXJmdrtjuc" role="3EZMnx">
         <property role="3F0ifm" value="meta block" />
       </node>
       <node concept="3F0A7n" id="3NXJmdrtjud" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="3NXJmdrtjue" role="3EZMnx">
         <property role="3F0ifm" value="{" />
@@ -227,7 +227,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="3NXJmdrtjuv" role="3EZMnx">
-          <reference role="1NtTu8" target="adck.2353136177973888134" />
+          <ref role="1NtTu8" to="adck:22C1ebGggi6" />
           <node concept="l2Vlx" id="3NXJmdrtjuw" role="2czzBx" />
           <node concept="pj6Ft" id="3NXJmdrtjux" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -257,7 +257,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="3NXJmdrtjuE" role="3EZMnx">
-          <reference role="1NtTu8" target="adck.3229274890675219468" />
+          <ref role="1NtTu8" to="adck:2NgG6tkMeKc" />
           <node concept="l2Vlx" id="3NXJmdrtjuF" role="2czzBx" />
           <node concept="pj6Ft" id="3NXJmdrtjuG" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -286,7 +286,7 @@
               <node concept="3cpWsn" id="3NXJmdrrsub" role="3cpWs9">
                 <property role="TrG5h" value="module" />
                 <node concept="3uibUv" id="3NXJmdrtkZR" role="1tU5fm">
-                  <reference role="3uigEE" target="88zw.~SModule" resolve="SModule" />
+                  <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
                 </node>
                 <node concept="2OqwBi" id="3NXJmdrrsuc" role="33vP2m">
                   <node concept="2JrnkZ" id="3NXJmdrrsud" role="2Oq$k0">
@@ -296,7 +296,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3NXJmdrrsuh" role="2OqNvi">
-                    <reference role="37wK5l" target="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolve="getModule" />
+                    <ref role="37wK5l" to="ec5l:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                   </node>
                 </node>
               </node>
@@ -312,10 +312,10 @@
               <node concept="3fqX7Q" id="3NXJmdrrtqn" role="3clFbw">
                 <node concept="2ZW3vV" id="3NXJmdrrtKK" role="3fr31v">
                   <node concept="3uibUv" id="3NXJmdrtmnS" role="2ZW6by">
-                    <reference role="3uigEE" target="vsqj.~AbstractModule" resolve="AbstractModule" />
+                    <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
                   </node>
                   <node concept="37vLTw" id="3NXJmdrrtqo" role="2ZW6bz">
-                    <reference role="3cqZAo" target="4394877045816805259" resolve="module" />
+                    <ref role="3cqZAo" node="3NXJmdrrsub" resolve="module" />
                   </node>
                 </node>
               </node>
@@ -326,25 +326,25 @@
                 <node concept="17QB3L" id="hP3azYc" role="1tU5fm" />
                 <node concept="2OqwBi" id="hy079Lc" role="33vP2m">
                   <node concept="2YIFZM" id="6tm98vZifEl" role="2Oq$k0">
-                    <reference role="1Pybhc" target="msyo.~MacrosFactory" resolve="MacrosFactory" />
-                    <reference role="37wK5l" target="msyo.~MacrosFactory%dforModule(jetbrains%dmps%dproject%dAbstractModule)%cjetbrains%dmps%dutil%dMacroHelper" resolve="forModule" />
+                    <ref role="1Pybhc" to="msyo:~MacrosFactory" resolve="MacrosFactory" />
+                    <ref role="37wK5l" to="msyo:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
                     <node concept="1eOMI4" id="3NXJmdrruGg" role="37wK5m">
                       <node concept="10QFUN" id="3NXJmdrruGh" role="1eOMHV">
                         <node concept="37vLTw" id="3NXJmdrruGf" role="10QFUP">
-                          <reference role="3cqZAo" target="4394877045816805259" resolve="module" />
+                          <ref role="3cqZAo" node="3NXJmdrrsub" resolve="module" />
                         </node>
                         <node concept="3uibUv" id="3NXJmdrtmCg" role="10QFUM">
-                          <reference role="3uigEE" target="vsqj.~AbstractModule" resolve="AbstractModule" />
+                          <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="hy079Ld" role="2OqNvi">
-                    <reference role="37wK5l" target="msyo.~MacroHelper%dexpandPath(java%dlang%dString)%cjava%dlang%dString" resolve="expandPath" />
+                    <ref role="37wK5l" to="msyo:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
                     <node concept="2OqwBi" id="hx3pFyv" role="37wK5m">
                       <node concept="pncrf" id="gTqTEKX" role="2Oq$k0" />
                       <node concept="3TrcHB" id="gTqTFMr" role="2OqNvi">
-                        <reference role="3TsBF5" target="adck.9168054762589307856" resolve="iconPath" />
+                        <ref role="3TsBF5" to="adck:7WVujHHtGfg" resolve="iconPath" />
                       </node>
                     </node>
                   </node>
@@ -355,7 +355,7 @@
               <node concept="3clFbC" id="gTW5d0B" role="3clFbw">
                 <node concept="10Nm6u" id="gTW5dGQ" role="3uHU7w" />
                 <node concept="37vLTw" id="3GM_nagTs0m" role="3uHU7B">
-                  <reference role="3cqZAo" target="1161166135929" resolve="s" />
+                  <ref role="3cqZAo" node="gTqTi9T" resolve="s" />
                 </node>
               </node>
               <node concept="3clFbS" id="gTW5b0T" role="3clFbx">
@@ -367,17 +367,17 @@
             <node concept="3cpWs6" id="gTqTRg6" role="3cqZAp">
               <node concept="2OqwBi" id="hy079Ts" role="3cqZAk">
                 <node concept="liA8E" id="hy079Tt" role="2OqNvi">
-                  <reference role="37wK5l" target="59et.~IFile%dexists()%cboolean" resolve="exists" />
+                  <ref role="37wK5l" to="59et:~IFile.exists():boolean" resolve="exists" />
                 </node>
                 <node concept="2OqwBi" id="4RnppgkkcW5" role="2Oq$k0">
                   <node concept="2YIFZM" id="4RnppgkkcW3" role="2Oq$k0">
-                    <reference role="1Pybhc" target="59et.~FileSystem" resolve="FileSystem" />
-                    <reference role="37wK5l" target="59et.~FileSystem%dgetInstance()%cjetbrains%dmps%dvfs%dFileSystem" resolve="getInstance" />
+                    <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
+                    <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
                   </node>
                   <node concept="liA8E" id="4RnppgkkcW9" role="2OqNvi">
-                    <reference role="37wK5l" target="59et.~FileSystem%dgetFileByPath(java%dlang%dString)%cjetbrains%dmps%dvfs%dIFile" resolve="getFileByPath" />
+                    <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
                     <node concept="37vLTw" id="3NXJmdrqLPA" role="37wK5m">
-                      <reference role="3cqZAo" target="1161166135929" resolve="s" />
+                      <ref role="3cqZAo" node="gTqTi9T" resolve="s" />
                     </node>
                   </node>
                 </node>
@@ -393,7 +393,7 @@
                 <node concept="2OqwBi" id="hFaIkQU" role="3clFbG">
                   <node concept="pncrf" id="hFaIkwc" role="2Oq$k0" />
                   <node concept="3TrcHB" id="hFaIlcc" role="2OqNvi">
-                    <reference role="3TsBF5" target="adck.9168054762589307856" resolve="iconPath" />
+                    <ref role="3TsBF5" to="adck:7WVujHHtGfg" resolve="iconPath" />
                   </node>
                 </node>
               </node>
@@ -411,16 +411,16 @@
         <node concept="3F0A7n" id="gSMKOBT" role="3EZMnx">
           <property role="1O74Pk" value="true" />
           <property role="1$x2rV" value="&lt;no icon&gt;" />
-          <reference role="1NtTu8" target="adck.9168054762589307856" resolve="iconPath" />
-          <reference role="1k5W1q" target="tpen.1186415563770" resolve="StringLiteral" />
+          <ref role="1NtTu8" to="adck:7WVujHHtGfg" resolve="iconPath" />
+          <ref role="1k5W1q" to="tpen:hgVSdfU" resolve="StringLiteral" />
         </node>
         <node concept="3gTLQM" id="gSMKOBU" role="3EZMnx">
           <node concept="3Fmcul" id="h7Gq5ai" role="3FoqZy">
             <node concept="3clFbS" id="h7Gq5aj" role="2VODD2">
               <node concept="3cpWs6" id="h7GrovA" role="3cqZAp">
                 <node concept="2YIFZM" id="3NXJmdrn2z$" role="3cqZAk">
-                  <reference role="1Pybhc" target="7lvn.7973955287399271868" resolve="EditorUtil" />
-                  <reference role="37wK5l" target="7lvn.7973955287399271874" resolve="createSelectIconButton" />
+                  <ref role="1Pybhc" to="7lvn:6UDbxo8i0QW" resolve="EditorUtil" />
+                  <ref role="37wK5l" to="7lvn:6UDbxo8i0R2" resolve="createSelectIconButton" />
                   <node concept="pncrf" id="3NXJmdrn2QW" role="37wK5m" />
                   <node concept="1Q80Hx" id="3NXJmdrn3eC" role="37wK5m" />
                 </node>
@@ -437,7 +437,7 @@
         <property role="3F0ifm" value="path:" />
       </node>
       <node concept="3F0A7n" id="21G88dsvHp8" role="3EZMnx">
-        <reference role="1NtTu8" target="adck.2336278055263049479" resolve="path" />
+        <ref role="1NtTu8" to="adck:21G88dsvDs7" resolve="path" />
       </node>
       <node concept="2iRkQZ" id="i2IuJLQ" role="2iSdaV" />
     </node>

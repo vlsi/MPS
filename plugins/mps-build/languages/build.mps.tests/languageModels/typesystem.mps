@@ -112,14 +112,14 @@
               <node concept="2OqwBi" id="7xxJYNIbUE0" role="33vP2m">
                 <node concept="2OqwBi" id="7xxJYNIbUE1" role="2Oq$k0">
                   <node concept="1YBJjd" id="7xxJYNIbUE2" role="2Oq$k0">
-                    <reference role="1YBMHb" target="1880188600397226922" resolve="node" />
+                    <ref role="1YBMHb" node="1CnLp85qAeE" resolve="node" />
                   </node>
                   <node concept="3TrEf2" id="7xxJYNIbUE3" role="2OqNvi">
-                    <reference role="3Tt5mk" target="5tjl.7206546315286874030" />
+                    <ref role="3Tt5mk" to="5tjl:6g2MV4s4KuI" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="7xxJYNIbUE4" role="2OqNvi">
-                  <reference role="37wK5l" target="vbkb.4380385936562005550" resolve="getText" />
+                  <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
                   <node concept="10Nm6u" id="7xxJYNIbUE5" role="37wK5m" />
                 </node>
               </node>
@@ -131,10 +131,10 @@
             </node>
             <node concept="2OqwBi" id="7xxJYNIbVbY" role="3clFbw">
               <node concept="37vLTw" id="7xxJYNIbV0N" role="2Oq$k0">
-                <reference role="3cqZAo" target="8674425381621574271" resolve="approxPresentation" />
+                <ref role="3cqZAo" node="7xxJYNIbUDZ" resolve="approxPresentation" />
               </node>
               <node concept="liA8E" id="7xxJYNIbWCd" role="2OqNvi">
-                <reference role="37wK5l" target="e2lb.~String%dcontains(java%dlang%dCharSequence)%cboolean" resolve="contains" />
+                <ref role="37wK5l" to="e2lb:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
                 <node concept="Xl_RD" id="7xxJYNIbWD5" role="37wK5m">
                   <property role="Xl_RC" value="${" />
                 </node>
@@ -143,10 +143,10 @@
             <node concept="3eNFk2" id="7xxJYNIbWR$" role="3eNLev">
               <node concept="2OqwBi" id="7xxJYNIbX5D" role="3eO9$A">
                 <node concept="37vLTw" id="7xxJYNIbWUu" role="2Oq$k0">
-                  <reference role="3cqZAo" target="8674425381621574271" resolve="approxPresentation" />
+                  <ref role="3cqZAo" node="7xxJYNIbUDZ" resolve="approxPresentation" />
                 </node>
                 <node concept="liA8E" id="7xxJYNIbXvQ" role="2OqNvi">
-                  <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+                  <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
                   <node concept="Xl_RD" id="7xxJYNIbXBX" role="37wK5m">
                     <property role="Xl_RC" value="true" />
                   </node>
@@ -159,10 +159,10 @@
             <node concept="3eNFk2" id="7xxJYNIbXGR" role="3eNLev">
               <node concept="2OqwBi" id="7xxJYNIbXX4" role="3eO9$A">
                 <node concept="37vLTw" id="7xxJYNIbXLT" role="2Oq$k0">
-                  <reference role="3cqZAo" target="8674425381621574271" resolve="approxPresentation" />
+                  <ref role="3cqZAo" node="7xxJYNIbUDZ" resolve="approxPresentation" />
                 </node>
                 <node concept="liA8E" id="7xxJYNIbYnh" role="2OqNvi">
-                  <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+                  <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
                   <node concept="Xl_RD" id="7xxJYNIbYvl" role="37wK5m">
                     <property role="Xl_RC" value="false" />
                   </node>
@@ -179,7 +179,7 @@
                     <property role="Xl_RC" value="Inappropriate value for 'haltonfailure' property" />
                   </node>
                   <node concept="1YBJjd" id="7xxJYNIbZ6S" role="2OEOjV">
-                    <reference role="1YBMHb" target="1880188600397226922" resolve="node" />
+                    <ref role="1YBMHb" node="1CnLp85qAeE" resolve="node" />
                   </node>
                 </node>
               </node>
@@ -189,10 +189,10 @@
         <node concept="2OqwBi" id="1CnLp85qxsB" role="3clFbw">
           <node concept="2OqwBi" id="1CnLp85qwya" role="2Oq$k0">
             <node concept="1YBJjd" id="7xxJYNIbOz_" role="2Oq$k0">
-              <reference role="1YBMHb" target="1880188600397226922" resolve="node" />
+              <ref role="1YBMHb" node="1CnLp85qAeE" resolve="node" />
             </node>
             <node concept="3TrEf2" id="1CnLp85qwXp" role="2OqNvi">
-              <reference role="3Tt5mk" target="5tjl.7206546315286874030" />
+              <ref role="3Tt5mk" to="5tjl:6g2MV4s4KuI" />
             </node>
           </node>
           <node concept="3x8VRR" id="7xxJYNIbOIH" role="2OqNvi" />
@@ -201,7 +201,7 @@
     </node>
     <node concept="1YaCAy" id="1CnLp85qAeE" role="1YuTPh">
       <property role="TrG5h" value="node" />
-      <reference role="1YaFvo" target="5tjl.4560297596904469357" resolve="BuildMpsLayout_TestModules" />
+      <ref role="1YaFvo" to="5tjl:3X9rC2XzJdH" resolve="BuildMpsLayout_TestModules" />
     </node>
   </node>
 </model>

@@ -63,17 +63,17 @@
     </language>
   </registry>
   <node concept="13h7C7" id="6SYFRDkTQVT">
-    <reference role="13h7C2" target="owg1.7943979732673457898" resolve="AbstractStateMachineElement" />
+    <ref role="13h7C2" to="owg1:6SYFRDkTQVE" resolve="AbstractStateMachineElement" />
     <node concept="13i0hz" id="6SYFRDkTQVW" role="13h7CS">
       <property role="TrG5h" value="getStateMachine" />
       <node concept="3Tm1VV" id="6SYFRDkTQVX" role="1B3o_S" />
       <node concept="3Tqbb2" id="6SYFRDkTQW0" role="3clF45">
-        <reference role="ehGHo" target="owg1.763922957008726945" resolve="StateMachine" />
+        <ref role="ehGHo" to="owg1:EpZY78hmIx" resolve="StateMachine" />
       </node>
       <node concept="3clFbS" id="6SYFRDkTQVZ" role="3clF47">
         <node concept="3clFbF" id="6SYFRDkTQW1" role="3cqZAp">
           <node concept="1PxgMI" id="6SYFRDkTQW8" role="3clFbG">
-            <reference role="1PxNhF" target="owg1.763922957008726945" resolve="StateMachine" />
+            <ref role="1PxNhF" to="owg1:EpZY78hmIx" resolve="StateMachine" />
             <node concept="2OqwBi" id="6SYFRDkTQW3" role="1PxMeX">
               <node concept="13iPFW" id="6SYFRDkTQW2" role="2Oq$k0" />
               <node concept="1mfA1w" id="6SYFRDkTQW7" role="2OqNvi" />

@@ -83,7 +83,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="setBold" />
       <node concept="3uibUv" id="4yQ1FQy84xc" role="3clF45">
-        <reference role="3uigEE" target="6822392181927252916" resolve="StyledTextPrinter" />
+        <ref role="3uigEE" node="5UI0oFUbheO" resolve="StyledTextPrinter" />
       </node>
       <node concept="37vLTG" id="5UI0oFUbhlZ" role="3clF46">
         <property role="TrG5h" value="bold" />
@@ -96,7 +96,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="append" />
       <node concept="3uibUv" id="4yQ1FQy84xl" role="3clF45">
-        <reference role="3uigEE" target="6822392181927252916" resolve="StyledTextPrinter" />
+        <ref role="3uigEE" node="5UI0oFUbheO" resolve="StyledTextPrinter" />
       </node>
       <node concept="37vLTG" id="5UI0oFUbhBi" role="3clF46">
         <property role="TrG5h" value="text" />
@@ -116,8 +116,8 @@
       <node concept="3clFbS" id="5UI0oFUfCCV" role="3clF47">
         <node concept="3clFbF" id="637Y3IJYF0s" role="3cqZAp">
           <node concept="3f7Wdw" id="637Y3IJYF0q" role="3clFbG">
-            <reference role="3f7vo2" target="tpc2.1140813780565" resolve="RightTransformAnchorTag" />
-            <reference role="3f7u_j" target="tpc2.1140813835051" />
+            <ref role="3f7vo2" to="tpc2:gAtNdpl" resolve="RightTransformAnchorTag" />
+            <ref role="3f7u_j" to="tpc2:gAtNqGF" />
           </node>
         </node>
       </node>
@@ -139,14 +139,14 @@
       <node concept="37vLTG" id="1ObOLrjiGr9" role="3clF46">
         <property role="TrG5h" value="editorContext" />
         <node concept="3uibUv" id="1ObOLrjiGra" role="1tU5fm">
-          <reference role="3uigEE" target="srng.~EditorContext" resolve="EditorContext" />
+          <ref role="3uigEE" to="srng:~EditorContext" resolve="EditorContext" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1ObOLrjiFDI" role="1B3o_S" />
       <node concept="3clFbS" id="1ObOLrjiFDJ" role="3clF47" />
       <node concept="A3Dl8" id="1ObOLrjiGkh" role="3clF45">
         <node concept="16syzq" id="1ObOLrjiGkl" role="A3Ik2">
-          <reference role="16sUi3" target="4258824867757381205" resolve="T" />
+          <ref role="16sUi3" node="3GqoEsFhPpl" resolve="T" />
         </node>
       </node>
     </node>
@@ -160,19 +160,19 @@
       <node concept="37vLTG" id="1ObOLrjiNuX" role="3clF46">
         <property role="TrG5h" value="editorContext" />
         <node concept="3uibUv" id="1ObOLrjiNuY" role="1tU5fm">
-          <reference role="3uigEE" target="srng.~EditorContext" resolve="EditorContext" />
+          <ref role="3uigEE" to="srng:~EditorContext" resolve="EditorContext" />
         </node>
       </node>
       <node concept="37vLTG" id="1ObOLrjiNuZ" role="3clF46">
         <property role="TrG5h" value="method" />
         <node concept="16syzq" id="1ObOLrjiNv0" role="1tU5fm">
-          <reference role="16sUi3" target="4258824867757381205" resolve="T" />
+          <ref role="16sUi3" node="3GqoEsFhPpl" resolve="T" />
         </node>
       </node>
       <node concept="37vLTG" id="1ObOLrjiNv1" role="3clF46">
         <property role="TrG5h" value="printer" />
         <node concept="3uibUv" id="1ObOLrjiNv2" role="1tU5fm">
-          <reference role="3uigEE" target="6822392181927252916" resolve="StyledTextPrinter" />
+          <ref role="3uigEE" node="5UI0oFUbheO" resolve="StyledTextPrinter" />
         </node>
       </node>
       <node concept="3cqZAl" id="1ObOLrjiNpr" role="3clF45" />
@@ -189,13 +189,13 @@
       <node concept="37vLTG" id="1ObOLrjiNAm" role="3clF46">
         <property role="TrG5h" value="editorContext" />
         <node concept="3uibUv" id="1ObOLrjiNAn" role="1tU5fm">
-          <reference role="3uigEE" target="srng.~EditorContext" resolve="EditorContext" />
+          <ref role="3uigEE" to="srng:~EditorContext" resolve="EditorContext" />
         </node>
       </node>
       <node concept="37vLTG" id="1ObOLrjiNAo" role="3clF46">
         <property role="TrG5h" value="method" />
         <node concept="16syzq" id="1ObOLrjiNAp" role="1tU5fm">
-          <reference role="16sUi3" target="4258824867757381205" resolve="T" />
+          <ref role="16sUi3" node="3GqoEsFhPpl" resolve="T" />
         </node>
       </node>
       <node concept="10P_77" id="1ObOLrjiN$E" role="3clF45" />

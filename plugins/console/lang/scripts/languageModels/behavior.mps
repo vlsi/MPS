@@ -83,7 +83,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="1whNchEKZrx">
-    <reference role="13h7C2" target="z2sp.1734392475491235545" resolve="AbstractConsoleScript" />
+    <ref role="13h7C2" to="z2sp:1whNchEKZrp" resolve="AbstractConsoleScript" />
     <node concept="13i0hz" id="1whNchEKZry" role="13h7CS">
       <property role="13i0iv" value="true" />
       <property role="13i0it" value="true" />
@@ -91,7 +91,7 @@
       <node concept="3Tm1VV" id="1whNchEKZrz" role="1B3o_S" />
       <node concept="A3Dl8" id="1whNchEKZr$" role="3clF45">
         <node concept="3Tqbb2" id="1whNchEKZr_" role="A3Ik2">
-          <reference role="ehGHo" target="eynw.6854397602732214175" resolve="Command" />
+          <ref role="ehGHo" to="eynw:5WvH$QO98uv" resolve="Command" />
         </node>
       </node>
       <node concept="3clFbS" id="1whNchEKZrA" role="3clF47" />
@@ -101,7 +101,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="1whNchEKZrS">
-    <reference role="13h7C2" target="z2sp.1734392475491235550" resolve="ConsoleScript" />
+    <ref role="13h7C2" to="z2sp:1whNchEKZru" resolve="ConsoleScript" />
     <node concept="13hLZK" id="1whNchEKZrT" role="13h7CW">
       <node concept="3clFbS" id="1whNchEKZrU" role="2VODD2" />
     </node>
@@ -109,33 +109,33 @@
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getCommands" />
-      <reference role="13i0hy" target="1734392475491235554" resolve="getCommands" />
+      <ref role="13i0hy" node="1whNchEKZry" resolve="getCommands" />
       <node concept="3Tm1VV" id="1whNchEKZrW" role="1B3o_S" />
       <node concept="3clFbS" id="1whNchEKZrX" role="3clF47">
         <node concept="3clFbF" id="1whNchEKZrY" role="3cqZAp">
           <node concept="2OqwBi" id="1whNchEKZrZ" role="3clFbG">
             <node concept="13iPFW" id="1whNchEKZs0" role="2Oq$k0" />
             <node concept="3Tsc0h" id="1whNchEKZs1" role="2OqNvi">
-              <reference role="3TtcxE" target="z2sp.1734392475491235551" />
+              <ref role="3TtcxE" to="z2sp:1whNchEKZrv" />
             </node>
           </node>
         </node>
       </node>
       <node concept="A3Dl8" id="1whNchEKZs2" role="3clF45">
         <node concept="3Tqbb2" id="1whNchEKZs3" role="A3Ik2">
-          <reference role="ehGHo" target="eynw.6854397602732214175" resolve="Command" />
+          <ref role="ehGHo" to="eynw:5WvH$QO98uv" resolve="Command" />
         </node>
       </node>
     </node>
   </node>
   <node concept="13h7C7" id="DySRn8ZRY$">
-    <reference role="13h7C2" target="z2sp.1734392475491228778" resolve="Execute" />
+    <ref role="13h7C2" to="z2sp:1whNchEKXLE" resolve="Execute" />
     <node concept="13hLZK" id="DySRn8ZRY_" role="13h7CW">
       <node concept="3clFbS" id="DySRn8ZRYA" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="2jRIeHQ1WiA">
-    <reference role="13h7C2" target="z2sp.2377091791517030718" resolve="RefactorOperation" />
+    <ref role="13h7C2" to="z2sp:23X86fnRD$Y" resolve="RefactorOperation" />
     <node concept="13hLZK" id="2jRIeHQ1Wl1" role="13h7CW">
       <node concept="3clFbS" id="2jRIeHQ1Wl2" role="2VODD2" />
     </node>
@@ -144,7 +144,7 @@
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getShortHelp" />
       <property role="2Ki8OM" value="true" />
-      <reference role="13i0hy" target="zyb2.473081947982699339" resolve="getShortHelp" />
+      <ref role="13i0hy" to="zyb2:qgIopNa9Hb" resolve="getShortHelp" />
       <node concept="3Tm1VV" id="2jRIeHQ1XWr" role="1B3o_S" />
       <node concept="3clFbS" id="2jRIeHQ1XWu" role="3clF47">
         <node concept="3clFbF" id="2jRIeHQ27BD" role="3cqZAp">
@@ -160,7 +160,7 @@
       <property role="13i0it" value="false" />
       <property role="2Ki8OM" value="true" />
       <property role="TrG5h" value="getHelpPage" />
-      <reference role="13i0hy" target="zyb2.7006261637493125297" resolve="getHelpPage" />
+      <ref role="13i0hy" to="zyb2:64VftqEen2L" resolve="getHelpPage" />
       <node concept="3Tm1VV" id="2jRIeHQ27BS" role="1B3o_S" />
       <node concept="3clFbS" id="2jRIeHQ27BX" role="3clF47">
         <node concept="3clFbF" id="2jRIeHQ27Iw" role="3cqZAp">

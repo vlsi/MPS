@@ -120,13 +120,13 @@
       <property role="TrG5h" value="currentNode" />
       <node concept="3Tm6S6" id="4KDfkUwM8Vc" role="1B3o_S" />
       <node concept="3Tqbb2" id="4KDfkUwM8Vd" role="1tU5fm">
-        <reference role="ehGHo" target="tpck.1133920641626" resolve="BaseConcept" />
+        <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
       </node>
       <node concept="1oajcY" id="4KDfkUwM8Ve" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="4KDfkUwM8Vf" role="1NuT2Z">
       <property role="TrG5h" value="component" />
-      <reference role="1DUlNI" target="nx1.~PlatformDataKeys%dCONTEXT_COMPONENT" resolve="CONTEXT_COMPONENT" />
+      <ref role="1DUlNI" to="nx1:~PlatformDataKeys.CONTEXT_COMPONENT" resolve="CONTEXT_COMPONENT" />
       <node concept="1oajcY" id="4KDfkUwM8Vg" role="1oa70y" />
     </node>
     <node concept="tnohg" id="4KDfkUwM8Vh" role="tncku">
@@ -139,27 +139,27 @@
               <node concept="2OqwBi" id="4KDfkUwM8Vn" role="2Oq$k0">
                 <node concept="2WthIp" id="4KDfkUwM8Vo" role="2Oq$k0" />
                 <node concept="3gHZIF" id="4KDfkUwM8Vp" role="2OqNvi">
-                  <reference role="2WH_rO" target="5487985028841901771" resolve="currentNode" />
+                  <ref role="2WH_rO" node="4KDfkUwM8Vb" resolve="currentNode" />
                 </node>
               </node>
               <node concept="2qgKlT" id="4KDfkUwM8Vq" role="2OqNvi">
-                <reference role="37wK5l" target="tpcu.3981318653438234726" resolve="getMetaLevel" />
+                <ref role="37wK5l" to="tpcu:3t0v3yFOD1A" resolve="getMetaLevel" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="4KDfkUwM8Vr" role="3cqZAp">
           <node concept="2YIFZM" id="4KDfkUwM8Vs" role="3clFbG">
-            <reference role="37wK5l" target="dbrf.~JOptionPane%dshowMessageDialog(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolve="showMessageDialog" />
-            <reference role="1Pybhc" target="dbrf.~JOptionPane" resolve="JOptionPane" />
+            <ref role="37wK5l" to="dbrf:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolve="showMessageDialog" />
+            <ref role="1Pybhc" to="dbrf:~JOptionPane" resolve="JOptionPane" />
             <node concept="2OqwBi" id="4KDfkUwM8Vt" role="37wK5m">
               <node concept="2WthIp" id="4KDfkUwM8Vu" role="2Oq$k0" />
               <node concept="1DTwFV" id="4KDfkUwM8Vv" role="2OqNvi">
-                <reference role="2WH_rO" target="5487985028841901775" resolve="component" />
+                <ref role="2WH_rO" node="4KDfkUwM8Vf" resolve="component" />
               </node>
             </node>
             <node concept="37vLTw" id="3GM_nagTsms" role="37wK5m">
-              <reference role="3cqZAo" target="5487985028841901780" resolve="metaLevel" />
+              <ref role="3cqZAo" node="4KDfkUwM8Vk" resolve="metaLevel" />
             </node>
           </node>
         </node>
@@ -169,11 +169,11 @@
   <node concept="tC5Ba" id="4KDfkUwM8Vx">
     <property role="TrG5h" value="MetaLevelActions" />
     <node concept="tT9cl" id="4KDfkUwM8Vy" role="2f5YQi">
-      <reference role="tU$_T" target="tprs.1951613054411714136" resolve="DebugActions" />
+      <ref role="tU$_T" to="tprs:1GlxrIveqTo" resolve="DebugActions" />
     </node>
     <node concept="ftmFs" id="4KDfkUwM8Vz" role="ftER_">
       <node concept="tCFHf" id="4KDfkUwM8V$" role="ftvYc">
-        <reference role="tCJdB" target="5487985028841901770" resolve="ShowMetaLevel" />
+        <ref role="tCJdB" node="4KDfkUwM8Va" resolve="ShowMetaLevel" />
       </node>
     </node>
   </node>

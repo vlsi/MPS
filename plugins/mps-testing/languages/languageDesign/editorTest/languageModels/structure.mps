@@ -58,22 +58,22 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="TestBlockList" />
     <property role="34LRSv" value="{" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3dxNxGnPyR2" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="statement" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="20lvS9" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
     <node concept="PrWs8" id="2JOPFKCE6ys" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="3dxNxGnPYEC">
     <property role="TrG5h" value="BracesBlock" />
-    <reference role="1TJDcQ" target="3702466984434609595" resolve="TestBlockList" />
+    <ref role="1TJDcQ" node="3dxNxGnPyQV" resolve="TestBlockList" />
     <node concept="PrWs8" id="3dxNxGnQiTl" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="PlHQZ" id="3dxNxGnPYED">
@@ -84,9 +84,9 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="StubBlock" />
     <property role="34LRSv" value="stub" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="3dxNxGnQk8d" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="5WMaMLZb2EU">
@@ -94,9 +94,9 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="VerticalLayoutBlockList" />
     <property role="34LRSv" value="vericalLayout" />
-    <reference role="1TJDcQ" target="3702466984434609595" resolve="TestBlockList" />
+    <ref role="1TJDcQ" node="3dxNxGnPyQV" resolve="TestBlockList" />
     <node concept="PrWs8" id="61TNGoJyAhP" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="7nHtuW6xxRO">
@@ -104,9 +104,9 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="BracesStubBlock" />
     <property role="34LRSv" value="braces stub" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="7nHtuW6xxRP" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="36RWm$n$F7O">
@@ -114,24 +114,24 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="InspectorBlock" />
     <property role="34LRSv" value="inspector" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="36RWm$n$F7Y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="block" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="20lvS9" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
     <node concept="PrWs8" id="4i7aBjbd1Dr" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="6D854YClJhw">
     <property role="TrG5h" value="ReferenceAnnotataion" />
-    <reference role="1TJDcQ" target="tpck.3364660638048049745" resolve="LinkAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDh" resolve="LinkAttribute" />
     <node concept="M6xJ_" id="6_gUeuqOeTP" role="lGtFl">
       <property role="Hh88m" value="referenceAnnotation" />
       <node concept="trNpa" id="166$sc$ZIAT" role="EQaZv">
-        <reference role="trN6q" target="tpck.1133920641626" resolve="BaseConcept" />
+        <ref role="trN6q" to="tpck:gw2VY9q" resolve="BaseConcept" />
       </node>
     </node>
   </node>
@@ -140,51 +140,51 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="SideTranformWrapper" />
     <property role="34LRSv" value="side-transform-wrapper" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4rF9pGiVP5Q" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="child" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="20lvS9" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
     <node concept="1TJgyi" id="4rF9pGiVP5T" role="1TKVEl">
       <property role="TrG5h" value="rightOpen" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="PrWs8" id="4rF9pGiXC4a" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="4rF9pGiXC47">
     <property role="TrG5h" value="IntegerLiteral" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4rF9pGiXC48" role="1TKVEl">
       <property role="TrG5h" value="value" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="PrWs8" id="4rF9pGiXC49" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="4rF9pGiXQ7q">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="BinaryExpression" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4rF9pGiXQ7s" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="left" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="20lvS9" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
     <node concept="1TJgyj" id="4rF9pGiXQ7t" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="right" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="20lvS9" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
     <node concept="PrWs8" id="4rF9pGiXQ7r" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="4rF9pGiYw7k">
@@ -192,45 +192,45 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="PlusExpression" />
     <property role="34LRSv" value="+" />
-    <reference role="1TJDcQ" target="5110219550150320602" resolve="BinaryExpression" />
+    <ref role="1TJDcQ" node="4rF9pGiXQ7q" resolve="BinaryExpression" />
   </node>
   <node concept="1TIwiD" id="2h4QH4RYdtS">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AttractsFocusBlock" />
     <property role="34LRSv" value="attracts focus" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2h4QH4RYdtT" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="child" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="20lvS9" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
     <node concept="PrWs8" id="6sm8I7pqlL5" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="2h4QH4RYgVh">
     <property role="TrG5h" value="VariableDeclarationBlock" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="2h4QH4RYgVi" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="6sm8I7pqLAF" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="2h4QH4RYDHs">
     <property role="TrG5h" value="VariableDeclarationReference" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2h4QH4RYDHt" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="var" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="2613454275903819473" resolve="VariableDeclarationBlock" />
+      <ref role="20lvS9" node="2h4QH4RYgVh" resolve="VariableDeclarationBlock" />
     </node>
     <node concept="PrWs8" id="6sm8I7pqTHw" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="4SHGGBQPQ0A">
@@ -238,13 +238,13 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="NonEmptyProperty" />
     <property role="34LRSv" value="non-empty-property" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4SHGGBQPQ0B" role="1TKVEl">
       <property role="TrG5h" value="value" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="4SHGGBQQ1S6" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="4jBMNo5V404">
@@ -252,88 +252,88 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="NotEditableVaraileReference" />
     <property role="34LRSv" value="{&lt;{variableDeclaration}&gt;} not editable" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4jBMNo5V405" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="variableDeclaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="2613454275903819473" resolve="VariableDeclarationBlock" />
+      <ref role="20lvS9" node="2h4QH4RYgVh" resolve="VariableDeclarationBlock" />
     </node>
     <node concept="PrWs8" id="4jBMNo5VRNU" role="PzmwI">
-      <reference role="PrY4T" target="3702466984434723497" resolve="IBaseTestBlock" />
+      <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="25b5I77c4bf">
     <property role="TrG5h" value="ClassReference" />
     <property role="34LRSv" value="classref" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="25b5I77c4eE" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="class" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068390468198" resolve="ClassConcept" />
+      <ref role="20lvS9" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="2Lps20zY1wu">
     <property role="TrG5h" value="SimplePropertyContainer" />
     <property role="3GE5qa" value="attributes" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="2Lps20zY1zt" role="1TKVEl">
       <property role="TrG5h" value="property" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="2Lps20zYhmH">
     <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="SimplePropertyAttribute" />
-    <reference role="1TJDcQ" target="tpck.3364660638048049750" resolve="PropertyAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDm" resolve="PropertyAttribute" />
     <node concept="M6xJ_" id="2Lps20zYhqE" role="lGtFl">
       <property role="Hh88m" value="simplePropertyAttribute" />
       <node concept="trNpa" id="2Lps20zYhJc" role="EQaZv">
-        <reference role="trN6q" target="3195708693940803614" resolve="SimplePropertyContainer" />
+        <ref role="trN6q" node="2Lps20zY1wu" resolve="SimplePropertyContainer" />
       </node>
     </node>
   </node>
   <node concept="1TIwiD" id="2ZnZLV$fJmi">
     <property role="3GE5qa" value="attributes" />
     <property role="TrG5h" value="Composition" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2ZnZLV$fJqv" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="children" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="3195708693940803614" resolve="SimplePropertyContainer" />
+      <ref role="20lvS9" node="2Lps20zY1wu" resolve="SimplePropertyContainer" />
     </node>
   </node>
   <node concept="1TIwiD" id="6LcR7Gqxc8y">
     <property role="TrG5h" value="DelTestChildContainer" />
     <property role="3GE5qa" value="delete" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6LcR7GqxcjN" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="child" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="7803854675610223687" resolve="DelTestAbstractChild" />
+      <ref role="20lvS9" node="6LcR7Gqxch7" resolve="DelTestAbstractChild" />
     </node>
   </node>
   <node concept="1TIwiD" id="6LcR7Gqxch7">
     <property role="3GE5qa" value="delete" />
     <property role="TrG5h" value="DelTestAbstractChild" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="6LcR7Gqxci0">
     <property role="3GE5qa" value="delete" />
     <property role="TrG5h" value="DelTestChild1" />
-    <reference role="1TJDcQ" target="7803854675610223687" resolve="DelTestAbstractChild" />
+    <ref role="1TJDcQ" node="6LcR7Gqxch7" resolve="DelTestAbstractChild" />
   </node>
   <node concept="1TIwiD" id="6LcR7Gqy3BU">
     <property role="3GE5qa" value="delete" />
     <property role="TrG5h" value="DelTestRoot" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6LcR7Gqy3CQ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="container" />
-      <reference role="20lvS9" target="7803854675610223138" resolve="DelTestChildContainer" />
+      <ref role="20lvS9" node="6LcR7Gqxc8y" resolve="DelTestChildContainer" />
     </node>
   </node>
 </model>

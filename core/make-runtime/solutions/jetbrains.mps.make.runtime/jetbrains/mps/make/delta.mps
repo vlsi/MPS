@@ -51,14 +51,14 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="merge" />
       <node concept="3uibUv" id="16rzRJauwMV" role="3clF45">
-        <reference role="3uigEE" target="1268765481875672245" resolve="IDelta" />
+        <ref role="3uigEE" node="16rzRJauwMP" resolve="IDelta" />
       </node>
       <node concept="3Tm1VV" id="16rzRJauwMW" role="1B3o_S" />
       <node concept="3clFbS" id="16rzRJauwMX" role="3clF47" />
       <node concept="37vLTG" id="16rzRJauwMY" role="3clF46">
         <property role="TrG5h" value="toMerge" />
         <node concept="3uibUv" id="16rzRJauwMZ" role="1tU5fm">
-          <reference role="3uigEE" target="1268765481875672245" resolve="IDelta" />
+          <ref role="3uigEE" node="16rzRJauwMP" resolve="IDelta" />
         </node>
       </node>
     </node>
@@ -71,7 +71,7 @@
       <node concept="37vLTG" id="4V1O046Kmj4" role="3clF46">
         <property role="TrG5h" value="other" />
         <node concept="3uibUv" id="4V1O046Kmj5" role="1tU5fm">
-          <reference role="3uigEE" target="1268765481875672245" resolve="IDelta" />
+          <ref role="3uigEE" node="16rzRJauwMP" resolve="IDelta" />
         </node>
       </node>
     </node>
@@ -88,7 +88,7 @@
       <node concept="37vLTG" id="6uL$bP9UH46" role="3clF46">
         <property role="TrG5h" value="visitor" />
         <node concept="3uibUv" id="6uL$bP9UH48" role="1tU5fm">
-          <reference role="3uigEE" target="6067326609049460296" resolve="IDeltaVisitor" />
+          <ref role="3uigEE" node="5gNumu$ELT8" resolve="IDeltaVisitor" />
         </node>
       </node>
       <node concept="10P_77" id="6uL$bP9UH45" role="3clF45" />
@@ -100,7 +100,7 @@
     <property role="TrG5h" value="IInternalDelta" />
     <node concept="3Tm1VV" id="4HnUtj9IJNn" role="1B3o_S" />
     <node concept="3uibUv" id="4HnUtj9IJNo" role="3HQHJm">
-      <reference role="3uigEE" target="1268765481875672245" resolve="IDelta" />
+      <ref role="3uigEE" node="16rzRJauwMP" resolve="IDelta" />
     </node>
   </node>
   <node concept="3HP615" id="5gNumu$ELT8">

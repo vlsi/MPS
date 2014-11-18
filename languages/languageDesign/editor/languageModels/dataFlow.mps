@@ -70,7 +70,7 @@
   </registry>
   <node concept="3_zdsH" id="3V$8ZKEOiGM">
     <property role="3GE5qa" value="MethodParameters" />
-    <reference role="3_znuS" target="tpc2.4531786690998636238" resolve="AbstractStyledTextOperation" />
+    <ref role="3_znuS" to="tpc2:3V$8ZKEOgVe" resolve="AbstractStyledTextOperation" />
     <node concept="3__wT9" id="3V$8ZKEOiGN" role="3_A6iZ">
       <node concept="3clFbS" id="3V$8ZKEOiGO" role="2VODD2">
         <node concept="3_DlnG" id="3V$8ZKEOiGP" role="3cqZAp" />
@@ -81,13 +81,13 @@
           <node concept="2OqwBi" id="3V$8ZKEOiGY" role="2GsD0m">
             <node concept="3__QtB" id="3V$8ZKEOiGW" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V$8ZKEOiH3" role="2OqNvi">
-              <reference role="3TtcxE" target="tpc2.4531786690998636240" />
+              <ref role="3TtcxE" to="tpc2:3V$8ZKEOgVg" />
             </node>
           </node>
           <node concept="3clFbS" id="3V$8ZKEOiGU" role="2LFqv$">
             <node concept="3AgYrR" id="3V$8ZKEOiH5" role="3cqZAp">
               <node concept="2GrUjf" id="3V$8ZKEOiH7" role="3Ah4Yx">
-                <reference role="2Gs0qQ" target="4531786690998643512" resolve="argument" />
+                <ref role="2Gs0qQ" node="3V$8ZKEOiGS" resolve="argument" />
               </node>
             </node>
           </node>

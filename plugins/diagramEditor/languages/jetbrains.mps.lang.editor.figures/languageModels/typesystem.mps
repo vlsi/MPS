@@ -172,10 +172,10 @@
             </node>
             <node concept="2OqwBi" id="7P3RaqS9DKZ" role="2OEOjV">
               <node concept="1YBJjd" id="7P3RaqS9DGX" role="2Oq$k0">
-                <reference role="1YBMHb" target="9026300686792780082" resolve="figureParameterAttribute" />
+                <ref role="1YBMHb" node="7P3RaqS9u$M" resolve="figureParameterAttribute" />
               </node>
               <node concept="2qgKlT" id="7P3RaqS9EV7" role="2OqNvi">
-                <reference role="37wK5l" target="vtq6.5422656561931910498" resolve="getParameterMember" />
+                <ref role="37wK5l" to="vtq6:4H19mAwT7Py" resolve="getParameterMember" />
               </node>
             </node>
           </node>
@@ -185,19 +185,19 @@
             <node concept="2OqwBi" id="7P3RaqS9DsR" role="2Oq$k0">
               <node concept="2OqwBi" id="7P3RaqS9DsS" role="2Oq$k0">
                 <node concept="1YBJjd" id="7P3RaqS9DsT" role="2Oq$k0">
-                  <reference role="1YBMHb" target="9026300686792780082" resolve="figureParameterAttribute" />
+                  <ref role="1YBMHb" node="7P3RaqS9u$M" resolve="figureParameterAttribute" />
                 </node>
                 <node concept="2qgKlT" id="7P3RaqS9DsU" role="2OqNvi">
-                  <reference role="37wK5l" target="vtq6.5422656561931910498" resolve="getParameterMember" />
+                  <ref role="37wK5l" to="vtq6:4H19mAwT7Py" resolve="getParameterMember" />
                 </node>
               </node>
               <node concept="3TrEf2" id="7P3RaqS9DsV" role="2OqNvi">
-                <reference role="3Tt5mk" target="tpee.1178549979242" />
+                <ref role="3Tt5mk" to="tpee:h9B3oxE" />
               </node>
             </node>
             <node concept="1mIQ4w" id="7P3RaqS9DsW" role="2OqNvi">
               <node concept="chp4Y" id="7P3RaqS9DsX" role="cj9EA">
-                <reference role="cht4Q" target="tpee.1146644602865" resolve="PublicVisibility" />
+                <ref role="cht4Q" to="tpee:gFTm1ZL" resolve="PublicVisibility" />
               </node>
             </node>
           </node>
@@ -206,7 +206,7 @@
     </node>
     <node concept="1YaCAy" id="7P3RaqS9u$M" role="1YuTPh">
       <property role="TrG5h" value="figureParameterAttribute" />
-      <reference role="1YaFvo" target="ny2.5422656561929884641" resolve="FigureParameterAttribute" />
+      <ref role="1YaFvo" to="ny2:4H19mAwLpfx" resolve="FigureParameterAttribute" />
     </node>
   </node>
   <node concept="18kY7G" id="5GAS49RwWdM">
@@ -219,24 +219,24 @@
               <property role="Xl_RC" value="Unsupported attributed field type, jetbrains.jetpad.model.property.Property expected." />
             </node>
             <node concept="1YBJjd" id="5GAS49Rx6r_" role="2OEOjV">
-              <reference role="1YBMHb" target="6568183682644034421" resolve="fieldAttribute" />
+              <ref role="1YBMHb" node="5GAS49RwWdP" resolve="fieldAttribute" />
             </node>
           </node>
         </node>
         <node concept="3fqX7Q" id="iZqVFYrPij" role="3clFbw">
           <node concept="2YIFZM" id="iZqVFYrPjb" role="3fr31v">
-            <reference role="37wK5l" target="342110547580229025" resolve="isSupportedParameterType" />
-            <reference role="1Pybhc" target="9176911587997145402" resolve="Utils" />
+            <ref role="37wK5l" node="iZqVFYrLmx" resolve="isSupportedParameterType" />
+            <ref role="1Pybhc" node="7XqW7v9J5$U" resolve="Utils" />
             <node concept="2OqwBi" id="iZqVFYtSEn" role="37wK5m">
               <node concept="1YBJjd" id="5GAS49Rx2PE" role="2Oq$k0">
-                <reference role="1YBMHb" target="6568183682644034421" resolve="fieldAttribute" />
+                <ref role="1YBMHb" node="5GAS49RwWdP" resolve="fieldAttribute" />
               </node>
               <node concept="2qgKlT" id="iZqVFYvZpC" role="2OqNvi">
-                <reference role="37wK5l" target="vtq6.342110547581236128" resolve="getParameterType" />
+                <ref role="37wK5l" to="vtq6:iZqVFYvBew" resolve="getParameterType" />
               </node>
             </node>
             <node concept="3B5_sB" id="5GAS49Rx7K0" role="37wK5m">
-              <reference role="3B5MYn" target="ctj7.~Property" resolve="Property" />
+              <ref role="3B5MYn" to="ctj7:~Property" resolve="Property" />
             </node>
           </node>
         </node>
@@ -244,7 +244,7 @@
     </node>
     <node concept="1YaCAy" id="5GAS49RwWdP" role="1YuTPh">
       <property role="TrG5h" value="fieldAttribute" />
-      <reference role="1YaFvo" target="ny2.2084788800270473590" resolve="FigureParameterAttributeField" />
+      <ref role="1YaFvo" to="ny2:1NIE5SZPp_Q" resolve="FigureParameterAttributeField" />
     </node>
   </node>
   <node concept="18kY7G" id="7XqW7v9ECyf">
@@ -257,24 +257,24 @@
               <property role="Xl_RC" value="Unsupported attributed method return type, jetbrains.jetpad.model.property.Property expected." />
             </node>
             <node concept="1YBJjd" id="7XqW7v9F12C" role="2OEOjV">
-              <reference role="1YBMHb" target="9176911587995977874" resolve="methodAttribute" />
+              <ref role="1YBMHb" node="7XqW7v9ECyi" resolve="methodAttribute" />
             </node>
           </node>
         </node>
         <node concept="3fqX7Q" id="iZqVFYrRVM" role="3clFbw">
           <node concept="2YIFZM" id="iZqVFYrRWE" role="3fr31v">
-            <reference role="37wK5l" target="342110547580229025" resolve="isSupportedParameterType" />
-            <reference role="1Pybhc" target="9176911587997145402" resolve="Utils" />
+            <ref role="37wK5l" node="iZqVFYrLmx" resolve="isSupportedParameterType" />
+            <ref role="1Pybhc" node="7XqW7v9J5$U" resolve="Utils" />
             <node concept="2OqwBi" id="iZqVFYtU$g" role="37wK5m">
               <node concept="1YBJjd" id="iZqVFYtUx4" role="2Oq$k0">
-                <reference role="1YBMHb" target="9176911587995977874" resolve="methodAttribute" />
+                <ref role="1YBMHb" node="7XqW7v9ECyi" resolve="methodAttribute" />
               </node>
               <node concept="2qgKlT" id="iZqVFYvZLo" role="2OqNvi">
-                <reference role="37wK5l" target="vtq6.342110547581236128" resolve="getParameterType" />
+                <ref role="37wK5l" to="vtq6:iZqVFYvBew" resolve="getParameterType" />
               </node>
             </node>
             <node concept="3B5_sB" id="iZqVFYrSso" role="37wK5m">
-              <reference role="3B5MYn" target="ctj7.~Property" resolve="Property" />
+              <ref role="3B5MYn" to="ctj7:~Property" resolve="Property" />
             </node>
           </node>
         </node>
@@ -282,7 +282,7 @@
     </node>
     <node concept="1YaCAy" id="7XqW7v9ECyi" role="1YuTPh">
       <property role="TrG5h" value="methodAttribute" />
-      <reference role="1YaFvo" target="ny2.2084788800270473556" resolve="FigureParameterAttributeMethod" />
+      <ref role="1YaFvo" to="ny2:1NIE5SZPp_k" resolve="FigureParameterAttributeMethod" />
     </node>
   </node>
   <node concept="18kY7G" id="7XqW7v9GGPX">
@@ -295,24 +295,24 @@
               <property role="Xl_RC" value="Unsupported attributed static field type, jetbrains.jetpad.projectional.view.ViewPropertySpec expected." />
             </node>
             <node concept="1YBJjd" id="7XqW7v9GOIB" role="2OEOjV">
-              <reference role="1YBMHb" target="9176911587996519808" resolve="viewPropSpecificationAttribute" />
+              <ref role="1YBMHb" node="7XqW7v9GGQ0" resolve="viewPropSpecificationAttribute" />
             </node>
           </node>
         </node>
         <node concept="3fqX7Q" id="iZqVFYrTX8" role="3clFbw">
           <node concept="2YIFZM" id="iZqVFYrTY0" role="3fr31v">
-            <reference role="37wK5l" target="342110547580229025" resolve="isSupportedParameterType" />
-            <reference role="1Pybhc" target="9176911587997145402" resolve="Utils" />
+            <ref role="37wK5l" node="iZqVFYrLmx" resolve="isSupportedParameterType" />
+            <ref role="1Pybhc" node="7XqW7v9J5$U" resolve="Utils" />
             <node concept="2OqwBi" id="iZqVFYtWvD" role="37wK5m">
               <node concept="1YBJjd" id="iZqVFYtWst" role="2Oq$k0">
-                <reference role="1YBMHb" target="9176911587996519808" resolve="viewPropSpecificationAttribute" />
+                <ref role="1YBMHb" node="7XqW7v9GGQ0" resolve="viewPropSpecificationAttribute" />
               </node>
               <node concept="2qgKlT" id="iZqVFYw07r" role="2OqNvi">
-                <reference role="37wK5l" target="vtq6.342110547581236128" resolve="getParameterType" />
+                <ref role="37wK5l" to="vtq6:iZqVFYvBew" resolve="getParameterType" />
               </node>
             </node>
             <node concept="3B5_sB" id="6mlphA0D7p3" role="37wK5m">
-              <reference role="3B5MYn" target="4to0.~ViewPropertySpec" resolve="ViewPropertySpec" />
+              <ref role="3B5MYn" to="4to0:~ViewPropertySpec" resolve="ViewPropertySpec" />
             </node>
           </node>
         </node>
@@ -320,7 +320,7 @@
     </node>
     <node concept="1YaCAy" id="7XqW7v9GGQ0" role="1YuTPh">
       <property role="TrG5h" value="viewPropSpecificationAttribute" />
-      <reference role="1YaFvo" target="ny2.7319867929567295724" resolve="FigureParameterAttributeViewProperty" />
+      <ref role="1YaFvo" to="ny2:6mlphA0CvzG" resolve="FigureParameterAttributeViewProperty" />
     </node>
   </node>
   <node concept="312cEu" id="7XqW7v9J5$U">
@@ -330,11 +330,11 @@
       <node concept="37vLTG" id="7XqW7v9J6bs" role="3clF46">
         <property role="TrG5h" value="classifierType" />
         <node concept="3Tqbb2" id="7XqW7v9J6b$" role="1tU5fm">
-          <reference role="ehGHo" target="tpee.1107535904670" resolve="ClassifierType" />
+          <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
         </node>
       </node>
       <node concept="3Tqbb2" id="7XqW7v9JeYD" role="3clF45">
-        <reference role="ehGHo" target="tpee.1068431790189" resolve="Type" />
+        <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
       </node>
       <node concept="3clFbS" id="7XqW7v9J5Ew" role="3clF47">
         <node concept="3clFbJ" id="7XqW7v9J72R" role="3cqZAp">
@@ -343,10 +343,10 @@
               <node concept="2OqwBi" id="7XqW7v9Jbi3" role="3cqZAk">
                 <node concept="2OqwBi" id="7XqW7v9J9wm" role="2Oq$k0">
                   <node concept="37vLTw" id="7XqW7v9J9gE" role="2Oq$k0">
-                    <reference role="3cqZAo" target="9176911587997147868" resolve="classifierType" />
+                    <ref role="3cqZAo" node="7XqW7v9J6bs" resolve="classifierType" />
                   </node>
                   <node concept="3Tsc0h" id="iZqVFYvHCI" role="2OqNvi">
-                    <reference role="3TtcxE" target="tpee.1109201940907" />
+                    <ref role="3TtcxE" to="tpee:g91_B6F" />
                   </node>
                 </node>
                 <node concept="1uHKPH" id="7XqW7v9JcMy" role="2OqNvi" />
@@ -357,17 +357,17 @@
             <node concept="1Wc70l" id="7XqW7v9J735" role="3uHU7B">
               <node concept="3y3z36" id="7XqW7v9J736" role="3uHU7B">
                 <node concept="37vLTw" id="7XqW7v9J737" role="3uHU7B">
-                  <reference role="3cqZAo" target="9176911587997147868" resolve="classifierType" />
+                  <ref role="3cqZAo" node="7XqW7v9J6bs" resolve="classifierType" />
                 </node>
                 <node concept="10Nm6u" id="7XqW7v9J738" role="3uHU7w" />
               </node>
               <node concept="3y3z36" id="7XqW7v9J739" role="3uHU7w">
                 <node concept="2OqwBi" id="7XqW7v9J73a" role="3uHU7B">
                   <node concept="37vLTw" id="7XqW7v9J73b" role="2Oq$k0">
-                    <reference role="3cqZAo" target="9176911587997147868" resolve="classifierType" />
+                    <ref role="3cqZAo" node="7XqW7v9J6bs" resolve="classifierType" />
                   </node>
                   <node concept="3TrEf2" id="iZqVFYvGPg" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1107535924139" />
+                    <ref role="3Tt5mk" to="tpee:g7uigIF" />
                   </node>
                 </node>
                 <node concept="10Nm6u" id="7XqW7v9J73d" role="3uHU7w" />
@@ -380,10 +380,10 @@
               <node concept="2OqwBi" id="7XqW7v9J73o" role="3uHU7B">
                 <node concept="2OqwBi" id="7XqW7v9J73p" role="2Oq$k0">
                   <node concept="37vLTw" id="7XqW7v9J73q" role="2Oq$k0">
-                    <reference role="3cqZAo" target="9176911587997147868" resolve="classifierType" />
+                    <ref role="3cqZAo" node="7XqW7v9J6bs" resolve="classifierType" />
                   </node>
                   <node concept="3Tsc0h" id="iZqVFYvHeE" role="2OqNvi">
-                    <reference role="3TtcxE" target="tpee.1109201940907" />
+                    <ref role="3TtcxE" to="tpee:g91_B6F" />
                   </node>
                 </node>
                 <node concept="34oBXx" id="7XqW7v9J73s" role="2OqNvi" />
@@ -407,17 +407,17 @@
             <node concept="1Wc70l" id="iZqVFYs55L" role="3uHU7B">
               <node concept="3y3z36" id="iZqVFYs55M" role="3uHU7B">
                 <node concept="37vLTw" id="iZqVFYs55N" role="3uHU7B">
-                  <reference role="3cqZAo" target="342110547580215212" resolve="classifierType" />
+                  <ref role="3cqZAo" node="iZqVFYrHYG" resolve="classifierType" />
                 </node>
                 <node concept="10Nm6u" id="iZqVFYs55O" role="3uHU7w" />
               </node>
               <node concept="3y3z36" id="iZqVFYs55P" role="3uHU7w">
                 <node concept="2OqwBi" id="iZqVFYs55Q" role="3uHU7B">
                   <node concept="37vLTw" id="iZqVFYs55R" role="2Oq$k0">
-                    <reference role="3cqZAo" target="342110547580215212" resolve="classifierType" />
+                    <ref role="3cqZAo" node="iZqVFYrHYG" resolve="classifierType" />
                   </node>
                   <node concept="3TrEf2" id="iZqVFYs55S" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1107535924139" />
+                    <ref role="3Tt5mk" to="tpee:g7uigIF" />
                   </node>
                 </node>
                 <node concept="10Nm6u" id="iZqVFYs55T" role="3uHU7w" />
@@ -427,19 +427,19 @@
               <node concept="2OqwBi" id="iZqVFYs55E" role="2Oq$k0">
                 <node concept="2OqwBi" id="iZqVFYs55F" role="2Oq$k0">
                   <node concept="37vLTw" id="iZqVFYs55G" role="2Oq$k0">
-                    <reference role="3cqZAo" target="342110547580215212" resolve="classifierType" />
+                    <ref role="3cqZAo" node="iZqVFYrHYG" resolve="classifierType" />
                   </node>
                   <node concept="3TrEf2" id="iZqVFYs55H" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1107535924139" />
+                    <ref role="3Tt5mk" to="tpee:g7uigIF" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="iZqVFYs55I" role="2OqNvi">
-                  <reference role="37wK5l" target="tpek.2907982978864985482" resolve="getAllExtendedClassifiers" />
+                  <ref role="37wK5l" to="tpek:2xreLMO8jma" resolve="getAllExtendedClassifiers" />
                 </node>
               </node>
               <node concept="3JPx81" id="iZqVFYs55J" role="2OqNvi">
                 <node concept="37vLTw" id="iZqVFYs55K" role="25WWJ7">
-                  <reference role="3cqZAo" target="342110547580215551" resolve="superClassifier" />
+                  <ref role="3cqZAo" node="iZqVFYrI3Z" resolve="superClassifier" />
                 </node>
               </node>
             </node>
@@ -449,13 +449,13 @@
       <node concept="37vLTG" id="iZqVFYrHYG" role="3clF46">
         <property role="TrG5h" value="classifierType" />
         <node concept="3Tqbb2" id="iZqVFYrHYR" role="1tU5fm">
-          <reference role="ehGHo" target="tpee.1107535904670" resolve="ClassifierType" />
+          <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
         </node>
       </node>
       <node concept="37vLTG" id="iZqVFYrI3Z" role="3clF46">
         <property role="TrG5h" value="superClassifier" />
         <node concept="3Tqbb2" id="iZqVFYrIWL" role="1tU5fm">
-          <reference role="ehGHo" target="tpee.1107461130800" resolve="Classifier" />
+          <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
         </node>
       </node>
       <node concept="10P_77" id="iZqVFYrF_k" role="3clF45" />
@@ -472,24 +472,24 @@
               <property role="Xl_RC" value="Unsupported ExternalViewFigureParameter field type, jetbrains.jetpad.model.property.Property expected." />
             </node>
             <node concept="1YBJjd" id="7XqW7v9JCyk" role="2OEOjV">
-              <reference role="1YBMHb" target="9176911587997288616" resolve="externalViewFigureParameter" />
+              <ref role="1YBMHb" node="7XqW7v9JCyC" resolve="externalViewFigureParameter" />
             </node>
           </node>
         </node>
         <node concept="3fqX7Q" id="iZqVFYrMFE" role="3clFbw">
           <node concept="2YIFZM" id="iZqVFYrMFG" role="3fr31v">
-            <reference role="37wK5l" target="342110547580229025" resolve="isSupportedParameterType" />
-            <reference role="1Pybhc" target="9176911587997145402" resolve="Utils" />
+            <ref role="37wK5l" node="iZqVFYrLmx" resolve="isSupportedParameterType" />
+            <ref role="1Pybhc" node="7XqW7v9J5$U" resolve="Utils" />
             <node concept="2OqwBi" id="iZqVFYvExP" role="37wK5m">
               <node concept="1YBJjd" id="iZqVFYvEuy" role="2Oq$k0">
-                <reference role="1YBMHb" target="9176911587997288616" resolve="externalViewFigureParameter" />
+                <ref role="1YBMHb" node="7XqW7v9JCyC" resolve="externalViewFigureParameter" />
               </node>
               <node concept="2qgKlT" id="iZqVFYvESJ" role="2OqNvi">
-                <reference role="37wK5l" target="vtq6.342110547581236128" resolve="getParameterType" />
+                <ref role="37wK5l" to="vtq6:iZqVFYvBew" resolve="getParameterType" />
               </node>
             </node>
             <node concept="3B5_sB" id="iZqVFYrMFN" role="37wK5m">
-              <reference role="3B5MYn" target="ctj7.~Property" resolve="Property" />
+              <ref role="3B5MYn" to="ctj7:~Property" resolve="Property" />
             </node>
           </node>
         </node>
@@ -497,7 +497,7 @@
     </node>
     <node concept="1YaCAy" id="7XqW7v9JCyC" role="1YuTPh">
       <property role="TrG5h" value="externalViewFigureParameter" />
-      <reference role="1YaFvo" target="ny2.2178507174411801606" resolve="ExternalViewFigureParameter" />
+      <ref role="1YaFvo" to="ny2:1SVBbIvt9g6" resolve="ExternalViewFigureParameter" />
     </node>
   </node>
   <node concept="1YbPZF" id="iZqVFYvBjo">
@@ -507,17 +507,17 @@
         <node concept="3cpWsn" id="iZqVFYvBt0" role="3cpWs9">
           <property role="TrG5h" value="type" />
           <node concept="3Tqbb2" id="iZqVFYvBt1" role="1tU5fm">
-            <reference role="ehGHo" target="tpee.1068431790189" resolve="Type" />
+            <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
           </node>
           <node concept="2YIFZM" id="iZqVFYvBt2" role="33vP2m">
-            <reference role="37wK5l" target="9176911587997145756" resolve="getFirstGenericParameterType" />
-            <reference role="1Pybhc" target="9176911587997145402" resolve="Utils" />
+            <ref role="37wK5l" node="7XqW7v9J5Es" resolve="getFirstGenericParameterType" />
+            <ref role="1Pybhc" node="7XqW7v9J5$U" resolve="Utils" />
             <node concept="2OqwBi" id="iZqVFYvBt3" role="37wK5m">
               <node concept="1YBJjd" id="iZqVFYvBx6" role="2Oq$k0">
-                <reference role="1YBMHb" target="342110547581236443" resolve="figureParameter" />
+                <ref role="1YBMHb" node="iZqVFYvBjr" resolve="figureParameter" />
               </node>
               <node concept="2qgKlT" id="iZqVFYvBF_" role="2OqNvi">
-                <reference role="37wK5l" target="vtq6.342110547581236128" resolve="getParameterType" />
+                <ref role="37wK5l" to="vtq6:iZqVFYvBew" resolve="getParameterType" />
               </node>
             </node>
           </node>
@@ -530,13 +530,13 @@
             <node concept="mw_s8" id="iZqVFYvBt9" role="1ZfhK$">
               <node concept="1Z2H0r" id="iZqVFYvBta" role="mwGJk">
                 <node concept="1YBJjd" id="iZqVFYvB$c" role="1Z2MuG">
-                  <reference role="1YBMHb" target="342110547581236443" resolve="figureParameter" />
+                  <ref role="1YBMHb" node="iZqVFYvBjr" resolve="figureParameter" />
                 </node>
               </node>
             </node>
             <node concept="mw_s8" id="iZqVFYvBtc" role="1ZfhKB">
               <node concept="37vLTw" id="iZqVFYvBtd" role="mwGJk">
-                <reference role="3cqZAo" target="342110547581237056" resolve="type" />
+                <ref role="3cqZAo" node="iZqVFYvBt0" resolve="type" />
               </node>
             </node>
           </node>
@@ -544,14 +544,14 @@
         <node concept="3y3z36" id="iZqVFYvBte" role="3clFbw">
           <node concept="10Nm6u" id="iZqVFYvBtf" role="3uHU7w" />
           <node concept="37vLTw" id="iZqVFYvBtg" role="3uHU7B">
-            <reference role="3cqZAo" target="342110547581237056" resolve="type" />
+            <ref role="3cqZAo" node="iZqVFYvBt0" resolve="type" />
           </node>
         </node>
       </node>
     </node>
     <node concept="1YaCAy" id="iZqVFYvBjr" role="1YuTPh">
       <property role="TrG5h" value="figureParameter" />
-      <reference role="1YaFvo" target="ny2.342110547581235541" resolve="FigureParameter" />
+      <ref role="1YaFvo" to="ny2:iZqVFYvB5l" resolve="FigureParameter" />
     </node>
   </node>
 </model>

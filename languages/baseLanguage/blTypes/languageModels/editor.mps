@@ -53,13 +53,13 @@
     </language>
   </registry>
   <node concept="24kQdi" id="gRDMIcq">
-    <reference role="1XX52x" target="tpdt.1159268590033" resolve="PrimitiveTypeDescriptor" />
+    <ref role="1XX52x" to="tpdt:gRDMI7h" resolve="PrimitiveTypeDescriptor" />
     <node concept="3EZMnI" id="gRDMIcr" role="2wV5jI">
       <node concept="3F0ifn" id="gRDMIcs" role="3EZMnx">
         <property role="3F0ifm" value="Primitive" />
       </node>
       <node concept="3F0A7n" id="gRDMIct" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="Vb9p2" id="hEUNQZg" role="3F10Kt">
           <property role="Vbekb" value="ITALIC" />
         </node>
@@ -69,21 +69,21 @@
       </node>
       <node concept="3F2HdR" id="gRDMIcv" role="3EZMnx">
         <property role="2czwfO" value="," />
-        <reference role="1NtTu8" target="tpdt.1159268590032" />
+        <ref role="1NtTu8" to="tpdt:gRDMI7g" />
         <node concept="l2Vlx" id="i0NSiLk" role="2czzBx" />
       </node>
       <node concept="l2Vlx" id="i0I8OMN" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="gRDMZCx">
-    <reference role="1XX52x" target="tpdt.1159268661480" resolve="PrimitiveTypeRef" />
+    <ref role="1XX52x" to="tpdt:gRDMZzC" resolve="PrimitiveTypeRef" />
     <node concept="3EZMnI" id="gRDMZCy" role="2wV5jI">
       <node concept="1iCGBv" id="gRDMZCz" role="3EZMnx">
-        <reference role="1NtTu8" target="tpdt.1159268661479" />
+        <ref role="1NtTu8" to="tpdt:gRDMZzB" />
         <node concept="1sVBvm" id="gRDMZC$" role="1sWHZn">
           <node concept="3F0A7n" id="gRDMZC_" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
             <node concept="Vb9p2" id="hEUNQYf" role="3F10Kt">
               <property role="Vbekb" value="ITALIC" />
             </node>

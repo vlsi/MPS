@@ -70,7 +70,7 @@
     <property role="_Wzho" value="Show getters for name property" />
     <node concept="_XfAh" id="5q_ktuflj1d" role="_YvDr">
       <property role="_XH9r" value="Show getters for name property" />
-      <reference role="_XDHR" target="tp1t.1147467115080" resolve="NodePropertyConstraint" />
+      <ref role="_XDHR" to="tp1t:gGEnED8" resolve="NodePropertyConstraint" />
       <node concept="_ZGcI" id="5q_ktuflj1e" role="_XPhp">
         <node concept="3clFbS" id="5q_ktuflj1f" role="2VODD2" />
       </node>
@@ -85,11 +85,11 @@
                 <node concept="2OqwBi" id="5q_ktuflEaV" role="2Oq$k0">
                   <node concept="_YI3z" id="5q_ktuflEaU" role="2Oq$k0" />
                   <node concept="3TrEf2" id="5q_ktuflHLW" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tp1t.1147467295099" />
+                    <ref role="3Tt5mk" to="tp1t:gGEom_V" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="5q_ktuflHM1" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>

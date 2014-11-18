@@ -71,10 +71,10 @@
   </registry>
   <node concept="24kQdi" id="3X9rC2XzJji">
     <property role="3GE5qa" value="Project.Testing" />
-    <reference role="1XX52x" target="5tjl.4560297596904469362" resolve="BuildMpsLayout_TestModule" />
+    <ref role="1XX52x" to="5tjl:3X9rC2XzJdM" resolve="BuildMpsLayout_TestModule" />
     <node concept="3EZMnI" id="3X9rC2XzJjj" role="2wV5jI">
       <node concept="1iCGBv" id="3X9rC2XzJjk" role="3EZMnx">
-        <reference role="1NtTu8" target="5tjl.4560297596904469363" />
+        <ref role="1NtTu8" to="5tjl:3X9rC2XzJdN" />
         <node concept="1sVBvm" id="3X9rC2XzJjl" role="1sWHZn">
           <node concept="3SHvHV" id="3X9rC2XzJjm" role="2wV5jI">
             <node concept="VPRnO" id="7XYaZQUBY5Y" role="3F10Kt" />
@@ -86,21 +86,21 @@
   </node>
   <node concept="24kQdi" id="3X9rC2XzJjo">
     <property role="3GE5qa" value="Project.Testing" />
-    <reference role="1XX52x" target="5tjl.4560297596904469357" resolve="BuildMpsLayout_TestModules" />
+    <ref role="1XX52x" to="5tjl:3X9rC2XzJdH" resolve="BuildMpsLayout_TestModules" />
     <node concept="3EZMnI" id="3X9rC2XzJjp" role="2wV5jI">
       <node concept="3F0ifn" id="3X9rC2XzJjq" role="3EZMnx">
         <property role="3F0ifm" value="test modules configuration" />
-        <reference role="1k5W1q" target="o2va.1277685309310622667" resolve="projectPartKeyword" />
+        <ref role="1k5W1q" to="o2va:16Vg0jOctJb" resolve="projectPartKeyword" />
       </node>
       <node concept="3F0A7n" id="7rX0uM1se1L" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="ljvvj" id="3ZNuxuVD0J5" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="3EZMnI" id="3X9rC2XzJjs" role="3EZMnx">
         <node concept="3F2HdR" id="3X9rC2XzJjt" role="3EZMnx">
-          <reference role="1NtTu8" target="5tjl.4560297596904469360" />
+          <ref role="1NtTu8" to="5tjl:3X9rC2XzJdK" />
           <node concept="l2Vlx" id="3X9rC2XzJju" role="2czzBx" />
           <node concept="pj6Ft" id="3X9rC2XzJjv" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -127,10 +127,10 @@
         </node>
         <node concept="3F0ifn" id="NvWe6DrcJF" role="3EZMnx">
           <property role="3F0ifm" value="halt on failure" />
-          <reference role="1k5W1q" target="ot6o.1203598923024" resolve="keyword" />
+          <ref role="1k5W1q" to="ot6o:hwW5xkg" resolve="keyword" />
         </node>
         <node concept="3F1sOY" id="6g2MV4s4M$d" role="3EZMnx">
-          <reference role="1NtTu8" target="5tjl.7206546315286874030" />
+          <ref role="1NtTu8" to="5tjl:6g2MV4s4KuI" />
         </node>
         <node concept="l2Vlx" id="NvWe6DqhoP" role="2iSdaV" />
         <node concept="lj46D" id="NvWe6DqhoQ" role="3F10Kt">
@@ -141,10 +141,10 @@
   </node>
   <node concept="24kQdi" id="3X9rC2XzJj_">
     <property role="3GE5qa" value="Project.Testing" />
-    <reference role="1XX52x" target="5tjl.4560297596904469355" resolve="BuildMpsLayout_TestModuleGroup" />
+    <ref role="1XX52x" to="5tjl:3X9rC2XzJdF" resolve="BuildMpsLayout_TestModuleGroup" />
     <node concept="3EZMnI" id="3X9rC2XzJjA" role="2wV5jI">
       <node concept="1iCGBv" id="3X9rC2XzJjB" role="3EZMnx">
-        <reference role="1NtTu8" target="5tjl.4560297596904469356" />
+        <ref role="1NtTu8" to="5tjl:3X9rC2XzJdG" />
         <node concept="1sVBvm" id="3X9rC2XzJjC" role="1sWHZn">
           <node concept="3SHvHV" id="3X9rC2XzJjD" role="2wV5jI">
             <node concept="VPRnO" id="7XYaZQUC2F9" role="3F10Kt" />
@@ -156,11 +156,11 @@
   </node>
   <node concept="24kQdi" id="3umvbTBQv36">
     <property role="3GE5qa" value="Project" />
-    <reference role="1XX52x" target="5tjl.4005526075820600484" resolve="BuildModuleTestsPlugin" />
+    <ref role="1XX52x" to="5tjl:3umvbTBQuM$" resolve="BuildModuleTestsPlugin" />
     <node concept="3EZMnI" id="5KZfyKsUqLG" role="2wV5jI">
       <node concept="3F0ifn" id="5KZfyKsUqLJ" role="3EZMnx">
         <property role="3F0ifm" value="module-tests" />
-        <reference role="1k5W1q" target="o2va.7389400916848136214" resolve="plugin" />
+        <ref role="1k5W1q" to="o2va:6qcrfIJFt0m" resolve="plugin" />
       </node>
       <node concept="l2Vlx" id="5KZfyKsUqLI" role="2iSdaV" />
     </node>

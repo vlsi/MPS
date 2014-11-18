@@ -173,10 +173,10 @@
             <node concept="3clFbF" id="3hgolwNo1RF" role="3cqZAp">
               <node concept="2OqwBi" id="3hgolwNo1RH" role="3clFbG">
                 <node concept="37vLTw" id="2BHiRxgm7ew" role="2Oq$k0">
-                  <reference role="3cqZAo" target="3769619919556058565" resolve="task" />
+                  <ref role="3cqZAo" node="3hgolwNo1R5" resolve="task" />
                 </node>
                 <node concept="liA8E" id="3hgolwNo1RL" role="2OqNvi">
-                  <reference role="37wK5l" target="e2lb.~Runnable%drun()%cvoid" resolve="run" />
+                  <ref role="37wK5l" to="e2lb:~Runnable.run():void" resolve="run" />
                 </node>
               </node>
             </node>
@@ -185,28 +185,28 @@
             <node concept="3cpWsn" id="3hgolwNo1Rl" role="TDEfY">
               <property role="TrG5h" value="x" />
               <node concept="3uibUv" id="3hgolwNo1Ro" role="1tU5fm">
-                <reference role="3uigEE" target="e2lb.~Exception" resolve="Exception" />
+                <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
               </node>
             </node>
             <node concept="3clFbS" id="3hgolwNo1Rn" role="TDEfX">
               <node concept="3clFbF" id="3hgolwNo1Rp" role="3cqZAp">
                 <node concept="2OqwBi" id="3hgolwNo1Rq" role="3clFbG">
                   <node concept="10M0yZ" id="3hgolwNo1Rr" role="2Oq$k0">
-                    <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-                    <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+                    <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+                    <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
                   </node>
                   <node concept="liA8E" id="3hgolwNo1Rs" role="2OqNvi">
-                    <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+                    <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
                     <node concept="3cpWs3" id="3hgolwNo1Ru" role="37wK5m">
                       <node concept="Xl_RD" id="3hgolwNo1Rt" role="3uHU7B">
                         <property role="Xl_RC" value="exception: " />
                       </node>
                       <node concept="2OqwBi" id="3hgolwNo1Ry" role="3uHU7w">
                         <node concept="37vLTw" id="3GM_nagT_bh" role="2Oq$k0">
-                          <reference role="3cqZAo" target="3769619919556058581" resolve="x" />
+                          <ref role="3cqZAo" node="3hgolwNo1Rl" resolve="x" />
                         </node>
                         <node concept="liA8E" id="3hgolwNo1RA" role="2OqNvi">
-                          <reference role="37wK5l" target="e2lb.~Throwable%dgetMessage()%cjava%dlang%dString" resolve="getMessage" />
+                          <ref role="37wK5l" to="e2lb:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
                         </node>
                       </node>
                     </node>
@@ -238,7 +238,7 @@
       <node concept="37vLTG" id="3hgolwNo1R5" role="3clF46">
         <property role="TrG5h" value="task" />
         <node concept="3uibUv" id="3hgolwNo1R6" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Runnable" resolve="Runnable" />
+          <ref role="3uigEE" to="e2lb:~Runnable" resolve="Runnable" />
         </node>
       </node>
     </node>
@@ -254,13 +254,13 @@
         </node>
         <node concept="3clFbF" id="3hgolwNo1RM" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzhkB" role="3clFbG">
-            <reference role="37wK5l" target="3769619919556058561" resolve="safeRun" />
+            <ref role="37wK5l" node="3hgolwNo1R1" resolve="safeRun" />
             <node concept="2ShNRf" id="3hgolwNo2mc" role="37wK5m">
               <node concept="YeOm9" id="3hgolwNo2me" role="2ShVmc">
                 <node concept="1Y3b0j" id="3hgolwNo2mf" role="YeSDq">
                   <property role="2bfB8j" value="true" />
-                  <reference role="1Y3XeK" target="e2lb.~Runnable" resolve="Runnable" />
-                  <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+                  <ref role="1Y3XeK" to="e2lb:~Runnable" resolve="Runnable" />
+                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
                   <node concept="3Tm1VV" id="3hgolwNo2mg" role="1B3o_S" />
                   <node concept="3clFb_" id="3hgolwNo2mh" role="jymVt">
                     <property role="IEkAT" value="false" />
@@ -271,7 +271,7 @@
                     <node concept="3cqZAl" id="3hgolwNo2mj" role="3clF45" />
                     <node concept="3clFbS" id="3hgolwNo2mk" role="3clF47" />
                     <node concept="2AHcQZ" id="3tYsUK_SfRr" role="2AJF6D">
-                      <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+                      <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
                     </node>
                   </node>
                 </node>
@@ -288,7 +288,7 @@
       <node concept="3clFbS" id="3hgolwNo2mo" role="3clF47">
         <node concept="3clFbF" id="2Y9T73IR5GQ" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyz8wh" role="3clFbG">
-            <reference role="37wK5l" target="3769619919556058561" resolve="safeRun" />
+            <ref role="37wK5l" node="3hgolwNo1R1" resolve="safeRun" />
             <node concept="2ShNRf" id="2Y9T73IR5GS" role="37wK5m">
               <node concept="1L3L4E" id="2Y9T73IR5GU" role="2ShVmc">
                 <node concept="1L3L4F" id="2Y9T73IR5GV" role="1L3L0X">
@@ -303,11 +303,11 @@
                       <node concept="3clFbF" id="2Y9T73IR5H5" role="3cqZAp">
                         <node concept="2OqwBi" id="2Y9T73IR5H6" role="3clFbG">
                           <node concept="10M0yZ" id="2Y9T73IR5H7" role="2Oq$k0">
-                            <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-                            <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+                            <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+                            <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
                           </node>
                           <node concept="liA8E" id="2Y9T73IR5H8" role="2OqNvi">
-                            <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+                            <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
                             <node concept="Xl_RD" id="2Y9T73IR5H9" role="37wK5m">
                               <property role="Xl_RC" value="done" />
                             </node>
@@ -338,7 +338,7 @@
                     <property role="2bfB8j" value="true" />
                     <node concept="3Tm1VV" id="2Y9T73IR5Hj" role="1B3o_S" />
                     <node concept="3uibUv" id="2Y9T73IR5Hk" role="1L3L74">
-                      <reference role="3uigEE" target="e2lb.~Readable" resolve="Readable" />
+                      <ref role="3uigEE" to="e2lb:~Readable" resolve="Readable" />
                     </node>
                     <node concept="3clFb_" id="2Y9T73IR5Hq" role="3MN40a">
                       <property role="TrG5h" value="read" />
@@ -350,7 +350,7 @@
                             <node concept="YS8fn" id="2Y9T73IR5Hw" role="3cqZAp">
                               <node concept="2ShNRf" id="2Y9T73IR5Hx" role="YScLw">
                                 <node concept="1pGfFk" id="2Y9T73IR5Hy" role="2ShVmc">
-                                  <reference role="37wK5l" target="fxg7.~IOException%d&lt;init&gt;()" resolve="IOException" />
+                                  <ref role="37wK5l" to="fxg7:~IOException.&lt;init&gt;()" resolve="IOException" />
                                 </node>
                               </node>
                             </node>
@@ -358,7 +358,7 @@
                           <node concept="3clFbC" id="2Y9T73IR5Hz" role="3clFbw">
                             <node concept="10Nm6u" id="2Y9T73IR5H$" role="3uHU7w" />
                             <node concept="37vLTw" id="2BHiRxgmNGk" role="3uHU7B">
-                              <reference role="3cqZAo" target="3425520165286861672" resolve="cb" />
+                              <ref role="3cqZAo" node="2Y9T73IR5HC" resolve="cb" />
                             </node>
                           </node>
                         </node>
@@ -371,11 +371,11 @@
                       <node concept="37vLTG" id="2Y9T73IR5HC" role="3clF46">
                         <property role="TrG5h" value="cb" />
                         <node concept="3uibUv" id="2Y9T73IR5HD" role="1tU5fm">
-                          <reference role="3uigEE" target="22ir.~CharBuffer" resolve="CharBuffer" />
+                          <ref role="3uigEE" to="22ir:~CharBuffer" resolve="CharBuffer" />
                         </node>
                       </node>
                       <node concept="3uibUv" id="2Y9T73IR5HE" role="Sfmx6">
-                        <reference role="3uigEE" target="fxg7.~IOException" resolve="IOException" />
+                        <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />
                       </node>
                     </node>
                   </node>
@@ -383,10 +383,10 @@
               </node>
             </node>
             <node concept="liA8E" id="2Y9T73IR5HK" role="2OqNvi">
-              <reference role="37wK5l" target="e2lb.~Readable%dread(java%dnio%dCharBuffer)%cint" resolve="read" />
+              <ref role="37wK5l" to="e2lb:~Readable.read(java.nio.CharBuffer):int" resolve="read" />
               <node concept="2YIFZM" id="2Y9T73IR5HL" role="37wK5m">
-                <reference role="1Pybhc" target="22ir.~CharBuffer" resolve="CharBuffer" />
-                <reference role="37wK5l" target="22ir.~CharBuffer%dwrap(java%dlang%dCharSequence)%cjava%dnio%dCharBuffer" resolve="wrap" />
+                <ref role="1Pybhc" to="22ir:~CharBuffer" resolve="CharBuffer" />
+                <ref role="37wK5l" to="22ir:~CharBuffer.wrap(java.lang.CharSequence):java.nio.CharBuffer" resolve="wrap" />
                 <node concept="Xl_RD" id="2Y9T73IR5HM" role="37wK5m">
                   <property role="Xl_RC" value="aa" />
                 </node>
@@ -396,7 +396,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="3hgolwNockL" role="Sfmx6">
-        <reference role="3uigEE" target="fxg7.~IOException" resolve="IOException" />
+        <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />
       </node>
     </node>
     <node concept="3clFb_" id="3hgolwNociR" role="jymVt">
@@ -413,7 +413,7 @@
                   <property role="2bfB8j" value="true" />
                   <node concept="3Tm1VV" id="2Y9T73IR5HZ" role="1B3o_S" />
                   <node concept="3uibUv" id="2Y9T73IR5I0" role="1L3L74">
-                    <reference role="3uigEE" target="e2lb.~Runnable" resolve="Runnable" />
+                    <ref role="3uigEE" to="e2lb:~Runnable" resolve="Runnable" />
                   </node>
                   <node concept="3clFb_" id="2Y9T73IR5I3" role="3MN40a">
                     <property role="TrG5h" value="run" />
@@ -425,7 +425,7 @@
               </node>
             </node>
             <node concept="liA8E" id="2Y9T73IR5I1" role="2OqNvi">
-              <reference role="37wK5l" target="e2lb.~Runnable%drun()%cvoid" resolve="run" />
+              <ref role="37wK5l" to="e2lb:~Runnable.run():void" resolve="run" />
             </node>
           </node>
         </node>
@@ -460,7 +460,7 @@
                   <node concept="37vLTG" id="2Y9T73IR5Ip" role="3clF46">
                     <property role="TrG5h" value="buffer" />
                     <node concept="3uibUv" id="2Y9T73IR5Iq" role="1tU5fm">
-                      <reference role="3uigEE" target="22ir.~CharBuffer" resolve="CharBuffer" />
+                      <ref role="3uigEE" to="22ir:~CharBuffer" resolve="CharBuffer" />
                     </node>
                   </node>
                 </node>
@@ -469,11 +469,11 @@
                     <node concept="3clFbF" id="2Y9T73IR669" role="3cqZAp">
                       <node concept="2OqwBi" id="2Y9T73IR66a" role="3clFbG">
                         <node concept="10M0yZ" id="2Y9T73IR66b" role="2Oq$k0">
-                          <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-                          <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+                          <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+                          <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
                         </node>
                         <node concept="liA8E" id="2Y9T73IR66c" role="2OqNvi">
-                          <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+                          <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
                           <node concept="Xl_RD" id="2Y9T73IR66d" role="37wK5m">
                             <property role="Xl_RC" value="initializer" />
                           </node>
@@ -493,7 +493,7 @@
       <property role="2bfB8j" value="true" />
       <node concept="3Tm1VV" id="3hgolwNocit" role="1B3o_S" />
       <node concept="3uibUv" id="3hgolwNociy" role="EKbjA">
-        <reference role="3uigEE" target="e2lb.~Readable" resolve="Readable" />
+        <ref role="3uigEE" to="e2lb:~Readable" resolve="Readable" />
       </node>
       <node concept="3clFbW" id="3hgolwNociu" role="jymVt">
         <node concept="3cqZAl" id="3hgolwNociv" role="3clF45" />
@@ -514,11 +514,11 @@
         <node concept="37vLTG" id="3hgolwNociK" role="3clF46">
           <property role="TrG5h" value="buffer" />
           <node concept="3uibUv" id="3hgolwNociL" role="1tU5fm">
-            <reference role="3uigEE" target="22ir.~CharBuffer" resolve="CharBuffer" />
+            <ref role="3uigEE" to="22ir:~CharBuffer" resolve="CharBuffer" />
           </node>
         </node>
         <node concept="3uibUv" id="3hgolwNociM" role="Sfmx6">
-          <reference role="3uigEE" target="fxg7.~IOException" resolve="IOException" />
+          <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />
         </node>
         <node concept="3clFbS" id="3hgolwNociN" role="3clF47">
           <node concept="3cpWs6" id="3hgolwNociO" role="3cqZAp">
@@ -528,7 +528,7 @@
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_Sfr_" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
     </node>

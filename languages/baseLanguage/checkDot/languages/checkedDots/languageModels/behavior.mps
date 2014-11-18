@@ -118,7 +118,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="3bYdGv2TyNJ">
-    <reference role="13h7C2" target="pxpg.4079382982702596667" resolve="CheckedDotExpression" />
+    <ref role="13h7C2" to="pxpg:3ysSjmiKK8V" resolve="CheckedDotExpression" />
     <node concept="13i0hz" id="3bYdGv2TyNM" role="13h7CS">
       <property role="TrG5h" value="hasLocalContextInside" />
       <node concept="3Tm1VV" id="3bYdGv2TyNN" role="1B3o_S" />
@@ -138,7 +138,7 @@
               <node concept="2Rf3mk" id="44M3aQW8xag" role="2OqNvi">
                 <node concept="1xMEDy" id="44M3aQW8xah" role="1xVPHs">
                   <node concept="chp4Y" id="44M3aQW8xak" role="ri$Ld">
-                    <reference role="cht4Q" target="tpee.1070475354124" resolve="ThisExpression" />
+                    <ref role="cht4Q" to="tpee:f$Xjq0c" resolve="ThisExpression" />
                   </node>
                 </node>
               </node>
@@ -161,7 +161,7 @@
                 <node concept="2Rf3mk" id="44M3aQW8xbl" role="2OqNvi">
                   <node concept="1xMEDy" id="44M3aQW8xbm" role="1xVPHs">
                     <node concept="chp4Y" id="44M3aQW8xbp" role="ri$Ld">
-                      <reference role="cht4Q" target="tpee.7812454656619025412" resolve="LocalMethodCall" />
+                      <ref role="cht4Q" to="tpee:6LFqxSRBTg4" resolve="LocalMethodCall" />
                     </node>
                   </node>
                 </node>
@@ -173,15 +173,15 @@
                       <node concept="2OqwBi" id="44M3aQW8xcF" role="3clFbG">
                         <node concept="2OqwBi" id="44M3aQW8xcf" role="2Oq$k0">
                           <node concept="37vLTw" id="44M3aQW8xbU" role="2Oq$k0">
-                            <reference role="3cqZAo" target="4697831301626073847" resolve="it" />
+                            <ref role="3cqZAo" node="44M3aQW8xbR" resolve="it" />
                           </node>
                           <node concept="3TrEf2" id="44M3aQW8xcl" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.7812454656619025415" />
+                            <ref role="3Tt5mk" to="tpee:6LFqxSRBTg7" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="44M3aQW8xcL" role="2OqNvi">
                           <node concept="chp4Y" id="44M3aQW8xcN" role="cj9EA">
-                            <reference role="cht4Q" target="tpee.1068580123165" resolve="InstanceMethodDeclaration" />
+                            <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                           </node>
                         </node>
                       </node>
@@ -216,7 +216,7 @@
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="allowsNullOperand" />
       <property role="13i0it" value="false" />
-      <reference role="13i0hy" target="tpek.4585239809762176541" resolve="allowsNullOperand" />
+      <ref role="13i0hy" to="tpek:3Yy2P0QQESt" resolve="allowsNullOperand" />
       <node concept="3Tm1VV" id="_itT2VDQc7" role="1B3o_S" />
       <node concept="3clFbS" id="_itT2VDQc8" role="3clF47">
         <node concept="3clFbF" id="_itT2VDQca" role="3cqZAp">
@@ -232,7 +232,7 @@
       <property role="13i0is" value="false" />
       <property role="TrG5h" value="lvalue" />
       <property role="13i0it" value="false" />
-      <reference role="13i0hy" target="tpek.1262430001741497939" resolve="lvalue" />
+      <ref role="13i0hy" to="tpek:1653mnvAgpj" resolve="lvalue" />
       <node concept="3Tm1VV" id="1653mnvB6kf" role="1B3o_S" />
       <node concept="10P_77" id="1653mnvB6kd" role="3clF45" />
       <node concept="3clFbS" id="1653mnvB6kg" role="3clF47">

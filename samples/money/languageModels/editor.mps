@@ -53,20 +53,20 @@
     </language>
   </registry>
   <node concept="24kQdi" id="hhaUGJ8">
-    <reference role="1XX52x" target="tp7v.1186667651178" resolve="MoneyLiteral" />
+    <ref role="1XX52x" to="tp7v:hhaTQ1E" resolve="MoneyLiteral" />
     <node concept="3EZMnI" id="hhaVfs3" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="hhaVgYZ" role="3EZMnx">
-        <reference role="1NtTu8" target="tp7v.1186667962877" resolve="amount" />
+        <ref role="1NtTu8" to="tp7v:hhaV27X" resolve="amount" />
       </node>
       <node concept="3F0A7n" id="hhaVj39" role="3EZMnx">
-        <reference role="1NtTu8" target="tp7v.1186667945792" resolve="currency" />
+        <ref role="1NtTu8" to="tp7v:hhaUXX0" resolve="currency" />
       </node>
       <node concept="l2Vlx" id="i0NkezM" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="hhNckiX">
-    <reference role="1XX52x" target="tp7v.1187340310888" resolve="MoneyCreator" />
+    <ref role="1XX52x" to="tp7v:hhMZP_C" resolve="MoneyCreator" />
     <node concept="3EZMnI" id="hhNcnmj" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hhNcqW5" role="3EZMnx">
@@ -74,34 +74,34 @@
       </node>
       <node concept="3F0ifn" id="hhNcu1C" role="3EZMnx">
         <property role="3F0ifm" value="(" />
-        <reference role="1k5W1q" target="tpen.1238143818889" resolve="Matching" />
+        <ref role="1k5W1q" to="tpen:i177PM9" resolve="Matching" />
       </node>
       <node concept="3F1sOY" id="hhNemEV" role="3EZMnx">
-        <reference role="1NtTu8" target="tp7v.1187344039345" />
+        <ref role="1NtTu8" to="tp7v:hhNe3QL" />
       </node>
       <node concept="3F0ifn" id="hhNeR9R" role="3EZMnx">
         <property role="3F0ifm" value="," />
       </node>
       <node concept="3F1sOY" id="hhNencD" role="3EZMnx">
-        <reference role="1NtTu8" target="tp7v.1187344093002" />
+        <ref role="1NtTu8" to="tp7v:hhNegXa" />
       </node>
       <node concept="3F0ifn" id="hhNcxEA" role="3EZMnx">
         <property role="3F0ifm" value=")" />
-        <reference role="1k5W1q" target="tpen.1238143818889" resolve="Matching" />
+        <ref role="1k5W1q" to="tpen:i177PM9" resolve="Matching" />
       </node>
       <node concept="l2Vlx" id="i0NkezK" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="hi8CzxH">
-    <reference role="1XX52x" target="tp7v.1187357857395" resolve="MoneyMethodCall" />
+    <ref role="1XX52x" to="tp7v:hhO2LpN" resolve="MoneyMethodCall" />
     <node concept="3EZMnI" id="hi8CAOc" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="hi8CBH7" role="3EZMnx">
-        <reference role="1NtTu8" target="tp7v.1187358164451" />
+        <ref role="1NtTu8" to="tp7v:hhO3Wnz" />
       </node>
       <node concept="PMmxH" id="2wdLO7KhY8X" role="3EZMnx">
         <property role="1cu_pB" value="0" />
-        <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <node concept="VPxyj" id="2wdLO7KhY8Y" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>

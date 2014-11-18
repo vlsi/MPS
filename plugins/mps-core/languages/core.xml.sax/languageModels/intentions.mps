@@ -92,7 +92,7 @@
   <node concept="2S6QgY" id="1XGsQcRHui3">
     <property role="TrG5h" value="Switch_HasAttributes" />
     <property role="3GE5qa" value="sax" />
-    <reference role="2ZfgGC" target="nv7r.2264311582634140402" resolve="XMLSAXNodeRule" />
+    <ref role="2ZfgGC" to="nv7r:1XGsQcRHubM" resolve="XMLSAXNodeRule" />
     <node concept="2S6ZIM" id="1XGsQcRHui4" role="2ZfVej">
       <node concept="3clFbS" id="1XGsQcRHui5" role="2VODD2">
         <node concept="3clFbF" id="1XGsQcRHui6" role="3cqZAp">
@@ -106,7 +106,7 @@
             <node concept="2OqwBi" id="1XGsQcRHuia" role="3K4Cdx">
               <node concept="2Sf5sV" id="1XGsQcRHuib" role="2Oq$k0" />
               <node concept="3TrcHB" id="1XGsQcRHuic" role="2OqNvi">
-                <reference role="3TsBF5" target="nv7r.2264311582634140410" resolve="isCompact" />
+                <ref role="3TsBF5" to="nv7r:1XGsQcRHubU" resolve="isCompact" />
               </node>
             </node>
           </node>
@@ -120,14 +120,14 @@
             <node concept="2OqwBi" id="1XGsQcRHuih" role="37vLTJ">
               <node concept="2Sf5sV" id="1XGsQcRHuii" role="2Oq$k0" />
               <node concept="3TrcHB" id="1XGsQcRHuij" role="2OqNvi">
-                <reference role="3TsBF5" target="nv7r.2264311582634140410" resolve="isCompact" />
+                <ref role="3TsBF5" to="nv7r:1XGsQcRHubU" resolve="isCompact" />
               </node>
             </node>
             <node concept="3fqX7Q" id="1XGsQcRHuik" role="37vLTx">
               <node concept="2OqwBi" id="1XGsQcRHuil" role="3fr31v">
                 <node concept="2Sf5sV" id="1XGsQcRHuim" role="2Oq$k0" />
                 <node concept="3TrcHB" id="1XGsQcRHuin" role="2OqNvi">
-                  <reference role="3TsBF5" target="nv7r.2264311582634140410" resolve="isCompact" />
+                  <ref role="3TsBF5" to="nv7r:1XGsQcRHubU" resolve="isCompact" />
                 </node>
               </node>
             </node>
@@ -139,7 +139,7 @@
   <node concept="2S6QgY" id="1XGsQcRHuio">
     <property role="TrG5h" value="addHandler" />
     <property role="3GE5qa" value="sax" />
-    <reference role="2ZfgGC" target="nv7r.2264311582634140363" resolve="XMLSAXAttributeRule" />
+    <ref role="2ZfgGC" to="nv7r:1XGsQcRHubb" resolve="XMLSAXAttributeRule" />
     <node concept="2S6ZIM" id="1XGsQcRHuip" role="2ZfVej">
       <node concept="3clFbS" id="1XGsQcRHuiq" role="2VODD2">
         <node concept="3clFbF" id="1XGsQcRHuir" role="3cqZAp">
@@ -156,13 +156,13 @@
             <node concept="2OqwBi" id="1XGsQcRHuix" role="37vLTJ">
               <node concept="2Sf5sV" id="1XGsQcRHuiy" role="2Oq$k0" />
               <node concept="3TrEf2" id="1XGsQcRHuiz" role="2OqNvi">
-                <reference role="3Tt5mk" target="nv7r.2264311582634140365" />
+                <ref role="3Tt5mk" to="nv7r:1XGsQcRHubd" />
               </node>
             </node>
             <node concept="2ShNRf" id="1XGsQcRHui$" role="37vLTx">
               <node concept="2fJWfE" id="1XGsQcRHui_" role="2ShVmc">
                 <node concept="3Tqbb2" id="1XGsQcRHuiA" role="3zrR0E">
-                  <reference role="ehGHo" target="nv7r.2264311582634140353" resolve="XMLSAXAttributeHandler" />
+                  <ref role="ehGHo" to="nv7r:1XGsQcRHub1" resolve="XMLSAXAttributeHandler" />
                 </node>
               </node>
             </node>
@@ -177,7 +177,7 @@
             <node concept="2OqwBi" id="1XGsQcRHuiF" role="2Oq$k0">
               <node concept="2Sf5sV" id="1XGsQcRHuiG" role="2Oq$k0" />
               <node concept="3TrEf2" id="1XGsQcRHuiH" role="2OqNvi">
-                <reference role="3Tt5mk" target="nv7r.2264311582634140365" />
+                <ref role="3Tt5mk" to="nv7r:1XGsQcRHubd" />
               </node>
             </node>
             <node concept="3w_OXm" id="1XGsQcRHuiI" role="2OqNvi" />

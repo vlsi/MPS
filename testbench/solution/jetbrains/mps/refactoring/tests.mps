@@ -59,31 +59,31 @@
       <node concept="37vLTG" id="4_TMdeLkOC$" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="4_TMdeLkOC_" role="1tU5fm">
-          <reference role="3uigEE" target="vsqj.~Project" resolve="Project" />
+          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="37vLTG" id="4_TMdeLkOCA" role="3clF46">
         <property role="TrG5h" value="sandbox1" />
         <node concept="3uibUv" id="4_TMdeLkOCB" role="1tU5fm">
-          <reference role="3uigEE" target="ec5l.~SModel" resolve="SModel" />
+          <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
         </node>
       </node>
       <node concept="37vLTG" id="4_TMdeLkOCC" role="3clF46">
         <property role="TrG5h" value="sandbox2" />
         <node concept="3uibUv" id="4_TMdeLkOCD" role="1tU5fm">
-          <reference role="3uigEE" target="ec5l.~SModel" resolve="SModel" />
+          <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
         </node>
       </node>
       <node concept="37vLTG" id="4_TMdeLkOCE" role="3clF46">
         <property role="TrG5h" value="testRefactoringlanguage" />
         <node concept="3uibUv" id="4_TMdeLkOCF" role="1tU5fm">
-          <reference role="3uigEE" target="cu2c.~Language" resolve="Language" />
+          <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
         </node>
       </node>
       <node concept="37vLTG" id="4_TMdeLkOCG" role="3clF46">
         <property role="TrG5h" value="testRefactoringTargetLanguage" />
         <node concept="3uibUv" id="4_TMdeLkOCH" role="1tU5fm">
-          <reference role="3uigEE" target="cu2c.~Language" resolve="Language" />
+          <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
         </node>
       </node>
       <node concept="3clFbS" id="4_TMdeLkOCI" role="3clF47" />

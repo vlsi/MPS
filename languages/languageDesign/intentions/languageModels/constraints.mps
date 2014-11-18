@@ -66,23 +66,23 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="hQOgExi">
-    <reference role="1M2myG" target="tp3j.1192794744107" resolve="IntentionDeclaration" />
+    <ref role="1M2myG" to="tp3j:hmS6QkF" resolve="IntentionDeclaration" />
     <node concept="2NXJUA" id="hQOgHAO" role="2NY200">
       <node concept="3clFbS" id="hQOgHAP" role="2VODD2">
         <node concept="3clFbF" id="hQOgIM2" role="3cqZAp">
           <node concept="22lmx$" id="2EFylI5n7qQ" role="3clFbG">
             <node concept="2YIFZM" id="2EFylI5n7IY" role="3uHU7w">
-              <reference role="1Pybhc" target="cu2c.~SModelStereotype" resolve="SModelStereotype" />
-              <reference role="37wK5l" target="cu2c.~SModelStereotype%disGeneratorModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
               <node concept="1Q6Npb" id="2EFylI5n7IZ" role="37wK5m" />
             </node>
             <node concept="2OqwBi" id="hQOgJvv" role="3uHU7B">
               <node concept="Rm8GO" id="hQOgJmd" role="2Oq$k0">
-                <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dINTENTIONS" resolve="INTENTIONS" />
-                <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.INTENTIONS" resolve="INTENTIONS" />
+                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
               </node>
               <node concept="liA8E" id="hQOgPg6" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~LanguageAspect%dis(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="is" />
+                <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
                 <node concept="2JrnkZ" id="6MGyrQSoH0y" role="37wK5m">
                   <node concept="1Q6Npb" id="hQOgPrP" role="2JrQYb" />
                 </node>
@@ -94,26 +94,26 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5rGvd38DcHu">
-    <reference role="1M2myG" target="tp3j.2522969319638198293" resolve="SurroundWithIntentionDeclaration" />
+    <ref role="1M2myG" to="tp3j:2c3oNEsfAwl" resolve="SurroundWithIntentionDeclaration" />
     <node concept="2NXJUA" id="5rGvd38DcHw" role="2NY200">
       <node concept="3clFbS" id="5rGvd38DcHx" role="2VODD2">
         <node concept="3clFbF" id="5rGvd38DcHy" role="3cqZAp">
           <node concept="22lmx$" id="1KFbmnBQDYj" role="3clFbG">
             <node concept="2OqwBi" id="5rGvd38DcHz" role="3uHU7B">
               <node concept="Rm8GO" id="5rGvd38DcH$" role="2Oq$k0">
-                <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
-                <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dINTENTIONS" resolve="INTENTIONS" />
+                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.INTENTIONS" resolve="INTENTIONS" />
               </node>
               <node concept="liA8E" id="5rGvd38DcH_" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~LanguageAspect%dis(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="is" />
+                <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
                 <node concept="2JrnkZ" id="6MGyrQSoIcp" role="37wK5m">
                   <node concept="1Q6Npb" id="5rGvd38DcHA" role="2JrQYb" />
                 </node>
               </node>
             </node>
             <node concept="2YIFZM" id="1KFbmnBQDYp" role="3uHU7w">
-              <reference role="1Pybhc" target="cu2c.~SModelStereotype" resolve="SModelStereotype" />
-              <reference role="37wK5l" target="cu2c.~SModelStereotype%disGeneratorModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
               <node concept="1Q6Npb" id="1KFbmnBQDYq" role="37wK5m" />
             </node>
           </node>

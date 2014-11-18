@@ -147,19 +147,19 @@
         <node concept="3clFbF" id="hzK9EaM" role="3cqZAp">
           <node concept="2OqwBi" id="hzK9Hta" role="3clFbG">
             <node concept="10M0yZ" id="hzK9EaN" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="hzK9Lsk" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="3cpWs3" id="hzKbtw5" role="37wK5m">
                 <node concept="1eOMI4" id="hzKbtw6" role="3uHU7w">
                   <node concept="17qRlL" id="hzKbtw7" role="1eOMHV">
                     <node concept="37vLTw" id="3GM_nagTwkG" role="3uHU7w">
-                      <reference role="3cqZAo" target="1196430125279" resolve="c2" />
+                      <ref role="3cqZAo" node="hqgMIzv" resolve="c2" />
                     </node>
                     <node concept="37vLTw" id="3GM_nagTw7s" role="3uHU7B">
-                      <reference role="3cqZAo" target="1196427466062" resolve="c1" />
+                      <ref role="3cqZAo" node="hqgC_le" resolve="c1" />
                     </node>
                   </node>
                 </node>
@@ -172,7 +172,7 @@
                         </node>
                         <node concept="1eOMI4" id="hzKbtwe" role="3uHU7w">
                           <node concept="37vLTw" id="3GM_nagTAwF" role="1eOMHV">
-                            <reference role="3cqZAo" target="1196427466062" resolve="c1" />
+                            <ref role="3cqZAo" node="hqgC_le" resolve="c1" />
                           </node>
                         </node>
                       </node>
@@ -182,7 +182,7 @@
                     </node>
                     <node concept="1eOMI4" id="hzKbtwb" role="3uHU7w">
                       <node concept="37vLTw" id="3GM_nagTvLi" role="1eOMHV">
-                        <reference role="3cqZAo" target="1196430125279" resolve="c2" />
+                        <ref role="3cqZAo" node="hqgMIzv" resolve="c2" />
                       </node>
                     </node>
                   </node>
@@ -197,22 +197,22 @@
         <node concept="3clFbF" id="hzKaqDv" role="3cqZAp">
           <node concept="2OqwBi" id="hzKarr_" role="3clFbG">
             <node concept="10M0yZ" id="hzKaqDw" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="hzKatnS" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="3cpWs3" id="hzKaCOe" role="37wK5m">
                 <node concept="1eOMI4" id="hzKaFKZ" role="3uHU7w">
                   <node concept="2g7Pry" id="hzKaFL0" role="1eOMHV">
                     <node concept="37vLTw" id="3GM_nagTuz5" role="26Ha6n">
-                      <reference role="3cqZAo" target="1196430125279" resolve="c2" />
+                      <ref role="3cqZAo" node="hqgMIzv" resolve="c2" />
                     </node>
                   </node>
                 </node>
                 <node concept="3cpWs3" id="hzKaB4l" role="3uHU7B">
                   <node concept="37vLTw" id="3GM_nagTyn1" role="3uHU7B">
-                    <reference role="3cqZAo" target="1196427466062" resolve="c1" />
+                    <ref role="3cqZAo" node="hqgC_le" resolve="c1" />
                   </node>
                   <node concept="Xl_RD" id="hzKaBkJ" role="3uHU7w">
                     <property role="Xl_RC" value=" = " />
@@ -225,14 +225,14 @@
         <node concept="3clFbF" id="hzKaKyv" role="3cqZAp">
           <node concept="2OqwBi" id="hzKaLk$" role="3clFbG">
             <node concept="10M0yZ" id="hzKaKyw" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="hzKaMIW" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="3cpWs3" id="hzKaTyA" role="37wK5m">
                 <node concept="37vLTw" id="3GM_nagTBNV" role="3uHU7w">
-                  <reference role="3cqZAo" target="1196430125279" resolve="c2" />
+                  <ref role="3cqZAo" node="hqgMIzv" resolve="c2" />
                 </node>
                 <node concept="3cpWs3" id="hzKaSo$" role="3uHU7B">
                   <node concept="3cpWs3" id="hzKaQMt" role="3uHU7B">
@@ -240,10 +240,10 @@
                       <node concept="1eOMI4" id="hzKaOUs" role="3uHU7B">
                         <node concept="3cpWs3" id="hzKaP8C" role="1eOMHV">
                           <node concept="37vLTw" id="3GM_nagTBWQ" role="3uHU7w">
-                            <reference role="3cqZAo" target="1196430125279" resolve="c2" />
+                            <ref role="3cqZAo" node="hqgMIzv" resolve="c2" />
                           </node>
                           <node concept="37vLTw" id="3GM_nagTB2y" role="3uHU7B">
-                            <reference role="3cqZAo" target="1196427466062" resolve="c1" />
+                            <ref role="3cqZAo" node="hqgC_le" resolve="c1" />
                           </node>
                         </node>
                       </node>
@@ -252,7 +252,7 @@
                       </node>
                     </node>
                     <node concept="37vLTw" id="3GM_nagT_G7" role="3uHU7w">
-                      <reference role="3cqZAo" target="1196427466062" resolve="c1" />
+                      <ref role="3cqZAo" node="hqgC_le" resolve="c1" />
                     </node>
                   </node>
                   <node concept="Xl_RD" id="hzKaSI6" role="3uHU7w">

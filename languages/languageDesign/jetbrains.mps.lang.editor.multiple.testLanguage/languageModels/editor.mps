@@ -164,14 +164,14 @@
     </language>
   </registry>
   <node concept="24kQdi" id="5LszKvIa2AQ">
-    <reference role="1XX52x" target="jap4.6655351613569889729" resolve="MultipleEditorsTestChild" />
+    <ref role="1XX52x" to="jap4:5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     <node concept="3EZMnI" id="5UHFGFjUVMM" role="2wV5jI">
       <node concept="l2Vlx" id="5UHFGFjUVMN" role="2iSdaV" />
       <node concept="3F0ifn" id="5UHFGFjUVMO" role="3EZMnx">
         <property role="3F0ifm" value="child" />
       </node>
       <node concept="3F0A7n" id="5UHFGFjUVMP" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="5UHFGFjUVMQ" role="3EZMnx">
         <property role="3F0ifm" value="{" />
@@ -197,7 +197,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="5UHFGFjUVMZ" role="3EZMnx">
-          <reference role="1NtTu8" target="jap4.6655351613569904549" resolve="defaultProperty" />
+          <ref role="1NtTu8" to="jap4:5LszKvIa2Y_" resolve="defaultProperty" />
           <node concept="ljvvj" id="5UHFGFjUVN0" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -212,7 +212,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5LszKvIa80v">
-    <reference role="1XX52x" target="jap4.6655351613569888021" resolve="MultipleEditorsTestRoot" />
+    <ref role="1XX52x" to="jap4:5LszKvI9YWl" resolve="MultipleEditorsTestRoot" />
     <node concept="3EZMnI" id="5ajRFTcS8bx" role="2wV5jI">
       <node concept="l2Vlx" id="5ajRFTcS8by" role="2iSdaV" />
       <node concept="3F0ifn" id="5ajRFTcS8bz" role="3EZMnx">
@@ -231,7 +231,7 @@
         <node concept="3EZMnI" id="5ajRFTcS8dG" role="3EZMnx">
           <node concept="2w$q5c" id="59ZEGVR0QK_" role="2whIAn">
             <node concept="2aJ2om" id="59ZEGVR0QKD" role="2w$qW5">
-              <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+              <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
             </node>
           </node>
           <node concept="3F0ifn" id="5ajRFTcS8bE" role="3EZMnx">
@@ -251,7 +251,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="5ajRFTcS8bI" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.6655351613569925164" />
+            <ref role="1NtTu8" to="jap4:5LszKvIa80G" />
             <node concept="l2Vlx" id="5ajRFTcS8bJ" role="2czzBx" />
             <node concept="pj6Ft" id="5ajRFTcS8bK" role="3F10Kt">
               <property role="VOm3f" value="true" />
@@ -271,7 +271,7 @@
           <node concept="3EZMnI" id="5ajRFTcS8pd" role="3EZMnx">
             <node concept="2w$q5c" id="59ZEGVR0QOp" role="2whIAn">
               <node concept="2aJ2om" id="59ZEGVR0QOt" role="2w$qW5">
-                <reference role="2$4xQ3" target="5944657839017576567" resolve="compact" />
+                <ref role="2$4xQ3" node="59ZEGVPS$xR" resolve="compact" />
               </node>
             </node>
             <node concept="3F0ifn" id="5ajRFTcS8bP" role="3EZMnx">
@@ -291,7 +291,7 @@
               </node>
             </node>
             <node concept="3F2HdR" id="5ajRFTcS8bT" role="3EZMnx">
-              <reference role="1NtTu8" target="jap4.6822301196698237842" />
+              <ref role="1NtTu8" to="jap4:5UHFGFjUVIi" />
               <node concept="l2Vlx" id="5ajRFTcS8bU" role="2czzBx" />
               <node concept="pj6Ft" id="5ajRFTcS8bV" role="3F10Kt">
                 <property role="VOm3f" value="true" />
@@ -305,7 +305,7 @@
             </node>
             <node concept="2w$q5c" id="59ZEGVR0QMv" role="2whJh7">
               <node concept="2aJ2om" id="59ZEGVR0QMy" role="2w$qW5">
-                <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+                <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
               </node>
             </node>
           </node>
@@ -332,7 +332,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="5ajRFTcS8c4" role="3EZMnx">
-          <reference role="1NtTu8" target="jap4.5950344441601491438" />
+          <ref role="1NtTu8" to="jap4:5ajRFTcS87I" />
           <node concept="l2Vlx" id="5ajRFTcS8c5" role="2czzBx" />
           <node concept="pj6Ft" id="5ajRFTcS8c6" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -354,7 +354,7 @@
           <property role="3F0ifm" value="With presentation:" />
         </node>
         <node concept="3F0A7n" id="6EI1ZZqOjAb" role="3EZMnx">
-          <reference role="1NtTu8" target="jap4.7687090409437208833" resolve="projectionType" />
+          <ref role="1NtTu8" to="jap4:6EI1ZZqOi41" resolve="projectionType" />
         </node>
         <node concept="3F0ifn" id="6EI1ZZqXAz3" role="3EZMnx">
           <property role="3F0ifm" value="{" />
@@ -364,7 +364,7 @@
         </node>
         <node concept="3EZMnI" id="6EI1ZZqOjzy" role="3EZMnx">
           <node concept="3F2HdR" id="6EI1ZZqOjNH" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.7687090409437208719" />
+            <ref role="1NtTu8" to="jap4:6EI1ZZqOi2f" />
             <node concept="pj6Ft" id="6EI1ZZqWZZQ" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -386,12 +386,12 @@
                 <node concept="2OqwBi" id="6EI1ZZqOurF" role="3clFbw">
                   <node concept="3t7uKx" id="6EI1ZZqOxWX" role="2OqNvi">
                     <node concept="uoxfO" id="6EI1ZZqOxWZ" role="3t7uKA">
-                      <reference role="uo_Cq" target="jap4.7687090409437208801" />
+                      <ref role="uo_Cq" to="jap4:6EI1ZZqOi3x" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="6EI1ZZqOn9E" role="2Oq$k0">
                     <node concept="3TrcHB" id="6EI1ZZqOoz1" role="2OqNvi">
-                      <reference role="3TsBF5" target="jap4.7687090409437208833" resolve="projectionType" />
+                      <ref role="3TsBF5" to="jap4:6EI1ZZqOi41" resolve="projectionType" />
                     </node>
                     <node concept="pncrf" id="6EI1ZZqOn42" role="2Oq$k0" />
                   </node>
@@ -399,10 +399,10 @@
                 <node concept="3clFbS" id="6EI1ZZqOmRP" role="3clFbx">
                   <node concept="3cpWs6" id="6EI1ZZqOIjZ" role="3cqZAp">
                     <node concept="2YIFZM" id="6EI1ZZqOJTF" role="3cqZAk">
-                      <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                       <node concept="2pYGij" id="6EI1ZZqOzDl" role="37wK5m">
-                        <reference role="2pYH_C" target="5944657839017576565" resolve="rich" />
+                        <ref role="2pYH_C" node="59ZEGVPS$xP" resolve="rich" />
                       </node>
                     </node>
                   </node>
@@ -411,12 +411,12 @@
                   <node concept="2OqwBi" id="6EI1ZZqOBci" role="3eO9$A">
                     <node concept="3t7uKx" id="6EI1ZZqOEFX" role="2OqNvi">
                       <node concept="uoxfO" id="6EI1ZZqOEFZ" role="3t7uKA">
-                        <reference role="uo_Cq" target="jap4.7687090409437208798" />
+                        <ref role="uo_Cq" to="jap4:6EI1ZZqOi3u" />
                       </node>
                     </node>
                     <node concept="2OqwBi" id="6EI1ZZqO_6j" role="2Oq$k0">
                       <node concept="3TrcHB" id="6EI1ZZqO_WK" role="2OqNvi">
-                        <reference role="3TsBF5" target="jap4.7687090409437208833" resolve="projectionType" />
+                        <ref role="3TsBF5" to="jap4:6EI1ZZqOi41" resolve="projectionType" />
                       </node>
                       <node concept="pncrf" id="6EI1ZZqO_0F" role="2Oq$k0" />
                     </node>
@@ -424,10 +424,10 @@
                   <node concept="3clFbS" id="6EI1ZZqO$Jz" role="3eOfB_">
                     <node concept="3cpWs6" id="6EI1ZZqOLUi" role="3cqZAp">
                       <node concept="2YIFZM" id="6EI1ZZqOLUj" role="3cqZAk">
-                        <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
-                        <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
+                        <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+                        <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
                         <node concept="2pYGij" id="6EI1ZZqOGux" role="37wK5m">
-                          <reference role="2pYH_C" target="5944657839017576567" resolve="compact" />
+                          <ref role="2pYH_C" node="59ZEGVPS$xR" resolve="compact" />
                         </node>
                       </node>
                     </node>
@@ -436,8 +436,8 @@
               </node>
               <node concept="3cpWs6" id="6EI1ZZqOPcx" role="3cqZAp">
                 <node concept="2YIFZM" id="6EI1ZZqOQT9" role="3cqZAk">
-                  <reference role="37wK5l" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolve="emptyList" />
-                  <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                  <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                  <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                 </node>
               </node>
             </node>
@@ -464,7 +464,7 @@
           </node>
           <node concept="l2Vlx" id="6BSFEB5nNVa" role="2iSdaV" />
           <node concept="3F0A7n" id="6BSFEB5mOnb" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.7636045212390435962" resolve="projectAsCompact" />
+            <ref role="1NtTu8" to="jap4:6BSFEB5mELU" resolve="projectAsCompact" />
           </node>
           <node concept="3F0ifn" id="6BSFEB5mQk7" role="3EZMnx">
             <property role="3F0ifm" value="{" />
@@ -474,7 +474,7 @@
           </node>
           <node concept="3EZMnI" id="6BSFEB5nzQd" role="3EZMnx">
             <node concept="3F2HdR" id="6BSFEB5nzQe" role="3EZMnx">
-              <reference role="1NtTu8" target="jap4.7636045212390435965" />
+              <ref role="1NtTu8" to="jap4:6BSFEB5mELX" />
               <node concept="pj6Ft" id="6BSFEB5nzQf" role="3F10Kt">
                 <property role="VOm3f" value="true" />
               </node>
@@ -496,20 +496,20 @@
                   <node concept="3K4zz7" id="6BSFEB5xrQo" role="3cqZAk">
                     <node concept="2OqwBi" id="6BSFEB5xrQp" role="3K4Cdx">
                       <node concept="3TrcHB" id="6BSFEB5xrQq" role="2OqNvi">
-                        <reference role="3TsBF5" target="jap4.7636045212390435962" resolve="projectAsCompact" />
+                        <ref role="3TsBF5" to="jap4:6BSFEB5mELU" resolve="projectAsCompact" />
                       </node>
                       <node concept="pncrf" id="6BSFEB5xrQr" role="2Oq$k0" />
                     </node>
                     <node concept="2YIFZM" id="6BSFEB5xrQs" role="3K4E3e">
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
-                      <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
                       <node concept="2pYGij" id="6BSFEB5xrQt" role="37wK5m">
-                        <reference role="2pYH_C" target="5944657839017576567" resolve="compact" />
+                        <ref role="2pYH_C" node="59ZEGVPS$xR" resolve="compact" />
                       </node>
                     </node>
                     <node concept="2YIFZM" id="6BSFEB5xrQu" role="3K4GZi">
-                      <reference role="37wK5l" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolve="emptyList" />
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                       <node concept="17QB3L" id="6BSFEB5xrQv" role="3PaCim" />
                     </node>
                   </node>
@@ -522,20 +522,20 @@
                   <node concept="3K4zz7" id="6BSFEB5oMAc" role="3clFbG">
                     <node concept="2OqwBi" id="6BSFEB5oJMw" role="3K4Cdx">
                       <node concept="3TrcHB" id="6BSFEB5oLes" role="2OqNvi">
-                        <reference role="3TsBF5" target="jap4.7636045212390435962" resolve="projectAsCompact" />
+                        <ref role="3TsBF5" to="jap4:6BSFEB5mELU" resolve="projectAsCompact" />
                       </node>
                       <node concept="pncrf" id="6BSFEB5oJGS" role="2Oq$k0" />
                     </node>
                     <node concept="2YIFZM" id="6BSFEB5oNdC" role="3K4E3e">
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
-                      <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
                       <node concept="2pYGij" id="6BSFEB5oNdD" role="37wK5m">
-                        <reference role="2pYH_C" target="5944657839017576565" resolve="rich" />
+                        <ref role="2pYH_C" node="59ZEGVPS$xP" resolve="rich" />
                       </node>
                     </node>
                     <node concept="2YIFZM" id="6BSFEB5uyl7" role="3K4GZi">
-                      <reference role="37wK5l" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolve="emptyList" />
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                       <node concept="17QB3L" id="6BSFEB5vUH9" role="3PaCim" />
                     </node>
                   </node>
@@ -551,7 +551,7 @@
           </node>
           <node concept="2w$q5c" id="6BSFEB5oqh8" role="2whIAn">
             <node concept="2aJ2om" id="6BSFEB5orsd" role="2w$qW5">
-              <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+              <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
             </node>
           </node>
         </node>
@@ -569,7 +569,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="2gpcfU7j3tg" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.2601164129532819818" />
+            <ref role="1NtTu8" to="jap4:2gpcfU7iF_E" />
             <node concept="l2Vlx" id="2gpcfU7j3th" role="2czzBx" />
             <node concept="lj46D" id="2gpcfU7j6vP" role="3F10Kt">
               <property role="VOm3f" value="true" />
@@ -590,7 +590,7 @@
           <node concept="l2Vlx" id="2gpcfU7iPbW" role="2iSdaV" />
           <node concept="2w$q5c" id="2gpcfU7j81M" role="2whIAn">
             <node concept="2aJ2om" id="2gpcfU7j81N" role="2w$qW5">
-              <reference role="2$4xQ3" target="2601164129532817776" resolve="unsupported" />
+              <ref role="2$4xQ3" node="2gpcfU7iF5K" resolve="unsupported" />
             </node>
           </node>
         </node>
@@ -604,9 +604,9 @@
     </node>
   </node>
   <node concept="24kQdi" id="l3qzLl$maJ">
-    <reference role="1XX52x" target="jap4.6655351613569889729" resolve="MultipleEditorsTestChild" />
+    <ref role="1XX52x" to="jap4:5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     <node concept="2aJ2om" id="59ZEGVR0Q_d" role="CpUAK">
-      <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+      <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
     </node>
     <node concept="3EZMnI" id="l3qzLl$mcz" role="2wV5jI">
       <node concept="3EZMnI" id="6$tkMiVCX5V" role="3EZMnx">
@@ -624,7 +624,7 @@
             </node>
           </node>
           <node concept="3F0A7n" id="l3qzLl$mcA" role="3EZMnx">
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
             <node concept="VPXOz" id="6$tkMiVCJDY" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -642,7 +642,7 @@
             <property role="3F0ifm" value="" />
           </node>
           <node concept="3F0A7n" id="l3qzLl$mcP" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.6655351613569904551" resolve="richProperty" />
+            <ref role="1NtTu8" to="jap4:5LszKvIa2YB" resolve="richProperty" />
             <node concept="VPXOz" id="6$tkMiVCJJO" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -673,14 +673,14 @@
     </node>
   </node>
   <node concept="24kQdi" id="qefb9j32x6">
-    <reference role="1XX52x" target="jap4.6655351613569889729" resolve="MultipleEditorsTestChild" />
+    <ref role="1XX52x" to="jap4:5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     <node concept="2aJ2om" id="59ZEGVR0QE0" role="CpUAK">
-      <reference role="2$4xQ3" target="5944657839017576567" resolve="compact" />
+      <ref role="2$4xQ3" node="59ZEGVPS$xR" resolve="compact" />
     </node>
     <node concept="3EZMnI" id="qefb9j32x7" role="2wV5jI">
       <node concept="l2Vlx" id="qefb9j32x8" role="2iSdaV" />
       <node concept="3F0A7n" id="qefb9j32xa" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="6$tkMiVBNFx" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -698,7 +698,7 @@
         </node>
       </node>
       <node concept="3F0A7n" id="qefb9j32xk" role="3EZMnx">
-        <reference role="1NtTu8" target="jap4.5950344441601550575" resolve="compactProperty" />
+        <ref role="1NtTu8" to="jap4:5ajRFTcSmzJ" resolve="compactProperty" />
       </node>
       <node concept="3F0ifn" id="6$tkMiVAW2Y" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -745,7 +745,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6k6gsLyhElw">
-    <reference role="1XX52x" target="jap4.7279578193768898412" resolve="MultipleEditorsTestRefNodeListRoot" />
+    <ref role="1XX52x" to="jap4:6k6gsLyh_XG" resolve="MultipleEditorsTestRefNodeListRoot" />
     <node concept="3EZMnI" id="6k6gsLyhJDb" role="2wV5jI">
       <node concept="l2Vlx" id="6k6gsLyhJDc" role="2iSdaV" />
       <node concept="3F0ifn" id="6k6gsLyhJDd" role="3EZMnx">
@@ -778,7 +778,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="6k6gsLyhJDz" role="3EZMnx">
-          <reference role="1NtTu8" target="jap4.7279578193768938010" />
+          <ref role="1NtTu8" to="jap4:6k6gsLyhJCq" />
           <node concept="l2Vlx" id="6k6gsLyhJD$" role="2czzBx" />
           <node concept="pj6Ft" id="6k6gsLyhJD_" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -791,7 +791,7 @@
           </node>
           <node concept="2w$q5c" id="6k6gsLyhJXO" role="78xua">
             <node concept="2aJ2om" id="6k6gsLyhJXV" role="2w$qW5">
-              <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+              <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
             </node>
           </node>
         </node>
@@ -818,7 +818,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="6k6gsLyhJDI" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.7279578193768938011" />
+            <ref role="1NtTu8" to="jap4:6k6gsLyhJCr" />
             <node concept="l2Vlx" id="6k6gsLyhJDJ" role="2czzBx" />
             <node concept="pj6Ft" id="6k6gsLyhJDK" role="3F10Kt">
               <property role="VOm3f" value="true" />
@@ -831,18 +831,18 @@
             </node>
             <node concept="2w$q5c" id="6k6gsLyhK2R" role="78xub">
               <node concept="2aJ2om" id="6k6gsLyhK2S" role="2w$qW5">
-                <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+                <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
               </node>
             </node>
             <node concept="2w$q5c" id="6k6gsLyhK2Y" role="78xua">
               <node concept="2aJ2om" id="6k6gsLyhK2Z" role="2w$qW5">
-                <reference role="2$4xQ3" target="5944657839017576567" resolve="compact" />
+                <ref role="2$4xQ3" node="59ZEGVPS$xR" resolve="compact" />
               </node>
             </node>
           </node>
           <node concept="2w$q5c" id="6k6gsLyhK2M" role="2whIAn">
             <node concept="2aJ2om" id="6k6gsLyhK2N" role="2w$qW5">
-              <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+              <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
             </node>
           </node>
         </node>
@@ -856,7 +856,7 @@
           <property role="3F0ifm" value="With presentation:" />
         </node>
         <node concept="3F0A7n" id="4R_sg7X6QBJ" role="3EZMnx">
-          <reference role="1NtTu8" target="jap4.5613016763942517158" resolve="projectionType" />
+          <ref role="1NtTu8" to="jap4:4R_sg7X6NAA" resolve="projectionType" />
         </node>
         <node concept="3F0ifn" id="4R_sg7X6QBK" role="3EZMnx">
           <property role="3F0ifm" value="{" />
@@ -865,7 +865,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="4R_sg7X6QBN" role="3EZMnx">
-          <reference role="1NtTu8" target="jap4.5613016763942533640" />
+          <ref role="1NtTu8" to="jap4:4R_sg7X6RC8" />
           <node concept="pj6Ft" id="4R_sg7X6QBO" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -882,12 +882,12 @@
                 <node concept="2OqwBi" id="4R_sg7X6SZo" role="3clFbw">
                   <node concept="3t7uKx" id="4R_sg7X6SZp" role="2OqNvi">
                     <node concept="uoxfO" id="4R_sg7X6SZq" role="3t7uKA">
-                      <reference role="uo_Cq" target="jap4.7687090409437208801" />
+                      <ref role="uo_Cq" to="jap4:6EI1ZZqOi3x" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="4R_sg7X6SZr" role="2Oq$k0">
                     <node concept="3TrcHB" id="4R_sg7X6SZs" role="2OqNvi">
-                      <reference role="3TsBF5" target="jap4.5613016763942517158" resolve="projectionType" />
+                      <ref role="3TsBF5" to="jap4:4R_sg7X6NAA" resolve="projectionType" />
                     </node>
                     <node concept="pncrf" id="4R_sg7X6SZt" role="2Oq$k0" />
                   </node>
@@ -895,10 +895,10 @@
                 <node concept="3clFbS" id="4R_sg7X6SZu" role="3clFbx">
                   <node concept="3cpWs6" id="4R_sg7X6SZv" role="3cqZAp">
                     <node concept="2YIFZM" id="4R_sg7X6SZw" role="3cqZAk">
-                      <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                       <node concept="2pYGij" id="4R_sg7X6SZx" role="37wK5m">
-                        <reference role="2pYH_C" target="5944657839017576565" resolve="rich" />
+                        <ref role="2pYH_C" node="59ZEGVPS$xP" resolve="rich" />
                       </node>
                     </node>
                   </node>
@@ -907,12 +907,12 @@
                   <node concept="2OqwBi" id="4R_sg7X6SZz" role="3eO9$A">
                     <node concept="3t7uKx" id="4R_sg7X6SZ$" role="2OqNvi">
                       <node concept="uoxfO" id="4R_sg7X6SZ_" role="3t7uKA">
-                        <reference role="uo_Cq" target="jap4.7687090409437208798" />
+                        <ref role="uo_Cq" to="jap4:6EI1ZZqOi3u" />
                       </node>
                     </node>
                     <node concept="2OqwBi" id="4R_sg7X6SZA" role="2Oq$k0">
                       <node concept="3TrcHB" id="4R_sg7X6SZB" role="2OqNvi">
-                        <reference role="3TsBF5" target="jap4.5613016763942517158" resolve="projectionType" />
+                        <ref role="3TsBF5" to="jap4:4R_sg7X6NAA" resolve="projectionType" />
                       </node>
                       <node concept="pncrf" id="4R_sg7X6SZC" role="2Oq$k0" />
                     </node>
@@ -920,10 +920,10 @@
                   <node concept="3clFbS" id="4R_sg7X6SZD" role="3eOfB_">
                     <node concept="3cpWs6" id="4R_sg7X6SZE" role="3cqZAp">
                       <node concept="2YIFZM" id="4R_sg7X6SZF" role="3cqZAk">
-                        <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
-                        <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
+                        <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+                        <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
                         <node concept="2pYGij" id="4R_sg7X6SZG" role="37wK5m">
-                          <reference role="2pYH_C" target="5944657839017576567" resolve="compact" />
+                          <ref role="2pYH_C" node="59ZEGVPS$xR" resolve="compact" />
                         </node>
                       </node>
                     </node>
@@ -932,8 +932,8 @@
               </node>
               <node concept="3cpWs6" id="4R_sg7X6SZH" role="3cqZAp">
                 <node concept="2YIFZM" id="4R_sg7X6SZI" role="3cqZAk">
-                  <reference role="37wK5l" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolve="emptyList" />
-                  <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                  <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                  <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                 </node>
               </node>
             </node>
@@ -960,7 +960,7 @@
           </node>
           <node concept="l2Vlx" id="uMiWVbXxhI" role="2iSdaV" />
           <node concept="3F0A7n" id="uMiWVbXxhJ" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.554589055677247838" resolve="projectAsCompact" />
+            <ref role="1NtTu8" to="jap4:uMiWVbXz5u" resolve="projectAsCompact" />
           </node>
           <node concept="3F0ifn" id="uMiWVbXxhK" role="3EZMnx">
             <property role="3F0ifm" value="{" />
@@ -969,7 +969,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="uMiWVbXxhN" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.554589055677215272" />
+            <ref role="1NtTu8" to="jap4:uMiWVbXr8C" />
             <node concept="pj6Ft" id="uMiWVbXxhO" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -986,20 +986,20 @@
                   <node concept="3K4zz7" id="uMiWVbX_Is" role="3clFbG">
                     <node concept="2OqwBi" id="uMiWVbX_It" role="3K4Cdx">
                       <node concept="3TrcHB" id="uMiWVbX_Iu" role="2OqNvi">
-                        <reference role="3TsBF5" target="jap4.554589055677247838" resolve="projectAsCompact" />
+                        <ref role="3TsBF5" to="jap4:uMiWVbXz5u" resolve="projectAsCompact" />
                       </node>
                       <node concept="pncrf" id="uMiWVbX_Iv" role="2Oq$k0" />
                     </node>
                     <node concept="2YIFZM" id="uMiWVbX_Iw" role="3K4E3e">
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
-                      <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
                       <node concept="2pYGij" id="uMiWVbX_Ix" role="37wK5m">
-                        <reference role="2pYH_C" target="5944657839017576567" resolve="compact" />
+                        <ref role="2pYH_C" node="59ZEGVPS$xR" resolve="compact" />
                       </node>
                     </node>
                     <node concept="2YIFZM" id="uMiWVbX_Iy" role="3K4GZi">
-                      <reference role="37wK5l" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolve="emptyList" />
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                       <node concept="17QB3L" id="uMiWVbX_Iz" role="3PaCim" />
                     </node>
                   </node>
@@ -1012,20 +1012,20 @@
                   <node concept="3K4zz7" id="uMiWVbXA5Y" role="3clFbG">
                     <node concept="2OqwBi" id="uMiWVbXA5Z" role="3K4Cdx">
                       <node concept="3TrcHB" id="uMiWVbXA60" role="2OqNvi">
-                        <reference role="3TsBF5" target="jap4.554589055677247838" resolve="projectAsCompact" />
+                        <ref role="3TsBF5" to="jap4:uMiWVbXz5u" resolve="projectAsCompact" />
                       </node>
                       <node concept="pncrf" id="uMiWVbXA61" role="2Oq$k0" />
                     </node>
                     <node concept="2YIFZM" id="uMiWVbXA62" role="3K4E3e">
-                      <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                       <node concept="2pYGij" id="uMiWVbXA63" role="37wK5m">
-                        <reference role="2pYH_C" target="5944657839017576565" resolve="rich" />
+                        <ref role="2pYH_C" node="59ZEGVPS$xP" resolve="rich" />
                       </node>
                     </node>
                     <node concept="2YIFZM" id="uMiWVbXA64" role="3K4GZi">
-                      <reference role="37wK5l" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolve="emptyList" />
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                       <node concept="17QB3L" id="uMiWVbXA65" role="3PaCim" />
                     </node>
                   </node>
@@ -1041,7 +1041,7 @@
           </node>
           <node concept="2w$q5c" id="uMiWVbXxi_" role="2whIAn">
             <node concept="2aJ2om" id="uMiWVbXxiA" role="2w$qW5">
-              <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+              <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
             </node>
           </node>
         </node>
@@ -1055,7 +1055,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="55my_QKN6Bw">
-    <reference role="1XX52x" target="jap4.5861024100072045177" resolve="MultipleEditorsTestRefNodeRoot" />
+    <ref role="1XX52x" to="jap4:55my_QKN3DT" resolve="MultipleEditorsTestRefNodeRoot" />
     <node concept="3EZMnI" id="55my_QKO80V" role="2wV5jI">
       <node concept="l2Vlx" id="55my_QKO80W" role="2iSdaV" />
       <node concept="3F0ifn" id="55my_QKO80X" role="3EZMnx">
@@ -1088,7 +1088,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="55my_QKO818" role="3EZMnx">
-          <reference role="1NtTu8" target="jap4.5861024100072057278" />
+          <ref role="1NtTu8" to="jap4:55my_QKN6AY" />
           <node concept="lj46D" id="55my_QKO819" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -1097,7 +1097,7 @@
           </node>
           <node concept="2w$q5c" id="55my_QKVIjn" role="3xwHhi">
             <node concept="2aJ2om" id="55my_QKVIjo" role="2w$qW5">
-              <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+              <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
             </node>
           </node>
         </node>
@@ -1124,7 +1124,7 @@
             </node>
           </node>
           <node concept="3F1sOY" id="55my_QKO81h" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.5861024100072084610" />
+            <ref role="1NtTu8" to="jap4:55my_QKNdi2" />
             <node concept="lj46D" id="55my_QKO81i" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -1133,18 +1133,18 @@
             </node>
             <node concept="2w$q5c" id="55my_QKVIq_" role="3xwHhd">
               <node concept="2aJ2om" id="55my_QKVIqA" role="2w$qW5">
-                <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+                <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
               </node>
             </node>
             <node concept="2w$q5c" id="55my_QKVIqF" role="3xwHhi">
               <node concept="2aJ2om" id="55my_QKVIqG" role="2w$qW5">
-                <reference role="2$4xQ3" target="5944657839017576567" resolve="compact" />
+                <ref role="2$4xQ3" node="59ZEGVPS$xR" resolve="compact" />
               </node>
             </node>
           </node>
           <node concept="2w$q5c" id="55my_QKOc9e" role="2whIAn">
             <node concept="2aJ2om" id="55my_QKOc9f" role="2w$qW5">
-              <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+              <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
             </node>
           </node>
         </node>
@@ -1158,7 +1158,7 @@
           <property role="3F0ifm" value="With presentation:" />
         </node>
         <node concept="3F0A7n" id="1G6ITli8pFM" role="3EZMnx">
-          <reference role="1NtTu8" target="jap4.1947450138886755612" resolve="projectionType" />
+          <ref role="1NtTu8" to="jap4:1G6ITli8lks" resolve="projectionType" />
         </node>
         <node concept="3F0ifn" id="1G6ITli8pFN" role="3EZMnx">
           <property role="3F0ifm" value="{" />
@@ -1167,7 +1167,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="1G6ITli8t4Q" role="3EZMnx">
-          <reference role="1NtTu8" target="jap4.1947450138886755528" />
+          <ref role="1NtTu8" to="jap4:1G6ITli8lj8" />
           <node concept="lj46D" id="1G6ITli8vnQ" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -1180,12 +1180,12 @@
                 <node concept="2OqwBi" id="1G6ITli8uqC" role="3clFbw">
                   <node concept="3t7uKx" id="1G6ITli8uqD" role="2OqNvi">
                     <node concept="uoxfO" id="1G6ITli8uqE" role="3t7uKA">
-                      <reference role="uo_Cq" target="jap4.7687090409437208801" />
+                      <ref role="uo_Cq" to="jap4:6EI1ZZqOi3x" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="1G6ITli8uqF" role="2Oq$k0">
                     <node concept="3TrcHB" id="1G6ITli8uqG" role="2OqNvi">
-                      <reference role="3TsBF5" target="jap4.1947450138886755612" resolve="projectionType" />
+                      <ref role="3TsBF5" to="jap4:1G6ITli8lks" resolve="projectionType" />
                     </node>
                     <node concept="pncrf" id="1G6ITli8uqH" role="2Oq$k0" />
                   </node>
@@ -1193,10 +1193,10 @@
                 <node concept="3clFbS" id="1G6ITli8uqI" role="3clFbx">
                   <node concept="3cpWs6" id="1G6ITli8uqJ" role="3cqZAp">
                     <node concept="2YIFZM" id="1G6ITli8uqK" role="3cqZAk">
-                      <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                       <node concept="2pYGij" id="1G6ITli8uqL" role="37wK5m">
-                        <reference role="2pYH_C" target="5944657839017576565" resolve="rich" />
+                        <ref role="2pYH_C" node="59ZEGVPS$xP" resolve="rich" />
                       </node>
                     </node>
                   </node>
@@ -1205,12 +1205,12 @@
                   <node concept="2OqwBi" id="1G6ITli8uqN" role="3eO9$A">
                     <node concept="3t7uKx" id="1G6ITli8uqO" role="2OqNvi">
                       <node concept="uoxfO" id="1G6ITli8uqP" role="3t7uKA">
-                        <reference role="uo_Cq" target="jap4.7687090409437208798" />
+                        <ref role="uo_Cq" to="jap4:6EI1ZZqOi3u" />
                       </node>
                     </node>
                     <node concept="2OqwBi" id="1G6ITli8uqQ" role="2Oq$k0">
                       <node concept="3TrcHB" id="1G6ITli8uqR" role="2OqNvi">
-                        <reference role="3TsBF5" target="jap4.1947450138886755612" resolve="projectionType" />
+                        <ref role="3TsBF5" to="jap4:1G6ITli8lks" resolve="projectionType" />
                       </node>
                       <node concept="pncrf" id="1G6ITli8uqS" role="2Oq$k0" />
                     </node>
@@ -1218,10 +1218,10 @@
                   <node concept="3clFbS" id="1G6ITli8uqT" role="3eOfB_">
                     <node concept="3cpWs6" id="1G6ITli8uqU" role="3cqZAp">
                       <node concept="2YIFZM" id="1G6ITli8uqV" role="3cqZAk">
-                        <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
-                        <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                        <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                        <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                         <node concept="2pYGij" id="1G6ITli8uqW" role="37wK5m">
-                          <reference role="2pYH_C" target="5944657839017576567" resolve="compact" />
+                          <ref role="2pYH_C" node="59ZEGVPS$xR" resolve="compact" />
                         </node>
                       </node>
                     </node>
@@ -1230,8 +1230,8 @@
               </node>
               <node concept="3cpWs6" id="1G6ITli8uqX" role="3cqZAp">
                 <node concept="2YIFZM" id="1G6ITli8uqY" role="3cqZAk">
-                  <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
-                  <reference role="37wK5l" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolve="emptyList" />
+                  <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+                  <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
                 </node>
               </node>
             </node>
@@ -1258,7 +1258,7 @@
           </node>
           <node concept="l2Vlx" id="1G6ITli8pGI" role="2iSdaV" />
           <node concept="3F0A7n" id="1G6ITli8pGJ" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.1947450138886755613" resolve="projectAsCompact" />
+            <ref role="1NtTu8" to="jap4:1G6ITli8lkt" resolve="projectAsCompact" />
           </node>
           <node concept="3F0ifn" id="1G6ITli8pGK" role="3EZMnx">
             <property role="3F0ifm" value="{" />
@@ -1267,7 +1267,7 @@
             </node>
           </node>
           <node concept="3F1sOY" id="1G6ITli8zLP" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.1947450138886755529" />
+            <ref role="1NtTu8" to="jap4:1G6ITli8lj9" />
             <node concept="lj46D" id="1G6ITli8$nn" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -1280,20 +1280,20 @@
                   <node concept="3K4zz7" id="1G6ITli8$os" role="3clFbG">
                     <node concept="2OqwBi" id="1G6ITli8$ot" role="3K4Cdx">
                       <node concept="3TrcHB" id="1G6ITli8$ou" role="2OqNvi">
-                        <reference role="3TsBF5" target="jap4.1947450138886755613" resolve="projectAsCompact" />
+                        <ref role="3TsBF5" to="jap4:1G6ITli8lkt" resolve="projectAsCompact" />
                       </node>
                       <node concept="pncrf" id="1G6ITli8$ov" role="2Oq$k0" />
                     </node>
                     <node concept="2YIFZM" id="1G6ITli8$ow" role="3K4E3e">
-                      <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                       <node concept="2pYGij" id="1G6ITli8$ox" role="37wK5m">
-                        <reference role="2pYH_C" target="5944657839017576567" resolve="compact" />
+                        <ref role="2pYH_C" node="59ZEGVPS$xR" resolve="compact" />
                       </node>
                     </node>
                     <node concept="2YIFZM" id="1G6ITli8$oy" role="3K4GZi">
-                      <reference role="37wK5l" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolve="emptyList" />
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                       <node concept="17QB3L" id="1G6ITli8$oz" role="3PaCim" />
                     </node>
                   </node>
@@ -1306,20 +1306,20 @@
                   <node concept="3K4zz7" id="1G6ITli8$LL" role="3clFbG">
                     <node concept="2OqwBi" id="1G6ITli8$LM" role="3K4Cdx">
                       <node concept="3TrcHB" id="1G6ITli8$LN" role="2OqNvi">
-                        <reference role="3TsBF5" target="jap4.1947450138886755613" resolve="projectAsCompact" />
+                        <ref role="3TsBF5" to="jap4:1G6ITli8lkt" resolve="projectAsCompact" />
                       </node>
                       <node concept="pncrf" id="1G6ITli8$LO" role="2Oq$k0" />
                     </node>
                     <node concept="2YIFZM" id="1G6ITli8$LP" role="3K4E3e">
-                      <reference role="37wK5l" target="k7g3.~Collections%dsingletonList(java%dlang%dObject)%cjava%dutil%dList" resolve="singletonList" />
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                       <node concept="2pYGij" id="1G6ITli8$LQ" role="37wK5m">
-                        <reference role="2pYH_C" target="5944657839017576565" resolve="rich" />
+                        <ref role="2pYH_C" node="59ZEGVPS$xP" resolve="rich" />
                       </node>
                     </node>
                     <node concept="2YIFZM" id="1G6ITli8$LR" role="3K4GZi">
-                      <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
-                      <reference role="37wK5l" target="k7g3.~Collections%demptyList()%cjava%dutil%dList" resolve="emptyList" />
+                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
                       <node concept="17QB3L" id="1G6ITli8$LS" role="3PaCim" />
                     </node>
                   </node>
@@ -1335,7 +1335,7 @@
           </node>
           <node concept="2w$q5c" id="1G6ITli8pHy" role="2whIAn">
             <node concept="2aJ2om" id="1G6ITli8pHz" role="2w$qW5">
-              <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+              <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
             </node>
           </node>
         </node>
@@ -1349,14 +1349,14 @@
     </node>
   </node>
   <node concept="24kQdi" id="7rR2ExFimAA">
-    <reference role="1XX52x" target="jap4.8572332134193783053" resolve="MultipleEditorsTestMostSpecificChild" />
+    <ref role="1XX52x" to="jap4:7rR2ExFim4d" resolve="MultipleEditorsTestMostSpecificChild" />
     <node concept="3EZMnI" id="7rR2ExFiniq" role="2wV5jI">
       <node concept="l2Vlx" id="7rR2ExFinir" role="2iSdaV" />
       <node concept="3F0ifn" id="7rR2ExFinis" role="3EZMnx">
         <property role="3F0ifm" value="child" />
       </node>
       <node concept="3F0A7n" id="7rR2ExFinit" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="7rR2ExFiniu" role="3EZMnx">
         <property role="3F0ifm" value="{" />
@@ -1380,7 +1380,7 @@
         </node>
       </node>
       <node concept="3F0A7n" id="7rR2ExFiniB" role="3EZMnx">
-        <reference role="1NtTu8" target="jap4.8572332134193785163" resolve="defaultProperty" />
+        <ref role="1NtTu8" to="jap4:7rR2ExFim_b" resolve="defaultProperty" />
         <node concept="ljvvj" id="7rR2ExFiniC" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -1394,17 +1394,17 @@
     </node>
   </node>
   <node concept="24kQdi" id="7rR2ExFks7n">
-    <reference role="1XX52x" target="jap4.8572332134193783053" resolve="MultipleEditorsTestMostSpecificChild" />
+    <ref role="1XX52x" to="jap4:7rR2ExFim4d" resolve="MultipleEditorsTestMostSpecificChild" />
     <node concept="3EZMnI" id="7rR2ExFks7o" role="2wV5jI">
       <node concept="l2Vlx" id="7rR2ExFks7p" role="2iSdaV" />
       <node concept="3F0A7n" id="7rR2ExFks7r" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="7rR2ExFksm_" role="3EZMnx">
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F0A7n" id="7rR2ExFks7z" role="3EZMnx">
-        <reference role="1NtTu8" target="jap4.8572332134193785169" resolve="compactProperty" />
+        <ref role="1NtTu8" to="jap4:7rR2ExFim_h" resolve="compactProperty" />
       </node>
       <node concept="3F0ifn" id="7rR2ExFksov" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -1432,13 +1432,13 @@
       </node>
     </node>
     <node concept="2aJ2om" id="7rR2ExFks8N" role="CpUAK">
-      <reference role="2$4xQ3" target="5944657839017576567" resolve="compact" />
+      <ref role="2$4xQ3" node="59ZEGVPS$xR" resolve="compact" />
     </node>
   </node>
   <node concept="24kQdi" id="7rR2ExFks8t">
-    <reference role="1XX52x" target="jap4.8572332134193783053" resolve="MultipleEditorsTestMostSpecificChild" />
+    <ref role="1XX52x" to="jap4:7rR2ExFim4d" resolve="MultipleEditorsTestMostSpecificChild" />
     <node concept="2aJ2om" id="7rR2ExFks8R" role="CpUAK">
-      <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+      <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
     </node>
     <node concept="3EZMnI" id="7rR2ExFks8u" role="2wV5jI">
       <node concept="3EZMnI" id="7rR2ExFlSCA" role="3EZMnx">
@@ -1456,7 +1456,7 @@
             </node>
           </node>
           <node concept="3F0A7n" id="7rR2ExFlSCG" role="3EZMnx">
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
             <node concept="VPXOz" id="7rR2ExFlSCH" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -1474,7 +1474,7 @@
             <property role="3F0ifm" value="" />
           </node>
           <node concept="3F0A7n" id="7rR2ExFlSCN" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.8572332134193785175" resolve="richProperty" />
+            <ref role="1NtTu8" to="jap4:7rR2ExFim_n" resolve="richProperty" />
             <node concept="VPXOz" id="7rR2ExFlSCO" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -1502,7 +1502,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7rR2ExFim74">
-    <reference role="1XX52x" target="jap4.8572332134193782048" resolve="MultipleEditorsTestMostSpecificRoot" />
+    <ref role="1XX52x" to="jap4:7rR2ExFilOw" resolve="MultipleEditorsTestMostSpecificRoot" />
     <node concept="3EZMnI" id="7rR2ExFimhC" role="2wV5jI">
       <node concept="l2Vlx" id="7rR2ExFimhD" role="2iSdaV" />
       <node concept="3F0ifn" id="7rR2ExFimhE" role="3EZMnx">
@@ -1535,7 +1535,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="7rR2ExFimhP" role="3EZMnx">
-          <reference role="1NtTu8" target="jap4.8572332134193783193" />
+          <ref role="1NtTu8" to="jap4:7rR2ExFim6p" />
           <node concept="l2Vlx" id="7rR2ExFimhQ" role="2czzBx" />
           <node concept="pj6Ft" id="7rR2ExFimhR" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -1549,10 +1549,10 @@
         </node>
         <node concept="2w$q5c" id="7rR2ExFlajo" role="2whIAn">
           <node concept="2aJ2om" id="5wNXW0WWHAi" role="2w$qW5">
-            <reference role="2$4xQ3" target="5944657839017576567" resolve="compact" />
+            <ref role="2$4xQ3" node="59ZEGVPS$xR" resolve="compact" />
           </node>
           <node concept="2aJ2om" id="7rR2ExFmAOc" role="2w$qW5">
-            <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+            <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
           </node>
         </node>
       </node>
@@ -1565,7 +1565,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="13zGF__xbBy">
-    <reference role="1XX52x" target="jap4.1217012833662041875" resolve="MultipleEditorsTestEditorComponentRoot" />
+    <ref role="1XX52x" to="jap4:13zGF__x7Wj" resolve="MultipleEditorsTestEditorComponentRoot" />
     <node concept="3EZMnI" id="13zGF__xgTP" role="2wV5jI">
       <node concept="l2Vlx" id="13zGF__xgTQ" role="2iSdaV" />
       <node concept="3F0ifn" id="13zGF__xgTR" role="3EZMnx">
@@ -1594,7 +1594,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="13zGF__xgU2" role="3EZMnx">
-          <reference role="1NtTu8" target="jap4.1217012833662066878" />
+          <ref role="1NtTu8" to="jap4:13zGF__xe2Y" />
           <node concept="l2Vlx" id="13zGF__xgU3" role="2czzBx" />
           <node concept="pj6Ft" id="13zGF__xgU4" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -1629,7 +1629,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="13zGF__xgUd" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.1217012833662078406" />
+            <ref role="1NtTu8" to="jap4:13zGF__xgR6" />
             <node concept="l2Vlx" id="13zGF__xgUe" role="2czzBx" />
             <node concept="pj6Ft" id="13zGF__xgUf" role="3F10Kt">
               <property role="VOm3f" value="true" />
@@ -1664,7 +1664,7 @@
               </node>
             </node>
             <node concept="3F2HdR" id="13zGF__xgUo" role="3EZMnx">
-              <reference role="1NtTu8" target="jap4.1217012833662078412" />
+              <ref role="1NtTu8" to="jap4:13zGF__xgRc" />
               <node concept="l2Vlx" id="13zGF__xgUp" role="2czzBx" />
               <node concept="pj6Ft" id="13zGF__xgUq" role="3F10Kt">
                 <property role="VOm3f" value="true" />
@@ -1678,13 +1678,13 @@
             </node>
             <node concept="2w$q5c" id="13zGF__xi3J" role="2whIAn">
               <node concept="2aJ2om" id="13zGF__xi3K" role="2w$qW5">
-                <reference role="2$4xQ3" target="5944657839017576567" resolve="compact" />
+                <ref role="2$4xQ3" node="59ZEGVPS$xR" resolve="compact" />
               </node>
             </node>
           </node>
           <node concept="2w$q5c" id="13zGF__xhSa" role="2whIAn">
             <node concept="2aJ2om" id="13zGF__xhSw" role="2w$qW5">
-              <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+              <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
             </node>
           </node>
         </node>
@@ -1708,7 +1708,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="5$r4uFHY$ie" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.6420745394459387140" />
+            <ref role="1NtTu8" to="jap4:5$r4uFHYyk4" />
             <node concept="pj6Ft" id="5$r4uFHY$uO" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -1739,24 +1739,24 @@
     </node>
   </node>
   <node concept="24kQdi" id="13zGF__xdRO">
-    <reference role="1XX52x" target="jap4.1217012833662065273" resolve="MultipleEditorsTestEditorComponentChild" />
+    <ref role="1XX52x" to="jap4:13zGF__xdDT" resolve="MultipleEditorsTestEditorComponentChild" />
     <node concept="3EZMnI" id="13zGF__xihw" role="2wV5jI">
       <node concept="PMmxH" id="13zGF__xiRg" role="3EZMnx">
-        <reference role="PMmxG" target="1217012833662085066" resolve="MultipleEditorsTestEditorComponentChild_default" />
+        <ref role="PMmxG" node="13zGF__xiva" resolve="MultipleEditorsTestEditorComponentChild_default" />
       </node>
       <node concept="l2Vlx" id="13zGF__xihx" role="2iSdaV" />
     </node>
   </node>
   <node concept="PKFIW" id="13zGF__xiva">
     <property role="TrG5h" value="MultipleEditorsTestEditorComponentChild_default" />
-    <reference role="1XX52x" target="jap4.1217012833662065273" resolve="MultipleEditorsTestEditorComponentChild" />
+    <ref role="1XX52x" to="jap4:13zGF__xdDT" resolve="MultipleEditorsTestEditorComponentChild" />
     <node concept="3EZMnI" id="13zGF__xj3t" role="2wV5jI">
       <node concept="l2Vlx" id="13zGF__xj3u" role="2iSdaV" />
       <node concept="3F0ifn" id="13zGF__xj3v" role="3EZMnx">
         <property role="3F0ifm" value="child" />
       </node>
       <node concept="3F0A7n" id="13zGF__xj3w" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="13zGF__xj3x" role="3EZMnx">
         <property role="3F0ifm" value="{" />
@@ -1780,7 +1780,7 @@
         </node>
       </node>
       <node concept="3F0A7n" id="13zGF__xj3C" role="3EZMnx">
-        <reference role="1NtTu8" target="jap4.1217012833662084051" resolve="defaultProperty" />
+        <ref role="1NtTu8" to="jap4:13zGF__xifj" resolve="defaultProperty" />
         <node concept="ljvvj" id="13zGF__xj3D" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -1795,12 +1795,12 @@
   </node>
   <node concept="PKFIW" id="13zGF__ybAO">
     <property role="TrG5h" value="MultipleEditorsTestEditorComponentChild_rich" />
-    <reference role="1XX52x" target="jap4.1217012833662065273" resolve="MultipleEditorsTestEditorComponentChild" />
+    <ref role="1XX52x" to="jap4:13zGF__xdDT" resolve="MultipleEditorsTestEditorComponentChild" />
     <node concept="1PE4EZ" id="13zGF__ybMl" role="1PM95z">
-      <reference role="1PE7su" target="1217012833662085066" resolve="MultipleEditorsTestEditorComponentChild_default" />
+      <ref role="1PE7su" node="13zGF__xiva" resolve="MultipleEditorsTestEditorComponentChild_default" />
     </node>
     <node concept="2aJ2om" id="13zGF__ybMn" role="3XTboT">
-      <reference role="2$4xQ3" target="5944657839017576565" resolve="rich" />
+      <ref role="2$4xQ3" node="59ZEGVPS$xP" resolve="rich" />
     </node>
     <node concept="3EZMnI" id="13zGF__ybZw" role="2wV5jI">
       <node concept="3EZMnI" id="13zGF__ybZx" role="3EZMnx">
@@ -1818,7 +1818,7 @@
             </node>
           </node>
           <node concept="3F0A7n" id="13zGF__ybZB" role="3EZMnx">
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
             <node concept="VPXOz" id="13zGF__ybZC" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -1836,7 +1836,7 @@
             <property role="3F0ifm" value="" />
           </node>
           <node concept="3F0A7n" id="13zGF__ybZI" role="3EZMnx">
-            <reference role="1NtTu8" target="jap4.1217012833662084053" resolve="richProperty" />
+            <ref role="1NtTu8" to="jap4:13zGF__xifl" resolve="richProperty" />
             <node concept="VPXOz" id="13zGF__ybZJ" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -1865,17 +1865,17 @@
   </node>
   <node concept="PKFIW" id="13zGF__z1No">
     <property role="TrG5h" value="MultipleEditorsTestEditorComponentChild_compact" />
-    <reference role="1XX52x" target="jap4.1217012833662065273" resolve="MultipleEditorsTestEditorComponentChild" />
+    <ref role="1XX52x" to="jap4:13zGF__xdDT" resolve="MultipleEditorsTestEditorComponentChild" />
     <node concept="2aJ2om" id="13zGF__z1Ny" role="3XTboT">
-      <reference role="2$4xQ3" target="5944657839017576567" resolve="compact" />
+      <ref role="2$4xQ3" node="59ZEGVPS$xR" resolve="compact" />
     </node>
     <node concept="1PE4EZ" id="13zGF__z1Nu" role="1PM95z">
-      <reference role="1PE7su" target="1217012833662085066" resolve="MultipleEditorsTestEditorComponentChild_default" />
+      <ref role="1PE7su" node="13zGF__xiva" resolve="MultipleEditorsTestEditorComponentChild_default" />
     </node>
     <node concept="3EZMnI" id="13zGF__z20T" role="2wV5jI">
       <node concept="l2Vlx" id="13zGF__z20U" role="2iSdaV" />
       <node concept="3F0A7n" id="13zGF__z20V" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="13zGF__z20W" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -1893,7 +1893,7 @@
         </node>
       </node>
       <node concept="3F0A7n" id="13zGF__z211" role="3EZMnx">
-        <reference role="1NtTu8" target="jap4.1217012833662084052" resolve="compactProperty" />
+        <ref role="1NtTu8" to="jap4:13zGF__xifk" resolve="compactProperty" />
       </node>
       <node concept="3F0ifn" id="13zGF__z212" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -1923,9 +1923,9 @@
   </node>
   <node concept="PKFIW" id="5$r4uFHZxcV">
     <property role="TrG5h" value="MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent" />
-    <reference role="1XX52x" target="jap4.6420745394459388008" resolve="MultipleEditorsTestEditorComponentChildSubconcept" />
+    <ref role="1XX52x" to="jap4:5$r4uFHYyxC" resolve="MultipleEditorsTestEditorComponentChildSubconcept" />
     <node concept="1PE4EZ" id="5$r4uFHZxA2" role="1PM95z">
-      <reference role="1PE7su" target="1217012833662085066" resolve="MultipleEditorsTestEditorComponentChild_default" />
+      <ref role="1PE7su" node="13zGF__xiva" resolve="MultipleEditorsTestEditorComponentChild_default" />
     </node>
     <node concept="3EZMnI" id="5$r4uFHZxNt" role="2wV5jI">
       <node concept="l2Vlx" id="5$r4uFHZxNu" role="2iSdaV" />
@@ -1933,7 +1933,7 @@
         <property role="3F0ifm" value="child subconcept" />
       </node>
       <node concept="3F0A7n" id="5$r4uFHZxNw" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="5$r4uFHZxNx" role="3EZMnx">
         <property role="3F0ifm" value="{" />
@@ -1957,7 +1957,7 @@
         </node>
       </node>
       <node concept="3F0A7n" id="5$r4uFHZxNC" role="3EZMnx">
-        <reference role="1NtTu8" target="jap4.6420745394459648894" resolve="subconceptProperty" />
+        <ref role="1NtTu8" to="jap4:5$r4uFHZydY" resolve="subconceptProperty" />
         <node concept="ljvvj" id="5$r4uFHZxND" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>

@@ -78,7 +78,7 @@
     </language>
   </registry>
   <node concept="WtQ9Q" id="5YNybgUCwJV">
-    <reference role="WuzLi" target="911s.3961775458390522585" resolve="PropertiesComment" />
+    <ref role="WuzLi" to="911s:3rV3sBXezFp" resolve="PropertiesComment" />
     <node concept="11bSqf" id="5YNybgUCwJW" role="11c4hB">
       <node concept="3clFbS" id="5YNybgUCwJX" role="2VODD2">
         <node concept="lc7rE" id="5YNybgUCwJY" role="3cqZAp">
@@ -87,12 +87,12 @@
           </node>
           <node concept="l9hG8" id="5YNybgUCwK2" role="lcghm">
             <node concept="2YIFZM" id="NIUB61i6O8" role="lb14g">
-              <reference role="37wK5l" target="hxqm.6896005762093567755" resolve="escapeComment" />
-              <reference role="1Pybhc" target="hxqm.6896005762093561042" resolve="PropEscapeUtil" />
+              <ref role="37wK5l" to="hxqm:5YNybgUC$Wb" resolve="escapeComment" />
+              <ref role="1Pybhc" to="hxqm:5YNybgUCzji" resolve="PropEscapeUtil" />
               <node concept="2OqwBi" id="NIUB61i6O9" role="37wK5m">
                 <node concept="117lpO" id="NIUB61i6Oa" role="2Oq$k0" />
                 <node concept="3TrcHB" id="NIUB61i6Ob" role="2OqNvi">
-                  <reference role="3TsBF5" target="911s.3961775458390522586" resolve="text" />
+                  <ref role="3TsBF5" to="911s:3rV3sBXezFq" resolve="text" />
                 </node>
               </node>
             </node>
@@ -103,7 +103,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="5YNybgUCwKe">
-    <reference role="WuzLi" target="911s.3961775458390517588" resolve="PropertiesFile" />
+    <ref role="WuzLi" to="911s:3rV3sBXeytk" resolve="PropertiesFile" />
     <node concept="11bSqf" id="5YNybgUCwKf" role="11c4hB">
       <node concept="3clFbS" id="5YNybgUCwKg" role="2VODD2">
         <node concept="lc7rE" id="5YNybgUCxk7" role="3cqZAp">
@@ -113,7 +113,7 @@
             <node concept="2OqwBi" id="5YNybgUCxke" role="lbANJ">
               <node concept="117lpO" id="5YNybgUCxkb" role="2Oq$k0" />
               <node concept="3Tsc0h" id="5YNybgUCxkk" role="2OqNvi">
-                <reference role="3TtcxE" target="911s.3961775458390522563" />
+                <ref role="3TtcxE" to="911s:3rV3sBXezF3" />
               </node>
             </node>
           </node>
@@ -134,7 +134,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="5YNybgUCxkl">
-    <reference role="WuzLi" target="911s.3961775458390522562" resolve="PropertiesLine" />
+    <ref role="WuzLi" to="911s:3rV3sBXezF2" resolve="PropertiesLine" />
     <node concept="11bSqf" id="5YNybgUCxkm" role="11c4hB">
       <node concept="3clFbS" id="5YNybgUCxkn" role="2VODD2">
         <node concept="lc7rE" id="5YNybgUCxko" role="3cqZAp">
@@ -144,18 +144,18 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="5YNybgUCxkt">
-    <reference role="WuzLi" target="911s.3961775458390522561" resolve="PropertiesDeclaration" />
+    <ref role="WuzLi" to="911s:3rV3sBXezF1" resolve="PropertiesDeclaration" />
     <node concept="11bSqf" id="5YNybgUCxku" role="11c4hB">
       <node concept="3clFbS" id="5YNybgUCxkv" role="2VODD2">
         <node concept="lc7rE" id="5YNybgUCxkw" role="3cqZAp">
           <node concept="l9hG8" id="5YNybgUCxky" role="lcghm">
             <node concept="2YIFZM" id="NIUB61i6XW" role="lb14g">
-              <reference role="37wK5l" target="hxqm.6896005762093561578" resolve="escapeKey" />
-              <reference role="1Pybhc" target="hxqm.6896005762093561042" resolve="PropEscapeUtil" />
+              <ref role="37wK5l" to="hxqm:5YNybgUCzrE" resolve="escapeKey" />
+              <ref role="1Pybhc" to="hxqm:5YNybgUCzji" resolve="PropEscapeUtil" />
               <node concept="2OqwBi" id="NIUB61i6XX" role="37wK5m">
                 <node concept="117lpO" id="NIUB61i6XY" role="2Oq$k0" />
                 <node concept="3TrcHB" id="NIUB61i6XZ" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -165,12 +165,12 @@
           </node>
           <node concept="l9hG8" id="5YNybgUCxkK" role="lcghm">
             <node concept="2YIFZM" id="NIUB61i71S" role="lb14g">
-              <reference role="37wK5l" target="hxqm.6896005762093561616" resolve="escapeValue" />
-              <reference role="1Pybhc" target="hxqm.6896005762093561042" resolve="PropEscapeUtil" />
+              <ref role="37wK5l" to="hxqm:5YNybgUCzsg" resolve="escapeValue" />
+              <ref role="1Pybhc" to="hxqm:5YNybgUCzji" resolve="PropEscapeUtil" />
               <node concept="2OqwBi" id="NIUB61i71T" role="37wK5m">
                 <node concept="117lpO" id="NIUB61i71U" role="2Oq$k0" />
                 <node concept="3TrcHB" id="NIUB61i71V" role="2OqNvi">
-                  <reference role="3TsBF5" target="911s.3961775458390522596" resolve="value" />
+                  <ref role="3TsBF5" to="911s:3rV3sBXezF$" resolve="value" />
                 </node>
               </node>
             </node>

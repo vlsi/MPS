@@ -125,14 +125,14 @@
         <node concept="mw_s8" id="2q5hg4g7sX" role="1ZfhKB">
           <node concept="2pJPEk" id="7U4XhjnRdrM" role="mwGJk">
             <node concept="2pJPED" id="7U4XhjnRdrL" role="2pJPEn">
-              <reference role="2pJxaS" target="kisg.5117350825036256333" resolve="WatchableType" />
+              <ref role="2pJxaS" to="kisg:4s4uRp_lDhd" resolve="WatchableType" />
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="2q5hg4g7sW" role="1ZfhK$">
           <node concept="1Z2H0r" id="2q5hg4g4Th" role="mwGJk">
             <node concept="1YBJjd" id="2q5hg4g7sS" role="1Z2MuG">
-              <reference role="1YBMHb" target="43370322128290637" resolve="highLevelWatchableCreator" />
+              <ref role="1YBMHb" node="2q5hg4g4dd" resolve="highLevelWatchableCreator" />
             </node>
           </node>
         </node>
@@ -140,7 +140,7 @@
     </node>
     <node concept="1YaCAy" id="2q5hg4g4dd" role="1YuTPh">
       <property role="TrG5h" value="highLevelWatchableCreator" />
-      <reference role="1YaFvo" target="kisg.43370322128285902" resolve="HighLevelWatchableCreator" />
+      <ref role="1YaFvo" to="kisg:2q5hg4g33e" resolve="HighLevelWatchableCreator" />
     </node>
   </node>
   <node concept="1YbPZF" id="2q5hg4g7t2">
@@ -152,25 +152,25 @@
           <node concept="2EnYce" id="2q5hg4g7B2" role="mwGJk">
             <node concept="2OqwBi" id="2q5hg4g7tf" role="2Oq$k0">
               <node concept="1YBJjd" id="2q5hg4g7te" role="2Oq$k0">
-                <reference role="1YBMHb" target="43370322128303940" resolve="highLevelValue_ConceptFunctionParameter" />
+                <ref role="1YBMHb" node="2q5hg4g7t4" resolve="highLevelValue_ConceptFunctionParameter" />
               </node>
               <node concept="2Xjw5R" id="2q5hg4g7tj" role="2OqNvi">
                 <node concept="1xMEDy" id="2q5hg4g7tk" role="1xVPHs">
                   <node concept="chp4Y" id="2q5hg4g7tn" role="ri$Ld">
-                    <reference role="cht4Q" target="kisg.680105146889009728" resolve="HighLevelCustomViewer" />
+                    <ref role="cht4Q" to="kisg:_Ke0sqeZD0" resolve="HighLevelCustomViewer" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="3TrEf2" id="2q5hg4g7B5" role="2OqNvi">
-              <reference role="3Tt5mk" target="kisg.43370322128256026" />
+              <ref role="3Tt5mk" to="kisg:2q5hg4fVKq" />
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="2q5hg4g7tc" role="1ZfhK$">
           <node concept="1Z2H0r" id="2q5hg4g7t6" role="mwGJk">
             <node concept="1YBJjd" id="2q5hg4g7t8" role="1Z2MuG">
-              <reference role="1YBMHb" target="43370322128303940" resolve="highLevelValue_ConceptFunctionParameter" />
+              <ref role="1YBMHb" node="2q5hg4g7t4" resolve="highLevelValue_ConceptFunctionParameter" />
             </node>
           </node>
         </node>
@@ -178,7 +178,7 @@
     </node>
     <node concept="1YaCAy" id="2q5hg4g7t4" role="1YuTPh">
       <property role="TrG5h" value="highLevelValue_ConceptFunctionParameter" />
-      <reference role="1YaFvo" target="kisg.43370322128272301" resolve="HighLevelValue_ConceptFunctionParameter" />
+      <ref role="1YaFvo" to="kisg:2q5hg4fZIH" resolve="HighLevelValue_ConceptFunctionParameter" />
     </node>
   </node>
   <node concept="2sgARr" id="1AiqN6mKOec">
@@ -188,18 +188,18 @@
       <node concept="3cpWs6" id="1AiqN6mKS7R" role="3cqZAp">
         <node concept="2pJPEk" id="7U4XhjnR3Tw" role="3cqZAk">
           <node concept="2pJPED" id="7U4XhjnR3Tq" role="2pJPEn">
-            <reference role="2pJxaS" target="tpee.1107535904670" resolve="ClassifierType" />
+            <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
             <node concept="2pIpSj" id="7U4XhjnR3Tr" role="2pJxcM">
-              <reference role="2pIpSl" target="tpee.1107535924139" />
+              <ref role="2pIpSl" to="tpee:g7uigIF" />
               <node concept="36bGnv" id="7U4XhjnR3Ts" role="2pJxcZ">
-                <reference role="36bGnp" target="k7g3.~List" resolve="List" />
+                <ref role="36bGnp" to="k7g3:~List" resolve="List" />
               </node>
             </node>
             <node concept="2pIpSj" id="7U4XhjnR3Tu" role="2pJxcM">
-              <reference role="2pIpSl" target="tpee.1109201940907" />
+              <ref role="2pIpSl" to="tpee:g91_B6F" />
               <node concept="36be1Y" id="7U4XhjnR3Tv" role="2pJxcZ">
                 <node concept="2pJPED" id="7U4XhjnR3Tt" role="36be1Z">
-                  <reference role="2pJxaS" target="kisg.5117350825036256333" resolve="WatchableType" />
+                  <ref role="2pJxaS" to="kisg:4s4uRp_lDhd" resolve="WatchableType" />
                 </node>
               </node>
             </node>
@@ -209,7 +209,7 @@
     </node>
     <node concept="1YaCAy" id="1AiqN6mKOee" role="1YuTPh">
       <property role="TrG5h" value="watchableListType" />
-      <reference role="1YaFvo" target="kisg.1842653058274900915" resolve="WatchableListType" />
+      <ref role="1YaFvo" to="kisg:1AiqN6mKNIN" resolve="WatchableListType" />
     </node>
   </node>
   <node concept="2sgARr" id="1AiqN6mLe6Q">
@@ -219,7 +219,7 @@
       <node concept="3cpWs6" id="1AiqN6mLe6T" role="3cqZAp">
         <node concept="2c44tf" id="1AiqN6mLe6V" role="3cqZAk">
           <node concept="3uibUv" id="5jmCI3fO$UN" role="2c44tc">
-            <reference role="3uigEE" target="k7g3.~List" resolve="List" />
+            <ref role="3uigEE" to="k7g3:~List" resolve="List" />
             <node concept="3qTvmN" id="5jmCI3fO$UR" role="11_B2D" />
           </node>
         </node>
@@ -227,7 +227,7 @@
     </node>
     <node concept="1YaCAy" id="1AiqN6mLe6S" role="1YuTPh">
       <property role="TrG5h" value="watchableListType" />
-      <reference role="1YaFvo" target="kisg.1842653058274900915" resolve="WatchableListType" />
+      <ref role="1YaFvo" to="kisg:1AiqN6mKNIN" resolve="WatchableListType" />
     </node>
   </node>
   <node concept="1YbPZF" id="1AiqN6mLfdj">
@@ -238,14 +238,14 @@
         <node concept="mw_s8" id="1AiqN6mLfdu" role="1ZfhKB">
           <node concept="2pJPEk" id="7U4XhjnR9Z9" role="mwGJk">
             <node concept="2pJPED" id="7U4XhjnR9Z8" role="2pJPEn">
-              <reference role="2pJxaS" target="kisg.1842653058274900915" resolve="WatchableListType" />
+              <ref role="2pJxaS" to="kisg:1AiqN6mKNIN" resolve="WatchableListType" />
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="1AiqN6mLfdt" role="1ZfhK$">
           <node concept="1Z2H0r" id="1AiqN6mLfdn" role="mwGJk">
             <node concept="1YBJjd" id="1AiqN6mLfdp" role="1Z2MuG">
-              <reference role="1YBMHb" target="1842653058275013461" resolve="watchablesListCreator" />
+              <ref role="1YBMHb" node="1AiqN6mLfdl" resolve="watchablesListCreator" />
             </node>
           </node>
         </node>
@@ -253,7 +253,7 @@
     </node>
     <node concept="1YaCAy" id="1AiqN6mLfdl" role="1YuTPh">
       <property role="TrG5h" value="watchablesListCreator" />
-      <reference role="1YaFvo" target="kisg.1842653058274900914" resolve="WatchablesListCreator" />
+      <ref role="1YaFvo" to="kisg:1AiqN6mKNIM" resolve="WatchablesListCreator" />
     </node>
   </node>
 </model>

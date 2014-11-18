@@ -73,14 +73,14 @@
       <property role="TrG5h" value="VALUE_PRIMITIVE" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwyW" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwyX" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx1O" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UExaD" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UExaZ" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_primitive" resolve="Db_primitive" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_primitive" resolve="Db_primitive" />
           </node>
         </node>
       </node>
@@ -89,14 +89,14 @@
       <property role="TrG5h" value="VALUE_OBJECT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwyN" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwyO" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx1R" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEukT" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEjzS" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dValue" resolve="Value" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Value" resolve="Value" />
           </node>
         </node>
       </node>
@@ -105,14 +105,14 @@
       <property role="TrG5h" value="VALUE_ARRAY" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="Udqlnt87$B" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="Udqlnt87$C" role="1B3o_S" />
       <node concept="1QGGTA" id="Udqlnt87$D" role="33vP2m">
         <node concept="1QGGSu" id="Udqlnt87$E" role="1QGGTw">
           <node concept="10M0yZ" id="Udqlnt8szd" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_array" resolve="Db_array" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_array" resolve="Db_array" />
           </node>
         </node>
       </node>
@@ -121,14 +121,14 @@
       <property role="TrG5h" value="WATCHABLE_STATIC" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="Udqlnt7A0o" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="Udqlnt7A0p" role="1B3o_S" />
       <node concept="1QGGTA" id="Udqlnt7A0q" role="33vP2m">
         <node concept="1QGGSu" id="Udqlnt7A0r" role="1QGGTw">
           <node concept="10M0yZ" id="Udqlnt7A0s" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dStatic" resolve="Static" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.Static" resolve="Static" />
           </node>
         </node>
       </node>
@@ -137,14 +137,14 @@
       <property role="TrG5h" value="WATCH" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwxO" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwxP" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx2c" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEuKN" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEuL1" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dWatch" resolve="Watch" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Watch" resolve="Watch" />
           </node>
         </node>
       </node>
@@ -153,14 +153,14 @@
       <property role="TrG5h" value="THREAD_RUNNING" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwxF" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwxG" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx2f" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEvgq" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEvgC" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dThreadRunning" resolve="ThreadRunning" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.ThreadRunning" resolve="ThreadRunning" />
           </node>
         </node>
       </node>
@@ -169,14 +169,14 @@
       <property role="TrG5h" value="THREAD_SUSPENDED" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwxy" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwxz" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx2i" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEvDt" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEvDK" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dThreadSuspended" resolve="ThreadSuspended" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.ThreadSuspended" resolve="ThreadSuspended" />
           </node>
         </node>
       </node>
@@ -185,14 +185,14 @@
       <property role="TrG5h" value="THREAD_AT_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="15fzu3GFwxp" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="15fzu3GFwxq" role="1B3o_S" />
       <node concept="1QGGTA" id="15fzu3GFx2l" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEwcj" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEwcx" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dThreadAtBreakpoint" resolve="ThreadAtBreakpoint" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.ThreadAtBreakpoint" resolve="ThreadAtBreakpoint" />
           </node>
         </node>
       </node>

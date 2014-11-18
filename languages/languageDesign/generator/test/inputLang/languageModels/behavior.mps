@@ -113,14 +113,14 @@
     </language>
   </registry>
   <node concept="13h7C7" id="2bpePDE_kZv">
-    <reference role="13h7C2" target="tpm0.1195169091918" resolve="InputNode" />
+    <ref role="13h7C2" to="tpm0:hp5Ch5e" resolve="InputNode" />
     <node concept="13hLZK" id="2bpePDE_kZw" role="13h7CW">
       <node concept="3clFbS" id="2bpePDE_kZx" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="2S48fJgAC8F">
     <property role="3GE5qa" value="RefTest" />
-    <reference role="13h7C2" target="tpm0.3315811491560119803" resolve="RefTestClass" />
+    <ref role="13h7C2" to="tpm0:2S48fJgAlRV" resolve="RefTestClass" />
     <node concept="13hLZK" id="2S48fJgAC8G" role="13h7CW">
       <node concept="3clFbS" id="2S48fJgAC8H" role="2VODD2" />
     </node>
@@ -128,7 +128,7 @@
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getScope" />
-      <reference role="13i0hy" target="tpcu.3734116213129936182" resolve="getScope" />
+      <ref role="13i0hy" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
       <node concept="3Tm1VV" id="2S48fJgAJWR" role="1B3o_S" />
       <node concept="3clFbS" id="2S48fJgAJWS" role="3clF47">
         <node concept="3clFbJ" id="2S48fJgAJXx" role="3cqZAp">
@@ -136,24 +136,24 @@
           <property role="TyiWL" value="false" />
           <node concept="3clFbC" id="2S48fJgAJXC" role="3clFbw">
             <node concept="3TUQnm" id="2S48fJgAJXF" role="3uHU7w">
-              <reference role="3TV0OU" target="tpm0.3315811491560119806" resolve="RefTestMethod" />
+              <ref role="3TV0OU" to="tpm0:2S48fJgAlRY" resolve="RefTestMethod" />
             </node>
             <node concept="37vLTw" id="2BHiRxglwwE" role="3uHU7B">
-              <reference role="3cqZAo" target="3315811491560226617" resolve="kind" />
+              <ref role="3cqZAo" node="2S48fJgAJWT" resolve="kind" />
             </node>
           </node>
           <node concept="3clFbS" id="2S48fJgAJXz" role="3clFbx">
             <node concept="3cpWs6" id="2S48fJgAJXG" role="3cqZAp">
               <node concept="2YIFZM" id="2S48fJgAJXJ" role="3cqZAk">
-                <reference role="37wK5l" target="o8zo.8401916545537277349" resolve="createComposite" />
-                <reference role="1Pybhc" target="o8zo.8401916545537277021" resolve="CompositeScope" />
+                <ref role="37wK5l" to="o8zo:7ipADkTevQ_" resolve="createComposite" />
+                <ref role="1Pybhc" to="o8zo:7ipADkTevLt" resolve="CompositeScope" />
                 <node concept="2YIFZM" id="379IfaV77Et" role="37wK5m">
-                  <reference role="37wK5l" target="o8zo.3587601930838053774" resolve="forNamedElements" />
-                  <reference role="1Pybhc" target="o8zo.8401916545537277014" resolve="SimpleRoleScope" />
+                  <ref role="37wK5l" to="o8zo:379IfaV6Tee" resolve="forNamedElements" />
+                  <ref role="1Pybhc" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
                   <node concept="13iPFW" id="379IfaV77Eu" role="37wK5m" />
                   <node concept="28GBK8" id="379IfaV77Ev" role="37wK5m">
-                    <reference role="28H3Ia" target="tpm0.3315811491560119846" />
-                    <reference role="28GBKb" target="tpm0.3315811491560119803" resolve="RefTestClass" />
+                    <ref role="28H3Ia" to="tpm0:2S48fJgAlSA" />
+                    <ref role="28GBKb" to="tpm0:2S48fJgAlRV" resolve="RefTestClass" />
                   </node>
                 </node>
                 <node concept="3K4zz7" id="2S48fJgAM5C" role="37wK5m">
@@ -161,13 +161,13 @@
                     <node concept="2OqwBi" id="2S48fJgAM5H" role="2Oq$k0">
                       <node concept="13iPFW" id="2S48fJgAM5G" role="2Oq$k0" />
                       <node concept="3TrEf2" id="2S48fJgAM5L" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpm0.3315811491560119805" />
+                        <ref role="3Tt5mk" to="tpm0:2S48fJgAlRX" />
                       </node>
                     </node>
                     <node concept="2qgKlT" id="2S48fJgAM5Q" role="2OqNvi">
-                      <reference role="37wK5l" target="tpcu.3734116213129936182" resolve="getScope" />
+                      <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
                       <node concept="37vLTw" id="2BHiRxgmzsr" role="37wK5m">
-                        <reference role="3cqZAo" target="3315811491560226617" resolve="kind" />
+                        <ref role="3cqZAo" node="2S48fJgAJWT" resolve="kind" />
                       </node>
                       <node concept="13iPFW" id="2S48fJgAM5U" role="37wK5m" />
                     </node>
@@ -178,7 +178,7 @@
                     <node concept="2OqwBi" id="2S48fJgAM5v" role="3uHU7B">
                       <node concept="13iPFW" id="2S48fJgAM5u" role="2Oq$k0" />
                       <node concept="3TrEf2" id="2S48fJgAM5z" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpm0.3315811491560119805" />
+                        <ref role="3Tt5mk" to="tpm0:2S48fJgAlRX" />
                       </node>
                     </node>
                   </node>
@@ -200,13 +200,13 @@
         <node concept="3Tqbb2" id="2S48fJgAJWW" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="2S48fJgAJWX" role="3clF45">
-        <reference role="3uigEE" target="o8zo.3734116213129862372" resolve="Scope" />
+        <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
       </node>
     </node>
   </node>
   <node concept="13h7C7" id="2S48fJgAM5Y">
     <property role="3GE5qa" value="RefTest" />
-    <reference role="13h7C2" target="tpm0.3315811491560119806" resolve="RefTestMethod" />
+    <ref role="13h7C2" to="tpm0:2S48fJgAlRY" resolve="RefTestMethod" />
     <node concept="13hLZK" id="2S48fJgAM5Z" role="13h7CW">
       <node concept="3clFbS" id="2S48fJgAM60" role="2VODD2" />
     </node>
@@ -214,7 +214,7 @@
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getScope" />
-      <reference role="13i0hy" target="tpcu.3734116213129936182" resolve="getScope" />
+      <ref role="13i0hy" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
       <node concept="3Tm1VV" id="2S48fJgAM62" role="1B3o_S" />
       <node concept="3clFbS" id="2S48fJgAM63" role="3clF47">
         <node concept="3clFbJ" id="2S48fJgAM6n" role="3cqZAp">
@@ -223,22 +223,22 @@
           <node concept="3clFbS" id="2S48fJgAM6o" role="3clFbx">
             <node concept="3cpWs6" id="379IfaV77Ao" role="3cqZAp">
               <node concept="2YIFZM" id="379IfaV77Ar" role="3cqZAk">
-                <reference role="37wK5l" target="o8zo.3587601930838053774" resolve="forNamedElements" />
-                <reference role="1Pybhc" target="o8zo.8401916545537277014" resolve="SimpleRoleScope" />
+                <ref role="37wK5l" to="o8zo:379IfaV6Tee" resolve="forNamedElements" />
+                <ref role="1Pybhc" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
                 <node concept="13iPFW" id="379IfaV77As" role="37wK5m" />
                 <node concept="28GBK8" id="379IfaV77At" role="37wK5m">
-                  <reference role="28H3Ia" target="tpm0.3315811491560119872" />
-                  <reference role="28GBKb" target="tpm0.3315811491560119806" resolve="RefTestMethod" />
+                  <ref role="28H3Ia" to="tpm0:2S48fJgAlT0" />
+                  <ref role="28GBKb" to="tpm0:2S48fJgAlRY" resolve="RefTestMethod" />
                 </node>
               </node>
             </node>
           </node>
           <node concept="3clFbC" id="2S48fJgAM6s" role="3clFbw">
             <node concept="3TUQnm" id="2S48fJgAM6v" role="3uHU7w">
-              <reference role="3TV0OU" target="tpm0.3315811491560119808" resolve="RefTestParam" />
+              <ref role="3TV0OU" to="tpm0:2S48fJgAlS0" resolve="RefTestParam" />
             </node>
             <node concept="37vLTw" id="2BHiRxghiBn" role="3uHU7B">
-              <reference role="3cqZAo" target="3315811491560235396" resolve="kind" />
+              <ref role="3cqZAo" node="2S48fJgAM64" resolve="kind" />
             </node>
           </node>
         </node>
@@ -255,7 +255,7 @@
         <node concept="3Tqbb2" id="2S48fJgAM67" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="2S48fJgAM68" role="3clF45">
-        <reference role="3uigEE" target="o8zo.3734116213129862372" resolve="Scope" />
+        <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
       </node>
     </node>
   </node>

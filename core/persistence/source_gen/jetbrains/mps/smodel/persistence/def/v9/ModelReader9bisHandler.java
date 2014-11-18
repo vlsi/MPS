@@ -462,11 +462,11 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
         });
         return propertyHandler;
       }
-      if ("reference".equals(tagName)) {
+      if ("ref".equals(tagName)) {
         myChildHandlersStack.push(new ModelReader9bisHandler.ChildHandler() {
           @Override
           public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_5480414999147804199(resultObject, value);
+            handleChild_4968492044127349726(resultObject, value);
           }
         });
         return referenceHandler;
@@ -504,7 +504,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
       Tuples._2<SProperty, String> child = (Tuples._2<SProperty, String>) value;
       result._0().setProperty(child._0(), child._1());
     }
-    private void handleChild_5480414999147804199(Object resultObject, Object value) throws SAXException {
+    private void handleChild_4968492044127349726(Object resultObject, Object value) throws SAXException {
       Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink> result = (Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink>) resultObject;
       Tuples._4<SReferenceLink, SModelReference, SNodeId, String> child = (Tuples._4<SReferenceLink, SModelReference, SNodeId, String>) value;
       SModelReference targetModel = child._1();
@@ -546,12 +546,19 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
   }
   public class ReferenceElementHandler extends ModelReader9bisHandler.ElementHandler {
     public ReferenceElementHandler() {
-      setRequiredAttributes("role", "target");
+      setRequiredAttributes("role");
     }
     @Override
     protected Tuples._4<SReferenceLink, SModelReference, SNodeId, String> createObject(Attributes attrs) throws SAXException {
-      Pair<SModelReference, SNodeId> r = my_idEncoderField.parseNodeReference(my_importHelperField, attrs.getValue("target"));
-      return MultiTuple.<SReferenceLink,SModelReference,SNodeId,String>from(my_idHelperField.readAssociation(attrs.getValue("role")), r.o1, r.o2, attrs.getValue("resolve"));
+      SReferenceLink association = my_idHelperField.readAssociation(attrs.getValue("role"));
+      if (attrs.getValue("node") != null) {
+        // local reference 
+        SNodeId targetNode = my_idEncoderField.parseLocalNodeReference(attrs.getValue("node"));
+        return MultiTuple.<SReferenceLink,SModelReference,SNodeId,String>from(association, my_modelField.getReference(), targetNode, attrs.getValue("resolve"));
+      } else {
+        Pair<SModelReference, SNodeId> r = my_idEncoderField.parseExternalNodeReference(my_importHelperField, attrs.getValue("to"));
+        return MultiTuple.<SReferenceLink,SModelReference,SNodeId,String>from(association, r.o1, r.o2, attrs.getValue("resolve"));
+      }
     }
   }
   public class IgnoredNodeElementHandler extends ModelReader9bisHandler.ElementHandler {
@@ -568,7 +575,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
         myChildHandlersStack.push(null);
         return ignoredPropertyHandler;
       }
-      if ("reference".equals(tagName)) {
+      if ("ref".equals(tagName)) {
         myChildHandlersStack.push(null);
         return ignoredReferenceHandler;
       }

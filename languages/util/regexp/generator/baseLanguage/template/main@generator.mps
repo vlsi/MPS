@@ -356,33 +356,33 @@
   <node concept="bUwia" id="h5QiWlN">
     <property role="TrG5h" value="main" />
     <node concept="1puMqW" id="67iNJ0IUMLF" role="1puA0r">
-      <reference role="1puQsG" target="7048923897762709814" resolve="enum_RegexpUsages" />
+      <ref role="1puQsG" node="67iNJ0IU84Q" resolve="enum_RegexpUsages" />
     </node>
     <node concept="3lhOvk" id="h5Z61Kz" role="3lj3bC">
-      <reference role="2sgKRv" target="1215475933721" resolve="closure_adapterClass" />
-      <reference role="3lhOvi" target="1174658244528" resolve="ReplacerTemplate" />
-      <reference role="30HIoZ" target="tpfo.1174656254036" resolve="ReplaceBlock" />
+      <ref role="2sgKRv" node="hG00I8p" resolve="closure_adapterClass" />
+      <ref role="3lhOvi" node="h5Z5_YK" resolve="ReplacerTemplate" />
+      <ref role="30HIoZ" to="tpfo:h5YY01k" resolve="ReplaceBlock" />
     </node>
     <node concept="3aamgX" id="h5Qj1dO" role="3acgRq">
-      <reference role="30HIoZ" target="tpfo.1174510540317" resolve="InlineRegexpExpression" />
+      <ref role="30HIoZ" to="tpfo:h5Qi9ot" resolve="InlineRegexpExpression" />
       <node concept="j$656" id="h5QjAAY" role="1lVwrX">
-        <reference role="v9R2y" target="1174510782150" resolve="reduce_InlineRegexp" />
+        <ref role="v9R2y" node="h5Qj4r6" resolve="reduce_InlineRegexp" />
       </node>
     </node>
     <node concept="3aamgX" id="handZhC" role="3acgRq">
-      <reference role="30HIoZ" target="tpfo.1179357154354" resolve="MatchRegexpExpression" />
+      <ref role="30HIoZ" to="tpfo:hanawKM" resolve="MatchRegexpExpression" />
       <node concept="j$656" id="haneiVU" role="1lVwrX">
-        <reference role="v9R2y" target="1179358112803" resolve="reduce_MatchRegexpExpression" />
+        <ref role="v9R2y" node="haneaKz" resolve="reduce_MatchRegexpExpression" />
       </node>
     </node>
     <node concept="3aamgX" id="h5QrqA7" role="3acgRq">
-      <reference role="30HIoZ" target="tpfo.1174512414484" resolve="MatchRegexpStatement" />
+      <ref role="30HIoZ" to="tpfo:h5QpiWk" resolve="MatchRegexpStatement" />
       <node concept="j$656" id="h5Qrrmu" role="1lVwrX">
-        <reference role="v9R2y" target="1174512791870" resolve="reduce_MatchRegexp" />
+        <ref role="v9R2y" node="h5QqJ4Y" resolve="reduce_MatchRegexp" />
       </node>
     </node>
     <node concept="3aamgX" id="6XlzavggAes" role="3acgRq">
-      <reference role="30HIoZ" target="tpfo.1174565027678" resolve="MatchVariableReference" />
+      <ref role="30HIoZ" to="tpfo:h5TxZXu" resolve="MatchVariableReference" />
       <node concept="14YyZ8" id="2fFuTuK0UdE" role="1lVwrX">
         <node concept="14ZrTv" id="2fFuTuK0UdS" role="14ZwWg">
           <node concept="30G5F_" id="2fFuTuK0UdT" role="150hEN">
@@ -391,14 +391,14 @@
                 <node concept="3cpWsn" id="2fFuTuK1qqa" role="3cpWs9">
                   <property role="TrG5h" value="ruc" />
                   <node concept="3Tqbb2" id="2fFuTuK1qqb" role="1tU5fm">
-                    <reference role="ehGHo" target="tpfo.1174653354106" resolve="RegexpUsingConstruction" />
+                    <ref role="ehGHo" to="tpfo:h5YMW1U" resolve="RegexpUsingConstruction" />
                   </node>
                   <node concept="2OqwBi" id="2fFuTuK1qqe" role="33vP2m">
                     <node concept="30H73N" id="2fFuTuK1qqd" role="2Oq$k0" />
                     <node concept="2Xjw5R" id="2fFuTuK1vgT" role="2OqNvi">
                       <node concept="1xMEDy" id="2fFuTuK1vgU" role="1xVPHs">
                         <node concept="chp4Y" id="2fFuTuK1vgX" role="ri$Ld">
-                          <reference role="cht4Q" target="tpfo.1174653354106" resolve="RegexpUsingConstruction" />
+                          <ref role="cht4Q" to="tpfo:h5YMW1U" resolve="RegexpUsingConstruction" />
                         </node>
                       </node>
                     </node>
@@ -409,21 +409,21 @@
                 <node concept="22lmx$" id="2fFuTuK0Uej" role="3cqZAk">
                   <node concept="2OqwBi" id="2fFuTuK1vh7" role="3uHU7w">
                     <node concept="37vLTw" id="3GM_nagTBnm" role="2Oq$k0">
-                      <reference role="3cqZAo" target="2588298302277920394" resolve="ruc" />
+                      <ref role="3cqZAo" node="2fFuTuK1qqa" resolve="ruc" />
                     </node>
                     <node concept="1mIQ4w" id="2fFuTuK1vhb" role="2OqNvi">
                       <node concept="chp4Y" id="2fFuTuK1vhd" role="cj9EA">
-                        <reference role="cht4Q" target="tpfo.1222260556146" resolve="ReplaceWithRegexpOperation" />
+                        <ref role="cht4Q" to="tpfo:hMkq05M" resolve="ReplaceWithRegexpOperation" />
                       </node>
                     </node>
                   </node>
                   <node concept="2OqwBi" id="2fFuTuK1vgZ" role="3uHU7B">
                     <node concept="37vLTw" id="3GM_nagTyr$" role="2Oq$k0">
-                      <reference role="3cqZAo" target="2588298302277920394" resolve="ruc" />
+                      <ref role="3cqZAo" node="2fFuTuK1qqa" resolve="ruc" />
                     </node>
                     <node concept="1mIQ4w" id="2fFuTuK1vh3" role="2OqNvi">
                       <node concept="chp4Y" id="2fFuTuK1vh5" role="cj9EA">
-                        <reference role="cht4Q" target="tpfo.1174655989549" resolve="ReplaceWithRegexpExpression" />
+                        <ref role="cht4Q" to="tpfo:h5YWZsH" resolve="ReplaceWithRegexpExpression" />
                       </node>
                     </node>
                   </node>
@@ -432,36 +432,36 @@
             </node>
           </node>
           <node concept="j$656" id="2fFuTuK0Uem" role="150oIE">
-            <reference role="v9R2y" target="1174659580870" resolve="reduce_MatchVariableReference_ReplaceExpression" />
+            <ref role="v9R2y" node="h5ZaGf6" resolve="reduce_MatchVariableReference_ReplaceExpression" />
           </node>
         </node>
         <node concept="j$656" id="2fFuTuK0Ueo" role="14YRTM">
-          <reference role="v9R2y" target="1175170026377" resolve="reduce_MatchVariableReference" />
+          <ref role="v9R2y" node="h6t_SI9" resolve="reduce_MatchVariableReference" />
         </node>
       </node>
     </node>
     <node concept="3aamgX" id="h5Z8Tcz" role="3acgRq">
-      <reference role="30HIoZ" target="tpfo.1174655989549" resolve="ReplaceWithRegexpExpression" />
+      <ref role="30HIoZ" to="tpfo:h5YWZsH" resolve="ReplaceWithRegexpExpression" />
       <node concept="j$656" id="h5Z8XAV" role="1lVwrX">
-        <reference role="v9R2y" target="1174657156447" resolve="reduce_ReplaceWithRegexp" />
+        <ref role="v9R2y" node="h5Z1slv" resolve="reduce_ReplaceWithRegexp" />
       </node>
     </node>
     <node concept="3aamgX" id="h6sIsuK" role="3acgRq">
-      <reference role="30HIoZ" target="tpfo.1175154849582" resolve="ForEachMatchStatement" />
+      <ref role="30HIoZ" to="tpfo:h6sFZsI" resolve="ForEachMatchStatement" />
       <node concept="j$656" id="h6sIw08" role="1lVwrX">
-        <reference role="v9R2y" target="1175155416895" resolve="reduce_ForEachMatchStatement" />
+        <ref role="v9R2y" node="h6sI9WZ" resolve="reduce_ForEachMatchStatement" />
       </node>
     </node>
     <node concept="3aamgX" id="h6tiDYW" role="3acgRq">
-      <reference role="30HIoZ" target="tpfo.1175164405556" resolve="SplitExpression" />
+      <ref role="30HIoZ" to="tpfo:h6tgssO" resolve="SplitExpression" />
       <node concept="j$656" id="h6tiF0q" role="1lVwrX">
-        <reference role="v9R2y" target="1175164916487" resolve="reduce_SplitExpression" />
+        <ref role="v9R2y" node="h6tipc7" resolve="reduce_SplitExpression" />
       </node>
     </node>
     <node concept="3aamgX" id="hMklzoM" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1197027756228" resolve="DotExpression" />
+      <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="j$656" id="hMklDbb" role="1lVwrX">
-        <reference role="v9R2y" target="1222257072263" resolve="reduce_SplitOperation" />
+        <ref role="v9R2y" node="hMkcHy7" resolve="reduce_SplitOperation" />
       </node>
       <node concept="30G5F_" id="hMkl_qt" role="30HLyM">
         <node concept="3clFbS" id="hMkl_qu" role="2VODD2">
@@ -470,12 +470,12 @@
               <node concept="2OqwBi" id="hMkl_Gm" role="2Oq$k0">
                 <node concept="30H73N" id="hMkl_EC" role="2Oq$k0" />
                 <node concept="3TrEf2" id="hMklA_y" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1197027833540" />
+                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="hMklBeo" role="2OqNvi">
                 <node concept="chp4Y" id="hMklC9Y" role="cj9EA">
-                  <reference role="cht4Q" target="tpfo.1222256539755" resolve="SplitOperation" />
+                  <ref role="cht4Q" to="tpfo:hMkaFxF" resolve="SplitOperation" />
                 </node>
               </node>
             </node>
@@ -484,9 +484,9 @@
       </node>
     </node>
     <node concept="3aamgX" id="hMksoni" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1197027756228" resolve="DotExpression" />
+      <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="j$656" id="hMksN8_" role="1lVwrX">
-        <reference role="v9R2y" target="1222261236269" resolve="reduce_ReplaceOperation" />
+        <ref role="v9R2y" node="hMksA8H" resolve="reduce_ReplaceOperation" />
       </node>
       <node concept="30G5F_" id="hMksqiB" role="30HLyM">
         <node concept="3clFbS" id="hMksqiC" role="2VODD2">
@@ -495,12 +495,12 @@
               <node concept="2OqwBi" id="hMksruQ" role="2Oq$k0">
                 <node concept="30H73N" id="hMksr30" role="2Oq$k0" />
                 <node concept="3TrEf2" id="hMkssDQ" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1197027833540" />
+                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="hMksuIz" role="2OqNvi">
                 <node concept="chp4Y" id="hMksvOC" role="cj9EA">
-                  <reference role="cht4Q" target="tpfo.1222260556146" resolve="ReplaceWithRegexpOperation" />
+                  <ref role="cht4Q" to="tpfo:hMkq05M" resolve="ReplaceWithRegexpOperation" />
                 </node>
               </node>
             </node>
@@ -509,9 +509,9 @@
       </node>
     </node>
     <node concept="3aamgX" id="hMkudmo" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1197027756228" resolve="DotExpression" />
+      <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="j$656" id="hMkusdL" role="1lVwrX">
-        <reference role="v9R2y" target="1222261613401" resolve="reduce_MatchRegexpOperation" />
+        <ref role="v9R2y" node="hMku2dp" resolve="reduce_MatchRegexpOperation" />
       </node>
       <node concept="30G5F_" id="hMkuexB" role="30HLyM">
         <node concept="3clFbS" id="hMkuexC" role="2VODD2">
@@ -520,12 +520,12 @@
               <node concept="2OqwBi" id="hMkufCH" role="2Oq$k0">
                 <node concept="30H73N" id="hMkuffN" role="2Oq$k0" />
                 <node concept="3TrEf2" id="hMkugDd" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1197027833540" />
+                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="hMkuhsM" role="2OqNvi">
                 <node concept="chp4Y" id="hMkujJi" role="cj9EA">
-                  <reference role="cht4Q" target="tpfo.1222260469397" resolve="MatchRegexpOperation" />
+                  <ref role="cht4Q" to="tpfo:hMkpEUl" resolve="MatchRegexpOperation" />
                 </node>
               </node>
             </node>
@@ -534,9 +534,9 @@
       </node>
     </node>
     <node concept="3aamgX" id="3iI_KKp9pFN" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1197027756228" resolve="DotExpression" />
+      <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="j$656" id="3iI_KKpbdNs" role="1lVwrX">
-        <reference role="v9R2y" target="3796137614137206922" resolve="reduce_ReplaceRegexpOperation" />
+        <ref role="v9R2y" node="3iI_KKp9qya" resolve="reduce_ReplaceRegexpOperation" />
       </node>
       <node concept="30G5F_" id="3iI_KKp9qez" role="30HLyM">
         <node concept="3clFbS" id="3iI_KKp9qe$" role="2VODD2">
@@ -545,12 +545,12 @@
               <node concept="2OqwBi" id="3iI_KKp9qeB" role="2Oq$k0">
                 <node concept="30H73N" id="3iI_KKp9qeA" role="2Oq$k0" />
                 <node concept="3TrEf2" id="3iI_KKp9qy2" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1197027833540" />
+                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="3iI_KKp9qy7" role="2OqNvi">
                 <node concept="chp4Y" id="3iI_KKp9qy9" role="cj9EA">
-                  <reference role="cht4Q" target="tpfo.3796137614137086346" resolve="ReplaceRegexpOperation" />
+                  <ref role="cht4Q" to="tpfo:3iI_KKp8X6a" resolve="ReplaceRegexpOperation" />
                 </node>
               </node>
             </node>
@@ -559,9 +559,9 @@
       </node>
     </node>
     <node concept="3aamgX" id="h6t_jRp" role="3acgRq">
-      <reference role="30HIoZ" target="tpfo.1175169009571" resolve="FindMatchStatement" />
+      <ref role="30HIoZ" to="tpfo:h6ty0uz" resolve="FindMatchStatement" />
       <node concept="j$656" id="h6t_m7e" role="1lVwrX">
-        <reference role="v9R2y" target="1175169578541" resolve="reduce_FindMatchStatement" />
+        <ref role="v9R2y" node="h6t$boH" resolve="reduce_FindMatchStatement" />
       </node>
     </node>
     <node concept="2rT7sh" id="hG00I8p" role="2rTMjI">
@@ -569,21 +569,21 @@
     </node>
     <node concept="2rT7sh" id="hG0dCHL" role="2rTMjI">
       <property role="TrG5h" value="matcher" />
-      <reference role="2rZz_L" target="tpee.1068581242863" resolve="LocalVariableDeclaration" />
+      <ref role="2rZz_L" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
     </node>
     <node concept="2rT7sh" id="hG0dD4G" role="2rTMjI">
       <property role="TrG5h" value="precompiledRegexp" />
-      <reference role="2rZz_L" target="tpee.1070462154015" resolve="StaticFieldDeclaration" />
+      <ref role="2rZz_L" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
     </node>
     <node concept="aNPBN" id="hKbrEFo" role="aQYdv">
-      <reference role="aOQi4" target="tpfo.1174662351725" resolve="Regexps" />
+      <ref role="aOQi4" to="tpfo:h5ZlgHH" resolve="Regexps" />
     </node>
     <node concept="aNPBN" id="5lEWpnABFZw" role="aQYdv">
-      <reference role="aOQi4" target="tpfo.1174554406855" resolve="PredefinedSymbolClasses" />
+      <ref role="aOQi4" to="tpfo:h5STuZ7" resolve="PredefinedSymbolClasses" />
     </node>
     <node concept="3aamgX" id="5kfJOUWnQnO" role="3acgRq">
       <property role="3GE5qa" value="Expressions" />
-      <reference role="30HIoZ" target="tpfo.6129327962763158517" resolve="FindMatchExpression" />
+      <ref role="30HIoZ" to="tpfo:5kfJOUWnufP" resolve="FindMatchExpression" />
       <node concept="14YyZ8" id="3Hqlh1$F2R7" role="1lVwrX">
         <node concept="14ZrTv" id="3Hqlh1$F2R9" role="14ZwWg">
           <node concept="30G5F_" id="3Hqlh1$F2Ra" role="150hEN">
@@ -591,8 +591,8 @@
               <node concept="3clFbF" id="3Hqlh1$F2SG" role="3cqZAp">
                 <node concept="3y3z36" id="3Hqlh1$F2SS" role="3clFbG">
                   <node concept="2YIFZM" id="6XMl2rPaX8M" role="3uHU7B">
-                    <reference role="37wK5l" target="tpft.8030573611853795847" resolve="getRegexpIfContainer" />
-                    <reference role="1Pybhc" target="tpft.8030573611853647771" resolve="RegexUtil" />
+                    <ref role="37wK5l" to="tpft:6XMl2rPaX87" resolve="getRegexpIfContainer" />
+                    <ref role="1Pybhc" to="tpft:6XMl2rPaoYr" resolve="RegexUtil" />
                     <node concept="30H73N" id="3Hqlh1$F2SJ" role="37wK5m" />
                   </node>
                   <node concept="10Nm6u" id="3Hqlh1$F2SV" role="3uHU7w" />
@@ -601,16 +601,16 @@
             </node>
           </node>
           <node concept="j$656" id="3Hqlh1$F2T3" role="150oIE">
-            <reference role="v9R2y" target="4276824325038550588" resolve="reduce_FindMatchExpressionWithVar" />
+            <ref role="v9R2y" node="3Hqlh1$F2SW" resolve="reduce_FindMatchExpressionWithVar" />
           </node>
         </node>
         <node concept="j$656" id="3Hqlh1$F2Re" role="14YRTM">
-          <reference role="v9R2y" target="6129327962763257335" resolve="reduce_FindMatchExpression" />
+          <ref role="v9R2y" node="5kfJOUWnQnR" resolve="reduce_FindMatchExpression" />
         </node>
       </node>
     </node>
     <node concept="3aamgX" id="67iNJ0IVn5W" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1068580123136" resolve="StatementList" />
+      <ref role="30HIoZ" to="tpee:fzclF80" resolve="StatementList" />
       <node concept="gft3U" id="67iNJ0IVn6u" role="1lVwrX">
         <node concept="3clFbS" id="67iNJ0IVn6x" role="gfFT$">
           <node concept="3clFbH" id="3f9chO0e_ik" role="3cqZAp">
@@ -624,14 +624,14 @@
                           <node concept="2OqwBi" id="3f9chO0e_i_" role="2Oq$k0">
                             <node concept="30H73N" id="3f9chO0e_iA" role="2Oq$k0" />
                             <node concept="3Tsc0h" id="3f9chO0e_iB" role="2OqNvi">
-                              <reference role="3TtcxE" target="tpee.1068581517665" />
+                              <ref role="3TtcxE" to="tpee:fzcqZ_x" />
                             </node>
                           </node>
                           <node concept="1uHKPH" id="3f9chO0e_iC" role="2OqNvi" />
                         </node>
                         <node concept="1mIQ4w" id="3f9chO0e_iD" role="2OqNvi">
                           <node concept="chp4Y" id="3f9chO0e_iE" role="cj9EA">
-                            <reference role="cht4Q" target="tpee.1241540912639" resolve="ConstructorInvocationStatement" />
+                            <ref role="cht4Q" to="tpee:i4hAInZ" resolve="ConstructorInvocationStatement" />
                           </node>
                         </node>
                       </node>
@@ -642,7 +642,7 @@
                         </node>
                         <node concept="1mIQ4w" id="3f9chO0e_iJ" role="2OqNvi">
                           <node concept="chp4Y" id="3f9chO0eC$t" role="cj9EA">
-                            <reference role="cht4Q" target="tpee.1068580123140" resolve="ConstructorDeclaration" />
+                            <ref role="cht4Q" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
                           </node>
                         </node>
                       </node>
@@ -659,7 +659,7 @@
                       <node concept="2OqwBi" id="3f9chO0e_iS" role="2Oq$k0">
                         <node concept="30H73N" id="3f9chO0e_iR" role="2Oq$k0" />
                         <node concept="3Tsc0h" id="3f9chO0e_iW" role="2OqNvi">
-                          <reference role="3TtcxE" target="tpee.1068581517665" />
+                          <ref role="3TtcxE" to="tpee:fzcqZ_x" />
                         </node>
                       </node>
                       <node concept="1uHKPH" id="3f9chO0e_j1" role="2OqNvi" />
@@ -680,7 +680,7 @@
                         <node concept="2Rf3mk" id="3Hqlh1$F2QW" role="2OqNvi">
                           <node concept="1xMEDy" id="3Hqlh1$F2QX" role="1xVPHs">
                             <node concept="chp4Y" id="3Hqlh1$F2R3" role="ri$Ld">
-                              <reference role="cht4Q" target="tpfo.6129327962763158517" resolve="FindMatchExpression" />
+                              <ref role="cht4Q" to="tpfo:5kfJOUWnufP" resolve="FindMatchExpression" />
                             </node>
                           </node>
                         </node>
@@ -691,13 +691,13 @@
                             <node concept="3clFbF" id="6XlzavgcXoe" role="3cqZAp">
                               <node concept="2OqwBi" id="6XlzavgcXsA" role="3clFbG">
                                 <node concept="Rm8GO" id="6XlzavgcXsw" role="2Oq$k0">
-                                  <reference role="Rm8GQ" target="tpfr.8022472963610889555" resolve="REGEXP_NEED_VAR" />
-                                  <reference role="1Px2BO" target="tpfr.7048923897762709721" resolve="Flags" />
+                                  <ref role="Rm8GQ" to="tpfr:6XlzavgcWPj" resolve="REGEXP_NEED_VAR" />
+                                  <ref role="1Px2BO" to="tpfr:67iNJ0IU83p" resolve="Flags" />
                                 </node>
                                 <node concept="liA8E" id="6XlzavgcXsJ" role="2OqNvi">
-                                  <reference role="37wK5l" target="tpfr.7048923897762709769" resolve="isFlagged" />
+                                  <ref role="37wK5l" to="tpfr:67iNJ0IU849" resolve="isFlagged" />
                                   <node concept="37vLTw" id="2BHiRxgl1$L" role="37wK5m">
-                                    <reference role="3cqZAo" target="8022472963610891785" resolve="it" />
+                                    <ref role="3cqZAo" node="6XlzavgcXo9" resolve="it" />
                                   </node>
                                 </node>
                               </node>
@@ -715,7 +715,7 @@
               </node>
             </node>
             <node concept="xERo3" id="67iNJ0IVn7J" role="lGtFl">
-              <reference role="xH3mL" target="7048923897763035668" resolve="insert_MatcherLocalVariable" />
+              <ref role="xH3mL" node="67iNJ0IVnCk" resolve="insert_MatcherLocalVariable" />
             </node>
           </node>
           <node concept="3clFbH" id="67iNJ0IVn6y" role="3cqZAp">
@@ -729,7 +729,7 @@
                           <node concept="2OqwBi" id="3f9chO0e_hP" role="2Oq$k0">
                             <node concept="30H73N" id="3f9chO0e_hO" role="2Oq$k0" />
                             <node concept="3Tsc0h" id="3f9chO0e_hT" role="2OqNvi">
-                              <reference role="3TtcxE" target="tpee.1068581517665" />
+                              <ref role="3TtcxE" to="tpee:fzcqZ_x" />
                             </node>
                           </node>
                           <node concept="1eb2uI" id="3f9chO0e_ih" role="2OqNvi">
@@ -746,14 +746,14 @@
                           <node concept="2OqwBi" id="3f9chO0e_hx" role="2Oq$k0">
                             <node concept="30H73N" id="3f9chO0e_hw" role="2Oq$k0" />
                             <node concept="3Tsc0h" id="3f9chO0e_h_" role="2OqNvi">
-                              <reference role="3TtcxE" target="tpee.1068581517665" />
+                              <ref role="3TtcxE" to="tpee:fzcqZ_x" />
                             </node>
                           </node>
                           <node concept="1uHKPH" id="3f9chO0e_hE" role="2OqNvi" />
                         </node>
                         <node concept="1mIQ4w" id="3f9chO0e_hJ" role="2OqNvi">
                           <node concept="chp4Y" id="3f9chO0e_hL" role="cj9EA">
-                            <reference role="cht4Q" target="tpee.1241540912639" resolve="ConstructorInvocationStatement" />
+                            <ref role="cht4Q" to="tpee:i4hAInZ" resolve="ConstructorInvocationStatement" />
                           </node>
                         </node>
                       </node>
@@ -764,7 +764,7 @@
                         </node>
                         <node concept="1mIQ4w" id="3f9chO0e_hd" role="2OqNvi">
                           <node concept="chp4Y" id="3f9chO0eC$s" role="cj9EA">
-                            <reference role="cht4Q" target="tpee.1068580123140" resolve="ConstructorDeclaration" />
+                            <ref role="cht4Q" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
                           </node>
                         </node>
                       </node>
@@ -774,7 +774,7 @@
                     <node concept="2OqwBi" id="67iNJ0IVn6D" role="3clFbG">
                       <node concept="30H73N" id="67iNJ0IVn6C" role="2Oq$k0" />
                       <node concept="3Tsc0h" id="67iNJ0IVn6H" role="2OqNvi">
-                        <reference role="3TtcxE" target="tpee.1068581517665" />
+                        <ref role="3TtcxE" to="tpee:fzcqZ_x" />
                       </node>
                     </node>
                   </node>
@@ -792,11 +792,11 @@
               <node concept="10P_77" id="67iNJ0IVn62" role="1tU5fm" />
               <node concept="2OqwBi" id="67iNJ0IVn66" role="33vP2m">
                 <node concept="Rm8GO" id="67iNJ0IVn65" role="2Oq$k0">
-                  <reference role="Rm8GQ" target="tpfr.7048923897763033401" resolve="ADD_VARS" />
-                  <reference role="1Px2BO" target="tpfr.7048923897762709721" resolve="Flags" />
+                  <ref role="Rm8GQ" to="tpfr:67iNJ0IVn4T" resolve="ADD_VARS" />
+                  <ref role="1Px2BO" to="tpfr:67iNJ0IU83p" resolve="Flags" />
                 </node>
                 <node concept="liA8E" id="67iNJ0IVn6a" role="2OqNvi">
-                  <reference role="37wK5l" target="tpfr.7048923897762709769" resolve="isFlagged" />
+                  <ref role="37wK5l" to="tpfr:67iNJ0IU849" resolve="isFlagged" />
                   <node concept="30H73N" id="67iNJ0IVn6b" role="37wK5m" />
                 </node>
               </node>
@@ -807,23 +807,23 @@
               <node concept="3clFbF" id="67iNJ0IVn6l" role="3cqZAp">
                 <node concept="2OqwBi" id="67iNJ0IVn6o" role="3clFbG">
                   <node concept="Rm8GO" id="67iNJ0IVn6n" role="2Oq$k0">
-                    <reference role="Rm8GQ" target="tpfr.7048923897763033401" resolve="ADD_VARS" />
-                    <reference role="1Px2BO" target="tpfr.7048923897762709721" resolve="Flags" />
+                    <ref role="Rm8GQ" to="tpfr:67iNJ0IVn4T" resolve="ADD_VARS" />
+                    <ref role="1Px2BO" to="tpfr:67iNJ0IU83p" resolve="Flags" />
                   </node>
                   <node concept="liA8E" id="67iNJ0IVn6s" role="2OqNvi">
-                    <reference role="37wK5l" target="tpfr.7048923897762709756" resolve="clear" />
+                    <ref role="37wK5l" to="tpfr:67iNJ0IU83W" resolve="clear" />
                     <node concept="30H73N" id="67iNJ0IVn6t" role="37wK5m" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="37vLTw" id="3GM_nagTyyr" role="3clFbw">
-              <reference role="3cqZAo" target="7048923897763033473" resolve="result" />
+              <ref role="3cqZAo" node="67iNJ0IVn61" resolve="result" />
             </node>
           </node>
           <node concept="3clFbF" id="67iNJ0IVn6d" role="3cqZAp">
             <node concept="37vLTw" id="3GM_nagTtTe" role="3clFbG">
-              <reference role="3cqZAo" target="7048923897763033473" resolve="result" />
+              <ref role="3cqZAo" node="67iNJ0IVn61" resolve="result" />
             </node>
           </node>
         </node>
@@ -833,7 +833,7 @@
   <node concept="13MO4I" id="h5Qj4r6">
     <property role="TrG5h" value="reduce_InlineRegexp" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpfo.1174510540317" resolve="InlineRegexpExpression" />
+    <ref role="3gUMe" to="tpfo:h5Qi9ot" resolve="InlineRegexpExpression" />
     <node concept="312cEu" id="h5Qjp70" role="13RCb5">
       <property role="TrG5h" value="ClassConcept" />
       <node concept="3Tm1VV" id="h9B3LrY" role="1B3o_S" />
@@ -845,15 +845,15 @@
             <node concept="3cpWsn" id="h5QjuFK" role="3cpWs9">
               <property role="TrG5h" value="p" />
               <node concept="3uibUv" id="h5QjuFL" role="1tU5fm">
-                <reference role="3uigEE" target="lgzw.~Pattern" resolve="Pattern" />
+                <ref role="3uigEE" to="lgzw:~Pattern" resolve="Pattern" />
               </node>
               <node concept="1dyn4i" id="5OTxl17S_Rf" role="33vP2m">
                 <property role="1zomUR" value="true" />
                 <property role="1dyqJU" value="REGEXP" />
                 <node concept="raruj" id="5OTxl17S_S8" role="lGtFl" />
                 <node concept="2YIFZM" id="5OTxl17S_S9" role="1dyrYi">
-                  <reference role="37wK5l" target="lgzw.~Pattern%dcompile(java%dlang%dString,int)%cjava%dutil%dregex%dPattern" resolve="compile" />
-                  <reference role="1Pybhc" target="lgzw.~Pattern" resolve="Pattern" />
+                  <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String,int):java.util.regex.Pattern" resolve="compile" />
+                  <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
                   <node concept="Xl_RD" id="5OTxl17S_Sa" role="37wK5m">
                     <property role="Xl_RC" value="" />
                     <node concept="17Uvod" id="5OTxl17S_Sb" role="lGtFl">
@@ -865,11 +865,11 @@
                               <node concept="2OqwBi" id="5OTxl17S_Sg" role="2Oq$k0">
                                 <node concept="30H73N" id="5OTxl17S_Sh" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="5OTxl17S_Si" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="tpfo.1174510571016" />
+                                  <ref role="3Tt5mk" to="tpfo:h5QigS8" />
                                 </node>
                               </node>
                               <node concept="2qgKlT" id="5OTxl17S_Sj" role="2OqNvi">
-                                <reference role="37wK5l" target="tpfs.1213877429451" resolve="toString" />
+                                <ref role="37wK5l" to="tpfs:hEwIUjb" resolve="toString" />
                               </node>
                             </node>
                           </node>
@@ -896,22 +896,22 @@
                             <node concept="2OqwBi" id="5OTxl17S_St" role="3clFbw">
                               <node concept="30H73N" id="5OTxl17S_Su" role="2Oq$k0" />
                               <node concept="3TrcHB" id="5OTxl17S_Sv" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpfo.1175158906851" resolve="multiLine" />
+                                <ref role="3TsBF5" to="tpfo:h6sVtZz" resolve="multiLine" />
                               </node>
                             </node>
                             <node concept="3clFbS" id="5OTxl17S_Sw" role="3clFbx">
                               <node concept="3clFbF" id="5OTxl17S_Sx" role="3cqZAp">
                                 <node concept="37vLTI" id="5OTxl17S_Sy" role="3clFbG">
                                   <node concept="37vLTw" id="3GM_nagTyOv" role="37vLTJ">
-                                    <reference role="3cqZAo" target="6717546899049700889" resolve="result" />
+                                    <ref role="3cqZAo" node="5OTxl17S_Sp" resolve="result" />
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17S_S$" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17S_S_" role="3uHU7w">
-                                      <reference role="1PxDUh" target="lgzw.~Pattern" resolve="Pattern" />
-                                      <reference role="3cqZAo" target="lgzw.~Pattern%dMULTILINE" resolve="MULTILINE" />
+                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="lgzw:~Pattern.MULTILINE" resolve="MULTILINE" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagTrlo" role="3uHU7B">
-                                      <reference role="3cqZAo" target="6717546899049700889" resolve="result" />
+                                      <ref role="3cqZAo" node="5OTxl17S_Sp" resolve="result" />
                                     </node>
                                   </node>
                                 </node>
@@ -922,22 +922,22 @@
                             <node concept="2OqwBi" id="5OTxl17S_SC" role="3clFbw">
                               <node concept="30H73N" id="5OTxl17S_SD" role="2Oq$k0" />
                               <node concept="3TrcHB" id="5OTxl17S_SE" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpfo.1175158902584" resolve="dotAll" />
+                                <ref role="3TsBF5" to="tpfo:h6sVsWS" resolve="dotAll" />
                               </node>
                             </node>
                             <node concept="3clFbS" id="5OTxl17S_SF" role="3clFbx">
                               <node concept="3clFbF" id="5OTxl17S_SG" role="3cqZAp">
                                 <node concept="37vLTI" id="5OTxl17S_SH" role="3clFbG">
                                   <node concept="37vLTw" id="3GM_nagTw2z" role="37vLTJ">
-                                    <reference role="3cqZAo" target="6717546899049700889" resolve="result" />
+                                    <ref role="3cqZAo" node="5OTxl17S_Sp" resolve="result" />
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17S_SJ" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17S_SK" role="3uHU7w">
-                                      <reference role="1PxDUh" target="lgzw.~Pattern" resolve="Pattern" />
-                                      <reference role="3cqZAo" target="lgzw.~Pattern%dDOTALL" resolve="DOTALL" />
+                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="lgzw:~Pattern.DOTALL" resolve="DOTALL" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagT$3w" role="3uHU7B">
-                                      <reference role="3cqZAo" target="6717546899049700889" resolve="result" />
+                                      <ref role="3cqZAo" node="5OTxl17S_Sp" resolve="result" />
                                     </node>
                                   </node>
                                 </node>
@@ -948,22 +948,22 @@
                             <node concept="2OqwBi" id="5OTxl17S_SN" role="3clFbw">
                               <node concept="30H73N" id="5OTxl17S_SO" role="2Oq$k0" />
                               <node concept="3TrcHB" id="5OTxl17S_SP" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpfo.1175159132192" resolve="caseInsensitive" />
+                                <ref role="3TsBF5" to="tpfo:h6sWl0w" resolve="caseInsensitive" />
                               </node>
                             </node>
                             <node concept="3clFbS" id="5OTxl17S_SQ" role="3clFbx">
                               <node concept="3clFbF" id="5OTxl17S_SR" role="3cqZAp">
                                 <node concept="37vLTI" id="5OTxl17S_SS" role="3clFbG">
                                   <node concept="37vLTw" id="3GM_nagTrv0" role="37vLTJ">
-                                    <reference role="3cqZAo" target="6717546899049700889" resolve="result" />
+                                    <ref role="3cqZAo" node="5OTxl17S_Sp" resolve="result" />
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17S_SU" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17S_SV" role="3uHU7w">
-                                      <reference role="1PxDUh" target="lgzw.~Pattern" resolve="Pattern" />
-                                      <reference role="3cqZAo" target="lgzw.~Pattern%dCASE_INSENSITIVE" resolve="CASE_INSENSITIVE" />
+                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="lgzw:~Pattern.CASE_INSENSITIVE" resolve="CASE_INSENSITIVE" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagT_YH" role="3uHU7B">
-                                      <reference role="3cqZAo" target="6717546899049700889" resolve="result" />
+                                      <ref role="3cqZAo" node="5OTxl17S_Sp" resolve="result" />
                                     </node>
                                   </node>
                                 </node>
@@ -972,7 +972,7 @@
                           </node>
                           <node concept="3cpWs6" id="5OTxl17S_SX" role="3cqZAp">
                             <node concept="37vLTw" id="3GM_nagTu9_" role="3cqZAk">
-                              <reference role="3cqZAo" target="6717546899049700889" resolve="result" />
+                              <ref role="3cqZAo" node="5OTxl17S_Sp" resolve="result" />
                             </node>
                           </node>
                         </node>
@@ -991,7 +991,7 @@
   <node concept="13MO4I" id="h5QqJ4Y">
     <property role="TrG5h" value="reduce_MatchRegexp" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpfo.1174512414484" resolve="MatchRegexpStatement" />
+    <ref role="3gUMe" to="tpfo:h5QpiWk" resolve="MatchRegexpStatement" />
     <node concept="312cEu" id="h5QqK$H" role="13RCb5">
       <property role="TrG5h" value="ClassConcept" />
       <node concept="3Tm1VV" id="h9B3LmU" role="1B3o_S" />
@@ -1005,7 +1005,7 @@
                 <node concept="3cpWsn" id="h5QqNtD" role="3cpWs9">
                   <property role="TrG5h" value="pattern" />
                   <node concept="3uibUv" id="h5QqNtE" role="1tU5fm">
-                    <reference role="3uigEE" target="lgzw.~Pattern" resolve="Pattern" />
+                    <ref role="3uigEE" to="lgzw:~Pattern" resolve="Pattern" />
                   </node>
                   <node concept="10Nm6u" id="h5QqQk$" role="33vP2m">
                     <node concept="29HgVG" id="h5QqR8m" role="lGtFl">
@@ -1015,7 +1015,7 @@
                             <node concept="2OqwBi" id="hxx$PjP" role="3cqZAk">
                               <node concept="30H73N" id="h5QqTxw" role="2Oq$k0" />
                               <node concept="3TrEf2" id="h5YOgNS" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                                <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                               </node>
                             </node>
                           </node>
@@ -1036,7 +1036,7 @@
                               <node concept="z$bX8" id="h5YUqX3" role="2OqNvi">
                                 <node concept="1xMEDy" id="h5YUqX4" role="1xVPHs">
                                   <node concept="chp4Y" id="hAUPE6w" role="ri$Ld">
-                                    <reference role="cht4Q" target="tpfo.1174653354106" resolve="RegexpUsingConstruction" />
+                                    <ref role="cht4Q" to="tpfo:h5YMW1U" resolve="RegexpUsingConstruction" />
                                   </node>
                                 </node>
                               </node>
@@ -1050,7 +1050,7 @@
                             </node>
                             <node concept="2OqwBi" id="hAUPBq$" role="3uHU7w">
                               <node concept="37vLTw" id="3GM_nagTycD" role="2Oq$k0">
-                                <reference role="3cqZAo" target="1174655315775" resolve="nodes" />
+                                <ref role="3cqZAo" node="h5YUqWZ" resolve="nodes" />
                               </node>
                               <node concept="34oBXx" id="h5YUqXa" role="2OqNvi" />
                             </node>
@@ -1065,14 +1065,14 @@
                 <node concept="3cpWsn" id="h5Qr9gn" role="3cpWs9">
                   <property role="TrG5h" value="matcher" />
                   <node concept="3uibUv" id="h5Qr9go" role="1tU5fm">
-                    <reference role="3uigEE" target="lgzw.~Matcher" resolve="Matcher" />
+                    <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
                   </node>
                   <node concept="2OqwBi" id="hAUPATA" role="33vP2m">
                     <node concept="37vLTw" id="3GM_nagT$Jv" role="2Oq$k0">
-                      <reference role="3cqZAo" target="1174512809833" resolve="pattern" />
+                      <ref role="3cqZAo" node="h5QqNtD" resolve="pattern" />
                     </node>
                     <node concept="liA8E" id="hAUPATB" role="2OqNvi">
-                      <reference role="37wK5l" target="lgzw.~Pattern%dmatcher(java%dlang%dCharSequence)%cjava%dutil%dregex%dMatcher" resolve="matcher" />
+                      <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                       <node concept="10Nm6u" id="h5Qrb6C" role="37wK5m">
                         <node concept="29HgVG" id="h5QrbPj" role="lGtFl">
                           <node concept="3NFfHV" id="h5QrbPk" role="3NFExx">
@@ -1081,7 +1081,7 @@
                                 <node concept="2OqwBi" id="hxx$BUl" role="3cqZAk">
                                   <node concept="30H73N" id="h5Qrd3g" role="2Oq$k0" />
                                   <node concept="3TrEf2" id="h5Qrea5" role="2OqNvi">
-                                    <reference role="3Tt5mk" target="tpfo.1174512569438" />
+                                    <ref role="3Tt5mk" to="tpfo:h5QpSLu" />
                                   </node>
                                 </node>
                               </node>
@@ -1104,7 +1104,7 @@
                               <node concept="z$bX8" id="h5YUa1K" role="2OqNvi">
                                 <node concept="1xMEDy" id="h5YUa1L" role="1xVPHs">
                                   <node concept="chp4Y" id="hAUPE6z" role="ri$Ld">
-                                    <reference role="cht4Q" target="tpfo.1174653354106" resolve="RegexpUsingConstruction" />
+                                    <ref role="cht4Q" to="tpfo:h5YMW1U" resolve="RegexpUsingConstruction" />
                                   </node>
                                 </node>
                               </node>
@@ -1118,7 +1118,7 @@
                             </node>
                             <node concept="2OqwBi" id="hAUPBo2" role="3uHU7w">
                               <node concept="37vLTw" id="3GM_nagTvSh" role="2Oq$k0">
-                                <reference role="3cqZAo" target="1174655243994" resolve="nodes" />
+                                <ref role="3cqZAo" node="h5YU9rq" resolve="nodes" />
                               </node>
                               <node concept="34oBXx" id="h5YUmif" role="2OqNvi" />
                             </node>
@@ -1128,17 +1128,17 @@
                     </node>
                   </node>
                   <node concept="1pdMLZ" id="hMuAI2C" role="lGtFl">
-                    <reference role="2rW$FS" target="1215479319409" resolve="matcher" />
+                    <ref role="2rW$FS" node="hG0dCHL" resolve="matcher" />
                   </node>
                 </node>
               </node>
               <node concept="3clFbJ" id="h5QreVV" role="3cqZAp">
                 <node concept="2OqwBi" id="hAUPB1b" role="3clFbw">
                   <node concept="37vLTw" id="3GM_nagT$kD" role="2Oq$k0">
-                    <reference role="3cqZAo" target="1174512899095" resolve="matcher" />
+                    <ref role="3cqZAo" node="h5Qr9gn" resolve="matcher" />
                   </node>
                   <node concept="liA8E" id="hAUPB1c" role="2OqNvi">
-                    <reference role="37wK5l" target="lgzw.~Matcher%dmatches()%cboolean" resolve="matches" />
+                    <ref role="37wK5l" to="lgzw:~Matcher.matches():boolean" resolve="matches" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="h5QreVX" role="3clFbx">
@@ -1149,7 +1149,7 @@
                           <node concept="2OqwBi" id="hxx$ETx" role="3cqZAk">
                             <node concept="30H73N" id="h5Qrjq1" role="2Oq$k0" />
                             <node concept="3TrEf2" id="h5Qrkrf" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpfo.1174512427594" />
+                              <ref role="3Tt5mk" to="tpfo:h5Qpm9a" />
                             </node>
                           </node>
                         </node>
@@ -1170,15 +1170,15 @@
   <node concept="13MO4I" id="h5Z1slv">
     <property role="TrG5h" value="reduce_ReplaceWithRegexp" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpfo.1174655989549" resolve="ReplaceWithRegexpExpression" />
+    <ref role="3gUMe" to="tpfo:h5YWZsH" resolve="ReplaceWithRegexpExpression" />
     <node concept="2YIFZL" id="h5Z8ZKa" role="13RCb5">
       <property role="TrG5h" value="method" />
       <node concept="3cqZAl" id="h5Z8ZZ6" role="3clF45" />
       <node concept="3clFbS" id="h5Z8ZKc" role="3clF47">
         <node concept="3clFbF" id="h5Z93tN" role="3cqZAp">
           <node concept="2YIFZM" id="h5Z94me" role="3clFbG">
-            <reference role="1Pybhc" target="cpb3.8235206972880844189" resolve="RegexpOperations" />
-            <reference role="37wK5l" target="cpb3.8235206972880844195" resolve="replace" />
+            <ref role="1Pybhc" to="cpb3:799lhKuovmt" resolve="RegexpOperations" />
+            <ref role="37wK5l" to="cpb3:799lhKuovmz" resolve="replace" />
             <node concept="Xl_RD" id="h5Z95Eu" role="37wK5m">
               <property role="Xl_RC" value="string" />
               <node concept="29HgVG" id="h5Z9bku" role="lGtFl">
@@ -1188,7 +1188,7 @@
                       <node concept="2OqwBi" id="hxx$XGF" role="3cqZAk">
                         <node concept="30H73N" id="h5Z9csO" role="2Oq$k0" />
                         <node concept="3TrEf2" id="h5Z9d3r" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpfo.1174656103019" />
+                          <ref role="3Tt5mk" to="tpfo:h5YXr9F" />
                         </node>
                       </node>
                     </node>
@@ -1197,8 +1197,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="5OTxl17T4tl" role="37wK5m">
-              <reference role="37wK5l" target="lgzw.~Pattern%dcompile(java%dlang%dString)%cjava%dutil%dregex%dPattern" resolve="compile" />
-              <reference role="1Pybhc" target="lgzw.~Pattern" resolve="Pattern" />
+              <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
+              <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
               <node concept="Xl_RD" id="5OTxl17T4tm" role="37wK5m">
                 <property role="Xl_RC" value="" />
               </node>
@@ -1209,7 +1209,7 @@
                       <node concept="2OqwBi" id="5OTxl17T4ts" role="3cqZAk">
                         <node concept="30H73N" id="5OTxl17T4tt" role="2Oq$k0" />
                         <node concept="3TrEf2" id="5OTxl17T4tu" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                          <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                         </node>
                       </node>
                     </node>
@@ -1225,7 +1225,7 @@
                       <node concept="2OqwBi" id="hxx$Gma" role="3cqZAk">
                         <node concept="30H73N" id="h5Z9pfg" role="2Oq$k0" />
                         <node concept="3TrEf2" id="h5Z9qEQ" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpfo.1174656339468" />
+                          <ref role="3Tt5mk" to="tpfo:h5YYkSc" />
                         </node>
                       </node>
                     </node>
@@ -1261,10 +1261,10 @@
       </node>
     </node>
     <node concept="n94m4" id="h5Z5RjJ" role="lGtFl">
-      <reference role="n9lRv" target="tpfo.1174656254036" resolve="ReplaceBlock" />
+      <ref role="n9lRv" to="tpfo:h5YY01k" resolve="ReplaceBlock" />
     </node>
     <node concept="3uibUv" id="5f6QYcV2zFp" role="EKbjA">
-      <reference role="3uigEE" target="cpb3.8235206972880844181" resolve="Replacer" />
+      <ref role="3uigEE" to="cpb3:799lhKuovml" resolve="Replacer" />
     </node>
     <node concept="3Tm1VV" id="h9B3LmY" role="1B3o_S" />
     <node concept="3clFb_" id="h5Z5LVR" role="jymVt">
@@ -1272,7 +1272,7 @@
       <node concept="37vLTG" id="h5Zb1fQ" role="3clF46">
         <property role="TrG5h" value="matcher" />
         <node concept="3uibUv" id="h5Zb1YK" role="1tU5fm">
-          <reference role="3uigEE" target="lgzw.~Matcher" resolve="Matcher" />
+          <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
         </node>
       </node>
       <node concept="17QB3L" id="hP3iQhN" role="3clF45" />
@@ -1284,7 +1284,7 @@
                 <node concept="2OqwBi" id="hxx_6Q3" role="3cqZAk">
                   <node concept="30H73N" id="h5Z5V1l" role="2Oq$k0" />
                   <node concept="3TrEf2" id="h5Z5XUc" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1137022507850" />
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
                   </node>
                 </node>
               </node>
@@ -1298,7 +1298,7 @@
   <node concept="13MO4I" id="h5ZaGf6">
     <property role="TrG5h" value="reduce_MatchVariableReference_ReplaceExpression" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpfo.1174565027678" resolve="MatchVariableReference" />
+    <ref role="3gUMe" to="tpfo:h5TxZXu" resolve="MatchVariableReference" />
     <node concept="3clFb_" id="hAUOXCp" role="13RCb5">
       <property role="TrG5h" value="method" />
       <node concept="3Tm1VV" id="hAUOXCq" role="1B3o_S" />
@@ -1306,17 +1306,17 @@
       <node concept="37vLTG" id="h5ZaLUI" role="3clF46">
         <property role="TrG5h" value="matcher" />
         <node concept="3uibUv" id="h5ZaLUJ" role="1tU5fm">
-          <reference role="3uigEE" target="lgzw.~Matcher" resolve="Matcher" />
+          <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
         </node>
       </node>
       <node concept="3clFbS" id="h5ZaJOq" role="3clF47">
         <node concept="3clFbF" id="h5ZaMZB" role="3cqZAp">
           <node concept="2OqwBi" id="hAUPAXS" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm5GY" role="2Oq$k0">
-              <reference role="3cqZAo" target="1174659604142" resolve="matcher" />
+              <ref role="3cqZAo" node="h5ZaLUI" resolve="matcher" />
             </node>
             <node concept="liA8E" id="hAUPAXT" role="2OqNvi">
-              <reference role="37wK5l" target="lgzw.~Matcher%dgroup(int)%cjava%dlang%dString" resolve="group" />
+              <ref role="37wK5l" to="lgzw:~Matcher.group(int):java.lang.String" resolve="group" />
               <node concept="3cmrfG" id="h5ZaNTN" role="37wK5m">
                 <property role="3cmrfH" value="23" />
                 <node concept="17Uvod" id="h5ZaPrY" role="lGtFl">
@@ -1327,12 +1327,12 @@
                         <node concept="3cpWsn" id="h6eVX81" role="3cpWs9">
                           <property role="TrG5h" value="parens" />
                           <node concept="3Tqbb2" id="h6eVX82" role="1tU5fm">
-                            <reference role="ehGHo" target="tpfo.1174564062919" resolve="MatchParensRegexp" />
+                            <ref role="ehGHo" to="tpfo:h5Tukr7" resolve="MatchParensRegexp" />
                           </node>
                           <node concept="2OqwBi" id="hxx$V_s" role="33vP2m">
                             <node concept="30H73N" id="h6eVX84" role="2Oq$k0" />
                             <node concept="3TrEf2" id="h6eVX85" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpfo.1174565035929" />
+                              <ref role="3Tt5mk" to="tpfo:h5Ty1Yp" />
                             </node>
                           </node>
                         </node>
@@ -1341,12 +1341,12 @@
                         <node concept="3cpWsn" id="h6eVX87" role="3cpWs9">
                           <property role="TrG5h" value="c" />
                           <node concept="2YIFZM" id="6XMl2rPap1W" role="33vP2m">
-                            <reference role="37wK5l" target="tpft.8030573611853647890" resolve="findRegexpUsingConstructionFor" />
-                            <reference role="1Pybhc" target="tpft.8030573611853647771" resolve="RegexUtil" />
+                            <ref role="37wK5l" to="tpft:6XMl2rPap0i" resolve="findRegexpUsingConstructionFor" />
+                            <ref role="1Pybhc" to="tpft:6XMl2rPaoYr" resolve="RegexUtil" />
                             <node concept="30H73N" id="h6eVX8a" role="37wK5m" />
                           </node>
                           <node concept="3Tqbb2" id="h6eVX88" role="1tU5fm">
-                            <reference role="ehGHo" target="tpfo.1174653354106" resolve="RegexpUsingConstruction" />
+                            <ref role="ehGHo" to="tpfo:h5YMW1U" resolve="RegexpUsingConstruction" />
                           </node>
                         </node>
                       </node>
@@ -1354,12 +1354,12 @@
                         <node concept="3cpWsn" id="hMSZiK7" role="3cpWs9">
                           <property role="TrG5h" value="parensList" />
                           <node concept="2I9FWS" id="hMSZiK8" role="1tU5fm">
-                            <reference role="2I9WkF" target="tpfo.1174564062919" resolve="MatchParensRegexp" />
+                            <ref role="2I9WkF" to="tpfo:h5Tukr7" resolve="MatchParensRegexp" />
                           </node>
                           <node concept="2ShNRf" id="hMSZm71" role="33vP2m">
                             <node concept="2T8Vx0" id="hMSZm72" role="2ShVmc">
                               <node concept="2I9FWS" id="hMSZm73" role="2T96Bj">
-                                <reference role="2I9WkF" target="tpfo.1174564062919" resolve="MatchParensRegexp" />
+                                <ref role="2I9WkF" to="tpfo:h5Tukr7" resolve="MatchParensRegexp" />
                               </node>
                             </node>
                           </node>
@@ -1369,24 +1369,24 @@
                         <node concept="2OqwBi" id="hMSY4xj" role="3clFbG">
                           <node concept="2OqwBi" id="hMSY36K" role="2Oq$k0">
                             <node concept="1PxgMI" id="hMSY13C" role="2Oq$k0">
-                              <reference role="1PxNhF" target="tpfo.1174510540317" resolve="InlineRegexpExpression" />
+                              <ref role="1PxNhF" to="tpfo:h5Qi9ot" resolve="InlineRegexpExpression" />
                               <node concept="2OqwBi" id="hMSXZSN" role="1PxMeX">
                                 <node concept="37vLTw" id="3GM_nagTrJn" role="2Oq$k0">
-                                  <reference role="3cqZAo" target="1174924153351" resolve="c" />
+                                  <ref role="3cqZAo" node="h6eVX87" resolve="c" />
                                 </node>
                                 <node concept="3TrEf2" id="hMSY0i0" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                                  <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="hMSY3Lc" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpfo.1174510571016" />
+                              <ref role="3Tt5mk" to="tpfo:h5QigS8" />
                             </node>
                           </node>
                           <node concept="2qgKlT" id="hMSY6kA" role="2OqNvi">
-                            <reference role="37wK5l" target="tpfs.1222432436326" resolve="getString" />
+                            <ref role="37wK5l" to="tpfs:hMuDF1A" resolve="getString" />
                             <node concept="37vLTw" id="3GM_nagTz2C" role="37wK5m">
-                              <reference role="3cqZAo" target="1222874311687" resolve="parensList" />
+                              <ref role="3cqZAo" node="hMSZiK7" resolve="parensList" />
                             </node>
                           </node>
                         </node>
@@ -1395,11 +1395,11 @@
                         <node concept="3cpWs3" id="hMSZHNl" role="3cqZAk">
                           <node concept="2OqwBi" id="hMSZHNm" role="3uHU7w">
                             <node concept="37vLTw" id="3GM_nagTrbc" role="2Oq$k0">
-                              <reference role="3cqZAo" target="1222874311687" resolve="parensList" />
+                              <ref role="3cqZAo" node="hMSZiK7" resolve="parensList" />
                             </node>
                             <node concept="2WmjW8" id="i1Vlmsl" role="2OqNvi">
                               <node concept="37vLTw" id="3GM_nagTyTr" role="25WWJ7">
-                                <reference role="3cqZAo" target="1174924153345" resolve="parens" />
+                                <ref role="3cqZAo" node="h6eVX81" resolve="parens" />
                               </node>
                             </node>
                           </node>
@@ -1422,7 +1422,7 @@
   <node concept="13MO4I" id="h6sI9WZ">
     <property role="TrG5h" value="reduce_ForEachMatchStatement" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpfo.1175154849582" resolve="ForEachMatchStatement" />
+    <ref role="3gUMe" to="tpfo:h6sFZsI" resolve="ForEachMatchStatement" />
     <node concept="2YIFZL" id="h6sIfd4" role="13RCb5">
       <property role="TrG5h" value="method" />
       <node concept="3cqZAl" id="h6sIfvn" role="3clF45" />
@@ -1433,7 +1433,7 @@
               <node concept="3cpWsn" id="h6sIiw5" role="3cpWs9">
                 <property role="TrG5h" value="_pattern" />
                 <node concept="3uibUv" id="h6sIiw6" role="1tU5fm">
-                  <reference role="3uigEE" target="lgzw.~Pattern" resolve="Pattern" />
+                  <ref role="3uigEE" to="lgzw:~Pattern" resolve="Pattern" />
                 </node>
                 <node concept="10Nm6u" id="h6sIk6V" role="33vP2m">
                   <node concept="29HgVG" id="h6sIKik" role="lGtFl">
@@ -1443,7 +1443,7 @@
                           <node concept="2OqwBi" id="hxx$RFZ" role="3cqZAk">
                             <node concept="30H73N" id="h6sJ4mu" role="2Oq$k0" />
                             <node concept="3TrEf2" id="h6sLMTX" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                              <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                             </node>
                           </node>
                         </node>
@@ -1464,7 +1464,7 @@
                             <node concept="z$bX8" id="h6sI_DU" role="2OqNvi">
                               <node concept="1xMEDy" id="h6sI_DV" role="1xVPHs">
                                 <node concept="chp4Y" id="hAUPE6E" role="ri$Ld">
-                                  <reference role="cht4Q" target="tpfo.1174653354106" resolve="RegexpUsingConstruction" />
+                                  <ref role="cht4Q" to="tpfo:h5YMW1U" resolve="RegexpUsingConstruction" />
                                 </node>
                               </node>
                             </node>
@@ -1478,7 +1478,7 @@
                           </node>
                           <node concept="2OqwBi" id="hAUPBn2" role="3uHU7w">
                             <node concept="37vLTw" id="3GM_nagTrRD" role="2Oq$k0">
-                              <reference role="3cqZAo" target="1175155530358" resolve="nodes" />
+                              <ref role="3cqZAo" node="h6sI_DQ" resolve="nodes" />
                             </node>
                             <node concept="34oBXx" id="h6sI_E1" role="2OqNvi" />
                           </node>
@@ -1493,14 +1493,14 @@
               <node concept="3cpWsn" id="h6sIlpY" role="3cpWs9">
                 <property role="TrG5h" value="_matcher" />
                 <node concept="3uibUv" id="h6sIlpZ" role="1tU5fm">
-                  <reference role="3uigEE" target="lgzw.~Matcher" resolve="Matcher" />
+                  <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
                 </node>
                 <node concept="2OqwBi" id="hAUPAOL" role="33vP2m">
                   <node concept="37vLTw" id="3GM_nagTy7m" role="2Oq$k0">
-                    <reference role="3cqZAo" target="1175155451909" resolve="_pattern" />
+                    <ref role="3cqZAo" node="h6sIiw5" resolve="_pattern" />
                   </node>
                   <node concept="liA8E" id="hAUPAOM" role="2OqNvi">
-                    <reference role="37wK5l" target="lgzw.~Pattern%dmatcher(java%dlang%dCharSequence)%cjava%dutil%dregex%dMatcher" resolve="matcher" />
+                    <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                     <node concept="10Nm6u" id="h6sIp3w" role="37wK5m">
                       <node concept="29HgVG" id="h6sIZro" role="lGtFl">
                         <node concept="3NFfHV" id="h6sIZrp" role="3NFExx">
@@ -1509,7 +1509,7 @@
                               <node concept="2OqwBi" id="hxx_1v4" role="3cqZAk">
                                 <node concept="30H73N" id="h6sJ12f" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="h6sJ2IU" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="tpfo.1175154880428" />
+                                  <ref role="3Tt5mk" to="tpfo:h6sG6YG" />
                                 </node>
                               </node>
                             </node>
@@ -1532,7 +1532,7 @@
                             <node concept="z$bX8" id="h6sIHld" role="2OqNvi">
                               <node concept="1xMEDy" id="h6sIHle" role="1xVPHs">
                                 <node concept="chp4Y" id="hAUPE6C" role="ri$Ld">
-                                  <reference role="cht4Q" target="tpfo.1174653354106" resolve="RegexpUsingConstruction" />
+                                  <ref role="cht4Q" to="tpfo:h5YMW1U" resolve="RegexpUsingConstruction" />
                                 </node>
                               </node>
                             </node>
@@ -1546,7 +1546,7 @@
                           </node>
                           <node concept="2OqwBi" id="hAUPBrl" role="3uHU7w">
                             <node concept="37vLTw" id="3GM_nagTxEU" role="2Oq$k0">
-                              <reference role="3cqZAo" target="1175155561801" resolve="nodes" />
+                              <ref role="3cqZAo" node="h6sIHl9" resolve="nodes" />
                             </node>
                             <node concept="34oBXx" id="h6sIHlk" role="2OqNvi" />
                           </node>
@@ -1556,17 +1556,17 @@
                   </node>
                 </node>
                 <node concept="1pdMLZ" id="hMunMvG" role="lGtFl">
-                  <reference role="2rW$FS" target="1215479319409" resolve="matcher" />
+                  <ref role="2rW$FS" node="hG0dCHL" resolve="matcher" />
                 </node>
               </node>
             </node>
             <node concept="2$JKZl" id="h6sJaO7" role="3cqZAp">
               <node concept="2OqwBi" id="hAUPAYD" role="2$JKZa">
                 <node concept="37vLTw" id="3GM_nagTAeO" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1175155463806" resolve="_matcher" />
+                  <ref role="3cqZAo" node="h6sIlpY" resolve="_matcher" />
                 </node>
                 <node concept="liA8E" id="hAUPAYE" role="2OqNvi">
-                  <reference role="37wK5l" target="lgzw.~Matcher%dfind()%cboolean" resolve="find" />
+                  <ref role="37wK5l" to="lgzw:~Matcher.find():boolean" resolve="find" />
                 </node>
               </node>
               <node concept="3clFbS" id="h6sJaO9" role="2LFqv$">
@@ -1577,7 +1577,7 @@
                         <node concept="2OqwBi" id="hxx$Og8" role="3cqZAk">
                           <node concept="30H73N" id="h6sJsqz" role="2Oq$k0" />
                           <node concept="3TrEf2" id="h6sJxdG" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpfo.1175154946790" />
+                            <ref role="3Tt5mk" to="tpfo:h6sGnbA" />
                           </node>
                         </node>
                       </node>
@@ -1596,15 +1596,15 @@
   <node concept="13MO4I" id="h6tipc7">
     <property role="TrG5h" value="reduce_SplitExpression" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpfo.1175164405556" resolve="SplitExpression" />
+    <ref role="3gUMe" to="tpfo:h6tgssO" resolve="SplitExpression" />
     <node concept="2YIFZL" id="h6tisjS" role="13RCb5">
       <property role="TrG5h" value="method" />
       <node concept="3cqZAl" id="h6tis_d" role="3clF45" />
       <node concept="3clFbS" id="h6tisjU" role="3clF47">
         <node concept="3clFbF" id="5OTxl17T4tv" role="3cqZAp">
           <node concept="2YIFZM" id="h6tivn0" role="3clFbG">
-            <reference role="1Pybhc" target="cpb3.8235206972880844189" resolve="RegexpOperations" />
-            <reference role="37wK5l" target="cpb3.8235206972880844266" resolve="split" />
+            <ref role="1Pybhc" to="cpb3:799lhKuovmt" resolve="RegexpOperations" />
+            <ref role="37wK5l" to="cpb3:799lhKuovnE" resolve="split" />
             <node concept="10Nm6u" id="h6tivNE" role="37wK5m">
               <node concept="29HgVG" id="h6tiyGV" role="lGtFl">
                 <node concept="3NFfHV" id="h6tiyGW" role="3NFExx">
@@ -1613,7 +1613,7 @@
                       <node concept="2OqwBi" id="hxx$BMw" role="3cqZAk">
                         <node concept="30H73N" id="h6ti$es" role="2Oq$k0" />
                         <node concept="3TrEf2" id="h6ti_q4" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpfo.1175164443297" />
+                          <ref role="3Tt5mk" to="tpfo:h6tg_Ex" />
                         </node>
                       </node>
                     </node>
@@ -1629,7 +1629,7 @@
                       <node concept="2OqwBi" id="hxx_6lA" role="3cqZAk">
                         <node concept="30H73N" id="h6tiAdt" role="2Oq$k0" />
                         <node concept="3TrEf2" id="h6tiANv" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                          <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                         </node>
                       </node>
                     </node>
@@ -1647,7 +1647,7 @@
   <node concept="13MO4I" id="h6t$boH">
     <property role="TrG5h" value="reduce_FindMatchStatement" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpfo.1175169009571" resolve="FindMatchStatement" />
+    <ref role="3gUMe" to="tpfo:h6ty0uz" resolve="FindMatchStatement" />
     <node concept="2YIFZL" id="h6t$eXD" role="13RCb5">
       <property role="TrG5h" value="method" />
       <node concept="3cqZAl" id="h6t$fdk" role="3clF45" />
@@ -1658,7 +1658,7 @@
               <node concept="3cpWsn" id="h6t$gzk" role="3cpWs9">
                 <property role="TrG5h" value="_pattern" />
                 <node concept="3uibUv" id="h6t$gzl" role="1tU5fm">
-                  <reference role="3uigEE" target="lgzw.~Pattern" resolve="Pattern" />
+                  <ref role="3uigEE" to="lgzw:~Pattern" resolve="Pattern" />
                 </node>
                 <node concept="10Nm6u" id="h6t$hn8" role="33vP2m">
                   <node concept="29HgVG" id="h6t$CaI" role="lGtFl">
@@ -1668,7 +1668,7 @@
                           <node concept="2OqwBi" id="hxx$VW$" role="3cqZAk">
                             <node concept="30H73N" id="h6t$UsM" role="2Oq$k0" />
                             <node concept="3TrEf2" id="h6t$WzP" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                              <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                             </node>
                           </node>
                         </node>
@@ -1689,7 +1689,7 @@
                             <node concept="z$bX8" id="h6t$r$v" role="2OqNvi">
                               <node concept="1xMEDy" id="h6t$r$w" role="1xVPHs">
                                 <node concept="chp4Y" id="hAUPE6H" role="ri$Ld">
-                                  <reference role="cht4Q" target="tpfo.1174653354106" resolve="RegexpUsingConstruction" />
+                                  <ref role="cht4Q" to="tpfo:h5YMW1U" resolve="RegexpUsingConstruction" />
                                 </node>
                               </node>
                             </node>
@@ -1703,7 +1703,7 @@
                           </node>
                           <node concept="2OqwBi" id="hAUPBp$" role="3uHU7w">
                             <node concept="37vLTw" id="3GM_nagTrPi" role="2Oq$k0">
-                              <reference role="3cqZAo" target="1175169644827" resolve="nodes" />
+                              <ref role="3cqZAo" node="h6t$r$r" resolve="nodes" />
                             </node>
                             <node concept="34oBXx" id="h6t$r$A" role="2OqNvi" />
                           </node>
@@ -1718,7 +1718,7 @@
               <node concept="3cpWsn" id="h6t$ibr" role="3cpWs9">
                 <property role="TrG5h" value="_matcher" />
                 <node concept="3uibUv" id="h6t$ibs" role="1tU5fm">
-                  <reference role="3uigEE" target="lgzw.~Matcher" resolve="Matcher" />
+                  <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
                 </node>
                 <node concept="17Uvod" id="h6t$sq5" role="lGtFl">
                   <property role="2qtEX9" value="name" />
@@ -1733,7 +1733,7 @@
                             <node concept="z$bX8" id="h6t$vlz" role="2OqNvi">
                               <node concept="1xMEDy" id="h6t$vl$" role="1xVPHs">
                                 <node concept="chp4Y" id="hAUPE6$" role="ri$Ld">
-                                  <reference role="cht4Q" target="tpfo.1174653354106" resolve="RegexpUsingConstruction" />
+                                  <ref role="cht4Q" to="tpfo:h5YMW1U" resolve="RegexpUsingConstruction" />
                                 </node>
                               </node>
                             </node>
@@ -1747,7 +1747,7 @@
                           </node>
                           <node concept="2OqwBi" id="hAUPBoN" role="3uHU7w">
                             <node concept="37vLTw" id="3GM_nagTAAk" role="2Oq$k0">
-                              <reference role="3cqZAo" target="1175169660255" resolve="nodes" />
+                              <ref role="3cqZAo" node="h6t$vlv" resolve="nodes" />
                             </node>
                             <node concept="34oBXx" id="h6t$vlE" role="2OqNvi" />
                           </node>
@@ -1758,10 +1758,10 @@
                 </node>
                 <node concept="2OqwBi" id="hAUPAPM" role="33vP2m">
                   <node concept="37vLTw" id="3GM_nagT_Vl" role="2Oq$k0">
-                    <reference role="3cqZAo" target="1175169599700" resolve="_pattern" />
+                    <ref role="3cqZAo" node="h6t$gzk" resolve="_pattern" />
                   </node>
                   <node concept="liA8E" id="hAUPAPN" role="2OqNvi">
-                    <reference role="37wK5l" target="lgzw.~Pattern%dmatcher(java%dlang%dCharSequence)%cjava%dutil%dregex%dMatcher" resolve="matcher" />
+                    <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                     <node concept="10Nm6u" id="h6t$_0j" role="37wK5m">
                       <node concept="29HgVG" id="h6t$Ef7" role="lGtFl">
                         <node concept="3NFfHV" id="h6t$Ef8" role="3NFExx">
@@ -1770,7 +1770,7 @@
                               <node concept="2OqwBi" id="hxx$UJR" role="3cqZAk">
                                 <node concept="30H73N" id="h6t$Yuc" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="h6t_0qY" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="tpfo.1175169023932" />
+                                  <ref role="3Tt5mk" to="tpfo:h6ty3YW" />
                                 </node>
                               </node>
                             </node>
@@ -1781,17 +1781,17 @@
                   </node>
                 </node>
                 <node concept="1pdMLZ" id="hMunf$_" role="lGtFl">
-                  <reference role="2rW$FS" target="1215479319409" resolve="matcher" />
+                  <ref role="2rW$FS" node="hG0dCHL" resolve="matcher" />
                 </node>
               </node>
             </node>
             <node concept="3clFbJ" id="h6t_24I" role="3cqZAp">
               <node concept="2OqwBi" id="hAUPB2d" role="3clFbw">
                 <node concept="37vLTw" id="3GM_nagTt$v" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1175169606363" resolve="_matcher" />
+                  <ref role="3cqZAo" node="h6t$ibr" resolve="_matcher" />
                 </node>
                 <node concept="liA8E" id="hAUPB2e" role="2OqNvi">
-                  <reference role="37wK5l" target="lgzw.~Matcher%dfind()%cboolean" resolve="find" />
+                  <ref role="37wK5l" to="lgzw:~Matcher.find():boolean" resolve="find" />
                 </node>
               </node>
               <node concept="3clFbS" id="h6t_24K" role="3clFbx">
@@ -1802,7 +1802,7 @@
                         <node concept="2OqwBi" id="hxx$Qow" role="3cqZAk">
                           <node concept="30H73N" id="h6t_dok" role="2Oq$k0" />
                           <node concept="3TrEf2" id="h6t_g1y" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpfo.1175169154112" />
+                            <ref role="3Tt5mk" to="tpfo:h6tyzL0" />
                           </node>
                         </node>
                       </node>
@@ -1821,7 +1821,7 @@
   <node concept="13MO4I" id="h6t_SI9">
     <property role="TrG5h" value="reduce_MatchVariableReference" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpfo.1174565027678" resolve="MatchVariableReference" />
+    <ref role="3gUMe" to="tpfo:h5TxZXu" resolve="MatchVariableReference" />
     <node concept="2YIFZL" id="h6t_SIa" role="13RCb5">
       <property role="TrG5h" value="method" />
       <node concept="3cqZAl" id="h6t_SIb" role="3clF45" />
@@ -1830,14 +1830,14 @@
           <node concept="3cpWsn" id="h6t_SIe" role="3cpWs9">
             <property role="TrG5h" value="matcher" />
             <node concept="3uibUv" id="h6t_SIf" role="1tU5fm">
-              <reference role="3uigEE" target="lgzw.~Matcher" resolve="Matcher" />
+              <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="h6t_SIg" role="3cqZAp">
           <node concept="2OqwBi" id="hAUPARP" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTts5" role="2Oq$k0">
-              <reference role="3cqZAo" target="1175170026382" resolve="matcher" />
+              <ref role="3cqZAo" node="h6t_SIe" resolve="matcher" />
               <node concept="1ZhdrF" id="h6t_SIj" role="lGtFl">
                 <property role="2qtEX8" value="variableDeclaration" />
                 <node concept="3$xsQk" id="h6t_SIk" role="3$ytzL">
@@ -1846,10 +1846,10 @@
                       <node concept="2OqwBi" id="hHn0Ald" role="3cqZAk">
                         <node concept="1iwH7S" id="hHn0Alv" role="2Oq$k0" />
                         <node concept="1iwH70" id="hHn0Alw" role="2OqNvi">
-                          <reference role="1iwH77" target="1215479319409" resolve="matcher" />
+                          <ref role="1iwH77" node="hG0dCHL" resolve="matcher" />
                           <node concept="2YIFZM" id="6XMl2rPap1U" role="1iwH7V">
-                            <reference role="37wK5l" target="tpft.8030573611853647890" resolve="findRegexpUsingConstructionFor" />
-                            <reference role="1Pybhc" target="tpft.8030573611853647771" resolve="RegexUtil" />
+                            <ref role="37wK5l" to="tpft:6XMl2rPap0i" resolve="findRegexpUsingConstructionFor" />
+                            <ref role="1Pybhc" to="tpft:6XMl2rPaoYr" resolve="RegexUtil" />
                             <node concept="30H73N" id="hHn0oJY" role="37wK5m" />
                           </node>
                         </node>
@@ -1860,7 +1860,7 @@
               </node>
             </node>
             <node concept="liA8E" id="hAUPARQ" role="2OqNvi">
-              <reference role="37wK5l" target="lgzw.~Matcher%dgroup(int)%cjava%dlang%dString" resolve="group" />
+              <ref role="37wK5l" to="lgzw:~Matcher.group(int):java.lang.String" resolve="group" />
               <node concept="3cmrfG" id="h6t_SIr" role="37wK5m">
                 <property role="3cmrfH" value="23" />
                 <node concept="17Uvod" id="h6t_SIs" role="lGtFl">
@@ -1871,12 +1871,12 @@
                         <node concept="3cpWsn" id="4QcEabISK54" role="3cpWs9">
                           <property role="TrG5h" value="parens" />
                           <node concept="3Tqbb2" id="4QcEabISK55" role="1tU5fm">
-                            <reference role="ehGHo" target="tpfo.1174564062919" resolve="MatchParensRegexp" />
+                            <ref role="ehGHo" to="tpfo:h5Tukr7" resolve="MatchParensRegexp" />
                           </node>
                           <node concept="2OqwBi" id="4QcEabISK56" role="33vP2m">
                             <node concept="30H73N" id="4QcEabISK57" role="2Oq$k0" />
                             <node concept="3TrEf2" id="4QcEabISK58" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpfo.1174565035929" />
+                              <ref role="3Tt5mk" to="tpfo:h5Ty1Yp" />
                             </node>
                           </node>
                         </node>
@@ -1885,12 +1885,12 @@
                         <node concept="3cpWsn" id="4QcEabISK5a" role="3cpWs9">
                           <property role="TrG5h" value="c" />
                           <node concept="2YIFZM" id="6XMl2rPap1V" role="33vP2m">
-                            <reference role="37wK5l" target="tpft.8030573611853647890" resolve="findRegexpUsingConstructionFor" />
-                            <reference role="1Pybhc" target="tpft.8030573611853647771" resolve="RegexUtil" />
+                            <ref role="37wK5l" to="tpft:6XMl2rPap0i" resolve="findRegexpUsingConstructionFor" />
+                            <ref role="1Pybhc" to="tpft:6XMl2rPaoYr" resolve="RegexUtil" />
                             <node concept="30H73N" id="4QcEabISK5d" role="37wK5m" />
                           </node>
                           <node concept="3Tqbb2" id="4QcEabISK5b" role="1tU5fm">
-                            <reference role="ehGHo" target="tpfo.1174653354106" resolve="RegexpUsingConstruction" />
+                            <ref role="ehGHo" to="tpfo:h5YMW1U" resolve="RegexpUsingConstruction" />
                           </node>
                         </node>
                       </node>
@@ -1898,12 +1898,12 @@
                         <node concept="3cpWsn" id="4QcEabISK5f" role="3cpWs9">
                           <property role="TrG5h" value="parensList" />
                           <node concept="2I9FWS" id="4QcEabISK5g" role="1tU5fm">
-                            <reference role="2I9WkF" target="tpfo.1174564062919" resolve="MatchParensRegexp" />
+                            <ref role="2I9WkF" to="tpfo:h5Tukr7" resolve="MatchParensRegexp" />
                           </node>
                           <node concept="2ShNRf" id="4QcEabISK5h" role="33vP2m">
                             <node concept="2T8Vx0" id="4QcEabISK5i" role="2ShVmc">
                               <node concept="2I9FWS" id="4QcEabISK5j" role="2T96Bj">
-                                <reference role="2I9WkF" target="tpfo.1174564062919" resolve="MatchParensRegexp" />
+                                <ref role="2I9WkF" to="tpfo:h5Tukr7" resolve="MatchParensRegexp" />
                               </node>
                             </node>
                           </node>
@@ -1913,24 +1913,24 @@
                         <node concept="2OqwBi" id="4QcEabISK5l" role="3clFbG">
                           <node concept="2OqwBi" id="4QcEabISK5m" role="2Oq$k0">
                             <node concept="1PxgMI" id="4QcEabISK5n" role="2Oq$k0">
-                              <reference role="1PxNhF" target="tpfo.1174510540317" resolve="InlineRegexpExpression" />
+                              <ref role="1PxNhF" to="tpfo:h5Qi9ot" resolve="InlineRegexpExpression" />
                               <node concept="2OqwBi" id="4QcEabISK5o" role="1PxMeX">
                                 <node concept="37vLTw" id="3GM_nagTrEM" role="2Oq$k0">
-                                  <reference role="3cqZAo" target="5588026655405965642" resolve="c" />
+                                  <ref role="3cqZAo" node="4QcEabISK5a" resolve="c" />
                                 </node>
                                 <node concept="3TrEf2" id="4QcEabISK5q" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                                  <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="4QcEabISK5r" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpfo.1174510571016" />
+                              <ref role="3Tt5mk" to="tpfo:h5QigS8" />
                             </node>
                           </node>
                           <node concept="2qgKlT" id="4QcEabISK5s" role="2OqNvi">
-                            <reference role="37wK5l" target="tpfs.1222432436326" resolve="getString" />
+                            <ref role="37wK5l" to="tpfs:hMuDF1A" resolve="getString" />
                             <node concept="37vLTw" id="3GM_nagT$ft" role="37wK5m">
-                              <reference role="3cqZAo" target="5588026655405965647" resolve="parensList" />
+                              <ref role="3cqZAo" node="4QcEabISK5f" resolve="parensList" />
                             </node>
                           </node>
                         </node>
@@ -1939,11 +1939,11 @@
                         <node concept="3cpWs3" id="4QcEabISK5v" role="3cqZAk">
                           <node concept="2OqwBi" id="4QcEabISK5w" role="3uHU7w">
                             <node concept="37vLTw" id="3GM_nagTBFo" role="2Oq$k0">
-                              <reference role="3cqZAo" target="5588026655405965647" resolve="parensList" />
+                              <ref role="3cqZAo" node="4QcEabISK5f" resolve="parensList" />
                             </node>
                             <node concept="2WmjW8" id="4QcEabISK5y" role="2OqNvi">
                               <node concept="37vLTw" id="3GM_nagTAFS" role="25WWJ7">
-                                <reference role="3cqZAo" target="5588026655405965636" resolve="parens" />
+                                <ref role="3cqZAo" node="4QcEabISK54" resolve="parens" />
                               </node>
                             </node>
                           </node>
@@ -1967,12 +1967,12 @@
   <node concept="13MO4I" id="haneaKz">
     <property role="TrG5h" value="reduce_MatchRegexpExpression" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpfo.1179357154354" resolve="MatchRegexpExpression" />
+    <ref role="3gUMe" to="tpfo:hanawKM" resolve="MatchRegexpExpression" />
     <node concept="2OqwBi" id="hAUPAV6" role="13RCb5">
       <node concept="2OqwBi" id="hAUPB1t" role="2Oq$k0">
         <node concept="2YIFZM" id="haneJLn" role="2Oq$k0">
-          <reference role="37wK5l" target="lgzw.~Pattern%dcompile(java%dlang%dString)%cjava%dutil%dregex%dPattern" resolve="compile" />
-          <reference role="1Pybhc" target="lgzw.~Pattern" resolve="Pattern" />
+          <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
+          <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
           <node concept="29HgVG" id="haneUKb" role="lGtFl">
             <node concept="3NFfHV" id="haneUKc" role="3NFExx">
               <node concept="3clFbS" id="haneUKd" role="2VODD2">
@@ -1980,7 +1980,7 @@
                   <node concept="2OqwBi" id="hxx$PEX" role="3clFbG">
                     <node concept="30H73N" id="haneY7C" role="2Oq$k0" />
                     <node concept="3TrEf2" id="haneZdO" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                      <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                     </node>
                   </node>
                 </node>
@@ -1989,7 +1989,7 @@
           </node>
         </node>
         <node concept="liA8E" id="hAUPB1u" role="2OqNvi">
-          <reference role="37wK5l" target="lgzw.~Pattern%dmatcher(java%dlang%dCharSequence)%cjava%dutil%dregex%dMatcher" resolve="matcher" />
+          <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
           <node concept="Xl_RD" id="hanf31O" role="37wK5m">
             <property role="Xl_RC" value="input" />
             <node concept="29HgVG" id="hanf8cp" role="lGtFl">
@@ -1999,7 +1999,7 @@
                     <node concept="2OqwBi" id="hxx$K60" role="3clFbG">
                       <node concept="30H73N" id="hanf9hH" role="2Oq$k0" />
                       <node concept="3TrEf2" id="hanfaue" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpfo.1179357286898" />
+                        <ref role="3Tt5mk" to="tpfo:hanb17M" />
                       </node>
                     </node>
                   </node>
@@ -2010,7 +2010,7 @@
         </node>
       </node>
       <node concept="liA8E" id="hAUPAV7" role="2OqNvi">
-        <reference role="37wK5l" target="lgzw.~Matcher%dmatches()%cboolean" resolve="matches" />
+        <ref role="37wK5l" to="lgzw:~Matcher.matches():boolean" resolve="matches" />
       </node>
       <node concept="raruj" id="haneRU1" role="lGtFl" />
     </node>
@@ -2018,7 +2018,7 @@
   <node concept="13MO4I" id="hMkcHy7">
     <property role="TrG5h" value="reduce_SplitOperation" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpee.1197027756228" resolve="DotExpression" />
+    <ref role="3gUMe" to="tpee:hqOqwz4" resolve="DotExpression" />
     <node concept="312cEu" id="hMkcT$Y" role="13RCb5">
       <property role="TrG5h" value="abc" />
       <node concept="3Tm1VV" id="hMkcT$Z" role="1B3o_S" />
@@ -2034,8 +2034,8 @@
         <node concept="3clFbS" id="hMkcYd0" role="3clF47">
           <node concept="3clFbF" id="5OTxl17T4tz" role="3cqZAp">
             <node concept="2YIFZM" id="hMkcYrs" role="3clFbG">
-              <reference role="1Pybhc" target="cpb3.8235206972880844189" resolve="RegexpOperations" />
-              <reference role="37wK5l" target="cpb3.8235206972880844266" resolve="split" />
+              <ref role="1Pybhc" to="cpb3:799lhKuovmt" resolve="RegexpOperations" />
+              <ref role="37wK5l" to="cpb3:799lhKuovnE" resolve="split" />
               <node concept="10Nm6u" id="hMkcYrt" role="37wK5m">
                 <node concept="29HgVG" id="hMkcYru" role="lGtFl">
                   <node concept="3NFfHV" id="hMkcYrv" role="3NFExx">
@@ -2044,7 +2044,7 @@
                         <node concept="2OqwBi" id="hMke3D0" role="3cqZAk">
                           <node concept="30H73N" id="hMke0kr" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hMke4ds" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1197027771414" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                           </node>
                         </node>
                       </node>
@@ -2059,16 +2059,16 @@
                       <node concept="3cpWs6" id="hMkcYrD" role="3cqZAp">
                         <node concept="2OqwBi" id="hMolh15" role="3cqZAk">
                           <node concept="1PxgMI" id="hMklP1y" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpfo.1222256539755" resolve="SplitOperation" />
+                            <ref role="1PxNhF" to="tpfo:hMkaFxF" resolve="SplitOperation" />
                             <node concept="2OqwBi" id="hMkcYrE" role="1PxMeX">
                               <node concept="30H73N" id="hMkgp8z" role="2Oq$k0" />
                               <node concept="3TrEf2" id="hMklOTt" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="hMotYYy" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                            <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                           </node>
                         </node>
                       </node>
@@ -2086,7 +2086,7 @@
   <node concept="13MO4I" id="hMksA8H">
     <property role="TrG5h" value="reduce_ReplaceOperation" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpee.1197027756228" resolve="DotExpression" />
+    <ref role="3gUMe" to="tpee:hqOqwz4" resolve="DotExpression" />
     <node concept="312cEu" id="hMksFDy" role="13RCb5">
       <property role="TrG5h" value="abc" />
       <node concept="3Tm1VV" id="hMksFDz" role="1B3o_S" />
@@ -2096,8 +2096,8 @@
         <node concept="3clFbS" id="hMksFDB" role="3clF47">
           <node concept="3clFbF" id="hMksJij" role="3cqZAp">
             <node concept="2YIFZM" id="hMksJik" role="3clFbG">
-              <reference role="1Pybhc" target="cpb3.8235206972880844189" resolve="RegexpOperations" />
-              <reference role="37wK5l" target="cpb3.8235206972880844195" resolve="replace" />
+              <ref role="1Pybhc" to="cpb3:799lhKuovmt" resolve="RegexpOperations" />
+              <ref role="37wK5l" to="cpb3:799lhKuovmz" resolve="replace" />
               <node concept="10Nm6u" id="hMtQaz$" role="37wK5m">
                 <node concept="29HgVG" id="hMtQbEq" role="lGtFl">
                   <node concept="3NFfHV" id="hMtQbEr" role="3NFExx">
@@ -2106,7 +2106,7 @@
                         <node concept="2OqwBi" id="hMtQdjY" role="3cqZAk">
                           <node concept="30H73N" id="hMtQd71" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hMtQdyb" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1197027771414" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                           </node>
                         </node>
                       </node>
@@ -2130,12 +2130,12 @@
                               <node concept="2OqwBi" id="hMu4xiE" role="2Oq$k0">
                                 <node concept="30H73N" id="hMu4xiF" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="hMu4xiG" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="hMu4xiH" role="2OqNvi">
                                 <node concept="chp4Y" id="hMu4_UC" role="cj9EA">
-                                  <reference role="cht4Q" target="tpfo.1222260556146" resolve="ReplaceWithRegexpOperation" />
+                                  <ref role="cht4Q" to="tpfo:hMkq05M" resolve="ReplaceWithRegexpOperation" />
                                 </node>
                               </node>
                             </node>
@@ -2144,7 +2144,7 @@
                             <node concept="2OqwBi" id="hMtQ6Q4" role="2Oq$k0">
                               <node concept="30H73N" id="hMtQ6Q5" role="2Oq$k0" />
                               <node concept="3TrEf2" id="hMu4l6F" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                               </node>
                             </node>
                             <node concept="3w_OXm" id="hMtQ6Q7" role="2OqNvi" />
@@ -2154,16 +2154,16 @@
                       <node concept="3cpWs6" id="hMtQ6Q8" role="3cqZAp">
                         <node concept="2OqwBi" id="hMtQ6Q9" role="3cqZAk">
                           <node concept="1PxgMI" id="hMtQ6Qa" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpfo.1222260556146" resolve="ReplaceWithRegexpOperation" />
+                            <ref role="1PxNhF" to="tpfo:hMkq05M" resolve="ReplaceWithRegexpOperation" />
                             <node concept="2OqwBi" id="hMtQ6Qb" role="1PxMeX">
                               <node concept="30H73N" id="hMtQ6Qc" role="2Oq$k0" />
                               <node concept="3TrEf2" id="hMu4lP$" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="hMtQ6Qe" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                            <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                           </node>
                         </node>
                       </node>
@@ -2187,12 +2187,12 @@
                               <node concept="2OqwBi" id="hMu4HnP" role="2Oq$k0">
                                 <node concept="30H73N" id="hMu4H7W" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="hMu4HL1" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="hMu4IIn" role="2OqNvi">
                                 <node concept="chp4Y" id="hMu4Kqi" role="cj9EA">
-                                  <reference role="cht4Q" target="tpfo.1222260556146" resolve="ReplaceWithRegexpOperation" />
+                                  <ref role="cht4Q" to="tpfo:hMkq05M" resolve="ReplaceWithRegexpOperation" />
                                 </node>
                               </node>
                             </node>
@@ -2201,7 +2201,7 @@
                             <node concept="2OqwBi" id="hMtOiXf" role="2Oq$k0">
                               <node concept="30H73N" id="hMtOiGo" role="2Oq$k0" />
                               <node concept="3TrEf2" id="hMu4D_K" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                               </node>
                             </node>
                             <node concept="3w_OXm" id="hMtOkwH" role="2OqNvi" />
@@ -2211,16 +2211,16 @@
                       <node concept="3cpWs6" id="hMksVP8" role="3cqZAp">
                         <node concept="2OqwBi" id="hMkt00B" role="3cqZAk">
                           <node concept="1PxgMI" id="hMksX$5" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpfo.1222260556146" resolve="ReplaceWithRegexpOperation" />
+                            <ref role="1PxNhF" to="tpfo:hMkq05M" resolve="ReplaceWithRegexpOperation" />
                             <node concept="2OqwBi" id="hMksWzN" role="1PxMeX">
                               <node concept="30H73N" id="hMksWnP" role="2Oq$k0" />
                               <node concept="3TrEf2" id="hMu4Eap" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="hMkt1rf" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpfo.1222261033031" />
+                            <ref role="3Tt5mk" to="tpfo:hMkrOx7" />
                           </node>
                         </node>
                       </node>
@@ -2238,7 +2238,7 @@
   <node concept="13MO4I" id="hMku2dp">
     <property role="TrG5h" value="reduce_MatchRegexpOperation" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpee.1197027756228" resolve="DotExpression" />
+    <ref role="3gUMe" to="tpee:hqOqwz4" resolve="DotExpression" />
     <node concept="312cEu" id="hMkua9W" role="13RCb5">
       <property role="TrG5h" value="abc" />
       <node concept="3Tm1VV" id="hMkua9X" role="1B3o_S" />
@@ -2250,24 +2250,24 @@
             <node concept="2OqwBi" id="hMkuxR8" role="3clFbG">
               <node concept="2OqwBi" id="hMkuxR9" role="2Oq$k0">
                 <node concept="2YIFZM" id="hMkuxRa" role="2Oq$k0">
-                  <reference role="37wK5l" target="lgzw.~Pattern%dcompile(java%dlang%dString)%cjava%dutil%dregex%dPattern" resolve="compile" />
-                  <reference role="1Pybhc" target="lgzw.~Pattern" resolve="Pattern" />
+                  <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
+                  <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
                   <node concept="29HgVG" id="hMkuxRb" role="lGtFl">
                     <node concept="3NFfHV" id="hMkuxRc" role="3NFExx">
                       <node concept="3clFbS" id="hMkuxRd" role="2VODD2">
                         <node concept="3clFbF" id="hMku_6I" role="3cqZAp">
                           <node concept="2OqwBi" id="hMkuC3k" role="3clFbG">
                             <node concept="1PxgMI" id="hMku_V4" role="2Oq$k0">
-                              <reference role="1PxNhF" target="tpfo.1222260469397" resolve="MatchRegexpOperation" />
+                              <ref role="1PxNhF" to="tpfo:hMkpEUl" resolve="MatchRegexpOperation" />
                               <node concept="2OqwBi" id="hMku_iu" role="1PxMeX">
                                 <node concept="30H73N" id="hMku_6J" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="hMku_Fb" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="hMkuCqk" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                              <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                             </node>
                           </node>
                         </node>
@@ -2279,7 +2279,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="hMkuxRi" role="2OqNvi">
-                  <reference role="37wK5l" target="lgzw.~Pattern%dmatcher(java%dlang%dCharSequence)%cjava%dutil%dregex%dMatcher" resolve="matcher" />
+                  <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                   <node concept="Xl_RD" id="hMkuxRj" role="37wK5m">
                     <property role="Xl_RC" value="input" />
                     <node concept="29HgVG" id="hMkuxRk" role="lGtFl">
@@ -2289,7 +2289,7 @@
                             <node concept="2OqwBi" id="hMkuFAH" role="3clFbG">
                               <node concept="30H73N" id="hMkuFjT" role="2Oq$k0" />
                               <node concept="3TrEf2" id="hMkuG34" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tpee.1197027771414" />
+                                <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                               </node>
                             </node>
                           </node>
@@ -2300,7 +2300,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="hMkuxRr" role="2OqNvi">
-                <reference role="37wK5l" target="lgzw.~Matcher%dmatches()%cboolean" resolve="matches" />
+                <ref role="37wK5l" to="lgzw:~Matcher.matches():boolean" resolve="matches" />
               </node>
               <node concept="raruj" id="hMkuxRs" role="lGtFl" />
             </node>
@@ -2312,7 +2312,7 @@
   <node concept="13MO4I" id="5kfJOUWnQnR">
     <property role="TrG5h" value="reduce_FindMatchExpression" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpfo.6129327962763158517" resolve="FindMatchExpression" />
+    <ref role="3gUMe" to="tpfo:5kfJOUWnufP" resolve="FindMatchExpression" />
     <node concept="9aQIb" id="5kfJOUWnQnT" role="13RCb5">
       <node concept="3clFbS" id="5kfJOUWnQnU" role="9aQI4">
         <node concept="3cpWs8" id="5kfJOUWnQnV" role="3cqZAp">
@@ -2322,8 +2322,8 @@
             <node concept="2OqwBi" id="5kfJOUWnQo8" role="33vP2m">
               <node concept="2OqwBi" id="5kfJOUWnQo2" role="2Oq$k0">
                 <node concept="2YIFZM" id="5kfJOUWnQo0" role="2Oq$k0">
-                  <reference role="37wK5l" target="lgzw.~Pattern%dcompile(java%dlang%dString)%cjava%dutil%dregex%dPattern" resolve="compile" />
-                  <reference role="1Pybhc" target="lgzw.~Pattern" resolve="Pattern" />
+                  <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
+                  <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
                   <node concept="Xl_RD" id="5kfJOUWnQo1" role="37wK5m">
                     <property role="Xl_RC" value="" />
                   </node>
@@ -2334,7 +2334,7 @@
                           <node concept="2OqwBi" id="5kfJOUWnQok" role="3clFbG">
                             <node concept="30H73N" id="5kfJOUWnQoj" role="2Oq$k0" />
                             <node concept="3TrEf2" id="5kfJOUWnQFI" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                              <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                             </node>
                           </node>
                         </node>
@@ -2343,7 +2343,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="5kfJOUWnQo6" role="2OqNvi">
-                  <reference role="37wK5l" target="lgzw.~Pattern%dmatcher(java%dlang%dCharSequence)%cjava%dutil%dregex%dMatcher" resolve="matcher" />
+                  <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                   <node concept="Xl_RD" id="5kfJOUWnQo7" role="37wK5m">
                     <node concept="29HgVG" id="5kfJOUWnQFL" role="lGtFl">
                       <node concept="3NFfHV" id="5kfJOUWnQFM" role="3NFExx">
@@ -2352,7 +2352,7 @@
                             <node concept="2OqwBi" id="5kfJOUWnQFQ" role="3clFbG">
                               <node concept="30H73N" id="5kfJOUWnQFP" role="2Oq$k0" />
                               <node concept="3TrEf2" id="5kfJOUWnQFU" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tpfo.6129327962763255289" />
+                                <ref role="3Tt5mk" to="tpfo:5kfJOUWnPRT" />
                               </node>
                             </node>
                           </node>
@@ -2363,7 +2363,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5kfJOUWnQoc" role="2OqNvi">
-                <reference role="37wK5l" target="lgzw.~Matcher%dfind()%cboolean" resolve="find" />
+                <ref role="37wK5l" to="lgzw:~Matcher.find():boolean" resolve="find" />
               </node>
               <node concept="raruj" id="5kfJOUWs5Xn" role="lGtFl" />
             </node>
@@ -2382,13 +2382,13 @@
           <node concept="2OqwBi" id="67iNJ0IU85c" role="1DdaDG">
             <node concept="1Q6Npb" id="67iNJ0IU858" role="2Oq$k0" />
             <node concept="2SmgA7" id="67iNJ0IU85i" role="2OqNvi">
-              <reference role="2SmgA8" target="tpfo.6129327962763158517" resolve="FindMatchExpression" />
+              <ref role="2SmgA8" to="tpfo:5kfJOUWnufP" resolve="FindMatchExpression" />
             </node>
           </node>
           <node concept="3cpWsn" id="67iNJ0IU84Y" role="1Duv9x">
             <property role="TrG5h" value="expr" />
             <node concept="3Tqbb2" id="67iNJ0IU853" role="1tU5fm">
-              <reference role="ehGHo" target="tpfo.6129327962763158517" resolve="FindMatchExpression" />
+              <ref role="ehGHo" to="tpfo:5kfJOUWnufP" resolve="FindMatchExpression" />
             </node>
           </node>
           <node concept="3clFbS" id="67iNJ0IU850" role="2LFqv$">
@@ -2396,14 +2396,14 @@
               <node concept="3cpWsn" id="3Hqlh1$F2Sa" role="3cpWs9">
                 <property role="TrG5h" value="container" />
                 <node concept="2YIFZM" id="6XMl2rPaX8L" role="33vP2m">
-                  <reference role="37wK5l" target="tpft.8030573611853795847" resolve="getRegexpIfContainer" />
-                  <reference role="1Pybhc" target="tpft.8030573611853647771" resolve="RegexUtil" />
+                  <ref role="37wK5l" to="tpft:6XMl2rPaX87" resolve="getRegexpIfContainer" />
+                  <ref role="1Pybhc" to="tpft:6XMl2rPaoYr" resolve="RegexUtil" />
                   <node concept="37vLTw" id="3GM_nagTw2J" role="37wK5m">
-                    <reference role="3cqZAo" target="7048923897762709822" resolve="expr" />
+                    <ref role="3cqZAo" node="67iNJ0IU84Y" resolve="expr" />
                   </node>
                 </node>
                 <node concept="3Tqbb2" id="3Hqlh1$F2Sb" role="1tU5fm">
-                  <reference role="ehGHo" target="tpee.1068580123159" resolve="IfStatement" />
+                  <ref role="ehGHo" to="tpee:fzclF8n" resolve="IfStatement" />
                 </node>
               </node>
             </node>
@@ -2412,14 +2412,14 @@
                 <node concept="3clFbF" id="3Hqlh1$F2Sy" role="3cqZAp">
                   <node concept="2OqwBi" id="3Hqlh1$F2Sz" role="3clFbG">
                     <node concept="Rm8GO" id="3Hqlh1$F2S$" role="2Oq$k0">
-                      <reference role="1Px2BO" target="tpfr.7048923897762709721" resolve="Flags" />
-                      <reference role="Rm8GQ" target="tpfr.7048923897763033401" resolve="ADD_VARS" />
+                      <ref role="1Px2BO" to="tpfr:67iNJ0IU83p" resolve="Flags" />
+                      <ref role="Rm8GQ" to="tpfr:67iNJ0IVn4T" resolve="ADD_VARS" />
                     </node>
                     <node concept="liA8E" id="3Hqlh1$F2S_" role="2OqNvi">
-                      <reference role="37wK5l" target="tpfr.7048923897762709743" resolve="flag" />
+                      <ref role="37wK5l" to="tpfr:67iNJ0IU83J" resolve="flag" />
                       <node concept="2OqwBi" id="3Hqlh1$F2SA" role="37wK5m">
                         <node concept="37vLTw" id="3GM_nagT_$a" role="2Oq$k0">
-                          <reference role="3cqZAo" target="4276824325038550538" resolve="container" />
+                          <ref role="3cqZAo" node="3Hqlh1$F2Sa" resolve="container" />
                         </node>
                         <node concept="1mfA1w" id="3Hqlh1$F2SC" role="2OqNvi" />
                       </node>
@@ -2429,13 +2429,13 @@
                 <node concept="3clFbF" id="6XlzavgcXnH" role="3cqZAp">
                   <node concept="2OqwBi" id="6XlzavgcXnK" role="3clFbG">
                     <node concept="Rm8GO" id="6XlzavgcXnJ" role="2Oq$k0">
-                      <reference role="Rm8GQ" target="tpfr.8022472963610889555" resolve="REGEXP_NEED_VAR" />
-                      <reference role="1Px2BO" target="tpfr.7048923897762709721" resolve="Flags" />
+                      <ref role="Rm8GQ" to="tpfr:6XlzavgcWPj" resolve="REGEXP_NEED_VAR" />
+                      <ref role="1Px2BO" to="tpfr:67iNJ0IU83p" resolve="Flags" />
                     </node>
                     <node concept="liA8E" id="6XlzavgcXnO" role="2OqNvi">
-                      <reference role="37wK5l" target="tpfr.7048923897762709743" resolve="flag" />
+                      <ref role="37wK5l" to="tpfr:67iNJ0IU83J" resolve="flag" />
                       <node concept="37vLTw" id="3GM_nagTw3o" role="37wK5m">
-                        <reference role="3cqZAo" target="7048923897762709822" resolve="expr" />
+                        <ref role="3cqZAo" node="67iNJ0IU84Y" resolve="expr" />
                       </node>
                     </node>
                   </node>
@@ -2444,7 +2444,7 @@
               <node concept="3y3z36" id="3Hqlh1$F2Su" role="3clFbw">
                 <node concept="10Nm6u" id="3Hqlh1$F2Sx" role="3uHU7w" />
                 <node concept="37vLTw" id="3GM_nagTBVt" role="3uHU7B">
-                  <reference role="3cqZAo" target="4276824325038550538" resolve="container" />
+                  <ref role="3cqZAo" node="3Hqlh1$F2Sa" resolve="container" />
                 </node>
               </node>
             </node>
@@ -2455,7 +2455,7 @@
   </node>
   <node concept="13MO4I" id="67iNJ0IVnCk">
     <property role="TrG5h" value="insert_MatcherLocalVariable" />
-    <reference role="3gUMe" target="tpfo.6129327962763158517" resolve="FindMatchExpression" />
+    <ref role="3gUMe" to="tpfo:5kfJOUWnufP" resolve="FindMatchExpression" />
     <node concept="9aQIb" id="67iNJ0IVnCm" role="13RCb5">
       <node concept="3clFbS" id="67iNJ0IVnCn" role="9aQI4">
         <node concept="3cpWs8" id="67iNJ0IVnCp" role="3cqZAp">
@@ -2483,10 +2483,10 @@
               </node>
             </node>
             <node concept="3uibUv" id="3Hqlh1$CCQU" role="1tU5fm">
-              <reference role="3uigEE" target="lgzw.~Matcher" resolve="Matcher" />
+              <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
             </node>
             <node concept="1pdMLZ" id="2fFuTuK0lk6" role="lGtFl">
-              <reference role="2rW$FS" target="1215479319409" resolve="matcher" />
+              <ref role="2rW$FS" node="hG0dCHL" resolve="matcher" />
             </node>
           </node>
           <node concept="raruj" id="67iNJ0IVnO1" role="lGtFl" />
@@ -2497,14 +2497,14 @@
   <node concept="13MO4I" id="3Hqlh1$F2SW">
     <property role="TrG5h" value="reduce_FindMatchExpressionWithVar" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpfo.6129327962763158517" resolve="FindMatchExpression" />
+    <ref role="3gUMe" to="tpfo:5kfJOUWnufP" resolve="FindMatchExpression" />
     <node concept="9aQIb" id="3Hqlh1$F2SY" role="13RCb5">
       <node concept="3clFbS" id="3Hqlh1$F2SZ" role="9aQI4">
         <node concept="3cpWs8" id="3Hqlh1$F2TO" role="3cqZAp">
           <node concept="3cpWsn" id="3Hqlh1$F2TP" role="3cpWs9">
             <property role="TrG5h" value="m" />
             <node concept="3uibUv" id="2btkCdUeqCj" role="1tU5fm">
-              <reference role="3uigEE" target="lgzw.~Matcher" resolve="Matcher" />
+              <ref role="3uigEE" to="lgzw:~Matcher" resolve="Matcher" />
             </node>
           </node>
         </node>
@@ -2514,13 +2514,13 @@
             <node concept="10P_77" id="3Hqlh1$F2T6" role="1tU5fm" />
             <node concept="2OqwBi" id="3Hqlh1$F2T7" role="33vP2m">
               <node concept="liA8E" id="3Hqlh1$F2Tr" role="2OqNvi">
-                <reference role="37wK5l" target="lgzw.~Matcher%dfind()%cboolean" resolve="find" />
+                <ref role="37wK5l" to="lgzw:~Matcher.find():boolean" resolve="find" />
               </node>
               <node concept="raruj" id="3Hqlh1$F2Ts" role="lGtFl" />
               <node concept="1eOMI4" id="3Hqlh1$F2Tt" role="2Oq$k0">
                 <node concept="37vLTI" id="3Hqlh1$F2TT" role="1eOMHV">
                   <node concept="37vLTw" id="3GM_nagTwsV" role="37vLTJ">
-                    <reference role="3cqZAo" target="4276824325038550645" resolve="m" />
+                    <ref role="3cqZAo" node="3Hqlh1$F2TP" resolve="m" />
                     <node concept="1ZhdrF" id="2btkCdUh3Kw" role="lGtFl">
                       <property role="2qtEX8" value="variableDeclaration" />
                       <node concept="3$xsQk" id="2btkCdUh3Kx" role="3$ytzL">
@@ -2529,7 +2529,7 @@
                             <node concept="2OqwBi" id="2btkCdUh3KC" role="3clFbG">
                               <node concept="1iwH7S" id="2btkCdUh3KB" role="2Oq$k0" />
                               <node concept="1iwH70" id="2btkCdUh3KG" role="2OqNvi">
-                                <reference role="1iwH77" target="1215479319409" resolve="matcher" />
+                                <ref role="1iwH77" node="hG0dCHL" resolve="matcher" />
                                 <node concept="30H73N" id="2btkCdUh3KI" role="1iwH7V" />
                               </node>
                             </node>
@@ -2540,8 +2540,8 @@
                   </node>
                   <node concept="2OqwBi" id="3Hqlh1$F2TW" role="37vLTx">
                     <node concept="2YIFZM" id="3Hqlh1$F2TX" role="2Oq$k0">
-                      <reference role="1Pybhc" target="lgzw.~Pattern" resolve="Pattern" />
-                      <reference role="37wK5l" target="lgzw.~Pattern%dcompile(java%dlang%dString)%cjava%dutil%dregex%dPattern" resolve="compile" />
+                      <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
+                      <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
                       <node concept="Xl_RD" id="3Hqlh1$F2TY" role="37wK5m">
                         <property role="Xl_RC" value="" />
                       </node>
@@ -2552,7 +2552,7 @@
                               <node concept="2OqwBi" id="3Hqlh1$F2U3" role="3clFbG">
                                 <node concept="30H73N" id="3Hqlh1$F2U4" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3Hqlh1$F2U5" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="tpfo.1174653387388" />
+                                  <ref role="3Tt5mk" to="tpfo:h5YN49W" />
                                 </node>
                               </node>
                             </node>
@@ -2561,7 +2561,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="3Hqlh1$F2U6" role="2OqNvi">
-                      <reference role="37wK5l" target="lgzw.~Pattern%dmatcher(java%dlang%dCharSequence)%cjava%dutil%dregex%dMatcher" resolve="matcher" />
+                      <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                       <node concept="Xl_RD" id="3Hqlh1$F2U7" role="37wK5m">
                         <node concept="29HgVG" id="3Hqlh1$F2U8" role="lGtFl">
                           <node concept="3NFfHV" id="3Hqlh1$F2U9" role="3NFExx">
@@ -2570,7 +2570,7 @@
                                 <node concept="2OqwBi" id="3Hqlh1$F2Uc" role="3clFbG">
                                   <node concept="30H73N" id="3Hqlh1$F2Ud" role="2Oq$k0" />
                                   <node concept="3TrEf2" id="3Hqlh1$F2Ue" role="2OqNvi">
-                                    <reference role="3Tt5mk" target="tpfo.6129327962763255289" />
+                                    <ref role="3Tt5mk" to="tpfo:5kfJOUWnPRT" />
                                   </node>
                                 </node>
                               </node>
@@ -2591,14 +2591,14 @@
   <node concept="13MO4I" id="3iI_KKp9qya">
     <property role="TrG5h" value="reduce_ReplaceRegexpOperation" />
     <property role="3GE5qa" value="Reduce" />
-    <reference role="3gUMe" target="tpee.1197027756228" resolve="DotExpression" />
+    <ref role="3gUMe" to="tpee:hqOqwz4" resolve="DotExpression" />
     <node concept="9aQIb" id="3iI_KKp9qyc" role="13RCb5">
       <node concept="3clFbS" id="3iI_KKp9qyd" role="9aQI4">
         <node concept="3clFbF" id="3iI_KKp9qye" role="3cqZAp">
           <node concept="2OqwBi" id="3iI_KKp9qyf" role="3clFbG">
             <node concept="2OqwBi" id="3iI_KKp9qyg" role="2Oq$k0">
               <node concept="liA8E" id="3iI_KKp9qys" role="2OqNvi">
-                <reference role="37wK5l" target="lgzw.~Pattern%dmatcher(java%dlang%dCharSequence)%cjava%dutil%dregex%dMatcher" resolve="matcher" />
+                <ref role="37wK5l" to="lgzw:~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolve="matcher" />
                 <node concept="Xl_RD" id="3iI_KKp9qyt" role="37wK5m">
                   <property role="Xl_RC" value="input" />
                   <node concept="29HgVG" id="3iI_KKp9qyu" role="lGtFl">
@@ -2608,7 +2608,7 @@
                           <node concept="2OqwBi" id="3iI_KKp9qyy" role="3clFbG">
                             <node concept="30H73N" id="3iI_KKp9qyz" role="2Oq$k0" />
                             <node concept="3TrEf2" id="3iI_KKp9qy$" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1197027771414" />
+                              <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                             </node>
                           </node>
                         </node>
@@ -2620,8 +2620,8 @@
               <node concept="1dyn4i" id="5OTxl17SWlg" role="2Oq$k0">
                 <property role="1dyqJU" value="aa" />
                 <node concept="2YIFZM" id="5OTxl17SWli" role="1dyrYi">
-                  <reference role="37wK5l" target="lgzw.~Pattern%dcompile(java%dlang%dString,int)%cjava%dutil%dregex%dPattern" resolve="compile" />
-                  <reference role="1Pybhc" target="lgzw.~Pattern" resolve="Pattern" />
+                  <ref role="37wK5l" to="lgzw:~Pattern.compile(java.lang.String,int):java.util.regex.Pattern" resolve="compile" />
+                  <ref role="1Pybhc" to="lgzw:~Pattern" resolve="Pattern" />
                   <node concept="Xl_RD" id="5OTxl17SWlj" role="37wK5m">
                     <property role="Xl_RC" value="text" />
                     <node concept="17Uvod" id="5OTxl17SWlk" role="lGtFl">
@@ -2632,20 +2632,20 @@
                             <node concept="2OqwBi" id="5OTxl17SWlo" role="3cqZAk">
                               <node concept="2OqwBi" id="5OTxl17SWlp" role="2Oq$k0">
                                 <node concept="1PxgMI" id="5OTxl17SWlq" role="2Oq$k0">
-                                  <reference role="1PxNhF" target="tpfo.3796137614137086346" resolve="ReplaceRegexpOperation" />
+                                  <ref role="1PxNhF" to="tpfo:3iI_KKp8X6a" resolve="ReplaceRegexpOperation" />
                                   <node concept="2OqwBi" id="5OTxl17SWlr" role="1PxMeX">
                                     <node concept="30H73N" id="5OTxl17SWls" role="2Oq$k0" />
                                     <node concept="3TrEf2" id="5OTxl17SWlt" role="2OqNvi">
-                                      <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                      <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                                     </node>
                                   </node>
                                 </node>
                                 <node concept="3TrEf2" id="5OTxl17SWlu" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="tpfo.3796137614137159227" />
+                                  <ref role="3Tt5mk" to="tpfo:3iI_KKp9eSV" />
                                 </node>
                               </node>
                               <node concept="2qgKlT" id="5OTxl17SWlv" role="2OqNvi">
-                                <reference role="37wK5l" target="tpfs.1213877429451" resolve="toString" />
+                                <ref role="37wK5l" to="tpfs:hEwIUjb" resolve="toString" />
                               </node>
                             </node>
                           </node>
@@ -2672,14 +2672,14 @@
                             <node concept="3cpWsn" id="5OTxl17SWme" role="3cpWs9">
                               <property role="TrG5h" value="rro" />
                               <node concept="3Tqbb2" id="5OTxl17SWmf" role="1tU5fm">
-                                <reference role="ehGHo" target="tpfo.3796137614137086346" resolve="ReplaceRegexpOperation" />
+                                <ref role="ehGHo" to="tpfo:3iI_KKp8X6a" resolve="ReplaceRegexpOperation" />
                               </node>
                               <node concept="1PxgMI" id="5OTxl17SWmh" role="33vP2m">
-                                <reference role="1PxNhF" target="tpfo.3796137614137086346" resolve="ReplaceRegexpOperation" />
+                                <ref role="1PxNhF" to="tpfo:3iI_KKp8X6a" resolve="ReplaceRegexpOperation" />
                                 <node concept="2OqwBi" id="5OTxl17SWmi" role="1PxMeX">
                                   <node concept="30H73N" id="5OTxl17SWmj" role="2Oq$k0" />
                                   <node concept="3TrEf2" id="5OTxl17SWmk" role="2OqNvi">
-                                    <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                    <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                                   </node>
                                 </node>
                               </node>
@@ -2688,25 +2688,25 @@
                           <node concept="3clFbJ" id="5OTxl17SWlC" role="3cqZAp">
                             <node concept="2OqwBi" id="5OTxl17SWlD" role="3clFbw">
                               <node concept="37vLTw" id="3GM_nagTB9Z" role="2Oq$k0">
-                                <reference role="3cqZAo" target="6717546899049792910" resolve="rro" />
+                                <ref role="3cqZAo" node="5OTxl17SWme" resolve="rro" />
                               </node>
                               <node concept="3TrcHB" id="5OTxl17SWlF" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpfo.3796137614137159271" resolve="multiLine" />
+                                <ref role="3TsBF5" to="tpfo:3iI_KKp9eTB" resolve="multiLine" />
                               </node>
                             </node>
                             <node concept="3clFbS" id="5OTxl17SWlG" role="3clFbx">
                               <node concept="3clFbF" id="5OTxl17SWlH" role="3cqZAp">
                                 <node concept="37vLTI" id="5OTxl17SWlI" role="3clFbG">
                                   <node concept="37vLTw" id="3GM_nagTu1j" role="37vLTJ">
-                                    <reference role="3cqZAo" target="6717546899049792869" resolve="result" />
+                                    <ref role="3cqZAo" node="5OTxl17SWl_" resolve="result" />
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17SWlK" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17SWlL" role="3uHU7w">
-                                      <reference role="1PxDUh" target="lgzw.~Pattern" resolve="Pattern" />
-                                      <reference role="3cqZAo" target="lgzw.~Pattern%dMULTILINE" resolve="MULTILINE" />
+                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="lgzw:~Pattern.MULTILINE" resolve="MULTILINE" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagTA3T" role="3uHU7B">
-                                      <reference role="3cqZAo" target="6717546899049792869" resolve="result" />
+                                      <ref role="3cqZAo" node="5OTxl17SWl_" resolve="result" />
                                     </node>
                                   </node>
                                 </node>
@@ -2716,25 +2716,25 @@
                           <node concept="3clFbJ" id="5OTxl17SWlN" role="3cqZAp">
                             <node concept="2OqwBi" id="5OTxl17SWlO" role="3clFbw">
                               <node concept="37vLTw" id="3GM_nagTwlV" role="2Oq$k0">
-                                <reference role="3cqZAo" target="6717546899049792910" resolve="rro" />
+                                <ref role="3cqZAo" node="5OTxl17SWme" resolve="rro" />
                               </node>
                               <node concept="3TrcHB" id="5OTxl17SWlQ" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpfo.3796137614137159270" resolve="dotAll" />
+                                <ref role="3TsBF5" to="tpfo:3iI_KKp9eTA" resolve="dotAll" />
                               </node>
                             </node>
                             <node concept="3clFbS" id="5OTxl17SWlR" role="3clFbx">
                               <node concept="3clFbF" id="5OTxl17SWlS" role="3cqZAp">
                                 <node concept="37vLTI" id="5OTxl17SWlT" role="3clFbG">
                                   <node concept="37vLTw" id="3GM_nagTwhg" role="37vLTJ">
-                                    <reference role="3cqZAo" target="6717546899049792869" resolve="result" />
+                                    <ref role="3cqZAo" node="5OTxl17SWl_" resolve="result" />
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17SWlV" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17SWlW" role="3uHU7w">
-                                      <reference role="1PxDUh" target="lgzw.~Pattern" resolve="Pattern" />
-                                      <reference role="3cqZAo" target="lgzw.~Pattern%dDOTALL" resolve="DOTALL" />
+                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="lgzw:~Pattern.DOTALL" resolve="DOTALL" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagTud$" role="3uHU7B">
-                                      <reference role="3cqZAo" target="6717546899049792869" resolve="result" />
+                                      <ref role="3cqZAo" node="5OTxl17SWl_" resolve="result" />
                                     </node>
                                   </node>
                                 </node>
@@ -2744,25 +2744,25 @@
                           <node concept="3clFbJ" id="5OTxl17SWlY" role="3cqZAp">
                             <node concept="2OqwBi" id="5OTxl17SWlZ" role="3clFbw">
                               <node concept="37vLTw" id="3GM_nagTuzB" role="2Oq$k0">
-                                <reference role="3cqZAo" target="6717546899049792910" resolve="rro" />
+                                <ref role="3cqZAo" node="5OTxl17SWme" resolve="rro" />
                               </node>
                               <node concept="3TrcHB" id="5OTxl17SWm1" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpfo.3796137614137159272" resolve="caseInsensitive" />
+                                <ref role="3TsBF5" to="tpfo:3iI_KKp9eTC" resolve="caseInsensitive" />
                               </node>
                             </node>
                             <node concept="3clFbS" id="5OTxl17SWm2" role="3clFbx">
                               <node concept="3clFbF" id="5OTxl17SWm3" role="3cqZAp">
                                 <node concept="37vLTI" id="5OTxl17SWm4" role="3clFbG">
                                   <node concept="37vLTw" id="3GM_nagTwZw" role="37vLTJ">
-                                    <reference role="3cqZAo" target="6717546899049792869" resolve="result" />
+                                    <ref role="3cqZAo" node="5OTxl17SWl_" resolve="result" />
                                   </node>
                                   <node concept="3cpWs3" id="5OTxl17SWm6" role="37vLTx">
                                     <node concept="10M0yZ" id="5OTxl17SWm7" role="3uHU7w">
-                                      <reference role="1PxDUh" target="lgzw.~Pattern" resolve="Pattern" />
-                                      <reference role="3cqZAo" target="lgzw.~Pattern%dCASE_INSENSITIVE" resolve="CASE_INSENSITIVE" />
+                                      <ref role="1PxDUh" to="lgzw:~Pattern" resolve="Pattern" />
+                                      <ref role="3cqZAo" to="lgzw:~Pattern.CASE_INSENSITIVE" resolve="CASE_INSENSITIVE" />
                                     </node>
                                     <node concept="37vLTw" id="3GM_nagTv3n" role="3uHU7B">
-                                      <reference role="3cqZAo" target="6717546899049792869" resolve="result" />
+                                      <ref role="3cqZAo" node="5OTxl17SWl_" resolve="result" />
                                     </node>
                                   </node>
                                 </node>
@@ -2771,7 +2771,7 @@
                           </node>
                           <node concept="3cpWs6" id="5OTxl17SWm9" role="3cqZAp">
                             <node concept="37vLTw" id="3GM_nagTt2l" role="3cqZAk">
-                              <reference role="3cqZAo" target="6717546899049792869" resolve="result" />
+                              <ref role="3cqZAo" node="5OTxl17SWl_" resolve="result" />
                             </node>
                           </node>
                         </node>
@@ -2799,7 +2799,7 @@
               </node>
             </node>
             <node concept="liA8E" id="3iI_KKp9qyE" role="2OqNvi">
-              <reference role="37wK5l" target="lgzw.~Matcher%dreplaceFirst(java%dlang%dString)%cjava%dlang%dString" resolve="replaceFirst" />
+              <ref role="37wK5l" to="lgzw:~Matcher.replaceFirst(java.lang.String):java.lang.String" resolve="replaceFirst" />
               <node concept="Xl_RD" id="3iI_KKp9qyF" role="37wK5m">
                 <property role="Xl_RC" value="" />
                 <node concept="17Uvod" id="3iI_KKp9qzc" role="lGtFl">
@@ -2809,16 +2809,16 @@
                       <node concept="3clFbF" id="3iI_KKp9qzf" role="3cqZAp">
                         <node concept="2OqwBi" id="3iI_KKp9qzo" role="3clFbG">
                           <node concept="1PxgMI" id="3iI_KKp9qzm" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpfo.3796137614137086346" resolve="ReplaceRegexpOperation" />
+                            <ref role="1PxNhF" to="tpfo:3iI_KKp8X6a" resolve="ReplaceRegexpOperation" />
                             <node concept="2OqwBi" id="3iI_KKp9qzh" role="1PxMeX">
                               <node concept="30H73N" id="3iI_KKp9qzg" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3iI_KKp9qzl" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                               </node>
                             </node>
                           </node>
                           <node concept="2qgKlT" id="3iI_KKp9FYQ" role="2OqNvi">
-                            <reference role="37wK5l" target="tpfs.3796137614137207007" resolve="getReplacementString" />
+                            <ref role="37wK5l" to="tpfs:3iI_KKp9qzv" resolve="getReplacementString" />
                           </node>
                         </node>
                       </node>
@@ -2837,16 +2837,16 @@
                         </node>
                         <node concept="2OqwBi" id="3iI_KKp9qyW" role="3K4Cdx">
                           <node concept="1PxgMI" id="3iI_KKp9qyU" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpfo.3796137614137086346" resolve="ReplaceRegexpOperation" />
+                            <ref role="1PxNhF" to="tpfo:3iI_KKp8X6a" resolve="ReplaceRegexpOperation" />
                             <node concept="2OqwBi" id="3iI_KKp9qyP" role="1PxMeX">
                               <node concept="30H73N" id="3iI_KKp9qyK" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3iI_KKp9qyT" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tpee.1197027833540" />
+                                <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3iI_KKp9qz0" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpfo.3796137614137159273" resolve="globalReplace" />
+                            <ref role="3TsBF5" to="tpfo:3iI_KKp9eTD" resolve="globalReplace" />
                           </node>
                         </node>
                         <node concept="Xl_RD" id="3iI_KKp9qz5" role="3K4E3e">

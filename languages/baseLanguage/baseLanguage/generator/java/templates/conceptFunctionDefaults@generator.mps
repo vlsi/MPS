@@ -131,7 +131,7 @@
   <node concept="13MO4I" id="gCCYkhx">
     <property role="TrG5h" value="reduce_ConceptFunctionParameter_default" />
     <property role="3GE5qa" value="ext.conceptFunction" />
-    <reference role="3gUMe" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
+    <ref role="3gUMe" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="3clFb_" id="gCCYkhy" role="13RCb5">
       <property role="TrG5h" value="_context_method_" />
       <node concept="3cqZAl" id="gCCYkhz" role="3clF45" />
@@ -139,13 +139,13 @@
         <node concept="3clFbF" id="4D3RMlPNfXK" role="3cqZAp">
           <node concept="2OqwBi" id="4D3RMlPNgd9" role="3clFbG">
             <node concept="10M0yZ" id="4D3RMlPNfXL" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="4D3RMlPNgdd" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dObject)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.Object):void" resolve="println" />
               <node concept="37vLTw" id="2BHiRxgm_vd" role="37wK5m">
-                <reference role="3cqZAo" target="1143148725353" resolve="_parameter_" />
+                <ref role="3cqZAo" node="gCCYkhD" resolve="_parameter_" />
                 <node concept="1ZhdrF" id="gCCYkhC" role="lGtFl">
                   <property role="2qtEX8" value="variableDeclaration" />
                   <node concept="3$xsQk" id="h1YqihQ" role="3$ytzL">
@@ -153,7 +153,7 @@
                       <node concept="3clFbF" id="hGRJV$o" role="3cqZAp">
                         <node concept="2OqwBi" id="2wdLO7Kg5zr" role="3clFbG">
                           <node concept="3TrcHB" id="2wdLO7Kg5zs" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpce.5092175715804935370" resolve="conceptAlias" />
+                            <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
                           </node>
                           <node concept="2OqwBi" id="2wdLO7Kg5zt" role="2Oq$k0">
                             <node concept="3NT_Vc" id="2wdLO7Kg5zu" role="2OqNvi" />
@@ -173,7 +173,7 @@
                           <node concept="2OqwBi" id="hxiHJ29" role="3fr31v">
                             <node concept="30H73N" id="htuO1nY" role="2Oq$k0" />
                             <node concept="2qgKlT" id="htuO1nZ" role="2OqNvi">
-                              <reference role="37wK5l" target="tpek.1213877522908" resolve="getFromParameterObject" />
+                              <ref role="37wK5l" to="tpek:hEwJh7s" resolve="getFromParameterObject" />
                             </node>
                           </node>
                         </node>
@@ -184,10 +184,10 @@
                     <node concept="1DoJHT" id="htupesf" role="gfFT$">
                       <property role="1Dpdpm" value="getXYZ" />
                       <node concept="3uibUv" id="htuphsG" role="1Ez5kq">
-                        <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+                        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                       </node>
                       <node concept="37vLTw" id="2BHiRxgsAW0" role="1EMhIo">
-                        <reference role="3cqZAo" target="1143148725353" resolve="_parameter_" />
+                        <ref role="3cqZAo" node="gCCYkhD" resolve="_parameter_" />
                         <node concept="1ZhdrF" id="htzT244" role="lGtFl">
                           <property role="2qtEX8" value="variableDeclaration" />
                           <node concept="3$xsQk" id="htzT245" role="3$ytzL">
@@ -207,11 +207,11 @@
                           <node concept="3clFbS" id="htuplMC" role="2VODD2">
                             <node concept="3clFbF" id="htupGX2" role="3cqZAp">
                               <node concept="2YIFZM" id="htupTS5" role="3clFbG">
-                                <reference role="37wK5l" target="msyo.~NameUtil%dgetGetterName(java%dlang%dString)%cjava%dlang%dString" resolve="getGetterName" />
-                                <reference role="1Pybhc" target="msyo.~NameUtil" resolve="NameUtil" />
+                                <ref role="37wK5l" to="msyo:~NameUtil.getGetterName(java.lang.String):java.lang.String" resolve="getGetterName" />
+                                <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
                                 <node concept="2OqwBi" id="2wdLO7KeqQI" role="37wK5m">
                                   <node concept="3TrcHB" id="2wdLO7KeqQJ" role="2OqNvi">
-                                    <reference role="3TsBF5" target="tpce.5092175715804935370" resolve="conceptAlias" />
+                                    <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
                                   </node>
                                   <node concept="2OqwBi" id="2wdLO7KeqQK" role="2Oq$k0">
                                     <node concept="3NT_Vc" id="2wdLO7KeqQL" role="2OqNvi" />
@@ -234,7 +234,7 @@
       <node concept="37vLTG" id="gCCYkhD" role="3clF46">
         <property role="TrG5h" value="_parameter_" />
         <node concept="3uibUv" id="gCCYkhE" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3Tm1VV" id="h9AO$gD" role="1B3o_S" />

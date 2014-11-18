@@ -186,7 +186,7 @@
     <property role="TrG5h" value="SuppressErrorsChecker" />
     <node concept="3Tm1VV" id="6nUsdRkIPO2" role="1B3o_S" />
     <node concept="3uibUv" id="6nUsdRkIPO7" role="1zkMxy">
-      <reference role="3uigEE" target="l62w.~EditorCheckerAdapter" resolve="EditorCheckerAdapter" />
+      <ref role="3uigEE" to="l62w:~EditorCheckerAdapter" resolve="EditorCheckerAdapter" />
     </node>
     <node concept="3clFbW" id="6nUsdRkIPO3" role="jymVt">
       <node concept="3cqZAl" id="6nUsdRkIPO4" role="3clF45" />
@@ -200,23 +200,23 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tmbuc" id="6nUsdRkIPO9" role="1B3o_S" />
       <node concept="3uibUv" id="6nUsdRkIPOa" role="3clF45">
-        <reference role="3uigEE" target="k7g3.~Set" resolve="Set" />
+        <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
         <node concept="3uibUv" id="6nUsdRkIPOb" role="11_B2D">
-          <reference role="3uigEE" target="9a8.~EditorMessage" resolve="EditorMessage" />
+          <ref role="3uigEE" to="9a8:~EditorMessage" resolve="EditorMessage" />
         </node>
       </node>
       <node concept="37vLTG" id="6nUsdRkIPOc" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="6nUsdRkIPOd" role="1tU5fm">
-          <reference role="3uigEE" target="ec5l.~SNode" resolve="SNode" />
+          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="6nUsdRkIPOe" role="3clF46">
         <property role="TrG5h" value="list" />
         <node concept="3uibUv" id="6nUsdRkIPOf" role="1tU5fm">
-          <reference role="3uigEE" target="k7g3.~List" resolve="List" />
+          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
           <node concept="3uibUv" id="6nUsdRkIPOg" role="11_B2D">
-            <reference role="3uigEE" target="87kw.~SModelEvent" resolve="SModelEvent" />
+            <ref role="3uigEE" to="87kw:~SModelEvent" resolve="SModelEvent" />
           </node>
         </node>
       </node>
@@ -227,7 +227,7 @@
       <node concept="37vLTG" id="6nUsdRkIPOj" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="6nUsdRkIPOk" role="1tU5fm">
-          <reference role="3uigEE" target="srng.~EditorContext" resolve="EditorContext" />
+          <ref role="3uigEE" to="srng:~EditorContext" resolve="EditorContext" />
         </node>
       </node>
       <node concept="3clFbS" id="6nUsdRkIPOl" role="3clF47">
@@ -236,13 +236,13 @@
             <property role="TrG5h" value="messages" />
             <node concept="2hMVRd" id="6nUsdRkIPOo" role="1tU5fm">
               <node concept="3uibUv" id="6nUsdRkIPOp" role="2hN53Y">
-                <reference role="3uigEE" target="9a8.~EditorMessage" resolve="EditorMessage" />
+                <ref role="3uigEE" to="9a8:~EditorMessage" resolve="EditorMessage" />
               </node>
             </node>
             <node concept="2ShNRf" id="6nUsdRkIPOq" role="33vP2m">
               <node concept="32HrFt" id="6nUsdRkIPOr" role="2ShVmc">
                 <node concept="3uibUv" id="6nUsdRkIPOs" role="HW$YZ">
-                  <reference role="3uigEE" target="9a8.~EditorMessage" resolve="EditorMessage" />
+                  <ref role="3uigEE" to="9a8:~EditorMessage" resolve="EditorMessage" />
                 </node>
               </node>
             </node>
@@ -253,7 +253,7 @@
             <property role="TrG5h" value="node" />
             <node concept="3Tqbb2" id="6nUsdRkIPOv" role="1tU5fm" />
             <node concept="37vLTw" id="2BHiRxgm5Qc" role="33vP2m">
-              <reference role="3cqZAo" target="7348309840067517708" resolve="root" />
+              <ref role="3cqZAo" node="6nUsdRkIPOc" resolve="root" />
             </node>
           </node>
         </node>
@@ -267,14 +267,14 @@
                 <node concept="3clFbF" id="6nUsdRkIPOA" role="3cqZAp">
                   <node concept="2OqwBi" id="6nUsdRkIPOB" role="3clFbG">
                     <node concept="37vLTw" id="3GM_nagTB29" role="2Oq$k0">
-                      <reference role="3cqZAo" target="7348309840067517719" resolve="messages" />
+                      <ref role="3cqZAo" node="6nUsdRkIPOn" resolve="messages" />
                     </node>
                     <node concept="TSZUe" id="6nUsdRkIPOD" role="2OqNvi">
                       <node concept="2ShNRf" id="6nUsdRkIPOE" role="25WWJ7">
                         <node concept="1pGfFk" id="6nUsdRkIPOF" role="2ShVmc">
-                          <reference role="37wK5l" target="7348309840067517770" resolve="SuppressErrorsMessage" />
+                          <ref role="37wK5l" node="6nUsdRkIPPa" resolve="SuppressErrorsMessage" />
                           <node concept="2GrUjf" id="6nUsdRkIPOG" role="37wK5m">
-                            <reference role="2Gs0qQ" target="7348309840067517730" resolve="n" />
+                            <ref role="2Gs0qQ" node="6nUsdRkIPOy" resolve="n" />
                           </node>
                           <node concept="Xjq3P" id="6nUsdRkIPOH" role="37wK5m" />
                           <node concept="Xl_RD" id="6nUsdRkIPOI" role="37wK5m">
@@ -290,11 +290,11 @@
                 <node concept="10Nm6u" id="6nUsdRkIPOK" role="3uHU7w" />
                 <node concept="2OqwBi" id="6nUsdRkIPOL" role="3uHU7B">
                   <node concept="2GrUjf" id="6nUsdRkIPOM" role="2Oq$k0">
-                    <reference role="2Gs0qQ" target="7348309840067517730" resolve="n" />
+                    <ref role="2Gs0qQ" node="6nUsdRkIPOy" resolve="n" />
                   </node>
                   <node concept="3CFZ6_" id="6nUsdRkIPON" role="2OqNvi">
                     <node concept="3CFYIy" id="6nUsdRkIPOO" role="3CFYIz">
-                      <reference role="3CFYIx" target="tpck.4222318806802425298" resolve="SuppressErrorsAnnotation" />
+                      <ref role="3CFYIx" to="tpck:3EoG9lZUeni" resolve="SuppressErrorsAnnotation" />
                     </node>
                   </node>
                 </node>
@@ -303,12 +303,12 @@
           </node>
           <node concept="2OqwBi" id="6nUsdRkIPOP" role="2GsD0m">
             <node concept="37vLTw" id="3GM_nagTxcq" role="2Oq$k0">
-              <reference role="3cqZAo" target="7348309840067517726" resolve="node" />
+              <ref role="3cqZAo" node="6nUsdRkIPOu" resolve="node" />
             </node>
             <node concept="2Rf3mk" id="6nUsdRkIPOR" role="2OqNvi">
               <node concept="1xMEDy" id="6nUsdRkIPOS" role="1xVPHs">
                 <node concept="chp4Y" id="6nUsdRkIPOT" role="ri$Ld">
-                  <reference role="cht4Q" target="tpck.3393165121846091586" resolve="ICanSuppressErrors" />
+                  <ref role="cht4Q" to="tpck:2WmWrdnSpX2" resolve="ICanSuppressErrors" />
                 </node>
               </node>
             </node>
@@ -316,12 +316,12 @@
         </node>
         <node concept="3cpWs6" id="6nUsdRkIPOU" role="3cqZAp">
           <node concept="37vLTw" id="3GM_nagTshY" role="3cqZAk">
-            <reference role="3cqZAo" target="7348309840067517719" resolve="messages" />
+            <ref role="3cqZAo" node="6nUsdRkIPOn" resolve="messages" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_S5TU" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
   </node>
@@ -329,18 +329,18 @@
     <property role="TrG5h" value="SuppressErrorsMessage" />
     <node concept="3Tm1VV" id="6nUsdRkIPP9" role="1B3o_S" />
     <node concept="3uibUv" id="6nUsdRkIPPo" role="1zkMxy">
-      <reference role="3uigEE" target="7a0s.4952318787899710481" resolve="AbstractLeftEditorHighlighterMessage" />
+      <ref role="3uigEE" to="7a0s:4iUaVbRglKh" resolve="AbstractLeftEditorHighlighterMessage" />
     </node>
     <node concept="Wx3nA" id="6nUsdRkIPOX" role="jymVt">
       <property role="TrG5h" value="TYPE" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="6nUsdRkIPOY" role="1B3o_S" />
       <node concept="3uibUv" id="6nUsdRkIPOZ" role="1tU5fm">
-        <reference role="3uigEE" target="9a8.~EditorMessageIconRenderer$IconRendererType" resolve="EditorMessageIconRenderer.IconRendererType" />
+        <ref role="3uigEE" to="9a8:~EditorMessageIconRenderer$IconRendererType" resolve="EditorMessageIconRenderer.IconRendererType" />
       </node>
       <node concept="2ShNRf" id="6nUsdRkIPP0" role="33vP2m">
         <node concept="1pGfFk" id="6nUsdRkIPP1" role="2ShVmc">
-          <reference role="37wK5l" target="9a8.~EditorMessageIconRenderer$IconRendererType%d&lt;init&gt;(int)" resolve="EditorMessageIconRenderer.IconRendererType" />
+          <ref role="37wK5l" to="9a8:~EditorMessageIconRenderer$IconRendererType.&lt;init&gt;(int)" resolve="EditorMessageIconRenderer.IconRendererType" />
           <node concept="3cmrfG" id="6nUsdRkIPP2" role="37wK5m">
             <property role="3cmrfH" value="1" />
           </node>
@@ -355,7 +355,7 @@
       <node concept="37vLTG" id="6nUsdRkIPPd" role="3clF46">
         <property role="TrG5h" value="owner" />
         <node concept="3uibUv" id="1z$$Igbouwo" role="1tU5fm">
-          <reference role="3uigEE" target="2vit.~EditorMessageOwner" resolve="EditorMessageOwner" />
+          <ref role="3uigEE" to="2vit:~EditorMessageOwner" resolve="EditorMessageOwner" />
         </node>
       </node>
       <node concept="37vLTG" id="6nUsdRkIPPf" role="3clF46">
@@ -366,15 +366,15 @@
       <node concept="3Tm1VV" id="6nUsdRkIPPi" role="1B3o_S" />
       <node concept="3clFbS" id="6nUsdRkIPPj" role="3clF47">
         <node concept="XkiVB" id="6nUsdRkIPPk" role="3cqZAp">
-          <reference role="37wK5l" target="7a0s.4952318787899710486" resolve="AbstractLeftEditorHighlighterMessage" />
+          <ref role="37wK5l" to="7a0s:4iUaVbRglKm" resolve="AbstractLeftEditorHighlighterMessage" />
           <node concept="37vLTw" id="2BHiRxghiGo" role="37wK5m">
-            <reference role="3cqZAo" target="7348309840067517771" resolve="node" />
+            <ref role="3cqZAo" node="6nUsdRkIPPb" resolve="node" />
           </node>
           <node concept="37vLTw" id="2BHiRxgl3lR" role="37wK5m">
-            <reference role="3cqZAo" target="7348309840067517773" resolve="owner" />
+            <ref role="3cqZAo" node="6nUsdRkIPPd" resolve="owner" />
           </node>
           <node concept="37vLTw" id="2BHiRxgm8Oe" role="37wK5m">
-            <reference role="3cqZAo" target="7348309840067517775" resolve="tooltip" />
+            <ref role="3cqZAo" node="6nUsdRkIPPf" resolve="tooltip" />
           </node>
         </node>
       </node>
@@ -386,18 +386,18 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="6nUsdRkIPPq" role="1B3o_S" />
       <node concept="3uibUv" id="6nUsdRkIPPr" role="3clF45">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3clFbS" id="6nUsdRkIPPs" role="3clF47">
         <node concept="3clFbF" id="6nUsdRkIPPt" role="3cqZAp">
           <node concept="10M0yZ" id="7lcW6_fsrML" role="3clFbG">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Actions" resolve="AllIcons.Actions" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Actions%dCloseNew" resolve="CloseNew" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Actions" resolve="AllIcons.Actions" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Actions.CloseNew" resolve="CloseNew" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_UtWu" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="6nUsdRkIPPx" role="jymVt">
@@ -407,17 +407,17 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="6nUsdRkIPPy" role="1B3o_S" />
       <node concept="3uibUv" id="6nUsdRkIPPz" role="3clF45">
-        <reference role="3uigEE" target="9a8.~EditorMessageIconRenderer$IconRendererType" resolve="EditorMessageIconRenderer.IconRendererType" />
+        <ref role="3uigEE" to="9a8:~EditorMessageIconRenderer$IconRendererType" resolve="EditorMessageIconRenderer.IconRendererType" />
       </node>
       <node concept="3clFbS" id="6nUsdRkIPP$" role="3clF47">
         <node concept="3clFbF" id="6nUsdRkIPP_" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeoryU" role="3clFbG">
-            <reference role="3cqZAo" target="7348309840067517757" resolve="TYPE" />
+            <ref role="3cqZAo" node="6nUsdRkIPOX" resolve="TYPE" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_UtWq" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="6nUsdRkIPPB" role="jymVt">
@@ -426,24 +426,24 @@
       <property role="TrG5h" value="getAnchorCell" />
       <property role="DiZV1" value="false" />
       <node concept="3uibUv" id="6F8YhWApzSF" role="3clF45">
-        <reference role="3uigEE" target="nu8v.~EditorCell" resolve="EditorCell" />
+        <ref role="3uigEE" to="nu8v:~EditorCell" resolve="EditorCell" />
       </node>
       <node concept="3Tm1VV" id="6nUsdRkIPPC" role="1B3o_S" />
       <node concept="37vLTG" id="6nUsdRkIPPE" role="3clF46">
         <property role="TrG5h" value="cell" />
         <node concept="3uibUv" id="6F8YhWAp$0U" role="1tU5fm">
-          <reference role="3uigEE" target="nu8v.~EditorCell" resolve="EditorCell" />
+          <ref role="3uigEE" to="nu8v:~EditorCell" resolve="EditorCell" />
         </node>
       </node>
       <node concept="3clFbS" id="6nUsdRkIPPG" role="3clF47">
         <node concept="3clFbF" id="6nUsdRkIPPH" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxgm9m1" role="3clFbG">
-            <reference role="3cqZAo" target="7348309840067517802" resolve="cell" />
+            <ref role="3cqZAo" node="6nUsdRkIPPE" resolve="cell" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_UtWt" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="6nUsdRkIPPJ" role="jymVt">
@@ -453,17 +453,17 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="6nUsdRkIPPK" role="1B3o_S" />
       <node concept="3uibUv" id="6nUsdRkIPPL" role="3clF45">
-        <reference role="3uigEE" target="nx1.~AnAction" resolve="AnAction" />
+        <ref role="3uigEE" to="nx1:~AnAction" resolve="AnAction" />
       </node>
       <node concept="3clFbS" id="6nUsdRkIPPM" role="3clF47">
         <node concept="3clFbF" id="6nUsdRkIPPN" role="3cqZAp">
           <node concept="3$FdUm" id="6nUsdRkIPPO" role="3clFbG">
-            <reference role="3$FpRE" target="ekwn.6893431717880288043" resolve="DoNotSuppressErrors" />
+            <ref role="3$FpRE" to="ekwn:5YEoTZrE_cF" resolve="DoNotSuppressErrors" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_UtWs" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="6nUsdRkIPPP" role="jymVt">
@@ -473,7 +473,7 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="6nUsdRkIPPQ" role="1B3o_S" />
       <node concept="3uibUv" id="6nUsdRkIPPR" role="3clF45">
-        <reference role="3uigEE" target="dbrf.~JPopupMenu" resolve="JPopupMenu" />
+        <ref role="3uigEE" to="dbrf:~JPopupMenu" resolve="JPopupMenu" />
       </node>
       <node concept="3clFbS" id="6nUsdRkIPPS" role="3clF47">
         <node concept="3clFbF" id="6nUsdRkIPPT" role="3cqZAp">
@@ -481,7 +481,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_UtWr" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
   </node>

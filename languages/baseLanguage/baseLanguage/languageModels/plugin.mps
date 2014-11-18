@@ -72,8 +72,8 @@
       <node concept="1QGGTA" id="2_ZsO1DQ5EW" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1zzh" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1zHd" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dFinalMark" resolve="FinalMark" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.FinalMark" resolve="FinalMark" />
           </node>
         </node>
       </node>
@@ -83,8 +83,8 @@
       <node concept="1QGGTA" id="2_ZsO1DQ5F0" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1zRP" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1zVd" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dStaticMark" resolve="StaticMark" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.StaticMark" resolve="StaticMark" />
           </node>
         </node>
       </node>
@@ -94,8 +94,8 @@
       <node concept="1QGGTA" id="2_ZsO1DQ5F8" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1$3N" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1$42" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dRunnableMark" resolve="RunnableMark" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.RunnableMark" resolve="RunnableMark" />
           </node>
         </node>
       </node>
@@ -108,8 +108,8 @@
       <node concept="1QGGTA" id="jpeLPCPeF7" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1_$D" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1_$E" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dC_plocal" resolve="C_plocal" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.C_plocal" resolve="C_plocal" />
           </node>
         </node>
       </node>
@@ -119,8 +119,8 @@
       <node concept="1QGGTA" id="jpeLPCPeFa" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1$jp" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1$jF" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dC_public" resolve="C_public" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.C_public" resolve="C_public" />
           </node>
         </node>
       </node>
@@ -130,8 +130,8 @@
       <node concept="1QGGTA" id="jpeLPCPeFd" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1$Z4" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1$Z5" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dC_private" resolve="C_private" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.C_private" resolve="C_private" />
           </node>
         </node>
       </node>
@@ -141,8 +141,8 @@
       <node concept="1QGGTA" id="jpeLPCPeFg" role="1QGGT$">
         <node concept="1QGGSu" id="3SQRqvZ1_jd" role="1QGGTw">
           <node concept="10M0yZ" id="3SQRqvZ1_je" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Nodes" resolve="AllIcons.Nodes" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Nodes%dC_protected" resolve="C_protected" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Nodes" resolve="AllIcons.Nodes" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Nodes.C_protected" resolve="C_protected" />
           </node>
         </node>
       </node>

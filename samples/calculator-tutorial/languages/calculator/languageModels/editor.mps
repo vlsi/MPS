@@ -52,7 +52,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="i46Yp_E">
-    <reference role="1XX52x" target="64en.1241362555920" resolve="Calculator" />
+    <ref role="1XX52x" to="64en:i46Ymgg" resolve="Calculator" />
     <node concept="3EZMnI" id="i46Yq_E" role="2wV5jI">
       <node concept="3EZMnI" id="i46YrgV" role="3EZMnx">
         <node concept="VPM3Z" id="i46YrgW" role="3F10Kt">
@@ -62,53 +62,53 @@
           <property role="3F0ifm" value="calculator" />
         </node>
         <node concept="3F0A7n" id="i46YuhE" role="3EZMnx">
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="2iRfu4" id="i46YrgY" role="2iSdaV" />
       </node>
       <node concept="3F2HdR" id="i46YS2z" role="3EZMnx">
-        <reference role="1NtTu8" target="64en.1241362671336" />
+        <ref role="1NtTu8" to="64en:i46YMrC" />
         <node concept="2iRkQZ" id="i46YS2$" role="2czzBx" />
       </node>
       <node concept="3F0ifn" id="i47rQeR" role="3EZMnx" />
       <node concept="3F2HdR" id="i46ZA9e" role="3EZMnx">
-        <reference role="1NtTu8" target="64en.1241362849617" />
+        <ref role="1NtTu8" to="64en:i46ZtXh" />
         <node concept="2iRkQZ" id="i46ZA9f" role="2czzBx" />
       </node>
       <node concept="2iRkQZ" id="i46Yq_G" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="i46YGbB">
-    <reference role="1XX52x" target="64en.1241362608529" resolve="InputField" />
+    <ref role="1XX52x" to="64en:i46Yz6h" resolve="InputField" />
     <node concept="3EZMnI" id="i46YGZa" role="2wV5jI">
       <node concept="3F0ifn" id="i46YHPC" role="3EZMnx">
         <property role="3F0ifm" value="input" />
       </node>
       <node concept="3F0A7n" id="i46YJNp" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="i46Zpuz">
-    <reference role="1XX52x" target="64en.1241362815640" resolve="OutputField" />
+    <ref role="1XX52x" to="64en:i46ZlEo" resolve="OutputField" />
     <node concept="3EZMnI" id="i46Zq$D" role="2wV5jI">
       <node concept="3F0ifn" id="i46Zr2Y" role="3EZMnx">
         <property role="3F0ifm" value="output" />
       </node>
       <node concept="3F1sOY" id="i470jvI" role="3EZMnx">
-        <reference role="1NtTu8" target="64en.1241363046126" />
+        <ref role="1NtTu8" to="64en:i470dVI" />
       </node>
       <node concept="2iRfu4" id="i46Zq$F" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="i470z4T">
-    <reference role="1XX52x" target="64en.1241363083334" resolve="InputFieldReference" />
+    <ref role="1XX52x" to="64en:i470n16" resolve="InputFieldReference" />
     <node concept="1iCGBv" id="i470zF0" role="2wV5jI">
-      <reference role="1NtTu8" target="64en.1241363105304" />
+      <ref role="1NtTu8" to="64en:i470soo" />
       <node concept="1sVBvm" id="i470zF1" role="1sWHZn">
         <node concept="3F0A7n" id="i470$XO" role="2wV5jI">
           <property role="1Intyy" value="true" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
       </node>
     </node>

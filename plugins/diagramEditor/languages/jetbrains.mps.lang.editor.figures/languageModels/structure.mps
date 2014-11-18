@@ -58,101 +58,101 @@
     <property role="TrG5h" value="Figure" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="1SVBbIvt9f2">
     <property role="TrG5h" value="ExternalViewFigure" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1SVBbIvt9h0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="0..n" />
       <property role="20kJfa" value="fields" />
-      <reference role="20lvS9" target="2178507174411801606" resolve="ExternalViewFigureParameter" />
+      <ref role="20lvS9" node="1SVBbIvt9g6" resolve="ExternalViewFigureParameter" />
     </node>
     <node concept="1TJgyj" id="1SVBbIvt9fR" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="classifier" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068390468198" resolve="ClassConcept" />
+      <ref role="20lvS9" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
     <node concept="PrWs8" id="WK6Z46COzI" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="4H19mAw48tk" role="PzmwI">
-      <reference role="PrY4T" target="tpck.3734116213129792499" resolve="ScopeProvider" />
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="1SVBbIvt9g6">
     <property role="TrG5h" value="ExternalViewFigureParameter" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1SVBbIvt9gL" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="fieldDeclaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068390468200" resolve="FieldDeclaration" />
+      <ref role="20lvS9" to="tpee:fz12cDC" resolve="FieldDeclaration" />
     </node>
     <node concept="PrWs8" id="WK6Z46D0Kp" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="iZqVFYvB6i" role="PzmwI">
-      <reference role="PrY4T" target="342110547581235541" resolve="FigureParameter" />
+      <ref role="PrY4T" node="iZqVFYvB5l" resolve="FigureParameter" />
     </node>
   </node>
   <node concept="1TIwiD" id="4H19mAw_rm$">
     <property role="TrG5h" value="FigureAttribute" />
     <property role="34LRSv" value="@Figure" />
-    <reference role="1TJDcQ" target="tpck.3364660638048049748" resolve="NodeAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="M6xJ_" id="4H19mAw_rop" role="lGtFl">
       <property role="Hh88m" value="figure" />
       <node concept="tn0Fv" id="4H19mAw_roA" role="HhnKV">
         <property role="tnX3d" value="false" />
       </node>
       <node concept="trNpa" id="4H19mAw_rp0" role="EQaZv">
-        <reference role="trN6q" target="tpee.1068390468198" resolve="ClassConcept" />
+        <ref role="trN6q" to="tpee:fz12cDA" resolve="ClassConcept" />
       </node>
     </node>
   </node>
   <node concept="1TIwiD" id="4H19mAwLpfx">
     <property role="TrG5h" value="FigureParameterAttribute" />
     <property role="R5$K7" value="true" />
-    <reference role="1TJDcQ" target="tpck.3364660638048049748" resolve="NodeAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="M6xJ_" id="4H19mAwLpfY" role="lGtFl">
       <node concept="tn0Fv" id="4H19mAwLyse" role="HhnKV">
         <property role="tnX3d" value="false" />
       </node>
     </node>
     <node concept="PrWs8" id="iZqVFYvB5M" role="PzmwI">
-      <reference role="PrY4T" target="342110547581235541" resolve="FigureParameter" />
+      <ref role="PrY4T" node="iZqVFYvB5l" resolve="FigureParameter" />
     </node>
   </node>
   <node concept="1TIwiD" id="1NIE5SZPp_k">
     <property role="TrG5h" value="FigureParameterAttributeMethod" />
-    <reference role="1TJDcQ" target="5422656561929884641" resolve="FigureParameterAttribute" />
+    <ref role="1TJDcQ" node="4H19mAwLpfx" resolve="FigureParameterAttribute" />
     <node concept="M6xJ_" id="1NIE5SZPynB" role="lGtFl">
       <property role="Hh88m" value="figureParameterMethod" />
       <node concept="trNpa" id="1NIE5SZPyDZ" role="EQaZv">
-        <reference role="trN6q" target="tpee.1068580123165" resolve="InstanceMethodDeclaration" />
+        <ref role="trN6q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
       </node>
     </node>
   </node>
   <node concept="1TIwiD" id="1NIE5SZPp_Q">
     <property role="TrG5h" value="FigureParameterAttributeField" />
-    <reference role="1TJDcQ" target="5422656561929884641" resolve="FigureParameterAttribute" />
+    <ref role="1TJDcQ" node="4H19mAwLpfx" resolve="FigureParameterAttribute" />
     <node concept="M6xJ_" id="1NIE5SZPp_R" role="lGtFl">
       <property role="Hh88m" value="figureParameterField" />
       <node concept="trNpa" id="1NIE5SZPp_T" role="EQaZv">
-        <reference role="trN6q" target="tpee.1068390468200" resolve="FieldDeclaration" />
+        <ref role="trN6q" to="tpee:fz12cDC" resolve="FieldDeclaration" />
       </node>
     </node>
   </node>
   <node concept="1TIwiD" id="6mlphA0CvzG">
     <property role="TrG5h" value="FigureParameterAttributeViewProperty" />
-    <reference role="1TJDcQ" target="5422656561929884641" resolve="FigureParameterAttribute" />
+    <ref role="1TJDcQ" node="4H19mAwLpfx" resolve="FigureParameterAttribute" />
     <node concept="M6xJ_" id="6mlphA0CRGr" role="lGtFl">
       <property role="Hh88m" value="figureParameterPropertySpecification" />
       <node concept="trNpa" id="6mlphA0CXi5" role="EQaZv">
-        <reference role="trN6q" target="tpee.1070462154015" resolve="StaticFieldDeclaration" />
+        <ref role="trN6q" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
       </node>
     </node>
   </node>

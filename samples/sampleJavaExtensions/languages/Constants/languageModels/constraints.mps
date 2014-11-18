@@ -24,14 +24,14 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="1J7HMiRRPzD">
-    <reference role="1M2myG" target="nd9w.1494751830318912537" resolve="Constant" />
+    <ref role="1M2myG" to="nd9w:1iYrdV1xxgp" resolve="Constant" />
   </node>
   <node concept="1M2fIO" id="3tw0l3PalT2">
-    <reference role="1M2myG" target="nd9w.3990190717072393829" resolve="ConstantReference" />
+    <ref role="1M2myG" to="nd9w:3tw0l3Pakp_" resolve="ConstantReference" />
     <node concept="1N5Pfh" id="3tw0l3PalT3" role="1Mr941">
-      <reference role="1N5Vy1" target="nd9w.3990190717072393830" />
+      <ref role="1N5Vy1" to="nd9w:3tw0l3PakpA" />
       <node concept="1dDu$B" id="5aCokQ65pLP" role="1N6uqs">
-        <reference role="1dDu$A" target="nd9w.1494751830318912537" resolve="Constant" />
+        <ref role="1dDu$A" to="nd9w:1iYrdV1xxgp" resolve="Constant" />
       </node>
     </node>
   </node>

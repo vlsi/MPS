@@ -76,14 +76,14 @@
     </language>
   </registry>
   <node concept="24kQdi" id="qQXsgj0h89">
-    <reference role="1XX52x" target="vgj4.483844232470139399" resolve="OverloadedOperatorContainer" />
+    <ref role="1XX52x" to="vgj4:qQXsgj0h87" resolve="OverloadedOperatorContainer" />
     <node concept="3EZMnI" id="qQXsgj0h8b" role="2wV5jI">
       <node concept="3F0ifn" id="qQXsgj0h8f" role="3EZMnx">
         <property role="3F0ifm" value="overloaded operators" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="3F0A7n" id="qQXsgj0h8i" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="pj6Ft" id="qQXsgj0hdx" role="3F10Kt" />
       </node>
       <node concept="3F0ifn" id="qQXsgj1tUI" role="3EZMnx">
@@ -108,7 +108,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="3970G$Abher" role="3EZMnx">
-            <reference role="1NtTu8" target="vgj4.2838654975956759196" />
+            <ref role="1NtTu8" to="vgj4:2t$Vq$DN3as" />
             <node concept="l2Vlx" id="3970G$Abhes" role="2czzBx" />
             <node concept="ljvvj" id="3970G$Abhet" role="3F10Kt">
               <property role="VOm3f" value="true" />
@@ -122,7 +122,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="3970G$Abhex" role="3EZMnx">
-            <reference role="1NtTu8" target="vgj4.483844232470139400" />
+            <ref role="1NtTu8" to="vgj4:qQXsgj0h88" />
             <node concept="l2Vlx" id="3970G$Abhey" role="2czzBx" />
             <node concept="10DmGV" id="3970G$Abhez" role="3F10Kt">
               <property role="10E5iX" value="indented" />
@@ -150,7 +150,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="qQXsgj0hd_">
-    <reference role="1XX52x" target="vgj4.483844232470132813" resolve="OverloadedBinaryOperator" />
+    <ref role="1XX52x" to="vgj4:qQXsgj0fxd" resolve="OverloadedBinaryOperator" />
     <node concept="3EZMnI" id="qQXsgj0hdB" role="2wV5jI">
       <node concept="3F0ifn" id="3970G$AbRo9" role="3EZMnx">
         <property role="3F0ifm" value="" />
@@ -163,20 +163,20 @@
       </node>
       <node concept="3F0ifn" id="qQXsgj0hdH" role="3EZMnx">
         <property role="3F0ifm" value="operator" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="3F1sOY" id="2t$Vq$DOzV2" role="3EZMnx">
-        <reference role="1NtTu8" target="vgj4.2838654975957155510" />
+        <ref role="1NtTu8" to="vgj4:2t$Vq$DOzUQ" />
       </node>
       <node concept="3F0ifn" id="5MF4VwFX1Y_" role="3EZMnx">
         <property role="3F0ifm" value="(" />
-        <reference role="1k5W1q" target="tpen.1215010868182" resolve="Parenthesis" />
+        <ref role="1k5W1q" to="tpen:hF$iCJm" resolve="Parenthesis" />
         <node concept="11LMrY" id="5MF4VwFYzYf" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="3F1sOY" id="5MF4VwFX1Yz" role="3EZMnx">
-        <reference role="1NtTu8" target="vgj4.6677452554239170993" />
+        <ref role="1NtTu8" to="vgj4:5MF4VwFWPAL" />
       </node>
       <node concept="3F0ifn" id="5MF4VwFX1YD" role="3EZMnx">
         <property role="3F0ifm" value="," />
@@ -185,11 +185,11 @@
         </node>
       </node>
       <node concept="3F1sOY" id="5MF4VwFX1YE" role="3EZMnx">
-        <reference role="1NtTu8" target="vgj4.6677452554239170994" />
+        <ref role="1NtTu8" to="vgj4:5MF4VwFWPAM" />
       </node>
       <node concept="3F0ifn" id="5MF4VwFX1YG" role="3EZMnx">
         <property role="3F0ifm" value=")" />
-        <reference role="1k5W1q" target="tpen.1215010868182" resolve="Parenthesis" />
+        <ref role="1k5W1q" to="tpen:hF$iCJm" resolve="Parenthesis" />
         <node concept="11L4FC" id="5MF4VwFYzYg" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -198,7 +198,7 @@
         <property role="3F0ifm" value="-&gt;" />
       </node>
       <node concept="3F1sOY" id="5MF4VwFX1YK" role="3EZMnx">
-        <reference role="1NtTu8" target="vgj4.6677452554237917709" />
+        <ref role="1NtTu8" to="vgj4:5MF4VwFS3Cd" />
         <node concept="ljvvj" id="5MF4VwFY98k" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -207,13 +207,13 @@
         <property role="3F0ifm" value="commutative:" />
       </node>
       <node concept="3F0A7n" id="2kpoMNxbyr$" role="3EZMnx">
-        <reference role="1NtTu8" target="vgj4.2673276898228709090" resolve="commutative" />
+        <ref role="1NtTu8" to="vgj4:2kpoMNxbyry" resolve="commutative" />
         <node concept="ljvvj" id="2kpoMNxbyr_" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="PMmxH" id="6KpsMgc_rKH" role="3EZMnx">
-        <reference role="PMmxG" target="tpen.1196975362614" resolve="ConceptFunction_Component" />
+        <ref role="PMmxG" to="tpen:hqLiD8Q" resolve="ConceptFunction_Component" />
         <node concept="ljvvj" id="5MF4VwFXIcQ" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -222,26 +222,26 @@
     </node>
   </node>
   <node concept="24kQdi" id="2t$Vq$DN2Rc">
-    <reference role="1XX52x" target="vgj4.1569627462442419521" resolve="CustomOperatorDeclaration" />
+    <ref role="1XX52x" to="vgj4:1n8rXLw_0l1" resolve="CustomOperatorDeclaration" />
     <node concept="3EZMnI" id="2t$Vq$DN2Re" role="2wV5jI">
       <node concept="3F0ifn" id="2t$Vq$DN3az" role="3EZMnx">
         <property role="3F0ifm" value="custom operator" />
       </node>
       <node concept="3F0A7n" id="1n8rXLwxf0v" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="l2Vlx" id="2t$Vq$DN2Rg" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="2t$Vq$DOzUR">
-    <reference role="1XX52x" target="vgj4.2838654975957155508" resolve="BinaryOperationReference" />
+    <ref role="1XX52x" to="vgj4:2t$Vq$DOzUO" resolve="BinaryOperationReference" />
     <node concept="3EZMnI" id="2t$Vq$DOzUT" role="2wV5jI">
       <node concept="1iCGBv" id="2t$Vq$DOzUW" role="3EZMnx">
-        <reference role="1NtTu8" target="vgj4.2838654975957155509" />
+        <ref role="1NtTu8" to="vgj4:2t$Vq$DOzUP" />
         <node concept="1sVBvm" id="2t$Vq$DOzUX" role="1sWHZn">
           <node concept="PMmxH" id="2wdLO7KhY6l" role="2wV5jI">
             <property role="1cu_pB" value="0" />
-            <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
+            <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
           </node>
         </node>
       </node>
@@ -249,56 +249,56 @@
     </node>
   </node>
   <node concept="24kQdi" id="2t$Vq$DPw8U">
-    <reference role="1XX52x" target="vgj4.2838654975957402167" resolve="CustomOperator" />
+    <ref role="1XX52x" to="vgj4:2t$Vq$DPw8R" resolve="CustomOperator" />
     <node concept="3EZMnI" id="2t$Vq$DPw8W" role="2wV5jI">
       <node concept="l2Vlx" id="2t$Vq$DPw8Y" role="2iSdaV" />
       <node concept="1iCGBv" id="1n8rXLw_sV1" role="3EZMnx">
-        <reference role="1NtTu8" target="vgj4.2838654975957402169" />
+        <ref role="1NtTu8" to="vgj4:2t$Vq$DPw8T" />
         <node concept="1sVBvm" id="1n8rXLw_sV2" role="1sWHZn">
           <node concept="3F0A7n" id="1n8rXLw_sV4" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="1n8rXLwx7pL">
-    <reference role="1XX52x" target="vgj4.1569627462441399919" resolve="CustomOperatorUsage" />
+    <ref role="1XX52x" to="vgj4:1n8rXLwx7pJ" resolve="CustomOperatorUsage" />
     <node concept="3EZMnI" id="1n8rXLwx7uZ" role="2wV5jI">
       <node concept="3F1sOY" id="1n8rXLwxf3E" role="3EZMnx">
-        <reference role="1NtTu8" target="tpee.1081773367580" />
-        <reference role="1ERwB7" target="tpen.1140734304236" resolve="BinaryOperation_LeftArgument_Actions" />
+        <ref role="1NtTu8" to="tpee:fJuHU4s" />
+        <ref role="1ERwB7" to="tpen:gAp41ZG" resolve="BinaryOperation_LeftArgument_Actions" />
       </node>
       <node concept="1iCGBv" id="ZogSShkDrK" role="3EZMnx">
-        <reference role="1NtTu8" target="vgj4.1569627462441399920" />
+        <ref role="1NtTu8" to="vgj4:1n8rXLwx7pK" />
         <node concept="1sVBvm" id="ZogSShkDrL" role="1sWHZn">
           <node concept="3F0A7n" id="ZogSShkDrN" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
       <node concept="3F1sOY" id="1n8rXLwxf3F" role="3EZMnx">
-        <reference role="1NtTu8" target="tpee.1081773367579" />
-        <reference role="1ERwB7" target="tpen.1140734681122" resolve="BinaryOperation_RightArgument_Actions" />
+        <ref role="1NtTu8" to="tpee:fJuHU4r" />
+        <ref role="1ERwB7" to="tpen:gAp5u0y" resolve="BinaryOperation_RightArgument_Actions" />
       </node>
       <node concept="l2Vlx" id="1n8rXLwx7v1" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="6oKb3MdXMQc">
-    <reference role="1XX52x" target="vgj4.7363434029342207049" resolve="ContainerImport" />
+    <ref role="1XX52x" to="vgj4:6oKb3MdXML9" resolve="ContainerImport" />
     <node concept="3EZMnI" id="6oKb3MdXNn4" role="2wV5jI">
       <node concept="3F0ifn" id="6oKb3MdXNnb" role="3EZMnx">
         <property role="3F0ifm" value="Import:" />
       </node>
       <node concept="2iRfu4" id="6oKb3MdXNn7" role="2iSdaV" />
       <node concept="1iCGBv" id="6oKb3MdXNnh" role="3EZMnx">
-        <reference role="1NtTu8" target="vgj4.7363434029342207301" />
+        <ref role="1NtTu8" to="vgj4:6oKb3MdXMP5" />
         <node concept="1sVBvm" id="6oKb3MdXNnj" role="1sWHZn">
           <node concept="3F0A7n" id="6oKb3MdXNnr" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>

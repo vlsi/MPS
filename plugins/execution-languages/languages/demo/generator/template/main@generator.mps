@@ -121,15 +121,15 @@
   <node concept="bUwia" id="HJg0JQ4a8x">
     <property role="TrG5h" value="main" />
     <node concept="3lhOvk" id="HJg0JQ4aa4" role="3lj3bC">
-      <reference role="30HIoZ" target="f1er.4928971978190304900" resolve="SomeConcept" />
-      <reference role="3lhOvi" target="823947676949193256" resolve="SomeClass_Template" />
+      <ref role="30HIoZ" to="f1er:4hBeuoVSNq4" resolve="SomeConcept" />
+      <ref role="3lhOvi" node="HJg0JQ4a8C" resolve="SomeClass_Template" />
     </node>
   </node>
   <node concept="312cEu" id="HJg0JQ4a8C">
     <property role="TrG5h" value="SomeClass_Template" />
     <node concept="3Tm1VV" id="HJg0JQ4a8D" role="1B3o_S" />
     <node concept="n94m4" id="HJg0JQ4a8I" role="lGtFl">
-      <reference role="n9lRv" target="f1er.4928971978190304900" resolve="SomeConcept" />
+      <ref role="n9lRv" to="f1er:4hBeuoVSNq4" resolve="SomeConcept" />
     </node>
     <node concept="17Uvod" id="HJg0JQ4a8J" role="lGtFl">
       <property role="2qtEX9" value="name" />
@@ -139,7 +139,7 @@
             <node concept="2OqwBi" id="HJg0JQ4a8O" role="3clFbG">
               <node concept="30H73N" id="HJg0JQ4a8N" role="2Oq$k0" />
               <node concept="3TrcHB" id="HJg0JQ4a8S" role="2OqNvi">
-                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
           </node>
@@ -165,11 +165,11 @@
         <node concept="3clFbF" id="HJg0JQ4a90" role="3cqZAp">
           <node concept="2OqwBi" id="HJg0JQ4a91" role="3clFbG">
             <node concept="10M0yZ" id="HJg0JQ4a92" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="HJg0JQ4a93" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="3cpWs3" id="1oh5c84dzY" role="37wK5m">
                 <node concept="Xl_RD" id="1oh5c84d$1" role="3uHU7w">
                   <property role="Xl_RC" value="!" />
@@ -183,7 +183,7 @@
                       <property role="3cmrfH" value="0" />
                     </node>
                     <node concept="3cpWs2" id="HJg0JQ4abC" role="AHHXb">
-                      <reference role="3cqZAo" target="823947676949193274" resolve="args" />
+                      <ref role="3cqZAo" node="HJg0JQ4a8U" resolve="args" />
                     </node>
                   </node>
                 </node>
@@ -194,11 +194,11 @@
         <node concept="3clFbF" id="HJg0JQ4a95" role="3cqZAp">
           <node concept="2OqwBi" id="HJg0JQ4a96" role="3clFbG">
             <node concept="10M0yZ" id="HJg0JQ4a97" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="HJg0JQ4a98" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="3cpWs3" id="HJg0JQ4a9e" role="37wK5m">
                 <node concept="Xl_RD" id="HJg0JQ4a9h" role="3uHU7w">
                   <property role="Xl_RC" value="." />
@@ -217,7 +217,7 @@
                             <node concept="2OqwBi" id="HJg0JQ4a9n" role="3clFbG">
                               <node concept="30H73N" id="HJg0JQ4a9m" role="2Oq$k0" />
                               <node concept="3TrcHB" id="HJg0JQ4a9r" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                               </node>
                             </node>
                           </node>

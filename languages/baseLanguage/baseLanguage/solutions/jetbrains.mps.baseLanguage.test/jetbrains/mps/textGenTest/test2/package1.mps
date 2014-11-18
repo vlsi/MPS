@@ -54,7 +54,7 @@
     <property role="TrG5h" value="Class1" />
     <node concept="3Tm1VV" id="1fZb$5QkSZG" role="1B3o_S" />
     <node concept="3uibUv" id="1fZb$5QkT0i" role="1zkMxy">
-      <reference role="3uigEE" target="1440921264474787825" resolve="Class2" />
+      <ref role="3uigEE" node="1fZb$5QkSZL" resolve="Class2" />
     </node>
     <node concept="3clFbW" id="1fZb$5QkSZH" role="jymVt">
       <node concept="3cqZAl" id="1fZb$5QkSZI" role="3clF45" />
@@ -62,8 +62,8 @@
       <node concept="3clFbS" id="1fZb$5QkSZK" role="3clF47">
         <node concept="3clFbF" id="1fZb$5QkT0d" role="3cqZAp">
           <node concept="2YIFZM" id="1fZb$5QkT0g" role="3clFbG">
-            <reference role="37wK5l" target="r3m5.1440921264474787849" resolve="method" />
-            <reference role="1Pybhc" target="r3m5.1440921264474787839" resolve="Class3" />
+            <ref role="37wK5l" to="r3m5:1fZb$5QkT09" resolve="method" />
+            <ref role="1Pybhc" to="r3m5:1fZb$5QkSZZ" resolve="Class3" />
           </node>
         </node>
       </node>

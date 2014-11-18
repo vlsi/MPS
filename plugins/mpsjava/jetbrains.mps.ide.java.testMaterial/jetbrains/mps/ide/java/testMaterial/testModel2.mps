@@ -52,7 +52,7 @@
     <node concept="Wx3nA" id="70HT6wFs4hL" role="jymVt">
       <property role="TrG5h" value="x" />
       <node concept="3uibUv" id="4x76aUTQRpY" role="1tU5fm">
-        <reference role="3uigEE" target="e2lb.~Integer" resolve="Integer" />
+        <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
       </node>
     </node>
     <node concept="2YIFZL" id="70HT6wFs4hE" role="jymVt">
@@ -64,7 +64,7 @@
         <property role="TrG5h" value="args" />
         <node concept="10Q1$e" id="70HT6wFs4hJ" role="1tU5fm">
           <node concept="3uibUv" id="70HT6wFs4hK" role="10Q1$1">
-            <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
           </node>
         </node>
       </node>

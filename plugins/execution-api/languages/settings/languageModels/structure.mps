@@ -68,7 +68,7 @@
   </registry>
   <node concept="1TIwiD" id="O$iR4J$g0r">
     <property role="TrG5h" value="PersistentConfigurationMethod" />
-    <reference role="1TJDcQ" target="tp4f.1205769003971" resolve="DefaultClassifierMethodDeclaration" />
+    <ref role="1TJDcQ" to="tp4f:hyXrIf3" resolve="DefaultClassifierMethodDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g0s">
     <property role="R5$K7" value="false" />
@@ -77,46 +77,46 @@
     <property role="TrG5h" value="PersistentConfigurationType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="configuration" />
-    <reference role="1TJDcQ" target="tp4f.1205752813637" resolve="BaseClassifierType" />
+    <ref role="1TJDcQ" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
     <node concept="1TJgyj" id="O$iR4J$g0t" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="persistentConfiguration" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="946964771156066336" resolve="PersistentConfiguration" />
+      <ref role="20lvS9" node="O$iR4J$g0w" resolve="PersistentConfiguration" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g0w">
     <property role="TrG5h" value="PersistentConfiguration" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O$iR4J$g0x" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="editor" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="946964771156066621" resolve="SettingsEditor" />
+      <ref role="20lvS9" node="O$iR4J$g4X" resolve="SettingsEditor" />
     </node>
     <node concept="1TJgyj" id="O$iR4J$g0y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="checkProperties" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="946964771156066597" resolve="CheckProperties_Function" />
+      <ref role="20lvS9" node="O$iR4J$g4_" resolve="CheckProperties_Function" />
     </node>
     <node concept="1TJgyj" id="O$iR4J$g0z" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="methods" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="946964771156066331" resolve="PersistentConfigurationMethod" />
+      <ref role="20lvS9" node="O$iR4J$g0r" resolve="PersistentConfigurationMethod" />
     </node>
     <node concept="PrWs8" id="O$iR4J$g0$" role="PzmwI">
-      <reference role="PrY4T" target="946964771156066594" resolve="IPersistentPropertyHolder" />
+      <ref role="PrY4T" node="O$iR4J$g4y" resolve="IPersistentPropertyHolder" />
     </node>
     <node concept="PrWs8" id="O$iR4J$g0_" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="O$iR4J$g0A" role="PzmwI">
-      <reference role="PrY4T" target="tp4f.1205751982837" resolve="IClassifier" />
+      <ref role="PrY4T" to="tp4f:hyWqMFP" resolve="IClassifier" />
     </node>
     <node concept="PrWs8" id="O$iR4J$g0B" role="PzmwI">
-      <reference role="PrY4T" target="id7i.946964771156905387" resolve="IGeneratedToClass" />
+      <ref role="PrY4T" to="id7i:O$iR4JBsQF" resolve="IGeneratedToClass" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g3X">
@@ -127,26 +127,26 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="template" />
     <property role="34LRSv" value="template configuration" />
-    <reference role="1TJDcQ" target="946964771156066332" resolve="PersistentConfigurationType" />
+    <ref role="1TJDcQ" node="O$iR4J$g0s" resolve="PersistentConfigurationType" />
     <node concept="1TJgyj" id="O$iR4J$g3Y" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="template" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="946964771156066579" resolve="PersistentConfigurationTemplate" />
-      <reference role="20ksaX" target="946964771156066333" />
+      <ref role="20lvS9" node="O$iR4J$g4j" resolve="PersistentConfigurationTemplate" />
+      <ref role="20ksaX" node="O$iR4J$g0t" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g41">
     <property role="TrG5h" value="TemplateParameterReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="template" />
-    <reference role="1TJDcQ" target="tpee.1068498886296" resolve="VariableReference" />
+    <ref role="1TJDcQ" to="tpee:fz7vLUo" resolve="VariableReference" />
     <node concept="1TJgyj" id="O$iR4J$g42" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="constructorParameterDeclaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="946964771156066586" resolve="TemplateParameter" />
-      <reference role="20ksaX" target="tpee.1068581517664" />
+      <ref role="20lvS9" node="O$iR4J$g4q" resolve="TemplateParameter" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g43">
@@ -155,12 +155,12 @@
     <property role="TrG5h" value="ReportConfigurationErrorStatement" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="report error" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="O$iR4J$g45" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g46">
@@ -169,7 +169,7 @@
     <property role="TrG5h" value="CreateEditor_Function" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="create" />
-    <reference role="1TJDcQ" target="946964771156066605" resolve="EditorOperationDeclaration" />
+    <ref role="1TJDcQ" node="O$iR4J$g4H" resolve="EditorOperationDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4b">
     <property role="R5$K7" value="false" />
@@ -177,7 +177,7 @@
     <property role="TrG5h" value="Dispose_Function" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="dispose" />
-    <reference role="1TJDcQ" target="946964771156066605" resolve="EditorOperationDeclaration" />
+    <ref role="1TJDcQ" node="O$iR4J$g4H" resolve="EditorOperationDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4e">
     <property role="R5$K7" value="false" />
@@ -186,15 +186,15 @@
     <property role="TrG5h" value="PersistentPropertyReferenceOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="properties" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O$iR4J$g4f" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="variableDeclaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="946964771156066585" resolve="PersistentPropertyDeclaration" />
+      <ref role="20lvS9" node="O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
     </node>
     <node concept="PrWs8" id="O$iR4J$g4g" role="PzmwI">
-      <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4j">
@@ -204,36 +204,36 @@
     <property role="TrG5h" value="PersistentConfigurationTemplate" />
     <property role="3GE5qa" value="template" />
     <property role="34LRSv" value="persistent configuration template" />
-    <reference role="1TJDcQ" target="946964771156066336" resolve="PersistentConfiguration" />
+    <ref role="1TJDcQ" node="O$iR4J$g0w" resolve="PersistentConfiguration" />
     <node concept="1TJgyj" id="O$iR4J$g4l" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="templateParameter" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="946964771156066586" resolve="TemplateParameter" />
+      <ref role="20lvS9" node="O$iR4J$g4q" resolve="TemplateParameter" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4m">
     <property role="TrG5h" value="PersistentConfigurationTemplateInitializer" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="template" />
-    <reference role="1TJDcQ" target="tpee.1145552809883" resolve="AbstractCreator" />
+    <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
     <node concept="1TJgyj" id="O$iR4J$g4n" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="template" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="946964771156066579" resolve="PersistentConfigurationTemplate" />
+      <ref role="20lvS9" node="O$iR4J$g4j" resolve="PersistentConfigurationTemplate" />
     </node>
     <node concept="1TJgyj" id="O$iR4J$g4o" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="parameter" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4p">
     <property role="TrG5h" value="PersistentPropertyDeclaration" />
     <property role="3GE5qa" value="properties" />
-    <reference role="1TJDcQ" target="tpee.1068431474542" resolve="VariableDeclaration" />
+    <ref role="1TJDcQ" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4q">
     <property role="R5$K7" value="false" />
@@ -241,7 +241,7 @@
     <property role="TrG5h" value="TemplateParameter" />
     <property role="3GE5qa" value="template" />
     <property role="34LRSv" value="template parameter" />
-    <reference role="1TJDcQ" target="tpee.1068431474542" resolve="VariableDeclaration" />
+    <ref role="1TJDcQ" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4s">
     <property role="R5$K7" value="false" />
@@ -250,28 +250,28 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="editor" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="O$iR4J$g4t" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="persistentPropertyDeclaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="946964771156066585" resolve="PersistentPropertyDeclaration" />
+      <ref role="20lvS9" node="O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4v">
     <property role="TrG5h" value="CheckProperitesOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="properties" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="O$iR4J$g4w" role="PzmwI">
-      <reference role="PrY4T" target="tp4f.1205756064662" resolve="IMemberOperation" />
+      <ref role="PrY4T" to="tp4f:hyWEnem" resolve="IMemberOperation" />
     </node>
     <node concept="1TJgyj" id="O$iR4J$g4x" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="checkProperties" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="946964771156066597" resolve="CheckProperties_Function" />
-      <reference role="20ksaX" target="tp4f.1205756909548" />
+      <ref role="20lvS9" node="O$iR4J$g4_" resolve="CheckProperties_Function" />
+      <ref role="20ksaX" to="tp4f:hyWH_vG" />
     </node>
   </node>
   <node concept="PlHQZ" id="O$iR4J$g4y">
@@ -281,10 +281,10 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="persistentProperty" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="946964771156066585" resolve="PersistentPropertyDeclaration" />
+      <ref role="20lvS9" node="O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
     </node>
     <node concept="PrWs8" id="O$iR4J$g4$" role="PrDN$">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4_">
@@ -293,9 +293,9 @@
     <property role="TrG5h" value="CheckProperties_Function" />
     <property role="3GE5qa" value="properties" />
     <property role="34LRSv" value="check" />
-    <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
     <node concept="PrWs8" id="O$iR4J$g4A" role="PzmwI">
-      <reference role="PrY4T" target="tp4f.1205752032448" resolve="IMember" />
+      <ref role="PrY4T" to="tp4f:hyWqYN0" resolve="IMember" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4D">
@@ -304,52 +304,52 @@
     <property role="TrG5h" value="ApplyTo_Function" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="apply to" />
-    <reference role="1TJDcQ" target="946964771156066605" resolve="EditorOperationDeclaration" />
+    <ref role="1TJDcQ" node="O$iR4J$g4H" resolve="EditorOperationDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4H">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="EditorOperationDeclaration" />
     <property role="3GE5qa" value="editor" />
-    <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4I">
     <property role="TrG5h" value="EditorOperationCall" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="editor" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O$iR4J$g4J" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="arguments" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="O$iR4J$g4K" role="PzmwI">
-      <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
     <node concept="1TJgyj" id="O$iR4J$g4L" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="editorOperationDeclaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="946964771156066605" resolve="EditorOperationDeclaration" />
+      <ref role="20lvS9" node="O$iR4J$g4H" resolve="EditorOperationDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4M">
     <property role="TrG5h" value="EditorPropertyDeclaration" />
     <property role="3GE5qa" value="editor" />
-    <reference role="1TJDcQ" target="tpee.1068431474542" resolve="VariableDeclaration" />
+    <ref role="1TJDcQ" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4N">
     <property role="TrG5h" value="EditorPropertyReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="editor" />
-    <reference role="1TJDcQ" target="tpee.1068498886296" resolve="VariableReference" />
+    <ref role="1TJDcQ" to="tpee:fz7vLUo" resolve="VariableReference" />
     <node concept="1TJgyj" id="O$iR4J$g4O" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="editorPropertyDeclaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="946964771156066610" resolve="EditorPropertyDeclaration" />
-      <reference role="20ksaX" target="tpee.1068581517664" />
+      <ref role="20lvS9" node="O$iR4J$g4M" resolve="EditorPropertyDeclaration" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4Q">
@@ -358,7 +358,7 @@
     <property role="TrG5h" value="ResetFrom_Function" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="reset from" />
-    <reference role="1TJDcQ" target="946964771156066605" resolve="EditorOperationDeclaration" />
+    <ref role="1TJDcQ" node="O$iR4J$g4H" resolve="EditorOperationDeclaration" />
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4U">
     <property role="R5$K7" value="false" />
@@ -367,47 +367,47 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="editor" />
     <property role="34LRSv" value="editor" />
-    <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
     <node concept="1TJgyj" id="O$iR4J$g4V" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="configuration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="946964771156066336" resolve="PersistentConfiguration" />
+      <ref role="20lvS9" node="O$iR4J$g0w" resolve="PersistentConfiguration" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4X">
     <property role="TrG5h" value="SettingsEditor" />
     <property role="3GE5qa" value="editor" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O$iR4J$g4Y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="createEditor" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="946964771156066566" resolve="CreateEditor_Function" />
+      <ref role="20lvS9" node="O$iR4J$g46" resolve="CreateEditor_Function" />
     </node>
     <node concept="1TJgyj" id="O$iR4J$g4Z" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="applyTo" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="946964771156066601" resolve="ApplyTo_Function" />
+      <ref role="20lvS9" node="O$iR4J$g4D" resolve="ApplyTo_Function" />
     </node>
     <node concept="1TJgyj" id="O$iR4J$g50" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="resetFrom" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="946964771156066614" resolve="ResetFrom_Function" />
+      <ref role="20lvS9" node="O$iR4J$g4Q" resolve="ResetFrom_Function" />
     </node>
     <node concept="1TJgyj" id="O$iR4J$g51" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="dispose" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="946964771156066571" resolve="Dispose_Function" />
+      <ref role="20lvS9" node="O$iR4J$g4b" resolve="Dispose_Function" />
     </node>
     <node concept="1TJgyj" id="O$iR4J$g52" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="propertyDeclaration" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="946964771156066610" resolve="EditorPropertyDeclaration" />
+      <ref role="20lvS9" node="O$iR4J$g4M" resolve="EditorPropertyDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$geg">
@@ -416,7 +416,7 @@
     <property role="TrG5h" value="Configuration_Parameter" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="configuration" />
-    <reference role="1TJDcQ" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="PlHQZ" id="O$iR4JBsUh">
     <property role="TrG5h" value="PersistentConfigurationAssistent" />
@@ -424,7 +424,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="configuration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="946964771156066336" resolve="PersistentConfiguration" />
+      <ref role="20lvS9" node="O$iR4J$g0w" resolve="PersistentConfiguration" />
     </node>
   </node>
   <node concept="1TIwiD" id="4DPUXm60GE_">
@@ -433,9 +433,9 @@
     <property role="TrG5h" value="GetEditorOperation" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="editor" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="4DPUXm60GEA" role="PzmwI">
-      <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
   <node concept="1TIwiD" id="2n8I3DYiVi8">
@@ -445,16 +445,16 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="editor.ui" />
     <property role="34LRSv" value="grid bag constraints" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="2n8I3DYiVia" role="1TKVEl">
       <property role="TrG5h" value="constraintsKind" />
-      <reference role="AX2Wp" target="2722628536111969417" resolve="GridBagConstraintsKind" />
+      <ref role="AX2Wp" node="2n8I3DYiVi9" resolve="GridBagConstraintsKind" />
     </node>
     <node concept="1TJgyj" id="2n8I3DYjA96" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="order" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="Az7Fb" id="2n8I3DYiVi9">
@@ -464,19 +464,19 @@
   </node>
   <node concept="1TIwiD" id="7YdSxSAfPwp">
     <property role="TrG5h" value="DeprecatedAnnotation" />
-    <reference role="1TJDcQ" target="tpck.3364660638048049748" resolve="NodeAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1TJgyi" id="7YdSxSAfPwr" role="1TKVEl">
       <property role="TrG5h" value="since" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="7YdSxSAfPws" role="1TKVEl">
       <property role="TrG5h" value="comment" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="M6xJ_" id="6_gUeuqOePa" role="lGtFl">
       <property role="Hh88m" value="deprecated" />
       <node concept="trNpa" id="166$sc$ZIAw" role="EQaZv">
-        <reference role="trN6q" target="946964771156066336" resolve="PersistentConfiguration" />
+        <ref role="trN6q" node="O$iR4J$g0w" resolve="PersistentConfiguration" />
       </node>
     </node>
   </node>

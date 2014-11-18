@@ -32,13 +32,13 @@
     </language>
   </registry>
   <node concept="24kQdi" id="3sP3FIIzhbW">
-    <reference role="1XX52x" target="2k81.3978102045101855363" resolve="Button" />
+    <ref role="1XX52x" to="2k81:3sP3FIIzha3" resolve="Button" />
     <node concept="3EZMnI" id="3sP3FIIzhuG" role="2wV5jI">
       <node concept="3F0ifn" id="3sP3FIIzhuN" role="3EZMnx">
         <property role="3F0ifm" value="button (" />
       </node>
       <node concept="3F0A7n" id="3sP3FIIzhuT" role="3EZMnx">
-        <reference role="1NtTu8" target="2k81.3978102045101855475" resolve="text" />
+        <ref role="1NtTu8" to="2k81:3sP3FIIzhbN" resolve="text" />
       </node>
       <node concept="3F0ifn" id="3sP3FIIzhvm" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -47,13 +47,13 @@
     </node>
   </node>
   <node concept="24kQdi" id="3sP3FIIzmuZ">
-    <reference role="1XX52x" target="2k81.3978102045101856876" resolve="Label" />
+    <ref role="1XX52x" to="2k81:3sP3FIIzhxG" resolve="Label" />
     <node concept="3EZMnI" id="3sP3FIIzmvO" role="2wV5jI">
       <node concept="3F0ifn" id="3sP3FIIzmvV" role="3EZMnx">
         <property role="3F0ifm" value="label (" />
       </node>
       <node concept="3F0A7n" id="3sP3FIIzmw1" role="3EZMnx">
-        <reference role="1NtTu8" target="2k81.3978102045101856886" resolve="text" />
+        <ref role="1NtTu8" to="2k81:3sP3FIIzhxQ" resolve="text" />
       </node>
       <node concept="3F0ifn" id="3sP3FIIzmw8" role="3EZMnx">
         <property role="3F0ifm" value=")" />

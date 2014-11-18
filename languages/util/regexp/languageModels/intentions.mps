@@ -90,7 +90,7 @@
   </registry>
   <node concept="2S6QgY" id="gY_W6Ijzaw">
     <property role="TrG5h" value="convertToNamed" />
-    <reference role="2ZfgGC" target="tpfo.1174491169200" resolve="ParensRegexp" />
+    <ref role="2ZfgGC" to="tpfo:h5P8g6K" resolve="ParensRegexp" />
     <node concept="2S6ZIM" id="gY_W6Ijzax" role="2ZfVej">
       <node concept="3clFbS" id="gY_W6Ijzay" role="2VODD2">
         <node concept="3clFbF" id="gY_W6IjCmz" role="3cqZAp">
@@ -106,12 +106,12 @@
           <node concept="3cpWsn" id="gY_W6IloCT" role="3cpWs9">
             <property role="TrG5h" value="n" />
             <node concept="3Tqbb2" id="gY_W6IloCU" role="1tU5fm">
-              <reference role="ehGHo" target="tpfo.1174564062919" resolve="MatchParensRegexp" />
+              <ref role="ehGHo" to="tpfo:h5Tukr7" resolve="MatchParensRegexp" />
             </node>
             <node concept="2OqwBi" id="gY_W6IloD1" role="33vP2m">
               <node concept="2Sf5sV" id="gY_W6IloD2" role="2Oq$k0" />
               <node concept="2DeJnW" id="5wUAOoBBjoy" role="2OqNvi">
-                <reference role="1_rbq0" target="tpfo.1174564062919" resolve="MatchParensRegexp" />
+                <ref role="1_rbq0" to="tpfo:h5Tukr7" resolve="MatchParensRegexp" />
               </node>
             </node>
           </node>
@@ -120,7 +120,7 @@
           <node concept="2OqwBi" id="gY_W6IloJk" role="3clFbG">
             <node concept="1XNTG" id="gY_W6IloJj" role="2Oq$k0" />
             <node concept="liA8E" id="gY_W6IloJo" role="2OqNvi">
-              <reference role="37wK5l" target="srng.~EditorContext%dflushEvents()%cvoid" resolve="flushEvents" />
+              <ref role="37wK5l" to="srng:~EditorContext.flushEvents():void" resolve="flushEvents" />
             </node>
           </node>
         </node>
@@ -128,9 +128,9 @@
           <node concept="2OqwBi" id="gY_W6IloDf" role="3clFbG">
             <node concept="1XNTG" id="gY_W6IloDe" role="2Oq$k0" />
             <node concept="liA8E" id="gY_W6IloJf" role="2OqNvi">
-              <reference role="37wK5l" target="srng.~EditorContext%dselectWRTFocusPolicy(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolve="selectWRTFocusPolicy" />
+              <ref role="37wK5l" to="srng:~EditorContext.selectWRTFocusPolicy(org.jetbrains.mps.openapi.model.SNode):void" resolve="selectWRTFocusPolicy" />
               <node concept="37vLTw" id="3GM_nagTrVt" role="37wK5m">
-                <reference role="3cqZAo" target="305848682817096249" resolve="n" />
+                <ref role="3cqZAo" node="gY_W6IloCT" resolve="n" />
               </node>
             </node>
           </node>

@@ -41,7 +41,7 @@
     <node concept="1ajhzC" id="6UyJMA9FTIi" role="luc8K">
       <node concept="10P_77" id="6UyJMA9FTIm" role="1ajl9A" />
       <node concept="3uibUv" id="1A52nmyUeKz" role="1ajw0F">
-        <reference role="3uigEE" target="srng.~EditorContext" resolve="EditorContext" />
+        <ref role="3uigEE" to="srng:~EditorContext" resolve="EditorContext" />
       </node>
       <node concept="3Tqbb2" id="6UyJMA9FTIp" role="1ajw0F" />
       <node concept="17QB3L" id="6UyJMA9FTIs" role="1ajw0F" />

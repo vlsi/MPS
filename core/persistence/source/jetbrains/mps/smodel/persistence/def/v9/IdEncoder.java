@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -41,6 +43,8 @@ import java.util.Arrays;
  * persistence demands single thread access).
  */
 public final class IdEncoder {
+  // separator for import in serialized reference target
+  private static final char REF_TARGET_IMPORT_SEPARATOR = ':';
 
   public IdEncoder() {
   }
@@ -115,31 +119,51 @@ public final class IdEncoder {
     return PersistenceFacade.getInstance().createModuleReference(text);
   }
 
-  // copied from StorageIndexHelper9.getRefTarget
-  public String toText(ImportsHelper imports, SReference ref) {
-    String target = (ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : StorageIndexHelper9.DYNAMIC_REFERENCE_ID);
+  public String toTextLocal(SReference ref) {
+    String target;
+    if (ref instanceof StaticReference) {
+      final SNodeId targetNodeId = ref.getTargetNodeId();
+      assert targetNodeId != null;
+      target = toText(targetNodeId);
+    } else {
+      target = StorageIndexHelper9.DYNAMIC_REFERENCE_ID;
+    }
+    return target;
+  }
+
+  /**
+   * Local references are saved in a form of serialized node id, or '^' for dynamic references.
+   * External references are prefixed with import index and ':'.
+   *
+   * NOTE, the way import index and nodeId value are serialized is expected to never include ':' separator char
+   */
+  public String toTextExternal(@NotNull ImportsHelper imports, @Nullable SModelReference modelRef, @NotNull SReference ref) {
+    String target = toTextLocal(ref);
     SModelReference targetModel = ref.getTargetSModelReference();
 
-    if (targetModel == null) return target;
-
-    if (!imports.needsIndex(targetModel)) {
-      return StorageIndexHelper9.encode(target);
+    if (targetModel == null) {
+      return REF_TARGET_IMPORT_SEPARATOR + target;
     }
 
     String index = imports.getIndex(targetModel);
     assert index != null : "model " + targetModel + " not found in index";
-    return index + StorageIndexHelper9.MODEL_SEPARATOR_CHAR + StorageIndexHelper9.encode(target);
+    return index + REF_TARGET_IMPORT_SEPARATOR + target;
   }
 
-  // copied from ReadHelper9.readLink(), to keep serialization/de-serialization of a reference in a single place
-  public Pair<SModelReference,SNodeId> parseNodeReference(ImportsHelper imports, String referenceTarget) {
-    int dotIndex = referenceTarget.indexOf(StorageIndexHelper9.MODEL_SEPARATOR_CHAR);
-    String text = StorageIndexHelper9.decode(referenceTarget.substring(dotIndex + 1, referenceTarget.length()));
-    final boolean isDynamic = StorageIndexHelper9.DYNAMIC_REFERENCE_ID.equals(text);
-    SModelReference modelRef = dotIndex < 0 ? imports.modelWithoutIndex() : imports.getModelReference(referenceTarget.substring(0, dotIndex));
-    SNodeId nodeId = (isDynamic ? null : jetbrains.mps.smodel.SNodeId.fromString(text));
-    return new Pair<SModelReference, SNodeId>(modelRef, nodeId);
+  @Nullable
+  public SNodeId parseLocalNodeReference(String text) {
+    if (StorageIndexHelper9.DYNAMIC_REFERENCE_ID.equals(text)) {
+      return null;
+    }
+    return parseNodeId(text);
+  }
 
+  public Pair<SModelReference,SNodeId> parseExternalNodeReference(ImportsHelper imports, String referenceTarget) {
+    int separatorIndex = referenceTarget.indexOf(REF_TARGET_IMPORT_SEPARATOR);
+    assert separatorIndex >= 0;
+    final SModelReference modelRef = separatorIndex == 0 ? null : imports.getModelReference(referenceTarget.substring(0, separatorIndex));
+    SNodeId nodeId = parseLocalNodeReference(referenceTarget.substring(separatorIndex + 1, referenceTarget.length()));
+    return new Pair<SModelReference, SNodeId>(modelRef, nodeId);
   }
 
   // length shall be 2^^6 = 64 (10 digits + 2x26 letters + '$' and '_' - basically, regular ASCII chars with isJavaIdentifierPart == true, for the sake of use
@@ -186,7 +210,6 @@ public final class IdEncoder {
   }
 
   // at least 5, at most 6 character string encoding. Leading zero is removed only if it's sixth symbol.
-  // FIXME refactor, move together with model import hash algorithm - separate (thread unsafe) class with non-static fields and field for rv.
   /*package*/ String indexValue(int v) {
     myBufferInt[5] = myIndexChars[v & 0x3F];
     v >>= 6;

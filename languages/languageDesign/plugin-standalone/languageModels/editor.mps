@@ -74,13 +74,13 @@
   </registry>
   <node concept="24kQdi" id="qKmr2orM1R">
     <property role="3GE5qa" value="Custom.ProjectPlugin" />
-    <reference role="1XX52x" target="tgbt.481983775135178834" resolve="ProjectPluginDeclaration" />
+    <ref role="1XX52x" to="tgbt:qKmr2orM1i" resolve="ProjectPluginDeclaration" />
     <node concept="b$f91" id="qKmr2orM1S" role="2wV5jI">
       <node concept="3EZMnI" id="qKmr2orM1T" role="b$wch">
         <property role="3EZMnw" value="true" />
         <node concept="3F2HdR" id="qKmr2orM1U" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <reference role="1NtTu8" target="tgbt.481983775135178838" />
+          <ref role="1NtTu8" to="tgbt:qKmr2orM1m" />
           <node concept="2iRkQZ" id="qKmr2orM1V" role="2czzBx" />
         </node>
         <node concept="3F0ifn" id="qKmr2orM1W" role="3EZMnx">
@@ -90,7 +90,7 @@
         </node>
         <node concept="3F1sOY" id="qKmr2orM1Y" role="3EZMnx">
           <property role="1$x2rV" value="&lt;init block&gt;" />
-          <reference role="1NtTu8" target="tgbt.481983775135178836" />
+          <ref role="1NtTu8" to="tgbt:qKmr2orM1k" />
         </node>
         <node concept="3F0ifn" id="qKmr2orM1Z" role="3EZMnx">
           <node concept="VPM3Z" id="qKmr2orM20" role="3F10Kt">
@@ -99,7 +99,7 @@
         </node>
         <node concept="3F1sOY" id="qKmr2orM21" role="3EZMnx">
           <property role="1$x2rV" value="&lt;dispose block&gt;" />
-          <reference role="1NtTu8" target="tgbt.481983775135178837" />
+          <ref role="1NtTu8" to="tgbt:qKmr2orM1l" />
         </node>
         <node concept="2iRkQZ" id="qKmr2orM22" role="2iSdaV" />
       </node>
@@ -110,7 +110,7 @@
         </node>
         <node concept="3F0A7n" id="qKmr2orM25" role="3EZMnx">
           <property role="1$x2rV" value="&lt;name&gt;" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="VPM3Z" id="qKmr2orM26" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -121,19 +121,19 @@
   </node>
   <node concept="24kQdi" id="qKmr2orM28">
     <property role="3GE5qa" value="Custom.ProjectPlugin" />
-    <reference role="1XX52x" target="tgbt.481983775135178856" resolve="ProjectPluginType" />
+    <ref role="1XX52x" to="tgbt:qKmr2orM1C" resolve="ProjectPluginType" />
     <node concept="3EZMnI" id="qKmr2orM29" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="qKmr2orM2a" role="3EZMnx">
         <property role="3F0ifm" value="project plugin" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
         <node concept="VPM3Z" id="qKmr2orM2b" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
       </node>
       <node concept="3F0ifn" id="qKmr2orM2c" role="3EZMnx">
         <property role="3F0ifm" value="&lt;" />
-        <reference role="1k5W1q" target="tpen.1215091279307" resolve="LeftBrace" />
+        <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
         <node concept="11LMrY" id="qKmr2orM2d" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -142,17 +142,17 @@
         </node>
       </node>
       <node concept="1iCGBv" id="qKmr2orM2f" role="3EZMnx">
-        <reference role="1NtTu8" target="tgbt.481983775135178858" />
+        <ref role="1NtTu8" to="tgbt:qKmr2orM1E" />
         <node concept="1sVBvm" id="qKmr2orM2g" role="1sWHZn">
           <node concept="3F0A7n" id="qKmr2orM2h" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
       <node concept="3F0ifn" id="qKmr2orM2i" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
-        <reference role="1k5W1q" target="tpen.1215091331565" resolve="RightBrace" />
+        <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
         <node concept="11L4FC" id="qKmr2orM2j" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -165,19 +165,19 @@
   </node>
   <node concept="24kQdi" id="qKmr2orM2m">
     <property role="3GE5qa" value="Custom.ApplicationPlugin" />
-    <reference role="1XX52x" target="tgbt.481983775135178831" resolve="ApplicationPluginType" />
+    <ref role="1XX52x" to="tgbt:qKmr2orM1f" resolve="ApplicationPluginType" />
     <node concept="3EZMnI" id="qKmr2orM2n" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="qKmr2orM2o" role="3EZMnx">
         <property role="3F0ifm" value="application plugin" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
         <node concept="VPM3Z" id="qKmr2orM2p" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
       </node>
       <node concept="3F0ifn" id="qKmr2orM2q" role="3EZMnx">
         <property role="3F0ifm" value="&lt;" />
-        <reference role="1k5W1q" target="tpen.1215091279307" resolve="LeftBrace" />
+        <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
         <node concept="11LMrY" id="qKmr2orM2r" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -186,17 +186,17 @@
         </node>
       </node>
       <node concept="1iCGBv" id="qKmr2orM2t" role="3EZMnx">
-        <reference role="1NtTu8" target="tgbt.481983775135178833" />
+        <ref role="1NtTu8" to="tgbt:qKmr2orM1h" />
         <node concept="1sVBvm" id="qKmr2orM2u" role="1sWHZn">
           <node concept="3F0A7n" id="qKmr2orM2v" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
       <node concept="3F0ifn" id="qKmr2orM2w" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
-        <reference role="1k5W1q" target="tpen.1215091331565" resolve="RightBrace" />
+        <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
         <node concept="11L4FC" id="qKmr2orM2x" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -209,13 +209,13 @@
   </node>
   <node concept="24kQdi" id="qKmr2orM2$">
     <property role="3GE5qa" value="Custom.ApplicationPlugin" />
-    <reference role="1XX52x" target="tgbt.481983775135178840" resolve="ApplicationPluginDeclaration" />
+    <ref role="1XX52x" to="tgbt:qKmr2orM1o" resolve="ApplicationPluginDeclaration" />
     <node concept="b$f91" id="qKmr2orM2_" role="2wV5jI">
       <node concept="3EZMnI" id="qKmr2orM2A" role="b$wch">
         <property role="3EZMnw" value="true" />
         <node concept="3F2HdR" id="qKmr2orM2B" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <reference role="1NtTu8" target="tgbt.481983775135178844" />
+          <ref role="1NtTu8" to="tgbt:qKmr2orM1s" />
           <node concept="2iRkQZ" id="qKmr2orM2C" role="2czzBx" />
         </node>
         <node concept="3F0ifn" id="qKmr2orM2D" role="3EZMnx">
@@ -225,7 +225,7 @@
         </node>
         <node concept="3F1sOY" id="qKmr2orM2F" role="3EZMnx">
           <property role="1$x2rV" value="&lt;init block&gt;" />
-          <reference role="1NtTu8" target="tgbt.481983775135178842" />
+          <ref role="1NtTu8" to="tgbt:qKmr2orM1q" />
         </node>
         <node concept="3F0ifn" id="qKmr2orM2G" role="3EZMnx">
           <node concept="VPM3Z" id="qKmr2orM2H" role="3F10Kt">
@@ -234,7 +234,7 @@
         </node>
         <node concept="3F1sOY" id="qKmr2orM2I" role="3EZMnx">
           <property role="1$x2rV" value="&lt;dispose block&gt;" />
-          <reference role="1NtTu8" target="tgbt.481983775135178843" />
+          <ref role="1NtTu8" to="tgbt:qKmr2orM1r" />
         </node>
         <node concept="2iRkQZ" id="qKmr2orM2J" role="2iSdaV" />
       </node>
@@ -245,7 +245,7 @@
         </node>
         <node concept="3F0A7n" id="qKmr2orM2M" role="3EZMnx">
           <property role="1$x2rV" value="&lt;name&gt;" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="VPM3Z" id="qKmr2orM2N" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -256,23 +256,23 @@
   </node>
   <node concept="24kQdi" id="_QrTcSEy4P">
     <property role="3GE5qa" value="Tool" />
-    <reference role="1XX52x" target="tgbt.681855071694758165" resolve="GetToolInProjectOperation" />
+    <ref role="1XX52x" to="tgbt:_QrTcSEy4l" resolve="GetToolInProjectOperation" />
     <node concept="3EZMnI" id="_QrTcSEy4Q" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="_QrTcSEy4R" role="3EZMnx">
         <property role="3F0ifm" value="tool" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="3F0ifn" id="_QrTcSEy4S" role="3EZMnx">
         <property role="3F0ifm" value="&lt;" />
-        <reference role="1k5W1q" target="tpen.1234958090348" resolve="LeftParenAfterName" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
       </node>
       <node concept="1iCGBv" id="_QrTcSEy4T" role="3EZMnx">
-        <reference role="1NtTu8" target="tgbt.681855071694758166" />
+        <ref role="1NtTu8" to="tgbt:_QrTcSEy4m" />
         <node concept="1sVBvm" id="_QrTcSEy4U" role="1sWHZn">
           <node concept="3F0A7n" id="_QrTcSEy4V" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
             <node concept="3$7jql" id="_QrTcSEy4W" role="3F10Kt">
               <property role="3$6WeP" value="0.0" />
             </node>
@@ -281,23 +281,23 @@
       </node>
       <node concept="3F0ifn" id="_QrTcSEy4X" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
-        <reference role="1k5W1q" target="tpen.1215088010675" resolve="RightParen" />
+        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
       </node>
       <node concept="2iRfu4" id="_QrTcSEy4Y" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="_QrTcSEy4Z">
     <property role="3GE5qa" value="Preference" />
-    <reference role="1XX52x" target="tgbt.681855071694758168" resolve="GetPreferencesComponentInProjectOperation" />
+    <ref role="1XX52x" to="tgbt:_QrTcSEy4o" resolve="GetPreferencesComponentInProjectOperation" />
     <node concept="3EZMnI" id="_QrTcSEy50" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="_QrTcSEy51" role="3EZMnx">
         <property role="3F0ifm" value="preferenceComponent" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="3F0ifn" id="_QrTcSEy52" role="3EZMnx">
         <property role="3F0ifm" value="&lt;" />
-        <reference role="1k5W1q" target="tpen.1215091279307" resolve="LeftBrace" />
+        <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
         <node concept="11L4FC" id="_QrTcSEy53" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -306,17 +306,17 @@
         </node>
       </node>
       <node concept="1iCGBv" id="_QrTcSEy55" role="3EZMnx">
-        <reference role="1NtTu8" target="tgbt.681855071694758169" />
+        <ref role="1NtTu8" to="tgbt:_QrTcSEy4p" />
         <node concept="1sVBvm" id="_QrTcSEy56" role="1sWHZn">
           <node concept="3F0A7n" id="_QrTcSEy57" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
       <node concept="3F0ifn" id="_QrTcSEy58" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
-        <reference role="1k5W1q" target="tpen.1215091331565" resolve="RightBrace" />
+        <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
         <node concept="11L4FC" id="_QrTcSEy59" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -325,7 +325,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6xuWmJ1tgUt">
-    <reference role="1XX52x" target="tgbt.7520713872864775836" resolve="StandalonePluginDescriptor" />
+    <ref role="1XX52x" to="tgbt:6xuWmJ1tgUs" resolve="StandalonePluginDescriptor" />
     <node concept="3F0ifn" id="6xuWmJ1tgUv" role="2wV5jI">
       <property role="3F0ifm" value="standalone descriptor" />
     </node>

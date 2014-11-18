@@ -84,14 +84,14 @@
     </language>
   </registry>
   <node concept="3_zdsH" id="h$ll6KU">
-    <reference role="3_znuS" target="tp3r.1196350785110" resolve="AbstractAntiquotation" />
+    <ref role="3_znuS" to="tp3r:hqc44pm" resolve="AbstractAntiquotation" />
     <node concept="3__wT9" id="h$ll6KV" role="3_A6iZ">
       <node concept="3clFbS" id="h$ll6KW" role="2VODD2">
         <node concept="3AgYrR" id="h$llnlx" role="3cqZAp">
           <node concept="2OqwBi" id="h$llo4s" role="3Ah4Yx">
             <node concept="3__QtB" id="h$llnSe" role="2Oq$k0" />
             <node concept="3TrEf2" id="h$llonL" role="2OqNvi">
-              <reference role="3Tt5mk" target="tp3r.1196350785111" />
+              <ref role="3Tt5mk" to="tp3r:hqc44pn" />
             </node>
           </node>
         </node>
@@ -99,7 +99,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="h$llxbv">
-    <reference role="3_znuS" target="tp3r.1196350785113" resolve="Quotation" />
+    <ref role="3_znuS" to="tp3r:hqc44pp" resolve="Quotation" />
     <node concept="3__wT9" id="h$llxbw" role="3_A6iZ">
       <node concept="3clFbS" id="h$llxbx" role="2VODD2">
         <node concept="1DcWWT" id="h$ll$rL" role="3cqZAp">
@@ -108,7 +108,7 @@
             <node concept="2Rf3mk" id="h$llCRU" role="2OqNvi">
               <node concept="1xMEDy" id="h$llFwd" role="1xVPHs">
                 <node concept="chp4Y" id="hI0w4rO" role="ri$Ld">
-                  <reference role="cht4Q" target="tp3r.1196350785110" resolve="AbstractAntiquotation" />
+                  <ref role="cht4Q" to="tp3r:hqc44pm" resolve="AbstractAntiquotation" />
                 </node>
               </node>
             </node>
@@ -120,7 +120,7 @@
           <node concept="3clFbS" id="h$ll$rP" role="2LFqv$">
             <node concept="3AgYrR" id="h$llGJA" role="3cqZAp">
               <node concept="37vLTw" id="3GM_nagTsMt" role="3Ah4Yx">
-                <reference role="3cqZAo" target="1207243785971" resolve="antiquotation" />
+                <ref role="3cqZAo" node="h$ll$rN" resolve="antiquotation" />
               </node>
             </node>
           </node>
@@ -128,7 +128,7 @@
         <node concept="3AgYrR" id="2KyHUfrwc68" role="3cqZAp">
           <node concept="2OqwBi" id="2KyHUfrwc6B" role="3Ah4Yx">
             <node concept="3TrEf2" id="2KyHUfrwc6X" role="2OqNvi">
-              <reference role="3Tt5mk" target="tp3r.1196350785115" />
+              <ref role="3Tt5mk" to="tp3r:hqc44pr" />
             </node>
             <node concept="3__QtB" id="2KyHUfrwc6c" role="2Oq$k0" />
           </node>
@@ -136,7 +136,7 @@
         <node concept="3AgYrR" id="2KyHUfrwc73" role="3cqZAp">
           <node concept="2OqwBi" id="2KyHUfrwc7$" role="3Ah4Yx">
             <node concept="3TrEf2" id="2KyHUfrwc7U" role="2OqNvi">
-              <reference role="3Tt5mk" target="tp3r.3180306201267182597" />
+              <ref role="3Tt5mk" to="tp3r:2KyHUfrw9K5" />
             </node>
             <node concept="3__QtB" id="2KyHUfrwc79" role="2Oq$k0" />
           </node>
@@ -145,7 +145,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="RRzwLnBtks">
-    <reference role="3_znuS" target="tp3r.5455284157993863837" resolve="NodeBuilder" />
+    <ref role="3_znuS" to="tp3r:4IP40Bi2$Et" resolve="NodeBuilder" />
     <node concept="3__wT9" id="RRzwLnBtkt" role="3_A6iZ">
       <node concept="3clFbS" id="RRzwLnBtku" role="2VODD2">
         <node concept="1DcWWT" id="RRzwLnBtkv" role="3cqZAp">
@@ -153,23 +153,23 @@
             <node concept="2OqwBi" id="nQfYv_fRmG" role="2Oq$k0">
               <node concept="3__QtB" id="RRzwLnBtkx" role="2Oq$k0" />
               <node concept="3TrEf2" id="nQfYv_fZ3q" role="2OqNvi">
-                <reference role="3Tt5mk" target="tp3r.5455284157993863838" />
+                <ref role="3Tt5mk" to="tp3r:4IP40Bi2$Eu" />
               </node>
             </node>
             <node concept="2qgKlT" id="nQfYv_g00j" role="2OqNvi">
-              <reference role="37wK5l" target="ii9q.1006429225401327586" resolve="getExternalExpressions" />
+              <ref role="37wK5l" to="ii9q:RRzwLnBxZy" resolve="getExternalExpressions" />
             </node>
           </node>
           <node concept="3cpWsn" id="RRzwLnBtk_" role="1Duv9x">
             <property role="TrG5h" value="expr" />
             <node concept="3Tqbb2" id="RRzwLnBtkA" role="1tU5fm">
-              <reference role="ehGHo" target="tpee.1068431790191" resolve="Expression" />
+              <ref role="ehGHo" to="tpee:fz3vP1J" resolve="Expression" />
             </node>
           </node>
           <node concept="3clFbS" id="RRzwLnBtkB" role="2LFqv$">
             <node concept="3AgYrR" id="RRzwLnBtkC" role="3cqZAp">
               <node concept="37vLTw" id="3GM_nagTzj4" role="3Ah4Yx">
-                <reference role="3cqZAo" target="1006429225401308453" resolve="expr" />
+                <ref role="3cqZAo" node="RRzwLnBtk_" resolve="expr" />
               </node>
             </node>
           </node>

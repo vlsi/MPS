@@ -126,7 +126,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="5p3TFWLvEim">
-    <reference role="13h7C2" target="ohyq.2253133157536766818" resolve="CellModel_HierarchycalTable" />
+    <ref role="13h7C2" to="ohyq:1X4JaHeCxHy" resolve="CellModel_HierarchycalTable" />
     <node concept="13i0hz" id="5p3TFWLvETA" role="13h7CS">
       <property role="TrG5h" value="getContainingConceptDeclaration" />
       <node concept="3Tm1VV" id="5p3TFWLvETB" role="1B3o_S" />
@@ -135,14 +135,14 @@
           <node concept="3cpWsn" id="5p3TFWLvETH" role="3cpWs9">
             <property role="TrG5h" value="editorComponent" />
             <node concept="3Tqbb2" id="5p3TFWLvETI" role="1tU5fm">
-              <reference role="ehGHo" target="tpc2.1080736578640" resolve="BaseEditorComponent" />
+              <ref role="ehGHo" to="tpc2:fIwURLg" resolve="BaseEditorComponent" />
             </node>
             <node concept="2OqwBi" id="5p3TFWLvETJ" role="33vP2m">
               <node concept="13iPFW" id="5p3TFWLvEU0" role="2Oq$k0" />
               <node concept="2Xjw5R" id="5p3TFWLvETL" role="2OqNvi">
                 <node concept="1xMEDy" id="5p3TFWLvETN" role="1xVPHs">
                   <node concept="chp4Y" id="5p3TFWLvETO" role="ri$Ld">
-                    <reference role="cht4Q" target="tpc2.1080736578640" resolve="BaseEditorComponent" />
+                    <ref role="cht4Q" to="tpc2:fIwURLg" resolve="BaseEditorComponent" />
                   </node>
                 </node>
               </node>
@@ -152,16 +152,16 @@
         <node concept="3clFbF" id="5p3TFWLvETW" role="3cqZAp">
           <node concept="2OqwBi" id="5p3TFWLvETX" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagT_Nl" role="2Oq$k0">
-              <reference role="3cqZAo" target="6216065619544944237" resolve="editorComponent" />
+              <ref role="3cqZAo" node="5p3TFWLvETH" resolve="editorComponent" />
             </node>
             <node concept="2qgKlT" id="5p3TFWLvETZ" role="2OqNvi">
-              <reference role="37wK5l" target="tpcb.7055725856388417603" resolve="getConceptDeclaration" />
+              <ref role="37wK5l" to="tpcb:67EYkym$wx3" resolve="getConceptDeclaration" />
             </node>
           </node>
         </node>
       </node>
       <node concept="3Tqbb2" id="5p3TFWLvETE" role="3clF45">
-        <reference role="ehGHo" target="tpce.1169125787135" resolve="AbstractConceptDeclaration" />
+        <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
       </node>
     </node>
     <node concept="13hLZK" id="5p3TFWLvEin" role="13h7CW">
@@ -169,7 +169,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="2D1PBM_bzos">
-    <reference role="13h7C2" target="ohyq.4490468428501056077" resolve="QueryFunction_TableModel" />
+    <ref role="13h7C2" to="ohyq:3ThmjU3UnDd" resolve="QueryFunction_TableModel" />
     <node concept="13hLZK" id="2D1PBM_bzot" role="13h7CW">
       <node concept="3clFbS" id="2D1PBM_bzou" role="2VODD2" />
     </node>
@@ -178,11 +178,11 @@
       <property role="13i0is" value="false" />
       <property role="TrG5h" value="getApplicableConceptFunctionParameter" />
       <property role="13i0it" value="false" />
-      <reference role="13i0hy" target="tpek.3044950653914717136" resolve="getApplicableConceptFunctionParameter" />
+      <ref role="13i0hy" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
       <node concept="3Tm1VV" id="2D1PBM_bzo0" role="1B3o_S" />
       <node concept="_YKpA" id="2D1PBM_bznX" role="3clF45">
         <node concept="3Tqbb2" id="2D1PBM_bznY" role="_ZDj9">
-          <reference role="ehGHo" target="tpce.1071489090640" resolve="ConceptDeclaration" />
+          <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
         </node>
       </node>
       <node concept="3clFbS" id="2D1PBM_bzo1" role="3clF47">
@@ -191,15 +191,15 @@
             <property role="TrG5h" value="result" />
             <node concept="_YKpA" id="2D1PBM_bzo7" role="1tU5fm">
               <node concept="3Tqbb2" id="2D1PBM_bzo8" role="_ZDj9">
-                <reference role="ehGHo" target="tpce.1071489090640" resolve="ConceptDeclaration" />
+                <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
               </node>
             </node>
             <node concept="2OqwBi" id="2D1PBM_bzof" role="33vP2m">
               <node concept="13iAh5" id="2D1PBM_bzob" role="2Oq$k0">
-                <reference role="3eA5LN" target="tpee.1137021947720" resolve="ConceptFunction" />
+                <ref role="3eA5LN" to="tpee:gyVMwX8" resolve="ConceptFunction" />
               </node>
               <node concept="2qgKlT" id="2D1PBM_bzoa" role="2OqNvi">
-                <reference role="37wK5l" target="tpek.3044950653914717136" resolve="getApplicableConceptFunctionParameter" />
+                <ref role="37wK5l" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
               </node>
             </node>
           </node>
@@ -207,11 +207,11 @@
         <node concept="3clFbF" id="2D1PBM_bzoh" role="3cqZAp">
           <node concept="2OqwBi" id="2D1PBM_bzoi" role="3clFbG">
             <node concept="37vLTw" id="2D1PBM_bzoj" role="2Oq$k0">
-              <reference role="3cqZAo" target="3044950653914723843" resolve="result" />
+              <ref role="3cqZAo" node="2D1PBM_bzo3" resolve="result" />
             </node>
             <node concept="TSZUe" id="2D1PBM_bzok" role="2OqNvi">
               <node concept="3B5_sB" id="2D1PBM_bzog" role="25WWJ7">
-                <reference role="3B5MYn" target="tpc2.1161622981231" resolve="ConceptFunctionParameter_editorContext" />
+                <ref role="3B5MYn" to="tpc2:gTQ80DJ" resolve="ConceptFunctionParameter_editorContext" />
               </node>
             </node>
           </node>
@@ -219,18 +219,18 @@
         <node concept="3clFbF" id="2D1PBM_bzom" role="3cqZAp">
           <node concept="2OqwBi" id="2D1PBM_bzon" role="3clFbG">
             <node concept="37vLTw" id="2D1PBM_bzoo" role="2Oq$k0">
-              <reference role="3cqZAo" target="3044950653914723843" resolve="result" />
+              <ref role="3cqZAo" node="2D1PBM_bzo3" resolve="result" />
             </node>
             <node concept="TSZUe" id="2D1PBM_bzop" role="2OqNvi">
               <node concept="3B5_sB" id="2D1PBM_bzol" role="25WWJ7">
-                <reference role="3B5MYn" target="tpc2.1142886811589" resolve="ConceptFunctionParameter_node" />
+                <ref role="3B5MYn" to="tpc2:gCpncv5" resolve="ConceptFunctionParameter_node" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3cpWs6" id="2D1PBM_bzoq" role="3cqZAp">
           <node concept="37vLTw" id="2D1PBM_bzor" role="3cqZAk">
-            <reference role="3cqZAo" target="3044950653914723843" resolve="result" />
+            <ref role="3cqZAo" node="2D1PBM_bzo3" resolve="result" />
           </node>
         </node>
       </node>
@@ -240,13 +240,13 @@
       <property role="TrG5h" value="getExpectedReturnType" />
       <property role="13i0it" value="false" />
       <property role="13i0iv" value="false" />
-      <reference role="13i0hy" target="tpek.1213877374441" resolve="getExpectedReturnType" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
       <node concept="3Tm1VV" id="$yZ68hBi1c" role="1B3o_S" />
       <node concept="3clFbS" id="$yZ68hBi1d" role="3clF47">
         <node concept="3cpWs6" id="$yZ68hBi1e" role="3cqZAp">
           <node concept="2c44tf" id="$yZ68hBhR6" role="3cqZAk">
             <node concept="3uibUv" id="3ThmjU3UnDg" role="2c44tc">
-              <reference role="3uigEE" target="squ6.4490468428501048480" resolve="TableModel" />
+              <ref role="3uigEE" to="squ6:3ThmjU3UlMw" resolve="TableModel" />
             </node>
           </node>
         </node>

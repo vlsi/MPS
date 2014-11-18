@@ -42,14 +42,14 @@
     </language>
   </registry>
   <node concept="3_zdsH" id="1uuM5m_W8JM">
-    <reference role="3_znuS" target="kisg.43370322128285902" resolve="HighLevelWatchableCreator" />
+    <ref role="3_znuS" to="kisg:2q5hg4g33e" resolve="HighLevelWatchableCreator" />
     <node concept="3__wT9" id="1uuM5m_W8JN" role="3_A6iZ">
       <node concept="3clFbS" id="1uuM5m_W8JO" role="2VODD2">
         <node concept="3AgYrR" id="t4rkO5pbuN" role="3cqZAp">
           <node concept="2OqwBi" id="t4rkO5pbuQ" role="3Ah4Yx">
             <node concept="3__QtB" id="t4rkO5pbuP" role="2Oq$k0" />
             <node concept="3TrEf2" id="t4rkO5pbuU" role="2OqNvi">
-              <reference role="3Tt5mk" target="kisg.43370322128311163" />
+              <ref role="3Tt5mk" to="kisg:2q5hg4g9dV" />
             </node>
           </node>
         </node>

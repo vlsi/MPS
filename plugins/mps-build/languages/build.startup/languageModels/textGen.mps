@@ -52,14 +52,14 @@
     </language>
   </registry>
   <node concept="WtQ9Q" id="1w81suLRcFr">
-    <reference role="WuzLi" target="s7om.1731640411964205180" resolve="TextFile" />
+    <ref role="WuzLi" to="s7om:1w81suLPAxW" resolve="TextFile" />
     <node concept="11bSqf" id="1w81suLRcFs" role="11c4hB">
       <node concept="3clFbS" id="1w81suLRcFt" role="2VODD2">
         <node concept="lc7rE" id="1w81suLRd7H" role="3cqZAp">
           <node concept="l9S2W" id="1w81suLRd7L" role="lcghm">
             <node concept="2OqwBi" id="1w81suLRdez" role="lbANJ">
               <node concept="3Tsc0h" id="1w81suLRo_$" role="2OqNvi">
-                <reference role="3TtcxE" target="s7om.1731640411964205233" />
+                <ref role="3TtcxE" to="s7om:1w81suLPAyL" />
               </node>
               <node concept="117lpO" id="1w81suLRd8d" role="2Oq$k0" />
             </node>
@@ -69,14 +69,14 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="1w81suLRo_I">
-    <reference role="WuzLi" target="s7om.1731640411964205218" resolve="TextLine" />
+    <ref role="WuzLi" to="s7om:1w81suLPAyy" resolve="TextLine" />
     <node concept="11bSqf" id="1w81suLRo_J" role="11c4hB">
       <node concept="3clFbS" id="1w81suLRo_K" role="2VODD2">
         <node concept="lc7rE" id="1w81suLRo_L" role="3cqZAp">
           <node concept="l9hG8" id="1w81suLSg8r" role="lcghm">
             <node concept="2OqwBi" id="1w81suLSgeC" role="lb14g">
               <node concept="3TrcHB" id="1w81suLSgOC" role="2OqNvi">
-                <reference role="3TsBF5" target="s7om.1731640411964798937" resolve="text" />
+                <ref role="3TsBF5" to="s7om:1w81suLRRvp" resolve="text" />
               </node>
               <node concept="117lpO" id="1w81suLSg98" role="2Oq$k0" />
             </node>

@@ -111,9 +111,9 @@
   <node concept="bUwia" id="gj4e_$T">
     <property role="TrG5h" value="MAPPING_main" />
     <node concept="3lhOvk" id="hrrqunw" role="3lj3bC">
-      <reference role="30HIoZ" target="tpnu.1116534870455" resolve="ReaderConfiguration" />
-      <reference role="2sgKRv" target="1215475940480" resolve="readerConfigClass" />
-      <reference role="3lhOvi" target="8981739865593580305" resolve="_reader_configuration_" />
+      <ref role="30HIoZ" to="tpnu:gfQEx6R" resolve="ReaderConfiguration" />
+      <ref role="2sgKRv" node="hG00JM0" resolve="readerConfigClass" />
+      <ref role="3lhOvi" node="7M_zd89ESGh" resolve="_reader_configuration_" />
     </node>
     <node concept="2rT7sh" id="hG00JM0" role="2rTMjI">
       <property role="TrG5h" value="readerConfigClass" />
@@ -138,7 +138,7 @@
                       <node concept="2OqwBi" id="7M_zd89F1D5" role="3clFbG">
                         <node concept="30H73N" id="7M_zd89F1CK" role="2Oq$k0" />
                         <node concept="3TrcHB" id="7M_zd89F1De" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpnu.1116534988614" resolve="code" />
+                          <ref role="3TsBF5" to="tpnu:gfQEXX6" resolve="code" />
                         </node>
                       </node>
                     </node>
@@ -159,7 +159,7 @@
                       <node concept="2OqwBi" id="7M_zd89F1DC" role="3clFbG">
                         <node concept="30H73N" id="7M_zd89F1Dj" role="2Oq$k0" />
                         <node concept="3TrcHB" id="7M_zd89F1DL" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpnu.1116534997224" resolve="targetClass" />
+                          <ref role="3TsBF5" to="tpnu:gfQF03C" resolve="targetClass" />
                         </node>
                       </node>
                     </node>
@@ -175,7 +175,7 @@
                   <node concept="2OqwBi" id="7M_zd89F1AY" role="3clFbG">
                     <node concept="30H73N" id="7M_zd89F1AZ" role="2Oq$k0" />
                     <node concept="3Tsc0h" id="7M_zd89F1B0" role="2OqNvi">
-                      <reference role="3TtcxE" target="tpnu.1116535202619" />
+                      <ref role="3TtcxE" to="tpnu:gfQFMcV" />
                     </node>
                   </node>
                 </node>
@@ -197,7 +197,7 @@
                         <node concept="2OqwBi" id="7M_zd89F1BZ" role="3clFbG">
                           <node concept="30H73N" id="7M_zd89F1BE" role="2Oq$k0" />
                           <node concept="3TrcHB" id="7M_zd89F1C6" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
                       </node>
@@ -222,7 +222,7 @@
                           <node concept="2OqwBi" id="7M_zd89F1Ci" role="3uHU7w">
                             <node concept="30H73N" id="7M_zd89F1Cj" role="2Oq$k0" />
                             <node concept="3TrcHB" id="7M_zd89F1Ck" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpnu.1116535027491" resolve="start" />
+                              <ref role="3TsBF5" to="tpnu:gfQF7sz" resolve="start" />
                             </node>
                           </node>
                         </node>
@@ -248,7 +248,7 @@
                           <node concept="2OqwBi" id="7M_zd89F1Cz" role="3uHU7w">
                             <node concept="30H73N" id="7M_zd89F1C$" role="2Oq$k0" />
                             <node concept="3TrcHB" id="7M_zd89F1CF" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpnu.1116535032695" resolve="end" />
+                              <ref role="3TsBF5" to="tpnu:gfQF8HR" resolve="end" />
                             </node>
                           </node>
                         </node>
@@ -265,7 +265,7 @@
                     <node concept="2OqwBi" id="7M_zd89F1Bu" role="3clFbG">
                       <node concept="30H73N" id="7M_zd89F1B9" role="2Oq$k0" />
                       <node concept="3Tsc0h" id="7M_zd89F1B_" role="2OqNvi">
-                        <reference role="3TtcxE" target="tpnu.1116535614925" />
+                        <ref role="3TtcxE" to="tpnu:gfQHmRd" />
                       </node>
                     </node>
                   </node>
@@ -277,7 +277,7 @@
       </node>
     </node>
     <node concept="n94m4" id="7M_zd89ESGk" role="lGtFl">
-      <reference role="n9lRv" target="tpnu.1116534870455" resolve="ReaderConfiguration" />
+      <ref role="n9lRv" to="tpnu:gfQEx6R" resolve="ReaderConfiguration" />
     </node>
     <node concept="17Uvod" id="7M_zd89ETTK" role="lGtFl">
       <property role="2qtEX9" value="name" />
@@ -287,7 +287,7 @@
             <node concept="2OqwBi" id="7M_zd89ETTZ" role="3clFbG">
               <node concept="30H73N" id="7M_zd89ETTO" role="2Oq$k0" />
               <node concept="3TrcHB" id="7M_zd89F1AL" role="2OqNvi">
-                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
           </node>

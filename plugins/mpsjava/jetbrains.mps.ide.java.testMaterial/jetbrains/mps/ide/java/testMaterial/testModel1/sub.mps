@@ -79,7 +79,7 @@
     <node concept="3clFb_" id="70HT6wFrYw3" role="jymVt">
       <property role="TrG5h" value="toString" />
       <node concept="3uibUv" id="70HT6wFrYw7" role="3clF45">
-        <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
       </node>
       <node concept="3Tm1VV" id="70HT6wFrYw5" role="1B3o_S" />
       <node concept="3clFbS" id="70HT6wFrYw6" role="3clF47">
@@ -90,7 +90,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_S7qY" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
   </node>

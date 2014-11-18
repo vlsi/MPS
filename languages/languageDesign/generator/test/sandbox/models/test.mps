@@ -79,7 +79,7 @@
     <property role="TrG5h" value="Test" />
     <node concept="3Tm1VV" id="39TdnqQhSyP" role="1B3o_S" />
     <node concept="3uibUv" id="39TdnqQiTGA" role="EKbjA">
-      <reference role="3uigEE" target="3636996958059207456" resolve="Test.ITest" />
+      <ref role="3uigEE" node="39TdnqQiTGw" resolve="Test.ITest" />
     </node>
     <node concept="3clFbW" id="39TdnqQhSyQ" role="jymVt">
       <node concept="3cqZAl" id="39TdnqQhSyR" role="3clF45" />
@@ -107,8 +107,8 @@
             <node concept="YeOm9" id="39TdnqQhSz2" role="2ShVmc">
               <node concept="1Y3b0j" id="39TdnqQhSz3" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <reference role="1Y3XeK" target="3636996958058940596" resolve="Test" />
-                <reference role="37wK5l" target="3636996958058940598" resolve="Test" />
+                <ref role="1Y3XeK" node="39TdnqQhSyO" resolve="Test" />
+                <ref role="37wK5l" node="39TdnqQhSyQ" resolve="Test" />
                 <node concept="3Tm1VV" id="39TdnqQhSz4" role="1B3o_S" />
                 <node concept="3clFb_" id="39TdnqQhSz5" role="jymVt">
                   <property role="TrG5h" value="abc" />
@@ -116,7 +116,7 @@
                   <node concept="3Tm1VV" id="39TdnqQhSz7" role="1B3o_S" />
                   <node concept="3clFbS" id="39TdnqQhSz8" role="3clF47" />
                   <node concept="2AHcQZ" id="3tYsUK_p7wu" role="2AJF6D">
-                    <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
                   </node>
                 </node>
               </node>
@@ -125,7 +125,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_p5ev" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2YIFZL" id="39TdnqQhS$J" role="jymVt">
@@ -138,8 +138,8 @@
             <node concept="YeOm9" id="39TdnqQhS$R" role="2ShVmc">
               <node concept="1Y3b0j" id="39TdnqQhS$S" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <reference role="1Y3XeK" target="3636996958058940596" resolve="Test" />
-                <reference role="37wK5l" target="3636996958058940598" resolve="Test" />
+                <ref role="1Y3XeK" node="39TdnqQhSyO" resolve="Test" />
+                <ref role="37wK5l" node="39TdnqQhSyQ" resolve="Test" />
                 <node concept="3Tm1VV" id="39TdnqQhS$T" role="1B3o_S" />
                 <node concept="3clFb_" id="39TdnqQhS$U" role="jymVt">
                   <property role="TrG5h" value="abc" />
@@ -148,12 +148,12 @@
                   <node concept="3clFbS" id="39TdnqQhS$X" role="3clF47">
                     <node concept="3clFbF" id="39TdnqQhS$Z" role="3cqZAp">
                       <node concept="3nyPlj" id="39TdnqQhS_0" role="3clFbG">
-                        <reference role="37wK5l" target="3636996958058940602" resolve="abc" />
+                        <ref role="37wK5l" node="39TdnqQhSyU" resolve="abc" />
                       </node>
                     </node>
                   </node>
                   <node concept="2AHcQZ" id="3tYsUK_p7$6" role="2AJF6D">
-                    <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
                   </node>
                 </node>
               </node>
@@ -166,7 +166,7 @@
       <property role="TrG5h" value="Inner" />
       <node concept="3Tm1VV" id="39TdnqQiTFi" role="1B3o_S" />
       <node concept="3uibUv" id="39TdnqQiTFu" role="1zkMxy">
-        <reference role="3uigEE" target="3636996958058940596" resolve="Test" />
+        <ref role="3uigEE" node="39TdnqQhSyO" resolve="Test" />
       </node>
       <node concept="3clFbW" id="39TdnqQiTFj" role="jymVt">
         <node concept="3cqZAl" id="39TdnqQiTFk" role="3clF45" />
@@ -183,8 +183,8 @@
               <node concept="YeOm9" id="39TdnqQiTGk" role="2ShVmc">
                 <node concept="1Y3b0j" id="39TdnqQiTGl" role="YeSDq">
                   <property role="2bfB8j" value="true" />
-                  <reference role="1Y3XeK" target="3636996958059207377" resolve="Test.Inner" />
-                  <reference role="37wK5l" target="3636996958059207379" resolve="Test.Inner" />
+                  <ref role="1Y3XeK" node="39TdnqQiTFh" resolve="Test.Inner" />
+                  <ref role="37wK5l" node="39TdnqQiTFj" resolve="Test.Inner" />
                   <node concept="3Tm1VV" id="39TdnqQiTGm" role="1B3o_S" />
                   <node concept="3clFb_" id="39TdnqQiTGn" role="jymVt">
                     <property role="TrG5h" value="abc" />
@@ -193,12 +193,12 @@
                     <node concept="3clFbS" id="39TdnqQiTGq" role="3clF47">
                       <node concept="3clFbF" id="39TdnqQiTGs" role="3cqZAp">
                         <node concept="3nyPlj" id="39TdnqQiTGt" role="3clFbG">
-                          <reference role="37wK5l" target="3636996958058940602" resolve="abc" />
+                          <ref role="37wK5l" node="39TdnqQhSyU" resolve="abc" />
                         </node>
                       </node>
                     </node>
                     <node concept="2AHcQZ" id="3tYsUK_p85I" role="2AJF6D">
-                      <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+                      <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
                     </node>
                   </node>
                 </node>

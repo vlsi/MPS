@@ -43,7 +43,7 @@
     <property role="TrG5h" value="ComplexType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="complex" />
-    <reference role="1TJDcQ" target="tpee.1164118113764" resolve="PrimitiveType" />
+    <ref role="1TJDcQ" to="tpee:gWaQbR$" resolve="PrimitiveType" />
   </node>
   <node concept="1TIwiD" id="hq6G_uh">
     <property role="R5$K7" value="false" />
@@ -51,18 +51,18 @@
     <property role="TrG5h" value="ReExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="re" />
-    <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
+    <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
   </node>
   <node concept="1TIwiD" id="hq6GVit">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="SingleComplexExpression" />
     <property role="2_RsDV" value="none" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="hq6Ha21" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="complexExpression" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="hq6Sqks">
@@ -71,7 +71,7 @@
     <property role="TrG5h" value="ArgExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="arg" />
-    <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
+    <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
   </node>
   <node concept="1TIwiD" id="hq6T8Yv">
     <property role="R5$K7" value="false" />
@@ -79,7 +79,7 @@
     <property role="TrG5h" value="AbsExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="abs" />
-    <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
+    <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
   </node>
   <node concept="1TIwiD" id="hq6KPYo">
     <property role="R5$K7" value="false" />
@@ -87,7 +87,7 @@
     <property role="TrG5h" value="ImExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="im" />
-    <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
+    <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
   </node>
   <node concept="1TIwiD" id="hqg7PvO">
     <property role="R5$K7" value="false" />
@@ -95,7 +95,7 @@
     <property role="TrG5h" value="ConjugateComplexExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="conj" />
-    <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
+    <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
   </node>
   <node concept="1TIwiD" id="hqgj$nO">
     <property role="R5$K7" value="false" />
@@ -103,12 +103,12 @@
     <property role="TrG5h" value="DegreeComplexExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="deg" />
-    <reference role="1TJDcQ" target="1196260832413" resolve="SingleComplexExpression" />
+    <ref role="1TJDcQ" node="hq6GVit" resolve="SingleComplexExpression" />
     <node concept="1TJgyj" id="hqgjTti" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="degree" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1179362310214" resolve="IntegerLiteral" />
+      <ref role="20lvS9" to="tpee:hanubx6" resolve="IntegerLiteral" />
     </node>
   </node>
   <node concept="1TIwiD" id="hqh1wNx">
@@ -118,7 +118,7 @@
     <property role="TrG5h" value="ImaginaryUnit" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="i" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
 </model>
 

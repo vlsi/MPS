@@ -116,11 +116,11 @@
       <property role="TrG5h" value="aaa" />
     </node>
     <node concept="2VPoh5" id="5l9q_ciVF_p" role="2VS0gm">
-      <reference role="2VPoh2" target="6145560071556217178" resolve="_name_" />
-      <reference role="2sBCQV" target="6145560071556217185" resolve="aaa" />
+      <ref role="2VPoh2" node="5l9q_ciVF_q" resolve="_name_" />
+      <ref role="2sBCQV" node="5l9q_ciVF_x" resolve="aaa" />
     </node>
     <node concept="30QchW" id="6kxQP7CaHqy" role="30SoJX">
-      <reference role="30HIoZ" target="qq7j.7287346816896104019" resolve="ErrorReportingRoot" />
+      <ref role="30HIoZ" to="qq7j:6kxQP7CaBpj" resolve="ErrorReportingRoot" />
       <node concept="3gB$ML" id="6kxQP7CaHq$" role="3gCiVm">
         <node concept="3clFbS" id="6kxQP7CaHq_" role="2VODD2">
           <node concept="3clFbF" id="6kxQP7Cb5qn" role="3cqZAp">
@@ -138,7 +138,7 @@
               <node concept="2OqwBi" id="6kxQP7Cb5qs" role="3uHU7B">
                 <node concept="30H73N" id="6kxQP7Cb5qt" role="2Oq$k0" />
                 <node concept="3TrcHB" id="6kxQP7Cb5qu" role="2OqNvi">
-                  <reference role="3TsBF5" target="qq7j.7287346816896111112" resolve="intval" />
+                  <ref role="3TsBF5" to="qq7j:6kxQP7CaD88" resolve="intval" />
                 </node>
               </node>
             </node>
@@ -146,11 +146,11 @@
         </node>
       </node>
       <node concept="j$656" id="6kxQP7Cb5qx" role="1fOSGc">
-        <reference role="v9R2y" target="7287346816896226975" resolve="weave_ErrorReportingRootClass1" />
+        <ref role="v9R2y" node="6kxQP7Cb5qv" resolve="weave_ErrorReportingRootClass1" />
       </node>
     </node>
     <node concept="30QchW" id="5l9q_ciVFkq" role="30SoJX">
-      <reference role="30HIoZ" target="qq7j.7287346816896104019" resolve="ErrorReportingRoot" />
+      <ref role="30HIoZ" to="qq7j:6kxQP7CaBpj" resolve="ErrorReportingRoot" />
       <node concept="jzcPr" id="5l9q_ciVFkr" role="1fOSGc" />
       <node concept="3gB$ML" id="5l9q_ciVFks" role="3gCiVm">
         <node concept="3clFbS" id="5l9q_ciVFkt" role="2VODD2">
@@ -158,7 +158,7 @@
             <node concept="2OqwBi" id="5l9q_ciVF__" role="3clFbG">
               <node concept="1iwH7S" id="5l9q_ciVF_$" role="2Oq$k0" />
               <node concept="1iwH7d" id="5l9q_ciVF_D" role="2OqNvi">
-                <reference role="1iwH7c" target="6145560071556217185" resolve="aaa" />
+                <ref role="1iwH7c" node="5l9q_ciVF_x" resolve="aaa" />
               </node>
             </node>
           </node>
@@ -168,7 +168,7 @@
   </node>
   <node concept="13MO4I" id="6kxQP7Cb5qv">
     <property role="TrG5h" value="weave_ErrorReportingRootClass1" />
-    <reference role="3gUMe" target="qq7j.7287346816896104019" resolve="ErrorReportingRoot" />
+    <ref role="3gUMe" to="qq7j:6kxQP7CaBpj" resolve="ErrorReportingRoot" />
     <node concept="312cEu" id="6kxQP7Cb5qy" role="13RCb5">
       <property role="TrG5h" value="aa" />
       <property role="2bfB8j" value="true" />

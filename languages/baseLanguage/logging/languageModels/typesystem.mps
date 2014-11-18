@@ -80,10 +80,10 @@
           <node concept="1Z2H0r" id="5Uf5NKHQNYz" role="mwGJk">
             <node concept="2OqwBi" id="5Uf5NKHQO8u" role="1Z2MuG">
               <node concept="3TrEf2" id="5Uf5NKHQO_9" role="2OqNvi">
-                <reference role="3Tt5mk" target="tpib.1167227463056" />
+                <ref role="3Tt5mk" to="tpib:gZ4bqmg" />
               </node>
               <node concept="1YBJjd" id="5Uf5NKHQNYN" role="2Oq$k0">
-                <reference role="1YBMHb" target="3472625699114285936" resolve="logStatement" />
+                <ref role="1YBMHb" node="30LfEMLAnHK" resolve="logStatement" />
               </node>
             </node>
           </node>
@@ -98,7 +98,7 @@
         <node concept="mw_s8" id="5Uf5NKHT3w8" role="1ZfhKB">
           <node concept="2c44tf" id="5Uf5NKHT3w4" role="mwGJk">
             <node concept="3uibUv" id="5Uf5NKHT3xi" role="2c44tc">
-              <reference role="3uigEE" target="e2lb.~Throwable" resolve="Throwable" />
+              <ref role="3uigEE" to="e2lb:~Throwable" resolve="Throwable" />
             </node>
           </node>
         </node>
@@ -106,10 +106,10 @@
           <node concept="1Z2H0r" id="5Uf5NKHT2SE" role="mwGJk">
             <node concept="2OqwBi" id="5Uf5NKHT34_" role="1Z2MuG">
               <node concept="3TrEf2" id="5Uf5NKHT3jz" role="2OqNvi">
-                <reference role="3Tt5mk" target="tpib.1167227561449" />
+                <ref role="3Tt5mk" to="tpib:gZ4bMnD" />
               </node>
               <node concept="1YBJjd" id="5Uf5NKHT2UK" role="2Oq$k0">
-                <reference role="1YBMHb" target="3472625699114285936" resolve="logStatement" />
+                <ref role="1YBMHb" node="30LfEMLAnHK" resolve="logStatement" />
               </node>
             </node>
           </node>
@@ -118,7 +118,7 @@
     </node>
     <node concept="1YaCAy" id="30LfEMLAnHK" role="1YuTPh">
       <property role="TrG5h" value="logStatement" />
-      <reference role="1YaFvo" target="tpib.1167227138527" resolve="LogStatement" />
+      <ref role="1YaFvo" to="tpib:gZ4ab7v" resolve="LogStatement" />
     </node>
   </node>
 </model>

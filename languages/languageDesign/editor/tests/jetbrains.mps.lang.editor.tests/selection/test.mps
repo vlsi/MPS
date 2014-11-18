@@ -130,11 +130,11 @@
         <node concept="3clFbF" id="1m4mhq0ky00" role="3cqZAp">
           <node concept="2OqwBi" id="1m4mhq0ky01" role="3clFbG">
             <node concept="10M0yZ" id="1m4mhq0ky02" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="1m4mhq0ky03" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="1m4mhq0ky04" role="37wK5m">
                 <property role="Xl_RC" value="" />
                 <node concept="LIFWc" id="1m4mhq0ky05" role="lGtFl">
@@ -155,11 +155,11 @@
         <node concept="3clFbF" id="1m4mhq0ky08" role="3cqZAp">
           <node concept="2OqwBi" id="1m4mhq0ky09" role="3clFbG">
             <node concept="10M0yZ" id="1m4mhq0ky0a" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="1m4mhq0ky0b" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="1m4mhq0ky0c" role="37wK5m">
                 <property role="Xl_RC" value="" />
                 <node concept="LIFWc" id="1m4mhq0kzbA" role="lGtFl">
@@ -178,32 +178,32 @@
     <node concept="3clFbS" id="1m4mhq0kzbl" role="LjaKd">
       <node concept="2HxZob" id="1m4mhq0kzbm" role="3cqZAp">
         <node concept="1iFQzN" id="1m4mhq0kzbo" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049070082" resolve="SelectUp" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
         </node>
       </node>
       <node concept="2HxZob" id="1m4mhq0kzbq" role="3cqZAp">
         <node concept="1iFQzN" id="1m4mhq0kzbr" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049070082" resolve="SelectUp" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
         </node>
       </node>
       <node concept="2HxZob" id="1m4mhq0kzbt" role="3cqZAp">
         <node concept="1iFQzN" id="1m4mhq0kzbu" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049070082" resolve="SelectUp" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
         </node>
       </node>
       <node concept="2HxZob" id="1m4mhq0kzbv" role="3cqZAp">
         <node concept="1iFQzN" id="1m4mhq0kzbw" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069913" resolve="SelectDown" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Plp" resolve="SelectDown" />
         </node>
       </node>
       <node concept="2HxZob" id="1m4mhq0kzbx" role="3cqZAp">
         <node concept="1iFQzN" id="1m4mhq0kzby" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069913" resolve="SelectDown" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Plp" resolve="SelectDown" />
         </node>
       </node>
       <node concept="2HxZob" id="1m4mhq0kzb$" role="3cqZAp">
         <node concept="1iFQzN" id="1m4mhq0kzb_" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069913" resolve="SelectDown" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Plp" resolve="SelectDown" />
         </node>
       </node>
     </node>
@@ -215,11 +215,11 @@
         <node concept="3clFbF" id="1m4mhq0kzbF" role="3cqZAp">
           <node concept="2OqwBi" id="1m4mhq0kzbG" role="3clFbG">
             <node concept="10M0yZ" id="1m4mhq0kzbH" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="1m4mhq0kzbI" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="1m4mhq0kzbJ" role="37wK5m">
                 <property role="Xl_RC" value="" />
                 <node concept="LIFWc" id="1m4mhq0kzbK" role="lGtFl">
@@ -240,11 +240,11 @@
         <node concept="3clFbF" id="1m4mhq0kzbN" role="3cqZAp">
           <node concept="2OqwBi" id="1m4mhq0kzbO" role="3clFbG">
             <node concept="10M0yZ" id="1m4mhq0kzbP" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="1m4mhq0kzbQ" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="1m4mhq0kzbR" role="37wK5m">
                 <property role="Xl_RC" value="" />
                 <node concept="LIFWc" id="1m4mhq0kzbT" role="lGtFl">
@@ -260,17 +260,17 @@
     <node concept="3clFbS" id="1m4mhq0kzbU" role="LjaKd">
       <node concept="2HxZob" id="1m4mhq0kzbV" role="3cqZAp">
         <node concept="1iFQzN" id="1m4mhq0kzbX" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049070082" resolve="SelectUp" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
         </node>
       </node>
       <node concept="2HxZob" id="1m4mhq0kzbZ" role="3cqZAp">
         <node concept="1iFQzN" id="1m4mhq0kzc1" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049070082" resolve="SelectUp" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
         </node>
       </node>
       <node concept="2HxZob" id="1m4mhq0kzc3" role="3cqZAp">
         <node concept="1iFQzN" id="1m4mhq0kzc5" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069913" resolve="SelectDown" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Plp" resolve="SelectDown" />
         </node>
       </node>
     </node>
@@ -285,11 +285,11 @@
         <node concept="3clFbF" id="FQ3Fx4QO5k" role="3cqZAp">
           <node concept="2OqwBi" id="FQ3Fx4QSHd" role="3clFbG">
             <node concept="10M0yZ" id="FQ3Fx4QO5l" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="FQ3Fx4QSHh" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="FQ3Fx4QSHi" role="37wK5m">
                 <property role="Xl_RC" value="" />
                 <node concept="LIFWc" id="FQ3Fx4QSHt" role="lGtFl">
@@ -307,11 +307,11 @@
         <node concept="3clFbF" id="FQ3Fx4QSHm" role="3cqZAp">
           <node concept="2OqwBi" id="FQ3Fx4QSHn" role="3clFbG">
             <node concept="10M0yZ" id="FQ3Fx4QSHo" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="FQ3Fx4QSHp" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="FQ3Fx4QSHq" role="37wK5m">
                 <property role="Xl_RC" value="" />
               </node>
@@ -327,7 +327,7 @@
     <node concept="3clFbS" id="FQ3Fx4QSHv" role="LjaKd">
       <node concept="2HxZob" id="FQ3Fx4QSHw" role="3cqZAp">
         <node concept="1iFQzN" id="FQ3Fx4QSHy" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049070082" resolve="SelectUp" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
         </node>
       </node>
     </node>
@@ -339,11 +339,11 @@
         <node concept="3clFbF" id="FQ3Fx4QSHZ" role="3cqZAp">
           <node concept="2OqwBi" id="FQ3Fx4QSI0" role="3clFbG">
             <node concept="10M0yZ" id="FQ3Fx4QSI1" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="FQ3Fx4QSI2" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="FQ3Fx4QSI3" role="37wK5m">
                 <property role="Xl_RC" value="" />
                 <node concept="LIFWc" id="1QJE9Dcq80T" role="lGtFl">
@@ -364,11 +364,11 @@
         <node concept="3clFbF" id="FQ3Fx4QSI7" role="3cqZAp">
           <node concept="2OqwBi" id="FQ3Fx4QSI8" role="3clFbG">
             <node concept="10M0yZ" id="FQ3Fx4QSI9" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="FQ3Fx4QSIa" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="FQ3Fx4QSIb" role="37wK5m">
                 <property role="Xl_RC" value="" />
               </node>
@@ -380,17 +380,17 @@
     <node concept="3clFbS" id="FQ3Fx4QSIe" role="LjaKd">
       <node concept="2HxZob" id="1QJE9Dcq80V" role="3cqZAp">
         <node concept="1iFQzN" id="1QJE9Dcq80X" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049070082" resolve="SelectUp" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
         </node>
       </node>
       <node concept="2HxZob" id="FQ3Fx4QSIf" role="3cqZAp">
         <node concept="1iFQzN" id="FQ3Fx4QSIh" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069913" resolve="SelectDown" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Plp" resolve="SelectDown" />
         </node>
       </node>
       <node concept="2HxZob" id="FQ3Fx4QSIj" role="3cqZAp">
         <node concept="1iFQzN" id="FQ3Fx4QSIk" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069913" resolve="SelectDown" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Plp" resolve="SelectDown" />
         </node>
       </node>
     </node>
@@ -443,12 +443,12 @@
     <node concept="3clFbS" id="7S5U8qgCOrW" role="LjaKd">
       <node concept="2HxZob" id="7S5U8qgCOrX" role="3cqZAp">
         <node concept="1iFQzN" id="7S5U8qgD1Hv" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269977" resolve="SelectPrevious" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdp" resolve="SelectPrevious" />
         </node>
       </node>
       <node concept="2HxZob" id="7S5U8qgD1Hx" role="3cqZAp">
         <node concept="1iFQzN" id="7S5U8qgD1Hz" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069771" resolve="Home" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjb" resolve="Home" />
         </node>
       </node>
     </node>
@@ -500,12 +500,12 @@
     <node concept="3clFbS" id="7S5U8qgD1HN" role="LjaKd">
       <node concept="2HxZob" id="7S5U8qgD1HO" role="3cqZAp">
         <node concept="1iFQzN" id="7S5U8qgD1HP" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269977" resolve="SelectPrevious" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdp" resolve="SelectPrevious" />
         </node>
       </node>
       <node concept="2HxZob" id="7S5U8qgD1HQ" role="3cqZAp">
         <node concept="1iFQzN" id="7S5U8qgD1HR" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069771" resolve="Home" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjb" resolve="Home" />
         </node>
       </node>
     </node>
@@ -556,12 +556,12 @@
     <node concept="3clFbS" id="7S5U8qgD2aX" role="LjaKd">
       <node concept="2HxZob" id="7S5U8qgD2aY" role="3cqZAp">
         <node concept="1iFQzN" id="7S5U8qgD2aZ" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269974" resolve="SelectNext" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdm" resolve="SelectNext" />
         </node>
       </node>
       <node concept="2HxZob" id="7S5U8qgD2b0" role="3cqZAp">
         <node concept="1iFQzN" id="7S5U8qgD2b1" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069760" resolve="End" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pj0" resolve="End" />
         </node>
       </node>
     </node>
@@ -612,12 +612,12 @@
     <node concept="3clFbS" id="7S5U8qgD2bj" role="LjaKd">
       <node concept="2HxZob" id="7S5U8qgD2bk" role="3cqZAp">
         <node concept="1iFQzN" id="7S5U8qgD2bl" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269974" resolve="SelectNext" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdm" resolve="SelectNext" />
         </node>
       </node>
       <node concept="2HxZob" id="7S5U8qgD2bm" role="3cqZAp">
         <node concept="1iFQzN" id="7S5U8qgD2bn" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069760" resolve="End" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pj0" resolve="End" />
         </node>
       </node>
     </node>
@@ -669,12 +669,12 @@
     <node concept="3clFbS" id="1KsjPY0CKld" role="LjaKd">
       <node concept="2HxZob" id="1KsjPY0CKle" role="3cqZAp">
         <node concept="1iFQzN" id="1KsjPY0CKlg" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269974" resolve="SelectNext" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdm" resolve="SelectNext" />
         </node>
       </node>
       <node concept="2HxZob" id="1KsjPY0CKli" role="3cqZAp">
         <node concept="1iFQzN" id="1KsjPY0CKlk" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069902" resolve="RootHome" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Ple" resolve="RootHome" />
         </node>
       </node>
     </node>
@@ -726,12 +726,12 @@
     <node concept="3clFbS" id="4qXCiMm4PCL" role="LjaKd">
       <node concept="2HxZob" id="4qXCiMm4PCM" role="3cqZAp">
         <node concept="1iFQzN" id="4qXCiMm4PCN" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269974" resolve="SelectNext" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdm" resolve="SelectNext" />
         </node>
       </node>
       <node concept="2HxZob" id="4qXCiMm4PCO" role="3cqZAp">
         <node concept="1iFQzN" id="4qXCiMm4PCP" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069891" resolve="RootEnd" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pl3" resolve="RootEnd" />
         </node>
       </node>
     </node>
@@ -782,12 +782,12 @@
     <node concept="3clFbS" id="4qXCiMm4UeK" role="LjaKd">
       <node concept="2HxZob" id="4qXCiMm4UeL" role="3cqZAp">
         <node concept="1iFQzN" id="4qXCiMm4UeM" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269977" resolve="SelectPrevious" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdp" resolve="SelectPrevious" />
         </node>
       </node>
       <node concept="2HxZob" id="4qXCiMm4UeN" role="3cqZAp">
         <node concept="1iFQzN" id="4qXCiMm4UeO" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069902" resolve="RootHome" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Ple" resolve="RootHome" />
         </node>
       </node>
     </node>
@@ -838,12 +838,12 @@
     <node concept="3clFbS" id="4qXCiMm5cBN" role="LjaKd">
       <node concept="2HxZob" id="4qXCiMm5cBO" role="3cqZAp">
         <node concept="1iFQzN" id="4qXCiMm5cBP" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269977" resolve="SelectPrevious" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdp" resolve="SelectPrevious" />
         </node>
       </node>
       <node concept="2HxZob" id="4qXCiMm5cBQ" role="3cqZAp">
         <node concept="1iFQzN" id="4qXCiMm5cBR" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069891" resolve="RootEnd" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pl3" resolve="RootEnd" />
         </node>
       </node>
     </node>
@@ -909,17 +909,17 @@
     <node concept="3clFbS" id="4K24hY0tEAm" role="LjaKd">
       <node concept="2HxZob" id="4K24hY0tEAn" role="3cqZAp">
         <node concept="1iFQzN" id="4K24hY0tEAp" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269974" resolve="SelectNext" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdm" resolve="SelectNext" />
         </node>
       </node>
       <node concept="2HxZob" id="4K24hY0tEAr" role="3cqZAp">
         <node concept="1iFQzN" id="4K24hY0tEAs" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269974" resolve="SelectNext" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdm" resolve="SelectNext" />
         </node>
       </node>
       <node concept="2HxZob" id="4K24hY0tEAt" role="3cqZAp">
         <node concept="1iFQzN" id="4K24hY0tEAv" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049070082" resolve="SelectUp" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
         </node>
       </node>
     </node>
@@ -985,17 +985,17 @@
     <node concept="3clFbS" id="4K24hY0tEAW" role="LjaKd">
       <node concept="2HxZob" id="4K24hY0tEAX" role="3cqZAp">
         <node concept="1iFQzN" id="4K24hY0tEAZ" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269977" resolve="SelectPrevious" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdp" resolve="SelectPrevious" />
         </node>
       </node>
       <node concept="2HxZob" id="4K24hY0tEB1" role="3cqZAp">
         <node concept="1iFQzN" id="4K24hY0tEB3" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.4225699205371269977" resolve="SelectPrevious" />
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdp" resolve="SelectPrevious" />
         </node>
       </node>
       <node concept="2HxZob" id="4K24hY0tEB5" role="3cqZAp">
         <node concept="1iFQzN" id="4K24hY0tEB7" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.7791284463049069913" resolve="SelectDown" />
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Plp" resolve="SelectDown" />
         </node>
       </node>
     </node>
@@ -1010,7 +1010,7 @@
       <node concept="3KIgzJ" id="25b5I77dDpY" role="jymVt">
         <node concept="3clFbS" id="25b5I77dDq0" role="3KIlGz">
           <node concept="3AuPgI" id="25b5I77dDqu" role="3cqZAp">
-            <reference role="3AuPlb" target="2399036385470603863" resolve="testClass" />
+            <ref role="3AuPlb" node="25b5I77dA9n" resolve="testClass" />
             <node concept="LIFWc" id="25b5I77dODp" role="lGtFl">
               <property role="LIFWa" value="7" />
               <property role="OXtK3" value="true" />
@@ -1026,7 +1026,7 @@
     <node concept="3clFbS" id="65Sh$MnwQJN" role="LjaKd">
       <node concept="2HxZob" id="65Sh$MnwQJL" role="3cqZAp">
         <node concept="1iFQzN" id="65Sh$MnwQJR" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.3228268613620327405" resolve="GoByCurrentReference" />
+          <ref role="1iFR8X" to="ekwn:2Nd7jcMoufH" resolve="GoByCurrentReference" />
         </node>
       </node>
       <node concept="yd1bK" id="65Sh$Mnx1Fe" role="3cqZAp">

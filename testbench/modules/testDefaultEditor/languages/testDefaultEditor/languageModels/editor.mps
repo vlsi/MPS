@@ -42,7 +42,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="2vlU4mSUaVD">
-    <reference role="1XX52x" target="j0bb.2870455723671203553" resolve="DefaultNodeAttribute" />
+    <ref role="1XX52x" to="j0bb:2vlU4mSUaVx" resolve="DefaultNodeAttribute" />
     <node concept="3EZMnI" id="2vlU4mSUaWu" role="2wV5jI">
       <node concept="3F0ifn" id="2vlU4mSUaW_" role="3EZMnx">
         <property role="3F0ifm" value="$N$" />
@@ -55,7 +55,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2vlU4mSUaWO">
-    <reference role="1XX52x" target="j0bb.2870455723671203428" resolve="DefaultPropertyAttribute" />
+    <ref role="1XX52x" to="j0bb:2vlU4mSUaT$" resolve="DefaultPropertyAttribute" />
     <node concept="3EZMnI" id="2vlU4mSUaWQ" role="2wV5jI">
       <node concept="3F0ifn" id="2vlU4mSUaWX" role="3EZMnx">
         <property role="3F0ifm" value="$P$" />
@@ -68,7 +68,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2vlU4mSUaXc">
-    <reference role="1XX52x" target="j0bb.2870455723671203511" resolve="DefaultReferenceAttribute" />
+    <ref role="1XX52x" to="j0bb:2vlU4mSUaUR" resolve="DefaultReferenceAttribute" />
     <node concept="3EZMnI" id="2vlU4mSUaXe" role="2wV5jI">
       <node concept="3F0ifn" id="2vlU4mSUaXo" role="3EZMnx">
         <property role="3F0ifm" value="$R$" />

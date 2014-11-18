@@ -171,39 +171,39 @@
     </language>
   </registry>
   <node concept="24kQdi" id="4p4E$Nwz_hJ">
-    <reference role="1XX52x" target="vw7d.5063359128232717410" resolve="ChangeEvent" />
+    <ref role="1XX52x" to="vw7d:4p4E$NwyILy" resolve="ChangeEvent" />
     <node concept="3EZMnI" id="4p4E$Nwz_P5" role="2wV5jI">
       <node concept="l2Vlx" id="4p4E$Nwz_P8" role="2iSdaV" />
       <node concept="3F0ifn" id="4p4E$Nwz_PO" role="3EZMnx">
         <property role="3F0ifm" value="set temperature to" />
-        <reference role="1k5W1q" target="tpen.1198595398954" resolve="Field" />
+        <ref role="1k5W1q" to="tpen:hshQ_OE" resolve="Field" />
       </node>
       <node concept="3F0A7n" id="4p4E$Nwz_Q2" role="3EZMnx">
-        <reference role="1NtTu8" target="vw7d.5063359128232717424" resolve="temperature" />
+        <ref role="1NtTu8" to="vw7d:4p4E$NwyILK" resolve="temperature" />
       </node>
       <node concept="3F0ifn" id="4p4E$Nwz_Qh" role="3EZMnx">
         <property role="3F0ifm" value="Celsius" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="4p4E$NwzCRp">
-    <reference role="1XX52x" target="vw7d.5063359128232717391" resolve="DailyPlan" />
+    <ref role="1XX52x" to="vw7d:4p4E$NwyILf" resolve="DailyPlan" />
     <node concept="3EZMnI" id="4p4E$NwzCRr" role="2wV5jI">
       <node concept="3F0ifn" id="4p4E$NwzCSD" role="3EZMnx">
         <property role="3F0ifm" value="Daily Plan applicable" />
         <node concept="ljvvj" id="4p4E$NwzCSG" role="3F10Kt" />
       </node>
       <node concept="3F1sOY" id="42WFAKeqbyb" role="3EZMnx">
-        <reference role="1NtTu8" target="vw7d.4664795093170417662" />
+        <ref role="1NtTu8" to="vw7d:42WFAKeq6ZY" />
         <node concept="2V7CMv" id="NU25MqYRdF" role="3F10Kt">
           <property role="2V7CMs" value="ext_1_RTransform" />
         </node>
       </node>
       <node concept="3F0ifn" id="NU25MqXed4" role="3EZMnx">
         <property role="3F0ifm" value="customizing the" />
-        <reference role="1k5W1q" target="tpen.1198594875276" resolve="Comment" />
-        <reference role="1ERwB7" target="935069066462802861" resolve="DeleteCustomizes" />
+        <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+        <ref role="1ERwB7" node="NU25MqYbeH" resolve="DeleteCustomizes" />
         <node concept="pkWqt" id="NU25MqXq1v" role="pqm2j">
           <node concept="3clFbS" id="NU25MqXq1w" role="2VODD2">
             <node concept="3clFbF" id="NU25MqXqc3" role="3cqZAp">
@@ -211,7 +211,7 @@
                 <node concept="2OqwBi" id="NU25MqXqc5" role="2Oq$k0">
                   <node concept="pncrf" id="NU25MqXqc6" role="2Oq$k0" />
                   <node concept="3TrEf2" id="NU25MqY8Ym" role="2OqNvi">
-                    <reference role="3Tt5mk" target="vw7d.935069066462790136" />
+                    <ref role="3Tt5mk" to="vw7d:NU25MqY87S" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="NU25MqXqc8" role="2OqNvi" />
@@ -221,8 +221,8 @@
         </node>
       </node>
       <node concept="3F1sOY" id="NU25MqY9_F" role="3EZMnx">
-        <reference role="1NtTu8" target="vw7d.935069066462790136" />
-        <reference role="1k5W1q" target="tpen.1198595398954" resolve="Field" />
+        <ref role="1NtTu8" to="vw7d:NU25MqY87S" />
+        <ref role="1k5W1q" to="tpen:hshQ_OE" resolve="Field" />
         <node concept="pkWqt" id="NU25MqY9MT" role="pqm2j">
           <node concept="3clFbS" id="NU25MqY9MU" role="2VODD2">
             <node concept="3clFbF" id="NU25MqY9Xg" role="3cqZAp">
@@ -230,7 +230,7 @@
                 <node concept="2OqwBi" id="NU25MqYa1P" role="2Oq$k0">
                   <node concept="pncrf" id="NU25MqY9Xf" role="2Oq$k0" />
                   <node concept="3TrEf2" id="NU25MqYaml" role="2OqNvi">
-                    <reference role="3Tt5mk" target="vw7d.935069066462790136" />
+                    <ref role="3Tt5mk" to="vw7d:NU25MqY87S" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="NU25MqYb1A" role="2OqNvi" />
@@ -241,7 +241,7 @@
       </node>
       <node concept="3F0ifn" id="4p4E$Nw_3hn" role="3EZMnx">
         <property role="3F0ifm" value="" />
-        <reference role="1ERwB7" target="935069066462802861" resolve="DeleteCustomizes" />
+        <ref role="1ERwB7" node="NU25MqYbeH" resolve="DeleteCustomizes" />
         <node concept="ljvvj" id="1RZY6YZS7qA" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -260,7 +260,7 @@
                 <node concept="2OqwBi" id="1RZY6YZRPtG" role="2Oq$k0">
                   <node concept="pncrf" id="1RZY6YZRPtH" role="2Oq$k0" />
                   <node concept="3TrEf2" id="1RZY6YZRPtI" role="2OqNvi">
-                    <reference role="3Tt5mk" target="vw7d.935069066462790136" />
+                    <ref role="3Tt5mk" to="vw7d:NU25MqY87S" />
                   </node>
                 </node>
                 <node concept="3w_OXm" id="1RZY6YZRPMx" role="2OqNvi" />
@@ -271,8 +271,8 @@
       </node>
       <node concept="3F0ifn" id="1RZY6YZRNCa" role="3EZMnx">
         <property role="3F0ifm" value="plan" />
-        <reference role="1ERwB7" target="935069066462802861" resolve="DeleteCustomizes" />
-        <reference role="1k5W1q" target="tpen.1198594875276" resolve="Comment" />
+        <ref role="1ERwB7" node="NU25MqYbeH" resolve="DeleteCustomizes" />
+        <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
         <node concept="ljvvj" id="1RZY6YZRNQK" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -283,7 +283,7 @@
                 <node concept="2OqwBi" id="1RZY6YZRO5M" role="2Oq$k0">
                   <node concept="pncrf" id="1RZY6YZRO1c" role="2Oq$k0" />
                   <node concept="3TrEf2" id="1RZY6YZROqi" role="2OqNvi">
-                    <reference role="3Tt5mk" target="vw7d.935069066462790136" />
+                    <ref role="3Tt5mk" to="vw7d:NU25MqY87S" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="1RZY6YZRP5V" role="2OqNvi" />
@@ -297,7 +297,7 @@
           <property role="VOm3f" value="false" />
         </node>
         <node concept="3F2HdR" id="4p4E$NwzCTw" role="3EZMnx">
-          <reference role="1NtTu8" target="vw7d.5063359128232717399" />
+          <ref role="1NtTu8" to="vw7d:4p4E$NwyILn" />
           <node concept="2iRkQZ" id="4p4E$NwzCTx" role="2czzBx" />
           <node concept="4$FPG" id="4p4E$Nw$LB6" role="4_6I_">
             <node concept="3clFbS" id="4p4E$Nw$LB7" role="2VODD2">
@@ -305,12 +305,12 @@
                 <node concept="3cpWsn" id="4p4E$Nw$Nsh" role="3cpWs9">
                   <property role="TrG5h" value="item" />
                   <node concept="3Tqbb2" id="4p4E$Nw$Nsf" role="1tU5fm">
-                    <reference role="ehGHo" target="vw7d.5726447348463731062" resolve="Slot" />
+                    <ref role="ehGHo" to="vw7d:4XSronYa85Q" resolve="Slot" />
                   </node>
                   <node concept="2ShNRf" id="4p4E$Nw$Nsi" role="33vP2m">
                     <node concept="2fJWfE" id="4p4E$Nw$Nsj" role="2ShVmc">
                       <node concept="3Tqbb2" id="4p4E$Nw$Nsk" role="3zrR0E">
-                        <reference role="ehGHo" target="vw7d.5726447348463731062" resolve="Slot" />
+                        <ref role="ehGHo" to="vw7d:4XSronYa85Q" resolve="Slot" />
                       </node>
                     </node>
                   </node>
@@ -323,10 +323,10 @@
                   </node>
                   <node concept="2OqwBi" id="2_khaML22HE" role="37vLTJ">
                     <node concept="37vLTw" id="2_khaML22DE" role="2Oq$k0">
-                      <reference role="3cqZAo" target="5063359128233260817" resolve="item" />
+                      <ref role="3cqZAo" node="4p4E$Nw$Nsh" resolve="item" />
                     </node>
                     <node concept="3TrcHB" id="2_khaML22Ro" role="2OqNvi">
-                      <reference role="3TsBF5" target="vw7d.5726447348463731324" resolve="start" />
+                      <ref role="3TsBF5" to="vw7d:4XSronYa89W" resolve="start" />
                     </node>
                   </node>
                 </node>
@@ -339,21 +339,21 @@
                   <node concept="2OqwBi" id="4p4E$Nw$Q5j" role="37vLTJ">
                     <node concept="2OqwBi" id="4XSronYbiXE" role="2Oq$k0">
                       <node concept="37vLTw" id="4p4E$Nw$PML" role="2Oq$k0">
-                        <reference role="3cqZAo" target="5063359128233260817" resolve="item" />
+                        <ref role="3cqZAo" node="4p4E$Nw$Nsh" resolve="item" />
                       </node>
                       <node concept="3TrEf2" id="4XSronYbj_S" role="2OqNvi">
-                        <reference role="3Tt5mk" target="vw7d.5726447348463738321" />
+                        <ref role="3Tt5mk" to="vw7d:4XSronYa9Rh" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="4XSronYbjSR" role="2OqNvi">
-                      <reference role="3TsBF5" target="vw7d.5063359128232717424" resolve="temperature" />
+                      <ref role="3TsBF5" to="vw7d:4p4E$NwyILK" resolve="temperature" />
                     </node>
                   </node>
                 </node>
               </node>
               <node concept="3clFbF" id="4p4E$Nw$SDR" role="3cqZAp">
                 <node concept="37vLTw" id="4p4E$Nw$SDQ" role="3clFbG">
-                  <reference role="3cqZAo" target="5063359128233260817" resolve="item" />
+                  <ref role="3cqZAo" node="4p4E$Nw$Nsh" resolve="item" />
                 </node>
               </node>
             </node>
@@ -374,13 +374,13 @@
     </node>
   </node>
   <node concept="24kQdi" id="4p4E$NwzCTW">
-    <reference role="1XX52x" target="vw7d.5063359128232698866" resolve="HeatingPlan" />
+    <ref role="1XX52x" to="vw7d:4p4E$NwyEfM" resolve="HeatingPlan" />
     <node concept="3EZMnI" id="4p4E$NwzCTY" role="2wV5jI">
       <node concept="3F0ifn" id="4p4E$NwzCU5" role="3EZMnx">
         <property role="3F0ifm" value="Heating plan for room:" />
       </node>
       <node concept="3F0A7n" id="4p4E$NwzCUb" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="ljvvj" id="4p4E$NwzCUe" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -393,14 +393,14 @@
       </node>
       <node concept="3F2HdR" id="4p4E$NwzCUp" role="3EZMnx">
         <property role="2czwfO" value=" " />
-        <reference role="1NtTu8" target="vw7d.5063359128232717389" />
+        <ref role="1NtTu8" to="vw7d:4p4E$NwyILd" />
         <node concept="2iRkQZ" id="4p4E$NwzCUw" role="2czzBx" />
       </node>
       <node concept="l2Vlx" id="4p4E$NwzCU1" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="42WFAKeqb$D">
-    <reference role="1XX52x" target="vw7d.4664795093170414652" resolve="Applicability" />
+    <ref role="1XX52x" to="vw7d:42WFAKeq6gW" resolve="Applicability" />
     <node concept="3EZMnI" id="42WFAKerict" role="2wV5jI">
       <node concept="l2Vlx" id="42WFAKericu" role="2iSdaV" />
       <node concept="3F0ifn" id="42WFAKericx" role="3EZMnx">
@@ -410,69 +410,69 @@
         </node>
       </node>
       <node concept="PMmxH" id="42WFAKeqJNB" role="3EZMnx">
-        <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
-        <reference role="1k5W1q" target="tpen.1198595398954" resolve="Field" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="tpen:hshQ_OE" resolve="Field" />
         <node concept="OXEIz" id="42WFAKerut4" role="P5bDN">
           <node concept="UkePV" id="42WFAKerut6" role="OY2wv">
-            <reference role="Ul1FP" target="vw7d.4664795093170414652" resolve="Applicability" />
+            <ref role="Ul1FP" to="vw7d:42WFAKeq6gW" resolve="Applicability" />
           </node>
         </node>
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="42WFAKeqOV0">
-    <reference role="1XX52x" target="vw7d.4664795093170605734" resolve="SpecificDay" />
+    <ref role="1XX52x" to="vw7d:42WFAKeqOUA" resolve="SpecificDay" />
     <node concept="3EZMnI" id="42WFAKeqOV2" role="2wV5jI">
       <node concept="3F0ifn" id="6ExbLg_2I$w" role="3EZMnx">
         <property role="3F0ifm" value="on" />
         <node concept="OXEIz" id="3u7OnsCQ3Gy" role="P5bDN">
           <node concept="UkePV" id="3u7OnsCQO63" role="OY2wv">
-            <reference role="Ul1FP" target="vw7d.4664795093170414652" resolve="Applicability" />
+            <ref role="Ul1FP" to="vw7d:42WFAKeq6gW" resolve="Applicability" />
           </node>
         </node>
       </node>
       <node concept="3F0A7n" id="42WFAKeqOV9" role="3EZMnx">
-        <reference role="1NtTu8" target="vw7d.4664795093170605735" resolve="day" />
-        <reference role="1k5W1q" target="tpen.1198595398954" resolve="Field" />
+        <ref role="1NtTu8" to="vw7d:42WFAKeqOUB" resolve="day" />
+        <ref role="1k5W1q" to="tpen:hshQ_OE" resolve="Field" />
       </node>
       <node concept="l2Vlx" id="42WFAKeqOV5" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="42WFAKeqWni">
-    <reference role="1XX52x" target="vw7d.4664795093170636139" resolve="DayRange" />
+    <ref role="1XX52x" to="vw7d:42WFAKeqWlF" resolve="DayRange" />
     <node concept="3EZMnI" id="42WFAKeqWnk" role="2wV5jI">
       <node concept="3F0ifn" id="42WFAKeqWnr" role="3EZMnx">
         <property role="3F0ifm" value="from" />
         <node concept="OXEIz" id="3u7OnsCQHQw" role="P5bDN">
           <node concept="UkePV" id="3u7OnsCQHQy" role="OY2wv">
-            <reference role="Ul1FP" target="vw7d.4664795093170414652" resolve="Applicability" />
+            <ref role="Ul1FP" to="vw7d:42WFAKeq6gW" resolve="Applicability" />
           </node>
         </node>
       </node>
       <node concept="3F0A7n" id="42WFAKeqWnx" role="3EZMnx">
-        <reference role="1NtTu8" target="vw7d.4664795093170636191" resolve="start" />
-        <reference role="1k5W1q" target="tpen.1198595398954" resolve="Field" />
+        <ref role="1NtTu8" to="vw7d:42WFAKeqWmv" resolve="start" />
+        <ref role="1k5W1q" to="tpen:hshQ_OE" resolve="Field" />
       </node>
       <node concept="3F0ifn" id="42WFAKeqWnC" role="3EZMnx">
         <property role="3F0ifm" value="to" />
       </node>
       <node concept="3F0A7n" id="42WFAKeqWnM" role="3EZMnx">
-        <reference role="1NtTu8" target="vw7d.4664795093170636193" resolve="end" />
-        <reference role="1k5W1q" target="tpen.1198595398954" resolve="Field" />
+        <ref role="1NtTu8" to="vw7d:42WFAKeqWmx" resolve="end" />
+        <ref role="1k5W1q" to="tpen:hshQ_OE" resolve="Field" />
       </node>
       <node concept="l2Vlx" id="42WFAKeqWnn" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="42WFAKer$Z9">
-    <reference role="1XX52x" target="vw7d.4664795093170436280" resolve="NotSpecified" />
+    <ref role="1XX52x" to="vw7d:42WFAKeqbyS" resolve="NotSpecified" />
     <node concept="3EZMnI" id="1RZY6YZR8u3" role="2wV5jI">
       <node concept="l2Vlx" id="1RZY6YZR8u4" role="2iSdaV" />
       <node concept="PMmxH" id="42WFAKer$Zb" role="3EZMnx">
-        <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
-        <reference role="1k5W1q" target="tpen.1198594875276" resolve="Comment" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
         <node concept="OXEIz" id="1RZY6YZQAIU" role="P5bDN">
           <node concept="UkePV" id="1RZY6YZQAIW" role="OY2wv">
-            <reference role="Ul1FP" target="vw7d.4664795093170414652" resolve="Applicability" />
+            <ref role="Ul1FP" to="vw7d:42WFAKeq6gW" resolve="Applicability" />
           </node>
         </node>
       </node>
@@ -482,18 +482,18 @@
     </node>
   </node>
   <node concept="24kQdi" id="4XSronYa8al">
-    <reference role="1XX52x" target="vw7d.5726447348463731062" resolve="Slot" />
+    <ref role="1XX52x" to="vw7d:4XSronYa85Q" resolve="Slot" />
     <node concept="3EZMnI" id="4XSronYa9Px" role="2wV5jI">
       <node concept="3F0ifn" id="NU25Mr1uz5" role="3EZMnx">
         <property role="3F0ifm" value="customizing" />
-        <reference role="1k5W1q" target="tpen.1198594875276" resolve="Comment" />
+        <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
         <node concept="pkWqt" id="NU25Mr1uzc" role="pqm2j">
           <node concept="3clFbS" id="NU25Mr1uzd" role="2VODD2">
             <node concept="3clFbF" id="NU25Mr1uHz" role="3cqZAp">
               <node concept="2OqwBi" id="NU25Mr1uLH" role="3clFbG">
                 <node concept="pncrf" id="NU25Mr1uHy" role="2Oq$k0" />
                 <node concept="2qgKlT" id="NU25Mr1vcr" role="2OqNvi">
-                  <reference role="37wK5l" target="mspw.935069066463662362" resolve="isCustomizing" />
+                  <ref role="37wK5l" to="mspw:NU25Mr1t4q" resolve="isCustomizing" />
                 </node>
               </node>
             </node>
@@ -504,32 +504,32 @@
         <property role="3F0ifm" value="At" />
       </node>
       <node concept="3F0A7n" id="4XSronYa9QU" role="3EZMnx">
-        <reference role="1NtTu8" target="vw7d.5726447348463731324" resolve="start" />
+        <ref role="1NtTu8" to="vw7d:4XSronYa89W" resolve="start" />
       </node>
       <node concept="l2Vlx" id="4XSronYa9P$" role="2iSdaV" />
       <node concept="3F0ifn" id="4XSronYa9R7" role="3EZMnx">
         <property role="3F0ifm" value="o'clock" />
       </node>
       <node concept="3F1sOY" id="4XSronYa9Rj" role="3EZMnx">
-        <reference role="1NtTu8" target="vw7d.5726447348463738321" />
+        <ref role="1NtTu8" to="vw7d:4XSronYa9Rh" />
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="NU25MqXuxa">
-    <reference role="1XX52x" target="vw7d.935069066462619696" resolve="DailyPlanReference" />
+    <ref role="1XX52x" to="vw7d:NU25MqXuwK" resolve="DailyPlanReference" />
     <node concept="1iCGBv" id="1RZY6YZQo4l" role="2wV5jI">
-      <reference role="1NtTu8" target="vw7d.935069066462619697" />
+      <ref role="1NtTu8" to="vw7d:NU25MqXuwL" />
       <node concept="1sVBvm" id="1RZY6YZQo4m" role="1sWHZn">
         <node concept="3F0A7n" id="1RZY6YZQo4r" role="2wV5jI">
           <property role="1Intyy" value="true" />
-          <reference role="1NtTu8" target="vw7d.2161719505004866676" resolve="displayName" />
+          <ref role="1NtTu8" to="vw7d:1RZY6YZQiLO" resolve="displayName" />
         </node>
       </node>
     </node>
   </node>
   <node concept="1h_SRR" id="NU25MqYbeH">
     <property role="TrG5h" value="DeleteCustomizes" />
-    <reference role="1h_SK9" target="vw7d.5063359128232717391" resolve="DailyPlan" />
+    <ref role="1h_SK9" to="vw7d:4p4E$NwyILf" resolve="DailyPlan" />
     <node concept="1hA7zw" id="NU25MqYbeI" role="1h_SK8">
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="NU25MqYbeJ" role="1hA7z_">
@@ -539,7 +539,7 @@
               <node concept="2OqwBi" id="NU25MqYbgJ" role="2Oq$k0">
                 <node concept="0IXxy" id="NU25MqYbeS" role="2Oq$k0" />
                 <node concept="3TrEf2" id="NU25MqYbqX" role="2OqNvi">
-                  <reference role="3Tt5mk" target="vw7d.935069066462790136" />
+                  <ref role="3Tt5mk" to="vw7d:NU25MqY87S" />
                 </node>
               </node>
               <node concept="2oxUTD" id="NU25MqYbLx" role="2OqNvi">

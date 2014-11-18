@@ -47,12 +47,12 @@
   <node concept="1TIwiD" id="3X9rC2XzJdF">
     <property role="TrG5h" value="BuildMpsLayout_TestModuleGroup" />
     <property role="3GE5qa" value="Project.Testing" />
-    <reference role="1TJDcQ" target="4560297596904469361" resolve="BuildMpsLayout_TestModules_Content" />
+    <ref role="1TJDcQ" node="3X9rC2XzJdL" resolve="BuildMpsLayout_TestModules_Content" />
     <node concept="1TJgyj" id="3X9rC2XzJdG" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="group" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="kdzh.1500819558095907805" resolve="BuildMps_Group" />
+      <ref role="20lvS9" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
     </node>
   </node>
   <node concept="1TIwiD" id="3X9rC2XzJdH">
@@ -60,26 +60,26 @@
     <property role="3GE5qa" value="Project.Testing" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="test modules" />
-    <reference role="1TJDcQ" target="3ior.3542413272732750877" resolve="BuildAspect" />
+    <ref role="1TJDcQ" to="3ior:34DbxDwRlgt" resolve="BuildAspect" />
     <node concept="1TJgyj" id="6g2MV4s4KuI" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="haltonfailure" />
-      <reference role="20lvS9" target="3ior.4380385936562003279" resolve="BuildString" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
     </node>
     <node concept="PrWs8" id="3X9rC2XzJdI" role="PzmwI">
-      <reference role="PrY4T" target="3ior.841011766566205091" resolve="BuildExternalDependency" />
+      <ref role="PrY4T" to="3ior:IFRVVI6zqz" resolve="BuildExternalDependency" />
     </node>
     <node concept="PrWs8" id="7rX0uM1sdKt" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="3umvbTBIIVQ" role="PzmwI">
-      <reference role="PrY4T" target="tpck.3734116213129792499" resolve="ScopeProvider" />
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
     <node concept="1TJgyj" id="3X9rC2XzJdK" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="modules" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="4560297596904469361" resolve="BuildMpsLayout_TestModules_Content" />
+      <ref role="20lvS9" node="3X9rC2XzJdL" resolve="BuildMpsLayout_TestModules_Content" />
     </node>
   </node>
   <node concept="1TIwiD" id="3X9rC2XzJdL">
@@ -88,18 +88,18 @@
     <property role="TrG5h" value="BuildMpsLayout_TestModules_Content" />
     <property role="3GE5qa" value="Project.Testing" />
     <property role="2_RsDV" value="none" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="3X9rC2XzJdM">
     <property role="TrG5h" value="BuildMpsLayout_TestModule" />
     <property role="3GE5qa" value="Project.Testing" />
     <property role="2_RsDV" value="none" />
-    <reference role="1TJDcQ" target="4560297596904469361" resolve="BuildMpsLayout_TestModules_Content" />
+    <ref role="1TJDcQ" node="3X9rC2XzJdL" resolve="BuildMpsLayout_TestModules_Content" />
     <node concept="1TJgyj" id="3X9rC2XzJdN" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="module" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="kdzh.3189788309731840247" resolve="BuildMps_Solution" />
+      <ref role="20lvS9" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
     </node>
   </node>
   <node concept="1TIwiD" id="3umvbTBQuM$">
@@ -107,9 +107,9 @@
     <property role="TrG5h" value="BuildModuleTestsPlugin" />
     <property role="3GE5qa" value="Project" />
     <property role="34LRSv" value="module-testing" />
-    <reference role="1TJDcQ" target="3ior.6647099934206689694" resolve="BuildPlugin" />
+    <ref role="1TJDcQ" to="3ior:5KZfyKsUo6u" resolve="BuildPlugin" />
     <node concept="PrWs8" id="3umvbTBQBt4" role="PzmwI">
-      <reference role="PrY4T" target="3ior.841011766566205091" resolve="BuildExternalDependency" />
+      <ref role="PrY4T" to="3ior:IFRVVI6zqz" resolve="BuildExternalDependency" />
     </node>
   </node>
 </model>

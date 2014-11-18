@@ -91,7 +91,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="431DWIovi3m">
-    <reference role="13h7C2" target="4fqr.4666195181811081429" resolve="IMainClass" />
+    <ref role="13h7C2" to="4fqr:431DWIovi3l" resolve="IMainClass" />
     <node concept="13i0hz" id="431DWIovi3n" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="getUnitName" />
@@ -105,12 +105,12 @@
               <node concept="10QFUN" id="4RRGlPmpkCn" role="1eOMHV">
                 <node concept="A3Dl8" id="4RRGlPmpkJb" role="10QFUM">
                   <node concept="3uibUv" id="4RRGlPmpkUY" role="A3Ik2">
-                    <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
                   </node>
                 </node>
                 <node concept="2YIFZM" id="4RRGlPmpliS" role="10QFUP">
-                  <reference role="37wK5l" target="ierg.~TraceInfo%dunitNames(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dutil%dList" resolve="unitNames" />
-                  <reference role="1Pybhc" target="ierg.~TraceInfo" resolve="TraceInfo" />
+                  <ref role="37wK5l" to="ierg:~TraceInfo.unitNames(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="unitNames" />
+                  <ref role="1Pybhc" to="ierg:~TraceInfo" resolve="TraceInfo" />
                   <node concept="13iPFW" id="4RRGlPmplBA" role="37wK5m" />
                 </node>
               </node>
@@ -130,7 +130,7 @@
           <node concept="2OqwBi" id="5CvKAxaoMWu" role="3clFbG">
             <node concept="17RvpY" id="5CvKAxaoQrj" role="2OqNvi" />
             <node concept="BsUDl" id="5CvKAxaoMEe" role="2Oq$k0">
-              <reference role="37wK5l" target="4666195181811081431" resolve="getUnitName" />
+              <ref role="37wK5l" node="431DWIovi3n" resolve="getUnitName" />
             </node>
           </node>
         </node>

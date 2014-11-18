@@ -39,27 +39,27 @@
     <property role="19KtqR" value="true" />
     <property role="MwhBj" value="${language_descriptor}/icons/primitive.png" />
     <property role="TrG5h" value="PrimitiveTypeDescriptor" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="gRDMI7g" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="extends" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1159268661480" resolve="PrimitiveTypeRef" />
+      <ref role="20lvS9" node="gRDMZzC" resolve="PrimitiveTypeRef" />
     </node>
     <node concept="PrWs8" id="hJVCj0r" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="gRDMZzC">
     <property role="TrG5h" value="PrimitiveTypeRef" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="gRDMZzB" role="1TKVEi">
       <property role="20kJfa" value="descriptor" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="1159268590033" resolve="PrimitiveTypeDescriptor" />
+      <ref role="20lvS9" node="gRDMI7h" resolve="PrimitiveTypeDescriptor" />
     </node>
     <node concept="PrWs8" id="1$21UiM4N0a" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1319728274784973096" resolve="InterfacePart" />
+      <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
   </node>
 </model>

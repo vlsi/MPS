@@ -42,90 +42,90 @@
   </registry>
   <node concept="1TIwiD" id="EpZY78hmIx">
     <property role="TrG5h" value="StateMachine" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="EpZY78hmIz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="events" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="763922957008729147" resolve="Event" />
+      <ref role="20lvS9" node="EpZY78hngV" resolve="Event" />
     </node>
     <node concept="1TJgyj" id="EpZY78hmI$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="transitions" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="763922957008729149" resolve="Transition" />
+      <ref role="20lvS9" node="EpZY78hngX" resolve="Transition" />
     </node>
     <node concept="1TJgyj" id="EpZY78hmI_" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="states" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="763922957008729154" resolve="State" />
+      <ref role="20lvS9" node="EpZY78hnh2" resolve="State" />
     </node>
   </node>
   <node concept="1TIwiD" id="EpZY78hngV">
     <property role="TrG5h" value="Event" />
-    <reference role="1TJDcQ" target="7943979732673457898" resolve="AbstractStateMachineElement" />
+    <ref role="1TJDcQ" node="6SYFRDkTQVE" resolve="AbstractStateMachineElement" />
     <node concept="PrWs8" id="EpZY78hngW" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="EpZY78hngX">
     <property role="TrG5h" value="Transition" />
-    <reference role="1TJDcQ" target="7943979732673457898" resolve="AbstractStateMachineElement" />
+    <ref role="1TJDcQ" node="6SYFRDkTQVE" resolve="AbstractStateMachineElement" />
     <node concept="1TJgyj" id="EpZY78hngY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="fromState" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="763922957008729156" resolve="StateReference" />
+      <ref role="20lvS9" node="EpZY78hnh4" resolve="StateReference" />
     </node>
     <node concept="1TJgyj" id="EpZY78hnh0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="toState" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="763922957008729156" resolve="StateReference" />
+      <ref role="20lvS9" node="EpZY78hnh4" resolve="StateReference" />
     </node>
     <node concept="1TJgyj" id="EpZY78hngZ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="trigger" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="763922957008729158" resolve="EventReference" />
+      <ref role="20lvS9" node="EpZY78hnh6" resolve="EventReference" />
     </node>
     <node concept="1TJgyi" id="EpZY78hnh1" role="1TKVEl">
       <property role="TrG5h" value="condition" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="EpZY78hnh2">
     <property role="TrG5h" value="State" />
-    <reference role="1TJDcQ" target="7943979732673457898" resolve="AbstractStateMachineElement" />
+    <ref role="1TJDcQ" node="6SYFRDkTQVE" resolve="AbstractStateMachineElement" />
     <node concept="PrWs8" id="EpZY78hnh3" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="6SYFRDkTQVE">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AbstractStateMachineElement" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="EpZY78hnh4">
     <property role="TrG5h" value="StateReference" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="EpZY78hnh5" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="state" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="763922957008729154" resolve="State" />
+      <ref role="20lvS9" node="EpZY78hnh2" resolve="State" />
     </node>
   </node>
   <node concept="1TIwiD" id="EpZY78hnh6">
     <property role="TrG5h" value="EventReference" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="EpZY78hnh7" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="event" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="763922957008729147" resolve="Event" />
+      <ref role="20lvS9" node="EpZY78hngV" resolve="Event" />
     </node>
   </node>
 </model>

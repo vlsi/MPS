@@ -94,7 +94,7 @@
     <node concept="3clFbS" id="6LcR7Gqykl6" role="LjaKd">
       <node concept="2HxZob" id="6LcR7Gqykl4" role="3cqZAp">
         <node concept="1iFQzN" id="6LcR7Gqykla" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.8896169282213320720" resolve="Delete" />
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
         </node>
       </node>
     </node>
@@ -128,7 +128,7 @@
     <node concept="3clFbS" id="6LcR7GqykDJ" role="LjaKd">
       <node concept="2HxZob" id="6LcR7GqykDK" role="3cqZAp">
         <node concept="1iFQzN" id="6LcR7GqykDL" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.8896169282213320720" resolve="Delete" />
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
         </node>
       </node>
     </node>

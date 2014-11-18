@@ -41,51 +41,51 @@
   <node concept="1TIwiD" id="gfQEx6R">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="ReaderConfiguration" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="h6sBVVC" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1TJgyj" id="gfQFMcV" role="1TKVEi">
       <property role="20lbJX" value="0..n" />
       <property role="20kJfa" value="mapping" />
       <property role="20lmBu" value="aggregation" />
-      <reference role="20lvS9" target="1116534914096" resolve="Mapping" />
+      <ref role="20lvS9" node="gfQEFKK" resolve="Mapping" />
     </node>
   </node>
   <node concept="1TIwiD" id="gfQEFKK">
     <property role="TrG5h" value="Mapping" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="h6sBUu7" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1TJgyj" id="gfQHmRd" role="1TKVEi">
       <property role="20lbJX" value="0..n" />
       <property role="20kJfa" value="field" />
       <property role="20lmBu" value="aggregation" />
-      <reference role="20lvS9" target="1116534962441" resolve="Field" />
+      <ref role="20lvS9" node="gfQER$9" resolve="Field" />
     </node>
     <node concept="1TJgyi" id="gfQEXX6" role="1TKVEl">
       <property role="TrG5h" value="code" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="gfQF03C" role="1TKVEl">
       <property role="TrG5h" value="targetClass" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="gfQER$9">
     <property role="TrG5h" value="Field" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="h6sBT7E" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1TJgyi" id="gfQF7sz" role="1TKVEl">
       <property role="TrG5h" value="start" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="gfQF8HR" role="1TKVEl">
       <property role="TrG5h" value="end" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
 </model>

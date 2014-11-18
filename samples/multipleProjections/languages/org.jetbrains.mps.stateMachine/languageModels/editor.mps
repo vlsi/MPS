@@ -54,10 +54,10 @@
     </language>
   </registry>
   <node concept="24kQdi" id="3c1Y2R7NO9w">
-    <reference role="1XX52x" target="owg1.763922957008726945" resolve="StateMachine" />
+    <ref role="1XX52x" to="owg1:EpZY78hmIx" resolve="StateMachine" />
     <node concept="3EZMnI" id="3c1Y2R7NRkR" role="2wV5jI">
       <node concept="3F2HdR" id="3c1Y2R7NRNa" role="3EZMnx">
-        <reference role="1NtTu8" target="owg1.763922957008726949" />
+        <ref role="1NtTu8" to="owg1:EpZY78hmI_" />
         <node concept="l2Vlx" id="3c1Y2R7NRNb" role="2czzBx" />
         <node concept="pj6Ft" id="3c1Y2R7NRNc" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -76,7 +76,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="3c1Y2R7NRl5" role="3EZMnx">
-        <reference role="1NtTu8" target="owg1.763922957008726947" />
+        <ref role="1NtTu8" to="owg1:EpZY78hmIz" />
         <node concept="l2Vlx" id="3c1Y2R7NRl6" role="2czzBx" />
         <node concept="pj6Ft" id="3c1Y2R7NRl7" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -94,7 +94,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="3c1Y2R7NRlg" role="3EZMnx">
-        <reference role="1NtTu8" target="owg1.763922957008726948" />
+        <ref role="1NtTu8" to="owg1:EpZY78hmI$" />
         <node concept="l2Vlx" id="3c1Y2R7NRlh" role="2czzBx" />
         <node concept="pj6Ft" id="3c1Y2R7NRli" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -110,14 +110,14 @@
     </node>
   </node>
   <node concept="24kQdi" id="3c1Y2R7NOaq">
-    <reference role="1XX52x" target="owg1.763922957008729154" resolve="State" />
+    <ref role="1XX52x" to="owg1:EpZY78hnh2" resolve="State" />
     <node concept="3EZMnI" id="3c1Y2R7NPsv" role="2wV5jI">
       <node concept="l2Vlx" id="3c1Y2R7NPsw" role="2iSdaV" />
       <node concept="3F0ifn" id="3c1Y2R7NPsx" role="3EZMnx">
         <property role="3F0ifm" value="state" />
       </node>
       <node concept="3F0A7n" id="3c1Y2R7NPsy" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="3c1Y2R7NPsz" role="3EZMnx">
         <property role="3F0ifm" value=";" />
@@ -128,14 +128,14 @@
     </node>
   </node>
   <node concept="24kQdi" id="3c1Y2R7NPsU">
-    <reference role="1XX52x" target="owg1.763922957008729147" resolve="Event" />
+    <ref role="1XX52x" to="owg1:EpZY78hngV" resolve="Event" />
     <node concept="3EZMnI" id="3c1Y2R7NPtn" role="2wV5jI">
       <node concept="l2Vlx" id="3c1Y2R7NPto" role="2iSdaV" />
       <node concept="3F0ifn" id="3c1Y2R7NPtp" role="3EZMnx">
         <property role="3F0ifm" value="event" />
       </node>
       <node concept="3F0A7n" id="3c1Y2R7NPtq" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="3c1Y2R7NPtr" role="3EZMnx">
         <property role="3F0ifm" value=";" />
@@ -146,41 +146,41 @@
     </node>
   </node>
   <node concept="24kQdi" id="3c1Y2R7NPu1">
-    <reference role="1XX52x" target="owg1.763922957008729158" resolve="EventReference" />
+    <ref role="1XX52x" to="owg1:EpZY78hnh6" resolve="EventReference" />
     <node concept="3EZMnI" id="3c1Y2R7NPuB" role="2wV5jI">
       <node concept="l2Vlx" id="3c1Y2R7NPuC" role="2iSdaV" />
       <node concept="1iCGBv" id="3c1Y2R7NPuF" role="3EZMnx">
-        <reference role="1NtTu8" target="owg1.763922957008729159" />
+        <ref role="1NtTu8" to="owg1:EpZY78hnh7" />
         <node concept="1sVBvm" id="3c1Y2R7NPuI" role="1sWHZn">
           <node concept="3F0A7n" id="3c1Y2R7NPuK" role="2wV5jI">
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="3c1Y2R7NPw9">
-    <reference role="1XX52x" target="owg1.763922957008729156" resolve="StateReference" />
+    <ref role="1XX52x" to="owg1:EpZY78hnh4" resolve="StateReference" />
     <node concept="3EZMnI" id="3c1Y2R7NPwb" role="2wV5jI">
       <node concept="l2Vlx" id="3c1Y2R7NPwc" role="2iSdaV" />
       <node concept="1iCGBv" id="3c1Y2R7NPwf" role="3EZMnx">
-        <reference role="1NtTu8" target="owg1.763922957008729157" />
+        <ref role="1NtTu8" to="owg1:EpZY78hnh5" />
         <node concept="1sVBvm" id="3c1Y2R7NPwi" role="1sWHZn">
           <node concept="3F0A7n" id="3c1Y2R7NPwk" role="2wV5jI">
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="3c1Y2R7NPxJ">
-    <reference role="1XX52x" target="owg1.763922957008729149" resolve="Transition" />
+    <ref role="1XX52x" to="owg1:EpZY78hngX" resolve="Transition" />
     <node concept="3EZMnI" id="3c1Y2R7NPAq" role="2wV5jI">
       <node concept="3F0ifn" id="3c1Y2R7NR3J" role="3EZMnx">
         <property role="3F0ifm" value="on event" />
       </node>
       <node concept="3F1sOY" id="3c1Y2R7NR4h" role="3EZMnx">
-        <reference role="1NtTu8" target="owg1.763922957008729151" />
+        <ref role="1NtTu8" to="owg1:EpZY78hngZ" />
         <node concept="ljvvj" id="7R1YSR9aZKY" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -188,13 +188,13 @@
       <node concept="l2Vlx" id="3c1Y2R7NPAr" role="2iSdaV" />
       <node concept="3EZMnI" id="3c1Y2R7NR7_" role="3EZMnx">
         <node concept="3F1sOY" id="3c1Y2R7NR89" role="3EZMnx">
-          <reference role="1NtTu8" target="owg1.763922957008729150" />
+          <ref role="1NtTu8" to="owg1:EpZY78hngY" />
         </node>
         <node concept="3F0ifn" id="3c1Y2R7NR8q" role="3EZMnx">
           <property role="3F0ifm" value="-&gt;" />
         </node>
         <node concept="3F1sOY" id="3c1Y2R7NR8A" role="3EZMnx">
-          <reference role="1NtTu8" target="owg1.763922957008729152" />
+          <ref role="1NtTu8" to="owg1:EpZY78hnh0" />
         </node>
         <node concept="VPM3Z" id="3c1Y2R7NR7B" role="3F10Kt">
           <property role="VOm3f" value="false" />

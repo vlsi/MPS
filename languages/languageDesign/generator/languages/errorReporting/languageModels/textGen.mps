@@ -36,7 +36,7 @@
     </language>
   </registry>
   <node concept="WtQ9Q" id="6kxQP7CaHqA">
-    <reference role="WuzLi" target="qq7j.7287346816896104019" resolve="ErrorReportingRoot" />
+    <ref role="WuzLi" to="qq7j:6kxQP7CaBpj" resolve="ErrorReportingRoot" />
     <node concept="11bSqf" id="6kxQP7CaHqB" role="11c4hB">
       <node concept="3clFbS" id="6kxQP7CaHqC" role="2VODD2">
         <node concept="lc7rE" id="6kxQP7CaJ2X" role="3cqZAp">

@@ -50,7 +50,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="7CaZq43636w">
-    <reference role="13h7C2" target="g85x.8794120090374242986" resolve="NodeWithSize" />
+    <ref role="13h7C2" to="g85x:7CaZq42SwaE" resolve="NodeWithSize" />
     <node concept="13hLZK" id="7CaZq43636x" role="13h7CW">
       <node concept="3clFbS" id="7CaZq43636y" role="2VODD2">
         <node concept="3clFbF" id="7CaZq43637q" role="3cqZAp">
@@ -61,7 +61,7 @@
             <node concept="2OqwBi" id="7CaZq43638X" role="37vLTJ">
               <node concept="13iPFW" id="7CaZq43637o" role="2Oq$k0" />
               <node concept="3TrcHB" id="7CaZq4363qR" role="2OqNvi">
-                <reference role="3TsBF5" target="g85x.8794120090377706498" resolve="width" />
+                <ref role="3TsBF5" to="g85x:7CaZq435HK2" resolve="width" />
               </node>
             </node>
           </node>
@@ -74,7 +74,7 @@
             <node concept="2OqwBi" id="7CaZq4364jB" role="37vLTJ">
               <node concept="13iPFW" id="7CaZq4364hW" role="2Oq$k0" />
               <node concept="3TrcHB" id="7CaZq4364tK" role="2OqNvi">
-                <reference role="3TsBF5" target="g85x.8794120090377706500" resolve="height" />
+                <ref role="3TsBF5" to="g85x:7CaZq435HK4" resolve="height" />
               </node>
             </node>
           </node>
@@ -83,7 +83,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4N$3GFO7Z9R">
-    <reference role="13h7C2" target="g85x.5540569706414436817" resolve="NodeWithPorts" />
+    <ref role="13h7C2" to="g85x:4N$3GFO7R7h" resolve="NodeWithPorts" />
     <node concept="13hLZK" id="4N$3GFO7Z9S" role="13h7CW">
       <node concept="3clFbS" id="4N$3GFO7Z9T" role="2VODD2">
         <node concept="3clFbF" id="4N$3GFO7Zb0" role="3cqZAp">
@@ -94,7 +94,7 @@
             <node concept="2OqwBi" id="4N$3GFO7Zf4" role="37vLTJ">
               <node concept="13iPFW" id="4N$3GFO7ZaY" role="2Oq$k0" />
               <node concept="3TrcHB" id="4N$3GFO7ZpP" role="2OqNvi">
-                <reference role="3TsBF5" target="g85x.5540569706414469728" resolve="lineWidth" />
+                <ref role="3TsBF5" to="g85x:4N$3GFO7Z9w" resolve="lineWidth" />
               </node>
             </node>
           </node>

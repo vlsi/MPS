@@ -148,7 +148,7 @@
     <property role="TrG5h" value="PersistentConfigurationType" />
     <node concept="3FOIzC" id="Oo_j69cFPd" role="3FOPby">
       <property role="3mWAmy" value="template persistent configuration type" />
-      <reference role="3FOWKa" target="tpee.1068431790189" resolve="Type" />
+      <ref role="3FOWKa" to="tpee:fz3vP1H" resolve="Type" />
       <node concept="3buRE8" id="Oo_j69cFPe" role="3bvWUf">
         <node concept="3clFbS" id="Oo_j69cFPf" role="2VODD2">
           <node concept="3clFbF" id="Oo_j69cFQ5" role="3cqZAp">
@@ -156,7 +156,7 @@
               <node concept="3bvxqY" id="Oo_j69cFQ6" role="2Oq$k0" />
               <node concept="1mIQ4w" id="Oo_j69cFQx" role="2OqNvi">
                 <node concept="chp4Y" id="Oo_j69cFQz" role="cj9EA">
-                  <reference role="cht4Q" target="fb9u.946964771156066585" resolve="PersistentPropertyDeclaration" />
+                  <ref role="cht4Q" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
                 </node>
               </node>
             </node>
@@ -164,7 +164,7 @@
         </node>
       </node>
       <node concept="tYCnQ" id="Oo_j69cFQ$" role="tZc4B">
-        <reference role="uz4UX" target="fb9u.946964771156066557" resolve="TemplatePersistentConfigurationType" />
+        <ref role="uz4UX" to="fb9u:O$iR4J$g3X" resolve="TemplatePersistentConfigurationType" />
         <node concept="uMFAO" id="Oo_j69cFQ_" role="uz6Si">
           <node concept="uNCsQ" id="Oo_j69cFQB" role="uO7ob">
             <node concept="3clFbS" id="Oo_j69cFQC" role="2VODD2">
@@ -174,7 +174,7 @@
                     <node concept="2OqwBi" id="Oo_j69cFR5" role="2Oq$k0">
                       <node concept="1Q6Npb" id="Oo_j69cFQK" role="2Oq$k0" />
                       <node concept="3lApI0" id="Oo_j69cFRb" role="2OqNvi">
-                        <reference role="3lApI3" target="fb9u.946964771156066579" resolve="PersistentConfigurationTemplate" />
+                        <ref role="3lApI3" to="fb9u:O$iR4J$g4j" resolve="PersistentConfigurationTemplate" />
                       </node>
                     </node>
                     <node concept="3zZkjj" id="Oo_j69cWYV" role="2OqNvi">
@@ -184,11 +184,11 @@
                             <node concept="2OqwBi" id="Oo_j69cWZ1" role="3clFbG">
                               <node concept="2OqwBi" id="Oo_j69cWZ2" role="2Oq$k0">
                                 <node concept="37vLTw" id="2BHiRxgl3Ft" role="2Oq$k0">
-                                  <reference role="3cqZAo" target="943668161921929150" resolve="it" />
+                                  <ref role="3cqZAo" node="Oo_j69cWYY" resolve="it" />
                                 </node>
                                 <node concept="3CFZ6_" id="Oo_j69cWZ4" role="2OqNvi">
                                   <node concept="3CFYIy" id="Oo_j69cWZ9" role="3CFYIz">
-                                    <reference role="3CFYIx" target="fb9u.9191251033651632153" resolve="DeprecatedAnnotation" />
+                                    <ref role="3CFYIx" to="fb9u:7YdSxSAfPwp" resolve="DeprecatedAnnotation" />
                                   </node>
                                 </node>
                               </node>
@@ -214,12 +214,12 @@
                 <node concept="3cpWsn" id="Oo_j69cHLZ" role="3cpWs9">
                   <property role="TrG5h" value="node" />
                   <node concept="3Tqbb2" id="Oo_j69cHM0" role="1tU5fm">
-                    <reference role="ehGHo" target="fb9u.946964771156066557" resolve="TemplatePersistentConfigurationType" />
+                    <ref role="ehGHo" to="fb9u:O$iR4J$g3X" resolve="TemplatePersistentConfigurationType" />
                   </node>
                   <node concept="2ShNRf" id="Oo_j69cHM1" role="33vP2m">
                     <node concept="2fJWfE" id="Oo_j69cHM2" role="2ShVmc">
                       <node concept="3Tqbb2" id="Oo_j69cHM3" role="3zrR0E">
-                        <reference role="ehGHo" target="fb9u.946964771156066557" resolve="TemplatePersistentConfigurationType" />
+                        <ref role="ehGHo" to="fb9u:O$iR4J$g3X" resolve="TemplatePersistentConfigurationType" />
                       </node>
                     </node>
                   </node>
@@ -229,10 +229,10 @@
                 <node concept="2OqwBi" id="Oo_j69cHMS" role="3clFbG">
                   <node concept="2OqwBi" id="Oo_j69cHMs" role="2Oq$k0">
                     <node concept="37vLTw" id="3GM_nagTxwW" role="2Oq$k0">
-                      <reference role="3cqZAo" target="943668161921866879" resolve="node" />
+                      <ref role="3cqZAo" node="Oo_j69cHLZ" resolve="node" />
                     </node>
                     <node concept="3TrEf2" id="Oo_j69cHMy" role="2OqNvi">
-                      <reference role="3Tt5mk" target="fb9u.946964771156066558" />
+                      <ref role="3Tt5mk" to="fb9u:O$iR4J$g3Y" />
                     </node>
                   </node>
                   <node concept="2oxUTD" id="Oo_j69cHMY" role="2OqNvi">
@@ -242,13 +242,13 @@
               </node>
               <node concept="3clFbF" id="Oo_j69cFSy" role="3cqZAp">
                 <node concept="37vLTw" id="3GM_nagT$0m" role="3clFbG">
-                  <reference role="3cqZAo" target="943668161921866879" resolve="node" />
+                  <ref role="3cqZAo" node="Oo_j69cHLZ" resolve="node" />
                 </node>
               </node>
             </node>
           </node>
           <node concept="3Tqbb2" id="Oo_j69cFRf" role="uMOYW">
-            <reference role="ehGHo" target="fb9u.946964771156066579" resolve="PersistentConfigurationTemplate" />
+            <ref role="ehGHo" to="fb9u:O$iR4J$g4j" resolve="PersistentConfigurationTemplate" />
           </node>
           <node concept="uSjag" id="Oo_j69cFRi" role="uS$Nq">
             <node concept="3clFbS" id="Oo_j69cFRj" role="2VODD2">
@@ -264,7 +264,7 @@
                     <node concept="2OqwBi" id="Oo_j69cFS2" role="3uHU7w">
                       <node concept="uNquD" id="Oo_j69cFRH" role="2Oq$k0" />
                       <node concept="3TrcHB" id="Oo_j69cFS8" role="2OqNvi">
-                        <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                       </node>
                     </node>
                   </node>
@@ -277,9 +277,9 @@
     </node>
     <node concept="3FOIzC" id="Oo_j69cFQF" role="3FOPby">
       <property role="3mWAmy" value="persistent configuration type" />
-      <reference role="3FOWKa" target="tpee.1068431790189" resolve="Type" />
+      <ref role="3FOWKa" to="tpee:fz3vP1H" resolve="Type" />
       <node concept="tYCnQ" id="Oo_j69cHN5" role="tZc4B">
-        <reference role="uz4UX" target="fb9u.946964771156066332" resolve="PersistentConfigurationType" />
+        <ref role="uz4UX" to="fb9u:O$iR4J$g0s" resolve="PersistentConfigurationType" />
         <node concept="uMFAO" id="Oo_j69cHN6" role="uz6Si">
           <node concept="uNCsQ" id="Oo_j69cHN7" role="uO7ob">
             <node concept="3clFbS" id="Oo_j69cHN8" role="2VODD2">
@@ -289,7 +289,7 @@
                     <node concept="2OqwBi" id="Oo_j69cHNa" role="2Oq$k0">
                       <node concept="1Q6Npb" id="Oo_j69cHNb" role="2Oq$k0" />
                       <node concept="3lApI0" id="Oo_j69cHNc" role="2OqNvi">
-                        <reference role="3lApI3" target="fb9u.946964771156066336" resolve="PersistentConfiguration" />
+                        <ref role="3lApI3" to="fb9u:O$iR4J$g0w" resolve="PersistentConfiguration" />
                       </node>
                     </node>
                     <node concept="3zZkjj" id="Oo_j69cWX5" role="2OqNvi">
@@ -299,11 +299,11 @@
                             <node concept="2OqwBi" id="Oo_j69cWXZ" role="3clFbG">
                               <node concept="2OqwBi" id="Oo_j69cWXw" role="2Oq$k0">
                                 <node concept="37vLTw" id="2BHiRxgm7w4" role="2Oq$k0">
-                                  <reference role="3cqZAo" target="943668161921929032" resolve="it" />
+                                  <ref role="3cqZAo" node="Oo_j69cWX8" resolve="it" />
                                 </node>
                                 <node concept="3CFZ6_" id="Oo_j69cWXA" role="2OqNvi">
                                   <node concept="3CFYIy" id="Oo_j69cWXD" role="3CFYIz">
-                                    <reference role="3CFYIx" target="fb9u.9191251033651632153" resolve="DeprecatedAnnotation" />
+                                    <ref role="3CFYIx" to="fb9u:7YdSxSAfPwp" resolve="DeprecatedAnnotation" />
                                   </node>
                                 </node>
                               </node>
@@ -329,12 +329,12 @@
                 <node concept="3cpWsn" id="Oo_j69cHNh" role="3cpWs9">
                   <property role="TrG5h" value="node" />
                   <node concept="3Tqbb2" id="Oo_j69cHNi" role="1tU5fm">
-                    <reference role="ehGHo" target="fb9u.946964771156066332" resolve="PersistentConfigurationType" />
+                    <ref role="ehGHo" to="fb9u:O$iR4J$g0s" resolve="PersistentConfigurationType" />
                   </node>
                   <node concept="2ShNRf" id="Oo_j69cHNj" role="33vP2m">
                     <node concept="2fJWfE" id="Oo_j69cHNk" role="2ShVmc">
                       <node concept="3Tqbb2" id="Oo_j69cHNl" role="3zrR0E">
-                        <reference role="ehGHo" target="fb9u.946964771156066332" resolve="PersistentConfigurationType" />
+                        <ref role="ehGHo" to="fb9u:O$iR4J$g0s" resolve="PersistentConfigurationType" />
                       </node>
                     </node>
                   </node>
@@ -344,10 +344,10 @@
                 <node concept="2OqwBi" id="Oo_j69cHNn" role="3clFbG">
                   <node concept="2OqwBi" id="Oo_j69cHNo" role="2Oq$k0">
                     <node concept="37vLTw" id="3GM_nagTte_" role="2Oq$k0">
-                      <reference role="3cqZAo" target="943668161921866961" resolve="node" />
+                      <ref role="3cqZAo" node="Oo_j69cHNh" resolve="node" />
                     </node>
                     <node concept="3TrEf2" id="Oo_j69cHNM" role="2OqNvi">
-                      <reference role="3Tt5mk" target="fb9u.946964771156066333" />
+                      <ref role="3Tt5mk" to="fb9u:O$iR4J$g0t" />
                     </node>
                   </node>
                   <node concept="2oxUTD" id="Oo_j69cHNr" role="2OqNvi">
@@ -357,13 +357,13 @@
               </node>
               <node concept="3clFbF" id="Oo_j69cHNt" role="3cqZAp">
                 <node concept="37vLTw" id="3GM_nagTwjU" role="3clFbG">
-                  <reference role="3cqZAo" target="943668161921866961" resolve="node" />
+                  <ref role="3cqZAo" node="Oo_j69cHNh" resolve="node" />
                 </node>
               </node>
             </node>
           </node>
           <node concept="3Tqbb2" id="Oo_j69cHNv" role="uMOYW">
-            <reference role="ehGHo" target="fb9u.946964771156066336" resolve="PersistentConfiguration" />
+            <ref role="ehGHo" to="fb9u:O$iR4J$g0w" resolve="PersistentConfiguration" />
           </node>
           <node concept="uSjag" id="Oo_j69cHNw" role="uS$Nq">
             <node concept="3clFbS" id="Oo_j69cHNx" role="2VODD2">
@@ -379,7 +379,7 @@
                     <node concept="2OqwBi" id="Oo_j69cHNB" role="3uHU7w">
                       <node concept="uNquD" id="Oo_j69cHNC" role="2Oq$k0" />
                       <node concept="3TrcHB" id="Oo_j69cHND" role="2OqNvi">
-                        <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                       </node>
                     </node>
                   </node>
@@ -397,7 +397,7 @@
                 <node concept="3bvxqY" id="Oo_j69cHNX" role="2Oq$k0" />
                 <node concept="1mIQ4w" id="Oo_j69cHNY" role="2OqNvi">
                   <node concept="chp4Y" id="Oo_j69cHNZ" role="cj9EA">
-                    <reference role="cht4Q" target="fb9u.946964771156066585" resolve="PersistentPropertyDeclaration" />
+                    <ref role="cht4Q" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
                   </node>
                 </node>
               </node>

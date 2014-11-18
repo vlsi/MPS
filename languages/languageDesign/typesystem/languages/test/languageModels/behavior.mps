@@ -26,7 +26,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="2bpePDE_jiO">
-    <reference role="13h7C2" target="tplg.1185806650601" resolve="AConcept" />
+    <ref role="13h7C2" to="tplg:hgn_oND" resolve="AConcept" />
     <node concept="13hLZK" id="2bpePDE_jiP" role="13h7CW">
       <node concept="3clFbS" id="2bpePDE_jiQ" role="2VODD2" />
     </node>

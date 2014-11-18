@@ -169,11 +169,11 @@
     <property role="3OnEW4" value="true" />
     <node concept="ftmFs" id="6G33IkaAPBW" role="ftER_">
       <node concept="tCFHf" id="6G33IkaAPBX" role="ftvYc">
-        <reference role="tCJdB" target="7711023363876674047" resolve="ShowNodeMessages" />
+        <ref role="tCJdB" node="6G33IkaAPBZ" resolve="ShowNodeMessages" />
       </node>
     </node>
     <node concept="tT9cl" id="6G33IkaAPBY" role="2f5YQi">
-      <reference role="tU$_T" target="ekwn.1755502566255660782" resolve="EditorPopup" />
+      <ref role="tU$_T" to="ekwn:1xsN4xJX8VI" resolve="EditorPopup" />
     </node>
   </node>
   <node concept="sE7Ow" id="6G33IkaAPBZ">
@@ -186,7 +186,7 @@
             <property role="TrG5h" value="messages" />
             <node concept="_YKpA" id="6G33IkaAPC4" role="1tU5fm">
               <node concept="3uibUv" id="71qRyYfdBNP" role="_ZDj9">
-                <reference role="3uigEE" target="2vit.~SimpleEditorMessage" resolve="SimpleEditorMessage" />
+                <ref role="3uigEE" to="2vit:~SimpleEditorMessage" resolve="SimpleEditorMessage" />
               </node>
             </node>
             <node concept="2OqwBi" id="6G33IkaAPC6" role="33vP2m">
@@ -194,19 +194,19 @@
                 <node concept="2OqwBi" id="6G33IkaAPC8" role="2Oq$k0">
                   <node concept="2WthIp" id="6G33IkaAPC9" role="2Oq$k0" />
                   <node concept="1DTwFV" id="6G33IkaAPCa" role="2OqNvi">
-                    <reference role="2WH_rO" target="7711023363876674132" resolve="editorComponent" />
+                    <ref role="2WH_rO" node="6G33IkaAPDk" resolve="editorComponent" />
                   </node>
                 </node>
                 <node concept="liA8E" id="6G33IkaAPCb" role="2OqNvi">
-                  <reference role="37wK5l" target="9a8.~EditorComponent%dgetHighlightManager()%cjetbrains%dmps%dnodeEditor%dNodeHighlightManager" resolve="getHighlightManager" />
+                  <ref role="37wK5l" to="9a8:~EditorComponent.getHighlightManager():jetbrains.mps.nodeEditor.NodeHighlightManager" resolve="getHighlightManager" />
                 </node>
               </node>
               <node concept="liA8E" id="6G33IkaAPCc" role="2OqNvi">
-                <reference role="37wK5l" target="9a8.~NodeHighlightManager%dgetMessagesFor(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dutil%dList" resolve="getMessagesFor" />
+                <ref role="37wK5l" to="9a8:~NodeHighlightManager.getMessagesFor(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="getMessagesFor" />
                 <node concept="2OqwBi" id="6G33IkaAPCd" role="37wK5m">
                   <node concept="2WthIp" id="6G33IkaAPCe" role="2Oq$k0" />
                   <node concept="1DTwFV" id="6G33IkaAPCf" role="2OqNvi">
-                    <reference role="2WH_rO" target="7711023363876674130" resolve="node" />
+                    <ref role="2WH_rO" node="6G33IkaAPDi" resolve="node" />
                   </node>
                 </node>
               </node>
@@ -217,11 +217,11 @@
           <node concept="3cpWsn" id="6G33IkaAPCh" role="3cpWs9">
             <property role="TrG5h" value="sb" />
             <node concept="3uibUv" id="6G33IkaAPCi" role="1tU5fm">
-              <reference role="3uigEE" target="e2lb.~StringBuilder" resolve="StringBuilder" />
+              <ref role="3uigEE" to="e2lb:~StringBuilder" resolve="StringBuilder" />
             </node>
             <node concept="2ShNRf" id="6G33IkaAPCj" role="33vP2m">
               <node concept="1pGfFk" id="6G33IkaAPCk" role="2ShVmc">
-                <reference role="37wK5l" target="e2lb.~StringBuilder%d&lt;init&gt;()" resolve="StringBuilder" />
+                <ref role="37wK5l" to="e2lb:~StringBuilder.&lt;init&gt;()" resolve="StringBuilder" />
               </node>
             </node>
           </node>
@@ -231,16 +231,16 @@
             <node concept="3clFbF" id="6G33IkaAPCn" role="3cqZAp">
               <node concept="2OqwBi" id="6G33IkaAPCo" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTz__" role="2Oq$k0">
-                  <reference role="3cqZAo" target="7711023363876674065" resolve="sb" />
+                  <ref role="3cqZAo" node="6G33IkaAPCh" resolve="sb" />
                 </node>
                 <node concept="liA8E" id="6G33IkaAPCq" role="2OqNvi">
-                  <reference role="37wK5l" target="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolve="append" />
+                  <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                   <node concept="2OqwBi" id="6G33IkaAPCr" role="37wK5m">
                     <node concept="37vLTw" id="3GM_nagTtnJ" role="2Oq$k0">
-                      <reference role="3cqZAo" target="7711023363876674096" resolve="message" />
+                      <ref role="3cqZAo" node="6G33IkaAPCK" resolve="message" />
                     </node>
                     <node concept="liA8E" id="6G33IkaAPCt" role="2OqNvi">
-                      <reference role="37wK5l" target="2vit.~SimpleEditorMessage%dgetMessage()%cjava%dlang%dString" resolve="getMessage" />
+                      <ref role="37wK5l" to="2vit:~SimpleEditorMessage.getMessage():java.lang.String" resolve="getMessage" />
                     </node>
                   </node>
                 </node>
@@ -249,10 +249,10 @@
             <node concept="3clFbF" id="6G33IkaAPCu" role="3cqZAp">
               <node concept="2OqwBi" id="6G33IkaAPCv" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTzuO" role="2Oq$k0">
-                  <reference role="3cqZAo" target="7711023363876674065" resolve="sb" />
+                  <ref role="3cqZAo" node="6G33IkaAPCh" resolve="sb" />
                 </node>
                 <node concept="liA8E" id="6G33IkaAPCx" role="2OqNvi">
-                  <reference role="37wK5l" target="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolve="append" />
+                  <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                   <node concept="Xl_RD" id="6G33IkaAPCy" role="37wK5m">
                     <property role="Xl_RC" value="; owner is " />
                   </node>
@@ -262,16 +262,16 @@
             <node concept="3clFbF" id="6G33IkaAPCz" role="3cqZAp">
               <node concept="2OqwBi" id="6G33IkaAPC$" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTAj6" role="2Oq$k0">
-                  <reference role="3cqZAo" target="7711023363876674065" resolve="sb" />
+                  <ref role="3cqZAo" node="6G33IkaAPCh" resolve="sb" />
                 </node>
                 <node concept="liA8E" id="6G33IkaAPCA" role="2OqNvi">
-                  <reference role="37wK5l" target="e2lb.~StringBuilder%dappend(java%dlang%dObject)%cjava%dlang%dStringBuilder" resolve="append" />
+                  <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.Object):java.lang.StringBuilder" resolve="append" />
                   <node concept="2OqwBi" id="6G33IkaAPCB" role="37wK5m">
                     <node concept="37vLTw" id="3GM_nagTyeg" role="2Oq$k0">
-                      <reference role="3cqZAo" target="7711023363876674096" resolve="message" />
+                      <ref role="3cqZAo" node="6G33IkaAPCK" resolve="message" />
                     </node>
                     <node concept="liA8E" id="6G33IkaAPCD" role="2OqNvi">
-                      <reference role="37wK5l" target="2vit.~SimpleEditorMessage%dgetOwner()%cjetbrains%dmps%dopenapi%deditor%dmessage%dEditorMessageOwner" resolve="getOwner" />
+                      <ref role="37wK5l" to="2vit:~SimpleEditorMessage.getOwner():jetbrains.mps.openapi.editor.message.EditorMessageOwner" resolve="getOwner" />
                     </node>
                   </node>
                 </node>
@@ -280,10 +280,10 @@
             <node concept="3clFbF" id="6G33IkaAPCE" role="3cqZAp">
               <node concept="2OqwBi" id="6G33IkaAPCF" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTBrq" role="2Oq$k0">
-                  <reference role="3cqZAo" target="7711023363876674065" resolve="sb" />
+                  <ref role="3cqZAo" node="6G33IkaAPCh" resolve="sb" />
                 </node>
                 <node concept="liA8E" id="6G33IkaAPCH" role="2OqNvi">
-                  <reference role="37wK5l" target="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolve="append" />
+                  <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                   <node concept="Xl_RD" id="6G33IkaAPCI" role="37wK5m">
                     <property role="Xl_RC" value="\n" />
                   </node>
@@ -293,7 +293,7 @@
           </node>
           <node concept="2OqwBi" id="5bSVmgRQoJJ" role="1DdaDG">
             <node concept="37vLTw" id="3GM_nagTxWp" role="2Oq$k0">
-              <reference role="3cqZAo" target="7711023363876674051" resolve="messages" />
+              <ref role="3cqZAo" node="6G33IkaAPC3" resolve="messages" />
             </node>
             <node concept="3zZkjj" id="5bSVmgRQu4R" role="2OqNvi">
               <node concept="1bVj0M" id="5bSVmgRQu4T" role="23t8la">
@@ -302,10 +302,10 @@
                     <node concept="2OqwBi" id="5bSVmgRQvbf" role="3clFbG">
                       <node concept="2OqwBi" id="5bSVmgRQuA2" role="2Oq$k0">
                         <node concept="37vLTw" id="5bSVmgRQuy4" role="2Oq$k0">
-                          <reference role="3cqZAo" target="5978789520023871803" resolve="it" />
+                          <ref role="3cqZAo" node="5bSVmgRQu4V" resolve="it" />
                         </node>
                         <node concept="liA8E" id="5bSVmgRQuUB" role="2OqNvi">
-                          <reference role="37wK5l" target="2vit.~SimpleEditorMessage%dgetMessage()%cjava%dlang%dString" resolve="getMessage" />
+                          <ref role="37wK5l" to="2vit:~SimpleEditorMessage.getMessage():java.lang.String" resolve="getMessage" />
                         </node>
                       </node>
                       <node concept="17RvpY" id="5bSVmgRQxd7" role="2OqNvi" />
@@ -322,34 +322,34 @@
           <node concept="3cpWsn" id="6G33IkaAPCK" role="1Duv9x">
             <property role="TrG5h" value="message" />
             <node concept="3uibUv" id="71qRyYfdCaG" role="1tU5fm">
-              <reference role="3uigEE" target="2vit.~SimpleEditorMessage" resolve="SimpleEditorMessage" />
+              <ref role="3uigEE" to="2vit:~SimpleEditorMessage" resolve="SimpleEditorMessage" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="6G33IkaAPCM" role="3cqZAp">
           <node concept="2YIFZM" id="6G33IkaAPCN" role="3clFbG">
-            <reference role="37wK5l" target="810.~Messages%dshowMessageDialog(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dlang%dString,javax%dswing%dIcon)%cvoid" resolve="showMessageDialog" />
-            <reference role="1Pybhc" target="810.~Messages" resolve="Messages" />
+            <ref role="37wK5l" to="810:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
+            <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
             <node concept="2OqwBi" id="6G33IkaAPCO" role="37wK5m">
               <node concept="2WthIp" id="6G33IkaAPCP" role="2Oq$k0" />
               <node concept="1DTwFV" id="6G33IkaAPCQ" role="2OqNvi">
-                <reference role="2WH_rO" target="7711023363876674128" resolve="project" />
+                <ref role="2WH_rO" node="6G33IkaAPDg" resolve="project" />
               </node>
             </node>
             <node concept="2OqwBi" id="6G33IkaAPCR" role="37wK5m">
               <node concept="37vLTw" id="3GM_nagT$p8" role="2Oq$k0">
-                <reference role="3cqZAo" target="7711023363876674065" resolve="sb" />
+                <ref role="3cqZAo" node="6G33IkaAPCh" resolve="sb" />
               </node>
               <node concept="liA8E" id="6G33IkaAPCT" role="2OqNvi">
-                <reference role="37wK5l" target="e2lb.~StringBuilder%dtoString()%cjava%dlang%dString" resolve="toString" />
+                <ref role="37wK5l" to="e2lb:~StringBuilder.toString():java.lang.String" resolve="toString" />
               </node>
             </node>
             <node concept="Xl_RD" id="6G33IkaAPCU" role="37wK5m">
               <property role="Xl_RC" value="Node Messages" />
             </node>
             <node concept="2YIFZM" id="6G33IkaAPCV" role="37wK5m">
-              <reference role="37wK5l" target="810.~Messages%dgetInformationIcon()%cjavax%dswing%dIcon" resolve="getInformationIcon" />
-              <reference role="1Pybhc" target="810.~Messages" resolve="Messages" />
+              <ref role="37wK5l" to="810:~Messages.getInformationIcon():javax.swing.Icon" resolve="getInformationIcon" />
+              <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
             </node>
           </node>
         </node>
@@ -367,26 +367,26 @@
                       <node concept="2OqwBi" id="6G33IkaAPD5" role="2Oq$k0">
                         <node concept="2WthIp" id="6G33IkaAPD6" role="2Oq$k0" />
                         <node concept="1DTwFV" id="6G33IkaAPD7" role="2OqNvi">
-                          <reference role="2WH_rO" target="7711023363876674132" resolve="editorComponent" />
+                          <ref role="2WH_rO" node="6G33IkaAPDk" resolve="editorComponent" />
                         </node>
                       </node>
                       <node concept="liA8E" id="6G33IkaAPD8" role="2OqNvi">
-                        <reference role="37wK5l" target="9a8.~EditorComponent%dgetHighlightManager()%cjetbrains%dmps%dnodeEditor%dNodeHighlightManager" resolve="getHighlightManager" />
+                        <ref role="37wK5l" to="9a8:~EditorComponent.getHighlightManager():jetbrains.mps.nodeEditor.NodeHighlightManager" resolve="getHighlightManager" />
                       </node>
                     </node>
                     <node concept="liA8E" id="6G33IkaAPD9" role="2OqNvi">
-                      <reference role="37wK5l" target="9a8.~NodeHighlightManager%dgetMessagesFor(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dutil%dList" resolve="getMessagesFor" />
+                      <ref role="37wK5l" to="9a8:~NodeHighlightManager.getMessagesFor(org.jetbrains.mps.openapi.model.SNode):java.util.List" resolve="getMessagesFor" />
                       <node concept="2OqwBi" id="6G33IkaAPDa" role="37wK5m">
                         <node concept="2WthIp" id="6G33IkaAPDb" role="2Oq$k0" />
                         <node concept="1DTwFV" id="6G33IkaAPDc" role="2OqNvi">
-                          <reference role="2WH_rO" target="7711023363876674130" resolve="node" />
+                          <ref role="2WH_rO" node="6G33IkaAPDi" resolve="node" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="_YKpA" id="6G33IkaAPDd" role="10QFUM">
                     <node concept="3uibUv" id="71qRyYfgnev" role="_ZDj9">
-                      <reference role="3uigEE" target="2vit.~SimpleEditorMessage" resolve="SimpleEditorMessage" />
+                      <ref role="3uigEE" to="2vit:~SimpleEditorMessage" resolve="SimpleEditorMessage" />
                     </node>
                   </node>
                 </node>
@@ -398,10 +398,10 @@
                       <node concept="2OqwBi" id="5bSVmgRQl0t" role="3clFbG">
                         <node concept="2OqwBi" id="5bSVmgRQjUW" role="2Oq$k0">
                           <node concept="37vLTw" id="5bSVmgRQjmM" role="2Oq$k0">
-                            <reference role="3cqZAo" target="5978789520023805758" resolve="it" />
+                            <ref role="3cqZAo" node="5bSVmgRQdWY" resolve="it" />
                           </node>
                           <node concept="liA8E" id="5bSVmgRQkvW" role="2OqNvi">
-                            <reference role="37wK5l" target="2vit.~SimpleEditorMessage%dgetMessage()%cjava%dlang%dString" resolve="getMessage" />
+                            <ref role="37wK5l" to="2vit:~SimpleEditorMessage.getMessage():java.lang.String" resolve="getMessage" />
                           </node>
                         </node>
                         <node concept="17RvpY" id="5bSVmgRQnib" role="2OqNvi" />
@@ -422,22 +422,22 @@
     </node>
     <node concept="1DS2jV" id="6G33IkaAPDg" role="1NuT2Z">
       <property role="TrG5h" value="project" />
-      <reference role="1DUlNI" target="nx1.~CommonDataKeys%dPROJECT" resolve="PROJECT" />
+      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="6G33IkaAPDh" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="6G33IkaAPDi" role="1NuT2Z">
       <property role="TrG5h" value="node" />
-      <reference role="1DUlNI" target="5xh9.~MPSCommonDataKeys%dNODE" resolve="NODE" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.NODE" resolve="NODE" />
       <node concept="1oajcY" id="6G33IkaAPDj" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="6G33IkaAPDk" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
-      <reference role="1DUlNI" target="1d7m.~MPSEditorDataKeys%dEDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
+      <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
       <node concept="1oajcY" id="6G33IkaAPDl" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="6G33IkaAPDm" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
-      <reference role="1DUlNI" target="5xh9.~MPSCommonDataKeys%dFRAME" resolve="FRAME" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
       <node concept="1oajcY" id="6G33IkaAPDn" role="1oa70y" />
     </node>
   </node>
@@ -445,7 +445,7 @@
     <property role="Z2u3V" value="true" />
     <property role="TrG5h" value="DefaultCore" />
     <node concept="Zd509" id="6G33IkaAPDu" role="Zd508">
-      <reference role="1bYAoF" target="7711023363876674047" resolve="ShowNodeMessages" />
+      <ref role="1bYAoF" node="6G33IkaAPBZ" resolve="ShowNodeMessages" />
       <node concept="pLAjd" id="5GUQLVLhlPM" role="Zd501">
         <property role="pLAjf" value="VK_M" />
         <property role="pLAjc" value="alt+shift" />

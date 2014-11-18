@@ -51,14 +51,14 @@
   </registry>
   <node concept="3_zdsH" id="6d7r2FpJB9J">
     <property role="3GE5qa" value="member" />
-    <reference role="3_znuS" target="53vh.7153805464398780214" resolve="DataDependencyReference" />
+    <ref role="3_znuS" to="53vh:6d7r2FpJdsQ" resolve="DataDependencyReference" />
     <node concept="3__wT9" id="6d7r2FpJB9K" role="3_A6iZ">
       <node concept="3clFbS" id="6d7r2FpJB9L" role="2VODD2">
         <node concept="3_DX4M" id="6d7r2FpJBa4" role="3cqZAp">
           <node concept="2OqwBi" id="6d7r2FpJBc_" role="3_H1SZ">
             <node concept="3__QtB" id="6d7r2FpJBau" role="2Oq$k0" />
             <node concept="3TrEf2" id="6d7r2FpJBv1" role="2OqNvi">
-              <reference role="3Tt5mk" target="53vh.7153805464398780217" />
+              <ref role="3Tt5mk" to="53vh:6d7r2FpJdsT" />
             </node>
           </node>
         </node>

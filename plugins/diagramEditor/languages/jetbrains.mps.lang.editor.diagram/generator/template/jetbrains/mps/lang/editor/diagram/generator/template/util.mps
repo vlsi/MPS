@@ -112,36 +112,36 @@
                 <node concept="2OqwBi" id="70DU5_aYHq9" role="2Oq$k0">
                   <node concept="2OqwBi" id="70DU5_aYHqa" role="2Oq$k0">
                     <node concept="1PxgMI" id="70DU5_aYHqb" role="2Oq$k0">
-                      <reference role="1PxNhF" target="gbdf.5422656561926747342" resolve="AttributedFigureReference" />
+                      <ref role="1PxNhF" to="gbdf:4H19mAw_rje" resolve="AttributedFigureReference" />
                       <node concept="37vLTw" id="70DU5_aYHqc" role="1PxMeX">
-                        <reference role="3cqZAo" target="8082246476500752024" resolve="figureReference" />
+                        <ref role="3cqZAo" node="70DU5_aYHqo" resolve="figureReference" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="70DU5_aYHqd" role="2OqNvi">
-                      <reference role="3Tt5mk" target="gbdf.5422656561931890753" />
+                      <ref role="3Tt5mk" to="gbdf:4H19mAwT311" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="70DU5_aYHqe" role="2OqNvi">
-                    <reference role="37wK5l" target="vtq6.5422656561931904592" resolve="getFigureClass" />
+                    <ref role="37wK5l" to="vtq6:4H19mAwT6pg" resolve="getFigureClass" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="70DU5_aYHqf" role="2OqNvi">
-                  <reference role="37wK5l" target="tpek.4892662966716545618" resolve="getAllSuperClassifiers" />
+                  <ref role="37wK5l" to="tpek:4fAeKISQjDi" resolve="getAllSuperClassifiers" />
                 </node>
               </node>
               <node concept="3JPx81" id="70DU5_aYHqg" role="2OqNvi">
                 <node concept="3B5_sB" id="70DU5_aYHqh" role="25WWJ7">
-                  <reference role="3B5MYn" target="8n5u.8082246476498952649" resolve="MovableContentView" />
+                  <ref role="3B5MYn" to="8n5u:70DU5_aRQ79" resolve="MovableContentView" />
                 </node>
               </node>
             </node>
             <node concept="2OqwBi" id="70DU5_aYHqi" role="3uHU7B">
               <node concept="37vLTw" id="70DU5_aYHqj" role="2Oq$k0">
-                <reference role="3cqZAo" target="8082246476500752024" resolve="figureReference" />
+                <ref role="3cqZAo" node="70DU5_aYHqo" resolve="figureReference" />
               </node>
               <node concept="1mIQ4w" id="70DU5_aYHqk" role="2OqNvi">
                 <node concept="chp4Y" id="70DU5_aYHql" role="cj9EA">
-                  <reference role="cht4Q" target="gbdf.5422656561926747342" resolve="AttributedFigureReference" />
+                  <ref role="cht4Q" to="gbdf:4H19mAw_rje" resolve="AttributedFigureReference" />
                 </node>
               </node>
             </node>
@@ -153,7 +153,7 @@
       <node concept="37vLTG" id="70DU5_aYHqo" role="3clF46">
         <property role="TrG5h" value="figureReference" />
         <node concept="3Tqbb2" id="70DU5_aYHqp" role="1tU5fm">
-          <reference role="ehGHo" target="gbdf.1094405431463455190" resolve="AbstractFigureReference" />
+          <ref role="ehGHo" to="gbdf:WK6Z46CMBm" resolve="AbstractFigureReference" />
         </node>
       </node>
     </node>
@@ -171,36 +171,36 @@
                 <node concept="2OqwBi" id="70DU5_aYsxn" role="2Oq$k0">
                   <node concept="2OqwBi" id="70DU5_aYqY7" role="2Oq$k0">
                     <node concept="1PxgMI" id="70DU5_aYqgh" role="2Oq$k0">
-                      <reference role="1PxNhF" target="gbdf.5422656561926747342" resolve="AttributedFigureReference" />
+                      <ref role="1PxNhF" to="gbdf:4H19mAw_rje" resolve="AttributedFigureReference" />
                       <node concept="37vLTw" id="70DU5_aYpSK" role="1PxMeX">
-                        <reference role="3cqZAo" target="8082246476500575391" resolve="figureReference" />
+                        <ref role="3cqZAo" node="70DU5_aY2iv" resolve="figureReference" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="70DU5_aYrXv" role="2OqNvi">
-                      <reference role="3Tt5mk" target="gbdf.5422656561931890753" />
+                      <ref role="3Tt5mk" to="gbdf:4H19mAwT311" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="70DU5_aYtcm" role="2OqNvi">
-                    <reference role="37wK5l" target="vtq6.5422656561931904592" resolve="getFigureClass" />
+                    <ref role="37wK5l" to="vtq6:4H19mAwT6pg" resolve="getFigureClass" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="70DU5_aYuD_" role="2OqNvi">
-                  <reference role="37wK5l" target="tpek.4892662966716545618" resolve="getAllSuperClassifiers" />
+                  <ref role="37wK5l" to="tpek:4fAeKISQjDi" resolve="getAllSuperClassifiers" />
                 </node>
               </node>
               <node concept="3JPx81" id="70DU5_aYDWv" role="2OqNvi">
                 <node concept="3B5_sB" id="70DU5_aYEtb" role="25WWJ7">
-                  <reference role="3B5MYn" target="8n5u.7493754406620213986" resolve="ResizableContentView" />
+                  <ref role="3B5MYn" to="8n5u:6vZauRwBrby" resolve="ResizableContentView" />
                 </node>
               </node>
             </node>
             <node concept="2OqwBi" id="70DU5_aYodz" role="3uHU7B">
               <node concept="37vLTw" id="70DU5_aYnSv" role="2Oq$k0">
-                <reference role="3cqZAo" target="8082246476500575391" resolve="figureReference" />
+                <ref role="3cqZAo" node="70DU5_aY2iv" resolve="figureReference" />
               </node>
               <node concept="1mIQ4w" id="70DU5_aYoIL" role="2OqNvi">
                 <node concept="chp4Y" id="70DU5_aYp86" role="cj9EA">
-                  <reference role="cht4Q" target="gbdf.5422656561926747342" resolve="AttributedFigureReference" />
+                  <ref role="cht4Q" to="gbdf:4H19mAw_rje" resolve="AttributedFigureReference" />
                 </node>
               </node>
             </node>
@@ -212,7 +212,7 @@
       <node concept="37vLTG" id="70DU5_aY2iv" role="3clF46">
         <property role="TrG5h" value="figureReference" />
         <node concept="3Tqbb2" id="70DU5_aY2iu" role="1tU5fm">
-          <reference role="ehGHo" target="gbdf.1094405431463455190" resolve="AbstractFigureReference" />
+          <ref role="ehGHo" to="gbdf:WK6Z46CMBm" resolve="AbstractFigureReference" />
         </node>
       </node>
     </node>

@@ -127,16 +127,16 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="7zmQ_SRAuGM">
-    <reference role="1M2myG" target="pnao.8707387027762047761" resolve="TestVariableReference" />
+    <ref role="1M2myG" to="pnao:7zmQ_SRAuGh" resolve="TestVariableReference" />
     <node concept="1N5Pfh" id="7zmQ_SRAuGN" role="1Mr941">
-      <reference role="1N5Vy1" target="pnao.8707387027762047762" />
+      <ref role="1N5Vy1" to="pnao:7zmQ_SRAuGi" />
       <node concept="1MUpDS" id="7zmQ_SRAuGO" role="1N6uqs">
         <node concept="3clFbS" id="7zmQ_SRAuGP" role="2VODD2">
           <node concept="3cpWs8" id="7cC8ee7wpZP" role="3cqZAp">
             <node concept="3cpWsn" id="7cC8ee7wpZQ" role="3cpWs9">
               <property role="TrG5h" value="variables" />
               <node concept="2I9FWS" id="7cC8ee7wpZR" role="1tU5fm">
-                <reference role="2I9WkF" target="tp3t.1136720037779" resolve="PatternVariableDeclaration" />
+                <ref role="2I9WkF" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
               </node>
               <node concept="2OqwBi" id="7cC8ee7wpZS" role="33vP2m">
                 <node concept="2OqwBi" id="7cC8ee7wpZT" role="2Oq$k0">
@@ -144,7 +144,7 @@
                   <node concept="2Xjw5R" id="7cC8ee7wpZV" role="2OqNvi">
                     <node concept="1xMEDy" id="7cC8ee7wpZW" role="1xVPHs">
                       <node concept="chp4Y" id="7cC8ee7wpZX" role="ri$Ld">
-                        <reference role="cht4Q" target="pnao.8707387027762047752" resolve="PatternTest" />
+                        <ref role="cht4Q" to="pnao:7zmQ_SRAuG8" resolve="PatternTest" />
                       </node>
                     </node>
                   </node>
@@ -152,7 +152,7 @@
                 <node concept="2Rf3mk" id="7cC8ee7wpZY" role="2OqNvi">
                   <node concept="1xMEDy" id="7cC8ee7wpZZ" role="1xVPHs">
                     <node concept="chp4Y" id="7cC8ee7wq00" role="ri$Ld">
-                      <reference role="cht4Q" target="tp3t.1136720037779" resolve="PatternVariableDeclaration" />
+                      <ref role="cht4Q" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -163,12 +163,12 @@
             <node concept="3cpWsn" id="7cC8ee7wq09" role="3cpWs9">
               <property role="TrG5h" value="result" />
               <node concept="2I9FWS" id="7cC8ee7wq0a" role="1tU5fm">
-                <reference role="2I9WkF" target="tp3t.1136720037779" resolve="PatternVariableDeclaration" />
+                <ref role="2I9WkF" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
               </node>
               <node concept="2ShNRf" id="7cC8ee7wq0c" role="33vP2m">
                 <node concept="2T8Vx0" id="7cC8ee7wq0e" role="2ShVmc">
                   <node concept="2I9FWS" id="7cC8ee7wq0f" role="2T96Bj">
-                    <reference role="2I9WkF" target="tp3t.1136720037779" resolve="PatternVariableDeclaration" />
+                    <ref role="2I9WkF" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
                   </node>
                 </node>
               </node>
@@ -178,12 +178,12 @@
             <node concept="3cpWsn" id="7cC8ee7wq0p" role="3cpWs9">
               <property role="TrG5h" value="names" />
               <node concept="3uibUv" id="7cC8ee7wq0q" role="1tU5fm">
-                <reference role="3uigEE" target="k7g3.~Set" resolve="Set" />
+                <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
                 <node concept="17QB3L" id="7cC8ee7wrLB" role="11_B2D" />
               </node>
               <node concept="2ShNRf" id="7cC8ee7wrLD" role="33vP2m">
                 <node concept="1pGfFk" id="7cC8ee7wrLF" role="2ShVmc">
-                  <reference role="37wK5l" target="k7g3.~HashSet%d&lt;init&gt;()" resolve="HashSet" />
+                  <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;()" resolve="HashSet" />
                 </node>
               </node>
             </node>
@@ -192,7 +192,7 @@
             <node concept="3cpWsn" id="7cC8ee7wq03" role="1Duv9x">
               <property role="TrG5h" value="var" />
               <node concept="3Tqbb2" id="7cC8ee7wrLH" role="1tU5fm">
-                <reference role="ehGHo" target="tp3t.1136720037779" resolve="PatternVariableDeclaration" />
+                <ref role="ehGHo" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
               </node>
             </node>
             <node concept="3clFbS" id="7cC8ee7wq04" role="2LFqv$">
@@ -201,11 +201,11 @@
                   <node concept="3clFbF" id="7cC8ee7wrM5" role="3cqZAp">
                     <node concept="2OqwBi" id="7cC8ee7wrM7" role="3clFbG">
                       <node concept="37vLTw" id="3GM_nagTtz1" role="2Oq$k0">
-                        <reference role="3cqZAo" target="8297918475033223177" resolve="result" />
+                        <ref role="3cqZAo" node="7cC8ee7wq09" resolve="result" />
                       </node>
                       <node concept="TSZUe" id="7cC8ee7wrMb" role="2OqNvi">
                         <node concept="37vLTw" id="3GM_nagT$uE" role="25WWJ7">
-                          <reference role="3cqZAo" target="8297918475033223171" resolve="var" />
+                          <ref role="3cqZAo" node="7cC8ee7wq03" resolve="var" />
                         </node>
                       </node>
                     </node>
@@ -213,16 +213,16 @@
                   <node concept="3clFbF" id="7cC8ee7wrMf" role="3cqZAp">
                     <node concept="2OqwBi" id="7cC8ee7wrMh" role="3clFbG">
                       <node concept="37vLTw" id="3GM_nagTwBt" role="2Oq$k0">
-                        <reference role="3cqZAo" target="8297918475033223193" resolve="names" />
+                        <ref role="3cqZAo" node="7cC8ee7wq0p" resolve="names" />
                       </node>
                       <node concept="liA8E" id="7cC8ee7wrMl" role="2OqNvi">
-                        <reference role="37wK5l" target="k7g3.~Set%dadd(java%dlang%dObject)%cboolean" resolve="add" />
+                        <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
                         <node concept="2OqwBi" id="7cC8ee7wrMn" role="37wK5m">
                           <node concept="37vLTw" id="3GM_nagTyyY" role="2Oq$k0">
-                            <reference role="3cqZAo" target="8297918475033223171" resolve="var" />
+                            <ref role="3cqZAo" node="7cC8ee7wq03" resolve="var" />
                           </node>
                           <node concept="3TrcHB" id="7cC8ee7wrMr" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
                       </node>
@@ -232,16 +232,16 @@
                 <node concept="3fqX7Q" id="7cC8ee7wrM3" role="3clFbw">
                   <node concept="2OqwBi" id="7cC8ee7wrLS" role="3fr31v">
                     <node concept="37vLTw" id="3GM_nagTyHC" role="2Oq$k0">
-                      <reference role="3cqZAo" target="8297918475033223193" resolve="names" />
+                      <ref role="3cqZAo" node="7cC8ee7wq0p" resolve="names" />
                     </node>
                     <node concept="liA8E" id="7cC8ee7wrLW" role="2OqNvi">
-                      <reference role="37wK5l" target="k7g3.~Set%dcontains(java%dlang%dObject)%cboolean" resolve="contains" />
+                      <ref role="37wK5l" to="k7g3:~Set.contains(java.lang.Object):boolean" resolve="contains" />
                       <node concept="2OqwBi" id="7cC8ee7wrLY" role="37wK5m">
                         <node concept="37vLTw" id="3GM_nagTs9B" role="2Oq$k0">
-                          <reference role="3cqZAo" target="8297918475033223171" resolve="var" />
+                          <ref role="3cqZAo" node="7cC8ee7wq03" resolve="var" />
                         </node>
                         <node concept="3TrcHB" id="7cC8ee7wrM2" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                         </node>
                       </node>
                     </node>
@@ -250,12 +250,12 @@
               </node>
             </node>
             <node concept="37vLTw" id="3GM_nagTrGU" role="1DdaDG">
-              <reference role="3cqZAo" target="8297918475033223158" resolve="variables" />
+              <ref role="3cqZAo" node="7cC8ee7wpZQ" resolve="variables" />
             </node>
           </node>
           <node concept="3clFbF" id="7cC8ee7wrLN" role="3cqZAp">
             <node concept="37vLTw" id="3GM_nagTBM$" role="3clFbG">
-              <reference role="3cqZAo" target="8297918475033223177" resolve="result" />
+              <ref role="3cqZAo" node="7cC8ee7wq09" resolve="result" />
             </node>
           </node>
         </node>
@@ -263,9 +263,9 @@
     </node>
   </node>
   <node concept="1M2fIO" id="1mO8VfSNYJ3">
-    <reference role="1M2myG" target="pnao.1563914226484898744" resolve="TestPropertyVariableReference" />
+    <ref role="1M2myG" to="pnao:1mO8VfSNYIS" resolve="TestPropertyVariableReference" />
     <node concept="1N5Pfh" id="1mO8VfSNYJ4" role="1Mr941">
-      <reference role="1N5Vy1" target="pnao.1563914226484898750" />
+      <ref role="1N5Vy1" to="pnao:1mO8VfSNYIY" />
       <node concept="1MUpDS" id="1mO8VfSNYJ5" role="1N6uqs">
         <node concept="3clFbS" id="1mO8VfSNYJ6" role="2VODD2">
           <node concept="3clFbF" id="1mO8VfSNYJ7" role="3cqZAp">
@@ -275,7 +275,7 @@
                 <node concept="2Xjw5R" id="1mO8VfSNYJb" role="2OqNvi">
                   <node concept="1xMEDy" id="1mO8VfSNYJc" role="1xVPHs">
                     <node concept="chp4Y" id="1mO8VfSNYJd" role="ri$Ld">
-                      <reference role="cht4Q" target="pnao.8707387027762047752" resolve="PatternTest" />
+                      <ref role="cht4Q" to="pnao:7zmQ_SRAuG8" resolve="PatternTest" />
                     </node>
                   </node>
                 </node>
@@ -283,7 +283,7 @@
               <node concept="2Rf3mk" id="1mO8VfSNYJe" role="2OqNvi">
                 <node concept="1xMEDy" id="1mO8VfSNYJf" role="1xVPHs">
                   <node concept="chp4Y" id="1mO8VfSO4aP" role="ri$Ld">
-                    <reference role="cht4Q" target="tp3t.1136720037781" resolve="PropertyPatternVariableDeclaration" />
+                    <ref role="cht4Q" to="tp3t:gyDMOul" resolve="PropertyPatternVariableDeclaration" />
                   </node>
                 </node>
               </node>

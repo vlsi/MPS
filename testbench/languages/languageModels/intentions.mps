@@ -81,7 +81,7 @@
   <node concept="2S6QgY" id="7tF7F0nWWmE">
     <property role="2ZfUl0" value="true" />
     <property role="TrG5h" value="editoMute" />
-    <reference role="2ZfgGC" target="pop3.4504141816188599482" resolve="ITestRef" />
+    <ref role="2ZfgGC" to="pop3:3U1VhSFTRMU" resolve="ITestRef" />
     <node concept="2S6ZIM" id="7tF7F0nWWmF" role="2ZfVej">
       <node concept="3clFbS" id="7tF7F0nWWmG" role="2VODD2">
         <node concept="3clFbF" id="7tF7F0nX6Xl" role="3cqZAp">
@@ -95,7 +95,7 @@
             <node concept="2OqwBi" id="7tF7F0nX6Xn" role="3K4Cdx">
               <node concept="2Sf5sV" id="7tF7F0nX6Xm" role="2Oq$k0" />
               <node concept="3TrcHB" id="7tF7F0nX6Xr" role="2OqNvi">
-                <reference role="3TsBF5" target="pop3.8605005254686522462" resolve="muted" />
+                <ref role="3TsBF5" to="pop3:7tF7F0nXrLu" resolve="muted" />
               </node>
             </node>
           </node>
@@ -110,14 +110,14 @@
               <node concept="2OqwBi" id="7tF7F0nX6XJ" role="3fr31v">
                 <node concept="2Sf5sV" id="7tF7F0nX6XI" role="2Oq$k0" />
                 <node concept="3TrcHB" id="7tF7F0nX6XN" role="2OqNvi">
-                  <reference role="3TsBF5" target="pop3.8605005254686522462" resolve="muted" />
+                  <ref role="3TsBF5" to="pop3:7tF7F0nXrLu" resolve="muted" />
                 </node>
               </node>
             </node>
             <node concept="2OqwBi" id="7tF7F0nX6X$" role="37vLTJ">
               <node concept="2Sf5sV" id="7tF7F0nX6Xz" role="2Oq$k0" />
               <node concept="3TrcHB" id="7tF7F0nX6XC" role="2OqNvi">
-                <reference role="3TsBF5" target="pop3.8605005254686522462" resolve="muted" />
+                <ref role="3TsBF5" to="pop3:7tF7F0nXrLu" resolve="muted" />
               </node>
             </node>
           </node>
@@ -127,11 +127,11 @@
             <node concept="2OqwBi" id="7tF7F0nXgmH" role="2Oq$k0">
               <node concept="1XNTG" id="7tF7F0nXgmG" role="2Oq$k0" />
               <node concept="liA8E" id="7tF7F0nXgmL" role="2OqNvi">
-                <reference role="37wK5l" target="srng.~EditorContext%dgetEditorComponent()%cjetbrains%dmps%dopenapi%deditor%dEditorComponent" resolve="getEditorComponent" />
+                <ref role="37wK5l" to="srng:~EditorContext.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
               </node>
             </node>
             <node concept="liA8E" id="7tF7F0nXq99" role="2OqNvi">
-              <reference role="37wK5l" target="srng.~EditorComponent%drebuildEditorContent()%cvoid" resolve="rebuildEditorContent" />
+              <ref role="37wK5l" to="srng:~EditorComponent.rebuildEditorContent():void" resolve="rebuildEditorContent" />
             </node>
           </node>
         </node>

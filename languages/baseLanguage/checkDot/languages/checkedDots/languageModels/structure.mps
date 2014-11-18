@@ -25,7 +25,7 @@
   <node concept="1TIwiD" id="3ysSjmiKK8V">
     <property role="TrG5h" value="CheckedDotExpression" />
     <property role="2_RsDV" value="none" />
-    <reference role="1TJDcQ" target="tpee.1197027756228" resolve="DotExpression" />
+    <ref role="1TJDcQ" to="tpee:hqOqwz4" resolve="DotExpression" />
   </node>
 </model>
 

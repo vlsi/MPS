@@ -39,63 +39,63 @@
   </registry>
   <node concept="1TIwiD" id="5ISglset15C">
     <property role="TrG5h" value="TestConceptWithStyleAttributes" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="7jyxAjKlw5c">
     <property role="TrG5h" value="NodeContainer" />
     <property role="34LRSv" value="node container" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7jyxAjKlwmI" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="node" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="8422442021223268684" resolve="NodeContainer" />
+      <ref role="20lvS9" node="7jyxAjKlw5c" resolve="NodeContainer" />
     </node>
   </node>
   <node concept="1TIwiD" id="7J09Mf1COLQ">
     <property role="TrG5h" value="PriorityStyle" />
     <property role="34LRSv" value="priorityStyle" />
-    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+    <ref role="1TJDcQ" node="7jyxAjKlw5c" resolve="NodeContainer" />
   </node>
   <node concept="1TIwiD" id="7J09Mf1CP_t">
     <property role="TrG5h" value="TestSimpleAttribute" />
     <property role="34LRSv" value="test-simple-attribute" />
-    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+    <ref role="1TJDcQ" node="7jyxAjKlw5c" resolve="NodeContainer" />
     <node concept="1TJgyi" id="7J09Mf1CPVj" role="1TKVEl">
       <property role="TrG5h" value="value" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="7J09Mf1CPVt">
     <property role="TrG5h" value="TestInheritedAttribute" />
     <property role="34LRSv" value="test-inherited-attribute" />
-    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+    <ref role="1TJDcQ" node="7jyxAjKlw5c" resolve="NodeContainer" />
     <node concept="1TJgyi" id="7J09Mf1CPVu" role="1TKVEl">
       <property role="TrG5h" value="value" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="7J09Mf1CQyu">
     <property role="TrG5h" value="PriorityStyleCopy" />
     <property role="34LRSv" value="priorityStyleCopy" />
-    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+    <ref role="1TJDcQ" node="7jyxAjKlw5c" resolve="NodeContainer" />
   </node>
   <node concept="1TIwiD" id="7J09Mf1CQCa">
     <property role="TrG5h" value="HugePriorityStyle" />
     <property role="34LRSv" value="hugePriorityStyle" />
-    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+    <ref role="1TJDcQ" node="7jyxAjKlw5c" resolve="NodeContainer" />
   </node>
   <node concept="1TIwiD" id="7J09Mf1CQCf">
     <property role="TrG5h" value="UnapplyPriorityStyleCopy" />
     <property role="34LRSv" value="unapplyPriorityStyleCopy" />
-    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+    <ref role="1TJDcQ" node="7jyxAjKlw5c" resolve="NodeContainer" />
   </node>
   <node concept="1TIwiD" id="3yp29n1p8sU">
     <property role="TrG5h" value="LeafNode" />
     <property role="34LRSv" value="leaf" />
-    <reference role="1TJDcQ" target="8422442021223268684" resolve="NodeContainer" />
+    <ref role="1TJDcQ" node="7jyxAjKlw5c" resolve="NodeContainer" />
   </node>
 </model>
 

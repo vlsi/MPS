@@ -39,7 +39,7 @@
   </node>
   <node concept="3YBnO0" id="2S48fJgAC8t">
     <property role="TrG5h" value="SubClass" />
-    <reference role="3YBnO6" target="3315811491560187089" resolve="BaseCl" />
+    <ref role="3YBnO6" node="2S48fJgAAjh" resolve="BaseCl" />
     <node concept="3YBnO5" id="2S48fJgAC8u" role="3YBnVt">
       <property role="TrG5h" value="work" />
       <node concept="3YBnVV" id="2S48fJgAC8x" role="3YBnUV">

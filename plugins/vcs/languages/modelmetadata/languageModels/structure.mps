@@ -43,49 +43,49 @@
   <node concept="1TIwiD" id="7gTJ_yqjx5H">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="Model" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="444ZSQ068oQ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="language" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="hypd.1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" to="hypd:1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="444ZSQ068oS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="languageEngagedOnGeneration" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="hypd.1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" to="hypd:1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="444ZSQ068oV" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="devkit" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="hypd.1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" to="hypd:1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="444ZSQ068oZ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="import" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="hypd.6370754048397540903" resolve="ModelReference" />
+      <ref role="20lvS9" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
     </node>
     <node concept="1TJgyi" id="7gTJ_yqjx7A" role="1TKVEl">
       <property role="TrG5h" value="longname" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="7gTJ_yqjx7C" role="1TKVEl">
       <property role="TrG5h" value="uuid" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="7gTJ_yqjx7F" role="1TKVEl">
       <property role="TrG5h" value="version" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="7gTJ_yqjx7O" role="1TKVEl">
       <property role="TrG5h" value="donotgenerate" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="PrWs8" id="7gTJ_yqjx6J" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
 </model>

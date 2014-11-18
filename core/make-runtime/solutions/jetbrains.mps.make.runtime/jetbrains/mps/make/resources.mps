@@ -75,11 +75,11 @@
       <node concept="37vLTG" id="2U8Fq3GMEnF" role="3clF46">
         <property role="TrG5h" value="res" />
         <node concept="3uibUv" id="2U8Fq3GMEnH" role="1tU5fm">
-          <reference role="3uigEE" target="6168415856807657256" resolve="IResource" />
+          <ref role="3uigEE" node="5mqBoD3U3WC" resolve="IResource" />
         </node>
       </node>
       <node concept="3uibUv" id="2U8Fq3GMEnE" role="3clF45">
-        <reference role="3uigEE" target="i9so.6872280991287216857" resolve="IPropertiesPool" />
+        <ref role="3uigEE" to="i9so:5XvfMqim0Fp" resolve="IPropertiesPool" />
       </node>
       <node concept="3Tm1VV" id="2U8Fq3GMElR" role="1B3o_S" />
       <node concept="3clFbS" id="2U8Fq3GMElS" role="3clF47" />
@@ -88,7 +88,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="global" />
       <node concept="3uibUv" id="1TDZrawdcdW" role="3clF45">
-        <reference role="3uigEE" target="i9so.6872280991287216857" resolve="IPropertiesPool" />
+        <ref role="3uigEE" to="i9so:5XvfMqim0Fp" resolve="IPropertiesPool" />
       </node>
       <node concept="3Tm1VV" id="1TDZrawdcdX" role="1B3o_S" />
       <node concept="3clFbS" id="1TDZrawdcdY" role="3clF47" />
@@ -110,7 +110,7 @@
       <node concept="37vLTG" id="3keQSVbizts" role="3clF46">
         <property role="TrG5h" value="properties" />
         <node concept="3uibUv" id="3keQSVbiztt" role="1tU5fm">
-          <reference role="3uigEE" target="i9so.6872280991287216857" resolve="IPropertiesPool" />
+          <ref role="3uigEE" to="i9so:5XvfMqim0Fp" resolve="IPropertiesPool" />
         </node>
       </node>
       <node concept="3cqZAl" id="3keQSVbiztm" role="3clF45" />
@@ -130,7 +130,7 @@
       <node concept="37vLTG" id="2tTu$hNND6" role="3clF46">
         <property role="TrG5h" value="properties" />
         <node concept="3uibUv" id="2tTu$hNNDg" role="1tU5fm">
-          <reference role="3uigEE" target="i9so.6872280991287216857" resolve="IPropertiesPool" />
+          <ref role="3uigEE" to="i9so:5XvfMqim0Fp" resolve="IPropertiesPool" />
         </node>
       </node>
       <node concept="3cqZAl" id="1ksNK$EJI$m" role="3clF45" />
@@ -145,7 +145,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getProperties" />
       <node concept="3uibUv" id="2$fvvfbk0JU" role="3clF45">
-        <reference role="3uigEE" target="2958721966247231768" resolve="IPropertiesIO" />
+        <ref role="3uigEE" node="2$fvvfbjW4o" resolve="IPropertiesIO" />
       </node>
       <node concept="3Tm1VV" id="2$fvvfbk0JR" role="1B3o_S" />
       <node concept="3clFbS" id="2$fvvfbk0JS" role="3clF47" />
@@ -158,7 +158,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getKey" />
       <node concept="3uibUv" id="2$fvvfbjW4_" role="3clF45">
-        <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
       </node>
       <node concept="3Tm1VV" id="2$fvvfbjW4y" role="1B3o_S" />
       <node concept="3clFbS" id="2$fvvfbjW4z" role="3clF47" />
@@ -173,7 +173,7 @@
       <node concept="3Tm1VV" id="2$fvvfbjW2f" role="1B3o_S" />
       <node concept="3clFbS" id="2$fvvfbjW2g" role="3clF47" />
       <node concept="3uibUv" id="2$fvvfbk0Jh" role="Sfmx6">
-        <reference role="3uigEE" target="fxg7.~IOException" resolve="IOException" />
+        <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />
       </node>
     </node>
     <node concept="3clFb_" id="2$fvvfbk0Jm" role="jymVt">
@@ -190,7 +190,7 @@
       <node concept="3Tm1VV" id="2$fvvfbk0Jq" role="1B3o_S" />
       <node concept="3clFbS" id="2$fvvfbk0Jr" role="3clF47" />
       <node concept="3uibUv" id="2$fvvfbk0Js" role="Sfmx6">
-        <reference role="3uigEE" target="fxg7.~IOException" resolve="IOException" />
+        <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />
       </node>
     </node>
   </node>

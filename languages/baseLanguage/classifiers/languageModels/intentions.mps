@@ -92,7 +92,7 @@
   </registry>
   <node concept="2S6QgY" id="hJgaWPB">
     <property role="TrG5h" value="CreateReferenceOnClassifier" />
-    <reference role="2ZfgGC" target="tp4f.1205752633985" resolve="ThisClassifierExpression" />
+    <ref role="2ZfgGC" to="tp4f:hyWthE1" resolve="ThisClassifierExpression" />
     <node concept="2S6ZIM" id="hJgaWPC" role="2ZfVej">
       <node concept="3clFbS" id="hJgaWPD" role="2VODD2">
         <node concept="3cpWs6" id="hJgaWPE" role="3cqZAp">
@@ -108,7 +108,7 @@
           <node concept="3cpWsn" id="hJgaWPJ" role="3cpWs9">
             <property role="TrG5h" value="outerConcept" />
             <node concept="3Tqbb2" id="hJgaWPK" role="1tU5fm">
-              <reference role="ehGHo" target="tp4f.1205751982837" resolve="IClassifier" />
+              <ref role="ehGHo" to="tp4f:hyWqMFP" resolve="IClassifier" />
             </node>
             <node concept="2OqwBi" id="hJgaWPL" role="33vP2m">
               <node concept="2OqwBi" id="hJgaWPM" role="2Oq$k0">
@@ -116,7 +116,7 @@
                 <node concept="2Xjw5R" id="hJgaWPO" role="2OqNvi">
                   <node concept="1xMEDy" id="hJgaWPP" role="1xVPHs">
                     <node concept="chp4Y" id="hJgbjvc" role="ri$Ld">
-                      <reference role="cht4Q" target="tp4f.1205751982837" resolve="IClassifier" />
+                      <ref role="cht4Q" to="tp4f:hyWqMFP" resolve="IClassifier" />
                     </node>
                   </node>
                 </node>
@@ -124,7 +124,7 @@
               <node concept="2Xjw5R" id="hJgaWPR" role="2OqNvi">
                 <node concept="1xMEDy" id="hJgaWPS" role="1xVPHs">
                   <node concept="chp4Y" id="hJgbk46" role="ri$Ld">
-                    <reference role="cht4Q" target="tp4f.1205751982837" resolve="IClassifier" />
+                    <ref role="cht4Q" to="tp4f:hyWqMFP" resolve="IClassifier" />
                   </node>
                 </node>
               </node>
@@ -136,12 +136,12 @@
             <node concept="2OqwBi" id="hJgaWPW" role="2Oq$k0">
               <node concept="2Sf5sV" id="hJgaWPX" role="2Oq$k0" />
               <node concept="3TrEf2" id="hJgbaqj" role="2OqNvi">
-                <reference role="3Tt5mk" target="tp4f.1218736638915" />
+                <ref role="3Tt5mk" to="tp4f:hJ2nkJ3" />
               </node>
             </node>
             <node concept="2oxUTD" id="hJgaWPZ" role="2OqNvi">
               <node concept="37vLTw" id="3GM_nagT_wQ" role="2oxUTC">
-                <reference role="3cqZAo" target="1218968276335" resolve="outerConcept" />
+                <ref role="3cqZAo" node="hJgaWPJ" resolve="outerConcept" />
               </node>
             </node>
           </node>
@@ -158,7 +158,7 @@
                 <node concept="2Xjw5R" id="hJgaWQ8" role="2OqNvi">
                   <node concept="1xMEDy" id="hJgaWQ9" role="1xVPHs">
                     <node concept="chp4Y" id="hJgbfE2" role="ri$Ld">
-                      <reference role="cht4Q" target="tp4f.1205751982837" resolve="IClassifier" />
+                      <ref role="cht4Q" to="tp4f:hyWqMFP" resolve="IClassifier" />
                     </node>
                   </node>
                 </node>
@@ -166,7 +166,7 @@
               <node concept="2Xjw5R" id="hJgaWQb" role="2OqNvi">
                 <node concept="1xMEDy" id="hJgaWQc" role="1xVPHs">
                   <node concept="chp4Y" id="hJgbgUB" role="ri$Ld">
-                    <reference role="cht4Q" target="tp4f.1205751982837" resolve="IClassifier" />
+                    <ref role="cht4Q" to="tp4f:hyWqMFP" resolve="IClassifier" />
                   </node>
                 </node>
               </node>

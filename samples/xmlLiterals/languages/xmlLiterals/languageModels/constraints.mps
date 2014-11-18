@@ -53,7 +53,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="7W5DrJIdOFH">
-    <reference role="1M2myG" target="v5hn.9152904044274469601" resolve="TextMacro" />
+    <ref role="1M2myG" to="v5hn:7W5DrJIdOFx" resolve="TextMacro" />
     <node concept="nKS2y" id="7W5DrJIdOFI" role="1MLUbF">
       <node concept="3clFbS" id="7W5DrJIdOFJ" role="2VODD2">
         <node concept="3clFbF" id="7W5DrJIdSjP" role="3cqZAp">
@@ -63,7 +63,7 @@
               <node concept="2Xjw5R" id="7W5DrJIdSjV" role="2OqNvi">
                 <node concept="1xMEDy" id="7W5DrJIdSjW" role="1xVPHs">
                   <node concept="chp4Y" id="7W5DrJIdSjZ" role="ri$Ld">
-                    <reference role="cht4Q" target="v5hn.9152904044274328259" resolve="XmlLiteral" />
+                    <ref role="cht4Q" to="v5hn:7W5DrJIdib3" resolve="XmlLiteral" />
                   </node>
                 </node>
                 <node concept="1xIGOp" id="7W5DrJIdSk1" role="1xVPHs" />
@@ -76,7 +76,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="7W5DrJIe0yg">
-    <reference role="1M2myG" target="v5hn.9152904044274518122" resolve="ElementMacro" />
+    <ref role="1M2myG" to="v5hn:7W5DrJIe0xE" resolve="ElementMacro" />
     <node concept="nKS2y" id="7W5DrJIe0yh" role="1MLUbF">
       <node concept="3clFbS" id="7W5DrJIe0yi" role="2VODD2">
         <node concept="3clFbF" id="7W5DrJIe0yj" role="3cqZAp">
@@ -86,7 +86,7 @@
               <node concept="2Xjw5R" id="7W5DrJIe0yn" role="2OqNvi">
                 <node concept="1xMEDy" id="7W5DrJIe0yo" role="1xVPHs">
                   <node concept="chp4Y" id="7W5DrJIe0yp" role="ri$Ld">
-                    <reference role="cht4Q" target="v5hn.9152904044274328259" resolve="XmlLiteral" />
+                    <ref role="cht4Q" to="v5hn:7W5DrJIdib3" resolve="XmlLiteral" />
                   </node>
                 </node>
                 <node concept="1xIGOp" id="7W5DrJIe0yq" role="1xVPHs" />

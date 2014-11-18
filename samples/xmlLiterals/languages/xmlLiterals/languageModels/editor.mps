@@ -40,7 +40,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="7W5DrJIdijc">
-    <reference role="1XX52x" target="v5hn.9152904044274328259" resolve="XmlLiteral" />
+    <ref role="1XX52x" to="v5hn:7W5DrJIdib3" resolve="XmlLiteral" />
     <node concept="3EZMnI" id="7W5DrJIdije" role="2wV5jI">
       <node concept="3F0ifn" id="7W5DrJIdijh" role="3EZMnx">
         <property role="3F0ifm" value="&lt;xml" />
@@ -49,7 +49,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="7W5DrJIdijk" role="3EZMnx">
-        <reference role="1NtTu8" target="v5hn.9152904044274328260" />
+        <ref role="1NtTu8" to="v5hn:7W5DrJIdib4" />
         <node concept="lj46D" id="7W5DrJIdijl" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -64,13 +64,13 @@
     </node>
   </node>
   <node concept="24kQdi" id="7W5DrJIdOFz">
-    <reference role="1XX52x" target="v5hn.9152904044274469601" resolve="TextMacro" />
+    <ref role="1XX52x" to="v5hn:7W5DrJIdOFx" resolve="TextMacro" />
     <node concept="3EZMnI" id="7W5DrJIdOF_" role="2wV5jI">
       <node concept="3F0ifn" id="7W5DrJIdOFC" role="3EZMnx">
         <property role="3F0ifm" value="${" />
       </node>
       <node concept="3F1sOY" id="7W5DrJIdOFE" role="3EZMnx">
-        <reference role="1NtTu8" target="v5hn.9152904044274469602" />
+        <ref role="1NtTu8" to="v5hn:7W5DrJIdOFy" />
       </node>
       <node concept="3F0ifn" id="7W5DrJIdOFG" role="3EZMnx">
         <property role="3F0ifm" value="}" />
@@ -79,13 +79,13 @@
     </node>
   </node>
   <node concept="24kQdi" id="7W5DrJIe0xL">
-    <reference role="1XX52x" target="v5hn.9152904044274518122" resolve="ElementMacro" />
+    <ref role="1XX52x" to="v5hn:7W5DrJIe0xE" resolve="ElementMacro" />
     <node concept="3EZMnI" id="7W5DrJIe0xN" role="2wV5jI">
       <node concept="3F0ifn" id="7W5DrJIe0xQ" role="3EZMnx">
         <property role="3F0ifm" value="$${" />
       </node>
       <node concept="3F1sOY" id="7W5DrJIe0xS" role="3EZMnx">
-        <reference role="1NtTu8" target="v5hn.9152904044274518128" />
+        <ref role="1NtTu8" to="v5hn:7W5DrJIe0xK" />
       </node>
       <node concept="3F0ifn" id="7W5DrJIe0xU" role="3EZMnx">
         <property role="3F0ifm" value="}" />

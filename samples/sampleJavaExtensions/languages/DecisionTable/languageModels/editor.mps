@@ -71,16 +71,16 @@
     </language>
   </registry>
   <node concept="24kQdi" id="1Ik8KAj6Lm9">
-    <reference role="1XX52x" target="278c.1987251859606934913" resolve="DecisionTable" />
+    <ref role="1XX52x" to="278c:1Ik8KAj6Lm1" resolve="DecisionTable" />
     <node concept="3EZMnI" id="1Ik8KAj6Lmb" role="2wV5jI">
       <node concept="3F1sOY" id="1Ik8KAj6Lme" role="3EZMnx">
-        <reference role="1NtTu8" target="278c.1987251859606934914" />
+        <ref role="1NtTu8" to="278c:1Ik8KAj6Lm2" />
       </node>
       <node concept="3F0ifn" id="79m2eqVFu40" role="3EZMnx">
         <property role="3F0ifm" value="Default:" />
       </node>
       <node concept="3F1sOY" id="1Ik8KAj6Lmg" role="3EZMnx">
-        <reference role="1NtTu8" target="278c.1987251859606934915" />
+        <ref role="1NtTu8" to="278c:1Ik8KAj6Lm3" />
       </node>
       <node concept="1CiYdB" id="1Ik8KAj6Lmi" role="3EZMnx">
         <node concept="2XI2dN" id="1Ik8KAj6Lmj" role="2XI0mt">
@@ -88,19 +88,19 @@
             <node concept="3cpWs6" id="1Ik8KAj6Nd4" role="3cqZAp">
               <node concept="2ShNRf" id="1Ik8KAj6Nd6" role="3cqZAk">
                 <node concept="1pGfFk" id="1Ik8KAj6Nd8" role="2ShVmc">
-                  <reference role="37wK5l" target="squ6.941853673534992554" resolve="XYCTableModel" />
+                  <ref role="37wK5l" to="squ6:Oi8IO9sN2E" resolve="XYCTableModel" />
                   <node concept="pncrf" id="1Ik8KAj6Nd9" role="37wK5m" />
                   <node concept="28GBK8" id="1Ik8KAj6Ndb" role="37wK5m">
-                    <reference role="28GBKb" target="278c.1987251859606934913" resolve="DecisionTable" />
-                    <reference role="28H3Ia" target="278c.1987251859606934916" />
+                    <ref role="28GBKb" to="278c:1Ik8KAj6Lm1" resolve="DecisionTable" />
+                    <ref role="28H3Ia" to="278c:1Ik8KAj6Lm4" />
                   </node>
                   <node concept="28GBK8" id="1Ik8KAj6Ndd" role="37wK5m">
-                    <reference role="28GBKb" target="278c.1987251859606934913" resolve="DecisionTable" />
-                    <reference role="28H3Ia" target="278c.1987251859606934917" />
+                    <ref role="28GBKb" to="278c:1Ik8KAj6Lm1" resolve="DecisionTable" />
+                    <ref role="28H3Ia" to="278c:1Ik8KAj6Lm5" />
                   </node>
                   <node concept="28GBK8" id="1Ik8KAj6Ndf" role="37wK5m">
-                    <reference role="28GBKb" target="278c.1987251859606934913" resolve="DecisionTable" />
-                    <reference role="28H3Ia" target="278c.1987251859606934918" />
+                    <ref role="28GBKb" to="278c:1Ik8KAj6Lm1" resolve="DecisionTable" />
+                    <ref role="28H3Ia" to="278c:1Ik8KAj6Lm6" />
                   </node>
                   <node concept="1Q80Hx" id="1Ik8KAj6Ndh" role="37wK5m" />
                 </node>

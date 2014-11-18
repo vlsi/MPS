@@ -38,22 +38,22 @@
     <property role="34LRSv" value="#show repository" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <reference role="1TJDcQ" target="eynw.1769790395579407461" resolve="InterpretedCommand" />
+    <ref role="1TJDcQ" to="eynw:1yfzJNJq9L_" resolve="InterpretedCommand" />
     <node concept="PrWs8" id="6M9lfhDxhdi" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="7mV0m3L$tOL">
     <property role="TrG5h" value="ReloadClassesCommand" />
     <property role="34LRSv" value="#reloadClasses" />
-    <reference role="1TJDcQ" target="eynw.1769790395579407461" resolve="InterpretedCommand" />
+    <ref role="1TJDcQ" to="eynw:1yfzJNJq9L_" resolve="InterpretedCommand" />
   </node>
   <node concept="1TIwiD" id="7E9dkpksy8p">
     <property role="TrG5h" value="InternalMode" />
     <property role="34LRSv" value="#internalMode" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="PrWs8" id="DySRn8ZxIW" role="PzmwI">
-      <reference role="PrY4T" target="3xdn.7006261637496548496" resolve="ConsoleExpression" />
+      <ref role="PrY4T" to="3xdn:64VftqErqMg" resolve="ConsoleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="4PRmqZeE56X">
@@ -61,9 +61,9 @@
     <property role="34LRSv" value="#consoleModel" />
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <reference role="1TJDcQ" target="3xdn.4307205004131544317" resolve="QueryExpression" />
+    <ref role="1TJDcQ" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
     <node concept="PrWs8" id="6eQQAdlPFTa" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
 </model>

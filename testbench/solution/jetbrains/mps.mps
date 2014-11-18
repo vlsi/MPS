@@ -178,27 +178,27 @@
     <property role="TrG5h" value="MPSLaunch" />
     <node concept="3Tm1VV" id="4_TMdeLkOBS" role="1B3o_S" />
     <node concept="2AHcQZ" id="4_TMdeLkOBT" role="2AJF6D">
-      <reference role="2AI5Lk" target="rzz2.~Retention" resolve="Retention" />
+      <ref role="2AI5Lk" to="rzz2:~Retention" resolve="Retention" />
       <node concept="2B6LJw" id="4_TMdeLkOBU" role="2B76xF">
-        <reference role="2B6OnR" target="rzz2.~Retention%dvalue()" resolve="value" />
+        <ref role="2B6OnR" to="rzz2:~Retention.value()" resolve="value" />
         <node concept="Rm8GO" id="4_TMdeLlJQO" role="2B70Vg">
-          <reference role="1Px2BO" target="rzz2.~RetentionPolicy" resolve="RetentionPolicy" />
-          <reference role="Rm8GQ" target="rzz2.~RetentionPolicy%dRUNTIME" resolve="RUNTIME" />
+          <ref role="1Px2BO" to="rzz2:~RetentionPolicy" resolve="RetentionPolicy" />
+          <ref role="Rm8GQ" to="rzz2:~RetentionPolicy.RUNTIME" resolve="RUNTIME" />
         </node>
       </node>
     </node>
     <node concept="2AHcQZ" id="4_TMdeLkOBY" role="2AJF6D">
-      <reference role="2AI5Lk" target="rzz2.~Target" resolve="Target" />
+      <ref role="2AI5Lk" to="rzz2:~Target" resolve="Target" />
       <node concept="2B6LJw" id="4_TMdeLkOBZ" role="2B76xF">
-        <reference role="2B6OnR" target="rzz2.~Target%dvalue()" resolve="value" />
+        <ref role="2B6OnR" to="rzz2:~Target.value()" resolve="value" />
         <node concept="2BsdOp" id="4_TMdeLkOC6" role="2B70Vg">
           <node concept="Rm8GO" id="4_TMdeLlJQQ" role="2BsfMF">
-            <reference role="1Px2BO" target="rzz2.~ElementType" resolve="ElementType" />
-            <reference role="Rm8GQ" target="rzz2.~ElementType%dMETHOD" resolve="METHOD" />
+            <ref role="1Px2BO" to="rzz2:~ElementType" resolve="ElementType" />
+            <ref role="Rm8GQ" to="rzz2:~ElementType.METHOD" resolve="METHOD" />
           </node>
           <node concept="Rm8GO" id="4_TMdeLlJQS" role="2BsfMF">
-            <reference role="1Px2BO" target="rzz2.~ElementType" resolve="ElementType" />
-            <reference role="Rm8GQ" target="rzz2.~ElementType%dTYPE" resolve="TYPE" />
+            <ref role="1Px2BO" to="rzz2:~ElementType" resolve="ElementType" />
+            <ref role="Rm8GQ" to="rzz2:~ElementType.TYPE" resolve="TYPE" />
           </node>
         </node>
       </node>
@@ -218,7 +218,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="Az_EN8Pv6o" role="1tU5fm">
-        <reference role="3uigEE" target="79ha.824372260173098491" resolve="Environment" />
+        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
       </node>
       <node concept="3Tm6S6" id="Az_EN8Pv6p" role="1B3o_S" />
     </node>
@@ -228,35 +228,35 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="2AHcQZ" id="Az_EN8Pv6r" role="2AJF6D">
-        <reference role="2AI5Lk" target="qjxg.~BeforeClass" resolve="BeforeClass" />
+        <ref role="2AI5Lk" to="qjxg:~BeforeClass" resolve="BeforeClass" />
       </node>
       <node concept="3clFbS" id="Az_EN8Pv6s" role="3clF47">
         <node concept="3clFbF" id="Az_EN8Pv6t" role="3cqZAp">
           <node concept="37vLTI" id="Az_EN8Pv6u" role="3clFbG">
             <node concept="2YIFZM" id="Az_EN8Pv7m" role="37vLTx">
-              <reference role="1Pybhc" target="oh7r.3894165323890858623" resolve="MpsTestsSupport" />
-              <reference role="37wK5l" target="oh7r.2770012171662963517" resolve="initEnv" />
+              <ref role="1Pybhc" to="oh7r:3oaQFFra9DZ" resolve="MpsTestsSupport" />
+              <ref role="37wK5l" to="oh7r:2pL3QjruFcX" resolve="initEnv" />
               <node concept="3clFbT" id="Az_EN8Pv6y" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
             </node>
             <node concept="37vLTw" id="Az_EN8Pv6v" role="37vLTJ">
-              <reference role="3cqZAo" target="694564436393193879" resolve="CREATED_ENV" />
+              <ref role="3cqZAo" node="Az_EN8Pv6n" resolve="CREATED_ENV" />
             </node>
           </node>
         </node>
         <node concept="3clFbJ" id="Az_EN8Pv6z" role="3cqZAp">
           <node concept="3y3z36" id="Az_EN8Pv6$" role="3clFbw">
             <node concept="37vLTw" id="Az_EN8Pv6_" role="3uHU7B">
-              <reference role="3cqZAo" target="694564436393193879" resolve="CREATED_ENV" />
+              <ref role="3cqZAo" node="Az_EN8Pv6n" resolve="CREATED_ENV" />
             </node>
             <node concept="10Nm6u" id="Az_EN8Pv6A" role="3uHU7w" />
           </node>
           <node concept="3clFbS" id="Az_EN8Pv6C" role="3clFbx">
             <node concept="3clFbF" id="Az_EN8Pv6D" role="3cqZAp">
               <node concept="2YIFZM" id="Az_EN8Pv7o" role="3clFbG">
-                <reference role="1Pybhc" target="oh7r.3894165323890858623" resolve="MpsTestsSupport" />
-                <reference role="37wK5l" target="oh7r.8181622299284041520" resolve="makeAllInCreatedEnvironment" />
+                <ref role="1Pybhc" to="oh7r:3oaQFFra9DZ" resolve="MpsTestsSupport" />
+                <ref role="37wK5l" to="oh7r:76aXy8jfmWK" resolve="makeAllInCreatedEnvironment" />
               </node>
             </node>
           </node>
@@ -271,7 +271,7 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="2AHcQZ" id="Az_EN8Pv6J" role="2AJF6D">
-        <reference role="2AI5Lk" target="qjxg.~AfterClass" resolve="AfterClass" />
+        <ref role="2AI5Lk" to="qjxg:~AfterClass" resolve="AfterClass" />
       </node>
       <node concept="3clFbS" id="Az_EN8Pv6K" role="3clF47">
         <node concept="3SKdUt" id="6jVPebMQUDj" role="3cqZAp">
@@ -284,7 +284,7 @@
             <node concept="3clFbJ" id="Az_EN8Pv6L" role="3SKWNf">
               <node concept="3y3z36" id="Az_EN8Pv6M" role="3clFbw">
                 <node concept="37vLTw" id="Az_EN8Pv6N" role="3uHU7B">
-                  <reference role="3cqZAo" target="694564436393193879" resolve="CREATED_ENV" />
+                  <ref role="3cqZAo" node="Az_EN8Pv6n" resolve="CREATED_ENV" />
                 </node>
                 <node concept="10Nm6u" id="Az_EN8Pv6O" role="3uHU7w" />
               </node>
@@ -292,10 +292,10 @@
                 <node concept="3clFbF" id="Az_EN8Pv6R" role="3cqZAp">
                   <node concept="2OqwBi" id="Az_EN8Pv7r" role="3clFbG">
                     <node concept="37vLTw" id="Az_EN8Pv7q" role="2Oq$k0">
-                      <reference role="3cqZAo" target="694564436393193879" resolve="CREATED_ENV" />
+                      <ref role="3cqZAo" node="Az_EN8Pv6n" resolve="CREATED_ENV" />
                     </node>
                     <node concept="liA8E" id="Az_EN8Pv7s" role="2OqNvi">
-                      <reference role="37wK5l" target="79ha.7413225496542992077" resolve="dispose" />
+                      <ref role="37wK5l" to="79ha:6rx4kZDk5rd" resolve="dispose" />
                     </node>
                   </node>
                 </node>
@@ -318,8 +318,8 @@
           <node concept="3y3z36" id="4cccx5vImkt" role="1gVkn0">
             <node concept="10Nm6u" id="4cccx5vImlc" role="3uHU7w" />
             <node concept="2YIFZM" id="4cccx5vImj$" role="3uHU7B">
-              <reference role="37wK5l" target="79ha.4417301346392324764" resolve="getInstance" />
-              <reference role="1Pybhc" target="79ha.4417301346392321475" resolve="ActiveEnvironment" />
+              <ref role="37wK5l" to="79ha:3Pdq2IL$rEs" resolve="getInstance" />
+              <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="ActiveEnvironment" />
             </node>
           </node>
         </node>
@@ -336,25 +336,25 @@
         <property role="TrG5h" value="projectFile" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="Az_EN8Pv6Y" role="1tU5fm">
-          <reference role="3uigEE" target="fxg7.~File" resolve="File" />
+          <ref role="3uigEE" to="fxg7:~File" resolve="File" />
         </node>
       </node>
       <node concept="3clFbS" id="Az_EN8Pv6Z" role="3clF47">
         <node concept="3clFbF" id="4cccx5vIw3R" role="3cqZAp">
           <node concept="1rXfSq" id="4cccx5vIw3Q" role="3clFbG">
-            <reference role="37wK5l" target="4831291550463557725" resolve="checkEnvironmentExists" />
+            <ref role="37wK5l" node="4cccx5vIw1t" resolve="checkEnvironmentExists" />
           </node>
         </node>
         <node concept="3clFbF" id="4cccx5vIlSN" role="3cqZAp">
           <node concept="2OqwBi" id="Az_EN8Pv71" role="3clFbG">
             <node concept="2YIFZM" id="Az_EN8Pv7u" role="2Oq$k0">
-              <reference role="1Pybhc" target="79ha.4417301346392321475" resolve="ActiveEnvironment" />
-              <reference role="37wK5l" target="79ha.4417301346392324764" resolve="getInstance" />
+              <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="ActiveEnvironment" />
+              <ref role="37wK5l" to="79ha:3Pdq2IL$rEs" resolve="getInstance" />
             </node>
             <node concept="liA8E" id="Az_EN8Pv74" role="2OqNvi">
-              <reference role="37wK5l" target="79ha.7413225496542954500" resolve="openProject" />
+              <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
               <node concept="37vLTw" id="Az_EN8Pv75" role="37wK5m">
-                <reference role="3cqZAo" target="694564436393193917" resolve="projectFile" />
+                <ref role="3cqZAo" node="Az_EN8Pv6X" resolve="projectFile" />
               </node>
             </node>
           </node>
@@ -362,7 +362,7 @@
       </node>
       <node concept="3Tm1VV" id="Az_EN8Pv76" role="1B3o_S" />
       <node concept="3uibUv" id="Az_EN8Pv77" role="3clF45">
-        <reference role="3uigEE" target="vsqj.~Project" resolve="Project" />
+        <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
       </node>
     </node>
     <node concept="2tJIrI" id="4cccx5vIeht" role="jymVt" />
@@ -374,29 +374,29 @@
         <property role="TrG5h" value="project" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="Az_EN8Pv7a" role="1tU5fm">
-          <reference role="3uigEE" target="vsqj.~Project" resolve="Project" />
+          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="3clFbS" id="Az_EN8Pv7b" role="3clF47">
         <node concept="3clFbF" id="4cccx5vIw7R" role="3cqZAp">
           <node concept="1rXfSq" id="4cccx5vIw7Q" role="3clFbG">
-            <reference role="37wK5l" target="4831291550463557725" resolve="checkEnvironmentExists" />
+            <ref role="37wK5l" node="4cccx5vIw1t" resolve="checkEnvironmentExists" />
           </node>
         </node>
         <node concept="3clFbF" id="Az_EN8Pv7c" role="3cqZAp">
           <node concept="2OqwBi" id="Az_EN8Pv7d" role="3clFbG">
             <node concept="2YIFZM" id="Az_EN8Pv7w" role="2Oq$k0">
-              <reference role="1Pybhc" target="79ha.4417301346392321475" resolve="ActiveEnvironment" />
-              <reference role="37wK5l" target="79ha.4417301346392324764" resolve="getInstance" />
+              <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="ActiveEnvironment" />
+              <ref role="37wK5l" to="79ha:3Pdq2IL$rEs" resolve="getInstance" />
             </node>
             <node concept="liA8E" id="Az_EN8Pv7g" role="2OqNvi">
-              <reference role="37wK5l" target="79ha.7413225496542992039" resolve="disposeProject" />
+              <ref role="37wK5l" to="79ha:6rx4kZDk5qB" resolve="disposeProject" />
               <node concept="2OqwBi" id="6eoPAc_WWaA" role="37wK5m">
                 <node concept="37vLTw" id="Az_EN8Pv7h" role="2Oq$k0">
-                  <reference role="3cqZAo" target="694564436393193929" resolve="project" />
+                  <ref role="3cqZAo" node="Az_EN8Pv79" resolve="project" />
                 </node>
                 <node concept="liA8E" id="6eoPAc_WWmL" role="2OqNvi">
-                  <reference role="37wK5l" target="vsqj.~Project%dgetProjectFile()%cjava%dio%dFile" resolve="getProjectFile" />
+                  <ref role="37wK5l" to="vsqj:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
                 </node>
               </node>
             </node>
@@ -414,7 +414,7 @@
       <property role="TrG5h" value="CREATED_ENV" />
       <property role="3TUv4t" value="false" />
       <node concept="3uibUv" id="Az_EN8Puz1" role="1tU5fm">
-        <reference role="3uigEE" target="79ha.824372260173098491" resolve="Environment" />
+        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
       </node>
       <node concept="3Tm6S6" id="Az_EN8PtOW" role="1B3o_S" />
     </node>
@@ -424,35 +424,35 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="2AHcQZ" id="Az_EN8PtOY" role="2AJF6D">
-        <reference role="2AI5Lk" target="qjxg.~BeforeClass" resolve="BeforeClass" />
+        <ref role="2AI5Lk" to="qjxg:~BeforeClass" resolve="BeforeClass" />
       </node>
       <node concept="3clFbS" id="Az_EN8PtOZ" role="3clF47">
         <node concept="3clFbF" id="Az_EN8PtP0" role="3cqZAp">
           <node concept="37vLTI" id="Az_EN8PtP1" role="3clFbG">
             <node concept="2YIFZM" id="Az_EN8Pul3" role="37vLTx">
-              <reference role="1Pybhc" target="oh7r.3894165323890858623" resolve="MpsTestsSupport" />
-              <reference role="37wK5l" target="oh7r.2770012171662963517" resolve="initEnv" />
+              <ref role="1Pybhc" to="oh7r:3oaQFFra9DZ" resolve="MpsTestsSupport" />
+              <ref role="37wK5l" to="oh7r:2pL3QjruFcX" resolve="initEnv" />
               <node concept="3clFbT" id="Az_EN8PtP5" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
             </node>
             <node concept="37vLTw" id="Az_EN8PtP2" role="37vLTJ">
-              <reference role="3cqZAo" target="694564436393188666" resolve="CREATED_ENV" />
+              <ref role="3cqZAo" node="Az_EN8PtOU" resolve="CREATED_ENV" />
             </node>
           </node>
         </node>
         <node concept="3clFbJ" id="Az_EN8PtP6" role="3cqZAp">
           <node concept="3y3z36" id="Az_EN8PtP7" role="3clFbw">
             <node concept="37vLTw" id="Az_EN8PtP8" role="3uHU7B">
-              <reference role="3cqZAo" target="694564436393188666" resolve="CREATED_ENV" />
+              <ref role="3cqZAo" node="Az_EN8PtOU" resolve="CREATED_ENV" />
             </node>
             <node concept="10Nm6u" id="Az_EN8PtP9" role="3uHU7w" />
           </node>
           <node concept="3clFbS" id="Az_EN8PtPb" role="3clFbx">
             <node concept="3clFbF" id="Az_EN8PtPc" role="3cqZAp">
               <node concept="2YIFZM" id="Az_EN8Pul5" role="3clFbG">
-                <reference role="1Pybhc" target="oh7r.3894165323890858623" resolve="MpsTestsSupport" />
-                <reference role="37wK5l" target="oh7r.8181622299284041520" resolve="makeAllInCreatedEnvironment" />
+                <ref role="1Pybhc" to="oh7r:3oaQFFra9DZ" resolve="MpsTestsSupport" />
+                <ref role="37wK5l" to="oh7r:76aXy8jfmWK" resolve="makeAllInCreatedEnvironment" />
               </node>
             </node>
           </node>
@@ -467,13 +467,13 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="2AHcQZ" id="Az_EN8PtPi" role="2AJF6D">
-        <reference role="2AI5Lk" target="qjxg.~AfterClass" resolve="AfterClass" />
+        <ref role="2AI5Lk" to="qjxg:~AfterClass" resolve="AfterClass" />
       </node>
       <node concept="3clFbS" id="Az_EN8PtPj" role="3clF47">
         <node concept="3clFbJ" id="Az_EN8PtPk" role="3cqZAp">
           <node concept="3y3z36" id="Az_EN8PtPl" role="3clFbw">
             <node concept="37vLTw" id="Az_EN8PtPm" role="3uHU7B">
-              <reference role="3cqZAo" target="694564436393188666" resolve="CREATED_ENV" />
+              <ref role="3cqZAo" node="Az_EN8PtOU" resolve="CREATED_ENV" />
             </node>
             <node concept="10Nm6u" id="Az_EN8PtPn" role="3uHU7w" />
           </node>
@@ -488,10 +488,10 @@
                 <node concept="3clFbF" id="Az_EN8PtPq" role="3SKWNf">
                   <node concept="2OqwBi" id="Az_EN8Pul8" role="3clFbG">
                     <node concept="37vLTw" id="Az_EN8Pul7" role="2Oq$k0">
-                      <reference role="3cqZAo" target="694564436393188666" resolve="CREATED_ENV" />
+                      <ref role="3cqZAo" node="Az_EN8PtOU" resolve="CREATED_ENV" />
                     </node>
                     <node concept="liA8E" id="Az_EN8Pul9" role="2OqNvi">
-                      <reference role="37wK5l" target="79ha.7413225496542992077" resolve="dispose" />
+                      <ref role="37wK5l" to="79ha:6rx4kZDk5rd" resolve="dispose" />
                     </node>
                   </node>
                 </node>

@@ -59,19 +59,19 @@
       <node concept="3Tm1VV" id="3TJnG96iD$T" role="1B3o_S" />
       <node concept="3rvAFt" id="3TJnG96iD$W" role="2llxQS">
         <node concept="16syzq" id="3TJnG96iD_2" role="3rvSg0">
-          <reference role="16sUi3" target="4498918741262375232" resolve="V" />
+          <ref role="16sUi3" node="3TJnG96iD_0" resolve="V" />
         </node>
         <node concept="16syzq" id="3TJnG96iD_1" role="3rvQeY">
-          <reference role="16sUi3" target="4498918741262375231" resolve="K" />
+          <ref role="16sUi3" node="3TJnG96iD$Z" resolve="K" />
         </node>
       </node>
       <node concept="3uibUv" id="3TJnG96iD_3" role="2llxR7">
-        <reference role="3uigEE" target="k7g3.~WeakHashMap" resolve="WeakHashMap" />
+        <ref role="3uigEE" to="k7g3:~WeakHashMap" resolve="WeakHashMap" />
         <node concept="16syzq" id="3TJnG96iF5G" role="11_B2D">
-          <reference role="16sUi3" target="4498918741262375231" resolve="K" />
+          <ref role="16sUi3" node="3TJnG96iD$Z" resolve="K" />
         </node>
         <node concept="16syzq" id="3TJnG96iF5I" role="11_B2D">
-          <reference role="16sUi3" target="4498918741262375232" resolve="V" />
+          <ref role="16sUi3" node="3TJnG96iD_0" resolve="V" />
         </node>
       </node>
       <node concept="16euLQ" id="3TJnG96iD$Z" role="16eVyc">
@@ -86,13 +86,13 @@
       <node concept="3Tm1VV" id="3TJnG96j3pd" role="1B3o_S" />
       <node concept="2hMVRd" id="3TJnG96j3pg" role="2llxQS">
         <node concept="16syzq" id="3TJnG96j3pj" role="2hN53Y">
-          <reference role="16sUi3" target="4498918741262480978" resolve="E" />
+          <ref role="16sUi3" node="3TJnG96j3pi" resolve="E" />
         </node>
       </node>
       <node concept="3uibUv" id="3TJnG96j3Ss" role="2llxR7">
-        <reference role="3uigEE" target="msyo.~WeakSet" resolve="WeakSet" />
+        <ref role="3uigEE" to="msyo:~WeakSet" resolve="WeakSet" />
         <node concept="16syzq" id="3TJnG96j3Su" role="11_B2D">
-          <reference role="16sUi3" target="4498918741262480978" resolve="E" />
+          <ref role="16sUi3" node="3TJnG96j3pi" resolve="E" />
         </node>
       </node>
       <node concept="16euLQ" id="3TJnG96j3pi" role="16eVyc">

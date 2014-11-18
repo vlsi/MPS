@@ -50,43 +50,43 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="OutputRoot" />
     <property role="34LRSv" value="output root concept" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hp5EkTa" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="outputChild" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1195165132070" resolve="OutputNode" />
+      <ref role="20lvS9" node="hp5pakA" resolve="OutputNode" />
     </node>
     <node concept="1TJgyj" id="hJ2jB2c" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="specialChild" />
-      <reference role="20lvS9" target="1195165132070" resolve="OutputNode" />
+      <ref role="20lvS9" node="hp5pakA" resolve="OutputNode" />
     </node>
     <node concept="1TJgyi" id="hp5nCJL" role="1TKVEl">
       <property role="TrG5h" value="text" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="hp5nFkl" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="hp5pakA">
     <property role="TrG5h" value="OutputNode" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hvKhXhZ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="outputChild" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1195165132070" resolve="OutputNode" />
+      <ref role="20lvS9" node="hp5pakA" resolve="OutputNode" />
     </node>
     <node concept="1TJgyi" id="hp5Hqun" role="1TKVEl">
       <property role="TrG5h" value="text" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="hAy1byh">
     <property role="TrG5h" value="OutputNode_forDontApplyReductionTwice_test" />
-    <reference role="1TJDcQ" target="1195165132070" resolve="OutputNode" />
+    <ref role="1TJDcQ" node="hp5pakA" resolve="OutputNode" />
   </node>
   <node concept="1TIwiD" id="3AbzyktXSm4">
     <property role="R5$K7" value="false" />
@@ -95,12 +95,12 @@
     <property role="R4oN_" value="root for tests" />
     <property role="TrG5h" value="CustomRoot" />
     <property role="34LRSv" value="custom root" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3AbzyktXSm5" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="statement" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1082485599095" resolve="BlockStatement" />
+      <ref role="20lvS9" to="tpee:fK9aQHR" resolve="BlockStatement" />
     </node>
   </node>
   <node concept="1TIwiD" id="2kPUo4NeuZa">
@@ -108,43 +108,43 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="CustomStatement" />
     <property role="34LRSv" value="work: " />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="2kPUo4NeuZd" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="inner" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="2kPUo4NeuZc" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="1S7rCMcUi4q">
     <property role="TrG5h" value="CustomStatementRef" />
     <property role="2_RsDV" value="none" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="1S7rCMcUiw2" role="1TKVEl">
       <property role="TrG5h" value="ii" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyj" id="1S7rCMcUiw1" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="myStatement" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="2681305894288486346" resolve="CustomStatement" />
+      <ref role="20lvS9" node="2kPUo4NeuZa" resolve="CustomStatement" />
     </node>
   </node>
   <node concept="1TIwiD" id="5dDJmDrj$S8">
     <property role="TrG5h" value="TwoVarStatement" />
     <property role="2_RsDV" value="none" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyi" id="5dDJmDrj$Sb" role="1TKVEl">
       <property role="TrG5h" value="name1" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="5dDJmDrj$Sc" role="1TKVEl">
       <property role="TrG5h" value="name2" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

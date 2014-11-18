@@ -60,42 +60,42 @@
     </language>
   </registry>
   <node concept="24kQdi" id="1whNchEKXOs">
-    <reference role="1XX52x" target="z2sp.1734392475491228778" resolve="Execute" />
+    <ref role="1XX52x" to="z2sp:1whNchEKXLE" resolve="Execute" />
     <node concept="3EZMnI" id="1whNchEKXOt" role="2wV5jI">
       <node concept="l2Vlx" id="1whNchEKXOu" role="2iSdaV" />
       <node concept="PMmxH" id="1whNchEKXOv" role="3EZMnx">
-        <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="1iCGBv" id="1whNchEKXOw" role="3EZMnx">
-        <reference role="1NtTu8" target="z2sp.1734392475491228779" />
+        <ref role="1NtTu8" to="z2sp:1whNchEKXLF" />
         <node concept="1sVBvm" id="1whNchEKXOx" role="1sWHZn">
           <node concept="3F0A7n" id="1whNchEKXOy" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="1whNchEM5hc">
-    <reference role="1XX52x" target="z2sp.1734392475491235550" resolve="ConsoleScript" />
+    <ref role="1XX52x" to="z2sp:1whNchEKZru" resolve="ConsoleScript" />
     <node concept="3EZMnI" id="1whNchEM5hd" role="2wV5jI">
       <node concept="l2Vlx" id="1whNchEM5he" role="2iSdaV" />
       <node concept="3F0ifn" id="1whNchEM5hf" role="3EZMnx">
         <property role="3F0ifm" value="script" />
       </node>
       <node concept="3F0A7n" id="1whNchEM5hg" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="1whNchEM5hh" role="3EZMnx">
         <property role="3F0ifm" value="{" />
-        <reference role="1k5W1q" target="tpen.1215091279307" resolve="LeftBrace" />
+        <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
         <node concept="ljvvj" id="1whNchEM5hi" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="3F2HdR" id="1whNchEM5hj" role="3EZMnx">
-        <reference role="1NtTu8" target="z2sp.1734392475491235551" />
+        <ref role="1NtTu8" to="z2sp:1whNchEKZrv" />
         <node concept="l2Vlx" id="1whNchEM5hk" role="2czzBx" />
         <node concept="ljvvj" id="1whNchEM5hl" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -117,7 +117,7 @@
       </node>
       <node concept="3F0ifn" id="1whNchEM5hr" role="3EZMnx">
         <property role="3F0ifm" value="}" />
-        <reference role="1k5W1q" target="tpen.1215091331565" resolve="RightBrace" />
+        <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
       </node>
     </node>
   </node>

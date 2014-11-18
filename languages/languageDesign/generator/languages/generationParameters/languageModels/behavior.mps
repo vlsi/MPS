@@ -118,14 +118,14 @@
   </registry>
   <node concept="13h7C7" id="7mYJ4gC7JF4">
     <property role="3GE5qa" value="parameter" />
-    <reference role="13h7C2" target="q5cj.8484425748929510068" resolve="DefaultGeneratorParameter" />
+    <ref role="13h7C2" to="q5cj:7mYJ4gC7JEO" resolve="DefaultGeneratorParameter" />
     <node concept="13hLZK" id="7mYJ4gC7JF5" role="13h7CW">
       <node concept="3clFbS" id="7mYJ4gC7JF6" role="2VODD2" />
     </node>
     <node concept="13i0hz" id="7mYJ4gC7JF7" role="13h7CS">
       <property role="TrG5h" value="getUniqueId" />
       <property role="13i0it" value="true" />
-      <reference role="13i0hy" target="tpfh.650531548511609559" resolve="getUniqueId" />
+      <ref role="13i0hy" to="tpfh:$79JWCe2bn" resolve="getUniqueId" />
       <node concept="3Tm1VV" id="7mYJ4gC7JF8" role="1B3o_S" />
       <node concept="3clFbS" id="7mYJ4gC7JF9" role="3clF47">
         <node concept="3cpWs8" id="7mYJ4gC7JFa" role="3cqZAp">
@@ -144,7 +144,7 @@
                   </node>
                   <node concept="1mIQ4w" id="7mYJ4gC7JFk" role="2OqNvi">
                     <node concept="chp4Y" id="7mYJ4gC7JFl" role="cj9EA">
-                      <reference role="cht4Q" target="tpck.1169194658468" resolve="INamedConcept" />
+                      <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
                     </node>
                   </node>
                 </node>
@@ -158,14 +158,14 @@
               </node>
               <node concept="2OqwBi" id="7mYJ4gC7JFr" role="3K4E3e">
                 <node concept="1PxgMI" id="7mYJ4gC7JFs" role="2Oq$k0">
-                  <reference role="1PxNhF" target="tpck.1169194658468" resolve="INamedConcept" />
+                  <ref role="1PxNhF" to="tpck:h0TrEE$" resolve="INamedConcept" />
                   <node concept="2OqwBi" id="7mYJ4gC7JFt" role="1PxMeX">
                     <node concept="13iPFW" id="7mYJ4gC7JFu" role="2Oq$k0" />
                     <node concept="1mfA1w" id="7mYJ4gC7JFv" role="2OqNvi" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="7mYJ4gC7JFw" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -176,7 +176,7 @@
             <node concept="2OqwBi" id="7mYJ4gC7JFz" role="3uHU7w">
               <node concept="13iPFW" id="7mYJ4gC7JF$" role="2Oq$k0" />
               <node concept="3TrcHB" id="7mYJ4gC7JF_" role="2OqNvi">
-                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
             <node concept="3cpWs3" id="7mYJ4gC7JFA" role="3uHU7B">
@@ -184,7 +184,7 @@
                 <node concept="3cpWs3" id="7mYJ4gC7JFC" role="3uHU7B">
                   <node concept="2OqwBi" id="2n9zn0CqN0R" role="3uHU7B">
                     <node concept="liA8E" id="2n9zn0CqN0S" role="2OqNvi">
-                      <reference role="37wK5l" target="ec5l.~SModel%dgetModelId()%corg%djetbrains%dmps%dopenapi%dmodel%dSModelId" resolve="getModelId" />
+                      <ref role="37wK5l" to="ec5l:~SModel.getModelId():org.jetbrains.mps.openapi.model.SModelId" resolve="getModelId" />
                     </node>
                     <node concept="2JrnkZ" id="2n9zn0CqN0T" role="2Oq$k0">
                       <node concept="2OqwBi" id="2n9zn0CqN0U" role="2JrQYb">
@@ -198,7 +198,7 @@
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTtBJ" role="3uHU7w">
-                  <reference role="3cqZAo" target="8484425748929510091" resolve="containerName" />
+                  <ref role="3cqZAo" node="7mYJ4gC7JFb" resolve="containerName" />
                 </node>
               </node>
               <node concept="Xl_RD" id="7mYJ4gC7JFL" role="3uHU7w">

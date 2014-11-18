@@ -144,19 +144,19 @@
             <property role="TrG5h" value="it" />
           </node>
           <node concept="37vLTw" id="3GM_nagTtEj" role="2GsD0m">
-            <reference role="3cqZAo" target="1187962225387703198" resolve="array" />
+            <ref role="3cqZAo" node="11WvlAiOgIu" resolve="array" />
           </node>
           <node concept="3clFbS" id="11WvlAiOhW5" role="2LFqv$">
             <node concept="3clFbF" id="11WvlAiOhW7" role="3cqZAp">
               <node concept="2OqwBi" id="11WvlAiOhW8" role="3clFbG">
                 <node concept="10M0yZ" id="11WvlAiOhW9" role="2Oq$k0">
-                  <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-                  <reference role="3cqZAo" target="e2lb.~System%derr" resolve="err" />
+                  <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+                  <ref role="3cqZAo" to="e2lb:~System.err" resolve="err" />
                 </node>
                 <node concept="liA8E" id="11WvlAiOhWa" role="2OqNvi">
-                  <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(int)%cvoid" resolve="println" />
+                  <ref role="37wK5l" to="fxg7:~PrintStream.println(int):void" resolve="println" />
                   <node concept="2GrUjf" id="11WvlAiOhWf" role="37wK5m">
-                    <reference role="2Gs0qQ" target="1187962225387708163" resolve="it" />
+                    <ref role="2Gs0qQ" node="11WvlAiOhW3" resolve="it" />
                   </node>
                 </node>
               </node>
@@ -168,19 +168,19 @@
             <property role="TrG5h" value="var" />
           </node>
           <node concept="37vLTw" id="3GM_nagTvNq" role="2GsD0m">
-            <reference role="3cqZAo" target="1187962225387703198" resolve="array" />
+            <ref role="3cqZAo" node="11WvlAiOgIu" resolve="array" />
           </node>
           <node concept="3clFbS" id="6V1k6Hk$txo" role="2LFqv$">
             <node concept="3clFbF" id="6V1k6Hk$txq" role="3cqZAp">
               <node concept="2OqwBi" id="6V1k6Hk$tKA" role="3clFbG">
                 <node concept="10M0yZ" id="6V1k6Hk$txr" role="2Oq$k0">
-                  <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-                  <reference role="3cqZAo" target="e2lb.~System%derr" resolve="err" />
+                  <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+                  <ref role="3cqZAo" to="e2lb:~System.err" resolve="err" />
                 </node>
                 <node concept="liA8E" id="6V1k6Hk$tKG" role="2OqNvi">
-                  <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(int)%cvoid" resolve="println" />
+                  <ref role="37wK5l" to="fxg7:~PrintStream.println(int):void" resolve="println" />
                   <node concept="2GrUjf" id="6V1k6Hk$tKK" role="37wK5m">
-                    <reference role="2Gs0qQ" target="7980748436587796566" resolve="var" />
+                    <ref role="2Gs0qQ" node="6V1k6Hk$txm" resolve="var" />
                   </node>
                 </node>
               </node>

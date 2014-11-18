@@ -192,7 +192,7 @@
       <property role="TrG5h" value="ourProvider" />
       <property role="3TUv4t" value="false" />
       <node concept="3uibUv" id="4mqZImXW57c" role="1tU5fm">
-        <reference role="3uigEE" target="5015601397718077769" resolve="SourceRevision" />
+        <ref role="3uigEE" node="4mqZImXW559" resolve="SourceRevision" />
       </node>
       <node concept="3Tm6S6" id="4mqZImXW57d" role="1B3o_S" />
       <node concept="2ShNRf" id="4mqZImXW57e" role="33vP2m">
@@ -200,8 +200,8 @@
           <node concept="1Y3b0j" id="4mqZImXW57g" role="YeSDq">
             <property role="TrG5h" value="" />
             <property role="2bfB8j" value="true" />
-            <reference role="1Y3XeK" target="5015601397718077769" resolve="SourceRevision" />
-            <reference role="37wK5l" target="5015601397718077908" resolve="SourceRevision" />
+            <ref role="1Y3XeK" node="4mqZImXW559" resolve="SourceRevision" />
+            <ref role="37wK5l" node="4mqZImXW57k" resolve="SourceRevision" />
             <node concept="3clFb_" id="4mqZImXW57h" role="jymVt">
               <property role="1EzhhJ" value="false" />
               <property role="TrG5h" value="get" />
@@ -214,7 +214,7 @@
                 </node>
               </node>
               <node concept="2AHcQZ" id="4mqZImXW57S" role="2AJF6D">
-                <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+                <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
               </node>
             </node>
           </node>
@@ -240,7 +240,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="4mqZImXW57s" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="2YIFZL" id="4mqZImXW57t" role="jymVt">
@@ -252,17 +252,17 @@
         <property role="TrG5h" value="provider" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="4mqZImXW57x" role="1tU5fm">
-          <reference role="3uigEE" target="5015601397718077769" resolve="SourceRevision" />
+          <ref role="3uigEE" node="4mqZImXW559" resolve="SourceRevision" />
         </node>
       </node>
       <node concept="3clFbS" id="4mqZImXW57y" role="3clF47">
         <node concept="3clFbF" id="4mqZImXW57z" role="3cqZAp">
           <node concept="37vLTI" id="4mqZImXW57$" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeoicA" role="37vLTJ">
-              <reference role="3cqZAo" target="5015601397718077899" resolve="ourProvider" />
+              <ref role="3cqZAo" node="4mqZImXW57b" resolve="ourProvider" />
             </node>
             <node concept="37vLTw" id="2BHiRxgl3kr" role="37vLTx">
-              <reference role="3cqZAo" target="5015601397718077920" resolve="provider" />
+              <ref role="3cqZAo" node="4mqZImXW57w" resolve="provider" />
             </node>
           </node>
         </node>
@@ -277,16 +277,16 @@
         <node concept="3cpWs6" id="4mqZImXW57F" role="3cqZAp">
           <node concept="2OqwBi" id="4mqZImXW57G" role="3cqZAk">
             <node concept="37vLTw" id="2BHiRxeomCv" role="2Oq$k0">
-              <reference role="3cqZAo" target="5015601397718077899" resolve="ourProvider" />
+              <ref role="3cqZAo" node="4mqZImXW57b" resolve="ourProvider" />
             </node>
             <node concept="liA8E" id="4mqZImXW57I" role="2OqNvi">
-              <reference role="37wK5l" target="5015601397718077912" resolve="get" />
+              <ref role="37wK5l" node="4mqZImXW57o" resolve="get" />
             </node>
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="4mqZImXW57J" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
       </node>
     </node>
   </node>
@@ -296,14 +296,14 @@
     <property role="1EXbeo" value="false" />
     <node concept="3Tm1VV" id="4mqZImXXUXs" role="1B3o_S" />
     <node concept="3uibUv" id="4mqZImXXUXt" role="1zkMxy">
-      <reference role="3uigEE" target="15tk.~BasicDefaultVcsRootPolicy" resolve="BasicDefaultVcsRootPolicy" />
+      <ref role="3uigEE" to="15tk:~BasicDefaultVcsRootPolicy" resolve="BasicDefaultVcsRootPolicy" />
     </node>
     <node concept="312cEg" id="4mqZImXXUXu" role="jymVt">
       <property role="TrG5h" value="myProject" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
       <node concept="3uibUv" id="4mqZImXXUXv" role="1tU5fm">
-        <reference role="3uigEE" target="b2mh.~Project" resolve="Project" />
+        <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
       </node>
       <node concept="3Tm6S6" id="4mqZImXXUXw" role="1B3o_S" />
     </node>
@@ -314,23 +314,23 @@
         <property role="TrG5h" value="project" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="4mqZImXXUX_" role="1tU5fm">
-          <reference role="3uigEE" target="b2mh.~Project" resolve="Project" />
+          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="3clFbS" id="4mqZImXXUXA" role="3clF47">
         <node concept="XkiVB" id="4mqZImXXUXB" role="3cqZAp">
-          <reference role="37wK5l" target="15tk.~BasicDefaultVcsRootPolicy%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject)" resolve="BasicDefaultVcsRootPolicy" />
+          <ref role="37wK5l" to="15tk:~BasicDefaultVcsRootPolicy.&lt;init&gt;(com.intellij.openapi.project.Project)" resolve="BasicDefaultVcsRootPolicy" />
           <node concept="37vLTw" id="2BHiRxgm5Eu" role="37wK5m">
-            <reference role="3cqZAo" target="5015601397718560612" resolve="project" />
+            <ref role="3cqZAo" node="4mqZImXXUX$" resolve="project" />
           </node>
         </node>
         <node concept="3clFbF" id="4mqZImXXUXD" role="3cqZAp">
           <node concept="37vLTI" id="4mqZImXXUXE" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeut5q" role="37vLTJ">
-              <reference role="3cqZAo" target="5015601397718560606" resolve="myProject" />
+              <ref role="3cqZAo" node="4mqZImXXUXu" resolve="myProject" />
             </node>
             <node concept="37vLTw" id="2BHiRxgkWm5" role="37vLTx">
-              <reference role="3cqZAo" target="5015601397718560612" resolve="project" />
+              <ref role="3cqZAo" node="4mqZImXXUX$" resolve="project" />
             </node>
           </node>
         </node>
@@ -346,25 +346,25 @@
         <property role="TrG5h" value="builder" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="4mqZImXXUXL" role="1tU5fm">
-          <reference role="3uigEE" target="o84r.~DirtBuilder" resolve="DirtBuilder" />
+          <ref role="3uigEE" to="o84r:~DirtBuilder" resolve="DirtBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="4mqZImXXUXM" role="3clF46">
         <property role="TrG5h" value="vcsGuess" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="4mqZImXXUXN" role="1tU5fm">
-          <reference role="3uigEE" target="o84r.~VcsGuess" resolve="VcsGuess" />
+          <ref role="3uigEE" to="o84r:~VcsGuess" resolve="VcsGuess" />
         </node>
       </node>
       <node concept="3clFbS" id="4mqZImXXUXO" role="3clF47">
         <node concept="3clFbF" id="4mqZImXXUXP" role="3cqZAp">
           <node concept="3nyPlj" id="4mqZImXXUXQ" role="3clFbG">
-            <reference role="37wK5l" target="15tk.~BasicDefaultVcsRootPolicy%dmarkDefaultRootsDirty(com%dintellij%dopenapi%dvcs%dchanges%dDirtBuilder,com%dintellij%dopenapi%dvcs%dchanges%dVcsGuess)%cvoid" resolve="markDefaultRootsDirty" />
+            <ref role="37wK5l" to="15tk:~BasicDefaultVcsRootPolicy.markDefaultRootsDirty(com.intellij.openapi.vcs.changes.DirtBuilder,com.intellij.openapi.vcs.changes.VcsGuess):void" resolve="markDefaultRootsDirty" />
             <node concept="37vLTw" id="2BHiRxglnUx" role="37wK5m">
-              <reference role="3cqZAo" target="5015601397718560624" resolve="builder" />
+              <ref role="3cqZAo" node="4mqZImXXUXK" resolve="builder" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmFdE" role="37wK5m">
-              <reference role="3cqZAo" target="5015601397718560626" resolve="vcsGuess" />
+              <ref role="3cqZAo" node="4mqZImXXUXM" resolve="vcsGuess" />
             </node>
           </node>
         </node>
@@ -378,13 +378,13 @@
             <property role="TrG5h" value="manager" />
             <property role="3TUv4t" value="false" />
             <node concept="3uibUv" id="4mqZImXXUXV" role="1tU5fm">
-              <reference role="3uigEE" target="3dcm.~ProjectLevelVcsManager" resolve="ProjectLevelVcsManager" />
+              <ref role="3uigEE" to="3dcm:~ProjectLevelVcsManager" resolve="ProjectLevelVcsManager" />
             </node>
             <node concept="2YIFZM" id="4mqZImXXUXW" role="33vP2m">
-              <reference role="1Pybhc" target="3dcm.~ProjectLevelVcsManager" resolve="ProjectLevelVcsManager" />
-              <reference role="37wK5l" target="3dcm.~ProjectLevelVcsManager%dgetInstance(com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dopenapi%dvcs%dProjectLevelVcsManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="3dcm:~ProjectLevelVcsManager" resolve="ProjectLevelVcsManager" />
+              <ref role="37wK5l" to="3dcm:~ProjectLevelVcsManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.vcs.ProjectLevelVcsManager" resolve="getInstance" />
               <node concept="37vLTw" id="2BHiRxeuQwu" role="37wK5m">
-                <reference role="3cqZAo" target="5015601397718560606" resolve="myProject" />
+                <ref role="3cqZAo" node="4mqZImXXUXu" resolve="myProject" />
               </node>
             </node>
           </node>
@@ -395,40 +395,40 @@
             <property role="3TUv4t" value="false" />
             <node concept="10Q1$e" id="4mqZImXXUY0" role="1tU5fm">
               <node concept="3uibUv" id="4mqZImXXUY1" role="10Q1$1">
-                <reference role="3uigEE" target="3dcm.~VcsRoot" resolve="VcsRoot" />
+                <ref role="3uigEE" to="3dcm:~VcsRoot" resolve="VcsRoot" />
               </node>
             </node>
             <node concept="2OqwBi" id="4mqZImXXUY2" role="33vP2m">
               <node concept="37vLTw" id="3GM_nagTzOM" role="2Oq$k0">
-                <reference role="3cqZAo" target="5015601397718560634" resolve="manager" />
+                <ref role="3cqZAo" node="4mqZImXXUXU" resolve="manager" />
               </node>
               <node concept="liA8E" id="4mqZImXXUY4" role="2OqNvi">
-                <reference role="37wK5l" target="3dcm.~ProjectLevelVcsManager%dgetAllVcsRoots()%ccom%dintellij%dopenapi%dvcs%dVcsRoot[]" resolve="getAllVcsRoots" />
+                <ref role="37wK5l" to="3dcm:~ProjectLevelVcsManager.getAllVcsRoots():com.intellij.openapi.vcs.VcsRoot[]" resolve="getAllVcsRoots" />
               </node>
             </node>
           </node>
         </node>
         <node concept="1DcWWT" id="4mqZImXXUY5" role="3cqZAp">
           <node concept="37vLTw" id="3GM_nagTAUV" role="1DdaDG">
-            <reference role="3cqZAo" target="5015601397718560639" resolve="roots" />
+            <ref role="3cqZAo" node="4mqZImXXUXZ" resolve="roots" />
           </node>
           <node concept="3cpWsn" id="4mqZImXXUY7" role="1Duv9x">
             <property role="TrG5h" value="root" />
             <property role="3TUv4t" value="false" />
             <node concept="3uibUv" id="4mqZImXXUY8" role="1tU5fm">
-              <reference role="3uigEE" target="3dcm.~VcsRoot" resolve="VcsRoot" />
+              <ref role="3uigEE" to="3dcm:~VcsRoot" resolve="VcsRoot" />
             </node>
           </node>
           <node concept="3clFbS" id="4mqZImXXUY9" role="2LFqv$">
             <node concept="3clFbF" id="4mqZImXXUYa" role="3cqZAp">
               <node concept="2OqwBi" id="4mqZImXXUYb" role="3clFbG">
                 <node concept="37vLTw" id="2BHiRxglfWH" role="2Oq$k0">
-                  <reference role="3cqZAo" target="5015601397718560624" resolve="builder" />
+                  <ref role="3cqZAo" node="4mqZImXXUXK" resolve="builder" />
                 </node>
                 <node concept="liA8E" id="4mqZImXXUYd" role="2OqNvi">
-                  <reference role="37wK5l" target="o84r.~DirtBuilder%daddDirtyDirRecursively(com%dintellij%dopenapi%dvcs%dVcsRoot)%cvoid" resolve="addDirtyDirRecursively" />
+                  <ref role="37wK5l" to="o84r:~DirtBuilder.addDirtyDirRecursively(com.intellij.openapi.vcs.VcsRoot):void" resolve="addDirtyDirRecursively" />
                   <node concept="37vLTw" id="3GM_nagTrPm" role="37wK5m">
-                    <reference role="3cqZAo" target="5015601397718560647" resolve="root" />
+                    <ref role="3cqZAo" node="4mqZImXXUY7" resolve="root" />
                   </node>
                 </node>
               </node>
@@ -437,7 +437,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="4mqZImXXUYf" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="4mqZImXXUYg" role="jymVt">
@@ -450,14 +450,14 @@
         <property role="TrG5h" value="file" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="4mqZImXXUYk" role="1tU5fm">
-          <reference role="3uigEE" target="3df7.~VirtualFile" resolve="VirtualFile" />
+          <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
         </node>
       </node>
       <node concept="37vLTG" id="4mqZImXXUYl" role="3clF46">
         <property role="TrG5h" value="matchContext" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="4mqZImXXUYm" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="4mqZImXXUYn" role="3clF47">
@@ -465,14 +465,14 @@
           <node concept="3clFbC" id="4mqZImXXUYp" role="3clFbw">
             <node concept="2OqwBi" id="4mqZImXXUYq" role="3uHU7B">
               <node concept="2YIFZM" id="4mqZImXXUYr" role="2Oq$k0">
-                <reference role="37wK5l" target="tbz9.~ProjectBaseDirectory%dgetInstance(com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dplatform%dProjectBaseDirectory" resolve="getInstance" />
-                <reference role="1Pybhc" target="tbz9.~ProjectBaseDirectory" resolve="ProjectBaseDirectory" />
+                <ref role="37wK5l" to="tbz9:~ProjectBaseDirectory.getInstance(com.intellij.openapi.project.Project):com.intellij.platform.ProjectBaseDirectory" resolve="getInstance" />
+                <ref role="1Pybhc" to="tbz9:~ProjectBaseDirectory" resolve="ProjectBaseDirectory" />
                 <node concept="37vLTw" id="2BHiRxeuoVj" role="37wK5m">
-                  <reference role="3cqZAo" target="5015601397718560606" resolve="myProject" />
+                  <ref role="3cqZAo" node="4mqZImXXUXu" resolve="myProject" />
                 </node>
               </node>
               <node concept="liA8E" id="4mqZImXXUYt" role="2OqNvi">
-                <reference role="37wK5l" target="tbz9.~ProjectBaseDirectory%dgetBaseDir()%ccom%dintellij%dopenapi%dvfs%dVirtualFile" resolve="getBaseDir" />
+                <ref role="37wK5l" to="tbz9:~ProjectBaseDirectory.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
               </node>
             </node>
             <node concept="10Nm6u" id="4mqZImXXUYu" role="3uHU7w" />
@@ -492,18 +492,18 @@
         </node>
         <node concept="3cpWs6" id="4mqZImXXUYy" role="3cqZAp">
           <node concept="3nyPlj" id="4mqZImXXUYz" role="3cqZAk">
-            <reference role="37wK5l" target="15tk.~BasicDefaultVcsRootPolicy%dmatchesDefaultMapping(com%dintellij%dopenapi%dvfs%dVirtualFile,java%dlang%dObject)%cboolean" resolve="matchesDefaultMapping" />
+            <ref role="37wK5l" to="15tk:~BasicDefaultVcsRootPolicy.matchesDefaultMapping(com.intellij.openapi.vfs.VirtualFile,java.lang.Object):boolean" resolve="matchesDefaultMapping" />
             <node concept="37vLTw" id="2BHiRxgmhCI" role="37wK5m">
-              <reference role="3cqZAo" target="5015601397718560659" resolve="file" />
+              <ref role="3cqZAo" node="4mqZImXXUYj" resolve="file" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmLqO" role="37wK5m">
-              <reference role="3cqZAo" target="5015601397718560661" resolve="matchContext" />
+              <ref role="3cqZAo" node="4mqZImXXUYl" resolve="matchContext" />
             </node>
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="4mqZImXXUYA" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
   </node>

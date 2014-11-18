@@ -113,45 +113,45 @@
   <node concept="bUwia" id="hPi0mDT">
     <property role="TrG5h" value="mc_commands" />
     <node concept="3aamgX" id="hPi0mDU" role="3acgRq">
-      <reference role="30HIoZ" target="qff7.8974276187400348177" resolve="ExecuteCommandStatement" />
+      <ref role="30HIoZ" to="qff7:7Mb2akafE8h" resolve="ExecuteCommandStatement" />
       <node concept="j$656" id="hPi0mDV" role="1lVwrX">
-        <reference role="v9R2y" target="1225441503876" resolve="reduce_ExecuteCommand" />
+        <ref role="v9R2y" node="hPi0mE4" resolve="reduce_ExecuteCommand" />
       </node>
     </node>
     <node concept="3aamgX" id="4C1usRVDuRB" role="3acgRq">
-      <reference role="30HIoZ" target="qff7.5332677359380589431" resolve="ExecuteTransparentCommandStatement" />
+      <ref role="30HIoZ" to="qff7:4C1usRVDuHR" resolve="ExecuteTransparentCommandStatement" />
       <node concept="j$656" id="4C1usRVDFjd" role="1lVwrX">
-        <reference role="v9R2y" target="5332677359380594915" resolve="reduce_ExecuteTransparentCommand" />
+        <ref role="v9R2y" node="4C1usRVDw3z" resolve="reduce_ExecuteTransparentCommand" />
       </node>
     </node>
     <node concept="3aamgX" id="hPi0mDW" role="3acgRq">
-      <reference role="30HIoZ" target="qff7.8974276187400348181" resolve="ExecuteLightweightCommandStatement" />
+      <ref role="30HIoZ" to="qff7:7Mb2akafE8l" resolve="ExecuteLightweightCommandStatement" />
       <node concept="j$656" id="hPi0mDX" role="1lVwrX">
-        <reference role="v9R2y" target="1225441503936" resolve="reduce_ExecuteLightweightCommand" />
+        <ref role="v9R2y" node="hPi0mF0" resolve="reduce_ExecuteLightweightCommand" />
       </node>
     </node>
     <node concept="3aamgX" id="hPi0mDY" role="3acgRq">
-      <reference role="30HIoZ" target="qff7.8974276187400348179" resolve="ExecuteEDTCommandStatement" />
+      <ref role="30HIoZ" to="qff7:7Mb2akafE8j" resolve="ExecuteEDTCommandStatement" />
       <node concept="j$656" id="hPi0mDZ" role="1lVwrX">
-        <reference role="v9R2y" target="1225441503916" resolve="reduce_ExecuteEDTCommand" />
+        <ref role="v9R2y" node="hPi0mEG" resolve="reduce_ExecuteEDTCommand" />
       </node>
     </node>
     <node concept="3aamgX" id="hPi0mE0" role="3acgRq">
-      <reference role="30HIoZ" target="qff7.8974276187400348183" resolve="ExecuteWriteActionStatement" />
+      <ref role="30HIoZ" to="qff7:7Mb2akafE8n" resolve="ExecuteWriteActionStatement" />
       <node concept="j$656" id="hPi0mE1" role="1lVwrX">
-        <reference role="v9R2y" target="1225441503956" resolve="reduce_ExecuteWriteAction" />
+        <ref role="v9R2y" node="hPi0mFk" resolve="reduce_ExecuteWriteAction" />
       </node>
     </node>
     <node concept="3aamgX" id="hPi0mE2" role="3acgRq">
-      <reference role="30HIoZ" target="qff7.8974276187400348174" resolve="ExecuteCommandInEDTStatement" />
+      <ref role="30HIoZ" to="qff7:7Mb2akafE8e" resolve="ExecuteCommandInEDTStatement" />
       <node concept="j$656" id="hPi0mE3" role="1lVwrX">
-        <reference role="v9R2y" target="1225441503896" resolve="reduce_ExecuteCommandInEDTStatement" />
+        <ref role="v9R2y" node="hPi0mEo" resolve="reduce_ExecuteCommandInEDTStatement" />
       </node>
     </node>
   </node>
   <node concept="13MO4I" id="hPi0mE4">
     <property role="TrG5h" value="reduce_ExecuteCommand" />
-    <reference role="3gUMe" target="qff7.8974276187400348177" resolve="ExecuteCommandStatement" />
+    <ref role="3gUMe" to="qff7:7Mb2akafE8h" resolve="ExecuteCommandStatement" />
     <node concept="312cEu" id="hPi0mE5" role="13RCb5">
       <property role="TrG5h" value="ABC" />
       <node concept="3Tm1VV" id="hPi0mEn" role="1B3o_S" />
@@ -168,11 +168,11 @@
           <node concept="3clFbF" id="hPi0mEa" role="3cqZAp">
             <node concept="2OqwBi" id="hPi0mEb" role="3clFbG">
               <node concept="2YIFZM" id="hPi0mEc" role="2Oq$k0">
-                <reference role="37wK5l" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolve="instance" />
-                <reference role="1Pybhc" target="cu2c.~ModelAccess" resolve="ModelAccess" />
+                <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
               </node>
               <node concept="liA8E" id="hPi0mEd" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~ModelCommandExecutor%drunWriteActionInCommand(java%dlang%dRunnable)%cvoid" resolve="runWriteActionInCommand" />
+                <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteActionInCommand(java.lang.Runnable):void" resolve="runWriteActionInCommand" />
                 <node concept="10Nm6u" id="hPi0mEe" role="37wK5m">
                   <node concept="29HgVG" id="hPi0mEf" role="lGtFl">
                     <node concept="3NFfHV" id="hPi0mEg" role="3NFExx">
@@ -181,7 +181,7 @@
                           <node concept="2OqwBi" id="hPi0mEj" role="3clFbG">
                             <node concept="30H73N" id="hPi0mEk" role="2Oq$k0" />
                             <node concept="3TrEf2" id="hPi0mEl" role="2OqNvi">
-                              <reference role="3Tt5mk" target="qff7.8974276187400348171" />
+                              <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
                             </node>
                           </node>
                         </node>
@@ -199,7 +199,7 @@
   </node>
   <node concept="13MO4I" id="hPi0mEo">
     <property role="TrG5h" value="reduce_ExecuteCommandInEDTStatement" />
-    <reference role="3gUMe" target="qff7.8974276187400348174" resolve="ExecuteCommandInEDTStatement" />
+    <ref role="3gUMe" to="qff7:7Mb2akafE8e" resolve="ExecuteCommandInEDTStatement" />
     <node concept="312cEu" id="hPi0mEp" role="13RCb5">
       <property role="TrG5h" value="ABC" />
       <node concept="3Tm1VV" id="hPi0mEF" role="1B3o_S" />
@@ -216,11 +216,11 @@
           <node concept="3clFbF" id="hPi0mEu" role="3cqZAp">
             <node concept="2OqwBi" id="hPi0mEv" role="3clFbG">
               <node concept="2YIFZM" id="nUL79JOG99" role="2Oq$k0">
-                <reference role="37wK5l" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolve="instance" />
-                <reference role="1Pybhc" target="cu2c.~ModelAccess" resolve="ModelAccess" />
+                <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
               </node>
               <node concept="liA8E" id="hPi0mEx" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~ModelCommandProjectExecutor%drunCommandInEDT(java%dlang%dRunnable,jetbrains%dmps%dproject%dProject)%cvoid" resolve="runCommandInEDT" />
+                <ref role="37wK5l" to="cu2c:~ModelCommandProjectExecutor.runCommandInEDT(java.lang.Runnable,jetbrains.mps.project.Project):void" resolve="runCommandInEDT" />
                 <node concept="10Nm6u" id="hPi0mEy" role="37wK5m">
                   <node concept="29HgVG" id="hPi0mEz" role="lGtFl">
                     <node concept="3NFfHV" id="hPi0mE$" role="3NFExx">
@@ -229,7 +229,7 @@
                           <node concept="2OqwBi" id="hPi0mEB" role="3clFbG">
                             <node concept="30H73N" id="hPi0mEC" role="2Oq$k0" />
                             <node concept="3TrEf2" id="hPi0mED" role="2OqNvi">
-                              <reference role="3Tt5mk" target="qff7.8974276187400348171" />
+                              <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
                             </node>
                           </node>
                         </node>
@@ -246,14 +246,14 @@
                             <node concept="2OqwBi" id="7dNKGt2BwUd" role="3K4E3e">
                               <node concept="30H73N" id="7dNKGt2BwUc" role="2Oq$k0" />
                               <node concept="3TrEf2" id="7dNKGt2BwUh" role="2OqNvi">
-                                <reference role="3Tt5mk" target="qff7.8974276187400348175" />
+                                <ref role="3Tt5mk" to="qff7:7Mb2akafE8f" />
                               </node>
                             </node>
                             <node concept="2OqwBi" id="7dNKGt2BwU3" role="3K4Cdx">
                               <node concept="2OqwBi" id="7dNKGt2BwTY" role="2Oq$k0">
                                 <node concept="30H73N" id="7dNKGt2BwTX" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="7dNKGt2BwU2" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="qff7.8974276187400348175" />
+                                  <ref role="3Tt5mk" to="qff7:7Mb2akafE8f" />
                                 </node>
                               </node>
                               <node concept="3x8VRR" id="7dNKGt2BwU7" role="2OqNvi" />
@@ -261,7 +261,7 @@
                             <node concept="2ShNRf" id="7dNKGt2B$ht" role="3K4GZi">
                               <node concept="3zrR0B" id="7dNKGt2B$hv" role="2ShVmc">
                                 <node concept="3Tqbb2" id="7dNKGt2B$hw" role="3zrR0E">
-                                  <reference role="ehGHo" target="tpee.1070534058343" resolve="NullLiteral" />
+                                  <ref role="ehGHo" to="tpee:f_0Nm5B" resolve="NullLiteral" />
                                 </node>
                               </node>
                             </node>
@@ -281,7 +281,7 @@
   </node>
   <node concept="13MO4I" id="hPi0mEG">
     <property role="TrG5h" value="reduce_ExecuteEDTCommand" />
-    <reference role="3gUMe" target="qff7.8974276187400348179" resolve="ExecuteEDTCommandStatement" />
+    <ref role="3gUMe" to="qff7:7Mb2akafE8j" resolve="ExecuteEDTCommandStatement" />
     <node concept="312cEu" id="hPi0mEH" role="13RCb5">
       <property role="TrG5h" value="ABC" />
       <node concept="3Tm1VV" id="hPi0mEZ" role="1B3o_S" />
@@ -298,11 +298,11 @@
           <node concept="3clFbF" id="hPi0mEM" role="3cqZAp">
             <node concept="2OqwBi" id="hPi0mEN" role="3clFbG">
               <node concept="2YIFZM" id="hPi0mEO" role="2Oq$k0">
-                <reference role="37wK5l" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolve="instance" />
-                <reference role="1Pybhc" target="cu2c.~ModelAccess" resolve="ModelAccess" />
+                <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
               </node>
               <node concept="liA8E" id="hPi0mEP" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~ModelCommandExecutor%drunReadInEDT(java%dlang%dRunnable)%cvoid" resolve="runReadInEDT" />
+                <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadInEDT(java.lang.Runnable):void" resolve="runReadInEDT" />
                 <node concept="10Nm6u" id="hPi0mEQ" role="37wK5m">
                   <node concept="29HgVG" id="hPi0mER" role="lGtFl">
                     <node concept="3NFfHV" id="hPi0mES" role="3NFExx">
@@ -311,7 +311,7 @@
                           <node concept="2OqwBi" id="hPi0mEV" role="3clFbG">
                             <node concept="30H73N" id="hPi0mEW" role="2Oq$k0" />
                             <node concept="3TrEf2" id="hPi0mEX" role="2OqNvi">
-                              <reference role="3Tt5mk" target="qff7.8974276187400348171" />
+                              <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
                             </node>
                           </node>
                         </node>
@@ -329,7 +329,7 @@
   </node>
   <node concept="13MO4I" id="hPi0mF0">
     <property role="TrG5h" value="reduce_ExecuteLightweightCommand" />
-    <reference role="3gUMe" target="qff7.8974276187400348181" resolve="ExecuteLightweightCommandStatement" />
+    <ref role="3gUMe" to="qff7:7Mb2akafE8l" resolve="ExecuteLightweightCommandStatement" />
     <node concept="312cEu" id="hPi0mF1" role="13RCb5">
       <property role="TrG5h" value="ABC" />
       <node concept="3Tm1VV" id="hPi0mFj" role="1B3o_S" />
@@ -346,11 +346,11 @@
           <node concept="3clFbF" id="hPi0mF6" role="3cqZAp">
             <node concept="2OqwBi" id="hPi0mF7" role="3clFbG">
               <node concept="2YIFZM" id="1hpAMGBZVht" role="2Oq$k0">
-                <reference role="37wK5l" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolve="instance" />
-                <reference role="1Pybhc" target="cu2c.~ModelAccess" resolve="ModelAccess" />
+                <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
               </node>
               <node concept="liA8E" id="hPi0mF9" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~ModelCommandExecutor%drunReadAction(java%dlang%dRunnable)%cvoid" resolve="runReadAction" />
+                <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
                 <node concept="10Nm6u" id="hPi0mFa" role="37wK5m">
                   <node concept="29HgVG" id="hPi0mFb" role="lGtFl">
                     <node concept="3NFfHV" id="hPi0mFc" role="3NFExx">
@@ -359,7 +359,7 @@
                           <node concept="2OqwBi" id="hPi0mFf" role="3clFbG">
                             <node concept="30H73N" id="hPi0mFg" role="2Oq$k0" />
                             <node concept="3TrEf2" id="hPi0mFh" role="2OqNvi">
-                              <reference role="3Tt5mk" target="qff7.8974276187400348171" />
+                              <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
                             </node>
                           </node>
                         </node>
@@ -377,7 +377,7 @@
   </node>
   <node concept="13MO4I" id="hPi0mFk">
     <property role="TrG5h" value="reduce_ExecuteWriteAction" />
-    <reference role="3gUMe" target="qff7.8974276187400348183" resolve="ExecuteWriteActionStatement" />
+    <ref role="3gUMe" to="qff7:7Mb2akafE8n" resolve="ExecuteWriteActionStatement" />
     <node concept="312cEu" id="hPi0mFl" role="13RCb5">
       <property role="TrG5h" value="ABC" />
       <node concept="3Tm1VV" id="hPi0mFB" role="1B3o_S" />
@@ -394,11 +394,11 @@
           <node concept="3clFbF" id="hPi0mFq" role="3cqZAp">
             <node concept="2OqwBi" id="hPi0mFr" role="3clFbG">
               <node concept="2YIFZM" id="hPi0mFs" role="2Oq$k0">
-                <reference role="1Pybhc" target="cu2c.~ModelAccess" resolve="ModelAccess" />
-                <reference role="37wK5l" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolve="instance" />
+                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+                <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
               </node>
               <node concept="liA8E" id="hPi0mFt" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~ModelCommandExecutor%drunWriteAction(java%dlang%dRunnable)%cvoid" resolve="runWriteAction" />
+                <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
                 <node concept="10Nm6u" id="hPi0mFu" role="37wK5m">
                   <node concept="29HgVG" id="hPi0mFv" role="lGtFl">
                     <node concept="3NFfHV" id="hPi0mFw" role="3NFExx">
@@ -407,7 +407,7 @@
                           <node concept="2OqwBi" id="hPi0mFz" role="3clFbG">
                             <node concept="30H73N" id="hPi0mF$" role="2Oq$k0" />
                             <node concept="3TrEf2" id="hPi0mF_" role="2OqNvi">
-                              <reference role="3Tt5mk" target="qff7.8974276187400348171" />
+                              <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
                             </node>
                           </node>
                         </node>
@@ -425,7 +425,7 @@
   </node>
   <node concept="13MO4I" id="4C1usRVDw3z">
     <property role="TrG5h" value="reduce_ExecuteTransparentCommand" />
-    <reference role="3gUMe" target="qff7.5332677359380589431" resolve="ExecuteTransparentCommandStatement" />
+    <ref role="3gUMe" to="qff7:4C1usRVDuHR" resolve="ExecuteTransparentCommandStatement" />
     <node concept="312cEu" id="4C1usRVDw3$" role="13RCb5">
       <property role="TrG5h" value="ABC" />
       <node concept="3Tm1VV" id="4C1usRVDw3_" role="1B3o_S" />
@@ -442,11 +442,11 @@
           <node concept="3clFbF" id="4C1usRVDw3I" role="3cqZAp">
             <node concept="2OqwBi" id="4C1usRVDw3J" role="3clFbG">
               <node concept="2YIFZM" id="4C1usRVDw3K" role="2Oq$k0">
-                <reference role="37wK5l" target="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolve="instance" />
-                <reference role="1Pybhc" target="cu2c.~ModelAccess" resolve="ModelAccess" />
+                <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
               </node>
               <node concept="liA8E" id="4C1usRVDw3L" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~ModelCommandExecutor%drunUndoTransparentCommand(java%dlang%dRunnable)%cvoid" resolve="runUndoTransparentCommand" />
+                <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runUndoTransparentCommand(java.lang.Runnable):void" resolve="runUndoTransparentCommand" />
                 <node concept="10Nm6u" id="4C1usRVDw3M" role="37wK5m">
                   <node concept="29HgVG" id="4C1usRVDw3N" role="lGtFl">
                     <node concept="3NFfHV" id="4C1usRVDw3O" role="3NFExx">
@@ -455,7 +455,7 @@
                           <node concept="2OqwBi" id="4C1usRVDw3R" role="3clFbG">
                             <node concept="30H73N" id="4C1usRVDw3S" role="2Oq$k0" />
                             <node concept="3TrEf2" id="4C1usRVDw3T" role="2OqNvi">
-                              <reference role="3Tt5mk" target="qff7.8974276187400348171" />
+                              <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
                             </node>
                           </node>
                         </node>

@@ -69,14 +69,14 @@
         <node concept="mw_s8" id="2wC_gGKX3RU" role="1ZfhKB">
           <node concept="2c44tf" id="2wC_gGKX3RQ" role="mwGJk">
             <node concept="3uibUv" id="6LpCX$U1tCL" role="2c44tc">
-              <reference role="3uigEE" target="88zw.~SearchScope" resolve="SearchScope" />
+              <ref role="3uigEE" to="88zw:~SearchScope" resolve="SearchScope" />
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="2wC_gGKX3R0" role="1ZfhK$">
           <node concept="1Z2H0r" id="2wC_gGKX3J0" role="mwGJk">
             <node concept="1YBJjd" id="2wC_gGKX3JN" role="1Z2MuG">
-              <reference role="1YBMHb" target="2893726635884034890" resolve="node" />
+              <ref role="1YBMHb" node="2wC_gGKX3Ha" resolve="node" />
             </node>
           </node>
         </node>
@@ -84,7 +84,7 @@
     </node>
     <node concept="1YaCAy" id="2wC_gGKX3Ha" role="1YuTPh">
       <property role="TrG5h" value="node" />
-      <reference role="1YaFvo" target="tpcw.1161622878565" resolve="ConceptFunctionParameter_scope" />
+      <ref role="1YaFvo" to="tpcw:gTQ7B__" resolve="ConceptFunctionParameter_scope" />
     </node>
   </node>
   <node concept="1YbPZF" id="uYrIA37ev3">
@@ -94,14 +94,14 @@
         <node concept="mw_s8" id="uYrIA37evQ" role="1ZfhKB">
           <node concept="2c44tf" id="uYrIA37evR" role="mwGJk">
             <node concept="3uibUv" id="uYrIA37eTR" role="2c44tc">
-              <reference role="3uigEE" target="z8de.~ProgressMonitor" resolve="ProgressMonitor" />
+              <ref role="3uigEE" to="z8de:~ProgressMonitor" resolve="ProgressMonitor" />
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="uYrIA37evT" role="1ZfhK$">
           <node concept="1Z2H0r" id="uYrIA37evU" role="mwGJk">
             <node concept="1YBJjd" id="uYrIA37eW_" role="1Z2MuG">
-              <reference role="1YBMHb" target="558005353046665158" resolve="node" />
+              <ref role="1YBMHb" node="uYrIA37ev6" resolve="node" />
             </node>
           </node>
         </node>
@@ -109,7 +109,7 @@
     </node>
     <node concept="1YaCAy" id="uYrIA37ev6" role="1YuTPh">
       <property role="TrG5h" value="node" />
-      <reference role="1YaFvo" target="tpcw.558005353046640020" resolve="ConceptFunctionParameter_progressMonitor" />
+      <ref role="1YaFvo" to="tpcw:uYrIA378mk" resolve="ConceptFunctionParameter_progressMonitor" />
     </node>
   </node>
 </model>

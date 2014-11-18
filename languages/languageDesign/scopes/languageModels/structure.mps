@@ -48,12 +48,12 @@
     <property role="TrG5h" value="CompositeWithParentScopeExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="composite with" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="70qA1hy$IDj" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expr" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="70qA1hy$wwM">
@@ -62,7 +62,7 @@
     <property role="TrG5h" value="ParentScope" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="parent scope" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="70qA1hy$CJv">
     <property role="R5$K7" value="false" />
@@ -70,18 +70,18 @@
     <property role="TrG5h" value="ComeFromExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="come from" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="70qA1hy$CWu" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="link" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpce.1071489288298" resolve="LinkDeclaration" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
     </node>
   </node>
   <node concept="PlHQZ" id="2AitiqbD8u0">
     <property role="TrG5h" value="UniformScopeProvider" />
     <node concept="PrWs8" id="2AitiqbD8u4" role="PrDN$">
-      <reference role="PrY4T" target="tpck.3734116213129792499" resolve="ScopeProvider" />
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
 </model>

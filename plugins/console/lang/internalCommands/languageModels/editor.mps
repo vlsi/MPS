@@ -28,15 +28,15 @@
     </language>
   </registry>
   <node concept="24kQdi" id="7E9dkpksy9G">
-    <reference role="1XX52x" target="wns9.8829647120617316889" resolve="InternalMode" />
+    <ref role="1XX52x" to="wns9:7E9dkpksy8p" resolve="InternalMode" />
     <node concept="PMmxH" id="7E9dkpksy_g" role="2wV5jI">
-      <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
   </node>
   <node concept="24kQdi" id="4PRmqZeE57J">
-    <reference role="1XX52x" target="wns9.5582028874770305469" resolve="ConsoleModelExpression" />
+    <ref role="1XX52x" to="wns9:4PRmqZeE56X" resolve="ConsoleModelExpression" />
     <node concept="PMmxH" id="4PRmqZeE57K" role="2wV5jI">
-      <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
   </node>
 </model>

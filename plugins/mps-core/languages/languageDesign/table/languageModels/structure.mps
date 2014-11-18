@@ -47,12 +47,12 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="CellModel_Table" />
     <property role="34LRSv" value="table" />
-    <reference role="1TJDcQ" target="tpc2.1073389214265" resolve="EditorCellModel" />
+    <ref role="1TJDcQ" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
     <node concept="1TJgyj" id="3ThmjU3UlMz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="tableModel" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="4490468428501056077" resolve="QueryFunction_TableModel" />
+      <ref role="20lvS9" node="3ThmjU3UnDd" resolve="QueryFunction_TableModel" />
     </node>
   </node>
   <node concept="1TIwiD" id="3ThmjU3UnDd">
@@ -61,34 +61,34 @@
     <property role="TrG5h" value="QueryFunction_TableModel" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="getTableModel" />
-    <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="1X4JaHeCxHy">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="CellModel_HierarchycalTable" />
     <property role="34LRSv" value="hierarchycal table" />
-    <reference role="1TJDcQ" target="tpc2.1073389214265" resolve="EditorCellModel" />
+    <ref role="1TJDcQ" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
     <node concept="1TJgyj" id="5p3TFWLvDOh" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="headerRowLinkDeclaration" />
-      <reference role="20lvS9" target="tpce.1071489288298" resolve="LinkDeclaration" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
     </node>
     <node concept="1TJgyj" id="5p3TFWLvDOi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="rowsLinkDeclaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpce.1071489288298" resolve="LinkDeclaration" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
     </node>
     <node concept="1TJgyj" id="5p3TFWLvDOj" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="cellsInRowLinkDeclaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpce.1071489288298" resolve="LinkDeclaration" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
     </node>
     <node concept="1TJgyi" id="1X4JaHeDtvQ" role="1TKVEl">
       <property role="TrG5h" value="myProp" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

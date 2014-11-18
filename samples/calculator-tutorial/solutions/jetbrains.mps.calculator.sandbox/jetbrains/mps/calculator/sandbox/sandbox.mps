@@ -50,7 +50,7 @@
             <property role="3cmrfH" value="5" />
           </node>
           <node concept="70n5B" id="i47rHtX" role="3uHU7B">
-            <reference role="70ssT" target="1241366331479" resolve="PHP Hours" />
+            <ref role="70ssT" node="i47cK1n" resolve="PHP Hours" />
           </node>
         </node>
         <node concept="17qRlL" id="i47rH0n" role="3uHU7B">
@@ -58,7 +58,7 @@
             <property role="3cmrfH" value="10" />
           </node>
           <node concept="70n5B" id="i47rGXT" role="3uHU7B">
-            <reference role="70ssT" target="1241366328869" resolve="Java Hours" />
+            <ref role="70ssT" node="i47cJo_" resolve="Java Hours" />
           </node>
         </node>
       </node>

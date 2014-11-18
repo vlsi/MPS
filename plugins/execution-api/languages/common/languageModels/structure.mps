@@ -26,7 +26,7 @@
   <node concept="PlHQZ" id="O$iR4JBsQF">
     <property role="TrG5h" value="IGeneratedToClass" />
     <node concept="PrWs8" id="O$iR4JBsQG" role="PrDN$">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
 </model>

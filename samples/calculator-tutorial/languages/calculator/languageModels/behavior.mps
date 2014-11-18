@@ -110,7 +110,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="3ASi0WxiFmr">
-    <reference role="13h7C2" target="64en.1241362555920" resolve="Calculator" />
+    <ref role="13h7C2" to="64en:i46Ymgg" resolve="Calculator" />
     <node concept="13hLZK" id="3ASi0WxiFms" role="13h7CW">
       <node concept="3clFbS" id="3ASi0WxiFmt" role="2VODD2" />
     </node>
@@ -118,34 +118,34 @@
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getScope" />
-      <reference role="13i0hy" target="tpcu.3734116213129936182" resolve="getScope" />
+      <ref role="13i0hy" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
       <node concept="3Tm1VV" id="3ASi0WxiFmJ" role="1B3o_S" />
       <node concept="3clFbS" id="3ASi0WxiFmK" role="3clF47">
         <node concept="3clFbJ" id="3ASi0WxiFn6" role="3cqZAp">
           <node concept="3clFbS" id="3ASi0WxiFn7" role="3clFbx">
             <node concept="3cpWs6" id="3ASi0WxiFn_" role="3cqZAp">
               <node concept="2YIFZM" id="3ASi0WxiFnH" role="3cqZAk">
-                <reference role="37wK5l" target="o8zo.3587601930838053774" resolve="forNamedElements" />
-                <reference role="1Pybhc" target="o8zo.8401916545537277014" resolve="SimpleRoleScope" />
+                <ref role="37wK5l" to="o8zo:379IfaV6Tee" resolve="forNamedElements" />
+                <ref role="1Pybhc" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
                 <node concept="13iPFW" id="3ASi0WxiFnI" role="37wK5m" />
                 <node concept="28GBK8" id="3ASi0WxiFnK" role="37wK5m">
-                  <reference role="28GBKb" target="64en.1241362555920" resolve="Calculator" />
-                  <reference role="28H3Ia" target="64en.1241362671336" />
+                  <ref role="28GBKb" to="64en:i46Ymgg" resolve="Calculator" />
+                  <ref role="28H3Ia" to="64en:i46YMrC" />
                 </node>
               </node>
             </node>
           </node>
           <node concept="1Wc70l" id="3apFoV2wNly" role="3clFbw">
             <node concept="iy1fb" id="3apFoV2xd1P" role="3uHU7w">
-              <reference role="iy1sa" target="64en.1241362849617" />
+              <ref role="iy1sa" to="64en:i46ZtXh" />
             </node>
             <node concept="2OqwBi" id="3ASi0WxiFnt" role="3uHU7B">
               <node concept="37vLTw" id="2BHiRxgha4Y" role="2Oq$k0">
-                <reference role="3cqZAo" target="4159153485696906673" resolve="kind" />
+                <ref role="3cqZAo" node="3ASi0WxiFmL" resolve="kind" />
               </node>
               <node concept="2Zo12i" id="3ASi0WxiFny" role="2OqNvi">
                 <node concept="chp4Y" id="3ASi0WxiFn$" role="2Zo12j">
-                  <reference role="cht4Q" target="64en.1241362608529" resolve="InputField" />
+                  <ref role="cht4Q" to="64en:i46Yz6h" resolve="InputField" />
                 </node>
               </node>
             </node>
@@ -164,7 +164,7 @@
         <node concept="3Tqbb2" id="3ASi0WxiFmO" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3ASi0WxiFmW" role="3clF45">
-        <reference role="3uigEE" target="o8zo.3734116213129862372" resolve="Scope" />
+        <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
       </node>
     </node>
   </node>

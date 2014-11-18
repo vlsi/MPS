@@ -76,7 +76,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="4imALaSQ7TX">
-    <reference role="1M2myG" target="kxd5.1702123884811354597" resolve="ActionTestSidetransformTestContainer" />
+    <ref role="1M2myG" to="kxd5:1uvaauHSS7_" resolve="ActionTestSidetransformTestContainer" />
     <node concept="osYL8" id="4imALaSQ7UL" role="1MLXOK">
       <node concept="3clFbS" id="4imALaSQ7UM" role="2VODD2">
         <node concept="3clFbJ" id="4imALaSQbxP" role="3cqZAp">
@@ -88,15 +88,15 @@
           <node concept="1Wc70l" id="4imALaSQesl" role="3clFbw">
             <node concept="3clFbC" id="4imALaSQf1Q" role="3uHU7w">
               <node concept="28GBK8" id="4imALaSQfip" role="3uHU7w">
-                <reference role="28GBKb" target="kxd5.1702123884811354597" resolve="ActionTestSidetransformTestContainer" />
-                <reference role="28H3Ia" target="kxd5.4942308145798610513" />
+                <ref role="28GBKb" to="kxd5:1uvaauHSS7_" resolve="ActionTestSidetransformTestContainer" />
+                <ref role="28H3Ia" to="kxd5:4imALaSQ7Th" />
               </node>
               <node concept="oXsJc" id="4imALaSQeGP" role="3uHU7B" />
             </node>
             <node concept="3clFbC" id="4imALaSQc8A" role="3uHU7B">
               <node concept="otxO1" id="4imALaSQbMv" role="3uHU7B" />
               <node concept="3TUQnm" id="4imALaSQcm7" role="3uHU7w">
-                <reference role="3TV0OU" target="kxd5.4942308145797614619" resolve="ActionTestSidetransformChild1" />
+                <ref role="3TV0OU" to="kxd5:4imALaSMkKr" resolve="ActionTestSidetransformChild1" />
               </node>
             </node>
           </node>
@@ -114,14 +114,14 @@
               <node concept="otxO1" id="2KPNJVWKlib" role="2Oq$k0" />
               <node concept="2Zo12i" id="2KPNJVWKmo3" role="2OqNvi">
                 <node concept="chp4Y" id="2KPNJVWKmAw" role="2Zo12j">
-                  <reference role="cht4Q" target="kxd5.3185679905990512080" resolve="ActionTestSidetransformAnotherChildCommonSuperConcept" />
+                  <ref role="cht4Q" to="kxd5:2KPNJVWEwRg" resolve="ActionTestSidetransformAnotherChildCommonSuperConcept" />
                 </node>
               </node>
             </node>
             <node concept="3clFbC" id="2KPNJVWKolS" role="3uHU7w">
               <node concept="28GBK8" id="2KPNJVWKolT" role="3uHU7w">
-                <reference role="28H3Ia" target="kxd5.3185679905990201679" />
-                <reference role="28GBKb" target="kxd5.1702123884811354597" resolve="ActionTestSidetransformTestContainer" />
+                <ref role="28H3Ia" to="kxd5:2KPNJVWDl5f" />
+                <ref role="28GBKb" to="kxd5:1uvaauHSS7_" resolve="ActionTestSidetransformTestContainer" />
               </node>
               <node concept="oXsJc" id="2KPNJVWKolU" role="3uHU7B" />
             </node>
@@ -137,14 +137,14 @@
     </node>
   </node>
   <node concept="1M2fIO" id="2KPNJVWC824">
-    <reference role="1M2myG" target="kxd5.3185679905989655160" resolve="ActionTestSidetransformTestAncestor" />
+    <ref role="1M2myG" to="kxd5:2KPNJVWBfDS" resolve="ActionTestSidetransformTestAncestor" />
     <node concept="Um2eU" id="2KPNJVWC82S" role="1kkKnR">
       <node concept="3clFbS" id="2KPNJVWC82T" role="2VODD2">
         <node concept="3cpWs6" id="2KPNJVWC9pq" role="3cqZAp">
           <node concept="1Wc70l" id="5CPPLcMZ$jb" role="3cqZAk">
             <node concept="3y3z36" id="5CPPLcMZ_jI" role="3uHU7w">
               <node concept="3TUQnm" id="5CPPLcMZ_$D" role="3uHU7w">
-                <reference role="3TV0OU" target="kxd5.4886882084761150502" resolve="ActionTestSidetransformAddConceptChild" />
+                <ref role="3TV0OU" to="kxd5:4fhGlP1qagA" resolve="ActionTestSidetransformAddConceptChild" />
               </node>
               <node concept="otxO1" id="5CPPLcMZ$$t" role="3uHU7B" />
             </node>
@@ -152,7 +152,7 @@
               <node concept="3y3z36" id="2KPNJVWCeHB" role="3uHU7B">
                 <node concept="otxO1" id="2KPNJVWC9Or" role="3uHU7B" />
                 <node concept="3TUQnm" id="2KPNJVWC8EV" role="3uHU7w">
-                  <reference role="3TV0OU" target="kxd5.4942308145797614619" resolve="ActionTestSidetransformChild1" />
+                  <ref role="3TV0OU" to="kxd5:4imALaSMkKr" resolve="ActionTestSidetransformChild1" />
                 </node>
               </node>
               <node concept="3fqX7Q" id="2KPNJVWKuvI" role="3uHU7w">
@@ -160,7 +160,7 @@
                   <node concept="otxO1" id="2KPNJVWKuvL" role="2Oq$k0" />
                   <node concept="2Zo12i" id="2KPNJVWKuvM" role="2OqNvi">
                     <node concept="chp4Y" id="2KPNJVWKuvN" role="2Zo12j">
-                      <reference role="cht4Q" target="kxd5.3185679905990512080" resolve="ActionTestSidetransformAnotherChildCommonSuperConcept" />
+                      <ref role="cht4Q" to="kxd5:2KPNJVWEwRg" resolve="ActionTestSidetransformAnotherChildCommonSuperConcept" />
                     </node>
                   </node>
                 </node>

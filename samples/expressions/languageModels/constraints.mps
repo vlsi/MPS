@@ -73,9 +73,9 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="1N6$leSa9kX">
-    <reference role="1M2myG" target="vpmn.2073504467208672407" resolve="ArithmeticSimpleMathExpression" />
+    <ref role="1M2myG" to="vpmn:1N6$leSa9in" resolve="ArithmeticSimpleMathExpression" />
     <node concept="EnEH3" id="1N6$leSa9lL" role="1MhHOB">
-      <reference role="EomxK" target="vpmn.2073504467208672490" resolve="operator" />
+      <ref role="EomxK" to="vpmn:1N6$leSa9jE" resolve="operator" />
       <node concept="QB0g5" id="1N6$leSa9lN" role="QCWH9">
         <node concept="3clFbS" id="1N6$leSa9lO" role="2VODD2">
           <node concept="3clFbF" id="1N6$leSaVZP" role="3cqZAp">
@@ -86,7 +86,7 @@
                 </node>
                 <node concept="2OqwBi" id="1N6$leSb9F9" role="3uHU7B">
                   <node concept="liA8E" id="1N6$leSbbsV" role="2OqNvi">
-                    <reference role="37wK5l" target="e2lb.~String%dlength()%cint" resolve="length" />
+                    <ref role="37wK5l" to="e2lb:~String.length():int" resolve="length" />
                   </node>
                   <node concept="1Wqviy" id="1N6$leSb9au" role="2Oq$k0" />
                 </node>

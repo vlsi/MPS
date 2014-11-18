@@ -64,7 +64,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="2LaoL5p9ngJ">
-    <reference role="13h7C2" target="tpo2.1197246912613" resolve="StateMachineTest" />
+    <ref role="13h7C2" to="tpo2:hr1uxx_" resolve="StateMachineTest" />
     <node concept="13i0hz" id="hr1J3q0" role="13h7CS">
       <property role="TrG5h" value="getStateMachineName" />
       <property role="13i0is" value="false" />
@@ -75,11 +75,11 @@
             <node concept="2OqwBi" id="hI08bGI" role="2Oq$k0">
               <node concept="13iPFW" id="hr1JeHI" role="2Oq$k0" />
               <node concept="3TrEf2" id="hr1Jfpv" role="2OqNvi">
-                <reference role="3Tt5mk" target="tpo2.1197247793411" />
+                <ref role="3Tt5mk" to="tpo2:hr1xS$3" />
               </node>
             </node>
             <node concept="3TrcHB" id="hr1Jghd" role="2OqNvi">
-              <reference role="3TsBF5" target="tpo2.1197166557152" resolve="stateMachineName" />
+              <ref role="3TsBF5" to="tpo2:hqWFZvw" resolve="stateMachineName" />
             </node>
           </node>
         </node>

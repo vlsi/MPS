@@ -44,7 +44,7 @@
     <property role="TrG5h" value="Node_CopyWithTraceOperation" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="copy with trace" />
-    <reference role="1TJDcQ" target="tp25.1138411891628" resolve="SNodeOperation" />
+    <ref role="1TJDcQ" to="tp25:g$eCIIG" resolve="SNodeOperation" />
   </node>
   <node concept="1TIwiD" id="2gx$rhdCaW7">
     <property role="R5$K7" value="false" />
@@ -53,12 +53,12 @@
     <property role="TrG5h" value="NList_CopyWithTraceOperation" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="copy list with trace" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="2gx$rhdCaWc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="argument" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
 </model>

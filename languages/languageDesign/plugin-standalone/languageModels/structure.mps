@@ -53,7 +53,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ProjectPlugin" />
     <property role="34LRSv" value="dispose" />
-    <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="qKmr2orM19">
     <property role="R5$K7" value="false" />
@@ -62,7 +62,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ProjectPlugin" />
     <property role="34LRSv" value="init" />
-    <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="qKmr2orM1f">
     <property role="R5$K7" value="false" />
@@ -71,11 +71,11 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ApplicationPlugin" />
     <property role="34LRSv" value="application plugin&lt;&gt;" />
-    <reference role="1TJDcQ" target="tp4f.1205752813637" resolve="BaseClassifierType" />
+    <ref role="1TJDcQ" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
     <node concept="1TJgyj" id="qKmr2orM1h" role="1TKVEi">
       <property role="20kJfa" value="plugin" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="481983775135178840" resolve="ApplicationPluginDeclaration" />
+      <ref role="20lvS9" node="qKmr2orM1o" resolve="ApplicationPluginDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="qKmr2orM1i">
@@ -86,25 +86,25 @@
     <property role="TrG5h" value="ProjectPluginDeclaration" />
     <property role="3GE5qa" value="Custom.ProjectPlugin" />
     <property role="34LRSv" value="Project Plugin" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="qKmr2orM1j" role="PzmwI">
-      <reference role="PrY4T" target="tp4f.1205751982837" resolve="IClassifier" />
+      <ref role="PrY4T" to="tp4f:hyWqMFP" resolve="IClassifier" />
     </node>
     <node concept="1TJgyj" id="qKmr2orM1k" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="initBlock" />
-      <reference role="20lvS9" target="481983775135178825" resolve="ProjectPluginInitBlock" />
+      <ref role="20lvS9" node="qKmr2orM19" resolve="ProjectPluginInitBlock" />
     </node>
     <node concept="1TJgyj" id="qKmr2orM1l" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="disposeBlock" />
-      <reference role="20lvS9" target="481983775135178819" resolve="ProjectPluginDisposeBlock" />
+      <ref role="20lvS9" node="qKmr2orM13" resolve="ProjectPluginDisposeBlock" />
     </node>
     <node concept="1TJgyj" id="qKmr2orM1m" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="fieldDeclaration" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="tp4f.1213999088275" resolve="DefaultClassifierFieldDeclaration" />
+      <ref role="20lvS9" to="tp4f:hEBZ0aj" resolve="DefaultClassifierFieldDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="qKmr2orM1o">
@@ -115,25 +115,25 @@
     <property role="TrG5h" value="ApplicationPluginDeclaration" />
     <property role="3GE5qa" value="Custom.ApplicationPlugin" />
     <property role="34LRSv" value="Application Plugin" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="qKmr2orM1p" role="PzmwI">
-      <reference role="PrY4T" target="tp4f.1205751982837" resolve="IClassifier" />
+      <ref role="PrY4T" to="tp4f:hyWqMFP" resolve="IClassifier" />
     </node>
     <node concept="1TJgyj" id="qKmr2orM1q" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="initBlock" />
-      <reference role="20lvS9" target="481983775135178851" resolve="ApplicationPluginInitBlock" />
+      <ref role="20lvS9" node="qKmr2orM1z" resolve="ApplicationPluginInitBlock" />
     </node>
     <node concept="1TJgyj" id="qKmr2orM1r" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="disposeBlock" />
-      <reference role="20lvS9" target="481983775135178846" resolve="ApplicationPluginDisposeBlock" />
+      <ref role="20lvS9" node="qKmr2orM1u" resolve="ApplicationPluginDisposeBlock" />
     </node>
     <node concept="1TJgyj" id="qKmr2orM1s" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="fieldDeclaration" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="tp4f.1213999088275" resolve="DefaultClassifierFieldDeclaration" />
+      <ref role="20lvS9" to="tp4f:hEBZ0aj" resolve="DefaultClassifierFieldDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="qKmr2orM1u">
@@ -143,7 +143,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ApplicationPlugin" />
     <property role="34LRSv" value="dispose" />
-    <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="qKmr2orM1z">
     <property role="R5$K7" value="false" />
@@ -152,7 +152,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ApplicationPlugin" />
     <property role="34LRSv" value="init" />
-    <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="qKmr2orM1C">
     <property role="R5$K7" value="false" />
@@ -161,11 +161,11 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Custom.ProjectPlugin" />
     <property role="34LRSv" value="project plugin&lt;&gt;" />
-    <reference role="1TJDcQ" target="tp4f.1205752813637" resolve="BaseClassifierType" />
+    <ref role="1TJDcQ" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
     <node concept="1TJgyj" id="qKmr2orM1E" role="1TKVEi">
       <property role="20kJfa" value="plugin" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="481983775135178834" resolve="ProjectPluginDeclaration" />
+      <ref role="20lvS9" node="qKmr2orM1i" resolve="ProjectPluginDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="_QrTcSEy4l">
@@ -175,11 +175,11 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Tool" />
     <property role="34LRSv" value="tool&lt;&lt;{tool}&gt;&gt;" />
-    <reference role="1TJDcQ" target="tp4k.3339131993542057767" resolve="BaseProjectOperation" />
+    <ref role="1TJDcQ" to="tp4k:2TmYHHddPWB" resolve="BaseProjectOperation" />
     <node concept="1TJgyj" id="_QrTcSEy4m" role="1TKVEi">
       <property role="20kJfa" value="tool" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tp4k.6547237850567458268" resolve="BaseToolDeclaration" />
+      <ref role="20lvS9" to="tp4k:5FstybB4bRs" resolve="BaseToolDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="_QrTcSEy4o">
@@ -189,17 +189,17 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Preference" />
     <property role="34LRSv" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
-    <reference role="1TJDcQ" target="tp4k.3339131993542057767" resolve="BaseProjectOperation" />
+    <ref role="1TJDcQ" to="tp4k:2TmYHHddPWB" resolve="BaseProjectOperation" />
     <node concept="1TJgyj" id="_QrTcSEy4p" role="1TKVEi">
       <property role="20kJfa" value="componentDeclaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tp4k.1210179134063" resolve="PreferencesComponentDeclaration" />
+      <ref role="20lvS9" to="tp4k:hB4j29J" resolve="PreferencesComponentDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="6xuWmJ1tgUs">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="StandalonePluginDescriptor" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 

@@ -203,7 +203,7 @@
       <node concept="TUZQ0" id="3pXDj_D6c$N" role="3UR2Jh">
         <property role="TUZQ4" value="param" />
         <node concept="zr_56" id="3pXDj_D6c$O" role="zr_5Q">
-          <reference role="zr_51" target="6832197706140691340" resolve="TT" />
+          <ref role="zr_51" node="5VgPTPXKiIc" resolve="TT" />
         </node>
       </node>
     </node>
@@ -232,7 +232,7 @@
         <node concept="VUp57" id="3veQ_zQwjEe" role="VUckL">
           <property role="VUp50" value="see, yes" />
           <node concept="VXe08" id="3pXDj_D6c$R" role="VUp5m">
-            <reference role="VXe09" target="e2lb.~CharacterDataUndefined" resolve="CharacterDataUndefined" />
+            <ref role="VXe09" to="e2lb:~CharacterDataUndefined" resolve="CharacterDataUndefined" />
           </node>
         </node>
       </node>
@@ -270,7 +270,7 @@
                 <property role="3cmrfH" value="5" />
               </node>
               <node concept="37vLTw" id="2BHiRxgkWGY" role="37vLTJ">
-                <reference role="3cqZAo" target="7344646339283099547" resolve="a" />
+                <ref role="3cqZAo" node="6nHreUlPTYr" resolve="a" />
               </node>
             </node>
           </node>
@@ -278,11 +278,11 @@
         <node concept="3clFbF" id="7LZmMWLBju9" role="3cqZAp">
           <node concept="2OqwBi" id="7LZmMWLBjCI" role="3clFbG">
             <node concept="10M0yZ" id="7LZmMWLBjua" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="7LZmMWLBjCM" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(int)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(int):void" resolve="println" />
               <node concept="3cmrfG" id="7LZmMWLBjCN" role="37wK5m">
                 <property role="3cmrfH" value="3" />
               </node>
@@ -296,7 +296,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="5VgPTPXJf2V" role="Sfmx6">
-        <reference role="3uigEE" target="e2lb.~ArrayStoreException" resolve="ArrayStoreException" />
+        <ref role="3uigEE" to="e2lb:~ArrayStoreException" resolve="ArrayStoreException" />
       </node>
       <node concept="10Oyi0" id="3veQ_zQsYdF" role="3clF45" />
       <node concept="P$JXv" id="3veQ_zQsYdK" role="lGtFl">
@@ -331,7 +331,7 @@
                 <node concept="1dT_AC" id="5J4EwzxrNLX" role="1dT_Ay" />
               </node>
               <node concept="1RlsK7" id="3veQ_zQyJWB" role="92FcQ">
-                <reference role="YTMYt" target="5562345046718955349" resolve="SOME_CONSTANT" />
+                <ref role="YTMYt" node="4OLqP_NPzXl" resolve="SOME_CONSTANT" />
               </node>
             </node>
           </node>
@@ -352,7 +352,7 @@
           <node concept="1dT_AA" id="3veQ_zQyJWK" role="1dT_Ay">
             <node concept="qph4o" id="3veQ_zQyJWM" role="qph3F">
               <node concept="1RlsK7" id="3pXDj_D6c$Q" role="3xLUeX">
-                <reference role="YTMYt" target="1t7x.~GridBagConstraints%dNORTH" resolve="NORTH" />
+                <ref role="YTMYt" to="1t7x:~GridBagConstraints.NORTH" resolve="NORTH" />
               </node>
             </node>
           </node>
@@ -380,13 +380,13 @@
         <node concept="TUZQ0" id="3veQ_zQsYdN" role="TUOzN">
           <property role="TUZQ4" value="param :)" />
           <node concept="zr_55" id="3veQ_zQsYdO" role="zr_5Q">
-            <reference role="zr_51" target="7344646339283099547" resolve="a" />
+            <ref role="zr_51" node="6nHreUlPTYr" resolve="a" />
           </node>
         </node>
         <node concept="x0GOo" id="3veQ_zQsYdP" role="x79V$">
           <property role="x0GOq" value="ase :)" />
           <node concept="3uibUv" id="3veQ_zQsYdQ" role="zrq5$">
-            <reference role="3uigEE" target="e2lb.~ArrayStoreException" resolve="ArrayStoreException" />
+            <ref role="3uigEE" to="e2lb:~ArrayStoreException" resolve="ArrayStoreException" />
           </node>
         </node>
         <node concept="x79VA" id="3veQ_zQsYdR" role="x79VK">
@@ -397,17 +397,17 @@
         </node>
         <node concept="VUp57" id="3veQ_zQsYdT" role="VUckL">
           <node concept="1RlsK7" id="3veQ_zQthl4" role="VUp5m">
-            <reference role="YTMYt" target="5562345046718955349" resolve="SOME_CONSTANT" />
+            <ref role="YTMYt" node="4OLqP_NPzXl" resolve="SOME_CONSTANT" />
           </node>
         </node>
         <node concept="VUp57" id="3veQ_zQtnVz" role="VUckL">
           <node concept="VXe0Z" id="3veQ_zQtM$j" role="VUp5m">
-            <reference role="VXe0S" target="e2lb.~Integer%dtoString(int,int)%cjava%dlang%dString" resolve="toString" />
+            <ref role="VXe0S" to="e2lb:~Integer.toString(int,int):java.lang.String" resolve="toString" />
           </node>
         </node>
         <node concept="VUp57" id="3veQ_zQve0H" role="VUckL">
           <node concept="VXe08" id="3veQ_zQv$6i" role="VUp5m">
-            <reference role="VXe09" target="1t7x.~JobAttributes$DialogType" resolve="JobAttributes.DialogType" />
+            <ref role="VXe09" to="1t7x:~JobAttributes$DialogType" resolve="JobAttributes.DialogType" />
           </node>
         </node>
         <node concept="TZ7YE" id="3veQ_zQsYdV" role="TZ5HD">
@@ -427,7 +427,7 @@
         <property role="TrG5h" value="s" />
         <node concept="8X2XB" id="3veQ_zQuD86" role="1tU5fm">
           <node concept="3uibUv" id="3veQ_zQuD85" role="8Xvag">
-            <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
           </node>
         </node>
       </node>
@@ -540,7 +540,7 @@
         </node>
         <node concept="TUZQ0" id="2GsHTemevBD" role="TUOzN">
           <node concept="zr_55" id="2GsHTemevBE" role="zr_5Q">
-            <reference role="zr_51" target="4021391592915636740" resolve="s" />
+            <ref role="zr_51" node="3veQ_zQuD84" resolve="s" />
           </node>
         </node>
       </node>

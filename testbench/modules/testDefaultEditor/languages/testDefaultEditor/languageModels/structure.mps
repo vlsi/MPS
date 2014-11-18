@@ -54,126 +54,126 @@
   <node concept="1TIwiD" id="O7qdvf4Jsz">
     <property role="TrG5h" value="Company" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O7qdvf4KyX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="team" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="938834323431421842" resolve="Team" />
+      <ref role="20lvS9" node="O7qdvf4Jui" resolve="Team" />
     </node>
     <node concept="PrWs8" id="O7qdvf4M_4" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="O7qdvf4Jui">
     <property role="TrG5h" value="Team" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="O7qdvf4M_6" role="1TKVEl">
       <property role="TrG5h" value="isOpenSource" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="O7qdvf4M$R" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="developer" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="938834323431434553" resolve="Developer" />
+      <ref role="20lvS9" node="O7qdvf4M$T" resolve="Developer" />
     </node>
     <node concept="PrWs8" id="O7qdvf4Kz1" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="O7qdvf4M$T">
     <property role="TrG5h" value="Developer" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O7qdvf4VTX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="friend" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="938834323431472762" resolve="Friend" />
+      <ref role="20lvS9" node="O7qdvf4VTU" resolve="Friend" />
     </node>
     <node concept="1TJgyj" id="7T2uXeBRoWr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="someChild" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="tpck.1133920641626" resolve="BaseConcept" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
     <node concept="1TJgyj" id="O7qdvf4M_j" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="bestFriend" />
-      <reference role="20lvS9" target="938834323431434553" resolve="Developer" />
+      <ref role="20lvS9" node="O7qdvf4M$T" resolve="Developer" />
     </node>
     <node concept="1TJgyj" id="O7qdvf4M_l" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="teamHeWants" />
-      <reference role="20lvS9" target="938834323431421842" resolve="Team" />
+      <ref role="20lvS9" node="O7qdvf4Jui" resolve="Team" />
     </node>
     <node concept="1TJgyi" id="O7qdvf4M_8" role="1TKVEl">
       <property role="TrG5h" value="age" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="O7qdvf4M_a" role="1TKVEl">
       <property role="TrG5h" value="sex" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="O7qdvf4M_f" role="1TKVEl">
       <property role="TrG5h" value="lastName" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="5co60CafsFZ" role="1TKVEl">
       <property role="TrG5h" value="politicWing" />
-      <reference role="AX2Wp" target="tpc2.1235999709834" resolve="AlignEnum" />
+      <ref role="AX2Wp" to="tpc2:hZ7kHEa" resolve="AlignEnum" />
     </node>
     <node concept="PrWs8" id="O7qdvf4M_d" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="O7qdvf4VTU">
     <property role="TrG5h" value="Friend" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="O7qdvf4VTV" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="friend" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="938834323431434553" resolve="Developer" />
+      <ref role="20lvS9" node="O7qdvf4M$T" resolve="Developer" />
     </node>
   </node>
   <node concept="1TIwiD" id="5dui9YboEXB">
     <property role="TrG5h" value="DummyMethod" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5dui9YboEYz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="statements" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="tpee.1068580123157" resolve="Statement" />
+      <ref role="20lvS9" to="tpee:fzclF8l" resolve="Statement" />
     </node>
   </node>
   <node concept="1TIwiD" id="2vlU4mSUaT$">
     <property role="TrG5h" value="DefaultPropertyAttribute" />
-    <reference role="1TJDcQ" target="tpck.3364660638048049750" resolve="PropertyAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDm" resolve="PropertyAttribute" />
     <node concept="M6xJ_" id="2vlU4mSUaU_" role="lGtFl">
       <property role="Hh88m" value="propAttr" />
       <node concept="trNpa" id="2vlU4mSUaUD" role="EQaZv">
-        <reference role="trN6q" target="938834323431434553" resolve="Developer" />
+        <ref role="trN6q" node="O7qdvf4M$T" resolve="Developer" />
       </node>
     </node>
   </node>
   <node concept="1TIwiD" id="2vlU4mSUaUR">
     <property role="TrG5h" value="DefaultReferenceAttribute" />
-    <reference role="1TJDcQ" target="tpck.3364660638048049745" resolve="LinkAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDh" resolve="LinkAttribute" />
     <node concept="M6xJ_" id="2vlU4mSUaUS" role="lGtFl">
       <property role="Hh88m" value="refAttr" />
       <node concept="trNpa" id="2vlU4mSUaUT" role="EQaZv">
-        <reference role="trN6q" target="938834323431434553" resolve="Developer" />
+        <ref role="trN6q" node="O7qdvf4M$T" resolve="Developer" />
       </node>
     </node>
   </node>
   <node concept="1TIwiD" id="2vlU4mSUaVx">
     <property role="TrG5h" value="DefaultNodeAttribute" />
-    <reference role="1TJDcQ" target="tpck.3364660638048049748" resolve="NodeAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="M6xJ_" id="2vlU4mSUaVy" role="lGtFl">
       <property role="Hh88m" value="nodeAttr" />
       <node concept="trNpa" id="2vlU4mSUaVz" role="EQaZv">
-        <reference role="trN6q" target="938834323431434553" resolve="Developer" />
+        <ref role="trN6q" node="O7qdvf4M$T" resolve="Developer" />
       </node>
     </node>
   </node>

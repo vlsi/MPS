@@ -87,7 +87,7 @@
     </node>
     <node concept="3clFbS" id="2ZnZLV$gtnZ" role="LjaKd">
       <node concept="1MFPAf" id="2ZnZLV$gto0" role="3cqZAp">
-        <reference role="1MFYO6" target="kqxz.5527270534710867991" resolve="AddSimplePropertyAttribute" />
+        <ref role="1MFYO6" to="kqxz:4MONOgYVbwn" resolve="AddSimplePropertyAttribute" />
       </node>
     </node>
     <node concept="fCmwY" id="2ZnZLV$gto1" role="LiZbd">
@@ -123,7 +123,7 @@
     <node concept="3clFbS" id="2ZnZLV$gto8" role="LjaKd">
       <node concept="2HxZob" id="2ZnZLV$gto9" role="3cqZAp">
         <node concept="1iFQzN" id="2ZnZLV$gtoa" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.8896169282214002721" resolve="Backspace" />
+          <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
         </node>
       </node>
     </node>
@@ -177,7 +177,7 @@
       </node>
       <node concept="2HxZob" id="2ZnZLV$gtoq" role="3cqZAp">
         <node concept="1iFQzN" id="2ZnZLV$gtor" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.8896169282213320720" resolve="Delete" />
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
         </node>
       </node>
     </node>
@@ -268,7 +268,7 @@
       </node>
       <node concept="2HxZob" id="2ZnZLV$g_aP" role="3cqZAp">
         <node concept="1iFQzN" id="2ZnZLV$g_aQ" role="3iKnsn">
-          <reference role="1iFR8X" target="ekwn.8896169282214002721" resolve="Backspace" />
+          <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
         </node>
       </node>
     </node>

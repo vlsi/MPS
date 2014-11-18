@@ -91,14 +91,14 @@
             <node concept="2OqwBi" id="47ogooV2qFK" role="3uHU7w">
               <node concept="2OqwBi" id="47ogooV2p$7" role="2Oq$k0">
                 <node concept="1PxgMI" id="47ogooV2pnA" role="2Oq$k0">
-                  <reference role="1PxNhF" target="tpce.1224848324737" resolve="IStructureDeprecatable" />
+                  <ref role="1PxNhF" to="tpce:hOIDzy1" resolve="IStructureDeprecatable" />
                   <node concept="37vLTw" id="47ogooV2phm" role="1PxMeX">
-                    <reference role="3cqZAo" target="4744614252206717018" resolve="node" />
+                    <ref role="3cqZAo" node="47ogooV2nxq" resolve="node" />
                   </node>
                 </node>
                 <node concept="3CFZ6_" id="47ogooV2qmE" role="2OqNvi">
                   <node concept="3CFYIy" id="47ogooV2qsK" role="3CFYIz">
-                    <reference role="3CFYIx" target="tpce.1224240836180" resolve="DeprecatedNodeAnnotation" />
+                    <ref role="3CFYIx" to="tpce:hOasaTk" resolve="DeprecatedNodeAnnotation" />
                   </node>
                 </node>
               </node>
@@ -106,11 +106,11 @@
             </node>
             <node concept="2OqwBi" id="47ogooV2o7Z" role="3uHU7B">
               <node concept="37vLTw" id="47ogooV2o3E" role="2Oq$k0">
-                <reference role="3cqZAo" target="4744614252206717018" resolve="node" />
+                <ref role="3cqZAo" node="47ogooV2nxq" resolve="node" />
               </node>
               <node concept="1mIQ4w" id="47ogooV2oTE" role="2OqNvi">
                 <node concept="chp4Y" id="47ogooV2oUA" role="cj9EA">
-                  <reference role="cht4Q" target="tpce.1224848324737" resolve="IStructureDeprecatable" />
+                  <ref role="cht4Q" to="tpce:hOIDzy1" resolve="IStructureDeprecatable" />
                 </node>
               </node>
             </node>

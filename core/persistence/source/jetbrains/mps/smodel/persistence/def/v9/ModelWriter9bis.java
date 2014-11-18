@@ -243,10 +243,15 @@ public class ModelWriter9bis implements IModelWriter {
     }
 
     for (SReference reference : node.getReferences()) {
-      Element linkElement = new Element(ModelPersistence9.REFERENCE);
+      Element linkElement = new Element("ref");
       final AssociationLinkInfo associationLinkInfo = myMetaInfo.find(reference.getLink());
       linkElement.setAttribute(ModelPersistence9.ROLE_ID, associationLinkInfo.getIndex());
-      linkElement.setAttribute(ModelPersistence9.TARGET_NODE_ID, myIdEncoder.toText(myImportsHelper, reference));
+      final SModelReference targetModel = reference.getTargetSModelReference();
+      if (targetModel != null && myImportsHelper.isLocal(targetModel)) {
+        linkElement.setAttribute(ModelPersistence.NODE, myIdEncoder.toTextLocal(reference));
+      } else {
+        linkElement.setAttribute("to", myIdEncoder.toTextExternal(myImportsHelper, targetModel, reference));
+      }
       DocUtil.setNotNullAttribute(linkElement, "resolve", Util9.genResolveInfo(reference));
       nodeElement.addContent(linkElement);
     }

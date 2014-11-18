@@ -58,7 +58,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="hp5tmnR">
-    <reference role="1XX52x" target="tq1l.1195164668463" resolve="OutputRoot" />
+    <ref role="1XX52x" to="tq1l:hp5np8J" resolve="OutputRoot" />
     <node concept="3EZMnI" id="hp5tqzX" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hp5uAg0" role="3EZMnx">
@@ -68,7 +68,7 @@
         </node>
         <node concept="3F0A7n" id="hp5uAg1" role="3EZMnx">
           <property role="1$x2rV" value="&lt;no name&gt;" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="VPM3Z" id="hEU$PWz" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -78,7 +78,7 @@
       <node concept="3F0ifn" id="hp5uNU9" role="3EZMnx" />
       <node concept="3F0A7n" id="hp5uLEz" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no text&gt;" />
-        <reference role="1NtTu8" target="tq1l.1195164732401" resolve="text" />
+        <ref role="1NtTu8" to="tq1l:hp5nCJL" resolve="text" />
       </node>
       <node concept="3F0ifn" id="hp5t$eG" role="3EZMnx" />
       <node concept="3EZMnI" id="hJ2jShY" role="3EZMnx">
@@ -89,21 +89,21 @@
           <property role="3F0ifm" value="special child:" />
         </node>
         <node concept="3F1sOY" id="hJ2kP2n" role="3EZMnx">
-          <reference role="1NtTu8" target="tq1l.1218735665292" />
+          <ref role="1NtTu8" to="tq1l:hJ2jB2c" />
         </node>
         <node concept="2iRfu4" id="i2IQW04" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="hJ2kSam" role="3EZMnx" />
       <node concept="3F2HdR" id="hp5ETOZ" role="3EZMnx">
         <property role="2czwfN" value="true" />
-        <reference role="1NtTu8" target="tq1l.1195169631818" />
+        <ref role="1NtTu8" to="tq1l:hp5EkTa" />
         <node concept="2iRkQZ" id="i2IQW0d" role="2czzBx" />
       </node>
       <node concept="2iRkQZ" id="i2IQW07" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="hp5HnWt">
-    <reference role="1XX52x" target="tq1l.1195165132070" resolve="OutputNode" />
+    <ref role="1XX52x" to="tq1l:hp5pakA" resolve="OutputNode" />
     <node concept="3EZMnI" id="hp5IS34" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hp5IVPj" role="3EZMnx">
@@ -120,7 +120,7 @@
         <node concept="3F0A7n" id="hp5J6yf" role="3EZMnx">
           <property role="1$x2rV" value="&lt;no text&gt;" />
           <property role="1O74Pk" value="true" />
-          <reference role="1NtTu8" target="tq1l.1195170441111" resolve="text" />
+          <ref role="1NtTu8" to="tq1l:hp5Hqun" resolve="text" />
         </node>
         <node concept="VPM3Z" id="hEU$Q2n" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -138,7 +138,7 @@
         <node concept="3F2HdR" id="hvKi2Mn" role="3EZMnx">
           <property role="2czwfN" value="false" />
           <property role="2czwfO" value="," />
-          <reference role="1NtTu8" target="tq1l.1202327114879" />
+          <ref role="1NtTu8" to="tq1l:hvKhXhZ" />
           <node concept="3F0ifn" id="hvKi4_R" role="2czzBI">
             <property role="3F0ifm" value=".." />
           </node>
@@ -153,48 +153,48 @@
     </node>
   </node>
   <node concept="24kQdi" id="3AbzyktXSm6">
-    <reference role="1XX52x" target="tq1l.4146564171992368516" resolve="CustomRoot" />
+    <ref role="1XX52x" to="tq1l:3AbzyktXSm4" resolve="CustomRoot" />
     <node concept="3EZMnI" id="3AbzyktXSm8" role="2wV5jI">
       <node concept="3F0ifn" id="3AbzyktXSmb" role="3EZMnx">
         <property role="3F0ifm" value="My custom root" />
       </node>
       <node concept="3F0ifn" id="3AbzyktXSmf" role="3EZMnx" />
       <node concept="3F1sOY" id="3AbzyktXSmd" role="3EZMnx">
-        <reference role="1NtTu8" target="tq1l.4146564171992368517" />
+        <ref role="1NtTu8" to="tq1l:3AbzyktXSm5" />
       </node>
       <node concept="2iRkQZ" id="3AbzyktXSma" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="2kPUo4NeuZe">
-    <reference role="1XX52x" target="tq1l.2681305894288486346" resolve="CustomStatement" />
+    <ref role="1XX52x" to="tq1l:2kPUo4NeuZa" resolve="CustomStatement" />
     <node concept="3EZMnI" id="2kPUo4NeuZg" role="2wV5jI">
       <node concept="3F0ifn" id="2kPUo4NeuZj" role="3EZMnx">
         <property role="3F0ifm" value="work: " />
       </node>
       <node concept="l2Vlx" id="2kPUo4NeuZi" role="2iSdaV" />
       <node concept="3F0A7n" id="2kPUo4NeuZl" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="2kPUo4NeuZo" role="3EZMnx">
         <property role="3F0ifm" value="for" />
       </node>
       <node concept="3F1sOY" id="2kPUo4NeuZq" role="3EZMnx">
-        <reference role="1NtTu8" target="tq1l.2681305894288486349" />
+        <ref role="1NtTu8" to="tq1l:2kPUo4NeuZd" />
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="1S7rCMcUiw3">
-    <reference role="1XX52x" target="tq1l.2163819695913378074" resolve="CustomStatementRef" />
+    <ref role="1XX52x" to="tq1l:1S7rCMcUi4q" resolve="CustomStatementRef" />
     <node concept="3EZMnI" id="1S7rCMcUiw5" role="2wV5jI">
       <node concept="3F0ifn" id="1S7rCMcUiw8" role="3EZMnx">
         <property role="3F0ifm" value="ref to" />
       </node>
       <node concept="1iCGBv" id="1S7rCMcUiwa" role="3EZMnx">
-        <reference role="1NtTu8" target="tq1l.2163819695913379841" />
+        <ref role="1NtTu8" to="tq1l:1S7rCMcUiw1" />
         <node concept="1sVBvm" id="1S7rCMcUiwb" role="1sWHZn">
           <node concept="3F0A7n" id="1S7rCMcUiwe" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
@@ -202,13 +202,13 @@
         <property role="3F0ifm" value="count =" />
       </node>
       <node concept="3F0A7n" id="1S7rCMcUiwj" role="3EZMnx">
-        <reference role="1NtTu8" target="tq1l.2163819695913379842" resolve="ii" />
+        <ref role="1NtTu8" to="tq1l:1S7rCMcUiw2" resolve="ii" />
       </node>
       <node concept="l2Vlx" id="1S7rCMcUiw7" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="5dDJmDrj$Sd">
-    <reference role="1XX52x" target="tq1l.6010543442198679048" resolve="TwoVarStatement" />
+    <ref role="1XX52x" to="tq1l:5dDJmDrj$S8" resolve="TwoVarStatement" />
     <node concept="3EZMnI" id="5dDJmDrj$Sf" role="2wV5jI">
       <node concept="3F0ifn" id="5dDJmDrj$Si" role="3EZMnx">
         <property role="3F0ifm" value="twovarroot" />
@@ -217,13 +217,13 @@
         <property role="3F0ifm" value="{" />
       </node>
       <node concept="3F0A7n" id="5dDJmDrj$So" role="3EZMnx">
-        <reference role="1NtTu8" target="tq1l.6010543442198679051" resolve="name1" />
+        <ref role="1NtTu8" to="tq1l:5dDJmDrj$Sb" resolve="name1" />
       </node>
       <node concept="3F0ifn" id="5dDJmDrj$Sr" role="3EZMnx">
         <property role="3F0ifm" value="," />
       </node>
       <node concept="3F0A7n" id="5dDJmDrj$St" role="3EZMnx">
-        <reference role="1NtTu8" target="tq1l.6010543442198679052" resolve="name2" />
+        <ref role="1NtTu8" to="tq1l:5dDJmDrj$Sc" resolve="name2" />
       </node>
       <node concept="3F0ifn" id="5dDJmDrj$Sm" role="3EZMnx">
         <property role="3F0ifm" value="}" />

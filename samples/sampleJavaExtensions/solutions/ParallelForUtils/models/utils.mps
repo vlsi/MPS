@@ -91,14 +91,14 @@
     <property role="TrG5h" value="ParallelLoopException" />
     <node concept="3Tm1VV" id="z9$5E0VVp$" role="1B3o_S" />
     <node concept="3uibUv" id="z9$5E0VVpD" role="1zkMxy">
-      <reference role="3uigEE" target="e2lb.~RuntimeException" resolve="RuntimeException" />
+      <ref role="3uigEE" to="e2lb:~RuntimeException" resolve="RuntimeException" />
     </node>
     <node concept="312cEg" id="z9$5E0VVpQ" role="jymVt">
       <property role="TrG5h" value="exceptions" />
       <node concept="3Tm6S6" id="z9$5E0VVpR" role="1B3o_S" />
       <node concept="_YKpA" id="z9$5E0VVpT" role="1tU5fm">
         <node concept="3uibUv" id="z9$5E0VVpV" role="_ZDj9">
-          <reference role="3uigEE" target="e2lb.~Exception" resolve="Exception" />
+          <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
         </node>
       </node>
     </node>
@@ -111,7 +111,7 @@
         <property role="TrG5h" value="exceptions" />
         <node concept="_YKpA" id="z9$5E0VVpJ" role="1tU5fm">
           <node concept="3uibUv" id="z9$5E0VVpL" role="_ZDj9">
-            <reference role="3uigEE" target="e2lb.~Exception" resolve="Exception" />
+            <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
           </node>
         </node>
       </node>
@@ -119,20 +119,20 @@
       <node concept="3Tm1VV" id="z9$5E0VVpB" role="1B3o_S" />
       <node concept="3clFbS" id="z9$5E0VVpC" role="3clF47">
         <node concept="XkiVB" id="z9$5E0VVpM" role="3cqZAp">
-          <reference role="37wK5l" target="e2lb.~RuntimeException%d&lt;init&gt;(java%dlang%dString)" resolve="RuntimeException" />
+          <ref role="37wK5l" to="e2lb:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
           <node concept="37vLTw" id="2BHiRxgm6LF" role="37wK5m">
-            <reference role="3cqZAo" target="633195941006915178" resolve="message" />
+            <ref role="3cqZAo" node="z9$5E0VVpE" resolve="message" />
           </node>
         </node>
         <node concept="3clFbF" id="z9$5E0VVpX" role="3cqZAp">
           <node concept="37vLTI" id="z9$5E0VVqa" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm5X8" role="37vLTx">
-              <reference role="3cqZAo" target="633195941006915181" resolve="exceptions" />
+              <ref role="3cqZAo" node="z9$5E0VVpH" resolve="exceptions" />
             </node>
             <node concept="2OqwBi" id="z9$5E0VVq1" role="37vLTJ">
               <node concept="Xjq3P" id="z9$5E0VVpY" role="2Oq$k0" />
               <node concept="2OwXpG" id="z9$5E0VVq6" role="2OqNvi">
-                <reference role="2Oxat5" target="633195941006915190" resolve="exceptions" />
+                <ref role="2Oxat5" node="z9$5E0VVpQ" resolve="exceptions" />
               </node>
             </node>
           </node>
@@ -143,17 +143,17 @@
       <property role="TrG5h" value="getCauseExceptions" />
       <node concept="_YKpA" id="z9$5E0VVqo" role="3clF45">
         <node concept="3uibUv" id="z9$5E0VVqq" role="_ZDj9">
-          <reference role="3uigEE" target="e2lb.~Exception" resolve="Exception" />
+          <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
         </node>
       </node>
       <node concept="3Tm1VV" id="z9$5E0VVqg" role="1B3o_S" />
       <node concept="3clFbS" id="z9$5E0VVqh" role="3clF47">
         <node concept="3cpWs6" id="z9$5E0VVqi" role="3cqZAp">
           <node concept="2YIFZM" id="z9$5E0VVqm" role="3cqZAk">
-            <reference role="37wK5l" target="k7g3.~Collections%dunmodifiableList(java%dutil%dList)%cjava%dutil%dList" resolve="unmodifiableList" />
-            <reference role="1Pybhc" target="k7g3.~Collections" resolve="Collections" />
+            <ref role="37wK5l" to="k7g3:~Collections.unmodifiableList(java.util.List):java.util.List" resolve="unmodifiableList" />
+            <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
             <node concept="37vLTw" id="2BHiRxeuNX0" role="37wK5m">
-              <reference role="3cqZAo" target="633195941006915190" resolve="exceptions" />
+              <ref role="3cqZAo" node="z9$5E0VVpQ" resolve="exceptions" />
             </node>
           </node>
         </node>

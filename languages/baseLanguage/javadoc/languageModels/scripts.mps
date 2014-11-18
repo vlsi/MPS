@@ -65,7 +65,7 @@
     <property role="_Wzho" value="UpdateDeprecatedBlockDocTags" />
     <node concept="_XfAh" id="R6rVfgmS$e" role="_YvDr">
       <property role="_XH9r" value="Adds the new CommentLine child to all DeprecatedBlockDocTag instance that miss it" />
-      <reference role="_XDHR" target="m373.8465538089690331492" resolve="DeprecatedBlockDocTag" />
+      <ref role="_XDHR" to="m373:7lVCwDcxZ_$" resolve="DeprecatedBlockDocTag" />
       <node concept="_ZGcI" id="R6rVfgmS$f" role="_XPhp">
         <node concept="3clFbS" id="R6rVfgmS$g" role="2VODD2">
           <node concept="3clFbF" id="R6rVfgnw4g" role="3cqZAp">
@@ -73,7 +73,7 @@
               <node concept="2OqwBi" id="R6rVfgnw8C" role="2Oq$k0">
                 <node concept="_YI3z" id="R6rVfgnw4f" role="2Oq$k0" />
                 <node concept="3TrEf2" id="R6rVfgnwhv" role="2OqNvi">
-                  <reference role="3Tt5mk" target="m373.2667874559098216723" />
+                  <ref role="3Tt5mk" to="m373:2k6csr8mu4j" />
                 </node>
               </node>
               <node concept="2DeJnY" id="R6rVfgnx6$" role="2OqNvi" />
@@ -88,7 +88,7 @@
               <node concept="2OqwBi" id="R6rVfgnvf$" role="2Oq$k0">
                 <node concept="_YI3z" id="R6rVfgnbA4" role="2Oq$k0" />
                 <node concept="3TrEf2" id="R6rVfgnvHw" role="2OqNvi">
-                  <reference role="3Tt5mk" target="m373.2667874559098216723" />
+                  <ref role="3Tt5mk" to="m373:2k6csr8mu4j" />
                 </node>
               </node>
               <node concept="3w_OXm" id="R6rVfgnw49" role="2OqNvi" />

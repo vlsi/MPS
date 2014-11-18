@@ -35,16 +35,16 @@
   <node concept="1TIwiD" id="4hBeuoVSNq4">
     <property role="TrG5h" value="SomeConcept" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="4hBeuoVSNq5" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="nVbm8awfqh" role="PzmwI">
-      <reference role="PrY4T" target="4fqr.4666195181811081429" resolve="IMainClass" />
+      <ref role="PrY4T" to="4fqr:431DWIovi3l" resolve="IMainClass" />
     </node>
     <node concept="1TJgyi" id="4hBeuoVTWJ4" role="1TKVEl">
       <property role="TrG5h" value="valid" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
 </model>

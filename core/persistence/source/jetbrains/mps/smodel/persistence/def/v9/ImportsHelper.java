@@ -27,7 +27,7 @@ import java.util.Set;
  * model imports and their respective index values.
  *
  * The way model imports as well as node references utilizing these imports get serialized
- * is external to this class (see {@link jetbrains.mps.smodel.persistence.def.v9.IdEncoder#toText(ImportsHelper, org.jetbrains.mps.openapi.model.SReference)}
+ * is external to this class, see {@link jetbrains.mps.smodel.persistence.def.v9.IdEncoder#toTextExternal(ImportsHelper, org.jetbrains.mps.openapi.model.SModelReference, org.jetbrains.mps.openapi.model.SReference)}
  *
  * Alternative to StorageIndexHelper9, index generation code (although questionable) is identical.
  */
@@ -71,6 +71,10 @@ class ImportsHelper {
   }
 
   // algorithm copied from StorageIndexHelper9.addInternalObject
+  /**
+   * Return value shall not use symbols other than [0-9][a-z] as the index is serialized as part of node identification,
+   * with {@link jetbrains.mps.smodel.persistence.def.v9.IdEncoder#REF_TARGET_IMPORT_SEPARATOR} as separator
+   */
   private String createIndexFor(int initialHash, Set<String> usedIndex) {
     int hash = (initialHash % StorageIndexHelper9.HASH_SIZE + StorageIndexHelper9.HASH_SIZE) % StorageIndexHelper9.HASH_SIZE;
     String rv;
@@ -90,11 +94,11 @@ class ImportsHelper {
     myModel2Index.put(modelReference, index);
   }
 
-  public boolean needsIndex(SModelReference targetModel) {
-    return !targetModel.equals(myModelRef);
+  public boolean isLocal(SModelReference targetModel) {
+    return targetModel.equals(myModelRef);
   }
 
-  public SModelReference modelWithoutIndex() {
+  public SModelReference localModel() {
     // XXX not quite nice, needIndex not necessarily means there would be single model to use without index
     return myModelRef;
   }

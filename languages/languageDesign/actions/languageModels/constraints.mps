@@ -163,27 +163,27 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="hDMFLGt">
-    <reference role="1M2myG" target="tpdg.1178541723620" resolve="SubstituteNodeBuilderVariableReference" />
+    <ref role="1M2myG" to="tpdg:h9AzSZ$" resolve="SubstituteNodeBuilderVariableReference" />
     <node concept="1N5Pfh" id="hDMFLGu" role="1Mr941">
-      <reference role="1N5Vy1" target="tpdg.1178541757413" />
+      <ref role="1N5Vy1" to="tpdg:h9A$1f_" />
       <node concept="1dDu$B" id="6T2Bklg9931" role="1N6uqs">
-        <reference role="1dDu$A" target="tpdg.1178539929008" resolve="SubstituteNodeBuilderVariableDeclaration" />
+        <ref role="1dDu$A" to="tpdg:h9At2QK" resolve="SubstituteNodeBuilderVariableDeclaration" />
       </node>
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFMve">
-    <reference role="1M2myG" target="tpdg.1203348041101" resolve="SideTransformVariableReference" />
+    <ref role="1M2myG" to="tpdg:hwH8uQd" resolve="SideTransformVariableReference" />
     <node concept="1N5Pfh" id="hDMFMvf" role="1Mr941">
-      <reference role="1N5Vy1" target="tpdg.1203348041102" />
+      <ref role="1N5Vy1" to="tpdg:hwH8uQe" />
       <node concept="1dDu$B" id="6T2BklghKjb" role="1N6uqs">
-        <reference role="1dDu$A" target="tpdg.1203347547493" resolve="SideTransformVariableDeclaration" />
+        <ref role="1dDu$A" to="tpdg:hwH6Al_" resolve="SideTransformVariableDeclaration" />
       </node>
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFMzm">
-    <reference role="1M2myG" target="tpdg.1158700725281" resolve="NodeFactory" />
+    <ref role="1M2myG" to="tpdg:gR7Wvgx" resolve="NodeFactory" />
     <node concept="EnEH3" id="hDMFMzn" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1156235010670" resolve="alias" />
+      <ref role="EomxK" to="tpck:gOOYy9I" resolve="alias" />
       <node concept="Eqf_E" id="hDMFMzo" role="EtsB7">
         <node concept="3clFbS" id="hDMFMzp" role="2VODD2">
           <node concept="3clFbF" id="hDMFMzq" role="3cqZAp">
@@ -191,7 +191,7 @@
               <node concept="2OqwBi" id="hDMFMzs" role="3uHU7w">
                 <node concept="EsrRn" id="hDMFMzt" role="2Oq$k0" />
                 <node concept="3TrEf2" id="hDMFMzu" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpdg.1158700943156" />
+                  <ref role="3Tt5mk" to="tpdg:gR7XksO" />
                 </node>
               </node>
               <node concept="Xl_RD" id="hDMFMzv" role="3uHU7B">
@@ -203,7 +203,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="hDMFMzw" role="1Mr941">
-      <reference role="1N5Vy1" target="tpdg.1158700943156" />
+      <ref role="1N5Vy1" to="tpdg:gR7XksO" />
       <node concept="1MUpDS" id="hDMFMzx" role="1N6uqs">
         <node concept="3clFbS" id="hDMFMzy" role="2VODD2">
           <node concept="3SKdUt" id="6pumIWoCFUz" role="3cqZAp">
@@ -215,11 +215,11 @@
             <node concept="3cpWsn" id="hDMFMz$" role="3cpWs9">
               <property role="TrG5h" value="language" />
               <node concept="3uibUv" id="hDMFMz_" role="1tU5fm">
-                <reference role="3uigEE" target="cu2c.~Language" resolve="Language" />
+                <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
               </node>
               <node concept="2YIFZM" id="hDMFMzA" role="33vP2m">
-                <reference role="1Pybhc" target="cu2c.~Language" resolve="Language" />
-                <reference role="37wK5l" target="cu2c.~Language%dgetLanguageForLanguageAspect(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cjetbrains%dmps%dsmodel%dLanguage" resolve="getLanguageForLanguageAspect" />
+                <ref role="1Pybhc" to="cu2c:~Language" resolve="Language" />
+                <ref role="37wK5l" to="cu2c:~Language.getLanguageForLanguageAspect(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.Language" resolve="getLanguageForLanguageAspect" />
                 <node concept="2JrnkZ" id="hDMFMzC" role="37wK5m">
                   <node concept="1Q6Npb" id="hDMFMzD" role="2JrQYb" />
                 </node>
@@ -231,10 +231,10 @@
               <property role="TrG5h" value="structureModel" />
               <node concept="2OqwBi" id="hDMFMzJ" role="33vP2m">
                 <node concept="37vLTw" id="3GM_nagTy0_" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1213104859364" resolve="language" />
+                  <ref role="3cqZAo" node="hDMFMz$" resolve="language" />
                 </node>
                 <node concept="liA8E" id="hDMFMzL" role="2OqNvi">
-                  <reference role="37wK5l" target="cu2c.~Language%dgetStructureModelDescriptor()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolve="getStructureModelDescriptor" />
+                  <ref role="37wK5l" to="cu2c:~Language.getStructureModelDescriptor():org.jetbrains.mps.openapi.model.SModel" resolve="getStructureModelDescriptor" />
                 </node>
               </node>
               <node concept="H_c77" id="i2s1ZDa" role="1tU5fm" />
@@ -243,9 +243,9 @@
           <node concept="3cpWs6" id="hDMFMzN" role="3cqZAp">
             <node concept="2ShNRf" id="hHLolvD" role="3cqZAk">
               <node concept="1pGfFk" id="hHLolvF" role="2ShVmc">
-                <reference role="37wK5l" target="inbo.4642948870877886828" resolve="ModelNodesSearchScope" />
+                <ref role="37wK5l" to="inbo:41J4moeYz_G" resolve="ModelNodesSearchScope" />
                 <node concept="37vLTw" id="3GM_nagTwKr" role="37wK5m">
-                  <reference role="3cqZAo" target="1213104859372" resolve="structureModel" />
+                  <ref role="3cqZAo" node="hDMFMzG" resolve="structureModel" />
                 </node>
               </node>
             </node>
@@ -255,26 +255,26 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQOcbUI">
-    <reference role="1M2myG" target="tpdg.1158700664498" resolve="NodeFactories" />
+    <ref role="1M2myG" to="tpdg:gR7WgqM" resolve="NodeFactories" />
     <node concept="2NXJUA" id="hQOccml" role="2NY200">
       <node concept="3clFbS" id="hQOccmm" role="2VODD2">
         <node concept="3clFbF" id="hQOcctd" role="3cqZAp">
           <node concept="22lmx$" id="1KFbmnBQDun" role="3clFbG">
             <node concept="2OqwBi" id="hQOccte" role="3uHU7B">
               <node concept="Rm8GO" id="hQOcdp4" role="2Oq$k0">
-                <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dACTIONS" resolve="ACTIONS" />
-                <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.ACTIONS" resolve="ACTIONS" />
+                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
               </node>
               <node concept="liA8E" id="hQOcctg" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~LanguageAspect%dis(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="is" />
+                <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
                 <node concept="2JrnkZ" id="6MGyrQSofwt" role="37wK5m">
                   <node concept="1Q6Npb" id="hQOccth" role="2JrQYb" />
                 </node>
               </node>
             </node>
             <node concept="2YIFZM" id="1KFbmnBQDut" role="3uHU7w">
-              <reference role="1Pybhc" target="cu2c.~SModelStereotype" resolve="SModelStereotype" />
-              <reference role="37wK5l" target="cu2c.~SModelStereotype%disGeneratorModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
               <node concept="1Q6Npb" id="1KFbmnBQDuu" role="37wK5m" />
             </node>
           </node>
@@ -283,26 +283,26 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQOcfKo">
-    <reference role="1M2myG" target="tpdg.1112056943463" resolve="NodeSubstituteActions" />
+    <ref role="1M2myG" to="tpdg:gbFK_dB" resolve="NodeSubstituteActions" />
     <node concept="2NXJUA" id="hQOcg5D" role="2NY200">
       <node concept="3clFbS" id="hQOcg5E" role="2VODD2">
         <node concept="3clFbF" id="hQOcg5F" role="3cqZAp">
           <node concept="22lmx$" id="1KFbmnBQDuQ" role="3clFbG">
             <node concept="2OqwBi" id="hQOcg5G" role="3uHU7B">
               <node concept="Rm8GO" id="hQOcg5H" role="2Oq$k0">
-                <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
-                <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dACTIONS" resolve="ACTIONS" />
+                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.ACTIONS" resolve="ACTIONS" />
               </node>
               <node concept="liA8E" id="hQOcg5I" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~LanguageAspect%dis(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="is" />
+                <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
                 <node concept="2JrnkZ" id="6MGyrQSogHe" role="37wK5m">
                   <node concept="1Q6Npb" id="hQOcg5J" role="2JrQYb" />
                 </node>
               </node>
             </node>
             <node concept="2YIFZM" id="1KFbmnBQDuW" role="3uHU7w">
-              <reference role="1Pybhc" target="cu2c.~SModelStereotype" resolve="SModelStereotype" />
-              <reference role="37wK5l" target="cu2c.~SModelStereotype%disGeneratorModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
               <node concept="1Q6Npb" id="1KFbmnBQDuX" role="37wK5m" />
             </node>
           </node>
@@ -311,26 +311,26 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQOcil6">
-    <reference role="1M2myG" target="tpdg.1221135252814" resolve="PasteWrappers" />
+    <ref role="1M2myG" to="tpdg:hLhljPe" resolve="PasteWrappers" />
     <node concept="2NXJUA" id="hQOciBE" role="2NY200">
       <node concept="3clFbS" id="hQOciBF" role="2VODD2">
         <node concept="3clFbF" id="hQOciBG" role="3cqZAp">
           <node concept="22lmx$" id="1KFbmnBQvZg" role="3clFbG">
             <node concept="2OqwBi" id="hQOciBH" role="3uHU7B">
               <node concept="Rm8GO" id="hQOciBI" role="2Oq$k0">
-                <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
-                <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dACTIONS" resolve="ACTIONS" />
+                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.ACTIONS" resolve="ACTIONS" />
               </node>
               <node concept="liA8E" id="hQOciBJ" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~LanguageAspect%dis(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="is" />
+                <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
                 <node concept="2JrnkZ" id="6MGyrQSohTt" role="37wK5m">
                   <node concept="1Q6Npb" id="hQOciBK" role="2JrQYb" />
                 </node>
               </node>
             </node>
             <node concept="2YIFZM" id="1KFbmnBQvZm" role="3uHU7w">
-              <reference role="1Pybhc" target="cu2c.~SModelStereotype" resolve="SModelStereotype" />
-              <reference role="37wK5l" target="cu2c.~SModelStereotype%disGeneratorModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
               <node concept="1Q6Npb" id="1KFbmnBQvZn" role="37wK5m" />
             </node>
           </node>
@@ -339,26 +339,26 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQOckbC">
-    <reference role="1M2myG" target="tpdg.1138079416598" resolve="SideTransformHintSubstituteActions" />
+    <ref role="1M2myG" to="tpdg:gzUOs4m" resolve="SideTransformHintSubstituteActions" />
     <node concept="2NXJUA" id="hQOckV2" role="2NY200">
       <node concept="3clFbS" id="hQOckV3" role="2VODD2">
         <node concept="3clFbF" id="hQOckV4" role="3cqZAp">
           <node concept="22lmx$" id="1KFbmnBQvYN" role="3clFbG">
             <node concept="2OqwBi" id="hQOckV5" role="3uHU7B">
               <node concept="Rm8GO" id="hQOckV6" role="2Oq$k0">
-                <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
-                <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dACTIONS" resolve="ACTIONS" />
+                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.ACTIONS" resolve="ACTIONS" />
               </node>
               <node concept="liA8E" id="hQOckV7" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~LanguageAspect%dis(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="is" />
+                <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
                 <node concept="2JrnkZ" id="6MGyrQSoj5_" role="37wK5m">
                   <node concept="1Q6Npb" id="hQOckV8" role="2JrQYb" />
                 </node>
               </node>
             </node>
             <node concept="2YIFZM" id="1KFbmnBQr8p" role="3uHU7w">
-              <reference role="1Pybhc" target="cu2c.~SModelStereotype" resolve="SModelStereotype" />
-              <reference role="37wK5l" target="cu2c.~SModelStereotype%disGeneratorModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
               <node concept="1Q6Npb" id="1KFbmnBQr8r" role="37wK5m" />
             </node>
           </node>
@@ -367,23 +367,23 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hYeWC2c">
-    <reference role="1M2myG" target="tpdg.1235053713157" resolve="SmartActionParameterReference" />
+    <ref role="1M2myG" to="tpdg:hYeW1s5" resolve="SmartActionParameterReference" />
     <node concept="1N5Pfh" id="hYeWCoU" role="1Mr941">
-      <reference role="1N5Vy1" target="tpdg.1235053754581" />
+      <ref role="1N5Vy1" to="tpdg:hYeWbzl" />
       <node concept="1MUpDS" id="hYeWCN3" role="1N6uqs">
         <node concept="3clFbS" id="hYeWCN4" role="2VODD2">
           <node concept="3cpWs8" id="hYeWKI5" role="3cqZAp">
             <node concept="3cpWsn" id="hYeWKI6" role="3cpWs9">
               <property role="TrG5h" value="ancestor" />
               <node concept="3Tqbb2" id="hYeWKI7" role="1tU5fm">
-                <reference role="ehGHo" target="tpdg.1235051221371" resolve="GenerateCodeAction" />
+                <ref role="ehGHo" to="tpdg:hYeMx5V" resolve="GenerateCodeAction" />
               </node>
               <node concept="2OqwBi" id="hYeWKI8" role="33vP2m">
                 <node concept="21POm0" id="hYeWKI9" role="2Oq$k0" />
                 <node concept="2Xjw5R" id="hYeWKIa" role="2OqNvi">
                   <node concept="1xMEDy" id="hYeWKIb" role="1xVPHs">
                     <node concept="chp4Y" id="hYeWKIc" role="ri$Ld">
-                      <reference role="cht4Q" target="tpdg.1235051221371" resolve="GenerateCodeAction" />
+                      <ref role="cht4Q" to="tpdg:hYeMx5V" resolve="GenerateCodeAction" />
                     </node>
                   </node>
                 </node>
@@ -396,7 +396,7 @@
                 <node concept="2ShNRf" id="hYeZqg9" role="3cqZAk">
                   <node concept="kMnCb" id="hYeZrFY" role="2ShVmc">
                     <node concept="3Tqbb2" id="hYeZuAh" role="kMuH3">
-                      <reference role="ehGHo" target="tpdg.1235053632692" resolve="SmartActionParameter" />
+                      <ref role="ehGHo" to="tpdg:hYeVHMO" resolve="SmartActionParameter" />
                     </node>
                   </node>
                 </node>
@@ -404,7 +404,7 @@
             </node>
             <node concept="2OqwBi" id="hYeZbLJ" role="3clFbw">
               <node concept="37vLTw" id="3GM_nagTtz8" role="2Oq$k0">
-                <reference role="3cqZAo" target="1235053906822" resolve="ancestor" />
+                <ref role="3cqZAo" node="hYeWKI6" resolve="ancestor" />
               </node>
               <node concept="3w_OXm" id="hYeZc_k" role="2OqNvi" />
             </node>
@@ -412,10 +412,10 @@
           <node concept="3cpWs6" id="hYeYVzp" role="3cqZAp">
             <node concept="2OqwBi" id="hYeYWk2" role="3cqZAk">
               <node concept="37vLTw" id="3GM_nagTysh" role="2Oq$k0">
-                <reference role="3cqZAo" target="1235053906822" resolve="ancestor" />
+                <ref role="3cqZAo" node="hYeWKI6" resolve="ancestor" />
               </node>
               <node concept="3Tsc0h" id="hYeYWWo" role="2OqNvi">
-                <reference role="3TtcxE" target="tpdg.1235053836789" />
+                <ref role="3TtcxE" to="tpdg:hYeWvBP" />
               </node>
             </node>
           </node>
@@ -425,7 +425,7 @@
   </node>
   <node concept="1M2fIO" id="1c9oDIs2Q65">
     <property role="3GE5qa" value="menuParts.RightTransform" />
-    <reference role="1M2myG" target="tpdg.1177496137779" resolve="SideTransformMenuPart" />
+    <ref role="1M2myG" to="tpdg:h8Cfj0N" resolve="SideTransformMenuPart" />
     <node concept="nKS2y" id="1c9oDIs2Q66" role="1MLUbF">
       <node concept="3clFbS" id="1c9oDIs2Q67" role="2VODD2">
         <node concept="3clFbF" id="1c9oDIs2Q68" role="3cqZAp">
@@ -436,7 +436,7 @@
               <node concept="2Xjw5R" id="1c9oDIs2Q6e" role="2OqNvi">
                 <node concept="1xMEDy" id="1c9oDIs2Q6f" role="1xVPHs">
                   <node concept="chp4Y" id="1c9oDIs2Q6i" role="ri$Ld">
-                    <reference role="cht4Q" target="tpdg.1138079221458" resolve="SideTransformHintSubstituteActionsBuilder" />
+                    <ref role="cht4Q" to="tpdg:gzUNGri" resolve="SideTransformHintSubstituteActionsBuilder" />
                   </node>
                 </node>
               </node>
@@ -448,7 +448,7 @@
   </node>
   <node concept="1M2fIO" id="1c9oDIs3EpM">
     <property role="3GE5qa" value="menuParts.Substitute" />
-    <reference role="1M2myG" target="tpdg.1177323652379" resolve="SubstituteMenuPart" />
+    <ref role="1M2myG" to="tpdg:h8tXkkr" resolve="SubstituteMenuPart" />
     <node concept="nKS2y" id="1c9oDIs3EpN" role="1MLUbF">
       <node concept="3clFbS" id="1c9oDIs3EpO" role="2VODD2">
         <node concept="3clFbF" id="1c9oDIs3EpQ" role="3cqZAp">
@@ -459,7 +459,7 @@
               <node concept="2Xjw5R" id="1c9oDIs3EpV" role="2OqNvi">
                 <node concept="1xMEDy" id="1c9oDIs3EpW" role="1xVPHs">
                   <node concept="chp4Y" id="1c9oDIs3EyP" role="ri$Ld">
-                    <reference role="cht4Q" target="tpdg.1112058030570" resolve="NodeSubstituteActionsBuilder" />
+                    <ref role="cht4Q" to="tpdg:gbFOIBE" resolve="NodeSubstituteActionsBuilder" />
                   </node>
                 </node>
               </node>
@@ -471,26 +471,26 @@
   </node>
   <node concept="1M2fIO" id="5abCRRje45y">
     <property role="3GE5qa" value="copyPaste" />
-    <reference role="1M2myG" target="tpdg.5948027493682789918" resolve="CopyPasteHandlers" />
+    <ref role="1M2myG" to="tpdg:5abCRRje3Su" resolve="CopyPasteHandlers" />
     <node concept="2NXJUA" id="5abCRRje45z" role="2NY200">
       <node concept="3clFbS" id="5abCRRje45$" role="2VODD2">
         <node concept="3clFbF" id="5abCRRje45_" role="3cqZAp">
           <node concept="22lmx$" id="1KFbmnBQDtS" role="3clFbG">
             <node concept="2OqwBi" id="5abCRRje45A" role="3uHU7B">
               <node concept="Rm8GO" id="5abCRRje45B" role="2Oq$k0">
-                <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
-                <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dACTIONS" resolve="ACTIONS" />
+                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.ACTIONS" resolve="ACTIONS" />
               </node>
               <node concept="liA8E" id="5abCRRje45C" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~LanguageAspect%dis(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="is" />
+                <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
                 <node concept="2JrnkZ" id="6MGyrQSodYt" role="37wK5m">
                   <node concept="1Q6Npb" id="5abCRRje45D" role="2JrQYb" />
                 </node>
               </node>
             </node>
             <node concept="2YIFZM" id="1KFbmnBQDtV" role="3uHU7w">
-              <reference role="1Pybhc" target="cu2c.~SModelStereotype" resolve="SModelStereotype" />
-              <reference role="37wK5l" target="cu2c.~SModelStereotype%disGeneratorModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+              <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
               <node concept="1Q6Npb" id="1KFbmnBQDtW" role="37wK5m" />
             </node>
           </node>

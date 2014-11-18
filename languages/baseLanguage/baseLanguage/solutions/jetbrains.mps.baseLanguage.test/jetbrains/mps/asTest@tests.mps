@@ -130,11 +130,11 @@
             <node concept="3cpWsn" id="2aok5Jw84jT" role="3cpWs9">
               <property role="TrG5h" value="o" />
               <node concept="3uibUv" id="2aok5Jw84jU" role="1tU5fm">
-                <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
               <node concept="2ShNRf" id="2aok5Jw84jW" role="33vP2m">
                 <node concept="1pGfFk" id="2aok5Jw84jY" role="2ShVmc">
-                  <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
                 </node>
               </node>
             </node>
@@ -142,56 +142,56 @@
           <node concept="3ykFI1" id="2aok5Jw84k0" role="3cqZAp">
             <node concept="0kSF2" id="2aok5Jw84k3" role="3ykU8v">
               <node concept="3uibUv" id="2aok5Jw84k6" role="0kSFW">
-                <reference role="3uigEE" target="e2lb.~Integer" resolve="Integer" />
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
               </node>
               <node concept="37vLTw" id="2aok5Jw84k2" role="0kSFX">
-                <reference role="3cqZAo" target="2492830749282026730" resolve="str" />
+                <ref role="3cqZAo" node="2aok5Jw84jE" resolve="str" />
               </node>
             </node>
           </node>
           <node concept="2Hmddi" id="2aok5Jw84k_" role="3cqZAp">
             <node concept="0kSF2" id="2aok5Jw84kC" role="2Hmdds">
               <node concept="3uibUv" id="2aok5Jw84kF" role="0kSFW">
-                <reference role="3uigEE" target="e2lb.~Integer" resolve="Integer" />
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
               </node>
               <node concept="37vLTw" id="2aok5Jw84kB" role="0kSFX">
-                <reference role="3cqZAo" target="2492830749282026736" resolve="i" />
+                <ref role="3cqZAo" node="2aok5Jw84jK" resolve="i" />
               </node>
             </node>
           </node>
           <node concept="3ykFI1" id="2aok5Jw84k8" role="3cqZAp">
             <node concept="0kSF2" id="2aok5Jw84kb" role="3ykU8v">
               <node concept="37vLTw" id="2aok5Jw84ka" role="0kSFX">
-                <reference role="3cqZAo" target="2492830749282026745" resolve="o" />
+                <ref role="3cqZAo" node="2aok5Jw84jT" resolve="o" />
               </node>
               <node concept="3uibUv" id="2aok5Jw84ke" role="0kSFW">
-                <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
               </node>
             </node>
           </node>
           <node concept="3vMLTj" id="2aok5Jw84kg" role="3cqZAp">
             <node concept="37vLTw" id="2aok5Jw84kj" role="3tpDZB">
-              <reference role="3cqZAo" target="2492830749282026730" resolve="str" />
+              <ref role="3cqZAo" node="2aok5Jw84jE" resolve="str" />
             </node>
             <node concept="0kSF2" id="2aok5Jw84kl" role="3tpDZA">
               <node concept="3uibUv" id="2aok5Jw84ko" role="0kSFW">
-                <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
               </node>
               <node concept="37vLTw" id="2aok5Jw84kk" role="0kSFX">
-                <reference role="3cqZAo" target="2492830749282026730" resolve="str" />
+                <ref role="3cqZAo" node="2aok5Jw84jE" resolve="str" />
               </node>
             </node>
           </node>
           <node concept="3vMLTj" id="2aok5Jw84kq" role="3cqZAp">
             <node concept="37vLTw" id="2aok5Jw84kt" role="3tpDZB">
-              <reference role="3cqZAo" target="2492830749282026730" resolve="str" />
+              <ref role="3cqZAo" node="2aok5Jw84jE" resolve="str" />
             </node>
             <node concept="0kSF2" id="2aok5Jw84kv" role="3tpDZA">
               <node concept="3uibUv" id="2aok5Jw84ky" role="0kSFW">
-                <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
               <node concept="37vLTw" id="2aok5Jw84ku" role="0kSFX">
-                <reference role="3cqZAo" target="2492830749282026730" resolve="str" />
+                <ref role="3cqZAo" node="2aok5Jw84jE" resolve="str" />
               </node>
             </node>
           </node>

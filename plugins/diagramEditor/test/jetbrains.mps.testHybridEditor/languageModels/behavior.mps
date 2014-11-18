@@ -57,7 +57,7 @@
   </registry>
   <node concept="13h7C7" id="2KhSlQ1tLDe">
     <property role="3GE5qa" value="newBlocks" />
-    <reference role="13h7C2" target="adck.2353136177974080669" resolve="BlockInstance" />
+    <ref role="13h7C2" to="adck:22C1ebGgZit" resolve="BlockInstance" />
     <node concept="13hLZK" id="2KhSlQ1tLFA" role="13h7CW">
       <node concept="3clFbS" id="2KhSlQ1tLFB" role="2VODD2">
         <node concept="3clFbF" id="2KhSlQ1tLGS" role="3cqZAp">
@@ -68,7 +68,7 @@
             <node concept="2OqwBi" id="2KhSlQ1tLIr" role="37vLTJ">
               <node concept="13iPFW" id="2KhSlQ1tLGQ" role="2Oq$k0" />
               <node concept="3TrcHB" id="2KhSlQ1tM0l" role="2OqNvi">
-                <reference role="3TsBF5" target="adck.3175567003993184638" resolve="width" />
+                <ref role="3TsBF5" to="adck:2KhSlQ1tL_Y" resolve="width" />
               </node>
             </node>
           </node>
@@ -81,7 +81,7 @@
             <node concept="2OqwBi" id="2KhSlQ1tMRZ" role="37vLTJ">
               <node concept="13iPFW" id="2KhSlQ1tMS0" role="2Oq$k0" />
               <node concept="3TrcHB" id="2KhSlQ1tNiK" role="2OqNvi">
-                <reference role="3TsBF5" target="adck.3175567003993184686" resolve="height" />
+                <ref role="3TsBF5" to="adck:2KhSlQ1tLAI" resolve="height" />
               </node>
             </node>
           </node>

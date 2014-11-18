@@ -53,7 +53,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="25pbpTNvWz2">
-    <reference role="1M2myG" target="spkm.2403002034744698617" resolve="DispatchModifier" />
+    <ref role="1M2myG" to="spkm:25pbpTNvUrT" resolve="DispatchModifier" />
     <node concept="nKS2y" id="25pbpTNvWzQ" role="1MLUbF">
       <node concept="3clFbS" id="25pbpTNvWzR" role="2VODD2">
         <node concept="3SKdUt" id="20YUQaJ$W4y" role="3cqZAp">
@@ -65,7 +65,7 @@
           <node concept="2OqwBi" id="25pbpTNvWKm" role="3clFbG">
             <node concept="1mIQ4w" id="25pbpTNvWRh" role="2OqNvi">
               <node concept="chp4Y" id="25pbpTNvWZQ" role="cj9EA">
-                <reference role="cht4Q" target="tpee.7812454656619025416" resolve="MethodDeclaration" />
+                <ref role="cht4Q" to="tpee:6LFqxSRBTg8" resolve="MethodDeclaration" />
               </node>
             </node>
             <node concept="nLn13" id="25pbpTNvWAL" role="2Oq$k0" />

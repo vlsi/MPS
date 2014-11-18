@@ -106,7 +106,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="173Z5qAOgLi">
-    <reference role="1XX52x" target="pop3.4504141816188599477" resolve="ModuleSuite" />
+    <ref role="1XX52x" to="pop3:3U1VhSFTRMP" resolve="ModuleSuite" />
     <node concept="3EZMnI" id="173Z5qAOgLk" role="2wV5jI">
       <node concept="2iRkQZ" id="173Z5qAOgLm" role="2iSdaV" />
       <node concept="3EZMnI" id="173Z5qAOgLp" role="3EZMnx">
@@ -115,18 +115,18 @@
           <property role="VOm3f" value="false" />
         </node>
         <node concept="3F1sOY" id="173Z5qAOtuy" role="3EZMnx">
-          <reference role="1NtTu8" target="pop3.1280144168199507080" />
+          <ref role="1NtTu8" to="pop3:173Z5qAOsM8" />
         </node>
       </node>
       <node concept="3XFhqQ" id="173Z5qAOgLE" role="3EZMnx" />
       <node concept="3F2HdR" id="173Z5qAOgLG" role="3EZMnx">
-        <reference role="1NtTu8" target="pop3.4504141816188599486" />
+        <ref role="1NtTu8" to="pop3:3U1VhSFTRMY" />
         <node concept="2iRkQZ" id="173Z5qAOgLH" role="2czzBx" />
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="173Z5qAOgLI">
-    <reference role="1XX52x" target="pop3.4504141816188599481" resolve="JUnit3TestCaseRef" />
+    <ref role="1XX52x" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
     <node concept="3EZMnI" id="173Z5qAOgLK" role="2wV5jI">
       <node concept="3F0ifn" id="173Z5qAOgLN" role="3EZMnx">
         <property role="3F0ifm" value="TestCase" />
@@ -138,7 +138,7 @@
                 <node concept="2OqwBi" id="7tF7F0nXuAT" role="3clFbG">
                   <node concept="pncrf" id="7tF7F0nXuAU" role="2Oq$k0" />
                   <node concept="3TrcHB" id="7tF7F0nXuAV" role="2OqNvi">
-                    <reference role="3TsBF5" target="pop3.8605005254686522462" resolve="muted" />
+                    <ref role="3TsBF5" to="pop3:7tF7F0nXrLu" resolve="muted" />
                   </node>
                 </node>
               </node>
@@ -147,11 +147,11 @@
         </node>
       </node>
       <node concept="1iCGBv" id="173Z5qAOgLP" role="3EZMnx">
-        <reference role="1NtTu8" target="pop3.1280144168199457727" />
+        <ref role="1NtTu8" to="pop3:173Z5qAOgIZ" />
         <node concept="1sVBvm" id="173Z5qAOgLQ" role="1sWHZn">
           <node concept="3F0A7n" id="173Z5qAOgLS" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
@@ -159,7 +159,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="173Z5qAOgLT">
-    <reference role="1XX52x" target="pop3.4504141816188599480" resolve="JUnit4TestCaseRef" />
+    <ref role="1XX52x" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
     <node concept="3EZMnI" id="173Z5qAOgLV" role="2wV5jI">
       <node concept="3F0ifn" id="173Z5qAOgLY" role="3EZMnx">
         <property role="3F0ifm" value="Test" />
@@ -171,7 +171,7 @@
                 <node concept="2OqwBi" id="7tF7F0nXuB0" role="3clFbG">
                   <node concept="pncrf" id="7tF7F0nXuB1" role="2Oq$k0" />
                   <node concept="3TrcHB" id="7tF7F0nXuB2" role="2OqNvi">
-                    <reference role="3TsBF5" target="pop3.8605005254686522462" resolve="muted" />
+                    <ref role="3TsBF5" to="pop3:7tF7F0nXrLu" resolve="muted" />
                   </node>
                 </node>
               </node>
@@ -180,11 +180,11 @@
         </node>
       </node>
       <node concept="1iCGBv" id="173Z5qAOgM0" role="3EZMnx">
-        <reference role="1NtTu8" target="pop3.4504141816188599489" />
+        <ref role="1NtTu8" to="pop3:3U1VhSFTRN1" />
         <node concept="1sVBvm" id="173Z5qAOgM1" role="1sWHZn">
           <node concept="3F0A7n" id="173Z5qAOgM3" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
@@ -192,7 +192,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="173Z5qAOgM4">
-    <reference role="1XX52x" target="pop3.4504141816188599479" resolve="TestCaseRef" />
+    <ref role="1XX52x" to="pop3:3U1VhSFTRMR" resolve="TestCaseRef" />
     <node concept="3EZMnI" id="173Z5qAOgM6" role="2wV5jI">
       <node concept="2iRfu4" id="173Z5qAOgM8" role="2iSdaV" />
       <node concept="3F0ifn" id="173Z5qAOgM9" role="3EZMnx">
@@ -205,7 +205,7 @@
                 <node concept="2OqwBi" id="1wIGzOAqQoF" role="3clFbG">
                   <node concept="pncrf" id="1wIGzOAqQoE" role="2Oq$k0" />
                   <node concept="3TrcHB" id="1wIGzOAqQoJ" role="2OqNvi">
-                    <reference role="3TsBF5" target="pop3.8605005254686522462" resolve="muted" />
+                    <ref role="3TsBF5" to="pop3:7tF7F0nXrLu" resolve="muted" />
                   </node>
                 </node>
               </node>
@@ -214,18 +214,18 @@
         </node>
       </node>
       <node concept="1iCGBv" id="173Z5qAOgMb" role="3EZMnx">
-        <reference role="1NtTu8" target="pop3.4504141816188599488" />
+        <ref role="1NtTu8" to="pop3:3U1VhSFTRN0" />
         <node concept="1sVBvm" id="173Z5qAOgMc" role="1sWHZn">
           <node concept="3F0A7n" id="173Z5qAOgMe" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="173Z5qAOsLJ">
-    <reference role="1XX52x" target="pop3.1280144168199506908" resolve="SolutionRef" />
+    <ref role="1XX52x" to="pop3:173Z5qAOsJs" resolve="SolutionRef" />
     <node concept="3EZMnI" id="173Z5qAOsLL" role="2wV5jI">
       <node concept="2iRfu4" id="173Z5qAOsLN" role="2iSdaV" />
       <node concept="3F0ifn" id="173Z5qAOsM5" role="3EZMnx">
@@ -235,7 +235,7 @@
         </node>
         <node concept="OXEIz" id="173Z5qAOtZP" role="P5bDN">
           <node concept="UkePV" id="173Z5qAOtZQ" role="OY2wv">
-            <reference role="Ul1FP" target="pop3.1280144168199506908" resolve="SolutionRef" />
+            <ref role="Ul1FP" to="pop3:173Z5qAOsJs" resolve="SolutionRef" />
           </node>
         </node>
       </node>
@@ -246,12 +246,12 @@
               <node concept="3clFbF" id="173Z5qAOsLS" role="3cqZAp">
                 <node concept="2OqwBi" id="6R1MmuNKsvU" role="3clFbG">
                   <node concept="liA8E" id="6R1MmuNKsvV" role="2OqNvi">
-                    <reference role="37wK5l" target="88zw.~SModuleReference%dgetModuleName()%cjava%dlang%dString" resolve="getModuleName" />
+                    <ref role="37wK5l" to="88zw:~SModuleReference.getModuleName():java.lang.String" resolve="getModuleName" />
                   </node>
                   <node concept="2OqwBi" id="6R1MmuNKsvW" role="2Oq$k0">
                     <node concept="pncrf" id="6R1MmuNKsvX" role="2Oq$k0" />
                     <node concept="2qgKlT" id="6R1MmuNKsvY" role="2OqNvi">
-                      <reference role="37wK5l" target="5rc7.1280144168199513544" resolve="moduleReference" />
+                      <ref role="37wK5l" to="5rc7:173Z5qAOun8" resolve="moduleReference" />
                     </node>
                   </node>
                 </node>
@@ -261,14 +261,14 @@
         </node>
         <node concept="OXEIz" id="173Z5qAOuir" role="P5bDN">
           <node concept="UkePV" id="173Z5qAOuis" role="OY2wv">
-            <reference role="Ul1FP" target="pop3.1280144168199506908" resolve="SolutionRef" />
+            <ref role="Ul1FP" to="pop3:173Z5qAOsJs" resolve="SolutionRef" />
           </node>
         </node>
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="7tF7F0nXrLE">
-    <reference role="1XX52x" target="pop3.4504141816188599482" resolve="ITestRef" />
+    <ref role="1XX52x" to="pop3:3U1VhSFTRMU" resolve="ITestRef" />
     <node concept="3F0ifn" id="7tF7F0nXrLL" role="2wV5jI">
       <property role="3F0ifm" value="" />
     </node>
@@ -283,7 +283,7 @@
           <property role="3F0ifm" value="muted:" />
         </node>
         <node concept="3F0A7n" id="7tF7F0nXrLS" role="3EZMnx">
-          <reference role="1NtTu8" target="pop3.8605005254686522462" resolve="muted" />
+          <ref role="1NtTu8" to="pop3:7tF7F0nXrLu" resolve="muted" />
         </node>
       </node>
     </node>

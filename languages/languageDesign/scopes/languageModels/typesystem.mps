@@ -156,7 +156,7 @@
         <node concept="3clFbS" id="70qA1hy$wwT" role="3clFbx">
           <node concept="2MkqsV" id="70qA1hy$wwU" role="3cqZAp">
             <node concept="1YBJjd" id="70qA1hy$wxa" role="2OEOjV">
-              <reference role="1YBMHb" target="8077936094962911285" resolve="expr" />
+              <ref role="1YBMHb" node="70qA1hy$wwP" resolve="expr" />
             </node>
             <node concept="Xl_RD" id="70qA1hy$wwW" role="2MkJ7o">
               <property role="Xl_RC" value="Should be in getScope method" />
@@ -168,22 +168,22 @@
             <node concept="2OqwBi" id="70qA1hy$wwZ" role="2Oq$k0">
               <node concept="2OqwBi" id="70qA1hy$wx0" role="2Oq$k0">
                 <node concept="1YBJjd" id="70qA1hy$wx9" role="2Oq$k0">
-                  <reference role="1YBMHb" target="8077936094962911285" resolve="expr" />
+                  <ref role="1YBMHb" node="70qA1hy$wwP" resolve="expr" />
                 </node>
                 <node concept="2Xjw5R" id="70qA1hy$wx2" role="2OqNvi">
                   <node concept="1xMEDy" id="70qA1hy$wx3" role="1xVPHs">
                     <node concept="chp4Y" id="70qA1hy$wx4" role="ri$Ld">
-                      <reference role="cht4Q" target="1i04.1225194472830" resolve="ConceptMethodDeclaration" />
+                      <ref role="cht4Q" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
                     </node>
                   </node>
                 </node>
               </node>
               <node concept="3TrcHB" id="70qA1hy$wx5" role="2OqNvi">
-                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
             <node concept="liA8E" id="70qA1hy$wx6" role="2OqNvi">
-              <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+              <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="Xl_RD" id="70qA1hy$wx7" role="37wK5m">
                 <property role="Xl_RC" value="getScope" />
               </node>
@@ -194,7 +194,7 @@
     </node>
     <node concept="1YaCAy" id="70qA1hy$wwP" role="1YuTPh">
       <property role="TrG5h" value="expr" />
-      <reference role="1YaFvo" target="genb.8077936094962911282" resolve="ParentScope" />
+      <ref role="1YaFvo" to="genb:70qA1hy$wwM" resolve="ParentScope" />
     </node>
   </node>
   <node concept="1YbPZF" id="70qA1hy$A3R">
@@ -204,14 +204,14 @@
         <node concept="mw_s8" id="70qA1hy$A55" role="1ZfhKB">
           <node concept="2c44tf" id="70qA1hy$A56" role="mwGJk">
             <node concept="3uibUv" id="70qA1hy$A5a" role="2c44tc">
-              <reference role="3uigEE" target="o8zo.3734116213129862372" resolve="Scope" />
+              <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="70qA1hy$A54" role="1ZfhK$">
           <node concept="1Z2H0r" id="70qA1hy$A4j" role="mwGJk">
             <node concept="1YBJjd" id="70qA1hy$A4l" role="1Z2MuG">
-              <reference role="1YBMHb" target="8077936094962934009" resolve="scope" />
+              <ref role="1YBMHb" node="70qA1hy$A3T" resolve="scope" />
             </node>
           </node>
         </node>
@@ -219,7 +219,7 @@
     </node>
     <node concept="1YaCAy" id="70qA1hy$A3T" role="1YuTPh">
       <property role="TrG5h" value="scope" />
-      <reference role="1YaFvo" target="genb.8077936094962911282" resolve="ParentScope" />
+      <ref role="1YaFvo" to="genb:70qA1hy$wwM" resolve="ParentScope" />
     </node>
   </node>
   <node concept="18kY7G" id="70qA1hy$CJx">
@@ -234,7 +234,7 @@
         <node concept="3clFbS" id="70qA1hy$CJB" role="3clFbx">
           <node concept="2MkqsV" id="70qA1hy$CJC" role="3cqZAp">
             <node concept="1YBJjd" id="70qA1hy$CJR" role="2OEOjV">
-              <reference role="1YBMHb" target="8077936094962944995" resolve="expr" />
+              <ref role="1YBMHb" node="70qA1hy$CJz" resolve="expr" />
             </node>
             <node concept="Xl_RD" id="70qA1hy$CJE" role="2MkJ7o">
               <property role="Xl_RC" value="Should be in getScope method" />
@@ -246,22 +246,22 @@
             <node concept="2OqwBi" id="70qA1hy$CJH" role="2Oq$k0">
               <node concept="2OqwBi" id="70qA1hy$CJI" role="2Oq$k0">
                 <node concept="1YBJjd" id="70qA1hy$CJS" role="2Oq$k0">
-                  <reference role="1YBMHb" target="8077936094962944995" resolve="expr" />
+                  <ref role="1YBMHb" node="70qA1hy$CJz" resolve="expr" />
                 </node>
                 <node concept="2Xjw5R" id="70qA1hy$CJK" role="2OqNvi">
                   <node concept="1xMEDy" id="70qA1hy$CJL" role="1xVPHs">
                     <node concept="chp4Y" id="70qA1hy$CJM" role="ri$Ld">
-                      <reference role="cht4Q" target="1i04.1225194472830" resolve="ConceptMethodDeclaration" />
+                      <ref role="cht4Q" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
                     </node>
                   </node>
                 </node>
               </node>
               <node concept="3TrcHB" id="70qA1hy$CJN" role="2OqNvi">
-                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
             <node concept="liA8E" id="70qA1hy$CJO" role="2OqNvi">
-              <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+              <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="Xl_RD" id="70qA1hy$CJP" role="37wK5m">
                 <property role="Xl_RC" value="getScope" />
               </node>
@@ -272,7 +272,7 @@
     </node>
     <node concept="1YaCAy" id="70qA1hy$CJz" role="1YuTPh">
       <property role="TrG5h" value="expr" />
-      <reference role="1YaFvo" target="genb.8077936094962944991" resolve="ComeFromExpression" />
+      <ref role="1YaFvo" to="genb:70qA1hy$CJv" resolve="ComeFromExpression" />
     </node>
   </node>
   <node concept="1YbPZF" id="70qA1hy$CJT">
@@ -287,7 +287,7 @@
         <node concept="mw_s8" id="70qA1hy$CKn" role="1ZfhK$">
           <node concept="1Z2H0r" id="70qA1hy$CJX" role="mwGJk">
             <node concept="1YBJjd" id="70qA1hy$CJZ" role="1Z2MuG">
-              <reference role="1YBMHb" target="8077936094962945019" resolve="expr" />
+              <ref role="1YBMHb" node="70qA1hy$CJV" resolve="expr" />
             </node>
           </node>
         </node>
@@ -295,7 +295,7 @@
     </node>
     <node concept="1YaCAy" id="70qA1hy$CJV" role="1YuTPh">
       <property role="TrG5h" value="expr" />
-      <reference role="1YaFvo" target="genb.8077936094962944991" resolve="ComeFromExpression" />
+      <ref role="1YaFvo" to="genb:70qA1hy$CJv" resolve="ComeFromExpression" />
     </node>
   </node>
   <node concept="18kY7G" id="70qA1hy$IDR">
@@ -310,7 +310,7 @@
         <node concept="3clFbS" id="70qA1hy$IDX" role="3clFbx">
           <node concept="2MkqsV" id="70qA1hy$IDY" role="3cqZAp">
             <node concept="1YBJjd" id="70qA1hy$IDZ" role="2OEOjV">
-              <reference role="1YBMHb" target="8077936094962969209" resolve="expr" />
+              <ref role="1YBMHb" node="70qA1hy$IDT" resolve="expr" />
             </node>
             <node concept="Xl_RD" id="70qA1hy$IE0" role="2MkJ7o">
               <property role="Xl_RC" value="Should be in getScope method" />
@@ -322,22 +322,22 @@
             <node concept="2OqwBi" id="70qA1hy$IE3" role="2Oq$k0">
               <node concept="2OqwBi" id="70qA1hy$IE4" role="2Oq$k0">
                 <node concept="1YBJjd" id="70qA1hy$IE5" role="2Oq$k0">
-                  <reference role="1YBMHb" target="8077936094962969209" resolve="expr" />
+                  <ref role="1YBMHb" node="70qA1hy$IDT" resolve="expr" />
                 </node>
                 <node concept="2Xjw5R" id="70qA1hy$IE6" role="2OqNvi">
                   <node concept="1xMEDy" id="70qA1hy$IE7" role="1xVPHs">
                     <node concept="chp4Y" id="70qA1hy$IE8" role="ri$Ld">
-                      <reference role="cht4Q" target="1i04.1225194472830" resolve="ConceptMethodDeclaration" />
+                      <ref role="cht4Q" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
                     </node>
                   </node>
                 </node>
               </node>
               <node concept="3TrcHB" id="70qA1hy$IE9" role="2OqNvi">
-                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
             <node concept="liA8E" id="70qA1hy$IEa" role="2OqNvi">
-              <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+              <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="Xl_RD" id="70qA1hy$IEb" role="37wK5m">
                 <property role="Xl_RC" value="getScope" />
               </node>
@@ -351,7 +351,7 @@
           <node concept="3Tqbb2" id="70qA1hy$IEz" role="1tU5fm" />
           <node concept="2OqwBi" id="70qA1hy$IFq" role="33vP2m">
             <node concept="1YBJjd" id="70qA1hy$IF5" role="2Oq$k0">
-              <reference role="1YBMHb" target="8077936094962969209" resolve="expr" />
+              <ref role="1YBMHb" node="70qA1hy$IDT" resolve="expr" />
             </node>
             <node concept="3JvlWi" id="70qA1hy$IFv" role="2OqNvi" />
           </node>
@@ -364,7 +364,7 @@
               <property role="Xl_RC" value="Parameter should be subtype of Scope or node&lt;&gt; or sequence&lt;node&lt;&gt;&gt;" />
             </node>
             <node concept="1YBJjd" id="70qA1hy$IHb" role="2OEOjV">
-              <reference role="1YBMHb" target="8077936094962969209" resolve="expr" />
+              <ref role="1YBMHb" node="70qA1hy$IDT" resolve="expr" />
             </node>
           </node>
         </node>
@@ -373,7 +373,7 @@
             <node concept="22lmx$" id="70qA1hy$IGV" role="1eOMHV">
               <node concept="3JuTUA" id="70qA1hy$IGY" role="3uHU7w">
                 <node concept="37vLTw" id="3GM_nagTxgn" role="3JuY14">
-                  <reference role="3cqZAo" target="8077936094962969250" resolve="type" />
+                  <ref role="3cqZAo" node="70qA1hy$IEy" resolve="type" />
                 </node>
                 <node concept="2c44tf" id="70qA1hy$IH2" role="3JuZjQ">
                   <node concept="A3Dl8" id="70qA1hy$IH4" role="2c44tc">
@@ -384,17 +384,17 @@
               <node concept="22lmx$" id="70qA1hy$IGm" role="3uHU7B">
                 <node concept="3JuTUA" id="70qA1hy$IFU" role="3uHU7B">
                   <node concept="37vLTw" id="3GM_nagTx4p" role="3JuY14">
-                    <reference role="3cqZAo" target="8077936094962969250" resolve="type" />
+                    <ref role="3cqZAo" node="70qA1hy$IEy" resolve="type" />
                   </node>
                   <node concept="2c44tf" id="70qA1hy$IFY" role="3JuZjQ">
                     <node concept="3uibUv" id="70qA1hy$IG1" role="2c44tc">
-                      <reference role="3uigEE" target="o8zo.3734116213129862372" resolve="Scope" />
+                      <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
                     </node>
                   </node>
                 </node>
                 <node concept="3JuTUA" id="70qA1hy$IGp" role="3uHU7w">
                   <node concept="37vLTw" id="3GM_nagTBiS" role="3JuY14">
-                    <reference role="3cqZAo" target="8077936094962969250" resolve="type" />
+                    <ref role="3cqZAo" node="70qA1hy$IEy" resolve="type" />
                   </node>
                   <node concept="2c44tf" id="70qA1hy$IGt" role="3JuZjQ">
                     <node concept="3Tqbb2" id="70qA1hy$IGA" role="2c44tc" />
@@ -408,7 +408,7 @@
     </node>
     <node concept="1YaCAy" id="70qA1hy$IDT" role="1YuTPh">
       <property role="TrG5h" value="expr" />
-      <reference role="1YaFvo" target="genb.8077936094962850237" resolve="CompositeWithParentScopeExpression" />
+      <ref role="1YaFvo" to="genb:70qA1hy$hAX" resolve="CompositeWithParentScopeExpression" />
     </node>
   </node>
   <node concept="1YbPZF" id="70qA1hy$IEd">
@@ -418,14 +418,14 @@
         <node concept="mw_s8" id="70qA1hy$IEh" role="1ZfhKB">
           <node concept="2c44tf" id="70qA1hy$IEi" role="mwGJk">
             <node concept="3uibUv" id="70qA1hy$IEj" role="2c44tc">
-              <reference role="3uigEE" target="o8zo.3734116213129862372" resolve="Scope" />
+              <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="70qA1hy$IEk" role="1ZfhK$">
           <node concept="1Z2H0r" id="70qA1hy$IEl" role="mwGJk">
             <node concept="1YBJjd" id="70qA1hy$IEn" role="1Z2MuG">
-              <reference role="1YBMHb" target="8077936094962969231" resolve="scope" />
+              <ref role="1YBMHb" node="70qA1hy$IEf" resolve="scope" />
             </node>
           </node>
         </node>
@@ -433,7 +433,7 @@
     </node>
     <node concept="1YaCAy" id="70qA1hy$IEf" role="1YuTPh">
       <property role="TrG5h" value="scope" />
-      <reference role="1YaFvo" target="genb.8077936094962850237" resolve="CompositeWithParentScopeExpression" />
+      <ref role="1YaFvo" to="genb:70qA1hy$hAX" resolve="CompositeWithParentScopeExpression" />
     </node>
   </node>
 </model>

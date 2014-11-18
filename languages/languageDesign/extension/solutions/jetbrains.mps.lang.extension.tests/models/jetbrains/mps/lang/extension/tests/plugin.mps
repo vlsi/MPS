@@ -150,22 +150,22 @@
   <node concept="vrV6u" id="66AaOfxlmO2">
     <property role="20vvCb" value="testExtensionPoint" />
     <node concept="3uibUv" id="66AaOfxlmO4" role="luc8K">
-      <reference role="3uigEE" target="7036359038356246776" resolve="TestObject" />
+      <ref role="3uigEE" node="66AaOfxll3S" resolve="TestObject" />
     </node>
   </node>
   <node concept="vrV6s" id="66AaOfxlmOy">
-    <reference role="vrV6t" target="7036359038356253954" resolve="testExtensionPoint" />
+    <ref role="vrV6t" node="66AaOfxlmO2" resolve="testExtensionPoint" />
     <node concept="20Xmnq" id="66AaOfxlmOB" role="20Xmmv">
       <property role="TrG5h" value="myTestObject" />
       <node concept="3uibUv" id="66AaOfxlmOD" role="20Xmnu">
-        <reference role="3uigEE" target="7036359038356246776" resolve="TestObject" />
+        <ref role="3uigEE" node="66AaOfxll3S" resolve="TestObject" />
       </node>
     </node>
     <node concept="lufDu" id="66AaOfxlmOz" role="luc8C">
       <node concept="3clFbS" id="66AaOfxlmO$" role="2VODD2">
         <node concept="3clFbF" id="66AaOfxloSO" role="3cqZAp">
           <node concept="20Xmnt" id="66AaOfxloSP" role="3clFbG">
-            <reference role="20Xmns" target="7036359038356253991" resolve="myTestObject" />
+            <ref role="20Xmns" node="66AaOfxlmOB" resolve="myTestObject" />
           </node>
         </node>
       </node>
@@ -175,11 +175,11 @@
         <node concept="3clFbF" id="66AaOfxlmOF" role="3cqZAp">
           <node concept="37vLTI" id="66AaOfxlmOJ" role="3clFbG">
             <node concept="20Xmnt" id="66AaOfxlmOG" role="37vLTJ">
-              <reference role="20Xmns" target="7036359038356253991" resolve="myTestObject" />
+              <ref role="20Xmns" node="66AaOfxlmOB" resolve="myTestObject" />
             </node>
             <node concept="2ShNRf" id="66AaOfxlmOM" role="37vLTx">
               <node concept="1pGfFk" id="66AaOfxloSN" role="2ShVmc">
-                <reference role="37wK5l" target="7036359038356246778" resolve="TestObject" />
+                <ref role="37wK5l" node="66AaOfxll3U" resolve="TestObject" />
               </node>
             </node>
           </node>
@@ -191,10 +191,10 @@
             </node>
             <node concept="2OqwBi" id="2hA_2dv2AgF" role="37vLTJ">
               <node concept="20Xmnt" id="2hA_2dv2AgC" role="2Oq$k0">
-                <reference role="20Xmns" target="7036359038356253991" resolve="myTestObject" />
+                <ref role="20Xmns" node="66AaOfxlmOB" resolve="myTestObject" />
               </node>
               <node concept="2S8uIT" id="2hA_2dv2AgL" role="2OqNvi">
-                <reference role="2S8YL0" target="7036359038356271907" resolve="value" />
+                <ref role="2S8YL0" node="66AaOfxlrcz" resolve="value" />
               </node>
             </node>
           </node>
@@ -210,10 +210,10 @@
             </node>
             <node concept="2OqwBi" id="2hA_2dv2AgZ" role="37vLTJ">
               <node concept="20Xmnt" id="2hA_2dv2AgW" role="2Oq$k0">
-                <reference role="20Xmns" target="7036359038356253991" resolve="myTestObject" />
+                <ref role="20Xmns" node="66AaOfxlmOB" resolve="myTestObject" />
               </node>
               <node concept="2S8uIT" id="2hA_2dv2Ah4" role="2OqNvi">
-                <reference role="2S8YL0" target="7036359038356271889" resolve="shutDown" />
+                <ref role="2S8YL0" node="66AaOfxlrch" resolve="shutDown" />
               </node>
             </node>
           </node>
@@ -222,7 +222,7 @@
           <node concept="37vLTI" id="2hA_2dv2Aho" role="3clFbG">
             <node concept="10Nm6u" id="2hA_2dv2Ahr" role="37vLTx" />
             <node concept="20Xmnt" id="2hA_2dv2Ahe" role="37vLTJ">
-              <reference role="20Xmns" target="7036359038356253991" resolve="myTestObject" />
+              <ref role="20Xmns" node="66AaOfxlmOB" resolve="myTestObject" />
             </node>
           </node>
         </node>
@@ -232,7 +232,7 @@
   <node concept="vrV6u" id="2hA_2dv2TXx">
     <property role="20vvCb" value="lazyTestExtensionPoint" />
     <node concept="3uibUv" id="2hA_2dv2TXP" role="luc8K">
-      <reference role="3uigEE" target="2622946712629256035" resolve="LazyTestObject" />
+      <ref role="3uigEE" node="2hA_2dv2TXz" resolve="LazyTestObject" />
     </node>
   </node>
   <node concept="312cEu" id="2hA_2dv2TXz">
@@ -242,7 +242,7 @@
       <property role="TrG5h" value="INSTANCE" />
       <node concept="3Tm1VV" id="2hA_2dv2Upk" role="1B3o_S" />
       <node concept="3uibUv" id="2hA_2dv2TXG" role="1tU5fm">
-        <reference role="3uigEE" target="2622946712629256035" resolve="LazyTestObject" />
+        <ref role="3uigEE" node="2hA_2dv2TXz" resolve="LazyTestObject" />
       </node>
     </node>
     <node concept="3clFbW" id="2hA_2dv2TX_" role="jymVt">
@@ -253,7 +253,7 @@
           <node concept="37vLTI" id="2hA_2dv2TXL" role="3clFbG">
             <node concept="Xjq3P" id="2hA_2dv2TXO" role="37vLTx" />
             <node concept="37vLTw" id="2BHiRxeooKT" role="37vLTJ">
-              <reference role="3cqZAo" target="2622946712629256041" resolve="INSTANCE" />
+              <ref role="3cqZAo" node="2hA_2dv2TXD" resolve="INSTANCE" />
             </node>
           </node>
         </node>
@@ -261,13 +261,13 @@
     </node>
   </node>
   <node concept="vrV6s" id="2hA_2dv2TXQ">
-    <reference role="vrV6t" target="2622946712629256033" resolve="lazyTestExtensionPoint" />
+    <ref role="vrV6t" node="2hA_2dv2TXx" resolve="lazyTestExtensionPoint" />
     <node concept="lufDu" id="2hA_2dv2TXR" role="luc8C">
       <node concept="3clFbS" id="2hA_2dv2TXS" role="2VODD2">
         <node concept="3clFbF" id="2hA_2dv2TXT" role="3cqZAp">
           <node concept="2ShNRf" id="2hA_2dv2TXU" role="3clFbG">
             <node concept="1pGfFk" id="2hA_2dv2TXW" role="2ShVmc">
-              <reference role="37wK5l" target="2622946712629256037" resolve="LazyTestObject" />
+              <ref role="37wK5l" node="2hA_2dv2TX_" resolve="LazyTestObject" />
             </node>
           </node>
         </node>
@@ -277,11 +277,11 @@
   <node concept="vrV6u" id="3R7uD3D6CzJ">
     <property role="20vvCb" value="multiExtensionPoint" />
     <node concept="3uibUv" id="3R7uD3D6CzL" role="luc8K">
-      <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+      <ref role="3uigEE" to="e2lb:~String" resolve="String" />
     </node>
   </node>
   <node concept="vrV6s" id="3R7uD3D6CzO">
-    <reference role="vrV6t" target="4451661519483734255" resolve="multiExtensionPoint" />
+    <ref role="vrV6t" node="3R7uD3D6CzJ" resolve="multiExtensionPoint" />
     <node concept="lufDu" id="3R7uD3D6CzP" role="luc8C">
       <node concept="3clFbS" id="3R7uD3D6CzQ" role="2VODD2">
         <node concept="3clFbF" id="3R7uD3D6CzR" role="3cqZAp">
@@ -293,7 +293,7 @@
     </node>
   </node>
   <node concept="vrV6s" id="3R7uD3D6CzT">
-    <reference role="vrV6t" target="4451661519483734255" resolve="multiExtensionPoint" />
+    <ref role="vrV6t" node="3R7uD3D6CzJ" resolve="multiExtensionPoint" />
     <node concept="lufDu" id="3R7uD3D6CzU" role="luc8C">
       <node concept="3clFbS" id="3R7uD3D6CzV" role="2VODD2">
         <node concept="3clFbF" id="3R7uD3D6CzW" role="3cqZAp">

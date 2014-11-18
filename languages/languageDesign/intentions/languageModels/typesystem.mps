@@ -115,23 +115,23 @@
         <node concept="3cpWsn" id="hmSkZ6i" role="3cpWs9">
           <property role="TrG5h" value="applicableConcept" />
           <node concept="3Tqbb2" id="hmSkZ6j" role="1tU5fm">
-            <reference role="ehGHo" target="tpce.1169125787135" resolve="AbstractConceptDeclaration" />
+            <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
           </node>
           <node concept="2OqwBi" id="hxx$XGj" role="33vP2m">
             <node concept="2OqwBi" id="hxx$O6U" role="2Oq$k0">
               <node concept="1YBJjd" id="hmSkZ6m" role="2Oq$k0">
-                <reference role="1YBMHb" target="1192798450080" resolve="conceptFunctionParameter_node" />
+                <ref role="1YBMHb" node="hmSkZ6w" resolve="conceptFunctionParameter_node" />
               </node>
               <node concept="2Xjw5R" id="hmSkZ6n" role="2OqNvi">
                 <node concept="1xMEDy" id="hmSkZ6o" role="1xVPHs">
                   <node concept="chp4Y" id="73NdifFOt_k" role="ri$Ld">
-                    <reference role="cht4Q" target="tp3j.2522969319638091381" resolve="BaseIntentionDeclaration" />
+                    <ref role="cht4Q" to="tp3j:2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="3TrEf2" id="hmStUaa" role="2OqNvi">
-              <reference role="3Tt5mk" target="tp3j.2522969319638198290" />
+              <ref role="3Tt5mk" to="tp3j:2c3oNEsfAwi" />
             </node>
           </node>
         </node>
@@ -140,7 +140,7 @@
         <node concept="mw_s8" id="hNV1m2_" role="1ZfhK$">
           <node concept="1Z2H0r" id="hNV1m2B" role="mwGJk">
             <node concept="1YBJjd" id="hmSkZ6v" role="1Z2MuG">
-              <reference role="1YBMHb" target="1192798450080" resolve="conceptFunctionParameter_node" />
+              <ref role="1YBMHb" node="hmSkZ6w" resolve="conceptFunctionParameter_node" />
             </node>
           </node>
         </node>
@@ -150,7 +150,7 @@
               <node concept="2c44tb" id="hr9IZ$f" role="lGtFl">
                 <property role="2qtEX8" value="concept" />
                 <node concept="37vLTw" id="3GM_nagT$MB" role="2c44t1">
-                  <reference role="3cqZAo" target="1192798450066" resolve="applicableConcept" />
+                  <ref role="3cqZAo" node="hmSkZ6i" resolve="applicableConcept" />
                 </node>
               </node>
             </node>
@@ -160,7 +160,7 @@
     </node>
     <node concept="1YaCAy" id="hmSkZ6w" role="1YuTPh">
       <property role="TrG5h" value="conceptFunctionParameter_node" />
-      <reference role="1YaFvo" target="tp3j.1192796902958" resolve="ConceptFunctionParameter_node" />
+      <ref role="1YaFvo" to="tp3j:hmSf5oI" resolve="ConceptFunctionParameter_node" />
     </node>
   </node>
   <node concept="1YbPZF" id="i38ZC2z">
@@ -170,16 +170,16 @@
         <node concept="3cpWsn" id="i38ZRQa" role="3cpWs9">
           <property role="TrG5h" value="intention" />
           <node concept="3Tqbb2" id="i38ZRQb" role="1tU5fm">
-            <reference role="ehGHo" target="tp3j.1240395258925" resolve="ParameterizedIntentionDeclaration" />
+            <ref role="ehGHo" to="tp3j:i3dkpKH" resolve="ParameterizedIntentionDeclaration" />
           </node>
           <node concept="2OqwBi" id="i38ZXDS" role="33vP2m">
             <node concept="1YBJjd" id="i38ZX$v" role="2Oq$k0">
-              <reference role="1YBMHb" target="1240322703525" resolve="parameter" />
+              <ref role="1YBMHb" node="i38ZC2_" resolve="parameter" />
             </node>
             <node concept="2Xjw5R" id="i38ZY8t" role="2OqNvi">
               <node concept="1xMEDy" id="i38ZY8u" role="1xVPHs">
                 <node concept="chp4Y" id="i3dm$Mf" role="ri$Ld">
-                  <reference role="cht4Q" target="tp3j.1240395258925" resolve="ParameterizedIntentionDeclaration" />
+                  <ref role="cht4Q" to="tp3j:i3dkpKH" resolve="ParameterizedIntentionDeclaration" />
                 </node>
               </node>
             </node>
@@ -190,7 +190,7 @@
         <node concept="mw_s8" id="i38ZHAt" role="1ZfhK$">
           <node concept="1Z2H0r" id="i38ZENB" role="mwGJk">
             <node concept="1YBJjd" id="i38ZFkn" role="1Z2MuG">
-              <reference role="1YBMHb" target="1240322703525" resolve="parameter" />
+              <ref role="1YBMHb" node="i38ZC2_" resolve="parameter" />
             </node>
           </node>
         </node>
@@ -198,14 +198,14 @@
           <node concept="2OqwBi" id="i3et8yM" role="mwGJk">
             <node concept="2OqwBi" id="i3et83H" role="2Oq$k0">
               <node concept="37vLTw" id="3GM_nagT$DT" role="2Oq$k0">
-                <reference role="3cqZAo" target="1240322768266" resolve="intention" />
+                <ref role="3cqZAo" node="i38ZRQa" resolve="intention" />
               </node>
               <node concept="3TrEf2" id="i3et8uo" role="2OqNvi">
-                <reference role="3Tt5mk" target="tp3j.1240395532443" />
+                <ref role="3Tt5mk" to="tp3j:i3dlsyr" />
               </node>
             </node>
             <node concept="3TrEf2" id="i3et8Vx" role="2OqNvi">
-              <reference role="3Tt5mk" target="tp3j.1240393479918" />
+              <ref role="3Tt5mk" to="tp3j:i3ddBrI" />
             </node>
           </node>
         </node>
@@ -213,7 +213,7 @@
     </node>
     <node concept="1YaCAy" id="i38ZC2_" role="1YuTPh">
       <property role="TrG5h" value="parameter" />
-      <reference role="1YaFvo" target="tp3j.1240322627579" resolve="IntentionParameter" />
+      <ref role="1YaFvo" to="tp3j:i38ZlvV" resolve="IntentionParameter" />
     </node>
   </node>
   <node concept="1YbPZF" id="38RcvkhOstk">
@@ -228,7 +228,7 @@
         <node concept="mw_s8" id="38RcvkhOsvp" role="1ZfhK$">
           <node concept="1Z2H0r" id="38RcvkhOsvj" role="mwGJk">
             <node concept="1YBJjd" id="38RcvkhOsvl" role="1Z2MuG">
-              <reference role="1YBMHb" target="3618415754251192150" resolve="node" />
+              <ref role="1YBMHb" node="38RcvkhOstm" resolve="node" />
             </node>
           </node>
         </node>
@@ -236,7 +236,7 @@
     </node>
     <node concept="1YaCAy" id="38RcvkhOstm" role="1YuTPh">
       <property role="TrG5h" value="node" />
-      <reference role="1YaFvo" target="tp3j.3618415754251192144" resolve="ConceptFunctionParameter_childNode" />
+      <ref role="1YaFvo" to="tp3j:38RcvkhOstg" resolve="ConceptFunctionParameter_childNode" />
     </node>
   </node>
 </model>

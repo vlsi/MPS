@@ -47,74 +47,74 @@
   <node concept="1TIwiD" id="57sEyAnjUst">
     <property role="TrG5h" value="Canvas" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="57sEyAnjZD7" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="shapes" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="5898776707557474657" resolve="Shape" />
+      <ref role="20lvS9" node="57sEyAnjW5x" resolve="Shape" />
     </node>
     <node concept="PrWs8" id="57sEyAnjW5v" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="39piTakTjiI" role="PzmwI">
-      <reference role="PrY4T" target="4fqr.4666195181811081429" resolve="IMainClass" />
+      <ref role="PrY4T" to="4fqr:431DWIovi3l" resolve="IMainClass" />
     </node>
   </node>
   <node concept="1TIwiD" id="57sEyAnjW5x">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="Shape" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3CF0obv99ac" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="color" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="4191445539799302575" resolve="ColorReference" />
+      <ref role="20lvS9" node="3CF0obv8w6J" resolve="ColorReference" />
     </node>
   </node>
   <node concept="1TIwiD" id="57sEyAnjW6o">
     <property role="TrG5h" value="Circle" />
     <property role="34LRSv" value="circle" />
-    <reference role="1TJDcQ" target="5898776707557474657" resolve="Shape" />
+    <ref role="1TJDcQ" node="57sEyAnjW5x" resolve="Shape" />
     <node concept="1TJgyi" id="57sEyAnjW6p" role="1TKVEl">
       <property role="TrG5h" value="x" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="57sEyAnjW6r" role="1TKVEl">
       <property role="TrG5h" value="y" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="57sEyAnjW6u" role="1TKVEl">
       <property role="TrG5h" value="radius" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="57sEyAnjW6y">
     <property role="TrG5h" value="Square" />
     <property role="34LRSv" value="square" />
-    <reference role="1TJDcQ" target="5898776707557474657" resolve="Shape" />
+    <ref role="1TJDcQ" node="57sEyAnjW5x" resolve="Shape" />
     <node concept="1TJgyi" id="57sEyAnjW6z" role="1TKVEl">
       <property role="TrG5h" value="upperLeftX" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="57sEyAnjW6_" role="1TKVEl">
       <property role="TrG5h" value="upperLeftY" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="57sEyAnjW6C" role="1TKVEl">
       <property role="TrG5h" value="size" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="3CF0obv8w6J">
     <property role="TrG5h" value="ColorReference" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3CF0obv8waq" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="color" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1070462154015" resolve="StaticFieldDeclaration" />
+      <ref role="20lvS9" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
     </node>
   </node>
 </model>

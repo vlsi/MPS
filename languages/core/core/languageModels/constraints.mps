@@ -111,12 +111,12 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="hDMFLMr">
-    <reference role="1M2myG" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1M2myG" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1M2fIO" id="hDMFLVS">
-    <reference role="1M2myG" target="tpck.1196978630214" resolve="IResolveInfo" />
+    <ref role="1M2myG" to="tpck:hqLv6T6" resolve="IResolveInfo" />
     <node concept="EnEH3" id="hDMFLVT" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1196978656277" resolve="resolveInfo" />
+      <ref role="EomxK" to="tpck:hqLvdgl" resolve="resolveInfo" />
       <node concept="Eqf_E" id="hDMFLVU" role="EtsB7">
         <node concept="3clFbS" id="hDMFLVV" role="2VODD2">
           <node concept="3cpWs6" id="hDMFLVW" role="3cqZAp">
@@ -125,7 +125,7 @@
                 <node concept="EsrRn" id="hDMFLVZ" role="2JrQYb" />
               </node>
               <node concept="liA8E" id="hDMFLW0" role="2OqNvi">
-                <reference role="37wK5l" target="ec5l.~SNode%dgetName()%cjava%dlang%dString" resolve="getName" />
+                <ref role="37wK5l" to="ec5l:~SNode.getName():java.lang.String" resolve="getName" />
               </node>
             </node>
           </node>
@@ -144,9 +144,9 @@
   </node>
   <node concept="1M2fIO" id="1Ldwld44Jsf">
     <property role="3GE5qa" value="attributes" />
-    <reference role="1M2myG" target="tpck.3364660638048049750" resolve="PropertyAttribute" />
+    <ref role="1M2myG" to="tpck:2ULFgo8_XDm" resolve="PropertyAttribute" />
     <node concept="EnEH3" id="1Ldwld44JsG" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1757699476691236117" resolve="propertyName" />
+      <ref role="EomxK" to="tpck:1x$A_M24zkl" resolve="propertyName" />
       <node concept="QB0g5" id="1Ldwld44JsI" role="QCWH9">
         <node concept="3clFbS" id="1Ldwld44JsJ" role="2VODD2">
           <node concept="3clFbF" id="1Ldwld44Lav" role="3cqZAp">
@@ -163,7 +163,7 @@
                   <node concept="FGMqu" id="1Ldwld44MgT" role="2OqNvi" />
                 </node>
                 <node concept="2qgKlT" id="1Ldwld46pPP" role="2OqNvi">
-                  <reference role="37wK5l" target="tpcn.1213877394546" resolve="getPropertyDeclarations" />
+                  <ref role="37wK5l" to="tpcn:hEwILLM" resolve="getPropertyDeclarations" />
                 </node>
               </node>
               <node concept="2HwmR7" id="1Ldwld44T57" role="2OqNvi">
@@ -173,10 +173,10 @@
                       <node concept="17R0WA" id="7jWJVbGs4TW" role="3clFbG">
                         <node concept="2OqwBi" id="1Ldwld44Tuc" role="3uHU7B">
                           <node concept="37vLTw" id="1Ldwld44Tms" role="2Oq$k0">
-                            <reference role="3cqZAo" target="2039428400893104459" resolve="it" />
+                            <ref role="3cqZAo" node="1Ldwld44T5b" resolve="it" />
                           </node>
                           <node concept="3TrcHB" id="1Ldwld44UAZ" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
                         <node concept="1Wqviy" id="1Ldwld44WmF" role="3uHU7w" />
@@ -197,9 +197,9 @@
   </node>
   <node concept="1M2fIO" id="1Ldwld47KqR">
     <property role="3GE5qa" value="attributes" />
-    <reference role="1M2myG" target="tpck.3364660638048049745" resolve="LinkAttribute" />
+    <ref role="1M2myG" to="tpck:2ULFgo8_XDh" resolve="LinkAttribute" />
     <node concept="EnEH3" id="1Ldwld47KqS" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1757699476691236116" resolve="linkRole" />
+      <ref role="EomxK" to="tpck:1x$A_M24zkk" resolve="linkRole" />
       <node concept="QB0g5" id="1Ldwld47KqU" role="QCWH9">
         <node concept="3clFbS" id="1Ldwld47KqV" role="2VODD2">
           <node concept="3clFbF" id="1Ldwld47KTU" role="3cqZAp">
@@ -216,7 +216,7 @@
                   <node concept="FGMqu" id="1Ldwld47KU3" role="2OqNvi" />
                 </node>
                 <node concept="2qgKlT" id="1Ldwld47WBz" role="2OqNvi">
-                  <reference role="37wK5l" target="tpcn.1213877394496" resolve="getReferenceLinkDeclarations" />
+                  <ref role="37wK5l" to="tpcn:hEwILL0" resolve="getReferenceLinkDeclarations" />
                 </node>
               </node>
               <node concept="2HwmR7" id="1Ldwld47KU5" role="2OqNvi">
@@ -227,10 +227,10 @@
                         <node concept="1Wqviy" id="7jWJVbGs3Ut" role="3uHU7w" />
                         <node concept="2OqwBi" id="1Ldwld47KUa" role="3uHU7B">
                           <node concept="37vLTw" id="1Ldwld47KUb" role="2Oq$k0">
-                            <reference role="3cqZAo" target="2039428400893857423" resolve="it" />
+                            <ref role="3cqZAo" node="1Ldwld47KUf" resolve="it" />
                           </node>
                           <node concept="2qgKlT" id="3DPBBixs2S6" role="2OqNvi">
-                            <reference role="37wK5l" target="tpcn.1213877254542" resolve="getGenuineRole" />
+                            <ref role="37wK5l" to="tpcn:hEwIfAe" resolve="getGenuineRole" />
                           </node>
                         </node>
                       </node>

@@ -86,7 +86,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="7BASdL19Ywy">
-    <reference role="13h7C2" target="911s.3961775458390517588" resolve="PropertiesFile" />
+    <ref role="13h7C2" to="911s:3rV3sBXeytk" resolve="PropertiesFile" />
     <node concept="13hLZK" id="7BASdL19Ywz" role="13h7CW">
       <node concept="3clFbS" id="7BASdL19Yw$" role="2VODD2" />
     </node>
@@ -94,7 +94,7 @@
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="getUnitName" />
       <property role="13i0it" value="false" />
-      <reference role="13i0hy" target="if8w.5067982036267369911" resolve="getUnitName" />
+      <ref role="13i0hy" to="if8w:4pl5GY7LKmR" resolve="getUnitName" />
       <node concept="3Tm1VV" id="7BASdL19YwA" role="1B3o_S" />
       <node concept="3clFbS" id="7BASdL19YwB" role="3clF47">
         <node concept="3clFbF" id="7BASdL1a6kv" role="3cqZAp">
@@ -102,19 +102,19 @@
             <node concept="2OqwBi" id="7BASdL1a6EW" role="3uHU7w">
               <node concept="13iPFW" id="7BASdL1a6ET" role="2Oq$k0" />
               <node concept="3TrcHB" id="7BASdL1a6F1" role="2OqNvi">
-                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
             <node concept="3cpWs3" id="7BASdL1a6EK" role="3uHU7B">
               <node concept="2YIFZM" id="2n9zn0CqMMU" role="3uHU7B">
-                <reference role="37wK5l" target="unno.9160302885342508446" resolve="getModelLongName" />
-                <reference role="1Pybhc" target="unno.2089287822043606602" resolve="SNodeOperations" />
+                <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />
+                <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
                 <node concept="2OqwBi" id="2n9zn0CqMMV" role="37wK5m">
                   <node concept="2JrnkZ" id="2n9zn0CqMMW" role="2Oq$k0">
                     <node concept="13iPFW" id="2n9zn0CqMMX" role="2JrQYb" />
                   </node>
                   <node concept="liA8E" id="2n9zn0CqMMY" role="2OqNvi">
-                    <reference role="37wK5l" target="ec5l.~SNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolve="getModel" />
+                    <ref role="37wK5l" to="ec5l:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
                   </node>
                 </node>
               </node>

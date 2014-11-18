@@ -78,27 +78,27 @@
     <property role="_Wzho" value="Migrate IModule casts to AbstractModule casts (run *after* SModule OpenAPI migration)" />
     <node concept="_XfAh" id="5cwJSvUV3nq" role="_YvDr">
       <property role="_XH9r" value="Migrate IModule casts to AbstractModule casts" />
-      <reference role="_XDHR" target="tpee.1070534934090" resolve="CastExpression" />
+      <ref role="_XDHR" to="tpee:f_0QFTa" resolve="CastExpression" />
       <node concept="_ZGcI" id="5cwJSvUV3ns" role="_XPhp">
         <node concept="3clFbS" id="5cwJSvUV3nu" role="2VODD2">
           <node concept="3clFbF" id="5cwJSvUVc2T" role="3cqZAp">
             <node concept="37vLTI" id="5cwJSvUVedS" role="3clFbG">
               <node concept="2OqwBi" id="5cwJSvUY_a8" role="37vLTJ">
                 <node concept="3TrEf2" id="5cwJSvUYCpG" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1107535924139" />
+                  <ref role="3Tt5mk" to="tpee:g7uigIF" />
                 </node>
                 <node concept="1PxgMI" id="5cwJSvUY$XX" role="2Oq$k0">
-                  <reference role="1PxNhF" target="tpee.1107535904670" resolve="ClassifierType" />
+                  <ref role="1PxNhF" to="tpee:g7uibYu" resolve="ClassifierType" />
                   <node concept="2OqwBi" id="5cwJSvUVca5" role="1PxMeX">
                     <node concept="3TrEf2" id="5cwJSvUVd8m" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpee.1070534934091" />
+                      <ref role="3Tt5mk" to="tpee:f_0QFTb" />
                     </node>
                     <node concept="_YI3z" id="5cwJSvUVc2S" role="2Oq$k0" />
                   </node>
                 </node>
               </node>
               <node concept="3B5_sB" id="5cwJSvUVesw" role="37vLTx">
-                <reference role="3B5MYn" target="vsqj.~AbstractModule" resolve="AbstractModule" />
+                <ref role="3B5MYn" to="vsqj:~AbstractModule" resolve="AbstractModule" />
               </node>
             </node>
           </node>

@@ -104,12 +104,12 @@
                 <property role="TrG5h" value="foo" />
                 <node concept="2eloPW" id="17MuFa5lcot" role="1tU5fm">
                   <property role="2ely0U" value="foo.bar" />
-                  <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                 </node>
                 <node concept="1nCR9W" id="17MuFa5lcr8" role="33vP2m">
                   <property role="1nD$Q0" value="baz.qux" />
                   <node concept="3uibUv" id="17MuFa5lcs0" role="2lIhxL">
-                    <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+                    <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                   </node>
                 </node>
               </node>
@@ -119,7 +119,7 @@
               <node concept="3clFbC" id="17MuFa5lvWn" role="3clFbw">
                 <node concept="10Nm6u" id="17MuFa5lvWW" role="3uHU7w" />
                 <node concept="37vLTw" id="17MuFa5lvUc" role="3uHU7B">
-                  <reference role="3cqZAo" target="1293230950168446497" resolve="foo" />
+                  <ref role="3cqZAo" node="17MuFa5lcox" resolve="foo" />
                 </node>
               </node>
             </node>

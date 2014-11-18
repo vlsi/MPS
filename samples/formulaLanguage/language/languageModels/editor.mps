@@ -107,54 +107,54 @@
     </language>
   </registry>
   <node concept="24kQdi" id="gbr$1sq">
-    <reference role="1XX52x" target="tpnk.1111784519527" resolve="Constant" />
+    <ref role="1XX52x" to="tpnk:gbrxntB" resolve="Constant" />
     <node concept="1xolST" id="gbr$qZd" role="2wV5jI">
       <property role="1xolSY" value="?constant?" />
     </node>
   </node>
   <node concept="24kQdi" id="gbr$xuw">
-    <reference role="1XX52x" target="tpnk.1111784312737" resolve="Expression" />
+    <ref role="1XX52x" to="tpnk:gbrw$Yx" resolve="Expression" />
     <node concept="1xolST" id="gbr$_sU" role="2wV5jI">
       <property role="1xolSY" value="?expression?" />
     </node>
   </node>
   <node concept="24kQdi" id="gbr$Chm">
-    <reference role="1XX52x" target="tpnk.1111784210516" resolve="Formula" />
+    <ref role="1XX52x" to="tpnk:gbrwc1k" resolve="Formula" />
     <node concept="1xolST" id="gbr$FZD" role="2wV5jI">
       <property role="1xolSY" value="?formula?" />
     </node>
   </node>
   <node concept="24kQdi" id="gbr$JKC">
-    <reference role="1XX52x" target="tpnk.1111784331004" resolve="Function" />
+    <ref role="1XX52x" to="tpnk:gbrwDrW" resolve="Function" />
     <node concept="1xolST" id="gbr$RTD" role="2wV5jI">
       <property role="1xolSY" value="?function?" />
     </node>
   </node>
   <node concept="24kQdi" id="gbr$YM5">
-    <reference role="1XX52x" target="tpnk.1111784391790" resolve="Reference" />
+    <ref role="1XX52x" to="tpnk:gbrwShI" resolve="Reference" />
     <node concept="1xolST" id="gbr_2Cs" role="2wV5jI">
       <property role="1xolSY" value="?reference?" />
     </node>
   </node>
   <node concept="24kQdi" id="gbr_7oT">
-    <reference role="1XX52x" target="tpnk.1111784926012" resolve="FloatingPointConstant" />
+    <ref role="1XX52x" to="tpnk:gbryUGW" resolve="FloatingPointConstant" />
     <node concept="3F0A7n" id="gcNkR8A" role="2wV5jI">
       <property role="1$x2rV" value="?.?" />
-      <reference role="1NtTu8" target="tpnk.1113257000626" resolve="value" />
+      <ref role="1NtTu8" to="tpnk:gcNirUM" resolve="value" />
       <node concept="VechU" id="hF4QVQl" role="3F10Kt">
         <property role="Vb096" value="blue" />
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="gbr_Cpi">
-    <reference role="1XX52x" target="tpnk.1111785030296" resolve="IfFunction" />
+    <ref role="1XX52x" to="tpnk:gbrzkao" resolve="IfFunction" />
     <node concept="3EZMnI" id="gbr_EMB" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="gbr_VxV" role="3EZMnx">
         <property role="3F0ifm" value="IF(" />
       </node>
       <node concept="3F1sOY" id="gbr_VxW" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111785044750" />
+        <ref role="1NtTu8" to="tpnk:gbrznGe" />
       </node>
       <node concept="3F0ifn" id="gbr_VxX" role="3EZMnx">
         <property role="3F0ifm" value="," />
@@ -163,7 +163,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gbr_VxY" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111785091720" />
+        <ref role="1NtTu8" to="tpnk:gbrzza8" />
       </node>
       <node concept="3F0ifn" id="gbr_VxZ" role="3EZMnx">
         <property role="3F0ifm" value="," />
@@ -172,7 +172,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gbr_Vy0" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111785124143" />
+        <ref role="1NtTu8" to="tpnk:gbrzF4J" />
       </node>
       <node concept="3F0ifn" id="gbr_Vy1" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -181,30 +181,30 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbrA6zA">
-    <reference role="1XX52x" target="tpnk.1111784858617" resolve="IntegerConstant" />
+    <ref role="1XX52x" to="tpnk:gbryEfT" resolve="IntegerConstant" />
     <node concept="3F0A7n" id="gbrAi11" role="2wV5jI">
       <property role="1$x2rV" value="0" />
-      <reference role="1NtTu8" target="tpnk.1111784874587" resolve="value" />
+      <ref role="1NtTu8" to="tpnk:gbryI9r" resolve="value" />
       <node concept="VechU" id="hF4QVQ1" role="3F10Kt">
         <property role="Vb096" value="blue" />
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="gbrArrk">
-    <reference role="1XX52x" target="tpnk.1111784562907" resolve="Operation" />
+    <ref role="1XX52x" to="tpnk:gbrxy3r" resolve="Operation" />
     <node concept="3EZMnI" id="gcSxIg4" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gcSxRG$" role="3EZMnx">
         <property role="1$x2rV" value="&lt;expression&gt;" />
-        <reference role="1NtTu8" target="tpnk.1111784613299" />
-        <reference role="1ERwB7" target="1154452994236" resolve="Operation_leftOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxImN" />
+        <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
       </node>
       <node concept="1xolST" id="gcSxRG_" role="3EZMnx">
         <property role="1xolSY" value=" " />
-        <reference role="1ERwB7" target="1154453497787" resolve="Operation_symbol_Actions" />
+        <ref role="1ERwB7" node="gNaMAuV" resolve="Operation_symbol_Actions" />
         <node concept="OXEIz" id="gWUPfY5" role="P5bDN">
           <node concept="UkePV" id="gWUPfY6" role="OY2wv">
-            <reference role="Ul1FP" target="tpnk.1111784562907" resolve="Operation" />
+            <ref role="Ul1FP" to="tpnk:gbrxy3r" resolve="Operation" />
           </node>
         </node>
       </node>
@@ -212,19 +212,19 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbrCfaV">
-    <reference role="1XX52x" target="tpnk.1111786301085" resolve="PlusOperation" />
+    <ref role="1XX52x" to="tpnk:gbrCaqt" resolve="PlusOperation" />
     <node concept="3EZMnI" id="gbrCon4" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbrCx79" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784613299" />
-        <reference role="1ERwB7" target="1154452994236" resolve="Operation_leftOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxImN" />
+        <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
       </node>
       <node concept="3F0ifn" id="gbrCx7a" role="3EZMnx">
         <property role="3F0ifm" value="+" />
-        <reference role="1ERwB7" target="1154453497787" resolve="Operation_symbol_Actions" />
+        <ref role="1ERwB7" node="gNaMAuV" resolve="Operation_symbol_Actions" />
         <node concept="OXEIz" id="gWUP4hJ" role="P5bDN">
           <node concept="UkePV" id="gWUP4hK" role="OY2wv">
-            <reference role="Ul1FP" target="tpnk.1111784562907" resolve="Operation" />
+            <ref role="Ul1FP" to="tpnk:gbrxy3r" resolve="Operation" />
           </node>
         </node>
         <node concept="VPxyj" id="hF4QVO$" role="3F10Kt">
@@ -232,26 +232,26 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gbrCx7b" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784647019" />
-        <reference role="1ERwB7" target="1154453098790" resolve="Operation_rightOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxQ_F" />
+        <ref role="1ERwB7" node="gNaL54A" resolve="Operation_rightOperand_Actions" />
       </node>
       <node concept="2iRfu4" id="i2IQBkE" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="gbrCBnm">
-    <reference role="1XX52x" target="tpnk.1111786398794" resolve="MinusOperation" />
+    <ref role="1XX52x" to="tpnk:gbrCyha" resolve="MinusOperation" />
     <node concept="3EZMnI" id="gbrCF1g" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbrCF1h" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784613299" />
-        <reference role="1ERwB7" target="1154452994236" resolve="Operation_leftOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxImN" />
+        <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
       </node>
       <node concept="3F0ifn" id="gbrCF1i" role="3EZMnx">
         <property role="3F0ifm" value="-" />
-        <reference role="1ERwB7" target="1154453497787" resolve="Operation_symbol_Actions" />
+        <ref role="1ERwB7" node="gNaMAuV" resolve="Operation_symbol_Actions" />
         <node concept="OXEIz" id="gWUPdEW" role="P5bDN">
           <node concept="UkePV" id="gWUPdEX" role="OY2wv">
-            <reference role="Ul1FP" target="tpnk.1111784562907" resolve="Operation" />
+            <ref role="Ul1FP" to="tpnk:gbrxy3r" resolve="Operation" />
           </node>
         </node>
         <node concept="VPxyj" id="hF4QVOt" role="3F10Kt">
@@ -259,26 +259,26 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gbrCF1j" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784647019" />
-        <reference role="1ERwB7" target="1154453098790" resolve="Operation_rightOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxQ_F" />
+        <ref role="1ERwB7" node="gNaL54A" resolve="Operation_rightOperand_Actions" />
       </node>
       <node concept="2iRfu4" id="i2IQBkH" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="gbEAYic">
-    <reference role="1XX52x" target="tpnk.1112037354393" resolve="LessThanOperation" />
+    <ref role="1XX52x" to="tpnk:gbE_QIp" resolve="LessThanOperation" />
     <node concept="3EZMnI" id="gbEBdp0" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbEBjkb" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784613299" />
-        <reference role="1ERwB7" target="1154452994236" resolve="Operation_leftOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxImN" />
+        <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
       </node>
       <node concept="3F0ifn" id="gbEBjkc" role="3EZMnx">
         <property role="3F0ifm" value="&lt;" />
-        <reference role="1ERwB7" target="1154453497787" resolve="Operation_symbol_Actions" />
+        <ref role="1ERwB7" node="gNaMAuV" resolve="Operation_symbol_Actions" />
         <node concept="OXEIz" id="gWUOZqS" role="P5bDN">
           <node concept="UkePV" id="gWUOZqT" role="OY2wv">
-            <reference role="Ul1FP" target="tpnk.1111784562907" resolve="Operation" />
+            <ref role="Ul1FP" to="tpnk:gbrxy3r" resolve="Operation" />
           </node>
         </node>
         <node concept="VPxyj" id="hF4QVOB" role="3F10Kt">
@@ -286,26 +286,26 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gbEBjkd" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784647019" />
-        <reference role="1ERwB7" target="1154453098790" resolve="Operation_rightOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxQ_F" />
+        <ref role="1ERwB7" node="gNaL54A" resolve="Operation_rightOperand_Actions" />
       </node>
       <node concept="2iRfu4" id="i2IQBkA" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="gbZhrwQ">
-    <reference role="1XX52x" target="tpnk.1112384225757" resolve="MultOperation" />
+    <ref role="1XX52x" to="tpnk:gbZh47t" resolve="MultOperation" />
     <node concept="3EZMnI" id="gbZhvTp" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbZhvTq" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784613299" />
-        <reference role="1ERwB7" target="1154452994236" resolve="Operation_leftOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxImN" />
+        <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
       </node>
       <node concept="3F0ifn" id="gbZhvTr" role="3EZMnx">
         <property role="3F0ifm" value="*" />
-        <reference role="1ERwB7" target="1154453497787" resolve="Operation_symbol_Actions" />
+        <ref role="1ERwB7" node="gNaMAuV" resolve="Operation_symbol_Actions" />
         <node concept="OXEIz" id="gWUP9JE" role="P5bDN">
           <node concept="UkePV" id="gWUP9JF" role="OY2wv">
-            <reference role="Ul1FP" target="tpnk.1111784562907" resolve="Operation" />
+            <ref role="Ul1FP" to="tpnk:gbrxy3r" resolve="Operation" />
           </node>
         </node>
         <node concept="VPxyj" id="hF4QVOD" role="3F10Kt">
@@ -313,26 +313,26 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gbZhvTs" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784647019" />
-        <reference role="1ERwB7" target="1154453098790" resolve="Operation_rightOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxQ_F" />
+        <ref role="1ERwB7" node="gNaL54A" resolve="Operation_rightOperand_Actions" />
       </node>
       <node concept="2iRfu4" id="i2IQBkX" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="gc0BGii">
-    <reference role="1XX52x" target="tpnk.1112406908640" resolve="GreaterThanOperation" />
+    <ref role="1XX52x" to="tpnk:gc0B_Vw" resolve="GreaterThanOperation" />
     <node concept="3EZMnI" id="gc0BJsH" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gc0BJsI" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784613299" />
-        <reference role="1ERwB7" target="1154452994236" resolve="Operation_leftOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxImN" />
+        <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
       </node>
       <node concept="3F0ifn" id="gc0BJsJ" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
-        <reference role="1ERwB7" target="1154453497787" resolve="Operation_symbol_Actions" />
+        <ref role="1ERwB7" node="gNaMAuV" resolve="Operation_symbol_Actions" />
         <node concept="OXEIz" id="gWUP7rz" role="P5bDN">
           <node concept="UkePV" id="gWUP7r$" role="OY2wv">
-            <reference role="Ul1FP" target="tpnk.1111784562907" resolve="Operation" />
+            <ref role="Ul1FP" to="tpnk:gbrxy3r" resolve="Operation" />
           </node>
         </node>
         <node concept="VPxyj" id="hF4QVOE" role="3F10Kt">
@@ -340,14 +340,14 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gc0BJsK" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784647019" />
-        <reference role="1ERwB7" target="1154453098790" resolve="Operation_rightOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxQ_F" />
+        <ref role="1ERwB7" node="gNaL54A" resolve="Operation_rightOperand_Actions" />
       </node>
       <node concept="2iRfu4" id="i2IQBkG" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="gw4XWbR">
-    <reference role="1XX52x" target="tpnk.1133954660098" resolve="StringConstant" />
+    <ref role="1XX52x" to="tpnk:gw4XJs2" resolve="StringConstant" />
     <node concept="3EZMnI" id="gw4XXJv" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="gw4XYhB" role="3EZMnx">
@@ -357,7 +357,7 @@
         </node>
       </node>
       <node concept="3F0A7n" id="gw4XZtp" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1133954700480" resolve="value" />
+        <ref role="1NtTu8" to="tpnk:gw4XTj0" resolve="value" />
         <node concept="VechU" id="hF4QVRE" role="3F10Kt">
           <property role="Vb096" value="DARK_GREEN" />
         </node>
@@ -372,19 +372,19 @@
     </node>
   </node>
   <node concept="24kQdi" id="gw52RC3">
-    <reference role="1XX52x" target="tpnk.1133955930134" resolve="AndOperation" />
+    <ref role="1XX52x" to="tpnk:gw52_wm" resolve="AndOperation" />
     <node concept="3EZMnI" id="gw52Soc" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gw52Sod" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784613299" />
-        <reference role="1ERwB7" target="1154452994236" resolve="Operation_leftOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxImN" />
+        <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
       </node>
       <node concept="3F0ifn" id="gw52Soe" role="3EZMnx">
         <property role="3F0ifm" value="&amp;&amp;" />
-        <reference role="1ERwB7" target="1154453497787" resolve="Operation_symbol_Actions" />
+        <ref role="1ERwB7" node="gNaMAuV" resolve="Operation_symbol_Actions" />
         <node concept="OXEIz" id="gWUOS$O" role="P5bDN">
           <node concept="UkePV" id="gWUOTgy" role="OY2wv">
-            <reference role="Ul1FP" target="tpnk.1111784562907" resolve="Operation" />
+            <ref role="Ul1FP" to="tpnk:gbrxy3r" resolve="Operation" />
           </node>
         </node>
         <node concept="VPxyj" id="hF4QVOx" role="3F10Kt">
@@ -392,26 +392,26 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gw52Sof" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784647019" />
-        <reference role="1ERwB7" target="1154453098790" resolve="Operation_rightOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxQ_F" />
+        <ref role="1ERwB7" node="gNaL54A" resolve="Operation_rightOperand_Actions" />
       </node>
       <node concept="2iRfu4" id="i2IQBkT" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="gw52U5A">
-    <reference role="1XX52x" target="tpnk.1133955954502" resolve="OrOperation" />
+    <ref role="1XX52x" to="tpnk:gw52Ft6" resolve="OrOperation" />
     <node concept="3EZMnI" id="gw52Vzh" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gw52Vzi" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784613299" />
-        <reference role="1ERwB7" target="1154452994236" resolve="Operation_leftOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxImN" />
+        <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
       </node>
       <node concept="3F0ifn" id="gw52Vzj" role="3EZMnx">
         <property role="3F0ifm" value="||" />
-        <reference role="1ERwB7" target="1154453497787" resolve="Operation_symbol_Actions" />
+        <ref role="1ERwB7" node="gNaMAuV" resolve="Operation_symbol_Actions" />
         <node concept="OXEIz" id="gWUOWXZ" role="P5bDN">
           <node concept="UkePV" id="gWUOWY0" role="OY2wv">
-            <reference role="Ul1FP" target="tpnk.1111784562907" resolve="Operation" />
+            <ref role="Ul1FP" to="tpnk:gbrxy3r" resolve="Operation" />
           </node>
         </node>
         <node concept="VPxyj" id="hF4QVOr" role="3F10Kt">
@@ -419,26 +419,26 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gw52Vzk" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784647019" />
-        <reference role="1ERwB7" target="1154453098790" resolve="Operation_rightOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxQ_F" />
+        <ref role="1ERwB7" node="gNaL54A" resolve="Operation_rightOperand_Actions" />
       </node>
       <node concept="2iRfu4" id="i2IQBk$" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="gw9LHvF">
-    <reference role="1XX52x" target="tpnk.1134035290224" resolve="EqualsOperation" />
+    <ref role="1XX52x" to="tpnk:gw9LkxK" resolve="EqualsOperation" />
     <node concept="3EZMnI" id="gw9LJCt" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gw9LJCu" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784613299" />
-        <reference role="1ERwB7" target="1154452994236" resolve="Operation_leftOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxImN" />
+        <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
       </node>
       <node concept="3F0ifn" id="gw9LJCv" role="3EZMnx">
         <property role="3F0ifm" value="==" />
-        <reference role="1ERwB7" target="1154453497787" resolve="Operation_symbol_Actions" />
+        <ref role="1ERwB7" node="gNaMAuV" resolve="Operation_symbol_Actions" />
         <node concept="OXEIz" id="gWUPbEB" role="P5bDN">
           <node concept="UkePV" id="gWUPbEC" role="OY2wv">
-            <reference role="Ul1FP" target="tpnk.1111784562907" resolve="Operation" />
+            <ref role="Ul1FP" to="tpnk:gbrxy3r" resolve="Operation" />
           </node>
         </node>
         <node concept="VPxyj" id="hF4QVOA" role="3F10Kt">
@@ -446,21 +446,21 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gw9LJCw" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784647019" />
-        <reference role="1ERwB7" target="1154453098790" resolve="Operation_rightOperand_Actions" />
+        <ref role="1NtTu8" to="tpnk:gbrxQ_F" />
+        <ref role="1ERwB7" node="gNaL54A" resolve="Operation_rightOperand_Actions" />
       </node>
       <node concept="2iRfu4" id="i2IQBkC" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="gw9Ox9U">
-    <reference role="1XX52x" target="tpnk.1134036005562" resolve="ParenthisizedExpression" />
+    <ref role="1XX52x" to="tpnk:gw9O3aU" resolve="ParenthisizedExpression" />
     <node concept="3EZMnI" id="gw9Oymt" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="gw9Ozn4" role="3EZMnx">
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F1sOY" id="gw9O$dW" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1134036114963" />
+        <ref role="1NtTu8" to="tpnk:gw9OtSj" />
       </node>
       <node concept="3F0ifn" id="gw9O_8W" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -469,7 +469,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="gC3rbQK">
-    <reference role="1XX52x" target="tpnk.1142518741440" resolve="NullConstant" />
+    <ref role="1XX52x" to="tpnk:gC3r7B0" resolve="NullConstant" />
     <node concept="3F0ifn" id="gC3rd7n" role="2wV5jI">
       <property role="3F0ifm" value="null" />
       <node concept="VPM3Z" id="hF4QVGm" role="3F10Kt">
@@ -487,16 +487,16 @@
     </node>
   </node>
   <node concept="24kQdi" id="gC3vkLU">
-    <reference role="1XX52x" target="tpnk.1142519786507" resolve="IsNullOperation" />
+    <ref role="1XX52x" to="tpnk:gC3v6Kb" resolve="IsNullOperation" />
     <node concept="3EZMnI" id="gC3vJ2C" role="2wV5jI">
       <node concept="3F1sOY" id="gC3vKPD" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784613299" />
+        <ref role="1NtTu8" to="tpnk:gbrxImN" />
       </node>
       <node concept="3F0ifn" id="gC3vM1m" role="3EZMnx">
         <property role="3F0ifm" value="." />
         <node concept="OXEIz" id="gWUP1Tf" role="P5bDN">
           <node concept="UkePV" id="gWUP1Tg" role="OY2wv">
-            <reference role="Ul1FP" target="tpnk.1111784562907" resolve="Operation" />
+            <ref role="Ul1FP" to="tpnk:gbrxy3r" resolve="Operation" />
           </node>
         </node>
       </node>
@@ -510,7 +510,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="gC454zf">
-    <reference role="1XX52x" target="tpnk.1142529677703" resolve="NotOperation" />
+    <ref role="1XX52x" to="tpnk:gC44PA7" resolve="NotOperation" />
     <node concept="3EZMnI" id="gC455jA" role="2wV5jI">
       <node concept="3F0ifn" id="gC4566D" role="3EZMnx">
         <property role="3F0ifm" value="!" />
@@ -519,7 +519,7 @@
         <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F1sOY" id="gC459L3" role="3EZMnx">
-        <reference role="1NtTu8" target="tpnk.1111784613299" />
+        <ref role="1NtTu8" to="tpnk:gbrxImN" />
       </node>
       <node concept="3F0ifn" id="gC4b$NW" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -529,7 +529,7 @@
   </node>
   <node concept="1h_SRR" id="gNaKFyW">
     <property role="TrG5h" value="Operation_leftOperand_Actions" />
-    <reference role="1h_SK9" target="tpnk.1111784562907" resolve="Operation" />
+    <ref role="1h_SK9" to="tpnk:gbrxy3r" resolve="Operation" />
     <node concept="1hA7zw" id="gNaKOGa" role="1h_SK8">
       <property role="1hHO97" value="replace operation with right operand" />
       <property role="1hAc7j" value="delete_action_id" />
@@ -542,7 +542,7 @@
                 <node concept="2OqwBi" id="hERvwUP" role="1P9ThW">
                   <node concept="0IXxy" id="gNaL0fz" role="2Oq$k0" />
                   <node concept="3TrEf2" id="gNaL1lT" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpnk.1111784647019" />
+                    <ref role="3Tt5mk" to="tpnk:gbrxQ_F" />
                   </node>
                 </node>
               </node>
@@ -554,7 +554,7 @@
   </node>
   <node concept="1h_SRR" id="gNaL54A">
     <property role="TrG5h" value="Operation_rightOperand_Actions" />
-    <reference role="1h_SK9" target="tpnk.1111784562907" resolve="Operation" />
+    <ref role="1h_SK9" to="tpnk:gbrxy3r" resolve="Operation" />
     <node concept="1hA7zw" id="gNaL54B" role="1h_SK8">
       <property role="1hHO97" value="replace operation with left operand" />
       <property role="1hAc7j" value="delete_action_id" />
@@ -567,7 +567,7 @@
                 <node concept="2OqwBi" id="hERvx6M" role="1P9ThW">
                   <node concept="0IXxy" id="gNaL54J" role="2Oq$k0" />
                   <node concept="3TrEf2" id="gNaLahi" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpnk.1111784613299" />
+                    <ref role="3Tt5mk" to="tpnk:gbrxImN" />
                   </node>
                 </node>
               </node>
@@ -579,7 +579,7 @@
   </node>
   <node concept="1h_SRR" id="gNaMAuV">
     <property role="TrG5h" value="Operation_symbol_Actions" />
-    <reference role="1h_SK9" target="tpnk.1111784562907" resolve="Operation" />
+    <ref role="1h_SK9" to="tpnk:gbrxy3r" resolve="Operation" />
     <node concept="1hA7zw" id="gNaMGEs" role="1h_SK8">
       <property role="1hHO97" value="disable delete" />
       <property role="1hAc7j" value="delete_action_id" />

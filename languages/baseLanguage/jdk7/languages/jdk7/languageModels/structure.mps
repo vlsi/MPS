@@ -33,7 +33,7 @@
     <property role="TrG5h" value="StringSwitchStatement" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="switch" />
-    <reference role="1TJDcQ" target="tpee.1163670490218" resolve="SwitchStatement" />
+    <ref role="1TJDcQ" to="tpee:gVKaCLE" resolve="SwitchStatement" />
   </node>
 </model>
 

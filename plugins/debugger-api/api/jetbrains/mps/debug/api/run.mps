@@ -130,11 +130,11 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="3SnNvqCaJfj" role="1B3o_S" />
       <node concept="3uibUv" id="3SnNvqCaJfk" role="3clF45">
-        <reference role="3uigEE" target="1l1h.4474271214082913334" resolve="IDebuggerSettings" />
+        <ref role="3uigEE" to="1l1h:3SnNvqCaJgQ" resolve="IDebuggerSettings" />
       </node>
       <node concept="3clFbS" id="3SnNvqCaJfl" role="3clF47" />
       <node concept="2AHcQZ" id="3SnNvqCaJfm" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~Nullable" resolve="Nullable" />
+        <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="3clFb_" id="3SnNvqCaJfn" role="jymVt">
@@ -143,7 +143,7 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="3SnNvqCaJfo" role="1B3o_S" />
       <node concept="3uibUv" id="3SnNvqCaJfp" role="3clF45">
-        <reference role="3uigEE" target="1l1h.4474271214082912941" resolve="IDebugger" />
+        <ref role="3uigEE" to="1l1h:3SnNvqCaJaH" resolve="IDebugger" />
       </node>
       <node concept="3clFbS" id="3SnNvqCaJfq" role="3clF47" />
     </node>
@@ -154,21 +154,21 @@
     <property role="1EXbeo" value="false" />
     <node concept="3Tm1VV" id="3SnNvqCaJfO" role="1B3o_S" />
     <node concept="3uibUv" id="3SnNvqCaJfP" role="EKbjA">
-      <reference role="3uigEE" target="jj9h.~RunProfileState" resolve="RunProfileState" />
+      <ref role="3uigEE" to="jj9h:~RunProfileState" resolve="RunProfileState" />
     </node>
     <node concept="Wx3nA" id="3SnNvqCaJfQ" role="jymVt">
       <property role="TrG5h" value="LOG" />
       <property role="3TUv4t" value="true" />
       <node concept="2YIFZM" id="3AvZeSkP3sv" role="33vP2m">
-        <reference role="37wK5l" target="ajxo.~LogManager%dgetLogger(java%dlang%dClass)%corg%dapache%dlog4j%dLogger" resolve="getLogger" />
-        <reference role="1Pybhc" target="ajxo.~LogManager" resolve="LogManager" />
+        <ref role="37wK5l" to="ajxo:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
+        <ref role="1Pybhc" to="ajxo:~LogManager" resolve="LogManager" />
         <node concept="3VsKOn" id="3AvZeSkP3sw" role="37wK5m">
-          <reference role="3VsUkX" target="4474271214082913266" resolve="DebuggerRunProfileState" />
+          <ref role="3VsUkX" node="3SnNvqCaJfM" resolve="DebuggerRunProfileState" />
         </node>
       </node>
       <node concept="3Tm6S6" id="3SnNvqCaJfS" role="1B3o_S" />
       <node concept="3uibUv" id="3AvZeSkP3sn" role="1tU5fm">
-        <reference role="3uigEE" target="ajxo.~Logger" resolve="Logger" />
+        <ref role="3uigEE" to="ajxo:~Logger" resolve="Logger" />
       </node>
     </node>
     <node concept="312cEg" id="3SnNvqCaJfV" role="jymVt">
@@ -176,15 +176,15 @@
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
       <node concept="3uibUv" id="3SnNvqCaJfW" role="1tU5fm">
-        <reference role="3uigEE" target="1l1h.4474271214082913334" resolve="IDebuggerSettings" />
+        <ref role="3uigEE" to="1l1h:3SnNvqCaJgQ" resolve="IDebuggerSettings" />
       </node>
       <node concept="3Tmbuc" id="3SnNvqCaJfX" role="1B3o_S" />
       <node concept="2YIFZM" id="3SnNvqCaJfY" role="33vP2m">
-        <reference role="1Pybhc" target="1l1h.4474271214082913267" resolve="EmptyDebuggerSettings" />
-        <reference role="37wK5l" target="1l1h.4474271214082914363" resolve="getInstance" />
+        <ref role="1Pybhc" to="1l1h:3SnNvqCaJfN" resolve="EmptyDebuggerSettings" />
+        <ref role="37wK5l" to="1l1h:3SnNvqCaJwV" resolve="getInstance" />
       </node>
       <node concept="2AHcQZ" id="3SnNvqCaJfZ" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="312cEg" id="3SnNvqCaJg0" role="jymVt">
@@ -211,19 +211,19 @@
       <node concept="3clFbS" id="3SnNvqCaJgb" role="3clF47">
         <node concept="3clFbJ" id="3SnNvqCaJgc" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeuJyS" role="3clFbw">
-            <reference role="3cqZAo" target="4474271214082913280" resolve="myUpdated" />
+            <ref role="3cqZAo" node="3SnNvqCaJg0" resolve="myUpdated" />
           </node>
           <node concept="3clFbS" id="3SnNvqCaJge" role="3clFbx">
             <node concept="3clFbF" id="3SnNvqCaJgf" role="3cqZAp">
               <node concept="2OqwBi" id="3AvZeSkP3sC" role="3clFbG">
                 <node concept="liA8E" id="3AvZeSkP3sD" role="2OqNvi">
-                  <reference role="37wK5l" target="ajxo.~Category%dwarn(java%dlang%dObject)%cvoid" resolve="warn" />
+                  <ref role="37wK5l" to="ajxo:~Category.warn(java.lang.Object):void" resolve="warn" />
                   <node concept="Xl_RD" id="3SnNvqCaJgj" role="37wK5m">
                     <property role="Xl_RC" value="Updating debugger settings twice." />
                   </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxeon9P" role="2Oq$k0">
-                  <reference role="3cqZAo" target="4474271214082913270" resolve="LOG" />
+                  <ref role="3cqZAo" node="3SnNvqCaJfQ" resolve="LOG" />
                 </node>
               </node>
             </node>
@@ -233,7 +233,7 @@
         <node concept="3clFbF" id="3SnNvqCaJgl" role="3cqZAp">
           <node concept="37vLTI" id="3SnNvqCaJgm" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuPin" role="37vLTJ">
-              <reference role="3cqZAo" target="4474271214082913280" resolve="myUpdated" />
+              <ref role="3cqZAo" node="3SnNvqCaJg0" resolve="myUpdated" />
             </node>
             <node concept="3clFbT" id="3SnNvqCaJgo" role="37vLTx">
               <property role="3clFbU" value="true" />
@@ -245,14 +245,14 @@
             <property role="TrG5h" value="debuggerSettings" />
             <property role="3TUv4t" value="false" />
             <node concept="3uibUv" id="3SnNvqCaJgr" role="1tU5fm">
-              <reference role="3uigEE" target="1l1h.4474271214082913334" resolve="IDebuggerSettings" />
+              <ref role="3uigEE" to="1l1h:3SnNvqCaJgQ" resolve="IDebuggerSettings" />
             </node>
             <node concept="2OqwBi" id="3SnNvqCaJgs" role="33vP2m">
               <node concept="1rXfSq" id="4hiugqyz9D2" role="2Oq$k0">
-                <reference role="37wK5l" target="4474271214082913329" resolve="getDebuggerConfiguration" />
+                <ref role="37wK5l" node="3SnNvqCaJgL" resolve="getDebuggerConfiguration" />
               </node>
               <node concept="liA8E" id="3SnNvqCaJgu" role="2OqNvi">
-                <reference role="37wK5l" target="4474271214082913234" resolve="createDebuggerSettings" />
+                <ref role="37wK5l" node="3SnNvqCaJfi" resolve="createDebuggerSettings" />
               </node>
             </node>
           </node>
@@ -260,7 +260,7 @@
         <node concept="3clFbJ" id="3SnNvqCaJgv" role="3cqZAp">
           <node concept="3y3z36" id="3SnNvqCaJgw" role="3clFbw">
             <node concept="37vLTw" id="3GM_nagT$zU" role="3uHU7B">
-              <reference role="3cqZAo" target="4474271214082913306" resolve="debuggerSettings" />
+              <ref role="3cqZAo" node="3SnNvqCaJgq" resolve="debuggerSettings" />
             </node>
             <node concept="10Nm6u" id="3SnNvqCaJgy" role="3uHU7w" />
           </node>
@@ -268,10 +268,10 @@
             <node concept="3clFbF" id="3SnNvqCaJg$" role="3cqZAp">
               <node concept="37vLTI" id="3SnNvqCaJg_" role="3clFbG">
                 <node concept="37vLTw" id="2BHiRxeujnD" role="37vLTJ">
-                  <reference role="3cqZAo" target="4474271214082913275" resolve="myDebuggerSettings" />
+                  <ref role="3cqZAo" node="3SnNvqCaJfV" resolve="myDebuggerSettings" />
                 </node>
                 <node concept="37vLTw" id="3GM_nagTwCt" role="37vLTx">
-                  <reference role="3cqZAo" target="4474271214082913306" resolve="debuggerSettings" />
+                  <ref role="3cqZAo" node="3SnNvqCaJgq" resolve="debuggerSettings" />
                 </node>
               </node>
             </node>
@@ -285,22 +285,22 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="3SnNvqCaJgD" role="1B3o_S" />
       <node concept="3uibUv" id="3SnNvqCaJgE" role="3clF45">
-        <reference role="3uigEE" target="1l1h.4474271214082913334" resolve="IDebuggerSettings" />
+        <ref role="3uigEE" to="1l1h:3SnNvqCaJgQ" resolve="IDebuggerSettings" />
       </node>
       <node concept="3clFbS" id="3SnNvqCaJgF" role="3clF47">
         <node concept="3clFbF" id="3SnNvqCaJgG" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyz9Co" role="3clFbG">
-            <reference role="37wK5l" target="4474271214082913288" resolve="updateDebuggerSettings" />
+            <ref role="37wK5l" node="3SnNvqCaJg8" resolve="updateDebuggerSettings" />
           </node>
         </node>
         <node concept="3cpWs6" id="3SnNvqCaJgI" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeuTwo" role="3cqZAk">
-            <reference role="3cqZAo" target="4474271214082913275" resolve="myDebuggerSettings" />
+            <ref role="3cqZAo" node="3SnNvqCaJfV" resolve="myDebuggerSettings" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3SnNvqCaJgK" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="3clFb_" id="3SnNvqCaJgL" role="jymVt">
@@ -309,11 +309,11 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="3SnNvqCaJgM" role="1B3o_S" />
       <node concept="3uibUv" id="3SnNvqCaJgN" role="3clF45">
-        <reference role="3uigEE" target="4474271214082913232" resolve="IDebuggerConfiguration" />
+        <ref role="3uigEE" node="3SnNvqCaJfg" resolve="IDebuggerConfiguration" />
       </node>
       <node concept="3clFbS" id="3SnNvqCaJgO" role="3clF47" />
       <node concept="2AHcQZ" id="3SnNvqCaJgP" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
     </node>
   </node>

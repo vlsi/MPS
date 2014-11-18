@@ -103,14 +103,14 @@
   </registry>
   <node concept="1M2fIO" id="7WVujHHxC_J">
     <property role="3GE5qa" value="newBlocks" />
-    <reference role="1M2myG" target="adck.2353136177973871304" resolve="MetaBlock" />
+    <ref role="1M2myG" to="adck:22C1ebGgcb8" resolve="MetaBlock" />
     <node concept="2B7ep0" id="7WVujHHxCAz" role="2B7epn">
       <node concept="3clFbS" id="7WVujHHxCA$" role="2VODD2">
         <node concept="3cpWs8" id="3NXJmdrrsua" role="3cqZAp">
           <node concept="3cpWsn" id="3NXJmdrrsub" role="3cpWs9">
             <property role="TrG5h" value="module" />
             <node concept="3uibUv" id="3NXJmdrtkZR" role="1tU5fm">
-              <reference role="3uigEE" target="88zw.~SModule" resolve="SModule" />
+              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
             </node>
             <node concept="2OqwBi" id="3NXJmdrrsuc" role="33vP2m">
               <node concept="2JrnkZ" id="3NXJmdrrsud" role="2Oq$k0">
@@ -120,7 +120,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3NXJmdrrsuh" role="2OqNvi">
-                <reference role="37wK5l" target="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolve="getModule" />
+                <ref role="37wK5l" to="ec5l:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
               </node>
             </node>
           </node>
@@ -134,10 +134,10 @@
           <node concept="3fqX7Q" id="3NXJmdrrtqn" role="3clFbw">
             <node concept="2ZW3vV" id="3NXJmdrrtKK" role="3fr31v">
               <node concept="3uibUv" id="3NXJmdrtmnS" role="2ZW6by">
-                <reference role="3uigEE" target="vsqj.~AbstractModule" resolve="AbstractModule" />
+                <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
               </node>
               <node concept="37vLTw" id="3NXJmdrrtqo" role="2ZW6bz">
-                <reference role="3cqZAo" target="4394877045816805259" resolve="module" />
+                <ref role="3cqZAo" node="3NXJmdrrsub" resolve="module" />
               </node>
             </node>
           </node>
@@ -145,25 +145,25 @@
         <node concept="3cpWs6" id="3NXJmdrtLEr" role="3cqZAp">
           <node concept="2OqwBi" id="3NXJmdrtMtg" role="3cqZAk">
             <node concept="2YIFZM" id="3NXJmdrtMth" role="2Oq$k0">
-              <reference role="1Pybhc" target="msyo.~MacrosFactory" resolve="MacrosFactory" />
-              <reference role="37wK5l" target="msyo.~MacrosFactory%dforModule(jetbrains%dmps%dproject%dAbstractModule)%cjetbrains%dmps%dutil%dMacroHelper" resolve="forModule" />
+              <ref role="1Pybhc" to="msyo:~MacrosFactory" resolve="MacrosFactory" />
+              <ref role="37wK5l" to="msyo:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
               <node concept="1eOMI4" id="3NXJmdrtMti" role="37wK5m">
                 <node concept="10QFUN" id="3NXJmdrtMtj" role="1eOMHV">
                   <node concept="37vLTw" id="3NXJmdrtMtk" role="10QFUP">
-                    <reference role="3cqZAo" target="4394877045816805259" resolve="module" />
+                    <ref role="3cqZAo" node="3NXJmdrrsub" resolve="module" />
                   </node>
                   <node concept="3uibUv" id="3NXJmdrtMtl" role="10QFUM">
-                    <reference role="3uigEE" target="vsqj.~AbstractModule" resolve="AbstractModule" />
+                    <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="liA8E" id="3NXJmdrtMtm" role="2OqNvi">
-              <reference role="37wK5l" target="msyo.~MacroHelper%dexpandPath(java%dlang%dString)%cjava%dlang%dString" resolve="expandPath" />
+              <ref role="37wK5l" to="msyo:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
               <node concept="2OqwBi" id="3NXJmdrtMtn" role="37wK5m">
                 <node concept="EsrRn" id="3NXJmdrtMto" role="2Oq$k0" />
                 <node concept="3TrcHB" id="3NXJmdrtMtp" role="2OqNvi">
-                  <reference role="3TsBF5" target="adck.9168054762589307856" resolve="iconPath" />
+                  <ref role="3TsBF5" to="adck:7WVujHHtGfg" resolve="iconPath" />
                 </node>
               </node>
             </node>

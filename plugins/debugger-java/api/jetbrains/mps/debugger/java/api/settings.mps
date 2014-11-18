@@ -165,10 +165,10 @@
     <property role="1EXbeo" value="false" />
     <node concept="3Tm1VV" id="2Y$mRnIClFp" role="1B3o_S" />
     <node concept="3uibUv" id="2Y$mRnIClFq" role="1zkMxy">
-      <reference role="3uigEE" target="3432969378036013783" resolve="DebugConnectionSettings" />
+      <ref role="3uigEE" node="2Y$mRnIClFn" resolve="DebugConnectionSettings" />
     </node>
     <node concept="3uibUv" id="2g7jLxix5nh" role="EKbjA">
-      <reference role="3uigEE" target="e2lb.~Cloneable" resolve="Cloneable" />
+      <ref role="3uigEE" to="e2lb:~Cloneable" resolve="Cloneable" />
     </node>
     <node concept="312cEg" id="2Y$mRnIClFr" role="jymVt">
       <property role="TrG5h" value="mySuspend" />
@@ -195,12 +195,12 @@
       </node>
       <node concept="3clFbS" id="2Y$mRnIClFA" role="3clF47">
         <node concept="XkiVB" id="2Y$mRnIClFB" role="3cqZAp">
-          <reference role="37wK5l" target="3432969378036016403" resolve="DebugConnectionSettings" />
+          <ref role="37wK5l" node="2Y$mRnICmkj" resolve="DebugConnectionSettings" />
           <node concept="37vLTw" id="2BHiRxglgv1" role="37wK5m">
-            <reference role="3cqZAo" target="3432969378036013794" resolve="hostName" />
+            <ref role="3cqZAo" node="2Y$mRnIClFy" resolve="hostName" />
           </node>
           <node concept="37vLTw" id="2BHiRxgm9kw" role="37wK5m">
-            <reference role="3cqZAo" target="3432969378036013796" resolve="port" />
+            <ref role="3cqZAo" node="2Y$mRnIClF$" resolve="port" />
           </node>
         </node>
       </node>
@@ -210,7 +210,7 @@
       <node concept="3cqZAl" id="2Y$mRnIClFG" role="3clF45" />
       <node concept="3clFbS" id="2Y$mRnIClFH" role="3clF47">
         <node concept="XkiVB" id="2Y$mRnIClFI" role="3cqZAp">
-          <reference role="37wK5l" target="3432969378036016399" resolve="DebugConnectionSettings" />
+          <ref role="37wK5l" node="2Y$mRnICmkf" resolve="DebugConnectionSettings" />
         </node>
       </node>
     </node>
@@ -228,7 +228,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2Y$mRnIClG6" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2Y$mRnIClG7" role="jymVt">
@@ -240,12 +240,12 @@
       <node concept="3clFbS" id="2Y$mRnIClGa" role="3clF47">
         <node concept="3cpWs6" id="2Y$mRnIClGb" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeudHV" role="3cqZAk">
-            <reference role="3cqZAo" target="3432969378036013787" resolve="mySuspend" />
+            <ref role="3cqZAo" node="2Y$mRnIClFr" resolve="mySuspend" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="2Y$mRnIClGd" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2Y$mRnIClGe" role="jymVt">
@@ -263,10 +263,10 @@
         <node concept="3clFbF" id="2Y$mRnIClGk" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnIClGl" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuDYV" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036013787" resolve="mySuspend" />
+              <ref role="3cqZAo" node="2Y$mRnIClFr" resolve="mySuspend" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmaqt" role="37vLTx">
-              <reference role="3cqZAo" target="3432969378036013841" resolve="suspend" />
+              <ref role="3cqZAo" node="2Y$mRnIClGh" resolve="suspend" />
             </node>
           </node>
         </node>
@@ -279,26 +279,26 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2g7jLxixJOn" role="1B3o_S" />
       <node concept="3uibUv" id="2g7jLxix5nP" role="3clF45">
-        <reference role="3uigEE" target="3432969378036013784" resolve="RemoteConnectionSettings" />
+        <ref role="3uigEE" node="2Y$mRnIClFo" resolve="RemoteConnectionSettings" />
       </node>
       <node concept="3uibUv" id="2g7jLxix5nl" role="Sfmx6">
-        <reference role="3uigEE" target="e2lb.~CloneNotSupportedException" resolve="CloneNotSupportedException" />
+        <ref role="3uigEE" to="e2lb:~CloneNotSupportedException" resolve="CloneNotSupportedException" />
       </node>
       <node concept="3clFbS" id="2g7jLxix5nm" role="3clF47">
         <node concept="3cpWs8" id="2g7jLxix5ny" role="3cqZAp">
           <node concept="3cpWsn" id="2g7jLxix5nz" role="3cpWs9">
             <property role="TrG5h" value="connectionSettings" />
             <node concept="3uibUv" id="2g7jLxix5n$" role="1tU5fm">
-              <reference role="3uigEE" target="3432969378036013784" resolve="RemoteConnectionSettings" />
+              <ref role="3uigEE" node="2Y$mRnIClFo" resolve="RemoteConnectionSettings" />
             </node>
             <node concept="2ShNRf" id="2g7jLxix5n_" role="33vP2m">
               <node concept="1pGfFk" id="2g7jLxix5nA" role="2ShVmc">
-                <reference role="37wK5l" target="3432969378036013791" resolve="RemoteConnectionSettings" />
+                <ref role="37wK5l" node="2Y$mRnIClFv" resolve="RemoteConnectionSettings" />
                 <node concept="1rXfSq" id="4hiugqyzfmw" role="37wK5m">
-                  <reference role="37wK5l" target="3432969378036016572" resolve="getHostName" />
+                  <ref role="37wK5l" node="2Y$mRnICmmW" resolve="getHostName" />
                 </node>
                 <node concept="1rXfSq" id="4hiugqyz5H5" role="37wK5m">
-                  <reference role="37wK5l" target="3432969378036016588" resolve="getPort" />
+                  <ref role="37wK5l" node="2Y$mRnICmnc" resolve="getPort" />
                 </node>
               </node>
             </node>
@@ -307,24 +307,24 @@
         <node concept="3clFbF" id="2g7jLxix5nF" role="3cqZAp">
           <node concept="2OqwBi" id="2g7jLxix5nH" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTBBa" role="2Oq$k0">
-              <reference role="3cqZAo" target="2596130676084594147" resolve="connectionSettings" />
+              <ref role="3cqZAo" node="2g7jLxix5nz" resolve="connectionSettings" />
             </node>
             <node concept="liA8E" id="2g7jLxix5nL" role="2OqNvi">
-              <reference role="37wK5l" target="3432969378036013838" resolve="setSuspend" />
+              <ref role="37wK5l" node="2Y$mRnIClGe" resolve="setSuspend" />
               <node concept="1rXfSq" id="4hiugqyzhLP" role="37wK5m">
-                <reference role="37wK5l" target="3432969378036013831" resolve="isSuspend" />
+                <ref role="37wK5l" node="2Y$mRnIClG7" resolve="isSuspend" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="2g7jLxix5nq" role="3cqZAp">
           <node concept="37vLTw" id="3GM_nagTzDE" role="3clFbG">
-            <reference role="3cqZAo" target="2596130676084594147" resolve="connectionSettings" />
+            <ref role="3cqZAo" node="2g7jLxix5nz" resolve="connectionSettings" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="2g7jLxix5nn" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2YIFZL" id="2Y$mRnIClFJ" role="jymVt">
@@ -349,22 +349,22 @@
               <property role="Xl_RC" value="-Xdebug " />
             </node>
             <node concept="2YIFZM" id="2Y$mRnIClFU" role="3uHU7w">
-              <reference role="1Pybhc" target="3432969378036013783" resolve="DebugConnectionSettings" />
-              <reference role="37wK5l" target="3432969378036016455" resolve="getCommandLine" />
+              <ref role="1Pybhc" node="2Y$mRnIClFn" resolve="DebugConnectionSettings" />
+              <ref role="37wK5l" node="2Y$mRnICml7" resolve="getCommandLine" />
               <node concept="3clFbT" id="2Y$mRnIClFV" role="37wK5m">
                 <property role="3clFbU" value="true" />
               </node>
               <node concept="37vLTw" id="2BHiRxgm83b" role="37wK5m">
-                <reference role="3cqZAo" target="3432969378036013810" resolve="useSockets" />
+                <ref role="3cqZAo" node="2Y$mRnIClFM" resolve="useSockets" />
               </node>
               <node concept="3clFbT" id="2Y$mRnIClFX" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
               <node concept="2YIFZM" id="2Y$mRnIClFY" role="37wK5m">
-                <reference role="1Pybhc" target="e2lb.~Integer" resolve="Integer" />
-                <reference role="37wK5l" target="e2lb.~Integer%dtoString(int)%cjava%dlang%dString" resolve="toString" />
+                <ref role="1Pybhc" to="e2lb:~Integer" resolve="Integer" />
+                <ref role="37wK5l" to="e2lb:~Integer.toString(int):java.lang.String" resolve="toString" />
                 <node concept="37vLTw" id="2BHiRxglp3R" role="37wK5m">
-                  <reference role="3cqZAo" target="3432969378036013812" resolve="port" />
+                  <ref role="3cqZAo" node="2Y$mRnIClFO" resolve="port" />
                 </node>
               </node>
             </node>
@@ -379,7 +379,7 @@
     <property role="1EXbeo" value="false" />
     <node concept="3Tm1VV" id="2Y$mRnICmjZ" role="1B3o_S" />
     <node concept="3uibUv" id="7yuXYdyoL1B" role="EKbjA">
-      <reference role="3uigEE" target="1l1h.4474271214082913334" resolve="IDebuggerSettings" />
+      <ref role="3uigEE" to="1l1h:3SnNvqCaJgQ" resolve="IDebuggerSettings" />
     </node>
     <node concept="312cEg" id="2Y$mRnICmk1" role="jymVt">
       <property role="TrG5h" value="myUseSockets" />
@@ -437,7 +437,7 @@
         <node concept="3clFbF" id="2Y$mRnICmkr" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICmks" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuImn" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016385" resolve="myUseSockets" />
+              <ref role="3cqZAo" node="2Y$mRnICmk1" resolve="myUseSockets" />
             </node>
             <node concept="3clFbT" id="2Y$mRnICmku" role="37vLTx">
               <property role="3clFbU" value="true" />
@@ -447,7 +447,7 @@
         <node concept="3clFbF" id="2Y$mRnICmkv" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICmkw" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuyX0" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016395" resolve="mySharedMemoryAddress" />
+              <ref role="3cqZAo" node="2Y$mRnICmkb" resolve="mySharedMemoryAddress" />
             </node>
             <node concept="Xl_RD" id="2Y$mRnICmky" role="37vLTx">
               <property role="Xl_RC" value="" />
@@ -457,20 +457,20 @@
         <node concept="3clFbF" id="2Y$mRnICmkz" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICmk$" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeumYH" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016389" resolve="myHostName" />
+              <ref role="3cqZAo" node="2Y$mRnICmk5" resolve="myHostName" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmanv" role="37vLTx">
-              <reference role="3cqZAo" target="3432969378036016406" resolve="hostName" />
+              <ref role="3cqZAo" node="2Y$mRnICmkm" resolve="hostName" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="2Y$mRnICmkB" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICmkC" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeun44" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016392" resolve="myPort" />
+              <ref role="3cqZAo" node="2Y$mRnICmk8" resolve="myPort" />
             </node>
             <node concept="37vLTw" id="2BHiRxghiMw" role="37vLTx">
-              <reference role="3cqZAo" target="3432969378036016408" resolve="port" />
+              <ref role="3cqZAo" node="2Y$mRnICmko" resolve="port" />
             </node>
           </node>
         </node>
@@ -503,40 +503,40 @@
         <node concept="3clFbF" id="2Y$mRnICmkR" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICmkS" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuHrh" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016385" resolve="myUseSockets" />
+              <ref role="3cqZAo" node="2Y$mRnICmk1" resolve="myUseSockets" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmP9H" role="37vLTx">
-              <reference role="3cqZAo" target="3432969378036016430" resolve="useSockets" />
+              <ref role="3cqZAo" node="2Y$mRnICmkI" resolve="useSockets" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="2Y$mRnICmkV" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICmkW" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuswP" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016389" resolve="myHostName" />
+              <ref role="3cqZAo" node="2Y$mRnICmk5" resolve="myHostName" />
             </node>
             <node concept="37vLTw" id="2BHiRxghg3u" role="37vLTx">
-              <reference role="3cqZAo" target="3432969378036016432" resolve="hostName" />
+              <ref role="3cqZAo" node="2Y$mRnICmkK" resolve="hostName" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="2Y$mRnICmkZ" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICml0" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuStk" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016392" resolve="myPort" />
+              <ref role="3cqZAo" node="2Y$mRnICmk8" resolve="myPort" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmaDi" role="37vLTx">
-              <reference role="3cqZAo" target="3432969378036016434" resolve="port" />
+              <ref role="3cqZAo" node="2Y$mRnICmkM" resolve="port" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="2Y$mRnICml3" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICml4" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuu5V" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016395" resolve="mySharedMemoryAddress" />
+              <ref role="3cqZAo" node="2Y$mRnICmkb" resolve="mySharedMemoryAddress" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmes2" role="37vLTx">
-              <reference role="3cqZAo" target="3432969378036016436" resolve="sharedMemoryAddress" />
+              <ref role="3cqZAo" node="2Y$mRnICmkO" resolve="sharedMemoryAddress" />
             </node>
           </node>
         </node>
@@ -567,7 +567,7 @@
       <node concept="3clFbS" id="2Y$mRnICmmJ" role="3clF47">
         <node concept="3cpWs6" id="2Y$mRnICmmK" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeuxMc" role="3cqZAk">
-            <reference role="3cqZAo" target="3432969378036016385" resolve="myUseSockets" />
+            <ref role="3cqZAo" node="2Y$mRnICmk1" resolve="myUseSockets" />
           </node>
         </node>
       </node>
@@ -587,10 +587,10 @@
         <node concept="3clFbF" id="2Y$mRnICmmS" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICmmT" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuIng" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016385" resolve="myUseSockets" />
+              <ref role="3cqZAo" node="2Y$mRnICmk1" resolve="myUseSockets" />
             </node>
             <node concept="37vLTw" id="2BHiRxgm9cK" role="37vLTx">
-              <reference role="3cqZAo" target="3432969378036016565" resolve="useSockets" />
+              <ref role="3cqZAo" node="2Y$mRnICmmP" resolve="useSockets" />
             </node>
           </node>
         </node>
@@ -605,7 +605,7 @@
       <node concept="3clFbS" id="2Y$mRnICmmZ" role="3clF47">
         <node concept="3cpWs6" id="2Y$mRnICmn0" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeuM$5" role="3cqZAk">
-            <reference role="3cqZAo" target="3432969378036016389" resolve="myHostName" />
+            <ref role="3cqZAo" node="2Y$mRnICmk5" resolve="myHostName" />
           </node>
         </node>
       </node>
@@ -625,10 +625,10 @@
         <node concept="3clFbF" id="2Y$mRnICmn8" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICmn9" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeukoi" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016389" resolve="myHostName" />
+              <ref role="3cqZAo" node="2Y$mRnICmk5" resolve="myHostName" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmpLQ" role="37vLTx">
-              <reference role="3cqZAo" target="3432969378036016581" resolve="hostName" />
+              <ref role="3cqZAo" node="2Y$mRnICmn5" resolve="hostName" />
             </node>
           </node>
         </node>
@@ -643,7 +643,7 @@
       <node concept="3clFbS" id="2Y$mRnICmnf" role="3clF47">
         <node concept="3cpWs6" id="2Y$mRnICmng" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeu_6t" role="3cqZAk">
-            <reference role="3cqZAo" target="3432969378036016392" resolve="myPort" />
+            <ref role="3cqZAo" node="2Y$mRnICmk8" resolve="myPort" />
           </node>
         </node>
       </node>
@@ -663,10 +663,10 @@
         <node concept="3clFbF" id="2Y$mRnICmno" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICmnp" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeusna" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016392" resolve="myPort" />
+              <ref role="3cqZAo" node="2Y$mRnICmk8" resolve="myPort" />
             </node>
             <node concept="37vLTw" id="2BHiRxgm64T" role="37vLTx">
-              <reference role="3cqZAo" target="3432969378036016597" resolve="port" />
+              <ref role="3cqZAo" node="2Y$mRnICmnl" resolve="port" />
             </node>
           </node>
         </node>
@@ -681,7 +681,7 @@
       <node concept="3clFbS" id="2Y$mRnICmnv" role="3clF47">
         <node concept="3cpWs6" id="2Y$mRnICmnw" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeuHj4" role="3cqZAk">
-            <reference role="3cqZAo" target="3432969378036016395" resolve="mySharedMemoryAddress" />
+            <ref role="3cqZAo" node="2Y$mRnICmkb" resolve="mySharedMemoryAddress" />
           </node>
         </node>
       </node>
@@ -701,10 +701,10 @@
         <node concept="3clFbF" id="2Y$mRnICmnC" role="3cqZAp">
           <node concept="37vLTI" id="2Y$mRnICmnD" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeul$i" role="37vLTJ">
-              <reference role="3cqZAo" target="3432969378036016395" resolve="mySharedMemoryAddress" />
+              <ref role="3cqZAo" node="2Y$mRnICmkb" resolve="mySharedMemoryAddress" />
             </node>
             <node concept="37vLTw" id="2BHiRxgm6XA" role="37vLTx">
-              <reference role="3cqZAo" target="3432969378036016613" resolve="sharedMemoryAddress" />
+              <ref role="3cqZAo" node="2Y$mRnICmn_" resolve="sharedMemoryAddress" />
             </node>
           </node>
         </node>
@@ -719,7 +719,7 @@
       <node concept="3clFbS" id="2Y$mRnICmnJ" role="3clF47">
         <node concept="3cpWs6" id="2Y$mRnICmnK" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyySq4" role="3cqZAk">
-            <reference role="37wK5l" target="3432969378036016627" resolve="getCommandLine" />
+            <ref role="37wK5l" node="2Y$mRnICmnN" resolve="getCommandLine" />
             <node concept="3clFbT" id="2Y$mRnICmnM" role="37wK5m">
               <property role="3clFbU" value="true" />
             </node>
@@ -745,23 +745,23 @@
             <property role="3TUv4t" value="false" />
             <node concept="10P_77" id="2Y$mRnICmnV" role="1tU5fm" />
             <node concept="1rXfSq" id="4hiugqyzeKA" role="33vP2m">
-              <reference role="37wK5l" target="3432969378036016548" resolve="isServerMode" />
+              <ref role="37wK5l" node="2Y$mRnICmm$" resolve="isServerMode" />
             </node>
           </node>
         </node>
         <node concept="3clFbJ" id="2Y$mRnICmnX" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxgmFk$" role="3clFbw">
-            <reference role="3cqZAo" target="3432969378036016630" resolve="application" />
+            <ref role="3cqZAo" node="2Y$mRnICmnQ" resolve="application" />
           </node>
           <node concept="3clFbS" id="2Y$mRnICmnZ" role="3clFbx">
             <node concept="3clFbF" id="2Y$mRnICmo0" role="3cqZAp">
               <node concept="37vLTI" id="2Y$mRnICmo1" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTtyl" role="37vLTJ">
-                  <reference role="3cqZAo" target="3432969378036016634" resolve="serverMode" />
+                  <ref role="3cqZAo" node="2Y$mRnICmnU" resolve="serverMode" />
                 </node>
                 <node concept="3fqX7Q" id="2Y$mRnICmo3" role="37vLTx">
                   <node concept="37vLTw" id="3GM_nagTviO" role="3fr31v">
-                    <reference role="3cqZAo" target="3432969378036016634" resolve="serverMode" />
+                    <ref role="3cqZAo" node="2Y$mRnICmnU" resolve="serverMode" />
                   </node>
                 </node>
               </node>
@@ -770,34 +770,34 @@
         </node>
         <node concept="3cpWs6" id="2Y$mRnICmo5" role="3cqZAp">
           <node concept="2YIFZM" id="2Y$mRnICmo6" role="3cqZAk">
-            <reference role="1Pybhc" target="3432969378036013783" resolve="DebugConnectionSettings" />
-            <reference role="37wK5l" target="3432969378036016497" resolve="getCommandLine" />
+            <ref role="1Pybhc" node="2Y$mRnIClFn" resolve="DebugConnectionSettings" />
+            <ref role="37wK5l" node="2Y$mRnICmlL" resolve="getCommandLine" />
             <node concept="37vLTw" id="3GM_nagT_3I" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016634" resolve="serverMode" />
+              <ref role="3cqZAo" node="2Y$mRnICmnU" resolve="serverMode" />
             </node>
             <node concept="37vLTw" id="2BHiRxeusJu" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016385" resolve="myUseSockets" />
+              <ref role="3cqZAo" node="2Y$mRnICmk1" resolve="myUseSockets" />
             </node>
             <node concept="1rXfSq" id="4hiugqyzk2d" role="37wK5m">
-              <reference role="37wK5l" target="3432969378036016552" resolve="isSuspend" />
+              <ref role="37wK5l" node="2Y$mRnICmmC" resolve="isSuspend" />
             </node>
             <node concept="37vLTw" id="2BHiRxeujT1" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016389" resolve="myHostName" />
+              <ref role="3cqZAo" node="2Y$mRnICmk5" resolve="myHostName" />
             </node>
             <node concept="37vLTw" id="2BHiRxeuMyg" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016392" resolve="myPort" />
+              <ref role="3cqZAo" node="2Y$mRnICmk8" resolve="myPort" />
             </node>
             <node concept="37vLTw" id="2BHiRxeuoZ5" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016395" resolve="mySharedMemoryAddress" />
+              <ref role="3cqZAo" node="2Y$mRnICmkb" resolve="mySharedMemoryAddress" />
             </node>
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="2Y$mRnICmod" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
       <node concept="2AHcQZ" id="3tYsUK_Slkt" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2Y$mRnICmoe" role="jymVt">
@@ -814,7 +814,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2Y$mRnICmok" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2Y$mRnICmol" role="jymVt">
@@ -826,19 +826,19 @@
       <node concept="3clFbS" id="2Y$mRnICmoo" role="3clF47">
         <node concept="3cpWs6" id="2Y$mRnICmop" role="3cqZAp">
           <node concept="2YIFZM" id="2Y$mRnICmoq" role="3cqZAk">
-            <reference role="1Pybhc" target="3432969378036013783" resolve="DebugConnectionSettings" />
-            <reference role="37wK5l" target="3432969378036016523" resolve="getAddress" />
+            <ref role="1Pybhc" node="2Y$mRnIClFn" resolve="DebugConnectionSettings" />
+            <ref role="37wK5l" node="2Y$mRnICmmb" resolve="getAddress" />
             <node concept="37vLTw" id="2BHiRxeuL8D" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016385" resolve="myUseSockets" />
+              <ref role="3cqZAo" node="2Y$mRnICmk1" resolve="myUseSockets" />
             </node>
             <node concept="37vLTw" id="2BHiRxeunks" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016389" resolve="myHostName" />
+              <ref role="3cqZAo" node="2Y$mRnICmk5" resolve="myHostName" />
             </node>
             <node concept="37vLTw" id="2BHiRxeuNlY" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016392" resolve="myPort" />
+              <ref role="3cqZAo" node="2Y$mRnICmk8" resolve="myPort" />
             </node>
             <node concept="37vLTw" id="2BHiRxeuxSy" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016395" resolve="mySharedMemoryAddress" />
+              <ref role="3cqZAo" node="2Y$mRnICmkb" resolve="mySharedMemoryAddress" />
             </node>
           </node>
         </node>
@@ -861,7 +861,7 @@
                 <node concept="1eOMI4" id="2Y$mRnICmoC" role="3uHU7w">
                   <node concept="3K4zz7" id="2Y$mRnICmoD" role="1eOMHV">
                     <node concept="37vLTw" id="2BHiRxeuNHM" role="3K4Cdx">
-                      <reference role="3cqZAo" target="3432969378036016385" resolve="myUseSockets" />
+                      <ref role="3cqZAo" node="2Y$mRnICmk1" resolve="myUseSockets" />
                     </node>
                     <node concept="Xl_RD" id="2Y$mRnICmoF" role="3K4E3e">
                       <property role="Xl_RC" value="'socket'" />
@@ -877,7 +877,7 @@
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqyzhMJ" role="3uHU7w">
-              <reference role="37wK5l" target="3432969378036016661" resolve="getAddress" />
+              <ref role="37wK5l" node="2Y$mRnICmol" resolve="getAddress" />
             </node>
           </node>
         </node>
@@ -923,7 +923,7 @@
                         <node concept="1eOMI4" id="2Y$mRnICmls" role="3uHU7w">
                           <node concept="3K4zz7" id="2Y$mRnICmlt" role="1eOMHV">
                             <node concept="37vLTw" id="2BHiRxgm6nf" role="3K4Cdx">
-                              <reference role="3cqZAo" target="3432969378036016460" resolve="useSockets" />
+                              <ref role="3cqZAo" node="2Y$mRnICmlc" resolve="useSockets" />
                             </node>
                             <node concept="Xl_RD" id="2Y$mRnICmlv" role="3K4E3e">
                               <property role="Xl_RC" value="dt_socket" />
@@ -942,7 +942,7 @@
                       <node concept="1eOMI4" id="2Y$mRnICmlz" role="1eOMHV">
                         <node concept="3K4zz7" id="2Y$mRnICml$" role="1eOMHV">
                           <node concept="37vLTw" id="2BHiRxglVuk" role="3K4Cdx">
-                            <reference role="3cqZAo" target="3432969378036016458" resolve="serverMode" />
+                            <ref role="3cqZAo" node="2Y$mRnICmla" resolve="serverMode" />
                           </node>
                           <node concept="1Xhbcc" id="2Y$mRnICmlA" role="3K4E3e">
                             <property role="1XhdNS" value="y" />
@@ -962,7 +962,7 @@
                   <node concept="1eOMI4" id="2Y$mRnICmlE" role="1eOMHV">
                     <node concept="3K4zz7" id="2Y$mRnICmlF" role="1eOMHV">
                       <node concept="37vLTw" id="2BHiRxghiC6" role="3K4Cdx">
-                        <reference role="3cqZAo" target="3432969378036016462" resolve="suspend" />
+                        <ref role="3cqZAo" node="2Y$mRnICmle" resolve="suspend" />
                       </node>
                       <node concept="1Xhbcc" id="2Y$mRnICmlH" role="3K4E3e">
                         <property role="1XhdNS" value="y" />
@@ -979,7 +979,7 @@
               </node>
             </node>
             <node concept="37vLTw" id="2BHiRxglw8C" role="3uHU7w">
-              <reference role="3cqZAo" target="3432969378036016464" resolve="address" />
+              <ref role="3cqZAo" node="2Y$mRnICmlg" resolve="address" />
             </node>
           </node>
         </node>
@@ -1023,31 +1023,31 @@
       <node concept="3clFbS" id="2Y$mRnICmm0" role="3clF47">
         <node concept="3cpWs6" id="2Y$mRnICmm1" role="3cqZAp">
           <node concept="2YIFZM" id="2Y$mRnICmm2" role="3cqZAk">
-            <reference role="1Pybhc" target="3432969378036013783" resolve="DebugConnectionSettings" />
-            <reference role="37wK5l" target="3432969378036016455" resolve="getCommandLine" />
+            <ref role="1Pybhc" node="2Y$mRnIClFn" resolve="DebugConnectionSettings" />
+            <ref role="37wK5l" node="2Y$mRnICml7" resolve="getCommandLine" />
             <node concept="37vLTw" id="2BHiRxgm8f9" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016500" resolve="serverMode" />
+              <ref role="3cqZAo" node="2Y$mRnICmlO" resolve="serverMode" />
             </node>
             <node concept="37vLTw" id="2BHiRxglK7A" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016502" resolve="useSockets" />
+              <ref role="3cqZAo" node="2Y$mRnICmlQ" resolve="useSockets" />
             </node>
             <node concept="37vLTw" id="2BHiRxglTNg" role="37wK5m">
-              <reference role="3cqZAo" target="3432969378036016504" resolve="suspend" />
+              <ref role="3cqZAo" node="2Y$mRnICmlS" resolve="suspend" />
             </node>
             <node concept="2YIFZM" id="2Y$mRnICmm6" role="37wK5m">
-              <reference role="1Pybhc" target="3432969378036013783" resolve="DebugConnectionSettings" />
-              <reference role="37wK5l" target="3432969378036016523" resolve="getAddress" />
+              <ref role="1Pybhc" node="2Y$mRnIClFn" resolve="DebugConnectionSettings" />
+              <ref role="37wK5l" node="2Y$mRnICmmb" resolve="getAddress" />
               <node concept="37vLTw" id="2BHiRxgmvIH" role="37wK5m">
-                <reference role="3cqZAo" target="3432969378036016502" resolve="useSockets" />
+                <ref role="3cqZAo" node="2Y$mRnICmlQ" resolve="useSockets" />
               </node>
               <node concept="37vLTw" id="2BHiRxgm8c3" role="37wK5m">
-                <reference role="3cqZAo" target="3432969378036016506" resolve="host" />
+                <ref role="3cqZAo" node="2Y$mRnICmlU" resolve="host" />
               </node>
               <node concept="37vLTw" id="2BHiRxghiF1" role="37wK5m">
-                <reference role="3cqZAo" target="3432969378036016508" resolve="port" />
+                <ref role="3cqZAo" node="2Y$mRnICmlW" resolve="port" />
               </node>
               <node concept="37vLTw" id="2BHiRxgkYZL" role="37wK5m">
-                <reference role="3cqZAo" target="3432969378036016510" resolve="sharedMemoryAddress" />
+                <ref role="3cqZAo" node="2Y$mRnICmlY" resolve="sharedMemoryAddress" />
               </node>
             </node>
           </node>
@@ -1082,13 +1082,13 @@
       <node concept="3clFbS" id="2Y$mRnICmmm" role="3clF47">
         <node concept="3clFbJ" id="2Y$mRnICmmn" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxgkYp$" role="3clFbw">
-            <reference role="3cqZAo" target="3432969378036016526" resolve="useSockets" />
+            <ref role="3cqZAo" node="2Y$mRnICmme" resolve="useSockets" />
           </node>
           <node concept="9aQIb" id="2Y$mRnICmmp" role="9aQIa">
             <node concept="3clFbS" id="2Y$mRnICmmq" role="9aQI4">
               <node concept="3cpWs6" id="2Y$mRnICmmr" role="3cqZAp">
                 <node concept="37vLTw" id="2BHiRxgm6_D" role="3cqZAk">
-                  <reference role="3cqZAo" target="3432969378036016532" resolve="address" />
+                  <ref role="3cqZAo" node="2Y$mRnICmmk" resolve="address" />
                 </node>
               </node>
             </node>
@@ -1098,14 +1098,14 @@
               <node concept="3cpWs3" id="2Y$mRnICmmv" role="3cqZAk">
                 <node concept="3cpWs3" id="2Y$mRnICmmw" role="3uHU7B">
                   <node concept="37vLTw" id="2BHiRxgmhF7" role="3uHU7B">
-                    <reference role="3cqZAo" target="3432969378036016528" resolve="host" />
+                    <ref role="3cqZAo" node="2Y$mRnICmmg" resolve="host" />
                   </node>
                   <node concept="Xl_RD" id="2Y$mRnICmmy" role="3uHU7w">
                     <property role="Xl_RC" value=":" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxglErM" role="3uHU7w">
-                  <reference role="3cqZAo" target="3432969378036016530" resolve="port" />
+                  <ref role="3cqZAo" node="2Y$mRnICmmi" resolve="port" />
                 </node>
               </node>
             </node>
@@ -1120,7 +1120,7 @@
     <property role="1EXbeo" value="false" />
     <node concept="3Tm1VV" id="2Y$mRnICm$s" role="1B3o_S" />
     <node concept="3uibUv" id="2Y$mRnICm$t" role="1zkMxy">
-      <reference role="3uigEE" target="3432969378036013783" resolve="DebugConnectionSettings" />
+      <ref role="3uigEE" node="2Y$mRnIClFn" resolve="DebugConnectionSettings" />
     </node>
     <node concept="3clFbW" id="2Y$mRnICm$u" role="jymVt">
       <node concept="3Tm1VV" id="2Y$mRnICm$v" role="1B3o_S" />
@@ -1132,9 +1132,9 @@
       </node>
       <node concept="3clFbS" id="2Y$mRnICm$z" role="3clF47">
         <node concept="XkiVB" id="2Y$mRnICm$$" role="3cqZAp">
-          <reference role="37wK5l" target="3432969378036016427" resolve="DebugConnectionSettings" />
+          <ref role="37wK5l" node="2Y$mRnICmkF" resolve="DebugConnectionSettings" />
           <node concept="37vLTw" id="2BHiRxgmz2r" role="37wK5m">
-            <reference role="3cqZAo" target="3432969378036017441" resolve="useSockets" />
+            <ref role="3cqZAo" node="2Y$mRnICm$x" resolve="useSockets" />
           </node>
           <node concept="Xl_RD" id="2Y$mRnICm$A" role="37wK5m">
             <property role="Xl_RC" value="localhost" />
@@ -1148,7 +1148,7 @@
         </node>
         <node concept="3clFbJ" id="2Y$mRnICm$D" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxgls7u" role="3clFbw">
-            <reference role="3cqZAo" target="3432969378036017441" resolve="useSockets" />
+            <ref role="3cqZAo" node="2Y$mRnICm$x" resolve="useSockets" />
           </node>
           <node concept="3clFbS" id="2Y$mRnICm$F" role="3clFbx">
             <node concept="3cpWs8" id="2Y$mRnICm$G" role="3cqZAp">
@@ -1157,7 +1157,7 @@
                 <property role="3TUv4t" value="false" />
                 <node concept="10Oyi0" id="2Y$mRnICm$I" role="1tU5fm" />
                 <node concept="1rXfSq" id="4hiugqyzfbF" role="33vP2m">
-                  <reference role="37wK5l" target="3432969378036016588" resolve="getPort" />
+                  <ref role="37wK5l" node="2Y$mRnICmnc" resolve="getPort" />
                 </node>
               </node>
             </node>
@@ -1168,7 +1168,7 @@
                   <property role="TrG5h" value="ignored" />
                   <property role="3TUv4t" value="false" />
                   <node concept="3uibUv" id="2Y$mRnICm$O" role="1tU5fm">
-                    <reference role="3uigEE" target="fxg7.~IOException" resolve="IOException" />
+                    <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />
                   </node>
                 </node>
               </node>
@@ -1176,11 +1176,11 @@
                 <node concept="3clFbF" id="2Y$mRnICm$Q" role="3cqZAp">
                   <node concept="37vLTI" id="2Y$mRnICm$R" role="3clFbG">
                     <node concept="37vLTw" id="3GM_nagT$i7" role="37vLTJ">
-                      <reference role="3cqZAo" target="3432969378036017453" resolve="freePort" />
+                      <ref role="3cqZAo" node="2Y$mRnICm$H" resolve="freePort" />
                     </node>
                     <node concept="2YIFZM" id="2Y$mRnIDehn" role="37vLTx">
-                      <reference role="37wK5l" target="ml9f.~NetUtils%dfindAvailableSocketPort()%cint" resolve="findAvailableSocketPort" />
-                      <reference role="1Pybhc" target="ml9f.~NetUtils" resolve="NetUtils" />
+                      <ref role="37wK5l" to="ml9f:~NetUtils.findAvailableSocketPort():int" resolve="findAvailableSocketPort" />
+                      <ref role="1Pybhc" to="ml9f:~NetUtils" resolve="NetUtils" />
                     </node>
                   </node>
                 </node>
@@ -1188,9 +1188,9 @@
             </node>
             <node concept="3clFbF" id="2Y$mRnICm$U" role="3cqZAp">
               <node concept="1rXfSq" id="4hiugqyzbE3" role="3clFbG">
-                <reference role="37wK5l" target="3432969378036016594" resolve="setPort" />
+                <ref role="37wK5l" node="2Y$mRnICmni" resolve="setPort" />
                 <node concept="37vLTw" id="3GM_nagTAJz" role="37wK5m">
-                  <reference role="3cqZAo" target="3432969378036017453" resolve="freePort" />
+                  <ref role="3cqZAo" node="2Y$mRnICm$H" resolve="freePort" />
                 </node>
               </node>
             </node>
@@ -1212,7 +1212,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2Y$mRnICm_3" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2Y$mRnICm_4" role="jymVt">
@@ -1229,7 +1229,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2Y$mRnICm_a" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
   </node>

@@ -149,14 +149,14 @@
       <property role="3dDGau" value="false" />
       <property role="TrG5h" value="first" />
       <node concept="16syzq" id="i3Hp$cb" role="2lK19J">
-        <reference role="16sUi3" target="1240933477392" resolve="F" />
+        <ref role="16sUi3" node="i3HpyKg" resolve="F" />
       </node>
     </node>
     <node concept="2lGYhJ" id="i3Hp$qI" role="2pHZQ9">
       <property role="3dDGau" value="false" />
       <property role="TrG5h" value="second" />
       <node concept="16syzq" id="i3Hp$A5" role="2lK19J">
-        <reference role="16sUi3" target="1240933479975" resolve="S" />
+        <ref role="16sUi3" node="i3HpzoB" resolve="S" />
       </node>
     </node>
     <node concept="3Tm1VV" id="i3HpwpF" role="1B3o_S" />
@@ -192,10 +192,10 @@
               </node>
               <node concept="1LlUBW" id="Q6pOoz7dWn" role="HW$YZ">
                 <node concept="3uibUv" id="Q6pOoz7dWo" role="1Lm7xW">
-                  <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+                  <ref role="3uigEE" to="e2lb:~String" resolve="String" />
                 </node>
                 <node concept="3uibUv" id="DJmshCqqTj" role="1Lm7xW">
-                  <reference role="3uigEE" target="e2lb.~Boolean" resolve="Boolean" />
+                  <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
                 </node>
               </node>
             </node>
@@ -205,10 +205,10 @@
       <node concept="A3Dl8" id="Q6pOoz7d1U" role="3clF45">
         <node concept="1LlUBW" id="Q6pOoz7d1V" role="A3Ik2">
           <node concept="3uibUv" id="Q6pOoz7d1W" role="1Lm7xW">
-            <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
           </node>
           <node concept="3uibUv" id="DJmshCqqTg" role="1Lm7xW">
-            <reference role="3uigEE" target="e2lb.~Boolean" resolve="Boolean" />
+            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
           </node>
         </node>
       </node>
@@ -309,7 +309,7 @@
                 <property role="3cmrfH" value="42" />
               </node>
               <node concept="37vLTw" id="2BHiRxeucT_" role="3ElQJh">
-                <reference role="3cqZAo" target="429408675341322632" resolve="map" />
+                <ref role="3cqZAo" node="nP$eD5ccA8" resolve="map" />
               </node>
             </node>
           </node>
@@ -327,7 +327,7 @@
         <node concept="YS8fn" id="2kTEJfb8HqM" role="3cqZAp">
           <node concept="2ShNRf" id="2kTEJfb8HqO" role="YScLw">
             <node concept="1pGfFk" id="2kTEJfb8Jwk" role="2ShVmc">
-              <reference role="37wK5l" target="e2lb.~RuntimeException%d&lt;init&gt;()" resolve="RuntimeException" />
+              <ref role="37wK5l" to="e2lb:~RuntimeException.&lt;init&gt;()" resolve="RuntimeException" />
             </node>
           </node>
         </node>
@@ -345,7 +345,7 @@
     </node>
     <node concept="3Tm1VV" id="2kTEJfb8Gc7" role="1B3o_S" />
     <node concept="3uibUv" id="2kTEJfb8HqL" role="3TOOP4">
-      <reference role="3uigEE" target="e2lb.~Runnable" resolve="Runnable" />
+      <ref role="3uigEE" to="e2lb:~Runnable" resolve="Runnable" />
     </node>
   </node>
   <node concept="2fD8I5" id="1rR31otmNEa">

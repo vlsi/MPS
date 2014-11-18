@@ -42,12 +42,12 @@
     <property role="TrG5h" value="XmlLiteral" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="xml literal" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="7W5DrJIdib4" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="element" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="iuxj.6666499814681415858" resolve="XmlElement" />
+      <ref role="20lvS9" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="7W5DrJIdOFx">
@@ -55,12 +55,12 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="TextMacro" />
     <property role="34LRSv" value="${" />
-    <reference role="1TJDcQ" target="iuxj.1622293396948952339" resolve="XmlText" />
+    <ref role="1TJDcQ" to="iuxj:1q3yNZeAEkj" resolve="XmlText" />
     <node concept="1TJgyj" id="7W5DrJIdOFy" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="7W5DrJIe0xE">
@@ -69,12 +69,12 @@
     <property role="R4oN_" value="element macro" />
     <property role="TrG5h" value="ElementMacro" />
     <property role="34LRSv" value="$${" />
-    <reference role="1TJDcQ" target="iuxj.6666499814681299051" resolve="XmlContent" />
+    <ref role="1TJDcQ" to="iuxj:5M4a$b5ikxF" resolve="XmlContent" />
     <node concept="1TJgyj" id="7W5DrJIe0xK" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
 </model>

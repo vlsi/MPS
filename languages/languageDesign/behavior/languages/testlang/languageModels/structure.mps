@@ -31,21 +31,21 @@
   </registry>
   <node concept="1TIwiD" id="46FlynTb_GE">
     <property role="TrG5h" value="A" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="46FlynTb_Hu">
     <property role="TrG5h" value="B" />
     <property role="R5$K7" value="true" />
-    <reference role="1TJDcQ" target="4731970554577181482" resolve="A" />
+    <ref role="1TJDcQ" node="46FlynTb_GE" resolve="A" />
   </node>
   <node concept="PlHQZ" id="46FlynTbAwk">
     <property role="TrG5h" value="I" />
   </node>
   <node concept="1TIwiD" id="46FlynTbAxN">
     <property role="TrG5h" value="C" />
-    <reference role="1TJDcQ" target="4731970554577181534" resolve="B" />
+    <ref role="1TJDcQ" node="46FlynTb_Hu" resolve="B" />
     <node concept="PrWs8" id="46FlynTbAxO" role="PzmwI">
-      <reference role="PrY4T" target="4731970554577184788" resolve="I" />
+      <ref role="PrY4T" node="46FlynTbAwk" resolve="I" />
     </node>
   </node>
 </model>

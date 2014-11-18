@@ -257,33 +257,33 @@
   </registry>
   <node concept="1M2fIO" id="2pKPpytmOB0">
     <property role="3GE5qa" value="Tasks" />
-    <reference role="1M2myG" target="8xvf.2769948622284605880" resolve="BwfSubTaskDependency" />
+    <ref role="1M2myG" to="8xvf:2pKPpytmOAS" resolve="BwfSubTaskDependency" />
     <node concept="1N5Pfh" id="2pKPpytmOB1" role="1Mr941">
-      <reference role="1N5Vy1" target="8xvf.2769948622284605881" />
+      <ref role="1N5Vy1" to="8xvf:2pKPpytmOAT" />
       <node concept="1dDu$B" id="2pKPpytmOB5" role="1N6uqs">
-        <reference role="1dDu$A" target="8xvf.2769948622284546677" resolve="BwfSubTask" />
+        <ref role="1dDu$A" to="8xvf:2pKPpytmA9P" resolve="BwfSubTask" />
       </node>
     </node>
   </node>
   <node concept="1M2fIO" id="2pKPpytnqFs">
     <property role="3GE5qa" value="Tasks" />
-    <reference role="1M2myG" target="8xvf.2769948622284546675" resolve="BwfTask" />
+    <ref role="1M2myG" to="8xvf:2pKPpytmA9N" resolve="BwfTask" />
     <node concept="EnEH3" id="2pKPpytnqFt" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="QB0g5" id="2pKPpytnqFu" role="QCWH9">
         <node concept="3clFbS" id="2pKPpytnqFv" role="2VODD2">
           <node concept="3clFbF" id="2pKPpytnqFw" role="3cqZAp">
             <node concept="1Wc70l" id="2pKPpytnqFN" role="3clFbG">
               <node concept="2YIFZM" id="2pKPpytnqFR" role="3uHU7w">
-                <reference role="37wK5l" target="h228.6666499814681413144" resolve="isName" />
-                <reference role="1Pybhc" target="h228.6666499814681413049" resolve="XmlNameUtil" />
+                <ref role="37wK5l" to="h228:5M4a$b5iKoo" resolve="isName" />
+                <ref role="1Pybhc" to="h228:5M4a$b5iKmT" resolve="XmlNameUtil" />
                 <node concept="1Wqviy" id="2pKPpytnqFS" role="37wK5m" />
               </node>
               <node concept="3fqX7Q" id="2pKPpytnqFx" role="3uHU7B">
                 <node concept="2OqwBi" id="2pKPpytnqFA" role="3fr31v">
                   <node concept="1Wqviy" id="2pKPpytnqFz" role="2Oq$k0" />
                   <node concept="liA8E" id="2pKPpytnqFI" role="2OqNvi">
-                    <reference role="37wK5l" target="e2lb.~String%dcontains(java%dlang%dCharSequence)%cboolean" resolve="contains" />
+                    <ref role="37wK5l" to="e2lb:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
                     <node concept="Xl_RD" id="2pKPpytnqFL" role="37wK5m">
                       <property role="Xl_RC" value=" " />
                     </node>
@@ -298,9 +298,9 @@
   </node>
   <node concept="1M2fIO" id="2pKPpytnqFT">
     <property role="3GE5qa" value="Tasks" />
-    <reference role="1M2myG" target="8xvf.2769948622284546677" resolve="BwfSubTask" />
+    <ref role="1M2myG" to="8xvf:2pKPpytmA9P" resolve="BwfSubTask" />
     <node concept="EnEH3" id="2pKPpytnqFU" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="QB0g5" id="2pKPpytnqFV" role="QCWH9">
         <node concept="3clFbS" id="2pKPpytnqFW" role="2VODD2">
           <node concept="3clFbF" id="2pKPpytnqFX" role="3cqZAp">
@@ -308,7 +308,7 @@
               <node concept="2OqwBi" id="2pKPpytnqG2" role="3fr31v">
                 <node concept="1Wqviy" id="2pKPpytnqG3" role="2Oq$k0" />
                 <node concept="liA8E" id="2pKPpytnqG4" role="2OqNvi">
-                  <reference role="37wK5l" target="e2lb.~String%dcontains(java%dlang%dCharSequence)%cboolean" resolve="contains" />
+                  <ref role="37wK5l" to="e2lb:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
                   <node concept="Xl_RD" id="2pKPpytnqG5" role="37wK5m">
                     <property role="Xl_RC" value=" " />
                   </node>
@@ -326,7 +326,7 @@
       <property role="TrG5h" value="project" />
       <node concept="3Tm6S6" id="Y2EImGHLV9" role="1B3o_S" />
       <node concept="3Tqbb2" id="Y2EImGHLVa" role="1tU5fm">
-        <reference role="ehGHo" target="8xvf.2769948622284546673" resolve="BwfProject" />
+        <ref role="ehGHo" to="8xvf:2pKPpytmA9L" resolve="BwfProject" />
       </node>
     </node>
     <node concept="312cEg" id="Y2EImGHLVb" role="jymVt">
@@ -343,11 +343,11 @@
             <node concept="2OqwBi" id="Y2EImGHLUU" role="37vLTJ">
               <node concept="Xjq3P" id="Y2EImGHLUV" role="2Oq$k0" />
               <node concept="2OwXpG" id="Y2EImGHLUW" role="2OqNvi">
-                <reference role="2Oxat5" target="1117643560963219144" resolve="project" />
+                <ref role="2Oxat5" node="Y2EImGHLV8" resolve="project" />
               </node>
             </node>
             <node concept="37vLTw" id="2BHiRxgm7Eb" role="37vLTx">
-              <reference role="3cqZAo" target="1117643560963219140" resolve="project" />
+              <ref role="3cqZAo" node="Y2EImGHLV4" resolve="project" />
             </node>
           </node>
         </node>
@@ -356,11 +356,11 @@
             <node concept="2OqwBi" id="Y2EImGHLV0" role="37vLTJ">
               <node concept="Xjq3P" id="Y2EImGHLV1" role="2Oq$k0" />
               <node concept="2OwXpG" id="Y2EImGHLV2" role="2OqNvi">
-                <reference role="2Oxat5" target="1117643560963219147" resolve="genContext" />
+                <ref role="2Oxat5" node="Y2EImGHLVb" resolve="genContext" />
               </node>
             </node>
             <node concept="37vLTw" id="2BHiRxgm6IS" role="37vLTx">
-              <reference role="3cqZAo" target="1117643560963219142" resolve="genContext" />
+              <ref role="3cqZAo" node="Y2EImGHLV6" resolve="genContext" />
             </node>
           </node>
         </node>
@@ -368,7 +368,7 @@
       <node concept="37vLTG" id="Y2EImGHLV4" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3Tqbb2" id="Y2EImGHLV5" role="1tU5fm">
-          <reference role="ehGHo" target="8xvf.2769948622284546673" resolve="BwfProject" />
+          <ref role="ehGHo" to="8xvf:2pKPpytmA9L" resolve="BwfProject" />
         </node>
       </node>
       <node concept="37vLTG" id="Y2EImGHLV6" role="3clF46">
@@ -385,16 +385,16 @@
           <node concept="3cpWsn" id="Y2EImGHLRW" role="3cpWs9">
             <property role="TrG5h" value="libsSet" />
             <node concept="3uibUv" id="Y2EImGHLRX" role="1tU5fm">
-              <reference role="3uigEE" target="k7g3.~Set" resolve="Set" />
+              <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
               <node concept="3Tqbb2" id="Y2EImGHLRY" role="11_B2D">
-                <reference role="ehGHo" target="8xvf.7306485738221391506" resolve="BwfTaskLibrary" />
+                <ref role="ehGHo" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
               </node>
             </node>
             <node concept="2ShNRf" id="Y2EImGHLRZ" role="33vP2m">
               <node concept="1pGfFk" id="Y2EImGHLS0" role="2ShVmc">
-                <reference role="37wK5l" target="k7g3.~LinkedHashSet%d&lt;init&gt;()" resolve="LinkedHashSet" />
+                <ref role="37wK5l" to="k7g3:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
                 <node concept="3Tqbb2" id="Y2EImGHLS1" role="1pMfVU">
-                  <reference role="ehGHo" target="8xvf.7306485738221391506" resolve="BwfTaskLibrary" />
+                  <ref role="ehGHo" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
                 </node>
               </node>
             </node>
@@ -405,16 +405,16 @@
             <node concept="3clFbF" id="Y2EImGHLS4" role="3cqZAp">
               <node concept="2OqwBi" id="Y2EImGHLS5" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTxia" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1117643560963218940" resolve="libsSet" />
+                  <ref role="3cqZAo" node="Y2EImGHLRW" resolve="libsSet" />
                 </node>
                 <node concept="liA8E" id="Y2EImGHLS7" role="2OqNvi">
-                  <reference role="37wK5l" target="k7g3.~Set%dadd(java%dlang%dObject)%cboolean" resolve="add" />
+                  <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
                   <node concept="2OqwBi" id="Y2EImGHLS8" role="37wK5m">
                     <node concept="37vLTw" id="3GM_nagT$1V" role="2Oq$k0">
-                      <reference role="3cqZAo" target="1117643560963218955" resolve="tldep" />
+                      <ref role="3cqZAo" node="Y2EImGHLSb" resolve="tldep" />
                     </node>
                     <node concept="3TrEf2" id="Y2EImGHLSa" role="2OqNvi">
-                      <reference role="3Tt5mk" target="8xvf.7306485738221471032" />
+                      <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" />
                     </node>
                   </node>
                 </node>
@@ -424,23 +424,23 @@
           <node concept="3cpWsn" id="Y2EImGHLSb" role="1Duv9x">
             <property role="TrG5h" value="tldep" />
             <node concept="3Tqbb2" id="Y2EImGHLSc" role="1tU5fm">
-              <reference role="ehGHo" target="8xvf.7306485738221471031" resolve="BwfTaskLibraryDependency" />
+              <ref role="ehGHo" to="8xvf:6l_Qx579wkR" resolve="BwfTaskLibraryDependency" />
             </node>
           </node>
           <node concept="2OqwBi" id="Y2EImGHLSd" role="1DdaDG">
             <node concept="37vLTw" id="2BHiRxeunpc" role="2Oq$k0">
-              <reference role="3cqZAo" target="1117643560963219144" resolve="project" />
+              <ref role="3cqZAo" node="Y2EImGHLV8" resolve="project" />
             </node>
             <node concept="3Tsc0h" id="Y2EImGHLSf" role="2OqNvi">
-              <reference role="3TtcxE" target="8xvf.7306485738221455031" />
+              <ref role="3TtcxE" to="8xvf:6l_Qx579sqR" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="Y2EImGHLSg" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqysx4$" role="3clFbG">
-            <reference role="37wK5l" target="1117643560963218874" resolve="closure" />
+            <ref role="37wK5l" node="Y2EImGHLQU" resolve="closure" />
             <node concept="37vLTw" id="3GM_nagTtyh" role="37wK5m">
-              <reference role="3cqZAo" target="1117643560963218940" resolve="libsSet" />
+              <ref role="3cqZAo" node="Y2EImGHLRW" resolve="libsSet" />
             </node>
           </node>
         </node>
@@ -448,19 +448,19 @@
           <node concept="3cpWsn" id="Y2EImGHLSk" role="3cpWs9">
             <property role="TrG5h" value="libs" />
             <node concept="3uibUv" id="Y2EImGHLSl" role="1tU5fm">
-              <reference role="3uigEE" target="k7g3.~List" resolve="List" />
+              <ref role="3uigEE" to="k7g3:~List" resolve="List" />
               <node concept="3Tqbb2" id="Y2EImGHLSm" role="11_B2D">
-                <reference role="ehGHo" target="8xvf.7306485738221391506" resolve="BwfTaskLibrary" />
+                <ref role="ehGHo" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
               </node>
             </node>
             <node concept="2ShNRf" id="Y2EImGHLSn" role="33vP2m">
               <node concept="1pGfFk" id="Y2EImGHLSo" role="2ShVmc">
-                <reference role="37wK5l" target="k7g3.~ArrayList%d&lt;init&gt;(java%dutil%dCollection)" resolve="ArrayList" />
+                <ref role="37wK5l" to="k7g3:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
                 <node concept="3Tqbb2" id="Y2EImGHLSp" role="1pMfVU">
-                  <reference role="ehGHo" target="8xvf.7306485738221391506" resolve="BwfTaskLibrary" />
+                  <ref role="ehGHo" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
                 </node>
                 <node concept="37vLTw" id="3GM_nagTu6a" role="37wK5m">
-                  <reference role="3cqZAo" target="1117643560963218940" resolve="libsSet" />
+                  <ref role="3cqZAo" node="Y2EImGHLRW" resolve="libsSet" />
                 </node>
               </node>
             </node>
@@ -474,11 +474,11 @@
                 <node concept="3Tqbb2" id="Y2EImGHLSv" role="1tU5fm" />
               </node>
               <node concept="2YIFZM" id="4DwHeKMrX2N" role="1DdaDG">
-                <reference role="1Pybhc" target="ec5l.~SNodeUtil" resolve="SNodeUtil" />
-                <reference role="37wK5l" target="ec5l.~SNodeUtil%dgetDescendants(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dlang%dIterable" resolve="getDescendants" />
+                <ref role="1Pybhc" to="ec5l:~SNodeUtil" resolve="SNodeUtil" />
+                <ref role="37wK5l" to="ec5l:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SNode):java.lang.Iterable" resolve="getDescendants" />
                 <node concept="2JrnkZ" id="4DwHeKMrX2O" role="37wK5m">
                   <node concept="37vLTw" id="4DwHeKMrX2P" role="2JrQYb">
-                    <reference role="3cqZAo" target="1117643560963219035" resolve="lib" />
+                    <ref role="3cqZAo" node="Y2EImGHLTr" resolve="lib" />
                   </node>
                 </node>
               </node>
@@ -487,15 +487,15 @@
                   <node concept="3cpWsn" id="Y2EImGHLSC" role="1Duv9x">
                     <property role="TrG5h" value="ref" />
                     <node concept="3uibUv" id="Y2EImGHLSD" role="1tU5fm">
-                      <reference role="3uigEE" target="ec5l.~SReference" resolve="SReference" />
+                      <ref role="3uigEE" to="ec5l:~SReference" resolve="SReference" />
                     </node>
                   </node>
                   <node concept="2YIFZM" id="WXD5HGSh3U" role="1DdaDG">
-                    <reference role="1Pybhc" target="unno.2089287822043606602" resolve="SNodeOperations" />
-                    <reference role="37wK5l" target="unno.1958256073812999117" resolve="getReferences" />
+                    <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
+                    <ref role="37wK5l" to="unno:1GH7SoqRZJd" resolve="getReferences" />
                     <node concept="2JrnkZ" id="WXD5HGSh3V" role="37wK5m">
                       <node concept="37vLTw" id="3GM_nagTvpc" role="2JrQYb">
-                        <reference role="3cqZAo" target="1117643560963218974" resolve="n" />
+                        <ref role="3cqZAo" node="Y2EImGHLSu" resolve="n" />
                       </node>
                     </node>
                   </node>
@@ -504,14 +504,14 @@
                       <node concept="3cpWsn" id="Y2EImGHLSK" role="3cpWs9">
                         <property role="TrG5h" value="targetNode" />
                         <node concept="2YIFZM" id="4xPcS81BzbZ" role="33vP2m">
-                          <reference role="37wK5l" target="unno.9196220778517123067" resolve="getTargetNodeSilently" />
-                          <reference role="1Pybhc" target="unno.2089287822043606602" resolve="SNodeOperations" />
+                          <ref role="37wK5l" to="unno:7Yvyxcb_4ZV" resolve="getTargetNodeSilently" />
+                          <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
                           <node concept="37vLTw" id="3GM_nagTB$j" role="37wK5m">
-                            <reference role="3cqZAo" target="1117643560963218984" resolve="ref" />
+                            <ref role="3cqZAo" node="Y2EImGHLSC" resolve="ref" />
                           </node>
                         </node>
                         <node concept="3uibUv" id="Y2EImGHLSL" role="1tU5fm">
-                          <reference role="3uigEE" target="ec5l.~SNode" resolve="SNode" />
+                          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
                         </node>
                       </node>
                     </node>
@@ -520,7 +520,7 @@
                         <node concept="3clFbF" id="Y2EImGHLSR" role="3cqZAp">
                           <node concept="2OqwBi" id="Y2EImGHLSS" role="3clFbG">
                             <node concept="37vLTw" id="2BHiRxeujQc" role="2Oq$k0">
-                              <reference role="3cqZAo" target="1117643560963219147" resolve="genContext" />
+                              <ref role="3cqZAo" node="Y2EImGHLVb" resolve="genContext" />
                             </node>
                             <node concept="2k5nB$" id="Y2EImGHLSU" role="2OqNvi">
                               <node concept="3cpWs3" id="Y2EImGHLSV" role="2k5Stb">
@@ -530,10 +530,10 @@
                                   </node>
                                   <node concept="2OqwBi" id="Y2EImGHLSY" role="3uHU7w">
                                     <node concept="37vLTw" id="3GM_nagTAku" role="2Oq$k0">
-                                      <reference role="3cqZAo" target="1117643560963219035" resolve="lib" />
+                                      <ref role="3cqZAo" node="Y2EImGHLTr" resolve="lib" />
                                     </node>
                                     <node concept="3TrcHB" id="Y2EImGHLT0" role="2OqNvi">
-                                      <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                                     </node>
                                   </node>
                                 </node>
@@ -542,7 +542,7 @@
                                 </node>
                               </node>
                               <node concept="37vLTw" id="3GM_nagT$q7" role="2k6f33">
-                                <reference role="3cqZAo" target="1117643560963218974" resolve="n" />
+                                <ref role="3cqZAo" node="Y2EImGHLSu" resolve="n" />
                               </node>
                             </node>
                           </node>
@@ -551,7 +551,7 @@
                       <node concept="3clFbC" id="Y2EImGHLT3" role="3clFbw">
                         <node concept="10Nm6u" id="Y2EImGHLT4" role="3uHU7w" />
                         <node concept="37vLTw" id="3GM_nagTsFC" role="3uHU7B">
-                          <reference role="3cqZAo" target="1117643560963218992" resolve="targetNode" />
+                          <ref role="3cqZAo" node="Y2EImGHLSK" resolve="targetNode" />
                         </node>
                       </node>
                       <node concept="3eNFk2" id="Y2EImGHLT6" role="3eNLev">
@@ -559,7 +559,7 @@
                           <node concept="3clFbF" id="Y2EImGHLT8" role="3cqZAp">
                             <node concept="2OqwBi" id="Y2EImGHLT9" role="3clFbG">
                               <node concept="37vLTw" id="2BHiRxeufPC" role="2Oq$k0">
-                                <reference role="3cqZAo" target="1117643560963219147" resolve="genContext" />
+                                <ref role="3cqZAo" node="Y2EImGHLVb" resolve="genContext" />
                               </node>
                               <node concept="2k5nB$" id="Y2EImGHLTb" role="2OqNvi">
                                 <node concept="3cpWs3" id="Y2EImGHLTc" role="2k5Stb">
@@ -569,10 +569,10 @@
                                     </node>
                                     <node concept="2OqwBi" id="Y2EImGHLTf" role="3uHU7w">
                                       <node concept="37vLTw" id="3GM_nagTs0A" role="2Oq$k0">
-                                        <reference role="3cqZAo" target="1117643560963219035" resolve="lib" />
+                                        <ref role="3cqZAo" node="Y2EImGHLTr" resolve="lib" />
                                       </node>
                                       <node concept="3TrcHB" id="Y2EImGHLTh" role="2OqNvi">
-                                        <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                                       </node>
                                     </node>
                                   </node>
@@ -581,7 +581,7 @@
                                   </node>
                                 </node>
                                 <node concept="37vLTw" id="3GM_nagT$oW" role="2k6f33">
-                                  <reference role="3cqZAo" target="1117643560963218974" resolve="n" />
+                                  <ref role="3cqZAo" node="Y2EImGHLSu" resolve="n" />
                                 </node>
                               </node>
                             </node>
@@ -590,16 +590,16 @@
                         <node concept="3fqX7Q" id="Y2EImGHLTk" role="3eO9$A">
                           <node concept="2OqwBi" id="Y2EImGHLTl" role="3fr31v">
                             <node concept="37vLTw" id="3GM_nagTxR5" role="2Oq$k0">
-                              <reference role="3cqZAo" target="1117643560963218940" resolve="libsSet" />
+                              <ref role="3cqZAo" node="Y2EImGHLRW" resolve="libsSet" />
                             </node>
                             <node concept="liA8E" id="Y2EImGHLTn" role="2OqNvi">
-                              <reference role="37wK5l" target="k7g3.~Set%dcontains(java%dlang%dObject)%cboolean" resolve="contains" />
+                              <ref role="37wK5l" to="k7g3:~Set.contains(java.lang.Object):boolean" resolve="contains" />
                               <node concept="2OqwBi" id="46wqQ5NQwse" role="37wK5m">
                                 <node concept="liA8E" id="46wqQ5NQwsf" role="2OqNvi">
-                                  <reference role="37wK5l" target="ec5l.~SNode%dgetContainingRoot()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolve="getContainingRoot" />
+                                  <ref role="37wK5l" to="ec5l:~SNode.getContainingRoot():org.jetbrains.mps.openapi.model.SNode" resolve="getContainingRoot" />
                                 </node>
                                 <node concept="37vLTw" id="3GM_nagTBrg" role="2Oq$k0">
-                                  <reference role="3cqZAo" target="1117643560963218992" resolve="targetNode" />
+                                  <ref role="3cqZAo" node="Y2EImGHLSK" resolve="targetNode" />
                                 </node>
                               </node>
                             </node>
@@ -615,29 +615,29 @@
           <node concept="3cpWsn" id="Y2EImGHLTr" role="1Duv9x">
             <property role="TrG5h" value="lib" />
             <node concept="3Tqbb2" id="Y2EImGHLTs" role="1tU5fm">
-              <reference role="ehGHo" target="8xvf.7306485738221391506" resolve="BwfTaskLibrary" />
+              <ref role="ehGHo" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
             </node>
           </node>
           <node concept="37vLTw" id="3GM_nagTBne" role="1DdaDG">
-            <reference role="3cqZAo" target="1117643560963218964" resolve="libs" />
+            <ref role="3cqZAo" node="Y2EImGHLSk" resolve="libs" />
           </node>
         </node>
         <node concept="3cpWs8" id="Y2EImGHLTu" role="3cqZAp">
           <node concept="3cpWsn" id="Y2EImGHLTv" role="3cpWs9">
             <property role="TrG5h" value="parts" />
             <node concept="3uibUv" id="Y2EImGHLTw" role="1tU5fm">
-              <reference role="3uigEE" target="k7g3.~List" resolve="List" />
+              <ref role="3uigEE" to="k7g3:~List" resolve="List" />
               <node concept="3Tqbb2" id="Y2EImGHLTx" role="11_B2D">
-                <reference role="ehGHo" target="8xvf.2769948622284546695" resolve="BwfProjectPart" />
+                <ref role="ehGHo" to="8xvf:2pKPpytmAa7" resolve="BwfProjectPart" />
               </node>
             </node>
             <node concept="2OqwBi" id="Y2EImGHLTy" role="33vP2m">
               <node concept="2OqwBi" id="Y2EImGHLTz" role="2Oq$k0">
                 <node concept="37vLTw" id="3GM_nagTwET" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1117643560963218964" resolve="libs" />
+                  <ref role="3cqZAo" node="Y2EImGHLSk" resolve="libs" />
                 </node>
                 <node concept="13MTOL" id="Y2EImGHLT_" role="2OqNvi">
-                  <reference role="13MTZf" target="8xvf.7306485738221391508" />
+                  <ref role="13MTZf" to="8xvf:6l_Qx579cUk" />
                 </node>
               </node>
               <node concept="ANE8D" id="Y2EImGHLTA" role="2OqNvi" />
@@ -648,22 +648,22 @@
           <node concept="3cpWsn" id="Y2EImGHLTC" role="3cpWs9">
             <property role="TrG5h" value="map" />
             <node concept="3uibUv" id="Y2EImGHLTD" role="1tU5fm">
-              <reference role="3uigEE" target="k7g3.~Map" resolve="Map" />
+              <ref role="3uigEE" to="k7g3:~Map" resolve="Map" />
               <node concept="3uibUv" id="Y2EImGHLTE" role="11_B2D">
-                <reference role="3uigEE" target="ec5l.~SNode" resolve="SNode" />
+                <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
               </node>
               <node concept="3uibUv" id="Y2EImGHLTF" role="11_B2D">
-                <reference role="3uigEE" target="ec5l.~SNode" resolve="SNode" />
+                <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
               </node>
             </node>
             <node concept="2ShNRf" id="Y2EImGHLTG" role="33vP2m">
               <node concept="1pGfFk" id="Y2EImGHLTH" role="2ShVmc">
-                <reference role="37wK5l" target="k7g3.~HashMap%d&lt;init&gt;()" resolve="HashMap" />
+                <ref role="37wK5l" to="k7g3:~HashMap.&lt;init&gt;()" resolve="HashMap" />
                 <node concept="3uibUv" id="Y2EImGHLTI" role="1pMfVU">
-                  <reference role="3uigEE" target="ec5l.~SNode" resolve="SNode" />
+                  <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
                 </node>
                 <node concept="3uibUv" id="Y2EImGHLTJ" role="1pMfVU">
-                  <reference role="3uigEE" target="ec5l.~SNode" resolve="SNode" />
+                  <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
                 </node>
               </node>
             </node>
@@ -672,31 +672,31 @@
         <node concept="3clFbF" id="Y2EImGHLTK" role="3cqZAp">
           <node concept="37vLTI" id="Y2EImGHLTL" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTum2" role="37vLTJ">
-              <reference role="3cqZAo" target="1117643560963219039" resolve="parts" />
+              <ref role="3cqZAo" node="Y2EImGHLTv" resolve="parts" />
             </node>
             <node concept="10QFUN" id="Y2EImGHLTN" role="37vLTx">
               <node concept="3uibUv" id="Y2EImGHLTO" role="10QFUM">
-                <reference role="3uigEE" target="k7g3.~List" resolve="List" />
+                <ref role="3uigEE" to="k7g3:~List" resolve="List" />
                 <node concept="3Tqbb2" id="Y2EImGHLTP" role="11_B2D">
-                  <reference role="ehGHo" target="8xvf.2769948622284546695" resolve="BwfProjectPart" />
+                  <ref role="ehGHo" to="8xvf:2pKPpytmAa7" resolve="BwfProjectPart" />
                 </node>
               </node>
               <node concept="2YIFZM" id="Y2EImGHLTQ" role="10QFUP">
-                <reference role="37wK5l" target="cu2c.~CopyUtil%dcopy(java%dutil%dList,java%dutil%dMap)%cjava%dutil%dList" resolve="copy" />
-                <reference role="1Pybhc" target="cu2c.~CopyUtil" resolve="CopyUtil" />
+                <ref role="37wK5l" to="cu2c:~CopyUtil.copy(java.util.List,java.util.Map):java.util.List" resolve="copy" />
+                <ref role="1Pybhc" to="cu2c:~CopyUtil" resolve="CopyUtil" />
                 <node concept="10QFUN" id="Y2EImGHLTR" role="37wK5m">
                   <node concept="3uibUv" id="Y2EImGHLTS" role="10QFUM">
-                    <reference role="3uigEE" target="k7g3.~List" resolve="List" />
+                    <ref role="3uigEE" to="k7g3:~List" resolve="List" />
                     <node concept="3uibUv" id="Y2EImGHLTT" role="11_B2D">
-                      <reference role="3uigEE" target="ec5l.~SNode" resolve="SNode" />
+                      <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="3GM_nagTuvx" role="10QFUP">
-                    <reference role="3cqZAo" target="1117643560963219039" resolve="parts" />
+                    <ref role="3cqZAo" node="Y2EImGHLTv" resolve="parts" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTAyD" role="37wK5m">
-                  <reference role="3cqZAo" target="1117643560963219048" resolve="map" />
+                  <ref role="3cqZAo" node="Y2EImGHLTC" resolve="map" />
                 </node>
               </node>
             </node>
@@ -706,10 +706,10 @@
           <node concept="2OqwBi" id="Y2EImGHLTX" role="3clFbG">
             <node concept="2OqwBi" id="Y2EImGHLTY" role="2Oq$k0">
               <node concept="37vLTw" id="2BHiRxeuTqt" role="2Oq$k0">
-                <reference role="3cqZAo" target="1117643560963219144" resolve="project" />
+                <ref role="3cqZAo" node="Y2EImGHLV8" resolve="project" />
               </node>
               <node concept="3Tsc0h" id="Y2EImGHLU0" role="2OqNvi">
-                <reference role="3TtcxE" target="8xvf.7306485738221455031" />
+                <ref role="3TtcxE" to="8xvf:6l_Qx579sqR" />
               </node>
             </node>
             <node concept="2Kehj3" id="Y2EImGHLU1" role="2OqNvi" />
@@ -721,17 +721,17 @@
               <node concept="3cpWsn" id="Y2EImGHLU5" role="1Duv9x">
                 <property role="TrG5h" value="ref" />
                 <node concept="3uibUv" id="Y2EImGHLU6" role="1tU5fm">
-                  <reference role="3uigEE" target="ec5l.~SReference" resolve="SReference" />
+                  <ref role="3uigEE" to="ec5l:~SReference" resolve="SReference" />
                 </node>
               </node>
               <node concept="2OqwBi" id="Y2EImGHLU7" role="1DdaDG">
                 <node concept="2JrnkZ" id="Y2EImGHLU8" role="2Oq$k0">
                   <node concept="37vLTw" id="3GM_nagTvDr" role="2JrQYb">
-                    <reference role="3cqZAo" target="1117643560963219108" resolve="n" />
+                    <ref role="3cqZAo" node="Y2EImGHLU$" resolve="n" />
                   </node>
                 </node>
                 <node concept="liA8E" id="Y2EImGHLUa" role="2OqNvi">
-                  <reference role="37wK5l" target="ec5l.~SNode%dgetReferences()%cjava%dlang%dIterable" resolve="getReferences" />
+                  <ref role="37wK5l" to="ec5l:~SNode.getReferences():java.lang.Iterable" resolve="getReferences" />
                 </node>
               </node>
               <node concept="3clFbS" id="Y2EImGHLUb" role="2LFqv$">
@@ -739,14 +739,14 @@
                   <node concept="3cpWsn" id="Y2EImGHLUd" role="3cpWs9">
                     <property role="TrG5h" value="targetNode" />
                     <node concept="2YIFZM" id="4xPcS81Bzc1" role="33vP2m">
-                      <reference role="37wK5l" target="unno.9196220778517123067" resolve="getTargetNodeSilently" />
-                      <reference role="1Pybhc" target="unno.2089287822043606602" resolve="SNodeOperations" />
+                      <ref role="37wK5l" to="unno:7Yvyxcb_4ZV" resolve="getTargetNodeSilently" />
+                      <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
                       <node concept="37vLTw" id="3GM_nagTuZQ" role="37wK5m">
-                        <reference role="3cqZAo" target="1117643560963219077" resolve="ref" />
+                        <ref role="3cqZAo" node="Y2EImGHLU5" resolve="ref" />
                       </node>
                     </node>
                     <node concept="3uibUv" id="Y2EImGHLUe" role="1tU5fm">
-                      <reference role="3uigEE" target="ec5l.~SNode" resolve="SNode" />
+                      <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
                     </node>
                   </node>
                 </node>
@@ -754,29 +754,29 @@
                   <node concept="3clFbS" id="Y2EImGHLUj" role="3clFbx">
                     <node concept="3clFbF" id="Y2EImGHLUk" role="3cqZAp">
                       <node concept="2YIFZM" id="5CFnob0PbiH" role="3clFbG">
-                        <reference role="1Pybhc" target="ec5l.~SNodeAccessUtil" resolve="SNodeAccessUtil" />
-                        <reference role="37wK5l" target="ec5l.~SNodeAccessUtil%dsetReferenceTarget(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolve="setReferenceTarget" />
+                        <ref role="1Pybhc" to="ec5l:~SNodeAccessUtil" resolve="SNodeAccessUtil" />
+                        <ref role="37wK5l" to="ec5l:~SNodeAccessUtil.setReferenceTarget(org.jetbrains.mps.openapi.model.SNode,java.lang.String,org.jetbrains.mps.openapi.model.SNode):void" resolve="setReferenceTarget" />
                         <node concept="2JrnkZ" id="5CFnob0PbiI" role="37wK5m">
                           <node concept="37vLTw" id="3GM_nagTu91" role="2JrQYb">
-                            <reference role="3cqZAo" target="1117643560963219108" resolve="n" />
+                            <ref role="3cqZAo" node="Y2EImGHLU$" resolve="n" />
                           </node>
                         </node>
                         <node concept="2OqwBi" id="5CFnob0PbiK" role="37wK5m">
                           <node concept="37vLTw" id="3GM_nagTv2i" role="2Oq$k0">
-                            <reference role="3cqZAo" target="1117643560963219077" resolve="ref" />
+                            <ref role="3cqZAo" node="Y2EImGHLU5" resolve="ref" />
                           </node>
                           <node concept="liA8E" id="5CFnob0PbiM" role="2OqNvi">
-                            <reference role="37wK5l" target="ec5l.~SReference%dgetRole()%cjava%dlang%dString" resolve="getRole" />
+                            <ref role="37wK5l" to="ec5l:~SReference.getRole():java.lang.String" resolve="getRole" />
                           </node>
                         </node>
                         <node concept="2OqwBi" id="5CFnob0PbiN" role="37wK5m">
                           <node concept="37vLTw" id="3GM_nagT$Nu" role="2Oq$k0">
-                            <reference role="3cqZAo" target="1117643560963219048" resolve="map" />
+                            <ref role="3cqZAo" node="Y2EImGHLTC" resolve="map" />
                           </node>
                           <node concept="liA8E" id="5CFnob0PbiP" role="2OqNvi">
-                            <reference role="37wK5l" target="k7g3.~Map%dget(java%dlang%dObject)%cjava%dlang%dObject" resolve="get" />
+                            <ref role="37wK5l" to="k7g3:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
                             <node concept="37vLTw" id="3GM_nagTuh6" role="37wK5m">
-                              <reference role="3cqZAo" target="1117643560963219085" resolve="targetNode" />
+                              <ref role="3cqZAo" node="Y2EImGHLUd" resolve="targetNode" />
                             </node>
                           </node>
                         </node>
@@ -785,12 +785,12 @@
                   </node>
                   <node concept="2OqwBi" id="Y2EImGHLUw" role="3clFbw">
                     <node concept="37vLTw" id="3GM_nagT_k$" role="2Oq$k0">
-                      <reference role="3cqZAo" target="1117643560963219048" resolve="map" />
+                      <ref role="3cqZAo" node="Y2EImGHLTC" resolve="map" />
                     </node>
                     <node concept="liA8E" id="Y2EImGHLUy" role="2OqNvi">
-                      <reference role="37wK5l" target="k7g3.~Map%dcontainsKey(java%dlang%dObject)%cboolean" resolve="containsKey" />
+                      <ref role="37wK5l" to="k7g3:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
                       <node concept="37vLTw" id="3GM_nagTBp9" role="37wK5m">
-                        <reference role="3cqZAo" target="1117643560963219085" resolve="targetNode" />
+                        <ref role="3cqZAo" node="Y2EImGHLUd" resolve="targetNode" />
                       </node>
                     </node>
                   </node>
@@ -801,10 +801,10 @@
                           <property role="TrG5h" value="containingRoot" />
                           <node concept="2OqwBi" id="46wqQ5NQwrJ" role="33vP2m">
                             <node concept="liA8E" id="46wqQ5NQwrK" role="2OqNvi">
-                              <reference role="37wK5l" target="ec5l.~SNode%dgetContainingRoot()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolve="getContainingRoot" />
+                              <ref role="37wK5l" to="ec5l:~SNode.getContainingRoot():org.jetbrains.mps.openapi.model.SNode" resolve="getContainingRoot" />
                             </node>
                             <node concept="37vLTw" id="3GM_nagTv8k" role="2Oq$k0">
-                              <reference role="3cqZAo" target="1117643560963219085" resolve="targetNode" />
+                              <ref role="3cqZAo" node="Y2EImGHLUd" resolve="targetNode" />
                             </node>
                           </node>
                           <node concept="3Tqbb2" id="450ejGzgRn$" role="1tU5fm" />
@@ -815,14 +815,14 @@
                           <node concept="3clFbF" id="450ejGzgRo1" role="3cqZAp">
                             <node concept="2OqwBi" id="450ejGzgRoh" role="3clFbG">
                               <node concept="37vLTw" id="2BHiRxeuL5A" role="2Oq$k0">
-                                <reference role="3cqZAo" target="1117643560963219147" resolve="genContext" />
+                                <ref role="3cqZAo" node="Y2EImGHLVb" resolve="genContext" />
                               </node>
                               <node concept="2k5nB$" id="450ejGzgRon" role="2OqNvi">
                                 <node concept="Xl_RD" id="450ejGzgRop" role="2k5Stb">
                                   <property role="Xl_RC" value="task library is not imported" />
                                 </node>
                                 <node concept="37vLTw" id="3GM_nagTvyO" role="2k6f33">
-                                  <reference role="3cqZAo" target="1117643560963219108" resolve="n" />
+                                  <ref role="3cqZAo" node="Y2EImGHLU$" resolve="n" />
                                 </node>
                               </node>
                             </node>
@@ -830,11 +830,11 @@
                         </node>
                         <node concept="2OqwBi" id="450ejGzgRnT" role="3clFbw">
                           <node concept="37vLTw" id="3GM_nagTzJW" role="2Oq$k0">
-                            <reference role="3cqZAo" target="4701820937132275166" resolve="containingRoot" />
+                            <ref role="3cqZAo" node="450ejGzgRnu" resolve="containingRoot" />
                           </node>
                           <node concept="1mIQ4w" id="450ejGzgRnY" role="2OqNvi">
                             <node concept="chp4Y" id="450ejGzgRo0" role="cj9EA">
-                              <reference role="cht4Q" target="8xvf.7306485738221391506" resolve="BwfTaskLibrary" />
+                              <ref role="cht4Q" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
                             </node>
                           </node>
                         </node>
@@ -850,11 +850,11 @@
             <node concept="3Tqbb2" id="Y2EImGHLU_" role="1tU5fm" />
           </node>
           <node concept="2YIFZM" id="4DwHeKMrUTk" role="1DdaDG">
-            <reference role="1Pybhc" target="ec5l.~SNodeUtil" resolve="SNodeUtil" />
-            <reference role="37wK5l" target="ec5l.~SNodeUtil%dgetDescendants(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dlang%dIterable" resolve="getDescendants" />
+            <ref role="1Pybhc" to="ec5l:~SNodeUtil" resolve="SNodeUtil" />
+            <ref role="37wK5l" to="ec5l:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SNode):java.lang.Iterable" resolve="getDescendants" />
             <node concept="2JrnkZ" id="4DwHeKMrUTl" role="37wK5m">
               <node concept="37vLTw" id="4DwHeKMrUTm" role="2JrQYb">
-                <reference role="3cqZAo" target="1117643560963219144" resolve="project" />
+                <ref role="3cqZAo" node="Y2EImGHLV8" resolve="project" />
               </node>
             </node>
           </node>
@@ -870,21 +870,21 @@
               <node concept="2OqwBi" id="4qU2HB9eLEL" role="3clFbG">
                 <node concept="2OqwBi" id="4qU2HB9eLEC" role="2Oq$k0">
                   <node concept="37vLTw" id="2BHiRxeuFJ4" role="2Oq$k0">
-                    <reference role="3cqZAo" target="1117643560963219144" resolve="project" />
+                    <ref role="3cqZAo" node="Y2EImGHLV8" resolve="project" />
                   </node>
                   <node concept="3Tsc0h" id="4qU2HB9eLEH" role="2OqNvi">
-                    <reference role="3TtcxE" target="8xvf.2769948622284574304" />
+                    <ref role="3TtcxE" to="8xvf:2pKPpytmGTw" />
                   </node>
                 </node>
                 <node concept="2Ke4WJ" id="4qU2HB9eLF6" role="2OqNvi">
                   <node concept="2OqwBi" id="4qU2HB9eLF7" role="25WWJ7">
                     <node concept="37vLTw" id="3GM_nagTsBG" role="2Oq$k0">
-                      <reference role="3cqZAo" target="1117643560963219039" resolve="parts" />
+                      <ref role="3cqZAo" node="Y2EImGHLTv" resolve="parts" />
                     </node>
                     <node concept="liA8E" id="4qU2HB9eLF9" role="2OqNvi">
-                      <reference role="37wK5l" target="k7g3.~List%dget(int)%cjava%dlang%dObject" resolve="get" />
+                      <ref role="37wK5l" to="k7g3:~List.get(int):java.lang.Object" resolve="get" />
                       <node concept="37vLTw" id="3GM_nagTugD" role="37wK5m">
-                        <reference role="3cqZAo" target="5096397858823412357" resolve="i" />
+                        <ref role="3cqZAo" node="4qU2HB9eLE5" resolve="i" />
                       </node>
                     </node>
                   </node>
@@ -901,10 +901,10 @@
               </node>
               <node concept="2OqwBi" id="4qU2HB9eLEd" role="3uHU7B">
                 <node concept="37vLTw" id="3GM_nagTuJL" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1117643560963219039" resolve="parts" />
+                  <ref role="3cqZAo" node="Y2EImGHLTv" resolve="parts" />
                 </node>
                 <node concept="liA8E" id="4qU2HB9eLEj" role="2OqNvi">
-                  <reference role="37wK5l" target="k7g3.~List%dsize()%cint" resolve="size" />
+                  <ref role="37wK5l" to="k7g3:~List.size():int" resolve="size" />
                 </node>
               </node>
             </node>
@@ -914,12 +914,12 @@
               <property role="3cmrfH" value="0" />
             </node>
             <node concept="37vLTw" id="3GM_nagT$jD" role="3uHU7B">
-              <reference role="3cqZAo" target="5096397858823412357" resolve="i" />
+              <ref role="3cqZAo" node="4qU2HB9eLE5" resolve="i" />
             </node>
           </node>
           <node concept="3uO5VW" id="4qU2HB9eLEy" role="1Dwrff">
             <node concept="37vLTw" id="3GM_nagTtyC" role="2$L3a6">
-              <reference role="3cqZAo" target="5096397858823412357" resolve="i" />
+              <ref role="3cqZAo" node="4qU2HB9eLE5" resolve="i" />
             </node>
           </node>
         </node>
@@ -935,13 +935,13 @@
             <property role="TrG5h" value="queue" />
             <node concept="3O6Q9H" id="Y2EImGHLR0" role="1tU5fm">
               <node concept="3Tqbb2" id="Y2EImGHLR1" role="3O5elw">
-                <reference role="ehGHo" target="8xvf.7306485738221391506" resolve="BwfTaskLibrary" />
+                <ref role="ehGHo" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
               </node>
             </node>
             <node concept="2ShNRf" id="Y2EImGHLR2" role="33vP2m">
               <node concept="2Jqq0_" id="Y2EImGHLR3" role="2ShVmc">
                 <node concept="3Tqbb2" id="Y2EImGHLR4" role="HW$YZ">
-                  <reference role="ehGHo" target="8xvf.7306485738221391506" resolve="BwfTaskLibrary" />
+                  <ref role="ehGHo" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
                 </node>
               </node>
             </node>
@@ -950,11 +950,11 @@
         <node concept="3clFbF" id="Y2EImGHLR5" role="3cqZAp">
           <node concept="2OqwBi" id="Y2EImGHLR6" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTApl" role="2Oq$k0">
-              <reference role="3cqZAo" target="1117643560963218879" resolve="queue" />
+              <ref role="3cqZAo" node="Y2EImGHLQZ" resolve="queue" />
             </node>
             <node concept="X8dFx" id="Y2EImGHLR8" role="2OqNvi">
               <node concept="37vLTw" id="2BHiRxgm2qG" role="25WWJ7">
-                <reference role="3cqZAo" target="1117643560963218932" resolve="libs" />
+                <ref role="3cqZAo" node="Y2EImGHLRO" resolve="libs" />
               </node>
             </node>
           </node>
@@ -965,11 +965,11 @@
               <node concept="3cpWsn" id="Y2EImGHLRd" role="3cpWs9">
                 <property role="TrG5h" value="lib" />
                 <node concept="3Tqbb2" id="Y2EImGHLRe" role="1tU5fm">
-                  <reference role="ehGHo" target="8xvf.7306485738221391506" resolve="BwfTaskLibrary" />
+                  <ref role="ehGHo" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
                 </node>
                 <node concept="2OqwBi" id="Y2EImGHLRf" role="33vP2m">
                   <node concept="37vLTw" id="3GM_nagTrSE" role="2Oq$k0">
-                    <reference role="3cqZAo" target="1117643560963218879" resolve="queue" />
+                    <ref role="3cqZAo" node="Y2EImGHLQZ" resolve="queue" />
                   </node>
                   <node concept="2Kt2Hk" id="Y2EImGHLRh" role="2OqNvi" />
                 </node>
@@ -982,16 +982,16 @@
                     <node concept="3clFbF" id="Y2EImGHLRm" role="3cqZAp">
                       <node concept="2OqwBi" id="Y2EImGHLRn" role="3clFbG">
                         <node concept="37vLTw" id="2BHiRxgm8_$" role="2Oq$k0">
-                          <reference role="3cqZAo" target="1117643560963218932" resolve="libs" />
+                          <ref role="3cqZAo" node="Y2EImGHLRO" resolve="libs" />
                         </node>
                         <node concept="liA8E" id="Y2EImGHLRp" role="2OqNvi">
-                          <reference role="37wK5l" target="k7g3.~Set%dadd(java%dlang%dObject)%cboolean" resolve="add" />
+                          <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
                           <node concept="2OqwBi" id="Y2EImGHLRq" role="37wK5m">
                             <node concept="37vLTw" id="3GM_nagTuar" role="2Oq$k0">
-                              <reference role="3cqZAo" target="1117643560963218923" resolve="dep" />
+                              <ref role="3cqZAo" node="Y2EImGHLRF" resolve="dep" />
                             </node>
                             <node concept="3TrEf2" id="Y2EImGHLRs" role="2OqNvi">
-                              <reference role="3Tt5mk" target="8xvf.7306485738221471032" />
+                              <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" />
                             </node>
                           </node>
                         </node>
@@ -1000,15 +1000,15 @@
                     <node concept="3clFbF" id="Y2EImGHLRt" role="3cqZAp">
                       <node concept="2OqwBi" id="Y2EImGHLRu" role="3clFbG">
                         <node concept="37vLTw" id="3GM_nagTyGz" role="2Oq$k0">
-                          <reference role="3cqZAo" target="1117643560963218879" resolve="queue" />
+                          <ref role="3cqZAo" node="Y2EImGHLQZ" resolve="queue" />
                         </node>
                         <node concept="2Ke9KJ" id="Y2EImGHLRw" role="2OqNvi">
                           <node concept="2OqwBi" id="Y2EImGHLRx" role="25WWJ7">
                             <node concept="37vLTw" id="3GM_nagTzUU" role="2Oq$k0">
-                              <reference role="3cqZAo" target="1117643560963218923" resolve="dep" />
+                              <ref role="3cqZAo" node="Y2EImGHLRF" resolve="dep" />
                             </node>
                             <node concept="3TrEf2" id="Y2EImGHLRz" role="2OqNvi">
-                              <reference role="3Tt5mk" target="8xvf.7306485738221471032" />
+                              <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" />
                             </node>
                           </node>
                         </node>
@@ -1018,16 +1018,16 @@
                   <node concept="3fqX7Q" id="Y2EImGHLR$" role="3clFbw">
                     <node concept="2OqwBi" id="Y2EImGHLR_" role="3fr31v">
                       <node concept="37vLTw" id="2BHiRxgkWof" role="2Oq$k0">
-                        <reference role="3cqZAo" target="1117643560963218932" resolve="libs" />
+                        <ref role="3cqZAo" node="Y2EImGHLRO" resolve="libs" />
                       </node>
                       <node concept="liA8E" id="Y2EImGHLRB" role="2OqNvi">
-                        <reference role="37wK5l" target="k7g3.~Set%dcontains(java%dlang%dObject)%cboolean" resolve="contains" />
+                        <ref role="37wK5l" to="k7g3:~Set.contains(java.lang.Object):boolean" resolve="contains" />
                         <node concept="2OqwBi" id="Y2EImGHLRC" role="37wK5m">
                           <node concept="37vLTw" id="3GM_nagTuKo" role="2Oq$k0">
-                            <reference role="3cqZAo" target="1117643560963218923" resolve="dep" />
+                            <ref role="3cqZAo" node="Y2EImGHLRF" resolve="dep" />
                           </node>
                           <node concept="3TrEf2" id="Y2EImGHLRE" role="2OqNvi">
-                            <reference role="3Tt5mk" target="8xvf.7306485738221471032" />
+                            <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" />
                           </node>
                         </node>
                       </node>
@@ -1038,15 +1038,15 @@
               <node concept="3cpWsn" id="Y2EImGHLRF" role="1Duv9x">
                 <property role="TrG5h" value="dep" />
                 <node concept="3Tqbb2" id="Y2EImGHLRG" role="1tU5fm">
-                  <reference role="ehGHo" target="8xvf.7306485738221471031" resolve="BwfTaskLibraryDependency" />
+                  <ref role="ehGHo" to="8xvf:6l_Qx579wkR" resolve="BwfTaskLibraryDependency" />
                 </node>
               </node>
               <node concept="2OqwBi" id="Y2EImGHLRH" role="1DdaDG">
                 <node concept="37vLTw" id="3GM_nagTAnQ" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1117643560963218893" resolve="lib" />
+                  <ref role="3cqZAo" node="Y2EImGHLRd" resolve="lib" />
                 </node>
                 <node concept="3Tsc0h" id="Y2EImGHLRJ" role="2OqNvi">
-                  <reference role="3TtcxE" target="8xvf.7306485738221455030" />
+                  <ref role="3TtcxE" to="8xvf:6l_Qx579sqQ" />
                 </node>
               </node>
             </node>
@@ -1054,7 +1054,7 @@
           <node concept="3fqX7Q" id="Y2EImGHLRK" role="2$JKZa">
             <node concept="2OqwBi" id="Y2EImGHLRL" role="3fr31v">
               <node concept="37vLTw" id="3GM_nagTu_f" role="2Oq$k0">
-                <reference role="3cqZAo" target="1117643560963218879" resolve="queue" />
+                <ref role="3cqZAo" node="Y2EImGHLQZ" resolve="queue" />
               </node>
               <node concept="1v1jN8" id="Y2EImGHLRN" role="2OqNvi" />
             </node>
@@ -1064,9 +1064,9 @@
       <node concept="37vLTG" id="Y2EImGHLRO" role="3clF46">
         <property role="TrG5h" value="libs" />
         <node concept="3uibUv" id="Y2EImGHLRP" role="1tU5fm">
-          <reference role="3uigEE" target="k7g3.~Set" resolve="Set" />
+          <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
           <node concept="3Tqbb2" id="Y2EImGHLRQ" role="11_B2D">
-            <reference role="ehGHo" target="8xvf.7306485738221391506" resolve="BwfTaskLibrary" />
+            <ref role="ehGHo" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
           </node>
         </node>
       </node>
@@ -1075,7 +1075,7 @@
   </node>
   <node concept="1M2fIO" id="Y2EImGI2ed">
     <property role="3GE5qa" value="Libraries" />
-    <reference role="1M2myG" target="8xvf.7306485738221391506" resolve="BwfTaskLibrary" />
+    <ref role="1M2myG" to="8xvf:6l_Qx579cUi" resolve="BwfTaskLibrary" />
     <node concept="osYL8" id="Y2EImGI2ee" role="1MLXOK">
       <node concept="3clFbS" id="Y2EImGI2ef" role="2VODD2">
         <node concept="3clFbF" id="Y2EImGI2eg" role="3cqZAp">
@@ -1084,7 +1084,7 @@
               <node concept="otxO1" id="Y2EImGI2f5" role="2Oq$k0" />
               <node concept="3O6GUB" id="Y2EImGI2fd" role="2OqNvi">
                 <node concept="chp4Y" id="Y2EImGI2ff" role="3QVz_e">
-                  <reference role="cht4Q" target="8xvf.7306485738221471031" resolve="BwfTaskLibraryDependency" />
+                  <ref role="cht4Q" to="8xvf:6l_Qx579wkR" resolve="BwfTaskLibraryDependency" />
                 </node>
               </node>
             </node>
@@ -1094,7 +1094,7 @@
                   <node concept="otxO1" id="Y2EImGI2ew" role="2Oq$k0" />
                   <node concept="3O6GUB" id="Y2EImGI2eD" role="2OqNvi">
                     <node concept="chp4Y" id="Y2EImGI2eF" role="3QVz_e">
-                      <reference role="cht4Q" target="8xvf.2769948622284546675" resolve="BwfTask" />
+                      <ref role="cht4Q" to="8xvf:2pKPpytmA9N" resolve="BwfTask" />
                     </node>
                   </node>
                 </node>
@@ -1102,7 +1102,7 @@
                   <node concept="otxO1" id="Y2EImGI2eM" role="2Oq$k0" />
                   <node concept="3O6GUB" id="Y2EImGI2eN" role="2OqNvi">
                     <node concept="chp4Y" id="Y2EImGI2eP" role="3QVz_e">
-                      <reference role="cht4Q" target="8xvf.3961775458390032824" resolve="BwfTaskPart" />
+                      <ref role="cht4Q" to="8xvf:3rV3sBXcG6S" resolve="BwfTaskPart" />
                     </node>
                   </node>
                 </node>
@@ -1111,7 +1111,7 @@
                 <node concept="otxO1" id="Y2EImGI2eW" role="2Oq$k0" />
                 <node concept="3O6GUB" id="Y2EImGI2eX" role="2OqNvi">
                   <node concept="chp4Y" id="Y2EImGI2eZ" role="3QVz_e">
-                    <reference role="cht4Q" target="8xvf.6896005762093571400" resolve="BwfMacro" />
+                    <ref role="cht4Q" to="8xvf:5YNybgUC_P8" resolve="BwfMacro" />
                   </node>
                 </node>
               </node>
@@ -1123,7 +1123,7 @@
   </node>
   <node concept="1M2fIO" id="6S1jmf0x7nU">
     <property role="3GE5qa" value="Structure" />
-    <reference role="1M2myG" target="8xvf.7926701909975416091" resolve="BwfFileSet" />
+    <ref role="1M2myG" to="8xvf:6S1jmf0vFOr" resolve="BwfFileSet" />
     <node concept="osYL8" id="6S1jmf0x7nV" role="1MLXOK">
       <node concept="3clFbS" id="6S1jmf0x7nW" role="2VODD2">
         <node concept="3clFbF" id="6S1jmf0x7nX" role="3cqZAp">
@@ -1132,7 +1132,7 @@
               <node concept="otxO1" id="6S1jmf0x7ol" role="2Oq$k0" />
               <node concept="3O6GUB" id="6S1jmf0x7ot" role="2OqNvi">
                 <node concept="chp4Y" id="6S1jmf0x7ow" role="3QVz_e">
-                  <reference role="cht4Q" target="8xvf.6647099934207069215" resolve="BwfPathReference" />
+                  <ref role="cht4Q" to="8xvf:5KZfyKsVOKv" resolve="BwfPathReference" />
                 </node>
               </node>
             </node>
@@ -1140,7 +1140,7 @@
               <node concept="otxO1" id="6S1jmf0x7nY" role="2Oq$k0" />
               <node concept="3O6GUB" id="6S1jmf0x7oe" role="2OqNvi">
                 <node concept="chp4Y" id="6S1jmf0x7og" role="3QVz_e">
-                  <reference role="cht4Q" target="iuxj.6666499814681415858" resolve="XmlElement" />
+                  <ref role="cht4Q" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
                 </node>
               </node>
             </node>
@@ -1151,7 +1151,7 @@
   </node>
   <node concept="1M2fIO" id="6S1jmf0x_GP">
     <property role="3GE5qa" value="Structure" />
-    <reference role="1M2myG" target="8xvf.6647099934206976119" resolve="BwfJavaClassPath" />
+    <ref role="1M2myG" to="8xvf:5KZfyKsVu1R" resolve="BwfJavaClassPath" />
     <node concept="osYL8" id="6S1jmf0x_GQ" role="1MLXOK">
       <node concept="3clFbS" id="6S1jmf0x_GR" role="2VODD2">
         <node concept="3clFbF" id="6S1jmf0x_GS" role="3cqZAp">
@@ -1160,7 +1160,7 @@
               <node concept="otxO1" id="2UMAsGM81lr" role="2Oq$k0" />
               <node concept="2Zo12i" id="2UMAsGM81lQ" role="2OqNvi">
                 <node concept="chp4Y" id="2UMAsGM81lS" role="2Zo12j">
-                  <reference role="cht4Q" target="tpck.3364660638048049748" resolve="NodeAttribute" />
+                  <ref role="cht4Q" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
                 </node>
               </node>
             </node>
@@ -1169,7 +1169,7 @@
                 <node concept="otxO1" id="6S1jmf0x_GZ" role="2Oq$k0" />
                 <node concept="3O6GUB" id="6S1jmf0x_H0" role="2OqNvi">
                   <node concept="chp4Y" id="6S1jmf0x_H1" role="3QVz_e">
-                    <reference role="cht4Q" target="iuxj.6666499814681415858" resolve="XmlElement" />
+                    <ref role="cht4Q" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
                   </node>
                 </node>
               </node>
@@ -1177,7 +1177,7 @@
                 <node concept="otxO1" id="6S1jmf0x_GV" role="2Oq$k0" />
                 <node concept="3O6GUB" id="6S1jmf0x_GW" role="2OqNvi">
                   <node concept="chp4Y" id="6S1jmf0x_GX" role="3QVz_e">
-                    <reference role="cht4Q" target="8xvf.6647099934207069215" resolve="BwfPathReference" />
+                    <ref role="cht4Q" to="8xvf:5KZfyKsVOKv" resolve="BwfPathReference" />
                   </node>
                 </node>
               </node>

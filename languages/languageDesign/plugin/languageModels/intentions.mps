@@ -101,7 +101,7 @@
   </registry>
   <node concept="2S6QgY" id="hyf1Ht$">
     <property role="TrG5h" value="ExtractGroup" />
-    <reference role="2ZfgGC" target="tp4k.1203087890642" resolve="ActionGroupDeclaration" />
+    <ref role="2ZfgGC" to="tp4k:hwtC5zi" resolve="ActionGroupDeclaration" />
     <node concept="2S6ZIM" id="hyf1Ht_" role="2ZfVej">
       <node concept="3clFbS" id="hyf1HtA" role="2VODD2">
         <node concept="3clFbF" id="hyf1TFF" role="3cqZAp">
@@ -117,7 +117,7 @@
           <node concept="3cpWsn" id="hyf3qBw" role="3cpWs9">
             <property role="TrG5h" value="rootGroup" />
             <node concept="3Tqbb2" id="hyf3qBx" role="1tU5fm">
-              <reference role="ehGHo" target="tp4k.1203087890642" resolve="ActionGroupDeclaration" />
+              <ref role="ehGHo" to="tp4k:hwtC5zi" resolve="ActionGroupDeclaration" />
             </node>
             <node concept="2OqwBi" id="hyf3t9T" role="33vP2m">
               <node concept="2OqwBi" id="hyf3t9U" role="2Oq$k0">
@@ -125,7 +125,7 @@
                 <node concept="I4A8Y" id="hyf3t9W" role="2OqNvi" />
               </node>
               <node concept="15Ty1b" id="5wUAOoBBfpq" role="2OqNvi">
-                <reference role="I8UWU" target="tp4k.1203087890642" resolve="ActionGroupDeclaration" />
+                <ref role="I8UWU" to="tp4k:hwtC5zi" resolve="ActionGroupDeclaration" />
               </node>
             </node>
           </node>
@@ -134,17 +134,17 @@
           <node concept="2OqwBi" id="hyf3Npb" role="3clFbG">
             <node concept="2OqwBi" id="hyf3Mv1" role="2Oq$k0">
               <node concept="37vLTw" id="3GM_nagT$$E" role="2Oq$k0">
-                <reference role="3cqZAo" target="1204990880224" resolve="rootGroup" />
+                <ref role="3cqZAo" node="hyf3qBw" resolve="rootGroup" />
               </node>
               <node concept="3TrcHB" id="hyf3N9M" role="2OqNvi">
-                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
             <node concept="tyxLq" id="hyf3NF2" role="2OqNvi">
               <node concept="2OqwBi" id="hyf3OBR" role="tz02z">
                 <node concept="2Sf5sV" id="hyf3Oso" role="2Oq$k0" />
                 <node concept="3TrcHB" id="hyf3P8B" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -154,17 +154,17 @@
           <node concept="2OqwBi" id="h$fFeZ_" role="3clFbG">
             <node concept="2OqwBi" id="hyf3QbO" role="2Oq$k0">
               <node concept="37vLTw" id="3GM_nagTrml" role="2Oq$k0">
-                <reference role="3cqZAo" target="1204990880224" resolve="rootGroup" />
+                <ref role="3cqZAo" node="hyf3qBw" resolve="rootGroup" />
               </node>
               <node concept="3TrEf2" id="h$fFe6F" role="2OqNvi">
-                <reference role="3Tt5mk" target="tp4k.1207145245948" />
+                <ref role="3Tt5mk" to="tp4k:h$ftENW" />
               </node>
             </node>
             <node concept="2oxUTD" id="h$fFfny" role="2OqNvi">
               <node concept="2OqwBi" id="h$fFg4g" role="2oxUTC">
                 <node concept="2Sf5sV" id="h$fFfOB" role="2Oq$k0" />
                 <node concept="3TrEf2" id="h$fFgst" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tp4k.1207145245948" />
+                  <ref role="3Tt5mk" to="tp4k:h$ftENW" />
                 </node>
               </node>
             </node>

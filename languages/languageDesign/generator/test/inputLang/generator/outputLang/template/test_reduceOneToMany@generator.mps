@@ -152,9 +152,9 @@
   <node concept="bUwia" id="3o88X1d13i8">
     <property role="TrG5h" value="main" />
     <node concept="3aamgX" id="3o88X1d13Nz" role="3acgRq">
-      <reference role="30HIoZ" target="tpm0.1195171011194" resolve="InputNode_A" />
+      <ref role="30HIoZ" to="tpm0:hp5J_DU" resolve="InputNode_A" />
       <node concept="j$656" id="3o88X1d1739" role="1lVwrX">
-        <reference role="v9R2y" target="3893401255414100167" resolve="reduce_InputNode_A" />
+        <ref role="v9R2y" node="3o88X1d1737" resolve="reduce_InputNode_A" />
       </node>
       <node concept="30G5F_" id="3o88X1d1eSa" role="30HLyM">
         <node concept="3clFbS" id="3o88X1d1eSb" role="2VODD2">
@@ -162,19 +162,19 @@
             <node concept="2OqwBi" id="3o88X1d1eSz" role="3clFbG">
               <node concept="2OqwBi" id="3o88X1d1eSu" role="2Oq$k0">
                 <node concept="1PxgMI" id="3o88X1d1eSs" role="2Oq$k0">
-                  <reference role="1PxNhF" target="tpm0.1195168316083" resolve="InputRoot" />
+                  <ref role="1PxNhF" to="tpm0:hp5_jEN" resolve="InputRoot" />
                   <node concept="2OqwBi" id="3o88X1d1eSi" role="1PxMeX">
                     <node concept="30H73N" id="3o88X1d1eSd" role="2Oq$k0" />
                     <node concept="2Rxl7S" id="3o88X1d1eSn" role="2OqNvi" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="3o88X1d1eSy" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpm0.1202243304949" resolve="useInTest" />
+                  <ref role="3TsBF5" to="tpm0:hvFifRP" resolve="useInTest" />
                 </node>
               </node>
               <node concept="3t7uKx" id="3o88X1d1eSB" role="2OqNvi">
                 <node concept="uoxfO" id="3o88X1d1eSC" role="3t7uKA">
-                  <reference role="uo_Cq" target="tpm0.341670684286865622" />
+                  <ref role="uo_Cq" to="tpm0:iXQUPn5l3m" />
                 </node>
               </node>
             </node>
@@ -183,8 +183,8 @@
       </node>
     </node>
     <node concept="3lhOvk" id="3o88X1d13N_" role="3lj3bC">
-      <reference role="30HIoZ" target="tpm0.1195168316083" resolve="InputRoot" />
-      <reference role="3lhOvi" target="3893401255414086886" resolve="OutputRoot" />
+      <ref role="30HIoZ" to="tpm0:hp5_jEN" resolve="InputRoot" />
+      <ref role="3lhOvi" node="3o88X1d13NA" resolve="OutputRoot" />
       <node concept="30G5F_" id="3o88X1d1ehL" role="30HLyM">
         <node concept="3clFbS" id="3o88X1d1ehM" role="2VODD2">
           <node concept="3clFbF" id="3o88X1d1eMo" role="3cqZAp">
@@ -192,12 +192,12 @@
               <node concept="2OqwBi" id="3o88X1d1eMq" role="2Oq$k0">
                 <node concept="30H73N" id="3o88X1d1eMp" role="2Oq$k0" />
                 <node concept="3TrcHB" id="3o88X1d1eMu" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpm0.1202243304949" resolve="useInTest" />
+                  <ref role="3TsBF5" to="tpm0:hvFifRP" resolve="useInTest" />
                 </node>
               </node>
               <node concept="3t7uKx" id="3o88X1d1eS8" role="2OqNvi">
                 <node concept="uoxfO" id="3o88X1d1eS9" role="3t7uKA">
-                  <reference role="uo_Cq" target="tpm0.341670684286865622" />
+                  <ref role="uo_Cq" to="tpm0:iXQUPn5l3m" />
                 </node>
               </node>
             </node>
@@ -210,7 +210,7 @@
     <property role="TrG5h" value="OutputRoot" />
     <property role="15nCFB" value="chilren were generated from a single child in input node." />
     <node concept="n94m4" id="3o88X1d13NB" role="lGtFl">
-      <reference role="n9lRv" target="tpm0.1195168316083" resolve="InputRoot" />
+      <ref role="n9lRv" to="tpm0:hp5_jEN" resolve="InputRoot" />
     </node>
     <node concept="15pagK" id="3o88X1d13NC" role="15EkXs">
       <node concept="2b32R4" id="3o88X1d13NH" role="lGtFl">
@@ -230,7 +230,7 @@
   </node>
   <node concept="13MO4I" id="3o88X1d1737">
     <property role="TrG5h" value="reduce_InputNode_A" />
-    <reference role="3gUMe" target="tpm0.1195171011194" resolve="InputNode_A" />
+    <ref role="3gUMe" to="tpm0:hp5J_DU" resolve="InputNode_A" />
     <node concept="15npcT" id="3o88X1d173a" role="13RCb5">
       <property role="TrG5h" value="_context_" />
       <node concept="15pagK" id="3o88X1d173b" role="15EkXs">
@@ -260,13 +260,13 @@
       <node concept="15pagK" id="1D5gQ4cxa0s" role="15EkXs">
         <node concept="raruj" id="1D5gQ4cxa0t" role="lGtFl" />
         <node concept="xERo3" id="1D5gQ4cxa0v" role="lGtFl">
-          <reference role="xH3mL" target="1892993302480251689" resolve="reduce_InputNode_A_included" />
+          <ref role="xH3mL" node="1D5gQ4cxQGD" resolve="reduce_InputNode_A_included" />
         </node>
       </node>
       <node concept="15pagK" id="1D5gQ4cy51q" role="15EkXs">
         <node concept="raruj" id="1D5gQ4cy51r" role="lGtFl" />
         <node concept="jY4Nl" id="1D5gQ4cy51t" role="lGtFl">
-          <reference role="jYjtx" target="1892993302480310366" resolve="switch_InputNode_A" />
+          <ref role="jYjtx" node="1D5gQ4cy51u" resolve="switch_InputNode_A" />
         </node>
       </node>
     </node>
@@ -288,9 +288,9 @@
   <node concept="jVnub" id="1D5gQ4cy51u">
     <property role="TrG5h" value="switch_InputNode_A" />
     <node concept="3aamgX" id="1D5gQ4cy51v" role="3aUrZf">
-      <reference role="30HIoZ" target="tpm0.1195171011194" resolve="InputNode_A" />
+      <ref role="30HIoZ" to="tpm0:hp5J_DU" resolve="InputNode_A" />
       <node concept="j$656" id="1D5gQ4cy5qq" role="1lVwrX">
-        <reference role="v9R2y" target="1892993302480311955" resolve="reduce_InputNode_A_switch" />
+        <ref role="v9R2y" node="1D5gQ4cy5qj" resolve="reduce_InputNode_A_switch" />
       </node>
     </node>
   </node>
@@ -310,11 +310,11 @@
   </node>
   <node concept="jVnub" id="7gHSFcXqKdU">
     <property role="TrG5h" value="betterSwitch" />
-    <reference role="phYkn" target="1892993302480310366" resolve="switch_InputNode_A" />
+    <ref role="phYkn" node="1D5gQ4cy51u" resolve="switch_InputNode_A" />
     <node concept="3aamgX" id="7gHSFcXqKdX" role="3aUrZf">
-      <reference role="30HIoZ" target="tpm0.1195171011194" resolve="InputNode_A" />
+      <ref role="30HIoZ" to="tpm0:hp5J_DU" resolve="InputNode_A" />
       <node concept="j$656" id="7gHSFcXqKe3" role="1lVwrX">
-        <reference role="v9R2y" target="3893401255414100167" resolve="reduce_InputNode_A" />
+        <ref role="v9R2y" node="3o88X1d1737" resolve="reduce_InputNode_A" />
       </node>
       <node concept="30G5F_" id="7gHSFcXqKdZ" role="30HLyM">
         <node concept="3clFbS" id="7gHSFcXqKe0" role="2VODD2">
@@ -334,14 +334,14 @@
   </node>
   <node concept="jVnub" id="7gHSFcXqMqW">
     <property role="TrG5h" value="better_switch2" />
-    <reference role="phYkn" target="8371596541809066874" resolve="betterSwitch" />
+    <ref role="phYkn" node="7gHSFcXqKdU" resolve="betterSwitch" />
     <node concept="gft3U" id="7gHSFcXqMqX" role="jxRDz">
       <node concept="10Nm6u" id="7gHSFcXqMqZ" role="gfFT$" />
     </node>
   </node>
   <node concept="jVnub" id="7gHSFcXqMr0">
     <property role="TrG5h" value="better_switch3" />
-    <reference role="phYkn" target="8371596541809066874" resolve="betterSwitch" />
+    <ref role="phYkn" node="7gHSFcXqKdU" resolve="betterSwitch" />
     <node concept="j$LIH" id="7gHSFcXqMr1" role="jxRDz">
       <node concept="1lLz0L" id="7gHSFcXqMr2" role="1lHHLF">
         <property role="1lLB17" value="WARNING!" />

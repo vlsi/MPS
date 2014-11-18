@@ -76,8 +76,8 @@
       <node concept="3clFbS" id="7E9dkpktrj0" role="3clF47">
         <node concept="3cpWs6" id="7E9dkpktrjh" role="3cqZAp">
           <node concept="2YIFZM" id="7E9dkpkts8V" role="3cqZAk">
-            <reference role="37wK5l" target="1p1s.~InternalFlag%disInternalMode()%cboolean" resolve="isInternalMode" />
-            <reference role="1Pybhc" target="1p1s.~InternalFlag" resolve="InternalFlag" />
+            <ref role="37wK5l" to="1p1s:~InternalFlag.isInternalMode():boolean" resolve="isInternalMode" />
+            <ref role="1Pybhc" to="1p1s:~InternalFlag" resolve="InternalFlag" />
           </node>
         </node>
       </node>
@@ -93,20 +93,20 @@
         <node concept="3clFbF" id="7E9dkpktsb$" role="3cqZAp">
           <node concept="2OqwBi" id="7E9dkpktsga" role="3clFbG">
             <node concept="2YIFZM" id="7E9dkpktsbL" role="2Oq$k0">
-              <reference role="37wK5l" target="1p1s.~InternalFlag%dgetInstance()%cjetbrains%dmps%dInternalFlag" resolve="getInstance" />
-              <reference role="1Pybhc" target="1p1s.~InternalFlag" resolve="InternalFlag" />
+              <ref role="37wK5l" to="1p1s:~InternalFlag.getInstance():jetbrains.mps.InternalFlag" resolve="getInstance" />
+              <ref role="1Pybhc" to="1p1s:~InternalFlag" resolve="InternalFlag" />
             </node>
             <node concept="liA8E" id="7E9dkpktsW0" role="2OqNvi">
-              <reference role="37wK5l" target="1p1s.~InternalFlag%dsetInternalFlag(boolean)%cvoid" resolve="setInternalFlag" />
+              <ref role="37wK5l" to="1p1s:~InternalFlag.setInternalFlag(boolean):void" resolve="setInternalFlag" />
               <node concept="37vLTw" id="7E9dkpktsYv" role="37wK5m">
-                <reference role="3cqZAo" target="8829647120617554621" resolve="flag" />
+                <ref role="3cqZAo" node="7E9dkpktsaX" resolve="flag" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3cpWs6" id="7E9dkpktsZH" role="3cqZAp">
           <node concept="1rXfSq" id="7E9dkpktt1p" role="3cqZAk">
-            <reference role="37wK5l" target="8829647120617551037" resolve="getInternalFlag" />
+            <ref role="37wK5l" node="7E9dkpktriX" resolve="getInternalFlag" />
           </node>
         </node>
       </node>

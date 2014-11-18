@@ -57,16 +57,16 @@
     </language>
   </registry>
   <node concept="24kQdi" id="5wNXW0WXs_h">
-    <reference role="1XX52x" target="jap4.8572332134193783053" resolve="MultipleEditorsTestMostSpecificChild" />
+    <ref role="1XX52x" to="jap4:7rR2ExFim4d" resolve="MultipleEditorsTestMostSpecificChild" />
     <node concept="3EZMnI" id="5wNXW0WXsQk" role="2wV5jI">
       <node concept="3F0A7n" id="7rR2ExFlSCG" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="VPXOz" id="7rR2ExFlSCH" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="3F0A7n" id="7rR2ExFlSCN" role="3EZMnx">
-        <reference role="1NtTu8" target="jap4.8572332134193785182" resolve="richCompactProperty" />
+        <ref role="1NtTu8" to="jap4:7rR2ExFim_u" resolve="richCompactProperty" />
         <node concept="VPXOz" id="7rR2ExFlSCO" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -77,32 +77,32 @@
       <node concept="2iRfu4" id="5wNXW0WXsQp" role="2iSdaV" />
     </node>
     <node concept="2aJ2om" id="5wNXW0WXsDU" role="CpUAK">
-      <reference role="2$4xQ3" target="dfnz.5944657839017576567" resolve="compact" />
+      <ref role="2$4xQ3" to="dfnz:59ZEGVPS$xR" resolve="compact" />
     </node>
     <node concept="2aJ2om" id="5wNXW0WXsDZ" role="CpUAK">
-      <reference role="2$4xQ3" target="dfnz.5944657839017576565" resolve="rich" />
+      <ref role="2$4xQ3" to="dfnz:59ZEGVPS$xP" resolve="rich" />
     </node>
   </node>
   <node concept="PKFIW" id="13zGF__zTn8">
     <property role="TrG5h" value="MultipleEditorsTestEditorComponentChild_compactRich" />
     <node concept="2aJ2om" id="13zGF__zToF" role="3XTboT">
-      <reference role="2$4xQ3" target="dfnz.5944657839017576565" resolve="rich" />
+      <ref role="2$4xQ3" to="dfnz:59ZEGVPS$xP" resolve="rich" />
     </node>
     <node concept="2aJ2om" id="13zGF__zToK" role="3XTboT">
-      <reference role="2$4xQ3" target="dfnz.5944657839017576567" resolve="compact" />
+      <ref role="2$4xQ3" to="dfnz:59ZEGVPS$xR" resolve="compact" />
     </node>
     <node concept="1PE4EZ" id="13zGF__zToB" role="1PM95z">
-      <reference role="1PE7su" target="dfnz.1217012833662085066" resolve="MultipleEditorsTestEditorComponentChild_default" />
+      <ref role="1PE7su" to="dfnz:13zGF__xiva" resolve="MultipleEditorsTestEditorComponentChild_default" />
     </node>
     <node concept="3EZMnI" id="13zGF__zTpK" role="2wV5jI">
       <node concept="3F0A7n" id="13zGF__zTpL" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="VPXOz" id="13zGF__zTpM" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="3F0A7n" id="13zGF__zTpN" role="3EZMnx">
-        <reference role="1NtTu8" target="jap4.1217012833662084054" resolve="richCompactProperty" />
+        <ref role="1NtTu8" to="jap4:13zGF__xifm" resolve="richCompactProperty" />
         <node concept="VPXOz" id="13zGF__zTpO" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>

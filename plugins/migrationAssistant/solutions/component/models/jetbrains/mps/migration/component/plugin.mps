@@ -114,11 +114,11 @@
     <property role="3OnEW4" value="true" />
     <node concept="ftmFs" id="6MUcJMtCifk" role="ftER_">
       <node concept="tCFHf" id="6MUcJMtCifn" role="ftvYc">
-        <reference role="tCJdB" target="7834630562321988558" resolve="ExecuteMigrationAssistant" />
+        <ref role="tCJdB" node="6MUcJMtBJJe" resolve="ExecuteMigrationAssistant" />
       </node>
     </node>
     <node concept="tT9cl" id="6MUcJMtCifp" role="2f5YQi">
-      <reference role="tU$_T" target="tprs.1215012161252" resolve="IDEATools" />
+      <ref role="tU$_T" to="tprs:hF$n$r$" resolve="IDEATools" />
     </node>
   </node>
   <node concept="sE7Ow" id="6MUcJMtBJJe">
@@ -127,7 +127,7 @@
     <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="2UTM4$6j1gg" role="1NuT2Z">
       <property role="TrG5h" value="project" />
-      <reference role="1DUlNI" target="nx1.~CommonDataKeys%dPROJECT" resolve="PROJECT" />
+      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="7HZe2EwZDoU" role="1oa70y" />
     </node>
     <node concept="tnohg" id="6MUcJMtBJJf" role="tncku">
@@ -138,18 +138,18 @@
               <node concept="2OqwBi" id="6MUcJMtC7y$" role="2Oq$k0">
                 <node concept="2WthIp" id="6MUcJMtC7yB" role="2Oq$k0" />
                 <node concept="1DTwFV" id="6MUcJMtC7yD" role="2OqNvi">
-                  <reference role="2WH_rO" target="3366942412399973392" resolve="project" />
+                  <ref role="2WH_rO" node="2UTM4$6j1gg" resolve="project" />
                 </node>
               </node>
               <node concept="liA8E" id="6MUcJMtCgbC" role="2OqNvi">
-                <reference role="37wK5l" target="iiw6.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolve="getComponent" />
+                <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="6MUcJMtCgke" role="37wK5m">
-                  <reference role="3VsUkX" target="bim2.6781485246382122239" resolve="StartupMigrationExecutor" />
+                  <ref role="3VsUkX" to="bim2:5SsFeroaajZ" resolve="StartupMigrationExecutor" />
                 </node>
               </node>
             </node>
             <node concept="liA8E" id="6MUcJMtChNb" role="2OqNvi">
-              <reference role="37wK5l" target="bim2.7834630562321954018" resolve="executeWizard" />
+              <ref role="37wK5l" to="bim2:6MUcJMtBBjy" resolve="executeWizard" />
             </node>
           </node>
         </node>
@@ -168,7 +168,7 @@
     <property role="9BnSK" value="3.2" />
     <node concept="2zDL_w" id="mKSGn8$SCP" role="2zDKky">
       <node concept="2zDL_x" id="mKSGn8$SUS" role="2zDL_s">
-        <reference role="2zDL_u" target="7834630562321988169" resolve="MigationAssistantActions" />
+        <ref role="2zDL_u" node="6MUcJMtBJD9" resolve="MigationAssistantActions" />
       </node>
     </node>
   </node>

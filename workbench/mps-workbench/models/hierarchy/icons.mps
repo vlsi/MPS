@@ -60,11 +60,11 @@
       <property role="TrG5h" value="CHILDREN_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="10M0yZ" id="T6zfiFnPbp" role="33vP2m">
-        <reference role="1PxDUh" target="zxm0.~AllIcons$Hierarchy" resolve="AllIcons.Hierarchy" />
-        <reference role="3cqZAo" target="zxm0.~AllIcons$Hierarchy%dSubtypes" resolve="Subtypes" />
+        <ref role="1PxDUh" to="zxm0:~AllIcons$Hierarchy" resolve="AllIcons.Hierarchy" />
+        <ref role="3cqZAo" to="zxm0:~AllIcons$Hierarchy.Subtypes" resolve="Subtypes" />
       </node>
       <node concept="3uibUv" id="51NkKCgB4mj" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4mk" role="1B3o_S" />
     </node>
@@ -72,23 +72,23 @@
       <property role="TrG5h" value="PARENT_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="51NkKCgB4ms" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4mt" role="1B3o_S" />
       <node concept="10M0yZ" id="T6zfiFnQNA" role="33vP2m">
-        <reference role="1PxDUh" target="zxm0.~AllIcons$Hierarchy" resolve="AllIcons.Hierarchy" />
-        <reference role="3cqZAo" target="zxm0.~AllIcons$Hierarchy%dSupertypes" resolve="Supertypes" />
+        <ref role="1PxDUh" to="zxm0:~AllIcons$Hierarchy" resolve="AllIcons.Hierarchy" />
+        <ref role="3cqZAo" to="zxm0:~AllIcons$Hierarchy.Supertypes" resolve="Supertypes" />
       </node>
     </node>
     <node concept="Wx3nA" id="51NkKCgB4m$" role="jymVt">
       <property role="TrG5h" value="ZOOM_IN_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="10M0yZ" id="T6zfiFnR$M" role="33vP2m">
-        <reference role="1PxDUh" target="zxm0.~AllIcons$Graph" resolve="AllIcons.Graph" />
-        <reference role="3cqZAo" target="zxm0.~AllIcons$Graph%dZoomIn" resolve="ZoomIn" />
+        <ref role="1PxDUh" to="zxm0:~AllIcons$Graph" resolve="AllIcons.Graph" />
+        <ref role="3cqZAo" to="zxm0:~AllIcons$Graph.ZoomIn" resolve="ZoomIn" />
       </node>
       <node concept="3uibUv" id="51NkKCgB4m_" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4mA" role="1B3o_S" />
     </node>
@@ -96,47 +96,47 @@
       <property role="TrG5h" value="ZOOM_OUT_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="51NkKCgB4mI" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4mJ" role="1B3o_S" />
       <node concept="10M0yZ" id="T6zfiFnS2c" role="33vP2m">
-        <reference role="1PxDUh" target="zxm0.~AllIcons$Graph" resolve="AllIcons.Graph" />
-        <reference role="3cqZAo" target="zxm0.~AllIcons$Graph%dZoomOut" resolve="ZoomOut" />
+        <ref role="1PxDUh" to="zxm0:~AllIcons$Graph" resolve="AllIcons.Graph" />
+        <ref role="3cqZAo" to="zxm0:~AllIcons$Graph.ZoomOut" resolve="ZoomOut" />
       </node>
     </node>
     <node concept="Wx3nA" id="51NkKCgB4mQ" role="jymVt">
       <property role="TrG5h" value="ACTUAL_ZOOM_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="51NkKCgB4mR" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4mS" role="1B3o_S" />
       <node concept="10M0yZ" id="T6zfiFnSlt" role="33vP2m">
-        <reference role="1PxDUh" target="zxm0.~AllIcons$Graph" resolve="AllIcons.Graph" />
-        <reference role="3cqZAo" target="zxm0.~AllIcons$Graph%dActualZoom" resolve="ActualZoom" />
+        <ref role="1PxDUh" to="zxm0:~AllIcons$Graph" resolve="AllIcons.Graph" />
+        <ref role="3cqZAo" to="zxm0:~AllIcons$Graph.ActualZoom" resolve="ActualZoom" />
       </node>
     </node>
     <node concept="Wx3nA" id="51NkKCgB4n8" role="jymVt">
       <property role="TrG5h" value="THIS_MODEL_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="51NkKCgB4n9" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4na" role="1B3o_S" />
       <node concept="10M0yZ" id="51NkKCgB4nb" role="33vP2m">
-        <reference role="3cqZAo" target="ai1m.~IdeIcons%dMODEL_ICON" resolve="MODEL_ICON" />
-        <reference role="1PxDUh" target="ai1m.~IdeIcons" resolve="IdeIcons" />
+        <ref role="3cqZAo" to="ai1m:~IdeIcons.MODEL_ICON" resolve="MODEL_ICON" />
+        <ref role="1PxDUh" to="ai1m:~IdeIcons" resolve="IdeIcons" />
       </node>
     </node>
     <node concept="Wx3nA" id="51NkKCgB4nc" role="jymVt">
       <property role="TrG5h" value="GENERATOR_ICON" />
       <property role="3TUv4t" value="true" />
       <node concept="10M0yZ" id="T6zfiFnOau" role="33vP2m">
-        <reference role="1PxDUh" target="c4ym.~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-        <reference role="3cqZAo" target="c4ym.~MPSIcons$Nodes%dGenerator" resolve="Generator" />
+        <ref role="1PxDUh" to="c4ym:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+        <ref role="3cqZAo" to="c4ym:~MPSIcons$Nodes.Generator" resolve="Generator" />
       </node>
       <node concept="3uibUv" id="51NkKCgB4nd" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="51NkKCgB4ne" role="1B3o_S" />
     </node>

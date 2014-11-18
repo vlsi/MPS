@@ -45,7 +45,7 @@
       <property role="36$QIM" value="300" />
       <property role="36$QIR" value="100" />
       <node concept="3_2g0H" id="3CF0obva7f_" role="3_3Tce">
-        <reference role="3_2gco" target="1t7x.~Color%dBLUE" resolve="BLUE" />
+        <ref role="3_2gco" to="1t7x:~Color.BLUE" resolve="BLUE" />
       </node>
     </node>
     <node concept="36$QIb" id="3CF0obva7fH" role="36$P1I">
@@ -53,7 +53,7 @@
       <property role="36$QIc" value="150" />
       <property role="36$QI1" value="100" />
       <node concept="3_2g0H" id="3CF0obva7fR" role="3_3Tce">
-        <reference role="3_2gco" target="1t7x.~Color%dGREEN" resolve="GREEN" />
+        <ref role="3_2gco" to="1t7x:~Color.GREEN" resolve="GREEN" />
       </node>
     </node>
     <node concept="36$QIb" id="2gqr8W6y9l0" role="36$P1I">
@@ -61,7 +61,7 @@
       <property role="36$QIc" value="150" />
       <property role="36$QI1" value="100" />
       <node concept="3_2g0H" id="2gqr8W6ycpM" role="3_3Tce">
-        <reference role="3_2gco" target="1t7x.~Color%dRED" resolve="RED" />
+        <ref role="3_2gco" to="1t7x:~Color.RED" resolve="RED" />
       </node>
     </node>
   </node>

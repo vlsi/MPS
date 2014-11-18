@@ -50,13 +50,13 @@
     </language>
   </registry>
   <node concept="24kQdi" id="6uruNJZphnO">
-    <reference role="1XX52x" target="kvy4.7465696304914830357" resolve="DummyBlock" />
+    <ref role="1XX52x" to="kvy4:6uruNJZphgl" resolve="DummyBlock" />
     <node concept="3F0ifn" id="6uruNJZphue" role="2wV5jI">
       <property role="3F0ifm" value="BlackHole" />
     </node>
   </node>
   <node concept="24kQdi" id="6bOvqMpaRiL">
-    <reference role="1XX52x" target="kvy4.5527013591529125958" resolve="ManyStatements" />
+    <ref role="1XX52x" to="kvy4:4MNTpfZQnx6" resolve="ManyStatements" />
     <node concept="3EZMnI" id="6bOvqMpaR_C" role="2wV5jI">
       <node concept="l2Vlx" id="6bOvqMpaR_D" role="2iSdaV" />
       <node concept="3F0ifn" id="6bOvqMpaR_E" role="3EZMnx">
@@ -89,7 +89,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6bOvqMpaR_P" role="3EZMnx">
-          <reference role="1NtTu8" target="kvy4.7130462290291946377" />
+          <ref role="1NtTu8" to="kvy4:6bOvqMpaRe9" />
           <node concept="lj46D" id="6bOvqMpaR_Q" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -117,7 +117,7 @@
             </node>
           </node>
           <node concept="3F2HdR" id="6bOvqMpaRAg" role="3EZMnx">
-            <reference role="1NtTu8" target="kvy4.5527013591529125966" />
+            <ref role="1NtTu8" to="kvy4:4MNTpfZQnxe" />
             <node concept="l2Vlx" id="6bOvqMpaRAh" role="2czzBx" />
             <node concept="pj6Ft" id="6bOvqMpaRAi" role="3F10Kt">
               <property role="VOm3f" value="true" />
@@ -143,7 +143,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6bOvqMpaR_Y" role="3EZMnx">
-          <reference role="1NtTu8" target="kvy4.5527013591529125961" />
+          <ref role="1NtTu8" to="kvy4:4MNTpfZQnx9" />
           <node concept="lj46D" id="6bOvqMpaR_Z" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -169,7 +169,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6bOvqMpaRA7" role="3EZMnx">
-          <reference role="1NtTu8" target="kvy4.5527013591529125963" />
+          <ref role="1NtTu8" to="kvy4:4MNTpfZQnxb" />
           <node concept="lj46D" id="6bOvqMpaRA8" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>

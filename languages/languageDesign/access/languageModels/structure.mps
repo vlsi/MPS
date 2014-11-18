@@ -43,25 +43,25 @@
     <property role="TrG5h" value="BaseExecuteCommandStatement" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="7Mb2akafE8b" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="commandClosureLiteral" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="8974276187400348173" resolve="CommandClosureLiteral" />
+      <ref role="20lvS9" node="7Mb2akafE8d" resolve="CommandClosureLiteral" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8c">
     <property role="TrG5h" value="BaseExecuteCommandStatementSync" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
-    <reference role="1TJDcQ" target="8974276187400348170" resolve="BaseExecuteCommandStatement" />
+    <ref role="1TJDcQ" node="7Mb2akafE8a" resolve="BaseExecuteCommandStatement" />
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8d">
     <property role="TrG5h" value="CommandClosureLiteral" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
-    <reference role="1TJDcQ" target="tp2c.1199569711397" resolve="ClosureLiteral" />
+    <ref role="1TJDcQ" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8e">
     <property role="R5$K7" value="false" />
@@ -70,11 +70,11 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
     <property role="34LRSv" value="execute command in EDT" />
-    <reference role="1TJDcQ" target="8974276187400348170" resolve="BaseExecuteCommandStatement" />
+    <ref role="1TJDcQ" node="7Mb2akafE8a" resolve="BaseExecuteCommandStatement" />
     <node concept="1TJgyj" id="7Mb2akafE8f" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="project" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8h">
@@ -84,7 +84,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
     <property role="34LRSv" value="command" />
-    <reference role="1TJDcQ" target="8974276187400348172" resolve="BaseExecuteCommandStatementSync" />
+    <ref role="1TJDcQ" node="7Mb2akafE8c" resolve="BaseExecuteCommandStatementSync" />
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8j">
     <property role="R5$K7" value="false" />
@@ -93,7 +93,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
     <property role="34LRSv" value="execute in EDT" />
-    <reference role="1TJDcQ" target="8974276187400348170" resolve="BaseExecuteCommandStatement" />
+    <ref role="1TJDcQ" node="7Mb2akafE8a" resolve="BaseExecuteCommandStatement" />
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8l">
     <property role="R5$K7" value="false" />
@@ -102,7 +102,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
     <property role="34LRSv" value="read action" />
-    <reference role="1TJDcQ" target="8974276187400348172" resolve="BaseExecuteCommandStatementSync" />
+    <ref role="1TJDcQ" node="7Mb2akafE8c" resolve="BaseExecuteCommandStatementSync" />
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8n">
     <property role="R5$K7" value="false" />
@@ -111,7 +111,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
     <property role="34LRSv" value="write action" />
-    <reference role="1TJDcQ" target="8974276187400348172" resolve="BaseExecuteCommandStatementSync" />
+    <ref role="1TJDcQ" node="7Mb2akafE8c" resolve="BaseExecuteCommandStatementSync" />
   </node>
   <node concept="PlHQZ" id="7Mb2akafE8p">
     <property role="TrG5h" value="IExecuteCommandStatementSync" />
@@ -124,7 +124,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
     <property role="34LRSv" value="undo-transparent command" />
-    <reference role="1TJDcQ" target="8974276187400348172" resolve="BaseExecuteCommandStatementSync" />
+    <ref role="1TJDcQ" node="7Mb2akafE8c" resolve="BaseExecuteCommandStatementSync" />
   </node>
 </model>
 

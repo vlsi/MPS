@@ -134,8 +134,8 @@
   <node concept="bUwia" id="hJ2uUJP">
     <property role="TrG5h" value="main" />
     <node concept="3lhOvk" id="hJ2v1U6" role="3lj3bC">
-      <reference role="30HIoZ" target="tpm0.1195168316083" resolve="InputRoot" />
-      <reference role="3lhOvi" target="1218738789586" resolve="map_outputNode" />
+      <ref role="30HIoZ" to="tpm0:hp5_jEN" resolve="InputRoot" />
+      <ref role="3lhOvi" node="hJ2vxNi" resolve="map_outputNode" />
       <node concept="30G5F_" id="hJ2v6bD" role="30HLyM">
         <node concept="3clFbS" id="hJ2v6bE" role="2VODD2">
           <node concept="3clFbF" id="hJ2v9Q3" role="3cqZAp">
@@ -143,12 +143,12 @@
               <node concept="2OqwBi" id="hJ2v9UI" role="2Oq$k0">
                 <node concept="30H73N" id="hJ2v9Q4" role="2Oq$k0" />
                 <node concept="3TrcHB" id="hJ2vdFv" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpm0.1202243304949" resolve="useInTest" />
+                  <ref role="3TsBF5" to="tpm0:hvFifRP" resolve="useInTest" />
                 </node>
               </node>
               <node concept="3t7uKx" id="hJ2vfd4" role="2OqNvi">
                 <node concept="uoxfO" id="hJ2vfd5" role="3t7uKA">
-                  <reference role="uo_Cq" target="tpm0.1218736527492" />
+                  <ref role="uo_Cq" to="tpm0:hJ2mTy4" />
                 </node>
               </node>
             </node>
@@ -157,9 +157,9 @@
       </node>
     </node>
     <node concept="30QchW" id="hJ2vNT3" role="30SoJX">
-      <reference role="30HIoZ" target="tpm0.1195171011194" resolve="InputNode_A" />
+      <ref role="30HIoZ" to="tpm0:hp5J_DU" resolve="InputNode_A" />
       <node concept="j$656" id="hJ2wjqi" role="1fOSGc">
-        <reference role="v9R2y" target="1218738992784" resolve="weave_InputNode_A" />
+        <ref role="v9R2y" node="hJ2wjqg" resolve="weave_InputNode_A" />
       </node>
       <node concept="3gB$ML" id="hJ2vNT5" role="3gCiVm">
         <node concept="3clFbS" id="hJ2vNT6" role="2VODD2">
@@ -167,9 +167,9 @@
             <node concept="2OqwBi" id="hJ2z_um" role="3clFbG">
               <node concept="1iwH7S" id="hJ2z_cx" role="2Oq$k0" />
               <node concept="1iwH70" id="hJ2zACB" role="2OqNvi">
-                <reference role="1iwH77" target="1218739483594" resolve="generated_root" />
+                <ref role="1iwH77" node="hJ2ybfa" resolve="generated_root" />
                 <node concept="1PxgMI" id="hJ2$43x" role="1iwH7V">
-                  <reference role="1PxNhF" target="tpm0.1195168316083" resolve="InputRoot" />
+                  <ref role="1PxNhF" to="tpm0:hp5_jEN" resolve="InputRoot" />
                   <node concept="2OqwBi" id="hJ2zE00" role="1PxMeX">
                     <node concept="30H73N" id="hJ2zDpq" role="2Oq$k0" />
                     <node concept="2Rxl7S" id="hJ2zEHW" role="2OqNvi" />
@@ -186,19 +186,19 @@
             <node concept="2OqwBi" id="hJ2vSo1" role="3clFbG">
               <node concept="2OqwBi" id="hJ2vSo2" role="2Oq$k0">
                 <node concept="1PxgMI" id="hJ2w0fQ" role="2Oq$k0">
-                  <reference role="1PxNhF" target="tpm0.1195168316083" resolve="InputRoot" />
+                  <ref role="1PxNhF" to="tpm0:hp5_jEN" resolve="InputRoot" />
                   <node concept="2OqwBi" id="hJ2vYt3" role="1PxMeX">
                     <node concept="30H73N" id="hJ2vSo3" role="2Oq$k0" />
                     <node concept="2Rxl7S" id="hJ2vZqn" role="2OqNvi" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="hJ2vSo4" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpm0.1202243304949" resolve="useInTest" />
+                  <ref role="3TsBF5" to="tpm0:hvFifRP" resolve="useInTest" />
                 </node>
               </node>
               <node concept="3t7uKx" id="hJ2vSo5" role="2OqNvi">
                 <node concept="uoxfO" id="hJ2vSo6" role="3t7uKA">
-                  <reference role="uo_Cq" target="tpm0.1218736527492" />
+                  <ref role="uo_Cq" to="tpm0:hJ2mTy4" />
                 </node>
               </node>
             </node>
@@ -208,26 +208,26 @@
     </node>
     <node concept="2rT7sh" id="hJ2ybfa" role="2rTMjI">
       <property role="TrG5h" value="generated_root" />
-      <reference role="2rTdP9" target="tpm0.1195168316083" resolve="InputRoot" />
-      <reference role="2rZz_L" target="tq1l.1195164668463" resolve="OutputRoot" />
+      <ref role="2rTdP9" to="tpm0:hp5_jEN" resolve="InputRoot" />
+      <ref role="2rZz_L" to="tq1l:hp5np8J" resolve="OutputRoot" />
     </node>
   </node>
   <node concept="15npcT" id="hJ2vxNi">
     <property role="TrG5h" value="map_outputNode" />
     <property role="15nCFB" value="output root" />
     <node concept="n94m4" id="hJ2vxNj" role="lGtFl">
-      <reference role="n9lRv" target="tpm0.1195168316083" resolve="InputRoot" />
+      <ref role="n9lRv" to="tpm0:hp5_jEN" resolve="InputRoot" />
     </node>
     <node concept="15pagK" id="hJ2vBNA" role="32jB6n">
       <property role="15Hqq1" value="this is 'special child' in root template" />
     </node>
     <node concept="2ZBi8u" id="442xw$_OLpj" role="lGtFl">
-      <reference role="2rW$FS" target="1218739483594" resolve="generated_root" />
+      <ref role="2rW$FS" node="hJ2ybfa" resolve="generated_root" />
     </node>
   </node>
   <node concept="13MO4I" id="hJ2wjqg">
     <property role="TrG5h" value="weave_InputNode_A" />
-    <reference role="3gUMe" target="tpm0.1195171011194" resolve="InputNode_A" />
+    <ref role="3gUMe" to="tpm0:hp5J_DU" resolve="InputNode_A" />
     <node concept="15npcT" id="hJ2$d2g" role="13RCb5">
       <property role="TrG5h" value="Output_root_1" />
       <property role="15nCFB" value="..." />
@@ -247,7 +247,7 @@
                     <node concept="2OqwBi" id="hJ2$U1Q" role="3uHU7w">
                       <node concept="30H73N" id="hJ2$TKZ" role="2Oq$k0" />
                       <node concept="3TrcHB" id="hJ2_3d3" role="2OqNvi">
-                        <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                       </node>
                     </node>
                   </node>

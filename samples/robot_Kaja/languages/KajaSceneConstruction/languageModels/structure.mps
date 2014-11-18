@@ -34,36 +34,36 @@
   <node concept="1TIwiD" id="2MeG3eCd1Sg">
     <property role="TrG5h" value="BuildWall" />
     <property role="34LRSv" value="build wall" />
-    <reference role="1TJDcQ" target="3210697320273608255" resolve="AbstractBuilderCommand" />
+    <ref role="1TJDcQ" node="2MeG3eCdfSZ" resolve="AbstractBuilderCommand" />
   </node>
   <node concept="1TIwiD" id="2MeG3eCdfDl">
     <property role="TrG5h" value="DestroyWall" />
     <property role="34LRSv" value="destroy wall" />
-    <reference role="1TJDcQ" target="3210697320273608255" resolve="AbstractBuilderCommand" />
+    <ref role="1TJDcQ" node="2MeG3eCdfSZ" resolve="AbstractBuilderCommand" />
   </node>
   <node concept="1TIwiD" id="2MeG3eCdfSY">
     <property role="TrG5h" value="DropMark" />
     <property role="34LRSv" value="drop mark" />
-    <reference role="1TJDcQ" target="3210697320273608255" resolve="AbstractBuilderCommand" />
+    <ref role="1TJDcQ" node="2MeG3eCdfSZ" resolve="AbstractBuilderCommand" />
   </node>
   <node concept="1TIwiD" id="2MeG3eCdfSZ">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AbstractBuilderCommand" />
-    <reference role="1TJDcQ" target="c2kz.3265739055509559114" resolve="AbstractCommand" />
+    <ref role="1TJDcQ" to="c2kz:2Pif5TcL5ta" resolve="AbstractCommand" />
     <node concept="1TJgyi" id="2MeG3eCdfT0" role="1TKVEl">
       <property role="TrG5h" value="row" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="2MeG3eCdfT1" role="1TKVEl">
       <property role="TrG5h" value="col" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="2MeG3eCdhpv">
     <property role="TrG5h" value="PickMark" />
     <property role="34LRSv" value="pick mark" />
-    <reference role="1TJDcQ" target="3210697320273608255" resolve="AbstractBuilderCommand" />
+    <ref role="1TJDcQ" node="2MeG3eCdfSZ" resolve="AbstractBuilderCommand" />
   </node>
 </model>
 

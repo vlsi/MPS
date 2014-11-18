@@ -87,14 +87,14 @@
         <node concept="mw_s8" id="7W5DrJIdvmH" role="1ZfhKB">
           <node concept="2c44tf" id="7W5DrJIdvmI" role="mwGJk">
             <node concept="3uibUv" id="7W5DrJIdCbQ" role="2c44tc">
-              <reference role="3uigEE" target="zwkq.~Element" resolve="Element" />
+              <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
             </node>
           </node>
         </node>
         <node concept="mw_s8" id="7W5DrJIdvmG" role="1ZfhK$">
           <node concept="1Z2H0r" id="7W5DrJIdrIx" role="mwGJk">
             <node concept="1YBJjd" id="7W5DrJIdrIz" role="1Z2MuG">
-              <reference role="1YBMHb" target="9152904044274365445" resolve="literal" />
+              <ref role="1YBMHb" node="7W5DrJIdrg5" resolve="literal" />
             </node>
           </node>
         </node>
@@ -102,7 +102,7 @@
     </node>
     <node concept="1YaCAy" id="7W5DrJIdrg5" role="1YuTPh">
       <property role="TrG5h" value="literal" />
-      <reference role="1YaFvo" target="v5hn.9152904044274328259" resolve="XmlLiteral" />
+      <ref role="1YaFvo" to="v5hn:7W5DrJIdib3" resolve="XmlLiteral" />
     </node>
   </node>
   <node concept="1YbPZF" id="7W5DrJIe01f">
@@ -113,10 +113,10 @@
           <node concept="1Z2H0r" id="7W5DrJIe0xz" role="mwGJk">
             <node concept="2OqwBi" id="7W5DrJIe0x$" role="1Z2MuG">
               <node concept="1YBJjd" id="7W5DrJIe0x_" role="2Oq$k0">
-                <reference role="1YBMHb" target="9152904044274516049" resolve="macro" />
+                <ref role="1YBMHb" node="7W5DrJIe01h" resolve="macro" />
               </node>
               <node concept="3TrEf2" id="7W5DrJIe0xA" role="2OqNvi">
-                <reference role="3Tt5mk" target="v5hn.9152904044274469602" />
+                <ref role="3Tt5mk" to="v5hn:7W5DrJIdOFy" />
               </node>
             </node>
           </node>
@@ -124,7 +124,7 @@
         <node concept="mw_s8" id="7W5DrJIe0xB" role="1ZfhKB">
           <node concept="2c44tf" id="7W5DrJIe0xC" role="mwGJk">
             <node concept="3uibUv" id="7W5DrJIe0xD" role="2c44tc">
-              <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+              <ref role="3uigEE" to="e2lb:~String" resolve="String" />
             </node>
           </node>
         </node>
@@ -133,7 +133,7 @@
     </node>
     <node concept="1YaCAy" id="7W5DrJIe01h" role="1YuTPh">
       <property role="TrG5h" value="macro" />
-      <reference role="1YaFvo" target="v5hn.9152904044274469601" resolve="TextMacro" />
+      <ref role="1YaFvo" to="v5hn:7W5DrJIdOFx" resolve="TextMacro" />
     </node>
   </node>
   <node concept="1YbPZF" id="7W5DrJIe0xV">
@@ -143,7 +143,7 @@
         <node concept="mw_s8" id="7W5DrJIe0yb" role="1ZfhKB">
           <node concept="2c44tf" id="7W5DrJIe0yc" role="mwGJk">
             <node concept="3uibUv" id="7W5DrJIe0yf" role="2c44tc">
-              <reference role="3uigEE" target="zwkq.~Element" resolve="Element" />
+              <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
             </node>
           </node>
         </node>
@@ -151,10 +151,10 @@
           <node concept="1Z2H0r" id="7W5DrJIe0xZ" role="mwGJk">
             <node concept="2OqwBi" id="7W5DrJIe0y2" role="1Z2MuG">
               <node concept="1YBJjd" id="7W5DrJIe0y1" role="2Oq$k0">
-                <reference role="1YBMHb" target="9152904044274518141" resolve="macro" />
+                <ref role="1YBMHb" node="7W5DrJIe0xX" resolve="macro" />
               </node>
               <node concept="3TrEf2" id="7W5DrJIe0y6" role="2OqNvi">
-                <reference role="3Tt5mk" target="v5hn.9152904044274518128" />
+                <ref role="3Tt5mk" to="v5hn:7W5DrJIe0xK" />
               </node>
             </node>
           </node>
@@ -164,7 +164,7 @@
     </node>
     <node concept="1YaCAy" id="7W5DrJIe0xX" role="1YuTPh">
       <property role="TrG5h" value="macro" />
-      <reference role="1YaFvo" target="v5hn.9152904044274518122" resolve="ElementMacro" />
+      <ref role="1YaFvo" to="v5hn:7W5DrJIe0xE" resolve="ElementMacro" />
     </node>
   </node>
 </model>

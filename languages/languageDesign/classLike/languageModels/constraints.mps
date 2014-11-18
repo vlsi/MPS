@@ -86,7 +86,7 @@
   </registry>
   <node concept="1M2fIO" id="3geGFOI1yLF">
     <property role="3GE5qa" value="instances" />
-    <reference role="1M2myG" target="oubp.3751132065236767060" resolve="ClassLikeMethod" />
+    <ref role="1M2myG" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
     <node concept="nKS2y" id="3geGFOI1yLG" role="1MLUbF">
       <node concept="3clFbS" id="3geGFOI1yLH" role="2VODD2">
         <node concept="3clFbF" id="3geGFOI1yLI" role="3cqZAp">
@@ -96,17 +96,17 @@
               <node concept="2OqwBi" id="1XvrRm0VmLW" role="3uHU7B">
                 <node concept="2OqwBi" id="1XvrRm0VkoW" role="2Oq$k0">
                   <node concept="1PxgMI" id="1XvrRm0VjQS" role="2Oq$k0">
-                    <reference role="1PxNhF" target="tpee.1068390468198" resolve="ClassConcept" />
+                    <ref role="1PxNhF" to="tpee:fz12cDA" resolve="ClassConcept" />
                     <node concept="nLn13" id="1XvrRm0Vja$" role="1PxMeX" />
                   </node>
                   <node concept="3CFZ6_" id="1XvrRm0Vm7C" role="2OqNvi">
                     <node concept="3CFYIy" id="1XvrRm0Vmsb" role="3CFYIz">
-                      <reference role="3CFYIx" target="oubp.3571587574961713354" resolve="ClassLikeAnnotation" />
+                      <ref role="3CFYIx" to="oubp:36gOZBLMF3a" resolve="ClassLikeAnnotation" />
                     </node>
                   </node>
                 </node>
                 <node concept="3TrEf2" id="1XvrRm0VnoF" role="2OqNvi">
-                  <reference role="3Tt5mk" target="oubp.3571587574961717879" />
+                  <ref role="3Tt5mk" to="oubp:36gOZBLMG9R" />
                 </node>
               </node>
             </node>
@@ -114,7 +114,7 @@
               <node concept="nLn13" id="3geGFOI1yLK" role="2Oq$k0" />
               <node concept="1mIQ4w" id="3geGFOI1yLL" role="2OqNvi">
                 <node concept="chp4Y" id="1XvrRm0Viw8" role="cj9EA">
-                  <reference role="cht4Q" target="tpee.1068390468198" resolve="ClassConcept" />
+                  <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
                 </node>
               </node>
             </node>
@@ -125,7 +125,7 @@
   </node>
   <node concept="1M2fIO" id="2WSWNq1TGrt">
     <property role="3GE5qa" value="member" />
-    <reference role="1M2myG" target="oubp.3402736933911578134" resolve="RequiredModifier" />
+    <ref role="1M2myG" to="oubp:2WSWNq1TGom" resolve="RequiredModifier" />
     <node concept="nKS2y" id="2WSWNq1TGrK" role="1MLUbF">
       <node concept="3clFbS" id="2WSWNq1TGrL" role="2VODD2">
         <node concept="3clFbF" id="2WSWNq1TGAb" role="3cqZAp">
@@ -137,16 +137,16 @@
               <node concept="2OqwBi" id="2WSWNq1TITV" role="2Oq$k0">
                 <node concept="2OqwBi" id="2WSWNq1THBo" role="2Oq$k0">
                   <node concept="1PxgMI" id="2WSWNq1THee" role="2Oq$k0">
-                    <reference role="1PxNhF" target="oubp.8264762413010642119" resolve="ClassLikeMember" />
+                    <ref role="1PxNhF" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
                     <node concept="nLn13" id="2WSWNq1TGAa" role="1PxMeX" />
                   </node>
                   <node concept="3Tsc0h" id="2WSWNq1THWk" role="2OqNvi">
-                    <reference role="3TtcxE" target="oubp.3402736933911577960" />
+                    <ref role="3TtcxE" to="oubp:2WSWNq1TGlC" />
                   </node>
                 </node>
                 <node concept="v3k3i" id="2WSWNq1TKXZ" role="2OqNvi">
                   <node concept="chp4Y" id="2WSWNq1TLb1" role="v3oSu">
-                    <reference role="cht4Q" target="oubp.3402736933911578134" resolve="RequiredModifier" />
+                    <ref role="cht4Q" to="oubp:2WSWNq1TGom" resolve="RequiredModifier" />
                   </node>
                 </node>
               </node>

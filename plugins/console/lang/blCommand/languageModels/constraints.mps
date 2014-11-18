@@ -89,7 +89,7 @@
   </registry>
   <node concept="1M2fIO" id="6kp4dbAcANO">
     <property role="3GE5qa" value="expression.query" />
-    <reference role="1M2myG" target="3xdn.4307205004131544317" resolve="QueryExpression" />
+    <ref role="1M2myG" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
     <node concept="Um2eU" id="6kp4dbAcAOC" role="1kkKnR">
       <node concept="3clFbS" id="6kp4dbAcAOD" role="2VODD2">
         <node concept="3SKdUt" id="4FcVtx8tfEX" role="3cqZAp">
@@ -109,7 +109,7 @@
             <node concept="otxO1" id="6kp4dbAtZUj" role="2Oq$k0" />
             <node concept="3O6GUB" id="6kp4dbAu0UZ" role="2OqNvi">
               <node concept="chp4Y" id="6kp4dbAu1eG" role="3QVz_e">
-                <reference role="cht4Q" target="3xdn.4307205004131544565" resolve="QueryParameter" />
+                <ref role="cht4Q" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
               </node>
             </node>
           </node>
@@ -124,13 +124,13 @@
                     <node concept="3NT_Vc" id="6kp4dbAcLlz" role="2OqNvi" />
                   </node>
                   <node concept="2qgKlT" id="6kp4dbAeWb6" role="2OqNvi">
-                    <reference role="37wK5l" target="fq2o.4307205004146936444" resolve="getSupportedParameters" />
+                    <ref role="37wK5l" to="fq2o:3J6h25QXCDW" resolve="getSupportedParameters" />
                   </node>
                 </node>
                 <node concept="3JPx81" id="6kp4dbAf5c4" role="2OqNvi">
                   <node concept="10QFUN" id="6kp4dbAfcur" role="25WWJ7">
                     <node concept="3THzug" id="6kp4dbAfd5g" role="10QFUM">
-                      <reference role="3qa414" target="3xdn.4307205004131544565" resolve="QueryParameter" />
+                      <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
                     </node>
                     <node concept="otxO1" id="6kp4dbAfcuw" role="10QFUP" />
                   </node>
@@ -142,7 +142,7 @@
             <node concept="otxO1" id="6kp4dbAcBey" role="2Oq$k0" />
             <node concept="2Zo12i" id="6kp4dbAcCiC" role="2OqNvi">
               <node concept="chp4Y" id="6kp4dbAcCvP" role="2Zo12j">
-                <reference role="cht4Q" target="3xdn.4307205004131544565" resolve="QueryParameter" />
+                <ref role="cht4Q" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
               </node>
             </node>
           </node>

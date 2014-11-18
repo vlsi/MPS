@@ -59,7 +59,7 @@
       <node concept="37vLTG" id="1mBiRF0LBRb" role="3clF46">
         <property role="TrG5h" value="value" />
         <node concept="3uibUv" id="1mBiRF0LBRc" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="1mBiRF0LBRd" role="3clF47" />

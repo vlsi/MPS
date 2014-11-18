@@ -38,15 +38,15 @@
   <node concept="1TIwiD" id="7OJukvJ5je_">
     <property role="TrG5h" value="LanguageDescriptor" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1uh_eNRS9kV" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="language" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="hypd.6370754048397540895" resolve="Language" />
+      <ref role="20lvS9" to="hypd:5xDtKQA7vSv" resolve="Language" />
     </node>
     <node concept="PrWs8" id="7BqJJVi3vjI" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
 </model>

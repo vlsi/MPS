@@ -149,11 +149,11 @@
       <property role="TrG5h" value="INSTANCE" />
       <node concept="3Tm6S6" id="uVnzTvUtCz" role="1B3o_S" />
       <node concept="3uibUv" id="uVnzTvUtC_" role="1tU5fm">
-        <reference role="3uigEE" target="557142600900286111" resolve="DescriptorIOFacade" />
+        <ref role="3uigEE" node="uVnzTvTxqv" resolve="DescriptorIOFacade" />
       </node>
       <node concept="2ShNRf" id="uVnzTvUtCC" role="33vP2m">
         <node concept="1pGfFk" id="uVnzTvUtCD" role="2ShVmc">
-          <reference role="37wK5l" target="557142600900286113" resolve="DescriptorIOFacade" />
+          <ref role="37wK5l" node="uVnzTvTxqx" resolve="DescriptorIOFacade" />
         </node>
       </node>
     </node>
@@ -162,11 +162,11 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="uVnzTvUvLp" role="1B3o_S" />
       <node concept="3uibUv" id="uVnzTvUvLq" role="1tU5fm">
-        <reference role="3uigEE" target="557142600900539533" resolve="StandardDescriptorIOProvider" />
+        <ref role="3uigEE" node="uVnzTvUvid" resolve="StandardDescriptorIOProvider" />
       </node>
       <node concept="2ShNRf" id="uVnzTvUvLr" role="33vP2m">
         <node concept="1pGfFk" id="uVnzTvUvLs" role="2ShVmc">
-          <reference role="37wK5l" target="557142600900560790" resolve="StandardDescriptorIOProvider" />
+          <ref role="37wK5l" node="uVnzTvU$um" resolve="StandardDescriptorIOProvider" />
         </node>
       </node>
     </node>
@@ -175,11 +175,11 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="7S9zv5RYagh" role="1B3o_S" />
       <node concept="3uibUv" id="7S9zv5RYagi" role="1tU5fm">
-        <reference role="3uigEE" target="3323419009397486857" resolve="IdeaDescriptorIOProvider" />
+        <ref role="3uigEE" node="2Sv9ZGmUJk9" resolve="IdeaDescriptorIOProvider" />
       </node>
       <node concept="2ShNRf" id="7S9zv5RYagj" role="33vP2m">
         <node concept="1pGfFk" id="7S9zv5RYagk" role="2ShVmc">
-          <reference role="37wK5l" target="3323419009397486859" resolve="IdeaDescriptorIOProvider" />
+          <ref role="37wK5l" node="2Sv9ZGmUJkb" resolve="IdeaDescriptorIOProvider" />
         </node>
       </node>
     </node>
@@ -194,43 +194,43 @@
       <node concept="3clFbS" id="4vqd2Vc83Yh" role="3clF47">
         <node concept="3clFbF" id="4vqd2Vc84yA" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzbLb" role="3clFbG">
-            <reference role="37wK5l" target="5177508097213611953" resolve="fromExtension" />
+            <ref role="37wK5l" node="4vqd2Vc83YL" resolve="fromExtension" />
             <node concept="2OqwBi" id="4vqd2Vc84yF" role="37wK5m">
               <node concept="37vLTw" id="2BHiRxgheOe" role="2Oq$k0">
-                <reference role="3cqZAo" target="5177508097213611928" resolve="file" />
+                <ref role="3cqZAo" node="4vqd2Vc83Yo" resolve="file" />
               </node>
               <node concept="liA8E" id="4vqd2Vc84yL" role="2OqNvi">
-                <reference role="37wK5l" target="59et.~IFile%dgetPath()%cjava%dlang%dString" resolve="getPath" />
+                <ref role="37wK5l" to="59et:~IFile.getPath():java.lang.String" resolve="getPath" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="4vqd2Vc83Yi" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3qUE_q" id="4vqd2Vc83Yl" role="11_B2D">
           <node concept="3uibUv" id="4vqd2Vc83Yn" role="3qUE_r">
-            <reference role="3uigEE" target="kqhl.~ModuleDescriptor" resolve="ModuleDescriptor" />
+            <ref role="3uigEE" to="kqhl:~ModuleDescriptor" resolve="ModuleDescriptor" />
           </node>
         </node>
       </node>
       <node concept="37vLTG" id="4vqd2Vc83Yo" role="3clF46">
         <property role="TrG5h" value="file" />
         <node concept="3uibUv" id="4vqd2Vc83Yp" role="1tU5fm">
-          <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+          <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
         </node>
       </node>
     </node>
     <node concept="3clFb_" id="7S9zv5RYafM" role="jymVt">
       <property role="TrG5h" value="standardProvider" />
       <node concept="3uibUv" id="7S9zv5RYafP" role="3clF45">
-        <reference role="3uigEE" target="557142600900532740" resolve="DescriptorIOProvider" />
+        <ref role="3uigEE" node="uVnzTvUtC4" resolve="DescriptorIOProvider" />
       </node>
       <node concept="3Tm1VV" id="7S9zv5RYafQ" role="1B3o_S" />
       <node concept="3clFbS" id="7S9zv5RYafR" role="3clF47">
         <node concept="3clFbF" id="7S9zv5RYafS" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeoiuQ" role="3clFbG">
-            <reference role="3cqZAo" target="557142600900541528" resolve="STANDARD_FACTORY" />
+            <ref role="3cqZAo" node="uVnzTvUvLo" resolve="STANDARD_FACTORY" />
           </node>
         </node>
       </node>
@@ -238,13 +238,13 @@
     <node concept="3clFb_" id="7S9zv5RYafU" role="jymVt">
       <property role="TrG5h" value="ideaProvider" />
       <node concept="3uibUv" id="7S9zv5RYafX" role="3clF45">
-        <reference role="3uigEE" target="557142600900532740" resolve="DescriptorIOProvider" />
+        <ref role="3uigEE" node="uVnzTvUtC4" resolve="DescriptorIOProvider" />
       </node>
       <node concept="3Tm1VV" id="7S9zv5RYafY" role="1B3o_S" />
       <node concept="3clFbS" id="7S9zv5RYafZ" role="3clF47">
         <node concept="3clFbF" id="7S9zv5RYag6" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeorF3" role="3clFbG">
-            <reference role="3cqZAo" target="9081946191808734224" resolve="IDEA" />
+            <ref role="3cqZAo" node="7S9zv5RYagg" resolve="IDEA" />
           </node>
         </node>
       </node>
@@ -256,10 +256,10 @@
         <node concept="17QB3L" id="4vqd2Vc83YS" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="4vqd2Vc84x$" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3qUE_q" id="4vqd2Vc84xA" role="11_B2D">
           <node concept="3uibUv" id="4vqd2Vc84xC" role="3qUE_r">
-            <reference role="3uigEE" target="kqhl.~ModuleDescriptor" resolve="ModuleDescriptor" />
+            <ref role="3uigEE" to="kqhl:~ModuleDescriptor" resolve="ModuleDescriptor" />
           </node>
         </node>
       </node>
@@ -268,13 +268,13 @@
         <node concept="3clFbJ" id="4vqd2Vc83YT" role="3cqZAp">
           <node concept="2OqwBi" id="4vqd2Vc83YZ" role="3clFbw">
             <node concept="37vLTw" id="2BHiRxglMC5" role="2Oq$k0">
-              <reference role="3cqZAo" target="5177508097213611958" resolve="path" />
+              <ref role="3cqZAo" node="4vqd2Vc83YQ" resolve="path" />
             </node>
             <node concept="liA8E" id="4vqd2Vc83Z4" role="2OqNvi">
-              <reference role="37wK5l" target="e2lb.~String%dendsWith(java%dlang%dString)%cboolean" resolve="endsWith" />
+              <ref role="37wK5l" to="e2lb:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
               <node concept="10M0yZ" id="4vqd2Vc83Zf" role="37wK5m">
-                <reference role="1PxDUh" target="vsqj.~MPSExtentions" resolve="MPSExtentions" />
-                <reference role="3cqZAo" target="vsqj.~MPSExtentions%dDOT_LANGUAGE" resolve="DOT_LANGUAGE" />
+                <ref role="1PxDUh" to="vsqj:~MPSExtentions" resolve="MPSExtentions" />
+                <ref role="3cqZAo" to="vsqj:~MPSExtentions.DOT_LANGUAGE" resolve="DOT_LANGUAGE" />
               </node>
             </node>
           </node>
@@ -282,10 +282,10 @@
             <node concept="3cpWs6" id="4vqd2Vc84xR" role="3cqZAp">
               <node concept="2OqwBi" id="4vqd2Vc84xH" role="3cqZAk">
                 <node concept="1rXfSq" id="4hiugqyzeaD" role="2Oq$k0">
-                  <reference role="37wK5l" target="9081946191808734194" resolve="standardProvider" />
+                  <ref role="37wK5l" node="7S9zv5RYafM" resolve="standardProvider" />
                 </node>
                 <node concept="liA8E" id="4vqd2Vc84xN" role="2OqNvi">
-                  <reference role="37wK5l" target="557142600900559972" resolve="languageDescriptorIO" />
+                  <ref role="37wK5l" node="uVnzTvU$h$" resolve="languageDescriptorIO" />
                 </node>
               </node>
             </node>
@@ -295,23 +295,23 @@
               <node concept="3cpWs6" id="4vqd2Vc84xX" role="3cqZAp">
                 <node concept="2OqwBi" id="4vqd2Vc84xZ" role="3cqZAk">
                   <node concept="1rXfSq" id="4hiugqyzcVr" role="2Oq$k0">
-                    <reference role="37wK5l" target="9081946191808734194" resolve="standardProvider" />
+                    <ref role="37wK5l" node="7S9zv5RYafM" resolve="standardProvider" />
                   </node>
                   <node concept="liA8E" id="4vqd2Vc84y1" role="2OqNvi">
-                    <reference role="37wK5l" target="557142600900532754" resolve="solutionDescriptorIO" />
+                    <ref role="37wK5l" node="uVnzTvUtCi" resolve="solutionDescriptorIO" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="2OqwBi" id="4vqd2Vc83Zj" role="3eO9$A">
               <node concept="37vLTw" id="2BHiRxgm8sL" role="2Oq$k0">
-                <reference role="3cqZAo" target="5177508097213611958" resolve="path" />
+                <ref role="3cqZAo" node="4vqd2Vc83YQ" resolve="path" />
               </node>
               <node concept="liA8E" id="4vqd2Vc83Zl" role="2OqNvi">
-                <reference role="37wK5l" target="e2lb.~String%dendsWith(java%dlang%dString)%cboolean" resolve="endsWith" />
+                <ref role="37wK5l" to="e2lb:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
                 <node concept="10M0yZ" id="4vqd2Vc83Zm" role="37wK5m">
-                  <reference role="1PxDUh" target="vsqj.~MPSExtentions" resolve="MPSExtentions" />
-                  <reference role="3cqZAo" target="vsqj.~MPSExtentions%dDOT_SOLUTION" resolve="DOT_SOLUTION" />
+                  <ref role="1PxDUh" to="vsqj:~MPSExtentions" resolve="MPSExtentions" />
+                  <ref role="3cqZAo" to="vsqj:~MPSExtentions.DOT_SOLUTION" resolve="DOT_SOLUTION" />
                 </node>
               </node>
             </node>
@@ -321,23 +321,23 @@
               <node concept="3cpWs6" id="4vqd2Vc84y3" role="3cqZAp">
                 <node concept="2OqwBi" id="4vqd2Vc84y5" role="3cqZAk">
                   <node concept="1rXfSq" id="4hiugqyyZ5O" role="2Oq$k0">
-                    <reference role="37wK5l" target="9081946191808734194" resolve="standardProvider" />
+                    <ref role="37wK5l" node="7S9zv5RYafM" resolve="standardProvider" />
                   </node>
                   <node concept="liA8E" id="4vqd2Vc84y7" role="2OqNvi">
-                    <reference role="37wK5l" target="557142600900559978" resolve="devkitDescriptorIO" />
+                    <ref role="37wK5l" node="uVnzTvU$hE" resolve="devkitDescriptorIO" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="2OqwBi" id="4vqd2Vc83Zq" role="3eO9$A">
               <node concept="37vLTw" id="2BHiRxghfQh" role="2Oq$k0">
-                <reference role="3cqZAo" target="5177508097213611958" resolve="path" />
+                <ref role="3cqZAo" node="4vqd2Vc83YQ" resolve="path" />
               </node>
               <node concept="liA8E" id="4vqd2Vc83Zs" role="2OqNvi">
-                <reference role="37wK5l" target="e2lb.~String%dendsWith(java%dlang%dString)%cboolean" resolve="endsWith" />
+                <ref role="37wK5l" to="e2lb:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
                 <node concept="10M0yZ" id="4vqd2Vc83Zt" role="37wK5m">
-                  <reference role="1PxDUh" target="vsqj.~MPSExtentions" resolve="MPSExtentions" />
-                  <reference role="3cqZAo" target="vsqj.~MPSExtentions%dDOT_DEVKIT" resolve="DOT_DEVKIT" />
+                  <ref role="1PxDUh" to="vsqj:~MPSExtentions" resolve="MPSExtentions" />
+                  <ref role="3cqZAo" to="vsqj:~MPSExtentions.DOT_DEVKIT" resolve="DOT_DEVKIT" />
                 </node>
               </node>
             </node>
@@ -347,20 +347,20 @@
               <node concept="3cpWs6" id="4vqd2Vc84yr" role="3cqZAp">
                 <node concept="2OqwBi" id="4vqd2Vc84yw" role="3cqZAk">
                   <node concept="1rXfSq" id="4hiugqyyZSe" role="2Oq$k0">
-                    <reference role="37wK5l" target="9081946191808734202" resolve="ideaProvider" />
+                    <ref role="37wK5l" node="7S9zv5RYafU" resolve="ideaProvider" />
                   </node>
                   <node concept="liA8E" id="4vqd2Vc84y_" role="2OqNvi">
-                    <reference role="37wK5l" target="557142600900532754" resolve="solutionDescriptorIO" />
+                    <ref role="37wK5l" node="uVnzTvUtCi" resolve="solutionDescriptorIO" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="2OqwBi" id="4vqd2Vc84yi" role="3eO9$A">
               <node concept="37vLTw" id="2BHiRxgm8FZ" role="2Oq$k0">
-                <reference role="3cqZAo" target="5177508097213611958" resolve="path" />
+                <ref role="3cqZAo" node="4vqd2Vc83YQ" resolve="path" />
               </node>
               <node concept="liA8E" id="4vqd2Vc84yo" role="2OqNvi">
-                <reference role="37wK5l" target="e2lb.~String%dendsWith(java%dlang%dString)%cboolean" resolve="endsWith" />
+                <ref role="37wK5l" to="e2lb:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
                 <node concept="Xl_RD" id="4vqd2Vc84yq" role="37wK5m">
                   <property role="Xl_RC" value=".iml" />
                 </node>
@@ -379,12 +379,12 @@
       <node concept="3clFbS" id="uVnzTvU$uJ" role="3clF47">
         <node concept="3clFbF" id="uVnzTvU$uL" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeogpr" role="3clFbG">
-            <reference role="3cqZAo" target="557142600900532770" resolve="INSTANCE" />
+            <ref role="3cqZAo" node="uVnzTvUtCy" resolve="INSTANCE" />
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="uVnzTvU$uK" role="3clF45">
-        <reference role="3uigEE" target="557142600900286111" resolve="DescriptorIOFacade" />
+        <ref role="3uigEE" node="uVnzTvTxqv" resolve="DescriptorIOFacade" />
       </node>
     </node>
   </node>
@@ -400,16 +400,16 @@
       <node concept="37vLTG" id="uVnzTvU$mI" role="3clF46">
         <property role="TrG5h" value="file" />
         <node concept="3uibUv" id="uVnzTvU$mJ" role="1tU5fm">
-          <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+          <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
         </node>
       </node>
       <node concept="3Tm1VV" id="uVnzTvU$mK" role="1B3o_S" />
       <node concept="3clFbS" id="uVnzTvU$mL" role="3clF47" />
       <node concept="16syzq" id="uVnzTvU$mM" role="3clF45">
-        <reference role="16sUi3" target="557142600900286150" resolve="T" />
+        <ref role="16sUi3" node="uVnzTvTxr6" resolve="T" />
       </node>
       <node concept="3uibUv" id="7S9zv5RY7wo" role="Sfmx6">
-        <reference role="3uigEE" target="9081946191808704816" resolve="DescriptorIOException" />
+        <ref role="3uigEE" node="7S9zv5RY34K" resolve="DescriptorIOException" />
       </node>
     </node>
     <node concept="3clFb_" id="uVnzTvU$mN" role="jymVt">
@@ -421,17 +421,17 @@
       <node concept="37vLTG" id="uVnzTvU$mR" role="3clF46">
         <property role="TrG5h" value="t" />
         <node concept="16syzq" id="uVnzTvU$mS" role="1tU5fm">
-          <reference role="16sUi3" target="557142600900286150" resolve="T" />
+          <ref role="16sUi3" node="uVnzTvTxr6" resolve="T" />
         </node>
       </node>
       <node concept="37vLTG" id="uVnzTvU$mT" role="3clF46">
         <property role="TrG5h" value="file" />
         <node concept="3uibUv" id="uVnzTvU$mU" role="1tU5fm">
-          <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+          <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
         </node>
       </node>
       <node concept="3uibUv" id="4vqd2Vc7C2I" role="Sfmx6">
-        <reference role="3uigEE" target="9081946191808704816" resolve="DescriptorIOException" />
+        <ref role="3uigEE" node="7S9zv5RY34K" resolve="DescriptorIOException" />
       </node>
     </node>
     <node concept="3clFb_" id="uVnzTvTxr7" role="jymVt">
@@ -440,22 +440,22 @@
       <node concept="37vLTG" id="uVnzTvU$mX" role="3clF46">
         <property role="TrG5h" value="element" />
         <node concept="3uibUv" id="1Tieq1imr8z" role="1tU5fm">
-          <reference role="3uigEE" target="zwkq.~Element" resolve="Element" />
+          <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
         </node>
       </node>
       <node concept="37vLTG" id="uVnzTvTxrc" role="3clF46">
         <property role="TrG5h" value="anchorFile" />
         <node concept="3uibUv" id="uVnzTvTxre" role="1tU5fm">
-          <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+          <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
         </node>
       </node>
       <node concept="3Tm1VV" id="uVnzTvTxr9" role="1B3o_S" />
       <node concept="3clFbS" id="uVnzTvTxra" role="3clF47" />
       <node concept="16syzq" id="uVnzTvTxrb" role="3clF45">
-        <reference role="16sUi3" target="557142600900286150" resolve="T" />
+        <ref role="16sUi3" node="uVnzTvTxr6" resolve="T" />
       </node>
       <node concept="3uibUv" id="4vqd2Vc7C2K" role="Sfmx6">
-        <reference role="3uigEE" target="9081946191808704816" resolve="DescriptorIOException" />
+        <ref role="3uigEE" node="7S9zv5RY34K" resolve="DescriptorIOException" />
       </node>
     </node>
     <node concept="3clFb_" id="uVnzTvTxrf" role="jymVt">
@@ -467,23 +467,23 @@
       <node concept="37vLTG" id="uVnzTvTxrn" role="3clF46">
         <property role="TrG5h" value="t" />
         <node concept="16syzq" id="uVnzTvTxrp" role="1tU5fm">
-          <reference role="16sUi3" target="557142600900286150" resolve="T" />
+          <ref role="16sUi3" node="uVnzTvTxr6" resolve="T" />
         </node>
       </node>
       <node concept="37vLTG" id="uVnzTvU$n0" role="3clF46">
         <property role="TrG5h" value="element" />
         <node concept="3uibUv" id="1Tieq1imr8x" role="1tU5fm">
-          <reference role="3uigEE" target="zwkq.~Element" resolve="Element" />
+          <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
         </node>
       </node>
       <node concept="37vLTG" id="uVnzTvTxrj" role="3clF46">
         <property role="TrG5h" value="anchorFile" />
         <node concept="3uibUv" id="uVnzTvTxrk" role="1tU5fm">
-          <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+          <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
         </node>
       </node>
       <node concept="3uibUv" id="4vqd2Vc7C2M" role="Sfmx6">
-        <reference role="3uigEE" target="9081946191808704816" resolve="DescriptorIOException" />
+        <ref role="3uigEE" node="7S9zv5RY34K" resolve="DescriptorIOException" />
       </node>
     </node>
   </node>
@@ -494,9 +494,9 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="solutionDescriptorIO" />
       <node concept="3uibUv" id="uVnzTvUtCm" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="uVnzTvUviR" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~SolutionDescriptor" resolve="SolutionDescriptor" />
+          <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
         </node>
       </node>
       <node concept="3Tm1VV" id="uVnzTvUtCk" role="1B3o_S" />
@@ -506,9 +506,9 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="languageDescriptorIO" />
       <node concept="3uibUv" id="uVnzTvU$h_" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="uVnzTvU$hD" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~LanguageDescriptor" resolve="LanguageDescriptor" />
+          <ref role="3uigEE" to="kqhl:~LanguageDescriptor" resolve="LanguageDescriptor" />
         </node>
       </node>
       <node concept="3Tm1VV" id="uVnzTvU$hB" role="1B3o_S" />
@@ -518,9 +518,9 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="devkitDescriptorIO" />
       <node concept="3uibUv" id="uVnzTvU$hF" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="uVnzTvU$hJ" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~DevkitDescriptor" resolve="DevkitDescriptor" />
+          <ref role="3uigEE" to="kqhl:~DevkitDescriptor" resolve="DevkitDescriptor" />
         </node>
       </node>
       <node concept="3Tm1VV" id="uVnzTvU$hH" role="1B3o_S" />
@@ -531,18 +531,18 @@
     <property role="TrG5h" value="StandardDescriptorIOProvider" />
     <node concept="3Tm1VV" id="uVnzTvUvie" role="1B3o_S" />
     <node concept="3uibUv" id="uVnzTvUvij" role="EKbjA">
-      <reference role="3uigEE" target="557142600900532740" resolve="DescriptorIOProvider" />
+      <ref role="3uigEE" node="uVnzTvUtC4" resolve="DescriptorIOProvider" />
     </node>
     <node concept="Wx3nA" id="uVnzTvU$hu" role="jymVt">
       <property role="TrG5h" value="SOLUTION" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="uVnzTvU$hv" role="1B3o_S" />
       <node concept="3uibUv" id="uVnzTvU$hw" role="1tU5fm">
-        <reference role="3uigEE" target="557142600900539549" resolve="StandardDescriptorIOProvider.SolutionDescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvUvit" resolve="StandardDescriptorIOProvider.SolutionDescriptorIO" />
       </node>
       <node concept="2ShNRf" id="uVnzTvU$hx" role="33vP2m">
         <node concept="1pGfFk" id="uVnzTvU$hy" role="2ShVmc">
-          <reference role="37wK5l" target="557142600900539551" resolve="StandardDescriptorIOProvider.SolutionDescriptorIO" />
+          <ref role="37wK5l" node="uVnzTvUviv" resolve="StandardDescriptorIOProvider.SolutionDescriptorIO" />
         </node>
       </node>
     </node>
@@ -551,11 +551,11 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="uVnzTvU$iY" role="1B3o_S" />
       <node concept="3uibUv" id="uVnzTvU$iZ" role="1tU5fm">
-        <reference role="3uigEE" target="557142600900560017" resolve="StandardDescriptorIOProvider.LanguageDescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvU$ih" resolve="StandardDescriptorIOProvider.LanguageDescriptorIO" />
       </node>
       <node concept="2ShNRf" id="uVnzTvU$j0" role="33vP2m">
         <node concept="1pGfFk" id="uVnzTvU$j1" role="2ShVmc">
-          <reference role="37wK5l" target="557142600900560019" resolve="StandardDescriptorIOProvider.LanguageDescriptorIO" />
+          <ref role="37wK5l" node="uVnzTvU$ij" resolve="StandardDescriptorIOProvider.LanguageDescriptorIO" />
         </node>
       </node>
     </node>
@@ -564,11 +564,11 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="uVnzTvU$tW" role="1B3o_S" />
       <node concept="3uibUv" id="uVnzTvU$tX" role="1tU5fm">
-        <reference role="3uigEE" target="557142600900560576" resolve="StandardDescriptorIOProvider.DevkitDescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvU$r0" resolve="StandardDescriptorIOProvider.DevkitDescriptorIO" />
       </node>
       <node concept="2ShNRf" id="uVnzTvU$tY" role="33vP2m">
         <node concept="1pGfFk" id="uVnzTvU$tZ" role="2ShVmc">
-          <reference role="37wK5l" target="557142600900560578" resolve="StandardDescriptorIOProvider.DevkitDescriptorIO" />
+          <ref role="37wK5l" node="uVnzTvU$r2" resolve="StandardDescriptorIOProvider.DevkitDescriptorIO" />
         </node>
       </node>
     </node>
@@ -580,63 +580,63 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="solutionDescriptorIO" />
       <node concept="3uibUv" id="uVnzTvUviT" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="uVnzTvUviU" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~SolutionDescriptor" resolve="SolutionDescriptor" />
+          <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
         </node>
       </node>
       <node concept="3Tm1VV" id="uVnzTvUviV" role="1B3o_S" />
       <node concept="3clFbS" id="uVnzTvUviW" role="3clF47">
         <node concept="3clFbF" id="uVnzTvU$hq" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeor$1" role="3clFbG">
-            <reference role="3cqZAo" target="557142600900559966" resolve="SOLUTION" />
+            <ref role="3cqZAo" node="uVnzTvU$hu" resolve="SOLUTION" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_sSSg" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="uVnzTvU$hU" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="languageDescriptorIO" />
       <node concept="3uibUv" id="uVnzTvU$hV" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="uVnzTvU$hW" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~LanguageDescriptor" resolve="LanguageDescriptor" />
+          <ref role="3uigEE" to="kqhl:~LanguageDescriptor" resolve="LanguageDescriptor" />
         </node>
       </node>
       <node concept="3Tm1VV" id="uVnzTvU$hX" role="1B3o_S" />
       <node concept="3clFbS" id="uVnzTvU$hY" role="3clF47">
         <node concept="3clFbF" id="uVnzTvU$iT" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeonNW" role="3clFbG">
-            <reference role="3cqZAo" target="557142600900560061" resolve="LANGUAGE" />
+            <ref role="3cqZAo" node="uVnzTvU$iX" resolve="LANGUAGE" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_sSSf" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="uVnzTvU$i1" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="devkitDescriptorIO" />
       <node concept="3uibUv" id="uVnzTvU$i2" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="uVnzTvU$i3" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~DevkitDescriptor" resolve="DevkitDescriptor" />
+          <ref role="3uigEE" to="kqhl:~DevkitDescriptor" resolve="DevkitDescriptor" />
         </node>
       </node>
       <node concept="3Tm1VV" id="uVnzTvU$i4" role="1B3o_S" />
       <node concept="3clFbS" id="uVnzTvU$i5" role="3clF47">
         <node concept="3clFbF" id="uVnzTvU$tR" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeofy0" role="3clFbG">
-            <reference role="3cqZAo" target="557142600900560763" resolve="DEVKIT" />
+            <ref role="3cqZAo" node="uVnzTvU$tV" resolve="DEVKIT" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_sSSe" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="312cEu" id="uVnzTvUvit" role="jymVt">
@@ -644,9 +644,9 @@
       <property role="2bfB8j" value="false" />
       <node concept="3Tm1VV" id="uVnzTvUviu" role="1B3o_S" />
       <node concept="3uibUv" id="uVnzTvUviz" role="EKbjA">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="uVnzTvUviZ" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~SolutionDescriptor" resolve="SolutionDescriptor" />
+          <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
         </node>
       </node>
       <node concept="3clFbW" id="uVnzTvUviv" role="jymVt">
@@ -660,28 +660,28 @@
         <node concept="37vLTG" id="uVnzTvUvj1" role="3clF46">
           <property role="TrG5h" value="file" />
           <node concept="3uibUv" id="uVnzTvUvj2" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3Tm1VV" id="uVnzTvUvj3" role="1B3o_S" />
         <node concept="3uibUv" id="uVnzTvUvj4" role="3clF45">
-          <reference role="3uigEE" target="kqhl.~SolutionDescriptor" resolve="SolutionDescriptor" />
+          <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
         </node>
         <node concept="3clFbS" id="uVnzTvUvj5" role="3clF47">
           <node concept="SfApY" id="7S9zv5RY7H_" role="3cqZAp">
             <node concept="3clFbS" id="7S9zv5RY7HA" role="SfCbr">
               <node concept="3cpWs6" id="7S9zv5RY7HW" role="3cqZAp">
                 <node concept="2YIFZM" id="uVnzTvUvjg" role="3cqZAk">
-                  <reference role="37wK5l" target="gn4j.842994667883032843" resolve="loadSolutionDescriptor" />
-                  <reference role="1Pybhc" target="gn4j.842994667883032842" resolve="SolutionDescriptorPersistence" />
+                  <ref role="37wK5l" to="gn4j:IMUMWuHR4b" resolve="loadSolutionDescriptor" />
+                  <ref role="1Pybhc" to="gn4j:IMUMWuHR4a" resolve="SolutionDescriptorPersistence" />
                   <node concept="37vLTw" id="2BHiRxgmaQ$" role="37wK5m">
-                    <reference role="3cqZAo" target="557142600900539585" resolve="file" />
+                    <ref role="3cqZAo" node="uVnzTvUvj1" resolve="file" />
                   </node>
                   <node concept="2YIFZM" id="3OnrE1Ajc9o" role="37wK5m">
-                    <reference role="1Pybhc" target="msyo.~MacrosFactory" resolve="MacrosFactory" />
-                    <reference role="37wK5l" target="msyo.~MacrosFactory%dforModuleFile(jetbrains%dmps%dvfs%dIFile)%cjetbrains%dmps%dutil%dMacroHelper" resolve="forModuleFile" />
+                    <ref role="1Pybhc" to="msyo:~MacrosFactory" resolve="MacrosFactory" />
+                    <ref role="37wK5l" to="msyo:~MacrosFactory.forModuleFile(jetbrains.mps.vfs.IFile):jetbrains.mps.util.MacroHelper" resolve="forModuleFile" />
                     <node concept="37vLTw" id="2BHiRxgm6JI" role="37wK5m">
-                      <reference role="3cqZAo" target="557142600900539585" resolve="file" />
+                      <ref role="3cqZAo" node="uVnzTvUvj1" resolve="file" />
                     </node>
                   </node>
                 </node>
@@ -691,7 +691,7 @@
               <node concept="3cpWsn" id="7S9zv5RY7HD" role="TDEfY">
                 <property role="TrG5h" value="ex" />
                 <node concept="3uibUv" id="7S9zv5RY7HG" role="1tU5fm">
-                  <reference role="3uigEE" target="gn4j.2709156219364650064" resolve="ModuleReadException" />
+                  <ref role="3uigEE" to="gn4j:2moQNDghiLg" resolve="ModuleReadException" />
                 </node>
               </node>
               <node concept="3clFbS" id="7S9zv5RY7HF" role="TDEfX">
@@ -699,33 +699,33 @@
                   <node concept="3cpWsn" id="3A3$mCqD7fq" role="3cpWs9">
                     <property role="TrG5h" value="sd" />
                     <node concept="3uibUv" id="3A3$mCqD7fr" role="1tU5fm">
-                      <reference role="3uigEE" target="kqhl.~SolutionDescriptor" resolve="SolutionDescriptor" />
+                      <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
                     </node>
                     <node concept="2ShNRf" id="3A3$mCqD7fs" role="33vP2m">
                       <node concept="1pGfFk" id="3A3$mCqD7ft" role="2ShVmc">
-                        <reference role="37wK5l" target="kqhl.~SolutionDescriptor%d&lt;init&gt;()" resolve="SolutionDescriptor" />
+                        <ref role="37wK5l" to="kqhl:~SolutionDescriptor.&lt;init&gt;()" resolve="SolutionDescriptor" />
                       </node>
                     </node>
                   </node>
                 </node>
                 <node concept="3clFbF" id="3A3$mCqD7fn" role="3cqZAp">
                   <node concept="2YIFZM" id="3A3$mCqD4UZ" role="3clFbG">
-                    <reference role="37wK5l" target="gn4j.8222824327012642906" resolve="loadBrokenModule" />
-                    <reference role="1Pybhc" target="gn4j.842994667883031742" resolve="ModuleDescriptorPersistence" />
+                    <ref role="37wK5l" to="gn4j:78tlMyQ1R1q" resolve="loadBrokenModule" />
+                    <ref role="1Pybhc" to="gn4j:IMUMWuHQMY" resolve="ModuleDescriptorPersistence" />
                     <node concept="37vLTw" id="3GM_nagTw$D" role="37wK5m">
-                      <reference role="3cqZAo" target="4144315967010534362" resolve="sd" />
+                      <ref role="3cqZAo" node="3A3$mCqD7fq" resolve="sd" />
                     </node>
                     <node concept="37vLTw" id="2BHiRxgmpMt" role="37wK5m">
-                      <reference role="3cqZAo" target="557142600900539585" resolve="file" />
+                      <ref role="3cqZAo" node="uVnzTvUvj1" resolve="file" />
                     </node>
                     <node concept="37vLTw" id="3GM_nagTtU2" role="37wK5m">
-                      <reference role="3cqZAo" target="9081946191808723817" resolve="ex" />
+                      <ref role="3cqZAo" node="7S9zv5RY7HD" resolve="ex" />
                     </node>
                   </node>
                 </node>
                 <node concept="3cpWs6" id="3A3$mCqD7fw" role="3cqZAp">
                   <node concept="37vLTw" id="3GM_nagT_q8" role="3cqZAk">
-                    <reference role="3cqZAo" target="4144315967010534362" resolve="sd" />
+                    <ref role="3cqZAo" node="3A3$mCqD7fq" resolve="sd" />
                   </node>
                 </node>
               </node>
@@ -733,10 +733,10 @@
           </node>
         </node>
         <node concept="3uibUv" id="7S9zv5RY7HR" role="Sfmx6">
-          <reference role="3uigEE" target="9081946191808704816" resolve="DescriptorIOException" />
+          <ref role="3uigEE" node="7S9zv5RY34K" resolve="DescriptorIOException" />
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sSbT" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="uVnzTvUvj6" role="jymVt">
@@ -747,38 +747,38 @@
         <node concept="37vLTG" id="uVnzTvUvj9" role="3clF46">
           <property role="TrG5h" value="sd" />
           <node concept="3uibUv" id="uVnzTvUvja" role="1tU5fm">
-            <reference role="3uigEE" target="kqhl.~SolutionDescriptor" resolve="SolutionDescriptor" />
+            <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvUvjb" role="3clF46">
           <property role="TrG5h" value="file" />
           <node concept="3uibUv" id="uVnzTvUvjc" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3clFbS" id="uVnzTvUvjd" role="3clF47">
           <node concept="3clFbF" id="uVnzTvUvji" role="3cqZAp">
             <node concept="2YIFZM" id="uVnzTvUvjk" role="3clFbG">
-              <reference role="37wK5l" target="gn4j.842994667883033047" resolve="saveSolutionDescriptor" />
-              <reference role="1Pybhc" target="gn4j.842994667883032842" resolve="SolutionDescriptorPersistence" />
+              <ref role="37wK5l" to="gn4j:IMUMWuHR7n" resolve="saveSolutionDescriptor" />
+              <ref role="1Pybhc" to="gn4j:IMUMWuHR4a" resolve="SolutionDescriptorPersistence" />
               <node concept="37vLTw" id="2BHiRxglleZ" role="37wK5m">
-                <reference role="3cqZAo" target="557142600900539595" resolve="file" />
+                <ref role="3cqZAo" node="uVnzTvUvjb" resolve="file" />
               </node>
               <node concept="37vLTw" id="2BHiRxglmZ6" role="37wK5m">
-                <reference role="3cqZAo" target="557142600900539593" resolve="sd" />
+                <ref role="3cqZAo" node="uVnzTvUvj9" resolve="sd" />
               </node>
               <node concept="2YIFZM" id="3OnrE1Ajc9r" role="37wK5m">
-                <reference role="1Pybhc" target="msyo.~MacrosFactory" resolve="MacrosFactory" />
-                <reference role="37wK5l" target="msyo.~MacrosFactory%dforModuleFile(jetbrains%dmps%dvfs%dIFile)%cjetbrains%dmps%dutil%dMacroHelper" resolve="forModuleFile" />
+                <ref role="1Pybhc" to="msyo:~MacrosFactory" resolve="MacrosFactory" />
+                <ref role="37wK5l" to="msyo:~MacrosFactory.forModuleFile(jetbrains.mps.vfs.IFile):jetbrains.mps.util.MacroHelper" resolve="forModuleFile" />
                 <node concept="37vLTw" id="2BHiRxgm6y9" role="37wK5m">
-                  <reference role="3cqZAo" target="557142600900539595" resolve="file" />
+                  <ref role="3cqZAo" node="uVnzTvUvjb" resolve="file" />
                 </node>
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sSbU" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="uVnzTvU$nc" role="jymVt">
@@ -789,32 +789,32 @@
         <node concept="37vLTG" id="uVnzTvU$nf" role="3clF46">
           <property role="TrG5h" value="sd" />
           <node concept="3uibUv" id="uVnzTvU$ng" role="1tU5fm">
-            <reference role="3uigEE" target="kqhl.~SolutionDescriptor" resolve="SolutionDescriptor" />
+            <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvU$nh" role="3clF46">
           <property role="TrG5h" value="element" />
           <node concept="3uibUv" id="1Tieq1imr8O" role="1tU5fm">
-            <reference role="3uigEE" target="zwkq.~Element" resolve="Element" />
+            <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvU$nj" role="3clF46">
           <property role="TrG5h" value="anchorFile" />
           <node concept="3uibUv" id="uVnzTvU$nk" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3clFbS" id="uVnzTvU$nl" role="3clF47">
           <node concept="YS8fn" id="uVnzTvU$nm" role="3cqZAp">
             <node concept="2ShNRf" id="uVnzTvU$no" role="YScLw">
               <node concept="1pGfFk" id="uVnzTvU$nq" role="2ShVmc">
-                <reference role="37wK5l" target="e2lb.~UnsupportedOperationException%d&lt;init&gt;()" resolve="UnsupportedOperationException" />
+                <ref role="37wK5l" to="e2lb:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sSbS" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="uVnzTvU$n4" role="jymVt">
@@ -823,30 +823,30 @@
         <node concept="37vLTG" id="uVnzTvU$n5" role="3clF46">
           <property role="TrG5h" value="element" />
           <node concept="3uibUv" id="1Tieq1imr8Q" role="1tU5fm">
-            <reference role="3uigEE" target="zwkq.~Element" resolve="Element" />
+            <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvU$n7" role="3clF46">
           <property role="TrG5h" value="anchorFile" />
           <node concept="3uibUv" id="uVnzTvU$n8" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3Tm1VV" id="uVnzTvU$n9" role="1B3o_S" />
         <node concept="3uibUv" id="uVnzTvU$na" role="3clF45">
-          <reference role="3uigEE" target="kqhl.~SolutionDescriptor" resolve="SolutionDescriptor" />
+          <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
         </node>
         <node concept="3clFbS" id="uVnzTvU$nb" role="3clF47">
           <node concept="YS8fn" id="uVnzTvU$nr" role="3cqZAp">
             <node concept="2ShNRf" id="uVnzTvU$ns" role="YScLw">
               <node concept="1pGfFk" id="uVnzTvU$nt" role="2ShVmc">
-                <reference role="37wK5l" target="e2lb.~UnsupportedOperationException%d&lt;init&gt;()" resolve="UnsupportedOperationException" />
+                <ref role="37wK5l" to="e2lb:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sSbR" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
     </node>
@@ -855,9 +855,9 @@
       <property role="2bfB8j" value="false" />
       <node concept="3Tm1VV" id="uVnzTvU$ii" role="1B3o_S" />
       <node concept="3uibUv" id="uVnzTvU$in" role="EKbjA">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="uVnzTvU$ip" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~LanguageDescriptor" resolve="LanguageDescriptor" />
+          <ref role="3uigEE" to="kqhl:~LanguageDescriptor" resolve="LanguageDescriptor" />
         </node>
       </node>
       <node concept="3clFbW" id="uVnzTvU$ij" role="jymVt">
@@ -871,28 +871,28 @@
         <node concept="37vLTG" id="uVnzTvU$ir" role="3clF46">
           <property role="TrG5h" value="file" />
           <node concept="3uibUv" id="uVnzTvU$is" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3Tm1VV" id="uVnzTvU$it" role="1B3o_S" />
         <node concept="3uibUv" id="uVnzTvU$iu" role="3clF45">
-          <reference role="3uigEE" target="kqhl.~LanguageDescriptor" resolve="LanguageDescriptor" />
+          <ref role="3uigEE" to="kqhl:~LanguageDescriptor" resolve="LanguageDescriptor" />
         </node>
         <node concept="3clFbS" id="uVnzTvU$iv" role="3clF47">
           <node concept="SfApY" id="7S9zv5RY7HX" role="3cqZAp">
             <node concept="3clFbS" id="7S9zv5RY7HY" role="SfCbr">
               <node concept="3cpWs6" id="7S9zv5RY7Ib" role="3cqZAp">
                 <node concept="2YIFZM" id="7S9zv5RY7Ic" role="3cqZAk">
-                  <reference role="37wK5l" target="gn4j.842994667883031168" resolve="loadLanguageDescriptor" />
-                  <reference role="1Pybhc" target="gn4j.842994667883031167" resolve="LanguageDescriptorPersistence" />
+                  <ref role="37wK5l" to="gn4j:IMUMWuHQE0" resolve="loadLanguageDescriptor" />
+                  <ref role="1Pybhc" to="gn4j:IMUMWuHQDZ" resolve="LanguageDescriptorPersistence" />
                   <node concept="37vLTw" id="2BHiRxgm6nt" role="37wK5m">
-                    <reference role="3cqZAo" target="557142600900560027" resolve="file" />
+                    <ref role="3cqZAo" node="uVnzTvU$ir" resolve="file" />
                   </node>
                   <node concept="2YIFZM" id="3OnrE1Ajc8Y" role="37wK5m">
-                    <reference role="37wK5l" target="msyo.~MacrosFactory%dforModuleFile(jetbrains%dmps%dvfs%dIFile)%cjetbrains%dmps%dutil%dMacroHelper" resolve="forModuleFile" />
-                    <reference role="1Pybhc" target="msyo.~MacrosFactory" resolve="MacrosFactory" />
+                    <ref role="37wK5l" to="msyo:~MacrosFactory.forModuleFile(jetbrains.mps.vfs.IFile):jetbrains.mps.util.MacroHelper" resolve="forModuleFile" />
+                    <ref role="1Pybhc" to="msyo:~MacrosFactory" resolve="MacrosFactory" />
                     <node concept="37vLTw" id="2BHiRxgmwVI" role="37wK5m">
-                      <reference role="3cqZAo" target="557142600900560027" resolve="file" />
+                      <ref role="3cqZAo" node="uVnzTvU$ir" resolve="file" />
                     </node>
                   </node>
                 </node>
@@ -902,7 +902,7 @@
               <node concept="3cpWsn" id="7S9zv5RY7I3" role="TDEfY">
                 <property role="TrG5h" value="ex" />
                 <node concept="3uibUv" id="7S9zv5RY7I4" role="1tU5fm">
-                  <reference role="3uigEE" target="gn4j.2709156219364650064" resolve="ModuleReadException" />
+                  <ref role="3uigEE" to="gn4j:2moQNDghiLg" resolve="ModuleReadException" />
                 </node>
               </node>
               <node concept="3clFbS" id="7S9zv5RY7I5" role="TDEfX">
@@ -910,33 +910,33 @@
                   <node concept="3cpWsn" id="3A3$mCqD7f$" role="3cpWs9">
                     <property role="TrG5h" value="ld" />
                     <node concept="3uibUv" id="3A3$mCqD7fJ" role="1tU5fm">
-                      <reference role="3uigEE" target="kqhl.~LanguageDescriptor" resolve="LanguageDescriptor" />
+                      <ref role="3uigEE" to="kqhl:~LanguageDescriptor" resolve="LanguageDescriptor" />
                     </node>
                     <node concept="2ShNRf" id="3A3$mCqD7fA" role="33vP2m">
                       <node concept="1pGfFk" id="3A3$mCqD7fB" role="2ShVmc">
-                        <reference role="37wK5l" target="kqhl.~LanguageDescriptor%d&lt;init&gt;()" resolve="LanguageDescriptor" />
+                        <ref role="37wK5l" to="kqhl:~LanguageDescriptor.&lt;init&gt;()" resolve="LanguageDescriptor" />
                       </node>
                     </node>
                   </node>
                 </node>
                 <node concept="3clFbF" id="3A3$mCqD7fC" role="3cqZAp">
                   <node concept="2YIFZM" id="3A3$mCqD7fD" role="3clFbG">
-                    <reference role="37wK5l" target="gn4j.8222824327012642906" resolve="loadBrokenModule" />
-                    <reference role="1Pybhc" target="gn4j.842994667883031742" resolve="ModuleDescriptorPersistence" />
+                    <ref role="37wK5l" to="gn4j:78tlMyQ1R1q" resolve="loadBrokenModule" />
+                    <ref role="1Pybhc" to="gn4j:IMUMWuHQMY" resolve="ModuleDescriptorPersistence" />
                     <node concept="37vLTw" id="3GM_nagTrws" role="37wK5m">
-                      <reference role="3cqZAo" target="4144315967010534372" resolve="ld" />
+                      <ref role="3cqZAo" node="3A3$mCqD7f$" resolve="ld" />
                     </node>
                     <node concept="37vLTw" id="2BHiRxgm1iE" role="37wK5m">
-                      <reference role="3cqZAo" target="557142600900560027" resolve="file" />
+                      <ref role="3cqZAo" node="uVnzTvU$ir" resolve="file" />
                     </node>
                     <node concept="37vLTw" id="3GM_nagTyWr" role="37wK5m">
-                      <reference role="3cqZAo" target="9081946191808723843" resolve="ex" />
+                      <ref role="3cqZAo" node="7S9zv5RY7I3" resolve="ex" />
                     </node>
                   </node>
                 </node>
                 <node concept="3cpWs6" id="3A3$mCqD7fH" role="3cqZAp">
                   <node concept="37vLTw" id="3GM_nagT$Wx" role="3cqZAk">
-                    <reference role="3cqZAo" target="4144315967010534372" resolve="ld" />
+                    <ref role="3cqZAo" node="3A3$mCqD7f$" resolve="ld" />
                   </node>
                 </node>
               </node>
@@ -944,10 +944,10 @@
           </node>
         </node>
         <node concept="3uibUv" id="7S9zv5RY7Ie" role="Sfmx6">
-          <reference role="3uigEE" target="9081946191808704816" resolve="DescriptorIOException" />
+          <ref role="3uigEE" node="7S9zv5RY34K" resolve="DescriptorIOException" />
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sReU" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="uVnzTvU$iw" role="jymVt">
@@ -958,38 +958,38 @@
         <node concept="37vLTG" id="uVnzTvU$iz" role="3clF46">
           <property role="TrG5h" value="ld" />
           <node concept="3uibUv" id="uVnzTvU$i$" role="1tU5fm">
-            <reference role="3uigEE" target="kqhl.~LanguageDescriptor" resolve="LanguageDescriptor" />
+            <ref role="3uigEE" to="kqhl:~LanguageDescriptor" resolve="LanguageDescriptor" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvU$i_" role="3clF46">
           <property role="TrG5h" value="file" />
           <node concept="3uibUv" id="uVnzTvU$iA" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3clFbS" id="uVnzTvU$iB" role="3clF47">
           <node concept="3clFbF" id="uVnzTvU$iG" role="3cqZAp">
             <node concept="2YIFZM" id="uVnzTvU$iI" role="3clFbG">
-              <reference role="1Pybhc" target="gn4j.842994667883031167" resolve="LanguageDescriptorPersistence" />
-              <reference role="37wK5l" target="gn4j.842994667883031495" resolve="saveLanguageDescriptor" />
+              <ref role="1Pybhc" to="gn4j:IMUMWuHQDZ" resolve="LanguageDescriptorPersistence" />
+              <ref role="37wK5l" to="gn4j:IMUMWuHQJ7" resolve="saveLanguageDescriptor" />
               <node concept="37vLTw" id="2BHiRxgheSp" role="37wK5m">
-                <reference role="3cqZAo" target="557142600900560037" resolve="file" />
+                <ref role="3cqZAo" node="uVnzTvU$i_" resolve="file" />
               </node>
               <node concept="37vLTw" id="2BHiRxgm8kd" role="37wK5m">
-                <reference role="3cqZAo" target="557142600900560035" resolve="ld" />
+                <ref role="3cqZAo" node="uVnzTvU$iz" resolve="ld" />
               </node>
               <node concept="2YIFZM" id="3OnrE1Ajc95" role="37wK5m">
-                <reference role="1Pybhc" target="msyo.~MacrosFactory" resolve="MacrosFactory" />
-                <reference role="37wK5l" target="msyo.~MacrosFactory%dforModuleFile(jetbrains%dmps%dvfs%dIFile)%cjetbrains%dmps%dutil%dMacroHelper" resolve="forModuleFile" />
+                <ref role="1Pybhc" to="msyo:~MacrosFactory" resolve="MacrosFactory" />
+                <ref role="37wK5l" to="msyo:~MacrosFactory.forModuleFile(jetbrains.mps.vfs.IFile):jetbrains.mps.util.MacroHelper" resolve="forModuleFile" />
                 <node concept="37vLTw" id="2BHiRxgmz0Y" role="37wK5m">
-                  <reference role="3cqZAo" target="557142600900560037" resolve="file" />
+                  <ref role="3cqZAo" node="uVnzTvU$i_" resolve="file" />
                 </node>
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sRf8" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="uVnzTvU$nA" role="jymVt">
@@ -1000,32 +1000,32 @@
         <node concept="37vLTG" id="uVnzTvU$nD" role="3clF46">
           <property role="TrG5h" value="ld" />
           <node concept="3uibUv" id="uVnzTvU$nE" role="1tU5fm">
-            <reference role="3uigEE" target="kqhl.~LanguageDescriptor" resolve="LanguageDescriptor" />
+            <ref role="3uigEE" to="kqhl:~LanguageDescriptor" resolve="LanguageDescriptor" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvU$nF" role="3clF46">
           <property role="TrG5h" value="element" />
           <node concept="3uibUv" id="1Tieq1imr8N" role="1tU5fm">
-            <reference role="3uigEE" target="zwkq.~Element" resolve="Element" />
+            <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvU$nH" role="3clF46">
           <property role="TrG5h" value="anchorFile" />
           <node concept="3uibUv" id="uVnzTvU$nI" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3clFbS" id="uVnzTvU$nJ" role="3clF47">
           <node concept="YS8fn" id="uVnzTvU$nK" role="3cqZAp">
             <node concept="2ShNRf" id="uVnzTvU$nL" role="YScLw">
               <node concept="1pGfFk" id="uVnzTvU$nM" role="2ShVmc">
-                <reference role="37wK5l" target="e2lb.~UnsupportedOperationException%d&lt;init&gt;()" resolve="UnsupportedOperationException" />
+                <ref role="37wK5l" to="e2lb:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sRf1" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="uVnzTvU$nu" role="jymVt">
@@ -1034,30 +1034,30 @@
         <node concept="37vLTG" id="uVnzTvU$nv" role="3clF46">
           <property role="TrG5h" value="element" />
           <node concept="3uibUv" id="1Tieq1imr8L" role="1tU5fm">
-            <reference role="3uigEE" target="zwkq.~Element" resolve="Element" />
+            <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvU$nx" role="3clF46">
           <property role="TrG5h" value="anchorFile" />
           <node concept="3uibUv" id="uVnzTvU$ny" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3Tm1VV" id="uVnzTvU$nz" role="1B3o_S" />
         <node concept="3uibUv" id="uVnzTvU$n$" role="3clF45">
-          <reference role="3uigEE" target="kqhl.~LanguageDescriptor" resolve="LanguageDescriptor" />
+          <ref role="3uigEE" to="kqhl:~LanguageDescriptor" resolve="LanguageDescriptor" />
         </node>
         <node concept="3clFbS" id="uVnzTvU$n_" role="3clF47">
           <node concept="YS8fn" id="uVnzTvU$nN" role="3cqZAp">
             <node concept="2ShNRf" id="uVnzTvU$nO" role="YScLw">
               <node concept="1pGfFk" id="uVnzTvU$nP" role="2ShVmc">
-                <reference role="37wK5l" target="e2lb.~UnsupportedOperationException%d&lt;init&gt;()" resolve="UnsupportedOperationException" />
+                <ref role="37wK5l" to="e2lb:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sRf5" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
     </node>
@@ -1066,9 +1066,9 @@
       <property role="2bfB8j" value="false" />
       <node concept="3Tm1VV" id="uVnzTvU$r1" role="1B3o_S" />
       <node concept="3uibUv" id="uVnzTvU$r6" role="EKbjA">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="uVnzTvU$r8" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~DevkitDescriptor" resolve="DevkitDescriptor" />
+          <ref role="3uigEE" to="kqhl:~DevkitDescriptor" resolve="DevkitDescriptor" />
         </node>
       </node>
       <node concept="3clFbW" id="uVnzTvU$r2" role="jymVt">
@@ -1082,22 +1082,22 @@
         <node concept="37vLTG" id="uVnzTvU$ra" role="3clF46">
           <property role="TrG5h" value="file" />
           <node concept="3uibUv" id="uVnzTvU$rb" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3Tm1VV" id="uVnzTvU$rc" role="1B3o_S" />
         <node concept="3uibUv" id="uVnzTvU$rd" role="3clF45">
-          <reference role="3uigEE" target="kqhl.~DevkitDescriptor" resolve="DevkitDescriptor" />
+          <ref role="3uigEE" to="kqhl:~DevkitDescriptor" resolve="DevkitDescriptor" />
         </node>
         <node concept="3clFbS" id="uVnzTvU$re" role="3clF47">
           <node concept="SfApY" id="7S9zv5RY7If" role="3cqZAp">
             <node concept="3clFbS" id="7S9zv5RY7Ig" role="SfCbr">
               <node concept="3cpWs6" id="7S9zv5RY7It" role="3cqZAp">
                 <node concept="2YIFZM" id="7S9zv5RY7Iu" role="3cqZAk">
-                  <reference role="37wK5l" target="gn4j.842994667883030152" resolve="loadDevKitDescriptor" />
-                  <reference role="1Pybhc" target="gn4j.842994667883030151" resolve="DevkitDescriptorPersistence" />
+                  <ref role="37wK5l" to="gn4j:IMUMWuHQq8" resolve="loadDevKitDescriptor" />
+                  <ref role="1Pybhc" to="gn4j:IMUMWuHQq7" resolve="DevkitDescriptorPersistence" />
                   <node concept="37vLTw" id="2BHiRxgheMX" role="37wK5m">
-                    <reference role="3cqZAo" target="557142600900560586" resolve="file" />
+                    <ref role="3cqZAo" node="uVnzTvU$ra" resolve="file" />
                   </node>
                 </node>
               </node>
@@ -1106,7 +1106,7 @@
               <node concept="3cpWsn" id="7S9zv5RY7Il" role="TDEfY">
                 <property role="TrG5h" value="ex" />
                 <node concept="3uibUv" id="7S9zv5RY7Im" role="1tU5fm">
-                  <reference role="3uigEE" target="gn4j.2709156219364650064" resolve="ModuleReadException" />
+                  <ref role="3uigEE" to="gn4j:2moQNDghiLg" resolve="ModuleReadException" />
                 </node>
               </node>
               <node concept="3clFbS" id="7S9zv5RY7In" role="TDEfX">
@@ -1114,33 +1114,33 @@
                   <node concept="3cpWsn" id="3A3$mCqD7z5" role="3cpWs9">
                     <property role="TrG5h" value="dd" />
                     <node concept="3uibUv" id="3A3$mCqD7zg" role="1tU5fm">
-                      <reference role="3uigEE" target="kqhl.~DevkitDescriptor" resolve="DevkitDescriptor" />
+                      <ref role="3uigEE" to="kqhl:~DevkitDescriptor" resolve="DevkitDescriptor" />
                     </node>
                     <node concept="2ShNRf" id="3A3$mCqD7z7" role="33vP2m">
                       <node concept="1pGfFk" id="3A3$mCqD7z8" role="2ShVmc">
-                        <reference role="37wK5l" target="kqhl.~DevkitDescriptor%d&lt;init&gt;()" resolve="DevkitDescriptor" />
+                        <ref role="37wK5l" to="kqhl:~DevkitDescriptor.&lt;init&gt;()" resolve="DevkitDescriptor" />
                       </node>
                     </node>
                   </node>
                 </node>
                 <node concept="3clFbF" id="3A3$mCqD7z9" role="3cqZAp">
                   <node concept="2YIFZM" id="3A3$mCqD7za" role="3clFbG">
-                    <reference role="37wK5l" target="gn4j.8222824327012642906" resolve="loadBrokenModule" />
-                    <reference role="1Pybhc" target="gn4j.842994667883031742" resolve="ModuleDescriptorPersistence" />
+                    <ref role="37wK5l" to="gn4j:78tlMyQ1R1q" resolve="loadBrokenModule" />
+                    <ref role="1Pybhc" to="gn4j:IMUMWuHQMY" resolve="ModuleDescriptorPersistence" />
                     <node concept="37vLTw" id="3GM_nagTwju" role="37wK5m">
-                      <reference role="3cqZAo" target="4144315967010535621" resolve="dd" />
+                      <ref role="3cqZAo" node="3A3$mCqD7z5" resolve="dd" />
                     </node>
                     <node concept="37vLTw" id="2BHiRxglxmY" role="37wK5m">
-                      <reference role="3cqZAo" target="557142600900560586" resolve="file" />
+                      <ref role="3cqZAo" node="uVnzTvU$ra" resolve="file" />
                     </node>
                     <node concept="37vLTw" id="3GM_nagTyM3" role="37wK5m">
-                      <reference role="3cqZAo" target="9081946191808723861" resolve="ex" />
+                      <ref role="3cqZAo" node="7S9zv5RY7Il" resolve="ex" />
                     </node>
                   </node>
                 </node>
                 <node concept="3cpWs6" id="3A3$mCqD7ze" role="3cqZAp">
                   <node concept="37vLTw" id="3GM_nagT$wK" role="3cqZAk">
-                    <reference role="3cqZAo" target="4144315967010535621" resolve="dd" />
+                    <ref role="3cqZAo" node="3A3$mCqD7z5" resolve="dd" />
                   </node>
                 </node>
               </node>
@@ -1148,10 +1148,10 @@
           </node>
         </node>
         <node concept="3uibUv" id="7S9zv5RY7Iw" role="Sfmx6">
-          <reference role="3uigEE" target="9081946191808704816" resolve="DescriptorIOException" />
+          <ref role="3uigEE" node="7S9zv5RY34K" resolve="DescriptorIOException" />
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sRRL" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="uVnzTvU$rf" role="jymVt">
@@ -1162,31 +1162,31 @@
         <node concept="37vLTG" id="uVnzTvU$ri" role="3clF46">
           <property role="TrG5h" value="dd" />
           <node concept="3uibUv" id="uVnzTvU$rj" role="1tU5fm">
-            <reference role="3uigEE" target="kqhl.~DevkitDescriptor" resolve="DevkitDescriptor" />
+            <ref role="3uigEE" to="kqhl:~DevkitDescriptor" resolve="DevkitDescriptor" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvU$rk" role="3clF46">
           <property role="TrG5h" value="file" />
           <node concept="3uibUv" id="uVnzTvU$rl" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3clFbS" id="uVnzTvU$rm" role="3clF47">
           <node concept="3clFbF" id="uVnzTvU$rH" role="3cqZAp">
             <node concept="2YIFZM" id="uVnzTvU$rJ" role="3clFbG">
-              <reference role="37wK5l" target="gn4j.842994667883030317" resolve="saveDevKitDescriptor" />
-              <reference role="1Pybhc" target="gn4j.842994667883030151" resolve="DevkitDescriptorPersistence" />
+              <ref role="37wK5l" to="gn4j:IMUMWuHQsH" resolve="saveDevKitDescriptor" />
+              <ref role="1Pybhc" to="gn4j:IMUMWuHQq7" resolve="DevkitDescriptorPersistence" />
               <node concept="37vLTw" id="2BHiRxgm9V2" role="37wK5m">
-                <reference role="3cqZAo" target="557142600900560596" resolve="file" />
+                <ref role="3cqZAo" node="uVnzTvU$rk" resolve="file" />
               </node>
               <node concept="37vLTw" id="2BHiRxgmaAq" role="37wK5m">
-                <reference role="3cqZAo" target="557142600900560594" resolve="dd" />
+                <ref role="3cqZAo" node="uVnzTvU$ri" resolve="dd" />
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sRRQ" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="uVnzTvU$rn" role="jymVt">
@@ -1195,30 +1195,30 @@
         <node concept="37vLTG" id="uVnzTvU$ro" role="3clF46">
           <property role="TrG5h" value="element" />
           <node concept="3uibUv" id="1Tieq1imr8H" role="1tU5fm">
-            <reference role="3uigEE" target="zwkq.~Element" resolve="Element" />
+            <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvU$rq" role="3clF46">
           <property role="TrG5h" value="anchorFile" />
           <node concept="3uibUv" id="uVnzTvU$rr" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3Tm1VV" id="uVnzTvU$rs" role="1B3o_S" />
         <node concept="3uibUv" id="uVnzTvU$rt" role="3clF45">
-          <reference role="3uigEE" target="kqhl.~DevkitDescriptor" resolve="DevkitDescriptor" />
+          <ref role="3uigEE" to="kqhl:~DevkitDescriptor" resolve="DevkitDescriptor" />
         </node>
         <node concept="3clFbS" id="uVnzTvU$ru" role="3clF47">
           <node concept="YS8fn" id="uVnzTvU$rQ" role="3cqZAp">
             <node concept="2ShNRf" id="uVnzTvU$rS" role="YScLw">
               <node concept="1pGfFk" id="uVnzTvU$rU" role="2ShVmc">
-                <reference role="37wK5l" target="e2lb.~UnsupportedOperationException%d&lt;init&gt;()" resolve="UnsupportedOperationException" />
+                <ref role="37wK5l" to="e2lb:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sRRH" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="uVnzTvU$rv" role="jymVt">
@@ -1229,32 +1229,32 @@
         <node concept="37vLTG" id="uVnzTvU$ry" role="3clF46">
           <property role="TrG5h" value="t" />
           <node concept="3uibUv" id="uVnzTvU$rz" role="1tU5fm">
-            <reference role="3uigEE" target="kqhl.~DevkitDescriptor" resolve="DevkitDescriptor" />
+            <ref role="3uigEE" to="kqhl:~DevkitDescriptor" resolve="DevkitDescriptor" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvU$r$" role="3clF46">
           <property role="TrG5h" value="element" />
           <node concept="3uibUv" id="1Tieq1imr8J" role="1tU5fm">
-            <reference role="3uigEE" target="zwkq.~Element" resolve="Element" />
+            <ref role="3uigEE" to="zwkq:~Element" resolve="Element" />
           </node>
         </node>
         <node concept="37vLTG" id="uVnzTvU$rA" role="3clF46">
           <property role="TrG5h" value="anchorFile" />
           <node concept="3uibUv" id="uVnzTvU$rB" role="1tU5fm">
-            <reference role="3uigEE" target="59et.~IFile" resolve="IFile" />
+            <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
           </node>
         </node>
         <node concept="3clFbS" id="uVnzTvU$rC" role="3clF47">
           <node concept="YS8fn" id="uVnzTvU$rV" role="3cqZAp">
             <node concept="2ShNRf" id="uVnzTvU$rX" role="YScLw">
               <node concept="1pGfFk" id="uVnzTvU$rZ" role="2ShVmc">
-                <reference role="37wK5l" target="e2lb.~UnsupportedOperationException%d&lt;init&gt;()" resolve="UnsupportedOperationException" />
+                <ref role="37wK5l" to="e2lb:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sRRz" role="2AJF6D">
-          <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
     </node>
@@ -1263,18 +1263,18 @@
     <property role="TrG5h" value="IdeaDescriptorIOProvider" />
     <node concept="3Tm1VV" id="2Sv9ZGmUJka" role="1B3o_S" />
     <node concept="3uibUv" id="2Sv9ZGmUJkg" role="EKbjA">
-      <reference role="3uigEE" target="557142600900532740" resolve="DescriptorIOProvider" />
+      <ref role="3uigEE" node="uVnzTvUtC4" resolve="DescriptorIOProvider" />
     </node>
     <node concept="Wx3nA" id="7S9zv5RY9d$" role="jymVt">
       <property role="TrG5h" value="SOLUTION" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="7S9zv5RY9d_" role="1B3o_S" />
       <node concept="3uibUv" id="7S9zv5RY9dA" role="1tU5fm">
-        <reference role="3uigEE" target="d3yv.9081946191808703869" resolve="IdeaModuleSolutionDescriptorIO" />
+        <ref role="3uigEE" to="d3yv:7S9zv5RY2PX" resolve="IdeaModuleSolutionDescriptorIO" />
       </node>
       <node concept="2ShNRf" id="7S9zv5RY9dB" role="33vP2m">
         <node concept="1pGfFk" id="7S9zv5RY9dC" role="2ShVmc">
-          <reference role="37wK5l" target="d3yv.9081946191808703871" resolve="IdeaModuleSolutionDescriptorIO" />
+          <ref role="37wK5l" to="d3yv:7S9zv5RY2PZ" resolve="IdeaModuleSolutionDescriptorIO" />
         </node>
       </node>
     </node>
@@ -1286,30 +1286,30 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="solutionDescriptorIO" />
       <node concept="3uibUv" id="2Sv9ZGmUJki" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="2Sv9ZGmUJkj" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~SolutionDescriptor" resolve="SolutionDescriptor" />
+          <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
         </node>
       </node>
       <node concept="3Tm1VV" id="2Sv9ZGmUJkk" role="1B3o_S" />
       <node concept="3clFbS" id="2Sv9ZGmUJkl" role="3clF47">
         <node concept="3clFbF" id="7S9zv5RY9dq" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeop8u" role="3clFbG">
-            <reference role="3cqZAo" target="9081946191808729956" resolve="SOLUTION" />
+            <ref role="3cqZAo" node="7S9zv5RY9d$" resolve="SOLUTION" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_sSP2" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2Sv9ZGmUJko" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="languageDescriptorIO" />
       <node concept="3uibUv" id="2Sv9ZGmUJkp" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="2Sv9ZGmUJkq" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~LanguageDescriptor" resolve="LanguageDescriptor" />
+          <ref role="3uigEE" to="kqhl:~LanguageDescriptor" resolve="LanguageDescriptor" />
         </node>
       </node>
       <node concept="3Tm1VV" id="2Sv9ZGmUJkr" role="1B3o_S" />
@@ -1319,16 +1319,16 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_sSP4" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2Sv9ZGmUJkv" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="devkitDescriptorIO" />
       <node concept="3uibUv" id="2Sv9ZGmUJkw" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="2Sv9ZGmUJkx" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~DevkitDescriptor" resolve="DevkitDescriptor" />
+          <ref role="3uigEE" to="kqhl:~DevkitDescriptor" resolve="DevkitDescriptor" />
         </node>
       </node>
       <node concept="3Tm1VV" id="2Sv9ZGmUJky" role="1B3o_S" />
@@ -1338,16 +1338,16 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_sSP3" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2Sv9ZGmUJkA" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="generatorDescriptorIO" />
       <node concept="3uibUv" id="2Sv9ZGmUJkB" role="3clF45">
-        <reference role="3uigEE" target="557142600900286148" resolve="DescriptorIO" />
+        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
         <node concept="3uibUv" id="2Sv9ZGmUJkC" role="11_B2D">
-          <reference role="3uigEE" target="kqhl.~GeneratorDescriptor" resolve="GeneratorDescriptor" />
+          <ref role="3uigEE" to="kqhl:~GeneratorDescriptor" resolve="GeneratorDescriptor" />
         </node>
       </node>
       <node concept="3Tm1VV" id="2Sv9ZGmUJkD" role="1B3o_S" />
@@ -1362,23 +1362,23 @@
     <property role="TrG5h" value="DescriptorIOException" />
     <node concept="3Tm1VV" id="7S9zv5RY34L" role="1B3o_S" />
     <node concept="3uibUv" id="7S9zv5RY34Q" role="1zkMxy">
-      <reference role="3uigEE" target="e2lb.~Exception" resolve="Exception" />
+      <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
     </node>
     <node concept="3clFbW" id="7S9zv5RY34M" role="jymVt">
       <node concept="3cqZAl" id="7S9zv5RY34N" role="3clF45" />
       <node concept="3Tm1VV" id="7S9zv5RY34O" role="1B3o_S" />
       <node concept="3clFbS" id="7S9zv5RY34P" role="3clF47">
         <node concept="XkiVB" id="7S9zv5RY34T" role="3cqZAp">
-          <reference role="37wK5l" target="e2lb.~Exception%d&lt;init&gt;(java%dlang%dThrowable)" resolve="Exception" />
+          <ref role="37wK5l" to="e2lb:~Exception.&lt;init&gt;(java.lang.Throwable)" resolve="Exception" />
           <node concept="37vLTw" id="2BHiRxgmvKF" role="37wK5m">
-            <reference role="3cqZAo" target="9081946191808704823" resolve="cause" />
+            <ref role="3cqZAo" node="7S9zv5RY34R" resolve="cause" />
           </node>
         </node>
       </node>
       <node concept="37vLTG" id="7S9zv5RY34R" role="3clF46">
         <property role="TrG5h" value="cause" />
         <node concept="3uibUv" id="7S9zv5RY7Fy" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Throwable" resolve="Throwable" />
+          <ref role="3uigEE" to="e2lb:~Throwable" resolve="Throwable" />
         </node>
       </node>
     </node>
@@ -1387,16 +1387,16 @@
       <node concept="3Tm1VV" id="7S9zv5RY350" role="1B3o_S" />
       <node concept="3clFbS" id="7S9zv5RY351" role="3clF47">
         <node concept="XkiVB" id="7S9zv5RY354" role="3cqZAp">
-          <reference role="37wK5l" target="e2lb.~Exception%d&lt;init&gt;(java%dlang%dString)" resolve="Exception" />
+          <ref role="37wK5l" to="e2lb:~Exception.&lt;init&gt;(java.lang.String)" resolve="Exception" />
           <node concept="37vLTw" id="2BHiRxgm6tW" role="37wK5m">
-            <reference role="3cqZAo" target="9081946191808704834" resolve="msg" />
+            <ref role="3cqZAo" node="7S9zv5RY352" resolve="msg" />
           </node>
         </node>
       </node>
       <node concept="37vLTG" id="7S9zv5RY352" role="3clF46">
         <property role="TrG5h" value="msg" />
         <node concept="3uibUv" id="7S9zv5RY353" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
         </node>
       </node>
     </node>

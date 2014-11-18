@@ -106,7 +106,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="gbsbkuN">
-    <reference role="1XX52x" target="tpna.1111790951422" resolve="Plan" />
+    <ref role="1XX52x" to="tpna:gbrTTJY" resolve="Plan" />
     <node concept="3EZMnI" id="gbsbuzB" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="gbsbvn9" role="3EZMnx">
@@ -116,7 +116,7 @@
         </node>
         <node concept="3F0A7n" id="gbsbQUk" role="3EZMnx">
           <property role="1$x2rV" value="&lt;no name&gt;" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="Vb9p2" id="hF4QVNL" role="3F10Kt">
             <property role="Vbekb" value="BOLD" />
           </node>
@@ -144,7 +144,7 @@
         </node>
         <node concept="3F2HdR" id="gbsbQLf" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <reference role="1NtTu8" target="tpna.1111791064925" />
+          <ref role="1NtTu8" to="tpna:gbrUltt" />
           <node concept="3F0ifn" id="gbsbQLg" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Value" />
             <node concept="Vb9p2" id="hF4QVNP" role="3F10Kt">
@@ -179,7 +179,7 @@
         </node>
         <node concept="3F2HdR" id="gbsbTSz" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <reference role="1NtTu8" target="tpna.1111791084333" />
+          <ref role="1NtTu8" to="tpna:gbrUqcH" />
           <node concept="3F0ifn" id="gbsbTS$" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Event" />
             <node concept="Vb9p2" id="hF4QVNY" role="3F10Kt">
@@ -203,7 +203,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbsbZV3">
-    <reference role="1XX52x" target="tpna.1111791038612" resolve="Event" />
+    <ref role="1XX52x" to="tpna:gbrUf2k" resolve="Event" />
     <node concept="3EZMnI" id="gbsc9xk" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="gbscaAc" role="3EZMnx">
@@ -213,11 +213,11 @@
         </node>
         <node concept="1iCGBv" id="gbscEGs" role="3EZMnx">
           <property role="1$x2rV" value="&lt;choose type&gt;" />
-          <reference role="1NtTu8" target="tpna.1111793668132" />
+          <ref role="1NtTu8" to="tpna:gbs4h0$" />
           <node concept="1sVBvm" id="gbsckhP" role="1sWHZn">
             <node concept="3F0A7n" id="gbscEGt" role="2wV5jI">
               <property role="1Intyy" value="true" />
-              <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
               <node concept="Vb9p2" id="hF4QVNM" role="3F10Kt">
                 <property role="Vbekb" value="BOLD" />
               </node>
@@ -237,7 +237,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="gfH3m$1" role="3EZMnx">
-          <reference role="1NtTu8" target="tpna.1116368080504" resolve="taxable" />
+          <ref role="1NtTu8" to="tpna:gfGIgTS" resolve="taxable" />
         </node>
         <node concept="3F0ifn" id="gfH3oE5" role="3EZMnx">
           <property role="3F0ifm" value=")" />
@@ -260,7 +260,7 @@
         </node>
         <node concept="3F2HdR" id="gbscEGv" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <reference role="1NtTu8" target="tpna.1111794644919" />
+          <ref role="1NtTu8" to="tpna:gbs7ZuR" />
           <node concept="3F0ifn" id="gbscEGw" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Posting Rule" />
             <node concept="Vb9p2" id="hF4QVNS" role="3F10Kt">
@@ -278,7 +278,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbscJAv">
-    <reference role="1XX52x" target="tpna.1111791020814" resolve="Value" />
+    <ref role="1XX52x" to="tpna:gbrUaGe" resolve="Value" />
     <node concept="3EZMnI" id="gbscM0N" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="gbscN1h" role="3EZMnx">
@@ -287,14 +287,14 @@
           <property role="3F0ifm" value="value" />
         </node>
         <node concept="3F0A7n" id="gbsd$ow" role="3EZMnx">
-          <reference role="1NtTu8" target="tpna.1111792955937" resolve="type" />
+          <ref role="1NtTu8" to="tpna:gbs1z8x" resolve="type" />
           <node concept="VechU" id="hF4QVQ3" role="3F10Kt">
             <property role="Vb096" value="DARK_MAGENTA" />
           </node>
         </node>
         <node concept="3F0A7n" id="gbsd$ox" role="3EZMnx">
           <property role="1$x2rV" value="&lt;no name&gt;" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="Vb9p2" id="hF4QVNm" role="3F10Kt">
             <property role="Vbekb" value="BOLD" />
           </node>
@@ -317,7 +317,7 @@
         </node>
         <node concept="3F2HdR" id="gbsd$oz" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <reference role="1NtTu8" target="tpna.1111791826558" />
+          <ref role="1NtTu8" to="tpna:gbrXfpY" />
           <node concept="3F0ifn" id="gbsd$o$" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Quantity" />
             <node concept="Vb9p2" id="hF4QVNz" role="3F10Kt">
@@ -341,11 +341,11 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbEdbyQ">
-    <reference role="1XX52x" target="tpna.1111792520557" resolve="QuantityTemporalProperty" />
+    <ref role="1XX52x" to="tpna:gbrZSPH" resolve="QuantityTemporalProperty" />
     <node concept="3EZMnI" id="gbEdeAq" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbEdngC" role="3EZMnx">
-        <reference role="1NtTu8" target="tpna.1111792372299" />
+        <ref role="1NtTu8" to="tpna:gbrZkDb" />
       </node>
       <node concept="3F0ifn" id="gbEdngD" role="3EZMnx">
         <property role="3F0ifm" value=": " />
@@ -354,18 +354,18 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gbEdngE" role="3EZMnx">
-        <reference role="1NtTu8" target="tpna.1111792541964" />
+        <ref role="1NtTu8" to="tpna:gbrZY4c" />
       </node>
       <node concept="2iRfu4" id="i2IQv9H" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="gbEdzRN">
-    <reference role="1XX52x" target="tpna.1111792389581" resolve="Date" />
+    <ref role="1XX52x" to="tpna:gbrZoRd" resolve="Date" />
     <node concept="3EZMnI" id="gbEdA1x" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="gbEe2s9" role="3EZMnx">
         <property role="1$x2rV" value="yyyy" />
-        <reference role="1NtTu8" target="tpna.1111792409129" resolve="year" />
+        <ref role="1NtTu8" to="tpna:gbrZtCD" resolve="year" />
         <node concept="VechU" id="hF4QVR4" role="3F10Kt">
           <property role="Vb096" value="DARK_BLUE" />
         </node>
@@ -381,7 +381,7 @@
       </node>
       <node concept="3F0A7n" id="gbEe2sb" role="3EZMnx">
         <property role="1$x2rV" value="mm" />
-        <reference role="1NtTu8" target="tpna.1111792417427" resolve="month" />
+        <ref role="1NtTu8" to="tpna:gbrZvEj" resolve="month" />
         <node concept="VechU" id="hF4QVQQ" role="3F10Kt">
           <property role="Vb096" value="DARK_BLUE" />
         </node>
@@ -397,7 +397,7 @@
       </node>
       <node concept="3F0A7n" id="gbEe2sd" role="3EZMnx">
         <property role="1$x2rV" value="dd" />
-        <reference role="1NtTu8" target="tpna.1111792417975" resolve="day" />
+        <ref role="1NtTu8" to="tpna:gbrZvMR" resolve="day" />
         <node concept="VechU" id="hF4QVQj" role="3F10Kt">
           <property role="Vb096" value="DARK_BLUE" />
         </node>
@@ -406,11 +406,11 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbEe8Lf">
-    <reference role="1XX52x" target="tpna.1111792102248" resolve="Quantity" />
+    <ref role="1XX52x" to="tpna:gbrYiHC" resolve="Quantity" />
     <node concept="3EZMnI" id="gbEeaLc" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="gbECvtu" role="3EZMnx">
-        <reference role="1NtTu8" target="tpna.1111793358083" resolve="unit" />
+        <ref role="1NtTu8" to="tpna:gbs35k3" resolve="unit" />
         <node concept="pkWqt" id="gFVAxSD" role="pqm2j">
           <node concept="3clFbS" id="gFVAxSE" role="2VODD2">
             <node concept="3cpWs6" id="gFVAC3s" role="3cqZAp">
@@ -418,12 +418,12 @@
                 <node concept="2OqwBi" id="hER6b09" role="2Oq$k0">
                   <node concept="pncrf" id="gFVACSd" role="2Oq$k0" />
                   <node concept="3TrcHB" id="gFVAF7y" role="2OqNvi">
-                    <reference role="3TsBF5" target="tpna.1111793358083" resolve="unit" />
+                    <ref role="3TsBF5" to="tpna:gbs35k3" resolve="unit" />
                   </node>
                 </node>
                 <node concept="3t7uKx" id="gFVAGpA" role="2OqNvi">
                   <node concept="uoxfO" id="gFVAGpB" role="3t7uKA">
-                    <reference role="uo_Cq" target="tpna.1111793298691" />
+                    <ref role="uo_Cq" to="tpna:gbs2QO3" />
                   </node>
                 </node>
               </node>
@@ -438,10 +438,10 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gbEeeu1" role="3EZMnx">
-        <reference role="1NtTu8" target="tpna.1111793363741" />
+        <ref role="1NtTu8" to="tpna:gbs36Gt" />
       </node>
       <node concept="3F0A7n" id="gbEeeu2" role="3EZMnx">
-        <reference role="1NtTu8" target="tpna.1111793358083" resolve="unit" />
+        <ref role="1NtTu8" to="tpna:gbs35k3" resolve="unit" />
         <node concept="pkWqt" id="gFVBCuQ" role="pqm2j">
           <node concept="3clFbS" id="gFVBCuR" role="2VODD2">
             <node concept="3cpWs6" id="gFVBCQN" role="3cqZAp">
@@ -450,12 +450,12 @@
                   <node concept="2OqwBi" id="hER6b2r" role="2Oq$k0">
                     <node concept="pncrf" id="gFVBJYc" role="2Oq$k0" />
                     <node concept="3TrcHB" id="gFVBLaS" role="2OqNvi">
-                      <reference role="3TsBF5" target="tpna.1111793358083" resolve="unit" />
+                      <ref role="3TsBF5" to="tpna:gbs35k3" resolve="unit" />
                     </node>
                   </node>
                   <node concept="3t7uKx" id="gFVBM6f" role="2OqNvi">
                     <node concept="uoxfO" id="gFVBM6g" role="3t7uKA">
-                      <reference role="uo_Cq" target="tpna.1111793298691" />
+                      <ref role="uo_Cq" to="tpna:gbs2QO3" />
                     </node>
                   </node>
                 </node>
@@ -474,13 +474,13 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbEgGnj">
-    <reference role="1XX52x" target="tpna.1111793698243" resolve="EventType" />
+    <ref role="1XX52x" to="tpna:gbs4on3" resolve="EventType" />
     <node concept="3EZMnI" id="gbVelNf" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <property role="3EZMnz" value="true" />
       <node concept="3F0A7n" id="gbVgIqY" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no name&gt;" />
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="Vb9p2" id="hF4QVNE" role="3F10Kt">
           <property role="Vbekb" value="BOLD" />
         </node>
@@ -497,7 +497,7 @@
       <node concept="3F2HdR" id="gbVgIr0" role="3EZMnx">
         <property role="2czwfO" value="," />
         <property role="2czwfN" value="false" />
-        <reference role="1NtTu8" target="tpna.1111793732478" />
+        <ref role="1NtTu8" to="tpna:gbs4wHY" />
         <node concept="3F0ifn" id="gbVgIr1" role="2czzBI">
           <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to declare variable" />
           <node concept="Vb9p2" id="hF4QVNZ" role="3F10Kt">
@@ -519,11 +519,11 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbEk3Ej">
-    <reference role="1XX52x" target="tpna.1111793755198" resolve="EventVariable" />
+    <ref role="1XX52x" to="tpna:gbs4AgY" resolve="EventVariable" />
     <node concept="3EZMnI" id="gbEk6e8" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="gbEkmiX" role="3EZMnx">
-        <reference role="1NtTu8" target="tpna.1111793807574" resolve="type" />
+        <ref role="1NtTu8" to="tpna:gbs4N3m" resolve="type" />
         <node concept="Vb9p2" id="hF4QVNR" role="3F10Kt">
           <property role="Vbekb" value="BOLD" />
         </node>
@@ -533,7 +533,7 @@
       </node>
       <node concept="3F0A7n" id="gbEkmiY" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no name&gt;" />
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="Vb9p2" id="hF4QVNq" role="3F10Kt">
           <property role="Vbekb" value="BOLD_ITALIC" />
         </node>
@@ -545,11 +545,11 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbEmaqQ">
-    <reference role="1XX52x" target="tpna.1111794734295" resolve="PostingRuleTemporalProperty" />
+    <ref role="1XX52x" to="tpna:gbs8ljn" resolve="PostingRuleTemporalProperty" />
     <node concept="3EZMnI" id="gbEmdeN" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbEmqDW" role="3EZMnx">
-        <reference role="1NtTu8" target="tpna.1111792372299" />
+        <ref role="1NtTu8" to="tpna:gbrZkDb" />
       </node>
       <node concept="3F0ifn" id="gbEmqDX" role="3EZMnx">
         <property role="3F0ifm" value=": " />
@@ -558,13 +558,13 @@
         </node>
       </node>
       <node concept="3F1sOY" id="gbEmqDY" role="3EZMnx">
-        <reference role="1NtTu8" target="tpna.1111794782624" />
+        <ref role="1NtTu8" to="tpna:gbs8x6w" />
       </node>
       <node concept="2iRfu4" id="i2IQvdO" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="gbEmD7q">
-    <reference role="1XX52x" target="tpna.1111794888922" resolve="PostingRule" />
+    <ref role="1XX52x" to="tpna:gbs8V3q" resolve="PostingRule" />
     <node concept="3EZMnI" id="gbEmM_R" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <property role="3EZMnz" value="false" />
@@ -577,7 +577,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="gbEnhvh" role="3EZMnx">
-          <reference role="1NtTu8" target="tpnk.1111784226798" />
+          <ref role="1NtTu8" to="tpnk:gbrwfZI" />
         </node>
         <node concept="VPM3Z" id="hF4QVHz" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -594,12 +594,12 @@
         </node>
         <node concept="1iCGBv" id="gbEnhvi" role="3EZMnx">
           <property role="1$x2rV" value="&lt;choose account type&gt;" />
-          <reference role="1NtTu8" target="tpna.1111795211704" />
+          <ref role="1NtTu8" to="tpna:gbsa9QS" />
           <node concept="1sVBvm" id="gbEn8oJ" role="1sWHZn">
             <node concept="3F0A7n" id="gbEnhvj" role="2wV5jI">
               <property role="1Intyy" value="true" />
               <property role="1$x2rV" value="&lt;no name&gt;" />
-              <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
               <node concept="Vb9p2" id="hF4QVO1" role="3F10Kt">
                 <property role="Vbekb" value="BOLD" />
               </node>
@@ -618,10 +618,10 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbEoLcW">
-    <reference role="1XX52x" target="tpna.1111795284642" resolve="AccountType" />
+    <ref role="1XX52x" to="tpna:gbsarEy" resolve="AccountType" />
     <node concept="3F0A7n" id="gbEoThk" role="2wV5jI">
       <property role="1$x2rV" value="&lt;no name&gt;" />
-      <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+      <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       <node concept="Vb9p2" id="hF4QVNN" role="3F10Kt">
         <property role="Vbekb" value="BOLD" />
       </node>
@@ -631,14 +631,14 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbEyPBu">
-    <reference role="1XX52x" target="tpna.1112036490295" resolve="EventVariableReference" />
+    <ref role="1XX52x" to="tpna:gbEyzKR" resolve="EventVariableReference" />
     <node concept="1iCGBv" id="gbOBXWg" role="2wV5jI">
       <property role="1$x2rV" value="&lt;no variable&gt;" />
-      <reference role="1NtTu8" target="tpna.1112036516483" />
+      <ref role="1NtTu8" to="tpna:gbEyEa3" />
       <node concept="1sVBvm" id="gbOBaoF" role="1sWHZn">
         <node concept="3F0A7n" id="gbOBXWh" role="2wV5jI">
           <property role="1Intyy" value="true" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="Vb9p2" id="hF4QVNs" role="3F10Kt">
             <property role="Vbekb" value="BOLD_ITALIC" />
           </node>
@@ -650,14 +650,14 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbEEIvE">
-    <reference role="1XX52x" target="tpna.1112038445100" resolve="ValueReference" />
+    <ref role="1XX52x" to="tpna:gbEE10G" resolve="ValueReference" />
     <node concept="1iCGBv" id="gbOCmFN" role="2wV5jI">
       <property role="1$x2rV" value="&lt;no value&gt;" />
-      <reference role="1NtTu8" target="tpna.1112038462507" />
+      <ref role="1NtTu8" to="tpna:gbEE5gF" />
       <node concept="1sVBvm" id="gbOCfEk" role="1sWHZn">
         <node concept="3F0A7n" id="gbOCmFO" role="2wV5jI">
           <property role="1Intyy" value="true" />
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="Vb9p2" id="hF4QVNC" role="3F10Kt">
             <property role="Vbekb" value="BOLD" />
           </node>
@@ -669,7 +669,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="gbUUv6J">
-    <reference role="1XX52x" target="tpna.1112310944779" resolve="AgreementDeclarations" />
+    <ref role="1XX52x" to="tpna:gbUTxgb" resolve="AgreementDeclarations" />
     <node concept="3EZMnI" id="gbUUyqb" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="gbUV5x4" role="3EZMnx">
@@ -688,7 +688,7 @@
         <node concept="3F2HdR" id="gbVbE9T" role="3EZMnx">
           <property role="2czwfO" value="," />
           <property role="2czwfN" value="false" />
-          <reference role="1NtTu8" target="tpna.1112311143032" />
+          <ref role="1NtTu8" to="tpna:gbUUhDS" />
           <node concept="3F0ifn" id="gbVbE9U" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add account type" />
             <node concept="Vb9p2" id="hF4QVNO" role="3F10Kt">
@@ -727,7 +727,7 @@
         <node concept="3F2HdR" id="gbVccxX" role="3EZMnx">
           <property role="2czwfN" value="true" />
           <property role="2czwfM" value="true" />
-          <reference role="1NtTu8" target="tpna.1112311033671" />
+          <ref role="1NtTu8" to="tpna:gbUTQX7" />
           <node concept="3F0ifn" id="gbVccxY" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add event type" />
             <node concept="Vb9p2" id="hF4QVNJ" role="3F10Kt">
@@ -751,7 +751,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="gfLmYoC">
-    <reference role="1XX52x" target="tpna.1116445695828" resolve="Date_Past" />
+    <ref role="1XX52x" to="tpna:gfLmlXk" resolve="Date_Past" />
     <node concept="3F0ifn" id="gfLn1gJ" role="2wV5jI">
       <property role="3F0ifm" value="PAST" />
       <node concept="Vb9p2" id="hF4QVNH" role="3F10Kt">
@@ -766,7 +766,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="gfLneRA">
-    <reference role="1XX52x" target="tpna.1116445809270" resolve="Date_Future" />
+    <ref role="1XX52x" to="tpna:gfLmLDQ" resolve="Date_Future" />
     <node concept="3F0ifn" id="gfLngxm" role="2wV5jI">
       <property role="3F0ifm" value="FUTURE" />
       <node concept="Vb9p2" id="hF4QVNA" role="3F10Kt">

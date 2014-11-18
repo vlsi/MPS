@@ -50,32 +50,32 @@
     <node concept="2VaFvF" id="6l_Qx579cKk" role="yghi5">
       <property role="TrG5h" value="classes" />
       <node concept="2VaxJe" id="6l_Qx579cKo" role="2VaxJ6">
-        <reference role="2VaxJf" target="7306485738221390862" resolve="compileJava" />
+        <ref role="2VaxJf" node="6l_Qx579cKe" resolve="compileJava" />
       </node>
       <node concept="2VaxJe" id="6l_Qx579cKq" role="2VaxJ6">
-        <reference role="2VaxJf" target="7306485738221390870" resolve="processResources" />
+        <ref role="2VaxJf" node="6l_Qx579cKm" resolve="processResources" />
       </node>
     </node>
     <node concept="3bMsLL" id="450ejGzgRPu" role="yghi5">
-      <reference role="3bMsLK" target="4701820937132277082" resolve="assemble" />
+      <ref role="3bMsLK" node="450ejGzgRPq" resolve="assemble" />
       <node concept="2VaxJe" id="450ejGzgRPw" role="3bNaKb">
-        <reference role="2VaxJf" target="7306485738221390868" resolve="classes" />
+        <ref role="2VaxJf" node="6l_Qx579cKk" resolve="classes" />
       </node>
     </node>
     <node concept="2VaFvF" id="6l_Qx579cK_" role="yghi5">
       <property role="TrG5h" value="test" />
       <node concept="2VaxJe" id="6l_Qx579cKI" role="2VaxJ6">
-        <reference role="2VaxJf" target="7306485738221390868" resolve="classes" />
+        <ref role="2VaxJf" node="6l_Qx579cKk" resolve="classes" />
       </node>
     </node>
     <node concept="2VaFvF" id="6l_Qx579cKx" role="yghi5">
       <property role="TrG5h" value="check" />
       <node concept="2VaxJe" id="6l_Qx579cKK" role="2VaxJ6">
-        <reference role="2VaxJf" target="7306485738221390885" resolve="test" />
+        <ref role="2VaxJf" node="6l_Qx579cK_" resolve="test" />
       </node>
     </node>
     <node concept="ygXWA" id="6l_Qx579$l2" role="yg1MB">
-      <reference role="ygXWD" target="7306485738221408315" resolve="common" />
+      <ref role="ygXWD" node="6l_Qx579h0V" resolve="common" />
     </node>
   </node>
   <node concept="yghi3" id="6l_Qx579h0V">
@@ -97,7 +97,7 @@
     <node concept="2VaFvF" id="6l_Qx579h0X" role="yghi5">
       <property role="TrG5h" value="build" />
       <node concept="2VaxJe" id="450ejGzgRP_" role="2VaxJ6">
-        <reference role="2VaxJf" target="4701820937132277082" resolve="assemble" />
+        <ref role="2VaxJf" node="450ejGzgRPq" resolve="assemble" />
       </node>
     </node>
     <node concept="2VaFvF" id="6l_Qx579cKM" role="yghi5">

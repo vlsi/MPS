@@ -118,8 +118,8 @@
           <node concept="3clFbS" id="5vTxdEz_SHy" role="SfCbr">
             <node concept="3clFbF" id="5vTxdEz_SA6" role="3cqZAp">
               <node concept="2YIFZM" id="5vTxdEz_SAm" role="3clFbG">
-                <reference role="37wK5l" target="e2lb.~Thread%dsleep(long)%cvoid" resolve="sleep" />
-                <reference role="1Pybhc" target="e2lb.~Thread" resolve="Thread" />
+                <ref role="37wK5l" to="e2lb:~Thread.sleep(long):void" resolve="sleep" />
+                <ref role="1Pybhc" to="e2lb:~Thread" resolve="Thread" />
                 <node concept="3cmrfG" id="5vTxdEz_SA$" role="37wK5m">
                   <property role="3cmrfH" value="5000" />
                 </node>
@@ -131,7 +131,7 @@
             <node concept="3cpWsn" id="5vTxdEz_SHv" role="TDEfY">
               <property role="TrG5h" value="e" />
               <node concept="3uibUv" id="5vTxdEz_SHw" role="1tU5fm">
-                <reference role="3uigEE" target="e2lb.~InterruptedException" resolve="InterruptedException" />
+                <ref role="3uigEE" to="e2lb:~InterruptedException" resolve="InterruptedException" />
               </node>
             </node>
           </node>

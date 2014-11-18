@@ -168,9 +168,9 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="hDMFHVL">
-    <reference role="1M2myG" target="tp41.1206442055221" resolve="DataFlowBuilderDeclaration" />
+    <ref role="1M2myG" to="tp41:hz_zdoP" resolve="DataFlowBuilderDeclaration" />
     <node concept="EnEH3" id="hDMFHVM" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="Eqf_E" id="hDMFHVN" role="EtsB7">
         <node concept="3clFbS" id="hDMFHVO" role="2VODD2">
           <node concept="3clFbF" id="hDMFHVP" role="3cqZAp">
@@ -182,11 +182,11 @@
                 <node concept="2OqwBi" id="hDMFHVT" role="2Oq$k0">
                   <node concept="EsrRn" id="hDMFHVU" role="2Oq$k0" />
                   <node concept="3TrEf2" id="hDMFHVV" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tp41.1206442096288" />
+                    <ref role="3Tt5mk" to="tp41:hz_znqw" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="hDMFHVW" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -199,11 +199,11 @@
         <node concept="3clFbF" id="hQOdwLX" role="3cqZAp">
           <node concept="2OqwBi" id="hQOdwLY" role="3clFbG">
             <node concept="Rm8GO" id="hQOd$Kc" role="2Oq$k0">
-              <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dDATA_FLOW" resolve="DATA_FLOW" />
-              <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
+              <ref role="Rm8GQ" to="cu2c:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
+              <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
             </node>
             <node concept="liA8E" id="hQOdwM0" role="2OqNvi">
-              <reference role="37wK5l" target="cu2c.~LanguageAspect%dis(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cboolean" resolve="is" />
+              <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
               <node concept="2JrnkZ" id="6MGyrQSowZs" role="37wK5m">
                 <node concept="1Q6Npb" id="hQOdwM1" role="2JrQYb" />
               </node>
@@ -214,21 +214,21 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFLFZ">
-    <reference role="1M2myG" target="tp41.1207062697254" resolve="LabelPosition" />
+    <ref role="1M2myG" to="tp41:h$ayLkA" resolve="LabelPosition" />
     <node concept="1N5Pfh" id="hDMFLG0" role="1Mr941">
-      <reference role="1N5Vy1" target="tp41.1207062703832" />
+      <ref role="1N5Vy1" to="tp41:h$ayMVo" />
       <node concept="1MUpDS" id="hDMFLG1" role="1N6uqs">
         <node concept="3clFbS" id="hDMFLG2" role="2VODD2">
           <node concept="3cpWs8" id="hDMFLG3" role="3cqZAp">
             <node concept="3cpWsn" id="hDMFLG4" role="3cpWs9">
               <property role="TrG5h" value="labels" />
               <node concept="2I9FWS" id="hDMFLG5" role="1tU5fm">
-                <reference role="2I9WkF" target="tp41.1207062474157" resolve="EmitLabelStatement" />
+                <ref role="2I9WkF" to="tp41:h$axUQH" resolve="EmitLabelStatement" />
               </node>
               <node concept="2ShNRf" id="hDMFLG6" role="33vP2m">
                 <node concept="2T8Vx0" id="hDMFLG7" role="2ShVmc">
                   <node concept="2I9FWS" id="hDMFLG8" role="2T96Bj">
-                    <reference role="2I9WkF" target="tp41.1207062474157" resolve="EmitLabelStatement" />
+                    <ref role="2I9WkF" to="tp41:h$axUQH" resolve="EmitLabelStatement" />
                   </node>
                 </node>
               </node>
@@ -238,13 +238,13 @@
             <node concept="3cpWsn" id="hDMFLGa" role="3cpWs9">
               <property role="TrG5h" value="builder" />
               <node concept="3Tqbb2" id="hDMFLGb" role="1tU5fm">
-                <reference role="ehGHo" target="tp41.1206442055221" resolve="DataFlowBuilderDeclaration" />
+                <ref role="ehGHo" to="tp41:hz_zdoP" resolve="DataFlowBuilderDeclaration" />
               </node>
               <node concept="2OqwBi" id="hDMFLGc" role="33vP2m">
                 <node concept="2Xjw5R" id="hDMFLGd" role="2OqNvi">
                   <node concept="1xMEDy" id="hDMFLGe" role="1xVPHs">
                     <node concept="chp4Y" id="hI0w4qy" role="ri$Ld">
-                      <reference role="cht4Q" target="tp41.1206442055221" resolve="DataFlowBuilderDeclaration" />
+                      <ref role="cht4Q" to="tp41:hz_zdoP" resolve="DataFlowBuilderDeclaration" />
                     </node>
                   </node>
                   <node concept="1xIGOp" id="hDMFLGf" role="1xVPHs" />
@@ -256,17 +256,17 @@
           <node concept="3clFbF" id="hDMFLGh" role="3cqZAp">
             <node concept="2OqwBi" id="hDMFLGi" role="3clFbG">
               <node concept="37vLTw" id="3GM_nagT$gT" role="2Oq$k0">
-                <reference role="3cqZAo" target="1213104855812" resolve="labels" />
+                <ref role="3cqZAo" node="hDMFLG4" resolve="labels" />
               </node>
               <node concept="X8dFx" id="hDMFLGk" role="2OqNvi">
                 <node concept="2OqwBi" id="hDMFLGl" role="25WWJ7">
                   <node concept="37vLTw" id="3GM_nagTBjv" role="2Oq$k0">
-                    <reference role="3cqZAo" target="1213104855818" resolve="builder" />
+                    <ref role="3cqZAo" node="hDMFLGa" resolve="builder" />
                   </node>
                   <node concept="2Rf3mk" id="hDMFLGn" role="2OqNvi">
                     <node concept="1xMEDy" id="hDMFLGo" role="1xVPHs">
                       <node concept="chp4Y" id="hI0w4tZ" role="ri$Ld">
-                        <reference role="cht4Q" target="tp41.1207062474157" resolve="EmitLabelStatement" />
+                        <ref role="cht4Q" to="tp41:h$axUQH" resolve="EmitLabelStatement" />
                       </node>
                     </node>
                     <node concept="1xIGOp" id="hDMFLGp" role="1xVPHs" />
@@ -277,7 +277,7 @@
           </node>
           <node concept="3cpWs6" id="hDMFLGq" role="3cqZAp">
             <node concept="37vLTw" id="3GM_nagTxNt" role="3cqZAk">
-              <reference role="3cqZAo" target="1213104855812" resolve="labels" />
+              <ref role="3cqZAo" node="hDMFLG4" resolve="labels" />
             </node>
           </node>
         </node>
@@ -285,7 +285,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMPC4T">
-    <reference role="1M2myG" target="tp41.1206443583064" resolve="EmitStatement" />
+    <ref role="1M2myG" to="tp41:hz_D2po" resolve="EmitStatement" />
     <node concept="nKS2y" id="hDMPC4U" role="1MLUbF">
       <node concept="3clFbS" id="hDMPC4V" role="2VODD2">
         <node concept="3clFbF" id="hDMPC4W" role="3cqZAp">
@@ -296,7 +296,7 @@
               <node concept="2Xjw5R" id="hDMPC51" role="2OqNvi">
                 <node concept="1xMEDy" id="hDMPC52" role="1xVPHs">
                   <node concept="chp4Y" id="hI0w4u8" role="ri$Ld">
-                    <reference role="cht4Q" target="tp41.1206442659665" resolve="BuilderBlock" />
+                    <ref role="cht4Q" to="tp41:hz__wXh" resolve="BuilderBlock" />
                   </node>
                 </node>
                 <node concept="1xIGOp" id="hDMPC53" role="1xVPHs" />
@@ -309,7 +309,7 @@
   </node>
   <node concept="1M2fIO" id="1_dIXlWBrHA">
     <property role="3GE5qa" value="InstructionOperations" />
-    <reference role="1M2myG" target="tp41.1823319949748058981" resolve="BaseInstructionOperation" />
+    <ref role="1M2myG" to="tp41:1_dIXlWBrH_" resolve="BaseInstructionOperation" />
     <node concept="nKS2y" id="1_dIXlWBrHB" role="1MLUbF">
       <node concept="3clFbS" id="1_dIXlWBrHC" role="2VODD2">
         <node concept="3clFbF" id="1_dIXlWBrHD" role="3cqZAp">
@@ -318,7 +318,7 @@
               <node concept="nLn13" id="1_dIXlWBrHE" role="2Oq$k0" />
               <node concept="1mIQ4w" id="1_dIXlWBrHJ" role="2OqNvi">
                 <node concept="chp4Y" id="1_dIXlWBrHL" role="cj9EA">
-                  <reference role="cht4Q" target="tpee.1197027756228" resolve="DotExpression" />
+                  <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
                 </node>
               </node>
             </node>
@@ -327,16 +327,16 @@
               <node concept="1UaxmW" id="1_dIXlWD3rH" role="3uHU7B">
                 <node concept="1YaCAy" id="1_dIXlWD3rI" role="1Ub_4A">
                   <property role="TrG5h" value="instructionType" />
-                  <reference role="1YaFvo" target="tp41.4969132436616196224" resolve="InstructionType" />
+                  <ref role="1YaFvo" to="tp41:4jPTTYuoj20" resolve="InstructionType" />
                 </node>
                 <node concept="2OqwBi" id="1_dIXlWD3rJ" role="1Ub_4B">
                   <node concept="2OqwBi" id="1_dIXlWD3rK" role="2Oq$k0">
                     <node concept="1PxgMI" id="1_dIXlWD3rL" role="2Oq$k0">
-                      <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                      <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                       <node concept="nLn13" id="1_dIXlWD3rM" role="1PxMeX" />
                     </node>
                     <node concept="3TrEf2" id="1_dIXlWD3rN" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpee.1197027771414" />
+                      <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                     </node>
                   </node>
                   <node concept="3JvlWi" id="1_dIXlWD3rO" role="2OqNvi" />

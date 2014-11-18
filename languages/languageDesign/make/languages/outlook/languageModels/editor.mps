@@ -48,7 +48,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="4RkbWW0I_A$">
-    <reference role="1XX52x" target="z5g5.5608160002100057298" resolve="Outlook" />
+    <ref role="1XX52x" to="z5g5:4RkbWW0I_ji" resolve="Outlook" />
     <node concept="3EZMnI" id="4RkbWW0I_AA" role="2wV5jI">
       <node concept="3EZMnI" id="4RkbWW0I_AD" role="3EZMnx">
         <node concept="VPM3Z" id="4RkbWW0I_AE" role="3F10Kt">
@@ -58,7 +58,7 @@
           <property role="3F0ifm" value="make outlook" />
         </node>
         <node concept="3F0A7n" id="4RkbWW0ILbR" role="3EZMnx">
-          <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="3F0ifn" id="4RkbWW0ILbT" role="3EZMnx">
           <property role="3F0ifm" value=":" />
@@ -71,7 +71,7 @@
         </node>
         <node concept="3XFhqQ" id="4RkbWW0I_AN" role="3EZMnx" />
         <node concept="3F2HdR" id="4RkbWW0I_AU" role="3EZMnx">
-          <reference role="1NtTu8" target="z5g5.5608160002100058529" />
+          <ref role="1NtTu8" to="z5g5:4RkbWW0I_Ax" />
           <node concept="2iRkQZ" id="4RkbWW0I_AW" role="2czzBx" />
           <node concept="3F0ifn" id="4RkbWW0I_AY" role="2czzBI">
             <property role="3F0ifm" value="" />

@@ -70,10 +70,10 @@
   </registry>
   <node concept="13h7C7" id="7Mb2akafE8R">
     <property role="3GE5qa" value="Command" />
-    <reference role="13h7C2" target="qff7.8974276187400348173" resolve="CommandClosureLiteral" />
+    <ref role="13h7C2" to="qff7:7Mb2akafE8d" resolve="CommandClosureLiteral" />
     <node concept="13i0hz" id="7Mb2akafE8S" role="13h7CS">
       <property role="TrG5h" value="isExecuteSynchronous" />
-      <reference role="13i0hy" target="tpek.1230212745736" resolve="isExecuteSynchronous" />
+      <ref role="13i0hy" to="tpek:hTIpcC8" resolve="isExecuteSynchronous" />
       <node concept="3clFbS" id="7Mb2akafE8T" role="3clF47">
         <node concept="3cpWs6" id="7Mb2akafE8U" role="3cqZAp">
           <node concept="2OqwBi" id="7Mb2akafE8V" role="3cqZAk">
@@ -83,7 +83,7 @@
             </node>
             <node concept="1mIQ4w" id="7Mb2akafE8Z" role="2OqNvi">
               <node concept="chp4Y" id="7Mb2akafE90" role="cj9EA">
-                <reference role="cht4Q" target="qff7.8974276187400348172" resolve="BaseExecuteCommandStatementSync" />
+                <ref role="cht4Q" to="qff7:7Mb2akafE8c" resolve="BaseExecuteCommandStatementSync" />
               </node>
             </node>
           </node>

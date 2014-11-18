@@ -31,7 +31,7 @@
   <node concept="bUwia" id="FBND_WeO1V">
     <property role="TrG5h" value="main" />
     <node concept="aNPBN" id="1zySTO0Pc9e" role="aQYdv">
-      <reference role="aOQi4" target="ny2.2178507174411801538" resolve="ExternalViewFigure" />
+      <ref role="aOQi4" to="ny2:1SVBbIvt9f2" resolve="ExternalViewFigure" />
     </node>
   </node>
 </model>

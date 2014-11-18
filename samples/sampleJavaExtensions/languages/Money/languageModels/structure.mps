@@ -55,16 +55,16 @@
     <property role="TrG5h" value="MoneyLiteral" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="money" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="4IqbYlp4P63" role="1TKVEl">
       <property role="TrG5h" value="amount" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyj" id="38gGBrhh3mC" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="unit" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="3607579524910560663" resolve="CurrencyUnit" />
+      <ref role="20lvS9" node="38gGBrhh3mn" resolve="CurrencyUnit" />
     </node>
   </node>
   <node concept="1TIwiD" id="4IqbYlp4P5E">
@@ -73,7 +73,7 @@
     <property role="TrG5h" value="MoneyType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="Money" />
-    <reference role="1TJDcQ" target="tpee.1068431790189" resolve="Type" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
   </node>
   <node concept="1TIwiD" id="4IqbYlp4WcT">
     <property role="R5$K7" value="false" />
@@ -81,9 +81,9 @@
     <property role="TrG5h" value="GetAmount" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="amount" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="4IqbYlp4WcU" role="PzmwI">
-      <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
   <node concept="1TIwiD" id="1zoS8cVcJ6L">
@@ -92,9 +92,9 @@
     <property role="TrG5h" value="GetCurrency" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="currency" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="1zoS8cVcJ6M" role="PzmwI">
-      <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
   <node concept="1TIwiD" id="1zoS8cVd22q">
@@ -103,69 +103,69 @@
     <property role="TrG5h" value="ConvertTo" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="convert to" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1zoS8cVd3hv" role="1TKVEl">
       <property role="TrG5h" value="targetCurrency" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="1zoS8cVd22r" role="PzmwI">
-      <reference role="PrY4T" target="tpee.1197027803184" resolve="IOperation" />
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
   <node concept="1TIwiD" id="38gGBrhh3mm">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="CurrencyDefTable" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="38gGBrhh3ms" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="units" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="3607579524910560663" resolve="CurrencyUnit" />
+      <ref role="20lvS9" node="38gGBrhh3mn" resolve="CurrencyUnit" />
     </node>
   </node>
   <node concept="1TIwiD" id="38gGBrhh3mn">
     <property role="TrG5h" value="CurrencyUnit" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="38gGBrhh3mo" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="3u6SZi0ypB3">
     <property role="TrG5h" value="CurrentStockPrice" />
     <property role="34LRSv" value="current stock price" />
     <property role="3GE5qa" value="stock" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="3u6SZi0G99E" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="symbol" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="4001135958235394442" resolve="StockSymbol" />
+      <ref role="20lvS9" node="3u6SZi0Er6a" resolve="StockSymbol" />
     </node>
   </node>
   <node concept="1TIwiD" id="3u6SZi0Er6a">
     <property role="3GE5qa" value="stock" />
     <property role="TrG5h" value="StockSymbol" />
     <property role="34LRSv" value="symbol" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3u6SZi0FULr" role="1TKVEl">
       <property role="TrG5h" value="symbol" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="3u6SZi0Gs6q">
     <property role="3GE5qa" value="stock" />
     <property role="TrG5h" value="MovingAverage" />
     <property role="34LRSv" value="moving average" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="3u6SZi0Gsrg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="symbol" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="4001135958235394442" resolve="StockSymbol" />
+      <ref role="20lvS9" node="3u6SZi0Er6a" resolve="StockSymbol" />
     </node>
     <node concept="1TJgyi" id="3u6SZi0Gs6r" role="1TKVEl">
       <property role="TrG5h" value="period" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
 </model>

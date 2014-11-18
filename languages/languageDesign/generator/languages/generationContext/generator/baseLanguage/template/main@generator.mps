@@ -198,15 +198,15 @@
     <property role="TrG5h" value="mc_generationContext" />
     <property role="3$yP7D" value="true" />
     <node concept="3aamgX" id="hHiDaBz" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1216860049633" resolve="GenerationContextType" />
+      <ref role="30HIoZ" to="tpf3:hHiwH3x" resolve="GenerationContextType" />
       <node concept="gft3U" id="hHiDaB$" role="1lVwrX">
         <node concept="3uibUv" id="hHiDaB_" role="gfFT$">
-          <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+          <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
         </node>
       </node>
     </node>
     <node concept="3aamgX" id="hHiDaBA" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1216860049635" resolve="TemplateFunctionParameter_generationContext" />
+      <ref role="30HIoZ" to="tpf3:hHiwH3z" resolve="TemplateFunctionParameter_generationContext" />
       <node concept="gft3U" id="hHiDaBB" role="1lVwrX">
         <node concept="37vLTw" id="2BHiRxglpHg" role="gfFT$">
           <node concept="1ZhdrF" id="hHiDaBD" role="lGtFl">
@@ -230,7 +230,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="hHiDaBJ" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1197027756228" resolve="DotExpression" />
+      <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="gft3U" id="hHiDaBK" role="1lVwrX">
         <node concept="10Nm6u" id="hHiDaBL" role="gfFT$">
           <node concept="29HgVG" id="hHiDaBM" role="lGtFl">
@@ -245,7 +245,7 @@
                   <node concept="2OqwBi" id="hHiDaBR" role="3clFbG">
                     <node concept="30H73N" id="hHiDaBS" role="2Oq$k0" />
                     <node concept="3TrEf2" id="hHiDaBT" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpee.1197027833540" />
+                      <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                     </node>
                   </node>
                 </node>
@@ -261,12 +261,12 @@
               <node concept="2OqwBi" id="hHiDaBY" role="2Oq$k0">
                 <node concept="30H73N" id="hHiDaBZ" role="2Oq$k0" />
                 <node concept="3TrEf2" id="hHiDaC0" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1197027833540" />
+                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="hHiDaC1" role="2OqNvi">
                 <node concept="chp4Y" id="hHiDler" role="cj9EA">
-                  <reference role="cht4Q" target="tpf3.1216860049619" resolve="GenerationContextOp_Base" />
+                  <ref role="cht4Q" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
                 </node>
               </node>
             </node>
@@ -275,14 +275,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hHiDaC3" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1216860049622" resolve="GenerationContextOp_GetOutputByLabel" />
+      <ref role="30HIoZ" to="tpf3:hHiwH3m" resolve="GenerationContextOp_GetOutputByLabel" />
       <node concept="gft3U" id="hHiDaC4" role="1lVwrX">
         <node concept="2OqwBi" id="hHiDaC5" role="gfFT$">
           <node concept="1eOMI4" id="hHiDaC6" role="2Oq$k0">
             <node concept="10QFUN" id="hHiDaC7" role="1eOMHV">
               <node concept="10Nm6u" id="hHiDaC8" role="10QFUP" />
               <node concept="3uibUv" id="hHiDaC9" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHiDaCa" role="lGtFl">
@@ -291,14 +291,14 @@
                   <node concept="3clFbF" id="hHiDaCd" role="3cqZAp">
                     <node concept="2OqwBi" id="hHiDaCe" role="3clFbG">
                       <node concept="1PxgMI" id="hHiDaCf" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hHiDaCg" role="1PxMeX">
                           <node concept="30H73N" id="hHiDaCh" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hHiDaCi" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hHiDaCj" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -307,7 +307,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hHiDaCk" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetOutputNodeByMappingLabel(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolve="getOutputNodeByMappingLabel" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOutputNodeByMappingLabel(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeByMappingLabel" />
             <node concept="Xl_RD" id="hHiDaCl" role="37wK5m">
               <property role="Xl_RC" value="label" />
               <node concept="17Uvod" id="hHiDaCm" role="lGtFl">
@@ -325,7 +325,7 @@
                           <node concept="2OqwBi" id="hHF4NKY" role="3cqZAk">
                             <node concept="30H73N" id="hHF4Nx5" role="2Oq$k0" />
                             <node concept="3TrcHB" id="hHF4Og1" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpf3.1217271982808" resolve="labelName_intern" />
+                              <ref role="3TsBF5" to="tpf3:hHF46Fo" resolve="labelName_intern" />
                             </node>
                           </node>
                         </node>
@@ -335,7 +335,7 @@
                         <node concept="2OqwBi" id="hHF4K_r" role="3uHU7B">
                           <node concept="30H73N" id="hHF4Ki8" role="2Oq$k0" />
                           <node concept="3TrcHB" id="hHF4Lt9" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpf3.1217271982808" resolve="labelName_intern" />
+                            <ref role="3TsBF5" to="tpf3:hHF46Fo" resolve="labelName_intern" />
                           </node>
                         </node>
                       </node>
@@ -345,11 +345,11 @@
                         <node concept="2OqwBi" id="hHF4Z9R" role="2Oq$k0">
                           <node concept="30H73N" id="hHF4Z9S" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hHF4Z9T" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1216860049623" />
+                            <ref role="3Tt5mk" to="tpf3:hHiwH3n" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="hHF4Z9U" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                         </node>
                       </node>
                     </node>
@@ -362,14 +362,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="4FXH7d67CMe" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.5403673535105109113" resolve="GenerationContextOp_DirtyNode" />
+      <ref role="30HIoZ" to="tpf3:4FXH7d67CLT" resolve="GenerationContextOp_DirtyNode" />
       <node concept="gft3U" id="4FXH7d67CMk" role="1lVwrX">
         <node concept="2OqwBi" id="4FXH7d67CMm" role="gfFT$">
           <node concept="1eOMI4" id="4FXH7d67CMn" role="2Oq$k0">
             <node concept="10QFUN" id="4FXH7d67CMo" role="1eOMHV">
               <node concept="10Nm6u" id="4FXH7d67CMp" role="10QFUP" />
               <node concept="3uibUv" id="4FXH7d67CMq" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="4FXH7d67CMr" role="lGtFl">
@@ -378,14 +378,14 @@
                   <node concept="3clFbF" id="4FXH7d67CMu" role="3cqZAp">
                     <node concept="2OqwBi" id="4FXH7d67CMv" role="3clFbG">
                       <node concept="1PxgMI" id="4FXH7d67CMw" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="4FXH7d67CMx" role="1PxMeX">
                           <node concept="30H73N" id="4FXH7d67CMy" role="2Oq$k0" />
                           <node concept="1mfA1w" id="4FXH7d67CMz" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="4FXH7d67CM$" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -394,7 +394,7 @@
             </node>
           </node>
           <node concept="liA8E" id="4FXH7d67CM_" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%disDirty(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cboolean" resolve="isDirty" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.isDirty(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isDirty" />
             <node concept="10Nm6u" id="4FXH7d67CMA" role="37wK5m">
               <node concept="29HgVG" id="4FXH7d67CMB" role="lGtFl">
                 <node concept="3NFfHV" id="4FXH7d67CMC" role="3NFExx">
@@ -403,7 +403,7 @@
                       <node concept="2OqwBi" id="4FXH7d67CMF" role="3clFbG">
                         <node concept="30H73N" id="4FXH7d67CMG" role="2Oq$k0" />
                         <node concept="3TrEf2" id="4FXH7d67D4A" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.5403673535105109114" />
+                          <ref role="3Tt5mk" to="tpf3:4FXH7d67CLU" />
                         </node>
                       </node>
                     </node>
@@ -416,14 +416,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hHiDaCv" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1216860049627" resolve="GenerationContextOp_GetOutputByLabelAndInput" />
+      <ref role="30HIoZ" to="tpf3:hHiwH3r" resolve="GenerationContextOp_GetOutputByLabelAndInput" />
       <node concept="gft3U" id="hHiDaCw" role="1lVwrX">
         <node concept="2OqwBi" id="hHiDaCx" role="gfFT$">
           <node concept="1eOMI4" id="hHiDaCy" role="2Oq$k0">
             <node concept="10QFUN" id="hHiDaCz" role="1eOMHV">
               <node concept="10Nm6u" id="hHiDaC$" role="10QFUP" />
               <node concept="3uibUv" id="hHiDaC_" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHiDaCA" role="lGtFl">
@@ -432,14 +432,14 @@
                   <node concept="3clFbF" id="hHiDaCD" role="3cqZAp">
                     <node concept="2OqwBi" id="hHiDaCE" role="3clFbG">
                       <node concept="1PxgMI" id="hHiDaCF" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hHiDaCG" role="1PxMeX">
                           <node concept="30H73N" id="hHiDaCH" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hHiDaCI" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hHiDaCJ" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -448,7 +448,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hHiDaCK" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetOutputNodeByInputNodeAndMappingLabel(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolve="getOutputNodeByInputNodeAndMappingLabel" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOutputNodeByInputNodeAndMappingLabel(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeByInputNodeAndMappingLabel" />
             <node concept="10Nm6u" id="hHiDaCL" role="37wK5m">
               <node concept="29HgVG" id="hHiDaCM" role="lGtFl">
                 <node concept="3NFfHV" id="hHiDaCN" role="3NFExx">
@@ -457,7 +457,7 @@
                       <node concept="2OqwBi" id="hHiDaCQ" role="3clFbG">
                         <node concept="30H73N" id="hHiDaCR" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hHiDMFX" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1216860049632" />
+                          <ref role="3Tt5mk" to="tpf3:hHiwH3w" />
                         </node>
                       </node>
                     </node>
@@ -482,7 +482,7 @@
                           <node concept="2OqwBi" id="hHF53Fj" role="3cqZAk">
                             <node concept="30H73N" id="hHF53Fk" role="2Oq$k0" />
                             <node concept="3TrcHB" id="hHF55tt" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpf3.1217272005596" resolve="labelName_intern" />
+                              <ref role="3TsBF5" to="tpf3:hHF4cfs" resolve="labelName_intern" />
                             </node>
                           </node>
                         </node>
@@ -492,7 +492,7 @@
                         <node concept="2OqwBi" id="hHF53Fo" role="3uHU7B">
                           <node concept="30H73N" id="hHF53Fp" role="2Oq$k0" />
                           <node concept="3TrcHB" id="hHF54ZE" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpf3.1217272005596" resolve="labelName_intern" />
+                            <ref role="3TsBF5" to="tpf3:hHF4cfs" resolve="labelName_intern" />
                           </node>
                         </node>
                       </node>
@@ -502,11 +502,11 @@
                         <node concept="2OqwBi" id="hHF5b$B" role="2Oq$k0">
                           <node concept="30H73N" id="hHF5b$C" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hHF5b$D" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1216860049628" />
+                            <ref role="3Tt5mk" to="tpf3:hHiwH3s" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="hHF5b$E" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                         </node>
                       </node>
                     </node>
@@ -519,14 +519,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hLiF2eW" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1221156564099" resolve="GenerationContextOp_GetOutputListByLabelAndInput" />
+      <ref role="30HIoZ" to="tpf3:hLiAAM3" resolve="GenerationContextOp_GetOutputListByLabelAndInput" />
       <node concept="gft3U" id="hLiF2eX" role="1lVwrX">
         <node concept="2OqwBi" id="hLiF2eY" role="gfFT$">
           <node concept="1eOMI4" id="hLiF2eZ" role="2Oq$k0">
             <node concept="10QFUN" id="hLiF2f0" role="1eOMHV">
               <node concept="10Nm6u" id="hLiF2f1" role="10QFUP" />
               <node concept="3uibUv" id="hLiF2f2" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hLiF2f3" role="lGtFl">
@@ -535,14 +535,14 @@
                   <node concept="3clFbF" id="hLiF2f6" role="3cqZAp">
                     <node concept="2OqwBi" id="hLiF2f7" role="3clFbG">
                       <node concept="1PxgMI" id="hLiF2f8" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hLiF2f9" role="1PxMeX">
                           <node concept="30H73N" id="hLiF2fa" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hLiF2fb" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hLiF2fc" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -551,7 +551,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hLiFHPx" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetAllOutputNodesByInputNodeAndMappingLabel(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cjava%dutil%dList" resolve="getAllOutputNodesByInputNodeAndMappingLabel" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getAllOutputNodesByInputNodeAndMappingLabel(org.jetbrains.mps.openapi.model.SNode,java.lang.String):java.util.List" resolve="getAllOutputNodesByInputNodeAndMappingLabel" />
             <node concept="10Nm6u" id="hLiFTpL" role="37wK5m">
               <node concept="29HgVG" id="hLiFTpM" role="lGtFl">
                 <node concept="3NFfHV" id="hLiFTpN" role="3NFExx">
@@ -560,7 +560,7 @@
                       <node concept="2OqwBi" id="hLiFTpQ" role="3clFbG">
                         <node concept="30H73N" id="hLiFTpR" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hLiGAU6" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1221156564104" />
+                          <ref role="3Tt5mk" to="tpf3:hLiAAM8" />
                         </node>
                       </node>
                     </node>
@@ -585,7 +585,7 @@
                           <node concept="2OqwBi" id="hLiFTq1" role="3cqZAk">
                             <node concept="30H73N" id="hLiFTq2" role="2Oq$k0" />
                             <node concept="3TrcHB" id="hLiGGE4" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpf3.1221156564100" resolve="labelName_intern" />
+                              <ref role="3TsBF5" to="tpf3:hLiAAM4" resolve="labelName_intern" />
                             </node>
                           </node>
                         </node>
@@ -595,7 +595,7 @@
                         <node concept="2OqwBi" id="hLiFTq6" role="3uHU7B">
                           <node concept="30H73N" id="hLiFTq7" role="2Oq$k0" />
                           <node concept="3TrcHB" id="hLiGEiE" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpf3.1221156564100" resolve="labelName_intern" />
+                            <ref role="3TsBF5" to="tpf3:hLiAAM4" resolve="labelName_intern" />
                           </node>
                         </node>
                       </node>
@@ -605,11 +605,11 @@
                         <node concept="2OqwBi" id="hLiFTqb" role="2Oq$k0">
                           <node concept="30H73N" id="hLiFTqc" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hLiGFrV" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1221156564101" />
+                            <ref role="3Tt5mk" to="tpf3:hLiAAM5" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="hLiFTqe" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                         </node>
                       </node>
                     </node>
@@ -622,14 +622,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hLmowq4" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1221218985173" resolve="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
+      <ref role="30HIoZ" to="tpf3:hLmkIjl" resolve="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
       <node concept="gft3U" id="hLmowq5" role="1lVwrX">
         <node concept="2OqwBi" id="hLmowq6" role="gfFT$">
           <node concept="1eOMI4" id="hLmowq7" role="2Oq$k0">
             <node concept="10QFUN" id="hLmowq8" role="1eOMHV">
               <node concept="10Nm6u" id="hLmowq9" role="10QFUP" />
               <node concept="3uibUv" id="hLmowqa" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hLmowqb" role="lGtFl">
@@ -638,14 +638,14 @@
                   <node concept="3clFbF" id="hLmowqe" role="3cqZAp">
                     <node concept="2OqwBi" id="hLmowqf" role="3clFbG">
                       <node concept="1PxgMI" id="hLmowqg" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hLmowqh" role="1PxMeX">
                           <node concept="30H73N" id="hLmowqi" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hLmowqj" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hLmowqk" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -654,7 +654,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hLmowql" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString,jetbrains%dmps%dsmodel%dIOperationContext)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolve="getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.smodel.IOperationContext):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope" />
             <node concept="10Nm6u" id="hLmowqm" role="37wK5m">
               <node concept="29HgVG" id="hLmowqn" role="lGtFl">
                 <node concept="3NFfHV" id="hLmowqo" role="3NFExx">
@@ -663,7 +663,7 @@
                       <node concept="2OqwBi" id="hLmowqr" role="3clFbG">
                         <node concept="30H73N" id="hLmowqs" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hLmoBhe" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1221219370977" />
+                          <ref role="3Tt5mk" to="tpf3:hLmmcvx" />
                         </node>
                       </node>
                     </node>
@@ -688,7 +688,7 @@
                           <node concept="2OqwBi" id="hLmowqA" role="3cqZAk">
                             <node concept="30H73N" id="hLmowqB" role="2Oq$k0" />
                             <node concept="3TrcHB" id="hLmoE9J" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpf3.1221219363547" resolve="labelName_intern" />
+                              <ref role="3TsBF5" to="tpf3:hLmmaFr" resolve="labelName_intern" />
                             </node>
                           </node>
                         </node>
@@ -698,7 +698,7 @@
                         <node concept="2OqwBi" id="hLmowqF" role="3uHU7B">
                           <node concept="30H73N" id="hLmowqG" role="2Oq$k0" />
                           <node concept="3TrcHB" id="hLmoEPi" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpf3.1221219363547" resolve="labelName_intern" />
+                            <ref role="3TsBF5" to="tpf3:hLmmaFr" resolve="labelName_intern" />
                           </node>
                         </node>
                       </node>
@@ -708,11 +708,11 @@
                         <node concept="2OqwBi" id="hLmowqK" role="2Oq$k0">
                           <node concept="30H73N" id="hLmowqL" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hLmoFzt" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1221219379823" />
+                            <ref role="3Tt5mk" to="tpf3:hLmmeDJ" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="hLmowqN" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                         </node>
                       </node>
                     </node>
@@ -723,7 +723,7 @@
             <node concept="3VmV3z" id="hLmp5yc" role="37wK5m">
               <property role="3VnrPo" value="operationContext" />
               <node concept="3uibUv" id="hLmpCNK" role="3Vn4Tt">
-                <reference role="3uigEE" target="cu2c.~IOperationContext" resolve="IOperationContext" />
+                <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
               </node>
             </node>
           </node>
@@ -731,14 +731,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hIfskBq" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217881979074" resolve="GenerationContextOp_GetPrevInputByLabel" />
+      <ref role="30HIoZ" to="tpf3:hIfr3z2" resolve="GenerationContextOp_GetPrevInputByLabel" />
       <node concept="gft3U" id="hIfskBr" role="1lVwrX">
         <node concept="2OqwBi" id="hIfskBs" role="gfFT$">
           <node concept="1eOMI4" id="hIfskBt" role="2Oq$k0">
             <node concept="10QFUN" id="hIfskBu" role="1eOMHV">
               <node concept="10Nm6u" id="hIfskBv" role="10QFUP" />
               <node concept="3uibUv" id="hIfskBw" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIfskBx" role="lGtFl">
@@ -747,14 +747,14 @@
                   <node concept="3clFbF" id="hIfskB$" role="3cqZAp">
                     <node concept="2OqwBi" id="hIfskB_" role="3clFbG">
                       <node concept="1PxgMI" id="hIfskBA" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hIfskBB" role="1PxMeX">
                           <node concept="30H73N" id="hIfskBC" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hIfskBD" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hIfskBE" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -763,7 +763,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIfskBF" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetPreviousInputNodeByMappingLabel(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolve="getPreviousInputNodeByMappingLabel" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getPreviousInputNodeByMappingLabel(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getPreviousInputNodeByMappingLabel" />
             <node concept="Xl_RD" id="hIfskBG" role="37wK5m">
               <property role="Xl_RC" value="label" />
               <node concept="17Uvod" id="hIfskBH" role="lGtFl">
@@ -781,7 +781,7 @@
                           <node concept="2OqwBi" id="hIfskBO" role="3cqZAk">
                             <node concept="30H73N" id="hIfskBP" role="2Oq$k0" />
                             <node concept="3TrcHB" id="hIfstOc" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpf3.1217881979079" resolve="labelName_intern" />
+                              <ref role="3TsBF5" to="tpf3:hIfr3z7" resolve="labelName_intern" />
                             </node>
                           </node>
                         </node>
@@ -791,7 +791,7 @@
                         <node concept="2OqwBi" id="hIfskBT" role="3uHU7B">
                           <node concept="30H73N" id="hIfskBU" role="2Oq$k0" />
                           <node concept="3TrcHB" id="hIfstf$" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpf3.1217881979079" resolve="labelName_intern" />
+                            <ref role="3TsBF5" to="tpf3:hIfr3z7" resolve="labelName_intern" />
                           </node>
                         </node>
                       </node>
@@ -801,11 +801,11 @@
                         <node concept="2OqwBi" id="hIfskBY" role="2Oq$k0">
                           <node concept="30H73N" id="hIfskBZ" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hIfsuMH" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1217881979075" />
+                            <ref role="3Tt5mk" to="tpf3:hIfr3z3" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="hIfskC1" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                         </node>
                       </node>
                     </node>
@@ -818,14 +818,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hIfAOAG" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217884725453" resolve="GenerationContextOp_GetCopiedOutputByInput" />
+      <ref role="30HIoZ" to="tpf3:hIf_y3d" resolve="GenerationContextOp_GetCopiedOutputByInput" />
       <node concept="gft3U" id="hIfAOAH" role="1lVwrX">
         <node concept="2OqwBi" id="hIfAOAI" role="gfFT$">
           <node concept="1eOMI4" id="hIfAOAJ" role="2Oq$k0">
             <node concept="10QFUN" id="hIfAOAK" role="1eOMHV">
               <node concept="10Nm6u" id="hIfAOAL" role="10QFUP" />
               <node concept="3uibUv" id="hIfAOAM" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIfAOAN" role="lGtFl">
@@ -834,14 +834,14 @@
                   <node concept="3clFbF" id="hIfAOAQ" role="3cqZAp">
                     <node concept="2OqwBi" id="hIfAOAR" role="3clFbG">
                       <node concept="1PxgMI" id="hIfAOAS" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hIfAOAT" role="1PxMeX">
                           <node concept="30H73N" id="hIfAOAU" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hIfAOAV" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hIfAOAW" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -850,7 +850,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIfAOAX" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetCopiedOutputNodeForInputNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolve="getCopiedOutputNodeForInputNode" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getCopiedOutputNodeForInputNode(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getCopiedOutputNodeForInputNode" />
             <node concept="10Nm6u" id="hIfAOAY" role="37wK5m">
               <node concept="29HgVG" id="hIfAOAZ" role="lGtFl">
                 <node concept="3NFfHV" id="hIfAOB0" role="3NFExx">
@@ -859,7 +859,7 @@
                       <node concept="2OqwBi" id="hIfAOB3" role="3clFbG">
                         <node concept="30H73N" id="hIfAOB4" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hIfAYeU" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1217884725459" />
+                          <ref role="3Tt5mk" to="tpf3:hIf_y3j" />
                         </node>
                       </node>
                     </node>
@@ -872,14 +872,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hT2IMEn" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1229477454423" resolve="GenerationContextOp_GetOriginalCopiedInputByOutput" />
+      <ref role="30HIoZ" to="tpf3:hT2$i9n" resolve="GenerationContextOp_GetOriginalCopiedInputByOutput" />
       <node concept="gft3U" id="hT2IMEo" role="1lVwrX">
         <node concept="2OqwBi" id="hT2IMEp" role="gfFT$">
           <node concept="1eOMI4" id="hT2IMEq" role="2Oq$k0">
             <node concept="10QFUN" id="hT2IMEr" role="1eOMHV">
               <node concept="10Nm6u" id="hT2IMEs" role="10QFUP" />
               <node concept="3uibUv" id="hT2IMEt" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hT2IMEu" role="lGtFl">
@@ -888,14 +888,14 @@
                   <node concept="3clFbF" id="hT2IMEx" role="3cqZAp">
                     <node concept="2OqwBi" id="hT2IMEy" role="3clFbG">
                       <node concept="1PxgMI" id="hT2IMEz" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hT2IME$" role="1PxMeX">
                           <node concept="30H73N" id="hT2IME_" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hT2IMEA" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hT2IMEB" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -904,7 +904,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hT2IMEC" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetOriginalCopiedInputNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolve="getOriginalCopiedInputNode" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOriginalCopiedInputNode(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getOriginalCopiedInputNode" />
             <node concept="10Nm6u" id="hT2IMED" role="37wK5m">
               <node concept="29HgVG" id="hT2IMEE" role="lGtFl">
                 <node concept="3NFfHV" id="hT2IMEF" role="3NFExx">
@@ -913,7 +913,7 @@
                       <node concept="2OqwBi" id="hT2IMEI" role="3clFbG">
                         <node concept="30H73N" id="hT2IMEJ" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hT2IPFq" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1229477520175" />
+                          <ref role="3Tt5mk" to="tpf3:hT2$ycJ" />
                         </node>
                       </node>
                     </node>
@@ -926,14 +926,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hO2ezwe" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1224102704684" resolve="GenerationContextOp_GetInvocationContext" />
+      <ref role="30HIoZ" to="tpf3:hO2dfoG" resolve="GenerationContextOp_GetInvocationContext" />
       <node concept="gft3U" id="hO2ezwf" role="1lVwrX">
         <node concept="2OqwBi" id="hO2ezwg" role="gfFT$">
           <node concept="1eOMI4" id="hO2ezwh" role="2Oq$k0">
             <node concept="10QFUN" id="hO2ezwi" role="1eOMHV">
               <node concept="10Nm6u" id="hO2ezwj" role="10QFUP" />
               <node concept="3uibUv" id="hO2ezwk" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hO2ezwl" role="lGtFl">
@@ -942,14 +942,14 @@
                   <node concept="3clFbF" id="hO2ezwo" role="3cqZAp">
                     <node concept="2OqwBi" id="hO2ezwp" role="3clFbG">
                       <node concept="1PxgMI" id="hO2ezwq" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hO2ezwr" role="1PxMeX">
                           <node concept="30H73N" id="hO2ezws" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hO2ezwt" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hO2ezwu" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -958,20 +958,20 @@
             </node>
           </node>
           <node concept="liA8E" id="hO2eIBa" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetInvocationContext()%cjetbrains%dmps%dsmodel%dIOperationContext" resolve="getInvocationContext" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getInvocationContext():jetbrains.mps.smodel.IOperationContext" resolve="getInvocationContext" />
           </node>
         </node>
       </node>
     </node>
     <node concept="3aamgX" id="hHr9TeH" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217004708011" resolve="GenerationContextOp_GetInputModel" />
+      <ref role="30HIoZ" to="tpf3:hHr8y2F" resolve="GenerationContextOp_GetInputModel" />
       <node concept="gft3U" id="hHr9TeI" role="1lVwrX">
         <node concept="2OqwBi" id="hHr9TeJ" role="gfFT$">
           <node concept="1eOMI4" id="hHr9TeK" role="2Oq$k0">
             <node concept="10QFUN" id="hHr9TeL" role="1eOMHV">
               <node concept="10Nm6u" id="hHr9TeM" role="10QFUP" />
               <node concept="3uibUv" id="hHr9TeN" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHr9TeO" role="lGtFl">
@@ -980,14 +980,14 @@
                   <node concept="3clFbF" id="hHr9TeR" role="3cqZAp">
                     <node concept="2OqwBi" id="hHr9TeS" role="3clFbG">
                       <node concept="1PxgMI" id="hHr9TeT" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hHr9TeU" role="1PxMeX">
                           <node concept="30H73N" id="hHr9TeV" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hHr9TeW" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hHr9TeX" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -996,20 +996,20 @@
             </node>
           </node>
           <node concept="liA8E" id="hHr9TeY" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetInputModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolve="getInputModel" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getInputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getInputModel" />
           </node>
         </node>
       </node>
     </node>
     <node concept="3aamgX" id="hHFFm$k" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217282130234" resolve="GenerationContextOp_GetOutputModel" />
+      <ref role="30HIoZ" to="tpf3:hHFEO4U" resolve="GenerationContextOp_GetOutputModel" />
       <node concept="gft3U" id="hHFFm$l" role="1lVwrX">
         <node concept="2OqwBi" id="hHFFm$m" role="gfFT$">
           <node concept="1eOMI4" id="hHFFm$n" role="2Oq$k0">
             <node concept="10QFUN" id="hHFFm$o" role="1eOMHV">
               <node concept="10Nm6u" id="hHFFm$p" role="10QFUP" />
               <node concept="3uibUv" id="hHFFm$q" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHFFm$r" role="lGtFl">
@@ -1018,14 +1018,14 @@
                   <node concept="3clFbF" id="hHFFm$u" role="3cqZAp">
                     <node concept="2OqwBi" id="hHFFm$v" role="3clFbG">
                       <node concept="1PxgMI" id="hHFFm$w" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hHFFm$x" role="1PxMeX">
                           <node concept="30H73N" id="hHFFm$y" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hHFFm$z" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hHFFm$$" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -1034,20 +1034,20 @@
             </node>
           </node>
           <node concept="liA8E" id="hHFFm$_" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetOutputModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolve="getOutputModel" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOutputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOutputModel" />
           </node>
         </node>
       </node>
     </node>
     <node concept="3aamgX" id="hHsty2z" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217026863835" resolve="GenerationContextOp_GetOriginalInputModel" />
+      <ref role="30HIoZ" to="tpf3:hHst3br" resolve="GenerationContextOp_GetOriginalInputModel" />
       <node concept="gft3U" id="hHsty2$" role="1lVwrX">
         <node concept="2OqwBi" id="hHsty2_" role="gfFT$">
           <node concept="1eOMI4" id="hHsty2A" role="2Oq$k0">
             <node concept="10QFUN" id="hHsty2B" role="1eOMHV">
               <node concept="10Nm6u" id="hHsty2C" role="10QFUP" />
               <node concept="3uibUv" id="hHsty2D" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHsty2E" role="lGtFl">
@@ -1056,14 +1056,14 @@
                   <node concept="3clFbF" id="hHsty2H" role="3cqZAp">
                     <node concept="2OqwBi" id="hHsty2I" role="3clFbG">
                       <node concept="1PxgMI" id="hHsty2J" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hHsty2K" role="1PxMeX">
                           <node concept="30H73N" id="hHsty2L" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hHsty2M" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hHsty2N" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -1072,13 +1072,13 @@
             </node>
           </node>
           <node concept="liA8E" id="hHsty2O" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetOriginalInputModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolve="getOriginalInputModel" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getOriginalInputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOriginalInputModel" />
           </node>
         </node>
       </node>
     </node>
     <node concept="3aamgX" id="2BilE0oOnCU" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.5190093307972723402" resolve="GenerationContextOp_ParameterRef" />
+      <ref role="30HIoZ" to="tpf3:4w6U_Q4Qaba" resolve="GenerationContextOp_ParameterRef" />
       <node concept="gft3U" id="2BilE0oOnMB" role="1lVwrX">
         <node concept="1eOMI4" id="bO2uiccnUg" role="gfFT$">
           <node concept="10QFUN" id="78xOK0ZzeFZ" role="1eOMHV">
@@ -1087,7 +1087,7 @@
                 <node concept="10QFUN" id="bO2uiccnUm" role="1eOMHV">
                   <node concept="10Nm6u" id="bO2uiccnUn" role="10QFUP" />
                   <node concept="3uibUv" id="bO2uiccnUo" role="10QFUM">
-                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="bO2uiccnUp" role="lGtFl">
@@ -1096,14 +1096,14 @@
                       <node concept="3clFbF" id="bO2uiccnUs" role="3cqZAp">
                         <node concept="2OqwBi" id="bO2uiccnUt" role="3clFbG">
                           <node concept="1PxgMI" id="bO2uiccnUu" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                            <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                             <node concept="2OqwBi" id="bO2uiccnUv" role="1PxMeX">
                               <node concept="30H73N" id="bO2uiccnUw" role="2Oq$k0" />
                               <node concept="1mfA1w" id="bO2uiccnUx" role="2OqNvi" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="bO2uiccnUy" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1197027771414" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                           </node>
                         </node>
                       </node>
@@ -1112,7 +1112,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="bO2uiccnUz" role="2OqNvi">
-                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetVariable(java%dlang%dString)%cjava%dlang%dObject" resolve="getVariable" />
+                <ref role="37wK5l" to="q383:~TemplateQueryContext.getVariable(java.lang.String):java.lang.Object" resolve="getVariable" />
                 <node concept="Xl_RD" id="bO2uiccnU$" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="bO2uiccnU_" role="lGtFl">
@@ -1123,7 +1123,7 @@
                           <node concept="2OqwBi" id="bO2uiccnUE" role="3clFbG">
                             <node concept="30H73N" id="bO2uiccnUF" role="2Oq$k0" />
                             <node concept="3TrcHB" id="78xOK0ZzdeB" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpf3.8224086392574645374" resolve="name_intern" />
+                              <ref role="3TsBF5" to="tpf3:78xOK0ZyhhY" resolve="name_intern" />
                             </node>
                           </node>
                         </node>
@@ -1134,21 +1134,21 @@
               </node>
             </node>
             <node concept="3uibUv" id="78xOK0ZzeG2" role="10QFUM">
-              <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               <node concept="29HgVG" id="78xOK0ZzeG3" role="lGtFl">
                 <node concept="3NFfHV" id="78xOK0ZzeG4" role="3NFExx">
                   <node concept="3clFbS" id="78xOK0ZzeG5" role="2VODD2">
                     <node concept="3clFbF" id="5rQHpWbIyxX" role="3cqZAp">
                       <node concept="2YIFZM" id="5rQHpWbIyy0" role="3clFbG">
-                        <reference role="37wK5l" target="tp2g.1201536134312" resolve="getTypeCoercedToClassifierType" />
-                        <reference role="1Pybhc" target="tp2g.1201536121399" resolve="ClassifierTypeUtil" />
+                        <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                        <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
                         <node concept="2OqwBi" id="5rQHpWbIyy2" role="37wK5m">
                           <node concept="2OqwBi" id="5rQHpWbIyy3" role="2Oq$k0">
                             <node concept="2OqwBi" id="5rQHpWbIyy4" role="2Oq$k0">
                               <node concept="2OqwBi" id="5rQHpWbIyy5" role="2Oq$k0">
                                 <node concept="30H73N" id="5rQHpWbIyy6" role="2Oq$k0" />
                                 <node concept="2qgKlT" id="5rQHpWbIyy7" role="2OqNvi">
-                                  <reference role="37wK5l" target="tpek.1224687669172" resolve="getDotExpression" />
+                                  <ref role="37wK5l" to="tpek:hO_4GYO" resolve="getDotExpression" />
                                 </node>
                               </node>
                               <node concept="1mfA1w" id="5rQHpWbIyy8" role="2OqNvi" />
@@ -1168,7 +1168,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="2n6lsTIwoiA" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.2721957369897614808" resolve="GenerationContextOp_VarRef" />
+      <ref role="30HIoZ" to="tpf3:2n6lsTIwfRo" resolve="GenerationContextOp_VarRef" />
       <node concept="gft3U" id="2n6lsTIwoiC" role="1lVwrX">
         <node concept="1eOMI4" id="2n6lsTIwoiD" role="gfFT$">
           <node concept="10QFUN" id="2n6lsTIwoiE" role="1eOMHV">
@@ -1177,7 +1177,7 @@
                 <node concept="10QFUN" id="2n6lsTIwoiH" role="1eOMHV">
                   <node concept="10Nm6u" id="2n6lsTIwoiI" role="10QFUP" />
                   <node concept="3uibUv" id="2n6lsTIwoiJ" role="10QFUM">
-                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="2n6lsTIwoiK" role="lGtFl">
@@ -1186,14 +1186,14 @@
                       <node concept="3clFbF" id="2n6lsTIwoiN" role="3cqZAp">
                         <node concept="2OqwBi" id="2n6lsTIwoiO" role="3clFbG">
                           <node concept="1PxgMI" id="2n6lsTIwoiP" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                            <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                             <node concept="2OqwBi" id="2n6lsTIwoiQ" role="1PxMeX">
                               <node concept="30H73N" id="2n6lsTIwoiR" role="2Oq$k0" />
                               <node concept="1mfA1w" id="2n6lsTIwoiS" role="2OqNvi" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="2n6lsTIwoiT" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1197027771414" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                           </node>
                         </node>
                       </node>
@@ -1202,7 +1202,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="2n6lsTIwoiU" role="2OqNvi">
-                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetVariable(java%dlang%dString)%cjava%dlang%dObject" resolve="getVariable" />
+                <ref role="37wK5l" to="q383:~TemplateQueryContext.getVariable(java.lang.String):java.lang.Object" resolve="getVariable" />
                 <node concept="Xl_RD" id="2n6lsTIwoiV" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="2n6lsTIwoiW" role="lGtFl">
@@ -1213,7 +1213,7 @@
                           <node concept="2OqwBi" id="2n6lsTIwoOC" role="3clFbG">
                             <node concept="30H73N" id="2n6lsTIwoOB" role="2Oq$k0" />
                             <node concept="3TrcHB" id="2n6lsTIwoOH" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpf3.2721957369897614809" resolve="name_intern" />
+                              <ref role="3TsBF5" to="tpf3:2n6lsTIwfRp" resolve="name_intern" />
                             </node>
                           </node>
                         </node>
@@ -1224,21 +1224,21 @@
               </node>
             </node>
             <node concept="3uibUv" id="2n6lsTIwoj3" role="10QFUM">
-              <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               <node concept="29HgVG" id="2n6lsTIwoj4" role="lGtFl">
                 <node concept="3NFfHV" id="2n6lsTIwoj5" role="3NFExx">
                   <node concept="3clFbS" id="2n6lsTIwoj6" role="2VODD2">
                     <node concept="3clFbF" id="2n6lsTIwoj7" role="3cqZAp">
                       <node concept="2YIFZM" id="2n6lsTIwoj8" role="3clFbG">
-                        <reference role="37wK5l" target="tp2g.1201536134312" resolve="getTypeCoercedToClassifierType" />
-                        <reference role="1Pybhc" target="tp2g.1201536121399" resolve="ClassifierTypeUtil" />
+                        <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                        <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
                         <node concept="2OqwBi" id="2n6lsTIwoj9" role="37wK5m">
                           <node concept="2OqwBi" id="2n6lsTIwoja" role="2Oq$k0">
                             <node concept="2OqwBi" id="2n6lsTIwojb" role="2Oq$k0">
                               <node concept="2OqwBi" id="2n6lsTIwojc" role="2Oq$k0">
                                 <node concept="30H73N" id="2n6lsTIwojd" role="2Oq$k0" />
                                 <node concept="2qgKlT" id="2n6lsTIwoje" role="2OqNvi">
-                                  <reference role="37wK5l" target="tpek.1224687669172" resolve="getDotExpression" />
+                                  <ref role="37wK5l" to="tpek:hO_4GYO" resolve="getDotExpression" />
                                 </node>
                               </node>
                               <node concept="1mfA1w" id="2n6lsTIwojf" role="2OqNvi" />
@@ -1258,7 +1258,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="2BilE0oO3um" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.4589968773278056990" resolve="GenerationContextOp_NodePatternRef" />
+      <ref role="30HIoZ" to="tpf3:3YMQ4vlnW8u" resolve="GenerationContextOp_NodePatternRef" />
       <node concept="gft3U" id="2BilE0oOnCW" role="1lVwrX">
         <node concept="1eOMI4" id="bO2uiccnUJ" role="gfFT$">
           <node concept="10QFUN" id="bO2uiccnUK" role="1eOMHV">
@@ -1267,7 +1267,7 @@
                 <node concept="10QFUN" id="bO2uiccnUN" role="1eOMHV">
                   <node concept="10Nm6u" id="bO2uiccnUO" role="10QFUP" />
                   <node concept="3uibUv" id="bO2uiccnUP" role="10QFUM">
-                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="bO2uiccnUQ" role="lGtFl">
@@ -1276,14 +1276,14 @@
                       <node concept="3clFbF" id="bO2uiccnUT" role="3cqZAp">
                         <node concept="2OqwBi" id="bO2uiccnUU" role="3clFbG">
                           <node concept="1PxgMI" id="bO2uiccnUV" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                            <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                             <node concept="2OqwBi" id="bO2uiccnUW" role="1PxMeX">
                               <node concept="30H73N" id="bO2uiccnUX" role="2Oq$k0" />
                               <node concept="1mfA1w" id="bO2uiccnUY" role="2OqNvi" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="bO2uiccnUZ" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1197027771414" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                           </node>
                         </node>
                       </node>
@@ -1292,7 +1292,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="bO2uiccnV0" role="2OqNvi">
-                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetPatternVariable(java%dlang%dString)%cjava%dlang%dObject" resolve="getPatternVariable" />
+                <ref role="37wK5l" to="q383:~TemplateQueryContext.getPatternVariable(java.lang.String):java.lang.Object" resolve="getPatternVariable" />
                 <node concept="Xl_RD" id="bO2uiccnV1" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="bO2uiccnV2" role="lGtFl">
@@ -1303,7 +1303,7 @@
                           <node concept="2OqwBi" id="78xOK0Zzd_Z" role="3clFbG">
                             <node concept="30H73N" id="78xOK0Zzd_Y" role="2Oq$k0" />
                             <node concept="3TrcHB" id="78xOK0ZzdA3" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpf3.1758784108619487309" resolve="name_intern" />
+                              <ref role="3TsBF5" to="tpf3:1xCtdgeRtxd" resolve="name_intern" />
                             </node>
                           </node>
                         </node>
@@ -1314,21 +1314,21 @@
               </node>
             </node>
             <node concept="3uibUv" id="bO2uiccnVb" role="10QFUM">
-              <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               <node concept="29HgVG" id="bO2uicct8y" role="lGtFl">
                 <node concept="3NFfHV" id="bO2uicct8z" role="3NFExx">
                   <node concept="3clFbS" id="bO2uicct8$" role="2VODD2">
                     <node concept="3clFbF" id="5rQHpWbIyyq" role="3cqZAp">
                       <node concept="2YIFZM" id="5rQHpWbIyyr" role="3clFbG">
-                        <reference role="37wK5l" target="tp2g.1201536134312" resolve="getTypeCoercedToClassifierType" />
-                        <reference role="1Pybhc" target="tp2g.1201536121399" resolve="ClassifierTypeUtil" />
+                        <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                        <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
                         <node concept="2OqwBi" id="5rQHpWbIyys" role="37wK5m">
                           <node concept="2OqwBi" id="5rQHpWbIyyt" role="2Oq$k0">
                             <node concept="2OqwBi" id="5rQHpWbIyyu" role="2Oq$k0">
                               <node concept="2OqwBi" id="5rQHpWbIyyv" role="2Oq$k0">
                                 <node concept="30H73N" id="5rQHpWbIyyw" role="2Oq$k0" />
                                 <node concept="2qgKlT" id="5rQHpWbIyyx" role="2OqNvi">
-                                  <reference role="37wK5l" target="tpek.1224687669172" resolve="getDotExpression" />
+                                  <ref role="37wK5l" to="tpek:hO_4GYO" resolve="getDotExpression" />
                                 </node>
                               </node>
                               <node concept="1mfA1w" id="5rQHpWbIyyy" role="2OqNvi" />
@@ -1348,7 +1348,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="1fE1$qdfyaH" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.2507865635201615235" resolve="GenerationContextOp_GenParameterRef" />
+      <ref role="30HIoZ" to="tpf3:2bdIC8aAwm3" resolve="GenerationContextOp_GenParameterRef" />
       <node concept="gft3U" id="1fE1$qdfyaI" role="1lVwrX">
         <node concept="1eOMI4" id="1fE1$qdfyaJ" role="gfFT$">
           <node concept="10QFUN" id="1fE1$qdfyaK" role="1eOMHV">
@@ -1357,7 +1357,7 @@
                 <node concept="10QFUN" id="1fE1$qdfyaN" role="1eOMHV">
                   <node concept="10Nm6u" id="1fE1$qdfyaO" role="10QFUP" />
                   <node concept="3uibUv" id="1fE1$qdfyaP" role="10QFUM">
-                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="1fE1$qdfyaQ" role="lGtFl">
@@ -1366,14 +1366,14 @@
                       <node concept="3clFbF" id="1fE1$qdfyaT" role="3cqZAp">
                         <node concept="2OqwBi" id="1fE1$qdfyaU" role="3clFbG">
                           <node concept="1PxgMI" id="1fE1$qdfyaV" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                            <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                             <node concept="2OqwBi" id="1fE1$qdfyaW" role="1PxMeX">
                               <node concept="30H73N" id="1fE1$qdfyaX" role="2Oq$k0" />
                               <node concept="1mfA1w" id="1fE1$qdfyaY" role="2OqNvi" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="1fE1$qdfyaZ" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1197027771414" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                           </node>
                         </node>
                       </node>
@@ -1382,7 +1382,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1fE1$qdfyb0" role="2OqNvi">
-                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerationParameter(java%dlang%dString)%cjava%dlang%dObject" resolve="getGenerationParameter" />
+                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerationParameter(java.lang.String):java.lang.Object" resolve="getGenerationParameter" />
                 <node concept="Xl_RD" id="1fE1$qdfyb1" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="1fE1$qdfyb2" role="lGtFl">
@@ -1393,7 +1393,7 @@
                           <node concept="2OqwBi" id="2pwKeHp4NLW" role="3clFbG">
                             <node concept="30H73N" id="2pwKeHp4NLV" role="2Oq$k0" />
                             <node concept="3TrcHB" id="2pwKeHp4VvC" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpf3.4517825979522476799" resolve="name_intern" />
+                              <ref role="3TsBF5" to="tpf3:3UMyGEUtYFZ" resolve="name_intern" />
                             </node>
                           </node>
                         </node>
@@ -1404,21 +1404,21 @@
               </node>
             </node>
             <node concept="3uibUv" id="1fE1$qdfyb9" role="10QFUM">
-              <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               <node concept="29HgVG" id="1fE1$qdfyba" role="lGtFl">
                 <node concept="3NFfHV" id="1fE1$qdfybb" role="3NFExx">
                   <node concept="3clFbS" id="1fE1$qdfybc" role="2VODD2">
                     <node concept="3clFbF" id="1fE1$qdfybd" role="3cqZAp">
                       <node concept="2YIFZM" id="1fE1$qdfybe" role="3clFbG">
-                        <reference role="1Pybhc" target="tp2g.1201536121399" resolve="ClassifierTypeUtil" />
-                        <reference role="37wK5l" target="tp2g.1201536134312" resolve="getTypeCoercedToClassifierType" />
+                        <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
+                        <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
                         <node concept="2OqwBi" id="1fE1$qdfybf" role="37wK5m">
                           <node concept="2OqwBi" id="1fE1$qdfybg" role="2Oq$k0">
                             <node concept="2OqwBi" id="1fE1$qdfybh" role="2Oq$k0">
                               <node concept="2OqwBi" id="1fE1$qdfybi" role="2Oq$k0">
                                 <node concept="30H73N" id="1fE1$qdfybj" role="2Oq$k0" />
                                 <node concept="2qgKlT" id="1fE1$qdfybk" role="2OqNvi">
-                                  <reference role="37wK5l" target="tpek.1224687669172" resolve="getDotExpression" />
+                                  <ref role="37wK5l" to="tpek:hO_4GYO" resolve="getDotExpression" />
                                 </node>
                               </node>
                               <node concept="1mfA1w" id="1fE1$qdfybl" role="2OqNvi" />
@@ -1438,7 +1438,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="1xCtdgeQQp0" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1758784108619220824" resolve="GenerationContextOp_PropertyPatternRef" />
+      <ref role="30HIoZ" to="tpf3:1xCtdgeQsto" resolve="GenerationContextOp_PropertyPatternRef" />
       <node concept="gft3U" id="1xCtdgeQQB0" role="1lVwrX">
         <node concept="1eOMI4" id="1xCtdgeQQB1" role="gfFT$">
           <node concept="10QFUN" id="1xCtdgeQQB2" role="1eOMHV">
@@ -1447,7 +1447,7 @@
                 <node concept="10QFUN" id="1xCtdgeQQB5" role="1eOMHV">
                   <node concept="10Nm6u" id="1xCtdgeQQB6" role="10QFUP" />
                   <node concept="3uibUv" id="1xCtdgeQQB7" role="10QFUM">
-                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="1xCtdgeQQB8" role="lGtFl">
@@ -1456,14 +1456,14 @@
                       <node concept="3clFbF" id="1xCtdgeQQBb" role="3cqZAp">
                         <node concept="2OqwBi" id="1xCtdgeQQBc" role="3clFbG">
                           <node concept="1PxgMI" id="1xCtdgeQQBd" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                            <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                             <node concept="2OqwBi" id="1xCtdgeQQBe" role="1PxMeX">
                               <node concept="30H73N" id="1xCtdgeQQBf" role="2Oq$k0" />
                               <node concept="1mfA1w" id="1xCtdgeQQBg" role="2OqNvi" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="1xCtdgeQQBh" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1197027771414" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                           </node>
                         </node>
                       </node>
@@ -1472,7 +1472,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1xCtdgeQQBi" role="2OqNvi">
-                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetPatternVariable(java%dlang%dString)%cjava%dlang%dObject" resolve="getPatternVariable" />
+                <ref role="37wK5l" to="q383:~TemplateQueryContext.getPatternVariable(java.lang.String):java.lang.Object" resolve="getPatternVariable" />
                 <node concept="Xl_RD" id="1xCtdgeQQBj" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="1xCtdgeQQBk" role="lGtFl">
@@ -1483,7 +1483,7 @@
                           <node concept="2OqwBi" id="1xCtdgeQQBo" role="3clFbG">
                             <node concept="30H73N" id="1xCtdgeQQBp" role="2Oq$k0" />
                             <node concept="3TrcHB" id="1xCtdgeQQBq" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpf3.1758784108619487309" resolve="name_intern" />
+                              <ref role="3TsBF5" to="tpf3:1xCtdgeRtxd" resolve="name_intern" />
                             </node>
                           </node>
                         </node>
@@ -1494,21 +1494,21 @@
               </node>
             </node>
             <node concept="3uibUv" id="1xCtdgeQQBr" role="10QFUM">
-              <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               <node concept="29HgVG" id="1xCtdgeQQBs" role="lGtFl">
                 <node concept="3NFfHV" id="1xCtdgeQQBt" role="3NFExx">
                   <node concept="3clFbS" id="1xCtdgeQQBu" role="2VODD2">
                     <node concept="3clFbF" id="1xCtdgeQQBv" role="3cqZAp">
                       <node concept="2YIFZM" id="1xCtdgeQQBw" role="3clFbG">
-                        <reference role="37wK5l" target="tp2g.1201536134312" resolve="getTypeCoercedToClassifierType" />
-                        <reference role="1Pybhc" target="tp2g.1201536121399" resolve="ClassifierTypeUtil" />
+                        <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                        <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
                         <node concept="2OqwBi" id="1xCtdgeQQBx" role="37wK5m">
                           <node concept="2OqwBi" id="1xCtdgeQQBy" role="2Oq$k0">
                             <node concept="2OqwBi" id="1xCtdgeQQBz" role="2Oq$k0">
                               <node concept="2OqwBi" id="1xCtdgeQQB$" role="2Oq$k0">
                                 <node concept="30H73N" id="1xCtdgeQQB_" role="2Oq$k0" />
                                 <node concept="2qgKlT" id="1xCtdgeQQBA" role="2OqNvi">
-                                  <reference role="37wK5l" target="tpek.1224687669172" resolve="getDotExpression" />
+                                  <ref role="37wK5l" to="tpek:hO_4GYO" resolve="getDotExpression" />
                                 </node>
                               </node>
                               <node concept="1mfA1w" id="1xCtdgeQQBB" role="2OqNvi" />
@@ -1528,7 +1528,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="1xCtdgeQQp2" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1758784108619220823" resolve="GenerationContextOp_LinkPatternRef" />
+      <ref role="30HIoZ" to="tpf3:1xCtdgeQstn" resolve="GenerationContextOp_LinkPatternRef" />
       <node concept="gft3U" id="1xCtdgeQQBF" role="1lVwrX">
         <node concept="1eOMI4" id="1xCtdgeQQBG" role="gfFT$">
           <node concept="10QFUN" id="1xCtdgeQQBH" role="1eOMHV">
@@ -1537,7 +1537,7 @@
                 <node concept="10QFUN" id="1xCtdgeQQBK" role="1eOMHV">
                   <node concept="10Nm6u" id="1xCtdgeQQBL" role="10QFUP" />
                   <node concept="3uibUv" id="1xCtdgeQQBM" role="10QFUM">
-                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="1xCtdgeQQBN" role="lGtFl">
@@ -1546,14 +1546,14 @@
                       <node concept="3clFbF" id="1xCtdgeQQBQ" role="3cqZAp">
                         <node concept="2OqwBi" id="1xCtdgeQQBR" role="3clFbG">
                           <node concept="1PxgMI" id="1xCtdgeQQBS" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                            <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                             <node concept="2OqwBi" id="1xCtdgeQQBT" role="1PxMeX">
                               <node concept="30H73N" id="1xCtdgeQQBU" role="2Oq$k0" />
                               <node concept="1mfA1w" id="1xCtdgeQQBV" role="2OqNvi" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="1xCtdgeQQBW" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1197027771414" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                           </node>
                         </node>
                       </node>
@@ -1562,7 +1562,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1xCtdgeQQBX" role="2OqNvi">
-                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetPatternVariable(java%dlang%dString)%cjava%dlang%dObject" resolve="getPatternVariable" />
+                <ref role="37wK5l" to="q383:~TemplateQueryContext.getPatternVariable(java.lang.String):java.lang.Object" resolve="getPatternVariable" />
                 <node concept="Xl_RD" id="1xCtdgeQQBY" role="37wK5m">
                   <property role="Xl_RC" value="" />
                   <node concept="17Uvod" id="1xCtdgeQQBZ" role="lGtFl">
@@ -1573,7 +1573,7 @@
                           <node concept="2OqwBi" id="1xCtdgeQQC3" role="3clFbG">
                             <node concept="30H73N" id="1xCtdgeQQC4" role="2Oq$k0" />
                             <node concept="3TrcHB" id="1xCtdgeQQC5" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpf3.1758784108619487309" resolve="name_intern" />
+                              <ref role="3TsBF5" to="tpf3:1xCtdgeRtxd" resolve="name_intern" />
                             </node>
                           </node>
                         </node>
@@ -1584,21 +1584,21 @@
               </node>
             </node>
             <node concept="3uibUv" id="1xCtdgeQQC6" role="10QFUM">
-              <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               <node concept="29HgVG" id="1xCtdgeQQC7" role="lGtFl">
                 <node concept="3NFfHV" id="1xCtdgeQQC8" role="3NFExx">
                   <node concept="3clFbS" id="1xCtdgeQQC9" role="2VODD2">
                     <node concept="3clFbF" id="1xCtdgeQQCa" role="3cqZAp">
                       <node concept="2YIFZM" id="1xCtdgeQQCb" role="3clFbG">
-                        <reference role="37wK5l" target="tp2g.1201536134312" resolve="getTypeCoercedToClassifierType" />
-                        <reference role="1Pybhc" target="tp2g.1201536121399" resolve="ClassifierTypeUtil" />
+                        <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                        <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
                         <node concept="2OqwBi" id="1xCtdgeQQCc" role="37wK5m">
                           <node concept="2OqwBi" id="1xCtdgeQQCd" role="2Oq$k0">
                             <node concept="2OqwBi" id="1xCtdgeQQCe" role="2Oq$k0">
                               <node concept="2OqwBi" id="1xCtdgeQQCf" role="2Oq$k0">
                                 <node concept="30H73N" id="1xCtdgeQQCg" role="2Oq$k0" />
                                 <node concept="2qgKlT" id="1xCtdgeQQCh" role="2OqNvi">
-                                  <reference role="37wK5l" target="tpek.1224687669172" resolve="getDotExpression" />
+                                  <ref role="37wK5l" to="tpek:hO_4GYO" resolve="getDotExpression" />
                                 </node>
                               </node>
                               <node concept="1mfA1w" id="1xCtdgeQQCi" role="2OqNvi" />
@@ -1618,14 +1618,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hHKT0OE" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217369610610" resolve="GenerationContextOp_GetTemplateNode" />
+      <ref role="30HIoZ" to="tpf3:hHKSx_M" resolve="GenerationContextOp_GetTemplateNode" />
       <node concept="gft3U" id="hHKT0OF" role="1lVwrX">
         <node concept="2OqwBi" id="hHKT0OG" role="gfFT$">
           <node concept="1eOMI4" id="hHKT0OH" role="2Oq$k0">
             <node concept="10QFUN" id="hHKT0OI" role="1eOMHV">
               <node concept="10Nm6u" id="hHKT0OJ" role="10QFUP" />
               <node concept="3uibUv" id="hHKT0OK" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hHKT0OL" role="lGtFl">
@@ -1634,14 +1634,14 @@
                   <node concept="3clFbF" id="hHKT0OO" role="3cqZAp">
                     <node concept="2OqwBi" id="hHKT0OP" role="3clFbG">
                       <node concept="1PxgMI" id="hHKT0OQ" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hHKT0OR" role="1PxMeX">
                           <node concept="30H73N" id="hHKT0OS" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hHKT0OT" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hHKT0OU" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -1650,20 +1650,20 @@
             </node>
           </node>
           <node concept="liA8E" id="hHKT0OV" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetTemplateNode()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolve="getTemplateNode" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.getTemplateNode():org.jetbrains.mps.openapi.model.SNode" resolve="getTemplateNode" />
           </node>
         </node>
       </node>
     </node>
     <node concept="3aamgX" id="hIprPIZ" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1218047638031" resolve="GenerationContextOp_CreateUniqueName" />
+      <ref role="30HIoZ" to="tpf3:hIpiZCf" resolve="GenerationContextOp_CreateUniqueName" />
       <node concept="gft3U" id="hIps2IA" role="1lVwrX">
         <node concept="2OqwBi" id="hIps2IB" role="gfFT$">
           <node concept="1eOMI4" id="hIps2IC" role="2Oq$k0">
             <node concept="10QFUN" id="hIps2ID" role="1eOMHV">
               <node concept="10Nm6u" id="hIps2IE" role="10QFUP" />
               <node concept="3uibUv" id="hIps2IF" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIps2IG" role="lGtFl">
@@ -1672,14 +1672,14 @@
                   <node concept="3clFbF" id="hIps2IJ" role="3cqZAp">
                     <node concept="2OqwBi" id="hIps2IK" role="3clFbG">
                       <node concept="1PxgMI" id="hIps2IL" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hIps2IM" role="1PxMeX">
                           <node concept="30H73N" id="hIps2IN" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hIps2IO" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hIps2IP" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -1688,7 +1688,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIps2IQ" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dcreateUniqueName(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dlang%dString" resolve="createUniqueName" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.createUniqueName(java.lang.String,org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="createUniqueName" />
             <node concept="10Nm6u" id="hIps2IR" role="37wK5m">
               <node concept="29HgVG" id="hIps2IS" role="lGtFl">
                 <node concept="3NFfHV" id="hIps2IT" role="3NFExx">
@@ -1697,7 +1697,7 @@
                       <node concept="2OqwBi" id="hIps2IW" role="3clFbG">
                         <node concept="30H73N" id="hIps2IX" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hIptvS4" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1218047638032" />
+                          <ref role="3Tt5mk" to="tpf3:hIpiZCg" />
                         </node>
                       </node>
                     </node>
@@ -1715,7 +1715,7 @@
                         <node concept="2OqwBi" id="hIptIau" role="3uHU7B">
                           <node concept="30H73N" id="hIptI9J" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hIptJdr" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1218049772449" />
+                            <ref role="3Tt5mk" to="tpf3:hIpr8Ix" />
                           </node>
                         </node>
                       </node>
@@ -1733,7 +1733,7 @@
                       <node concept="2OqwBi" id="hIptQLx" role="3clFbG">
                         <node concept="30H73N" id="hIptQL1" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hIptRPV" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1218049772449" />
+                          <ref role="3Tt5mk" to="tpf3:hIpr8Ix" />
                         </node>
                       </node>
                     </node>
@@ -1746,14 +1746,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hIkizFv" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217960179967" resolve="GenerationContextOp_ShowErrorMessage" />
+      <ref role="30HIoZ" to="tpf3:hIk5nzZ" resolve="GenerationContextOp_ShowErrorMessage" />
       <node concept="gft3U" id="hIkiEMA" role="1lVwrX">
         <node concept="2OqwBi" id="hIkiEMB" role="gfFT$">
           <node concept="1eOMI4" id="hIkiEMC" role="2Oq$k0">
             <node concept="10QFUN" id="hIkiEMD" role="1eOMHV">
               <node concept="10Nm6u" id="hIkiEME" role="10QFUP" />
               <node concept="3uibUv" id="hIkiEMF" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIkiEMG" role="lGtFl">
@@ -1762,14 +1762,14 @@
                   <node concept="3clFbF" id="hIkiEMJ" role="3cqZAp">
                     <node concept="2OqwBi" id="hIkiEMK" role="3clFbG">
                       <node concept="1PxgMI" id="hIkiEML" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hIkiEMM" role="1PxMeX">
                           <node concept="30H73N" id="hIkiEMN" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hIkiEMO" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hIkiEMP" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -1778,7 +1778,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIkiEMQ" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dshowErrorMessage(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cvoid" resolve="showErrorMessage" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.showErrorMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="showErrorMessage" />
             <node concept="10Nm6u" id="hIkiKej" role="37wK5m">
               <node concept="1W57fq" id="hIkiXv9" role="lGtFl">
                 <node concept="3IZrLx" id="hIkiXva" role="3IZSJc">
@@ -1789,7 +1789,7 @@
                         <node concept="2OqwBi" id="hIkj0qY" role="3uHU7B">
                           <node concept="30H73N" id="hIkj0qu" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hIkj1dN" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1217960407512" />
+                            <ref role="3Tt5mk" to="tpf3:hIk6f7o" />
                           </node>
                         </node>
                       </node>
@@ -1807,7 +1807,7 @@
                       <node concept="2OqwBi" id="hIkj4tv" role="3clFbG">
                         <node concept="30H73N" id="hIkj4sZ" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hIkj4Zu" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1217960407512" />
+                          <ref role="3Tt5mk" to="tpf3:hIk6f7o" />
                         </node>
                       </node>
                     </node>
@@ -1823,7 +1823,7 @@
                       <node concept="2OqwBi" id="hIkiP4g" role="3clFbG">
                         <node concept="30H73N" id="hIkiP3w" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hIkiQir" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1217960314448" />
+                          <ref role="3Tt5mk" to="tpf3:hIk5Spg" />
                         </node>
                       </node>
                     </node>
@@ -1836,14 +1836,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hIkFsU_" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217969995796" resolve="GenerationContextOp_ShowWarningMessage" />
+      <ref role="30HIoZ" to="tpf3:hIkEO0k" resolve="GenerationContextOp_ShowWarningMessage" />
       <node concept="gft3U" id="hIkFsUA" role="1lVwrX">
         <node concept="2OqwBi" id="hIkFsUB" role="gfFT$">
           <node concept="1eOMI4" id="hIkFsUC" role="2Oq$k0">
             <node concept="10QFUN" id="hIkFsUD" role="1eOMHV">
               <node concept="10Nm6u" id="hIkFsUE" role="10QFUP" />
               <node concept="3uibUv" id="hIkFsUF" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIkFsUG" role="lGtFl">
@@ -1852,14 +1852,14 @@
                   <node concept="3clFbF" id="hIkFsUJ" role="3cqZAp">
                     <node concept="2OqwBi" id="hIkFsUK" role="3clFbG">
                       <node concept="1PxgMI" id="hIkFsUL" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hIkFsUM" role="1PxMeX">
                           <node concept="30H73N" id="hIkFsUN" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hIkFsUO" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hIkFsUP" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -1868,7 +1868,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIkFsUQ" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dshowWarningMessage(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cvoid" resolve="showWarningMessage" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.showWarningMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="showWarningMessage" />
             <node concept="10Nm6u" id="hIkFsUR" role="37wK5m">
               <node concept="1W57fq" id="hIkFsUS" role="lGtFl">
                 <node concept="3IZrLx" id="hIkFsUT" role="3IZSJc">
@@ -1879,7 +1879,7 @@
                         <node concept="2OqwBi" id="hIkFsUY" role="3uHU7B">
                           <node concept="30H73N" id="hIkFsUZ" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hIkFsV0" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1217960407512" />
+                            <ref role="3Tt5mk" to="tpf3:hIk6f7o" />
                           </node>
                         </node>
                       </node>
@@ -1897,7 +1897,7 @@
                       <node concept="2OqwBi" id="hIkFsV7" role="3clFbG">
                         <node concept="30H73N" id="hIkFsV8" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hIkFsV9" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1217960407512" />
+                          <ref role="3Tt5mk" to="tpf3:hIk6f7o" />
                         </node>
                       </node>
                     </node>
@@ -1913,7 +1913,7 @@
                       <node concept="2OqwBi" id="hIkFsVf" role="3clFbG">
                         <node concept="30H73N" id="hIkFsVg" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hIkFsVh" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1217960314448" />
+                          <ref role="3Tt5mk" to="tpf3:hIk5Spg" />
                         </node>
                       </node>
                     </node>
@@ -1926,14 +1926,14 @@
       </node>
     </node>
     <node concept="3aamgX" id="hIkFzmF" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217970068025" resolve="GenerationContextOp_ShowInfoMessage" />
+      <ref role="30HIoZ" to="tpf3:hIkF5CT" resolve="GenerationContextOp_ShowInfoMessage" />
       <node concept="gft3U" id="hIkFzmG" role="1lVwrX">
         <node concept="2OqwBi" id="hIkFzmH" role="gfFT$">
           <node concept="1eOMI4" id="hIkFzmI" role="2Oq$k0">
             <node concept="10QFUN" id="hIkFzmJ" role="1eOMHV">
               <node concept="10Nm6u" id="hIkFzmK" role="10QFUP" />
               <node concept="3uibUv" id="hIkFzmL" role="10QFUM">
-                <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hIkFzmM" role="lGtFl">
@@ -1942,14 +1942,14 @@
                   <node concept="3clFbF" id="hIkFzmP" role="3cqZAp">
                     <node concept="2OqwBi" id="hIkFzmQ" role="3clFbG">
                       <node concept="1PxgMI" id="hIkFzmR" role="2Oq$k0">
-                        <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                        <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="hIkFzmS" role="1PxMeX">
                           <node concept="30H73N" id="hIkFzmT" role="2Oq$k0" />
                           <node concept="1mfA1w" id="hIkFzmU" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="hIkFzmV" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -1958,7 +1958,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hIkFzmW" role="2OqNvi">
-            <reference role="37wK5l" target="q383.~TemplateQueryContext%dshowInformationMessage(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cvoid" resolve="showInformationMessage" />
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.showInformationMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="showInformationMessage" />
             <node concept="10Nm6u" id="hIkFzmX" role="37wK5m">
               <node concept="1W57fq" id="hIkFzmY" role="lGtFl">
                 <node concept="3IZrLx" id="hIkFzmZ" role="3IZSJc">
@@ -1969,7 +1969,7 @@
                         <node concept="2OqwBi" id="hIkFzn4" role="3uHU7B">
                           <node concept="30H73N" id="hIkFzn5" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hIkFzn6" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1217960407512" />
+                            <ref role="3Tt5mk" to="tpf3:hIk6f7o" />
                           </node>
                         </node>
                       </node>
@@ -1987,7 +1987,7 @@
                       <node concept="2OqwBi" id="hIkFznd" role="3clFbG">
                         <node concept="30H73N" id="hIkFzne" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hIkFznf" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1217960407512" />
+                          <ref role="3Tt5mk" to="tpf3:hIk6f7o" />
                         </node>
                       </node>
                     </node>
@@ -2003,7 +2003,7 @@
                       <node concept="2OqwBi" id="hIkFznl" role="3clFbG">
                         <node concept="30H73N" id="hIkFznm" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hIkFznn" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpf3.1217960314448" />
+                          <ref role="3Tt5mk" to="tpf3:hIk5Spg" />
                         </node>
                       </node>
                     </node>
@@ -2016,7 +2016,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="hIfZt8Y" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1068498886294" resolve="AssignmentExpression" />
+      <ref role="30HIoZ" to="tpee:fz7vLUm" resolve="AssignmentExpression" />
       <node concept="gft3U" id="hIg08mv" role="1lVwrX">
         <node concept="10Nm6u" id="hIg09l1" role="gfFT$">
           <node concept="29HgVG" id="hIg0c3n" role="lGtFl">
@@ -2030,16 +2030,16 @@
                 <node concept="3clFbF" id="hIg0PFZ" role="3cqZAp">
                   <node concept="2OqwBi" id="hIg0WYI" role="3clFbG">
                     <node concept="1PxgMI" id="hIg0Rdw" role="2Oq$k0">
-                      <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                      <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                       <node concept="2OqwBi" id="hIg0PGx" role="1PxMeX">
                         <node concept="30H73N" id="hIg0PG0" role="2Oq$k0" />
                         <node concept="3TrEf2" id="hIg0QC8" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpee.1068498886295" />
+                          <ref role="3Tt5mk" to="tpee:fz7vLUn" />
                         </node>
                       </node>
                     </node>
                     <node concept="3TrEf2" id="hIg0XH9" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpee.1197027833540" />
+                      <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                     </node>
                   </node>
                 </node>
@@ -2055,21 +2055,21 @@
               <node concept="2OqwBi" id="hIg6m2V" role="2Oq$k0">
                 <node concept="1PxgMI" id="hIg6l5B" role="2Oq$k0">
                   <property role="1BlNFB" value="true" />
-                  <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                  <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                   <node concept="2OqwBi" id="hIg6cvJ" role="1PxMeX">
                     <node concept="30H73N" id="hIg6c74" role="2Oq$k0" />
                     <node concept="3TrEf2" id="hIg6j9l" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tpee.1068498886295" />
+                      <ref role="3Tt5mk" to="tpee:fz7vLUn" />
                     </node>
                   </node>
                 </node>
                 <node concept="3TrEf2" id="hIg6mFZ" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1197027833540" />
+                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="hIg6nWR" role="2OqNvi">
                 <node concept="chp4Y" id="hIg6rbE" role="cj9EA">
-                  <reference role="cht4Q" target="tpf3.1217889960776" resolve="GenerationContextOp_UserObjectAccessBase" />
+                  <ref role="cht4Q" to="tpf3:hIfTwd8" resolve="GenerationContextOp_UserObjectAccessBase" />
                 </node>
               </node>
             </node>
@@ -2078,7 +2078,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="hIg21X9" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217889725928" resolve="GenerationContextOp_SessionObjectAccess" />
+      <ref role="30HIoZ" to="tpf3:hIfSARC" resolve="GenerationContextOp_SessionObjectAccess" />
       <node concept="14YyZ8" id="hIg26Wx" role="1lVwrX">
         <node concept="14ZrTv" id="hIg27RC" role="14ZwWg">
           <node concept="30G5F_" id="hIg27RD" role="150hEN">
@@ -2087,7 +2087,7 @@
                 <node concept="2OqwBi" id="hIg3Ucp" role="3cqZAk">
                   <node concept="30H73N" id="hIg3TQa" role="2Oq$k0" />
                   <node concept="2qgKlT" id="hIg3V5k" role="2OqNvi">
-                    <reference role="37wK5l" target="tpf5.1217892546644" resolve="isLValueInAssignment" />
+                    <ref role="37wK5l" to="tpf5:hIg3nxk" resolve="isLValueInAssignment" />
                   </node>
                 </node>
               </node>
@@ -2099,7 +2099,7 @@
                 <node concept="10QFUN" id="hIg2NLC" role="1eOMHV">
                   <node concept="10Nm6u" id="hIg2NLD" role="10QFUP" />
                   <node concept="3uibUv" id="hIg2NLE" role="10QFUM">
-                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="hIg2NLF" role="lGtFl">
@@ -2108,14 +2108,14 @@
                       <node concept="3clFbF" id="hIg2NLI" role="3cqZAp">
                         <node concept="2OqwBi" id="hIg2NLJ" role="3clFbG">
                           <node concept="1PxgMI" id="hIg2NLK" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                            <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                             <node concept="2OqwBi" id="hIg2NLL" role="1PxMeX">
                               <node concept="30H73N" id="hIg2NLM" role="2Oq$k0" />
                               <node concept="1mfA1w" id="hIg2NLN" role="2OqNvi" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="hIg2NLO" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1197027771414" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                           </node>
                         </node>
                       </node>
@@ -2124,7 +2124,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="hIg2NLP" role="2OqNvi">
-                <reference role="37wK5l" target="q383.~TemplateQueryContext%dputSessionObject(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolve="putSessionObject" />
+                <ref role="37wK5l" to="q383:~TemplateQueryContext.putSessionObject(java.lang.Object,java.lang.Object):java.lang.Object" resolve="putSessionObject" />
                 <node concept="10Nm6u" id="hIg2NLQ" role="37wK5m">
                   <node concept="29HgVG" id="hIg2NLR" role="lGtFl">
                     <node concept="3NFfHV" id="hIg2NLS" role="3NFExx">
@@ -2133,7 +2133,7 @@
                           <node concept="2OqwBi" id="hIg2NLV" role="3clFbG">
                             <node concept="30H73N" id="hIg2NLW" role="2Oq$k0" />
                             <node concept="3TrEf2" id="hIg2NLX" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpf3.1217890689512" />
+                              <ref role="3Tt5mk" to="tpf3:hIfWi7C" />
                             </node>
                           </node>
                         </node>
@@ -2148,10 +2148,10 @@
                         <node concept="3clFbF" id="hIg2We7" role="3cqZAp">
                           <node concept="2OqwBi" id="hIg2ZwK" role="3clFbG">
                             <node concept="1PxgMI" id="hIg2YBP" role="2Oq$k0">
-                              <reference role="1PxNhF" target="tpee.1068498886294" resolve="AssignmentExpression" />
+                              <ref role="1PxNhF" to="tpee:fz7vLUm" resolve="AssignmentExpression" />
                               <node concept="2OqwBi" id="hIg2Y3D" role="1PxMeX">
                                 <node concept="1PxgMI" id="hIg7nTJ" role="2Oq$k0">
-                                  <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                                  <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                                   <node concept="2OqwBi" id="hIg2WeC" role="1PxMeX">
                                     <node concept="30H73N" id="hIg2We8" role="2Oq$k0" />
                                     <node concept="1mfA1w" id="hIg2XHT" role="2OqNvi" />
@@ -2161,7 +2161,7 @@
                               </node>
                             </node>
                             <node concept="3TrEf2" id="hIg305q" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1068498886297" />
+                              <ref role="3Tt5mk" to="tpee:fz7vLUp" />
                             </node>
                           </node>
                         </node>
@@ -2179,7 +2179,7 @@
               <node concept="10QFUN" id="hIg2CJ9" role="1eOMHV">
                 <node concept="10Nm6u" id="hIg2CJa" role="10QFUP" />
                 <node concept="3uibUv" id="hIg2CJb" role="10QFUM">
-                  <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                  <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                 </node>
               </node>
               <node concept="29HgVG" id="hIg2CJc" role="lGtFl">
@@ -2188,14 +2188,14 @@
                     <node concept="3clFbF" id="hIg2CJf" role="3cqZAp">
                       <node concept="2OqwBi" id="hIg2CJg" role="3clFbG">
                         <node concept="1PxgMI" id="hIg2CJh" role="2Oq$k0">
-                          <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                          <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                           <node concept="2OqwBi" id="hIg2CJi" role="1PxMeX">
                             <node concept="30H73N" id="hIg2CJj" role="2Oq$k0" />
                             <node concept="1mfA1w" id="hIg2CJk" role="2OqNvi" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="hIg2CJl" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpee.1197027771414" />
+                          <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                         </node>
                       </node>
                     </node>
@@ -2204,7 +2204,7 @@
               </node>
             </node>
             <node concept="liA8E" id="hIg2CJm" role="2OqNvi">
-              <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetSessionObject(java%dlang%dObject)%cjava%dlang%dObject" resolve="getSessionObject" />
+              <ref role="37wK5l" to="q383:~TemplateQueryContext.getSessionObject(java.lang.Object):java.lang.Object" resolve="getSessionObject" />
               <node concept="10Nm6u" id="hIg2HgF" role="37wK5m">
                 <node concept="29HgVG" id="hIg2IuP" role="lGtFl">
                   <node concept="3NFfHV" id="hIg2IuQ" role="3NFExx">
@@ -2213,7 +2213,7 @@
                         <node concept="2OqwBi" id="hIg2K5V" role="3clFbG">
                           <node concept="30H73N" id="hIg2J$u" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hIg2L7D" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1217890689512" />
+                            <ref role="3Tt5mk" to="tpf3:hIfWi7C" />
                           </node>
                         </node>
                       </node>
@@ -2227,7 +2227,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="hIg9ER2" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217894011536" resolve="GenerationContextOp_StepObjectAccess" />
+      <ref role="30HIoZ" to="tpf3:hIg8Xag" resolve="GenerationContextOp_StepObjectAccess" />
       <node concept="14YyZ8" id="hIg9ER3" role="1lVwrX">
         <node concept="14ZrTv" id="hIg9ER4" role="14ZwWg">
           <node concept="30G5F_" id="hIg9ER5" role="150hEN">
@@ -2236,7 +2236,7 @@
                 <node concept="2OqwBi" id="hIg9ER8" role="3cqZAk">
                   <node concept="30H73N" id="hIg9ER9" role="2Oq$k0" />
                   <node concept="2qgKlT" id="hIg9ERa" role="2OqNvi">
-                    <reference role="37wK5l" target="tpf5.1217892546644" resolve="isLValueInAssignment" />
+                    <ref role="37wK5l" to="tpf5:hIg3nxk" resolve="isLValueInAssignment" />
                   </node>
                 </node>
               </node>
@@ -2248,7 +2248,7 @@
                 <node concept="10QFUN" id="hIg9ERe" role="1eOMHV">
                   <node concept="10Nm6u" id="hIg9ERf" role="10QFUP" />
                   <node concept="3uibUv" id="hIg9ERg" role="10QFUM">
-                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="hIg9ERh" role="lGtFl">
@@ -2257,14 +2257,14 @@
                       <node concept="3clFbF" id="hIg9ERk" role="3cqZAp">
                         <node concept="2OqwBi" id="hIg9ERl" role="3clFbG">
                           <node concept="1PxgMI" id="hIg9ERm" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                            <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                             <node concept="2OqwBi" id="hIg9ERn" role="1PxMeX">
                               <node concept="30H73N" id="hIg9ERo" role="2Oq$k0" />
                               <node concept="1mfA1w" id="hIg9ERp" role="2OqNvi" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="hIg9ERq" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1197027771414" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                           </node>
                         </node>
                       </node>
@@ -2273,7 +2273,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="hIg9ERr" role="2OqNvi">
-                <reference role="37wK5l" target="q383.~TemplateQueryContext%dputStepObject(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolve="putStepObject" />
+                <ref role="37wK5l" to="q383:~TemplateQueryContext.putStepObject(java.lang.Object,java.lang.Object):java.lang.Object" resolve="putStepObject" />
                 <node concept="10Nm6u" id="hIg9ERs" role="37wK5m">
                   <node concept="29HgVG" id="hIg9ERt" role="lGtFl">
                     <node concept="3NFfHV" id="hIg9ERu" role="3NFExx">
@@ -2282,7 +2282,7 @@
                           <node concept="2OqwBi" id="hIg9ERx" role="3clFbG">
                             <node concept="30H73N" id="hIg9ERy" role="2Oq$k0" />
                             <node concept="3TrEf2" id="hIg9ERz" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpf3.1217890689512" />
+                              <ref role="3Tt5mk" to="tpf3:hIfWi7C" />
                             </node>
                           </node>
                         </node>
@@ -2297,10 +2297,10 @@
                         <node concept="3clFbF" id="hIg9ERC" role="3cqZAp">
                           <node concept="2OqwBi" id="hIg9ERD" role="3clFbG">
                             <node concept="1PxgMI" id="hIg9ERE" role="2Oq$k0">
-                              <reference role="1PxNhF" target="tpee.1068498886294" resolve="AssignmentExpression" />
+                              <ref role="1PxNhF" to="tpee:fz7vLUm" resolve="AssignmentExpression" />
                               <node concept="2OqwBi" id="hIg9ERF" role="1PxMeX">
                                 <node concept="1PxgMI" id="hIg9ERG" role="2Oq$k0">
-                                  <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                                  <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                                   <node concept="2OqwBi" id="hIg9ERH" role="1PxMeX">
                                     <node concept="30H73N" id="hIg9ERI" role="2Oq$k0" />
                                     <node concept="1mfA1w" id="hIg9ERJ" role="2OqNvi" />
@@ -2310,7 +2310,7 @@
                               </node>
                             </node>
                             <node concept="3TrEf2" id="hIg9ERL" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1068498886297" />
+                              <ref role="3Tt5mk" to="tpee:fz7vLUp" />
                             </node>
                           </node>
                         </node>
@@ -2328,7 +2328,7 @@
               <node concept="10QFUN" id="hIg9ERP" role="1eOMHV">
                 <node concept="10Nm6u" id="hIg9ERQ" role="10QFUP" />
                 <node concept="3uibUv" id="hIg9ERR" role="10QFUM">
-                  <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                  <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                 </node>
               </node>
               <node concept="29HgVG" id="hIg9ERS" role="lGtFl">
@@ -2337,14 +2337,14 @@
                     <node concept="3clFbF" id="hIg9ERV" role="3cqZAp">
                       <node concept="2OqwBi" id="hIg9ERW" role="3clFbG">
                         <node concept="1PxgMI" id="hIg9ERX" role="2Oq$k0">
-                          <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                          <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                           <node concept="2OqwBi" id="hIg9ERY" role="1PxMeX">
                             <node concept="30H73N" id="hIg9ERZ" role="2Oq$k0" />
                             <node concept="1mfA1w" id="hIg9ES0" role="2OqNvi" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="hIg9ES1" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpee.1197027771414" />
+                          <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                         </node>
                       </node>
                     </node>
@@ -2353,7 +2353,7 @@
               </node>
             </node>
             <node concept="liA8E" id="hIg9ES2" role="2OqNvi">
-              <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetStepObject(java%dlang%dObject)%cjava%dlang%dObject" resolve="getStepObject" />
+              <ref role="37wK5l" to="q383:~TemplateQueryContext.getStepObject(java.lang.Object):java.lang.Object" resolve="getStepObject" />
               <node concept="10Nm6u" id="hIg9ES3" role="37wK5m">
                 <node concept="29HgVG" id="hIg9ES4" role="lGtFl">
                   <node concept="3NFfHV" id="hIg9ES5" role="3NFExx">
@@ -2362,7 +2362,7 @@
                         <node concept="2OqwBi" id="hIg9ES8" role="3clFbG">
                           <node concept="30H73N" id="hIg9ES9" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hIg9ESa" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1217890689512" />
+                            <ref role="3Tt5mk" to="tpf3:hIfWi7C" />
                           </node>
                         </node>
                       </node>
@@ -2376,7 +2376,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="hIg9Ff8" role="3acgRq">
-      <reference role="30HIoZ" target="tpf3.1217894033795" resolve="GenerationContextOp_TransientObjectAccess" />
+      <ref role="30HIoZ" to="tpf3:hIg92A3" resolve="GenerationContextOp_TransientObjectAccess" />
       <node concept="14YyZ8" id="hIg9Ff9" role="1lVwrX">
         <node concept="14ZrTv" id="hIg9Ffa" role="14ZwWg">
           <node concept="30G5F_" id="hIg9Ffb" role="150hEN">
@@ -2385,7 +2385,7 @@
                 <node concept="2OqwBi" id="hIg9Ffe" role="3cqZAk">
                   <node concept="30H73N" id="hIg9Fff" role="2Oq$k0" />
                   <node concept="2qgKlT" id="hIg9Ffg" role="2OqNvi">
-                    <reference role="37wK5l" target="tpf5.1217892546644" resolve="isLValueInAssignment" />
+                    <ref role="37wK5l" to="tpf5:hIg3nxk" resolve="isLValueInAssignment" />
                   </node>
                 </node>
               </node>
@@ -2397,7 +2397,7 @@
                 <node concept="10QFUN" id="hIg9Ffk" role="1eOMHV">
                   <node concept="10Nm6u" id="hIg9Ffl" role="10QFUP" />
                   <node concept="3uibUv" id="hIg9Ffm" role="10QFUM">
-                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                   </node>
                 </node>
                 <node concept="29HgVG" id="hIg9Ffn" role="lGtFl">
@@ -2406,14 +2406,14 @@
                       <node concept="3clFbF" id="hIg9Ffq" role="3cqZAp">
                         <node concept="2OqwBi" id="hIg9Ffr" role="3clFbG">
                           <node concept="1PxgMI" id="hIg9Ffs" role="2Oq$k0">
-                            <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                            <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                             <node concept="2OqwBi" id="hIg9Fft" role="1PxMeX">
                               <node concept="30H73N" id="hIg9Ffu" role="2Oq$k0" />
                               <node concept="1mfA1w" id="hIg9Ffv" role="2OqNvi" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="hIg9Ffw" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1197027771414" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                           </node>
                         </node>
                       </node>
@@ -2422,7 +2422,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="hIg9Ffx" role="2OqNvi">
-                <reference role="37wK5l" target="q383.~TemplateQueryContext%dputTransientObject(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolve="putTransientObject" />
+                <ref role="37wK5l" to="q383:~TemplateQueryContext.putTransientObject(java.lang.Object,java.lang.Object):java.lang.Object" resolve="putTransientObject" />
                 <node concept="10Nm6u" id="hIg9Ffy" role="37wK5m">
                   <node concept="29HgVG" id="hIg9Ffz" role="lGtFl">
                     <node concept="3NFfHV" id="hIg9Ff$" role="3NFExx">
@@ -2431,7 +2431,7 @@
                           <node concept="2OqwBi" id="hIg9FfB" role="3clFbG">
                             <node concept="30H73N" id="hIg9FfC" role="2Oq$k0" />
                             <node concept="3TrEf2" id="hIg9FfD" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpf3.1217890689512" />
+                              <ref role="3Tt5mk" to="tpf3:hIfWi7C" />
                             </node>
                           </node>
                         </node>
@@ -2446,10 +2446,10 @@
                         <node concept="3clFbF" id="hIg9FfI" role="3cqZAp">
                           <node concept="2OqwBi" id="hIg9FfJ" role="3clFbG">
                             <node concept="1PxgMI" id="hIg9FfK" role="2Oq$k0">
-                              <reference role="1PxNhF" target="tpee.1068498886294" resolve="AssignmentExpression" />
+                              <ref role="1PxNhF" to="tpee:fz7vLUm" resolve="AssignmentExpression" />
                               <node concept="2OqwBi" id="hIg9FfL" role="1PxMeX">
                                 <node concept="1PxgMI" id="hIg9FfM" role="2Oq$k0">
-                                  <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                                  <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                                   <node concept="2OqwBi" id="hIg9FfN" role="1PxMeX">
                                     <node concept="30H73N" id="hIg9FfO" role="2Oq$k0" />
                                     <node concept="1mfA1w" id="hIg9FfP" role="2OqNvi" />
@@ -2459,7 +2459,7 @@
                               </node>
                             </node>
                             <node concept="3TrEf2" id="hIg9FfR" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1068498886297" />
+                              <ref role="3Tt5mk" to="tpee:fz7vLUp" />
                             </node>
                           </node>
                         </node>
@@ -2477,7 +2477,7 @@
               <node concept="10QFUN" id="hIg9FfV" role="1eOMHV">
                 <node concept="10Nm6u" id="hIg9FfW" role="10QFUP" />
                 <node concept="3uibUv" id="hIg9FfX" role="10QFUM">
-                  <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                  <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                 </node>
               </node>
               <node concept="29HgVG" id="hIg9FfY" role="lGtFl">
@@ -2486,14 +2486,14 @@
                     <node concept="3clFbF" id="hIg9Fg1" role="3cqZAp">
                       <node concept="2OqwBi" id="hIg9Fg2" role="3clFbG">
                         <node concept="1PxgMI" id="hIg9Fg3" role="2Oq$k0">
-                          <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                          <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                           <node concept="2OqwBi" id="hIg9Fg4" role="1PxMeX">
                             <node concept="30H73N" id="hIg9Fg5" role="2Oq$k0" />
                             <node concept="1mfA1w" id="hIg9Fg6" role="2OqNvi" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="hIg9Fg7" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tpee.1197027771414" />
+                          <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                         </node>
                       </node>
                     </node>
@@ -2502,7 +2502,7 @@
               </node>
             </node>
             <node concept="liA8E" id="hIg9Fg8" role="2OqNvi">
-              <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetTransientObject(java%dlang%dObject)%cjava%dlang%dObject" resolve="getTransientObject" />
+              <ref role="37wK5l" to="q383:~TemplateQueryContext.getTransientObject(java.lang.Object):java.lang.Object" resolve="getTransientObject" />
               <node concept="10Nm6u" id="hIg9Fg9" role="37wK5m">
                 <node concept="29HgVG" id="hIg9Fga" role="lGtFl">
                   <node concept="3NFfHV" id="hIg9Fgb" role="3NFExx">
@@ -2511,7 +2511,7 @@
                         <node concept="2OqwBi" id="hIg9Fge" role="3clFbG">
                           <node concept="30H73N" id="hIg9Fgf" role="2Oq$k0" />
                           <node concept="3TrEf2" id="hIg9Fgg" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpf3.1217890689512" />
+                            <ref role="3Tt5mk" to="tpf3:hIfWi7C" />
                           </node>
                         </node>
                       </node>
@@ -2526,7 +2526,7 @@
     </node>
     <node concept="3aamgX" id="5fJgQL6kSa$" role="3acgRq">
       <property role="2n97ot" value="Operation to extract proxy object for a previously exported transformation" />
-      <reference role="30HIoZ" target="tpf3.494100551407707431" resolve="GenerationContextOp_GetExport" />
+      <ref role="30HIoZ" to="tpf3:rrptlDYMkB" resolve="GenerationContextOp_GetExport" />
       <node concept="1Koe21" id="5fJgQL6lfQZ" role="1lVwrX">
         <node concept="3clFb_" id="5fJgQL6lfRe" role="1Koe22">
           <property role="TrG5h" value="m" />
@@ -2536,7 +2536,7 @@
             <node concept="3clFbF" id="5fJgQL6lzmM" role="3cqZAp">
               <node concept="2OqwBi" id="5fJgQL6lzOO" role="3clFbG">
                 <node concept="37vLTw" id="5fJgQL6lzmL" role="2Oq$k0">
-                  <reference role="3cqZAo" target="6048126956897449365" resolve="ctx" />
+                  <ref role="3cqZAo" node="5fJgQL6lzml" resolve="ctx" />
                   <node concept="29HgVG" id="7TF82ziqQaU" role="lGtFl">
                     <node concept="3NFfHV" id="7TF82ziqQrt" role="3NFExx">
                       <node concept="3clFbS" id="7TF82ziqQru" role="2VODD2">
@@ -2544,14 +2544,14 @@
                           <node concept="2OqwBi" id="7TF82zir1pv" role="3clFbG">
                             <node concept="1PxgMI" id="7TF82zir1iz" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
-                              <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                              <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                               <node concept="2OqwBi" id="7TF82ziqQvK" role="1PxMeX">
                                 <node concept="30H73N" id="7TF82ziqQsX" role="2Oq$k0" />
                                 <node concept="1mfA1w" id="7TF82zir0se" role="2OqNvi" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="7TF82zir24a" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1197027771414" />
+                              <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                             </node>
                           </node>
                         </node>
@@ -2560,7 +2560,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="5fJgQL6l$9a" role="2OqNvi">
-                  <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetOutputNodeProxy(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolve="getOutputNodeProxy" />
+                  <ref role="37wK5l" to="q383:~TemplateQueryContext.getOutputNodeProxy(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeProxy" />
                   <node concept="10Nm6u" id="5fJgQL6lB3T" role="37wK5m">
                     <node concept="29HgVG" id="5fJgQL6lP12" role="lGtFl">
                       <node concept="3NFfHV" id="5fJgQL6lP13" role="3NFExx">
@@ -2568,7 +2568,7 @@
                           <node concept="3clFbF" id="5fJgQL6lP1a" role="3cqZAp">
                             <node concept="2OqwBi" id="5fJgQL6lP15" role="3clFbG">
                               <node concept="3TrEf2" id="1yjqjC7Luml" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tpf3.1770874776445951671" />
+                                <ref role="3Tt5mk" to="tpf3:1yjqjC7KDUR" />
                               </node>
                               <node concept="30H73N" id="5fJgQL6lP19" role="2Oq$k0" />
                             </node>
@@ -2587,7 +2587,7 @@
                             <node concept="2OqwBi" id="5fJgQL6lBnQ" role="3clFbG">
                               <node concept="30H73N" id="5fJgQL6lBiR" role="2Oq$k0" />
                               <node concept="3TrcHB" id="6Grr_rb4RR8" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpf3.7717883705482693609" resolve="name_intern" />
+                                <ref role="3TsBF5" to="tpf3:6Grr_rb4$JD" resolve="name_intern" />
                               </node>
                             </node>
                           </node>
@@ -2603,7 +2603,7 @@
           <node concept="37vLTG" id="5fJgQL6lzml" role="3clF46">
             <property role="TrG5h" value="ctx" />
             <node concept="3uibUv" id="5fJgQL6lzmk" role="1tU5fm">
-              <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
             </node>
           </node>
         </node>

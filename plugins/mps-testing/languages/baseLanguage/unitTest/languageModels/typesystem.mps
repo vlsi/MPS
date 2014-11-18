@@ -205,10 +205,10 @@
           <node concept="1Z2H0r" id="1KPHzfPK7sY" role="mwGJk">
             <node concept="2OqwBi" id="1KPHzfPK7sZ" role="1Z2MuG">
               <node concept="1YBJjd" id="1KPHzfPK7t0" role="2Oq$k0">
-                <reference role="1YBMHb" target="7080278351417151338" resolve="message" />
+                <ref role="1YBMHb" node="692cUnf6SXE" resolve="message" />
               </node>
               <node concept="3TrEf2" id="1KPHzfPK7t1" role="2OqNvi">
-                <reference role="3Tt5mk" target="tpe3.1172073511101" />
+                <ref role="3Tt5mk" to="tpe3:h3_1ByX" />
               </node>
             </node>
           </node>
@@ -222,7 +222,7 @@
     </node>
     <node concept="1YaCAy" id="692cUnf6SXE" role="1YuTPh">
       <property role="TrG5h" value="message" />
-      <reference role="1YaFvo" target="tpe3.1172073500303" resolve="Message" />
+      <ref role="1YaFvo" to="tpe3:h3_1$Uf" resolve="Message" />
     </node>
   </node>
   <node concept="18kY7G" id="6gjERySwVYQ">
@@ -231,7 +231,7 @@
     <node concept="3clFbS" id="6gjERySwVYR" role="18ibNy" />
     <node concept="1YaCAy" id="6gjERySwVYS" role="1YuTPh">
       <property role="TrG5h" value="test" />
-      <reference role="1YaFvo" target="tpe3.1171931851043" resolve="BTestCase" />
+      <ref role="1YaFvo" to="tpe3:h3s_e$z" resolve="BTestCase" />
     </node>
   </node>
   <node concept="18kY7G" id="7Cm4l4AYZ5g">
@@ -240,17 +240,17 @@
       <node concept="3clFbJ" id="7Cm4l4B9v9B" role="3cqZAp">
         <node concept="3fqX7Q" id="7Cm4l4B9vaF" role="3clFbw">
           <node concept="2YIFZM" id="7Cm4l4B9vzO" role="3fr31v">
-            <reference role="37wK5l" target="8797237962361664470" resolve="checkPluginKindForMPSTestCase" />
-            <reference role="1Pybhc" target="8797237962361650880" resolve="CheckUtils" />
+            <ref role="37wK5l" node="7Cm4l4B9vfm" resolve="checkPluginKindForMPSTestCase" />
+            <ref role="1Pybhc" node="7Cm4l4B9rV0" resolve="CheckUtils" />
             <node concept="1YBJjd" id="7Cm4l4B9v$8" role="37wK5m">
-              <reference role="1YBMHb" target="8797237962358949633" resolve="testCase" />
+              <ref role="1YBMHb" node="7Cm4l4AZ8s1" resolve="testCase" />
             </node>
           </node>
         </node>
         <node concept="3clFbS" id="7Cm4l4B9v9D" role="3clFbx">
           <node concept="2MkqsV" id="7Cm4l4B9pJ8" role="3cqZAp">
             <node concept="1YBJjd" id="7Cm4l4B9pSB" role="2OEOjV">
-              <reference role="1YBMHb" target="8797237962358949633" resolve="testCase" />
+              <ref role="1YBMHb" node="7Cm4l4AZ8s1" resolve="testCase" />
             </node>
             <node concept="Xl_RD" id="7Cm4l4B9pJp" role="2MkJ7o">
               <property role="Xl_RC" value="MPS related test cases should be created in plugin solutions" />
@@ -261,7 +261,7 @@
     </node>
     <node concept="1YaCAy" id="7Cm4l4AZ8s1" role="1YuTPh">
       <property role="TrG5h" value="testCase" />
-      <reference role="1YaFvo" target="tpe3.1216130694486" resolve="ITestCase" />
+      <ref role="1YaFvo" to="tpe3:hGB2rPm" resolve="ITestCase" />
     </node>
   </node>
   <node concept="312cEu" id="7Cm4l4B9rV0">
@@ -280,7 +280,7 @@
       <node concept="37vLTG" id="7Cm4l4B9rXE" role="3clF46">
         <property role="TrG5h" value="testCase" />
         <node concept="3Tqbb2" id="7Cm4l4B9rXM" role="1tU5fm">
-          <reference role="ehGHo" target="tpe3.1216130694486" resolve="ITestCase" />
+          <ref role="ehGHo" to="tpe3:hGB2rPm" resolve="ITestCase" />
         </node>
       </node>
       <node concept="3clFbS" id="7Cm4l4B9rWr" role="3clF47">
@@ -291,27 +291,27 @@
               <node concept="2JrnkZ" id="7Cm4l4B9s7e" role="2Oq$k0">
                 <node concept="2OqwBi" id="7Cm4l4B9s7f" role="2JrQYb">
                   <node concept="37vLTw" id="7Cm4l4B9s__" role="2Oq$k0">
-                    <reference role="3cqZAo" target="8797237962361651050" resolve="testCase" />
+                    <ref role="3cqZAo" node="7Cm4l4B9rXE" resolve="testCase" />
                   </node>
                   <node concept="I4A8Y" id="7Cm4l4B9s7g" role="2OqNvi" />
                 </node>
               </node>
               <node concept="liA8E" id="7Cm4l4B9s7j" role="2OqNvi">
-                <reference role="37wK5l" target="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolve="getModule" />
+                <ref role="37wK5l" to="ec5l:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
               </node>
             </node>
             <node concept="3uibUv" id="7Cm4l4B9s7k" role="1tU5fm">
-              <reference role="3uigEE" target="88zw.~SModule" resolve="SModule" />
+              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
             </node>
           </node>
         </node>
         <node concept="3clFbJ" id="7Cm4l4B9s7l" role="3cqZAp">
           <node concept="2OqwBi" id="7Cm4l4B9s7m" role="3clFbw">
             <node concept="37vLTw" id="7Cm4l4B9sCb" role="2Oq$k0">
-              <reference role="3cqZAo" target="8797237962361651050" resolve="testCase" />
+              <ref role="3cqZAo" node="7Cm4l4B9rXE" resolve="testCase" />
             </node>
             <node concept="2qgKlT" id="7Cm4l4B9s7n" role="2OqNvi">
-              <reference role="37wK5l" target="tpe5.3310779261129403089" resolve="isMpsStartRequired" />
+              <ref role="37wK5l" to="tpe5:2RMg39tmiFh" resolve="isMpsStartRequired" />
             </node>
           </node>
           <node concept="3clFbS" id="7Cm4l4B9s7p" role="3clFbx">
@@ -320,30 +320,30 @@
                 <node concept="3y3z36" id="7Cm4l4B9s7t" role="3uHU7w">
                   <node concept="2OqwBi" id="7Cm4l4B9s7x" role="3uHU7B">
                     <node concept="liA8E" id="7Cm4l4B9s7y" role="2OqNvi">
-                      <reference role="37wK5l" target="vsqj.~Solution%dgetKind()%cjetbrains%dmps%dproject%dstructure%dmodules%dSolutionKind" resolve="getKind" />
+                      <ref role="37wK5l" to="vsqj:~Solution.getKind():jetbrains.mps.project.structure.modules.SolutionKind" resolve="getKind" />
                     </node>
                     <node concept="1eOMI4" id="7Cm4l4B9s7z" role="2Oq$k0">
                       <node concept="10QFUN" id="7Cm4l4B9s7$" role="1eOMHV">
                         <node concept="3uibUv" id="7Cm4l4B9s7_" role="10QFUM">
-                          <reference role="3uigEE" target="vsqj.~Solution" resolve="Solution" />
+                          <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
                         </node>
                         <node concept="37vLTw" id="7Cm4l4B9s7A" role="10QFUP">
-                          <reference role="3cqZAo" target="8797237962361651659" resolve="module" />
+                          <ref role="3cqZAo" node="7Cm4l4B9s7b" resolve="module" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="Rm8GO" id="7Cm4l4B9s7u" role="3uHU7w">
-                    <reference role="Rm8GQ" target="kqhl.~SolutionKind%dNONE" resolve="NONE" />
-                    <reference role="1Px2BO" target="kqhl.~SolutionKind" resolve="SolutionKind" />
+                    <ref role="Rm8GQ" to="kqhl:~SolutionKind.NONE" resolve="NONE" />
+                    <ref role="1Px2BO" to="kqhl:~SolutionKind" resolve="SolutionKind" />
                   </node>
                 </node>
                 <node concept="2ZW3vV" id="7Cm4l4B9s7B" role="3uHU7B">
                   <node concept="3uibUv" id="7Cm4l4B9s7C" role="2ZW6by">
-                    <reference role="3uigEE" target="vsqj.~Solution" resolve="Solution" />
+                    <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
                   </node>
                   <node concept="37vLTw" id="7Cm4l4B9s7D" role="2ZW6bz">
-                    <reference role="3cqZAo" target="8797237962361651659" resolve="module" />
+                    <ref role="3cqZAo" node="7Cm4l4B9s7b" resolve="module" />
                   </node>
                 </node>
               </node>
@@ -370,9 +370,9 @@
       <node concept="3clFbS" id="HPU8mWQuRs" role="3clF47">
         <node concept="3clFbJ" id="HPU8mWQy_Z" role="3cqZAp">
           <node concept="1rXfSq" id="HPU8mWQyAp" role="3clFbw">
-            <reference role="37wK5l" target="8797237962361664470" resolve="checkPluginKindForMPSTestCase" />
+            <ref role="37wK5l" node="7Cm4l4B9vfm" resolve="checkPluginKindForMPSTestCase" />
             <node concept="37vLTw" id="HPU8mWQyAP" role="37wK5m">
-              <reference role="3cqZAo" target="825821767789062355" resolve="testCase" />
+              <ref role="3cqZAo" node="HPU8mWQyzj" resolve="testCase" />
             </node>
           </node>
           <node concept="3clFbS" id="HPU8mWQyA1" role="3clFbx">
@@ -393,19 +393,19 @@
           <node concept="3cpWsn" id="HPU8mWQyYy" role="3cpWs9">
             <property role="TrG5h" value="module" />
             <node concept="3uibUv" id="2SWgdY_NnRp" role="1tU5fm">
-              <reference role="3uigEE" target="88zw.~SModule" resolve="SModule" />
+              <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
             </node>
             <node concept="2EnYce" id="HPU8mWQyYz" role="33vP2m">
               <node concept="2JrnkZ" id="HPU8mWQyY_" role="2Oq$k0">
                 <node concept="2OqwBi" id="HPU8mWQyYA" role="2JrQYb">
                   <node concept="37vLTw" id="HPU8mWQzce" role="2Oq$k0">
-                    <reference role="3cqZAo" target="825821767789062355" resolve="testCase" />
+                    <ref role="3cqZAo" node="HPU8mWQyzj" resolve="testCase" />
                   </node>
                   <node concept="I4A8Y" id="HPU8mWQyYB" role="2OqNvi" />
                 </node>
               </node>
               <node concept="liA8E" id="HPU8mWQyYD" role="2OqNvi">
-                <reference role="37wK5l" target="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolve="getModule" />
+                <ref role="37wK5l" to="ec5l:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
               </node>
             </node>
           </node>
@@ -413,10 +413,10 @@
         <node concept="3clFbJ" id="7Cm4l4B9DJA" role="3cqZAp">
           <node concept="2ZW3vV" id="7Cm4l4B9DX4" role="3clFbw">
             <node concept="3uibUv" id="7Cm4l4B9DXV" role="2ZW6by">
-              <reference role="3uigEE" target="vsqj.~Solution" resolve="Solution" />
+              <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
             </node>
             <node concept="37vLTw" id="7Cm4l4B9DRE" role="2ZW6bz">
-              <reference role="3cqZAo" target="825821767789064098" resolve="module" />
+              <ref role="3cqZAo" node="HPU8mWQyYy" resolve="module" />
             </node>
           </node>
           <node concept="3clFbS" id="7Cm4l4B9DJC" role="3clFbx">
@@ -425,21 +425,21 @@
                 <property role="TrG5h" value="descriptor" />
                 <node concept="2OqwBi" id="7Cm4l4B9Fox" role="33vP2m">
                   <node concept="liA8E" id="7Cm4l4B9Iqw" role="2OqNvi">
-                    <reference role="37wK5l" target="vsqj.~Solution%dgetModuleDescriptor()%cjetbrains%dmps%dproject%dstructure%dmodules%dSolutionDescriptor" resolve="getModuleDescriptor" />
+                    <ref role="37wK5l" to="vsqj:~Solution.getModuleDescriptor():jetbrains.mps.project.structure.modules.SolutionDescriptor" resolve="getModuleDescriptor" />
                   </node>
                   <node concept="1eOMI4" id="7Cm4l4B9Ff_" role="2Oq$k0">
                     <node concept="10QFUN" id="7Cm4l4B9Ffy" role="1eOMHV">
                       <node concept="3uibUv" id="7Cm4l4B9FfB" role="10QFUM">
-                        <reference role="3uigEE" target="vsqj.~Solution" resolve="Solution" />
+                        <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
                       </node>
                       <node concept="37vLTw" id="7Cm4l4B9FfC" role="10QFUP">
-                        <reference role="3cqZAo" target="825821767789064098" resolve="module" />
+                        <ref role="3cqZAo" node="HPU8mWQyYy" resolve="module" />
                       </node>
                     </node>
                   </node>
                 </node>
                 <node concept="3uibUv" id="7Cm4l4B9FdR" role="1tU5fm">
-                  <reference role="3uigEE" target="kqhl.~SolutionDescriptor" resolve="SolutionDescriptor" />
+                  <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
                 </node>
               </node>
             </node>
@@ -451,14 +451,14 @@
             <node concept="3clFbF" id="7Cm4l4B9IvE" role="3cqZAp">
               <node concept="2OqwBi" id="7Cm4l4B9I$U" role="3clFbG">
                 <node concept="liA8E" id="7Cm4l4B9J9o" role="2OqNvi">
-                  <reference role="37wK5l" target="kqhl.~SolutionDescriptor%dsetKind(jetbrains%dmps%dproject%dstructure%dmodules%dSolutionKind)%cvoid" resolve="setKind" />
+                  <ref role="37wK5l" to="kqhl:~SolutionDescriptor.setKind(jetbrains.mps.project.structure.modules.SolutionKind):void" resolve="setKind" />
                   <node concept="Rm8GO" id="7Cm4l4B9JhK" role="37wK5m">
-                    <reference role="Rm8GQ" target="kqhl.~SolutionKind%dPLUGIN_OTHER" resolve="PLUGIN_OTHER" />
-                    <reference role="1Px2BO" target="kqhl.~SolutionKind" resolve="SolutionKind" />
+                    <ref role="Rm8GQ" to="kqhl:~SolutionKind.PLUGIN_OTHER" resolve="PLUGIN_OTHER" />
+                    <ref role="1Px2BO" to="kqhl:~SolutionKind" resolve="SolutionKind" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="7Cm4l4B9IvD" role="2Oq$k0">
-                  <reference role="3cqZAo" target="8797237962361713526" resolve="descriptor" />
+                  <ref role="3cqZAo" node="7Cm4l4B9FdQ" resolve="descriptor" />
                 </node>
               </node>
             </node>
@@ -467,15 +467,15 @@
                 <node concept="1eOMI4" id="2SWgdY_NmGp" role="2Oq$k0">
                   <node concept="10QFUN" id="2SWgdY_NmGq" role="1eOMHV">
                     <node concept="3uibUv" id="2SWgdY_Nofy" role="10QFUM">
-                      <reference role="3uigEE" target="vsqj.~Solution" resolve="Solution" />
+                      <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
                     </node>
                     <node concept="37vLTw" id="2SWgdY_NmGo" role="10QFUP">
-                      <reference role="3cqZAo" target="825821767789064098" resolve="module" />
+                      <ref role="3cqZAo" node="HPU8mWQyYy" resolve="module" />
                     </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="HPU8mWQbmn" role="2OqNvi">
-                  <reference role="37wK5l" target="vsqj.~AbstractModule%dsetChanged()%cvoid" resolve="setChanged" />
+                  <ref role="37wK5l" to="vsqj:~AbstractModule.setChanged():void" resolve="setChanged" />
                 </node>
               </node>
             </node>
@@ -504,7 +504,7 @@
       <node concept="37vLTG" id="HPU8mWQyzj" role="3clF46">
         <property role="TrG5h" value="testCase" />
         <node concept="3Tqbb2" id="HPU8mWQyzi" role="1tU5fm">
-          <reference role="ehGHo" target="tpe3.1216130694486" resolve="ITestCase" />
+          <ref role="ehGHo" to="tpe3:hGB2rPm" resolve="ITestCase" />
         </node>
       </node>
     </node>

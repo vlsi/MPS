@@ -22,7 +22,7 @@
   </registry>
   <node concept="1TIwiD" id="y9M3y44TpB">
     <property role="TrG5h" value="SandboxConcept" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 

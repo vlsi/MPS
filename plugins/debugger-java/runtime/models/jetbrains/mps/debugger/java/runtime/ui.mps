@@ -68,14 +68,14 @@
       <property role="TrG5h" value="EXCEPTION_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="2KV5YDxDzE4" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzE5" role="1B3o_S" />
       <node concept="1QGGTA" id="2KV5YDxDzE6" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEjkw" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEjzS" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_exception_breakpoint" resolve="Db_exception_breakpoint" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_exception_breakpoint" resolve="Db_exception_breakpoint" />
           </node>
         </node>
       </node>
@@ -84,14 +84,14 @@
       <property role="TrG5h" value="DISABLED_EXCEPTION_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="2KV5YDxDzE9" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzEa" role="1B3o_S" />
       <node concept="1QGGTA" id="2KV5YDxDzEb" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEkRQ" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEkS4" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_disabled_exception_breakpoint" resolve="Db_disabled_exception_breakpoint" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_disabled_exception_breakpoint" resolve="Db_disabled_exception_breakpoint" />
           </node>
         </node>
       </node>
@@ -100,14 +100,14 @@
       <property role="TrG5h" value="METHOD_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="2KV5YDxDzEe" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzEf" role="1B3o_S" />
       <node concept="1QGGTA" id="2KV5YDxDzEg" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UElMT" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UElN7" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_method_breakpoint" resolve="Db_method_breakpoint" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_method_breakpoint" resolve="Db_method_breakpoint" />
           </node>
         </node>
       </node>
@@ -116,14 +116,14 @@
       <property role="TrG5h" value="DISABLED_METHOD_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="2KV5YDxDzEj" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzEk" role="1B3o_S" />
       <node concept="1QGGTA" id="2KV5YDxDzEl" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEmLn" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEmL_" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_disabled_method_breakpoint" resolve="Db_disabled_method_breakpoint" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_disabled_method_breakpoint" resolve="Db_disabled_method_breakpoint" />
           </node>
         </node>
       </node>
@@ -132,14 +132,14 @@
       <property role="TrG5h" value="INVALID_METHOD_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="7KLNRKWa1wa" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="7KLNRKWa1wb" role="1B3o_S" />
       <node concept="1QGGTA" id="7KLNRKWa1wc" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEnL4" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEnLi" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_invalid_method_breakpoint" resolve="Db_invalid_method_breakpoint" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_invalid_method_breakpoint" resolve="Db_invalid_method_breakpoint" />
           </node>
         </node>
       </node>
@@ -148,14 +148,14 @@
       <property role="TrG5h" value="MUTED_METHOD_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="7KLNRKWa1wf" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="7KLNRKWa1wg" role="1B3o_S" />
       <node concept="1QGGTA" id="7KLNRKWa1wh" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEopZ" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEoqd" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_muted_method_breakpoint" resolve="Db_muted_method_breakpoint" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_muted_method_breakpoint" resolve="Db_muted_method_breakpoint" />
           </node>
         </node>
       </node>
@@ -164,14 +164,14 @@
       <property role="TrG5h" value="FIELD_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="2KV5YDxDzEo" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzEp" role="1B3o_S" />
       <node concept="1QGGTA" id="2KV5YDxDzEq" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEpjH" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEpjV" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_field_breakpoint" resolve="Db_field_breakpoint" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_field_breakpoint" resolve="Db_field_breakpoint" />
           </node>
         </node>
       </node>
@@ -180,14 +180,14 @@
       <property role="TrG5h" value="DISABLED_FIELD_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="2KV5YDxDzEt" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="2KV5YDxDzEu" role="1B3o_S" />
       <node concept="1QGGTA" id="2KV5YDxDzEv" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEqrs" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEqrE" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_disabled_field_breakpoint" resolve="Db_disabled_field_breakpoint" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_disabled_field_breakpoint" resolve="Db_disabled_field_breakpoint" />
           </node>
         </node>
       </node>
@@ -196,14 +196,14 @@
       <property role="TrG5h" value="INVALID_FIELD_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="7KLNRKWa1wk" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="7KLNRKWa1wl" role="1B3o_S" />
       <node concept="1QGGTA" id="7KLNRKWa1wm" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UErng" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UErnu" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_invalid_field_breakpoint" resolve="Db_invalid_field_breakpoint" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_invalid_field_breakpoint" resolve="Db_invalid_field_breakpoint" />
           </node>
         </node>
       </node>
@@ -212,14 +212,14 @@
       <property role="TrG5h" value="MUTED_FIELD_BREAKPOINT" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="7KLNRKWa1wp" role="1tU5fm">
-        <reference role="3uigEE" target="dbrf.~Icon" resolve="Icon" />
+        <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
       </node>
       <node concept="3Tm1VV" id="7KLNRKWa1wq" role="1B3o_S" />
       <node concept="1QGGTA" id="7KLNRKWa1wr" role="33vP2m">
         <node concept="1QGGSu" id="7tJbp6UEskL" role="1QGGTw">
           <node concept="10M0yZ" id="7tJbp6UEsl7" role="3xaMm5">
-            <reference role="1PxDUh" target="zxm0.~AllIcons$Debugger" resolve="AllIcons.Debugger" />
-            <reference role="3cqZAo" target="zxm0.~AllIcons$Debugger%dDb_muted_field_breakpoint" resolve="Db_muted_field_breakpoint" />
+            <ref role="1PxDUh" to="zxm0:~AllIcons$Debugger" resolve="AllIcons.Debugger" />
+            <ref role="3cqZAo" to="zxm0:~AllIcons$Debugger.Db_muted_field_breakpoint" resolve="Db_muted_field_breakpoint" />
           </node>
         </node>
       </node>

@@ -49,48 +49,48 @@
     <property role="TrG5h" value="Execute" />
     <property role="34LRSv" value="#exec" />
     <property role="R4oN_" value="execute a script" />
-    <reference role="1TJDcQ" target="eynw.1769790395579407473" resolve="GeneratedCommand" />
+    <ref role="1TJDcQ" to="eynw:1yfzJNJq9LL" resolve="GeneratedCommand" />
     <node concept="1TJgyj" id="1whNchEKXLF" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="script" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="1734392475491235545" resolve="AbstractConsoleScript" />
+      <ref role="20lvS9" node="1whNchEKZrp" resolve="AbstractConsoleScript" />
     </node>
   </node>
   <node concept="PlHQZ" id="1whNchEKZrp">
     <property role="TrG5h" value="AbstractConsoleScript" />
     <node concept="PrWs8" id="1whNchEKZrq" role="PrDN$">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="1whNchEKZru">
     <property role="TrG5h" value="ConsoleScript" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1whNchEKZrv" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="command" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="eynw.6854397602732214175" resolve="Command" />
+      <ref role="20lvS9" to="eynw:5WvH$QO98uv" resolve="Command" />
     </node>
     <node concept="PrWs8" id="1whNchEKZrw" role="PzmwI">
-      <reference role="PrY4T" target="1734392475491235545" resolve="AbstractConsoleScript" />
+      <ref role="PrY4T" node="1whNchEKZrp" resolve="AbstractConsoleScript" />
     </node>
   </node>
   <node concept="1TIwiD" id="23X86fnRD$Y">
     <property role="TrG5h" value="RefactorOperation" />
     <property role="34LRSv" value="refactor" />
     <property role="R4oN_" value="perform changes on selected nodes" />
-    <reference role="1TJDcQ" target="tp2q.1204796164442" resolve="InternalSequenceOperation" />
+    <ref role="1TJDcQ" to="tp2q:hy3sC_q" resolve="InternalSequenceOperation" />
     <node concept="1TJgyj" id="23X86fnRD_Y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="refactoring" />
       <property role="20lbJX" value="1" />
-      <reference role="20ksaX" target="tp2q.1204796294226" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20ksaX" to="tp2q:hy3t8hi" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="59iQg8ryZaF" role="PzmwI">
-      <reference role="PrY4T" target="3xdn.5932042262275648515" resolve="ConsoleOperation" />
+      <ref role="PrY4T" to="3xdn:59iQg8ryQK3" resolve="ConsoleOperation" />
     </node>
   </node>
 </model>

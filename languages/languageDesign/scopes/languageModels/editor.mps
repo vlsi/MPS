@@ -55,13 +55,13 @@
     </language>
   </registry>
   <node concept="24kQdi" id="70qA1hy$wxc">
-    <reference role="1XX52x" target="genb.8077936094962911282" resolve="ParentScope" />
+    <ref role="1XX52x" to="genb:70qA1hy$wwM" resolve="ParentScope" />
     <node concept="3F0ifn" id="70qA1hy$wxe" role="2wV5jI">
       <property role="3F0ifm" value="parent scope" />
     </node>
   </node>
   <node concept="24kQdi" id="70qA1hy$G1_">
-    <reference role="1XX52x" target="genb.8077936094962944991" resolve="ComeFromExpression" />
+    <ref role="1XX52x" to="genb:70qA1hy$CJv" resolve="ComeFromExpression" />
     <node concept="3EZMnI" id="70qA1hy$G1N" role="2wV5jI">
       <node concept="l2Vlx" id="70qA1hy$G1O" role="2iSdaV" />
       <node concept="3F0ifn" id="70qA1hy$G1P" role="3EZMnx">
@@ -69,12 +69,12 @@
       </node>
       <node concept="1iCGBv" id="4zASA_hyumD" role="3EZMnx">
         <property role="1$x2rV" value="link" />
-        <reference role="1NtTu8" target="genb.8077936094962945822" />
+        <ref role="1NtTu8" to="genb:70qA1hy$CWu" />
         <node concept="1sVBvm" id="4zASA_hyumE" role="1sWHZn">
           <node concept="3F0A7n" id="4zASA_hyumF" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpce.1071599776563" resolve="role" />
-            <reference role="1k5W1q" target="tpd3.1221170124867" resolve="ReferenceOnConceptualFeature" />
+            <ref role="1NtTu8" to="tpce:fA0kJcN" resolve="role" />
+            <ref role="1k5W1q" to="tpd3:hLjqlx3" resolve="ReferenceOnConceptualFeature" />
             <node concept="3$7jql" id="4zASA_hyumG" role="3F10Kt">
               <property role="3$6WeP" value="0.0" />
             </node>
@@ -87,7 +87,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="70qA1hy$IDl">
-    <reference role="1XX52x" target="genb.8077936094962850237" resolve="CompositeWithParentScopeExpression" />
+    <ref role="1XX52x" to="genb:70qA1hy$hAX" resolve="CompositeWithParentScopeExpression" />
     <node concept="3EZMnI" id="70qA1hy$IDn" role="2wV5jI">
       <node concept="l2Vlx" id="70qA1hy$IDo" role="2iSdaV" />
       <node concept="3F0ifn" id="70qA1hy$ID_" role="3EZMnx">
@@ -100,7 +100,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="70qA1hy$IDQ" role="3EZMnx">
-        <reference role="1NtTu8" target="genb.8077936094962969171" />
+        <ref role="1NtTu8" to="genb:70qA1hy$IDj" />
       </node>
       <node concept="3F0ifn" id="70qA1hy$IDC" role="3EZMnx">
         <property role="3F0ifm" value="with parent scope" />

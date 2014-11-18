@@ -118,13 +118,13 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="2Y$mRnICmw1" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~NonNls" resolve="NonNls" />
+        <ref role="2AI5Lk" to="as9o:~NonNls" resolve="NonNls" />
       </node>
       <node concept="2AHcQZ" id="2Y$mRnICmw2" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
       <node concept="2AHcQZ" id="3tYsUK_UpDA" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="2Y$mRnICmwg" role="jymVt">
@@ -137,10 +137,10 @@
         <property role="TrG5h" value="factory" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="2Y$mRnICmwk" role="1tU5fm">
-          <reference role="3uigEE" target="y3sp.3432969378036017270" resolve="ValueWrapperFactory" />
+          <ref role="3uigEE" to="y3sp:2Y$mRnICmxQ" resolve="ValueWrapperFactory" />
         </node>
         <node concept="2AHcQZ" id="3XAUza4bTb1" role="2AJF6D">
-          <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="3clFbS" id="2Y$mRnICmwl" role="3clF47" />
@@ -155,10 +155,10 @@
         <property role="TrG5h" value="factory" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="2Y$mRnICmwv" role="1tU5fm">
-          <reference role="3uigEE" target="y3sp.3432969378036017270" resolve="ValueWrapperFactory" />
+          <ref role="3uigEE" to="y3sp:2Y$mRnICmxQ" resolve="ValueWrapperFactory" />
         </node>
         <node concept="2AHcQZ" id="3XAUza4bTb3" role="2AJF6D">
-          <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="3clFbS" id="2Y$mRnICmww" role="3clF47" />
@@ -171,24 +171,24 @@
       <node concept="3clFbS" id="6bMlO3sXPXT" role="3clF47" />
       <node concept="3Tm1VV" id="6bMlO3sXPX1" role="1B3o_S" />
       <node concept="3uibUv" id="6bMlO3sXPXO" role="3clF45">
-        <reference role="3uigEE" target="y3sp.3432969378036013922" resolve="JavaValue" />
+        <ref role="3uigEE" to="y3sp:2Y$mRnIClHy" resolve="JavaValue" />
       </node>
       <node concept="37vLTG" id="6bMlO3sXPYH" role="3clF46">
         <property role="TrG5h" value="value" />
         <node concept="3uibUv" id="6bMlO3sXPYG" role="1tU5fm">
-          <reference role="3uigEE" target="f5hh.~Value" resolve="Value" />
+          <ref role="3uigEE" to="f5hh:~Value" resolve="Value" />
         </node>
         <node concept="2AHcQZ" id="6bMlO3sXPYL" role="2AJF6D">
-          <reference role="2AI5Lk" target="as9o.~Nullable" resolve="Nullable" />
+          <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
         </node>
       </node>
       <node concept="37vLTG" id="6bMlO3sXPYN" role="3clF46">
         <property role="TrG5h" value="threadReference" />
         <node concept="3uibUv" id="6bMlO3sXPYU" role="1tU5fm">
-          <reference role="3uigEE" target="f5hh.~ThreadReference" resolve="ThreadReference" />
+          <ref role="3uigEE" to="f5hh:~ThreadReference" resolve="ThreadReference" />
         </node>
         <node concept="2AHcQZ" id="6bMlO3sXPYW" role="2AJF6D">
-          <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
       </node>
     </node>
@@ -197,19 +197,19 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="2Y$mRnICmw8" role="1B3o_S" />
       <node concept="3uibUv" id="2Y$mRnICmw9" role="3clF45">
-        <reference role="3uigEE" target="3432969378036015275" resolve="CustomViewersManager" />
+        <ref role="3uigEE" node="2Y$mRnICm2F" resolve="CustomViewersManager" />
       </node>
       <node concept="3clFbS" id="2Y$mRnICmwa" role="3clF47">
         <node concept="3cpWs6" id="2Y$mRnICmwb" role="3cqZAp">
           <node concept="2OqwBi" id="2Y$mRnICmwc" role="3cqZAk">
             <node concept="2YIFZM" id="3S6UmYLD$7c" role="2Oq$k0">
-              <reference role="37wK5l" target="yla8.~ApplicationManager%dgetApplication()%ccom%dintellij%dopenapi%dapplication%dApplication" resolve="getApplication" />
-              <reference role="1Pybhc" target="yla8.~ApplicationManager" resolve="ApplicationManager" />
+              <ref role="37wK5l" to="yla8:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="yla8:~ApplicationManager" resolve="ApplicationManager" />
             </node>
             <node concept="liA8E" id="2Y$mRnICmwe" role="2OqNvi">
-              <reference role="37wK5l" target="iiw6.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolve="getComponent" />
+              <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
               <node concept="3VsKOn" id="2Y$mRnICmwf" role="37wK5m">
-                <reference role="3VsUkX" target="3432969378036015275" resolve="CustomViewersManager" />
+                <ref role="3VsUkX" node="2Y$mRnICm2F" resolve="CustomViewersManager" />
               </node>
             </node>
           </node>
@@ -217,7 +217,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="uoZ$WyGuS1" role="EKbjA">
-      <reference role="3uigEE" target="iiw6.~ApplicationComponent" resolve="ApplicationComponent" />
+      <ref role="3uigEE" to="iiw6:~ApplicationComponent" resolve="ApplicationComponent" />
     </node>
   </node>
 </model>

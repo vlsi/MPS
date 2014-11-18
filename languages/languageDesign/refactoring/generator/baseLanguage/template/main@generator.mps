@@ -349,7 +349,7 @@
   <node concept="13MO4I" id="hr9$AGb">
     <property role="TrG5h" value="reduce_UpdateModelByDefaultOperation" />
     <property role="3GE5qa" value="RefDecl.Methods.UpdateModel" />
-    <reference role="3gUMe" target="tp1h.1197382578687" resolve="UpdateModelByDefaultOperation" />
+    <ref role="3gUMe" to="tp1h:hr9$37Z" resolve="UpdateModelByDefaultOperation" />
     <node concept="3clFb_" id="hr9$ESh" role="13RCb5">
       <property role="TrG5h" value="updateModel" />
       <node concept="3cqZAl" id="hr9$ESi" role="3clF45" />
@@ -358,12 +358,12 @@
         <node concept="3clFbF" id="hr9$Nq$" role="3cqZAp">
           <node concept="2OqwBi" id="hHmXCLR" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxglVwm" role="2Oq$k0">
-              <reference role="3cqZAo" target="1197382763121" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="hr9$K9L" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="hHmXCLS" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972814492" resolve="updateByDefault" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9is" resolve="updateByDefault" />
               <node concept="37vLTw" id="2BHiRxgmpLL" role="37wK5m">
-                <reference role="3cqZAo" target="1197382761104" resolve="model" />
+                <ref role="3cqZAo" node="hr9$JEg" resolve="model" />
               </node>
             </node>
           </node>
@@ -377,7 +377,7 @@
       <node concept="37vLTG" id="hr9$K9L" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiKh" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -385,7 +385,7 @@
   <node concept="13MO4I" id="hsgMIRq">
     <property role="TrG5h" value="reduce_UpdateModelProcedure" />
     <property role="3GE5qa" value="RefDecl.Methods.UpdateModel" />
-    <reference role="3gUMe" target="tp1h.1198577376375" resolve="UpdateModelProcedure" />
+    <ref role="3gUMe" to="tp1h:hsgLPLR" resolve="UpdateModelProcedure" />
     <node concept="3clFb_" id="hsgNkMh" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="hsgNkMi" role="3clF45" />
@@ -396,10 +396,10 @@
             <node concept="3clFbF" id="hsgNxJr" role="3cqZAp">
               <node concept="2OqwBi" id="hHmXCRD" role="3clFbG">
                 <node concept="37vLTw" id="2BHiRxgm6M9" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1198577784560" resolve="refactoringContext" />
+                  <ref role="3cqZAo" node="hsgNprK" resolve="refactoringContext" />
                 </node>
                 <node concept="liA8E" id="hHmXCRE" role="2OqNvi">
-                  <reference role="37wK5l" target="ge2m.4792031542972814492" resolve="updateByDefault" />
+                  <ref role="37wK5l" to="ge2m:4a0HOMfn9is" resolve="updateByDefault" />
                   <node concept="10Nm6u" id="hsgNz1B" role="37wK5m">
                     <node concept="29HgVG" id="hsgNzFU" role="lGtFl">
                       <node concept="3NFfHV" id="hsgNzFV" role="3NFExx">
@@ -408,7 +408,7 @@
                             <node concept="2OqwBi" id="hxx$Oq3" role="3clFbG">
                               <node concept="30H73N" id="3$7lwjKtVQ6" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3$7lwjKtVQ7" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tp1h.1198577431631" />
+                                <ref role="3Tt5mk" to="tp1h:hsgM3hf" />
                               </node>
                             </node>
                           </node>
@@ -426,7 +426,7 @@
       <node concept="37vLTG" id="hsgNprK" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiKi" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -434,7 +434,7 @@
   <node concept="13MO4I" id="htf7YlN">
     <property role="TrG5h" value="reduce_MoveNodeToModelExpression" />
     <property role="3GE5qa" value="RefActions" />
-    <reference role="3gUMe" target="tp1h.1199620319099" resolve="MoveNodeToModelExpression" />
+    <ref role="3gUMe" to="tp1h:hteWmtV" resolve="MoveNodeToModelExpression" />
     <node concept="3clFb_" id="htf8l0Q" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="htf8l0R" role="3clF45" />
@@ -443,10 +443,10 @@
         <node concept="3clFbF" id="htf8n9X" role="3cqZAp">
           <node concept="2OqwBi" id="hHmXCUz" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgmpLh" role="2Oq$k0">
-              <reference role="3cqZAo" target="1199623458908" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="htf8l1s" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="hHmXCU$" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972814044" resolve="moveNodeToModel" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9bs" resolve="moveNodeToModel" />
               <node concept="10Nm6u" id="htf8pql" role="37wK5m">
                 <node concept="29HgVG" id="htf8tIm" role="lGtFl">
                   <node concept="3NFfHV" id="htf8tIn" role="3NFExx">
@@ -455,7 +455,7 @@
                         <node concept="2OqwBi" id="hxx$ZMZ" role="3clFbG">
                           <node concept="30H73N" id="htf8Cv9" role="2Oq$k0" />
                           <node concept="3TrEf2" id="htf8E2$" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199619459778" />
+                            <ref role="3Tt5mk" to="tp1h:hteT4F2" />
                           </node>
                         </node>
                       </node>
@@ -471,7 +471,7 @@
                         <node concept="2OqwBi" id="hxx$UE7" role="3clFbG">
                           <node concept="30H73N" id="htf8GJt" role="2Oq$k0" />
                           <node concept="3TrEf2" id="htf8HnN" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199619459779" />
+                            <ref role="3Tt5mk" to="tp1h:hteT4F3" />
                           </node>
                         </node>
                       </node>
@@ -487,7 +487,7 @@
       <node concept="37vLTG" id="htf8l1s" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiJZ" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -495,7 +495,7 @@
   <node concept="13MO4I" id="htf8JHY">
     <property role="TrG5h" value="reduce_MoveNodeToNodeExpression" />
     <property role="3GE5qa" value="RefActions" />
-    <reference role="3gUMe" target="tp1h.1199620589385" resolve="MoveNodeToNodeExpression" />
+    <ref role="3gUMe" to="tp1h:hteXot9" resolve="MoveNodeToNodeExpression" />
     <node concept="3clFb_" id="htf8NHo" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="htf8NHp" role="3clF45" />
@@ -504,10 +504,10 @@
         <node concept="3clFbF" id="htf8PdH" role="3cqZAp">
           <node concept="2OqwBi" id="hHmXCOc" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxglwuB" role="2Oq$k0">
-              <reference role="3cqZAo" target="1199623584638" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="htf8NHY" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="hHmXCOd" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972813849" resolve="moveNodeToNode" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn98p" resolve="moveNodeToNode" />
               <node concept="10Nm6u" id="htf8S0w" role="37wK5m">
                 <node concept="29HgVG" id="htf8UPS" role="lGtFl">
                   <node concept="3NFfHV" id="htf8UPT" role="3NFExx">
@@ -516,7 +516,7 @@
                         <node concept="2OqwBi" id="hxx$QoX" role="3clFbG">
                           <node concept="30H73N" id="htf8Zou" role="2Oq$k0" />
                           <node concept="3TrEf2" id="htf8ZVG" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199619459778" />
+                            <ref role="3Tt5mk" to="tp1h:hteT4F2" />
                           </node>
                         </node>
                       </node>
@@ -532,7 +532,7 @@
                         <node concept="2OqwBi" id="hxx_040" role="3clFbG">
                           <node concept="30H73N" id="htf90WU" role="2Oq$k0" />
                           <node concept="3TrEf2" id="htf91pM" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199620651934" />
+                            <ref role="3Tt5mk" to="tp1h:hteXBIu" />
                           </node>
                         </node>
                       </node>
@@ -548,7 +548,7 @@
                         <node concept="2OqwBi" id="hxx$Pzc" role="3clFbG">
                           <node concept="30H73N" id="htf92iH" role="2Oq$k0" />
                           <node concept="3TrEf2" id="htf94AI" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199619459779" />
+                            <ref role="3Tt5mk" to="tp1h:hteT4F3" />
                           </node>
                         </node>
                       </node>
@@ -564,7 +564,7 @@
       <node concept="37vLTG" id="htf8NHY" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiK0" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -572,7 +572,7 @@
   <node concept="13MO4I" id="htf98dH">
     <property role="TrG5h" value="reduce_MoveNodesToModelExpression" />
     <property role="3GE5qa" value="RefActions" />
-    <reference role="3gUMe" target="tp1h.1199620728600" resolve="MoveNodesToModelExpression" />
+    <ref role="3gUMe" to="tp1h:hteXUso" resolve="MoveNodesToModelExpression" />
     <node concept="3clFb_" id="htf9jbD" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="htf9jbE" role="3clF45" />
@@ -581,10 +581,10 @@
         <node concept="3clFbF" id="htf9kbh" role="3cqZAp">
           <node concept="2OqwBi" id="hHmXCR6" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxghiAR" role="2Oq$k0">
-              <reference role="3cqZAo" target="1199623713551" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="htf9jcf" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="hHmXCR7" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972814076" resolve="moveNodesToModel" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9bW" resolve="moveNodesToModel" />
               <node concept="10Nm6u" id="htf9mMQ" role="37wK5m">
                 <node concept="29HgVG" id="htf9o9$" role="lGtFl">
                   <node concept="3NFfHV" id="htf9o9_" role="3NFExx">
@@ -593,7 +593,7 @@
                         <node concept="2OqwBi" id="hxx$YB2" role="3clFbG">
                           <node concept="30H73N" id="htf9pZR" role="2Oq$k0" />
                           <node concept="3TrEf2" id="htf9r1Q" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199619459778" />
+                            <ref role="3Tt5mk" to="tp1h:hteT4F2" />
                           </node>
                         </node>
                       </node>
@@ -609,7 +609,7 @@
                         <node concept="2OqwBi" id="hxx_2P_" role="3clFbG">
                           <node concept="30H73N" id="htf9stF" role="2Oq$k0" />
                           <node concept="3TrEf2" id="htf9uBG" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199619459779" />
+                            <ref role="3Tt5mk" to="tp1h:hteT4F3" />
                           </node>
                         </node>
                       </node>
@@ -625,7 +625,7 @@
       <node concept="37vLTG" id="htf9jcf" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiK1" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -633,7 +633,7 @@
   <node concept="13MO4I" id="htf9G61">
     <property role="TrG5h" value="reduce_MoveNodesToNodeExpression" />
     <property role="3GE5qa" value="RefActions" />
-    <reference role="3gUMe" target="tp1h.1199620920737" resolve="MoveNodesToNodeExpression" />
+    <ref role="3gUMe" to="tp1h:hteYDmx" resolve="MoveNodesToNodeExpression" />
     <node concept="3clFb_" id="htf9O4N" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="htf9O4O" role="3clF45" />
@@ -642,10 +642,10 @@
         <node concept="3clFbF" id="htf9PU8" role="3cqZAp">
           <node concept="2OqwBi" id="hHmXCQ1" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgkZ0A" role="2Oq$k0">
-              <reference role="3cqZAo" target="1199623848297" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="htf9O5D" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="hHmXCQ2" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972813884" resolve="moveNodesToNode" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn98W" resolve="moveNodesToNode" />
               <node concept="10Nm6u" id="htf9REx" role="37wK5m">
                 <node concept="29HgVG" id="htf9UcL" role="lGtFl">
                   <node concept="3NFfHV" id="htf9UcM" role="3NFExx">
@@ -654,7 +654,7 @@
                         <node concept="2OqwBi" id="hxx$UL0" role="3clFbG">
                           <node concept="30H73N" id="htfa44V" role="2Oq$k0" />
                           <node concept="3TrEf2" id="htfa4yi" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199619459778" />
+                            <ref role="3Tt5mk" to="tp1h:hteT4F2" />
                           </node>
                         </node>
                       </node>
@@ -670,7 +670,7 @@
                         <node concept="2OqwBi" id="hxx$W5O" role="3clFbG">
                           <node concept="30H73N" id="htfeovT" role="2Oq$k0" />
                           <node concept="3TrEf2" id="htfepnS" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199620959025" />
+                            <ref role="3Tt5mk" to="tp1h:hteYMGL" />
                           </node>
                         </node>
                       </node>
@@ -686,7 +686,7 @@
                         <node concept="2OqwBi" id="hxx$UvU" role="3clFbG">
                           <node concept="30H73N" id="htfa5pJ" role="2Oq$k0" />
                           <node concept="3TrEf2" id="htfa6mP" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199619459779" />
+                            <ref role="3Tt5mk" to="tp1h:hteT4F3" />
                           </node>
                         </node>
                       </node>
@@ -702,7 +702,7 @@
       <node concept="37vLTG" id="htf9O5D" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiK2" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -710,7 +710,7 @@
   <node concept="13MO4I" id="hFCH1A_">
     <property role="TrG5h" value="reduce_ModuleOperation" />
     <property role="3GE5qa" value="Context" />
-    <reference role="3gUMe" target="tp1h.7953996722066252913" resolve="ModuleOperation" />
+    <ref role="3gUMe" to="tp1h:6Tyhu1FomhL" resolve="ModuleOperation" />
     <node concept="3clFb_" id="hFCH1AA" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="hFCH1AB" role="3clF45" />
@@ -719,10 +719,10 @@
         <node concept="3clFbF" id="hFCH1AE" role="3cqZAp">
           <node concept="2OqwBi" id="hFCH1AF" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxghgqc" role="2Oq$k0">
-              <reference role="3cqZAo" target="1215084894641" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="hFCH1AL" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="hFCH1AH" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972815418" resolve="getSelectedModule" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9wU" resolve="getSelectedModule" />
               <node concept="raruj" id="6Tyhu1Fos_Z" role="lGtFl" />
             </node>
           </node>
@@ -731,7 +731,7 @@
       <node concept="37vLTG" id="hFCH1AL" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiJY" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -739,7 +739,7 @@
   <node concept="13MO4I" id="2NZZazZeznL">
     <property role="TrG5h" value="reduce_MergeNodeWithAnotherNodeExpression" />
     <property role="3GE5qa" value="RefActions" />
-    <reference role="3gUMe" target="tp1h.3242588059496747656" resolve="MergeNodeWithAnotherNodeExpression" />
+    <ref role="3gUMe" to="tp1h:2NZZazZexa8" resolve="MergeNodeWithAnotherNodeExpression" />
     <node concept="3clFb_" id="2NZZazZeznN" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="2NZZazZeznO" role="3clF45" />
@@ -748,10 +748,10 @@
         <node concept="3clFbF" id="2NZZazZeznR" role="3cqZAp">
           <node concept="2OqwBi" id="2NZZazZeznS" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxglscx" role="2Oq$k0">
-              <reference role="3cqZAo" target="3242588059496756756" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="2NZZazZezok" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="2NZZazZeznU" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972814004" resolve="replaceRefsToNodeWithNode" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9aO" resolve="replaceRefsToNodeWithNode" />
               <node concept="10Nm6u" id="2NZZazZeznV" role="37wK5m">
                 <node concept="29HgVG" id="2NZZazZeznW" role="lGtFl">
                   <node concept="3NFfHV" id="2NZZazZeznX" role="3NFExx">
@@ -760,7 +760,7 @@
                         <node concept="2OqwBi" id="2NZZazZezo0" role="3clFbG">
                           <node concept="30H73N" id="2NZZazZezo1" role="2Oq$k0" />
                           <node concept="3TrEf2" id="2NZZazZezo2" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199619459778" />
+                            <ref role="3Tt5mk" to="tp1h:hteT4F2" />
                           </node>
                         </node>
                       </node>
@@ -776,7 +776,7 @@
                         <node concept="2OqwBi" id="2NZZazZezog" role="3clFbG">
                           <node concept="30H73N" id="2NZZazZezoh" role="2Oq$k0" />
                           <node concept="3TrEf2" id="2NZZazZezoi" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.1199619459779" />
+                            <ref role="3Tt5mk" to="tp1h:hteT4F3" />
                           </node>
                         </node>
                       </node>
@@ -792,7 +792,7 @@
       <node concept="37vLTG" id="2NZZazZezok" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiJQ" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -801,52 +801,52 @@
     <property role="TrG5h" value="operations" />
     <property role="3GE5qa" value="RefActions" />
     <node concept="3aamgX" id="q$PMBgcA7V" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.1199620319099" resolve="MoveNodeToModelExpression" />
+      <ref role="30HIoZ" to="tp1h:hteWmtV" resolve="MoveNodeToModelExpression" />
       <node concept="j$656" id="q$PMBgcA7W" role="1lVwrX">
-        <reference role="v9R2y" target="1199623366003" resolve="reduce_MoveNodeToModelExpression" />
+        <ref role="v9R2y" node="htf7YlN" resolve="reduce_MoveNodeToModelExpression" />
       </node>
     </node>
     <node concept="3aamgX" id="q$PMBgcA7X" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.1199620589385" resolve="MoveNodeToNodeExpression" />
+      <ref role="30HIoZ" to="tp1h:hteXot9" resolve="MoveNodeToNodeExpression" />
       <node concept="j$656" id="q$PMBgcA7Y" role="1lVwrX">
-        <reference role="v9R2y" target="1199623568254" resolve="reduce_MoveNodeToNodeExpression" />
+        <ref role="v9R2y" node="htf8JHY" resolve="reduce_MoveNodeToNodeExpression" />
       </node>
     </node>
     <node concept="3aamgX" id="q$PMBgcA7Z" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.1199620728600" resolve="MoveNodesToModelExpression" />
+      <ref role="30HIoZ" to="tp1h:hteXUso" resolve="MoveNodesToModelExpression" />
       <node concept="j$656" id="q$PMBgcA80" role="1lVwrX">
-        <reference role="v9R2y" target="1199623668589" resolve="reduce_MoveNodesToModelExpression" />
+        <ref role="v9R2y" node="htf98dH" resolve="reduce_MoveNodesToModelExpression" />
       </node>
     </node>
     <node concept="3aamgX" id="q$PMBgcA81" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.1199620920737" resolve="MoveNodesToNodeExpression" />
+      <ref role="30HIoZ" to="tp1h:hteYDmx" resolve="MoveNodesToNodeExpression" />
       <node concept="j$656" id="q$PMBgcA82" role="1lVwrX">
-        <reference role="v9R2y" target="1199623815553" resolve="reduce_MoveNodesToNodeExpression" />
+        <ref role="v9R2y" node="htf9G61" resolve="reduce_MoveNodesToNodeExpression" />
       </node>
     </node>
     <node concept="3aamgX" id="2RjnwervHFi" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.3302086321379400330" resolve="ChangeFeatureNameExpression" />
+      <ref role="30HIoZ" to="tp1h:2RjnwervHEa" resolve="ChangeFeatureNameExpression" />
       <node concept="j$656" id="2RjnwervIoA" role="1lVwrX">
-        <reference role="v9R2y" target="3302086321379403300" resolve="reduce_ChangeFeatureNameExpression" />
+        <ref role="v9R2y" node="2RjnwervIo$" resolve="reduce_ChangeFeatureNameExpression" />
       </node>
     </node>
     <node concept="3aamgX" id="2RjnwervIqb" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.3302086321379403347" resolve="DeleteFeatureExpression" />
+      <ref role="30HIoZ" to="tp1h:2RjnwervIpj" resolve="DeleteFeatureExpression" />
       <node concept="j$656" id="2RjnwervIqd" role="1lVwrX">
-        <reference role="v9R2y" target="3302086321379403380" resolve="reduce_DeleteFeatureExpression" />
+        <ref role="v9R2y" node="2RjnwervIpO" resolve="reduce_DeleteFeatureExpression" />
       </node>
     </node>
     <node concept="3aamgX" id="q$PMBgcBs_" role="3acgRq">
       <property role="3GE5qa" value="RefActions" />
-      <reference role="30HIoZ" target="tp1h.3242588059496747656" resolve="MergeNodeWithAnotherNodeExpression" />
+      <ref role="30HIoZ" to="tp1h:2NZZazZexa8" resolve="MergeNodeWithAnotherNodeExpression" />
       <node concept="j$656" id="q$PMBgcBsA" role="1lVwrX">
-        <reference role="v9R2y" target="3242588059496756721" resolve="reduce_MergeNodeWithAnotherNodeExpression" />
+        <ref role="v9R2y" node="2NZZazZeznL" resolve="reduce_MergeNodeWithAnotherNodeExpression" />
       </node>
     </node>
     <node concept="3aamgX" id="7aRpwG8fdBF" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.6598645150040035709" resolve="IsRefactoringApplicable" />
+      <ref role="30HIoZ" to="tp1h:5Ij6cQ6Zp5X" resolve="IsRefactoringApplicable" />
       <node concept="j$656" id="7aRpwG8fdBH" role="1lVwrX">
-        <reference role="v9R2y" target="6598645150040061901" resolve="reduce_IsRefactoringApplicable" />
+        <ref role="v9R2y" node="5Ij6cQ6Zvvd" resolve="reduce_IsRefactoringApplicable" />
       </node>
     </node>
   </node>
@@ -854,15 +854,15 @@
     <property role="TrG5h" value="updateOperations" />
     <property role="3GE5qa" value="RefDecl.Methods.UpdateModel" />
     <node concept="3aamgX" id="q$PMBgcBsD" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.1197382578687" resolve="UpdateModelByDefaultOperation" />
+      <ref role="30HIoZ" to="tp1h:hr9$37Z" resolve="UpdateModelByDefaultOperation" />
       <node concept="j$656" id="q$PMBgcBsE" role="1lVwrX">
-        <reference role="v9R2y" target="1197382724363" resolve="reduce_UpdateModelByDefaultOperation" />
+        <ref role="v9R2y" node="hr9$AGb" resolve="reduce_UpdateModelByDefaultOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="q$PMBgcBsF" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.1198577376375" resolve="UpdateModelProcedure" />
+      <ref role="30HIoZ" to="tp1h:hsgLPLR" resolve="UpdateModelProcedure" />
       <node concept="j$656" id="q$PMBgcBsG" role="1lVwrX">
-        <reference role="v9R2y" target="1198577610202" resolve="reduce_UpdateModelProcedure" />
+        <ref role="v9R2y" node="hsgMIRq" resolve="reduce_UpdateModelProcedure" />
       </node>
     </node>
   </node>
@@ -871,7 +871,7 @@
     <property role="3GE5qa" value="RefDecl" />
     <node concept="3Tm1VV" id="q$PMBgcBJY" role="1B3o_S" />
     <node concept="n94m4" id="q$PMBgcBJZ" role="lGtFl">
-      <reference role="n9lRv" target="tp1h.6895093993902236229" resolve="Refactoring" />
+      <ref role="n9lRv" to="tp1h:5YKiRiBue95" resolve="Refactoring" />
     </node>
     <node concept="17Uvod" id="q$PMBgcBK0" role="lGtFl">
       <property role="2qtEX9" value="name" />
@@ -881,7 +881,7 @@
             <node concept="2OqwBi" id="q$PMBgcBK4" role="3clFbG">
               <node concept="30H73N" id="q$PMBgcBK5" role="2Oq$k0" />
               <node concept="3TrcHB" id="q$PMBgcBK6" role="2OqNvi">
-                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
           </node>
@@ -889,7 +889,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="q$PMBgcBNA" role="1zkMxy">
-      <reference role="3uigEE" target="ge2m.4792031542972804556" resolve="BaseRefactoring" />
+      <ref role="3uigEE" to="ge2m:4a0HOMfn6Rc" resolve="BaseRefactoring" />
       <node concept="1W57fq" id="1aNzB2zVu$q" role="lGtFl">
         <node concept="3IZrLx" id="1aNzB2zVu$r" role="3IZSJc">
           <node concept="3clFbS" id="1aNzB2zVu$s" role="2VODD2">
@@ -898,7 +898,7 @@
                 <node concept="2OqwBi" id="1aNzB2zV$wu" role="2Oq$k0">
                   <node concept="30H73N" id="1aNzB2zV$wt" role="2Oq$k0" />
                   <node concept="3TrEf2" id="1aNzB2zV$wy" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tp1h.1347577327951503400" />
+                    <ref role="3Tt5mk" to="tp1h:1aNzB2zUQ0C" />
                   </node>
                 </node>
                 <node concept="3w_OXm" id="1aNzB2zV$wB" role="2OqNvi" />
@@ -908,7 +908,7 @@
         </node>
         <node concept="gft3U" id="1aNzB2zV$wC" role="UU_$l">
           <node concept="3uibUv" id="6QdonRgYfR1" role="gfFT$">
-            <reference role="3uigEE" target="ge2m.4792031542972804548" resolve="BaseLoggableRefactoring" />
+            <ref role="3uigEE" to="ge2m:4a0HOMfn6R4" resolve="BaseLoggableRefactoring" />
           </node>
         </node>
       </node>
@@ -921,7 +921,7 @@
           <node concept="2OqwBi" id="q$PMBgcBtS" role="3clFbG">
             <node concept="Xjq3P" id="q$PMBgcBtT" role="2Oq$k0" />
             <node concept="liA8E" id="q$PMBgcBtU" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972804570" resolve="addTransientParameter" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn6Rq" resolve="addTransientParameter" />
               <node concept="Xl_RD" id="q$PMBgcBtV" role="37wK5m">
                 <property role="Xl_RC" value="parameterName" />
                 <node concept="17Uvod" id="q$PMBgcBtW" role="lGtFl">
@@ -932,7 +932,7 @@
                         <node concept="2OqwBi" id="q$PMBgcBu0" role="3clFbG">
                           <node concept="30H73N" id="q$PMBgcBu1" role="2Oq$k0" />
                           <node concept="3TrcHB" id="q$PMBgcBu2" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
                       </node>
@@ -949,12 +949,12 @@
                   <node concept="3cpWsn" id="q$PMBgcBu7" role="3cpWs9">
                     <property role="TrG5h" value="result" />
                     <node concept="2I9FWS" id="q$PMBgcBu8" role="1tU5fm">
-                      <reference role="2I9WkF" target="tp1h.6895093993902311012" resolve="RefactoringParameter" />
+                      <ref role="2I9WkF" to="tp1h:5YKiRiBuwp$" resolve="RefactoringParameter" />
                     </node>
                     <node concept="2ShNRf" id="q$PMBgcBu9" role="33vP2m">
                       <node concept="2T8Vx0" id="q$PMBgcBua" role="2ShVmc">
                         <node concept="2I9FWS" id="q$PMBgcBub" role="2T96Bj">
-                          <reference role="2I9WkF" target="tp1h.6895093993902311012" resolve="RefactoringParameter" />
+                          <ref role="2I9WkF" to="tp1h:5YKiRiBuwp$" resolve="RefactoringParameter" />
                         </node>
                       </node>
                     </node>
@@ -967,11 +967,11 @@
                         <node concept="3clFbF" id="q$PMBgcBug" role="3cqZAp">
                           <node concept="2OqwBi" id="q$PMBgcBuh" role="3clFbG">
                             <node concept="37vLTw" id="3GM_nagTyQq" role="2Oq$k0">
-                              <reference role="3cqZAo" target="478744034994714503" resolve="result" />
+                              <ref role="3cqZAo" node="q$PMBgcBu7" resolve="result" />
                             </node>
                             <node concept="TSZUe" id="q$PMBgcBuj" role="2OqNvi">
                               <node concept="37vLTw" id="3GM_nagTtXH" role="25WWJ7">
-                                <reference role="3cqZAo" target="478744034994714523" resolve="argument" />
+                                <ref role="3cqZAo" node="q$PMBgcBur" resolve="argument" />
                               </node>
                             </node>
                           </node>
@@ -979,10 +979,10 @@
                       </node>
                       <node concept="2OqwBi" id="q$PMBgcBul" role="3clFbw">
                         <node concept="37vLTw" id="3GM_nagTvPn" role="2Oq$k0">
-                          <reference role="3cqZAo" target="478744034994714523" resolve="argument" />
+                          <ref role="3cqZAo" node="q$PMBgcBur" resolve="argument" />
                         </node>
                         <node concept="2qgKlT" id="5p3gBdqXWyv" role="2OqNvi">
-                          <reference role="37wK5l" target="tp1q.478744034994716004" resolve="isTransient" />
+                          <ref role="37wK5l" to="tp1q:q$PMBgcBP$" resolve="isTransient" />
                         </node>
                       </node>
                     </node>
@@ -990,19 +990,19 @@
                   <node concept="3cpWsn" id="q$PMBgcBur" role="1Duv9x">
                     <property role="TrG5h" value="argument" />
                     <node concept="3Tqbb2" id="q$PMBgcBus" role="1tU5fm">
-                      <reference role="ehGHo" target="tp1h.6895093993902311012" resolve="RefactoringParameter" />
+                      <ref role="ehGHo" to="tp1h:5YKiRiBuwp$" resolve="RefactoringParameter" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="6$pyvmK_71E" role="1DdaDG">
                     <node concept="30H73N" id="6$pyvmK_71F" role="2Oq$k0" />
                     <node concept="3Tsc0h" id="6$pyvmK_71G" role="2OqNvi">
-                      <reference role="3TtcxE" target="tp1h.6895093993902236376" />
+                      <ref role="3TtcxE" to="tp1h:5YKiRiBuebo" />
                     </node>
                   </node>
                 </node>
                 <node concept="3cpWs6" id="q$PMBgcBuI" role="3cqZAp">
                   <node concept="37vLTw" id="3GM_nagTuO6" role="3cqZAk">
-                    <reference role="3cqZAo" target="478744034994714503" resolve="result" />
+                    <ref role="3cqZAo" node="q$PMBgcBu7" resolve="result" />
                   </node>
                 </node>
               </node>
@@ -1013,7 +1013,7 @@
           <node concept="2OqwBi" id="6$pyvmK_71M" role="3clFbG">
             <node concept="Xjq3P" id="6$pyvmK_71N" role="2Oq$k0" />
             <node concept="liA8E" id="6$pyvmK_71O" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972804570" resolve="addTransientParameter" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn6Rq" resolve="addTransientParameter" />
               <node concept="Xl_RD" id="6$pyvmK_71P" role="37wK5m">
                 <property role="Xl_RC" value="parameterName" />
                 <node concept="17Uvod" id="6$pyvmK_71Q" role="lGtFl">
@@ -1024,7 +1024,7 @@
                         <node concept="2OqwBi" id="6$pyvmK_71U" role="3clFbG">
                           <node concept="30H73N" id="6$pyvmK_71V" role="2Oq$k0" />
                           <node concept="3TrcHB" id="6$pyvmK_71W" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
                       </node>
@@ -1041,12 +1041,12 @@
                   <node concept="3cpWsn" id="6$pyvmK_72m" role="3cpWs9">
                     <property role="TrG5h" value="result" />
                     <node concept="2I9FWS" id="6$pyvmK_72n" role="1tU5fm">
-                      <reference role="2I9WkF" target="tp1h.6895093993902311010" resolve="RefactoringField" />
+                      <ref role="2I9WkF" to="tp1h:5YKiRiBuwpy" resolve="RefactoringField" />
                     </node>
                     <node concept="2ShNRf" id="6$pyvmK_72o" role="33vP2m">
                       <node concept="2T8Vx0" id="6$pyvmK_72p" role="2ShVmc">
                         <node concept="2I9FWS" id="6$pyvmK_72q" role="2T96Bj">
-                          <reference role="2I9WkF" target="tp1h.6895093993902311010" resolve="RefactoringField" />
+                          <ref role="2I9WkF" to="tp1h:5YKiRiBuwpy" resolve="RefactoringField" />
                         </node>
                       </node>
                     </node>
@@ -1059,11 +1059,11 @@
                         <node concept="3clFbF" id="6$pyvmK_72v" role="3cqZAp">
                           <node concept="2OqwBi" id="6$pyvmK_72w" role="3clFbG">
                             <node concept="37vLTw" id="3GM_nagTuNO" role="2Oq$k0">
-                              <reference role="3cqZAo" target="7573235936722710678" resolve="result" />
+                              <ref role="3cqZAo" node="6$pyvmK_72m" resolve="result" />
                             </node>
                             <node concept="TSZUe" id="6$pyvmK_72y" role="2OqNvi">
                               <node concept="37vLTw" id="3GM_nagTxx9" role="25WWJ7">
-                                <reference role="3cqZAo" target="7573235936722710695" resolve="argument" />
+                                <ref role="3cqZAo" node="6$pyvmK_72B" resolve="argument" />
                               </node>
                             </node>
                           </node>
@@ -1071,10 +1071,10 @@
                       </node>
                       <node concept="2OqwBi" id="6$pyvmK_72$" role="3clFbw">
                         <node concept="37vLTw" id="3GM_nagT_zV" role="2Oq$k0">
-                          <reference role="3cqZAo" target="7573235936722710695" resolve="argument" />
+                          <ref role="3cqZAo" node="6$pyvmK_72B" resolve="argument" />
                         </node>
                         <node concept="2qgKlT" id="5p3gBdqXWyx" role="2OqNvi">
-                          <reference role="37wK5l" target="tp1q.478744034994716004" resolve="isTransient" />
+                          <ref role="37wK5l" to="tp1q:q$PMBgcBP$" resolve="isTransient" />
                         </node>
                       </node>
                     </node>
@@ -1082,19 +1082,19 @@
                   <node concept="3cpWsn" id="6$pyvmK_72B" role="1Duv9x">
                     <property role="TrG5h" value="argument" />
                     <node concept="3Tqbb2" id="6$pyvmK_72C" role="1tU5fm">
-                      <reference role="ehGHo" target="tp1h.6895093993902311010" resolve="RefactoringField" />
+                      <ref role="ehGHo" to="tp1h:5YKiRiBuwpy" resolve="RefactoringField" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="6$pyvmK_737" role="1DdaDG">
                     <node concept="30H73N" id="6$pyvmK_738" role="2Oq$k0" />
                     <node concept="3Tsc0h" id="6$pyvmK_739" role="2OqNvi">
-                      <reference role="3TtcxE" target="tp1h.6895093993902236377" />
+                      <ref role="3TtcxE" to="tp1h:5YKiRiBuebp" />
                     </node>
                   </node>
                 </node>
                 <node concept="3cpWs6" id="6$pyvmK_72G" role="3cqZAp">
                   <node concept="37vLTw" id="3GM_nagT$EY" role="3cqZAk">
-                    <reference role="3cqZAo" target="7573235936722710678" resolve="result" />
+                    <ref role="3cqZAo" node="6$pyvmK_72m" resolve="result" />
                   </node>
                 </node>
               </node>
@@ -1103,20 +1103,20 @@
         </node>
       </node>
       <node concept="1pdMLZ" id="4WjcdlXTfBU" role="lGtFl">
-        <reference role="2rW$FS" target="5697951647052134895" resolve="refactoringClassConstructor" />
+        <ref role="2rW$FS" node="4WjcdlXTfBJ" resolve="refactoringClassConstructor" />
       </node>
     </node>
     <node concept="3clFb_" id="6$pyvmK_7hU" role="jymVt">
       <property role="TrG5h" value="getRefactoringTarget" />
       <node concept="3Tm1VV" id="6$pyvmK_7hV" role="1B3o_S" />
       <node concept="3uibUv" id="6QdonRgYfR6" role="3clF45">
-        <reference role="3uigEE" target="ge2m.4792031542972815535" resolve="IRefactoringTarget" />
+        <ref role="3uigEE" to="ge2m:4a0HOMfn9yJ" resolve="IRefactoringTarget" />
       </node>
       <node concept="3clFbS" id="6$pyvmK_7hX" role="3clF47">
         <node concept="3cpWs6" id="5p3gBdqY6ep" role="3cqZAp">
           <node concept="2ShNRf" id="5p3gBdqY6er" role="3cqZAk">
             <node concept="1pGfFk" id="5p3gBdqY6et" role="2ShVmc">
-              <reference role="37wK5l" target="7573235936722758645" resolve="RefactoringTargetClass" />
+              <ref role="37wK5l" node="6$pyvmK_iJP" resolve="RefactoringTargetClass" />
               <node concept="1ZhdrF" id="5p3gBdqY6eu" role="lGtFl">
                 <property role="2qtEX8" value="baseMethodDeclaration" />
                 <node concept="3$xsQk" id="5p3gBdqY6ev" role="3$ytzL">
@@ -1125,11 +1125,11 @@
                       <node concept="2OqwBi" id="5p3gBdqY6ey" role="3clFbG">
                         <node concept="1iwH7S" id="5p3gBdqY6ez" role="2Oq$k0" />
                         <node concept="1iwH70" id="5p3gBdqY6e$" role="2OqNvi">
-                          <reference role="1iwH77" target="7573235936722758722" resolve="refactoringTargetConstructor" />
+                          <ref role="1iwH77" node="6$pyvmK_iL2" resolve="refactoringTargetConstructor" />
                           <node concept="2OqwBi" id="5p3gBdqY6e_" role="1iwH7V">
                             <node concept="30H73N" id="5p3gBdqY6eA" role="2Oq$k0" />
                             <node concept="3TrEf2" id="5p3gBdqY6eB" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tp1h.6895093993902310998" />
+                              <ref role="3Tt5mk" to="tp1h:5YKiRiBuwpm" />
                             </node>
                           </node>
                         </node>
@@ -1159,7 +1159,7 @@
                     <node concept="2OqwBi" id="q$PMBgcByX" role="3clFbG">
                       <node concept="30H73N" id="q$PMBgcByY" role="2Oq$k0" />
                       <node concept="3TrcHB" id="6$pyvmK_73B" role="2OqNvi">
-                        <reference role="3TsBF5" target="tp1h.6895093993902236371" resolve="userFriendlyName" />
+                        <ref role="3TsBF5" to="tp1h:5YKiRiBuebj" resolve="userFriendlyName" />
                       </node>
                     </node>
                   </node>
@@ -1173,7 +1173,7 @@
     <node concept="3clFb_" id="q$PMBgcBz6" role="jymVt">
       <property role="TrG5h" value="getOverridenRefactoringClass" />
       <node concept="3uibUv" id="q$PMBgcBz7" role="3clF45">
-        <reference role="3uigEE" target="e2lb.~Class" resolve="Class" />
+        <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
       </node>
       <node concept="3Tm1VV" id="q$PMBgcBz8" role="1B3o_S" />
       <node concept="3clFbS" id="q$PMBgcBz9" role="3clF47">
@@ -1189,12 +1189,12 @@
                     <node concept="3cpWsn" id="q$PMBgcBzg" role="3cpWs9">
                       <property role="TrG5h" value="overriden" />
                       <node concept="3Tqbb2" id="q$PMBgcBzh" role="1tU5fm">
-                        <reference role="ehGHo" target="tp1h.6895093993902236229" resolve="Refactoring" />
+                        <ref role="ehGHo" to="tp1h:5YKiRiBue95" resolve="Refactoring" />
                       </node>
                       <node concept="2OqwBi" id="q$PMBgcBzi" role="33vP2m">
                         <node concept="30H73N" id="q$PMBgcBzj" role="2Oq$k0" />
                         <node concept="3TrEf2" id="6$pyvmK_76$" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tp1h.6895093993902236387" />
+                          <ref role="3Tt5mk" to="tp1h:5YKiRiBuebz" />
                         </node>
                       </node>
                     </node>
@@ -1208,7 +1208,7 @@
                     <node concept="3clFbC" id="q$PMBgcBzp" role="3clFbw">
                       <node concept="10Nm6u" id="q$PMBgcBzq" role="3uHU7w" />
                       <node concept="37vLTw" id="3GM_nagT_wN" role="3uHU7B">
-                        <reference role="3cqZAo" target="478744034994714832" resolve="overriden" />
+                        <ref role="3cqZAo" node="q$PMBgcBzg" resolve="overriden" />
                       </node>
                     </node>
                   </node>
@@ -1216,25 +1216,25 @@
                     <node concept="3cpWs3" id="q$PMBgcBzt" role="3clFbG">
                       <node concept="2OqwBi" id="q$PMBgcBzu" role="3uHU7w">
                         <node concept="37vLTw" id="3GM_nagT$Gp" role="2Oq$k0">
-                          <reference role="3cqZAo" target="478744034994714832" resolve="overriden" />
+                          <ref role="3cqZAo" node="q$PMBgcBzg" resolve="overriden" />
                         </node>
                         <node concept="3TrcHB" id="q$PMBgcBzw" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                         </node>
                       </node>
                       <node concept="3cpWs3" id="q$PMBgcBzx" role="3uHU7B">
                         <node concept="2OqwBi" id="2ZDBRmk5f3Q" role="3uHU7B">
                           <node concept="liA8E" id="2ZDBRmk5f3R" role="2OqNvi">
-                            <reference role="37wK5l" target="ec5l.~SModelReference%dgetModelName()%cjava%dlang%dString" resolve="getModelName" />
+                            <ref role="37wK5l" to="ec5l:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
                           </node>
                           <node concept="2OqwBi" id="2ZDBRmk5f3T" role="2Oq$k0">
                             <node concept="liA8E" id="2ZDBRmk5f3V" role="2OqNvi">
-                              <reference role="37wK5l" target="ec5l.~SModel%dgetReference()%corg%djetbrains%dmps%dopenapi%dmodel%dSModelReference" resolve="getReference" />
+                              <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
                             </node>
                             <node concept="2JrnkZ" id="2ZDBRmk5f3W" role="2Oq$k0">
                               <node concept="2OqwBi" id="2ZDBRmk5f3Y" role="2JrQYb">
                                 <node concept="37vLTw" id="3GM_nagTxiZ" role="2Oq$k0">
-                                  <reference role="3cqZAo" target="478744034994714832" resolve="overriden" />
+                                  <ref role="3cqZAo" node="q$PMBgcBzg" resolve="overriden" />
                                 </node>
                                 <node concept="I4A8Y" id="2ZDBRmk5f40" role="2OqNvi" />
                               </node>
@@ -1261,7 +1261,7 @@
                 <node concept="2OqwBi" id="q$PMBgcBzI" role="2Oq$k0">
                   <node concept="30H73N" id="q$PMBgcBzJ" role="2Oq$k0" />
                   <node concept="3TrEf2" id="6$pyvmK_76z" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tp1h.6895093993902236387" />
+                    <ref role="3Tt5mk" to="tp1h:5YKiRiBuebz" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="q$PMBgcBzL" role="2OqNvi" />
@@ -1279,7 +1279,7 @@
         <property role="TrG5h" value="refactoringContext" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="6QdonRgYfR8" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
       <node concept="3clFbS" id="6$pyvmK_7jc" role="3clF47">
@@ -1291,11 +1291,11 @@
                   <node concept="2OqwBi" id="6$pyvmK_7ji" role="2Oq$k0">
                     <node concept="30H73N" id="6$pyvmK_7jj" role="2Oq$k0" />
                     <node concept="3TrEf2" id="6$pyvmK_7jm" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tp1h.5497648299878741976" />
+                      <ref role="3Tt5mk" to="tp1h:4Lb$w0Yjnvo" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="6$pyvmK_7jl" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1137022507850" />
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
                   </node>
                 </node>
               </node>
@@ -1316,7 +1316,7 @@
                 <node concept="2OqwBi" id="6$pyvmK_7jt" role="2Oq$k0">
                   <node concept="30H73N" id="6$pyvmK_7js" role="2Oq$k0" />
                   <node concept="3TrEf2" id="6$pyvmK_7jx" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tp1h.5497648299878741976" />
+                    <ref role="3Tt5mk" to="tp1h:4Lb$w0Yjnvo" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="6$pyvmK_7jA" role="2OqNvi" />
@@ -1334,7 +1334,7 @@
         <property role="TrG5h" value="refactoringContext" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="6QdonRgYfRg" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
       <node concept="3clFbS" id="6$pyvmK_79H" role="3clF47">
@@ -1346,11 +1346,11 @@
                   <node concept="2OqwBi" id="6$pyvmK_79N" role="2Oq$k0">
                     <node concept="30H73N" id="6$pyvmK_79O" role="2Oq$k0" />
                     <node concept="3TrEf2" id="6$pyvmK_79R" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tp1h.6895093993902236381" />
+                      <ref role="3Tt5mk" to="tp1h:5YKiRiBuebt" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="6$pyvmK_79Q" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1137022507850" />
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
                   </node>
                 </node>
               </node>
@@ -1365,7 +1365,7 @@
         <property role="TrG5h" value="refactoringContext" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="6QdonRgYfRn" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
       <node concept="_YKpA" id="yernCaFQ7m" role="3clF45">
@@ -1381,11 +1381,11 @@
                   <node concept="2OqwBi" id="yernCaFQ7$" role="2Oq$k0">
                     <node concept="30H73N" id="yernCaFQ7z" role="2Oq$k0" />
                     <node concept="3TrEf2" id="yernCaFQ7C" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tp1h.616550569928923871" />
+                      <ref role="3Tt5mk" to="tp1h:yernCaFpFv" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="yernCaFQ7H" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1137022507850" />
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
                   </node>
                 </node>
               </node>
@@ -1404,7 +1404,7 @@
                 <node concept="2OqwBi" id="yernCaFQ7O" role="2Oq$k0">
                   <node concept="30H73N" id="yernCaFQ7N" role="2Oq$k0" />
                   <node concept="3TrEf2" id="yernCaFQ7S" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tp1h.616550569928923871" />
+                    <ref role="3Tt5mk" to="tp1h:yernCaFpFv" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="yernCaFQ7X" role="2OqNvi" />
@@ -1422,7 +1422,7 @@
         <property role="TrG5h" value="refactoringContext" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="6QdonRgYfRs" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
       <node concept="3clFbS" id="6$pyvmK_7kp" role="3clF47">
@@ -1434,11 +1434,11 @@
                   <node concept="2OqwBi" id="6$pyvmK_7kv" role="2Oq$k0">
                     <node concept="30H73N" id="6$pyvmK_7kw" role="2Oq$k0" />
                     <node concept="3TrEf2" id="6$pyvmK_7mw" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tp1h.2058726427123891193" />
+                      <ref role="3Tt5mk" to="tp1h:1Mi4csyrrJT" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="6$pyvmK_7ky" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1137022507850" />
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
                   </node>
                 </node>
               </node>
@@ -1454,7 +1454,7 @@
                 <node concept="2OqwBi" id="6$pyvmK_7kE" role="2Oq$k0">
                   <node concept="30H73N" id="6$pyvmK_7kF" role="2Oq$k0" />
                   <node concept="3TrEf2" id="6$pyvmK_7mx" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tp1h.2058726427123891193" />
+                    <ref role="3Tt5mk" to="tp1h:1Mi4csyrrJT" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="6$pyvmK_7kH" role="2OqNvi" />
@@ -1467,14 +1467,14 @@
     <node concept="3clFb_" id="1aNzB2zUQCH" role="jymVt">
       <property role="TrG5h" value="getAffectedNodes" />
       <node concept="3uibUv" id="1aNzB2zUQCI" role="3clF45">
-        <reference role="3uigEE" target="5fm0.~SearchResults" resolve="SearchResults" />
+        <ref role="3uigEE" to="5fm0:~SearchResults" resolve="SearchResults" />
       </node>
       <node concept="3Tm1VV" id="1aNzB2zUQCJ" role="1B3o_S" />
       <node concept="37vLTG" id="1aNzB2zUQCK" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="6QdonRgYfRv" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
       <node concept="3clFbS" id="1aNzB2zUQCM" role="3clF47">
@@ -1486,11 +1486,11 @@
                   <node concept="2OqwBi" id="1aNzB2zUQCS" role="2Oq$k0">
                     <node concept="30H73N" id="1aNzB2zUQCT" role="2Oq$k0" />
                     <node concept="3TrEf2" id="1aNzB2zURr9" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tp1h.1347577327951503399" />
+                      <ref role="3Tt5mk" to="tp1h:1aNzB2zUQ0B" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="1aNzB2zUQCV" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1137022507850" />
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
                   </node>
                 </node>
               </node>
@@ -1509,7 +1509,7 @@
                 <node concept="2OqwBi" id="1aNzB2zUQD4" role="2Oq$k0">
                   <node concept="30H73N" id="1aNzB2zUQD5" role="2Oq$k0" />
                   <node concept="3TrEf2" id="1aNzB2zURr6" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tp1h.1347577327951503399" />
+                    <ref role="3Tt5mk" to="tp1h:1aNzB2zUQ0B" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="1aNzB2zUQD7" role="2OqNvi" />
@@ -1532,7 +1532,7 @@
         <property role="TrG5h" value="refactoringContext" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="6QdonRgYfRw" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
       <node concept="3clFbS" id="1aNzB2zUQDf" role="3clF47">
@@ -1544,11 +1544,11 @@
                   <node concept="2OqwBi" id="1aNzB2zUQDl" role="2Oq$k0">
                     <node concept="30H73N" id="1aNzB2zUQDm" role="2Oq$k0" />
                     <node concept="3TrEf2" id="1aNzB2zURr7" role="2OqNvi">
-                      <reference role="3Tt5mk" target="tp1h.1347577327951503400" />
+                      <ref role="3Tt5mk" to="tp1h:1aNzB2zUQ0C" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="1aNzB2zUQDo" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1137022507850" />
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
                   </node>
                 </node>
               </node>
@@ -1564,7 +1564,7 @@
                 <node concept="2OqwBi" id="1aNzB2zUQDv" role="2Oq$k0">
                   <node concept="30H73N" id="1aNzB2zUQDw" role="2Oq$k0" />
                   <node concept="3TrEf2" id="1aNzB2zURr8" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tp1h.1347577327951503400" />
+                    <ref role="3Tt5mk" to="tp1h:1aNzB2zUQ0C" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="1aNzB2zUQDy" role="2OqNvi" />
@@ -1579,26 +1579,26 @@
     <property role="TrG5h" value="refactoring" />
     <property role="3GE5qa" value="RefDecl" />
     <node concept="3aamgX" id="6$pyvmK_iNq" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.6895093993902310814" resolve="ConceptFunctionParameter_SNode" />
+      <ref role="30HIoZ" to="tp1h:5YKiRiBuwmu" resolve="ConceptFunctionParameter_SNode" />
       <node concept="j$656" id="6$pyvmK_iNy" role="1lVwrX">
-        <reference role="v9R2y" target="7573235936722758880" resolve="reduce_ConceptFunctionParameter_Target_IsApplicable_Parameter" />
+        <ref role="v9R2y" node="6$pyvmK_iNw" resolve="reduce_ConceptFunctionParameter_Target_IsApplicable_Parameter" />
       </node>
     </node>
     <node concept="3aamgX" id="6$pyvmK_iNs" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.1209559114970" resolve="ConceptFunctionParameter_Model" />
+      <ref role="30HIoZ" to="tp1h:hAvlQjq" resolve="ConceptFunctionParameter_Model" />
       <node concept="j$656" id="6$pyvmK_iPC" role="1lVwrX">
-        <reference role="v9R2y" target="7573235936722759014" resolve="reduce_ConceptFunctionParameter_Model" />
+        <ref role="v9R2y" node="6$pyvmK_iPA" resolve="reduce_ConceptFunctionParameter_Model" />
       </node>
     </node>
     <node concept="3aamgX" id="6$pyvmK_iNu" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.6895093993902310775" resolve="ConceptFunctionParameter_Module" />
+      <ref role="30HIoZ" to="tp1h:5YKiRiBuwlR" resolve="ConceptFunctionParameter_Module" />
       <node concept="j$656" id="6$pyvmK_iNB" role="1lVwrX">
-        <reference role="v9R2y" target="7573235936722758880" resolve="reduce_ConceptFunctionParameter_Target_IsApplicable_Parameter" />
+        <ref role="v9R2y" node="6$pyvmK_iNw" resolve="reduce_ConceptFunctionParameter_Target_IsApplicable_Parameter" />
       </node>
     </node>
     <node concept="3aamgX" id="59tlBvd8HDV" role="3acgRq">
       <property role="36QftV" value="true" />
-      <reference role="30HIoZ" target="tp1h.478744034994716100" resolve="RefactoringArgumentReference" />
+      <ref role="30HIoZ" to="tp1h:q$PMBgcBR4" resolve="RefactoringArgumentReference" />
       <node concept="30G5F_" id="59tlBvd8HDW" role="30HLyM">
         <node concept="3clFbS" id="59tlBvd8HDX" role="2VODD2">
           <node concept="3clFbF" id="59tlBvd8HDY" role="3cqZAp">
@@ -1606,8 +1606,8 @@
               <node concept="2OqwBi" id="59tlBvd8HE0" role="3fr31v">
                 <node concept="30H73N" id="59tlBvd8HE1" role="2Oq$k0" />
                 <node concept="1BlSNk" id="59tlBvd8HE2" role="2OqNvi">
-                  <reference role="1Bn3mz" target="tpee.1068498886295" />
-                  <reference role="1BmUXE" target="tpee.1068498886294" resolve="AssignmentExpression" />
+                  <ref role="1Bn3mz" to="tpee:fz7vLUn" />
+                  <ref role="1BmUXE" to="tpee:fz7vLUm" resolve="AssignmentExpression" />
                 </node>
               </node>
             </node>
@@ -1615,11 +1615,11 @@
         </node>
       </node>
       <node concept="j$656" id="59tlBvd8HE3" role="1lVwrX">
-        <reference role="v9R2y" target="7573235936722759742" resolve="reduce_RefactoringArgumentReference_get" />
+        <ref role="v9R2y" node="6$pyvmK_j0Y" resolve="reduce_RefactoringArgumentReference_get" />
       </node>
     </node>
     <node concept="3aamgX" id="59tlBvd8HE4" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1068498886294" resolve="AssignmentExpression" />
+      <ref role="30HIoZ" to="tpee:fz7vLUm" resolve="AssignmentExpression" />
       <node concept="30G5F_" id="59tlBvd8HE5" role="30HLyM">
         <node concept="3clFbS" id="59tlBvd8HE6" role="2VODD2">
           <node concept="3clFbF" id="59tlBvd8HE7" role="3cqZAp">
@@ -1627,12 +1627,12 @@
               <node concept="2OqwBi" id="59tlBvd8HE9" role="2Oq$k0">
                 <node concept="30H73N" id="59tlBvd8HEa" role="2Oq$k0" />
                 <node concept="3TrEf2" id="59tlBvd8HEb" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1068498886295" />
+                  <ref role="3Tt5mk" to="tpee:fz7vLUn" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="59tlBvd8HEc" role="2OqNvi">
                 <node concept="chp4Y" id="59tlBvd8HEd" role="cj9EA">
-                  <reference role="cht4Q" target="tp1h.478744034994716100" resolve="RefactoringArgumentReference" />
+                  <ref role="cht4Q" to="tp1h:q$PMBgcBR4" resolve="RefactoringArgumentReference" />
                 </node>
               </node>
             </node>
@@ -1640,40 +1640,40 @@
         </node>
       </node>
       <node concept="j$656" id="59tlBvd8HEe" role="1lVwrX">
-        <reference role="v9R2y" target="7573235936722759685" resolve="reduce_RefactoringArgumentReference_put" />
+        <ref role="v9R2y" node="6$pyvmK_j05" resolve="reduce_RefactoringArgumentReference_put" />
       </node>
     </node>
     <node concept="2rT7sh" id="q$PMBgcBMT" role="2rTMjI">
       <property role="TrG5h" value="refactoringClass" />
-      <reference role="2rTdP9" target="tp1h.6895093993902236229" resolve="Refactoring" />
-      <reference role="2rZz_L" target="tpee.1068390468198" resolve="ClassConcept" />
+      <ref role="2rTdP9" to="tp1h:5YKiRiBue95" resolve="Refactoring" />
+      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
     <node concept="2rT7sh" id="4WjcdlXTfBJ" role="2rTMjI">
       <property role="TrG5h" value="refactoringClassConstructor" />
-      <reference role="2rTdP9" target="tp1h.6895093993902236229" resolve="Refactoring" />
-      <reference role="2rZz_L" target="tpee.1068580123140" resolve="ConstructorDeclaration" />
+      <ref role="2rTdP9" to="tp1h:5YKiRiBue95" resolve="Refactoring" />
+      <ref role="2rZz_L" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
     </node>
     <node concept="2rT7sh" id="6$pyvmK_iJY" role="2rTMjI">
       <property role="TrG5h" value="refactoringTargetClass" />
-      <reference role="2rTdP9" target="tp1h.6895093993902310761" resolve="RefactoringTarget" />
-      <reference role="2rZz_L" target="tpee.1068390468198" resolve="ClassConcept" />
+      <ref role="2rTdP9" to="tp1h:5YKiRiBuwlD" resolve="RefactoringTarget" />
+      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
     <node concept="2rT7sh" id="6$pyvmK_iL2" role="2rTMjI">
       <property role="TrG5h" value="refactoringTargetConstructor" />
-      <reference role="2rTdP9" target="tp1h.6895093993902310761" resolve="RefactoringTarget" />
-      <reference role="2rZz_L" target="tpee.1068580123140" resolve="ConstructorDeclaration" />
+      <ref role="2rTdP9" to="tp1h:5YKiRiBuwlD" resolve="RefactoringTarget" />
+      <ref role="2rZz_L" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
     </node>
     <node concept="3lhOvk" id="q$PMBgcBN0" role="3lj3bC">
       <property role="36QftV" value="true" />
-      <reference role="2sgKRv" target="478744034994715833" resolve="refactoringClass" />
-      <reference role="3lhOvi" target="478744034994714482" resolve="RefactoringClass" />
-      <reference role="30HIoZ" target="tp1h.6895093993902236229" resolve="Refactoring" />
+      <ref role="2sgKRv" node="q$PMBgcBMT" resolve="refactoringClass" />
+      <ref role="3lhOvi" node="q$PMBgcBtM" resolve="RefactoringClass" />
+      <ref role="30HIoZ" to="tp1h:5YKiRiBue95" resolve="Refactoring" />
     </node>
     <node concept="3lhOvk" id="6$pyvmK_iJX" role="3lj3bC">
       <property role="36QftV" value="true" />
-      <reference role="30HIoZ" target="tp1h.6895093993902310761" resolve="RefactoringTarget" />
-      <reference role="3lhOvi" target="7573235936722758643" resolve="RefactoringTargetClass" />
-      <reference role="2sgKRv" target="7573235936722758654" resolve="refactoringTargetClass" />
+      <ref role="30HIoZ" to="tp1h:5YKiRiBuwlD" resolve="RefactoringTarget" />
+      <ref role="3lhOvi" node="6$pyvmK_iJN" resolve="RefactoringTargetClass" />
+      <ref role="2sgKRv" node="6$pyvmK_iJY" resolve="refactoringTargetClass" />
     </node>
   </node>
   <node concept="312cEu" id="6$pyvmK_iJN">
@@ -1681,7 +1681,7 @@
     <property role="3GE5qa" value="RefDecl" />
     <node concept="3Tm1VV" id="6$pyvmK_iJO" role="1B3o_S" />
     <node concept="n94m4" id="6$pyvmK_iJT" role="lGtFl">
-      <reference role="n9lRv" target="tp1h.6895093993902310761" resolve="RefactoringTarget" />
+      <ref role="n9lRv" to="tp1h:5YKiRiBuwlD" resolve="RefactoringTarget" />
     </node>
     <node concept="17Uvod" id="6$pyvmK_iJU" role="lGtFl">
       <property role="2qtEX9" value="name" />
@@ -1698,13 +1698,13 @@
                   <node concept="2Xjw5R" id="6$pyvmK_iL9" role="2OqNvi">
                     <node concept="1xMEDy" id="6$pyvmK_iLa" role="1xVPHs">
                       <node concept="chp4Y" id="6$pyvmK_iLd" role="ri$Ld">
-                        <reference role="cht4Q" target="tp1h.6895093993902236229" resolve="Refactoring" />
+                        <ref role="cht4Q" to="tp1h:5YKiRiBue95" resolve="Refactoring" />
                       </node>
                     </node>
                   </node>
                 </node>
                 <node concept="3TrcHB" id="6$pyvmK_iLi" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -1713,14 +1713,14 @@
       </node>
     </node>
     <node concept="3uibUv" id="6QdonRgYiGs" role="EKbjA">
-      <reference role="3uigEE" target="ge2m.4792031542972815535" resolve="IRefactoringTarget" />
+      <ref role="3uigEE" to="ge2m:4a0HOMfn9yJ" resolve="IRefactoringTarget" />
     </node>
     <node concept="3clFbW" id="6$pyvmK_iJP" role="jymVt">
       <node concept="3cqZAl" id="6$pyvmK_iJQ" role="3clF45" />
       <node concept="3Tm1VV" id="6$pyvmK_iJR" role="1B3o_S" />
       <node concept="3clFbS" id="6$pyvmK_iJS" role="3clF47" />
       <node concept="1pdMLZ" id="6$pyvmK_iLo" role="lGtFl">
-        <reference role="2rW$FS" target="7573235936722758722" resolve="refactoringTargetConstructor" />
+        <ref role="2rW$FS" node="6$pyvmK_iL2" resolve="refactoringTargetConstructor" />
       </node>
     </node>
     <node concept="3clFb_" id="6$pyvmK_iJZ" role="jymVt">
@@ -1728,13 +1728,13 @@
       <property role="TrG5h" value="getTarget" />
       <node concept="3Tm1VV" id="6$pyvmK_iK0" role="1B3o_S" />
       <node concept="3uibUv" id="6QdonRgYiGt" role="3clF45">
-        <reference role="3uigEE" target="ge2m.4792031542972811326" resolve="IRefactoringTarget.TargetType" />
+        <ref role="3uigEE" to="ge2m:4a0HOMfn8wY" resolve="IRefactoringTarget.TargetType" />
       </node>
       <node concept="3clFbS" id="6$pyvmK_iK2" role="3clF47">
         <node concept="3cpWs6" id="6$pyvmK_iK3" role="3cqZAp">
           <node concept="Rm8GO" id="3BTVB62elsy" role="3cqZAk">
-            <reference role="Rm8GQ" target="ge2m.4792031542972815538" resolve="NODE" />
-            <reference role="1Px2BO" target="ge2m.4792031542972811326" resolve="IRefactoringTarget.TargetType" />
+            <ref role="Rm8GQ" to="ge2m:4a0HOMfn9yM" resolve="NODE" />
+            <ref role="1Px2BO" to="ge2m:4a0HOMfn8wY" resolve="IRefactoringTarget.TargetType" />
             <node concept="1ZhdrF" id="3BTVB62elsz" role="lGtFl">
               <property role="2qtEX8" value="enumConstantDeclaration" />
               <node concept="3$xsQk" id="3BTVB62els$" role="3$ytzL">
@@ -1744,7 +1744,7 @@
                       <node concept="30H73N" id="6$pyvmK_iPk" role="2Oq$k0" />
                       <node concept="1mIQ4w" id="6$pyvmK_iPp" role="2OqNvi">
                         <node concept="chp4Y" id="6$pyvmK_iPr" role="cj9EA">
-                          <reference role="cht4Q" target="tp1h.6895093993902310764" resolve="NodeTarget" />
+                          <ref role="cht4Q" to="tp1h:5YKiRiBuwlG" resolve="NodeTarget" />
                         </node>
                       </node>
                     </node>
@@ -1753,12 +1753,12 @@
                         <node concept="2OqwBi" id="2DTSamXFggw" role="3cqZAk">
                           <node concept="2c44tf" id="6$pyvmK_iMg" role="2Oq$k0">
                             <node concept="Rm8GO" id="1AK8hIRu91p" role="2c44tc">
-                              <reference role="Rm8GQ" target="ge2m.4792031542972815538" resolve="NODE" />
-                              <reference role="1Px2BO" target="ge2m.4792031542972811326" resolve="IRefactoringTarget.TargetType" />
+                              <ref role="Rm8GQ" to="ge2m:4a0HOMfn9yM" resolve="NODE" />
+                              <ref role="1Px2BO" to="ge2m:4a0HOMfn8wY" resolve="IRefactoringTarget.TargetType" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="2DTSamXFgg_" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1083260308426" />
+                            <ref role="3Tt5mk" to="tpee:fKRm8Ja" />
                           </node>
                         </node>
                       </node>
@@ -1769,12 +1769,12 @@
                           <node concept="2OqwBi" id="6$pyvmK_iMU" role="3cqZAk">
                             <node concept="2c44tf" id="6$pyvmK_iMV" role="2Oq$k0">
                               <node concept="Rm8GO" id="1AK8hIRu91q" role="2c44tc">
-                                <reference role="Rm8GQ" target="ge2m.4792031542972815539" resolve="MODEL" />
-                                <reference role="1Px2BO" target="ge2m.4792031542972811326" resolve="IRefactoringTarget.TargetType" />
+                                <ref role="Rm8GQ" to="ge2m:4a0HOMfn9yN" resolve="MODEL" />
+                                <ref role="1Px2BO" to="ge2m:4a0HOMfn8wY" resolve="IRefactoringTarget.TargetType" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="6$pyvmK_iMX" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1083260308426" />
+                              <ref role="3Tt5mk" to="tpee:fKRm8Ja" />
                             </node>
                           </node>
                         </node>
@@ -1783,7 +1783,7 @@
                         <node concept="30H73N" id="6$pyvmK_iPt" role="2Oq$k0" />
                         <node concept="1mIQ4w" id="6$pyvmK_iPu" role="2OqNvi">
                           <node concept="chp4Y" id="6$pyvmK_iP_" role="cj9EA">
-                            <reference role="cht4Q" target="tp1h.6895093993902310762" resolve="ModelTarget" />
+                            <ref role="cht4Q" to="tp1h:5YKiRiBuwlE" resolve="ModelTarget" />
                           </node>
                         </node>
                       </node>
@@ -1794,12 +1794,12 @@
                           <node concept="2OqwBi" id="6$pyvmK_iMZ" role="3cqZAk">
                             <node concept="2c44tf" id="6$pyvmK_iN0" role="2Oq$k0">
                               <node concept="Rm8GO" id="1AK8hIRu91r" role="2c44tc">
-                                <reference role="Rm8GQ" target="ge2m.4792031542972815540" resolve="MODULE" />
-                                <reference role="1Px2BO" target="ge2m.4792031542972811326" resolve="IRefactoringTarget.TargetType" />
+                                <ref role="Rm8GQ" to="ge2m:4a0HOMfn9yO" resolve="MODULE" />
+                                <ref role="1Px2BO" to="ge2m:4a0HOMfn8wY" resolve="IRefactoringTarget.TargetType" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="6$pyvmK_iN2" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1083260308426" />
+                              <ref role="3Tt5mk" to="tpee:fKRm8Ja" />
                             </node>
                           </node>
                         </node>
@@ -1808,7 +1808,7 @@
                         <node concept="30H73N" id="6$pyvmK_iPx" role="2Oq$k0" />
                         <node concept="1mIQ4w" id="6$pyvmK_iPy" role="2OqNvi">
                           <node concept="chp4Y" id="6$pyvmK_iP$" role="cj9EA">
-                            <reference role="cht4Q" target="tp1h.6895093993902310763" resolve="ModuleTarget" />
+                            <ref role="cht4Q" to="tp1h:5YKiRiBuwlF" resolve="ModuleTarget" />
                           </node>
                         </node>
                       </node>
@@ -1841,7 +1841,7 @@
                     <node concept="2OqwBi" id="6$pyvmK_iKp" role="3clFbG">
                       <node concept="30H73N" id="6$pyvmK_iKr" role="2Oq$k0" />
                       <node concept="3TrcHB" id="6$pyvmK_iKt" role="2OqNvi">
-                        <reference role="3TsBF5" target="tp1h.6895093993902310999" resolve="allowMultiple" />
+                        <ref role="3TsBF5" to="tp1h:5YKiRiBuwpn" resolve="allowMultiple" />
                       </node>
                     </node>
                   </node>
@@ -1867,11 +1867,11 @@
         <property role="TrG5h" value="entity" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="3Ds7Xf8LnEV" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="jY4Nl" id="6Keo2cvTv$9" role="lGtFl">
-        <reference role="jYjtx" target="7786266509745404916" resolve="switch_RefactoringTargetFilter" />
+        <ref role="jYjtx" node="6Keo2cvTjJO" resolve="switch_RefactoringTargetFilter" />
       </node>
     </node>
     <node concept="3clFb_" id="6$pyvmK_iKu" role="jymVt">
@@ -1883,7 +1883,7 @@
         <property role="TrG5h" value="entity" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="6$pyvmK_iKy" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="6$pyvmK_iKz" role="3clF47">
@@ -1898,9 +1898,9 @@
           <node concept="3fqX7Q" id="3Ds7Xf8LnEG" role="3clFbw">
             <node concept="2OqwBi" id="3Ds7Xf8LnEW" role="3fr31v">
               <node concept="liA8E" id="3Ds7Xf8LnEX" role="2OqNvi">
-                <reference role="37wK5l" target="4205271146524146357" resolve="isApplicableToEntityType" />
+                <ref role="37wK5l" node="3Ds7Xf8LnEP" resolve="isApplicableToEntityType" />
                 <node concept="37vLTw" id="2BHiRxglBB9" role="37wK5m">
-                  <reference role="3cqZAo" target="7573235936722758689" resolve="entity" />
+                  <ref role="3cqZAo" node="6$pyvmK_iKx" resolve="entity" />
                 </node>
               </node>
               <node concept="Xjq3P" id="3Ds7Xf8LnEY" role="2Oq$k0" />
@@ -1919,7 +1919,7 @@
                     <node concept="2OqwBi" id="6$pyvmK_iKE" role="2Oq$k0">
                       <node concept="30H73N" id="6$pyvmK_iKF" role="2Oq$k0" />
                       <node concept="3TrEf2" id="6$pyvmK_iLp" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tp1h.5497648299878742039" />
+                        <ref role="3Tt5mk" to="tp1h:4Lb$w0Yjnwn" />
                       </node>
                     </node>
                     <node concept="3w_OXm" id="6$pyvmK_iLu" role="2OqNvi" />
@@ -1938,11 +1938,11 @@
                             <node concept="2OqwBi" id="6$pyvmK_iLG" role="2Oq$k0">
                               <node concept="30H73N" id="6$pyvmK_iLK" role="2Oq$k0" />
                               <node concept="3TrEf2" id="6$pyvmK_iLL" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tp1h.5497648299878742039" />
+                                <ref role="3Tt5mk" to="tp1h:4Lb$w0Yjnwn" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="6$pyvmK_iLQ" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1137022507850" />
+                              <ref role="3Tt5mk" to="tpee:gyVODHa" />
                             </node>
                           </node>
                         </node>
@@ -1960,18 +1960,18 @@
   <node concept="13MO4I" id="6$pyvmK_iNw">
     <property role="TrG5h" value="reduce_ConceptFunctionParameter_Target_IsApplicable_Parameter" />
     <property role="3GE5qa" value="RefDecl" />
-    <reference role="3gUMe" target="tpee.1107135704075" resolve="ConceptFunctionParameter" />
+    <ref role="3gUMe" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="3clFb_" id="6$pyvmK_iNC" role="13RCb5">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isApplicable" />
       <node concept="3Tm1VV" id="6$pyvmK_iND" role="1B3o_S" />
       <node concept="3uibUv" id="4$gYbONr3r1" role="3clF45">
-        <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
       </node>
       <node concept="37vLTG" id="6$pyvmK_iNF" role="3clF46">
         <property role="TrG5h" value="entity" />
         <node concept="3uibUv" id="6$pyvmK_iNG" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="6$pyvmK_iNH" role="3clF47">
@@ -1979,10 +1979,10 @@
           <node concept="1eOMI4" id="6$pyvmK_iO9" role="3clFbG">
             <node concept="10QFUN" id="6$pyvmK_iOa" role="1eOMHV">
               <node concept="37vLTw" id="2BHiRxgm8gC" role="10QFUP">
-                <reference role="3cqZAo" target="7573235936722758891" resolve="entity" />
+                <ref role="3cqZAo" node="6$pyvmK_iNF" resolve="entity" />
               </node>
               <node concept="3uibUv" id="6$pyvmK_iOY" role="10QFUM">
-                <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                 <node concept="29HgVG" id="6$pyvmK_iP0" role="lGtFl">
                   <node concept="3NFfHV" id="6$pyvmK_iP1" role="3NFExx">
                     <node concept="3clFbS" id="6$pyvmK_iP2" role="2VODD2">
@@ -2009,25 +2009,25 @@
   <node concept="13MO4I" id="6$pyvmK_iPA">
     <property role="TrG5h" value="reduce_ConceptFunctionParameter_Model" />
     <property role="3GE5qa" value="RefDecl" />
-    <reference role="3gUMe" target="tp1h.1209559114970" resolve="ConceptFunctionParameter_Model" />
+    <ref role="3gUMe" to="tp1h:hAvlQjq" resolve="ConceptFunctionParameter_Model" />
     <node concept="3clFb_" id="6$pyvmK_iPE" role="13RCb5">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isApplicable" />
       <node concept="3Tm1VV" id="6$pyvmK_iPF" role="1B3o_S" />
       <node concept="3uibUv" id="4$gYbONr3qZ" role="3clF45">
-        <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
       </node>
       <node concept="37vLTG" id="6$pyvmK_iPH" role="3clF46">
         <property role="TrG5h" value="entity" />
         <node concept="3uibUv" id="6$pyvmK_iPI" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="6$pyvmK_iPJ" role="3clF47">
         <node concept="3clFbF" id="6$pyvmK_iPK" role="3cqZAp">
           <node concept="1eOMI4" id="6$pyvmK_iW0" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgmNAu" role="1eOMHV">
-              <reference role="3cqZAo" target="7573235936722759021" resolve="entity" />
+              <ref role="3cqZAo" node="6$pyvmK_iPH" resolve="entity" />
             </node>
             <node concept="raruj" id="6$pyvmK_iW9" role="lGtFl" />
           </node>
@@ -2038,7 +2038,7 @@
   <node concept="13MO4I" id="6$pyvmK_j05">
     <property role="TrG5h" value="reduce_RefactoringArgumentReference_put" />
     <property role="3GE5qa" value="RefDecl" />
-    <reference role="3gUMe" target="tpee.1068498886294" resolve="AssignmentExpression" />
+    <ref role="3gUMe" to="tpee:fz7vLUm" resolve="AssignmentExpression" />
     <node concept="3clFb_" id="6$pyvmK_j1S" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="6$pyvmK_j1T" role="3clF45" />
@@ -2047,10 +2047,10 @@
         <node concept="3clFbF" id="6$pyvmK_j1W" role="3cqZAp">
           <node concept="2OqwBi" id="6$pyvmK_j1X" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm8A4" role="2Oq$k0">
-              <reference role="3cqZAo" target="7573235936722759830" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="6$pyvmK_j2m" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="6$pyvmK_j1Z" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972813746" resolve="setParameter" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn96M" resolve="setParameter" />
               <node concept="Xl_RD" id="6$pyvmK_j20" role="37wK5m">
                 <property role="Xl_RC" value="" />
                 <node concept="17Uvod" id="6$pyvmK_j21" role="lGtFl">
@@ -2063,20 +2063,20 @@
                             <node concept="2OqwBi" id="6$pyvmK_j3T" role="3cqZAk">
                               <node concept="2OqwBi" id="6$pyvmK_j3U" role="2Oq$k0">
                                 <node concept="1PxgMI" id="6$pyvmK_j3V" role="2Oq$k0">
-                                  <reference role="1PxNhF" target="tp1h.5497648299878398634" resolve="RefactoringFieldReference" />
+                                  <ref role="1PxNhF" to="tp1h:4Lb$w0Yi3EE" resolve="RefactoringFieldReference" />
                                   <node concept="2OqwBi" id="6$pyvmK_j4y" role="1PxMeX">
                                     <node concept="30H73N" id="6$pyvmK_j4z" role="2Oq$k0" />
                                     <node concept="3TrEf2" id="6$pyvmK_j4$" role="2OqNvi">
-                                      <reference role="3Tt5mk" target="tpee.1068498886295" />
+                                      <ref role="3Tt5mk" to="tpee:fz7vLUn" />
                                     </node>
                                   </node>
                                 </node>
                                 <node concept="3TrEf2" id="6$pyvmK_j3X" role="2OqNvi">
-                                  <reference role="3Tt5mk" target="tp1h.5497648299878398635" />
+                                  <ref role="3Tt5mk" to="tp1h:4Lb$w0Yi3EF" />
                                 </node>
                               </node>
                               <node concept="3TrcHB" id="6$pyvmK_j3Y" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                               </node>
                             </node>
                           </node>
@@ -2085,12 +2085,12 @@
                           <node concept="2OqwBi" id="6$pyvmK_j4s" role="2Oq$k0">
                             <node concept="30H73N" id="6$pyvmK_j40" role="2Oq$k0" />
                             <node concept="3TrEf2" id="6$pyvmK_j4x" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1068498886295" />
+                              <ref role="3Tt5mk" to="tpee:fz7vLUn" />
                             </node>
                           </node>
                           <node concept="1mIQ4w" id="6$pyvmK_j41" role="2OqNvi">
                             <node concept="chp4Y" id="6$pyvmK_j42" role="cj9EA">
-                              <reference role="cht4Q" target="tp1h.5497648299878398634" resolve="RefactoringFieldReference" />
+                              <ref role="cht4Q" to="tp1h:4Lb$w0Yi3EE" resolve="RefactoringFieldReference" />
                             </node>
                           </node>
                         </node>
@@ -2100,20 +2100,20 @@
                               <node concept="2OqwBi" id="6$pyvmK_j46" role="3cqZAk">
                                 <node concept="2OqwBi" id="6$pyvmK_j47" role="2Oq$k0">
                                   <node concept="1PxgMI" id="6$pyvmK_j48" role="2Oq$k0">
-                                    <reference role="1PxNhF" target="tp1h.6895093993902496262" resolve="RefactoringParameterReference" />
+                                    <ref role="1PxNhF" to="tp1h:5YKiRiBvdC6" resolve="RefactoringParameterReference" />
                                     <node concept="2OqwBi" id="6$pyvmK_j4_" role="1PxMeX">
                                       <node concept="30H73N" id="6$pyvmK_j4A" role="2Oq$k0" />
                                       <node concept="3TrEf2" id="6$pyvmK_j4B" role="2OqNvi">
-                                        <reference role="3Tt5mk" target="tpee.1068498886295" />
+                                        <ref role="3Tt5mk" to="tpee:fz7vLUn" />
                                       </node>
                                     </node>
                                   </node>
                                   <node concept="3TrEf2" id="6$pyvmK_j4a" role="2OqNvi">
-                                    <reference role="3Tt5mk" target="tp1h.6895093993902496263" />
+                                    <ref role="3Tt5mk" to="tp1h:5YKiRiBvdC7" />
                                   </node>
                                 </node>
                                 <node concept="3TrcHB" id="6$pyvmK_j4b" role="2OqNvi">
-                                  <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                                 </node>
                               </node>
                             </node>
@@ -2132,7 +2132,7 @@
                         <node concept="2OqwBi" id="6$pyvmK_j2i" role="3clFbG">
                           <node concept="30H73N" id="6$pyvmK_j2j" role="2Oq$k0" />
                           <node concept="3TrEf2" id="6$pyvmK_j2k" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1068498886297" />
+                            <ref role="3Tt5mk" to="tpee:fz7vLUp" />
                           </node>
                         </node>
                       </node>
@@ -2148,7 +2148,7 @@
       <node concept="37vLTG" id="6$pyvmK_j2m" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiKc" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -2156,11 +2156,11 @@
   <node concept="13MO4I" id="6$pyvmK_j0Y">
     <property role="TrG5h" value="reduce_RefactoringArgumentReference_get" />
     <property role="3GE5qa" value="RefDecl" />
-    <reference role="3gUMe" target="tp1h.478744034994716100" resolve="RefactoringArgumentReference" />
+    <ref role="3gUMe" to="tp1h:q$PMBgcBR4" resolve="RefactoringArgumentReference" />
     <node concept="3clFb_" id="6$pyvmK_j1b" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3uibUv" id="4$gYbONr3r3" role="3clF45">
-        <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
       </node>
       <node concept="3Tm1VV" id="6$pyvmK_j1d" role="1B3o_S" />
       <node concept="3clFbS" id="6$pyvmK_j1e" role="3clF47">
@@ -2168,7 +2168,7 @@
           <node concept="1eOMI4" id="6$pyvmK_j1g" role="3clFbG">
             <node concept="10QFUN" id="6$pyvmK_j1h" role="1eOMHV">
               <node concept="3uibUv" id="6$pyvmK_j2K" role="10QFUM">
-                <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                 <node concept="29HgVG" id="6$pyvmK_j2P" role="lGtFl">
                   <node concept="3NFfHV" id="6$pyvmK_j2Q" role="3NFExx">
                     <node concept="3clFbS" id="6$pyvmK_j2R" role="2VODD2">
@@ -2176,7 +2176,7 @@
                         <node concept="1UaxmW" id="4VitrP57bep" role="3clFbG">
                           <node concept="1YaCAy" id="4VitrP57bey" role="1Ub_4A">
                             <property role="TrG5h" value="classifierType" />
-                            <reference role="1YaFvo" target="tpee.1107535904670" resolve="ClassifierType" />
+                            <ref role="1YaFvo" to="tpee:g7uibYu" resolve="ClassifierType" />
                           </node>
                           <node concept="2OqwBi" id="4VitrP57bet" role="1Ub_4B">
                             <node concept="30H73N" id="4VitrP57bes" role="2Oq$k0" />
@@ -2190,10 +2190,10 @@
               </node>
               <node concept="2OqwBi" id="6$pyvmK_j1$" role="10QFUP">
                 <node concept="37vLTw" id="2BHiRxghfNC" role="2Oq$k0">
-                  <reference role="3cqZAo" target="7573235936722759794" resolve="refactoringContext" />
+                  <ref role="3cqZAo" node="6$pyvmK_j1M" resolve="refactoringContext" />
                 </node>
                 <node concept="liA8E" id="6$pyvmK_j1A" role="2OqNvi">
-                  <reference role="37wK5l" target="ge2m.4792031542972813735" resolve="getParameter" />
+                  <ref role="37wK5l" to="ge2m:4a0HOMfn96B" resolve="getParameter" />
                   <node concept="Xl_RD" id="6$pyvmK_j1B" role="37wK5m">
                     <property role="Xl_RC" value="" />
                     <node concept="17Uvod" id="6$pyvmK_j1C" role="lGtFl">
@@ -2206,15 +2206,15 @@
                                 <node concept="2OqwBi" id="6$pyvmK_j3L" role="3cqZAk">
                                   <node concept="2OqwBi" id="6$pyvmK_j3G" role="2Oq$k0">
                                     <node concept="1PxgMI" id="6$pyvmK_j3E" role="2Oq$k0">
-                                      <reference role="1PxNhF" target="tp1h.5497648299878398634" resolve="RefactoringFieldReference" />
+                                      <ref role="1PxNhF" to="tp1h:4Lb$w0Yi3EE" resolve="RefactoringFieldReference" />
                                       <node concept="30H73N" id="6$pyvmK_j3D" role="1PxMeX" />
                                     </node>
                                     <node concept="3TrEf2" id="6$pyvmK_j3K" role="2OqNvi">
-                                      <reference role="3Tt5mk" target="tp1h.5497648299878398635" />
+                                      <ref role="3Tt5mk" to="tp1h:4Lb$w0Yi3EF" />
                                     </node>
                                   </node>
                                   <node concept="3TrcHB" id="6$pyvmK_j3P" role="2OqNvi">
-                                    <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                                   </node>
                                 </node>
                               </node>
@@ -2223,7 +2223,7 @@
                               <node concept="30H73N" id="6$pyvmK_j34" role="2Oq$k0" />
                               <node concept="1mIQ4w" id="6$pyvmK_j39" role="2OqNvi">
                                 <node concept="chp4Y" id="6$pyvmK_j3m" role="cj9EA">
-                                  <reference role="cht4Q" target="tp1h.5497648299878398634" resolve="RefactoringFieldReference" />
+                                  <ref role="cht4Q" to="tp1h:4Lb$w0Yi3EE" resolve="RefactoringFieldReference" />
                                 </node>
                               </node>
                             </node>
@@ -2233,15 +2233,15 @@
                                   <node concept="2OqwBi" id="6$pyvmK_j3x" role="3cqZAk">
                                     <node concept="2OqwBi" id="6$pyvmK_j3y" role="2Oq$k0">
                                       <node concept="1PxgMI" id="6$pyvmK_j3z" role="2Oq$k0">
-                                        <reference role="1PxNhF" target="tp1h.6895093993902496262" resolve="RefactoringParameterReference" />
+                                        <ref role="1PxNhF" to="tp1h:5YKiRiBvdC6" resolve="RefactoringParameterReference" />
                                         <node concept="30H73N" id="6$pyvmK_j3$" role="1PxMeX" />
                                       </node>
                                       <node concept="3TrEf2" id="6$pyvmK_j3_" role="2OqNvi">
-                                        <reference role="3Tt5mk" target="tp1h.6895093993902496263" />
+                                        <ref role="3Tt5mk" to="tp1h:5YKiRiBvdC7" />
                                       </node>
                                     </node>
                                     <node concept="3TrcHB" id="6$pyvmK_j3A" role="2OqNvi">
-                                      <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                                     </node>
                                   </node>
                                 </node>
@@ -2262,7 +2262,7 @@
       <node concept="37vLTG" id="6$pyvmK_j1M" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiKb" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -2271,7 +2271,7 @@
     <property role="TrG5h" value="switch_RefactoringTargetFilter" />
     <property role="3GE5qa" value="RefDecl" />
     <node concept="3aamgX" id="6Keo2cvTjJP" role="3aUrZf">
-      <reference role="30HIoZ" target="tp1h.6895093993902310763" resolve="ModuleTarget" />
+      <ref role="30HIoZ" to="tp1h:5YKiRiBuwlF" resolve="ModuleTarget" />
       <node concept="gft3U" id="6Keo2cvTjK1" role="1lVwrX">
         <node concept="3clFb_" id="6Keo2cvTjK3" role="gfFT$">
           <property role="TrG5h" value="isApplicableToEntityType" />
@@ -2281,14 +2281,14 @@
             <property role="TrG5h" value="entity" />
             <property role="3TUv4t" value="true" />
             <node concept="3uibUv" id="6Keo2cvTjK7" role="1tU5fm">
-              <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
             </node>
           </node>
           <node concept="3clFbS" id="6Keo2cvTjK8" role="3clF47">
             <node concept="3cpWs6" id="6Keo2cvTjK9" role="3cqZAp">
               <node concept="2ZW3vV" id="6Keo2cvTjKa" role="3cqZAk">
                 <node concept="3uibUv" id="6Keo2cvTjKb" role="2ZW6by">
-                  <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                   <node concept="1ZhdrF" id="6Keo2cvTjKc" role="lGtFl">
                     <property role="2qtEX8" value="classifier" />
                     <node concept="3$xsQk" id="6Keo2cvTjKd" role="3$ytzL">
@@ -2298,11 +2298,11 @@
                             <node concept="2OqwBi" id="6Keo2cvTjKh" role="2Oq$k0">
                               <node concept="30H73N" id="6Keo2cvTjKi" role="2Oq$k0" />
                               <node concept="3TrEf2" id="6Keo2cvTjKj" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tp1h.6895093993902310767" />
+                                <ref role="3Tt5mk" to="tp1h:5YKiRiBuwlJ" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="6Keo2cvTjKk" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1107535924139" />
+                              <ref role="3Tt5mk" to="tpee:g7uigIF" />
                             </node>
                           </node>
                         </node>
@@ -2311,7 +2311,7 @@
                   </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxgmNBi" role="2ZW6bz">
-                  <reference role="3cqZAo" target="7786266509745404934" resolve="entity" />
+                  <ref role="3cqZAo" node="6Keo2cvTjK6" resolve="entity" />
                 </node>
               </node>
             </node>
@@ -2325,7 +2325,7 @@
               <node concept="2OqwBi" id="6Keo2cvTjKO" role="2Oq$k0">
                 <node concept="30H73N" id="6Keo2cvTjKN" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6Keo2cvTjOP" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tp1h.6895093993902310767" />
+                  <ref role="3Tt5mk" to="tp1h:5YKiRiBuwlJ" />
                 </node>
               </node>
               <node concept="3x8VRR" id="6Keo2cvTjOU" role="2OqNvi" />
@@ -2335,7 +2335,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="6Keo2cvTjJZ" role="3aUrZf">
-      <reference role="30HIoZ" target="tp1h.6895093993902310764" resolve="NodeTarget" />
+      <ref role="30HIoZ" to="tp1h:5YKiRiBuwlG" resolve="NodeTarget" />
       <node concept="gft3U" id="6Keo2cvTjKo" role="1lVwrX">
         <node concept="3clFb_" id="6Keo2cvTjKq" role="gfFT$">
           <property role="TrG5h" value="isApplicableToEntityType" />
@@ -2345,7 +2345,7 @@
             <property role="TrG5h" value="entity" />
             <property role="3TUv4t" value="true" />
             <node concept="3uibUv" id="6Keo2cvTjKu" role="1tU5fm">
-              <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
             </node>
           </node>
           <node concept="3clFbS" id="6Keo2cvTjKv" role="3clF47">
@@ -2354,14 +2354,14 @@
                 <node concept="1eOMI4" id="6Keo2cvTjKz" role="2Oq$k0">
                   <node concept="10QFUN" id="6Keo2cvTjK$" role="1eOMHV">
                     <node concept="37vLTw" id="2BHiRxgll2f" role="10QFUP">
-                      <reference role="3cqZAo" target="7786266509745404957" resolve="entity" />
+                      <ref role="3cqZAo" node="6Keo2cvTjKt" resolve="entity" />
                     </node>
                     <node concept="3Tqbb2" id="6Keo2cvTjKA" role="10QFUM" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="6Keo2cvTjKB" role="2OqNvi">
                   <node concept="chp4Y" id="6Keo2cvTjKC" role="cj9EA">
-                    <reference role="cht4Q" target="tpck.1133920641626" resolve="BaseConcept" />
+                    <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
                     <node concept="1ZhdrF" id="6Keo2cvTjKD" role="lGtFl">
                       <property role="2qtEX8" value="conceptDeclaration" />
                       <node concept="3$xsQk" id="6Keo2cvTjKE" role="3$ytzL">
@@ -2370,7 +2370,7 @@
                             <node concept="2OqwBi" id="6Keo2cvTjKH" role="3clFbG">
                               <node concept="30H73N" id="6Keo2cvTjKI" role="2Oq$k0" />
                               <node concept="3TrEf2" id="6Keo2cvTjKJ" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tp1h.6895093993902310806" />
+                                <ref role="3Tt5mk" to="tp1h:5YKiRiBuwmm" />
                               </node>
                             </node>
                           </node>
@@ -2391,7 +2391,7 @@
               <node concept="2OqwBi" id="6Keo2cvTjOZ" role="2Oq$k0">
                 <node concept="30H73N" id="6Keo2cvTjOY" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6Keo2cvTjP3" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tp1h.6895093993902310806" />
+                  <ref role="3Tt5mk" to="tp1h:5YKiRiBuwmm" />
                 </node>
               </node>
               <node concept="3x8VRR" id="6Keo2cvTjP8" role="2OqNvi" />
@@ -2408,7 +2408,7 @@
         <node concept="37vLTG" id="6Keo2cvT$QQ" role="3clF46">
           <property role="TrG5h" value="entity" />
           <node concept="3uibUv" id="6Keo2cvT$QR" role="1tU5fm">
-            <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
           </node>
         </node>
         <node concept="3clFbS" id="6Keo2cvT$QS" role="3clF47">
@@ -2425,87 +2425,87 @@
     <property role="TrG5h" value=".context" />
     <property role="3GE5qa" value="Context" />
     <node concept="3aamgX" id="6Tyhu1Fprxv" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.7953996722066536522" resolve="ContextType" />
+      <ref role="30HIoZ" to="tp1h:6Tyhu1Fprxa" resolve="ContextType" />
       <node concept="gft3U" id="6Tyhu1Fprxx" role="1lVwrX">
         <node concept="3uibUv" id="6QdonRgYiGw" role="gfFT$">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
     <node concept="3aamgX" id="6Tyhu1ForXV" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.7953996722066252911" resolve="ModelDescriptorOperation" />
+      <ref role="30HIoZ" to="tp1h:6Tyhu1FomhJ" resolve="ModelDescriptorOperation" />
       <node concept="j$656" id="6Tyhu1ForXW" role="1lVwrX">
-        <reference role="v9R2y" target="7953996722066276233" resolve="reduce_ModelDescriptorOperation" />
+        <ref role="v9R2y" node="6Tyhu1ForY9" resolve="reduce_ModelDescriptorOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="59D800tSCWq" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.5938312768538179915" resolve="RepositoryOperation" />
+      <ref role="30HIoZ" to="tp1h:59D800tSB_b" resolve="RepositoryOperation" />
       <node concept="j$656" id="59D800tSF5b" role="1lVwrX">
-        <reference role="v9R2y" target="5938312768538194249" resolve="reduce_RepositoryOperation" />
+        <ref role="v9R2y" node="59D800tSF59" resolve="reduce_RepositoryOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="6Tyhu1ForXX" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.7953996722066252917" resolve="NodesOperation" />
+      <ref role="30HIoZ" to="tp1h:6Tyhu1FomhP" resolve="NodesOperation" />
       <node concept="j$656" id="6Tyhu1ForXY" role="1lVwrX">
-        <reference role="v9R2y" target="7953996722066276269" resolve="reduce_NodesOperation" />
+        <ref role="v9R2y" node="6Tyhu1ForYH" resolve="reduce_NodesOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="6Tyhu1ForXZ" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.7953996722066252915" resolve="NodeOperation" />
+      <ref role="30HIoZ" to="tp1h:6Tyhu1FomhN" resolve="NodeOperation" />
       <node concept="j$656" id="6Tyhu1ForY0" role="1lVwrX">
-        <reference role="v9R2y" target="7953996722066276257" resolve="reduce_NodeOperation" />
+        <ref role="v9R2y" node="6Tyhu1ForYx" resolve="reduce_NodeOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="6Tyhu1ForY1" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.7953996722066252913" resolve="ModuleOperation" />
+      <ref role="30HIoZ" to="tp1h:6Tyhu1FomhL" resolve="ModuleOperation" />
       <node concept="j$656" id="6Tyhu1FosA6" role="1lVwrX">
-        <reference role="v9R2y" target="1215084894629" resolve="reduce_ModuleOperation" />
+        <ref role="v9R2y" node="hFCH1A_" resolve="reduce_ModuleOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="6Tyhu1ForY3" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.7953996722066252921" resolve="ProjectOperation" />
+      <ref role="30HIoZ" to="tp1h:6Tyhu1FomhT" resolve="ProjectOperation" />
       <node concept="j$656" id="6Tyhu1ForY4" role="1lVwrX">
-        <reference role="v9R2y" target="7953996722066276293" resolve="reduce_ProjectOperation" />
+        <ref role="v9R2y" node="6Tyhu1ForZ5" resolve="reduce_ProjectOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="6Tyhu1ForY5" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.7953996722066252923" resolve="ScopeOperation" />
+      <ref role="30HIoZ" to="tp1h:6Tyhu1FomhV" resolve="ScopeOperation" />
       <node concept="j$656" id="6Tyhu1ForY6" role="1lVwrX">
-        <reference role="v9R2y" target="7953996722066276305" resolve="reduce_ScopeOperation" />
+        <ref role="v9R2y" node="6Tyhu1ForZh" resolve="reduce_ScopeOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="6Tyhu1ForY7" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.7953996722066252919" resolve="OperationContextOperation" />
+      <ref role="30HIoZ" to="tp1h:6Tyhu1FomhR" resolve="OperationContextOperation" />
       <node concept="j$656" id="6Tyhu1ForY8" role="1lVwrX">
-        <reference role="v9R2y" target="7953996722066276281" resolve="reduce_OperationContextOperation" />
+        <ref role="v9R2y" node="6Tyhu1ForYT" resolve="reduce_OperationContextOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="72p_rFnslx4" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.8113680833395644310" resolve="MainProjectOperation" />
+      <ref role="30HIoZ" to="tp1h:72p_rFnslum" resolve="MainProjectOperation" />
       <node concept="j$656" id="72p_rFnslx6" role="1lVwrX">
-        <reference role="v9R2y" target="8113680833395644482" resolve="reduce_MainProjectOperation" />
+        <ref role="v9R2y" node="72p_rFnslx2" resolve="reduce_MainProjectOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="3LlWHEPrkM$" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.4347648036456711197" resolve="ModelsToGenerateByDefault" />
+      <ref role="30HIoZ" to="tp1h:3LlWHEPrkgt" resolve="ModelsToGenerateByDefault" />
       <node concept="j$656" id="3LlWHEPrkMA" role="1lVwrX">
-        <reference role="v9R2y" target="4347648036456713378" resolve="reduce_ModelsToGenerateByDefault" />
+        <ref role="v9R2y" node="3LlWHEPrkMy" resolve="reduce_ModelsToGenerateByDefault" />
       </node>
     </node>
     <node concept="3aamgX" id="4WjcdlXSrHs" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.3700868637771181541" resolve="CreateRefactoringContext" />
+      <ref role="30HIoZ" to="tp1h:3ds86G2J2R_" resolve="CreateRefactoringContext" />
       <node concept="j$656" id="4WjcdlXSrJs" role="1lVwrX">
-        <reference role="v9R2y" target="5697951647051922394" resolve="reduce_CreateRefactoringContext" />
+        <ref role="v9R2y" node="4WjcdlXSrJq" resolve="reduce_CreateRefactoringContext" />
       </node>
     </node>
     <node concept="3aamgX" id="1Z$ZeXyO1$d" role="3acgRq">
-      <reference role="30HIoZ" target="tp1h.2298239814950983788" resolve="ExecuteRefactoringStatement" />
+      <ref role="30HIoZ" to="tp1h:1Z$ZeXyO1xG" resolve="ExecuteRefactoringStatement" />
       <node concept="gft3U" id="1Z$ZeXyO1$e" role="1lVwrX">
         <property role="3GE5qa" value="Context" />
         <node concept="3clFbF" id="1Z$ZeXyO1$g" role="gfFT$">
           <node concept="2OqwBi" id="1Z$ZeXyO1Ki" role="3clFbG">
             <node concept="liA8E" id="1Z$ZeXyO1Km" role="2OqNvi">
-              <reference role="37wK5l" target="u42p.2482360940803572348" resolve="execute" />
+              <ref role="37wK5l" to="u42p:29N7xYwTG9W" resolve="execute" />
               <node concept="LS0Qe" id="1Z$ZeXyO1Kn" role="37wK5m">
                 <node concept="10Nm6u" id="1Z$ZeXyO1Kt" role="LSJb1">
                   <node concept="2b32R4" id="1Z$ZeXyO1KW" role="lGtFl">
@@ -2514,7 +2514,7 @@
                         <node concept="3clFbF" id="1Z$ZeXyO1L1" role="3cqZAp">
                           <node concept="2OqwBi" id="1Z$ZeXyO1L2" role="3clFbG">
                             <node concept="3Tsc0h" id="1Z$ZeXyO1L3" role="2OqNvi">
-                              <reference role="3TtcxE" target="tp1h.2298239814950983793" />
+                              <ref role="3TtcxE" to="tp1h:1Z$ZeXyO1xL" />
                             </node>
                             <node concept="30H73N" id="1Z$ZeXyO1L4" role="2Oq$k0" />
                           </node>
@@ -2530,7 +2530,7 @@
                         <node concept="3clFbF" id="1Z$ZeXyO1KH" role="3cqZAp">
                           <node concept="2OqwBi" id="1Z$ZeXyO1KI" role="3clFbG">
                             <node concept="3TrEf2" id="1Z$ZeXyO1KJ" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tp1h.2298239814950983792" />
+                              <ref role="3Tt5mk" to="tp1h:1Z$ZeXyO1xK" />
                             </node>
                             <node concept="30H73N" id="1Z$ZeXyO1KK" role="2Oq$k0" />
                           </node>
@@ -2546,7 +2546,7 @@
                         <node concept="3clFbF" id="1Z$ZeXyO1KR" role="3cqZAp">
                           <node concept="2OqwBi" id="1Z$ZeXyO1KS" role="3clFbG">
                             <node concept="3TrEf2" id="1Z$ZeXyO1KT" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tp1h.2298239814950983794" />
+                              <ref role="3Tt5mk" to="tp1h:1Z$ZeXyO1xM" />
                             </node>
                             <node concept="30H73N" id="1Z$ZeXyO1KU" role="2Oq$k0" />
                           </node>
@@ -2562,7 +2562,7 @@
                       <node concept="3clFbF" id="1Z$ZeXyO1Kz" role="3cqZAp">
                         <node concept="2OqwBi" id="1Z$ZeXyO1K$" role="3clFbG">
                           <node concept="3TrEf2" id="1Z$ZeXyO1K_" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.2298239814950983795" />
+                            <ref role="3Tt5mk" to="tp1h:1Z$ZeXyO1xN" />
                           </node>
                           <node concept="30H73N" id="1Z$ZeXyO1KA" role="2Oq$k0" />
                         </node>
@@ -2574,11 +2574,11 @@
             </node>
             <node concept="2OqwBi" id="4hHBpohZPk_" role="2Oq$k0">
               <node concept="2YIFZM" id="4hHBpohZPky" role="2Oq$k0">
-                <reference role="1Pybhc" target="u42p.1399798136780143890" resolve="RefactoringAccess" />
-                <reference role="37wK5l" target="u42p.1399798136780143965" resolve="getInstance" />
+                <ref role="1Pybhc" to="u42p:1dH5fOG2bOi" resolve="RefactoringAccess" />
+                <ref role="37wK5l" to="u42p:1dH5fOG2bPt" resolve="getInstance" />
               </node>
               <node concept="liA8E" id="4hHBpohZPkE" role="2OqNvi">
-                <reference role="37wK5l" target="u42p.5814231631271514652" resolve="getRefactoringFacade" />
+                <ref role="37wK5l" to="u42p:52KjdOfLP8s" resolve="getRefactoringFacade" />
               </node>
             </node>
           </node>
@@ -2589,7 +2589,7 @@
   <node concept="13MO4I" id="6Tyhu1ForY9">
     <property role="TrG5h" value="reduce_ModelDescriptorOperation" />
     <property role="3GE5qa" value="Context" />
-    <reference role="3gUMe" target="tp1h.7953996722066252911" resolve="ModelDescriptorOperation" />
+    <ref role="3gUMe" to="tp1h:6Tyhu1FomhJ" resolve="ModelDescriptorOperation" />
     <node concept="3clFb_" id="6Tyhu1ForYa" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="6Tyhu1ForYb" role="3clF45" />
@@ -2598,10 +2598,10 @@
         <node concept="3clFbF" id="6Tyhu1ForYe" role="3cqZAp">
           <node concept="2OqwBi" id="6Tyhu1ForYf" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxglj1r" role="2Oq$k0">
-              <reference role="3cqZAo" target="7953996722066276243" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="6Tyhu1ForYj" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="6Tyhu1ForYh" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972815384" resolve="getSelectedModel" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9wo" resolve="getSelectedModel" />
               <node concept="raruj" id="6Tyhu1Fos_Y" role="lGtFl" />
             </node>
           </node>
@@ -2610,7 +2610,7 @@
       <node concept="37vLTG" id="6Tyhu1ForYj" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiJS" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -2618,7 +2618,7 @@
   <node concept="13MO4I" id="6Tyhu1ForYx">
     <property role="TrG5h" value="reduce_NodeOperation" />
     <property role="3GE5qa" value="Context" />
-    <reference role="3gUMe" target="tp1h.7953996722066252915" resolve="NodeOperation" />
+    <ref role="3gUMe" to="tp1h:6Tyhu1FomhN" resolve="NodeOperation" />
     <node concept="3clFb_" id="6Tyhu1ForYy" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="6Tyhu1ForYz" role="3clF45" />
@@ -2627,10 +2627,10 @@
         <node concept="3clFbF" id="6Tyhu1ForYA" role="3cqZAp">
           <node concept="2OqwBi" id="6Tyhu1ForYB" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm7i6" role="2Oq$k0">
-              <reference role="3cqZAo" target="7953996722066276267" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="6Tyhu1ForYF" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="6Tyhu1ForYD" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972815347" resolve="getSelectedNode" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9vN" resolve="getSelectedNode" />
               <node concept="raruj" id="6Tyhu1FosA1" role="lGtFl" />
             </node>
           </node>
@@ -2639,7 +2639,7 @@
       <node concept="37vLTG" id="6Tyhu1ForYF" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiK4" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -2647,7 +2647,7 @@
   <node concept="13MO4I" id="6Tyhu1ForYH">
     <property role="TrG5h" value="reduce_NodesOperation" />
     <property role="3GE5qa" value="Context" />
-    <reference role="3gUMe" target="tp1h.7953996722066252917" resolve="NodesOperation" />
+    <ref role="3gUMe" to="tp1h:6Tyhu1FomhP" resolve="NodesOperation" />
     <node concept="3clFb_" id="6Tyhu1ForYI" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="6Tyhu1ForYJ" role="3clF45" />
@@ -2656,10 +2656,10 @@
         <node concept="3clFbF" id="6Tyhu1ForYM" role="3cqZAp">
           <node concept="2OqwBi" id="6Tyhu1ForYN" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxglBAL" role="2Oq$k0">
-              <reference role="3cqZAo" target="7953996722066276279" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="6Tyhu1ForYR" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="6Tyhu1ForYP" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972815363" resolve="getSelectedNodes" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9w3" resolve="getSelectedNodes" />
               <node concept="raruj" id="6Tyhu1FosA2" role="lGtFl" />
             </node>
           </node>
@@ -2668,7 +2668,7 @@
       <node concept="37vLTG" id="6Tyhu1ForYR" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiK6" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -2676,7 +2676,7 @@
   <node concept="13MO4I" id="6Tyhu1ForYT">
     <property role="TrG5h" value="reduce_OperationContextOperation" />
     <property role="3GE5qa" value="Context" />
-    <reference role="3gUMe" target="tp1h.7953996722066252919" resolve="OperationContextOperation" />
+    <ref role="3gUMe" to="tp1h:6Tyhu1FomhR" resolve="OperationContextOperation" />
     <node concept="3clFb_" id="6Tyhu1ForYU" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="6Tyhu1ForYV" role="3clF45" />
@@ -2685,10 +2685,10 @@
         <node concept="3clFbF" id="6Tyhu1ForYY" role="3cqZAp">
           <node concept="2OqwBi" id="6Tyhu1ForYZ" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgmD$n" role="2Oq$k0">
-              <reference role="3cqZAo" target="7953996722066276291" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="6Tyhu1ForZ3" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="6Tyhu1ForZ1" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972815503" resolve="getCurrentOperationContext" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9yf" resolve="getCurrentOperationContext" />
               <node concept="raruj" id="6Tyhu1FosA3" role="lGtFl" />
             </node>
           </node>
@@ -2697,7 +2697,7 @@
       <node concept="37vLTG" id="6Tyhu1ForZ3" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiK8" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -2705,7 +2705,7 @@
   <node concept="13MO4I" id="6Tyhu1ForZ5">
     <property role="TrG5h" value="reduce_ProjectOperation" />
     <property role="3GE5qa" value="Context" />
-    <reference role="3gUMe" target="tp1h.7953996722066252921" resolve="ProjectOperation" />
+    <ref role="3gUMe" to="tp1h:6Tyhu1FomhT" resolve="ProjectOperation" />
     <node concept="3clFb_" id="6Tyhu1ForZ6" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="6Tyhu1ForZ7" role="3clF45" />
@@ -2714,10 +2714,10 @@
         <node concept="3clFbF" id="6Tyhu1ForZa" role="3cqZAp">
           <node concept="2OqwBi" id="6Tyhu1ForZb" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm_sT" role="2Oq$k0">
-              <reference role="3cqZAo" target="7953996722066276303" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="6Tyhu1ForZf" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="6Tyhu1ForZd" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972815491" resolve="getSelectedProject" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9y3" resolve="getSelectedProject" />
               <node concept="raruj" id="6Tyhu1FosA4" role="lGtFl" />
             </node>
           </node>
@@ -2726,7 +2726,7 @@
       <node concept="37vLTG" id="6Tyhu1ForZf" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiKa" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -2734,7 +2734,7 @@
   <node concept="13MO4I" id="6Tyhu1ForZh">
     <property role="TrG5h" value="reduce_ScopeOperation" />
     <property role="3GE5qa" value="Context" />
-    <reference role="3gUMe" target="tp1h.7953996722066252923" resolve="ScopeOperation" />
+    <ref role="3gUMe" to="tp1h:6Tyhu1FomhV" resolve="ScopeOperation" />
     <node concept="3clFb_" id="6Tyhu1ForZi" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="6Tyhu1ForZj" role="3clF45" />
@@ -2743,10 +2743,10 @@
         <node concept="3clFbF" id="6Tyhu1ForZm" role="3cqZAp">
           <node concept="2OqwBi" id="6Tyhu1ForZn" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm8Xc" role="2Oq$k0">
-              <reference role="3cqZAo" target="7953996722066276315" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="6Tyhu1ForZr" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="6Tyhu1ForZp" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972815497" resolve="getCurrentScope" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9y9" resolve="getCurrentScope" />
               <node concept="raruj" id="6Tyhu1FosA5" role="lGtFl" />
             </node>
           </node>
@@ -2755,7 +2755,7 @@
       <node concept="37vLTG" id="6Tyhu1ForZr" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiKe" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -2763,7 +2763,7 @@
   <node concept="13MO4I" id="2RjnwervIo$">
     <property role="TrG5h" value="reduce_ChangeFeatureNameExpression" />
     <property role="3GE5qa" value="RefActions" />
-    <reference role="3gUMe" target="tp1h.3302086321379400330" resolve="ChangeFeatureNameExpression" />
+    <ref role="3gUMe" to="tp1h:2RjnwervHEa" resolve="ChangeFeatureNameExpression" />
     <node concept="3clFb_" id="2RjnwervIoC" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="2RjnwervIoD" role="3clF45" />
@@ -2772,10 +2772,10 @@
         <node concept="3clFbF" id="2RjnwervIoG" role="3cqZAp">
           <node concept="2OqwBi" id="2RjnwervIoH" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm9ez" role="2Oq$k0">
-              <reference role="3cqZAo" target="3302086321379403337" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="2RjnwervIp9" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="2RjnwervIoJ" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972814200" resolve="changeFeatureName" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9dS" resolve="changeFeatureName" />
               <node concept="10Nm6u" id="2RjnwervIoK" role="37wK5m">
                 <node concept="29HgVG" id="2RjnwervIoL" role="lGtFl">
                   <node concept="3NFfHV" id="2RjnwervIoM" role="3NFExx">
@@ -2784,7 +2784,7 @@
                         <node concept="2OqwBi" id="2RjnwervIoP" role="3clFbG">
                           <node concept="30H73N" id="2RjnwervIoQ" role="2Oq$k0" />
                           <node concept="3TrEf2" id="2RjnwervIpb" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.3302086321379400331" />
+                            <ref role="3Tt5mk" to="tp1h:2RjnwervHEb" />
                           </node>
                         </node>
                       </node>
@@ -2800,7 +2800,7 @@
                         <node concept="2OqwBi" id="2RjnwervIoX" role="3clFbG">
                           <node concept="30H73N" id="2RjnwervIoY" role="2Oq$k0" />
                           <node concept="3TrEf2" id="2RjnwervIpc" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.3302086321379400332" />
+                            <ref role="3Tt5mk" to="tp1h:2RjnwervHEc" />
                           </node>
                         </node>
                       </node>
@@ -2816,7 +2816,7 @@
                         <node concept="2OqwBi" id="2RjnwervIp5" role="3clFbG">
                           <node concept="30H73N" id="2RjnwervIp6" role="2Oq$k0" />
                           <node concept="3TrEf2" id="2RjnwervIpd" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.3302086321379400333" />
+                            <ref role="3Tt5mk" to="tp1h:2RjnwervHEd" />
                           </node>
                         </node>
                       </node>
@@ -2832,7 +2832,7 @@
       <node concept="37vLTG" id="2RjnwervIp9" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiGD" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -2840,7 +2840,7 @@
   <node concept="13MO4I" id="2RjnwervIpO">
     <property role="TrG5h" value="reduce_DeleteFeatureExpression" />
     <property role="3GE5qa" value="RefActions" />
-    <reference role="3gUMe" target="tp1h.3302086321379403347" resolve="DeleteFeatureExpression" />
+    <ref role="3gUMe" to="tp1h:2RjnwervIpj" resolve="DeleteFeatureExpression" />
     <node concept="3clFb_" id="2RjnwervIpP" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="2RjnwervIpQ" role="3clF45" />
@@ -2849,10 +2849,10 @@
         <node concept="3clFbF" id="2RjnwervIpT" role="3cqZAp">
           <node concept="2OqwBi" id="2RjnwervIpU" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm8AD" role="2Oq$k0">
-              <reference role="3cqZAo" target="3302086321379403398" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="2RjnwervIq6" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="2RjnwervIpW" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972814188" resolve="deleteFeature" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9dG" resolve="deleteFeature" />
               <node concept="10Nm6u" id="2RjnwervIpX" role="37wK5m">
                 <node concept="29HgVG" id="2RjnwervIpY" role="lGtFl">
                   <node concept="3NFfHV" id="2RjnwervIpZ" role="3NFExx">
@@ -2861,7 +2861,7 @@
                         <node concept="2OqwBi" id="2RjnwervIq2" role="3clFbG">
                           <node concept="30H73N" id="2RjnwervIq3" role="2Oq$k0" />
                           <node concept="3TrEf2" id="2RjnwervIq8" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.3302086321379403348" />
+                            <ref role="3Tt5mk" to="tp1h:2RjnwervIpk" />
                           </node>
                         </node>
                       </node>
@@ -2877,14 +2877,14 @@
       <node concept="37vLTG" id="2RjnwervIq6" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiGF" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
   </node>
   <node concept="13MO4I" id="72p_rFnslx2">
     <property role="TrG5h" value="reduce_MainProjectOperation" />
-    <reference role="3gUMe" target="tp1h.8113680833395644310" resolve="MainProjectOperation" />
+    <ref role="3gUMe" to="tp1h:72p_rFnslum" resolve="MainProjectOperation" />
     <node concept="3clFb_" id="72p_rFnslx7" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="72p_rFnslx8" role="3clF45" />
@@ -2893,10 +2893,10 @@
         <node concept="3clFbF" id="72p_rFnslxb" role="3cqZAp">
           <node concept="2OqwBi" id="72p_rFnslxc" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgmDzA" role="2Oq$k0">
-              <reference role="3cqZAo" target="8113680833395644496" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="72p_rFnslxg" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="72p_rFnslxe" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.4792031542972815491" resolve="getSelectedProject" />
+              <ref role="37wK5l" to="ge2m:4a0HOMfn9y3" resolve="getSelectedProject" />
               <node concept="raruj" id="72p_rFnslxf" role="lGtFl" />
             </node>
           </node>
@@ -2905,7 +2905,7 @@
       <node concept="37vLTG" id="72p_rFnslxg" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="6QdonRgYiJP" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>
@@ -2913,14 +2913,14 @@
   <node concept="13MO4I" id="3LlWHEPrkMy">
     <property role="TrG5h" value="reduce_ModelsToGenerateByDefault" />
     <property role="3GE5qa" value="RefDecl.Methods" />
-    <reference role="3gUMe" target="tp1h.4347648036456711197" resolve="ModelsToGenerateByDefault" />
+    <ref role="3gUMe" to="tp1h:3LlWHEPrkgt" resolve="ModelsToGenerateByDefault" />
     <node concept="312cEu" id="3LlWHEPrkMB" role="13RCb5">
       <property role="TrG5h" value="RefactoringClass" />
       <property role="2bfB8j" value="true" />
       <property role="1sVAO0" value="true" />
       <node concept="3Tm1VV" id="3LlWHEPrkMC" role="1B3o_S" />
       <node concept="3uibUv" id="6QdonRgYiJT" role="1zkMxy">
-        <reference role="3uigEE" target="ge2m.4792031542972804556" resolve="BaseRefactoring" />
+        <ref role="3uigEE" to="ge2m:4a0HOMfn6Rc" resolve="BaseRefactoring" />
       </node>
       <node concept="3clFb_" id="3LlWHEPrkMH" role="jymVt">
         <property role="TrG5h" value="getModelsToGenerate" />
@@ -2936,16 +2936,16 @@
               </node>
               <node concept="2OqwBi" id="1ZYs8MRuNe8" role="10QFUP">
                 <node concept="37vLTw" id="2BHiRxgm83L" role="2Oq$k0">
-                  <reference role="3cqZAo" target="4347648036456713398" resolve="refactoringContext" />
+                  <ref role="3cqZAo" node="3LlWHEPrkMQ" resolve="refactoringContext" />
                 </node>
                 <node concept="liA8E" id="1ZYs8MRuNea" role="2OqNvi">
-                  <reference role="37wK5l" target="ge2m.4792031542972813801" resolve="getModelsFromUsages" />
+                  <ref role="37wK5l" to="ge2m:4a0HOMfn97D" resolve="getModelsFromUsages" />
                   <node concept="2OqwBi" id="1ZYs8MRuNec" role="37wK5m">
                     <node concept="37vLTw" id="2BHiRxgmCPN" role="2Oq$k0">
-                      <reference role="3cqZAo" target="4347648036456713398" resolve="refactoringContext" />
+                      <ref role="3cqZAo" node="3LlWHEPrkMQ" resolve="refactoringContext" />
                     </node>
                     <node concept="liA8E" id="1ZYs8MRuNee" role="2OqNvi">
-                      <reference role="37wK5l" target="ge2m.4792031542972815384" resolve="getSelectedModel" />
+                      <ref role="37wK5l" to="ge2m:4a0HOMfn9wo" resolve="getSelectedModel" />
                     </node>
                   </node>
                 </node>
@@ -2958,7 +2958,7 @@
           <property role="TrG5h" value="refactoringContext" />
           <property role="3TUv4t" value="true" />
           <node concept="3uibUv" id="6QdonRgYiJW" role="1tU5fm">
-            <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+            <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
           </node>
         </node>
       </node>
@@ -2967,7 +2967,7 @@
   <node concept="13MO4I" id="4WjcdlXSrJq">
     <property role="TrG5h" value="reduce_CreateRefactoringContext" />
     <property role="3GE5qa" value="Context" />
-    <reference role="3gUMe" target="tp1h.3700868637771181541" resolve="CreateRefactoringContext" />
+    <ref role="3gUMe" to="tp1h:3ds86G2J2R_" resolve="CreateRefactoringContext" />
     <node concept="2YIFZL" id="4WjcdlXSrJt" role="13RCb5">
       <property role="TrG5h" value="create" />
       <node concept="3cqZAl" id="4WjcdlXSrJu" role="3clF45" />
@@ -2977,11 +2977,11 @@
           <node concept="3cpWsn" id="4WjcdlXTbx8" role="3cpWs9">
             <property role="TrG5h" value="context" />
             <node concept="3uibUv" id="4WjcdlXTbx9" role="1tU5fm">
-              <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+              <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
             </node>
             <node concept="2YIFZM" id="5lCz6ko76ns" role="33vP2m">
-              <reference role="37wK5l" target="ge2m.6154323256625077079" resolve="createRefactoringContextByName" />
-              <reference role="1Pybhc" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+              <ref role="37wK5l" to="ge2m:5lCz6ko41Hn" resolve="createRefactoringContextByName" />
+              <ref role="1Pybhc" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
               <node concept="Xl_RD" id="5lCz6ko76nu" role="37wK5m">
                 <property role="Xl_RC" value="" />
                 <node concept="17Uvod" id="5lCz6ko76nv" role="lGtFl">
@@ -2994,11 +2994,11 @@
                             <node concept="2OqwBi" id="5lCz6ko76n_" role="2Oq$k0">
                               <node concept="30H73N" id="5lCz6ko76nA" role="2Oq$k0" />
                               <node concept="3TrEf2" id="5lCz6ko76nB" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tp1h.3700868637771248810" />
+                                <ref role="3Tt5mk" to="tp1h:3ds86G2JjiE" />
                               </node>
                             </node>
                             <node concept="3TrcHB" id="5lCz6ko76nC" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                             </node>
                           </node>
                           <node concept="3cpWs3" id="5lCz6ko76nD" role="3uHU7B">
@@ -3007,7 +3007,7 @@
                                 <node concept="2OqwBi" id="5lCz6ko76nG" role="2Oq$k0">
                                   <node concept="30H73N" id="5lCz6ko76nH" role="2Oq$k0" />
                                   <node concept="3TrEf2" id="5lCz6ko76nI" role="2OqNvi">
-                                    <reference role="3Tt5mk" target="tp1h.3700868637771248810" />
+                                    <ref role="3Tt5mk" to="tp1h:3ds86G2JjiE" />
                                   </node>
                                 </node>
                                 <node concept="I4A8Y" id="5lCz6ko76nJ" role="2OqNvi" />
@@ -3025,8 +3025,8 @@
                 </node>
               </node>
               <node concept="2YIFZM" id="5lCz6ko76nM" role="37wK5m">
-                <reference role="37wK5l" target="k7g3.~Arrays%dasList(java%dlang%dObject%d%d%d)%cjava%dutil%dList" resolve="asList" />
-                <reference role="1Pybhc" target="k7g3.~Arrays" resolve="Arrays" />
+                <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
                 <node concept="Xl_RD" id="5lCz6ko76nN" role="37wK5m">
                   <property role="Xl_RC" value="name" />
                   <node concept="1WS0z7" id="5lCz6ko76nO" role="lGtFl">
@@ -3037,11 +3037,11 @@
                             <node concept="2OqwBi" id="5lCz6ko76nT" role="2Oq$k0">
                               <node concept="30H73N" id="5lCz6ko76nU" role="2Oq$k0" />
                               <node concept="3TrEf2" id="5lCz6ko76nV" role="2OqNvi">
-                                <reference role="3Tt5mk" target="tp1h.3700868637771248810" />
+                                <ref role="3Tt5mk" to="tp1h:3ds86G2JjiE" />
                               </node>
                             </node>
                             <node concept="3Tsc0h" id="5lCz6ko76nW" role="2OqNvi">
-                              <reference role="3TtcxE" target="tp1h.6895093993902236376" />
+                              <ref role="3TtcxE" to="tp1h:5YKiRiBuebo" />
                             </node>
                           </node>
                         </node>
@@ -3056,7 +3056,7 @@
                           <node concept="2OqwBi" id="5lCz6ko76o1" role="3clFbG">
                             <node concept="30H73N" id="5lCz6ko76o2" role="2Oq$k0" />
                             <node concept="3TrcHB" id="5lCz6ko76o3" role="2OqNvi">
-                              <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                             </node>
                           </node>
                         </node>
@@ -3066,11 +3066,11 @@
                 </node>
               </node>
               <node concept="2YIFZM" id="5lCz6ko76o4" role="37wK5m">
-                <reference role="37wK5l" target="k7g3.~Arrays%dasList(java%dlang%dObject%d%d%d)%cjava%dutil%dList" resolve="asList" />
-                <reference role="1Pybhc" target="k7g3.~Arrays" resolve="Arrays" />
+                <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
                 <node concept="2ShNRf" id="5lCz6ko76o5" role="37wK5m">
                   <node concept="1pGfFk" id="5lCz6ko76o6" role="2ShVmc">
-                    <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+                    <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
                   </node>
                   <node concept="2b32R4" id="5lCz6ko76o7" role="lGtFl">
                     <node concept="3JmXsc" id="5lCz6ko76o8" role="2P8S$">
@@ -3078,7 +3078,7 @@
                         <node concept="3clFbF" id="5lCz6ko76oa" role="3cqZAp">
                           <node concept="2OqwBi" id="5lCz6ko76ob" role="3clFbG">
                             <node concept="3Tsc0h" id="5lCz6ko76oc" role="2OqNvi">
-                              <reference role="3TtcxE" target="tp1h.3700868637771354794" />
+                              <ref role="3TtcxE" to="tp1h:3ds86G2JHaE" />
                             </node>
                             <node concept="30H73N" id="5lCz6ko76od" role="2Oq$k0" />
                           </node>
@@ -3090,7 +3090,7 @@
               </node>
               <node concept="2ShNRf" id="5lCz6ko76oe" role="37wK5m">
                 <node concept="1pGfFk" id="5lCz6ko76of" role="2ShVmc">
-                  <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
                 </node>
                 <node concept="29HgVG" id="5lCz6ko76og" role="lGtFl">
                   <node concept="3NFfHV" id="5lCz6ko76oh" role="3NFExx">
@@ -3098,7 +3098,7 @@
                       <node concept="3clFbF" id="5lCz6ko76oj" role="3cqZAp">
                         <node concept="2OqwBi" id="5lCz6ko76ok" role="3clFbG">
                           <node concept="3TrEf2" id="5lCz6ko76ol" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.3700868637771294533" />
+                            <ref role="3Tt5mk" to="tp1h:3ds86G2Jut5" />
                           </node>
                           <node concept="30H73N" id="5lCz6ko76om" role="2Oq$k0" />
                         </node>
@@ -3115,7 +3115,7 @@
                         <node concept="2OqwBi" id="5lCz6ko76os" role="3clFbG">
                           <node concept="30H73N" id="5lCz6ko76ot" role="2Oq$k0" />
                           <node concept="3TrEf2" id="5lCz6ko76ou" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tp1h.7340098493333217414" />
+                            <ref role="3Tt5mk" to="tp1h:6nthb2Jwq26" />
                           </node>
                         </node>
                       </node>
@@ -3133,13 +3133,13 @@
   <node concept="13MO4I" id="5Ij6cQ6Zvvd">
     <property role="TrG5h" value="reduce_IsRefactoringApplicable" />
     <property role="3GE5qa" value="RefActions" />
-    <reference role="3gUMe" target="tp1h.6598645150040035709" resolve="IsRefactoringApplicable" />
+    <ref role="3gUMe" to="tp1h:5Ij6cQ6Zp5X" resolve="IsRefactoringApplicable" />
     <node concept="2YIFZM" id="5Ij6cQ6Zvvt" role="13RCb5">
-      <reference role="37wK5l" target="ge2m.5734694512880479884" resolve="isApplicable" />
-      <reference role="1Pybhc" target="ge2m.4792031542972804837" resolve="RefactoringUtil" />
+      <ref role="37wK5l" to="ge2m:4YlI$qnBQUc" resolve="isApplicable" />
+      <ref role="1Pybhc" to="ge2m:4a0HOMfn6V_" resolve="RefactoringUtil" />
       <node concept="2YIFZM" id="5Ij6cQ6Zvw2" role="37wK5m">
-        <reference role="37wK5l" target="ge2m.4792031542972804891" resolve="getRefactoringByClassName" />
-        <reference role="1Pybhc" target="ge2m.4792031542972804837" resolve="RefactoringUtil" />
+        <ref role="37wK5l" to="ge2m:4a0HOMfn6Wr" resolve="getRefactoringByClassName" />
+        <ref role="1Pybhc" to="ge2m:4a0HOMfn6V_" resolve="RefactoringUtil" />
         <node concept="3cpWs3" id="5Ij6cQ6Zvw3" role="37wK5m">
           <node concept="3cpWs3" id="5Ij6cQ6Zvwe" role="3uHU7B">
             <node concept="Xl_RD" id="5Ij6cQ6Zvwf" role="3uHU7B">
@@ -3154,7 +3154,7 @@
                           <node concept="2OqwBi" id="5Ij6cQ6Zvwm" role="2Oq$k0">
                             <node concept="30H73N" id="5Ij6cQ6Zvwn" role="2Oq$k0" />
                             <node concept="3TrEf2" id="5Ij6cQ6Zvws" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tp1h.6598645150040035710" />
+                              <ref role="3Tt5mk" to="tp1h:5Ij6cQ6Zp5Y" />
                             </node>
                           </node>
                           <node concept="I4A8Y" id="5Ij6cQ6Zvwp" role="2OqNvi" />
@@ -3181,11 +3181,11 @@
                       <node concept="2OqwBi" id="1AK8hIRtxlH" role="2Oq$k0">
                         <node concept="30H73N" id="1AK8hIRtxlG" role="2Oq$k0" />
                         <node concept="3TrEf2" id="1AK8hIRtxlL" role="2OqNvi">
-                          <reference role="3Tt5mk" target="tp1h.6598645150040035710" />
+                          <ref role="3Tt5mk" to="tp1h:5Ij6cQ6Zp5Y" />
                         </node>
                       </node>
                       <node concept="3TrcHB" id="1AK8hIRtxlQ" role="2OqNvi">
-                        <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                       </node>
                     </node>
                   </node>
@@ -3202,7 +3202,7 @@
               <node concept="3clFbF" id="5Ij6cQ6Zvw_" role="3cqZAp">
                 <node concept="2OqwBi" id="5Ij6cQ6ZvwA" role="3clFbG">
                   <node concept="3TrEf2" id="5Ij6cQ6ZvwB" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tp1h.6598645150040036518" />
+                    <ref role="3Tt5mk" to="tp1h:5Ij6cQ6ZpiA" />
                   </node>
                   <node concept="30H73N" id="5Ij6cQ6ZvwC" role="2Oq$k0" />
                 </node>
@@ -3217,7 +3217,7 @@
   <node concept="13MO4I" id="59D800tSF59">
     <property role="TrG5h" value="reduce_RepositoryOperation" />
     <property role="3GE5qa" value="Context" />
-    <reference role="3gUMe" target="tp1h.5938312768538179915" resolve="RepositoryOperation" />
+    <ref role="3gUMe" to="tp1h:59D800tSB_b" resolve="RepositoryOperation" />
     <node concept="3clFb_" id="59D800tSF5J" role="13RCb5">
       <property role="TrG5h" value="doRefactor" />
       <node concept="3cqZAl" id="59D800tSF5K" role="3clF45" />
@@ -3226,10 +3226,10 @@
         <node concept="3clFbF" id="59D800tSF5N" role="3cqZAp">
           <node concept="2OqwBi" id="59D800tSF5O" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgl2pe" role="2Oq$k0">
-              <reference role="3cqZAo" target="5938312768538194296" resolve="refactoringContext" />
+              <ref role="3cqZAo" node="59D800tSF5S" resolve="refactoringContext" />
             </node>
             <node concept="liA8E" id="59D800tSF5Q" role="2OqNvi">
-              <reference role="37wK5l" target="ge2m.5938312768537992814" resolve="getRepository" />
+              <ref role="37wK5l" to="ge2m:59D800tRTTI" resolve="getRepository" />
               <node concept="raruj" id="59D800tSF5R" role="lGtFl" />
             </node>
           </node>
@@ -3238,7 +3238,7 @@
       <node concept="37vLTG" id="59D800tSF5S" role="3clF46">
         <property role="TrG5h" value="refactoringContext" />
         <node concept="3uibUv" id="59D800tSF5T" role="1tU5fm">
-          <reference role="3uigEE" target="ge2m.4792031542972811415" resolve="RefactoringContext" />
+          <ref role="3uigEE" to="ge2m:4a0HOMfn8yn" resolve="RefactoringContext" />
         </node>
       </node>
     </node>

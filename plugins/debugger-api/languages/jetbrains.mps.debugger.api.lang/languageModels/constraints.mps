@@ -71,7 +71,7 @@
   </registry>
   <node concept="1M2fIO" id="4DPUXm60dZZ">
     <property role="3GE5qa" value="breakpoints" />
-    <reference role="1M2myG" target="86gq.2569394751387978473" resolve="CreateBreakpointOperation" />
+    <ref role="1M2myG" to="86gq:2eCkIB4eWFD" resolve="CreateBreakpointOperation" />
     <node concept="nKS2y" id="4DPUXm60e00" role="1MLUbF">
       <node concept="3clFbS" id="4DPUXm60e01" role="2VODD2">
         <node concept="3clFbF" id="4DPUXm60e0b" role="3cqZAp">
@@ -79,16 +79,16 @@
             <node concept="1UaxmW" id="4DPUXm60e0c" role="2Oq$k0">
               <node concept="1YaCAy" id="4DPUXm60e0o" role="1Ub_4A">
                 <property role="TrG5h" value="debuggerType" />
-                <reference role="1YaFvo" target="86gq.1104094430779063683" resolve="DebuggerType" />
+                <ref role="1YaFvo" to="86gq:Xiy0zT4FQ3" resolve="DebuggerType" />
               </node>
               <node concept="2OqwBi" id="4DPUXm60e0j" role="1Ub_4B">
                 <node concept="2OqwBi" id="4DPUXm60e0f" role="2Oq$k0">
                   <node concept="1PxgMI" id="4DPUXm60e0g" role="2Oq$k0">
-                    <reference role="1PxNhF" target="tpee.1197027756228" resolve="DotExpression" />
+                    <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
                     <node concept="nLn13" id="4DPUXm60e0h" role="1PxMeX" />
                   </node>
                   <node concept="3TrEf2" id="4DPUXm60e0i" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.1197027771414" />
+                    <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                   </node>
                 </node>
                 <node concept="3JvlWi" id="4DPUXm60e0n" role="2OqNvi" />

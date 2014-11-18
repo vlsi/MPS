@@ -279,27 +279,27 @@
     <property role="3GE5qa" value="ext.conceptFunction" />
     <node concept="3lhOvk" id="h1UeEYZ" role="3lj3bC">
       <property role="36QftV" value="true" />
-      <reference role="30HIoZ" target="tpee.1068580123132" resolve="BaseMethodDeclaration" />
-      <reference role="3lhOvi" target="1152552655480" resolve="class_ClosureContext" />
-      <reference role="2sgKRv" target="1215475864863" resolve="contextOwner_closureContext_class" />
+      <ref role="30HIoZ" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+      <ref role="3lhOvi" node="gLpvtDS" resolve="class_ClosureContext" />
+      <ref role="2sgKRv" node="hG00tkv" resolve="contextOwner_closureContext_class" />
       <node concept="30G5F_" id="h1UhRow" role="30HLyM">
         <node concept="3clFbS" id="h1UhRox" role="2VODD2">
           <node concept="3clFbF" id="hbuDB$_" role="3cqZAp">
             <node concept="2YIFZM" id="h1UhXsZ" role="3clFbG">
-              <reference role="1Pybhc" target="tpea.1238940012773" resolve="ClosuresUtil" />
-              <reference role="37wK5l" target="tpea.1238941081244" resolve="hasVariablesUsedInClosure" />
+              <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+              <ref role="37wK5l" to="tpea:i1QD9Us" resolve="hasVariablesUsedInClosure" />
               <node concept="30H73N" id="h1Ui3zC" role="37wK5m" />
               <node concept="2OqwBi" id="hRrq3eZ" role="37wK5m">
                 <node concept="1eOMI4" id="hRrq3f0" role="2Oq$k0">
                   <node concept="10QFUN" id="hRrq3f1" role="1eOMHV">
                     <node concept="1iwH7S" id="hRrq3f2" role="10QFUP" />
                     <node concept="3uibUv" id="hRrq3f3" role="10QFUM">
-                      <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                      <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                     </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="hRrq3f4" role="2OqNvi">
-                  <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                  <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                 </node>
               </node>
             </node>
@@ -309,29 +309,29 @@
     </node>
     <node concept="3lhOvk" id="h1UfACD" role="3lj3bC">
       <property role="36QftV" value="true" />
-      <reference role="30HIoZ" target="tpee.1137021947720" resolve="ConceptFunction" />
-      <reference role="3lhOvi" target="1152552655480" resolve="class_ClosureContext" />
-      <reference role="2sgKRv" target="1215475864863" resolve="contextOwner_closureContext_class" />
+      <ref role="30HIoZ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+      <ref role="3lhOvi" node="gLpvtDS" resolve="class_ClosureContext" />
+      <ref role="2sgKRv" node="hG00tkv" resolve="contextOwner_closureContext_class" />
       <node concept="30G5F_" id="h1UfLU_" role="30HLyM">
         <node concept="3clFbS" id="h1UfLUA" role="2VODD2">
           <node concept="3clFbJ" id="h1UjhL5" role="3cqZAp">
             <node concept="3clFbS" id="h1UjhL7" role="3clFbx">
               <node concept="3cpWs6" id="h1UjjWP" role="3cqZAp">
                 <node concept="2YIFZM" id="h1UjljI" role="3cqZAk">
-                  <reference role="1Pybhc" target="tpea.1238940012773" resolve="ClosuresUtil" />
-                  <reference role="37wK5l" target="tpea.1238941081244" resolve="hasVariablesUsedInClosure" />
+                  <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                  <ref role="37wK5l" to="tpea:i1QD9Us" resolve="hasVariablesUsedInClosure" />
                   <node concept="30H73N" id="h1UjljJ" role="37wK5m" />
                   <node concept="2OqwBi" id="hRrq335" role="37wK5m">
                     <node concept="1eOMI4" id="hRrq336" role="2Oq$k0">
                       <node concept="10QFUN" id="hRrq337" role="1eOMHV">
                         <node concept="1iwH7S" id="hRrq338" role="10QFUP" />
                         <node concept="3uibUv" id="hRrq339" role="10QFUM">
-                          <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                          <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                         </node>
                       </node>
                     </node>
                     <node concept="liA8E" id="hRrq33a" role="2OqNvi">
-                      <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                      <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                     </node>
                   </node>
                 </node>
@@ -342,7 +342,7 @@
                 <node concept="30H73N" id="h1UjiWm" role="2Oq$k0" />
                 <node concept="1mIQ4w" id="h1UjiWn" role="2OqNvi">
                   <node concept="chp4Y" id="h8FO_76" role="cj9EA">
-                    <reference role="cht4Q" target="tpee.1152728232947" resolve="Closure" />
+                    <ref role="cht4Q" to="tpee:gLzXffN" resolve="Closure" />
                   </node>
                 </node>
               </node>
@@ -356,9 +356,9 @@
     </node>
     <node concept="30QchW" id="h1Ue3ar" role="30SoJX">
       <property role="36QftV" value="true" />
-      <reference role="30HIoZ" target="tpee.1152728232947" resolve="Closure" />
+      <ref role="30HIoZ" to="tpee:gLzXffN" resolve="Closure" />
       <node concept="j$656" id="h1Ue8YT" role="1fOSGc">
-        <reference role="v9R2y" target="1152729181498" resolve="weave_ClosureAdapter_members" />
+        <ref role="v9R2y" node="gL$0QOU" resolve="weave_ClosureAdapter_members" />
       </node>
       <node concept="3gB$ML" id="hhhJ5tA" role="3gCiVm">
         <node concept="3clFbS" id="hhhJ5tB" role="2VODD2">
@@ -366,7 +366,7 @@
             <node concept="2OqwBi" id="hHn6QFK" role="3clFbG">
               <node concept="1iwH7S" id="hHKt05h" role="2Oq$k0" />
               <node concept="1iwH70" id="hHn6QFN" role="2OqNvi">
-                <reference role="1iwH77" target="1216937159391" resolve="closure_adapterClass" />
+                <ref role="1iwH77" node="hHn6QFv" resolve="closure_adapterClass" />
                 <node concept="30H73N" id="hhhJkft" role="1iwH7V" />
               </node>
             </node>
@@ -376,21 +376,21 @@
     </node>
     <node concept="3aamgX" id="h1PerVh" role="3acgRq">
       <property role="36QftV" value="true" />
-      <reference role="30HIoZ" target="tpee.1152728232947" resolve="Closure" />
+      <ref role="30HIoZ" to="tpee:gLzXffN" resolve="Closure" />
       <node concept="j$656" id="h1PevN7" role="1lVwrX">
-        <reference role="v9R2y" target="1152823060739" resolve="reduce_Closure_NewClosureAdapterExpression" />
+        <ref role="v9R2y" node="gLDAY$3" resolve="reduce_Closure_NewClosureAdapterExpression" />
       </node>
     </node>
     <node concept="3aamgX" id="h1PfKbZ" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1153179560115" resolve="ClosureParameterReference" />
+      <ref role="30HIoZ" to="tpee:gLYQUyN" resolve="ClosureParameterReference" />
       <node concept="j$656" id="h1PfNoB" role="1lVwrX">
-        <reference role="v9R2y" target="1153259191716" resolve="reduce_ClosureParmReference_MethodParmReference" />
+        <ref role="v9R2y" node="gM3AFQ$" resolve="reduce_ClosureParmReference_MethodParmReference" />
       </node>
     </node>
     <node concept="3aamgX" id="h1PfZr8" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1068580123136" resolve="StatementList" />
+      <ref role="30HIoZ" to="tpee:fzclF80" resolve="StatementList" />
       <node concept="j$656" id="h1Pg2XI" role="1lVwrX">
-        <reference role="v9R2y" target="1152719449373" resolve="reduce_bodyOfContextOwner_insertClosureContextVar" />
+        <ref role="v9R2y" node="gLzrIOt" resolve="reduce_bodyOfContextOwner_insertClosureContextVar" />
       </node>
       <node concept="30G5F_" id="h1PgcYQ" role="30HLyM">
         <node concept="3clFbS" id="h1PgcYR" role="2VODD2">
@@ -406,31 +406,31 @@
           </node>
           <node concept="3clFbJ" id="h1PgrMh" role="3cqZAp">
             <node concept="2YIFZM" id="h1Pg$iv" role="3clFbw">
-              <reference role="1Pybhc" target="tpea.1238940012773" resolve="ClosuresUtil" />
-              <reference role="37wK5l" target="tpea.1238940409643" resolve="isClosureContextOwner" />
+              <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+              <ref role="37wK5l" to="tpea:i1QA_WF" resolve="isClosureContextOwner" />
               <node concept="37vLTw" id="3GM_nagTv1Z" role="37wK5m">
-                <reference role="3cqZAo" target="1170198309797" resolve="parent" />
+                <ref role="3cqZAo" node="h1PgiI_" resolve="parent" />
               </node>
             </node>
             <node concept="3clFbS" id="h1PgrMj" role="3clFbx">
               <node concept="3cpWs6" id="h1Pg_gi" role="3cqZAp">
                 <node concept="2YIFZM" id="h1PgEIr" role="3cqZAk">
-                  <reference role="1Pybhc" target="tpea.1238940012773" resolve="ClosuresUtil" />
-                  <reference role="37wK5l" target="tpea.1238941081244" resolve="hasVariablesUsedInClosure" />
+                  <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                  <ref role="37wK5l" to="tpea:i1QD9Us" resolve="hasVariablesUsedInClosure" />
                   <node concept="37vLTw" id="3GM_nagTtql" role="37wK5m">
-                    <reference role="3cqZAo" target="1170198309797" resolve="parent" />
+                    <ref role="3cqZAo" node="h1PgiI_" resolve="parent" />
                   </node>
                   <node concept="2OqwBi" id="hRrq3eE" role="37wK5m">
                     <node concept="1eOMI4" id="hRrq3eF" role="2Oq$k0">
                       <node concept="10QFUN" id="hRrq3eG" role="1eOMHV">
                         <node concept="1iwH7S" id="hRrq3eH" role="10QFUP" />
                         <node concept="3uibUv" id="hRrq3eI" role="10QFUM">
-                          <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                          <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                         </node>
                       </node>
                     </node>
                     <node concept="liA8E" id="hRrq3eJ" role="2OqNvi">
-                      <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                      <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                     </node>
                   </node>
                 </node>
@@ -444,9 +444,9 @@
       </node>
     </node>
     <node concept="3aamgX" id="h1PgVB8" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1070475354124" resolve="ThisExpression" />
+      <ref role="30HIoZ" to="tpee:f$Xjq0c" resolve="ThisExpression" />
       <node concept="j$656" id="h1Ph8QL" role="1lVwrX">
-        <reference role="v9R2y" target="1152741220170" resolve="reduce_ThisExpression_inClosure" />
+        <ref role="v9R2y" node="gL$ILXa" resolve="reduce_ThisExpression_inClosure" />
       </node>
       <node concept="30G5F_" id="h1PgXBl" role="30HLyM">
         <node concept="3clFbS" id="h1PgXBm" role="2VODD2">
@@ -458,7 +458,7 @@
                 <node concept="2Xjw5R" id="h37RRsW" role="2OqNvi">
                   <node concept="1xMEDy" id="h1Ph3om" role="1xVPHs">
                     <node concept="chp4Y" id="h_uh2Nn" role="ri$Ld">
-                      <reference role="cht4Q" target="tpee.1152728232947" resolve="Closure" />
+                      <ref role="cht4Q" to="tpee:gLzXffN" resolve="Closure" />
                     </node>
                   </node>
                 </node>
@@ -470,9 +470,9 @@
     </node>
     <node concept="3aamgX" id="1AibU_CrXnz" role="3acgRq">
       <property role="36QftV" value="true" />
-      <reference role="30HIoZ" target="tpee.1068498886296" resolve="VariableReference" />
+      <ref role="30HIoZ" to="tpee:fz7vLUo" resolve="VariableReference" />
       <node concept="j$656" id="1AibU_CrXxH" role="1lVwrX">
-        <reference role="v9R2y" target="1152742153585" resolve="reduce_VariableReference_ClosureContextField" />
+        <ref role="v9R2y" node="gL$MlPL" resolve="reduce_VariableReference_ClosureContextField" />
       </node>
       <node concept="30G5F_" id="1AibU_CrXn_" role="30HLyM">
         <node concept="3clFbS" id="1AibU_CrXnA" role="2VODD2">
@@ -480,12 +480,12 @@
             <node concept="3cpWsn" id="1AibU_CrXuS" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3Tqbb2" id="1AibU_CrXuT" role="1tU5fm">
-                <reference role="ehGHo" target="tpee.1068431474542" resolve="VariableDeclaration" />
+                <ref role="ehGHo" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
               </node>
               <node concept="2OqwBi" id="6Hcj66nt2lu" role="33vP2m">
                 <node concept="30H73N" id="6Hcj66nt2lv" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6Hcj66nt2lw" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1068581517664" />
+                  <ref role="3Tt5mk" to="tpee:fzcqZ_w" />
                 </node>
               </node>
             </node>
@@ -503,21 +503,21 @@
                 <node concept="22lmx$" id="1AibU_CrXrh" role="1eOMHV">
                   <node concept="2OqwBi" id="1AibU_CrXsd" role="3uHU7w">
                     <node concept="37vLTw" id="6Hcj66nEqQ8" role="2Oq$k0">
-                      <reference role="3cqZAo" target="1842587602196092856" resolve="var" />
+                      <ref role="3cqZAo" node="1AibU_CrXuS" resolve="var" />
                     </node>
                     <node concept="1mIQ4w" id="1AibU_CrXsR" role="2OqNvi">
                       <node concept="chp4Y" id="1AibU_CrXth" role="cj9EA">
-                        <reference role="cht4Q" target="tpee.1068498886292" resolve="ParameterDeclaration" />
+                        <ref role="cht4Q" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
                       </node>
                     </node>
                   </node>
                   <node concept="2OqwBi" id="1AibU_CrXpe" role="3uHU7B">
                     <node concept="37vLTw" id="6Hcj66nEp_N" role="2Oq$k0">
-                      <reference role="3cqZAo" target="1842587602196092856" resolve="var" />
+                      <ref role="3cqZAo" node="1AibU_CrXuS" resolve="var" />
                     </node>
                     <node concept="1mIQ4w" id="1AibU_CrXpY" role="2OqNvi">
                       <node concept="chp4Y" id="1AibU_CrXqo" role="cj9EA">
-                        <reference role="cht4Q" target="tpee.1068581242863" resolve="LocalVariableDeclaration" />
+                        <ref role="cht4Q" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
                       </node>
                     </node>
                   </node>
@@ -529,10 +529,10 @@
             <node concept="3cpWsn" id="1AibU_CrXuY" role="3cpWs9">
               <property role="TrG5h" value="contextOwner" />
               <node concept="2YIFZM" id="1AibU_CrXuZ" role="33vP2m">
-                <reference role="37wK5l" target="tpea.1238940536000" resolve="findEnclosingClosureContextOwner" />
-                <reference role="1Pybhc" target="tpea.1238940012773" resolve="ClosuresUtil" />
+                <ref role="37wK5l" to="tpea:i1QB4N0" resolve="findEnclosingClosureContextOwner" />
+                <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
                 <node concept="37vLTw" id="3GM_nagTym6" role="37wK5m">
-                  <reference role="3cqZAo" target="1842587602196092856" resolve="var" />
+                  <ref role="3cqZAo" node="1AibU_CrXuS" resolve="var" />
                 </node>
               </node>
               <node concept="3Tqbb2" id="1AibU_CrXv1" role="1tU5fm" />
@@ -542,31 +542,31 @@
             <node concept="3y3z36" id="1AibU_CrXv3" role="3clFbw">
               <node concept="10Nm6u" id="1AibU_CrXv4" role="3uHU7w" />
               <node concept="37vLTw" id="3GM_nagTvX7" role="3uHU7B">
-                <reference role="3cqZAo" target="1842587602196092862" resolve="contextOwner" />
+                <ref role="3cqZAo" node="1AibU_CrXuY" resolve="contextOwner" />
               </node>
             </node>
             <node concept="3clFbS" id="1AibU_CrXv6" role="3clFbx">
               <node concept="3cpWs6" id="1AibU_CrXv7" role="3cqZAp">
                 <node concept="2YIFZM" id="1AibU_CrXv8" role="3cqZAk">
-                  <reference role="37wK5l" target="tpea.1238941047641" resolve="isVariableUsedInClosure" />
-                  <reference role="1Pybhc" target="tpea.1238940012773" resolve="ClosuresUtil" />
+                  <ref role="37wK5l" to="tpea:i1QD1Hp" resolve="isVariableUsedInClosure" />
+                  <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
                   <node concept="37vLTw" id="3GM_nagTukx" role="37wK5m">
-                    <reference role="3cqZAo" target="1842587602196092862" resolve="contextOwner" />
+                    <ref role="3cqZAo" node="1AibU_CrXuY" resolve="contextOwner" />
                   </node>
                   <node concept="37vLTw" id="3GM_nagTAxy" role="37wK5m">
-                    <reference role="3cqZAo" target="1842587602196092856" resolve="var" />
+                    <ref role="3cqZAo" node="1AibU_CrXuS" resolve="var" />
                   </node>
                   <node concept="2OqwBi" id="1AibU_CrXvb" role="37wK5m">
                     <node concept="1eOMI4" id="1AibU_CrXvc" role="2Oq$k0">
                       <node concept="10QFUN" id="1AibU_CrXvd" role="1eOMHV">
                         <node concept="1iwH7S" id="1AibU_CrXve" role="10QFUP" />
                         <node concept="3uibUv" id="1AibU_CrXvf" role="10QFUM">
-                          <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                          <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                         </node>
                       </node>
                     </node>
                     <node concept="liA8E" id="1AibU_CrXvg" role="2OqNvi">
-                      <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                      <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                     </node>
                   </node>
                 </node>
@@ -580,9 +580,9 @@
       </node>
     </node>
     <node concept="3aamgX" id="h1PjjLf" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1068581242864" resolve="LocalVariableDeclarationStatement" />
+      <ref role="30HIoZ" to="tpee:fzcpWvK" resolve="LocalVariableDeclarationStatement" />
       <node concept="j$656" id="h1Pk3_w" role="1lVwrX">
-        <reference role="v9R2y" target="1152750787488" resolve="reduce_VariableDeclStmtWithInit_ClosureContextField" />
+        <ref role="v9R2y" node="gL_jhIw" resolve="reduce_VariableDeclStmtWithInit_ClosureContextField" />
       </node>
       <node concept="30G5F_" id="h1PjovK" role="30HLyM">
         <node concept="3clFbS" id="h1PjovL" role="2VODD2">
@@ -590,12 +590,12 @@
             <node concept="3cpWsn" id="h1PjriO" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3Tqbb2" id="h1PjriQ" role="1tU5fm">
-                <reference role="ehGHo" target="tpee.1068431474542" resolve="VariableDeclaration" />
+                <ref role="ehGHo" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
               </node>
               <node concept="2OqwBi" id="hxiHJ0s" role="33vP2m">
                 <node concept="30H73N" id="h1Pjp0x" role="2Oq$k0" />
                 <node concept="3TrEf2" id="h1PjpX6" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1068581242865" />
+                  <ref role="3Tt5mk" to="tpee:fzcpWvL" />
                 </node>
               </node>
             </node>
@@ -605,10 +605,10 @@
               <node concept="10Nm6u" id="h1PjvZ5" role="3uHU7w" />
               <node concept="2OqwBi" id="hxiHIZD" role="3uHU7B">
                 <node concept="37vLTw" id="3GM_nagTy2t" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1170199131316" resolve="var" />
+                  <ref role="3cqZAo" node="h1PjriO" resolve="var" />
                 </node>
                 <node concept="3TrEf2" id="h1PjuZ3" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1068431790190" />
+                  <ref role="3Tt5mk" to="tpee:fz3vP1I" />
                 </node>
               </node>
             </node>
@@ -617,10 +617,10 @@
                 <node concept="3cpWsn" id="hbuBw8Q" role="3cpWs9">
                   <property role="TrG5h" value="contextOwner" />
                   <node concept="2YIFZM" id="hbuBw8S" role="33vP2m">
-                    <reference role="1Pybhc" target="tpea.1238940012773" resolve="ClosuresUtil" />
-                    <reference role="37wK5l" target="tpea.1238940536000" resolve="findEnclosingClosureContextOwner" />
+                    <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                    <ref role="37wK5l" to="tpea:i1QB4N0" resolve="findEnclosingClosureContextOwner" />
                     <node concept="37vLTw" id="3GM_nagT_lX" role="37wK5m">
-                      <reference role="3cqZAo" target="1170199131316" resolve="var" />
+                      <ref role="3cqZAo" node="h1PjriO" resolve="var" />
                     </node>
                   </node>
                   <node concept="3Tqbb2" id="i2s1z4R" role="1tU5fm" />
@@ -630,31 +630,31 @@
                 <node concept="3y3z36" id="h1PjNr2" role="3clFbw">
                   <node concept="10Nm6u" id="h1PjNPG" role="3uHU7w" />
                   <node concept="37vLTw" id="3GM_nagTvLe" role="3uHU7B">
-                    <reference role="3cqZAo" target="1180555936310" resolve="contextOwner" />
+                    <ref role="3cqZAo" node="hbuBw8Q" resolve="contextOwner" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="h1PjMwU" role="3clFbx">
                   <node concept="3cpWs6" id="h1PjOr4" role="3cqZAp">
                     <node concept="2YIFZM" id="i1QTSwh" role="3cqZAk">
-                      <reference role="1Pybhc" target="tpea.1238940012773" resolve="ClosuresUtil" />
-                      <reference role="37wK5l" target="tpea.1238941047641" resolve="isVariableUsedInClosure" />
+                      <ref role="1Pybhc" to="tpea:i1Q_53_" resolve="ClosuresUtil" />
+                      <ref role="37wK5l" to="tpea:i1QD1Hp" resolve="isVariableUsedInClosure" />
                       <node concept="37vLTw" id="3GM_nagTztQ" role="37wK5m">
-                        <reference role="3cqZAo" target="1180555936310" resolve="contextOwner" />
+                        <ref role="3cqZAo" node="hbuBw8Q" resolve="contextOwner" />
                       </node>
                       <node concept="37vLTw" id="3GM_nagTuhl" role="37wK5m">
-                        <reference role="3cqZAo" target="1170199131316" resolve="var" />
+                        <ref role="3cqZAo" node="h1PjriO" resolve="var" />
                       </node>
                       <node concept="2OqwBi" id="i1QTSNQ" role="37wK5m">
                         <node concept="1eOMI4" id="i1QTSNR" role="2Oq$k0">
                           <node concept="10QFUN" id="i1QTSNS" role="1eOMHV">
                             <node concept="1iwH7S" id="i1QTSNT" role="10QFUP" />
                             <node concept="3uibUv" id="i1QTSNU" role="10QFUM">
-                              <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                             </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="i1QTSNV" role="2OqNvi">
-                          <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                          <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                         </node>
                       </node>
                     </node>
@@ -695,11 +695,11 @@
                   <node concept="1r8y6K" id="jFsXcc02mE" role="2OqNvi" />
                 </node>
                 <node concept="2SmgA7" id="jFsXcc03lC" role="2OqNvi">
-                  <reference role="2SmgA8" target="tpee.1152728232947" resolve="Closure" />
+                  <ref role="2SmgA8" to="tpee:gLzXffN" resolve="Closure" />
                 </node>
               </node>
               <node concept="liA8E" id="6QrrVJU_5UT" role="2OqNvi">
-                <reference role="37wK5l" target="k7g3.~List%dsize()%cint" resolve="size" />
+                <ref role="37wK5l" to="k7g3:~List.size():int" resolve="size" />
               </node>
             </node>
           </node>
@@ -727,13 +727,13 @@
       </node>
     </node>
     <node concept="n94m4" id="h1Y7pXc" role="lGtFl">
-      <reference role="n9lRv" target="tpck.1133920641626" resolve="BaseConcept" />
+      <ref role="n9lRv" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
     <node concept="3Tm1VV" id="h9B3Lnj" role="1B3o_S" />
     <node concept="312cEg" id="gLpw899" role="jymVt">
       <property role="TrG5h" value="_variable_" />
       <node concept="3uibUv" id="gLpw8Tx" role="1tU5fm">
-        <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         <node concept="29HgVG" id="gLpxrku" role="lGtFl">
           <node concept="3NFfHV" id="h1Y94n8" role="3NFExx">
             <node concept="3clFbS" id="h1Y94n9" role="2VODD2">
@@ -741,7 +741,7 @@
                 <node concept="2OqwBi" id="hxiHJ2s" role="3cqZAk">
                   <node concept="30H73N" id="h1Y95mc" role="2Oq$k0" />
                   <node concept="3TrEf2" id="h1Y9jmd" role="2OqNvi">
-                    <reference role="3Tt5mk" target="tpee.5680397130376446158" />
+                    <ref role="3Tt5mk" to="tpee:4VkOLwjf83e" />
                   </node>
                 </node>
               </node>
@@ -750,7 +750,7 @@
         </node>
       </node>
       <node concept="1WS0z7" id="gLpweHB" role="lGtFl">
-        <reference role="2rW$FS" target="1215479320910" resolve="variable_closureContext_classField" />
+        <ref role="2rW$FS" node="hG0dD5e" resolve="variable_closureContext_classField" />
         <node concept="3JmXsc" id="h1Y89nZ" role="3Jn$fo">
           <node concept="3clFbS" id="h1Y89o0" role="2VODD2">
             <node concept="3cpWs8" id="hZVkgVb" role="3cqZAp">
@@ -760,20 +760,20 @@
                   <node concept="3Tqbb2" id="hZVkhwK" role="_ZDj9" />
                 </node>
                 <node concept="2YIFZM" id="hZVkknZ" role="33vP2m">
-                  <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                  <reference role="37wK5l" target="tpea.8428317315592447838" resolve="getList_ContextOwner_VariablesUsedInClosure" />
+                  <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                  <ref role="37wK5l" to="tpea:7jRpv62amtu" resolve="getList_ContextOwner_VariablesUsedInClosure" />
                   <node concept="30H73N" id="hZVkko0" role="37wK5m" />
                   <node concept="2OqwBi" id="hZVkko1" role="37wK5m">
                     <node concept="1eOMI4" id="hZVkko2" role="2Oq$k0">
                       <node concept="10QFUN" id="hZVkko3" role="1eOMHV">
                         <node concept="1iwH7S" id="hZVkko4" role="10QFUP" />
                         <node concept="3uibUv" id="hZVkko5" role="10QFUM">
-                          <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                          <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                         </node>
                       </node>
                     </node>
                     <node concept="liA8E" id="hZVkko6" role="2OqNvi">
-                      <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                      <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                     </node>
                   </node>
                 </node>
@@ -782,10 +782,10 @@
             <node concept="3cpWs6" id="h1Y8a1L" role="3cqZAp">
               <node concept="10QFUN" id="h1Y8NIB" role="3cqZAk">
                 <node concept="37vLTw" id="3GM_nagT_Ga" role="10QFUP">
-                  <reference role="3cqZAo" target="1236872007372" resolve="list" />
+                  <ref role="3cqZAo" node="hZVkgVc" resolve="list" />
                 </node>
                 <node concept="2I9FWS" id="h1Y8PSn" role="10QFUM">
-                  <reference role="2I9WkF" target="tpee.1068431474542" resolve="VariableDeclaration" />
+                  <ref role="2I9WkF" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
                 </node>
               </node>
             </node>
@@ -798,20 +798,20 @@
           <node concept="3clFbS" id="h1Y9M0v" role="2VODD2">
             <node concept="3cpWs6" id="h1Y9MCC" role="3cqZAp">
               <node concept="2YIFZM" id="h1Y9Ol$" role="3cqZAk">
-                <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                <reference role="37wK5l" target="tpea.8428317315592447851" resolve="getString_VariableDeclaration_nameInClosureContext" />
+                <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                <ref role="37wK5l" to="tpea:7jRpv62amtF" resolve="getString_VariableDeclaration_nameInClosureContext" />
                 <node concept="30H73N" id="h1Y9OXR" role="37wK5m" />
                 <node concept="2OqwBi" id="hRrq44l" role="37wK5m">
                   <node concept="1eOMI4" id="hRrq44m" role="2Oq$k0">
                     <node concept="10QFUN" id="hRrq44n" role="1eOMHV">
                       <node concept="1iwH7S" id="hRrq44o" role="10QFUP" />
                       <node concept="3uibUv" id="hRrq44p" role="10QFUM">
-                        <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                        <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="hRrq44q" role="2OqNvi">
-                    <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                    <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                   </node>
                 </node>
               </node>
@@ -825,7 +825,7 @@
       <node concept="37vLTG" id="4D3RMlPNgh7" role="3clF46">
         <property role="TrG5h" value="parm" />
         <node concept="3uibUv" id="4D3RMlPNgh8" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
         <node concept="2b32R4" id="4D3RMlPNgh9" role="lGtFl">
           <node concept="3JmXsc" id="4D3RMlPNgha" role="2P8S$">
@@ -837,20 +837,20 @@
                     <node concept="3Tqbb2" id="4D3RMlPNghf" role="_ZDj9" />
                   </node>
                   <node concept="2YIFZM" id="4D3RMlPNghg" role="33vP2m">
-                    <reference role="37wK5l" target="tpea.8428317315592447781" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
-                    <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
+                    <ref role="37wK5l" to="tpea:7jRpv62ams_" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
+                    <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
                     <node concept="30H73N" id="4D3RMlPNghh" role="37wK5m" />
                     <node concept="2OqwBi" id="4D3RMlPNghi" role="37wK5m">
                       <node concept="1eOMI4" id="4D3RMlPNghj" role="2Oq$k0">
                         <node concept="10QFUN" id="4D3RMlPNghk" role="1eOMHV">
                           <node concept="1iwH7S" id="4D3RMlPNghl" role="10QFUP" />
                           <node concept="3uibUv" id="4D3RMlPNghm" role="10QFUM">
-                            <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                            <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                           </node>
                         </node>
                       </node>
                       <node concept="liA8E" id="4D3RMlPNghn" role="2OqNvi">
-                        <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                        <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                       </node>
                     </node>
                   </node>
@@ -859,10 +859,10 @@
               <node concept="3cpWs6" id="4D3RMlPNgho" role="3cqZAp">
                 <node concept="10QFUN" id="4D3RMlPNghp" role="3cqZAk">
                   <node concept="37vLTw" id="3GM_nagTxYR" role="10QFUP">
-                    <reference role="3cqZAo" target="5351366134229435469" resolve="list" />
+                    <ref role="3cqZAo" node="4D3RMlPNghd" resolve="list" />
                   </node>
                   <node concept="2I9FWS" id="4D3RMlPNghr" role="10QFUM">
-                    <reference role="2I9WkF" target="tpee.1068498886292" resolve="ParameterDeclaration" />
+                    <ref role="2I9WkF" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
                   </node>
                 </node>
               </node>
@@ -878,11 +878,11 @@
             <node concept="2OqwBi" id="4D3RMlPNghu" role="37vLTJ">
               <node concept="Xjq3P" id="4D3RMlPNghv" role="2Oq$k0" />
               <node concept="2OwXpG" id="4D3RMlPNghw" role="2OqNvi">
-                <reference role="2Oxat5" target="1152552829513" resolve="_variable_" />
+                <ref role="2Oxat5" node="gLpw899" resolve="_variable_" />
               </node>
             </node>
             <node concept="37vLTw" id="2BHiRxglIQP" role="37vLTx">
-              <reference role="3cqZAo" target="5351366134229435463" resolve="parm" />
+              <ref role="3cqZAo" node="4D3RMlPNgh7" resolve="parm" />
             </node>
           </node>
           <node concept="1WS0z7" id="4D3RMlPNghy" role="lGtFl">
@@ -895,20 +895,20 @@
                       <node concept="3Tqbb2" id="4D3RMlPNghC" role="_ZDj9" />
                     </node>
                     <node concept="2YIFZM" id="4D3RMlPNghD" role="33vP2m">
-                      <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                      <reference role="37wK5l" target="tpea.8428317315592447781" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
+                      <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                      <ref role="37wK5l" to="tpea:7jRpv62ams_" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
                       <node concept="30H73N" id="4D3RMlPNghE" role="37wK5m" />
                       <node concept="2OqwBi" id="4D3RMlPNghF" role="37wK5m">
                         <node concept="1eOMI4" id="4D3RMlPNghG" role="2Oq$k0">
                           <node concept="10QFUN" id="4D3RMlPNghH" role="1eOMHV">
                             <node concept="1iwH7S" id="4D3RMlPNghI" role="10QFUP" />
                             <node concept="3uibUv" id="4D3RMlPNghJ" role="10QFUM">
-                              <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                             </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="4D3RMlPNghK" role="2OqNvi">
-                          <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                          <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                         </node>
                       </node>
                     </node>
@@ -917,10 +917,10 @@
                 <node concept="3cpWs6" id="4D3RMlPNghL" role="3cqZAp">
                   <node concept="10QFUN" id="4D3RMlPNghM" role="3cqZAk">
                     <node concept="37vLTw" id="3GM_nagT_yl" role="10QFUP">
-                      <reference role="3cqZAo" target="5351366134229435494" resolve="list" />
+                      <ref role="3cqZAo" node="4D3RMlPNghA" resolve="list" />
                     </node>
                     <node concept="2I9FWS" id="4D3RMlPNghO" role="10QFUM">
-                      <reference role="2I9WkF" target="tpee.1068498886292" resolve="ParameterDeclaration" />
+                      <ref role="2I9WkF" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -933,7 +933,7 @@
   </node>
   <node concept="13MO4I" id="gLzrIOt">
     <property role="TrG5h" value="reduce_bodyOfContextOwner_insertClosureContextVar" />
-    <reference role="3gUMe" target="tpee.1068580123136" resolve="StatementList" />
+    <ref role="3gUMe" to="tpee:fzclF80" resolve="StatementList" />
     <node concept="312cEu" id="gLzrIOu" role="13RCb5">
       <property role="TrG5h" value="_class_" />
       <node concept="3Tm1VV" id="h9B3LsM" role="1B3o_S" />
@@ -951,29 +951,29 @@
               <property role="TrG5h" value="_closureContext_" />
               <property role="3TUv4t" value="true" />
               <node concept="3uibUv" id="gLzrIO$" role="1tU5fm">
-                <reference role="3uigEE" target="1152552655480" resolve="class_ClosureContext" />
+                <ref role="3uigEE" node="gLpvtDS" resolve="class_ClosureContext" />
                 <node concept="1ZhdrF" id="gLzrIO_" role="lGtFl">
                   <property role="2qtEX8" value="classifier" />
                   <node concept="3$xsQk" id="h1UZ6Gq" role="3$ytzL">
                     <node concept="3clFbS" id="h1UZ6Gr" role="2VODD2">
                       <node concept="3cpWs6" id="h1UZ7Bo" role="3cqZAp">
                         <node concept="1PxgMI" id="4D3RMlPNgfL" role="3cqZAk">
-                          <reference role="1PxNhF" target="tpee.1107461130800" resolve="Classifier" />
+                          <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
                           <node concept="2YIFZM" id="h1UZago" role="1PxMeX">
-                            <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                            <reference role="37wK5l" target="tpea.8428317315592447636" resolve="find_ContextOwner_ClosureContext_generatedClass" />
+                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                            <ref role="37wK5l" to="tpea:7jRpv62amqk" resolve="find_ContextOwner_ClosureContext_generatedClass" />
                             <node concept="30H73N" id="h1UZbdU" role="37wK5m" />
                             <node concept="2OqwBi" id="hRrq3Ap" role="37wK5m">
                               <node concept="1eOMI4" id="hRrq3Aq" role="2Oq$k0">
                                 <node concept="10QFUN" id="hRrq3Ar" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq3As" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq3At" role="10QFUM">
-                                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq3Au" role="2OqNvi">
-                                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -985,9 +985,9 @@
               </node>
               <node concept="2ShNRf" id="hDIyEVJ" role="33vP2m">
                 <node concept="1pGfFk" id="hDIyEVS" role="2ShVmc">
-                  <reference role="37wK5l" target="5351366134229435457" resolve="class_ClosureContext" />
+                  <ref role="37wK5l" node="4D3RMlPNgh1" resolve="class_ClosureContext" />
                   <node concept="37vLTw" id="2BHiRxglwzh" role="37wK5m">
-                    <reference role="3cqZAo" target="1152719449407" resolve="parm" />
+                    <ref role="3cqZAo" node="gLzrIOZ" resolve="parm" />
                     <node concept="1WS0z7" id="gLzrIOC" role="lGtFl">
                       <node concept="3JmXsc" id="h1V285k" role="3Jn$fo">
                         <node concept="3clFbS" id="h1V285l" role="2VODD2">
@@ -998,20 +998,20 @@
                                 <node concept="3Tqbb2" id="i2sqiq0" role="_ZDj9" />
                               </node>
                               <node concept="2YIFZM" id="h1V2jnA" role="33vP2m">
-                                <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                                <reference role="37wK5l" target="tpea.8428317315592447781" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
+                                <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                                <ref role="37wK5l" to="tpea:7jRpv62ams_" resolve="getList_ContextOwner_ifMethod_ParmsUsedInClosure" />
                                 <node concept="30H73N" id="h1V2jnB" role="37wK5m" />
                                 <node concept="2OqwBi" id="hRrq3BE" role="37wK5m">
                                   <node concept="1eOMI4" id="hRrq3BF" role="2Oq$k0">
                                     <node concept="10QFUN" id="hRrq3BG" role="1eOMHV">
                                       <node concept="1iwH7S" id="hRrq3BH" role="10QFUP" />
                                       <node concept="3uibUv" id="hRrq3BI" role="10QFUM">
-                                        <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                        <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                       </node>
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="hRrq3BJ" role="2OqNvi">
-                                    <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                                    <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                                   </node>
                                 </node>
                               </node>
@@ -1020,10 +1020,10 @@
                           <node concept="3cpWs6" id="h1V28Gy" role="3cqZAp">
                             <node concept="10QFUN" id="h1V2jn_" role="3cqZAk">
                               <node concept="37vLTw" id="3GM_nagT$Jw" role="10QFUP">
-                                <reference role="3cqZAo" target="1170295378837" resolve="list" />
+                                <ref role="3cqZAo" node="h1V2_el" resolve="list" />
                               </node>
                               <node concept="2I9FWS" id="h1V2CcS" role="10QFUM">
-                                <reference role="2I9WkF" target="tpee.1068498886292" resolve="ParameterDeclaration" />
+                                <ref role="2I9WkF" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
                               </node>
                             </node>
                           </node>
@@ -1038,7 +1038,7 @@
                             <node concept="2OqwBi" id="hxiHIYU" role="3clFbG">
                               <node concept="30H73N" id="hrYHB0k" role="2Oq$k0" />
                               <node concept="3TrcHB" id="hrYHW8W" role="2OqNvi">
-                                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                               </node>
                             </node>
                           </node>
@@ -1052,22 +1052,22 @@
                       <node concept="3clFbS" id="h1V1kUL" role="2VODD2">
                         <node concept="3cpWs6" id="h1V1lCk" role="3cqZAp">
                           <node concept="1PxgMI" id="4D3RMlPNgfz" role="3cqZAk">
-                            <reference role="1PxNhF" target="tpee.1068580123140" resolve="ConstructorDeclaration" />
+                            <ref role="1PxNhF" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
                             <node concept="2YIFZM" id="h1V1pz6" role="1PxMeX">
-                              <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                              <reference role="37wK5l" target="tpea.8428317315592447650" resolve="find_ContextOwner_ClosureContext_generatedClass_constructor" />
+                              <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                              <ref role="37wK5l" to="tpea:7jRpv62amqy" resolve="find_ContextOwner_ClosureContext_generatedClass_constructor" />
                               <node concept="30H73N" id="h1V1qkb" role="37wK5m" />
                               <node concept="2OqwBi" id="hRrq3j6" role="37wK5m">
                                 <node concept="1eOMI4" id="hRrq3j7" role="2Oq$k0">
                                   <node concept="10QFUN" id="hRrq3j8" role="1eOMHV">
                                     <node concept="1iwH7S" id="hRrq3j9" role="10QFUP" />
                                     <node concept="3uibUv" id="hRrq3ja" role="10QFUM">
-                                      <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                      <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                     </node>
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="hRrq3jb" role="2OqNvi">
-                                  <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                                  <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                                 </node>
                               </node>
                             </node>
@@ -1097,7 +1097,7 @@
               </node>
             </node>
             <node concept="1pdMLZ" id="gLzD5yt" role="lGtFl">
-              <reference role="2rW$FS" target="1215479320844" resolve="contextOwner_closureContext_variable" />
+              <ref role="2rW$FS" node="hG0dD4c" resolve="contextOwner_closureContext_variable" />
               <node concept="3NFfHV" id="h1UXNhJ" role="31$UT">
                 <node concept="3clFbS" id="h1UXNhK" role="2VODD2">
                   <node concept="3cpWs6" id="h1UXNUq" role="3cqZAp">
@@ -1113,11 +1113,11 @@
           <node concept="3clFbF" id="gLzrIOF" role="3cqZAp">
             <node concept="2OqwBi" id="4D3RMlPNgfC" role="3clFbG">
               <node concept="10M0yZ" id="4D3RMlPNgfB" role="2Oq$k0">
-                <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-                <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+                <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+                <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
               </node>
               <node concept="liA8E" id="4D3RMlPNgfG" role="2OqNvi">
-                <reference role="37wK5l" target="fxg7.~PrintStream%dprintln()%cvoid" resolve="println" />
+                <ref role="37wK5l" to="fxg7:~PrintStream.println():void" resolve="println" />
               </node>
             </node>
             <node concept="2b32R4" id="gLzrIOH" role="lGtFl">
@@ -1127,7 +1127,7 @@
                     <node concept="2OqwBi" id="hxiHJ0W" role="3cqZAk">
                       <node concept="30H73N" id="h1UXZbg" role="2Oq$k0" />
                       <node concept="3Tsc0h" id="hzHoYsO" role="2OqNvi">
-                        <reference role="3TtcxE" target="tpee.1068581517665" />
+                        <ref role="3TtcxE" to="tpee:fzcqZ_x" />
                       </node>
                     </node>
                   </node>
@@ -1140,7 +1140,7 @@
         <node concept="37vLTG" id="gLzrIOZ" role="3clF46">
           <property role="TrG5h" value="parm" />
           <node concept="3uibUv" id="gLzrIP0" role="1tU5fm">
-            <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
           </node>
         </node>
         <node concept="3Tm1VV" id="h9AO$q2" role="1B3o_S" />
@@ -1150,7 +1150,7 @@
   <node concept="13MO4I" id="gL$0QOU">
     <property role="TrG5h" value="weave_ClosureAdapter_members" />
     <property role="3GE5qa" value="to_remove" />
-    <reference role="3gUMe" target="tpee.1152728232947" resolve="Closure" />
+    <ref role="3gUMe" to="tpee:gLzXffN" resolve="Closure" />
     <node concept="312cEu" id="gL$10gG" role="13RCb5">
       <property role="TrG5h" value="_closure_adapter_" />
       <node concept="16euLQ" id="h2ty4$p" role="16eVyc">
@@ -1161,8 +1161,8 @@
             <node concept="3clFbS" id="h2tyc6D" role="2VODD2">
               <node concept="3cpWs6" id="h2tztgv" role="3cqZAp">
                 <node concept="2YIFZM" id="h2tzv6e" role="3cqZAk">
-                  <reference role="37wK5l" target="tpea.1170874151016" resolve="getTypeVars_from_Closure_enclosingClass" />
-                  <reference role="1Pybhc" target="tpea.1170730182541" resolve="QueriesUtil" />
+                  <ref role="37wK5l" to="tpea:h2tyr1C" resolve="getTypeVars_from_Closure_enclosingClass" />
+                  <ref role="1Pybhc" to="tpea:h2kXeud" resolve="QueriesUtil" />
                   <node concept="30H73N" id="h2tzvGk" role="37wK5m" />
                 </node>
               </node>
@@ -1177,7 +1177,7 @@
                 <node concept="2OqwBi" id="hxiHJ0w" role="3cqZAk">
                   <node concept="30H73N" id="h2tzzdJ" role="2Oq$k0" />
                   <node concept="3TrcHB" id="h2tzzT1" role="2OqNvi">
-                    <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                   </node>
                 </node>
               </node>
@@ -1189,26 +1189,26 @@
       <node concept="312cEg" id="gL$1EHn" role="jymVt">
         <property role="TrG5h" value="_enclosingClass" />
         <node concept="3uibUv" id="gL$1EHo" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
           <node concept="29HgVG" id="hgueH1r" role="lGtFl">
             <node concept="3NFfHV" id="hgueH1s" role="3NFExx">
               <node concept="3clFbS" id="hgueH1t" role="2VODD2">
                 <node concept="3cpWs6" id="hgueHX2" role="3cqZAp">
                   <node concept="2YIFZM" id="hgueHX3" role="3cqZAk">
-                    <reference role="1Pybhc" target="tpea.1170730182541" resolve="QueriesUtil" />
-                    <reference role="37wK5l" target="tpea.1170730182542" resolve="createClassType_forClosure_enclosingClass" />
+                    <ref role="1Pybhc" to="tpea:h2kXeud" resolve="QueriesUtil" />
+                    <ref role="37wK5l" to="tpea:h2kXeue" resolve="createClassType_forClosure_enclosingClass" />
                     <node concept="30H73N" id="hgueHX4" role="37wK5m" />
                     <node concept="2OqwBi" id="hRrq2Gj" role="37wK5m">
                       <node concept="1eOMI4" id="hRrq2Gk" role="2Oq$k0">
                         <node concept="10QFUN" id="hRrq2Gl" role="1eOMHV">
                           <node concept="1iwH7S" id="hRrq2Gm" role="10QFUP" />
                           <node concept="3uibUv" id="hRrq2Gn" role="10QFUM">
-                            <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                            <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                           </node>
                         </node>
                       </node>
                       <node concept="liA8E" id="hRrq2Go" role="2OqNvi">
-                        <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                        <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                       </node>
                     </node>
                   </node>
@@ -1222,29 +1222,29 @@
       <node concept="312cEg" id="gLDnJ3$" role="jymVt">
         <property role="TrG5h" value="_closureContext" />
         <node concept="3uibUv" id="gLDnK7e" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
           <node concept="1ZhdrF" id="gLDobt0" role="lGtFl">
             <property role="2qtEX8" value="classifier" />
             <node concept="3$xsQk" id="h1UAfjD" role="3$ytzL">
               <node concept="3clFbS" id="h1UAfjE" role="2VODD2">
                 <node concept="3cpWs6" id="h1UAfJ7" role="3cqZAp">
                   <node concept="1PxgMI" id="4D3RMlPNfXF" role="3cqZAk">
-                    <reference role="1PxNhF" target="tpee.1107461130800" resolve="Classifier" />
+                    <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
                     <node concept="2YIFZM" id="h1UBjcC" role="1PxMeX">
-                      <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                      <reference role="37wK5l" target="tpea.8428317315592447597" resolve="find_EnclosingContextOwner_ClosureContext_generatedClass" />
+                      <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                      <ref role="37wK5l" to="tpea:7jRpv62ampH" resolve="find_EnclosingContextOwner_ClosureContext_generatedClass" />
                       <node concept="30H73N" id="h1UBraU" role="37wK5m" />
                       <node concept="2OqwBi" id="hRrq2NK" role="37wK5m">
                         <node concept="1eOMI4" id="hRrq2NL" role="2Oq$k0">
                           <node concept="10QFUN" id="hRrq2NM" role="1eOMHV">
                             <node concept="1iwH7S" id="hRrq2NN" role="10QFUP" />
                             <node concept="3uibUv" id="hRrq2NO" role="10QFUM">
-                              <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                             </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="hRrq2NP" role="2OqNvi">
-                          <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                          <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                         </node>
                       </node>
                     </node>
@@ -1260,26 +1260,26 @@
         <node concept="37vLTG" id="4D3RMlPNfL3" role="3clF46">
           <property role="TrG5h" value="enclosingClass" />
           <node concept="3uibUv" id="4D3RMlPNfL4" role="1tU5fm">
-            <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
             <node concept="29HgVG" id="4D3RMlPNfL5" role="lGtFl">
               <node concept="3NFfHV" id="4D3RMlPNfL6" role="3NFExx">
                 <node concept="3clFbS" id="4D3RMlPNfL7" role="2VODD2">
                   <node concept="3cpWs6" id="4D3RMlPNfL8" role="3cqZAp">
                     <node concept="2YIFZM" id="4D3RMlPNfL9" role="3cqZAk">
-                      <reference role="1Pybhc" target="tpea.1170730182541" resolve="QueriesUtil" />
-                      <reference role="37wK5l" target="tpea.1170730182542" resolve="createClassType_forClosure_enclosingClass" />
+                      <ref role="1Pybhc" to="tpea:h2kXeud" resolve="QueriesUtil" />
+                      <ref role="37wK5l" to="tpea:h2kXeue" resolve="createClassType_forClosure_enclosingClass" />
                       <node concept="30H73N" id="4D3RMlPNfLa" role="37wK5m" />
                       <node concept="2OqwBi" id="4D3RMlPNfLb" role="37wK5m">
                         <node concept="1eOMI4" id="4D3RMlPNfLc" role="2Oq$k0">
                           <node concept="10QFUN" id="4D3RMlPNfLd" role="1eOMHV">
                             <node concept="1iwH7S" id="4D3RMlPNfLe" role="10QFUP" />
                             <node concept="3uibUv" id="4D3RMlPNfLf" role="10QFUM">
-                              <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                             </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="4D3RMlPNfLg" role="2OqNvi">
-                          <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                          <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                         </node>
                       </node>
                     </node>
@@ -1292,7 +1292,7 @@
         <node concept="37vLTG" id="4D3RMlPNfLj" role="3clF46">
           <property role="TrG5h" value="closureContext" />
           <node concept="3uibUv" id="4D3RMlPNfLk" role="1tU5fm">
-            <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
           </node>
         </node>
         <node concept="3cqZAl" id="4D3RMlPNfK_" role="3clF45" />
@@ -1303,11 +1303,11 @@
               <node concept="2OqwBi" id="4D3RMlPNfKF" role="37vLTJ">
                 <node concept="Xjq3P" id="4D3RMlPNfKG" role="2Oq$k0" />
                 <node concept="2OwXpG" id="4D3RMlPNfKH" role="2OqNvi">
-                  <reference role="2Oxat5" target="1152729394007" resolve="_enclosingClass" />
+                  <ref role="2Oxat5" node="gL$1EHn" resolve="_enclosingClass" />
                 </node>
               </node>
               <node concept="37vLTw" id="2BHiRxglGXZ" role="37vLTx">
-                <reference role="3cqZAo" target="5351366134229433411" resolve="enclosingClass" />
+                <ref role="3cqZAo" node="4D3RMlPNfL3" resolve="enclosingClass" />
               </node>
             </node>
           </node>
@@ -1316,34 +1316,34 @@
               <node concept="2OqwBi" id="4D3RMlPNfKL" role="37vLTJ">
                 <node concept="Xjq3P" id="4D3RMlPNfKM" role="2Oq$k0" />
                 <node concept="2OwXpG" id="4D3RMlPNfKN" role="2OqNvi">
-                  <reference role="2Oxat5" target="1152819065060" resolve="_closureContext" />
+                  <ref role="2Oxat5" node="gLDnJ3$" resolve="_closureContext" />
                 </node>
               </node>
               <node concept="10QFUN" id="4D3RMlPNfKO" role="37vLTx">
                 <node concept="3uibUv" id="4D3RMlPNfKP" role="10QFUM">
-                  <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                   <node concept="1ZhdrF" id="4D3RMlPNfKQ" role="lGtFl">
                     <property role="2qtEX8" value="classifier" />
                     <node concept="3$xsQk" id="4D3RMlPNfKR" role="3$ytzL">
                       <node concept="3clFbS" id="4D3RMlPNfKS" role="2VODD2">
                         <node concept="3cpWs6" id="4D3RMlPNfKT" role="3cqZAp">
                           <node concept="1PxgMI" id="4D3RMlPNfXH" role="3cqZAk">
-                            <reference role="1PxNhF" target="tpee.1107461130800" resolve="Classifier" />
+                            <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
                             <node concept="2YIFZM" id="4D3RMlPNfKU" role="1PxMeX">
-                              <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                              <reference role="37wK5l" target="tpea.8428317315592447597" resolve="find_EnclosingContextOwner_ClosureContext_generatedClass" />
+                              <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                              <ref role="37wK5l" to="tpea:7jRpv62ampH" resolve="find_EnclosingContextOwner_ClosureContext_generatedClass" />
                               <node concept="30H73N" id="4D3RMlPNfKV" role="37wK5m" />
                               <node concept="2OqwBi" id="4D3RMlPNfKW" role="37wK5m">
                                 <node concept="1eOMI4" id="4D3RMlPNfKX" role="2Oq$k0">
                                   <node concept="10QFUN" id="4D3RMlPNfKY" role="1eOMHV">
                                     <node concept="1iwH7S" id="4D3RMlPNfKZ" role="10QFUP" />
                                     <node concept="3uibUv" id="4D3RMlPNfL0" role="10QFUM">
-                                      <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                      <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                     </node>
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="4D3RMlPNfL1" role="2OqNvi">
-                                  <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                                  <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                                 </node>
                               </node>
                             </node>
@@ -1354,7 +1354,7 @@
                   </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxghbDB" role="10QFUP">
-                  <reference role="3cqZAo" target="5351366134229433427" resolve="closureContext" />
+                  <ref role="3cqZAo" node="4D3RMlPNfLj" resolve="closureContext" />
                 </node>
               </node>
             </node>
@@ -1371,13 +1371,13 @@
       <node concept="37vLTG" id="4D3RMlPNghV" role="3clF46">
         <property role="TrG5h" value="enclosingClass" />
         <node concept="3uibUv" id="4D3RMlPNghW" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="37vLTG" id="4D3RMlPNghZ" role="3clF46">
         <property role="TrG5h" value="outerContext" />
         <node concept="3uibUv" id="4D3RMlPNgi0" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3cqZAl" id="4D3RMlPNghS" role="3clF45" />
@@ -1387,14 +1387,14 @@
   </node>
   <node concept="13MO4I" id="gL$ILXa">
     <property role="TrG5h" value="reduce_ThisExpression_inClosure" />
-    <reference role="3gUMe" target="tpee.1070475354124" resolve="ThisExpression" />
+    <ref role="3gUMe" to="tpee:f$Xjq0c" resolve="ThisExpression" />
     <node concept="312cEu" id="gL$ILXb" role="13RCb5">
       <property role="TrG5h" value="_ClosureAdapter_" />
       <node concept="3Tm1VV" id="h9B3Lw7" role="1B3o_S" />
       <node concept="312cEg" id="gL$ILXj" role="jymVt">
         <property role="TrG5h" value="_enclosingClass" />
         <node concept="3uibUv" id="gL$ILXk" role="1tU5fm">
-          <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbW" id="20xx8pH6cI8" role="jymVt">
@@ -1412,7 +1412,7 @@
               <node concept="2OqwBi" id="hxBfJ80" role="37vLTJ">
                 <node concept="Xjq3P" id="gL$ILXh" role="2Oq$k0" />
                 <node concept="2OwXpG" id="hxBfJ81" role="2OqNvi">
-                  <reference role="2Oxat5" target="1152741220179" resolve="_enclosingClass" />
+                  <ref role="2Oxat5" node="gL$ILXj" resolve="_enclosingClass" />
                 </node>
                 <node concept="raruj" id="gL$ILXi" role="lGtFl" />
               </node>
@@ -1425,7 +1425,7 @@
   </node>
   <node concept="13MO4I" id="gL$MlPL">
     <property role="TrG5h" value="reduce_VariableReference_ClosureContextField" />
-    <reference role="3gUMe" target="tpee.1068498886296" resolve="VariableReference" />
+    <ref role="3gUMe" to="tpee:fz7vLUo" resolve="VariableReference" />
     <node concept="312cEu" id="gL$NivY" role="13RCb5">
       <property role="TrG5h" value="_class_" />
       <node concept="3Tm1VV" id="h9B3Loq" role="1B3o_S" />
@@ -1442,11 +1442,11 @@
             <node concept="3cpWsn" id="gL$NpBT" role="3cpWs9">
               <property role="TrG5h" value="_closure_context_" />
               <node concept="3uibUv" id="gL$NpBU" role="1tU5fm">
-                <reference role="3uigEE" target="1152742286993" resolve="stuff_ClosureContext" />
+                <ref role="3uigEE" node="gL$MQqh" resolve="stuff_ClosureContext" />
               </node>
               <node concept="2ShNRf" id="4D3RMlPNggt" role="33vP2m">
                 <node concept="1pGfFk" id="4D3RMlPNggv" role="2ShVmc">
-                  <reference role="37wK5l" target="2315277396335971200" resolve="stuff_ClosureContext" />
+                  <ref role="37wK5l" node="20xx8pH6cI0" resolve="stuff_ClosureContext" />
                 </node>
               </node>
             </node>
@@ -1458,26 +1458,26 @@
               </node>
               <node concept="2OqwBi" id="hxBfJ8m" role="37vLTJ">
                 <node concept="37vLTw" id="3GM_nagTxFS" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1152742431225" resolve="_closure_context_" />
+                  <ref role="3cqZAo" node="gL$NpBT" resolve="_closure_context_" />
                   <node concept="1pdMLZ" id="gL$NU95" role="lGtFl">
                     <node concept="2kFOW8" id="h2uY2VS" role="2kGFt3">
                       <node concept="3clFbS" id="h2uY2VT" role="2VODD2">
                         <node concept="3cpWs6" id="h2uYhte" role="3cqZAp">
                           <node concept="2YIFZM" id="h2uYjnP" role="3cqZAk">
-                            <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                            <reference role="37wK5l" target="tpea.8428317315592447869" resolve="create_closureContextObject" />
+                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                            <ref role="37wK5l" to="tpea:7jRpv62amtX" resolve="create_closureContextObject" />
                             <node concept="30H73N" id="h2uYmtn" role="37wK5m" />
                             <node concept="2OqwBi" id="hRrq3rf" role="37wK5m">
                               <node concept="1eOMI4" id="hRrq3rg" role="2Oq$k0">
                                 <node concept="10QFUN" id="hRrq3rh" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq3ri" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq3rj" role="10QFUM">
-                                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq3rk" role="2OqNvi">
-                                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1487,27 +1487,27 @@
                   </node>
                 </node>
                 <node concept="2OwXpG" id="hxBfJ8n" role="2OqNvi">
-                  <reference role="2Oxat5" target="1152742306885" resolve="_field_" />
+                  <ref role="2Oxat5" node="gL$MVh5" resolve="_field_" />
                   <node concept="1ZhdrF" id="gL$WnEk" role="lGtFl">
                     <property role="2qtEX8" value="fieldDeclaration" />
                     <node concept="3$xsQk" id="h1Ylqf$" role="3$ytzL">
                       <node concept="3clFbS" id="h1Ylqf_" role="2VODD2">
                         <node concept="3cpWs6" id="h1Ylv89" role="3cqZAp">
                           <node concept="2YIFZM" id="h1YlxAD" role="3cqZAk">
-                            <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                            <reference role="37wK5l" target="tpea.8428317315592447747" resolve="resolve_VariableReference_Variable_ClosureContext_generatedField" />
+                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                            <ref role="37wK5l" to="tpea:7jRpv62ams3" resolve="resolve_VariableReference_Variable_ClosureContext_generatedField" />
                             <node concept="30H73N" id="h1Yly6D" role="37wK5m" />
                             <node concept="2OqwBi" id="hRrq3nt" role="37wK5m">
                               <node concept="1eOMI4" id="hRrq3nu" role="2Oq$k0">
                                 <node concept="10QFUN" id="hRrq3nv" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq3nw" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq3nx" role="10QFUM">
-                                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq3ny" role="2OqNvi">
-                                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1531,7 +1531,7 @@
     <node concept="312cEg" id="gL$MVh5" role="jymVt">
       <property role="TrG5h" value="_field_" />
       <node concept="3uibUv" id="gL$MWav" role="1tU5fm">
-        <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
       </node>
     </node>
     <node concept="3clFbW" id="20xx8pH6cI0" role="jymVt">
@@ -1543,7 +1543,7 @@
   <node concept="13MO4I" id="gL_jhIw">
     <property role="TrG5h" value="reduce_VariableDeclStmtWithInit_ClosureContextField" />
     <property role="3GE5qa" value="variables" />
-    <reference role="3gUMe" target="tpee.1068581242864" resolve="LocalVariableDeclarationStatement" />
+    <ref role="3gUMe" to="tpee:fzcpWvK" resolve="LocalVariableDeclarationStatement" />
     <node concept="312cEu" id="gL_jhIx" role="13RCb5">
       <property role="TrG5h" value="_class_" />
       <node concept="3Tm1VV" id="h9B3Lnm" role="1B3o_S" />
@@ -1560,11 +1560,11 @@
             <node concept="3cpWsn" id="gL_jhIA" role="3cpWs9">
               <property role="TrG5h" value="_closure_context_" />
               <node concept="3uibUv" id="gL_jhIB" role="1tU5fm">
-                <reference role="3uigEE" target="1152742286993" resolve="stuff_ClosureContext" />
+                <ref role="3uigEE" node="gL$MQqh" resolve="stuff_ClosureContext" />
               </node>
               <node concept="2ShNRf" id="4D3RMlPNgf1" role="33vP2m">
                 <node concept="1pGfFk" id="4D3RMlPNgf3" role="2ShVmc">
-                  <reference role="37wK5l" target="2315277396335971200" resolve="stuff_ClosureContext" />
+                  <ref role="37wK5l" node="20xx8pH6cI0" resolve="stuff_ClosureContext" />
                 </node>
               </node>
             </node>
@@ -1573,26 +1573,26 @@
             <node concept="37vLTI" id="gL_jhID" role="3clFbG">
               <node concept="2OqwBi" id="hxB4$Af" role="37vLTJ">
                 <node concept="37vLTw" id="3GM_nagTv0t" role="2Oq$k0">
-                  <reference role="3cqZAo" target="1152750787494" resolve="_closure_context_" />
+                  <ref role="3cqZAo" node="gL_jhIA" resolve="_closure_context_" />
                   <node concept="1pdMLZ" id="gL_jhIG" role="lGtFl">
                     <node concept="2kFOW8" id="h2v2FVt" role="2kGFt3">
                       <node concept="3clFbS" id="h2v2FVu" role="2VODD2">
                         <node concept="3cpWs6" id="h2v2FVv" role="3cqZAp">
                           <node concept="2YIFZM" id="h2v2FVw" role="3cqZAk">
-                            <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                            <reference role="37wK5l" target="tpea.8428317315592447869" resolve="create_closureContextObject" />
+                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                            <ref role="37wK5l" to="tpea:7jRpv62amtX" resolve="create_closureContextObject" />
                             <node concept="30H73N" id="h2v2FVx" role="37wK5m" />
                             <node concept="2OqwBi" id="hRrq3rU" role="37wK5m">
                               <node concept="1eOMI4" id="hRrq3rV" role="2Oq$k0">
                                 <node concept="10QFUN" id="hRrq3rW" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq3rX" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq3rY" role="10QFUM">
-                                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq3rZ" role="2OqNvi">
-                                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1602,26 +1602,26 @@
                   </node>
                 </node>
                 <node concept="2OwXpG" id="hxB4$Ag" role="2OqNvi">
-                  <reference role="2Oxat5" target="1152742306885" resolve="_field_" />
+                  <ref role="2Oxat5" node="gL$MVh5" resolve="_field_" />
                   <node concept="1ZhdrF" id="gL_jhIH" role="lGtFl">
                     <property role="2qtEX8" value="fieldDeclaration" />
                     <node concept="3$xsQk" id="h1YdtQn" role="3$ytzL">
                       <node concept="3clFbS" id="h1YdtQo" role="2VODD2">
                         <node concept="3cpWs6" id="h1Ydykp" role="3cqZAp">
                           <node concept="1PxgMI" id="4D3RMlPNgf4" role="3cqZAk">
-                            <reference role="1PxNhF" target="tpee.1068390468200" resolve="FieldDeclaration" />
+                            <ref role="1PxNhF" to="tpee:fz12cDC" resolve="FieldDeclaration" />
                             <node concept="2YIFZM" id="h1Yd$hF" role="1PxMeX">
-                              <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                              <reference role="37wK5l" target="tpea.8428317315592447713" resolve="resolve_VariableDeclStmt_Variable_ClosureContext_generatedField" />
+                              <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                              <ref role="37wK5l" to="tpea:7jRpv62amrx" resolve="resolve_VariableDeclStmt_Variable_ClosureContext_generatedField" />
                               <node concept="30H73N" id="h1Yd$Qk" role="37wK5m" />
                               <node concept="2OqwBi" id="hRrq3lB" role="37wK5m">
                                 <node concept="liA8E" id="hRrq3lG" role="2OqNvi">
-                                  <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                                  <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                                 </node>
                                 <node concept="1eOMI4" id="4D3RMlPNhkA" role="2Oq$k0">
                                   <node concept="10QFUN" id="4D3RMlPNhkD" role="1eOMHV">
                                     <node concept="3uibUv" id="4D3RMlPNhkG" role="10QFUM">
-                                      <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                      <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                     </node>
                                     <node concept="1iwH7S" id="4D3RMlPNhkC" role="10QFUP" />
                                   </node>
@@ -1644,11 +1644,11 @@
                           <node concept="2OqwBi" id="hxiHJ1d" role="2Oq$k0">
                             <node concept="30H73N" id="h1YdHnP" role="2Oq$k0" />
                             <node concept="3TrEf2" id="h1YdIbS" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1068581242865" />
+                              <ref role="3Tt5mk" to="tpee:fzcpWvL" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="h1Yhjh2" role="2OqNvi">
-                            <reference role="3Tt5mk" target="tpee.1068431790190" />
+                            <ref role="3Tt5mk" to="tpee:fz3vP1I" />
                           </node>
                         </node>
                       </node>
@@ -1667,7 +1667,7 @@
   <node concept="13MO4I" id="gLDAY$3">
     <property role="TrG5h" value="reduce_Closure_NewClosureAdapterExpression" />
     <property role="3GE5qa" value="to_remove" />
-    <reference role="3gUMe" target="tpee.1152728232947" resolve="Closure" />
+    <ref role="3gUMe" to="tpee:gLzXffN" resolve="Closure" />
     <node concept="312cEu" id="gLDDkDI" role="13RCb5">
       <property role="TrG5h" value="_class_" />
       <node concept="3Tm1VV" id="h9B3Lwq" role="1B3o_S" />
@@ -1684,11 +1684,11 @@
             <node concept="3cpWsn" id="gLDDrZ3" role="3cpWs9">
               <property role="TrG5h" value="_closureContext" />
               <node concept="3uibUv" id="gLDDrZ4" role="1tU5fm">
-                <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
               <node concept="2ShNRf" id="4D3RMlPNgeN" role="33vP2m">
                 <node concept="1pGfFk" id="4D3RMlPNgeP" role="2ShVmc">
-                  <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+                  <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
                 </node>
               </node>
             </node>
@@ -1697,15 +1697,15 @@
             <node concept="2ShNRf" id="hDIyEVk" role="3clFbG">
               <node concept="raruj" id="hDIyEVm" role="lGtFl" />
               <node concept="1pGfFk" id="hDIyEVH" role="2ShVmc">
-                <reference role="37wK5l" target="5351366134229435511" resolve="stuff_ClosureAdapter" />
+                <ref role="37wK5l" node="4D3RMlPNghR" resolve="stuff_ClosureAdapter" />
                 <node concept="Xjq3P" id="gLDDFMD" role="37wK5m">
                   <node concept="29HgVG" id="hpYfbCS" role="lGtFl">
                     <node concept="3NFfHV" id="hpYfbCT" role="3NFExx">
                       <node concept="3clFbS" id="hpYfbCU" role="2VODD2">
                         <node concept="3clFbF" id="hq7DHSy" role="3cqZAp">
                           <node concept="2YIFZM" id="hq7DLmg" role="3clFbG">
-                            <reference role="37wK5l" target="tpea.1196274932495" resolve="create_enclosingClassObject" />
-                            <reference role="1Pybhc" target="tpea.1170730182541" resolve="QueriesUtil" />
+                            <ref role="37wK5l" to="tpea:hq7yHGf" resolve="create_enclosingClassObject" />
+                            <ref role="1Pybhc" to="tpea:h2kXeud" resolve="QueriesUtil" />
                             <node concept="30H73N" id="hq7DM5C" role="37wK5m" />
                           </node>
                         </node>
@@ -1714,26 +1714,26 @@
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTutV" role="37wK5m">
-                  <reference role="3cqZAo" target="1152823705539" resolve="_closureContext" />
+                  <ref role="3cqZAo" node="gLDDrZ3" resolve="_closureContext" />
                   <node concept="1pdMLZ" id="hpY8F$A" role="lGtFl">
                     <node concept="2kFOW8" id="hpY8HvE" role="2kGFt3">
                       <node concept="3clFbS" id="hpY8HvF" role="2VODD2">
                         <node concept="3clFbF" id="hpY8JnC" role="3cqZAp">
                           <node concept="2YIFZM" id="hpY8ItH" role="3clFbG">
-                            <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                            <reference role="37wK5l" target="tpea.8428317315592447869" resolve="create_closureContextObject" />
+                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                            <ref role="37wK5l" to="tpea:7jRpv62amtX" resolve="create_closureContextObject" />
                             <node concept="30H73N" id="hpY8ItI" role="37wK5m" />
                             <node concept="2OqwBi" id="hRrq34V" role="37wK5m">
                               <node concept="1eOMI4" id="hRrq34W" role="2Oq$k0">
                                 <node concept="10QFUN" id="hRrq34X" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq34Y" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq34Z" role="10QFUM">
-                                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq350" role="2OqNvi">
-                                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1748,22 +1748,22 @@
                     <node concept="3clFbS" id="h1UD0NU" role="2VODD2">
                       <node concept="3cpWs6" id="h1UD1IS" role="3cqZAp">
                         <node concept="1PxgMI" id="4D3RMlPNgeU" role="3cqZAk">
-                          <reference role="1PxNhF" target="tpee.1068580123140" resolve="ConstructorDeclaration" />
+                          <ref role="1PxNhF" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
                           <node concept="2YIFZM" id="h1UD4sg" role="1PxMeX">
-                            <reference role="1Pybhc" target="tpea.8428317315592447591" resolve="_QueriesUtil" />
-                            <reference role="37wK5l" target="tpea.8428317315592447684" resolve="find_Closure_generatedClosureAdapter_constructor" />
+                            <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
+                            <ref role="37wK5l" to="tpea:7jRpv62amr4" resolve="find_Closure_generatedClosureAdapter_constructor" />
                             <node concept="30H73N" id="h1UD5I4" role="37wK5m" />
                             <node concept="2OqwBi" id="hRrq3fU" role="37wK5m">
                               <node concept="1eOMI4" id="hRrq3fV" role="2Oq$k0">
                                 <node concept="10QFUN" id="hRrq3fW" role="1eOMHV">
                                   <node concept="1iwH7S" id="hRrq3fX" role="10QFUP" />
                                   <node concept="3uibUv" id="hRrq3fY" role="10QFUM">
-                                    <reference role="3uigEE" target="q383.~TemplateQueryContext" resolve="TemplateQueryContext" />
+                                    <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="hRrq3fZ" role="2OqNvi">
-                                <reference role="37wK5l" target="q383.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolve="getGenerator" />
+                                <ref role="37wK5l" to="q383:~TemplateQueryContext.getGenerator():jetbrains.mps.generator.template.ITemplateGenerator" resolve="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -1783,7 +1783,7 @@
   <node concept="13MO4I" id="gM3AFQ$">
     <property role="TrG5h" value="reduce_ClosureParmReference_MethodParmReference" />
     <property role="3GE5qa" value="to_remove" />
-    <reference role="3gUMe" target="tpee.1153179560115" resolve="ClosureParameterReference" />
+    <ref role="3gUMe" to="tpee:gLYQUyN" resolve="ClosureParameterReference" />
     <node concept="312cEu" id="gM3AFQ_" role="13RCb5">
       <property role="TrG5h" value="_ClosureAdapter_" />
       <node concept="3Tm1VV" id="h9B3Lqx" role="1B3o_S" />
@@ -1800,7 +1800,7 @@
             <node concept="37vLTI" id="20xx8pH6cIk" role="3clFbG">
               <node concept="10Nm6u" id="20xx8pH6cIn" role="37vLTx" />
               <node concept="37vLTw" id="2BHiRxglOnf" role="37vLTJ">
-                <reference role="3cqZAo" target="1153259240008" resolve="_parameter_" />
+                <ref role="3cqZAo" node="gM3ARD8" resolve="_parameter_" />
                 <node concept="raruj" id="gM3B0un" role="lGtFl" />
                 <node concept="1ZhdrF" id="gM3Bo_A" role="lGtFl">
                   <property role="2qtEX8" value="variableDeclaration" />
@@ -1811,11 +1811,11 @@
                           <node concept="2OqwBi" id="hxiHIYM" role="2Oq$k0">
                             <node concept="30H73N" id="hrYAA7D" role="2Oq$k0" />
                             <node concept="3TrEf2" id="hrYACMQ" role="2OqNvi">
-                              <reference role="3Tt5mk" target="tpee.1153179615652" />
+                              <ref role="3Tt5mk" to="tpee:gLYR86$" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="hrYADz1" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
                       </node>
@@ -1829,7 +1829,7 @@
         <node concept="37vLTG" id="gM3ARD8" role="3clF46">
           <property role="TrG5h" value="_parameter_" />
           <node concept="3uibUv" id="gM3ARD9" role="1tU5fm">
-            <reference role="3uigEE" target="e2lb.~Object" resolve="Object" />
+            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
           </node>
         </node>
         <node concept="3Tm1VV" id="h9AO$jo" role="1B3o_S" />

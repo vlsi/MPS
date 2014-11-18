@@ -78,8 +78,8 @@
             <property role="TrG5h" value="homePath" />
             <node concept="17QB3L" id="70HT6wFscuD" role="1tU5fm" />
             <node concept="2YIFZM" id="70HT6wFscuu" role="33vP2m">
-              <reference role="1Pybhc" target="a8jz.4774692914340655529" resolve="PathManager" />
-              <reference role="37wK5l" target="a8jz.4774692914340655692" resolve="getHomePath" />
+              <ref role="1Pybhc" to="a8jz:4937uxYQn6D" resolve="PathManager" />
+              <ref role="37wK5l" to="a8jz:4937uxYQn9c" resolve="getHomePath" />
             </node>
           </node>
         </node>
@@ -92,26 +92,26 @@
                 <property role="Xl_RC" value="/plugins/mpsjava/tests/realCodeBase/google-guava/" />
               </node>
               <node concept="37vLTw" id="3GM_nagTzM9" role="3uHU7B">
-                <reference role="3cqZAo" target="8083368042256451496" resolve="homePath" />
+                <ref role="3cqZAo" node="70HT6wFscuC" resolve="homePath" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="65uALbW5M8X" role="3cqZAp">
           <node concept="2YIFZM" id="70HT6wFrYy0" role="3clFbG">
-            <reference role="37wK5l" target="wfc9.8083368042256393673" resolve="compareBinAndSrcStubs" />
-            <reference role="1Pybhc" target="wfc9.8083368042256321540" resolve="Utils" />
+            <ref role="37wK5l" to="wfc9:70HT6wFrYn9" resolve="compareBinAndSrcStubs" />
+            <ref role="1Pybhc" to="wfc9:70HT6wFrGK4" resolve="Utils" />
             <node concept="3cpWs3" id="70HT6wFscuH" role="37wK5m">
               <node concept="Xl_RD" id="70HT6wFrYy1" role="3uHU7w">
                 <property role="Xl_RC" value="guava-12.0.1.jar" />
               </node>
               <node concept="37vLTw" id="3GM_nagTtjo" role="3uHU7B">
-                <reference role="3cqZAo" target="8083368042256451509" resolve="guavaPath" />
+                <ref role="3cqZAo" node="70HT6wFscuP" resolve="guavaPath" />
               </node>
             </node>
             <node concept="3cpWs3" id="70HT6wFscux" role="37wK5m">
               <node concept="37vLTw" id="3GM_nagTxPk" role="3uHU7B">
-                <reference role="3cqZAo" target="8083368042256451509" resolve="guavaPath" />
+                <ref role="3cqZAo" node="70HT6wFscuP" resolve="guavaPath" />
               </node>
               <node concept="Xl_RD" id="70HT6wFrYy2" role="3uHU7w">
                 <property role="Xl_RC" value="src" />

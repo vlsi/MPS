@@ -61,255 +61,255 @@
     <property role="19KtqR" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="Module" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5xDtKQA7vSF" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="model" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6370754048397540903" resolve="ModelReference" />
+      <ref role="20lvS9" node="5xDtKQA7vSB" resolve="ModelReference" />
     </node>
     <node concept="1TJgyj" id="1AZH1sZHigx" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="modelRoots" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1855399583446017062" resolve="ModelRoot" />
+      <ref role="20lvS9" node="1AZH1sZHigA" resolve="ModelRoot" />
     </node>
     <node concept="1TJgyj" id="5xDtKQA7vSG" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="dependencies" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6370754048397540904" resolve="ModuleDependency" />
+      <ref role="20lvS9" node="5xDtKQA7vSC" resolve="ModuleDependency" />
     </node>
     <node concept="1TJgyj" id="1AZH1sZHigv" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="usedLanguages" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" node="1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="1AZH1sZHigw" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="usedDevkits" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" node="1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="1AZH1sZHipD" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="stubModels" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1855399583446017058" resolve="StubEntry" />
+      <ref role="20lvS9" node="1AZH1sZHigy" resolve="StubEntry" />
     </node>
     <node concept="1TJgyj" id="eY0iPzBvYZ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="sourcePaths" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="269654322145263543" resolve="SourcePath" />
+      <ref role="20lvS9" node="eY0iPzBvYR" resolve="SourcePath" />
     </node>
     <node concept="1TJgyi" id="5xDtKQA7vSy" role="1TKVEl">
       <property role="TrG5h" value="uuid" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="5xDtKQA7vSz" role="1TKVEl">
       <property role="TrG5h" value="namespace" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="5xDtKQA7vS$" role="1TKVEl">
       <property role="TrG5h" value="compileInMPS" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="1AZH1sZHipC" role="1TKVEl">
       <property role="TrG5h" value="enableJavaStubs" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="PrWs8" id="5xDtKQA8cYP" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="5xDtKQA7vSv">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="Language" />
-    <reference role="1TJDcQ" target="6370754048397540894" resolve="Module" />
+    <ref role="1TJDcQ" node="5xDtKQA7vSu" resolve="Module" />
     <node concept="1TJgyi" id="eY0iPzBC8a" role="1TKVEl">
       <property role="TrG5h" value="genPath" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="5Vtmfoip9oP" role="1TKVEl">
       <property role="TrG5h" value="languagePath" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyj" id="5xDtKQA7vSR" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="generator" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6370754048397540897" resolve="Generator" />
+      <ref role="20lvS9" node="5xDtKQA7vSx" resolve="Generator" />
     </node>
     <node concept="1TJgyj" id="eY0iPzBvY0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="accessoryModels" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6370754048397540903" resolve="ModelReference" />
+      <ref role="20lvS9" node="5xDtKQA7vSB" resolve="ModelReference" />
     </node>
     <node concept="1TJgyj" id="eY0iPzBvY1" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="extendedLanguages" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" node="1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="eY0iPzBvY2" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="runtimeModules" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6370754048397540904" resolve="ModuleDependency" />
+      <ref role="20lvS9" node="5xDtKQA7vSC" resolve="ModuleDependency" />
     </node>
     <node concept="1TJgyj" id="eY0iPzBvY3" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="runtimeStubModels" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1855399583446017058" resolve="StubEntry" />
+      <ref role="20lvS9" node="1AZH1sZHigy" resolve="StubEntry" />
       <node concept="asaX9" id="4xPRg7r_H4I" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="eY0iPzBvYr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="stubSolutions" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="269654322145263495" resolve="StubSolution" />
+      <ref role="20lvS9" node="eY0iPzBvY7" resolve="StubSolution" />
     </node>
   </node>
   <node concept="1TIwiD" id="5xDtKQA7vSw">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="Solution" />
-    <reference role="1TJDcQ" target="6370754048397540894" resolve="Module" />
+    <ref role="1TJDcQ" node="5xDtKQA7vSu" resolve="Module" />
     <node concept="1TJgyi" id="eY0iPzBCDI" role="1TKVEl">
       <property role="TrG5h" value="outputPath" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="eY0iPzBCDL" role="1TKVEl">
       <property role="TrG5h" value="dontLoadClasses" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="5Vtmfoip1Es" role="1TKVEl">
       <property role="TrG5h" value="solutionPath" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="5xDtKQA7vSx">
     <property role="TrG5h" value="Generator" />
-    <reference role="1TJDcQ" target="6370754048397540894" resolve="Module" />
+    <ref role="1TJDcQ" node="5xDtKQA7vSu" resolve="Module" />
     <node concept="1TJgyi" id="eY0iPzBCD4" role="1TKVEl">
       <property role="TrG5h" value="generatorUID" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="2A_smLtZHa0" role="1TKVEl">
       <property role="TrG5h" value="generateTemplates" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="6iByHjqzSmA" role="1TKVEl">
       <property role="TrG5h" value="reflectiveQueries" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="6iByHjqzSnT" role="1TKVEl">
       <property role="TrG5h" value="needOperationContext" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="1AZH1sZHi4b" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="priorityRules" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6370754048397540920" resolve="MappingPriorityRule" />
+      <ref role="20lvS9" node="5xDtKQA7vSS" resolve="MappingPriorityRule" />
     </node>
     <node concept="1TJgyj" id="1AZH1sZHi4f" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="depGenerators" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" node="1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
   </node>
   <node concept="1TIwiD" id="5xDtKQA7vSB">
     <property role="TrG5h" value="ModelReference" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5xDtKQA7vSH" role="1TKVEl">
       <property role="TrG5h" value="uuid" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="5xDtKQA7vSI" role="1TKVEl">
       <property role="TrG5h" value="qualifiedName" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="5LsHsRgAFYL" role="1TKVEl">
       <property role="TrG5h" value="stereotype" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="5xDtKQA7vSC">
     <property role="TrG5h" value="ModuleDependency" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5xDtKQA7vSD" role="1TKVEl">
       <property role="TrG5h" value="reexport" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="1AZH1sZHigu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="moduleRef" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" node="1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
   </node>
   <node concept="1TIwiD" id="5xDtKQA7vSJ">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="DevKit" />
-    <reference role="1TJDcQ" target="6370754048397540894" resolve="Module" />
+    <ref role="1TJDcQ" node="5xDtKQA7vSu" resolve="Module" />
     <node concept="1TJgyj" id="62I8Pi7P1t_" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="exportedLanguages" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" node="1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="62I8Pi7P1tA" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="exportedSolutions" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" node="1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="62I8Pi7P1tB" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="extendedDevkits" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" node="1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyi" id="62I8Pi7P1t$" role="1TKVEl">
       <property role="TrG5h" value="plugin" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="62I8Pi7P1tC" role="1TKVEl">
       <property role="TrG5h" value="devkitPath" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="5xDtKQA7vSS">
     <property role="TrG5h" value="MappingPriorityRule" />
     <property role="3GE5qa" value="generator" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2n3WChplKbH" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="left" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="2721285250110256909" resolve="MappingConfigRefBase" />
+      <ref role="20lvS9" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
     </node>
     <node concept="1TJgyj" id="2n3WChplKbI" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="right" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="2721285250110256909" resolve="MappingConfigRefBase" />
+      <ref role="20lvS9" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
     </node>
     <node concept="1TJgyi" id="5xDtKQA7vSX" role="1TKVEl">
       <property role="TrG5h" value="type" />
-      <reference role="AX2Wp" target="6370754048397540921" resolve="RuleType" />
+      <ref role="AX2Wp" node="5xDtKQA7vST" resolve="RuleType" />
     </node>
   </node>
   <node concept="AxPO7" id="5xDtKQA7vST">
     <property role="3lZH7k" value="custom" />
     <property role="TrG5h" value="RuleType" />
     <property role="3GE5qa" value="generator" />
-    <reference role="M4eZT" target="tpck.1082983041843" resolve="string" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
     <node concept="M4N5e" id="5xDtKQA7vSU" role="M5hS2">
       <property role="1uS6qv" value="strictly_before" />
       <property role="2fHolG" value="strictly_before" />
@@ -338,34 +338,34 @@
   </node>
   <node concept="1TIwiD" id="1AZH1sZHi4c">
     <property role="TrG5h" value="ModuleReference" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1AZH1sZHi4d" role="1TKVEl">
       <property role="TrG5h" value="uuid" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="1AZH1sZHi4e" role="1TKVEl">
       <property role="TrG5h" value="qualifiedName" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="1AZH1sZHigy">
     <property role="TrG5h" value="StubEntry" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1AZH1sZHigz" role="1TKVEl">
       <property role="TrG5h" value="path" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="1AZH1sZHigA">
     <property role="TrG5h" value="ModelRoot" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1sy7yx9lxYo" role="1TKVEl">
       <property role="TrG5h" value="type" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="1AZH1sZHiov" role="1TKVEl">
       <property role="TrG5h" value="path" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="2n3WChplfsd">
@@ -373,7 +373,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MappingConfigRefBase" />
     <property role="3GE5qa" value="generator" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2n3WChplfsf">
     <property role="R5$K7" value="false" />
@@ -381,7 +381,7 @@
     <property role="TrG5h" value="MappingConfigRefAllGlobal" />
     <property role="3GE5qa" value="generator" />
     <property role="34LRSv" value="all global" />
-    <reference role="1TJDcQ" target="2721285250110256909" resolve="MappingConfigRefBase" />
+    <ref role="1TJDcQ" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
   </node>
   <node concept="1TIwiD" id="2n3WChplKbk">
     <property role="R5$K7" value="false" />
@@ -389,7 +389,7 @@
     <property role="TrG5h" value="MappingConfigRefAllLocal" />
     <property role="3GE5qa" value="generator" />
     <property role="34LRSv" value="all local" />
-    <reference role="1TJDcQ" target="2721285250110256909" resolve="MappingConfigRefBase" />
+    <ref role="1TJDcQ" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
   </node>
   <node concept="1TIwiD" id="2n3WChplKcb">
     <property role="R5$K7" value="false" />
@@ -397,12 +397,12 @@
     <property role="TrG5h" value="MappingConfigRefSet" />
     <property role="3GE5qa" value="generator" />
     <property role="34LRSv" value="set" />
-    <reference role="1TJDcQ" target="2721285250110256909" resolve="MappingConfigRefBase" />
+    <ref role="1TJDcQ" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
     <node concept="1TJgyj" id="2n3WChplKcc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="refs" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="2721285250110256909" resolve="MappingConfigRefBase" />
+      <ref role="20lvS9" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
     </node>
   </node>
   <node concept="1TIwiD" id="2n3WChplMtR">
@@ -411,49 +411,49 @@
     <property role="TrG5h" value="MappingConfigNormalRef" />
     <property role="3GE5qa" value="generator" />
     <property role="34LRSv" value="ref" />
-    <reference role="1TJDcQ" target="2721285250110256909" resolve="MappingConfigRefBase" />
+    <ref role="1TJDcQ" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
     <node concept="1TJgyi" id="2n3WChplMtS" role="1TKVEl">
       <property role="TrG5h" value="modelUID" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="2n3WChplMtT" role="1TKVEl">
       <property role="TrG5h" value="nodeID" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="2n3WChplMvx">
     <property role="TrG5h" value="MappingConfigExternalRef" />
     <property role="3GE5qa" value="generator" />
-    <reference role="1TJDcQ" target="2721285250110256909" resolve="MappingConfigRefBase" />
+    <ref role="1TJDcQ" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
     <node concept="1TJgyj" id="2n3WChplMvz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="generator" />
-      <reference role="20lvS9" target="1855399583446016268" resolve="ModuleReference" />
+      <ref role="20lvS9" node="1AZH1sZHi4c" resolve="ModuleReference" />
     </node>
     <node concept="1TJgyj" id="2n3WChplMvy" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="innerRef" />
-      <reference role="20lvS9" target="2721285250110256909" resolve="MappingConfigRefBase" />
+      <ref role="20lvS9" node="2n3WChplfsd" resolve="MappingConfigRefBase" />
     </node>
   </node>
   <node concept="1TIwiD" id="eY0iPzBvY7">
     <property role="TrG5h" value="StubSolution" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="eY0iPzBvY8" role="1TKVEl">
       <property role="TrG5h" value="uuid" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="eY0iPzBvY9" role="1TKVEl">
       <property role="TrG5h" value="name" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="eY0iPzBvYR">
     <property role="TrG5h" value="SourcePath" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="eY0iPzBvYS" role="1TKVEl">
       <property role="TrG5h" value="value" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

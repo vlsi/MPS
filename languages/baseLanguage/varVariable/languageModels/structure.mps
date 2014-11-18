@@ -39,9 +39,9 @@
     <property role="R4oN_" value="var definition" />
     <property role="TrG5h" value="VarVariableDeclaration" />
     <property role="34LRSv" value="var" />
-    <reference role="1TJDcQ" target="tpee.1068581242863" resolve="LocalVariableDeclaration" />
+    <ref role="1TJDcQ" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
     <node concept="PrWs8" id="hZKFiyN" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
 </model>

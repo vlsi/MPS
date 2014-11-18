@@ -40,24 +40,24 @@
   <node concept="yghi3" id="m8_23bzloH">
     <property role="TrG5h" value="module-tests" />
     <node concept="ygXWA" id="5wKGSSl92LA" role="yg1MB">
-      <reference role="ygXWD" target="tnlc.7306485738221408315" resolve="common" />
+      <ref role="ygXWD" to="tnlc:6l_Qx579h0V" resolve="common" />
     </node>
     <node concept="ygXWA" id="3umvbTBOJS$" role="yg1MB">
-      <reference role="ygXWD" target="tnlc.7306485738221408314" resolve="java" />
+      <ref role="ygXWD" to="tnlc:6l_Qx579h0U" resolve="java" />
     </node>
     <node concept="ygXWA" id="3umvbTBOJSF" role="yg1MB">
-      <reference role="ygXWD" target="zwni.398731435597190701" resolve="mps" />
+      <ref role="ygXWD" to="zwni:m8_23bzloH" resolve="mps" />
     </node>
     <node concept="2VaFvF" id="3umvbTBOJMd" role="yghi5">
       <property role="TrG5h" value="module-tests" />
       <node concept="2VaxJe" id="3umvbTBOJTC" role="2VaxJ6">
-        <reference role="2VaxJf" target="tnlc.4701820937132277082" resolve="assemble" />
+        <ref role="2VaxJf" to="tnlc:450ejGzgRPq" resolve="assemble" />
       </node>
     </node>
     <node concept="3bMsLL" id="3umvbTBOJSo" role="yghi5">
-      <reference role="3bMsLK" target="tnlc.7306485738221390885" resolve="test" />
+      <ref role="3bMsLK" to="tnlc:6l_Qx579cK_" resolve="test" />
       <node concept="2VaxJe" id="3umvbTBOJSu" role="3bNaKb">
-        <reference role="2VaxJf" target="4005526075820145805" resolve="module-tests" />
+        <ref role="2VaxJf" node="3umvbTBOJMd" resolve="module-tests" />
       </node>
     </node>
   </node>

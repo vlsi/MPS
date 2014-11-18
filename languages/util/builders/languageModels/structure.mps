@@ -52,25 +52,25 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="Builder" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="67LR$5LOFWe">
     <property role="TrG5h" value="BuilderCreator" />
     <property role="2_RsDV" value="none" />
-    <reference role="1TJDcQ" target="tpee.1145552809883" resolve="AbstractCreator" />
+    <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
     <node concept="PrWs8" id="6L7f8C86EBY" role="PzmwI">
-      <reference role="PrY4T" target="7802271442981792228" resolve="BuilderContainer" />
+      <ref role="PrY4T" node="6L7f8C86EB$" resolve="BuilderContainer" />
     </node>
     <node concept="PrWs8" id="4gdYWWWUUG9" role="PzmwI">
-      <reference role="PrY4T" target="tpee.8972672481958095232" resolve="IControlFlowInterrupter" />
+      <ref role="PrY4T" to="tpee:7M5lxl52eA0" resolve="IControlFlowInterrupter" />
     </node>
   </node>
   <node concept="1TIwiD" id="67LR$5LOFWz">
     <property role="TrG5h" value="BuilderStatement" />
     <property role="2_RsDV" value="none" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="PrWs8" id="6L7f8C86ECd" role="PzmwI">
-      <reference role="PrY4T" target="7802271442981792228" resolve="BuilderContainer" />
+      <ref role="PrY4T" node="6L7f8C86EB$" resolve="BuilderContainer" />
     </node>
   </node>
   <node concept="1TIwiD" id="6k$kQGI6dFw">
@@ -79,43 +79,43 @@
     <property role="TrG5h" value="ResultExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="result" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="6k$kQGI6xSV">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="SimpleBuilders" />
     <property role="3GE5qa" value="simple" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="6k$kQGI6xSW" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1TJgyj" id="6k$kQGI6xSX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="builder" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6254726786820421041" resolve="BaseSimpleBuilderDeclaration" />
+      <ref role="20lvS9" node="5rdgdYBzjmL" resolve="BaseSimpleBuilderDeclaration" />
     </node>
     <node concept="1TJgyj" id="4wDZIZrGcOi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="extendsBuilder" />
-      <reference role="20lvS9" target="7288041816792374843" resolve="SimpleBuilders" />
+      <ref role="20lvS9" node="6k$kQGI6xSV" resolve="SimpleBuilders" />
     </node>
   </node>
   <node concept="1TIwiD" id="6k$kQGI7jkU">
     <property role="TrG5h" value="SimpleBuilderChild" />
     <property role="3GE5qa" value="simple" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6k$kQGI7jkV" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="child" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="7288041816792374840" resolve="SimpleBuilderDeclaration" />
+      <ref role="20lvS9" node="6k$kQGI6xSS" resolve="SimpleBuilderDeclaration" />
     </node>
     <node concept="1TJgyj" id="6k$kQGI7qLr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="attachStatement" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068580123157" resolve="Statement" />
+      <ref role="20lvS9" to="tpee:fzclF8l" resolve="Statement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6k$kQGI7jkW">
@@ -125,7 +125,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.childParams" />
     <property role="34LRSv" value="parent" />
-    <reference role="1TJDcQ" target="7288041816792577344" resolve="SimpleBuilderExpression" />
+    <ref role="1TJDcQ" node="6k$kQGI7jl0" resolve="SimpleBuilderExpression" />
   </node>
   <node concept="1TIwiD" id="6k$kQGI7jkY">
     <property role="R5$K7" value="false" />
@@ -134,7 +134,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.childParams" />
     <property role="34LRSv" value="child" />
-    <reference role="1TJDcQ" target="7288041816792577344" resolve="SimpleBuilderExpression" />
+    <ref role="1TJDcQ" node="6k$kQGI7jl0" resolve="SimpleBuilderExpression" />
   </node>
   <node concept="1TIwiD" id="6k$kQGI7jl0">
     <property role="R5$K7" value="true" />
@@ -142,104 +142,104 @@
     <property role="TrG5h" value="SimpleBuilderExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.childParams" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="6k$kQGI6xSS">
     <property role="TrG5h" value="SimpleBuilderDeclaration" />
     <property role="3GE5qa" value="simple" />
-    <reference role="1TJDcQ" target="6254726786820421041" resolve="BaseSimpleBuilderDeclaration" />
+    <ref role="1TJDcQ" node="5rdgdYBzjmL" resolve="BaseSimpleBuilderDeclaration" />
     <node concept="PrWs8" id="6k$kQGI6xST" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1TJgyi" id="6k$kQGI6XRn" role="1TKVEl">
       <property role="TrG5h" value="root" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="6k$kQGIatVE" role="1TKVEl">
       <property role="TrG5h" value="leaf" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="3jPK7hzREE3" role="1TKVEl">
       <property role="TrG5h" value="isAbstract" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="4Hc0vRp0gIh" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="parameter" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="5425713840853682520" resolve="SimpleBuilderParameter" />
+      <ref role="20lvS9" node="4Hc0vRp0g_o" resolve="SimpleBuilderParameter" />
     </node>
     <node concept="1TJgyj" id="3jPK7hzQXCb" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="type" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
     <node concept="1TJgyj" id="6k$kQGIaUGI" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="creator" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="1TJgyj" id="6k$kQGI7Tn4" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="child" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="7288041816792577338" resolve="SimpleBuilderChild" />
+      <ref role="20lvS9" node="6k$kQGI7jkU" resolve="SimpleBuilderChild" />
     </node>
     <node concept="1TJgyj" id="4Fc1sznat87" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="property" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="5389689214216990954" resolve="SimpleBuilderProperty" />
+      <ref role="20lvS9" node="4Fc1szna73E" resolve="SimpleBuilderProperty" />
     </node>
     <node concept="1TJgyj" id="3jPK7hzQBgP" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="extends" />
-      <reference role="20lvS9" target="7288041816792374840" resolve="SimpleBuilderDeclaration" />
+      <ref role="20lvS9" node="6k$kQGI6xSS" resolve="SimpleBuilderDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="6k$kQGI9c2U">
     <property role="TrG5h" value="SimpleBuilder" />
     <property role="3GE5qa" value="simple" />
-    <reference role="1TJDcQ" target="7057666463730155275" resolve="Builder" />
+    <ref role="1TJDcQ" node="67LR$5LOFWb" resolve="Builder" />
     <node concept="1TJgyj" id="6k$kQGI9c2V" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="7288041816792374840" resolve="SimpleBuilderDeclaration" />
+      <ref role="20lvS9" node="6k$kQGI6xSS" resolve="SimpleBuilderDeclaration" />
     </node>
     <node concept="1TJgyj" id="3JyUPcAP7Tw" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="argument" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="4Hc0vRp0g_o">
     <property role="TrG5h" value="SimpleBuilderParameter" />
     <property role="3GE5qa" value="simple" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4Hc0vRp0g_p" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="type" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
     <node concept="PrWs8" id="4Hc0vRp0g_q" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="4Hc0vRp0DN$">
     <property role="TrG5h" value="SimpleBuilderParameterReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="4Hc0vRp0DN_" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="parameter" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="5425713840853682520" resolve="SimpleBuilderParameter" />
+      <ref role="20lvS9" node="4Hc0vRp0g_o" resolve="SimpleBuilderParameter" />
     </node>
   </node>
   <node concept="1TIwiD" id="6L7f8C86lSs">
@@ -248,18 +248,18 @@
     <property role="TrG5h" value="AsBuilderStatement" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="as builder" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="6L7f8C86lSv" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="6W8Q7RPIsvD" role="PzmwI">
-      <reference role="PrY4T" target="tpee.1237545921771" resolve="IContainsStatementList" />
+      <ref role="PrY4T" to="tpee:i0zv2NF" resolve="IContainsStatementList" />
     </node>
     <node concept="PrWs8" id="6L7f8C86ECv" role="PzmwI">
-      <reference role="PrY4T" target="7802271442981792228" resolve="BuilderContainer" />
+      <ref role="PrY4T" node="6L7f8C86EB$" resolve="BuilderContainer" />
     </node>
   </node>
   <node concept="PlHQZ" id="6L7f8C86EB$">
@@ -268,30 +268,30 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="builder" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="7057666463730155275" resolve="Builder" />
+      <ref role="20lvS9" node="67LR$5LOFWb" resolve="Builder" />
     </node>
     <node concept="1TJgyj" id="4ak9ytI9has" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="body" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068580123136" resolve="StatementList" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
   </node>
   <node concept="1TIwiD" id="2kIZjjSDoV7">
     <property role="TrG5h" value="BeanPropertyBuilder" />
     <property role="3GE5qa" value="bean" />
-    <reference role="1TJDcQ" target="7057666463730155275" resolve="Builder" />
+    <ref role="1TJDcQ" node="67LR$5LOFWb" resolve="Builder" />
     <node concept="1TJgyj" id="2kIZjjSDoV8" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="setter" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068580123165" resolve="InstanceMethodDeclaration" />
+      <ref role="20lvS9" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
     </node>
     <node concept="1TJgyj" id="2kIZjjSDoVq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="value" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="5M3yimiSuIZ">
@@ -300,50 +300,50 @@
     <property role="TrG5h" value="BeanBuilder" />
     <property role="3GE5qa" value="bean" />
     <property role="34LRSv" value="builder for" />
-    <reference role="1TJDcQ" target="7057666463730155275" resolve="Builder" />
+    <ref role="1TJDcQ" node="67LR$5LOFWb" resolve="Builder" />
     <node concept="1TJgyj" id="5M3yimiSuJ0" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="constructor" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068580123140" resolve="ConstructorDeclaration" />
-      <reference role="20ksaX" target="tpee.1068499141037" />
+      <ref role="20lvS9" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
+      <ref role="20ksaX" to="tpee:fz7wK6H" />
     </node>
     <node concept="PrWs8" id="5M3yimiSPC2" role="PzmwI">
-      <reference role="PrY4T" target="tpee.1204053956946" resolve="IMethodCall" />
+      <ref role="PrY4T" to="tpee:hxndl_i" resolve="IMethodCall" />
     </node>
   </node>
   <node concept="1TIwiD" id="4Fc1szn8tck">
     <property role="TrG5h" value="AsTypeBuilder" />
     <property role="3GE5qa" value="bean" />
-    <reference role="1TJDcQ" target="7057666463730155275" resolve="Builder" />
+    <ref role="1TJDcQ" node="67LR$5LOFWb" resolve="Builder" />
     <node concept="1TJgyj" id="4Fc1szn8tcl" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="type" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
     <node concept="PrWs8" id="1653mnvAlLU" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="4Fc1szna73E">
     <property role="TrG5h" value="SimpleBuilderProperty" />
     <property role="3GE5qa" value="simple" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="4Fc1szna8Cm" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1TJgyj" id="4Fc1szna8Cn" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="type" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790189" resolve="Type" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
     <node concept="1TJgyj" id="4Fc1sznaOae" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="set" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068580123157" resolve="Statement" />
+      <ref role="20lvS9" to="tpee:fzclF8l" resolve="Statement" />
     </node>
   </node>
   <node concept="1TIwiD" id="4Fc1sznb4zy">
@@ -352,7 +352,7 @@
     <property role="TrG5h" value="SimpleBuilderPropertyExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.propertyParams" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="4Fc1sznb5TK">
     <property role="R5$K7" value="false" />
@@ -361,7 +361,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.propertyParams" />
     <property role="34LRSv" value="parent" />
-    <reference role="1TJDcQ" target="5389689214217242850" resolve="SimpleBuilderPropertyExpression" />
+    <ref role="1TJDcQ" node="4Fc1sznb4zy" resolve="SimpleBuilderPropertyExpression" />
   </node>
   <node concept="1TIwiD" id="4Fc1sznb5Ua">
     <property role="R5$K7" value="false" />
@@ -370,23 +370,23 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="simple.propertyParams" />
     <property role="34LRSv" value="value" />
-    <reference role="1TJDcQ" target="5389689214217242850" resolve="SimpleBuilderPropertyExpression" />
+    <ref role="1TJDcQ" node="4Fc1sznb4zy" resolve="SimpleBuilderPropertyExpression" />
   </node>
   <node concept="1TIwiD" id="4Fc1sznbG1v">
     <property role="TrG5h" value="SimpleBuilderPropertyBuilder" />
     <property role="3GE5qa" value="simple" />
-    <reference role="1TJDcQ" target="7057666463730155275" resolve="Builder" />
+    <ref role="1TJDcQ" node="67LR$5LOFWb" resolve="Builder" />
     <node concept="1TJgyj" id="4Fc1sznbG1w" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="value" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="1TJgyj" id="4Fc1sznbG1x" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="5389689214216990954" resolve="SimpleBuilderProperty" />
+      <ref role="20lvS9" node="4Fc1szna73E" resolve="SimpleBuilderProperty" />
     </node>
   </node>
   <node concept="1TIwiD" id="5rdgdYBzjmL">
@@ -394,28 +394,28 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="BaseSimpleBuilderDeclaration" />
     <property role="3GE5qa" value="simple" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="5rdgdYBzsFN">
     <property role="TrG5h" value="SimpleBuilderExtensionDeclaration" />
     <property role="3GE5qa" value="simple" />
-    <reference role="1TJDcQ" target="6254726786820421041" resolve="BaseSimpleBuilderDeclaration" />
+    <ref role="1TJDcQ" node="5rdgdYBzjmL" resolve="BaseSimpleBuilderDeclaration" />
     <node concept="1TJgyj" id="5rdgdYBzsFO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="child" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="7288041816792577338" resolve="SimpleBuilderChild" />
+      <ref role="20lvS9" node="6k$kQGI7jkU" resolve="SimpleBuilderChild" />
     </node>
     <node concept="1TJgyj" id="5rdgdYBzsFP" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="property" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="5389689214216990954" resolve="SimpleBuilderProperty" />
+      <ref role="20lvS9" node="4Fc1szna73E" resolve="SimpleBuilderProperty" />
     </node>
     <node concept="1TJgyj" id="5rdgdYBzsFQ" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="extended" />
-      <reference role="20lvS9" target="7288041816792374840" resolve="SimpleBuilderDeclaration" />
+      <ref role="20lvS9" node="6k$kQGI6xSS" resolve="SimpleBuilderDeclaration" />
     </node>
   </node>
 </model>

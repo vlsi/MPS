@@ -35,40 +35,40 @@
   <node concept="1TIwiD" id="6uruNJZphgl">
     <property role="TrG5h" value="DummyBlock" />
     <property role="34LRSv" value="dummy" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="6uruNJZphnr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="statement" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="tpee.1068580123157" resolve="Statement" />
+      <ref role="20lvS9" to="tpee:fzclF8l" resolve="Statement" />
     </node>
   </node>
   <node concept="1TIwiD" id="4MNTpfZQnx6">
     <property role="TrG5h" value="ManyStatements" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6bOvqMpaRe9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="list" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068580123136" resolve="StatementList" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
     <node concept="1TJgyj" id="4MNTpfZQnx9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="list1" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068580123136" resolve="StatementList" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
     <node concept="1TJgyj" id="4MNTpfZQnxb" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="list2" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068580123136" resolve="StatementList" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
     <node concept="1TJgyj" id="4MNTpfZQnxe" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="statement" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="tpee.1068580123157" resolve="Statement" />
+      <ref role="20lvS9" to="tpee:fzclF8l" resolve="Statement" />
     </node>
   </node>
 </model>

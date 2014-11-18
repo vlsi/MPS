@@ -213,13 +213,13 @@
       <node concept="37vLTG" id="3Y_BMlivqcB" role="3clF46">
         <property role="TrG5h" value="modelReference" />
         <node concept="3Tqbb2" id="3Y_BMlivqcC" role="1tU5fm">
-          <reference role="ehGHo" target="hypd.6370754048397540903" resolve="ModelReference" />
+          <ref role="ehGHo" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
         </node>
       </node>
       <node concept="37vLTG" id="3Y_BMlivqcD" role="3clF46">
         <property role="TrG5h" value="aspect" />
         <node concept="3uibUv" id="3Y_BMlivqcE" role="1tU5fm">
-          <reference role="3uigEE" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
+          <ref role="3uigEE" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
         </node>
       </node>
       <node concept="37vLTG" id="3Y_BMlivqcF" role="3clF46">
@@ -237,18 +237,18 @@
           <node concept="3cpWsn" id="CgolD_z2UQ" role="3cpWs9">
             <property role="TrG5h" value="aspectModel" />
             <node concept="3uibUv" id="CgolD_z2UR" role="1tU5fm">
-              <reference role="3uigEE" target="ec5l.~SModel" resolve="SModel" />
+              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
             </node>
             <node concept="1rXfSq" id="CgolD_z49L" role="33vP2m">
-              <reference role="37wK5l" target="725186580885202869" resolve="getAspectModel" />
+              <ref role="37wK5l" node="CgolD_yIuP" resolve="getAspectModel" />
               <node concept="37vLTw" id="CgolD_z4cU" role="37wK5m">
-                <reference role="3cqZAo" target="4586246778193290023" resolve="modelReference" />
+                <ref role="3cqZAo" node="3Y_BMlivqcB" resolve="modelReference" />
               </node>
               <node concept="37vLTw" id="CgolD_z4ja" role="37wK5m">
-                <reference role="3cqZAo" target="4586246778193290025" resolve="aspect" />
+                <ref role="3cqZAo" node="3Y_BMlivqcD" resolve="aspect" />
               </node>
               <node concept="37vLTw" id="CgolD_z4po" role="37wK5m">
-                <reference role="3cqZAo" target="4586246778193290027" resolve="genContext" />
+                <ref role="3cqZAo" node="3Y_BMlivqcF" resolve="genContext" />
               </node>
             </node>
           </node>
@@ -264,7 +264,7 @@
           <node concept="3clFbC" id="CgolD_z7cV" role="3clFbw">
             <node concept="10Nm6u" id="CgolD_z8f5" role="3uHU7w" />
             <node concept="37vLTw" id="CgolD_z6c_" role="3uHU7B">
-              <reference role="3cqZAo" target="725186580885286582" resolve="aspectModel" />
+              <ref role="3cqZAo" node="CgolD_z2UQ" resolve="aspectModel" />
             </node>
           </node>
         </node>
@@ -277,7 +277,7 @@
                 <node concept="10QFUN" id="3Y_BMlivqe7" role="1eOMHV">
                   <node concept="H_c77" id="3Y_BMlivqe8" role="10QFUM" />
                   <node concept="37vLTw" id="3Y_BMlivqe9" role="10QFUP">
-                    <reference role="3cqZAo" target="725186580885286582" resolve="aspectModel" />
+                    <ref role="3cqZAo" node="CgolD_z2UQ" resolve="aspectModel" />
                   </node>
                 </node>
               </node>
@@ -289,7 +289,7 @@
           <node concept="3K4zz7" id="1SVBbIvmHn0" role="3cqZAk">
             <node concept="2OqwBi" id="1SVBbIvmIBo" role="3K4E3e">
               <node concept="37vLTw" id="1SVBbIvmHB3" role="2Oq$k0">
-                <reference role="3cqZAo" target="4586246778193290115" resolve="roots" />
+                <ref role="3cqZAo" node="3Y_BMlivqe3" resolve="roots" />
               </node>
               <node concept="3GX2aA" id="1SVBbIvmMRO" role="2OqNvi" />
             </node>
@@ -297,7 +297,7 @@
               <node concept="10Nm6u" id="1SVBbIvpoDl" role="3uHU7w" />
               <node concept="2OqwBi" id="1SVBbIvnUBn" role="3uHU7B">
                 <node concept="37vLTw" id="1SVBbIvnvd0" role="2Oq$k0">
-                  <reference role="3cqZAo" target="4586246778193290115" resolve="roots" />
+                  <ref role="3cqZAo" node="3Y_BMlivqe3" resolve="roots" />
                 </node>
                 <node concept="1z4cxt" id="1SVBbIvor4T" role="2OqNvi">
                   <node concept="1bVj0M" id="1SVBbIvor4V" role="23t8la">
@@ -307,7 +307,7 @@
                           <property role="TrG5h" value="rootConcept" />
                         </node>
                         <node concept="37vLTw" id="1SVBbIvoVqC" role="2GsD0m">
-                          <reference role="3cqZAo" target="4586246778193290029" resolve="rootConcepts" />
+                          <ref role="3cqZAo" node="3Y_BMlivqcH" resolve="rootConcepts" />
                         </node>
                         <node concept="3clFbS" id="1SVBbIvoUaT" role="2LFqv$">
                           <node concept="3clFbJ" id="1SVBbIvp9zC" role="3cqZAp">
@@ -322,14 +322,14 @@
                               <node concept="2Zo12i" id="1SVBbIvpaOc" role="2OqNvi">
                                 <node concept="25Kdxt" id="1SVBbIvpaOd" role="2Zo12j">
                                   <node concept="2GrUjf" id="1SVBbIvpcb8" role="25KhWn">
-                                    <reference role="2Gs0qQ" target="2178507174410691255" resolve="rootConcept" />
+                                    <ref role="2Gs0qQ" node="1SVBbIvoUaR" resolve="rootConcept" />
                                   </node>
                                 </node>
                               </node>
                               <node concept="2OqwBi" id="1SVBbIvpaOf" role="2Oq$k0">
                                 <node concept="3NT_Vc" id="1SVBbIvpaOg" role="2OqNvi" />
                                 <node concept="37vLTw" id="1SVBbIvpaOh" role="2Oq$k0">
-                                  <reference role="3cqZAo" target="2178507174410563901" resolve="it" />
+                                  <ref role="3cqZAo" node="1SVBbIvor4X" resolve="it" />
                                 </node>
                               </node>
                             </node>
@@ -356,7 +356,7 @@
               </node>
               <node concept="2OqwBi" id="1SVBbIvmONu" role="3uHU7B">
                 <node concept="37vLTw" id="1SVBbIvmGft" role="2Oq$k0">
-                  <reference role="3cqZAo" target="4586246778193290029" resolve="rootConcepts" />
+                  <ref role="3cqZAo" node="3Y_BMlivqcH" resolve="rootConcepts" />
                 </node>
                 <node concept="1Rwk04" id="1SVBbIvn1ZU" role="2OqNvi" />
               </node>
@@ -373,7 +373,7 @@
       <node concept="37vLTG" id="CgolD_uS1G" role="3clF46">
         <property role="TrG5h" value="modelReference" />
         <node concept="3Tqbb2" id="CgolD_uS1H" role="1tU5fm">
-          <reference role="ehGHo" target="hypd.6370754048397540903" resolve="ModelReference" />
+          <ref role="ehGHo" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
         </node>
       </node>
       <node concept="37vLTG" id="CgolD_uS1K" role="3clF46">
@@ -385,19 +385,19 @@
           <node concept="3cpWsn" id="CgolD_zc4s" role="3cpWs9">
             <property role="TrG5h" value="editorModel" />
             <node concept="3uibUv" id="CgolD_zc4t" role="1tU5fm">
-              <reference role="3uigEE" target="ec5l.~SModel" resolve="SModel" />
+              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
             </node>
             <node concept="1rXfSq" id="CgolD_zc4u" role="33vP2m">
-              <reference role="37wK5l" target="725186580885202869" resolve="getAspectModel" />
+              <ref role="37wK5l" node="CgolD_yIuP" resolve="getAspectModel" />
               <node concept="37vLTw" id="CgolD_zc4v" role="37wK5m">
-                <reference role="3cqZAo" target="725186580884193388" resolve="modelReference" />
+                <ref role="3cqZAo" node="CgolD_uS1G" resolve="modelReference" />
               </node>
               <node concept="Rm8GO" id="CgolD_zeB2" role="37wK5m">
-                <reference role="1Px2BO" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
-                <reference role="Rm8GQ" target="cu2c.~LanguageAspect%dEDITOR" resolve="EDITOR" />
+                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.EDITOR" resolve="EDITOR" />
               </node>
               <node concept="37vLTw" id="CgolD_zc4x" role="37wK5m">
-                <reference role="3cqZAo" target="725186580884193392" resolve="genContext" />
+                <ref role="3cqZAo" node="CgolD_uS1K" resolve="genContext" />
               </node>
             </node>
           </node>
@@ -413,7 +413,7 @@
           <node concept="3clFbC" id="CgolD_zkcl" role="3clFbw">
             <node concept="10Nm6u" id="CgolD_zkcm" role="3uHU7w" />
             <node concept="37vLTw" id="CgolD_zldD" role="3uHU7B">
-              <reference role="3cqZAo" target="725186580885324060" resolve="editorModel" />
+              <ref role="3cqZAo" node="CgolD_zc4s" resolve="editorModel" />
             </node>
           </node>
         </node>
@@ -421,19 +421,19 @@
           <node concept="3cpWsn" id="CgolD_uSbO" role="3cpWs9">
             <property role="TrG5h" value="roots" />
             <node concept="2I9FWS" id="CgolD_uSbP" role="1tU5fm">
-              <reference role="2I9WkF" target="tpee.1068390468198" resolve="ClassConcept" />
+              <ref role="2I9WkF" to="tpee:fz12cDA" resolve="ClassConcept" />
             </node>
             <node concept="2OqwBi" id="CgolD_uSbQ" role="33vP2m">
               <node concept="1eOMI4" id="CgolD_uSbR" role="2Oq$k0">
                 <node concept="10QFUN" id="CgolD_uSbS" role="1eOMHV">
                   <node concept="H_c77" id="CgolD_uSbT" role="10QFUM" />
                   <node concept="37vLTw" id="CgolD_uSbU" role="10QFUP">
-                    <reference role="3cqZAo" target="725186580885324060" resolve="editorModel" />
+                    <ref role="3cqZAo" node="CgolD_zc4s" resolve="editorModel" />
                   </node>
                 </node>
               </node>
               <node concept="2RRcyG" id="CgolD_uSbV" role="2OqNvi">
-                <reference role="2RRcyH" target="tpee.1068390468198" resolve="ClassConcept" />
+                <ref role="2RRcyH" to="tpee:fz12cDA" resolve="ClassConcept" />
               </node>
             </node>
           </node>
@@ -441,7 +441,7 @@
         <node concept="3cpWs6" id="CgolD_v7k1" role="3cqZAp">
           <node concept="2OqwBi" id="CgolD_xjER" role="3cqZAk">
             <node concept="37vLTw" id="CgolD_v9x1" role="2Oq$k0">
-              <reference role="3cqZAo" target="725186580884194036" resolve="roots" />
+              <ref role="3cqZAo" node="CgolD_uSbO" resolve="roots" />
             </node>
             <node concept="2HwmR7" id="CgolD_y6D4" role="2OqNvi">
               <node concept="1bVj0M" id="CgolD_y6D6" role="23t8la">
@@ -452,13 +452,13 @@
                         <property role="Xl_RC" value="EditorAspectDescriptorImpl" />
                       </node>
                       <node concept="liA8E" id="CgolD_wRqi" role="2OqNvi">
-                        <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="2OqwBi" id="CgolD_wVRv" role="37wK5m">
                           <node concept="37vLTw" id="CgolD_wSWH" role="2Oq$k0">
-                            <reference role="3cqZAo" target="725186580885039688" resolve="it" />
+                            <ref role="3cqZAo" node="CgolD_y6D8" resolve="it" />
                           </node>
                           <node concept="3TrcHB" id="CgolD_x72Q" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
                       </node>
@@ -484,13 +484,13 @@
       <node concept="37vLTG" id="CgolD_yLMy" role="3clF46">
         <property role="TrG5h" value="modelReference" />
         <node concept="3Tqbb2" id="CgolD_yLMz" role="1tU5fm">
-          <reference role="ehGHo" target="hypd.6370754048397540903" resolve="ModelReference" />
+          <ref role="ehGHo" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
         </node>
       </node>
       <node concept="37vLTG" id="CgolD_yLM$" role="3clF46">
         <property role="TrG5h" value="aspect" />
         <node concept="3uibUv" id="CgolD_yLM_" role="1tU5fm">
-          <reference role="3uigEE" target="cu2c.~LanguageAspect" resolve="LanguageAspect" />
+          <ref role="3uigEE" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
         </node>
       </node>
       <node concept="37vLTG" id="CgolD_yLMA" role="3clF46">
@@ -502,16 +502,16 @@
           <node concept="3cpWsn" id="CgolD_yKbb" role="3cpWs9">
             <property role="TrG5h" value="language" />
             <node concept="1PxgMI" id="CgolD_yKbc" role="33vP2m">
-              <reference role="1PxNhF" target="hypd.6370754048397540895" resolve="Language" />
+              <ref role="1PxNhF" to="hypd:5xDtKQA7vSv" resolve="Language" />
               <node concept="2OqwBi" id="CgolD_yKbd" role="1PxMeX">
                 <node concept="1mfA1w" id="CgolD_yKbe" role="2OqNvi" />
                 <node concept="37vLTw" id="CgolD_yMYT" role="2Oq$k0">
-                  <reference role="3cqZAo" target="725186580885216418" resolve="modelReference" />
+                  <ref role="3cqZAo" node="CgolD_yLMy" resolve="modelReference" />
                 </node>
               </node>
             </node>
             <node concept="3Tqbb2" id="CgolD_yKbg" role="1tU5fm">
-              <reference role="ehGHo" target="hypd.6370754048397540895" resolve="Language" />
+              <ref role="ehGHo" to="hypd:5xDtKQA7vSv" resolve="Language" />
             </node>
           </node>
         </node>
@@ -519,26 +519,26 @@
           <node concept="3clFbC" id="CgolD_yKbi" role="3clFbw">
             <node concept="10Nm6u" id="CgolD_yKbj" role="3uHU7w" />
             <node concept="37vLTw" id="CgolD_yKbk" role="3uHU7B">
-              <reference role="3cqZAo" target="725186580885209803" resolve="language" />
+              <ref role="3cqZAo" node="CgolD_yKbb" resolve="language" />
             </node>
           </node>
           <node concept="3clFbS" id="CgolD_yKbl" role="3clFbx">
             <node concept="3clFbF" id="CgolD_yKbm" role="3cqZAp">
               <node concept="2OqwBi" id="CgolD_yKbn" role="3clFbG">
                 <node concept="37vLTw" id="CgolD_yPS6" role="2Oq$k0">
-                  <reference role="3cqZAo" target="725186580885216422" resolve="genContext" />
+                  <ref role="3cqZAo" node="CgolD_yLMA" resolve="genContext" />
                 </node>
                 <node concept="2k5nB$" id="CgolD_yKbp" role="2OqNvi">
                   <node concept="37vLTw" id="CgolD_ySx1" role="2k6f33">
-                    <reference role="3cqZAo" target="725186580885216418" resolve="modelReference" />
+                    <ref role="3cqZAo" node="CgolD_yLMy" resolve="modelReference" />
                   </node>
                   <node concept="3cpWs3" id="CgolD_yKbr" role="2k5Stb">
                     <node concept="2OqwBi" id="CgolD_yKbs" role="3uHU7w">
                       <node concept="3TrcHB" id="CgolD_yKbt" role="2OqNvi">
-                        <reference role="3TsBF5" target="hypd.6370754048397540910" resolve="qualifiedName" />
+                        <ref role="3TsBF5" to="hypd:5xDtKQA7vSI" resolve="qualifiedName" />
                       </node>
                       <node concept="37vLTw" id="CgolD_yRLl" role="2Oq$k0">
-                        <reference role="3cqZAo" target="725186580885216418" resolve="modelReference" />
+                        <ref role="3cqZAo" node="CgolD_yLMy" resolve="modelReference" />
                       </node>
                     </node>
                     <node concept="Xl_RD" id="CgolD_yKbv" role="3uHU7B">
@@ -557,21 +557,21 @@
           <node concept="3cpWsn" id="CgolD_yKbz" role="3cpWs9">
             <property role="TrG5h" value="moduleReference" />
             <node concept="3uibUv" id="CgolD_yKb$" role="1tU5fm">
-              <reference role="3uigEE" target="88zw.~SModuleReference" resolve="SModuleReference" />
+              <ref role="3uigEE" to="88zw:~SModuleReference" resolve="SModuleReference" />
             </node>
             <node concept="2OqwBi" id="CgolD_yKb_" role="33vP2m">
               <node concept="2YIFZM" id="CgolD_yKbA" role="2Oq$k0">
-                <reference role="1Pybhc" target="qx6n.~PersistenceFacade" resolve="PersistenceFacade" />
-                <reference role="37wK5l" target="qx6n.~PersistenceFacade%dgetInstance()%corg%djetbrains%dmps%dopenapi%dpersistence%dPersistenceFacade" resolve="getInstance" />
+                <ref role="1Pybhc" to="qx6n:~PersistenceFacade" resolve="PersistenceFacade" />
+                <ref role="37wK5l" to="qx6n:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
               </node>
               <node concept="liA8E" id="CgolD_yKbB" role="2OqNvi">
-                <reference role="37wK5l" target="qx6n.~PersistenceFacade%dcreateModuleReference(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dmodule%dSModuleReference" resolve="createModuleReference" />
+                <ref role="37wK5l" to="qx6n:~PersistenceFacade.createModuleReference(java.lang.String):org.jetbrains.mps.openapi.module.SModuleReference" resolve="createModuleReference" />
                 <node concept="2OqwBi" id="CgolD_yKbC" role="37wK5m">
                   <node concept="37vLTw" id="CgolD_yKbD" role="2Oq$k0">
-                    <reference role="3cqZAo" target="725186580885209803" resolve="language" />
+                    <ref role="3cqZAo" node="CgolD_yKbb" resolve="language" />
                   </node>
                   <node concept="2qgKlT" id="CgolD_yKbE" role="2OqNvi">
-                    <reference role="37wK5l" target="wev6.9020561928507315628" resolve="getModuleReference" />
+                    <ref role="37wK5l" to="wev6:7OJukvJ5PmG" resolve="getModuleReference" />
                   </node>
                 </node>
               </node>
@@ -582,20 +582,20 @@
           <node concept="3cpWsn" id="CgolD_yKbG" role="3cpWs9">
             <property role="TrG5h" value="languageModule" />
             <node concept="3uibUv" id="CgolD_yKbH" role="1tU5fm">
-              <reference role="3uigEE" target="cu2c.~Language" resolve="Language" />
+              <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
             </node>
             <node concept="2OqwBi" id="CgolD_yKbI" role="33vP2m">
               <node concept="2YIFZM" id="CgolD_yKbJ" role="2Oq$k0">
-                <reference role="1Pybhc" target="cu2c.~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
-                <reference role="37wK5l" target="cu2c.~ModuleRepositoryFacade%dgetInstance()%cjetbrains%dmps%dsmodel%dModuleRepositoryFacade" resolve="getInstance" />
+                <ref role="1Pybhc" to="cu2c:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
+                <ref role="37wK5l" to="cu2c:~ModuleRepositoryFacade.getInstance():jetbrains.mps.smodel.ModuleRepositoryFacade" resolve="getInstance" />
               </node>
               <node concept="liA8E" id="CgolD_yKbK" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~ModuleRepositoryFacade%dgetModule(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,java%dlang%dClass)%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolve="getModule" />
+                <ref role="37wK5l" to="cu2c:~ModuleRepositoryFacade.getModule(org.jetbrains.mps.openapi.module.SModuleReference,java.lang.Class):org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                 <node concept="37vLTw" id="CgolD_yKbL" role="37wK5m">
-                  <reference role="3cqZAo" target="725186580885209827" resolve="moduleReference" />
+                  <ref role="3cqZAo" node="CgolD_yKbz" resolve="moduleReference" />
                 </node>
                 <node concept="3VsKOn" id="CgolD_yKbM" role="37wK5m">
-                  <reference role="3VsUkX" target="cu2c.~Language" resolve="Language" />
+                  <ref role="3VsUkX" to="cu2c:~Language" resolve="Language" />
                 </node>
               </node>
             </node>
@@ -606,19 +606,19 @@
             <node concept="3clFbF" id="CgolD_yKbP" role="3cqZAp">
               <node concept="2OqwBi" id="CgolD_yKbQ" role="3clFbG">
                 <node concept="37vLTw" id="CgolD_yThO" role="2Oq$k0">
-                  <reference role="3cqZAo" target="725186580885216422" resolve="genContext" />
+                  <ref role="3cqZAo" node="CgolD_yLMA" resolve="genContext" />
                 </node>
                 <node concept="2k5nB$" id="CgolD_yKbS" role="2OqNvi">
                   <node concept="37vLTw" id="CgolD_yKbT" role="2k6f33">
-                    <reference role="3cqZAo" target="725186580885209803" resolve="language" />
+                    <ref role="3cqZAo" node="CgolD_yKbb" resolve="language" />
                   </node>
                   <node concept="3cpWs3" id="CgolD_yKbU" role="2k5Stb">
                     <node concept="2OqwBi" id="CgolD_yKbV" role="3uHU7w">
                       <node concept="37vLTw" id="CgolD_yKbW" role="2Oq$k0">
-                        <reference role="3cqZAo" target="725186580885209803" resolve="language" />
+                        <ref role="3cqZAo" node="CgolD_yKbb" resolve="language" />
                       </node>
                       <node concept="3TrcHB" id="CgolD_yKbX" role="2OqNvi">
-                        <reference role="3TsBF5" target="hypd.6370754048397540899" resolve="namespace" />
+                        <ref role="3TsBF5" to="hypd:5xDtKQA7vSz" resolve="namespace" />
                       </node>
                     </node>
                     <node concept="Xl_RD" id="CgolD_yKbY" role="3uHU7B">
@@ -635,7 +635,7 @@
           <node concept="3clFbC" id="CgolD_yKc1" role="3clFbw">
             <node concept="10Nm6u" id="CgolD_yKc2" role="3uHU7w" />
             <node concept="37vLTw" id="CgolD_yKc3" role="3uHU7B">
-              <reference role="3cqZAo" target="725186580885209836" resolve="languageModule" />
+              <ref role="3cqZAo" node="CgolD_yKbG" resolve="languageModule" />
             </node>
           </node>
         </node>
@@ -643,16 +643,16 @@
           <node concept="3cpWsn" id="CgolD_yKc5" role="3cpWs9">
             <property role="TrG5h" value="aspectModel" />
             <node concept="3uibUv" id="CgolD_yKc6" role="1tU5fm">
-              <reference role="3uigEE" target="ec5l.~SModel" resolve="SModel" />
+              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
             </node>
             <node concept="2OqwBi" id="CgolD_yKc7" role="33vP2m">
               <node concept="37vLTw" id="CgolD_yUyw" role="2Oq$k0">
-                <reference role="3cqZAo" target="725186580885216420" resolve="aspect" />
+                <ref role="3cqZAo" node="CgolD_yLM$" resolve="aspect" />
               </node>
               <node concept="liA8E" id="CgolD_yKc9" role="2OqNvi">
-                <reference role="37wK5l" target="cu2c.~LanguageAspect%dget(jetbrains%dmps%dsmodel%dLanguage)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolve="get" />
+                <ref role="37wK5l" to="cu2c:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
                 <node concept="37vLTw" id="CgolD_yKca" role="37wK5m">
-                  <reference role="3cqZAo" target="725186580885209836" resolve="languageModule" />
+                  <ref role="3cqZAo" node="CgolD_yKbG" resolve="languageModule" />
                 </node>
               </node>
             </node>
@@ -662,32 +662,32 @@
           <node concept="3K4zz7" id="CgolD_yYmI" role="3cqZAk">
             <node concept="10Nm6u" id="CgolD_yZ7b" role="3K4E3e" />
             <node concept="37vLTw" id="CgolD_yZMy" role="3K4GZi">
-              <reference role="3cqZAo" target="725186580885209861" resolve="aspectModel" />
+              <ref role="3cqZAo" node="CgolD_yKc5" resolve="aspectModel" />
             </node>
             <node concept="22lmx$" id="CgolD_yX0Q" role="3K4Cdx">
               <node concept="3fqX7Q" id="CgolD_yX0R" role="3uHU7w">
                 <node concept="2OqwBi" id="CgolD_yX0S" role="3fr31v">
                   <node concept="2OqwBi" id="CgolD_yX0T" role="2Oq$k0">
                     <node concept="liA8E" id="CgolD_yX0U" role="2OqNvi">
-                      <reference role="37wK5l" target="e2lb.~Object%dtoString()%cjava%dlang%dString" resolve="toString" />
+                      <ref role="37wK5l" to="e2lb:~Object.toString():java.lang.String" resolve="toString" />
                     </node>
                     <node concept="2OqwBi" id="CgolD_yX0V" role="2Oq$k0">
                       <node concept="liA8E" id="CgolD_yX0W" role="2OqNvi">
-                        <reference role="37wK5l" target="ec5l.~SModel%dgetModelId()%corg%djetbrains%dmps%dopenapi%dmodel%dSModelId" resolve="getModelId" />
+                        <ref role="37wK5l" to="ec5l:~SModel.getModelId():org.jetbrains.mps.openapi.model.SModelId" resolve="getModelId" />
                       </node>
                       <node concept="37vLTw" id="CgolD_yX0X" role="2Oq$k0">
-                        <reference role="3cqZAo" target="725186580885209861" resolve="aspectModel" />
+                        <ref role="3cqZAo" node="CgolD_yKc5" resolve="aspectModel" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="CgolD_yX0Y" role="2OqNvi">
-                    <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
                     <node concept="2OqwBi" id="CgolD_yX0Z" role="37wK5m">
                       <node concept="3TrcHB" id="CgolD_yX10" role="2OqNvi">
-                        <reference role="3TsBF5" target="hypd.6370754048397540909" resolve="uuid" />
+                        <ref role="3TsBF5" to="hypd:5xDtKQA7vSH" resolve="uuid" />
                       </node>
                       <node concept="37vLTw" id="CgolD_yX11" role="2Oq$k0">
-                        <reference role="3cqZAo" target="725186580885216418" resolve="modelReference" />
+                        <ref role="3cqZAo" node="CgolD_yLMy" resolve="modelReference" />
                       </node>
                     </node>
                   </node>
@@ -695,7 +695,7 @@
               </node>
               <node concept="3clFbC" id="CgolD_yX12" role="3uHU7B">
                 <node concept="37vLTw" id="CgolD_yX13" role="3uHU7B">
-                  <reference role="3cqZAo" target="725186580885209861" resolve="aspectModel" />
+                  <ref role="3cqZAo" node="CgolD_yKc5" resolve="aspectModel" />
                 </node>
                 <node concept="10Nm6u" id="CgolD_yX14" role="3uHU7w" />
               </node>
@@ -705,7 +705,7 @@
       </node>
       <node concept="3Tm6S6" id="CgolD_yHfQ" role="1B3o_S" />
       <node concept="3uibUv" id="CgolD_yJW9" role="3clF45">
-        <reference role="3uigEE" target="ec5l.~SModel" resolve="SModel" />
+        <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
       </node>
     </node>
   </node>

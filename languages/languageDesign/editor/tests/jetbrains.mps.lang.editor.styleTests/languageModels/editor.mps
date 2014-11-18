@@ -134,7 +134,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="5ISglset17b">
-    <reference role="1XX52x" target="dekf.6609104295326650728" resolve="TestConceptWithStyleAttributes" />
+    <ref role="1XX52x" to="dekf:5ISglset15C" resolve="TestConceptWithStyleAttributes" />
     <node concept="3EZMnI" id="5ISglset186" role="2wV5jI">
       <node concept="3F0ifn" id="5ISglset18h" role="3EZMnx">
         <property role="3F0ifm" value="do" />
@@ -144,7 +144,7 @@
           <property role="VOm3f" value="false" />
         </node>
         <node concept="3tD6jV" id="5ISglset1S$" role="3F10Kt">
-          <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
+          <ref role="3tD7wE" node="5ISglset19s" resolve="test-inherited-attribute" />
           <node concept="3sjG9q" id="5ISglset1S_" role="3tD6jU">
             <node concept="3clFbS" id="5ISglset1SA" role="2VODD2">
               <node concept="3clFbF" id="5ISglset230" role="3cqZAp">
@@ -156,7 +156,7 @@
           </node>
         </node>
         <node concept="3tD6jV" id="5ISglset4YX" role="3F10Kt">
-          <reference role="3tD7wE" target="6609104295326651003" resolve="test-simple-attribute" />
+          <ref role="3tD7wE" node="5ISglset19V" resolve="test-simple-attribute" />
           <node concept="3sjG9q" id="5ISglset4YY" role="3tD6jU">
             <node concept="3clFbS" id="5ISglset4YZ" role="2VODD2">
               <node concept="3clFbF" id="5ISglset5eB" role="3cqZAp">
@@ -170,7 +170,7 @@
         <node concept="3F0ifn" id="5ISglset18D" role="3EZMnx">
           <property role="3F0ifm" value="re" />
           <node concept="3tD6jV" id="5ISglset2Js" role="3F10Kt">
-            <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
+            <ref role="3tD7wE" node="5ISglset19s" resolve="test-inherited-attribute" />
             <node concept="3sjG9q" id="5ISglset2Jt" role="3tD6jU">
               <node concept="3clFbS" id="5ISglset2Ju" role="2VODD2">
                 <node concept="3clFbF" id="5ISglset2TQ" role="3cqZAp">
@@ -182,7 +182,7 @@
             </node>
           </node>
           <node concept="3tD6jV" id="5ISglset3G1" role="3F10Kt">
-            <reference role="3tD7wE" target="6609104295326651003" resolve="test-simple-attribute" />
+            <ref role="3tD7wE" node="5ISglset19V" resolve="test-simple-attribute" />
             <node concept="3sjG9q" id="5ISglset3G2" role="3tD6jU">
               <node concept="3clFbS" id="5ISglset3G3" role="2VODD2">
                 <node concept="3clFbF" id="5ISglset4zq" role="3cqZAp">
@@ -198,7 +198,7 @@
           <property role="3F0ifm" value="mi" />
         </node>
         <node concept="3EZMnI" id="6$hGDKmnd$8" role="3EZMnx">
-          <reference role="1k5W1q" target="7571028832046676331" resolve="priorityStyle" />
+          <ref role="1k5W1q" node="6$hGDKmov_F" resolve="priorityStyle" />
           <node concept="VPM3Z" id="6$hGDKmnd$a" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
@@ -207,10 +207,10 @@
           </node>
           <node concept="3F0ifn" id="6$hGDKmnd$H" role="3EZMnx">
             <property role="3F0ifm" value="sol" />
-            <reference role="1k5W1q" target="7571028832046235254" resolve="hugePriorityStyle" />
+            <ref role="1k5W1q" node="6$hGDKmmNTQ" resolve="hugePriorityStyle" />
           </node>
           <node concept="3EZMnI" id="6$hGDKmndKP" role="3EZMnx">
-            <reference role="1k5W1q" target="7571028832047359190" resolve="unapplyPriorityStyleCopy" />
+            <ref role="1k5W1q" node="6$hGDKmr6jm" resolve="unapplyPriorityStyleCopy" />
             <node concept="VPM3Z" id="6$hGDKmndKR" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
@@ -228,7 +228,7 @@
       </node>
       <node concept="l2Vlx" id="5ISglset189" role="2iSdaV" />
       <node concept="3tD6jV" id="5ISglset1cl" role="3F10Kt">
-        <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
+        <ref role="3tD7wE" node="5ISglset19s" resolve="test-inherited-attribute" />
         <node concept="3sjG9q" id="5ISglset1cm" role="3tD6jU">
           <node concept="3clFbS" id="5ISglset1cn" role="2VODD2">
             <node concept="3clFbF" id="5ISglset1mH" role="3cqZAp">
@@ -258,7 +258,7 @@
     <node concept="14StLt" id="6$hGDKmov_F" role="V601i">
       <property role="TrG5h" value="priorityStyle" />
       <node concept="3tD6jV" id="6$hGDKmov_G" role="3F10Kt">
-        <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
+        <ref role="3tD7wE" node="5ISglset19s" resolve="test-inherited-attribute" />
         <node concept="3sjG9q" id="6$hGDKmov_H" role="3tD6jU">
           <node concept="3clFbS" id="6$hGDKmov_I" role="2VODD2">
             <node concept="3clFbF" id="6$hGDKmov_J" role="3cqZAp">
@@ -275,14 +275,14 @@
       <property role="TrG5h" value="priorityStyleCopy" />
       <node concept="3Xmtl4" id="4IkflqMIqrR" role="3F10Kt">
         <node concept="1wgc9g" id="4IkflqMIqrV" role="3XvnJa">
-          <reference role="1wgcnl" target="7571028832046676331" resolve="priorityStyle" />
+          <ref role="1wgcnl" node="6$hGDKmov_F" resolve="priorityStyle" />
         </node>
       </node>
     </node>
     <node concept="14StLt" id="6$hGDKmmNTQ" role="V601i">
       <property role="TrG5h" value="hugePriorityStyle" />
       <node concept="3tD6jV" id="6$hGDKmnip7" role="3F10Kt">
-        <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
+        <ref role="3tD7wE" node="5ISglset19s" resolve="test-inherited-attribute" />
         <node concept="3sjG9q" id="6$hGDKmnip8" role="3tD6jU">
           <node concept="3clFbS" id="6$hGDKmnip9" role="2VODD2">
             <node concept="3clFbF" id="6$hGDKmnizs" role="3cqZAp">
@@ -296,7 +296,7 @@
       <node concept="2lhJJ2" id="6$hGDKmouBQ" role="14Sbyx">
         <node concept="1ybEpN" id="6$hGDKmovQJ" role="2lhEPC">
           <node concept="14SbXO" id="6$hGDKmovQI" role="1ybEBM">
-            <reference role="14SbXR" target="7571028832046676331" resolve="priorityStyle" />
+            <ref role="14SbXR" node="6$hGDKmov_F" resolve="priorityStyle" />
           </node>
         </node>
       </node>
@@ -305,32 +305,32 @@
       <property role="TrG5h" value="unapplyPriorityStyleCopy" />
       <node concept="3XB9Gl" id="6$hGDKmr6jn" role="3F10Kt">
         <node concept="1wgc9g" id="4IkflqMIqrX" role="3XB9FH">
-          <reference role="1wgcnl" target="5446045291972765404" resolve="priorityStyleCopy" />
+          <ref role="1wgcnl" node="4IkflqMIqrs" resolve="priorityStyleCopy" />
         </node>
       </node>
     </node>
   </node>
   <node concept="PKFIW" id="3yp29n1niqW">
     <property role="TrG5h" value="StyleTest_EditorComponent" />
-    <reference role="1XX52x" target="dekf.8422442021223268684" resolve="NodeContainer" />
+    <ref role="1XX52x" to="dekf:7jyxAjKlw5c" resolve="NodeContainer" />
     <node concept="3EZMnI" id="3yp29n1niqX" role="2wV5jI">
       <node concept="3EZMnI" id="3yp29n1niqY" role="3EZMnx">
         <node concept="3F0ifn" id="3yp29n1niqZ" role="3EZMnx">
           <property role="3F0ifm" value="&lt;" />
-          <reference role="1k5W1q" target="tp2u.1215709345400" resolve="LeftAngleBracket" />
+          <ref role="1k5W1q" to="tp2u:hGdV7pS" resolve="LeftAngleBracket" />
         </node>
         <node concept="PMmxH" id="3yp29n1no50" role="3EZMnx">
-          <reference role="PMmxG" target="4078300376847974718" resolve="StyleTestElement_EditorComponent" />
+          <ref role="PMmxG" node="3yp29n1no4Y" resolve="StyleTestElement_EditorComponent" />
         </node>
         <node concept="3F0ifn" id="3yp29n1nir1" role="3EZMnx">
           <property role="3F0ifm" value="&gt;" />
-          <reference role="1k5W1q" target="tp2u.1215709621223" resolve="RightAngleBracket" />
+          <ref role="1k5W1q" to="tp2u:hGdWaJB" resolve="RightAngleBracket" />
           <node concept="ljvvj" id="3yp29n1nir2" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
         </node>
         <node concept="3F2HdR" id="3yp29n1nir3" role="3EZMnx">
-          <reference role="1NtTu8" target="dekf.8422442021223269806" />
+          <ref role="1NtTu8" to="dekf:7jyxAjKlwmI" />
           <node concept="2iRkQZ" id="3yp29n1nir4" role="2czzBx" />
           <node concept="VPM3Z" id="3yp29n1nir5" role="3F10Kt">
             <property role="VOm3f" value="false" />
@@ -344,7 +344,7 @@
         </node>
         <node concept="3F0ifn" id="3yp29n1nir8" role="3EZMnx">
           <property role="3F0ifm" value="&lt;" />
-          <reference role="1k5W1q" target="tp2u.1215709345400" resolve="LeftAngleBracket" />
+          <ref role="1k5W1q" to="tp2u:hGdV7pS" resolve="LeftAngleBracket" />
         </node>
         <node concept="3F0ifn" id="3yp29n1nir9" role="3EZMnx">
           <property role="3F0ifm" value="/" />
@@ -353,11 +353,11 @@
           </node>
         </node>
         <node concept="PMmxH" id="3yp29n1nirb" role="3EZMnx">
-          <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
+          <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         </node>
         <node concept="3F0ifn" id="3yp29n1nirc" role="3EZMnx">
           <property role="3F0ifm" value="&gt;" />
-          <reference role="1k5W1q" target="tp2u.1215709621223" resolve="RightAngleBracket" />
+          <ref role="1k5W1q" to="tp2u:hGdWaJB" resolve="RightAngleBracket" />
         </node>
         <node concept="l2Vlx" id="3yp29n1nird" role="2iSdaV" />
       </node>
@@ -366,89 +366,89 @@
   </node>
   <node concept="PKFIW" id="3yp29n1no4Y">
     <property role="TrG5h" value="StyleTestElement_EditorComponent" />
-    <reference role="1XX52x" target="dekf.8422442021223268684" resolve="NodeContainer" />
+    <ref role="1XX52x" to="dekf:7jyxAjKlw5c" resolve="NodeContainer" />
     <node concept="PMmxH" id="3yp29n1no4Z" role="2wV5jI">
-      <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
   </node>
   <node concept="PKFIW" id="3yp29n1nrN9">
     <property role="TrG5h" value="TestInheritedAttibute_EditorComponent" />
-    <reference role="1XX52x" target="dekf.8917170296719630045" resolve="TestInheritedAttribute" />
+    <ref role="1XX52x" to="dekf:7J09Mf1CPVt" resolve="TestInheritedAttribute" />
     <node concept="3EZMnI" id="3yp29n1nrNa" role="2wV5jI">
       <node concept="VPM3Z" id="3yp29n1nrNb" role="3F10Kt">
         <property role="VOm3f" value="false" />
       </node>
       <node concept="PMmxH" id="3yp29n1nrNc" role="3EZMnx">
-        <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3F0ifn" id="3yp29n1nrNd" role="3EZMnx">
         <property role="3F0ifm" value="=" />
       </node>
       <node concept="3F0A7n" id="3yp29n1nrNe" role="3EZMnx">
-        <reference role="1NtTu8" target="dekf.8917170296719630046" resolve="value" />
+        <ref role="1NtTu8" to="dekf:7J09Mf1CPVu" resolve="value" />
       </node>
       <node concept="l2Vlx" id="3yp29n1nrNf" role="2iSdaV" />
     </node>
     <node concept="1PE4EZ" id="3yp29n1nuVf" role="1PM95z">
-      <reference role="1PE7su" target="4078300376847974718" resolve="StyleTestElement_EditorComponent" />
+      <ref role="1PE7su" node="3yp29n1no4Y" resolve="StyleTestElement_EditorComponent" />
     </node>
   </node>
   <node concept="PKFIW" id="3yp29n1nuXN">
     <property role="TrG5h" value="TestISimpleAttribute_EditorComponent" />
-    <reference role="1XX52x" target="dekf.8917170296719628637" resolve="TestSimpleAttribute" />
+    <ref role="1XX52x" to="dekf:7J09Mf1CP_t" resolve="TestSimpleAttribute" />
     <node concept="3EZMnI" id="3yp29n1nuXO" role="2wV5jI">
       <node concept="VPM3Z" id="3yp29n1nuXP" role="3F10Kt">
         <property role="VOm3f" value="false" />
       </node>
       <node concept="PMmxH" id="3yp29n1nuXQ" role="3EZMnx">
-        <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3F0ifn" id="3yp29n1nuXR" role="3EZMnx">
         <property role="3F0ifm" value="=" />
       </node>
       <node concept="3F0A7n" id="3yp29n1nuXS" role="3EZMnx">
-        <reference role="1NtTu8" target="dekf.8917170296719630035" resolve="value" />
+        <ref role="1NtTu8" to="dekf:7J09Mf1CPVj" resolve="value" />
       </node>
       <node concept="l2Vlx" id="3yp29n1nuXT" role="2iSdaV" />
     </node>
     <node concept="1PE4EZ" id="3yp29n1nuXU" role="1PM95z">
-      <reference role="1PE7su" target="4078300376847974718" resolve="StyleTestElement_EditorComponent" />
+      <ref role="1PE7su" node="3yp29n1no4Y" resolve="StyleTestElement_EditorComponent" />
     </node>
   </node>
   <node concept="24kQdi" id="3yp29n1oFfQ">
-    <reference role="1XX52x" target="dekf.8917170296719625334" resolve="PriorityStyle" />
+    <ref role="1XX52x" to="dekf:7J09Mf1COLQ" resolve="PriorityStyle" />
     <node concept="PMmxH" id="3yp29n1oFfS" role="2wV5jI">
-      <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
-      <reference role="1k5W1q" target="7571028832046676331" resolve="priorityStyle" />
+      <ref role="PMmxG" node="3yp29n1niqW" resolve="StyleTest_EditorComponent" />
+      <ref role="1k5W1q" node="6$hGDKmov_F" resolve="priorityStyle" />
     </node>
   </node>
   <node concept="24kQdi" id="3yp29n1oIdH">
-    <reference role="1XX52x" target="dekf.8917170296719632906" resolve="HugePriorityStyle" />
+    <ref role="1XX52x" to="dekf:7J09Mf1CQCa" resolve="HugePriorityStyle" />
     <node concept="PMmxH" id="3yp29n1oIdJ" role="2wV5jI">
-      <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
-      <reference role="1k5W1q" target="7571028832046235254" resolve="hugePriorityStyle" />
+      <ref role="PMmxG" node="3yp29n1niqW" resolve="StyleTest_EditorComponent" />
+      <ref role="1k5W1q" node="6$hGDKmmNTQ" resolve="hugePriorityStyle" />
     </node>
   </node>
   <node concept="24kQdi" id="3yp29n1oIe8">
-    <reference role="1XX52x" target="dekf.8917170296719632542" resolve="PriorityStyleCopy" />
+    <ref role="1XX52x" to="dekf:7J09Mf1CQyu" resolve="PriorityStyleCopy" />
     <node concept="PMmxH" id="3yp29n1oIea" role="2wV5jI">
-      <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
-      <reference role="1k5W1q" target="5446045291972765404" resolve="priorityStyleCopy" />
+      <ref role="PMmxG" node="3yp29n1niqW" resolve="StyleTest_EditorComponent" />
+      <ref role="1k5W1q" node="4IkflqMIqrs" resolve="priorityStyleCopy" />
     </node>
   </node>
   <node concept="24kQdi" id="3yp29n1oIez">
-    <reference role="1XX52x" target="dekf.8917170296719630045" resolve="TestInheritedAttribute" />
+    <ref role="1XX52x" to="dekf:7J09Mf1CPVt" resolve="TestInheritedAttribute" />
     <node concept="PMmxH" id="3yp29n1oIe_" role="2wV5jI">
-      <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
+      <ref role="PMmxG" node="3yp29n1niqW" resolve="StyleTest_EditorComponent" />
       <node concept="3tD6jV" id="3yp29n1oIgf" role="3F10Kt">
-        <reference role="3tD7wE" target="6609104295326650972" resolve="test-inherited-attribute" />
+        <ref role="3tD7wE" node="5ISglset19s" resolve="test-inherited-attribute" />
         <node concept="3sjG9q" id="3yp29n1oIgg" role="3tD6jU">
           <node concept="3clFbS" id="3yp29n1oIgh" role="2VODD2">
             <node concept="3clFbF" id="3yp29n1oIwP" role="3cqZAp">
               <node concept="2OqwBi" id="3yp29n1oI_1" role="3clFbG">
                 <node concept="pncrf" id="3yp29n1oIwO" role="2Oq$k0" />
                 <node concept="3TrcHB" id="3yp29n1oTqd" role="2OqNvi">
-                  <reference role="3TsBF5" target="dekf.8917170296719630046" resolve="value" />
+                  <ref role="3TsBF5" to="dekf:7J09Mf1CPVu" resolve="value" />
                 </node>
               </node>
             </node>
@@ -458,18 +458,18 @@
     </node>
   </node>
   <node concept="24kQdi" id="3yp29n1oTAv">
-    <reference role="1XX52x" target="dekf.8917170296719628637" resolve="TestSimpleAttribute" />
+    <ref role="1XX52x" to="dekf:7J09Mf1CP_t" resolve="TestSimpleAttribute" />
     <node concept="PMmxH" id="3yp29n1oTAx" role="2wV5jI">
-      <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
+      <ref role="PMmxG" node="3yp29n1niqW" resolve="StyleTest_EditorComponent" />
       <node concept="3tD6jV" id="3yp29n1oTCb" role="3F10Kt">
-        <reference role="3tD7wE" target="6609104295326651003" resolve="test-simple-attribute" />
+        <ref role="3tD7wE" node="5ISglset19V" resolve="test-simple-attribute" />
         <node concept="3sjG9q" id="3yp29n1oTCc" role="3tD6jU">
           <node concept="3clFbS" id="3yp29n1oTCd" role="2VODD2">
             <node concept="3clFbF" id="3yp29n1oTMs" role="3cqZAp">
               <node concept="2OqwBi" id="3yp29n1oTQX" role="3clFbG">
                 <node concept="pncrf" id="3yp29n1oTMr" role="2Oq$k0" />
                 <node concept="3TrcHB" id="3yp29n1oUk_" role="2OqNvi">
-                  <reference role="3TsBF5" target="dekf.8917170296719630035" resolve="value" />
+                  <ref role="3TsBF5" to="dekf:7J09Mf1CPVj" resolve="value" />
                 </node>
               </node>
             </node>
@@ -479,14 +479,14 @@
     </node>
   </node>
   <node concept="24kQdi" id="3yp29n1oUwF">
-    <reference role="1XX52x" target="dekf.8917170296719632911" resolve="UnapplyPriorityStyleCopy" />
+    <ref role="1XX52x" to="dekf:7J09Mf1CQCf" resolve="UnapplyPriorityStyleCopy" />
     <node concept="PMmxH" id="3yp29n1oUwH" role="2wV5jI">
-      <reference role="PMmxG" target="4078300376847951548" resolve="StyleTest_EditorComponent" />
-      <reference role="1k5W1q" target="7571028832047359190" resolve="unapplyPriorityStyleCopy" />
+      <ref role="PMmxG" node="3yp29n1niqW" resolve="StyleTest_EditorComponent" />
+      <ref role="1k5W1q" node="6$hGDKmr6jm" resolve="unapplyPriorityStyleCopy" />
     </node>
   </node>
   <node concept="24kQdi" id="3yp29n1p8ti">
-    <reference role="1XX52x" target="dekf.4078300376848435002" resolve="LeafNode" />
+    <ref role="1XX52x" to="dekf:3yp29n1p8sU" resolve="LeafNode" />
     <node concept="3EZMnI" id="3yp29n1pxIT" role="2wV5jI">
       <node concept="3EZMnI" id="3yp29n1pllF" role="3EZMnx">
         <node concept="VPM3Z" id="3yp29n1pllH" role="3F10Kt">
@@ -494,14 +494,14 @@
         </node>
         <node concept="3F0ifn" id="3yp29n1pllJ" role="3EZMnx">
           <property role="3F0ifm" value="&lt;" />
-          <reference role="1k5W1q" target="tp2u.1215709345400" resolve="LeftAngleBracket" />
+          <ref role="1k5W1q" to="tp2u:hGdV7pS" resolve="LeftAngleBracket" />
         </node>
         <node concept="PMmxH" id="3yp29n1pllV" role="3EZMnx">
-          <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
+          <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         </node>
         <node concept="3F0ifn" id="3yp29n1plm4" role="3EZMnx">
           <property role="3F0ifm" value="&gt;" />
-          <reference role="1k5W1q" target="tp2u.1215709621223" resolve="RightAngleBracket" />
+          <ref role="1k5W1q" to="tp2u:hGdWaJB" resolve="RightAngleBracket" />
         </node>
         <node concept="l2Vlx" id="3yp29n1pllK" role="2iSdaV" />
       </node>

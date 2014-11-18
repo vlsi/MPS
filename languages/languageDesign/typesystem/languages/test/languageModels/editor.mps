@@ -33,20 +33,20 @@
     </language>
   </registry>
   <node concept="24kQdi" id="hgn_DR6">
-    <reference role="1XX52x" target="tplg.1185806650601" resolve="AConcept" />
+    <ref role="1XX52x" to="tplg:hgn_oND" resolve="AConcept" />
     <node concept="3EZMnI" id="hgn_Ex8" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hgn_Fab" role="3EZMnx">
         <property role="3F0ifm" value="ACONCEPT" />
       </node>
       <node concept="3F1sOY" id="hgn_HhG" role="3EZMnx">
-        <reference role="1NtTu8" target="tplg.1185806674055" />
+        <ref role="1NtTu8" to="tplg:hgn_uy7" />
       </node>
       <node concept="2iRfu4" id="i2IADRY" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="hgwIfWG">
-    <reference role="1XX52x" target="tplg.1185959958415" resolve="BConcept" />
+    <ref role="1XX52x" to="tplg:hgwIduf" resolve="BConcept" />
     <node concept="3F0ifn" id="hgwIhpJ" role="2wV5jI">
       <property role="3F0ifm" value="BCONCEPT" />
     </node>

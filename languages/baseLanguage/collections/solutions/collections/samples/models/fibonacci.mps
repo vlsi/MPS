@@ -152,7 +152,7 @@
       <property role="TrG5h" value="numbers" />
       <node concept="A3Dl8" id="gLaJJxR" role="3clF45">
         <node concept="3uibUv" id="gLaJO01" role="A3Ik2">
-          <reference role="3uigEE" target="e2lb.~Integer" resolve="Integer" />
+          <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
         </node>
       </node>
       <node concept="3clFbS" id="gLaJGOg" role="3clF47">
@@ -196,10 +196,10 @@
                           <node concept="10Oyi0" id="hOD2_AJ" role="1tU5fm" />
                           <node concept="3cpWs3" id="hOD2_AK" role="33vP2m">
                             <node concept="37vLTw" id="3GM_nagTB2R" role="3uHU7w">
-                              <reference role="3cqZAo" target="1224754223527" resolve="n__" />
+                              <ref role="3cqZAo" node="hOD2_AB" resolve="n__" />
                             </node>
                             <node concept="37vLTw" id="3GM_nagTBZP" role="3uHU7B">
-                              <reference role="3cqZAo" target="1224754223523" resolve="n_" />
+                              <ref role="3cqZAo" node="hOD2_Az" resolve="n_" />
                             </node>
                           </node>
                         </node>
@@ -207,10 +207,10 @@
                       <node concept="3clFbJ" id="hOD2_AN" role="3cqZAp">
                         <node concept="3eOSWO" id="hOD2_AO" role="3clFbw">
                           <node concept="37vLTw" id="3GM_nagTzxP" role="3uHU7B">
-                            <reference role="3cqZAo" target="1224754223534" resolve="n" />
+                            <ref role="3cqZAo" node="hOD2_AI" resolve="n" />
                           </node>
                           <node concept="37vLTw" id="2BHiRxgheJc" role="3uHU7w">
-                            <reference role="3cqZAo" target="1152828713003" resolve="max" />
+                            <ref role="3cqZAo" node="gLDWywF" resolve="max" />
                           </node>
                         </node>
                         <node concept="3clFbS" id="hOD2_AR" role="3clFbx">
@@ -219,26 +219,26 @@
                       </node>
                       <node concept="2n63Yl" id="hOD2Akm" role="3cqZAp">
                         <node concept="37vLTw" id="3GM_nagT$ui" role="2n6tg2">
-                          <reference role="3cqZAo" target="1224754223534" resolve="n" />
+                          <ref role="3cqZAo" node="hOD2_AI" resolve="n" />
                         </node>
                       </node>
                       <node concept="3clFbF" id="hOD2_AV" role="3cqZAp">
                         <node concept="37vLTI" id="hOD2_AW" role="3clFbG">
                           <node concept="37vLTw" id="3GM_nagTseu" role="37vLTJ">
-                            <reference role="3cqZAo" target="1224754223527" resolve="n__" />
+                            <ref role="3cqZAo" node="hOD2_AB" resolve="n__" />
                           </node>
                           <node concept="37vLTw" id="3GM_nagTyC6" role="37vLTx">
-                            <reference role="3cqZAo" target="1224754223523" resolve="n_" />
+                            <ref role="3cqZAo" node="hOD2_Az" resolve="n_" />
                           </node>
                         </node>
                       </node>
                       <node concept="3clFbF" id="hOD2_AZ" role="3cqZAp">
                         <node concept="37vLTI" id="hOD2_B0" role="3clFbG">
                           <node concept="37vLTw" id="3GM_nagTyxa" role="37vLTJ">
-                            <reference role="3cqZAo" target="1224754223523" resolve="n_" />
+                            <ref role="3cqZAo" node="hOD2_Az" resolve="n_" />
                           </node>
                           <node concept="37vLTw" id="3GM_nagTAiS" role="37vLTx">
-                            <reference role="3cqZAo" target="1224754223534" resolve="n" />
+                            <ref role="3cqZAo" node="hOD2_AI" resolve="n" />
                           </node>
                         </node>
                       </node>
@@ -268,11 +268,11 @@
           <node concept="3cpWsn" id="gLaLEnS" role="3cpWs9">
             <property role="TrG5h" value="fib" />
             <node concept="3uibUv" id="gLaLEnT" role="1tU5fm">
-              <reference role="3uigEE" target="1152305201679" resolve="FibonacciSequence" />
+              <ref role="3uigEE" node="gLaJw8f" resolve="FibonacciSequence" />
             </node>
             <node concept="2ShNRf" id="hEWgDpl" role="33vP2m">
               <node concept="1pGfFk" id="hEWgDpn" role="2ShVmc">
-                <reference role="37wK5l" target="1052538209549030801" resolve="FibonacciSequence" />
+                <ref role="37wK5l" node="UrnuNcGxmh" resolve="FibonacciSequence" />
               </node>
             </node>
           </node>
@@ -283,10 +283,10 @@
           </node>
           <node concept="2OqwBi" id="hEWgCQD" role="2GsD0m">
             <node concept="37vLTw" id="3GM_nagTz8E" role="2Oq$k0">
-              <reference role="3cqZAo" target="1152305767928" resolve="fib" />
+              <ref role="3cqZAo" node="gLaLEnS" resolve="fib" />
             </node>
             <node concept="liA8E" id="hEWgCQE" role="2OqNvi">
-              <reference role="37wK5l" target="1152305253646" resolve="numbers" />
+              <ref role="37wK5l" node="gLaJGOe" resolve="numbers" />
               <node concept="3cmrfG" id="gMLT$3U" role="37wK5m">
                 <property role="3cmrfH" value="100" />
               </node>
@@ -296,13 +296,13 @@
             <node concept="3clFbF" id="gMLT_Vk" role="3cqZAp">
               <node concept="2OqwBi" id="hEWgCQ6" role="3clFbG">
                 <node concept="10M0yZ" id="gMLT_Vm" role="2Oq$k0">
-                  <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
-                  <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
+                  <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+                  <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
                 </node>
                 <node concept="liA8E" id="hEWgCQ7" role="2OqNvi">
-                  <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dObject)%cvoid" resolve="println" />
+                  <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.Object):void" resolve="println" />
                   <node concept="2GrUjf" id="gMLTBeS" role="37wK5m">
-                    <reference role="2Gs0qQ" target="1154035872812" resolve="num" />
+                    <ref role="2Gs0qQ" node="gMLTvgG" resolve="num" />
                   </node>
                 </node>
               </node>

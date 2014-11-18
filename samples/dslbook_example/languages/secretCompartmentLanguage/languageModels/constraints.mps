@@ -61,9 +61,9 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="hDMPByT">
-    <reference role="1M2myG" target="tpo2.1197149564476" resolve="StateMachine" />
+    <ref role="1M2myG" to="tpo2:hqVFaSW" resolve="StateMachine" />
     <node concept="EnEH3" id="hDMPByU" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="Eqf_E" id="hDMPByV" role="EtsB7">
         <node concept="3clFbS" id="hDMPByW" role="2VODD2">
           <node concept="3clFbF" id="hDMPByX" role="3cqZAp">
@@ -74,7 +74,7 @@
               <node concept="2OqwBi" id="hI089YI" role="3uHU7B">
                 <node concept="EsrRn" id="hDMPBz2" role="2Oq$k0" />
                 <node concept="3TrcHB" id="hDMPBz1" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpo2.1197166557152" resolve="stateMachineName" />
+                  <ref role="3TsBF5" to="tpo2:hqWFZvw" resolve="stateMachineName" />
                 </node>
               </node>
             </node>
@@ -84,9 +84,9 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMPBA4">
-    <reference role="1M2myG" target="tpo2.1197246912613" resolve="StateMachineTest" />
+    <ref role="1M2myG" to="tpo2:hr1uxx_" resolve="StateMachineTest" />
     <node concept="EnEH3" id="hDMPBA5" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="Eqf_E" id="hDMPBA6" role="EtsB7">
         <node concept="3clFbS" id="hDMPBA7" role="2VODD2">
           <node concept="3clFbF" id="hDMPBA8" role="3cqZAp">
@@ -97,7 +97,7 @@
               <node concept="2OqwBi" id="hI087UF" role="3uHU7B">
                 <node concept="EsrRn" id="hDMPBAd" role="2Oq$k0" />
                 <node concept="2qgKlT" id="2LaoL5p9nhg" role="2OqNvi">
-                  <reference role="37wK5l" target="3ehf.1197251245696" resolve="getStateMachineName" />
+                  <ref role="37wK5l" to="3ehf:hr1J3q0" resolve="getStateMachineName" />
                 </node>
               </node>
             </node>
@@ -107,16 +107,16 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMPBDt">
-    <reference role="1M2myG" target="tpo2.1197169363230" resolve="Event" />
+    <ref role="1M2myG" to="tpo2:hqWQG$u" resolve="Event" />
     <node concept="EnEH3" id="hDMPBDu" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="Eqf_E" id="hDMPBDv" role="EtsB7">
         <node concept="3clFbS" id="hDMPBDw" role="2VODD2">
           <node concept="3clFbF" id="hDMPBDx" role="3cqZAp">
             <node concept="2OqwBi" id="hI086ZS" role="3clFbG">
               <node concept="EsrRn" id="hDMPBD$" role="2Oq$k0" />
               <node concept="3TrcHB" id="hDMPBDz" role="2OqNvi">
-                <reference role="3TsBF5" target="tpo2.1197169389356" resolve="eventName" />
+                <ref role="3TsBF5" to="tpo2:hqWQMWG" resolve="eventName" />
               </node>
             </node>
           </node>
@@ -125,16 +125,16 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMPBYy">
-    <reference role="1M2myG" target="tpo2.1197170590231" resolve="State" />
+    <ref role="1M2myG" to="tpo2:hqWVo8n" resolve="State" />
     <node concept="EnEH3" id="hDMPBYz" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="Eqf_E" id="hDMPBY$" role="EtsB7">
         <node concept="3clFbS" id="hDMPBY_" role="2VODD2">
           <node concept="3clFbF" id="hDMPBYA" role="3cqZAp">
             <node concept="2OqwBi" id="hI0873Q" role="3clFbG">
               <node concept="EsrRn" id="hDMPBYD" role="2Oq$k0" />
               <node concept="3TrcHB" id="hDMPBYC" role="2OqNvi">
-                <reference role="3TsBF5" target="tpo2.1197170631630" resolve="stateName" />
+                <ref role="3TsBF5" to="tpo2:hqWVyfe" resolve="stateName" />
               </node>
             </node>
           </node>

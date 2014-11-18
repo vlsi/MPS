@@ -29,10 +29,10 @@
     </language>
   </registry>
   <node concept="24kQdi" id="25pbpTNvUrZ">
-    <reference role="1XX52x" target="spkm.2403002034744698617" resolve="DispatchModifier" />
+    <ref role="1XX52x" to="spkm:25pbpTNvUrT" resolve="DispatchModifier" />
     <node concept="PMmxH" id="3QVLcMuIMur" role="2wV5jI">
-      <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
-      <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
     </node>
   </node>
 </model>

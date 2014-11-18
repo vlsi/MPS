@@ -165,25 +165,25 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="3g73hQq2Oli">
-    <reference role="1M2myG" target="gbdf.285670992217672837" resolve="PropertyArgument" />
+    <ref role="1M2myG" to="gbdf:fQU43XL8M5" resolve="PropertyArgument" />
     <node concept="1N5Pfh" id="3g73hQq2Oqg" role="1Mr941">
-      <reference role="1N5Vy1" target="gbdf.285670992217689748" />
+      <ref role="1N5Vy1" to="gbdf:fQU43XLcUk" />
       <node concept="1dDu$B" id="3g73hQq2Sfx" role="1N6uqs">
-        <reference role="1dDu$A" target="tpce.1071489288299" resolve="PropertyDeclaration" />
+        <ref role="1dDu$A" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
       </node>
     </node>
   </node>
   <node concept="1M2fIO" id="3g73hQq2SfR">
-    <reference role="1M2myG" target="gbdf.285670992213637559" resolve="LinkArgument" />
+    <ref role="1M2myG" to="gbdf:fQU43XxJAR" resolve="LinkArgument" />
     <node concept="1N5Pfh" id="3g73hQq2SfS" role="1Mr941">
-      <reference role="1N5Vy1" target="gbdf.285670992217679783" />
+      <ref role="1N5Vy1" to="gbdf:fQU43XLauB" />
       <node concept="1dDu$B" id="3g73hQq2SfU" role="1N6uqs">
-        <reference role="1dDu$A" target="tpce.1071489288298" resolve="LinkDeclaration" />
+        <ref role="1dDu$A" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
       </node>
     </node>
   </node>
   <node concept="1M2fIO" id="1iN4mn3k1UU">
-    <reference role="1M2myG" target="gbdf.1094405431463761863" resolve="FigureParameterMapping" />
+    <ref role="1M2myG" to="gbdf:WK6Z46DXv7" resolve="FigureParameterMapping" />
     <node concept="nKS2y" id="1iN4mn3k1Vh" role="1MLUbF">
       <node concept="3clFbS" id="1iN4mn3k1Vi" role="2VODD2">
         <node concept="3clFbF" id="1iN4mn3k3Ul" role="3cqZAp">
@@ -191,7 +191,7 @@
             <node concept="nLn13" id="1iN4mn3k3Ug" role="2Oq$k0" />
             <node concept="1mIQ4w" id="1iN4mn3k4Cn" role="2OqNvi">
               <node concept="chp4Y" id="1iN4mn3k4Oa" role="cj9EA">
-                <reference role="cht4Q" target="gbdf.1094405431463454433" resolve="CellModel_DiagramNode" />
+                <ref role="cht4Q" to="gbdf:WK6Z46CMrx" resolve="CellModel_DiagramNode" />
               </node>
             </node>
           </node>
@@ -200,17 +200,17 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4Xny4S7vTjn">
-    <reference role="1M2myG" target="gbdf.6306886970791033847" resolve="CellModel_Diagram" />
+    <ref role="1M2myG" to="gbdf:5u6$4zsyvJR" resolve="CellModel_Diagram" />
   </node>
   <node concept="1M2fIO" id="4Xny4S7yIjr">
-    <reference role="1M2myG" target="gbdf.6382742553261733065" resolve="CellModel_DiagramConnector" />
+    <ref role="1M2myG" to="gbdf:5yk3CzNVRj9" resolve="CellModel_DiagramConnector" />
   </node>
   <node concept="312cEu" id="4Xny4S7Ex7E">
     <property role="TrG5h" value="VisibleReferencesScope" />
     <node concept="3Tm1VV" id="4Xny4S7Ex7F" role="1B3o_S" />
   </node>
   <node concept="1M2fIO" id="13JDji_51_V">
-    <reference role="1M2myG" target="gbdf.3229274890673749551" resolve="ThisEditorNodeExpression" />
+    <ref role="1M2myG" to="gbdf:2NgG6tkGBSJ" resolve="ThisEditorNodeExpression" />
     <node concept="nKS2y" id="13JDji_51AJ" role="1MLUbF">
       <node concept="3clFbS" id="13JDji_51AK" role="2VODD2">
         <node concept="3clFbF" id="13JDji_53s$" role="3cqZAp">
@@ -221,10 +221,10 @@
               <node concept="z$bX8" id="13JDji_54aU" role="2OqNvi">
                 <node concept="3gmYPX" id="13JDji_5aOX" role="1xVPHs">
                   <node concept="3gn64h" id="fQU43XQr0l" role="3gmYPZ">
-                    <reference role="3gnhBz" target="gbdf.285670992213637367" resolve="BLQueryArgument" />
+                    <ref role="3gnhBz" to="gbdf:fQU43XxJzR" resolve="BLQueryArgument" />
                   </node>
                   <node concept="3gn64h" id="13JDji_5dkD" role="3gmYPZ">
-                    <reference role="3gnhBz" target="gbdf.1220375669566347117" resolve="ConnectionEndBLQuery" />
+                    <ref role="3gnhBz" to="gbdf:13JDji_21tH" resolve="ConnectionEndBLQuery" />
                   </node>
                 </node>
                 <node concept="1xIGOp" id="13JDji_57vN" role="1xVPHs" />
@@ -237,9 +237,9 @@
   </node>
   <node concept="1M2fIO" id="5nQpa4t0iWP">
     <property role="3GE5qa" value="Palette" />
-    <reference role="1M2myG" target="gbdf.6619018968335599081" resolve="CreationActionReference" />
+    <ref role="1M2myG" to="gbdf:5JruEV1dOnD" resolve="CreationActionReference" />
     <node concept="1N5Pfh" id="5nQpa4t0iY8" role="1Mr941">
-      <reference role="1N5Vy1" target="gbdf.6619018968336102388" />
+      <ref role="1N5Vy1" to="gbdf:5JruEV1fJfO" />
       <node concept="13QW63" id="5nQpa4t0NA4" role="1N6uqs">
         <node concept="3clFbS" id="5nQpa4t0NA5" role="2VODD2">
           <node concept="3cpWs8" id="5nQpa4t16kV" role="3cqZAp">
@@ -258,15 +258,15 @@
           <node concept="3clFbF" id="5nQpa4t17Fj" role="3cqZAp">
             <node concept="2OqwBi" id="5nQpa4t183o" role="3clFbG">
               <node concept="37vLTw" id="5nQpa4t17Fi" role="2Oq$k0">
-                <reference role="3cqZAo" target="6194248980634035518" resolve="creationBlocks" />
+                <ref role="3cqZAo" node="5nQpa4t16kY" resolve="creationBlocks" />
               </node>
               <node concept="X8dFx" id="5nQpa4t1a8w" role="2OqNvi">
                 <node concept="2OqwBi" id="5nQpa4t14En" role="25WWJ7">
                   <node concept="3Tsc0h" id="5nQpa4t15fw" role="2OqNvi">
-                    <reference role="3TtcxE" target="gbdf.8570854907290721333" />
+                    <ref role="3TtcxE" to="gbdf:7rLMM2UuxKP" />
                   </node>
                   <node concept="1PxgMI" id="5nQpa4t14pi" role="2Oq$k0">
-                    <reference role="1PxNhF" target="gbdf.6306886970791033847" resolve="CellModel_Diagram" />
+                    <ref role="1PxNhF" to="gbdf:5u6$4zsyvJR" resolve="CellModel_Diagram" />
                     <node concept="2OqwBi" id="5nQpa4t140M" role="1PxMeX">
                       <node concept="21POm0" id="5nQpa4t13OK" role="2Oq$k0" />
                       <node concept="1mfA1w" id="5nQpa4t14cf" role="2OqNvi" />
@@ -279,19 +279,19 @@
           <node concept="3clFbF" id="5nQpa4t1aAH" role="3cqZAp">
             <node concept="2OqwBi" id="5nQpa4t1aAI" role="3clFbG">
               <node concept="37vLTw" id="5nQpa4t1aAJ" role="2Oq$k0">
-                <reference role="3cqZAo" target="6194248980634035518" resolve="creationBlocks" />
+                <ref role="3cqZAo" node="5nQpa4t16kY" resolve="creationBlocks" />
               </node>
               <node concept="X8dFx" id="5nQpa4t1aAK" role="2OqNvi">
                 <node concept="2OqwBi" id="5nQpa4t1aAL" role="25WWJ7">
                   <node concept="1PxgMI" id="5nQpa4t1aAM" role="2Oq$k0">
-                    <reference role="1PxNhF" target="gbdf.6306886970791033847" resolve="CellModel_Diagram" />
+                    <ref role="1PxNhF" to="gbdf:5u6$4zsyvJR" resolve="CellModel_Diagram" />
                     <node concept="2OqwBi" id="5nQpa4t1aAN" role="1PxMeX">
                       <node concept="21POm0" id="5nQpa4t1aAO" role="2Oq$k0" />
                       <node concept="1mfA1w" id="5nQpa4t1aAP" role="2OqNvi" />
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="5nQpa4t1bg0" role="2OqNvi">
-                    <reference role="3TtcxE" target="gbdf.939897302409114961" />
+                    <ref role="3TtcxE" to="gbdf:ObbTRzsnlh" />
                   </node>
                 </node>
               </node>
@@ -302,8 +302,8 @@
               <node concept="YeOm9" id="5nQpa4t13Gv" role="2ShVmc">
                 <node concept="1Y3b0j" id="5nQpa4t13Gy" role="YeSDq">
                   <property role="2bfB8j" value="true" />
-                  <reference role="1Y3XeK" target="6xgk.3050821798734666130" resolve="SimpleScope" />
-                  <reference role="37wK5l" target="6xgk.3050821798734666136" resolve="SimpleScope" />
+                  <ref role="1Y3XeK" to="6xgk:2DmG$ciAhAi" resolve="SimpleScope" />
+                  <ref role="37wK5l" to="6xgk:2DmG$ciAhAo" resolve="SimpleScope" />
                   <node concept="3Tm1VV" id="5nQpa4t13Gz" role="1B3o_S" />
                   <node concept="3clFb_" id="5nQpa4t13G$" role="jymVt">
                     <property role="1EzhhJ" value="false" />
@@ -313,30 +313,30 @@
                       <property role="TrG5h" value="target" />
                       <node concept="3Tqbb2" id="5nQpa4t13GC" role="1tU5fm" />
                       <node concept="2AHcQZ" id="5nQpa4t13GD" role="2AJF6D">
-                        <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+                        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
                       </node>
                     </node>
                     <node concept="17QB3L" id="5nQpa4t13GE" role="3clF45" />
                     <node concept="2AHcQZ" id="5nQpa4t13GF" role="2AJF6D">
-                      <reference role="2AI5Lk" target="as9o.~Nullable" resolve="Nullable" />
+                      <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
                     </node>
                     <node concept="3clFbS" id="5nQpa4t13GG" role="3clF47">
                       <node concept="3clFbF" id="5nQpa4t1eYw" role="3cqZAp">
                         <node concept="2OqwBi" id="5nQpa4t1f6G" role="3clFbG">
                           <node concept="2JrnkZ" id="5nQpa4t1f3f" role="2Oq$k0">
                             <node concept="37vLTw" id="5nQpa4t1eYv" role="2JrQYb">
-                              <reference role="3cqZAo" target="6194248980634024743" resolve="target" />
+                              <ref role="3cqZAo" node="5nQpa4t13GB" resolve="target" />
                             </node>
                           </node>
                           <node concept="liA8E" id="5nQpa4t1flu" role="2OqNvi">
-                            <reference role="37wK5l" target="ec5l.~SNode%dgetName()%cjava%dlang%dString" resolve="getName" />
+                            <ref role="37wK5l" to="ec5l:~SNode.getName():java.lang.String" resolve="getName" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="37vLTw" id="5nQpa4t1fnh" role="37wK5m">
-                    <reference role="3cqZAo" target="6194248980634035518" resolve="creationBlocks" />
+                    <ref role="3cqZAo" node="5nQpa4t16kY" resolve="creationBlocks" />
                   </node>
                 </node>
               </node>

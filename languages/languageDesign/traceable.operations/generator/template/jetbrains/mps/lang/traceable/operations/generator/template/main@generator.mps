@@ -82,11 +82,11 @@
   <node concept="bUwia" id="61oOtBBBKva">
     <property role="TrG5h" value="main" />
     <node concept="3aamgX" id="61oOtBBBKvb" role="3acgRq">
-      <reference role="30HIoZ" target="tpee.1197027756228" resolve="DotExpression" />
+      <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="gft3U" id="1cH0k8MMAiS" role="1lVwrX">
         <node concept="2YIFZM" id="1cH0k8MMC39" role="gfFT$">
-          <reference role="1Pybhc" target="ierg.~TracingUtil" resolve="TracingUtil" />
-          <reference role="37wK5l" target="ierg.~TracingUtil%dcopyWithTrace(java%dutil%dList)%cjava%dutil%dList" resolve="copyWithTrace" />
+          <ref role="1Pybhc" to="ierg:~TracingUtil" resolve="TracingUtil" />
+          <ref role="37wK5l" to="ierg:~TracingUtil.copyWithTrace(java.util.List):java.util.List" resolve="copyWithTrace" />
           <node concept="10Nm6u" id="1cH0k8MMC3a" role="37wK5m">
             <node concept="29HgVG" id="1cH0k8MMC3c" role="lGtFl">
               <node concept="3NFfHV" id="1cH0k8MMC3d" role="3NFExx">
@@ -95,7 +95,7 @@
                     <node concept="2OqwBi" id="6xYGnJO7CBp" role="3clFbG">
                       <node concept="30H73N" id="1cH0k8MMC3g" role="2Oq$k0" />
                       <node concept="3TrEf2" id="6xYGnJO7CBv" role="2OqNvi">
-                        <reference role="3Tt5mk" target="tpee.1197027771414" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
                       </node>
                     </node>
                   </node>
@@ -112,12 +112,12 @@
               <node concept="2OqwBi" id="6xYGnJO7CAu" role="2Oq$k0">
                 <node concept="30H73N" id="6xYGnJO7CA9" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6xYGnJO7CAA" role="2OqNvi">
-                  <reference role="3Tt5mk" target="tpee.1197027833540" />
+                  <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="6xYGnJO7CB2" role="2OqNvi">
                 <node concept="chp4Y" id="6xYGnJO7CB4" role="cj9EA">
-                  <reference role="cht4Q" target="lyxe.6942529559415680891" resolve="Node_CopyWithTraceOperation" />
+                  <ref role="cht4Q" to="lyxe:61oOtBBBIXV" resolve="Node_CopyWithTraceOperation" />
                 </node>
               </node>
             </node>
@@ -126,11 +126,11 @@
       </node>
     </node>
     <node concept="3aamgX" id="2gx$rhdCkA_" role="3acgRq">
-      <reference role="30HIoZ" target="lyxe.2603522263179374343" resolve="NList_CopyWithTraceOperation" />
+      <ref role="30HIoZ" to="lyxe:2gx$rhdCaW7" resolve="NList_CopyWithTraceOperation" />
       <node concept="gft3U" id="2gx$rhdCkAB" role="1lVwrX">
         <node concept="2YIFZM" id="2gx$rhdCkBi" role="gfFT$">
-          <reference role="1Pybhc" target="ierg.~TracingUtil" resolve="TracingUtil" />
-          <reference role="37wK5l" target="ierg.~TracingUtil%dcopyWithTrace(java%dutil%dList)%cjava%dutil%dList" resolve="copyWithTrace" />
+          <ref role="1Pybhc" to="ierg:~TracingUtil" resolve="TracingUtil" />
+          <ref role="37wK5l" to="ierg:~TracingUtil.copyWithTrace(java.util.List):java.util.List" resolve="copyWithTrace" />
           <node concept="10Nm6u" id="2gx$rhdCkBj" role="37wK5m">
             <node concept="29HgVG" id="2gx$rhdCkBk" role="lGtFl">
               <node concept="3NFfHV" id="2gx$rhdCkBl" role="3NFExx">
@@ -139,7 +139,7 @@
                     <node concept="2OqwBi" id="2gx$rhdCkBo" role="3clFbG">
                       <node concept="30H73N" id="2gx$rhdCkBp" role="2Oq$k0" />
                       <node concept="3TrEf2" id="2gx$rhdCkBq" role="2OqNvi">
-                        <reference role="3Tt5mk" target="lyxe.2603522263179374348" />
+                        <ref role="3Tt5mk" to="lyxe:2gx$rhdCaWc" />
                       </node>
                     </node>
                   </node>

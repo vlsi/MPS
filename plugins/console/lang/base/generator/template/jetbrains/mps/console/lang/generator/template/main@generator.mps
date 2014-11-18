@@ -95,8 +95,8 @@
     <property role="3$yP7D" value="true" />
     <node concept="3lhOvk" id="4Cd_ANvqgEi" role="3lj3bC">
       <property role="36QftV" value="true" />
-      <reference role="30HIoZ" target="eynw.1583916890557930028" resolve="ConsoleRoot" />
-      <reference role="3lhOvi" target="5336086527852743855" resolve="Main" />
+      <ref role="30HIoZ" to="eynw:1nVd0kvs_CG" resolve="ConsoleRoot" />
+      <ref role="3lhOvi" node="4Cd_ANvqgMJ" resolve="Main" />
     </node>
   </node>
   <node concept="312cEu" id="4Cd_ANvqgMJ">
@@ -111,12 +111,12 @@
             <node concept="3clFbF" id="1nVd0kvJIic" role="3cqZAp">
               <node concept="2OqwBi" id="1nVd0kvJIid" role="3clFbG">
                 <node concept="3TrEf2" id="1nVd0kvJNAh" role="2OqNvi">
-                  <reference role="3Tt5mk" target="eynw.351968380916615460" />
+                  <ref role="3Tt5mk" to="eynw:jysm2GH4$$" />
                 </node>
                 <node concept="2OqwBi" id="1nVd0kvJM6H" role="2Oq$k0">
                   <node concept="30H73N" id="1nVd0kvJIif" role="2Oq$k0" />
                   <node concept="3TrEf2" id="1nVd0kvJMIG" role="2OqNvi">
-                    <reference role="3Tt5mk" target="eynw.1583916890557930417" />
+                    <ref role="3Tt5mk" to="eynw:1nVd0kvs_IL" />
                   </node>
                 </node>
               </node>
@@ -130,13 +130,13 @@
       <node concept="37vLTG" id="1nVd0kvJIij" role="3clF46">
         <property role="TrG5h" value="console" />
         <node concept="3uibUv" id="1nVd0kvJIik" role="1tU5fm">
-          <reference role="3uigEE" target="qgo0.6852607286009617748" resolve="ConsoleStream" />
+          <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
         </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="4Cd_ANvqgMK" role="1B3o_S" />
     <node concept="n94m4" id="4Cd_ANvqgML" role="lGtFl">
-      <reference role="n9lRv" target="eynw.1583916890557930028" resolve="ConsoleRoot" />
+      <ref role="n9lRv" to="eynw:1nVd0kvs_CG" resolve="ConsoleRoot" />
     </node>
   </node>
 </model>

@@ -51,13 +51,13 @@
     </language>
   </registry>
   <node concept="24kQdi" id="hqVFg9R">
-    <reference role="1XX52x" target="tpo2.1197149564476" resolve="StateMachine" />
+    <ref role="1XX52x" to="tpo2:hqVFaSW" resolve="StateMachine" />
     <node concept="3EZMnI" id="hqVFhny" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hqVFi14" role="3EZMnx">
         <property role="3EZMnw" value="false" />
         <node concept="3F0A7n" id="hqWG4WU" role="3EZMnx">
-          <reference role="1NtTu8" target="tpo2.1197166557152" resolve="stateMachineName" />
+          <ref role="1NtTu8" to="tpo2:hqWFZvw" resolve="stateMachineName" />
         </node>
         <node concept="3F0ifn" id="hqWHYg8" role="3EZMnx">
           <property role="3F0ifm" value="State Machine" />
@@ -81,7 +81,7 @@
         </node>
         <node concept="3F2HdR" id="hqWRC$Z" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <reference role="1NtTu8" target="tpo2.1197169554182" />
+          <ref role="1NtTu8" to="tpo2:hqWRrc6" />
           <node concept="2iRkQZ" id="i2IQKCV" role="2czzBx" />
         </node>
         <node concept="VPM3Z" id="hF4QVI8" role="3F10Kt">
@@ -96,11 +96,11 @@
           <property role="3F0ifm" value="Start state:" />
         </node>
         <node concept="1iCGBv" id="hr121Gw" role="3EZMnx">
-          <reference role="1NtTu8" target="tpo2.1197239402593" />
+          <ref role="1NtTu8" to="tpo2:hr11S1x" />
           <node concept="1sVBvm" id="hr121Gx" role="1sWHZn">
             <node concept="3F0A7n" id="hr123VR" role="2wV5jI">
               <property role="1Intyy" value="true" />
-              <reference role="1NtTu8" target="tpo2.1197170631630" resolve="stateName" />
+              <ref role="1NtTu8" to="tpo2:hqWVyfe" resolve="stateName" />
             </node>
           </node>
         </node>
@@ -112,27 +112,27 @@
       <node concept="3F0ifn" id="hr125iN" role="3EZMnx" />
       <node concept="3F2HdR" id="hr03MLH" role="3EZMnx">
         <property role="2czwfN" value="true" />
-        <reference role="1NtTu8" target="tpo2.1197223095983" />
+        <ref role="1NtTu8" to="tpo2:hr03EUJ" />
         <node concept="2iRkQZ" id="i2IQKCY" role="2czzBx" />
       </node>
       <node concept="2iRkQZ" id="i2IQKC_" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="hqWQUQO">
-    <reference role="1XX52x" target="tpo2.1197169363230" resolve="Event" />
+    <ref role="1XX52x" to="tpo2:hqWQG$u" resolve="Event" />
     <node concept="3EZMnI" id="hqWQVy4" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="hqWQW9p" role="3EZMnx">
-        <reference role="1NtTu8" target="tpo2.1197169389356" resolve="eventName" />
+        <ref role="1NtTu8" to="tpo2:hqWQMWG" resolve="eventName" />
       </node>
       <node concept="3F0A7n" id="hqWQWJx" role="3EZMnx">
-        <reference role="1NtTu8" target="tpo2.1197169394841" resolve="code" />
+        <ref role="1NtTu8" to="tpo2:hqWQOip" resolve="code" />
       </node>
       <node concept="2iRfu4" id="i2IQKCC" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="hqWVpHd">
-    <reference role="1XX52x" target="tpo2.1197170590231" resolve="State" />
+    <ref role="1XX52x" to="tpo2:hqWVo8n" resolve="State" />
     <node concept="3EZMnI" id="hqWVqx0" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hqWVv_v" role="3EZMnx">
@@ -141,7 +141,7 @@
           <property role="3F0ifm" value="State" />
         </node>
         <node concept="3F0A7n" id="hqWV$uN" role="3EZMnx">
-          <reference role="1NtTu8" target="tpo2.1197170631630" resolve="stateName" />
+          <ref role="1NtTu8" to="tpo2:hqWVyfe" resolve="stateName" />
         </node>
         <node concept="VPM3Z" id="hF4QVGD" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -158,7 +158,7 @@
         </node>
         <node concept="3F2HdR" id="hr166bf" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <reference role="1NtTu8" target="tpo2.1197240451739" />
+          <ref role="1NtTu8" to="tpo2:hr15Sar" />
           <node concept="2iRkQZ" id="i2IQKCW" role="2czzBx" />
         </node>
         <node concept="VPM3Z" id="hF4QVGK" role="3F10Kt">
@@ -171,15 +171,15 @@
     </node>
   </node>
   <node concept="24kQdi" id="hr14UWI">
-    <reference role="1XX52x" target="tpo2.1197240155690" resolve="Transition" />
+    <ref role="1XX52x" to="tpo2:hr14JSE" resolve="Transition" />
     <node concept="3EZMnI" id="hr14Vw9" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="1iCGBv" id="hr14XXD" role="3EZMnx">
-        <reference role="1NtTu8" target="tpo2.1197240182332" />
+        <ref role="1NtTu8" to="tpo2:hr14QoW" />
         <node concept="1sVBvm" id="hr14XXE" role="1sWHZn">
           <node concept="3F0A7n" id="hr14ZqX" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpo2.1197169389356" resolve="eventName" />
+            <ref role="1NtTu8" to="tpo2:hqWQMWG" resolve="eventName" />
           </node>
         </node>
       </node>
@@ -187,11 +187,11 @@
         <property role="3F0ifm" value="=&gt;" />
       </node>
       <node concept="1iCGBv" id="hr153qp" role="3EZMnx">
-        <reference role="1NtTu8" target="tpo2.1197240188973" />
+        <ref role="1NtTu8" to="tpo2:hr14S0H" />
         <node concept="1sVBvm" id="hr153qq" role="1sWHZn">
           <node concept="3F0A7n" id="hr154h8" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpo2.1197170631630" resolve="stateName" />
+            <ref role="1NtTu8" to="tpo2:hqWVyfe" resolve="stateName" />
           </node>
         </node>
       </node>
@@ -199,17 +199,17 @@
     </node>
   </node>
   <node concept="24kQdi" id="hr1u$_a">
-    <reference role="1XX52x" target="tpo2.1197246912613" resolve="StateMachineTest" />
+    <ref role="1XX52x" to="tpo2:hr1uxx_" resolve="StateMachineTest" />
     <node concept="3EZMnI" id="hr1u_jl" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hr1uBbI" role="3EZMnx">
         <property role="3EZMnw" value="false" />
         <node concept="1iCGBv" id="hr1y1Mq" role="3EZMnx">
-          <reference role="1NtTu8" target="tpo2.1197247793411" />
+          <ref role="1NtTu8" to="tpo2:hr1xS$3" />
           <node concept="1sVBvm" id="hr1y1Mr" role="1sWHZn">
             <node concept="3F0A7n" id="hr1y3cz" role="2wV5jI">
               <property role="1Intyy" value="true" />
-              <reference role="1NtTu8" target="tpo2.1197166557152" resolve="stateMachineName" />
+              <ref role="1NtTu8" to="tpo2:hqWFZvw" resolve="stateMachineName" />
             </node>
           </node>
         </node>
@@ -224,14 +224,14 @@
       <node concept="3F0ifn" id="hr1PBRv" role="3EZMnx" />
       <node concept="3F2HdR" id="hr1PD85" role="3EZMnx">
         <property role="2czwfN" value="true" />
-        <reference role="1NtTu8" target="tpo2.1197252952541" />
+        <ref role="1NtTu8" to="tpo2:hr1P$7t" />
         <node concept="2iRkQZ" id="i2IQKCS" role="2czzBx" />
       </node>
       <node concept="2iRkQZ" id="i2IQKCy" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="hr1OHRX">
-    <reference role="1XX52x" target="tpo2.1197252718474" resolve="StateMachineTestMethod" />
+    <ref role="1XX52x" to="tpo2:hr1OEYa" resolve="StateMachineTestMethod" />
     <node concept="3EZMnI" id="hr1OIxg" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hr1OMXe" role="3EZMnx">
@@ -240,7 +240,7 @@
           <property role="3F0ifm" value="test" />
         </node>
         <node concept="3F0A7n" id="hr1OT5o" role="3EZMnx">
-          <reference role="1NtTu8" target="tpo2.1197252760325" resolve="methodName" />
+          <ref role="1NtTu8" to="tpo2:hr1OPc5" resolve="methodName" />
         </node>
         <node concept="VPM3Z" id="hF4QVHW" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -259,7 +259,7 @@
           <property role="3EZMnw" value="true" />
           <node concept="3F2HdR" id="hr20$di" role="3EZMnx">
             <property role="2czwfN" value="true" />
-            <reference role="1NtTu8" target="tpo2.1197255818559" />
+            <ref role="1NtTu8" to="tpo2:hr20vOZ" />
             <node concept="2iRkQZ" id="i2IQKCT" role="2czzBx" />
           </node>
           <node concept="3EZMnI" id="hr1Ym8W" role="3EZMnx">
@@ -268,11 +268,11 @@
               <property role="3F0ifm" value="final state:" />
             </node>
             <node concept="1iCGBv" id="hr1Yo26" role="3EZMnx">
-              <reference role="1NtTu8" target="tpo2.1197255224363" />
+              <ref role="1NtTu8" to="tpo2:hr1YeKF" />
               <node concept="1sVBvm" id="hr1Yo27" role="1sWHZn">
                 <node concept="3F0A7n" id="hr1YpJi" role="2wV5jI">
                   <property role="1Intyy" value="true" />
-                  <reference role="1NtTu8" target="tpo2.1197170631630" resolve="stateName" />
+                  <ref role="1NtTu8" to="tpo2:hqWVyfe" resolve="stateName" />
                 </node>
               </node>
             </node>
@@ -295,18 +295,18 @@
     </node>
   </node>
   <node concept="24kQdi" id="hr20pcx">
-    <reference role="1XX52x" target="tpo2.1197255776563" resolve="HandleEvent" />
+    <ref role="1XX52x" to="tpo2:hr20l$N" resolve="HandleEvent" />
     <node concept="3EZMnI" id="hr20qj6" role="2wV5jI">
       <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hr20qSv" role="3EZMnx">
         <property role="3F0ifm" value="handle" />
       </node>
       <node concept="1iCGBv" id="hr20s12" role="3EZMnx">
-        <reference role="1NtTu8" target="tpo2.1197255783048" />
+        <ref role="1NtTu8" to="tpo2:hr20na8" />
         <node concept="1sVBvm" id="hr20s13" role="1sWHZn">
           <node concept="3F0A7n" id="hr20sDQ" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpo2.1197169389356" resolve="eventName" />
+            <ref role="1NtTu8" to="tpo2:hqWQMWG" resolve="eventName" />
           </node>
         </node>
       </node>

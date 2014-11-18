@@ -128,7 +128,7 @@
           </node>
         </node>
         <node concept="m$_wl" id="145rAk1QFxP" role="39821P">
-          <reference role="m_rDy" target="9212378209272345158" resolve="jetbrains.mps.samples.xmlPersistence" />
+          <ref role="m_rDy" node="7ZoWiKcez96" resolve="jetbrains.mps.samples.xmlPersistence" />
           <node concept="398223" id="1f830wSkBCU" role="39821P">
             <node concept="3_J27D" id="1f830wSkBCV" role="Nbhlr">
               <node concept="3Mxwew" id="1f830wSkBCY" role="3MwsjC">
@@ -136,7 +136,7 @@
               </node>
             </node>
             <node concept="L2wRC" id="1f830wSkBEI" role="39821P">
-              <reference role="L2wRA" target="9212378209272345080" resolve="jetbrains.mps.samples.xmlPersistence" />
+              <ref role="L2wRA" node="7ZoWiKcez7S" resolve="jetbrains.mps.samples.xmlPersistence" />
             </node>
           </node>
         </node>
@@ -163,25 +163,25 @@
       <node concept="1SiIV0" id="7ZoWiKceWqw" role="3bR37C">
         <node concept="3bR9La" id="7ZoWiKceWqx" role="1SiIV1">
           <property role="3bR36h" value="false" />
-          <reference role="3bR37D" target="ffeo.5875180246328869238" resolve="jetbrains.mps.core.xml" />
+          <ref role="3bR37D" to="ffeo:568PkTlOK5Q" resolve="jetbrains.mps.core.xml" />
         </node>
       </node>
       <node concept="1SiIV0" id="7ZoWiKceWqy" role="3bR37C">
         <node concept="3bR9La" id="7ZoWiKceWqz" role="1SiIV1">
           <property role="3bR36h" value="false" />
-          <reference role="3bR37D" target="ffeo.8939513996048535768" resolve="jetbrains.mps.baseLanguage.unitTest.libs" />
+          <ref role="3bR37D" to="ffeo:7Kfy9QB6L3o" resolve="jetbrains.mps.baseLanguage.unitTest.libs" />
         </node>
       </node>
       <node concept="1SiIV0" id="145rAk1QA1o" role="3bR37C">
         <node concept="3bR9La" id="145rAk1QA1p" role="1SiIV1">
           <property role="3bR36h" value="false" />
-          <reference role="3bR37D" target="ffeo.417528933728659225" resolve="Testbench" />
+          <ref role="3bR37D" to="ffeo:nbn5Dym2sp" resolve="Testbench" />
         </node>
       </node>
       <node concept="1SiIV0" id="145rAk1QA1q" role="3bR37C">
         <node concept="3bR9La" id="145rAk1QA1r" role="1SiIV1">
           <property role="3bR36h" value="false" />
-          <reference role="3bR37D" target="ffeo.2182758403694705590" resolve="MPS.Core" />
+          <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
         </node>
       </node>
     </node>
@@ -204,7 +204,7 @@
       <node concept="1SiIV0" id="7ZoWiKceWq$" role="3bR37C">
         <node concept="3bR9La" id="7ZoWiKceWq_" role="1SiIV1">
           <property role="3bR36h" value="false" />
-          <reference role="3bR37D" target="ffeo.8227093612175570784" resolve="jetbrains.mps.ide.build" />
+          <ref role="3bR37D" to="ffeo:78GwwOvB3tw" resolve="jetbrains.mps.ide.build" />
         </node>
       </node>
     </node>
@@ -282,28 +282,28 @@
       </node>
       <node concept="m$_yB" id="7ZoWiKcezcR" role="m$_yh">
         <property role="1ZOk41" value="true" />
-        <reference role="m$_yA" target="9212378209272345080" resolve="jetbrains.mps.samples.xmlPersistence" />
+        <ref role="m$_yA" node="7ZoWiKcez7S" resolve="jetbrains.mps.samples.xmlPersistence" />
       </node>
       <node concept="m$_yB" id="7ZoWiKcezcW" role="m$_yh">
-        <reference role="m$_yA" target="9212378209272345098" resolve="jetbrains.mps.samples.xmlPersistence.build" />
+        <ref role="m$_yA" node="7ZoWiKcez8a" resolve="jetbrains.mps.samples.xmlPersistence.build" />
       </node>
       <node concept="m$_yB" id="7ZoWiKcezd3" role="m$_yh">
-        <reference role="m$_yA" target="9212378209272345113" resolve="jetbrains.mps.samples.xmlPersistence.ideaPlugin" />
+        <ref role="m$_yA" node="7ZoWiKcez8p" resolve="jetbrains.mps.samples.xmlPersistence.ideaPlugin" />
       </node>
       <node concept="m$_yC" id="7ZoWiKceS$J" role="m$_yJ">
-        <reference role="m$_y1" target="ffeo.4973949960459588488" resolve="jetbrains.mps.core" />
+        <ref role="m$_y1" to="ffeo:4k71ibbKLe8" resolve="jetbrains.mps.core" />
       </node>
     </node>
     <node concept="2sgV4H" id="145rAk1QE4Y" role="1l3spa">
-      <reference role="1l3spb" target="ffeo.4301118715654192646" resolve="mps" />
+      <ref role="1l3spb" to="ffeo:3IKDaVZmzS6" resolve="mps" />
       <node concept="398BVA" id="145rAk1QE54" role="2JcizS">
-        <reference role="398BVh" target="9212378209272433031" resolve="mps_dist" />
+        <ref role="398BVh" node="7ZoWiKceSA7" resolve="mps_dist" />
       </node>
     </node>
     <node concept="13uUGR" id="145rAk1QE4b" role="1l3spa">
-      <reference role="13uUGO" target="ffeo.7181125477683264500" resolve="IDEA" />
+      <ref role="13uUGO" to="ffeo:6eCuTcwOnJO" resolve="IDEA" />
       <node concept="398BVA" id="145rAk1QE5M" role="13uUGP">
-        <reference role="398BVh" target="1226507853630185830" resolve="idea_home" />
+        <ref role="398BVh" node="145rAk1QE5A" resolve="idea_home" />
       </node>
     </node>
     <node concept="398rNT" id="7ZoWiKceSA7" role="1l3spd">
@@ -329,7 +329,7 @@
     <node concept="398rNT" id="145rAk1QE5A" role="1l3spd">
       <property role="TrG5h" value="idea_home" />
       <node concept="398BVA" id="145rAk1QE5K" role="398pKh">
-        <reference role="398BVh" target="9212378209272433031" resolve="mps_dist" />
+        <ref role="398BVh" node="7ZoWiKceSA7" resolve="mps_dist" />
       </node>
     </node>
   </node>

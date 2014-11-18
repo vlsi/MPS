@@ -138,12 +138,12 @@
           <node concept="3cpWsn" id="2WhjvKEQPfj" role="3cpWs9">
             <property role="TrG5h" value="r" />
             <node concept="3uibUv" id="2WhjvKEQPfk" role="1tU5fm">
-              <reference role="3uigEE" target="ar19.~Rectangle2D" resolve="Rectangle2D" />
+              <ref role="3uigEE" to="ar19:~Rectangle2D" resolve="Rectangle2D" />
             </node>
             <node concept="2AoxLU" id="4ediw4t42BN" role="33vP2m">
-              <reference role="2Ap75J" target="4413962600136184953" resolve="Rectangle" />
+              <ref role="2Ap75J" node="3P1yT_0YxhT" resolve="Rectangle" />
               <node concept="2AoxLU" id="4ediw4t42BO" role="2Ap74s">
-                <reference role="2Ap75J" target="4413962600136177712" resolve="Point" />
+                <ref role="2Ap75J" node="3P1yT_0YvwK" resolve="Point" />
                 <node concept="3cmrfG" id="4ediw4t42BP" role="2Ap74s">
                   <property role="3cmrfH" value="2" />
                 </node>
@@ -152,7 +152,7 @@
                 </node>
               </node>
               <node concept="2AoxLU" id="4ediw4t42BT" role="2Ap74s">
-                <reference role="2Ap75J" target="4413962600136177712" resolve="Point" />
+                <ref role="2Ap75J" node="3P1yT_0YvwK" resolve="Point" />
                 <node concept="3cmrfG" id="4ediw4t42BU" role="2Ap74s">
                   <property role="3cmrfH" value="4" />
                 </node>
@@ -166,13 +166,13 @@
         <node concept="3clFbF" id="2WhjvKEQPfC" role="3cqZAp">
           <node concept="2OqwBi" id="2WhjvKEQPqd" role="3clFbG">
             <node concept="10M0yZ" id="2WhjvKEQPfD" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="2WhjvKEQPqh" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dObject)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.Object):void" resolve="println" />
               <node concept="37vLTw" id="3GM_nagTxHW" role="37wK5m">
-                <reference role="3cqZAo" target="3391577739832808403" resolve="r" />
+                <ref role="3cqZAo" node="2WhjvKEQPfj" resolve="r" />
               </node>
             </node>
           </node>
@@ -182,7 +182,7 @@
         <property role="TrG5h" value="args" />
         <node concept="10Q1$e" id="2WhjvKEQPqV" role="1tU5fm">
           <node concept="3uibUv" id="2WhjvKEQPqM" role="10Q1$1">
-            <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
           </node>
         </node>
       </node>
@@ -196,7 +196,7 @@
       <property role="1_lXKI" value="{" />
       <property role="1_lXKL" value="," />
       <node concept="3uibUv" id="3P1yT_0Ywfe" role="1_lXKH">
-        <reference role="3uigEE" target="ar19.~Point2D" resolve="Point2D" />
+        <ref role="3uigEE" to="ar19:~Point2D" resolve="Point2D" />
       </node>
       <node concept="3XUIV8" id="3P1yT_0Ywf8" role="3XUO1_">
         <node concept="3XUO1F" id="3P1yT_0Ywf9" role="3XUO1j">
@@ -212,12 +212,12 @@
         <node concept="3cpWs6" id="3P1yT_0Ywff" role="3cqZAp">
           <node concept="2ShNRf" id="3P1yT_0Ywfh" role="3cqZAk">
             <node concept="1pGfFk" id="3P1yT_0YxhP" role="2ShVmc">
-              <reference role="37wK5l" target="ar19.~Point2D$Double%d&lt;init&gt;(double,double)" resolve="Point2D.Double" />
+              <ref role="37wK5l" to="ar19:~Point2D$Double.&lt;init&gt;(double,double)" resolve="Point2D.Double" />
               <node concept="MIHzR" id="3P1yT_0YxhQ" role="37wK5m">
-                <reference role="3XVpon" target="4413962600136180681" resolve="x" />
+                <ref role="3XVpon" node="3P1yT_0Ywf9" resolve="x" />
               </node>
               <node concept="3XVpom" id="3P1yT_0YxhS" role="37wK5m">
-                <reference role="3XVpon" target="4413962600136180683" resolve="y" />
+                <ref role="3XVpon" node="3P1yT_0Ywfb" resolve="y" />
               </node>
             </node>
           </node>
@@ -230,19 +230,19 @@
       <property role="1_lXKI" value="[" />
       <property role="1_lXKL" value="&gt;" />
       <node concept="3uibUv" id="3P1yT_0Yxi3" role="1_lXKH">
-        <reference role="3uigEE" target="ar19.~Rectangle2D" resolve="Rectangle2D" />
+        <ref role="3uigEE" to="ar19:~Rectangle2D" resolve="Rectangle2D" />
       </node>
       <node concept="3XUIV8" id="3P1yT_0YxhX" role="3XUO1_">
         <node concept="3XUO1F" id="3P1yT_0YxhY" role="3XUO1j">
           <property role="TrG5h" value="topleft" />
           <node concept="3uibUv" id="3P1yT_0YxhZ" role="3XUQxq">
-            <reference role="3uigEE" target="ar19.~Point2D" resolve="Point2D" />
+            <ref role="3uigEE" to="ar19:~Point2D" resolve="Point2D" />
           </node>
         </node>
         <node concept="3XUO1F" id="3P1yT_0Yxi0" role="3XUO1j">
           <property role="TrG5h" value="bottomright" />
           <node concept="3uibUv" id="3P1yT_0Yxi2" role="3XUQxq">
-            <reference role="3uigEE" target="ar19.~Point2D" resolve="Point2D" />
+            <ref role="3uigEE" to="ar19:~Point2D" resolve="Point2D" />
           </node>
         </node>
       </node>
@@ -253,10 +253,10 @@
             <node concept="10P55v" id="3P1yT_0Yxip" role="1tU5fm" />
             <node concept="2OqwBi" id="3P1yT_0Yxiq" role="33vP2m">
               <node concept="MIHzR" id="3P1yT_0Yxir" role="2Oq$k0">
-                <reference role="3XVpon" target="4413962600136184958" resolve="topleft" />
+                <ref role="3XVpon" node="3P1yT_0YxhY" resolve="topleft" />
               </node>
               <node concept="liA8E" id="3P1yT_0Yxis" role="2OqNvi">
-                <reference role="37wK5l" target="ar19.~Point2D%dgetX()%cdouble" resolve="getX" />
+                <ref role="37wK5l" to="ar19:~Point2D.getX():double" resolve="getX" />
               </node>
             </node>
           </node>
@@ -267,10 +267,10 @@
             <node concept="10P55v" id="3P1yT_0Yxiw" role="1tU5fm" />
             <node concept="2OqwBi" id="3P1yT_0Yxix" role="33vP2m">
               <node concept="MIHzR" id="3P1yT_0Yxiy" role="2Oq$k0">
-                <reference role="3XVpon" target="4413962600136184958" resolve="topleft" />
+                <ref role="3XVpon" node="3P1yT_0YxhY" resolve="topleft" />
               </node>
               <node concept="liA8E" id="3P1yT_0Yxiz" role="2OqNvi">
-                <reference role="37wK5l" target="ar19.~Point2D%dgetY()%cdouble" resolve="getY" />
+                <ref role="37wK5l" to="ar19:~Point2D.getY():double" resolve="getY" />
               </node>
             </node>
           </node>
@@ -278,37 +278,37 @@
         <node concept="3cpWs6" id="3P1yT_0Yxi4" role="3cqZAp">
           <node concept="2ShNRf" id="3P1yT_0Yxi6" role="3cqZAk">
             <node concept="1pGfFk" id="3P1yT_0Yxi8" role="2ShVmc">
-              <reference role="37wK5l" target="ar19.~Rectangle2D$Double%d&lt;init&gt;(double,double,double,double)" resolve="Rectangle2D.Double" />
+              <ref role="37wK5l" to="ar19:~Rectangle2D$Double.&lt;init&gt;(double,double,double,double)" resolve="Rectangle2D.Double" />
               <node concept="37vLTw" id="3GM_nagTrKS" role="37wK5m">
-                <reference role="3cqZAo" target="4413962600136184984" resolve="x" />
+                <ref role="3cqZAo" node="3P1yT_0Yxio" resolve="x" />
               </node>
               <node concept="37vLTw" id="3GM_nagTw73" role="37wK5m">
-                <reference role="3cqZAo" target="4413962600136184991" resolve="y" />
+                <ref role="3cqZAo" node="3P1yT_0Yxiv" resolve="y" />
               </node>
               <node concept="3cpWsd" id="3P1yT_0YxiA" role="37wK5m">
                 <node concept="2OqwBi" id="3P1yT_0YxiU" role="3uHU7B">
                   <node concept="MIHzR" id="3P1yT_0YxiV" role="2Oq$k0">
-                    <reference role="3XVpon" target="4413962600136184960" resolve="bottomright" />
+                    <ref role="3XVpon" node="3P1yT_0Yxi0" resolve="bottomright" />
                   </node>
                   <node concept="liA8E" id="3P1yT_0YxiW" role="2OqNvi">
-                    <reference role="37wK5l" target="ar19.~Point2D%dgetX()%cdouble" resolve="getX" />
+                    <ref role="37wK5l" to="ar19:~Point2D.getX():double" resolve="getX" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagT$_s" role="3uHU7w">
-                  <reference role="3cqZAo" target="4413962600136184984" resolve="x" />
+                  <ref role="3cqZAo" node="3P1yT_0Yxio" resolve="x" />
                 </node>
               </node>
               <node concept="3cpWsd" id="3P1yT_0YxiL" role="37wK5m">
                 <node concept="2OqwBi" id="3P1yT_0YxiY" role="3uHU7B">
                   <node concept="MIHzR" id="3P1yT_0YxiZ" role="2Oq$k0">
-                    <reference role="3XVpon" target="4413962600136184960" resolve="bottomright" />
+                    <ref role="3XVpon" node="3P1yT_0Yxi0" resolve="bottomright" />
                   </node>
                   <node concept="liA8E" id="3P1yT_0Yxj0" role="2OqNvi">
-                    <reference role="37wK5l" target="ar19.~Point2D%dgetY()%cdouble" resolve="getY" />
+                    <ref role="37wK5l" to="ar19:~Point2D.getY():double" resolve="getY" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTy32" role="3uHU7w">
-                  <reference role="3cqZAo" target="4413962600136184991" resolve="y" />
+                  <ref role="3cqZAo" node="3P1yT_0Yxiv" resolve="y" />
                 </node>
               </node>
             </node>

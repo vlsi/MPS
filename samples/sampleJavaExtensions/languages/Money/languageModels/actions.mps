@@ -157,9 +157,9 @@
   <node concept="3UOs0u" id="38gGBrhh09o">
     <property role="TrG5h" value="makeMoneyFromInteger" />
     <node concept="3UNGvq" id="38gGBrhh09p" role="3UOs0v">
-      <reference role="3UNGvu" target="tpee.1179362310214" resolve="IntegerLiteral" />
+      <ref role="3UNGvu" to="tpee:hanubx6" resolve="IntegerLiteral" />
       <node concept="tYCnQ" id="38gGBrhh09q" role="_1QTJ">
-        <reference role="uz4UX" target="v0h4.5447719361346490674" resolve="MoneyLiteral" />
+        <ref role="uz4UX" to="v0h4:4IqbYlp4P4M" resolve="MoneyLiteral" />
         <node concept="Cmt7Y" id="38gGBrhh09r" role="uz6Si">
           <node concept="Cnhdc" id="38gGBrhh09s" role="Cncma">
             <node concept="3clFbS" id="38gGBrhh09t" role="2VODD2">
@@ -173,16 +173,16 @@
                         <node concept="I4A8Y" id="38gGBrhh3oI" role="2OqNvi" />
                       </node>
                       <node concept="2RRcyG" id="38gGBrhh3oJ" role="2OqNvi">
-                        <reference role="2RRcyH" target="v0h4.3607579524910560662" resolve="CurrencyDefTable" />
+                        <ref role="2RRcyH" to="v0h4:38gGBrhh3mm" resolve="CurrencyDefTable" />
                       </node>
                     </node>
                     <node concept="13MTOL" id="38gGBrhh3oK" role="2OqNvi">
-                      <reference role="13MTZf" target="v0h4.3607579524910560668" />
+                      <ref role="13MTZf" to="v0h4:38gGBrhh3ms" />
                     </node>
                   </node>
                   <node concept="A3Dl8" id="38gGBrhh3oL" role="1tU5fm">
                     <node concept="3Tqbb2" id="38gGBrhh3oM" role="A3Ik2">
-                      <reference role="ehGHo" target="v0h4.3607579524910560663" resolve="CurrencyUnit" />
+                      <ref role="ehGHo" to="v0h4:38gGBrhh3mn" resolve="CurrencyUnit" />
                     </node>
                   </node>
                 </node>
@@ -191,11 +191,11 @@
                 <node concept="3cpWsn" id="38gGBrhh53X" role="3cpWs9">
                   <property role="TrG5h" value="unit" />
                   <node concept="3Tqbb2" id="38gGBrhh53Y" role="1tU5fm">
-                    <reference role="ehGHo" target="v0h4.3607579524910560663" resolve="CurrencyUnit" />
+                    <ref role="ehGHo" to="v0h4:38gGBrhh3mn" resolve="CurrencyUnit" />
                   </node>
                   <node concept="2OqwBi" id="38gGBrhh53Z" role="33vP2m">
                     <node concept="37vLTw" id="3GM_nagTuzk" role="2Oq$k0">
-                      <reference role="3cqZAo" target="3607579524910560809" resolve="units" />
+                      <ref role="3cqZAo" node="38gGBrhh3oD" resolve="units" />
                     </node>
                     <node concept="1z4cxt" id="38gGBrhh541" role="2OqNvi">
                       <node concept="1bVj0M" id="38gGBrhh542" role="23t8la">
@@ -204,14 +204,14 @@
                             <node concept="2OqwBi" id="38gGBrhh545" role="3clFbG">
                               <node concept="2OqwBi" id="38gGBrhh546" role="2Oq$k0">
                                 <node concept="37vLTw" id="2BHiRxgmOfz" role="2Oq$k0">
-                                  <reference role="3cqZAo" target="3607579524910567691" resolve="it" />
+                                  <ref role="3cqZAo" node="38gGBrhh54b" resolve="it" />
                                 </node>
                                 <node concept="3TrcHB" id="38gGBrhh548" role="2OqNvi">
-                                  <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="38gGBrhh549" role="2OqNvi">
-                                <reference role="37wK5l" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolve="equals" />
+                                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
                                 <node concept="ub8z3" id="38gGBrhh54a" role="37wK5m" />
                               </node>
                             </node>
@@ -232,12 +232,12 @@
                     <node concept="3cpWsn" id="38gGBrhh0aY" role="3cpWs9">
                       <property role="TrG5h" value="ml" />
                       <node concept="3Tqbb2" id="38gGBrhh0aZ" role="1tU5fm">
-                        <reference role="ehGHo" target="v0h4.5447719361346490674" resolve="MoneyLiteral" />
+                        <ref role="ehGHo" to="v0h4:4IqbYlp4P4M" resolve="MoneyLiteral" />
                       </node>
                       <node concept="2ShNRf" id="38gGBrhh0b1" role="33vP2m">
                         <node concept="3zrR0B" id="38gGBrhh0b2" role="2ShVmc">
                           <node concept="3Tqbb2" id="38gGBrhh0b3" role="3zrR0E">
-                            <reference role="ehGHo" target="v0h4.5447719361346490674" resolve="MoneyLiteral" />
+                            <ref role="ehGHo" to="v0h4:4IqbYlp4P4M" resolve="MoneyLiteral" />
                           </node>
                         </node>
                       </node>
@@ -246,14 +246,14 @@
                   <node concept="3clFbF" id="38gGBrhh0b5" role="3cqZAp">
                     <node concept="37vLTI" id="38gGBrhh54o" role="3clFbG">
                       <node concept="37vLTw" id="3GM_nagTBHA" role="37vLTx">
-                        <reference role="3cqZAo" target="3607579524910567677" resolve="unit" />
+                        <ref role="3cqZAo" node="38gGBrhh53X" resolve="unit" />
                       </node>
                       <node concept="2OqwBi" id="38gGBrhh0b7" role="37vLTJ">
                         <node concept="37vLTw" id="3GM_nagTAn2" role="2Oq$k0">
-                          <reference role="3cqZAo" target="3607579524910547646" resolve="ml" />
+                          <ref role="3cqZAo" node="38gGBrhh0aY" resolve="ml" />
                         </node>
                         <node concept="3TrEf2" id="38gGBrhh3oN" role="2OqNvi">
-                          <reference role="3Tt5mk" target="v0h4.3607579524910560680" />
+                          <ref role="3Tt5mk" to="v0h4:38gGBrhh3mC" />
                         </node>
                       </node>
                     </node>
@@ -262,19 +262,19 @@
                     <node concept="37vLTI" id="38gGBrhh0bo" role="3clFbG">
                       <node concept="2OqwBi" id="38gGBrhh0by" role="37vLTx">
                         <node concept="1PxgMI" id="38gGBrhh0bw" role="2Oq$k0">
-                          <reference role="1PxNhF" target="tpee.1068580320020" resolve="IntegerConstant" />
+                          <ref role="1PxNhF" to="tpee:fzcmrck" resolve="IntegerConstant" />
                           <node concept="Cj7Ep" id="38gGBrhh0br" role="1PxMeX" />
                         </node>
                         <node concept="3TrcHB" id="38gGBrhh0bA" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpee.1068580320021" resolve="value" />
+                          <ref role="3TsBF5" to="tpee:fzcmrcl" resolve="value" />
                         </node>
                       </node>
                       <node concept="2OqwBi" id="38gGBrhh0bj" role="37vLTJ">
                         <node concept="37vLTw" id="3GM_nagTsGf" role="2Oq$k0">
-                          <reference role="3cqZAo" target="3607579524910547646" resolve="ml" />
+                          <ref role="3cqZAo" node="38gGBrhh0aY" resolve="ml" />
                         </node>
                         <node concept="3TrcHB" id="38gGBrhh0bn" role="2OqNvi">
-                          <reference role="3TsBF5" target="v0h4.5447719361346490755" resolve="amount" />
+                          <ref role="3TsBF5" to="v0h4:4IqbYlp4P63" resolve="amount" />
                         </node>
                       </node>
                     </node>
@@ -284,7 +284,7 @@
                       <node concept="Cj7Ep" id="38gGBrhh0bD" role="2Oq$k0" />
                       <node concept="1P9Npp" id="38gGBrhh0bI" role="2OqNvi">
                         <node concept="37vLTw" id="3GM_nagT$8c" role="1P9ThW">
-                          <reference role="3cqZAo" target="3607579524910547646" resolve="ml" />
+                          <ref role="3cqZAo" node="38gGBrhh0aY" resolve="ml" />
                         </node>
                       </node>
                     </node>
@@ -292,10 +292,10 @@
                   <node concept="3cpWs6" id="51LCn59ETin" role="3cqZAp">
                     <node concept="2OqwBi" id="5A8yV0PdfvG" role="3cqZAk">
                       <node concept="37vLTw" id="3GM_nagTw76" role="2Oq$k0">
-                        <reference role="3cqZAo" target="3607579524910547646" resolve="ml" />
+                        <ref role="3cqZAo" node="38gGBrhh0aY" resolve="ml" />
                       </node>
                       <node concept="3TrEf2" id="5A8yV0PdnQL" role="2OqNvi">
-                        <reference role="3Tt5mk" target="v0h4.3607579524910560680" />
+                        <ref role="3Tt5mk" to="v0h4:38gGBrhh3mC" />
                       </node>
                     </node>
                   </node>
@@ -303,7 +303,7 @@
                 <node concept="3y3z36" id="38gGBrhh54k" role="3clFbw">
                   <node concept="10Nm6u" id="38gGBrhh54n" role="3uHU7w" />
                   <node concept="37vLTw" id="3GM_nagTxLh" role="3uHU7B">
-                    <reference role="3cqZAo" target="3607579524910567677" resolve="unit" />
+                    <ref role="3cqZAo" node="38gGBrhh53X" resolve="unit" />
                   </node>
                 </node>
               </node>
@@ -324,16 +324,16 @@
                         <node concept="I4A8Y" id="38gGBrhh3mT" role="2OqNvi" />
                       </node>
                       <node concept="2RRcyG" id="38gGBrhh3mY" role="2OqNvi">
-                        <reference role="2RRcyH" target="v0h4.3607579524910560662" resolve="CurrencyDefTable" />
+                        <ref role="2RRcyH" to="v0h4:38gGBrhh3mm" resolve="CurrencyDefTable" />
                       </node>
                     </node>
                     <node concept="13MTOL" id="38gGBrhh3n3" role="2OqNvi">
-                      <reference role="13MTZf" target="v0h4.3607579524910560668" />
+                      <ref role="13MTZf" to="v0h4:38gGBrhh3ms" />
                     </node>
                   </node>
                   <node concept="A3Dl8" id="38gGBrhh3o$" role="1tU5fm">
                     <node concept="3Tqbb2" id="38gGBrhh3oA" role="A3Ik2">
-                      <reference role="ehGHo" target="v0h4.3607579524910560663" resolve="CurrencyUnit" />
+                      <ref role="ehGHo" to="v0h4:38gGBrhh3mn" resolve="CurrencyUnit" />
                     </node>
                   </node>
                 </node>
@@ -343,21 +343,21 @@
                   <property role="TrG5h" value="u" />
                 </node>
                 <node concept="37vLTw" id="3GM_nagTwL1" role="2GsD0m">
-                  <reference role="3cqZAo" target="3607579524910560689" resolve="units" />
+                  <ref role="3cqZAo" node="38gGBrhh3mL" resolve="units" />
                 </node>
                 <node concept="3clFbS" id="38gGBrhh3o5" role="2LFqv$">
                   <node concept="3clFbJ" id="38gGBrhh3o7" role="3cqZAp">
                     <node concept="2OqwBi" id="38gGBrhh3og" role="3clFbw">
                       <node concept="2OqwBi" id="38gGBrhh3ob" role="2Oq$k0">
                         <node concept="2GrUjf" id="38gGBrhh3oa" role="2Oq$k0">
-                          <reference role="2Gs0qQ" target="3607579524910560771" resolve="u" />
+                          <ref role="2Gs0qQ" node="38gGBrhh3o3" resolve="u" />
                         </node>
                         <node concept="3TrcHB" id="38gGBrhh3of" role="2OqNvi">
-                          <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                         </node>
                       </node>
                       <node concept="liA8E" id="38gGBrhh3ok" role="2OqNvi">
-                        <reference role="37wK5l" target="e2lb.~String%dstartsWith(java%dlang%dString)%cboolean" resolve="startsWith" />
+                        <ref role="37wK5l" to="e2lb:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
                         <node concept="ub8z3" id="38gGBrhh3ol" role="37wK5m" />
                       </node>
                     </node>
@@ -365,10 +365,10 @@
                       <node concept="3cpWs6" id="38gGBrhh3om" role="3cqZAp">
                         <node concept="2OqwBi" id="38gGBrhh3op" role="3cqZAk">
                           <node concept="2GrUjf" id="38gGBrhh3oo" role="2Oq$k0">
-                            <reference role="2Gs0qQ" target="3607579524910560771" resolve="u" />
+                            <ref role="2Gs0qQ" node="38gGBrhh3o3" resolve="u" />
                           </node>
                           <node concept="3TrcHB" id="38gGBrhh3ot" role="2OqNvi">
-                            <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
                       </node>

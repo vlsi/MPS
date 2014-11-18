@@ -111,28 +111,28 @@
     </language>
   </registry>
   <node concept="24kQdi" id="3f064wGFUBo">
-    <reference role="1XX52x" target="v54s.3729007189729192406" resolve="ExtensionPointDeclaration" />
+    <ref role="1XX52x" to="v54s:3f064wGFUBm" resolve="ExtensionPointDeclaration" />
     <node concept="3EZMnI" id="3f064wGFUBp" role="2wV5jI">
       <node concept="3F0ifn" id="3f064wGFUBq" role="3EZMnx">
         <property role="3F0ifm" value="ExtensionPoint" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="3F0A7n" id="3f064wGFUBr" role="3EZMnx">
-        <reference role="1NtTu8" target="v54s.5911785528834333590" resolve="extensionName" />
+        <ref role="1NtTu8" to="v54s:58aSpRitLIm" resolve="extensionName" />
       </node>
       <node concept="3F0ifn" id="6XJvNHU5VOd" role="3EZMnx">
         <property role="3F0ifm" value="&lt;" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
         <node concept="11LMrY" id="4y_vFkECYPM" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="3F1sOY" id="6XJvNHU5VOh" role="3EZMnx">
-        <reference role="1NtTu8" target="v54s.8029776554053057803" />
+        <ref role="1NtTu8" to="v54s:6XJvNHU5VOb" />
       </node>
       <node concept="3F0ifn" id="6XJvNHU5VOf" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
         <node concept="11L4FC" id="58aSpRitWee" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -141,13 +141,13 @@
     </node>
   </node>
   <node concept="24kQdi" id="3f064wGFUBt">
-    <reference role="1XX52x" target="v54s.3729007189729192404" resolve="ExtensionDeclaration" />
+    <ref role="1XX52x" to="v54s:3f064wGFUBk" resolve="ExtensionDeclaration" />
     <node concept="3EZMnI" id="3f064wGFUBu" role="2wV5jI">
       <node concept="3EZMnI" id="66AaOfxkTMj" role="3EZMnx">
         <node concept="2iRfu4" id="66AaOfxkTMk" role="2iSdaV" />
         <node concept="3F0ifn" id="6QpPHkSsU__" role="3EZMnx">
           <property role="3F0ifm" value="Extension of" />
-          <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+          <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
           <node concept="3$7fVu" id="6QpPHkSsU_A" role="3F10Kt">
             <property role="3$6WeP" value="0.5" />
           </node>
@@ -156,18 +156,18 @@
           </node>
         </node>
         <node concept="1iCGBv" id="3f064wGFUBw" role="3EZMnx">
-          <reference role="1NtTu8" target="v54s.3729007189729192405" />
+          <ref role="1NtTu8" to="v54s:3f064wGFUBl" />
           <node concept="1sVBvm" id="3f064wGFUBx" role="1sWHZn">
             <node concept="3F0A7n" id="3f064wGFUBy" role="2wV5jI">
               <property role="1Intyy" value="true" />
-              <reference role="1NtTu8" target="v54s.5911785528834333590" resolve="extensionName" />
+              <ref role="1NtTu8" to="v54s:58aSpRitLIm" resolve="extensionName" />
             </node>
           </node>
         </node>
       </node>
       <node concept="3XFhqQ" id="2CVPr4rxYbY" role="3EZMnx" />
       <node concept="3F2HdR" id="66AaOfxkOVw" role="3EZMnx">
-        <reference role="1NtTu8" target="v54s.7036359038356115164" />
+        <ref role="1NtTu8" to="v54s:66AaOfxkOVs" />
         <node concept="l2Vlx" id="66AaOfxkOVx" role="2czzBx" />
         <node concept="3F0ifn" id="66AaOfxkOVy" role="2czzBI">
           <property role="3F0ifm" value="" />
@@ -184,24 +184,24 @@
       <node concept="3EZMnI" id="66AaOfxkTMn" role="3EZMnx">
         <node concept="3F0ifn" id="66AaOfxk_gx" role="3EZMnx">
           <property role="3F0ifm" value="on activate" />
-          <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+          <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
         </node>
         <node concept="2iRfu4" id="66AaOfxkTMo" role="2iSdaV" />
         <node concept="3F1sOY" id="66AaOfxk_fS" role="3EZMnx">
           <property role="1$x2rV" value="&lt;do nothing&gt;" />
           <property role="39s7Ar" value="true" />
-          <reference role="1NtTu8" target="v54s.7036359038356050926" />
+          <ref role="1NtTu8" to="v54s:66AaOfxk_fI" />
         </node>
       </node>
       <node concept="3XFhqQ" id="2CVPr4rxYk5" role="3EZMnx" />
       <node concept="3EZMnI" id="66AaOfxkTMp" role="3EZMnx">
         <node concept="3F0ifn" id="66AaOfxk_ps" role="3EZMnx">
           <property role="3F0ifm" value="on deactivate" />
-          <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+          <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
         </node>
         <node concept="3F1sOY" id="66AaOfxk_fZ" role="3EZMnx">
           <property role="1$x2rV" value="&lt;do nothing&gt;" />
-          <reference role="1NtTu8" target="v54s.7036359038356050934" />
+          <ref role="1NtTu8" to="v54s:66AaOfxk_fQ" />
         </node>
         <node concept="2iRfu4" id="66AaOfxkTMq" role="2iSdaV" />
       </node>
@@ -209,27 +209,27 @@
       <node concept="3EZMnI" id="66AaOfxkTMs" role="3EZMnx">
         <node concept="3F0ifn" id="66AaOfxkTMw" role="3EZMnx">
           <property role="3F0ifm" value="extension object" />
-          <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+          <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
         </node>
         <node concept="l2Vlx" id="66AaOfxkTMu" role="2iSdaV" />
         <node concept="3F1sOY" id="6XJvNHU5VOl" role="3EZMnx">
-          <reference role="1NtTu8" target="v54s.8029776554053057811" />
+          <ref role="1NtTu8" to="v54s:6XJvNHU5VOj" />
         </node>
       </node>
       <node concept="2iRkQZ" id="66AaOfxkTMi" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="5JRjEZJSe_2">
-    <reference role="1XX52x" target="v54s.6626851894249711936" resolve="ExtensionPointExpression" />
+    <ref role="1XX52x" to="v54s:5JRjEZJSe_0" resolve="ExtensionPointExpression" />
     <node concept="3EZMnI" id="5JRjEZJSe_4" role="2wV5jI">
       <node concept="PMmxH" id="2wdLO7KhYdk" role="3EZMnx">
         <property role="1cu_pB" value="0" />
-        <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="3F0ifn" id="5JRjEZJSe_9" role="3EZMnx">
         <property role="3F0ifm" value="/" />
-        <reference role="1k5W1q" target="tpen.8171260302110651849" resolve="LeftAngleBracket" />
+        <ref role="1k5W1q" to="tpen:75A9veqzBn9" resolve="LeftAngleBracket" />
         <node concept="11L4FC" id="5JRjEZJSeHh" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -238,19 +238,19 @@
         </node>
       </node>
       <node concept="1iCGBv" id="5JRjEZJSeHn" role="3EZMnx">
-        <reference role="1NtTu8" target="v54s.6626851894249712469" />
-        <reference role="1k5W1q" target="tpen.1215189282959" resolve="ClassName" />
+        <ref role="1NtTu8" to="v54s:5JRjEZJSeHl" />
+        <ref role="1k5W1q" to="tpen:hFIVf2f" resolve="ClassName" />
         <node concept="1sVBvm" id="5JRjEZJSeHo" role="1sWHZn">
           <node concept="3F0A7n" id="5JRjEZJSeHq" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
-            <reference role="1k5W1q" target="tpen.1215189282959" resolve="ClassName" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            <ref role="1k5W1q" to="tpen:hFIVf2f" resolve="ClassName" />
           </node>
         </node>
       </node>
       <node concept="3F0ifn" id="5JRjEZJSe_e" role="3EZMnx">
         <property role="3F0ifm" value="/" />
-        <reference role="1k5W1q" target="tpen.8171260302110651850" resolve="RightAngleBracket" />
+        <ref role="1k5W1q" to="tpen:75A9veqzBna" resolve="RightAngleBracket" />
         <node concept="11L4FC" id="5JRjEZJSxG4" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -262,7 +262,7 @@
         <property role="3F0ifm" value="id:" />
       </node>
       <node concept="1iCGBv" id="5JRjEZJSeHx" role="3EZMnx">
-        <reference role="1NtTu8" target="v54s.6626851894249712469" />
+        <ref role="1NtTu8" to="v54s:5JRjEZJSeHl" />
         <node concept="1sVBvm" id="5JRjEZJSeHy" role="1sWHZn">
           <node concept="1HlG4h" id="5JRjEZJSeH$" role="2wV5jI">
             <node concept="1HfYo3" id="5JRjEZJSeH_" role="1HlULh">
@@ -272,7 +272,7 @@
                     <node concept="2OqwBi" id="5JRjEZJSeHG" role="3clFbG">
                       <node concept="pncrf" id="5JRjEZJSeHD" role="2Oq$k0" />
                       <node concept="2qgKlT" id="5JRjEZJSeHM" role="2OqNvi">
-                        <reference role="37wK5l" target="w0jm.63012922130945363" resolve="getId" />
+                        <ref role="37wK5l" to="w0jm:3vRuGRRXlj" resolve="getId" />
                       </node>
                     </node>
                   </node>
@@ -286,28 +286,28 @@
     </node>
   </node>
   <node concept="24kQdi" id="66AaOfxkOUw">
-    <reference role="1XX52x" target="v54s.7036359038356115097" resolve="ExtensionFieldDeclaration" />
+    <ref role="1XX52x" to="v54s:66AaOfxkOUp" resolve="ExtensionFieldDeclaration" />
     <node concept="3EZMnI" id="66AaOfxkOUy" role="2wV5jI">
       <node concept="3F1sOY" id="66AaOfxkOUB" role="3EZMnx">
-        <reference role="1NtTu8" target="v54s.7036359038356115101" />
+        <ref role="1NtTu8" to="v54s:66AaOfxkOUt" />
       </node>
       <node concept="3F0A7n" id="66AaOfxkOU_" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
-        <reference role="1k5W1q" target="tpen.1198595398954" resolve="Field" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        <ref role="1k5W1q" to="tpen:hshQ_OE" resolve="Field" />
       </node>
       <node concept="l2Vlx" id="66AaOfxkOU$" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="66AaOfxkOUD">
-    <reference role="1XX52x" target="v54s.7036359038356115102" resolve="ExtensionFieldReference" />
+    <ref role="1XX52x" to="v54s:66AaOfxkOUu" resolve="ExtensionFieldReference" />
     <node concept="3EZMnI" id="66AaOfxkOUF" role="2wV5jI">
       <node concept="1iCGBv" id="66AaOfxkOUI" role="3EZMnx">
-        <reference role="1NtTu8" target="v54s.7036359038356115103" />
+        <ref role="1NtTu8" to="v54s:66AaOfxkOUv" />
         <node concept="1sVBvm" id="66AaOfxkOUJ" role="1sWHZn">
           <node concept="3F0A7n" id="66AaOfxkOUL" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
-            <reference role="1k5W1q" target="tpen.1198595398954" resolve="Field" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            <ref role="1k5W1q" to="tpen:hshQ_OE" resolve="Field" />
           </node>
         </node>
       </node>
@@ -315,33 +315,33 @@
     </node>
   </node>
   <node concept="24kQdi" id="2KgYA8kbLuU">
-    <reference role="1XX52x" target="v54s.3175313036448544056" resolve="ExtensionPointType" />
+    <ref role="1XX52x" to="v54s:2KgYA8kbFkS" resolve="ExtensionPointType" />
     <node concept="3EZMnI" id="2KgYA8kbLuW" role="2wV5jI">
       <node concept="PMmxH" id="2wdLO7KhY75" role="3EZMnx">
         <property role="1cu_pB" value="0" />
-        <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
-        <reference role="1k5W1q" target="tpen.1186415544875" resolve="KeyWord" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="3F0ifn" id="2KgYA8kbLv1" role="3EZMnx">
         <property role="3F0ifm" value="&lt;" />
-        <reference role="1k5W1q" target="tpen.8171260302110651849" resolve="LeftAngleBracket" />
+        <ref role="1k5W1q" to="tpen:75A9veqzBn9" resolve="LeftAngleBracket" />
         <node concept="11L4FC" id="2KgYA8kbNj6" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="1iCGBv" id="2KgYA8kbLv5" role="3EZMnx">
-        <reference role="1NtTu8" target="v54s.3175313036448544057" />
+        <ref role="1NtTu8" to="v54s:2KgYA8kbFkT" />
         <node concept="1sVBvm" id="2KgYA8kbLv6" role="1sWHZn">
           <node concept="3F0A7n" id="2KgYA8kbLv8" role="2wV5jI">
             <property role="1Intyy" value="true" />
-            <reference role="1NtTu8" target="v54s.5911785528834333590" resolve="extensionName" />
-            <reference role="1k5W1q" target="tpen.1215189282959" resolve="ClassName" />
+            <ref role="1NtTu8" to="v54s:58aSpRitLIm" resolve="extensionName" />
+            <ref role="1k5W1q" to="tpen:hFIVf2f" resolve="ClassName" />
           </node>
         </node>
       </node>
       <node concept="3F0ifn" id="2KgYA8kbLv3" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
-        <reference role="1k5W1q" target="tpen.8171260302110651850" resolve="RightAngleBracket" />
+        <ref role="1k5W1q" to="tpen:75A9veqzBna" resolve="RightAngleBracket" />
         <node concept="11LMrY" id="2KgYA8kbLv9" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -350,12 +350,12 @@
     </node>
   </node>
   <node concept="24kQdi" id="2KgYA8kbNrw">
-    <reference role="1XX52x" target="v54s.3175313036448560967" resolve="GetExtensionObjectsOperation" />
+    <ref role="1XX52x" to="v54s:2KgYA8kbJt7" resolve="GetExtensionObjectsOperation" />
     <node concept="3EZMnI" id="2KgYA8kbNry" role="2wV5jI">
       <node concept="PMmxH" id="2wdLO7KhY2E" role="3EZMnx">
         <property role="1cu_pB" value="0" />
-        <reference role="PMmxG" target="tpco.2900100530630621651" resolve="alias" />
-        <reference role="1k5W1q" target="tpen.1215090647074" resolve="MethodName" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="tpen:hFD2Y0y" resolve="MethodName" />
       </node>
       <node concept="2iRfu4" id="2KgYA8kbNr$" role="2iSdaV" />
     </node>

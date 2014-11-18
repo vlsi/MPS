@@ -47,30 +47,30 @@
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="attribute" />
     <property role="TrG5h" value="Attribute" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="hP5Yayy" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1TJgyi" id="hP5Yayz" role="1TKVEl">
       <property role="TrG5h" value="value" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="1653mnvANO1" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="hP5YayQ">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="Document" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="hP5YayR" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1TJgyj" id="hP5YayS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="rootElement" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="1225239603385" resolve="Element" />
+      <ref role="20lvS9" node="hP5YayT" resolve="Element" />
     </node>
   </node>
   <node concept="1TIwiD" id="hP5YayT">
@@ -79,27 +79,27 @@
     <property role="R4oN_" value="element" />
     <property role="TrG5h" value="Element" />
     <property role="34LRSv" value="&lt;" />
-    <reference role="1TJDcQ" target="1225239603390" resolve="ElementPart" />
+    <ref role="1TJDcQ" node="hP5YayY" resolve="ElementPart" />
     <node concept="1TJgyj" id="hP5YayU" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="attribute" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1225239603361" resolve="Attribute" />
+      <ref role="20lvS9" node="hP5Yayx" resolve="Attribute" />
     </node>
     <node concept="1TJgyj" id="hP5YayV" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="content" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1225239603390" resolve="ElementPart" />
+      <ref role="20lvS9" node="hP5YayY" resolve="ElementPart" />
     </node>
   </node>
   <node concept="1TIwiD" id="hP5YayY">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ElementPart" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="hP5YayZ" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="hP5Yaz1">
@@ -107,13 +107,13 @@
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="text" />
     <property role="TrG5h" value="Text" />
-    <reference role="1TJDcQ" target="1225239603390" resolve="ElementPart" />
+    <ref role="1TJDcQ" node="hP5YayY" resolve="ElementPart" />
     <node concept="1TJgyi" id="hP5Yaz2" role="1TKVEl">
       <property role="TrG5h" value="text" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="1653mnvB2Ps" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1835621062190663819" resolve="IDontSubstituteByDefault" />
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
 </model>

@@ -89,7 +89,7 @@
       <node concept="3YBnO5" id="59r$iG981xf" role="3YBnVt">
         <property role="TrG5h" value="bbb" />
         <node concept="3YBnVM" id="59r$iG981xi" role="3YBnVY">
-          <reference role="3YBnVL" target="5934496548013480014" resolve="aaaa" />
+          <ref role="3YBnVL" node="59r$iG981xe" resolve="aaaa" />
           <node concept="LIFWc" id="59r$iG981xj" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
@@ -160,7 +160,7 @@
       <node concept="3YBnO5" id="3egmy8ee_Y7" role="3YBnVt">
         <property role="TrG5h" value="bbb" />
         <node concept="3YBnVM" id="3egmy8ee_Y9" role="3YBnVY">
-          <reference role="3YBnVL" target="3715568794894753670" resolve="c" />
+          <ref role="3YBnVL" node="3egmy8ee_Y6" resolve="c" />
           <node concept="LIFWc" id="3egmy8ee_Ya" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
@@ -181,7 +181,7 @@
     <property role="TrG5h" value="refScopeInInputLang_superMeth" />
     <node concept="3YBnO0" id="3egmy8eeCwZ" role="LiRBU">
       <property role="TrG5h" value="ExtClass" />
-      <reference role="3YBnO6" target="rrfl.3315811491560194589" resolve="SubClass" />
+      <ref role="3YBnO6" to="rrfl:2S48fJgAC8t" resolve="SubClass" />
       <node concept="3YBnO5" id="3egmy8eeCx0" role="3YBnVt">
         <property role="TrG5h" value="aaaa" />
         <node concept="3YBnVV" id="3egmy8eeCx1" role="3YBnUV">
@@ -210,7 +210,7 @@
     </node>
     <node concept="3YBnO0" id="3egmy8eeCyG" role="LiZbd">
       <property role="TrG5h" value="ExtClass" />
-      <reference role="3YBnO6" target="rrfl.3315811491560194589" resolve="SubClass" />
+      <ref role="3YBnO6" to="rrfl:2S48fJgAC8t" resolve="SubClass" />
       <node concept="3YBnO5" id="3egmy8eeCyH" role="3YBnVt">
         <property role="TrG5h" value="aaaa" />
         <node concept="3YBnVV" id="3egmy8eeCyI" role="3YBnUV">
@@ -229,7 +229,7 @@
       <node concept="3YBnO5" id="3egmy8eeCyM" role="3YBnVt">
         <property role="TrG5h" value="bbb" />
         <node concept="3YBnVM" id="3egmy8eeCyO" role="3YBnVY">
-          <reference role="3YBnVL" target="rrfl.3315811491560187090" resolve="equals" />
+          <ref role="3YBnVL" to="rrfl:2S48fJgAAji" resolve="equals" />
           <node concept="LIFWc" id="3egmy8eeCyP" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />

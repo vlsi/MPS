@@ -17,7 +17,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="7CaZq43634z">
-    <reference role="1M2myG" target="g85x.8794120090374242986" resolve="NodeWithSize" />
+    <ref role="1M2myG" to="g85x:7CaZq42SwaE" resolve="NodeWithSize" />
   </node>
 </model>
 

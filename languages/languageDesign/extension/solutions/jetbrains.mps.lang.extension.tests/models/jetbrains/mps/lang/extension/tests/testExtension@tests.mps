@@ -228,7 +228,7 @@
       <property role="TrG5h" value="TEST_OBJECT" />
       <node concept="3Tm6S6" id="2hA_2dv2AhB" role="1B3o_S" />
       <node concept="3uibUv" id="2hA_2dv2AhD" role="1tU5fm">
-        <reference role="3uigEE" target="d0sk.7036359038356246776" resolve="TestObject" />
+        <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
       </node>
     </node>
     <node concept="3Tm1VV" id="66AaOfxlr5f" role="1B3o_S" />
@@ -247,11 +247,11 @@
             <node concept="3cpWsn" id="66AaOfxlrba" role="3cpWs9">
               <property role="TrG5h" value="extensions" />
               <node concept="3uibUv" id="66AaOfxlrbb" role="1tU5fm">
-                <reference role="3uigEE" target="e2lb.~Iterable" resolve="Iterable" />
+                <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
                 <node concept="3uibUv" id="66AaOfxlrbc" role="11_B2D">
-                  <reference role="3uigEE" target="bltl.~Extension" resolve="Extension" />
+                  <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
                   <node concept="3uibUv" id="66AaOfxlrbd" role="11_B2D">
-                    <reference role="3uigEE" target="d0sk.7036359038356246776" resolve="TestObject" />
+                    <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
                   </node>
                 </node>
               </node>
@@ -259,45 +259,45 @@
                 <node concept="1eOMI4" id="3R7uD3D6Cyj" role="2Oq$k0">
                   <node concept="10QFUN" id="3R7uD3D6Cyk" role="1eOMHV">
                     <node concept="3uibUv" id="3R7uD3D6Cyn" role="10QFUM">
-                      <reference role="3uigEE" target="bltl.~ExtensionPoint" resolve="ExtensionPoint" />
+                      <ref role="3uigEE" to="bltl:~ExtensionPoint" resolve="ExtensionPoint" />
                       <node concept="3uibUv" id="3R7uD3D6Cyp" role="11_B2D">
-                        <reference role="3uigEE" target="d0sk.7036359038356246776" resolve="TestObject" />
+                        <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
                       </node>
                     </node>
                     <node concept="2O5UvJ" id="3R7uD3D6Cym" role="10QFUP">
-                      <reference role="2O5UnU" target="d0sk.7036359038356253954" resolve="testExtensionPoint" />
+                      <ref role="2O5UnU" to="d0sk:66AaOfxlmO2" resolve="testExtensionPoint" />
                     </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="66AaOfxlrbg" role="2OqNvi">
-                  <reference role="37wK5l" target="bltl.~ExtensionPoint%dgetExtensions()%cjava%dlang%dIterable" resolve="getExtensions" />
+                  <ref role="37wK5l" to="bltl:~ExtensionPoint.getExtensions():java.lang.Iterable" resolve="getExtensions" />
                 </node>
               </node>
             </node>
           </node>
           <node concept="2Hmddi" id="66AaOfxlrbj" role="3cqZAp">
             <node concept="37vLTw" id="3GM_nagTstX" role="2Hmdds">
-              <reference role="3cqZAo" target="7036359038356271818" resolve="extensions" />
+              <ref role="3cqZAo" node="66AaOfxlrba" resolve="extensions" />
             </node>
           </node>
           <node concept="3cpWs8" id="66AaOfxlrdE" role="3cqZAp">
             <node concept="3cpWsn" id="66AaOfxlrdF" role="3cpWs9">
               <property role="TrG5h" value="it" />
               <node concept="3uibUv" id="66AaOfxlrdG" role="1tU5fm">
-                <reference role="3uigEE" target="k7g3.~Iterator" resolve="Iterator" />
+                <ref role="3uigEE" to="k7g3:~Iterator" resolve="Iterator" />
                 <node concept="3uibUv" id="66AaOfxlrdH" role="11_B2D">
-                  <reference role="3uigEE" target="bltl.~Extension" resolve="Extension" />
+                  <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
                   <node concept="3uibUv" id="66AaOfxlrdI" role="11_B2D">
-                    <reference role="3uigEE" target="d0sk.7036359038356246776" resolve="TestObject" />
+                    <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
                   </node>
                 </node>
               </node>
               <node concept="2OqwBi" id="66AaOfxlrdJ" role="33vP2m">
                 <node concept="37vLTw" id="3GM_nagT$a2" role="2Oq$k0">
-                  <reference role="3cqZAo" target="7036359038356271818" resolve="extensions" />
+                  <ref role="3cqZAo" node="66AaOfxlrba" resolve="extensions" />
                 </node>
                 <node concept="liA8E" id="66AaOfxlrdL" role="2OqNvi">
-                  <reference role="37wK5l" target="e2lb.~Iterable%diterator()%cjava%dutil%dIterator" resolve="iterator" />
+                  <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
                 </node>
               </node>
             </node>
@@ -305,10 +305,10 @@
           <node concept="3vwNmj" id="66AaOfxlrdY" role="3cqZAp">
             <node concept="2OqwBi" id="66AaOfxlre3" role="3vwVQn">
               <node concept="37vLTw" id="3GM_nagTxrV" role="2Oq$k0">
-                <reference role="3cqZAo" target="7036359038356271979" resolve="it" />
+                <ref role="3cqZAo" node="66AaOfxlrdF" resolve="it" />
               </node>
               <node concept="liA8E" id="66AaOfxlre8" role="2OqNvi">
-                <reference role="37wK5l" target="k7g3.~Iterator%dhasNext()%cboolean" resolve="hasNext" />
+                <ref role="37wK5l" to="k7g3:~Iterator.hasNext():boolean" resolve="hasNext" />
               </node>
             </node>
           </node>
@@ -316,32 +316,32 @@
             <node concept="3cpWsn" id="66AaOfxlrbO" role="3cpWs9">
               <property role="TrG5h" value="ext" />
               <node concept="3uibUv" id="66AaOfxlrbP" role="1tU5fm">
-                <reference role="3uigEE" target="bltl.~Extension" resolve="Extension" />
+                <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
                 <node concept="3uibUv" id="66AaOfxlrbQ" role="11_B2D">
-                  <reference role="3uigEE" target="d0sk.7036359038356246776" resolve="TestObject" />
+                  <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
                 </node>
               </node>
               <node concept="2OqwBi" id="66AaOfxlrbR" role="33vP2m">
                 <node concept="37vLTw" id="3GM_nagTxKP" role="2Oq$k0">
-                  <reference role="3cqZAo" target="7036359038356271979" resolve="it" />
+                  <ref role="3cqZAo" node="66AaOfxlrdF" resolve="it" />
                 </node>
                 <node concept="liA8E" id="66AaOfxlrbV" role="2OqNvi">
-                  <reference role="37wK5l" target="k7g3.~Iterator%dnext()%cjava%dlang%dObject" resolve="next" />
+                  <ref role="37wK5l" to="k7g3:~Iterator.next():java.lang.Object" resolve="next" />
                 </node>
               </node>
             </node>
           </node>
           <node concept="3$NI$W" id="66AaOfxlrdA" role="3cqZAp">
             <node concept="3uibUv" id="66AaOfxlrdD" role="3$Qgvv">
-              <reference role="3uigEE" target="k7g3.~NoSuchElementException" resolve="NoSuchElementException" />
+              <ref role="3uigEE" to="k7g3:~NoSuchElementException" resolve="NoSuchElementException" />
             </node>
             <node concept="3clFbF" id="66AaOfxlrdN" role="3$Oloe">
               <node concept="2OqwBi" id="66AaOfxlrdR" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTygv" role="2Oq$k0">
-                  <reference role="3cqZAo" target="7036359038356271979" resolve="it" />
+                  <ref role="3cqZAo" node="66AaOfxlrdF" resolve="it" />
                 </node>
                 <node concept="liA8E" id="66AaOfxlrdW" role="2OqNvi">
-                  <reference role="37wK5l" target="k7g3.~Iterator%dnext()%cjava%dlang%dObject" resolve="next" />
+                  <ref role="37wK5l" to="k7g3:~Iterator.next():java.lang.Object" resolve="next" />
                 </node>
               </node>
             </node>
@@ -355,14 +355,14 @@
             <node concept="3cpWsn" id="66AaOfxlrca" role="3cpWs9">
               <property role="TrG5h" value="to" />
               <node concept="3uibUv" id="66AaOfxlrcb" role="1tU5fm">
-                <reference role="3uigEE" target="d0sk.7036359038356246776" resolve="TestObject" />
+                <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
               </node>
               <node concept="2OqwBi" id="66AaOfxlrcc" role="33vP2m">
                 <node concept="37vLTw" id="3GM_nagT_22" role="2Oq$k0">
-                  <reference role="3cqZAo" target="7036359038356271860" resolve="ext" />
+                  <ref role="3cqZAo" node="66AaOfxlrbO" resolve="ext" />
                 </node>
                 <node concept="liA8E" id="66AaOfxlrce" role="2OqNvi">
-                  <reference role="37wK5l" target="bltl.~Extension%dget()%cjava%dlang%dObject" resolve="get" />
+                  <ref role="37wK5l" to="bltl:~Extension.get():java.lang.Object" resolve="get" />
                 </node>
               </node>
             </node>
@@ -370,10 +370,10 @@
           <node concept="3clFbF" id="2hA_2dv2AhW" role="3cqZAp">
             <node concept="37vLTI" id="2hA_2dv2Ai0" role="3clFbG">
               <node concept="37vLTw" id="3GM_nagTvN1" role="37vLTx">
-                <reference role="3cqZAo" target="7036359038356271882" resolve="to" />
+                <ref role="3cqZAo" node="66AaOfxlrca" resolve="to" />
               </node>
               <node concept="37vLTw" id="2BHiRxeojAz" role="37vLTJ">
-                <reference role="3cqZAo" target="2622946712629175398" resolve="TEST_OBJECT" />
+                <ref role="3cqZAo" node="2hA_2dv2AhA" resolve="TEST_OBJECT" />
               </node>
             </node>
           </node>
@@ -383,26 +383,26 @@
             </node>
             <node concept="2OqwBi" id="66AaOfxlrde" role="3tpDZA">
               <node concept="37vLTw" id="3GM_nagTrEE" role="2Oq$k0">
-                <reference role="3cqZAo" target="7036359038356271882" resolve="to" />
+                <ref role="3cqZAo" node="66AaOfxlrca" resolve="to" />
               </node>
               <node concept="2S8uIT" id="66AaOfxlrdk" role="2OqNvi">
-                <reference role="2S8YL0" target="d0sk.7036359038356271907" resolve="value" />
+                <ref role="2S8YL0" to="d0sk:66AaOfxlrcz" resolve="value" />
               </node>
             </node>
           </node>
           <node concept="3vFxKo" id="66AaOfxlrdp" role="3cqZAp">
             <node concept="2OqwBi" id="66AaOfxlrdu" role="3vFALc">
               <node concept="37vLTw" id="3GM_nagTtgG" role="2Oq$k0">
-                <reference role="3cqZAo" target="7036359038356271882" resolve="to" />
+                <ref role="3cqZAo" node="66AaOfxlrca" resolve="to" />
               </node>
               <node concept="2S8uIT" id="66AaOfxlrd$" role="2OqNvi">
-                <reference role="2S8YL0" target="d0sk.7036359038356271889" resolve="shutDown" />
+                <ref role="2S8YL0" to="d0sk:66AaOfxlrch" resolve="shutDown" />
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="2hA_2dv1Dss" role="2AJF6D">
-          <reference role="2AI5Lk" target="hxfr.~MPSLaunch" resolve="MPSLaunch" />
+          <ref role="2AI5Lk" to="hxfr:~MPSLaunch" resolve="MPSLaunch" />
         </node>
       </node>
       <node concept="3s$Bmu" id="2hA_2dv2TXX" role="3s_gse">
@@ -412,19 +412,19 @@
         <node concept="3clFbS" id="2hA_2dv2TY0" role="3clF47">
           <node concept="3ykFI1" id="2hA_2dv2Uph" role="3cqZAp">
             <node concept="10M0yZ" id="2hA_2dv2Upj" role="3ykU8v">
-              <reference role="1PxDUh" target="d0sk.2622946712629256035" resolve="LazyTestObject" />
-              <reference role="3cqZAo" target="d0sk.2622946712629256041" resolve="INSTANCE" />
+              <ref role="1PxDUh" to="d0sk:2hA_2dv2TXz" resolve="LazyTestObject" />
+              <ref role="3cqZAo" to="d0sk:2hA_2dv2TXD" resolve="INSTANCE" />
             </node>
           </node>
           <node concept="3cpWs8" id="2hA_2dv2TY2" role="3cqZAp">
             <node concept="3cpWsn" id="2hA_2dv2TY3" role="3cpWs9">
               <property role="TrG5h" value="extensions" />
               <node concept="3uibUv" id="2hA_2dv2TY4" role="1tU5fm">
-                <reference role="3uigEE" target="e2lb.~Iterable" resolve="Iterable" />
+                <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
                 <node concept="3uibUv" id="2hA_2dv2TY5" role="11_B2D">
-                  <reference role="3uigEE" target="bltl.~Extension" resolve="Extension" />
+                  <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
                   <node concept="3uibUv" id="2hA_2dv2Uo_" role="11_B2D">
-                    <reference role="3uigEE" target="d0sk.2622946712629256035" resolve="LazyTestObject" />
+                    <ref role="3uigEE" to="d0sk:2hA_2dv2TXz" resolve="LazyTestObject" />
                   </node>
                 </node>
               </node>
@@ -432,18 +432,18 @@
                 <node concept="1eOMI4" id="3R7uD3D6CxZ" role="2Oq$k0">
                   <node concept="10QFUN" id="3R7uD3D6Cy0" role="1eOMHV">
                     <node concept="3uibUv" id="3R7uD3D6Cy3" role="10QFUM">
-                      <reference role="3uigEE" target="bltl.~ExtensionPoint" resolve="ExtensionPoint" />
+                      <ref role="3uigEE" to="bltl:~ExtensionPoint" resolve="ExtensionPoint" />
                       <node concept="3uibUv" id="3R7uD3D6Cy5" role="11_B2D">
-                        <reference role="3uigEE" target="d0sk.2622946712629256035" resolve="LazyTestObject" />
+                        <ref role="3uigEE" to="d0sk:2hA_2dv2TXz" resolve="LazyTestObject" />
                       </node>
                     </node>
                     <node concept="2O5UvJ" id="3R7uD3D6Cy2" role="10QFUP">
-                      <reference role="2O5UnU" target="d0sk.2622946712629256033" resolve="lazyTestExtensionPoint" />
+                      <ref role="2O5UnU" to="d0sk:2hA_2dv2TXx" resolve="lazyTestExtensionPoint" />
                     </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="2hA_2dv2TY9" role="2OqNvi">
-                  <reference role="37wK5l" target="bltl.~ExtensionPoint%dgetExtensions()%cjava%dlang%dIterable" resolve="getExtensions" />
+                  <ref role="37wK5l" to="bltl:~ExtensionPoint.getExtensions():java.lang.Iterable" resolve="getExtensions" />
                 </node>
               </node>
             </node>
@@ -452,45 +452,45 @@
             <node concept="3cpWsn" id="2hA_2dv2Up6" role="3cpWs9">
               <property role="TrG5h" value="lzo" />
               <node concept="3uibUv" id="2hA_2dv2Up7" role="1tU5fm">
-                <reference role="3uigEE" target="d0sk.2622946712629256035" resolve="LazyTestObject" />
+                <ref role="3uigEE" to="d0sk:2hA_2dv2TXz" resolve="LazyTestObject" />
               </node>
               <node concept="2OqwBi" id="2hA_2dv2Up8" role="33vP2m">
                 <node concept="2OqwBi" id="2hA_2dv2Up9" role="2Oq$k0">
                   <node concept="2OqwBi" id="2hA_2dv2Upa" role="2Oq$k0">
                     <node concept="37vLTw" id="3GM_nagT_NG" role="2Oq$k0">
-                      <reference role="3cqZAo" target="2622946712629256067" resolve="extensions" />
+                      <ref role="3cqZAo" node="2hA_2dv2TY3" resolve="extensions" />
                     </node>
                     <node concept="liA8E" id="2hA_2dv2Upc" role="2OqNvi">
-                      <reference role="37wK5l" target="e2lb.~Iterable%diterator()%cjava%dutil%dIterator" resolve="iterator" />
+                      <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
                     </node>
                   </node>
                   <node concept="liA8E" id="2hA_2dv2Upd" role="2OqNvi">
-                    <reference role="37wK5l" target="k7g3.~Iterator%dnext()%cjava%dlang%dObject" resolve="next" />
+                    <ref role="37wK5l" to="k7g3:~Iterator.next():java.lang.Object" resolve="next" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2hA_2dv2Upe" role="2OqNvi">
-                  <reference role="37wK5l" target="bltl.~Extension%dget()%cjava%dlang%dObject" resolve="get" />
+                  <ref role="37wK5l" to="bltl:~Extension.get():java.lang.Object" resolve="get" />
                 </node>
               </node>
             </node>
           </node>
           <node concept="2Hmddi" id="2hA_2dv2Upt" role="3cqZAp">
             <node concept="37vLTw" id="3GM_nagTtuu" role="2Hmdds">
-              <reference role="3cqZAo" target="2622946712629257798" resolve="lzo" />
+              <ref role="3cqZAo" node="2hA_2dv2Up6" resolve="lzo" />
             </node>
           </node>
           <node concept="3vMLTj" id="2hA_2dv2Upn" role="3cqZAp">
             <node concept="37vLTw" id="3GM_nagTy6W" role="3tpDZA">
-              <reference role="3cqZAo" target="2622946712629257798" resolve="lzo" />
+              <ref role="3cqZAo" node="2hA_2dv2Up6" resolve="lzo" />
             </node>
             <node concept="10M0yZ" id="2hA_2dv2Upq" role="3tpDZB">
-              <reference role="3cqZAo" target="d0sk.2622946712629256041" resolve="INSTANCE" />
-              <reference role="1PxDUh" target="d0sk.2622946712629256035" resolve="LazyTestObject" />
+              <ref role="3cqZAo" to="d0sk:2hA_2dv2TXD" resolve="INSTANCE" />
+              <ref role="1PxDUh" to="d0sk:2hA_2dv2TXz" resolve="LazyTestObject" />
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="2hA_2dv2TY1" role="2AJF6D">
-          <reference role="2AI5Lk" target="hxfr.~MPSLaunch" resolve="MPSLaunch" />
+          <ref role="2AI5Lk" to="hxfr:~MPSLaunch" resolve="MPSLaunch" />
         </node>
       </node>
       <node concept="3s$Bmu" id="2KgYA8kbIU6" role="3s_gse">
@@ -506,7 +506,7 @@
                 <node concept="2OqwBi" id="3R7uD3D6C$L" role="2Oq$k0">
                   <node concept="2OqwBi" id="3R7uD3D6C$M" role="2Oq$k0">
                     <node concept="2O5UvJ" id="3R7uD3D6C$N" role="2Oq$k0">
-                      <reference role="2O5UnU" target="d0sk.4451661519483734255" resolve="multiExtensionPoint" />
+                      <ref role="2O5UnU" to="d0sk:3R7uD3D6CzJ" resolve="multiExtensionPoint" />
                     </node>
                     <node concept="SfwO_" id="3R7uD3D6C$O" role="2OqNvi" />
                   </node>
@@ -515,7 +515,7 @@
                       <node concept="3clFbS" id="3R7uD3D6C$R" role="1bW5cS">
                         <node concept="3clFbF" id="3R7uD3D6C$S" role="3cqZAp">
                           <node concept="37vLTw" id="2BHiRxgmaxK" role="3clFbG">
-                            <reference role="3cqZAo" target="4451661519483734330" resolve="it" />
+                            <ref role="3cqZAo" node="3R7uD3D6C$U" resolve="it" />
                           </node>
                         </node>
                       </node>
@@ -542,12 +542,12 @@
               <property role="Xl_RC" value="salam, dunya" />
             </node>
             <node concept="37vLTw" id="3GM_nagTzgC" role="3tpDZA">
-              <reference role="3cqZAo" target="4451661519483734318" resolve="string" />
+              <ref role="3cqZAo" node="3R7uD3D6C$I" resolve="string" />
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="2KgYA8kbIUa" role="2AJF6D">
-          <reference role="2AI5Lk" target="hxfr.~MPSLaunch" resolve="MPSLaunch" />
+          <ref role="2AI5Lk" to="hxfr:~MPSLaunch" resolve="MPSLaunch" />
         </node>
       </node>
     </node>
@@ -558,34 +558,34 @@
             <node concept="3vFxKo" id="2hA_2dv2L2r" role="3cqZAp">
               <node concept="2OqwBi" id="2hA_2dv2L2z" role="3vFALc">
                 <node concept="37vLTw" id="2BHiRxeogpR" role="2Oq$k0">
-                  <reference role="3cqZAo" target="2622946712629175398" resolve="TEST_OBJECT" />
+                  <ref role="3cqZAo" node="2hA_2dv2AhA" resolve="TEST_OBJECT" />
                 </node>
                 <node concept="2S8uIT" id="2hA_2dv2L2$" role="2OqNvi">
-                  <reference role="2S8YL0" target="d0sk.7036359038356271889" resolve="shutDown" />
+                  <ref role="2S8YL0" to="d0sk:66AaOfxlrch" resolve="shutDown" />
                 </node>
               </node>
             </node>
             <node concept="3clFbF" id="2hA_2dv2AwK" role="3cqZAp">
               <node concept="2OqwBi" id="2hA_2dv2G6T" role="3clFbG">
                 <node concept="2YIFZM" id="2hA_2dv2G6Q" role="2Oq$k0">
-                  <reference role="37wK5l" target="oqw1.~ApplicationManagerEx%dgetApplicationEx()%ccom%dintellij%dopenapi%dapplication%dex%dApplicationEx" resolve="getApplicationEx" />
-                  <reference role="1Pybhc" target="oqw1.~ApplicationManagerEx" resolve="ApplicationManagerEx" />
+                  <ref role="37wK5l" to="oqw1:~ApplicationManagerEx.getApplicationEx():com.intellij.openapi.application.ex.ApplicationEx" resolve="getApplicationEx" />
+                  <ref role="1Pybhc" to="oqw1:~ApplicationManagerEx" resolve="ApplicationManagerEx" />
                 </node>
                 <node concept="liA8E" id="2hA_2dv2Ihi" role="2OqNvi">
-                  <reference role="37wK5l" target="yla8.~Application%daddApplicationListener(com%dintellij%dopenapi%dapplication%dApplicationListener)%cvoid" resolve="addApplicationListener" />
+                  <ref role="37wK5l" to="yla8:~Application.addApplicationListener(com.intellij.openapi.application.ApplicationListener):void" resolve="addApplicationListener" />
                   <node concept="2ShNRf" id="2hA_2dv2Ihj" role="37wK5m">
                     <node concept="YeOm9" id="2hA_2dv2L1P" role="2ShVmc">
                       <node concept="1Y3b0j" id="2hA_2dv2L1Q" role="YeSDq">
                         <property role="2bfB8j" value="true" />
-                        <reference role="1Y3XeK" target="yla8.~ApplicationAdapter" resolve="ApplicationAdapter" />
-                        <reference role="37wK5l" target="yla8.~ApplicationAdapter%d&lt;init&gt;()" resolve="ApplicationAdapter" />
+                        <ref role="1Y3XeK" to="yla8:~ApplicationAdapter" resolve="ApplicationAdapter" />
+                        <ref role="37wK5l" to="yla8:~ApplicationAdapter.&lt;init&gt;()" resolve="ApplicationAdapter" />
                         <node concept="3clFb_" id="2hA_2dv2L2D" role="jymVt">
                           <property role="IEkAT" value="false" />
                           <property role="1EzhhJ" value="false" />
                           <property role="TrG5h" value="applicationExiting" />
                           <property role="DiZV1" value="false" />
                           <node concept="2AHcQZ" id="2hA_2dv2L2H" role="2AJF6D">
-                            <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+                            <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
                           </node>
                           <node concept="3clFbS" id="2hA_2dv2L2G" role="3clF47">
                             <node concept="3clFbJ" id="2hA_2dv2L2K" role="3cqZAp">
@@ -593,7 +593,7 @@
                                 <node concept="YS8fn" id="2hA_2dv2L2Y" role="3cqZAp">
                                   <node concept="2ShNRf" id="2hA_2dv2L30" role="YScLw">
                                     <node concept="1pGfFk" id="2hA_2dv2L32" role="2ShVmc">
-                                      <reference role="37wK5l" target="e2lb.~RuntimeException%d&lt;init&gt;(java%dlang%dString)" resolve="RuntimeException" />
+                                      <ref role="37wK5l" to="e2lb:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
                                       <node concept="Xl_RD" id="2hA_2dv2L33" role="37wK5m">
                                         <property role="Xl_RC" value="!TestObject.shutDown" />
                                       </node>
@@ -604,11 +604,11 @@
                               <node concept="3fqX7Q" id="2hA_2dv2L2N" role="3clFbw">
                                 <node concept="2OqwBi" id="2hA_2dv2L2S" role="3fr31v">
                                   <node concept="10M0yZ" id="2hA_2dv2L2P" role="2Oq$k0">
-                                    <reference role="1PxDUh" target="7036359038356271438" resolve="Extension_Test" />
-                                    <reference role="3cqZAo" target="2622946712629175398" resolve="TEST_OBJECT" />
+                                    <ref role="1PxDUh" node="66AaOfxlr5e" resolve="Extension_Test" />
+                                    <ref role="3cqZAo" node="2hA_2dv2AhA" resolve="TEST_OBJECT" />
                                   </node>
                                   <node concept="2S8uIT" id="2hA_2dv2L2X" role="2OqNvi">
-                                    <reference role="2S8YL0" target="d0sk.7036359038356271889" resolve="shutDown" />
+                                    <ref role="2S8YL0" to="d0sk:66AaOfxlrch" resolve="shutDown" />
                                   </node>
                                 </node>
                               </node>
@@ -628,7 +628,7 @@
           <node concept="3y3z36" id="KtFfaNqmGG" role="3clFbw">
             <node concept="10Nm6u" id="KtFfaNqmGU" role="3uHU7w" />
             <node concept="37vLTw" id="KtFfaNpX$F" role="3uHU7B">
-              <reference role="3cqZAo" target="2622946712629175398" resolve="TEST_OBJECT" />
+              <ref role="3cqZAo" node="2hA_2dv2AhA" resolve="TEST_OBJECT" />
             </node>
           </node>
         </node>

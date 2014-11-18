@@ -57,7 +57,7 @@
     <property role="_Wzho" value="Remove instances of obsolete concepts in typesystem" />
     <node concept="_XfAh" id="6kw_BboUDlF" role="_YvDr">
       <property role="_XH9r" value="Remove Dependency" />
-      <reference role="_XDHR" target="tpd4.1193733698246" resolve="Dependency" />
+      <ref role="_XDHR" to="tpd4:hnK4Fb6" resolve="Dependency" />
       <node concept="_ZGcI" id="6kw_BboUDlG" role="_XPhp">
         <node concept="3clFbS" id="6kw_BboUDlH" role="2VODD2">
           <node concept="3clFbF" id="6kw_BboUDlI" role="3cqZAp">
@@ -71,7 +71,7 @@
     </node>
     <node concept="_XfAh" id="66u2SbKUg$e" role="_YvDr">
       <property role="_XH9r" value="Remove DependentComputationItem" />
-      <reference role="_XDHR" target="tpd4.8058965347377019242" resolve="DependentComputationItem" />
+      <ref role="_XDHR" to="tpd4:6Znc$$3_J_E" resolve="DependentComputationItem" />
       <node concept="_ZGcI" id="66u2SbKUg$f" role="_XPhp">
         <node concept="3clFbS" id="66u2SbKUg$g" role="2VODD2">
           <node concept="3clFbF" id="66u2SbKUg$h" role="3cqZAp">

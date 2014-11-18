@@ -111,15 +111,15 @@
   <node concept="bUwia" id="hMXQFwg">
     <property role="TrG5h" value="main" />
     <node concept="3lhOvk" id="hMXRdUH" role="3lj3bC">
-      <reference role="30HIoZ" target="jfvl.1222954937628" resolve="TheSimplestConcept" />
-      <reference role="3lhOvi" target="1222955948389" resolve="Hello" />
+      <ref role="30HIoZ" to="jfvl:hMXMQOs" resolve="TheSimplestConcept" />
+      <ref role="3lhOvi" node="hMXQH__" resolve="Hello" />
     </node>
   </node>
   <node concept="312cEu" id="hMXQH__">
     <property role="TrG5h" value="Hello" />
     <node concept="3Tm1VV" id="hMXQH_A" role="1B3o_S" />
     <node concept="n94m4" id="hMXQH_F" role="lGtFl">
-      <reference role="n9lRv" target="jfvl.1222954937628" resolve="TheSimplestConcept" />
+      <ref role="n9lRv" to="jfvl:hMXMQOs" resolve="TheSimplestConcept" />
     </node>
     <node concept="17Uvod" id="hMXR3vH" role="lGtFl">
       <property role="2qtEX9" value="name" />
@@ -129,7 +129,7 @@
             <node concept="2OqwBi" id="hMXR3Tr" role="3clFbG">
               <node concept="30H73N" id="hMXR3SF" role="2Oq$k0" />
               <node concept="3TrcHB" id="hMXR43I" role="2OqNvi">
-                <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
           </node>
@@ -149,11 +149,11 @@
         <node concept="3clFbF" id="hMXQS$p" role="3cqZAp">
           <node concept="2OqwBi" id="hMXQZSx" role="3clFbG">
             <node concept="10M0yZ" id="hMXQS$q" role="2Oq$k0">
-              <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
-              <reference role="3cqZAo" target="e2lb.~System%dout" resolve="out" />
+              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="hMXR12z" role="2OqNvi">
-              <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="hMXR1dN" role="37wK5m">
                 <property role="Xl_RC" value="Hello" />
                 <node concept="17Uvod" id="hMXR1Yp" role="lGtFl">
@@ -164,7 +164,7 @@
                         <node concept="2OqwBi" id="hMXR2oQ" role="3clFbG">
                           <node concept="30H73N" id="hMXR2nQ" role="2Oq$k0" />
                           <node concept="3TrcHB" id="hMXR2xV" role="2OqNvi">
-                            <reference role="3TsBF5" target="jfvl.1222954945083" resolve="text" />
+                            <ref role="3TsBF5" to="jfvl:hMXMSCV" resolve="text" />
                           </node>
                         </node>
                       </node>

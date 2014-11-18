@@ -27,13 +27,13 @@
     </language>
   </registry>
   <node concept="13h7C7" id="629I_qOyBh$">
-    <reference role="13h7C2" target="68nn.2613454275903805304" resolve="AttractsFocusBlock" />
+    <ref role="13h7C2" to="68nn:2h4QH4RYdtS" resolve="AttractsFocusBlock" />
     <node concept="13hLZK" id="629I_qOyBh_" role="13h7CW">
       <node concept="3clFbS" id="629I_qOyBhA" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="1653mnvB2SY">
-    <reference role="13h7C2" target="68nn.7658393498702771296" resolve="ReferenceAnnotataion" />
+    <ref role="13h7C2" to="68nn:6D854YClJhw" resolve="ReferenceAnnotataion" />
     <node concept="13hLZK" id="1653mnvB2SZ" role="13h7CW">
       <node concept="3clFbS" id="1653mnvB2T0" role="2VODD2" />
     </node>

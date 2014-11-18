@@ -51,42 +51,42 @@
   </registry>
   <node concept="1TIwiD" id="7Mb2akaesqV">
     <property role="TrG5h" value="IconResource" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="63hNSM1YIC9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="iconExpression" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="7Mb2akaesqW" role="PzmwI">
-      <reference role="PrY4T" target="8974276187400029898" resolve="Resource" />
+      <ref role="PrY4T" node="7Mb2akaesra" resolve="Resource" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Mb2akaesqX">
     <property role="19KtqR" value="true" />
     <property role="MwhBj" value="${language_descriptor}/icons/iconResourceBundle.png" />
     <property role="TrG5h" value="IconResourceBundle" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7Mb2akaesqY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="icons" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="8974276187400029888" resolve="IconResourceDeclaration" />
+      <ref role="20lvS9" node="7Mb2akaesr0" resolve="IconResourceDeclaration" />
     </node>
     <node concept="PrWs8" id="7Mb2akaesqZ" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Mb2akaesr0">
     <property role="TrG5h" value="IconResourceDeclaration" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7Mb2akaesr1" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="iconExpression" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="7Mb2akaesr2" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Mb2akaesr3">
@@ -95,12 +95,12 @@
     <property role="TrG5h" value="IconResourceExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="icon" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="7Mb2akaesr5" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="icon" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="8974276187400029883" resolve="IconResource" />
+      <ref role="20lvS9" node="7Mb2akaesqV" resolve="IconResource" />
     </node>
     <node concept="asaX9" id="7Mb2akaesr6" role="lGtFl" />
   </node>
@@ -110,19 +110,19 @@
     <property role="TrG5h" value="IconResourceReference" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="icon" />
-    <reference role="1TJDcQ" target="tpee.1068431790191" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="7Mb2akaesr8" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="8974276187400029888" resolve="IconResourceDeclaration" />
+      <ref role="20lvS9" node="7Mb2akaesr0" resolve="IconResourceDeclaration" />
     </node>
   </node>
   <node concept="PlHQZ" id="7Mb2akaesra">
     <property role="TrG5h" value="Resource" />
     <node concept="1TJgyi" id="7Mb2akaesrb" role="1TKVEl">
       <property role="TrG5h" value="path" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

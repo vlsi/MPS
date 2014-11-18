@@ -111,7 +111,7 @@
     <property role="TrG5h" value="dowcast" />
     <node concept="3UNGvq" id="6RpXVOy70P7" role="3UOs0v">
       <property role="3mWRNi" value="downcast to low-level type" />
-      <reference role="3UNGvu" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="3UNGvu" to="tpee:fz3vP1J" resolve="Expression" />
       <node concept="3kRJcU" id="6RpXVOy70P8" role="3kShCk">
         <node concept="3clFbS" id="6RpXVOy70P9" role="2VODD2">
           <node concept="3clFbF" id="6RpXVOy70QB" role="3cqZAp">
@@ -119,7 +119,7 @@
               <node concept="1UaxmW" id="6RpXVOy70QC" role="2Oq$k0">
                 <node concept="1YaCAy" id="6RpXVOy70R5" role="1Ub_4A">
                   <property role="TrG5h" value="debuggedType" />
-                  <reference role="1YaFvo" target="8sls.4544608336420691672" resolve="DebuggedType" />
+                  <ref role="1YaFvo" to="8sls:3WhGjgvC_Vo" resolve="DebuggedType" />
                 </node>
                 <node concept="2OqwBi" id="6RpXVOy70QG" role="1Ub_4B">
                   <node concept="Cj7Ep" id="6RpXVOy70QF" role="2Oq$k0" />
@@ -132,7 +132,7 @@
         </node>
       </node>
       <node concept="tYCnQ" id="6RpXVOy70Rb" role="_1QTJ">
-        <reference role="uz4UX" target="8sls.7915630211773477333" resolve="DownCastToLowLevel" />
+        <ref role="uz4UX" to="8sls:6RpXVOy6V7l" resolve="DownCastToLowLevel" />
         <node concept="Cmt7Y" id="6RpXVOy70Rj" role="uz6Si">
           <node concept="Cnhdc" id="6RpXVOy70Rk" role="Cncma">
             <node concept="3clFbS" id="6RpXVOy70Rl" role="2VODD2">
@@ -140,12 +140,12 @@
                 <node concept="3cpWsn" id="6RpXVOy70Rz" role="3cpWs9">
                   <property role="TrG5h" value="downcast" />
                   <node concept="3Tqbb2" id="6RpXVOy70R$" role="1tU5fm">
-                    <reference role="ehGHo" target="8sls.7915630211773477333" resolve="DownCastToLowLevel" />
+                    <ref role="ehGHo" to="8sls:6RpXVOy6V7l" resolve="DownCastToLowLevel" />
                   </node>
                   <node concept="2OqwBi" id="6RpXVOy70RG" role="33vP2m">
                     <node concept="Cj7Ep" id="6RpXVOy70RF" role="2Oq$k0" />
                     <node concept="2DeJnW" id="6RpXVOy70RK" role="2OqNvi">
-                      <reference role="1_rbq0" target="8sls.7915630211773477333" resolve="DownCastToLowLevel" />
+                      <ref role="1_rbq0" to="8sls:6RpXVOy6V7l" resolve="DownCastToLowLevel" />
                     </node>
                   </node>
                 </node>
@@ -154,10 +154,10 @@
                 <node concept="2OqwBi" id="6RpXVOy70RT" role="3clFbG">
                   <node concept="2OqwBi" id="6RpXVOy70RO" role="2Oq$k0">
                     <node concept="37vLTw" id="3GM_nagTysQ" role="2Oq$k0">
-                      <reference role="3cqZAo" target="7915630211773500899" resolve="downcast" />
+                      <ref role="3cqZAo" node="6RpXVOy70Rz" resolve="downcast" />
                     </node>
                     <node concept="3TrEf2" id="6RpXVOy70RS" role="2OqNvi">
-                      <reference role="3Tt5mk" target="8sls.7915630211773477790" />
+                      <ref role="3Tt5mk" to="8sls:6RpXVOy6Veu" />
                     </node>
                   </node>
                   <node concept="2oxUTD" id="6RpXVOy70RX" role="2OqNvi">
@@ -167,7 +167,7 @@
               </node>
               <node concept="3cpWs6" id="6RpXVOy70S4" role="3cqZAp">
                 <node concept="37vLTw" id="3GM_nagTrCr" role="3cqZAk">
-                  <reference role="3cqZAo" target="7915630211773500899" resolve="downcast" />
+                  <ref role="3cqZAo" node="6RpXVOy70Rz" resolve="downcast" />
                 </node>
               </node>
             </node>

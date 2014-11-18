@@ -49,18 +49,18 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="PropertiesFile" />
     <property role="34LRSv" value="properties file" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3rV3sBXezF3" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="lines" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="3961775458390522562" resolve="PropertiesLine" />
+      <ref role="20lvS9" node="3rV3sBXezF2" resolve="PropertiesLine" />
     </node>
     <node concept="PrWs8" id="3rV3sBXezF0" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="7BASdL19Ywx" role="PzmwI">
-      <reference role="PrY4T" target="356a.5067982036267369892" resolve="UnitConcept" />
+      <ref role="PrY4T" to="356a:4pl5GY7LKm$" resolve="UnitConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="3rV3sBXezF1">
@@ -68,13 +68,13 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="PropertiesDeclaration" />
     <property role="34LRSv" value="property" />
-    <reference role="1TJDcQ" target="3961775458390522562" resolve="PropertiesLine" />
+    <ref role="1TJDcQ" node="3rV3sBXezF2" resolve="PropertiesLine" />
     <node concept="1TJgyi" id="3rV3sBXezF$" role="1TKVEl">
       <property role="TrG5h" value="value" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="3rV3sBXezFz" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="3rV3sBXezF2">
@@ -82,7 +82,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="PropertiesLine" />
     <property role="34LRSv" value="&lt;empty line&gt;" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="3rV3sBXezFp">
     <property role="R5$K7" value="false" />
@@ -90,10 +90,10 @@
     <property role="TrG5h" value="PropertiesComment" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="#" />
-    <reference role="1TJDcQ" target="3961775458390522562" resolve="PropertiesLine" />
+    <ref role="1TJDcQ" node="3rV3sBXezF2" resolve="PropertiesLine" />
     <node concept="1TJgyi" id="3rV3sBXezFq" role="1TKVEl">
       <property role="TrG5h" value="text" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

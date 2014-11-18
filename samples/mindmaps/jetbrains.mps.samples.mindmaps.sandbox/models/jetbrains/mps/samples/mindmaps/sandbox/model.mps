@@ -36,32 +36,32 @@
   <node concept="3Y3vc6" id="55Vum9npoLH">
     <property role="TrG5h" value="JetBrains Products" />
     <node concept="3Y3jLq" id="4oNuVmrIUwg" role="3Y3kdi">
-      <reference role="3Y3kdm" target="5871420002487602288" resolve="IntelliJ IDEA CE" />
-      <reference role="64GfW" target="5058522826399435305" resolve="JetBrains" />
+      <ref role="3Y3kdm" node="55Vum9npoLK" resolve="IntelliJ IDEA CE" />
+      <ref role="64GfW" node="4oNuVmrJ$CD" resolve="JetBrains" />
     </node>
     <node concept="3Y3jLq" id="4oNuVmrJe0u" role="3Y3kdi">
-      <reference role="3Y3kdm" target="5058522826399342615" resolve="IntelliJ IDEA UE" />
-      <reference role="64GfW" target="5058522826399435305" resolve="JetBrains" />
+      <ref role="3Y3kdm" node="4oNuVmrJe0n" resolve="IntelliJ IDEA UE" />
+      <ref role="64GfW" node="4oNuVmrJ$CD" resolve="JetBrains" />
     </node>
     <node concept="3Y3jLq" id="4oNuVmrIUwi" role="3Y3kdi">
-      <reference role="3Y3kdm" target="5871420002487876142" resolve="ReSharper" />
-      <reference role="64GfW" target="5058522826399435305" resolve="JetBrains" />
+      <ref role="3Y3kdm" node="55Vum9nqrCI" resolve="ReSharper" />
+      <ref role="64GfW" node="4oNuVmrJ$CD" resolve="JetBrains" />
     </node>
     <node concept="3Y3jLq" id="4oNuVmrIUwo" role="3Y3kdi">
-      <reference role="3Y3kdm" target="5871420002487709750" resolve="Web Storm" />
-      <reference role="64GfW" target="5058522826399435305" resolve="JetBrains" />
+      <ref role="3Y3kdm" node="55Vum9npN0Q" resolve="Web Storm" />
+      <ref role="64GfW" node="4oNuVmrJ$CD" resolve="JetBrains" />
     </node>
     <node concept="3Y3jLq" id="4oNuVmrIUwF" role="3Y3kdi">
-      <reference role="3Y3kdm" target="5058522826399262748" resolve="PHP Storm" />
-      <reference role="64GfW" target="5058522826399435305" resolve="JetBrains" />
+      <ref role="3Y3kdm" node="4oNuVmrIUws" resolve="PHP Storm" />
+      <ref role="64GfW" node="4oNuVmrJ$CD" resolve="JetBrains" />
     </node>
     <node concept="3Y3jLq" id="4oNuVmrIUwK" role="3Y3kdi">
-      <reference role="64GfW" target="5871420002487709750" resolve="Web Storm" />
-      <reference role="3Y3kdm" target="5058522826399262748" resolve="PHP Storm" />
+      <ref role="64GfW" node="55Vum9npN0Q" resolve="Web Storm" />
+      <ref role="3Y3kdm" node="4oNuVmrIUws" resolve="PHP Storm" />
     </node>
     <node concept="3tydfO" id="4oNuVmrJe0f" role="3Y3kdi">
-      <reference role="64GfW" target="5871420002487602288" resolve="IntelliJ IDEA CE" />
-      <reference role="3Y3kdm" target="5058522826399342615" resolve="IntelliJ IDEA UE" />
+      <ref role="64GfW" node="55Vum9npoLK" resolve="IntelliJ IDEA CE" />
+      <ref role="3Y3kdm" node="4oNuVmrJe0n" resolve="IntelliJ IDEA UE" />
     </node>
     <node concept="3tzTJx" id="4oNuVmrJ$CD" role="3Y3kdv">
       <property role="TrG5h" value="JetBrains" />

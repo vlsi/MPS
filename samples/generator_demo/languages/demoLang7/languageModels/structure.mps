@@ -34,12 +34,12 @@
   <node concept="1TIwiD" id="38QROcrvLHj">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="XMLDocument" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="38QROcrvMuw" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="element" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="dghb.1225239603385" resolve="Element" />
+      <ref role="20lvS9" to="dghb:hP5YayT" resolve="Element" />
     </node>
   </node>
 </model>

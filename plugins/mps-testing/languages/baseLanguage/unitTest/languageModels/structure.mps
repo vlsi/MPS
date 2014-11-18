@@ -53,55 +53,55 @@
   </registry>
   <node concept="1TIwiD" id="h3s$Bie">
     <property role="TrG5h" value="TestMethod" />
-    <reference role="1TJDcQ" target="tpee.1068580123165" resolve="InstanceMethodDeclaration" />
+    <ref role="1TJDcQ" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
     <node concept="PrWs8" id="hGBlm77" role="PzmwI">
-      <reference role="PrY4T" target="1216134482493" resolve="ITestMethod" />
+      <ref role="PrY4T" node="hGBgSCX" resolve="ITestMethod" />
     </node>
     <node concept="1TJgyi" id="h3s$Big" role="1TKVEl">
       <property role="TrG5h" value="methodName" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3s_e$z">
     <property role="19KtqR" value="true" />
     <property role="MwhBj" value="${language_descriptor}/icons/testClass.png" />
     <property role="TrG5h" value="BTestCase" />
-    <reference role="1TJDcQ" target="tpee.1068390468198" resolve="ClassConcept" />
+    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="hGB4ykN" role="PzmwI">
-      <reference role="PrY4T" target="1216130694486" resolve="ITestCase" />
+      <ref role="PrY4T" node="hGB2rPm" resolve="ITestCase" />
     </node>
     <node concept="PrWs8" id="2deFRo6cC55" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1319728274783077719" resolve="ImplementationPart" />
+      <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
     <node concept="1TJgyj" id="h3s_e$$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="testMethodList" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="1171931858461" resolve="TestMethodList" />
+      <ref role="20lvS9" node="h3s_got" resolve="TestMethodList" />
     </node>
     <node concept="1TJgyj" id="79C96s2bXfz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="beforeTest" />
-      <reference role="20lvS9" target="8243879142738608185" resolve="BeforeTest" />
+      <ref role="20lvS9" node="79C96s2bW0T" resolve="BeforeTest" />
     </node>
     <node concept="1TJgyj" id="79C96s2bXf$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="afterTest" />
-      <reference role="20lvS9" target="8243879142738613213" resolve="AfterTest" />
+      <ref role="20lvS9" node="79C96s2bXft" resolve="AfterTest" />
     </node>
     <node concept="1TJgyi" id="h3s_e$_" role="1TKVEl">
       <property role="TrG5h" value="testCaseName" />
-      <reference role="AX2Wp" target="tpee.1083065718921" resolve="_Identifier_String" />
+      <ref role="AX2Wp" to="tpee:fKFJPy9" resolve="_Identifier_String" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3s_got">
     <property role="TrG5h" value="TestMethodList" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="h3s_gou" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="testMethod" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1171931690126" resolve="TestMethod" />
+      <ref role="20lvS9" node="h3s$Bie" resolve="TestMethod" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3vlDh2">
@@ -111,7 +111,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert equals" />
-    <reference role="1TJDcQ" target="8427750732757990717" resolve="BinaryAssert" />
+    <ref role="1TJDcQ" node="7jPoEeD$ZOX" resolve="BinaryAssert" />
   </node>
   <node concept="1TIwiD" id="h3vwNi3">
     <property role="R5$K7" value="false" />
@@ -120,15 +120,15 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert true" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="h3vwVM7" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="condition" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="692cUnf6U8s" role="PzmwI">
-      <reference role="PrY4T" target="1172075514136" resolve="MessageHolder" />
+      <ref role="PrY4T" node="h3_9g$o" resolve="MessageHolder" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3vFxO8">
@@ -138,15 +138,15 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert false" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="h3vFAPs" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="condition" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="692cUnf6Tsq" role="PzmwI">
-      <reference role="PrY4T" target="1172075514136" resolve="MessageHolder" />
+      <ref role="PrY4T" node="h3_9g$o" resolve="MessageHolder" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3vMLX3">
@@ -156,7 +156,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert same (&quot;==&quot;)" />
-    <reference role="1TJDcQ" target="8427750732757990717" resolve="BinaryAssert" />
+    <ref role="1TJDcQ" node="7jPoEeD$ZOX" resolve="BinaryAssert" />
   </node>
   <node concept="1TIwiD" id="h3xETia">
     <property role="R5$K7" value="false" />
@@ -165,9 +165,9 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="fail" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="PrWs8" id="h3_9nVU" role="PzmwI">
-      <reference role="PrY4T" target="1172075514136" resolve="MessageHolder" />
+      <ref role="PrY4T" node="h3_9g$o" resolve="MessageHolder" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3ykFEh">
@@ -177,15 +177,15 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert is null" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="h3ykUcf" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="692cUnf6Tsu" role="PzmwI">
-      <reference role="PrY4T" target="1172075514136" resolve="MessageHolder" />
+      <ref role="PrY4T" node="h3_9g$o" resolve="MessageHolder" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3$NIwG">
@@ -195,21 +195,21 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert throws" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="h3$Olsu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="statement" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068580123157" resolve="Statement" />
+      <ref role="20lvS9" to="tpee:fzclF8l" resolve="Statement" />
     </node>
     <node concept="1TJgyj" id="h3$Qgrf" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="exceptionType" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1107535904670" resolve="ClassifierType" />
+      <ref role="20lvS9" to="tpee:g7uibYu" resolve="ClassifierType" />
     </node>
     <node concept="PrWs8" id="h3_c8VV" role="PzmwI">
-      <reference role="PrY4T" target="1172075514136" resolve="MessageHolder" />
+      <ref role="PrY4T" node="h3_9g$o" resolve="MessageHolder" />
     </node>
   </node>
   <node concept="1TIwiD" id="h3_1$Uf">
@@ -218,12 +218,12 @@
     <property role="TrG5h" value="Message" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="message" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="h3_1ByX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="message" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="PlHQZ" id="h3_9g$o">
@@ -233,7 +233,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="message" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="1172073500303" resolve="Message" />
+      <ref role="20lvS9" node="h3_1$Uf" resolve="Message" />
     </node>
   </node>
   <node concept="PlHQZ" id="hG8C14p">
@@ -245,20 +245,20 @@
     <property role="3GE5qa" value="api" />
     <node concept="1TJgyi" id="5$NvszvZwQt" role="1TKVEl">
       <property role="TrG5h" value="canNotRunInProcess" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="PrWs8" id="hGB2w3i" role="PrDN$">
-      <reference role="PrY4T" target="1215620452633" resolve="ITestable" />
+      <ref role="PrY4T" node="hG8C14p" resolve="ITestable" />
     </node>
     <node concept="PrWs8" id="hSQJLwA" role="PrDN$">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="PlHQZ" id="hGBgSCX">
     <property role="TrG5h" value="ITestMethod" />
     <property role="3GE5qa" value="api" />
     <node concept="PrWs8" id="hGBgSCY" role="PrDN$">
-      <reference role="PrY4T" target="1215620452633" resolve="ITestable" />
+      <ref role="PrY4T" node="hG8C14p" resolve="ITestable" />
     </node>
   </node>
   <node concept="1TIwiD" id="692cUnf6I3R">
@@ -268,15 +268,15 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
     <property role="34LRSv" value="assert is not null" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="692cUnf6I3T" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="692cUnf6Tss" role="PzmwI">
-      <reference role="PrY4T" target="1172075514136" resolve="MessageHolder" />
+      <ref role="PrY4T" node="h3_9g$o" resolve="MessageHolder" />
     </node>
   </node>
   <node concept="1TIwiD" id="7jPoEeD$ZOX">
@@ -285,21 +285,21 @@
     <property role="TrG5h" value="BinaryAssert" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="assert" />
-    <reference role="1TJDcQ" target="tpee.1068580123157" resolve="Statement" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="7jPoEeD$ZP4" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expected" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="1TJgyj" id="7jPoEeD$ZP5" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="actual" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="tpee.1068431790191" resolve="Expression" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="7jPoEeD$ZOY" role="PzmwI">
-      <reference role="PrY4T" target="1172075514136" resolve="MessageHolder" />
+      <ref role="PrY4T" node="h3_9g$o" resolve="MessageHolder" />
     </node>
   </node>
   <node concept="1TIwiD" id="79C96s2bW0T">
@@ -308,7 +308,7 @@
     <property role="TrG5h" value="BeforeTest" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="beforeTest" />
-    <reference role="1TJDcQ" target="8243879142738615226" resolve="PrepareMethod" />
+    <ref role="1TJDcQ" node="79C96s2bXIU" resolve="PrepareMethod" />
   </node>
   <node concept="1TIwiD" id="79C96s2bXft">
     <property role="R5$K7" value="false" />
@@ -316,14 +316,14 @@
     <property role="TrG5h" value="AfterTest" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="afterTest" />
-    <reference role="1TJDcQ" target="8243879142738615226" resolve="PrepareMethod" />
+    <ref role="1TJDcQ" node="79C96s2bXIU" resolve="PrepareMethod" />
   </node>
   <node concept="1TIwiD" id="79C96s2bXIU">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="PrepareMethod" />
     <property role="2_RsDV" value="none" />
-    <reference role="1TJDcQ" target="tpee.1137021947720" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>
 

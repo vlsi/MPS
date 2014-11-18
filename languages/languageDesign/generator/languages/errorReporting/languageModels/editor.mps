@@ -40,13 +40,13 @@
     </language>
   </registry>
   <node concept="24kQdi" id="6kxQP7CaD2$">
-    <reference role="1XX52x" target="qq7j.7287346816896104019" resolve="ErrorReportingRoot" />
+    <ref role="1XX52x" to="qq7j:6kxQP7CaBpj" resolve="ErrorReportingRoot" />
     <node concept="3EZMnI" id="6kxQP7CaD2A" role="2wV5jI">
       <node concept="3F0ifn" id="6kxQP7CaD2D" role="3EZMnx">
         <property role="3F0ifm" value="error reporting root" />
       </node>
       <node concept="3F0A7n" id="6kxQP7CaD2G" role="3EZMnx">
-        <reference role="1NtTu8" target="tpck.1169194664001" resolve="name" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="6kxQP7CaD2I" role="3EZMnx">
         <property role="3F0ifm" value="{" />
@@ -58,7 +58,7 @@
         <property role="3F0ifm" value="intval =" />
       </node>
       <node concept="3F0A7n" id="5l9q_ciVEPQ" role="3EZMnx">
-        <reference role="1NtTu8" target="qq7j.7287346816896111112" resolve="intval" />
+        <ref role="1NtTu8" to="qq7j:6kxQP7CaD88" resolve="intval" />
         <node concept="ljvvj" id="5l9q_ciVEPR" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>

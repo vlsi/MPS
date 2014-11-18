@@ -45,74 +45,74 @@
   <node concept="1TIwiD" id="4pxCBZ57mf">
     <property role="TrG5h" value="MindMap" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4pxCBZ5cnm" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="thoughts" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="79242395703884488" resolve="Thought" />
+      <ref role="20lvS9" node="4pxCBZ5bF8" resolve="Thought" />
     </node>
     <node concept="1TJgyj" id="4pxCBZ5cnr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="relationships" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="79242395703884499" resolve="Relationship" />
+      <ref role="20lvS9" node="4pxCBZ5bFj" resolve="Relationship" />
     </node>
     <node concept="PrWs8" id="4pxCBZ5bF6" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="4pxCBZ5bF8">
     <property role="TrG5h" value="Thought" />
     <property role="34LRSv" value="thought" />
-    <reference role="1TJDcQ" target="79242395703953958" resolve="VisualBox" />
+    <ref role="1TJDcQ" node="4pxCBZ5sCA" resolve="VisualBox" />
     <node concept="PrWs8" id="55Vum9nr8wc" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="4pxCBZ5bFj">
     <property role="TrG5h" value="Relationship" />
     <property role="34LRSv" value="relationship" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="55Vum9nqrEu" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="source" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="79242395703884488" resolve="Thought" />
+      <ref role="20lvS9" node="4pxCBZ5bF8" resolve="Thought" />
     </node>
     <node concept="1TJgyj" id="4pxCBZ5cnv" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />
-      <reference role="20lvS9" target="79242395703884488" resolve="Thought" />
+      <ref role="20lvS9" node="4pxCBZ5bF8" resolve="Thought" />
     </node>
   </node>
   <node concept="1TIwiD" id="4pxCBZ5sCA">
     <property role="TrG5h" value="VisualBox" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4pxCBZ5sCB" role="1TKVEl">
       <property role="TrG5h" value="x" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="4pxCBZ5sCD" role="1TKVEl">
       <property role="TrG5h" value="y" />
-      <reference role="AX2Wp" target="tpck.1082983657062" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="55Vum9nofwy" role="1TKVEl">
       <property role="TrG5h" value="myIsClicked" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="4oNuVmrIUx1">
     <property role="TrG5h" value="Specializes" />
-    <reference role="1TJDcQ" target="79242395703884499" resolve="Relationship" />
+    <ref role="1TJDcQ" node="4pxCBZ5bFj" resolve="Relationship" />
   </node>
   <node concept="1TIwiD" id="4oNuVmrJe1k">
     <property role="TrG5h" value="CoreThrought" />
     <property role="34LRSv" value="core thought" />
-    <reference role="1TJDcQ" target="79242395703884488" resolve="Thought" />
+    <ref role="1TJDcQ" node="4pxCBZ5bF8" resolve="Thought" />
   </node>
 </model>
 

@@ -109,7 +109,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="5pylk$7XA7F">
-    <reference role="13h7C2" target="wns9.8483375838963817777" resolve="ReloadClassesCommand" />
+    <ref role="13h7C2" to="wns9:7mV0m3L$tOL" resolve="ReloadClassesCommand" />
     <node concept="13hLZK" id="5pylk$7XAac" role="13h7CW">
       <node concept="3clFbS" id="5pylk$7XAad" role="2VODD2" />
     </node>
@@ -117,20 +117,20 @@
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="doExecute" />
-      <reference role="13i0hy" target="zyb2.3321948346081469500" resolve="doExecute" />
+      <ref role="13i0hy" to="zyb2:2SpVAIqougW" resolve="doExecute" />
       <node concept="3Tm1VV" id="5pylk$7XAb3" role="1B3o_S" />
       <node concept="3clFbS" id="5pylk$7XADU" role="3clF47">
         <node concept="3clFbF" id="5pylk$7XAEe" role="3cqZAp">
           <node concept="2OqwBi" id="1KUoCiqb5Xp" role="3clFbG">
             <node concept="2YIFZM" id="1KUoCiqb5Xq" role="2Oq$k0">
-              <reference role="37wK5l" target="wqua.~ClassLoaderManager%dgetInstance()%cjetbrains%dmps%dclassloading%dClassLoaderManager" resolve="getInstance" />
-              <reference role="1Pybhc" target="wqua.~ClassLoaderManager" resolve="ClassLoaderManager" />
+              <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
             </node>
             <node concept="liA8E" id="1KUoCiqb5Xr" role="2OqNvi">
-              <reference role="37wK5l" target="wqua.~ClassLoaderManager%dreloadAll(org%djetbrains%dmps%dopenapi%dutil%dProgressMonitor)%cvoid" resolve="reloadAll" />
+              <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadAll(org.jetbrains.mps.openapi.util.ProgressMonitor):void" resolve="reloadAll" />
               <node concept="2ShNRf" id="1KUoCiqb5Xs" role="37wK5m">
                 <node concept="1pGfFk" id="1KUoCiqb5Xt" role="2ShVmc">
-                  <reference role="37wK5l" target="ff4b.~EmptyProgressMonitor%d&lt;init&gt;()" resolve="EmptyProgressMonitor" />
+                  <ref role="37wK5l" to="ff4b:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
                 </node>
               </node>
             </node>
@@ -139,10 +139,10 @@
         <node concept="3clFbF" id="jysm2GCZ$1" role="3cqZAp">
           <node concept="2OqwBi" id="jysm2GCZCl" role="3clFbG">
             <node concept="37vLTw" id="jysm2GCZ$0" role="2Oq$k0">
-              <reference role="3cqZAo" target="3321948346082885075" resolve="console" />
+              <ref role="3cqZAo" node="2SpVAIqtRRj" resolve="console" />
             </node>
             <node concept="liA8E" id="jysm2GD0lE" role="2OqNvi">
-              <reference role="37wK5l" target="qgo0.6852607286009618216" resolve="addText" />
+              <ref role="37wK5l" to="qgo0:5WpmwkrQPWC" resolve="addText" />
               <node concept="Xl_RD" id="jysm2GD0nJ" role="37wK5m">
                 <property role="Xl_RC" value="Classes reloaded" />
               </node>
@@ -153,13 +153,13 @@
       <node concept="37vLTG" id="2SpVAIqtRRh" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="2SpVAIqtRRi" role="1tU5fm">
-          <reference role="3uigEE" target="qgo0.351968380915666545" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="37vLTG" id="2SpVAIqtRRj" role="3clF46">
         <property role="TrG5h" value="console" />
         <node concept="3uibUv" id="2SpVAIqtRRk" role="1tU5fm">
-          <reference role="3uigEE" target="qgo0.6852607286009617748" resolve="ConsoleStream" />
+          <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
         </node>
       </node>
       <node concept="3cqZAl" id="2SpVAIqtRRl" role="3clF45" />
@@ -169,7 +169,7 @@
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getShortHelp" />
       <property role="2Ki8OM" value="true" />
-      <reference role="13i0hy" target="zyb2.473081947982699339" resolve="getShortHelp" />
+      <ref role="13i0hy" to="zyb2:qgIopNa9Hb" resolve="getShortHelp" />
       <node concept="3Tm1VV" id="DySRn8ZxA6" role="1B3o_S" />
       <node concept="3clFbS" id="DySRn8ZxA9" role="3clF47">
         <node concept="3clFbF" id="DySRn90daw" role="3cqZAp">
@@ -182,7 +182,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="5pylk$7XElr">
-    <reference role="13h7C2" target="wns9.8483375838963818252" resolve="ShowRepositoryCommand" />
+    <ref role="13h7C2" to="wns9:7mV0m3L$tWc" resolve="ShowRepositoryCommand" />
     <node concept="13hLZK" id="5pylk$7XEls" role="13h7CW">
       <node concept="3clFbS" id="5pylk$7XElt" role="2VODD2" />
     </node>
@@ -190,29 +190,29 @@
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="doExecute" />
-      <reference role="13i0hy" target="zyb2.3321948346081469500" resolve="doExecute" />
+      <ref role="13i0hy" to="zyb2:2SpVAIqougW" resolve="doExecute" />
       <node concept="3Tm1VV" id="5pylk$7XElw" role="1B3o_S" />
       <node concept="3clFbS" id="5pylk$7XElA" role="3clF47" />
       <node concept="37vLTG" id="2SpVAIqtRXo" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3uibUv" id="2SpVAIqtRXp" role="1tU5fm">
-          <reference role="3uigEE" target="qgo0.351968380915666545" resolve="ConsoleContext" />
+          <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
         </node>
       </node>
       <node concept="37vLTG" id="2SpVAIqtRXq" role="3clF46">
         <property role="TrG5h" value="console" />
         <node concept="3uibUv" id="2SpVAIqtRXr" role="1tU5fm">
-          <reference role="3uigEE" target="qgo0.6852607286009617748" resolve="ConsoleStream" />
+          <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
         </node>
       </node>
       <node concept="3cqZAl" id="2SpVAIqtRXs" role="3clF45" />
     </node>
   </node>
   <node concept="13h7C7" id="7E9dkpksy_D">
-    <reference role="13h7C2" target="wns9.8829647120617316889" resolve="InternalMode" />
+    <ref role="13h7C2" to="wns9:7E9dkpksy8p" resolve="InternalMode" />
     <node concept="13i0hz" id="7E9dkpksyEK" role="13h7CS">
       <property role="TrG5h" value="isLValue" />
-      <reference role="13i0hy" target="tpek.1213877519786" resolve="isLValue" />
+      <ref role="13i0hy" to="tpek:hEwJgmE" resolve="isLValue" />
       <node concept="3clFbS" id="7E9dkpksyEN" role="3clF47">
         <node concept="3clFbF" id="7E9dkpkszZG" role="3cqZAp">
           <node concept="3clFbT" id="7E9dkpkszZF" role="3clFbG">
@@ -225,7 +225,7 @@
     </node>
     <node concept="13i0hz" id="7E9dkpkszZU" role="13h7CS">
       <property role="TrG5h" value="isLegalAsStatement" />
-      <reference role="13i0hy" target="tpek.1239211900844" resolve="isLegalAsStatement" />
+      <ref role="13i0hy" to="tpek:i26MfYG" resolve="isLegalAsStatement" />
       <node concept="3clFbS" id="7E9dkpkszZX" role="3clF47">
         <node concept="3clFbF" id="7E9dkpks$0j" role="3cqZAp">
           <node concept="3clFbT" id="7E9dkpks$0i" role="3clFbG">
@@ -244,7 +244,7 @@
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getShortHelp" />
       <property role="2Ki8OM" value="true" />
-      <reference role="13i0hy" target="zyb2.473081947982699339" resolve="getShortHelp" />
+      <ref role="13i0hy" to="zyb2:qgIopNa9Hb" resolve="getShortHelp" />
       <node concept="3Tm1VV" id="DySRn8ZxJj" role="1B3o_S" />
       <node concept="3clFbS" id="DySRn8ZxJm" role="3clF47">
         <node concept="3clFbF" id="DySRn8ZxJD" role="3cqZAp">
@@ -257,7 +257,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4PRmqZeE57L">
-    <reference role="13h7C2" target="wns9.5582028874770305469" resolve="ConsoleModelExpression" />
+    <ref role="13h7C2" to="wns9:4PRmqZeE56X" resolve="ConsoleModelExpression" />
     <node concept="13hLZK" id="4PRmqZeE57M" role="13h7CW">
       <node concept="3clFbS" id="4PRmqZeE57N" role="2VODD2" />
     </node>
@@ -266,7 +266,7 @@
       <property role="TrG5h" value="getSupportedParameters" />
       <property role="13i0it" value="false" />
       <property role="13i0iv" value="false" />
-      <reference role="13i0hy" target="fq2o.4307205004146936444" resolve="getSupportedParameters" />
+      <ref role="13i0hy" to="fq2o:3J6h25QXCDW" resolve="getSupportedParameters" />
       <node concept="3Tm1VV" id="4PRmqZeE57P" role="1B3o_S" />
       <node concept="3clFbS" id="4PRmqZeE57Q" role="3clF47">
         <node concept="3clFbF" id="4PRmqZeE57R" role="3cqZAp">
@@ -275,7 +275,7 @@
       </node>
       <node concept="A3Dl8" id="4PRmqZeE57T" role="3clF45">
         <node concept="3THzug" id="4PRmqZeE57U" role="A3Ik2">
-          <reference role="3qa414" target="3xdn.4307205004131544565" resolve="QueryParameter" />
+          <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
         </node>
       </node>
     </node>
@@ -284,7 +284,7 @@
       <property role="13i0it" value="false" />
       <property role="TrG5h" value="getShortHelp" />
       <property role="2Ki8OM" value="true" />
-      <reference role="13i0hy" target="zyb2.473081947982699339" resolve="getShortHelp" />
+      <ref role="13i0hy" to="zyb2:qgIopNa9Hb" resolve="getShortHelp" />
       <node concept="3Tm1VV" id="6eQQAdlPDu7" role="1B3o_S" />
       <node concept="3clFbS" id="6eQQAdlPDua" role="3clF47">
         <node concept="3clFbF" id="6eQQAdlPDvD" role="3cqZAp">

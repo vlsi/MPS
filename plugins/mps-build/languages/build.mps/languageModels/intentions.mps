@@ -185,7 +185,7 @@
   <node concept="2S6QgY" id="7gAtt1jurnQ">
     <property role="2ZfUl0" value="true" />
     <property role="TrG5h" value="ToggleCompactMpsModule" />
-    <reference role="2ZfgGC" target="kdzh.322010710375871467" resolve="BuildMps_AbstractModule" />
+    <ref role="2ZfgGC" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
     <node concept="2S6ZIM" id="7gAtt1jurnR" role="2ZfVej">
       <node concept="3clFbS" id="7gAtt1jurnS" role="2VODD2">
         <node concept="3clFbF" id="7gAtt1jurnV" role="3cqZAp">
@@ -197,7 +197,7 @@
               <node concept="2OqwBi" id="7gAtt1jurp7" role="3uHU7w">
                 <node concept="2Sf5sV" id="7gAtt1juroQ" role="2Oq$k0" />
                 <node concept="3TrcHB" id="7gAtt1jurpd" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
@@ -208,14 +208,14 @@
               <node concept="2OqwBi" id="7gAtt1jurpF" role="3uHU7w">
                 <node concept="2Sf5sV" id="7gAtt1jurpq" role="2Oq$k0" />
                 <node concept="3TrcHB" id="7gAtt1jurpL" role="2OqNvi">
-                  <reference role="3TsBF5" target="tpck.1169194664001" resolve="name" />
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
             </node>
             <node concept="2OqwBi" id="7gAtt1juroe" role="3K4Cdx">
               <node concept="2Sf5sV" id="7gAtt1jurnW" role="2Oq$k0" />
               <node concept="3TrcHB" id="7gAtt1jurok" role="2OqNvi">
-                <reference role="3TsBF5" target="kdzh.8369506495128725901" resolve="compact" />
+                <ref role="3TsBF5" to="kdzh:7gAtt1jueAd" resolve="compact" />
               </node>
             </node>
           </node>
@@ -229,14 +229,14 @@
             <node concept="2OqwBi" id="7gAtt1jurq4" role="37vLTJ">
               <node concept="2Sf5sV" id="7gAtt1jurpN" role="2Oq$k0" />
               <node concept="3TrcHB" id="7gAtt1jurqa" role="2OqNvi">
-                <reference role="3TsBF5" target="kdzh.8369506495128725901" resolve="compact" />
+                <ref role="3TsBF5" to="kdzh:7gAtt1jueAd" resolve="compact" />
               </node>
             </node>
             <node concept="3fqX7Q" id="7gAtt1jurqe" role="37vLTx">
               <node concept="2OqwBi" id="7gAtt1jurqx" role="3fr31v">
                 <node concept="2Sf5sV" id="7gAtt1jurqg" role="2Oq$k0" />
                 <node concept="3TrcHB" id="7gAtt1jurqB" role="2OqNvi">
-                  <reference role="3TsBF5" target="kdzh.8369506495128725901" resolve="compact" />
+                  <ref role="3TsBF5" to="kdzh:7gAtt1jueAd" resolve="compact" />
                 </node>
               </node>
             </node>
@@ -248,7 +248,7 @@
   <node concept="2S6QgY" id="2rlufiQSZ48">
     <property role="2ZfUl0" value="true" />
     <property role="TrG5h" value="AddCustomLocationDependency" />
-    <reference role="2ZfgGC" target="kdzh.4278635856200826393" resolve="BuildMps_ModuleDependencyJar" />
+    <ref role="2ZfgGC" to="kdzh:3HwLahs6nSp" resolve="BuildMps_ModuleDependencyJar" />
     <node concept="2S6ZIM" id="2rlufiQSZ49" role="2ZfVej">
       <node concept="3clFbS" id="2rlufiQSZ4a" role="2VODD2">
         <node concept="3clFbF" id="2rlufiQSZ4f" role="3cqZAp">
@@ -265,7 +265,7 @@
             <node concept="2OqwBi" id="2rlufiQSZ5k" role="2Oq$k0">
               <node concept="2Sf5sV" id="2rlufiQSZ53" role="2Oq$k0" />
               <node concept="3TrEf2" id="2rlufiQSZ5r" role="2OqNvi">
-                <reference role="3Tt5mk" target="kdzh.2798275735916344703" />
+                <ref role="3Tt5mk" to="kdzh:2rlufiQSRlZ" />
               </node>
             </node>
             <node concept="zfrQC" id="2rlufiQSZ5N" role="2OqNvi" />
@@ -280,7 +280,7 @@
             <node concept="2OqwBi" id="2rlufiQSZ4z" role="2Oq$k0">
               <node concept="2Sf5sV" id="2rlufiQSZ4i" role="2Oq$k0" />
               <node concept="3TrEf2" id="2rlufiQSZ4D" role="2OqNvi">
-                <reference role="3Tt5mk" target="kdzh.2798275735916344703" />
+                <ref role="3Tt5mk" to="kdzh:2rlufiQSRlZ" />
               </node>
             </node>
             <node concept="3w_OXm" id="2rlufiQSZ51" role="2OqNvi" />
@@ -292,7 +292,7 @@
   <node concept="2S6QgY" id="bgY2XVYPAB">
     <property role="2ZfUl0" value="true" />
     <property role="TrG5h" value="AddCustomLocationRuntime" />
-    <reference role="2ZfgGC" target="kdzh.4278635856200804496" resolve="BuildMps_ModuleJarRuntime" />
+    <ref role="2ZfgGC" to="kdzh:3HwLahs6iyg" resolve="BuildMps_ModuleJarRuntime" />
     <node concept="2S6ZIM" id="bgY2XVYPAC" role="2ZfVej">
       <node concept="3clFbS" id="bgY2XVYPAD" role="2VODD2">
         <node concept="3clFbF" id="bgY2XVYPAE" role="3cqZAp">
@@ -309,7 +309,7 @@
             <node concept="2OqwBi" id="bgY2XVYPAK" role="2Oq$k0">
               <node concept="2Sf5sV" id="bgY2XVYPAL" role="2Oq$k0" />
               <node concept="3TrEf2" id="bgY2XVYXjC" role="2OqNvi">
-                <reference role="3Tt5mk" target="kdzh.2798275735916344702" />
+                <ref role="3Tt5mk" to="kdzh:2rlufiQSRlY" />
               </node>
             </node>
             <node concept="zfrQC" id="bgY2XVYPAN" role="2OqNvi" />
@@ -324,7 +324,7 @@
             <node concept="2OqwBi" id="bgY2XVYPAS" role="2Oq$k0">
               <node concept="2Sf5sV" id="bgY2XVYPAT" role="2Oq$k0" />
               <node concept="3TrEf2" id="bgY2XVYXjA" role="2OqNvi">
-                <reference role="3Tt5mk" target="kdzh.2798275735916344702" />
+                <ref role="3Tt5mk" to="kdzh:2rlufiQSRlY" />
               </node>
             </node>
             <node concept="3w_OXm" id="bgY2XVYPAV" role="2OqNvi" />
@@ -335,7 +335,7 @@
   </node>
   <node concept="2S6QgY" id="3vXGXT8byI1">
     <property role="TrG5h" value="AddCustomPackaging" />
-    <reference role="2ZfgGC" target="kdzh.6592112598314586625" resolve="BuildMps_IdeaPluginGroup" />
+    <ref role="2ZfgGC" to="kdzh:5HVSRHdUL81" resolve="BuildMps_IdeaPluginGroup" />
     <node concept="2S6ZIM" id="3vXGXT8byI2" role="2ZfVej">
       <node concept="3clFbS" id="3vXGXT8byI3" role="2VODD2">
         <node concept="3clFbF" id="3vXGXT8byI6" role="3cqZAp">
@@ -352,7 +352,7 @@
             <node concept="2OqwBi" id="3vXGXT8byIP" role="2Oq$k0">
               <node concept="2Sf5sV" id="3vXGXT8byIG" role="2Oq$k0" />
               <node concept="3Tsc0h" id="3vXGXT8byIU" role="2OqNvi">
-                <reference role="3TtcxE" target="kdzh.4034578608468929327" />
+                <ref role="3TtcxE" to="kdzh:3vXGXT8byGJ" />
               </node>
             </node>
             <node concept="WFELt" id="3vXGXT8byJa" role="2OqNvi" />
@@ -367,11 +367,11 @@
             <node concept="2OqwBi" id="3vXGXT8byIk" role="2Oq$k0">
               <node concept="2Sf5sV" id="3vXGXT8byIb" role="2Oq$k0" />
               <node concept="3Tsc0h" id="3vXGXT8byIr" role="2OqNvi">
-                <reference role="3TtcxE" target="kdzh.4034578608468929327" />
+                <ref role="3TtcxE" to="kdzh:3vXGXT8byGJ" />
               </node>
             </node>
             <node concept="liA8E" id="3vXGXT8byIE" role="2OqNvi">
-              <reference role="37wK5l" target="k7g3.~List%disEmpty()%cboolean" resolve="isEmpty" />
+              <ref role="37wK5l" to="k7g3:~List.isEmpty():boolean" resolve="isEmpty" />
             </node>
           </node>
         </node>
@@ -381,7 +381,7 @@
   <node concept="2S6QgY" id="1xmIngrPriD">
     <property role="2ZfUl0" value="true" />
     <property role="TrG5h" value="ReloadModulesFromDisk" />
-    <reference role="2ZfgGC" target="3ior.5617550519002745363" resolve="BuildProject" />
+    <ref role="2ZfgGC" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
     <node concept="2S6ZIM" id="1xmIngrPriE" role="2ZfVej">
       <node concept="3clFbS" id="1xmIngrPriF" role="2VODD2">
         <node concept="3clFbF" id="1xmIngrPriI" role="3cqZAp">
@@ -397,11 +397,11 @@
           <node concept="3cpWsn" id="50RHf4RGXGs" role="3cpWs9">
             <property role="TrG5h" value="visible" />
             <node concept="3uibUv" id="50RHf4RGXGt" role="1tU5fm">
-              <reference role="3uigEE" target="tken.5780287594867965268" resolve="VisibleModules" />
+              <ref role="3uigEE" to="tken:50RHf4RGVPk" resolve="VisibleModules" />
             </node>
             <node concept="2ShNRf" id="50RHf4RGXGv" role="33vP2m">
               <node concept="1pGfFk" id="50RHf4RGXGx" role="2ShVmc">
-                <reference role="37wK5l" target="tken.5780287594867965270" resolve="VisibleModules" />
+                <ref role="37wK5l" to="tken:50RHf4RGVPm" resolve="VisibleModules" />
                 <node concept="2Sf5sV" id="1xmIngrPrk7" role="37wK5m" />
               </node>
             </node>
@@ -410,10 +410,10 @@
         <node concept="3clFbF" id="50RHf4RGXGA" role="3cqZAp">
           <node concept="2OqwBi" id="50RHf4RGXGQ" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTw5Q" role="2Oq$k0">
-              <reference role="3cqZAo" target="5780287594867972892" resolve="visible" />
+              <ref role="3cqZAo" node="50RHf4RGXGs" resolve="visible" />
             </node>
             <node concept="liA8E" id="50RHf4RGXGV" role="2OqNvi">
-              <reference role="37wK5l" target="tken.5780287594867972812" resolve="collect" />
+              <ref role="37wK5l" to="tken:50RHf4RGXFc" resolve="collect" />
             </node>
           </node>
         </node>
@@ -422,11 +422,11 @@
           <node concept="3cpWsn" id="2hkCNA7Z2nu" role="3cpWs9">
             <property role="TrG5h" value="pathConverter" />
             <node concept="3uibUv" id="1xmIngrPrk6" role="1tU5fm">
-              <reference role="3uigEE" target="tken.2617896750899006652" resolve="PathConverter" />
+              <ref role="3uigEE" to="tken:2hkCNA7Z0MW" resolve="PathConverter" />
             </node>
             <node concept="2ShNRf" id="2hkCNA7Z2ny" role="33vP2m">
               <node concept="1pGfFk" id="2hkCNA7Z2n$" role="2ShVmc">
-                <reference role="37wK5l" target="tken.2617896750899006654" resolve="PathConverter" />
+                <ref role="37wK5l" to="tken:2hkCNA7Z0MY" resolve="PathConverter" />
                 <node concept="2Sf5sV" id="1xmIngrPrk5" role="37wK5m" />
               </node>
             </node>
@@ -443,7 +443,7 @@
               <node concept="2Rf3mk" id="1xmIngrPrk0" role="2OqNvi">
                 <node concept="1xMEDy" id="1xmIngrPrk1" role="1xVPHs">
                   <node concept="chp4Y" id="1xmIngrPrk2" role="ri$Ld">
-                    <reference role="cht4Q" target="kdzh.322010710375871467" resolve="BuildMps_AbstractModule" />
+                    <ref role="cht4Q" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
                   </node>
                 </node>
               </node>
@@ -454,11 +454,11 @@
               <node concept="2OqwBi" id="7YI57w6JzxJ" role="3clFbw">
                 <node concept="1mIQ4w" id="7YI57w6JAcG" role="2OqNvi">
                   <node concept="chp4Y" id="7YI57w6JAcL" role="cj9EA">
-                    <reference role="cht4Q" target="kdzh.5507251971038816436" resolve="BuildMps_Generator" />
+                    <ref role="cht4Q" to="kdzh:4LHG7OIlEyO" resolve="BuildMps_Generator" />
                   </node>
                 </node>
                 <node concept="3M$PaV" id="7YI57w6JySr" role="2Oq$k0">
-                  <reference role="3M$S_o" target="1753793013241722106" resolve="module" />
+                  <ref role="3M$S_o" node="1xmIngrPrjU" resolve="module" />
                 </node>
               </node>
               <node concept="3clFbS" id="7YI57w6JyaJ" role="3clFbx">
@@ -470,23 +470,23 @@
                 <node concept="3clFbF" id="6tgFcy$Asr8" role="3cqZAp">
                   <node concept="2OqwBi" id="6tgFcy$AsIj" role="3clFbG">
                     <node concept="liA8E" id="6tgFcy$AtcI" role="2OqNvi">
-                      <reference role="37wK5l" target="tken.7316240245140094601" resolve="check" />
+                      <ref role="37wK5l" to="tken:6m8wrPAZvU9" resolve="check" />
                       <node concept="Rm8GO" id="6m8wrPD7z8d" role="37wK5m">
-                        <reference role="Rm8GQ" target="tken.7316240245140010253" resolve="LOAD_IMPORTANT_PART" />
-                        <reference role="1Px2BO" target="tken.7316240245139988047" resolve="ModuleChecker.CheckType" />
+                        <ref role="Rm8GQ" to="tken:6m8wrPAZbkd" resolve="LOAD_IMPORTANT_PART" />
+                        <ref role="1Px2BO" to="tken:6m8wrPAZ5Tf" resolve="ModuleChecker.CheckType" />
                       </node>
                     </node>
                     <node concept="2YIFZM" id="6tgFcy$Asw_" role="2Oq$k0">
-                      <reference role="37wK5l" target="tken.7444640161798163517" resolve="createModuleChecker" />
-                      <reference role="1Pybhc" target="tken.4278635856200768111" resolve="ModuleLoader" />
+                      <ref role="37wK5l" to="tken:6tgFcy$_wKX" resolve="createModuleChecker" />
+                      <ref role="1Pybhc" to="tken:3HwLahs69DJ" resolve="ModuleLoader" />
                       <node concept="3M$PaV" id="6tgFcy$AsxA" role="37wK5m">
-                        <reference role="3M$S_o" target="1753793013241722106" resolve="module" />
+                        <ref role="3M$S_o" node="1xmIngrPrjU" resolve="module" />
                       </node>
                       <node concept="37vLTw" id="6tgFcy$AsyS" role="37wK5m">
-                        <reference role="3cqZAo" target="5780287594867972892" resolve="visible" />
+                        <ref role="3cqZAo" node="50RHf4RGXGs" resolve="visible" />
                       </node>
                       <node concept="37vLTw" id="6tgFcy$Asz1" role="37wK5m">
-                        <reference role="3cqZAo" target="2617896750899013086" resolve="pathConverter" />
+                        <ref role="3cqZAo" node="2hkCNA7Z2nu" resolve="pathConverter" />
                       </node>
                     </node>
                   </node>
@@ -496,7 +496,7 @@
                 <node concept="3cpWsn" id="50RHf4RGiIV" role="TDEfY">
                   <property role="TrG5h" value="ex" />
                   <node concept="3uibUv" id="6tgFcy$9fUk" role="1tU5fm">
-                    <reference role="3uigEE" target="tken.7444640161787506934" resolve="ModuleLoaderException" />
+                    <ref role="3uigEE" to="tken:6tgFcyzWR3Q" resolve="ModuleLoaderException" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="50RHf4RGiIX" role="TDEfX">
@@ -505,14 +505,14 @@
                     <property role="34fQS0" value="true" />
                     <node concept="2OqwBi" id="50RHf4RGvLi" role="34bqiv">
                       <node concept="37vLTw" id="3GM_nagTy2V" role="2Oq$k0">
-                        <reference role="3cqZAo" target="5780287594867796923" resolve="ex" />
+                        <ref role="3cqZAo" node="50RHf4RGiIV" resolve="ex" />
                       </node>
                       <node concept="liA8E" id="50RHf4RGw41" role="2OqNvi">
-                        <reference role="37wK5l" target="e2lb.~Throwable%dgetMessage()%cjava%dlang%dString" resolve="getMessage" />
+                        <ref role="37wK5l" to="e2lb:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
                       </node>
                     </node>
                     <node concept="37vLTw" id="3GM_nagTvWi" role="34bMjA">
-                      <reference role="3cqZAo" target="5780287594867796923" resolve="ex" />
+                      <ref role="3cqZAo" node="50RHf4RGiIV" resolve="ex" />
                     </node>
                   </node>
                   <node concept="3SKdUt" id="50RHf4RGvKW" role="3cqZAp">
@@ -536,7 +536,7 @@
               <node concept="2Rf3mk" id="1xmIngrPrj3" role="2OqNvi">
                 <node concept="1xMEDy" id="1xmIngrPrj4" role="1xVPHs">
                   <node concept="chp4Y" id="1xmIngrPrjX" role="ri$Ld">
-                    <reference role="cht4Q" target="kdzh.322010710375871467" resolve="BuildMps_AbstractModule" />
+                    <ref role="cht4Q" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
                   </node>
                 </node>
               </node>

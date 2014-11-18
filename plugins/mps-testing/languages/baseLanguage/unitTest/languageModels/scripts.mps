@@ -73,14 +73,14 @@
     <property role="2BwPSy" value="migration" />
     <node concept="_XfAh" id="HPU8mWQNuk" role="_YvDr">
       <property role="_XH9r" value="fix" />
-      <reference role="_XDHR" target="tpe3.1216130694486" resolve="ITestCase" />
+      <ref role="_XDHR" to="tpe3:hGB2rPm" resolve="ITestCase" />
       <node concept="_ZGcI" id="HPU8mWQNul" role="_XPhp">
         <node concept="3clFbS" id="HPU8mWQNum" role="2VODD2">
           <node concept="3clFbJ" id="HPU8mWR2mG" role="3cqZAp">
             <node concept="3fqX7Q" id="HPU8mWR2n4" role="3clFbw">
               <node concept="2YIFZM" id="HPU8mWR2lP" role="3fr31v">
-                <reference role="37wK5l" target="pb7l.825821767789047256" resolve="fixPluginKindForMPSTestCase" />
-                <reference role="1Pybhc" target="pb7l.8797237962361650880" resolve="CheckUtils" />
+                <ref role="37wK5l" to="pb7l:HPU8mWQuRo" resolve="fixPluginKindForMPSTestCase" />
+                <ref role="1Pybhc" to="pb7l:7Cm4l4B9rV0" resolve="CheckUtils" />
                 <node concept="_YI3z" id="HPU8mWR2m9" role="37wK5m" />
               </node>
             </node>
@@ -99,8 +99,8 @@
           <node concept="3clFbF" id="HPU8mWQPXn" role="3cqZAp">
             <node concept="3fqX7Q" id="HPU8mWR1tc" role="3clFbG">
               <node concept="2YIFZM" id="HPU8mWR22j" role="3fr31v">
-                <reference role="37wK5l" target="pb7l.8797237962361664470" resolve="checkPluginKindForMPSTestCase" />
-                <reference role="1Pybhc" target="pb7l.8797237962361650880" resolve="CheckUtils" />
+                <ref role="37wK5l" to="pb7l:7Cm4l4B9vfm" resolve="checkPluginKindForMPSTestCase" />
+                <ref role="1Pybhc" to="pb7l:7Cm4l4B9rV0" resolve="CheckUtils" />
                 <node concept="_YI3z" id="HPU8mWR2kV" role="37wK5m" />
               </node>
             </node>

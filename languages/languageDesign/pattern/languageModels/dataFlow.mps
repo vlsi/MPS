@@ -85,7 +85,7 @@
     </language>
   </registry>
   <node concept="3_zdsH" id="h$l9M5G">
-    <reference role="3_znuS" target="tp3t.1136720037779" resolve="PatternVariableDeclaration" />
+    <ref role="3_znuS" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
     <node concept="3__wT9" id="h$l9M5H" role="3_A6iZ">
       <node concept="3clFbS" id="h$l9M5I" role="2VODD2">
         <node concept="3_FXB6" id="h$lawOG" role="3cqZAp">
@@ -95,7 +95,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="h$lazHN">
-    <reference role="3_znuS" target="tp3t.1136720037781" resolve="PropertyPatternVariableDeclaration" />
+    <ref role="3_znuS" to="tp3t:gyDMOul" resolve="PropertyPatternVariableDeclaration" />
     <node concept="3__wT9" id="h$lazHO" role="3_A6iZ">
       <node concept="3clFbS" id="h$lazHP" role="2VODD2">
         <node concept="3_FXB6" id="h$la$aT" role="3cqZAp">
@@ -105,7 +105,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="h$laK94">
-    <reference role="3_znuS" target="tp3t.1136720037777" resolve="PatternExpression" />
+    <ref role="3_znuS" to="tp3t:gyDMOuh" resolve="PatternExpression" />
     <node concept="3__wT9" id="h$laK95" role="3_A6iZ">
       <node concept="3clFbS" id="h$laK96" role="2VODD2">
         <node concept="1DcWWT" id="h$lm0OX" role="3cqZAp">
@@ -114,7 +114,7 @@
             <node concept="2Rf3mk" id="h$lm0P0" role="2OqNvi">
               <node concept="1xMEDy" id="h$lm0P1" role="1xVPHs">
                 <node concept="chp4Y" id="hI0w4rB" role="ri$Ld">
-                  <reference role="cht4Q" target="tp3r.1196350785110" resolve="AbstractAntiquotation" />
+                  <ref role="cht4Q" to="tp3r:hqc44pm" resolve="AbstractAntiquotation" />
                 </node>
               </node>
             </node>
@@ -126,7 +126,7 @@
           <node concept="3clFbS" id="h$lm0P4" role="2LFqv$">
             <node concept="3AgYrR" id="h$lm0P5" role="3cqZAp">
               <node concept="37vLTw" id="3GM_nagTzTM" role="3Ah4Yx">
-                <reference role="3cqZAo" target="1207243902274" resolve="antiquotation" />
+                <ref role="3cqZAo" node="h$lm0P2" resolve="antiquotation" />
               </node>
             </node>
           </node>
@@ -137,10 +137,10 @@
             <node concept="2Rf3mk" id="h$laTQY" role="2OqNvi">
               <node concept="3gmYPX" id="h$laVCA" role="1xVPHs">
                 <node concept="3gn64h" id="h$laXgE" role="3gmYPZ">
-                  <reference role="3gnhBz" target="tp3t.1136720037779" resolve="PatternVariableDeclaration" />
+                  <ref role="3gnhBz" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
                 </node>
                 <node concept="3gn64h" id="h$laYdv" role="3gmYPZ">
-                  <reference role="3gnhBz" target="tp3t.1136720037781" resolve="PropertyPatternVariableDeclaration" />
+                  <ref role="3gnhBz" to="tp3t:gyDMOul" resolve="PropertyPatternVariableDeclaration" />
                 </node>
               </node>
             </node>
@@ -152,7 +152,7 @@
           <node concept="3clFbS" id="h$laLTY" role="2LFqv$">
             <node concept="3AgYrR" id="h$lb1iM" role="3cqZAp">
               <node concept="37vLTw" id="3GM_nagT_Vf" role="3Ah4Yx">
-                <reference role="3cqZAo" target="1207240957564" resolve="patternVar" />
+                <ref role="3cqZAo" node="h$laLTW" resolve="patternVar" />
               </node>
             </node>
           </node>

@@ -39,7 +39,7 @@
     <node concept="Wx3nA" id="70HT6wFs4pm" role="jymVt">
       <property role="TrG5h" value="x" />
       <node concept="3uibUv" id="2whzzApE0t7" role="1tU5fm">
-        <reference role="3uigEE" target="8ssk.8083368042256418379" resolve="MyClass" />
+        <ref role="3uigEE" to="8ssk:70HT6wFs4pb" resolve="MyClass" />
       </node>
     </node>
   </node>

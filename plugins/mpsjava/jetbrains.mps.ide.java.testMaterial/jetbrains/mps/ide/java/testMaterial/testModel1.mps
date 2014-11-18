@@ -69,7 +69,7 @@
     <node concept="Wx3nA" id="70HT6wFrYvF" role="jymVt">
       <property role="TrG5h" value="x" />
       <node concept="3uibUv" id="70HT6wFrYvI" role="1tU5fm">
-        <reference role="3uigEE" target="79ja.8083368042256394213" resolve="Integer" />
+        <ref role="3uigEE" to="79ja:70HT6wFrYv_" resolve="Integer" />
       </node>
     </node>
     <node concept="2YIFZL" id="70HT6wFrYvJ" role="jymVt">
@@ -81,7 +81,7 @@
         <property role="TrG5h" value="args" />
         <node concept="10Q1$e" id="70HT6wFrYvP" role="1tU5fm">
           <node concept="3uibUv" id="70HT6wFrYvO" role="10Q1$1">
-            <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
           </node>
         </node>
       </node>
@@ -107,7 +107,7 @@
     <node concept="3clFb_" id="70HT6wFrYvT" role="jymVt">
       <property role="TrG5h" value="toString" />
       <node concept="3uibUv" id="70HT6wFrYvX" role="3clF45">
-        <reference role="3uigEE" target="e2lb.~String" resolve="String" />
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
       </node>
       <node concept="3Tm1VV" id="70HT6wFrYvV" role="1B3o_S" />
       <node concept="3clFbS" id="70HT6wFrYvW" role="3clF47">
@@ -116,7 +116,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RYgQ" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
   </node>

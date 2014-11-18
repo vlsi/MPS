@@ -102,16 +102,16 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="5xDtKQA8cYQ">
-    <reference role="1M2myG" target="hypd.6370754048397540894" resolve="Module" />
+    <ref role="1M2myG" to="hypd:5xDtKQA7vSu" resolve="Module" />
     <node concept="EnEH3" id="5xDtKQA8ea$" role="1MhHOB">
-      <reference role="EomxK" target="tpck.1169194664001" resolve="name" />
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="Eqf_E" id="5xDtKQA8ea_" role="EtsB7">
         <node concept="3clFbS" id="5xDtKQA8eaA" role="2VODD2">
           <node concept="3clFbF" id="5xDtKQA8gtz" role="3cqZAp">
             <node concept="2OqwBi" id="3D5F99qcGrf" role="3clFbG">
               <node concept="EsrRn" id="3D5F99qcGre" role="2Oq$k0" />
               <node concept="3TrcHB" id="3D5F99qcO8W" role="2OqNvi">
-                <reference role="3TsBF5" target="hypd.6370754048397540899" resolve="namespace" />
+                <ref role="3TsBF5" to="hypd:5xDtKQA7vSz" resolve="namespace" />
               </node>
             </node>
           </node>
@@ -120,13 +120,13 @@
     </node>
   </node>
   <node concept="1M2fIO" id="3D5F99qcQMi">
-    <reference role="1M2myG" target="hypd.6370754048397540904" resolve="ModuleDependency" />
+    <ref role="1M2myG" to="hypd:5xDtKQA7vSC" resolve="ModuleDependency" />
   </node>
   <node concept="312cEu" id="3D5F99qcQYA">
     <property role="TrG5h" value="ModuleSearchScope" />
     <node concept="3Tm1VV" id="3D5F99qcQYB" role="1B3o_S" />
     <node concept="3uibUv" id="3D5F99qcR0o" role="1zkMxy">
-      <reference role="3uigEE" target="inbo.4642948870877886891" resolve="AbstractSearchScope" />
+      <ref role="3uigEE" to="inbo:41J4moeYzAF" resolve="AbstractSearchScope" />
     </node>
     <node concept="3clFbW" id="3D5F99qcQYC" role="jymVt">
       <node concept="3cqZAl" id="3D5F99qcQYD" role="3clF45" />
@@ -137,22 +137,22 @@
       <property role="TrG5h" value="getNodes" />
       <node concept="3Tm1VV" id="3D5F99qcRUv" role="1B3o_S" />
       <node concept="3uibUv" id="3D5F99qcRUw" role="3clF45">
-        <reference role="3uigEE" target="k7g3.~List" resolve="List" />
+        <ref role="3uigEE" to="k7g3:~List" resolve="List" />
         <node concept="3uibUv" id="3D5F99qcRUx" role="11_B2D">
-          <reference role="3uigEE" target="ec5l.~SNode" resolve="SNode" />
+          <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
         </node>
       </node>
       <node concept="37vLTG" id="3D5F99qcRUy" role="3clF46">
         <property role="TrG5h" value="condition" />
         <node concept="3uibUv" id="3D5F99qcRUz" role="1tU5fm">
-          <reference role="3uigEE" target="r9fo.~Condition" resolve="Condition" />
+          <ref role="3uigEE" to="r9fo:~Condition" resolve="Condition" />
           <node concept="3uibUv" id="3D5F99qcRU$" role="11_B2D">
-            <reference role="3uigEE" target="ec5l.~SNode" resolve="SNode" />
+            <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3D5F99qcRU_" role="2AJF6D">
-        <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
       <node concept="3clFbS" id="3D5F99qcRUA" role="3clF47">
         <node concept="3clFbF" id="3D5F99qcRUS" role="3cqZAp">
@@ -162,7 +162,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_Sf8H" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
   </node>

@@ -161,9 +161,9 @@
       <property role="TrG5h" value="myValue" />
       <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="5uCAHWJUZF8" role="1tU5fm">
-        <reference role="3uigEE" target="vft3.~AtomicReference" resolve="AtomicReference" />
+        <ref role="3uigEE" to="vft3:~AtomicReference" resolve="AtomicReference" />
         <node concept="3uibUv" id="5uCAHWJV2sQ" role="11_B2D">
-          <reference role="3uigEE" target="1813663789079454696" resolve="RunStateEnum" />
+          <ref role="3uigEE" node="1$FrpHy4ufC" resolve="RunStateEnum" />
         </node>
       </node>
       <node concept="3Tm6S6" id="1$FrpHy4udB" role="1B3o_S" />
@@ -177,17 +177,17 @@
         <node concept="3clFbF" id="1$FrpHy4udF" role="3cqZAp">
           <node concept="37vLTI" id="1$FrpHy4udG" role="3clFbG">
             <node concept="37vLTw" id="1$FrpHy4udH" role="37vLTJ">
-              <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+              <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
             </node>
             <node concept="2ShNRf" id="5uCAHWJVbo3" role="37vLTx">
               <node concept="1pGfFk" id="5uCAHWJVbo1" role="2ShVmc">
-                <reference role="37wK5l" target="vft3.~AtomicReference%d&lt;init&gt;(java%dlang%dObject)" resolve="AtomicReference" />
+                <ref role="37wK5l" to="vft3:~AtomicReference.&lt;init&gt;(java.lang.Object)" resolve="AtomicReference" />
                 <node concept="3uibUv" id="5uCAHWJVbo2" role="1pMfVU">
-                  <reference role="3uigEE" target="1813663789079454696" resolve="RunStateEnum" />
+                  <ref role="3uigEE" node="1$FrpHy4ufC" resolve="RunStateEnum" />
                 </node>
                 <node concept="Rm8GO" id="5uCAHWJVbDn" role="37wK5m">
-                  <reference role="Rm8GQ" target="1813663789079454697" resolve="IDLE" />
-                  <reference role="1Px2BO" target="1813663789079454696" resolve="RunStateEnum" />
+                  <ref role="Rm8GQ" node="1$FrpHy4ufD" resolve="IDLE" />
+                  <ref role="1Px2BO" node="1$FrpHy4ufC" resolve="RunStateEnum" />
                 </node>
               </node>
             </node>
@@ -206,17 +206,17 @@
         <node concept="3cpWs6" id="2A5UIbg69L7" role="3cqZAp">
           <node concept="2OqwBi" id="5uCAHWJWpTW" role="3cqZAk">
             <node concept="37vLTw" id="2A5UIbg6a8g" role="2Oq$k0">
-              <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+              <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
             </node>
             <node concept="liA8E" id="5uCAHWJWrgR" role="2OqNvi">
-              <reference role="37wK5l" target="vft3.~AtomicReference%dget()%cjava%dlang%dObject" resolve="get" />
+              <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
             </node>
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="2A5UIbg68Y6" role="1B3o_S" />
       <node concept="3uibUv" id="2A5UIbg6avw" role="3clF45">
-        <reference role="3uigEE" target="1813663789079454696" resolve="RunStateEnum" />
+        <ref role="3uigEE" node="1$FrpHy4ufC" resolve="RunStateEnum" />
       </node>
     </node>
     <node concept="2tJIrI" id="5uCAHWJVd9n" role="jymVt" />
@@ -228,19 +228,19 @@
         <property role="TrG5h" value="value" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="1$FrpHy4udT" role="1tU5fm">
-          <reference role="3uigEE" target="1813663789079454696" resolve="RunStateEnum" />
+          <ref role="3uigEE" node="1$FrpHy4ufC" resolve="RunStateEnum" />
         </node>
       </node>
       <node concept="3clFbS" id="1$FrpHy4udU" role="3clF47">
         <node concept="3clFbF" id="5uCAHWJWs_n" role="3cqZAp">
           <node concept="2OqwBi" id="5uCAHWJWsEz" role="3clFbG">
             <node concept="37vLTw" id="5uCAHWJWs_l" role="2Oq$k0">
-              <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+              <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
             </node>
             <node concept="liA8E" id="5uCAHWJWsMa" role="2OqNvi">
-              <reference role="37wK5l" target="vft3.~AtomicReference%dset(java%dlang%dObject)%cvoid" resolve="set" />
+              <ref role="37wK5l" to="vft3:~AtomicReference.set(java.lang.Object):void" resolve="set" />
               <node concept="37vLTw" id="5uCAHWJWsT1" role="37wK5m">
-                <reference role="3cqZAo" target="1813663789079454584" resolve="value" />
+                <ref role="3cqZAo" node="1$FrpHy4udS" resolve="value" />
               </node>
             </node>
           </node>
@@ -257,29 +257,29 @@
       <node concept="37vLTG" id="5uCAHWJWwrx" role="3clF46">
         <property role="TrG5h" value="oldValue" />
         <node concept="3uibUv" id="5uCAHWJWxwp" role="1tU5fm">
-          <reference role="3uigEE" target="1813663789079454696" resolve="RunStateEnum" />
+          <ref role="3uigEE" node="1$FrpHy4ufC" resolve="RunStateEnum" />
         </node>
       </node>
       <node concept="37vLTG" id="1$FrpHy4ue2" role="3clF46">
         <property role="TrG5h" value="value" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="1$FrpHy4ue3" role="1tU5fm">
-          <reference role="3uigEE" target="1813663789079454696" resolve="RunStateEnum" />
+          <ref role="3uigEE" node="1$FrpHy4ufC" resolve="RunStateEnum" />
         </node>
       </node>
       <node concept="3clFbS" id="1$FrpHy4ue4" role="3clF47">
         <node concept="3clFbF" id="1$FrpHy4uec" role="3cqZAp">
           <node concept="2OqwBi" id="5uCAHWJWvMu" role="3clFbG">
             <node concept="37vLTw" id="5uCAHWJWvJF" role="2Oq$k0">
-              <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+              <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
             </node>
             <node concept="liA8E" id="5uCAHWJWvTn" role="2OqNvi">
-              <reference role="37wK5l" target="vft3.~AtomicReference%dcompareAndSet(java%dlang%dObject,java%dlang%dObject)%cboolean" resolve="compareAndSet" />
+              <ref role="37wK5l" to="vft3:~AtomicReference.compareAndSet(java.lang.Object,java.lang.Object):boolean" resolve="compareAndSet" />
               <node concept="37vLTw" id="5uCAHWJWxB2" role="37wK5m">
-                <reference role="3cqZAo" target="6316468760759895777" resolve="oldValue" />
+                <ref role="3cqZAo" node="5uCAHWJWwrx" resolve="oldValue" />
               </node>
               <node concept="37vLTw" id="5uCAHWJWvVX" role="37wK5m">
-                <reference role="3cqZAo" target="1813663789079454594" resolve="value" />
+                <ref role="3cqZAo" node="1$FrpHy4ue2" resolve="value" />
               </node>
             </node>
           </node>
@@ -306,20 +306,20 @@
           </node>
           <node concept="3fqX7Q" id="3R5sklYTEVO" role="3clFbw">
             <node concept="1rXfSq" id="3R5sklYTEXO" role="3fr31v">
-              <reference role="37wK5l" target="1813663789079454684" resolve="isTerminated" />
+              <ref role="37wK5l" node="1$FrpHy4ufs" resolve="isTerminated" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="5uCAHWJWxOD" role="3cqZAp">
           <node concept="2OqwBi" id="5uCAHWJWxTU" role="3clFbG">
             <node concept="37vLTw" id="5uCAHWJWxOB" role="2Oq$k0">
-              <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+              <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
             </node>
             <node concept="liA8E" id="5uCAHWJWy7x" role="2OqNvi">
-              <reference role="37wK5l" target="vft3.~AtomicReference%dset(java%dlang%dObject)%cvoid" resolve="set" />
+              <ref role="37wK5l" to="vft3:~AtomicReference.set(java.lang.Object):void" resolve="set" />
               <node concept="Rm8GO" id="2A5UIbg6F5o" role="37wK5m">
-                <reference role="Rm8GQ" target="1813663789079454697" resolve="IDLE" />
-                <reference role="1Px2BO" target="1813663789079454696" resolve="RunStateEnum" />
+                <ref role="Rm8GQ" node="1$FrpHy4ufD" resolve="IDLE" />
+                <ref role="1Px2BO" node="1$FrpHy4ufC" resolve="RunStateEnum" />
               </node>
             </node>
           </node>
@@ -338,14 +338,14 @@
           <node concept="2OqwBi" id="1$FrpHy4uek" role="3cqZAk">
             <node concept="2OqwBi" id="5uCAHWJWysP" role="2Oq$k0">
               <node concept="37vLTw" id="1$FrpHy4uel" role="2Oq$k0">
-                <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+                <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWz_I" role="2OqNvi">
-                <reference role="37wK5l" target="vft3.~AtomicReference%dget()%cjava%dlang%dObject" resolve="get" />
+                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="liA8E" id="1$FrpHy4uem" role="2OqNvi">
-              <reference role="37wK5l" target="e2lb.~Enum%dordinal()%cint" resolve="ordinal" />
+              <ref role="37wK5l" to="e2lb:~Enum.ordinal():int" resolve="ordinal" />
             </node>
           </node>
         </node>
@@ -362,7 +362,7 @@
         <property role="TrG5h" value="another" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="1$FrpHy4uer" role="1tU5fm">
-          <reference role="3uigEE" target="1813663789079454696" resolve="RunStateEnum" />
+          <ref role="3uigEE" node="1$FrpHy4ufC" resolve="RunStateEnum" />
         </node>
       </node>
       <node concept="3clFbS" id="1$FrpHy4ues" role="3clF47">
@@ -371,15 +371,15 @@
             <node concept="2OqwBi" id="1$FrpHy4uev" role="3uHU7B">
               <node concept="Xjq3P" id="1$FrpHy4uew" role="2Oq$k0" />
               <node concept="liA8E" id="1$FrpHy4uex" role="2OqNvi">
-                <reference role="37wK5l" target="1813663789079454609" resolve="ordinal" />
+                <ref role="37wK5l" node="1$FrpHy4ueh" resolve="ordinal" />
               </node>
             </node>
             <node concept="2OqwBi" id="1$FrpHy4uey" role="3uHU7w">
               <node concept="37vLTw" id="1$FrpHy4uez" role="2Oq$k0">
-                <reference role="3cqZAo" target="1813663789079454618" resolve="another" />
+                <ref role="3cqZAo" node="1$FrpHy4ueq" resolve="another" />
               </node>
               <node concept="liA8E" id="1$FrpHy4ue$" role="2OqNvi">
-                <reference role="37wK5l" target="e2lb.~Enum%dordinal()%cint" resolve="ordinal" />
+                <ref role="37wK5l" to="e2lb:~Enum.ordinal():int" resolve="ordinal" />
               </node>
             </node>
           </node>
@@ -397,7 +397,7 @@
         <property role="TrG5h" value="another" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="1$FrpHy4ueD" role="1tU5fm">
-          <reference role="3uigEE" target="1813663789079454564" resolve="TestLightRunState" />
+          <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestLightRunState" />
         </node>
       </node>
       <node concept="3clFbS" id="1$FrpHy4ueE" role="3clF47">
@@ -406,15 +406,15 @@
             <node concept="2OqwBi" id="1$FrpHy4ueH" role="3uHU7B">
               <node concept="Xjq3P" id="1$FrpHy4ueI" role="2Oq$k0" />
               <node concept="liA8E" id="1$FrpHy4ueJ" role="2OqNvi">
-                <reference role="37wK5l" target="1813663789079454609" resolve="ordinal" />
+                <ref role="37wK5l" node="1$FrpHy4ueh" resolve="ordinal" />
               </node>
             </node>
             <node concept="2OqwBi" id="1$FrpHy4ueK" role="3uHU7w">
               <node concept="37vLTw" id="1$FrpHy4ueL" role="2Oq$k0">
-                <reference role="3cqZAo" target="1813663789079454632" resolve="another" />
+                <ref role="3cqZAo" node="1$FrpHy4ueC" resolve="another" />
               </node>
               <node concept="liA8E" id="1$FrpHy4ueM" role="2OqNvi">
-                <reference role="37wK5l" target="1813663789079454609" resolve="ordinal" />
+                <ref role="37wK5l" node="1$FrpHy4ueh" resolve="ordinal" />
               </node>
             </node>
           </node>
@@ -429,16 +429,16 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="2AHcQZ" id="1$FrpHy4ueQ" role="2AJF6D">
-        <reference role="2AI5Lk" target="e2lb.~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
       <node concept="37vLTG" id="1$FrpHy4ueR" role="3clF46">
         <property role="TrG5h" value="another" />
         <property role="3TUv4t" value="false" />
         <node concept="2AHcQZ" id="1$FrpHy4ueS" role="2AJF6D">
-          <reference role="2AI5Lk" target="as9o.~NotNull" resolve="NotNull" />
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
         <node concept="3uibUv" id="1$FrpHy4ueT" role="1tU5fm">
-          <reference role="3uigEE" target="1813663789079454564" resolve="TestLightRunState" />
+          <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestLightRunState" />
         </node>
       </node>
       <node concept="3clFbS" id="1$FrpHy4ueU" role="3clF47">
@@ -446,25 +446,25 @@
           <node concept="2OqwBi" id="1$FrpHy4ueW" role="3cqZAk">
             <node concept="2OqwBi" id="5uCAHWJWEKB" role="2Oq$k0">
               <node concept="37vLTw" id="1$FrpHy4ueX" role="2Oq$k0">
-                <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+                <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWFNJ" role="2OqNvi">
-                <reference role="37wK5l" target="vft3.~AtomicReference%dget()%cjava%dlang%dObject" resolve="get" />
+                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="liA8E" id="1$FrpHy4ueY" role="2OqNvi">
-              <reference role="37wK5l" target="e2lb.~Enum%dcompareTo(java%dlang%dEnum)%cint" resolve="compareTo" />
+              <ref role="37wK5l" to="e2lb:~Enum.compareTo(java.lang.Enum):int" resolve="compareTo" />
               <node concept="2OqwBi" id="5uCAHWJWJjJ" role="37wK5m">
                 <node concept="2OqwBi" id="1$FrpHy4ueZ" role="2Oq$k0">
                   <node concept="37vLTw" id="1$FrpHy4uf0" role="2Oq$k0">
-                    <reference role="3cqZAo" target="1813663789079454647" resolve="another" />
+                    <ref role="3cqZAo" node="1$FrpHy4ueR" resolve="another" />
                   </node>
                   <node concept="2OwXpG" id="1$FrpHy4uf1" role="2OqNvi">
-                    <reference role="2Oxat5" target="1813663789079454565" resolve="myValue" />
+                    <ref role="2Oxat5" node="1$FrpHy4ud_" resolve="myValue" />
                   </node>
                 </node>
                 <node concept="liA8E" id="5uCAHWJWKoL" role="2OqNvi">
-                  <reference role="37wK5l" target="vft3.~AtomicReference%dget()%cjava%dlang%dObject" resolve="get" />
+                  <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
                 </node>
               </node>
             </node>
@@ -484,15 +484,15 @@
           <node concept="3clFbC" id="1$FrpHy4uf7" role="3cqZAk">
             <node concept="2OqwBi" id="5uCAHWJWNaY" role="3uHU7B">
               <node concept="37vLTw" id="1$FrpHy4uf8" role="2Oq$k0">
-                <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+                <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWOk0" role="2OqNvi">
-                <reference role="37wK5l" target="vft3.~AtomicReference%dget()%cjava%dlang%dObject" resolve="get" />
+                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="Rm8GO" id="1$FrpHy4uf9" role="3uHU7w">
-              <reference role="1Px2BO" target="1813663789079454696" resolve="RunStateEnum" />
-              <reference role="Rm8GQ" target="1813663789079454698" resolve="INITIALIZED" />
+              <ref role="1Px2BO" node="1$FrpHy4ufC" resolve="RunStateEnum" />
+              <ref role="Rm8GQ" node="1$FrpHy4ufE" resolve="INITIALIZED" />
             </node>
           </node>
         </node>
@@ -510,15 +510,15 @@
         <node concept="3cpWs6" id="31DJKq8yrmF" role="3cqZAp">
           <node concept="3clFbC" id="31DJKq8ysd2" role="3cqZAk">
             <node concept="Rm8GO" id="31DJKq8ysYM" role="3uHU7w">
-              <reference role="Rm8GQ" target="2992055787332068200" resolve="READYTOEXECUTE" />
-              <reference role="1Px2BO" target="1813663789079454696" resolve="RunStateEnum" />
+              <ref role="Rm8GQ" node="2A5UIbg56dC" resolve="READYTOEXECUTE" />
+              <ref role="1Px2BO" node="1$FrpHy4ufC" resolve="RunStateEnum" />
             </node>
             <node concept="2OqwBi" id="5uCAHWJWPpY" role="3uHU7B">
               <node concept="37vLTw" id="31DJKq8yrGQ" role="2Oq$k0">
-                <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+                <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWQr2" role="2OqNvi">
-                <reference role="37wK5l" target="vft3.~AtomicReference%dget()%cjava%dlang%dObject" resolve="get" />
+                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
           </node>
@@ -537,15 +537,15 @@
           <node concept="3clFbC" id="1$FrpHy4uff" role="3cqZAk">
             <node concept="2OqwBi" id="5uCAHWJWRsl" role="3uHU7B">
               <node concept="37vLTw" id="1$FrpHy4ufg" role="2Oq$k0">
-                <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+                <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWSod" role="2OqNvi">
-                <reference role="37wK5l" target="vft3.~AtomicReference%dget()%cjava%dlang%dObject" resolve="get" />
+                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="Rm8GO" id="1$FrpHy4ufh" role="3uHU7w">
-              <reference role="1Px2BO" target="1813663789079454696" resolve="RunStateEnum" />
-              <reference role="Rm8GQ" target="1813663789079454699" resolve="RUNNING" />
+              <ref role="1Px2BO" node="1$FrpHy4ufC" resolve="RunStateEnum" />
+              <ref role="Rm8GQ" node="1$FrpHy4ufF" resolve="RUNNING" />
             </node>
           </node>
         </node>
@@ -563,15 +563,15 @@
           <node concept="3clFbC" id="1$FrpHy4ufn" role="3cqZAk">
             <node concept="2OqwBi" id="5uCAHWJWTjN" role="3uHU7B">
               <node concept="37vLTw" id="1$FrpHy4ufo" role="2Oq$k0">
-                <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+                <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWUav" role="2OqNvi">
-                <reference role="37wK5l" target="vft3.~AtomicReference%dget()%cjava%dlang%dObject" resolve="get" />
+                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="Rm8GO" id="1$FrpHy4ufp" role="3uHU7w">
-              <reference role="1Px2BO" target="1813663789079454696" resolve="RunStateEnum" />
-              <reference role="Rm8GQ" target="1813663789079454700" resolve="TERMINATING" />
+              <ref role="1Px2BO" node="1$FrpHy4ufC" resolve="RunStateEnum" />
+              <ref role="Rm8GQ" node="1$FrpHy4ufG" resolve="TERMINATING" />
             </node>
           </node>
         </node>
@@ -589,15 +589,15 @@
           <node concept="3clFbC" id="1$FrpHy4ufv" role="3cqZAk">
             <node concept="2OqwBi" id="5uCAHWJWV0T" role="3uHU7B">
               <node concept="37vLTw" id="1$FrpHy4ufw" role="2Oq$k0">
-                <reference role="3cqZAo" target="1813663789079454565" resolve="myValue" />
+                <ref role="3cqZAo" node="1$FrpHy4ud_" resolve="myValue" />
               </node>
               <node concept="liA8E" id="5uCAHWJWVB1" role="2OqNvi">
-                <reference role="37wK5l" target="vft3.~AtomicReference%dget()%cjava%dlang%dObject" resolve="get" />
+                <ref role="37wK5l" to="vft3:~AtomicReference.get():java.lang.Object" resolve="get" />
               </node>
             </node>
             <node concept="Rm8GO" id="1$FrpHy4ufx" role="3uHU7w">
-              <reference role="1Px2BO" target="1813663789079454696" resolve="RunStateEnum" />
-              <reference role="Rm8GQ" target="1813663789079454701" resolve="TERMINATED" />
+              <ref role="1Px2BO" node="1$FrpHy4ufC" resolve="RunStateEnum" />
+              <ref role="Rm8GQ" node="1$FrpHy4ufH" resolve="TERMINATED" />
             </node>
           </node>
         </node>
@@ -608,9 +608,9 @@
     <node concept="2tJIrI" id="1$FrpHy4uf$" role="jymVt" />
     <node concept="3Tm1VV" id="1$FrpHy4uf_" role="1B3o_S" />
     <node concept="3uibUv" id="1$FrpHy4ufA" role="EKbjA">
-      <reference role="3uigEE" target="e2lb.~Comparable" resolve="Comparable" />
+      <ref role="3uigEE" to="e2lb:~Comparable" resolve="Comparable" />
       <node concept="3uibUv" id="1$FrpHy4ufB" role="11_B2D">
-        <reference role="3uigEE" target="1813663789079454564" resolve="TestLightRunState" />
+        <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestLightRunState" />
       </node>
     </node>
   </node>
@@ -620,27 +620,27 @@
     <node concept="2tJIrI" id="2A5UIbg5pM0" role="jymVt" />
     <node concept="QsSxf" id="1$FrpHy4ufD" role="Qtgdg">
       <property role="TrG5h" value="IDLE" />
-      <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="QsSxf" id="1$FrpHy4ufE" role="Qtgdg">
       <property role="TrG5h" value="INITIALIZED" />
-      <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="QsSxf" id="2A5UIbg56dC" role="Qtgdg">
       <property role="TrG5h" value="READYTOEXECUTE" />
-      <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="QsSxf" id="1$FrpHy4ufF" role="Qtgdg">
       <property role="TrG5h" value="RUNNING" />
-      <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="QsSxf" id="1$FrpHy4ufG" role="Qtgdg">
       <property role="TrG5h" value="TERMINATING" />
-      <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="QsSxf" id="1$FrpHy4ufH" role="Qtgdg">
       <property role="TrG5h" value="TERMINATED" />
-      <reference role="37wK5l" target="e2lb.~Object%d&lt;init&gt;()" resolve="Object" />
+      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
     <node concept="3Tm1VV" id="1$FrpHy4ufI" role="1B3o_S" />
   </node>
@@ -653,7 +653,7 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="46mcsrulWP4" role="1B3o_S" />
       <node concept="3uibUv" id="46mcsrulWR0" role="1tU5fm">
-        <reference role="3uigEE" target="8079831088531566773" resolve="MpsRunListener" />
+        <ref role="3uigEE" node="70xkT3P5f2P" resolve="MpsRunListener" />
       </node>
     </node>
     <node concept="Wx3nA" id="21nkJZKo9SZ" role="jymVt">
@@ -661,12 +661,12 @@
       <property role="TrG5h" value="ourInstance" />
       <property role="3TUv4t" value="false" />
       <node concept="3uibUv" id="21nkJZKo9H$" role="1tU5fm">
-        <reference role="3uigEE" target="2330422591390467286" resolve="RunEventsDispatcher" />
+        <ref role="3uigEE" node="21nkJZKnWjm" resolve="RunEventsDispatcher" />
       </node>
       <node concept="3Tm6S6" id="21nkJZKo9_x" role="1B3o_S" />
       <node concept="2ShNRf" id="T9MU2cklJi" role="33vP2m">
         <node concept="1pGfFk" id="T9MU2cknxQ" role="2ShVmc">
-          <reference role="37wK5l" target="2330422591390518515" resolve="RunEventsDispatcher" />
+          <ref role="37wK5l" node="21nkJZKo8NN" resolve="RunEventsDispatcher" />
         </node>
       </node>
     </node>
@@ -685,12 +685,12 @@
       <node concept="3clFbS" id="21nkJZKo9gr" role="3clF47">
         <node concept="3cpWs6" id="21nkJZKoa1e" role="3cqZAp">
           <node concept="37vLTw" id="21nkJZKoa1_" role="3cqZAk">
-            <reference role="3cqZAo" target="2330422591390522943" resolve="ourInstance" />
+            <ref role="3cqZAo" node="21nkJZKo9SZ" resolve="ourInstance" />
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="21nkJZKo9d8" role="3clF45">
-        <reference role="3uigEE" target="2330422591390467286" resolve="RunEventsDispatcher" />
+        <ref role="3uigEE" node="21nkJZKnWjm" resolve="RunEventsDispatcher" />
       </node>
       <node concept="3Tm1VV" id="21nkJZKo95b" role="1B3o_S" />
     </node>
@@ -706,10 +706,10 @@
             <node concept="3clFbF" id="21nkJZKo3Sy" role="3cqZAp">
               <node concept="2OqwBi" id="21nkJZKo4mS" role="3clFbG">
                 <node concept="37vLTw" id="3_XoyiZa3ui" role="2Oq$k0">
-                  <reference role="3cqZAo" target="4726019589175496138" resolve="myListener" />
+                  <ref role="3cqZAo" node="46mcsrulWRa" resolve="myListener" />
                 </node>
                 <node concept="liA8E" id="21nkJZKo4_2" role="2OqNvi">
-                  <reference role="37wK5l" target="8079831088531566801" resolve="testRunDone" />
+                  <ref role="37wK5l" node="70xkT3P5f3h" resolve="testRunDone" />
                 </node>
               </node>
             </node>
@@ -717,7 +717,7 @@
           <node concept="3y3z36" id="2eG$2TUnjk8" role="3clFbw">
             <node concept="10Nm6u" id="2eG$2TUnjm0" role="3uHU7w" />
             <node concept="37vLTw" id="2eG$2TUnjhs" role="3uHU7B">
-              <reference role="3cqZAo" target="4726019589175496138" resolve="myListener" />
+              <ref role="3cqZAo" node="46mcsrulWRa" resolve="myListener" />
             </node>
           </node>
         </node>
@@ -734,17 +734,17 @@
       <node concept="37vLTG" id="21nkJZKob0d" role="3clF46">
         <property role="TrG5h" value="listener" />
         <node concept="3uibUv" id="70xkT3P5hK8" role="1tU5fm">
-          <reference role="3uigEE" target="8079831088531566773" resolve="MpsRunListener" />
+          <ref role="3uigEE" node="70xkT3P5f2P" resolve="MpsRunListener" />
         </node>
       </node>
       <node concept="3clFbS" id="21nkJZKo3qw" role="3clF47">
         <node concept="3clFbF" id="21nkJZKob87" role="3cqZAp">
           <node concept="37vLTI" id="3_XoyiZa3E4" role="3clFbG">
             <node concept="37vLTw" id="3_XoyiZa3Fn" role="37vLTx">
-              <reference role="3cqZAo" target="2330422591390527501" resolve="listener" />
+              <ref role="3cqZAo" node="21nkJZKob0d" resolve="listener" />
             </node>
             <node concept="37vLTw" id="3_XoyiZa3CJ" role="37vLTJ">
-              <reference role="3cqZAo" target="4726019589175496138" resolve="myListener" />
+              <ref role="3cqZAo" node="46mcsrulWRa" resolve="myListener" />
             </node>
           </node>
         </node>

@@ -197,10 +197,10 @@
             </node>
             <node concept="1Ls8ON" id="2UdO5YlaFHG" role="33vP2m">
               <node concept="37vLTw" id="2BHiRxeopRl" role="1Lso8e">
-                <reference role="3cqZAo" target="8128243960970299109" resolve="MESSAGE" />
+                <ref role="3cqZAo" node="73dkH4Pmkr_" resolve="MESSAGE" />
               </node>
               <node concept="37vLTw" id="2BHiRxeoqr8" role="1Lso8e">
-                <reference role="3cqZAo" target="8128243960970299109" resolve="MESSAGE" />
+                <ref role="3cqZAo" node="73dkH4Pmkr_" resolve="MESSAGE" />
               </node>
             </node>
           </node>
@@ -212,17 +212,17 @@
                 <node concept="3clFbF" id="2UdO5YlaFuF" role="3cqZAp">
                   <node concept="2OqwBi" id="73dkH4Pmkrx" role="3clFbG">
                     <node concept="10M0yZ" id="73dkH4Pmkry" role="2Oq$k0">
-                      <reference role="3cqZAo" target="e2lb.~System%derr" resolve="err" />
-                      <reference role="1PxDUh" target="e2lb.~System" resolve="System" />
+                      <ref role="3cqZAo" to="e2lb:~System.err" resolve="err" />
+                      <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
                     </node>
                     <node concept="liA8E" id="73dkH4Pmkrz" role="2OqNvi">
-                      <reference role="37wK5l" target="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolve="println" />
+                      <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
                       <node concept="1LFfDK" id="2UdO5YlaFHP" role="37wK5m">
                         <node concept="3cmrfG" id="2UdO5YlaFHS" role="1LF_Uc">
                           <property role="3cmrfH" value="0" />
                         </node>
                         <node concept="37vLTw" id="3GM_nagTx9A" role="1LFl5Q">
-                          <reference role="3cqZAo" target="3354566406403963752" resolve="pair" />
+                          <ref role="3cqZAo" node="2UdO5YlaFHC" resolve="pair" />
                         </node>
                       </node>
                     </node>

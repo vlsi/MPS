@@ -54,9 +54,9 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="2MeG3eCdpC6">
-    <reference role="1M2myG" target="rvtb.3210697320273608255" resolve="AbstractBuilderCommand" />
+    <ref role="1M2myG" to="rvtb:2MeG3eCdfSZ" resolve="AbstractBuilderCommand" />
     <node concept="EnEH3" id="2MeG3eCdpC7" role="1MhHOB">
-      <reference role="EomxK" target="rvtb.3210697320273608257" resolve="col" />
+      <ref role="EomxK" to="rvtb:2MeG3eCdfT1" resolve="col" />
       <node concept="QB0g5" id="2MeG3eCdpC8" role="QCWH9">
         <node concept="3clFbS" id="2MeG3eCdpC9" role="2VODD2">
           <node concept="3clFbF" id="2MeG3eCdpCa" role="3cqZAp">
@@ -67,8 +67,8 @@
                     <property role="3cmrfH" value="1" />
                   </node>
                   <node concept="10M0yZ" id="TyGiqsQ84w" role="3uHU7B">
-                    <reference role="1PxDUh" target="wd51.3308300503039473785" resolve="KajaFrame" />
-                    <reference role="3cqZAo" target="wd51.3308300503039569057" resolve="WIDTH" />
+                    <ref role="1PxDUh" to="wd51:2RDssu5UvxT" resolve="KajaFrame" />
+                    <ref role="3cqZAo" to="wd51:2RDssu5UQMx" resolve="WIDTH" />
                   </node>
                 </node>
                 <node concept="1Wqviy" id="TyGiqsPM$k" role="3uHU7B" />
@@ -85,7 +85,7 @@
       </node>
     </node>
     <node concept="EnEH3" id="2MeG3eCdpC$" role="1MhHOB">
-      <reference role="EomxK" target="rvtb.3210697320273608256" resolve="row" />
+      <ref role="EomxK" to="rvtb:2MeG3eCdfT0" resolve="row" />
       <node concept="QB0g5" id="2MeG3eCdpC_" role="QCWH9">
         <node concept="3clFbS" id="2MeG3eCdpCA" role="2VODD2">
           <node concept="3clFbF" id="2MeG3eCdpCB" role="3cqZAp">
@@ -96,8 +96,8 @@
                     <property role="3cmrfH" value="1" />
                   </node>
                   <node concept="10M0yZ" id="TyGiqsQcfD" role="3uHU7B">
-                    <reference role="1PxDUh" target="wd51.3308300503039473785" resolve="KajaFrame" />
-                    <reference role="3cqZAo" target="wd51.3308300503039569051" resolve="HEIGHT" />
+                    <ref role="1PxDUh" to="wd51:2RDssu5UvxT" resolve="KajaFrame" />
+                    <ref role="3cqZAo" to="wd51:2RDssu5UQMr" resolve="HEIGHT" />
                   </node>
                 </node>
                 <node concept="1Wqviy" id="TyGiqsQaVe" role="3uHU7B" />

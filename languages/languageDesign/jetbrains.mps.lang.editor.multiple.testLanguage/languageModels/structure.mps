@@ -51,75 +51,75 @@
   <node concept="1TIwiD" id="5LszKvI9YWl">
     <property role="TrG5h" value="MultipleEditorsTestRoot" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6EI1ZZqOi41" role="1TKVEl">
       <property role="TrG5h" value="projectionType" />
-      <reference role="AX2Wp" target="7687090409437208772" resolve="ProjectionType" />
+      <ref role="AX2Wp" node="6EI1ZZqOi34" resolve="ProjectionType" />
     </node>
     <node concept="1TJgyi" id="6BSFEB5mELU" role="1TKVEl">
       <property role="TrG5h" value="projectAsCompact" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="5LszKvIa80G" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="richChild" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
     <node concept="1TJgyj" id="5UHFGFjUVIi" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="compactChild" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
     <node concept="1TJgyj" id="5ajRFTcS87I" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="defaultChild" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
     <node concept="1TJgyj" id="6EI1ZZqOi2f" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conditionallyProjectedChild" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
     <node concept="1TJgyj" id="6BSFEB5mELX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conditionallyRichOrCompactChild" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
     <node concept="1TJgyj" id="2gpcfU7iF_E" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="notSupportedPresentation" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
   </node>
   <node concept="1TIwiD" id="5LszKvI9Zn1">
     <property role="TrG5h" value="MultipleEditorsTestChild" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5LszKvIa2Y_" role="1TKVEl">
       <property role="TrG5h" value="defaultProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="5LszKvIa2YB" role="1TKVEl">
       <property role="TrG5h" value="richProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="5ajRFTcSmzJ" role="1TKVEl">
       <property role="TrG5h" value="compactProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="5LszKvIa2AG" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="AxPO7" id="6EI1ZZqOi34">
     <property role="TrG5h" value="ProjectionType" />
     <property role="PDuV0" value="false" />
-    <reference role="M4eZT" target="tpck.1082983041843" resolve="string" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
     <node concept="M4N5e" id="6EI1ZZqOi35" role="M5hS2">
       <property role="1uS6qo" value="defaultEditor" />
     </node>
@@ -135,169 +135,169 @@
   <node concept="1TIwiD" id="6k6gsLyh_XG">
     <property role="TrG5h" value="MultipleEditorsTestRefNodeListRoot" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4R_sg7X6NAA" role="1TKVEl">
       <property role="TrG5h" value="projectionType" />
-      <reference role="AX2Wp" target="7687090409437208772" resolve="ProjectionType" />
+      <ref role="AX2Wp" node="6EI1ZZqOi34" resolve="ProjectionType" />
     </node>
     <node concept="1TJgyi" id="uMiWVbXz5u" role="1TKVEl">
       <property role="TrG5h" value="projectAsCompact" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="6k6gsLyhJCq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="richChildren" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
     <node concept="1TJgyj" id="6k6gsLyhJCr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="compactChildren" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
     <node concept="1TJgyj" id="4R_sg7X6RC8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conditionallyProjectedChildren" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
     <node concept="1TJgyj" id="uMiWVbXr8C" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conditionallyRichOrCompactChildren" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
   </node>
   <node concept="1TIwiD" id="55my_QKN3DT">
     <property role="TrG5h" value="MultipleEditorsTestRefNodeRoot" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1G6ITli8lks" role="1TKVEl">
       <property role="TrG5h" value="projectionType" />
-      <reference role="AX2Wp" target="7687090409437208772" resolve="ProjectionType" />
+      <ref role="AX2Wp" node="6EI1ZZqOi34" resolve="ProjectionType" />
     </node>
     <node concept="1TJgyi" id="1G6ITli8lkt" role="1TKVEl">
       <property role="TrG5h" value="projectAsCompact" />
-      <reference role="AX2Wp" target="tpck.1082983657063" resolve="boolean" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="55my_QKN6AY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="richChild" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
     <node concept="1TJgyj" id="55my_QKNdi2" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="compactChild" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
     <node concept="1TJgyj" id="1G6ITli8lj8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conditionallyProjectedChild" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
     <node concept="1TJgyj" id="1G6ITli8lj9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conditionallyRichOrCompactChild" />
       <property role="20lbJX" value="0..1" />
-      <reference role="20lvS9" target="6655351613569889729" resolve="MultipleEditorsTestChild" />
+      <ref role="20lvS9" node="5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
     </node>
   </node>
   <node concept="1TIwiD" id="7rR2ExFim4d">
     <property role="TrG5h" value="MultipleEditorsTestMostSpecificChild" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7rR2ExFim_b" role="1TKVEl">
       <property role="TrG5h" value="defaultProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="7rR2ExFim_h" role="1TKVEl">
       <property role="TrG5h" value="compactProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="7rR2ExFim_n" role="1TKVEl">
       <property role="TrG5h" value="richProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="7rR2ExFim_u" role="1TKVEl">
       <property role="TrG5h" value="richCompactProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="7rR2ExFimMK" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="7rR2ExFilOw">
     <property role="TrG5h" value="MultipleEditorsTestMostSpecificRoot" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7rR2ExFim6p" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="mostSpecificChildren" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="8572332134193783053" resolve="MultipleEditorsTestMostSpecificChild" />
+      <ref role="20lvS9" node="7rR2ExFim4d" resolve="MultipleEditorsTestMostSpecificChild" />
     </node>
   </node>
   <node concept="1TIwiD" id="13zGF__x7Wj">
     <property role="TrG5h" value="MultipleEditorsTestEditorComponentRoot" />
     <property role="19KtqR" value="true" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="13zGF__xe2Y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="defaultChildren" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1217012833662065273" resolve="MultipleEditorsTestEditorComponentChild" />
+      <ref role="20lvS9" node="13zGF__xdDT" resolve="MultipleEditorsTestEditorComponentChild" />
     </node>
     <node concept="1TJgyj" id="13zGF__xgR6" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="richChildren" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1217012833662065273" resolve="MultipleEditorsTestEditorComponentChild" />
+      <ref role="20lvS9" node="13zGF__xdDT" resolve="MultipleEditorsTestEditorComponentChild" />
     </node>
     <node concept="1TJgyj" id="13zGF__xgRc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="richCompactChildren" />
       <property role="20lbJX" value="0..n" />
-      <reference role="20lvS9" target="1217012833662065273" resolve="MultipleEditorsTestEditorComponentChild" />
+      <ref role="20lvS9" node="13zGF__xdDT" resolve="MultipleEditorsTestEditorComponentChild" />
     </node>
     <node concept="1TJgyj" id="5$r4uFHYyk4" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="0..n" />
       <property role="20kJfa" value="childSubconcepts" />
-      <reference role="20lvS9" target="6420745394459388008" resolve="MultipleEditorsTestEditorComponentChildSubconcept" />
+      <ref role="20lvS9" node="5$r4uFHYyxC" resolve="MultipleEditorsTestEditorComponentChildSubconcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="13zGF__xdDT">
     <property role="TrG5h" value="MultipleEditorsTestEditorComponentChild" />
-    <reference role="1TJDcQ" target="tpck.1133920641626" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="13zGF__xifj" role="1TKVEl">
       <property role="TrG5h" value="defaultProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="13zGF__xifk" role="1TKVEl">
       <property role="TrG5h" value="compactProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="13zGF__xifl" role="1TKVEl">
       <property role="TrG5h" value="richProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="13zGF__xifm" role="1TKVEl">
       <property role="TrG5h" value="richCompactProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="13zGF__xdGB" role="PzmwI">
-      <reference role="PrY4T" target="tpck.1169194658468" resolve="INamedConcept" />
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="5$r4uFHYyxC">
     <property role="TrG5h" value="MultipleEditorsTestEditorComponentChildSubconcept" />
-    <reference role="1TJDcQ" target="1217012833662065273" resolve="MultipleEditorsTestEditorComponentChild" />
+    <ref role="1TJDcQ" node="13zGF__xdDT" resolve="MultipleEditorsTestEditorComponentChild" />
     <node concept="1TJgyi" id="5$r4uFHZydY" role="1TKVEl">
       <property role="TrG5h" value="subconceptProperty" />
-      <reference role="AX2Wp" target="tpck.1082983041843" resolve="string" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>
