@@ -34,6 +34,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import java.awt.Adjustable;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -108,7 +109,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   }
 
   @Override
-  protected void paintTrack(Graphics g, JComponent c, Rectangle bounds) {
+  protected void doPaintTrack(Graphics g, JComponent c, Rectangle bounds) {
     g.setColor(ButtonlessScrollBarUI.getTrackBackground());
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
@@ -218,6 +219,12 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   private void removeLater(Set<SimpleEditorMessage> messages) {
     myMessagesToRemove.addAll(messages);
     invalidateStatus();
+  }
+
+  @Override
+  public boolean alwaysShowTrack() {
+    if (scrollbar.getOrientation() == Adjustable.VERTICAL) return true;
+    return super.alwaysShowTrack();
   }
 
   private void invalidateStatus() {

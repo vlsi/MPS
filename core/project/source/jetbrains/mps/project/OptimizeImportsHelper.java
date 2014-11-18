@@ -155,7 +155,7 @@ public class OptimizeImportsHelper {
     Result result = new Result();
 
     result.myUsedLanguages.addAll(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages());
-    ModelDependencyScanner modelScanner = new ModelDependencyScanner().crossModelReferences(true).usedLanguages(true);
+    ModelDependencyScanner modelScanner = new ModelDependencyScanner().crossModelReferences(true).usedLanguages(true).walk(model);
     result.myUsedLanguages.addAll(findModules(modelScanner.getUsedLanguages()));
     result.myUsedModels.addAll(modelScanner.getCrossModelReferences());
 

@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
@@ -27,6 +26,8 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class SModelUtil {
   public static SNode findConceptDeclaration(@NotNull final String conceptFQName) {
@@ -41,7 +42,7 @@ public class SModelUtil {
     if (concept == null) {
       return null;
     }
-    return (Language) MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept).getLanguage().getSourceModule();
+    return as_74see4_a0b0c(check_74see4_a0b0c(concept.getModel()), Language.class);
   }
   public static SNode getGenuineLinkDeclaration(SNode linkDeclaration) {
     while (linkDeclaration != null && SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599698500l, "specializedLink")) != null) {
@@ -175,7 +176,16 @@ public class SModelUtil {
   public static String getLinkDeclarationRole(SNode link) {
     return SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
   }
+  private static SModule check_74see4_a0b0c(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
   private static boolean eq_74see4_a0a0l(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
+  }
+  private static <T> T as_74see4_a0b0c(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

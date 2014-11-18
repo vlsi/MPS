@@ -164,6 +164,7 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
+        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
@@ -28224,6 +28225,31 @@
         <property role="TrG5h" value="repository" />
         <node concept="3uibUv" id="5v1WjQDgGqx" role="1tU5fm">
           <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="205f$DbxXEs" role="jymVt" />
+    <node concept="3clFb_" id="205f$DbyuCS" role="jymVt">
+      <property role="TrG5h" value="getRootsBuilt" />
+      <node concept="2hMVRd" id="205f$DbyGwX" role="3clF45">
+        <node concept="3Tqbb2" id="205f$DbyPc1" role="2hN53Y" />
+      </node>
+      <node concept="3Tm1VV" id="205f$DbyuCV" role="1B3o_S" />
+      <node concept="3clFbS" id="205f$DbyuCW" role="3clF47">
+        <node concept="3clFbF" id="205f$DbzrAm" role="3cqZAp">
+          <node concept="2YIFZM" id="205f$DbzrBa" role="3clFbG">
+            <ref role="37wK5l" to="k7g3:~Collections.unmodifiableSet(java.util.Set):java.util.Set" resolve="unmodifiableSet" />
+            <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+            <node concept="3Tqbb2" id="205f$DbzBfD" role="3PaCim" />
+            <node concept="2ShNRf" id="205f$Db$fLg" role="37wK5m">
+              <node concept="2i4dXS" id="205f$Db$gue" role="2ShVmc">
+                <node concept="3Tqbb2" id="205f$Db$gWJ" role="HW$YZ" />
+                <node concept="37vLTw" id="205f$Db$hVS" role="I$8f6">
+                  <ref role="3cqZAo" node="4Mnw6pL$EtT" resolve="myAttachedRoots" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

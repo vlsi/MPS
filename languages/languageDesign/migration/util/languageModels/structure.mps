@@ -53,11 +53,9 @@
     <property role="TrG5h" value="StepData" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="6rIOn75Yg8$" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="script" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="6rIOn75Y3Ja" resolve="MigrationScriptReference" />
+    <node concept="1TJgyi" id="1HyHl712WnO" role="1TKVEl">
+      <property role="TrG5h" value="script" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyj" id="6rIOn75Yg8A" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

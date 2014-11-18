@@ -35,8 +35,6 @@
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/sandbox/jetbrains.mps.baseLanguage.sandbox.msd" folder="core.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/jetbrains.mps.baseLanguage.scopes.msd" folder="core.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="core.baseLanguage" />
-      <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/jetbrains.mps.baseLanguage.test.msd" folder="core.baseLanguage.tests" />
-      <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="core.baseLanguage.tests" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/jetbrains.mps.baseLanguage.util.msd" folder="core.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguageInternal/jetbrains.mps.baseLanguageInternal.mpl" folder="core.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/baseLanguageInternal/solutions/jetbrains.mps.baseLanguageInternal.test/jetbrains.mps.baseLanguageInternal.test.msd" folder="core.baseLanguage.tests" />
@@ -47,14 +45,11 @@
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/closures/jetbrains.mps.baseLanguage.closures.mpl" folder="core.baseLanguage.closures" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/closures/runtime/closures.runtime.msd" folder="core.baseLanguage.closures" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/closures/solutions/closures.sandbox/closures.sandbox.msd" folder="core.baseLanguage.closures" />
-      <modulePath path="$PROJECT_DIR$/languages/baseLanguage/closures/solutions/closures.test/closures.test.msd" folder="core.baseLanguage.closures" />
-      <modulePath path="$PROJECT_DIR$/languages/baseLanguage/closures/solutions/jetbrains.mps.baseLanguage.closures.unittest/jetbrains.mps.baseLanguage.closures.unittest.msd" folder="core.baseLanguage.closures" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/jetbrains.mps.baseLanguage.collections.mpl" folder="core.baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/languages/trove/jetbrains.mps.baseLanguage.collections.trove.mpl" folder="core.baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" folder="core.baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/runtime/collections.runtime.msd" folder="core.baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/solutions/collections/samples/jetbrains.mps.baseLanguage.collections.samples.msd" folder="core.baseLanguage.collections" />
-      <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/solutions/collections/unittest/collections_unittest.msd" folder="core.baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/solutions/collections_trove.test/collections_trove.test.msd" folder="core.baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.msd" folder="core.baseLanguage.collections" />
       <modulePath path="$PROJECT_DIR$/languages/baseLanguage/constructors/jetbrains.mps.baseLanguage.constructors.mpl" folder="core.baseLanguage.constructors" />
@@ -100,14 +95,9 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/constraints/jetbrains.mps.lang.constraints.mpl" folder="core.aspects.constraints" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/dataFlow/jetbrains.mps.lang.dataFlow.mpl" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/editor/jetbrains.mps.lang.editor.mpl" folder="core.aspects.editor" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/editor/languages/tableTests/jetbrains.mps.lang.editor.tableTests.mpl" folder="core.aspects.editor" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.styleTests/jetbrains.mps.lang.editor.styleTests.mpl" folder="core.aspects.editor" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="core.aspects.editor" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/editor/tests/table/jetbrains.mps.lang.editor.table.tests.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/extension/jetbrains.mps.lang.extension.mpl" folder="core.aspects.plugin" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/extension/solutions/jetbrains.mps.lang.extension.tests/jetbrains.mps.lang.extension.tests.msd" folder="core.aspects.plugin" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/findUsages/jetbrains.mps.lang.findUsages.mpl" folder="core.aspects.findUsages" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator-tests/jetbrains.mps.generator.tests.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/languages/descriptor/jetbrains.mps.lang.descriptor.mpl" folder="core.aspects.descriptor" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/languages/errorReporting/jetbrains.mps.transformation.test.errorReporting.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/languages/generationContext/jetbrains.mps.lang.generator.generationContext.mpl" folder="core.aspects.generator" />
@@ -123,11 +113,6 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/property/jetbrains.mps.generator.test.crossmodel.property.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/sandbox/jetbrains.mps.generator.sandbox.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/intentions/jetbrains.mps.lang.intentions.mpl" folder="core.aspects.intentions" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.actions.test/jetbrains.mps.lang.actions.test.msd" folder="core.aspects.actions" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/jetbrains.mps.lang.actions.testLanguage.mpl" folder="core.aspects.actions" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/jetbrains.mps.lang.editor.multiple.extension.testLanguage.mpl" folder="core.aspects.editor" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/jetbrains.mps.lang.editor.multiple.testLanguage.mpl" folder="core.aspects.editor" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/jetbrains.mps.lang.editor.multiple.tests.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/languages/facet/jetbrains.mps.make.facet.mpl" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/languages/gentest/jetbrains.mps.tool.gentest.mpl" folder="core.tool" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/languages/outlook/jetbrains.mps.make.outlook.mpl" folder="core.make" />
@@ -139,7 +124,6 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/migration/solutions/actions/jetbrains.mps.lang.migration.actions.msd" folder="core.aspects.migration" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/migration/util/jetbrains.mps.lang.migration.util.mpl" folder="core.aspects.migration" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/pattern/jetbrains.mps.lang.pattern.mpl" folder="core.languages.pattern" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/pattern/solutions/test/jetbrains.mps.lang.pattern.test.msd" folder="core.languages.pattern" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/plugin-standalone/jetbrains.mps.lang.plugin.standalone.mpl" folder="core.aspects.plugin" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/plugin/jetbrains.mps.lang.plugin.mpl" folder="core.aspects.plugin" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/plugin/solutions/pluginSolution/jetbrains.mps.lang.plugin.pluginSolution.msd" folder="core.aspects.plugin" />
@@ -164,7 +148,6 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceable.operations/jetbrains.mps.lang.traceable.operations.mpl" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceable.operations/tests/jetbrains.mps.lang.traceable.operations.test.msd" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceable/jetbrains.mps.lang.traceable.mpl" folder="core.languages" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/jetbrains.mps.traceInfo.testWeaving.msd" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/testWeavingGenerated.data/jetbrains.mps.traceInfo.testWeavingGenerated.data.mpl" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/testWeavingInterpreted.data/jetbrains.mps.traceInfo.testWeavingInterpreted.data.mpl" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceinfo/traceMacro.sandbox/jetbrains.mps.traceInfo.tracemacro.sandbox.msd" folder="platform.traceInfo" />
@@ -232,8 +215,6 @@
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/jetbrains.mps.execution.impl/jetbrains.mps.execution.impl.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/library/jetbrains.mps.execution.library.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/plugin/jetbrains.mps.execution.languages.msd" folder="workbench.execution" />
-      <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/tests.data/jetbrains.mps.execution.impl.tests.sandbox.msd" folder="workbench.execution" />
-      <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/tests/jetbrains.mps.execution.impl.tests.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/jetpad/solutions/jetbrains.jetpad/jetbrains.jetpad.msd" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/solutions/component/jetbrains.mps.migration.component.msd" folder="platform.migration" />
@@ -371,7 +352,26 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/testRefactoring.sandbox.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/solution/jetbrains.mps.testbench.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="tests" />
-      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/traceinfo/jetbrains.mps.traceInfo.test.msd" folder="tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/closures.test/closures.test.msd" folder="core.baseLanguage.closures" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/collections_unittest/collections_unittest.msd" folder="core.baseLanguage.collections" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/execution-tests/tests.data/jetbrains.mps.execution.impl.tests.sandbox.msd" folder="workbench.execution" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/execution-tests/tests/jetbrains.mps.execution.impl.tests.msd" folder="workbench.execution" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.baseLanguage.closures.unittest/jetbrains.mps.baseLanguage.closures.unittest.msd" folder="core.baseLanguage.closures" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.baseLanguage.test/jetbrains.mps.baseLanguage.test.msd" folder="core.baseLanguage.tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="core.baseLanguage.tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.generator.tests/jetbrains.mps.generator.tests.msd" folder="core.aspects.generator" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.actions.test/jetbrains.mps.lang.actions.test.msd" folder="core.aspects.actions" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.editor.multiple.tests/jetbrains.mps.lang.editor.multiple.tests.msd" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.editor.table.tests/jetbrains.mps.lang.editor.table.tests.msd" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.pattern.test/jetbrains.mps.lang.pattern.test.msd" folder="core.languages.pattern" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.traceInfo.test/jetbrains.mps.traceInfo.test.msd" folder="tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.traceInfo.testWeaving/jetbrains.mps.traceInfo.testWeaving.msd" folder="platform.traceInfo" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.mult.ext.testLang/jetbrains.mps.lang.editor.multiple.extension.testLanguage.mpl" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.mult.testLang/jetbrains.mps.lang.editor.multiple.testLanguage.mpl" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.style.testLang/jetbrains.mps.lang.editor.styleTests.mpl" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.tableTests.testLang/jetbrains.mps.lang.editor.tableTests.mpl" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/lang.actions.testLang/jetbrains.mps.lang.actions.testLanguage.mpl" folder="core.aspects.actions" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-debugger/jetbrains.mps.debugger.core.msd" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench.editor" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-platform/jetbrains.mps.ide.platform.msd" folder="workbench.platform" />

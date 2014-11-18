@@ -9,10 +9,10 @@ import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.console.tool.ConsoleUtil;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
+import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Level;
 import java.lang.reflect.InvocationTargetException;
 import org.apache.log4j.Logger;
@@ -31,39 +31,40 @@ public class GeneratedCommand_Behavior {
         }
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                try {
-                  SModule module = model.getModule();
-                  String name = ConsoleUtil.getGeneratedModelName(context);
-                  Class<?> aClass = ClassLoaderManager.getInstance().getClass(module, name);
-                  if (aClass == null) {
-                    throw new ClassNotFoundException("No class " + name + " for module " + module);
-                  }
-                  Method[] methods = aClass.getMethods();
-                  for (Method method : methods) {
-                    if (method.getName().equals("execute")) {
-                      beforeCallback.run();
-                      method.invoke(null, new Object[]{context, console});
-                      afterCallback.run();
-                      return;
+            try {
+              SModule module = model.getModule();
+              String name = ConsoleUtil.getGeneratedModelName(context);
+              Class<?> aClass = ClassLoaderManager.getInstance().getClass(module, name);
+              if (aClass == null) {
+                throw new ClassNotFoundException("No class " + name + " for module " + module);
+              }
+              Method[] methods = aClass.getMethods();
+              for (final Method method : methods) {
+                if (method.getName().equals("execute")) {
+                  beforeCallback.run();
+                  ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                    public void run() {
+                      try {
+                        method.invoke(null, new Object[]{context, console});
+                      } catch (IllegalAccessException ignore) {
+                        if (LOG.isEnabledFor(Level.ERROR)) {
+                          LOG.error("Exception on query loading", ignore);
+                        }
+                      } catch (InvocationTargetException ignore) {
+                        if (LOG.isEnabledFor(Level.ERROR)) {
+                          LOG.error("Exception on query loading", ignore);
+                        }
+                      }
                     }
-                  }
-                } catch (ClassNotFoundException ignore) {
-                  if (LOG.isEnabledFor(Level.ERROR)) {
-                    LOG.error("Exception on query loading", ignore);
-                  }
-                } catch (IllegalAccessException ignore) {
-                  if (LOG.isEnabledFor(Level.ERROR)) {
-                    LOG.error("Exception on query loading", ignore);
-                  }
-                } catch (InvocationTargetException ignore) {
-                  if (LOG.isEnabledFor(Level.ERROR)) {
-                    LOG.error("Exception on query loading", ignore);
-                  }
+                  });
+                  afterCallback.run();
                 }
               }
-            });
+            } catch (ClassNotFoundException ignore) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
+                LOG.error("Exception on query loading", ignore);
+              }
+            }
           }
         });
       }

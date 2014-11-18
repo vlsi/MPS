@@ -924,4 +924,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
   }
 
+  @Override
+  public int getUsedLanguageVersion(SLanguage usedLanguage) {
+    return getModuleDescriptor().getLanguageVersions().get(usedLanguage);
+  }
 }

@@ -52,6 +52,9 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleAdapter;
+import org.jetbrains.mps.openapi.module.SModuleListener;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -181,7 +184,7 @@ public class MPSPsiProvider extends AbstractProjectComponent {
     return new MPSPsiRef(role, referenceText);
   }
 
-  private MPSPsiModel getMPSPsiModel(SModel model, SModelReference modelRef) {
+  private MPSPsiModel getMPSPsiModel(final SModel model, final SModelReference modelRef) {
     if (MPS2PsiMapperUtil.hasCorrespondingPsi(model)) return null;
 
     // synchronizing be model:
@@ -198,6 +201,13 @@ public class MPSPsiProvider extends AbstractProjectComponent {
         // I.e. those root nodes cannot be added as children to a model when they are already children of another
         result.reload(model);
         models.put(modelRef, result);
+        model.getModule().addModuleListener(new SModuleAdapter() {
+          @Override
+          public void beforeModelRemoved(SModule module, SModel removedModel) {
+            if (removedModel != model) return;
+            models.remove(modelRef);
+          }
+        });
       }
       return result;
     }

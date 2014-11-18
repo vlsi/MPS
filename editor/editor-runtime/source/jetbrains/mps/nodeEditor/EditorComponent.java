@@ -33,6 +33,7 @@ import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
+import com.intellij.openapi.editor.impl.LeftHandScrollbarLayout;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
@@ -397,7 +398,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     setDoubleBuffered(true);
     myScrollPane = ScrollPaneFactory.createScrollPane();
     if (rightToLeft) {
-      myScrollPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+      myScrollPane.setLayout(new LeftHandScrollbarLayout());
     }
     myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
     myScrollPane.setVerticalScrollBar(myVerticalScrollBar);
@@ -427,11 +428,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myContainer.setMinimumSize(new Dimension(0, 0));
     myContainer.setLayout(new BorderLayout());
     myContainer.add(myScrollPane, BorderLayout.CENTER);
-
-
-    if (showErrorsGutter) {
-      getVerticalScrollBar().setPersistentUI(myMessagesGutter);
-    }
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
 
@@ -584,7 +580,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
 
     myMessagesGutter = new MessagesGutter(this, rightToLeft);
-
+    if (showErrorsGutter) {
+      getVerticalScrollBar().setPersistentUI(myMessagesGutter);
+    }
     myLeftHighlighter = new LeftEditorHighlighter(this, rightToLeft);
     myLeftHighlighter.addMouseListener(new MouseAdapter() {
       @Override

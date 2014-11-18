@@ -3575,19 +3575,24 @@
             <property role="3SKdUp" value="schedules node update to run in correct thread" />
           </node>
         </node>
-        <node concept="3clFbF" id="4Ji_XZ8dg$C" role="3cqZAp">
-          <node concept="2YIFZM" id="4Ji_XZ8diii" role="3clFbG">
-            <ref role="37wK5l" to="86um:~ThreadUtils.runInUIThreadNoWait(java.lang.Runnable):void" resolve="runInUIThreadNoWait" />
-            <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
-            <node concept="1bVj0M" id="4Ji_XZ8dija" role="37wK5m">
-              <node concept="3clFbS" id="4Ji_XZ8dijb" role="1bW5cS">
-                <node concept="3clFbF" id="4Ji_XZ8d6Tv" role="3cqZAp">
-                  <node concept="2OqwBi" id="4Ji_XZ8d7m6" role="3clFbG">
-                    <node concept="37vLTw" id="4Ji_XZ8d6Tu" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4Ji_XZ8d3s6" resolve="treeNode" />
-                    </node>
-                    <node concept="liA8E" id="4Ji_XZ8d9kQ" role="2OqNvi">
-                      <ref role="37wK5l" to="mlq0:~MPSTreeNode.renewPresentation():void" resolve="renewPresentation" />
+        <node concept="3clFbF" id="45L8vAESbwt" role="3cqZAp">
+          <node concept="2OqwBi" id="45L8vAESbxM" role="3clFbG">
+            <node concept="2YIFZM" id="45L8vAESbwE" role="2Oq$k0">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            </node>
+            <node concept="liA8E" id="45L8vAESbD$" role="2OqNvi">
+              <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadInEDT(java.lang.Runnable):void" resolve="runReadInEDT" />
+              <node concept="1bVj0M" id="4Ji_XZ8dija" role="37wK5m">
+                <node concept="3clFbS" id="4Ji_XZ8dijb" role="1bW5cS">
+                  <node concept="3clFbF" id="4Ji_XZ8d6Tv" role="3cqZAp">
+                    <node concept="2OqwBi" id="4Ji_XZ8d7m6" role="3clFbG">
+                      <node concept="37vLTw" id="4Ji_XZ8d6Tu" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4Ji_XZ8d3s6" resolve="treeNode" />
+                      </node>
+                      <node concept="liA8E" id="4Ji_XZ8d9kQ" role="2OqNvi">
+                        <ref role="37wK5l" to="mlq0:~MPSTreeNode.renewPresentation():void" resolve="renewPresentation" />
+                      </node>
                     </node>
                   </node>
                 </node>

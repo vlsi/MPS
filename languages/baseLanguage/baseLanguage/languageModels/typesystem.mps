@@ -77,6 +77,7 @@
       </concept>
     </language>
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
+      <concept id="5979988948250981289" name="jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer" flags="nn" index="2fJWfE" />
       <concept id="767145758118872828" name="jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation" flags="nn" index="2DeJnW" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -52965,6 +52966,111 @@
     <node concept="1YaCAy" id="11Uz4VUnBsu" role="1YuTPh">
       <property role="TrG5h" value="staticFieldDeclaration" />
       <ref role="1YaFvo" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="1pi4V_1rQIL">
+    <property role="TrG5h" value="check_NotExpression_NeedsParens" />
+    <property role="3GE5qa" value="expressions" />
+    <node concept="3clFbS" id="1pi4V_1rQIM" role="18ibNy">
+      <node concept="3clFbJ" id="1pi4V_1s3IH" role="3cqZAp">
+        <node concept="3clFbS" id="1pi4V_1s3II" role="3clFbx">
+          <node concept="2MkqsV" id="1pi4V_1s5di" role="3cqZAp">
+            <node concept="1YBJjd" id="1pi4V_1s5jM" role="2OEOjV">
+              <ref role="1YBMHb" node="1pi4V_1rQIO" resolve="notExpression" />
+            </node>
+            <node concept="Xl_RD" id="1pi4V_1s5d$" role="2MkJ7o">
+              <property role="Xl_RC" value="Parentheses needed arround the negated expression." />
+            </node>
+            <node concept="3Cnw8n" id="1pi4V_24DUX" role="2OEOjU">
+              <ref role="QpYPw" node="1pi4V_1HA6f" resolve="AddMissingParensToNotExpression" />
+            </node>
+          </node>
+        </node>
+        <node concept="2YIFZM" id="1pi4V_1s5be" role="3clFbw">
+          <ref role="37wK5l" to="tpcz:3VO0F5J53_2" resolve="needsParensAroundNotExpression" />
+          <ref role="1Pybhc" to="tpcz:18ik2d67g12" resolve="PrecedenceUtil" />
+          <node concept="1YBJjd" id="1pi4V_1s5bY" role="37wK5m">
+            <ref role="1YBMHb" node="1pi4V_1rQIO" resolve="notExpression" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1pi4V_1rQIO" role="1YuTPh">
+      <property role="TrG5h" value="notExpression" />
+      <ref role="1YaFvo" to="tpee:fJfqX4d" resolve="NotExpression" />
+    </node>
+  </node>
+  <node concept="Q5z_Y" id="1pi4V_1HA6f">
+    <property role="3GE5qa" value="expressions" />
+    <property role="TrG5h" value="AddMissingParensToNotExpression" />
+    <node concept="Q5ZZ6" id="1pi4V_1HA6g" role="Q6x$H">
+      <node concept="3clFbS" id="1pi4V_1HA6h" role="2VODD2">
+        <node concept="3cpWs8" id="1pi4V_1HOWe" role="3cqZAp">
+          <node concept="3cpWsn" id="1pi4V_1HOWf" role="3cpWs9">
+            <property role="TrG5h" value="parens" />
+            <node concept="3Tqbb2" id="1pi4V_1HOWc" role="1tU5fm">
+              <ref role="ehGHo" to="tpee:fHeOMHZ" resolve="ParenthesizedExpression" />
+            </node>
+            <node concept="2ShNRf" id="1pi4V_1HOWg" role="33vP2m">
+              <node concept="2fJWfE" id="1pi4V_1HOWh" role="2ShVmc">
+                <node concept="3Tqbb2" id="1pi4V_1HOWi" role="3zrR0E">
+                  <ref role="ehGHo" to="tpee:fHeOMHZ" resolve="ParenthesizedExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1pi4V_1HNVv" role="3cqZAp">
+          <node concept="2OqwBi" id="1pi4V_1HQxP" role="3clFbG">
+            <node concept="2OqwBi" id="1pi4V_1HP4x" role="2Oq$k0">
+              <node concept="37vLTw" id="1pi4V_1HOWj" role="2Oq$k0">
+                <ref role="3cqZAo" node="1pi4V_1HOWf" resolve="parens" />
+              </node>
+              <node concept="3TrEf2" id="1pi4V_1HQlA" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpee:fHeOMI0" />
+              </node>
+            </node>
+            <node concept="2oxUTD" id="1pi4V_1HRrL" role="2OqNvi">
+              <node concept="2OqwBi" id="1pi4V_1HRH9" role="2oxUTC">
+                <node concept="1PxgMI" id="1pi4V_1HRwt" role="2Oq$k0">
+                  <ref role="1PxNhF" to="tpee:fJfqX4d" resolve="NotExpression" />
+                  <node concept="Q6c8r" id="1pi4V_1HRt1" role="1PxMeX" />
+                </node>
+                <node concept="3TrEf2" id="1pi4V_1HTcX" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpee:fJfr32$" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1pi4V_1HBtW" role="3cqZAp">
+          <node concept="2OqwBi" id="1pi4V_1HMok" role="3clFbG">
+            <node concept="2OqwBi" id="1pi4V_1HL_G" role="2Oq$k0">
+              <node concept="1PxgMI" id="1pi4V_1HLsy" role="2Oq$k0">
+                <ref role="1PxNhF" to="tpee:fJfqX4d" resolve="NotExpression" />
+                <node concept="Q6c8r" id="1pi4V_1HBtV" role="1PxMeX" />
+              </node>
+              <node concept="3TrEf2" id="1pi4V_1HM84" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpee:fJfr32$" />
+              </node>
+            </node>
+            <node concept="2oxUTD" id="1pi4V_1HTod" role="2OqNvi">
+              <node concept="37vLTw" id="1pi4V_1HTpD" role="2oxUTC">
+                <ref role="3cqZAo" node="1pi4V_1HOWf" resolve="parens" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="QznSV" id="1pi4V_1HA6y" role="QzAvj">
+      <node concept="3clFbS" id="1pi4V_1HA6z" role="2VODD2">
+        <node concept="3clFbF" id="1pi4V_1HAjX" role="3cqZAp">
+          <node concept="Xl_RD" id="1pi4V_1HAjW" role="3clFbG">
+            <property role="Xl_RC" value="Add Missing Parens" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

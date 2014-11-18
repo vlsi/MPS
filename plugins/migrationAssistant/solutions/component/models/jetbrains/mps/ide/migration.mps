@@ -1232,69 +1232,12 @@
         <node concept="10P_77" id="5SsFeroaabA" role="3clF45" />
       </node>
     </node>
-    <node concept="3HP615" id="5SsFeroaabB" role="jymVt">
-      <property role="TrG5h" value="Conflict" />
-      <property role="2bfB8j" value="true" />
-      <node concept="3Tm1VV" id="5SsFeroaabD" role="1B3o_S" />
-      <node concept="3uibUv" id="5SsFeroaabE" role="3HQHJm">
-        <ref role="3uigEE" node="5SsFeroaabo" resolve="MigrationManager.MigrationState" />
-      </node>
-      <node concept="3clFb_" id="5SsFeroaabF" role="jymVt">
-        <property role="1EzhhJ" value="true" />
-        <property role="TrG5h" value="getConflictingScripts" />
-        <property role="DiZV1" value="false" />
-        <property role="od$2w" value="false" />
-        <node concept="3Tm1VV" id="5SsFeroaabG" role="1B3o_S" />
-        <node concept="3clFbS" id="5SsFeroaabH" role="3clF47" />
-        <node concept="3uibUv" id="5SsFeroaabI" role="3clF45">
-          <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
-          <node concept="3uibUv" id="5SsFeroaabJ" role="11_B2D">
-            <ref role="3uigEE" node="5SsFeroaatc" resolve="ScriptApplied" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFb_" id="5SsFeroaabK" role="jymVt">
-        <property role="1EzhhJ" value="true" />
-        <property role="TrG5h" value="forceExecution" />
-        <property role="DiZV1" value="false" />
-        <property role="od$2w" value="false" />
-        <node concept="3Tm1VV" id="5SsFeroaabL" role="1B3o_S" />
-        <node concept="37vLTG" id="5SsFeroaabM" role="3clF46">
-          <property role="TrG5h" value="next" />
-          <property role="3TUv4t" value="false" />
-          <node concept="3uibUv" id="5SsFeroaabN" role="1tU5fm">
-            <ref role="3uigEE" node="5SsFeroaatc" resolve="ScriptApplied" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="5SsFeroaabO" role="3clF47" />
-        <node concept="10P_77" id="5SsFeroaabP" role="3clF45" />
-      </node>
-    </node>
     <node concept="3HP615" id="5SsFeroaabQ" role="jymVt">
       <property role="TrG5h" value="Finished" />
       <property role="2bfB8j" value="true" />
       <node concept="3Tm1VV" id="5SsFeroaabS" role="1B3o_S" />
       <node concept="3uibUv" id="5SsFeroaabT" role="3HQHJm">
         <ref role="3uigEE" node="5SsFeroaabo" resolve="MigrationManager.MigrationState" />
-      </node>
-    </node>
-    <node concept="3HP615" id="5SsFeroaabU" role="jymVt">
-      <property role="TrG5h" value="Error" />
-      <property role="2bfB8j" value="true" />
-      <node concept="3Tm1VV" id="5SsFeroaabW" role="1B3o_S" />
-      <node concept="3uibUv" id="5SsFeroaabX" role="3HQHJm">
-        <ref role="3uigEE" node="5SsFeroaabo" resolve="MigrationManager.MigrationState" />
-      </node>
-      <node concept="3clFb_" id="5SsFeroaabY" role="jymVt">
-        <property role="1EzhhJ" value="true" />
-        <property role="TrG5h" value="getErrorMessage" />
-        <property role="DiZV1" value="false" />
-        <property role="od$2w" value="false" />
-        <node concept="3Tm1VV" id="5SsFeroaabZ" role="1B3o_S" />
-        <node concept="3clFbS" id="5SsFeroaac0" role="3clF47" />
-        <node concept="3uibUv" id="5SsFeroaac1" role="3clF45">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-        </node>
       </node>
     </node>
   </node>

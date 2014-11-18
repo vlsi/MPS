@@ -62,11 +62,11 @@ public class MigrationsProgressStep extends MigrationStep {
       // just continue 
     }
 
-    if (mySuccess) {
-      while (executeSingleStep(myManager.nextStep())) {
-        // just continue 
-      }
+    while (executeSingleStep(myManager.nextStep())) {
+      // just continue 
     }
+
+    mySuccess = mySuccess && !(myManager.isMigrationRequired());
 
     myFinished = true;
 
@@ -75,17 +75,6 @@ public class MigrationsProgressStep extends MigrationStep {
 
   private boolean executeSingleStep(final MigrationManager.MigrationState result) {
     if (result instanceof MigrationManager.Finished) {
-      return false;
-    }
-
-    if (result instanceof MigrationManager.Error) {
-      mySuccess = false;
-      return false;
-    }
-
-    if (result instanceof MigrationManager.Conflict) {
-      // now it's impossible, but still we want to be able to handle such things in future 
-      mySuccess = false;
       return false;
     }
 
@@ -109,7 +98,7 @@ public class MigrationsProgressStep extends MigrationStep {
 
       return mySuccess;
     } else {
-      throw new IllegalArgumentException("Unknown step type: " + result.getClass().getSimpleName());
+      return false;
     }
   }
 
