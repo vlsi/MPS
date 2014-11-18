@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.migration.global.ProjectMigration;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
@@ -77,8 +77,8 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     });
   }
 
-  public MigrationDescriptor loadMigrationDescriptor(SModule module) {
-    final ClassLoader loader = ClassLoaderManager.getInstance().getClassLoader(module);
+  public MigrationDescriptor loadMigrationDescriptor(Language module) {
+    final ClassLoader loader = module.getClassLoader();
     try {
       Class descriptorClass = Class.forName(MigrationsUtil.getDescriptorFQName(module), true, loader);
       return (MigrationDescriptor) descriptorClass.newInstance();
@@ -93,7 +93,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     }
   }
 
-  public MigrationDescriptor getMigrationDescriptor(SModule module) {
+  public MigrationDescriptor getMigrationDescriptor(Language module) {
     if (MapSequence.fromMap(loadedDescriptors).get(module) == null) {
       MapSequence.fromMap(loadedDescriptors).put(module, loadMigrationDescriptor(module));
     }
@@ -107,7 +107,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   public MigrationScript fetchScriptForModule(AbstractModule module, MigrationScriptReference scriptReference) {
     SLanguage depLanguage = scriptReference.getLanguage();
     int current = scriptReference.getFromVersion();
-    MigrationDescriptor md = getMigrationDescriptor(depLanguage.getSourceModule());
+    MigrationDescriptor md = getMigrationDescriptor((Language) depLanguage.getSourceModule());
     if (md == null) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Could not load migration descriptor for language " + depLanguage + ".");
