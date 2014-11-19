@@ -251,7 +251,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public MigrationManager.MigrationState nextStep() {
-    final Wrappers._T<MigrationManager.MigrationState> result = new Wrappers._T<MigrationManager.MigrationState>();
+    final Wrappers._T<MigrationManager.MigrationState> result = new Wrappers._T<MigrationManager.MigrationState>(null);
 
     final Map<SModule, Iterable<MigrationScriptReference>> languageVersions = MapSequence.fromMap(new HashMap<SModule, Iterable<MigrationScriptReference>>());
     final Wrappers._T<Iterable<? extends SModule>> projectModules = new Wrappers._T<Iterable<? extends SModule>>();
@@ -294,7 +294,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         final ScriptApplied nextScript = calculateNextMigration(allStepScripts);
-        if (nextScript == null) {
+        if (nextScript != null) {
           result.value = new MigrationManager.Step() {
             public String getDescription() {
               return nextScript.toString();
