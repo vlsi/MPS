@@ -186,8 +186,12 @@ public class ModulesWatcher {
     ModuleDescriptor moduleDescriptor = module.getModuleDescriptor();
     if (moduleDescriptor == null) return Collections.emptySet();
     Collection<Dependency> dependencies = moduleDescriptor.getDependencies();
+    Collection<SModuleReference> usedDevkits = moduleDescriptor.getUsedDevkits();
+    Collection<SModuleReference> usedLangs = moduleDescriptor.getUsedLanguages();
     Collection<SModuleReference> result = new HashSet<SModuleReference>();
     for (Dependency dep : dependencies) result.add(dep.getModuleRef());
+    for (SModuleReference mRef : usedDevkits) result.add(mRef);
+    for (SModuleReference mRef : usedLangs) result.add(mRef);
     return result;
   }
 
