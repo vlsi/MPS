@@ -476,13 +476,13 @@
   
   <target name="java.compile.mps-workbench" depends="fetchDependencies">
     <mkdir dir="${mps_home}/workbench/mps-workbench/source" />
-    <mkdir dir="${mps_home}/workbench/mps-workbench/source_gen" />
+    <mkdir dir="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-workbench" />
     <javac2 destdir="${build.tmp}/java/out/mps-workbench" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/workbench/mps-workbench/source" />
-        <path location="${mps_home}/workbench/mps-workbench/source_gen" />
+        <path location="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
@@ -512,7 +512,7 @@
       <fileset dir="${mps_home}/workbench/mps-workbench/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info">
         <exclude name="idea/IdeaApplicationInfo.xml" />
       </fileset>
-      <fileset dir="${mps_home}/workbench/mps-workbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info">
+      <fileset dir="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info">
         <exclude name="idea/IdeaApplicationInfo.xml" />
       </fileset>
     </copy>
