@@ -814,32 +814,20 @@
                     <node concept="2ShNRf" id="6NgXkpAZm2$" role="YScLw">
                       <node concept="1pGfFk" id="6NgXkpAZm2_" role="2ShVmc">
                         <ref role="37wK5l" to="d3gt:~BuildException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="BuildException" />
-                        <node concept="3cpWs3" id="6NgXkpAZm1z" role="37wK5m">
-                          <node concept="2OqwBi" id="6NgXkpAZm2G" role="3uHU7w">
-                            <node concept="37vLTw" id="6NgXkpAZm2F" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6NgXkpAZm01" resolve="classPathUrls" />
-                            </node>
-                            <node concept="liA8E" id="6NgXkpAZm2H" role="2OqNvi">
-                              <ref role="37wK5l" to="e2lb:~Object.toString():java.lang.String" resolve="toString" />
-                            </node>
+                        <node concept="2YIFZM" id="4TFriYaGBll" role="37wK5m">
+                          <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                          <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                          <node concept="Xl_RD" id="4TFriYaGDLg" role="37wK5m">
+                            <property role="Xl_RC" value="Cannot convert .mps into .mpb: %s\nModels:%s\nClasspath:%s" />
                           </node>
-                          <node concept="3cpWs3" id="6NgXkpAZm1$" role="3uHU7B">
-                            <node concept="3cpWs3" id="6NgXkpAZm1_" role="3uHU7B">
-                              <node concept="3cpWs3" id="6NgXkpAZm1A" role="3uHU7B">
-                                <node concept="37vLTw" id="vAjk0TrLcs" role="3uHU7w">
-                                  <ref role="3cqZAo" node="vAjk0TrLco" resolve="message" />
-                                </node>
-                                <node concept="Xl_RD" id="6NgXkpAZm1B" role="3uHU7B">
-                                  <property role="Xl_RC" value="Cannot convert .mps into .mpb: " />
-                                </node>
-                              </node>
-                              <node concept="Xl_RD" id="6NgXkpAZm1E" role="3uHU7w">
-                                <property role="Xl_RC" value="\n" />
-                              </node>
-                            </node>
-                            <node concept="Xl_RD" id="6NgXkpAZm1F" role="3uHU7w">
-                              <property role="Xl_RC" value="Used class path: " />
-                            </node>
+                          <node concept="37vLTw" id="4TFriYaGPMi" role="37wK5m">
+                            <ref role="3cqZAo" node="vAjk0TrLco" resolve="message" />
+                          </node>
+                          <node concept="37vLTw" id="4TFriYaGR7n" role="37wK5m">
+                            <ref role="3cqZAo" node="6NgXkpAOzGp" resolve="toConvert" />
+                          </node>
+                          <node concept="37vLTw" id="4TFriYaGX1N" role="37wK5m">
+                            <ref role="3cqZAo" node="6NgXkpAZm01" resolve="classPathUrls" />
                           </node>
                         </node>
                         <node concept="37vLTw" id="6NgXkpAZm1I" role="37wK5m">
