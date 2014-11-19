@@ -23,12 +23,16 @@
 
      To run tests locally, it's sufficient to set home.idea_ce and home.jdk:
         ant -Dhome.idea_ce=/IDEA13/ -Dhome.jdk=/Library/Java/Home/ -f IdeaPlugin/build.xml clean zip runTests
+
+     To connect to running tests and debug with Idea, uncomment/modify 'junit.debug.arg' property below
   -->
 
 
   <property name="base_dir" value="${basedir}/.."/>
   <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
   <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
+  <property name="junit.debug.arg" value=""/> <!--Value for JUnit test JVM launcher-->
+  <!--property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006"/-->
 
   <property environment="env"/>
 
@@ -181,7 +185,7 @@
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1024m"/>
       <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
-      <jvmarg value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006"/>
+      <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
@@ -220,6 +224,7 @@
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1024m"/>
       <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
+      <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
@@ -256,7 +261,7 @@
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1024m"/>
       <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
-      <jvmarg value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006"/>
+      <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
