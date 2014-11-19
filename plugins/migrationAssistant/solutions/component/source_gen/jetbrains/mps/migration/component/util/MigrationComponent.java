@@ -16,6 +16,7 @@ import jetbrains.mps.migration.global.ProjectMigration;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.project.AbstractModule;
@@ -25,7 +26,6 @@ import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -77,10 +77,16 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     });
   }
 
-  public MigrationDescriptor loadMigrationDescriptor(Language module) {
+  public MigrationDescriptor loadMigrationDescriptor(final Language module) {
     final ClassLoader loader = module.getClassLoader();
+    final Wrappers._T<String> name = new Wrappers._T<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        name.value = MigrationsUtil.getDescriptorFQName(module);
+      }
+    });
     try {
-      Class descriptorClass = Class.forName(MigrationsUtil.getDescriptorFQName(module), true, loader);
+      Class descriptorClass = Class.forName(name.value, true, loader);
       return (MigrationDescriptor) descriptorClass.newInstance();
     } catch (Throwable e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
