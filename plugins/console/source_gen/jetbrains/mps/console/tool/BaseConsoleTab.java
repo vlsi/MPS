@@ -391,13 +391,13 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
 
   public void execute(@Nullable final SNode command, @Nullable final Runnable executeBefore, @Nullable final Runnable executeAfter) {
     myTool.selectTab(this);
-    final SNode[] typedCommand = new SNode[1];
+    final Wrappers._T<SNode> typedCommand = new Wrappers._T<SNode>();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        typedCommand[0] = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder")));
+        typedCommand.value = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, "jetbrains.mps.console.base.structure.CommandHolder")));
         if (command != null) {
           addNodeImports(command);
-          SLinkOperations.setTarget(typedCommand[0], MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"))));
+          SLinkOperations.setTarget(typedCommand.value, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"))));
           SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SNodeOperations.copyNode(command));
         }
       }
@@ -416,7 +416,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SLinkOperations.getTarget(typedCommand[0], MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command")));
+            SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command"), SLinkOperations.getTarget(typedCommand.value, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l, 351968380916615460l, "command")));
             check_6q36mf_a1a0a0a0a3a0d0gc(executeAfter);
           }
         });
