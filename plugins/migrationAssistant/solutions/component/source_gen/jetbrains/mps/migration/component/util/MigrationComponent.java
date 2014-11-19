@@ -31,6 +31,8 @@ import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -197,8 +199,26 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
       return false;
     }
-    module.getModuleDescriptor().getLanguageVersions().put(language, script.getDescriptor().getFromVersion() + 1);
+
+    int toVersion = script.getDescriptor().getFromVersion() + 1;
+    module.getModuleDescriptor().getLanguageVersions().put(language, toVersion);
     module.setChanged();
+
+    for (SModel model : ListSequence.fromList(module.getModels())) {
+      if (model.isReadOnly()) {
+        continue;
+      }
+      if (!((model instanceof SModelInternal))) {
+        continue;
+      }
+      if (!(((SModelInternal) model).importedLanguageIds().contains(language))) {
+        continue;
+      }
+
+      ((SModelInternal) model).deleteLanguageId(language);
+      ((SModelInternal) model).addLanguageId(language, toVersion);
+    }
+
     return true;
   }
 
