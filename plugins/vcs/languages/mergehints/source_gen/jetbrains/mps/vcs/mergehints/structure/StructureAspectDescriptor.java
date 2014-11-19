@@ -5,12 +5,15 @@ package jetbrains.mps.vcs.mergehints.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptMergeHint = new ConceptDescriptorBuilder("jetbrains.mps.vcs.mergehints.structure.MergeHint").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").create();
+
+  /*package*/ final ConceptDescriptor myConceptMergeHint = new ConceptDescriptorBuilder("jetbrains.mps.vcs.mergehints.structure.MergeHint", MetaIdFactory.conceptId(new UUID(4026282531954969020L, -9049648244592808842L), 7313573869697839898L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 3364660638048049748L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 3364660638048049748L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(8485200647808748986L, "hint")).properties("hint").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -20,12 +23,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptMergeHint;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.vcs.mergehints.structure.MergeHint"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.vcs.mergehints.structure.MergeHint"};
 }

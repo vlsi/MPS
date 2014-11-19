@@ -5,6 +5,8 @@ package jetbrains.mps.vcs.diff.changes;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -12,6 +14,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class SetPropertyChange extends NodeChange {
@@ -26,15 +29,24 @@ public class SetPropertyChange extends NodeChange {
   public String getPropertyName() {
     return myPropertyName;
   }
-  private Boolean myMergeHint = null;
+  private SNodeReference myMergeHint = null;
+  private boolean myMergeHintLoaded = false;
+  @Nullable
   @Override
-  public boolean isNonConflicting() {
-    // check "nonconflicting" attribute in metamodel 
-    if (myMergeHint == null) {
+  public SNodeReference getMergeHint() {
+    // get "nonconflicting" attribute in metamodel  
+    if (!(myMergeHintLoaded)) {
+      myMergeHintLoaded = true;
       SNode n = getChangeSet().getOldModel().getNode(getAffectedNodeId());
       SNode c = SNodeOperations.getConceptDeclaration(n);
       SNode propDecl = SNodeOperations.as(SModelSearchUtil.findPropertyDeclaration(c, myPropertyName), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
-      myMergeHint = (AttributeOperations.getAttribute(propDecl, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint")) != null) || (AttributeOperations.getAttribute(c, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint")) != null);
+      SNode hint = AttributeOperations.getAttribute(propDecl, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint"));
+      if ((hint == null)) {
+        hint = AttributeOperations.getAttribute(c, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint"));
+      }
+      if ((hint != null)) {
+        myMergeHint = new SNodePointer(hint);
+      }
     }
     return myMergeHint;
   }
