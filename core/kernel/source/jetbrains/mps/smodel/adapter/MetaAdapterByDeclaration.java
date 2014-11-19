@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
+import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -50,7 +51,7 @@ public class MetaAdapterByDeclaration {
     boolean cd = concept.equals(SNodeUtil.concept_ConceptDeclaration);
     boolean icd = concept.equals(SNodeUtil.concept_InterfaceConceptDeclaration);
     if (cd || icd) {
-      String name = getNormalizedName(node);
+      String name = NameUtil.getModelLongName(node.getModel()) + "." + getNormalizedName(node);
       if (cd) {
         return MetaAdapterFactory.getConcept(MetaIdByDeclaration.getConceptId(node), name);
       } else {
