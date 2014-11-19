@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.IdHelper;
+import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -49,15 +50,20 @@ import java.util.Map;
 
 public class ModelWriter9bis implements IModelWriter {
   public static final int VERSION = 9;
+  private final MetaModelInfoProvider myMetaInfoProvider;
 
   private IdInfoCollector myMetaInfo;
   private ImportsHelper myImportsHelper;
   private final IdEncoder myIdEncoder = new IdEncoder();
 
+  public ModelWriter9bis(@NotNull MetaModelInfoProvider mmiProvider) {
+    myMetaInfoProvider = mmiProvider;
+  }
+
   @Override
   public Document saveModel(SModel sourceModel) {
 
-    myMetaInfo = new IdInfoCollector();
+    myMetaInfo = new IdInfoCollector(myMetaInfoProvider);
     myMetaInfo.fill(sourceModel.getRootNodes());
     myImportsHelper = new ImportsHelper(sourceModel.getReference());
 
@@ -115,7 +121,7 @@ public class ModelWriter9bis implements IModelWriter {
         Element conceptElement = new Element("concept");
         conceptElement.setAttribute(ModelPersistence.ID, myIdEncoder.toText(ci.getConceptId()));
         conceptElement.setAttribute(ModelPersistence.NAME, ci.getName());
-        conceptElement.setAttribute("flags", ci.getConceptImplementationKind());
+        conceptElement.setAttribute("flags", ci.getImplementationKindText());
         conceptElement.setAttribute("index", ci.getIndex());
         for (PropertyInfo pi : ci.getPropertiesInUse()) {
           Element e = new Element(ModelPersistence.PROPERTY);
@@ -294,7 +300,7 @@ public class ModelWriter9bis implements IModelWriter {
         }
       };
       // and its meta-info
-      myMetaInfo = new IdInfoCollector();
+      myMetaInfo = new IdInfoCollector(myMetaInfoProvider);
       myMetaInfo.fill(Collections.singleton(root));
       Element childElement = saveNode(root);
 

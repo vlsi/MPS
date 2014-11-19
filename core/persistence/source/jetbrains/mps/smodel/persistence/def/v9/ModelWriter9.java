@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.IdHelper;
+import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -143,7 +144,7 @@ public class ModelWriter9 implements IModelWriter {
     Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
     Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
 
-    final IdInfoCollector ic = new IdInfoCollector();
+    final IdInfoCollector ic = new IdInfoCollector(new RegularMetaModelInfo());
     ic.fill(sourceModel.getRootNodes());
     ic.getDebugInfoById(conceptIds, propIds, refIds, roleIds);
 

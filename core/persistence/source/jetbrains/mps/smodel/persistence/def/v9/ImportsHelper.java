@@ -54,7 +54,7 @@ class ImportsHelper {
   public void addModelImport(@NotNull String index, @NotNull SModelReference modelReference) {
     if (myIndex2Model.containsKey(index)) {
 //      throw new IllegalArgumentException(String.format...);
-      Logger.getLogger(ImportsHelper.class).error(String.format("Can't register model %s. Index %s is already in use for model %s", modelReference, index, myIndex2Model.get(index)));
+      Logger.getLogger(ImportsHelper.class).error(String.format("Can't register import %s in model %s. Index %s is already in use for model %s", modelReference, myModelRef, index, myIndex2Model.get(index)));
       return;
     }
     register(index, modelReference);
@@ -99,7 +99,6 @@ class ImportsHelper {
   }
 
   public SModelReference localModel() {
-    // XXX not quite nice, needIndex not necessarily means there would be single model to use without index
     return myModelRef;
   }
 }

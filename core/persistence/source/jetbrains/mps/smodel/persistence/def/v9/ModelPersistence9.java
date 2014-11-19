@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
+import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -75,13 +76,12 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public IModelWriter getModelWriter() {
-    return new ModelWriter9bis();
+    return new ModelWriter9bis(new RegularMetaModelInfo());
   }
 
   @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
-//    return isConcisePersistenceOption(header) ? new ModelWriter9bis() : getModelWriter();
-    return new ModelWriter9bis();
+    return new ModelWriter9bis(new RegularMetaModelInfo());
   }
 
   @Override
@@ -96,10 +96,13 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
+    final boolean interfaceOnly = state == ModelLoadingState.INTERFACE_LOADED;
+    final boolean stripImplementation = state == ModelLoadingState.NO_IMPLEMENTATION;
     if (isConcisePersistenceOption(header)) {
-      return new ModelReader9bisHandler(state == ModelLoadingState.INTERFACE_LOADED, state == ModelLoadingState.NO_IMPLEMENTATION, header);
+      IdInfoReadHelper readHelper = new IdInfoReadHelper(new RegularMetaModelInfo(), interfaceOnly, stripImplementation);
+      return new ModelReader9bisHandler(header, readHelper);
     }
-    return new ModelReader9Handler(state == ModelLoadingState.INTERFACE_LOADED, state == ModelLoadingState.NO_IMPLEMENTATION, header);
+    return new ModelReader9Handler(interfaceOnly, stripImplementation, header);
   }
 
   @Override
