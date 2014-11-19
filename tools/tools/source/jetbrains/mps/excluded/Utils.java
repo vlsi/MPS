@@ -24,6 +24,7 @@ import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.containers.MultiMap;
@@ -117,13 +118,13 @@ public class Utils {
         if (!sd.getCompileInMPS()) continue;
 
         String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, sd).getPath();
-        result.putValue(moduleDir.getPath(), srcPath);
+        result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(srcPath));
         String testPath = ProjectPathUtil.getGeneratorTestsOutputPath(moduleIFile, sd).getPath();
-        result.putValue(moduleDir.getPath(), testPath);
+        result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(testPath));
       } else {
         LanguageDescriptor ld = LanguageDescriptorPersistence.loadLanguageDescriptor(moduleIFile, expander);
         String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, ld).getPath();
-        result.putValue(moduleDir.getPath(), srcPath);
+        result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(srcPath));
         // currently same getGeneratorOutputPath used for all generators, so generatorSrcPath will be the same for
         // all generators in the language. Using only first one for now.
         boolean generatorAdded = false;
@@ -132,11 +133,15 @@ public class Utils {
             break;
           }
           String generatorSrcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, generator).getPath();
-          result.putValue(moduleDir.getPath() + "/generator", generatorSrcPath);
+          result.putValue(getCanonicalPath(moduleDir.getPath() + "/generator"), getCanonicalPath(generatorSrcPath));
           generatorAdded = true;
         }
       }
     }
+  }
+
+  private static String getCanonicalPath(String path) {
+    return FileUtil.getCanonicalPath(path);
   }
 
   public static File root() {
