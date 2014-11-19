@@ -176,4 +176,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     return findInModel(strucModel);
   }
+
+  @Override
+  public String toString() {
+    return myFqName;
+  }
 }

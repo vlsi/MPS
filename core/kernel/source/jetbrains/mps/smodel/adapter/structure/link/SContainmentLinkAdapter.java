@@ -107,6 +107,11 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   }
 
   @Override
+  public String toString() {
+    return myName;
+  }
+
+  @Override
   public int hashCode() {
     return 0;
   }
