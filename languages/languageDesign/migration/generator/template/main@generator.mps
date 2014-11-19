@@ -1303,7 +1303,7 @@
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="1HyHl710DcC" role="2OqNvi">
-                                  <ref role="37wK5l" to="k7g3:~UUID.getMostSignificantBits():long" resolve="getMostSignificantBits" />
+                                  <ref role="37wK5l" to="k7g3:~UUID.getLeastSignificantBits():long" resolve="getLeastSignificantBits" />
                                 </node>
                               </node>
                             </node>

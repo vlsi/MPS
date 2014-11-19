@@ -109,11 +109,11 @@
   <root nodeRef="r:1b8e1ff1-9bb5-4fe5-848a-c2f4efdb6402(jetbrains.mps.lang.migration.generator.template.main@generator)/5387853834546989275">
     <file name="QueriesGenerated.java">
       <node id="1973338949476813700" at="88,112,89,141" concept="5" />
-      <node id="1973338949476848409" at="91,112,92,141" concept="5" />
+      <node id="1973338949476848409" at="91,112,92,142" concept="5" />
       <node id="1973338949476805945" at="94,112,95,72" concept="5" />
       <node id="5387853834547028857" at="97,112,98,209" concept="5" />
       <scope id="1973338949476808884" at="88,112,89,141" />
-      <scope id="1973338949476843965" at="91,112,92,141" />
+      <scope id="1973338949476843965" at="91,112,92,142" />
       <scope id="1973338949476804520" at="94,112,95,72" />
       <scope id="5387853834547028856" at="97,112,98,209" />
     </file>
