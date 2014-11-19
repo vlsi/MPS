@@ -16,11 +16,11 @@ import jetbrains.mps.migration.global.ProjectMigration;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
+import org.apache.log4j.Level;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -82,13 +82,10 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     try {
       Class descriptorClass = Class.forName(MigrationsUtil.getDescriptorFQName(module), true, loader);
       return (MigrationDescriptor) descriptorClass.newInstance();
-    } catch (ClassNotFoundException e) {
-      return null;
-    } catch (IllegalAccessException e) {
-      return null;
-    } catch (InstantiationException e) {
-      return null;
     } catch (Throwable e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Exception on migration descriptor instantiation", e);
+      }
       return null;
     }
   }

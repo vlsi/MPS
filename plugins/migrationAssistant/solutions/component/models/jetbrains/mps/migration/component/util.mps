@@ -1268,45 +1268,6 @@
               </node>
             </node>
           </node>
-          <node concept="TDmWw" id="5Fumpqe5Kry" role="TEbGg">
-            <node concept="3clFbS" id="5Fumpqe5Krz" role="TDEfX">
-              <node concept="3cpWs6" id="5Fumpqe5L5d" role="3cqZAp">
-                <node concept="10Nm6u" id="5Fumpqe5L5n" role="3cqZAk" />
-              </node>
-            </node>
-            <node concept="3cpWsn" id="5Fumpqe5Kr$" role="TDEfY">
-              <property role="TrG5h" value="e" />
-              <node concept="3uibUv" id="5Fumpqe5Kr_" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~ClassNotFoundException" resolve="ClassNotFoundException" />
-              </node>
-            </node>
-          </node>
-          <node concept="TDmWw" id="5Fumpqe5N5x" role="TEbGg">
-            <node concept="3clFbS" id="5Fumpqe5N5y" role="TDEfX">
-              <node concept="3cpWs6" id="5Fumpqe5N5Z" role="3cqZAp">
-                <node concept="10Nm6u" id="5Fumpqe5N60" role="3cqZAk" />
-              </node>
-            </node>
-            <node concept="3cpWsn" id="5Fumpqe5N5z" role="TDEfY">
-              <property role="TrG5h" value="e" />
-              <node concept="3uibUv" id="5Fumpqe5N5$" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~IllegalAccessException" resolve="IllegalAccessException" />
-              </node>
-            </node>
-          </node>
-          <node concept="TDmWw" id="5Fumpqe5N5_" role="TEbGg">
-            <node concept="3clFbS" id="5Fumpqe5N5A" role="TDEfX">
-              <node concept="3cpWs6" id="5Fumpqe5N69" role="3cqZAp">
-                <node concept="10Nm6u" id="5Fumpqe5N6a" role="3cqZAk" />
-              </node>
-            </node>
-            <node concept="3cpWsn" id="5Fumpqe5N5B" role="TDEfY">
-              <property role="TrG5h" value="e" />
-              <node concept="3uibUv" id="5Fumpqe5N5C" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~InstantiationException" resolve="InstantiationException" />
-              </node>
-            </node>
-          </node>
           <node concept="TDmWw" id="1aFuJToDdGD" role="TEbGg">
             <node concept="3cpWsn" id="1aFuJToDdGE" role="TDEfY">
               <property role="TrG5h" value="e" />
@@ -1315,6 +1276,16 @@
               </node>
             </node>
             <node concept="3clFbS" id="1aFuJToDdGG" role="TDEfX">
+              <node concept="34ab3g" id="W69ZqzNjO3" role="3cqZAp">
+                <property role="35gtTG" value="error" />
+                <property role="34fQS0" value="true" />
+                <node concept="Xl_RD" id="W69ZqzNjO5" role="34bqiv">
+                  <property role="Xl_RC" value="Exception on migration descriptor instantiation" />
+                </node>
+                <node concept="37vLTw" id="W69ZqzNjO7" role="34bMjA">
+                  <ref role="3cqZAo" node="1aFuJToDdGE" resolve="e" />
+                </node>
+              </node>
               <node concept="3cpWs6" id="1aFuJToDgtP" role="3cqZAp">
                 <node concept="10Nm6u" id="1aFuJToDhce" role="3cqZAk" />
               </node>
