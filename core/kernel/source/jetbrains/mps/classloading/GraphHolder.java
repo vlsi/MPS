@@ -84,14 +84,16 @@ public class GraphHolder<V> {
     for (V v1 : backOuts) myGraph.removeEdge(v1, v);
   }
 
-  public void addEdge(V v1, V v2) {
-    myGraph.addEdge(v1, v2);
+  public boolean addEdge(V v1, V v2) {
+    boolean edgeAdded = myGraph.addEdge(v1, v2);
     myConjugateGraph.addEdge(v2, v1);
+    return edgeAdded;
   }
 
-  public void removeEdge(V v1, V v2) {
-    myGraph.removeEdge(v1, v2);
+  public boolean removeEdge(V v1, V v2) {
+    boolean edgeRemoved = myGraph.removeEdge(v1, v2);
     myConjugateGraph.removeEdge(v2, v1);
+    return edgeRemoved;
   }
 
   public Graph<V> getGraph() {
