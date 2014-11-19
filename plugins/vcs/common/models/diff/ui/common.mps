@@ -331,6 +331,10 @@
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
+      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
+        <child id="1081256993305" name="classType" index="2ZW6by" />
+        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -351,17 +355,6 @@
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
-      <concept id="5279705229678483897" name="jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant" flags="nn" index="2$xPTn">
-        <property id="5279705229678483899" name="value" index="2$xPTl" />
-      </concept>
-      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
-        <child id="1081256993305" name="classType" index="2ZW6by" />
-        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
-      </concept>
-      <concept id="1154542696413" name="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" flags="nn" index="3g6Rrh">
-        <child id="1154542793668" name="componentType" index="3g7fb8" />
-        <child id="1154542803372" name="initValue" index="3g7hyw" />
-      </concept>
       <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
         <child id="1224071154657" name="classifierType" index="0kSFW" />
@@ -370,14 +363,25 @@
       <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
         <child id="1144226360166" name="iterable" index="1DdaDG" />
       </concept>
-      <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
-        <child id="1144230900587" name="variable" index="1Duv9x" />
+      <concept id="5279705229678483897" name="jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant" flags="nn" index="2$xPTn">
+        <property id="5279705229678483899" name="value" index="2$xPTl" />
+      </concept>
+      <concept id="1154542696413" name="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" flags="nn" index="3g6Rrh">
+        <child id="1154542793668" name="componentType" index="3g7fb8" />
+        <child id="1154542803372" name="initValue" index="3g7hyw" />
       </concept>
       <concept id="1214918800624" name="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" flags="nn" index="3uNrnE" />
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
         <child id="1160998896846" name="condition" index="1gVkn0" />
+      </concept>
+      <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
+        <child id="1144230900587" name="variable" index="1Duv9x" />
+      </concept>
+      <concept id="1170075670744" name="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" flags="nn" index="1HWtB8">
+        <child id="1170075728144" name="expression" index="1HWFw0" />
+        <child id="1170075736412" name="block" index="1HWHxc" />
       </concept>
       <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
@@ -386,11 +390,8 @@
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
-      <concept id="1170075670744" name="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" flags="nn" index="1HWtB8">
-        <child id="1170075728144" name="expression" index="1HWFw0" />
-        <child id="1170075736412" name="block" index="1HWHxc" />
-      </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
+      <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -8311,9 +8312,14 @@
           <node concept="37vLTI" id="42hl10VHazm" role="3clFbG">
             <node concept="2ShNRf" id="42hl10VHazn" role="37vLTx">
               <node concept="1pGfFk" id="42hl10VHazo" role="2ShVmc">
-                <ref role="37wK5l" node="42hl10VHayC" resolve="DiffEditor.MainEditorComponent" />
+                <ref role="37wK5l" node="6dXf3jYXvmm" resolve="DiffEditor.MainEditorComponent" />
                 <node concept="37vLTw" id="2BHiRxgm6tu" role="37wK5m">
                   <ref role="3cqZAo" node="42hl10VHazc" resolve="repository" />
+                </node>
+                <node concept="3fqX7Q" id="6dXf3jYXIYc" role="37wK5m">
+                  <node concept="37vLTw" id="6dXf3jYXJpo" role="3fr31v">
+                    <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />
+                  </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxgm7vC" role="37wK5m">
                   <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />
@@ -8332,9 +8338,14 @@
             </node>
             <node concept="2ShNRf" id="42hl10VHazv" role="37vLTx">
               <node concept="1pGfFk" id="42hl10VHazw" role="2ShVmc">
-                <ref role="37wK5l" to="cpzd:~InspectorEditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean)" resolve="InspectorEditorComponent" />
+                <ref role="37wK5l" to="cpzd:~InspectorEditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean,boolean)" resolve="InspectorEditorComponent" />
                 <node concept="37vLTw" id="1clgIweMa5b" role="37wK5m">
                   <ref role="3cqZAo" node="42hl10VHazc" resolve="repository" />
+                </node>
+                <node concept="3fqX7Q" id="6dXf3jYX79j" role="37wK5m">
+                  <node concept="37vLTw" id="6dXf3jYXdUW" role="3fr31v">
+                    <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />
+                  </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxgm7oG" role="37wK5m">
                   <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />
@@ -9100,51 +9111,95 @@
         </node>
         <node concept="3Tm6S6" id="DusLnP97YT" role="1B3o_S" />
       </node>
+      <node concept="3clFbW" id="6dXf3jYXvmm" role="jymVt">
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3cqZAl" id="6dXf3jYXvmn" role="3clF45" />
+        <node concept="37vLTG" id="6dXf3jYXvmo" role="3clF46">
+          <property role="TrG5h" value="repository" />
+          <property role="3TUv4t" value="false" />
+          <node concept="3uibUv" id="6dXf3jYXvmp" role="1tU5fm">
+            <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="6dXf3jYXvmq" role="3clF46">
+          <property role="TrG5h" value="showGutter" />
+          <property role="3TUv4t" value="false" />
+          <node concept="10P_77" id="6dXf3jYXvmr" role="1tU5fm" />
+        </node>
+        <node concept="37vLTG" id="6dXf3jYXvms" role="3clF46">
+          <property role="TrG5h" value="rightToLeft" />
+          <property role="3TUv4t" value="false" />
+          <node concept="10P_77" id="6dXf3jYXvmt" role="1tU5fm" />
+        </node>
+        <node concept="3clFbS" id="6dXf3jYXvmu" role="3clF47">
+          <node concept="XkiVB" id="6dXf3jYXyXK" role="3cqZAp">
+            <ref role="37wK5l" to="9a8:~EditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean,boolean)" resolve="EditorComponent" />
+            <node concept="37vLTw" id="6dXf3jYXvmR" role="37wK5m">
+              <ref role="3cqZAo" node="6dXf3jYXvmo" resolve="repository" />
+            </node>
+            <node concept="37vLTw" id="6dXf3jYXvmS" role="37wK5m">
+              <ref role="3cqZAo" node="6dXf3jYXvmq" resolve="showGutter" />
+            </node>
+            <node concept="37vLTw" id="6dXf3jYXvmT" role="37wK5m">
+              <ref role="3cqZAo" node="6dXf3jYXvms" resolve="rightToLeft" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="6dXf3jYXvmv" role="3cqZAp">
+            <node concept="37vLTI" id="6dXf3jYXvmw" role="3clFbG">
+              <node concept="37vLTw" id="6dXf3jYXvmx" role="37vLTJ">
+                <ref role="3cqZAo" node="DusLnP8fZc" resolve="myDiffFileEditor" />
+              </node>
+              <node concept="2ShNRf" id="6dXf3jYXvmU" role="37vLTx">
+                <node concept="1pGfFk" id="6dXf3jYXvmV" role="2ShVmc">
+                  <ref role="37wK5l" node="2Y6GhaXyEhE" resolve="DiffFileEditor" />
+                  <node concept="Xjq3P" id="6dXf3jYXvmW" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="6dXf3jYXvmC" role="1B3o_S" />
+      </node>
+      <node concept="3clFbW" id="6dXf3jYXvmD" role="jymVt">
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3cqZAl" id="6dXf3jYXvmE" role="3clF45" />
+        <node concept="2AHcQZ" id="6dXf3jYXvmF" role="2AJF6D">
+          <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+        </node>
+        <node concept="37vLTG" id="6dXf3jYXvmG" role="3clF46">
+          <property role="TrG5h" value="repository" />
+          <property role="3TUv4t" value="false" />
+          <node concept="3uibUv" id="6dXf3jYXvmH" role="1tU5fm">
+            <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="6dXf3jYXvmI" role="3clF46">
+          <property role="TrG5h" value="rightToLeft" />
+          <property role="3TUv4t" value="false" />
+          <node concept="10P_77" id="6dXf3jYXvmJ" role="1tU5fm" />
+        </node>
+        <node concept="3clFbS" id="6dXf3jYXvmK" role="3clF47">
+          <node concept="1VxSAg" id="6dXf3jYXvmX" role="3cqZAp">
+            <ref role="37wK5l" node="6dXf3jYXvmm" resolve="DiffEditor.MainEditorComponent" />
+            <node concept="37vLTw" id="6dXf3jYXvmY" role="37wK5m">
+              <ref role="3cqZAo" node="6dXf3jYXvmG" resolve="repository" />
+            </node>
+            <node concept="3clFbT" id="6dXf3jYXvmZ" role="37wK5m">
+              <property role="3clFbU" value="false" />
+            </node>
+            <node concept="37vLTw" id="6dXf3jYXvn0" role="37wK5m">
+              <ref role="3cqZAo" node="6dXf3jYXvmI" resolve="rightToLeft" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="6dXf3jYXvmP" role="1B3o_S" />
+      </node>
       <node concept="3uibUv" id="42hl10VHayB" role="1zkMxy">
         <ref role="3uigEE" to="9a8:~EditorComponent" resolve="EditorComponent" />
       </node>
       <node concept="3Tm1VV" id="42hl10VHayA" role="1B3o_S" />
-      <node concept="3clFbW" id="42hl10VHayC" role="jymVt">
-        <node concept="3cqZAl" id="42hl10VHayD" role="3clF45" />
-        <node concept="3clFbS" id="42hl10VHayF" role="3clF47">
-          <node concept="XkiVB" id="42hl10VHayG" role="3cqZAp">
-            <ref role="37wK5l" to="9a8:~EditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean,boolean)" resolve="EditorComponent" />
-            <node concept="37vLTw" id="2BHiRxgmjxZ" role="37wK5m">
-              <ref role="3cqZAo" node="42hl10VHayK" resolve="repository" />
-            </node>
-            <node concept="3clFbT" id="42hl10VHayI" role="37wK5m">
-              <property role="3clFbU" value="false" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxgmC88" role="37wK5m">
-              <ref role="3cqZAo" node="42hl10VHayM" resolve="rightToLeft" />
-            </node>
-          </node>
-          <node concept="3clFbF" id="DusLnP8l_r" role="3cqZAp">
-            <node concept="37vLTI" id="DusLnP8mLQ" role="3clFbG">
-              <node concept="2ShNRf" id="DusLnP8nDs" role="37vLTx">
-                <node concept="1pGfFk" id="DusLnP8RhN" role="2ShVmc">
-                  <ref role="37wK5l" node="2Y6GhaXyEhE" resolve="DiffFileEditor" />
-                  <node concept="Xjq3P" id="DusLnP8S8y" role="37wK5m" />
-                </node>
-              </node>
-              <node concept="37vLTw" id="DusLnP8l_q" role="37vLTJ">
-                <ref role="3cqZAo" node="DusLnP8fZc" resolve="myDiffFileEditor" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="42hl10VHayE" role="1B3o_S" />
-        <node concept="37vLTG" id="42hl10VHayK" role="3clF46">
-          <property role="TrG5h" value="repository" />
-          <node concept="3uibUv" id="3nxgM2zwFfw" role="1tU5fm">
-            <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
-          </node>
-        </node>
-        <node concept="37vLTG" id="42hl10VHayM" role="3clF46">
-          <property role="TrG5h" value="rightToLeft" />
-          <node concept="10P_77" id="42hl10VHayN" role="1tU5fm" />
-        </node>
-      </node>
       <node concept="2tJIrI" id="3uyMLt62pYU" role="jymVt" />
       <node concept="3clFb_" id="3uyMLt62xH0" role="jymVt">
         <property role="1EzhhJ" value="false" />

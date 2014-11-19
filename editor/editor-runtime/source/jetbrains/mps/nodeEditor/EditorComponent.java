@@ -582,6 +582,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myMessagesGutter = new MessagesGutter(this, rightToLeft);
     if (showErrorsGutter) {
       getVerticalScrollBar().setPersistentUI(myMessagesGutter);
+    } else {
+      getVerticalScrollBar().setPersistentUI(new ButtonlessScrollBarUI() {
+        @Override
+        public boolean alwaysShowTrack() {
+          return true;
+        }
+      });
     }
     myLeftHighlighter = new LeftEditorHighlighter(this, rightToLeft);
     myLeftHighlighter.addMouseListener(new MouseAdapter() {

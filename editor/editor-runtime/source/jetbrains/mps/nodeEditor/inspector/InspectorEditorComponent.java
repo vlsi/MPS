@@ -31,11 +31,16 @@ public class InspectorEditorComponent extends EditorComponent {
   private SNode myContainingRoot;
 
   public InspectorEditorComponent(@NotNull SRepository p) {
-    this(p, false);
+    this(p, false, false);
   }
 
+  @Deprecated
   public InspectorEditorComponent(@NotNull SRepository repository, boolean rightToLeft) {
-    super(repository, true, rightToLeft);
+    this(repository, false, rightToLeft);
+  }
+
+  public InspectorEditorComponent(@NotNull SRepository repository, boolean showGutter, boolean rightToLeft) {
+    super(repository, showGutter, rightToLeft);
     myNode = null;
     myNodePointer = null;
     myContainingRoot = null;
