@@ -16,12 +16,13 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.persistence.IdHelper;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -93,11 +94,11 @@ class IdInfoCollector {
   }
 
   private static String getConceptName(SConceptId conceptId) {
-    String result = ConceptRegistry.getInstance().getConceptDescriptor(conceptId).getConceptFqName();
-    if (result.equals(MetaIdFactory.INVALID_CONCEPT_NAME)) {
-      return null;
+    ConceptDescriptor descriptor = ConceptRegistryUtil.getConceptDescriptor(conceptId);
+    if (descriptor != null) {
+      return descriptor.getConceptFqName();
     }
-    return result;
+    return DebugRegistry.getInstance().getConceptName(conceptId);
   }
 
 }
