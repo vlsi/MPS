@@ -6,6 +6,7 @@
     <action id="jetbrains.mps.vcs.platform.actions.GoToPreviousChange_Action" class="jetbrains.mps.vcs.platform.actions.GoToPreviousChange_Action"></action>
     <action id="jetbrains.mps.vcs.platform.actions.InstalVcsAddons_Action" class="jetbrains.mps.vcs.platform.actions.InstalVcsAddons_Action"></action>
     <action id="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action" class="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action"></action>
+    <action id="jetbrains.mps.vcs.platform.actions.ResolveNonconflictingChanges_Action" class="jetbrains.mps.vcs.platform.actions.ResolveNonconflictingChanges_Action"></action>
     <action id="jetbrains.mps.vcs.platform.actions.RollbackChanges_Action" class="jetbrains.mps.vcs.platform.actions.RollbackChanges_Action"></action>
     <action id="jetbrains.mps.vcs.platform.actions.ShowDiffFromChanges_Action" class="jetbrains.mps.vcs.platform.actions.ShowDiffFromChanges_Action"></action>
     <group id="jetbrains.mps.vcs.platform.actions.ChangesStrip_ActionGroup">
@@ -25,6 +26,10 @@
       <reference ref="jetbrains.mps.vcs.platform.actions.InstalVcsAddons_Action" />
       <reference ref="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action" />
       <add-to-group group-id="VcsGlobalGroup" anchor="last" />
+    </group>
+    <group id="jetbrains.mps.vcs.platform.actions.MPSGitFileActions_ActionGroup">
+      <reference ref="jetbrains.mps.vcs.platform.actions.ResolveNonconflictingChanges_Action" />
+      <add-to-group group-id="GitFileActions" anchor="last" />
     </group>
     <group id="jetbrains.mps.vcs.platform.actions.AnnotateGroup_ActionGroup">
       <reference ref="jetbrains.mps.vcs.platform.actions.Annotate_Action" />
