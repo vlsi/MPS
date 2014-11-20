@@ -6809,6 +6809,21 @@
             <ref role="3bR37D" node="7Kfy9QB6L1S" resolve="jetbrains.mps.baseLanguage.javadoc" />
           </node>
         </node>
+        <node concept="398BVA" id="6wK_PpNA8DS" role="3LF7KH">
+          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="6wK_PpNA8DT" role="iGT6I">
+            <property role="2Ry0Am" value="languages" />
+            <node concept="2Ry0Ak" id="6wK_PpNA8DU" role="2Ry0An">
+              <property role="2Ry0Am" value="core" />
+              <node concept="2Ry0Ak" id="6wK_PpNA8DV" role="2Ry0An">
+                <property role="2Ry0Am" value="core" />
+                <node concept="2Ry0Ak" id="6wK_PpNA8DW" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.core.mpl" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="1SiIV0" id="71D$RYe8nu4" role="3bR37C">
           <node concept="3bR9La" id="71D$RYe8nu5" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -6831,21 +6846,6 @@
           <node concept="3bR9La" id="71D$RYe8nub" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="44LXwdzyvTi" resolve="Annotations" />
-          </node>
-        </node>
-        <node concept="398BVA" id="6wK_PpNA8DS" role="3LF7KH">
-          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-          <node concept="2Ry0Ak" id="6wK_PpNA8DT" role="iGT6I">
-            <property role="2Ry0Am" value="languages" />
-            <node concept="2Ry0Ak" id="6wK_PpNA8DU" role="2Ry0An">
-              <property role="2Ry0Am" value="core" />
-              <node concept="2Ry0Ak" id="6wK_PpNA8DV" role="2Ry0An">
-                <property role="2Ry0Am" value="core" />
-                <node concept="2Ry0Ak" id="6wK_PpNA8DW" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.core.mpl" />
-                </node>
-              </node>
-            </node>
           </node>
         </node>
       </node>
@@ -18498,6 +18498,35 @@
         </node>
       </node>
     </node>
+    <node concept="1E1JtD" id="27DL58TyZGi" role="3989C9">
+      <property role="BnDLt" value="true" />
+      <property role="TrG5h" value="jetbrains.mps.vcs.mergehints" />
+      <property role="3LESm3" value="37e03aa1-7289-49bc-8269-30de5eceec76" />
+      <property role="2GAjPV" value="false" />
+      <node concept="398BVA" id="27DL58TyZJA" role="3LF7KH">
+        <ref role="398BVh" node="1lMM4owFq61" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="27DL58Tz03f" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+          <node concept="2Ry0Ak" id="27DL58Tz044" role="2Ry0An">
+            <property role="2Ry0Am" value="vcs" />
+            <node concept="2Ry0Ak" id="27DL58Tz04T" role="2Ry0An">
+              <property role="2Ry0Am" value="languages" />
+              <node concept="2Ry0Ak" id="27DL58Tz05I" role="2Ry0An">
+                <property role="2Ry0Am" value="mergehints" />
+                <node concept="2Ry0Ak" id="27DL58Tz06z" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.vcs.mergehints.mpl" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1yeLz9" id="27DL58Tz06X" role="1TViLv">
+        <property role="TrG5h" value="jetbrains.mps.vcs.mergehints#7313573869697832621" />
+        <property role="3LESm3" value="d80ca598-a981-465d-8e11-8c5532ebbad9" />
+        <property role="2GAjPV" value="false" />
+      </node>
+    </node>
     <node concept="398rNT" id="1lMM4owFq60" role="1l3spd">
       <property role="TrG5h" value="idea_home" />
     </node>
@@ -18589,6 +18618,9 @@
         <node concept="398223" id="2Kkgqrh45O6" role="39821P">
           <node concept="L2wRC" id="2Kkgqrh47or" role="39821P">
             <ref role="L2wRA" node="8EWnRkKrxe" resolve="jetbrains.mps.ide.vcs.modelmetadata" />
+          </node>
+          <node concept="L2wRC" id="27DL58Tz09O" role="39821P">
+            <ref role="L2wRA" node="27DL58TyZGi" resolve="jetbrains.mps.vcs.mergehints" />
           </node>
           <node concept="3_J27D" id="2Kkgqrh45O8" role="Nbhlr">
             <node concept="3Mxwew" id="2Kkgqrh45OB" role="3MwsjC">

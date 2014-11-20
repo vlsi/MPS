@@ -33,9 +33,13 @@ import java.util.Collections;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Comparator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.smodel.SModelAdapter;
@@ -196,7 +200,8 @@ public class MergeSession {
         // sort out nonconflicting changes to the end of list, so they will be ignored if other connected changes exists 
         boolean aa = a.isNonConflicting();
         boolean bb = b.isNonConflicting();
-        return (aa == bb ? 0 : (aa ? 1 : -1));
+        int result = (aa == bb ? 0 : (aa ? 1 : -1));
+        return result;
       }
     }, true)) {
       applyChange(c);
@@ -209,12 +214,25 @@ public class MergeSession {
   }
   private void applyChange(ModelChange change) {
     if (SetSequence.fromSet(myResolvedChanges).contains(change)) {
-    } else {
-      change.apply(myResultModel, myNodeCopier);
-      SetSequence.fromSet(myResolvedChanges).addElement(change);
-      SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)));
-      excludeChangesNoRestoreIds(getConflictedWith(change));
+      return;
     }
+
+    // for nonconflicting change we can execute symmetric if it suits better 
+    if (change.isNonConflicting()) {
+      ModelChange symmChange = ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)).subtract(SetSequence.fromSet(myResolvedChanges)).first();
+      if (symmChange != null) {
+        boolean isMineChange = change.getChangeSet() == myMineChangeSet;
+        SNode mergeHint = SNodeOperations.as(((SNode) change.getMergeHint().resolve(MPSModuleRepository.getInstance())), MetaAdapterFactory.getConcept(new UUID(4026282531954969020l, -9049648244592808842l), 7313573869697839898l, "jetbrains.mps.vcs.mergehints.structure.MergeHint"));
+        if ((mergeHint != null) && (SPropertyOperations.hasValue(mergeHint, MetaAdapterFactory.getProperty(new UUID(4026282531954969020l, -9049648244592808842l), 7313573869697839898l, 8485200647808748986l, "hint"), "1", "1") != isMineChange)) {
+          // execute more appropriate symmetric change, original change will be excluded 
+          change = symmChange;
+        }
+      }
+    }
+    change.apply(myResultModel, myNodeCopier);
+    SetSequence.fromSet(myResolvedChanges).addElement(change);
+    SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)));
+    excludeChangesNoRestoreIds(getConflictedWith(change));
   }
   private void excludeChange(ModelChange change) {
     if (SetSequence.fromSet(myResolvedChanges).contains(change)) {
