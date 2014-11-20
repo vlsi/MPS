@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="StructureAspectDescriptor.java">
+      <unit at="14,0,35,0" name="jetbrains.mps.vcs.mergehints.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/8485200647808748945">
+    <file name="Strategy.java">
+      <node id="8485200647808748945" at="13,0,14,0" concept="2" trace="myName" />
+      <node id="8485200647808748945" at="14,27,15,23" concept="6" />
+      <node id="8485200647808748945" at="17,36,18,29" concept="6" />
+      <node id="8485200647808748945" at="20,47,21,76" concept="5" />
+      <node id="8485200647808748945" at="21,76,22,58" concept="1" />
+      <node id="8485200647808748945" at="22,58,23,60" concept="1" />
+      <node id="8485200647808748945" at="23,60,24,16" concept="6" />
+      <node id="8485200647808748945" at="26,39,27,25" concept="6" />
+      <node id="8485200647808748945" at="30,24,31,35" concept="6" />
+      <node id="8485200647808748945" at="33,57,34,27" concept="6" />
+      <node id="8485200647808748945" at="36,59,37,29" concept="6" />
+      <node id="8485200647808748945" at="38,5,39,33" concept="6" />
+      <node id="8485200647808748945" at="41,0,42,0" concept="2" trace="myValue" />
+      <node id="8485200647808748945" at="42,36,43,23" concept="1" />
+      <node id="8485200647808748945" at="43,23,44,25" concept="1" />
+      <node id="8485200647808748945" at="46,25,47,24" concept="6" />
+      <node id="8485200647808748945" at="14,0,17,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="8485200647808748945" at="17,0,20,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="8485200647808748945" at="26,0,29,0" concept="7" trace="getDefault#()Ljetbrains/mps/vcs/mergehints/structure/Strategy;" />
+      <node id="8485200647808748945" at="29,51,32,5" concept="3" />
+      <node id="8485200647808748945" at="32,5,35,5" concept="3" />
+      <node id="8485200647808748945" at="35,5,38,5" concept="3" />
+      <node id="8485200647808748945" at="46,0,49,0" concept="4" trace="getValue#()I" />
+      <node id="8485200647808748945" at="42,0,46,0" concept="0" trace="Strategy#(Ljava/lang/String;I)V" />
+      <node id="8485200647808748945" at="20,0,26,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="8485200647808748945" at="29,0,41,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/vcs/mergehints/structure/Strategy;" />
+      <scope id="8485200647808748945" at="14,27,15,23" />
+      <scope id="8485200647808748945" at="17,36,18,29" />
+      <scope id="8485200647808748945" at="26,39,27,25" />
+      <scope id="8485200647808748945" at="30,24,31,35" />
+      <scope id="8485200647808748945" at="33,57,34,27" />
+      <scope id="8485200647808748945" at="36,59,37,29" />
+      <scope id="8485200647808748945" at="46,25,47,24" />
+      <scope id="8485200647808748945" at="42,36,44,25" />
+      <scope id="8485200647808748945" at="14,0,17,0" />
+      <scope id="8485200647808748945" at="17,0,20,0" />
+      <scope id="8485200647808748945" at="26,0,29,0" />
+      <scope id="8485200647808748945" at="46,0,49,0" />
+      <scope id="8485200647808748945" at="20,47,24,16">
+        <var name="list" id="8485200647808748945" />
+      </scope>
+      <scope id="8485200647808748945" at="42,0,46,0">
+        <var name="name" id="8485200647808748945" />
+        <var name="value" id="8485200647808748945" />
+      </scope>
+      <scope id="8485200647808748945" at="20,0,26,0" />
+      <scope id="8485200647808748945" at="29,51,39,33" />
+      <scope id="8485200647808748945" at="29,0,41,0">
+        <var name="value" id="8485200647808748945" />
+      </scope>
+      <unit id="8485200647808748945" at="9,0,50,0" name="jetbrains.mps.vcs.mergehints.structure.Strategy" />
+    </file>
+    <file name="Strategy_PropertySupport.java">
+      <node id="8485200647808748945" at="11,24,12,18" concept="6" />
+      <node id="8485200647808748945" at="13,5,14,93" concept="5" />
+      <node id="8485200647808748945" at="15,33,16,43" concept="5" />
+      <node id="8485200647808748945" at="17,45,18,20" concept="6" />
+      <node id="8485200647808748945" at="20,5,21,17" concept="6" />
+      <node id="8485200647808748945" at="24,24,25,18" concept="6" />
+      <node id="8485200647808748945" at="26,5,27,93" concept="5" />
+      <node id="8485200647808748945" at="28,33,29,43" concept="5" />
+      <node id="8485200647808748945" at="30,45,31,43" concept="6" />
+      <node id="8485200647808748945" at="33,5,34,16" concept="6" />
+      <node id="8485200647808748945" at="36,49,37,51" concept="5" />
+      <node id="8485200647808748945" at="38,27,39,32" concept="6" />
+      <node id="8485200647808748945" at="40,5,41,14" concept="6" />
+      <node id="8485200647808748945" at="10,44,13,5" concept="3" />
+      <node id="8485200647808748945" at="16,43,19,7" concept="3" />
+      <node id="8485200647808748945" at="23,47,26,5" concept="3" />
+      <node id="8485200647808748945" at="29,43,32,7" concept="3" />
+      <node id="8485200647808748945" at="37,51,40,5" concept="3" />
+      <node id="8485200647808748945" at="14,93,20,5" concept="8" />
+      <node id="8485200647808748945" at="27,93,33,5" concept="8" />
+      <node id="8485200647808748945" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="8485200647808748945" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="8485200647808748945" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="8485200647808748945" at="11,24,12,18" />
+      <scope id="8485200647808748945" at="17,45,18,20" />
+      <scope id="8485200647808748945" at="24,24,25,18" />
+      <scope id="8485200647808748945" at="30,45,31,43" />
+      <scope id="8485200647808748945" at="38,27,39,32" />
+      <scope id="8485200647808748945" at="15,33,19,7">
+        <var name="constant" id="8485200647808748945" />
+      </scope>
+      <scope id="8485200647808748945" at="28,33,32,7">
+        <var name="constant" id="8485200647808748945" />
+      </scope>
+      <scope id="8485200647808748945" at="36,49,41,14">
+        <var name="constant" id="8485200647808748945" />
+      </scope>
+      <scope id="8485200647808748945" at="36,0,43,0">
+        <var name="value" id="8485200647808748945" />
+      </scope>
+      <scope id="8485200647808748945" at="10,44,21,17">
+        <var name="constants" id="8485200647808748945" />
+      </scope>
+      <scope id="8485200647808748945" at="23,47,34,16">
+        <var name="constants" id="8485200647808748945" />
+      </scope>
+      <scope id="8485200647808748945" at="10,0,23,0">
+        <var name="value" id="8485200647808748945" />
+      </scope>
+      <scope id="8485200647808748945" at="23,0,36,0">
+        <var name="value" id="8485200647808748945" />
+      </scope>
+      <unit id="8485200647808748945" at="9,0,44,0" name="jetbrains.mps.vcs.mergehints.structure.Strategy_PropertySupport" />
+    </file>
+  </root>
+</debug-info>
+
