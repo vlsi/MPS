@@ -8313,14 +8313,9 @@
               </node>
               <node concept="vg0i.1145552977093" id="4652592318748338399" role="vg0i.1215693861676.1068498886297" info="nn">
                 <node concept="vg0i.1212685548494" id="4652592318748338400" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="cpzd.~InspectorEditorComponent%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodule%dSRepository,boolean,boolean)" resolveInfo="InspectorEditorComponent" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="cpzd.~InspectorEditorComponent%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodule%dSRepository,boolean)" resolveInfo="InspectorEditorComponent" />
                   <node concept="vg0i.1068498886296" id="1375078825679429963" role="vg0i.1204053956946.1068499141038" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="4652592318748338380" resolveInfo="repository" />
-                  </node>
-                  <node concept="vg0i.1081516740877" id="7168952380157096531" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <node concept="vg0i.1068498886296" id="7168952380157124284" role="vg0i.1081516740877.1081516765348" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="4652592318748338386" resolveInfo="isLeftEditor" />
-                    </node>
                   </node>
                   <node concept="vg0i.1068498886296" id="3021153905151604268" role="vg0i.1204053956946.1068499141038" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="4652592318748338386" resolveInfo="isLeftEditor" />

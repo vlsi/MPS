@@ -1567,7 +1567,7 @@
       <node id="4652592318748338363" at="37,0,38,0" concept="7" trace="myInspector" />
       <node id="4652592318748338366" at="38,0,39,0" concept="7" trace="myChangeToMessages" />
       <node id="4652592318748338389" at="39,100,40,106" concept="6" />
-      <node id="4652592318748338396" at="40,106,41,90" concept="6" />
+      <node id="4652592318748338396" at="40,106,41,73" concept="6" />
       <node id="4652592318748338408" at="43,45,44,34" concept="6" />
       <node id="4652592318748338415" at="46,7,47,0" concept="15" />
       <node id="4652592318748338440" at="47,0,48,41" concept="6" />
@@ -1629,7 +1629,7 @@
       <node id="7168952380157195670" at="134,0,138,0" concept="3" trace="MainEditorComponent#(Lorg/jetbrains/mps/openapi/module/SRepository;ZZ)V" />
       <node id="7168952380157195689" at="138,0,142,0" concept="3" trace="MainEditorComponent#(Lorg/jetbrains/mps/openapi/module/SRepository;Z)V" />
       <node id="4008989919132916544" at="143,0,147,0" concept="11" trace="createEmptyCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4652592318748338402" at="41,90,46,7" concept="6" />
+      <node id="4652592318748338402" at="41,73,46,7" concept="6" />
       <node id="4652592318748338614" at="96,51,101,11" concept="6" />
       <node id="4652592318748338641" at="105,49,110,7" concept="6" />
       <node id="4652592318748338670" at="115,39,120,7" concept="6" />
