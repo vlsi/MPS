@@ -27,9 +27,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
-import javax.swing.JComponent;
-import jetbrains.mps.ide.editor.util.EditorUtil;
 
 public class CustomWatchable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -84,7 +81,7 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_rpujt6_a1a(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_rpujt6_b1a(editorContext, node));
-    editorCell.addEditorCell(this.createJComponent_rpujt6_c1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rpujt6_c1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_rpujt6_a1a(EditorContext editorContext, SNode node) {
@@ -162,12 +159,10 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createJComponent_rpujt6_c1a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, CustomWatchable_Editor._QueryFunction_JComponent_rpujt6_a2b0(node, editorContext), "_rpujt6_c1a");
-    editorCell.setCellId("JComponent_rpujt6_c1a");
+  private EditorCell createConstant_rpujt6_c1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "r$swing component$");
+    editorCell.setCellId("Constant_rpujt6_c1a");
+    editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static JComponent _QueryFunction_JComponent_rpujt6_a2b0(final SNode node, final EditorContext editorContext) {
-    return EditorUtil.createSelectIconButton(node, "iconPath", editorContext);
   }
 }

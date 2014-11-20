@@ -11,6 +11,7 @@
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(jetbrains.mps.util@java_stub)" />
     <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" />
     <import index="7lvn" ref="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)" />
+    <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
@@ -419,8 +420,8 @@
             <node concept="3clFbS" id="h7Gq5aj" role="2VODD2">
               <node concept="3cpWs6" id="h7GrovA" role="3cqZAp">
                 <node concept="2YIFZM" id="3NXJmdrn2z$" role="3cqZAk">
-                  <ref role="1Pybhc" to="7lvn:6UDbxo8i0QW" resolve="EditorUtil" />
-                  <ref role="37wK5l" to="7lvn:6UDbxo8i0R2" resolve="createSelectIconButton" />
+                  <ref role="1Pybhc" to="7a0s:6UDbxo8i0QW" resolve="EditorUtil" />
+                  <ref role="37wK5l" to="7a0s:6UDbxo8i0R2" resolve="createSelectIconButton" />
                   <node concept="pncrf" id="3NXJmdrn2QW" role="37wK5m" />
                   <node concept="1Q80Hx" id="3NXJmdrn3eC" role="37wK5m" />
                 </node>

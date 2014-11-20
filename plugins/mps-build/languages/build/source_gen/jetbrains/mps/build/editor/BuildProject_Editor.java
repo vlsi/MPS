@@ -28,7 +28,7 @@ import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
-import jetbrains.mps.ide.editor.util.EditorUtil;
+import jetbrains.mps.editor.runtime.EditorUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;

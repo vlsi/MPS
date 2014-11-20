@@ -24,6 +24,7 @@
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="ejnv" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
+    <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
@@ -663,8 +664,8 @@
                 </node>
                 <node concept="3cpWs6" id="3FrWPpb80co" role="3cqZAp">
                   <node concept="2YIFZM" id="75ESEusIIf_" role="3cqZAk">
-                    <ref role="1Pybhc" to="7lvn:6UDbxo8i0QW" resolve="EditorUtil" />
-                    <ref role="37wK5l" to="7lvn:1tyjSjK6$pl" resolve="createSelectButton" />
+                    <ref role="1Pybhc" to="7a0s:6UDbxo8i0QW" resolve="EditorUtil" />
+                    <ref role="37wK5l" to="7a0s:1tyjSjK6$pl" resolve="createSelectButton" />
                     <node concept="pncrf" id="75ESEusIIfA" role="37wK5m" />
                     <node concept="pqAIu" id="75ESEusIIfB" role="37wK5m">
                       <ref role="pqAIg" to="3ior:4wSvFFxC7Cz" resolve="internalBaseDirectory" />

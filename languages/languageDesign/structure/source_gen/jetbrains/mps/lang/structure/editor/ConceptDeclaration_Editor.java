@@ -56,7 +56,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
-import jetbrains.mps.ide.editor.util.EditorUtil;
+import jetbrains.mps.editor.runtime.EditorUtil;
 
 public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
