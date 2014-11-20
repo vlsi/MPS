@@ -7,6 +7,8 @@ import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new SetMergeHint_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SetConceptMergeHint_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SetLinkMergeHint_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SetPropertyMergeHint_Intention());
   }
 }

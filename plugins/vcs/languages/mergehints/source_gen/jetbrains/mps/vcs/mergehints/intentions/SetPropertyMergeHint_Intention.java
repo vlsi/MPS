@@ -8,28 +8,26 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SetMergeHint_Intention implements IntentionFactory {
+public class SetPropertyMergeHint_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-  public SetMergeHint_Intention() {
+  public SetPropertyMergeHint_Intention() {
   }
   public String getConcept() {
-    return "jetbrains.mps.lang.core.structure.BaseConcept";
+    return "jetbrains.mps.lang.structure.structure.PropertyDeclaration";
   }
   public String getPresentation() {
-    return "SetMergeHint";
+    return "SetPropertyMergeHint";
   }
   public String getPersistentStateKey() {
-    return "jetbrains.mps.vcs.mergehints.intentions.SetMergeHint_Intention";
+    return "jetbrains.mps.vcs.mergehints.intentions.SetPropertyMergeHint_Intention";
   }
   public String getLanguageFqName() {
     return "jetbrains.mps.vcs.mergehints";
@@ -41,23 +39,17 @@ public class SetMergeHint_Intention implements IntentionFactory {
     return false;
   }
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    if (!(isApplicableToNode(node, editorContext))) {
-      return false;
-    }
     return true;
   }
-  private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
-  }
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:fb6ad0f1-e6b1-43e0-ae40-6b43fa1f4536(jetbrains.mps.vcs.mergehints.intentions)", "7313573869697973330");
+    return new SNodePointer("r:fb6ad0f1-e6b1-43e0-ae40-6b43fa1f4536(jetbrains.mps.vcs.mergehints.intentions)", "6307349610828087907");
   }
   public boolean isSurroundWith() {
     return false;
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SetMergeHint_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SetPropertyMergeHint_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -75,7 +67,7 @@ public class SetMergeHint_Intention implements IntentionFactory {
       }
     }
     public IntentionDescriptor getDescriptor() {
-      return SetMergeHint_Intention.this;
+      return SetPropertyMergeHint_Intention.this;
     }
   }
 }
