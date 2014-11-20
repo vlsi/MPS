@@ -166,6 +166,17 @@ public final class IdEncoder {
     return new Pair<SModelReference, SNodeId>(modelRef, nodeId);
   }
 
+  /**
+   * Dedicated alternative of the {@link #parseExternalNodeReference(String)} that cares about target node id only, for indexing purposes,
+   * see {@link jetbrains.mps.smodel.persistence.def.v9.Indexer9}
+   */
+  @Nullable
+  SNodeId parseExternalNodeReference(String referenceTarget) {
+    int separatorIndex = referenceTarget.indexOf(REF_TARGET_IMPORT_SEPARATOR);
+    assert separatorIndex >= 0;
+    return parseLocalNodeReference(referenceTarget.substring(separatorIndex + 1, referenceTarget.length()));
+  }
+
   // length shall be 2^^6 = 64 (10 digits + 2x26 letters + '$' and '_' - basically, regular ASCII chars with isJavaIdentifierPart == true, for the sake of use
   // in generated code (e.g. method names). Important: charAt(0) shall be '0', we use this to strip leading zeros.
   private final char[] myIndexChars = "0123456789abcdefghijklmnopqrstuvwxyz$_ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
