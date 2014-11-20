@@ -247,7 +247,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     @NotNull
     @Override
     public ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull ModelLoadingState state) throws ModelReadException {
-      return BinaryPersistence.readModel(header.getModelReference(), getSource(), state == ModelLoadingState.INTERFACE_LOADED);
+      return BinaryPersistence.readModel(header, getSource(), state == ModelLoadingState.INTERFACE_LOADED);
     }
 
     @Override

@@ -103,7 +103,7 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
             public void visit(SModel it) {
               for (SNode n : it.getRootNodes()) {
                 for (SNode i : SNodeOperations.getNodeDescendants(n, null, true, new SAbstractConcept[]{})) {
-                  SNode ccp = SNodeOperations.as(((SNode) ((jetbrains.mps.smodel.SNode) i).getConceptDeclarationNode()), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+                  SNode ccp = SNodeOperations.as(((jetbrains.mps.smodel.SNode) i).getConceptDeclarationNode(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
                   if (ccp != null) {
                     total.value++;
                     if (!(SPropertyOperations.hasValue(ccp, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 5404671619616246344l, "staticScope"), "none", null))) {

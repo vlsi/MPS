@@ -16,21 +16,18 @@
 package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.IdHelper;
-import jetbrains.mps.smodel.DebugRegistry;
+import jetbrains.mps.persistence.MetaModelInfoProvider;
+import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.language.ConceptRegistryUtil;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -48,12 +45,18 @@ import java.util.Map;
 /**
  * Build a data structure that keeps meta-information actually used for the nodes supplied.
  * Effectively, fraction of a structure model, sufficient to serialize given model/nodes.
+ *
+ * XXX in fact, ConceptInfo and other are pretty much what we keep in MetaModelInfoProvider. Perhaps, better could would emerge
+ * if there's be hierarchy of ConceptInfo, PropertyInfo plus two distinct mechanism to fill it: one for regular use, with ConceptDescriptors and alike,
+ * and second for ant/merge, which populates exactly same structure but from information extracted from other models.
  */
 public class IdInfoCollector {
   private final HashMap<SConceptId, ConceptInfo> myRegistry;
   private final HashMap<SLanguageId, LangInfo> myLanguagesInUse;
+  private final MetaModelInfoProvider myMetaInfoProvider;
 
-  public IdInfoCollector() {
+  public IdInfoCollector(@NotNull MetaModelInfoProvider mmiProvider) {
+    myMetaInfoProvider = mmiProvider;
     myRegistry = new HashMap<SConceptId, ConceptInfo>();
     myLanguagesInUse = new HashMap<SLanguageId, LangInfo>();
   }
@@ -78,15 +81,6 @@ public class IdInfoCollector {
     }
   }
 
-  // FIXME think if I shall take here similar approach
-  private static String getConceptName(SConceptId conceptId) {
-    ConceptDescriptor descriptor = ConceptRegistryUtil.getConceptDescriptor(conceptId);
-    if (descriptor != null) {
-      return descriptor.getConceptFqName();
-    }
-    return DebugRegistry.getInstance().getConceptName(conceptId);
-  }
-
   ////////////////////////
 
   public void fill(Iterable<SNode> nodes) {
@@ -106,36 +100,21 @@ public class IdInfoCollector {
     }
     // ensure we keep name of each concept in use (i.e. those coming from used properties/links), fill in other persistence-relevant aspects
     for (ConceptInfo ci : myRegistry.values()) {
-      final ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(ci.getConceptId());
       for (AggregationLinkInfo li : ci.getAggregationsInUse()) {
-        li.setUnordered(conceptDescriptor.getLinkDescriptor(li.getLinkId()).isUnordered());
+        li.setUnordered(myMetaInfoProvider.isUnordered(li.getLinkId()));
       }
-      // see Util9.genNodeInfo(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), node)
-      // FIXME refactor ImplKind into dedicated subclass that holds both serialize and parse code
-      char[] res = new char[]{'n', 'g'};
-      switch (conceptDescriptor.getConceptKind()) {
-        case INTERFACE: res[0] = 'i'; break;
-        case IMPLEMENTATION: res[0] = 'l'; break;
-        case IMPLEMENTATION_WITH_STUB: res[0] = 's'; break;
-      }
-      switch (conceptDescriptor.getStaticScope()) {
-        case ROOT: res[1] = 'r'; break;
-        case NONE: res[1] = 'n'; break;
-      }
-      ci.setConceptImplementationKind(new String(res));
+      ci.setImplementationKind(myMetaInfoProvider.getScope(ci.getConceptId()), myMetaInfoProvider.getKind(ci.getConceptId()));
 
       if (ci.isNameSet()) {
         continue;
       }
-      String conceptName = conceptDescriptor.getConceptFqName();
-      // conceptName might be MetaIdFactory.INVALID_CONCEPT_NAME, we don't care. Each ConceptInfo shall get a name
+      String conceptName = myMetaInfoProvider.getConceptName(ci.getConceptId());
       // FIXME we don't really need concept fqn in new registry, own name is enough (we know the language anyway)
       ci.setName(conceptName);
     }
     // record name of the languages
     for (LangInfo li : myLanguagesInUse.values()) {
-      final LanguageRuntime langRT = LanguageRegistry.getInstance().getLanguage(li.getLanguageId());
-      li.setName(langRT == null ? null : langRT.getNamespace());
+      li.setName(myMetaInfoProvider.getLanguageName(li.getLanguageId()));
     }
 
     initializeIndexValues();
@@ -341,7 +320,8 @@ public class IdInfoCollector {
     private final HashMap<SPropertyId, PropertyInfo> myProperties = new HashMap<SPropertyId, PropertyInfo>();
     private final HashMap<SReferenceLinkId, AssociationLinkInfo> myAssociations = new HashMap<SReferenceLinkId, AssociationLinkInfo>();
     private final HashMap<SContainmentLinkId, AggregationLinkInfo> myAggregations = new HashMap<SContainmentLinkId, AggregationLinkInfo>(8);
-    private String myImplKind;
+    private ConceptKind myKind = ConceptKind.NORMAL;
+    private StaticScope myScope = StaticScope.GLOBAL;
 
     /*package*/ ConceptInfo(@NotNull SConceptId concept) {
       myConcept = concept;
@@ -368,12 +348,32 @@ public class IdInfoCollector {
       return myName;
     }
 
+    public StaticScope getScope() {
+      return myScope;
+    }
+
+    public ConceptKind getKind() {
+      return myKind;
+    }
+
     /**
      * @return value suitable for nodeInfo attribute of node element, text that describes concept's InterfacePart/ImplementationPart kind (ConceptKind) and StaticScope
      */
     @NotNull
-    public String getConceptImplementationKind() {
-      return myImplKind;
+    public String getImplementationKindText() {
+      // see Util9.genNodeInfo(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), node)
+      // XXX perhaps, shall refactor ImplKind into dedicated subclass that holds both serialize and parse code
+      char[] res = new char[]{'n', 'g'};
+      switch (myKind) {
+        case INTERFACE: res[0] = 'i'; break;
+        case IMPLEMENTATION: res[0] = 'l'; break;
+        case IMPLEMENTATION_WITH_STUB: res[0] = 's'; break;
+      }
+      switch (myScope) {
+        case ROOT: res[1] = 'r'; break;
+        case NONE: res[1] = 'n'; break;
+      }
+      return new String(res);
     }
 
     /*package*/boolean isNameSet() {
@@ -386,8 +386,22 @@ public class IdInfoCollector {
       }
       myName = name;
     }
-    /*package*/void setConceptImplementationKind(@NotNull String kind) {
-      myImplKind = kind;
+    /*package*/void setImplementationKind(StaticScope scope, ConceptKind kind) {
+      myKind = kind;
+      myScope = scope;
+    }
+    /*package*/void parseImplementationKind(@NotNull String kind) {
+      switch (kind.charAt(0)) {
+        case 'i' : myKind = ConceptKind.INTERFACE; break;
+        case 'l' : myKind = ConceptKind.IMPLEMENTATION; break;
+        case 's' : myKind = ConceptKind.IMPLEMENTATION_WITH_STUB; break;
+        default: myKind = ConceptKind.NORMAL;
+      }
+      switch (kind.charAt(1)) {
+        case 'r' : myScope = StaticScope.ROOT; break;
+        case 'n' : myScope = StaticScope.NONE; break;
+        default: myScope = StaticScope.GLOBAL;
+      }
     }
 
     /*package*/void addProperty(SPropertyId propertyId, String name) {

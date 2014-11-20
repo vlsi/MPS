@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
-import jetbrains.mps.smodel.DebugRegistry;
+import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -37,12 +37,10 @@ import java.util.Map;
 
 /**
  * Facility to read meta-model information persisted in a model file, to fill {@link jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector} back from the
- * serialized registry.
+ * serialized registry. Serves as the way to parametrize ModelReader.
  *
  * Deals with the way meta-object identifiers are de-serialized, although marshal/unmarshal code shall be kept together, pending refactoring.
  * I'd prefer to have utility objects being used both from read and write, rather than dedicated set of reader utilities and writer utilities as it used to be.
- *
- * In addition, bears responsibility to integrate with DebugRegistry, which utility is uncertain and might fade away eventually.
  *
  * Stateful, withLanguage() identifies language for subsequent withConcept, which, furthermore, identify concept for any
  * subsequent #property(), #association() and #aggregation call.
@@ -50,16 +48,35 @@ import java.util.Map;
 class IdInfoReadHelper {
   private final IdInfoCollector myInfoCollector;
   private final IdEncoder myIdEncoder;
+  private final MetaModelInfoProvider myMetaInfoProvider;
   private LangInfo myActualLang;
   private ConceptInfo myActualConcept;
   private final Map<String, SConcept> myConcepts = new HashMap<String, SConcept>();
   private final Map<String, SProperty> myProperties = new HashMap<String, SProperty>();
   private final Map<String, SReferenceLink> myAssociations = new HashMap<String, SReferenceLink>();
   private final Map<String, SContainmentLink> myAggregations = new HashMap<String, SContainmentLink>();
+  private final boolean myInterfaceOnly;
+  private final boolean myStripImplementation;
 
-  public IdInfoReadHelper(@NotNull IdEncoder idEncoder) {
-    myIdEncoder = idEncoder;
-    myInfoCollector = new IdInfoCollector();
+  public IdInfoReadHelper(@NotNull MetaModelInfoProvider mmiProvider, boolean interfaceOnly, boolean stripImplementation) {
+    myMetaInfoProvider = mmiProvider;
+    myIdEncoder = new IdEncoder();
+    myInfoCollector = new IdInfoCollector(mmiProvider);
+    myInterfaceOnly = interfaceOnly;
+    myStripImplementation = stripImplementation;
+  }
+
+  @NotNull
+  public IdEncoder getIdEncoder() {
+    return myIdEncoder;
+  }
+
+  public boolean isRequestedInterfaceOnly() {
+    return myInterfaceOnly;
+  }
+
+  public boolean isRequestedStripImplementation() {
+    return myStripImplementation;
   }
 
   // Fill methods, populate myInfoCollector with persisted meta-model info
@@ -68,7 +85,7 @@ class IdInfoReadHelper {
     final SLanguageId languageId = myIdEncoder.parseLanguageId(id);
     myActualLang = myInfoCollector.registerLanguage(languageId);
     myActualLang.setName(name);
-    DebugRegistry.getInstance().addLanguageName(languageId, name);
+    myMetaInfoProvider.setLanguageName(languageId, name);
   }
 
   public void withConcept(String id, String name, String index, String nodeInfo) {
@@ -76,9 +93,11 @@ class IdInfoReadHelper {
     SConceptId conceptId = myIdEncoder.parseConceptId(myActualLang.getLanguageId(), id);
     myActualConcept = myInfoCollector.registerConcept(conceptId);
     myActualConcept.setName(name);
-    myActualConcept.setConceptImplementationKind(nodeInfo);
+    myActualConcept.parseImplementationKind(nodeInfo);
     myConcepts.put(index, MetaAdapterFactory.getConcept(conceptId, name));
-    DebugRegistry.getInstance().addConceptName(conceptId, name);
+    myMetaInfoProvider.setConceptName(conceptId, name);
+    myMetaInfoProvider.setKind(conceptId, myActualConcept.getKind());
+    myMetaInfoProvider.setScope(conceptId, myActualConcept.getScope());
   }
 
   public void property(String id, String name, String index) {
@@ -86,7 +105,7 @@ class IdInfoReadHelper {
     SPropertyId propertyId = myIdEncoder.parsePropertyId(myActualConcept.getConceptId(), id);
     myActualConcept.addProperty(propertyId, name);
     myProperties.put(index, MetaAdapterFactory.getProperty(propertyId, name));
-    DebugRegistry.getInstance().addPropertyName(propertyId, name);
+    myMetaInfoProvider.setPropertyName(propertyId, name);
   }
 
   public void association(String id, String name, String index) {
@@ -94,7 +113,7 @@ class IdInfoReadHelper {
     SReferenceLinkId linkId = myIdEncoder.parseAssociation(myActualConcept.getConceptId(), id);
     myActualConcept.addLink(linkId, name);
     myAssociations.put(index, MetaAdapterFactory.getReferenceLink(linkId, name));
-    DebugRegistry.getInstance().addRefName(linkId, name);
+    myMetaInfoProvider.setAssociationName(linkId, name);
   }
 
   public void aggregation(String id, String name, String index, boolean unordered) {
@@ -102,7 +121,8 @@ class IdInfoReadHelper {
     SContainmentLinkId linkId = myIdEncoder.parseAggregation(myActualConcept.getConceptId(), id);
     myActualConcept.addLink(linkId, name);
     myAggregations.put(index, MetaAdapterFactory.getContainmentLink(linkId, name));
-    DebugRegistry.getInstance().addLinkName(linkId, name);
+    myMetaInfoProvider.setAggregationName(linkId, name);
+    myMetaInfoProvider.setUnordered(linkId, unordered);
   }
 
   // Query. De-serialize ids, resolve indexes and retrieve meta-objects according to myInfoCollector state
@@ -133,18 +153,18 @@ class IdInfoReadHelper {
 
   public boolean isInterface(@NotNull SConcept concept) {
     // ReadHelper9.readNodeInfo
-    String nodeInfo = myInfoCollector.find(concept).getConceptImplementationKind();
+    String nodeInfo = myInfoCollector.find(concept).getImplementationKindText();
     return nodeInfo.charAt(0) == 'i';
   }
 
   public boolean isImplementation(@NotNull SConcept concept) {
-    String nodeInfo = myInfoCollector.find(concept).getConceptImplementationKind();
+    String nodeInfo = myInfoCollector.find(concept).getImplementationKindText();
     final char c = nodeInfo.charAt(0);
     return c == 's' || c == 'l';
   }
   public boolean isImplementationWithStab(@NotNull SConcept concept) {
     // ReadHelper9.isImplementationWithStab
-    String nodeInfo = myInfoCollector.find(concept).getConceptImplementationKind();
+    String nodeInfo = myInfoCollector.find(concept).getImplementationKindText();
     return nodeInfo.charAt(0) == 's';
   }
 
