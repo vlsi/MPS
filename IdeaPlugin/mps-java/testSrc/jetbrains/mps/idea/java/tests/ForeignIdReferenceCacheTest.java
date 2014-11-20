@@ -59,22 +59,24 @@ public class ForeignIdReferenceCacheTest extends DataMPSFixtureTestCase {
   }
 
   public void testIndex() {
+    Project project = myModule.getProject();
+    List<Collection<Pair<SNodeDescriptor, String>>> values =
+        FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.f", GlobalSearchScope.allScope(project));
+    List<Collection<Pair<SNodeDescriptor, String>>> values2 =
+        FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.", GlobalSearchScope.allScope(project));
+    assertEquals(values, values2);
+
+    assertEquals(values.size(), 1);
+    Collection<Pair<SNodeDescriptor, String>> pairs = values.get(0);
+    assertEquals(pairs.size(), 1);
+    final Pair<SNodeDescriptor, String> p = pairs.iterator().next();
+
+    String role = p.o2;
+    assertEquals("variableDeclaration", role);
+
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        Project project = myModule.getProject();
-        List<Collection<Pair<SNodeDescriptor, String>>> values = FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.f", GlobalSearchScope.allScope(project));
-        List<Collection<Pair<SNodeDescriptor, String>>> values2 = FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.", GlobalSearchScope.allScope(project));
-        assertEquals(values, values2);
-
-        assertEquals(values.size(), 1);
-        Collection<Pair<SNodeDescriptor, String>> pairs = values.get(0);
-        assertEquals(pairs.size(), 1);
-        Pair<SNodeDescriptor, String> p = pairs.iterator().next();
-
-        String role = p.o2;
-        assertEquals("variableDeclaration", role);
-
         SNode snode = p.o1.getNodeReference().resolve(MPSModuleRepository.getInstance());
         assertEquals("jetbrains.mps.baseLanguage.structure.StaticFieldReference", snode.getConcept().getQualifiedName());
       }
