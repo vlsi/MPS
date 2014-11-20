@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
@@ -63,7 +64,7 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
   @Override
   protected SNode findInModel(SModel strucModel) {
     for (SNode root : strucModel.getRootNodes()) {
-      if (root.getName().equals(NameUtil.shortNameFromLongName(myFqName))) return root;
+      if (NameUtil.shortNameFromLongName(myFqName).equals(root.getProperty(SNodeUtil.property_INamedConcept_name))) return root;
     }
     return null;
   }
