@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -37,10 +38,15 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
     importedLanguages.addAll(SModelOperations.getAllImportedLanguageIds(SNodeOperations.getModel(root)));
 
     for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"), true, new SAbstractConcept[]{}))) {
-      if (!(importedLanguages.contains(node.getConcept().getLanguage()))) {
+      SConcept concept = node.getConcept();
+      if (concept.equals(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 779128492853369165l, "jetbrains.mps.lang.core.structure.SideTransformInfo")) && "smodelAttribute".equals(SNodeOperations.getContainingLinkRole(node))) {
+        continue;
+      }
+
+      if (!(importedLanguages.contains(concept.getLanguage()))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, node.getConcept().getLanguage().getQualifiedName() + " is not imported", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6268689888338468534", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, concept.getLanguage().getQualifiedName() + " is not imported", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6268689888338468534", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.ImportUsedLanguage_QuickFix", false);
             _reporter_2309309498.addIntentionProvider(intentionProvider);

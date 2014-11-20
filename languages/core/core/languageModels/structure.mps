@@ -18,6 +18,14 @@
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
+      <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <child id="1083172003582" name="member" index="M5hS2" />
+      </concept>
+      <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
+        <property id="1083923523172" name="externalValue" index="1uS6qo" />
+        <property id="1083923523171" name="internalValue" index="1uS6qv" />
+      </concept>
       <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
         <property id="7588428831955550663" name="role" index="Hh88m" />
         <child id="7588428831947959310" name="attributed" index="EQaZv" />
@@ -53,6 +61,7 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="2565736246230036150" name="jetbrains.mps.lang.core.structure.ExportScopePublic" flags="ig" index="24uvON" />
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
@@ -60,7 +69,6 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-      <concept id="2565736246230036150" name="jetbrains.mps.lang.core.structure.ExportScopePublic" flags="ig" index="24uvON" />
     </language>
   </registry>
   <node concept="QkHVr" id="fKAOsGN">
@@ -289,6 +297,45 @@
   </node>
   <node concept="PlHQZ" id="8AYOKVCAP5">
     <property role="TrG5h" value="IStubForAnotherConcept" />
+  </node>
+  <node concept="1TIwiD" id="Fg1jLUUh_d">
+    <property role="TrG5h" value="SideTransformInfo" />
+    <property role="3GE5qa" value="attributes.editing" />
+    <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyi" id="Fg1jLUVycx" role="1TKVEl">
+      <property role="TrG5h" value="side" />
+      <ref role="AX2Wp" node="Fg1jLUVynG" resolve="SideTransformSide" />
+    </node>
+    <node concept="1TJgyi" id="Fg1jLUWrAV" role="1TKVEl">
+      <property role="TrG5h" value="cellId" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="Fg1jLUWrXo" role="1TKVEl">
+      <property role="TrG5h" value="anchorTag" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="M6xJ_" id="Fg1jLUUBDq" role="lGtFl">
+      <property role="Hh88m" value="sideTransformInfo" />
+      <node concept="trNpa" id="Fg1jLUUC3q" role="EQaZv">
+        <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="tn0Fv" id="Fg1jLUUCsA" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+    </node>
+  </node>
+  <node concept="AxPO7" id="Fg1jLUVynG">
+    <property role="3GE5qa" value="attributes.editing" />
+    <property role="TrG5h" value="SideTransformSide" />
+    <ref role="M4eZT" node="fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="Fg1jLUVynH" role="M5hS2">
+      <property role="1uS6qo" value="right" />
+      <property role="1uS6qv" value="right" />
+    </node>
+    <node concept="M4N5e" id="Fg1jLUVyTf" role="M5hS2">
+      <property role="1uS6qv" value="left" />
+      <property role="1uS6qo" value="left" />
+    </node>
   </node>
 </model>
 

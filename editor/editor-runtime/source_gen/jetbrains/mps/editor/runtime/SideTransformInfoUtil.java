@@ -22,30 +22,30 @@ public class SideTransformInfoUtil {
   }
 
   private static void addTransformInfo(@NotNull SNode node, @NotNull String cellId, @NotNull String anchorTag, boolean isRight) {
-    SNode info = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 779128492853369165l, "jetbrains.mps.lang.editor.structure.SideTransformInfo")));
-    SPropertyOperations.set(info, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 779128492853369165l, 779128492853934523l, "cellId"), cellId);
-    SPropertyOperations.set(info, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 779128492853369165l, 779128492853935960l, "anchorTag"), anchorTag);
-    SPropertyOperations.set(info, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 779128492853369165l, 779128492853699361l, "side"), (isRight ? "right" : "left"));
-    AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.structure.SideTransformInfo"), info);
+    SNode info = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 779128492853369165l, "jetbrains.mps.lang.core.structure.SideTransformInfo")));
+    SPropertyOperations.set(info, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 779128492853369165l, 779128492853934523l, "cellId"), cellId);
+    SPropertyOperations.set(info, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 779128492853369165l, 779128492853935960l, "anchorTag"), anchorTag);
+    SPropertyOperations.set(info, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 779128492853369165l, 779128492853699361l, "side"), (isRight ? "right" : "left"));
+    AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SideTransformInfo"), info);
   }
 
   public static boolean hasRightTransformInfo(SNode node) {
-    return SPropertyOperations.hasValue(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.structure.SideTransformInfo")), MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 779128492853369165l, 779128492853699361l, "side"), "right", "right");
+    return SPropertyOperations.hasValue(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SideTransformInfo")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 779128492853369165l, 779128492853699361l, "side"), "right", "right");
   }
 
   public static boolean hasLeftTransformInfo(SNode node) {
-    return SPropertyOperations.hasValue(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.structure.SideTransformInfo")), MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 779128492853369165l, 779128492853699361l, "side"), "left", "right");
+    return SPropertyOperations.hasValue(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SideTransformInfo")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 779128492853369165l, 779128492853699361l, "side"), "left", "right");
   }
 
   public static void removeTransformInfo(SNode node) {
-    AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.structure.SideTransformInfo"), null);
+    AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SideTransformInfo"), null);
   }
 
   public static String getCellIdFromTransformInfo(SNode node) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.structure.SideTransformInfo")), MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 779128492853369165l, 779128492853934523l, "cellId"));
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SideTransformInfo")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 779128492853369165l, 779128492853934523l, "cellId"));
   }
 
   public static String getAnchorTagFromTransformInfo(SNode node) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.structure.SideTransformInfo")), MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 779128492853369165l, 779128492853935960l, "anchorTag"));
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SideTransformInfo")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 779128492853369165l, 779128492853935960l, "anchorTag"));
   }
 }
