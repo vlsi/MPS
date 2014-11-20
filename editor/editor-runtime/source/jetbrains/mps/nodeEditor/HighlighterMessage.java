@@ -19,14 +19,19 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Collections;
+import java.util.Deque;
+import java.util.Iterator;
 
 public class HighlighterMessage extends EditorMessageWithTarget {
   private IErrorReporter myErrorReporter;
@@ -52,7 +57,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   }
 
   @Override
-  public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
     return super.getCellForParentNodeInMainEditor(editor);
   }
 
@@ -67,23 +72,46 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   }
 
   @Override
-  public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
-    paintDecorations(g, cell);
+  public void paint(Graphics g, EditorComponent editorComponent, jetbrains.mps.nodeEditor.cells.EditorCell cell) {
+    if (cell != null) {
+      drawWaveUnderCell(g, getColor(), cell);
+    }
   }
 
-  private void paintDecorations(Graphics g, EditorCell cell) {
-    if (cell == null) return;
-    drawWaveUnderCell(g, getColor(), cell);
-  }
-
-  public static void drawWaveUnderCell(Graphics g, Color c, EditorCell cell) {
-    if (cell == null) return;
-    int x = cell.getX();
-    int y = cell.getY();
-    int height = cell.getHeight();
-    int leftInternalInset = cell.getLeftInset();
-    int effectiveWidth = cell.getEffectiveWidth();
+  private void drawWaveUnderCell(Graphics g, Color c, EditorCell cell) {
+    EditorCell targetCell = getCellToUnderline(cell);
+    int x = targetCell.getX();
+    int y = targetCell.getY();
+    int height = targetCell.getHeight();
+    int leftInternalInset = targetCell.getLeftInset();
+    int effectiveWidth = targetCell.getEffectiveWidth();
     g.setColor(c);
     ColorAndGraphicsUtil.drawWave(g, x + leftInternalInset, x + leftInternalInset + effectiveWidth, y + height - ColorAndGraphicsUtil.WAVE_HEIGHT);
+  }
+
+  private EditorCell getCellToUnderline(EditorCell cell) {
+    Deque<Iterator<EditorCell>> iteratorsStack = new LinkedList<Iterator<EditorCell>>();
+    if (cell instanceof EditorCell_Collection) {
+      iteratorsStack.addLast(((EditorCell_Collection) cell).iterator());
+    } else {
+      iteratorsStack.addLast(Collections.singletonList(cell).iterator());
+    }
+    while (!iteratorsStack.isEmpty()) {
+      Iterator<EditorCell> currentIterator = iteratorsStack.peekLast();
+      if (!currentIterator.hasNext()) {
+        iteratorsStack.removeLast();
+        continue;
+      }
+      EditorCell nextCell = currentIterator.next();
+      if (nextCell.getSNode() != cell.getSNode()) {
+        continue;
+      }
+      if (nextCell instanceof EditorCell_Collection) {
+        iteratorsStack.addLast(((EditorCell_Collection) nextCell).iterator());
+      } else {
+        return nextCell;
+      }
+    }
+    return cell;
   }
 }
