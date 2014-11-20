@@ -39,7 +39,6 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
@@ -760,7 +759,7 @@ public class SModel implements SModelData {
       if (existingVersion == -1) {
         myLanguagesIds.remove(id);
       } else {
-        assert false;
+        throw new IllegalStateException("Can't add language import with different version. Old version: " + existingVersion + "; new version: " + version);
       }
     }
 

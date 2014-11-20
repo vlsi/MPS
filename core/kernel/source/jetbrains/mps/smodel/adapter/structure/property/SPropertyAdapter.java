@@ -58,6 +58,11 @@ public abstract class SPropertyAdapter implements SProperty {
   }
 
   @Override
+  public String toString() {
+    return myPropertyName;
+  }
+
+  @Override
   public int hashCode() {
     return 0;
   }

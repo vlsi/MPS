@@ -89,7 +89,7 @@ public class QueriesGenerated {
     return MetaIdByDeclaration.getLanguageId((Language) _context.getOriginalInputModel().getModule()).getId().getMostSignificantBits() + "L";
   }
   public static Object propertyMacro_GetPropertyValue_1973338949476843964(final PropertyMacroContext _context) {
-    return MetaIdByDeclaration.getLanguageId((Language) _context.getOriginalInputModel().getModule()).getId().getMostSignificantBits() + "L";
+    return MetaIdByDeclaration.getLanguageId((Language) _context.getOriginalInputModel().getModule()).getId().getLeastSignificantBits() + "L";
   }
   public static Object propertyMacro_GetPropertyValue_1973338949476804519(final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getModule().getModuleName();

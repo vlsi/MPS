@@ -16,21 +16,23 @@ import jetbrains.mps.migration.global.ProjectMigration;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.apache.log4j.Level;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -77,18 +79,21 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     });
   }
 
-  public MigrationDescriptor loadMigrationDescriptor(Language module) {
+  public MigrationDescriptor loadMigrationDescriptor(final Language module) {
     final ClassLoader loader = module.getClassLoader();
+    final Wrappers._T<String> name = new Wrappers._T<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        name.value = MigrationsUtil.getDescriptorFQName(module);
+      }
+    });
     try {
-      Class descriptorClass = Class.forName(MigrationsUtil.getDescriptorFQName(module), true, loader);
+      Class descriptorClass = Class.forName(name.value, true, loader);
       return (MigrationDescriptor) descriptorClass.newInstance();
-    } catch (ClassNotFoundException e) {
-      return null;
-    } catch (IllegalAccessException e) {
-      return null;
-    } catch (InstantiationException e) {
-      return null;
     } catch (Throwable e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Exception on migration descriptor instantiation", e);
+      }
       return null;
     }
   }
@@ -194,8 +199,26 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
       return false;
     }
-    module.getModuleDescriptor().getLanguageVersions().put(language, script.getDescriptor().getFromVersion() + 1);
+
+    int toVersion = script.getDescriptor().getFromVersion() + 1;
+    module.getModuleDescriptor().getLanguageVersions().put(language, toVersion);
     module.setChanged();
+
+    for (SModel model : ListSequence.fromList(module.getModels())) {
+      if (model.isReadOnly()) {
+        continue;
+      }
+      if (!((model instanceof SModelInternal))) {
+        continue;
+      }
+      if (!(((SModelInternal) model).importedLanguageIds().contains(language))) {
+        continue;
+      }
+
+      ((SModelInternal) model).deleteLanguageId(language);
+      ((SModelInternal) model).addLanguageId(language, toVersion);
+    }
+
     return true;
   }
 

@@ -57,7 +57,7 @@
     <node concept="1N5Pfh" id="6xRUAczIfiw" role="1Mr941">
       <ref role="1N5Vy1" to="53vh:6xRUAczIf6$" />
       <node concept="1dDu$B" id="6xRUAczIfix" role="1N6uqs">
-        <ref role="1dDu$A" to="53vh:6xRUAczIf6z" resolve="NodePatternVariableReference" />
+        <ref role="1dDu$A" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
       </node>
     </node>
   </node>
