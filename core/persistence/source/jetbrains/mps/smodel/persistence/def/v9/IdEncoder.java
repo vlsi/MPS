@@ -45,6 +45,7 @@ import java.util.Arrays;
 public final class IdEncoder {
   // separator for import in serialized reference target
   private static final char REF_TARGET_IMPORT_SEPARATOR = ':';
+  private static final String DYNAMIC_REFERENCE_ID = "^";
 
   public IdEncoder() {
   }
@@ -126,7 +127,7 @@ public final class IdEncoder {
       assert targetNodeId != null;
       target = toText(targetNodeId);
     } else {
-      target = StorageIndexHelper9.DYNAMIC_REFERENCE_ID;
+      target = DYNAMIC_REFERENCE_ID;
     }
     return target;
   }
@@ -152,7 +153,7 @@ public final class IdEncoder {
 
   @Nullable
   public SNodeId parseLocalNodeReference(String text) {
-    if (StorageIndexHelper9.DYNAMIC_REFERENCE_ID.equals(text)) {
+    if (DYNAMIC_REFERENCE_ID.equals(text)) {
       return null;
     }
     return parseNodeId(text);

@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
-import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
@@ -474,10 +473,6 @@ public class IdInfoCollector {
     }
     public String getName() {
       return myName;
-    }
-
-    public String getIndex(StorageIndexHelper9 helper) {
-      return helper.getPropertyIndex(getPropertyId());
     }
 
     @Override
