@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -39,7 +40,11 @@ public abstract class ModelChange {
   public abstract ChangeType getType();
   public boolean isNonConflicting() {
     // true - change can never conflict with other change and should be ignored if connected change exists (e.g. resolveInfo change) 
-    return false;
+    return getMergeHint() != null;
+  }
+  @Nullable
+  public SNodeReference getMergeHint() {
+    return null;
   }
   @Override
   public abstract String toString();

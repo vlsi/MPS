@@ -31,18 +31,17 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
 import com.intellij.openapi.ui.DialogWrapper;
-import org.jetbrains.annotations.Nullable;
 
 public class ModelMergeTool extends MergeTool {
   private static final Logger LOG = LogManager.getLogger(ModelMergeTool.class);
-  private static final Set<FileType> SUPPORTED_TYPES = SetSequence.fromSetAndArray(new HashSet<FileType>(), ModelDiffTool.DIFF_SUPPORTED_TYPES);
+  public static final Set<FileType> SUPPORTED_TYPES = SetSequence.fromSetAndArray(new HashSet<FileType>(), ModelDiffTool.DIFF_SUPPORTED_TYPES);
   public ModelMergeTool() {
   }
   @Override
   public void show(final DiffRequest request) {
     MergeRequestImpl mrequest = (MergeRequestImpl) request;
     try {
-      final Wrappers._T<VirtualFile> file = new Wrappers._T<VirtualFile>(getFileFromMergeRequest(mrequest));
+      final Wrappers._T<VirtualFile> file = new Wrappers._T<VirtualFile>(check_7qvsj_a0a0b0d(mrequest.getResultContent()));
       if (file.value == null) {
         if (LOG_705910402.isEnabledFor(Level.ERROR)) {
           LOG_705910402.error("No file");
@@ -78,7 +77,6 @@ public class ModelMergeTool extends MergeTool {
       final SModel resultModel = dialog.getResultModelWithFixedId();
       if (resultModel != null) {
         final Wrappers._T<String> resultContent = new Wrappers._T<String>();
-        // <node> 
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
@@ -116,7 +114,7 @@ public class ModelMergeTool extends MergeTool {
   }
   private static void resolved(MergeRequestImpl req, final String result) {
     req.setResult(DialogWrapper.OK_EXIT_CODE);
-    final VirtualFile modelFile = getFileFromMergeRequest(req);
+    final VirtualFile modelFile = check_7qvsj_a0b0f(req.getResultContent());
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         try {
@@ -129,16 +127,17 @@ public class ModelMergeTool extends MergeTool {
       }
     });
   }
-  @Nullable
-  private static VirtualFile getFileFromMergeRequest(MergeRequestImpl mergeRequest) {
-    DiffContent resultContent = mergeRequest.getResultContent();
-    if (resultContent instanceof MergeRequestImpl.MergeContent) {
-      return ((MergeRequestImpl.MergeContent) resultContent).getFile();
+  protected static Logger LOG_705910402 = LogManager.getLogger(ModelMergeTool.class);
+  private static VirtualFile check_7qvsj_a0a0b0d(DiffContent checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getFile();
     }
     return null;
   }
-  protected static Logger LOG_705910402 = LogManager.getLogger(ModelMergeTool.class);
-  private static <T> T as_7qvsj_a0a0a0a1a71a1a3(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
+  private static VirtualFile check_7qvsj_a0b0f(DiffContent checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getFile();
+    }
+    return null;
   }
 }
