@@ -1,38 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)">
+<model ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" name="jetbrains.mps.baseLanguage.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" name="jetbrains.mps.lang.plugin.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" name="jetbrains.mps.baseLanguage.classifiers.structure" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831" name="metaClass" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1096454100552" name="rootable" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1160488491229" name="iconPath" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802" name="abstract" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/5092175715804935370" name="conceptAlias" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/5404671619616246344" name="staticScope" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519" name="extends" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" name="target" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168/1169127628841" name="intfc" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083" name="linkDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478" name="implements" />
-  </debugInfo>
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="-1" index="4jta" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -41,164 +11,195 @@
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
-    <import index="tgbt" ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="4jta.1071489090640" id="481983775135178819" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ProjectPluginDisposeBlock" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="Custom.ProjectPlugin" />
-      <property role="4jta.1169125787135.5092175715804935370" value="dispose" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  <registry>
+    <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
+        <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+      </concept>
+      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
+        <reference id="1169127628841" name="intfc" index="PrY4T" />
+      </concept>
+      <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1160488491229" name="iconPath" index="MwhBj" />
+        <property id="1096454100552" name="rootable" index="19KtqR" />
+        <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
+        <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="1169129564478" name="implements" index="PzmwI" />
+      </concept>
+      <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
+        <property id="1071599776563" name="role" index="20kJfa" />
+        <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
+        <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <reference id="1071599976176" name="target" index="20lvS9" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1TIwiD" id="qKmr2orM13">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ProjectPluginDisposeBlock" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Custom.ProjectPlugin" />
+    <property role="34LRSv" value="dispose" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="qKmr2orM19">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ProjectPluginInitBlock" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Custom.ProjectPlugin" />
+    <property role="34LRSv" value="init" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="qKmr2orM1f">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ApplicationPluginType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Custom.ApplicationPlugin" />
+    <property role="34LRSv" value="application plugin&lt;&gt;" />
+    <ref role="1TJDcQ" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
+    <node concept="1TJgyj" id="qKmr2orM1h" role="1TKVEi">
+      <property role="20kJfa" value="plugin" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="qKmr2orM1o" resolve="ApplicationPluginDeclaration" />
     </node>
-    <node concept="4jta.1071489090640" id="481983775135178825" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ProjectPluginInitBlock" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="Custom.ProjectPlugin" />
-      <property role="4jta.1169125787135.5092175715804935370" value="init" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="qKmr2orM1i">
+    <property role="R5$K7" value="false" />
+    <property role="19KtqR" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="MwhBj" value="${language_descriptor}/icons/projectPlugin.png" />
+    <property role="TrG5h" value="ProjectPluginDeclaration" />
+    <property role="3GE5qa" value="Custom.ProjectPlugin" />
+    <property role="34LRSv" value="Project Plugin" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="qKmr2orM1j" role="PzmwI">
+      <ref role="PrY4T" to="tp4f:hyWqMFP" resolve="IClassifier" />
     </node>
-    <node concept="4jta.1071489090640" id="481983775135178831" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ApplicationPluginType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="Custom.ApplicationPlugin" />
-      <property role="4jta.1169125787135.5092175715804935370" value="application plugin&lt;&gt;" />
-      <reference role="4jta.1071489090640.1071489389519" target="tp4f.1205752813637" resolveInfo="BaseClassifierType" />
-      <node concept="4jta.1071489288298" id="481983775135178833" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599776563" value="plugin" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="481983775135178840" resolveInfo="ApplicationPluginDeclaration" />
-      </node>
+    <node concept="1TJgyj" id="qKmr2orM1k" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="initBlock" />
+      <ref role="20lvS9" node="qKmr2orM19" resolve="ProjectPluginInitBlock" />
     </node>
-    <node concept="4jta.1071489090640" id="481983775135178834" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1071489090640.1096454100552" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/projectPlugin.png" />
-      <property role="asn4.1169194658468.1169194664001" value="ProjectPluginDeclaration" />
-      <property role="asn4.1133920641626.1193676396447" value="Custom.ProjectPlugin" />
-      <property role="4jta.1169125787135.5092175715804935370" value="Project Plugin" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="481983775135178835" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tp4f.1205751982837" resolveInfo="IClassifier" />
-      </node>
-      <node concept="4jta.1071489288298" id="481983775135178836" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="initBlock" />
-        <reference role="4jta.1071489288298.1071599976176" target="481983775135178825" resolveInfo="ProjectPluginInitBlock" />
-      </node>
-      <node concept="4jta.1071489288298" id="481983775135178837" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="disposeBlock" />
-        <reference role="4jta.1071489288298.1071599976176" target="481983775135178819" resolveInfo="ProjectPluginDisposeBlock" />
-      </node>
-      <node concept="4jta.1071489288298" id="481983775135178838" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="fieldDeclaration" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="tp4f.1213999088275" resolveInfo="DefaultClassifierFieldDeclaration" />
-      </node>
+    <node concept="1TJgyj" id="qKmr2orM1l" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="disposeBlock" />
+      <ref role="20lvS9" node="qKmr2orM13" resolve="ProjectPluginDisposeBlock" />
     </node>
-    <node concept="4jta.1071489090640" id="481983775135178840" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1071489090640.1096454100552" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/applicationPlugin.png" />
-      <property role="asn4.1169194658468.1169194664001" value="ApplicationPluginDeclaration" />
-      <property role="asn4.1133920641626.1193676396447" value="Custom.ApplicationPlugin" />
-      <property role="4jta.1169125787135.5092175715804935370" value="Application Plugin" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="481983775135178841" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tp4f.1205751982837" resolveInfo="IClassifier" />
-      </node>
-      <node concept="4jta.1071489288298" id="481983775135178842" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="initBlock" />
-        <reference role="4jta.1071489288298.1071599976176" target="481983775135178851" resolveInfo="ApplicationPluginInitBlock" />
-      </node>
-      <node concept="4jta.1071489288298" id="481983775135178843" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="disposeBlock" />
-        <reference role="4jta.1071489288298.1071599976176" target="481983775135178846" resolveInfo="ApplicationPluginDisposeBlock" />
-      </node>
-      <node concept="4jta.1071489288298" id="481983775135178844" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="fieldDeclaration" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="tp4f.1213999088275" resolveInfo="DefaultClassifierFieldDeclaration" />
-      </node>
+    <node concept="1TJgyj" id="qKmr2orM1m" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fieldDeclaration" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" to="tp4f:hEBZ0aj" resolve="DefaultClassifierFieldDeclaration" />
     </node>
-    <node concept="4jta.1071489090640" id="481983775135178846" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ApplicationPluginDisposeBlock" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="Custom.ApplicationPlugin" />
-      <property role="4jta.1169125787135.5092175715804935370" value="dispose" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="qKmr2orM1o">
+    <property role="R5$K7" value="false" />
+    <property role="19KtqR" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="MwhBj" value="${language_descriptor}/icons/applicationPlugin.png" />
+    <property role="TrG5h" value="ApplicationPluginDeclaration" />
+    <property role="3GE5qa" value="Custom.ApplicationPlugin" />
+    <property role="34LRSv" value="Application Plugin" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="qKmr2orM1p" role="PzmwI">
+      <ref role="PrY4T" to="tp4f:hyWqMFP" resolve="IClassifier" />
     </node>
-    <node concept="4jta.1071489090640" id="481983775135178851" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ApplicationPluginInitBlock" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="Custom.ApplicationPlugin" />
-      <property role="4jta.1169125787135.5092175715804935370" value="init" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    <node concept="1TJgyj" id="qKmr2orM1q" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="initBlock" />
+      <ref role="20lvS9" node="qKmr2orM1z" resolve="ApplicationPluginInitBlock" />
     </node>
-    <node concept="4jta.1071489090640" id="481983775135178856" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ProjectPluginType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="Custom.ProjectPlugin" />
-      <property role="4jta.1169125787135.5092175715804935370" value="project plugin&lt;&gt;" />
-      <reference role="4jta.1071489090640.1071489389519" target="tp4f.1205752813637" resolveInfo="BaseClassifierType" />
-      <node concept="4jta.1071489288298" id="481983775135178858" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599776563" value="plugin" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="481983775135178834" resolveInfo="ProjectPluginDeclaration" />
-      </node>
+    <node concept="1TJgyj" id="qKmr2orM1r" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="disposeBlock" />
+      <ref role="20lvS9" node="qKmr2orM1u" resolve="ApplicationPluginDisposeBlock" />
     </node>
-    <node concept="4jta.1071489090640" id="681855071694758165" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="GetToolInProjectOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="Tool" />
-      <property role="4jta.1169125787135.5092175715804935370" value="tool&lt;&lt;{tool}&gt;&gt;" />
-      <reference role="4jta.1071489090640.1071489389519" target="tp4k.3339131993542057767" resolveInfo="BaseProjectOperation" />
-      <node concept="4jta.1071489288298" id="681855071694758166" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599776563" value="tool" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tp4k.6547237850567458268" resolveInfo="BaseToolDeclaration" />
-      </node>
+    <node concept="1TJgyj" id="qKmr2orM1s" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fieldDeclaration" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" to="tp4f:hEBZ0aj" resolve="DefaultClassifierFieldDeclaration" />
     </node>
-    <node concept="4jta.1071489090640" id="681855071694758168" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="GetPreferencesComponentInProjectOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="Preference" />
-      <property role="4jta.1169125787135.5092175715804935370" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
-      <reference role="4jta.1071489090640.1071489389519" target="tp4k.3339131993542057767" resolveInfo="BaseProjectOperation" />
-      <node concept="4jta.1071489288298" id="681855071694758169" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599776563" value="componentDeclaration" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tp4k.1210179134063" resolveInfo="PreferencesComponentDeclaration" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="qKmr2orM1u">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ApplicationPluginDisposeBlock" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Custom.ApplicationPlugin" />
+    <property role="34LRSv" value="dispose" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="qKmr2orM1z">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ApplicationPluginInitBlock" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Custom.ApplicationPlugin" />
+    <property role="34LRSv" value="init" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="qKmr2orM1C">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ProjectPluginType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Custom.ProjectPlugin" />
+    <property role="34LRSv" value="project plugin&lt;&gt;" />
+    <ref role="1TJDcQ" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
+    <node concept="1TJgyj" id="qKmr2orM1E" role="1TKVEi">
+      <property role="20kJfa" value="plugin" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="qKmr2orM1i" resolve="ProjectPluginDeclaration" />
     </node>
-    <node concept="4jta.1071489090640" id="7520713872864775836" info="ig">
-      <property role="4jta.1071489090640.1096454100552" value="true" />
-      <property role="asn4.1169194658468.1169194664001" value="StandalonePluginDescriptor" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="_QrTcSEy4l">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="GetToolInProjectOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Tool" />
+    <property role="34LRSv" value="tool&lt;&lt;{tool}&gt;&gt;" />
+    <ref role="1TJDcQ" to="tp4k:2TmYHHddPWB" resolve="BaseProjectOperation" />
+    <node concept="1TJgyj" id="_QrTcSEy4m" role="1TKVEi">
+      <property role="20kJfa" value="tool" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tp4k:5FstybB4bRs" resolve="BaseToolDeclaration" />
     </node>
-  </contents>
+  </node>
+  <node concept="1TIwiD" id="_QrTcSEy4o">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="GetPreferencesComponentInProjectOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Preference" />
+    <property role="34LRSv" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
+    <ref role="1TJDcQ" to="tp4k:2TmYHHddPWB" resolve="BaseProjectOperation" />
+    <node concept="1TJgyj" id="_QrTcSEy4p" role="1TKVEi">
+      <property role="20kJfa" value="componentDeclaration" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tp4k:hB4j29J" resolve="PreferencesComponentDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6xuWmJ1tgUs">
+    <property role="19KtqR" value="true" />
+    <property role="TrG5h" value="StandalonePluginDescriptor" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 

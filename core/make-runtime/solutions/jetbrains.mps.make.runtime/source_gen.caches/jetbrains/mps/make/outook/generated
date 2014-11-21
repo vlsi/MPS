@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ajnehor1bd9aytmqn4vmhfn2nxo4hzd" />
+<dependencies version="2" modelHash="-dr6nobtt29oz5861juxjigj5lkpvoj5">
+  <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" hash="7nurzxp44rdp631ez053ebag1vqty8m" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="5t7vko7lmcdqgrvjfpbb7ytumq3o2g7" />
+  <common hash="b0ckhixc3icvcq6z75q5godlskil6hc" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="5608160002100096676" name="IOutlook" hash="-2ep71byt18e4h38gqa241bqhtlqoe97">
+    <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" />
+    <file name="IOutlook.java" />
+  </source>
+</dependencies>
 

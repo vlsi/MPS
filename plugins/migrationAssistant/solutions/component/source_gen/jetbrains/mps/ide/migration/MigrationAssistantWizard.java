@@ -14,8 +14,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.SwingUtilities;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
-  public MigrationAssistantWizard(Project project, MigrationManager manager, boolean[] success) {
-    super("Migration Assistant Wizard", project, Arrays.asList(new InitialStep(project), new MigrationsProgressStep(project, manager, success), new MigrationsFinishedStep(project), new MigrationsErrorStep(project)));
+  public MigrationAssistantWizard(Project project, MigrationManager manager) {
+    super("Migration Assistant Wizard", project, Arrays.asList(new InitialStep(project), new MigrationsProgressStep(project, manager), new MigrationsFinishedStep(project), new MigrationsErrorStep(project)));
   }
   @Override
   protected void updateStep() {
@@ -40,5 +40,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         }
       });
     }
+  }
+  public boolean isFinishSuccessfull() {
+    return ((MigrationsProgressStep) mySteps.get(1)).isSuccessfull();
   }
 }

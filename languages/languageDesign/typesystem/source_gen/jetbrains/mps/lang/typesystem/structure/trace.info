@@ -15,61 +15,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1193662402729">
-    <file name="EquationDirection_Enum_PropertySupport.java">
-      <node id="1193662402729" at="11,24,12,18" concept="6" />
-      <node id="1193662402729" at="13,5,14,121" concept="5" />
-      <node id="1193662402729" at="15,33,16,57" concept="5" />
-      <node id="1193662402729" at="17,45,18,20" concept="6" />
-      <node id="1193662402729" at="20,5,21,17" concept="6" />
-      <node id="1193662402729" at="24,24,25,18" concept="6" />
-      <node id="1193662402729" at="26,5,27,121" concept="5" />
-      <node id="1193662402729" at="28,33,29,57" concept="5" />
-      <node id="1193662402729" at="30,45,31,43" concept="6" />
-      <node id="1193662402729" at="33,5,34,16" concept="6" />
-      <node id="1193662402729" at="36,49,37,79" concept="5" />
-      <node id="1193662402729" at="38,27,39,32" concept="6" />
-      <node id="1193662402729" at="40,5,41,14" concept="6" />
-      <node id="1193662402729" at="10,44,13,5" concept="3" />
-      <node id="1193662402729" at="16,57,19,7" concept="3" />
-      <node id="1193662402729" at="23,47,26,5" concept="3" />
-      <node id="1193662402729" at="29,57,32,7" concept="3" />
-      <node id="1193662402729" at="37,79,40,5" concept="3" />
-      <node id="1193662402729" at="14,121,20,5" concept="8" />
-      <node id="1193662402729" at="27,121,33,5" concept="8" />
-      <node id="1193662402729" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1193662402729" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1193662402729" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1193662402729" at="11,24,12,18" />
-      <scope id="1193662402729" at="17,45,18,20" />
-      <scope id="1193662402729" at="24,24,25,18" />
-      <scope id="1193662402729" at="30,45,31,43" />
-      <scope id="1193662402729" at="38,27,39,32" />
-      <scope id="1193662402729" at="15,33,19,7">
-        <var name="constant" id="1193662402729" />
-      </scope>
-      <scope id="1193662402729" at="28,33,32,7">
-        <var name="constant" id="1193662402729" />
-      </scope>
-      <scope id="1193662402729" at="36,49,41,14">
-        <var name="constant" id="1193662402729" />
-      </scope>
-      <scope id="1193662402729" at="36,0,43,0">
-        <var name="value" id="1193662402729" />
-      </scope>
-      <scope id="1193662402729" at="10,44,21,17">
-        <var name="constants" id="1193662402729" />
-      </scope>
-      <scope id="1193662402729" at="23,47,34,16">
-        <var name="constants" id="1193662402729" />
-      </scope>
-      <scope id="1193662402729" at="10,0,23,0">
-        <var name="value" id="1193662402729" />
-      </scope>
-      <scope id="1193662402729" at="23,0,36,0">
-        <var name="value" id="1193662402729" />
-      </scope>
-      <unit id="1193662402729" at="9,0,44,0" name="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum_PropertySupport" />
-    </file>
     <file name="EquationDirection_Enum.java">
       <node id="1193662402729" at="14,0,15,0" concept="2" trace="myName" />
       <node id="1193662402729" at="15,27,16,23" concept="6" />
@@ -126,6 +71,61 @@
         <var name="value" id="1193662402729" />
       </scope>
       <unit id="1193662402729" at="9,0,55,0" name="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum" />
+    </file>
+    <file name="EquationDirection_Enum_PropertySupport.java">
+      <node id="1193662402729" at="11,24,12,18" concept="6" />
+      <node id="1193662402729" at="13,5,14,121" concept="5" />
+      <node id="1193662402729" at="15,33,16,57" concept="5" />
+      <node id="1193662402729" at="17,45,18,20" concept="6" />
+      <node id="1193662402729" at="20,5,21,17" concept="6" />
+      <node id="1193662402729" at="24,24,25,18" concept="6" />
+      <node id="1193662402729" at="26,5,27,121" concept="5" />
+      <node id="1193662402729" at="28,33,29,57" concept="5" />
+      <node id="1193662402729" at="30,45,31,43" concept="6" />
+      <node id="1193662402729" at="33,5,34,16" concept="6" />
+      <node id="1193662402729" at="36,49,37,79" concept="5" />
+      <node id="1193662402729" at="38,27,39,32" concept="6" />
+      <node id="1193662402729" at="40,5,41,14" concept="6" />
+      <node id="1193662402729" at="10,44,13,5" concept="3" />
+      <node id="1193662402729" at="16,57,19,7" concept="3" />
+      <node id="1193662402729" at="23,47,26,5" concept="3" />
+      <node id="1193662402729" at="29,57,32,7" concept="3" />
+      <node id="1193662402729" at="37,79,40,5" concept="3" />
+      <node id="1193662402729" at="14,121,20,5" concept="8" />
+      <node id="1193662402729" at="27,121,33,5" concept="8" />
+      <node id="1193662402729" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1193662402729" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="1193662402729" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="1193662402729" at="11,24,12,18" />
+      <scope id="1193662402729" at="17,45,18,20" />
+      <scope id="1193662402729" at="24,24,25,18" />
+      <scope id="1193662402729" at="30,45,31,43" />
+      <scope id="1193662402729" at="38,27,39,32" />
+      <scope id="1193662402729" at="15,33,19,7">
+        <var name="constant" id="1193662402729" />
+      </scope>
+      <scope id="1193662402729" at="28,33,32,7">
+        <var name="constant" id="1193662402729" />
+      </scope>
+      <scope id="1193662402729" at="36,49,41,14">
+        <var name="constant" id="1193662402729" />
+      </scope>
+      <scope id="1193662402729" at="36,0,43,0">
+        <var name="value" id="1193662402729" />
+      </scope>
+      <scope id="1193662402729" at="10,44,21,17">
+        <var name="constants" id="1193662402729" />
+      </scope>
+      <scope id="1193662402729" at="23,47,34,16">
+        <var name="constants" id="1193662402729" />
+      </scope>
+      <scope id="1193662402729" at="10,0,23,0">
+        <var name="value" id="1193662402729" />
+      </scope>
+      <scope id="1193662402729" at="23,0,36,0">
+        <var name="value" id="1193662402729" />
+      </scope>
+      <unit id="1193662402729" at="9,0,44,0" name="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum_PropertySupport" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1212056179025">
@@ -361,61 +361,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/7739208407757103780">
-    <file name="InequalityProperty_PropertySupport.java">
-      <node id="7739208407757103780" at="11,24,12,18" concept="6" />
-      <node id="7739208407757103780" at="13,5,14,113" concept="5" />
-      <node id="7739208407757103780" at="15,33,16,53" concept="5" />
-      <node id="7739208407757103780" at="17,45,18,20" concept="6" />
-      <node id="7739208407757103780" at="20,5,21,17" concept="6" />
-      <node id="7739208407757103780" at="24,24,25,18" concept="6" />
-      <node id="7739208407757103780" at="26,5,27,113" concept="5" />
-      <node id="7739208407757103780" at="28,33,29,53" concept="5" />
-      <node id="7739208407757103780" at="30,45,31,43" concept="6" />
-      <node id="7739208407757103780" at="33,5,34,16" concept="6" />
-      <node id="7739208407757103780" at="36,49,37,71" concept="5" />
-      <node id="7739208407757103780" at="38,27,39,32" concept="6" />
-      <node id="7739208407757103780" at="40,5,41,14" concept="6" />
-      <node id="7739208407757103780" at="10,44,13,5" concept="3" />
-      <node id="7739208407757103780" at="16,53,19,7" concept="3" />
-      <node id="7739208407757103780" at="23,47,26,5" concept="3" />
-      <node id="7739208407757103780" at="29,53,32,7" concept="3" />
-      <node id="7739208407757103780" at="37,71,40,5" concept="3" />
-      <node id="7739208407757103780" at="14,113,20,5" concept="8" />
-      <node id="7739208407757103780" at="27,113,33,5" concept="8" />
-      <node id="7739208407757103780" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="7739208407757103780" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="7739208407757103780" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="7739208407757103780" at="11,24,12,18" />
-      <scope id="7739208407757103780" at="17,45,18,20" />
-      <scope id="7739208407757103780" at="24,24,25,18" />
-      <scope id="7739208407757103780" at="30,45,31,43" />
-      <scope id="7739208407757103780" at="38,27,39,32" />
-      <scope id="7739208407757103780" at="15,33,19,7">
-        <var name="constant" id="7739208407757103780" />
-      </scope>
-      <scope id="7739208407757103780" at="28,33,32,7">
-        <var name="constant" id="7739208407757103780" />
-      </scope>
-      <scope id="7739208407757103780" at="36,49,41,14">
-        <var name="constant" id="7739208407757103780" />
-      </scope>
-      <scope id="7739208407757103780" at="36,0,43,0">
-        <var name="value" id="7739208407757103780" />
-      </scope>
-      <scope id="7739208407757103780" at="10,44,21,17">
-        <var name="constants" id="7739208407757103780" />
-      </scope>
-      <scope id="7739208407757103780" at="23,47,34,16">
-        <var name="constants" id="7739208407757103780" />
-      </scope>
-      <scope id="7739208407757103780" at="10,0,23,0">
-        <var name="value" id="7739208407757103780" />
-      </scope>
-      <scope id="7739208407757103780" at="23,0,36,0">
-        <var name="value" id="7739208407757103780" />
-      </scope>
-      <unit id="7739208407757103780" at="9,0,44,0" name="jetbrains.mps.lang.typesystem.structure.InequalityProperty_PropertySupport" />
-    </file>
     <file name="InequalityProperty.java">
       <node id="7739208407757103780" at="14,0,15,0" concept="2" trace="myName" />
       <node id="7739208407757103780" at="15,27,16,23" concept="6" />
@@ -472,6 +417,61 @@
         <var name="value" id="7739208407757103780" />
       </scope>
       <unit id="7739208407757103780" at="9,0,55,0" name="jetbrains.mps.lang.typesystem.structure.InequalityProperty" />
+    </file>
+    <file name="InequalityProperty_PropertySupport.java">
+      <node id="7739208407757103780" at="11,24,12,18" concept="6" />
+      <node id="7739208407757103780" at="13,5,14,113" concept="5" />
+      <node id="7739208407757103780" at="15,33,16,53" concept="5" />
+      <node id="7739208407757103780" at="17,45,18,20" concept="6" />
+      <node id="7739208407757103780" at="20,5,21,17" concept="6" />
+      <node id="7739208407757103780" at="24,24,25,18" concept="6" />
+      <node id="7739208407757103780" at="26,5,27,113" concept="5" />
+      <node id="7739208407757103780" at="28,33,29,53" concept="5" />
+      <node id="7739208407757103780" at="30,45,31,43" concept="6" />
+      <node id="7739208407757103780" at="33,5,34,16" concept="6" />
+      <node id="7739208407757103780" at="36,49,37,71" concept="5" />
+      <node id="7739208407757103780" at="38,27,39,32" concept="6" />
+      <node id="7739208407757103780" at="40,5,41,14" concept="6" />
+      <node id="7739208407757103780" at="10,44,13,5" concept="3" />
+      <node id="7739208407757103780" at="16,53,19,7" concept="3" />
+      <node id="7739208407757103780" at="23,47,26,5" concept="3" />
+      <node id="7739208407757103780" at="29,53,32,7" concept="3" />
+      <node id="7739208407757103780" at="37,71,40,5" concept="3" />
+      <node id="7739208407757103780" at="14,113,20,5" concept="8" />
+      <node id="7739208407757103780" at="27,113,33,5" concept="8" />
+      <node id="7739208407757103780" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="7739208407757103780" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="7739208407757103780" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="7739208407757103780" at="11,24,12,18" />
+      <scope id="7739208407757103780" at="17,45,18,20" />
+      <scope id="7739208407757103780" at="24,24,25,18" />
+      <scope id="7739208407757103780" at="30,45,31,43" />
+      <scope id="7739208407757103780" at="38,27,39,32" />
+      <scope id="7739208407757103780" at="15,33,19,7">
+        <var name="constant" id="7739208407757103780" />
+      </scope>
+      <scope id="7739208407757103780" at="28,33,32,7">
+        <var name="constant" id="7739208407757103780" />
+      </scope>
+      <scope id="7739208407757103780" at="36,49,41,14">
+        <var name="constant" id="7739208407757103780" />
+      </scope>
+      <scope id="7739208407757103780" at="36,0,43,0">
+        <var name="value" id="7739208407757103780" />
+      </scope>
+      <scope id="7739208407757103780" at="10,44,21,17">
+        <var name="constants" id="7739208407757103780" />
+      </scope>
+      <scope id="7739208407757103780" at="23,47,34,16">
+        <var name="constants" id="7739208407757103780" />
+      </scope>
+      <scope id="7739208407757103780" at="10,0,23,0">
+        <var name="value" id="7739208407757103780" />
+      </scope>
+      <scope id="7739208407757103780" at="23,0,36,0">
+        <var name="value" id="7739208407757103780" />
+      </scope>
+      <unit id="7739208407757103780" at="9,0,44,0" name="jetbrains.mps.lang.typesystem.structure.InequalityProperty_PropertySupport" />
     </file>
   </root>
 </debug-info>

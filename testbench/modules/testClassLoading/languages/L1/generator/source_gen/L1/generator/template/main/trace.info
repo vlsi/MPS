@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root>
+    <file name="QueriesGenerated.java">
+      <unit at="9,0,17,0" name="L1.generator.template.main.QueriesGenerated" />
+    </file>
+  </root>
+  <root nodeRef="r:8074a1a0-69fe-4403-9d35-7a6021037b63(L1.generator.template.main@generator)/3842746946078421956">
+    <file name="QueriesGenerated.java">
+      <node id="3842746946078480419" at="12,112,13,16" concept="0" />
+      <node id="3842746946078468712" at="13,16,14,13" concept="1" />
+      <scope id="3842746946078461647" at="12,112,14,13" />
+    </file>
+  </root>
+</debug-info>
+

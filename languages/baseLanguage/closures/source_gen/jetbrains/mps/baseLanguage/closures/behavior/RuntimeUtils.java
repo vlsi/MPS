@@ -13,7 +13,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import java.util.Set;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -38,13 +40,14 @@ public class RuntimeUtils {
         for (SNode cls : SModelOperations.nodes(getRuntimeModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
           MapSequence.fromMap(RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1211504562189l, "nestedName")), cls);
         }
-        ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+        // FIXME looks bad 
+        ClassLoaderManager.getInstance().addClassesHandler(new MPSClassesListenerAdapter() {
           @Override
-          public void unload() {
+          public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
             synchronized (RuntimeUtils.class) {
               RuntimeUtils.RUNTIME_CLASSIFIERS = null;
             }
-            ClassLoaderManager.getInstance().removeReloadHandler(this);
+            ClassLoaderManager.getInstance().removeClassesHandler(this);
           }
         });
       }
@@ -70,13 +73,13 @@ public class RuntimeUtils {
         })) {
           MapSequence.fromMap(STATIC_RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1211504562189l, "nestedName")), cls);
         }
-        ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+        ClassLoaderManager.getInstance().addClassesHandler(new MPSClassesListenerAdapter() {
           @Override
-          public void unload() {
+          public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
             synchronized (RuntimeUtils.class) {
               STATIC_RUNTIME_CLASSIFIERS = null;
             }
-            ClassLoaderManager.getInstance().removeReloadHandler(this);
+            ClassLoaderManager.getInstance().removeClassesHandler(this);
           }
         });
       }

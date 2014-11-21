@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:e99b0478-397a-402b-a078-57c984a0eca3(jetbrains.mps.transformation.test.errorReporting.textGen)">
+<model ref="r:e99b0478-397a-402b-a078-57c984a0eca3(jetbrains.mps.transformation.test.errorReporting.textGen)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
-    <lang id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen" />
-    <model ref="r:13099be6-e9be-4c1b-a5cd-d0d83a6c9f0a(jetbrains.mps.transformation.test.errorReporting.structure)" name="jetbrains.mps.transformation.test.errorReporting.structure" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
-    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233670071145" name="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" />
-    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233749247888" name="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" />
-    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305208784" name="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" />
-    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305557638" name="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" />
-    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237306079178" name="jetbrains.mps.lang.textGen.structure.AppendOperation" />
-    <property id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305557638/1237305576108" name="value" />
-    <refRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233670071145/1233670257997" name="conceptDeclaration" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720/1137022507850" name="body" />
-    <childRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233670071145/1233749296504" name="textGenBlock" />
-    <childRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237306079178/1237306115446" name="part" />
-  </debugInfo>
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
-    <use id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" version="-1" index="yw37" />
+    <use id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -29,27 +11,49 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="2omo" ref="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="yw37.1233670071145" id="7287346816896128678" info="ig">
-      <reference role="yw37.1233670071145.1233670257997" target="qq7j.7287346816896104019" resolveInfo="ErrorReportingRoot" />
-      <node concept="yw37.1233749247888" id="7287346816896128679" role="yw37.1233670071145.1233749296504" info="in">
-        <node concept="vg0i.1068580123136" id="7287346816896128680" role="vg0i.1137021947720.1137022507850" info="sn">
-          <node concept="yw37.1237306079178" id="7287346816896135357" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="yw37.1237305557638" id="7287346816896135359" role="yw37.1237306079178.1237306115446" info="ng">
-              <property role="yw37.1237305557638.1237305576108" value="error reporting root {" />
-            </node>
+  <registry>
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
+        <child id="1137022507850" name="body" index="2VODD2" />
+      </concept>
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+        <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+    </language>
+    <language id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen">
+      <concept id="1237305208784" name="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" flags="ng" index="l8MVK" />
+      <concept id="1237305557638" name="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" flags="ng" index="la8eA">
+        <property id="1237305576108" name="value" index="lacIc" />
+      </concept>
+      <concept id="1237306079178" name="jetbrains.mps.lang.textGen.structure.AppendOperation" flags="nn" index="lc7rE">
+        <child id="1237306115446" name="part" index="lcghm" />
+      </concept>
+      <concept id="1233670071145" name="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" flags="ig" index="WtQ9Q">
+        <reference id="1233670257997" name="conceptDeclaration" index="WuzLi" />
+        <child id="1233749296504" name="textGenBlock" index="11c4hB" />
+      </concept>
+      <concept id="1233749247888" name="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" flags="in" index="11bSqf" />
+    </language>
+  </registry>
+  <node concept="WtQ9Q" id="6kxQP7CaHqA">
+    <ref role="WuzLi" to="qq7j:6kxQP7CaBpj" resolve="ErrorReportingRoot" />
+    <node concept="11bSqf" id="6kxQP7CaHqB" role="11c4hB">
+      <node concept="3clFbS" id="6kxQP7CaHqC" role="2VODD2">
+        <node concept="lc7rE" id="6kxQP7CaJ2X" role="3cqZAp">
+          <node concept="la8eA" id="6kxQP7CaJ2Z" role="lcghm">
+            <property role="lacIc" value="error reporting root {" />
           </node>
-          <node concept="yw37.1237306079178" id="7287346816896135365" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="yw37.1237305208784" id="7287346816896135367" role="yw37.1237306079178.1237306115446" info="ng" />
-          </node>
-          <node concept="yw37.1237306079178" id="7287346816896135370" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="yw37.1237305557638" id="7287346816896135372" role="yw37.1237306079178.1237306115446" info="ng">
-              <property role="yw37.1237305557638.1237305576108" value="}" />
-            </node>
+        </node>
+        <node concept="lc7rE" id="6kxQP7CaJ35" role="3cqZAp">
+          <node concept="l8MVK" id="6kxQP7CaJ37" role="lcghm" />
+        </node>
+        <node concept="lc7rE" id="6kxQP7CaJ3a" role="3cqZAp">
+          <node concept="la8eA" id="6kxQP7CaJ3c" role="lcghm">
+            <property role="lacIc" value="}" />
           </node>
         </node>
       </node>
     </node>
-  </contents>
+  </node>
 </model>
 

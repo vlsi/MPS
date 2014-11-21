@@ -185,61 +185,6 @@
     </file>
   </root>
   <root nodeRef="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/1238402737615">
-    <file name="RoundingMode_PropertySupport.java">
-      <node id="1238402737615" at="11,24,12,18" concept="6" />
-      <node id="1238402737615" at="13,5,14,101" concept="5" />
-      <node id="1238402737615" at="15,33,16,47" concept="5" />
-      <node id="1238402737615" at="17,45,18,20" concept="6" />
-      <node id="1238402737615" at="20,5,21,17" concept="6" />
-      <node id="1238402737615" at="24,24,25,18" concept="6" />
-      <node id="1238402737615" at="26,5,27,101" concept="5" />
-      <node id="1238402737615" at="28,33,29,47" concept="5" />
-      <node id="1238402737615" at="30,45,31,43" concept="6" />
-      <node id="1238402737615" at="33,5,34,16" concept="6" />
-      <node id="1238402737615" at="36,49,37,59" concept="5" />
-      <node id="1238402737615" at="38,27,39,32" concept="6" />
-      <node id="1238402737615" at="40,5,41,14" concept="6" />
-      <node id="1238402737615" at="10,44,13,5" concept="3" />
-      <node id="1238402737615" at="16,47,19,7" concept="3" />
-      <node id="1238402737615" at="23,47,26,5" concept="3" />
-      <node id="1238402737615" at="29,47,32,7" concept="3" />
-      <node id="1238402737615" at="37,59,40,5" concept="3" />
-      <node id="1238402737615" at="14,101,20,5" concept="8" />
-      <node id="1238402737615" at="27,101,33,5" concept="8" />
-      <node id="1238402737615" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1238402737615" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1238402737615" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1238402737615" at="11,24,12,18" />
-      <scope id="1238402737615" at="17,45,18,20" />
-      <scope id="1238402737615" at="24,24,25,18" />
-      <scope id="1238402737615" at="30,45,31,43" />
-      <scope id="1238402737615" at="38,27,39,32" />
-      <scope id="1238402737615" at="15,33,19,7">
-        <var name="constant" id="1238402737615" />
-      </scope>
-      <scope id="1238402737615" at="28,33,32,7">
-        <var name="constant" id="1238402737615" />
-      </scope>
-      <scope id="1238402737615" at="36,49,41,14">
-        <var name="constant" id="1238402737615" />
-      </scope>
-      <scope id="1238402737615" at="36,0,43,0">
-        <var name="value" id="1238402737615" />
-      </scope>
-      <scope id="1238402737615" at="10,44,21,17">
-        <var name="constants" id="1238402737615" />
-      </scope>
-      <scope id="1238402737615" at="23,47,34,16">
-        <var name="constants" id="1238402737615" />
-      </scope>
-      <scope id="1238402737615" at="10,0,23,0">
-        <var name="value" id="1238402737615" />
-      </scope>
-      <scope id="1238402737615" at="23,0,36,0">
-        <var name="value" id="1238402737615" />
-      </scope>
-      <unit id="1238402737615" at="9,0,44,0" name="jetbrains.mps.baseLanguage.math.structure.RoundingMode_PropertySupport" />
-    </file>
     <file name="RoundingMode.java">
       <node id="1238402737615" at="19,0,20,0" concept="2" trace="myName" />
       <node id="1238402737615" at="20,27,21,23" concept="6" />
@@ -316,6 +261,61 @@
         <var name="value" id="1238402737615" />
       </scope>
       <unit id="1238402737615" at="9,0,80,0" name="jetbrains.mps.baseLanguage.math.structure.RoundingMode" />
+    </file>
+    <file name="RoundingMode_PropertySupport.java">
+      <node id="1238402737615" at="11,24,12,18" concept="6" />
+      <node id="1238402737615" at="13,5,14,101" concept="5" />
+      <node id="1238402737615" at="15,33,16,47" concept="5" />
+      <node id="1238402737615" at="17,45,18,20" concept="6" />
+      <node id="1238402737615" at="20,5,21,17" concept="6" />
+      <node id="1238402737615" at="24,24,25,18" concept="6" />
+      <node id="1238402737615" at="26,5,27,101" concept="5" />
+      <node id="1238402737615" at="28,33,29,47" concept="5" />
+      <node id="1238402737615" at="30,45,31,43" concept="6" />
+      <node id="1238402737615" at="33,5,34,16" concept="6" />
+      <node id="1238402737615" at="36,49,37,59" concept="5" />
+      <node id="1238402737615" at="38,27,39,32" concept="6" />
+      <node id="1238402737615" at="40,5,41,14" concept="6" />
+      <node id="1238402737615" at="10,44,13,5" concept="3" />
+      <node id="1238402737615" at="16,47,19,7" concept="3" />
+      <node id="1238402737615" at="23,47,26,5" concept="3" />
+      <node id="1238402737615" at="29,47,32,7" concept="3" />
+      <node id="1238402737615" at="37,59,40,5" concept="3" />
+      <node id="1238402737615" at="14,101,20,5" concept="8" />
+      <node id="1238402737615" at="27,101,33,5" concept="8" />
+      <node id="1238402737615" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1238402737615" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="1238402737615" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="1238402737615" at="11,24,12,18" />
+      <scope id="1238402737615" at="17,45,18,20" />
+      <scope id="1238402737615" at="24,24,25,18" />
+      <scope id="1238402737615" at="30,45,31,43" />
+      <scope id="1238402737615" at="38,27,39,32" />
+      <scope id="1238402737615" at="15,33,19,7">
+        <var name="constant" id="1238402737615" />
+      </scope>
+      <scope id="1238402737615" at="28,33,32,7">
+        <var name="constant" id="1238402737615" />
+      </scope>
+      <scope id="1238402737615" at="36,49,41,14">
+        <var name="constant" id="1238402737615" />
+      </scope>
+      <scope id="1238402737615" at="36,0,43,0">
+        <var name="value" id="1238402737615" />
+      </scope>
+      <scope id="1238402737615" at="10,44,21,17">
+        <var name="constants" id="1238402737615" />
+      </scope>
+      <scope id="1238402737615" at="23,47,34,16">
+        <var name="constants" id="1238402737615" />
+      </scope>
+      <scope id="1238402737615" at="10,0,23,0">
+        <var name="value" id="1238402737615" />
+      </scope>
+      <scope id="1238402737615" at="23,0,36,0">
+        <var name="value" id="1238402737615" />
+      </scope>
+      <unit id="1238402737615" at="9,0,44,0" name="jetbrains.mps.baseLanguage.math.structure.RoundingMode_PropertySupport" />
     </file>
   </root>
   <root nodeRef="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/1238404910647">
@@ -441,61 +441,6 @@
     </file>
   </root>
   <root nodeRef="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/758819215871666038">
-    <file name="MatrixNormKind_PropertySupport.java">
-      <node id="758819215871666038" at="11,24,12,18" concept="6" />
-      <node id="758819215871666038" at="13,5,14,105" concept="5" />
-      <node id="758819215871666038" at="15,33,16,49" concept="5" />
-      <node id="758819215871666038" at="17,45,18,20" concept="6" />
-      <node id="758819215871666038" at="20,5,21,17" concept="6" />
-      <node id="758819215871666038" at="24,24,25,18" concept="6" />
-      <node id="758819215871666038" at="26,5,27,105" concept="5" />
-      <node id="758819215871666038" at="28,33,29,49" concept="5" />
-      <node id="758819215871666038" at="30,45,31,43" concept="6" />
-      <node id="758819215871666038" at="33,5,34,16" concept="6" />
-      <node id="758819215871666038" at="36,49,37,63" concept="5" />
-      <node id="758819215871666038" at="38,27,39,32" concept="6" />
-      <node id="758819215871666038" at="40,5,41,14" concept="6" />
-      <node id="758819215871666038" at="10,44,13,5" concept="3" />
-      <node id="758819215871666038" at="16,49,19,7" concept="3" />
-      <node id="758819215871666038" at="23,47,26,5" concept="3" />
-      <node id="758819215871666038" at="29,49,32,7" concept="3" />
-      <node id="758819215871666038" at="37,63,40,5" concept="3" />
-      <node id="758819215871666038" at="14,105,20,5" concept="8" />
-      <node id="758819215871666038" at="27,105,33,5" concept="8" />
-      <node id="758819215871666038" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="758819215871666038" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="758819215871666038" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="758819215871666038" at="11,24,12,18" />
-      <scope id="758819215871666038" at="17,45,18,20" />
-      <scope id="758819215871666038" at="24,24,25,18" />
-      <scope id="758819215871666038" at="30,45,31,43" />
-      <scope id="758819215871666038" at="38,27,39,32" />
-      <scope id="758819215871666038" at="15,33,19,7">
-        <var name="constant" id="758819215871666038" />
-      </scope>
-      <scope id="758819215871666038" at="28,33,32,7">
-        <var name="constant" id="758819215871666038" />
-      </scope>
-      <scope id="758819215871666038" at="36,49,41,14">
-        <var name="constant" id="758819215871666038" />
-      </scope>
-      <scope id="758819215871666038" at="36,0,43,0">
-        <var name="value" id="758819215871666038" />
-      </scope>
-      <scope id="758819215871666038" at="10,44,21,17">
-        <var name="constants" id="758819215871666038" />
-      </scope>
-      <scope id="758819215871666038" at="23,47,34,16">
-        <var name="constants" id="758819215871666038" />
-      </scope>
-      <scope id="758819215871666038" at="10,0,23,0">
-        <var name="value" id="758819215871666038" />
-      </scope>
-      <scope id="758819215871666038" at="23,0,36,0">
-        <var name="value" id="758819215871666038" />
-      </scope>
-      <unit id="758819215871666038" at="9,0,44,0" name="jetbrains.mps.baseLanguage.math.structure.MatrixNormKind_PropertySupport" />
-    </file>
     <file name="MatrixNormKind.java">
       <node id="758819215871666038" at="15,0,16,0" concept="2" trace="myName" />
       <node id="758819215871666038" at="16,27,17,23" concept="6" />
@@ -556,6 +501,61 @@
         <var name="value" id="758819215871666038" />
       </scope>
       <unit id="758819215871666038" at="9,0,60,0" name="jetbrains.mps.baseLanguage.math.structure.MatrixNormKind" />
+    </file>
+    <file name="MatrixNormKind_PropertySupport.java">
+      <node id="758819215871666038" at="11,24,12,18" concept="6" />
+      <node id="758819215871666038" at="13,5,14,105" concept="5" />
+      <node id="758819215871666038" at="15,33,16,49" concept="5" />
+      <node id="758819215871666038" at="17,45,18,20" concept="6" />
+      <node id="758819215871666038" at="20,5,21,17" concept="6" />
+      <node id="758819215871666038" at="24,24,25,18" concept="6" />
+      <node id="758819215871666038" at="26,5,27,105" concept="5" />
+      <node id="758819215871666038" at="28,33,29,49" concept="5" />
+      <node id="758819215871666038" at="30,45,31,43" concept="6" />
+      <node id="758819215871666038" at="33,5,34,16" concept="6" />
+      <node id="758819215871666038" at="36,49,37,63" concept="5" />
+      <node id="758819215871666038" at="38,27,39,32" concept="6" />
+      <node id="758819215871666038" at="40,5,41,14" concept="6" />
+      <node id="758819215871666038" at="10,44,13,5" concept="3" />
+      <node id="758819215871666038" at="16,49,19,7" concept="3" />
+      <node id="758819215871666038" at="23,47,26,5" concept="3" />
+      <node id="758819215871666038" at="29,49,32,7" concept="3" />
+      <node id="758819215871666038" at="37,63,40,5" concept="3" />
+      <node id="758819215871666038" at="14,105,20,5" concept="8" />
+      <node id="758819215871666038" at="27,105,33,5" concept="8" />
+      <node id="758819215871666038" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="758819215871666038" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="758819215871666038" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="758819215871666038" at="11,24,12,18" />
+      <scope id="758819215871666038" at="17,45,18,20" />
+      <scope id="758819215871666038" at="24,24,25,18" />
+      <scope id="758819215871666038" at="30,45,31,43" />
+      <scope id="758819215871666038" at="38,27,39,32" />
+      <scope id="758819215871666038" at="15,33,19,7">
+        <var name="constant" id="758819215871666038" />
+      </scope>
+      <scope id="758819215871666038" at="28,33,32,7">
+        <var name="constant" id="758819215871666038" />
+      </scope>
+      <scope id="758819215871666038" at="36,49,41,14">
+        <var name="constant" id="758819215871666038" />
+      </scope>
+      <scope id="758819215871666038" at="36,0,43,0">
+        <var name="value" id="758819215871666038" />
+      </scope>
+      <scope id="758819215871666038" at="10,44,21,17">
+        <var name="constants" id="758819215871666038" />
+      </scope>
+      <scope id="758819215871666038" at="23,47,34,16">
+        <var name="constants" id="758819215871666038" />
+      </scope>
+      <scope id="758819215871666038" at="10,0,23,0">
+        <var name="value" id="758819215871666038" />
+      </scope>
+      <scope id="758819215871666038" at="23,0,36,0">
+        <var name="value" id="758819215871666038" />
+      </scope>
+      <unit id="758819215871666038" at="9,0,44,0" name="jetbrains.mps.baseLanguage.math.structure.MatrixNormKind_PropertySupport" />
     </file>
   </root>
 </debug-info>

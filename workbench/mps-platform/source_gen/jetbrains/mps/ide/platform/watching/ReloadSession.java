@@ -67,20 +67,23 @@ public class ReloadSession {
     assert !(myReloaded) : "Contract: do not call doReload twice on one reload session";
     myReloaded = true;
 
-    monitor.start("Reloading ...", 2);
-    fireReloadStarted();
+    final Iterable<ReloadParticipant> participants = getParticipants();
+    monitor.start("Reloading ...", Sequence.fromIterable(participants).count());
     try {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Reload started");
+      }
+      fireReloadStarted();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          int work = 1;
-          for (ReloadParticipant rp : getParticipants()) {
-            rp.update(monitor.subTask(work++, SubProgressKind.REPLACING));
+          for (ReloadParticipant rp : participants) {
+            rp.update(monitor.subTask(1, SubProgressKind.REPLACING));
           }
         }
       });
     } finally {
       if (LOG.isInfoEnabled()) {
-        LOG.info("Reload finished.");
+        LOG.info("Reload finished");
       }
       monitor.done();
       fireReloadFinished();

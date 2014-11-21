@@ -28,8 +28,7 @@ public class StartupMigrationExecutor extends AbstractProjectComponent implement
   }
   public void executeWizard() {
     myState.reloadFinished = false;
-    final boolean[] success = new boolean[1];
-    MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager, success);
+    final MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager);
     // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
     wizard.showAndGetOk().doWhenDone(new Consumer<Boolean>() {
       @Override
@@ -37,7 +36,7 @@ public class StartupMigrationExecutor extends AbstractProjectComponent implement
         if (!(finished)) {
           return;
         }
-        if (!(success[0])) {
+        if (!(wizard.isFinishSuccessfull())) {
           return;
         }
         ModelAccess.instance().runWriteAction(new Runnable() {

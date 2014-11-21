@@ -1,97 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:e318478c-edb7-4caf-bafe-2e5906944dde(jetbrains.mps.baseLanguage.math.tests)">
+<model ref="r:e318478c-edb7-4caf-bafe-2e5906944dde(jetbrains.mps.baseLanguage.math.tests)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <model ref="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)" name="jetbrains.mps.baseLanguage.math.runtime" />
-    <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" name="java.lang@java_stub" />
-    <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" name="java.util@java_stub" />
-    <model ref="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" name="org.junit@java_stub" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/8064396509828172209" name="jetbrains.mps.baseLanguage.structure.UnaryMinus" />
-    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" name="value" />
-    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020/1068580320021" name="value" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279763828/1214996933829" name="extends" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" name="variableDeclaration" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" name="classifier" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304/1109283546497" name="typeVariableDeclaration" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612/1116615189566" name="classifier" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937/1144433194310" name="classConcept" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427/1188208074048" name="annotation" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188214545140/1188214555875" name="key" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542/1068431790190" name="initializer" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141038" name="actualArgument" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1068580123133" name="returnType" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1068580123134" name="parameter" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1068580123135" name="body" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155/1068580123156" name="expression" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864/1068581242865" name="localVariableDeclaration" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878/1068581517676" name="expression" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1109201940907" name="parameter" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279851642/1109279881614" name="typeVariableDeclaration" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539/1144226360166" name="iterable" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144230876926/1144230900587" name="variable" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093/1145553007750" name="creator" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014/1154032183016" name="body" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188208481402/1188208488637" name="annotation" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188214545140/1188214607812" name="value" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427/1188214630783" name="value" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027771414" name="operand" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494/1212687122400" name="typeParameter" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279763828/1214996921760" name="bound" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1239714755177/1239714902950" name="expression" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" name="member" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" name="type" />
-  </debugInfo>
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
     <import index="k2b1" ref="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)" />
@@ -101,989 +12,1103 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="vg0i.1068390468198" id="1650644170366801770" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IntervalTest" />
-      <node concept="vg0i.1146644602865" id="1650644170366801771" role="vg0i.1178549954367.1178549979242" info="nn" />
-      <node concept="vg0i.1068580123140" id="1650644170366801772" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <node concept="vg0i.1146644602865" id="1650644170366801773" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366801774" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366801775" role="vg0i.1068580123132.1068580123135" info="sn" />
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366801776" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="simpleInterval" />
-        <node concept="vg0i.1146644602865" id="1650644170366801777" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366801778" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366801779" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="1650644170366801780" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="1650644170366801781" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="interval" />
-              <node concept="vg0i.1107535904670" id="1650644170366801782" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k2b1.877422884702866569" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366801783" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
+  <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
+        <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
+      <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
+        <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
+      </concept>
+      <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <child id="1068580123133" name="returnType" index="3clF45" />
+        <child id="1068580123134" name="parameter" index="3clF46" />
+        <child id="1068580123135" name="body" index="3clF47" />
+      </concept>
+      <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_" />
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+        <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
+        <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
+      </concept>
+      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
+        <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+      <concept id="8064396509828172209" name="jetbrains.mps.baseLanguage.structure.UnaryMinus" flags="nn" index="1ZRNhn" />
+      <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
+        <child id="1239714902950" name="expression" index="2$L3a6" />
+      </concept>
+      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
+        <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
+      </concept>
+      <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
+        <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
+      </concept>
+      <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
+        <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+        <child id="1068499141038" name="actualArgument" index="37wK5m" />
+      </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
+        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
+      </concept>
+      <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
+      </concept>
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
+      <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
+        <child id="1068580123156" name="expression" index="3clFbG" />
+      </concept>
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
+      <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
+      </concept>
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
+      <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
+        <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
+      <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
+        <child id="1144226360166" name="iterable" index="1DdaDG" />
+      </concept>
+      <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
+        <child id="1144230900587" name="variable" index="1Duv9x" />
+      </concept>
+      <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
+        <child id="1154032183016" name="body" index="2LFqv$" />
+      </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
+      <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <child id="1068431790190" name="initializer" index="33vP2m" />
+      </concept>
+      <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
+      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
+        <child id="1068581517676" name="expression" index="3cqZAk" />
+      </concept>
+      <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
+      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ">
+        <property id="1214996933829" name="extends" index="3ztuRv" />
+        <child id="1214996921760" name="bound" index="3ztrMU" />
+      </concept>
+      <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
+        <child id="1109279881614" name="typeVariableDeclaration" index="16eVyc" />
+      </concept>
+      <concept id="1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" flags="in" index="16syzq">
+        <reference id="1109283546497" name="typeVariableDeclaration" index="16sUi3" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="312cEu" id="1rCh22xi5tE">
+    <property role="TrG5h" value="IntervalTest" />
+    <node concept="3Tm1VV" id="1rCh22xi5tF" role="1B3o_S" />
+    <node concept="3clFbW" id="1rCh22xi5tG" role="jymVt">
+      <node concept="3Tm1VV" id="1rCh22xi5tH" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5tI" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5tJ" role="3clF47" />
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5tK" role="jymVt">
+      <property role="TrG5h" value="simpleInterval" />
+      <node concept="3Tm1VV" id="1rCh22xi5tL" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5tM" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5tN" role="3clF47">
+        <node concept="3cpWs8" id="1rCh22xi5tO" role="3cqZAp">
+          <node concept="3cpWsn" id="1rCh22xi5tP" role="3cpWs9">
+            <property role="TrG5h" value="interval" />
+            <node concept="3uibUv" id="1rCh22xi5tQ" role="1tU5fm">
+              <ref role="3uigEE" to="k2b1:KHeRs0wOM9" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5tR" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
               </node>
-              <node concept="vg0i.1145552977093" id="1650644170366801784" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="1650644170366801785" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866694" resolveInfo="Interval" />
-                  <node concept="vg0i.1107535904670" id="1650644170366801786" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366801787" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366801788" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="10" />
-                  </node>
+            </node>
+            <node concept="2ShNRf" id="1rCh22xi5tS" role="33vP2m">
+              <node concept="1pGfFk" id="1rCh22xi5tT" role="2ShVmc">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOO6" resolve="Interval" />
+                <node concept="3uibUv" id="1rCh22xi5tU" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5tV" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5tW" role="37wK5m">
+                  <property role="3cmrfH" value="10" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801789" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801790" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
-              <node concept="vg0i.1197027756228" id="1650644170366801791" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363088166" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801781" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801793" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801794" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="5" />
-                  </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5tX" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5tY" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
+            <node concept="2OqwBi" id="1rCh22xi5tZ" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTx4A" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5tP" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5u1" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5u2" role="37wK5m">
+                  <property role="3cmrfH" value="5" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801795" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801796" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
-              <node concept="vg0i.1197027756228" id="1650644170366801797" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363078835" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801781" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801799" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801800" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5u3" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5u4" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
+            <node concept="2OqwBi" id="1rCh22xi5u5" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTuMN" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5tP" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5u7" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5u8" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801801" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801802" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
-              <node concept="vg0i.1197027756228" id="1650644170366801803" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363069778" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801781" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801805" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801806" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="10" />
-                  </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5u9" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5ua" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
+            <node concept="2OqwBi" id="1rCh22xi5ub" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTs_i" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5tP" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5ud" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5ue" role="37wK5m">
+                  <property role="3cmrfH" value="10" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801807" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801808" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertFalse(boolean)%cvoid" resolveInfo="assertFalse" />
-              <node concept="vg0i.1197027756228" id="1650644170366801809" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363071193" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801781" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801811" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.8064396509828172209" id="1650644170366801812" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <node concept="vg0i.1068580320020" id="1650644170366801813" role="vg0i.1239714755177.1239714902950" info="nn">
-                      <property role="vg0i.1068580320020.1068580320021" value="1" />
-                    </node>
-                  </node>
-                </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5uf" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5ug" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertFalse(boolean):void" resolve="assertFalse" />
+            <node concept="2OqwBi" id="1rCh22xi5uh" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTsVp" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5tP" resolve="interval" />
               </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801814" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801815" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertFalse(boolean)%cvoid" resolveInfo="assertFalse" />
-              <node concept="vg0i.1197027756228" id="1650644170366801816" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363095926" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801781" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801818" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801819" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="11" />
+              <node concept="liA8E" id="1rCh22xi5uj" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="1ZRNhn" id="1rCh22xi5uk" role="37wK5m">
+                  <node concept="3cmrfG" id="1rCh22xi5ul" role="2$L3a6">
+                    <property role="3cmrfH" value="1" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="vg0i.1188207840427" id="1650644170366801820" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366801821" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="leftNotIncluded" />
-        <node concept="vg0i.1146644602865" id="1650644170366801822" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366801823" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366801824" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="1650644170366801825" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="1650644170366801826" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="interval" />
-              <node concept="vg0i.1107535904670" id="1650644170366801827" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k2b1.877422884702866569" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366801828" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
+        <node concept="3clFbF" id="1rCh22xi5um" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5un" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertFalse(boolean):void" resolve="assertFalse" />
+            <node concept="2OqwBi" id="1rCh22xi5uo" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTyXQ" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5tP" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5uq" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5ur" role="37wK5m">
+                  <property role="3cmrfH" value="11" />
                 </node>
               </node>
-              <node concept="vg0i.1145552977093" id="1650644170366801829" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="1650644170366801830" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866610" resolveInfo="Interval" />
-                  <node concept="vg0i.1107535904670" id="1650644170366801831" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366801832" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                  <node concept="vg0i.1068580123137" id="1650644170366801833" role="vg0i.1204053956946.1068499141038" info="nn" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801834" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="10" />
-                  </node>
-                  <node concept="vg0i.1068580123137" id="1650644170366801835" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580123137.1068580123138" value="true" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801836" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801837" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
-              <node concept="vg0i.1197027756228" id="1650644170366801838" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363076927" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801826" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801840" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801841" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="5" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801842" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801843" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertFalse(boolean)%cvoid" resolveInfo="assertFalse" />
-              <node concept="vg0i.1197027756228" id="1650644170366801844" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363073738" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801826" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801846" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801847" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801848" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801849" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
-              <node concept="vg0i.1197027756228" id="1650644170366801850" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363116441" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801826" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801852" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801853" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="10" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1188207840427" id="1650644170366801854" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366801855" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="rightNotIncluded" />
-        <node concept="vg0i.1146644602865" id="1650644170366801856" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366801857" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366801858" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="1650644170366801859" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="1650644170366801860" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="interval" />
-              <node concept="vg0i.1107535904670" id="1650644170366801861" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k2b1.877422884702866569" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366801862" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
-              </node>
-              <node concept="vg0i.1145552977093" id="1650644170366801863" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="1650644170366801864" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866610" resolveInfo="Interval" />
-                  <node concept="vg0i.1107535904670" id="1650644170366801865" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366801866" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                  <node concept="vg0i.1068580123137" id="1650644170366801867" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580123137.1068580123138" value="true" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366801868" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="10" />
-                  </node>
-                  <node concept="vg0i.1068580123137" id="1650644170366801869" role="vg0i.1204053956946.1068499141038" info="nn" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801870" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801871" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
-              <node concept="vg0i.1197027756228" id="1650644170366801872" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363074150" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801860" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801874" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801875" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="5" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801876" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801877" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
-              <node concept="vg0i.1197027756228" id="1650644170366801878" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363106365" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801860" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801880" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801881" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801882" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801883" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertFalse(boolean)%cvoid" resolveInfo="assertFalse" />
-              <node concept="vg0i.1197027756228" id="1650644170366801884" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363106098" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801860" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801886" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801887" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="10" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1188207840427" id="1650644170366801888" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366801889" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="leftInfinity" />
-        <node concept="vg0i.1146644602865" id="1650644170366801890" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366801891" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366801892" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="1650644170366801893" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="1650644170366801894" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="interval" />
-              <node concept="vg0i.1107535904670" id="1650644170366801895" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k2b1.877422884702866569" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366801896" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
-              </node>
-              <node concept="vg0i.1145552977093" id="1650644170366801897" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="1650644170366801898" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866610" resolveInfo="Interval" />
-                  <node concept="vg0i.1107535904670" id="1650644170366801899" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                  </node>
-                  <node concept="vg0i.1070534058343" id="1650644170366801900" role="vg0i.1204053956946.1068499141038" info="nn" />
-                  <node concept="vg0i.1068580123137" id="1650644170366801901" role="vg0i.1204053956946.1068499141038" info="nn" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801902" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="10" />
-                  </node>
-                  <node concept="vg0i.1068580123137" id="1650644170366801903" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580123137.1068580123138" value="true" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801904" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801905" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
-              <node concept="vg0i.1197027756228" id="1650644170366801906" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363101609" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801894" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801908" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.8064396509828172209" id="1650644170366801909" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <node concept="vg0i.1068580320020" id="1650644170366801910" role="vg0i.1239714755177.1239714902950" info="nn">
-                      <property role="vg0i.1068580320020.1068580320021" value="1000" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801911" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801912" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
-              <node concept="vg0i.1197027756228" id="1650644170366801913" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363068073" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801894" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801915" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801916" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="10" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801917" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801918" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertFalse(boolean)%cvoid" resolveInfo="assertFalse" />
-              <node concept="vg0i.1197027756228" id="1650644170366801919" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363109942" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801894" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801921" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801922" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="100" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1188207840427" id="1650644170366801923" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366801924" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="rightInfinity" />
-        <node concept="vg0i.1146644602865" id="1650644170366801925" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366801926" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366801927" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="1650644170366801928" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="1650644170366801929" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="interval" />
-              <node concept="vg0i.1107535904670" id="1650644170366801930" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k2b1.877422884702866569" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366801931" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
-              </node>
-              <node concept="vg0i.1145552977093" id="1650644170366801932" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="1650644170366801933" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866610" resolveInfo="Interval" />
-                  <node concept="vg0i.1107535904670" id="1650644170366801934" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366801935" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                  <node concept="vg0i.1068580123137" id="1650644170366801936" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580123137.1068580123138" value="true" />
-                  </node>
-                  <node concept="vg0i.1070534058343" id="1650644170366801937" role="vg0i.1204053956946.1068499141038" info="nn" />
-                  <node concept="vg0i.1068580123137" id="1650644170366801938" role="vg0i.1204053956946.1068499141038" info="nn" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801939" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801940" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
-              <node concept="vg0i.1197027756228" id="1650644170366801941" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363065160" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801929" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801943" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801944" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801945" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801946" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
-              <node concept="vg0i.1197027756228" id="1650644170366801947" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363086006" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801929" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801949" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801950" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="1000" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801951" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801952" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertFalse(boolean)%cvoid" resolveInfo="assertFalse" />
-              <node concept="vg0i.1197027756228" id="1650644170366801953" role="vg0i.1204053956946.1068499141038" info="nn">
-                <node concept="vg0i.1068498886296" id="4265636116363072592" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801929" resolveInfo="interval" />
-                </node>
-                <node concept="vg0i.1202948039474" id="1650644170366801955" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866735" resolveInfo="contains" />
-                  <node concept="vg0i.8064396509828172209" id="1650644170366801956" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <node concept="vg0i.1068580320020" id="1650644170366801957" role="vg0i.1239714755177.1239714902950" info="nn">
-                      <property role="vg0i.1068580320020.1068580320021" value="1" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1188207840427" id="1650644170366801958" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366801959" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="integerIterationAllIncluded" />
-        <node concept="vg0i.1146644602865" id="1650644170366801960" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366801961" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366801962" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="1650644170366801963" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="1650644170366801964" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="interval" />
-              <node concept="vg0i.1107535904670" id="1650644170366801965" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k2b1.877422884702866569" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366801966" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
-              </node>
-              <node concept="vg0i.1145552977093" id="1650644170366801967" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="1650644170366801968" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866694" resolveInfo="Interval" />
-                  <node concept="vg0i.1107535904670" id="1650644170366801969" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366801970" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366801971" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="2" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801972" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801973" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertEquals(java%dlang%dObject,java%dlang%dObject)%cvoid" resolveInfo="assertEquals" />
-              <node concept="vg0i.1081236700937" id="1650644170366801974" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1081236700937.1144433194310" target="k7g3.~Arrays" resolveInfo="Arrays" />
-                <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~Arrays%dasList(java%dlang%dObject%d%d%d)%cjava%dutil%dList" resolveInfo="asList" />
-                <node concept="vg0i.1068580320020" id="1650644170366801975" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="0" />
-                </node>
-                <node concept="vg0i.1068580320020" id="1650644170366801976" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="1" />
-                </node>
-                <node concept="vg0i.1068580320020" id="1650644170366801977" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="2" />
-                </node>
-              </node>
-              <node concept="vg0i.7812454656619025412" id="4923130412073299854" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="1650644170366802123" resolveInfo="elements" />
-                <node concept="vg0i.1068498886296" id="4265636116363095563" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801964" resolveInfo="interval" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1188207840427" id="1650644170366801980" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366801981" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="integerIterationLeftNotIncluded" />
-        <node concept="vg0i.1146644602865" id="1650644170366801982" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366801983" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366801984" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="1650644170366801985" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="1650644170366801986" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="interval" />
-              <node concept="vg0i.1107535904670" id="1650644170366801987" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k2b1.877422884702866569" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366801988" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
-              </node>
-              <node concept="vg0i.1145552977093" id="1650644170366801989" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="1650644170366801990" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866610" resolveInfo="Interval" />
-                  <node concept="vg0i.1107535904670" id="1650644170366801991" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366801992" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                  <node concept="vg0i.1068580123137" id="1650644170366801993" role="vg0i.1204053956946.1068499141038" info="nn" />
-                  <node concept="vg0i.1068580320020" id="1650644170366801994" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="2" />
-                  </node>
-                  <node concept="vg0i.1068580123137" id="1650644170366801995" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580123137.1068580123138" value="true" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366801996" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366801997" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertEquals(java%dlang%dObject,java%dlang%dObject)%cvoid" resolveInfo="assertEquals" />
-              <node concept="vg0i.1081236700937" id="1650644170366801998" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1081236700937.1144433194310" target="k7g3.~Arrays" resolveInfo="Arrays" />
-                <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~Arrays%dasList(java%dlang%dObject%d%d%d)%cjava%dutil%dList" resolveInfo="asList" />
-                <node concept="vg0i.1068580320020" id="1650644170366801999" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="1" />
-                </node>
-                <node concept="vg0i.1068580320020" id="1650644170366802000" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="2" />
-                </node>
-              </node>
-              <node concept="vg0i.7812454656619025412" id="4923130412073274483" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="1650644170366802123" resolveInfo="elements" />
-                <node concept="vg0i.1068498886296" id="4265636116363101998" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366801986" resolveInfo="interval" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1188207840427" id="1650644170366802003" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366802004" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="integerIterationRightNotIncluded" />
-        <node concept="vg0i.1146644602865" id="1650644170366802005" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366802006" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366802007" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="1650644170366802008" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="1650644170366802009" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="interval" />
-              <node concept="vg0i.1107535904670" id="1650644170366802010" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k2b1.877422884702866569" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366802011" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
-              </node>
-              <node concept="vg0i.1145552977093" id="1650644170366802012" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="1650644170366802013" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866610" resolveInfo="Interval" />
-                  <node concept="vg0i.1107535904670" id="1650644170366802014" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366802015" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                  <node concept="vg0i.1068580123137" id="1650644170366802016" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580123137.1068580123138" value="true" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366802017" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="2" />
-                  </node>
-                  <node concept="vg0i.1068580123137" id="1650644170366802018" role="vg0i.1204053956946.1068499141038" info="nn" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366802019" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366802020" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertEquals(java%dlang%dObject,java%dlang%dObject)%cvoid" resolveInfo="assertEquals" />
-              <node concept="vg0i.1081236700937" id="1650644170366802021" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1081236700937.1144433194310" target="k7g3.~Arrays" resolveInfo="Arrays" />
-                <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~Arrays%dasList(java%dlang%dObject%d%d%d)%cjava%dutil%dList" resolveInfo="asList" />
-                <node concept="vg0i.1068580320020" id="1650644170366802022" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="0" />
-                </node>
-                <node concept="vg0i.1068580320020" id="1650644170366802023" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="1" />
-                </node>
-              </node>
-              <node concept="vg0i.7812454656619025412" id="4923130412073149171" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="1650644170366802123" resolveInfo="elements" />
-                <node concept="vg0i.1068498886296" id="4265636116363091866" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366802009" resolveInfo="interval" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1188207840427" id="1650644170366802026" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366802027" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="oneElementIntervalIteration" />
-        <node concept="vg0i.1146644602865" id="1650644170366802028" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366802029" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366802030" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="1650644170366802031" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="1650644170366802032" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="interval" />
-              <node concept="vg0i.1107535904670" id="1650644170366802033" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k2b1.877422884702866569" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366802034" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
-              </node>
-              <node concept="vg0i.1145552977093" id="1650644170366802035" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="1650644170366802036" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866694" resolveInfo="Interval" />
-                  <node concept="vg0i.1107535904670" id="1650644170366802037" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366802038" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                  <node concept="vg0i.1068580320020" id="1650644170366802039" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <property role="vg0i.1068580320020.1068580320021" value="0" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="vg0i.1068580123155" id="1650644170366802040" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1081236700937" id="1650644170366802041" role="vg0i.1068580123155.1068580123156" info="nn">
-              <reference role="vg0i.1081236700937.1144433194310" target="qjxg.~Assert" resolveInfo="Assert" />
-              <reference role="vg0i.1204053956946.1068499141037" target="qjxg.~Assert%dassertEquals(java%dlang%dObject,java%dlang%dObject)%cvoid" resolveInfo="assertEquals" />
-              <node concept="vg0i.1081236700937" id="1650644170366802042" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1081236700937.1144433194310" target="k7g3.~Arrays" resolveInfo="Arrays" />
-                <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~Arrays%dasList(java%dlang%dObject%d%d%d)%cjava%dutil%dList" resolveInfo="asList" />
-                <node concept="vg0i.1068580320020" id="1650644170366802043" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="0" />
-                </node>
-              </node>
-              <node concept="vg0i.7812454656619025412" id="4923130412073261170" role="vg0i.1204053956946.1068499141038" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="1650644170366802123" resolveInfo="elements" />
-                <node concept="vg0i.1068498886296" id="4265636116363112887" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="1650644170366802032" resolveInfo="interval" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1188207840427" id="1650644170366802046" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366802047" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="endBeforStart" />
-        <node concept="vg0i.1146644602865" id="1650644170366802048" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366802049" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366802050" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068580123155" id="1650644170366802051" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1145552977093" id="1650644170366802052" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="vg0i.1212685548494" id="1650644170366802053" role="vg0i.1145552977093.1145553007750" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866694" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366802054" role="vg0i.1212685548494.1212687122400" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
-                <node concept="vg0i.1068580320020" id="1650644170366802055" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="100" />
-                </node>
-                <node concept="vg0i.1068580320020" id="1650644170366802056" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="1" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1188207840427" id="1650644170366802057" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-          <node concept="vg0i.1188214545140" id="1650644170366802058" role="vg0i.1188207840427.1188214630783" info="ng">
-            <reference role="vg0i.1188214545140.1188214555875" target="qjxg.~Test%dexpected()" resolveInfo="expected" />
-            <node concept="vg0i.1116615150612" id="1650644170366802059" role="vg0i.1188214545140.1188214607812" info="nn">
-              <reference role="vg0i.1116615150612.1116615189566" target="e2lb.~IllegalArgumentException" resolveInfo="IllegalArgumentException" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366802060" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="minusInfinityIncluded" />
-        <node concept="vg0i.1146644602865" id="1650644170366802061" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366802062" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366802063" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068580123155" id="1650644170366802064" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1145552977093" id="1650644170366802065" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="vg0i.1212685548494" id="1650644170366802066" role="vg0i.1145552977093.1145553007750" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866610" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366802067" role="vg0i.1212685548494.1212687122400" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
-                <node concept="vg0i.1070534058343" id="1650644170366802068" role="vg0i.1204053956946.1068499141038" info="nn" />
-                <node concept="vg0i.1068580123137" id="1650644170366802069" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580123137.1068580123138" value="true" />
-                </node>
-                <node concept="vg0i.1068580320020" id="1650644170366802070" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="1" />
-                </node>
-                <node concept="vg0i.1068580123137" id="1650644170366802071" role="vg0i.1204053956946.1068499141038" info="nn" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1188207840427" id="1650644170366802072" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-          <node concept="vg0i.1188214545140" id="1650644170366802073" role="vg0i.1188207840427.1188214630783" info="ng">
-            <reference role="vg0i.1188214545140.1188214555875" target="qjxg.~Test%dexpected()" resolveInfo="expected" />
-            <node concept="vg0i.1116615150612" id="1650644170366802074" role="vg0i.1188214545140.1188214607812" info="nn">
-              <reference role="vg0i.1116615150612.1116615189566" target="e2lb.~IllegalArgumentException" resolveInfo="IllegalArgumentException" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="vg0i.1068580123165" id="1650644170366802075" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="plusInfinityIncluded" />
-        <node concept="vg0i.1146644602865" id="1650644170366802076" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366802077" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366802078" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068580123155" id="1650644170366802079" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1145552977093" id="1650644170366802080" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="vg0i.1212685548494" id="1650644170366802081" role="vg0i.1145552977093.1145553007750" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866610" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366802082" role="vg0i.1212685548494.1212687122400" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
-                <node concept="vg0i.1068580320020" id="1650644170366802083" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="1" />
-                </node>
-                <node concept="vg0i.1068580123137" id="1650644170366802084" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580123137.1068580123138" value="true" />
-                </node>
-                <node concept="vg0i.1070534058343" id="1650644170366802085" role="vg0i.1204053956946.1068499141038" info="nn" />
-                <node concept="vg0i.1068580123137" id="1650644170366802086" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580123137.1068580123138" value="true" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="vg0i.1188207840427" id="1650644170366802087" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-          <node concept="vg0i.1188214545140" id="1650644170366802088" role="vg0i.1188207840427.1188214630783" info="ng">
-            <reference role="vg0i.1188214545140.1188214555875" target="qjxg.~Test%dexpected()" resolveInfo="expected" />
-            <node concept="vg0i.1116615150612" id="1650644170366802089" role="vg0i.1188214545140.1188214607812" info="nn">
-              <reference role="vg0i.1116615150612.1116615189566" target="e2lb.~IllegalArgumentException" resolveInfo="IllegalArgumentException" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="vg0i.1068580123165" id="1650644170366802090" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="emptyInterval" />
-        <node concept="vg0i.1146644602865" id="1650644170366802091" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366802092" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366802093" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068580123155" id="1650644170366802094" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1145552977093" id="1650644170366802095" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="vg0i.1212685548494" id="1650644170366802096" role="vg0i.1145552977093.1145553007750" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866610" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366802097" role="vg0i.1212685548494.1212687122400" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Comparable" resolveInfo="Comparable" />
+      <node concept="2AHcQZ" id="1rCh22xi5us" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5ut" role="jymVt">
+      <property role="TrG5h" value="leftNotIncluded" />
+      <node concept="3Tm1VV" id="1rCh22xi5uu" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5uv" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5uw" role="3clF47">
+        <node concept="3cpWs8" id="1rCh22xi5ux" role="3cqZAp">
+          <node concept="3cpWsn" id="1rCh22xi5uy" role="3cpWs9">
+            <property role="TrG5h" value="interval" />
+            <node concept="3uibUv" id="1rCh22xi5uz" role="1tU5fm">
+              <ref role="3uigEE" to="k2b1:KHeRs0wOM9" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5u$" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="1rCh22xi5u_" role="33vP2m">
+              <node concept="1pGfFk" id="1rCh22xi5uA" role="2ShVmc">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOMM" resolve="Interval" />
+                <node concept="3uibUv" id="1rCh22xi5uB" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
                 </node>
-                <node concept="vg0i.1068580320020" id="1650644170366802098" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="0" />
+                <node concept="3cmrfG" id="1rCh22xi5uC" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
                 </node>
-                <node concept="vg0i.1068580123137" id="1650644170366802099" role="vg0i.1204053956946.1068499141038" info="nn" />
-                <node concept="vg0i.1068580320020" id="1650644170366802100" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="0" />
+                <node concept="3clFbT" id="1rCh22xi5uD" role="37wK5m" />
+                <node concept="3cmrfG" id="1rCh22xi5uE" role="37wK5m">
+                  <property role="3cmrfH" value="10" />
                 </node>
-                <node concept="vg0i.1068580123137" id="1650644170366802101" role="vg0i.1204053956946.1068499141038" info="nn" />
+                <node concept="3clFbT" id="1rCh22xi5uF" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="vg0i.1188207840427" id="1650644170366802102" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-          <node concept="vg0i.1188214545140" id="1650644170366802103" role="vg0i.1188207840427.1188214630783" info="ng">
-            <reference role="vg0i.1188214545140.1188214555875" target="qjxg.~Test%dexpected()" resolveInfo="expected" />
-            <node concept="vg0i.1116615150612" id="1650644170366802104" role="vg0i.1188214545140.1188214607812" info="nn">
-              <reference role="vg0i.1116615150612.1116615189566" target="e2lb.~IllegalArgumentException" resolveInfo="IllegalArgumentException" />
+        <node concept="3clFbF" id="1rCh22xi5uG" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5uH" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
+            <node concept="2OqwBi" id="1rCh22xi5uI" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTukZ" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5uy" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5uK" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5uL" role="37wK5m">
+                  <property role="3cmrfH" value="5" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5uM" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5uN" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertFalse(boolean):void" resolve="assertFalse" />
+            <node concept="2OqwBi" id="1rCh22xi5uO" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTtza" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5uy" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5uQ" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5uR" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5uS" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5uT" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
+            <node concept="2OqwBi" id="1rCh22xi5uU" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTBYp" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5uy" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5uW" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5uX" role="37wK5m">
+                  <property role="3cmrfH" value="10" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="vg0i.1068580123165" id="1650644170366802105" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="iterationFromInfinity" />
-        <node concept="vg0i.1146644602865" id="1650644170366802106" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1068581517677" id="1650644170366802107" role="vg0i.1068580123132.1068580123133" info="in" />
-        <node concept="vg0i.1068580123136" id="1650644170366802108" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1144226303539" id="1650644170366802109" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1145552977093" id="1650644170366802110" role="vg0i.1144226303539.1144226360166" info="nn">
-              <node concept="vg0i.1212685548494" id="1650644170366802111" role="vg0i.1145552977093.1145553007750" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="k2b1.877422884702866610" resolveInfo="Interval" />
-                <node concept="vg0i.1107535904670" id="1650644170366802112" role="vg0i.1212685548494.1212687122400" info="in">
-                  <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
-                </node>
-                <node concept="vg0i.1070534058343" id="1650644170366802113" role="vg0i.1204053956946.1068499141038" info="nn" />
-                <node concept="vg0i.1068580123137" id="1650644170366802114" role="vg0i.1204053956946.1068499141038" info="nn" />
-                <node concept="vg0i.1068580320020" id="1650644170366802115" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580320020.1068580320021" value="100" />
-                </node>
-                <node concept="vg0i.1068580123137" id="1650644170366802116" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="vg0i.1068580123137.1068580123138" value="true" />
-                </node>
+      <node concept="2AHcQZ" id="1rCh22xi5uY" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5uZ" role="jymVt">
+      <property role="TrG5h" value="rightNotIncluded" />
+      <node concept="3Tm1VV" id="1rCh22xi5v0" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5v1" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5v2" role="3clF47">
+        <node concept="3cpWs8" id="1rCh22xi5v3" role="3cqZAp">
+          <node concept="3cpWsn" id="1rCh22xi5v4" role="3cpWs9">
+            <property role="TrG5h" value="interval" />
+            <node concept="3uibUv" id="1rCh22xi5v5" role="1tU5fm">
+              <ref role="3uigEE" to="k2b1:KHeRs0wOM9" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5v6" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
               </node>
             </node>
-            <node concept="vg0i.1068581242863" id="1650644170366802117" role="vg0i.1144230876926.1144230900587" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="i" />
-              <node concept="vg0i.1107535904670" id="1650644170366802118" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Integer" resolveInfo="Integer" />
+            <node concept="2ShNRf" id="1rCh22xi5v7" role="33vP2m">
+              <node concept="1pGfFk" id="1rCh22xi5v8" role="2ShVmc">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOMM" resolve="Interval" />
+                <node concept="3uibUv" id="1rCh22xi5v9" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5va" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="3clFbT" id="1rCh22xi5vb" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5vc" role="37wK5m">
+                  <property role="3cmrfH" value="10" />
+                </node>
+                <node concept="3clFbT" id="1rCh22xi5vd" role="37wK5m" />
               </node>
             </node>
-            <node concept="vg0i.1068580123136" id="1650644170366802119" role="vg0i.1154032098014.1154032183016" info="sn" />
           </node>
         </node>
-        <node concept="vg0i.1188207840427" id="1650644170366802120" role="vg0i.1188208481402.1188208488637" info="nn">
-          <reference role="vg0i.1188207840427.1188208074048" target="qjxg.~Test" resolveInfo="Test" />
-          <node concept="vg0i.1188214545140" id="1650644170366802121" role="vg0i.1188207840427.1188214630783" info="ng">
-            <reference role="vg0i.1188214545140.1188214555875" target="qjxg.~Test%dexpected()" resolveInfo="expected" />
-            <node concept="vg0i.1116615150612" id="1650644170366802122" role="vg0i.1188214545140.1188214607812" info="nn">
-              <reference role="vg0i.1116615150612.1116615189566" target="e2lb.~UnsupportedOperationException" resolveInfo="UnsupportedOperationException" />
+        <node concept="3clFbF" id="1rCh22xi5ve" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5vf" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
+            <node concept="2OqwBi" id="1rCh22xi5vg" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTtDA" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5v4" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5vi" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5vj" role="37wK5m">
+                  <property role="3cmrfH" value="5" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5vk" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5vl" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
+            <node concept="2OqwBi" id="1rCh22xi5vm" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagT_wX" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5v4" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5vo" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5vp" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5vq" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5vr" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertFalse(boolean):void" resolve="assertFalse" />
+            <node concept="2OqwBi" id="1rCh22xi5vs" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagT_sM" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5v4" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5vu" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5vv" role="37wK5m">
+                  <property role="3cmrfH" value="10" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="vg0i.1068580123165" id="1650644170366802123" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="elements" />
-        <node concept="vg0i.1146644623116" id="1650644170366802124" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1109279763828" id="1650644170366802125" role="vg0i.1109279851642.1109279881614" info="ng">
-          <property role="vg0i.1109279763828.1214996933829" value="true" />
-          <property role="asn4.1169194658468.1169194664001" value="T" />
-          <node concept="vg0i.1107535904670" id="1650644170366802126" role="vg0i.1109279763828.1214996921760" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~Comparable" resolveInfo="Comparable" />
-          </node>
-        </node>
-        <node concept="vg0i.1107535904670" id="1650644170366802127" role="vg0i.1068580123132.1068580123133" info="in">
-          <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
-          <node concept="vg0i.1109283449304" id="1650644170366802128" role="vg0i.1107535904670.1109201940907" info="in">
-            <reference role="vg0i.1109283449304.1109283546497" target="1650644170366802125" resolveInfo="T" />
-          </node>
-        </node>
-        <node concept="vg0i.1068498886292" id="1650644170366802129" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="interval" />
-          <node concept="vg0i.1107535904670" id="1650644170366802130" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="k2b1.877422884702866569" resolveInfo="Interval" />
-            <node concept="vg0i.1109283449304" id="1650644170366802131" role="vg0i.1107535904670.1109201940907" info="in">
-              <reference role="vg0i.1109283449304.1109283546497" target="1650644170366802125" resolveInfo="T" />
+      <node concept="2AHcQZ" id="1rCh22xi5vw" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5vx" role="jymVt">
+      <property role="TrG5h" value="leftInfinity" />
+      <node concept="3Tm1VV" id="1rCh22xi5vy" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5vz" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5v$" role="3clF47">
+        <node concept="3cpWs8" id="1rCh22xi5v_" role="3cqZAp">
+          <node concept="3cpWsn" id="1rCh22xi5vA" role="3cpWs9">
+            <property role="TrG5h" value="interval" />
+            <node concept="3uibUv" id="1rCh22xi5vB" role="1tU5fm">
+              <ref role="3uigEE" to="k2b1:KHeRs0wOM9" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5vC" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="1rCh22xi5vD" role="33vP2m">
+              <node concept="1pGfFk" id="1rCh22xi5vE" role="2ShVmc">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOMM" resolve="Interval" />
+                <node concept="3uibUv" id="1rCh22xi5vF" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                </node>
+                <node concept="10Nm6u" id="1rCh22xi5vG" role="37wK5m" />
+                <node concept="3clFbT" id="1rCh22xi5vH" role="37wK5m" />
+                <node concept="3cmrfG" id="1rCh22xi5vI" role="37wK5m">
+                  <property role="3cmrfH" value="10" />
+                </node>
+                <node concept="3clFbT" id="1rCh22xi5vJ" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
-        <node concept="vg0i.1068580123136" id="1650644170366802132" role="vg0i.1068580123132.1068580123135" info="sn">
-          <node concept="vg0i.1068581242864" id="1650644170366802133" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068581242863" id="1650644170366802134" role="vg0i.1068581242864.1068581242865" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="result" />
-              <node concept="vg0i.1107535904670" id="1650644170366802135" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="k7g3.~List" resolveInfo="List" />
-                <node concept="vg0i.1109283449304" id="1650644170366802136" role="vg0i.1107535904670.1109201940907" info="in">
-                  <reference role="vg0i.1109283449304.1109283546497" target="1650644170366802125" resolveInfo="T" />
-                </node>
+        <node concept="3clFbF" id="1rCh22xi5vK" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5vL" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
+            <node concept="2OqwBi" id="1rCh22xi5vM" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagT$mD" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5vA" resolve="interval" />
               </node>
-              <node concept="vg0i.1145552977093" id="1650644170366802137" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1212685548494" id="1650644170366802138" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
-                  <node concept="vg0i.1109283449304" id="1650644170366802139" role="vg0i.1212685548494.1212687122400" info="in">
-                    <reference role="vg0i.1109283449304.1109283546497" target="1650644170366802125" resolveInfo="T" />
+              <node concept="liA8E" id="1rCh22xi5vO" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="1ZRNhn" id="1rCh22xi5vP" role="37wK5m">
+                  <node concept="3cmrfG" id="1rCh22xi5vQ" role="2$L3a6">
+                    <property role="3cmrfH" value="1000" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="vg0i.1144226303539" id="1650644170366802140" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068498886296" id="3021153905151357046" role="vg0i.1144226303539.1144226360166" info="nn">
-              <reference role="vg0i.1068498886296.1068581517664" target="1650644170366802129" resolveInfo="interval" />
-            </node>
-            <node concept="vg0i.1068581242863" id="1650644170366802142" role="vg0i.1144230876926.1144230900587" info="nr">
-              <property role="asn4.1169194658468.1169194664001" value="t" />
-              <node concept="vg0i.1109283449304" id="1650644170366802143" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1109283449304.1109283546497" target="1650644170366802125" resolveInfo="T" />
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5vR" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5vS" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
+            <node concept="2OqwBi" id="1rCh22xi5vT" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTsaD" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5vA" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5vV" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5vW" role="37wK5m">
+                  <property role="3cmrfH" value="10" />
+                </node>
               </node>
             </node>
-            <node concept="vg0i.1068580123136" id="1650644170366802144" role="vg0i.1154032098014.1154032183016" info="sn">
-              <node concept="vg0i.1068580123155" id="1650644170366802145" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1197027756228" id="1650644170366802146" role="vg0i.1068580123155.1068580123156" info="nn">
-                  <node concept="vg0i.1068498886296" id="4265636116363086910" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="1650644170366802134" resolveInfo="result" />
-                  </node>
-                  <node concept="vg0i.1202948039474" id="1650644170366802148" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                    <node concept="vg0i.1068498886296" id="4265636116363072507" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="1650644170366802142" resolveInfo="t" />
-                    </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5vX" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5vY" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertFalse(boolean):void" resolve="assertFalse" />
+            <node concept="2OqwBi" id="1rCh22xi5vZ" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTAoQ" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5vA" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5w1" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5w2" role="37wK5m">
+                  <property role="3cmrfH" value="100" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1rCh22xi5w3" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5w4" role="jymVt">
+      <property role="TrG5h" value="rightInfinity" />
+      <node concept="3Tm1VV" id="1rCh22xi5w5" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5w6" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5w7" role="3clF47">
+        <node concept="3cpWs8" id="1rCh22xi5w8" role="3cqZAp">
+          <node concept="3cpWsn" id="1rCh22xi5w9" role="3cpWs9">
+            <property role="TrG5h" value="interval" />
+            <node concept="3uibUv" id="1rCh22xi5wa" role="1tU5fm">
+              <ref role="3uigEE" to="k2b1:KHeRs0wOM9" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5wb" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="1rCh22xi5wc" role="33vP2m">
+              <node concept="1pGfFk" id="1rCh22xi5wd" role="2ShVmc">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOMM" resolve="Interval" />
+                <node concept="3uibUv" id="1rCh22xi5we" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5wf" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="3clFbT" id="1rCh22xi5wg" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+                <node concept="10Nm6u" id="1rCh22xi5wh" role="37wK5m" />
+                <node concept="3clFbT" id="1rCh22xi5wi" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5wj" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5wk" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
+            <node concept="2OqwBi" id="1rCh22xi5wl" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTrt8" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5w9" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5wn" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5wo" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5wp" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5wq" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
+            <node concept="2OqwBi" id="1rCh22xi5wr" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTwyQ" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5w9" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5wt" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="3cmrfG" id="1rCh22xi5wu" role="37wK5m">
+                  <property role="3cmrfH" value="1000" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5wv" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5ww" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertFalse(boolean):void" resolve="assertFalse" />
+            <node concept="2OqwBi" id="1rCh22xi5wx" role="37wK5m">
+              <node concept="37vLTw" id="3GM_nagTthg" role="2Oq$k0">
+                <ref role="3cqZAo" node="1rCh22xi5w9" resolve="interval" />
+              </node>
+              <node concept="liA8E" id="1rCh22xi5wz" role="2OqNvi">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOOJ" resolve="contains" />
+                <node concept="1ZRNhn" id="1rCh22xi5w$" role="37wK5m">
+                  <node concept="3cmrfG" id="1rCh22xi5w_" role="2$L3a6">
+                    <property role="3cmrfH" value="1" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068581242878" id="1650644170366802150" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068498886296" id="4265636116363109098" role="vg0i.1068581242878.1068581517676" info="nn">
-              <reference role="vg0i.1068498886296.1068581517664" target="1650644170366802134" resolveInfo="result" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1rCh22xi5wA" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5wB" role="jymVt">
+      <property role="TrG5h" value="integerIterationAllIncluded" />
+      <node concept="3Tm1VV" id="1rCh22xi5wC" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5wD" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5wE" role="3clF47">
+        <node concept="3cpWs8" id="1rCh22xi5wF" role="3cqZAp">
+          <node concept="3cpWsn" id="1rCh22xi5wG" role="3cpWs9">
+            <property role="TrG5h" value="interval" />
+            <node concept="3uibUv" id="1rCh22xi5wH" role="1tU5fm">
+              <ref role="3uigEE" to="k2b1:KHeRs0wOM9" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5wI" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              </node>
             </node>
+            <node concept="2ShNRf" id="1rCh22xi5wJ" role="33vP2m">
+              <node concept="1pGfFk" id="1rCh22xi5wK" role="2ShVmc">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOO6" resolve="Interval" />
+                <node concept="3uibUv" id="1rCh22xi5wL" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5wM" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5wN" role="37wK5m">
+                  <property role="3cmrfH" value="2" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5wO" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5wP" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolve="assertEquals" />
+            <node concept="2YIFZM" id="1rCh22xi5wQ" role="37wK5m">
+              <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
+              <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+              <node concept="3cmrfG" id="1rCh22xi5wR" role="37wK5m">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="3cmrfG" id="1rCh22xi5wS" role="37wK5m">
+                <property role="3cmrfH" value="1" />
+              </node>
+              <node concept="3cmrfG" id="1rCh22xi5wT" role="37wK5m">
+                <property role="3cmrfH" value="2" />
+              </node>
+            </node>
+            <node concept="1rXfSq" id="4hiugqyziYe" role="37wK5m">
+              <ref role="37wK5l" node="1rCh22xi5zb" resolve="elements" />
+              <node concept="37vLTw" id="3GM_nagTySb" role="37wK5m">
+                <ref role="3cqZAo" node="1rCh22xi5wG" resolve="interval" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1rCh22xi5wW" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5wX" role="jymVt">
+      <property role="TrG5h" value="integerIterationLeftNotIncluded" />
+      <node concept="3Tm1VV" id="1rCh22xi5wY" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5wZ" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5x0" role="3clF47">
+        <node concept="3cpWs8" id="1rCh22xi5x1" role="3cqZAp">
+          <node concept="3cpWsn" id="1rCh22xi5x2" role="3cpWs9">
+            <property role="TrG5h" value="interval" />
+            <node concept="3uibUv" id="1rCh22xi5x3" role="1tU5fm">
+              <ref role="3uigEE" to="k2b1:KHeRs0wOM9" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5x4" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="1rCh22xi5x5" role="33vP2m">
+              <node concept="1pGfFk" id="1rCh22xi5x6" role="2ShVmc">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOMM" resolve="Interval" />
+                <node concept="3uibUv" id="1rCh22xi5x7" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5x8" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="3clFbT" id="1rCh22xi5x9" role="37wK5m" />
+                <node concept="3cmrfG" id="1rCh22xi5xa" role="37wK5m">
+                  <property role="3cmrfH" value="2" />
+                </node>
+                <node concept="3clFbT" id="1rCh22xi5xb" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5xc" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5xd" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolve="assertEquals" />
+            <node concept="2YIFZM" id="1rCh22xi5xe" role="37wK5m">
+              <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
+              <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+              <node concept="3cmrfG" id="1rCh22xi5xf" role="37wK5m">
+                <property role="3cmrfH" value="1" />
+              </node>
+              <node concept="3cmrfG" id="1rCh22xi5xg" role="37wK5m">
+                <property role="3cmrfH" value="2" />
+              </node>
+            </node>
+            <node concept="1rXfSq" id="4hiugqyzcLN" role="37wK5m">
+              <ref role="37wK5l" node="1rCh22xi5zb" resolve="elements" />
+              <node concept="37vLTw" id="3GM_nagT$sI" role="37wK5m">
+                <ref role="3cqZAo" node="1rCh22xi5x2" resolve="interval" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1rCh22xi5xj" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5xk" role="jymVt">
+      <property role="TrG5h" value="integerIterationRightNotIncluded" />
+      <node concept="3Tm1VV" id="1rCh22xi5xl" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5xm" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5xn" role="3clF47">
+        <node concept="3cpWs8" id="1rCh22xi5xo" role="3cqZAp">
+          <node concept="3cpWsn" id="1rCh22xi5xp" role="3cpWs9">
+            <property role="TrG5h" value="interval" />
+            <node concept="3uibUv" id="1rCh22xi5xq" role="1tU5fm">
+              <ref role="3uigEE" to="k2b1:KHeRs0wOM9" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5xr" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="1rCh22xi5xs" role="33vP2m">
+              <node concept="1pGfFk" id="1rCh22xi5xt" role="2ShVmc">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOMM" resolve="Interval" />
+                <node concept="3uibUv" id="1rCh22xi5xu" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5xv" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="3clFbT" id="1rCh22xi5xw" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5xx" role="37wK5m">
+                  <property role="3cmrfH" value="2" />
+                </node>
+                <node concept="3clFbT" id="1rCh22xi5xy" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5xz" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5x$" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolve="assertEquals" />
+            <node concept="2YIFZM" id="1rCh22xi5x_" role="37wK5m">
+              <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
+              <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+              <node concept="3cmrfG" id="1rCh22xi5xA" role="37wK5m">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="3cmrfG" id="1rCh22xi5xB" role="37wK5m">
+                <property role="3cmrfH" value="1" />
+              </node>
+            </node>
+            <node concept="1rXfSq" id="4hiugqyyIbN" role="37wK5m">
+              <ref role="37wK5l" node="1rCh22xi5zb" resolve="elements" />
+              <node concept="37vLTw" id="3GM_nagTxYq" role="37wK5m">
+                <ref role="3cqZAo" node="1rCh22xi5xp" resolve="interval" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1rCh22xi5xE" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5xF" role="jymVt">
+      <property role="TrG5h" value="oneElementIntervalIteration" />
+      <node concept="3Tm1VV" id="1rCh22xi5xG" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5xH" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5xI" role="3clF47">
+        <node concept="3cpWs8" id="1rCh22xi5xJ" role="3cqZAp">
+          <node concept="3cpWsn" id="1rCh22xi5xK" role="3cpWs9">
+            <property role="TrG5h" value="interval" />
+            <node concept="3uibUv" id="1rCh22xi5xL" role="1tU5fm">
+              <ref role="3uigEE" to="k2b1:KHeRs0wOM9" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5xM" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="1rCh22xi5xN" role="33vP2m">
+              <node concept="1pGfFk" id="1rCh22xi5xO" role="2ShVmc">
+                <ref role="37wK5l" to="k2b1:KHeRs0wOO6" resolve="Interval" />
+                <node concept="3uibUv" id="1rCh22xi5xP" role="1pMfVU">
+                  <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5xQ" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="3cmrfG" id="1rCh22xi5xR" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1rCh22xi5xS" role="3cqZAp">
+          <node concept="2YIFZM" id="1rCh22xi5xT" role="3clFbG">
+            <ref role="1Pybhc" to="qjxg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="qjxg:~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolve="assertEquals" />
+            <node concept="2YIFZM" id="1rCh22xi5xU" role="37wK5m">
+              <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
+              <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+              <node concept="3cmrfG" id="1rCh22xi5xV" role="37wK5m">
+                <property role="3cmrfH" value="0" />
+              </node>
+            </node>
+            <node concept="1rXfSq" id="4hiugqyz9xM" role="37wK5m">
+              <ref role="37wK5l" node="1rCh22xi5zb" resolve="elements" />
+              <node concept="37vLTw" id="3GM_nagTB6R" role="37wK5m">
+                <ref role="3cqZAo" node="1rCh22xi5xK" resolve="interval" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1rCh22xi5xY" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5xZ" role="jymVt">
+      <property role="TrG5h" value="endBeforStart" />
+      <node concept="3Tm1VV" id="1rCh22xi5y0" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5y1" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5y2" role="3clF47">
+        <node concept="3clFbF" id="1rCh22xi5y3" role="3cqZAp">
+          <node concept="2ShNRf" id="1rCh22xi5y4" role="3clFbG">
+            <node concept="1pGfFk" id="1rCh22xi5y5" role="2ShVmc">
+              <ref role="37wK5l" to="k2b1:KHeRs0wOO6" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5y6" role="1pMfVU">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              </node>
+              <node concept="3cmrfG" id="1rCh22xi5y7" role="37wK5m">
+                <property role="3cmrfH" value="100" />
+              </node>
+              <node concept="3cmrfG" id="1rCh22xi5y8" role="37wK5m">
+                <property role="3cmrfH" value="1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1rCh22xi5y9" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+        <node concept="2B6LJw" id="1rCh22xi5ya" role="2B76xF">
+          <ref role="2B6OnR" to="qjxg:~Test.expected()" resolve="expected" />
+          <node concept="3VsKOn" id="1rCh22xi5yb" role="2B70Vg">
+            <ref role="3VsUkX" to="e2lb:~IllegalArgumentException" resolve="IllegalArgumentException" />
           </node>
         </node>
       </node>
     </node>
-  </contents>
+    <node concept="3clFb_" id="1rCh22xi5yc" role="jymVt">
+      <property role="TrG5h" value="minusInfinityIncluded" />
+      <node concept="3Tm1VV" id="1rCh22xi5yd" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5ye" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5yf" role="3clF47">
+        <node concept="3clFbF" id="1rCh22xi5yg" role="3cqZAp">
+          <node concept="2ShNRf" id="1rCh22xi5yh" role="3clFbG">
+            <node concept="1pGfFk" id="1rCh22xi5yi" role="2ShVmc">
+              <ref role="37wK5l" to="k2b1:KHeRs0wOMM" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5yj" role="1pMfVU">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              </node>
+              <node concept="10Nm6u" id="1rCh22xi5yk" role="37wK5m" />
+              <node concept="3clFbT" id="1rCh22xi5yl" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
+              <node concept="3cmrfG" id="1rCh22xi5ym" role="37wK5m">
+                <property role="3cmrfH" value="1" />
+              </node>
+              <node concept="3clFbT" id="1rCh22xi5yn" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1rCh22xi5yo" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+        <node concept="2B6LJw" id="1rCh22xi5yp" role="2B76xF">
+          <ref role="2B6OnR" to="qjxg:~Test.expected()" resolve="expected" />
+          <node concept="3VsKOn" id="1rCh22xi5yq" role="2B70Vg">
+            <ref role="3VsUkX" to="e2lb:~IllegalArgumentException" resolve="IllegalArgumentException" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5yr" role="jymVt">
+      <property role="TrG5h" value="plusInfinityIncluded" />
+      <node concept="3Tm1VV" id="1rCh22xi5ys" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5yt" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5yu" role="3clF47">
+        <node concept="3clFbF" id="1rCh22xi5yv" role="3cqZAp">
+          <node concept="2ShNRf" id="1rCh22xi5yw" role="3clFbG">
+            <node concept="1pGfFk" id="1rCh22xi5yx" role="2ShVmc">
+              <ref role="37wK5l" to="k2b1:KHeRs0wOMM" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5yy" role="1pMfVU">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              </node>
+              <node concept="3cmrfG" id="1rCh22xi5yz" role="37wK5m">
+                <property role="3cmrfH" value="1" />
+              </node>
+              <node concept="3clFbT" id="1rCh22xi5y$" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
+              <node concept="10Nm6u" id="1rCh22xi5y_" role="37wK5m" />
+              <node concept="3clFbT" id="1rCh22xi5yA" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1rCh22xi5yB" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+        <node concept="2B6LJw" id="1rCh22xi5yC" role="2B76xF">
+          <ref role="2B6OnR" to="qjxg:~Test.expected()" resolve="expected" />
+          <node concept="3VsKOn" id="1rCh22xi5yD" role="2B70Vg">
+            <ref role="3VsUkX" to="e2lb:~IllegalArgumentException" resolve="IllegalArgumentException" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5yE" role="jymVt">
+      <property role="TrG5h" value="emptyInterval" />
+      <node concept="3Tm1VV" id="1rCh22xi5yF" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5yG" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5yH" role="3clF47">
+        <node concept="3clFbF" id="1rCh22xi5yI" role="3cqZAp">
+          <node concept="2ShNRf" id="1rCh22xi5yJ" role="3clFbG">
+            <node concept="1pGfFk" id="1rCh22xi5yK" role="2ShVmc">
+              <ref role="37wK5l" to="k2b1:KHeRs0wOMM" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5yL" role="1pMfVU">
+                <ref role="3uigEE" to="e2lb:~Comparable" resolve="Comparable" />
+              </node>
+              <node concept="3cmrfG" id="1rCh22xi5yM" role="37wK5m">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="3clFbT" id="1rCh22xi5yN" role="37wK5m" />
+              <node concept="3cmrfG" id="1rCh22xi5yO" role="37wK5m">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="3clFbT" id="1rCh22xi5yP" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1rCh22xi5yQ" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+        <node concept="2B6LJw" id="1rCh22xi5yR" role="2B76xF">
+          <ref role="2B6OnR" to="qjxg:~Test.expected()" resolve="expected" />
+          <node concept="3VsKOn" id="1rCh22xi5yS" role="2B70Vg">
+            <ref role="3VsUkX" to="e2lb:~IllegalArgumentException" resolve="IllegalArgumentException" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5yT" role="jymVt">
+      <property role="TrG5h" value="iterationFromInfinity" />
+      <node concept="3Tm1VV" id="1rCh22xi5yU" role="1B3o_S" />
+      <node concept="3cqZAl" id="1rCh22xi5yV" role="3clF45" />
+      <node concept="3clFbS" id="1rCh22xi5yW" role="3clF47">
+        <node concept="1DcWWT" id="1rCh22xi5yX" role="3cqZAp">
+          <node concept="2ShNRf" id="1rCh22xi5yY" role="1DdaDG">
+            <node concept="1pGfFk" id="1rCh22xi5yZ" role="2ShVmc">
+              <ref role="37wK5l" to="k2b1:KHeRs0wOMM" resolve="Interval" />
+              <node concept="3uibUv" id="1rCh22xi5z0" role="1pMfVU">
+                <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+              </node>
+              <node concept="10Nm6u" id="1rCh22xi5z1" role="37wK5m" />
+              <node concept="3clFbT" id="1rCh22xi5z2" role="37wK5m" />
+              <node concept="3cmrfG" id="1rCh22xi5z3" role="37wK5m">
+                <property role="3cmrfH" value="100" />
+              </node>
+              <node concept="3clFbT" id="1rCh22xi5z4" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="1rCh22xi5z5" role="1Duv9x">
+            <property role="TrG5h" value="i" />
+            <node concept="3uibUv" id="1rCh22xi5z6" role="1tU5fm">
+              <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="1rCh22xi5z7" role="2LFqv$" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1rCh22xi5z8" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~Test" resolve="Test" />
+        <node concept="2B6LJw" id="1rCh22xi5z9" role="2B76xF">
+          <ref role="2B6OnR" to="qjxg:~Test.expected()" resolve="expected" />
+          <node concept="3VsKOn" id="1rCh22xi5za" role="2B70Vg">
+            <ref role="3VsUkX" to="e2lb:~UnsupportedOperationException" resolve="UnsupportedOperationException" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="1rCh22xi5zb" role="jymVt">
+      <property role="TrG5h" value="elements" />
+      <node concept="3Tm6S6" id="1rCh22xi5zc" role="1B3o_S" />
+      <node concept="16euLQ" id="1rCh22xi5zd" role="16eVyc">
+        <property role="3ztuRv" value="true" />
+        <property role="TrG5h" value="T" />
+        <node concept="3uibUv" id="1rCh22xi5ze" role="3ztrMU">
+          <ref role="3uigEE" to="e2lb:~Comparable" resolve="Comparable" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="1rCh22xi5zf" role="3clF45">
+        <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+        <node concept="16syzq" id="1rCh22xi5zg" role="11_B2D">
+          <ref role="16sUi3" node="1rCh22xi5zd" resolve="T" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1rCh22xi5zh" role="3clF46">
+        <property role="TrG5h" value="interval" />
+        <node concept="3uibUv" id="1rCh22xi5zi" role="1tU5fm">
+          <ref role="3uigEE" to="k2b1:KHeRs0wOM9" resolve="Interval" />
+          <node concept="16syzq" id="1rCh22xi5zj" role="11_B2D">
+            <ref role="16sUi3" node="1rCh22xi5zd" resolve="T" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="1rCh22xi5zk" role="3clF47">
+        <node concept="3cpWs8" id="1rCh22xi5zl" role="3cqZAp">
+          <node concept="3cpWsn" id="1rCh22xi5zm" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="3uibUv" id="1rCh22xi5zn" role="1tU5fm">
+              <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+              <node concept="16syzq" id="1rCh22xi5zo" role="11_B2D">
+                <ref role="16sUi3" node="1rCh22xi5zd" resolve="T" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="1rCh22xi5zp" role="33vP2m">
+              <node concept="1pGfFk" id="1rCh22xi5zq" role="2ShVmc">
+                <ref role="37wK5l" to="k7g3:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                <node concept="16syzq" id="1rCh22xi5zr" role="1pMfVU">
+                  <ref role="16sUi3" node="1rCh22xi5zd" resolve="T" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1DcWWT" id="1rCh22xi5zs" role="3cqZAp">
+          <node concept="37vLTw" id="2BHiRxglb1Q" role="1DdaDG">
+            <ref role="3cqZAo" node="1rCh22xi5zh" resolve="interval" />
+          </node>
+          <node concept="3cpWsn" id="1rCh22xi5zu" role="1Duv9x">
+            <property role="TrG5h" value="t" />
+            <node concept="16syzq" id="1rCh22xi5zv" role="1tU5fm">
+              <ref role="16sUi3" node="1rCh22xi5zd" resolve="T" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="1rCh22xi5zw" role="2LFqv$">
+            <node concept="3clFbF" id="1rCh22xi5zx" role="3cqZAp">
+              <node concept="2OqwBi" id="1rCh22xi5zy" role="3clFbG">
+                <node concept="37vLTw" id="3GM_nagTwKY" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1rCh22xi5zm" resolve="result" />
+                </node>
+                <node concept="liA8E" id="1rCh22xi5z$" role="2OqNvi">
+                  <ref role="37wK5l" to="k7g3:~List.add(java.lang.Object):boolean" resolve="add" />
+                  <node concept="37vLTw" id="3GM_nagTtfV" role="37wK5m">
+                    <ref role="3cqZAo" node="1rCh22xi5zu" resolve="t" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1rCh22xi5zA" role="3cqZAp">
+          <node concept="37vLTw" id="3GM_nagTAbE" role="3cqZAk">
+            <ref role="3cqZAo" node="1rCh22xi5zm" resolve="result" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -30,13 +30,11 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
-import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellMessagesUtil;
-import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -46,13 +44,13 @@ import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ListMap;
-import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -294,7 +292,6 @@ public abstract class EditorCell_Basic implements EditorCell {
       return;
     }
     myY = y;
-    requestRelayout();
   }
 
   @Override
@@ -308,7 +305,6 @@ public abstract class EditorCell_Basic implements EditorCell {
       return;
     }
     myX = x;
-    requestRelayout();
   }
 
   @Override
@@ -464,11 +460,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     SNode link = ((jetbrains.mps.smodel.SNode) node.getParent()).getLinkDeclaration(node.getRoleInParent());
     SNode concept = CellUtil.getLinkDeclarationTarget(link);
-    String concreteConceptFqName = ModelConstraints.getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept));
-    if (node.getConcept().getQualifiedName().equals(concreteConceptFqName)) {
+    SConcept concreteConcept = ModelConstraints.getDefaultConcreteConcept(MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) concept));
+    if (node.getConcept().equals(concreteConcept)) {
       return null;
     }
-    jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(concreteConceptFqName));
+    jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(concreteConcept);
     SNodeUtil.replaceWithAnother(node, newNode);
     getContext().flushEvents();
     return newNode;
@@ -770,7 +766,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.nodeEditor.sidetransform.STHintUtil} instead
+   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint} instead
    */
   @Deprecated
   @Override
@@ -779,41 +775,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (node == null) {
       return null;
     }
-
-    EditorCell bigCell = getEditor().findNodeCell(node);
-    String anchorId = STHintUtil.getTransformHintAnchorCellId(node);
-    if (anchorId == null) {
-      // TODO: should never be null!..
-      if (bigCell != null && bigCell.getParent() != null) {
-        for (jetbrains.mps.openapi.editor.cells.EditorCell sibling : bigCell.getParent()) {
-          if (sibling instanceof EditorCell_STHint) {
-            return (EditorCell_STHint) sibling;
-          }
-        }
-      }
-    } else {
-      EditorCell anchorCell = getEditor().findCellWithId(node, anchorId);
-
-      if (anchorCell == null) {
-        return null;
-      }
-
-      assert anchorCell.getParent() != null : "No cell parent for node " + node.getNodeId().toString() + " " + node.getModel();
-
-      jetbrains.mps.openapi.editor.cells.EditorCell nextSibling = CellTraversalUtil.getNextSibling(anchorCell);
-      if (nextSibling instanceof EditorCell_STHint) {
-        return (EditorCell_STHint) nextSibling;
-      }
-
-      jetbrains.mps.openapi.editor.cells.EditorCell prevSibling = CellTraversalUtil.getPrevSibling(anchorCell);
-      if (prevSibling instanceof EditorCell_STHint) {
-        return (EditorCell_STHint) prevSibling;
-      }
-
-      return null;
-    }
-
-    return null;
+    return EditorCell_STHint.getSTHintCell(node, getEditorComponent());
   }
 
   @Override
@@ -1363,6 +1325,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void requestRelayout() {
+    if (myIsNeedRelayout) {
+      return;
+    }
     myIsNeedRelayout = true;
     if (getParent() != null) {
       getParent().requestRelayout();
@@ -1370,10 +1335,19 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   // Following methods are used from layout algorythms
+
+  /**
+   * @deprecated not used.
+   */
+  @Deprecated
   protected void markNeedsRelayout() {
     myIsNeedRelayout = true;
   }
 
+  /**
+   * @deprecated not used.
+   */
+  @Deprecated
   boolean isNeedsRelayout() {
     return myIsNeedRelayout;
   }

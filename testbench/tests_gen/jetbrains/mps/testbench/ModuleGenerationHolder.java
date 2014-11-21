@@ -66,7 +66,7 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 
 public class ModuleGenerationHolder {
-  private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies");
+  private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies", "exports");
   private final Project project;
   private final SModule module;
   private String tmpPath;

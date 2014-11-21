@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:ef3bdd93-260b-4a16-89d1-13a87cfa78c9(sampleFacet.structure)">
+<model ref="r:ef3bdd93-260b-4a16-89d1-13a87cfa78c9(sampleFacet.structure)" concise="true">
   <persistence version="9" />
-  <debugInfo />
   <languages />
   <imports />
-  <contents />
+  <registry />
 </model>
 

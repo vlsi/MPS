@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.openapi.editor.cells;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Iterator;
 
 /**
@@ -48,6 +50,7 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
 
   int getContentCellsCount();
 
+  @NotNull
   CellLayout getCellLayout();
 
   void setAscent(int newAscent);

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.module.ReloadableModule;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -12,8 +12,13 @@ import org.apache.log4j.LogManager;
 public class TestsClassStorage {
   @Nullable
   private Class<?> tryLoadTestClass(String fqName, SModule module) {
-    if (ClassLoaderManager.getInstance().canLoad(module)) {
-      final Class<?> aClass = ClassLoaderManager.getInstance().getOwnClass(module, fqName);
+    if (module instanceof ReloadableModule && ((ReloadableModule) module).willLoad()) {
+      Class<?> aClass;
+      try {
+        aClass = ((ReloadableModule) module).getOwnClass(fqName);
+      } catch (ClassNotFoundException ignored) {
+        aClass = null;
+      }
       return aClass;
     }
     return null;

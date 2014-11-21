@@ -29,6 +29,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.migration.global.MigrationPropertiesManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;
@@ -89,19 +90,20 @@ public final class MPSCore extends ComponentPlugin {
     init(new FacetsRegistry());
     init(new ConceptRepository());
     init(new FindUsagesManager());
+    init(new MigrationPropertiesManager());
 
     // repositories
     final SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
     SModelRepository modelRepository = init(new SModelRepository());
     MPSModuleRepository moduleRepository = init(new MPSModuleRepository());
-    GlobalSModelEventsManager globalSModelEventsManager = init(new GlobalSModelEventsManager(modelRepository));
+    init(new GlobalSModelEventsManager(modelRepository));
     ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(moduleRepository));
     init(new DebugRegistry());
 
     init(new SModelFileTracker(SRepositoryRegistry.getInstance()));
     init(new ModuleRepositoryFacade(moduleRepository));
     init(new ModuleFileTracker(moduleRepository));
-    init(new CleanupManager(classLoaderManager));
+    CleanupManager cleanupManager = init(new CleanupManager(classLoaderManager));
     init(new PathMacros());
     init(new LibraryInitializer(moduleRepository, classLoaderManager));
     init(new GlobalScope(moduleRepository, modelRepository));
@@ -113,14 +115,13 @@ public final class MPSCore extends ComponentPlugin {
     init(new ExtensionRegistry(classLoaderManager, moduleRepository));
     init(new LanguageHierarchyCache(moduleRepository));
     init(new ConceptDescendantsCache(moduleRepository, languageRegistry));
-    init(new SModelUtil_new(classLoaderManager, repositoryRegistry));
     init(new CachesManager(classLoaderManager, modelRepository));
     init(new LanguageDescriptorModelProvider(moduleRepository));
     init(new ProjectStructureModule(moduleRepository, modelRepository));
     init(new CopyPasteManager(classLoaderManager));
     init(new PasteWrappersManager(classLoaderManager));
-    init(new BLDependenciesCache(moduleRepository));
-    init(new DataFlowManager(classLoaderManager, moduleRepository));
+    init(new BLDependenciesCache(moduleRepository, cleanupManager));
+    init(new DataFlowManager(moduleRepository, classLoaderManager));
 
     init(new ResolverComponent());
     init(new CheckersComponent());

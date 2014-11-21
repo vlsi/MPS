@@ -7,24 +7,23 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.apache.log4j.Level;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SDependency;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -32,43 +31,35 @@ public class MigrationsUtil {
   public static String getDescriptorFQName(SModule module) {
     return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript")), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
   }
-  public static Iterable<Tuples._3<SModule, Integer, Integer>> getDependenciesToMigrate(final AbstractModule module) {
-    return Sequence.fromIterable(checkDependenciesVersions(module)).where(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
-      public boolean accept(Tuples._3<SModule, Integer, Integer> item) {
-        if ((int) item._1() > (int) item._2()) {
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Module " + module + " depends on version " + (int) item._1() + " of module " + item._0() + " which is higher than available version (" + (int) item._2() + ")");
-          }
-        } else if ((int) item._1() < (int) item._2()) {
-          return true;
-        }
-        return false;
+  public static boolean isMigrationNeeded(AbstractModule module, MigrationScriptReference languageVersions) {
+    int currentVersion = languageVersions.getLanguage().getLanguageVersion();
+    if (languageVersions.getFromVersion() > currentVersion) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Module " + module + " depends on version " + languageVersions.getFromVersion() + " of module " + languageVersions.getLanguage() + " which is higher than available version (" + currentVersion + ")");
       }
-    });
+    } else if (languageVersions.getFromVersion() < currentVersion) {
+      return true;
+    }
+    return false;
   }
-  public static Iterable<Tuples._3<SModule, Integer, Integer>> checkDependenciesVersions(AbstractModule module) {
-    module.validateLanguageVersions();
-    List<Tuples._3<SModule, Integer, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._3<SModule, Integer, Integer>>());
+  public static Iterable<MigrationScriptReference> getLanguageVersions(SModule module) {
+    List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());
     for (SLanguage lang : SetSequence.fromSet(module.getUsedLanguages())) {
-      Integer ver = module.getModuleDescriptor().getLanguageVersions().get(lang);
+      Integer ver = ((AbstractModule) module).getModuleDescriptor().getLanguageVersions().get(lang);
       if (ver == null) {
         if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("no version for language " + lang.getQualifiedName() + " in " + module.getModuleName());
         }
       } else {
         if (ver != lang.getLanguageVersion()) {
-          ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), ver, as_7hm1hv_a0c0a0a0a0a1a2a2(lang.getSourceModule(), Language.class).getLanguageVersion()));
+          ListSequence.fromList(result).addElement(new MigrationScriptReference(lang, ver));
         }
       }
     }
     return result;
   }
-  public static boolean isApplied(final MigrationScriptReference script, AbstractModule module) {
-    return !(Sequence.fromIterable(MigrationsUtil.checkDependenciesVersions(module)).any(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
-      public boolean accept(Tuples._3<SModule, Integer, Integer> it) {
-        return eq_7hm1hv_a0a0a0a0a0a0a0d(it._0().getModuleReference(), script.getModuleReference()) && (int) it._1() <= script.getFromVersion();
-      }
-    }));
+  public static boolean isApplied(MigrationScriptReference script, SModule module) {
+    return script.getFromVersion() < module.getUsedLanguageVersion(MetaAdapterByDeclaration.getLanguage((Language) script.getLanguage()));
   }
   public static Set<SModule> getModuleDependencies(final SModule module) {
     Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
@@ -81,17 +72,11 @@ public class MigrationsUtil {
     return dependencies;
   }
   public static boolean isAppliedForAllMyDeps(final MigrationScriptReference script, SModule module) {
-    return SetSequence.fromSet(getModuleDependencies(module)).all(new IWhereFilter<SModule>() {
-      public boolean accept(SModule it) {
-        return isApplied(script, (AbstractModule) it);
+    return SetSequence.fromSet(getModuleDependencies(module)).ofType(AbstractModule.class).all(new IWhereFilter<AbstractModule>() {
+      public boolean accept(AbstractModule it) {
+        return isApplied(script, it);
       }
     });
   }
   protected static Logger LOG = LogManager.getLogger(MigrationsUtil.class);
-  private static <T> T as_7hm1hv_a0c0a0a0a0a1a2a2(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static boolean eq_7hm1hv_a0a0a0a0a0a0a0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }

@@ -3,11 +3,23 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="ExecuteCommandInEDTStatement_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.access.behavior.ExecuteCommandInEDTStatement_BehaviorDescriptor" />
+    <file name="BaseExecuteCommandStatementSync_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.access.behavior.BaseExecuteCommandStatementSync_BehaviorDescriptor" />
     </file>
     <file name="BaseExecuteCommandStatement_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.access.behavior.BaseExecuteCommandStatement_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,38,0" name="jetbrains.mps.lang.access.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="CommandClosureLiteral_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.access.behavior.CommandClosureLiteral_BehaviorDescriptor" />
+    </file>
+    <file name="ExecuteCommandInEDTStatement_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.access.behavior.ExecuteCommandInEDTStatement_BehaviorDescriptor" />
+    </file>
+    <file name="ExecuteCommandStatement_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.access.behavior.ExecuteCommandStatement_BehaviorDescriptor" />
     </file>
     <file name="ExecuteEDTCommandStatement_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.access.behavior.ExecuteEDTCommandStatement_BehaviorDescriptor" />
@@ -15,26 +27,14 @@
     <file name="ExecuteLightweightCommandStatement_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.access.behavior.ExecuteLightweightCommandStatement_BehaviorDescriptor" />
     </file>
-    <file name="CommandClosureLiteral_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.access.behavior.CommandClosureLiteral_BehaviorDescriptor" />
-    </file>
     <file name="ExecuteTransparentCommandStatement_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.access.behavior.ExecuteTransparentCommandStatement_BehaviorDescriptor" />
-    </file>
-    <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,38,0" name="jetbrains.mps.lang.access.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BaseExecuteCommandStatementSync_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.access.behavior.BaseExecuteCommandStatementSync_BehaviorDescriptor" />
-    </file>
-    <file name="IExecuteCommandStatementSync_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.access.behavior.IExecuteCommandStatementSync_BehaviorDescriptor" />
     </file>
     <file name="ExecuteWriteActionStatement_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.access.behavior.ExecuteWriteActionStatement_BehaviorDescriptor" />
     </file>
-    <file name="ExecuteCommandStatement_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.access.behavior.ExecuteCommandStatement_BehaviorDescriptor" />
+    <file name="IExecuteCommandStatementSync_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.access.behavior.IExecuteCommandStatementSync_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f9d5a2b1-004e-4138-bf2b-916114888196(jetbrains.mps.lang.access.behavior)/8974276187400348215">

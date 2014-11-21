@@ -714,51 +714,6 @@
     </file>
   </root>
   <root nodeRef="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)/6062668769034854986">
-    <file name="JUnitSettings_Configuration_Editor.java">
-      <node id="6062668769034855204" at="12,0,13,0" concept="7" trace="myEditor" />
-      <node id="1822803054821518019" at="13,31,14,23" concept="6" />
-      <node id="6062668769034854986" at="13,31,14,23" concept="1" />
-      <node id="6062668769034855208" at="17,59,18,64" concept="6" />
-      <node id="6062668769034855213" at="18,64,19,20" concept="13" />
-      <node id="1822803054821481388" at="21,108,22,34" concept="6" />
-      <node id="6062668769034854986" at="21,108,22,34" concept="1" />
-      <node id="2642977781416585624" at="24,80,25,64" concept="6" />
-      <node id="1822803054821444768" at="25,64,26,34" concept="6" />
-      <node id="6062668769034854986" at="28,0,29,0" concept="7" trace="myProject" />
-      <node id="6062668769034854986" at="31,51,32,56" concept="13" />
-      <node id="6062668769034854986" at="34,7,35,24" concept="6" />
-      <node id="6062668769034854986" at="24,80,26,34" concept="1" />
-      <node id="6062668769034854986" at="13,0,16,0" concept="11" trace="disposeEditor#()V" />
-      <node id="6062668769034854986" at="21,0,24,0" concept="11" trace="applyEditorTo#(Ljetbrains/mps/baseLanguage/unitTest/execution/settings/JUnitSettings_Configuration;)V" />
-      <node id="6062668769034854986" at="31,0,34,0" concept="11" trace="create#()Ljetbrains/mps/baseLanguage/unitTest/execution/settings/JUnitSettings_Configuration;" />
-      <node id="6062668769034854986" at="24,0,28,0" concept="11" trace="resetEditorFrom#(Ljetbrains/mps/baseLanguage/unitTest/execution/settings/JUnitSettings_Configuration;)V" />
-      <node id="6062668769034854986" at="16,0,21,0" concept="11" trace="createEditor#()Ljetbrains/mps/baseLanguage/unitTest/execution/settings/JUnitConfigurationEditorComponent;" />
-      <node id="6062668769034854986" at="29,68,34,7" concept="18" />
-      <node id="6062668769034854986" at="29,0,37,0" concept="3" trace="JUnitSettings_Configuration_Editor#(Lcom/intellij/openapi/project/Project;)V" />
-      <scope id="6062668769034854986" at="13,31,14,23" />
-      <scope id="6062668769034855230" at="13,31,14,23" />
-      <scope id="6062668769034854986" at="21,108,22,34" />
-      <scope id="6062668769034855223" at="21,108,22,34" />
-      <scope id="6062668769034854986" at="31,51,32,56" />
-      <scope id="6062668769034855207" at="17,59,19,20" />
-      <scope id="6062668769034854986" at="24,80,26,34" />
-      <scope id="6062668769034855216" at="24,80,26,34" />
-      <scope id="6062668769034854986" at="13,0,16,0" />
-      <scope id="6062668769034854986" at="21,0,24,0">
-        <var name="configuration" id="6062668769034854986" />
-      </scope>
-      <scope id="6062668769034854986" at="31,0,34,0" />
-      <scope id="6062668769034854986" at="24,0,28,0">
-        <var name="configuration" id="6062668769034854986" />
-      </scope>
-      <scope id="6062668769034854986" at="16,0,21,0" />
-      <scope id="6062668769034854986" at="29,68,35,24" />
-      <scope id="6062668769034854986" at="29,0,37,0">
-        <var name="project" id="6062668769034854986" />
-      </scope>
-      <unit id="6062668769034854986" at="30,14,34,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration_Editor$1" />
-      <unit id="6062668769034854986" at="11,0,38,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration_Editor" />
-    </file>
     <file name="JUnitSettings_Configuration.java">
       <node id="6062668769034855239" at="39,36,40,72" concept="21" />
       <node id="6062668769034855248" at="42,36,43,112" concept="14" />
@@ -1052,6 +1007,51 @@
       <unit id="6062668769034855152" at="161,58,166,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration$2" />
       <unit id="6062668769034854986" at="187,0,218,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration$MyState" />
       <unit id="6062668769034854986" at="35,0,240,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration" />
+    </file>
+    <file name="JUnitSettings_Configuration_Editor.java">
+      <node id="6062668769034855204" at="12,0,13,0" concept="7" trace="myEditor" />
+      <node id="1822803054821518019" at="13,31,14,23" concept="6" />
+      <node id="6062668769034854986" at="13,31,14,23" concept="1" />
+      <node id="6062668769034855208" at="17,59,18,64" concept="6" />
+      <node id="6062668769034855213" at="18,64,19,20" concept="13" />
+      <node id="1822803054821481388" at="21,108,22,34" concept="6" />
+      <node id="6062668769034854986" at="21,108,22,34" concept="1" />
+      <node id="2642977781416585624" at="24,80,25,64" concept="6" />
+      <node id="1822803054821444768" at="25,64,26,34" concept="6" />
+      <node id="6062668769034854986" at="28,0,29,0" concept="7" trace="myProject" />
+      <node id="6062668769034854986" at="31,51,32,56" concept="13" />
+      <node id="6062668769034854986" at="34,7,35,24" concept="6" />
+      <node id="6062668769034854986" at="24,80,26,34" concept="1" />
+      <node id="6062668769034854986" at="13,0,16,0" concept="11" trace="disposeEditor#()V" />
+      <node id="6062668769034854986" at="21,0,24,0" concept="11" trace="applyEditorTo#(Ljetbrains/mps/baseLanguage/unitTest/execution/settings/JUnitSettings_Configuration;)V" />
+      <node id="6062668769034854986" at="31,0,34,0" concept="11" trace="create#()Ljetbrains/mps/baseLanguage/unitTest/execution/settings/JUnitSettings_Configuration;" />
+      <node id="6062668769034854986" at="24,0,28,0" concept="11" trace="resetEditorFrom#(Ljetbrains/mps/baseLanguage/unitTest/execution/settings/JUnitSettings_Configuration;)V" />
+      <node id="6062668769034854986" at="16,0,21,0" concept="11" trace="createEditor#()Ljetbrains/mps/baseLanguage/unitTest/execution/settings/JUnitConfigurationEditorComponent;" />
+      <node id="6062668769034854986" at="29,68,34,7" concept="18" />
+      <node id="6062668769034854986" at="29,0,37,0" concept="3" trace="JUnitSettings_Configuration_Editor#(Lcom/intellij/openapi/project/Project;)V" />
+      <scope id="6062668769034854986" at="13,31,14,23" />
+      <scope id="6062668769034855230" at="13,31,14,23" />
+      <scope id="6062668769034854986" at="21,108,22,34" />
+      <scope id="6062668769034855223" at="21,108,22,34" />
+      <scope id="6062668769034854986" at="31,51,32,56" />
+      <scope id="6062668769034855207" at="17,59,19,20" />
+      <scope id="6062668769034854986" at="24,80,26,34" />
+      <scope id="6062668769034855216" at="24,80,26,34" />
+      <scope id="6062668769034854986" at="13,0,16,0" />
+      <scope id="6062668769034854986" at="21,0,24,0">
+        <var name="configuration" id="6062668769034854986" />
+      </scope>
+      <scope id="6062668769034854986" at="31,0,34,0" />
+      <scope id="6062668769034854986" at="24,0,28,0">
+        <var name="configuration" id="6062668769034854986" />
+      </scope>
+      <scope id="6062668769034854986" at="16,0,21,0" />
+      <scope id="6062668769034854986" at="29,68,35,24" />
+      <scope id="6062668769034854986" at="29,0,37,0">
+        <var name="project" id="6062668769034854986" />
+      </scope>
+      <unit id="6062668769034854986" at="30,14,34,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration_Editor$1" />
+      <unit id="6062668769034854986" at="11,0,38,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration_Editor" />
     </file>
   </root>
   <root nodeRef="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)/6062668769034855273">

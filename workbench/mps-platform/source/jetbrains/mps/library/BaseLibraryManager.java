@@ -19,15 +19,16 @@ import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.library.LibraryManagerPreferences;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -38,10 +39,10 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public abstract class BaseLibraryManager implements BaseComponent, PersistentStateComponent<MyState>, LibraryContributor {
-  protected final MPSModuleRepository myRepository;
+  private final SRepository myRepository;
 
-  public BaseLibraryManager(MPSModuleRepository repo) {
-    myRepository = repo;
+  public BaseLibraryManager(MPSCoreComponents components) {
+    myRepository = components.getModuleRepository();
   }
 
   @Override
@@ -52,6 +53,17 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   @Override
   public void initComponent() {
     LibraryInitializer.getInstance().addContributor(this);
+    myRepository.getModelAccess().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        LibraryInitializer.getInstance().update();
+      }
+    });
+  }
+
+  @Override
+  public void disposeComponent() {
+    LibraryInitializer.getInstance().removeContributor(this);
   }
 
   //-------libraries

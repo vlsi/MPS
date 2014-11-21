@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.smodel.EventsCollector;
+import jetbrains.mps.smodel.ModelsEventsCollector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +30,7 @@ import java.util.Map.Entry;
 public class SModelEventsDispatcher {
   private static SModelEventsDispatcher myInstance;
 
-  private EventsCollector myEventsCollector;
+  private ModelsEventsCollector myModelsEventsCollector;
   private final Map<SModel, Set<SModelEventsListener>> myDescriptorsToListenersMap = new HashMap<SModel, Set<SModelEventsListener>>();
 
   public static SModelEventsDispatcher getInstance() {
@@ -46,7 +46,7 @@ public class SModelEventsDispatcher {
     if (listeners == null) {
       listeners = new HashSet();
       myDescriptorsToListenersMap.put(modelDescriptor, listeners);
-      getEventsCollector().add(modelDescriptor);
+      getModelsEventsCollector().startListeningToModel(modelDescriptor);
     }
     listeners.add(l);
   }
@@ -58,7 +58,7 @@ public class SModelEventsDispatcher {
     listeners.remove(l);
     if (listeners.isEmpty()) {
       myDescriptorsToListenersMap.remove(modelDescriptor);
-      getEventsCollector().remove(modelDescriptor);
+      getModelsEventsCollector().stopListeningToModel(modelDescriptor);
       if (myDescriptorsToListenersMap.isEmpty()) {
         disposeEventsCollector();
       }
@@ -71,17 +71,17 @@ public class SModelEventsDispatcher {
   }
 
   private void disposeEventsCollector() {
-    if (myEventsCollector != null) {
-      myEventsCollector.dispose();
-      myEventsCollector = null;
+    if (myModelsEventsCollector != null) {
+      myModelsEventsCollector.dispose();
+      myModelsEventsCollector = null;
     }
   }
 
-  private EventsCollector getEventsCollector() {
-    if (myEventsCollector == null) {
-      myEventsCollector = new MyEventsCollector();
+  private ModelsEventsCollector getModelsEventsCollector() {
+    if (myModelsEventsCollector == null) {
+      myModelsEventsCollector = new MyEventsCollector();
     }
-    return myEventsCollector;
+    return myModelsEventsCollector;
   }
 
   public interface SModelEventsListener {
@@ -93,7 +93,7 @@ public class SModelEventsDispatcher {
   }
 
 
-  private class MyEventsCollector extends EventsCollector {
+  private class MyEventsCollector extends ModelsEventsCollector {
 
     @Override
     protected void eventsHappened(List<SModelEvent> events) {

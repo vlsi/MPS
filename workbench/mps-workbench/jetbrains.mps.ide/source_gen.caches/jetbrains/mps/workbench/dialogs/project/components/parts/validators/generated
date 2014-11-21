@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="c3zfpyoyn9sov92ntcmlwp82kw67hwk">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="5t7vko7lmcdqgrvjfpbb7ytumq3o2g7" />
+  <common hash="-742ydz5a59kxkcwnhghg32ck7ddkhac" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="1560298786499493318" name="Validator" hash="2vd4f8azuxk086fxpivxqacr1jbwo4l">
+    <file name="Validator.java" />
+  </source>
+</dependencies>
+

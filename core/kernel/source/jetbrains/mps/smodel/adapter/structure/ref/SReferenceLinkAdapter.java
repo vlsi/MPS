@@ -19,6 +19,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -48,8 +49,9 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
     SConceptId id = getRoleId().getConceptId();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
-        new SConceptAdapterById(id, concept.getConceptFqName());
+    return concept.isInterfaceConcept() ?
+        MetaAdapterFactory.getInterfaceConcept(id, concept.getConceptFqName()) :
+        MetaAdapterFactory.getConcept(id, concept.getConceptFqName());
   }
 
   protected abstract SNode findInConcept(SNode cnode);
@@ -70,12 +72,13 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @Override
   public SAbstractConcept getTargetConcept() {
     ReferenceDescriptor rd = getReferenceDescriptor();
-    if (rd == null) return new SConceptAdapterById(SNodeUtil.conceptId_BaseConcept,SNodeUtil.conceptName_BaseConcept);
+    if (rd == null) return MetaAdapterFactory.getConcept(SNodeUtil.conceptId_BaseConcept,SNodeUtil.conceptName_BaseConcept);
 
     SConceptId id = rd.getTargetConcept();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
-        new SConceptAdapterById(id, concept.getConceptFqName());
+    return concept.isInterfaceConcept() ?
+        MetaAdapterFactory.getInterfaceConcept(id, concept.getConceptFqName()) :
+        MetaAdapterFactory.getConcept(id, concept.getConceptFqName());
   }
 
   @Override
@@ -139,6 +142,11 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
     public String getReferenceText(@NotNull SNode node) {
       return myScope.getReferenceText(myContextNode, node);
     }
+  }
+
+  @Override
+  public String toString() {
+    return myName;
   }
 
   @Override

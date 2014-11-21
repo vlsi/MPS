@@ -17,6 +17,8 @@ package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.persistence.IdHelper;
+import jetbrains.mps.persistence.MetaModelInfoProvider;
+import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -29,18 +31,16 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -65,7 +65,10 @@ import static jetbrains.mps.smodel.SModel.ImportElement;
 /**
  * evgeny, 11/21/12
  */
-public class BinaryPersistence {
+public final class BinaryPersistence {
+
+  private final MetaModelInfoProvider myMetaInfoProvider;
+  private final SModel myModelData;
 
   public static SModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;
@@ -79,13 +82,19 @@ public class BinaryPersistence {
     }
   }
 
-  public static ModelLoadResult readModel(@NotNull SModelReference mref, @NotNull StreamDataSource source, boolean interfaceOnly) throws ModelReadException {
+  public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull StreamDataSource source, boolean interfaceOnly) throws ModelReadException {
     ModelInputStream mis = null;
+    final SModelReference desiredModelRef = header.getModelReference();
     try {
       mis = new ModelInputStream(source.openInputStream());
-      return loadModel(mref, mis, interfaceOnly);
+      ModelLoadResult rv = loadModel(mis, interfaceOnly);
+      SModelReference actualModelRef = rv.getModel().getReference();
+      if (!actualModelRef.equals(desiredModelRef)) {
+        throw new ModelReadException(String.format("Intended to read model %s, actually read %s", desiredModelRef, actualModelRef), null, actualModelRef);
+      }
+      return rv;
     } catch (IOException e) {
-      throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, mref);
+      throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, desiredModelRef);
     } finally {
       FileUtil.closeFileSafe(mis);
     }
@@ -96,7 +105,7 @@ public class BinaryPersistence {
     ModelInputStream mis = null;
     try {
       mis = new ModelInputStream(content);
-      return loadModel(null, mis, false).getModel();
+      return loadModel(mis, false).getModel();
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
     } finally {
@@ -142,35 +151,40 @@ public class BinaryPersistence {
     return result;
   }
 
-  private static void loadModelProperties(SModel model, ModelInputStream is) throws IOException {
+  private BinaryPersistence(@NotNull MetaModelInfoProvider mmiProvider, SModel modelData) {
+    myMetaInfoProvider = mmiProvider;
+    myModelData = modelData;
+  }
+
+  private void loadModelProperties(ModelInputStream is) throws IOException {
     if (is.readInt() == 0x5a5a) {
       loadDebugInfo(is);
     }
 
     for (Pair<Pair<SLanguage, Integer>, Boolean> ref : loadUsedLanguagesList(is)) {
       if (!ref.o2) {
-        model.addLanguage(ref.o1.o1, ref.o1.o2);
+        myModelData.addLanguage(ref.o1.o1, ref.o1.o2);
       } else {
-        model.addImplicitlyUsedLanguage(ref.o1.o1, ref.o1.o2);
+        myModelData.addImplicitlyUsedLanguage(ref.o1.o1, ref.o1.o2);
       }
     }
-    for (SModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
-    for (SModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
+    for (SModuleReference ref : loadModuleRefList(is)) myModelData.addEngagedOnGenerationLanguage(ref);
+    for (SModuleReference ref : loadModuleRefList(is)) myModelData.addDevKit(ref);
 
-    for (ImportElement imp : loadImports(is)) model.addModelImport(imp);
-    for (ImportElement imp : loadImports(is)) model.addAdditionalModelVersion(imp);
+    for (ImportElement imp : loadImports(is)) myModelData.addModelImport(imp);
+    for (ImportElement imp : loadImports(is)) myModelData.addAdditionalModelVersion(imp);
 
     if (is.readInt() != 0xbaba) {
       throw new IOException("bad stream, no sync token");
     }
   }
 
-  private static void loadDebugInfo(ModelInputStream is) throws IOException {
+  private void loadDebugInfo(ModelInputStream is) throws IOException {
 
     //languages info
     int languagesSize = is.readInt();
     for (int i = 0; i < languagesSize; i++) {
-      DebugRegistry.getInstance().addLanguageName(SLanguageId.deserialize(is.readString()), is.readString());
+      myMetaInfoProvider.setLanguageName(SLanguageId.deserialize(is.readString()), is.readString());
     }
 
     //  devkits??
@@ -184,49 +198,41 @@ public class BinaryPersistence {
     // write concepts
     int conceptsSize = is.readInt();
     for (int i = 0; i < conceptsSize; i++) {
-      DebugRegistry.getInstance().addConceptName(SConceptId.deserialize(is.readString()), is.readString());
+      myMetaInfoProvider.setConceptName(SConceptId.deserialize(is.readString()), is.readString());
     }
 
     // write properties
     int propertiesSize = is.readInt();
     for (int i = 0; i < propertiesSize; i++) {
-      DebugRegistry.getInstance().addPropertyName(SPropertyId.deserialize(is.readString()), is.readString());
+      myMetaInfoProvider.setPropertyName(SPropertyId.deserialize(is.readString()), is.readString());
     }
 
     // write reference roles
     int referencesSize = is.readInt();
     for (int i = 0; i < referencesSize; i++) {
-      DebugRegistry.getInstance().addRefName(SReferenceLinkId.deserialize(is.readString()), is.readString());
+      myMetaInfoProvider.setAssociationName(SReferenceLinkId.deserialize(is.readString()), is.readString());
     }
 
     // write child roles
     int childrenSize = is.readInt();
     for (int i = 0; i < childrenSize; i++) {
-      DebugRegistry.getInstance().addLinkName(SContainmentLinkId.deserialize(is.readString()), is.readString());
+      myMetaInfoProvider.setAggregationName(SContainmentLinkId.deserialize(is.readString()), is.readString());
     }
   }
 
   @NotNull
-  private static ModelLoadResult loadModel(@Nullable SModelReference modelReference, ModelInputStream is, boolean interfaceOnly) throws IOException {
+  private static ModelLoadResult loadModel(ModelInputStream is, boolean interfaceOnly) throws IOException {
     SModelHeader modelHeader = loadHeader(is);
-    if (modelReference == null) {
-      modelReference = modelHeader.getModelReference();
-    }
 
-    LazySModel model = new DefaultSModel(modelReference, modelHeader);
-    loadModelProperties(model, is);
+    LazySModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
+    BinaryPersistence bp = new BinaryPersistence(new RegularMetaModelInfo(), model);
+    bp.loadModelProperties(is);
 
-    NodesReader reader = new NodesReader(modelReference, interfaceOnly);
+    NodesReader reader = new NodesReader(modelHeader.getModelReference(), interfaceOnly);
     List<Pair<SContainmentLink, jetbrains.mps.smodel.SNode>> roots = reader.readNodes(is);
     for (Pair<SContainmentLink, jetbrains.mps.smodel.SNode> r : roots) {
       model.addRootNode(r.o2);
     }
-
-    // ensure imports are back
-    //SModelOperations.validateLanguagesAndImports(model, false, false);
-
-    // TODO
-    // new StructureModificationProcessor(myLinkMap, model).updateModelOnLoad();
     return new ModelLoadResult(model, reader.hasSkippedNodes() ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
   }
 
@@ -352,12 +358,12 @@ public class BinaryPersistence {
     }
   }
 
-  private static Collection<Pair<Pair<SLanguage, Integer>, Boolean>> loadUsedLanguagesList(ModelInputStream is) throws IOException {
+  private Collection<Pair<Pair<SLanguage, Integer>, Boolean>> loadUsedLanguagesList(ModelInputStream is) throws IOException {
     int size = is.readInt();
     List<Pair<Pair<SLanguage, Integer>, Boolean>> result = new ArrayList<Pair<Pair<SLanguage, Integer>, Boolean>>();
     for (int i = 0; i < size; i++) {
       SLanguageId id = SLanguageId.deserialize(is.readString());
-      SLanguage l = new SLanguageAdapterById(id, DebugRegistry.getInstance().getLanguageName(id));
+      SLanguage l = MetaAdapterFactory.getLanguage(id, myMetaInfoProvider.getLanguageName(id));
       int version = is.readInt();
       boolean implicit = is.readBoolean();
       result.add(new Pair<Pair<SLanguage, Integer>, Boolean>(new Pair<SLanguage, Integer>(l, version), implicit));
@@ -398,7 +404,8 @@ public class BinaryPersistence {
       mis = new ModelInputStream(new ByteArrayInputStream(content));
       SModelHeader modelHeader = loadHeader(mis);
       SModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
-      loadModelProperties(model, mis);
+      BinaryPersistence bp = new BinaryPersistence(new RegularMetaModelInfo(), model);
+      bp.loadModelProperties(mis);
       for (ImportElement element : model.importedModels()) {
         consumer.consume(element.getModelReference().getModelName());
       }

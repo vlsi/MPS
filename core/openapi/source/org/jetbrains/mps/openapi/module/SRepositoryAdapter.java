@@ -15,11 +15,48 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @deprecated Bad name (not an adapter for a repository), use {@link org.jetbrains.mps.openapi.module.SRepositoryListenerBase} instead.
  * Will be removed after 3.2.
- * @ToRemove(version = 3.2)
  */
-@Deprecated
-public class SRepositoryAdapter extends SRepositoryListenerBase {
+public class SRepositoryAdapter implements SRepositoryListener {
+
+  @Override
+  public void moduleAdded(@NotNull SModule module) {
+  }
+
+  @Override
+  public void beforeModuleRemoved(@NotNull SModule module) {
+  }
+
+  @Override
+  public void moduleRemoved(@NotNull SModuleReference module) {
+  }
+
+  @Override
+  public void commandStarted(SRepository repository) {
+  }
+
+  @Override
+  public void commandFinished(SRepository repository) {
+  }
+
+  @Override
+  public void updateStarted(SRepository repository) {
+  }
+
+  @Override
+  public void updateFinished(SRepository repository) {
+  }
+
+  @Override
+  public void repositoryCommandStarted(SRepository repository) {
+  }
+
+  @Override
+  public void repositoryCommandFinished(SRepository repository) {
+  }
+
 }

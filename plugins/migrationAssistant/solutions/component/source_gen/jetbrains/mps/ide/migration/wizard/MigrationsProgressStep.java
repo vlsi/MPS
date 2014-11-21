@@ -21,16 +21,17 @@ import jetbrains.mps.ide.ThreadUtils;
 public class MigrationsProgressStep extends MigrationStep {
   public static final String ID = "progress";
   private boolean myFinished;
-  private boolean[] mySuccess;
+  private boolean mySuccess = true;
   private MigrationManager myManager;
   private JBList myList;
   private Set<String> myExecuted = new HashSet<String>();
-  public MigrationsProgressStep(Project project, MigrationManager manager, boolean[] success) {
+
+  public MigrationsProgressStep(Project project, MigrationManager manager) {
     super(project, "Migration In Progress", ID);
     myManager = manager;
-    mySuccess = success;
     createComponent();
   }
+
   @Override
   protected final void createComponent() {
     super.createComponent();
@@ -42,6 +43,7 @@ public class MigrationsProgressStep extends MigrationStep {
     listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
     myComponent.add(listPanel, BorderLayout.CENTER);
   }
+
   @Override
   public Runnable getAutostartTask() {
     return new Runnable() {
@@ -50,64 +52,81 @@ public class MigrationsProgressStep extends MigrationStep {
       }
     };
   }
+
   private void doRun() {
     // if this assert fails, following invokeLater()s is not needed 
     assert !(SwingUtilities.isEventDispatchThread());
     PersistenceRegistry.getInstance().disableFastFindUsages();
-    mySuccess[0] = true;
-    do {
-      final MigrationManager.MigrationState result = myManager.nextStep();
-      if (result instanceof MigrationManager.Step) {
-        final String step = ((MigrationManager.Step) result).getDescription();
-        final DefaultListModel model = (DefaultListModel) myList.getModel();
-        ThreadUtils.runInUIThreadAndWait(new Runnable() {
-          @Override
-          public void run() {
-            model.addElement(step);
-            myList.ensureIndexIsVisible(model.indexOf(step));
-            myList.repaint();
-          }
-        });
-        ThreadUtils.runInUIThreadAndWait(new Runnable() {
-          @Override
-          public void run() {
-            mySuccess[0] = ((MigrationManager.Step) result).execute();
-          }
-        });
-      } else
-      if (result instanceof MigrationManager.Conflict) {
-        mySuccess[0] = false;
-      } else
-      if (result instanceof MigrationManager.Error) {
-        mySuccess[0] = false;
-      } else
-      if (result instanceof MigrationManager.Finished) {
-        break;
-      } else {
-        assert false;
-      }
-    } while (mySuccess[0]);
-    PersistenceRegistry.getInstance().enableFastFindUsages();
+
+    while (executeSingleStep(myManager.nextProjectStep())) {
+      // just continue 
+    }
+
+    while (executeSingleStep(myManager.nextStep())) {
+      // just continue 
+    }
+
+    mySuccess = mySuccess && !(myManager.isMigrationRequired());
+
     myFinished = true;
+
+    PersistenceRegistry.getInstance().enableFastFindUsages();
   }
+
+  private boolean executeSingleStep(final MigrationManager.MigrationState result) {
+    if (result instanceof MigrationManager.Finished) {
+      return false;
+    }
+
+    if (result instanceof MigrationManager.Step) {
+      final String step = ((MigrationManager.Step) result).getDescription();
+      final DefaultListModel model = (DefaultListModel) myList.getModel();
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        @Override
+        public void run() {
+          model.addElement(step);
+          myList.ensureIndexIsVisible(model.indexOf(step));
+          myList.repaint();
+        }
+      });
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        @Override
+        public void run() {
+          mySuccess = ((MigrationManager.Step) result).execute();
+        }
+      });
+
+      return mySuccess;
+    } else {
+      return false;
+    }
+  }
+
   @Override
   public Object getNextStepId() {
-    if (mySuccess[0]) {
+    if (mySuccess) {
       return MigrationsFinishedStep.ID;
     } else {
       return MigrationsErrorStep.ID;
     }
   }
+
   @Override
   public Object getPreviousStepId() {
     return null;
   }
+
   @Override
   public boolean isComplete() {
     return myFinished;
   }
+
   @Override
   public boolean canBeCancelled() {
     return false;
+  }
+
+  public boolean isSuccessfull() {
+    return mySuccess;
   }
 }

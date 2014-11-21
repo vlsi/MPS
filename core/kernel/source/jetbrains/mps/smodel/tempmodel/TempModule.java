@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.smodel.tempmodel;
 
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -24,6 +25,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
@@ -36,7 +39,8 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
 
-public class TempModule extends AbstractModule implements SModule, MPSModuleOwner {
+public class TempModule extends ReloadableModuleBase implements SModule, MPSModuleOwner {
+  private final static Logger LOG = LogManager.getLogger(TempModule.class);
   private final ModuleDescriptor myDescriptor;
 
   private final IFile mySourceGen;
@@ -66,6 +70,18 @@ public class TempModule extends AbstractModule implements SModule, MPSModuleOwne
     } else {
       myJavaModuleFacet = null;
     }
+  }
+
+  @Override
+  public void reload() {
+    if (!willLoad()) return;
+    LOG.debug("Reloading temporary module " + this);
+    ClassLoaderManager.getInstance().reloadModule(this);
+  }
+
+  @Override
+  public boolean willLoad() {
+    return myJavaModuleFacet != null;
   }
 
   public boolean isHidden() {
@@ -108,7 +124,7 @@ public class TempModule extends AbstractModule implements SModule, MPSModuleOwne
 
       return FileSystem.getInstance().getFileByPath(temp.getAbsolutePath());
     } catch (IOException e) {
-      // todo: log
+      LOG.error("", e);
       return null;
     }
   }

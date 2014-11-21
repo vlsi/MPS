@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
@@ -18,7 +18,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
@@ -55,11 +55,13 @@ public class ReadHelper9 {
   }
 
   public void addUsedLanguage(SModel model, String index, SLanguageId ref, int version) {
-    model.addLanguage(new SLanguageAdapterById(ref, DebugRegistry.getInstance().getLanguageName(ref)), version);
+    String name = DebugRegistry.getInstance().getLanguageName(ref);
+    model.addLanguage(MetaAdapterFactory.getLanguage(ref, name), version);
     registerLanguage(index, ref);
   }
   public void addImplicitlyUsedLanguage(SModel model, String index, SLanguageId ref, int version) {
-    model.addImplicitlyUsedLanguage(new SLanguageAdapterById(ref, DebugRegistry.getInstance().getLanguageName(ref)), version);
+    String name = DebugRegistry.getInstance().getLanguageName(ref);
+    model.addImplicitlyUsedLanguage(MetaAdapterFactory.getLanguage(ref, name), version);
     registerLanguage(index, ref);
   }
   public void registerLanguage(String index, SLanguageId ref) {
@@ -101,9 +103,13 @@ public class ReadHelper9 {
 
   public SConcept getStubConcept(SConceptId type) {
     String cname = DebugRegistry.getInstance().getConceptName(type);
-    String ns = NameUtil.namespaceFromLongName(cname);
-    String sname = NameUtil.shortNameFromLongName(cname);
-    return new SConceptAdapterByName(ns + ((ns.equals("") ? "" : ".")) + "Stub" + sname);
+    return createStubConcept(cname);
+  }
+  public static SConcept createStubConcept(String conceptFQN) {
+    assert conceptFQN != null : "Can't retrieve stub concept without fqn of the original one";
+    String ns = NameUtil.namespaceFromLongName(conceptFQN);
+    String sname = NameUtil.shortNameFromLongName(conceptFQN);
+    return MetaAdapterFactoryByName.getConcept(ns + ((ns.equals("") ? "" : ".")) + "Stub" + sname);
   }
 
   public Tuples._3<ConceptKind, StaticScope, Boolean> readNodeInfo(String s) {

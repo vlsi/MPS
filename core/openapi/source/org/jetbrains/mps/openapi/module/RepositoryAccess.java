@@ -17,7 +17,9 @@ package org.jetbrains.mps.openapi.module;
 
 /**
  * Gives convenient access to access control methods on a repository
+ * @deprecated
  */
+@Deprecated
 public interface RepositoryAccess {
   /**
    * Modifications to properties of modules and other elements stored in a repository must only be performed from within a managed command.

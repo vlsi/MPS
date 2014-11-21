@@ -16,8 +16,12 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptRegistryUtil {
   public static ConceptDescriptor getConceptDescriptor(String fqName) {
@@ -28,5 +32,12 @@ public class ConceptRegistryUtil {
   public static ConceptDescriptor getConceptDescriptor(SConceptId conceptId) {
     ConceptDescriptor result = ConceptRegistry.getInstance().getConceptDescriptor(conceptId);
     return result instanceof IllegalConceptDescriptor ? null : result;
+  }
+
+  public static ConstraintsDescriptor getConstraintsDescriptor(SAbstractConcept concept) {
+    if (concept instanceof SAbstractConceptAdapterById) {
+      return ConceptRegistry.getInstance().getConstraintsDescriptor(((SConceptAdapterById) concept).getId());
+    }
+    return ConceptRegistry.getInstance().getConstraintsDescriptor(concept.getQualifiedName());
   }
 }

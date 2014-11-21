@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,14 @@ import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.XmlFastScanner;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class HashProvider9 extends IHashProvider {
-  private static final Logger LOG = LogManager.getLogger(HashProvider9.class);
 
   @Override
   public String getHash(String content) {
@@ -43,49 +43,52 @@ public class HashProvider9 extends IHashProvider {
 
   private static void extractRootHashes(String content, Map<String, String> rootHashes) {
     XmlFastScanner scanner = new XmlFastScanner(content.toCharArray());
-    int depth = 0, token, rootStart = -1;
+    int token, nodeStart = -1, nodeEnd = -1;
     String rootId = null;
 
-    boolean isEmpty = true;
+    // { mandatory space} id {optional space} = {optional space} "{value}"
+    final Matcher nodeIdMatcher = Pattern.compile("\\sid\\s*=\\s*\"([^\"]+)\"").matcher("");
+    final IdEncoder idEncoder = new IdEncoder();
+
+    boolean nodeElementFound = false;
     while ((token = scanner.next()) != XmlFastScanner.EOI) {
+      if (token != XmlFastScanner.OPEN_TAG && token != XmlFastScanner.SIMPLE_TAG && token != XmlFastScanner.CLOSE_TAG) {
+        continue;
+      }
+      if (scanner.tagDepth() != 1 || !ModelPersistence.NODE.equals(scanner.getName())) {
+        continue;
+      }
       switch (token) {
-        case XmlFastScanner.OPEN_TAG:
-          depth++;
-          if (depth == 2 && ModelPersistence.ROOT_NODE.equals(scanner.getName())) {
-            rootStart = scanner.getTokenOffset();
-            rootId = extractId(scanner.token());
-            if (rootId != null && isEmpty) {
-              rootHashes.put(GeneratableSModel.HEADER, ModelDigestUtil.hashText(scanner.getText(0, rootStart)));
-              isEmpty = false;
-            }
-          }
-          break;
         case XmlFastScanner.SIMPLE_TAG:
-          if (depth == 1 && ModelPersistence.ROOT_NODE.equals(scanner.getName())) {
-            rootId = extractId(scanner.token());
-            if (rootId != null) {
-              String s = scanner.getText(scanner.getTokenOffset(), scanner.getOffset());
-              rootHashes.put(rootId, ModelDigestUtil.hashText(s));
-            }
+          nodeEnd = scanner.getOffset();
+          // fall-through
+        case XmlFastScanner.OPEN_TAG:
+          nodeStart = scanner.getTokenOffset();
+          if (nodeIdMatcher.reset(scanner.token()).find()) {
+            rootId = nodeIdMatcher.group(1);
+          } else {
+            rootId = null;
+          }
+          if (rootId != null && !nodeElementFound) {
+            rootHashes.put(GeneratableSModel.HEADER, ModelDigestUtil.hashText(scanner.getText(0, nodeStart)));
+            nodeElementFound = true;
           }
           break;
         case XmlFastScanner.CLOSE_TAG:
-          if (depth == 2) {
-            if (rootId != null && ModelPersistence.ROOT_NODE.equals(scanner.getName())) {
-              String s = scanner.getText(rootStart, scanner.getOffset());
-              rootHashes.put(rootId, ModelDigestUtil.hashText(s));
-            }
-            rootStart = -1;
-            rootId = null;
-          }
-          depth--;
+          nodeEnd = scanner.getOffset();
           break;
       }
+      if (rootId != null && nodeStart != -1 && nodeEnd != -1) {
+        String s = scanner.getText(nodeStart, nodeEnd);
+        SNodeId nodeId = idEncoder.parseNodeId(rootId);
+        // presentation of node id in persistence is different from what customers use (SNodeId.toString).
+        // However, it's bad idea to have map<string,string> here, and shall get refactored.
+        rootHashes.put(nodeId.toString(), ModelDigestUtil.hashText(s));
+        nodeStart = nodeEnd = -1;
+        rootId = null;
+      }
     }
-    if (depth != 0) {
-      LOG.error("xml: bad data");
-    }
-    if (isEmpty) {
+    if (!nodeElementFound) {
       rootHashes.put(GeneratableSModel.HEADER, ModelDigestUtil.hashText(content));
     }
   }

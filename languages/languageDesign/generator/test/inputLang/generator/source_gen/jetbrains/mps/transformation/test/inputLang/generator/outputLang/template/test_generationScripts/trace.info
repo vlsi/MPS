@@ -14,11 +14,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
-    <file name="TemplateModelImpl.java">
-      <unit at="19,0,71,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl" />
-    </file>
     <file name="QueriesGenerated.java">
       <unit at="22,0,77,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.QueriesGenerated" />
+    </file>
+    <file name="TemplateModelImpl.java">
+      <unit at="19,0,71,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)/1195164863269">
@@ -279,6 +279,12 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)/1195168984336">
+    <file name="QueriesGenerated.java">
+      <node id="1195598336245" at="46,106,47,237" concept="8" />
+      <node id="1195170588727" at="49,114,50,200" concept="8" />
+      <scope id="1195598330259" at="46,106,47,237" />
+      <scope id="1195170582048" at="49,114,50,200" />
+    </file>
     <file name="TemplateOutputRoot__by__MappingRule.java">
       <node id="1195168984336" at="26,43,27,32" concept="8" />
       <node id="1195168984336" at="29,158,30,123" concept="7" />
@@ -323,14 +329,22 @@
       </scope>
       <unit id="1195168984336" at="22,0,52,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateOutputRoot__by__MappingRule" />
     </file>
-    <file name="QueriesGenerated.java">
-      <node id="1195598336245" at="46,106,47,237" concept="8" />
-      <node id="1195170588727" at="49,114,50,200" concept="8" />
-      <scope id="1195598330259" at="46,106,47,237" />
-      <scope id="1195170582048" at="49,114,50,200" />
-    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)/1195509228077">
+    <file name="QueriesGenerated.java">
+      <node id="7376433222636453951" at="52,97,53,18" concept="9" />
+      <node id="1202246979893" at="54,54,55,13" concept="8" />
+      <node id="1206478331710" at="56,5,57,64" concept="2" />
+      <node id="1195510471017" at="57,64,58,129" concept="2" />
+      <node id="1195598105572" at="58,129,59,283" concept="7" />
+      <node id="1195598114060" at="59,283,60,211" concept="2" />
+      <node id="1202340629491" at="60,211,61,181" concept="2" />
+      <node id="1202245790005" at="53,18,56,5" concept="5" />
+      <scope id="1202245790006" at="54,54,55,13" />
+      <scope id="1195509228079" at="52,97,61,181">
+        <var name="inputRoot" id="1195598105573" />
+      </scope>
+    </file>
     <file name="Scripttest__preMappingScript.java">
       <node id="1195509228077" at="17,41,18,29" concept="8" />
       <node id="1195509228077" at="20,31,21,146" concept="8" />
@@ -361,22 +375,22 @@
       </scope>
       <unit id="1195509228077" at="13,0,34,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Scripttest__preMappingScript" />
     </file>
-    <file name="QueriesGenerated.java">
-      <node id="7376433222636453951" at="52,97,53,18" concept="9" />
-      <node id="1202246979893" at="54,54,55,13" concept="8" />
-      <node id="1206478331710" at="56,5,57,64" concept="2" />
-      <node id="1195510471017" at="57,64,58,129" concept="2" />
-      <node id="1195598105572" at="58,129,59,283" concept="7" />
-      <node id="1195598114060" at="59,283,60,211" concept="2" />
-      <node id="1202340629491" at="60,211,61,181" concept="2" />
-      <node id="1202245790005" at="53,18,56,5" concept="5" />
-      <scope id="1202245790006" at="54,54,55,13" />
-      <scope id="1195509228079" at="52,97,61,181">
-        <var name="inputRoot" id="1195598105573" />
-      </scope>
-    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)/1195510384868">
+    <file name="QueriesGenerated.java">
+      <node id="7376433222636454223" at="63,97,64,18" concept="9" />
+      <node id="1206478452703" at="64,18,65,66" concept="7" />
+      <node id="1206478475661" at="66,25,67,13" concept="8" />
+      <node id="1195510384871" at="68,5,69,130" concept="2" />
+      <node id="1195510606892" at="69,130,70,285" concept="7" />
+      <node id="1195510616412" at="70,285,71,205" concept="2" />
+      <node id="1206478456010" at="65,66,68,5" concept="5" />
+      <scope id="1206478456011" at="66,25,67,13" />
+      <scope id="1195510384870" at="63,97,71,205">
+        <var name="object" id="1206478452704" />
+        <var name="outputRoot" id="1195510606893" />
+      </scope>
+    </file>
     <file name="Scripttest__postMappingScript.java">
       <node id="1195510384868" at="17,41,18,29" concept="8" />
       <node id="1195510384868" at="20,31,21,147" concept="8" />
@@ -406,20 +420,6 @@
         <var name="model" id="1195510384868" />
       </scope>
       <unit id="1195510384868" at="13,0,34,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Scripttest__postMappingScript" />
-    </file>
-    <file name="QueriesGenerated.java">
-      <node id="7376433222636454223" at="63,97,64,18" concept="9" />
-      <node id="1206478452703" at="64,18,65,66" concept="7" />
-      <node id="1206478475661" at="66,25,67,13" concept="8" />
-      <node id="1195510384871" at="68,5,69,130" concept="2" />
-      <node id="1195510606892" at="69,130,70,285" concept="7" />
-      <node id="1195510616412" at="70,285,71,205" concept="2" />
-      <node id="1206478456010" at="65,66,68,5" concept="5" />
-      <scope id="1206478456011" at="66,25,67,13" />
-      <scope id="1195510384870" at="63,97,71,205">
-        <var name="object" id="1206478452704" />
-        <var name="outputRoot" id="1195510606893" />
-      </scope>
     </file>
   </root>
 </debug-info>

@@ -17,7 +17,11 @@ package jetbrains.mps.smodel.runtime.interpreted;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
@@ -37,6 +41,7 @@ import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -99,7 +104,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
-        SNode declaration = SModelUtil.findConceptDeclaration(myName);
+        SNode declaration = findConcept();
         if (declaration == null || !SNodeUtil.isInstanceOfAbstractConceptDeclaration(declaration)) {
           // todo: ?
           isLegal = false;
@@ -214,6 +219,17 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         }
       }
     });
+  }
+
+  private SNode findConcept() {
+    String langName = NameUtil.namespaceFromConceptFQName(myName);
+    Language lang = ModuleRepositoryFacade.getInstance().getModule(langName, Language.class);
+    if (lang == null) return null;
+
+    SModel strucModel = LanguageAspect.STRUCTURE.get(lang);
+    if (strucModel == null) return null;
+
+    return strucModel.getNode(new Regular(myId.getConceptId()));
   }
 
   private void init() {

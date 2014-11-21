@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
@@ -47,7 +47,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Generator extends AbstractModule {
+public class Generator extends ReloadableModuleBase {
   public static final Logger LOG = LogManager.getLogger(Generator.class);
 
   static {
@@ -108,7 +108,7 @@ public class Generator extends AbstractModule {
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
 
     assertCanChange();
@@ -117,7 +117,7 @@ public class Generator extends AbstractModule {
     int index = languageDescriptor.getGenerators().indexOf(getModuleDescriptor());
     languageDescriptor.getGenerators().remove(index);
     languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
-    getSourceLanguage().setLanguageDescriptor(languageDescriptor, reloadClasses);
+    getSourceLanguage().setLanguageDescriptor(languageDescriptor);
 
     setChanged();
     dependenciesChanged();
@@ -155,13 +155,15 @@ public class Generator extends AbstractModule {
     final SRepository repo = getRepository();
     Set<SDependency> dependencies = new HashSet<SDependency>();
     dependencies.addAll(IterableUtil.asCollection(super.getDeclaredDependencies()));
-    //generator sees its source language
-    dependencies.add(new SDependencyImpl(getSourceLanguage(), SDependencyScope.DEFAULT, false));
-    // and runtimes thereof  (XXX also why not through getDeclaredDependencies() with Scope==RUNTIME instead?
-    for (SModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
-      SModule rt = repo == null ? ModuleRepositoryFacade.getInstance().getModule(ref) : ref.resolve(repo);
-      if (rt != null) {
-        dependencies.add(new SDependencyImpl(rt, SDependencyScope.RUNTIME, false));
+    // generator sees its source language
+    if (mySourceLanguage.getRepository() != null) {
+      dependencies.add(new SDependencyImpl(mySourceLanguage, SDependencyScope.DEFAULT, false));
+      // and runtimes thereof  (XXX also why not through getDeclaredDependencies() with Scope==RUNTIME instead?
+      for (SModuleReference ref : mySourceLanguage.getRuntimeModulesReferences()) {
+        SModule rt = repo == null ? ModuleRepositoryFacade.getInstance().getModule(ref) : ref.resolve(repo);
+        if (rt != null) {
+          dependencies.add(new SDependencyImpl(rt, SDependencyScope.RUNTIME, false));
+        }
       }
     }
     //generator sees all dependent generators as non-reexport

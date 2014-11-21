@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -28,7 +29,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
-import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -359,6 +359,24 @@ public class EditorManager {
         result = new EditorCell_Error(context, node, "!exception!:" + SNodeOperations.getDebugText(node));
         result.setBig(true);
       } finally {
+        /**
+         * Always adding cell's node to the set of dependencies of the corresponding cell.
+         * It was done because read-access to the cell's node can be not recorded during
+         * editor update process for some specific editors - if cell's node was not required
+         * for the cell creation process.
+         *
+         * E.G.
+         * - node is represented by only constant cells
+         * - node is represented as a list of child nodes and at the moment we create editor
+         * there were no children in model
+         *
+         * "constant-only" cells should be still re-created if node attribute was added.
+         * "pure-child" cell should be re-created if first child was added to a node.
+         *
+         * To handle such situations & trigger editor update process for the corresponding
+         * cell, we are explicitly adding "self" node to the set of cell dependencies here.
+         */
+        nodeAccessListener.nodeUnclassifiedReadAccess(node);
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         addNodeDependenciesToEditor(result, nodeAccessListener, context);
         if (!isAttributedCell(result)) {
@@ -397,6 +415,24 @@ public class EditorManager {
         nodeCell = new EditorCell_Error(context, node, "!exception!:" + SNodeOperations.getDebugText(node));
         nodeCell.setBig(true);
       } finally {
+        /**
+         * Always adding cell's node to the set of dependencies of the corresponding cell.
+         * It was done because read-access to the cell's node can be not recorded during
+         * editor update process for some specific editors - if cell's node was not required
+         * for the cell creation process.
+         *
+         * E.G.
+         * - node is represented by only constant cells
+         * - node is represented as a list of child nodes and at the moment we create editor
+         * there were no children in model
+         *
+         * "constant-only" cells should be still re-created if node attribute was added.
+         * "pure-child" cell should be re-created if first child was added to a node.
+         *
+         * To handle such situations & trigger editor update process for the corresponding
+         * cell, we are explicitly adding "self" node to the set of cell dependencies here.
+         */
+        nodeAccessListener.nodeUnclassifiedReadAccess(node);
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         assert nodeCell != null;
         if (!isAttributedCell(nodeCell)) {
@@ -427,8 +463,8 @@ public class EditorManager {
    * attribute is attached to the main node then the "main" cell will be wrapped into a property/reference attribute node editor cell(s)
    * and returned from EditorCellFactory.createEditorCell() method execution.
    * <p/>
-   * To property handle such situations we should "unwrap" returned cell to get direct access to the big cell representing original main node.
-   * This method was created ti handle such situations.
+   * To properly handle such situations we should "unwrap" returned cell to get direct access to the big cell representing original main node.
+   * This method was created to handle such situations.
    *
    * @param cell EditorCell created by EditorCellFactory.createEditorCell() method
    * @param node main node used as a parameter while creating this cell
@@ -518,25 +554,22 @@ public class EditorManager {
 
   private EditorCell addSideTransformHintCell(EditorCell nodeCell, SNode node) {
     CellSide side;
-    if (STHintUtil.hasRightTransformHint(node)) {
+    if (SideTransformInfoUtil.hasRightTransformInfo(node)) {
       side = CellSide.RIGHT;
-    } else if (STHintUtil.hasLeftTransformHint(node)) {
+    } else if (SideTransformInfoUtil.hasLeftTransformInfo(node)) {
       side = CellSide.LEFT;
     } else {
       return nodeCell;
     }
 
-    String anchorId = STHintUtil.getTransformHintAnchorCellId(node);
-  /*
-   * AnchorCellId is saved in UserObjects now. UserObjects are not updated on undo/redo in model, so sometimes
-   * it's possible that SNode got side-transform hint (as a result of undo action), but AnchorCellId & HintAnchorTag are not restored.
-   * To handle this situation we are checking anchorId for null below and process null value somehow.
-   *
-   * proper solution would be to save anchorId together with side=transform hint in model and undo/redo corresponding value properly.
-   * in this case we will be able to remove "anchorId == null ?" check below and un-comment ssertion.
-   */
-//    assert anchorId != null : "CellId was not specified";
-    EditorCell anchorCell = anchorId == null ? getUnwrappedNodeBigCell(nodeCell, node) : CellFinderUtil.findChildById(nodeCell, node, anchorId, true);
+    EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(nodeCell, node);
+    if (unwrappedNodeBigCell == null) {
+      return nodeCell;
+    }
+
+    String anchorId = SideTransformInfoUtil.getCellIdFromTransformInfo(node);
+    assert anchorId != null;
+    EditorCell anchorCell = CellFinderUtil.findChildById(unwrappedNodeBigCell, node, anchorId, true);
     if (anchorCell == null) {
       // anchor cell was not found. Possible reason: different node presentations in editor and inside inspector, so
       // side-transforms in the main editor should not affect inspector.
@@ -547,10 +580,10 @@ public class EditorManager {
         "Anchor cell should be associated with the same node as main cell. Anchor cell node: " + anchorCell.getSNode().getNodeId() + "; main node: " +
             node.getNodeId();
 
-    String sideTransformTag = STHintUtil.getTransformHintAnchorTag(node);
-
+    String sideTransformTag = SideTransformInfoUtil.getAnchorTagFromTransformInfo(node);
+    assert sideTransformTag != null;
     EditorCell_STHint sideTransformHintCell =
-        new EditorCell_STHint(nodeCell, anchorCell, side, sideTransformTag, getCurrentlySelectedCellInfo(nodeCell.getContext()));
+        new EditorCell_STHint(unwrappedNodeBigCell, anchorCell, side, sideTransformTag, getCurrentlySelectedCellInfo(unwrappedNodeBigCell.getContext()));
     return sideTransformHintCell.install();
   }
 

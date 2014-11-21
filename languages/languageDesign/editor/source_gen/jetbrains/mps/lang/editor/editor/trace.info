@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,297,0" name="jetbrains.mps.lang.editor.editor.EditorAspectDescriptorImpl" />
+      <unit at="13,0,299,0" name="jetbrains.mps.lang.editor.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/1078153915535">
@@ -31886,6 +31886,33 @@
         <var name="node" id="7723470090030779211" />
       </scope>
       <unit id="7723470090030779206" at="20,0,69,0" name="jetbrains.mps.lang.editor.editor.CellModelCollection_FoldedCellComponent" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/779128492854398965">
+    <file name="SideTransformInfo_Editor.java">
+      <node id="779128492854398965" at="14,79,15,71" concept="8" />
+      <node id="779128492854422646" at="17,97,18,70" concept="7" />
+      <node id="779128492854422646" at="18,70,19,76" concept="7" />
+      <node id="779128492854422646" at="19,76,20,95" concept="7" />
+      <node id="779128492854422646" at="20,95,21,28" concept="2" />
+      <node id="779128492854422646" at="21,28,22,22" concept="8" />
+      <node id="779128492854398965" at="14,0,17,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="779128492854422646" at="17,0,24,0" concept="6" trace="createAttributedNodeCell_l4s2w4_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="779128492854398965" at="14,79,15,71" />
+      <scope id="779128492854398965" at="14,0,17,0">
+        <var name="editorContext" id="779128492854398965" />
+        <var name="node" id="779128492854398965" />
+      </scope>
+      <scope id="779128492854422646" at="17,97,22,22">
+        <var name="editorCell" id="779128492854422646" />
+        <var name="manager" id="779128492854422646" />
+        <var name="opContext" id="779128492854422646" />
+      </scope>
+      <scope id="779128492854422646" at="17,0,24,0">
+        <var name="editorContext" id="779128492854422646" />
+        <var name="node" id="779128492854422646" />
+      </scope>
+      <unit id="779128492854398965" at="13,0,25,0" name="jetbrains.mps.lang.editor.editor.SideTransformInfo_Editor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/8190678916238087351">

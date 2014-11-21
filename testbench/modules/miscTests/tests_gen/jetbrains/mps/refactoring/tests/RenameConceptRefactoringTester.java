@@ -23,7 +23,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
   }
   @Override
   public boolean testRefactoring(final Project project, final SModel sandbox1, final SModel sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
-    final String newConceptName = "MyVeryGoodConcept2";
+    final String newConceptName = "MyVeryGoodConcept1";
     final ModelAccess modelAccess = project.getRepository().getModelAccess();
     final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
     modelAccess.runReadAction(new Runnable() {

@@ -595,45 +595,6 @@
     </file>
   </root>
   <root nodeRef="r:fc6b4266-fe93-4e02-bc36-aebff4c903c3(jetbrains.mps.baseLanguage.execution.api)/1240470842553276028">
-    <file name="JavaRunParameters_Configuration_Editor.java">
-      <node id="1240470842553276030" at="11,0,12,0" concept="3" trace="myJavaOptionsEditor" />
-      <node id="1240470842553276028" at="12,31,13,34" concept="0" />
-      <node id="558452619581600183" at="12,31,13,34" concept="2" />
-      <node id="1240470842553276036" at="16,58,17,31" concept="8" />
-      <node id="1240470842553276028" at="19,112,20,68" concept="0" />
-      <node id="558452619581250354" at="19,112,20,68" concept="2" />
-      <node id="1240470842553276028" at="22,84,23,68" concept="0" />
-      <node id="558452619581193505" at="22,84,23,68" concept="2" />
-      <node id="1240470842553276028" at="27,55,28,53" concept="8" />
-      <node id="1240470842553276028" at="12,0,15,0" concept="6" trace="disposeEditor#()V" />
-      <node id="1240470842553276028" at="19,0,22,0" concept="6" trace="applyEditorTo#(Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration;)V" />
-      <node id="1240470842553276028" at="22,0,25,0" concept="6" trace="resetEditorFrom#(Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration;)V" />
-      <node id="1240470842553276028" at="27,0,30,0" concept="6" trace="create#()Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration;" />
-      <node id="1240470842553276028" at="15,0,19,0" concept="6" trace="createEditor#()Ljetbrains/mps/baseLanguage/execution/api/JavaConfigurationEditorComponent;" />
-      <node id="1240470842553276028" at="25,51,30,7" concept="13" />
-      <node id="1240470842553276028" at="25,0,32,0" concept="1" trace="JavaRunParameters_Configuration_Editor#()V" />
-      <scope id="1240470842553276028" at="12,31,13,34" />
-      <scope id="1240470842553276057" at="12,31,13,34" />
-      <scope id="1240470842553276035" at="16,58,17,31" />
-      <scope id="1240470842553276028" at="19,112,20,68" />
-      <scope id="1240470842553276048" at="19,112,20,68" />
-      <scope id="1240470842553276028" at="22,84,23,68" />
-      <scope id="1240470842553276039" at="22,84,23,68" />
-      <scope id="1240470842553276028" at="27,55,28,53" />
-      <scope id="1240470842553276028" at="12,0,15,0" />
-      <scope id="1240470842553276028" at="19,0,22,0">
-        <var name="configuration" id="1240470842553276028" />
-      </scope>
-      <scope id="1240470842553276028" at="22,0,25,0">
-        <var name="configuration" id="1240470842553276028" />
-      </scope>
-      <scope id="1240470842553276028" at="27,0,30,0" />
-      <scope id="1240470842553276028" at="15,0,19,0" />
-      <scope id="1240470842553276028" at="25,51,30,7" />
-      <scope id="1240470842553276028" at="25,0,32,0" />
-      <unit id="1240470842553276028" at="26,14,30,5" name="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor$1" />
-      <unit id="1240470842553276028" at="10,0,33,0" name="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor" />
-    </file>
     <file name="JavaRunParameters_Configuration.java">
       <node id="1240470842553276028" at="24,76,25,57" concept="2" />
       <node id="1240470842553276028" at="29,26,30,81" concept="14" />
@@ -720,6 +681,45 @@
       <scope id="1240470842553276028" at="40,0,54,0" />
       <unit id="1240470842553276028" at="54,0,67,0" name="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration$MyState" />
       <unit id="1240470842553276028" at="18,0,84,0" name="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration" />
+    </file>
+    <file name="JavaRunParameters_Configuration_Editor.java">
+      <node id="1240470842553276030" at="11,0,12,0" concept="3" trace="myJavaOptionsEditor" />
+      <node id="1240470842553276028" at="12,31,13,34" concept="0" />
+      <node id="558452619581600183" at="12,31,13,34" concept="2" />
+      <node id="1240470842553276036" at="16,58,17,31" concept="8" />
+      <node id="1240470842553276028" at="19,112,20,68" concept="0" />
+      <node id="558452619581250354" at="19,112,20,68" concept="2" />
+      <node id="1240470842553276028" at="22,84,23,68" concept="0" />
+      <node id="558452619581193505" at="22,84,23,68" concept="2" />
+      <node id="1240470842553276028" at="27,55,28,53" concept="8" />
+      <node id="1240470842553276028" at="12,0,15,0" concept="6" trace="disposeEditor#()V" />
+      <node id="1240470842553276028" at="19,0,22,0" concept="6" trace="applyEditorTo#(Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration;)V" />
+      <node id="1240470842553276028" at="22,0,25,0" concept="6" trace="resetEditorFrom#(Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration;)V" />
+      <node id="1240470842553276028" at="27,0,30,0" concept="6" trace="create#()Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration;" />
+      <node id="1240470842553276028" at="15,0,19,0" concept="6" trace="createEditor#()Ljetbrains/mps/baseLanguage/execution/api/JavaConfigurationEditorComponent;" />
+      <node id="1240470842553276028" at="25,51,30,7" concept="13" />
+      <node id="1240470842553276028" at="25,0,32,0" concept="1" trace="JavaRunParameters_Configuration_Editor#()V" />
+      <scope id="1240470842553276028" at="12,31,13,34" />
+      <scope id="1240470842553276057" at="12,31,13,34" />
+      <scope id="1240470842553276035" at="16,58,17,31" />
+      <scope id="1240470842553276028" at="19,112,20,68" />
+      <scope id="1240470842553276048" at="19,112,20,68" />
+      <scope id="1240470842553276028" at="22,84,23,68" />
+      <scope id="1240470842553276039" at="22,84,23,68" />
+      <scope id="1240470842553276028" at="27,55,28,53" />
+      <scope id="1240470842553276028" at="12,0,15,0" />
+      <scope id="1240470842553276028" at="19,0,22,0">
+        <var name="configuration" id="1240470842553276028" />
+      </scope>
+      <scope id="1240470842553276028" at="22,0,25,0">
+        <var name="configuration" id="1240470842553276028" />
+      </scope>
+      <scope id="1240470842553276028" at="27,0,30,0" />
+      <scope id="1240470842553276028" at="15,0,19,0" />
+      <scope id="1240470842553276028" at="25,51,30,7" />
+      <scope id="1240470842553276028" at="25,0,32,0" />
+      <unit id="1240470842553276028" at="26,14,30,5" name="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor$1" />
+      <unit id="1240470842553276028" at="10,0,33,0" name="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor" />
     </file>
   </root>
   <root nodeRef="r:fc6b4266-fe93-4e02-bc36-aebff4c903c3(jetbrains.mps.baseLanguage.execution.api)/1240470842553519759">

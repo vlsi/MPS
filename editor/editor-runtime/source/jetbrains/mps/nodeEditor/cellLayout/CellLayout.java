@@ -39,4 +39,6 @@ public interface CellLayout extends jetbrains.mps.openapi.editor.cells.CellLayou
 
   @Nullable
   List<? extends EditorCell> getSelectionCells(EditorCell_Collection editorCells);
+
+  void requestRelayout(EditorCell_Collection editorCells);
 }

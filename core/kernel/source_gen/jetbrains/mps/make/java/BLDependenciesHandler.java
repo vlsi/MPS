@@ -11,10 +11,9 @@ import org.xml.sax.SAXParseException;
 import jetbrains.mps.util.InternUtil;
 
 public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
-  private static String[] EMPTY_ARRAY = new String[0];
-  private BLDependenciesHandler.DependenciesRootElementHandler dependenciesRoothandler = new BLDependenciesHandler.DependenciesRootElementHandler();
-  private BLDependenciesHandler.DependencyElementHandler dependencyhandler = new BLDependenciesHandler.DependencyElementHandler();
-  private BLDependenciesHandler.ClassNodeElementHandler classNodehandler = new BLDependenciesHandler.ClassNodeElementHandler();
+  private BLDependenciesHandler.DependenciesRootElementHandler dependenciesRootHandler = new BLDependenciesHandler.DependenciesRootElementHandler();
+  private BLDependenciesHandler.DependencyElementHandler dependencyHandler = new BLDependenciesHandler.DependencyElementHandler();
+  private BLDependenciesHandler.ClassNodeElementHandler classNodeHandler = new BLDependenciesHandler.ClassNodeElementHandler();
   private Stack<BLDependenciesHandler.ElementHandler> myHandlersStack = new Stack<BLDependenciesHandler.ElementHandler>();
   private Stack<BLDependenciesHandler.ChildHandler> myChildHandlersStack = new Stack<BLDependenciesHandler.ChildHandler>();
   private Stack<Object> myValues = new Stack<Object>();
@@ -55,7 +54,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     BLDependenciesHandler.ElementHandler current = (myHandlersStack.empty() ? (BLDependenciesHandler.ElementHandler) null : myHandlersStack.peek());
     if (current == null) {
       // root 
-      current = dependenciesRoothandler;
+      current = dependenciesRootHandler;
     } else {
       current = current.createChild(myValues.peek(), qName, attributes);
     }
@@ -85,6 +84,8 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     public void apply(Object resultObject, Object value) throws SAXException;
   }
   private class ElementHandler {
+    private String[] requiredAttributes = new String[0];
+
     private ElementHandler() {
     }
     protected Object createObject(Attributes attrs) throws SAXException {
@@ -102,13 +103,15 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
       throw new SAXParseException("text is not accepted: '" + value + "'", null);
     }
     protected String[] requiredAttributes() {
-      return BLDependenciesHandler.EMPTY_ARRAY;
+      return requiredAttributes;
+    }
+    protected void setRequiredAttributes(String... required) {
+      requiredAttributes = required;
     }
     protected void validate(Object resultObject) throws SAXException {
     }
   }
   public class DependenciesRootElementHandler extends BLDependenciesHandler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
     public DependenciesRootElementHandler() {
     }
     @Override
@@ -124,7 +127,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
             handleChild_757342313568246030(resultObject, value);
           }
         });
-        return dependencyhandler;
+        return dependencyHandler;
       }
       return super.createChild(resultObject, tagName, attrs);
     }
@@ -135,16 +138,12 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
   }
   public class DependencyElementHandler extends BLDependenciesHandler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"className"};
     public DependencyElementHandler() {
+      setRequiredAttributes("className");
     }
     @Override
     protected RootDependencies createObject(Attributes attrs) throws SAXException {
       return new RootDependencies();
-    }
-    @Override
-    protected String[] requiredAttributes() {
-      return requiredAttributes;
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
@@ -168,7 +167,7 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
             handleChild_757342313568246045(resultObject, value);
           }
         });
-        return classNodehandler;
+        return classNodeHandler;
       }
       return super.createChild(resultObject, tagName, attrs);
     }
@@ -187,7 +186,6 @@ public class BLDependenciesHandler extends XMLSAXHandler<ModelDependencies> {
     }
   }
   public class ClassNodeElementHandler extends BLDependenciesHandler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
     public ClassNodeElementHandler() {
     }
     @Override

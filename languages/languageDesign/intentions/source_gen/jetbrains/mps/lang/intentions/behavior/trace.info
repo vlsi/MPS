@@ -11,11 +11,8 @@
     <file name="BaseIntentionDeclaration_BehaviorDescriptor.java">
       <unit at="17,0,59,0" name="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_BehaviorDescriptor" />
     </file>
-    <file name="ParameterizedIntentionDeclaration_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedIntentionDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_node_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,48,0" name="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ChildFilterBlock_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.intentions.behavior.ChildFilterBlock_BehaviorDescriptor" />
@@ -23,8 +20,23 @@
     <file name="ChildFilterFunction_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.lang.intentions.behavior.ChildFilterFunction_BehaviorDescriptor" />
     </file>
-    <file name="SurroundWithIntentionDeclaration_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.intentions.behavior.SurroundWithIntentionDeclaration_BehaviorDescriptor" />
+    <file name="ConceptFunctionParameter_childNode_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_childNode_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_node_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
+    </file>
+    <file name="DescriptionBlock_BehaviorDescriptor.java">
+      <unit at="10,0,27,0" name="jetbrains.mps.lang.intentions.behavior.DescriptionBlock_BehaviorDescriptor" />
+    </file>
+    <file name="ExecuteBlock_BehaviorDescriptor.java">
+      <unit at="10,0,27,0" name="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_BehaviorDescriptor" />
+    </file>
+    <file name="IntentionDeclaration_BehaviorDescriptor.java">
+      <unit at="7,0,21,0" name="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="IntentionParameter_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.intentions.behavior.IntentionParameter_BehaviorDescriptor" />
     </file>
     <file name="IsApplicableBlock_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.intentions.behavior.IsApplicableBlock_BehaviorDescriptor" />
@@ -32,29 +44,17 @@
     <file name="ParameterizedDescriptionBlock_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedDescriptionBlock_BehaviorDescriptor" />
     </file>
-    <file name="ExecuteBlock_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.lang.intentions.behavior.ExecuteBlock_BehaviorDescriptor" />
-    </file>
-    <file name="IntentionParameter_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.intentions.behavior.IntentionParameter_BehaviorDescriptor" />
-    </file>
     <file name="ParameterizedExecuteBlock_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedExecuteBlock_BehaviorDescriptor" />
     </file>
-    <file name="IntentionDeclaration_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_BehaviorDescriptor" />
+    <file name="ParameterizedIntentionDeclaration_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedIntentionDeclaration_BehaviorDescriptor" />
     </file>
     <file name="QueryBlock_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.intentions.behavior.QueryBlock_BehaviorDescriptor" />
     </file>
-    <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,48,0" name="jetbrains.mps.lang.intentions.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_childNode_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.intentions.behavior.ConceptFunctionParameter_childNode_BehaviorDescriptor" />
-    </file>
-    <file name="DescriptionBlock_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.lang.intentions.behavior.DescriptionBlock_BehaviorDescriptor" />
+    <file name="SurroundWithIntentionDeclaration_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.intentions.behavior.SurroundWithIntentionDeclaration_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)/1213877237627">

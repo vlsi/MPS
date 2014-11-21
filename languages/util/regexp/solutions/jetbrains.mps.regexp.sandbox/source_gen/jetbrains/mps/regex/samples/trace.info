@@ -70,6 +70,28 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)/1174939813279">
+    <file name="SimpleReplace.java">
+      <node id="1174939822893" at="11,38,12,18" concept="7" />
+      <node id="1174939824537" at="12,18,13,114" concept="2" />
+      <node id="1174939854682" at="15,41,16,18" concept="7" />
+      <node id="1174939857046" at="16,18,17,114" concept="2" />
+      <node id="1174939838797" at="19,0,20,0" concept="9" trace="REGEXP_x5qji9_b0a1a1" />
+      <node id="1174939865288" at="20,0,21,0" concept="9" trace="REGEXP_x5qji9_b0a1a2" />
+      <node id="8961770717686428054" at="9,0,11,0" concept="1" trace="SimpleReplace#()V" />
+      <node id="1174939818421" at="11,0,15,0" concept="6" trace="simplestReplace#()V" />
+      <node id="1174939848617" at="15,0,19,0" concept="6" trace="replaceWithCapture#()V" />
+      <scope id="8961770717686428056" at="9,26,9,26" />
+      <scope id="8961770717686428054" at="9,0,11,0" />
+      <scope id="1174939818423" at="11,38,13,114">
+        <var name="s" id="1174939822894" />
+      </scope>
+      <scope id="1174939848619" at="15,41,17,114">
+        <var name="s" id="1174939854683" />
+      </scope>
+      <scope id="1174939818421" at="11,0,15,0" />
+      <scope id="1174939848617" at="15,0,19,0" />
+      <unit id="1174939813279" at="8,0,22,0" name="jetbrains.mps.regex.samples.SimpleReplace" />
+    </file>
     <file name="_Replacer_x5qji9_a0a0b0b.java">
       <node id="1174939845676" at="9,42,10,17" concept="8" />
       <node id="1174939833887" at="12,0,13,0" concept="3" trace="_enclosingClass" />
@@ -107,28 +129,6 @@
         <var name="enclosingClass" id="1174939860207" />
       </scope>
       <unit id="1174939860207" at="8,0,19,0" name="jetbrains.mps.regex.samples._Replacer_x5qji9_a0a0b0c" />
-    </file>
-    <file name="SimpleReplace.java">
-      <node id="1174939822893" at="11,38,12,18" concept="7" />
-      <node id="1174939824537" at="12,18,13,114" concept="2" />
-      <node id="1174939854682" at="15,41,16,18" concept="7" />
-      <node id="1174939857046" at="16,18,17,114" concept="2" />
-      <node id="1174939838797" at="19,0,20,0" concept="9" trace="REGEXP_x5qji9_b0a1a1" />
-      <node id="1174939865288" at="20,0,21,0" concept="9" trace="REGEXP_x5qji9_b0a1a2" />
-      <node id="8961770717686428054" at="9,0,11,0" concept="1" trace="SimpleReplace#()V" />
-      <node id="1174939818421" at="11,0,15,0" concept="6" trace="simplestReplace#()V" />
-      <node id="1174939848617" at="15,0,19,0" concept="6" trace="replaceWithCapture#()V" />
-      <scope id="8961770717686428056" at="9,26,9,26" />
-      <scope id="8961770717686428054" at="9,0,11,0" />
-      <scope id="1174939818423" at="11,38,13,114">
-        <var name="s" id="1174939822894" />
-      </scope>
-      <scope id="1174939848619" at="15,41,17,114">
-        <var name="s" id="1174939854683" />
-      </scope>
-      <scope id="1174939818421" at="11,0,15,0" />
-      <scope id="1174939848617" at="15,0,19,0" />
-      <unit id="1174939813279" at="8,0,22,0" name="jetbrains.mps.regex.samples.SimpleReplace" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051f(jetbrains.mps.regex.samples)/1174939949624">

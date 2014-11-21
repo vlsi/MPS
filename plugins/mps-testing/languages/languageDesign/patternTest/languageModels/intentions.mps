@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:527ade0e-b70c-4feb-b529-a4af04cf94b1(jetbrains.mps.lang.pattern.testLang.intentions)">
+<model ref="r:527ade0e-b70c-4feb-b529-a4af04cf94b1(jetbrains.mps.lang.pattern.testLang.intentions)" concise="true">
   <persistence version="9" />
-  <debugInfo />
   <languages />
   <imports />
-  <contents />
+  <registry />
 </model>
 

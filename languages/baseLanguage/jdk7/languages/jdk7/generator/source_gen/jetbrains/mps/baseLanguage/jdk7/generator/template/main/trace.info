@@ -15,11 +15,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
-    <file name="TemplateModelImpl.java">
-      <unit at="19,0,64,0" name="jetbrains.mps.baseLanguage.jdk7.generator.template.main.TemplateModelImpl" />
-    </file>
     <file name="QueriesGenerated.java">
       <unit at="21,0,47,0" name="jetbrains.mps.baseLanguage.jdk7.generator.template.main.QueriesGenerated" />
+    </file>
+    <file name="TemplateModelImpl.java">
+      <unit at="19,0,64,0" name="jetbrains.mps.baseLanguage.jdk7.generator.template.main.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)/400642802550418959">
@@ -103,6 +103,23 @@
     </file>
   </root>
   <root nodeRef="r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)/400642802550420129">
+    <file name="QueriesGenerated.java">
+      <node id="3708576844065084050" at="24,111,25,304" concept="8" />
+      <node id="3708576844065084085" at="25,304,26,562" concept="9" />
+      <node id="400642802550422234" at="28,107,29,191" concept="9" />
+      <node id="8297320321098371695" at="31,108,32,199" concept="9" />
+      <node id="3708576844065051194" at="34,108,35,197" concept="9" />
+      <node id="400642802550422242" at="37,119,38,193" concept="9" />
+      <node id="1194605474582747263" at="40,120,41,54" concept="9" />
+      <scope id="400642802550422233" at="28,107,29,191" />
+      <scope id="8297320321098371694" at="31,108,32,199" />
+      <scope id="3708576844065051191" at="34,108,35,197" />
+      <scope id="400642802550422241" at="37,119,38,193" />
+      <scope id="3708576844065083882" at="40,120,41,54" />
+      <scope id="400642802550422215" at="24,111,26,562">
+        <var name="m" id="3708576844065084051" />
+      </scope>
+    </file>
     <file name="Templatestring_x0020switch_x0020template.java">
       <node id="400642802550420129" at="31,43,32,159" concept="9" />
       <node id="400642802550420129" at="34,154,35,110" concept="8" />
@@ -331,23 +348,6 @@
         <var name="environment" id="400642802550420129" />
       </scope>
       <unit id="400642802550420129" at="27,0,188,0" name="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Templatestring_x0020switch_x0020template" />
-    </file>
-    <file name="QueriesGenerated.java">
-      <node id="3708576844065084050" at="24,111,25,304" concept="8" />
-      <node id="3708576844065084085" at="25,304,26,562" concept="9" />
-      <node id="400642802550422234" at="28,107,29,191" concept="9" />
-      <node id="8297320321098371695" at="31,108,32,199" concept="9" />
-      <node id="3708576844065051194" at="34,108,35,197" concept="9" />
-      <node id="400642802550422242" at="37,119,38,193" concept="9" />
-      <node id="1194605474582747263" at="40,120,41,54" concept="9" />
-      <scope id="400642802550422233" at="28,107,29,191" />
-      <scope id="8297320321098371694" at="31,108,32,199" />
-      <scope id="3708576844065051191" at="34,108,35,197" />
-      <scope id="400642802550422241" at="37,119,38,193" />
-      <scope id="3708576844065083882" at="40,120,41,54" />
-      <scope id="400642802550422215" at="24,111,26,562">
-        <var name="m" id="3708576844065084051" />
-      </scope>
     </file>
   </root>
 </debug-info>

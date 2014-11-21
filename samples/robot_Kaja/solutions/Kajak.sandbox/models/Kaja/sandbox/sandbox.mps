@@ -1,68 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:1a01fdc1-6171-4a9b-86c9-e6b8bbdfe8af(Kaja.sandbox.sandbox)">
+<model ref="r:1a01fdc1-6171-4a9b-86c9-e6b8bbdfe8af(Kaja.sandbox.sandbox)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5" name="jetbrains.mps.samples.Kaja" />
-    <lang id="44306fd2-ef94-4b56-9806-d9ab509536db" name="jetbrains.mps.samples.KajaAndOr" />
-    <lang id="b56912a3-674f-4530-b0cf-55261b526a1f" name="jetbrains.mps.samples.KajaSceneConstruction" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/859008965969439768" name="jetbrains.mps.samples.Kaja.structure.IsFull" />
-    <concept id="44306fd2-ef94-4b56-9806-d9ab509536db/1904811872814253578" name="jetbrains.mps.samples.KajaAndOr.structure.And" />
-    <concept id="44306fd2-ef94-4b56-9806-d9ab509536db/1904811872814253785" name="jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator" />
-    <concept id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273550864" name="jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall" />
-    <concept id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273608254" name="jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark" />
-    <concept id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273608255" name="jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3210697320273763054" name="jetbrains.mps.samples.Kaja.structure.TraceMessage" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3265739055509559110" name="jetbrains.mps.samples.Kaja.structure.Script" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3265739055509559138" name="jetbrains.mps.samples.Kaja.structure.Step" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647627" name="jetbrains.mps.samples.Kaja.structure.LeftTurn" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678" name="jetbrains.mps.samples.Kaja.structure.IfStatement" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647788" name="jetbrains.mps.samples.Kaja.structure.IsWall" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039654064" name="jetbrains.mps.samples.Kaja.structure.Not" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039660364" name="jetbrains.mps.samples.Kaja.structure.Repeat" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039667424" name="jetbrains.mps.samples.Kaja.structure.While" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039675723" name="jetbrains.mps.samples.Kaja.structure.South" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039683644" name="jetbrains.mps.samples.Kaja.structure.West" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039683649" name="jetbrains.mps.samples.Kaja.structure.Heading" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039700857" name="jetbrains.mps.samples.Kaja.structure.RoutineDefinition" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039700882" name="jetbrains.mps.samples.Kaja.structure.RoutineCall" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039740438" name="jetbrains.mps.samples.Kaja.structure.EmptyLine" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039896127" name="jetbrains.mps.samples.Kaja.structure.CommandList" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934741782" name="jetbrains.mps.samples.Kaja.structure.Library" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934757449" name="jetbrains.mps.samples.Kaja.structure.Require" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436120871" name="jetbrains.mps.samples.Kaja.structure.Drop" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436170013" name="jetbrains.mps.samples.Kaja.structure.Pick" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436186598" name="jetbrains.mps.samples.Kaja.structure.IsMark" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436287811" name="jetbrains.mps.samples.Kaja.structure.CommentLine" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273608255/3210697320273608256" name="row" />
-    <property id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273608255/3210697320273608257" name="col" />
-    <property id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3210697320273763054/3210697320273763055" name="message" />
-    <property id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039660364/3308300503039660366" name="count" />
-    <property id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436287811/6405700485436287813" name="text" />
-    <refRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039700882/3308300503039730636" name="definition" />
-    <refRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934757449/4394627182934757450" name="library" />
-    <childRole id="44306fd2-ef94-4b56-9806-d9ab509536db/1904811872814253785/1904811872814253580" name="left" />
-    <childRole id="44306fd2-ef94-4b56-9806-d9ab509536db/1904811872814253785/1904811872814253581" name="right" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3265739055509559110/3265739055509559116" name="body" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678/3308300503039647680" name="condition" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678/3308300503039647684" name="trueBranch" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678/3308300503039647685" name="falseBranch" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039654064/3308300503039654067" name="original" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039660364/3308300503039660367" name="body" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039667424/3308300503039667426" name="condition" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039667424/3308300503039667427" name="body" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039683649/3308300503039683650" name="direction" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039700857/3308300503039700860" name="body" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039896127/3308300503039896128" name="commands" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934741782/4394627182934741783" name="definitions" />
-  </debugInfo>
   <languages>
-    <use id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5" version="-1" index="98e2" />
-    <use id="44306fd2-ef94-4b56-9806-d9ab509536db" version="-1" index="26es" />
-    <use id="b56912a3-674f-4530-b0cf-55261b526a1f" version="-1" index="y46i" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5" name="jetbrains.mps.samples.Kaja" version="-1" />
+    <use id="44306fd2-ef94-4b56-9806-d9ab509536db" name="jetbrains.mps.samples.KajaAndOr" version="-1" />
+    <use id="b56912a3-674f-4530-b0cf-55261b526a1f" name="jetbrains.mps.samples.KajaSceneConstruction" version="-1" />
   </languages>
   <imports>
     <import index="c2kz" ref="r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)" implicit="true" />
@@ -70,557 +12,632 @@
     <import index="rvtb" ref="r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)" implicit="true" />
     <import index="6ms5" ref="r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="98e2.3265739055509559110" id="3308300503039980203" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="Karel" />
-      <node concept="98e2.3308300503039896127" id="3308300503039980204" role="98e2.3265739055509559110.3265739055509559116" info="ng">
-        <node concept="98e2.3308300503039740438" id="859008965969439583" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700882" id="4394627182935128981" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="7446293342517115867" resolveInfo="turnRight" />
+  <registry>
+    <language id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5" name="jetbrains.mps.samples.Kaja">
+      <concept id="6405700485436120871" name="jetbrains.mps.samples.Kaja.structure.Drop" flags="ng" index="1b4w60" />
+      <concept id="6405700485436186598" name="jetbrains.mps.samples.Kaja.structure.IsMark" flags="ng" index="1b7g51" />
+      <concept id="6405700485436170013" name="jetbrains.mps.samples.Kaja.structure.Pick" flags="ng" index="1b7s6U" />
+      <concept id="6405700485436287811" name="jetbrains.mps.samples.Kaja.structure.CommentLine" flags="ng" index="1b7Vn$">
+        <property id="6405700485436287813" name="text" index="1b7Vny" />
+      </concept>
+      <concept id="3265739055509559110" name="jetbrains.mps.samples.Kaja.structure.Script" flags="ng" index="1x_AGo">
+        <child id="3265739055509559116" name="body" index="1x_AGi" />
+      </concept>
+      <concept id="3265739055509559138" name="jetbrains.mps.samples.Kaja.structure.Step" flags="ng" index="1x_AGW" />
+      <concept id="859008965969439768" name="jetbrains.mps.samples.Kaja.structure.IsFull" flags="ng" index="1S$3K2" />
+      <concept id="3210697320273763054" name="jetbrains.mps.samples.Kaja.structure.TraceMessage" flags="ng" index="24IuFt">
+        <property id="3210697320273763055" name="message" index="24IuFs" />
+      </concept>
+      <concept id="4394627182934741782" name="jetbrains.mps.samples.Kaja.structure.Library" flags="ng" index="2zTg$P">
+        <child id="4394627182934741783" name="definitions" index="2zTg$O" />
+      </concept>
+      <concept id="4394627182934757449" name="jetbrains.mps.samples.Kaja.structure.Require" flags="ng" index="2zTGDE">
+        <reference id="4394627182934757450" name="library" index="2zTGDD" />
+      </concept>
+      <concept id="3308300503039700882" name="jetbrains.mps.samples.Kaja.structure.RoutineCall" flags="ng" index="2C11Tl">
+        <reference id="3308300503039730636" name="definition" index="2C198b" />
+      </concept>
+      <concept id="3308300503039700857" name="jetbrains.mps.samples.Kaja.structure.RoutineDefinition" flags="ng" index="2C11UY">
+        <child id="3308300503039700860" name="body" index="2C11UV" />
+      </concept>
+      <concept id="3308300503039683649" name="jetbrains.mps.samples.Kaja.structure.Heading" flags="ng" index="2C15Q6">
+        <child id="3308300503039683650" name="direction" index="2C15Q5" />
+      </concept>
+      <concept id="3308300503039683644" name="jetbrains.mps.samples.Kaja.structure.West" flags="ng" index="2C15RV" />
+      <concept id="3308300503039675723" name="jetbrains.mps.samples.Kaja.structure.South" flags="ng" index="2C17Mc" />
+      <concept id="3308300503039667424" name="jetbrains.mps.samples.Kaja.structure.While" flags="ng" index="2C1pOB">
+        <child id="3308300503039667427" name="body" index="2C1pO$" />
+        <child id="3308300503039667426" name="condition" index="2C1pO_" />
+      </concept>
+      <concept id="3308300503039660364" name="jetbrains.mps.samples.Kaja.structure.Repeat" flags="ng" index="2C1q2b">
+        <property id="3308300503039660366" name="count" index="2C1q29" />
+        <child id="3308300503039660367" name="body" index="2C1q28" />
+      </concept>
+      <concept id="3308300503039654064" name="jetbrains.mps.samples.Kaja.structure.Not" flags="ng" index="2C1s_R">
+        <child id="3308300503039654067" name="original" index="2C1s_O" />
+      </concept>
+      <concept id="3308300503039647788" name="jetbrains.mps.samples.Kaja.structure.IsWall" flags="ng" index="2C1t7F" />
+      <concept id="3308300503039647627" name="jetbrains.mps.samples.Kaja.structure.LeftTurn" flags="ng" index="2C1uTc" />
+      <concept id="3308300503039647678" name="jetbrains.mps.samples.Kaja.structure.IfStatement" flags="ng" index="2C1uTT">
+        <child id="3308300503039647685" name="falseBranch" index="2C1uS2" />
+        <child id="3308300503039647684" name="trueBranch" index="2C1uS3" />
+        <child id="3308300503039647680" name="condition" index="2C1uS7" />
+      </concept>
+      <concept id="3308300503039740438" name="jetbrains.mps.samples.Kaja.structure.EmptyLine" flags="ng" index="2C1RJh" />
+      <concept id="3308300503039896127" name="jetbrains.mps.samples.Kaja.structure.CommandList" flags="ng" index="2C6hJS">
+        <child id="3308300503039896128" name="commands" index="2C6hI7" />
+      </concept>
+    </language>
+    <language id="b56912a3-674f-4530-b0cf-55261b526a1f" name="jetbrains.mps.samples.KajaSceneConstruction">
+      <concept id="3210697320273608255" name="jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand" flags="ng" index="24I$Sc">
+        <property id="3210697320273608257" name="col" index="24I$TM" />
+        <property id="3210697320273608256" name="row" index="24I$TN" />
+      </concept>
+      <concept id="3210697320273608254" name="jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark" flags="ng" index="24I$Sd" />
+      <concept id="3210697320273550864" name="jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall" flags="ng" index="24IESz" />
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="44306fd2-ef94-4b56-9806-d9ab509536db" name="jetbrains.mps.samples.KajaAndOr">
+      <concept id="1904811872814253578" name="jetbrains.mps.samples.KajaAndOr.structure.And" flags="ng" index="1Tpgp4" />
+      <concept id="1904811872814253785" name="jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator" flags="ng" index="1Tpgqn">
+        <child id="1904811872814253580" name="left" index="1Tpgp2" />
+        <child id="1904811872814253581" name="right" index="1Tpgp3" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1x_AGo" id="2RDssu5WraF">
+    <property role="TrG5h" value="Karel" />
+    <node concept="2C6hJS" id="2RDssu5WraG" role="1x_AGi">
+      <node concept="2C1RJh" id="JFO1DNuYHv" role="2C6hI7" />
+      <node concept="2C11Tl" id="3NWQyev7VIl" role="2C6hI7">
+        <ref role="2C198b" node="6tmz5v65FJr" resolve="turnRight" />
+      </node>
+      <node concept="2C1pOB" id="JFO1DNuYHK" role="2C6hI7">
+        <node concept="2C1s_R" id="JFO1DNuYHN" role="2C1pO_">
+          <node concept="1b7g51" id="JFO1DNuYHP" role="2C1s_O" />
         </node>
-        <node concept="98e2.3308300503039667424" id="859008965969439600" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <node concept="98e2.3308300503039654064" id="859008965969439603" role="98e2.3308300503039667424.3308300503039667426" info="ng">
-            <node concept="98e2.6405700485436186598" id="859008965969439605" role="98e2.3308300503039654064.3308300503039654067" info="ng" />
+        <node concept="2C6hJS" id="JFO1DNuYHM" role="2C1pO$">
+          <node concept="2C11Tl" id="JFO1DNuYHR" role="2C6hI7">
+            <ref role="2C198b" node="JFO1DNuYHp" resolve="traceStep" />
           </node>
-          <node concept="98e2.3308300503039896127" id="859008965969439602" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-            <node concept="98e2.3308300503039700882" id="859008965969439607" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969439577" resolveInfo="traceStep" />
+        </node>
+      </node>
+      <node concept="2C1RJh" id="6tmz5v65FJC" role="2C6hI7" />
+      <node concept="2C1RJh" id="6tmz5v65FJD" role="2C6hI7" />
+      <node concept="2C1RJh" id="6tmz5v65FJH" role="2C6hI7" />
+      <node concept="1b7Vn$" id="6tmz5v65FJF" role="2C6hI7">
+        <property role="1b7Vny" value="Routine definitions" />
+      </node>
+      <node concept="2C11UY" id="JFO1DNuYHp" role="2C6hI7">
+        <property role="TrG5h" value="traceStep" />
+        <node concept="2C6hJS" id="JFO1DNuYHq" role="2C11UV">
+          <node concept="1b4w60" id="JFO1DNuYHs" role="2C6hI7" />
+          <node concept="2C11Tl" id="JFO1DNuYHG" role="2C6hI7">
+            <ref role="2C198b" node="JFO1DNuYHx" resolve="safeStep" />
+          </node>
+        </node>
+      </node>
+      <node concept="2C1RJh" id="JFO1DNuYHo" role="2C6hI7" />
+      <node concept="2C11UY" id="JFO1DNuYHx" role="2C6hI7">
+        <property role="TrG5h" value="safeStep" />
+        <node concept="2C6hJS" id="JFO1DNuYHy" role="2C11UV">
+          <node concept="2C1pOB" id="JFO1DNuYH$" role="2C6hI7">
+            <node concept="2C1t7F" id="JFO1DNuYHB" role="2C1pO_" />
+            <node concept="2C6hJS" id="JFO1DNuYHA" role="2C1pO$">
+              <node concept="2C1uTc" id="JFO1DNuYHD" role="2C6hI7" />
+            </node>
+          </node>
+          <node concept="1x_AGW" id="JFO1DNuYHF" role="2C6hI7" />
+        </node>
+      </node>
+      <node concept="2C11UY" id="6tmz5v65FJr" role="2C6hI7">
+        <property role="TrG5h" value="turnRight" />
+        <node concept="2C6hJS" id="6tmz5v65FJs" role="2C11UV">
+          <node concept="2C1q2b" id="JFO1DNuYHk" role="2C6hI7">
+            <property role="2C1q29" value="3" />
+            <node concept="2C6hJS" id="JFO1DNuYHl" role="2C1q28">
+              <node concept="2C1uTc" id="JFO1DNuYHn" role="2C6hI7" />
             </node>
           </node>
         </node>
-        <node concept="98e2.3308300503039740438" id="7446293342517115880" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039740438" id="7446293342517115881" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039740438" id="7446293342517115885" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.6405700485436287811" id="7446293342517115883" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="98e2.6405700485436287811.6405700485436287813" value="Routine definitions" />
+      </node>
+      <node concept="2C1RJh" id="5z_BEsjY9Rn" role="2C6hI7" />
+      <node concept="2C11UY" id="2RDssu5WvZC" role="2C6hI7">
+        <property role="TrG5h" value="turnAround" />
+        <node concept="2C6hJS" id="2RDssu5WvZD" role="2C11UV">
+          <node concept="2C1uTc" id="2RDssu5WvZE" role="2C6hI7" />
+          <node concept="2C1uTc" id="2RDssu5WvZG" role="2C6hI7" />
         </node>
-        <node concept="98e2.3308300503039700857" id="859008965969439577" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="traceStep" />
-          <node concept="98e2.3308300503039896127" id="859008965969439578" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.6405700485436120871" id="859008965969439580" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-            <node concept="98e2.3308300503039700882" id="859008965969439596" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969439585" resolveInfo="safeStep" />
+      </node>
+      <node concept="2C1RJh" id="2RDssu5WvZO" role="2C6hI7" />
+    </node>
+  </node>
+  <node concept="1x_AGo" id="6tmz5v65CF9">
+    <property role="TrG5h" value="Sample" />
+    <node concept="2C6hJS" id="6tmz5v65CFa" role="1x_AGi">
+      <node concept="1x_AGW" id="2Kq7O$TVPnw" role="2C6hI7" />
+      <node concept="2C1pOB" id="2Kq7O$TVPoT" role="2C6hI7">
+        <node concept="2C1s_R" id="2Kq7O$TVPpd" role="2C1pO_">
+          <node concept="2C15Q6" id="2Kq7O$TVPpj" role="2C1s_O">
+            <node concept="2C17Mc" id="2Kq7O$TVPpp" role="2C15Q5" />
+          </node>
+        </node>
+        <node concept="2C6hJS" id="2Kq7O$TVPoX" role="2C1pO$">
+          <node concept="2C1uTc" id="2Kq7O$TVPpK" role="2C6hI7" />
+        </node>
+      </node>
+      <node concept="2C1pOB" id="2Kq7O$TVPoj" role="2C6hI7">
+        <node concept="2C1s_R" id="2Kq7O$TVPoz" role="2C1pO_">
+          <node concept="2C1t7F" id="2Kq7O$TVPoD" role="2C1s_O" />
+        </node>
+        <node concept="2C6hJS" id="2Kq7O$TVPon" role="2C1pO$">
+          <node concept="1x_AGW" id="2Kq7O$TVPu1" role="2C6hI7" />
+        </node>
+      </node>
+      <node concept="2C1RJh" id="2Kq7O$TVPps" role="2C6hI7" />
+      <node concept="2C11UY" id="2Kq7O$TVPnA" role="2C6hI7">
+        <property role="TrG5h" value="turn right" />
+        <node concept="2C6hJS" id="2Kq7O$TVPnC" role="2C11UV">
+          <node concept="2C1q2b" id="2Kq7O$TVPnJ" role="2C6hI7">
+            <property role="2C1q29" value="3" />
+            <node concept="2C6hJS" id="2Kq7O$TVPnL" role="2C1q28">
+              <node concept="2C1uTc" id="2Kq7O$TVPnR" role="2C6hI7" />
             </node>
           </node>
         </node>
-        <node concept="98e2.3308300503039740438" id="859008965969439576" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700857" id="859008965969439585" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="safeStep" />
-          <node concept="98e2.3308300503039896127" id="859008965969439586" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039667424" id="859008965969439588" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <node concept="98e2.3308300503039647788" id="859008965969439591" role="98e2.3308300503039667424.3308300503039667426" info="ng" />
-              <node concept="98e2.3308300503039896127" id="859008965969439590" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-                <node concept="98e2.3308300503039647627" id="859008965969439593" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-              </node>
-            </node>
-            <node concept="98e2.3265739055509559138" id="859008965969439595" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-          </node>
-        </node>
-        <node concept="98e2.3308300503039700857" id="7446293342517115867" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="turnRight" />
-          <node concept="98e2.3308300503039896127" id="7446293342517115868" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039660364" id="859008965969439572" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <property role="98e2.3308300503039660364.3308300503039660366" value="3" />
-              <node concept="98e2.3308300503039896127" id="859008965969439573" role="98e2.3308300503039660364.3308300503039660367" info="ng">
-                <node concept="98e2.3308300503039647627" id="859008965969439575" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="98e2.3308300503039740438" id="6405700485436186071" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700857" id="3308300503039999976" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="turnAround" />
-          <node concept="98e2.3308300503039896127" id="3308300503039999977" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039647627" id="3308300503039999978" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-            <node concept="98e2.3308300503039647627" id="3308300503039999980" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-          </node>
-        </node>
-        <node concept="98e2.3308300503039740438" id="3308300503039999988" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
+      </node>
+      <node concept="1b4w60" id="2Kq7O$TVPE5" role="2C6hI7" />
+      <node concept="2C11Tl" id="2Kq7O$TVPo2" role="2C6hI7">
+        <ref role="2C198b" node="2Kq7O$TVPnA" resolve="turn right" />
       </node>
     </node>
-    <node concept="98e2.3265739055509559110" id="7446293342517103305" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="Sample" />
-      <node concept="98e2.3308300503039896127" id="7446293342517103306" role="98e2.3265739055509559110.3265739055509559116" info="ng">
-        <node concept="98e2.3265739055509559138" id="3177886886428366304" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039667424" id="3177886886428366393" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <node concept="98e2.3308300503039654064" id="3177886886428366413" role="98e2.3308300503039667424.3308300503039667426" info="ng">
-            <node concept="98e2.3308300503039683649" id="3177886886428366419" role="98e2.3308300503039654064.3308300503039654067" info="ng">
-              <node concept="98e2.3308300503039675723" id="3177886886428366425" role="98e2.3308300503039683649.3308300503039683650" info="ng" />
+  </node>
+  <node concept="1x_AGo" id="JFO1DNueQw">
+    <property role="TrG5h" value="Dog" />
+    <node concept="2C6hJS" id="JFO1DNueQx" role="1x_AGi">
+      <node concept="1x_AGW" id="JFO1DNueRg" role="2C6hI7" />
+      <node concept="2C11Tl" id="JFO1DNueRi" role="2C6hI7">
+        <ref role="2C198b" node="JFO1DNueQA" resolve="lay" />
+      </node>
+      <node concept="2C11Tl" id="JFO1DNueRk" role="2C6hI7">
+        <ref role="2C198b" node="JFO1DNueQN" resolve="turnAround" />
+      </node>
+      <node concept="2C11Tl" id="JFO1DNueRm" role="2C6hI7">
+        <ref role="2C198b" node="JFO1DNueQy" resolve="fetch" />
+      </node>
+      <node concept="1b4w60" id="7ud7TTkO1kQ" role="2C6hI7" />
+      <node concept="2C11Tl" id="JFO1DNuAgZ" role="2C6hI7">
+        <ref role="2C198b" node="JFO1DNueQN" resolve="turnAround" />
+      </node>
+      <node concept="2C11Tl" id="JFO1DNuAhw" role="2C6hI7">
+        <ref role="2C198b" node="JFO1DNuAhf" resolve="runArround" />
+      </node>
+      <node concept="2C1RJh" id="JFO1DNueRn" role="2C6hI7" />
+      <node concept="2C1RJh" id="JFO1DNuAdM" role="2C6hI7" />
+      <node concept="2C11UY" id="JFO1DNueQA" role="2C6hI7">
+        <property role="TrG5h" value="lay" />
+        <node concept="2C6hJS" id="JFO1DNueQB" role="2C11UV">
+          <node concept="2C1q2b" id="JFO1DNueQD" role="2C6hI7">
+            <property role="2C1q29" value="5" />
+            <node concept="2C6hJS" id="JFO1DNueQE" role="2C1q28">
+              <node concept="1x_AGW" id="JFO1DNueQG" role="2C6hI7" />
             </node>
           </node>
-          <node concept="98e2.3308300503039896127" id="3177886886428366397" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-            <node concept="98e2.3308300503039647627" id="3177886886428366448" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
+          <node concept="1b4w60" id="JFO1DNuAdP" role="2C6hI7" />
+          <node concept="2C11Tl" id="JFO1DNueQT" role="2C6hI7">
+            <ref role="2C198b" node="JFO1DNueQN" resolve="turnAround" />
           </node>
-        </node>
-        <node concept="98e2.3308300503039667424" id="3177886886428366355" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <node concept="98e2.3308300503039654064" id="3177886886428366371" role="98e2.3308300503039667424.3308300503039667426" info="ng">
-            <node concept="98e2.3308300503039647788" id="3177886886428366377" role="98e2.3308300503039654064.3308300503039654067" info="ng" />
-          </node>
-          <node concept="98e2.3308300503039896127" id="3177886886428366359" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-            <node concept="98e2.3265739055509559138" id="3177886886428366721" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-          </node>
-        </node>
-        <node concept="98e2.3308300503039740438" id="3177886886428366428" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700857" id="3177886886428366310" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="turn right" />
-          <node concept="98e2.3308300503039896127" id="3177886886428366312" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039660364" id="3177886886428366319" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <property role="98e2.3308300503039660364.3308300503039660366" value="3" />
-              <node concept="98e2.3308300503039896127" id="3177886886428366321" role="98e2.3308300503039660364.3308300503039660367" info="ng">
-                <node concept="98e2.3308300503039647627" id="3177886886428366327" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-              </node>
+          <node concept="2C1q2b" id="JFO1DNueQV" role="2C6hI7">
+            <property role="2C1q29" value="5" />
+            <node concept="2C6hJS" id="JFO1DNueQW" role="2C1q28">
+              <node concept="1x_AGW" id="JFO1DNueQX" role="2C6hI7" />
             </node>
           </node>
-        </node>
-        <node concept="98e2.6405700485436120871" id="3177886886428367493" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700882" id="3177886886428366338" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="3177886886428366310" resolveInfo="turn right" />
         </node>
       </node>
-    </node>
-    <node concept="98e2.3265739055509559110" id="859008965969243552" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="Dog" />
-      <node concept="98e2.3308300503039896127" id="859008965969243553" role="98e2.3265739055509559110.3265739055509559116" info="ng">
-        <node concept="98e2.3265739055509559138" id="859008965969243600" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700882" id="859008965969243602" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969243558" resolveInfo="lay" />
-        </node>
-        <node concept="98e2.3308300503039700882" id="859008965969243604" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969243571" resolveInfo="turnAround" />
-        </node>
-        <node concept="98e2.3308300503039700882" id="859008965969243606" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969243554" resolveInfo="fetch" />
-        </node>
-        <node concept="98e2.6405700485436120871" id="8614576427117843766" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700882" id="859008965969339455" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969243571" resolveInfo="turnAround" />
-        </node>
-        <node concept="98e2.3308300503039700882" id="859008965969339488" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969339471" resolveInfo="runArround" />
-        </node>
-        <node concept="98e2.3308300503039740438" id="859008965969243607" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039740438" id="859008965969339250" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700857" id="859008965969243558" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="lay" />
-          <node concept="98e2.3308300503039896127" id="859008965969243559" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039660364" id="859008965969243561" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <property role="98e2.3308300503039660364.3308300503039660366" value="5" />
-              <node concept="98e2.3308300503039896127" id="859008965969243562" role="98e2.3308300503039660364.3308300503039660367" info="ng">
-                <node concept="98e2.3265739055509559138" id="859008965969243564" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
+      <node concept="2C1RJh" id="JFO1DNueQY" role="2C6hI7" />
+      <node concept="2C11UY" id="JFO1DNueQy" role="2C6hI7">
+        <property role="TrG5h" value="fetch" />
+        <node concept="2C6hJS" id="JFO1DNueQz" role="2C11UV">
+          <node concept="2C1uTT" id="JFO1DNueQZ" role="2C6hI7">
+            <node concept="1b7g51" id="JFO1DNueR3" role="2C1uS7" />
+            <node concept="2C6hJS" id="JFO1DNueR1" role="2C1uS3">
+              <node concept="1b7s6U" id="JFO1DNueR5" role="2C6hI7" />
+              <node concept="2C11Tl" id="JFO1DNueR7" role="2C6hI7">
+                <ref role="2C198b" node="JFO1DNueQN" resolve="turnAround" />
               </node>
             </node>
-            <node concept="98e2.6405700485436120871" id="859008965969339253" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-            <node concept="98e2.3308300503039700882" id="859008965969243577" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969243571" resolveInfo="turnAround" />
-            </node>
-            <node concept="98e2.3308300503039660364" id="859008965969243579" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <property role="98e2.3308300503039660364.3308300503039660366" value="5" />
-              <node concept="98e2.3308300503039896127" id="859008965969243580" role="98e2.3308300503039660364.3308300503039660367" info="ng">
-                <node concept="98e2.3265739055509559138" id="859008965969243581" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
+            <node concept="2C6hJS" id="JFO1DNueR2" role="2C1uS2">
+              <node concept="1x_AGW" id="JFO1DNueR9" role="2C6hI7" />
+              <node concept="2C11Tl" id="JFO1DNueRb" role="2C6hI7">
+                <ref role="2C198b" node="JFO1DNueQy" resolve="fetch" />
               </node>
+              <node concept="1x_AGW" id="JFO1DNueRd" role="2C6hI7" />
             </node>
           </node>
         </node>
-        <node concept="98e2.3308300503039740438" id="859008965969243582" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700857" id="859008965969243554" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="fetch" />
-          <node concept="98e2.3308300503039896127" id="859008965969243555" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039647678" id="859008965969243583" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <node concept="98e2.6405700485436186598" id="859008965969243587" role="98e2.3308300503039647678.3308300503039647680" info="ng" />
-              <node concept="98e2.3308300503039896127" id="859008965969243585" role="98e2.3308300503039647678.3308300503039647684" info="ng">
-                <node concept="98e2.6405700485436170013" id="859008965969243589" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-                <node concept="98e2.3308300503039700882" id="859008965969243591" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969243571" resolveInfo="turnAround" />
-                </node>
-              </node>
-              <node concept="98e2.3308300503039896127" id="859008965969243586" role="98e2.3308300503039647678.3308300503039647685" info="ng">
-                <node concept="98e2.3265739055509559138" id="859008965969243593" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-                <node concept="98e2.3308300503039700882" id="859008965969243595" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969243554" resolveInfo="fetch" />
-                </node>
-                <node concept="98e2.3265739055509559138" id="859008965969243597" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-              </node>
+      </node>
+      <node concept="2C1RJh" id="JFO1DNueRe" role="2C6hI7" />
+      <node concept="2C11UY" id="JFO1DNueQN" role="2C6hI7">
+        <property role="TrG5h" value="turnAround" />
+        <node concept="2C6hJS" id="JFO1DNueQO" role="2C11UV">
+          <node concept="2C1uTc" id="JFO1DNueQQ" role="2C6hI7" />
+          <node concept="2C1uTc" id="JFO1DNueQS" role="2C6hI7" />
+        </node>
+      </node>
+      <node concept="2C1RJh" id="JFO1DNuAh0" role="2C6hI7" />
+      <node concept="2C11UY" id="JFO1DNuAh2" role="2C6hI7">
+        <property role="TrG5h" value="run" />
+        <node concept="2C6hJS" id="JFO1DNuAh3" role="2C11UV">
+          <node concept="2C1pOB" id="JFO1DNuAh5" role="2C6hI7">
+            <node concept="2C1s_R" id="JFO1DNuAh8" role="2C1pO_">
+              <node concept="2C1t7F" id="JFO1DNuAha" role="2C1s_O" />
+            </node>
+            <node concept="2C6hJS" id="JFO1DNuAh7" role="2C1pO$">
+              <node concept="1x_AGW" id="JFO1DNuAhc" role="2C6hI7" />
             </node>
           </node>
         </node>
-        <node concept="98e2.3308300503039740438" id="859008965969243598" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700857" id="859008965969243571" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="turnAround" />
-          <node concept="98e2.3308300503039896127" id="859008965969243572" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039647627" id="859008965969243574" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-            <node concept="98e2.3308300503039647627" id="859008965969243576" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-          </node>
-        </node>
-        <node concept="98e2.3308300503039740438" id="859008965969339456" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700857" id="859008965969339458" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="run" />
-          <node concept="98e2.3308300503039896127" id="859008965969339459" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039667424" id="859008965969339461" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <node concept="98e2.3308300503039654064" id="859008965969339464" role="98e2.3308300503039667424.3308300503039667426" info="ng">
-                <node concept="98e2.3308300503039647788" id="859008965969339466" role="98e2.3308300503039654064.3308300503039654067" info="ng" />
+      </node>
+      <node concept="2C1RJh" id="JFO1DNuAhd" role="2C6hI7" />
+      <node concept="2C11UY" id="JFO1DNuAhf" role="2C6hI7">
+        <property role="TrG5h" value="runArround" />
+        <node concept="2C6hJS" id="JFO1DNuAhg" role="2C11UV">
+          <node concept="2C1q2b" id="JFO1DNuAhh" role="2C6hI7">
+            <property role="2C1q29" value="4" />
+            <node concept="2C6hJS" id="JFO1DNuAhi" role="2C1q28">
+              <node concept="2C11Tl" id="JFO1DNuAhk" role="2C6hI7">
+                <ref role="2C198b" node="JFO1DNuAh2" resolve="run" />
               </node>
-              <node concept="98e2.3308300503039896127" id="859008965969339463" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-                <node concept="98e2.3265739055509559138" id="859008965969339468" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="98e2.3308300503039740438" id="859008965969339469" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700857" id="859008965969339471" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="runArround" />
-          <node concept="98e2.3308300503039896127" id="859008965969339472" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039660364" id="859008965969339473" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <property role="98e2.3308300503039660364.3308300503039660366" value="4" />
-              <node concept="98e2.3308300503039896127" id="859008965969339474" role="98e2.3308300503039660364.3308300503039660367" info="ng">
-                <node concept="98e2.3308300503039700882" id="859008965969339476" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969339458" resolveInfo="run" />
-                </node>
-                <node concept="98e2.3308300503039700882" id="859008965969339486" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <reference role="98e2.3308300503039700882.3308300503039730636" target="859008965969339480" resolveInfo="turnRight" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="98e2.3308300503039740438" id="859008965969339478" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700857" id="859008965969339480" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="turnRight" />
-          <node concept="98e2.3308300503039896127" id="859008965969339481" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039660364" id="859008965969339483" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <property role="98e2.3308300503039660364.3308300503039660366" value="3" />
-              <node concept="98e2.3308300503039896127" id="859008965969339484" role="98e2.3308300503039660364.3308300503039660367" info="ng">
-                <node concept="98e2.3308300503039647627" id="859008965969339485" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
+              <node concept="2C11Tl" id="JFO1DNuAhu" role="2C6hI7">
+                <ref role="2C198b" node="JFO1DNuAho" resolve="turnRight" />
               </node>
             </node>
           </node>
         </node>
       </node>
-    </node>
-    <node concept="98e2.4394627182934741782" id="4394627182934755441" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="Common" />
-      <node concept="98e2.3308300503039700857" id="4394627182934755443" role="98e2.4394627182934741782.4394627182934741783" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="turnRight" />
-        <node concept="98e2.3308300503039896127" id="4394627182934755444" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-          <node concept="98e2.3308300503039660364" id="4394627182934755445" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="98e2.3308300503039660364.3308300503039660366" value="3" />
-            <node concept="98e2.3308300503039896127" id="4394627182934755446" role="98e2.3308300503039660364.3308300503039660367" info="ng">
-              <node concept="98e2.3308300503039647627" id="4394627182934755448" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
+      <node concept="2C1RJh" id="JFO1DNuAhm" role="2C6hI7" />
+      <node concept="2C11UY" id="JFO1DNuAho" role="2C6hI7">
+        <property role="TrG5h" value="turnRight" />
+        <node concept="2C6hJS" id="JFO1DNuAhp" role="2C11UV">
+          <node concept="2C1q2b" id="JFO1DNuAhr" role="2C6hI7">
+            <property role="2C1q29" value="3" />
+            <node concept="2C6hJS" id="JFO1DNuAhs" role="2C1q28">
+              <node concept="2C1uTc" id="JFO1DNuAht" role="2C6hI7" />
             </node>
-          </node>
-        </node>
-      </node>
-      <node concept="98e2.3308300503039700857" id="4394627182934756713" role="98e2.4394627182934741782.4394627182934741783" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="turnAround" />
-        <node concept="98e2.3308300503039896127" id="4394627182934756714" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-          <node concept="98e2.3308300503039647627" id="4394627182934756716" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-          <node concept="98e2.3308300503039647627" id="4394627182934756718" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        </node>
-      </node>
-      <node concept="98e2.3308300503039700857" id="4394627182935216692" role="98e2.4394627182934741782.4394627182934741783" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="fetch" />
-        <node concept="98e2.3308300503039896127" id="4394627182935216693" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-          <node concept="98e2.3308300503039647678" id="4394627182935216694" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <node concept="98e2.6405700485436186598" id="4394627182935216695" role="98e2.3308300503039647678.3308300503039647680" info="ng" />
-            <node concept="98e2.3308300503039896127" id="4394627182935216696" role="98e2.3308300503039647678.3308300503039647684" info="ng">
-              <node concept="98e2.6405700485436170013" id="4394627182935216697" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-              <node concept="98e2.3308300503039700882" id="4394627182935227381" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                <reference role="98e2.3308300503039700882.3308300503039730636" target="4394627182934756713" resolveInfo="turnAround" />
-              </node>
-            </node>
-            <node concept="98e2.3308300503039896127" id="4394627182935216699" role="98e2.3308300503039647678.3308300503039647685" info="ng">
-              <node concept="98e2.3265739055509559138" id="4394627182935216700" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-              <node concept="98e2.3308300503039700882" id="4394627182935216701" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                <reference role="98e2.3308300503039700882.3308300503039730636" target="4394627182935216692" resolveInfo="fetch" />
-              </node>
-              <node concept="98e2.3265739055509559138" id="4394627182935216702" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="98e2.4394627182934741782" id="4394627182935280567" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="Filling" />
-      <node concept="98e2.3308300503039700857" id="4394627182935280568" role="98e2.4394627182934741782.4394627182934741783" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="fillup" />
-        <node concept="98e2.3308300503039896127" id="4394627182935280569" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-          <node concept="98e2.3308300503039667424" id="4394627182935306682" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <node concept="98e2.3308300503039654064" id="4394627182935306685" role="98e2.3308300503039667424.3308300503039667426" info="ng">
-              <node concept="98e2.859008965969439768" id="4394627182935306687" role="98e2.3308300503039654064.3308300503039654067" info="ng" />
-            </node>
-            <node concept="98e2.3308300503039896127" id="4394627182935306684" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-              <node concept="98e2.6405700485436120871" id="4394627182935306689" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="98e2.3308300503039700857" id="4394627182935306690" role="98e2.4394627182934741782.4394627182934741783" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="pickAll" />
-        <node concept="98e2.3308300503039896127" id="4394627182935306691" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-          <node concept="98e2.3308300503039667424" id="4394627182935306692" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <node concept="98e2.6405700485436186598" id="4394627182935306698" role="98e2.3308300503039667424.3308300503039667426" info="ng" />
-            <node concept="98e2.3308300503039896127" id="4394627182935306694" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-              <node concept="98e2.6405700485436170013" id="4394627182935306700" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="98e2.4394627182934741782" id="3210697320273759353" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="PlaygroundDefinition" />
-      <node concept="98e2.3308300503039700857" id="3210697320273760071" role="98e2.4394627182934741782.4394627182934741783" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="buildSimplePlayground" />
-        <node concept="98e2.3308300503039896127" id="3210697320273760072" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-          <node concept="y46i.3210697320273550864" id="3210697320273760074" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="4" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="1" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="3210697320273760075" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="4" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="2" />
-          </node>
-          <node concept="y46i.3210697320273608254" id="3210697320273760077" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="3" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="4" />
-          </node>
-        </node>
-      </node>
-      <node concept="98e2.3308300503039700857" id="8614576427117861068" role="98e2.4394627182934741782.4394627182934741783" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="buildMaze" />
-        <node concept="98e2.3308300503039896127" id="8614576427117861069" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-          <node concept="y46i.3210697320273550864" id="8614576427117861079" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="1" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="4" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="8614576427117861082" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="2" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="4" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="8614576427117861085" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="4" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="4" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="8614576427117861089" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="5" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="4" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="8614576427117861094" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="5" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="5" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="8614576427117861100" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="5" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="6" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="8614576427117861107" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="5" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="7" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="8614576427117861115" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="5" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="8" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="8614576427117861124" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="4" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="8" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="8614576427117861134" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="3" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="8" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="8614576427117861145" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="2" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="8" />
-          </node>
-          <node concept="y46i.3210697320273550864" id="8614576427117861157" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="1" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="8" />
-          </node>
-          <node concept="y46i.3210697320273608254" id="8614576427117880066" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-            <property role="y46i.3210697320273608255.3210697320273608257" value="1" />
-            <property role="y46i.3210697320273608255.3210697320273608256" value="5" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="98e2.3265739055509559110" id="3210697320273799179" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="MarkSniffer" />
-      <node concept="98e2.3308300503039896127" id="3210697320273799180" role="98e2.3265739055509559110.3265739055509559116" info="ng">
-        <node concept="98e2.3308300503039740438" id="3210697320273799215" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.6405700485436287811" id="3210697320273799217" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="98e2.6405700485436287811.6405700485436287813" value="Searches for a mark on a custom playground, using a very primitive strategy" />
+  </node>
+  <node concept="2zTg$P" id="3NWQyev6wxL">
+    <property role="TrG5h" value="Common" />
+    <node concept="2C11UY" id="3NWQyev6wxN" role="2zTg$O">
+      <property role="TrG5h" value="turnRight" />
+      <node concept="2C6hJS" id="3NWQyev6wxO" role="2C11UV">
+        <node concept="2C1q2b" id="3NWQyev6wxP" role="2C6hI7">
+          <property role="2C1q29" value="3" />
+          <node concept="2C6hJS" id="3NWQyev6wxQ" role="2C1q28">
+            <node concept="2C1uTc" id="3NWQyev6wxS" role="2C6hI7" />
+          </node>
         </node>
-        <node concept="98e2.3308300503039740438" id="3210697320273799218" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.4394627182934757449" id="3210697320273799182" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.4394627182934757449.4394627182934757450" target="3210697320273759353" resolveInfo="PlaygroundDefinition" />
+      </node>
+    </node>
+    <node concept="2C11UY" id="3NWQyev6wPD" role="2zTg$O">
+      <property role="TrG5h" value="turnAround" />
+      <node concept="2C6hJS" id="3NWQyev6wPE" role="2C11UV">
+        <node concept="2C1uTc" id="3NWQyev6wPG" role="2C6hI7" />
+        <node concept="2C1uTc" id="3NWQyev6wPI" role="2C6hI7" />
+      </node>
+    </node>
+    <node concept="2C11UY" id="3NWQyev8h8O" role="2zTg$O">
+      <property role="TrG5h" value="fetch" />
+      <node concept="2C6hJS" id="3NWQyev8h8P" role="2C11UV">
+        <node concept="2C1uTT" id="3NWQyev8h8Q" role="2C6hI7">
+          <node concept="1b7g51" id="3NWQyev8h8R" role="2C1uS7" />
+          <node concept="2C6hJS" id="3NWQyev8h8S" role="2C1uS3">
+            <node concept="1b7s6U" id="3NWQyev8h8T" role="2C6hI7" />
+            <node concept="2C11Tl" id="3NWQyev8jJP" role="2C6hI7">
+              <ref role="2C198b" node="3NWQyev6wPD" resolve="turnAround" />
+            </node>
+          </node>
+          <node concept="2C6hJS" id="3NWQyev8h8V" role="2C1uS2">
+            <node concept="1x_AGW" id="3NWQyev8h8W" role="2C6hI7" />
+            <node concept="2C11Tl" id="3NWQyev8h8X" role="2C6hI7">
+              <ref role="2C198b" node="3NWQyev8h8O" resolve="fetch" />
+            </node>
+            <node concept="1x_AGW" id="3NWQyev8h8Y" role="2C6hI7" />
+          </node>
         </node>
-        <node concept="98e2.4394627182934757449" id="3210697320273799183" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.4394627182934757449.4394627182934757450" target="4394627182934755441" resolveInfo="Common" />
+      </node>
+    </node>
+  </node>
+  <node concept="2zTg$P" id="3NWQyev8wIR">
+    <property role="TrG5h" value="Filling" />
+    <node concept="2C11UY" id="3NWQyev8wIS" role="2zTg$O">
+      <property role="TrG5h" value="fillup" />
+      <node concept="2C6hJS" id="3NWQyev8wIT" role="2C11UV">
+        <node concept="2C1pOB" id="3NWQyev8B6U" role="2C6hI7">
+          <node concept="2C1s_R" id="3NWQyev8B6X" role="2C1pO_">
+            <node concept="1S$3K2" id="3NWQyev8B6Z" role="2C1s_O" />
+          </node>
+          <node concept="2C6hJS" id="3NWQyev8B6W" role="2C1pO$">
+            <node concept="1b4w60" id="3NWQyev8B71" role="2C6hI7" />
+          </node>
         </node>
-        <node concept="98e2.4394627182934757449" id="3210697320273799184" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.4394627182934757449.4394627182934757450" target="4394627182935280567" resolveInfo="Filling" />
+      </node>
+    </node>
+    <node concept="2C11UY" id="3NWQyev8B72" role="2zTg$O">
+      <property role="TrG5h" value="pickAll" />
+      <node concept="2C6hJS" id="3NWQyev8B73" role="2C11UV">
+        <node concept="2C1pOB" id="3NWQyev8B74" role="2C6hI7">
+          <node concept="1b7g51" id="3NWQyev8B7a" role="2C1pO_" />
+          <node concept="2C6hJS" id="3NWQyev8B76" role="2C1pO$">
+            <node concept="1b7s6U" id="3NWQyev8B7c" role="2C6hI7" />
+          </node>
         </node>
-        <node concept="98e2.3308300503039740438" id="3210697320273799185" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700882" id="3210697320273799186" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="3210697320273760071" resolveInfo="buildSimplePlayground" />
+      </node>
+    </node>
+  </node>
+  <node concept="2zTg$P" id="2MeG3eCdOLT">
+    <property role="TrG5h" value="PlaygroundDefinition" />
+    <node concept="2C11UY" id="2MeG3eCdOX7" role="2zTg$O">
+      <property role="TrG5h" value="buildSimplePlayground" />
+      <node concept="2C6hJS" id="2MeG3eCdOX8" role="2C11UV">
+        <node concept="24IESz" id="2MeG3eCdOXa" role="2C6hI7">
+          <property role="24I$TM" value="4" />
+          <property role="24I$TN" value="1" />
         </node>
-        <node concept="98e2.3308300503039740438" id="3210697320273799187" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700857" id="3210697320273799188" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="safeStep" />
-          <node concept="98e2.3308300503039896127" id="3210697320273799189" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039647678" id="3210697320273799190" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <node concept="98e2.3308300503039654064" id="3210697320273799191" role="98e2.3308300503039647678.3308300503039647680" info="ng">
-                <node concept="98e2.3308300503039647788" id="3210697320273799192" role="98e2.3308300503039654064.3308300503039654067" info="ng" />
-              </node>
-              <node concept="98e2.3308300503039896127" id="3210697320273799193" role="98e2.3308300503039647678.3308300503039647684" info="ng">
-                <node concept="98e2.3265739055509559138" id="3210697320273799194" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-              </node>
-              <node concept="98e2.3308300503039896127" id="3210697320273799195" role="98e2.3308300503039647678.3308300503039647685" info="ng">
-                <node concept="98e2.3308300503039700882" id="3210697320273799196" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <reference role="98e2.3308300503039700882.3308300503039730636" target="4394627182934755443" resolveInfo="turnRight" />
-                </node>
+        <node concept="24IESz" id="2MeG3eCdOXb" role="2C6hI7">
+          <property role="24I$TM" value="4" />
+          <property role="24I$TN" value="2" />
+        </node>
+        <node concept="24I$Sd" id="2MeG3eCdOXd" role="2C6hI7">
+          <property role="24I$TM" value="3" />
+          <property role="24I$TN" value="4" />
+        </node>
+      </node>
+    </node>
+    <node concept="2C11UY" id="7ud7TTkO5zc" role="2zTg$O">
+      <property role="TrG5h" value="buildMaze" />
+      <node concept="2C6hJS" id="7ud7TTkO5zd" role="2C11UV">
+        <node concept="24IESz" id="7ud7TTkO5zn" role="2C6hI7">
+          <property role="24I$TM" value="1" />
+          <property role="24I$TN" value="4" />
+        </node>
+        <node concept="24IESz" id="7ud7TTkO5zq" role="2C6hI7">
+          <property role="24I$TM" value="2" />
+          <property role="24I$TN" value="4" />
+        </node>
+        <node concept="24IESz" id="7ud7TTkO5zt" role="2C6hI7">
+          <property role="24I$TM" value="4" />
+          <property role="24I$TN" value="4" />
+        </node>
+        <node concept="24IESz" id="7ud7TTkO5zx" role="2C6hI7">
+          <property role="24I$TM" value="5" />
+          <property role="24I$TN" value="4" />
+        </node>
+        <node concept="24IESz" id="7ud7TTkO5zA" role="2C6hI7">
+          <property role="24I$TM" value="5" />
+          <property role="24I$TN" value="5" />
+        </node>
+        <node concept="24IESz" id="7ud7TTkO5zG" role="2C6hI7">
+          <property role="24I$TM" value="5" />
+          <property role="24I$TN" value="6" />
+        </node>
+        <node concept="24IESz" id="7ud7TTkO5zN" role="2C6hI7">
+          <property role="24I$TM" value="5" />
+          <property role="24I$TN" value="7" />
+        </node>
+        <node concept="24IESz" id="7ud7TTkO5zV" role="2C6hI7">
+          <property role="24I$TM" value="5" />
+          <property role="24I$TN" value="8" />
+        </node>
+        <node concept="24IESz" id="7ud7TTkO5$4" role="2C6hI7">
+          <property role="24I$TM" value="4" />
+          <property role="24I$TN" value="8" />
+        </node>
+        <node concept="24IESz" id="7ud7TTkO5$e" role="2C6hI7">
+          <property role="24I$TM" value="3" />
+          <property role="24I$TN" value="8" />
+        </node>
+        <node concept="24IESz" id="7ud7TTkO5$p" role="2C6hI7">
+          <property role="24I$TM" value="2" />
+          <property role="24I$TN" value="8" />
+        </node>
+        <node concept="24IESz" id="7ud7TTkO5$_" role="2C6hI7">
+          <property role="24I$TM" value="1" />
+          <property role="24I$TN" value="8" />
+        </node>
+        <node concept="24I$Sd" id="7ud7TTkOac2" role="2C6hI7">
+          <property role="24I$TM" value="1" />
+          <property role="24I$TN" value="5" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1x_AGo" id="2MeG3eCdYwb">
+    <property role="TrG5h" value="MarkSniffer" />
+    <node concept="2C6hJS" id="2MeG3eCdYwc" role="1x_AGi">
+      <node concept="2C1RJh" id="2MeG3eCdYwJ" role="2C6hI7" />
+      <node concept="1b7Vn$" id="2MeG3eCdYwL" role="2C6hI7">
+        <property role="1b7Vny" value="Searches for a mark on a custom playground, using a very primitive strategy" />
+      </node>
+      <node concept="2C1RJh" id="2MeG3eCdYwM" role="2C6hI7" />
+      <node concept="2zTGDE" id="2MeG3eCdYwe" role="2C6hI7">
+        <ref role="2zTGDD" node="2MeG3eCdOLT" resolve="PlaygroundDefinition" />
+      </node>
+      <node concept="2zTGDE" id="2MeG3eCdYwf" role="2C6hI7">
+        <ref role="2zTGDD" node="3NWQyev6wxL" resolve="Common" />
+      </node>
+      <node concept="2zTGDE" id="2MeG3eCdYwg" role="2C6hI7">
+        <ref role="2zTGDD" node="3NWQyev8wIR" resolve="Filling" />
+      </node>
+      <node concept="2C1RJh" id="2MeG3eCdYwh" role="2C6hI7" />
+      <node concept="2C11Tl" id="2MeG3eCdYwi" role="2C6hI7">
+        <ref role="2C198b" node="2MeG3eCdOX7" resolve="buildSimplePlayground" />
+      </node>
+      <node concept="2C1RJh" id="2MeG3eCdYwj" role="2C6hI7" />
+      <node concept="2C11UY" id="2MeG3eCdYwk" role="2C6hI7">
+        <property role="TrG5h" value="safeStep" />
+        <node concept="2C6hJS" id="2MeG3eCdYwl" role="2C11UV">
+          <node concept="2C1uTT" id="2MeG3eCdYwm" role="2C6hI7">
+            <node concept="2C1s_R" id="2MeG3eCdYwn" role="2C1uS7">
+              <node concept="2C1t7F" id="2MeG3eCdYwo" role="2C1s_O" />
+            </node>
+            <node concept="2C6hJS" id="2MeG3eCdYwp" role="2C1uS3">
+              <node concept="1x_AGW" id="2MeG3eCdYwq" role="2C6hI7" />
+            </node>
+            <node concept="2C6hJS" id="2MeG3eCdYwr" role="2C1uS2">
+              <node concept="2C11Tl" id="2MeG3eCdYws" role="2C6hI7">
+                <ref role="2C198b" node="3NWQyev6wxN" resolve="turnRight" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="98e2.3308300503039700857" id="3210697320273799197" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="searchForMark" />
-          <node concept="98e2.3308300503039896127" id="3210697320273799198" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039647678" id="3210697320273799199" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <node concept="98e2.6405700485436186598" id="3210697320273799200" role="98e2.3308300503039647678.3308300503039647680" info="ng" />
-              <node concept="98e2.3308300503039896127" id="3210697320273799201" role="98e2.3308300503039647678.3308300503039647684" info="ng">
-                <node concept="98e2.3308300503039700882" id="3210697320273799202" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <reference role="98e2.3308300503039700882.3308300503039730636" target="4394627182935306690" resolveInfo="pickAll" />
-                </node>
-                <node concept="98e2.3308300503039667424" id="3210697320273799203" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <node concept="98e2.3308300503039654064" id="3210697320273799204" role="98e2.3308300503039667424.3308300503039667426" info="ng">
-                    <node concept="98e2.3308300503039683649" id="3210697320273799205" role="98e2.3308300503039654064.3308300503039654067" info="ng">
-                      <node concept="98e2.3308300503039683644" id="3210697320273799206" role="98e2.3308300503039683649.3308300503039683650" info="ng" />
-                    </node>
+      </node>
+      <node concept="2C11UY" id="2MeG3eCdYwt" role="2C6hI7">
+        <property role="TrG5h" value="searchForMark" />
+        <node concept="2C6hJS" id="2MeG3eCdYwu" role="2C11UV">
+          <node concept="2C1uTT" id="2MeG3eCdYwv" role="2C6hI7">
+            <node concept="1b7g51" id="2MeG3eCdYww" role="2C1uS7" />
+            <node concept="2C6hJS" id="2MeG3eCdYwx" role="2C1uS3">
+              <node concept="2C11Tl" id="2MeG3eCdYwy" role="2C6hI7">
+                <ref role="2C198b" node="3NWQyev8B72" resolve="pickAll" />
+              </node>
+              <node concept="2C1pOB" id="2MeG3eCdYwz" role="2C6hI7">
+                <node concept="2C1s_R" id="2MeG3eCdYw$" role="2C1pO_">
+                  <node concept="2C15Q6" id="2MeG3eCdYw_" role="2C1s_O">
+                    <node concept="2C15RV" id="2MeG3eCdYwA" role="2C15Q5" />
                   </node>
-                  <node concept="98e2.3308300503039896127" id="3210697320273799207" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-                    <node concept="98e2.3308300503039647627" id="3210697320273799208" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-                  </node>
                 </node>
-              </node>
-              <node concept="98e2.3308300503039896127" id="3210697320273799209" role="98e2.3308300503039647678.3308300503039647685" info="ng">
-                <node concept="98e2.3308300503039700882" id="3210697320273799210" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <reference role="98e2.3308300503039700882.3308300503039730636" target="3210697320273799188" resolveInfo="safeStep" />
-                </node>
-                <node concept="98e2.3308300503039700882" id="3210697320273799211" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <reference role="98e2.3308300503039700882.3308300503039730636" target="3210697320273799197" resolveInfo="searchForMark" />
+                <node concept="2C6hJS" id="2MeG3eCdYwB" role="2C1pO$">
+                  <node concept="2C1uTc" id="2MeG3eCdYwC" role="2C6hI7" />
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="98e2.3308300503039740438" id="3210697320273799219" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3210697320273763054" id="3210697320273799212" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="98e2.3210697320273763054.3210697320273763055" value="Playground is ready." />
-        </node>
-        <node concept="98e2.3308300503039700882" id="3210697320273799213" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="3210697320273799197" resolveInfo="searchForMark" />
-        </node>
-        <node concept="98e2.3210697320273763054" id="3210697320273799214" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="98e2.3210697320273763054.3210697320273763055" value="Found a mark!" />
-        </node>
-      </node>
-    </node>
-    <node concept="98e2.3265739055509559110" id="8614576427117861066" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="Maze" />
-      <node concept="98e2.3308300503039896127" id="8614576427117861067" role="98e2.3265739055509559110.3265739055509559116" info="ng">
-        <node concept="98e2.4394627182934757449" id="8614576427117861172" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.4394627182934757449.4394627182934757450" target="3210697320273759353" resolveInfo="PlaygroundDefinition" />
-        </node>
-        <node concept="98e2.4394627182934757449" id="8614576427117862036" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.4394627182934757449.4394627182934757450" target="4394627182934755441" resolveInfo="Common" />
-        </node>
-        <node concept="98e2.3308300503039700882" id="8614576427117861178" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="8614576427117861068" resolveInfo="buildMaze" />
-        </node>
-        <node concept="98e2.3308300503039740438" id="8614576427117861181" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039667424" id="8614576427117861210" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <node concept="98e2.3308300503039654064" id="8614576427117861547" role="98e2.3308300503039667424.3308300503039667426" info="ng">
-            <node concept="98e2.3308300503039683649" id="8614576427117861553" role="98e2.3308300503039654064.3308300503039654067" info="ng">
-              <node concept="98e2.3308300503039675723" id="8614576427117861559" role="98e2.3308300503039683649.3308300503039683650" info="ng" />
-            </node>
-          </node>
-          <node concept="98e2.3308300503039896127" id="8614576427117861214" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-            <node concept="98e2.3308300503039647627" id="8614576427117861564" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-          </node>
-        </node>
-        <node concept="98e2.3308300503039667424" id="8614576427117861578" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <node concept="98e2.3308300503039654064" id="8614576427117861596" role="98e2.3308300503039667424.3308300503039667426" info="ng">
-            <node concept="98e2.3308300503039647788" id="8614576427117861602" role="98e2.3308300503039654064.3308300503039654067" info="ng" />
-          </node>
-          <node concept="98e2.3308300503039896127" id="8614576427117861582" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-            <node concept="98e2.3265739055509559138" id="8614576427117861607" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-          </node>
-        </node>
-        <node concept="98e2.3308300503039700882" id="8614576427117866045" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="8614576427117861879" resolveInfo="findDoor" />
-        </node>
-        <node concept="98e2.3265739055509559138" id="8614576427117871700" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700882" id="8614576427117879931" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <reference role="98e2.3308300503039700882.3308300503039730636" target="8614576427117879929" resolveInfo="sniffAround" />
-        </node>
-        <node concept="98e2.3308300503039740438" id="7060824959891889417" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039740438" id="7060824959895013630" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.6405700485436287811" id="8614576427117866163" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="98e2.6405700485436287811.6405700485436287813" value="Definitions" />
-        </node>
-        <node concept="98e2.3308300503039700857" id="8614576427117861879" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="findDoor" />
-          <node concept="98e2.3308300503039896127" id="8614576427117861881" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039667424" id="8614576427117861901" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <node concept="98e2.3308300503039647788" id="8614576427117861918" role="98e2.3308300503039667424.3308300503039667426" info="ng" />
-              <node concept="98e2.3308300503039896127" id="8614576427117861905" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-                <node concept="98e2.3308300503039647627" id="8614576427117861924" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-                <node concept="98e2.3265739055509559138" id="8614576427117861930" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-                <node concept="98e2.3308300503039700882" id="8614576427117862061" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <reference role="98e2.3308300503039700882.3308300503039730636" target="4394627182934755443" resolveInfo="turnRight" />
-                </node>
+            <node concept="2C6hJS" id="2MeG3eCdYwD" role="2C1uS2">
+              <node concept="2C11Tl" id="2MeG3eCdYwE" role="2C6hI7">
+                <ref role="2C198b" node="2MeG3eCdYwk" resolve="safeStep" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="98e2.3308300503039740438" id="8614576427117902136" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-        <node concept="98e2.3308300503039700857" id="8614576427117879929" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="sniffAround" />
-          <node concept="98e2.3308300503039896127" id="8614576427117879930" role="98e2.3308300503039700857.3308300503039700860" info="ng">
-            <node concept="98e2.3308300503039667424" id="8614576427117879633" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <node concept="26es.1904811872814253578" id="8614576427117885938" role="98e2.3308300503039667424.3308300503039667426" info="ng">
-                <node concept="98e2.3308300503039654064" id="8614576427117885958" role="26es.1904811872814253785.1904811872814253581" info="ng">
-                  <node concept="98e2.3308300503039647788" id="8614576427117885936" role="98e2.3308300503039654064.3308300503039654067" info="ng" />
-                </node>
-                <node concept="98e2.3308300503039654064" id="8614576427117885951" role="26es.1904811872814253785.1904811872814253580" info="ng">
-                  <node concept="98e2.6405700485436186598" id="8614576427117885948" role="98e2.3308300503039654064.3308300503039654067" info="ng" />
-                </node>
-              </node>
-              <node concept="98e2.3308300503039896127" id="8614576427117879637" role="98e2.3308300503039667424.3308300503039667427" info="ng">
-                <node concept="98e2.3265739055509559138" id="8614576427117885980" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-              </node>
-            </node>
-            <node concept="98e2.3308300503039647678" id="8614576427117879859" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-              <node concept="98e2.3308300503039647788" id="8614576427117879919" role="98e2.3308300503039647678.3308300503039647680" info="ng" />
-              <node concept="98e2.3308300503039896127" id="8614576427117879863" role="98e2.3308300503039647678.3308300503039647684" info="ng">
-                <node concept="98e2.3308300503039700882" id="8614576427117879927" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <reference role="98e2.3308300503039700882.3308300503039730636" target="4394627182934755443" resolveInfo="turnRight" />
-                </node>
-                <node concept="98e2.3308300503039700882" id="8614576427117880008" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <reference role="98e2.3308300503039700882.3308300503039730636" target="8614576427117879929" resolveInfo="sniffAround" />
-                </node>
-              </node>
-              <node concept="98e2.3308300503039896127" id="8614576427117879865" role="98e2.3308300503039647678.3308300503039647685" info="ng">
-                <node concept="98e2.6405700485436170013" id="8614576427117880031" role="98e2.3308300503039896127.3308300503039896128" info="ng" />
-                <node concept="98e2.3210697320273763054" id="8614576427117886000" role="98e2.3308300503039896127.3308300503039896128" info="ng">
-                  <property role="98e2.3210697320273763054.3210697320273763055" value="Found a mark" />
-                </node>
+              <node concept="2C11Tl" id="2MeG3eCdYwF" role="2C6hI7">
+                <ref role="2C198b" node="2MeG3eCdYwt" resolve="searchForMark" />
               </node>
             </node>
           </node>
         </node>
       </node>
+      <node concept="2C1RJh" id="2MeG3eCdYwN" role="2C6hI7" />
+      <node concept="24IuFt" id="2MeG3eCdYwG" role="2C6hI7">
+        <property role="24IuFs" value="Playground is ready." />
+      </node>
+      <node concept="2C11Tl" id="2MeG3eCdYwH" role="2C6hI7">
+        <ref role="2C198b" node="2MeG3eCdYwt" resolve="searchForMark" />
+      </node>
+      <node concept="24IuFt" id="2MeG3eCdYwI" role="2C6hI7">
+        <property role="24IuFs" value="Found a mark!" />
+      </node>
     </node>
-  </contents>
+  </node>
+  <node concept="1x_AGo" id="7ud7TTkO5za">
+    <property role="TrG5h" value="Maze" />
+    <node concept="2C6hJS" id="7ud7TTkO5zb" role="1x_AGi">
+      <node concept="2zTGDE" id="7ud7TTkO5$O" role="2C6hI7">
+        <ref role="2zTGDD" node="2MeG3eCdOLT" resolve="PlaygroundDefinition" />
+      </node>
+      <node concept="2zTGDE" id="7ud7TTkO5Mk" role="2C6hI7">
+        <ref role="2zTGDD" node="3NWQyev6wxL" resolve="Common" />
+      </node>
+      <node concept="2C11Tl" id="7ud7TTkO5$U" role="2C6hI7">
+        <ref role="2C198b" node="7ud7TTkO5zc" resolve="buildMaze" />
+      </node>
+      <node concept="2C1RJh" id="7ud7TTkO5$X" role="2C6hI7" />
+      <node concept="2C1pOB" id="7ud7TTkO5_q" role="2C6hI7">
+        <node concept="2C1s_R" id="7ud7TTkO5EF" role="2C1pO_">
+          <node concept="2C15Q6" id="7ud7TTkO5EL" role="2C1s_O">
+            <node concept="2C17Mc" id="7ud7TTkO5ER" role="2C15Q5" />
+          </node>
+        </node>
+        <node concept="2C6hJS" id="7ud7TTkO5_u" role="2C1pO$">
+          <node concept="2C1uTc" id="7ud7TTkO5EW" role="2C6hI7" />
+        </node>
+      </node>
+      <node concept="2C1pOB" id="7ud7TTkO5Fa" role="2C6hI7">
+        <node concept="2C1s_R" id="7ud7TTkO5Fs" role="2C1pO_">
+          <node concept="2C1t7F" id="7ud7TTkO5Fy" role="2C1s_O" />
+        </node>
+        <node concept="2C6hJS" id="7ud7TTkO5Fe" role="2C1pO$">
+          <node concept="1x_AGW" id="7ud7TTkO5FB" role="2C6hI7" />
+        </node>
+      </node>
+      <node concept="2C11Tl" id="7ud7TTkO6KX" role="2C6hI7">
+        <ref role="2C198b" node="7ud7TTkO5JR" resolve="findDoor" />
+      </node>
+      <node concept="1x_AGW" id="7ud7TTkO89k" role="2C6hI7" />
+      <node concept="2C11Tl" id="7ud7TTkOa9V" role="2C6hI7">
+        <ref role="2C198b" node="7ud7TTkOa9T" resolve="sniffAround" />
+      </node>
+      <node concept="2C1RJh" id="67X5Igz$lO9" role="2C6hI7" />
+      <node concept="2C1RJh" id="67X5IgzKgzY" role="2C6hI7" />
+      <node concept="1b7Vn$" id="7ud7TTkO6MN" role="2C6hI7">
+        <property role="1b7Vny" value="Definitions" />
+      </node>
+      <node concept="2C11UY" id="7ud7TTkO5JR" role="2C6hI7">
+        <property role="TrG5h" value="findDoor" />
+        <node concept="2C6hJS" id="7ud7TTkO5JT" role="2C11UV">
+          <node concept="2C1pOB" id="7ud7TTkO5Kd" role="2C6hI7">
+            <node concept="2C1t7F" id="7ud7TTkO5Ku" role="2C1pO_" />
+            <node concept="2C6hJS" id="7ud7TTkO5Kh" role="2C1pO$">
+              <node concept="2C1uTc" id="7ud7TTkO5K$" role="2C6hI7" />
+              <node concept="1x_AGW" id="7ud7TTkO5KE" role="2C6hI7" />
+              <node concept="2C11Tl" id="7ud7TTkO5MH" role="2C6hI7">
+                <ref role="2C198b" node="3NWQyev6wxN" resolve="turnRight" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2C1RJh" id="7ud7TTkOf$S" role="2C6hI7" />
+      <node concept="2C11UY" id="7ud7TTkOa9T" role="2C6hI7">
+        <property role="TrG5h" value="sniffAround" />
+        <node concept="2C6hJS" id="7ud7TTkOa9U" role="2C11UV">
+          <node concept="2C1pOB" id="7ud7TTkOa5h" role="2C6hI7">
+            <node concept="1Tpgp4" id="7ud7TTkObBM" role="2C1pO_">
+              <node concept="2C1s_R" id="7ud7TTkObC6" role="1Tpgp3">
+                <node concept="2C1t7F" id="7ud7TTkObBK" role="2C1s_O" />
+              </node>
+              <node concept="2C1s_R" id="7ud7TTkObBZ" role="1Tpgp2">
+                <node concept="1b7g51" id="7ud7TTkObBW" role="2C1s_O" />
+              </node>
+            </node>
+            <node concept="2C6hJS" id="7ud7TTkOa5l" role="2C1pO$">
+              <node concept="1x_AGW" id="7ud7TTkObCs" role="2C6hI7" />
+            </node>
+          </node>
+          <node concept="2C1uTT" id="7ud7TTkOa8N" role="2C6hI7">
+            <node concept="2C1t7F" id="7ud7TTkOa9J" role="2C1uS7" />
+            <node concept="2C6hJS" id="7ud7TTkOa8R" role="2C1uS3">
+              <node concept="2C11Tl" id="7ud7TTkOa9R" role="2C6hI7">
+                <ref role="2C198b" node="3NWQyev6wxN" resolve="turnRight" />
+              </node>
+              <node concept="2C11Tl" id="7ud7TTkOab8" role="2C6hI7">
+                <ref role="2C198b" node="7ud7TTkOa9T" resolve="sniffAround" />
+              </node>
+            </node>
+            <node concept="2C6hJS" id="7ud7TTkOa8T" role="2C1uS2">
+              <node concept="1b7s6U" id="7ud7TTkOabv" role="2C6hI7" />
+              <node concept="24IuFt" id="7ud7TTkObCK" role="2C6hI7">
+                <property role="24IuFs" value="Found a mark" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

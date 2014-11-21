@@ -1,60 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:00000000-0000-4000-0000-011c8959040f(postingrules.agreement)">
+<model ref="r:00000000-0000-4000-0000-011c8959040f(postingrules.agreement)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="144f7012-c2d5-43be-be2b-4bfb7dff6503" name="jetbrains.mps.samples.agreementLanguage" />
-    <lang id="b1a9bc47-8a26-4792-8b68-4660c531090a" name="jetbrains.mps.samples.formulaLanguage" />
-    <model ref="r:00000000-0000-4000-0000-011c8959040b(jetbrains.mps.samples.agreementLanguage.declarations)" name="jetbrains.mps.samples.agreementLanguage.declarations" />
-    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784210516" name="jetbrains.mps.samples.formulaLanguage.structure.Formula" />
-    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784562907" name="jetbrains.mps.samples.formulaLanguage.structure.Operation" />
-    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784926012" name="jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant" />
-    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111785030296" name="jetbrains.mps.samples.formulaLanguage.structure.IfFunction" />
-    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111786301085" name="jetbrains.mps.samples.formulaLanguage.structure.PlusOperation" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111790951422" name="jetbrains.mps.samples.agreementLanguage.structure.Plan" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791020814" name="jetbrains.mps.samples.agreementLanguage.structure.Value" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612" name="jetbrains.mps.samples.agreementLanguage.structure.Event" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792102248" name="jetbrains.mps.samples.agreementLanguage.structure.Quantity" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792355423" name="jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581" name="jetbrains.mps.samples.agreementLanguage.structure.Date" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792520557" name="jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111794734295" name="jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111794888922" name="jetbrains.mps.samples.agreementLanguage.structure.PostingRule" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112036490295" name="jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112038445100" name="jetbrains.mps.samples.agreementLanguage.structure.ValueReference" />
-    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1112384225757" name="jetbrains.mps.samples.formulaLanguage.structure.MultOperation" />
-    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1112406908640" name="jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1116445695828" name="jetbrains.mps.samples.agreementLanguage.structure.Date_Past" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581/1111792409129" name="year" />
-    <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581/1111792417427" name="month" />
-    <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581/1111792417975" name="day" />
-    <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792102248/1111793358083" name="unit" />
-    <property id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784926012/1113257000626" name="value" />
-    <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612/1116368080504" name="taxable" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612/1111793668132" name="type" />
-    <refRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111794888922/1111795211704" name="account" />
-    <refRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112036490295/1112036516483" name="eventVariable" />
-    <refRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112038445100/1112038462507" name="value" />
-    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784210516/1111784226798" name="expression" />
-    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784562907/1111784613299" name="leftOperand" />
-    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784562907/1111784647019" name="rightOperand" />
-    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111785030296/1111785044750" name="logicalTest" />
-    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111785030296/1111785091720" name="valueIfTrue" />
-    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111785030296/1111785124143" name="valueIfFalse" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111790951422/1111791064925" name="value" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111790951422/1111791084333" name="event" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791020814/1111791826558" name="quantity" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792355423/1111792372299" name="date" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792355423/1111792463585" name="value" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792102248/1111793363741" name="amount" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612/1111794644919" name="postingRule" />
-  </debugInfo>
   <languages>
-    <use id="144f7012-c2d5-43be-be2b-4bfb7dff6503" version="-1" index="t74k" />
-    <use id="b1a9bc47-8a26-4792-8b68-4660c531090a" version="-1" index="230f" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="144f7012-c2d5-43be-be2b-4bfb7dff6503" name="jetbrains.mps.samples.agreementLanguage" version="-1" />
+    <use id="b1a9bc47-8a26-4792-8b68-4660c531090a" name="jetbrains.mps.samples.formulaLanguage" version="-1" />
   </languages>
   <imports>
     <import index="tpnb" ref="r:00000000-0000-4000-0000-011c8959040b(jetbrains.mps.samples.agreementLanguage.declarations)" />
@@ -62,261 +11,325 @@
     <import index="tpnk" ref="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="t74k.1111790951422" id="1112303557868" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="Regular" />
-      <node concept="t74k.1111791038612" id="1112383986387" role="t74k.1111790951422.1111791084333" info="ng">
-        <reference role="t74k.1111791038612.1111793668132" target="tpnb.1112316681746" resolveInfo="USAGE" />
-        <node concept="t74k.1111794734295" id="1112384017937" role="t74k.1111791038612.1111794644919" info="ng">
-          <node concept="t74k.1111794888922" id="1112384017938" role="t74k.1111792355423.1111792463585" info="ng">
-            <reference role="t74k.1111794888922.1111795211704" target="tpnb.1112315990977" resolveInfo="base-usage" />
-            <node concept="230f.1112384225757" id="1112384394412" role="230f.1111784210516.1111784226798" info="ng">
-              <node concept="t74k.1112038445100" id="1112384405975" role="230f.1111784562907.1111784613299" info="ng">
-                <reference role="t74k.1112038445100.1112038462507" target="1112383765038" resolveInfo="BASE_RATE" />
-              </node>
-              <node concept="t74k.1112036490295" id="1112384408586" role="230f.1111784562907.1111784647019" info="ng">
-                <reference role="t74k.1112036490295.1112036516483" target="tpnb.1112316685513" resolveInfo="usage" />
-              </node>
+  <registry>
+    <language id="b1a9bc47-8a26-4792-8b68-4660c531090a" name="jetbrains.mps.samples.formulaLanguage">
+      <concept id="1111784210516" name="jetbrains.mps.samples.formulaLanguage.structure.Formula" flags="ng" index="3rwc5m">
+        <child id="1111784226798" name="expression" index="3rwfVG" />
+      </concept>
+      <concept id="1111784562907" name="jetbrains.mps.samples.formulaLanguage.structure.Operation" flags="ng" index="3rxy7p">
+        <child id="1111784613299" name="leftOperand" index="3rxIiL" />
+        <child id="1111784647019" name="rightOperand" index="3rxQxD" />
+      </concept>
+      <concept id="1111784926012" name="jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant" flags="ng" index="3ryUCY">
+        <property id="1113257000626" name="value" index="NirYL" />
+      </concept>
+      <concept id="1111785030296" name="jetbrains.mps.samples.formulaLanguage.structure.IfFunction" flags="ng" index="3rzkeq">
+        <child id="1111785044750" name="logicalTest" index="3rznCc" />
+        <child id="1111785091720" name="valueIfTrue" index="3rzzea" />
+        <child id="1111785124143" name="valueIfFalse" index="3rzF0H" />
+      </concept>
+      <concept id="1111786301085" name="jetbrains.mps.samples.formulaLanguage.structure.PlusOperation" flags="ng" index="3rCauv" />
+      <concept id="1112384225757" name="jetbrains.mps.samples.formulaLanguage.structure.MultOperation" flags="ng" index="3Zh43v" />
+      <concept id="1112406908640" name="jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation" flags="ng" index="0B_Zz" />
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="144f7012-c2d5-43be-be2b-4bfb7dff6503" name="jetbrains.mps.samples.agreementLanguage">
+      <concept id="1111790951422" name="jetbrains.mps.samples.agreementLanguage.structure.Plan" flags="ng" index="3rTTFW">
+        <child id="1111791064925" name="value" index="3rUlpv" />
+        <child id="1111791084333" name="event" index="3rUq8J" />
+      </concept>
+      <concept id="1111791020814" name="jetbrains.mps.samples.agreementLanguage.structure.Value" flags="ng" index="3rUaCc">
+        <child id="1111791826558" name="quantity" index="3rXftW" />
+      </concept>
+      <concept id="1111791038612" name="jetbrains.mps.samples.agreementLanguage.structure.Event" flags="ng" index="3rUf6m">
+        <property id="1116368080504" name="taxable" index="3GIgXV" />
+        <reference id="1111793668132" name="type" index="3s4h4A" />
+        <child id="1111794644919" name="postingRule" index="3s7ZqP" />
+      </concept>
+      <concept id="1111792102248" name="jetbrains.mps.samples.agreementLanguage.structure.Quantity" flags="ng" index="3rYiDE">
+        <property id="1111793358083" name="unit" index="3s35g1" />
+        <child id="1111793363741" name="amount" index="3s36Cv" />
+      </concept>
+      <concept id="1111792355423" name="jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty" flags="ng" index="3rZg_t">
+        <child id="1111792372299" name="date" index="3rZkH9" />
+        <child id="1111792463585" name="value" index="3rZEZz" />
+      </concept>
+      <concept id="1111792389581" name="jetbrains.mps.samples.agreementLanguage.structure.Date" flags="ng" index="3rZoNf">
+        <property id="1111792409129" name="year" index="3rZtGF" />
+        <property id="1111792417427" name="month" index="3rZvIh" />
+        <property id="1111792417975" name="day" index="3rZvQP" />
+      </concept>
+      <concept id="1111792520557" name="jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty" flags="ng" index="3rZSLJ" />
+      <concept id="1111794734295" name="jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty" flags="ng" index="3s8lnl" />
+      <concept id="1111794888922" name="jetbrains.mps.samples.agreementLanguage.structure.PostingRule" flags="ng" index="3s8V7o">
+        <reference id="1111795211704" name="account" index="3sa9MU" />
+      </concept>
+      <concept id="1112036490295" name="jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference" flags="ng" index="3EyzOP">
+        <reference id="1112036516483" name="eventVariable" index="3EyEe1" />
+      </concept>
+      <concept id="1112038445100" name="jetbrains.mps.samples.agreementLanguage.structure.ValueReference" flags="ng" index="3EE14I">
+        <reference id="1112038462507" name="value" index="3EE5kD" />
+      </concept>
+      <concept id="1116445695828" name="jetbrains.mps.samples.agreementLanguage.structure.Date_Past" flags="ng" index="3LmlTn" />
+    </language>
+  </registry>
+  <node concept="3rTTFW" id="gbUtlNG">
+    <property role="TrG5h" value="Regular" />
+    <node concept="3rUf6m" id="gbZg9Fj" role="3rUq8J">
+      <ref role="3s4h4A" to="tpnb:gbVfpSi" resolve="USAGE" />
+      <node concept="3s8lnl" id="gbZghoh" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZghoi" role="3rZEZz">
+          <ref role="3sa9MU" to="tpnb:gbVcLf1" resolve="base-usage" />
+          <node concept="3Zh43v" id="gbZhHiG" role="3rwfVG">
+            <node concept="3EE14I" id="gbZhK7n" role="3rxIiL">
+              <ref role="3EE5kD" node="gbZfjCI" resolve="BASE_RATE" />
             </node>
-          </node>
-          <node concept="t74k.1111792389581" id="1112383994545" role="t74k.1111792355423.1111792372299" info="ng">
-            <property role="t74k.1111792389581.1111792409129" value="1999" />
-            <property role="t74k.1111792389581.1111792417427" value="10" />
-            <property role="t74k.1111792389581.1111792417975" value="01" />
+            <node concept="3EyzOP" id="gbZhKKa" role="3rxQxD">
+              <ref role="3EyEe1" to="tpnb:gbVfqN9" resolve="usage" />
+            </node>
           </node>
         </node>
-      </node>
-      <node concept="t74k.1111791038612" id="1112384423559" role="t74k.1111790951422.1111791084333" info="ng">
-        <reference role="t74k.1111791038612.1111793668132" target="tpnb.1112316021402" resolveInfo="SERVICE CALL" />
-        <node concept="t74k.1111794734295" id="1112384647065" role="t74k.1111791038612.1111794644919" info="ng">
-          <node concept="t74k.1111794888922" id="1112384488572" role="t74k.1111792355423.1111792463585" info="ng">
-            <reference role="t74k.1111794888922.1111795211704" target="tpnb.1112316007244" resolveInfo="service" />
-            <node concept="230f.1111786301085" id="1112384458969" role="230f.1111784210516.1111784226798" info="ng">
-              <node concept="230f.1112384225757" id="1112384462940" role="230f.1111784562907.1111784613299" info="ng">
-                <node concept="t74k.1112036490295" id="1112384464879" role="230f.1111784562907.1111784613299" info="ng">
-                  <reference role="t74k.1112036490295.1112036516483" target="tpnb.1112316252581" resolveInfo="fee" />
-                </node>
-                <node concept="230f.1111784926012" id="1112384472881" role="230f.1111784562907.1111784647019" info="ng">
-                  <property role="230f.1111784926012.1113257000626" value="0.5" />
-                </node>
-              </node>
-              <node concept="t74k.1111792102248" id="1112384483477" role="230f.1111784562907.1111784647019" info="ng">
-                <property role="t74k.1111792102248.1111793358083" value="USD" />
-                <node concept="230f.1111784926012" id="1112384483476" role="t74k.1111792102248.1111793363741" info="ng">
-                  <property role="230f.1111784926012.1113257000626" value="10.0" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="t74k.1111792389581" id="1112384434482" role="t74k.1111792355423.1111792372299" info="ng">
-            <property role="t74k.1111792389581.1111792409129" value="1999" />
-            <property role="t74k.1111792389581.1111792417427" value="10" />
-            <property role="t74k.1111792389581.1111792417975" value="01" />
-          </node>
-        </node>
-        <node concept="t74k.1111794734295" id="1112384647066" role="t74k.1111791038612.1111794644919" info="ng">
-          <node concept="t74k.1111794888922" id="1112384560413" role="t74k.1111792355423.1111792463585" info="ng">
-            <reference role="t74k.1111794888922.1111795211704" target="tpnb.1112316007244" resolveInfo="service" />
-            <node concept="230f.1111786301085" id="1112384540389" role="230f.1111784210516.1111784226798" info="ng">
-              <node concept="230f.1112384225757" id="1112384543203" role="230f.1111784562907.1111784613299" info="ng">
-                <node concept="t74k.1112036490295" id="1112384548298" role="230f.1111784562907.1111784613299" info="ng">
-                  <reference role="t74k.1112036490295.1112036516483" target="tpnb.1112316252581" resolveInfo="fee" />
-                </node>
-                <node concept="230f.1111784926012" id="1112384551659" role="230f.1111784562907.1111784647019" info="ng">
-                  <property role="230f.1111784926012.1113257000626" value="0.5" />
-                </node>
-              </node>
-              <node concept="t74k.1111792102248" id="1112384556772" role="230f.1111784562907.1111784647019" info="ng">
-                <property role="t74k.1111792102248.1111793358083" value="USD" />
-                <node concept="230f.1111784926012" id="1112384556771" role="t74k.1111792102248.1111793363741" info="ng">
-                  <property role="230f.1111784926012.1113257000626" value="15.0" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="t74k.1111792389581" id="1112384528448" role="t74k.1111792355423.1111792372299" info="ng">
-            <property role="t74k.1111792389581.1111792409129" value="1999" />
-            <property role="t74k.1111792389581.1111792417427" value="12" />
-            <property role="t74k.1111792389581.1111792417975" value="01" />
-          </node>
-        </node>
-      </node>
-      <node concept="t74k.1111791038612" id="1112384607478" role="t74k.1111790951422.1111791084333" info="ng">
-        <property role="t74k.1111791038612.1116368080504" value="false" />
-        <reference role="t74k.1111791038612.1111793668132" target="tpnb.1112316644479" resolveInfo="TAX" />
-        <node concept="t74k.1111794734295" id="1112384647067" role="t74k.1111791038612.1111794644919" info="ng">
-          <node concept="t74k.1111794888922" id="1112384638486" role="t74k.1111792355423.1111792463585" info="ng">
-            <reference role="t74k.1111794888922.1111795211704" target="tpnb.1112316013167" resolveInfo="tax" />
-            <node concept="230f.1112384225757" id="1112384627513" role="230f.1111784210516.1111784226798" info="ng">
-              <node concept="t74k.1112036490295" id="1112384629280" role="230f.1111784562907.1111784613299" info="ng">
-                <reference role="t74k.1112036490295.1112036516483" target="tpnb.1112316673589" resolveInfo="fee" />
-              </node>
-              <node concept="230f.1111784926012" id="1112384632188" role="230f.1111784562907.1111784647019" info="ng">
-                <property role="230f.1111784926012.1113257000626" value="0.055" />
-              </node>
-            </node>
-          </node>
-          <node concept="t74k.1111792389581" id="1112384610291" role="t74k.1111792355423.1111792372299" info="ng">
-            <property role="t74k.1111792389581.1111792409129" value="1999" />
-            <property role="t74k.1111792389581.1111792417427" value="10" />
-            <property role="t74k.1111792389581.1111792417975" value="01" />
-          </node>
-        </node>
-      </node>
-      <node concept="t74k.1111791020814" id="1112383765038" role="t74k.1111790951422.1111791064925" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="BASE_RATE" />
-        <node concept="t74k.1111792520557" id="1112383882932" role="t74k.1111791020814.1111791826558" info="ng">
-          <node concept="t74k.1111792102248" id="1112383882933" role="t74k.1111792355423.1111792463585" info="ng">
-            <node concept="230f.1111784926012" id="1112383772351" role="t74k.1111792102248.1111793363741" info="ng">
-              <property role="230f.1111784926012.1113257000626" value="10.0" />
-            </node>
-          </node>
-          <node concept="t74k.1116445695828" id="1116446878604" role="t74k.1111792355423.1111792372299" info="ng" />
-        </node>
-        <node concept="t74k.1111792520557" id="1112383979448" role="t74k.1111791020814.1111791826558" info="ng">
-          <node concept="t74k.1111792102248" id="1112383979449" role="t74k.1111792355423.1111792463585" info="ng">
-            <node concept="230f.1111784926012" id="1112383963275" role="t74k.1111792102248.1111793363741" info="ng">
-              <property role="230f.1111784926012.1113257000626" value="12.0" />
-            </node>
-          </node>
-          <node concept="t74k.1111792389581" id="1112383954446" role="t74k.1111792355423.1111792372299" info="ng">
-            <property role="t74k.1111792389581.1111792409129" value="1999" />
-            <property role="t74k.1111792389581.1111792417427" value="12" />
-            <property role="t74k.1111792389581.1111792417975" value="01" />
-          </node>
+        <node concept="3rZoNf" id="gbZgbEL" role="3rZkH9">
+          <property role="3rZtGF" value="1999" />
+          <property role="3rZvIh" value="10" />
+          <property role="3rZvQP" value="01" />
         </node>
       </node>
     </node>
-    <node concept="t74k.1111790951422" id="1112304761925" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="LowPay" />
-      <node concept="t74k.1111791038612" id="1112393068783" role="t74k.1111790951422.1111791084333" info="ng">
-        <reference role="t74k.1111791038612.1111793668132" target="tpnb.1112316681746" resolveInfo="USAGE" />
-        <node concept="t74k.1111794734295" id="1112393265148" role="t74k.1111791038612.1111794644919" info="ng">
-          <node concept="t74k.1111794888922" id="1112393120898" role="t74k.1111792355423.1111792463585" info="ng">
-            <reference role="t74k.1111794888922.1111795211704" target="tpnb.1112315990977" resolveInfo="base-usage" />
-            <node concept="230f.1111785030296" id="1112393084582" role="230f.1111784210516.1111784226798" info="ng">
-              <node concept="230f.1112384225757" id="1112393099763" role="230f.1111785030296.1111785091720" info="ng">
-                <node concept="t74k.1112038445100" id="1112407052649" role="230f.1111784562907.1111784613299" info="ng">
-                  <reference role="t74k.1112038445100.1112038462507" target="1112392957192" resolveInfo="BASE_RATE" />
-                </node>
-                <node concept="t74k.1112036490295" id="1112393104282" role="230f.1111784562907.1111784647019" info="ng">
-                  <reference role="t74k.1112036490295.1112036516483" target="tpnb.1112316685513" resolveInfo="usage" />
-                </node>
+    <node concept="3rUf6m" id="gbZhOq7" role="3rUq8J">
+      <ref role="3s4h4A" to="tpnb:gbVcSEq" resolve="SERVICE CALL" />
+      <node concept="3s8lnl" id="gbZiEYp" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZi4hW" role="3rZEZz">
+          <ref role="3sa9MU" to="tpnb:gbVcPdc" resolve="service" />
+          <node concept="3rCauv" id="gbZhX3p" role="3rwfVG">
+            <node concept="3Zh43v" id="gbZhY1s" role="3rxIiL">
+              <node concept="3EyzOP" id="gbZhYvJ" role="3rxIiL">
+                <ref role="3EyEe1" to="tpnb:gbVdL6_" resolve="fee" />
               </node>
-              <node concept="230f.1112384225757" id="1112393106926" role="230f.1111785030296.1111785124143" info="ng">
-                <node concept="t74k.1112038445100" id="1112407055697" role="230f.1111784562907.1111784613299" info="ng">
-                  <reference role="t74k.1112038445100.1112038462507" target="1112393006024" resolveInfo="REDUCED_RATE" />
-                </node>
-                <node concept="t74k.1112036490295" id="1112393114163" role="230f.1111784562907.1111784647019" info="ng">
-                  <reference role="t74k.1112036490295.1112036516483" target="tpnb.1112316685513" resolveInfo="usage" />
-                </node>
+              <node concept="3ryUCY" id="gbZi0sL" role="3rxQxD">
+                <property role="NirYL" value="0.5" />
               </node>
-              <node concept="230f.1112406908640" id="1112717731865" role="230f.1111785030296.1111785044750" info="ng">
-                <node concept="t74k.1112036490295" id="1112717731270" role="230f.1111784562907.1111784613299" info="ng">
-                  <reference role="t74k.1112036490295.1112036516483" target="tpnb.1112316685513" resolveInfo="usage" />
-                </node>
-                <node concept="t74k.1112038445100" id="1112717733617" role="230f.1111784562907.1111784647019" info="ng">
-                  <reference role="t74k.1112038445100.1112038462507" target="1112393034216" resolveInfo="CAP" />
-                </node>
+            </node>
+            <node concept="3rYiDE" id="gbZi32l" role="3rxQxD">
+              <property role="3s35g1" value="USD" />
+              <node concept="3ryUCY" id="gbZi32k" role="3s36Cv">
+                <property role="NirYL" value="10.0" />
               </node>
             </node>
           </node>
-          <node concept="t74k.1111792389581" id="1112393071752" role="t74k.1111792355423.1111792372299" info="ng">
-            <property role="t74k.1111792389581.1111792409129" value="1999" />
-            <property role="t74k.1111792389581.1111792417427" value="10" />
-            <property role="t74k.1111792389581.1111792417975" value="01" />
-          </node>
+        </node>
+        <node concept="3rZoNf" id="gbZhR4M" role="3rZkH9">
+          <property role="3rZtGF" value="1999" />
+          <property role="3rZvIh" value="10" />
+          <property role="3rZvQP" value="01" />
         </node>
       </node>
-      <node concept="t74k.1111791038612" id="1112393126916" role="t74k.1111790951422.1111791084333" info="ng">
-        <reference role="t74k.1111791038612.1111793668132" target="tpnb.1112316021402" resolveInfo="SERVICE CALL" />
-        <node concept="t74k.1111794734295" id="1112393265149" role="t74k.1111791038612.1111794644919" info="ng">
-          <node concept="t74k.1111794888922" id="1112393162687" role="t74k.1111792355423.1111792463585" info="ng">
-            <reference role="t74k.1111794888922.1111795211704" target="tpnb.1112316007244" resolveInfo="service" />
-            <node concept="t74k.1111792102248" id="1112393154670" role="230f.1111784210516.1111784226798" info="ng">
-              <property role="t74k.1111792102248.1111793358083" value="USD" />
-              <node concept="230f.1111784926012" id="1112393154669" role="t74k.1111792102248.1111793363741" info="ng">
-                <property role="230f.1111784926012.1113257000626" value="10.0" />
+      <node concept="3s8lnl" id="gbZiEYq" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZilOt" role="3rZEZz">
+          <ref role="3sa9MU" to="tpnb:gbVcPdc" resolve="service" />
+          <node concept="3rCauv" id="gbZigV_" role="3rwfVG">
+            <node concept="3Zh43v" id="gbZihBz" role="3rxIiL">
+              <node concept="3EyzOP" id="gbZiiRa" role="3rxIiL">
+                <ref role="3EyEe1" to="tpnb:gbVdL6_" resolve="fee" />
+              </node>
+              <node concept="3ryUCY" id="gbZijFF" role="3rxQxD">
+                <property role="NirYL" value="0.5" />
+              </node>
+            </node>
+            <node concept="3rYiDE" id="gbZikV$" role="3rxQxD">
+              <property role="3s35g1" value="USD" />
+              <node concept="3ryUCY" id="gbZikVz" role="3s36Cv">
+                <property role="NirYL" value="15.0" />
               </node>
             </node>
           </node>
-          <node concept="t74k.1111792389581" id="1112393138448" role="t74k.1111792355423.1111792372299" info="ng">
-            <property role="t74k.1111792389581.1111792409129" value="1999" />
-            <property role="t74k.1111792389581.1111792417427" value="10" />
-            <property role="t74k.1111792389581.1111792417975" value="01" />
-          </node>
         </node>
-      </node>
-      <node concept="t74k.1111791038612" id="1112393222389" role="t74k.1111790951422.1111791084333" info="ng">
-        <property role="t74k.1111791038612.1116368080504" value="false" />
-        <reference role="t74k.1111791038612.1111793668132" target="tpnb.1112316644479" resolveInfo="TAX" />
-        <node concept="t74k.1111794734295" id="1112393265151" role="t74k.1111791038612.1111794644919" info="ng">
-          <node concept="t74k.1111794888922" id="1112393255131" role="t74k.1111792355423.1111792463585" info="ng">
-            <reference role="t74k.1111794888922.1111795211704" target="tpnb.1112316013167" resolveInfo="tax" />
-            <node concept="230f.1112384225757" id="1112393235456" role="230f.1111784210516.1111784226798" info="ng">
-              <node concept="t74k.1112036490295" id="1112393237535" role="230f.1111784562907.1111784613299" info="ng">
-                <reference role="t74k.1112036490295.1112036516483" target="tpnb.1112316673589" resolveInfo="fee" />
-              </node>
-              <node concept="230f.1111784926012" id="1112393248818" role="230f.1111784562907.1111784647019" info="ng">
-                <property role="230f.1111784926012.1113257000626" value="0.055" />
-              </node>
-            </node>
-          </node>
-          <node concept="t74k.1111792389581" id="1112393225124" role="t74k.1111792355423.1111792372299" info="ng">
-            <property role="t74k.1111792389581.1111792409129" value="1999" />
-            <property role="t74k.1111792389581.1111792417427" value="10" />
-            <property role="t74k.1111792389581.1111792417975" value="01" />
-          </node>
-        </node>
-      </node>
-      <node concept="t74k.1111791020814" id="1112392957192" role="t74k.1111790951422.1111791064925" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="BASE_RATE" />
-        <node concept="t74k.1111792520557" id="1112393265152" role="t74k.1111791020814.1111791826558" info="ng">
-          <node concept="t74k.1111792102248" id="1112393265153" role="t74k.1111792355423.1111792463585" info="ng">
-            <node concept="230f.1111784926012" id="1112392991085" role="t74k.1111792102248.1111793363741" info="ng">
-              <property role="230f.1111784926012.1113257000626" value="10.0" />
-            </node>
-          </node>
-          <node concept="t74k.1116445695828" id="1116446666034" role="t74k.1111792355423.1111792372299" info="ng" />
-        </node>
-      </node>
-      <node concept="t74k.1111791020814" id="1112393006024" role="t74k.1111790951422.1111791064925" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="REDUCED_RATE" />
-        <node concept="t74k.1111792520557" id="1112393265154" role="t74k.1111791020814.1111791826558" info="ng">
-          <node concept="t74k.1111792102248" id="1112393034215" role="t74k.1111792355423.1111792463585" info="ng">
-            <node concept="230f.1111784926012" id="1112393022197" role="t74k.1111792102248.1111793363741" info="ng">
-              <property role="230f.1111784926012.1113257000626" value="5.0" />
-            </node>
-          </node>
-          <node concept="t74k.1116445695828" id="1116446834806" role="t74k.1111792355423.1111792372299" info="ng" />
-        </node>
-      </node>
-      <node concept="t74k.1111791020814" id="1112393034216" role="t74k.1111790951422.1111791064925" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="CAP" />
-        <node concept="t74k.1111792520557" id="1112393265155" role="t74k.1111791020814.1111791826558" info="ng">
-          <node concept="t74k.1111792102248" id="1112393052453" role="t74k.1111792355423.1111792463585" info="ng">
-            <property role="t74k.1111792102248.1111793358083" value="KWH" />
-            <node concept="230f.1111784926012" id="1112393046749" role="t74k.1111792102248.1111793363741" info="ng">
-              <property role="230f.1111784926012.1113257000626" value="50.0" />
-            </node>
-          </node>
-          <node concept="t74k.1116445695828" id="1116446763488" role="t74k.1111792355423.1111792372299" info="ng" />
-        </node>
-        <node concept="t74k.1111792520557" id="1116446773943" role="t74k.1111791020814.1111791826558" info="ng">
-          <node concept="t74k.1111792102248" id="1116446773945" role="t74k.1111792355423.1111792463585" info="ng">
-            <property role="t74k.1111792102248.1111793358083" value="KWH" />
-            <node concept="230f.1111784926012" id="1116446773946" role="t74k.1111792102248.1111793363741" info="ng">
-              <property role="230f.1111784926012.1113257000626" value="60.0" />
-            </node>
-          </node>
-          <node concept="t74k.1111792389581" id="1116446773944" role="t74k.1111792355423.1111792372299" info="ng">
-            <property role="t74k.1111792389581.1111792409129" value="1999" />
-            <property role="t74k.1111792389581.1111792417427" value="12" />
-            <property role="t74k.1111792389581.1111792417975" value="01" />
-          </node>
+        <node concept="3rZoNf" id="gbZie10" role="3rZkH9">
+          <property role="3rZtGF" value="1999" />
+          <property role="3rZvIh" value="12" />
+          <property role="3rZvQP" value="01" />
         </node>
       </node>
     </node>
-  </contents>
+    <node concept="3rUf6m" id="gbZixjQ" role="3rUq8J">
+      <property role="3GIgXV" value="false" />
+      <ref role="3s4h4A" to="tpnb:gbVfgLZ" resolve="TAX" />
+      <node concept="3s8lnl" id="gbZiEYr" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZiCSm" role="3rZEZz">
+          <ref role="3sa9MU" to="tpnb:gbVcQDJ" resolve="tax" />
+          <node concept="3Zh43v" id="gbZiAcT" role="3rwfVG">
+            <node concept="3EyzOP" id="gbZiACw" role="3rxIiL">
+              <ref role="3EyEe1" to="tpnb:gbVfnSP" resolve="fee" />
+            </node>
+            <node concept="3ryUCY" id="gbZiBlW" role="3rxQxD">
+              <property role="NirYL" value="0.055" />
+            </node>
+          </node>
+        </node>
+        <node concept="3rZoNf" id="gbZixZN" role="3rZkH9">
+          <property role="3rZtGF" value="1999" />
+          <property role="3rZvIh" value="10" />
+          <property role="3rZvQP" value="01" />
+        </node>
+      </node>
+    </node>
+    <node concept="3rUaCc" id="gbZfjCI" role="3rUlpv">
+      <property role="TrG5h" value="BASE_RATE" />
+      <node concept="3rZSLJ" id="gbZfKqO" role="3rXftW">
+        <node concept="3rYiDE" id="gbZfKqP" role="3rZEZz">
+          <node concept="3ryUCY" id="gbZflqZ" role="3s36Cv">
+            <property role="NirYL" value="10.0" />
+          </node>
+        </node>
+        <node concept="3LmlTn" id="gfLqQIc" role="3rZkH9" />
+      </node>
+      <node concept="3rZSLJ" id="gbZg7YS" role="3rXftW">
+        <node concept="3rYiDE" id="gbZg7YT" role="3rZEZz">
+          <node concept="3ryUCY" id="gbZg42b" role="3s36Cv">
+            <property role="NirYL" value="12.0" />
+          </node>
+        </node>
+        <node concept="3rZoNf" id="gbZg1Se" role="3rZkH9">
+          <property role="3rZtGF" value="1999" />
+          <property role="3rZvIh" value="12" />
+          <property role="3rZvQP" value="01" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3rTTFW" id="gbUxVL5">
+    <property role="TrG5h" value="LowPay" />
+    <node concept="3rUf6m" id="gbZMN3J" role="3rUq8J">
+      <ref role="3s4h4A" to="tpnb:gbVfpSi" resolve="USAGE" />
+      <node concept="3s8lnl" id="gbZNyZW" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZMZM2" role="3rZEZz">
+          <ref role="3sa9MU" to="tpnb:gbVcLf1" resolve="base-usage" />
+          <node concept="3rzkeq" id="gbZMQUA" role="3rwfVG">
+            <node concept="3Zh43v" id="gbZMUBN" role="3rzzea">
+              <node concept="3EE14I" id="gc0C95D" role="3rxIiL">
+                <ref role="3EE5kD" node="gbZMnO8" resolve="BASE_RATE" />
+              </node>
+              <node concept="3EyzOP" id="gbZMVIq" role="3rxQxD">
+                <ref role="3EyEe1" to="tpnb:gbVfqN9" resolve="usage" />
+              </node>
+            </node>
+            <node concept="3Zh43v" id="gbZMWnI" role="3rzF0H">
+              <node concept="3EE14I" id="gc0C9Ph" role="3rxIiL">
+                <ref role="3EE5kD" node="gbZMzJ8" resolve="REDUCED_RATE" />
+              </node>
+              <node concept="3EyzOP" id="gbZMY8N" role="3rxQxD">
+                <ref role="3EyEe1" to="tpnb:gbVfqN9" resolve="usage" />
+              </node>
+            </node>
+            <node concept="0B_Zz" id="gcj9iwp" role="3rznCc">
+              <node concept="3EyzOP" id="gcj9in6" role="3rxIiL">
+                <ref role="3EyEe1" to="tpnb:gbVfqN9" resolve="usage" />
+              </node>
+              <node concept="3EE14I" id="gcj9iVL" role="3rxQxD">
+                <ref role="3EE5kD" node="gbZMEBC" resolve="CAP" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3rZoNf" id="gbZMNM8" role="3rZkH9">
+          <property role="3rZtGF" value="1999" />
+          <property role="3rZvIh" value="10" />
+          <property role="3rZvQP" value="01" />
+        </node>
+      </node>
+    </node>
+    <node concept="3rUf6m" id="gbZN1g4" role="3rUq8J">
+      <ref role="3s4h4A" to="tpnb:gbVcSEq" resolve="SERVICE CALL" />
+      <node concept="3s8lnl" id="gbZNyZX" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZN9YZ" role="3rZEZz">
+          <ref role="3sa9MU" to="tpnb:gbVcPdc" resolve="service" />
+          <node concept="3rYiDE" id="gbZN81I" role="3rwfVG">
+            <property role="3s35g1" value="USD" />
+            <node concept="3ryUCY" id="gbZN81H" role="3s36Cv">
+              <property role="NirYL" value="10.0" />
+            </node>
+          </node>
+        </node>
+        <node concept="3rZoNf" id="gbZN44g" role="3rZkH9">
+          <property role="3rZtGF" value="1999" />
+          <property role="3rZvIh" value="10" />
+          <property role="3rZvQP" value="01" />
+        </node>
+      </node>
+    </node>
+    <node concept="3rUf6m" id="gbZNozP" role="3rUq8J">
+      <property role="3GIgXV" value="false" />
+      <ref role="3s4h4A" to="tpnb:gbVfgLZ" resolve="TAX" />
+      <node concept="3s8lnl" id="gbZNyZZ" role="3s7ZqP">
+        <node concept="3s8V7o" id="gbZNwzr" role="3rZEZz">
+          <ref role="3sa9MU" to="tpnb:gbVcQDJ" resolve="tax" />
+          <node concept="3Zh43v" id="gbZNrK0" role="3rwfVG">
+            <node concept="3EyzOP" id="gbZNsgv" role="3rxIiL">
+              <ref role="3EyEe1" to="tpnb:gbVfnSP" resolve="fee" />
+            </node>
+            <node concept="3ryUCY" id="gbZNv0M" role="3rxQxD">
+              <property role="NirYL" value="0.055" />
+            </node>
+          </node>
+        </node>
+        <node concept="3rZoNf" id="gbZNpe$" role="3rZkH9">
+          <property role="3rZtGF" value="1999" />
+          <property role="3rZvIh" value="10" />
+          <property role="3rZvQP" value="01" />
+        </node>
+      </node>
+    </node>
+    <node concept="3rUaCc" id="gbZMnO8" role="3rUlpv">
+      <property role="TrG5h" value="BASE_RATE" />
+      <node concept="3rZSLJ" id="gbZNz00" role="3rXftW">
+        <node concept="3rYiDE" id="gbZNz01" role="3rZEZz">
+          <node concept="3ryUCY" id="gbZMw5H" role="3s36Cv">
+            <property role="NirYL" value="10.0" />
+          </node>
+        </node>
+        <node concept="3LmlTn" id="gfLq2OM" role="3rZkH9" />
+      </node>
+    </node>
+    <node concept="3rUaCc" id="gbZMzJ8" role="3rUlpv">
+      <property role="TrG5h" value="REDUCED_RATE" />
+      <node concept="3rZSLJ" id="gbZNz02" role="3rXftW">
+        <node concept="3rYiDE" id="gbZMEBB" role="3rZEZz">
+          <node concept="3ryUCY" id="gbZMBFP" role="3s36Cv">
+            <property role="NirYL" value="5.0" />
+          </node>
+        </node>
+        <node concept="3LmlTn" id="gfLqG1Q" role="3rZkH9" />
+      </node>
+    </node>
+    <node concept="3rUaCc" id="gbZMEBC" role="3rUlpv">
+      <property role="TrG5h" value="CAP" />
+      <node concept="3rZSLJ" id="gbZNz03" role="3rXftW">
+        <node concept="3rYiDE" id="gbZMJ4_" role="3rZEZz">
+          <property role="3s35g1" value="KWH" />
+          <node concept="3ryUCY" id="gbZMHFt" role="3s36Cv">
+            <property role="NirYL" value="50.0" />
+          </node>
+        </node>
+        <node concept="3LmlTn" id="gfLqqBw" role="3rZkH9" />
+      </node>
+      <node concept="3rZSLJ" id="gfLqtaR" role="3rXftW">
+        <node concept="3rYiDE" id="gfLqtaT" role="3rZEZz">
+          <property role="3s35g1" value="KWH" />
+          <node concept="3ryUCY" id="gfLqtaU" role="3s36Cv">
+            <property role="NirYL" value="60.0" />
+          </node>
+        </node>
+        <node concept="3rZoNf" id="gfLqtaS" role="3rZkH9">
+          <property role="3rZtGF" value="1999" />
+          <property role="3rZvIh" value="12" />
+          <property role="3rZvQP" value="01" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

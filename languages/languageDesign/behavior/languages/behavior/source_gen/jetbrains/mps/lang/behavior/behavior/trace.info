@@ -15,32 +15,32 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
-    <file name="SuperNodeExpression_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_BehaviorDescriptor" />
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,36,0" name="jetbrains.mps.lang.behavior.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="InternalConceptDeclarationReference_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationReference_BehaviorDescriptor" />
+    <file name="ConceptBehavior_BehaviorDescriptor.java">
+      <unit at="16,0,51,0" name="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_BehaviorDescriptor" />
     </file>
     <file name="ConceptConstructorDeclaration_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.behavior.behavior.ConceptConstructorDeclaration_BehaviorDescriptor" />
     </file>
-    <file name="InternalConceptDeclarationsHolder_BehaviorDescriptor.java">
-      <unit at="11,0,22,0" name="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationsHolder_BehaviorDescriptor" />
-    </file>
     <file name="ConceptMethodDeclaration_BehaviorDescriptor.java">
       <unit at="9,0,29,0" name="jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="InternalConceptDeclarationReference_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationReference_BehaviorDescriptor" />
+    </file>
+    <file name="InternalConceptDeclarationsHolder_BehaviorDescriptor.java">
+      <unit at="11,0,22,0" name="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationsHolder_BehaviorDescriptor" />
     </file>
     <file name="LocalBehaviorMethodCall_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_BehaviorDescriptor" />
     </file>
-    <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,36,0" name="jetbrains.mps.lang.behavior.behavior.BehaviorAspectDescriptor" />
+    <file name="SuperNodeExpression_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_BehaviorDescriptor" />
     </file>
     <file name="ThisNodeExpression_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.behavior.behavior.ThisNodeExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptBehavior_BehaviorDescriptor.java">
-      <unit at="16,0,51,0" name="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)/1225194243289">

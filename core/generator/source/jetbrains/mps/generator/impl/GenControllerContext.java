@@ -33,12 +33,14 @@ public final class GenControllerContext {
   private final GenerationOptions myOptions;
   private final TransientModelsProvider myTransientModelProvider;
   private final ModelStreamManager.Provider myStreamProvider;
+  private final ExportsVault myExportsVault;
 
   public GenControllerContext(@NotNull Project project, @NotNull GenerationOptions options, @NotNull TransientModelsProvider transientModelsProvider, @NotNull ModelStreamManager.Provider streamProvider) {
     myProject = project;
     myOptions = options;
     myTransientModelProvider = transientModelsProvider;
     myStreamProvider = streamProvider;
+    myExportsVault = new ExportsVault(streamProvider);
   }
 
   public Project getProject() {
@@ -55,5 +57,9 @@ public final class GenControllerContext {
 
   public ModelStreamManager.Provider getStreamProvider() {
     return myStreamProvider;
+  }
+
+  public ExportsVault getExportModels() {
+    return myExportsVault;
   }
 }

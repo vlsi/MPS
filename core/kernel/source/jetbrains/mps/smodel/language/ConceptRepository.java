@@ -16,9 +16,9 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -47,31 +47,35 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   @Deprecated
   @Override
   @NotNull
-  public SConcept getInstanceConcept(@NotNull String id) {
-    SAbstractConcept concept = getConcept(id);
+  public SConcept getInstanceConcept(@NotNull String fqName) {
+    SAbstractConcept concept = getConcept(fqName);
     if (concept instanceof SInterfaceConcept) {
-      ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(id);
-      return new SConceptAdapterById(desc.getId(), id);
+      ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(fqName);
+      SConceptId id = desc.getId();
+      return MetaAdapterFactory.getConcept(id, fqName);
     }
     if (concept == null) {
       // TODO separate implementation for an "invalid" concept?
-      return new SConceptAdapterByName(id);
+      return MetaAdapterFactoryByName.getConcept(fqName);
     }
     return (SConcept) concept;
   }
 
   @Deprecated
   @Override
-  public SAbstractConcept getConcept(@NotNull String id) {
-    ConceptDescriptor desc = ConceptRegistryUtil.getConceptDescriptor(id);
+  public SAbstractConcept getConcept(@NotNull String fqname) {
+    ConceptDescriptor desc = ConceptRegistryUtil.getConceptDescriptor(fqname);
     if (desc == null) return null;
 
-    return desc.isInterfaceConcept() ? new SInterfaceConceptAdapterById(desc.getId(), id) : new SConceptAdapterById(desc.getId(), id);
+    SConceptId id = desc.getId();
+    return desc.isInterfaceConcept() ?
+        MetaAdapterFactory.getInterfaceConcept(id, fqname) :
+        MetaAdapterFactory.getConcept(id, fqname);
   }
 
   @Deprecated
   @Override
   public SLanguage getLanguage(@NotNull String qualifiedName) {
-    return new SLanguageAdapterByName(qualifiedName);
+    return MetaAdapterFactoryByName.getLanguage(qualifiedName);
   }
 }

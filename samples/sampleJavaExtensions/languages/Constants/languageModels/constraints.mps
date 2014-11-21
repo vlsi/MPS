@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)">
+<model ref="r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" />
-    <model ref="r:ef9fd842-b350-4ad1-83c7-4b57a2c65330(org.jetbrains.mps.samples.Constants.structure)" name="org.jetbrains.mps.samples.Constants.structure" />
-    <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" />
-    <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" />
-    <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" />
-    <refRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1148687176410/1148687202698" name="applicableLink" />
-    <refRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1213093968558/1213093996982" name="concept" />
-    <refRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/8401916545537438642/8401916545537438643" name="kind" />
-    <childRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1148687176410/1148687345559" name="searchScopeFactory" />
-    <childRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1213093968558/1213100494875" name="referent" />
-  </debugInfo>
   <languages>
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" version="-1" index="qzws" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
   </languages>
   <imports>
     <import index="nd9w" ref="r:ef9fd842-b350-4ad1-83c7-4b57a2c65330(org.jetbrains.mps.samples.Constants.structure)" />
     <import index="tp1t" ref="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="qzws.1213093968558" id="2001769927721048297" info="ng">
-      <reference role="qzws.1213093968558.1213093996982" target="nd9w.1494751830318912537" resolveInfo="Constant" />
-    </node>
-    <node concept="qzws.1213093968558" id="3990190717072399938" info="ng">
-      <reference role="qzws.1213093968558.1213093996982" target="nd9w.3990190717072393829" resolveInfo="ConstantReference" />
-      <node concept="qzws.1148687176410" id="3990190717072399939" role="qzws.1213093968558.1213100494875" info="ng">
-        <reference role="qzws.1148687176410.1148687202698" target="nd9w.3990190717072393830" />
-        <node concept="qzws.8401916545537438642" id="5956117492787420277" role="qzws.1148687176410.1148687345559" info="ng">
-          <reference role="qzws.8401916545537438642.8401916545537438643" target="nd9w.1494751830318912537" resolveInfo="Constant" />
-        </node>
+  <registry>
+    <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
+      <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
+        <reference id="8401916545537438643" name="kind" index="1dDu$A" />
+      </concept>
+      <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
+        <reference id="1213093996982" name="concept" index="1M2myG" />
+        <child id="1213100494875" name="referent" index="1Mr941" />
+      </concept>
+      <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
+        <reference id="1148687202698" name="applicableLink" index="1N5Vy1" />
+        <child id="1148687345559" name="searchScopeFactory" index="1N6uqs" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1M2fIO" id="1J7HMiRRPzD">
+    <ref role="1M2myG" to="nd9w:1iYrdV1xxgp" resolve="Constant" />
+  </node>
+  <node concept="1M2fIO" id="3tw0l3PalT2">
+    <ref role="1M2myG" to="nd9w:3tw0l3Pakp_" resolve="ConstantReference" />
+    <node concept="1N5Pfh" id="3tw0l3PalT3" role="1Mr941">
+      <ref role="1N5Vy1" to="nd9w:3tw0l3PakpA" />
+      <node concept="1dDu$B" id="5aCokQ65pLP" role="1N6uqs">
+        <ref role="1dDu$A" to="nd9w:1iYrdV1xxgp" resolve="Constant" />
       </node>
     </node>
-  </contents>
+  </node>
 </model>
 

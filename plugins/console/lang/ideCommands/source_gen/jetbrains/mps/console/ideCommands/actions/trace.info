@@ -7,14 +7,14 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="QueriesGenerated.java">
-      <unit at="45,34,55,7" name="jetbrains.mps.console.ideCommands.actions.QueriesGenerated$1" />
-      <unit at="26,0,71,0" name="jetbrains.mps.console.ideCommands.actions.QueriesGenerated" />
-    </file>
     <file name="PasteWrappers.java">
       <unit at="20,49,32,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$1" />
       <unit at="33,49,45,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$2" />
       <unit at="17,0,49,0" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers" />
+    </file>
+    <file name="QueriesGenerated.java">
+      <unit at="45,34,55,7" name="jetbrains.mps.console.ideCommands.actions.QueriesGenerated$1" />
+      <unit at="26,0,71,0" name="jetbrains.mps.console.ideCommands.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/2087237500476328199">

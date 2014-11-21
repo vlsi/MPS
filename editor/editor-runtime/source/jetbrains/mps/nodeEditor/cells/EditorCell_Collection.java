@@ -91,6 +91,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   private List<EditorCell> myFoldedCellCollection;
   private EditorCell myFoldedCell;
 
+  @NotNull
   protected CellLayout myCellLayout;
   private AbstractCellListHandler myCellListHandler;
 
@@ -220,6 +221,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return getVisibleChildCells().indexOf(cell);
   }
 
+  @NotNull
   @Override
   public CellLayout getCellLayout() {
     return myCellLayout;
@@ -287,7 +289,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return Math.max(myArtificialBracesIndent, naturalIndent);
   }
 
-  protected EditorCell_Collection(EditorContext editorContext, SNode node, CellLayout cellLayout, AbstractCellListHandler handler) {
+  protected EditorCell_Collection(EditorContext editorContext, SNode node, @NotNull CellLayout cellLayout, AbstractCellListHandler handler) {
     super(editorContext, node);
     myCellLayout = cellLayout;
     myCellListHandler = handler;
@@ -700,19 +702,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     super.moveTo(x, y);
     for (jetbrains.mps.nodeEditor.cells.EditorCell myEditorCell : getCells()) {
       myEditorCell.moveTo(myEditorCell.getX() + x - xOld, myEditorCell.getY() + y - yOld);
-      if (((EditorCell_Basic) myEditorCell).isNeedsRelayout()) {
-        markNeedsRelayout();
-      }
-    }
-    adjustNeedsRelayout(xOld, yOld, x, y);
-  }
-
-  private void adjustNeedsRelayout(int oldX, int oldY, int newX, int newY) {
-    if (isNeedsRelayout()) {
-      return;
-    }
-    if (oldX != newX && (myCellLayout instanceof CellLayout_Indent)) {
-      markNeedsRelayout();
     }
   }
 
@@ -1004,6 +993,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
         }
       }
     }
+  }
+
+  @Override
+  public void requestRelayout() {
+    super.requestRelayout();
+    getCellLayout().requestRelayout(this);
   }
 
   @Override

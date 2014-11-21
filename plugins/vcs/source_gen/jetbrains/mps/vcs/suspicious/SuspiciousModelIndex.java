@@ -30,6 +30,10 @@ import jetbrains.mps.util.Computable;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
 import jetbrains.mps.smodel.ModelAccess;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.module.SModule;
+import java.util.LinkedHashSet;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
@@ -121,9 +125,14 @@ public class SuspiciousModelIndex implements ApplicationComponent {
         }
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
+            Collection<SModule> modulesToReload = new LinkedHashSet<SModule>();
             for (Conflictable conflictable : toReload) {
               conflictable.reloadFromDisk();
+              if (conflictable instanceof ConflictableModuleAdapter) {
+                modulesToReload.add(((ConflictableModuleAdapter) conflictable).getModule());
+              }
             }
+            ClassLoaderManager.getInstance().reloadModules(modulesToReload);
           }
         });
         return null;

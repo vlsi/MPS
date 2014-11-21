@@ -1,161 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:c392e01b-c969-4146-91b4-5620944c9519(org.jetbrains.mps.stateMachine.sadbox.model)">
+<model ref="r:c392e01b-c969-4146-91b4-5620944c9519(org.jetbrains.mps.stateMachine.sadbox.model)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="8d18a45b-ac7e-4d84-a539-75f1d720b09b" name="jetbrains.mps.samples.multipleProjections.requestTracking" />
-    <lang id="530533ee-f789-4c1e-ba56-de1bbf3afda7" name="jetbrains.mps.samples.multipleProjections.stateMachine" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008726945" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine" />
-    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729147" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event" />
-    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729149" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition" />
-    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729154" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.State" />
-    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729156" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference" />
-    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729158" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference" />
-    <concept id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420733795" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer" />
-    <concept id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420739318" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729149/763922957008729153" name="condition" />
-    <property id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420739318/3675491646420872268" name="presentation" />
-    <refRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729156/763922957008729157" name="state" />
-    <refRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729158/763922957008729159" name="event" />
-    <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008726945/763922957008726947" name="events" />
-    <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008726945/763922957008726948" name="transitions" />
-    <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008726945/763922957008726949" name="states" />
-    <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729149/763922957008729150" name="fromState" />
-    <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729149/763922957008729151" name="trigger" />
-    <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729149/763922957008729152" name="toState" />
-    <childRole id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420733795/3675491646420738766" name="workflows" />
-    <childRole id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420739318/3675491646420739343" name="stateMachine" />
-  </debugInfo>
   <languages>
-    <use id="8d18a45b-ac7e-4d84-a539-75f1d720b09b" version="-1" index="xpx" />
-    <use id="530533ee-f789-4c1e-ba56-de1bbf3afda7" version="-1" index="tq30" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="8d18a45b-ac7e-4d84-a539-75f1d720b09b" name="jetbrains.mps.samples.multipleProjections.requestTracking" version="-1" />
+    <use id="530533ee-f789-4c1e-ba56-de1bbf3afda7" name="jetbrains.mps.samples.multipleProjections.stateMachine" version="-1" />
   </languages>
   <imports>
     <import index="f4vt" ref="r:fa417a98-a00c-4f7c-9ba5-6ec71a5b205a(jetbrains.mps.samples.multipleProjections.requestTracking.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="owg1" ref="r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="xpx.3675491646420733795" id="3675491646420810827" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="org.jetbrains.workflow" />
-      <node concept="xpx.3675491646420739318" id="3675491646420826293" role="xpx.3675491646420733795.3675491646420738766" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="simpleIssueTracking" />
-        <property role="xpx.3675491646420739318.3675491646420872268" value="tabular" />
-        <node concept="tq30.763922957008726945" id="3675491646420826294" role="xpx.3675491646420739318.3675491646420739343" info="ng">
-          <node concept="tq30.763922957008729149" id="3675491646420854483" role="tq30.763922957008726945.763922957008726948" info="ng">
-            <property role="tq30.763922957008729149.763922957008729153" value="in Open state" />
-            <node concept="tq30.763922957008729156" id="3675491646420854495" role="tq30.763922957008729149.763922957008729152" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854475" resolveInfo="Closed" />
-            </node>
-            <node concept="tq30.763922957008729156" id="3675491646420854493" role="tq30.763922957008729149.763922957008729150" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854469" resolveInfo="Open" />
-            </node>
-            <node concept="tq30.763922957008729158" id="3675491646420854491" role="tq30.763922957008729149.763922957008729151" info="ng">
-              <reference role="tq30.763922957008729158.763922957008729159" target="3675491646420854478" resolveInfo="Close" />
-            </node>
+  <registry>
+    <language id="530533ee-f789-4c1e-ba56-de1bbf3afda7" name="jetbrains.mps.samples.multipleProjections.stateMachine">
+      <concept id="763922957008729154" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.State" flags="ng" index="32R8Iz" />
+      <concept id="763922957008729156" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference" flags="ng" index="32R8I_">
+        <reference id="763922957008729157" name="state" index="32R8I$" />
+      </concept>
+      <concept id="763922957008729158" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference" flags="ng" index="32R8IB">
+        <reference id="763922957008729159" name="event" index="32R8IA" />
+      </concept>
+      <concept id="763922957008729147" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event" flags="ng" index="32R8Jq" />
+      <concept id="763922957008729149" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition" flags="ng" index="32R8Js">
+        <property id="763922957008729153" name="condition" index="32R8Iw" />
+        <child id="763922957008729152" name="toState" index="32R8Ix" />
+        <child id="763922957008729151" name="trigger" index="32R8Ju" />
+        <child id="763922957008729150" name="fromState" index="32R8Jv" />
+      </concept>
+      <concept id="763922957008726945" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine" flags="ng" index="32R9h0">
+        <child id="763922957008726947" name="events" index="32R9h2" />
+        <child id="763922957008726949" name="states" index="32R9h4" />
+        <child id="763922957008726948" name="transitions" index="32R9h5" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="8d18a45b-ac7e-4d84-a539-75f1d720b09b" name="jetbrains.mps.samples.multipleProjections.requestTracking">
+      <concept id="3675491646420739318" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow" flags="ng" index="3OOLNr">
+        <property id="3675491646420872268" name="presentation" index="3OPhhx" />
+        <child id="3675491646420739343" name="stateMachine" index="3OOLOy" />
+      </concept>
+      <concept id="3675491646420733795" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer" flags="ng" index="3OONte">
+        <child id="3675491646420738766" name="workflows" index="3OOLFz" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="3OONte" id="3c1Y2R7OZLb">
+    <property role="TrG5h" value="org.jetbrains.workflow" />
+    <node concept="3OOLNr" id="3c1Y2R7P3yP" role="3OOLFz">
+      <property role="TrG5h" value="simpleIssueTracking" />
+      <property role="3OPhhx" value="tabular" />
+      <node concept="32R9h0" id="3c1Y2R7P3yQ" role="3OOLOy">
+        <node concept="32R8Js" id="3c1Y2R7Parj" role="32R9h5">
+          <property role="32R8Iw" value="in Open state" />
+          <node concept="32R8I_" id="3c1Y2R7Parv" role="32R8Ix">
+            <ref role="32R8I$" node="3c1Y2R7Parb" resolve="Closed" />
           </node>
-          <node concept="tq30.763922957008729149" id="3675491646420854497" role="tq30.763922957008726945.763922957008726948" info="ng">
-            <property role="tq30.763922957008729149.763922957008729153" value="in Closed state" />
-            <node concept="tq30.763922957008729156" id="3675491646420854513" role="tq30.763922957008729149.763922957008729152" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854469" resolveInfo="Open" />
-            </node>
-            <node concept="tq30.763922957008729156" id="3675491646420854511" role="tq30.763922957008729149.763922957008729150" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854475" resolveInfo="Closed" />
-            </node>
-            <node concept="tq30.763922957008729158" id="3675491646420854509" role="tq30.763922957008729149.763922957008729151" info="ng">
-              <reference role="tq30.763922957008729158.763922957008729159" target="3675491646420854480" resolveInfo="Reopen" />
-            </node>
+          <node concept="32R8I_" id="3c1Y2R7Part" role="32R8Jv">
+            <ref role="32R8I$" node="3c1Y2R7Par5" resolve="Open" />
           </node>
-          <node concept="tq30.763922957008729147" id="3675491646420854478" role="tq30.763922957008726945.763922957008726947" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="Close" />
-          </node>
-          <node concept="tq30.763922957008729147" id="3675491646420854480" role="tq30.763922957008726945.763922957008726947" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="Reopen" />
-          </node>
-          <node concept="tq30.763922957008729154" id="3675491646420854469" role="tq30.763922957008726945.763922957008726949" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="Open" />
-          </node>
-          <node concept="tq30.763922957008729154" id="3675491646420854475" role="tq30.763922957008726945.763922957008726949" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="Closed" />
+          <node concept="32R8IB" id="3c1Y2R7Parr" role="32R8Ju">
+            <ref role="32R8IA" node="3c1Y2R7Pare" resolve="Close" />
           </node>
         </node>
-      </node>
-      <node concept="xpx.3675491646420739318" id="3675491646420854554" role="xpx.3675491646420733795.3675491646420738766" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="advancedIssueTracking" />
-        <property role="xpx.3675491646420739318.3675491646420872268" value="structural" />
-        <node concept="tq30.763922957008726945" id="3675491646420854555" role="xpx.3675491646420739318.3675491646420739343" info="ng">
-          <node concept="tq30.763922957008729149" id="3675491646420854607" role="tq30.763922957008726945.763922957008726948" info="ng">
-            <property role="tq30.763922957008729149.763922957008729153" value="in Open state" />
-            <node concept="tq30.763922957008729156" id="3675491646420854646" role="tq30.763922957008729149.763922957008729152" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854591" resolveInfo="WaitingVerification" />
-            </node>
-            <node concept="tq30.763922957008729156" id="3675491646420854644" role="tq30.763922957008729149.763922957008729150" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854589" resolveInfo="Open" />
-            </node>
-            <node concept="tq30.763922957008729158" id="3675491646420854615" role="tq30.763922957008729149.763922957008729151" info="ng">
-              <reference role="tq30.763922957008729158.763922957008729159" target="3675491646420854598" resolveInfo="Close" />
-            </node>
+        <node concept="32R8Js" id="3c1Y2R7Parx" role="32R9h5">
+          <property role="32R8Iw" value="in Closed state" />
+          <node concept="32R8I_" id="3c1Y2R7ParL" role="32R8Ix">
+            <ref role="32R8I$" node="3c1Y2R7Par5" resolve="Open" />
           </node>
-          <node concept="tq30.763922957008729149" id="3675491646420854697" role="tq30.763922957008726945.763922957008726948" info="ng">
-            <property role="tq30.763922957008729149.763922957008729153" value="in WaitingVerification state" />
-            <node concept="tq30.763922957008729156" id="3675491646420854822" role="tq30.763922957008729149.763922957008729152" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854594" resolveInfo="Closed" />
-            </node>
-            <node concept="tq30.763922957008729156" id="3675491646420854820" role="tq30.763922957008729149.763922957008729150" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854591" resolveInfo="WaitingVerification" />
-            </node>
-            <node concept="tq30.763922957008729158" id="3675491646420854713" role="tq30.763922957008729149.763922957008729151" info="ng">
-              <reference role="tq30.763922957008729158.763922957008729159" target="3675491646420854600" resolveInfo="Verify" />
-            </node>
+          <node concept="32R8I_" id="3c1Y2R7ParJ" role="32R8Jv">
+            <ref role="32R8I$" node="3c1Y2R7Parb" resolve="Closed" />
           </node>
-          <node concept="tq30.763922957008729149" id="3675491646420854648" role="tq30.763922957008726945.763922957008726948" info="ng">
-            <property role="tq30.763922957008729149.763922957008729153" value="in WaitingVerification state" />
-            <node concept="tq30.763922957008729156" id="3675491646420854664" role="tq30.763922957008729149.763922957008729152" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854589" resolveInfo="Open" />
-            </node>
-            <node concept="tq30.763922957008729156" id="3675491646420854662" role="tq30.763922957008729149.763922957008729150" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854591" resolveInfo="WaitingVerification" />
-            </node>
-            <node concept="tq30.763922957008729158" id="3675491646420854660" role="tq30.763922957008729149.763922957008729151" info="ng">
-              <reference role="tq30.763922957008729158.763922957008729159" target="3675491646420854603" resolveInfo="Reopen" />
-            </node>
+          <node concept="32R8IB" id="3c1Y2R7ParH" role="32R8Ju">
+            <ref role="32R8IA" node="3c1Y2R7Parg" resolve="Reopen" />
           </node>
-          <node concept="tq30.763922957008729149" id="3675491646420854859" role="tq30.763922957008726945.763922957008726948" info="ng">
-            <property role="tq30.763922957008729149.763922957008729153" value="in Closed state" />
-            <node concept="tq30.763922957008729156" id="3675491646420854922" role="tq30.763922957008729149.763922957008729152" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854589" resolveInfo="Open" />
-            </node>
-            <node concept="tq30.763922957008729156" id="3675491646420854920" role="tq30.763922957008729149.763922957008729150" info="ng">
-              <reference role="tq30.763922957008729156.763922957008729157" target="3675491646420854594" resolveInfo="Closed" />
-            </node>
-            <node concept="tq30.763922957008729158" id="3675491646420854879" role="tq30.763922957008729149.763922957008729151" info="ng">
-              <reference role="tq30.763922957008729158.763922957008729159" target="3675491646420854603" resolveInfo="Reopen" />
-            </node>
-          </node>
-          <node concept="tq30.763922957008729147" id="3675491646420854598" role="tq30.763922957008726945.763922957008726947" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="Close" />
-          </node>
-          <node concept="tq30.763922957008729147" id="3675491646420854600" role="tq30.763922957008726945.763922957008726947" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="Verify" />
-          </node>
-          <node concept="tq30.763922957008729147" id="3675491646420854603" role="tq30.763922957008726945.763922957008726947" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="Reopen" />
-          </node>
-          <node concept="tq30.763922957008729154" id="3675491646420854589" role="tq30.763922957008726945.763922957008726949" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="Open" />
-          </node>
-          <node concept="tq30.763922957008729154" id="3675491646420854591" role="tq30.763922957008726945.763922957008726949" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="WaitingVerification" />
-          </node>
-          <node concept="tq30.763922957008729154" id="3675491646420854594" role="tq30.763922957008726945.763922957008726949" info="ng">
-            <property role="asn4.1169194658468.1169194664001" value="Closed" />
-          </node>
+        </node>
+        <node concept="32R8Jq" id="3c1Y2R7Pare" role="32R9h2">
+          <property role="TrG5h" value="Close" />
+        </node>
+        <node concept="32R8Jq" id="3c1Y2R7Parg" role="32R9h2">
+          <property role="TrG5h" value="Reopen" />
+        </node>
+        <node concept="32R8Iz" id="3c1Y2R7Par5" role="32R9h4">
+          <property role="TrG5h" value="Open" />
+        </node>
+        <node concept="32R8Iz" id="3c1Y2R7Parb" role="32R9h4">
+          <property role="TrG5h" value="Closed" />
         </node>
       </node>
     </node>
-  </contents>
+    <node concept="3OOLNr" id="3c1Y2R7Pasq" role="3OOLFz">
+      <property role="TrG5h" value="advancedIssueTracking" />
+      <property role="3OPhhx" value="structural" />
+      <node concept="32R9h0" id="3c1Y2R7Pasr" role="3OOLOy">
+        <node concept="32R8Js" id="3c1Y2R7Patf" role="32R9h5">
+          <property role="32R8Iw" value="in Open state" />
+          <node concept="32R8I_" id="3c1Y2R7PatQ" role="32R8Ix">
+            <ref role="32R8I$" node="3c1Y2R7PasZ" resolve="WaitingVerification" />
+          </node>
+          <node concept="32R8I_" id="3c1Y2R7PatO" role="32R8Jv">
+            <ref role="32R8I$" node="3c1Y2R7PasX" resolve="Open" />
+          </node>
+          <node concept="32R8IB" id="3c1Y2R7Patn" role="32R8Ju">
+            <ref role="32R8IA" node="3c1Y2R7Pat6" resolve="Close" />
+          </node>
+        </node>
+        <node concept="32R8Js" id="3c1Y2R7PauD" role="32R9h5">
+          <property role="32R8Iw" value="in WaitingVerification state" />
+          <node concept="32R8I_" id="3c1Y2R7PawA" role="32R8Ix">
+            <ref role="32R8I$" node="3c1Y2R7Pat2" resolve="Closed" />
+          </node>
+          <node concept="32R8I_" id="3c1Y2R7Paw$" role="32R8Jv">
+            <ref role="32R8I$" node="3c1Y2R7PasZ" resolve="WaitingVerification" />
+          </node>
+          <node concept="32R8IB" id="3c1Y2R7PauT" role="32R8Ju">
+            <ref role="32R8IA" node="3c1Y2R7Pat8" resolve="Verify" />
+          </node>
+        </node>
+        <node concept="32R8Js" id="3c1Y2R7PatS" role="32R9h5">
+          <property role="32R8Iw" value="in WaitingVerification state" />
+          <node concept="32R8I_" id="3c1Y2R7Pau8" role="32R8Ix">
+            <ref role="32R8I$" node="3c1Y2R7PasX" resolve="Open" />
+          </node>
+          <node concept="32R8I_" id="3c1Y2R7Pau6" role="32R8Jv">
+            <ref role="32R8I$" node="3c1Y2R7PasZ" resolve="WaitingVerification" />
+          </node>
+          <node concept="32R8IB" id="3c1Y2R7Pau4" role="32R8Ju">
+            <ref role="32R8IA" node="3c1Y2R7Patb" resolve="Reopen" />
+          </node>
+        </node>
+        <node concept="32R8Js" id="3c1Y2R7Paxb" role="32R9h5">
+          <property role="32R8Iw" value="in Closed state" />
+          <node concept="32R8I_" id="3c1Y2R7Paya" role="32R8Ix">
+            <ref role="32R8I$" node="3c1Y2R7PasX" resolve="Open" />
+          </node>
+          <node concept="32R8I_" id="3c1Y2R7Pay8" role="32R8Jv">
+            <ref role="32R8I$" node="3c1Y2R7Pat2" resolve="Closed" />
+          </node>
+          <node concept="32R8IB" id="3c1Y2R7Paxv" role="32R8Ju">
+            <ref role="32R8IA" node="3c1Y2R7Patb" resolve="Reopen" />
+          </node>
+        </node>
+        <node concept="32R8Jq" id="3c1Y2R7Pat6" role="32R9h2">
+          <property role="TrG5h" value="Close" />
+        </node>
+        <node concept="32R8Jq" id="3c1Y2R7Pat8" role="32R9h2">
+          <property role="TrG5h" value="Verify" />
+        </node>
+        <node concept="32R8Jq" id="3c1Y2R7Patb" role="32R9h2">
+          <property role="TrG5h" value="Reopen" />
+        </node>
+        <node concept="32R8Iz" id="3c1Y2R7PasX" role="32R9h4">
+          <property role="TrG5h" value="Open" />
+        </node>
+        <node concept="32R8Iz" id="3c1Y2R7PasZ" role="32R9h4">
+          <property role="TrG5h" value="WaitingVerification" />
+        </node>
+        <node concept="32R8Iz" id="3c1Y2R7Pat2" role="32R9h4">
+          <property role="TrG5h" value="Closed" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

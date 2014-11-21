@@ -181,7 +181,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   boolean hasErrorMessages();
 
   /**
-   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.nodeEditor.sidetransform.STHintUtil} instead
+   * @deprecated since MPS 3.2 use corresponding method from {@link jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint} instead
    */
   @Deprecated
   EditorCell_Label getSTHintCell();

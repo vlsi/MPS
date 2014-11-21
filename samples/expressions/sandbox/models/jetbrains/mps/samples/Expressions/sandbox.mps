@@ -1,65 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:95889e99-7e33-4e8a-9f36-e33116f08527(jetbrains.mps.samples.Expressions.sandbox)">
+<model ref="r:95889e99-7e33-4e8a-9f36-e33116f08527(jetbrains.mps.samples.Expressions.sandbox)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
-    <lang id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="7e282943-fc6b-4900-ada5-34c0024cc4f4" name="jetbrains.mps.samples.Expressions" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1206629501431" name="jetbrains.mps.baseLanguage.structure.InstanceInitializer" />
-    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/930174696942536268" name="jetbrains.mps.samples.Expressions.structure.SimpleMathAssignment" />
-    <concept id="f2801650-65d5-424e-bb1b-463a8781b786/2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" />
-    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467207869132" name="jetbrains.mps.samples.Expressions.structure.BinarySimpleMathExpression" />
-    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467208335362" name="jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper" />
-    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467208541194" name="jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant" />
-    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467208542432" name="jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType" />
-    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467208672407" name="jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression" />
-    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467209342143" name="jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration" />
-    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467209348321" name="jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference" />
-    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467209943018" name="jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant" />
-    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467210944676" name="jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant" />
-    <concept id="f2801650-65d5-424e-bb1b-463a8781b786/5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" />
-    <concept id="f2801650-65d5-424e-bb1b-463a8781b786/8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" />
-    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/8620208551721374838" name="jetbrains.mps.samples.Expressions.structure.SimpleMathTypedVarDeclaration" />
-    <concept id="f2801650-65d5-424e-bb1b-463a8781b786/8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467208541194/2073504467208541195" name="value" />
-    <property id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467208672407/2073504467208672490" name="operator" />
-    <property id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467209943018/2073504467209943070" name="value" />
-    <property id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467210944676/2073504467210944677" name="value" />
-    <property id="f2801650-65d5-424e-bb1b-463a8781b786/8970989240999019143/8970989240999019144" name="text" />
-    <refRole id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467209348321/2073504467209348322" name="declaration" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1206629501431/1206629521979" name="statementList" />
-    <childRole id="7e282943-fc6b-4900-ada5-34c0024cc4f4/930174696942536268/930174696942541360" name="variable" />
-    <childRole id="7e282943-fc6b-4900-ada5-34c0024cc4f4/930174696942536268/930174696942541362" name="expression" />
-    <childRole id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467207869132/2073504467207935094" name="left" />
-    <childRole id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467207869132/2073504467207935096" name="right" />
-    <childRole id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467208335362/2073504467208335735" name="expressions" />
-    <childRole id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467209342143/2073504467209342228" name="initializer" />
-    <childRole id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" name="smodelAttribute" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" name="member" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629175143/6329021646629175144" name="commentedStatement" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954/6329021646629175155" name="commentPart" />
-    <childRole id="f2801650-65d5-424e-bb1b-463a8781b786/5349172909345501395/8465538089690331502" name="body" />
-    <childRole id="7e282943-fc6b-4900-ada5-34c0024cc4f4/8620208551721374838/8620208551721379933" name="type" />
-    <childRole id="f2801650-65d5-424e-bb1b-463a8781b786/8465538089690331500/8970989240999019149" name="part" />
-  </debugInfo>
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" version="-1" index="26qq" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="-1" index="asn4" />
-    <use id="7e282943-fc6b-4900-ada5-34c0024cc4f4" version="-1" index="5bav" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="7e282943-fc6b-4900-ada5-34c0024cc4f4" name="jetbrains.mps.samples.Expressions" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -67,173 +13,250 @@
     <import index="vpmn" ref="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" implicit="true" />
     <import index="m373" ref="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="vg0i.1068390468198" id="2073504467208336329" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="Main" />
-      <node concept="vg0i.1206629501431" id="3453667744252543337" role="vg0i.1107461130800.5375687026011219971" info="lgu">
-        <node concept="vg0i.1068580123136" id="3453667744252543339" role="vg0i.1206629501431.1206629521979" info="sn">
-          <node concept="5bav.2073504467208335362" id="2073504467208336681" role="vg0i.1068580123136.1068581517665" info="ng">
-            <node concept="5bav.2073504467209342143" id="2073504467209441359" role="5bav.2073504467208335362.2073504467208335735" info="ng">
-              <property role="asn4.1169194658468.1169194664001" value="A" />
-              <node concept="5bav.2073504467208672407" id="2073504467209502377" role="5bav.2073504467209342143.2073504467209342228" info="nn">
-                <property role="5bav.2073504467208672407.2073504467208672490" value="+" />
-                <node concept="5bav.2073504467208541194" id="2073504467209502445" role="5bav.2073504467207869132.2073504467207935094" info="ng">
-                  <property role="5bav.2073504467208541194.2073504467208541195" value="10" />
-                </node>
-                <node concept="5bav.2073504467208541194" id="3453667744252541094" role="5bav.2073504467207869132.2073504467207935096" info="ng">
-                  <property role="5bav.2073504467208541194.2073504467208541195" value="11" />
-                </node>
+  <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+        <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
+        <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="1206629501431" name="jetbrains.mps.baseLanguage.structure.InstanceInitializer" flags="lg" index="3KIgzJ">
+        <child id="1206629521979" name="statementList" index="3KIlGz" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
+      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
+        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
+      </concept>
+      <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
+        <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+    </language>
+    <language id="7e282943-fc6b-4900-ada5-34c0024cc4f4" name="jetbrains.mps.samples.Expressions">
+      <concept id="930174696942536268" name="jetbrains.mps.samples.Expressions.structure.SimpleMathAssignment" flags="ng" index="1EIqaT">
+        <child id="930174696942541360" name="variable" index="1EIrV5" />
+        <child id="930174696942541362" name="expression" index="1EIrV7" />
+      </concept>
+      <concept id="2073504467210944676" name="jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant" flags="ng" index="2$zt7R">
+        <property id="2073504467210944677" name="value" index="2$zt7Q" />
+      </concept>
+      <concept id="2073504467207869132" name="jetbrains.mps.samples.Expressions.structure.BinarySimpleMathExpression" flags="ng" index="2$QGev">
+        <child id="2073504467207935094" name="left" index="2$QWk_" />
+        <child id="2073504467207935096" name="right" index="2$QWkF" />
+      </concept>
+      <concept id="2073504467208541194" name="jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant" flags="ng" index="2$S0lp">
+        <property id="2073504467208541195" name="value" index="2$S0lo" />
+      </concept>
+      <concept id="2073504467208542432" name="jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType" flags="ng" index="2$S0AN" />
+      <concept id="2073504467208335362" name="jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper" flags="ng" index="2$Tu5h">
+        <child id="2073504467208335735" name="expressions" index="2$Tu0$" />
+      </concept>
+      <concept id="2073504467208672407" name="jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression" flags="nn" index="2$Vwn4">
+        <property id="2073504467208672490" name="operator" index="2$VwmT" />
+      </concept>
+      <concept id="2073504467209342143" name="jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration" flags="ng" index="2$X5RG">
+        <child id="2073504467209342228" name="initializer" index="2$X5L7" />
+      </concept>
+      <concept id="2073504467209348321" name="jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference" flags="ng" index="2$X7mM">
+        <reference id="2073504467209348322" name="declaration" index="2$X7mL" />
+      </concept>
+      <concept id="2073504467209943018" name="jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant" flags="ng" index="2$ZmqT">
+        <property id="2073504467209943070" name="value" index="2$Zm_d" />
+      </concept>
+      <concept id="8620208551721374838" name="jetbrains.mps.samples.Expressions.structure.SimpleMathTypedVarDeclaration" flags="ng" index="3KwzpR">
+        <child id="8620208551721379933" name="type" index="3KwwDs" />
+      </concept>
+    </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="312cEu" id="1N6$leS8Rf9">
+    <property role="TrG5h" value="Main" />
+    <node concept="3KIgzJ" id="2ZHT8fsps5D" role="jymVt">
+      <node concept="3clFbS" id="2ZHT8fsps5F" role="3KIlGz">
+        <node concept="2$Tu5h" id="1N6$leS8RkD" role="3cqZAp">
+          <node concept="2$X5RG" id="1N6$leSd51f" role="2$Tu0$">
+            <property role="TrG5h" value="A" />
+            <node concept="2$Vwn4" id="1N6$leSdjUD" role="2$X5L7">
+              <property role="2$VwmT" value="+" />
+              <node concept="2$S0lp" id="1N6$leSdjVH" role="2$QWk_">
+                <property role="2$S0lo" value="10" />
               </node>
-            </node>
-            <node concept="5bav.2073504467209342143" id="2073504467209502868" role="5bav.2073504467208335362.2073504467208335735" info="ng">
-              <property role="asn4.1169194658468.1169194664001" value="B" />
-              <node concept="5bav.2073504467208672407" id="2073504467210168970" role="5bav.2073504467209342143.2073504467209342228" info="nn">
-                <property role="5bav.2073504467208672407.2073504467208672490" value="+" />
-                <node concept="5bav.2073504467209943018" id="2073504467210169564" role="5bav.2073504467207869132.2073504467207935096" info="ng">
-                  <property role="5bav.2073504467209943018.2073504467209943070" value="200" />
-                </node>
-                <node concept="5bav.2073504467209943018" id="2073504467210169200" role="5bav.2073504467207869132.2073504467207935094" info="ng">
-                  <property role="5bav.2073504467209943018.2073504467209943070" value="100" />
-                </node>
-              </node>
-            </node>
-            <node concept="5bav.2073504467209342143" id="2073504467210938823" role="5bav.2073504467208335362.2073504467208335735" info="ng">
-              <property role="asn4.1169194658468.1169194664001" value="C" />
-              <node concept="5bav.2073504467208672407" id="2073504467210938918" role="5bav.2073504467209342143.2073504467209342228" info="nn">
-                <property role="5bav.2073504467208672407.2073504467208672490" value="-" />
-                <node concept="5bav.2073504467208541194" id="2073504467210939176" role="5bav.2073504467207869132.2073504467207935096" info="ng">
-                  <property role="5bav.2073504467208541194.2073504467208541195" value="20" />
-                </node>
-                <node concept="5bav.2073504467209943018" id="2073504467210939014" role="5bav.2073504467207869132.2073504467207935094" info="ng">
-                  <property role="5bav.2073504467209943018.2073504467209943070" value="300" />
-                </node>
-              </node>
-            </node>
-            <node concept="5bav.2073504467209342143" id="2073504467211039079" role="5bav.2073504467208335362.2073504467208335735" info="ng">
-              <property role="asn4.1169194658468.1169194664001" value="D" />
-              <node concept="5bav.2073504467208672407" id="2073504467211039144" role="5bav.2073504467209342143.2073504467209342228" info="nn">
-                <property role="5bav.2073504467208672407.2073504467208672490" value="*" />
-                <node concept="5bav.2073504467208541194" id="2073504467211042657" role="5bav.2073504467207869132.2073504467207935094" info="ng">
-                  <property role="5bav.2073504467208541194.2073504467208541195" value="10" />
-                </node>
-                <node concept="5bav.2073504467210944676" id="2073504467211039639" role="5bav.2073504467207869132.2073504467207935096" info="ng">
-                  <property role="5bav.2073504467210944676.2073504467210944677" value="2.6" />
-                </node>
-              </node>
-            </node>
-            <node concept="5bav.2073504467209342143" id="8620208551721818923" role="5bav.2073504467208335362.2073504467208335735" info="ng">
-              <property role="asn4.1169194658468.1169194664001" value="E" />
-              <node concept="5bav.2073504467208541194" id="8620208551721818964" role="5bav.2073504467209342143.2073504467209342228" info="ng">
-                <property role="5bav.2073504467208541194.2073504467208541195" value="10" />
-              </node>
-            </node>
-            <node concept="5bav.930174696942536268" id="8620208551721819391" role="5bav.2073504467208335362.2073504467208335735" info="ng">
-              <node concept="5bav.2073504467209348321" id="8620208551721819466" role="5bav.930174696942536268.930174696942541362" info="ng">
-                <reference role="5bav.2073504467209348321.2073504467209348322" target="2073504467211039079" resolveInfo="D" />
-              </node>
-              <node concept="5bav.2073504467209348321" id="8620208551721819432" role="5bav.930174696942536268.930174696942541360" info="ng">
-                <reference role="5bav.2073504467209348321.2073504467209348322" target="8620208551721818923" resolveInfo="E" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="vg0i.1146644602865" id="2073504467208336330" role="vg0i.1178549954367.1178549979242" info="nn" />
-      <node concept="26qq.2068944020170241612" id="8620208551721908613" role="asn4.1133920641626.5169995583184591170" info="ng">
-        <node concept="26qq.8465538089690331500" id="8620208551721908614" role="26qq.5349172909345501395.8465538089690331502" info="ng">
-          <node concept="26qq.8970989240999019143" id="8620208551721908615" role="26qq.8465538089690331500.8970989240999019149" info="ng">
-            <property role="26qq.8970989240999019143.8970989240999019144" value="Illustrates type inference using a dedicated simplified expression language." />
-          </node>
-        </node>
-        <node concept="26qq.8465538089690331500" id="8620208551721909760" role="26qq.5349172909345501395.8465538089690331502" info="ng">
-          <node concept="26qq.8970989240999019143" id="8620208551721909761" role="26qq.8465538089690331500.8970989240999019149" info="ng">
-            <property role="26qq.8970989240999019143.8970989240999019144" value="Check types of the variables by inspecting their type - Control/Cmd + Shift + T." />
-          </node>
-        </node>
-        <node concept="26qq.8465538089690331500" id="8620208551721909741" role="26qq.5349172909345501395.8465538089690331502" info="ng">
-          <node concept="26qq.8970989240999019143" id="8620208551721909742" role="26qq.8465538089690331500.8970989240999019149" info="ng">
-            <property role="26qq.8970989240999019143.8970989240999019144" value="You may also debug the typesystem engine using Type-system Trace - Control/Cmd + Shift + X." />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="vg0i.1068390468198" id="3453667744252544858" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="Simple" />
-      <node concept="vg0i.1206629501431" id="3453667744252544873" role="vg0i.1107461130800.5375687026011219971" info="lgu">
-        <node concept="vg0i.1068580123136" id="3453667744252544875" role="vg0i.1206629501431.1206629521979" info="sn">
-          <node concept="5bav.2073504467208335362" id="3453667744252544930" role="vg0i.1068580123136.1068581517665" info="ng">
-            <node concept="5bav.2073504467209342143" id="3453667744252544931" role="5bav.2073504467208335362.2073504467208335735" info="ng">
-              <property role="asn4.1169194658468.1169194664001" value="aValue" />
-              <node concept="5bav.2073504467208672407" id="3453667744252544932" role="5bav.2073504467209342143.2073504467209342228" info="nn">
-                <property role="5bav.2073504467208672407.2073504467208672490" value="+" />
-                <node concept="5bav.2073504467210944676" id="3453667744252545487" role="5bav.2073504467207869132.2073504467207935096" info="ng">
-                  <property role="5bav.2073504467210944676.2073504467210944677" value="1.3" />
-                </node>
-                <node concept="5bav.2073504467208541194" id="3453667744252544933" role="5bav.2073504467207869132.2073504467207935094" info="ng">
-                  <property role="5bav.2073504467208541194.2073504467208541195" value="10" />
-                </node>
+              <node concept="2$S0lp" id="2ZHT8fspryA" role="2$QWkF">
+                <property role="2$S0lo" value="11" />
               </node>
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="vg0i.1146644602865" id="3453667744252544859" role="vg0i.1178549954367.1178549979242" info="nn" />
-      <node concept="26qq.2068944020170241612" id="8620208551721910208" role="asn4.1133920641626.5169995583184591170" info="ng">
-        <node concept="26qq.8465538089690331500" id="8620208551721910235" role="26qq.5349172909345501395.8465538089690331502" info="ng">
-          <node concept="26qq.8970989240999019143" id="8620208551721910236" role="26qq.8465538089690331500.8970989240999019149" info="ng">
-            <property role="26qq.8970989240999019143.8970989240999019144" value="Illustrates type inference using a dedicated simplified expression language." />
-          </node>
-        </node>
-        <node concept="26qq.8465538089690331500" id="8620208551721910237" role="26qq.5349172909345501395.8465538089690331502" info="ng">
-          <node concept="26qq.8970989240999019143" id="8620208551721910238" role="26qq.8465538089690331500.8970989240999019149" info="ng">
-            <property role="26qq.8970989240999019143.8970989240999019144" value="Check types of the variables by inspecting their type - Control/Cmd + Shift + T." />
-          </node>
-        </node>
-        <node concept="26qq.8465538089690331500" id="8620208551721910239" role="26qq.5349172909345501395.8465538089690331502" info="ng">
-          <node concept="26qq.8970989240999019143" id="8620208551721910240" role="26qq.8465538089690331500.8970989240999019149" info="ng">
-            <property role="26qq.8970989240999019143.8970989240999019144" value="You may also debug the typesystem engine using Type-system Trace - Control/Cmd + Shift + X." />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="vg0i.1068390468198" id="3453667744252546022" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="TypeError" />
-      <node concept="vg0i.1206629501431" id="3453667744252546042" role="vg0i.1107461130800.5375687026011219971" info="lgu">
-        <node concept="vg0i.1068580123136" id="3453667744252546044" role="vg0i.1206629501431.1206629521979" info="sn">
-          <node concept="vg0i.6329021646629104954" id="1962809150991769646" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.6329021646629175143" id="1962809150991769647" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
-              <node concept="5bav.2073504467208335362" id="3453667744252546099" role="vg0i.6329021646629175143.6329021646629175144" info="ng">
-                <node concept="5bav.8620208551721374838" id="8620208551721817373" role="5bav.2073504467208335362.2073504467208335735" info="ng">
-                  <property role="asn4.1169194658468.1169194664001" value="anotherInt" />
-                  <node concept="5bav.2073504467210944676" id="8620208551721817443" role="5bav.2073504467209342143.2073504467209342228" info="ng">
-                    <property role="5bav.2073504467210944676.2073504467210944677" value="1.3" />
-                  </node>
-                  <node concept="5bav.2073504467208542432" id="8620208551721817398" role="5bav.8620208551721374838.8620208551721379933" info="ng" />
-                </node>
+          <node concept="2$X5RG" id="1N6$leSdk2k" role="2$Tu0$">
+            <property role="TrG5h" value="B" />
+            <node concept="2$Vwn4" id="1N6$leSfQEa" role="2$X5L7">
+              <property role="2$VwmT" value="+" />
+              <node concept="2$ZmqT" id="1N6$leSfQNs" role="2$QWkF">
+                <property role="2$Zm_d" value="200" />
+              </node>
+              <node concept="2$ZmqT" id="1N6$leSfQHK" role="2$QWk_">
+                <property role="2$Zm_d" value="100" />
               </node>
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="vg0i.1146644602865" id="3453667744252546023" role="vg0i.1178549954367.1178549979242" info="nn" />
-      <node concept="26qq.2068944020170241612" id="8620208551721910297" role="asn4.1133920641626.5169995583184591170" info="ng">
-        <node concept="26qq.8465538089690331500" id="8620208551721910329" role="26qq.5349172909345501395.8465538089690331502" info="ng">
-          <node concept="26qq.8970989240999019143" id="8620208551721910330" role="26qq.8465538089690331500.8970989240999019149" info="ng">
-            <property role="26qq.8970989240999019143.8970989240999019144" value="Illustrates type inference using a dedicated simplified expression language." />
+          <node concept="2$X5RG" id="1N6$leSiMB7" role="2$Tu0$">
+            <property role="TrG5h" value="C" />
+            <node concept="2$Vwn4" id="1N6$leSiMCA" role="2$X5L7">
+              <property role="2$VwmT" value="-" />
+              <node concept="2$S0lp" id="1N6$leSiMGC" role="2$QWkF">
+                <property role="2$S0lo" value="20" />
+              </node>
+              <node concept="2$ZmqT" id="1N6$leSiME6" role="2$QWk_">
+                <property role="2$Zm_d" value="300" />
+              </node>
+            </node>
           </node>
-        </node>
-        <node concept="26qq.8465538089690331500" id="8620208551721910331" role="26qq.5349172909345501395.8465538089690331502" info="ng">
-          <node concept="26qq.8970989240999019143" id="8620208551721910332" role="26qq.8465538089690331500.8970989240999019149" info="ng">
-            <property role="26qq.8970989240999019143.8970989240999019144" value="Check types of the variables by inspecting their type - Control/Cmd + Shift + T." />
+          <node concept="2$X5RG" id="1N6$leSjb5B" role="2$Tu0$">
+            <property role="TrG5h" value="D" />
+            <node concept="2$Vwn4" id="1N6$leSjb6C" role="2$X5L7">
+              <property role="2$VwmT" value="*" />
+              <node concept="2$S0lp" id="1N6$leSjbXx" role="2$QWk_">
+                <property role="2$S0lo" value="10" />
+              </node>
+              <node concept="2$zt7R" id="1N6$leSjben" role="2$QWkF">
+                <property role="2$zt7Q" value="2.6" />
+              </node>
+            </node>
           </node>
-        </node>
-        <node concept="26qq.8465538089690331500" id="8620208551721910333" role="26qq.5349172909345501395.8465538089690331502" info="ng">
-          <node concept="26qq.8970989240999019143" id="8620208551721910334" role="26qq.8465538089690331500.8970989240999019149" info="ng">
-            <property role="26qq.8970989240999019143.8970989240999019144" value="You may also debug the typesystem engine using Type-system Trace - Control/Cmd + Shift + X." />
+          <node concept="2$X5RG" id="7ux8w67atGF" role="2$Tu0$">
+            <property role="TrG5h" value="E" />
+            <node concept="2$S0lp" id="7ux8w67atHk" role="2$X5L7">
+              <property role="2$S0lo" value="10" />
+            </node>
+          </node>
+          <node concept="1EIqaT" id="7ux8w67atNZ" role="2$Tu0$">
+            <node concept="2$X7mM" id="7ux8w67atPa" role="1EIrV7">
+              <ref role="2$X7mL" node="1N6$leSjb5B" resolve="D" />
+            </node>
+            <node concept="2$X7mM" id="7ux8w67atOC" role="1EIrV5">
+              <ref role="2$X7mL" node="7ux8w67atGF" resolve="E" />
+            </node>
           </node>
         </node>
       </node>
     </node>
-  </contents>
+    <node concept="3Tm1VV" id="1N6$leS8Rfa" role="1B3o_S" />
+    <node concept="3UR2Jj" id="7ux8w67aNA5" role="lGtFl">
+      <node concept="TZ5HA" id="7ux8w67aNA6" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNA7" role="1dT_Ay">
+          <property role="1dT_AB" value="Illustrates type inference using a dedicated simplified expression language." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7ux8w67aNS0" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNS1" role="1dT_Ay">
+          <property role="1dT_AB" value="Check types of the variables by inspecting their type - Control/Cmd + Shift + T." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7ux8w67aNRH" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNRI" role="1dT_Ay">
+          <property role="1dT_AB" value="You may also debug the typesystem engine using Type-system Trace - Control/Cmd + Shift + X." />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="2ZHT8fspstq">
+    <property role="TrG5h" value="Simple" />
+    <node concept="3KIgzJ" id="2ZHT8fspstD" role="jymVt">
+      <node concept="3clFbS" id="2ZHT8fspstF" role="3KIlGz">
+        <node concept="2$Tu5h" id="2ZHT8fspsuy" role="3cqZAp">
+          <node concept="2$X5RG" id="2ZHT8fspsuz" role="2$Tu0$">
+            <property role="TrG5h" value="aValue" />
+            <node concept="2$Vwn4" id="2ZHT8fspsu$" role="2$X5L7">
+              <property role="2$VwmT" value="+" />
+              <node concept="2$zt7R" id="2ZHT8fspsBf" role="2$QWkF">
+                <property role="2$zt7Q" value="1.3" />
+              </node>
+              <node concept="2$S0lp" id="2ZHT8fspsu_" role="2$QWk_">
+                <property role="2$S0lo" value="10" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="2ZHT8fspstr" role="1B3o_S" />
+    <node concept="3UR2Jj" id="7ux8w67aNZ0" role="lGtFl">
+      <node concept="TZ5HA" id="7ux8w67aNZr" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNZs" role="1dT_Ay">
+          <property role="1dT_AB" value="Illustrates type inference using a dedicated simplified expression language." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7ux8w67aNZt" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNZu" role="1dT_Ay">
+          <property role="1dT_AB" value="Check types of the variables by inspecting their type - Control/Cmd + Shift + T." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7ux8w67aNZv" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aNZw" role="1dT_Ay">
+          <property role="1dT_AB" value="You may also debug the typesystem engine using Type-system Trace - Control/Cmd + Shift + X." />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="2ZHT8fspsJA">
+    <property role="TrG5h" value="TypeError" />
+    <node concept="3KIgzJ" id="2ZHT8fspsJU" role="jymVt">
+      <node concept="3clFbS" id="2ZHT8fspsJW" role="3KIlGz">
+        <node concept="3SKdUt" id="1GXj8nYK20I" role="3cqZAp">
+          <node concept="3SKWN0" id="1GXj8nYK20J" role="3SKWNk">
+            <node concept="2$Tu5h" id="2ZHT8fspsKN" role="3SKWNf">
+              <node concept="3KwzpR" id="7ux8w67atkt" role="2$Tu0$">
+                <property role="TrG5h" value="anotherInt" />
+                <node concept="2$zt7R" id="7ux8w67atlz" role="2$X5L7">
+                  <property role="2$zt7Q" value="1.3" />
+                </node>
+                <node concept="2$S0AN" id="7ux8w67atkQ" role="3KwwDs" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="2ZHT8fspsJB" role="1B3o_S" />
+    <node concept="3UR2Jj" id="7ux8w67aO0p" role="lGtFl">
+      <node concept="TZ5HA" id="7ux8w67aO0T" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aO0U" role="1dT_Ay">
+          <property role="1dT_AB" value="Illustrates type inference using a dedicated simplified expression language." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7ux8w67aO0V" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aO0W" role="1dT_Ay">
+          <property role="1dT_AB" value="Check types of the variables by inspecting their type - Control/Cmd + Shift + T." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7ux8w67aO0X" role="TZ5H$">
+        <node concept="1dT_AC" id="7ux8w67aO0Y" role="1dT_Ay">
+          <property role="1dT_AB" value="You may also debug the typesystem engine using Type-system Trace - Control/Cmd + Shift + X." />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

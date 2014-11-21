@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.adapter.structure.link;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -60,19 +61,22 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
     SConceptId id = getRoleId().getConceptId();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
-        new SConceptAdapterById(id, concept.getConceptFqName());
+    String fqName = concept.getConceptFqName();
+    return concept.isInterfaceConcept() ?
+        MetaAdapterFactory.getInterfaceConcept(id, fqName) :
+        MetaAdapterFactory.getConcept(id, fqName);
   }
 
   @Override
   public SAbstractConcept getTargetConcept() {
     LinkDescriptor ld = getLinkDescriptor();
-    if (ld == null) return new SConceptAdapterById(SNodeUtil.conceptId_BaseConcept, SNodeUtil.conceptName_BaseConcept);
+    if (ld == null) return MetaAdapterFactory.getConcept(SNodeUtil.conceptId_BaseConcept, SNodeUtil.conceptName_BaseConcept);
 
     SConceptId id = ld.getTargetConcept();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
-        new SConceptAdapterById(id, concept.getConceptFqName());
+    return concept.isInterfaceConcept() ?
+        MetaAdapterFactory.getInterfaceConcept(id, concept.getConceptFqName()) :
+        MetaAdapterFactory.getConcept(id, concept.getConceptFqName());
   }
 
   @Override
@@ -100,6 +104,11 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
     SNode cnode = getContainingConcept().getDeclarationNode();
     if (cnode == null) return null;
     return findInConcept(cnode);
+  }
+
+  @Override
+  public String toString() {
+    return myName;
   }
 
   @Override

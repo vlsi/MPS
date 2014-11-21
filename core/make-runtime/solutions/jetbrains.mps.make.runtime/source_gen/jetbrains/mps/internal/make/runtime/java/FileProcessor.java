@@ -199,9 +199,15 @@ public class FileProcessor {
     }
   }
   private static class XMLFileContent implements FileProcessor.FileContent {
-    private Document myDocument;
+    private final Document myDocument;
     private XMLFileContent(Element element) {
-      myDocument = new Document(element);
+      // if element is right under a document, use this document, otherwise create a new one 
+      if (element.getDocument() != null) {
+        assert element.isRootElement() : "Need a document to serialize an xml element; could not save if element is already inside a document";
+        myDocument = element.getDocument();
+      } else {
+        myDocument = new Document(element);
+      }
     }
     @Override
     public void saveToFile(IFile file) {

@@ -5,17 +5,17 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="B_BehaviorDescriptor.java">
-      <unit at="8,0,26,0" name="jetbrains.mps.lang.behavior.test.behavior.B_BehaviorDescriptor" />
-    </file>
-    <file name="C_BehaviorDescriptor.java">
-      <unit at="7,0,24,0" name="jetbrains.mps.lang.behavior.test.behavior.C_BehaviorDescriptor" />
-    </file>
     <file name="A_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.behavior.test.behavior.A_BehaviorDescriptor" />
     </file>
+    <file name="B_BehaviorDescriptor.java">
+      <unit at="8,0,26,0" name="jetbrains.mps.lang.behavior.test.behavior.B_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="9,0,24,0" name="jetbrains.mps.lang.behavior.test.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="C_BehaviorDescriptor.java">
+      <unit at="7,0,24,0" name="jetbrains.mps.lang.behavior.test.behavior.C_BehaviorDescriptor" />
     </file>
     <file name="I_BehaviorDescriptor.java">
       <unit at="7,0,11,0" name="jetbrains.mps.lang.behavior.test.behavior.I_BehaviorDescriptor" />

@@ -33,7 +33,7 @@ public class BuildAllIntentions_Action extends BaseAction {
   public BuildAllIntentions_Action() {
     super("Rebuild All Intentions", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {

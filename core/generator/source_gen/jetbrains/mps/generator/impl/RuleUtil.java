@@ -64,6 +64,7 @@ public final class RuleUtil {
   public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
   public static final String link_TemplateSwitch_modifiedSwitch = "modifiedSwitch";
   public static final String link_BaseConcept_attrs = "smodelAttribute";
+  public static final String concept_ExportMacro = "jetbrains.mps.lang.generator.structure.ExportMacro";
 
   public static final String concept_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   public static final String concept_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
@@ -100,6 +101,7 @@ public final class RuleUtil {
     NodeMacroConcepts.add(concept_VarMacro);
     NodeMacroConcepts.add(concept_WeaveMacro);
     NodeMacroConcepts.add(concept_NodeMacro);
+    NodeMacroConcepts.add(concept_ExportMacro);
   }
   /**
    * Set of operations that might alter model (insertion of new nodes, replacement)

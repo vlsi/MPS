@@ -25,6 +25,7 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -38,7 +39,6 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
@@ -741,7 +741,7 @@ public class SModel implements SModelData {
   }
 
   public void addLanguage(Language language) {
-    addLanguage(new SLanguageAdapterById(MetaIdByDeclaration.getLanguageId(language), language.getModuleName()), language.getLanguageVersion());
+    addLanguage(MetaAdapterFactory.getLanguage(MetaIdByDeclaration.getLanguageId(language), language.getModuleName()), language.getLanguageVersion());
   }
 
   //devkit
@@ -759,7 +759,7 @@ public class SModel implements SModelData {
       if (existingVersion == -1) {
         myLanguagesIds.remove(id);
       } else {
-        assert false;
+        throw new IllegalStateException("Can't add language import with different version. Old version: " + existingVersion + "; new version: " + version);
       }
     }
 
@@ -843,8 +843,7 @@ public class SModel implements SModelData {
   // create new implicit import list based on used models, explicit import and old implicit import list
   public void calculateImplicitImports() {
     Set<SModelReference> usedModels = collectUsedModels(this, new HashSet<SModelReference>());
-    if (!(NameUtil.getModelLongName(getReference().getModelName()).endsWith(LanguageAspect.STRUCTURE.getName())))
-      usedModels.remove(myReference);   // do not import self if not structure
+    usedModels.remove(myReference);   // do not import self
     for (ImportElement elem : myImports) {
       usedModels.remove(elem.getModelReference());    // do not add explicit imports to implicit
     }

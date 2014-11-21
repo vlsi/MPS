@@ -129,61 +129,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)/1202242680337">
-    <file name="UseInTest_PropertySupport.java">
-      <node id="1202242680337" at="11,24,12,18" concept="6" />
-      <node id="1202242680337" at="13,5,14,95" concept="5" />
-      <node id="1202242680337" at="15,33,16,44" concept="5" />
-      <node id="1202242680337" at="17,45,18,20" concept="6" />
-      <node id="1202242680337" at="20,5,21,17" concept="6" />
-      <node id="1202242680337" at="24,24,25,18" concept="6" />
-      <node id="1202242680337" at="26,5,27,95" concept="5" />
-      <node id="1202242680337" at="28,33,29,44" concept="5" />
-      <node id="1202242680337" at="30,45,31,43" concept="6" />
-      <node id="1202242680337" at="33,5,34,16" concept="6" />
-      <node id="1202242680337" at="36,49,37,53" concept="5" />
-      <node id="1202242680337" at="38,27,39,32" concept="6" />
-      <node id="1202242680337" at="40,5,41,14" concept="6" />
-      <node id="1202242680337" at="10,44,13,5" concept="3" />
-      <node id="1202242680337" at="16,44,19,7" concept="3" />
-      <node id="1202242680337" at="23,47,26,5" concept="3" />
-      <node id="1202242680337" at="29,44,32,7" concept="3" />
-      <node id="1202242680337" at="37,53,40,5" concept="3" />
-      <node id="1202242680337" at="14,95,20,5" concept="8" />
-      <node id="1202242680337" at="27,95,33,5" concept="8" />
-      <node id="1202242680337" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1202242680337" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1202242680337" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1202242680337" at="11,24,12,18" />
-      <scope id="1202242680337" at="17,45,18,20" />
-      <scope id="1202242680337" at="24,24,25,18" />
-      <scope id="1202242680337" at="30,45,31,43" />
-      <scope id="1202242680337" at="38,27,39,32" />
-      <scope id="1202242680337" at="15,33,19,7">
-        <var name="constant" id="1202242680337" />
-      </scope>
-      <scope id="1202242680337" at="28,33,32,7">
-        <var name="constant" id="1202242680337" />
-      </scope>
-      <scope id="1202242680337" at="36,49,41,14">
-        <var name="constant" id="1202242680337" />
-      </scope>
-      <scope id="1202242680337" at="36,0,43,0">
-        <var name="value" id="1202242680337" />
-      </scope>
-      <scope id="1202242680337" at="10,44,21,17">
-        <var name="constants" id="1202242680337" />
-      </scope>
-      <scope id="1202242680337" at="23,47,34,16">
-        <var name="constants" id="1202242680337" />
-      </scope>
-      <scope id="1202242680337" at="10,0,23,0">
-        <var name="value" id="1202242680337" />
-      </scope>
-      <scope id="1202242680337" at="23,0,36,0">
-        <var name="value" id="1202242680337" />
-      </scope>
-      <unit id="1202242680337" at="9,0,44,0" name="jetbrains.mps.transformation.test.inputLang.structure.UseInTest_PropertySupport" />
-    </file>
     <file name="UseInTest.java">
       <node id="1202242680337" at="20,0,21,0" concept="2" trace="myName" />
       <node id="1202242680337" at="21,27,22,23" concept="6" />
@@ -264,6 +209,61 @@
         <var name="value" id="1202242680337" />
       </scope>
       <unit id="1202242680337" at="9,0,85,0" name="jetbrains.mps.transformation.test.inputLang.structure.UseInTest" />
+    </file>
+    <file name="UseInTest_PropertySupport.java">
+      <node id="1202242680337" at="11,24,12,18" concept="6" />
+      <node id="1202242680337" at="13,5,14,95" concept="5" />
+      <node id="1202242680337" at="15,33,16,44" concept="5" />
+      <node id="1202242680337" at="17,45,18,20" concept="6" />
+      <node id="1202242680337" at="20,5,21,17" concept="6" />
+      <node id="1202242680337" at="24,24,25,18" concept="6" />
+      <node id="1202242680337" at="26,5,27,95" concept="5" />
+      <node id="1202242680337" at="28,33,29,44" concept="5" />
+      <node id="1202242680337" at="30,45,31,43" concept="6" />
+      <node id="1202242680337" at="33,5,34,16" concept="6" />
+      <node id="1202242680337" at="36,49,37,53" concept="5" />
+      <node id="1202242680337" at="38,27,39,32" concept="6" />
+      <node id="1202242680337" at="40,5,41,14" concept="6" />
+      <node id="1202242680337" at="10,44,13,5" concept="3" />
+      <node id="1202242680337" at="16,44,19,7" concept="3" />
+      <node id="1202242680337" at="23,47,26,5" concept="3" />
+      <node id="1202242680337" at="29,44,32,7" concept="3" />
+      <node id="1202242680337" at="37,53,40,5" concept="3" />
+      <node id="1202242680337" at="14,95,20,5" concept="8" />
+      <node id="1202242680337" at="27,95,33,5" concept="8" />
+      <node id="1202242680337" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1202242680337" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="1202242680337" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="1202242680337" at="11,24,12,18" />
+      <scope id="1202242680337" at="17,45,18,20" />
+      <scope id="1202242680337" at="24,24,25,18" />
+      <scope id="1202242680337" at="30,45,31,43" />
+      <scope id="1202242680337" at="38,27,39,32" />
+      <scope id="1202242680337" at="15,33,19,7">
+        <var name="constant" id="1202242680337" />
+      </scope>
+      <scope id="1202242680337" at="28,33,32,7">
+        <var name="constant" id="1202242680337" />
+      </scope>
+      <scope id="1202242680337" at="36,49,41,14">
+        <var name="constant" id="1202242680337" />
+      </scope>
+      <scope id="1202242680337" at="36,0,43,0">
+        <var name="value" id="1202242680337" />
+      </scope>
+      <scope id="1202242680337" at="10,44,21,17">
+        <var name="constants" id="1202242680337" />
+      </scope>
+      <scope id="1202242680337" at="23,47,34,16">
+        <var name="constants" id="1202242680337" />
+      </scope>
+      <scope id="1202242680337" at="10,0,23,0">
+        <var name="value" id="1202242680337" />
+      </scope>
+      <scope id="1202242680337" at="23,0,36,0">
+        <var name="value" id="1202242680337" />
+      </scope>
+      <unit id="1202242680337" at="9,0,44,0" name="jetbrains.mps.transformation.test.inputLang.structure.UseInTest_PropertySupport" />
     </file>
   </root>
 </debug-info>

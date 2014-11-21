@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" doNotGenerate="true">
+<model ref="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" doNotGenerate="true" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="ed6d7656-532c-4bc2-81d1-af945aeb8280/1159268590033" name="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor" />
-    <concept id="ed6d7656-532c-4bc2-81d1-af945aeb8280/1159268661480" name="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="ed6d7656-532c-4bc2-81d1-af945aeb8280/1159268661480/1159268661479" name="descriptor" />
-    <childRole id="ed6d7656-532c-4bc2-81d1-af945aeb8280/1159268590033/1159268590032" name="extends" />
-  </debugInfo>
   <languages>
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" version="-1" index="nurk" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpdt" ref="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="nurk.1159268590033" id="1196683481013" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="Integral" />
-      <node concept="nurk.1159268661480" id="1196683481014" role="nurk.1159268590033.1159268590032" info="ig">
-        <reference role="nurk.1159268661480.1159268661479" target="1196683729865" resolveInfo="Numeric" />
-      </node>
+  <registry>
+    <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes">
+      <concept id="1159268590033" name="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor" flags="ng" index="3DMI3s">
+        <child id="1159268590032" name="extends" index="3DMI3t" />
+      </concept>
+      <concept id="1159268661480" name="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" flags="ig" index="3DMZB_">
+        <reference id="1159268661479" name="descriptor" index="3DMZBE" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="3DMI3s" id="hqvTcYP">
+    <property role="TrG5h" value="Integral" />
+    <node concept="3DMZB_" id="hqvTcYQ" role="3DMI3t">
+      <ref role="3DMZBE" node="hqvU9J9" resolve="Numeric" />
     </node>
-    <node concept="nurk.1159268590033" id="1196683630235" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="FloatingPoint" />
-      <node concept="nurk.1159268661480" id="1196683736117" role="nurk.1159268590033.1159268590032" info="ig">
-        <reference role="nurk.1159268661480.1159268661479" target="1196683729865" resolveInfo="Numeric" />
-      </node>
+  </node>
+  <node concept="3DMI3s" id="hqvTLqr">
+    <property role="TrG5h" value="FloatingPoint" />
+    <node concept="3DMZB_" id="hqvUbgP" role="3DMI3t">
+      <ref role="3DMZBE" node="hqvU9J9" resolve="Numeric" />
     </node>
-    <node concept="nurk.1159268590033" id="1196683729865" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="Numeric" />
-      <node concept="nurk.1159268661480" id="1196683729866" role="nurk.1159268590033.1159268590032" info="ig">
-        <reference role="nurk.1159268661480.1159268661479" target="1196683941620" resolveInfo="Primitive" />
-      </node>
+  </node>
+  <node concept="3DMI3s" id="hqvU9J9">
+    <property role="TrG5h" value="Numeric" />
+    <node concept="3DMZB_" id="hqvU9Ja" role="3DMI3t">
+      <ref role="3DMZBE" node="hqvUXrO" resolve="Primitive" />
     </node>
-    <node concept="nurk.1159268590033" id="1196683941620" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="Primitive" />
-    </node>
-  </contents>
+  </node>
+  <node concept="3DMI3s" id="hqvUXrO">
+    <property role="TrG5h" value="Primitive" />
+  </node>
 </model>
 

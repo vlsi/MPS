@@ -32,7 +32,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.build.workflow", "jetbrains.mps.core.xml"};
+    return new String[]{"jetbrains.mps.core.xml", "jetbrains.mps.build.workflow"};
   }
   @Override
   public Collection<TemplateModule> getGenerators() {

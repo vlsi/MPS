@@ -16,61 +16,6 @@
     </file>
   </root>
   <root nodeRef="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/1979010778009209124">
-    <file name="BuildLayout_TarCompression_PropertySupport.java">
-      <node id="1979010778009209124" at="11,24,12,18" concept="7" />
-      <node id="1979010778009209124" at="13,5,14,129" concept="6" />
-      <node id="1979010778009209124" at="15,33,16,61" concept="6" />
-      <node id="1979010778009209124" at="17,45,18,20" concept="7" />
-      <node id="1979010778009209124" at="20,5,21,17" concept="7" />
-      <node id="1979010778009209124" at="24,24,25,18" concept="7" />
-      <node id="1979010778009209124" at="26,5,27,129" concept="6" />
-      <node id="1979010778009209124" at="28,33,29,61" concept="6" />
-      <node id="1979010778009209124" at="30,45,31,43" concept="7" />
-      <node id="1979010778009209124" at="33,5,34,16" concept="7" />
-      <node id="1979010778009209124" at="36,49,37,87" concept="6" />
-      <node id="1979010778009209124" at="38,27,39,32" concept="7" />
-      <node id="1979010778009209124" at="40,5,41,14" concept="7" />
-      <node id="1979010778009209124" at="10,44,13,5" concept="4" />
-      <node id="1979010778009209124" at="16,61,19,7" concept="4" />
-      <node id="1979010778009209124" at="23,47,26,5" concept="4" />
-      <node id="1979010778009209124" at="29,61,32,7" concept="4" />
-      <node id="1979010778009209124" at="37,87,40,5" concept="4" />
-      <node id="1979010778009209124" at="14,129,20,5" concept="9" />
-      <node id="1979010778009209124" at="27,129,33,5" concept="9" />
-      <node id="1979010778009209124" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1979010778009209124" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1979010778009209124" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1979010778009209124" at="11,24,12,18" />
-      <scope id="1979010778009209124" at="17,45,18,20" />
-      <scope id="1979010778009209124" at="24,24,25,18" />
-      <scope id="1979010778009209124" at="30,45,31,43" />
-      <scope id="1979010778009209124" at="38,27,39,32" />
-      <scope id="1979010778009209124" at="15,33,19,7">
-        <var name="constant" id="1979010778009209124" />
-      </scope>
-      <scope id="1979010778009209124" at="28,33,32,7">
-        <var name="constant" id="1979010778009209124" />
-      </scope>
-      <scope id="1979010778009209124" at="36,49,41,14">
-        <var name="constant" id="1979010778009209124" />
-      </scope>
-      <scope id="1979010778009209124" at="36,0,43,0">
-        <var name="value" id="1979010778009209124" />
-      </scope>
-      <scope id="1979010778009209124" at="10,44,21,17">
-        <var name="constants" id="1979010778009209124" />
-      </scope>
-      <scope id="1979010778009209124" at="23,47,34,16">
-        <var name="constants" id="1979010778009209124" />
-      </scope>
-      <scope id="1979010778009209124" at="10,0,23,0">
-        <var name="value" id="1979010778009209124" />
-      </scope>
-      <scope id="1979010778009209124" at="23,0,36,0">
-        <var name="value" id="1979010778009209124" />
-      </scope>
-      <unit id="1979010778009209124" at="9,0,44,0" name="jetbrains.mps.build.structure.BuildLayout_TarCompression_PropertySupport" />
-    </file>
     <file name="BuildLayout_TarCompression.java">
       <node id="1979010778009209124" at="14,0,15,0" concept="3" trace="myName" />
       <node id="1979010778009209124" at="15,27,16,23" concept="7" />
@@ -127,6 +72,61 @@
         <var name="value" id="1979010778009209124" />
       </scope>
       <unit id="1979010778009209124" at="9,0,55,0" name="jetbrains.mps.build.structure.BuildLayout_TarCompression" />
+    </file>
+    <file name="BuildLayout_TarCompression_PropertySupport.java">
+      <node id="1979010778009209124" at="11,24,12,18" concept="7" />
+      <node id="1979010778009209124" at="13,5,14,129" concept="6" />
+      <node id="1979010778009209124" at="15,33,16,61" concept="6" />
+      <node id="1979010778009209124" at="17,45,18,20" concept="7" />
+      <node id="1979010778009209124" at="20,5,21,17" concept="7" />
+      <node id="1979010778009209124" at="24,24,25,18" concept="7" />
+      <node id="1979010778009209124" at="26,5,27,129" concept="6" />
+      <node id="1979010778009209124" at="28,33,29,61" concept="6" />
+      <node id="1979010778009209124" at="30,45,31,43" concept="7" />
+      <node id="1979010778009209124" at="33,5,34,16" concept="7" />
+      <node id="1979010778009209124" at="36,49,37,87" concept="6" />
+      <node id="1979010778009209124" at="38,27,39,32" concept="7" />
+      <node id="1979010778009209124" at="40,5,41,14" concept="7" />
+      <node id="1979010778009209124" at="10,44,13,5" concept="4" />
+      <node id="1979010778009209124" at="16,61,19,7" concept="4" />
+      <node id="1979010778009209124" at="23,47,26,5" concept="4" />
+      <node id="1979010778009209124" at="29,61,32,7" concept="4" />
+      <node id="1979010778009209124" at="37,87,40,5" concept="4" />
+      <node id="1979010778009209124" at="14,129,20,5" concept="9" />
+      <node id="1979010778009209124" at="27,129,33,5" concept="9" />
+      <node id="1979010778009209124" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1979010778009209124" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="1979010778009209124" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="1979010778009209124" at="11,24,12,18" />
+      <scope id="1979010778009209124" at="17,45,18,20" />
+      <scope id="1979010778009209124" at="24,24,25,18" />
+      <scope id="1979010778009209124" at="30,45,31,43" />
+      <scope id="1979010778009209124" at="38,27,39,32" />
+      <scope id="1979010778009209124" at="15,33,19,7">
+        <var name="constant" id="1979010778009209124" />
+      </scope>
+      <scope id="1979010778009209124" at="28,33,32,7">
+        <var name="constant" id="1979010778009209124" />
+      </scope>
+      <scope id="1979010778009209124" at="36,49,41,14">
+        <var name="constant" id="1979010778009209124" />
+      </scope>
+      <scope id="1979010778009209124" at="36,0,43,0">
+        <var name="value" id="1979010778009209124" />
+      </scope>
+      <scope id="1979010778009209124" at="10,44,21,17">
+        <var name="constants" id="1979010778009209124" />
+      </scope>
+      <scope id="1979010778009209124" at="23,47,34,16">
+        <var name="constants" id="1979010778009209124" />
+      </scope>
+      <scope id="1979010778009209124" at="10,0,23,0">
+        <var name="value" id="1979010778009209124" />
+      </scope>
+      <scope id="1979010778009209124" at="23,0,36,0">
+        <var name="value" id="1979010778009209124" />
+      </scope>
+      <unit id="1979010778009209124" at="9,0,44,0" name="jetbrains.mps.build.structure.BuildLayout_TarCompression_PropertySupport" />
     </file>
   </root>
   <root nodeRef="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/4198392933254416814">

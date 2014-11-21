@@ -1,38 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)">
+<model ref="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" />
-    <model ref="r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)" name="jetbrains.mps.lang.editor.figures.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" name="jetbrains.mps.lang.editor.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" name="jetbrains.mps.baseLanguage.structure" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831" name="metaClass" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802" name="abstract" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/5092175715804935370" name="conceptAlias" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519" name="extends" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" name="target" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299/1082985295845" name="dataType" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168/1169127628841" name="intfc" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083" name="linkDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727084" name="propertyDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478" name="implements" />
-  </debugInfo>
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="-1" index="4jta" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -41,425 +11,457 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="gbdf" ref="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="4jta.1071489090640" id="1094405431463454433" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="CellModel_DiagramNode" />
-      <property role="4jta.1169125787135.5092175715804935370" value="diagram node" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpc2.1073389214265" resolveInfo="EditorCellModel" />
-      <node concept="4jta.1071489288298" id="1094405431463455193" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="figure" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="1094405431463455190" resolveInfo="AbstractFigureReference" />
-      </node>
-      <node concept="4jta.1071489288298" id="1094405431463761842" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <property role="4jta.1071489288298.1071599776563" value="parameters" />
-        <reference role="4jta.1071489288298.1071599976176" target="1094405431463761863" resolveInfo="FigureParameterMapping" />
-      </node>
-      <node concept="4jta.1071489288298" id="2084788800269090635" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="inputPort" />
-        <reference role="4jta.1071489288298.1071599976176" target="285670992213637294" resolveInfo="AbstractArgument" />
-      </node>
-      <node concept="4jta.1071489288298" id="2084788800269090678" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="outputPort" />
-        <reference role="4jta.1071489288298.1071599976176" target="285670992213637294" resolveInfo="AbstractArgument" />
-      </node>
-      <node concept="4jta.1169127622168" id="7200199917722064560" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpc2.8770580973047386957" resolveInfo="Synchronizeable" />
-      </node>
+  <registry>
+    <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
+        <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
+      </concept>
+      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
+        <reference id="1169127628841" name="intfc" index="PrY4T" />
+      </concept>
+      <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="1169129564478" name="implements" index="PzmwI" />
+      </concept>
+      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <reference id="1082985295845" name="dataType" index="AX2Wp" />
+      </concept>
+      <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
+        <property id="1071599776563" name="role" index="20kJfa" />
+        <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
+        <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <reference id="1071599976176" name="target" index="20lvS9" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1TIwiD" id="WK6Z46CMrx">
+    <property role="TrG5h" value="CellModel_DiagramNode" />
+    <property role="34LRSv" value="diagram node" />
+    <ref role="1TJDcQ" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+    <node concept="1TJgyj" id="WK6Z46CMBp" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="figure" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="WK6Z46CMBm" resolve="AbstractFigureReference" />
     </node>
-    <node concept="4jta.1071489090640" id="1094405431463455190" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="AbstractFigureReference" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1133920641626.1193676396447" value="figureRefs" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node concept="1TJgyj" id="WK6Z46DXuM" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="0..n" />
+      <property role="20kJfa" value="parameters" />
+      <ref role="20lvS9" node="WK6Z46DXv7" resolve="FigureParameterMapping" />
     </node>
-    <node concept="4jta.1071489090640" id="1094405431463663051" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ExternalFigureReference" />
-      <property role="asn4.1133920641626.1193676396447" value="figureRefs" />
-      <reference role="4jta.1071489090640.1071489389519" target="1094405431463455190" resolveInfo="AbstractFigureReference" />
-      <node concept="4jta.1071489288298" id="1094405431463663379" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="figure" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="ny2.2178507174411801538" resolveInfo="ExternalViewFigure" />
-      </node>
+    <node concept="1TJgyj" id="1NIE5SZK7Xb" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="inputPort" />
+      <ref role="20lvS9" node="fQU43XxJyI" resolve="AbstractArgument" />
     </node>
-    <node concept="4jta.1071489090640" id="1094405431463761863" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="FigureParameterMapping" />
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="285670992218957021" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="285670992213637294" resolveInfo="AbstractArgument" />
-      </node>
-      <node concept="4jta.1169127622168" id="1094405431463762186" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
-      <node concept="4jta.1169127622168" id="1497735617373411533" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
+    <node concept="1TJgyj" id="1NIE5SZK7XQ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="outputPort" />
+      <ref role="20lvS9" node="fQU43XxJyI" resolve="AbstractArgument" />
     </node>
-    <node concept="4jta.1071489090640" id="6306886970791033847" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="CellModel_Diagram" />
-      <property role="4jta.1169125787135.5092175715804935370" value="diagram" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpc2.1073389214265" resolveInfo="EditorCellModel" />
-      <node concept="4jta.1071489288298" id="5355858557208539148" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="diagramElements" />
-        <property role="4jta.1071489288298.1071599893252" value="1..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="5355858557208538577" resolveInfo="DiagramElement" />
-      </node>
-      <node concept="4jta.1071489288298" id="8570854907290721333" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementsCreation" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="8570854907290423690" resolveInfo="DiagramElementsCreation" />
-      </node>
-      <node concept="4jta.1071489288298" id="939897302409114961" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="connectorCreation" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="939897302409084996" resolveInfo="DiagramConnectorCreation" />
-      </node>
-      <node concept="4jta.1071489288298" id="6619018968336658044" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="paletteDeclaration" />
-        <reference role="4jta.1071489288298.1071599976176" target="526297864816328068" resolveInfo="Palette" />
-      </node>
-      <node concept="4jta.1169127622168" id="7200199917722063808" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpc2.8770580973047386957" resolveInfo="Synchronizeable" />
-      </node>
+    <node concept="PrWs8" id="6fGfUP7BHqK" role="PzmwI">
+      <ref role="PrY4T" to="tpc2:7ARneOGixdd" resolve="Synchronizeable" />
     </node>
-    <node concept="4jta.1071489090640" id="6382742553261733065" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="CellModel_DiagramConnector" />
-      <property role="4jta.1169125787135.5092175715804935370" value="diagram connector" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpc2.1073389214265" resolveInfo="EditorCellModel" />
-      <node concept="4jta.1071489288298" id="1220375669566529919" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="input" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="2721249134706026944" resolveInfo="ConnectionEnd" />
-      </node>
-      <node concept="4jta.1071489288298" id="1220375669566529925" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="output" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="2721249134706026944" resolveInfo="ConnectionEnd" />
-      </node>
-      <node concept="4jta.1169127622168" id="7200199917722064749" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpc2.8770580973047386957" resolveInfo="Synchronizeable" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="WK6Z46CMBm">
+    <property role="TrG5h" value="AbstractFigureReference" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="3GE5qa" value="figureRefs" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="WK6Z46D_nb">
+    <property role="TrG5h" value="ExternalFigureReference" />
+    <property role="3GE5qa" value="figureRefs" />
+    <ref role="1TJDcQ" node="WK6Z46CMBm" resolve="AbstractFigureReference" />
+    <node concept="1TJgyj" id="WK6Z46D_sj" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="figure" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="ny2:1SVBbIvt9f2" resolve="ExternalViewFigure" />
     </node>
-    <node concept="4jta.1071489090640" id="5422656561926747342" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="AttributedFigureReference" />
-      <property role="asn4.1133920641626.1193676396447" value="figureRefs" />
-      <reference role="4jta.1071489090640.1071489389519" target="1094405431463455190" resolveInfo="AbstractFigureReference" />
-      <node concept="4jta.1071489288298" id="5422656561931890753" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="figureAttribute" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="ny2.5422656561926747556" resolveInfo="FigureAttribute" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="WK6Z46DXv7">
+    <property role="TrG5h" value="FigureParameterMapping" />
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="fQU43XQ2jt" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="fQU43XxJyI" resolve="AbstractArgument" />
     </node>
-    <node concept="4jta.1071489090640" id="3229274890673749551" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ThisEditorNodeExpression" />
-      <property role="4jta.1169125787135.5092175715804935370" value="this" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
+    <node concept="PrWs8" id="WK6Z46DX$a" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="1220375669566347117" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ConnectionEndBLQuery" />
-      <reference role="4jta.1071489090640.1071489389519" target="2721249134706026944" resolveInfo="ConnectionEnd" />
-      <node concept="4jta.1071489288298" id="1220375669566421348" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="pointID" />
-        <property role="4jta.1071489288298.1071599893252" value="0..1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="2915596886892604954" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="targetNode" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
+    <node concept="PrWs8" id="1j91DJgZxzd" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="4jta.1071489090640" id="2721249134706026944" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ConnectionEnd" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="5u6$4zsyvJR">
+    <property role="TrG5h" value="CellModel_Diagram" />
+    <property role="34LRSv" value="diagram" />
+    <ref role="1TJDcQ" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+    <node concept="1TJgyj" id="4DjPfGLDF0c" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="diagramElements" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="4DjPfGLDERh" resolve="DiagramElement" />
     </node>
-    <node concept="4jta.1071489090640" id="5355858557208538577" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="DiagramElement" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node concept="1TJgyj" id="7rLMM2UuxKP" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementsCreation" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7rLMM2Utp6a" resolve="DiagramElementsCreation" />
     </node>
-    <node concept="4jta.1071489090640" id="5355858557208817201" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="DiagramElementBLQuery" />
-      <reference role="4jta.1071489090640.1071489389519" target="5355858557208538577" resolveInfo="DiagramElement" />
-      <node concept="4jta.1071489288298" id="5355858557208817241" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="query" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
+    <node concept="1TJgyj" id="ObbTRzsnlh" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="connectorCreation" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="ObbTRzsg14" resolve="DiagramConnectorCreation" />
     </node>
-    <node concept="4jta.1071489090640" id="285670992205972098" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="CellModel_DiagramPort" />
-      <property role="4jta.1169125787135.5092175715804935370" value="diagram port" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpc2.1073389214265" resolveInfo="EditorCellModel" />
-      <node concept="4jta.1071489288299" id="285670992206001471" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="input" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
-      </node>
-      <node concept="4jta.1169127622168" id="7200199917722064684" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpc2.8770580973047386957" resolveInfo="Synchronizeable" />
-      </node>
+    <node concept="1TJgyj" id="5JruEV1hQTW" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="paletteDeclaration" />
+      <ref role="20lvS9" node="tdMhUur7Q4" resolve="Palette" />
     </node>
-    <node concept="4jta.1071489090640" id="285670992213637294" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="AbstractArgument" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="285670992213637300" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
+    <node concept="PrWs8" id="6fGfUP7BHf0" role="PzmwI">
+      <ref role="PrY4T" to="tpc2:7ARneOGixdd" resolve="Synchronizeable" />
     </node>
-    <node concept="4jta.1071489090640" id="285670992213637367" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="BLQueryArgument" />
-      <reference role="4jta.1071489090640.1071489389519" target="285670992213637294" resolveInfo="AbstractArgument" />
-      <node concept="4jta.1071489288298" id="285670992213637368" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="query" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="5yk3CzNVRj9">
+    <property role="TrG5h" value="CellModel_DiagramConnector" />
+    <property role="34LRSv" value="diagram connector" />
+    <ref role="1TJDcQ" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+    <node concept="1TJgyj" id="13JDji_2I5Z" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="input" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2n3OqIjvuB0" resolve="ConnectionEnd" />
     </node>
-    <node concept="4jta.1071489090640" id="285670992213637559" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="LinkArgument" />
-      <reference role="4jta.1071489090640.1071489389519" target="285670992213637294" resolveInfo="AbstractArgument" />
-      <node concept="4jta.1071489288298" id="285670992217679783" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="link" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-      </node>
+    <node concept="1TJgyj" id="13JDji_2I65" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="output" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2n3OqIjvuB0" resolve="ConnectionEnd" />
     </node>
-    <node concept="4jta.1071489090640" id="285670992217672837" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="PropertyArgument" />
-      <reference role="4jta.1071489090640.1071489389519" target="285670992213637294" resolveInfo="AbstractArgument" />
-      <node concept="4jta.1071489288298" id="285670992217689748" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="property" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
-      </node>
+    <node concept="PrWs8" id="6fGfUP7BHtH" role="PzmwI">
+      <ref role="PrY4T" to="tpc2:7ARneOGixdd" resolve="Synchronizeable" />
     </node>
-    <node concept="4jta.1071489090640" id="8570854907290423690" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="DiagramElementsCreation" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="1301388602725986966" resolveInfo="AbstractDiagramCreation" />
-      <node concept="4jta.1071489288298" id="8570854907290527457" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="handler" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="8570854907290527479" resolveInfo="DiagramElementCreationHandler" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="4H19mAw_rje">
+    <property role="TrG5h" value="AttributedFigureReference" />
+    <property role="3GE5qa" value="figureRefs" />
+    <ref role="1TJDcQ" node="WK6Z46CMBm" resolve="AbstractFigureReference" />
+    <node concept="1TJgyj" id="4H19mAwT311" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="figureAttribute" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="ny2:4H19mAw_rm$" resolve="FigureAttribute" />
     </node>
-    <node concept="4jta.1071489090640" id="8570854907290527479" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="DiagramElementCreationHandler" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="2NgG6tkGBSJ">
+    <property role="TrG5h" value="ThisEditorNodeExpression" />
+    <property role="34LRSv" value="this" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+  </node>
+  <node concept="1TIwiD" id="13JDji_21tH">
+    <property role="TrG5h" value="ConnectionEndBLQuery" />
+    <ref role="1TJDcQ" node="2n3OqIjvuB0" resolve="ConnectionEnd" />
+    <node concept="1TJgyj" id="13JDji_2j_$" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="pointID" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="4jta.1071489090640" id="8570854907290717911" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="YFunctionParameter" />
-      <property role="4jta.1169125787135.5092175715804935370" value="y" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node concept="1TJgyj" id="2xQhYJftYSq" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="targetNode" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="4jta.1071489090640" id="8570854907290717918" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="NodeFunctionParameter" />
-      <property role="4jta.1169125787135.5092175715804935370" value="node" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="2n3OqIjvuB0">
+    <property role="TrG5h" value="ConnectionEnd" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="4DjPfGLDERh">
+    <property role="TrG5h" value="DiagramElement" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="4DjPfGLEISL">
+    <property role="TrG5h" value="DiagramElementBLQuery" />
+    <ref role="1TJDcQ" node="4DjPfGLDERh" resolve="DiagramElement" />
+    <node concept="1TJgyj" id="4DjPfGLEITp" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="4jta.1071489090640" id="8570854907290717922" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="XFunctionParameter" />
-      <property role="4jta.1169125787135.5092175715804935370" value="x" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="fQU43X4wa2">
+    <property role="TrG5h" value="CellModel_DiagramPort" />
+    <property role="34LRSv" value="diagram port" />
+    <ref role="1TJDcQ" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+    <node concept="1TJgyi" id="fQU43X4BkZ" role="1TKVEl">
+      <property role="TrG5h" value="input" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="4jta.1071489090640" id="939897302409084996" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="DiagramConnectorCreation" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="1301388602725986966" resolveInfo="AbstractDiagramCreation" />
-      <node concept="4jta.1071489288298" id="939897302409084999" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="canCreate" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="939897302409110350" resolveInfo="DiagramConnectorCanCreateHandler" />
-      </node>
-      <node concept="4jta.1071489288298" id="939897302409114956" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="handler" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="939897302409085052" resolveInfo="DiagramConnectorCreationHandler" />
-      </node>
+    <node concept="PrWs8" id="6fGfUP7BHsG" role="PzmwI">
+      <ref role="PrY4T" to="tpc2:7ARneOGixdd" resolve="Synchronizeable" />
     </node>
-    <node concept="4jta.1071489090640" id="939897302409085052" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="DiagramConnectorCreationHandler" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="fQU43XxJyI">
+    <property role="TrG5h" value="AbstractArgument" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="fQU43XxJyO" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="4jta.1071489090640" id="939897302409110350" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="DiagramConnectorCanCreateHandler" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="fQU43XxJzR">
+    <property role="TrG5h" value="BLQueryArgument" />
+    <ref role="1TJDcQ" node="fQU43XxJyI" resolve="AbstractArgument" />
+    <node concept="1TJgyj" id="fQU43XxJzS" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="4jta.1071489090640" id="939897302409170265" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="FromNodeFunctionParameter" />
-      <property role="4jta.1169125787135.5092175715804935370" value="from" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="fQU43XxJAR">
+    <property role="TrG5h" value="LinkArgument" />
+    <ref role="1TJDcQ" node="fQU43XxJyI" resolve="AbstractArgument" />
+    <node concept="1TJgyj" id="fQU43XLauB" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="link" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
     </node>
-    <node concept="4jta.1071489090640" id="939897302409170270" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ToNodeFunctionParameter" />
-      <property role="4jta.1169125787135.5092175715804935370" value="to" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="fQU43XL8M5">
+    <property role="TrG5h" value="PropertyArgument" />
+    <ref role="1TJDcQ" node="fQU43XxJyI" resolve="AbstractArgument" />
+    <node concept="1TJgyj" id="fQU43XLcUk" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="property" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
     </node>
-    <node concept="4jta.1071489090640" id="939897302409170275" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="FromIdFunctionParameter" />
-      <property role="4jta.1169125787135.5092175715804935370" value="fromId" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="7rLMM2Utp6a">
+    <property role="TrG5h" value="DiagramElementsCreation" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" node="18ftwC4enam" resolve="AbstractDiagramCreation" />
+    <node concept="1TJgyj" id="7rLMM2UtMrx" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="handler" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7rLMM2UtMrR" resolve="DiagramElementCreationHandler" />
     </node>
-    <node concept="4jta.1071489090640" id="939897302409170280" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ToIdFunctionParameter" />
-      <property role="4jta.1169125787135.5092175715804935370" value="toId" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="7rLMM2UtMrR">
+    <property role="TrG5h" value="DiagramElementCreationHandler" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="7rLMM2UuwVn">
+    <property role="TrG5h" value="YFunctionParameter" />
+    <property role="34LRSv" value="y" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="7rLMM2UuwVu">
+    <property role="TrG5h" value="NodeFunctionParameter" />
+    <property role="34LRSv" value="node" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="7rLMM2UuwVy">
+    <property role="TrG5h" value="XFunctionParameter" />
+    <property role="34LRSv" value="x" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="ObbTRzsg14">
+    <property role="TrG5h" value="DiagramConnectorCreation" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" node="18ftwC4enam" resolve="AbstractDiagramCreation" />
+    <node concept="1TJgyj" id="ObbTRzsg17" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="canCreate" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="ObbTRzsmde" resolve="DiagramConnectorCanCreateHandler" />
     </node>
-    <node concept="4jta.1071489090640" id="6619018968335599081" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="Palette" />
-      <property role="asn4.1169194658468.1169194664001" value="CreationActionReference" />
-      <property role="4jta.1169125787135.5092175715804935370" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="526297864816328066" resolveInfo="ActionReference" />
-      <node concept="4jta.1071489288299" id="4394877045815574157" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="iconPath" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1071489288298" id="6619018968336102388" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="elementsCreation" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="1301388602725986966" resolveInfo="AbstractDiagramCreation" />
-      </node>
+    <node concept="1TJgyj" id="ObbTRzsnlc" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="handler" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="ObbTRzsg1W" resolve="DiagramConnectorCreationHandler" />
     </node>
-    <node concept="4jta.1071489090640" id="6619018968335599080" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="Palette" />
-      <property role="asn4.1169194658468.1169194664001" value="CustomElementReference" />
-      <property role="4jta.1169125787135.5092175715804935370" value="custom" />
-      <reference role="4jta.1071489090640.1071489389519" target="526297864816328069" resolveInfo="PaletteElement" />
-      <node concept="4jta.1071489288298" id="6619018968336102382" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="customElement" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068390468198" resolveInfo="ClassConcept" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="ObbTRzsg1W">
+    <property role="TrG5h" value="DiagramConnectorCreationHandler" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="ObbTRzsmde">
+    <property role="TrG5h" value="DiagramConnectorCanCreateHandler" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="ObbTRzs$Pp">
+    <property role="TrG5h" value="FromNodeFunctionParameter" />
+    <property role="34LRSv" value="from" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="ObbTRzs$Pu">
+    <property role="TrG5h" value="ToNodeFunctionParameter" />
+    <property role="34LRSv" value="to" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="ObbTRzs$Pz">
+    <property role="TrG5h" value="FromIdFunctionParameter" />
+    <property role="34LRSv" value="fromId" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="ObbTRzs$PC">
+    <property role="TrG5h" value="ToIdFunctionParameter" />
+    <property role="34LRSv" value="toId" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="5JruEV1dOnD">
+    <property role="3GE5qa" value="Palette" />
+    <property role="TrG5h" value="CreationActionReference" />
+    <property role="34LRSv" value="creation" />
+    <ref role="1TJDcQ" node="tdMhUur7Q2" resolve="ActionReference" />
+    <node concept="1TJgyi" id="3NXJmdrmJUd" role="1TKVEl">
+      <property role="TrG5h" value="iconPath" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1071489090640" id="526297864816328066" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionReference" />
-      <property role="asn4.1133920641626.1193676396447" value="Palette" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <reference role="4jta.1071489090640.1071489389519" target="526297864816328069" resolveInfo="PaletteElement" />
+    <node concept="1TJgyj" id="5JruEV1fJfO" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="elementsCreation" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="18ftwC4enam" resolve="AbstractDiagramCreation" />
     </node>
-    <node concept="4jta.1071489090640" id="1301388602725986966" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="AbstractDiagramCreation" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1133920641626.1193676396447" value="creation" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="1301388602726005553" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="concept" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-      </node>
-      <node concept="4jta.1071489288298" id="1301388602726005547" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="query" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="9069239899234205114" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="5JruEV1dOnC">
+    <property role="3GE5qa" value="Palette" />
+    <property role="TrG5h" value="CustomElementReference" />
+    <property role="34LRSv" value="custom" />
+    <ref role="1TJDcQ" node="tdMhUur7Q5" resolve="PaletteElement" />
+    <node concept="1TJgyj" id="5JruEV1fJfI" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="customElement" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="526297864816328067" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ActionGroup" />
-      <property role="asn4.1133920641626.1193676396447" value="Palette" />
-      <property role="4jta.1169125787135.5092175715804935370" value="group" />
-      <reference role="4jta.1071489090640.1071489389519" target="526297864816328069" resolveInfo="PaletteElement" />
-      <node concept="4jta.1071489288298" id="526297864816466279" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elements" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="526297864816328069" resolveInfo="PaletteElement" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="tdMhUur7Q2">
+    <property role="TrG5h" value="ActionReference" />
+    <property role="3GE5qa" value="Palette" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" node="tdMhUur7Q5" resolve="PaletteElement" />
+  </node>
+  <node concept="1TIwiD" id="18ftwC4enam">
+    <property role="TrG5h" value="AbstractDiagramCreation" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="3GE5qa" value="creation" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="18ftwC4erGL" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="concept" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
-    <node concept="4jta.1071489090640" id="526297864816328068" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="Palette" />
-      <property role="asn4.1133920641626.1193676396447" value="Palette" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="526297864816428346" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elements" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="526297864816328069" resolveInfo="PaletteElement" />
-      </node>
+    <node concept="1TJgyj" id="18ftwC4erGF" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="4jta.1071489090640" id="526297864816328069" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="PaletteElement" />
-      <property role="asn4.1133920641626.1193676396447" value="Palette" />
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node concept="PrWs8" id="7RsqqcKDRQU" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="526297864816328070" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="Separator" />
-      <property role="asn4.1133920641626.1193676396447" value="Palette" />
-      <property role="4jta.1169125787135.5092175715804935370" value="separator" />
-      <reference role="4jta.1071489090640.1071489389519" target="526297864816328069" resolveInfo="PaletteElement" />
-      <node concept="4jta.1071489288299" id="2981172682494547033" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="text" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="tdMhUur7Q3">
+    <property role="TrG5h" value="ActionGroup" />
+    <property role="3GE5qa" value="Palette" />
+    <property role="34LRSv" value="group" />
+    <ref role="1TJDcQ" node="tdMhUur7Q5" resolve="PaletteElement" />
+    <node concept="1TJgyj" id="tdMhUurD_B" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elements" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="tdMhUur7Q5" resolve="PaletteElement" />
     </node>
-    <node concept="4jta.1071489090640" id="730538219795567478" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Diagram" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpc2.730538219796139730" resolveInfo="StubEditorCellModel" />
+  </node>
+  <node concept="1TIwiD" id="tdMhUur7Q4">
+    <property role="TrG5h" value="Palette" />
+    <property role="3GE5qa" value="Palette" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="tdMhUurwkU" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elements" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="tdMhUur7Q5" resolve="PaletteElement" />
     </node>
-    <node concept="4jta.1071489090640" id="730538219795610242" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_DiagramConnector" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpc2.730538219796139730" resolveInfo="StubEditorCellModel" />
+  </node>
+  <node concept="1TIwiD" id="tdMhUur7Q5">
+    <property role="TrG5h" value="PaletteElement" />
+    <property role="3GE5qa" value="Palette" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="tdMhUur7Q6">
+    <property role="TrG5h" value="Separator" />
+    <property role="3GE5qa" value="Palette" />
+    <property role="34LRSv" value="separator" />
+    <ref role="1TJDcQ" node="tdMhUur7Q5" resolve="PaletteElement" />
+    <node concept="1TJgyi" id="2_vgca2bThp" role="1TKVEl">
+      <property role="TrG5h" value="text" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1071489090640" id="730538219795610279" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_DiagramNode" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpc2.730538219796139730" resolveInfo="StubEditorCellModel" />
-    </node>
-    <node concept="4jta.1071489090640" id="730538219795610316" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_DiagramPort" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpc2.730538219796139730" resolveInfo="StubEditorCellModel" />
-    </node>
-  </contents>
+  </node>
+  <node concept="1TIwiD" id="CzpafHKHdQ">
+    <property role="TrG5h" value="StubCellModel_Diagram" />
+    <ref role="1TJDcQ" to="tpc2:CzpafHMSVi" resolve="StubEditorCellModel" />
+  </node>
+  <node concept="1TIwiD" id="CzpafHKRE2">
+    <property role="TrG5h" value="StubCellModel_DiagramConnector" />
+    <ref role="1TJDcQ" to="tpc2:CzpafHMSVi" resolve="StubEditorCellModel" />
+  </node>
+  <node concept="1TIwiD" id="CzpafHKREB">
+    <property role="TrG5h" value="StubCellModel_DiagramNode" />
+    <ref role="1TJDcQ" to="tpc2:CzpafHMSVi" resolve="StubEditorCellModel" />
+  </node>
+  <node concept="1TIwiD" id="CzpafHKRFc">
+    <property role="TrG5h" value="StubCellModel_DiagramPort" />
+    <ref role="1TJDcQ" to="tpc2:CzpafHMSVi" resolve="StubEditorCellModel" />
+  </node>
 </model>
 

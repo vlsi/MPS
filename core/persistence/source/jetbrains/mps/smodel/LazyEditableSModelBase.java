@@ -116,8 +116,6 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
   protected abstract void processLoadedModel(jetbrains.mps.smodel.SModel loadedSModel);
 
   protected void replaceModel(final LazySModel newModel, final ModelLoadingState state) {
-    ModelAccess.assertLegalWrite();
-
     if (newModel == getCurrentModelInternal()) return;
     setChanged(false);
     final SModel oldModel = getCurrentModelInternal();

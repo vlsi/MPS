@@ -84,11 +84,7 @@ public class UpdateSessionImpl implements UpdateSession {
   public void registerDependencies(EditorCell cell, Iterable<SNode> nodes, Iterable<SNodeReference> refTargets) {
     Set<SNode> registeredRelatedNodes = new HashSet<SNode>();
     myRelatedNodes.put(cell, registeredRelatedNodes);
-//    Set<SNode> registeredRelatedNodes = myRelatedNodes.get(cell);
-//    if (registeredRelatedNodes == null) {
-//      registeredRelatedNodes = new HashSet<SNode>();
-//      myRelatedNodes.put(cell, registeredRelatedNodes);
-//    }
+
     for (SNode nextNode : nodes) {
       assert nextNode != null;
       registeredRelatedNodes.add(nextNode);
@@ -96,11 +92,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
     Set<SNodeReference> registeredRefTargets = new HashSet<SNodeReference>();
     myRelatedRefTargets.put(cell, registeredRefTargets);
-//    Set<SNodeReference> registeredRefTargets = myRelatedRefTargets.get(cell);
-//    if (registeredRefTargets == null) {
-//      registeredRefTargets = new HashSet<SNodeReference>();
-//      myRelatedRefTargets.put(cell, registeredRefTargets);
-//    }
+
     for (SNodeReference nextRefTarget : refTargets) {
       registeredRefTargets.add(nextRefTarget);
     }
@@ -136,7 +128,6 @@ public class UpdateSessionImpl implements UpdateSession {
     dependentCells.add(cell);
   }
 
-  @Override
   public EditorCell performUpdate() {
     ReferencedNodeContext currentContext = ReferencedNodeContext.createNodeContext(getNode());
     myContextStack.push(currentContext);

@@ -18,13 +18,13 @@ package jetbrains.mps.workbench.choose.nodes;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 
@@ -74,7 +74,9 @@ public class NodePointerPresentation extends BasePresentation {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        String text = NodePresentationUtil.matchingText(myNode.resolve(MPSModuleRepository.getInstance()));
+        SNode node = myNode.resolve(MPSModuleRepository.getInstance());
+        if (node == null) return "can't resolve node";
+        String text = NodePresentationUtil.matchingText(node);
         return text != null ? text : "";
       }
     });

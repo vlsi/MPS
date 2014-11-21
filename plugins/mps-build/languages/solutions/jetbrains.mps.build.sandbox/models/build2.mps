@@ -1,76 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:d8eea393-bbca-41b6-92f2-0f366b881ba8(jetbrains.mps.build.sandbox.build2)">
+<model ref="r:d8eea393-bbca-41b6-92f2-0f366b881ba8(jetbrains.mps.build.sandbox.build2)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" />
-    <lang id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396949036126" name="jetbrains.mps.core.xml.structure.XmlCommentLine" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673" name="jetbrains.mps.build.workflow.structure.BwfProject" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546677" name="jetbrains.mps.build.workflow.structure.BwfSubTask" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284605880" name="jetbrains.mps.build.workflow.structure.BwfSubTaskDependency" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284768359" name="jetbrains.mps.build.workflow.structure.BwfAntStatement" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307" name="jetbrains.mps.build.workflow.structure.BwfJavaModule" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389316" name="jetbrains.mps.build.workflow.structure.BwfJavaModuleReference" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934206976119" name="jetbrains.mps.build.workflow.structure.BwfJavaClassPath" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934207069200" name="jetbrains.mps.build.workflow.structure.BwfPathDeclaration" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934207069215" name="jetbrains.mps.build.workflow.structure.BwfPathReference" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299064" name="jetbrains.mps.core.xml.structure.XmlComment" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400" name="jetbrains.mps.build.workflow.structure.BwfMacro" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221315929" name="jetbrains.mps.build.workflow.structure.BwfJavaDescriptor" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7926701909975416091" name="jetbrains.mps.build.workflow.structure.BwfFileSet" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/927724900262033861" name="generateDebugInfo" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/927724900262398947" name="heapSize" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/927724900262398958" name="noWarnings" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/1476884141930130693" name="compilerOptions" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339/1622293396948953704" name="value" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396949036126/1622293396949036127" name="text" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/5178006408628608654" name="baseDirectory" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415862" name="tagName" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923/6666499814681447926" name="attrName" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" name="text" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400/6896005762093571402" name="defaultValue" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400/6896005762093571406" name="exportToProperiesFile" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400/6896005762093571407" name="isLocation" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/6998860900671418236" name="javaLevelSource" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/6998860900671530572" name="javaLevelTarget" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6999033275467544021" name="shortEmptyNotation" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/7385586609667649463" name="outputFolder" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/7385586609667765566" name="temporaryFolder" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284605880/2769948622284605881" name="target" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824/3961775458390032825" name="task" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389316/4755209551904389317" name="target" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934207069215/6647099934207069216" name="target" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031/7306485738221471032" name="target" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/1622293396948928802" name="content" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299064/1622293396949036151" name="lines" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/1659807394254493213" name="resources" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/2769948622284574304" name="parts" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546677/2769948622284605953" name="after" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546677/2769948622284606050" name="statements" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284768359/2769948622284768360" name="element" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824/3961775458390032826" name="subTasks" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/4755209551904389320" name="dependencies" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934207069200/6647099934207071047" name="content" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415861" name="attributes" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923/6666499814681541918" name="value" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/7306485738221455031" name="imports" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7926701909975416091/7926701909975416092" name="elements" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/7926701909975416101" name="sources" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934206976119/7926701909975791137" name="classpath" />
-  </debugInfo>
   <languages>
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" version="-1" index="dnci" />
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" version="-1" index="ki41" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -78,386 +11,473 @@
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" implicit="true" />
     <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="dnci.2769948622284546673" id="2769948622284624385" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="myCore" />
-      <property role="dnci.2769948622284546673.7385586609667765566" value="build/temp/temp" />
-      <property role="dnci.2769948622284546673.5178006408628608654" value="." />
-      <node concept="dnci.6896005762093571400" id="6896005762093599489" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="version" />
-        <property role="dnci.6896005762093571400.6896005762093571402" value="1.0" />
-        <property role="dnci.6896005762093571400.6896005762093571406" value="true" />
+  <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml">
+      <concept id="6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" flags="ng" index="2pMdtt">
+        <property id="6666499814681541920" name="text" index="2pMdty" />
+      </concept>
+      <concept id="6666499814681299064" name="jetbrains.mps.core.xml.structure.XmlComment" flags="nn" index="2pNm8U">
+        <child id="1622293396949036151" name="lines" index="3o66t8" />
+      </concept>
+      <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
+        <property id="6999033275467544021" name="shortEmptyNotation" index="qg3DV" />
+        <property id="6666499814681415862" name="tagName" index="2pNNFO" />
+        <child id="6666499814681415861" name="attributes" index="2pNNFR" />
+        <child id="1622293396948928802" name="content" index="3o6s8t" />
+      </concept>
+      <concept id="6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" flags="ng" index="2pNUuL">
+        <property id="6666499814681447926" name="attrName" index="2pNUuO" />
+        <child id="6666499814681541918" name="value" index="2pMdts" />
+      </concept>
+      <concept id="1622293396949036126" name="jetbrains.mps.core.xml.structure.XmlCommentLine" flags="nn" index="3o66tx">
+        <property id="1622293396949036127" name="text" index="3o66tw" />
+      </concept>
+      <concept id="1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" flags="nn" index="3o6iSG">
+        <property id="1622293396948953704" name="value" index="3o6i5n" />
+      </concept>
+    </language>
+    <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
+      <concept id="6647099934207069200" name="jetbrains.mps.build.workflow.structure.BwfPathDeclaration" flags="ng" index="10O78W">
+        <child id="6647099934207071047" name="content" index="10O6PF" />
+      </concept>
+      <concept id="6896005762093571400" name="jetbrains.mps.build.workflow.structure.BwfMacro" flags="ng" index="1_4tnW">
+        <property id="6896005762093571406" name="exportToProperiesFile" index="1_4tnU" />
+        <property id="6896005762093571407" name="isLocation" index="1_4tnV" />
+        <property id="6896005762093571402" name="defaultValue" index="1_4tnY" />
+      </concept>
+      <concept id="2769948622284546673" name="jetbrains.mps.build.workflow.structure.BwfProject" flags="ng" index="2VaFvD">
+        <property id="7385586609667765566" name="temporaryFolder" index="1LnyFq" />
+        <property id="5178006408628608654" name="baseDirectory" index="2KQIvE" />
+        <child id="2769948622284574304" name="parts" index="2VaxJS" />
+        <child id="7306485738221455031" name="imports" index="yg1MA" />
+      </concept>
+      <concept id="4755209551904389307" name="jetbrains.mps.build.workflow.structure.BwfJavaModule" flags="ng" index="3GcXPv">
+        <property id="6998860900671418236" name="javaLevelSource" index="TKLQk" />
+        <property id="6998860900671530572" name="javaLevelTarget" index="TLli$" />
+        <property id="1476884141930130693" name="compilerOptions" index="1amtX8" />
+        <property id="7385586609667649463" name="outputFolder" index="1Lov1j" />
+        <property id="927724900262398947" name="heapSize" index="2_GNG2" />
+        <property id="927724900262398958" name="noWarnings" index="2_GNGf" />
+        <property id="927724900262033861" name="generateDebugInfo" index="2_Ic$$" />
+        <child id="7926701909975416101" name="sources" index="2IvZ16" />
+        <child id="1659807394254493213" name="resources" index="3_4Wgq" />
+        <child id="4755209551904389320" name="dependencies" index="3GcXOG" />
+      </concept>
+      <concept id="7306485738221315929" name="jetbrains.mps.build.workflow.structure.BwfJavaDescriptor" flags="ng" index="yhBP8" />
+      <concept id="6647099934207069215" name="jetbrains.mps.build.workflow.structure.BwfPathReference" flags="ng" index="10O78N">
+        <reference id="6647099934207069216" name="target" index="10O78c" />
+      </concept>
+      <concept id="6647099934206976119" name="jetbrains.mps.build.workflow.structure.BwfJavaClassPath" flags="ng" index="10OHTr">
+        <child id="7926701909975791137" name="classpath" index="2IxjH2" />
+      </concept>
+      <concept id="7926701909975416091" name="jetbrains.mps.build.workflow.structure.BwfFileSet" flags="ng" index="2IvZ1S">
+        <child id="7926701909975416092" name="elements" index="2IvZ1Z" />
+      </concept>
+      <concept id="2769948622284546677" name="jetbrains.mps.build.workflow.structure.BwfSubTask" flags="ng" index="2VaFvH">
+        <child id="2769948622284605953" name="after" index="2VaTYp" />
+        <child id="2769948622284606050" name="statements" index="2VaTZU" />
+      </concept>
+      <concept id="2769948622284605880" name="jetbrains.mps.build.workflow.structure.BwfSubTaskDependency" flags="ng" index="2VaTKw">
+        <reference id="2769948622284605881" name="target" index="2VaTKx" />
+      </concept>
+      <concept id="2769948622284768359" name="jetbrains.mps.build.workflow.structure.BwfAntStatement" flags="ng" index="2Vbh7Z">
+        <child id="2769948622284768360" name="element" index="2Vbh7K" />
+      </concept>
+      <concept id="3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" flags="ng" index="3bMsLL">
+        <reference id="3961775458390032825" name="task" index="3bMsLK" />
+        <child id="3961775458390032826" name="subTasks" index="3bMsLN" />
+      </concept>
+      <concept id="4755209551904389316" name="jetbrains.mps.build.workflow.structure.BwfJavaModuleReference" flags="ng" index="3GcXOw">
+        <reference id="4755209551904389317" name="target" index="3GcXOx" />
+      </concept>
+      <concept id="7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" flags="ng" index="ygXWA">
+        <reference id="7306485738221471032" name="target" index="ygXWD" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="2VaFvD" id="2pKPpytmT81">
+    <property role="TrG5h" value="myCore" />
+    <property role="1LnyFq" value="build/temp/temp" />
+    <property role="2KQIvE" value="." />
+    <node concept="1_4tnW" id="5YNybgUCGG1" role="2VaxJS">
+      <property role="TrG5h" value="version" />
+      <property role="1_4tnY" value="1.0" />
+      <property role="1_4tnU" value="true" />
+    </node>
+    <node concept="1_4tnW" id="5YNybgUCDVI" role="2VaxJS">
+      <property role="TrG5h" value="aaa" />
+      <property role="1_4tnY" value="./aaaa" />
+      <property role="1_4tnU" value="true" />
+      <property role="1_4tnV" value="true" />
+    </node>
+    <node concept="1_4tnW" id="5YNybgUCGFX" role="2VaxJS">
+      <property role="TrG5h" value="bbb" />
+      <property role="1_4tnY" value="./bbbb" />
+    </node>
+    <node concept="1_4tnW" id="5YNybgUCGFZ" role="2VaxJS">
+      <property role="TrG5h" value="ccc" />
+      <property role="1_4tnY" value="./cccc" />
+      <property role="1_4tnV" value="true" />
+    </node>
+    <node concept="10O78W" id="5KZfyKsVYPA" role="2VaxJS">
+      <property role="TrG5h" value="path1" />
+      <node concept="2pNm8U" id="5KZfyKsW7N9" role="10O6PF">
+        <node concept="3o66tx" id="5KZfyKsWofm" role="3o66t8">
+          <property role="3o66tw" value="start path1" />
+        </node>
       </node>
-      <node concept="dnci.6896005762093571400" id="6896005762093588206" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="aaa" />
-        <property role="dnci.6896005762093571400.6896005762093571402" value="./aaaa" />
-        <property role="dnci.6896005762093571400.6896005762093571406" value="true" />
-        <property role="dnci.6896005762093571400.6896005762093571407" value="true" />
-      </node>
-      <node concept="dnci.6896005762093571400" id="6896005762093599485" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="bbb" />
-        <property role="dnci.6896005762093571400.6896005762093571402" value="./bbbb" />
-      </node>
-      <node concept="dnci.6896005762093571400" id="6896005762093599487" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="ccc" />
-        <property role="dnci.6896005762093571400.6896005762093571402" value="./cccc" />
-        <property role="dnci.6896005762093571400.6896005762093571407" value="true" />
-      </node>
-      <node concept="dnci.6647099934207069200" id="6647099934207110502" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="path1" />
-        <node concept="ki41.6666499814681299064" id="6647099934207147209" role="dnci.6647099934207069200.6647099934207071047" info="nn">
-          <node concept="ki41.1622293396949036126" id="6647099934207214550" role="ki41.6666499814681299064.1622293396949036151" info="nn">
-            <property role="ki41.1622293396949036126.1622293396949036127" value="start path1" />
-          </node>
-        </node>
-        <node concept="ki41.6666499814681415858" id="6647099934207147214" role="dnci.6647099934207069200.6647099934207071047" info="ng">
-          <property role="ki41.6666499814681415858.6666499814681415862" value="fileset" />
-          <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-          <node concept="ki41.6666499814681447923" id="6647099934207214547" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-            <property role="ki41.6666499814681447923.6666499814681447926" value="file" />
-            <node concept="ki41.6666499814681541919" id="6647099934207214549" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-              <property role="ki41.6666499814681541919.6666499814681541920" value="source/file.txt" />
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.6647099934207069215" id="6647099934207210418" role="dnci.6647099934207069200.6647099934207071047" info="ng">
-          <reference role="dnci.6647099934207069215.6647099934207069216" target="6647099934207210420" resolveInfo="path2" />
-        </node>
-        <node concept="ki41.6666499814681299064" id="6647099934207210422" role="dnci.6647099934207069200.6647099934207071047" info="nn">
-          <node concept="ki41.1622293396949036126" id="6647099934207210423" role="ki41.6666499814681299064.1622293396949036151" info="nn">
-            <property role="ki41.1622293396949036126.1622293396949036127" value="end" />
-          </node>
-        </node>
-      </node>
-      <node concept="dnci.6647099934207069200" id="6647099934207210420" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="path2" />
-        <node concept="ki41.6666499814681415858" id="6647099934207214551" role="dnci.6647099934207069200.6647099934207071047" info="ng">
-          <property role="ki41.6666499814681415858.6666499814681415862" value="fileset" />
-          <node concept="ki41.6666499814681447923" id="6647099934207214552" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-            <property role="ki41.6666499814681447923.6666499814681447926" value="dir" />
-            <node concept="ki41.6666499814681541919" id="6647099934207214553" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-              <property role="ki41.6666499814681541919.6666499814681541920" value="source_gen" />
-            </node>
-          </node>
-          <node concept="ki41.6666499814681415858" id="6647099934207214554" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="include" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="6647099934207214555" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-              <node concept="ki41.6666499814681541919" id="6647099934207214556" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="**/*.java" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="dnci.7306485738221315929" id="7306485738221506254" role="dnci.2769948622284546673.2769948622284574304" info="ng" />
-      <node concept="dnci.4755209551904389307" id="4755209551904397940" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="module1" />
-        <property role="dnci.4755209551904389307.7385586609667649463" value="build/temp/module1" />
-        <property role="dnci.4755209551904389307.927724900262033861" value="true" />
-        <property role="dnci.4755209551904389307.927724900262398958" value="true" />
-        <property role="dnci.4755209551904389307.927724900262398947" value="512" />
-        <node concept="dnci.6647099934206976119" id="7926701909975860083" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975860085" role="dnci.6647099934206976119.7926701909975791137" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975860086" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975860087" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="mo1.deps" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.6647099934206976119" id="7926701909975860091" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975860092" role="dnci.6647099934206976119.7926701909975791137" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975860093" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975860094" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="junit" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.6647099934206976119" id="7926701909975921237" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <node concept="dnci.6647099934207069215" id="7926701909975921238" role="dnci.6647099934206976119.7926701909975791137" info="ng">
-            <reference role="dnci.6647099934207069215.6647099934207069216" target="6647099934207210420" resolveInfo="path2" />
-          </node>
-        </node>
-        <node concept="dnci.4755209551904389316" id="4755209551904406795" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <reference role="dnci.4755209551904389316.4755209551904389317" target="4755209551904406791" resolveInfo="module2" />
-        </node>
-        <node concept="dnci.7926701909975416091" id="7926701909975525057" role="dnci.4755209551904389307.7926701909975416101" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975525058" role="dnci.7926701909975416091.7926701909975416092" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975525059" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975525060" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="module1/source" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.7926701909975416091" id="1659807394254544099" role="dnci.4755209551904389307.1659807394254493213" info="ng">
-          <node concept="ki41.6666499814681415858" id="1659807394254673424" role="dnci.7926701909975416091.7926701909975416092" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="fileset" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="1659807394254673425" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="1659807394254673426" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="module1/source" />
-              </node>
-            </node>
-            <node concept="ki41.6666499814681447923" id="1659807394254673427" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="excludes" />
-              <node concept="ki41.6666499814681541919" id="1659807394254673428" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="**/*.java" />
-              </node>
-            </node>
+      <node concept="2pNNFK" id="5KZfyKsW7Ne" role="10O6PF">
+        <property role="2pNNFO" value="fileset" />
+        <property role="qg3DV" value="true" />
+        <node concept="2pNUuL" id="5KZfyKsWofj" role="2pNNFR">
+          <property role="2pNUuO" value="file" />
+          <node concept="2pMdtt" id="5KZfyKsWofl" role="2pMdts">
+            <property role="2pMdty" value="source/file.txt" />
           </node>
         </node>
       </node>
-      <node concept="dnci.4755209551904389307" id="4755209551904406791" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="module2" />
-        <property role="dnci.4755209551904389307.7385586609667649463" value="build/temp/module2" />
-        <node concept="dnci.6647099934206976119" id="7926701909975860096" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975860097" role="dnci.6647099934206976119.7926701909975791137" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975860098" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975860099" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="mo2.deps" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.6647099934206976119" id="7926701909975860100" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975860101" role="dnci.6647099934206976119.7926701909975791137" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975860102" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975860103" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="junit" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.4755209551904389316" id="4755209551904406794" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <reference role="dnci.4755209551904389316.4755209551904389317" target="4755209551904397940" resolveInfo="module1" />
-        </node>
-        <node concept="dnci.7926701909975416091" id="7926701909975525061" role="dnci.4755209551904389307.7926701909975416101" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975525062" role="dnci.7926701909975416091.7926701909975416092" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975525063" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975525064" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="module2/source" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.7926701909975416091" id="1659807394254544100" role="dnci.4755209551904389307.1659807394254493213" info="ng" />
+      <node concept="10O78N" id="5KZfyKsWneM" role="10O6PF">
+        <ref role="10O78c" node="5KZfyKsWneO" resolve="path2" />
       </node>
-      <node concept="dnci.4755209551904389307" id="4755209551904406797" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="module3" />
-        <property role="dnci.4755209551904389307.7385586609667649463" value="build/temp/module3" />
-        <node concept="dnci.6647099934206976119" id="7926701909975860105" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975860106" role="dnci.6647099934206976119.7926701909975791137" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975860107" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975860108" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="mo3.deps" />
-              </node>
-            </node>
-          </node>
+      <node concept="2pNm8U" id="5KZfyKsWneQ" role="10O6PF">
+        <node concept="3o66tx" id="5KZfyKsWneR" role="3o66t8">
+          <property role="3o66tw" value="end" />
         </node>
-        <node concept="dnci.6647099934206976119" id="7926701909975860109" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975860110" role="dnci.6647099934206976119.7926701909975791137" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975860111" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975860112" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="junit" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.4755209551904389316" id="4755209551904406799" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <reference role="dnci.4755209551904389316.4755209551904389317" target="4755209551904397940" resolveInfo="module1" />
-        </node>
-        <node concept="dnci.4755209551904389316" id="4755209551904406801" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <reference role="dnci.4755209551904389316.4755209551904389317" target="4755209551904406791" resolveInfo="module2" />
-        </node>
-        <node concept="dnci.4755209551904389316" id="7385586609667763183" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <reference role="dnci.4755209551904389316.4755209551904389317" target="7385586609667763177" resolveInfo="module4" />
-        </node>
-        <node concept="dnci.7926701909975416091" id="7926701909975525065" role="dnci.4755209551904389307.7926701909975416101" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975525066" role="dnci.7926701909975416091.7926701909975416092" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975525067" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975525068" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="module3/source" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.7926701909975416091" id="1659807394254544101" role="dnci.4755209551904389307.1659807394254493213" info="ng" />
-      </node>
-      <node concept="dnci.4755209551904389307" id="7385586609667763177" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="module4" />
-        <property role="dnci.4755209551904389307.7385586609667649463" value="build/temp/module4" />
-        <property role="dnci.4755209551904389307.6998860900671418236" value="1.6" />
-        <property role="dnci.4755209551904389307.6998860900671530572" value="1.6" />
-        <property role="dnci.4755209551904389307.1476884141930130693" value="-Xmaxerrors 321 -Xmaxwarns 123 -g:none" />
-        <node concept="dnci.6647099934206976119" id="7926701909975860114" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975860115" role="dnci.6647099934206976119.7926701909975791137" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975860116" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975860117" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="mo4.deps" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.6647099934206976119" id="7926701909975860118" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975860119" role="dnci.6647099934206976119.7926701909975791137" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975860120" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975860121" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="log4j" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.4755209551904389316" id="7385586609667763181" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <reference role="dnci.4755209551904389316.4755209551904389317" target="4755209551904406797" resolveInfo="module3" />
-        </node>
-        <node concept="dnci.7926701909975416091" id="7926701909975525069" role="dnci.4755209551904389307.7926701909975416101" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975525070" role="dnci.7926701909975416091.7926701909975416092" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975525071" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975525072" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="module4/source" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.7926701909975416091" id="1659807394254544102" role="dnci.4755209551904389307.1659807394254493213" info="ng" />
-      </node>
-      <node concept="dnci.4755209551904389307" id="7385586609667763185" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <property role="asn4.1169194658468.1169194664001" value="module5" />
-        <property role="dnci.4755209551904389307.7385586609667649463" value="build/temp/module5" />
-        <property role="dnci.4755209551904389307.6998860900671530572" value="1.6" />
-        <node concept="dnci.4755209551904389316" id="7385586609667763186" role="dnci.4755209551904389307.4755209551904389320" info="ng">
-          <reference role="dnci.4755209551904389316.4755209551904389317" target="7385586609667763177" resolveInfo="module4" />
-        </node>
-        <node concept="dnci.7926701909975416091" id="7926701909975525073" role="dnci.4755209551904389307.7926701909975416101" info="ng">
-          <node concept="ki41.6666499814681415858" id="7926701909975525074" role="dnci.7926701909975416091.7926701909975416092" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="7926701909975525075" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="path" />
-              <node concept="ki41.6666499814681541919" id="7926701909975525076" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="module5/source" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="dnci.7926701909975416091" id="1659807394254544103" role="dnci.4755209551904389307.1659807394254493213" info="ng" />
-      </node>
-      <node concept="dnci.3961775458390032824" id="6647099934207237823" role="dnci.2769948622284546673.2769948622284574304" info="ng">
-        <reference role="dnci.3961775458390032824.3961775458390032825" target="tnlc.7306485738221408317" resolveInfo="build" />
-        <node concept="dnci.2769948622284546677" id="2769948622284761816" role="dnci.3961775458390032824.3961775458390032826" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="copyFiles" />
-          <node concept="dnci.2769948622284768359" id="2769948622284783086" role="dnci.2769948622284546677.2769948622284606050" info="ng">
-            <node concept="ki41.6666499814681415858" id="2769948622284783088" role="dnci.2769948622284768359.2769948622284768360" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="copy" />
-              <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-              <node concept="ki41.6666499814681447923" id="2769948622284783089" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="asda" />
-                <node concept="ki41.6666499814681541919" id="2769948622284783090" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="asda" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="dnci.2769948622284605880" id="2769948622284768357" role="dnci.2769948622284546677.2769948622284605953" info="ng">
-            <reference role="dnci.2769948622284605880.2769948622284605881" target="2769948622284761814" resolveInfo="compileJava" />
-          </node>
-        </node>
-        <node concept="dnci.2769948622284546677" id="2769948622284761814" role="dnci.3961775458390032824.3961775458390032826" info="ng">
-          <property role="asn4.1169194658468.1169194664001" value="compileJava" />
-          <node concept="dnci.2769948622284768359" id="2769948622284774581" role="dnci.2769948622284546677.2769948622284606050" info="ng">
-            <node concept="ki41.6666499814681415858" id="2769948622284774583" role="dnci.2769948622284768359.2769948622284768360" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="mkdir" />
-              <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-              <node concept="ki41.6666499814681447923" id="2769948622284786806" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="asd" />
-                <node concept="ki41.6666499814681541919" id="2769948622284786807" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="aaaa" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="dnci.2769948622284768359" id="2769948622284783063" role="dnci.2769948622284546677.2769948622284606050" info="ng">
-            <node concept="ki41.6666499814681415858" id="2769948622284783066" role="dnci.2769948622284768359.2769948622284768360" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="javac" />
-              <node concept="ki41.1622293396948952339" id="2769948622284783075" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                <property role="ki41.1622293396948952339.1622293396948953704" value="asdassda" />
-              </node>
-              <node concept="ki41.1622293396948952339" id="2769948622284783076" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                <property role="ki41.1622293396948952339.1622293396948953704" value="asdasdasdas" />
-              </node>
-              <node concept="ki41.1622293396948952339" id="2769948622284783077" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                <property role="ki41.1622293396948952339.1622293396948953704" value="asdasd" />
-              </node>
-              <node concept="ki41.6666499814681415858" id="2769948622284783079" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="aa" />
-                <node concept="ki41.1622293396948952339" id="2769948622284783080" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                  <property role="ki41.1622293396948952339.1622293396948953704" value="asdas" />
-                </node>
-              </node>
-              <node concept="ki41.6666499814681447923" id="2769948622284783069" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="asd" />
-                <node concept="ki41.6666499814681541919" id="2769948622284783070" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="asd" />
-                </node>
-              </node>
-              <node concept="ki41.6666499814681447923" id="2769948622284783073" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="ssdf" />
-                <node concept="ki41.6666499814681541919" id="2769948622284783074" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="asd" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="dnci.7306485738221471031" id="1117643560963098836" role="dnci.2769948622284546673.7306485738221455031" info="ng">
-        <reference role="dnci.7306485738221471031.7306485738221471032" target="tnlc.7306485738221408314" resolveInfo="java" />
-      </node>
-      <node concept="dnci.7306485738221471031" id="1117643560963098838" role="dnci.2769948622284546673.7306485738221455031" info="ng">
-        <reference role="dnci.7306485738221471031.7306485738221471032" target="tnlc.7306485738221408315" resolveInfo="common" />
       </node>
     </node>
-  </contents>
+    <node concept="10O78W" id="5KZfyKsWneO" role="2VaxJS">
+      <property role="TrG5h" value="path2" />
+      <node concept="2pNNFK" id="5KZfyKsWofn" role="10O6PF">
+        <property role="2pNNFO" value="fileset" />
+        <node concept="2pNUuL" id="5KZfyKsWofo" role="2pNNFR">
+          <property role="2pNUuO" value="dir" />
+          <node concept="2pMdtt" id="5KZfyKsWofp" role="2pMdts">
+            <property role="2pMdty" value="source_gen" />
+          </node>
+        </node>
+        <node concept="2pNNFK" id="5KZfyKsWofq" role="3o6s8t">
+          <property role="2pNNFO" value="include" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="5KZfyKsWofr" role="2pNNFR">
+            <property role="2pNUuO" value="name" />
+            <node concept="2pMdtt" id="5KZfyKsWofs" role="2pMdts">
+              <property role="2pMdty" value="**/*.java" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="yhBP8" id="6l_Qx579CVe" role="2VaxJS" />
+    <node concept="3GcXPv" id="47XTuiHN_DO" role="2VaxJS">
+      <property role="TrG5h" value="module1" />
+      <property role="1Lov1j" value="build/temp/module1" />
+      <property role="2_Ic$$" value="true" />
+      <property role="2_GNGf" value="true" />
+      <property role="2_GNG2" value="512" />
+      <node concept="10OHTr" id="6S1jmf0xodN" role="3GcXOG">
+        <node concept="2pNNFK" id="6S1jmf0xodP" role="2IxjH2">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0xodQ" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0xodR" role="2pMdts">
+              <property role="2pMdty" value="mo1.deps" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10OHTr" id="6S1jmf0xodV" role="3GcXOG">
+        <node concept="2pNNFK" id="6S1jmf0xodW" role="2IxjH2">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0xodX" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0xodY" role="2pMdts">
+              <property role="2pMdty" value="junit" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10OHTr" id="6S1jmf0xB9l" role="3GcXOG">
+        <node concept="10O78N" id="6S1jmf0xB9m" role="2IxjH2">
+          <ref role="10O78c" node="5KZfyKsWneO" resolve="path2" />
+        </node>
+      </node>
+      <node concept="3GcXOw" id="47XTuiHNBOb" role="3GcXOG">
+        <ref role="3GcXOx" node="47XTuiHNBO7" resolve="module2" />
+      </node>
+      <node concept="2IvZ1S" id="6S1jmf0w6r1" role="2IvZ16">
+        <node concept="2pNNFK" id="6S1jmf0w6r2" role="2IvZ1Z">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0w6r3" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0w6r4" role="2pMdts">
+              <property role="2pMdty" value="module1/source" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2IvZ1S" id="1s8OwvM6XNz" role="3_4Wgq">
+        <node concept="2pNNFK" id="1s8OwvM7tog" role="2IvZ1Z">
+          <property role="2pNNFO" value="fileset" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="1s8OwvM7toh" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="1s8OwvM7toi" role="2pMdts">
+              <property role="2pMdty" value="module1/source" />
+            </node>
+          </node>
+          <node concept="2pNUuL" id="1s8OwvM7toj" role="2pNNFR">
+            <property role="2pNUuO" value="excludes" />
+            <node concept="2pMdtt" id="1s8OwvM7tok" role="2pMdts">
+              <property role="2pMdty" value="**/*.java" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3GcXPv" id="47XTuiHNBO7" role="2VaxJS">
+      <property role="TrG5h" value="module2" />
+      <property role="1Lov1j" value="build/temp/module2" />
+      <node concept="10OHTr" id="6S1jmf0xoe0" role="3GcXOG">
+        <node concept="2pNNFK" id="6S1jmf0xoe1" role="2IxjH2">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0xoe2" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0xoe3" role="2pMdts">
+              <property role="2pMdty" value="mo2.deps" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10OHTr" id="6S1jmf0xoe4" role="3GcXOG">
+        <node concept="2pNNFK" id="6S1jmf0xoe5" role="2IxjH2">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0xoe6" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0xoe7" role="2pMdts">
+              <property role="2pMdty" value="junit" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3GcXOw" id="47XTuiHNBOa" role="3GcXOG">
+        <ref role="3GcXOx" node="47XTuiHN_DO" resolve="module1" />
+      </node>
+      <node concept="2IvZ1S" id="6S1jmf0w6r5" role="2IvZ16">
+        <node concept="2pNNFK" id="6S1jmf0w6r6" role="2IvZ1Z">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0w6r7" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0w6r8" role="2pMdts">
+              <property role="2pMdty" value="module2/source" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2IvZ1S" id="1s8OwvM6XN$" role="3_4Wgq" />
+    </node>
+    <node concept="3GcXPv" id="47XTuiHNBOd" role="2VaxJS">
+      <property role="TrG5h" value="module3" />
+      <property role="1Lov1j" value="build/temp/module3" />
+      <node concept="10OHTr" id="6S1jmf0xoe9" role="3GcXOG">
+        <node concept="2pNNFK" id="6S1jmf0xoea" role="2IxjH2">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0xoeb" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0xoec" role="2pMdts">
+              <property role="2pMdty" value="mo3.deps" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10OHTr" id="6S1jmf0xoed" role="3GcXOG">
+        <node concept="2pNNFK" id="6S1jmf0xoee" role="2IxjH2">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0xoef" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0xoeg" role="2pMdts">
+              <property role="2pMdty" value="junit" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3GcXOw" id="47XTuiHNBOf" role="3GcXOG">
+        <ref role="3GcXOx" node="47XTuiHN_DO" resolve="module1" />
+      </node>
+      <node concept="3GcXOw" id="47XTuiHNBOh" role="3GcXOG">
+        <ref role="3GcXOx" node="47XTuiHNBO7" resolve="module2" />
+      </node>
+      <node concept="3GcXOw" id="6pYRYgn8eJJ" role="3GcXOG">
+        <ref role="3GcXOx" node="6pYRYgn8eJD" resolve="module4" />
+      </node>
+      <node concept="2IvZ1S" id="6S1jmf0w6r9" role="2IvZ16">
+        <node concept="2pNNFK" id="6S1jmf0w6ra" role="2IvZ1Z">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0w6rb" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0w6rc" role="2pMdts">
+              <property role="2pMdty" value="module3/source" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2IvZ1S" id="1s8OwvM6XN_" role="3_4Wgq" />
+    </node>
+    <node concept="3GcXPv" id="6pYRYgn8eJD" role="2VaxJS">
+      <property role="TrG5h" value="module4" />
+      <property role="1Lov1j" value="build/temp/module4" />
+      <property role="TKLQk" value="1.6" />
+      <property role="TLli$" value="1.6" />
+      <property role="1amtX8" value="-Xmaxerrors 321 -Xmaxwarns 123 -g:none" />
+      <node concept="10OHTr" id="6S1jmf0xoei" role="3GcXOG">
+        <node concept="2pNNFK" id="6S1jmf0xoej" role="2IxjH2">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0xoek" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0xoel" role="2pMdts">
+              <property role="2pMdty" value="mo4.deps" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10OHTr" id="6S1jmf0xoem" role="3GcXOG">
+        <node concept="2pNNFK" id="6S1jmf0xoen" role="2IxjH2">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0xoeo" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0xoep" role="2pMdts">
+              <property role="2pMdty" value="log4j" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3GcXOw" id="6pYRYgn8eJH" role="3GcXOG">
+        <ref role="3GcXOx" node="47XTuiHNBOd" resolve="module3" />
+      </node>
+      <node concept="2IvZ1S" id="6S1jmf0w6rd" role="2IvZ16">
+        <node concept="2pNNFK" id="6S1jmf0w6re" role="2IvZ1Z">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0w6rf" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0w6rg" role="2pMdts">
+              <property role="2pMdty" value="module4/source" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2IvZ1S" id="1s8OwvM6XNA" role="3_4Wgq" />
+    </node>
+    <node concept="3GcXPv" id="6pYRYgn8eJL" role="2VaxJS">
+      <property role="TrG5h" value="module5" />
+      <property role="1Lov1j" value="build/temp/module5" />
+      <property role="TLli$" value="1.6" />
+      <node concept="3GcXOw" id="6pYRYgn8eJM" role="3GcXOG">
+        <ref role="3GcXOx" node="6pYRYgn8eJD" resolve="module4" />
+      </node>
+      <node concept="2IvZ1S" id="6S1jmf0w6rh" role="2IvZ16">
+        <node concept="2pNNFK" id="6S1jmf0w6ri" role="2IvZ1Z">
+          <property role="2pNNFO" value="pathelement" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="6S1jmf0w6rj" role="2pNNFR">
+            <property role="2pNUuO" value="path" />
+            <node concept="2pMdtt" id="6S1jmf0w6rk" role="2pMdts">
+              <property role="2pMdty" value="module5/source" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2IvZ1S" id="1s8OwvM6XNB" role="3_4Wgq" />
+    </node>
+    <node concept="3bMsLL" id="5KZfyKsWtUZ" role="2VaxJS">
+      <ref role="3bMsLK" to="tnlc:6l_Qx579h0X" resolve="build" />
+      <node concept="2VaFvH" id="2pKPpytnqFo" role="3bMsLN">
+        <property role="TrG5h" value="copyFiles" />
+        <node concept="2Vbh7Z" id="2pKPpytnvRI" role="2VaTZU">
+          <node concept="2pNNFK" id="2pKPpytnvRK" role="2Vbh7K">
+            <property role="2pNNFO" value="copy" />
+            <property role="qg3DV" value="true" />
+            <node concept="2pNUuL" id="2pKPpytnvRL" role="2pNNFR">
+              <property role="2pNUuO" value="asda" />
+              <node concept="2pMdtt" id="2pKPpytnvRM" role="2pMdts">
+                <property role="2pMdty" value="asda" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2VaTKw" id="2pKPpytnsh_" role="2VaTYp">
+          <ref role="2VaTKx" node="2pKPpytnqFm" resolve="compileJava" />
+        </node>
+      </node>
+      <node concept="2VaFvH" id="2pKPpytnqFm" role="3bMsLN">
+        <property role="TrG5h" value="compileJava" />
+        <node concept="2Vbh7Z" id="2pKPpytntMP" role="2VaTZU">
+          <node concept="2pNNFK" id="2pKPpytntMR" role="2Vbh7K">
+            <property role="2pNNFO" value="mkdir" />
+            <property role="qg3DV" value="true" />
+            <node concept="2pNUuL" id="2pKPpytnwLQ" role="2pNNFR">
+              <property role="2pNUuO" value="asd" />
+              <node concept="2pMdtt" id="2pKPpytnwLR" role="2pMdts">
+                <property role="2pMdty" value="aaaa" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2Vbh7Z" id="2pKPpytnvRn" role="2VaTZU">
+          <node concept="2pNNFK" id="2pKPpytnvRq" role="2Vbh7K">
+            <property role="2pNNFO" value="javac" />
+            <node concept="3o6iSG" id="2pKPpytnvRz" role="3o6s8t">
+              <property role="3o6i5n" value="asdassda" />
+            </node>
+            <node concept="3o6iSG" id="2pKPpytnvR$" role="3o6s8t">
+              <property role="3o6i5n" value="asdasdasdas" />
+            </node>
+            <node concept="3o6iSG" id="2pKPpytnvR_" role="3o6s8t">
+              <property role="3o6i5n" value="asdasd" />
+            </node>
+            <node concept="2pNNFK" id="2pKPpytnvRB" role="3o6s8t">
+              <property role="2pNNFO" value="aa" />
+              <node concept="3o6iSG" id="2pKPpytnvRC" role="3o6s8t">
+                <property role="3o6i5n" value="asdas" />
+              </node>
+            </node>
+            <node concept="2pNUuL" id="2pKPpytnvRt" role="2pNNFR">
+              <property role="2pNUuO" value="asd" />
+              <node concept="2pMdtt" id="2pKPpytnvRu" role="2pMdts">
+                <property role="2pMdty" value="asd" />
+              </node>
+            </node>
+            <node concept="2pNUuL" id="2pKPpytnvRx" role="2pNNFR">
+              <property role="2pNUuO" value="ssdf" />
+              <node concept="2pMdtt" id="2pKPpytnvRy" role="2pMdts">
+                <property role="2pMdty" value="asd" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="ygXWA" id="Y2EImGHkzk" role="yg1MA">
+      <ref role="ygXWD" to="tnlc:6l_Qx579h0U" resolve="java" />
+    </node>
+    <node concept="ygXWA" id="Y2EImGHkzm" role="yg1MA">
+      <ref role="ygXWD" to="tnlc:6l_Qx579h0V" resolve="common" />
+    </node>
+  </node>
 </model>
 

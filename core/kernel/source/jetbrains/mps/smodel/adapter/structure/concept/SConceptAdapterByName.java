@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -48,9 +51,9 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
   @Override
   public SLanguage getLanguage() {
     ConceptDescriptor cd = getConceptDescriptor();
-    if (cd == null) return new SLanguageAdapterByName(NameUtil.namespaceFromConceptFQName(myFqName));
+    if (cd == null) return MetaAdapterFactoryByName.getLanguage(NameUtil.namespaceFromConceptFQName(myFqName));
 
-    return new SLanguageAdapterById(cd.getId().getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));
+    return MetaAdapterFactory.getLanguage(cd.getId().getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));
   }
 
   @Override
@@ -61,7 +64,7 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
   @Override
   protected SNode findInModel(SModel strucModel) {
     for (SNode root : strucModel.getRootNodes()) {
-      if (root.getName().equals(NameUtil.shortNameFromLongName(myFqName))) return root;
+      if (NameUtil.shortNameFromLongName(myFqName).equals(root.getProperty(SNodeUtil.property_INamedConcept_name))) return root;
     }
     return null;
   }

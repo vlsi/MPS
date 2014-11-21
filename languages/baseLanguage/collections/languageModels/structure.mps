@@ -1,58 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)">
+<model ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
-    <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" name="jetbrains.mps.lang.core.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" name="jetbrains.mps.baseLanguage.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" name="jetbrains.mps.baseLanguage.closures.structure" />
-    <model ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" name="jetbrains.mps.lang.structure.structure" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831" name="metaClass" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1083171877298/1083923523171" name="internalValue" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1083171877298/1083923523172" name="externalValue" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1096454100552" name="rootable" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1160488491229" name="iconPath" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765907488" name="conceptShortDescription" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802" name="abstract" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/5092175715804935370" name="conceptAlias" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/5404671619616246344" name="staticScope" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519" name="extends" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599698500" name="specializedLink" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" name="target" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299/1082985295845" name="dataType" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083171729157" name="memberDataType" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168/1169127628841" name="intfc" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083" name="linkDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727084" name="propertyDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083172003582" name="member" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551/1169127546356" name="extends" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478" name="implements" />
-    <childRole id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" name="smodelAttribute" />
-  </debugInfo>
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="-1" index="j0ph" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="-1" index="4jta" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -60,2585 +12,2635 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="4jta.1071489090640" id="1151688443754" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ListType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="list" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790189" resolveInfo="Type" />
-      <node concept="4jta.1071489288298" id="1151688676805" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1169127622168" id="4107091686347887612" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.4107091686347010317" resolveInfo="IGenericType" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1151689724996" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="SequenceType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="sequence" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790189" resolveInfo="Type" />
-      <node concept="4jta.1071489288298" id="1151689745422" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementType" />
-        <property role="4jta.1071489288298.1071599893252" value="0..1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1169127622168" id="4107091686347838521" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.4107091686347010317" resolveInfo="IGenericType" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1151701983961" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="SequenceOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="1203971063232" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1197027803184" resolveInfo="IOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1151702311717" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="convert to a list" />
-      <property role="asn4.1169194658468.1169194664001" value="ToListOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="toList" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1153943597977" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="foreach &lt;e&gt; in &lt;sequence&gt;" />
-      <property role="asn4.1169194658468.1169194664001" value="ForEachStatement" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="foreach" />
-      <property role="4jta.1169125787135.5092175715804935370" value="foreach" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1154032098014" resolveInfo="AbstractLoopStatement" />
-      <node concept="4jta.1071489288298" id="1153944400369" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="variable" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="1153944193378" resolveInfo="ForEachVariable" />
-      </node>
-      <node concept="4jta.1071489288298" id="1153944424730" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="inputSequence" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1153944233411" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ForEachVariableReference" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="foreach" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
-      <node concept="4jta.1071489288298" id="1153944258490" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599776563" value="variable" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="1153944193378" resolveInfo="ForEachVariable" />
-      </node>
-      <node concept="4jta.1169127622168" id="1023687332192347381" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1023687332192347378" resolveInfo="IVariableReference" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1160600644654" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="create new array list" />
-      <property role="asn4.1169194658468.1169194664001" value="ListCreatorWithInit" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="arraylist" />
-      <reference role="4jta.1071489090640.1071489389519" target="1237721394592" resolveInfo="AbstractContainerCreator" />
-    </node>
-    <node concept="4jta.1071489090640" id="1160612413312" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="add an element" />
-      <property role="asn4.1169194658468.1169194664001" value="AddElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="collection" />
-      <property role="4jta.1169125787135.5092175715804935370" value="add" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1160612519549" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-      </node>
-      <node concept="4jta.1169127622168" id="6346620863176839211" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756784" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692983" resolveInfo="IApplicableToCollection" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1160666733551" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="add all elements" />
-      <property role="asn4.1169194658468.1169194664001" value="AddAllElementsOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="collection" />
-      <property role="4jta.1169125787135.5092175715804935370" value="addAll" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1160666822012" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-      </node>
-      <node concept="4jta.1169127622168" id="6346620863176839210" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="497032923610847724" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="497032923610827734" resolveInfo="IQueueOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="6801639034385138711" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909355" resolveInfo="IStackOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756750" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692983" resolveInfo="IApplicableToCollection" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756761" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692988" resolveInfo="IApplicableToQueue" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756774" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692989" resolveInfo="IApplicableToStack" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1162934736510" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="get element by index" />
-      <property role="asn4.1169194658468.1169194664001" value="GetElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="get" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1162934736511" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-      </node>
-      <node concept="4jta.1169127622168" id="6346620863176839215" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756910" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1162935959151" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="get the sequence size" />
-      <property role="asn4.1169194658468.1169194664001" value="GetSizeOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="size" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1165525191778" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="get the first element" />
-      <property role="asn4.1169194658468.1169194664001" value="GetFirstOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="first" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1165530316231" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="test if sequence is empty" />
-      <property role="asn4.1169194658468.1169194664001" value="IsEmptyOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="isEmpty" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1165595910856" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="get the last element" />
-      <property role="asn4.1169194658468.1169194664001" value="GetLastOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="last" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1167380149909" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="remove an element" />
-      <property role="asn4.1169194658468.1169194664001" value="RemoveElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="collection" />
-      <property role="4jta.1169125787135.5092175715804935370" value="remove" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1167380149910" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-      </node>
-      <node concept="4jta.1169127622168" id="6346620863176839219" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="8845254380344464696" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="497032923610827734" resolveInfo="IQueueOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="6801639034385138730" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909355" resolveInfo="IStackOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943757026" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692988" resolveInfo="IApplicableToQueue" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943757037" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692989" resolveInfo="IApplicableToStack" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943757050" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692983" resolveInfo="IApplicableToCollection" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1171391069720" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="get the index of an element" />
-      <property role="asn4.1169194658468.1169194664001" value="GetIndexOfOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="indexOf" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1171391518575" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1172254888721" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="test if sequence contains an element" />
-      <property role="asn4.1169194658468.1169194664001" value="ContainsOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="contains" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1172256416782" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1172650591544" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="exclude elements from the beginning" />
-      <property role="asn4.1169194658468.1169194664001" value="SkipOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.chunks" />
-      <property role="4jta.1169125787135.5092175715804935370" value="skip" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="1172658456740" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementsToSkip" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1172664342967" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="include elements at the beginning" />
-      <property role="asn4.1169194658468.1169194664001" value="TakeOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.chunks" />
-      <property role="4jta.1169125787135.5092175715804935370" value="take" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="1172664372046" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementsToTake" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1172667724288" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="select a subsequence" />
-      <property role="asn4.1169194658468.1169194664001" value="PageOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.chunks" />
-      <property role="4jta.1169125787135.5092175715804935370" value="page" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="1172667737868" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="fromElement" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1172667748353" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="toElement" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1173946412755" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="remove all elements" />
-      <property role="asn4.1169194658468.1169194664001" value="RemoveAllElementsOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="collection" />
-      <property role="4jta.1169125787135.5092175715804935370" value="removeAll" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1173946412756" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-      </node>
-      <node concept="4jta.1169127622168" id="6346620863176839217" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="8845254380344464694" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="497032923610827734" resolveInfo="IQueueOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="6801639034385138722" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909355" resolveInfo="IStackOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756984" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692983" resolveInfo="IApplicableToCollection" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756995" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692988" resolveInfo="IApplicableToQueue" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943757008" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692989" resolveInfo="IApplicableToStack" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1175845471038" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="create a list with elements in reverse order" />
-      <property role="asn4.1169194658468.1169194664001" value="ReverseOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="reverse" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-      <node concept="4jta.1169127622168" id="6346620863176839222" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943822417" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1176501494711" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="test if sequence is not empty" />
-      <property role="asn4.1169194658468.1169194664001" value="IsNotEmptyOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="isNotEmpty" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1176903168877" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="produce an union" />
-      <property role="asn4.1169194658468.1169194664001" value="UnionOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.binary" />
-      <property role="4jta.1169125787135.5092175715804935370" value="union" />
-      <reference role="4jta.1071489090640.1071489389519" target="1176906603202" resolveInfo="BinaryOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1176906603202" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="BinaryOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.binary" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="1176906787974" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="rightExpression" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1176921879268" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="produce an intersection" />
-      <property role="asn4.1169194658468.1169194664001" value="IntersectOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.binary" />
-      <property role="4jta.1169125787135.5092175715804935370" value="intersect" />
-      <reference role="4jta.1071489090640.1071489389519" target="1176906603202" resolveInfo="BinaryOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1176923520476" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="subtract a sequence" />
-      <property role="asn4.1169194658468.1169194664001" value="ExcludeOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.binary" />
-      <property role="4jta.1169125787135.5092175715804935370" value="except" />
-      <reference role="4jta.1071489090640.1071489389519" target="1176906603202" resolveInfo="BinaryOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1178286324487" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="SortDirection" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068580123137" resolveInfo="BooleanConstant" />
-      <node concept="4jta.1169127622168" id="1262430001741642156" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1178894719932" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="produce sequence with unique elements" />
-      <property role="asn4.1169194658468.1169194664001" value="DistinctOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="distinct" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1180964022718" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="produce a sequence concatenation" />
-      <property role="asn4.1169194658468.1169194664001" value="ConcatOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.binary" />
-      <property role="4jta.1169125787135.5092175715804935370" value="concat" />
-      <reference role="4jta.1071489090640.1071489389519" target="1176906603202" resolveInfo="BinaryOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1184963466173" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="convert to an array" />
-      <property role="asn4.1169194658468.1169194664001" value="ToArrayOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="toArray" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1197683403723" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="MapType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="map" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790189" resolveInfo="Type" />
-      <node concept="4jta.1071489288298" id="1197683466920" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="keyType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1071489288298" id="1197683475734" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="valueType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1169127622168" id="4107091686347887613" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.4107091686347010317" resolveInfo="IGenericType" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1197686869805" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="HashMapCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="hashmap" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1145552809883" resolveInfo="AbstractCreator" />
-      <node concept="4jta.1071489288298" id="1197687026896" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="keyType" />
-        <property role="4jta.1071489288298.1071599893252" value="0..1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1071489288298" id="1197687035757" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="valueType" />
-        <property role="4jta.1071489288298.1071599893252" value="0..1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1071489288298" id="1206655950512" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="initializer" />
-        <reference role="4jta.1071489288298.1071599976176" target="1206655653991" resolveInfo="MapInitializer" />
-      </node>
-      <node concept="4jta.1071489288298" id="1562299158921034623" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="initSize" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1197932370469" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="MapElement" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
-      <node concept="4jta.1071489288298" id="1197932505799" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="map" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1197932525128" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="key" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="1262430001741703633" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1201216218329" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="MapOperationExpression" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
-      <node concept="4jta.1071489288298" id="1201216278566" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="expression" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1201225916438" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="mapOperation" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="1201225890326" resolveInfo="MapOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="1262430001741646987" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1201225890326" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="MapOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="1201306682507" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1197027803184" resolveInfo="IOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1201306600024" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ContainsKeyOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="containsKey" />
-      <reference role="4jta.1071489090640.1071489389519" target="1201225890326" resolveInfo="MapOperation" />
-      <node concept="4jta.1071489288298" id="1201654602639" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="key" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1201872418428" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="GetKeysOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="keys" />
-      <reference role="4jta.1071489090640.1071489389519" target="1201225890326" resolveInfo="MapOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1206655653991" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="MapInitializer" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="1206655902276" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="entries" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="1206655735055" resolveInfo="MapEntry" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1206655735055" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="MapEntry" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="1206655844556" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="key" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1206655853135" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="value" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1207233427108" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="MapRemoveOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="removeKey" />
-      <reference role="4jta.1071489090640.1071489389519" target="1201225890326" resolveInfo="MapOperation" />
-      <node concept="4jta.1071489288298" id="1207233489861" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="key" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1207236100912" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="convert to an iterator" />
-      <property role="asn4.1169194658468.1169194664001" value="ToIteratorOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="iterator" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-      <node concept="4jta.1169127622168" id="1262430001741519984" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1208542034276" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="MapClearOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="clear" />
-      <reference role="4jta.1071489090640.1071489389519" target="1201225890326" resolveInfo="MapOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1201792049884" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="transform each element to a sequence" />
-      <property role="asn4.1169194658468.1169194664001" value="TranslateOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="selectMany" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1201885182287" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="mapper" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1202120902084" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="include only matched element" />
-      <property role="asn4.1169194658468.1169194664001" value="WhereOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="where" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1202120914925" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="filter" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1202128969694" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="transform each element to another type" />
-      <property role="asn4.1169194658468.1169194664001" value="SelectOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="select" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1202129035304" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="selector" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1203518072036" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="smart closure parameter" />
-      <property role="asn4.1169194658468.1169194664001" value="SmartClosureParameterDeclaration" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="~ &lt;name&gt;" />
-      <reference role="4jta.1071489090640.1071489389519" target="tp2c.1203252195462" resolveInfo="UnboundClosureParameterDeclaration" />
-    </node>
-    <node concept="4jta.1071489090640" id="1204796164442" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="InternalSequenceOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="1204796294226" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="closure" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1204980550705" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="execute for each element" />
-      <property role="asn4.1169194658468.1169194664001" value="VisitAllOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="forEach" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1204980565575" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="visitor" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1205598340672" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="produce an exclusive disjunction" />
-      <property role="asn4.1169194658468.1169194664001" value="DisjunctOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.binary" />
-      <property role="4jta.1169125787135.5092175715804935370" value="disjunction" />
-      <reference role="4jta.1071489090640.1071489389519" target="1176906603202" resolveInfo="BinaryOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1205679737078" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="sort by key" />
-      <property role="asn4.1169194658468.1169194664001" value="SortOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="sortBy" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1205679819055" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="toComparable" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-      </node>
-      <node concept="4jta.1071489288298" id="1205679832066" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="ascending" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1205753243362" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ChunkOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.chunks" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="1205753261887" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="length" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1205753590798" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="exclude elements from the end" />
-      <property role="asn4.1169194658468.1169194664001" value="CutOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.chunks" />
-      <property role="4jta.1169125787135.5092175715804935370" value="cut" />
-      <reference role="4jta.1071489090640.1071489389519" target="1205753243362" resolveInfo="ChunkOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1205753630278" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="include elements at the end" />
-      <property role="asn4.1169194658468.1169194664001" value="TailOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.chunks" />
-      <property role="4jta.1169125787135.5092175715804935370" value="tail" />
-      <reference role="4jta.1071489090640.1071489389519" target="1205753243362" resolveInfo="ChunkOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1209727891789" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="sort using comparator" />
-      <property role="asn4.1169194658468.1169194664001" value="ComparatorSortOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="sort" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1209727951854" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="comparator" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-      </node>
-      <node concept="4jta.1071489288298" id="1209727996925" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="ascending" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1224414427926" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="create new sequence" />
-      <property role="asn4.1169194658468.1169194664001" value="SequenceCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="sequence" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1145552809883" resolveInfo="AbstractCreator" />
-      <node concept="4jta.1071489288298" id="1224414456414" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementType" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1071489288298" id="1224414466839" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="initializer" />
-        <reference role="4jta.1071489288298.1071599976176" target="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1224446583770" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="skip to next element in input sequence" />
-      <property role="asn4.1169194658468.1169194664001" value="SkipStatement" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="skip" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068580123157" resolveInfo="Statement" />
-    </node>
-    <node concept="4jta.1071489090640" id="1224451845108" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="stop iterating input sequence" />
-      <property role="asn4.1169194658468.1169194664001" value="StopStatement" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="stop" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068580123157" resolveInfo="Statement" />
-    </node>
-    <node concept="4jta.1071489090640" id="1225621920911" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="insert element at an index" />
-      <property role="asn4.1169194658468.1169194664001" value="InsertElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="insert" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="1225621960341" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="index" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1225621943565" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="element" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="6346620863176839216" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756922" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1225645868993" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="set an element at an index" />
-      <property role="asn4.1169194658468.1169194664001" value="SetElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="set" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="1225645893896" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="index" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1225645893898" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="element" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="6346620863176839223" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943822423" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1225711141656" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ListElementAccessExpression" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
-      <node concept="4jta.1071489288298" id="1225711182005" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="list" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1225711191269" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="index" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1225727723840" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="find first element that matches" />
-      <property role="asn4.1169194658468.1169194664001" value="FindFirstOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="findFirst" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1225727743579" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="filter" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1225730411176" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="find last element that matches" />
-      <property role="asn4.1169194658468.1169194664001" value="FindLastOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="findLast" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1225730460423" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="filter" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1226511727824" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="SetType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="set" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790189" resolveInfo="Type" />
-      <node concept="4jta.1071489288298" id="1226511765987" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1169127622168" id="4107091686347887615" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.4107091686347010317" resolveInfo="IGenericType" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1226516258405" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="create new hashset" />
-      <property role="asn4.1169194658468.1169194664001" value="HashSetCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="hashset" />
-      <reference role="4jta.1071489090640.1071489389519" target="1237721394592" resolveInfo="AbstractContainerCreator" />
-    </node>
-    <node concept="4jta.1071489090640" id="1226566831166" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="AbstractSetOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1226566855640" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="add an element" />
-      <property role="asn4.1169194658468.1169194664001" value="AddSetElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="add" />
-      <reference role="4jta.1071489090640.1071489389519" target="1226566831166" resolveInfo="AbstractSetOperation" />
-      <node concept="4jta.1071489288298" id="1226567214363" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1224240836180" id="4863683935051453677" role="asn4.1133920641626.5169995583184591170" info="ig" />
-    </node>
-    <node concept="4jta.1071489090640" id="1226591481394" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="remove an element" />
-      <property role="asn4.1169194658468.1169194664001" value="RemoveSetElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="remove" />
-      <reference role="4jta.1071489090640.1071489389519" target="1226566831166" resolveInfo="AbstractSetOperation" />
-      <node concept="4jta.1071489288298" id="1226591501988" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1224240836180" id="4863683935051453678" role="asn4.1133920641626.5169995583184591170" info="ig" />
-    </node>
-    <node concept="4jta.1071489090640" id="1226592602759" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="add all elements" />
-      <property role="asn4.1169194658468.1169194664001" value="AddAllSetElementsOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="addAll" />
-      <reference role="4jta.1071489090640.1071489389519" target="1226566831166" resolveInfo="AbstractSetOperation" />
-      <node concept="4jta.1071489288298" id="1226592623721" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1224240836180" id="4863683935051516259" role="asn4.1133920641626.5169995583184591170" info="ig" />
-    </node>
-    <node concept="4jta.1071489090640" id="1226593880804" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="remove all elements" />
-      <property role="asn4.1169194658468.1169194664001" value="RemoveAllSetElementsOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="removeAll" />
-      <reference role="4jta.1071489090640.1071489389519" target="1226566831166" resolveInfo="AbstractSetOperation" />
-      <node concept="4jta.1071489288298" id="1226593903142" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1224240836180" id="4863683935051516295" role="asn4.1133920641626.5169995583184591170" info="ig" />
-    </node>
-    <node concept="4jta.1071489090640" id="1226934395923" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="clear all elements" />
-      <property role="asn4.1169194658468.1169194664001" value="ClearSetOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="clear" />
-      <reference role="4jta.1071489090640.1071489389519" target="1226566831166" resolveInfo="AbstractSetOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1227008614712" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="create new linked list" />
-      <property role="asn4.1169194658468.1169194664001" value="LinkedListCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="linkedlist" />
-      <reference role="4jta.1071489090640.1071489389519" target="1237721394592" resolveInfo="AbstractContainerCreator" />
-    </node>
-    <node concept="4jta.1071489090640" id="1227022159410" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="add element as first" />
-      <property role="asn4.1169194658468.1169194664001" value="AddFirstElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="addFirst" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1227022622978" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-      </node>
-      <node concept="4jta.1169127622168" id="6346620863176839212" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="6801639034384909358" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909353" resolveInfo="IDequeOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="6801639034384915143" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909355" resolveInfo="IStackOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756792" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-      <node concept="4jta.1169127622168" id="4271499389004534912" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692989" resolveInfo="IApplicableToStack" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1227022179634" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="add element as last" />
-      <property role="asn4.1169194658468.1169194664001" value="AddLastElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="addLast" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1227022698412" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-      </node>
-      <node concept="4jta.1169127622168" id="6346620863176839213" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756826" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756833" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692988" resolveInfo="IApplicableToQueue" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1227022196108" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="remove element at an index" />
-      <property role="asn4.1169194658468.1169194664001" value="RemoveAtElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="removeAt" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="1227022274197" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="index" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="6346620863176839218" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943757018" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1227022210526" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="clear all elements" />
-      <property role="asn4.1169194658468.1169194664001" value="ClearAllElementsOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="clear" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-      <node concept="4jta.1169127622168" id="6346620863176839214" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="8845254380344464692" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="497032923610827734" resolveInfo="IQueueOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="6801639034385138713" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909355" resolveInfo="IStackOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756858" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756900" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692988" resolveInfo="IApplicableToQueue" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756887" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692989" resolveInfo="IApplicableToStack" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1227026082377" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="remove first element" />
-      <property role="asn4.1169194658468.1169194664001" value="RemoveFirstElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="removeFirst" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-      <node concept="4jta.1169127622168" id="6346620863176839220" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="8845254380344464698" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="497032923610827734" resolveInfo="IQueueOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="6801639034384915145" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909355" resolveInfo="IStackOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943757062" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943757073" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692988" resolveInfo="IApplicableToQueue" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943757086" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692989" resolveInfo="IApplicableToStack" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1227026094155" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="remove last element" />
-      <property role="asn4.1169194658468.1169194664001" value="RemoveLastElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="removeLast" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-      <node concept="4jta.1169127622168" id="6346620863176839221" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="6801639034384915128" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909353" resolveInfo="IDequeOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943757097" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943757106" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692987" resolveInfo="IApplicableToDeque" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1228228912534" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="DowncastExpression" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="4jta.1169125787135.5092175715804935370" value="downcast" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
-      <node concept="4jta.1071489288298" id="1228228959951" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="expression" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="1262430001741638276" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1235566554328" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="check if there are any elements matching the condition" />
-      <property role="asn4.1169194658468.1169194664001" value="AnyOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="any" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1235566554329" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="filter" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1235566831861" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="check if all elements match the condition" />
-      <property role="asn4.1169194658468.1169194664001" value="AllOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="all" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1235566831862" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="filter" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1235573135402" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="create singleton sequence" />
-      <property role="asn4.1169194658468.1169194664001" value="SingletonSequenceCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="singleton" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1145552809883" resolveInfo="AbstractCreator" />
-      <node concept="4jta.1071489288298" id="1235573175711" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1071489288298" id="1235573187520" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="singletonValue" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1237467461002" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="get the iterator" />
-      <property role="asn4.1169194658468.1169194664001" value="GetIteratorOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <property role="4jta.1169125787135.5092175715804935370" value="iterator" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1237467705688" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="IteratorType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <property role="4jta.1169125787135.5092175715804935370" value="iterator" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790189" resolveInfo="Type" />
-      <node concept="4jta.1071489288298" id="1237467730343" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1237470736245" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="AbstractIteratorOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="1237482351492" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1197027803184" resolveInfo="IOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1237470895604" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="HasNextOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <property role="4jta.1169125787135.5092175715804935370" value="hasNext" />
-      <reference role="4jta.1071489090640.1071489389519" target="1237470736245" resolveInfo="AbstractIteratorOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1237471031357" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="GetNextOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <property role="4jta.1169125787135.5092175715804935370" value="next" />
-      <reference role="4jta.1071489090640.1071489389519" target="1237470736245" resolveInfo="AbstractIteratorOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1237471080820" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="GetCurrentOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <property role="4jta.1169125787135.5092175715804935370" value="current" />
-      <reference role="4jta.1071489090640.1071489389519" target="1237497044713" resolveInfo="AbstractEnumeratorOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1237471163346" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="MoveNextOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <property role="4jta.1169125787135.5092175715804935370" value="moveNext" />
-      <reference role="4jta.1071489090640.1071489389519" target="1237497044713" resolveInfo="AbstractEnumeratorOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1237496250641" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="EnumeratorType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <property role="4jta.1169125787135.5092175715804935370" value="enumerator" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790189" resolveInfo="Type" />
-      <node concept="4jta.1071489288298" id="1237496250642" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1237497044713" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="AbstractEnumeratorOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="1237497053118" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1197027803184" resolveInfo="IOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1237549269949" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="get the enumerator" />
-      <property role="asn4.1169194658468.1169194664001" value="GetEnumeratorOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <property role="4jta.1169125787135.5092175715804935370" value="enumerator" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1237721394592" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="AbstractContainerCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1145552809883" resolveInfo="AbstractCreator" />
-      <node concept="4jta.1071489288298" id="1237721435807" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementType" />
-        <property role="4jta.1071489288298.1071599893252" value="0..1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1071489288298" id="1237721435808" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="initValue" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1237731803878" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="copyFrom" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1562299158920737514" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="initSize" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1237783176940" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="all elements" />
-      <property role="asn4.1169194658468.1169194664001" value="AllConstant" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="ALL" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1179362310214" resolveInfo="IntegerLiteral" />
-    </node>
-    <node concept="4jta.1071489090640" id="1237907129112" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ContainsValueOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="containsValue" />
-      <reference role="4jta.1071489090640.1071489389519" target="1201225890326" resolveInfo="MapOperation" />
-      <node concept="4jta.1071489288298" id="1237907150183" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="value" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1237909114519" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="GetValuesOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="values" />
-      <reference role="4jta.1071489090640.1071489389519" target="1201225890326" resolveInfo="MapOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1240151247486" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ContainerIteratorType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <property role="4jta.1169125787135.5092175715804935370" value="modifying_iterator" />
-      <reference role="4jta.1071489090640.1071489389519" target="1237467705688" resolveInfo="IteratorType" />
-    </node>
-    <node concept="4jta.1071489090640" id="1240151544672" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="RemoveOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="iteratorEnumerator" />
-      <property role="4jta.1169125787135.5092175715804935370" value="remove" />
-      <reference role="4jta.1071489090640.1071489389519" target="1237470736245" resolveInfo="AbstractIteratorOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1240216724530" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="LinkedHashMapCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="linked_hashmap" />
-      <reference role="4jta.1071489090640.1071489389519" target="1197686869805" resolveInfo="HashMapCreator" />
-      <node concept="4jta.1071489288299" id="1240219919705" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="order" />
-        <reference role="4jta.1071489288299.1082985295845" target="1240219850850" resolveInfo="LinkedHashMapOrder" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240217271293" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="create new linked hashset" />
-      <property role="asn4.1169194658468.1169194664001" value="LinkedHashSetCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="linked_hashset" />
-      <reference role="4jta.1071489090640.1071489389519" target="1226516258405" resolveInfo="HashSetCreator" />
-    </node>
-    <node concept="4jta.1082978164219" id="1240219850850" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="LinkedHashMapOrder" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983657063" resolveInfo="boolean" />
-      <node concept="4jta.1083171877298" id="1240219850851" role="4jta.1082978164219.1083172003582" info="ig">
-        <property role="4jta.1083171877298.1083923523171" value="false" />
-        <property role="4jta.1083171877298.1083923523172" value="insertion_order" />
-      </node>
-      <node concept="4jta.1083171877298" id="1240219896671" role="4jta.1082978164219.1083172003582" info="ig">
-        <property role="4jta.1083171877298.1083923523171" value="true" />
-        <property role="4jta.1083171877298.1083923523172" value="access_order" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240239337991" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="SortedMapType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="sorted_map" />
-      <reference role="4jta.1071489090640.1071489389519" target="1197683403723" resolveInfo="MapType" />
-    </node>
-    <node concept="4jta.1071489090640" id="1240239494010" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="TreeMapCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="treemap" />
-      <reference role="4jta.1071489090640.1071489389519" target="1197686869805" resolveInfo="HashMapCreator" />
-    </node>
-    <node concept="4jta.1071489090640" id="1240239309184" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="SortedMapOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <reference role="4jta.1071489090640.1071489389519" target="1201225890326" resolveInfo="MapOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1240239379525" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="HeadMapOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="headMap" />
-      <reference role="4jta.1071489090640.1071489389519" target="1240239309184" resolveInfo="SortedMapOperation" />
-      <node concept="4jta.1071489288298" id="1240239942969" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="toKey" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240240127120" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="TailMapOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="tailMap" />
-      <reference role="4jta.1071489090640.1071489389519" target="1240239309184" resolveInfo="SortedMapOperation" />
-      <node concept="4jta.1071489288298" id="1240240145771" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="fromKey" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240240201186" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="SubMapOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="subMap" />
-      <reference role="4jta.1071489090640.1071489389519" target="1240239309184" resolveInfo="SortedMapOperation" />
-      <node concept="4jta.1071489288298" id="1240240285641" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="fromKey" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1240240291802" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="toKey" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240247491866" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="SortedSetType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="sorted_set" />
-      <reference role="4jta.1071489090640.1071489389519" target="1226511727824" resolveInfo="SetType" />
-    </node>
-    <node concept="4jta.1071489090640" id="1240247536947" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="create new treeset" />
-      <property role="asn4.1169194658468.1169194664001" value="TreeSetCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="treeset" />
-      <reference role="4jta.1071489090640.1071489389519" target="1226516258405" resolveInfo="HashSetCreator" />
-      <node concept="4jta.1071489288298" id="2261417478148778174" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="comparator" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240251169236" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="SortedSetOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <reference role="4jta.1071489090640.1071489389519" target="1226566831166" resolveInfo="AbstractSetOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1240251356173" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="HeadSetOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="headSet" />
-      <reference role="4jta.1071489090640.1071489389519" target="1240251169236" resolveInfo="SortedSetOperation" />
-      <node concept="4jta.1071489288298" id="1240251368364" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="toElement" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240251565326" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="TailSetOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="tailSet" />
-      <reference role="4jta.1071489090640.1071489389519" target="1240251169236" resolveInfo="SortedSetOperation" />
-      <node concept="4jta.1071489288298" id="1240251577131" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="fromElement" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240251665173" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="SubSetOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="set" />
-      <property role="4jta.1169125787135.5092175715804935370" value="subSet" />
-      <reference role="4jta.1071489090640.1071489389519" target="1240251169236" resolveInfo="SortedSetOperation" />
-      <node concept="4jta.1071489288298" id="1240251672874" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="fromElement" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1240251680059" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="toElement" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240325842691" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="AsSequenceOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="4jta.1169125787135.5092175715804935370" value="asSequence" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1208623485264" resolveInfo="AbstractOperation" />
-      <node concept="4jta.1169127622168" id="1240325913084" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1197027803184" resolveInfo="IOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240424373525" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="MappingType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="mapping" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790189" resolveInfo="Type" />
-      <node concept="4jta.1071489288298" id="1240424397093" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="keyType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1071489288298" id="1240424402756" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="valueType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1169127622168" id="4107091686347887614" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.4107091686347010317" resolveInfo="IGenericType" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240687580870" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="JoinOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="join" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="1240687658305" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="delimiter" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240824716764" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="AbstractMappingOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="1240824733165" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1197027803184" resolveInfo="IOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1240824834947" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="ValueAccessOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="value" />
-      <reference role="4jta.1071489090640.1071489389519" target="1240824716764" resolveInfo="AbstractMappingOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1240825616499" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="KeyAccessOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="key" />
-      <reference role="4jta.1071489090640.1071489389519" target="1240824716764" resolveInfo="AbstractMappingOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1240854379201" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="MappingsSetOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="mappings" />
-      <reference role="4jta.1071489090640.1071489389519" target="1201225890326" resolveInfo="MapOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="1240906768633" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="PutAllOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <property role="4jta.1169125787135.5092175715804935370" value="putAll" />
-      <reference role="4jta.1071489090640.1071489389519" target="1201225890326" resolveInfo="MapOperation" />
-      <node concept="4jta.1071489288298" id="1240906921264" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="map" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="5686963296372475025" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="QueueType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="queue" />
-      <property role="4jta.1169125787135.5092175715804935370" value="queue" />
-      <reference role="4jta.1071489090640.1071489389519" target="5686963296372573083" resolveInfo="AbstractContainerType" />
-      <node concept="4jta.1169127622168" id="4107091686347887617" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.4107091686347010317" resolveInfo="IGenericType" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="5686963296372573083" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="container type" />
-      <property role="asn4.1169194658468.1169194664001" value="AbstractContainerType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790189" resolveInfo="Type" />
-      <node concept="4jta.1071489288298" id="5686963296372573084" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elementType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="3357971920378033937" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="DequeType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="queue.deque" />
-      <property role="4jta.1169125787135.5092175715804935370" value="deque" />
-      <reference role="4jta.1071489090640.1071489389519" target="5686963296372475025" resolveInfo="QueueType" />
-      <node concept="4jta.1169127622168" id="4107091686347887618" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.4107091686347010317" resolveInfo="IGenericType" />
-      </node>
-    </node>
-    <node concept="4jta.1169125989551" id="2141797557972817928" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IContainerOperation" />
-      <node concept="4jta.1169127622168" id="2141797557973018585" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1197027803184" resolveInfo="IOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1169125989551" id="2141797557973018607" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IListOperation" />
-      <node concept="4jta.1169127622168" id="4327124999333572298" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="4327124999333572296" resolveInfo="ICollectionOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1169125989551" id="497032923610827734" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IQueueOperation" />
-      <node concept="4jta.1169127622168" id="497032923610827735" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557972817928" resolveInfo="IContainerOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="6801639034384703212" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="StackType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="stack" />
-      <property role="4jta.1169125787135.5092175715804935370" value="stack" />
-      <reference role="4jta.1071489090640.1071489389519" target="5686963296372573083" resolveInfo="AbstractContainerType" />
-      <node concept="4jta.1169127622168" id="4107091686347887616" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.4107091686347010317" resolveInfo="IGenericType" />
-      </node>
-    </node>
-    <node concept="4jta.1169125989551" id="6801639034384909353" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IDequeOperation" />
-      <node concept="4jta.1169127622168" id="6801639034384915158" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="497032923610827734" resolveInfo="IQueueOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="3358009230509337678" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909355" resolveInfo="IStackOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1169125989551" id="6801639034384909355" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IStackOperation" />
-      <node concept="4jta.1169127622168" id="6801639034384909356" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557972817928" resolveInfo="IContainerOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="3358009230508699637" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="PopOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="stack" />
-      <property role="4jta.1169125787135.5092175715804935370" value="pop" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-      <node concept="4jta.1169127622168" id="3358009230508699638" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909355" resolveInfo="IStackOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="3358009230508699640" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909353" resolveInfo="IDequeOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="4271499389004537304" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692989" resolveInfo="IApplicableToStack" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="3358009230508699932" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="PushOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="stack" />
-      <property role="4jta.1169125787135.5092175715804935370" value="push" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="3358009230508990571" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-      </node>
-      <node concept="4jta.1169127622168" id="3358009230508699933" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909355" resolveInfo="IStackOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="3358009230508699935" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909353" resolveInfo="IDequeOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="4271499389004537308" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692989" resolveInfo="IApplicableToStack" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="3358009230509514604" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="create new priority queue" />
-      <property role="asn4.1169194658468.1169194664001" value="PriorityQueueCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="queue" />
-      <property role="4jta.1169125787135.5092175715804935370" value="priority_queue" />
-      <reference role="4jta.1071489090640.1071489389519" target="1237721394592" resolveInfo="AbstractContainerCreator" />
-    </node>
-    <node concept="4jta.1071489090640" id="3358009230509553641" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="LinkedListType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="linkedlist" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151688443754" resolveInfo="ListType" />
-    </node>
-    <node concept="4jta.1071489090640" id="540871147943773365" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="SingleArgumentSequenceOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="540871147943773366" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="540871147943782829" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="NoArgumentsSequenceOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="3055999550620853964" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="filter out the matched elements" />
-      <property role="asn4.1169194658468.1169194664001" value="RemoveWhereOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="removeWhere" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="3055999550620853968" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="filter" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="3055999550620853969" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="3055999550620853971" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909355" resolveInfo="IStackOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="3055999550620853973" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="497032923610827734" resolveInfo="IQueueOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="3055999550620853975" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909353" resolveInfo="IDequeOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943757117" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-      <node concept="4jta.1169127622168" id="4271499389004536340" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692989" resolveInfo="IApplicableToStack" />
-      </node>
-      <node concept="4jta.1169127622168" id="4271499389004536355" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692988" resolveInfo="IApplicableToQueue" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="599357942184015200" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="sort by secondary key" />
-      <property role="asn4.1169194658468.1169194664001" value="AlsoSortOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="alsoSortBy" />
-      <reference role="4jta.1071489090640.1071489389519" target="1205679737078" resolveInfo="SortOperation" />
-    </node>
-    <node concept="4jta.1071489090640" id="6126991172893676625" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="test if sequence contains all element" />
-      <property role="asn4.1169194658468.1169194664001" value="ContainsAllOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="containsAll" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="6126991172893676626" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="5633809102336885303" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="sub list" />
-      <property role="asn4.1169194658468.1169194664001" value="SubListOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="subList" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="5633809102336885320" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="fromIndex" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="5633809102336885321" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="upToIndex" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="5633809102336885304" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943822429" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="5784983078884872741" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="PeekOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="stack" />
-      <property role="4jta.1169125787135.5092175715804935370" value="peek" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-      <node concept="4jta.1169127622168" id="5784983078884872742" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909355" resolveInfo="IStackOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5784983078884872744" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6801639034384909353" resolveInfo="IDequeOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="4271499389004537300" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692989" resolveInfo="IApplicableToStack" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="5232196642625574978" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="head list" />
-      <property role="asn4.1169194658468.1169194664001" value="HeadListOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="headList" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="5232196642625574980" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="upToIndex" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="5232196642625574979" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756916" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="5232196642625575054" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="tail list" />
-      <property role="asn4.1169194658468.1169194664001" value="TailListOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="list" />
-      <property role="4jta.1169125787135.5092175715804935370" value="tailList" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="5232196642625575056" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="fromIndex" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="5232196642625575055" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943822435" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="6099516049394485216" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="CustomContainerDeclaration" />
-      <property role="asn4.1133920641626.1193676396447" value="customContainers" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1109279851642" resolveInfo="GenericDeclaration" />
-      <node concept="4jta.1071489288298" id="6099516049394485311" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="containerType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-      <node concept="4jta.1071489288298" id="6099516049394485312" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="runtimeType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1107535904670" resolveInfo="ClassifierType" />
-      </node>
-      <node concept="4jta.1071489288298" id="1279588871814993944" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="factory" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="6099516049394747453" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
-      <node concept="4jta.1169127622168" id="6099516049394772604" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1178549954367" resolveInfo="IVisible" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="6099516049394485324" info="ig">
-      <property role="4jta.1071489090640.1096454100552" value="true" />
-      <property role="asn4.1169194658468.1169194664001" value="CustomContainers" />
-      <property role="asn4.1133920641626.1193676396447" value="customContainers" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="6099516049394485326" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="containerDeclaration" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="6099516049394485216" resolveInfo="CustomContainerDeclaration" />
-      </node>
-      <node concept="4jta.1169127622168" id="6099516049394485325" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1331913329176106419" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="CustomContainerCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="customContainers" />
-      <reference role="4jta.1071489090640.1071489389519" target="1237721394592" resolveInfo="AbstractContainerCreator" />
-      <node concept="4jta.1071489288298" id="1331913329176106420" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="containerDeclaration" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="6099516049394485216" resolveInfo="CustomContainerDeclaration" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1576845966386891367" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="CustomMapCreator" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="mapType" />
-      <reference role="4jta.1071489090640.1071489389519" target="1197686869805" resolveInfo="HashMapCreator" />
-      <node concept="4jta.1071489288298" id="1576845966386891370" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="containerDeclaration" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="6099516049394485216" resolveInfo="CustomContainerDeclaration" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1153944193378" info="ig">
-      <property role="4jta.1071489090640.1160488491229" value="${mps_home}/languages/baseLanguage/baseLanguage/icons/variable.png" />
-      <property role="asn4.1169194658468.1169194664001" value="ForEachVariable" />
-      <property role="4jta.1071489090640.5404671619616246344" value="root" />
-      <property role="asn4.1133920641626.1193676396447" value="foreach" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="1219697389604" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
-      <node concept="4jta.1169127622168" id="1226941030274" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1212170275853" resolveInfo="IValidIdentifier" />
-      </node>
-      <node concept="4jta.1169127622168" id="5432666129547687716" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.5432666129547687712" resolveInfo="IVariableDeclaration" />
-      </node>
-      <node concept="4jta.1169127622168" id="8381360237218008481" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1196978630214" resolveInfo="IResolveInfo" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1522217801069359738" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="perform left reduction" />
-      <property role="asn4.1169194658468.1169194664001" value="ReduceLeftOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="reduceLeft" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1522217801069359739" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="comb" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1522217801069396403" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="perform right reduction" />
-      <property role="asn4.1169194658468.1169194664001" value="ReduceRightOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="reduceRight" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1522217801069396404" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="comb" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1522217801069396578" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="perform left folding" />
-      <property role="asn4.1169194658468.1169194664001" value="FoldLeftOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="foldLeft" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1522217801069396579" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="comb" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1522217801069421796" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="seed" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="1522217801069421831" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="perform right folding" />
-      <property role="asn4.1169194658468.1169194664001" value="FoldRightOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence.closures" />
-      <property role="4jta.1169125787135.5092175715804935370" value="foldRight" />
-      <reference role="4jta.1071489090640.1071489389519" target="1204796164442" resolveInfo="InternalSequenceOperation" />
-      <node concept="4jta.1071489288298" id="1522217801069421832" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="comb" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599698500" target="1204796294226" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1071489288298" id="1522217801069421833" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="seed" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="4020503625588385966" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="get the index of an element" />
-      <property role="asn4.1169194658468.1169194664001" value="GetLastIndexOfOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="lastIndexOf" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1071489288298" id="4020503625588385967" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="argument" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599698500" target="540871147943773366" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="9042586985346099698" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="foreach loop over multiple variables" />
-      <property role="asn4.1169194658468.1169194664001" value="MultiForEachStatement" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="foreach" />
-      <property role="4jta.1169125787135.5092175715804935370" value="foreach" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1154032098014" resolveInfo="AbstractLoopStatement" />
-      <node concept="4jta.1071489288298" id="9042586985346099734" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="forEach" />
-        <property role="4jta.1071489288298.1071599893252" value="1..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="9042586985346099733" resolveInfo="MultiForEachPair" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="9042586985346099733" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="MultiForEachPair" />
-      <property role="asn4.1133920641626.1193676396447" value="foreach" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="9042586985346099778" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="variable" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="9042586985346099736" resolveInfo="MultiForEachVariable" />
-      </node>
-      <node concept="4jta.1071489288298" id="9042586985346099735" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="input" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="9042586985346099736" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="MultiForEachVariable" />
-      <property role="asn4.1133920641626.1193676396447" value="foreach" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="9042586985346099737" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
-      <node concept="4jta.1169127622168" id="9042586985346099738" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.1212170275853" resolveInfo="IValidIdentifier" />
-      </node>
-      <node concept="4jta.1169127622168" id="9042586985346099739" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.5432666129547687712" resolveInfo="IVariableDeclaration" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="8293956702609956630" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="MultiForEachVariableReference" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="foreach" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
-      <node concept="4jta.1071489288298" id="8293956702609966325" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="variable" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="9042586985346099736" resolveInfo="MultiForEachVariable" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="7125221305512719026" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="abstract collection type" />
-      <property role="asn4.1169194658468.1169194664001" value="CollectionType" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="collection" />
-      <property role="4jta.1169125787135.5092175715804935370" value="collection" />
-      <reference role="4jta.1071489090640.1071489389519" target="5686963296372573083" resolveInfo="AbstractContainerType" />
-      <node concept="4jta.1169127622168" id="4107091686347887611" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpee.4107091686347010317" resolveInfo="IGenericType" />
-      </node>
-    </node>
-    <node concept="4jta.1169125989551" id="4327124999333572296" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ICollectionOperation" />
-      <node concept="4jta.1169127622168" id="4327124999333572297" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557972817928" resolveInfo="IContainerOperation" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="2526372162255441536" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="unmodifiable collection" />
-      <property role="asn4.1169194658468.1169194664001" value="AsUnmodifiableOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="collection" />
-      <property role="4jta.1169125787135.5092175715804935370" value="asUnmodifiable" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-      <node concept="4jta.1169127622168" id="2526372162255441537" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="4327124999333572296" resolveInfo="ICollectionOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="2526372162255441539" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756849" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692983" resolveInfo="IApplicableToCollection" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="4611582986551020933" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="synchronized collection" />
-      <property role="asn4.1169194658468.1169194664001" value="AsSynchronizedOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="collection" />
-      <property role="4jta.1169125787135.5092175715804935370" value="asSynchronized" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
-      <node concept="4jta.1169127622168" id="4611582986551020940" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="4327124999333572296" resolveInfo="ICollectionOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="4611582986551020941" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943756841" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692983" resolveInfo="IApplicableToCollection" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="4611582986551314327" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="select elements of the specified type" />
-      <property role="asn4.1169194658468.1169194664001" value="OfTypeOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="sequence" />
-      <property role="4jta.1169125787135.5092175715804935370" value="ofType" />
-      <reference role="4jta.1071489090640.1071489389519" target="1151701983961" resolveInfo="SequenceOperation" />
-      <node concept="4jta.1071489288298" id="4611582986551314344" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="requestedType" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="5699792037748043353" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="add an element and test the outcome" />
-      <property role="asn4.1169194658468.1169194664001" value="TestAddElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="collection" />
-      <property role="4jta.1169125787135.5092175715804935370" value="testAdd" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1169127622168" id="5699792037748043361" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943822441" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692983" resolveInfo="IApplicableToCollection" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="4073682006117732261" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="remove an element and test the outcome" />
-      <property role="asn4.1169194658468.1169194664001" value="TestRemoveElementOperation" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="asn4.1133920641626.1193676396447" value="collection" />
-      <property role="4jta.1169125787135.5092175715804935370" value="testRemove" />
-      <reference role="4jta.1071489090640.1071489389519" target="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
-      <node concept="4jta.1169127622168" id="4073682006117732262" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2141797557973018607" resolveInfo="IListOperation" />
-      </node>
-      <node concept="4jta.1169127622168" id="5994574781943822447" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692983" resolveInfo="IApplicableToCollection" />
-      </node>
-    </node>
-    <node concept="4jta.1169125989551" id="5994574781936691958" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IApplicableToNothing" />
-      <property role="asn4.1133920641626.1193676396447" value="applicable" />
-    </node>
-    <node concept="4jta.1169125989551" id="5994574781936692983" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IApplicableToCollection" />
-      <property role="asn4.1133920641626.1193676396447" value="applicable" />
-      <node concept="4jta.1169127622168" id="5994574781936757396" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692984" resolveInfo="IApplicableToList" />
-      </node>
-    </node>
-    <node concept="4jta.1169125989551" id="5994574781936692984" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IApplicableToList" />
-      <property role="asn4.1133920641626.1193676396447" value="applicable" />
-      <node concept="4jta.1169127622168" id="5994574781936692985" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936691958" resolveInfo="IApplicableToNothing" />
-      </node>
-    </node>
-    <node concept="4jta.1169125989551" id="5994574781936692987" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IApplicableToDeque" />
-      <property role="asn4.1133920641626.1193676396447" value="applicable" />
-      <node concept="4jta.1169127622168" id="5994574781936757400" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936691958" resolveInfo="IApplicableToNothing" />
-      </node>
-    </node>
-    <node concept="4jta.1169125989551" id="5994574781936692988" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IApplicableToQueue" />
-      <property role="asn4.1133920641626.1193676396447" value="applicable" />
-      <node concept="4jta.1169127622168" id="5994574781936757404" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692987" resolveInfo="IApplicableToDeque" />
-      </node>
-    </node>
-    <node concept="4jta.1169125989551" id="5994574781936692989" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IApplicableToStack" />
-      <property role="asn4.1133920641626.1193676396447" value="applicable" />
-      <node concept="4jta.1169127622168" id="5994574781940473490" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="5994574781936692987" resolveInfo="IApplicableToDeque" />
-      </node>
-    </node>
-    <node concept="4jta.1071489090640" id="6481445890964205296" info="ig">
-      <property role="4jta.1071489090640.5404671619616246344" value="root" />
-      <property role="asn4.1169194658468.1169194664001" value="MapAsSequenceVarRef" />
-      <property role="asn4.1133920641626.1193676396447" value="impl" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
-      <node concept="4jta.1071489288298" id="6481445890964252459" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="original" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068498886296" resolveInfo="VariableReference" />
-      </node>
-    </node>
-  </contents>
+  <registry>
+    <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <child id="1083172003582" name="member" index="M5hS2" />
+      </concept>
+      <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
+        <property id="1083923523172" name="externalValue" index="1uS6qo" />
+        <property id="1083923523171" name="internalValue" index="1uS6qv" />
+      </concept>
+      <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
+        <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
+      </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
+      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
+        <reference id="1169127628841" name="intfc" index="PrY4T" />
+      </concept>
+      <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1160488491229" name="iconPath" index="MwhBj" />
+        <property id="1096454100552" name="rootable" index="19KtqR" />
+        <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
+        <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="1169129564478" name="implements" index="PzmwI" />
+      </concept>
+      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <reference id="1082985295845" name="dataType" index="AX2Wp" />
+      </concept>
+      <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
+        <property id="1071599776563" name="role" index="20kJfa" />
+        <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
+        <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <reference id="1071599698500" name="specializedLink" index="20ksaX" />
+        <reference id="1071599976176" name="target" index="20lvS9" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1TIwiD" id="gK_YKtE">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ListType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="list" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="1TJgyj" id="gK_ZDn5" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="3zZky3wItfW" role="PzmwI">
+      <ref role="PrY4T" to="tpee:3zZky3wF74d" resolve="IGenericType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="gKA3Dh4">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SequenceType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="sequence" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="1TJgyj" id="gKA3Ige" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementType" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="3zZky3wIhgT" role="PzmwI">
+      <ref role="PrY4T" to="tpee:3zZky3wF74d" resolve="IGenericType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="gKAMqbp">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SequenceOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="hxih7R0" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="gKANEc_">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="convert to a list" />
+    <property role="TrG5h" value="ToListOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="toList" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="gMGpvep">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="foreach &lt;e&gt; in &lt;sequence&gt;" />
+    <property role="TrG5h" value="ForEachStatement" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="foreach" />
+    <property role="34LRSv" value="foreach" />
+    <ref role="1TJDcQ" to="tpee:gMLF5Fu" resolve="AbstractLoopStatement" />
+    <node concept="1TJgyj" id="gMGsz7L" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="variable" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="gMGrK_y" resolve="ForEachVariable" />
+    </node>
+    <node concept="1TJgyj" id="gMGsD4q" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="inputSequence" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="gMGrUn3">
+    <property role="TrG5h" value="ForEachVariableReference" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="foreach" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="gMGs0uU" role="1TKVEi">
+      <property role="20kJfa" value="variable" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="gMGrK_y" resolve="ForEachVariable" />
+    </node>
+    <node concept="PrWs8" id="SORzhOp6jP" role="PzmwI">
+      <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="gSTc6KI">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="create new array list" />
+    <property role="TrG5h" value="ListCreatorWithInit" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="arraylist" />
+    <ref role="1TJDcQ" node="i0HWqQw" resolve="AbstractContainerCreator" />
+  </node>
+  <node concept="1TIwiD" id="gSTSZY0">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="add an element" />
+    <property role="TrG5h" value="AddElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="collection" />
+    <property role="34LRSv" value="add" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="gSTTpTX" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+    </node>
+    <node concept="PrWs8" id="5wjIwMpJh0F" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhrvK" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVR" resolve="IApplicableToCollection" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="gSX8dJJ">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="add all elements" />
+    <property role="TrG5h" value="AddAllElementsOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="collection" />
+    <property role="34LRSv" value="addAll" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="gSX8zlW" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+    </node>
+    <node concept="PrWs8" id="5wjIwMpJh0E" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="r_OcY5vTBG" role="PzmwI">
+      <ref role="PrY4T" node="r_OcY5vOJm" resolve="IQueueOperation" />
+    </node>
+    <node concept="PrWs8" id="5T$hED6Xggn" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogF" resolve="IStackOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhrve" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVR" resolve="IApplicableToCollection" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhrvp" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVW" resolve="IApplicableToQueue" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhrvA" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVX" resolve="IApplicableToStack" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="gV4jXpY">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="get element by index" />
+    <property role="TrG5h" value="GetElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="get" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="gV4jXpZ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+    </node>
+    <node concept="PrWs8" id="5wjIwMpJh0J" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhrxI" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="gV4oBTJ">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="get the sequence size" />
+    <property role="TrG5h" value="GetSizeOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="size" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="gXuHKLy">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="get the first element" />
+    <property role="TrG5h" value="GetFirstOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="first" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="gXv1jR7">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="test if sequence is empty" />
+    <property role="TrG5h" value="IsEmptyOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="isEmpty" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="gXyVyb8">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="get the last element" />
+    <property role="TrG5h" value="GetLastOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="last" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="gZdhRql">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="remove an element" />
+    <property role="TrG5h" value="RemoveElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="collection" />
+    <property role="34LRSv" value="remove" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="gZdhRqm" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+    </node>
+    <node concept="PrWs8" id="5wjIwMpJh0N" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="7F0DZUCp_kS" role="PzmwI">
+      <ref role="PrY4T" node="r_OcY5vOJm" resolve="IQueueOperation" />
+    </node>
+    <node concept="PrWs8" id="5T$hED6XggE" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogF" resolve="IStackOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhrzy" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVW" resolve="IApplicableToQueue" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhrzH" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVX" resolve="IApplicableToStack" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhrzU" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVR" resolve="IApplicableToCollection" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h2WmjSo">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="get the index of an element" />
+    <property role="TrG5h" value="GetIndexOfOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="indexOf" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="h2Wo1tJ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h3JPxch">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="test if sequence contains an element" />
+    <property role="TrG5h" value="ContainsOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="contains" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="h3JVmge" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h47r0kS">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="exclude elements from the beginning" />
+    <property role="TrG5h" value="SkipOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.chunks" />
+    <property role="34LRSv" value="skip" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="h47T0y$" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementsToSkip" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h48ftAR">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="include elements at the beginning" />
+    <property role="TrG5h" value="TakeOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.chunks" />
+    <property role="34LRSv" value="take" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="h48f$He" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementsToTake" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h48sn80">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="select a subsequence" />
+    <property role="TrG5h" value="PageOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.chunks" />
+    <property role="34LRSv" value="page" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="h48sqsc" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fromElement" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="h48st01" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="toElement" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h5kEaVj">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="remove all elements" />
+    <property role="TrG5h" value="RemoveAllElementsOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="collection" />
+    <property role="34LRSv" value="removeAll" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="h5kEaVk" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+    </node>
+    <node concept="PrWs8" id="5wjIwMpJh0L" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="7F0DZUCp_kQ" role="PzmwI">
+      <ref role="PrY4T" node="r_OcY5vOJm" resolve="IQueueOperation" />
+    </node>
+    <node concept="PrWs8" id="5T$hED6Xggy" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogF" resolve="IStackOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhryS" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVR" resolve="IApplicableToCollection" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhrz3" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVW" resolve="IApplicableToQueue" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhrzg" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVX" resolve="IApplicableToStack" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h75QwcY">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="create a list with elements in reverse order" />
+    <property role="TrG5h" value="ReverseOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="reverse" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+    <node concept="PrWs8" id="5wjIwMpJh0Q" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhFxh" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h7GX2eR">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="test if sequence is not empty" />
+    <property role="TrG5h" value="IsNotEmptyOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="isNotEmpty" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="h84TjdH">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="produce an union" />
+    <property role="TrG5h" value="UnionOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.binary" />
+    <property role="34LRSv" value="union" />
+    <ref role="1TJDcQ" node="h856pF2" resolve="BinaryOperation" />
+  </node>
+  <node concept="1TIwiD" id="h856pF2">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="BinaryOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.binary" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="h8576M6" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="rightExpression" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h860Fb$">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="produce an intersection" />
+    <property role="TrG5h" value="IntersectOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.binary" />
+    <property role="34LRSv" value="intersect" />
+    <ref role="1TJDcQ" node="h856pF2" resolve="BinaryOperation" />
+  </node>
+  <node concept="1TIwiD" id="h866VRs">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="subtract a sequence" />
+    <property role="TrG5h" value="ExcludeOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.binary" />
+    <property role="34LRSv" value="except" />
+    <ref role="1TJDcQ" node="h856pF2" resolve="BinaryOperation" />
+  </node>
+  <node concept="1TIwiD" id="h9nlBG7">
+    <property role="TrG5h" value="SortDirection" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <ref role="1TJDcQ" to="tpee:fzclF81" resolve="BooleanConstant" />
+    <node concept="PrWs8" id="1653mnvANAG" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h9VAtIW">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="produce sequence with unique elements" />
+    <property role="TrG5h" value="DistinctOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="distinct" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="hbQWeAY">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="produce a sequence concatenation" />
+    <property role="TrG5h" value="ConcatOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.binary" />
+    <property role="34LRSv" value="concat" />
+    <ref role="1TJDcQ" node="h856pF2" resolve="BinaryOperation" />
+  </node>
+  <node concept="1TIwiD" id="hf_kTeX">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="convert to an array" />
+    <property role="TrG5h" value="ToArrayOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="toArray" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="hrrvAJb">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="MapType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="map" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="1TJgyj" id="hrrvQaC" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="keyType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="hrrvSkm" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="valueType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="3zZky3wItfX" role="PzmwI">
+      <ref role="PrY4T" to="tpee:3zZky3wF74d" resolve="IGenericType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hrrGOWH">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="HashMapCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="hashmap" />
+    <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
+    <node concept="1TJgyj" id="hrrHrjg" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="keyType" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="hrrHttH" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="valueType" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="hzMj9UK" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="initializer" />
+      <ref role="20lvS9" node="hzMi1xB" resolve="MapInitializer" />
+    </node>
+    <node concept="1TJgyj" id="1mIpGV0ojHZ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="initSize" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hrEllC_">
+    <property role="TrG5h" value="MapElement" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="hrElQF7" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="map" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="hrElVp8" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="key" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="1653mnvB2Bh" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="huI4ejp">
+    <property role="TrG5h" value="MapOperationExpression" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="huI4t0A" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="expression" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="huIDe0m" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="mapOperation" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="huID7Cm" resolve="MapOperation" />
+    </node>
+    <node concept="PrWs8" id="1653mnvAOMb" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="huID7Cm">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="MapOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="huNtkib" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="huNt09o">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ContainsKeyOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="containsKey" />
+    <ref role="1TJDcQ" node="huID7Cm" resolve="MapOperation" />
+    <node concept="1TJgyj" id="hv8cxIf" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="key" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hvlbrpW">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="GetKeysOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="keys" />
+    <ref role="1TJDcQ" node="huID7Cm" resolve="MapOperation" />
+  </node>
+  <node concept="1TIwiD" id="hzMi1xB">
+    <property role="TrG5h" value="MapInitializer" />
+    <property role="3GE5qa" value="mapType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="hzMiY94" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="entries" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="hzMilkf" resolve="MapEntry" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hzMilkf">
+    <property role="TrG5h" value="MapEntry" />
+    <property role="3GE5qa" value="mapType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="hzMiK3c" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="key" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="hzMiM9f" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h$kI3q$">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="MapRemoveOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="removeKey" />
+    <ref role="1TJDcQ" node="huID7Cm" resolve="MapOperation" />
+    <node concept="1TJgyj" id="h$kIiJ5" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="key" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h$kSgcK">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="convert to an iterator" />
+    <property role="TrG5h" value="ToIteratorOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="iterator" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+    <node concept="PrWs8" id="1653mnvAlLK" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="h_yHZ_$">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="MapClearOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="clear" />
+    <ref role="1TJDcQ" node="huID7Cm" resolve="MapOperation" />
+  </node>
+  <node concept="1TIwiD" id="hvgoQbs">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="transform each element to a sequence" />
+    <property role="TrG5h" value="TranslateOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="selectMany" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="hvlW7_f" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="mapper" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="hy3t8hi" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hvzZkn4">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="include only matched element" />
+    <property role="TrG5h" value="WhereOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="where" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="hvzZnvH" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="filter" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="hy3t8hi" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hv$u5Zu">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="transform each element to another type" />
+    <property role="TrG5h" value="SelectOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="select" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="hv$um0C" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="selector" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="hy3t8hi" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hwRh6j$">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="smart closure parameter" />
+    <property role="TrG5h" value="SmartClosureParameterDeclaration" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="~ &lt;name&gt;" />
+    <ref role="1TJDcQ" to="tp2c:hwBqR26" resolve="UnboundClosureParameterDeclaration" />
+  </node>
+  <node concept="1TIwiD" id="hy3sC_q">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="InternalSequenceOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="hy3t8hi" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="closure" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hyes0KL">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="execute for each element" />
+    <property role="TrG5h" value="VisitAllOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="forEach" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="hyes4p7" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="visitor" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="hy3t8hi" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hyNgGp0">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="produce an exclusive disjunction" />
+    <property role="TrG5h" value="DisjunctOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.binary" />
+    <property role="34LRSv" value="disjunction" />
+    <ref role="1TJDcQ" node="h856pF2" resolve="BinaryOperation" />
+  </node>
+  <node concept="1TIwiD" id="hyS7czQ">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="sort by key" />
+    <property role="TrG5h" value="SortOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="sortBy" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="hyS7w$J" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="toComparable" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="hy3t8hi" />
+    </node>
+    <node concept="1TJgyj" id="hyS7zK2" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="ascending" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hyWvAry">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ChunkOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.chunks" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="hyWvEWZ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="length" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hyWwVge">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="exclude elements from the end" />
+    <property role="TrG5h" value="CutOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.chunks" />
+    <property role="34LRSv" value="cut" />
+    <ref role="1TJDcQ" node="hyWvAry" resolve="ChunkOperation" />
+  </node>
+  <node concept="1TIwiD" id="hyWx4T6">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="include elements at the end" />
+    <property role="TrG5h" value="TailOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.chunks" />
+    <property role="34LRSv" value="tail" />
+    <ref role="1TJDcQ" node="hyWvAry" resolve="ChunkOperation" />
+  </node>
+  <node concept="1TIwiD" id="hADpF_d">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="sort using comparator" />
+    <property role="TrG5h" value="ComparatorSortOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="sort" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="hADpUfI" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="comparator" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="hy3t8hi" />
+    </node>
+    <node concept="1TJgyj" id="hADq5fX" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="ascending" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hOkMnGm">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="create new sequence" />
+    <property role="TrG5h" value="SequenceCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="sequence" />
+    <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
+    <node concept="1TJgyj" id="hOkMuDu" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementType" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="hOkMxcn" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="initializer" />
+      <ref role="20lvS9" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hOmH2fq">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="skip to next element in input sequence" />
+    <property role="TrG5h" value="SkipStatement" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="skip" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
+  </node>
+  <node concept="1TIwiD" id="hOn16JO">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="stop iterating input sequence" />
+    <property role="TrG5h" value="StopStatement" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="stop" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
+  </node>
+  <node concept="1TIwiD" id="hPsK_Mf">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="insert element at an index" />
+    <property role="TrG5h" value="InsertElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="insert" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="hPsKJql" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="index" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="hPsKFkd" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="element" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="5wjIwMpJh0K" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhrxU" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hPubWv1">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="set an element at an index" />
+    <property role="TrG5h" value="SetElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="set" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="hPuc2$8" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="index" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="hPuc2$a" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="element" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="5wjIwMpJh0R" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhFxn" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hPy4Wco">
+    <property role="TrG5h" value="ListElementAccessExpression" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="hPy562P" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="list" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="hPy58j_" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="index" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hPz4c_0">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="find first element that matches" />
+    <property role="TrG5h" value="FindFirstOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="findFirst" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="hPz4hpr" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="filter" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="hy3t8hi" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hPzesEC">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="find last element that matches" />
+    <property role="TrG5h" value="FindLastOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="findLast" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="hPzeCG7" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="filter" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="hy3t8hi" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hQhMVNg">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SetType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="set" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="1TJgyj" id="hQhN57z" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="3zZky3wItfZ" role="PzmwI">
+      <ref role="PrY4T" to="tpee:3zZky3wF74d" resolve="IGenericType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hQi4dT_">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="create new hashset" />
+    <property role="TrG5h" value="HashSetCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="hashset" />
+    <ref role="1TJDcQ" node="i0HWqQw" resolve="AbstractContainerCreator" />
+  </node>
+  <node concept="1TIwiD" id="hQl58KY">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="AbstractSetOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="hQl5eJo">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="add an element" />
+    <property role="TrG5h" value="AddSetElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="add" />
+    <ref role="1TJDcQ" node="hQl58KY" resolve="AbstractSetOperation" />
+    <node concept="1TJgyj" id="hQl6Akr" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="asaX9" id="4dZhGkwx1jH" role="lGtFl" />
+  </node>
+  <node concept="1TIwiD" id="hQmzaSM">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="remove an element" />
+    <property role="TrG5h" value="RemoveSetElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="remove" />
+    <ref role="1TJDcQ" node="hQl58KY" resolve="AbstractSetOperation" />
+    <node concept="1TJgyj" id="hQmzfU$" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="asaX9" id="4dZhGkwx1jI" role="lGtFl" />
+  </node>
+  <node concept="1TIwiD" id="hQmBsE7">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="add all elements" />
+    <property role="TrG5h" value="AddAllSetElementsOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="addAll" />
+    <ref role="1TJDcQ" node="hQl58KY" resolve="AbstractSetOperation" />
+    <node concept="1TJgyj" id="hQmBxLD" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="asaX9" id="4dZhGkwxg_z" role="lGtFl" />
+  </node>
+  <node concept="1TIwiD" id="hQmGkF$">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="remove all elements" />
+    <property role="TrG5h" value="RemoveAllSetElementsOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="removeAll" />
+    <ref role="1TJDcQ" node="hQl58KY" resolve="AbstractSetOperation" />
+    <node concept="1TJgyj" id="hQmGq8A" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="asaX9" id="4dZhGkwxgA7" role="lGtFl" />
+  </node>
+  <node concept="1TIwiD" id="hQEZigj">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="clear all elements" />
+    <property role="TrG5h" value="ClearSetOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="clear" />
+    <ref role="1TJDcQ" node="hQl58KY" resolve="AbstractSetOperation" />
+  </node>
+  <node concept="1TIwiD" id="hQJqq4S">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="create new linked list" />
+    <property role="TrG5h" value="LinkedListCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="linkedlist" />
+    <ref role="1TJDcQ" node="i0HWqQw" resolve="AbstractContainerCreator" />
+  </node>
+  <node concept="1TIwiD" id="hQKe4SM">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="add element as first" />
+    <property role="TrG5h" value="AddFirstElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="addFirst" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="hQKfQ42" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+    </node>
+    <node concept="PrWs8" id="5wjIwMpJh0G" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5T$hED6WogI" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogD" resolve="IDequeOperation" />
+    </node>
+    <node concept="PrWs8" id="5T$hED6WpF7" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogF" resolve="IStackOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhrvS" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+    <node concept="PrWs8" id="3H7qx0rUti0" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVX" resolve="IApplicableToStack" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hQKe9OM">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="add element as last" />
+    <property role="TrG5h" value="AddLastElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="addLast" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="hQKg8uG" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+    </node>
+    <node concept="PrWs8" id="5wjIwMpJh0H" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhrwq" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhrwx" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVW" resolve="IApplicableToQueue" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hQKedQc">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="remove element at an index" />
+    <property role="TrG5h" value="RemoveAtElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="removeAt" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="hQKewUl" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="index" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="5wjIwMpJh0M" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhrzq" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hQKehnu">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="clear all elements" />
+    <property role="TrG5h" value="ClearAllElementsOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="clear" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+    <node concept="PrWs8" id="5wjIwMpJh0I" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="7F0DZUCp_kO" role="PzmwI">
+      <ref role="PrY4T" node="r_OcY5vOJm" resolve="IQueueOperation" />
+    </node>
+    <node concept="PrWs8" id="5T$hED6Xggp" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogF" resolve="IStackOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhrwU" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhrx$" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVW" resolve="IApplicableToQueue" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhrxn" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVX" resolve="IApplicableToStack" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hQKt2D9">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="remove first element" />
+    <property role="TrG5h" value="RemoveFirstElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="removeFirst" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+    <node concept="PrWs8" id="5wjIwMpJh0O" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="7F0DZUCp_kU" role="PzmwI">
+      <ref role="PrY4T" node="r_OcY5vOJm" resolve="IQueueOperation" />
+    </node>
+    <node concept="PrWs8" id="5T$hED6WpF9" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogF" resolve="IStackOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhr$6" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhr$h" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVW" resolve="IApplicableToQueue" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhr$u" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVX" resolve="IApplicableToStack" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hQKt5xb">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="remove last element" />
+    <property role="TrG5h" value="RemoveLastElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="removeLast" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+    <node concept="PrWs8" id="5wjIwMpJh0P" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5T$hED6WpES" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogD" resolve="IDequeOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhr$D" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhr$M" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVV" resolve="IApplicableToDeque" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hRS9umm">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="DowncastExpression" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="downcast" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="hRS9DVf" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="expression" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="1653mnvAME4" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hYHwmNo">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="check if there are any elements matching the condition" />
+    <property role="TrG5h" value="AnyOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="any" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="hYHwmNp" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="filter" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="hy3t8hi" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hYHxqzP">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="check if all elements match the condition" />
+    <property role="TrG5h" value="AllOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="all" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="hYHxqzQ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="filter" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="hy3t8hi" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="hYHTtwE">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="create singleton sequence" />
+    <property role="TrG5h" value="SingletonSequenceCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="singleton" />
+    <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
+    <node concept="1TJgyj" id="hYHTBmv" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="hYHTEf0" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singletonValue" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i0uNJma">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="get the iterator" />
+    <property role="TrG5h" value="GetIteratorOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <property role="34LRSv" value="iterator" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="i0uOF5o">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="IteratorType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <property role="34LRSv" value="iterator" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="1TJgyj" id="i0uOL6B" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i0v0eXP">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="AbstractIteratorOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="i0vGyI4" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i0v0PRO">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="HasNextOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <property role="34LRSv" value="hasNext" />
+    <ref role="1TJDcQ" node="i0v0eXP" resolve="AbstractIteratorOperation" />
+  </node>
+  <node concept="1TIwiD" id="i0v1n0X">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="GetNextOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <property role="34LRSv" value="next" />
+    <ref role="1TJDcQ" node="i0v0eXP" resolve="AbstractIteratorOperation" />
+  </node>
+  <node concept="1TIwiD" id="i0v1z5O">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="GetCurrentOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <property role="34LRSv" value="current" />
+    <ref role="1TJDcQ" node="i0w$_VD" resolve="AbstractEnumeratorOperation" />
+  </node>
+  <node concept="1TIwiD" id="i0v1Rfi">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="MoveNextOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <property role="34LRSv" value="moveNext" />
+    <ref role="1TJDcQ" node="i0w$_VD" resolve="AbstractEnumeratorOperation" />
+  </node>
+  <node concept="1TIwiD" id="i0wx$4h">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="EnumeratorType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <property role="34LRSv" value="enumerator" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="1TJgyj" id="i0wx$4i" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i0w$_VD">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="AbstractEnumeratorOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="i0w$BYY" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i0zFOeX">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="get the enumerator" />
+    <property role="TrG5h" value="GetEnumeratorOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <property role="34LRSv" value="enumerator" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="i0HWqQw">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="AbstractContainerCreator" />
+    <property role="2_RsDV" value="none" />
+    <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
+    <node concept="1TJgyj" id="i0HW$Uv" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementType" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="i0HW$Uw" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="initValue" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="i0I$8bA" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="copyFrom" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="1mIpGV0nbbE" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="initSize" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i0LC6rG">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="all elements" />
+    <property role="TrG5h" value="AllConstant" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="ALL" />
+    <ref role="1TJDcQ" to="tpee:hanubx6" resolve="IntegerLiteral" />
+  </node>
+  <node concept="1TIwiD" id="i0T0Wco">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ContainsValueOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="containsValue" />
+    <ref role="1TJDcQ" node="huID7Cm" resolve="MapOperation" />
+    <node concept="1TJgyj" id="i0T11lB" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i0T8wUn">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="GetValuesOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="values" />
+    <ref role="1TJDcQ" node="huID7Cm" resolve="MapOperation" />
+  </node>
+  <node concept="1TIwiD" id="i2YL$DY">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ContainerIteratorType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <property role="34LRSv" value="modifying_iterator" />
+    <ref role="1TJDcQ" node="i0uOF5o" resolve="IteratorType" />
+  </node>
+  <node concept="1TIwiD" id="i2YMHdw">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="RemoveOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="iteratorEnumerator" />
+    <property role="34LRSv" value="remove" />
+    <ref role="1TJDcQ" node="i0v0eXP" resolve="AbstractIteratorOperation" />
+  </node>
+  <node concept="1TIwiD" id="i32FmgM">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="LinkedHashMapCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="linked_hashmap" />
+    <ref role="1TJDcQ" node="hrrGOWH" resolve="HashMapCreator" />
+    <node concept="1TJgyi" id="i32Rylp" role="1TKVEl">
+      <property role="TrG5h" value="order" />
+      <ref role="AX2Wp" node="i32Rhxy" resolve="LinkedHashMapOrder" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i32HrJX">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="create new linked hashset" />
+    <property role="TrG5h" value="LinkedHashSetCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="linked_hashset" />
+    <ref role="1TJDcQ" node="hQi4dT_" resolve="HashSetCreator" />
+  </node>
+  <node concept="AxPO7" id="i32Rhxy">
+    <property role="TrG5h" value="LinkedHashMapOrder" />
+    <property role="3GE5qa" value="mapType" />
+    <ref role="M4eZT" to="tpck:fKAQMTB" resolve="boolean" />
+    <node concept="M4N5e" id="i32Rhxz" role="M5hS2">
+      <property role="1uS6qv" value="false" />
+      <property role="1uS6qo" value="insertion_order" />
+    </node>
+    <node concept="M4N5e" id="i32RsHv" role="M5hS2">
+      <property role="1uS6qv" value="true" />
+      <property role="1uS6qo" value="access_order" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i341B87">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SortedMapType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="sorted_map" />
+    <ref role="1TJDcQ" node="hrrvAJb" resolve="MapType" />
+  </node>
+  <node concept="1TIwiD" id="i342ddU">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="TreeMapCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="treemap" />
+    <ref role="1TJDcQ" node="hrrGOWH" resolve="HashMapCreator" />
+  </node>
+  <node concept="1TIwiD" id="i341w60">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SortedMapOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <ref role="1TJDcQ" node="huID7Cm" resolve="MapOperation" />
+  </node>
+  <node concept="1TIwiD" id="i341Lh5">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="HeadMapOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="headMap" />
+    <ref role="1TJDcQ" node="i341w60" resolve="SortedMapOperation" />
+    <node concept="1TJgyj" id="i343UOT" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="toKey" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i344BMg">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="TailMapOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="tailMap" />
+    <ref role="1TJDcQ" node="i341w60" resolve="SortedMapOperation" />
+    <node concept="1TJgyj" id="i344GlF" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fromKey" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i344TRy">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SubMapOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="subMap" />
+    <ref role="1TJDcQ" node="i341w60" resolve="SortedMapOperation" />
+    <node concept="1TJgyj" id="i345ev9" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fromKey" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="i345fZq" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="toKey" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i34wHOq">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SortedSetType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="sorted_set" />
+    <ref role="1TJDcQ" node="hQhMVNg" resolve="SetType" />
+  </node>
+  <node concept="1TIwiD" id="i34wSON">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="create new treeset" />
+    <property role="TrG5h" value="TreeSetCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="treeset" />
+    <ref role="1TJDcQ" node="hQi4dT_" resolve="HashSetCreator" />
+    <node concept="1TJgyj" id="1XyaNs1UIyY" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="comparator" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i34IJBk">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SortedSetOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <ref role="1TJDcQ" node="hQl58KY" resolve="AbstractSetOperation" />
+  </node>
+  <node concept="1TIwiD" id="i34Jtgd">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="HeadSetOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="headSet" />
+    <ref role="1TJDcQ" node="i34IJBk" resolve="SortedSetOperation" />
+    <node concept="1TJgyj" id="i34JweG" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="toElement" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i34Kgke">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="TailSetOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="tailSet" />
+    <ref role="1TJDcQ" node="i34IJBk" resolve="SortedSetOperation" />
+    <node concept="1TJgyj" id="i34KjcF" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fromElement" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i34KCGl">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SubSetOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="set" />
+    <property role="34LRSv" value="subSet" />
+    <ref role="1TJDcQ" node="i34IJBk" resolve="SortedSetOperation" />
+    <node concept="1TJgyj" id="i34KE$E" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fromElement" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="i34KGkV" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="toElement" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i39bAs3">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="AsSequenceOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="asSequence" />
+    <ref role="1TJDcQ" to="tpee:h_B$H5g" resolve="AbstractOperation" />
+    <node concept="PrWs8" id="i39bRBW" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i3f3tOl">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="MappingType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="mapping" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="1TJgyj" id="i3f3z$_" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="keyType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="i3f3$X4" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="valueType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="3zZky3wItfY" role="PzmwI">
+      <ref role="PrY4T" to="tpee:3zZky3wF74d" resolve="IGenericType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i3uJxr6">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="JoinOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="join" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="i3uJOl1" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="delimiter" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i3AUDRs">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="AbstractMappingOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="i3AUHRH" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="i3AV6I3">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="ValueAccessOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="value" />
+    <ref role="1TJDcQ" node="i3AUDRs" resolve="AbstractMappingOperation" />
+  </node>
+  <node concept="1TIwiD" id="i3AY5xN">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="KeyAccessOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="key" />
+    <ref role="1TJDcQ" node="i3AUDRs" resolve="AbstractMappingOperation" />
+  </node>
+  <node concept="1TIwiD" id="i3CFNF1">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="MappingsSetOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="mappings" />
+    <ref role="1TJDcQ" node="huID7Cm" resolve="MapOperation" />
+  </node>
+  <node concept="1TIwiD" id="i3FNE3T">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="PutAllOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <property role="34LRSv" value="putAll" />
+    <ref role="1TJDcQ" node="huID7Cm" resolve="MapOperation" />
+    <node concept="1TJgyj" id="i3FOfkK" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="map" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4VG9JMUXOih">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="QueueType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="queue" />
+    <property role="34LRSv" value="queue" />
+    <ref role="1TJDcQ" node="4VG9JMUYcer" resolve="AbstractContainerType" />
+    <node concept="PrWs8" id="3zZky3wItg1" role="PzmwI">
+      <ref role="PrY4T" to="tpee:3zZky3wF74d" resolve="IGenericType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4VG9JMUYcer">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="container type" />
+    <property role="TrG5h" value="AbstractContainerType" />
+    <property role="2_RsDV" value="none" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="1TJgyj" id="4VG9JMUYces" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elementType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2UpUqInRBsh">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="DequeType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="queue.deque" />
+    <property role="34LRSv" value="deque" />
+    <ref role="1TJDcQ" node="4VG9JMUXOih" resolve="QueueType" />
+    <node concept="PrWs8" id="3zZky3wItg2" role="PzmwI">
+      <ref role="PrY4T" to="tpee:3zZky3wF74d" resolve="IGenericType" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1QTcovZLdw8">
+    <property role="TrG5h" value="IContainerOperation" />
+    <node concept="PrWs8" id="1QTcovZLYvp" role="PrDN$">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1QTcovZLYvJ">
+    <property role="TrG5h" value="IListOperation" />
+    <node concept="PrWs8" id="3Kd2kb3ZmVa" role="PrDN$">
+      <ref role="PrY4T" node="3Kd2kb3ZmV8" resolve="ICollectionOperation" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="r_OcY5vOJm">
+    <property role="TrG5h" value="IQueueOperation" />
+    <node concept="PrWs8" id="r_OcY5vOJn" role="PrDN$">
+      <ref role="PrY4T" node="1QTcovZLdw8" resolve="IContainerOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5T$hED6V_VG">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="StackType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="stack" />
+    <property role="34LRSv" value="stack" />
+    <ref role="1TJDcQ" node="4VG9JMUYcer" resolve="AbstractContainerType" />
+    <node concept="PrWs8" id="3zZky3wItg0" role="PzmwI">
+      <ref role="PrY4T" to="tpee:3zZky3wF74d" resolve="IGenericType" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="5T$hED6WogD">
+    <property role="TrG5h" value="IDequeOperation" />
+    <node concept="PrWs8" id="5T$hED6WpFm" role="PrDN$">
+      <ref role="PrY4T" node="r_OcY5vOJm" resolve="IQueueOperation" />
+    </node>
+    <node concept="PrWs8" id="2Uq2TE8ZuLe" role="PrDN$">
+      <ref role="PrY4T" node="5T$hED6WogF" resolve="IStackOperation" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="5T$hED6WogF">
+    <property role="TrG5h" value="IStackOperation" />
+    <node concept="PrWs8" id="5T$hED6WogG" role="PrDN$">
+      <ref role="PrY4T" node="1QTcovZLdw8" resolve="IContainerOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2Uq2TE8X2ZP">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="PopOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="stack" />
+    <property role="34LRSv" value="pop" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+    <node concept="PrWs8" id="2Uq2TE8X2ZQ" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogF" resolve="IStackOperation" />
+    </node>
+    <node concept="PrWs8" id="2Uq2TE8X2ZS" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogD" resolve="IDequeOperation" />
+    </node>
+    <node concept="PrWs8" id="3H7qx0rUtRo" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVX" resolve="IApplicableToStack" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2Uq2TE8X34s">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="PushOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="stack" />
+    <property role="34LRSv" value="push" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="2Uq2TE8Ya1F" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+    </node>
+    <node concept="PrWs8" id="2Uq2TE8X34t" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogF" resolve="IStackOperation" />
+    </node>
+    <node concept="PrWs8" id="2Uq2TE8X34v" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogD" resolve="IDequeOperation" />
+    </node>
+    <node concept="PrWs8" id="3H7qx0rUtRs" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVX" resolve="IApplicableToStack" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2Uq2TE909XG">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="create new priority queue" />
+    <property role="TrG5h" value="PriorityQueueCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="queue" />
+    <property role="34LRSv" value="priority_queue" />
+    <ref role="1TJDcQ" node="i0HWqQw" resolve="AbstractContainerCreator" />
+  </node>
+  <node concept="1TIwiD" id="2Uq2TE90jvD">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="LinkedListType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="linkedlist" />
+    <ref role="1TJDcQ" node="gK_YKtE" resolve="ListType" />
+  </node>
+  <node concept="1TIwiD" id="u1zR62s$iP">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SingleArgumentSequenceOperation" />
+    <property role="2_RsDV" value="none" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="u1zR62s$iQ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="u1zR62sAAH">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="NoArgumentsSequenceOperation" />
+    <property role="2_RsDV" value="none" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+  </node>
+  <node concept="1TIwiD" id="2DD5QpwwArc">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="filter out the matched elements" />
+    <property role="TrG5h" value="RemoveWhereOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="removeWhere" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="2DD5QpwwArg" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="filter" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="hy3t8hi" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="2DD5QpwwArh" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="2DD5QpwwArj" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogF" resolve="IStackOperation" />
+    </node>
+    <node concept="PrWs8" id="2DD5QpwwArl" role="PzmwI">
+      <ref role="PrY4T" node="r_OcY5vOJm" resolve="IQueueOperation" />
+    </node>
+    <node concept="PrWs8" id="2DD5QpwwArn" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogD" resolve="IDequeOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3Dhr$X" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+    <node concept="PrWs8" id="3H7qx0rUtCk" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVX" resolve="IApplicableToStack" />
+    </node>
+    <node concept="PrWs8" id="3H7qx0rUtCz" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVW" resolve="IApplicableToQueue" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="xhmdXPbZlw">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="sort by secondary key" />
+    <property role="TrG5h" value="AlsoSortOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="alsoSortBy" />
+    <ref role="1TJDcQ" node="hyS7czQ" resolve="SortOperation" />
+  </node>
+  <node concept="1TIwiD" id="5k7sw9Mi1hh">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="test if sequence contains all element" />
+    <property role="TrG5h" value="ContainsAllOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="containsAll" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="5k7sw9Mi1hi" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4SJjSu59K8R">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="sub list" />
+    <property role="TrG5h" value="SubListOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="subList" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="4SJjSu59K98" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fromIndex" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="4SJjSu59K99" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="upToIndex" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="4SJjSu59K8S" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhFxt" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="518oRn8_18_">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="PeekOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="stack" />
+    <property role="34LRSv" value="peek" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+    <node concept="PrWs8" id="518oRn8_18A" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogF" resolve="IStackOperation" />
+    </node>
+    <node concept="PrWs8" id="518oRn8_18C" role="PzmwI">
+      <ref role="PrY4T" node="5T$hED6WogD" resolve="IDequeOperation" />
+    </node>
+    <node concept="PrWs8" id="3H7qx0rUtRk" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVX" resolve="IApplicableToStack" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4ysvM06G5x2">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="head list" />
+    <property role="TrG5h" value="HeadListOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="headList" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="4ysvM06G5x4" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="upToIndex" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="4ysvM06G5x3" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhrxO" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4ysvM06G5ye">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="tail list" />
+    <property role="TrG5h" value="TailListOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="list" />
+    <property role="34LRSv" value="tailList" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="4ysvM06G5yg" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fromIndex" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="4ysvM06G5yf" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhFxz" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5i_Pov1WWvw">
+    <property role="TrG5h" value="CustomContainerDeclaration" />
+    <property role="3GE5qa" value="customContainers" />
+    <ref role="1TJDcQ" to="tpee:g96eOhU" resolve="GenericDeclaration" />
+    <node concept="1TJgyj" id="5i_Pov1WWwZ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="containerType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="5i_Pov1WWx0" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="runtimeType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:g7uibYu" resolve="ClassifierType" />
+    </node>
+    <node concept="1TJgyj" id="1720OMz4Pwo" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="factory" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="5i_Pov1XWwX" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="5i_Pov1Y2DW" role="PzmwI">
+      <ref role="PrY4T" to="tpee:h9B3isZ" resolve="IVisible" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5i_Pov1WWxc">
+    <property role="19KtqR" value="true" />
+    <property role="TrG5h" value="CustomContainers" />
+    <property role="3GE5qa" value="customContainers" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5i_Pov1WWxe" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="containerDeclaration" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5i_Pov1WWvw" resolve="CustomContainerDeclaration" />
+    </node>
+    <node concept="PrWs8" id="5i_Pov1WWxd" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="19VU1QT9_mN">
+    <property role="TrG5h" value="CustomContainerCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="customContainers" />
+    <ref role="1TJDcQ" node="i0HWqQw" resolve="AbstractContainerCreator" />
+    <node concept="1TJgyj" id="19VU1QT9_mO" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="containerDeclaration" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5i_Pov1WWvw" resolve="CustomContainerDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1ny5gPbZSDB">
+    <property role="TrG5h" value="CustomMapCreator" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="mapType" />
+    <ref role="1TJDcQ" node="hrrGOWH" resolve="HashMapCreator" />
+    <node concept="1TJgyj" id="1ny5gPbZSDE" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="containerDeclaration" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5i_Pov1WWvw" resolve="CustomContainerDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="gMGrK_y">
+    <property role="MwhBj" value="${mps_home}/languages/baseLanguage/baseLanguage/icons/variable.png" />
+    <property role="TrG5h" value="ForEachVariable" />
+    <property role="2_RsDV" value="root" />
+    <property role="3GE5qa" value="foreach" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="hJVCj0$" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="hQFo_Y2" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="PrWs8" id="4H$HgYMZ7s$" role="PzmwI">
+      <ref role="PrY4T" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
+    </node>
+    <node concept="PrWs8" id="7hg$FETXCQx" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hqLv6T6" resolve="IResolveInfo" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1kw0gpBwZ9U">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="perform left reduction" />
+    <property role="TrG5h" value="ReduceLeftOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="reduceLeft" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="1kw0gpBwZ9V" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="comb" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20ksaX" node="hy3t8hi" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1kw0gpBx86N">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="perform right reduction" />
+    <property role="TrG5h" value="ReduceRightOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="reduceRight" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="1kw0gpBx86O" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="comb" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="hy3t8hi" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1kw0gpBx89y">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="perform left folding" />
+    <property role="TrG5h" value="FoldLeftOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="foldLeft" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="1kw0gpBx89z" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="comb" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="hy3t8hi" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="1kw0gpBxej$" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="seed" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1kw0gpBxek7">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="perform right folding" />
+    <property role="TrG5h" value="FoldRightOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence.closures" />
+    <property role="34LRSv" value="foldRight" />
+    <ref role="1TJDcQ" node="hy3sC_q" resolve="InternalSequenceOperation" />
+    <node concept="1TJgyj" id="1kw0gpBxek8" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="comb" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="hy3t8hi" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="1kw0gpBxek9" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="seed" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3vbGFVPnqyI">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="get the index of an element" />
+    <property role="TrG5h" value="GetLastIndexOfOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="lastIndexOf" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="1TJgyj" id="3vbGFVPnqyJ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="argument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="u1zR62s$iQ" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7PXIfgo7YBM">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="foreach loop over multiple variables" />
+    <property role="TrG5h" value="MultiForEachStatement" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="foreach" />
+    <property role="34LRSv" value="foreach" />
+    <ref role="1TJDcQ" to="tpee:gMLF5Fu" resolve="AbstractLoopStatement" />
+    <node concept="1TJgyj" id="7PXIfgo7YCm" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="forEach" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="7PXIfgo7YCl" resolve="MultiForEachPair" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7PXIfgo7YCl">
+    <property role="TrG5h" value="MultiForEachPair" />
+    <property role="3GE5qa" value="foreach" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7PXIfgo7YD2" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="variable" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7PXIfgo7YCo" resolve="MultiForEachVariable" />
+    </node>
+    <node concept="1TJgyj" id="7PXIfgo7YCn" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="input" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7PXIfgo7YCo">
+    <property role="TrG5h" value="MultiForEachVariable" />
+    <property role="3GE5qa" value="foreach" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="7PXIfgo7YCp" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="7PXIfgo7YCq" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="PrWs8" id="7PXIfgo7YCr" role="PzmwI">
+      <ref role="PrY4T" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7cq3qQ1ylWm">
+    <property role="TrG5h" value="MultiForEachVariableReference" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="foreach" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="7cq3qQ1yojP" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="variable" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7PXIfgo7YCo" resolve="MultiForEachVariable" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6bxRKqX8naM">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="abstract collection type" />
+    <property role="TrG5h" value="CollectionType" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="collection" />
+    <property role="34LRSv" value="collection" />
+    <ref role="1TJDcQ" node="4VG9JMUYcer" resolve="AbstractContainerType" />
+    <node concept="PrWs8" id="3zZky3wItfV" role="PzmwI">
+      <ref role="PrY4T" to="tpee:3zZky3wF74d" resolve="IGenericType" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="3Kd2kb3ZmV8">
+    <property role="TrG5h" value="ICollectionOperation" />
+    <node concept="PrWs8" id="3Kd2kb3ZmV9" role="PrDN$">
+      <ref role="PrY4T" node="1QTcovZLdw8" resolve="IContainerOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2cfuxy_EWU0">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="unmodifiable collection" />
+    <property role="TrG5h" value="AsUnmodifiableOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="collection" />
+    <property role="34LRSv" value="asUnmodifiable" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+    <node concept="PrWs8" id="2cfuxy_EWU1" role="PzmwI">
+      <ref role="PrY4T" node="3Kd2kb3ZmV8" resolve="ICollectionOperation" />
+    </node>
+    <node concept="PrWs8" id="2cfuxy_EWU3" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhrwL" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVR" resolve="IApplicableToCollection" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3ZZC$G5AWQ5">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="synchronized collection" />
+    <property role="TrG5h" value="AsSynchronizedOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="collection" />
+    <property role="34LRSv" value="asSynchronized" />
+    <ref role="1TJDcQ" node="u1zR62sAAH" resolve="NoArgumentsSequenceOperation" />
+    <node concept="PrWs8" id="3ZZC$G5AWQc" role="PzmwI">
+      <ref role="PrY4T" node="3Kd2kb3ZmV8" resolve="ICollectionOperation" />
+    </node>
+    <node concept="PrWs8" id="3ZZC$G5AWQd" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhrwD" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVR" resolve="IApplicableToCollection" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3ZZC$G5C4un">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="select elements of the specified type" />
+    <property role="TrG5h" value="OfTypeOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="sequence" />
+    <property role="34LRSv" value="ofType" />
+    <ref role="1TJDcQ" node="gKAMqbp" resolve="SequenceOperation" />
+    <node concept="1TJgyj" id="3ZZC$G5C4uC" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="requestedType" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4WpIEzn$ATp">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="add an element and test the outcome" />
+    <property role="TrG5h" value="TestAddElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="collection" />
+    <property role="34LRSv" value="testAdd" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="PrWs8" id="4WpIEzn$ATx" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhFxD" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVR" resolve="IApplicableToCollection" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3y8C3e6z4Y_">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="remove an element and test the outcome" />
+    <property role="TrG5h" value="TestRemoveElementOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="collection" />
+    <property role="34LRSv" value="testRemove" />
+    <ref role="1TJDcQ" node="u1zR62s$iP" resolve="SingleArgumentSequenceOperation" />
+    <node concept="PrWs8" id="3y8C3e6z4YA" role="PzmwI">
+      <ref role="PrY4T" node="1QTcovZLYvJ" resolve="IListOperation" />
+    </node>
+    <node concept="PrWs8" id="5cL0w3DhFxJ" role="PzmwI">
+      <ref role="PrY4T" node="5cL0w3CQuVR" resolve="IApplicableToCollection" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="5cL0w3CQuFQ">
+    <property role="TrG5h" value="IApplicableToNothing" />
+    <property role="3GE5qa" value="applicable" />
+  </node>
+  <node concept="PlHQZ" id="5cL0w3CQuVR">
+    <property role="TrG5h" value="IApplicableToCollection" />
+    <property role="3GE5qa" value="applicable" />
+    <node concept="PrWs8" id="5cL0w3CQIEk" role="PrDN$">
+      <ref role="PrY4T" node="5cL0w3CQuVS" resolve="IApplicableToList" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="5cL0w3CQuVS">
+    <property role="TrG5h" value="IApplicableToList" />
+    <property role="3GE5qa" value="applicable" />
+    <node concept="PrWs8" id="5cL0w3CQuVT" role="PrDN$">
+      <ref role="PrY4T" node="5cL0w3CQuFQ" resolve="IApplicableToNothing" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="5cL0w3CQuVV">
+    <property role="TrG5h" value="IApplicableToDeque" />
+    <property role="3GE5qa" value="applicable" />
+    <node concept="PrWs8" id="5cL0w3CQIEo" role="PrDN$">
+      <ref role="PrY4T" node="5cL0w3CQuFQ" resolve="IApplicableToNothing" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="5cL0w3CQuVW">
+    <property role="TrG5h" value="IApplicableToQueue" />
+    <property role="3GE5qa" value="applicable" />
+    <node concept="PrWs8" id="5cL0w3CQIEs" role="PrDN$">
+      <ref role="PrY4T" node="5cL0w3CQuVV" resolve="IApplicableToDeque" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="5cL0w3CQuVX">
+    <property role="TrG5h" value="IApplicableToStack" />
+    <property role="3GE5qa" value="applicable" />
+    <node concept="PrWs8" id="5cL0w3D4TUi" role="PrDN$">
+      <ref role="PrY4T" node="5cL0w3CQuVV" resolve="IApplicableToDeque" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5BMIbapPyVK">
+    <property role="2_RsDV" value="root" />
+    <property role="TrG5h" value="MapAsSequenceVarRef" />
+    <property role="3GE5qa" value="impl" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="5BMIbapPIsF" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="original" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz7vLUo" resolve="VariableReference" />
+    </node>
+  </node>
 </model>
 

@@ -1,3 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b92pmsvxsnepxr8537iwt1bsf8pdozb" />
+<dependencies version="2" modelHash="d2mg1l8293d4boitwz7k4f1yjk4dis8">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="5t7vko7lmcdqgrvjfpbb7ytumq3o2g7" />
+  <common hash="-cvzgkipb1zh0swjt01sj7p685tmaa6m" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="121824560294376345" name="PaletteElement" hash="2maue7gc4d8weyk8a2n60w9pydxnptq">
+    <file name="PaletteElement.java" />
+  </source>
+  <source id="121824560294376355" name="PaletteActionGroup" hash="ecck6f1auocbcyph98opudmbfdpyuo3">
+    <file name="PaletteActionGroup.java" />
+  </source>
+  <source id="121824560294376372" name="PaletteAction" hash="7fjtebalp388e8zo7fyvr4h7dcl22vt">
+    <file name="PaletteAction.java" />
+  </source>
+  <source id="121824560294376375" name="PaletteSimpleAction" hash="87f277kewcr3c6h7vaxppnm7wbmy9b">
+    <file name="PaletteSimpleAction.java" />
+  </source>
+  <source id="121824560294376382" name="PaletteToggleAction" hash="dvqeighhyyb7pij6xcawcwuspogz186">
+    <file name="PaletteToggleAction.java" />
+  </source>
+  <source id="4394877045815025858" name="PaletteSeparator" hash="45sg94anb2z1fiwi5oz59lf9cwh4yob">
+    <file name="PaletteSeparator.java" />
+  </source>
+</dependencies>
 

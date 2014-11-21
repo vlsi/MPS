@@ -10,59 +10,29 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="TestMethod_BehaviorDescriptor.java">
-      <unit at="9,0,29,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethod_BehaviorDescriptor" />
-    </file>
-    <file name="ITestCase_BehaviorDescriptor.java">
-      <unit at="9,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor" />
-    </file>
-    <file name="AssertIsNull_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertIsNull_BehaviorDescriptor" />
-    </file>
-    <file name="Fail_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.Fail_BehaviorDescriptor" />
-    </file>
-    <file name="TestMethodList_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethodList_BehaviorDescriptor" />
-    </file>
-    <file name="Message_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.Message_BehaviorDescriptor" />
-    </file>
-    <file name="MessageHolder_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.MessageHolder_BehaviorDescriptor" />
-    </file>
-    <file name="AssertTrue_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertTrue_BehaviorDescriptor" />
-    </file>
-    <file name="ITestable_BehaviorDescriptor.java">
-      <unit at="7,0,10,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor" />
+    <file name="AfterTest_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AfterTest_BehaviorDescriptor" />
     </file>
     <file name="AssertEquals_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertEquals_BehaviorDescriptor" />
     </file>
-    <file name="AssertThrows_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertThrows_BehaviorDescriptor" />
-    </file>
-    <file name="AssertSame_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertSame_BehaviorDescriptor" />
+    <file name="AssertFalse_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertFalse_BehaviorDescriptor" />
     </file>
     <file name="AssertInNotNull_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertInNotNull_BehaviorDescriptor" />
     </file>
-    <file name="ITestMethod_BehaviorDescriptor.java">
-      <unit at="7,0,11,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor" />
+    <file name="AssertIsNull_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertIsNull_BehaviorDescriptor" />
     </file>
-    <file name="AssertFalse_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertFalse_BehaviorDescriptor" />
+    <file name="AssertSame_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertSame_BehaviorDescriptor" />
     </file>
-    <file name="PrepareMethod_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.PrepareMethod_BehaviorDescriptor" />
+    <file name="AssertThrows_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertThrows_BehaviorDescriptor" />
     </file>
-    <file name="AfterTest_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AfterTest_BehaviorDescriptor" />
-    </file>
-    <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,48,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BehaviorAspectDescriptor" />
+    <file name="AssertTrue_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertTrue_BehaviorDescriptor" />
     </file>
     <file name="BTestCase_BehaviorDescriptor.java">
       <unit at="11,0,40,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_BehaviorDescriptor" />
@@ -70,8 +40,38 @@
     <file name="BeforeTest_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BeforeTest_BehaviorDescriptor" />
     </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,48,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BehaviorAspectDescriptor" />
+    </file>
     <file name="BinaryAssert_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BinaryAssert_BehaviorDescriptor" />
+    </file>
+    <file name="Fail_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.Fail_BehaviorDescriptor" />
+    </file>
+    <file name="ITestCase_BehaviorDescriptor.java">
+      <unit at="9,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor" />
+    </file>
+    <file name="ITestMethod_BehaviorDescriptor.java">
+      <unit at="7,0,11,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor" />
+    </file>
+    <file name="ITestable_BehaviorDescriptor.java">
+      <unit at="7,0,10,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor" />
+    </file>
+    <file name="MessageHolder_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.MessageHolder_BehaviorDescriptor" />
+    </file>
+    <file name="Message_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.Message_BehaviorDescriptor" />
+    </file>
+    <file name="PrepareMethod_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.PrepareMethod_BehaviorDescriptor" />
+    </file>
+    <file name="TestMethodList_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethodList_BehaviorDescriptor" />
+    </file>
+    <file name="TestMethod_BehaviorDescriptor.java">
+      <unit at="9,0,29,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethod_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)/1213877238815">

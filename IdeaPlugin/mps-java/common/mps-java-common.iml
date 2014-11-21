@@ -19,13 +19,19 @@
     <output-test url="file://$MODULE_DIR$/testclasses" />
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
-    <content url="file://$MODULE_DIR$/../../../plugins/mpsjava/basePlatform">
-      <sourceFolder url="file://$MODULE_DIR$/../../../plugins/mpsjava/basePlatform/source_gen" isTestSource="false" />
-    </content>
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="mps.MPS.Core_auto" level="project" />
     <orderEntry type="library" name="mps.MPS.OpenAPI_auto" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$PLUGINS_PATH$/mps-java/lib/mps-java-common.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

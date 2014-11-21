@@ -1,493 +1,503 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:54928e3f-958a-4bc2-abbc-5dd015b1b824(jetbrains.mps.build.sandbox.anttask)">
+<model ref="r:54928e3f-958a-4bc2-abbc-5dd015b1b824(jetbrains.mps.build.sandbox.anttask)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396949036126" name="jetbrains.mps.core.xml.structure.XmlCommentLine" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396949069645" name="jetbrains.mps.core.xml.structure.XmlEntityRef" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299064" name="jetbrains.mps.core.xml.structure.XmlComment" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299066" name="jetbrains.mps.core.xml.structure.XmlCDATA" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681515200" name="jetbrains.mps.core.xml.structure.XmlFile" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6786756355279841993" name="jetbrains.mps.core.xml.structure.XmlDocument" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339/1622293396948953704" name="value" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299066/1622293396948985395" name="content" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396949036126/1622293396949036127" name="text" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396949069645/1622293396949069711" name="entityName" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415862" name="tagName" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923/6666499814681447926" name="attrName" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" name="text" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6999033275467544021" name="shortEmptyNotation" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/1622293396948928802" name="content" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299064/1622293396949036151" name="lines" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6786756355279841993/6666499814681299055" name="rootElement" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415861" name="attributes" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681515200/6666499814681515201" name="document" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923/6666499814681541918" name="value" />
-  </debugInfo>
   <languages>
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" version="-1" index="ki41" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="ki41.6666499814681515200" id="5738701198683704599" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="genxmltest" />
-      <node concept="ki41.6786756355279841993" id="5738701198683704600" role="ki41.6666499814681515200.6666499814681515201" info="ng">
-        <node concept="ki41.6666499814681415858" id="1479037094930484895" role="ki41.6786756355279841993.6666499814681299055" info="ng">
-          <property role="ki41.6666499814681415858.6666499814681415862" value="project" />
-          <node concept="ki41.6666499814681415858" id="1479037094930576001" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="property" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="1479037094930576002" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-              <node concept="ki41.6666499814681541919" id="1479037094930576004" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="mps.home" />
+  <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml">
+      <concept id="6666499814681515200" name="jetbrains.mps.core.xml.structure.XmlFile" flags="ng" index="2pMbU2">
+        <child id="6666499814681515201" name="document" index="2pMbU3" />
+      </concept>
+      <concept id="6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" flags="ng" index="2pMdtt">
+        <property id="6666499814681541920" name="text" index="2pMdty" />
+      </concept>
+      <concept id="6666499814681299066" name="jetbrains.mps.core.xml.structure.XmlCDATA" flags="ng" index="2pNm8S">
+        <property id="1622293396948985395" name="content" index="3o6aOc" />
+      </concept>
+      <concept id="6666499814681299064" name="jetbrains.mps.core.xml.structure.XmlComment" flags="nn" index="2pNm8U">
+        <child id="1622293396949036151" name="lines" index="3o66t8" />
+      </concept>
+      <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
+        <property id="6999033275467544021" name="shortEmptyNotation" index="qg3DV" />
+        <property id="6666499814681415862" name="tagName" index="2pNNFO" />
+        <child id="6666499814681415861" name="attributes" index="2pNNFR" />
+        <child id="1622293396948928802" name="content" index="3o6s8t" />
+      </concept>
+      <concept id="6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" flags="ng" index="2pNUuL">
+        <property id="6666499814681447926" name="attrName" index="2pNUuO" />
+        <child id="6666499814681541918" name="value" index="2pMdts" />
+      </concept>
+      <concept id="1622293396949036126" name="jetbrains.mps.core.xml.structure.XmlCommentLine" flags="nn" index="3o66tx">
+        <property id="1622293396949036127" name="text" index="3o66tw" />
+      </concept>
+      <concept id="1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" flags="nn" index="3o6iSG">
+        <property id="1622293396948953704" name="value" index="3o6i5n" />
+      </concept>
+      <concept id="1622293396949069645" name="jetbrains.mps.core.xml.structure.XmlEntityRef" flags="ng" index="3o7YhM">
+        <property id="1622293396949069711" name="entityName" index="3o7YiK" />
+      </concept>
+      <concept id="6786756355279841993" name="jetbrains.mps.core.xml.structure.XmlDocument" flags="ng" index="3rIKKV">
+        <child id="6666499814681299055" name="rootElement" index="2pNm8H" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="2pMbU2" id="4YzX_njDCOn">
+    <property role="TrG5h" value="genxmltest" />
+    <node concept="3rIKKV" id="4YzX_njDCOo" role="2pMbU3">
+      <node concept="2pNNFK" id="1i6A6rcXgUv" role="2pNm8H">
+        <property role="2pNNFO" value="project" />
+        <node concept="2pNNFK" id="1i6A6rcXBa1" role="3o6s8t">
+          <property role="2pNNFO" value="property" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="1i6A6rcXBa2" role="2pNNFR">
+            <property role="2pNUuO" value="name" />
+            <node concept="2pMdtt" id="1i6A6rcXBa4" role="2pMdts">
+              <property role="2pMdty" value="mps.home" />
+            </node>
+          </node>
+          <node concept="2pNUuL" id="1i6A6rcXBa5" role="2pNNFR">
+            <property role="2pNUuO" value="value" />
+            <node concept="2pMdtt" id="1i6A6rcXBa6" role="2pMdts">
+              <property role="2pMdty" value="${basedir}/../../../../../.." />
+            </node>
+          </node>
+        </node>
+        <node concept="2pNNFK" id="1i6A6rcXh3d" role="3o6s8t">
+          <property role="2pNNFO" value="property" />
+          <property role="qg3DV" value="true" />
+          <node concept="2pNUuL" id="1i6A6rcXh3e" role="2pNNFR">
+            <property role="2pNUuO" value="name" />
+            <node concept="2pMdtt" id="1i6A6rcXh3f" role="2pMdts">
+              <property role="2pMdty" value="runtime.dir" />
+            </node>
+          </node>
+          <node concept="2pNUuL" id="1i6A6rcXh3g" role="2pNNFR">
+            <property role="2pNUuO" value="value" />
+            <node concept="2pMdtt" id="1i6A6rcXh3h" role="2pMdts">
+              <property role="2pMdty" value="${mps.home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen" />
+            </node>
+          </node>
+        </node>
+        <node concept="3o6iSG" id="4YzX_njDCOX" role="3o6s8t" />
+        <node concept="2pNNFK" id="tKbzP52o6G" role="3o6s8t">
+          <property role="2pNNFO" value="path" />
+          <node concept="2pNNFK" id="tKbzP52o6K" role="3o6s8t">
+            <property role="2pNNFO" value="fileset" />
+            <property role="qg3DV" value="true" />
+            <node concept="2pNUuL" id="tKbzP52o6L" role="2pNNFR">
+              <property role="2pNUuO" value="dir" />
+              <node concept="2pMdtt" id="tKbzP52o6M" role="2pMdts">
+                <property role="2pMdty" value="${mps.home}/lib" />
               </node>
             </node>
-            <node concept="ki41.6666499814681447923" id="1479037094930576005" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="value" />
-              <node concept="ki41.6666499814681541919" id="1479037094930576006" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="${basedir}/../../../../../.." />
+            <node concept="2pNUuL" id="tKbzP52o9Z" role="2pNNFR">
+              <property role="2pNUuO" value="includes" />
+              <node concept="2pMdtt" id="tKbzP52oa0" role="2pMdts">
+                <property role="2pMdty" value="*.jar" />
               </node>
             </node>
           </node>
-          <node concept="ki41.6666499814681415858" id="1479037094930485453" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="property" />
-            <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-            <node concept="ki41.6666499814681447923" id="1479037094930485454" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-              <node concept="ki41.6666499814681541919" id="1479037094930485455" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="runtime.dir" />
+          <node concept="2pNNFK" id="tKbzP52o7z" role="3o6s8t">
+            <property role="2pNNFO" value="dirset" />
+            <node concept="2pNUuL" id="tKbzP52oa1" role="2pNNFR">
+              <property role="2pNUuO" value="dir" />
+              <node concept="2pMdtt" id="tKbzP52oa2" role="2pMdts">
+                <property role="2pMdty" value="${mps.home}/core" />
               </node>
             </node>
-            <node concept="ki41.6666499814681447923" id="1479037094930485456" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="value" />
-              <node concept="ki41.6666499814681541919" id="1479037094930485457" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="${mps.home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen" />
-              </node>
-            </node>
-          </node>
-          <node concept="ki41.1622293396948952339" id="5738701198683704637" role="ki41.6666499814681415858.1622293396948928802" info="nn" />
-          <node concept="ki41.6666499814681415858" id="535979196343222700" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="path" />
-            <node concept="ki41.6666499814681415858" id="535979196343222704" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="fileset" />
-              <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-              <node concept="ki41.6666499814681447923" id="535979196343222705" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="dir" />
-                <node concept="ki41.6666499814681541919" id="535979196343222706" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="${mps.home}/lib" />
-                </node>
-              </node>
-              <node concept="ki41.6666499814681447923" id="535979196343222911" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="includes" />
-                <node concept="ki41.6666499814681541919" id="535979196343222912" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="*.jar" />
+            <node concept="2pNNFK" id="tKbzP52oa3" role="3o6s8t">
+              <property role="2pNNFO" value="include" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="tKbzP52oa4" role="2pNNFR">
+                <property role="2pNUuO" value="name" />
+                <node concept="2pMdtt" id="tKbzP52oa5" role="2pMdts">
+                  <property role="2pMdty" value="**/classes" />
                 </node>
               </node>
             </node>
-            <node concept="ki41.6666499814681415858" id="535979196343222755" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="dirset" />
-              <node concept="ki41.6666499814681447923" id="535979196343222913" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="dir" />
-                <node concept="ki41.6666499814681541919" id="535979196343222914" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="${mps.home}/core" />
+            <node concept="2pNNFK" id="tKbzP52oaa" role="3o6s8t">
+              <property role="2pNNFO" value="include" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="tKbzP52oab" role="2pNNFR">
+                <property role="2pNUuO" value="name" />
+                <node concept="2pMdtt" id="tKbzP52oac" role="2pMdts">
+                  <property role="2pMdty" value="**/classes_gen" />
                 </node>
-              </node>
-              <node concept="ki41.6666499814681415858" id="535979196343222915" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="include" />
-                <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                <node concept="ki41.6666499814681447923" id="535979196343222916" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-                  <node concept="ki41.6666499814681541919" id="535979196343222917" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="**/classes" />
-                  </node>
-                </node>
-              </node>
-              <node concept="ki41.6666499814681415858" id="535979196343222922" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="include" />
-                <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                <node concept="ki41.6666499814681447923" id="535979196343222923" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-                  <node concept="ki41.6666499814681541919" id="535979196343222924" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="**/classes_gen" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="ki41.6666499814681415858" id="535979196343222926" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="dirset" />
-              <node concept="ki41.6666499814681447923" id="535979196343222927" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="dir" />
-                <node concept="ki41.6666499814681541919" id="535979196343222928" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="${mps.home}/languages/baseLanguage/closures/runtime" />
-                </node>
-              </node>
-              <node concept="ki41.6666499814681415858" id="535979196343222929" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="include" />
-                <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                <node concept="ki41.6666499814681447923" id="535979196343222930" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-                  <node concept="ki41.6666499814681541919" id="535979196343222931" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="**/classes" />
-                  </node>
-                </node>
-              </node>
-              <node concept="ki41.6666499814681415858" id="535979196343222932" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="include" />
-                <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                <node concept="ki41.6666499814681447923" id="535979196343222933" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-                  <node concept="ki41.6666499814681541919" id="535979196343222934" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="**/classes_gen" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="ki41.6666499814681415858" id="535979196343222935" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="dirset" />
-              <node concept="ki41.6666499814681447923" id="535979196343222936" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="dir" />
-                <node concept="ki41.6666499814681541919" id="535979196343222937" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="${mps.home}/languages/baseLanguage/collections/runtime" />
-                </node>
-              </node>
-              <node concept="ki41.6666499814681415858" id="535979196343222938" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="include" />
-                <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                <node concept="ki41.6666499814681447923" id="535979196343222939" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-                  <node concept="ki41.6666499814681541919" id="535979196343222940" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="**/classes" />
-                  </node>
-                </node>
-              </node>
-              <node concept="ki41.6666499814681415858" id="535979196343222941" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="include" />
-                <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                <node concept="ki41.6666499814681447923" id="535979196343222942" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-                  <node concept="ki41.6666499814681541919" id="535979196343222943" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="**/classes_gen" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="ki41.6666499814681415858" id="535979196343222944" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="dirset" />
-              <node concept="ki41.6666499814681447923" id="535979196343222945" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="dir" />
-                <node concept="ki41.6666499814681541919" id="535979196343222946" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="${mps.home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" />
-                </node>
-              </node>
-              <node concept="ki41.6666499814681415858" id="535979196343222947" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="include" />
-                <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                <node concept="ki41.6666499814681447923" id="535979196343222948" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-                  <node concept="ki41.6666499814681541919" id="535979196343222949" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="**/classes" />
-                  </node>
-                </node>
-              </node>
-              <node concept="ki41.6666499814681415858" id="535979196343222950" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="include" />
-                <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                <node concept="ki41.6666499814681447923" id="535979196343222951" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-                  <node concept="ki41.6666499814681541919" id="535979196343222952" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="**/classes_gen" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="ki41.6666499814681415858" id="535979196343222953" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-              <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-              <node concept="ki41.6666499814681447923" id="535979196343222954" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="location" />
-                <node concept="ki41.6666499814681541919" id="535979196343222955" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="${mps.home}/workbench/typesystemUi/classes" />
-                </node>
-              </node>
-            </node>
-            <node concept="ki41.6666499814681447923" id="535979196343222701" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="id" />
-              <node concept="ki41.6666499814681541919" id="535979196343222702" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="mps.classpath" />
               </node>
             </node>
           </node>
-          <node concept="ki41.1622293396948952339" id="535979196343222692" role="ki41.6666499814681415858.1622293396948928802" info="nn" />
-          <node concept="ki41.6666499814681447923" id="1479037094930484896" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-            <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-            <node concept="ki41.6666499814681541919" id="1479037094930484897" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-              <property role="ki41.6666499814681541919.6666499814681541920" value="test-genxml" />
+          <node concept="2pNNFK" id="tKbzP52oae" role="3o6s8t">
+            <property role="2pNNFO" value="dirset" />
+            <node concept="2pNUuL" id="tKbzP52oaf" role="2pNNFR">
+              <property role="2pNUuO" value="dir" />
+              <node concept="2pMdtt" id="tKbzP52oag" role="2pMdts">
+                <property role="2pMdty" value="${mps.home}/languages/baseLanguage/closures/runtime" />
+              </node>
+            </node>
+            <node concept="2pNNFK" id="tKbzP52oah" role="3o6s8t">
+              <property role="2pNNFO" value="include" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="tKbzP52oai" role="2pNNFR">
+                <property role="2pNUuO" value="name" />
+                <node concept="2pMdtt" id="tKbzP52oaj" role="2pMdts">
+                  <property role="2pMdty" value="**/classes" />
+                </node>
+              </node>
+            </node>
+            <node concept="2pNNFK" id="tKbzP52oak" role="3o6s8t">
+              <property role="2pNNFO" value="include" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="tKbzP52oal" role="2pNNFR">
+                <property role="2pNUuO" value="name" />
+                <node concept="2pMdtt" id="tKbzP52oam" role="2pMdts">
+                  <property role="2pMdty" value="**/classes_gen" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2pNNFK" id="tKbzP52oan" role="3o6s8t">
+            <property role="2pNNFO" value="dirset" />
+            <node concept="2pNUuL" id="tKbzP52oao" role="2pNNFR">
+              <property role="2pNUuO" value="dir" />
+              <node concept="2pMdtt" id="tKbzP52oap" role="2pMdts">
+                <property role="2pMdty" value="${mps.home}/languages/baseLanguage/collections/runtime" />
+              </node>
+            </node>
+            <node concept="2pNNFK" id="tKbzP52oaq" role="3o6s8t">
+              <property role="2pNNFO" value="include" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="tKbzP52oar" role="2pNNFR">
+                <property role="2pNUuO" value="name" />
+                <node concept="2pMdtt" id="tKbzP52oas" role="2pMdts">
+                  <property role="2pMdty" value="**/classes" />
+                </node>
+              </node>
+            </node>
+            <node concept="2pNNFK" id="tKbzP52oat" role="3o6s8t">
+              <property role="2pNNFO" value="include" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="tKbzP52oau" role="2pNNFR">
+                <property role="2pNUuO" value="name" />
+                <node concept="2pMdtt" id="tKbzP52oav" role="2pMdts">
+                  <property role="2pMdty" value="**/classes_gen" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2pNNFK" id="tKbzP52oaw" role="3o6s8t">
+            <property role="2pNNFO" value="dirset" />
+            <node concept="2pNUuL" id="tKbzP52oax" role="2pNNFR">
+              <property role="2pNUuO" value="dir" />
+              <node concept="2pMdtt" id="tKbzP52oay" role="2pMdts">
+                <property role="2pMdty" value="${mps.home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" />
+              </node>
+            </node>
+            <node concept="2pNNFK" id="tKbzP52oaz" role="3o6s8t">
+              <property role="2pNNFO" value="include" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="tKbzP52oa$" role="2pNNFR">
+                <property role="2pNUuO" value="name" />
+                <node concept="2pMdtt" id="tKbzP52oa_" role="2pMdts">
+                  <property role="2pMdty" value="**/classes" />
+                </node>
+              </node>
+            </node>
+            <node concept="2pNNFK" id="tKbzP52oaA" role="3o6s8t">
+              <property role="2pNNFO" value="include" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="tKbzP52oaB" role="2pNNFR">
+                <property role="2pNUuO" value="name" />
+                <node concept="2pMdtt" id="tKbzP52oaC" role="2pMdts">
+                  <property role="2pMdty" value="**/classes_gen" />
+                </node>
+              </node>
             </node>
           </node>
-          <node concept="ki41.6666499814681447923" id="1479037094930485448" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-            <property role="ki41.6666499814681447923.6666499814681447926" value="basedir" />
-            <node concept="ki41.6666499814681541919" id="1479037094930485449" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-              <property role="ki41.6666499814681541919.6666499814681541920" value="./../../../../.." />
+          <node concept="2pNNFK" id="tKbzP52oaD" role="3o6s8t">
+            <property role="2pNNFO" value="pathelement" />
+            <property role="qg3DV" value="true" />
+            <node concept="2pNUuL" id="tKbzP52oaE" role="2pNNFR">
+              <property role="2pNUuO" value="location" />
+              <node concept="2pMdtt" id="tKbzP52oaF" role="2pMdts">
+                <property role="2pMdty" value="${mps.home}/workbench/typesystemUi/classes" />
+              </node>
             </node>
           </node>
-          <node concept="ki41.6666499814681415858" id="1479037094930484903" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-            <property role="ki41.6666499814681415858.6666499814681415862" value="target" />
-            <node concept="ki41.6666499814681415858" id="1479037094930501411" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="path" />
-              <node concept="ki41.6666499814681447923" id="1479037094930501412" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="id" />
-                <node concept="ki41.6666499814681541919" id="1479037094930501413" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="task.classpath" />
+          <node concept="2pNUuL" id="tKbzP52o6H" role="2pNNFR">
+            <property role="2pNUuO" value="id" />
+            <node concept="2pMdtt" id="tKbzP52o6I" role="2pMdts">
+              <property role="2pMdty" value="mps.classpath" />
+            </node>
+          </node>
+        </node>
+        <node concept="3o6iSG" id="tKbzP52o6$" role="3o6s8t" />
+        <node concept="2pNUuL" id="1i6A6rcXgUw" role="2pNNFR">
+          <property role="2pNUuO" value="name" />
+          <node concept="2pMdtt" id="1i6A6rcXgUx" role="2pMdts">
+            <property role="2pMdty" value="test-genxml" />
+          </node>
+        </node>
+        <node concept="2pNUuL" id="1i6A6rcXh38" role="2pNNFR">
+          <property role="2pNUuO" value="basedir" />
+          <node concept="2pMdtt" id="1i6A6rcXh39" role="2pMdts">
+            <property role="2pMdty" value="./../../../../.." />
+          </node>
+        </node>
+        <node concept="2pNNFK" id="1i6A6rcXgUB" role="3o6s8t">
+          <property role="2pNNFO" value="target" />
+          <node concept="2pNNFK" id="1i6A6rcXkWz" role="3o6s8t">
+            <property role="2pNNFO" value="path" />
+            <node concept="2pNUuL" id="1i6A6rcXkW$" role="2pNNFR">
+              <property role="2pNUuO" value="id" />
+              <node concept="2pMdtt" id="1i6A6rcXkW_" role="2pMdts">
+                <property role="2pMdty" value="task.classpath" />
+              </node>
+            </node>
+            <node concept="2pNNFK" id="1i6A6rcXkWA" role="3o6s8t">
+              <property role="2pNNFO" value="pathelement" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="1i6A6rcXkWB" role="2pNNFR">
+                <property role="2pNUuO" value="location" />
+                <node concept="2pMdtt" id="1i6A6rcXkWC" role="2pMdts">
+                  <property role="2pMdty" value="${runtime.dir}" />
                 </node>
               </node>
-              <node concept="ki41.6666499814681415858" id="1479037094930501414" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-                <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                <node concept="ki41.6666499814681447923" id="1479037094930501415" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="location" />
-                  <node concept="ki41.6666499814681541919" id="1479037094930501416" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="${runtime.dir}" />
+            </node>
+            <node concept="2pNNFK" id="5Npqc2Yfvpj" role="3o6s8t">
+              <property role="2pNNFO" value="pathelement" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="5Npqc2Yfvpk" role="2pNNFR">
+                <property role="2pNUuO" value="location" />
+                <node concept="2pMdtt" id="5Npqc2Yfvpl" role="2pMdts">
+                  <property role="2pMdty" value="${mps.home}/core/ant/classes" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2pNNFK" id="1i6A6rcXh6r" role="3o6s8t">
+            <property role="2pNNFO" value="taskdef" />
+            <property role="qg3DV" value="true" />
+            <node concept="2pNUuL" id="1i6A6rcXh6s" role="2pNNFR">
+              <property role="2pNUuO" value="file" />
+              <node concept="2pMdtt" id="1i6A6rcXh6t" role="2pMdts">
+                <property role="2pMdty" value="${runtime.dir}/jetbrains/mps/build/mps/runtime/anttask/antlib.xml" />
+              </node>
+            </node>
+            <node concept="2pNUuL" id="1i6A6rcXh6u" role="2pNNFR">
+              <property role="2pNUuO" value="classpathref" />
+              <node concept="2pMdtt" id="1i6A6rcXh6v" role="2pMdts">
+                <property role="2pMdty" value="task.classpath" />
+              </node>
+            </node>
+          </node>
+          <node concept="3o6iSG" id="4YzX_njDCOZ" role="3o6s8t" />
+          <node concept="2pNNFK" id="5Npqc2YfLQh" role="3o6s8t">
+            <property role="2pNNFO" value="mps.gen.module.xml" />
+            <node concept="2pNNFK" id="tKbzP52kVH" role="3o6s8t">
+              <property role="2pNNFO" value="classpath" />
+              <node concept="2pNNFK" id="tKbzP52oaN" role="3o6s8t">
+                <property role="2pNNFO" value="path" />
+                <property role="qg3DV" value="true" />
+                <node concept="2pNUuL" id="tKbzP52oaO" role="2pNNFR">
+                  <property role="2pNUuO" value="refid" />
+                  <node concept="2pMdtt" id="tKbzP52oaP" role="2pMdts">
+                    <property role="2pMdty" value="mps.classpath" />
                   </node>
                 </node>
               </node>
-              <node concept="ki41.6666499814681415858" id="6690493898470323795" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="pathelement" />
-                <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                <node concept="ki41.6666499814681447923" id="6690493898470323796" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="location" />
-                  <node concept="ki41.6666499814681541919" id="6690493898470323797" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="${mps.home}/core/ant/classes" />
+              <node concept="2pNNFK" id="tKbzP52kVJ" role="3o6s8t">
+                <property role="2pNNFO" value="path" />
+                <property role="qg3DV" value="true" />
+                <node concept="2pNUuL" id="tKbzP52kVK" role="2pNNFR">
+                  <property role="2pNUuO" value="refid" />
+                  <node concept="2pMdtt" id="tKbzP52kVL" role="2pMdts">
+                    <property role="2pMdty" value="task.classpath" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="ki41.6666499814681415858" id="1479037094930485659" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="taskdef" />
-              <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-              <node concept="ki41.6666499814681447923" id="1479037094930485660" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="file" />
-                <node concept="ki41.6666499814681541919" id="1479037094930485661" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="${runtime.dir}/jetbrains/mps/build/mps/runtime/anttask/antlib.xml" />
-                </node>
-              </node>
-              <node concept="ki41.6666499814681447923" id="1479037094930485662" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="classpathref" />
-                <node concept="ki41.6666499814681541919" id="1479037094930485663" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="task.classpath" />
-                </node>
+            <node concept="2pNUuL" id="tKbzP52kwT" role="2pNNFR">
+              <property role="2pNUuO" value="fork" />
+              <node concept="2pMdtt" id="tKbzP52kwW" role="2pMdts">
+                <property role="2pMdty" value="true" />
               </node>
             </node>
-            <node concept="ki41.1622293396948952339" id="5738701198683704639" role="ki41.6666499814681415858.1622293396948928802" info="nn" />
-            <node concept="ki41.6666499814681415858" id="6690493898470399377" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="mps.gen.module.xml" />
-              <node concept="ki41.6666499814681415858" id="535979196343209709" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="classpath" />
-                <node concept="ki41.6666499814681415858" id="535979196343222963" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                  <property role="ki41.6666499814681415858.6666499814681415862" value="path" />
-                  <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                  <node concept="ki41.6666499814681447923" id="535979196343222964" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                    <property role="ki41.6666499814681447923.6666499814681447926" value="refid" />
-                    <node concept="ki41.6666499814681541919" id="535979196343222965" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                      <property role="ki41.6666499814681541919.6666499814681541920" value="mps.classpath" />
-                    </node>
+            <node concept="2pNNFK" id="5Npqc2YfRxb" role="3o6s8t">
+              <property role="2pNNFO" value="GenModule" />
+              <node concept="2pNUuL" id="5Npqc2YfRDW" role="2pNNFR">
+                <property role="2pNUuO" value="ref" />
+                <node concept="2pMdtt" id="5Npqc2YfRE0" role="2pMdts">
+                  <property role="2pMdty" value="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+                </node>
+              </node>
+              <node concept="2pNUuL" id="5Npqc2YfRDX" role="2pNNFR">
+                <property role="2pNUuO" value="destfile" />
+                <node concept="2pMdtt" id="5Npqc2YfRDY" role="2pMdts">
+                  <property role="2pMdty" value="module.xml" />
+                </node>
+              </node>
+              <node concept="2pNNFK" id="tKbzP525da" role="3o6s8t">
+                <property role="2pNNFO" value="sources" />
+                <property role="qg3DV" value="true" />
+                <node concept="2pNUuL" id="tKbzP525db" role="2pNNFR">
+                  <property role="2pNUuO" value="jar" />
+                  <node concept="2pMdtt" id="tKbzP525dc" role="2pMdts">
+                    <property role="2pMdty" value="${mps.home}/languages/xx/yy.jar" />
                   </node>
                 </node>
-                <node concept="ki41.6666499814681415858" id="535979196343209711" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                  <property role="ki41.6666499814681415858.6666499814681415862" value="path" />
-                  <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                  <node concept="ki41.6666499814681447923" id="535979196343209712" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                    <property role="ki41.6666499814681447923.6666499814681447926" value="refid" />
-                    <node concept="ki41.6666499814681541919" id="535979196343209713" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                      <property role="ki41.6666499814681541919.6666499814681541920" value="task.classpath" />
-                    </node>
+                <node concept="2pNUuL" id="tKbzP525dd" role="2pNNFR">
+                  <property role="2pNUuO" value="descriptor" />
+                  <node concept="2pMdtt" id="tKbzP525de" role="2pMdts">
+                    <property role="2pMdty" value="${basedir}/xx.msd" />
                   </node>
                 </node>
               </node>
-              <node concept="ki41.6666499814681447923" id="535979196343207993" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                <property role="ki41.6666499814681447923.6666499814681447926" value="fork" />
-                <node concept="ki41.6666499814681541919" id="535979196343207996" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                  <property role="ki41.6666499814681541919.6666499814681541920" value="true" />
-                </node>
-              </node>
-              <node concept="ki41.6666499814681415858" id="6690493898470422603" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="GenModule" />
-                <node concept="ki41.6666499814681447923" id="6690493898470423164" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="ref" />
-                  <node concept="ki41.6666499814681541919" id="6690493898470423168" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+              <node concept="2pNNFK" id="tKbzP525dg" role="3o6s8t">
+                <property role="2pNNFO" value="library" />
+                <node concept="2pNUuL" id="tKbzP525dh" role="2pNNFR">
+                  <property role="2pNUuO" value="jar" />
+                  <node concept="2pMdtt" id="tKbzP525di" role="2pMdts">
+                    <property role="2pMdty" value="${mps.home}/lib.jar" />
                   </node>
                 </node>
-                <node concept="ki41.6666499814681447923" id="6690493898470423165" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="destfile" />
-                  <node concept="ki41.6666499814681541919" id="6690493898470423166" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="module.xml" />
-                  </node>
+                <node concept="3o6iSG" id="tKbzP525dj" role="3o6s8t">
+                  <property role="3o6i5n" value=" runtime.dir=&quot;${runtime.dir}&quot; " />
                 </node>
-                <node concept="ki41.6666499814681415858" id="535979196343145290" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                  <property role="ki41.6666499814681415858.6666499814681415862" value="sources" />
-                  <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
-                  <node concept="ki41.6666499814681447923" id="535979196343145291" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                    <property role="ki41.6666499814681447923.6666499814681447926" value="jar" />
-                    <node concept="ki41.6666499814681541919" id="535979196343145292" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                      <property role="ki41.6666499814681541919.6666499814681541920" value="${mps.home}/languages/xx/yy.jar" />
-                    </node>
-                  </node>
-                  <node concept="ki41.6666499814681447923" id="535979196343145293" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                    <property role="ki41.6666499814681447923.6666499814681447926" value="descriptor" />
-                    <node concept="ki41.6666499814681541919" id="535979196343145294" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                      <property role="ki41.6666499814681541919.6666499814681541920" value="${basedir}/xx.msd" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="ki41.6666499814681415858" id="535979196343145296" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                  <property role="ki41.6666499814681415858.6666499814681415862" value="library" />
-                  <node concept="ki41.6666499814681447923" id="535979196343145297" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                    <property role="ki41.6666499814681447923.6666499814681447926" value="jar" />
-                    <node concept="ki41.6666499814681541919" id="535979196343145298" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                      <property role="ki41.6666499814681541919.6666499814681541920" value="${mps.home}/lib.jar" />
-                    </node>
-                  </node>
-                  <node concept="ki41.1622293396948952339" id="535979196343145299" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                    <property role="ki41.1622293396948952339.1622293396948953704" value=" runtime.dir=&quot;${runtime.dir}&quot; " />
-                  </node>
-                  <node concept="ki41.6666499814681299064" id="535979196343145300" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                    <node concept="ki41.1622293396949036126" id="535979196343145301" role="ki41.6666499814681299064.1622293396949036151" info="nn">
-                      <property role="ki41.1622293396949036126.1622293396949036127" value="test comment" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="ki41.6666499814681415858" id="535979196343145306" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                  <property role="ki41.6666499814681415858.6666499814681415862" value="e1" />
-                  <node concept="ki41.1622293396949069645" id="535979196343167914" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                    <property role="ki41.1622293396949069645.1622293396949069711" value="lt" />
-                  </node>
-                  <node concept="ki41.1622293396948952339" id="535979196343167915" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                    <property role="ki41.1622293396948952339.1622293396948953704" value="ee param=&quot;${basedir}/xx&quot;&gt;test" />
-                  </node>
-                  <node concept="ki41.1622293396949069645" id="535979196343167916" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                    <property role="ki41.1622293396949069645.1622293396949069711" value="lt" />
-                  </node>
-                  <node concept="ki41.1622293396948952339" id="535979196343167917" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                    <property role="ki41.1622293396948952339.1622293396948953704" value="/ee&gt;" />
-                  </node>
-                  <node concept="ki41.6666499814681415858" id="535979196343145308" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                    <property role="ki41.6666499814681415858.6666499814681415862" value="e2" />
-                    <node concept="ki41.1622293396948952339" id="535979196343145309" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                      <property role="ki41.1622293396948952339.1622293396948953704" value="text" />
-                    </node>
-                    <node concept="ki41.6666499814681415858" id="535979196343145310" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                      <property role="ki41.6666499814681415858.6666499814681415862" value="e3" />
-                      <node concept="ki41.6666499814681447923" id="535979196343145311" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                        <property role="ki41.6666499814681447923.6666499814681447926" value="param1" />
-                        <node concept="ki41.6666499814681541919" id="535979196343145312" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                          <property role="ki41.6666499814681541919.6666499814681541920" value="p" />
-                        </node>
-                      </node>
-                      <node concept="ki41.6666499814681299066" id="535979196343145511" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                        <property role="ki41.6666499814681299066.1622293396948985395" value="data" />
-                      </node>
-                    </node>
-                    <node concept="ki41.1622293396948952339" id="535979196343145502" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                      <property role="ki41.1622293396948952339.1622293396948953704" value="text2 " />
-                    </node>
-                    <node concept="ki41.6666499814681299064" id="535979196343145509" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                      <node concept="ki41.1622293396949036126" id="535979196343145510" role="ki41.6666499814681299064.1622293396949036151" info="nn">
-                        <property role="ki41.1622293396949036126.1622293396949036127" value="comment" />
-                      </node>
-                    </node>
+                <node concept="2pNm8U" id="tKbzP525dk" role="3o6s8t">
+                  <node concept="3o66tx" id="tKbzP525dl" role="3o66t8">
+                    <property role="3o66tw" value="test comment" />
                   </node>
                 </node>
               </node>
-              <node concept="ki41.6666499814681415858" id="5738701198683705432" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="GenModule" />
-                <node concept="ki41.6666499814681447923" id="5738701198683705437" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="ref" />
-                  <node concept="ki41.6666499814681541919" id="5738701198683705440" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-                  </node>
+              <node concept="2pNNFK" id="tKbzP525dq" role="3o6s8t">
+                <property role="2pNNFO" value="e1" />
+                <node concept="3o7YhM" id="tKbzP52aIE" role="3o6s8t">
+                  <property role="3o7YiK" value="lt" />
                 </node>
-                <node concept="ki41.6666499814681447923" id="5738701198683705438" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                  <property role="ki41.6666499814681447923.6666499814681447926" value="destfile" />
-                  <node concept="ki41.6666499814681541919" id="5738701198683705439" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                    <property role="ki41.6666499814681541919.6666499814681541920" value="bL.xml" />
-                  </node>
+                <node concept="3o6iSG" id="tKbzP52aIF" role="3o6s8t">
+                  <property role="3o6i5n" value="ee param=&quot;${basedir}/xx&quot;&gt;test" />
                 </node>
-                <node concept="ki41.1622293396948952339" id="5738701198683705435" role="ki41.6666499814681415858.1622293396948928802" info="nn" />
-              </node>
-            </node>
-            <node concept="ki41.6666499814681447923" id="1479037094930484904" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-              <property role="ki41.6666499814681447923.6666499814681447926" value="name" />
-              <node concept="ki41.6666499814681541919" id="1479037094930484905" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                <property role="ki41.6666499814681541919.6666499814681541920" value="test" />
-              </node>
-            </node>
-            <node concept="ki41.1622293396948952339" id="535979196343223169" role="ki41.6666499814681415858.1622293396948928802" info="nn" />
-            <node concept="ki41.6666499814681299064" id="535979196343223171" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-              <node concept="ki41.1622293396949036126" id="535979196343223172" role="ki41.6666499814681299064.1622293396949036151" info="nn">
-                <property role="ki41.1622293396949036126.1622293396949036127" value="just test of echoxml task" />
-              </node>
-            </node>
-            <node concept="ki41.6666499814681415858" id="535979196343145512" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-              <property role="ki41.6666499814681415858.6666499814681415862" value="echoxml" />
-              <node concept="ki41.6666499814681415858" id="535979196343145513" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="e1" />
-                <node concept="ki41.1622293396948952339" id="535979196343145514" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                  <property role="ki41.1622293396948952339.1622293396948953704" value="test" />
+                <node concept="3o7YhM" id="tKbzP52aIG" role="3o6s8t">
+                  <property role="3o7YiK" value="lt" />
                 </node>
-                <node concept="ki41.6666499814681415858" id="535979196343145515" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                  <property role="ki41.6666499814681415858.6666499814681415862" value="e2" />
-                  <node concept="ki41.6666499814681299064" id="535979196343145516" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                    <node concept="ki41.1622293396949036126" id="535979196343145517" role="ki41.6666499814681299064.1622293396949036151" info="nn">
-                      <property role="ki41.1622293396949036126.1622293396949036127" value="comment" />
-                    </node>
+                <node concept="3o6iSG" id="tKbzP52aIH" role="3o6s8t">
+                  <property role="3o6i5n" value="/ee&gt;" />
+                </node>
+                <node concept="2pNNFK" id="tKbzP525ds" role="3o6s8t">
+                  <property role="2pNNFO" value="e2" />
+                  <node concept="3o6iSG" id="tKbzP525dt" role="3o6s8t">
+                    <property role="3o6i5n" value="text" />
                   </node>
-                  <node concept="ki41.1622293396948952339" id="535979196343145518" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                    <property role="ki41.1622293396948952339.1622293396948953704" value="testc" />
-                  </node>
-                  <node concept="ki41.6666499814681415858" id="535979196343145519" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                    <property role="ki41.6666499814681415858.6666499814681415862" value="e3" />
-                    <node concept="ki41.6666499814681447923" id="535979196343145520" role="ki41.6666499814681415858.6666499814681415861" info="ng">
-                      <property role="ki41.6666499814681447923.6666499814681447926" value="p1" />
-                      <node concept="ki41.6666499814681541919" id="535979196343145521" role="ki41.6666499814681447923.6666499814681541918" info="ng">
-                        <property role="ki41.6666499814681541919.6666499814681541920" value="xx" />
+                  <node concept="2pNNFK" id="tKbzP525du" role="3o6s8t">
+                    <property role="2pNNFO" value="e3" />
+                    <node concept="2pNUuL" id="tKbzP525dv" role="2pNNFR">
+                      <property role="2pNUuO" value="param1" />
+                      <node concept="2pMdtt" id="tKbzP525dw" role="2pMdts">
+                        <property role="2pMdty" value="p" />
                       </node>
                     </node>
-                    <node concept="ki41.1622293396948952339" id="535979196343145522" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                      <property role="ki41.1622293396948952339.1622293396948953704" value="ttt${mps.home}" />
-                    </node>
-                    <node concept="ki41.6666499814681415858" id="535979196343145523" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                      <property role="ki41.6666499814681415858.6666499814681415862" value="e4" />
-                      <property role="ki41.6666499814681415858.6999033275467544021" value="true" />
+                    <node concept="2pNm8S" id="tKbzP525gB" role="3o6s8t">
+                      <property role="3o6aOc" value="data" />
                     </node>
                   </node>
-                  <node concept="ki41.6666499814681299066" id="535979196343145525" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                    <property role="ki41.6666499814681299066.1622293396948985395" value="ddd" />
+                  <node concept="3o6iSG" id="tKbzP525gu" role="3o6s8t">
+                    <property role="3o6i5n" value="text2 " />
                   </node>
-                  <node concept="ki41.1622293396948952339" id="535979196343145526" role="ki41.6666499814681415858.1622293396948928802" info="nn">
-                    <property role="ki41.1622293396948952339.1622293396948953704" value="testd" />
+                  <node concept="2pNm8U" id="tKbzP525g_" role="3o6s8t">
+                    <node concept="3o66tx" id="tKbzP525gA" role="3o66t8">
+                      <property role="3o66tw" value="comment" />
+                    </node>
                   </node>
                 </node>
               </node>
-              <node concept="ki41.6666499814681415858" id="535979196343145531" role="ki41.6666499814681415858.1622293396948928802" info="ng">
-                <property role="ki41.6666499814681415858.6666499814681415862" value="e11" />
+            </node>
+            <node concept="2pNNFK" id="4YzX_njDD1o" role="3o6s8t">
+              <property role="2pNNFO" value="GenModule" />
+              <node concept="2pNUuL" id="4YzX_njDD1t" role="2pNNFR">
+                <property role="2pNUuO" value="ref" />
+                <node concept="2pMdtt" id="4YzX_njDD1w" role="2pMdts">
+                  <property role="2pMdty" value="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+                </node>
               </node>
+              <node concept="2pNUuL" id="4YzX_njDD1u" role="2pNNFR">
+                <property role="2pNUuO" value="destfile" />
+                <node concept="2pMdtt" id="4YzX_njDD1v" role="2pMdts">
+                  <property role="2pMdty" value="bL.xml" />
+                </node>
+              </node>
+              <node concept="3o6iSG" id="4YzX_njDD1r" role="3o6s8t" />
+            </node>
+          </node>
+          <node concept="2pNUuL" id="1i6A6rcXgUC" role="2pNNFR">
+            <property role="2pNUuO" value="name" />
+            <node concept="2pMdtt" id="1i6A6rcXgUD" role="2pMdts">
+              <property role="2pMdty" value="test" />
+            </node>
+          </node>
+          <node concept="3o6iSG" id="tKbzP52oe1" role="3o6s8t" />
+          <node concept="2pNm8U" id="tKbzP52oe3" role="3o6s8t">
+            <node concept="3o66tx" id="tKbzP52oe4" role="3o66t8">
+              <property role="3o66tw" value="just test of echoxml task" />
+            </node>
+          </node>
+          <node concept="2pNNFK" id="tKbzP525gC" role="3o6s8t">
+            <property role="2pNNFO" value="echoxml" />
+            <node concept="2pNNFK" id="tKbzP525gD" role="3o6s8t">
+              <property role="2pNNFO" value="e1" />
+              <node concept="3o6iSG" id="tKbzP525gE" role="3o6s8t">
+                <property role="3o6i5n" value="test" />
+              </node>
+              <node concept="2pNNFK" id="tKbzP525gF" role="3o6s8t">
+                <property role="2pNNFO" value="e2" />
+                <node concept="2pNm8U" id="tKbzP525gG" role="3o6s8t">
+                  <node concept="3o66tx" id="tKbzP525gH" role="3o66t8">
+                    <property role="3o66tw" value="comment" />
+                  </node>
+                </node>
+                <node concept="3o6iSG" id="tKbzP525gI" role="3o6s8t">
+                  <property role="3o6i5n" value="testc" />
+                </node>
+                <node concept="2pNNFK" id="tKbzP525gJ" role="3o6s8t">
+                  <property role="2pNNFO" value="e3" />
+                  <node concept="2pNUuL" id="tKbzP525gK" role="2pNNFR">
+                    <property role="2pNUuO" value="p1" />
+                    <node concept="2pMdtt" id="tKbzP525gL" role="2pMdts">
+                      <property role="2pMdty" value="xx" />
+                    </node>
+                  </node>
+                  <node concept="3o6iSG" id="tKbzP525gM" role="3o6s8t">
+                    <property role="3o6i5n" value="ttt${mps.home}" />
+                  </node>
+                  <node concept="2pNNFK" id="tKbzP525gN" role="3o6s8t">
+                    <property role="2pNNFO" value="e4" />
+                    <property role="qg3DV" value="true" />
+                  </node>
+                </node>
+                <node concept="2pNm8S" id="tKbzP525gP" role="3o6s8t">
+                  <property role="3o6aOc" value="ddd" />
+                </node>
+                <node concept="3o6iSG" id="tKbzP525gQ" role="3o6s8t">
+                  <property role="3o6i5n" value="testd" />
+                </node>
+              </node>
+            </node>
+            <node concept="2pNNFK" id="tKbzP525gV" role="3o6s8t">
+              <property role="2pNNFO" value="e11" />
             </node>
           </node>
         </node>
       </node>
     </node>
-  </contents>
+  </node>
 </model>
 

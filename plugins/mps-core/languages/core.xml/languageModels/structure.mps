@@ -1,426 +1,432 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)">
+<model ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" concise="true">
   <persistence version="9" />
-  <debugInfo>
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978499127" name="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831" name="metaClass" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978499127/1083066089218" name="constraint" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1096454100552" name="rootable" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765907488" name="conceptShortDescription" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802" name="abstract" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/5092175715804935370" name="conceptAlias" />
-    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/5404671619616246344" name="staticScope" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519" name="extends" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" name="target" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299/1082985295845" name="dataType" />
-    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168/1169127628841" name="intfc" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083" name="linkDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727084" name="propertyDeclaration" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551/1169127546356" name="extends" />
-    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478" name="implements" />
-  </debugInfo>
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="-1" index="4jta" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="356a" ref="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" implicit="true" />
-    <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" implicit="true" />
   </imports>
-  <contents>
-    <node concept="4jta.1071489090640" id="6786756355279841993" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="XmlDocument" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="6666499814681299060" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="prolog" />
-        <reference role="4jta.1071489288298.1071599976176" target="6666499814681299057" resolveInfo="XmlProlog" />
-      </node>
-      <node concept="4jta.1071489288298" id="6666499814681299055" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="rootElement" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="6666499814681299053" resolveInfo="XmlBaseElement" />
-      </node>
+  <registry>
+    <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1082978499127" name="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" flags="ng" index="Az7Fb">
+        <property id="1083066089218" name="constraint" index="FLfZY" />
+      </concept>
+      <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
+        <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
+      </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
+      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
+        <reference id="1169127628841" name="intfc" index="PrY4T" />
+      </concept>
+      <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1096454100552" name="rootable" index="19KtqR" />
+        <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
+        <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="1169129564478" name="implements" index="PzmwI" />
+      </concept>
+      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <reference id="1082985295845" name="dataType" index="AX2Wp" />
+      </concept>
+      <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
+        <property id="1071599776563" name="role" index="20kJfa" />
+        <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
+        <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <reference id="1071599976176" name="target" index="20lvS9" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1TIwiD" id="5SJpJa5_6F9">
+    <property role="TrG5h" value="XmlDocument" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5M4a$b5ikxO" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="prolog" />
+      <ref role="20lvS9" node="5M4a$b5ikxL" resolve="XmlProlog" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681299051" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlContent" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="2133624044437631295" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2133624044437631294" resolveInfo="XmlPart" />
-      </node>
+    <node concept="1TJgyj" id="5M4a$b5ikxJ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="rootElement" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5M4a$b5ikxH" resolve="XmlBaseElement" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681299053" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlBaseElement" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681299051" resolveInfo="XmlContent" />
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5ikxF">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="XmlContent" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="1Qs9WekVZ4Z" role="PzmwI">
+      <ref role="PrY4T" node="1Qs9WekVZ4Y" resolve="XmlPart" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681299057" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="XmlProlog" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="7604553062773674214" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="elements" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="7604553062773674213" resolveInfo="XmlPrologElement" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5ikxH">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="XmlBaseElement" />
+    <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5ikxL">
+    <property role="TrG5h" value="XmlProlog" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6A8NbxeeX3A" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="elements" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681299061" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="processing instruction" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlProcessingInstruction" />
-      <property role="4jta.1169125787135.5092175715804935370" value="&lt;?" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681299051" resolveInfo="XmlContent" />
-      <node concept="4jta.1071489288299" id="6666499814681299062" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="target" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1071489288299" id="6666499814681299063" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="rawData" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1169127622168" id="7604553062773674216" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="7604553062773674213" resolveInfo="XmlPrologElement" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5ikxP">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="processing instruction" />
+    <property role="TrG5h" value="XmlProcessingInstruction" />
+    <property role="34LRSv" value="&lt;?" />
+    <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
+    <node concept="1TJgyi" id="5M4a$b5ikxQ" role="1TKVEl">
+      <property role="TrG5h" value="target" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681299064" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlComment" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="4jta.1169125787135.5092175715804935370" value="&lt;!--" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681299051" resolveInfo="XmlContent" />
-      <node concept="4jta.1071489288298" id="1622293396949036151" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="lines" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="1622293396949036126" resolveInfo="XmlCommentLine" />
-      </node>
-      <node concept="4jta.1169127622168" id="7604553062773674215" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="7604553062773674213" resolveInfo="XmlPrologElement" />
-      </node>
+    <node concept="1TJgyi" id="5M4a$b5ikxR" role="1TKVEl">
+      <property role="TrG5h" value="rawData" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681299066" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlCDATA" />
-      <property role="4jta.1169125787135.5092175715804935370" value="&lt;![CDATA" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681299051" resolveInfo="XmlContent" />
-      <node concept="4jta.1071489288299" id="1622293396948985395" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="content" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
+    <node concept="PrWs8" id="6A8NbxeeX3C" role="PzmwI">
+      <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681415858" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlElement" />
-      <property role="4jta.1169125787135.5092175715804935370" value="&lt;element/&gt;" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681299053" resolveInfo="XmlBaseElement" />
-      <node concept="4jta.1071489288299" id="6666499814681415862" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="tagName" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1071489288299" id="6999033275467544021" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="shortEmptyNotation" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
-      </node>
-      <node concept="4jta.1071489288298" id="6666499814681415861" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="attributes" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="6666499814681415859" resolveInfo="XmlBaseAttribute" />
-      </node>
-      <node concept="4jta.1071489288298" id="1622293396948928802" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="content" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="6666499814681299051" resolveInfo="XmlContent" />
-      </node>
-      <node concept="4jta.1169127622168" id="1262430001741519702" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5ikxS">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="XmlComment" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="&lt;!--" />
+    <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
+    <node concept="1TJgyj" id="1q3yNZeAYLR" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="lines" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="1q3yNZeAYLu" resolve="XmlCommentLine" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681415859" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlBaseAttribute" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node concept="PrWs8" id="6A8NbxeeX3B" role="PzmwI">
+      <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681447923" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlAttribute" />
-      <property role="4jta.1169125787135.5092175715804935370" value="attribute" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681415859" resolveInfo="XmlBaseAttribute" />
-      <node concept="4jta.1071489288298" id="6666499814681541918" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="value" />
-        <property role="4jta.1071489288298.1071599893252" value="0..n" />
-        <reference role="4jta.1071489288298.1071599976176" target="6666499814681541916" resolveInfo="XmlValuePart" />
-      </node>
-      <node concept="4jta.1071489288299" id="6666499814681447926" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="attrName" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1169127622168" id="1262430001741523284" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5ikxU">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="XmlCDATA" />
+    <property role="34LRSv" value="&lt;![CDATA" />
+    <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
+    <node concept="1TJgyi" id="1q3yNZeAMoN" role="1TKVEl">
+      <property role="TrG5h" value="content" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681515200" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1071489090640.1096454100552" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlFile" />
-      <property role="4jta.1169125787135.5092175715804935370" value="xml file" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="6666499814681515201" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="document" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="6786756355279841993" resolveInfo="XmlDocument" />
-      </node>
-      <node concept="4jta.1169127622168" id="6666499814681515202" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
-      <node concept="4jta.1169127622168" id="543355706921831334" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="356a.5067982036267369892" resolveInfo="UnitConcept" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5iL2M">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="XmlElement" />
+    <property role="34LRSv" value="&lt;element/&gt;" />
+    <ref role="1TJDcQ" node="5M4a$b5ikxH" resolve="XmlBaseElement" />
+    <node concept="1TJgyi" id="5M4a$b5iL2Q" role="1TKVEl">
+      <property role="TrG5h" value="tagName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681541916" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="attribute value" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlValuePart" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node concept="1TJgyi" id="64xzUTVornl" role="1TKVEl">
+      <property role="TrG5h" value="shortEmptyNotation" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681541919" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="attribute value contains of text and entity references" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlTextValue" />
-      <property role="4jta.1169125787135.5092175715804935370" value="text" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681541916" resolveInfo="XmlValuePart" />
-      <node concept="4jta.1071489288299" id="6666499814681541920" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="text" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1169127622168" id="1262430001741647117" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
+    <node concept="1TJgyj" id="5M4a$b5iL2P" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="attributes" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5M4a$b5iL2N" resolve="XmlBaseAttribute" />
     </node>
-    <node concept="4jta.1071489090640" id="6666499814681541921" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="entity reference" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlEntityRefValue" />
-      <property role="4jta.1169125787135.5092175715804935370" value="&amp;" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681541916" resolveInfo="XmlValuePart" />
-      <node concept="4jta.1071489288299" id="6666499814681543256" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="entityName" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1169127622168" id="1262430001741646705" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
+    <node concept="1TJgyj" id="1q3yNZeA$$y" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="content" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5M4a$b5ikxF" resolve="XmlContent" />
     </node>
-    <node concept="4jta.1071489090640" id="1622293396948952339" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="plain text" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlText" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="4jta.1169125787135.5092175715804935370" value="text" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681299051" resolveInfo="XmlContent" />
-      <node concept="4jta.1071489288299" id="1622293396948953704" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="value" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1169127622168" id="1262430001741718412" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
+    <node concept="PrWs8" id="1653mnvAlHm" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="4jta.1071489090640" id="1622293396949036126" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="XmlCommentLine" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288299" id="1622293396949036127" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="text" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5iL2N">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="XmlBaseAttribute" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5iSRN">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="XmlAttribute" />
+    <property role="34LRSv" value="attribute" />
+    <ref role="1TJDcQ" node="5M4a$b5iL2N" resolve="XmlBaseAttribute" />
+    <node concept="1TJgyj" id="5M4a$b5jfOu" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5M4a$b5jfOs" resolve="XmlValuePart" />
     </node>
-    <node concept="4jta.1071489090640" id="1622293396949069645" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="entity reference" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlEntityRef" />
-      <property role="4jta.1169125787135.5092175715804935370" value="&amp;" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681299051" resolveInfo="XmlContent" />
-      <node concept="4jta.1071489288299" id="1622293396949069711" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="entityName" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
+    <node concept="1TJgyi" id="5M4a$b5iSRQ" role="1TKVEl">
+      <property role="TrG5h" value="attrName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1071489090640" id="3080189811177199750" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="single character" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlCharRef" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="4jta.1169125787135.5092175715804935370" value="&amp;#" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681299051" resolveInfo="XmlContent" />
-      <node concept="4jta.1071489288299" id="3080189811177199751" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="charCode" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
+    <node concept="PrWs8" id="1653mnvAm_k" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="4jta.1071489090640" id="3080189811177215998" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="single character" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlCharRefValue" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <property role="4jta.1169125787135.5092175715804935370" value="&amp;#" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681541916" resolveInfo="XmlValuePart" />
-      <node concept="4jta.1071489288299" id="3080189811177216006" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="charCode" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1169127622168" id="1262430001741718482" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5j9j0">
+    <property role="R5$K7" value="false" />
+    <property role="19KtqR" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="XmlFile" />
+    <property role="34LRSv" value="xml file" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5M4a$b5j9j1" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="document" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5SJpJa5_6F9" resolve="XmlDocument" />
     </node>
-    <node concept="4jta.1071489090640" id="3080189811177426492" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="concatenates two values without spaces" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlNoSpaceValue" />
-      <property role="4jta.1169125787135.5092175715804935370" value="&lt;-no space-&gt;" />
-      <reference role="4jta.1071489090640.1071489389519" target="6666499814681541916" resolveInfo="XmlValuePart" />
+    <node concept="PrWs8" id="5M4a$b5j9j2" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="4jta.1169125989551" id="7604553062773674213" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="XmlPrologElement" />
-      <node concept="4jta.1169127622168" id="2133624044437631435" role="4jta.1169125989551.1169127546356" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="2133624044437631294" resolveInfo="XmlPart" />
-      </node>
+    <node concept="PrWs8" id="uaoMbTKsIA" role="PzmwI">
+      <ref role="PrY4T" to="356a:4pl5GY7LKm$" resolve="UnitConcept" />
     </node>
-    <node concept="4jta.1071489090640" id="7604553062773750440" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="XmlWhitespace" />
-      <property role="4jta.1071489090640.5404671619616246344" value="none" />
-      <reference role="4jta.1071489090640.1071489389519" target="2133624044437669768" resolveInfo="XmlBasePrologElement" />
-      <node concept="4jta.1071489288299" id="5228786488744844115" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="value" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1169127622168" id="3116093476406591728" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="7604553062773674213" resolveInfo="XmlPrologElement" />
-      </node>
-      <node concept="4jta.1169127622168" id="1262430001741703245" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5jfOs">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="attribute value" />
+    <property role="TrG5h" value="XmlValuePart" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5jfOv">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="attribute value contains of text and entity references" />
+    <property role="TrG5h" value="XmlTextValue" />
+    <property role="34LRSv" value="text" />
+    <ref role="1TJDcQ" node="5M4a$b5jfOs" resolve="XmlValuePart" />
+    <node concept="1TJgyi" id="5M4a$b5jfOw" role="1TKVEl">
+      <property role="TrG5h" value="text" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1071489090640" id="5228786488744996718" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="xml declaration" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlDeclaration" />
-      <property role="4jta.1169125787135.5092175715804935370" value="&lt;?xml" />
-      <reference role="4jta.1071489090640.1071489389519" target="2133624044437669768" resolveInfo="XmlBasePrologElement" />
-      <node concept="4jta.1169127622168" id="5228786488744996719" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="7604553062773674213" resolveInfo="XmlPrologElement" />
-      </node>
-      <node concept="4jta.1071489288299" id="5491461270226117667" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="version" />
-        <reference role="4jta.1071489288299.1082985295845" target="5491461270226117666" resolveInfo="xmlVersionString" />
-      </node>
-      <node concept="4jta.1071489288299" id="3374336260035925078" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="encoding" />
-        <reference role="4jta.1071489288299.1082985295845" target="3374336260035925079" resolveInfo="xmlEncoding" />
-      </node>
-      <node concept="4jta.1071489288299" id="3374336260035925080" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="standalone" />
-        <reference role="4jta.1071489288299.1082985295845" target="3374336260035925081" resolveInfo="yesNoString" />
-      </node>
+    <node concept="PrWs8" id="1653mnvAOOd" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="4jta.1082978499127" id="5491461270226117666" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="xmlVersionString" />
-      <property role="4jta.1082978499127.1083066089218" value="1.[0-9]+" />
+  </node>
+  <node concept="1TIwiD" id="5M4a$b5jfOx">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="entity reference" />
+    <property role="TrG5h" value="XmlEntityRefValue" />
+    <property role="34LRSv" value="&amp;" />
+    <ref role="1TJDcQ" node="5M4a$b5jfOs" resolve="XmlValuePart" />
+    <node concept="1TJgyi" id="5M4a$b5jg9o" role="1TKVEl">
+      <property role="TrG5h" value="entityName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1169125989551" id="2133624044437631294" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="XmlPart" />
+    <node concept="PrWs8" id="1653mnvAOHL" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="4jta.1071489090640" id="2133624044437669768" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="true" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlBasePrologElement" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1169127622168" id="2133624044437669769" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="7604553062773674213" resolveInfo="XmlPrologElement" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="1q3yNZeAEkj">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="plain text" />
+    <property role="TrG5h" value="XmlText" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="text" />
+    <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
+    <node concept="1TJgyi" id="1q3yNZeAEDC" role="1TKVEl">
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1071489090640" id="2133624044437898907" info="ig">
-      <property role="4jta.1169125787135.4628067390765956802" value="false" />
-      <property role="4jta.1169125787135.4628067390765956807" value="false" />
-      <property role="4jta.1169125787135.4628067390765907488" value="xml doctype declaration" />
-      <property role="asn4.1169194658468.1169194664001" value="XmlDoctypeDeclaration" />
-      <property role="4jta.1169125787135.5092175715804935370" value="&lt;!DOCTYPE" />
-      <reference role="4jta.1071489090640.1071489389519" target="2133624044437669768" resolveInfo="XmlBasePrologElement" />
-      <node concept="4jta.1169127622168" id="2133624044437898908" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="7604553062773674213" resolveInfo="XmlPrologElement" />
-      </node>
-      <node concept="4jta.1071489288299" id="2133624044437898910" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="doctypeName" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1071489288298" id="2133624044438029120" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599776563" value="externalId" />
-        <reference role="4jta.1071489288298.1071599976176" target="2133624044438029119" resolveInfo="XmlExternalId" />
-      </node>
+    <node concept="PrWs8" id="1653mnvB6ec" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="4jta.1071489090640" id="2133624044438029119" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="XmlExternalId" />
-      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288299" id="2133624044438029123" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="publicId" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1071489288299" id="2133624044438029124" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="systemId" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
-      </node>
-      <node concept="4jta.1071489288299" id="2133624044438029125" role="4jta.1169125787135.1071489727084" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="isPublic" />
-        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
-      </node>
+  </node>
+  <node concept="1TIwiD" id="1q3yNZeAYLu">
+    <property role="TrG5h" value="XmlCommentLine" />
+    <property role="2_RsDV" value="none" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1q3yNZeAYLv" role="1TKVEl">
+      <property role="TrG5h" value="text" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1082978499127" id="3374336260035925079" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="xmlEncoding" />
-      <property role="4jta.1082978499127.1083066089218" value="[A-Za-z]([A-Za-z0-9._]|-)*" />
+  </node>
+  <node concept="1TIwiD" id="1q3yNZeB6Xd">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="entity reference" />
+    <property role="TrG5h" value="XmlEntityRef" />
+    <property role="34LRSv" value="&amp;" />
+    <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
+    <node concept="1TJgyi" id="1q3yNZeB6Yf" role="1TKVEl">
+      <property role="TrG5h" value="entityName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="4jta.1082978499127" id="3374336260035925081" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="yesNoString" />
-      <property role="4jta.1082978499127.1083066089218" value="yes|no" />
+  </node>
+  <node concept="1TIwiD" id="2EZ251fZDy6">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="single character" />
+    <property role="TrG5h" value="XmlCharRef" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="&amp;#" />
+    <ref role="1TJDcQ" node="5M4a$b5ikxF" resolve="XmlContent" />
+    <node concept="1TJgyi" id="2EZ251fZDy7" role="1TKVEl">
+      <property role="TrG5h" value="charCode" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-  </contents>
+  </node>
+  <node concept="1TIwiD" id="2EZ251fZHvY">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="single character" />
+    <property role="TrG5h" value="XmlCharRefValue" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="&amp;#" />
+    <ref role="1TJDcQ" node="5M4a$b5jfOs" resolve="XmlValuePart" />
+    <node concept="1TJgyi" id="2EZ251fZHw6" role="1TKVEl">
+      <property role="TrG5h" value="charCode" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="1653mnvB6fi" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2EZ251g0wSW">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="concatenates two values without spaces" />
+    <property role="TrG5h" value="XmlNoSpaceValue" />
+    <property role="34LRSv" value="&lt;-no space-&gt;" />
+    <ref role="1TJDcQ" node="5M4a$b5jfOs" resolve="XmlValuePart" />
+  </node>
+  <node concept="PlHQZ" id="6A8NbxeeX3_">
+    <property role="TrG5h" value="XmlPrologElement" />
+    <node concept="PrWs8" id="1Qs9WekVZ7b" role="PrDN$">
+      <ref role="PrY4T" node="1Qs9WekVZ4Y" resolve="XmlPart" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6A8NbxeffEC">
+    <property role="TrG5h" value="XmlWhitespace" />
+    <property role="2_RsDV" value="none" />
+    <ref role="1TJDcQ" node="1Qs9WekW8u8" resolve="XmlBasePrologElement" />
+    <node concept="1TJgyi" id="4ygopINZTHj" role="1TKVEl">
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="2GY_C7c883K" role="PzmwI">
+      <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
+    </node>
+    <node concept="PrWs8" id="1653mnvB2xd" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4ygopIO0uXI">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="xml declaration" />
+    <property role="TrG5h" value="XmlDeclaration" />
+    <property role="34LRSv" value="&lt;?xml" />
+    <ref role="1TJDcQ" node="1Qs9WekW8u8" resolve="XmlBasePrologElement" />
+    <node concept="PrWs8" id="4ygopIO0uXJ" role="PzmwI">
+      <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
+    </node>
+    <node concept="1TJgyi" id="4KP_IS_Dagz" role="1TKVEl">
+      <property role="TrG5h" value="version" />
+      <ref role="AX2Wp" node="4KP_IS_Dagy" resolve="xmlVersionString" />
+    </node>
+    <node concept="1TJgyi" id="2Vk3fdkalhm" role="1TKVEl">
+      <property role="TrG5h" value="encoding" />
+      <ref role="AX2Wp" node="2Vk3fdkalhn" resolve="xmlEncoding" />
+    </node>
+    <node concept="1TJgyi" id="2Vk3fdkalho" role="1TKVEl">
+      <property role="TrG5h" value="standalone" />
+      <ref role="AX2Wp" node="2Vk3fdkalhp" resolve="yesNoString" />
+    </node>
+  </node>
+  <node concept="Az7Fb" id="4KP_IS_Dagy">
+    <property role="TrG5h" value="xmlVersionString" />
+    <property role="FLfZY" value="1.[0-9]+" />
+  </node>
+  <node concept="PlHQZ" id="1Qs9WekVZ4Y">
+    <property role="TrG5h" value="XmlPart" />
+  </node>
+  <node concept="1TIwiD" id="1Qs9WekW8u8">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="XmlBasePrologElement" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="1Qs9WekW8u9" role="PzmwI">
+      <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1Qs9WekX0qr">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="xml doctype declaration" />
+    <property role="TrG5h" value="XmlDoctypeDeclaration" />
+    <property role="34LRSv" value="&lt;!DOCTYPE" />
+    <ref role="1TJDcQ" node="1Qs9WekW8u8" resolve="XmlBasePrologElement" />
+    <node concept="PrWs8" id="1Qs9WekX0qs" role="PzmwI">
+      <ref role="PrY4T" node="6A8NbxeeX3_" resolve="XmlPrologElement" />
+    </node>
+    <node concept="1TJgyi" id="1Qs9WekX0qu" role="1TKVEl">
+      <property role="TrG5h" value="doctypeName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="1Qs9WekXwd0" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="externalId" />
+      <ref role="20lvS9" node="1Qs9WekXwcZ" resolve="XmlExternalId" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1Qs9WekXwcZ">
+    <property role="TrG5h" value="XmlExternalId" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1Qs9WekXwd3" role="1TKVEl">
+      <property role="TrG5h" value="publicId" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="1Qs9WekXwd4" role="1TKVEl">
+      <property role="TrG5h" value="systemId" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="1Qs9WekXwd5" role="1TKVEl">
+      <property role="TrG5h" value="isPublic" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+  </node>
+  <node concept="Az7Fb" id="2Vk3fdkalhn">
+    <property role="TrG5h" value="xmlEncoding" />
+    <property role="FLfZY" value="[A-Za-z]([A-Za-z0-9._]|-)*" />
+  </node>
+  <node concept="Az7Fb" id="2Vk3fdkalhp">
+    <property role="TrG5h" value="yesNoString" />
+    <property role="FLfZY" value="yes|no" />
+  </node>
 </model>
 

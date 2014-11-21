@@ -33,6 +33,7 @@ import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
+import com.intellij.openapi.editor.impl.LeftHandScrollbarLayout;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
@@ -47,6 +48,8 @@ import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
@@ -62,6 +65,7 @@ import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
 import jetbrains.mps.nodeEditor.actions.ActionHandlerImpl;
@@ -114,8 +118,6 @@ import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -268,13 +270,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       });
     }
   };
-  private ReloadListener myReloadListener = new ReloadAdapter() {
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void onAfterReload() {
+    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
       getModelAccess().runReadInEDT(new Runnable() {
         @Override
         public void run() {
-          if (isModuleDisposed() || isProjectDisposed() || isNodeDisposed()) return;
+          if (myDisposed || isModuleDisposed() || isProjectDisposed() || isNodeDisposed()) return;
           rebuildEditorContent();
           myNodeSubstituteChooser.clearContent();
         }
@@ -396,7 +398,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     setDoubleBuffered(true);
     myScrollPane = ScrollPaneFactory.createScrollPane();
     if (rightToLeft) {
-      myScrollPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+      myScrollPane.setLayout(new LeftHandScrollbarLayout());
     }
     myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
     myScrollPane.setVerticalScrollBar(myVerticalScrollBar);
@@ -426,11 +428,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myContainer.setMinimumSize(new Dimension(0, 0));
     myContainer.setLayout(new BorderLayout());
     myContainer.add(myScrollPane, BorderLayout.CENTER);
-
-
-    if (showErrorsGutter) {
-      getVerticalScrollBar().setPersistentUI(myMessagesGutter);
-    }
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
 
@@ -583,7 +580,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
 
     myMessagesGutter = new MessagesGutter(this, rightToLeft);
-
+    if (showErrorsGutter) {
+      getVerticalScrollBar().setPersistentUI(myMessagesGutter);
+    } else {
+      getVerticalScrollBar().setPersistentUI(new ButtonlessScrollBarUI() {
+        @Override
+        public boolean alwaysShowTrack() {
+          return true;
+        }
+      });
+    }
     myLeftHighlighter = new LeftEditorHighlighter(this, rightToLeft);
     myLeftHighlighter.addMouseListener(new MouseAdapter() {
       @Override
@@ -699,7 +705,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   protected void attachListeners() {
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+    ClassLoaderManager.getInstance().addClassesHandler(myClassesListener);
   }
 
 
@@ -1367,7 +1373,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   protected void detachListeners() {
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+    ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
   }
 
   public boolean hasValidSelectedNode() {

@@ -39,11 +39,11 @@ import java.util.concurrent.ConcurrentMap;
  * Per-repository, model-associated caches.
  */
 public abstract class BaseModelCache<T> implements CoreComponent, CleanupListener {
-
   // absence of model in the cache means we have no idea about present cache state.
   // if model is in the cache, we do know both IFile and cached object
   private final ConcurrentMap<SModelReference, Pair<IFile, T>> myCache = new ConcurrentHashMap<SModelReference, Pair<IFile, T>>();
   private final SRepository myRepository;
+  private final CleanupManager myCleanupManager;
   private final SRepositoryContentAdapter myRepoListener = new MyRepositoryListener();
 
   @Nullable
@@ -64,21 +64,20 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
   }
 
   // In fact, can be application-wide if we use compound key (repo+modelref)
-  protected BaseModelCache(SRepository repository) {
+  protected BaseModelCache(SRepository repository, CleanupManager cleanupManager) {
     myRepository = repository;
+    myCleanupManager = cleanupManager;
   }
 
   @Override
   public void init() {
     myRepository.addRepositoryListener(myRepoListener);
-    // FIXME CleanupManager shall be explicit dependency, rather than getInstance access -
-    // otherwise it's pure assumption CleanupManager has been initialized already.
-    CleanupManager.getInstance().addCleanupListener(this);
+    myCleanupManager.addCleanupListener(this);
   }
 
   @Override
   public void dispose() {
-    CleanupManager.getInstance().removeCleanupListener(this);
+    myCleanupManager.removeCleanupListener(this);
     myRepository.removeRepositoryListener(myRepoListener);
   }
 
