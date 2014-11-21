@@ -26691,6 +26691,12 @@
               <ref role="3bR37D" node="1TaHNgiIbJt" resolve="jetbrains.mps.ide.platform" />
             </node>
           </node>
+          <node concept="1SiIV0" id="4L_iXIKFnNr" role="3bR37C">
+            <node concept="3bR9La" id="4L_iXIKFnNs" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7Kfy9QB6L0C" resolve="collections.runtime" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="1L8vb48Wbph" role="3bR37C">
           <node concept="3bR9La" id="1L8vb48Wbpi" role="1SiIV1">
