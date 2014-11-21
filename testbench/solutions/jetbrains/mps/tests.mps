@@ -1216,9 +1216,6 @@
     <node concept="lpD6D" id="2TdQhrRPT66" role="lpD6w">
       <ref role="lpD7u" to="ryl9:jdhTnxBtW$" resolve="AddFieldNotAllowed" />
     </node>
-    <node concept="lpD6D" id="7rVl9VzwnxM" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:1yvohCOewGs" resolve="AddFinalInStaticField" />
-    </node>
     <node concept="lpD6D" id="2TdQhrRPT7N" role="lpD6w">
       <ref role="lpD7u" to="ryl9:jdhTnxtpYj" resolve="AddInterfaceCaret" />
     </node>
@@ -1236,15 +1233,6 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT6d" role="lpD6w">
       <ref role="lpD7u" to="ryl9:jdhTnxBt1D" resolve="AddMethodNotAllowed" />
-    </node>
-    <node concept="lpD6D" id="7rVl9VzwnYm" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:1yvohCOeFHa" resolve="AddStaticInField" />
-    </node>
-    <node concept="lpD6D" id="7rVl9Vzwo8S" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:1yvohCOeFJC" resolve="AddTransientInField" />
-    </node>
-    <node concept="lpD6D" id="7rVl9Vzwojr" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:1yvohCOeFDB" resolve="AddVolatileInField" />
     </node>
     <node concept="lpD6D" id="66auKH98LPP" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6PUiXwyHsPe" resolve="AddVariableDeclarationCaret" />
@@ -1267,8 +1255,20 @@
     <node concept="lpD6D" id="66auKH98M_r" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5YjQP9rNnLE" resolve="DeleteUnaryMinus" />
     </node>
+    <node concept="lpD6D" id="4$ezt8Zmuja" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4$ezt8ZmoHQ" resolve="LocalVariableMadeFinalCaret" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8ZmutM" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4$ezt8ZmpkG" resolve="LocalVariableRemovedFinalCaret" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRPT88" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5n8MFselke8" resolve="MethodAddGenericCaret" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8ZmrrB" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4$ezt8ZmpBX" resolve="ParameterMadeFinalCaret" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8Zmtjp" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4$ezt8ZmpUu" resolve="ParameterRemovedFinalCaret" />
     </node>
     <node concept="lpD6D" id="66auKH98ME2" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2RLL9QQBgDb" resolve="PostfixCaret" />
@@ -1614,6 +1614,30 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT6D" role="lpD6w">
       <ref role="lpD7u" to="ryl9:676KKEeTb08" resolve="EmptyEnumConstantCreationWithConstructorTest" />
+    </node>
+    <node concept="lpD6D" id="7rVl9VzwnxM" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1yvohCOewGs" resolve="AddFinalInStaticField" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8ZmvCP" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1vCYg$Wzidg" resolve="AddFinalInStaticFieldLeftOfType" />
+    </node>
+    <node concept="lpD6D" id="7rVl9VzwnYm" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1yvohCOeFHa" resolve="AddStaticInField" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8ZmvNu" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1vCYg$WzAn4" resolve="AddStaticInFieldLeftOfType" />
+    </node>
+    <node concept="lpD6D" id="7rVl9Vzwo8S" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1yvohCOeFJC" resolve="AddTransientInField" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8Zmwua" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1vCYg$WzAfT" resolve="AddTransientInFieldLeftOfType" />
+    </node>
+    <node concept="lpD6D" id="7rVl9Vzwojr" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1yvohCOeFDB" resolve="AddVolatileInField" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8ZmxE8" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1vCYg$WzArM" resolve="AddVolatileInFieldLeftOfType" />
     </node>
     <node concept="lpD6D" id="5Jf1oRj7b0w" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2o160AxalE9" resolve="RemoveFinalInStaticFieldBackspace" />

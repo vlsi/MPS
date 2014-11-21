@@ -10,6 +10,9 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class VariableDeclaration_RemoveFinalOnDelete {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -26,6 +29,7 @@ public class VariableDeclaration_RemoveFinalOnDelete {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (false));
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), SelectionManager.FIRST_EDITABLE_CELL, 0);
     }
   }
   public static class VariableDeclaration_RemoveFinalOnDelete_BACKSPACE extends AbstractCellAction {
@@ -38,6 +42,7 @@ public class VariableDeclaration_RemoveFinalOnDelete {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (false));
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), SelectionManager.FIRST_EDITABLE_CELL, 0);
     }
   }
 }

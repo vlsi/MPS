@@ -38774,5 +38774,433 @@
       <node concept="3Tm1VV" id="1yvohCOeFJS" role="1B3o_S" />
     </node>
   </node>
+  <node concept="LiM7Y" id="1vCYg$Wzidg">
+    <property role="3GE5qa" value="fieldModifiers" />
+    <property role="TrG5h" value="AddFinalInStaticFieldLeftOfType" />
+    <node concept="3clFbS" id="1vCYg$Wzidh" role="LjaKd">
+      <node concept="2TK7Tu" id="1vCYg$Wzidi" role="3cqZAp">
+        <property role="2TTd_B" value="final" />
+      </node>
+    </node>
+    <node concept="312cEu" id="1vCYg$Wzidj" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="Wx3nA" id="1vCYg$Wzidk" role="jymVt">
+        <property role="TrG5h" value="foo" />
+        <property role="2dlcS1" value="false" />
+        <property role="3TUv4t" value="true" />
+        <property role="2dld4O" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="10Oyi0" id="1vCYg$Wzidl" role="1tU5fm" />
+        <node concept="3cmrfG" id="1vCYg$Wzidm" role="33vP2m">
+          <property role="3cmrfH" value="10" />
+        </node>
+        <node concept="3Tm1VV" id="1vCYg$Wzidn" role="1B3o_S" />
+        <node concept="LIFWc" id="1vCYg$Wz_Zd" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="5" />
+          <property role="p6zMs" value="5" />
+          <property role="LIFWd" value="finalModifier" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1vCYg$Wzidp" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="1vCYg$Wzidq" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="Wx3nA" id="1vCYg$Wzidr" role="jymVt">
+        <property role="TrG5h" value="foo" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3Tm1VV" id="1vCYg$Wzids" role="1B3o_S" />
+        <node concept="10Oyi0" id="1vCYg$Wzidt" role="1tU5fm">
+          <node concept="LIFWc" id="1vCYg$WzlLv" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+        <node concept="3cmrfG" id="1vCYg$Wzidu" role="33vP2m">
+          <property role="3cmrfH" value="10" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1vCYg$Wzidw" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1vCYg$WzAfT">
+    <property role="3GE5qa" value="fieldModifiers" />
+    <property role="TrG5h" value="AddTransientInFieldLeftOfType" />
+    <node concept="3clFbS" id="1vCYg$WzAfU" role="LjaKd">
+      <node concept="2TK7Tu" id="1vCYg$WzAfV" role="3cqZAp">
+        <property role="2TTd_B" value="transient" />
+      </node>
+    </node>
+    <node concept="312cEu" id="1vCYg$WzAfW" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="312cEg" id="1vCYg$WzAfX" role="jymVt">
+        <property role="TrG5h" value="foo" />
+        <property role="34CwA1" value="false" />
+        <property role="3TUv4t" value="true" />
+        <property role="eg7rD" value="true" />
+        <property role="IEkAT" value="false" />
+        <node concept="10Oyi0" id="1vCYg$WzAfY" role="1tU5fm" />
+        <node concept="3cmrfG" id="1vCYg$WzAfZ" role="33vP2m">
+          <property role="3cmrfH" value="10" />
+        </node>
+        <node concept="3Tm1VV" id="1vCYg$WzAg0" role="1B3o_S" />
+        <node concept="LIFWc" id="1vCYg$WzAmQ" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="9" />
+          <property role="p6zMs" value="9" />
+          <property role="LIFWd" value="transientModifier" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1vCYg$WzAg2" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="1vCYg$WzAg3" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="312cEg" id="1vCYg$WzAg4" role="jymVt">
+        <property role="TrG5h" value="foo" />
+        <property role="34CwA1" value="false" />
+        <property role="3TUv4t" value="true" />
+        <property role="eg7rD" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="10Oyi0" id="1vCYg$WzAg5" role="1tU5fm">
+          <node concept="LIFWc" id="1vCYg$WzAho" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+        <node concept="3cmrfG" id="1vCYg$WzAg6" role="33vP2m">
+          <property role="3cmrfH" value="10" />
+        </node>
+        <node concept="3Tm1VV" id="1vCYg$WzAg7" role="1B3o_S" />
+      </node>
+      <node concept="3Tm1VV" id="1vCYg$WzAg9" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1vCYg$WzAn4">
+    <property role="3GE5qa" value="fieldModifiers" />
+    <property role="TrG5h" value="AddStaticInFieldLeftOfType" />
+    <node concept="3clFbS" id="1vCYg$WzAn5" role="LjaKd">
+      <node concept="2TK7Tu" id="1vCYg$WzAn6" role="3cqZAp">
+        <property role="2TTd_B" value="static" />
+      </node>
+    </node>
+    <node concept="312cEu" id="1vCYg$WzAn7" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="Wx3nA" id="1vCYg$WzAn8" role="jymVt">
+        <property role="TrG5h" value="foo" />
+        <property role="2dlcS1" value="false" />
+        <property role="3TUv4t" value="false" />
+        <property role="2dld4O" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="10Oyi0" id="1vCYg$WzAn9" role="1tU5fm" />
+        <node concept="3cmrfG" id="1vCYg$WzAna" role="33vP2m">
+          <property role="3cmrfH" value="10" />
+        </node>
+        <node concept="3Tm1VV" id="1vCYg$WzAnb" role="1B3o_S" />
+        <node concept="LIFWc" id="1vCYg$WzAp3" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="6" />
+          <property role="p6zMs" value="6" />
+          <property role="LIFWd" value="staticModifier" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1vCYg$WzAnd" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="1vCYg$WzAne" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="312cEg" id="1vCYg$WzAnf" role="jymVt">
+        <property role="TrG5h" value="foo" />
+        <property role="34CwA1" value="false" />
+        <property role="3TUv4t" value="false" />
+        <property role="eg7rD" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="10Oyi0" id="1vCYg$WzAng" role="1tU5fm">
+          <node concept="LIFWc" id="1vCYg$WzAon" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+        <node concept="3cmrfG" id="1vCYg$WzAnh" role="33vP2m">
+          <property role="3cmrfH" value="10" />
+        </node>
+        <node concept="3Tm1VV" id="1vCYg$WzAni" role="1B3o_S" />
+      </node>
+      <node concept="3Tm1VV" id="1vCYg$WzAnk" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1vCYg$WzArM">
+    <property role="3GE5qa" value="fieldModifiers" />
+    <property role="TrG5h" value="AddVolatileInFieldLeftOfType" />
+    <node concept="3clFbS" id="1vCYg$WzArN" role="LjaKd">
+      <node concept="2TK7Tu" id="1vCYg$WzArO" role="3cqZAp">
+        <property role="2TTd_B" value="volatile" />
+      </node>
+    </node>
+    <node concept="312cEu" id="1vCYg$WzArP" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="312cEg" id="1vCYg$WzArQ" role="jymVt">
+        <property role="TrG5h" value="foo" />
+        <property role="34CwA1" value="true" />
+        <property role="3TUv4t" value="false" />
+        <property role="eg7rD" value="true" />
+        <property role="IEkAT" value="false" />
+        <node concept="10Oyi0" id="1vCYg$WzArR" role="1tU5fm">
+          <node concept="LIFWc" id="1vCYg$WzAtX" role="lGtFl">
+            <property role="LIFWa" value="1" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="1" />
+            <property role="p6zMs" value="1" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+        <node concept="3cmrfG" id="1vCYg$WzArS" role="33vP2m">
+          <property role="3cmrfH" value="10" />
+        </node>
+        <node concept="3Tm1VV" id="1vCYg$WzArT" role="1B3o_S" />
+      </node>
+      <node concept="3Tm1VV" id="1vCYg$WzArV" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="1vCYg$WzArW" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="312cEg" id="1vCYg$WzArX" role="jymVt">
+        <property role="TrG5h" value="foo" />
+        <property role="34CwA1" value="false" />
+        <property role="3TUv4t" value="false" />
+        <property role="eg7rD" value="true" />
+        <property role="IEkAT" value="false" />
+        <node concept="10Oyi0" id="1vCYg$WzArY" role="1tU5fm">
+          <node concept="LIFWc" id="1vCYg$WzAth" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+        <node concept="3cmrfG" id="1vCYg$WzArZ" role="33vP2m">
+          <property role="3cmrfH" value="10" />
+        </node>
+        <node concept="3Tm1VV" id="1vCYg$WzAs0" role="1B3o_S" />
+      </node>
+      <node concept="3Tm1VV" id="1vCYg$WzAs2" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4$ezt8ZmoHQ">
+    <property role="3GE5qa" value="Caret" />
+    <property role="TrG5h" value="LocalVariableMadeFinalCaret" />
+    <node concept="3clFbS" id="4$ezt8ZmoI2" role="LjaKd">
+      <node concept="2TK7Tu" id="4$ezt8ZmoI3" role="3cqZAp">
+        <property role="2TTd_B" value="final" />
+      </node>
+    </node>
+    <node concept="9aQIb" id="4$ezt8ZmoIm" role="LiRBU">
+      <node concept="3clFbS" id="4$ezt8ZmoIo" role="9aQI4">
+        <node concept="3cpWs8" id="4$ezt8ZmoRz" role="3cqZAp">
+          <node concept="3cpWsn" id="4$ezt8ZmoRA" role="3cpWs9">
+            <property role="TrG5h" value="a" />
+            <node concept="10Oyi0" id="4$ezt8ZmoRy" role="1tU5fm">
+              <node concept="LIFWc" id="4$ezt8ZmoSw" role="lGtFl">
+                <property role="LIFWa" value="0" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="0" />
+                <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="4$ezt8ZmoS5" role="33vP2m">
+              <property role="3cmrfH" value="10" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4$ezt8ZmoW4" role="LiZbd">
+      <node concept="3clFbS" id="4$ezt8ZmoW5" role="9aQI4">
+        <node concept="3cpWs8" id="4$ezt8ZmoW6" role="3cqZAp">
+          <node concept="3cpWsn" id="4$ezt8ZmoW7" role="3cpWs9">
+            <property role="TrG5h" value="a" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3cmrfG" id="4$ezt8ZmoWa" role="33vP2m">
+              <property role="3cmrfH" value="10" />
+            </node>
+            <node concept="10Oyi0" id="4$ezt8Zmpfx" role="1tU5fm" />
+            <node concept="LIFWc" id="4$ezt8Zmpkk" role="lGtFl">
+              <property role="ZRATv" value="true" />
+              <property role="OXtK3" value="true" />
+              <property role="p6zMq" value="5" />
+              <property role="p6zMs" value="5" />
+              <property role="LIFWd" value="finalModifier" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4$ezt8ZmpkG">
+    <property role="3GE5qa" value="Caret" />
+    <property role="TrG5h" value="LocalVariableRemovedFinalCaret" />
+    <node concept="3clFbS" id="4$ezt8ZmpkH" role="LjaKd">
+      <node concept="2HxZob" id="4$ezt8ZmpBA" role="3cqZAp">
+        <node concept="1iFQzN" id="4$ezt8ZmpBG" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4$ezt8ZmpkJ" role="LiRBU">
+      <node concept="3clFbS" id="4$ezt8ZmpkK" role="9aQI4">
+        <node concept="3cpWs8" id="4$ezt8ZmpkL" role="3cqZAp">
+          <node concept="3cpWsn" id="4$ezt8ZmpkM" role="3cpWs9">
+            <property role="TrG5h" value="a" />
+            <property role="3TUv4t" value="true" />
+            <node concept="10Oyi0" id="4$ezt8ZmpkN" role="1tU5fm" />
+            <node concept="3cmrfG" id="4$ezt8ZmpkP" role="33vP2m">
+              <property role="3cmrfH" value="10" />
+            </node>
+            <node concept="LIFWc" id="4$ezt8Zmpqz" role="lGtFl">
+              <property role="ZRATv" value="true" />
+              <property role="OXtK3" value="true" />
+              <property role="p6zMq" value="5" />
+              <property role="p6zMs" value="5" />
+              <property role="LIFWd" value="finalModifier" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4$ezt8ZmpkQ" role="LiZbd">
+      <node concept="3clFbS" id="4$ezt8ZmpkR" role="9aQI4">
+        <node concept="3cpWs8" id="4$ezt8ZmpkS" role="3cqZAp">
+          <node concept="3cpWsn" id="4$ezt8ZmpkT" role="3cpWs9">
+            <property role="TrG5h" value="a" />
+            <property role="3TUv4t" value="false" />
+            <node concept="3cmrfG" id="4$ezt8ZmpkU" role="33vP2m">
+              <property role="3cmrfH" value="10" />
+            </node>
+            <node concept="10Oyi0" id="4$ezt8ZmpkV" role="1tU5fm">
+              <node concept="LIFWc" id="4$ezt8Zmprw" role="lGtFl">
+                <property role="LIFWa" value="0" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="0" />
+                <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4$ezt8ZmpBX">
+    <property role="3GE5qa" value="Caret" />
+    <property role="TrG5h" value="ParameterMadeFinalCaret" />
+    <node concept="3clFbS" id="4$ezt8ZmpBY" role="LjaKd">
+      <node concept="2TK7Tu" id="4$ezt8ZmpBZ" role="3cqZAp">
+        <property role="2TTd_B" value="final" />
+      </node>
+    </node>
+    <node concept="2YIFZL" id="4$ezt8ZmpCS" role="LiRBU">
+      <property role="TrG5h" value="foo" />
+      <node concept="3cqZAl" id="4$ezt8ZmpD0" role="3clF45" />
+      <node concept="3Tm1VV" id="4$ezt8ZmpD1" role="1B3o_S" />
+      <node concept="3clFbS" id="4$ezt8ZmpD2" role="3clF47" />
+      <node concept="37vLTG" id="4$ezt8ZmpLD" role="3clF46">
+        <property role="TrG5h" value="a" />
+        <node concept="10Oyi0" id="4$ezt8ZmpLC" role="1tU5fm">
+          <node concept="LIFWc" id="4$ezt8ZmpLP" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2YIFZL" id="4$ezt8ZmpDF" role="LiZbd">
+      <property role="TrG5h" value="foo" />
+      <node concept="3cqZAl" id="4$ezt8ZmpDG" role="3clF45" />
+      <node concept="3Tm1VV" id="4$ezt8ZmpDI" role="1B3o_S" />
+      <node concept="3clFbS" id="4$ezt8ZmpDJ" role="3clF47" />
+      <node concept="37vLTG" id="4$ezt8ZmpPU" role="3clF46">
+        <property role="TrG5h" value="a" />
+        <property role="3TUv4t" value="true" />
+        <node concept="10Oyi0" id="4$ezt8ZmpPT" role="1tU5fm" />
+        <node concept="LIFWc" id="4$ezt8ZmpUe" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="5" />
+          <property role="p6zMs" value="5" />
+          <property role="LIFWd" value="finalModifier" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4$ezt8ZmpUu">
+    <property role="3GE5qa" value="Caret" />
+    <property role="TrG5h" value="ParameterRemovedFinalCaret" />
+    <node concept="3clFbS" id="4$ezt8ZmpUv" role="LjaKd">
+      <node concept="2HxZob" id="4$ezt8Zmqbh" role="3cqZAp">
+        <node concept="1iFQzN" id="4$ezt8Zmqbn" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+        </node>
+      </node>
+    </node>
+    <node concept="2YIFZL" id="4$ezt8ZmpUx" role="LiRBU">
+      <property role="TrG5h" value="foo" />
+      <node concept="3cqZAl" id="4$ezt8ZmpUy" role="3clF45" />
+      <node concept="3Tm1VV" id="4$ezt8ZmpUz" role="1B3o_S" />
+      <node concept="3clFbS" id="4$ezt8ZmpU$" role="3clF47" />
+      <node concept="37vLTG" id="4$ezt8ZmpU_" role="3clF46">
+        <property role="TrG5h" value="a" />
+        <property role="3TUv4t" value="true" />
+        <node concept="10Oyi0" id="4$ezt8ZmpUA" role="1tU5fm" />
+        <node concept="LIFWc" id="4$ezt8ZmpZd" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="5" />
+          <property role="p6zMs" value="5" />
+          <property role="LIFWd" value="finalModifier" />
+        </node>
+      </node>
+    </node>
+    <node concept="2YIFZL" id="4$ezt8ZmpUC" role="LiZbd">
+      <property role="TrG5h" value="foo" />
+      <node concept="3cqZAl" id="4$ezt8ZmpUD" role="3clF45" />
+      <node concept="3Tm1VV" id="4$ezt8ZmpUE" role="1B3o_S" />
+      <node concept="3clFbS" id="4$ezt8ZmpUF" role="3clF47" />
+      <node concept="37vLTG" id="4$ezt8ZmpUG" role="3clF46">
+        <property role="TrG5h" value="a" />
+        <property role="3TUv4t" value="false" />
+        <node concept="10Oyi0" id="4$ezt8ZmpUH" role="1tU5fm">
+          <node concept="LIFWc" id="4$ezt8ZmpZr" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
