@@ -16,6 +16,7 @@
 package jetbrains.mps.compiler;
 
 import jetbrains.mps.project.Project;
+import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -24,6 +25,7 @@ import java.util.Map;
 public class JavaCompilerOptionsComponent {
   private Map<Project, JavaCompilerOptionsProvider> myProjectToProvider = new HashMap<Project, JavaCompilerOptionsProvider>();
   private static JavaCompilerOptionsComponent INSTANCE;
+  public static String DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
   private JavaCompilerOptionsComponent(){}
 
   public static JavaCompilerOptionsComponent getInstance() {
@@ -43,10 +45,26 @@ public class JavaCompilerOptionsComponent {
     }
   }
 
-  public JavaCompilerOptions getJavaCompilerOptions(Project project) {
+  public JavaCompilerOptionsProvider getJavaCompilerOptionsProvider(@NotNull Project project) {
+    return myProjectToProvider.get(project);
+  }
+  public JavaCompilerOptions getJavaCompilerOptions(@NotNull Project project) {
     if (myProjectToProvider.containsKey(project)) {
-      return myProjectToProvider.get(project).getJavaCompilerOptions();
+      JavaCompilerOptionsProvider javaCompilerOptionsProvider = myProjectToProvider.get(project);
+      assert javaCompilerOptionsProvider != null;
+      return javaCompilerOptionsProvider.getJavaCompilerOptions();
     }
     return null;
+  }
+  private static String getDefaultJavaVersion() {
+    String property = System.getProperty("java.version");
+    if (property.startsWith("1.6")) {
+      return CompilerOptions.VERSION_1_6;
+    } else if (property.startsWith("1.7")) {
+      return CompilerOptions.VERSION_1_7;
+    } else if (property.startsWith("1.8")) {
+      return CompilerOptions.VERSION_1_8;
+    }
+    return CompilerOptions.VERSION_1_6;
   }
 }

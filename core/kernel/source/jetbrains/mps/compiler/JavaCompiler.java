@@ -43,8 +43,6 @@ import java.util.Map;
 public class JavaCompiler {
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
-  private static String DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
-
 
   public JavaCompiler() {
   }
@@ -71,13 +69,13 @@ public class JavaCompiler {
 
 
   public void compile(IClassPathItem classPath) {
-    compile(classPath, DEFAULT_JAVA_VERSION);
+    compile(classPath, JavaCompilerOptionsComponent.DEFAULT_JAVA_VERSION);
   }
   public void compile(IClassPathItem classPath, String targetJavaVersion) {
     Map compilerOptions = new HashMap();
     compilerOptions.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
 
-    String actualJavaTargetVersion = targetJavaVersion != null ? targetJavaVersion : DEFAULT_JAVA_VERSION;
+    String actualJavaTargetVersion = targetJavaVersion != null ? targetJavaVersion : JavaCompilerOptionsComponent.DEFAULT_JAVA_VERSION;
     compilerOptions.put(CompilerOptions.OPTION_Compliance, actualJavaTargetVersion);
     compilerOptions.put(CompilerOptions.OPTION_TargetPlatform, actualJavaTargetVersion);
 
@@ -96,18 +94,6 @@ public class JavaCompiler {
     } catch (RuntimeException ex) {
       onFatalError(ex.getMessage());
     }
-  }
-
-  private static String getDefaultJavaVersion() {
-    String property = System.getProperty("java.version");
-    if (property.startsWith("1.6")) {
-      return CompilerOptions.VERSION_1_6;
-    } else if (property.startsWith("1.7")) {
-      return CompilerOptions.VERSION_1_7;
-    } else if (property.startsWith("1.8")) {
-      return CompilerOptions.VERSION_1_8;
-    }
-    return CompilerOptions.VERSION_1_6;
   }
 
   public ClassLoader getClassLoader(ClassLoader parent) {
