@@ -8324,8 +8324,8 @@
     </node>
     <node concept="2YIFZL" id="3oBWDt5cSeM" role="jymVt">
       <property role="TrG5h" value="stringToConcept" />
-      <node concept="3uibUv" id="3oBWDt5cSeO" role="3clF45">
-        <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+      <node concept="3uibUv" id="KEARQwm9JN" role="3clF45">
+        <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
       </node>
       <node concept="3clFbS" id="3oBWDt5cSeQ" role="3clF47">
         <node concept="3clFbJ" id="3oBWDt5d3Hk" role="3cqZAp">
@@ -8348,7 +8348,7 @@
               <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
             </node>
             <node concept="liA8E" id="3oBWDt5cSfc" role="2OqNvi">
-              <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstanceConcept(java.lang.String):org.jetbrains.mps.openapi.language.SConcept" resolve="getInstanceConcept" />
+              <ref role="37wK5l" to="t3eg:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
               <node concept="37vLTw" id="3oBWDt5d3$F" role="37wK5m">
                 <ref role="3cqZAo" node="3oBWDt5cSft" resolve="conceptFqName" />
               </node>
@@ -8366,8 +8366,8 @@
     <node concept="2YIFZL" id="3oBWDt4VZhk" role="jymVt">
       <property role="TrG5h" value="stringArrayToConceptArray" />
       <node concept="10Q1$e" id="3oBWDt4W1qE" role="3clF45">
-        <node concept="3uibUv" id="3oBWDt4W1qB" role="10Q1$1">
-          <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+        <node concept="3uibUv" id="KEARQwme8R" role="10Q1$1">
+          <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
         </node>
       </node>
       <node concept="3clFbS" id="3oBWDt4VZho" role="3clF47">
@@ -8387,8 +8387,8 @@
           <node concept="3cpWsn" id="3oBWDt4W1Oy" role="3cpWs9">
             <property role="TrG5h" value="result" />
             <node concept="10Q1$e" id="3oBWDt4W1Oz" role="1tU5fm">
-              <node concept="3uibUv" id="3oBWDt4W1O$" role="10Q1$1">
-                <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+              <node concept="3uibUv" id="KEARQwmllG" role="10Q1$1">
+                <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
               </node>
             </node>
             <node concept="2ShNRf" id="3oBWDt4W1Ru" role="33vP2m">

@@ -1104,8 +1104,8 @@
                         </node>
                       </node>
                       <node concept="2YIFZM" id="5h4fo9GrOGH" role="3clFbw">
-                        <ref role="37wK5l" to="i8bi:5IkW5anFeil" resolve="isInstanceOf" />
                         <ref role="1Pybhc" to="i8bi:5IkW5anFcyt" resolve="SNodeOperations" />
+                        <ref role="37wK5l" to="i8bi:3oBWDt4YcnK" resolve="isInstanceOf" />
                         <node concept="37vLTw" id="2BHiRxgmatP" role="37wK5m">
                           <ref role="3cqZAo" node="7byHRlLCxQB" resolve="node" />
                         </node>
