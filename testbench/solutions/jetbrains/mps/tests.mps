@@ -3506,7 +3506,25 @@
   </node>
   <node concept="lpD6F" id="4$ezt8YQUyf">
     <node concept="lpD6D" id="4$ezt8YRb0E" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY4JG" resolve="AddNotTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5OP" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY52Z" resolve="CommentLineTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5OT" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY5xB" resolve="ElseTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5OY" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY4XF" resolve="EnterIfTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5z1" role="lpD6w">
       <ref role="lpD7u" to="s223:1NKy5CJqeSF" resolve="LeftTransformTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5P4" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YXKSh" resolve="RemoveNotTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY7H8" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY7EK" resolve="RepetitionTest" />
     </node>
     <node concept="2R4zua" id="4$ezt8YR0Bz" role="2R4z3u">
       <property role="2R4zub" value="jetbrains.mps.build.stripping.tests" />

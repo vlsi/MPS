@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class LeftTransformTest_Test extends BaseTransformationTest {
-  public LeftTransformTest_Test() {
+public class AddNotTest_Test extends BaseTransformationTest {
+  public AddNotTest_Test() {
   }
   @Test
-  public void test_LeftTransformTest() throws Throwable {
+  public void test_AddNotTest() throws Throwable {
     this.initTest("${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)");
-    this.runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.LeftTransformTest_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.AddNotTest_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,8 +22,8 @@ public class LeftTransformTest_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2085316548396379699", "2085316548396380624");
-      this.typeString("go");
+      initEditor("5264300948581796845", "5264300948581796853");
+      this.typeString("not");
     }
   }
 }
