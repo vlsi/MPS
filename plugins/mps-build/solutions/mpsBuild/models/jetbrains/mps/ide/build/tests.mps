@@ -2504,17 +2504,6 @@
     </node>
     <node concept="398rNT" id="1NKy5CJqdGY" role="1l3spd">
       <property role="TrG5h" value="mps_home" />
-      <node concept="55IIr" id="4$ezt8YPGUY" role="398pKh">
-        <node concept="2Ry0Ak" id="4$ezt8YPGV8" role="iGT6I">
-          <property role="2Ry0Am" value="build" />
-          <node concept="2Ry0Ak" id="4$ezt8YPGVd" role="2Ry0An">
-            <property role="2Ry0Am" value="artifacts" />
-            <node concept="2Ry0Ak" id="4$ezt8YPGVi" role="2Ry0An">
-              <property role="2Ry0Am" value="mps" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="398rNT" id="1NKy5CJqdGZ" role="1l3spd">
       <property role="TrG5h" value="idea_home" />

@@ -3,7 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/mpsImplementationStripping" />
   <property name="build.layout" location="${build.dir}/artifacts/mpsImplementationStripping" />
-  <property name="mps_home" location="${basedir}/build/artifacts/mps" />
+  <property name="mps_home" location="" />
   <property name="idea_home" location="${mps_home}" />
   <property name="artifacts.mps" location="${mps_home}" />
   <property name="artifacts.IDEA" location="${idea_home}" />
