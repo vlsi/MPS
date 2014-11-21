@@ -18,6 +18,7 @@ public class Cell {
   }
   public void unsetKaja() {
     kaja = false;
+
   }
   public boolean isKaja() {
     return kaja;
