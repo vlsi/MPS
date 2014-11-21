@@ -120,7 +120,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_359zr8_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
-    editorCell.setCellId("Constant_359zr8_b2a");
+    editorCell.setCellId("finalModifier");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
@@ -140,7 +140,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_359zr8_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
-    editorCell.setCellId("Constant_359zr8_c2a");
+    editorCell.setCellId("abstractModifier");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
@@ -160,7 +160,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_359zr8_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "synchronized");
-    editorCell.setCellId("Constant_359zr8_d2a");
+    editorCell.setCellId("synchronizedModifier");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
@@ -180,7 +180,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_359zr8_e2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "native");
-    editorCell.setCellId("Constant_359zr8_e2a");
+    editorCell.setCellId("nativeModifier");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);

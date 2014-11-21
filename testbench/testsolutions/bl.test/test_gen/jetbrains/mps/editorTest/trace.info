@@ -7931,6 +7931,254 @@
       <unit id="6080342878134138487" at="12,0,34,0" name="jetbrains.mps.editorTest.EmptyEnumConstantCreationTest_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6131265013450950732">
+    <file name="RemoveSynchronized_Test.java">
+      <node id="6131265013450950732" at="15,58,16,107" concept="2" />
+      <node id="6131265013450950732" at="16,107,17,99" concept="2" />
+      <node id="6131265013450950732" at="24,51,25,63" concept="2" />
+      <node id="6131265013450950752" at="25,63,26,77" concept="2" />
+      <node id="6131265013450950754" at="26,77,27,77" concept="2" />
+      <node id="6131265013450950756" at="27,77,28,77" concept="2" />
+      <node id="6131265013450950758" at="28,77,29,77" concept="2" />
+      <node id="6131265013450950760" at="29,77,30,77" concept="2" />
+      <node id="6131265013450950762" at="30,77,31,77" concept="2" />
+      <node id="6131265013450950764" at="31,77,32,77" concept="2" />
+      <node id="6131265013450950906" at="32,77,33,77" concept="2" />
+      <node id="6131265013450950924" at="33,77,34,77" concept="2" />
+      <node id="6131265013450950944" at="34,77,35,77" concept="2" />
+      <node id="6131265013450950966" at="35,77,36,77" concept="2" />
+      <node id="6131265013450950990" at="36,77,37,77" concept="2" />
+      <node id="6131265013450951016" at="37,77,38,77" concept="2" />
+      <node id="6131265013450950732" at="12,0,14,0" concept="1" trace="RemoveSynchronized_Test#()V" />
+      <node id="6131265013450950732" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6131265013450950732" at="14,0,19,0" concept="5" trace="test_RemoveSynchronized#()V" />
+      <node id="6131265013450950732" at="23,0,40,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6131265013450950732" at="12,36,12,36" />
+      <scope id="6131265013450950732" at="21,23,21,23" />
+      <scope id="6131265013450950732" at="12,0,14,0" />
+      <scope id="6131265013450950732" at="15,58,17,99" />
+      <scope id="6131265013450950732" at="21,0,23,0" />
+      <scope id="6131265013450950732" at="14,0,19,0" />
+      <scope id="6131265013450950732" at="24,51,38,77" />
+      <scope id="6131265013450950732" at="23,0,40,0" />
+      <unit id="6131265013450950732" at="19,0,41,0" name="jetbrains.mps.editorTest.RemoveSynchronized_Test$TestBody" />
+      <unit id="6131265013450950732" at="10,0,42,0" name="jetbrains.mps.editorTest.RemoveSynchronized_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6131265013450951070">
+    <file name="RemoveSynchronizedDelete_Test.java">
+      <node id="6131265013450951070" at="15,64,16,107" concept="2" />
+      <node id="6131265013450951070" at="16,107,17,105" concept="2" />
+      <node id="6131265013450951070" at="24,51,25,63" concept="2" />
+      <node id="6131265013450951090" at="25,63,26,77" concept="2" />
+      <node id="6131265013450951092" at="26,77,27,77" concept="2" />
+      <node id="6131265013450951094" at="27,77,28,77" concept="2" />
+      <node id="6131265013450951096" at="28,77,29,77" concept="2" />
+      <node id="6131265013450951098" at="29,77,30,77" concept="2" />
+      <node id="6131265013450951100" at="30,77,31,77" concept="2" />
+      <node id="6131265013450951102" at="31,77,32,77" concept="2" />
+      <node id="6131265013450951104" at="32,77,33,77" concept="2" />
+      <node id="6131265013450951106" at="33,77,34,77" concept="2" />
+      <node id="6131265013450951108" at="34,77,35,77" concept="2" />
+      <node id="6131265013450951110" at="35,77,36,77" concept="2" />
+      <node id="6131265013450951112" at="36,77,37,77" concept="2" />
+      <node id="6131265013450951114" at="37,77,38,74" concept="2" />
+      <node id="6131265013450951070" at="12,0,14,0" concept="1" trace="RemoveSynchronizedDelete_Test#()V" />
+      <node id="6131265013450951070" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6131265013450951070" at="14,0,19,0" concept="5" trace="test_RemoveSynchronizedDelete#()V" />
+      <node id="6131265013450951070" at="23,0,40,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6131265013450951070" at="12,42,12,42" />
+      <scope id="6131265013450951070" at="21,23,21,23" />
+      <scope id="6131265013450951070" at="12,0,14,0" />
+      <scope id="6131265013450951070" at="15,64,17,105" />
+      <scope id="6131265013450951070" at="21,0,23,0" />
+      <scope id="6131265013450951070" at="14,0,19,0" />
+      <scope id="6131265013450951070" at="24,51,38,74" />
+      <scope id="6131265013450951070" at="23,0,40,0" />
+      <unit id="6131265013450951070" at="19,0,41,0" name="jetbrains.mps.editorTest.RemoveSynchronizedDelete_Test$TestBody" />
+      <unit id="6131265013450951070" at="10,0,42,0" name="jetbrains.mps.editorTest.RemoveSynchronizedDelete_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6131265013450968240">
+    <file name="RemoveSynchronizedOnLastPositionDelete_Test.java">
+      <node id="6131265013450968240" at="15,78,16,107" concept="2" />
+      <node id="6131265013450968240" at="16,107,17,119" concept="2" />
+      <node id="6131265013450968240" at="24,51,25,63" concept="2" />
+      <node id="6131265013450968260" at="25,63,26,77" concept="2" />
+      <node id="6131265013450968262" at="26,77,27,77" concept="2" />
+      <node id="6131265013450968264" at="27,77,28,77" concept="2" />
+      <node id="6131265013450968266" at="28,77,29,77" concept="2" />
+      <node id="6131265013450968268" at="29,77,30,77" concept="2" />
+      <node id="6131265013450968270" at="30,77,31,77" concept="2" />
+      <node id="6131265013450968272" at="31,77,32,77" concept="2" />
+      <node id="6131265013450968274" at="32,77,33,77" concept="2" />
+      <node id="6131265013450968276" at="33,77,34,77" concept="2" />
+      <node id="6131265013450968278" at="34,77,35,77" concept="2" />
+      <node id="6131265013450968280" at="35,77,36,77" concept="2" />
+      <node id="6131265013450968282" at="36,77,37,77" concept="2" />
+      <node id="6131265013450968284" at="37,77,38,74" concept="2" />
+      <node id="6131265013450968240" at="12,0,14,0" concept="1" trace="RemoveSynchronizedOnLastPositionDelete_Test#()V" />
+      <node id="6131265013450968240" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6131265013450968240" at="14,0,19,0" concept="5" trace="test_RemoveSynchronizedOnLastPositionDelete#()V" />
+      <node id="6131265013450968240" at="23,0,40,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6131265013450968240" at="12,56,12,56" />
+      <scope id="6131265013450968240" at="21,23,21,23" />
+      <scope id="6131265013450968240" at="12,0,14,0" />
+      <scope id="6131265013450968240" at="15,78,17,119" />
+      <scope id="6131265013450968240" at="21,0,23,0" />
+      <scope id="6131265013450968240" at="14,0,19,0" />
+      <scope id="6131265013450968240" at="24,51,38,74" />
+      <scope id="6131265013450968240" at="23,0,40,0" />
+      <unit id="6131265013450968240" at="19,0,41,0" name="jetbrains.mps.editorTest.RemoveSynchronizedOnLastPositionDelete_Test$TestBody" />
+      <unit id="6131265013450968240" at="10,0,42,0" name="jetbrains.mps.editorTest.RemoveSynchronizedOnLastPositionDelete_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6131265013450968440">
+    <file name="RemoveSynchronizedOnLastPosition_Test.java">
+      <node id="6131265013450968440" at="15,72,16,107" concept="2" />
+      <node id="6131265013450968440" at="16,107,17,113" concept="2" />
+      <node id="6131265013450968440" at="24,51,25,63" concept="2" />
+      <node id="6131265013450968460" at="25,63,26,77" concept="2" />
+      <node id="6131265013450968462" at="26,77,27,77" concept="2" />
+      <node id="6131265013450968464" at="27,77,28,77" concept="2" />
+      <node id="6131265013450968466" at="28,77,29,77" concept="2" />
+      <node id="6131265013450968468" at="29,77,30,77" concept="2" />
+      <node id="6131265013450968470" at="30,77,31,77" concept="2" />
+      <node id="6131265013450968472" at="31,77,32,77" concept="2" />
+      <node id="6131265013450968474" at="32,77,33,77" concept="2" />
+      <node id="6131265013450968476" at="33,77,34,77" concept="2" />
+      <node id="6131265013450968478" at="34,77,35,77" concept="2" />
+      <node id="6131265013450968480" at="35,77,36,77" concept="2" />
+      <node id="6131265013450968482" at="36,77,37,77" concept="2" />
+      <node id="6131265013450968484" at="37,77,38,77" concept="2" />
+      <node id="6131265013450968440" at="12,0,14,0" concept="1" trace="RemoveSynchronizedOnLastPosition_Test#()V" />
+      <node id="6131265013450968440" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6131265013450968440" at="14,0,19,0" concept="5" trace="test_RemoveSynchronizedOnLastPosition#()V" />
+      <node id="6131265013450968440" at="23,0,40,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6131265013450968440" at="12,50,12,50" />
+      <scope id="6131265013450968440" at="21,23,21,23" />
+      <scope id="6131265013450968440" at="12,0,14,0" />
+      <scope id="6131265013450968440" at="15,72,17,113" />
+      <scope id="6131265013450968440" at="21,0,23,0" />
+      <scope id="6131265013450968440" at="14,0,19,0" />
+      <scope id="6131265013450968440" at="24,51,38,77" />
+      <scope id="6131265013450968440" at="23,0,40,0" />
+      <unit id="6131265013450968440" at="19,0,41,0" name="jetbrains.mps.editorTest.RemoveSynchronizedOnLastPosition_Test$TestBody" />
+      <unit id="6131265013450968440" at="10,0,42,0" name="jetbrains.mps.editorTest.RemoveSynchronizedOnLastPosition_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6131265013450968618">
+    <file name="RemoveStatic_Test.java">
+      <node id="6131265013450968618" at="15,52,16,107" concept="2" />
+      <node id="6131265013450968618" at="16,107,17,93" concept="2" />
+      <node id="6131265013450968618" at="24,51,25,63" concept="2" />
+      <node id="6131265013450968638" at="25,63,26,77" concept="2" />
+      <node id="6131265013450968640" at="26,77,27,77" concept="2" />
+      <node id="6131265013450968642" at="27,77,28,77" concept="2" />
+      <node id="6131265013450968644" at="28,77,29,77" concept="2" />
+      <node id="6131265013450968646" at="29,77,30,77" concept="2" />
+      <node id="6131265013450968648" at="30,77,31,77" concept="2" />
+      <node id="6131265013450968650" at="31,77,32,77" concept="2" />
+      <node id="6131265013450968618" at="12,0,14,0" concept="1" trace="RemoveStatic_Test#()V" />
+      <node id="6131265013450968618" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6131265013450968618" at="14,0,19,0" concept="5" trace="test_RemoveStatic#()V" />
+      <node id="6131265013450968618" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6131265013450968618" at="12,30,12,30" />
+      <scope id="6131265013450968618" at="21,23,21,23" />
+      <scope id="6131265013450968618" at="12,0,14,0" />
+      <scope id="6131265013450968618" at="15,52,17,93" />
+      <scope id="6131265013450968618" at="21,0,23,0" />
+      <scope id="6131265013450968618" at="14,0,19,0" />
+      <scope id="6131265013450968618" at="24,51,32,77" />
+      <scope id="6131265013450968618" at="23,0,34,0" />
+      <unit id="6131265013450968618" at="19,0,35,0" name="jetbrains.mps.editorTest.RemoveStatic_Test$TestBody" />
+      <unit id="6131265013450968618" at="10,0,36,0" name="jetbrains.mps.editorTest.RemoveStatic_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6131265013450968955">
+    <file name="RemoveStaticDelete_Test.java">
+      <node id="6131265013450968955" at="15,58,16,107" concept="2" />
+      <node id="6131265013450968955" at="16,107,17,99" concept="2" />
+      <node id="6131265013450968955" at="24,51,25,63" concept="2" />
+      <node id="6131265013450968975" at="25,63,26,77" concept="2" />
+      <node id="6131265013450968977" at="26,77,27,77" concept="2" />
+      <node id="6131265013450968979" at="27,77,28,77" concept="2" />
+      <node id="6131265013450968981" at="28,77,29,77" concept="2" />
+      <node id="6131265013450968983" at="29,77,30,77" concept="2" />
+      <node id="6131265013450968985" at="30,77,31,77" concept="2" />
+      <node id="6131265013450968987" at="31,77,32,74" concept="2" />
+      <node id="6131265013450968955" at="12,0,14,0" concept="1" trace="RemoveStaticDelete_Test#()V" />
+      <node id="6131265013450968955" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6131265013450968955" at="14,0,19,0" concept="5" trace="test_RemoveStaticDelete#()V" />
+      <node id="6131265013450968955" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6131265013450968955" at="12,36,12,36" />
+      <scope id="6131265013450968955" at="21,23,21,23" />
+      <scope id="6131265013450968955" at="12,0,14,0" />
+      <scope id="6131265013450968955" at="15,58,17,99" />
+      <scope id="6131265013450968955" at="21,0,23,0" />
+      <scope id="6131265013450968955" at="14,0,19,0" />
+      <scope id="6131265013450968955" at="24,51,32,74" />
+      <scope id="6131265013450968955" at="23,0,34,0" />
+      <unit id="6131265013450968955" at="19,0,35,0" name="jetbrains.mps.editorTest.RemoveStaticDelete_Test$TestBody" />
+      <unit id="6131265013450968955" at="10,0,36,0" name="jetbrains.mps.editorTest.RemoveStaticDelete_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6131265013450969247">
+    <file name="RemoveStaticOnLastPositionDelete_Test.java">
+      <node id="6131265013450969247" at="15,72,16,107" concept="2" />
+      <node id="6131265013450969247" at="16,107,17,113" concept="2" />
+      <node id="6131265013450969247" at="24,51,25,63" concept="2" />
+      <node id="6131265013450969267" at="25,63,26,77" concept="2" />
+      <node id="6131265013450969269" at="26,77,27,77" concept="2" />
+      <node id="6131265013450969271" at="27,77,28,77" concept="2" />
+      <node id="6131265013450969273" at="28,77,29,77" concept="2" />
+      <node id="6131265013450969275" at="29,77,30,77" concept="2" />
+      <node id="6131265013450969277" at="30,77,31,77" concept="2" />
+      <node id="6131265013450969279" at="31,77,32,74" concept="2" />
+      <node id="6131265013450969247" at="12,0,14,0" concept="1" trace="RemoveStaticOnLastPositionDelete_Test#()V" />
+      <node id="6131265013450969247" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6131265013450969247" at="14,0,19,0" concept="5" trace="test_RemoveStaticOnLastPositionDelete#()V" />
+      <node id="6131265013450969247" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6131265013450969247" at="12,50,12,50" />
+      <scope id="6131265013450969247" at="21,23,21,23" />
+      <scope id="6131265013450969247" at="12,0,14,0" />
+      <scope id="6131265013450969247" at="15,72,17,113" />
+      <scope id="6131265013450969247" at="21,0,23,0" />
+      <scope id="6131265013450969247" at="14,0,19,0" />
+      <scope id="6131265013450969247" at="24,51,32,74" />
+      <scope id="6131265013450969247" at="23,0,34,0" />
+      <unit id="6131265013450969247" at="19,0,35,0" name="jetbrains.mps.editorTest.RemoveStaticOnLastPositionDelete_Test$TestBody" />
+      <unit id="6131265013450969247" at="10,0,36,0" name="jetbrains.mps.editorTest.RemoveStaticOnLastPositionDelete_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6131265013451726254">
+    <file name="RemoveStaticOnLastPosition_Test.java">
+      <node id="6131265013451726254" at="15,66,16,107" concept="2" />
+      <node id="6131265013451726254" at="16,107,17,107" concept="2" />
+      <node id="6131265013451726254" at="24,51,25,63" concept="2" />
+      <node id="6131265013451726274" at="25,63,26,77" concept="2" />
+      <node id="6131265013451726276" at="26,77,27,77" concept="2" />
+      <node id="6131265013451726278" at="27,77,28,77" concept="2" />
+      <node id="6131265013451726280" at="28,77,29,77" concept="2" />
+      <node id="6131265013451726282" at="29,77,30,77" concept="2" />
+      <node id="6131265013451726284" at="30,77,31,77" concept="2" />
+      <node id="6131265013451726286" at="31,77,32,77" concept="2" />
+      <node id="6131265013451726254" at="12,0,14,0" concept="1" trace="RemoveStaticOnLastPosition_Test#()V" />
+      <node id="6131265013451726254" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6131265013451726254" at="14,0,19,0" concept="5" trace="test_RemoveStaticOnLastPosition#()V" />
+      <node id="6131265013451726254" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6131265013451726254" at="12,44,12,44" />
+      <scope id="6131265013451726254" at="21,23,21,23" />
+      <scope id="6131265013451726254" at="12,0,14,0" />
+      <scope id="6131265013451726254" at="15,66,17,107" />
+      <scope id="6131265013451726254" at="21,0,23,0" />
+      <scope id="6131265013451726254" at="14,0,19,0" />
+      <scope id="6131265013451726254" at="24,51,32,77" />
+      <scope id="6131265013451726254" at="23,0,34,0" />
+      <unit id="6131265013451726254" at="19,0,35,0" name="jetbrains.mps.editorTest.RemoveStaticOnLastPosition_Test$TestBody" />
+      <unit id="6131265013451726254" at="10,0,36,0" name="jetbrains.mps.editorTest.RemoveStaticOnLastPosition_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6136581231959449821">
     <file name="AddFinalAfterPublic_Test.java">
       <node id="6136581231959449821" at="15,59,16,107" concept="2" />

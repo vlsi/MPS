@@ -106,7 +106,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_j4vm40_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
-    editorCell.setCellId("Constant_j4vm40_d0");
+    editorCell.setCellId("finalModifier");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
@@ -126,7 +126,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_j4vm40_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
-    editorCell.setCellId("Constant_j4vm40_e0");
+    editorCell.setCellId("staticModifier");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
@@ -143,7 +143,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_j4vm40_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "synchronized");
-    editorCell.setCellId("Constant_j4vm40_f0");
+    editorCell.setCellId("synchronizedModifier");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
@@ -163,7 +163,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_j4vm40_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "native");
-    editorCell.setCellId("Constant_j4vm40_g0");
+    editorCell.setCellId("nativeModifier");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, true);
