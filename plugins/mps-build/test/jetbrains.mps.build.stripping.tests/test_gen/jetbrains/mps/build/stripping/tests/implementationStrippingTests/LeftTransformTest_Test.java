@@ -23,7 +23,7 @@ public class LeftTransformTest_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("2085316548396379699", "2085316548396380624");
-      this.typeString("go");
+      this.typeString("if");
     }
   }
 }
