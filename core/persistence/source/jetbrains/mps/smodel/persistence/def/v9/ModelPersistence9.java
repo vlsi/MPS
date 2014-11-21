@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
+import jetbrains.mps.persistence.MetaModelInfoProvider;
+import jetbrains.mps.persistence.MetaModelInfoProvider.BaseMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
+import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -115,7 +118,10 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
-    return new AnnotationInfoReader9Handler();
+    // for annotation purposes, we don't need to publish meta-model or to query outer world, information from model file should be sufficient
+    MetaModelInfoProvider mmiProvider = new StuffedMetaModelInfo(new BaseMetaModelInfo());
+    IdInfoReadHelper readHelper = new IdInfoReadHelper(mmiProvider, true, true);
+    return new AnnotationInfoReader9Handler(readHelper);
   }
 
   @Override
