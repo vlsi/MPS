@@ -32,7 +32,7 @@ public class BuildAllDataFlows_Action extends BaseAction {
   public BuildAllDataFlows_Action() {
     super("Rebuild All DataFlows", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {

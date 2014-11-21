@@ -9899,6 +9899,7 @@
     <property role="TrG5h" value="BuildAllEditors" />
     <property role="2uzpH1" value="Rebuild All Editors" />
     <property role="3GE5qa" value="Internal.Make" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="_x8dJOJ1mN" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -10091,6 +10092,7 @@
     <property role="TrG5h" value="BuildAllIntentions" />
     <property role="2uzpH1" value="Rebuild All Intentions" />
     <property role="3GE5qa" value="Internal.Make" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="pw8k1kX4vm" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -10276,6 +10278,7 @@
     <property role="TrG5h" value="BuildAllActions" />
     <property role="2uzpH1" value="Rebuild All Actions" />
     <property role="3GE5qa" value="Internal.Make" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="5dLITL9AwZj" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -10468,6 +10471,7 @@
     <property role="TrG5h" value="BuildAllRefactorings" />
     <property role="2uzpH1" value="Rebuild All Refactorings" />
     <property role="3GE5qa" value="Internal.Make" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="6AUZaGVE70J" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -10653,6 +10657,7 @@
     <property role="TrG5h" value="BuildAllDataFlows" />
     <property role="2uzpH1" value="Rebuild All DataFlows" />
     <property role="3GE5qa" value="Internal.Make" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="1$NEetdXBVb" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
