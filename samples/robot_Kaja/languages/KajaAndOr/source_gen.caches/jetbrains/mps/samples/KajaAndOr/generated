@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7xqhw09yo9y0dc2e36j6a2zrrh60lh" />
+<dependencies version="2" modelHash="-awry37v98e83b2uj1ggm8tm4aylcs4t">
+  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="vs52epi6bxreq125r9ctg39yilr85a" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3863x0u9flggmckjewdlsmikl6dj9wv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-c3insuj5q8xzwq7xb0kdlp6g65rvw4k" />
+  <dep model="r:6aa6f228-56c3-4d3a-b03e-4204df10c967(jetbrains.mps.samples.KajaAndOr.editor)" hash="-19y18wcei8dl3mqs4qz1sbvvzf9qs9x" />
+  <dep model="r:6fbadff6-71c3-43f7-8664-f726f0905ebc(jetbrains.mps.samples.KajaAndOr.constraints)" hash="-59cvjvu84yxhfktns9cxofzq16ixkdh" />
+  <dep model="r:95c64ded-19ca-44d7-9e0e-1d6b23955171(jetbrains.mps.samples.KajaAndOr.behavior)" hash="-8bdw7dpqs8o40m2ewfd0pgavox0t67g" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="5t7vko7lmcdqgrvjfpbb7ytumq3o2g7" />
+  <dep model="r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)" hash="-d71pfv1dpsxfkmv9llmlishz9ocq5iz" />
+  <dep model="r:dbe0b701-addc-4f0f-9c68-6c511dfcc57c(jetbrains.mps.samples.KajaAndOr.typesystem)" hash="-d4yljqjdx2lcx4fjuc9d2tzkvkfhd6u" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="cw1h8cyx63y3uqtst8ych98ne4ycg7y" />
+  <common dependsOnNodes="true">
+    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:6aa6f228-56c3-4d3a-b03e-4204df10c967(jetbrains.mps.samples.KajaAndOr.editor)" />
+    <dep model="r:6fbadff6-71c3-43f7-8664-f726f0905ebc(jetbrains.mps.samples.KajaAndOr.constraints)" />
+    <dep model="r:95c64ded-19ca-44d7-9e0e-1d6b23955171(jetbrains.mps.samples.KajaAndOr.behavior)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)" />
+    <dep model="r:dbe0b701-addc-4f0f-9c68-6c511dfcc57c(jetbrains.mps.samples.KajaAndOr.typesystem)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
 
