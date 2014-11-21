@@ -1463,6 +1463,94 @@
       <unit id="1645633669434969402" at="10,0,30,0" name="jetbrains.mps.editorTest.AddParensToCast6_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1722900675535119184">
+    <file name="AddFinalInStaticFieldLeftOfType_Test.java">
+      <node id="1722900675535119184" at="15,71,16,107" concept="2" />
+      <node id="1722900675535119184" at="16,107,17,112" concept="2" />
+      <node id="1722900675535119184" at="24,51,25,63" concept="2" />
+      <node id="1722900675535119186" at="25,63,26,31" concept="2" />
+      <node id="1722900675535119184" at="12,0,14,0" concept="1" trace="AddFinalInStaticFieldLeftOfType_Test#()V" />
+      <node id="1722900675535119184" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="1722900675535119184" at="14,0,19,0" concept="5" trace="test_AddFinalInStaticFieldLeftOfType#()V" />
+      <node id="1722900675535119184" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1722900675535119184" at="12,49,12,49" />
+      <scope id="1722900675535119184" at="21,23,21,23" />
+      <scope id="1722900675535119184" at="12,0,14,0" />
+      <scope id="1722900675535119184" at="15,71,17,112" />
+      <scope id="1722900675535119184" at="21,0,23,0" />
+      <scope id="1722900675535119184" at="24,51,26,31" />
+      <scope id="1722900675535119184" at="14,0,19,0" />
+      <scope id="1722900675535119184" at="23,0,28,0" />
+      <unit id="1722900675535119184" at="19,0,29,0" name="jetbrains.mps.editorTest.AddFinalInStaticFieldLeftOfType_Test$TestBody" />
+      <unit id="1722900675535119184" at="10,0,30,0" name="jetbrains.mps.editorTest.AddFinalInStaticFieldLeftOfType_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1722900675535201273">
+    <file name="AddTransientInFieldLeftOfType_Test.java">
+      <node id="1722900675535201273" at="15,69,16,107" concept="2" />
+      <node id="1722900675535201273" at="16,107,17,110" concept="2" />
+      <node id="1722900675535201273" at="24,51,25,63" concept="2" />
+      <node id="1722900675535201275" at="25,63,26,35" concept="2" />
+      <node id="1722900675535201273" at="12,0,14,0" concept="1" trace="AddTransientInFieldLeftOfType_Test#()V" />
+      <node id="1722900675535201273" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="1722900675535201273" at="14,0,19,0" concept="5" trace="test_AddTransientInFieldLeftOfType#()V" />
+      <node id="1722900675535201273" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1722900675535201273" at="12,47,12,47" />
+      <scope id="1722900675535201273" at="21,23,21,23" />
+      <scope id="1722900675535201273" at="12,0,14,0" />
+      <scope id="1722900675535201273" at="15,69,17,110" />
+      <scope id="1722900675535201273" at="21,0,23,0" />
+      <scope id="1722900675535201273" at="24,51,26,35" />
+      <scope id="1722900675535201273" at="14,0,19,0" />
+      <scope id="1722900675535201273" at="23,0,28,0" />
+      <unit id="1722900675535201273" at="19,0,29,0" name="jetbrains.mps.editorTest.AddTransientInFieldLeftOfType_Test$TestBody" />
+      <unit id="1722900675535201273" at="10,0,30,0" name="jetbrains.mps.editorTest.AddTransientInFieldLeftOfType_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1722900675535201732">
+    <file name="AddStaticInFieldLeftOfType_Test.java">
+      <node id="1722900675535201732" at="15,66,16,107" concept="2" />
+      <node id="1722900675535201732" at="16,107,17,107" concept="2" />
+      <node id="1722900675535201732" at="24,51,25,63" concept="2" />
+      <node id="1722900675535201734" at="25,63,26,32" concept="2" />
+      <node id="1722900675535201732" at="12,0,14,0" concept="1" trace="AddStaticInFieldLeftOfType_Test#()V" />
+      <node id="1722900675535201732" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="1722900675535201732" at="14,0,19,0" concept="5" trace="test_AddStaticInFieldLeftOfType#()V" />
+      <node id="1722900675535201732" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1722900675535201732" at="12,44,12,44" />
+      <scope id="1722900675535201732" at="21,23,21,23" />
+      <scope id="1722900675535201732" at="12,0,14,0" />
+      <scope id="1722900675535201732" at="15,66,17,107" />
+      <scope id="1722900675535201732" at="21,0,23,0" />
+      <scope id="1722900675535201732" at="24,51,26,32" />
+      <scope id="1722900675535201732" at="14,0,19,0" />
+      <scope id="1722900675535201732" at="23,0,28,0" />
+      <unit id="1722900675535201732" at="19,0,29,0" name="jetbrains.mps.editorTest.AddStaticInFieldLeftOfType_Test$TestBody" />
+      <unit id="1722900675535201732" at="10,0,30,0" name="jetbrains.mps.editorTest.AddStaticInFieldLeftOfType_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1722900675535202034">
+    <file name="AddVolatileInFieldLeftOfType_Test.java">
+      <node id="1722900675535202034" at="15,68,16,107" concept="2" />
+      <node id="1722900675535202034" at="16,107,17,109" concept="2" />
+      <node id="1722900675535202034" at="24,51,25,63" concept="2" />
+      <node id="1722900675535202036" at="25,63,26,34" concept="2" />
+      <node id="1722900675535202034" at="12,0,14,0" concept="1" trace="AddVolatileInFieldLeftOfType_Test#()V" />
+      <node id="1722900675535202034" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="1722900675535202034" at="14,0,19,0" concept="5" trace="test_AddVolatileInFieldLeftOfType#()V" />
+      <node id="1722900675535202034" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1722900675535202034" at="12,46,12,46" />
+      <scope id="1722900675535202034" at="21,23,21,23" />
+      <scope id="1722900675535202034" at="12,0,14,0" />
+      <scope id="1722900675535202034" at="15,68,17,109" />
+      <scope id="1722900675535202034" at="21,0,23,0" />
+      <scope id="1722900675535202034" at="24,51,26,34" />
+      <scope id="1722900675535202034" at="14,0,19,0" />
+      <scope id="1722900675535202034" at="23,0,28,0" />
+      <unit id="1722900675535202034" at="19,0,29,0" name="jetbrains.mps.editorTest.AddVolatileInFieldLeftOfType_Test$TestBody" />
+      <unit id="1722900675535202034" at="10,0,30,0" name="jetbrains.mps.editorTest.AddVolatileInFieldLeftOfType_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1774243543380527900">
     <file name="AddFinalInStaticField_Test.java">
       <node id="1774243543380527900" at="15,61,16,107" concept="2" />
@@ -7095,6 +7183,94 @@
       <scope id="5225726827662868497" at="23,0,28,0" />
       <unit id="5225726827662868497" at="19,0,29,0" name="jetbrains.mps.editorTest.AddMultiParensToCast2_Test$TestBody" />
       <unit id="5225726827662868497" at="10,0,30,0" name="jetbrains.mps.editorTest.AddMultiParensToCast2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5264300948588170102">
+    <file name="LocalVariableMadeFinalCaret_Test.java">
+      <node id="5264300948588170102" at="15,67,16,107" concept="2" />
+      <node id="5264300948588170102" at="16,107,17,108" concept="2" />
+      <node id="5264300948588170102" at="24,51,25,63" concept="2" />
+      <node id="5264300948588170115" at="25,63,26,31" concept="2" />
+      <node id="5264300948588170102" at="12,0,14,0" concept="1" trace="LocalVariableMadeFinalCaret_Test#()V" />
+      <node id="5264300948588170102" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5264300948588170102" at="14,0,19,0" concept="5" trace="test_LocalVariableMadeFinalCaret#()V" />
+      <node id="5264300948588170102" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5264300948588170102" at="12,45,12,45" />
+      <scope id="5264300948588170102" at="21,23,21,23" />
+      <scope id="5264300948588170102" at="12,0,14,0" />
+      <scope id="5264300948588170102" at="15,67,17,108" />
+      <scope id="5264300948588170102" at="21,0,23,0" />
+      <scope id="5264300948588170102" at="24,51,26,31" />
+      <scope id="5264300948588170102" at="14,0,19,0" />
+      <scope id="5264300948588170102" at="23,0,28,0" />
+      <unit id="5264300948588170102" at="19,0,29,0" name="jetbrains.mps.editorTest.LocalVariableMadeFinalCaret_Test$TestBody" />
+      <unit id="5264300948588170102" at="10,0,30,0" name="jetbrains.mps.editorTest.LocalVariableMadeFinalCaret_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5264300948588172588">
+    <file name="LocalVariableRemovedFinalCaret_Test.java">
+      <node id="5264300948588172588" at="15,70,16,107" concept="2" />
+      <node id="5264300948588172588" at="16,107,17,111" concept="2" />
+      <node id="5264300948588172588" at="24,51,25,63" concept="2" />
+      <node id="5264300948588173798" at="25,63,26,77" concept="2" />
+      <node id="5264300948588172588" at="12,0,14,0" concept="1" trace="LocalVariableRemovedFinalCaret_Test#()V" />
+      <node id="5264300948588172588" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5264300948588172588" at="14,0,19,0" concept="5" trace="test_LocalVariableRemovedFinalCaret#()V" />
+      <node id="5264300948588172588" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5264300948588172588" at="12,48,12,48" />
+      <scope id="5264300948588172588" at="21,23,21,23" />
+      <scope id="5264300948588172588" at="12,0,14,0" />
+      <scope id="5264300948588172588" at="15,70,17,111" />
+      <scope id="5264300948588172588" at="21,0,23,0" />
+      <scope id="5264300948588172588" at="24,51,26,77" />
+      <scope id="5264300948588172588" at="14,0,19,0" />
+      <scope id="5264300948588172588" at="23,0,28,0" />
+      <unit id="5264300948588172588" at="19,0,29,0" name="jetbrains.mps.editorTest.LocalVariableRemovedFinalCaret_Test$TestBody" />
+      <unit id="5264300948588172588" at="10,0,30,0" name="jetbrains.mps.editorTest.LocalVariableRemovedFinalCaret_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5264300948588173821">
+    <file name="ParameterMadeFinalCaret_Test.java">
+      <node id="5264300948588173821" at="15,63,16,107" concept="2" />
+      <node id="5264300948588173821" at="16,107,17,104" concept="2" />
+      <node id="5264300948588173821" at="24,51,25,63" concept="2" />
+      <node id="5264300948588173823" at="25,63,26,31" concept="2" />
+      <node id="5264300948588173821" at="12,0,14,0" concept="1" trace="ParameterMadeFinalCaret_Test#()V" />
+      <node id="5264300948588173821" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5264300948588173821" at="14,0,19,0" concept="5" trace="test_ParameterMadeFinalCaret#()V" />
+      <node id="5264300948588173821" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5264300948588173821" at="12,41,12,41" />
+      <scope id="5264300948588173821" at="21,23,21,23" />
+      <scope id="5264300948588173821" at="12,0,14,0" />
+      <scope id="5264300948588173821" at="15,63,17,104" />
+      <scope id="5264300948588173821" at="21,0,23,0" />
+      <scope id="5264300948588173821" at="24,51,26,31" />
+      <scope id="5264300948588173821" at="14,0,19,0" />
+      <scope id="5264300948588173821" at="23,0,28,0" />
+      <unit id="5264300948588173821" at="19,0,29,0" name="jetbrains.mps.editorTest.ParameterMadeFinalCaret_Test$TestBody" />
+      <unit id="5264300948588173821" at="10,0,30,0" name="jetbrains.mps.editorTest.ParameterMadeFinalCaret_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5264300948588175006">
+    <file name="ParameterRemovedFinalCaret_Test.java">
+      <node id="5264300948588175006" at="15,66,16,107" concept="2" />
+      <node id="5264300948588175006" at="16,107,17,107" concept="2" />
+      <node id="5264300948588175006" at="24,51,25,63" concept="2" />
+      <node id="5264300948588176081" at="25,63,26,77" concept="2" />
+      <node id="5264300948588175006" at="12,0,14,0" concept="1" trace="ParameterRemovedFinalCaret_Test#()V" />
+      <node id="5264300948588175006" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5264300948588175006" at="14,0,19,0" concept="5" trace="test_ParameterRemovedFinalCaret#()V" />
+      <node id="5264300948588175006" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5264300948588175006" at="12,44,12,44" />
+      <scope id="5264300948588175006" at="21,23,21,23" />
+      <scope id="5264300948588175006" at="12,0,14,0" />
+      <scope id="5264300948588175006" at="15,66,17,107" />
+      <scope id="5264300948588175006" at="21,0,23,0" />
+      <scope id="5264300948588175006" at="24,51,26,77" />
+      <scope id="5264300948588175006" at="14,0,19,0" />
+      <scope id="5264300948588175006" at="23,0,28,0" />
+      <unit id="5264300948588175006" at="19,0,29,0" name="jetbrains.mps.editorTest.ParameterRemovedFinalCaret_Test$TestBody" />
+      <unit id="5264300948588175006" at="10,0,30,0" name="jetbrains.mps.editorTest.ParameterRemovedFinalCaret_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5331479185384370996">

@@ -38962,19 +38962,18 @@
         <property role="3TUv4t" value="false" />
         <property role="eg7rD" value="true" />
         <property role="IEkAT" value="false" />
-        <node concept="10Oyi0" id="1vCYg$WzArR" role="1tU5fm">
-          <node concept="LIFWc" id="1vCYg$WzAtX" role="lGtFl">
-            <property role="LIFWa" value="1" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="1" />
-            <property role="p6zMs" value="1" />
-            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
-          </node>
-        </node>
+        <node concept="10Oyi0" id="1vCYg$WzArR" role="1tU5fm" />
         <node concept="3cmrfG" id="1vCYg$WzArS" role="33vP2m">
           <property role="3cmrfH" value="10" />
         </node>
         <node concept="3Tm1VV" id="1vCYg$WzArT" role="1B3o_S" />
+        <node concept="LIFWc" id="7z2zh1sritw" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="8" />
+          <property role="p6zMs" value="8" />
+          <property role="LIFWd" value="volatileModifier" />
+        </node>
       </node>
       <node concept="3Tm1VV" id="1vCYg$WzArV" role="1B3o_S" />
     </node>
