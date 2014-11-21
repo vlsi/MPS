@@ -246,7 +246,7 @@ public class SLinkOperations {
     if (reference == null) {
       return null;
     }
-    return ((SNode) SModelSearchUtil.findLinkDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(((SNode) reference.getSourceNode())), reference.getRole()));
+    return reference.getLink().getDeclarationNode();
   }
   public static SNode getTargetNode(SReference reference) {
     if (reference == null) {
