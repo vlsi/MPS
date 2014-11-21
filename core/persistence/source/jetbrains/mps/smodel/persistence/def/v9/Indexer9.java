@@ -15,115 +15,81 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
-import jetbrains.mps.smodel.DebugRegistry;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
+import jetbrains.mps.smodel.persistence.def.XmlFastScanner;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.Pair;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.util.Consumer;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Indexer9 {
-  private static final String ATTR_SUFFIX = "=\"";
-  private static final String TARGET_NODE_ID_PREFIX = ModelPersistence9.TARGET_NODE_ID + ATTR_SUFFIX;
-  private static final char TARGET_NODE_ID_FIRSTCHAR = ModelPersistence9.TARGET_NODE_ID.charAt(0);
-  private static final String CONCEPT_ID_PREFIX = ModelPersistence9.CONCEPT_ID + ATTR_SUFFIX;
-  private static final char CONCEPT_ID_FIRSTCHAR = ModelPersistence9.CONCEPT_ID.charAt(0);
-  private static final String MODEL_ID_PREFIX = ModelPersistence9.ID + ATTR_SUFFIX;
-  private static final char MODEL_ID_FIRSTCHAR = ModelPersistence9.ID.charAt(0);
+  private final char[] myData;
+  private final Consumer<String> myConsumer;
+  private final IdEncoder myIdEncoder = new IdEncoder();
 
-  private char[] myData;
-  private Consumer<String> myConsumer;
 
-  private Pair<Integer, Integer> myPrevWord = null;
-
-  public Indexer9(char[] data, Consumer<String> consumer) {
+  public Indexer9(@NotNull char[] data, @NotNull Consumer<String> consumer) {
     myData = data;
     myConsumer = consumer;
   }
 
   public void index() {
-    int wordStart = -1;
-    for (int i = 0; i < myData.length; i++) {
-      char c = myData[i];
-      if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
-        if (wordStart == -1) {
-          wordStart = i;
+    XmlFastScanner s = new XmlFastScanner(myData);
+    int token;
+    boolean insideRegistry = false, insideImports = false, underNode = false;
+    final Matcher attrMatcher = Pattern.compile(String.format("\\s(%s|%s|%s)\\s*=\\s*\"([^\"]+)\"", ModelPersistence9.ID, ModelPersistence9.TO, ModelPersistence9.REF)).matcher(
+        "");
+    while ((token = s.next()) != XmlFastScanner.EOI) {
+      if (token != XmlFastScanner.OPEN_TAG && token != XmlFastScanner.SIMPLE_TAG) {
+        continue;
+      }
+      final String tokenName = s.getName();
+      if (insideRegistry) {
+        if (ModelPersistence9.REGISTRY_CONCEPT.equals(tokenName) && attrMatcher.reset(s.token()).find()) {
+          handleConceptId(attrMatcher.group(2));
         }
-      } else if (wordStart >= 0) {
-        processWord(wordStart, i - wordStart);
-        myPrevWord = new Pair<Integer, Integer>(wordStart, i - wordStart);
-        wordStart = -1;
-      }
-    }
-  }
-
-  private void processWord(int offset, int len) {
-    //optimization: word should end with "="
-    if (myData[offset + len] != '=') return;
-
-    //optimization: ignore other words
-    if (myData[offset] != MODEL_ID_FIRSTCHAR &&
-        myData[offset] != CONCEPT_ID_FIRSTCHAR &&
-        myData[offset] != TARGET_NODE_ID_FIRSTCHAR) {
-      return;
-    }
-
-     if (contains( offset, TARGET_NODE_ID_PREFIX)) {
-      // check pattern "targetNodeId=\"(?:[0-9]+v?\\.)?(.+?)\""
-      offset += TARGET_NODE_ID_PREFIX.length();
-      int end = indexOfClosingQuote( offset);
-      if (end > offset) {
-        int e = offset;
-        while (e < end && myData[e] != '.') {
-          e++;
+      } else if (insideImports) {
+        if (ModelPersistence9.IMPORT.equals(tokenName) && attrMatcher.reset(s.token()).find()) {
+          handleModelImportRef(JDOMUtil.unescapeText(attrMatcher.group(2)));
         }
-        if (e > offset && e + 1 < end && myData[e] == '.') {
-          offset = e + 1;
+      } else if (underNode) {
+        if (ModelPersistence9.NODE_REFERENCE.equals(tokenName) && attrMatcher.reset(s.token()).find()) {
+          handleExternalReference(JDOMUtil.unescapeText(attrMatcher.group(2)));
         }
-        String test = WriteHelper.decode(JDOMUtil.unescapeText(new String(myData, offset, end - offset)));
-        myConsumer.consume(test);
       }
-    } else if (contains(offset, CONCEPT_ID_PREFIX)) {
-      // check pattern "type=\"(.+?)\" id=\".+?\""
-      offset += CONCEPT_ID_PREFIX.length();
-      int end = indexOfClosingQuote(offset);
-      int start = end;
-      while (start >= offset && myData[start] != '.') --start;
-      offset = start + 1;
-      if (end > offset) {
-        String cid = JDOMUtil.unescapeText(new String(myData, offset, end - offset));
-        myConsumer.consume(cid);
-      }
-    } else if (contains(offset, MODEL_ID_PREFIX) && prevWordIs(ModelPersistence.MODEL)) {
-      // check pattern "modelUID=\"(.+?)\""
-      offset += MODEL_ID_PREFIX.length();
-      int end = indexOfClosingQuote(offset);
-      if (end > offset) {
-        String modelRef = JDOMUtil.unescapeText(new String(myData, offset, end - offset));
-        myConsumer.consume(PersistenceFacade.getInstance().createModelReference(modelRef).getModelName());
+      if (s.tagDepth() == 1) {
+        if (ModelPersistence9.REGISTRY.equals(tokenName)) {
+          insideRegistry = true;
+          insideImports = underNode = false;
+        } else if (ModelPersistence9.IMPORTS.equals(tokenName)) {
+          insideImports = true;
+          insideRegistry = underNode = false;
+        } else if (ModelPersistence9.NODE.equals(tokenName)) {
+          underNode = true;
+          insideRegistry = insideImports = false;
+        }
       }
     }
   }
 
-  private boolean prevWordIs(String word) {
-    return new String(myData,myPrevWord.o1,myPrevWord.o2).equals(word);
+  private void handleConceptId(String conceptId) {
+    // XXX Would be better to use IdEncoder here, as it's bare assumption conceptId string in xml file is
+    // identical to what clients expect to use in FindUsages. Now it seems to expect Long.toString(conceptId)
+    myConsumer.consume(conceptId);
   }
 
-  private int indexOfClosingQuote( int start) {
-    for (int i = start; i < myData.length && myData[i] != '\n'; i++) {
-      if (myData[i] == '"') return i;
-    }
-    return -1;
+  private void handleModelImportRef(String modelRef) {
+    final SModelReference mr = myIdEncoder.parseModelReference(modelRef);
+    myConsumer.consume(mr.getModelName());
   }
 
-  private boolean contains(int offset, String s) {
-    if (offset + s.length() >= myData.length) return false;
-
-    for (int i = 0; i < s.length(); i++) {
-      if (myData[offset + i] != s.charAt(i)) return false;
+  private void handleExternalReference(String outerRef) {
+    SNodeId nodeId = myIdEncoder.parseExternalNodeReference(outerRef);
+    if (nodeId != null) {
+      myConsumer.consume(nodeId.toString());
     }
-    return true;
   }
 }

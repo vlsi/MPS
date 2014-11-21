@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import jetbrains.mps.util.FileUtil;
-
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-
 public class XmlFastScanner {
   public static final int EOI = 0;
   public static final int SIMPLE_TAG = 1;
@@ -32,18 +25,21 @@ public class XmlFastScanner {
   private int tokenOffset;
   private int currOffset;
   private String name;
+  private int currDepth = 0;
+  private int lastTag = -1; // remember whether we yielded SIMPLE_TAG or OPEN_TAG to decrease currDepth accordingly
 
   final private char[] data;
   private char chr;
 
   public XmlFastScanner(char[] data) {
     this.data = data;
-    this.currOffset = 0;
-    chr = data.length > 0 ? data[0] : 0;
+    reset();
   }
 
-  public XmlFastScanner(byte[] data) {
-    this(getCharacters(data));
+  private XmlFastScanner reset() {
+    this.currOffset = 0;
+    chr = data.length > 0 ? data[0] : 0;
+    return this;
   }
 
   private void shift() {
@@ -72,6 +68,10 @@ public class XmlFastScanner {
   public int next() {
     tokenOffset = currOffset;
     name = null;
+    if (lastTag == OPEN_TAG) {
+      currDepth++;
+    }
+    lastTag = -1;
     if (chr == '<') {
       shift();
       skipSpaces();
@@ -87,8 +87,7 @@ public class XmlFastScanner {
           while (slashIndex > tokenOffset && Character.isWhitespace(data[slashIndex])) {
             slashIndex--;
           }
-          return
-            data[slashIndex] == '/' ? SIMPLE_TAG : OPEN_TAG;
+          return lastTag = data[slashIndex] == '/' ? SIMPLE_TAG : OPEN_TAG;
         }
         return OTHER;
       } else if (chr == '/') {
@@ -101,7 +100,8 @@ public class XmlFastScanner {
           }
           if (chr == '>') {
             shift();
-            return CLOSE_TAG;
+            currDepth--;
+            return lastTag = CLOSE_TAG;
           }
         }
         return OTHER;
@@ -116,6 +116,13 @@ public class XmlFastScanner {
     }
 
     return EOI;
+  }
+
+  /**
+   * 0-based (top xml element has depth == 0) value indicating nesting of a tag. Meaningless for tokens other than OPEN_TAG, CLOSE_TAG, SIMPLE_TAG.
+   */
+  public int tagDepth() {
+    return currDepth;
   }
 
   public String token() {
@@ -138,18 +145,38 @@ public class XmlFastScanner {
     return name;
   }
 
-  private static char[] getCharacters(byte[] content) {
-    try {
-      Reader r = new InputStreamReader(new ByteArrayInputStream(content), FileUtil.DEFAULT_CHARSET);
-      StringBuilder sb = new StringBuilder(content.length + content.length / 4);
-      char[] c = new char[1024];
-      int size;
-      while ((size = r.read(c)) != -1) {
-        sb.append(c, 0, size);
+  public static void main(String[] args) {
+    XmlFastScanner s = new XmlFastScanner("<l1 a=1><l2 b=2><l3 c=3/><l3/><l3/></l2><l2><l3></l3></l2></l1>".toCharArray());
+    assertNextTag(s, OPEN_TAG, 0);//  <l1>
+    assertNextTag(s, OPEN_TAG, 1);//   <l2>
+    assertNextTag(s, SIMPLE_TAG, 2);//   <l3/>
+    assertNextTag(s, SIMPLE_TAG, 2);//   <l3/>
+    assertNextTag(s, SIMPLE_TAG, 2);//   <l3/>
+    assertNextTag(s, CLOSE_TAG, 1);//  </l2>
+    assertNextTag(s, OPEN_TAG, 1);//   <l2>
+    assertNextTag(s, OPEN_TAG, 2);//     <l3>
+    assertNextTag(s, CLOSE_TAG, 2);//    </l3>
+    assertNextTag(s, CLOSE_TAG, 1);//  </l2>
+    assertNextTag(s, CLOSE_TAG, 0);// </l1>
+    print(s.reset());
+  }
+  private static void assertNextTag(XmlFastScanner s, int tagKind, int depth) {
+    if (s.next() != tagKind) {
+      throw new IllegalStateException();
+    }
+    if (s.tagDepth() != depth) {
+      throw new IllegalStateException();
+    }
+  }
+  private static void print(XmlFastScanner s) {
+    int token;
+    while ((token = s.next()) != EOI) {
+      if (token == SIMPLE_TAG || token == OPEN_TAG || token == CLOSE_TAG) {
+        for (int i = s.tagDepth(); i > 0; i--) {
+          System.out.print("  ");
+        }
+        System.out.println(s.getName());
       }
-      return sb.toString().toCharArray();
-    } catch (IOException ex) {
-      return null;
     }
   }
 }

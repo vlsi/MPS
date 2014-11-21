@@ -581,8 +581,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
   }
 
-  public SNode getConceptDeclarationNode() {
-    return (SNode) SModelUtil.findConceptDeclaration(getConcept().getQualifiedName());
+  public org.jetbrains.mps.openapi.model.SNode getConceptDeclarationNode() {
+    return getConcept().getDeclarationNode();
   }
 
   public SNode getPropertyDeclaration(String propertyName) {

@@ -7,11 +7,11 @@
   </languages>
   <imports>
     <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
-    <import index="7lvn" ref="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)" />
     <import index="1t7x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="3767" ref="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
+    <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
@@ -243,8 +243,8 @@
               <node concept="3clFbS" id="7Mb2akaesrI" role="2VODD2">
                 <node concept="3cpWs6" id="7Mb2akaesrJ" role="3cqZAp">
                   <node concept="2YIFZM" id="7Mb2akaesrK" role="3cqZAk">
-                    <ref role="1Pybhc" to="7lvn:6UDbxo8i0QW" resolve="EditorUtil" />
-                    <ref role="37wK5l" to="7lvn:1tyjSjK6Usc" resolve="createSelectIconButton" />
+                    <ref role="1Pybhc" to="7a0s:6UDbxo8i0QW" resolve="EditorUtil" />
+                    <ref role="37wK5l" to="7a0s:1tyjSjK6Usc" resolve="createSelectIconButton" />
                     <node concept="pncrf" id="7Mb2akaesrL" role="37wK5m" />
                     <node concept="pqAIu" id="7Mb2akaesrM" role="37wK5m">
                       <ref role="pqAIh" to="1oap:7Mb2akaesqV" resolve="IconResource" />

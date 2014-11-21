@@ -36,7 +36,7 @@ public class ModelEnvironmentInfoImpl implements ModelEnvironmentInfo {
 
   @Override
   public SNodeReference getConceptId(SNode node) {
-    jetbrains.mps.smodel.SNode conceptDeclarationNode = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
+    SNode conceptDeclarationNode = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
     return conceptDeclarationNode == null ? null : conceptDeclarationNode.getReference();
   }
 

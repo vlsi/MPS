@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.IdHelper;
+import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -24,7 +25,6 @@ import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.AggregationLinkInfo;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.AssociationLinkInfo;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
@@ -49,20 +49,25 @@ import java.util.Map;
 
 public class ModelWriter9bis implements IModelWriter {
   public static final int VERSION = 9;
+  private final MetaModelInfoProvider myMetaInfoProvider;
 
   private IdInfoCollector myMetaInfo;
   private ImportsHelper myImportsHelper;
   private final IdEncoder myIdEncoder = new IdEncoder();
 
+  public ModelWriter9bis(@NotNull MetaModelInfoProvider mmiProvider) {
+    myMetaInfoProvider = mmiProvider;
+  }
+
   @Override
   public Document saveModel(SModel sourceModel) {
 
-    myMetaInfo = new IdInfoCollector();
+    myMetaInfo = new IdInfoCollector(myMetaInfoProvider);
     myMetaInfo.fill(sourceModel.getRootNodes());
     myImportsHelper = new ImportsHelper(sourceModel.getReference());
 
     // root element
-    Element rootElement = new Element(ModelPersistence.MODEL);
+    Element rootElement = new Element(ModelPersistence9.MODEL);
     rootElement.setAttribute(ModelPersistence9.REF, myIdEncoder.toText(sourceModel.getReference()));
 
     //all model props common to one-file and per-root persistence
@@ -99,45 +104,45 @@ public class ModelWriter9bis implements IModelWriter {
   }
 
   private static Element createPersistenceElement() {
-    Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
-    persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, String.valueOf(VERSION));
+    Element persistenceElement = new Element(ModelPersistence9.MODEL_PERSISTENCE);
+    persistenceElement.setAttribute(ModelPersistence9.VERSION, String.valueOf(VERSION));
     return persistenceElement;
   }
 
   private Element buildRegistry() {
-    Element registry = new Element("registry");
+    Element registry = new Element(ModelPersistence9.REGISTRY);
     for (LangInfo ul : myMetaInfo.getLanguagesInUse()) {
-      Element lang = new Element(ModelPersistence.LANGUAGE);
-      lang.setAttribute(ModelPersistence.ID, myIdEncoder.toText(ul.getLanguageId()));
-      lang.setAttribute(ModelPersistence.NAME, ul.getName());
+      Element lang = new Element(ModelPersistence9.REGISTRY_LANGUAGE);
+      lang.setAttribute(ModelPersistence9.ID, myIdEncoder.toText(ul.getLanguageId()));
+      lang.setAttribute(ModelPersistence9.NAME, ul.getName());
       registry.addContent(lang);
       for (ConceptInfo ci : ul.getConceptsInUse()) {
-        Element conceptElement = new Element("concept");
-        conceptElement.setAttribute(ModelPersistence.ID, myIdEncoder.toText(ci.getConceptId()));
-        conceptElement.setAttribute(ModelPersistence.NAME, ci.getName());
-        conceptElement.setAttribute("flags", ci.getConceptImplementationKind());
-        conceptElement.setAttribute("index", ci.getIndex());
+        Element conceptElement = new Element(ModelPersistence9.REGISTRY_CONCEPT);
+        conceptElement.setAttribute(ModelPersistence9.ID, myIdEncoder.toText(ci.getConceptId()));
+        conceptElement.setAttribute(ModelPersistence9.NAME, ci.getName());
+        conceptElement.setAttribute(ModelPersistence9.FLAGS, ci.getImplementationKindText());
+        conceptElement.setAttribute(ModelPersistence9.INDEX, ci.getIndex());
         for (PropertyInfo pi : ci.getPropertiesInUse()) {
-          Element e = new Element(ModelPersistence.PROPERTY);
-          e.setAttribute(ModelPersistence.ID, myIdEncoder.toText(pi.getPropertyId()));
-          e.setAttribute(ModelPersistence.NAME, pi.getName());
-          e.setAttribute("index", pi.getIndex());
+          Element e = new Element(ModelPersistence9.PROPERTY);
+          e.setAttribute(ModelPersistence9.ID, myIdEncoder.toText(pi.getPropertyId()));
+          e.setAttribute(ModelPersistence9.NAME, pi.getName());
+          e.setAttribute(ModelPersistence9.INDEX, pi.getIndex());
           conceptElement.addContent(e);
         }
         for (AssociationLinkInfo li : ci.getAssociationsInUse()) {
-          Element e = new Element("reference");
-          e.setAttribute(ModelPersistence.ID, myIdEncoder.toText(li.getLinkId()));
-          e.setAttribute(ModelPersistence.NAME, li.getName());
-          e.setAttribute("index", li.getIndex());
+          Element e = new Element(ModelPersistence9.REGISTRY_ASSOCIATION);
+          e.setAttribute(ModelPersistence9.ID, myIdEncoder.toText(li.getLinkId()));
+          e.setAttribute(ModelPersistence9.NAME, li.getName());
+          e.setAttribute(ModelPersistence9.INDEX, li.getIndex());
           conceptElement.addContent(e);
         }
         for (AggregationLinkInfo li : ci.getAggregationsInUse()) {
-          Element e = new Element("child");
-          e.setAttribute(ModelPersistence.ID, myIdEncoder.toText(li.getLinkId()));
-          e.setAttribute(ModelPersistence.NAME, li.getName());
-          e.setAttribute("index", li.getIndex());
+          Element e = new Element(ModelPersistence9.REGISTRY_AGGREGATION);
+          e.setAttribute(ModelPersistence9.ID, myIdEncoder.toText(li.getLinkId()));
+          e.setAttribute(ModelPersistence9.NAME, li.getName());
+          e.setAttribute(ModelPersistence9.INDEX, li.getIndex());
           if (li.isUnordered()) {
-            e.setAttribute("unordered", "true");
+            e.setAttribute(ModelPersistence9.UNORDERED, Boolean.TRUE.toString());
           }
           conceptElement.addContent(e);
         }
@@ -154,15 +159,15 @@ public class ModelWriter9bis implements IModelWriter {
     if (header.isDoNotGenerate()) {
       rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, Boolean.TRUE.toString());
     }
-    rootElement.setAttribute(ModelPersistence9.OPTION_CONCISE, Boolean.TRUE.toString());
+    rootElement.setAttribute(ModelPersistence9.OPTION_CONCISE, Boolean.TRUE.toString()); // FIXME drop once everyone has been merged
 
     for (Map.Entry<String, String> en : header.getOptionalProperties().entrySet()) {
-      if (ModelPersistence9.OPTION_CONCISE.equals(en.getKey()) || "compactIds".equals(en.getKey())) {
+      if (ModelPersistence9.OPTION_CONCISE.equals(en.getKey())) { // FIXME drop once everyone has been merged
         continue;
       }
-      Element attr = new Element("attribute");
-      attr.setAttribute(ModelPersistence.NAME, en.getKey());
-      attr.setAttribute(ModelPersistence.VALUE, en.getValue());
+      Element attr = new Element(ModelPersistence9.MODEL_ATTRIBUTE);
+      attr.setAttribute(ModelPersistence9.NAME, en.getKey());
+      attr.setAttribute(ModelPersistence9.VALUE, en.getValue());
       rootElement.addContent(attr);
     }
   }
@@ -217,14 +222,14 @@ public class ModelWriter9bis implements IModelWriter {
       // (b) in multi-stream persistence, registry is saved per-root, while usedLanguages are saved once for header stream
       // (c) such a relation would require registry to be written and read before usedLanguages - just an extra thing to worry about
       // Perhaps, once SLanguageAdapterById would tolerate null lang name (i.e we switch to ids completely), this attribute can be thrown away
-      languageElem.setAttribute(ModelPersistence.NAME, l.getQualifiedName());
+      languageElem.setAttribute(ModelPersistence9.NAME, l.getQualifiedName());
       languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(usedLangs.get(l)));
       rootElement.addContent(languageElem);
     }
   }
 
   private Element saveNode(SNode node) {
-    Element nodeElement = new Element(ModelPersistence.NODE);
+    Element nodeElement = new Element(ModelPersistence9.NODE);
     final ConceptInfo conceptInfo = myMetaInfo.find(node.getConcept());
     nodeElement.setAttribute(ModelPersistence9.CONCEPT_ID, conceptInfo.getIndex());
     nodeElement.setAttribute(ModelPersistence9.ID, myIdEncoder.toText(node.getNodeId()));
@@ -235,7 +240,7 @@ public class ModelWriter9bis implements IModelWriter {
     }
 
     for (SProperty pid : node.getProperties()) {
-      Element propertyElement = new Element(ModelPersistence9.PROPERTY);
+      Element propertyElement = new Element(ModelPersistence9.NODE_PROPERTY);
       final PropertyInfo propertyInfo = myMetaInfo.find(pid);
       propertyElement.setAttribute(ModelPersistence9.ROLE_ID, propertyInfo.getIndex());
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence9.VALUE, node.getProperty(pid));
@@ -243,16 +248,16 @@ public class ModelWriter9bis implements IModelWriter {
     }
 
     for (SReference reference : node.getReferences()) {
-      Element linkElement = new Element("ref");
+      Element linkElement = new Element(ModelPersistence9.NODE_REFERENCE);
       final AssociationLinkInfo associationLinkInfo = myMetaInfo.find(reference.getLink());
       linkElement.setAttribute(ModelPersistence9.ROLE_ID, associationLinkInfo.getIndex());
       final SModelReference targetModel = reference.getTargetSModelReference();
       if (targetModel != null && myImportsHelper.isLocal(targetModel)) {
-        linkElement.setAttribute(ModelPersistence.NODE, myIdEncoder.toTextLocal(reference));
+        linkElement.setAttribute(ModelPersistence9.NODE, myIdEncoder.toTextLocal(reference));
       } else {
-        linkElement.setAttribute("to", myIdEncoder.toTextExternal(myImportsHelper, targetModel, reference));
+        linkElement.setAttribute(ModelPersistence9.TO, myIdEncoder.toTextExternal(myImportsHelper, targetModel, reference));
       }
-      DocUtil.setNotNullAttribute(linkElement, "resolve", Util9.genResolveInfo(reference));
+      DocUtil.setNotNullAttribute(linkElement, ModelPersistence9.RESOLVE, Util9.genResolveInfo(reference));
       nodeElement.addContent(linkElement);
     }
 
@@ -267,7 +272,7 @@ public class ModelWriter9bis implements IModelWriter {
     myImportsHelper = new ImportsHelper(sourceModel.getReference()); // saveModelProperties->saveImports fills it
 
     // header
-    Element headerRoot = new Element(ModelPersistence.MODEL);
+    Element headerRoot = new Element(ModelPersistence9.MODEL);
     headerRoot.setAttribute(ModelPersistence9.REF, myIdEncoder.toText(sourceModel.getReference()));
     headerRoot.setAttribute(ModelPersistence9.FILE_CONTENT, "header");
     saveModelProperties(sourceModel, headerRoot);
@@ -279,7 +284,7 @@ public class ModelWriter9bis implements IModelWriter {
     // roots
     Map<SNodeId, String> rootToFile = FilePerRootFormatUtil.getStreamNames(sourceModel);
     for (SNode root : sourceModel.getRootNodes()) {
-      Element rootElement = new Element(ModelPersistence.MODEL);
+      Element rootElement = new Element(ModelPersistence9.MODEL);
       rootElement.setAttribute(ModelPersistence9.REF, myIdEncoder.toText(sourceModel.getReference()));
       rootElement.setAttribute(ModelPersistence9.FILE_CONTENT, "root");
       rootElement.addContent(createPersistenceElement());
@@ -294,7 +299,7 @@ public class ModelWriter9bis implements IModelWriter {
         }
       };
       // and its meta-info
-      myMetaInfo = new IdInfoCollector();
+      myMetaInfo = new IdInfoCollector(myMetaInfoProvider);
       myMetaInfo.fill(Collections.singleton(root));
       Element childElement = saveNode(root);
 

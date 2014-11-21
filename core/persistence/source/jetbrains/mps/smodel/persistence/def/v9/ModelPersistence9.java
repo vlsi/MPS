@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
+import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -22,6 +23,7 @@ import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import org.jetbrains.annotations.Nullable;
@@ -32,7 +34,6 @@ import java.util.List;
 public class ModelPersistence9 implements IModelPersistence {
   //common
   public static final String REF = "ref";
-  public static final String ID = "id";
   // model properties
   public static final String DEBUG_INFO = "debugInfo";
   public static final String LANGUAGES = "languages";
@@ -52,7 +53,6 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String TARGET_NODE_ID = "target";
   public static final String REFERENCE = "reference";
   public static final String PROPERTY = "property";
-  public static final String VALUE = "value";
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String NODE_INFO = "info";
   // per-root
@@ -68,6 +68,33 @@ public class ModelPersistence9 implements IModelPersistence {
 
   public static final String OPTION_CONCISE = "concise";
 
+  // elements
+  public static final String REGISTRY = "registry";
+  public static final String REGISTRY_LANGUAGE = ModelPersistence.LANGUAGE;
+  public static final String REGISTRY_CONCEPT = "concept";
+  public static final String REGISTRY_PROPERTY = ModelPersistence.PROPERTY;
+  public static final String REGISTRY_ASSOCIATION = "reference";
+  public static final String REGISTRY_AGGREGATION = "child";
+
+  public static final String MODEL = "model";
+  public static final String MODEL_ATTRIBUTE = "attribute";
+  public static final String MODEL_PERSISTENCE = ModelPersistence.PERSISTENCE;
+  public static final String NODE = "node";
+  public static final String NODE_PROPERTY = ModelPersistence.PROPERTY;
+  public static final String NODE_REFERENCE = "ref";
+
+  // attributes
+
+  public static final String ID = ModelPersistence.ID;
+  public static final String NAME = ModelPersistence.NAME;
+  public static final String VALUE = ModelPersistence.VALUE;
+  public static final String INDEX = "index";
+  public static final String FLAGS = "flags";
+  public static final String UNORDERED = "unordered";
+  public static final String TO = "to";
+  public static final String RESOLVE = "resolve";
+
+
   @Override
   public int getVersion() {
     return 9;
@@ -75,13 +102,12 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public IModelWriter getModelWriter() {
-    return new ModelWriter9bis();
+    return new ModelWriter9bis(new RegularMetaModelInfo());
   }
 
   @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
-//    return isConcisePersistenceOption(header) ? new ModelWriter9bis() : getModelWriter();
-    return new ModelWriter9bis();
+    return new ModelWriter9bis(new RegularMetaModelInfo());
   }
 
   @Override
@@ -96,10 +122,13 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
+    final boolean interfaceOnly = state == ModelLoadingState.INTERFACE_LOADED;
+    final boolean stripImplementation = state == ModelLoadingState.NO_IMPLEMENTATION;
     if (isConcisePersistenceOption(header)) {
-      return new ModelReader9bisHandler(state == ModelLoadingState.INTERFACE_LOADED, state == ModelLoadingState.NO_IMPLEMENTATION, header);
+      IdInfoReadHelper readHelper = new IdInfoReadHelper(new RegularMetaModelInfo(), interfaceOnly, stripImplementation);
+      return new ModelReader9bisHandler(header, readHelper);
     }
-    return new ModelReader9Handler(state == ModelLoadingState.INTERFACE_LOADED, state == ModelLoadingState.NO_IMPLEMENTATION, header);
+    return new ModelReader9Handler(interfaceOnly, stripImplementation, header);
   }
 
   @Override
