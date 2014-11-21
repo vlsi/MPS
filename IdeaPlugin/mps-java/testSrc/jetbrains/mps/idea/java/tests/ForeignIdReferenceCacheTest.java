@@ -84,13 +84,8 @@ public class ForeignIdReferenceCacheTest extends DataMPSFixtureTestCase {
   }
 
   public void testReferences() {
-    final Project project = myModule.getProject();
-    Iterable<SReference> refs = ModelAccess.instance().runReadAction(new Computable<Iterable>() {
-      @Override
-      public Iterable compute() {
-        return ForeignIdReferenceCache.getInstance(project).getReferencesMatchingPrefix("Marker.f", GlobalSearchScope.allScope(project));
-      }
-    });
+    Project project = myModule.getProject();
+    Iterable<SReference> refs = ForeignIdReferenceCache.getInstance(project).getReferencesMatchingPrefix("Marker.f", GlobalSearchScope.allScope(project));
     Iterator<SReference> it = refs.iterator();
     final SReference ref = it.next();
     assertFalse(it.hasNext());
