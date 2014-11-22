@@ -25,7 +25,8 @@ import java.util.Map;
 public class JavaCompilerOptionsComponent {
   private Map<Project, JavaCompilerOptionsProvider> myProjectToProvider = new HashMap<Project, JavaCompilerOptionsProvider>();
   private static JavaCompilerOptionsComponent INSTANCE;
-  public static String DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
+  private static String DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
+  public static JavaCompilerOptions DEFAULT_JAVA_COMPILER_OPTIONS = new DefaultJavaCompilerOptions();
   private JavaCompilerOptionsComponent(){}
 
   public static JavaCompilerOptionsComponent getInstance() {
@@ -66,5 +67,12 @@ public class JavaCompilerOptionsComponent {
       return CompilerOptions.VERSION_1_8;
     }
     return CompilerOptions.VERSION_1_6;
+  }
+
+  private static class DefaultJavaCompilerOptions implements JavaCompilerOptions {
+    @Override
+    public String getTargetJavaVersion() {
+      return DEFAULT_JAVA_VERSION;
+    }
   }
 }

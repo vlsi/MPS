@@ -62,7 +62,7 @@ public class JavaParser {
     boolean stubsMode = FeatureKind.CLASS_STUB.equals(what);
     CodeSnippetParsingUtil util = new CodeSnippetParsingUtil(stubsMode);
     Map<String, String> settings = new HashMap<String, String>();
-    settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
+    settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_8);
     settings.put(CompilerOptions.OPTION_DocCommentSupport, "enabled");
     ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ? new ASTConverter(stubsMode) : new FullASTConverter(null));
 

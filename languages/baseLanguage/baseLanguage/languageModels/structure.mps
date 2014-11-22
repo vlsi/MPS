@@ -426,6 +426,10 @@
       <property role="TrG5h" value="isAbstract" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="1TJgyi" id="7baU5VmBx5T" role="1TKVEl">
+      <property role="TrG5h" value="isDefault" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="PrWs8" id="h9nw8k0" role="PzmwI">
       <ref role="PrY4T" node="h9ngReX" resolve="ClassifierMember" />
     </node>

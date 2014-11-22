@@ -284,9 +284,13 @@ public class ModuleMaker {
       listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
       compiler.addCompilationResultListener(listener);
       myTracer.push("eclipse compiler", true);
-      JavaCompilerOptions javaCompilerOptions = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project);
-      String targetJavaVersion = javaCompilerOptions == null ? null : javaCompilerOptions.getTargetJavaVersion();
-      compiler.compile(classPathItems, targetJavaVersion);
+
+      if (project == null) {
+        compiler.compile(classPathItems);
+      } else {
+        JavaCompilerOptions javaCompilerOptions = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project);
+        compiler.compile(classPathItems, javaCompilerOptions);
+      }
       myTracer.pop();
       changedModules.addAll(listener.myChangedModules);
       compiler.removeCompilationResultListener(listener);

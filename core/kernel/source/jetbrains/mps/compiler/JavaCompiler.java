@@ -69,13 +69,12 @@ public class JavaCompiler {
 
 
   public void compile(IClassPathItem classPath) {
-    compile(classPath, JavaCompilerOptionsComponent.DEFAULT_JAVA_VERSION);
+    compile(classPath, JavaCompilerOptionsComponent.DEFAULT_JAVA_COMPILER_OPTIONS);
   }
-  public void compile(IClassPathItem classPath, String targetJavaVersion) {
+  public void compile(IClassPathItem classPath, @NotNull JavaCompilerOptions customCompilerOptions) {
     Map compilerOptions = new HashMap();
     compilerOptions.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
-
-    String actualJavaTargetVersion = targetJavaVersion != null ? targetJavaVersion : JavaCompilerOptionsComponent.DEFAULT_JAVA_VERSION;
+    String actualJavaTargetVersion = customCompilerOptions.getTargetJavaVersion();
     compilerOptions.put(CompilerOptions.OPTION_Compliance, actualJavaTargetVersion);
     compilerOptions.put(CompilerOptions.OPTION_TargetPlatform, actualJavaTargetVersion);
 
