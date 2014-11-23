@@ -1262,6 +1262,9 @@
       <node concept="nCB5N" id="52xpK1hpmc8" role="nCB5Z">
         <ref role="nCB5Y" node="75RBgxKm6HY" resolve="mps-generator" />
       </node>
+      <node concept="2sjeV3" id="4KccoYk9wgQ" role="nCB5Z">
+        <ref role="2sjeV2" node="16Vg0jOcomR" resolve="idea-libraries" />
+      </node>
       <node concept="2sjeV3" id="1FaKCGJSzN3" role="nCB5Z">
         <property role="2a2d0E" value="true" />
         <ref role="2sjeV2" node="1FaKCGJSzMS" resolve="idea-ant" />

@@ -3818,6 +3818,7 @@
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.core-libraries" />
+        <path refid="path.java.library.idea-libraries" />
         <path refid="path.java.library.idea-ant" />
         <path refid="path.java.library.junit-4.11" />
         <path refid="path.jdk.classpath" />
