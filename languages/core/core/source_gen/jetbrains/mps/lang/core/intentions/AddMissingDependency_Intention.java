@@ -45,7 +45,7 @@ public class AddMissingDependency_Intention implements IntentionFactory {
     return new DependencyHelper(node, editorContext).isApplicable();
   }
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "5513877538266515775");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "6125986282171430130");
   }
   public boolean isSurroundWith() {
     return false;
@@ -60,7 +60,7 @@ public class AddMissingDependency_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add missing dependency " + node.getConcept().getLanguage().getQualifiedName() + " to the current module";
+      return "Add Missing Dependency on the Reference Target";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       new DependencyHelper(node, editorContext).execute();

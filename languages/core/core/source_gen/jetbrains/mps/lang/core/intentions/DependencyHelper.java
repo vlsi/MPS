@@ -4,7 +4,7 @@ package jetbrains.mps.lang.core.intentions;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import java.awt.Frame;
+import java.awt.Component;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 public class DependencyHelper {
   private final SNode myNode;
   private final SModule myModule;
-  private final Frame myFrame;
+  private final Component myFrame;
 
   public DependencyHelper(SNode node, EditorContext context) {
     this.myNode = node;
@@ -54,7 +54,6 @@ public class DependencyHelper {
     return count;
   }
 
-
   private void fixModelImport(SModelReference mRefToImport) {
     new ModelImporter(SNodeOperations.getModel(myNode), myFrame).execute(mRefToImport);
   }
@@ -62,10 +61,9 @@ public class DependencyHelper {
   @Nullable
   private SModel resolveModel(SReference ref, @NotNull SRepository repo) {
     SModelReference mRef = ref.getTargetSModelReference();
-    return check_iea6ws_a1a51(mRef, repo);
+    return check_iea6ws_a1a41(mRef, repo);
   }
-
-  private static SModel check_iea6ws_a1a51(SModelReference checkedDotOperand, SRepository repo) {
+  private static SModel check_iea6ws_a1a41(SModelReference checkedDotOperand, SRepository repo) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repo);
     }

@@ -30,7 +30,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.intentions.DependencyHelper" file="DependencyHelper.java">
-    <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.ModelImporter" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
