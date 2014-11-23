@@ -260,8 +260,8 @@
               <node concept="3clFbF" id="55XVrlFSTEj" role="3cqZAp">
                 <node concept="2OqwBi" id="55XVrlFSTEk" role="3clFbG">
                   <node concept="pncrf" id="55XVrlFSTEl" role="2Oq$k0" />
-                  <node concept="2qgKlT" id="55XVrlFSTEm" role="2OqNvi">
-                    <ref role="37wK5l" to="zyb2:igjXyuNrou" resolve="getTextWhenBroken" />
+                  <node concept="2qgKlT" id="5Yox2dUTK7k" role="2OqNvi">
+                    <ref role="37wK5l" to="zyb2:5Yox2dUTCkJ" resolve="getText" />
                   </node>
                 </node>
               </node>

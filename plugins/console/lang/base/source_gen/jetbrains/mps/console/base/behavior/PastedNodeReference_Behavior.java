@@ -14,12 +14,15 @@ public class PastedNodeReference_Behavior {
   public static SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target"));
   }
-  public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
-    SNodeId targetNodeId = thisNode.getReference("target").getTargetNodeId();
+  public static String call_getText_6888400917983823151(SNode thisNode) {
+    SNodeId targetNodeId = thisNode.getReference(MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target")).getTargetNodeId();
     if (targetNodeId == null) {
       return "(deleted node)";
     }
     int id = targetNodeId.hashCode();
     return "nodeRef@" + ((id >>> 16) + (id << 16 >>> 16));
+  }
+  public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
+    return PastedNodeReference_Behavior.call_getText_6888400917983823151(thisNode) + "(deleted node)";
   }
 }
