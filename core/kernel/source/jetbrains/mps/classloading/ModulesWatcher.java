@@ -158,14 +158,16 @@ public class ModulesWatcher {
     Collection<SModuleReference> result = new HashSet<SModuleReference>();
     Collection<? extends SModuleReference> allModuleRefs = getAllModules();
     for (SModuleReference mRef : allModuleRefs) {
-      if (isModuleInvalid(mRef)) result.add(mRef);
+      if (isModuleInvalid(mRef, false)) result.add(mRef);
     }
     return result;
   }
 
-  private boolean isModuleInvalid(SModuleReference mRef) {
+  boolean isModuleInvalid(SModuleReference mRef, boolean errorMode) {
+    assert !isChanged();
     if (isModuleDisposed(mRef)) {
-      LOG.trace("Module " + mRef.getModuleName() + " is disposed and therefore was marked invalid for class loading");
+      String message = "Module " + mRef.getModuleName() + " is disposed and therefore was marked invalid for class loading";
+      if (errorMode) LOG.error(message); else LOG.trace(message);
       return true;
     }
     ReloadableModuleBase module = resolveRef(mRef);
@@ -173,7 +175,8 @@ public class ModulesWatcher {
     Collection<? extends SModuleReference> deps = getModuleDescriptorDeps(module);
     for (SModuleReference dep : deps) {
       if (isModuleDisposed(dep)) {
-        LOG.trace("Module " + mRef.getModuleName() + " depends on a disposed module " + dep.getModuleName() + " and therefore was marked invalid for class loading");
+        String message = "Module " + mRef.getModuleName() + " depends on a disposed module " + dep.getModuleName() + " and therefore was marked invalid for class loading";
+        if (errorMode) LOG.error(message); else LOG.trace(message);
         return true;
       }
     }
@@ -205,7 +208,7 @@ public class ModulesWatcher {
     }
   }
 
-  private Collection<? extends SModuleReference> getAllModules() {
+  Collection<? extends SModuleReference> getAllModules() {
     synchronized (LOCK) {
       if (isChanged()) {
         recountStatus();

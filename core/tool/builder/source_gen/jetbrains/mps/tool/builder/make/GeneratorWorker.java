@@ -107,7 +107,6 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       Set<LibraryContributor.LibDescriptor> libraryPaths = new LinkedHashSet<LibraryContributor.LibDescriptor>();
       for (File libFile : config.getLibs()) {
         libraryPaths.add(new LibraryContributor.LibDescriptor(libFile.getAbsolutePath(), myClassLoader));
-
       }
       return Sequence.<LibraryContributor>singleton(new SetLibraryContributor(libraryPaths));
     }

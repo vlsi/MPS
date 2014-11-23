@@ -4,7 +4,10 @@ package jetbrains.mps.testbench;
 
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.ProjectContainer;
+import java.util.List;
 import jetbrains.mps.library.contributor.LibraryContributor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
@@ -40,7 +43,7 @@ public class IdeaEnvironment implements Environment {
   private static final String MISC_XML_URI = "/jetbrains/mps/testbench/junit/runners/misc.xml";
 
   private final ProjectContainer myContainer = new ProjectContainer();
-  private final LibraryContributor myLibContributor;
+  private final List<LibraryContributor> myLibContributors = ListSequence.fromList(new ArrayList<LibraryContributor>());
   private final IdeaTestApplication myIdeaApplication;
 
   public IdeaEnvironment(EnvironmentConfig config) {
@@ -52,7 +55,7 @@ public class IdeaEnvironment implements Environment {
     EnvironmentUtils.setIdeaPluginsToLoad(config);
 
     myIdeaApplication = createIdeaTestApp();
-    myLibContributor = initLibraries(config);
+    initLibraries(config);
     initMacros(config);
   }
 
@@ -76,13 +79,15 @@ public class IdeaEnvironment implements Environment {
     }
   }
 
-  private LibraryContributor initLibraries(EnvironmentConfig config) {
+  private void initLibraries(EnvironmentConfig config) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing libraries");
     }
 
-    final LibraryContributor libContributor = EnvironmentUtils.createLibContributor(config.getLibs());
+    final LibraryContributor libContributor = EnvironmentUtils.createLibContributor(config);
+    final LibraryContributor pluginsContributor = EnvironmentUtils.createPluginLibContributor(config);
     LibraryInitializer.getInstance().addContributor(libContributor);
+    LibraryInitializer.getInstance().addContributor(pluginsContributor);
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
@@ -97,7 +102,8 @@ public class IdeaEnvironment implements Environment {
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
-    return libContributor;
+    ListSequence.fromList(myLibContributors).addElement(libContributor);
+    ListSequence.fromList(myLibContributors).addElement(pluginsContributor);
   }
 
   private IdeaTestApplication createIdeaTestApp() {
@@ -166,7 +172,9 @@ public class IdeaEnvironment implements Environment {
       LOG.debug("Disposing environment");
     }
 
-    LibraryInitializer.getInstance().removeContributor(myLibContributor);
+    for (LibraryContributor contrib : ListSequence.fromList(myLibContributors)) {
+      LibraryInitializer.getInstance().removeContributor(contrib);
+    }
 
     for (Project project : SetSequence.fromSet(myContainer.getProjects())) {
       disposeProject(project.getProjectFile());

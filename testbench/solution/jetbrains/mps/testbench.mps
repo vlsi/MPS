@@ -251,19 +251,30 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
-      <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
-        <child id="1153944400369" name="variable" index="2Gsz3X" />
-        <child id="1153944424730" name="inputSequence" index="2GsD0m" />
-      </concept>
       <concept id="1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" flags="nr" index="2GrKxI" />
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
-      <concept id="1201872418428" name="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" flags="nn" index="3lbrtF" />
       <concept id="1197932370469" name="jetbrains.mps.baseLanguage.collections.structure.MapElement" flags="nn" index="3EllGN">
         <child id="1197932505799" name="map" index="3ElQJh" />
         <child id="1197932525128" name="key" index="3ElVtu" />
       </concept>
+      <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
+        <child id="1151688676805" name="elementType" index="_ZDj9" />
+      </concept>
+      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
+      </concept>
+      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
+      <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
+        <child id="1153944400369" name="variable" index="2Gsz3X" />
+        <child id="1153944424730" name="inputSequence" index="2GsD0m" />
+      </concept>
+      <concept id="1201872418428" name="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" flags="nn" index="3lbrtF" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
@@ -1009,11 +1020,20 @@
     <node concept="312cEg" id="2jln2Vr4vxV" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myLibContributor" />
+      <property role="TrG5h" value="myLibContributors" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="2jln2Vr4s9q" role="1B3o_S" />
-      <node concept="3uibUv" id="2jln2Vr4vpz" role="1tU5fm">
-        <ref role="3uigEE" to="c762:~LibraryContributor" resolve="LibraryContributor" />
+      <node concept="_YKpA" id="5hfNQWylGVt" role="1tU5fm">
+        <node concept="3uibUv" id="5hfNQWylHFL" role="_ZDj9">
+          <ref role="3uigEE" to="c762:~LibraryContributor" resolve="LibraryContributor" />
+        </node>
+      </node>
+      <node concept="2ShNRf" id="5hfNQWylLGC" role="33vP2m">
+        <node concept="Tc6Ow" id="5hfNQWymaJl" role="2ShVmc">
+          <node concept="3uibUv" id="5hfNQWymcRq" role="HW$YZ">
+            <ref role="3uigEE" to="c762:~LibraryContributor" resolve="LibraryContributor" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="312cEg" id="2jln2VraCpX" role="jymVt">
@@ -1076,16 +1096,11 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="2jln2Vr4_mn" role="3cqZAp">
-          <node concept="37vLTI" id="2jln2Vr4AK1" role="3clFbG">
-            <node concept="37vLTw" id="2jln2Vr4_mm" role="37vLTJ">
-              <ref role="3cqZAo" node="2jln2Vr4vxV" resolve="myLibContributor" />
-            </node>
-            <node concept="1rXfSq" id="2jln2Vr4Bbe" role="37vLTx">
-              <ref role="37wK5l" node="6z7xhWktMH2" resolve="initLibraries" />
-              <node concept="37vLTw" id="2jln2Vr4Bbf" role="37wK5m">
-                <ref role="3cqZAo" node="5UWB9tkPIb" resolve="config" />
-              </node>
+        <node concept="3clFbF" id="5hfNQWymeCN" role="3cqZAp">
+          <node concept="1rXfSq" id="5hfNQWymeCL" role="3clFbG">
+            <ref role="37wK5l" node="6z7xhWktMH2" resolve="initLibraries" />
+            <node concept="37vLTw" id="5hfNQWymeH3" role="37wK5m">
+              <ref role="3cqZAo" node="5UWB9tkPIb" resolve="config" />
             </node>
           </node>
         </node>
@@ -1276,15 +1291,26 @@
               <ref role="3uigEE" to="c762:~LibraryContributor" resolve="LibraryContributor" />
             </node>
             <node concept="2YIFZM" id="2jln2VqZqzP" role="33vP2m">
-              <ref role="37wK5l" to="79ha:5mza6QqledL" resolve="createLibContributor" />
               <ref role="1Pybhc" to="79ha:5mza6QqdBEg" resolve="EnvironmentUtils" />
-              <node concept="2OqwBi" id="2jln2VqZqzR" role="37wK5m">
-                <node concept="liA8E" id="2jln2VqZqzS" role="2OqNvi">
-                  <ref role="37wK5l" to="79ha:5UWB9tkma7" resolve="getLibs" />
-                </node>
-                <node concept="37vLTw" id="2jln2VqZqzT" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2jln2VqXiig" resolve="config" />
-                </node>
+              <ref role="37wK5l" to="79ha:5mza6QqledL" resolve="createLibContributor" />
+              <node concept="37vLTw" id="2jln2VqZqzT" role="37wK5m">
+                <ref role="3cqZAo" node="2jln2VqXiig" resolve="config" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5hfNQWylD8U" role="3cqZAp">
+          <node concept="3cpWsn" id="5hfNQWylD8S" role="3cpWs9">
+            <property role="3TUv4t" value="true" />
+            <property role="TrG5h" value="pluginsContributor" />
+            <node concept="3uibUv" id="5hfNQWylDSv" role="1tU5fm">
+              <ref role="3uigEE" to="c762:~LibraryContributor" resolve="LibraryContributor" />
+            </node>
+            <node concept="2YIFZM" id="5hfNQWylFg$" role="33vP2m">
+              <ref role="37wK5l" to="79ha:2Koq9V0qGPr" resolve="createPluginLibContributor" />
+              <ref role="1Pybhc" to="79ha:5mza6QqdBEg" resolve="EnvironmentUtils" />
+              <node concept="37vLTw" id="5hfNQWyoJnb" role="37wK5m">
+                <ref role="3cqZAo" node="2jln2VqXiig" resolve="config" />
               </node>
             </node>
           </node>
@@ -1299,6 +1325,20 @@
               <ref role="37wK5l" to="ztul:~LibraryInitializer.addContributor(jetbrains.mps.library.contributor.LibraryContributor):void" resolve="addContributor" />
               <node concept="37vLTw" id="2jln2VqZqzU" role="37wK5m">
                 <ref role="3cqZAo" node="2jln2VqZqzO" resolve="libContributor" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5hfNQWylFlD" role="3cqZAp">
+          <node concept="2OqwBi" id="5hfNQWylFlE" role="3clFbG">
+            <node concept="2YIFZM" id="5hfNQWylFlF" role="2Oq$k0">
+              <ref role="1Pybhc" to="ztul:~LibraryInitializer" resolve="LibraryInitializer" />
+              <ref role="37wK5l" to="ztul:~LibraryInitializer.getInstance():jetbrains.mps.library.LibraryInitializer" resolve="getInstance" />
+            </node>
+            <node concept="liA8E" id="5hfNQWylFlG" role="2OqNvi">
+              <ref role="37wK5l" to="ztul:~LibraryInitializer.addContributor(jetbrains.mps.library.contributor.LibraryContributor):void" resolve="addContributor" />
+              <node concept="37vLTw" id="5hfNQWylGoy" role="37wK5m">
+                <ref role="3cqZAo" node="5hfNQWylD8S" resolve="pluginsContributor" />
               </node>
             </node>
           </node>
@@ -1401,16 +1441,33 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="2jln2VqZyTP" role="3cqZAp">
-          <node concept="37vLTw" id="2jln2VqZ$DL" role="3cqZAk">
-            <ref role="3cqZAo" node="2jln2VqZqzO" resolve="libContributor" />
+        <node concept="3clFbF" id="5hfNQWymhSL" role="3cqZAp">
+          <node concept="2OqwBi" id="5hfNQWymkVZ" role="3clFbG">
+            <node concept="37vLTw" id="5hfNQWymjsK" role="2Oq$k0">
+              <ref role="3cqZAo" node="2jln2Vr4vxV" resolve="myLibContributors" />
+            </node>
+            <node concept="TSZUe" id="5hfNQWymnfO" role="2OqNvi">
+              <node concept="37vLTw" id="5hfNQWymnvp" role="25WWJ7">
+                <ref role="3cqZAo" node="2jln2VqZqzO" resolve="libContributor" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5hfNQWymnIO" role="3cqZAp">
+          <node concept="2OqwBi" id="5hfNQWymnIP" role="3clFbG">
+            <node concept="37vLTw" id="5hfNQWymnIQ" role="2Oq$k0">
+              <ref role="3cqZAo" node="2jln2Vr4vxV" resolve="myLibContributors" />
+            </node>
+            <node concept="TSZUe" id="5hfNQWymnIR" role="2OqNvi">
+              <node concept="37vLTw" id="5hfNQWympCO" role="25WWJ7">
+                <ref role="3cqZAo" node="5hfNQWylD8S" resolve="pluginsContributor" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
       <node concept="3Tm6S6" id="6z7xhWktKww" role="1B3o_S" />
-      <node concept="3uibUv" id="2jln2VqZBv2" role="3clF45">
-        <ref role="3uigEE" to="c762:~LibraryContributor" resolve="LibraryContributor" />
-      </node>
+      <node concept="3cqZAl" id="5hfNQWymeUD" role="3clF45" />
       <node concept="37vLTG" id="2jln2VqXiig" role="3clF46">
         <property role="TrG5h" value="config" />
         <node concept="3uibUv" id="2jln2VqXiif" role="1tU5fm">
@@ -1796,18 +1853,28 @@
           </node>
         </node>
         <node concept="3clFbH" id="76aXy8jeG7i" role="3cqZAp" />
-        <node concept="3clFbF" id="2jln2Vr4H5Z" role="3cqZAp">
-          <node concept="2OqwBi" id="5mza6Qqmgy9" role="3clFbG">
-            <node concept="liA8E" id="5mza6Qqmi17" role="2OqNvi">
-              <ref role="37wK5l" to="ztul:~LibraryInitializer.removeContributor(jetbrains.mps.library.contributor.LibraryContributor):void" resolve="removeContributor" />
-              <node concept="37vLTw" id="2jln2Vr4Iz2" role="37wK5m">
-                <ref role="3cqZAo" node="2jln2Vr4vxV" resolve="myLibContributor" />
+        <node concept="2Gpval" id="5hfNQWymqym" role="3cqZAp">
+          <node concept="2GrKxI" id="5hfNQWymqyo" role="2Gsz3X">
+            <property role="TrG5h" value="contrib" />
+          </node>
+          <node concept="3clFbS" id="5hfNQWymqyq" role="2LFqv$">
+            <node concept="3clFbF" id="2jln2Vr4H5Z" role="3cqZAp">
+              <node concept="2OqwBi" id="5mza6Qqmgy9" role="3clFbG">
+                <node concept="liA8E" id="5mza6Qqmi17" role="2OqNvi">
+                  <ref role="37wK5l" to="ztul:~LibraryInitializer.removeContributor(jetbrains.mps.library.contributor.LibraryContributor):void" resolve="removeContributor" />
+                  <node concept="2GrUjf" id="5hfNQWymsId" role="37wK5m">
+                    <ref role="2Gs0qQ" node="5hfNQWymqyo" resolve="contrib" />
+                  </node>
+                </node>
+                <node concept="2YIFZM" id="5mza6Qqmgsv" role="2Oq$k0">
+                  <ref role="1Pybhc" to="ztul:~LibraryInitializer" resolve="LibraryInitializer" />
+                  <ref role="37wK5l" to="ztul:~LibraryInitializer.getInstance():jetbrains.mps.library.LibraryInitializer" resolve="getInstance" />
+                </node>
               </node>
             </node>
-            <node concept="2YIFZM" id="5mza6Qqmgsv" role="2Oq$k0">
-              <ref role="1Pybhc" to="ztul:~LibraryInitializer" resolve="LibraryInitializer" />
-              <ref role="37wK5l" to="ztul:~LibraryInitializer.getInstance():jetbrains.mps.library.LibraryInitializer" resolve="getInstance" />
-            </node>
+          </node>
+          <node concept="37vLTw" id="5hfNQWymrOF" role="2GsD0m">
+            <ref role="3cqZAo" node="2jln2Vr4vxV" resolve="myLibContributors" />
           </node>
         </node>
         <node concept="3clFbH" id="2jln2Vr4GhV" role="3cqZAp" />
