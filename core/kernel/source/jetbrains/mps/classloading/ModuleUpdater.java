@@ -217,7 +217,13 @@ public class ModuleUpdater {
       assert reloadableModule != null;
       Collection<? extends ReloadableModuleBase> deps = getModuleDeps(reloadableModule);
       for (ReloadableModuleBase dep : deps) {
-        if (modules.contains(dep)) myDepGraph.addEdge(backRef, dep.getModuleReference());
+        if (modules.contains(dep)) {
+          boolean edgeAdded = myDepGraph.addEdge(backRef, dep.getModuleReference());
+          // FIXME hack happened because of 'unfair' method ModulesWatcher#getModuleDescriptorDeps()
+          if (edgeAdded) {
+            ClassLoaderManager.getInstance().unloadModules(Collections.singleton(backRef));
+          }
+        }
       }
     }
   }

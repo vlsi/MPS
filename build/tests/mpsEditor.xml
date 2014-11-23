@@ -362,18 +362,18 @@
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.baseLanguage.test.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" />
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/bl.test" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.test.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.baseLanguage.test-jetbrains">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-bl.test-jetbrains">
+      <fileset dir="${basedir}/testbench/testsolutions/bl.test/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.baseLanguage.test-src.jar">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test/source_gen">
+      <fileset dir="${basedir}/testbench/testsolutions/bl.test/source_gen">
         <exclude name="**/trace.info" />
       </fileset>
-      <zipfileset file="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test/jetbrains.mps.baseLanguage.test.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.baseLanguage.test-jetbrains" prefix="module/jetbrains" />
+      <zipfileset file="${basedir}/testbench/testsolutions/bl.test/jetbrains.mps.baseLanguage.test.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-bl.test-jetbrains" prefix="module/jetbrains" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.actions.test.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.actions.test.jar/META-INF" />
@@ -398,15 +398,15 @@
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.actions.test.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.actions.test" />
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.actions.test" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/actions.test" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.actions.test.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.lang.actions.test-models">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.actions.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-actions.test-models">
+      <fileset dir="${basedir}/testbench/testsolutions/actions.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.actions.test-src.jar">
-      <zipfileset file="${basedir}/testbench/testsolutions/jetbrains.mps.lang.actions.test/jetbrains.mps.lang.actions.test.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.lang.actions.test-models" prefix="module/models" />
+      <zipfileset file="${basedir}/testbench/testsolutions/actions.test/jetbrains.mps.lang.actions.test.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-actions.test-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.table.tests.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.table.tests.jar/META-INF" />
@@ -432,15 +432,15 @@
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.table.tests.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.tests" />
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.table.tests" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/editor.table.test" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.table.tests.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.lang.editor.table.tests-jetbrains">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.table.tests/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-editor.table.test-jetbrains">
+      <fileset dir="${basedir}/testbench/testsolutions/editor.table.test/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.table.tests-src.jar">
-      <zipfileset file="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.table.tests/jetbrains.mps.lang.editor.table.tests.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.lang.editor.table.tests-jetbrains" prefix="module/jetbrains" />
+      <zipfileset file="${basedir}/testbench/testsolutions/editor.table.test/jetbrains.mps.lang.editor.table.tests.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-editor.table.test-jetbrains" prefix="module/jetbrains" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.multiple.tests.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.multiple.tests.jar/META-INF" />
@@ -461,18 +461,18 @@
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.multiple.tests.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.tests" />
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.multiple.tests" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/editor.multiple.test" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.multiple.tests.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.lang.editor.multiple.tests-models">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.multiple.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-editor.multiple.test-models">
+      <fileset dir="${basedir}/testbench/testsolutions/editor.multiple.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.multiple.tests-src.jar">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.multiple.tests/source_gen">
+      <fileset dir="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen">
         <exclude name="**/trace.info" />
       </fileset>
-      <zipfileset file="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.multiple.tests/jetbrains.mps.lang.editor.multiple.tests.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.lang.editor.multiple.tests-models" prefix="module/models" />
+      <zipfileset file="${basedir}/testbench/testsolutions/editor.multiple.test/jetbrains.mps.lang.editor.multiple.tests.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-editor.multiple.test-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.tests.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.tests.jar/META-INF" />
@@ -498,18 +498,18 @@
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.tests.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tests" />
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.tests" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/editor.test" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.tests.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.lang.editor.tests-selection">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.tests/selection" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-editor.test-selection">
+      <fileset dir="${basedir}/testbench/testsolutions/editor.test/selection" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.tests-src.jar">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.tests/source_gen">
+      <fileset dir="${basedir}/testbench/testsolutions/editor.test/source_gen">
         <exclude name="**/trace.info" />
       </fileset>
-      <zipfileset file="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-jetbrains.mps.lang.editor.tests-selection" prefix="module/selection" />
+      <zipfileset file="${basedir}/testbench/testsolutions/editor.test/jetbrains.mps.lang.editor.tests.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-editor.test-selection" prefix="module/selection" />
     </jar>
     <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -619,11 +619,11 @@
         <module file="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/testMoveElements.mpl" />
       </chunk>
       <chunk>
-        <module file="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test/jetbrains.mps.baseLanguage.test.msd" />
-        <module file="${basedir}/testbench/testsolutions/jetbrains.mps.lang.actions.test/jetbrains.mps.lang.actions.test.msd" />
-        <module file="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.multiple.tests/jetbrains.mps.lang.editor.multiple.tests.msd" />
-        <module file="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.table.tests/jetbrains.mps.lang.editor.table.tests.msd" />
-        <module file="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" />
+        <module file="${basedir}/testbench/testsolutions/bl.test/jetbrains.mps.baseLanguage.test.msd" />
+        <module file="${basedir}/testbench/testsolutions/actions.test/jetbrains.mps.lang.actions.test.msd" />
+        <module file="${basedir}/testbench/testsolutions/editor.multiple.test/jetbrains.mps.lang.editor.multiple.tests.msd" />
+        <module file="${basedir}/testbench/testsolutions/editor.table.test/jetbrains.mps.lang.editor.table.tests.msd" />
+        <module file="${basedir}/testbench/testsolutions/editor.test/jetbrains.mps.lang.editor.tests.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -1131,7 +1131,7 @@
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.table.tests/test_gen/" />
+      <src path="${basedir}/testbench/testsolutions/editor.table.test/test_gen/" />
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
@@ -1170,7 +1170,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.tests">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.table.tests/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/testbench/testsolutions/editor.table.test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1178,7 +1178,7 @@
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.actions.test" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.actions.test" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${basedir}/testbench/testsolutions/jetbrains.mps.lang.actions.test/test_gen/" />
+      <src path="${basedir}/testbench/testsolutions/actions.test/test_gen/" />
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
@@ -1215,18 +1215,18 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.actions.test">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.actions.test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/testbench/testsolutions/actions.test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.test" depends="fetchDependencies">
-    <mkdir dir="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test/source_gen" />
+    <mkdir dir="${basedir}/testbench/testsolutions/bl.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test/source_gen" />
-        <pathelement path="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test/test_gen/" />
+        <path location="${basedir}/testbench/testsolutions/bl.test/source_gen" />
+        <pathelement path="${basedir}/testbench/testsolutions/bl.test/test_gen/" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
@@ -1277,18 +1277,18 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/testbench/testsolutions/bl.test/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/testbench/testsolutions/bl.test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.editor.multiple.tests" depends="fetchDependencies">
-    <mkdir dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.multiple.tests/source_gen" />
+    <mkdir dir="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.multiple.tests/source_gen" />
+        <path location="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
@@ -1325,17 +1325,17 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.tests">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.multiple.tests/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.editor.tests" depends="java.compile.jetbrains.mps.lang.editor.styleTests, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.tests/source_gen" />
+    <mkdir dir="${basedir}/testbench/testsolutions/editor.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.tests/source_gen" />
+        <path location="${basedir}/testbench/testsolutions/editor.test/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
@@ -1383,7 +1383,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tests">
-      <fileset dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.tests/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/testbench/testsolutions/editor.test/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1520,11 +1520,11 @@
     <delete dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen" />
     <delete dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" />
     <delete dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/generator/source_gen" />
-    <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test/source_gen" />
-    <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.multiple.tests/source_gen" />
-    <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.tests/source_gen" />
-    <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.baseLanguage.test/test_gen" />
-    <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.actions.test/test_gen" />
-    <delete dir="${basedir}/testbench/testsolutions/jetbrains.mps.lang.editor.table.tests/test_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/bl.test/source_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/editor.test/source_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/bl.test/test_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/actions.test/test_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/editor.table.test/test_gen" />
   </target>
 </project>

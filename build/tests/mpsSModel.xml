@@ -61,15 +61,15 @@
     </echoxml>
     <jar destfile="${build.layout}/jetbrains.mps.lang.traceable.operations.test.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.traceable.operations.test" />
-      <fileset dir="${basedir}/languages/languageDesign/traceable.operations/tests" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/traceable.operations.test" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.traceable.operations.test.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceable.operations-tests-models">
-      <fileset dir="${basedir}/languages/languageDesign/traceable.operations/tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-traceable.operations.test-models">
+      <fileset dir="${basedir}/testbench/testsolutions/traceable.operations.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.lang.traceable.operations.test-src.jar">
-      <zipfileset file="${basedir}/languages/languageDesign/traceable.operations/tests/jetbrains.mps.lang.traceable.operations.test.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-traceable.operations-tests-models" prefix="module/models" />
+      <zipfileset file="${basedir}/testbench/testsolutions/traceable.operations.test/jetbrains.mps.lang.traceable.operations.test.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-traceable.operations.test-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.smodel.test.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.smodel.test.jar/META-INF" />
@@ -221,7 +221,7 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <chunk>
-        <module file="${basedir}/languages/languageDesign/traceable.operations/tests/jetbrains.mps.lang.traceable.operations.test.msd" />
+        <module file="${basedir}/testbench/testsolutions/traceable.operations.test/jetbrains.mps.lang.traceable.operations.test.msd" />
         <module file="${basedir}/plugins/mps-testing/languages/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" />
         <module file="${basedir}/testbench/modules/testRead/jetbrains.mps.testRead.msd" />
       </chunk>
@@ -245,7 +245,7 @@
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.traceable.operations.test" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.traceable.operations.test" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${basedir}/languages/languageDesign/traceable.operations/tests/test_gen/" />
+      <src path="${basedir}/testbench/testsolutions/traceable.operations.test/test_gen/" />
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
@@ -289,7 +289,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.traceable.operations.test">
-      <fileset dir="${basedir}/languages/languageDesign/traceable.operations/tests/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/testbench/testsolutions/traceable.operations.test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -515,7 +515,7 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/languages/languageDesign/traceable.operations/tests/test_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/traceable.operations.test/test_gen" />
     <delete dir="${basedir}/plugins/mps-testing/languages/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/test_gen" />
     <delete dir="${basedir}/testbench/modules/testRead/test_gen" />
   </target>
