@@ -31,6 +31,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -72,8 +73,9 @@ public class ProjectMPSDependenciesTest {
       LOG.info("ADDING WORKBENCH CONTRIBUTORS");
       addContributorWithPaths(Arrays.asList(PathManager.getWorkbenchPath()));
       checkDeps();
-//      LOG.info("ADDING PLUGINS CONTRIBUTORS");
-//      addContributorWithPaths(Arrays.asList(PathManager.get()));
+      LOG.info("ADDING PLUGINS CONTRIBUTORS");
+      addContributorWithPaths(Arrays.asList(PathManager.getHomePath() + File.separator + "plugins"));
+      checkDeps();
     } finally {
       environment.dispose();
     }
