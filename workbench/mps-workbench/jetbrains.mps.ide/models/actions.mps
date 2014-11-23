@@ -34383,6 +34383,43 @@
             </node>
           </node>
         </node>
+        <node concept="2Gpval" id="44b8MCdP9ix" role="3cqZAp">
+          <node concept="2GrKxI" id="44b8MCdP9iy" role="2Gsz3X">
+            <property role="TrG5h" value="solution" />
+          </node>
+          <node concept="2OqwBi" id="44b8MCdP9iz" role="2GsD0m">
+            <node concept="37vLTw" id="44b8MCdP9i$" role="2Oq$k0">
+              <ref role="3cqZAo" node="6HwFPByrzJ" resolve="modules" />
+            </node>
+            <node concept="UnYns" id="44b8MCdP9i_" role="2OqNvi">
+              <node concept="3uibUv" id="44b8MCdPbpb" role="UnYnz">
+                <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="44b8MCdP9iB" role="2LFqv$">
+            <node concept="3clFbF" id="44b8MCdP9iM" role="3cqZAp">
+              <node concept="2OqwBi" id="44b8MCdP9iN" role="3clFbG">
+                <node concept="2GrUjf" id="44b8MCdP9iO" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="44b8MCdP9iy" resolve="solution" />
+                </node>
+                <node concept="liA8E" id="44b8MCdP9iP" role="2OqNvi">
+                  <ref role="37wK5l" to="vsqj:~AbstractModule.updateSModelReferences():void" resolve="updateSModelReferences" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="44b8MCdP9iQ" role="3cqZAp">
+              <node concept="2OqwBi" id="44b8MCdP9iR" role="3clFbG">
+                <node concept="2GrUjf" id="44b8MCdP9iS" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="44b8MCdP9iy" resolve="solution" />
+                </node>
+                <node concept="liA8E" id="44b8MCdP9iT" role="2OqNvi">
+                  <ref role="37wK5l" to="vsqj:~Solution.save():void" resolve="save" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="1VlRc9MbJh" role="3cqZAp" />
         <node concept="2Gpval" id="2cEqqWVR0qo" role="3cqZAp">
           <node concept="37vLTw" id="6HwFPBzegl" role="2GsD0m">
