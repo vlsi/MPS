@@ -3427,7 +3427,7 @@
         </node>
         <node concept="1SiIV0" id="2a9bszgrv6G" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgrv6F" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
@@ -3519,6 +3519,12 @@
           <node concept="3bR9La" id="5a4DEsORzCJ" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1ZViq9oppal" resolve="jetbrains.mps.make.facets" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5hfNQWyzfyO" role="3bR37C">
+          <node concept="3bR9La" id="5hfNQWyzfyP" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>
       </node>

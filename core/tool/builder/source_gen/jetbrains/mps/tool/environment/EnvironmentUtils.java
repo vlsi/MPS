@@ -46,9 +46,7 @@ public class EnvironmentUtils {
     if (isEmptyString(System.getProperty(PLUGINS_PATH))) {
       setPluginPath();
       // Value of this property is comma-separated list of plugin IDs intended to load by platform 
-      if (System.getProperty("idea.load.plugins") == null || System.getProperty("idea.load.plugins").equals("false")) {
-        System.setProperty("idea.load.plugins.id", IterableUtils.join(config.getPlugins(), ","));
-      }
+      System.setProperty("idea.load.plugins.id", IterableUtils.join(config.getPlugins(), ","));
     }
   }
 

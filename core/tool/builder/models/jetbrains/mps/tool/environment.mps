@@ -180,6 +180,7 @@
         <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
+      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
         <child id="1160998896846" name="condition" index="1gVkn0" />
         <child id="1160998916832" name="message" index="1gVpfI" />
@@ -188,7 +189,12 @@
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
-      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
+      <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
+        <child id="1144226360166" name="iterable" index="1DdaDG" />
+      </concept>
+      <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
+        <child id="1144230900587" name="variable" index="1Duv9x" />
+      </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -218,13 +224,6 @@
       </concept>
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
-      </concept>
-      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
-      <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
-        <child id="1144226360166" name="iterable" index="1DdaDG" />
-      </concept>
-      <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
-        <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
@@ -1990,57 +1989,26 @@
                 <property role="3SKdUp" value="Value of this property is comma-separated list of plugin IDs intended to load by platform" />
               </node>
             </node>
-            <node concept="3clFbJ" id="6z7xhWktWXl" role="3cqZAp">
-              <node concept="22lmx$" id="6z7xhWktWXm" role="3clFbw">
-                <node concept="3clFbC" id="6z7xhWktWXn" role="3uHU7B">
-                  <node concept="2YIFZM" id="6z7xhWktWXo" role="3uHU7B">
-                    <ref role="37wK5l" to="e2lb:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
-                    <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
-                    <node concept="Xl_RD" id="6z7xhWktWXp" role="37wK5m">
-                      <property role="Xl_RC" value="idea.load.plugins" />
-                    </node>
-                  </node>
-                  <node concept="10Nm6u" id="6z7xhWktWXq" role="3uHU7w" />
+            <node concept="3clFbF" id="6z7xhWktWXx" role="3cqZAp">
+              <node concept="2YIFZM" id="6z7xhWktWXy" role="3clFbG">
+                <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
+                <ref role="37wK5l" to="e2lb:~System.setProperty(java.lang.String,java.lang.String):java.lang.String" resolve="setProperty" />
+                <node concept="Xl_RD" id="6z7xhWktWXz" role="37wK5m">
+                  <property role="Xl_RC" value="idea.load.plugins.id" />
                 </node>
-                <node concept="2OqwBi" id="6z7xhWktWXr" role="3uHU7w">
-                  <node concept="2YIFZM" id="6z7xhWktWXs" role="2Oq$k0">
-                    <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
-                    <ref role="37wK5l" to="e2lb:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
-                    <node concept="Xl_RD" id="6z7xhWktWXt" role="37wK5m">
-                      <property role="Xl_RC" value="idea.load.plugins" />
+                <node concept="2YIFZM" id="6z7xhWktWX$" role="37wK5m">
+                  <ref role="1Pybhc" to="8dm4:~IterableUtils" resolve="IterableUtils" />
+                  <ref role="37wK5l" to="8dm4:~IterableUtils.join(java.lang.Iterable,java.lang.String):java.lang.String" resolve="join" />
+                  <node concept="2OqwBi" id="6z7xhWktWX_" role="37wK5m">
+                    <node concept="liA8E" id="6z7xhWktWXA" role="2OqNvi">
+                      <ref role="37wK5l" node="5UWB9tjYeB" resolve="getPlugins" />
+                    </node>
+                    <node concept="37vLTw" id="6z7xhWktWXJ" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6z7xhWktWXH" resolve="config" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="6z7xhWktWXu" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="Xl_RD" id="6z7xhWktWXv" role="37wK5m">
-                      <property role="Xl_RC" value="false" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="6z7xhWktWXw" role="3clFbx">
-                <node concept="3clFbF" id="6z7xhWktWXx" role="3cqZAp">
-                  <node concept="2YIFZM" id="6z7xhWktWXy" role="3clFbG">
-                    <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
-                    <ref role="37wK5l" to="e2lb:~System.setProperty(java.lang.String,java.lang.String):java.lang.String" resolve="setProperty" />
-                    <node concept="Xl_RD" id="6z7xhWktWXz" role="37wK5m">
-                      <property role="Xl_RC" value="idea.load.plugins.id" />
-                    </node>
-                    <node concept="2YIFZM" id="6z7xhWktWX$" role="37wK5m">
-                      <ref role="1Pybhc" to="8dm4:~IterableUtils" resolve="IterableUtils" />
-                      <ref role="37wK5l" to="8dm4:~IterableUtils.join(java.lang.Iterable,java.lang.String):java.lang.String" resolve="join" />
-                      <node concept="2OqwBi" id="6z7xhWktWX_" role="37wK5m">
-                        <node concept="liA8E" id="6z7xhWktWXA" role="2OqNvi">
-                          <ref role="37wK5l" node="5UWB9tjYeB" resolve="getPlugins" />
-                        </node>
-                        <node concept="37vLTw" id="6z7xhWktWXJ" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6z7xhWktWXH" resolve="config" />
-                        </node>
-                      </node>
-                      <node concept="Xl_RD" id="6z7xhWktWXC" role="37wK5m">
-                        <property role="Xl_RC" value="," />
-                      </node>
-                    </node>
+                  <node concept="Xl_RD" id="6z7xhWktWXC" role="37wK5m">
+                    <property role="Xl_RC" value="," />
                   </node>
                 </node>
               </node>

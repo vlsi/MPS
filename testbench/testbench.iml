@@ -64,6 +64,8 @@
     <orderEntry type="library" scope="RUNTIME" name="IDEA runtime jars" level="project" />
     <orderEntry type="library" name="Commons-httpclient" level="project" />
     <orderEntry type="module" module-name="editor-api" scope="TEST" />
+    <orderEntry type="module" module-name="debugger-java-customViewers" scope="TEST" />
+    <orderEntry type="module" module-name="execution-api" scope="TEST" />
   </component>
 </module>
 
