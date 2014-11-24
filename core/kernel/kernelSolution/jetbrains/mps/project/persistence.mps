@@ -5230,22 +5230,50 @@
           </node>
         </node>
         <node concept="3clFbH" id="IMUMWuHQO_" role="3cqZAp" />
+        <node concept="3clFbF" id="7fzmywGWqpf" role="3cqZAp">
+          <node concept="2OqwBi" id="7fzmywGWrtq" role="3clFbG">
+            <node concept="37vLTw" id="7fzmywGWqpd" role="2Oq$k0">
+              <ref role="3cqZAo" node="IMUMWuHQOX" resolve="descriptor" />
+            </node>
+            <node concept="liA8E" id="7fzmywGWssB" role="2OqNvi">
+              <ref role="37wK5l" to="kqhl:~ModuleDescriptor.setHasLanguageVersions(boolean):void" resolve="setHasLanguageVersions" />
+              <node concept="3fqX7Q" id="7fzmywGWwUD" role="37wK5m">
+                <node concept="2OqwBi" id="7fzmywGWwUE" role="3fr31v">
+                  <node concept="2OqwBi" id="7fzmywGWwUF" role="2Oq$k0">
+                    <node concept="37vLTw" id="7fzmywGWwUG" role="2Oq$k0">
+                      <ref role="3cqZAo" node="IMUMWuHQOZ" resolve="root" />
+                    </node>
+                    <node concept="liA8E" id="7fzmywGWwUH" role="2OqNvi">
+                      <ref role="37wK5l" to="zwkq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
+                      <node concept="Xl_RD" id="7fzmywGWwUI" role="37wK5m">
+                        <property role="Xl_RC" value="languageVersions" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="7fzmywGWwUJ" role="2OqNvi">
+                    <ref role="37wK5l" to="k7g3:~List.isEmpty():boolean" resolve="isEmpty" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="2N5jZpoNFZK" role="3cqZAp">
           <node concept="2OqwBi" id="6dUEkwAxcWq" role="3clFbG">
-            <node concept="2YIFZM" id="1Tieq1ilWWZ" role="2Oq$k0">
+            <node concept="2YIFZM" id="7fzmywGWs_z" role="2Oq$k0">
               <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
               <ref role="37wK5l" to="7a2w:4eI2K_IuevB" resolve="children" />
-              <node concept="2YIFZM" id="1Tieq1ilWX0" role="37wK5m">
+              <node concept="2YIFZM" id="7fzmywGWs_$" role="37wK5m">
                 <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
                 <ref role="37wK5l" to="7a2w:4eI2K_Iuew6" resolve="first" />
-                <node concept="37vLTw" id="1Tieq1ilWX1" role="37wK5m">
+                <node concept="37vLTw" id="7fzmywGWs__" role="37wK5m">
                   <ref role="3cqZAo" node="IMUMWuHQOZ" resolve="root" />
                 </node>
-                <node concept="Xl_RD" id="1Tieq1ilWX2" role="37wK5m">
+                <node concept="Xl_RD" id="7fzmywGWs_A" role="37wK5m">
                   <property role="Xl_RC" value="languageVersions" />
                 </node>
               </node>
-              <node concept="Xl_RD" id="1Tieq1ilWX3" role="37wK5m">
+              <node concept="Xl_RD" id="7fzmywGWs_B" role="37wK5m">
                 <property role="Xl_RC" value="language" />
               </node>
             </node>

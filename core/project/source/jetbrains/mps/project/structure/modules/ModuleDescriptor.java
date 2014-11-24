@@ -57,6 +57,7 @@ public class ModuleDescriptor {
 
   private Throwable myLoadException;
   private boolean myUseTransientOutput;
+  private boolean myHasLanguageVersions;
 
   public ModuleDescriptor() {
     myModelRoots = new LinkedHashSet<ModelRootDescriptor>();
@@ -269,6 +270,14 @@ public class ModuleDescriptor {
     myUseTransientOutput = stream.readBoolean();
 
     if (stream.readByte() != 0x3a) throw new IOException("bad stream: no module descriptor end marker");
+  }
+
+  public void setHasLanguageVersions(boolean hasLanguageVersions) {
+    myHasLanguageVersions = hasLanguageVersions;
+  }
+
+  public boolean hasLanguageVersions() {
+    return myHasLanguageVersions;
   }
 
   private static class SModuleReferenceComparator implements Comparator<SModuleReference> {
