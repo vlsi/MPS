@@ -1832,7 +1832,7 @@
                       <ref role="3cqZAo" node="1hucSHYkqjq" resolve="mpsProject" />
                     </node>
                     <node concept="liA8E" id="1hucSHYjLwJ" role="2OqNvi">
-                      <ref role="37wK5l" to="vsqj:~Project.getModules():java.lang.Iterable" resolve="getModules" />
+                      <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
                     </node>
                   </node>
                 </node>
@@ -2799,7 +2799,7 @@
                       <ref role="3cqZAo" node="1hucSHYkqjq" resolve="mpsProject" />
                     </node>
                     <node concept="liA8E" id="4X87npbhYYz" role="2OqNvi">
-                      <ref role="37wK5l" to="vsqj:~Project.getModules():java.lang.Iterable" resolve="getModules" />
+                      <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5TtkZMZ5dyQ" role="37vLTJ">

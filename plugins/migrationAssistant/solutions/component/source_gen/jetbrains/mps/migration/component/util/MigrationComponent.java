@@ -158,7 +158,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
-        Iterable<? extends SModule> modules = mpsProject.getModules();
+        Iterable<? extends SModule> modules = mpsProject.getModulesWithGenerators();
         Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
           public void visit(AbstractModule it) {
             it.validateLanguageVersions();
@@ -281,7 +281,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        projectModules.value = mpsProject.getModules();
+        projectModules.value = mpsProject.getModulesWithGenerators();
       }
     });
     ModelAccess.instance().runWriteAction(new Runnable() {
