@@ -25,7 +25,7 @@
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.Filter" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -42,25 +42,27 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.Filter" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.ModelOrNodeChooserDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" file="RefactoringAccess.java">
+  <dependency className="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" file="RefactoringAccessEx.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringFacadeImpl" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewAction" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.runtime.access.RefactoringAccess" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" file="RefactoringDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -76,7 +78,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.refactoring.RefactoringFacade" file="RefactoringFacade.java">
+  <dependency className="jetbrains.mps.ide.platform.refactoring.RefactoringFacadeImpl" file="RefactoringFacadeImpl.java">
     <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
@@ -104,7 +106,7 @@
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewAction" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewItem" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
@@ -138,6 +140,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.runtime.access.RefactoringFacade" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog" file="RefactoringOptionsDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

@@ -74,7 +74,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.RefactoringView" file="RefactoringView.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

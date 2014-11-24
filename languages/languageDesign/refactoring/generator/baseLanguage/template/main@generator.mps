@@ -21,8 +21,8 @@
     <import index="ge2m" ref="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" />
     <import index="5fm0" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(MPS.Core/jetbrains.mps.ide.findusages.model@java_stub)" />
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="u42p" ref="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="y38" ref="r:4c8c6241-8bf4-4d04-84a1-f7fd7fcbdc2c(jetbrains.mps.refactoring.runtime.access)" />
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
@@ -2505,7 +2505,7 @@
         <node concept="3clFbF" id="1Z$ZeXyO1$g" role="gfFT$">
           <node concept="2OqwBi" id="1Z$ZeXyO1Ki" role="3clFbG">
             <node concept="liA8E" id="1Z$ZeXyO1Km" role="2OqNvi">
-              <ref role="37wK5l" to="u42p:29N7xYwTG9W" resolve="execute" />
+              <ref role="37wK5l" to="y38:29N7xYwTG9W" resolve="execute" />
               <node concept="LS0Qe" id="1Z$ZeXyO1Kn" role="37wK5m">
                 <node concept="10Nm6u" id="1Z$ZeXyO1Kt" role="LSJb1">
                   <node concept="2b32R4" id="1Z$ZeXyO1KW" role="lGtFl">
@@ -2574,11 +2574,11 @@
             </node>
             <node concept="2OqwBi" id="4hHBpohZPk_" role="2Oq$k0">
               <node concept="2YIFZM" id="4hHBpohZPky" role="2Oq$k0">
-                <ref role="1Pybhc" to="u42p:1dH5fOG2bOi" resolve="RefactoringAccess" />
-                <ref role="37wK5l" to="u42p:1dH5fOG2bPt" resolve="getInstance" />
+                <ref role="1Pybhc" to="y38:3dEPKBAxz0O" resolve="RefactoringAccess" />
+                <ref role="37wK5l" to="y38:1dH5fOG2bPt" resolve="getInstance" />
               </node>
               <node concept="liA8E" id="4hHBpohZPkE" role="2OqNvi">
-                <ref role="37wK5l" to="u42p:52KjdOfLP8s" resolve="getRefactoringFacade" />
+                <ref role="37wK5l" to="y38:52KjdOfLP8s" resolve="getRefactoringFacade" />
               </node>
             </node>
           </node>
@@ -2915,7 +2915,7 @@
     <property role="3GE5qa" value="RefDecl.Methods" />
     <ref role="3gUMe" to="tp1h:3LlWHEPrkgt" resolve="ModelsToGenerateByDefault" />
     <node concept="312cEu" id="3LlWHEPrkMB" role="13RCb5">
-      <property role="TrG5h" value="RefactoringClass" />
+      <property role="TrG5h" value="RefactoringClass1" />
       <property role="2bfB8j" value="true" />
       <property role="1sVAO0" value="true" />
       <node concept="3Tm1VV" id="3LlWHEPrkMC" role="1B3o_S" />

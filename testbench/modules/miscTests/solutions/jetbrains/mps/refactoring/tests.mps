@@ -2522,7 +2522,7 @@
                     <ref role="3cqZAo" to="u42p:1TclyuNTOmz" resolve="myLog" />
                   </node>
                   <node concept="liA8E" id="7d4V98p4KyJ" role="2OqNvi">
-                    <ref role="37wK5l" to="ajxo:~Category.error(java.lang.Object):void" resolve="error" />
+                    <ref role="37wK5l" to="ajxo:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
                     <node concept="10Nm6u" id="4t57iE9WRoS" role="37wK5m" />
                     <node concept="37vLTw" id="3GM_nagTwAw" role="37wK5m">
                       <ref role="3cqZAo" node="7d4V98p4KyL" resolve="t" />
@@ -2651,7 +2651,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="2i1LYHla4HK" role="1zkMxy">
-      <ref role="3uigEE" to="u42p:1TclyuNTOmp" resolve="RefactoringFacade" />
+      <ref role="3uigEE" to="u42p:1TclyuNTOmp" resolve="RefactoringFacadeImpl" />
     </node>
   </node>
   <node concept="312cEu" id="7d4V98p4KyR">

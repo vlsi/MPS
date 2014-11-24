@@ -175,7 +175,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.InlineMethodRefactoringAnalyzer" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.ProblemsDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewAction" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewItem" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />

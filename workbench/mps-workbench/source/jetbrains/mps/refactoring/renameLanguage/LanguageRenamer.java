@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.refactoring.renameLanguage;
 
+import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.facets.JavaModuleFacet;
