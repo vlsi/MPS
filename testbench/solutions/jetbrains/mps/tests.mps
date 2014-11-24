@@ -54,9 +54,6 @@
     <import index="ci8y" ref="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)" />
     <import index="89qz" ref="r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)" />
     <import index="u9u1" ref="r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)" />
-    <import index="w6y5" ref="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)" />
-    <import index="6ihy" ref="r:234b331b-e592-4abc-a46f-b0dfd2e2ce5e(jetbrains.mps.vcs.diff.merge@tests)" />
-    <import index="qw8u" ref="r:cebb2076-d3b2-4d62-a59a-225f2f665af5(jetbrains.mps.vcs@tests)" />
     <import index="709f" ref="r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)" />
     <import index="t7u" ref="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)" />
     <import index="zosv" ref="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)" />
@@ -71,6 +68,7 @@
     <import index="4o0x" ref="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)" />
     <import index="e6od" ref="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)" />
     <import index="7fk5" ref="r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)" />
+    <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" />
     <import index="pop3" ref="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" implicit="true" />
   </imports>
   <registry>
@@ -906,21 +904,6 @@
     </node>
     <node concept="lpD6D" id="6mKaYA2xMFk" role="lpD6w">
       <ref role="lpD7u" to="v569:6mKaYA2xCGo" resolve="CopyWithTrace" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="3FJ0r$qNTEq">
-    <node concept="lpD6A" id="3P7Hp8k5FCr" role="lpD6w">
-      <ref role="lpD7v" to="6ihy:oJ77aNIJob" resolve="MergeCoreTest" />
-    </node>
-    <node concept="lpD6A" id="3P7Hp8k5FCx" role="lpD6w">
-      <ref role="lpD7v" to="w6y5:2FxQamhcX1N" resolve="ChangesManagerTest" />
-    </node>
-    <node concept="lpD6A" id="3P7Hp8k5FC_" role="lpD6w">
-      <ref role="lpD7v" to="qw8u:6m1MVDkUPWT" resolve="DiskMemoryConflictsTest" />
-    </node>
-    <node concept="2R4zua" id="3FJ0r$qNTEr" role="2R4z3u">
-      <property role="2R4zu8" value="b0d98700-54f0-4c39-a8e0-bb27733b8b38" />
-      <property role="2R4zub" value="jetbrains.mps.ide.vcs" />
     </node>
   </node>
   <node concept="lpD6F" id="3FJ0r$qO2Hu">
@@ -3501,6 +3484,21 @@
     </node>
     <node concept="lpD6A" id="6j5OJw7t8kR" role="lpD6w">
       <ref role="lpD7v" to="gp3f:7X3$CtwaMP1" resolve="ProjectTest" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="7Psq8BycRoy">
+    <node concept="lpD6A" id="3P7Hp8k5FCr" role="lpD6w">
+      <ref role="lpD7v" to="j5ir:oJ77aNIJob" resolve="MergeCoreTest" />
+    </node>
+    <node concept="lpD6A" id="3P7Hp8k5FCx" role="lpD6w">
+      <ref role="lpD7v" to="j5ir:2FxQamhcX1N" resolve="ChangesManagerTest" />
+    </node>
+    <node concept="lpD6A" id="3P7Hp8k5FC_" role="lpD6w">
+      <ref role="lpD7v" to="j5ir:6m1MVDkUPWT" resolve="DiskMemoryConflictsTest" />
+    </node>
+    <node concept="2R4zua" id="7Psq8BycRtk" role="2R4z3u">
+      <property role="2R4zub" value="jetbrains.mps.ide.vcs.test" />
+      <property role="2R4zu8" value="9dc77d7d-3b66-403c-b568-37677f157448" />
     </node>
   </node>
 </model>

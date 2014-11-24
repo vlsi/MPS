@@ -3105,7 +3105,7 @@
                   </node>
                   <node concept="2ShNRf" id="5UWB9tmx9o" role="3K4E3e">
                     <node concept="1pGfFk" id="5UWB9tmx9p" role="2ShVmc">
-                      <ref role="37wK5l" to="3ebz:6rx4kZDkRjb" resolve="IdeaEnvironment" />
+                      <ref role="37wK5l" to="79ha:6rx4kZDkRjb" resolve="IdeaEnvironment" />
                       <node concept="37vLTw" id="5UWB9tmx9q" role="37wK5m">
                         <ref role="3cqZAo" node="2pL3QjruEpd" resolve="config" />
                       </node>
