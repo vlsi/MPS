@@ -7686,12 +7686,8 @@
         <node concept="2ShNRf" id="5gyVhZ1bgL7" role="33vP2m">
           <node concept="1pGfFk" id="5gyVhZ1bgL8" role="2ShVmc">
             <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-            <node concept="2YIFZM" id="5gyVhZ1bgL9" role="37wK5m">
-              <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
-              <ref role="37wK5l" to="e2lb:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
-              <node concept="Xl_RD" id="5gyVhZ1bgLa" role="37wK5m">
-                <property role="Xl_RC" value="user.home" />
-              </node>
+            <node concept="Xl_RD" id="4uBXTiZ7Geo" role="37wK5m">
+              <property role="Xl_RC" value="." />
             </node>
           </node>
         </node>
