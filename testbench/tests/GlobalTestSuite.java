@@ -40,9 +40,9 @@ import org.junit.runners.Suite;
     jetbrains.mps.make.dependencies.GraphTestCase.class,
     jetbrains.mps.packaged.PackagedLanguageTest.class,
     jetbrains.mps.refactoring.RefactoringTest.class,
-    jetbrains.mps.vcs.DiskMemoryConflictsTest.class,
-//  jetbrains.mps.vcs.changesmanager.ChangesManagerTest.class, [temporarily disabled] //TODO: enable test
-    jetbrains.mps.vcs.diff.merge.MergeCoreTest.class,
+    jetbrains.mps.ide.vcs.test.merge.DiskMemoryConflictsTest.class,
+//  jetbrains.mps.ide.vcs.test.merge.ChangesManagerTest.class, [temporarily disabled] //TODO: enable test
+    jetbrains.mps.ide.vcs.test.merge.MergeCoreTest.class,
     jetbrains.mps.vfs.VfsTest.class,
     jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,
     jetbrains.mps.PersistenceTest.class,

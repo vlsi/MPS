@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests_gen" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ideatestsolutions/ide.vcs.test/test_gen" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/ideatestsolutions/ide.vcs.test/classes_gen" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
