@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.LangInfo;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -37,10 +38,9 @@ import java.util.Map;
 
 /**
  * Facility to read meta-model information persisted in a model file, to fill {@link jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector} back from the
- * serialized registry. Serves as the way to parametrize ModelReader.
+ * serialized registry. Serves the task to parametrize ModelReader as well.
  *
- * Deals with the way meta-object identifiers are de-serialized, although marshal/unmarshal code shall be kept together, pending refactoring.
- * I'd prefer to have utility objects being used both from read and write, rather than dedicated set of reader utilities and writer utilities as it used to be.
+ * Although barely a mediator to few other facilities, grabs great portion of code one would otherwise write in ModelReaderHandler.
  *
  * Stateful, withLanguage() identifies language for subsequent withConcept, which, furthermore, identify concept for any
  * subsequent #property(), #association() and #aggregation call.
@@ -61,7 +61,7 @@ class IdInfoReadHelper {
   public IdInfoReadHelper(@NotNull MetaModelInfoProvider mmiProvider, boolean interfaceOnly, boolean stripImplementation) {
     myMetaInfoProvider = mmiProvider;
     myIdEncoder = new IdEncoder();
-    myInfoCollector = new IdInfoCollector(mmiProvider);
+    myInfoCollector = new IdInfoCollector();
     myInterfaceOnly = interfaceOnly;
     myStripImplementation = stripImplementation;
   }
@@ -119,7 +119,7 @@ class IdInfoReadHelper {
   public void aggregation(String id, String name, String index, boolean unordered) {
     assert myActualConcept != null;
     SContainmentLinkId linkId = myIdEncoder.parseAggregation(myActualConcept.getConceptId(), id);
-    myActualConcept.addLink(linkId, name);
+    myActualConcept.addLink(linkId, name, unordered);
     myAggregations.put(index, MetaAdapterFactory.getContainmentLink(linkId, name));
     myMetaInfoProvider.setAggregationName(linkId, name);
     myMetaInfoProvider.setUnordered(linkId, unordered);
@@ -152,20 +152,15 @@ class IdInfoReadHelper {
   }
 
   public boolean isInterface(@NotNull SConcept concept) {
-    // ReadHelper9.readNodeInfo
-    String nodeInfo = myInfoCollector.find(concept).getImplementationKindText();
-    return nodeInfo.charAt(0) == 'i';
+    return ConceptKind.INTERFACE == myInfoCollector.find(concept).getKind();
   }
 
   public boolean isImplementation(@NotNull SConcept concept) {
-    String nodeInfo = myInfoCollector.find(concept).getImplementationKindText();
-    final char c = nodeInfo.charAt(0);
-    return c == 's' || c == 'l';
+    ConceptKind kind = myInfoCollector.find(concept).getKind();
+    return kind == ConceptKind.IMPLEMENTATION || kind == ConceptKind.IMPLEMENTATION_WITH_STUB;
   }
   public boolean isImplementationWithStab(@NotNull SConcept concept) {
-    // ReadHelper9.isImplementationWithStab
-    String nodeInfo = myInfoCollector.find(concept).getImplementationKindText();
-    return nodeInfo.charAt(0) == 's';
+    return ConceptKind.IMPLEMENTATION_WITH_STUB == myInfoCollector.find(concept).getKind();
   }
 
   @NotNull

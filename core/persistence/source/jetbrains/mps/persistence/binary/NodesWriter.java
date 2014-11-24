@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,236 +15,60 @@
  */
 package jetbrains.mps.persistence.binary;
 
-import jetbrains.mps.persistence.IdHelper;
-import jetbrains.mps.persistence.ModelEnvironmentInfo;
-import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
-import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
-import jetbrains.mps.smodel.runtime.ConceptKind;
-import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
+import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
+import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.PropertyInfo;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.io.IOException;
-import java.io.NotSerializableException;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
 
-public class NodesWriter {
-  public static final int USER_NODE_POINTER = 0;
-  public static final int USER_STRING = 1;
-  public static final int USER_NULL = 2;
-  public static final int USER_NODE_ID = 3;
-  public static final int USER_MODEL_ID = 4;
-  public static final int USER_MODEL_REFERENCE = 5;
-  public static final int USER_SERIALIZABLE = 6;
+public final class NodesWriter extends BareNodeWriter {
+  private final IdInfoCollector myInfo;
 
-  protected final SModelReference myModelReference;
-  private final ModelEnvironmentInfo myEnv;
-
-  public NodesWriter(@NotNull SModelReference modelReference, ModelEnvironmentInfo info) {
-    myModelReference = modelReference;
-    myEnv = info;
+  public NodesWriter(@NotNull SModelReference modelReference, @NotNull ModelOutputStream os, @NotNull IdInfoCollector idInfo) {
+    super(modelReference, os);
+    myInfo = idInfo;
   }
 
-  public void writeNodes(Collection<SNode> nodes, ModelOutputStream os) throws IOException {
-    os.writeInt(nodes.size());
-    for (SNode n : nodes) {
-      writeNode(n, os);
-    }
+  @Override
+  protected void writeNodePrim(SNode node) throws IOException {
+    ConceptInfo conceptInfo = myInfo.find(node.getConcept());
+    myOut.writeShort(conceptInfo.getIntIndex());
+    myOut.writeNodeId(node.getNodeId());
+    SContainmentLink roleInParent = node.getContainmentLink();
+    myOut.writeShort(roleInParent == null ? -1 : myInfo.find(roleInParent).getIntIndex());
   }
 
-  public void writeNode(SNode node, ModelOutputStream os) throws IOException {
-    SConcept concept = node.getConcept();
-    if (concept instanceof SConceptAdapterByName){
-      os.writeByte(0x70);
-    } else{
-      os.writeByte(0x71);
-      os.writeString(IdHelper.getConceptId(concept).serialize());
-    }
-    os.writeString(concept.getQualifiedName());
-    os.writeNodeId(node.getNodeId());
-    SContainmentLink roleInParentId = node.getContainmentLink();
-    os.writeString(roleInParentId == null ? null : IdHelper.getLinkId(roleInParentId).serialize());
-    os.writeString(roleInParentId == null ? null : roleInParentId.getRoleName());
-    os.writeByte(getNodeInfo(node));
-    os.writeByte('{');
-
-    writeProperties(node, os);
-
-    writeReferences(node, os);
-
-    writeChildren(node, os);
-
-    writeUserObjects(node, os);
-
-    os.writeByte('}');
-  }
-
-  public byte getNodeInfo(SNode node) {
-    if (myEnv == null) return 0;
-
-    ConceptKind conceptKind = myEnv.getConceptKind(node);
-    StaticScope conceptScope = myEnv.getConceptScope(node);
-    boolean unordered = myEnv.isInUnorderedRole(node);
-    byte result = unordered ? (byte) 1 : 0;
-    if (conceptKind == ConceptKind.INTERFACE) {
-      result |= 1 << 1;
-    } else if (conceptKind == ConceptKind.IMPLEMENTATION) {
-      result |= 2 << 1;
-    } else if (conceptKind == ConceptKind.IMPLEMENTATION_WITH_STUB) {
-      result |= 3 << 1;
-    }
-    if (conceptScope == StaticScope.ROOT) {
-      result |= 1 << 3;
-    } else if (conceptScope == StaticScope.NONE) {
-      result |= 2 << 3;
-    }
-    return result;
-  }
-
-  protected void writeChildren(SNode node, ModelOutputStream os) throws IOException {
-    writeNodes(((Collection) node.getChildren()), os);
-  }
-
-  protected void writeReferences(SNode node, ModelOutputStream os) throws IOException {
+  protected void writeReferences(SNode node) throws IOException {
     Collection<? extends SReference> refs = IterableUtil.asCollection(node.getReferences());
-    os.writeInt(refs.size());
+    myOut.writeShort(refs.size());
     for (SReference reference : refs) {
-      SModelReference targetModelReference = reference.getTargetSModelReference();
-      if (reference instanceof StaticReference) {
-        os.writeInt(1);
-        os.writeNodeId(reference.getTargetNodeId());
-      } else if (reference instanceof DynamicReference) {
-        DynamicReferenceOrigin origin = ((DynamicReference) reference).getOrigin();
-        if (origin != null) {
-          os.writeInt(3);
-          os.writeNodePointer(origin.getTemplate());
-          os.writeNodePointer(origin.getInputNode());
-        } else {
-          os.writeInt(2);
-        }
-      } else {
-        throw new IOException("cannot store reference: " + reference.toString());
-      }
-      os.writeString(IdHelper.getRefId(reference.getLink()).serialize());
-      os.writeString(reference.getLink().getRoleName());
-      if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
-        os.writeByte(17);
-      } else {
-        os.writeByte(18);
-        os.writeModelReference(targetModelReference);
-      }
-      os.writeString(((jetbrains.mps.smodel.SReference) reference).getResolveInfo());
+      myOut.writeShort(myInfo.find(reference.getLink()).getIntIndex());
+      writeReferenceTarget(reference);
     }
   }
 
-  protected void writeProperties(SNode node, ModelOutputStream os) throws IOException {
-    final Map<SProperty, String> properties = new HashMap<SProperty, String>();
+  @Override
+  protected void writeProperties(SNode node) throws IOException {
+    final ArrayList<PropertyInfo> propertyInfo = new ArrayList<PropertyInfo>();
+    final ArrayList<String> propertyValue = new ArrayList<String>();
     for (SProperty id : node.getProperties()) {
-      properties.put(id, node.getProperty(id));
+      propertyInfo.add(myInfo.find(id));
+      propertyValue.add(node.getProperty(id));
     }
-    os.writeInt(properties.size());
-    for (Entry<SProperty, String> entry : properties.entrySet()) {
-      os.writeString(IdHelper.getPropertyId(entry.getKey()).serialize());
-      os.writeString(entry.getKey().getName());
-      os.writeString(entry.getValue());
-    }
-  }
-
-  protected void writeUserObjects(SNode node, ModelOutputStream os) throws IOException {
-    // write user objects here
-    final ArrayList<Object> knownUserObject = new ArrayList<Object>();
-    for (Object key : node.getUserObjectKeys()) {
-      Object value = node.getUserObject(key);
-      if (isKnownUserObject(key) && isKnownUserObject(value)) {
-        knownUserObject.add(key);
-        knownUserObject.add(value);
-      }
-    }
-
-    os.writeInt(knownUserObject.size());
-    for (int i = 0; i < knownUserObject.size(); i += 2) {
-      writeUserObject(os, knownUserObject.get(i));
-      writeUserObject(os, knownUserObject.get(i + 1));
-    }
-  }
-
-  protected void writeUserObject(ModelOutputStream os, Object object) throws IOException {
-    if (object == null) {
-      os.writeInt(USER_NULL);
-    } else if (object instanceof SNodeReference) {
-      os.writeInt(USER_NODE_POINTER);
-      os.writeNodePointer((SNodeReference) object);
-    } else if (object instanceof String) {
-      os.writeInt(USER_STRING);
-      os.writeString((String) object);
-    } else if (object instanceof SNodeId) {
-      os.writeInt(USER_NODE_ID);
-      os.writeNodeId((SNodeId) object);
-    } else if (object instanceof SModelId) {
-      os.writeInt(USER_MODEL_ID);
-      os.writeModelID((SModelId) object);
-    } else if (object instanceof SModelReference) {
-      os.writeInt(USER_MODEL_REFERENCE);
-      os.writeModelReference((SModelReference) object);
-    } else if (object instanceof Serializable) {
-      // two-phase write
-      try {
-        ObjectOutputStream dummy = new ObjectOutputStream(NullOutputStream.INSTANCE);
-        dummy.writeObject(object);
-      } catch (NotSerializableException ignore) {
-        object = null;
-      }
-      os.writeInt(USER_SERIALIZABLE);
-      ObjectOutputStream objectOutput = new ObjectOutputStream(os);
-      objectOutput.writeObject(object);
-    }
-  }
-
-  protected boolean isKnownUserObject(Object object) {
-    return object == null
-        || object instanceof SNodeReference
-        || object instanceof Serializable
-        || object instanceof SNodeId
-        || object instanceof SModelId
-        || object instanceof SModelReference;
-  }
-
-  private static class NullOutputStream extends OutputStream {
-
-    private static NullOutputStream INSTANCE = new NullOutputStream();
-
-    @Override
-    public void write(int b) throws IOException {
-      // > /dev/null
-    }
-
-    @Override
-    public void write(byte[] b) throws IOException {
-      // > /dev/null
-    }
-
-    @Override
-    public void write(byte[] b, int off, int len) throws IOException {
-      // > /dev/null
+    myOut.writeShort(propertyInfo.size());
+    for (int i = 0, x = propertyInfo.size(); i < x; i++) {
+      myOut.writeShort(propertyInfo.get(i).getIntIndex());
+      myOut.writeString(propertyValue.get(i));
     }
   }
 }

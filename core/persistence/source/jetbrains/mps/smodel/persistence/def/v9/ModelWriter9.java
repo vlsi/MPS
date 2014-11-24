@@ -64,8 +64,8 @@ public class ModelWriter9 implements IModelWriter {
   @Override
   public Document saveModel(SModel sourceModel) {
 
-    myMetaInfo = new IdInfoCollector(myMetaInfoProvider);
-    myMetaInfo.fill(sourceModel.getRootNodes());
+    myMetaInfo = new IdInfoCollector();
+    myMetaInfo.fill(sourceModel.getRootNodes(), myMetaInfoProvider);
     myImportsHelper = new ImportsHelper(sourceModel.getReference());
 
     // root element
@@ -301,8 +301,8 @@ public class ModelWriter9 implements IModelWriter {
         }
       };
       // and its meta-info
-      myMetaInfo = new IdInfoCollector(myMetaInfoProvider);
-      myMetaInfo.fill(Collections.singleton(root));
+      myMetaInfo = new IdInfoCollector();
+      myMetaInfo.fill(Collections.singleton(root), myMetaInfoProvider);
       Element childElement = saveNode(root);
 
       // record model imports
