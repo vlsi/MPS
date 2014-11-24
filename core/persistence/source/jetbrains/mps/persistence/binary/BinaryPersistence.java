@@ -48,12 +48,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -109,7 +107,7 @@ public final class BinaryPersistence {
       }
       return rv;
     } catch (IOException e) {
-      throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, desiredModelRef);
+      throw new ModelReadException("Couldn't read model: " + e.toString(), e, desiredModelRef);
     }
   }
 
@@ -118,7 +116,7 @@ public final class BinaryPersistence {
     try {
       return loadModel(content, false, null).getModel();
     } catch (IOException e) {
-      throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
+      throw new ModelReadException("Couldn't read model: " + e.toString(), e);
     }
   }
 
@@ -340,6 +338,7 @@ public final class BinaryPersistence {
       os.writeShort(conceptsInUse.size());
       for (ConceptInfo ci : conceptsInUse) {
         os.writeLong(ci.getConceptId().getConceptId());
+        assert ul.getName().equals(NameUtil.namespaceFromConceptFQName(ci.getName())) : "We save concept short name. This check ensures we can re-construct fqn based on language name";
         os.writeString(ci.getBriefName());
         os.writeByte(ci.getKind().ordinal() << 4 | ci.getScope().ordinal());
         ci.setIntIndex(conceptIndex++);
@@ -391,7 +390,7 @@ public final class BinaryPersistence {
       int conceptCount = is.readShort();
       while (conceptCount-- > 0) {
         final SConceptId conceptId = new SConceptId(languageId, is.readLong());
-        final String conceptName = NameUtil.longNameFromNamespaceAndShortName(langName, is.readString());
+        final String conceptName = NameUtil.conceptFQNameFromNamespaceAndShortName(langName, is.readString());
         int flags = is.readByte();
         rh.withConcept(conceptId, conceptName, StaticScope.values()[flags & 0x0f], ConceptKind.values()[flags >> 4 & 0x0f], conceptIndex++);
         //

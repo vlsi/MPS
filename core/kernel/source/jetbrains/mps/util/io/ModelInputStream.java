@@ -203,7 +203,7 @@ public class ModelInputStream extends DataInputStream {
       return myLanguages.get(readShort());
     }
     if (b != LANGUAGE) {
-      throw new IOException();
+      throw new IOException(Integer.toHexString(b));
     }
     SLanguage l = MetaAdapterFactory.getLanguage(readUUID(), readString());
     myLanguages.add(l);
@@ -218,7 +218,7 @@ public class ModelInputStream extends DataInputStream {
       return myConcepts.get(readShort());
     }
     if (b != CONCEPT) {
-      throw new IOException();
+      throw new IOException(Integer.toHexString(b));
     }
     SConcept c = MetaAdapterFactory.getConcept(readUUID(), readLong(), readString());
     myConcepts.add(c);
@@ -233,7 +233,7 @@ public class ModelInputStream extends DataInputStream {
       return myProperties.get(readShort());
     }
     if (b != PROPERTY) {
-      throw new IOException();
+      throw new IOException(Integer.toHexString(b));
     }
     final SConcept c = readConcept();
     SProperty p = MetaAdapterFactory.getProperty(new SPropertyId(IdHelper.getConceptId(c), readLong()), readString());
@@ -249,7 +249,7 @@ public class ModelInputStream extends DataInputStream {
       return myAssociations.get(readShort());
     }
     if (b != ASSOCIATION) {
-      throw new IOException();
+      throw new IOException(Integer.toHexString(b));
     }
     final SConcept c = readConcept();
     SReferenceLink l = MetaAdapterFactory.getReferenceLink(new SReferenceLinkId(IdHelper.getConceptId(c), readLong()), readString());
@@ -265,7 +265,7 @@ public class ModelInputStream extends DataInputStream {
       return myAggregations.get(readShort());
     }
     if (b != AGGREGATION) {
-      throw new IOException();
+      throw new IOException(Integer.toHexString(b));
     }
     final SConcept c = readConcept();
     SContainmentLink l = MetaAdapterFactory.getContainmentLink(new SContainmentLinkId(IdHelper.getConceptId(c), readLong()), readString());

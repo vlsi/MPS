@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -78,6 +79,15 @@ public final class NodesReader extends BareNodeReader {
   protected void externalNodeReferenceRead(SModelReference targetModel, SNodeId targetNodeId) {
     if (targetNodeId != null && myExternalNodeStore != null) {
       myExternalNodeStore.add(targetNodeId);
+    }
+  }
+
+  @Override
+  protected void readReferences(SNode node) throws IOException {
+    int refs = myIn.readShort();
+    while (refs-- > 0) {
+      final SReferenceLink link = myReadHelper.readAssociation(myIn.readShort());
+      readReference(link, node);
     }
   }
 
