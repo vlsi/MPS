@@ -7593,9 +7593,6 @@
       <node concept="2YIFZM" id="3R9KYLtnFc6" role="33vP2m">
         <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
         <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
-        <node concept="Xl_RD" id="3PaWMnROBBu" role="37wK5m">
-          <property role="Xl_RC" value="asm4-all.jar" />
-        </node>
         <node concept="Xl_RD" id="4Xk_ETUgCUS" role="37wK5m">
           <property role="Xl_RC" value="asm-all.jar" />
         </node>
@@ -7603,7 +7600,7 @@
           <property role="Xl_RC" value="xstream-1.4.3.jar" />
         </node>
         <node concept="Xl_RD" id="6gjr9XnnBRe" role="37wK5m">
-          <property role="Xl_RC" value="guava-14.0.1.jar" />
+          <property role="Xl_RC" value="guava-17.0.1.jar" />
         </node>
         <node concept="Xl_RD" id="3R9KYLtnFc7" role="37wK5m">
           <property role="Xl_RC" value="jdom.jar" />
