@@ -31,8 +31,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.FileSystem;
 
 public class MigrationDataUtil {
   public static void saveData(AbstractModule module, SModule dataModule, Iterable<Tuples._2<MigrationScriptReference, SNode>> data) {
@@ -98,7 +99,13 @@ public class MigrationDataUtil {
     return (result == null ? null : result._1());
   }
   public static IFile getDataFile(AbstractModule module) {
-    return FileSystem.getInstance().getFileByPath(FileUtil.getNameWithoutExtension(module.getDescriptorFile().getPath()) + ".migration");
+    String path;
+    if (module instanceof Generator) {
+      path = FileUtil.getNameWithoutExtension(((Generator) module).getSourceLanguage().getDescriptorFile().getPath()) + "generator.migration";
+    } else {
+      path = FileUtil.getNameWithoutExtension(module.getDescriptorFile().getPath()) + ".migration";
+    }
+    return FileSystem.getInstance().getFileByPath(path);
   }
   private static boolean eq_hzite5_a0a0a0a0a0a0c0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
