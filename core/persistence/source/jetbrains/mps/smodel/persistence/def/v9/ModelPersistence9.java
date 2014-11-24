@@ -92,7 +92,13 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
-    return new ModelWriter9(new RegularMetaModelInfo());
+    final MetaModelInfoProvider mmiProvider;
+    if (header != null && header.getMetaInfoProvider() != null) {
+      mmiProvider = header.getMetaInfoProvider();
+    } else {
+      mmiProvider = new RegularMetaModelInfo();
+    }
+    return new ModelWriter9(mmiProvider);
   }
 
   @Override
@@ -110,7 +116,11 @@ public class ModelPersistence9 implements IModelPersistence {
     final boolean interfaceOnly = state == ModelLoadingState.INTERFACE_LOADED;
     final boolean stripImplementation = state == ModelLoadingState.NO_IMPLEMENTATION;
     if (isConcisePersistenceOption(header)) {
-      IdInfoReadHelper readHelper = new IdInfoReadHelper(new RegularMetaModelInfo(), interfaceOnly, stripImplementation);
+      MetaModelInfoProvider mmiProvider = header.getMetaInfoProvider();
+      if (mmiProvider == null) {
+        mmiProvider = new RegularMetaModelInfo();
+      }
+      IdInfoReadHelper readHelper = new IdInfoReadHelper(mmiProvider, interfaceOnly, stripImplementation);
       return new ModelReader9bisHandler(header, readHelper);
     }
     return new ModelReader9Handler(interfaceOnly, stripImplementation, header);

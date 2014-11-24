@@ -354,12 +354,6 @@ public class ModelPersistence {
   }
 
   @NotNull
-  public static DefaultSModel readModelWithoutImplementation(@NotNull final StreamDataSource source) throws ModelReadException {
-    SModelHeader header = loadDescriptor(source);
-    return (DefaultSModel) readModel(header, source, ModelLoadingState.NO_IMPLEMENTATION).getModel();
-  }
-
-  @NotNull
   public static DefaultSModel readModel(@NotNull final StreamDataSource source, boolean interfaceOnly) throws ModelReadException {
     SModelHeader header = loadDescriptor(source);
     ModelLoadingState state = interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED;

@@ -15,10 +15,11 @@ import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.FileUtil;
+import java.util.HashMap;
+import jetbrains.mps.persistence.DefaultModelPersistence;
+import jetbrains.mps.persistence.MetaModelInfoProvider;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import java.util.Collections;
-import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 
@@ -59,7 +60,10 @@ public class ConvertToBinaryWorker {
       modelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
     }
     try {
-      SModel model = modelFactory.load(new FileDataSource(source), Collections.singletonMap(DefaultModelPersistence.OPTION_STRIP_IMPLEMENTATION, Boolean.toString(stripImplementation)));
+      HashMap<String, String> options = new HashMap<String, String>();
+      options.put(DefaultModelPersistence.OPTION_STRIP_IMPLEMENTATION, Boolean.toString(stripImplementation));
+      options.put(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO, Boolean.TRUE.toString());
+      SModel model = modelFactory.load(new FileDataSource(source), options);
       PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY).save(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
     } catch (ModelSaveException e) {
       throw new IOException(String.format("Failed to write model in binary format to file %s", destFile), e);

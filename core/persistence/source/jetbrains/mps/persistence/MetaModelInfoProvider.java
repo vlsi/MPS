@@ -76,6 +76,13 @@ import java.util.Map;
  * @author Artem Tikhomirov
  */
 public interface MetaModelInfoProvider {
+  /**
+   * Boolean attribute to indicate whether we intend to use model read without access to regular (MPS instance) meta info.
+   * The models read with this option set to true, could be serialized without access to concept registry of MPS (of course,
+   * if respective ModelFactory supports this. Our default(aka xml) and binary do).
+   */
+  public static final String OPTION_KEEP_READ_METAINFO = "keep-metainfo";
+
   String getLanguageName(SLanguageId lang);
   void setLanguageName(SLanguageId lang, String name);
   /**

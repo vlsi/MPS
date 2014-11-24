@@ -81,7 +81,9 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
+        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
+      </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -567,6 +569,75 @@
             </node>
           </node>
           <node concept="3clFbS" id="6NgXkpAWLJV" role="SfCbr">
+            <node concept="3cpWs8" id="6NYQxPk6MwT" role="3cqZAp">
+              <node concept="3cpWsn" id="6NYQxPk6MwU" role="3cpWs9">
+                <property role="TrG5h" value="options" />
+                <node concept="3uibUv" id="6NYQxPk6MwR" role="1tU5fm">
+                  <ref role="3uigEE" to="k7g3:~HashMap" resolve="HashMap" />
+                  <node concept="3uibUv" id="6NYQxPk6MG7" role="11_B2D">
+                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                  </node>
+                  <node concept="3uibUv" id="6NYQxPk6MH5" role="11_B2D">
+                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                  </node>
+                </node>
+                <node concept="2ShNRf" id="6NYQxPk6N2y" role="33vP2m">
+                  <node concept="1pGfFk" id="6NYQxPk6SMy" role="2ShVmc">
+                    <ref role="37wK5l" to="k7g3:~HashMap.&lt;init&gt;()" resolve="HashMap" />
+                    <node concept="3uibUv" id="6NYQxPk6T1B" role="1pMfVU">
+                      <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                    </node>
+                    <node concept="3uibUv" id="6NYQxPk6Tjw" role="1pMfVU">
+                      <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6NYQxPk6TOH" role="3cqZAp">
+              <node concept="2OqwBi" id="6NYQxPk6Xe$" role="3clFbG">
+                <node concept="37vLTw" id="6NYQxPk6TOF" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6NYQxPk6MwU" resolve="options" />
+                </node>
+                <node concept="liA8E" id="6NYQxPk6XVC" role="2OqNvi">
+                  <ref role="37wK5l" to="k7g3:~HashMap.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                  <node concept="10M0yZ" id="6NYQxPk6Yo3" role="37wK5m">
+                    <ref role="1PxDUh" to="d2v5:~DefaultModelPersistence" resolve="DefaultModelPersistence" />
+                    <ref role="3cqZAo" to="d2v5:~DefaultModelPersistence.OPTION_STRIP_IMPLEMENTATION" resolve="OPTION_STRIP_IMPLEMENTATION" />
+                  </node>
+                  <node concept="2YIFZM" id="6NYQxPk6Yo6" role="37wK5m">
+                    <ref role="37wK5l" to="e2lb:~Boolean.toString(boolean):java.lang.String" resolve="toString" />
+                    <ref role="1Pybhc" to="e2lb:~Boolean" resolve="Boolean" />
+                    <node concept="37vLTw" id="6NYQxPk6Yo7" role="37wK5m">
+                      <ref role="3cqZAo" node="1y9wNTZf8V7" resolve="stripImplementation" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6NYQxPk6Z8L" role="3cqZAp">
+              <node concept="2OqwBi" id="6NYQxPk6Zq0" role="3clFbG">
+                <node concept="37vLTw" id="6NYQxPk6Z8J" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6NYQxPk6MwU" resolve="options" />
+                </node>
+                <node concept="liA8E" id="6NYQxPk70cI" role="2OqNvi">
+                  <ref role="37wK5l" to="k7g3:~HashMap.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                  <node concept="10M0yZ" id="6NYQxPk70oU" role="37wK5m">
+                    <ref role="1PxDUh" to="d2v5:~MetaModelInfoProvider" resolve="MetaModelInfoProvider" />
+                    <ref role="3cqZAo" to="d2v5:~MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO" resolve="OPTION_KEEP_READ_METAINFO" />
+                  </node>
+                  <node concept="2OqwBi" id="6NYQxPk72gv" role="37wK5m">
+                    <node concept="10M0yZ" id="6NYQxPk71pT" role="2Oq$k0">
+                      <ref role="1PxDUh" to="e2lb:~Boolean" resolve="Boolean" />
+                      <ref role="3cqZAo" to="e2lb:~Boolean.TRUE" resolve="TRUE" />
+                    </node>
+                    <node concept="liA8E" id="6NYQxPk72$l" role="2OqNvi">
+                      <ref role="37wK5l" to="e2lb:~Boolean.toString():java.lang.String" resolve="toString" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="QTAzJ3Mxrj" role="3cqZAp">
               <node concept="3cpWsn" id="QTAzJ3Mxrk" role="3cpWs9">
                 <property role="TrG5h" value="model" />
@@ -587,20 +658,8 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="QTAzJ3Mxrr" role="37wK5m">
-                      <ref role="37wK5l" to="k7g3:~Collections.singletonMap(java.lang.Object,java.lang.Object):java.util.Map" resolve="singletonMap" />
-                      <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
-                      <node concept="10M0yZ" id="QTAzJ3MQNm" role="37wK5m">
-                        <ref role="1PxDUh" to="d2v5:~DefaultModelPersistence" resolve="DefaultModelPersistence" />
-                        <ref role="3cqZAo" to="d2v5:~DefaultModelPersistence.OPTION_STRIP_IMPLEMENTATION" resolve="OPTION_STRIP_IMPLEMENTATION" />
-                      </node>
-                      <node concept="2YIFZM" id="QTAzJ3Mxrt" role="37wK5m">
-                        <ref role="37wK5l" to="e2lb:~Boolean.toString(boolean):java.lang.String" resolve="toString" />
-                        <ref role="1Pybhc" to="e2lb:~Boolean" resolve="Boolean" />
-                        <node concept="37vLTw" id="QTAzJ3MSlE" role="37wK5m">
-                          <ref role="3cqZAo" node="1y9wNTZf8V7" resolve="stripImplementation" />
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="6NYQxPk735w" role="37wK5m">
+                      <ref role="3cqZAo" node="6NYQxPk6MwU" resolve="options" />
                     </node>
                   </node>
                 </node>

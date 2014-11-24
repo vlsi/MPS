@@ -52,6 +52,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -101,7 +102,7 @@ public final class BinaryPersistence {
   public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull StreamDataSource source, boolean interfaceOnly) throws ModelReadException {
     final SModelReference desiredModelRef = header.getModelReference();
     try {
-      ModelLoadResult rv = loadModel(source.openInputStream(), interfaceOnly);
+      ModelLoadResult rv = loadModel(source.openInputStream(), interfaceOnly, header.getMetaInfoProvider());
       SModelReference actualModelRef = rv.getModel().getReference();
       if (!actualModelRef.equals(desiredModelRef)) {
         throw new ModelReadException(String.format("Intended to read model %s, actually read %s", desiredModelRef, actualModelRef), null, actualModelRef);
@@ -115,7 +116,7 @@ public final class BinaryPersistence {
   @NotNull
   public static SModel readModel(@NotNull final InputStream content) throws ModelReadException {
     try {
-      return loadModel(content, false).getModel();
+      return loadModel(content, false, null).getModel();
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
     }
@@ -232,14 +233,14 @@ public final class BinaryPersistence {
     return result;
   }
   @NotNull
-  private static ModelLoadResult loadModel(InputStream is, boolean interfaceOnly) throws IOException {
+  private static ModelLoadResult loadModel(InputStream is, boolean interfaceOnly, @Nullable MetaModelInfoProvider mmiProvider) throws IOException {
     ModelInputStream mis = null;
     try {
       mis = new ModelInputStream(ensureMarkSupported(is));
       SModelHeader modelHeader = loadHeader(mis);
 
       LazySModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
-      BinaryPersistence bp = new BinaryPersistence(new RegularMetaModelInfo(), model);
+      BinaryPersistence bp = new BinaryPersistence(mmiProvider == null ? new RegularMetaModelInfo() : mmiProvider, model);
       ReadHelper rh = bp.loadModelProperties(mis);
       rh.requestInterfaceOnly(interfaceOnly);
 
@@ -252,7 +253,13 @@ public final class BinaryPersistence {
   }
 
   private static void saveModel(SModel model, ModelOutputStream os) throws IOException {
-    BinaryPersistence bp = new BinaryPersistence(new RegularMetaModelInfo(), model);
+    final MetaModelInfoProvider mmiProvider;
+    if (model instanceof DefaultSModel && ((DefaultSModel) model).getSModelHeader().getMetaInfoProvider() != null) {
+      mmiProvider = ((DefaultSModel) model).getSModelHeader().getMetaInfoProvider();
+    } else {
+      mmiProvider = new RegularMetaModelInfo();
+    }
+    BinaryPersistence bp = new BinaryPersistence(mmiProvider, model);
     IdInfoCollector meta = bp.saveModelProperties(os);
 
     Collection<SNode> roots = IterableUtil.asCollection(model.getRootNodes());
