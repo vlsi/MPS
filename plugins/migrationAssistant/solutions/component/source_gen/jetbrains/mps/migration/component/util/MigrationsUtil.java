@@ -57,7 +57,7 @@ public class MigrationsUtil {
     return result;
   }
   public static boolean isApplied(MigrationScriptReference script, SModule module) {
-    return script.getFromVersion() < module.getUsedLanguageVersion(script.getLanguage());
+    return module.getUsedLanguages().contains(script.getLanguage()) && script.getFromVersion() < module.getUsedLanguageVersion(script.getLanguage());
   }
   public static Set<SModule> getModuleDependencies(final SModule module) {
     Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
@@ -72,7 +72,7 @@ public class MigrationsUtil {
   public static boolean isAppliedForAllMyDeps(final MigrationScriptReference script, SModule module) {
     return SetSequence.fromSet(getModuleDependencies(module)).ofType(AbstractModule.class).all(new IWhereFilter<AbstractModule>() {
       public boolean accept(AbstractModule it) {
-        return isApplied(script, it);
+        return !(it.getUsedLanguages().contains(script.getLanguage())) || isApplied(script, it);
       }
     });
   }
