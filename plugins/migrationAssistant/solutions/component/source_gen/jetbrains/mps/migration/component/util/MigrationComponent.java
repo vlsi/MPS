@@ -129,9 +129,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public boolean isAvailable(final ScriptApplied p) {
-    if (!(p.getScript().isApplicable(p.getModule()))) {
-      return true;
-    }
     Iterable<MigrationScriptReference> requiresData = p.getScript().requiresData();
     boolean dataDeps = Sequence.fromIterable(requiresData).all(new IWhereFilter<MigrationScriptReference>() {
       public boolean accept(MigrationScriptReference it) {

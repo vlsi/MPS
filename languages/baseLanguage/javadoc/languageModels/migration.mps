@@ -175,10 +175,6 @@
       <node concept="3Tm6S6" id="49IRVjgsYDe" role="1B3o_S" />
       <node concept="17QB3L" id="49IRVjgsYDf" role="1tU5fm" />
     </node>
-    <node concept="3tTeZs" id="49IRVjgsYgF" role="jymVt">
-      <property role="3tTeZt" value="&lt;isApplicable=true&gt;" />
-      <ref role="3tTeZr" to="slm6:4ubqdNOF9cI" resolve="isApplicable" />
-    </node>
     <node concept="q3mfD" id="49IRVjgsYgG" role="jymVt">
       <property role="TrG5h" value="execute" />
       <ref role="2VtyIY" to="slm6:4ubqdNOF9cA" resolve="execute" />
