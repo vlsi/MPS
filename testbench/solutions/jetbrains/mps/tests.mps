@@ -71,6 +71,7 @@
     <import index="4o0x" ref="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)" />
     <import index="e6od" ref="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)" />
     <import index="7fk5" ref="r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)" />
+    <import index="s223" ref="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)" />
     <import index="pop3" ref="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" implicit="true" />
   </imports>
   <registry>
@@ -1216,9 +1217,6 @@
     <node concept="lpD6D" id="2TdQhrRPT66" role="lpD6w">
       <ref role="lpD7u" to="ryl9:jdhTnxBtW$" resolve="AddFieldNotAllowed" />
     </node>
-    <node concept="lpD6D" id="7rVl9VzwnxM" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:1yvohCOewGs" resolve="AddFinalInStaticField" />
-    </node>
     <node concept="lpD6D" id="2TdQhrRPT7N" role="lpD6w">
       <ref role="lpD7u" to="ryl9:jdhTnxtpYj" resolve="AddInterfaceCaret" />
     </node>
@@ -1236,15 +1234,6 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT6d" role="lpD6w">
       <ref role="lpD7u" to="ryl9:jdhTnxBt1D" resolve="AddMethodNotAllowed" />
-    </node>
-    <node concept="lpD6D" id="7rVl9VzwnYm" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:1yvohCOeFHa" resolve="AddStaticInField" />
-    </node>
-    <node concept="lpD6D" id="7rVl9Vzwo8S" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:1yvohCOeFJC" resolve="AddTransientInField" />
-    </node>
-    <node concept="lpD6D" id="7rVl9Vzwojr" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:1yvohCOeFDB" resolve="AddVolatileInField" />
     </node>
     <node concept="lpD6D" id="66auKH98LPP" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6PUiXwyHsPe" resolve="AddVariableDeclarationCaret" />
@@ -1267,8 +1256,20 @@
     <node concept="lpD6D" id="66auKH98M_r" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5YjQP9rNnLE" resolve="DeleteUnaryMinus" />
     </node>
+    <node concept="lpD6D" id="4$ezt8Zmuja" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4$ezt8ZmoHQ" resolve="LocalVariableMadeFinalCaret" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8ZmutM" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4$ezt8ZmpkG" resolve="LocalVariableRemovedFinalCaret" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRPT88" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5n8MFselke8" resolve="MethodAddGenericCaret" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8ZmrrB" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4$ezt8ZmpBX" resolve="ParameterMadeFinalCaret" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8Zmtjp" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4$ezt8ZmpUu" resolve="ParameterRemovedFinalCaret" />
     </node>
     <node concept="lpD6D" id="66auKH98ME2" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2RLL9QQBgDb" resolve="PostfixCaret" />
@@ -1614,6 +1615,30 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT6D" role="lpD6w">
       <ref role="lpD7u" to="ryl9:676KKEeTb08" resolve="EmptyEnumConstantCreationWithConstructorTest" />
+    </node>
+    <node concept="lpD6D" id="7rVl9VzwnxM" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1yvohCOewGs" resolve="AddFinalInStaticField" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8ZmvCP" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1vCYg$Wzidg" resolve="AddFinalInStaticFieldLeftOfType" />
+    </node>
+    <node concept="lpD6D" id="7rVl9VzwnYm" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1yvohCOeFHa" resolve="AddStaticInField" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8ZmvNu" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1vCYg$WzAn4" resolve="AddStaticInFieldLeftOfType" />
+    </node>
+    <node concept="lpD6D" id="7rVl9Vzwo8S" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1yvohCOeFJC" resolve="AddTransientInField" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8Zmwua" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1vCYg$WzAfT" resolve="AddTransientInFieldLeftOfType" />
+    </node>
+    <node concept="lpD6D" id="7rVl9Vzwojr" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1yvohCOeFDB" resolve="AddVolatileInField" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8ZmxE8" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1vCYg$WzArM" resolve="AddVolatileInFieldLeftOfType" />
     </node>
     <node concept="lpD6D" id="5Jf1oRj7b0w" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2o160AxalE9" resolve="RemoveFinalInStaticFieldBackspace" />
@@ -2010,6 +2035,30 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT7q" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7fnnP3fV2_G" resolve="RemoveNative2" />
+    </node>
+    <node concept="lpD6D" id="5kmCgHY$Ajq" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5kmCgHYxCSE" resolve="RemoveStatic" />
+    </node>
+    <node concept="lpD6D" id="5kmCgHY$AJX" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5kmCgHYxCXV" resolve="RemoveStaticDelete" />
+    </node>
+    <node concept="lpD6D" id="5kmCgHY$AUF" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5kmCgHY$xQI" resolve="RemoveStaticOnLastPosition" />
+    </node>
+    <node concept="lpD6D" id="5kmCgHY$B5q" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5kmCgHYxD2v" resolve="RemoveStaticOnLastPositionDelete" />
+    </node>
+    <node concept="lpD6D" id="5kmCgHY$Bga" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5kmCgHYx$xc" resolve="RemoveSynchronized" />
+    </node>
+    <node concept="lpD6D" id="5kmCgHY$BqV" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5kmCgHYx$Au" resolve="RemoveSynchronizedDelete" />
+    </node>
+    <node concept="lpD6D" id="5kmCgHY$B_H" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5kmCgHYxCPS" resolve="RemoveSynchronizedOnLastPosition" />
+    </node>
+    <node concept="lpD6D" id="5kmCgHY$BKw" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5kmCgHYxCMK" resolve="RemoveSynchronizedOnLastPositionDelete" />
     </node>
     <node concept="lpD6D" id="3cpL4ZsAKkp" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3cpL4ZsArnn" resolve="FluentParens1" />
@@ -3501,6 +3550,33 @@
     </node>
     <node concept="lpD6A" id="6j5OJw7t8kR" role="lpD6w">
       <ref role="lpD7v" to="gp3f:7X3$CtwaMP1" resolve="ProjectTest" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="4$ezt8YQUyf">
+    <node concept="lpD6D" id="4$ezt8YRb0E" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY4JG" resolve="AddNotTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5OP" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY52Z" resolve="CommentLineTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5OT" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY5xB" resolve="ElseTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5OY" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY4XF" resolve="EnterIfTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5z1" role="lpD6w">
+      <ref role="lpD7u" to="s223:1NKy5CJqeSF" resolve="LeftTransformTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5P4" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YXKSh" resolve="RemoveNotTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY7H8" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY7EK" resolve="RepetitionTest" />
+    </node>
+    <node concept="2R4zua" id="4$ezt8YR0Bz" role="2R4z3u">
+      <property role="2R4zub" value="jetbrains.mps.build.stripping.tests" />
+      <property role="2R4zu8" value="c9bc8834-ad52-4c80-83d0-64827cf13fae" />
     </node>
   </node>
 </model>
