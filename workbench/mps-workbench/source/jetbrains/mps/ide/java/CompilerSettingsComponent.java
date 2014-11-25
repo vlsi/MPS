@@ -23,6 +23,7 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.compiler.JavaCompilerOptions;
+import jetbrains.mps.compiler.JavaCompilerOptionsBase;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.compiler.JavaCompilerOptionsProvider;
 import jetbrains.mps.ide.java.CompilerSettingsComponent.CompilerState;
@@ -51,15 +52,11 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
   }
 
   @Nullable
-  public String getTargetCompilerVersion() {
-    return myState.getTargetVersion();
-  }
-
-  @Nullable
   @Override
   public CompilerState getState() {
     CompilerState state = new CompilerState();
     state.setTargetVersion(myState.getTargetVersion());
+    state.setSourceVersion(myState.getSourceVersion());
     return state;
   }
 
@@ -67,6 +64,7 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
   public void loadState(CompilerState state) {
     myState = new CompilerState();
     myState.setTargetVersion(state.getTargetVersion());
+    myState.setSourceVersion(state.getSourceVersion());
   }
 
   @Override
@@ -100,12 +98,13 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
   void commit() {
     myCompilerSettingsPreferencePage.commit();
     myState = new CompilerState();
+    myState.setSourceVersion(myCompilerSettingsPreferencePage.getSelectedSourceJavaVersion());
     myState.setTargetVersion(myCompilerSettingsPreferencePage.getSelectedTargetJavaVersion());
   }
 
   public CompilerSettingsPreferencePage getPreferencePage() {
     if (myCompilerSettingsPreferencePage == null) {
-      myCompilerSettingsPreferencePage = new CompilerSettingsPreferencePage(getTargetCompilerVersion());
+      myCompilerSettingsPreferencePage = new CompilerSettingsPreferencePage(getJavaCompilerOptions());
     }
     return myCompilerSettingsPreferencePage;
   }
@@ -116,49 +115,28 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
     return "Compiler Settings Component";
   }
 
-  public enum JavaVersion {
-    VERSION_1_1("1.1"),
-    VERSION_1_2("1.2"),
-    VERSION_1_3("1.3"),
-    VERSION_1_4("1.4"),
-    VERSION_1_5("1.5"),
-    VERSION_1_6("1.6"),
-    VERSION_1_7("1.7"),
-    VERSION_1_8("1.8"),
-    DEFAULT("JDK Default");
-
-    private String myDescription;
-
-    JavaVersion(String description) {
-      myDescription = description;
-    }
-
-
-    @Override
-    public String toString() {
-      return myDescription;
-    }
-  }
-
   public static class CompilerState {
     private String myTargetVersion;
+    private String mySourceVersion;
 
     public String getTargetVersion() {
       return myTargetVersion;
     }
 
+    public String getSourceVersion() {
+      return mySourceVersion;
+    }
+
     public void setTargetVersion(String targetVersion) {
       myTargetVersion = targetVersion;
+    }
+    public void setSourceVersion(String sourceVersion) {
+      mySourceVersion = sourceVersion;
     }
   }
 
   @Override
   public JavaCompilerOptions getJavaCompilerOptions() {
-    return new JavaCompilerOptions() {
-      @Override
-      public String getTargetJavaVersion() {
-        return getTargetCompilerVersion();
-      }
-    };
+    return new JavaCompilerOptionsBase(myState.getSourceVersion(), myState.getTargetVersion());
   }
 }

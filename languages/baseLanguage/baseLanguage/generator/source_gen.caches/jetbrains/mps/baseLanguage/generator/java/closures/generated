@@ -12,15 +12,15 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3863x0u9flggmckjewdlsmikl6dj9wv" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-c3insuj5q8xzwq7xb0kdlp6g65rvw4k" />
   <dep model="r:00000000-0000-4000-0000-011c895902ce(jetbrains.mps.baseLanguage.generator.java.closures.util)" hash="-di25z5vqvv6lrhtk7ofqk64999yokrg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-4z3qgoy53jztx5tphicvljt4iu15mmb" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-4731u4zpl1qudqetsodkf59bfv6uryd" />
   <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-bu1mw29ucow5ywv3crliojpl8701ole" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="8kon7gk0ey8ezg3f0cbiaqchxjf1i84" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-erewilohjcbuwy8i5cw0f9j7wkrkp8q" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="8nijl22h7j3dbkb06aqr5s0755jbsdy" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="5t7vko7lmcdqgrvjfpbb7ytumq3o2g7" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="5ob7yopjr6int7erhwjff6sknj1ih6n" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="9g5zuw68psfjdw92y8kffekb6yw7s6r" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="cw1h8cyx63y3uqtst8ych98ne4ycg7y" />
-  <common hash="59hxjqmfoy21n9l831rym0wyjuk73s1" dependsOnNodes="true">
+  <common hash="6be8vways0lyp494l94eemro3em773y" dependsOnNodes="true">
     <dep root="1152552359277" />
     <dep root="1152552655480" />
     <dep root="1152719449373" />
@@ -53,41 +53,41 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1152552359277" name="MAPPING_closures">
+  <source id="1152552359277" name="MAPPING_closures" hash="-75zqyuoyorggrupeut6r634xjmj6iwx">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1152552655480" name="class_ClosureContext">
+  <source id="1152552655480" name="class_ClosureContext" hash="-crs8hdb745ml5i9bncqasauvvzhbstq">
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </source>
-  <source id="1152719449373" name="reduce_bodyOfContextOwner_insertClosureContextVar">
+  <source id="1152719449373" name="reduce_bodyOfContextOwner_insertClosureContextVar" hash="7asx8y1hej64qckwim889tah7lxy94k">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="1152729181498" name="weave_ClosureAdapter_members">
+  <source id="1152729181498" name="weave_ClosureAdapter_members" hash="-51kr5kon8eol3b0ofl4oxw4iyomj6pr">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="1152740850684" name="stuff_ClosureAdapter">
+  <source id="1152740850684" name="stuff_ClosureAdapter" hash="3zu9iuv4m9eatuemquq6hs2ncyv5nik">
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </source>
-  <source id="1152741220170" name="reduce_ThisExpression_inClosure">
+  <source id="1152741220170" name="reduce_ThisExpression_inClosure" hash="eglh8borx9p9bpzihvc05qvc3f9cdly">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="1152742153585" name="reduce_VariableReference_ClosureContextField">
+  <source id="1152742153585" name="reduce_VariableReference_ClosureContextField" hash="ct2gjletvnvxkmojr0z9xvr5x44e4x5">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="1152742286993" name="stuff_ClosureContext">
+  <source id="1152742286993" name="stuff_ClosureContext" hash="2y483op2fux4ad6pvpenp33nlc2ocic">
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </source>
-  <source id="1152750787488" name="reduce_VariableDeclStmtWithInit_ClosureContextField">
+  <source id="1152750787488" name="reduce_VariableDeclStmtWithInit_ClosureContextField" hash="-3intoyhu5tinhwssslqd5j661dxe6b4">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="1152823060739" name="reduce_Closure_NewClosureAdapterExpression">
+  <source id="1152823060739" name="reduce_Closure_NewClosureAdapterExpression" hash="bnt05m4av2an9o0pjfkzk1csyemia72">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
-  <source id="1153259191716" name="reduce_ClosureParmReference_MethodParmReference">
+  <source id="1153259191716" name="reduce_ClosureParmReference_MethodParmReference" hash="2aqdr16kiorj89ni67o8mciws6gyw7q">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   </source>
 </dependencies>

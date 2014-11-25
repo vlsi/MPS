@@ -15,7 +15,22 @@
  */
 package jetbrains.mps.compiler;
 
-public interface JavaCompilerOptions {
-  String getTargetJavaVersion();
-  String getSourceJavaVersion();
+/**
+ * Created by simon on 24/11/14.
+ */
+public class JavaCompilerOptionsBase implements JavaCompilerOptions {
+  private String myTargetJavaVersion;
+  private String mySourceJavaVersion;
+  public JavaCompilerOptionsBase(String sourceJavaVersion, String targetJavaVersion) {
+    mySourceJavaVersion = sourceJavaVersion;
+    myTargetJavaVersion = targetJavaVersion;
+  }
+  @Override
+  public String getTargetJavaVersion() {
+    return myTargetJavaVersion;
+  }
+
+  public String getSourceJavaVersion() {
+    return mySourceJavaVersion;
+  }
 }

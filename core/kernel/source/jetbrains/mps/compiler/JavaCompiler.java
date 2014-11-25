@@ -73,7 +73,7 @@ public class JavaCompiler {
   }
   public void compile(IClassPathItem classPath, @NotNull JavaCompilerOptions customCompilerOptions) {
     Map compilerOptions = new HashMap();
-    compilerOptions.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
+    compilerOptions.put(CompilerOptions.OPTION_Source, customCompilerOptions.getSourceJavaVersion());
     String actualJavaTargetVersion = customCompilerOptions.getTargetJavaVersion();
     compilerOptions.put(CompilerOptions.OPTION_Compliance, actualJavaTargetVersion);
     compilerOptions.put(CompilerOptions.OPTION_TargetPlatform, actualJavaTargetVersion);

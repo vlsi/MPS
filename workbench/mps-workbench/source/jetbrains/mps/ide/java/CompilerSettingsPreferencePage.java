@@ -15,28 +15,41 @@
  */
 package jetbrains.mps.ide.java;
 
-import jetbrains.mps.ide.java.CompilerSettingsComponent.JavaVersion;
+import jetbrains.mps.compiler.JavaCompilerOptions;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.ListCellRenderer;
-import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
 public class CompilerSettingsPreferencePage {
 
+  private final static String DEFAULT_JDK_VERSION = "JDK Default";
+  private final static String[] MY_OPTION_ITEMS = new String[]{CompilerOptions.VERSION_1_1,
+      CompilerOptions.VERSION_1_2, CompilerOptions.VERSION_1_3, CompilerOptions.VERSION_1_4, CompilerOptions.VERSION_1_5, CompilerOptions.VERSION_1_6, CompilerOptions.VERSION_1_7, CompilerOptions.VERSION_1_8, DEFAULT_JDK_VERSION};
   private JPanel myMainPanel;
+  private JComboBox mySourceJavaVersionComboBox;
   private JComboBox myTargetJavaVersionComboBox;
-  private String mySelectedTargetJavaVersion;
+  private String myInitialTargetJavaVersion;
+  private String myInitialSourceJavaVersion;
 
-  public CompilerSettingsPreferencePage(String javaTargetVersion) {
-    mySelectedTargetJavaVersion = javaTargetVersion;
+  public CompilerSettingsPreferencePage(JavaCompilerOptions options) {
+    String sourceJavaVersion = options.getSourceJavaVersion();
+    if (sourceJavaVersion == null) {
+      myInitialSourceJavaVersion = DEFAULT_JDK_VERSION;
+    } else {
+      myInitialSourceJavaVersion = sourceJavaVersion;
+    }
+    String targetJavaVersion = options.getTargetJavaVersion();
+    if (targetJavaVersion == null) {
+      myInitialTargetJavaVersion = DEFAULT_JDK_VERSION;
+    } else {
+      myInitialTargetJavaVersion = targetJavaVersion;
+    }
   }
 
   public JComponent getMainPanel() {
@@ -65,44 +78,57 @@ public class CompilerSettingsPreferencePage {
     c.weightx = 1;
     c.insets.top = 4;
     c.insets.left = 5;
-    myTargetJavaVersionComboBox = new JComboBox(new DefaultComboBoxModel(new String[]{CompilerOptions.VERSION_1_1,
-        CompilerOptions.VERSION_1_2, CompilerOptions.VERSION_1_3, CompilerOptions.VERSION_1_4, CompilerOptions.VERSION_1_5, CompilerOptions.VERSION_1_6, CompilerOptions.VERSION_1_7, CompilerOptions.VERSION_1_8, null}));
-    myTargetJavaVersionComboBox.setSelectedItem(mySelectedTargetJavaVersion);
-    ListCellRenderer renderer = new ListCellRenderer() {
-      private JLabel myLabel = new JLabel();
-      @Override
-      public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-        if (value == null) {
-          myLabel.setText("JDK Default");
-        } else {
-          myLabel.setText(value.toString());
-        }
-        return myLabel;
-      }
-    };
-    myTargetJavaVersionComboBox.getRenderer();
-    myTargetJavaVersionComboBox.setRenderer(renderer);
-    panel.add(new JLabel("Java target bytecode version"), c);
+    mySourceJavaVersionComboBox = new JComboBox(new DefaultComboBoxModel(MY_OPTION_ITEMS));
+    mySourceJavaVersionComboBox.setSelectedItem(myInitialSourceJavaVersion);
+    myTargetJavaVersionComboBox = new JComboBox(new DefaultComboBoxModel(MY_OPTION_ITEMS));
+    myTargetJavaVersionComboBox.setSelectedItem(myInitialTargetJavaVersion);
+
+    panel.add(new JLabel("Java language level"), c);
     c.gridx = 1;
     c.insets.top = 0;
+    panel.add(mySourceJavaVersionComboBox, c);
+
+    c.gridy = 1;
+    c.gridx = 0;
+    panel.add(new JLabel("Java target bytecode version"), c);
+
+    c.gridx = 1;
     panel.add(myTargetJavaVersionComboBox, c);
+
     return panel;
   }
 
 
   String getSelectedTargetJavaVersion() {
-    return mySelectedTargetJavaVersion;
+    String selectedItem = (String) myTargetJavaVersionComboBox.getSelectedItem();
+    if (selectedItem.equals(DEFAULT_JDK_VERSION)) {
+      return null;
+    } else {
+      return selectedItem;
+    }
+  }
+
+  String getSelectedSourceJavaVersion() {
+    String selectedItem = (String) mySourceJavaVersionComboBox.getSelectedItem();
+    if (selectedItem.equals(DEFAULT_JDK_VERSION)) {
+      return null;
+    } else {
+      return selectedItem;
+    }
   }
 
   boolean isModified() {
-    return !mySelectedTargetJavaVersion.equals(myTargetJavaVersionComboBox.getSelectedItem());
+    return !(myInitialTargetJavaVersion.equals(myTargetJavaVersionComboBox.getSelectedItem()) &&
+        myInitialSourceJavaVersion.equals(mySourceJavaVersionComboBox.getSelectedItem()));
   }
 
   void commit() {
-    mySelectedTargetJavaVersion = ((String) myTargetJavaVersionComboBox.getSelectedItem());
+    myInitialSourceJavaVersion = ((String) myTargetJavaVersionComboBox.getSelectedItem());
+    myInitialTargetJavaVersion = ((String) mySourceJavaVersionComboBox.getSelectedItem());
   }
 
   void reset() {
-    myTargetJavaVersionComboBox.setSelectedItem(mySelectedTargetJavaVersion);
+    mySourceJavaVersionComboBox.setSelectedItem(myInitialSourceJavaVersion);
+    myTargetJavaVersionComboBox.setSelectedItem(myInitialTargetJavaVersion);
   }
 }

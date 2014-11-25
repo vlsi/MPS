@@ -614,10 +614,6 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
-      <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
-      <concept id="1176906603202" name="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" flags="nn" index="56pJg">
-        <child id="1176906787974" name="rightExpression" index="576Qk" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -627,12 +623,9 @@
       </concept>
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
-      <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
-      <concept id="1165595910856" name="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation" flags="nn" index="1yVyf7" />
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
         <child id="540871147943773366" name="argument" index="25WWJ7" />
       </concept>
-      <concept id="1204980550705" name="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" flags="nn" index="2es0OD" />
       <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
         <child id="1153944400369" name="variable" index="2Gsz3X" />
         <child id="1153944424730" name="inputSequence" index="2GsD0m" />
@@ -641,22 +634,7 @@
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
-      <concept id="1235566554328" name="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" flags="nn" index="2HwmR7" />
-      <concept id="1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" flags="in" index="3rvAFt">
-        <child id="1197683466920" name="keyType" index="3rvQeY" />
-        <child id="1197683475734" name="valueType" index="3rvSg0" />
-      </concept>
-      <concept id="1197686869805" name="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" flags="nn" index="3rGOSV">
-        <child id="1197687026896" name="keyType" index="3rHrn6" />
-        <child id="1197687035757" name="valueType" index="3rHtpV" />
-      </concept>
-      <concept id="1176903168877" name="jetbrains.mps.baseLanguage.collections.structure.UnionOperation" flags="nn" index="4Tj9Z" />
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
-      <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
-      <concept id="1225621920911" name="jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation" flags="nn" index="1sK_Qi">
-        <child id="1225621943565" name="element" index="1sKFgg" />
-        <child id="1225621960341" name="index" index="1sKJu8" />
-      </concept>
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
@@ -664,33 +642,55 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1209727891789" name="jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation" flags="nn" index="2DpFxk">
-        <child id="1209727996925" name="ascending" index="2Dq5b$" />
-      </concept>
-      <concept id="1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" flags="nn" index="2HTt$P">
-        <child id="1235573175711" name="elementType" index="2HTBi0" />
-        <child id="1235573187520" name="singletonValue" index="2HTEbv" />
-      </concept>
-      <concept id="1201306600024" name="jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation" flags="nn" index="2Nt0df">
-        <child id="1201654602639" name="key" index="38cxEo" />
-      </concept>
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
-      <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1184963466173" name="jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation" flags="nn" index="3_kTaI" />
-      <concept id="1197932370469" name="jetbrains.mps.baseLanguage.collections.structure.MapElement" flags="nn" index="3EllGN">
-        <child id="1197932505799" name="map" index="3ElQJh" />
-        <child id="1197932525128" name="key" index="3ElVtu" />
-      </concept>
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
-      <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
-      <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
+      <concept id="1209727891789" name="jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation" flags="nn" index="2DpFxk">
+        <child id="1209727996925" name="ascending" index="2Dq5b$" />
+      </concept>
+      <concept id="1201306600024" name="jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation" flags="nn" index="2Nt0df">
+        <child id="1201654602639" name="key" index="38cxEo" />
+      </concept>
+      <concept id="1197686869805" name="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" flags="nn" index="3rGOSV">
+        <child id="1197687026896" name="keyType" index="3rHrn6" />
+        <child id="1197687035757" name="valueType" index="3rHtpV" />
+      </concept>
+      <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
+      <concept id="1197932370469" name="jetbrains.mps.baseLanguage.collections.structure.MapElement" flags="nn" index="3EllGN">
+        <child id="1197932505799" name="map" index="3ElQJh" />
+        <child id="1197932525128" name="key" index="3ElVtu" />
+      </concept>
+      <concept id="1176906603202" name="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" flags="nn" index="56pJg">
+        <child id="1176906787974" name="rightExpression" index="576Qk" />
+      </concept>
+      <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
+      <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
+      <concept id="1225621920911" name="jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation" flags="nn" index="1sK_Qi">
+        <child id="1225621943565" name="element" index="1sKFgg" />
+        <child id="1225621960341" name="index" index="1sKJu8" />
+      </concept>
+      <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
+      <concept id="1165595910856" name="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation" flags="nn" index="1yVyf7" />
+      <concept id="1204980550705" name="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" flags="nn" index="2es0OD" />
+      <concept id="1235566554328" name="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" flags="nn" index="2HwmR7" />
+      <concept id="1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" flags="nn" index="2HTt$P">
+        <child id="1235573175711" name="elementType" index="2HTBi0" />
+        <child id="1235573187520" name="singletonValue" index="2HTEbv" />
+      </concept>
       <concept id="1171391069720" name="jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation" flags="nn" index="2WmjW8" />
+      <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
+      <concept id="1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" flags="in" index="3rvAFt">
+        <child id="1197683466920" name="keyType" index="3rvQeY" />
+        <child id="1197683475734" name="valueType" index="3rvSg0" />
+      </concept>
+      <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
+      <concept id="1176903168877" name="jetbrains.mps.baseLanguage.collections.structure.UnionOperation" flags="nn" index="4Tj9Z" />
     </language>
   </registry>
   <node concept="tC5Ba" id="2vs9_ygEfaI">
@@ -11790,33 +11790,44 @@
                           </node>
                         </node>
                         <node concept="3clFbS" id="7ECFGRPAHwj" role="3clF47">
-                          <node concept="3cpWs8" id="7ECFGRPAHwk" role="3cqZAp">
-                            <node concept="3cpWsn" id="7ECFGRPAHwl" role="3cpWs9">
-                              <property role="TrG5h" value="methodsToOverride" />
-                              <node concept="2I9FWS" id="7ECFGRPAHwm" role="1tU5fm">
+                          <node concept="3cpWs8" id="5lJG2Fvx_vG" role="3cqZAp">
+                            <node concept="3cpWsn" id="5lJG2Fvx_vH" role="3cpWs9">
+                              <property role="TrG5h" value="methodsToImplementAndOverride" />
+                              <node concept="2I9FWS" id="5lJG2Fvx_vi" role="1tU5fm">
                                 <ref role="2I9WkF" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
                               </node>
-                              <node concept="3K4zz7" id="7ECFGRPAHwn" role="33vP2m">
-                                <node concept="37vLTw" id="2BHiRxeuvMF" role="3K4Cdx">
-                                  <ref role="3cqZAo" node="7ECFGRPAHzk" resolve="myIsOverride" />
+                              <node concept="2OqwBi" id="5lJG2Fvx_vI" role="33vP2m">
+                                <node concept="37vLTw" id="5lJG2Fvx_vJ" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7ECFGRPAHvN" resolve="contextClass" />
                                 </node>
-                                <node concept="2OqwBi" id="7ECFGRPAHwp" role="3K4E3e">
-                                  <node concept="37vLTw" id="3GM_nagTulg" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="7ECFGRPAHvN" resolve="contextClass" />
-                                  </node>
-                                  <node concept="2qgKlT" id="7ECFGRPAHwr" role="2OqNvi">
-                                    <ref role="37wK5l" to="tpek:4GM03FJm3zL" resolve="getMethodsToOverride" />
-                                  </node>
+                                <node concept="2qgKlT" id="5lJG2FvzwLZ" role="2OqNvi">
+                                  <ref role="37wK5l" to="tpek:4GM03FJm5q2" resolve="getMethodsToImplement" />
                                 </node>
-                                <node concept="2OqwBi" id="7ECFGRPAHws" role="3K4GZi">
-                                  <node concept="37vLTw" id="3GM_nagTAYI" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="7ECFGRPAHvN" resolve="contextClass" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbJ" id="5lJG2FvxUH4" role="3cqZAp">
+                            <node concept="3clFbS" id="5lJG2FvxUH7" role="3clFbx">
+                              <node concept="3clFbF" id="5lJG2Fvzyim" role="3cqZAp">
+                                <node concept="2OqwBi" id="5lJG2Fvz$5$" role="3clFbG">
+                                  <node concept="37vLTw" id="5lJG2Fvzyil" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="5lJG2Fvx_vH" resolve="methodsToImplementAndOverride" />
                                   </node>
-                                  <node concept="2qgKlT" id="7ECFGRPAHwu" role="2OqNvi">
-                                    <ref role="37wK5l" to="tpek:4GM03FJm5q2" resolve="getMethodsToImplement" />
+                                  <node concept="X8dFx" id="5lJG2FvzTqv" role="2OqNvi">
+                                    <node concept="2OqwBi" id="5lJG2FvzX7j" role="25WWJ7">
+                                      <node concept="37vLTw" id="5lJG2FvzUqg" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="7ECFGRPAHvN" resolve="contextClass" />
+                                      </node>
+                                      <node concept="2qgKlT" id="5lJG2Fv$3tz" role="2OqNvi">
+                                        <ref role="37wK5l" to="tpek:4GM03FJm3zL" resolve="getMethodsToOverride" />
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>
+                            </node>
+                            <node concept="37vLTw" id="5lJG2Fvzx0E" role="3clFbw">
+                              <ref role="3cqZAo" node="7ECFGRPAHzk" resolve="myIsOverride" />
                             </node>
                           </node>
                           <node concept="3clFbF" id="7ECFGRPAHwv" role="3cqZAp">
@@ -11829,8 +11840,8 @@
                                 <node concept="37vLTw" id="3GM_nagTwmQ" role="37wK5m">
                                   <ref role="3cqZAo" node="7ECFGRPAHvN" resolve="contextClass" />
                                 </node>
-                                <node concept="37vLTw" id="3GM_nagTvEI" role="37wK5m">
-                                  <ref role="3cqZAo" node="7ECFGRPAHwl" resolve="methodsToOverride" />
+                                <node concept="37vLTw" id="5lJG2Fv$8bY" role="37wK5m">
+                                  <ref role="3cqZAo" node="5lJG2Fvx_vH" resolve="methodsToImplementAndOverride" />
                                 </node>
                               </node>
                             </node>
