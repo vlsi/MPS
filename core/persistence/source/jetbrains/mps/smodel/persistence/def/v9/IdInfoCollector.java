@@ -256,7 +256,7 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      return myLanguageId.hashCode();
+      return (myLanguageId.hashCode() & 0x7fffffff);
     }
 
     @Override
@@ -290,6 +290,11 @@ public class IdInfoCollector {
     }
 
     /*package*/ abstract int internalKey();
+
+    // long to non-negative integer
+    protected static final int ltoi(long l) {
+      return ((int) (l ^ (l>>>32))) & 0x7fffffff;
+    }
   }
 
   /**
@@ -454,8 +459,7 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      long l = myConcept.getConceptId();
-      return (int) (l ^ (l >>> 32));
+      return ltoi(myConcept.getConceptId());
     }
 
     @Override
@@ -481,8 +485,7 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      long l = myProperty.getPropertyId();
-      return (int) (l ^ (l >>> 32));
+      return ltoi(myProperty.getPropertyId());
     }
 
     @Override
@@ -508,8 +511,7 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      long l = myLink.getReferenceLinkId();
-      return (int) (l ^ (l >>> 32));
+      return ltoi(myLink.getReferenceLinkId());
     }
 
     @Override
@@ -546,8 +548,7 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      long l = myLink.getContainmentLinkId();
-      return (int) (l ^ (l >>> 32));
+      return ltoi(myLink.getContainmentLinkId());
     }
 
     @Override
