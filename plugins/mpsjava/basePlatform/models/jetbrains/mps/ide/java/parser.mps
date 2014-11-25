@@ -3468,20 +3468,34 @@
             <node concept="3clFbH" id="7Vq2yb0g8xA" role="3cqZAp" />
             <node concept="3clFbJ" id="7Vq2yb0g8xB" role="3cqZAp">
               <node concept="3clFbS" id="7Vq2yb0g8xC" role="3clFbx">
-                <node concept="3clFbF" id="7Vq2yb0g8xD" role="3cqZAp">
-                  <node concept="37vLTI" id="7Vq2yb0g8xE" role="3clFbG">
-                    <node concept="3clFbT" id="7Vq2yb0g8xF" role="37vLTx">
-                      <property role="3clFbU" value="true" />
-                    </node>
-                    <node concept="2OqwBi" id="7Vq2yb0g8xG" role="37vLTJ">
-                      <node concept="1PxgMI" id="7Vq2yb0g8xH" role="2Oq$k0">
-                        <ref role="1PxNhF" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
-                        <node concept="37vLTw" id="3GM_nagTw_k" role="1PxMeX">
-                          <ref role="3cqZAo" node="7Vq2yb0g8ws" resolve="result" />
+                <node concept="3clFbJ" id="56vkmOpgN1V" role="3cqZAp">
+                  <node concept="3clFbS" id="56vkmOpgN1Y" role="3clFbx">
+                    <node concept="3clFbF" id="7Vq2yb0g8xD" role="3cqZAp">
+                      <node concept="37vLTI" id="7Vq2yb0g8xE" role="3clFbG">
+                        <node concept="3clFbT" id="7Vq2yb0g8xF" role="37vLTx">
+                          <property role="3clFbU" value="true" />
+                        </node>
+                        <node concept="2OqwBi" id="7Vq2yb0g8xG" role="37vLTJ">
+                          <node concept="1PxgMI" id="7Vq2yb0g8xH" role="2Oq$k0">
+                            <ref role="1PxNhF" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+                            <node concept="37vLTw" id="3GM_nagTw_k" role="1PxMeX">
+                              <ref role="3cqZAo" node="7Vq2yb0g8ws" resolve="result" />
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="7Vq2yb0g8xJ" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                          </node>
                         </node>
                       </node>
-                      <node concept="3TrcHB" id="7Vq2yb0g8xJ" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpee:h9EzhlX" resolve="isAbstract" />
+                    </node>
+                  </node>
+                  <node concept="3fqX7Q" id="56vkmOpgN5m" role="3clFbw">
+                    <node concept="2OqwBi" id="56vkmOpgNPe" role="3fr31v">
+                      <node concept="37vLTw" id="56vkmOpgN_C" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7Vq2yb0g8z9" resolve="method" />
+                      </node>
+                      <node concept="liA8E" id="56vkmOpgONy" role="2OqNvi">
+                        <ref role="37wK5l" to="aeqf:~AbstractMethodDeclaration.isDefaultMethod():boolean" resolve="isDefaultMethod" />
                       </node>
                     </node>
                   </node>
@@ -3562,7 +3576,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="7Vq2yb0g8xW" role="3cqZAp" />
             <node concept="3clFbF" id="7Vq2yb0g9ES" role="3cqZAp">
               <node concept="1rXfSq" id="4hiugqyyZ7k" role="3clFbG">
                 <ref role="37wK5l" node="31WmxQNAIzG" resolve="convertMethodGuts" />
@@ -10464,7 +10477,7 @@
               </node>
               <node concept="10M0yZ" id="31WmxQNAJF8" role="37wK5m">
                 <ref role="1PxDUh" to="7q5n:~CompilerOptions" resolve="CompilerOptions" />
-                <ref role="3cqZAo" to="7q5n:~CompilerOptions.VERSION_1_6" resolve="VERSION_1_6" />
+                <ref role="3cqZAo" to="7q5n:~CompilerOptions.VERSION_1_8" resolve="VERSION_1_8" />
               </node>
             </node>
           </node>

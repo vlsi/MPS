@@ -4,13 +4,13 @@
   <languages>
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <use id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers" version="-1" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -16190,12 +16190,34 @@
         </node>
         <node concept="1Wc70l" id="hLJix2f" role="3clFbw">
           <node concept="2OqwBi" id="hLJiC5W" role="3uHU7w">
-            <node concept="2OqwBi" id="hLJiBgo" role="2Oq$k0">
-              <node concept="1YBJjd" id="hLJiBag" role="2Oq$k0">
-                <ref role="1YBMHb" node="hLJiqrn" resolve="cls" />
+            <node concept="2OqwBi" id="4APRYc2MxBs" role="2Oq$k0">
+              <node concept="2OqwBi" id="hLJiBgo" role="2Oq$k0">
+                <node concept="1YBJjd" id="hLJiBag" role="2Oq$k0">
+                  <ref role="1YBMHb" node="hLJiqrn" resolve="cls" />
+                </node>
+                <node concept="2qgKlT" id="4GM03FJm5wI" role="2OqNvi">
+                  <ref role="37wK5l" to="tpek:4GM03FJm5q2" resolve="getMethodsToImplement" />
+                </node>
               </node>
-              <node concept="2qgKlT" id="4GM03FJm5wI" role="2OqNvi">
-                <ref role="37wK5l" to="tpek:4GM03FJm5q2" resolve="getMethodsToImplement" />
+              <node concept="3zZkjj" id="4APRYc2MRdq" role="2OqNvi">
+                <node concept="1bVj0M" id="4APRYc2MRds" role="23t8la">
+                  <node concept="3clFbS" id="4APRYc2MRdt" role="1bW5cS">
+                    <node concept="3clFbF" id="4APRYc2MU91" role="3cqZAp">
+                      <node concept="2OqwBi" id="4APRYc2MUlk" role="3clFbG">
+                        <node concept="37vLTw" id="4APRYc2MU90" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4APRYc2MRdu" resolve="it" />
+                        </node>
+                        <node concept="2qgKlT" id="4APRYc2MZ4d" role="2OqNvi">
+                          <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="4APRYc2MRdu" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="4APRYc2MRdv" role="1tU5fm" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="3GX2aA" id="hLJiD7F" role="2OqNvi" />
