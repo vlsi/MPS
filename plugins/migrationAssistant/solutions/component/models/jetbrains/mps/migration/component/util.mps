@@ -785,71 +785,36 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="54APHaXew5a" role="3clF47">
-        <node concept="3cpWs8" id="4X87npbcFOL" role="3cqZAp">
-          <node concept="3cpWsn" id="4X87npbcFOM" role="3cpWs9">
-            <property role="TrG5h" value="declaredDependencies" />
-            <node concept="A3Dl8" id="4X87npbcIgk" role="1tU5fm">
-              <node concept="3uibUv" id="4X87npbcIgm" role="A3Ik2">
-                <ref role="3uigEE" to="88zw:~SDependency" resolve="SDependency" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="4X87npbcFON" role="33vP2m">
-              <node concept="37vLTw" id="4X87npbcFOO" role="2Oq$k0">
-                <ref role="3cqZAo" node="54APHaXewmn" resolve="module" />
-              </node>
-              <node concept="liA8E" id="4X87npbcFOP" role="2OqNvi">
-                <ref role="37wK5l" to="88zw:~SModule.getDeclaredDependencies():java.lang.Iterable" resolve="getDeclaredDependencies" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="6QXKeyZ4Vbb" role="3cqZAp">
           <node concept="3cpWsn" id="6QXKeyZ4Vbe" role="3cpWs9">
             <property role="TrG5h" value="dependencies" />
-            <node concept="2hMVRd" id="6QXKeyZ4Xsr" role="1tU5fm">
-              <node concept="3uibUv" id="6QXKeyZ53pL" role="2hN53Y">
-                <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="6QXKeyZ4X_e" role="33vP2m">
-              <node concept="2i4dXS" id="6QXKeyZ4X_7" role="2ShVmc">
-                <node concept="3uibUv" id="6QXKeyZ54W5" role="HW$YZ">
+            <node concept="2ShNRf" id="$5yWDrjPQ3" role="33vP2m">
+              <node concept="2i4dXS" id="$5yWDrjD7_" role="2ShVmc">
+                <node concept="3uibUv" id="$5yWDrjD7A" role="HW$YZ">
                   <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
                 </node>
-                <node concept="2OqwBi" id="6QXKeyZ4YhW" role="I$8f6">
-                  <node concept="37vLTw" id="6QXKeyZ4Y8A" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4X87npbcFOM" resolve="declaredDependencies" />
-                  </node>
-                  <node concept="3goQfb" id="6QXKeyZ51Qg" role="2OqNvi">
-                    <node concept="1bVj0M" id="6QXKeyZ51Qi" role="23t8la">
-                      <node concept="3clFbS" id="6QXKeyZ51Qj" role="1bW5cS">
-                        <node concept="3clFbF" id="6QXKeyZ51Qk" role="3cqZAp">
-                          <node concept="2OqwBi" id="6QXKeyZ51Ql" role="3clFbG">
-                            <node concept="2ShNRf" id="6QXKeyZ51Qm" role="2Oq$k0">
-                              <node concept="1pGfFk" id="6QXKeyZ51Qn" role="2ShVmc">
-                                <ref role="37wK5l" to="gqu6:~GlobalModuleDependenciesManager.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule)" resolve="GlobalModuleDependenciesManager" />
-                                <node concept="37vLTw" id="6QXKeyZ51Qo" role="37wK5m">
-                                  <ref role="3cqZAo" node="54APHaXewmn" resolve="module" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="6QXKeyZ51Qp" role="2OqNvi">
-                              <ref role="37wK5l" to="gqu6:~GlobalModuleDependenciesManager.getModules(jetbrains.mps.project.dependency.GlobalModuleDependenciesManager$Deptype):java.util.Collection" resolve="getModules" />
-                              <node concept="Rm8GO" id="6QXKeyZ51Qq" role="37wK5m">
-                                <ref role="1Px2BO" to="gqu6:~GlobalModuleDependenciesManager$Deptype" resolve="GlobalModuleDependenciesManager.Deptype" />
-                                <ref role="Rm8GQ" to="gqu6:~GlobalModuleDependenciesManager$Deptype.VISIBLE" resolve="VISIBLE" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Rh6nW" id="6QXKeyZ51Qr" role="1bW2Oz">
-                        <property role="TrG5h" value="it" />
-                        <node concept="2jxLKc" id="6QXKeyZ51Qs" role="1tU5fm" />
+                <node concept="2OqwBi" id="6QXKeyZ51Ql" role="I$8f6">
+                  <node concept="2ShNRf" id="6QXKeyZ51Qm" role="2Oq$k0">
+                    <node concept="1pGfFk" id="6QXKeyZ51Qn" role="2ShVmc">
+                      <ref role="37wK5l" to="gqu6:~GlobalModuleDependenciesManager.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule)" resolve="GlobalModuleDependenciesManager" />
+                      <node concept="37vLTw" id="6QXKeyZ51Qo" role="37wK5m">
+                        <ref role="3cqZAo" node="54APHaXewmn" resolve="module" />
                       </node>
                     </node>
                   </node>
+                  <node concept="liA8E" id="6QXKeyZ51Qp" role="2OqNvi">
+                    <ref role="37wK5l" to="gqu6:~GlobalModuleDependenciesManager.getModules(jetbrains.mps.project.dependency.GlobalModuleDependenciesManager$Deptype):java.util.Collection" resolve="getModules" />
+                    <node concept="Rm8GO" id="6QXKeyZ51Qq" role="37wK5m">
+                      <ref role="1Px2BO" to="gqu6:~GlobalModuleDependenciesManager$Deptype" resolve="GlobalModuleDependenciesManager.Deptype" />
+                      <ref role="Rm8GQ" to="gqu6:~GlobalModuleDependenciesManager$Deptype.VISIBLE" resolve="VISIBLE" />
+                    </node>
+                  </node>
                 </node>
+              </node>
+            </node>
+            <node concept="2hMVRd" id="$5yWDrjCoi" role="1tU5fm">
+              <node concept="3uibUv" id="$5yWDrjCok" role="2hN53Y">
+                <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
               </node>
             </node>
           </node>
@@ -1198,9 +1163,6 @@
             <node concept="3cpWs8" id="5Fumpqe5osr" role="3cqZAp">
               <node concept="3cpWsn" id="5Fumpqe5oss" role="3cpWs9">
                 <property role="TrG5h" value="descriptorClass" />
-                <node concept="3uibUv" id="5Fumpqe5ost" role="1tU5fm">
-                  <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
-                </node>
                 <node concept="2OqwBi" id="5JfAyZ3KIyI" role="33vP2m">
                   <node concept="37vLTw" id="5JfAyZ3KHs2" role="2Oq$k0">
                     <ref role="3cqZAo" node="5Fumpqe5n4y" resolve="module" />
@@ -1211,6 +1173,9 @@
                       <ref role="3cqZAo" node="2vYPywV9S3$" resolve="name" />
                     </node>
                   </node>
+                </node>
+                <node concept="3uibUv" id="5Fumpqe5ost" role="1tU5fm">
+                  <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
                 </node>
               </node>
             </node>

@@ -49,7 +49,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     });
 
   }
-  public boolean isFinishSuccessfull() {
+  public boolean isFinishSuccessful() {
     return ((MigrationsProgressStep) mySteps.get(1)).isSuccessfull();
   }
 }

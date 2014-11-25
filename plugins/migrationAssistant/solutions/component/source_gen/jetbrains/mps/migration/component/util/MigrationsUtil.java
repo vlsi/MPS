@@ -16,10 +16,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
-import org.jetbrains.mps.openapi.module.SDependency;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Logger;
@@ -52,13 +49,8 @@ public class MigrationsUtil {
   public static boolean isApplied(MigrationScriptReference script, SModule module) {
     return !(((AbstractModule) module).getAllUsedLanguages().contains(script.getLanguage())) || script.getFromVersion() < module.getUsedLanguageVersion(script.getLanguage());
   }
-  public static Set<SModule> getModuleDependencies(final SModule module) {
-    Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
-    Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(declaredDependencies).translate(new ITranslator2<SDependency, SModule>() {
-      public Iterable<SModule> translate(SDependency it) {
-        return new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
-      }
-    }));
+  public static Set<SModule> getModuleDependencies(SModule module) {
+    Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
     SetSequence.fromSet(dependencies).addElement(module);
     return dependencies;
   }
