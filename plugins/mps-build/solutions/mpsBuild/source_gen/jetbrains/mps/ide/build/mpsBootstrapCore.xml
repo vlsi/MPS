@@ -3818,6 +3818,7 @@
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.core-libraries" />
+        <path refid="path.java.library.idea-libraries" />
         <path refid="path.java.library.idea-ant" />
         <path refid="path.java.library.junit-4.11" />
         <path refid="path.jdk.classpath" />
@@ -3829,7 +3830,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.java.modules.cycle.2" depends="java.compile.mps-generator, java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-textgen, java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-editor-api, java.compile.mps-icons, fetchDependencies">
+  <target name="java.compile.java.modules.cycle.2" depends="java.compile.mps-generator, java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-textgen, java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-editor-api, java.compile.mps-icons, java.compile.mps-tool, fetchDependencies">
     <mkdir dir="${build.tmp}/java.modules.cycle.2" />
     <javac destdir="${build.tmp}/java.modules.cycle.2" fork="true" memorymaximumsize="1024m" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -3847,6 +3848,7 @@
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.java.library.idea-ant" />
         <pathelement path="${build.tmp}/java/out/mps-generator" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
@@ -3859,11 +3861,12 @@
         <pathelement path="${build.tmp}/java/out/mps-persistence" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-icons" />
+        <pathelement path="${build.tmp}/java/out/mps-tool" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.mps-platform" depends="java.compile.mps-generator, java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-textgen, java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-editor-api, java.compile.mps-icons, java.compile.java.modules.cycle.2, fetchDependencies">
+  <target name="java.compile.mps-platform" depends="java.compile.mps-generator, java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-textgen, java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-editor-api, java.compile.mps-icons, java.compile.mps-tool, java.compile.java.modules.cycle.2, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-platform" />
     <javac2 destdir="${build.tmp}/java/out/mps-platform" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -3884,6 +3887,7 @@
         <pathelement path="${build.tmp}/java/out/mps-persistence" />
         <pathelement path="${build.tmp}/java/out/mps-editor-api" />
         <pathelement path="${build.tmp}/java/out/mps-icons" />
+        <pathelement path="${build.tmp}/java/out/mps-tool" />
         <fileset file="${mps_home}/lib/platform.jar" />
         <fileset file="${mps_home}/lib/platform-api.jar" />
         <path refid="path.java.library.annotations-lib" />
@@ -3891,6 +3895,7 @@
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
+        <path refid="path.java.library.idea-ant" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
         <path refid="path.jdk.classpath" />
       </classpath>

@@ -21,7 +21,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.idea.core.ui.ModelOrNodeChooser;
 import jetbrains.mps.idea.core.ui.RefactoringViewItemImpl;
@@ -35,19 +35,19 @@ import org.jetbrains.annotations.NotNull;
  * User: shatalin
  * Date: 2/20/12
  */
-public class RefactoringAccessImpl extends RefactoringAccess implements ApplicationComponent {
+public class RefactoringAccessImpl extends RefactoringAccessEx implements ApplicationComponent {
 
   public RefactoringAccessImpl(MPSCoreComponents coreComponents) {
   }
 
   @Override
   public void initComponent() {
-    RefactoringAccess.setInstance(this);
+    RefactoringAccessEx.setInstance(this);
   }
 
   @Override
   public void disposeComponent() {
-    RefactoringAccess.setInstance(null);
+    RefactoringAccessEx.setInstance(null);
   }
 
   @NotNull

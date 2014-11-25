@@ -135,12 +135,6 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
@@ -192,6 +186,12 @@
       </concept>
       <concept id="1184952934362" name="jetbrains.mps.baseLanguage.structure.DimensionExpression" flags="nn" index="3$GHV9">
         <child id="1184953288404" name="expression" index="3$I4v7" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
@@ -273,11 +273,6 @@
       <node concept="TZ5HA" id="1w0tHxV50Bp" role="TZ5H$">
         <node concept="1dT_AC" id="1w0tHxV50Bq" role="1dT_Ay">
           <property role="1dT_AB" value="TODO: fix dispose methods" />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="1CqjT$$4AVL" role="TZ5H$">
-        <node concept="1dT_AC" id="1CqjT$$4AVM" role="1dT_Ay">
-          <property role="1dT_AB" value="move to platform" />
         </node>
       </node>
     </node>
@@ -1017,11 +1012,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="7BSRTLg4QY" role="3cqZAp" />
-        <node concept="3SKdUt" id="6rx4kZDlKc2" role="3cqZAp">
-          <node concept="3SKdUq" id="6rx4kZDlKc4" role="3SKWNk">
-            <property role="3SKdUp" value="part from ProjectTest" />
-          </node>
-        </node>
         <node concept="SfApY" id="_$UaLI5nC" role="3cqZAp">
           <node concept="3clFbS" id="_$UaLI5nD" role="SfCbr">
             <node concept="3clFbF" id="6rx4kZDlKgX" role="3cqZAp">

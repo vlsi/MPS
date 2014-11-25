@@ -1262,6 +1262,9 @@
       <node concept="nCB5N" id="52xpK1hpmc8" role="nCB5Z">
         <ref role="nCB5Y" node="75RBgxKm6HY" resolve="mps-generator" />
       </node>
+      <node concept="2sjeV3" id="6PVLa2nPsae" role="nCB5Z">
+        <ref role="2sjeV2" node="16Vg0jOcomR" resolve="idea-libraries" />
+      </node>
       <node concept="2sjeV3" id="1FaKCGJSzN3" role="nCB5Z">
         <property role="2a2d0E" value="true" />
         <ref role="2sjeV2" node="1FaKCGJSzMS" resolve="idea-ant" />
@@ -1325,6 +1328,9 @@
       <node concept="nCB5N" id="4IHrxM7le2i" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="7KapL9OAx4G" resolve="mps-ui" />
+      </node>
+      <node concept="nCB5N" id="6PVLa2nUo2$" role="nCB5Z">
+        <ref role="nCB5Y" node="1FaKCGJSzMQ" resolve="mps-tool" />
       </node>
       <node concept="25zrj4" id="1ePifXyAvse" role="nCB5Z">
         <node concept="2HycW7" id="1ePifXyAvsa" role="25zrj5">
@@ -18493,6 +18499,9 @@
       </node>
       <node concept="nCB5N" id="4rWmS7H8APc" role="nCB5Z">
         <ref role="nCB5Y" node="5rNMDvYzemv" resolve="mps-make" />
+      </node>
+      <node concept="nCB5N" id="6PVLa2nYlyx" role="nCB5Z">
+        <ref role="nCB5Y" node="1FaKCGJSzMQ" resolve="mps-tool" />
       </node>
     </node>
     <node concept="1E1JtD" id="8EWnRkKrxe" role="3989C9">

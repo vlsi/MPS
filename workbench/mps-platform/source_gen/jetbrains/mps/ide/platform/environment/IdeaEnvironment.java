@@ -39,7 +39,6 @@ import org.apache.log4j.LogManager;
 
 /**
  * TODO: fix dispose methods
- * move to platform
  */
 public class IdeaEnvironment implements Environment {
   private static final String MISC_XML_URI = "/jetbrains/mps/testbench/junit/runners/misc.xml";
@@ -153,7 +152,6 @@ public class IdeaEnvironment implements Environment {
       LOG.debug("Disposing the project " + project);
     }
 
-    // part from ProjectTest 
     try {
       GuiUtils.runOrInvokeAndWait(new Runnable() {
         public void run() {
