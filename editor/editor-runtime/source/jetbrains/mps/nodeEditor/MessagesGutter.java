@@ -110,13 +110,9 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     return ColorUtil.withAlpha(ColorUtil.shift(super.adjustColor(c), 0.9), 0.85);
   }
 
-  //copied from com.intellij.openapi.editor.impl.EditorMarkupModelImpl
+    //copied from com.intellij.openapi.editor.impl.EditorMarkupModelImpl
   @Override
   protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
-    if (UISettings.getInstance().PRESENTATION_MODE || ButtonlessScrollBarUI.isMacOverlayScrollbarSupported()) {
-      super.paintThumb(g, c, thumbBounds);
-      return;
-    }
 
     if (isMacOverlayScrollbar()) {
       if (!myRightToLeft) {
