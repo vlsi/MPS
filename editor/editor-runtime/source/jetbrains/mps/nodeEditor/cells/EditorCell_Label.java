@@ -38,6 +38,8 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.SNodeUndoableAction;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
@@ -617,14 +619,21 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   private void addChangeTextUndoableAction(String text, String oldText) {
-    EditorComponent editor = getEditor();
-    CellInfo cellInfo = getCellInfo();
-
     SNode node = getSNode();
     if (node == null) return;
     if (CommandProcessor.getInstance().getCurrentCommand() == null) return;
     if (EqualUtil.equals(oldText, text)) return;
     if (isValidText(text)) return;
+
+    UndoHelper.getInstance().addUndoableAction(new SNodeUndoableAction(node) {
+      @Override
+      protected void doUndo() {
+      }
+
+      @Override
+      protected void doRedo() {
+      }
+    });
 
     if (node.getModel() == null) return;
 
