@@ -26,6 +26,7 @@ public class _InstanceMethodDeclaration_RemoveAbstract {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract"), "" + (false));
+      CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, false);
     }
   }
   public static class _InstanceMethodDeclaration_RemoveAbstract_BACKSPACE extends AbstractCellAction {
@@ -38,6 +39,7 @@ public class _InstanceMethodDeclaration_RemoveAbstract {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract"), "" + (false));
+      CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, true);
     }
   }
 }

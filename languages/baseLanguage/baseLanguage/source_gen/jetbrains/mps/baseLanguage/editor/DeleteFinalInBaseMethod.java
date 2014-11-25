@@ -26,6 +26,7 @@ public class DeleteFinalInBaseMethod {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1181808852946l, "isFinal"), "" + (false));
+      CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, false);
     }
   }
   public static class DeleteFinalInBaseMethod_BACKSPACE extends AbstractCellAction {
@@ -38,6 +39,7 @@ public class DeleteFinalInBaseMethod {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1181808852946l, "isFinal"), "" + (false));
+      CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, true);
     }
   }
 }

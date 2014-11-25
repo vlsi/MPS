@@ -26,6 +26,7 @@ public class DeleteNativeInMethod {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025416l, 8355037393041754995l, "isNative"), "" + (false));
+      CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, false);
     }
   }
   public static class DeleteNativeInMethod_BACKSPACE extends AbstractCellAction {
@@ -38,6 +39,7 @@ public class DeleteNativeInMethod {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025416l, 8355037393041754995l, "isNative"), "" + (false));
+      CursorFocusUtils.setCursorAfterModifierDeleted(editorContext, node, true);
     }
   }
 }
