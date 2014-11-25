@@ -1789,6 +1789,10 @@
     <node concept="1TJgyi" id="v3WHCwUoyi" role="1TKVEl">
       <property role="TrG5h" value="fqName" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="7K4mn_Bfj93" role="lGtFl">
+        <property role="YLQ7P" value="use getFQName() behavior method" />
+        <property role="YLPcu" value="MPS 3.2" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="59YAasRsvgM">
