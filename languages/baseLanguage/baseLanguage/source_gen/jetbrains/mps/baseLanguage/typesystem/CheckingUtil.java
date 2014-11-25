@@ -37,6 +37,7 @@ public class CheckingUtil {
     }
     return false;
   }
+
   public static boolean isAssignedIllegaly(SNode node) {
     return CheckingUtil.isAssigned(node) && ((SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123140l, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false) == null && SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1206629501431l, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), false, false) == null) || refersToDeclarationWithInitializer(node));
   }

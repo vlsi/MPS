@@ -49,6 +49,7 @@ public class AnnotationUtil {
         }
       }
       return false;
+
     } else if (SNodeOperations.isInstanceOf(targetKinds, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"))) {
       return acceptKind(SNodeOperations.cast(targetKinds, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, "jetbrains.mps.baseLanguage.structure.EnumConstantReference")), hasAnnotation);
     } else {

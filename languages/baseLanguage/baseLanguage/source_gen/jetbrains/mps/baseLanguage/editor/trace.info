@@ -7654,8 +7654,8 @@
       <node id="2619109493058710584" at="21,28,22,34" concept="11" />
       <node id="2619109493058710584" at="22,34,23,49" concept="5" />
       <node id="2619109493058710584" at="23,49,24,40" concept="5" />
-      <node id="2619109493058710584" at="24,40,25,36" concept="5" />
-      <node id="2619109493058710584" at="25,36,26,22" concept="12" />
+      <node id="2619109493058710584" at="24,40,25,34" concept="5" />
+      <node id="2619109493058710584" at="25,34,26,22" concept="12" />
       <node id="1075381298843" at="15,0,18,0" concept="10" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2619109493058710584" at="18,0,28,0" concept="10" trace="createConstant_7h2wce_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="1075381298843" at="15,79,16,61" />

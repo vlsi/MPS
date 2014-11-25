@@ -3799,7 +3799,6 @@
     <property role="TrG5h" value="Statement_Editor" />
     <ref role="1XX52x" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="3F0ifn" id="2hoWzkhByKS" role="2wV5jI">
-      <property role="ilYzB" value="  " />
       <node concept="VPxyj" id="2hoWzkhChAw" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>
