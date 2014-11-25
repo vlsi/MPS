@@ -57,7 +57,7 @@ public class ModuleDescriptor {
 
   private Throwable myLoadException;
   private boolean myUseTransientOutput;
-  private boolean myHasLanguageVersions;
+  private boolean myHasLanguageVersions = true;
 
   public ModuleDescriptor() {
     myModelRoots = new LinkedHashSet<ModelRootDescriptor>();

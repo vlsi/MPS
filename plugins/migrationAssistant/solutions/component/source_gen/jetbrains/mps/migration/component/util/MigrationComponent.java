@@ -313,7 +313,11 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     }).toListSequence();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        final ScriptApplied nextScript = calculateNextMigration(allStepScripts);
+        final ScriptApplied nextScript = Sequence.fromIterable(allStepScripts).findFirst(new IWhereFilter<ScriptApplied>() {
+          public boolean accept(ScriptApplied it) {
+            return isAvailable(it);
+          }
+        });
         if (nextScript != null) {
           result.value = new MigrationManager.Step() {
             public String getDescription() {
@@ -334,14 +338,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     });
 
     return result.value;
-  }
-  private ScriptApplied calculateNextMigration(final Iterable<ScriptApplied> allStepScripts) {
-    Iterable<ScriptApplied> availableScripts = Sequence.fromIterable(allStepScripts).where(new IWhereFilter<ScriptApplied>() {
-      public boolean accept(ScriptApplied it) {
-        return isAvailable(it);
-      }
-    });
-    return Sequence.fromIterable(availableScripts).first();
   }
 
   public Map<SModule, SNode> collectData(SModule myModule, final MigrationScriptReference scriptReference) {
