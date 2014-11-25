@@ -625,16 +625,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     if (EqualUtil.equals(oldText, text)) return;
     if (isValidText(text)) return;
 
-    UndoHelper.getInstance().addUndoableAction(new SNodeUndoableAction(node) {
-      @Override
-      protected void doUndo() {
-      }
-
-      @Override
-      protected void doRedo() {
-      }
-    });
-
     if (node.getModel() == null) return;
 
     MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
