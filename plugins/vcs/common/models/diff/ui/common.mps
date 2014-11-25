@@ -8316,10 +8316,8 @@
                 <node concept="37vLTw" id="2BHiRxgm6tu" role="37wK5m">
                   <ref role="3cqZAo" node="42hl10VHazc" resolve="repository" />
                 </node>
-                <node concept="3fqX7Q" id="6dXf3jYXIYc" role="37wK5m">
-                  <node concept="37vLTw" id="6dXf3jYXJpo" role="3fr31v">
-                    <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />
-                  </node>
+                <node concept="3clFbT" id="1kYn6aTx4pV" role="37wK5m">
+                  <property role="3clFbU" value="true" />
                 </node>
                 <node concept="37vLTw" id="2BHiRxgm7vC" role="37wK5m">
                   <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />

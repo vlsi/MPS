@@ -99,7 +99,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
-    int shift = myRightToLeft ? 6 : -6;
+    int shift = myRightToLeft ? -10 : 0;
     g.translate(shift, 0);
     super.paintThumb(g, c, thumbBounds);
     g.translate(-shift, 0);

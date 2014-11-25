@@ -1566,8 +1566,8 @@
       <node id="4652592318748338360" at="36,0,37,0" concept="7" trace="myTopComponent" />
       <node id="4652592318748338363" at="37,0,38,0" concept="7" trace="myInspector" />
       <node id="4652592318748338366" at="38,0,39,0" concept="7" trace="myChangeToMessages" />
-      <node id="4652592318748338389" at="39,100,40,106" concept="6" />
-      <node id="4652592318748338396" at="40,106,41,73" concept="6" />
+      <node id="4652592318748338389" at="39,100,40,95" concept="6" />
+      <node id="4652592318748338396" at="40,95,41,73" concept="6" />
       <node id="4652592318748338408" at="43,45,44,34" concept="6" />
       <node id="4652592318748338415" at="46,7,47,0" concept="15" />
       <node id="4652592318748338440" at="47,0,48,41" concept="6" />
