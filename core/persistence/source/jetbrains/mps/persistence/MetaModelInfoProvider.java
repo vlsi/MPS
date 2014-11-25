@@ -341,6 +341,26 @@ public interface MetaModelInfoProvider {
       myDelegate = delegate;
     }
 
+    /**
+     * Fill another StuffedMetaModelInfo instance with information known to this one.
+     * It might be necessary if we don't want to use this provider as is due to delegate.
+     *
+     * There would be no need in this method if we could pass proper StuffedMetaModelInfo
+     * instance right into modelFactory.load(). However, given Map(String,String) for options,
+     * we have to assume there might be inappropriate delegate which we can't rely on (i.e. merge has to
+     * combine few stuffed sources, asks them one by one, first one to answer wins)
+     */
+    public void populate(@NotNull StuffedMetaModelInfo other) {
+      other.myLanguageNames.putAll(myLanguageNames);
+      other.myConceptNames.putAll(myConceptNames);
+      other.myPropertyNames.putAll(myPropertyNames);
+      other.myAssociationNames.putAll(myAssociationNames);
+      other.myAggregationNames.putAll(myAggregationNames);
+      other.myUnordered.putAll(myUnordered);
+      other.myScope.putAll(myScope);
+      other.myKind.putAll(myKind);
+    }
+
     @Override
     public void setLanguageName(SLanguageId lang, String name) {
       if (isEmpty(name)) {

@@ -52,6 +52,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   /**
    * Migration to 3.0. Loads and returns model data.
+   * @deprecated use {@link SModelBase#getModelData()} or {@link #getSModel()}
    */
   @Deprecated
   public abstract jetbrains.mps.smodel.SModel getSModelInternal();
@@ -170,7 +171,9 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     }
   }
 
-  // likely has to return SModelData
+  /**
+   * Use {@link SModelBase#getModelData()} wherever possible
+   */
   public jetbrains.mps.smodel.SModel getSModel() {
     return getSModelInternal();
   }

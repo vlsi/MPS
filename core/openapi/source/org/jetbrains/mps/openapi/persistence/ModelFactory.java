@@ -30,6 +30,13 @@ public interface ModelFactory {
   static final String OPTION_PACKAGE = "package";
   static final String OPTION_RELPATH = "relativePath";
   static final String OPTION_MODELNAME = "modelName";
+
+  /**
+   * Boolean value, indicates we don't care to build complete model on load, rather read content as-is,
+   * and tread loaded model as mere container for nodes, <code>SModelData</code>-like.
+   * We use this mechanism from merge driver and various tools that are going to access nodes from
+   * the model but are not going to expose this model anywhere else.
+   */
   static final String OPTION_CONTENT_ONLY = "contentOnly";
 
   /**
