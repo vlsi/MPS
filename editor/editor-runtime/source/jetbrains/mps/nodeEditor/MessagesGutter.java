@@ -15,21 +15,19 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.ColorUtil;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.icons.Icons;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
-import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 
 import javax.swing.Icon;
 import javax.swing.JButton;
@@ -69,7 +67,6 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     myEditorComponent = editorComponent;
     myRightToLeft = rightToLeft;
 
-    myEditorComponent.getVerticalScrollBar().setPersistentUI(this);
     myUpdateQueue = new MergingUpdateQueue("MessagesGutter", 500, true, editorComponent, null, null, true);
     myUpdateQueue.setRestartTimerOnAdd(true);
     // TODO add update queue to the disposables tree
@@ -102,7 +99,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
-    int shift = myRightToLeft ? -9 : 9;
+    int shift = myRightToLeft ? 6 : -6;
     g.translate(shift, 0);
     super.paintThumb(g, c, thumbBounds);
     g.translate(-shift, 0);
