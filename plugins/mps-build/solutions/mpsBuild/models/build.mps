@@ -1262,9 +1262,6 @@
       <node concept="nCB5N" id="52xpK1hpmc8" role="nCB5Z">
         <ref role="nCB5Y" node="75RBgxKm6HY" resolve="mps-generator" />
       </node>
-      <node concept="2sjeV3" id="4KccoYk9wgQ" role="nCB5Z">
-        <ref role="2sjeV2" node="16Vg0jOcomR" resolve="idea-libraries" />
-      </node>
       <node concept="2sjeV3" id="1FaKCGJSzN3" role="nCB5Z">
         <property role="2a2d0E" value="true" />
         <ref role="2sjeV2" node="1FaKCGJSzMS" resolve="idea-ant" />
@@ -11060,6 +11057,12 @@
           <node concept="3bR9La" id="2Ic4of8Kwea" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="24dvNo_8brw" role="3bR37C">
+          <node concept="3bR9La" id="24dvNo_8brx" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="4Hc8TwAmyoE" resolve="jetbrains.mps.tool.builder" />
           </node>
         </node>
       </node>

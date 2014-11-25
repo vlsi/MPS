@@ -26,8 +26,6 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="make-facets" />
     <orderEntry type="module" module-name="mps-core" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
-    <orderEntry type="module" module-name="mps-platform" />
   </component>
 </module>
 

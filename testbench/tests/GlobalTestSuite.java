@@ -28,12 +28,11 @@ import org.junit.runners.Suite;
     jetbrains.mps.dataFlow.lang.StructuralProgramBuilderTest.class,
     jetbrains.mps.diff.DiffTestCase.class,
     jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
-    jetbrains.mps.ide.platform.dependencyViewer.DependenciesViewerTest.class,
-    jetbrains.mps.classloading.ProjectMPSDependenciesTest.class,
     jetbrains.mps.classloading.ClassLoadingDescriptorChangedTest.class,
     jetbrains.mps.classloading.ProjectMPSClassLoadingTest.class,
     jetbrains.mps.classloading.ModulesReloadTest.class,
     jetbrains.mps.classloading.ModulesReloadTestStress.class,
+    jetbrains.mps.ide.platform.dependencyViewer.DependenciesViewerTest.class,
     jetbrains.mps.ide.messages.MessageViewListModelTest.class,
     jetbrains.mps.ide.depanalyzer.ModuleDependenciesTest.class,
     jetbrains.mps.make.TestMakeOnRealProject.class,
@@ -53,7 +52,8 @@ import org.junit.runners.Suite;
     jetbrains.mps.editor.runtime.style.StyleTests.class,
     jetbrains.mps.smodel.TreeIteratorTest.class,
     jetbrains.mps.smodel.SModelReferenceTest.class,
-    jetbrains.mps.smodel.adapter.SAdapterEqualityTest.class
+    jetbrains.mps.smodel.adapter.SAdapterEqualityTest.class,
+    jetbrains.mps.classloading.ProjectMPSDependenciesTest.class
 })
 public class GlobalTestSuite {
 }

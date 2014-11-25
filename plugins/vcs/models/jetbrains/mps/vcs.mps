@@ -58,6 +58,7 @@
     <import index="gwo9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.idea(MPS.IDEA/com.intellij.idea@java_stub)" />
     <import index="mo84" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
     <import index="jrbx" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" />
+    <import index="hznm" ref="r:dad1ea7d-da9c-4176-99bb-37db4fbb1112(jetbrains.mps.ide.platform.environment)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
@@ -3014,8 +3015,8 @@
       <property role="TrG5h" value="ENV" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="2ysqId120Cs" role="1B3o_S" />
-      <node concept="3uibUv" id="3dEPKBApoMV" role="1tU5fm">
-        <ref role="3uigEE" to="79ha:6rx4kZDk5Br" resolve="IdeaEnvironment" />
+      <node concept="3uibUv" id="24dvNo_7KII" role="1tU5fm">
+        <ref role="3uigEE" to="hznm:6rx4kZDk5Br" resolve="IdeaEnvironment" />
       </node>
     </node>
     <node concept="3Tm1VV" id="6m1MVDkVd2a" role="1B3o_S" />
@@ -3309,7 +3310,7 @@
           <node concept="37vLTI" id="2ysqId125iC" role="3clFbG">
             <node concept="2ShNRf" id="2ysqId125VY" role="37vLTx">
               <node concept="1pGfFk" id="2ysqId12uoQ" role="2ShVmc">
-                <ref role="37wK5l" to="79ha:6rx4kZDkRjb" resolve="IdeaEnvironment" />
+                <ref role="37wK5l" to="hznm:6rx4kZDkRjb" resolve="IdeaEnvironment" />
                 <node concept="2YIFZM" id="2ysqId12vhm" role="37wK5m">
                   <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultEnvironment" />
                   <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />

@@ -20,6 +20,8 @@ import com.intellij.openapi.diagnostic.Logger;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -65,6 +67,8 @@ public class ProjectMPSDependenciesTest {
   @Test
   public void DepsAreValid() {
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
+    Environment currentEnv = ActiveEnvironment.getInstance();
+    if (currentEnv != null) currentEnv.dispose();
     MpsEnvironment environment = new MpsEnvironment(config);
     try {
       LOG.info("ADDING CORE CONTRIBUTORS");
