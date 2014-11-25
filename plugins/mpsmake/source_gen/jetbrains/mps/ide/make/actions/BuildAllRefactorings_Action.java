@@ -33,7 +33,7 @@ public class BuildAllRefactorings_Action extends BaseAction {
   public BuildAllRefactorings_Action() {
     super("Rebuild All Refactorings", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {

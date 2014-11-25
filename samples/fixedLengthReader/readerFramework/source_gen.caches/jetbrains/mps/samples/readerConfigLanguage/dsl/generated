@@ -1,3 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9et4gesbwfi66uqdam7kjck04we2kbu" />
+<dependencies version="2" modelHash="-581oqsvqvwn5wh146hnqcwvicavawz9">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="5t7vko7lmcdqgrvjfpbb7ytumq3o2g7" />
+  <common hash="-cwcguuvr611mjq4ltj33hikb5gnozqe" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="3515521059660696284" name="Usage" hash="-1gep1w9dbp7v0a4c1ng582vlrbyw65j">
+    <file name="Usage.java" />
+  </source>
+  <source id="3515521059660696310" name="ServiceCall" hash="-2jey7twltku2v2j3dm9w3c7f6g7hvzc">
+    <file name="ServiceCall.java" />
+  </source>
+</dependencies>
 

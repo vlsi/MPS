@@ -2,8 +2,8 @@
 <model ref="r:0bf6e05c-8700-4289-b257-bea5fb8f354f(jetbrains.mps.baseLanguage.sandbox.internal)" concise="true">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
     <import index="22ir" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.nio(JDK/java.nio@java_stub)" />

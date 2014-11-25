@@ -2,11 +2,11 @@
 <model ref="r:36539f52-7ec3-4937-98bf-1fbc1fbe99fc(jetbrains.mps.vcs.platform.mergedriver)" concise="true">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
@@ -7593,9 +7593,6 @@
       <node concept="2YIFZM" id="3R9KYLtnFc6" role="33vP2m">
         <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
         <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
-        <node concept="Xl_RD" id="3PaWMnROBBu" role="37wK5m">
-          <property role="Xl_RC" value="asm4-all.jar" />
-        </node>
         <node concept="Xl_RD" id="4Xk_ETUgCUS" role="37wK5m">
           <property role="Xl_RC" value="asm-all.jar" />
         </node>
@@ -7603,7 +7600,7 @@
           <property role="Xl_RC" value="xstream-1.4.3.jar" />
         </node>
         <node concept="Xl_RD" id="6gjr9XnnBRe" role="37wK5m">
-          <property role="Xl_RC" value="guava-14.0.1.jar" />
+          <property role="Xl_RC" value="guava-17.0.1.jar" />
         </node>
         <node concept="Xl_RD" id="3R9KYLtnFc7" role="37wK5m">
           <property role="Xl_RC" value="jdom.jar" />

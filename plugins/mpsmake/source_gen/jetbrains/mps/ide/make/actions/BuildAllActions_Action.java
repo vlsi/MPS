@@ -32,7 +32,7 @@ public class BuildAllActions_Action extends BaseAction {
   public BuildAllActions_Action() {
     super("Rebuild All Actions", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {

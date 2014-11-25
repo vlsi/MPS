@@ -32,7 +32,7 @@ public class BuildAllEditors_Action extends BaseAction {
   public BuildAllEditors_Action() {
     super("Rebuild All Editors", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {

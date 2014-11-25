@@ -15,8 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.Language;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SDependency;
 import java.util.HashSet;
@@ -59,7 +57,7 @@ public class MigrationsUtil {
     return result;
   }
   public static boolean isApplied(MigrationScriptReference script, SModule module) {
-    return script.getFromVersion() < module.getUsedLanguageVersion(MetaAdapterByDeclaration.getLanguage((Language) script.getLanguage()));
+    return module.getUsedLanguages().contains(script.getLanguage()) && script.getFromVersion() < module.getUsedLanguageVersion(script.getLanguage());
   }
   public static Set<SModule> getModuleDependencies(final SModule module) {
     Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
@@ -74,7 +72,7 @@ public class MigrationsUtil {
   public static boolean isAppliedForAllMyDeps(final MigrationScriptReference script, SModule module) {
     return SetSequence.fromSet(getModuleDependencies(module)).ofType(AbstractModule.class).all(new IWhereFilter<AbstractModule>() {
       public boolean accept(AbstractModule it) {
-        return isApplied(script, it);
+        return !(it.getUsedLanguages().contains(script.getLanguage())) || isApplied(script, it);
       }
     });
   }

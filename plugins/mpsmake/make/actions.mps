@@ -2,7 +2,6 @@
 <model ref="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)" concise="true">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
@@ -12,6 +11,8 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
   </languages>
   <imports>
     <import index="osf5" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.tree(javax.swing.tree@java_stub)" />
@@ -85,8 +86,141 @@
     <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" implicit="true" />
     <import index="tgbt" ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" implicit="true" />
     <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
+    <import index="m373" ref="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone">
+      <concept id="7520713872864775836" name="jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" flags="ng" index="2DaZZR" />
+    </language>
+    <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
+      <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
+    </language>
+    <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
+      <concept id="1213999117680" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" flags="nn" index="2BZ7hE" />
+      <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp">
+        <reference id="1218736638915" name="classifier" index="32nkFo" />
+      </concept>
+      <concept id="1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" flags="ng" index="2WEnae">
+        <reference id="1205756909548" name="member" index="2WH_rO" />
+      </concept>
+      <concept id="1205769003971" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" flags="ng" index="2XrIbr" />
+      <concept id="1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" flags="nn" index="2XshWL" />
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings">
+      <concept id="2722628536111969416" name="jetbrains.mps.execution.settings.structure.GridBagConstraints" flags="nn" index="1rwKMM">
+        <property id="2722628536111969418" name="constraintsKind" index="1rwKMK" />
+        <child id="2722628536112144966" name="order" index="1rxHDW" />
+      </concept>
+    </language>
+    <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
+      <concept id="5023285075122009364" name="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" flags="ng" index="9BnSX">
+        <property id="1573568368168371217" name="handleErrors" index="3FCvg6" />
+        <property id="5023285075122009369" name="version" index="9BnSK" />
+        <property id="5023285075122009368" name="descripttion" index="9BnSL" />
+        <property id="5023285075122009371" name="vendor" index="9BnSM" />
+        <property id="5023285075122009373" name="ideaVersion" index="9BnSO" />
+        <property id="5023285075122009372" name="vendorUrl" index="9BnSP" />
+        <property id="5023285075122009366" name="id" index="9BnSZ" />
+        <property id="4167053799973858143" name="vendorLogo" index="1qHB85" />
+      </concept>
+      <concept id="1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" flags="ng" index="ftmFs">
+        <child id="1207145201301" name="reference" index="ftvYc" />
+      </concept>
+      <concept id="1207145360364" name="jetbrains.mps.lang.plugin.structure.BuildGroupBlock" flags="in" index="fu6FP" />
+      <concept id="1207145475354" name="jetbrains.mps.lang.plugin.structure.AddElementStatement" flags="nn" index="fuyK3">
+        <child id="1207145494930" name="expression" index="fuByb" />
+      </concept>
+      <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
+        <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
+        <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
+        <property id="1213273179528" name="description" index="1WHSii" />
+        <child id="1227008813498" name="constructionParameter" index="2JrayB" />
+        <child id="1205851242421" name="methodDeclaration" index="32lrUH" />
+        <child id="8976425910813834639" name="icon" index="3Uehp1" />
+        <child id="1203083196627" name="updateBlock" index="tmbBb" />
+        <child id="1203083461638" name="executeFunction" index="tncku" />
+        <child id="1217413222820" name="parameter" index="1NuT2Z" />
+      </concept>
+      <concept id="1203082695294" name="jetbrains.mps.lang.plugin.structure.DoUpdateBlock" flags="in" index="tkhdA" />
+      <concept id="1203082903663" name="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent" flags="nn" index="tl45R" />
+      <concept id="1203083511112" name="jetbrains.mps.lang.plugin.structure.ExecuteBlock" flags="in" index="tnohg" />
+      <concept id="1203087890642" name="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" flags="ng" index="tC5Ba">
+        <property id="1204991940915" name="caption" index="2f7twF" />
+        <child id="1207145245948" name="contents" index="ftER_" />
+        <child id="1204991552650" name="modifier" index="2f5YQi" />
+      </concept>
+      <concept id="1203088046679" name="jetbrains.mps.lang.plugin.structure.ActionInstance" flags="ng" index="tCFHf">
+        <reference id="1203088061055" name="action" index="tCJdB" />
+        <child id="1227011543811" name="actualParameter" index="2J__8u" />
+      </concept>
+      <concept id="1203092361741" name="jetbrains.mps.lang.plugin.structure.ModificationStatement" flags="lg" index="tT9cl">
+        <reference id="1203092736097" name="modifiedGroup" index="tU$_T" />
+        <reference id="1204992316090" name="point" index="2f8Tey" />
+      </concept>
+      <concept id="1562714432501166198" name="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" flags="lg" index="Zd509">
+        <child id="1562714432501166206" name="keystroke" index="Zd501" />
+      </concept>
+      <concept id="1562714432501166197" name="jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration" flags="ng" index="Zd50a">
+        <property id="1562714432501166281" name="keymap" index="Zd52Q" />
+        <child id="1562714432501166199" name="shortcutChange" index="Zd508" />
+      </concept>
+      <concept id="1203680534665" name="jetbrains.mps.lang.plugin.structure.GroupAnchor" flags="ng" index="10WQ6h" />
+      <concept id="6193305307616715384" name="jetbrains.mps.lang.plugin.structure.ShortcutChange" flags="lg" index="1bYyw_">
+        <reference id="6193305307616734326" name="action" index="1bYAoF" />
+      </concept>
+      <concept id="5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" flags="ng" index="1oajcY" />
+      <concept id="1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" flags="ng" index="1DS2jV">
+        <reference id="1217252646389" name="key" index="1DUlNI" />
+      </concept>
+      <concept id="1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" flags="nn" index="1DTwFV" />
+      <concept id="1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" flags="ng" index="1NuADB">
+        <property id="1221669969834" name="isOptional" index="1Ld5UQ" />
+        <child id="5538333046911298738" name="condition" index="1oa70y" />
+      </concept>
+      <concept id="1204908117386" name="jetbrains.mps.lang.plugin.structure.Separator" flags="ng" index="2a7GMi" />
+      <concept id="1227008846812" name="jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration" flags="ig" index="2JriF1" />
+      <concept id="1205681243813" name="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" flags="in" index="2ScWuX" />
+      <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
+        <property id="1207318242773" name="modifiers" index="pLAjc" />
+        <property id="1207318242774" name="keycode" index="pLAjf" />
+      </concept>
+    </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
+    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
+      <concept id="1239531918181" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" flags="in" index="2pR195" />
+      <concept id="1239576519914" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" flags="nn" index="2sxana">
+        <reference id="1239576542472" name="component" index="2sxfKC" />
+      </concept>
+    </language>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu">
+        <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
+      </concept>
+      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="nn" index="1QGGTA">
+        <child id="8974276187400029893" name="icon" index="1QGGTw" />
+      </concept>
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
@@ -255,18 +389,34 @@
         <child id="1206060644605" name="statementList" index="3eOfB_" />
       </concept>
       <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
+      <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
+      <concept id="1095950406618" name="jetbrains.mps.baseLanguage.structure.DivExpression" flags="nn" index="FJ1c_" />
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
+      <concept id="1070534436861" name="jetbrains.mps.baseLanguage.structure.FloatType" flags="in" index="10OMs4" />
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
+      <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
+        <child id="1144226360166" name="iterable" index="1DdaDG" />
+      </concept>
+      <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
+        <child id="1144230900587" name="variable" index="1Duv9x" />
+      </concept>
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
+      <concept id="5279705229678483897" name="jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant" flags="nn" index="2$xPTn">
+        <property id="5279705229678483899" name="value" index="2$xPTl" />
+      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
+      <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
       <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
+      <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
@@ -276,28 +426,15 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
-      <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
-        <child id="1144226360166" name="iterable" index="1DdaDG" />
-      </concept>
-      <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
-        <child id="1144230900587" name="variable" index="1Duv9x" />
-      </concept>
-      <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
-      <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
         <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
       </concept>
-      <concept id="1095950406618" name="jetbrains.mps.baseLanguage.structure.DivExpression" flags="nn" index="FJ1c_" />
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
-      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
-      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
-      <concept id="1070534436861" name="jetbrains.mps.baseLanguage.structure.FloatType" flags="in" index="10OMs4" />
-      <concept id="5279705229678483897" name="jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant" flags="nn" index="2$xPTn">
-        <property id="5279705229678483899" name="value" index="2$xPTl" />
+      <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
+        <child id="1164991057263" name="throwable" index="YScLw" />
       </concept>
-      <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1228997946467" name="jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement" flags="nn" index="_Z6PX">
@@ -309,125 +446,6 @@
       </concept>
       <concept id="1200830824066" name="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" flags="nn" index="2n63Yl">
         <child id="1200830928149" name="expression" index="2n6tg2" />
-      </concept>
-    </language>
-    <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
-      <concept id="5023285075122009364" name="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" flags="ng" index="9BnSX">
-        <property id="1573568368168371217" name="handleErrors" index="3FCvg6" />
-        <property id="5023285075122009369" name="version" index="9BnSK" />
-        <property id="5023285075122009368" name="descripttion" index="9BnSL" />
-        <property id="5023285075122009371" name="vendor" index="9BnSM" />
-        <property id="5023285075122009373" name="ideaVersion" index="9BnSO" />
-        <property id="5023285075122009372" name="vendorUrl" index="9BnSP" />
-        <property id="5023285075122009366" name="id" index="9BnSZ" />
-        <property id="4167053799973858143" name="vendorLogo" index="1qHB85" />
-      </concept>
-      <concept id="1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" flags="ng" index="ftmFs">
-        <child id="1207145201301" name="reference" index="ftvYc" />
-      </concept>
-      <concept id="1207145360364" name="jetbrains.mps.lang.plugin.structure.BuildGroupBlock" flags="in" index="fu6FP" />
-      <concept id="1207145475354" name="jetbrains.mps.lang.plugin.structure.AddElementStatement" flags="nn" index="fuyK3">
-        <child id="1207145494930" name="expression" index="fuByb" />
-      </concept>
-      <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
-        <property id="1205250923097" name="caption" index="2uzpH1" />
-        <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
-        <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
-        <property id="1213273179528" name="description" index="1WHSii" />
-        <child id="1227008813498" name="constructionParameter" index="2JrayB" />
-        <child id="1205851242421" name="methodDeclaration" index="32lrUH" />
-        <child id="8976425910813834639" name="icon" index="3Uehp1" />
-        <child id="1203083196627" name="updateBlock" index="tmbBb" />
-        <child id="1203083461638" name="executeFunction" index="tncku" />
-        <child id="1217413222820" name="parameter" index="1NuT2Z" />
-      </concept>
-      <concept id="1203082695294" name="jetbrains.mps.lang.plugin.structure.DoUpdateBlock" flags="in" index="tkhdA" />
-      <concept id="1203082903663" name="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent" flags="nn" index="tl45R" />
-      <concept id="1203083511112" name="jetbrains.mps.lang.plugin.structure.ExecuteBlock" flags="in" index="tnohg" />
-      <concept id="1203087890642" name="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" flags="ng" index="tC5Ba">
-        <property id="1204991940915" name="caption" index="2f7twF" />
-        <child id="1207145245948" name="contents" index="ftER_" />
-        <child id="1204991552650" name="modifier" index="2f5YQi" />
-      </concept>
-      <concept id="1203088046679" name="jetbrains.mps.lang.plugin.structure.ActionInstance" flags="ng" index="tCFHf">
-        <reference id="1203088061055" name="action" index="tCJdB" />
-        <child id="1227011543811" name="actualParameter" index="2J__8u" />
-      </concept>
-      <concept id="1203092361741" name="jetbrains.mps.lang.plugin.structure.ModificationStatement" flags="lg" index="tT9cl">
-        <reference id="1203092736097" name="modifiedGroup" index="tU$_T" />
-        <reference id="1204992316090" name="point" index="2f8Tey" />
-      </concept>
-      <concept id="1562714432501166198" name="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" flags="lg" index="Zd509">
-        <child id="1562714432501166206" name="keystroke" index="Zd501" />
-      </concept>
-      <concept id="1562714432501166197" name="jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration" flags="ng" index="Zd50a">
-        <property id="1562714432501166281" name="keymap" index="Zd52Q" />
-        <child id="1562714432501166199" name="shortcutChange" index="Zd508" />
-      </concept>
-      <concept id="1203680534665" name="jetbrains.mps.lang.plugin.structure.GroupAnchor" flags="ng" index="10WQ6h" />
-      <concept id="6193305307616715384" name="jetbrains.mps.lang.plugin.structure.ShortcutChange" flags="lg" index="1bYyw_">
-        <reference id="6193305307616734326" name="action" index="1bYAoF" />
-      </concept>
-      <concept id="5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" flags="ng" index="1oajcY" />
-      <concept id="1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" flags="ng" index="1DS2jV">
-        <reference id="1217252646389" name="key" index="1DUlNI" />
-      </concept>
-      <concept id="1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" flags="nn" index="1DTwFV" />
-      <concept id="1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" flags="ng" index="1NuADB">
-        <property id="1221669969834" name="isOptional" index="1Ld5UQ" />
-        <child id="5538333046911298738" name="condition" index="1oa70y" />
-      </concept>
-      <concept id="1204908117386" name="jetbrains.mps.lang.plugin.structure.Separator" flags="ng" index="2a7GMi" />
-      <concept id="1227008846812" name="jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration" flags="ig" index="2JriF1" />
-      <concept id="1205681243813" name="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" flags="in" index="2ScWuX" />
-      <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
-        <property id="1207318242773" name="modifiers" index="pLAjc" />
-        <property id="1207318242774" name="keycode" index="pLAjf" />
-      </concept>
-    </language>
-    <language id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone">
-      <concept id="7520713872864775836" name="jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" flags="ng" index="2DaZZR" />
-    </language>
-    <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
-      <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
-    </language>
-    <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
-      <concept id="1213999117680" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" flags="nn" index="2BZ7hE" />
-      <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp">
-        <reference id="1218736638915" name="classifier" index="32nkFo" />
-      </concept>
-      <concept id="1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" flags="ng" index="2WEnae">
-        <reference id="1205756909548" name="member" index="2WH_rO" />
-      </concept>
-      <concept id="1205769003971" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" flags="ng" index="2XrIbr" />
-      <concept id="1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" flags="nn" index="2XshWL" />
-    </language>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-      </concept>
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
-    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
-      <concept id="1239531918181" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" flags="in" index="2pR195" />
-      <concept id="1239576519914" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" flags="nn" index="2sxana">
-        <reference id="1239576542472" name="component" index="2sxfKC" />
-      </concept>
-    </language>
-    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu">
-        <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
-      </concept>
-      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="nn" index="1QGGTA">
-        <child id="8974276187400029893" name="icon" index="1QGGTw" />
-      </concept>
-    </language>
-    <language id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings">
-      <concept id="2722628536111969416" name="jetbrains.mps.execution.settings.structure.GridBagConstraints" flags="nn" index="1rwKMM">
-        <property id="2722628536111969418" name="constraintsKind" index="1rwKMK" />
-        <child id="2722628536112144966" name="order" index="1rxHDW" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -3512,8 +3530,29 @@
     </node>
     <node concept="3clFb_" id="7tZeFupJF6A" role="jymVt">
       <property role="TrG5h" value="executeAction" />
+      <property role="IEkAT" value="false" />
       <node concept="3cqZAl" id="7tZeFupJF6B" role="3clF45" />
       <node concept="3clFbS" id="7tZeFupJF6D" role="3clF47">
+        <node concept="3clFbJ" id="1Y18t$8Yi_s" role="3cqZAp">
+          <node concept="3clFbS" id="1Y18t$8Yi_v" role="3clFbx">
+            <node concept="YS8fn" id="1Y18t$8YBiV" role="3cqZAp">
+              <node concept="2ShNRf" id="1Y18t$8YBkF" role="YScLw">
+                <node concept="1pGfFk" id="1Y18t$8YCHx" role="2ShVmc">
+                  <ref role="37wK5l" to="e2lb:~IllegalStateException.&lt;init&gt;()" resolve="IllegalStateException" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1Y18t$8YAKy" role="3clFbw">
+            <node concept="2YIFZM" id="1Y18t$8YAsV" role="2Oq$k0">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            </node>
+            <node concept="liA8E" id="1Y18t$8YBcr" role="2OqNvi">
+              <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.isInsideCommand():boolean" resolve="isInsideCommand" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="7tZeFupJF6E" role="3cqZAp">
           <node concept="3cpWsn" id="7tZeFupJF6F" role="3cpWs9">
             <property role="TrG5h" value="inputRes" />
@@ -3771,6 +3810,13 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="7tZeFupJF6C" role="1B3o_S" />
+      <node concept="P$JXv" id="1Y18t$8Yax9" role="lGtFl">
+        <node concept="TZ5HA" id="1Y18t$8YhW_" role="TZ5H$">
+          <node concept="1dT_AC" id="1Y18t$8YhWA" role="1dT_Ay">
+            <property role="1dT_AB" value="should be called outside of command" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="7tZeFupJF7$" role="jymVt">
       <property role="TrG5h" value="selectModels" />
@@ -9899,6 +9945,7 @@
     <property role="TrG5h" value="BuildAllEditors" />
     <property role="2uzpH1" value="Rebuild All Editors" />
     <property role="3GE5qa" value="Internal.Make" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="_x8dJOJ1mN" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -10091,6 +10138,7 @@
     <property role="TrG5h" value="BuildAllIntentions" />
     <property role="2uzpH1" value="Rebuild All Intentions" />
     <property role="3GE5qa" value="Internal.Make" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="pw8k1kX4vm" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -10276,6 +10324,7 @@
     <property role="TrG5h" value="BuildAllActions" />
     <property role="2uzpH1" value="Rebuild All Actions" />
     <property role="3GE5qa" value="Internal.Make" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="5dLITL9AwZj" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -10468,6 +10517,7 @@
     <property role="TrG5h" value="BuildAllRefactorings" />
     <property role="2uzpH1" value="Rebuild All Refactorings" />
     <property role="3GE5qa" value="Internal.Make" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="6AUZaGVE70J" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -10653,6 +10703,7 @@
     <property role="TrG5h" value="BuildAllDataFlows" />
     <property role="2uzpH1" value="Rebuild All DataFlows" />
     <property role="3GE5qa" value="Internal.Make" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="1$NEetdXBVb" role="1NuT2Z">
       <property role="TrG5h" value="context" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />

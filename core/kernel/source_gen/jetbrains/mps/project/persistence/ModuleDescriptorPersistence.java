@@ -70,6 +70,7 @@ public class ModuleDescriptorPersistence {
       }
     }).toListSequence());
 
+    descriptor.setHasLanguageVersions(!(root.getChildren("languageVersions").isEmpty()));
     Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "languageVersions"), "language")).visitAll(new IVisitor<Element>() {
       public void visit(Element it) {
         SLanguageId id = SLanguageId.deserialize(it.getAttributeValue("id"));

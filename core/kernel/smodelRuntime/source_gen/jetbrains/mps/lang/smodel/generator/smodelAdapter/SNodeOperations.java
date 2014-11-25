@@ -7,10 +7,10 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.RuntimeFlags;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.ArrayList;
@@ -53,15 +53,15 @@ public class SNodeOperations {
   /*package*/ static final List<SNode> EMPTY_LIST = new EmptyList<SNode>("Attempt to add node to nonexistent parent or role. Node: %s");
   public SNodeOperations() {
   }
-  /*package*/ static SConcept stringToConcept(String conceptFqName) {
+  /*package*/ static SAbstractConcept stringToConcept(String conceptFqName) {
     if (conceptFqName == null) {
       return null;
     }
-    return SConceptRepository.getInstance().getInstanceConcept(conceptFqName);
+    return SConceptRepository.getInstance().getConcept(conceptFqName);
   }
-  /*package*/ static SConcept[] stringArrayToConceptArray(String[] conceptFqNames) {
+  /*package*/ static SAbstractConcept[] stringArrayToConceptArray(String[] conceptFqNames) {
     int n = conceptFqNames.length;
-    SConcept[] result = new SConcept[n];
+    SAbstractConcept[] result = new SConcept[n];
     for (int i = 0; i < n; i++) {
       result[i] = stringToConcept(conceptFqNames[i]);
     }

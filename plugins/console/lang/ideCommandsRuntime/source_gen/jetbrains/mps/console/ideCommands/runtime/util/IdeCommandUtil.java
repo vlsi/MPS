@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -46,7 +47,7 @@ import org.jetbrains.annotations.NonNls;
 
 public class IdeCommandUtil {
   public static void make(final Project project, final Iterable<? extends SModel> models, final Iterable<? extends SModule> modules, final boolean dirtyOnly, final boolean depClosure) {
-    ProjectOperationContext context = new ProjectOperationContext(project);
+    final ProjectOperationContext context = new ProjectOperationContext(project);
 
     final Wrappers._T<List<SModel>> modelsToGenerate = new Wrappers._T<List<SModel>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -96,7 +97,11 @@ public class IdeCommandUtil {
         }).toListSequence();
       }
     });
-    new MakeActionImpl(context, new MakeActionParameters(context, modelsToGenerate.value, null, null, null), false).executeAction();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        new MakeActionImpl(context, new MakeActionParameters(context, modelsToGenerate.value, null, null, null), false).executeAction();
+      }
+    });
   }
 
   public static void cleanCaches(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {

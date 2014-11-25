@@ -35,6 +35,12 @@ import org.apache.log4j.LogManager;
   @Override
   @Nullable
   public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
+    // workaround for MPS-20860 Can't merge my feature branch with the current state of MPS master branch 
+    if (true) {
+      // always fail, so the merge will be done in full MPS 
+      return null;
+    }
+
     RuntimeFlags.setPlayRefactoringsMode(false);
     RuntimeFlags.setMergeDriverMode(true);
     LightModelEnvironmentInfoImpl persistenceEnv = new LightModelEnvironmentInfoImpl();

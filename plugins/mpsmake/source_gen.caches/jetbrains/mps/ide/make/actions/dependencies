@@ -503,6 +503,7 @@
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.MakeActionImpl" file="MakeActionImpl.java">
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -518,6 +519,7 @@
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.MResource" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>

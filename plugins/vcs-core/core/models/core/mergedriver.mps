@@ -2,11 +2,11 @@
 <model ref="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)" concise="true">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
     <import index="vmu8" ref="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)" />
@@ -2829,6 +2829,27 @@
         </node>
       </node>
       <node concept="3clFbS" id="2TzypFyLJee" role="3clF47">
+        <node concept="3SKdUt" id="CoC$x5IPT9" role="3cqZAp">
+          <node concept="3SKdUq" id="CoC$x5ISrA" role="3SKWNk">
+            <property role="3SKdUp" value="workaround for MPS-20860 Can't merge my feature branch with the current state of MPS master branch" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="CoC$x5ID_k" role="3cqZAp">
+          <node concept="3clFbS" id="CoC$x5ID_n" role="3clFbx">
+            <node concept="3SKdUt" id="CoC$x5IXe6" role="3cqZAp">
+              <node concept="3SKdUq" id="CoC$x5IZcl" role="3SKWNk">
+                <property role="3SKdUp" value="always fail, so the merge will be done in full MPS" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="CoC$x5IGb5" role="3cqZAp">
+              <node concept="10Nm6u" id="CoC$x5II$O" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3clFbT" id="CoC$x5IDFc" role="3clFbw">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="CoC$x5IL2w" role="3cqZAp" />
         <node concept="3clFbF" id="7gEybyFqp_" role="3cqZAp">
           <node concept="2YIFZM" id="7gEybyFwA6" role="3clFbG">
             <ref role="37wK5l" to="1p1s:~RuntimeFlags.setPlayRefactoringsMode(boolean):void" resolve="setPlayRefactoringsMode" />
