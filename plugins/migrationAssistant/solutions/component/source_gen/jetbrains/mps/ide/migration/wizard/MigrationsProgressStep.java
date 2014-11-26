@@ -114,7 +114,7 @@ public class MigrationsProgressStep extends MigrationStep {
   @Override
   public Object getNextStepId() {
     if (mySuccess) {
-      return MigrationsFinishedStep.ID;
+      return null;
     } else {
       return MigrationsErrorStep.ID;
     }

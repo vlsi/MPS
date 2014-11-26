@@ -935,14 +935,6 @@
                 </node>
               </node>
             </node>
-            <node concept="2ShNRf" id="5SsFerobuWD" role="37wK5m">
-              <node concept="1pGfFk" id="5SsFerobuWE" role="2ShVmc">
-                <ref role="37wK5l" to="o8ag:5SsFeroaanz" resolve="MigrationsFinishedStep" />
-                <node concept="37vLTw" id="5SsFerobuWF" role="37wK5m">
-                  <ref role="3cqZAo" node="5SsFeroaau9" resolve="project" />
-                </node>
-              </node>
-            </node>
             <node concept="2ShNRf" id="12JIgXNwcb7" role="37wK5m">
               <node concept="1pGfFk" id="12JIgXNx1f5" role="2ShVmc">
                 <ref role="37wK5l" to="o8ag:12JIgXNwLb0" resolve="MigrationsErrorStep" />
