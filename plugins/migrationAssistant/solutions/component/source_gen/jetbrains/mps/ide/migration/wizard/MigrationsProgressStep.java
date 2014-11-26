@@ -82,7 +82,6 @@ public class MigrationsProgressStep extends MigrationStep {
       final String step = ((MigrationManager.Step) result).getDescription();
       final DefaultListModel model = (DefaultListModel) myList.getModel();
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        @Override
         public void run() {
           model.addElement(step);
           myList.ensureIndexIsVisible(model.indexOf(step));
@@ -90,8 +89,8 @@ public class MigrationsProgressStep extends MigrationStep {
         }
       });
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        @Override
         public void run() {
+
           mySuccess = ((MigrationManager.Step) result).execute();
         }
       });
