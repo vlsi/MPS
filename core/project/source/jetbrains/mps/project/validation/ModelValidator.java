@@ -61,10 +61,14 @@ public class ModelValidator {
 
     SModule module = myModel.getModule();
     SRepository repository = module.getRepository();
-
+    final SModelReference modelToValidateRef = myModel.getReference();
     for (SModelReference reference : SModelOperations.getImportedModelUIDs(myModel)) {
       if (module.resolveInDependencies(reference.getModelId()) == null) {
         errors.add("Can't find model: " + SModelStereotype.withoutStereotype(reference.getModelName()));
+      }
+      if (reference.equals(modelToValidateRef)) {
+        // FIXME refactor ModelValidator and report this as warning, not error
+        errors.add(String.format("Model shall not import self, remove %s from imports", reference.getModelName()));
       }
     }
 
