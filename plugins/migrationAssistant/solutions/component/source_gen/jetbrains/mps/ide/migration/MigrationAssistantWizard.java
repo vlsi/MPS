@@ -8,6 +8,7 @@ import java.util.Arrays;
 import jetbrains.mps.ide.migration.wizard.InitialStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsErrorStep;
+import java.awt.Dimension;
 import jetbrains.mps.ide.migration.wizard.MigrationStep;
 import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.SwingUtilities;
@@ -15,6 +16,13 @@ import javax.swing.SwingUtilities;
 public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project, MigrationManager manager) {
     super("Migration Assistant Wizard", project, Arrays.asList(new InitialStep(project), new MigrationsProgressStep(project, manager), new MigrationsErrorStep(project)));
+    Dimension oldSize = super.getPreferredSize();
+    setSize(((int) oldSize.getWidth()), ((int) (oldSize.getHeight() + 90)));
+  }
+
+  @Override
+  public boolean isAutoAdjustable() {
+    return false;
   }
   @Override
   protected void updateStep() {
