@@ -546,7 +546,7 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      long l = myLink.getContainmentLinkId();
+      long l = myLink.getIdValue();
       return (int) (l ^ (l >>> 32));
     }
 

@@ -80,7 +80,7 @@ public final class IdEncoder {
   }
 
   public String toText(SContainmentLinkId linkId) {
-    return Long.toString(linkId.getContainmentLinkId());
+    return Long.toString(linkId.getIdValue());
   }
   public SContainmentLinkId parseAggregation(SConceptId concept, String text) {
     return new SContainmentLinkId(concept, Long.parseLong(text));

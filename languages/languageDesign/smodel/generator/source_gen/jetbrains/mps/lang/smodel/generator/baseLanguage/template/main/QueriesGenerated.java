@@ -500,7 +500,7 @@ public class QueriesGenerated {
     return MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getIdValue() + "l";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288599804(final PropertyMacroContext _context) {
-    return MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getContainmentLinkId() + "l";
+    return MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue() + "l";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288599817(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
@@ -575,7 +575,7 @@ public class QueriesGenerated {
     return MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getIdValue() + "l";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110140934(final PropertyMacroContext _context) {
-    return MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getContainmentLinkId() + "l";
+    return MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue() + "l";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110150635(final PropertyMacroContext _context) {
     return MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getId().getMostSignificantBits() + "l";

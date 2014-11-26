@@ -88,7 +88,7 @@ class StorageIndexHelper9 {
   }
 
   public String getLinkIndex(@NotNull SContainmentLinkId linkId) {
-    return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getContainmentLinkId();
+    return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getIdValue();
   }
 
   public String getReferenceRoleIndex(@NotNull SReferenceLinkId linkId) {
