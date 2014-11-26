@@ -43,14 +43,9 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
-      </concept>
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
-      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
-      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -73,19 +68,29 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
+        <reference id="1138676095763" name="enumMember" index="uo_Cq" />
+      </concept>
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
+      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
+        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
+      </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="5253134957341697434" name="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" flags="nn" index="prKvN">
         <reference id="5253134957341833005" name="conceptDeclaration" index="prhl4" />
         <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
       </concept>
-      <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
-        <reference id="1138676095763" name="enumMember" index="uo_Cq" />
-      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
+      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
-      </concept>
-      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
-        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="6955116391921790598" name="jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName" flags="nn" index="1nuMs4">
         <property id="6955116391921791525" name="moduleId" index="1nuNIB" />
@@ -109,7 +114,6 @@
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
-      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
     </language>
     <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
       <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
@@ -1819,7 +1823,7 @@
       </node>
     </node>
     <node concept="Wx3nA" id="15H8LO1Gu_m" role="jymVt">
-      <property role="TrG5h" value="link_BaseConcept_attrs" />
+      <property role="TrG5h" value="link_BaseConcept_attrs_name" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="15H8LO1Gu_n" role="1B3o_S" />
       <node concept="prKvN" id="15H8LO1Gu_o" role="33vP2m">
@@ -1827,6 +1831,18 @@
         <ref role="prhl4" to="tpck:gw2VY9q" resolve="BaseConcept" />
       </node>
       <node concept="17QB3L" id="15H8LO1Gu_p" role="1tU5fm" />
+    </node>
+    <node concept="Wx3nA" id="4OwOEWIRLjl" role="jymVt">
+      <property role="TrG5h" value="link_BaseConcept_attrs" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="4OwOEWIRLjm" role="1B3o_S" />
+      <node concept="359W_D" id="4OwOEWIRQzw" role="33vP2m">
+        <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <ref role="359W_F" to="tpck:4uZwTti3__2" />
+      </node>
+      <node concept="3uibUv" id="4OwOEWIRVBP" role="1tU5fm">
+        <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
+      </node>
     </node>
     <node concept="Wx3nA" id="4tvuYCuWYmZ" role="jymVt">
       <property role="TrG5h" value="concept_ExportMacro" />

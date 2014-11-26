@@ -415,7 +415,7 @@ public class SNodeOperations {
     if (parent == null) {
       return result;
     }
-    String role = node.getRoleInParent();
+    SContainmentLink role = node.getContainmentLink();
     assert role != null;
     for (SNode child : parent.getChildren(role)) {
       if (child == node) {
@@ -441,7 +441,7 @@ public class SNodeOperations {
       result.add(node);
     }
     boolean childFound = false;
-    String role = node.getRoleInParent();
+    SContainmentLink role = node.getContainmentLink();
     assert role != null;
     for (SNode child : parent.getChildren(role)) {
       if (child == node) {
@@ -462,7 +462,7 @@ public class SNodeOperations {
     if (parent == null) {
       return result;
     }
-    String role = node.getRoleInParent();
+    SContainmentLink role = node.getContainmentLink();
     assert role != null;
     for (SNode child : parent.getChildren(role)) {
       if (child == node) {
