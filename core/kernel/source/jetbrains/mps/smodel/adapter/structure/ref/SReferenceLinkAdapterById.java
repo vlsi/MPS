@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.adapter.structure.ref;
 
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
@@ -65,6 +64,6 @@ public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   @Override
   protected SNode findInConcept(SNode cnode) {
     SModel model = cnode.getModel();
-    return model.getNode(new SNodeId.Regular(myRoleId.getReferenceLinkId()));
+    return model.getNode(new SNodeId.Regular(myRoleId.getIdValue()));
   }
 }

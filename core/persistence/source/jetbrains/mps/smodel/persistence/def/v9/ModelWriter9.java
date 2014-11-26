@@ -409,8 +409,8 @@ public class ModelWriter9 implements IModelWriter {
     Collections.sort(keys, new Comparator<SReferenceLinkId>() {
       @Override
       public int compare(SReferenceLinkId o1, SReferenceLinkId o2) {
-        long r1 = o1.getReferenceLinkId();
-        long r2 = o2.getReferenceLinkId();
+        long r1 = o1.getIdValue();
+        long r2 = o2.getIdValue();
         if (r1 != r2) return r1 > r2 ? 1 : -1;
 
         return compareConcepts(o1.getConceptId(), o2.getConceptId());

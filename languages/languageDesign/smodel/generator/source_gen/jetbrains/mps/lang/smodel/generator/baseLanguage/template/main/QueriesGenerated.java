@@ -515,7 +515,7 @@ public class QueriesGenerated {
     return MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getIdValue() + "l";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288668370(final PropertyMacroContext _context) {
-    return MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getReferenceLinkId() + "l";
+    return MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue() + "l";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288668383(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
@@ -587,7 +587,7 @@ public class QueriesGenerated {
     return MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getIdValue() + "l";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110150688(final PropertyMacroContext _context) {
-    return MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getReferenceLinkId() + "l";
+    return MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue() + "l";
   }
   public static Object referenceMacro_GetReferent_1170457360268(final ReferenceMacroContext _context) {
     return QueriesUtil.get_SPropertyAccess_simple_getterMethod(_context.getNode());

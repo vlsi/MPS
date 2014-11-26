@@ -73,7 +73,7 @@ public final class IdEncoder {
   }
 
   public String toText(SReferenceLinkId linkId) {
-    return Long.toString(linkId.getReferenceLinkId());
+    return Long.toString(linkId.getIdValue());
   }
   public SReferenceLinkId parseAssociation(SConceptId concept, String text) {
     return new SReferenceLinkId(concept, Long.parseLong(text));

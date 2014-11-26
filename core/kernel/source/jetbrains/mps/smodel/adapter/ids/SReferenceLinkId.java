@@ -30,7 +30,7 @@ public final class SReferenceLinkId {
     return myConceptId;
   }
 
-  public long getReferenceLinkId() {
+  public long getIdValue() {
     return myRefLinkId;
   }
 
