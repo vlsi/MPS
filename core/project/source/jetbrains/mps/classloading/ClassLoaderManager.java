@@ -357,6 +357,7 @@ public class ClassLoaderManager implements CoreComponent {
    * Use this method to invalidate modules (namely, recreate their class loaders)
    * @return modules which were reloaded successfully
    * There are also useful {@link #reloadModules(Iterable)} and {@link #reloadModule(SModule)}.
+   * FIXME: remove TempModule: it should not be processed by CLManager. It maintains only repository modules!
    */
   public Collection<ReloadableModule> reloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     if (IterableUtils.isEmpty(modules)) {

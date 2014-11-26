@@ -196,7 +196,7 @@ public class ModulesWatcher {
     assert myStatusMap.size() == getAllModules().size() : "Modules number inconsistency";
     for (SModuleReference mRef : getAllModules()) {
       ClassLoadingStatus status = VALID;
-      for (SModuleReference mRef1 : getDepsFromRefs(Collections.singleton(mRef))) {
+      for (SModuleReference mRef1 : getDependencies(Collections.singleton(mRef))) {
         if (!getStatus(mRef1).isValid()) status = INVALID;
       }
       if (status != getStatus(mRef)) {
@@ -218,14 +218,25 @@ public class ModulesWatcher {
    * @return all dependencies of this module (closed set under dependency-relation)
    */
   public Collection<? extends SModuleReference> getDependencies(Iterable<? extends SModuleReference> mRefs) {
-    return getDepsFromRefs(mRefs);
+    synchronized (LOCK) {
+      if (isChanged()) recountStatus();
+      final Collection<SModuleReference> result = new ArrayList<SModuleReference>();
+      Graph<SModuleReference> depGraph = myDepGraphHolder.getGraph();
+      depGraph.dfs(mRefs, new VertexVisitor<SModuleReference>() {
+        @Override
+        public void visit(SModuleReference mRef) {
+          result.add(mRef);
+        }
+      });
+      return result;
+    }
   }
 
   Collection<? extends ReloadableModuleBase> getResolvedDependencies(Iterable<? extends ReloadableModule> modules) {
     synchronized (LOCK) {
       Collection<SModuleReference> refs = new LinkedHashSet<SModuleReference>();
       for (ReloadableModule module : modules) refs.add(((ReloadableModuleBase) module).getModuleReference());
-      Collection<? extends SModuleReference> referencedDeps = getDepsFromRefs(refs);
+      Collection<? extends SModuleReference> referencedDeps = getDependencies(refs);
       Collection<? extends ReloadableModuleBase> resolvedDeps = resolveRefs(referencedDeps);
       assert (resolvedDeps.size() == referencedDeps.size());
       return resolvedDeps;
@@ -247,29 +258,13 @@ public class ModulesWatcher {
     return result;
   }
 
-
-  private Collection<? extends SModuleReference> getDepsFromRefs(Iterable<? extends SModuleReference> modules) {
-    synchronized (LOCK) {
-      if (isChanged()) recountStatus();
-      final Collection<SModuleReference> result = new ArrayList<SModuleReference>();
-      Graph<SModuleReference> depGraph = myDepGraphHolder.getGraph();
-      depGraph.dfs(modules, new VertexVisitor<SModuleReference>() {
-        @Override
-        public void visit(SModuleReference mRef) {
-          result.add(mRef);
-        }
-      });
-      return result;
-    }
-  }
-
   /**
    * @return all back dependencies of this module (closed set under back-dependency-relation)
    */
   public Collection<? extends SModuleReference> getBackDependencies(Iterable<? extends SModuleReference> modules) {
     synchronized (LOCK) {
       if (isChanged()) recountStatus();
-      final Collection<SModuleReference> result = new ArrayList<SModuleReference>();
+      final Collection<SModuleReference> result = new LinkedHashSet<SModuleReference>();
       Graph<SModuleReference> backDepGraph = myDepGraphHolder.getConjugateGraph();
       backDepGraph.dfs(modules, new VertexVisitor<SModuleReference>() {
         @Override
