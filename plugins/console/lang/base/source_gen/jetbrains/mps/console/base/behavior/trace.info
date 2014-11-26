@@ -295,41 +295,39 @@
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/3939645998855102457">
     <file name="INodeWithReference_Behavior.java">
-      <node id="3939645998855149468" at="20,91,21,205" concept="6" />
-      <node id="2431734420460469711" at="21,205,22,83" concept="6" />
-      <node id="2431734420460483172" at="23,29,24,13" concept="7" />
-      <node id="2431734420460449016" at="25,5,26,72" concept="6" />
-      <node id="2431734420460440670" at="26,72,27,111" concept="1" />
-      <node id="3939645998855102807" at="29,80,30,201" concept="7" />
-      <node id="328850564593863337" at="32,85,33,227" concept="7" />
-      <node id="3939645998855102457" at="18,0,20,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2431734420460477709" at="22,83,25,5" concept="4" />
-      <node id="3939645998855102457" at="29,0,32,0" concept="10" trace="virtual_canExecute_3282455643657932881#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3939645998855102457" at="32,0,35,0" concept="10" trace="virtual_getTextWhenBroken_328850564593858078#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="3939645998855102457" at="20,0,29,0" concept="10" trace="virtual_execute_8517397753922085153#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)V" />
-      <scope id="3939645998855102459" at="18,43,18,43" />
-      <scope id="2431734420460477712" at="23,29,24,13" />
-      <scope id="3939645998855102763" at="29,80,30,201" />
-      <scope id="328850564593858081" at="32,85,33,227" />
-      <scope id="3939645998855102457" at="18,0,20,0">
+      <node id="3939645998855149468" at="18,91,19,205" concept="6" />
+      <node id="2431734420460469711" at="19,205,20,83" concept="6" />
+      <node id="2431734420460483172" at="21,29,22,13" concept="7" />
+      <node id="2431734420460440670" at="23,5,24,114" concept="1" />
+      <node id="3939645998855102807" at="26,80,27,201" concept="7" />
+      <node id="328850564593863337" at="29,85,30,227" concept="7" />
+      <node id="3939645998855102457" at="16,0,18,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2431734420460477709" at="20,83,23,5" concept="4" />
+      <node id="3939645998855102457" at="26,0,29,0" concept="10" trace="virtual_canExecute_3282455643657932881#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3939645998855102457" at="29,0,32,0" concept="10" trace="virtual_getTextWhenBroken_328850564593858078#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="3939645998855102457" at="18,0,26,0" concept="10" trace="virtual_execute_8517397753922085153#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)V" />
+      <scope id="3939645998855102459" at="16,43,16,43" />
+      <scope id="2431734420460477712" at="21,29,22,13" />
+      <scope id="3939645998855102763" at="26,80,27,201" />
+      <scope id="328850564593858081" at="29,85,30,227" />
+      <scope id="3939645998855102457" at="16,0,18,0">
+        <var name="thisNode" id="3939645998855102457" />
+      </scope>
+      <scope id="3939645998855102457" at="26,0,29,0">
         <var name="thisNode" id="3939645998855102457" />
       </scope>
       <scope id="3939645998855102457" at="29,0,32,0">
         <var name="thisNode" id="3939645998855102457" />
       </scope>
-      <scope id="3939645998855102457" at="32,0,35,0">
-        <var name="thisNode" id="3939645998855102457" />
-      </scope>
-      <scope id="3939645998855102757" at="20,91,27,111">
-        <var name="context" id="2431734420460449017" />
+      <scope id="3939645998855102757" at="18,91,24,114">
         <var name="mpsProject" id="2431734420460469712" />
         <var name="targetNode" id="3939645998855149471" />
       </scope>
-      <scope id="3939645998855102457" at="20,0,29,0">
+      <scope id="3939645998855102457" at="18,0,26,0">
         <var name="project" id="2431734420460432282" />
         <var name="thisNode" id="3939645998855102457" />
       </scope>
-      <unit id="3939645998855102457" at="17,0,36,0" name="jetbrains.mps.console.base.behavior.INodeWithReference_Behavior" />
+      <unit id="3939645998855102457" at="15,0,33,0" name="jetbrains.mps.console.base.behavior.INodeWithReference_Behavior" />
     </file>
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/473081947980701637">
@@ -590,31 +588,37 @@
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/5842059399443118726">
     <file name="PastedNodeReference_Behavior.java">
       <node id="328850564588308693" at="14,81,15,193" concept="7" />
-      <node id="5872110852615514265" at="17,85,18,77" concept="6" />
-      <node id="5872110852615594417" at="19,31,20,30" concept="7" />
-      <node id="7656298970873971977" at="21,5,22,37" concept="6" />
-      <node id="7656298970872562378" at="22,37,23,58" concept="7" />
+      <node id="6888400917983823153" at="17,73,18,213" concept="6" />
+      <node id="6888400917983823165" at="19,31,20,30" concept="7" />
+      <node id="6888400917983823170" at="21,5,22,37" concept="6" />
+      <node id="6888400917983827606" at="22,37,23,58" concept="7" />
+      <node id="6888400917983844540" at="25,85,26,102" concept="7" />
       <node id="5842059399443118726" at="12,0,14,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5842059399443118726" at="14,0,17,0" concept="10" trace="virtual_getTargetNode_3575813534625153815#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5872110852615547845" at="18,77,21,5" concept="4" />
-      <node id="5842059399443118726" at="17,0,25,0" concept="10" trace="virtual_getTextWhenBroken_328850564593858078#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="6888400917983823163" at="18,213,21,5" concept="4" />
+      <node id="5842059399443118726" at="25,0,28,0" concept="10" trace="virtual_getTextWhenBroken_328850564593858078#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5842059399443118726" at="17,0,25,0" concept="10" trace="call_getText_6888400917983823151#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="5842059399443118728" at="12,43,12,43" />
       <scope id="328850564588308687" at="14,81,15,193" />
-      <scope id="5872110852615547848" at="19,31,20,30" />
+      <scope id="6888400917983823164" at="19,31,20,30" />
+      <scope id="328850564594109021" at="25,85,26,102" />
       <scope id="5842059399443118726" at="12,0,14,0">
         <var name="thisNode" id="5842059399443118726" />
       </scope>
       <scope id="5842059399443118726" at="14,0,17,0">
         <var name="thisNode" id="5842059399443118726" />
       </scope>
-      <scope id="328850564594109021" at="17,85,23,58">
-        <var name="id" id="7656298970873971980" />
-        <var name="targetNodeId" id="5872110852615514266" />
+      <scope id="5842059399443118726" at="25,0,28,0">
+        <var name="thisNode" id="5842059399443118726" />
+      </scope>
+      <scope id="6888400917983823152" at="17,73,23,58">
+        <var name="id" id="6888400917983823171" />
+        <var name="targetNodeId" id="6888400917983823154" />
       </scope>
       <scope id="5842059399443118726" at="17,0,25,0">
         <var name="thisNode" id="5842059399443118726" />
       </scope>
-      <unit id="5842059399443118726" at="11,0,26,0" name="jetbrains.mps.console.base.behavior.PastedNodeReference_Behavior" />
+      <unit id="5842059399443118726" at="11,0,29,0" name="jetbrains.mps.console.base.behavior.PastedNodeReference_Behavior" />
     </file>
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/6854397602732226001">

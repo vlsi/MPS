@@ -7258,8 +7258,8 @@
                 </node>
                 <node concept="3cpWsn" id="TxhJRbnccR" role="TDEfY">
                   <property role="TrG5h" value="e" />
-                  <node concept="3uibUv" id="TxhJRbnt7d" role="1tU5fm">
-                    <ref role="3uigEE" to="e2lb:~IllegalArgumentException" resolve="IllegalArgumentException" />
+                  <node concept="3uibUv" id="1$s6r068VIA" role="1tU5fm">
+                    <ref role="3uigEE" to="e2lb:~RuntimeException" resolve="RuntimeException" />
                   </node>
                 </node>
               </node>

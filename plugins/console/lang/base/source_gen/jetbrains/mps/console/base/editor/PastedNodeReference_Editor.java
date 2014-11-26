@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.console.base.behavior.PastedNodeReference_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -47,7 +48,7 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_7k9x8q_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getTextWhenBroken_328850564593858078", new Object[]{});
+        return PastedNodeReference_Behavior.call_getText_6888400917983823151(node);
       }
       public void setText(String s) {
       }

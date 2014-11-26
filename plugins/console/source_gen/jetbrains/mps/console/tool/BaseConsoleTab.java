@@ -463,7 +463,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
           }
         });
         return loadedModel.value;
-      } catch (IllegalArgumentException e) {
+      } catch (RuntimeException e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Console history was not loaded. Maybe you are opening project from previous MPS versions?");
         }
