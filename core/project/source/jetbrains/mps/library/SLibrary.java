@@ -41,26 +41,26 @@ import java.util.concurrent.atomic.AtomicReference;
 class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrary> {
   private static final Logger LOG = Logger.getLogger(SLibrary.class);
 
-  private final IFile file;
-  private final ClassLoader parent;
-  private final boolean isHidden;
+  private final IFile myFile;
+  private final ClassLoader myParentLoader;
+  private final boolean myHidden;
   private AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<List<ModuleHandle>>();
   private final WatchRequestor myWatchRequestor;
 
   SLibrary(IFile file, ClassLoader parent, boolean hidden) {
-    this.file = file;
-    this.parent = parent;
-    this.isHidden = hidden;
+    this.myFile = file;
+    this.myParentLoader = parent;
+    this.myHidden = hidden;
     myWatchRequestor = new WatchRequestor() {
       @Override
       public String getDirectory() {
-        return SLibrary.this.file.getPath();
+        return SLibrary.this.myFile.getPath();
       }
     };
   }
 
   public IFile getFile() {
-    return file;
+    return myFile;
   }
 
   public List<ModuleHandle> getHandles() {
@@ -78,14 +78,14 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
 
   void dispose() {
     LOG.debug("Disposing " + this);
-    FileSystem.getInstance().removeListener(this);
-    ModuleRepositoryFacade.getInstance().unregisterModules(this);
     MPSDirectoryWatcher.getInstance().removeGlobalWatch(myWatchRequestor);
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    FileSystem.getInstance().removeListener(this);
   }
 
   @Override
   public IFile getFileToListen() {
-    return file;
+    return myFile;
   }
 
   @Override
@@ -96,15 +96,8 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
   @Override
   public void update(ProgressMonitor monitor, FileSystemEvent event) {
     boolean changed = false;
-    for (IFile f : event.getChanged()) {
-      if (ModulesMiner.getInstance().isModuleFile(f)) {
-        changed = true;
-      }
-    }
     for (IFile f : event.getCreated()) {
-      if (ModulesMiner.getInstance().isModuleFile(f)) {
-        changed = true;
-      }
+      if (ModulesMiner.getInstance().isModuleFile(f)) changed = true;
     }
     if (changed) {
       update(false);
@@ -114,7 +107,7 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
   void update(boolean refreshFiles) {
     ModelAccess.assertLegalWrite();
 
-    List<ModuleHandle> moduleHandles = Collections.unmodifiableList(ModulesMiner.getInstance().collectModules(file, refreshFiles));
+    List<ModuleHandle> moduleHandles = Collections.unmodifiableList(ModulesMiner.getInstance().collectModules(myFile, refreshFiles));
     myHandles.set(moduleHandles);
     List<SModule> loaded = new ArrayList<SModule>();
     for (ModuleHandle moduleHandle : moduleHandles) {
@@ -130,7 +123,7 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
 
   @Override
   public boolean isHidden() {
-    return isHidden;
+    return myHidden;
   }
 
   @Override
@@ -140,23 +133,23 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
 
     SLibrary library = (SLibrary) o;
 
-    if (isHidden != library.isHidden) return false;
-    if (parent != null ? !parent.equals(library.parent) : library.parent != null) return false;
-    if (!file.equals(library.file)) return false;
+    if (myHidden != library.myHidden) return false;
+    if (myParentLoader != null ? !myParentLoader.equals(library.myParentLoader) : library.myParentLoader != null) return false;
+    if (!myFile.equals(library.myFile)) return false;
 
     return true;
   }
 
   @Override
   public String toString() {
-    return "SLibrary with path " + file + ", classloader " + parent;
+    return "SLibrary with path " + myFile + ", classloader " + myParentLoader;
   }
 
   @Override
   public int hashCode() {
-    int result = file.hashCode();
-    result = 31 * result + (parent != null ? parent.hashCode() : 0);
-    result = 31 * result + (isHidden ? 1 : 0);
+    int result = myFile.hashCode();
+    result = 31 * result + (myParentLoader != null ? myParentLoader.hashCode() : 0);
+    result = 31 * result + (myHidden ? 1 : 0);
     return result;
   }
 
