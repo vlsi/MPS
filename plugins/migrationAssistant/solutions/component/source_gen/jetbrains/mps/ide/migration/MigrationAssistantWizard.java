@@ -26,20 +26,21 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   protected void doNextAction() {
     super.doNextAction();
     final Runnable task = ((MigrationStep) getCurrentStepObject()).getAutostartTask();
-    if (task != null) {
-      ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-        @Override
-        public void run() {
-          task.run();
-          SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-              updateStep();
-            }
-          });
-        }
-      });
+    if (task == null) {
+      return;
     }
+
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        task.run();
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            updateStep();
+          }
+        });
+      }
+    });
+
   }
   public boolean isFinishSuccessfull() {
     return ((MigrationsProgressStep) mySteps.get(1)).isSuccessfull();
