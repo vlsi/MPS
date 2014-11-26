@@ -90,15 +90,8 @@ public class Solution extends ReloadableModuleBase {
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
-    setSolutionDescriptor((SolutionDescriptor) moduleDescriptor);
-  }
-
-  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
-    assertCanChange();
-
-    mySolutionDescriptor = newDescriptor;
-
+  protected void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    mySolutionDescriptor = (SolutionDescriptor) moduleDescriptor;
     SModuleReference mp;
     if (mySolutionDescriptor.getNamespace() != null) {
       mp = new jetbrains.mps.project.structure.modules.ModuleReference(mySolutionDescriptor.getNamespace(), mySolutionDescriptor.getId());
@@ -108,12 +101,6 @@ public class Solution extends ReloadableModuleBase {
     }
 
     setModuleReference(mp);
-
-    setChanged();
-    reloadAfterDescriptorChange();
-    fireChanged();
-
-    dependenciesChanged();
   }
 
   public void setUpdateBootstrapSolutions(boolean b) {

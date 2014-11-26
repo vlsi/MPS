@@ -206,26 +206,18 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
-    setLanguageDescriptor((LanguageDescriptor) moduleDescriptor);
+  public void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    assert moduleDescriptor instanceof LanguageDescriptor;
+    myLanguageDescriptor = (LanguageDescriptor) moduleDescriptor;
+    SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getId());
+    setModuleReference(reference);
+    MPSModuleRepository.getInstance().invalidateCaches();
   }
 
-  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
-    assertCanChange();
-
-    myLanguageDescriptor = newDescriptor;
-
-    SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(myLanguageDescriptor.getNamespace(),
-        myLanguageDescriptor.getId());
-    setModuleReference(reference);
-
-    setChanged();
-    reloadAfterDescriptorChange();
-    fireChanged();
-
-    MPSModuleRepository.getInstance().invalidateCaches();
-
-    dependenciesChanged();
+  // fixme: remove, use #setModuleDescriptor instead
+  @Deprecated
+  public void setLanguageDescriptor(final LanguageDescriptor moduleDescriptor) {
+    setModuleDescriptor(moduleDescriptor);
   }
 
   public boolean isBootstrap() {

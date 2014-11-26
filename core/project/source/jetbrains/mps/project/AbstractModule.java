@@ -243,7 +243,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   //todo should be replaced with events
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  public final void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    assertCanChange();
+    doSetModuleDescriptor(moduleDescriptor);
+    setChanged();
+    reloadAfterDescriptorChange();
+    fireChanged();
+    dependenciesChanged();
+  }
+
+  // no notifications are sent
+  protected void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     throw new UnsupportedOperationException();
   }
 
@@ -665,6 +675,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public void update(ProgressMonitor monitor, FileSystemEvent event) {
+    assertCanChange();
     for (IFile file : event.getRemoved()) {
       if (file.equals(myDescriptorFile)) {
         ModuleRepositoryFacade.getInstance().removeModuleForced(this);

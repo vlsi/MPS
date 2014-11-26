@@ -212,7 +212,7 @@ public class SModuleOperations {
 
     try {
       ModuleDescriptor descriptor = module.loadDescriptor();
-      module.setModuleDescriptor(descriptor);
+      module.doSetModuleDescriptor(descriptor);
     } catch (ModuleReadException e) {
       AbstractModule.handleReadProblem(module, e, false);
     }
