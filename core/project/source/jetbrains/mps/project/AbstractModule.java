@@ -41,6 +41,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.language.ConceptRepository;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;

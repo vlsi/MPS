@@ -15,16 +15,18 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.module.ReloadableModuleBase.SModuleDependenciesListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
-import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.module.event.SModuleAddedEvent;
+import org.jetbrains.mps.openapi.module.event.SModuleChangedEvent;
 import org.jetbrains.mps.openapi.module.event.SModuleRemovedEvent;
-import org.jetbrains.mps.openapi.module.event.SModuleRemovingEvent;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
 import java.util.ArrayList;
@@ -85,8 +87,8 @@ public class BatchEventsProcessor {
     myRepository.removeRepositoryListener(mySRepositoryListener);
   }
 
-  // repository listener picks only two events
-  private class MySRepositoryListener extends SRepositoryListenerBase {
+  // repository listener picks only few events
+  private class MySRepositoryListener extends SRepositoryContentAdapter implements SModuleDependenciesListener{
     private void addEventToList(@NotNull SRepositoryEvent event) {
       synchronized (LOCK) {
         myEvents.add(event);
@@ -95,12 +97,34 @@ public class BatchEventsProcessor {
 
     @Override
     public void moduleAdded(@NotNull SModule module) {
+      if (module instanceof ReloadableModuleBase) {
+        module.addModuleListener(this);
+        ((ReloadableModuleBase) module).addDependenciesListener(this);
+      }
       addEventToList(new SModuleAddedEvent(module));
+    }
+
+    @Override
+    public void beforeModuleRemoved(@NotNull SModule module) {
+      if (module instanceof ReloadableModuleBase) {
+        ((ReloadableModuleBase) module).removeDependenciesListener(this);
+        module.removeModuleListener(this);
+      }
     }
 
     @Override
     public void moduleRemoved(@NotNull SModuleReference mRef) {
       addEventToList(new SModuleRemovedEvent(mRef, myRepository));
+    }
+
+    @Override
+    public void moduleChanged(@NotNull SModule module) {
+      addEventToList(new SModuleChangedEvent(module));
+    }
+
+    @Override
+    public void dependenciesChanged(@NotNull ReloadableModuleBase module) {
+      moduleChanged(module);
     }
   }
 }

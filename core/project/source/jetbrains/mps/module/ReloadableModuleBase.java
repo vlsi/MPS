@@ -22,11 +22,16 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ReloadableModuleBase extends AbstractModule implements ReloadableModule {
   private final static Logger LOG = LogManager.getLogger(ReloadableModuleBase.class);
   private final ClassLoaderManager myManager = ClassLoaderManager.getInstance();
+  private final List<SModuleDependenciesListener> myListeners = new CopyOnWriteArrayList<SModuleDependenciesListener>();
 
   protected ReloadableModuleBase(IFile file) {
     super(file);
@@ -81,6 +86,31 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   @Override
   protected void dependenciesChanged() {
     super.dependenciesChanged();
-    reload();
+    fireDependenciesChanged();
+  }
+
+  protected final void fireDependenciesChanged() {
+    assertCanChange();
+
+    for (SModuleDependenciesListener listener : myListeners) {
+      listener.dependenciesChanged(this);
+    }
+  }
+
+  // NOTE: for internal use
+  public final void addDependenciesListener(SModuleDependenciesListener listener) {
+    myListeners.add(listener);
+  }
+
+  // NOTE: for internal use
+  public final void removeDependenciesListener(SModuleDependenciesListener listener) {
+    myListeners.remove(listener);
+  }
+
+  // NOTE: for internal use
+  // notifies about ANY changes in deps, used languages, etc.
+  // designed specifically for the class loading client
+  public static interface SModuleDependenciesListener {
+    public void dependenciesChanged(@NotNull ReloadableModuleBase module);
   }
 }

@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.event.SModuleAddedEvent;
+import org.jetbrains.mps.openapi.module.event.SModuleChangedEvent;
 import org.jetbrains.mps.openapi.module.event.SModuleEventVisitor;
 import org.jetbrains.mps.openapi.module.event.SModuleRemovedEvent;
 import org.jetbrains.mps.openapi.module.event.SModuleRemovingEvent;
@@ -34,7 +35,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 class CLManagerRepositoryListener implements SRepositoryBatchListener {
   private ClassLoaderManager myManager;
@@ -72,10 +75,15 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
     myDispatcher.flush();
   }
 
-  private void loadModules(List<ReloadableModule> modules) {
+  private void loadModules(List<? extends ReloadableModuleBase> modules) {
     Collections.sort(modules, MODULE_COMPARATOR);
     myModulesWatcher.onModulesAdded(modules);
     myManager.preLoadModules(modules, new EmptyProgressMonitor());
+  }
+
+  private void updateModules(List<? extends ReloadableModuleBase> modules) {
+    Collections.sort(modules, MODULE_COMPARATOR);
+    myManager.reloadModules(modules);
   }
 
   private void unloadModules(List<SModuleReference> modules) {
@@ -93,20 +101,25 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
     }
 
     List<SModuleReference> modulesToUnload = visitor.getModulesToUnload();
-    List<ReloadableModule> modulesToLoad = visitor.getModulesToLoad();
+    List<ReloadableModuleBase> modulesToUpdate = visitor.getModulesToUpdate();
+    List<ReloadableModuleBase> modulesToLoad = visitor.getModulesToLoad();
     if (modulesToUnload.size() > 0) unloadModules(modulesToUnload);
     if (modulesToLoad.size() > 0) loadModules(modulesToLoad);
+    if (modulesToUpdate.size() > 0) updateModules(modulesToUpdate);
   }
 
   private class MyModuleEventVisitor implements SModuleEventVisitor {
-    private final List<ReloadableModule> myModulesToLoad = new ArrayList<ReloadableModule>();
-
-    private final List<SModuleReference> myModulesToUnload = new ArrayList<SModuleReference>();
+    private final Set<ReloadableModuleBase> myModulesToUpdate = new LinkedHashSet<ReloadableModuleBase>();
+    private final Set<ReloadableModuleBase> myModulesToLoad = new LinkedHashSet<ReloadableModuleBase>();
+    private final Set<SModuleReference> myModulesToUnload = new LinkedHashSet<SModuleReference>();
 
     @Override
     public void visit(SModuleAddedEvent event) {
       SModule module = event.getModule();
-      if (module instanceof ReloadableModule) myModulesToLoad.add((ReloadableModule) module);
+      if (module instanceof ReloadableModule) {
+        assert module instanceof ReloadableModuleBase;
+        myModulesToLoad.add((ReloadableModuleBase) module);
+      }
     }
 
     @Override
@@ -115,22 +128,44 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
     }
 
     @Override
+    public void visit(SModuleChangedEvent event) {
+      SModule module = event.getModule();
+      if (module instanceof ReloadableModule) {
+        assert module instanceof ReloadableModuleBase;
+        myModulesToUpdate.add((ReloadableModuleBase) module);
+      }
+    }
+
+    @Override
     public void visit(SModuleRemovedEvent event) {
       SModuleReference mRef = event.getModuleReference();
-      for (Iterator<ReloadableModule> iterator = myModulesToLoad.iterator(); iterator.hasNext();) {
+      removeUnloaded(mRef);
+      myModulesToUnload.add(mRef);
+    }
+
+    private void removeUnloaded(SModuleReference mRef) {
+      for (Iterator<ReloadableModuleBase> iterator = myModulesToLoad.iterator(); iterator.hasNext();) {
         ReloadableModule module = iterator.next();
         SModuleReference ref = ((ReloadableModuleBase) module).getModuleReference();
         if (mRef.equals(ref)) iterator.remove();
       }
-      myModulesToUnload.add(mRef);
+      for (Iterator<ReloadableModuleBase> iterator = myModulesToUpdate.iterator(); iterator.hasNext();) {
+        ReloadableModule module = iterator.next();
+        SModuleReference ref = ((ReloadableModuleBase) module).getModuleReference();
+        if (mRef.equals(ref)) iterator.remove();
+      }
     }
 
     public List<SModuleReference> getModulesToUnload() {
-      return myModulesToUnload;
+      return new ArrayList<SModuleReference>(myModulesToUnload);
     }
 
-    public List<ReloadableModule> getModulesToLoad() {
-      return myModulesToLoad;
+    public List<ReloadableModuleBase> getModulesToLoad() {
+      return new ArrayList<ReloadableModuleBase>(myModulesToLoad);
+    }
+
+    public List<ReloadableModuleBase> getModulesToUpdate() {
+      return new ArrayList<ReloadableModuleBase>(myModulesToUpdate);
     }
   }
 }

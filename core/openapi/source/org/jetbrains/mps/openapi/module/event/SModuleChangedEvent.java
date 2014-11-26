@@ -15,12 +15,20 @@
  */
 package org.jetbrains.mps.openapi.module.event;
 
-public interface SModuleEventVisitor {
-  void visit(SModuleAddedEvent event);
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.event.SModuleEventVisitor;
+import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
+import org.jetbrains.mps.openapi.module.event.SRepositoryModuleEvent;
 
-  void visit(SModuleRemovedEvent event);
+public class SModuleChangedEvent extends SRepositoryModuleEvent {
+  public SModuleChangedEvent(@NotNull SModule module) {
+    super(module);
+  }
 
-  void visit(SModuleRemovingEvent event);
-
-  void visit(SModuleChangedEvent event);
+  @Override
+  public void accept(SModuleEventVisitor visitor) {
+    visitor.visit(this);
+  }
 }

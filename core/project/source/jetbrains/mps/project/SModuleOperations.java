@@ -204,7 +204,7 @@ public class SModuleOperations {
   }
 
   /**
-   * Reads module from file and eventually reloads it
+   * Reads module from file and eventually reloads it (when CLManager triggers refresh)
    */
   public static void reloadFromDisk(AbstractModule module) {
     ModelAccess.assertLegalWrite();
@@ -212,7 +212,7 @@ public class SModuleOperations {
 
     try {
       ModuleDescriptor descriptor = module.loadDescriptor();
-      module.doSetModuleDescriptor(descriptor);
+      module.setModuleDescriptor(descriptor);
     } catch (ModuleReadException e) {
       AbstractModule.handleReadProblem(module, e, false);
     }
