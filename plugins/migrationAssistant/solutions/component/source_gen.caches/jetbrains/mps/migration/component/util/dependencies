@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.migration.component.util.MigrationComponent" file="MigrationComponent.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

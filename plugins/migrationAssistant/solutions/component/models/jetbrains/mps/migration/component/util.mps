@@ -1176,23 +1176,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="5Fumpqe5n4o" role="3clF47">
-        <node concept="3cpWs8" id="1KUoCiqb7pi" role="3cqZAp">
-          <node concept="3cpWsn" id="1KUoCiqb7pj" role="3cpWs9">
-            <property role="TrG5h" value="loader" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="1KUoCiqb7pl" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~ClassLoader" resolve="ClassLoader" />
-            </node>
-            <node concept="2OqwBi" id="5JfAyZ3KIyI" role="33vP2m">
-              <node concept="37vLTw" id="5JfAyZ3KHs2" role="2Oq$k0">
-                <ref role="3cqZAo" node="5Fumpqe5n4y" resolve="module" />
-              </node>
-              <node concept="liA8E" id="5JfAyZ3KLCs" role="2OqNvi">
-                <ref role="37wK5l" to="42ru:~ReloadableModuleBase.getClassLoader():java.lang.ClassLoader" resolve="getClassLoader" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="2vYPywV9S3z" role="3cqZAp">
           <node concept="3cpWsn" id="2vYPywV9S3$" role="3cpWs9">
             <property role="TrG5h" value="name" />
@@ -1227,17 +1210,15 @@
                 <node concept="3uibUv" id="5Fumpqe5ost" role="1tU5fm">
                   <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
                 </node>
-                <node concept="2YIFZM" id="5Fumpqe5oB1" role="33vP2m">
-                  <ref role="37wK5l" to="e2lb:~Class.forName(java.lang.String,boolean,java.lang.ClassLoader):java.lang.Class" resolve="forName" />
-                  <ref role="1Pybhc" to="e2lb:~Class" resolve="Class" />
-                  <node concept="37vLTw" id="2vYPywV9S3B" role="37wK5m">
-                    <ref role="3cqZAo" node="2vYPywV9S3$" resolve="name" />
+                <node concept="2OqwBi" id="5JfAyZ3KIyI" role="33vP2m">
+                  <node concept="37vLTw" id="5JfAyZ3KHs2" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5Fumpqe5n4y" resolve="module" />
                   </node>
-                  <node concept="3clFbT" id="5Fumpqe5CV6" role="37wK5m">
-                    <property role="3clFbU" value="true" />
-                  </node>
-                  <node concept="37vLTw" id="5Fumpqe5CVj" role="37wK5m">
-                    <ref role="3cqZAo" node="1KUoCiqb7pj" resolve="loader" />
+                  <node concept="liA8E" id="5JfAyZ3KLCs" role="2OqNvi">
+                    <ref role="37wK5l" to="42ru:~ReloadableModuleBase.getClass(java.lang.String):java.lang.Class" resolve="getClass" />
+                    <node concept="37vLTw" id="4tUlJaatjtQ" role="37wK5m">
+                      <ref role="3cqZAo" node="2vYPywV9S3$" resolve="name" />
+                    </node>
                   </node>
                 </node>
               </node>
