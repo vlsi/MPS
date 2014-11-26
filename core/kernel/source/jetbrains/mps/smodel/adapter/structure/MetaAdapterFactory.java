@@ -62,6 +62,11 @@ public abstract class MetaAdapterFactory {
   }
 
   @NotNull
+  public static SLanguage getLanguage(long uuidHigh, long uuidLow, String langName) {
+    return getLanguage(MetaIdFactory.langId(new UUID(uuidHigh, uuidLow)), langName);
+  }
+
+  @NotNull
   @Deprecated //todo: 2 hex values instead of UUID
   public static SLanguage getLanguage(UUID lang, String langName) {
     return getLanguage(MetaIdFactory.langId(lang), langName);
