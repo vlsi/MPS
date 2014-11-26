@@ -63,7 +63,7 @@ public abstract class MetaAdapterFactory {
 
   @NotNull
   public static SLanguage getLanguage(long uuidHigh, long uuidLow, String langName) {
-    return getLanguage(MetaIdFactory.langId(new UUID(uuidHigh, uuidLow)), langName);
+    return getLanguage(MetaIdFactory.langId(uuidHigh, uuidLow), langName);
   }
 
   @NotNull
@@ -81,7 +81,7 @@ public abstract class MetaAdapterFactory {
   }
 
   public static SConcept getConcept(long uuidHigh, long uuidLow, long concept, String conceptName) {
-    return getConcept(MetaIdFactory.conceptId(new UUID(uuidHigh, uuidLow), concept), conceptName);
+    return getConcept(MetaIdFactory.conceptId(uuidHigh, uuidLow, concept), conceptName);
   }
 
   @NotNull
@@ -100,7 +100,7 @@ public abstract class MetaAdapterFactory {
 
   @NotNull
   public static SInterfaceConcept getInterfaceConcept(long uuidHigh, long uuidLow, long concept, String conceptName) {
-    return getInterfaceConcept(MetaIdFactory.conceptId(new UUID(uuidHigh, uuidLow), concept), conceptName);
+    return getInterfaceConcept(MetaIdFactory.conceptId(uuidHigh, uuidLow, concept), conceptName);
   }
 
   @NotNull
@@ -119,7 +119,7 @@ public abstract class MetaAdapterFactory {
 
   @NotNull
   public static SProperty getProperty(long uuidHigh, long uuidLow, long concept, long prop, String propName) {
-    return getProperty(MetaIdFactory.propId(new UUID(uuidHigh, uuidLow), concept, prop), propName);
+    return getProperty(MetaIdFactory.propId(uuidHigh, uuidLow, concept, prop), propName);
   }
 
   @NotNull
@@ -138,7 +138,7 @@ public abstract class MetaAdapterFactory {
 
   @NotNull
   public static SReferenceLink getReferenceLink(long uuidHigh, long uuidLow, long concept, long ref, String refName) {
-    return getReferenceLink(MetaIdFactory.refId(new UUID(uuidHigh, uuidLow), concept, ref), refName);
+    return getReferenceLink(MetaIdFactory.refId(uuidHigh, uuidLow, concept, ref), refName);
   }
 
   @NotNull
@@ -157,7 +157,7 @@ public abstract class MetaAdapterFactory {
 
   @NotNull
   public static SContainmentLink getContainmentLink(long uuidHigh, long uuidLow, long concept, long link, String linkName) {
-    return getContainmentLink(MetaIdFactory.linkId(new UUID(uuidHigh, uuidLow), concept, link), linkName);
+    return getContainmentLink(MetaIdFactory.linkId(uuidHigh, uuidLow, concept, link), linkName);
   }
 
   @NotNull
