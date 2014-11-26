@@ -33,13 +33,24 @@ import jetbrains.mps.newTypesystem.context.component.IncrementalTypecheckingComp
 import jetbrains.mps.newTypesystem.context.component.NonTypeSystemComponent;
 import jetbrains.mps.newTypesystem.context.component.TypeSystemComponent;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.util.*;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
+import jetbrains.mps.util.Cancellable;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.WeakSet;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,17 +60,20 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemComponent> {
-
-  private static final String RIGHT_TRANSFORM_HINT = "right_transform_hint";
-  private static final String LEFT_TRANSFORM_HINT = "left_transform_hint";
 
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private List<SModel> myReplacedModels = new ArrayList<SModel>();
 
-  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter(){
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
     public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
       myNonTypeSystemComponent.clear();
@@ -343,6 +357,11 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
       final SNode child = event.getChild();
       final SNode parent = event.getParent();
 
+      if (jetbrains.mps.smodel.SNodeUtil.isSideTransformInfo(child) &&
+          (event.isRemoved() || jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute.equals(child.getContainmentLink()))) {
+        return;
+      }
+
       markInvalid(child);
       markInvalid(parent);
 
@@ -397,9 +416,6 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
     @Override
     public void visitPropertyEvent(SModelPropertyEvent event) {
-      if (LEFT_TRANSFORM_HINT.equals(event.getPropertyName()) || RIGHT_TRANSFORM_HINT.equals(event.getPropertyName())) {
-        return;
-      }
       markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
     }
 

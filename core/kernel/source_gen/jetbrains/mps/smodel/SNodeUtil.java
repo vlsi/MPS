@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SNodeUtil {
 
@@ -218,5 +219,8 @@ public class SNodeUtil {
   }
   public static SNode getLinkTarget(SNode link) {
     return SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
+  }
+  public static boolean isSideTransformInfo(SNode node) {
+    return SNodeOperations.getConcept(node).equals(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 779128492853369165l, "jetbrains.mps.lang.core.structure.SideTransformInfo"));
   }
 }

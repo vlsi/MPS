@@ -108,16 +108,16 @@
     <file name="SideTransformInfoUtil.java">
       <node id="779128492854392536" at="16,116,17,52" concept="2" />
       <node id="779128492854393768" at="20,115,21,53" concept="2" />
-      <node id="779128492854241779" at="24,129,25,249" concept="6" />
-      <node id="779128492854242694" at="25,249,26,181" concept="2" />
-      <node id="779128492854245150" at="26,181,27,187" concept="2" />
-      <node id="779128492854387480" at="27,187,28,201" concept="2" />
-      <node id="779128492854230869" at="28,201,29,146" concept="2" />
-      <node id="779128492854764985" at="32,59,33,332" concept="7" />
-      <node id="779128492854765202" at="36,58,37,331" concept="7" />
-      <node id="779128492854780780" at="40,54,41,146" concept="2" />
-      <node id="779128492854791669" at="44,63,45,317" concept="7" />
-      <node id="779128492854797653" at="48,66,49,320" concept="7" />
+      <node id="779128492854241779" at="24,129,25,248" concept="6" />
+      <node id="779128492854242694" at="25,248,26,182" concept="2" />
+      <node id="779128492854245150" at="26,182,27,188" concept="2" />
+      <node id="779128492854387480" at="27,188,28,202" concept="2" />
+      <node id="779128492854230869" at="28,202,29,144" concept="2" />
+      <node id="779128492854764985" at="32,59,33,331" concept="7" />
+      <node id="779128492854765202" at="36,58,37,330" concept="7" />
+      <node id="779128492854780780" at="40,54,41,144" concept="2" />
+      <node id="779128492854791669" at="44,63,45,316" concept="7" />
+      <node id="779128492854797653" at="48,66,49,319" concept="7" />
       <node id="779128492854810670" at="16,0,19,0" concept="10" trace="addRightTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
       <node id="779128492854812524" at="20,0,23,0" concept="10" trace="addLeftTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
       <node id="779128492854815775" at="32,0,35,0" concept="10" trace="hasRightTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -128,11 +128,11 @@
       <node id="779128492854813020" at="24,0,31,0" concept="10" trace="addTransformInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;Z)V" />
       <scope id="779128492854382946" at="16,116,17,52" />
       <scope id="779128492854383898" at="20,115,21,53" />
-      <scope id="779128492854752792" at="32,59,33,332" />
-      <scope id="779128492854756227" at="36,58,37,331" />
-      <scope id="779128492854778748" at="40,54,41,146" />
-      <scope id="779128492854784030" at="44,63,45,317" />
-      <scope id="779128492854793988" at="48,66,49,320" />
+      <scope id="779128492854752792" at="32,59,33,331" />
+      <scope id="779128492854756227" at="36,58,37,330" />
+      <scope id="779128492854778748" at="40,54,41,144" />
+      <scope id="779128492854784030" at="44,63,45,316" />
+      <scope id="779128492854793988" at="48,66,49,319" />
       <scope id="779128492854810670" at="16,0,19,0">
         <var name="anchorTag" id="779128492854382942" />
         <var name="cellId" id="779128492854382939" />
@@ -158,7 +158,7 @@
       <scope id="779128492854820709" at="48,0,51,0">
         <var name="node" id="779128492854797386" />
       </scope>
-      <scope id="779128492854222089" at="24,129,29,146">
+      <scope id="779128492854222089" at="24,129,29,144">
         <var name="info" id="779128492854241780" />
       </scope>
       <scope id="779128492854813020" at="24,0,31,0">

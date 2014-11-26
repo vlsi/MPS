@@ -2848,12 +2848,24 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/559557797393017727">
     <file name="ModelReferenceExpression_Behavior.java">
-      <node id="559557797393017727" at="8,0,10,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="559557797393017729" at="8,43,8,43" />
-      <scope id="559557797393017727" at="8,0,10,0">
+      <node id="8936365938567736722" at="13,75,14,791" concept="7" />
+      <node id="8936365938567744165" at="16,52,17,44" concept="7" />
+      <node id="559557797393017727" at="11,0,13,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="559557797393017727" at="13,0,16,0" concept="8" trace="call_getFQName_8936365938567719135#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="8936365938567744165" at="16,0,19,0" concept="8" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <scope id="559557797393017729" at="11,43,11,43" />
+      <scope id="8936365938567719137" at="13,75,14,791" />
+      <scope id="8936365938567744165" at="16,52,17,44" />
+      <scope id="559557797393017727" at="11,0,13,0">
         <var name="thisNode" id="559557797393017727" />
       </scope>
-      <unit id="559557797393017727" at="7,0,11,0" name="jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_Behavior" />
+      <scope id="559557797393017727" at="13,0,16,0">
+        <var name="thisNode" id="559557797393017727" />
+      </scope>
+      <scope id="8936365938567744165" at="16,0,19,0">
+        <var name="str" id="8936365938567744165" />
+      </scope>
+      <unit id="559557797393017727" at="10,0,20,0" name="jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/5815925154349132185">
