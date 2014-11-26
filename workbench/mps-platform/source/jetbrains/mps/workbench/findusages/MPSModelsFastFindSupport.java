@@ -20,8 +20,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileBasedIndex;
+import jetbrains.mps.findUsages.NodeUsageFinder;
 import jetbrains.mps.persistence.IdHelper;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.FindUsagesUtil;
@@ -82,7 +82,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
       }
     });
     for (Entry<SModel, Collection<SNode>> candidate : candidates.entrySet()) {
-      FindUsagesUtil.collectUsages(candidate.getKey(), candidate.getValue(), consumer);
+      new NodeUsageFinder(candidate.getValue(), consumer).collectUsages(candidate.getKey());
     }
   }
 

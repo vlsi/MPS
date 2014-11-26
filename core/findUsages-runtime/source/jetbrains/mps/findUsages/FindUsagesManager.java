@@ -17,6 +17,7 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -36,21 +37,25 @@ public class FindUsagesManager extends FindUsagesFacade implements CoreComponent
   }
 
   @Override
-  public Set<SReference> findUsages(SearchScope scope, Set<SNode> nodes, org.jetbrains.mps.openapi.util.ProgressMonitor monitor) {
-    return findUsages(nodes, SearchType.USAGES, scope, (ProgressMonitor) monitor);
+  public Set<SReference> findUsages(SearchScope scope, Set<SNode> nodes, ProgressMonitor monitor) {
+    return findUsages(nodes, new UsagesSearchType(), scope, monitor);
   }
 
   @Override
-  public Set<SNode> findInstances(SearchScope scope, Set<SAbstractConcept> concepts, boolean exact, org.jetbrains.mps.openapi.util.ProgressMonitor monitor) {
-    return findUsages(concepts, exact ? SearchType.EXACT_INSTANCES : SearchType.INSTANCES, scope, (ProgressMonitor) monitor);
+  public Set<SNode> findInstances(SearchScope scope, Set<SAbstractConcept> concepts, boolean exact, ProgressMonitor monitor) {
+    return findUsages(concepts, new InstancesSearchType(exact), scope, monitor);
   }
 
   @Override
-  public Set<SModel> findModelUsages(SearchScope scope, Set<SModelReference> modelReferences, org.jetbrains.mps.openapi.util.ProgressMonitor monitor) {
-    return findUsages(modelReferences, SearchType.MODEL_USAGES, scope, (ProgressMonitor) monitor);
+  public Set<SModel> findModelUsages(SearchScope scope, Set<SModelReference> modelReferences, ProgressMonitor monitor) {
+    return findUsages(modelReferences, new ModelUsagesSearchType(), scope, monitor);
   }
 
+  /**
+   * @deprecated this method shall become private. Clients shall use {@link org.jetbrains.mps.openapi.module.FindUsagesFacade} instead
+   */
   @Deprecated
+  @ToRemove(version = 3.2)
   public <T, R> Set<T> findUsages(Set<R> elements, SearchType<T, R> type, SearchScope scope, @Nullable ProgressMonitor monitor) {
     if (monitor == null) monitor = new EmptyProgressMonitor();
 

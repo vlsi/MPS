@@ -16,6 +16,7 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.persistence.PersistenceRegistry;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.util.CollectConsumer;
@@ -39,7 +40,8 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
 
   @Override
   public Set<SReference> search(Set<SNode> nodes, SearchScope scope, @NotNull ProgressMonitor monitor) {
-    CollectConsumer<SReference> consumer = new CollectConsumer(new HashSet<SReference>());
+    final HashSet<SReference> rv = new HashSet<SReference>();
+    CollectConsumer<SReference> consumer = new CollectConsumer<SReference>(rv);
     Collection<FindUsagesParticipant> participants = PersistenceRegistry.getInstance().getFindUsagesParticipants();
 
     monitor.start("Finding usages...", participants.size() + 4);
@@ -50,6 +52,10 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
         participant.findUsages(current, nodes, consumer, new Consumer<SModel>() {
           @Override
           public void consume(SModel sModel) {
+            if (sModel instanceof EditableSModel && ((EditableSModel) sModel).isChanged()) {
+              // models being edited and modified need attention as there might be changes not yet indexed.
+              return;
+            }
             next.remove(sModel);
           }
         });
@@ -59,16 +65,19 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
 
       ProgressMonitor subMonitor = monitor.subTask(4, SubProgressKind.DEFAULT);
       subMonitor.start("", current.size());
+      NodeUsageFinder nf = new NodeUsageFinder(nodes, consumer);
       for (SModel m : current) {
         subMonitor.step(m.getModelName());
-        FindUsagesUtil.collectUsages(m, nodes, consumer);
-        if (monitor.isCanceled()) break;
+        nf.collectUsages(m);
+        if (monitor.isCanceled()) {
+          break;
+        }
         subMonitor.advance(1);
       }
       subMonitor.done();
     } finally {
       monitor.done();
     }
-    return (Set<SReference>) consumer.getResult();
+    return rv;
   }
 }
