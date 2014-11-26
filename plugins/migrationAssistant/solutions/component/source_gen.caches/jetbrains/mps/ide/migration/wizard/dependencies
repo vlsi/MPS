@@ -105,6 +105,7 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsFinishedStep" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsListRenderer" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationStep" />
   </dependency>
 </dependenciesRoot>

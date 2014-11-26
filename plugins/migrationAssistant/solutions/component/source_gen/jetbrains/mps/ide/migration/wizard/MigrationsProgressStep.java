@@ -16,6 +16,7 @@ import javax.swing.BorderFactory;
 import com.intellij.ui.components.JBScrollPane;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ThreadUtils;
 
 public class MigrationsProgressStep extends MigrationStep {
@@ -66,11 +67,27 @@ public class MigrationsProgressStep extends MigrationStep {
       // just continue 
     }
 
+    addElementToMigrationList("Saving changed models... Please wait.");
+    MPSModuleRepository.getInstance().saveAll();
+
+    addElementToMigrationList("Done!");
+
     mySuccess = mySuccess && !(myManager.isMigrationRequired());
 
     myFinished = true;
 
     PersistenceRegistry.getInstance().enableFastFindUsages();
+  }
+
+  private void addElementToMigrationList(final String step) {
+    final DefaultListModel model = (DefaultListModel) myList.getModel();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        model.addElement(step);
+        myList.ensureIndexIsVisible(model.indexOf(step));
+        myList.repaint();
+      }
+    });
   }
 
   private boolean executeSingleStep(final MigrationManager.MigrationState result) {
@@ -80,14 +97,7 @@ public class MigrationsProgressStep extends MigrationStep {
 
     if (result instanceof MigrationManager.Step) {
       final String step = ((MigrationManager.Step) result).getDescription();
-      final DefaultListModel model = (DefaultListModel) myList.getModel();
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          model.addElement(step);
-          myList.ensureIndexIsVisible(model.indexOf(step));
-          myList.repaint();
-        }
-      });
+      addElementToMigrationList(step);
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
 
