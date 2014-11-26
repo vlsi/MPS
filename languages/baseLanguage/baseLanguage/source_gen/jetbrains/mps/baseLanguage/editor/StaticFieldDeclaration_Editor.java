@@ -15,11 +15,12 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
@@ -88,12 +89,15 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("staticModifier");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, StaticFieldDeclaration_Editor._StyleParameter_QueryFunction_t6d1qn_a0d0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     DeleteStaticInField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_t6d1qn_a0d0()}));
     return editorCell;
+  }
+  private static boolean _StyleParameter_QueryFunction_t6d1qn_a0d0(EditorContext editorContext, SNode node) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")));
   }
   public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0d0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_t6d1qn_a0d0() {
@@ -105,12 +109,15 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("finalModifier");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, StaticFieldDeclaration_Editor._StyleParameter_QueryFunction_t6d1qn_a0e0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     DeleteFinalInStaticField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new StaticFieldDeclaration_Editor.ApplySideTransforms_null_cellMenu_t6d1qn_a0e0()}));
     return editorCell;
+  }
+  private static boolean _StyleParameter_QueryFunction_t6d1qn_a0e0(EditorContext editorContext, SNode node) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface")));
   }
   private static boolean renderingCondition_t6d1qn_a4a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"));
