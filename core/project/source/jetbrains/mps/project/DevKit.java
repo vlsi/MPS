@@ -58,7 +58,7 @@ public class DevKit extends AbstractModule {
     setDevKitDescriptor((DevkitDescriptor) moduleDescriptor);
   }
 
-  public void setDevKitDescriptor(DevkitDescriptor descriptor) {
+  private void setDevKitDescriptor(DevkitDescriptor descriptor) {
     assertCanChange();
 
     myDescriptor = descriptor;

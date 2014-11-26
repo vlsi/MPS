@@ -185,8 +185,8 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   private void revalidateGenerators() {
     MPSModuleRepository repo = MPSModuleRepository.getInstance();
-    for (Generator g : getGenerators()) {
-      repo.unregisterModule(g, this);
+    for (Generator generator : getGenerators()) {
+      repo.unregisterModule(generator, this);
     }
     for (GeneratorDescriptor generatorDescriptor : getModuleDescriptor().getGenerators()) {
       Generator generator = new Generator(this, generatorDescriptor);

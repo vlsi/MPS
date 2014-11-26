@@ -105,8 +105,7 @@ public class DeleteModuleHelper {
       project.save();
     }
 
-    if (deleteFiles)
-      ModuleRepositoryFacade.getInstance().removeModuleForced(module);
+    if (deleteFiles) ModuleRepositoryFacade.getInstance().removeModuleForced(module);
   }
 
   private static void deleteFile(String path) {

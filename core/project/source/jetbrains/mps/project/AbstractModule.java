@@ -524,8 +524,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return Collections.unmodifiableCollection(mySModelRoots);
   }
 
-  // do not use, used only from ModuleRepositoryFacade
-  public void reloadAfterDescriptorChange() {
+  protected void reloadAfterDescriptorChange() {
     updatePackagedDescriptor();
     updateFacets();
     updateModelsSet();
