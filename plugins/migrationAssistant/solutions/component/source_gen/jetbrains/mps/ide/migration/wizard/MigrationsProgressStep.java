@@ -16,6 +16,7 @@ import javax.swing.BorderFactory;
 import com.intellij.ui.components.JBScrollPane;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ThreadUtils;
 
@@ -68,7 +69,11 @@ public class MigrationsProgressStep extends MigrationStep {
     }
 
     addElementToMigrationList("Saving changed models... Please wait.");
-    MPSModuleRepository.getInstance().saveAll();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        MPSModuleRepository.getInstance().saveAll();
+      }
+    });
 
     addElementToMigrationList("Done!");
 
