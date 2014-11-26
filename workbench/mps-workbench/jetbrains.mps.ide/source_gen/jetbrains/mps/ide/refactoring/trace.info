@@ -723,8 +723,8 @@
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/5814231631271803738">
     <file name="RefactoringAccessImpl.java">
-      <node id="5814231631271810184" at="23,31,24,40" concept="2" />
-      <node id="5814231631271810188" at="27,34,28,40" concept="2" />
+      <node id="5814231631271810184" at="23,31,24,42" concept="2" />
+      <node id="5814231631271810188" at="27,34,28,42" concept="2" />
       <node id="5814231631271810196" at="33,36,34,70" concept="8" />
       <node id="4930770434913670970" at="37,87,38,50" concept="8" />
       <node id="4930770434913670979" at="41,85,42,49" concept="8" />
@@ -743,8 +743,8 @@
       <node id="7396266131581082212" at="49,0,54,0" concept="6" trace="showRefactoringView#(Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/ide/platform/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;ZLjava/lang/String;)V" />
       <node id="5814231631271810172" at="30,0,36,0" concept="6" trace="getComponentName#()Ljava/lang/String;" />
       <scope id="5814231631271803743" at="20,66,20,66" />
-      <scope id="5814231631271810167" at="23,31,24,40" />
-      <scope id="5814231631271810171" at="27,34,28,40" />
+      <scope id="5814231631271810167" at="23,31,24,42" />
+      <scope id="5814231631271810171" at="27,34,28,42" />
       <scope id="5814231631271810177" at="33,36,34,70" />
       <scope id="5814231631271810226" at="37,87,38,50" />
       <scope id="5814231631271810216" at="41,85,42,49" />

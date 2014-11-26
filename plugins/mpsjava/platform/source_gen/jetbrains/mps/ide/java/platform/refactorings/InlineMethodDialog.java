@@ -38,7 +38,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactori
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 
 public class InlineMethodDialog extends RefactoringDialog {
   private InlineMethodModel myModel;
@@ -208,7 +208,7 @@ public class InlineMethodDialog extends RefactoringDialog {
             performRefactoring(usages);
           }
         };
-        RefactoringAccess.getInstance().showRefactoringView(ProjectHelper.toIdeaProject(myOperationContext.getProject()), refactoringViewAction, usages, false, "refactoring");
+        RefactoringAccessEx.getInstance().showRefactoringView(ProjectHelper.toIdeaProject(myOperationContext.getProject()), refactoringViewAction, usages, false, "refactoring");
       }
       close(DialogWrapper.OK_EXIT_CODE);
     }

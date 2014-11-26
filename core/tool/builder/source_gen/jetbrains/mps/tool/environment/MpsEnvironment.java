@@ -16,10 +16,10 @@ import jetbrains.mps.tool.builder.util.MapPathMacrosProvider;
 import jetbrains.mps.project.PathMacros;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.builder.FileMPSProject;
@@ -64,7 +64,9 @@ public class MpsEnvironment implements Environment {
   }
 
   private Set<LibraryContributor> initLibs(EnvironmentConfig config) {
-    final Set<LibraryContributor> libContribs = SetSequence.fromSetWithValues(new HashSet<LibraryContributor>(), createLibContributors(config));
+    final Set<LibraryContributor> libContribs = SetSequence.fromSet(new LinkedHashSet<LibraryContributor>());
+    SetSequence.fromSet(libContribs).addSequence(Sequence.fromIterable(createLibContributors(config)));
+    SetSequence.fromSet(libContribs).addElement(EnvironmentUtils.createPluginLibContributor(config));
     for (LibraryContributor libContrib : SetSequence.fromSet(libContribs)) {
       LibraryInitializer.getInstance().addContributor(libContrib);
     }
@@ -82,7 +84,7 @@ public class MpsEnvironment implements Environment {
   }
 
   protected Iterable<LibraryContributor> createLibContributors(EnvironmentConfig config) {
-    return Sequence.<LibraryContributor>singleton(EnvironmentUtils.createLibContributor(config.getLibs()));
+    return Sequence.<LibraryContributor>singleton(EnvironmentUtils.createLibContributor(config));
   }
 
   @Override

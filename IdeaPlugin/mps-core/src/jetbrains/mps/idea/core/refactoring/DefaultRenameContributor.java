@@ -1,7 +1,7 @@
 package jetbrains.mps.idea.core.refactoring;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -35,7 +35,7 @@ public class DefaultRenameContributor implements RenameRefactoringContributor {
       return;
     }
 
-    RefactoringAccess.getInstance().getRefactoringFacade().execute(
+    RefactoringAccessEx.getInstance().getRefactoringFacade().execute(
       RefactoringContext.createRefactoringContext(
         new PsiRenameRefactoringWrapper(),
         Arrays.asList("newName"),

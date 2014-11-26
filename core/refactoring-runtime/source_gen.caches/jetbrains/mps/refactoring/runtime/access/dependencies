@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.refactoring.runtime.access.RefactoringAccess" file="RefactoringAccess.java">
+    <classNode dependClassName="jetbrains.mps.refactoring.runtime.access.RefactoringFacade" />
+  </dependency>
+  <dependency className="jetbrains.mps.refactoring.runtime.access.RefactoringFacade" file="RefactoringFacade.java">
+    <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
+  </dependency>
+</dependenciesRoot>
+

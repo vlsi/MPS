@@ -74,7 +74,7 @@ public class CurrentDifference {
       myBroadcaster.changeRemoved(change);
     }
   }
-  /*package*/ EditableSModel getModelDescriptor() {
+  public EditableSModel getModelDescriptor() {
     return myModelDescriptor;
   }
   /*package*/ ChangesTracking getChangesTracker() {

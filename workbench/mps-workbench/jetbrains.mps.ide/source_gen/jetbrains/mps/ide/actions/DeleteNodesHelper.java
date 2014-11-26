@@ -34,7 +34,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 
@@ -171,7 +171,7 @@ public class DeleteNodesHelper {
 
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
+            RefactoringAccessEx.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
               @Override
               public void performAction(RefactoringViewItem refactoringViewItem) {
                 myRepository.getModelAccess().executeCommand(new Runnable() {
