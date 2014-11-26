@@ -49,6 +49,7 @@ import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
@@ -77,7 +78,7 @@ public class SolutionIdea extends Solution {
     super(descriptor, null);
     myModule = module;
     // TODO: simply set solution descriptor local variable?
-    setSolutionDescriptor(descriptor);
+    setModuleDescriptor(descriptor);
     myConnection = myModule.getProject().getMessageBus().connect();
     myConnection.subscribe(ProjectTopics.PROJECT_ROOTS, new MyModuleRootListener());
     myConnection.subscribe(FacetManager.FACETS_TOPIC, new MyFacetManagerAdapter());
@@ -96,11 +97,12 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
-
+  protected void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    assert moduleDescriptor instanceof SolutionDescriptor;
+    SolutionDescriptor newDescriptor = (SolutionDescriptor) moduleDescriptor;
     newDescriptor.setNamespace(myModule.getName());
 //    addLibs(newDescriptor);
-    super.setSolutionDescriptor(newDescriptor);
+    super.doSetModuleDescriptor(newDescriptor);
 
     try {
       ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).claimSdk(myModule);
