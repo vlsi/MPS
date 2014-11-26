@@ -740,7 +740,7 @@
         <ref role="3uigEE" to="e2lb:~String" resolve="String" />
       </node>
       <node concept="Xl_RD" id="25gV4Ls$QF$" role="33vP2m">
-        <property role="Xl_RC" value="jetbrains.mps.name2id" />
+        <property role="Xl_RC" value="jetbrains.mps.name2id_gen" />
       </node>
       <node concept="3Tm1VV" id="25gV4Ls$QF_" role="1B3o_S" />
     </node>
@@ -924,7 +924,7 @@
               <ref role="3cqZAo" node="25gV4Ls$QFJ" resolve="p" />
             </node>
             <node concept="liA8E" id="3Bnj_vDH6Ip" role="2OqNvi">
-              <ref role="37wK5l" to="vsqj:~Project.getModules():java.lang.Iterable" resolve="getModules" />
+              <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
             </node>
           </node>
         </node>

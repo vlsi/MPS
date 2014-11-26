@@ -81,7 +81,7 @@
       <node id="404829981773975653" at="84,0,89,0" concept="6" trace="visit#(Ljetbrains/mps/persistence/PersistenceVersionAware;)V" />
       <node id="6965294250873363402" at="75,46,81,8" concept="2" />
       <node id="404829981773975645" at="82,0,89,7" concept="2" />
-      <node id="4167886119644722132" at="35,66,46,7" concept="4" />
+      <node id="4167886119644722132" at="35,80,46,7" concept="4" />
       <node id="4167886119644720815" at="34,0,47,5" concept="4" />
       <node id="7390751706570171382" at="55,94,68,7" concept="7" />
       <node id="2400678414103309037" at="28,0,51,0" concept="6" trace="shouldBeExecuted#(Ljetbrains/mps/project/Project;)Z" />
@@ -119,8 +119,8 @@
         <var name="model" id="404829981773975653" />
       </scope>
       <scope id="4167886119644722134" at="36,70,45,9" />
-      <scope id="4167886119644720819" at="35,66,46,7" />
-      <scope id="4167886119644722132" at="35,66,46,7">
+      <scope id="4167886119644720819" at="35,80,46,7" />
+      <scope id="4167886119644722132" at="35,80,46,7">
         <var name="model" id="4167886119644722133" />
       </scope>
       <scope id="4167886119644720815" at="34,0,47,5">
