@@ -404,12 +404,12 @@
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
+      <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
-      <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
         <child id="540871147943773366" name="argument" index="25WWJ7" />
@@ -429,15 +429,21 @@
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
+      <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1201872418428" name="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" flags="nn" index="3lbrtF" />
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
-      <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
+      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
+        <child id="1237731803878" name="copyFrom" index="I$8f6" />
+      </concept>
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
+      <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
+      <concept id="1167380149909" name="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" flags="nn" index="3dhRuq" />
     </language>
   </registry>
   <node concept="312cEu" id="6hYzBiUOtEa">
@@ -9027,15 +9033,53 @@
           </node>
         </node>
         <node concept="3clFbH" id="Bx7NUnuvxx" role="3cqZAp" />
+        <node concept="3cpWs8" id="2qGOLlL7Jnr" role="3cqZAp">
+          <node concept="3cpWsn" id="2qGOLlL7Jnu" role="3cpWs9">
+            <property role="TrG5h" value="toImport" />
+            <property role="3TUv4t" value="false" />
+            <node concept="2hMVRd" id="2qGOLlL7Jnn" role="1tU5fm">
+              <node concept="3uibUv" id="2qGOLlL80SQ" role="2hN53Y">
+                <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="2qGOLlL7Kgo" role="33vP2m">
+              <node concept="2i4dXS" id="2qGOLlL7PZC" role="2ShVmc">
+                <node concept="37vLTw" id="2qGOLlL7Qx7" role="I$8f6">
+                  <ref role="3cqZAo" node="6rvCQQWRzs8" resolve="possibleModels" />
+                </node>
+                <node concept="3uibUv" id="2qGOLlL88i$" role="HW$YZ">
+                  <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2qGOLlL7R_L" role="3cqZAp">
+          <node concept="2OqwBi" id="2qGOLlL7SDY" role="3clFbG">
+            <node concept="37vLTw" id="2qGOLlL7R_J" role="2Oq$k0">
+              <ref role="3cqZAo" node="2qGOLlL7Jnu" resolve="toImport" />
+            </node>
+            <node concept="3dhRuq" id="2qGOLlL7ULx" role="2OqNvi">
+              <node concept="2OqwBi" id="2qGOLlL7XMF" role="25WWJ7">
+                <node concept="2JrnkZ" id="2qGOLlL7WWq" role="2Oq$k0">
+                  <node concept="37vLTw" id="2qGOLlL7WWr" role="2JrQYb">
+                    <ref role="3cqZAo" node="4H5njqSynV3" resolve="model" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="2qGOLlL7YlD" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="1DcWWT" id="2TighhGHd0S" role="3cqZAp">
           <node concept="3clFbS" id="2TighhGHd0T" role="2LFqv$">
             <node concept="3clFbF" id="2TighhGHd0Z" role="3cqZAp">
               <node concept="2OqwBi" id="4WsV6X000Qj" role="3clFbG">
-                <node concept="1eOMI4" id="5WIcYaGhxS6" role="2Oq$k0">
-                  <node concept="2JrnkZ" id="5WIcYaGhxS9" role="1eOMHV">
-                    <node concept="37vLTw" id="2BHiRxeud_R" role="2JrQYb">
-                      <ref role="3cqZAo" node="4H5njqSynV3" resolve="model" />
-                    </node>
+                <node concept="2JrnkZ" id="5WIcYaGhxS9" role="2Oq$k0">
+                  <node concept="37vLTw" id="2BHiRxeud_R" role="2JrQYb">
+                    <ref role="3cqZAo" node="4H5njqSynV3" resolve="model" />
                   </node>
                 </node>
                 <node concept="liA8E" id="4WsV6X000Qn" role="2OqNvi">
@@ -9056,8 +9100,8 @@
               <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
             </node>
           </node>
-          <node concept="37vLTw" id="3GM_nagTw0c" role="1DdaDG">
-            <ref role="3cqZAo" node="6rvCQQWRzs8" resolve="possibleModels" />
+          <node concept="37vLTw" id="2qGOLlL7Zip" role="1DdaDG">
+            <ref role="3cqZAo" node="2qGOLlL7Jnu" resolve="toImport" />
           </node>
         </node>
         <node concept="3clFbH" id="3twv0t6OkOG" role="3cqZAp" />
