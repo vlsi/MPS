@@ -91,7 +91,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
     MultiMap<SModel, SAbstractConcept> candidates = findCandidates(scope, concepts, processedConsumer, new Mapper<SAbstractConcept, String>() {
       @Override
       public String value(SAbstractConcept key) {
-        return IdHelper.getConceptId(key).getConceptId()+"";
+        return IdHelper.getConceptId(key).getIdValue()+"";
       }
     });
     for (Entry<SModel, Collection<SAbstractConcept>> candidate : candidates.entrySet()) {

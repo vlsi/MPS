@@ -58,7 +58,7 @@ public final class IdEncoder {
   }
 
   public String toText(SConceptId conceptId) {
-    return Long.toString(conceptId.getConceptId());
+    return Long.toString(conceptId.getIdValue());
   }
 
   public SConceptId parseConceptId(SLanguageId lang, String text) {

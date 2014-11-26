@@ -80,7 +80,7 @@ class StorageIndexHelper9 {
     if (index == null) {
       return MODEL_SEPARATOR_CHAR + concept.serialize();
     }
-    return index + MODEL_SEPARATOR_CHAR + concept.getConceptId();
+    return index + MODEL_SEPARATOR_CHAR + concept.getIdValue();
   }
 
   public String getPropertyIndex(@NotNull SPropertyId prop) {

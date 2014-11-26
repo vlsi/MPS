@@ -432,8 +432,8 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   private int compareConcepts(SConceptId o1, SConceptId o2) {
-    long c1 = o1.getConceptId();
-    long c2 = o2.getConceptId();
+    long c1 = o1.getIdValue();
+    long c2 = o2.getIdValue();
     if (c1 != c2) return c1 > c2 ? 1 : -1;
     return o1.getLanguageId().getId().compareTo(o2.getLanguageId().getId());
   }
