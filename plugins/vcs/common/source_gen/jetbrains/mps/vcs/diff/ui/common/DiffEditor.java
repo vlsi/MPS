@@ -37,8 +37,8 @@ public class DiffEditor implements EditorMessageOwner {
   private InspectorEditorComponent myInspector;
   private Map<ModelChange, List<ChangeEditorMessage>> myChangeToMessages = MapSequence.fromMap(new HashMap<ModelChange, List<ChangeEditorMessage>>());
   public DiffEditor(SRepository repository, SNode node, String contentTitle, boolean isLeftEditor) {
-    myMainEditorComponent = new DiffEditor.MainEditorComponent(repository, !(isLeftEditor), isLeftEditor);
-    myInspector = new InspectorEditorComponent(repository, !(isLeftEditor), isLeftEditor);
+    myMainEditorComponent = new DiffEditor.MainEditorComponent(repository, true, isLeftEditor);
+    myInspector = new InspectorEditorComponent(repository, isLeftEditor);
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
         ec.setNoVirtualFile(true);

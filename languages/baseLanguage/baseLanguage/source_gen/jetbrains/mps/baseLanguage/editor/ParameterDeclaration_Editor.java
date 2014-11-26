@@ -113,7 +113,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_vsmugd_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
-    editorCell.setCellId("Constant_vsmugd_b0a");
+    editorCell.setCellId("finalModifier");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
