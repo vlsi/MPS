@@ -899,11 +899,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return testsOutputPath.getPath();
   }
 
-  //todo make it clear what is "bundle home" and then remove this method
-  public IFile getBundleHome() {
-    return FileSystem.getInstance().getBundleHome(getDescriptorFile());
-  }
-
   public void validateLanguageVersions() {
     ModuleDescriptor md = getModuleDescriptor();
     Map<SLanguage, Integer> oldLanguageVersions = md.getLanguageVersions();
