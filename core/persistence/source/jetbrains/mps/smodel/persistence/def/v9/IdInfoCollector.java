@@ -481,7 +481,7 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      long l = myProperty.getPropertyId();
+      long l = myProperty.getIdValue();
       return (int) (l ^ (l >>> 32));
     }
 

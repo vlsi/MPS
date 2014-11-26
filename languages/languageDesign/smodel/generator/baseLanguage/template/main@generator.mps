@@ -11472,7 +11472,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="7b4SkXXO2xw" role="2OqNvi">
-                      <ref role="37wK5l" to="a7z3:~SPropertyId.getPropertyId():long" resolve="getPropertyId" />
+                      <ref role="37wK5l" to="a7z3:~SPropertyId.getIdValue():long" resolve="getIdValue" />
                     </node>
                   </node>
                   <node concept="Xl_RD" id="7b4SkXXO1q5" role="3uHU7w">
@@ -12516,7 +12516,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="1TWFJuLBN3_" role="2OqNvi">
-                      <ref role="37wK5l" to="a7z3:~SPropertyId.getPropertyId():long" resolve="getPropertyId" />
+                      <ref role="37wK5l" to="a7z3:~SPropertyId.getIdValue():long" resolve="getIdValue" />
                     </node>
                   </node>
                   <node concept="Xl_RD" id="1TWFJuLBN3A" role="3uHU7w">

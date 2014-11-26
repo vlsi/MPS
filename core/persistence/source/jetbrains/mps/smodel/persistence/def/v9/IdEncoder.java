@@ -66,7 +66,7 @@ public final class IdEncoder {
   }
 
   public String toText(SPropertyId propertyId) {
-    return Long.toString(propertyId.getPropertyId());
+    return Long.toString(propertyId.getIdValue());
   }
   public SPropertyId parsePropertyId(SConceptId concept, String text) {
     return new SPropertyId(concept, Long.parseLong(text));

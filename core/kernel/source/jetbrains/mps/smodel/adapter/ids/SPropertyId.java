@@ -30,7 +30,7 @@ public final class SPropertyId {
     return myConceptId;
   }
 
-  public long getPropertyId() {
+  public long getIdValue() {
     return myPropertyId;
   }
 
