@@ -21,7 +21,19 @@ public class ReSaveModulesMigration implements ProjectMigration {
   @Override
   public boolean shouldBeExecuted(Project p) {
     String value = MigrationPropertiesManager.getInstance().getProperties(p).getProperty(ReSaveModulesMigration.EXECUTED_PROPERTY);
-    return !(EXECUTED_VALUE.equals(value));
+    if (EXECUTED_VALUE.equals(value)) {
+      return false;
+    }
+
+    Iterable<? extends SModule> modulesWithGenerators = p.getModulesWithGenerators();
+    for (AbstractModule module : Sequence.fromIterable(modulesWithGenerators).ofType(AbstractModule.class)) {
+      if (!(module.getModuleDescriptor().hasLanguageVersions())) {
+        return true;
+      }
+    }
+
+    MigrationPropertiesManager.getInstance().getProperties(p).setProperty(EXECUTED_PROPERTY, EXECUTED_VALUE);
+    return false;
   }
   @Override
   public void execute(Project p) {
