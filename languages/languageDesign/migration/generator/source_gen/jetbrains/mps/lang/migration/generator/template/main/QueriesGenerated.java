@@ -86,10 +86,10 @@ public class QueriesGenerated {
     return MigrationScript_Behavior.call_getGeneratedClassName_8648538385393994830(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript")));
   }
   public static Object propertyMacro_GetPropertyValue_1973338949476808883(final PropertyMacroContext _context) {
-    return MetaIdByDeclaration.getLanguageId((Language) SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).getModule()).getId().getMostSignificantBits() + "L";
+    return MetaIdByDeclaration.getLanguageId((Language) SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).getModule()).getIdValue().getMostSignificantBits() + "L";
   }
   public static Object propertyMacro_GetPropertyValue_1973338949476843964(final PropertyMacroContext _context) {
-    return MetaIdByDeclaration.getLanguageId((Language) SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).getModule()).getId().getLeastSignificantBits() + "L";
+    return MetaIdByDeclaration.getLanguageId((Language) SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).getModule()).getIdValue().getLeastSignificantBits() + "L";
   }
   public static Object propertyMacro_GetPropertyValue_1973338949476804519(final PropertyMacroContext _context) {
     return SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).getModule().getModuleName();

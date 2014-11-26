@@ -893,7 +893,7 @@ public class SModel implements SModelData {
       public void run() {
         if (ref instanceof SLanguageAdapterById) {
           //this hack is needed while we have 2 types of language adapters for ConvertModelToBinary ant task to work
-          result[0] = new ModuleReference(ref.getQualifiedName(), ModuleId.regular(((SLanguageAdapterById) ref).getId().getId()));
+          result[0] = new ModuleReference(ref.getQualifiedName(), ModuleId.regular(((SLanguageAdapterById) ref).getId().getIdValue()));
         } else {
           result[0] = (ModuleReference) ref.getSourceModule().getModuleReference();
         }

@@ -63,7 +63,7 @@ class StorageIndexHelper9 {
   }
 
   public void addLanguage(SLanguageId lang){
-    addInternalObject(((Map) myLanguageIndex), myUsedLanguageIndices, lang, lang.getId().hashCode());
+    addInternalObject(((Map) myLanguageIndex), myUsedLanguageIndices, lang, lang.getIdValue().hashCode());
   }
 
   public String getImportIndex(@NotNull SModelReference model) {

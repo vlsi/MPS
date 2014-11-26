@@ -1195,7 +1195,7 @@
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="1HyHl710yLz" role="2OqNvi">
-                                    <ref role="37wK5l" to="a7z3:~SLanguageId.getId():java.util.UUID" resolve="getId" />
+                                    <ref role="37wK5l" to="a7z3:~SLanguageId.getIdValue():java.util.UUID" resolve="getIdValue" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="1HyHl710zK7" role="2OqNvi">
@@ -1247,7 +1247,7 @@
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="1HyHl710DcB" role="2OqNvi">
-                                    <ref role="37wK5l" to="a7z3:~SLanguageId.getId():java.util.UUID" resolve="getId" />
+                                    <ref role="37wK5l" to="a7z3:~SLanguageId.getIdValue():java.util.UUID" resolve="getIdValue" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="1HyHl710DcC" role="2OqNvi">

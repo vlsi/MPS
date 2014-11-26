@@ -435,6 +435,6 @@ public class ModelWriter9 implements IModelWriter {
     long c1 = o1.getIdValue();
     long c2 = o2.getIdValue();
     if (c1 != c2) return c1 > c2 ? 1 : -1;
-    return o1.getLanguageId().getId().compareTo(o2.getLanguageId().getId());
+    return o1.getLanguageId().getIdValue().compareTo(o2.getLanguageId().getIdValue());
   }
 }
