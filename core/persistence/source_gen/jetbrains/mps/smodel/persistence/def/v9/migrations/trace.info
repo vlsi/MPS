@@ -255,10 +255,13 @@
       <node id="5783745319707249620" at="27,34,28,71" concept="7" />
       <node id="5783745319707296700" at="29,95,30,45" concept="2" />
       <node id="5783745319707380756" at="31,5,32,48" concept="2" />
+      <node id="2528524976857790832" at="32,48,33,0" concept="10" />
+      <node id="2528524976857788542" at="33,0,34,109" concept="2" />
+      <node id="2528524976857783673" at="34,109,35,0" concept="10" />
       <node id="5783745319707293049" at="28,71,31,5" concept="4" />
       <node id="5783745319707249533" at="17,0,21,0" concept="6" trace="getDescription#()Ljava/lang/String;" />
       <node id="5783745319707249540" at="21,0,26,0" concept="6" trace="shouldBeExecuted#(Ljetbrains/mps/project/Project;)Z" />
-      <node id="5783745319707249615" at="26,0,34,0" concept="6" trace="execute#(Ljetbrains/mps/project/Project;)V" />
+      <node id="5783745319707249615" at="26,0,37,0" concept="6" trace="execute#(Ljetbrains/mps/project/Project;)V" />
       <scope id="5783745319707249535" at="18,34,19,33" />
       <scope id="5783745319707293053" at="29,95,30,45" />
       <scope id="5783745319707249544" at="22,46,24,43">
@@ -271,13 +274,13 @@
       <scope id="5783745319707249540" at="21,0,26,0">
         <var name="p" id="5783745319707249542" />
       </scope>
-      <scope id="5783745319707249619" at="27,34,32,48">
+      <scope id="5783745319707249619" at="27,34,35,0">
         <var name="modules" id="5783745319707249621" />
       </scope>
-      <scope id="5783745319707249615" at="26,0,34,0">
+      <scope id="5783745319707249615" at="26,0,37,0">
         <var name="p" id="5783745319707249617" />
       </scope>
-      <unit id="5783745319707249522" at="13,0,35,0" name="jetbrains.mps.smodel.persistence.def.v9.migrations.ReSaveModulesMigration" />
+      <unit id="5783745319707249522" at="13,0,38,0" name="jetbrains.mps.smodel.persistence.def.v9.migrations.ReSaveModulesMigration" />
     </file>
   </root>
 </debug-info>

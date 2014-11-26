@@ -30,5 +30,8 @@ public class ReSaveModulesMigration implements ProjectMigration {
       ((AbstractModule) module).setChanged();
     }
     MPSModuleRepository.getInstance().saveAll();
+
+    MigrationPropertiesManager.getInstance().getProperties(p).setProperty(EXECUTED_PROPERTY, EXECUTED_VALUE);
+
   }
 }

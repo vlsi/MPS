@@ -19,6 +19,7 @@
     <import index="d2v5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(MPS.Core/jetbrains.mps.persistence@java_stub)" />
     <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <import index="4xk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide(MPS.IDEA/com.intellij.ide@java_stub)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
@@ -1682,6 +1683,33 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="2cn817rjV_K" role="3cqZAp" />
+        <node concept="3clFbF" id="2cn817rjV1Y" role="3cqZAp">
+          <node concept="2OqwBi" id="2cn817rjV1Z" role="3clFbG">
+            <node concept="2OqwBi" id="2cn817rjV20" role="2Oq$k0">
+              <node concept="2YIFZM" id="2cn817rjV21" role="2Oq$k0">
+                <ref role="37wK5l" to="bco1:~MigrationPropertiesManager.getInstance():jetbrains.mps.migration.global.MigrationPropertiesManager" resolve="getInstance" />
+                <ref role="1Pybhc" to="bco1:~MigrationPropertiesManager" resolve="MigrationPropertiesManager" />
+              </node>
+              <node concept="liA8E" id="2cn817rjV22" role="2OqNvi">
+                <ref role="37wK5l" to="bco1:~MigrationPropertiesManager.getProperties(jetbrains.mps.project.Project):jetbrains.mps.migration.global.MigrationProperties" resolve="getProperties" />
+                <node concept="37vLTw" id="2cn817rjV23" role="37wK5m">
+                  <ref role="3cqZAo" node="513ZrA4uCJh" resolve="p" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="2cn817rjV24" role="2OqNvi">
+              <ref role="37wK5l" to="bco1:~MigrationProperties.setProperty(java.lang.String,java.lang.String):void" resolve="setProperty" />
+              <node concept="37vLTw" id="2cn817rjVLa" role="37wK5m">
+                <ref role="3cqZAo" node="513ZrA4uCHO" resolve="EXECUTED_PROPERTY" />
+              </node>
+              <node concept="37vLTw" id="2cn817rjVRa" role="37wK5m">
+                <ref role="3cqZAo" node="513ZrA4uCHS" resolve="EXECUTED_VALUE" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="2cn817rjTPT" role="3cqZAp" />
       </node>
       <node concept="3Tm1VV" id="513ZrA4uCLP" role="1B3o_S" />
       <node concept="3cqZAl" id="513ZrA4uCLQ" role="3clF45" />
