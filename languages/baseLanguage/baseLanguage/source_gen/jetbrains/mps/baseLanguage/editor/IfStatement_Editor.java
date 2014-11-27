@@ -101,7 +101,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     editorCell.getStyle().putAll(style);
-    UnwrapStatementListContainer.setCellActions(editorCell, node, editorContext);
+    DeleteCondition.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -130,7 +130,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
-    UnwrapStatementListContainer.setCellActions(editorCell, node, editorContext);
+    DeleteCondition.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
