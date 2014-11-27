@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.structure.scripts.RefUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -49,7 +48,7 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
     ModelAccess modelAccess = refactoringContext.getRepository().getModelAccess();
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        concept.value = SNodeOperations.getNodeAncestor(refactoringContext.getSelectedNode(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
+        concept.value = SNodeOperations.getNodeAncestor(refactoringContext.getSelectedNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
       }
     });
     if ((concept.value == null)) {
@@ -68,7 +67,7 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
   }
   public void refactor(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
-    refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getReference().getModelName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")));
+    refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getReference().getModelName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")));
     if ((((SNode) refactoringContext.getParameter("linkToReplace")) != null)) {
       refactoringContext.replaceRefsToNodeWithNode(node, ((SNode) refactoringContext.getParameter("linkToReplace")));
     } else {

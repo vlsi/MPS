@@ -6,11 +6,10 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class TextLine_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3097565121670396746l, -5546031393255049985l), 1731640411964205218l, 1731640411964798937l, "text")));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d668a2L, 0x180805c7b1df77d9L, "text")));
     this.appendNewLine();
   }
 }

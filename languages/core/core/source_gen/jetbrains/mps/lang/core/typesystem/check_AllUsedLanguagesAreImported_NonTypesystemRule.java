@@ -14,7 +14,6 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -37,9 +36,9 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
     // XXX allImported doesn't built a closure of languages extended by those imported, is it what we want here? 
     importedLanguages.addAll(SModelOperations.getAllImportedLanguageIds(SNodeOperations.getModel(root)));
 
-    for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"), true, new SAbstractConcept[]{}))) {
+    for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), true, new SAbstractConcept[]{}))) {
       SConcept concept = node.getConcept();
-      if (concept.equals(MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 779128492853369165l, "jetbrains.mps.lang.core.structure.SideTransformInfo")) && "smodelAttribute".equals(SNodeOperations.getContainingLinkRole(node))) {
+      if (concept.equals(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo")) && "smodelAttribute".equals(SNodeOperations.getContainingLinkRole(node))) {
         continue;
       }
 

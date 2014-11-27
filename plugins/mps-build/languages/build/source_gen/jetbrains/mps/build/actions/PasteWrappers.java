@@ -11,7 +11,6 @@ import jetbrains.mps.datatransfer.PasteWrapperContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class PasteWrappers {
@@ -25,8 +24,8 @@ public class PasteWrappers {
         return "jetbrains.mps.build.structure.BuildLayout_Node";
       }
       public SNode wrap(PasteWrapperContext _context) {
-        SNode cp = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287857081l, "jetbrains.mps.build.structure.BuildLayout_Copy")));
-        SLinkOperations.setTarget(cp, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset"), _context.getSourceNode());
+        SNode cp = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92339b9L, "jetbrains.mps.build.structure.BuildLayout_Copy")));
+        SLinkOperations.setTarget(cp, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L, 0x48d5d03db92339baL, "fileset"), _context.getSourceNode());
         return cp;
       }
     });
@@ -38,8 +37,8 @@ public class PasteWrappers {
         return "jetbrains.mps.build.structure.BuildSource_JavaFiles";
       }
       public SNode wrap(PasteWrapperContext _context) {
-        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1500819558096177282l, "jetbrains.mps.build.structure.BuildSource_JavaFiles")));
-        SLinkOperations.setTarget(nn, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1500819558096177282l, 1500819558096177283l, "resset"), _context.getSourceNode());
+        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x14d3fb6fb8480882L, "jetbrains.mps.build.structure.BuildSource_JavaFiles")));
+        SLinkOperations.setTarget(nn, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x14d3fb6fb8480882L, 0x14d3fb6fb8480883L, "resset"), _context.getSourceNode());
         return nn;
       }
     });
@@ -51,8 +50,8 @@ public class PasteWrappers {
         return "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar";
       }
       public SNode wrap(PasteWrapperContext _context) {
-        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152589376l, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar")));
-        SLinkOperations.setTarget(nn, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152589376l, 3717132724152589377l, "jar"), _context.getSourceNode());
+        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar")));
+        SLinkOperations.setTarget(nn, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L, 0x3395e884b6185c41L, "jar"), _context.getSourceNode());
         return nn;
       }
     });
@@ -64,8 +63,8 @@ public class PasteWrappers {
         return "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP";
       }
       public SNode wrap(PasteWrapperContext _context) {
-        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152913083l, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP")));
-        SLinkOperations.setTarget(nn, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152913083l, 3717132724152913085l, "classpath"), _context.getSourceNode());
+        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP")));
+        SLinkOperations.setTarget(nn, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, 0x3395e884b61d4cbdL, "classpath"), _context.getSourceNode());
         return nn;
       }
     });

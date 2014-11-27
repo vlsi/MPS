@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.classifiers.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -19,7 +18,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescriptor {
   public SuperClassifierExpresson_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(4917733117167750838l, -7710007501170303426l), 1217433449852l));
+    super(MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11b74b0357cL));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -36,7 +35,7 @@ public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescrip
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    boolean inClassifier = SNodeOperations.getNodeAncestorWhereConceptInList(parentNode, new SAbstractConcept[]{MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205752174734l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart")}, true, false) != null;
+    boolean inClassifier = SNodeOperations.getNodeAncestorWhereConceptInList(parentNode, new SAbstractConcept[]{MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6e188eL, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart")}, true, false) != null;
     if (!(inClassifier)) {
       return false;
     }

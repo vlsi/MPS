@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class ConceptMethodDeclaration_Visibility extends AbstractCellMenuComponent {
   public ConceptMethodDeclaration_Visibility() {
@@ -21,7 +20,7 @@ public class ConceptMethodDeclaration_Visibility extends AbstractCellMenuCompone
     public ConceptMethodDeclaration_generic_cellMenu_f3wli8_a0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472833l, "isPrivate"), "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480581L, "isPrivate"), "" + (true));
     }
     public String getMatchingText() {
       return "private";
@@ -31,7 +30,7 @@ public class ConceptMethodDeclaration_Visibility extends AbstractCellMenuCompone
     public ConceptMethodDeclaration_generic_cellMenu_f3wli8_b0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472833l, "isPrivate"), "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480581L, "isPrivate"), "" + (false));
     }
     public String getMatchingText() {
       return "public";

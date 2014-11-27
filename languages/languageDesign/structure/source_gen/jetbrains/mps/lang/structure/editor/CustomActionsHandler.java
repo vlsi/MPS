@@ -8,7 +8,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -18,7 +17,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 public class CustomActionsHandler {
   /*package*/ static boolean canHandleAbstractConceptDeclarationMemberActions(SNode node, EditorContext editorContext) {
     EditorCell nodeCell = editorContext.getEditorComponent().findNodeCell(node);
-    return nodeCell != null && !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(editorContext.getEditorComponent(), nodeCell)) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+    return nodeCell != null && !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(editorContext.getEditorComponent(), nodeCell)) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
 
   /*package*/ static boolean backspaceElementFromCollectionAndSetSelection(SNode node, Iterable<SNode> nodes, EditorContext editorContext) {

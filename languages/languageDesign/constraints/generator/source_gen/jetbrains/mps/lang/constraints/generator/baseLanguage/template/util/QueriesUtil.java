@@ -8,7 +8,6 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesUtil {
@@ -17,17 +16,17 @@ public class QueriesUtil {
   public static SNode get_registerSelf_body(SNode clazz) {
     SNode regiserSelfMethod = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(clazz)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return "registerSelf".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+        return "registerSelf".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
     }).first();
-    return SLinkOperations.getTarget(regiserSelfMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"));
+    return SLinkOperations.getTarget(regiserSelfMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"));
   }
   public static SNode get_unRegisterSelf_body(SNode clazz) {
     SNode unRegiserSelfMethod = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(clazz)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return "unRegisterSelf".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+        return "unRegisterSelf".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
     }).first();
-    return SLinkOperations.getTarget(unRegiserSelfMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"));
+    return SLinkOperations.getTarget(unRegiserSelfMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"));
   }
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.refactoring.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class UpdateModelByDefaultOperation_Constraints extends BaseConstraintsDescriptor {
   public UpdateModelByDefaultOperation_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(4525410110408967646l, -8616490689189267646l), 1197382578687l));
+    super(MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x116c99031ffL));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -32,7 +31,7 @@ public class UpdateModelByDefaultOperation_Constraints extends BaseConstraintsDe
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 1189694434958l, "jetbrains.mps.lang.refactoring.structure.UpdateModelClause"), true, false) != null);
+    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x114ff506e8eL, "jetbrains.mps.lang.refactoring.structure.UpdateModelClause"), true, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "6895093993902310978");
 }

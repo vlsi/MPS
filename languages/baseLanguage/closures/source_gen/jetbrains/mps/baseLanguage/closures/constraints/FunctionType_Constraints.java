@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.closures.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -27,12 +26,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class FunctionType_Constraints extends BaseConstraintsDescriptor {
   public FunctionType_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l));
+    super(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 100821637069096425l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 100821637069096425l), this) {
+    references.put(MetaIdFactory.refId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x16630bea72d45e9L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x16630bea72d45e9L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -43,7 +42,7 @@ public class FunctionType_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode ifc) {
                 return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(ifc)).count() == 1;
               }

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -23,7 +22,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
   public AbstractConceptDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l));
+    super(MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL));
   }
   @Override
   public boolean hasOwnDefaultScopeProvider() {
@@ -45,7 +44,7 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l), this) {
+    properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L), this) {
       @Override
       public boolean hasOwnValidator() {
         return true;

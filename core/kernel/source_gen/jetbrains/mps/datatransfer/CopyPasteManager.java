@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.ConditionalIterable;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -102,15 +101,15 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
       }
       Iterable<SNode> roots = new ConditionalIterable<SNode>(actionsModelDescriptor.getRootNodes(), new Condition<SNode>() {
         public boolean met(SNode node) {
-          return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 5948027493682789918l, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"));
+          return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3383e1eL, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"));
         }
       });
       for (SNode root : roots) {
-        for (SNode preProcessor : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 5948027493682789918l, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers")), MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 5948027493682789918l, 5948027493682790175l, "preProcessor")))) {
-          MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 5948027493682321734l, 5948027493682346893l, "concept")), new AbstractManager.Descriptor<CopyPreProcessor>(language.getModuleName() + "." + LanguageAspect.ACTIONS.getName() + "." + BehaviorReflection.invokeNonVirtual(String.class, preProcessor, "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "call_getClassName_5948027493682347861", new Object[]{}), language, LOG));
+        for (SNode preProcessor : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3383e1eL, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers")), MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3383e1eL, 0x528ba37dd3383f1fL, "preProcessor")))) {
+          MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3311946L, 0x528ba37dd3317b8dL, "concept")), new AbstractManager.Descriptor<CopyPreProcessor>(language.getModuleName() + "." + LanguageAspect.ACTIONS.getName() + "." + BehaviorReflection.invokeNonVirtual(String.class, preProcessor, "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "call_getClassName_5948027493682347861", new Object[]{}), language, LOG));
         }
-        for (SNode postProcessor : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 5948027493682789918l, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers")), MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 5948027493682789918l, 5948027493682790174l, "postProcessor")))) {
-          MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 564335015825199468l, 6026743057587410043l, "concept")), new AbstractManager.Descriptor<PastePostProcessor>(language.getModuleName() + "." + LanguageAspect.ACTIONS.getName() + "." + BehaviorReflection.invokeNonVirtual(String.class, postProcessor, "jetbrains.mps.lang.actions.structure.PastePostProcessor", "call_getClassName_5457641811177522085", new Object[]{}), language, LOG));
+        for (SNode postProcessor : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3383e1eL, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers")), MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3383e1eL, 0x528ba37dd3383f1eL, "postProcessor")))) {
+          MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7d4ebb4f893516cL, 0x53a34ae13c0c947bL, "concept")), new AbstractManager.Descriptor<PastePostProcessor>(language.getModuleName() + "." + LanguageAspect.ACTIONS.getName() + "." + BehaviorReflection.invokeNonVirtual(String.class, postProcessor, "jetbrains.mps.lang.actions.structure.PastePostProcessor", "call_getClassName_5457641811177522085", new Object[]{}), language, LOG));
         }
 
       }

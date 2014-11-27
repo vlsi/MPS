@@ -5,13 +5,12 @@ package jetbrains.mps.lang.project.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MappingConfigExternalRef_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400481l, 2721285250110400483l, "generator")) != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400481l, 2721285250110400482l, "innerRef")), "virtual_isComplete_2721285250110257005", new Object[]{});
+    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595727e1L, 0x25c3f284595727e3L, "generator")) != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595727e1L, 0x25c3f284595727e2L, "innerRef")), "virtual_isComplete_2721285250110257005", new Object[]{});
   }
 }

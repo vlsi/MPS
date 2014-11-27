@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
@@ -53,7 +52,7 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
     final Wrappers._T<String> fqName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        fqName.value = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) element.resolve(MPSModuleRepository.getInstance())), MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498926l, 6592112598314801433l, "plugin")), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 6592112598314498927l, "id"));
+        fqName.value = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) element.resolve(MPSModuleRepository.getInstance())), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, 0x5b7be37b4dee5919L, "plugin")), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, 0x5b7be37b4de9bb6fL, "id"));
       }
     });
     return fqName.value;
@@ -96,7 +95,7 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
                     if (node == null) {
                       return "null plugin";
                     }
-                    return SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498926l, 6592112598314801433l, "plugin")), MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 6592112598314498927l, "id"));
+                    return SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, 0x5b7be37b4dee5919L, "plugin")), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, 0x5b7be37b4de9bb6fL, "id"));
                   }
                 });
                 return ((text == null || text.length() == 0) ? super.calculatePresentableTextInternal() : text);

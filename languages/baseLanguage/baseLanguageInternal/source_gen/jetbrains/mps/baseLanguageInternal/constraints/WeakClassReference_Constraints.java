@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguageInternal.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -22,12 +21,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class WeakClassReference_Constraints extends BaseConstraintsDescriptor {
   public WeakClassReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2363163772790029805l, -6024047381933761144l), 8791205313600585946l));
+    super(MetaIdFactory.conceptId(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x7a00a2a7a8b080daL));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-2363163772790029805l, -6024047381933761144l), 8791205313600585946l, 8791205313600585947l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-2363163772790029805l, -6024047381933761144l), 8791205313600585946l, 8791205313600585947l), this) {
+    references.put(MetaIdFactory.refId(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x7a00a2a7a8b080daL, 0x7a00a2a7a8b080dbL), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x7a00a2a7a8b080daL, 0x7a00a2a7a8b080dbL), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -38,7 +37,7 @@ public class WeakClassReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"));
+            return SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

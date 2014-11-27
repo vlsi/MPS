@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -197,7 +196,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_879g1p_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174483125581l, 1174483133849l, "regexp")), "virtual_isValid_4759120547781297301", new Object[]{}) ? "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174483125581l, 1174483133849l, "regexp")), "virtual_toString_1213877429451", new Object[]{}) + "/" : "<invalid>");
+        return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a6454dL, 0x11174a66599L, "regexp")), "virtual_isValid_4759120547781297301", new Object[]{}) ? "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a6454dL, 0x11174a66599L, "regexp")), "virtual_toString_1213877429451", new Object[]{}) + "/" : "<invalid>");
       }
       public void setText(String s) {
       }

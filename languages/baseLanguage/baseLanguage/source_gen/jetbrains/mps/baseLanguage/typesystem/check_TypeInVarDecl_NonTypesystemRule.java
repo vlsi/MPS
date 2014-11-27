@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -21,7 +20,7 @@ public class check_TypeInVarDecl_NonTypesystemRule extends AbstractNonTypesystem
   public check_TypeInVarDecl_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToCheck), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(nodeToCheck), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")) == nodeToCheck) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToCheck), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")) && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(nodeToCheck), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")) == nodeToCheck) {
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isValueType_4836112446988592019", new Object[]{}))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

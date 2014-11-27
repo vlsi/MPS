@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
@@ -83,7 +82,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_gw6hs4_a2a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, 8706695667516275782l, "customLocation")) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x78d465945dbd7c46L, "customLocation")) != null);
   }
   private EditorCell createConstant_gw6hs4_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use from");

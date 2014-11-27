@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -29,7 +28,7 @@ public class check_ConstructorRecursiveInvocation_NonTypesystemRule extends Abst
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> constructors = new ArrayList<SNode>();
     for (SNode constructor : ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept)) {
-      if (SNodeOperations.isInstanceOf(StatementList_Behavior.call_getFirstStatement_5420652334935371934(SLinkOperations.getTarget(constructor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"))), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1241540912639l, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"))) {
+      if (SNodeOperations.isInstanceOf(StatementList_Behavior.call_getFirstStatement_5420652334935371934(SLinkOperations.getTarget(constructor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x121119ae5ffL, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"))) {
         constructors.add(constructor);
       }
     }

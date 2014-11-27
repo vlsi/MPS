@@ -9,7 +9,6 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import junit.framework.Assert;
 
 @MPSLaunch
@@ -24,11 +23,11 @@ public class CheckVisibility_Test extends BaseTransformationTest {
     public void test_CheckVisibility() throws Exception {
       this.addNodeById("1230053114874");
       this.addNodeById("1230053114900");
-      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053114888"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
+      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053114888"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
       Assert.assertTrue(ref.getProblems().length() > 0);
-      ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053114893"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
+      ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053114893"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
       Assert.assertTrue(ref.getProblems().length() > 0);
-      ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053114898"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
+      ref = new InlineMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053114898"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
       Assert.assertTrue(ref.getProblems().length() == 0);
     }
   }

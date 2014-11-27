@@ -37,35 +37,35 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 3585982959253821850l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x31c3f88088ed999aL) {
       return new ExtractStaticMethod_CallExpression_Constraints();
     }
-    if (id == 3196918548953109193l) {
+    if (id == 0x2c5dbc7b763512c9L) {
       return new ExtractStatementListInnerExpression_Constraints();
     }
-    if (id == 5822086619725599105l) {
+    if (id == 0x50cc34ef144c9181L) {
       return new ExtractStaticInnerClassCreator_Constraints();
     }
-    if (id == 937236280924494202l) {
+    if (id == 0xd01bb6e8b1cd97aL) {
       return new ExtractStaticInnerClassConcept_Constraints();
     }
-    if (id == 1174294166120l) {
+    if (id == 0x1116962fa68L) {
       return new InternalPartialInstanceMethodCall_Constraints();
     }
-    if (id == 99767819676010097l) {
+    if (id == 0x162724dabcdc671L) {
       return new ExtractToConstantRefExpression_Constraints();
     }
-    if (id == 8791205313600585946l) {
+    if (id == 0x7a00a2a7a8b080daL) {
       return new WeakClassReference_Constraints();
     }
-    if (id == 3421461530438559753l) {
+    if (id == 0x2f7b79225e746809L) {
       return new InternalAnonymousClass_Constraints();
     }
-    if (id == 1585405235656310154l) {
+    if (id == 0x16007da97856bd8aL) {
       return new ConstantValue_Constraints();
     }
-    if (id == 3731567766880819155l) {
+    if (id == 0x33c9311d003a97d3L) {
       return new InternalSuperMethodCallOperation_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

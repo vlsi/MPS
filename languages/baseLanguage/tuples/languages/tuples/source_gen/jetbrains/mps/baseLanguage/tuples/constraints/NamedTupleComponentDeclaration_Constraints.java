@@ -4,10 +4,9 @@ package jetbrains.mps.baseLanguage.tuples.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 
 public class NamedTupleComponentDeclaration_Constraints extends BaseConstraintsDescriptor {
   public NamedTupleComponentDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l));
+    super(MetaIdFactory.conceptId(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL));
   }
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.plugin.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class SmartDisposeClosureParameterDeclaration_Constraints extends BaseConstraintsDescriptor {
   public SmartDisposeClosureParameterDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(2952642368903463569l, -5856357300648461647l), 485694842828664424l));
+    super(MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6bd88e2e00aae68L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -32,7 +31,7 @@ public class SmartDisposeClosureParameterDeclaration_Constraints extends BaseCon
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "485694842828666088");
 }

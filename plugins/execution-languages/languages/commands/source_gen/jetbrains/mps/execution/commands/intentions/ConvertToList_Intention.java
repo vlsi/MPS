@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -55,7 +54,7 @@ public class ConvertToList_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 2168104298250244983l, "items"))).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x1e16a75f45341377L, "items"))).isNotEmpty();
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return eq_63cojg_a0a0k(SNodeOperations.getContainingLinkRole(childNode), "items");
@@ -79,13 +78,13 @@ public class ConvertToList_Intention implements IntentionFactory {
       return "Convert Items to Explicit List Creation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      List<SNode> items = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 2168104298250244983l, "items"));
+      List<SNode> items = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x1e16a75f45341377L, "items"));
       ListSequence.fromList(items).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           SNodeOperations.detachNode(it);
         }
       });
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 6868250101935610315l, "list"), _quotation_createNode_mz75hy_a0a2a0(items));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x5f50ed14026999cbL, "list"), _quotation_createNode_mz75hy_a0a2a0(items));
     }
     public IntentionDescriptor getDescriptor() {
       return ConvertToList_Intention.this;
@@ -104,10 +103,10 @@ public class ConvertToList_Intention implements IntentionFactory {
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
-        quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435808l, "initValue"), HUtil.copyIfNecessary(child));
+        quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24ea0L, "initValue"), HUtil.copyIfNecessary(child));
       }
     }
-    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator"), quotedNode_3);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator"), quotedNode_3);
     return quotedNode_2;
   }
 }

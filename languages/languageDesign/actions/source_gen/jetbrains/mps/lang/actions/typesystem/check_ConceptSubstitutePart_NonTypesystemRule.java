@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -22,9 +21,9 @@ public class check_ConceptSubstitutePart_NonTypesystemRule extends AbstractNonTy
   public check_ConceptSubstitutePart_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode builder = SNodeOperations.getNodeAncestor(nodeToCheck, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"), false, false);
-    SNode substituteConcept = SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1112058088712l, "applicableConcept"));
-    SNode conceptToAdd = SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1180134965967l, 1180135092669l, "concept"));
+    SNode builder = SNodeOperations.getNodeAncestor(nodeToCheck, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"), false, false);
+    SNode substituteConcept = SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x102ebd3cd08L, "applicableConcept"));
+    SNode conceptToAdd = SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112c58682cfL, 0x112c58871bdL, "concept"));
     if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(conceptToAdd), SNodeOperations.asSConcept(substituteConcept)))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

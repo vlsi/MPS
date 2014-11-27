@@ -4,10 +4,9 @@ package jetbrains.mps.baseLanguage.collections.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 
 public class IListOperation_Constraints extends BaseConstraintsDescriptor {
   public IListOperation_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-8968771020793164004l, -7182180101671965361l), 2141797557973018607l));
+    super(MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1db93187ffc7e7efL));
   }
 }

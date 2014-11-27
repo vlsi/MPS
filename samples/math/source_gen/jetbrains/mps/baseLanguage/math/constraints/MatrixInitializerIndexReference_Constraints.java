@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.math.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -28,12 +27,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class MatrixInitializerIndexReference_Constraints extends BaseConstraintsDescriptor {
   public MatrixInitializerIndexReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(3676340747305173022l, -6911132873973321185l), 6219660258344759890l));
+    super(MetaIdFactory.conceptId(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(3676340747305173022l, -6911132873973321185l), 6219660258344759890l, 6219660258344759925l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(3676340747305173022l, -6911132873973321185l), 6219660258344759890l, 6219660258344759925l), this) {
+    references.put(MetaIdFactory.refId(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, 0x5650ac0d4240f275L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, 0x5650ac0d4240f275L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -44,7 +43,7 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode n = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(3676340747305173022l, -6911132873973321185l), 6219660258345570625l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), true, false);
+            SNode n = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getInterfaceConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d5141L, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), true, false);
             List<SNode> indices = new ArrayList<SNode>();
             while (n != null) {
               {
@@ -58,8 +57,8 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
                     }
                   }
                   if (matches_5upoaw_a0a2a0a) {
-                    ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 6219660258344738888l, 6219660258344759900l, "colIndex")));
-                    ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 6219660258344738888l, 6219660258344759899l, "rowIndex")));
+                    ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, 0x5650ac0d4240f25cL, "colIndex")));
+                    ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, 0x5650ac0d4240f25bL, "rowIndex")));
                   } else {
                     boolean matches_5upoaw_b0a2a0a = false;
                     {
@@ -69,12 +68,12 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
                       }
                     }
                     if (matches_5upoaw_b0a2a0a) {
-                      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 6219660258345553845l, 6219660258345553847l, "rowIndex")));
+                      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, 0x5650ac0d424d0fb7L, "rowIndex")));
                     }
                   }
                 }
               }
-              n = SNodeOperations.getNodeAncestor(n, MetaAdapterFactory.getInterfaceConcept(new UUID(3676340747305173022l, -6911132873973321185l), 6219660258345570625l, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), false, false);
+              n = SNodeOperations.getNodeAncestor(n, MetaAdapterFactory.getInterfaceConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d5141L, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), false, false);
             }
             return indices;
           }

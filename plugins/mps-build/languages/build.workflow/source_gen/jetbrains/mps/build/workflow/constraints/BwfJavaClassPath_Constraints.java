@@ -4,7 +4,6 @@ package jetbrains.mps.build.workflow.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
@@ -16,7 +15,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BwfJavaClassPath_Constraints extends BaseConstraintsDescriptor {
   public BwfJavaClassPath_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934206976119l));
+    super(MetaIdFactory.conceptId(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede077L));
   }
   @Override
   public boolean hasOwnCanBeParentMethod() {
@@ -33,7 +32,7 @@ public class BwfJavaClassPath_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    return SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, "jetbrains.mps.core.xml.structure.XmlElement")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 6647099934207069215l, "jetbrains.mps.build.workflow.structure.BwfPathReference")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049748l, "jetbrains.mps.lang.core.structure.NodeAttribute"));
+    return SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c1fL, "jetbrains.mps.build.workflow.structure.BwfPathReference")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute"));
   }
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "7926701909975915318");
 }

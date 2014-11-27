@@ -6,14 +6,13 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptIMainClass = new ConceptDescriptorBuilder("jetbrains.mps.execution.util.structure.IMainClass", MetaIdFactory.conceptId(new UUID(5525638636287967733L, -8459132261929236328L), 4666195181811081429L)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptIMainClass = new ConceptDescriptorBuilder("jetbrains.mps.execution.util.structure.IMainClass", MetaIdFactory.conceptId(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L)).interface_().create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

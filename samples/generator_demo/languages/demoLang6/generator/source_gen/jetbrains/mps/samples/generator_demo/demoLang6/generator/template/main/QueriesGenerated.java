@@ -6,15 +6,14 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_3978102045101880178(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-9008477858049602728l, -6814456189104365393l), 3978102045101855363l, 3978102045101855475l, "text"));
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x82fb751df7fb4b58L, 0xa16e303356f8e0afL, 0x37350ebbae8d1283L, 0x37350ebbae8d12f3L, "text"));
   }
   public static Object propertyMacro_GetPropertyValue_3978102045101880673(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-9008477858049602728l, -6814456189104365393l), 3978102045101856876l, 3978102045101856886l, "text"));
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x82fb751df7fb4b58L, 0xa16e303356f8e0afL, 0x37350ebbae8d186cL, 0x37350ebbae8d1876L, "text"));
   }
 }

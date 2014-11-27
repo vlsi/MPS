@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SReference;
@@ -82,7 +81,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c8959035c/1197207280624");
-      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1197207280707(new PropertyMacroContext(context, "FinderClass", propertyMacro_i5yf3w_c0a0c0b0b0d))));
+      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1197207280707(new PropertyMacroContext(context, "FinderClass", propertyMacro_i5yf3w_c0a0c0b0b0d))));
       {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
         try {
@@ -98,7 +97,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
         final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
         try {
           environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c8959035c/3050731179906749556");
-          tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)"), PersistenceFacade.getInstance().createNodeId("~GeneratedFinder")));
+          tnode3.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)"), PersistenceFacade.getInstance().createNodeId("~GeneratedFinder")));
         } finally {
         }
         if (tnode3 != null) {
@@ -110,18 +109,18 @@ public class TemplateFinderClass implements TemplateDeclaration {
         final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
         try {
           environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959035c/1200410448807");
-          SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "LOG");
+          SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "LOG");
           {
             final SNode tnode5 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
             try {
               environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c8959035c/817124385502523102");
-              tnode5.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode5, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)"), PersistenceFacade.getInstance().createNodeId("~LogManager.getLogger(java.lang.String):org.apache.log4j.Logger")));
-              tnode5.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode5, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)"), PersistenceFacade.getInstance().createNodeId("~LogManager")));
+              tnode5.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode5, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)"), PersistenceFacade.getInstance().createNodeId("~LogManager.getLogger(java.lang.String):org.apache.log4j.Logger")));
+              tnode5.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), tnode5, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)"), PersistenceFacade.getInstance().createNodeId("~LogManager")));
               {
                 final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                 try {
                   environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c8959035c/817124385502523103");
-                  SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_817124385502523105(new PropertyMacroContext(context, "", propertyMacro_i5yf3w_c0a0c0b0b0d0b0c0b0e0b0d))));
+                  SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_817124385502523105(new PropertyMacroContext(context, "", propertyMacro_i5yf3w_c0a0c0b0b0d0b0c0b0e0b0d))));
                 } finally {
                 }
                 if (tnode6 != null) {
@@ -151,7 +150,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
             final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
             try {
               environment.nodeCopied(context, tnode8, "tpl/r:00000000-0000-4000-0000-011c8959035c/817124385502523099");
-              tnode8.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode8, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Logger")));
+              tnode8.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), tnode8, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Logger")));
             } finally {
             }
             if (tnode8 != null) {
@@ -179,12 +178,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
           final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
           try {
             environment.nodeCopied(context, tnode12, "tpl/r:00000000-0000-4000-0000-011c8959035c/1216396930100");
-            SNodeAccessUtil.setProperty(tnode12, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "isVisible");
+            SNodeAccessUtil.setProperty(tnode12, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "isVisible");
             {
               final SNode tnode13 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
               try {
                 environment.nodeCopied(context, tnode13, "tpl/r:00000000-0000-4000-0000-011c8959035c/1216396947628");
-                SNodeAccessUtil.setProperty(tnode13, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "node");
+                SNodeAccessUtil.setProperty(tnode13, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "node");
                 {
                   final SNode tnode14 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeType");
                   try {
@@ -207,12 +206,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode15 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
               try {
                 environment.nodeCopied(context, tnode15, "tpl/r:00000000-0000-4000-0000-011c8959035c/1216396947630");
-                SNodeAccessUtil.setProperty(tnode15, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "scope");
+                SNodeAccessUtil.setProperty(tnode15, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "scope");
                 {
                   final SNode tnode16 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                   try {
                     environment.nodeCopied(context, tnode16, "tpl/r:00000000-0000-4000-0000-011c8959035c/2847473346154003974");
-                    tnode16.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode16, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SearchScope")));
+                    tnode16.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), tnode16, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SearchScope")));
                   } finally {
                   }
                   if (tnode16 != null) {
@@ -273,10 +272,10 @@ public class TemplateFinderClass implements TemplateDeclaration {
           final SNode tnode23 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
           try {
             environment.nodeCopied(context, tnode23, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828537985148");
-            SNodeAccessUtil.setProperty(tnode23, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "false");
-            SNodeAccessUtil.setProperty(tnode23, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract"), "false");
-            SNodeAccessUtil.setProperty(tnode23, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "isVisible");
-            SNodeAccessUtil.setProperty(tnode23, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1181808852946l, "isFinal"), "false");
+            SNodeAccessUtil.setProperty(tnode23, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated"), "false");
+            SNodeAccessUtil.setProperty(tnode23, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), "false");
+            SNodeAccessUtil.setProperty(tnode23, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "isVisible");
+            SNodeAccessUtil.setProperty(tnode23, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"), "false");
             {
               final SNode tnode24 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
               try {
@@ -303,12 +302,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode26 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
               try {
                 environment.nodeCopied(context, tnode26, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828537985152");
-                SNodeAccessUtil.setProperty(tnode26, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "node");
+                SNodeAccessUtil.setProperty(tnode26, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "node");
                 {
                   final SNode tnode27 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                   try {
                     environment.nodeCopied(context, tnode27, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828538075417");
-                    tnode27.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode27, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode")));
+                    tnode27.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), tnode27, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode")));
                   } finally {
                   }
                   if (tnode27 != null) {
@@ -356,7 +355,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                               final SNode tnode33 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassCreator");
                               try {
                                 environment.nodeCopied(context, tnode33, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828538550626");
-                                tnode33.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode33, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model.scopes(MPS.Core/jetbrains.mps.ide.findusages.model.scopes@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ModelsScope.<init>(org.jetbrains.mps.openapi.model.SModel...)")));
+                                tnode33.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode33, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model.scopes(MPS.Core/jetbrains.mps.ide.findusages.model.scopes@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ModelsScope.<init>(org.jetbrains.mps.openapi.model.SModel...)")));
                                 {
                                   final SNode tnode34 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.DotExpression");
                                   try {
@@ -365,7 +364,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                                       final SNode tnode35 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                                       try {
                                         environment.nodeCopied(context, tnode35, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828538472175");
-                                        tnode35.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode35, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode.getModel():org.jetbrains.mps.openapi.model.SModel")));
+                                        tnode35.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode35, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode.getModel():org.jetbrains.mps.openapi.model.SModel")));
                                       } finally {
                                       }
                                       if (tnode35 != null) {
@@ -431,7 +430,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode37 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode37, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828537985155");
-                tnode37.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), tnode37, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode37.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), tnode37, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode37 != null) {
@@ -454,10 +453,10 @@ public class TemplateFinderClass implements TemplateDeclaration {
           final SNode tnode40 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
           try {
             environment.nodeCopied(context, tnode40, "tpl/r:00000000-0000-4000-0000-011c8959035c/100784871543498839");
-            SNodeAccessUtil.setProperty(tnode40, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "false");
-            SNodeAccessUtil.setProperty(tnode40, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract"), "false");
-            SNodeAccessUtil.setProperty(tnode40, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "isUsedByDefault");
-            SNodeAccessUtil.setProperty(tnode40, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1181808852946l, "isFinal"), "false");
+            SNodeAccessUtil.setProperty(tnode40, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated"), "false");
+            SNodeAccessUtil.setProperty(tnode40, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), "false");
+            SNodeAccessUtil.setProperty(tnode40, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "isUsedByDefault");
+            SNodeAccessUtil.setProperty(tnode40, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"), "false");
             {
               final SNode tnode41 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
               try {
@@ -493,7 +492,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode45 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode45, "tpl/r:00000000-0000-4000-0000-011c8959035c/100784871543498844");
-                tnode45.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), tnode45, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode45.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), tnode45, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode45 != null) {
@@ -505,7 +504,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode46 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
               try {
                 environment.nodeCopied(context, tnode46, "tpl/r:00000000-0000-4000-0000-011c8959035c/7785202691163794314");
-                SNodeAccessUtil.setProperty(tnode46, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "node");
+                SNodeAccessUtil.setProperty(tnode46, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "node");
                 {
                   final SNode tnode47 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeType");
                   try {
@@ -537,12 +536,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
         final SNode tnode49 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         try {
           environment.nodeCopied(context, tnode49, "tpl/r:00000000-0000-4000-0000-011c8959035c/1202839664529");
-          SNodeAccessUtil.setProperty(tnode49, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "getDescription");
+          SNodeAccessUtil.setProperty(tnode49, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "getDescription");
           {
             final SNode tnode50 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
             try {
               environment.nodeCopied(context, tnode50, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293512");
-              tnode50.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), tnode50, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+              tnode50.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), tnode50, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
             } finally {
             }
             if (tnode50 != null) {
@@ -584,7 +583,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                     final SNode tnode55 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                     try {
                       environment.nodeCopied(context, tnode55, "tpl/r:00000000-0000-4000-0000-011c8959035c/1202839664534");
-                      SNodeAccessUtil.setProperty(tnode55, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202839664536(new PropertyMacroContext(context, "description", propertyMacro_i5yf3w_c0a0c0b0b0b0b0b0b0f0b0j0b0d))));
+                      SNodeAccessUtil.setProperty(tnode55, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202839664536(new PropertyMacroContext(context, "description", propertyMacro_i5yf3w_c0a0c0b0b0b0b0b0b0f0b0j0b0d))));
                     } finally {
                     }
                     if (tnode55 != null) {
@@ -619,12 +618,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
           final SNode tnode57 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
           try {
             environment.nodeCopied(context, tnode57, "tpl/r:00000000-0000-4000-0000-011c8959035c/1202839683085");
-            SNodeAccessUtil.setProperty(tnode57, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "getLongDescription");
+            SNodeAccessUtil.setProperty(tnode57, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "getLongDescription");
             {
               final SNode tnode58 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode58, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293509");
-                tnode58.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), tnode58, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode58.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), tnode58, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode58 != null) {
@@ -666,7 +665,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                       final SNode tnode63 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                       try {
                         environment.nodeCopied(context, tnode63, "tpl/r:00000000-0000-4000-0000-011c8959035c/1202839702418");
-                        SNodeAccessUtil.setProperty(tnode63, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202839710232(new PropertyMacroContext(context, "long description", propertyMacro_i5yf3w_c0a0c0b0b0b0b0b0b0f0b0b0k0b0d))));
+                        SNodeAccessUtil.setProperty(tnode63, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202839710232(new PropertyMacroContext(context, "long description", propertyMacro_i5yf3w_c0a0c0b0b0b0b0b0b0f0b0b0k0b0d))));
                       } finally {
                       }
                       if (tnode63 != null) {
@@ -701,12 +700,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
         final SNode tnode65 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         try {
           environment.nodeCopied(context, tnode65, "tpl/r:00000000-0000-4000-0000-011c8959035c/1197207280625");
-          SNodeAccessUtil.setProperty(tnode65, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "getConcept");
+          SNodeAccessUtil.setProperty(tnode65, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "getConcept");
           {
             final SNode tnode66 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
             try {
               environment.nodeCopied(context, tnode66, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293511");
-              tnode66.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), tnode66, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+              tnode66.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), tnode66, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
             } finally {
             }
             if (tnode66 != null) {
@@ -748,7 +747,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                     final SNode tnode71 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                     try {
                       environment.nodeCopied(context, tnode71, "tpl/r:00000000-0000-4000-0000-011c8959035c/1197207280630");
-                      SNodeAccessUtil.setProperty(tnode71, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1197207280632(new PropertyMacroContext(context, "conceptFqName", propertyMacro_i5yf3w_c0a0c0b0b0b0b0b0b0f0b0l0b0d))));
+                      SNodeAccessUtil.setProperty(tnode71, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1197207280632(new PropertyMacroContext(context, "conceptFqName", propertyMacro_i5yf3w_c0a0c0b0b0b0b0b0b0f0b0l0b0d))));
                     } finally {
                     }
                     if (tnode71 != null) {
@@ -783,12 +782,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
           final SNode tnode73 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
           try {
             environment.nodeCopied(context, tnode73, "tpl/r:00000000-0000-4000-0000-011c8959035c/1197207280670");
-            SNodeAccessUtil.setProperty(tnode73, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "isApplicable");
+            SNodeAccessUtil.setProperty(tnode73, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "isApplicable");
             {
               final SNode tnode74 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode74, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552230284");
-                tnode74.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), tnode74, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode74.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), tnode74, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode74 != null) {
@@ -822,7 +821,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode77 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
               try {
                 environment.nodeCopied(context, tnode77, "tpl/r:00000000-0000-4000-0000-011c8959035c/1197384774855");
-                SNodeAccessUtil.setProperty(tnode77, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "node");
+                SNodeAccessUtil.setProperty(tnode77, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "node");
                 {
                   final SNode tnode78 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeType");
                   try {
@@ -863,12 +862,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
         final SNode tnode82 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         try {
           environment.nodeCopied(context, tnode82, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533661663");
-          SNodeAccessUtil.setProperty(tnode82, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "doFind");
+          SNodeAccessUtil.setProperty(tnode82, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "doFind");
           {
             final SNode tnode83 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
             try {
               environment.nodeCopied(context, tnode83, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552213287");
-              tnode83.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), tnode83, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+              tnode83.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), tnode83, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
             } finally {
             }
             if (tnode83 != null) {
@@ -891,7 +890,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
             final SNode tnode85 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
             try {
               environment.nodeCopied(context, tnode85, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533661665");
-              SNodeAccessUtil.setProperty(tnode85, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "node");
+              SNodeAccessUtil.setProperty(tnode85, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "node");
               {
                 final SNode tnode86 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeType");
                 try {
@@ -914,12 +913,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
             final SNode tnode87 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
             try {
               environment.nodeCopied(context, tnode87, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533661667");
-              SNodeAccessUtil.setProperty(tnode87, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "scope");
+              SNodeAccessUtil.setProperty(tnode87, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "scope");
               {
                 final SNode tnode88 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                 try {
                   environment.nodeCopied(context, tnode88, "tpl/r:00000000-0000-4000-0000-011c8959035c/2847473346155520208");
-                  tnode88.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode88, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SearchScope")));
+                  tnode88.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), tnode88, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SearchScope")));
                 } finally {
                 }
                 if (tnode88 != null) {
@@ -938,7 +937,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
             final SNode tnode89 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
             try {
               environment.nodeCopied(context, tnode89, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533661669");
-              SNodeAccessUtil.setProperty(tnode89, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "_results");
+              SNodeAccessUtil.setProperty(tnode89, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "_results");
               {
                 final SNode tnode90 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeListType");
                 try {
@@ -961,12 +960,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
             final SNode tnode91 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
             try {
               environment.nodeCopied(context, tnode91, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142236666");
-              SNodeAccessUtil.setProperty(tnode91, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "monitor");
+              SNodeAccessUtil.setProperty(tnode91, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "monitor");
               {
                 final SNode tnode92 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                 try {
                   environment.nodeCopied(context, tnode92, "tpl/r:00000000-0000-4000-0000-011c8959035c/5140158946217876019");
-                  tnode92.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode92, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor")));
+                  tnode92.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), tnode92, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor")));
                 } finally {
                 }
                 if (tnode92 != null) {
@@ -1022,7 +1021,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                           final SNode tnode99 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                           try {
                             environment.nodeCopied(context, tnode99, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689530055");
-                            tnode99.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode99, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.start(java.lang.String,int):void")));
+                            tnode99.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode99, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.start(java.lang.String,int):void")));
                             {
                               final SNode tnode100 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                               try {
@@ -1039,7 +1038,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                               final SNode tnode101 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                               try {
                                 environment.nodeCopied(context, tnode101, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689530073");
-                                SNodeAccessUtil.setProperty(tnode101, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7810572934689530075(new PropertyMacroContext(context, "1", propertyMacro_i5yf3w_c0a0c0b0b0d0b0c0b0b0b0b0b0b0j0b0n0b0d))));
+                                SNodeAccessUtil.setProperty(tnode101, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7810572934689530075(new PropertyMacroContext(context, "1", propertyMacro_i5yf3w_c0a0c0b0b0d0b0c0b0b0b0b0b0b0j0b0n0b0d))));
                               } finally {
                               }
                               if (tnode101 != null) {
@@ -1102,7 +1101,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                                 final SNode tnode108 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                                 try {
                                   environment.nodeCopied(context, tnode108, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689530064");
-                                  tnode108.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode108, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.done():void")));
+                                  tnode108.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode108, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.done():void")));
                                 } finally {
                                 }
                                 if (tnode108 != null) {
@@ -1167,12 +1166,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
           final SNode tnode112 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
           try {
             environment.nodeCopied(context, tnode112, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206462601175");
-            SNodeAccessUtil.setProperty(tnode112, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "getSearchedNodes");
+            SNodeAccessUtil.setProperty(tnode112, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "getSearchedNodes");
             {
               final SNode tnode113 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode113, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293510");
-                tnode113.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), tnode113, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode113.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), tnode113, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode113 != null) {
@@ -1195,7 +1194,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode115 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
               try {
                 environment.nodeCopied(context, tnode115, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206462872130");
-                SNodeAccessUtil.setProperty(tnode115, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "node");
+                SNodeAccessUtil.setProperty(tnode115, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "node");
                 {
                   final SNode tnode116 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeType");
                   try {
@@ -1218,12 +1217,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode117 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
               try {
                 environment.nodeCopied(context, tnode117, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206462874882");
-                SNodeAccessUtil.setProperty(tnode117, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "scope");
+                SNodeAccessUtil.setProperty(tnode117, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "scope");
                 {
                   final SNode tnode118 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                   try {
                     environment.nodeCopied(context, tnode118, "tpl/r:00000000-0000-4000-0000-011c8959035c/2847473346154007321");
-                    tnode118.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode118, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SearchScope")));
+                    tnode118.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), tnode118, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SearchScope")));
                   } finally {
                   }
                   if (tnode118 != null) {
@@ -1242,7 +1241,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode119 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
               try {
                 environment.nodeCopied(context, tnode119, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533680621");
-                SNodeAccessUtil.setProperty(tnode119, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "_results");
+                SNodeAccessUtil.setProperty(tnode119, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "_results");
                 {
                   final SNode tnode120 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeListType");
                   try {
@@ -1296,12 +1295,12 @@ public class TemplateFinderClass implements TemplateDeclaration {
           final SNode tnode126 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
           try {
             environment.nodeCopied(context, tnode126, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206462852592");
-            SNodeAccessUtil.setProperty(tnode126, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "getNodeCategory");
+            SNodeAccessUtil.setProperty(tnode126, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "getNodeCategory");
             {
               final SNode tnode127 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode127, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293508");
-                tnode127.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), tnode127, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode127.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), tnode127, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode127 != null) {
@@ -1344,7 +1343,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode132 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
               try {
                 environment.nodeCopied(context, tnode132, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206462864815");
-                SNodeAccessUtil.setProperty(tnode132, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "node");
+                SNodeAccessUtil.setProperty(tnode132, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "node");
                 {
                   final SNode tnode133 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeType");
                   try {

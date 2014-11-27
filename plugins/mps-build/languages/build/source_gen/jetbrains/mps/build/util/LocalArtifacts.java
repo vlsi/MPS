@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LocalArtifacts extends VisibleArtifacts {
@@ -14,7 +13,7 @@ public class LocalArtifacts extends VisibleArtifacts {
     super(project, genContext);
   }
   public void collectOutputArtifacts() {
-    collectInProject(SLinkOperations.getTarget(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout")), project);
+    collectInProject(SLinkOperations.getTarget(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), project);
   }
   @Override
   public SNode findArtifact(Object id) {

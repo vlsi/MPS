@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -23,7 +22,7 @@ public class check_Slot_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
   public check_Slot_NonTypesystemRule() {
   }
   public void applyRule(final SNode slot, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SPropertyOperations.getInteger(slot, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")) == -1) {
+    if (SPropertyOperations.getInteger(slot, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start")) == -1) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(slot, "Not a valid value", "r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)", "2978080762093971534", null, errorTarget);
@@ -34,9 +33,9 @@ public class check_Slot_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
       }
       return;
     }
-    SNode prev = SNodeOperations.cast(SNodeOperations.getPrevSibling(slot), MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, "jetbrains.mps.samples.heating.structure.Slot"));
+    SNode prev = SNodeOperations.cast(SNodeOperations.getPrevSibling(slot), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, "jetbrains.mps.samples.heating.structure.Slot"));
     if ((prev != null)) {
-      if (!(SPropertyOperations.getInteger(prev, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")) <= SPropertyOperations.getInteger(slot, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")))) {
+      if (!(SPropertyOperations.getInteger(prev, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start")) <= SPropertyOperations.getInteger(slot, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start")))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(slot, "The event should be scheduled after the one above it", "r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)", "5063359128233240887", null, errorTarget);
         {
@@ -44,7 +43,7 @@ public class check_Slot_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
-      if (SPropertyOperations.getInteger(SLinkOperations.getTarget(prev, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463738321l, "event")), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717410l, 5063359128232717424l, "temperature")) == SPropertyOperations.getInteger(SLinkOperations.getTarget(slot, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463738321l, "event")), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717410l, 5063359128232717424l, "temperature"))) {
+      if (SPropertyOperations.getInteger(SLinkOperations.getTarget(prev, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe289dd1L, "event")), MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec62L, 0x4644aa4ce08aec70L, "temperature")) == SPropertyOperations.getInteger(SLinkOperations.getTarget(slot, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe289dd1L, "event")), MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec62L, 0x4644aa4ce08aec70L, "temperature"))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(slot, "This event is not changing the temperature.", "r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)", "4664795093170882120", null, errorTarget);
@@ -56,7 +55,7 @@ public class check_Slot_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
       }
     }
     SNode customizedSlot = Slot_Behavior.call_getCustomizedSlot_935069066463578518(slot);
-    if ((customizedSlot != null) && SPropertyOperations.getInteger(SLinkOperations.getTarget(customizedSlot, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463738321l, "event")), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717410l, 5063359128232717424l, "temperature")) == SPropertyOperations.getInteger(SLinkOperations.getTarget(slot, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463738321l, "event")), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717410l, 5063359128232717424l, "temperature"))) {
+    if ((customizedSlot != null) && SPropertyOperations.getInteger(SLinkOperations.getTarget(customizedSlot, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe289dd1L, "event")), MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec62L, 0x4644aa4ce08aec70L, "temperature")) == SPropertyOperations.getInteger(SLinkOperations.getTarget(slot, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe289dd1L, "event")), MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec62L, 0x4644aa4ce08aec70L, "temperature"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(slot, "The customizing event is setting the same temperature as the original one", "r:6d78acb4-911e-4959-8535-0a1b3e5c1b7e(jetbrains.mps.samples.heating.typesystem)", "935069066463792184", null, errorTarget);

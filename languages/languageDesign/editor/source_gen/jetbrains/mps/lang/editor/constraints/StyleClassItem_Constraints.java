@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -18,7 +17,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class StyleClassItem_Constraints extends BaseConstraintsDescriptor {
   public StyleClassItem_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(1782411230332735017l, -6324602048325217350l), 1186402475462l));
+    super(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -35,12 +34,12 @@ public class StyleClassItem_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1078939183254l, "jetbrains.mps.lang.editor.structure.CellModel_Component"))) {
-      SNode testInstance = SNodeOperations.cast(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(childConcept)), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186402475462l, "jetbrains.mps.lang.editor.structure.StyleClassItem"));
-      return BehaviorReflection.invokeVirtual(Boolean.TYPE, testInstance, "virtual_isApplicableTo_1214304723440", new Object[]{SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1078939183254l, "jetbrains.mps.lang.editor.structure.CellModel_Component")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078939183254l, 1078939183255l, "editorComponent")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1080736578640l, 1080736633877l, "cellModel"))});
-    } else if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
-      SNode testInstance = SNodeOperations.cast(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(childConcept)), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1186402475462l, "jetbrains.mps.lang.editor.structure.StyleClassItem"));
-      return BehaviorReflection.invokeVirtual(Boolean.TYPE, testInstance, "virtual_isApplicableTo_1214304723440", new Object[]{SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"))});
+    if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component"))) {
+      SNode testInstance = SNodeOperations.cast(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(childConcept)), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L, "jetbrains.mps.lang.editor.structure.StyleClassItem"));
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, testInstance, "virtual_isApplicableTo_1214304723440", new Object[]{SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, 0xfb35c96897L, "editorComponent")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, 0xfba0ec5415L, "cellModel"))});
+    } else if (SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+      SNode testInstance = SNodeOperations.cast(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(childConcept)), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L, "jetbrains.mps.lang.editor.structure.StyleClassItem"));
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, testInstance, "virtual_isApplicableTo_1214304723440", new Object[]{SNodeOperations.cast(parentNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"))});
     }
     return true;
   }

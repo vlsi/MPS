@@ -4,7 +4,6 @@ package jetbrains.mps.build.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -27,12 +26,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDescriptor {
   public BuildSource_JavaModuleOptions_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8755280088213897754l, -5075149991798053422l), 1659807394254261074l));
+    super(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f2178b52L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(8755280088213897754l, -5075149991798053422l), 1659807394254261074l, 1659807394254038315l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(8755280088213897754l, -5075149991798053422l), 1659807394254261074l, 1659807394254038315l), this) {
+    references.put(MetaIdFactory.refId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f2178b52L, 0x1708d207f214252bL), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f2178b52L, 0x1708d207f214252bL), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -47,7 +46,7 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return ((isEmptyString(SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033859l, "optionsName"))) ? "<default options>" : SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033859l, "optionsName"))));
+            return ((isEmptyString(SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, 0xcdff0e1a96739c3L, "optionsName"))) ? "<default options>" : SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, 0xcdff0e1a96739c3L, "optionsName"))));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

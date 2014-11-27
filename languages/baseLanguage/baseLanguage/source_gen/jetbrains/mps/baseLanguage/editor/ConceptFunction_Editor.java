@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 
@@ -41,14 +40,14 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Collection collection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createVertical(context, node);
             collection.addEditorCell(new EditorCell_Constant(context, node, "Concept function help:"));
-            if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765907488l, "conceptShortDescription")) != null) {
-              collection.addEditorCell(new EditorCell_Constant(context, node, SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765907488l, "conceptShortDescription"))));
+            if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription")) != null) {
+              collection.addEditorCell(new EditorCell_Constant(context, node, SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription"))));
             }
             collection.addEditorCell(new EditorCell_Constant(context, node, ""));
             collection.addEditorCell(new EditorCell_Constant(context, node, "Parameter help:"));
             for (SNode cfp : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getParameters_1213877374450", new Object[]{})) {
-              String alias = SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
-              String description = SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765907488l, "conceptShortDescription"));
+              String alias = SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+              String description = SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription"));
               if (description == null) {
                 description = "<no help. use conceptShortDescription concept function property to create one>";
               }

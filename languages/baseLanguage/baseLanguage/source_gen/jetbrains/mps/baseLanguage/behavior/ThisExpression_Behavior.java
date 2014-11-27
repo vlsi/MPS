@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class ThisExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -17,16 +16,16 @@ public class ThisExpression_Behavior {
     return Classifier_Behavior.call_getNonStaticContextClassifiers_6775591514230482802(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier")), thisNode);
   }
   public static SNode call_getContextClassifierMember_6516287307421538194(SNode thisNode) {
-    SNode classConcept = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept"));
+    SNode classConcept = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept"));
     if ((classConcept != null)) {
-      for (SNode classifierMember : SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), false)) {
+      for (SNode classifierMember : SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), false)) {
         if (SNodeOperations.getParent(classifierMember) == classConcept) {
           return classifierMember;
         }
       }
       return null;
     } else {
-      SNode classifierMember = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), false, false);
+      SNode classifierMember = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), false, false);
       return classifierMember;
     }
   }

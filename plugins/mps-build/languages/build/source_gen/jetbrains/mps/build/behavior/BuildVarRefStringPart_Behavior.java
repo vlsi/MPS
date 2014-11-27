@@ -7,18 +7,17 @@ import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildVarRefStringPart_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
-    String macroName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702017l, 4903714810883702018l, "macro")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    String macroName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, 0x440d7ea3b68b7d02L, "macro")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     if (helper != null) {
-      macroName = helper.getName(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702017l, 4903714810883702018l, "macro")));
+      macroName = helper.getName(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, 0x440d7ea3b68b7d02L, "macro")));
       if (macroName == null) {
-        helper.report("macro " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702017l, 4903714810883702018l, "macro")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " is not available in " + helper.getProjectName() + ", make it exportable", thisNode);
+        helper.report("macro " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, 0x440d7ea3b68b7d02L, "macro")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " is not available in " + helper.getProjectName() + ", make it exportable", thisNode);
         macroName = "???";
       }
     }
@@ -28,6 +27,6 @@ public class BuildVarRefStringPart_Behavior {
     return (SNodeOperations.getNextSibling(thisNode) == null);
   }
   public static boolean virtual_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, "jetbrains.mps.build.structure.BuildTextStringPart")));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, "jetbrains.mps.build.structure.BuildTextStringPart")));
   }
 }

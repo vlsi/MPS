@@ -1,3 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8mebhrtkb5b0f2fw415zlazmnp8vh10" />
+<dependencies version="2" modelHash="-8mebhrtkb5b0f2fw415zlazmnp8vh10">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="a237ii4p803dkvj3a01l9nndi1k5jpk" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="7va3130h0ufhjdfej6hob440gm3vlqj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-3w51vd6avpj0y99dkotmnfwqd41znrq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3863x0u9flggmckjewdlsmikl6dj9wv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="dyswqfju0dze0vp40q0x5ffcejj7zen" />
+  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="d1y56q0bbyc6twsd0uxmcz0whlnjoux" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="7acg7jfloizfkh7fz9512hws89btuf5" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3fcvzpa8v8rf3aly8ijks960qkiha8x" />
+  <common hash="5rcpyu9mptsi7ui0frnhubkdaducr8d" dependsOnNodes="true">
+    <dep root="3402736933911578110" />
+    <dep root="3402736933911578134" />
+    <dep root="3571587574961713354" />
+    <dep root="3682791316837141912" />
+    <dep root="3751132065236767060" />
+    <dep root="3751132065236767068" />
+    <dep root="3751132065236767072" />
+    <dep root="3751132065236767076" />
+    <dep root="3751132065236767079" />
+    <dep root="3751132065236767083" />
+    <dep root="5820409521797720671" />
+    <dep root="6478870542308703666" />
+    <dep root="6478870542308708689" />
+    <dep root="6478870542308708729" />
+    <dep root="6478870542308871428" />
+    <dep root="6478870542308871875" />
+    <dep root="6478870542308871877" />
+    <dep root="8264762413010631473" />
+    <dep root="8264762413010642119" />
+    <dep root="8264762413010669353" />
+    <dep root="8264762413010673052" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="3751132065236767060" name="ClassLikeMethod" hash="-4vw5c59r7z0gydd1bdhkudqop1d0y1a" />
+  <source id="3751132065236767068" name="DependentTypeDeclaration" hash="-ehoqsnq6y6p7arc2e2r9kuro013lt04" />
+  <source id="3751132065236767072" name="ClassLikeDescriptor" hash="-c7qs7nzyp1fwwg2y3nlcwniki34dzee" />
+  <source id="3751132065236767076" name="ParameterDescriptor" hash="aj53d86zee21kx1fgizy5m786bpvtsp" />
+  <source id="3751132065236767079" name="MethodDescriptor" hash="6pfh3dnsf3k3waai93nffyglb7fez91" />
+  <source id="3751132065236767083" name="DependentTypeInstance" hash="17golumix3qb59x2br1rma1d2wdwmaz" />
+  <source id="3571587574961713354" name="ClassLikeAnnotation" hash="5xvljbdvutq9xhj6gv6swyn5qc1d0ss" />
+  <source id="3402736933911578110" name="MemberModifier" hash="7z43zkloamcrw2z5jkg3p50rkcpkfzs" />
+  <source id="3402736933911578134" name="RequiredModifier" hash="bemayfmw0v69iu6wwt5un6b0deas2xo" />
+  <source id="8264762413010631473" name="PropertyDescriptor" hash="-b1ofyq9gfx1u8tido0bh8f23ewh34oa" />
+  <source id="8264762413010642119" name="ClassLikeMember" hash="-dfeqocs8o68lakuee7jcwvstapk0xdq" />
+  <source id="8264762413010669353" name="PlaceholderModifier" hash="8dlhscn325dax1whtvc6s8zr3vtg9lu" />
+  <source id="8264762413010673052" name="CustomMemberDescriptor" hash="6qcne9514ntkp4u3jpe54rj6bvaq6xo" />
+  <source id="6478870542308703666" name="ClassLikeMemberPlaceholder" hash="-53xfhjcdlnzvw8tphy6wqttsbm9gwwz" />
+  <source id="6478870542308708689" name="ClassLikeProperty" hash="-5ks5sz1vdcvgo8hcgrfohqbdywrc1pk" />
+  <source id="6478870542308708729" name="ClassLikeMemberInstance" hash="7u3hqk6niul596685gh971xo4lzb2ub" />
+  <source id="6478870542308871428" name="ClassLikeStringProperty" hash="-24piaumccwo2kjwz0k67fhmw7bz94b8" />
+  <source id="6478870542308871875" name="ClassLikeBooleanProperty" hash="90l9ilig5ilsf57iy5jgq60rnzqffpu" />
+  <source id="6478870542308871877" name="ClassLikeIntegerProperty" hash="-ps4dt6c8xhzee4hsdtmjf35pn7p72e" />
+  <source id="5820409521797720671" name="EmptyMember" hash="dofjh6j6874dh6ws7wpim9hod784vna" />
+  <source id="3682791316837141912" name="GenerateModifier" hash="-c0j6c87a0sqrravu6a0gwvb1xo56hb0" />
+</dependencies>
 

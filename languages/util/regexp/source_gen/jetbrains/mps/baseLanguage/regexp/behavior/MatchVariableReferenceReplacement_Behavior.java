@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class MatchVariableReferenceReplacement_Behavior {
   public static void init(SNode thisNode) {
@@ -17,6 +16,6 @@ public class MatchVariableReferenceReplacement_Behavior {
   public static String virtual_toString_3796137614137538905(SNode thisNode, SNode search) {
     List<SNode> vars = new ArrayList<SNode>();
     BehaviorReflection.invokeVirtual(String.class, search, "virtual_getString_1222432436326", new Object[]{vars});
-    return "$" + (ListSequence.fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137538894l, 3796137614137539525l, "match"))) + 1);
+    return "$" + (ListSequence.fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94eL, 0x34ae970c192abbc5L, "match"))) + 1);
   }
 }

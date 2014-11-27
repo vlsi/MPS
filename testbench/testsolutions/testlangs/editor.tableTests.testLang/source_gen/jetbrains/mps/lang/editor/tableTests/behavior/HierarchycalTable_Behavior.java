@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -16,9 +15,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class HierarchycalTable_Behavior {
   public static void init(SNode thisNode) {
     for (int i = 0; i < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_getInitialColumnCount_1262430001741498026", new Object[]{}); i++) {
-      SNode dataCell = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155300l, "jetbrains.mps.lang.editor.tableTests.structure.DataCell")));
-      SPropertyOperations.set(dataCell, MetaAdapterFactory.getProperty(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155300l, 2882388703616155301l, "value"), "h-" + i);
-      ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 8506335436194701777l, 8506335436194701780l, "headers"))).addElement(dataCell);
+      SNode dataCell = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, "jetbrains.mps.lang.editor.tableTests.structure.DataCell")));
+      SPropertyOperations.set(dataCell, MetaAdapterFactory.getProperty(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, 0x28004d411fa3bea5L, "value"), "h-" + i);
+      ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x760c9302beb3e1d1L, 0x760c9302beb3e1d4L, "headers"))).addElement(dataCell);
     }
   }
   public static int virtual_getInitialColumnCount_1262430001741498026(SAbstractConcept thisConcept) {

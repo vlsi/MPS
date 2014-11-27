@@ -4,7 +4,6 @@ package jetbrains.mps.build.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -29,12 +28,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstraintsDescriptor {
   public BuildSource_JavaExternalJarFolderRef_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531647l));
+    super(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531647l, 5610619299014531648l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531647l, 5610619299014531648l), this) {
+    references.put(MetaIdFactory.refId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -49,7 +48,7 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), true, false);
+            SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), true, false);
             String target = null;
             if ((contextProject != null)) {
               Scope importedArtifactsScope = ScopeUtil.getVisibleJarFoldersScope(contextProject);
@@ -58,7 +57,7 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
               }
             }
             if (target == null) {
-              target = (SNodeOperations.isInstanceOf(_context.getParameterNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, "jetbrains.mps.build.structure.BuildInputSingleFolder")) ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getParameterNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, "jetbrains.mps.build.structure.BuildInputSingleFolder")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, 2303926226081001728l, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}) : BehaviorReflection.invokeVirtual(String.class, _context.getParameterNode(), "virtual_getPresentation_1213877396640", new Object[]{}));
+              target = (SNodeOperations.isInstanceOf(_context.getParameterNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder")) ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getParameterNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}) : BehaviorReflection.invokeVirtual(String.class, _context.getParameterNode(), "virtual_getPresentation_1213877396640", new Object[]{}));
             }
             return target;
           }
@@ -69,7 +68,7 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), true, false);
+              SNode contextProject = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), true, false);
               if ((contextProject != null)) {
                 return ScopeUtil.getVisibleJarFoldersScope(contextProject);
               }

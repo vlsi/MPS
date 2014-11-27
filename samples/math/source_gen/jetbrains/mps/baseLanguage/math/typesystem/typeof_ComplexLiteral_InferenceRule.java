@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -25,12 +24,12 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
     final SNode tR_typevar_1238420360404 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode tI_typevar_1238420378223 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1238328560395l, 1238328589271l, "real"));
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052224b0bL, 0x1205222bbd7L, "real"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420360405", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(tR_typevar_1238420360404), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420360409", true), _info_12389875345);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1238328560395l, 1238328589757l, "imag"));
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052224b0bL, 0x1205222bdbdL, "imag"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420383147", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(tI_typevar_1238420378223), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420383151", true), _info_12389875345);
     }
@@ -38,7 +37,7 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
       final SNode t1v = typeCheckingContext.getRepresentative(tI_typevar_1238420378223);
       typeCheckingContext.whenConcrete(t1v, new Runnable() {
         public void run() {
-          if (SLinkOperations.getTarget(literal, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1238328560395l, 1238328589271l, "real")) != null) {
+          if (SLinkOperations.getTarget(literal, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052224b0bL, 0x1205222bbd7L, "real")) != null) {
             {
               final SNode t2v = typeCheckingContext.getRepresentative(tR_typevar_1238420360404);
               typeCheckingContext.whenConcrete(t2v, new Runnable() {

@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.regexp.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -16,12 +15,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class RegexpDeclaration_Constraints extends BaseConstraintsDescriptor {
   public RegexpDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2688747624584492277l, -5722269945249396544l), 1174483125581l));
+    super(MetaIdFactory.conceptId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a6454dL));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l), this) {
+    properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L), this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
@@ -29,7 +28,7 @@ public class RegexpDeclaration_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";
-        return (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174483125581l, 1174662978120l, "description"))) ? SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174483125581l, 1174662978120l, "description")) : "regular expression");
+        return (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a6454dL, 0x1117f5e9a48L, "description"))) ? SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a6454dL, 0x1117f5e9a48L, "description")) : "regular expression");
       }
     });
     return properties;

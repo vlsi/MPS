@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 /*package*/ class ConceptDeclarationExtendedConceptSearchScope extends DelegatingScope {
   public ConceptDeclarationExtendedConceptSearchScope(@Nullable final SNode concept, SNode contextNode) {
@@ -23,7 +22,7 @@ import java.util.UUID;
     wrapped = new FilteringScope(new ConceptsScope(contextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       @Override
       public boolean isExcluded(SNode node) {
-        return node == concept || SModelUtil.isAssignableConcept(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), concept);
+        return node == concept || SModelUtil.isAssignableConcept(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), concept);
       }
     };
   }

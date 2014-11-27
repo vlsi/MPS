@@ -3,47 +3,47 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="14,0,48,0" name="jetbrains.mps.samples.formulaLanguage.generator.baseLanguage.QueriesGenerated" />
+      <unit at="13,0,47,0" name="jetbrains.mps.samples.formulaLanguage.generator.baseLanguage.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.samples.formulaLanguage.generator.baseLanguage@generator)/1112819378866">
     <file name="QueriesGenerated.java">
-      <node id="1200430780338" at="17,106,18,190" concept="0" />
-      <scope id="1200430777977" at="17,106,18,190" />
+      <node id="1200430780338" at="16,106,17,176" concept="0" />
+      <scope id="1200430777977" at="16,106,17,176" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.samples.formulaLanguage.generator.baseLanguage@generator)/1112819613607">
     <file name="QueriesGenerated.java">
-      <node id="1200430498102" at="23,102,24,199" concept="0" />
-      <node id="1200430531657" at="26,102,27,200" concept="0" />
-      <scope id="1200430494835" at="23,102,24,199" />
-      <scope id="1200430529812" at="26,102,27,200" />
+      <node id="1200430498102" at="22,102,23,185" concept="0" />
+      <node id="1200430531657" at="25,102,26,186" concept="0" />
+      <scope id="1200430494835" at="22,102,23,185" />
+      <scope id="1200430529812" at="25,102,26,186" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.samples.formulaLanguage.generator.baseLanguage@generator)/1112820065510">
     <file name="QueriesGenerated.java">
-      <node id="1200430593868" at="29,102,30,199" concept="0" />
-      <node id="1200430620298" at="32,102,33,199" concept="0" />
-      <node id="1200430633868" at="35,102,36,200" concept="0" />
-      <scope id="1200430591960" at="29,102,30,199" />
-      <scope id="1200430618422" at="32,102,33,199" />
-      <scope id="1200430632008" at="35,102,36,200" />
+      <node id="1200430593868" at="28,102,29,185" concept="0" />
+      <node id="1200430620298" at="31,102,32,185" concept="0" />
+      <node id="1200430633868" at="34,102,35,186" concept="0" />
+      <scope id="1200430591960" at="28,102,29,185" />
+      <scope id="1200430618422" at="31,102,32,185" />
+      <scope id="1200430632008" at="34,102,35,186" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.samples.formulaLanguage.generator.baseLanguage@generator)/1112979486128">
     <file name="QueriesGenerated.java">
-      <node id="1200430665657" at="38,102,39,199" concept="0" />
-      <node id="1200430675743" at="41,102,42,199" concept="0" />
-      <node id="1200430686783" at="44,102,45,200" concept="0" />
-      <scope id="1200430664125" at="38,102,39,199" />
-      <scope id="1200430674102" at="41,102,42,199" />
-      <scope id="1200430685110" at="44,102,45,200" />
+      <node id="1200430665657" at="37,102,38,185" concept="0" />
+      <node id="1200430675743" at="40,102,41,185" concept="0" />
+      <node id="1200430686783" at="43,102,44,186" concept="0" />
+      <scope id="1200430664125" at="37,102,38,185" />
+      <scope id="1200430674102" at="40,102,41,185" />
+      <scope id="1200430685110" at="43,102,44,186" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.samples.formulaLanguage.generator.baseLanguage@generator)/1112980489607">
     <file name="QueriesGenerated.java">
-      <node id="1200430831111" at="20,106,21,198" concept="0" />
-      <scope id="1200430828673" at="20,106,21,198" />
+      <node id="1200430831111" at="19,106,20,184" concept="0" />
+      <scope id="1200430828673" at="19,106,20,184" />
     </file>
   </root>
 </debug-info>

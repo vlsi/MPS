@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -56,7 +55,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kawrig_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(7605046100638320544l, -5004325039833383149l), 6896005762093571400l, 6896005762093571406l, "exportToProperiesFile"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, 0x5fb388b43aa25d4eL, "exportToProperiesFile"));
   }
   private EditorCell createConstant_kawrig_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "location");
@@ -68,7 +67,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kawrig_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(7605046100638320544l, -5004325039833383149l), 6896005762093571400l, 6896005762093571407l, "isLocation"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, 0x5fb388b43aa25d4fL, "isLocation"));
   }
   private EditorCell createConstant_kawrig_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uninitialized");
@@ -80,7 +79,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kawrig_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(7605046100638320544l, -5004325039833383149l), 6896005762093571400l, 6921160174096663384l, "uninitialized"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, 0x600ce6822a9cc358L, "uninitialized"));
   }
   private EditorCell createConstant_kawrig_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macro");

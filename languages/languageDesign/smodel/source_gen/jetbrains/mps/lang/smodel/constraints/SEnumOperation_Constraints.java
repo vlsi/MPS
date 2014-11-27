@@ -4,7 +4,6 @@ package jetbrains.mps.lang.smodel.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class SEnumOperation_Constraints extends BaseConstraintsDescriptor {
   public SEnumOperation_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8675788371017092295l, -9098312342032910879l), 1240930395965l));
+    super(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37273dL));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -32,7 +31,7 @@ public class SEnumOperation_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 1240930118027l, "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation"));
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed32e98bL, "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1240931368586");
 }

@@ -6,12 +6,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class StateMachineTest_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getStateMachineName_1197251245696(SNode thisNode) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(7603857644014030527l, -6707735206917717554l), 1197246912613l, 1197247793411l, "stateMachine")), MetaAdapterFactory.getProperty(new UUID(7603857644014030527l, -6707735206917717554l), 1197149564476l, 1197166557152l, "stateMachineName"));
+    return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c17a1865L, 0x116c1878903L, "stateMachine")), MetaAdapterFactory.getProperty(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bbacae3cL, 0x116bcaff7e0L, "stateMachineName"));
   }
 }

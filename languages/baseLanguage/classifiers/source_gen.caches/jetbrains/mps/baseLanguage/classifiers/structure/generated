@@ -1,3 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1uuaybt2eln3nlyv6c9f7mop67bw7va" />
+<dependencies version="2" modelHash="-1uuaybt2eln3nlyv6c9f7mop67bw7va">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="a237ii4p803dkvj3a01l9nndi1k5jpk" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-3w51vd6avpj0y99dkotmnfwqd41znrq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3863x0u9flggmckjewdlsmikl6dj9wv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="dyswqfju0dze0vp40q0x5ffcejj7zen" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="7acg7jfloizfkh7fz9512hws89btuf5" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3fcvzpa8v8rf3aly8ijks960qkiha8x" />
+  <common hash="4p5otgpi3ltuwo23st46t1cy8f2lho8" dependsOnNodes="true">
+    <dep root="1029302639053433191" />
+    <dep root="1205751982837" />
+    <dep root="1205752032448" />
+    <dep root="1205752174734" />
+    <dep root="1205752633985" />
+    <dep root="1205752813637" />
+    <dep root="1205752906494" />
+    <dep root="1205756064662" />
+    <dep root="1205769003971" />
+    <dep root="1205769149993" />
+    <dep root="1213999088275" />
+    <dep root="1213999117680" />
+    <dep root="1217433449852" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1205751982837" name="IClassifier" hash="b4ppvqzc1skjdsz3n7cwh5sqmb1jwe6" />
+  <source id="1205752032448" name="IMember" hash="-5khtftvsm9ah0dicrbwwzf85qda7qrr" />
+  <source id="1205752174734" name="IClassifierPart" hash="7r8qkv96apx7by17caz6brr1bfa2iud" />
+  <source id="1205752633985" name="ThisClassifierExpression" hash="-a5mp8t1u67r26t8qyr3tm020cn45thl" />
+  <source id="1205752813637" name="BaseClassifierType" hash="-14i731hdmxgrdepzpr054t3y8dv4vut" />
+  <source id="1205752906494" name="DefaultClassifierType" hash="-9so02s7b13sb1jzjmmzkajajgvqmj9n" />
+  <source id="1205756064662" name="IMemberOperation" hash="5bpg5hkrp9tej0oqympkyyc8vowke18" />
+  <source id="1205769003971" name="DefaultClassifierMethodDeclaration" hash="eocp76z879arzmz5914jhfdbhc2vbfg" />
+  <source id="1205769149993" name="DefaultClassifierMethodCallOperation" hash="4m11j9ui4ej5syaslrjws1f3fv1cm8b" />
+  <source id="1213999088275" name="DefaultClassifierFieldDeclaration" hash="-7dt2xaakpt710ebxsldlulycvb5e0va" />
+  <source id="1213999117680" name="DefaultClassifierFieldAccessOperation" hash="-8j73701ohf6w8f8wr7fqcakzp7nwr8l" />
+  <source id="1217433449852" name="SuperClassifierExpresson" hash="-ki6i3kmm21cfg4epeekbkf65vwgexb" />
+  <source id="1029302639053433191" name="DefaultClassifier" hash="25ennf2mpo8il9ps4gu1lspzoo66e0n" />
+</dependencies>
 

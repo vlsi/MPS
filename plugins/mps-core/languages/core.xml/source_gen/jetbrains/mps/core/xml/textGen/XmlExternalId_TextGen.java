@@ -6,33 +6,32 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class XmlExternalId_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029125l, "isPublic"))) {
+    if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60345L, "isPublic"))) {
       this.append("PUBLIC");
       this.append(" ");
-      if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029123l, "publicId"))) && SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029123l, "publicId")).contains("'")) {
+      if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60343L, "publicId"))) && SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60343L, "publicId")).contains("'")) {
         this.append("\"");
-        this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029123l, "publicId")));
+        this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60343L, "publicId")));
         this.append("\"");
       } else {
         this.append("'");
-        this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029123l, "publicId")));
+        this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60343L, "publicId")));
         this.append("'");
       }
     } else {
       this.append("SYSTEM");
     }
     this.append(" ");
-    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029124l, "systemId"))) && SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029124l, "systemId")).contains("'")) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60344L, "systemId"))) && SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60344L, "systemId")).contains("'")) {
       this.append("\"");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029124l, "systemId")));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60344L, "systemId")));
       this.append("\"");
     } else {
       this.append("'");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029124l, "systemId")));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60344L, "systemId")));
       this.append("'");
     }
 

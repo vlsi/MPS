@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.checkedName.PropertyReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -21,7 +20,7 @@ public class FixNamingPolicy_QuickFix extends QuickFix_Runtime {
   }
   public void execute(SNode node) {
     for (SNode s : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), ((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]), "virtual_getDescendantsToCheck_4844813484172611413", new Object[]{})) {
-      SPropertyOperations.set(s, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), NameUtil.captionPartWithNamingPolicy(SPropertyOperations.getString(s, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"))));
+      SPropertyOperations.set(s, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), NameUtil.captionPartWithNamingPolicy(SPropertyOperations.getString(s, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"))));
     }
     for (PropertyReference p : BehaviorReflection.invokeVirtual((Class<List<PropertyReference>>) ((Class) Object.class), ((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]), "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{})) {
       String value = SNodeAccessUtil.getProperty(p.getNode(), p.getProperty());

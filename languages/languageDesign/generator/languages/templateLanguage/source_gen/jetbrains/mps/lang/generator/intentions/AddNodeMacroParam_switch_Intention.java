@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -74,7 +73,7 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
     return list;
   }
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
-    return SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, "jetbrains.mps.lang.generator.structure.TemplateSwitch"));
+    return SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"));
   }
   public class IntentionImplementation implements IntentionExecutable {
     private SNode myParameter;
@@ -86,9 +85,9 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode nodeMacro = EditingUtil.addNodeMacro(node);
-      SNode switchMacro = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510068000147l, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro")), null);
+      SNode switchMacro = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro")), null);
       SNodeOperations.replaceWithAnother(nodeMacro, switchMacro);
-      SLinkOperations.setTarget(switchMacro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"), myParameter);
+      SLinkOperations.setTarget(switchMacro, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template"), myParameter);
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, switchMacro, SelectionManager.FIRST_CELL, 1);
     }

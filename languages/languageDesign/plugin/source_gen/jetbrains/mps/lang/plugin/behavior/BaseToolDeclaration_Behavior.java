@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
@@ -21,13 +20,13 @@ public class BaseToolDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getGeneratedName_6547237850567463427(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) + "_Tool";
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_Tool";
   }
   public static String call_getGeneratedClassFQName_6547237850567463438(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + BaseToolDeclaration_Behavior.call_getGeneratedName_6547237850567463427(thisNode);
   }
   public static boolean call_hasNumber_6547237850567463455(SNode thisNode) {
-    return !(SPropertyOperations.hasValue(thisNode, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 6547237850567458268l, 6547237850567462701l, "number"), null));
+    return !(SPropertyOperations.hasValue(thisNode, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf2dL, "number"), null));
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     return _quotation_createNode_7ol7e8_a0a3(thisNode);
@@ -40,7 +39,7 @@ public class BaseToolDeclaration_Behavior {
     if (!(module instanceof AbstractModule)) {
       return null;
     }
-    return MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 6547237850567458268l, 6547237850567462766l, "icon")));
+    return MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf6eL, "icon")));
   }
   public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     return new PropertyReference(thisNode, "caption");
@@ -49,14 +48,14 @@ public class BaseToolDeclaration_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1208528650020l, 1208529537963l, "tool"), (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11961ebbf24L, 0x11961f94babL, "tool"), (SNode) parameter_1);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_7ol7e8_a0a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.tools(MPS.Platform/jetbrains.mps.ide.tools@java_stub)"), facade.createNodeId("~BaseTool")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.tools(MPS.Platform/jetbrains.mps.ide.tools@java_stub)"), facade.createNodeId("~BaseTool")));
     return quotedNode_1;
   }
 }

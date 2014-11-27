@@ -6,7 +6,6 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ThrowsBlockDocTag_TextGen extends SNodeTextGen {
@@ -14,8 +13,8 @@ public class ThrowsBlockDocTag_TextGen extends SNodeTextGen {
     this.appendNewLine();
     DocCommentTextGen.javadocIndent(this);
     this.append("@throws ");
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5858074156537397872l, 6832197706140448505l, "exceptionType")));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, 0x5ed0d79d7dbd76f9L, "exceptionType")));
     this.append(" ");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 5858074156537397872l, 5858074156537397874l, "text")));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, 0x514c0f68704ec272L, "text")));
   }
 }

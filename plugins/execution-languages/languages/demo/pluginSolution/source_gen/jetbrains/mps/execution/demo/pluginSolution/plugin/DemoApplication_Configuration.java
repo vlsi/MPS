@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -40,7 +39,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
   private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.execution.demo.structure.SomeConcept", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-1871219151347103450l, -4760527767600787321l), 4928971978190304900l, "jetbrains.mps.execution.demo.structure.SomeConcept")), MetaAdapterFactory.getProperty(new UUID(-1871219151347103450l, -4760527767600787321l), 4928971978190304900l, 4928971978190605252l, "valid"));
+      return SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, "jetbrains.mps.execution.demo.structure.SomeConcept")), MetaAdapterFactory.getProperty(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, 0x446739e63be7cbc4L, "valid"));
     }
   });
   public void checkConfiguration() throws RuntimeConfigurationException {

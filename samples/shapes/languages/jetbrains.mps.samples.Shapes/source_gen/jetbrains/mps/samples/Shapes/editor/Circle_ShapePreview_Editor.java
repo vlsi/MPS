@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.awt.Dimension;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.Shapes.editor.Shapes.ShapePreview"});
@@ -159,8 +158,8 @@ public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
 
         SNodeOperations.getModel(node).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            dimension.width = 20 + SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l, "radius"));
-            dimension.height = 20 + SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l, "radius"));
+            dimension.width = 20 + SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius"));
+            dimension.height = 20 + SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius"));
           }
         });
         return dimension;

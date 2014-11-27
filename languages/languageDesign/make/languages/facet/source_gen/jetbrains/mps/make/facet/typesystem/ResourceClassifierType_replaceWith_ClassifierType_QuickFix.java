@@ -6,7 +6,6 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ResourceClassifierType_replaceWith_ClassifierType_QuickFix extends QuickFix_Runtime {
@@ -16,10 +15,10 @@ public class ResourceClassifierType_replaceWith_ClassifierType_QuickFix extends 
     return "Replace with ClassifierType";
   }
   public void execute(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 119022571402207412l, "jetbrains.mps.make.facet.structure.ResourceClassifierType")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 119022571401949652l, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration")))) {
-      SNode resource = SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 119022571402207412l, "jetbrains.mps.make.facet.structure.ResourceClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aea0b4L, "jetbrains.mps.make.facet.structure.ResourceClassifierType")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aab1d4L, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration")))) {
+      SNode resource = SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aea0b4L, "jetbrains.mps.make.facet.structure.ResourceClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
       SNode replmnt = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SLinkOperations.setTarget(replmnt, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), resource);
+      SLinkOperations.setTarget(replmnt, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), resource);
     }
   }
 }

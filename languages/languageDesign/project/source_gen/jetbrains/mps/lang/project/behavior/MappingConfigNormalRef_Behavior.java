@@ -5,19 +5,18 @@ package jetbrains.mps.lang.project.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class MappingConfigNormalRef_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
-    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400376l, "modelUID")))) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572778L, "modelUID")))) {
       return false;
     }
-    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400376l, "modelUID")).equals("*")) {
+    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572778L, "modelUID")).equals("*")) {
       return true;
     }
-    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400377l, "nodeID")))) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572779L, "nodeID")))) {
       return false;
     }
     return true;

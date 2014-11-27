@@ -4,7 +4,6 @@ package jetbrains.mps.lang.smodel.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -25,12 +24,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ChildNodeRefExpression_Constraints extends BaseConstraintsDescriptor {
   public ChildNodeRefExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8675788371017092295l, -9098312342032910879l), 597763930871270009l));
+    super(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(8675788371017092295l, -9098312342032910879l), 597763930871270009l, 597763930871272016l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(8675788371017092295l, -9098312342032910879l), 597763930871270009l, 597763930871272016l), this) {
+    references.put(MetaIdFactory.refId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, 0x84baf20c71f9250L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, 0x84baf20c71f9250L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -45,7 +44,7 @@ public class ChildNodeRefExpression_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new NamedElementsScope(AbstractNodeRefExpression_Behavior.call_getPossibleTargetNodes_5207260697408415741(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 597763930871270009l, 597763930871272014l, "parent"))));
+            return new NamedElementsScope(AbstractNodeRefExpression_Behavior.call_getPossibleTargetNodes_5207260697408415741(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, 0x84baf20c71f924eL, "parent"))));
           }
         };
       }

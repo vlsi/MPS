@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
@@ -26,7 +25,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ConceptEditorDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l));
+    super(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL));
   }
   @Override
   public boolean hasOwnCanBeRootMethod() {
@@ -45,7 +44,7 @@ public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescrip
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l), this) {
+    properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L), this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
@@ -54,9 +53,9 @@ public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescrip
       public Object getValue(SNode node) {
         String propertyName = "name";
         {
-          String editorName = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
-          for (SNode contextHint : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1071666914219l, 2597348684684069742l, "contextHints")))) {
-            editorName += "_" + SPropertyOperations.getString(SLinkOperations.getTarget(contextHint, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 6822301196700715228l, 5944657839026714445l, "hint")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+          String editorName = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+          for (SNode contextHint : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, 0x240ba2de0c6c0b6eL, "contextHints")))) {
+            editorName += "_" + SPropertyOperations.getString(SLinkOperations.getTarget(contextHint, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5eadaecad41188dcL, 0x527faacef66db74dL, "hint")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           }
           return editorName + "_Editor";
         }

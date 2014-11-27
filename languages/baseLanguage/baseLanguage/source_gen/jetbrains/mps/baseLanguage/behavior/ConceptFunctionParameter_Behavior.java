@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -26,7 +25,7 @@ public class ConceptFunctionParameter_Behavior {
     return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_dontUseParameterObject_1262430001741498340", new Object[]{}));
   }
   public static SNode call_findConceptFunction_1213877522934(SNode thisNode) {
-    List<SNode> functions = SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), false);
+    List<SNode> functions = SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), false);
     final SNode ourConcept = SNodeOperations.getConceptDeclaration(thisNode);
     return ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -35,7 +34,7 @@ public class ConceptFunctionParameter_Behavior {
     }).first();
   }
   public static String virtual_getParameterName_1225280611056(SNode thisNode) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
   }
   public static SNode virtual_getDeclaration_1225282371351(SNode thisNode) {
     return SNodeOperations.getConceptDeclaration(thisNode);

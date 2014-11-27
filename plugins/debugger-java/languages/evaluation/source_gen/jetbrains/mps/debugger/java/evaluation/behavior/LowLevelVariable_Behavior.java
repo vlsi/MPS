@@ -5,10 +5,9 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class LowLevelVariable_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182694l, 6146091894852355121l, "isOutOfScope"), "" + (true));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, 0x554b4e03d5950431L, "isOutOfScope"), "" + (true));
   }
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -58,11 +57,11 @@ public class FinderUtils {
     for (SNode p = SNodeOperations.getParent(n1); (p != null); p = SNodeOperations.getParent(p)) {
       SNode conceptDeclaration = SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(p));
       SNode editor = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), conceptDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspect_8360039740498068384", new Object[]{LanguageAspect.EDITOR});
-      for (SNode cell : ListSequence.fromList(SNodeOperations.getNodeDescendants(editor, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), false, new SAbstractConcept[]{}))) {
-        if (SLinkOperations.getTarget(cell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")) == l1) {
+      for (SNode cell : ListSequence.fromList(SNodeOperations.getNodeDescendants(editor, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), false, new SAbstractConcept[]{}))) {
+        if (SLinkOperations.getTarget(cell, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration")) == l1) {
           return -1;
         }
-        if (SLinkOperations.getTarget(cell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")) == l2) {
+        if (SLinkOperations.getTarget(cell, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration")) == l2) {
           return 1;
         }
       }

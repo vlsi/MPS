@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,7 +18,7 @@ public class check_CellMenuPart_ApplySideTransforms_NonTypesystemRule extends Ab
   public check_CellMenuPart_ApplySideTransforms_NonTypesystemRule() {
   }
   public void applyRule(final SNode cellMenuPart_ApplySideTransforms, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SPropertyOperations.hasValue(cellMenuPart_ApplySideTransforms, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 8233876857994246075l, 8233876857994286197l, "side"), "both", null)) {
+    if (SPropertyOperations.hasValue(cellMenuPart_ApplySideTransforms, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, 0x72449b609d0f1475L, "side"), "both", null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cellMenuPart_ApplySideTransforms, "`both sides' are not supported", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "5531627918740486078", null, errorTarget);

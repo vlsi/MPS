@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
@@ -39,7 +38,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
             TestClass.ifTest();
           }
         });
-        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement")));
+        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement")));
       }
     });
   }
@@ -52,7 +51,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
             TestClass.forTest();
           }
         });
-        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, "jetbrains.mps.baseLanguage.structure.ForStatement")));
+        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, "jetbrains.mps.baseLanguage.structure.ForStatement")));
       }
     });
   }
@@ -65,7 +64,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
             TestClass.blockStatementTest();
           }
         });
-        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1164991038168l, "jetbrains.mps.baseLanguage.structure.ThrowStatement")));
+        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f3ee082d8L, "jetbrains.mps.baseLanguage.structure.ThrowStatement")));
       }
     });
   }
@@ -78,7 +77,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
         } catch (Throwable t) {
           StackTraceElement stackTraceElement = t.getStackTrace()[0];
           SNode node = TraceInfoUtil.getVar(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), "it");
-          Assert.assertTrue("Node " + node + " for variable it.", (node != null) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1153944193378l, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable")));
+          Assert.assertTrue("Node " + node + " for variable it.", (node != null) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6f0962L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable")));
         }
       }
     });
@@ -92,7 +91,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
         } catch (Throwable t) {
           StackTraceElement stackTraceElement = t.getStackTrace()[0];
           SNode node = TraceInfoUtil.getVar(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), "it_gen");
-          Assert.assertTrue("Node " + node + " for variable it_gen.", (node != null) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1153944193378l, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable")));
+          Assert.assertTrue("Node " + node + " for variable it_gen.", (node != null) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6f0962L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable")));
         }
       }
     });
@@ -103,19 +102,19 @@ public class TraceInfoTest extends WorkbenchMpsTest {
       public void invoke() {
         SNode statement = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.getNode("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals("internalClassTest");
+            return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals("internalClassTest");
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")) != null);
+            return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")) != null);
           }
         }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
-            return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"));
+            return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"));
           }
         }).translate(new ITranslator2<SNode, SNode>() {
           public Iterable<SNode> translate(SNode it) {
-            return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
+            return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
           }
         }).first();
         BreakpointLocation location = new BreakpointLocation(statement);

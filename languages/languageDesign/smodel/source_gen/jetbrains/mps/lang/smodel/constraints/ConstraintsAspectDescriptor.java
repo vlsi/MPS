@@ -85,107 +85,107 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 1138056022639l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x108f96cca6fL) {
       return new SPropertyAccess_Constraints();
     }
-    if (id == 1179409122411l) {
+    if (id == 0x1129a43046bL) {
       return new Node_ConceptMethodCall_Constraints();
     }
-    if (id == 1138056143562l) {
+    if (id == 0x108f96ea2caL) {
       return new SLinkAccess_Constraints();
     }
-    if (id == 1144195091934l) {
+    if (id == 0x10a67578ddeL) {
       return new Node_IsRoleOperation_Constraints();
     }
-    if (id == 1138056282393l) {
+    if (id == 0x108f970c119L) {
       return new SLinkListAccess_Constraints();
     }
-    if (id == 1138676077309l) {
+    if (id == 0x1091e6212fdL) {
       return new EnumMemberReference_Constraints();
     }
-    if (id == 1204851882688l) {
+    if (id == 0x11886c4bac0L) {
       return new LinkRefQualifier_Constraints();
     }
-    if (id == 1219352745532l) {
+    if (id == 0x11be716563cL) {
       return new NodeRefExpression_Constraints();
     }
-    if (id == 1221163681458l) {
+    if (id == 0x11c530706b2L) {
       return new Node_GetReferentSearchScopeOperation_Constraints();
     }
-    if (id == 1221170373891l) {
+    if (id == 0x11c536d2503L) {
       return new SearchScope_ContainsOperation_Constraints();
     }
-    if (id == 1226359078165l) {
+    if (id == 0x11d88b27d15L) {
       return new LinkRefExpression_Constraints();
     }
-    if (id == 1240930444945l) {
+    if (id == 0x120ed37e691L) {
       return new SEnum_MemberOperation_Constraints();
     }
-    if (id == 1240930118027l) {
+    if (id == 0x120ed32e98bL) {
       return new SEnumOperationInvocation_Constraints();
     }
-    if (id == 1240930395965l) {
+    if (id == 0x120ed37273dL) {
       return new SEnumOperation_Constraints();
     }
-    if (id == 1241015185235l) {
+    if (id == 0x120f244ef53L) {
       return new SEnumMemberOperation_Constraints();
     }
-    if (id == 3562215692195599741l) {
+    if (id == 0x316f884c72a4157dL) {
       return new SLinkImplicitSelect_Constraints();
     }
-    if (id == 1547759872598425074l) {
+    if (id == 0x157abf675bd53df2L) {
       return new IReferenceOperation_Constraints();
     }
-    if (id == 4357968816427488499l) {
+    if (id == 0x3c7a9d8c8d63d4f3L) {
       return new CheckedModuleReference_Constraints();
     }
-    if (id == 1883223317721107059l) {
+    if (id == 0x1a228da1357fca73L) {
       return new IfInstanceOfVarReference_Constraints();
     }
-    if (id == 5253134957341697434l) {
+    if (id == 0x48e6e2695189e59aL) {
       return new LinkNameRefExpression_Constraints();
     }
-    if (id == 5253134957341870583l) {
+    if (id == 0x48e6e269518c89f7L) {
       return new PropertyNameRefExpression_Constraints();
     }
-    if (id == 6407023681583036853l) {
+    if (id == 0x58ea5217b045b9b5L) {
       return new NodeAttributeQualifier_Constraints();
     }
-    if (id == 6407023681583036855l) {
+    if (id == 0x58ea5217b045b9b7L) {
       return new LinkAttributeQualifier_Constraints();
     }
-    if (id == 6407023681583040953l) {
+    if (id == 0x58ea5217b045c9b9L) {
       return new PropertyAttributeQualifier_Constraints();
     }
-    if (id == 2788452359612124333l) {
+    if (id == 0x26b292a5afc7ccadL) {
       return new PropertyQualifier_Constraints();
     }
-    if (id == 2788452359612124332l) {
+    if (id == 0x26b292a5afc7ccacL) {
       return new LinkQualifier_Constraints();
     }
-    if (id == 4040588429969021681l) {
+    if (id == 0x38130dc4e3db5af1L) {
       return new ModuleReferenceExpression_Constraints();
     }
-    if (id == 559557797393017698l) {
+    if (id == 0x7c3f2da20e92b62L) {
       return new ModelReferenceExpression_Constraints();
     }
-    if (id == 1828409047608048457l) {
+    if (id == 0x195fd0576ac9bb49L) {
       return new NodePointerExpression_Constraints();
     }
-    if (id == 6973815483243445083l) {
+    if (id == 0x60c7f83bafd83b5bL) {
       return new EnumMemberValueRefExpression_Constraints();
     }
-    if (id == 597763930871270009l) {
+    if (id == 0x84baf20c71f8a79L) {
       return new ChildNodeRefExpression_Constraints();
     }
-    if (id == 6955116391921790598l) {
+    if (id == 0x6085898237feae86L) {
       return new CheckedModuleQualifiedName_Constraints();
     }
-    if (id == 2644386474301421077l) {
+    if (id == 0x24b2bf7ce1957615L) {
       return new LinkIdRefExpression_Constraints();
     }
-    if (id == 2644386474302386080l) {
+    if (id == 0x24b2bf7ce1a42fa0L) {
       return new PropertyIdRefExpression_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

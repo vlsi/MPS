@@ -5,7 +5,6 @@ package jetbrains.mps.lang.classLike.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -14,13 +13,13 @@ public class ClassLikeBooleanProperty_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getValueExpression_3855110916777030624(SNode thisNode) {
-    return _quotation_createNode_xeux4x_a0a0(String.valueOf(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308871875l, 6478870542308871876l, "value"))));
+    return _quotation_createNode_xeux4x_a0a0(String.valueOf(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, 0x59e9926e84100ec4L, "value"))));
   }
   private static SNode _quotation_createNode_xeux4x_a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"), (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), (String) parameter_1);
     return quotedNode_2;
   }
 }

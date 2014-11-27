@@ -4,7 +4,6 @@ package jetbrains.mps.build.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -28,12 +27,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildLayout_FilesOf_Constraints extends BaseConstraintsDescriptor {
   public BuildLayout_FilesOf_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8755280088213897754l, -5075149991798053422l), 7753544965996647428l));
+    super(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6b9a2011083f9404L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(8755280088213897754l, -5075149991798053422l), 7753544965996647428l, 7753544965996647430l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(8755280088213897754l, -5075149991798053422l), 7753544965996647428l, 7753544965996647430l), this) {
+    references.put(MetaIdFactory.refId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6b9a2011083f9404L, 0x6b9a2011083f9406L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6b9a2011083f9404L, 0x6b9a2011083f9406L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -48,7 +47,7 @@ public class BuildLayout_FilesOf_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getParameterNode()), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")) + " " + SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+            return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getParameterNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) + " " + SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

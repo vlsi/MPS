@@ -15,7 +15,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -70,7 +69,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_ls0i5e_a0a0a(EditorContext editorContext, SNode node) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331502l, "body"))).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f96eL, "body"))).isNotEmpty();
   }
   private EditorCell createRefNodeList_ls0i5e_b0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.bodyListHandler_ls0i5e_b0a(node, "body", editorContext);
@@ -162,7 +161,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ls0i5e_a2a0(SNode node, EditorContext editorContext) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{})) || SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{})) || SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated"));
   }
   private EditorCell createConstant_ls0i5e_a2a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -219,7 +218,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_ls0i5e_a1c0a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 5349172909345532722l, "author"))).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4a3c146b7faeeb32L, "author"))).isNotEmpty();
   }
   private EditorCell createRefNodeList_ls0i5e_c2a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.sinceListHandler_ls0i5e_c2a0(node, "since", editorContext);
@@ -266,7 +265,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_ls0i5e_a2c0a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331490l, "since"))).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f962L, "since"))).isNotEmpty();
   }
   private EditorCell createRefNodeList_ls0i5e_d2a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.versionListHandler_ls0i5e_d2a0(node, "version", editorContext);
@@ -313,7 +312,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_ls0i5e_a3c0a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331491l, "version"))).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f963L, "version"))).isNotEmpty();
   }
   private EditorCell createRefNodeList_ls0i5e_e2a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.seeListHandler_ls0i5e_e2a0(node, "see", editorContext);
@@ -360,7 +359,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_ls0i5e_a4c0a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 2217234381367277533l, "see"))).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x1ec532ec252df7ddL, "see"))).isNotEmpty();
   }
   private EditorCell createRefNodeList_ls0i5e_f2a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.paramListHandler_ls0i5e_f2a0(node, "param", editorContext);
@@ -407,7 +406,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_ls0i5e_a5c0a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 8465538089690917625l, "param"))).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, 0x757ba20a4c90eaf9L, "param"))).isNotEmpty();
   }
   private EditorCell createRefNodeList_ls0i5e_g2a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.throwsTagListHandler_ls0i5e_g2a0(node, "throwsTag", editorContext);
@@ -454,7 +453,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_ls0i5e_a6c0a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 5858074156537516428l, "throwsTag"))).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, 0x514c0f687050918cL, "throwsTag"))).isNotEmpty();
   }
   private EditorCell createRefNode_ls0i5e_h2a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -482,7 +481,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ls0i5e_a7c0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"));
+    return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated"));
   }
   private EditorCell createRefNode_ls0i5e_i2a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -509,7 +508,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ls0i5e_a8c0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 5858074156537516440l, "return")) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, 0x514c0f6870509198L, "return")) != null);
   }
   private EditorCell createConstant_ls0i5e_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");

@@ -69,83 +69,83 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 4278635856200794926l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x3b60c4a45c19032eL) {
       return new BuildMps_ModuleDependencyExtendLanguage_Constraints();
     }
-    if (id == 7753544965996377997l) {
+    if (id == 0x6b9a2011083b778dL) {
       return new BuildMps_Branding_Constraints();
     }
-    if (id == 1500819558095907805l) {
+    if (id == 0x14d3fb6fb843ebddL) {
       return new BuildMps_Group_Constraints();
     }
-    if (id == 3189788309731840247l) {
+    if (id == 0x2c446791464290f7L) {
       return new BuildMps_Solution_Constraints();
     }
-    if (id == 3189788309731840248l) {
+    if (id == 0x2c446791464290f8L) {
       return new BuildMps_Language_Constraints();
     }
-    if (id == 322010710375794190l) {
+    if (id == 0x4780308f5d2060eL) {
       return new BuildMps_DevKit_Constraints();
     }
-    if (id == 6592112598314498932l) {
+    if (id == 0x5b7be37b4de9bb74L) {
       return new BuildMps_IdeaPlugin_Constraints();
     }
-    if (id == 6592112598314498926l) {
+    if (id == 0x5b7be37b4de9bb6eL) {
       return new BuildMpsLayout_Plugin_Constraints();
     }
-    if (id == 1265949165890536423l) {
+    if (id == 0x11918e0f209b83e7L) {
       return new BuildMpsLayout_ModuleJars_Constraints();
     }
-    if (id == 3189788309731981027l) {
+    if (id == 0x2c4467914644b6e3L) {
       return new BuildMps_ModuleSolutionRuntime_Constraints();
     }
-    if (id == 322010710376037449l) {
+    if (id == 0x4780308f5d5bc49L) {
       return new BuildMps_ModuleDependencyOnDevKit_Constraints();
     }
-    if (id == 3189788309731928315l) {
+    if (id == 0x2c4467914643e8fbL) {
       return new BuildMps_ModuleDependencyOnJavaModule_Constraints();
     }
-    if (id == 5253498789149585690l) {
+    if (id == 0x48e82d508334b11aL) {
       return new BuildMps_ModuleDependencyOnModule_Constraints();
     }
-    if (id == 3189788309731922642l) {
+    if (id == 0x2c4467914643d2d2L) {
       return new BuildMps_ModuleDependencyUseLanguage_Constraints();
     }
-    if (id == 322010710375805242l) {
+    if (id == 0x4780308f5d2313aL) {
       return new BuildMps_DevKitRef_Constraints();
     }
-    if (id == 322010710375832938l) {
+    if (id == 0x4780308f5d29d6aL) {
       return new BuildMps_DevKitExportLanguage_Constraints();
     }
-    if (id == 322010710375832954l) {
+    if (id == 0x4780308f5d29d7aL) {
       return new BuildMps_DevKitExportSolution_Constraints();
     }
-    if (id == 1692280246134781712l) {
+    if (id == 0x177c2feaf3463710L) {
       return new BuildMpsLayout_ModuleSources_Constraints();
     }
-    if (id == 7655580649838764660l) {
+    if (id == 0x6a3e160a3efe6274L) {
       return new BuildMpsLayout_ModuleXml_Constraints();
     }
-    if (id == 6592112598314795900l) {
+    if (id == 0x5b7be37b4dee437cL) {
       return new BuildMpsLayout_PluginDescriptor_Constraints();
     }
-    if (id == 6592112598314586625l) {
+    if (id == 0x5b7be37b4deb1201L) {
       return new BuildMps_IdeaPluginGroup_Constraints();
     }
-    if (id == 6592112598314499036l) {
+    if (id == 0x5b7be37b4de9bbdcL) {
       return new BuildMps_IdeaPluginModule_Constraints();
     }
-    if (id == 6592112598314499027l) {
+    if (id == 0x5b7be37b4de9bbd3L) {
       return new BuildMps_IdeaPluginDependency_Constraints();
     }
-    if (id == 4034578608468929319l) {
+    if (id == 0x37fdb3de482e2b27L) {
       return new BuildMps_IdeaPluginGroupCustomModule_Constraints();
     }
-    if (id == 6503355885715333289l) {
+    if (id == 0x5a408fb8c80220a9L) {
       return new BuildMpsAspect_Constraints();
     }
-    if (id == 5507251971038816436l) {
+    if (id == 0x4c6db07d2e56a8b4L) {
       return new BuildMps_Generator_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

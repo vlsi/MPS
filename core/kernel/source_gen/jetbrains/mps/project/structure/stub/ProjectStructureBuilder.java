@@ -12,7 +12,6 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -52,186 +51,186 @@ public abstract class ProjectStructureBuilder {
     return myTarget;
   }
   private SNode convertLanguage(LanguageDescriptor source) {
-    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, "jetbrains.mps.lang.project.structure.Language")));
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, "jetbrains.mps.lang.project.structure.Language")));
     ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     myModel.addRootNode(result);
     fill(result, source);
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540900l, "compileInMPS"), "" + (true));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 269654322145296906l, "genPath"), source.getGenPath());
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 6835717623312062005l, "languagePath"), myFile.getPath());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS"), "" + (true));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x3be012d639e820aL, "genPath"), source.getGenPath());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5edd58f612649635L, "languagePath"), myFile.getPath());
     for (SModelReference ref : source.getAccessoryModels()) {
-      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 269654322145263488l, "accessoryModels")).add(convert(ref));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x3be012d639dff80L, "accessoryModels")).add(convert(ref));
     }
     for (GeneratorDescriptor descriptor : source.getGenerators()) {
-      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 6370754048397540919l, "generator")).add(convert(descriptor));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5869770da61dfe37L, "generator")).add(convert(descriptor));
     }
     for (SModuleReference ref : source.getExtendedLanguages()) {
-      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 269654322145263489l, "extendedLanguages")).add(convert(ref));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x3be012d639dff81L, "extendedLanguages")).add(convert(ref));
     }
     for (SModuleReference dep : source.getRuntimeModules()) {
-      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, 269654322145263490l, "runtimeModules")).add(convert(dep));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x3be012d639dff82L, "runtimeModules")).add(convert(dep));
     }
     collectModels(result, source);
     return result;
   }
   private SNode convertSolution(SolutionDescriptor source) {
-    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540896l, "jetbrains.mps.lang.project.structure.Solution")));
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe20L, "jetbrains.mps.lang.project.structure.Solution")));
     ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     myModel.addRootNode(result);
     fill(result, source);
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540900l, "compileInMPS"), "" + (source.getCompileInMPS()));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540896l, 269654322145299054l, "outputPath"), source.getOutputPath());
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540896l, 6835717623312030364l, "solutionPath"), myFile.getPath());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS"), "" + (source.getCompileInMPS()));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe20L, 0x3be012d639e8a6eL, "outputPath"), source.getOutputPath());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe20L, 0x5edd58f612641a9cL, "solutionPath"), myFile.getPath());
     collectModels(result, source);
     return result;
   }
   private SNode convertDevkit(DevkitDescriptor source) {
-    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540911l, "jetbrains.mps.lang.project.structure.DevKit")));
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, "jetbrains.mps.lang.project.structure.DevKit")));
     ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     myModel.addRootNode(result);
     fill(result, source);
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540900l, "compileInMPS"), "" + (false));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540911l, 6966544519551784808l, "devkitPath"), myFile.getPath());
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS"), "" + (false));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, 0x60ae235487d41768L, "devkitPath"), myFile.getPath());
     for (SModuleReference ref : source.getExtendedDevkits()) {
-      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540911l, 6966544519551784807l, "extendedDevkits")).add(convert(ref));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, 0x60ae235487d41767L, "extendedDevkits")).add(convert(ref));
     }
     for (SModuleReference ref : source.getExportedLanguages()) {
-      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540911l, 6966544519551784805l, "exportedLanguages")).add(convert(ref));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, 0x60ae235487d41765L, "exportedLanguages")).add(convert(ref));
     }
     for (SModuleReference ref : source.getExportedSolutions()) {
-      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540911l, 6966544519551784806l, "exportedSolutions")).add(convert(ref));
+      SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, 0x60ae235487d41766L, "exportedSolutions")).add(convert(ref));
     }
     return result;
   }
   private SNode convert(SModelReference source) {
-    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, "jetbrains.mps.lang.project.structure.ModelReference")));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540909l, "uuid"), source.getModelId().toString());
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, "jetbrains.mps.lang.project.structure.ModelReference")));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"), source.getModelId().toString());
     String modelName = source.getModelName();
     int atIndex = modelName.indexOf('@');
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540910l, "qualifiedName"), (atIndex == -1 ? modelName : modelName.substring(0, atIndex)));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6655394244919476145l, "stereotype"), (atIndex == -1 ? "" : modelName.substring(atIndex + 1)));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName"), (atIndex == -1 ? modelName : modelName.substring(0, atIndex)));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype"), (atIndex == -1 ? "" : modelName.substring(atIndex + 1)));
     return result;
   }
   private void fill(SNode module, ModuleDescriptor source) {
-    SPropertyOperations.set(module, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540898l, "uuid"), (source.getId() == null ? null : source.getId().toString()));
-    SPropertyOperations.set(module, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540899l, "namespace"), source.getNamespace());
+    SPropertyOperations.set(module, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe22L, "uuid"), (source.getId() == null ? null : source.getId().toString()));
+    SPropertyOperations.set(module, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe23L, "namespace"), source.getNamespace());
 
     for (ModelRootDescriptor root : source.getModelRootDescriptors()) {
-      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 1855399583446017057l, "modelRoots")).add(convert(root));
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x19bfb4173fb52421L, "modelRoots")).add(convert(root));
     }
     for (Dependency mdep : source.getDependencies()) {
-      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540908l, "dependencies")).add(convert(mdep));
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe2cL, "dependencies")).add(convert(mdep));
     }
     for (SModuleReference ref : source.getUsedDevkits()) {
-      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 1855399583446017056l, "usedDevkits")).add(convert(ref));
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x19bfb4173fb52420L, "usedDevkits")).add(convert(ref));
     }
     for (SModuleReference ref : source.getUsedLanguages()) {
-      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 1855399583446017055l, "usedLanguages")).add(convert(ref));
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x19bfb4173fb5241fL, "usedLanguages")).add(convert(ref));
     }
     for (String path : source.getAdditionalJavaStubPaths()) {
-      SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446017058l, "jetbrains.mps.lang.project.structure.StubEntry")));
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446017058l, 1855399583446017059l, "path"), path);
-      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 1855399583446017641l, "stubModels")).add(node);
+      SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb52422L, "jetbrains.mps.lang.project.structure.StubEntry")));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb52422L, 0x19bfb4173fb52423L, "path"), path);
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x19bfb4173fb52669L, "stubModels")).add(node);
     }
     for (String s : source.getSourcePaths()) {
-      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 269654322145263551l, "sourcePaths")).add(convertSourcePath(s));
+      SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x3be012d639dffbfL, "sourcePaths")).add(convertSourcePath(s));
     }
   }
   private SNode convert(ModelRootDescriptor source) {
-    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446017062l, "jetbrains.mps.lang.project.structure.ModelRoot")));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446017062l, 1666927970458410904l, "type"), source.getType());
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb52426L, "jetbrains.mps.lang.project.structure.ModelRoot")));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb52426L, 0x17221e2849561f98L, "type"), source.getType());
     String path = source.getMemento().get("path");
     if ((path != null && path.length() > 0)) {
-      SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446017062l, 1855399583446017567l, "path"), path);
+      SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb52426L, 0x19bfb4173fb5261fL, "path"), path);
     }
     return result;
   }
   private SNode convertSourcePath(String s) {
-    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 269654322145263543l, "jetbrains.mps.lang.project.structure.SourcePath")));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 269654322145263543l, 269654322145263544l, "value"), s);
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x3be012d639dffb7L, "jetbrains.mps.lang.project.structure.SourcePath")));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x3be012d639dffb7L, 0x3be012d639dffb8L, "value"), s);
     return result;
   }
   private SNode convert(Dependency source) {
-    SNode dep = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540904l, "jetbrains.mps.lang.project.structure.ModuleDependency")));
-    SPropertyOperations.set(dep, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540904l, 6370754048397540905l, "reexport"), "" + (source.isReexport()));
-    SLinkOperations.setTarget(dep, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540904l, 1855399583446017054l, "moduleRef"), convert(source.getModuleRef()));
+    SNode dep = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, "jetbrains.mps.lang.project.structure.ModuleDependency")));
+    SPropertyOperations.set(dep, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x5869770da61dfe29L, "reexport"), "" + (source.isReexport()));
+    SLinkOperations.setTarget(dep, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x19bfb4173fb5241eL, "moduleRef"), convert(source.getModuleRef()));
     return dep;
   }
   private SNode convert(GeneratorDescriptor source) {
-    SNode generator = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, "jetbrains.mps.lang.project.structure.Generator")));
+    SNode generator = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, "jetbrains.mps.lang.project.structure.Generator")));
     fill(generator, source);
-    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 269654322145299012l, "generatorUID"), source.getGeneratorUID());
-    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 3000929436959691392l, "generateTemplates"), "" + (source.isGenerateTemplates()));
-    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 7252918371708012025l, "needOperationContext"), "" + (source.needsOperationContext()));
-    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 7252918371708011942l, "reflectiveQueries"), "" + (source.isReflectiveQueries()));
-    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540899l, "namespace"), (isNotEmptyString(source.getNamespace()) ? source.getNamespace() : null));
+    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x3be012d639e8a44L, "generatorUID"), source.getGeneratorUID());
+    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x29a5716c5dfed280L, "generateTemplates"), "" + (source.isGenerateTemplates()));
+    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x64a78ad4da8f85f9L, "needOperationContext"), "" + (source.needsOperationContext()));
+    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x64a78ad4da8f85a6L, "reflectiveQueries"), "" + (source.isReflectiveQueries()));
+    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe23L, "namespace"), (isNotEmptyString(source.getNamespace()) ? source.getNamespace() : null));
     for (MappingPriorityRule rule : source.getPriorityRules()) {
-      SLinkOperations.getChildren(generator, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 1855399583446016267l, "priorityRules")).add(convert(rule));
+      SLinkOperations.getChildren(generator, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210bL, "priorityRules")).add(convert(rule));
     }
     for (SModuleReference ref : source.getDepGenerators()) {
-      SLinkOperations.getChildren(generator, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 1855399583446016271l, "depGenerators")).add(convert(ref));
+      SLinkOperations.getChildren(generator, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210fL, "depGenerators")).add(convert(ref));
     }
     collectModels(generator, source);
     return generator;
   }
   private SNode convert(MappingPriorityRule source) {
-    SNode rule = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, "jetbrains.mps.lang.project.structure.MappingPriorityRule")));
+    SNode rule = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L, "jetbrains.mps.lang.project.structure.MappingPriorityRule")));
     switch (source.getType()) {
       case BEFORE_OR_TOGETHER:
-        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 6370754048397540925l, "type"), "before_or_together");
+        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L, 0x5869770da61dfe3dL, "type"), "before_or_together");
         break;
       case STRICTLY_BEFORE:
-        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 6370754048397540925l, "type"), "strictly_before");
+        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L, 0x5869770da61dfe3dL, "type"), "strictly_before");
         break;
       case STRICTLY_AFTER:
-        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 6370754048397540925l, "type"), "strictly_after");
+        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L, 0x5869770da61dfe3dL, "type"), "strictly_after");
         break;
       case AFTER_OR_TOGETHER:
-        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 6370754048397540925l, "type"), "after_or_together");
+        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L, 0x5869770da61dfe3dL, "type"), "after_or_together");
         break;
       default:
-        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 6370754048397540925l, "type"), "strictly_together");
+        SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L, 0x5869770da61dfe3dL, "type"), "strictly_together");
     }
-    SLinkOperations.setTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 2721285250110391021l, "left"), convert(source.getLeft()));
-    SLinkOperations.setTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540920l, 2721285250110391022l, "right"), convert(source.getRight()));
+    SLinkOperations.setTarget(rule, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L, 0x25c3f284595702edL, "left"), convert(source.getLeft()));
+    SLinkOperations.setTarget(rule, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L, 0x25c3f284595702eeL, "right"), convert(source.getRight()));
     return rule;
   }
   private SNode convert(SModuleReference ref) {
     if (ref == null) {
       return null;
     }
-    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, "jetbrains.mps.lang.project.structure.ModuleReference")));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016269l, "uuid"), (ref.getModuleId() != null ? ref.getModuleId().toString() : null));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 1855399583446016268l, 1855399583446016270l, "qualifiedName"), ref.getModuleName());
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, "jetbrains.mps.lang.project.structure.ModuleReference")));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid"), (ref.getModuleId() != null ? ref.getModuleId().toString() : null));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210eL, "qualifiedName"), ref.getModuleName());
     return result;
   }
   private SNode convert(MappingConfig_AbstractRef source) {
     if (source instanceof MappingConfig_RefAllGlobal) {
-      return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110256911l, "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal")));
+      return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f2845954f70fL, "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal")));
     } else if (source instanceof MappingConfig_RefAllLocal) {
-      return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110390996l, "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal")));
+      return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595702d4L, "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal")));
     } else if (source instanceof MappingConfig_RefSet) {
-      SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110391051l, "jetbrains.mps.lang.project.structure.MappingConfigRefSet")));
+      SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f2845957030bL, "jetbrains.mps.lang.project.structure.MappingConfigRefSet")));
       for (MappingConfig_AbstractRef ref : ((MappingConfig_RefSet) source).getMappingConfigs()) {
-        SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110391051l, 2721285250110391052l, "refs")).add(convert(ref));
+        SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f2845957030bL, 0x25c3f2845957030cL, "refs")).add(convert(ref));
       }
       return result;
     } else if (source instanceof MappingConfig_ExternalRef) {
-      SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400481l, "jetbrains.mps.lang.project.structure.MappingConfigExternalRef")));
-      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400481l, 2721285250110400483l, "generator"), convert(((MappingConfig_ExternalRef) source).getGenerator()));
-      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400481l, 2721285250110400482l, "innerRef"), convert(((MappingConfig_ExternalRef) source).getMappingConfig()));
+      SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595727e1L, "jetbrains.mps.lang.project.structure.MappingConfigExternalRef")));
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595727e1L, 0x25c3f284595727e3L, "generator"), convert(((MappingConfig_ExternalRef) source).getGenerator()));
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595727e1L, 0x25c3f284595727e2L, "innerRef"), convert(((MappingConfig_ExternalRef) source).getMappingConfig()));
       return result;
     } else if (source instanceof MappingConfig_SimpleRef) {
-      SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef")));
-      SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400376l, "modelUID"), ((MappingConfig_SimpleRef) source).getModelUID());
-      SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400377l, "nodeID"), ((MappingConfig_SimpleRef) source).getNodeID());
+      SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef")));
+      SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572778L, "modelUID"), ((MappingConfig_SimpleRef) source).getModelUID());
+      SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572779L, "nodeID"), ((MappingConfig_SimpleRef) source).getNodeID());
       return result;
     }
     return null;
   }
   protected void collectModels(SNode module, ModuleDescriptor descriptor) {
     for (SModelReference ref : Sequence.fromIterable(loadReferences(module, descriptor))) {
-      ListSequence.fromList(SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540907l, "model"))).addElement(convert(ref));
+      ListSequence.fromList(SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe2bL, "model"))).addElement(convert(ref));
     }
   }
   public abstract Iterable<SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);

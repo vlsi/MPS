@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -26,7 +25,7 @@ public class check_QueryDuplicatedParameters_NonTypesystemRule extends AbstractN
   public check_QueryDuplicatedParameters_NonTypesystemRule() {
   }
   public void applyRule(final SNode queryParameterList, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final Iterable<SNode> parameters = SLinkOperations.getChildren(queryParameterList, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004132277753l, 4307205004141421222l, "parameter"));
+    final Iterable<SNode> parameters = SLinkOperations.getChildren(queryParameterList, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter"));
     Iterable<SNode> parameterConcepts = Sequence.fromIterable(parameters).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.getConceptDeclaration(it);
@@ -47,7 +46,7 @@ public class check_QueryDuplicatedParameters_NonTypesystemRule extends AbstractN
         for (SNode other : Sequence.fromIterable(group).tail(Sequence.fromIterable(group).count() - 1)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(other, "Duplicated parameter: " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(Sequence.fromIterable(group).first()), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")), "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "2284201910212797905", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(other, "Duplicated parameter: " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(Sequence.fromIterable(group).first()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")), "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "2284201910212797905", null, errorTarget);
           }
         }
       }

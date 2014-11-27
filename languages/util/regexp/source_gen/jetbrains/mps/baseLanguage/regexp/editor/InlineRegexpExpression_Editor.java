@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -106,7 +105,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_5rturt_a3a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174510540317l, 1175158906851l, "multiLine"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119ceddfe3L, "multiLine"));
   }
   private EditorCell createConstant_5rturt_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "s");
@@ -120,7 +119,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_5rturt_a4a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174510540317l, 1175158902584l, "dotAll"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119cedcf38L, "dotAll"));
   }
   private EditorCell createConstant_5rturt_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "i");
@@ -134,7 +133,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_5rturt_a5a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174510540317l, 1175159132192l, "caseInsensitive"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119cf15020L, "caseInsensitive"));
   }
   private EditorCell createCollection_5rturt_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -340,7 +339,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_5rturt_r0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174510540317l, 1174510571016l, "regexp")), "virtual_isValid_4759120547781297301", new Object[]{}) ? "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174510540317l, 1174510571016l, "regexp")), "virtual_toString_1213877429451", new Object[]{}) + "/" : "<invalid>");
+        return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x11176490e08L, "regexp")), "virtual_isValid_4759120547781297301", new Object[]{}) ? "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x11176490e08L, "regexp")), "virtual_toString_1213877429451", new Object[]{}) + "/" : "<invalid>");
       }
       public void setText(String s) {
       }

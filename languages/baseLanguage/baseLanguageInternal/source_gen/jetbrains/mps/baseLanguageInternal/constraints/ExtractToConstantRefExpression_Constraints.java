@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguageInternal.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -25,12 +24,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ExtractToConstantRefExpression_Constraints extends BaseConstraintsDescriptor {
   public ExtractToConstantRefExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2363163772790029805l, -6024047381933761144l), 99767819676010097l));
+    super(MetaIdFactory.conceptId(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-2363163772790029805l, -6024047381933761144l), 99767819676010097l, 99767819676010098l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-2363163772790029805l, -6024047381933761144l), 99767819676010097l, 99767819676010098l), this) {
+    references.put(MetaIdFactory.refId(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, 0x162724dabcdc672L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, 0x162724dabcdc672L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -45,11 +44,11 @@ public class ExtractToConstantRefExpression_Constraints extends BaseConstraintsD
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1238251434034l, 1238251449050l, "fieldName"));
+            return SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1204d897032L, 0x1204d89aadaL, "fieldName"));
           }
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(new UUID(-2363163772790029805l, -6024047381933761144l), 1238251434034l, "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression"), false, new SAbstractConcept[]{});
+            return SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1204d897032L, "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression"), false, new SAbstractConcept[]{});
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

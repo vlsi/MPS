@@ -6,12 +6,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class UnicodeCharacterRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return "\\u" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1203415418648l, 1203415499835l, "code"));
+    return "\\u" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11831260718L, 0x1183127443bL, "code"));
   }
 }

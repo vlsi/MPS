@@ -35,32 +35,32 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 1083171877298l) {
+    long id = conceptId.getIdValue();
+    if (id == 0xfc321331b2L) {
       return new EnumerationMemberDeclaration_Constraints();
     }
-    if (id == 1071489090640l) {
+    if (id == 0xf979ba0450L) {
       return new ConceptDeclaration_Constraints();
     }
-    if (id == 1071489288298l) {
+    if (id == 0xf979bd086aL) {
       return new LinkDeclaration_Constraints();
     }
-    if (id == 1082978164219l) {
+    if (id == 0xfc26875dfbL) {
       return new EnumerationDataTypeDeclaration_Constraints();
     }
-    if (id == 1169125989551l) {
+    if (id == 0x1103556dcafL) {
       return new InterfaceConceptDeclaration_Constraints();
     }
-    if (id == 1082978499127l) {
+    if (id == 0xfc268c7a37L) {
       return new ConstrainedDataTypeDeclaration_Constraints();
     }
-    if (id == 1169125787135l) {
+    if (id == 0x1103553c5ffL) {
       return new AbstractConceptDeclaration_Constraints();
     }
-    if (id == 1071489288299l) {
+    if (id == 0xf979bd086bL) {
       return new PropertyDeclaration_Constraints();
     }
-    if (id == 1082978164218l) {
+    if (id == 0xfc26875dfaL) {
       return new DataTypeDeclaration_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

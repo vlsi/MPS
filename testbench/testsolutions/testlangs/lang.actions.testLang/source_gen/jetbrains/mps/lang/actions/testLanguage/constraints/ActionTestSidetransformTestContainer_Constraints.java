@@ -4,7 +4,6 @@ package jetbrains.mps.lang.actions.testLanguage.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
@@ -17,7 +16,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ActionTestSidetransformTestContainer_Constraints extends BaseConstraintsDescriptor {
   public ActionTestSidetransformTestContainer_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8322320058774933180l, -6326357545913795484l), 1702123884811354597l));
+    super(MetaIdFactory.conceptId(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x179f28a7ade381e5L));
   }
   @Override
   public boolean hasOwnCanBeParentMethod() {
@@ -34,10 +33,10 @@ public class ActionTestSidetransformTestContainer_Constraints extends BaseConstr
     return result;
   }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    if (childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1") && link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 1702123884811354597l, 4942308145798610513l, "abstractChildConstrained"))) {
+    if (childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1") && link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x179f28a7ade381e5L, 0x44969b12b8d87e51L, "abstractChildConstrained"))) {
       return false;
     }
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(8322320058774933180l, -6326357545913795484l), 3185679905990512080l, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept")) && link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8322320058774933180l, -6326357545913795484l), 1702123884811354597l, 3185679905990201679l, "anotherAbstractChildConstrained"))) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept")) && link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x179f28a7ade381e5L, 0x2c35cefefca5514fL, "anotherAbstractChildConstrained"))) {
       return false;
     }
 

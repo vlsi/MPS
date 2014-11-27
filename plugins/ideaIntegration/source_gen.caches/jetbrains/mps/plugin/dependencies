@@ -67,7 +67,6 @@
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.rmi.NoSuchObjectException" />
     <classNode dependClassName="java.rmi.RemoteException" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder" />

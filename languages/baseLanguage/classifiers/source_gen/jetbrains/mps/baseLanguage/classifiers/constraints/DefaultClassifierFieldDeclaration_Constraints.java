@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.classifiers.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class DefaultClassifierFieldDeclaration_Constraints extends BaseConstraintsDescriptor {
   public DefaultClassifierFieldDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(4917733117167750838l, -7710007501170303426l), 1213999088275l));
+    super(MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc0293L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -32,7 +31,7 @@ public class DefaultClassifierFieldDeclaration_Constraints extends BaseConstrain
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), true, false) != null);
+    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), true, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "4448365440080463939");
 }

@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,11 +17,11 @@ public class LetRef_Behavior {
   public static List<SNode> call_getAllReferences_926857988255581402(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     SNode node = thisNode;
-    while (SNodeOperations.getParent(node) != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 1564819815921013155l, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression")))) {
+    while (SNodeOperations.getParent(node) != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression")))) {
       node = SNodeOperations.getParent(node);
     }
-    for (SNode letRef : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4939219901992083820l, "jetbrains.mps.samples.lambdaCalculus.structure.LetRef"), false, new SAbstractConcept[]{})) {
-      if (SLinkOperations.getTarget(letRef, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable")) == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable"))) {
+    for (SNode letRef : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edc7216cL, "jetbrains.mps.samples.lambdaCalculus.structure.LetRef"), false, new SAbstractConcept[]{})) {
+      if (SLinkOperations.getTarget(letRef, MetaAdapterFactory.getReferenceLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L, "variable")) == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L, "variable"))) {
         ListSequence.fromList(result).addElement(letRef);
       }
     }

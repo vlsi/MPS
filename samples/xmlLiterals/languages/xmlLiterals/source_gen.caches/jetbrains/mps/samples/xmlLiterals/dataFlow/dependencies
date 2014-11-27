@@ -7,7 +7,6 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.xmlLiterals.dataFlow.XmlLiteral_DataFlow" file="XmlLiteral_DataFlow.java">
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

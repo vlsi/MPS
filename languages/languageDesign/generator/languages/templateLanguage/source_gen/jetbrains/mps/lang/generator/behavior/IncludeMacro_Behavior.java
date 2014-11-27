@@ -7,7 +7,6 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
@@ -17,7 +16,7 @@ public class IncludeMacro_Behavior {
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       GeneratedMatchingPattern pattern_wfrqja_a0a = new IncludeMacro_Behavior.Pattern_wfrqja_a0a0a0a1();
-      SNode coercedNode_wfrqja_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1194565793557l, 1194565823413l, "sourceNodeQuery"))), pattern_wfrqja_a0a);
+      SNode coercedNode_wfrqja_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11621ab7715L, 0x11621abebb5L, "sourceNodeQuery"))), pattern_wfrqja_a0a);
       if (coercedNode_wfrqja_a0a != null) {
         return ((SNode) pattern_wfrqja_a0a.getFieldValue("patternVar_concept"));
       } else {
@@ -35,7 +34,7 @@ public class IncludeMacro_Behavior {
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_wfrqja_a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_wfrqja_a0a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
+        patternVar_concept = nodeToMatch_wfrqja_a0a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));
       }
       return true;
     }

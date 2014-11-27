@@ -7,27 +7,26 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class HTMLElement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615643l, "line"))).isEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39bL, "line"))).isEmpty()) {
       this.append("<");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615642l, "name")));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39aL, "name")));
       this.append(" />");
     } else {
       this.append("<");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615642l, "name")));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39aL, "name")));
       this.append(">");
       {
-        Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615643l, "line"));
+        Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39bL, "line"));
         for (SNode item : collection) {
           appendNode(item);
         }
       }
       this.append("</");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615642l, "name")));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39aL, "name")));
       this.append(">");
     }
   }

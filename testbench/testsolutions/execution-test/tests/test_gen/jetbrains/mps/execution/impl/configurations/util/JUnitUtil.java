@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
@@ -22,9 +21,9 @@ public class JUnitUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (final String name : names) {
-          SNode mainNode = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))).findFirst(new IWhereFilter<SNode>() {
+          SNode mainNode = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_slstu0_a0a0a0a0a0a0a0a0a0a0a1a0(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), name);
+              return eq_slstu0_a0a0a0a0a0a0a0a0a0a0a1a0(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
             }
           });
           assert mainNode != null;

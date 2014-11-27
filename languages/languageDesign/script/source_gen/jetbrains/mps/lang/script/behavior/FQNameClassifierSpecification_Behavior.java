@@ -5,15 +5,14 @@ package jetbrains.mps.lang.script.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class FQNameClassifierSpecification_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getClassifierFqName_5434557751112930827(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 5434557751112207835l, 5434557751112752962l, "classifierFQName"));
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638ddbL, 0x4b6b6d7b2a6bdf42L, "classifierFQName"));
   }
   public static String virtual_getSModelReference_5434557751113441014(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 5434557751112207835l, 5434557751113468451l, "smodelReference"));
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638ddbL, 0x4b6b6d7b2a76ca23L, "smodelReference"));
   }
 }

@@ -63,7 +63,7 @@ class StorageIndexHelper9 {
   }
 
   public void addLanguage(SLanguageId lang){
-    addInternalObject(((Map) myLanguageIndex), myUsedLanguageIndices, lang, lang.getId().hashCode());
+    addInternalObject(((Map) myLanguageIndex), myUsedLanguageIndices, lang, lang.getIdValue().hashCode());
   }
 
   public String getImportIndex(@NotNull SModelReference model) {
@@ -80,19 +80,19 @@ class StorageIndexHelper9 {
     if (index == null) {
       return MODEL_SEPARATOR_CHAR + concept.serialize();
     }
-    return index + MODEL_SEPARATOR_CHAR + concept.getConceptId();
+    return index + MODEL_SEPARATOR_CHAR + concept.getIdValue();
   }
 
   public String getPropertyIndex(@NotNull SPropertyId prop) {
-    return getConceptIndex(prop.getConceptId()) + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
+    return getConceptIndex(prop.getConceptId()) + MODEL_SEPARATOR_CHAR + prop.getIdValue();
   }
 
   public String getLinkIndex(@NotNull SContainmentLinkId linkId) {
-    return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getContainmentLinkId();
+    return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getIdValue();
   }
 
   public String getReferenceRoleIndex(@NotNull SReferenceLinkId linkId) {
-    return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getReferenceLinkId();
+    return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getIdValue();
   }
 
   private void addInternalObject(Map<Object, String> index, Set<Integer> usedIndices, Object toStore, int initialHash) {

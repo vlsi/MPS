@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.samples.money.runtime.Money;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.math.BigDecimal;
 import org.jetbrains.mps.samples.money.runtime.StockPriceDownloader;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -15,10 +14,10 @@ public class CurrentStockPrice_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Money call_getCurrentPrice_4001135958233293105(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(7361871549399452950l, -7685266567827134434l), 4001135958233291203l, 4001135958235845226l, "symbol")) == null)) {
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f4808999c3L, 0x3786e3f480b0926aL, "symbol")) == null)) {
       return new Money(BigDecimal.ZERO, "USD");
     }
-    Money currentPrice = StockPriceDownloader.getInstance().getCurrentPrice(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(7361871549399452950l, -7685266567827134434l), 4001135958233291203l, 4001135958235845226l, "symbol")), MetaAdapterFactory.getProperty(new UUID(7361871549399452950l, -7685266567827134434l), 4001135958235394442l, 4001135958235786331l, "symbol")));
+    Money currentPrice = StockPriceDownloader.getInstance().getCurrentPrice(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f4808999c3L, 0x3786e3f480b0926aL, "symbol")), MetaAdapterFactory.getProperty(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480a9b18aL, 0x3786e3f480afac5bL, "symbol")));
     if (currentPrice == null) {
       return new Money(BigDecimal.ZERO, "USD");
     }

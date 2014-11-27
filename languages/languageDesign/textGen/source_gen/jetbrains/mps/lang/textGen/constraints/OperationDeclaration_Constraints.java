@@ -4,7 +4,6 @@ package jetbrains.mps.lang.textGen.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -27,7 +26,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor {
   public OperationDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-5173455103397510980l, -8487484424797171117l), 1233922353619l));
+    super(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b80e9d3L));
   }
   @Override
   public boolean hasOwnDefaultScopeProvider() {
@@ -39,9 +38,9 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
       @Override
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         List<SNode> result = new ArrayList<SNode>();
-        List<SNode> tgList = SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
+        List<SNode> tgList = SModelOperations.rootsIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"));
         for (SNode tg : tgList) {
-          ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(tg, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1233922432965l, "operation"))));
+          ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(tg, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f4b821fc5L, "operation"))));
         }
         return result;
       }
@@ -54,7 +53,7 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-5173455103397510980l, -8487484424797171117l), 1233922353619l, 1234264079341l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-5173455103397510980l, -8487484424797171117l), 1233922353619l, 1234264079341l), this) {
+    properties.put(MetaIdFactory.propId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b80e9d3L, 0x11f5fdf3bedL), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b80e9d3L, 0x11f5fdf3bedL), this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
@@ -63,7 +62,7 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
       public Object getValue(SNode node) {
         String propertyName = "operationName";
         {
-          String name = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+          String name = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           if (name == null) {
             return null;
           }

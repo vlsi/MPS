@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -54,60 +53,60 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
       super(editorContext, node);
       myPropertyCell_x378ek_a0a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242972l, "x"));
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1de05L, 0x7a0afda102e2029cL, "x"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242972l, "x"), "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1de05L, 0x7a0afda102e2029cL, "x"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_x378ek_a0a);
       myPropertyCell_x378ek_a0a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_x378ek_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
       myPropertyCell_x378ek_a1a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242974l, "y"));
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1de05L, 0x7a0afda102e2029eL, "y"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242974l, "y"), "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1de05L, 0x7a0afda102e2029eL, "y"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_x378ek_a1a);
       myPropertyCell_x378ek_a1a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_x378ek_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       myPropertyCell_x378ek_a2a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l, 8794120090377706498l, "width"));
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL, 0x7a0afda10316dc02L, "width"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l, 8794120090377706498l, "width"), "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL, 0x7a0afda10316dc02L, "width"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_x378ek_a2a);
       myPropertyCell_x378ek_a2a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_x378ek_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "width"));
       myPropertyCell_x378ek_a3a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l, 8794120090377706500l, "height"));
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL, 0x7a0afda10316dc04L, "height"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l, 8794120090377706500l, "height"), "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL, 0x7a0afda10316dc04L, "height"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_x378ek_a3a);
       myPropertyCell_x378ek_a3a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_x378ek_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "height"));
       myPropertyCell_x378ek_a4a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 822550549814787038l, 822550549814829176l, "lineWidth"));
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0xb6a495df3833bdeL, 0xb6a495df383e078L, "lineWidth"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 822550549814787038l, 822550549814829176l, "lineWidth"), "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0xb6a495df3833bdeL, 0xb6a495df383e078L, "lineWidth"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_x378ek_a4a);
       myPropertyCell_x378ek_a4a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_x378ek_a4a, new Pair<SNodeReference, String>(new SNodePointer(node), "lineWidth"));
       myPropertyCell_x378ek_a5a = new PropertyMapperCell<String>(editorContext, node) {
         protected String getModelPropertyValueImpl() {
-          return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+          return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
         }
         protected void setModelPropertyValueImpl(String value) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), value);
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), value);
         }
       };
       addEditorCell(myPropertyCell_x378ek_a5a);

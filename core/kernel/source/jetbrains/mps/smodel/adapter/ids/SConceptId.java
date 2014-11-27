@@ -37,7 +37,7 @@ public final class SConceptId {
     return myLanguageId;
   }
 
-  public long getConceptId() {
+  public long getIdValue() {
     return myConceptId;
   }
 

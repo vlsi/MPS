@@ -4,7 +4,6 @@ package jetbrains.mps.debugger.java.customViewers.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class GetHighLevelWatchablesBlock_ConceptFunction_Constraints extends BaseConstraintsDescriptor {
   public GetHighLevelWatchablesBlock_ConceptFunction_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-393243729685033453l, -4633752096775218313l), 43370322128194518l));
+    super(MetaIdFactory.conceptId(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514043ecbd6L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -32,7 +31,7 @@ public class GetHighLevelWatchablesBlock_ConceptFunction_Constraints extends Bas
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-393243729685033453l, -4633752096775218313l), 680105146889009728l, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer"));
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)", "43370322128276361");
 }

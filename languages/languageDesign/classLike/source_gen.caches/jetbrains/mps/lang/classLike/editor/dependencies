@@ -35,7 +35,6 @@
   <dependency className="jetbrains.mps.lang.classLike.editor.ClassLikeDescriptor_Editor" file="ClassLikeDescriptor_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -254,7 +253,6 @@
   <dependency className="jetbrains.mps.lang.classLike.editor.EditorUtil" file="EditorUtil.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.behavior.ClassLikeMember_Behavior" />
@@ -274,7 +272,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.classLike.editor.GenerateModifier_Editor" file="GenerateModifier_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />

@@ -11,7 +11,6 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
@@ -27,7 +26,7 @@ public class MethodsScope extends Scope {
   public MethodsScope(Iterable<SNode> methods, Map<SNode, SNode> typeByTypeVariable) {
     nameToMethods = MapSequence.fromMap(new HashMap<String, List<SNode>>());
     for (SNode method : Sequence.fromIterable(methods)) {
-      String name = SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+      String name = SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       if (name != null) {
         if (MapSequence.fromMap(nameToMethods).containsKey(name)) {
           ListSequence.fromList(MapSequence.fromMap(nameToMethods).get(name)).addElement(method);
@@ -58,15 +57,15 @@ public class MethodsScope extends Scope {
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
-    return SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    return SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   @Override
   public boolean contains(SNode node) {
-    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")))) {
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")))) {
       return false;
     }
-    String name = SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
-    return MapSequence.fromMap(nameToMethods).containsKey(name) && ListSequence.fromList(MapSequence.fromMap(nameToMethods).get(name)).contains(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
+    String name = SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    return MapSequence.fromMap(nameToMethods).containsKey(name) && ListSequence.fromList(MapSequence.fromMap(nameToMethods).get(name)).contains(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
   }
   @Nullable
   @Override
@@ -78,10 +77,10 @@ public class MethodsScope extends Scope {
     if (methods.size() == 1) {
       return ListSequence.fromList(methods).first();
     }
-    if (!(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall")))) {
+    if (!(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")))) {
       return null;
     }
-    List<SNode> actualArguments = SLinkOperations.getChildren((SNodeOperations.cast(contextNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, "jetbrains.mps.baseLanguage.structure.IMethodCall"))), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
+    List<SNode> actualArguments = SLinkOperations.getChildren((SNodeOperations.cast(contextNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
 
     methods = MethodResolveUtil.selectByParmCount(methods, actualArguments);
     if (methods.size() == 1) {
@@ -98,6 +97,6 @@ public class MethodsScope extends Scope {
   }
   private static Map<SNode, SNode> calcTypeBindings(SNode classifierType) {
     SNode classifier = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{});
-    return ((classifier != null) ? MethodResolveUtil.getTypesByTypeVars(SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifierType, "virtual_getTypeParameters_7405920559687237518", new Object[]{})) : new HashMap<SNode, SNode>());
+    return ((classifier != null) ? MethodResolveUtil.getTypesByTypeVars(SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifierType, "virtual_getTypeParameters_7405920559687237518", new Object[]{})) : new HashMap<SNode, SNode>());
   }
 }

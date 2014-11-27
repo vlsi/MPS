@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -15,11 +14,11 @@ public class InlineTagCommentLinePart_Behavior {
   }
   public static NodeCaretPair virtual_smartDelete_9042833497008205283(SNode thisNode, boolean isBegining) {
     int index = SNodeOperations.getIndexInParent(thisNode);
-    SNode line = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
+    SNode line = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"));
     SNodeOperations.deleteNode(thisNode);
     NodeCaretPair pair = CommentLine_Behavior.call_tryMergeToRight_439148907936414403(line, index - 1);
     if (pair == null) {
-      return new NodeCaretPair(ListSequence.fromList(SLinkOperations.getChildren(line, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).getElement(index), 0);
+      return new NodeCaretPair(ListSequence.fromList(SLinkOperations.getChildren(line, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).getElement(index), 0);
     } else {
       return pair;
     }

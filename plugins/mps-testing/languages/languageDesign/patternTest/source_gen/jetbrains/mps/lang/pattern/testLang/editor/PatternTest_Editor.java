@@ -19,7 +19,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -201,7 +200,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kasahx_a8a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5910632049497948789l, -4896964971953436952l), 8707387027762047752l, 8707387027762047755l, "matches")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value")) == true;
+    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, 0x78d6da5e3799eb0bL, "matches")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value")) == true;
   }
   private EditorCell createCollection_kasahx_a8a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -215,7 +214,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kasahx_a0i0(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5910632049497948789l, -4896964971953436952l), 8707387027762047752l, 8707387027762047754l, "pattern")), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037779l, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), false, new SAbstractConcept[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, 0x78d6da5e3799eb0aL, "pattern")), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4793L, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), false, new SAbstractConcept[]{})).isNotEmpty();
   }
   private EditorCell createConstant_kasahx_a0i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -290,7 +289,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kasahx_a1i0(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5910632049497948789l, -4896964971953436952l), 8707387027762047752l, 8707387027762047754l, "pattern")), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037781l, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), false, new SAbstractConcept[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, 0x78d6da5e3799eb0aL, "pattern")), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), false, new SAbstractConcept[]{})).isNotEmpty();
   }
   private EditorCell createConstant_kasahx_a1i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -365,7 +364,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kasahx_a2i0(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5910632049497948789l, -4896964971953436952l), 8707387027762047752l, 8707387027762047754l, "pattern")), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136727061274l, "jetbrains.mps.lang.pattern.structure.ListPattern"), false, new SAbstractConcept[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, 0x78d6da5e3799eb0aL, "pattern")), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108aa36731aL, "jetbrains.mps.lang.pattern.structure.ListPattern"), false, new SAbstractConcept[]{})).isNotEmpty();
   }
   private EditorCell createConstant_kasahx_a2i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -455,9 +454,9 @@ public class PatternTest_Editor extends DefaultNodeEditor {
       }
       public void setText(String text) {
         if (text.equals("true")) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (false));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), "" + (false));
         } else if (text.equals("false")) {
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (true));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), "" + (true));
         }
       }
       public boolean isValidText(String text) {
@@ -476,7 +475,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     public PatternTest_generic_cellMenu_kasahx_a0b0a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), "" + (true));
     }
     public String getMatchingText() {
       return "false";
@@ -486,7 +485,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
     public PatternTest_generic_cellMenu_kasahx_b0b0a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess"), "" + (false));
     }
     public String getMatchingText() {
       return "true";

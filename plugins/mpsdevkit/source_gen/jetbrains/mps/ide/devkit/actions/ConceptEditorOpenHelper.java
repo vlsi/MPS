@@ -5,7 +5,6 @@ package jetbrains.mps.ide.devkit.actions;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -20,11 +19,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ConceptEditorOpenHelper {
   public static SNode getBaseNode(SNode node) {
     SNode baseNode = null;
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return null;
     }
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
-      baseNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 2621449412040133764l, "jetbrains.mps.lang.structure.structure.IConceptAspect")), "virtual_getBaseConcept_2621449412040133768", new Object[]{});
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
+      baseNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect")), "virtual_getBaseConcept_2621449412040133768", new Object[]{});
     }
     if (baseNode == null) {
       baseNode = getBaseNode2(node);
@@ -64,10 +63,10 @@ public class ConceptEditorOpenHelper {
     return baseNode;
   }
   private static boolean canOpen(SNode node) {
-    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
       return false;
     }
-    if (SModelUtil.getDeclaringLanguage(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) == null) {
+    if (SModelUtil.getDeclaringLanguage(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) == null) {
       return false;
     }
     if (Language.getModelAspect(SNodeOperations.getModel(node)) == null) {
@@ -77,11 +76,11 @@ public class ConceptEditorOpenHelper {
   }
   private static SNode findBaseNodeMultiTab(SNode node) {
     SNode baseNode = null;
-    if (jetbrains.mps.util.SNodeOperations.isRoot(node) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"))) {
-      SNode bc = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"));
+    if (jetbrains.mps.util.SNodeOperations.isRoot(node) && SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))) {
+      SNode bc = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
       SNode annotation = AttributeOperations.getAttribute(bc, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
-      if ((annotation != null) && (SLinkOperations.getTarget(annotation, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept")) != null)) {
-        baseNode = SLinkOperations.getTarget(annotation, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept"));
+      if ((annotation != null) && (SLinkOperations.getTarget(annotation, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, 0x11017255ccfL, "applicableConcept")) != null)) {
+        baseNode = SLinkOperations.getTarget(annotation, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, 0x11017255ccfL, "applicableConcept"));
       }
     }
     if ((baseNode == null)) {

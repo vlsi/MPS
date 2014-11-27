@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.util.NodeNameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
@@ -35,7 +34,7 @@ public class IGeneratedToClass_Behavior {
     return IGeneratedToClass_Behavior.call_getValidClassName_2572811016744662265(thisNode, name) + "_" + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSuffix_946964771156905483", new Object[]{});
   }
   public static String virtual_getBaseName_4366236229294148974(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static String call_getNamespace_2256484787298834694(SNode thisNode) {
     return NodeNameUtil.getNamespace(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{}));

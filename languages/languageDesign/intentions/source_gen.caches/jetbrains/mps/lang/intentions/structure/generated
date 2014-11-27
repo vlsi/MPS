@@ -1,3 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7eeyekko9e0btntdnm8i9oqkzbkv14r" />
+<dependencies version="2" modelHash="7eeyekko9e0btntdnm8i9oqkzbkv14r">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="a237ii4p803dkvj3a01l9nndi1k5jpk" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="7va3130h0ufhjdfej6hob440gm3vlqj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-3w51vd6avpj0y99dkotmnfwqd41znrq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3863x0u9flggmckjewdlsmikl6dj9wv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="dyswqfju0dze0vp40q0x5ffcejj7zen" />
+  <dep model="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" hash="8gxc9czifq7z85jtwk0ha0rbnkz2so" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="7acg7jfloizfkh7fz9512hws89btuf5" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3fcvzpa8v8rf3aly8ijks960qkiha8x" />
+  <common hash="5vg4af0npx5rjy1hl3aokn65ek3aj22" dependsOnNodes="true">
+    <dep root="1192794744107" />
+    <dep root="1192794782375" />
+    <dep root="1192795771125" />
+    <dep root="1192795911897" />
+    <dep root="1192796902958" />
+    <dep root="1240316299033" />
+    <dep root="1240322627579" />
+    <dep root="1240395258925" />
+    <dep root="1812109616120608865" />
+    <dep root="1812109616120795373" />
+    <dep root="2522969319638091381" />
+    <dep root="2522969319638198293" />
+    <dep root="3618415754251190680" />
+    <dep root="3618415754251190715" />
+    <dep root="3618415754251192144" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1192794744107" name="IntentionDeclaration" hash="7877myfz3r9w3b6lygc9d8fb2maus2g" />
+  <source id="1192794782375" name="DescriptionBlock" hash="-dapf0lklk2zu86b77z03rep9v54re6o" />
+  <source id="1192795771125" name="IsApplicableBlock" hash="ugtyqjw69gbkk02sl4qusdo198wvd9" />
+  <source id="1192795911897" name="ExecuteBlock" hash="e87ti7zajsaxbvyvoqphea48hzknopa" />
+  <source id="1192796902958" name="ConceptFunctionParameter_node" hash="-3ngw98c0nkalbnuky816f9ud5wk86oh" />
+  <source id="1240316299033" name="QueryBlock" hash="-csoqrzzhvsac4nd7l3fl0ww0dgb6egh" />
+  <source id="1240322627579" name="IntentionParameter" hash="-cfs1tmynwsyrn3t818b743yohcf6f98" />
+  <source id="1240395258925" name="ParameterizedIntentionDeclaration" hash="-2js9ypqh7rwn6w6ad89q50bwmmxojgx" />
+  <source id="3618415754251190680" name="ChildFilterBlock" hash="7313dagg9xesy0677m9ct5ix7rt5jg3" />
+  <source id="3618415754251190715" name="ChildFilterFunction" hash="81w6u8s7h96dv1tfdmqla4ckmtfaw6q" />
+  <source id="3618415754251192144" name="ConceptFunctionParameter_childNode" hash="blfsrr8qtxcskjy90dq93admy90qsqq" />
+  <source id="2522969319638091381" name="BaseIntentionDeclaration" hash="4sqonqrjpdpidike3vxlaih04sep5d5" />
+  <source id="2522969319638198293" name="SurroundWithIntentionDeclaration" hash="-8etvxzrz4iis5mxk3nhze4jilysvbbo" />
+  <source id="1812109616120608865" name="ParameterizedDescriptionBlock" hash="13ycmubqwgqeinp2zfct9oh0gfnqyti" />
+  <source id="1812109616120795373" name="ParameterizedExecuteBlock" hash="-e30jkdhtgx83ljzjp7hjwvvxz0r37gb" />
+</dependencies>
 

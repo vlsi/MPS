@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -31,7 +30,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class IStyle_Constraints extends BaseConstraintsDescriptor {
   public IStyle_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797320402872l));
+    super(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1f5847b8L));
   }
   @Override
   public boolean hasOwnDefaultScopeProvider() {
@@ -61,7 +60,7 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
           }
         }).translate(new ITranslator2<SModel, SNode>() {
           public Iterable<SNode> translate(SModel it) {
-            return SModelOperations.nodes(((SModel) it), MetaAdapterFactory.getInterfaceConcept(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797320402872l, "jetbrains.mps.lang.editor.structure.IStyle"));
+            return SModelOperations.nodes(((SModel) it), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1f5847b8L, "jetbrains.mps.lang.editor.structure.IStyle"));
           }
         });
 

@@ -11,7 +11,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -38,22 +37,22 @@ public final class MacroHelper {
     this.context = context;
   }
   public void init() {
-    for (SNode m : SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))) {
-      if (usedNames.contains(SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
+    for (SNode m : SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"))) {
+      if (usedNames.contains(SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
         context.reportProblem("duplicate macro name", m);
       }
-      add(m, null, (BehaviorReflection.invokeVirtual(Boolean.TYPE, m, "virtual_isPublic_6547494638219688113", new Object[]{}) ? SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "." + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : null));
+      add(m, null, (BehaviorReflection.invokeVirtual(Boolean.TYPE, m, "virtual_isPublic_6547494638219688113", new Object[]{}) ? SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "." + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : null));
     }
-    for (SNode dep : ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
+    for (SNode dep : ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency"));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency"));
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"));
       }
     })) {
-      SNode depProject = SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script"));
+      SNode depProject = SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script"));
       MacroHelper depHelper = context.getMacros(depProject);
       if (depHelper == null) {
         continue;
@@ -70,7 +69,7 @@ public final class MacroHelper {
         }
         String depprefix = depPrefixes.get(dep);
         if (depprefix == null) {
-          depprefix = makeUnique("import." + SPropertyOperations.getString(SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), usedPrefixes);
+          depprefix = makeUnique("import." + SPropertyOperations.getString(SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), usedPrefixes);
           depPrefixes.put(dep, depprefix);
         }
         add(m, depprefix + "." + exportName, exportName);
@@ -78,12 +77,12 @@ public final class MacroHelper {
     }
   }
   private void add(SNode macro, String importName, String exportName) {
-    SNode macroProject = SNodeOperations.as(SNodeOperations.getContainingRoot(macro), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
+    SNode macroProject = SNodeOperations.as(SNodeOperations.getContainingRoot(macro), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
     if (macroProject == null) {
       context.reportProblem("macro is defined outside of the project", macro);
       return;
     }
-    String name = makeUnique((macroProject == project ? SPropertyOperations.getString(macro, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : macroProject + "." + SPropertyOperations.getString(macro, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))), usedNames);
+    String name = makeUnique((macroProject == project ? SPropertyOperations.getString(macro, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : macroProject + "." + SPropertyOperations.getString(macro, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))), usedNames);
     macroToName.put(macro, name);
     availableMacros.add(macro);
     if (importName != null) {
@@ -106,13 +105,13 @@ public final class MacroHelper {
     return availableMacros;
   }
   public Iterable<SNode> getVarsContainers() {
-    return ListSequence.fromList(SLinkOperations.getChildren(this.project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(this.project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")) && depPrefixes.containsKey(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency")));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")) && depPrefixes.containsKey(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency"));
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"));
       }
     });
   }
@@ -143,7 +142,7 @@ public final class MacroHelper {
     return depPrefixes.get(context.getOriginalDep(dep));
   }
   public String getProjectName() {
-    return SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    return SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public void report(String message, SNode node) {
     context.reportProblem(message, node);
@@ -157,7 +156,7 @@ public final class MacroHelper {
       this.existingMacros = GenerationUtil.<SNode,MacroHelper>getSessionMap(project, genContext, "macroHelpers");
     }
     public MacroHelper getMacros(SNode dep) {
-      dep = SNodeOperations.as(DependenciesHelper.getOriginalNode(dep, genContext), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
+      dep = SNodeOperations.as(DependenciesHelper.getOriginalNode(dep, genContext), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
       if (dep == null) {
         return null;
       }
@@ -181,10 +180,10 @@ public final class MacroHelper {
       }
     }
     public SNode getOriginalMacro(SNode macro) {
-      return SNodeOperations.as(DependenciesHelper.getOriginalNode(macro, genContext), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745375l, "jetbrains.mps.build.structure.BuildMacro"));
+      return SNodeOperations.as(DependenciesHelper.getOriginalNode(macro, genContext), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro"));
     }
     public SNode getOriginalDep(SNode dep) {
-      return SNodeOperations.as(DependenciesHelper.getOriginalNode(dep, genContext), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, "jetbrains.mps.build.structure.BuildProjectDependency"));
+      return SNodeOperations.as(DependenciesHelper.getOriginalNode(dep, genContext), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"));
     }
     public void reportProblem(String message, SNode node) {
       genContext.showErrorMessage(node, message);

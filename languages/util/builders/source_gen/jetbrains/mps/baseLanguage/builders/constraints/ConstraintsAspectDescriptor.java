@@ -41,41 +41,41 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 7288041816792292064l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x6524536b2e18dae0L) {
       return new ResultExpression_Constraints();
     }
-    if (id == 7288041816792577344l) {
+    if (id == 0x6524536b2e1d3540L) {
       return new SimpleBuilderExpression_Constraints();
     }
-    if (id == 7288041816793071802l) {
+    if (id == 0x6524536b2e24c0baL) {
       return new SimpleBuilder_Constraints();
     }
-    if (id == 5425713840853785828l) {
+    if (id == 0x4b4c01fdd9029ce4L) {
       return new SimpleBuilderParameterReference_Constraints();
     }
-    if (id == 2679357232283750087l) {
+    if (id == 0x252efd34f8a58ec7L) {
       return new BeanPropertyBuilder_Constraints();
     }
-    if (id == 6666322667909540799l) {
+    if (id == 0x5c83892592e1ebbfL) {
       return new BeanBuilder_Constraints();
     }
-    if (id == 5389689214216557332l) {
+    if (id == 0x4acc05c8d721d314L) {
       return new AsTypeBuilder_Constraints();
     }
-    if (id == 7288041816792577342l) {
+    if (id == 0x6524536b2e1d353eL) {
       return new SimpleBuilderChildExpression_Constraints();
     }
-    if (id == 5389689214217242850l) {
+    if (id == 0x4acc05c8d72c48e2L) {
       return new SimpleBuilderPropertyExpression_Constraints();
     }
-    if (id == 5389689214217404511l) {
+    if (id == 0x4acc05c8d72ec05fL) {
       return new SimpleBuilderPropertyBuilder_Constraints();
     }
-    if (id == 7288041816792374840l) {
+    if (id == 0x6524536b2e1a1e38L) {
       return new SimpleBuilderDeclaration_Constraints();
     }
-    if (id == 6254726786820421041l) {
+    if (id == 0x56cd40dfa78d35b1L) {
       return new BaseSimpleBuilderDeclaration_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

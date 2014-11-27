@@ -13,7 +13,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -28,13 +27,13 @@ public class TemplateoutputRoot implements TemplateDeclaration {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f5/1209605205934");
-      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "outputRoot");
-      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1195164732401l, "text"), "output for 'don't apply reduction rule twice' test");
+      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "outputRoot");
+      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x116455e8bf1L, "text"), "output for 'don't apply reduction rule twice' test");
       {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test");
         try {
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f5/1209605724998");
-          SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), "this is OutputNode_forDontApplyReductionTwice_test actually");
+          SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), "this is OutputNode_forDontApplyReductionTwice_test actually");
         } finally {
         }
         if (tnode2 != null) {

@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -90,12 +89,12 @@ public class AddModelImportByRoot_Action extends BaseAction {
       final Wrappers._T<String> initialText = new Wrappers._T<String>("");
 
       final EditorCell_Label errorLabel = AddModelImportByRoot_Action.this.getErrorCell(_params);
-      final SNode unresolvedReference = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 2948164764175055168l, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference"));
+      final SNode unresolvedReference = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x28e9fc3ba3fa3940L, "jetbrains.mps.baseLanguage.structure.UnresolvedNameReference"));
 
       if (errorLabel != null) {
         initialText.value = errorLabel.getRenderedText();
       } else if (unresolvedReference != null) {
-        initialText.value = SPropertyOperations.getString(unresolvedReference, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 2948164764175055168l, 2948164764175055169l, "resolveName"));
+        initialText.value = SPropertyOperations.getString(unresolvedReference, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x28e9fc3ba3fa3940L, 0x28e9fc3ba3fa3941L, "resolveName"));
       }
 
       ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), initialText.value, AddModelImportByRoot_Action.this, new ImportHelper.ModelImportByRootCallback() {

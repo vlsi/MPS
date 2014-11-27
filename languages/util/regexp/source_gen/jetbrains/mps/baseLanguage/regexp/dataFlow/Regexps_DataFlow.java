@@ -8,13 +8,12 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class Regexps_DataFlow extends DataFlowBuilder {
   public Regexps_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode regexp : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174662351725l, 1174662369010l, "regexp"))) {
+    for (SNode regexp : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f550b6dL, 0x1117f554ef2L, "regexp"))) {
       _context.getBuilder().build((SNode) regexp);
     }
   }

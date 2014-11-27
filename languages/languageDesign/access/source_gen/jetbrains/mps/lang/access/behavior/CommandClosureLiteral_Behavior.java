@@ -5,12 +5,11 @@ package jetbrains.mps.lang.access.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class CommandClosureLiteral_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(7162144359176489354l, -7365636793298235043l), 8974276187400348172l, "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"));
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20cL, "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"));
   }
 }

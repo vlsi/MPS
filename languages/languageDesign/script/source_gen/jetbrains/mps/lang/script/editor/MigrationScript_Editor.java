@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -111,7 +110,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_th2ud5_a3a0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925395l, "type"), "migration", "enhancement");
+    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "migration", "enhancement");
   }
   private EditorCell createConstant_th2ud5_a3a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to");
@@ -221,7 +220,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1071275047162102839l, -4887287056175405968l), 2598676492883244606l, "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart")));
+      return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x24105a807c76b63eL, "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart")));
     }
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);

@@ -4,7 +4,6 @@ package jetbrains.mps.build.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
@@ -17,7 +16,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildLayout_File_Constraints extends BaseConstraintsDescriptor {
   public BuildLayout_File_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l));
+    super(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL));
   }
   @Override
   public boolean hasOwnCanBeParentMethod() {
@@ -34,8 +33,8 @@ public class BuildLayout_File_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    if (link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220774l, "parameters"))) {
-      return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456508467l, "jetbrains.mps.build.structure.BuildLayout_CopyHandler"));
+    if (link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c126L, "parameters"))) {
+      return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394dcc33L, "jetbrains.mps.build.structure.BuildLayout_CopyHandler"));
     }
     return true;
   }

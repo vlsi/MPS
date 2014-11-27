@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3b5co535vdt78nh4krboqpb682rw8bi" />
+<dependencies version="2" modelHash="3b5co535vdt78nh4krboqpb682rw8bi">
+  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="-17xupqsmxnov8z126qz69tklwtl6n5c" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-xsga72ai9g1382ueqlr1oxr5s1j1iz" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="7acg7jfloizfkh7fz9512hws89btuf5" />
+  <common hash="egpubab8rq353oq2iimss3fx94r2rbs" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="1293230950168428284" name="InternalClassifier" hash="-3po66j5v1m4slu86vybku9sumq82ssh">
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="InternalClassifier_Test.java" />
+  </source>
+  <source id="1293230950168512377" hash="3z5ig321agxamfq6i1cx6akf837mv0s" />
+</dependencies>
 

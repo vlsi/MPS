@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddSeeBlockTag_Intention implements IntentionFactory {
@@ -60,7 +59,7 @@ public class AddSeeBlockTag_Intention implements IntentionFactory {
       return "Add @see Tag";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode addedNode = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 2217234381367277533l, "see"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 2217234381367190443l, "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag")));
+      SNode addedNode = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x1ec532ec252df7ddL, "see"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252ca3abL, "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag")));
       BlockDocTagHelper.setFocus(editorContext, addedNode, "Error");
 
     }

@@ -4,7 +4,6 @@ package jetbrains.mps.console.ideCommands.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -16,7 +15,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeReference_Constraints extends BaseConstraintsDescriptor {
   public NodeReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-6492820313512655654l, -6146453626538471728l), 7820875636625654703l));
+    super(MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f4699443afL));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -33,7 +32,7 @@ public class NodeReference_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.getNodeAncestorWhereConceptInList(parentNode, new SAbstractConcept[]{MetaAdapterFactory.getConcept(new UUID(-6492820313512655654l, -6146453626538471728l), 2087237500458009228l, "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences"), MetaAdapterFactory.getConcept(new UUID(-6492820313512655654l, -6146453626538471728l), 7490254719522540696l, "jetbrains.mps.console.ideCommands.structure.StatCommand")}, true, false) != null;
+    return SNodeOperations.getNodeAncestorWhereConceptInList(parentNode, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0ac828cL, "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a558c98L, "jetbrains.mps.console.ideCommands.structure.StatCommand")}, true, false) != null;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "7820875636627071491");
 }

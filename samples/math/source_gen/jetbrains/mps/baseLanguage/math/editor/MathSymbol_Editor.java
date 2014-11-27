@@ -17,7 +17,6 @@ import jetbrains.mps.editor.runtime.style.CellAlign;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.editor.runtime.style.ScriptKind;
@@ -81,7 +80,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_b0ego6_a0b0(SNode node, EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236589239536l, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cae7f6L, "var")), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fea765cf0L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"));
   }
   private EditorCell createRefNode_b0ego6_a0b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -162,7 +161,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_b0ego6_a3b0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427162021l, "precondition")) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cd41a5L, "precondition")) != null;
   }
   private EditorCell createRefNode_b0ego6_a3b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);

@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangeRoot_Intention implements IntentionFactory {
@@ -57,10 +56,10 @@ public class ChangeRoot_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 7288041816792489431l, "root")) ? "Make Non Root" : "Make Root");
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, 0x6524536b2e1bddd7L, "root")) ? "Make Non Root" : "Make Root");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 7288041816792489431l, "root"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 7288041816792489431l, "root")))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, 0x6524536b2e1bddd7L, "root"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, 0x6524536b2e1bddd7L, "root")))));
     }
     public IntentionDescriptor getDescriptor() {
       return ChangeRoot_Intention.this;

@@ -6,14 +6,13 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptSomeConcept = new ConceptDescriptorBuilder("jetbrains.mps.execution.demo.structure.SomeConcept", MetaIdFactory.conceptId(new UUID(-1871219151347103450L, -4760527767600787321L), 4928971978190304900L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass").parentIds(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1133920641626L), MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1169194658468L), MetaIdFactory.conceptId(new UUID(5525638636287967733L, -8459132261929236328L), 4666195181811081429L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(4928971978190605252L, "valid")).properties("valid").create();
+  /*package*/ final ConceptDescriptor myConceptSomeConcept = new ConceptDescriptorBuilder("jetbrains.mps.execution.demo.structure.SomeConcept", MetaIdFactory.conceptId(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L), MetaIdFactory.conceptId(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(4928971978190605252L, "valid")).properties("valid").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

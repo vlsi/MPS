@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.builders.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -38,12 +37,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BeanPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
   public BeanPropertyBuilder_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(1381097486113260572l, -6346909095260771222l), 2679357232283750087l));
+    super(MetaIdFactory.conceptId(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x252efd34f8a58ec7L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(1381097486113260572l, -6346909095260771222l), 2679357232283750087l, 2679357232283750088l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(1381097486113260572l, -6346909095260771222l), 2679357232283750087l, 2679357232283750088l), this) {
+    references.put(MetaIdFactory.refId(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x252efd34f8a58ec7L, 0x252efd34f8a58ec8L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x252efd34f8a58ec7L, 0x252efd34f8a58ec8L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -58,7 +57,7 @@ public class BeanPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return BeanPropertyBuilder_Behavior.call_getPropertyName_2679357232284040711(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder")), SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+            return BeanPropertyBuilder_Behavior.call_getPropertyName_2679357232284040711(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder")), SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
           }
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -69,7 +68,7 @@ public class BeanPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
             }
             List<SNode> methods = new ArrayList<SNode>();
             for (SNode method : Members.visibleInstanceMethods(classifierType, _context.getEnclosingNode())) {
-              if (ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).count() == 1 && BeanPropertyBuilder_Behavior.call_getPropertyName_2679357232284040711(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder")), SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) != null) {
+              if (ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() == 1 && BeanPropertyBuilder_Behavior.call_getPropertyName_2679357232284040711(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder")), SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) != null) {
                 ListSequence.fromList(methods).addElement(method);
               }
             }

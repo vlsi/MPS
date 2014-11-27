@@ -18,7 +18,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -73,10 +72,10 @@ public class ShowGenerationPlan_Action extends BaseAction {
       final Wrappers._T<SNode> command = new Wrappers._T<SNode>();
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          command.value = SConceptOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-6492820313512655654l, -6146453626538471728l), 7057947030097724900l, "jetbrains.mps.console.ideCommands.structure.ShowGenPlan")));
-          SLinkOperations.setTarget(command.value, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 7057947030097724900l, 7057947030097725050l, "targetModel"), SConceptOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-6492820313512655654l, -6146453626538471728l), 7820875636625377576l, "jetbrains.mps.console.ideCommands.structure.ModelReference"))));
-          SPropertyOperations.set(SLinkOperations.getTarget(command.value, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 7057947030097724900l, 7057947030097725050l, "targetModel")), MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393017702l, "name"), SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
-          SPropertyOperations.set(SLinkOperations.getTarget(command.value, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 7057947030097724900l, 7057947030097725050l, "targetModel")), MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393021807l, "stereotype"), SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model"))));
+          command.value = SConceptOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, "jetbrains.mps.console.ideCommands.structure.ShowGenPlan")));
+          SLinkOperations.setTarget(command.value, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel"), SConceptOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L, "jetbrains.mps.console.ideCommands.structure.ModelReference"))));
+          SPropertyOperations.set(SLinkOperations.getTarget(command.value, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e92b66L, "name"), SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
+          SPropertyOperations.set(SLinkOperations.getTarget(command.value, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e93b6fL, "stereotype"), SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model"))));
         }
       });
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).executeCommand(command.value);

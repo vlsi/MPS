@@ -6,15 +6,14 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class MakeInnerClassStatic_QuickFix extends QuickFix_Runtime {
   public MakeInnerClassStatic_QuickFix() {
   }
   public String getDescription(SNode node) {
-    return "Make '" + SPropertyOperations.getString(((SNode) MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "' static";
+    return "Make '" + SPropertyOperations.getString(((SNode) MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "' static";
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode) MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 521412098689998745l, "nonStatic"), "" + (false));
+    SPropertyOperations.set(((SNode) MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x73c6d8a8c021f99L, "nonStatic"), "" + (false));
   }
 }

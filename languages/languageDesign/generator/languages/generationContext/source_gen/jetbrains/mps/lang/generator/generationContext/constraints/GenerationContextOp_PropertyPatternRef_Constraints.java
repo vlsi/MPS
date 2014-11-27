@@ -4,7 +4,6 @@ package jetbrains.mps.lang.generator.generationContext.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -28,12 +27,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class GenerationContextOp_PropertyPatternRef_Constraints extends BaseConstraintsDescriptor {
   public GenerationContextOp_PropertyPatternRef_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2922713684555708516l, -6639802755577912107l), 1758784108619220824l));
+    super(MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c758L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-2922713684555708516l, -6639802755577912107l), 1758784108619220824l, 1758784108619220828l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-2922713684555708516l, -6639802755577912107l), 1758784108619220824l, 1758784108619220828l), this) {
+    references.put(MetaIdFactory.refId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c758L, 0x186874d40ed9c75cL), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c758L, 0x186874d40ed9c75cL), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -45,9 +44,9 @@ public class GenerationContextOp_PropertyPatternRef_Constraints extends BaseCons
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            SNode rule = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), false, false);
-            if ((rule != null) && (SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, 1805153994416556314l, "pattern")) != null)) {
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, 1805153994416556314l, "pattern")), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037781l, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), false, new SAbstractConcept[]{})));
+            SNode rule = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), false, false);
+            if ((rule != null) && (SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a13891aL, "pattern")) != null)) {
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a13891aL, "pattern")), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), false, new SAbstractConcept[]{})));
             }
             return result;
           }

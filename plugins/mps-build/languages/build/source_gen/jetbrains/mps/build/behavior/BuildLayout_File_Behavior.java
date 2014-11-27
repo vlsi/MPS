@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.LocalSourcePathArtifact;
 import jetbrains.mps.build.util.UnpackHelper;
@@ -16,7 +15,7 @@ public class BuildLayout_File_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getApproximateName_5610619299013425878(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path")), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path")), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
   }
   public static boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return true;
@@ -24,15 +23,15 @@ public class BuildLayout_File_Behavior {
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
     if (artifactId instanceof SNode) {
       SNode node = (SNode) artifactId;
-      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073790l, "jetbrains.mps.build.structure.BuildSourcePath")) && SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(thisNode)) {
-        SNode required = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073790l, "jetbrains.mps.build.structure.BuildSourcePath"));
-        return eq_iewd47_a0b0b0a0d(BehaviorReflection.invokeVirtual(String.class, required, "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath")) && SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(thisNode)) {
+        SNode required = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath"));
+        return eq_iewd47_a0b0b0a0d(BehaviorReflection.invokeVirtual(String.class, required, "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
       }
     }
     if (artifactId instanceof LocalSourcePathArtifact) {
       LocalSourcePathArtifact art = (LocalSourcePathArtifact) artifactId;
       if (!(art.isFolder()) && art.getRoot() == SNodeOperations.getContainingRoot(thisNode)) {
-        return eq_iewd47_a0a0b0b0d(art.getSourcePath(), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+        return eq_iewd47_a0a0b0b0d(art.getSourcePath(), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
       }
     }
     return false;
@@ -40,7 +39,7 @@ public class BuildLayout_File_Behavior {
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
-    SNode path = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path"));
+    SNode path = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"));
     if (path != null) {
       String lastSegment = BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{helper.getMacroHelper()});
       if (lastSegment != null) {
@@ -50,10 +49,10 @@ public class BuildLayout_File_Behavior {
     }
   }
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path")) != null)) {
-      String lastSegment = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path")), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path")) != null)) {
+      String lastSegment = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path")), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
       if (lastSegment != null) {
-        if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
+        if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
           sb.append("/");
         }
         sb.append(lastSegment);
@@ -61,7 +60,7 @@ public class BuildLayout_File_Behavior {
     }
   }
   public static boolean call_canHaveFilemode_9126048691955221297(SNode thisNode) {
-    SNode filesetLayoutContainer = FileSetUtil.getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node")));
+    SNode filesetLayoutContainer = FileSetUtil.getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node")));
     return (filesetLayoutContainer != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, filesetLayoutContainer, "virtual_hasFileModeAttribute_6408167411310575237", new Object[]{});
   }
   private static boolean eq_iewd47_a0b0b0a0d(Object a, Object b) {

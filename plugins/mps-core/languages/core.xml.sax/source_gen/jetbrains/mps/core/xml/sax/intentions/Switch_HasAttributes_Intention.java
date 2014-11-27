@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class Switch_HasAttributes_Intention implements IntentionFactory {
@@ -57,10 +56,10 @@ public class Switch_HasAttributes_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140410l, "isCompact")) ? "Full view" : "Compact view");
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, 0x1f6c736337b5e2faL, "isCompact")) ? "Full view" : "Compact view");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140410l, "isCompact"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140410l, "isCompact")))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, 0x1f6c736337b5e2faL, "isCompact"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, 0x1f6c736337b5e2faL, "isCompact")))));
     }
     public IntentionDescriptor getDescriptor() {
       return Switch_HasAttributes_Intention.this;

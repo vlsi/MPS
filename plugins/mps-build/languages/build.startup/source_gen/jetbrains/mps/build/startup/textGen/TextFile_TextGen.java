@@ -6,12 +6,11 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class TextFile_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     {
-      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3097565121670396746l, -5546031393255049985l), 1731640411964205180l, 1731640411964205233l, "lines"));
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d6687cL, 0x180805c7b1d668b1L, "lines"));
       for (SNode item : collection) {
         appendNode(item);
       }

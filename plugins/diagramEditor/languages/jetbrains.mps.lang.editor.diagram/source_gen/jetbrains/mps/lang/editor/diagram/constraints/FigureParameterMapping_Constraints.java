@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.diagram.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class FigureParameterMapping_Constraints extends BaseConstraintsDescriptor {
   public FigureParameterMapping_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463761863l));
+    super(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a7d7c7L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -32,7 +31,7 @@ public class FigureParameterMapping_Constraints extends BaseConstraintsDescripto
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"));
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)", "1491555030355943121");
 }

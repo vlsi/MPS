@@ -13,7 +13,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -36,8 +35,8 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338159177");
-      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "OutputRoot_2");
-      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1195164732401l, "text"), "'getPrevInputTest' output root (2)");
+      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "OutputRoot_2");
+      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x116455e8bf1L, "text"), "'getPrevInputTest' output root (2)");
       {
         final List<SNode> tlist2 = new ArrayList<SNode>();
         final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1202338467105(new SourceSubstituteMacroNodesContext(context, loopMacroRef_ewlaka_b0a0a1a3a1a2));
@@ -63,7 +62,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
               final SNode tnode5 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
               try {
                 environment.nodeCopied(context4, tnode5, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338467041");
-                SNodeAccessUtil.setProperty(tnode5, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(new PropertyMacroContext(context4, "_text_", propertyMacro_ewlaka_c0a0c0b0d0e0e0c0d0b0c))));
+                SNodeAccessUtil.setProperty(tnode5, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(new PropertyMacroContext(context4, "_text_", propertyMacro_ewlaka_c0a0c0b0d0e0e0c0d0b0c))));
                 {
                   final List<SNode> tlist6 = new ArrayList<SNode>();
                   tlist6.add(environment.insertLater(new NodeMapper() {

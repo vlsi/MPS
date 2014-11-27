@@ -1,3 +1,278 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d9ptynuzg38loogcnchcxjypz4e5wza" />
+<dependencies version="2" modelHash="d9ptynuzg38loogcnchcxjypz4e5wza">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="a237ii4p803dkvj3a01l9nndi1k5jpk" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="7va3130h0ufhjdfej6hob440gm3vlqj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-3w51vd6avpj0y99dkotmnfwqd41znrq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3863x0u9flggmckjewdlsmikl6dj9wv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="dyswqfju0dze0vp40q0x5ffcejj7zen" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="cubn2w31vddik37ilbttpxjmii6p88r" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="7acg7jfloizfkh7fz9512hws89btuf5" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3fcvzpa8v8rf3aly8ijks960qkiha8x" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-4lhyxxyvj31ifp2nn9lhgcge59z7sa" />
+  <common hash="-dbk6tm4m3d33jva5i4tglngwzp06gx7" dependsOnNodes="true">
+    <dep root="1112056943463" />
+    <dep root="1112058030570" />
+    <dep root="1138079221458" />
+    <dep root="1138079416598" />
+    <dep root="1140829206022" />
+    <dep root="1154465102724" />
+    <dep root="1154465273778" />
+    <dep root="1154622616118" />
+    <dep root="1158700664498" />
+    <dep root="1158700725281" />
+    <dep root="1158701162220" />
+    <dep root="1177323652379" />
+    <dep root="1177323996388" />
+    <dep root="1177327161126" />
+    <dep root="1177327274449" />
+    <dep root="1177327570013" />
+    <dep root="1177327666243" />
+    <dep root="1177333529597" />
+    <dep root="1177335944525" />
+    <dep root="1177337641126" />
+    <dep root="1177337833147" />
+    <dep root="1177337890340" />
+    <dep root="1177339114370" />
+    <dep root="1177339225103" />
+    <dep root="1177398027324" />
+    <dep root="1177402519659" />
+    <dep root="1177402571666" />
+    <dep root="1177402641904" />
+    <dep root="1177409831820" />
+    <dep root="1177413882405" />
+    <dep root="1177413954598" />
+    <dep root="1177414026667" />
+    <dep root="1177495774157" />
+    <dep root="1177496137779" />
+    <dep root="1177497140107" />
+    <dep root="1177498013932" />
+    <dep root="1177498071304" />
+    <dep root="1177498227294" />
+    <dep root="1177508764419" />
+    <dep root="1177508842676" />
+    <dep root="1177509289232" />
+    <dep root="1177526535706" />
+    <dep root="1177526592562" />
+    <dep root="1177568407352" />
+    <dep root="1177614709184" />
+    <dep root="1177768753302" />
+    <dep root="1178537049112" />
+    <dep root="1178539929008" />
+    <dep root="1178541723620" />
+    <dep root="1178781654714" />
+    <dep root="1179456248444" />
+    <dep root="1180111159572" />
+    <dep root="1180134965967" />
+    <dep root="1182819125053" />
+    <dep root="1196433731217" />
+    <dep root="1196433923911" />
+    <dep root="1196434649611" />
+    <dep root="1196434661488" />
+    <dep root="1197454418909" />
+    <dep root="1197454626277" />
+    <dep root="1199902626702" />
+    <dep root="1199902658767" />
+    <dep root="1199903446272" />
+    <dep root="1203072734037" />
+    <dep root="1203073162537" />
+    <dep root="1203073706921" />
+    <dep root="1203347547493" />
+    <dep root="1203347609566" />
+    <dep root="1203348041101" />
+    <dep root="1203349485621" />
+    <dep root="1206027602242" />
+    <dep root="1208867830282" />
+    <dep root="1214830969967" />
+    <dep root="1215604970641" />
+    <dep root="1221135252814" />
+    <dep root="1221135315536" />
+    <dep root="1221137268788" />
+    <dep root="1221137293320" />
+    <dep root="1221634900557" />
+    <dep root="1230300670420" />
+    <dep root="1235051137001" />
+    <dep root="1235051192073" />
+    <dep root="1235051221371" />
+    <dep root="1235053632692" />
+    <dep root="1235053713157" />
+    <dep root="1235054742903" />
+    <dep root="1235055936803" />
+    <dep root="1235056040733" />
+    <dep root="1235060070612" />
+    <dep root="1235060179343" />
+    <dep root="441141899447644451" />
+    <dep root="441141899510871798" />
+    <dep root="5425882385312046132" />
+    <dep root="5480835971642155304" />
+    <dep root="5480835971642160908" />
+    <dep root="5584396657084912703" />
+    <dep root="5584396657084920413" />
+    <dep root="5584396657084920670" />
+    <dep root="564335015825199468" />
+    <dep root="5948027493682321734" />
+    <dep root="5948027493682346911" />
+    <dep root="5948027493682405428" />
+    <dep root="5948027493682405480" />
+    <dep root="5948027493682789918" />
+    <dep root="5979988948250981289" />
+    <dep root="6026743057587433039" />
+    <dep root="6026743057587447931" />
+    <dep root="6400740936061763657" />
+    <dep root="767145758118872824" />
+    <dep root="767145758118872826" />
+    <dep root="767145758118872828" />
+    <dep root="767145758118872830" />
+    <dep root="767145758118872833" />
+    <dep root="7776141288922801652" />
+    <dep root="8372849190626007445" />
+    <dep root="8372849190626008398" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1112056943463" name="NodeSubstituteActions" hash="4mhfida85t9fturh40ds9wp74sx1oc8" />
+  <source id="1112058030570" name="NodeSubstituteActionsBuilder" hash="-6099cvdnl2n906jq9euaizxdzlfcpv5" />
+  <source id="1138079221458" name="SideTransformHintSubstituteActionsBuilder" hash="-8m37fei16a1oc33qoak1zluca361eus" />
+  <source id="1138079416598" name="SideTransformHintSubstituteActions" hash="-6jt83qbts0ul2mrbkfelmcv3gqcdmgx" />
+  <source id="1140829206022" name="SideTransformTag" hash="5chdbqtx69qmd8adpthtjc5p17e30kq">
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="SideTransformTag.java" />
+    <file name="SideTransformTag_PropertySupport.java" />
+  </source>
+  <source id="1154465102724" name="NodeSubstitutePreconditionFunction" hash="9el1wh6zhl0l1gjgmrc6bi7tax07plt" />
+  <source id="1154465273778" name="ConceptFunctionParameter_parentNode" hash="-d0y49peciafrf0nwnvcxyo1zb8vy0ot" />
+  <source id="1154622616118" name="SideTransformHintSubstitutePreconditionFunction" hash="-com32sm78lnamycbgyz0tmln6j8boqu" />
+  <source id="1158700664498" name="NodeFactories" hash="e0rh6zlmdsrnb2yajllixzwb27fnep5" />
+  <source id="1158700725281" name="NodeFactory" hash="41xssmjm9e6w2lptjg4czpv0bbs5giu" />
+  <source id="1158701162220" name="NodeSetupFunction" hash="21m4jwrjc23wcj8vbn7nilqt3yhock8" />
+  <source id="1177323652379" name="SubstituteMenuPart" hash="-8zk6mhjvzslfkvtx2nreus1ezmt1rvb" />
+  <source id="1177323996388" name="AddMenuPart" hash="8b1w11ucrhezlt3hi25tyf8fryjmcnf" />
+  <source id="1177327161126" name="QueryFunction_CanSubstitute" hash="el2ifv1qypoq6wjoknrn61u95w0z9rw" />
+  <source id="1177327274449" name="ConceptFunctionParameter_pattern" hash="dexycwy2hc9d5hngnb09e607icqba2u" />
+  <source id="1177327570013" name="QueryFunction_Substitute_Handler" hash="-er173tm4iga94kzvmoq0pkr6h89zng5" />
+  <source id="1177327666243" name="SimpleItemSubstitutePart" hash="1gp00xc6hag658h43fly28bu0zhopp4" />
+  <source id="1177333529597" name="ConceptPart" hash="-5oukm3pj4rek0ngmmhd32cvzpq72zay" />
+  <source id="1177335944525" name="QueryFunction_SubstituteString" hash="-bryyrzh8e5gq8ztidy4yjfx8l5nxymx" />
+  <source id="1177337641126" name="ParameterizedSubstituteMenuPart" hash="-60zouwpvf4ulc4bxiw7a52g2h7ira17" />
+  <source id="1177337833147" name="ConceptFunctionParameter_parameterObject" hash="-asiwmz3by6dytmav76pvb2efo5hgey4" />
+  <source id="1177337890340" name="QueryFunction_ParameterizedSubstitute_Query" hash="ch5cax23clsa45hm8ud79zfczxxvpru" />
+  <source id="1177339114370" name="QueryFunction_ParameterizedSubstitute_String" hash="-eq41i6zxutnz64f2pzmckcflkzo3gc5" />
+  <source id="1177339225103" name="QueryFunction_ParameterizedSubstitute_Handler" hash="-4jxqo3qatdl2chuavdn69e69wau87qs" />
+  <source id="1177398027324" name="ConceptsSubstituteMenuPart" hash="-5fz0qg1hdwzv1oosr5crax0ckb9d6qr" />
+  <source id="1177402519659" name="WrapperSubstituteMenuPart" hash="-1jztwhqkbzufbcehll2gud0jh3bbtfo" />
+  <source id="1177402571666" name="QueryFunction_SubstituteWrapper" hash="cf8nybgermqr81nl36w20gokrek885l" />
+  <source id="1177402641904" name="ConceptFunctionParameter_nodeToWrap" hash="-cv6j9ayrjlxw2sgarbij2s4gukyoqc7" />
+  <source id="1177409831820" name="RemovePart" hash="9ppzhrzjyxyeb88eluc5oy5k64tgogv" />
+  <source id="1177413882405" name="RemoveByConditionPart" hash="-c3nrxyk1vday5dg6fo9o8x9srxkegs0" />
+  <source id="1177413954598" name="QueryFunction_RemoveBy_Condition" hash="-d6xddpr9if4t39265peq40xsqamcrm3" />
+  <source id="1177414026667" name="ConceptFunctionParameter_concept" hash="37jhhik8i3yo61cr6nm42gbe1urpv6d" />
+  <source id="1177495774157" name="MenuPart" hash="965vwabke4y8cszln32zarqyvdyljfs" />
+  <source id="1177496137779" name="SideTransformMenuPart" hash="-bniddzx2za5x1jcuo346m8iz69jbsvr" />
+  <source id="1177497140107" name="ConceptFunctionParameter_sourceNode" hash="-6u438gjgoy2n63o9ainnfur0dtfnblc" />
+  <source id="1177498013932" name="SimpleSideTransformMenuPart" hash="8eqx9usie9m9e7eyo9imaoaj51ifq9j" />
+  <source id="1177498071304" name="QueryFunction_SideTransform_String" hash="-2w6q0urtitxpet1j8ttmst3n8y30ymr" />
+  <source id="1177498227294" name="QueryFunction_SideTransform_Handler" hash="-b9a0tqdpb183vapqlcztsr0pchyreib" />
+  <source id="1177508764419" name="ParameterizedSideTransformMenuPart" hash="1hq4a5vc93nr54qodliesqtv65mdoq8" />
+  <source id="1177508842676" name="QueryFunction_ParameterizedSideTransform_Query" hash="-3rv7n1tfl43wui4trq9g19bwr2tomcp" />
+  <source id="1177509289232" name="QueryFunction_ParameterizedSideTransform_Handler" hash="-6rt8ck64v8966wj5c72p3iywd9mxbkz" />
+  <source id="1177526535706" name="ConceptFunctionParameter_result" hash="-cg58qgr89btvqsgk5cahpvadrcjmw1j" />
+  <source id="1177526592562" name="QueryFunction_SideTransform_ConceptHandler" hash="eshmarzxl993hrbgsh1f8tvja4oco5w" />
+  <source id="1177568407352" name="ConceptFunctionParameter_currentTargetNode" hash="-5svg3pb8jrtgryn1nk04nvgnsl398w6" />
+  <source id="1177614709184" name="RemoveDefaultsPart" hash="3xgr8szf82hz96326lu4s7yxb6n6mkg" />
+  <source id="1177768753302" name="ConceptFunctionParameter_childConcept" hash="-4yyrvvpbf5i49tjm535zipwl69e34oa" />
+  <source id="1178537049112" name="QueryFunction_SideTransform_NodeQuery" hash="acrkedv2q354tf0p9o7f6sf1j4q8axw" />
+  <source id="1178539929008" name="SubstituteNodeBuilderVariableDeclaration" hash="cg8fctbqmyoilcvyrvoe9hv4stqrsst" />
+  <source id="1178541723620" name="SubstituteNodeBuilderVariableReference" hash="3lzgq8x9ryjmdxj6oppkk7c2gdgcejn" />
+  <source id="1178781654714" name="QueryFunction_Substitute_CommonInitializer" hash="excq0rthijvs9ehdk2f052vs5u5xuiu" />
+  <source id="1179456248444" name="QueryFunction_SubstituteVariableInitializer" hash="1yqk8p9mwuteikjichkcjbiny0cgv5e" />
+  <source id="1180111159572" name="IncludeRightTransformForNodePart" hash="-aigzobcyt44pm5hv9wnlnx9l55vl6eq" />
+  <source id="1180134965967" name="ConceptSubstitutePart" hash="3kmkut4dss1k1fkg4flz80tkcuc68ow" />
+  <source id="1182819125053" name="ConceptRightTransformPart" hash="-8m82mfc2wo71mysrdjqu6ncn93kq3ds" />
+  <source id="1196433731217" name="ISideTransform_String" hash="4tv4nzytqiz2d3iw974r6rma13c2iok" />
+  <source id="1196433923911" name="SideTransform_SimpleString" hash="-3pmgd92bt4f7ga2ljec30evjkalx59t" />
+  <source id="1196434649611" name="Substitute_SimpleString" hash="-c8vz0ewys2yn3u6w57bkur0uogckj25" />
+  <source id="1196434661488" name="ISubstitute_String" hash="cjppz69vhj6lw5li7y6b5uqb3ej855k" />
+  <source id="1197454418909" name="QueryFunction_ST_RemoveBy_Condition" hash="-e09t10nzntxdu73by6bb4an3sdk1bcj" />
+  <source id="1197454626277" name="RemoveSTByConditionPart" hash="-60vyjf1ab9vu90amtvw1oxmf9c61tgt" />
+  <source id="1199902626702" name="GenericSubstituteMenuPart" hash="72eu5go5m64ajcagwiuzyyezlpkl7h4" />
+  <source id="1199902658767" name="QueryFunction_GenericSubstituteMenuPart" hash="bajhuj9przu78zqsevl1l0oje2u3a54" />
+  <source id="1199903446272" name="ConceptFunctionParameter_childSetter" hash="-4bnqcfgiuh851rvif0i434e65p980k9" />
+  <source id="1203072734037" name="QueryFunction_ParameterizedSubstitute_Icon" hash="-83o07zcm9w2kpix7jf9n59i78ter1fi" />
+  <source id="1203073162537" name="QueryFunction_SubstituteIcon" hash="-4og31hxkjh0mlxw3t0mv7l9khtsyksc" />
+  <source id="1203073706921" name="QueryFunction_SideTransform_Icon" hash="7r37rvo2rxbz4t1vxxfzvq93yd1zisf" />
+  <source id="1203347547493" name="SideTransformVariableDeclaration" hash="1w83xieja35kczau7ysi12tqoyfdz5p" />
+  <source id="1203347609566" name="QueryFunction_STVariableInitializer" hash="en2ay9k5bqvbbd6ktufsyqzw6omcxo" />
+  <source id="1203348041101" name="SideTransformVariableReference" hash="dbnz7p6go3njizjydrduyew34qxagkk" />
+  <source id="1203349485621" name="QueryFunction_ST_CommonInitializer" hash="9ajhtlwkl9g7gjaujw11wcptfi6rsat" />
+  <source id="1206027602242" name="QueryFunction_ReturnSmallPart" hash="8nxoi97v1fx2wef8i2kbhemzq9aja56" />
+  <source id="1208867830282" name="ConceptFunctionParameter_strictly" hash="cbhmioxz3mm5m7pmk14wu5k89sl6aym" />
+  <source id="1214830969967" name="ConceptFunctionParameter_wrapped" hash="7u74uaq9h031o36ovex2jcmledqgp3g" />
+  <source id="1215604970641" name="Side" hash="85tv0jzc9huf3w6txkb11nps0hq2vdw">
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="Side.java" />
+    <file name="Side_PropertySupport.java" />
+  </source>
+  <source id="1221135252814" name="PasteWrappers" hash="cobytz6anic0c1d34gov2e2jckih1h4" />
+  <source id="1221135315536" name="PasteWrapper" hash="-agq66decu6f3pqajyzgj1swrf0to8hw" />
+  <source id="1221137268788" name="ConceptFunctionParameter_nodeToPasteWrap" hash="-9xtsx37zmooeke13zt8tibjr1n5zmog" />
+  <source id="1221137293320" name="QueryFunction_PasteWrapper" hash="-cekfa2qs5arvgf36orupygyp2tqp0y6" />
+  <source id="1221634900557" name="ConceptFunctionParameter_link" hash="-bu2z3ved9ssqkap7urwhu82vnnms36q" />
+  <source id="1230300670420" name="QueryFunction_ActionType" hash="-4cy0k2ozwmh11qw5qfeiaea0vmb7gmo" />
+  <source id="1235051137001" name="SmartEditorActions" hash="-e30tkm7mwlpezdbeva8fu6aklajn8we" />
+  <source id="1235051192073" name="SurroundWithAction" hash="bxe5f1uggfjbfl5v99oiuwt8ry62mww" />
+  <source id="1235051221371" name="GenerateCodeAction" hash="crfucouu8afjqqznz8t8fambez4g08l" />
+  <source id="1235053632692" name="SmartActionParameter" hash="-ckif9u2m3g2jm7gzn7svlz32rnugrx1" />
+  <source id="1235053713157" name="SmartActionParameterReference" hash="-4wjoaukq8vt38k7u0ztrk2h4p3cizao" />
+  <source id="1235054742903" name="IsSmartActionApplicableFunction" hash="-4qx3heraapyluk4vje1205dsyqfj26l" />
+  <source id="1235055936803" name="ConceptFunctionParameter_EditorCell" hash="-4uo2o9gq27rlm7x06cadz7qo1yzxn0e" />
+  <source id="1235056040733" name="ConceptFunctionParameter_OperationContext" hash="-208lzutv71gxleocu53gjndt9f3cch" />
+  <source id="1235060070612" name="GetActionUIFunction" hash="-14zcea2yi3smdz7cbq7pqfp3eh8mila" />
+  <source id="1235060179343" name="ExecuteSmartActionFunction" hash="-5wacyc7e7jkc66zycxrocxfygjoi4ws" />
+  <source id="564335015825199468" name="PastePostProcessor" hash="-4fnw8l98lvzj3ay4orbfmt9qd75p5ol" />
+  <source id="6026743057587433039" name="PastePostProcessFunction" hash="e2t1dbivjt397ac38et3gr2hwqcg6hl" />
+  <source id="6026743057587447931" name="ConceptFunctionParameter_nodeToPastePostProcess" hash="-77cf9na3l66hxiwh5kxaawaqtw7yzeq" />
+  <source id="5948027493682321734" name="CopyPreProcessor" hash="3seit55k6i1rnmf7offaw4svzyppw5c" />
+  <source id="5948027493682346911" name="CopyPreProcessFunction" hash="-2opb3slwljza49gcz5wu1y2s9dh0rqg" />
+  <source id="5948027493682405428" name="ConceptFunctionParameter_nodeToCopyPreProcess" hash="-5ojc24o0oqklrfyktgz4slu6i8wlgla" />
+  <source id="5948027493682405480" name="ConceptFunctionParameter_nodeToCopyPreProcessOriginal" hash="-26ghcqjgiu4qwes00jl3f3r353mtrzi" />
+  <source id="5948027493682789918" name="CopyPasteHandlers" hash="a4tpehfjb70mwpj6jeyp0ojpw5adcd9" />
+  <source id="5979988948250981289" name="SNodeCreatorAndInitializer" hash="dq1ne22dqpdyy1f5kme044cun0vd8fe" />
+  <source id="7776141288922801652" name="NF_Concept_NewInstance" hash="5bakq94mxip85v3sxq6ziwzezjr1sdr" />
+  <source id="5480835971642155304" name="NF_Model_CreateNewNodeOperation" hash="-b5hiys8p9k4jjp7bwrgqa9fjyn6ogin" />
+  <source id="5480835971642160908" name="NF_Model_CreateNewRootNodeOperation" hash="69m1b6q5gc0yb3ho1ltlo93y9acv537" />
+  <source id="767145758118872824" name="NF_Node_InsertNewNextSiblingOperation" hash="-bk3911yyfaavj7dbb3fcz8m3ji68mj6" />
+  <source id="767145758118872826" name="NF_Node_InsertNewPrevSiblingOperation" hash="6v8w1boz5h8cl909xtg8ymxnpwzvj8b" />
+  <source id="767145758118872828" name="NF_Node_ReplaceWithNewOperation" hash="e23qofd6ut1vj7hwrwi7goi4xgl0mkk" />
+  <source id="767145758118872830" name="NF_Link_SetNewChildOperation" hash="-b9z8j7kjsin8ulbji5jworjgu8v91ne" />
+  <source id="767145758118872833" name="NF_LinkList_AddNewChildOperation" hash="en6xtw8gf05w5jnqtcwkbbli5tv34b6" />
+  <source id="5425882385312046132" name="ConceptFunctionParameter_targetNode" hash="e5vvymm7jxruorzn0r2h7oxqiasps0i" />
+  <source id="5584396657084912703" name="NodeSetupFunction_NewNode" hash="dhwsr31hzp46ik8461mbcs07tejkdaq" />
+  <source id="5584396657084920413" name="NodeSetupFunction_SampleNode" hash="-c4tpn3gxd4cb5dscr7unzcnakhbmidw" />
+  <source id="5584396657084920670" name="NodeSetupFunction_EnclosingNode" hash="ecby8hxpx5iaw5cazlxf88t4zq5hlew" />
+  <source id="8372849190626007445" name="SideTransformMenuBuilderPart" hash="-dzynu3sk9zsvrjqpjjwbs742ny46u73" />
+  <source id="8372849190626008398" name="NodeSubstituteMenuBuilderPart" hash="6c6mt3q2kx1o42rr1p04w8xx3xku5lb" />
+  <source id="6400740936061763657" name="QueryFunction_IconNode" hash="2pa40qti7pyyuawodot9t6mx8te8tju" />
+  <source id="441141899447644451" name="QueryFunction_Substitute_SelectionHandler" hash="av8zizt5d9qn8hkww4cobzv8fu8pigf" />
+  <source id="441141899510871798" name="ConceptFunctionParameter_createdNode" hash="-czejqxbv1chlfy7hivds2q6kthetkac" />
+</dependencies>
 

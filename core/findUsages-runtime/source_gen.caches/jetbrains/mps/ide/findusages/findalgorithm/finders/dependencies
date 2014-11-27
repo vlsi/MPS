@@ -5,7 +5,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

@@ -61,71 +61,71 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 1203071646776l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x1181ca87c38L) {
       return new ActionDeclaration_Constraints();
     }
-    if (id == 1203092361741l) {
+    if (id == 0x1181de4920dL) {
       return new ModificationStatement_Constraints();
     }
-    if (id == 1204471433283l) {
+    if (id == 0x11870178843L) {
       return new ToolInstanceExpression_Constraints();
     }
-    if (id == 1203680534665l) {
+    if (id == 0x11840f36089L) {
       return new GroupAnchor_Constraints();
     }
-    if (id == 1204908117386l) {
+    if (id == 0x1188a1ecd8aL) {
       return new Separator_Constraints();
     }
-    if (id == 1203087890642l) {
+    if (id == 0x1181da058d2L) {
       return new ActionGroupDeclaration_Constraints();
     }
-    if (id == 1204397573187l) {
+    if (id == 0x1186bb08443L) {
       return new InterfaceExtentionPoint_Constraints();
     }
-    if (id == 1217252042208l) {
+    if (id == 0x11b69e025e0L) {
       return new ActionDataParameterDeclaration_Constraints();
     }
-    if (id == 1205679047295l) {
+    if (id == 0x118b812427fL) {
       return new ActionParameterDeclaration_Constraints();
     }
-    if (id == 1227013049127l) {
+    if (id == 0x11dafad4b27L) {
       return new AddStatement_Constraints();
     }
-    if (id == 6193305307616715384l) {
+    if (id == 0x55f30a5d1e092278L) {
       return new ShortcutChange_Constraints();
     }
-    if (id == 1205681149025l) {
+    if (id == 0x118b8325461L) {
       return new UpdateBlock_Constraints();
     }
-    if (id == 8096638938275438668l) {
+    if (id == 0x705d0a376e80e04cL) {
       return new TabbedToolOperation_Constraints();
     }
-    if (id == 485694842828664424l) {
+    if (id == 0x6bd88e2e00aae68L) {
       return new SmartDisposeClosureParameterDeclaration_Constraints();
     }
-    if (id == 3339131993542057767l) {
+    if (id == 0x2e56fadb4d375f27L) {
       return new BaseProjectOperation_Constraints();
     }
-    if (id == 1821622352985038318l) {
+    if (id == 0x1947b3e0f0959deeL) {
       return new ActionParameterReference_Constraints();
     }
-    if (id == 1203088046679l) {
+    if (id == 0x1181da2ba57L) {
       return new ActionInstance_Constraints();
     }
-    if (id == 1227008846812l) {
+    if (id == 0x11daf6d2bdcL) {
       return new ActionConstructionParameterDeclaration_Constraints();
     }
-    if (id == 5678361901872075170l) {
+    if (id == 0x4ecd9810833251a2L) {
       return new EditableModel_Constraints();
     }
-    if (id == 5023285075122009364l) {
+    if (id == 0x45b64b294c2b3514L) {
       return new IdeaInitializerDescriptor_Constraints();
     }
-    if (id == 1050311802978903937l) {
+    if (id == 0xe9375051ff52781L) {
       return new ConceptCondition_Constraints();
     }
-    if (id == 1207145475354l) {
+    if (id == 0x1190f7a2d1aL) {
       return new AddElementStatement_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.intentions.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class IntentionDeclaration_Constraints extends BaseConstraintsDescriptor {
   public IntentionDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2906742361791184688l, -8921219390863794400l), 1192794744107l));
+    super(MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81b652bL));
   }
   @Override
   public boolean hasOwnCanBeRootMethod() {

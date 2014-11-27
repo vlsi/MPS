@@ -4,7 +4,6 @@ package jetbrains.mps.debugger.java.privateMembers.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -25,12 +24,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class PrivateStaticFieldReference_Constraints extends BaseConstraintsDescriptor {
   public PrivateStaticFieldReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-9214214654313479299l, -5400221651319483034l), 4107550939057698505l));
+    super(MetaIdFactory.conceptId(0x802088974572437dL, 0xb50e8f050cba9566L, 0x3900f3d0fb5b36c9L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l), this) {
+    references.put(MetaIdFactory.refId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -41,7 +40,7 @@ public class PrivateStaticFieldReference_Constraints extends BaseConstraintsDesc
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier")), ((_context.getEnclosingNode() == null) ? _context.getReferenceNode() : _context.getEnclosingNode()), IClassifiersSearchScope.STATIC_FIELD) {
+            return new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")), ((_context.getEnclosingNode() == null) ? _context.getReferenceNode() : _context.getEnclosingNode()), IClassifiersSearchScope.STATIC_FIELD) {
               @Override
               protected boolean isVisible(SNode member) {
                 return true;

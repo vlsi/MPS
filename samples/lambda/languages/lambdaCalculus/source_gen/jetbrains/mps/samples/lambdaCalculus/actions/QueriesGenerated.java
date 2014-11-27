@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -40,8 +39,8 @@ public class QueriesGenerated {
             if (smallPattern.endsWith("\"")) {
               smallPattern = smallPattern.substring(0, smallPattern.length() - 1);
             }
-            SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762696l, "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant")), null);
-            SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762696l, 4022026349914762697l, "value"), smallPattern);
+            SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dc8L, "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant")), null);
+            SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dc8L, 0x37d11ba7d7ee2dc9L, "value"), smallPattern);
             return result;
           }
           public String getMatchingText(String pattern) {
@@ -66,8 +65,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762709l, "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant")), null);
-            SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762709l, 4022026349914762710l, "value"), "" + (Integer.parseInt(pattern)));
+            SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dd5L, "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant")), null);
+            SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dd5L, 0x37d11ba7d7ee2dd6L, "value"), "" + (Integer.parseInt(pattern)));
             return result;
           }
           public String getMatchingText(String pattern) {
@@ -92,7 +91,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 3978364766705449817l, "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression")), null);
+            SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3735fdad52687b59L, "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression")), null);
             return result;
           }
           public String getMatchingText(String pattern) {
@@ -114,7 +113,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode node = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4939219901991602079l, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression")), null);
+            SNode node = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edbfc79fL, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression")), null);
             return node;
           }
           public String getMatchingText(String pattern) {
@@ -132,9 +131,9 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode application = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")), null);
+        SNode application = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")), null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), application);
-        SLinkOperations.setTarget(application, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, 4022026349914762720l, "function"), _context.getSourceNode());
+        SLinkOperations.setTarget(application, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, 0x37d11ba7d7ee2de0L, "function"), _context.getSourceNode());
         return application;
       }
       public String getMatchingText(String pattern) {
@@ -163,7 +162,7 @@ public class QueriesGenerated {
         }
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 1934341835352312155l, 1934341835352312156l, "left"), _context.getSourceNode());
+          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x1ad829a6925a095bL, 0x1ad829a6925a095cL, "left"), _context.getSourceNode());
           return result;
         }
       }, operationContext);
@@ -183,9 +182,9 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode multiple = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 1564819815921013155l, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression")), null);
+        SNode multiple = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression")), null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), multiple);
-        ListSequence.fromList(SLinkOperations.getChildren(multiple, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 1564819815921013155l, 1564819815921013156l, "expressions"))).insertElement(0, _context.getSourceNode());
+        ListSequence.fromList(SLinkOperations.getChildren(multiple, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, 0x15b75b54f176d1a4L, "expressions"))).insertElement(0, _context.getSourceNode());
         return multiple;
       }
       public String getMatchingText(String pattern) {

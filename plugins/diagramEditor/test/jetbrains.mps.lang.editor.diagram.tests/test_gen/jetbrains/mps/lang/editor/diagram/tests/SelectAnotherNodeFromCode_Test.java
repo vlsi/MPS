@@ -10,7 +10,6 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.jetpad.mapper.Mapper;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -40,7 +39,7 @@ public class SelectAnotherNodeFromCode_Test extends BaseTransformationTest {
         public void run() {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              TestBody.this.getEditorComponent().selectNode(SNodeOperations.cast(TestBody.this.getNodeById("8041297453110598748"), MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize")));
+              TestBody.this.getEditorComponent().selectNode(SNodeOperations.cast(TestBody.this.getNodeById("8041297453110598748"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize")));
             }
           });
         }

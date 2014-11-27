@@ -4,7 +4,6 @@ package jetbrains.mps.debugger.java.evaluation.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -16,7 +15,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class EvaluatorsThisExpression_Constraints extends BaseConstraintsDescriptor {
   public EvaluatorsThisExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966315974l));
+    super(MetaIdFactory.conceptId(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b1ae1c6L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -33,7 +32,7 @@ public class EvaluatorsThisExpression_Constraints extends BaseConstraintsDescrip
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), true, false), MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 4544608336420681235l, "thisNode")) != null);
+    return (SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), true, false), MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, 0x3f11b1341fa23613L, "thisNode")) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966315980");
 }

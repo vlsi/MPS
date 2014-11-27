@@ -52,6 +52,6 @@ public class SLanguageAdapterById extends SLanguageAdapter{
   @Override
   @Nullable
   public Language getSourceModule() {
-    return ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.regular(myLanguage.getId())));
+    return ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.regular(myLanguage.getIdValue())));
   }
 }

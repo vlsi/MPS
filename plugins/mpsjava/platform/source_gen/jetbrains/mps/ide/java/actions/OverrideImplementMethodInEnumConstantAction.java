@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -38,20 +37,20 @@ public class OverrideImplementMethodInEnumConstantAction {
     ModelAccessHelper mah = new ModelAccessHelper(myProject.getModelAccess());
     final SNode contextEnumConstant = mah.runReadAction(new Computable<SNode>() {
       public SNode compute() {
-        return SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), true, false);
+        return SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), true, false);
       }
     });
     final SNode contextMember = mah.runReadAction(new Computable<SNode>() {
       public SNode compute() {
-        return SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1178285077437l, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), true, false);
+        return SNodeOperations.getNodeAncestor(mySelectedNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), true, false);
       }
     });
     final SNodeReference[] methods = mah.runReadAction(new Computable<SNodeReference[]>() {
       @Override
       public SNodeReference[] compute() {
         List<SNode> methodsToOverride = (myIsOverride ? BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextEnumConstant, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextEnumConstant, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{}));
-        List<SNode> allSuperClassifiers = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(contextEnumConstant), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getAllSuperClassifiers_4892662966716545618", new Object[]{});
-        ListSequence.fromList(allSuperClassifiers).addElement(SNodeOperations.cast(SNodeOperations.getParent(contextEnumConstant), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")));
+        List<SNode> allSuperClassifiers = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(contextEnumConstant), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getAllSuperClassifiers_4892662966716545618", new Object[]{});
+        ListSequence.fromList(allSuperClassifiers).addElement(SNodeOperations.cast(SNodeOperations.getParent(contextEnumConstant), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
         return OverrideImplementMethodsDialog.toNodePointers(OverrideImplementMethodsDialog.sortMethods(allSuperClassifiers, methodsToOverride));
       }
     });
@@ -74,18 +73,18 @@ public class OverrideImplementMethodInEnumConstantAction {
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
             public SNode select(SNodeReference it) {
-              return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+              return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
             }
           }).toListSequence();
-          OverrideImplementMethodsHelper helper = new OverrideImplementMethodsInEnumHelper(myProject, SNodeOperations.cast(SNodeOperations.getParent(contextEnumConstant), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")), contextEnumConstant, contextMember, dialog.isRemoveAttributes(), dialog.isInsertOverrideAnnotation(), dialog.isAddReturn());
+          OverrideImplementMethodsHelper helper = new OverrideImplementMethodsInEnumHelper(myProject, SNodeOperations.cast(SNodeOperations.getParent(contextEnumConstant), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), contextEnumConstant, contextMember, dialog.isRemoveAttributes(), dialog.isInsertOverrideAnnotation(), dialog.isAddReturn());
           List<SNode> insertedMethods = helper.insertMethods(selection);
           if (insertedMethods.isEmpty()) {
             return;
           }
           SNode firstMethod = ListSequence.fromList(insertedMethods).first();
           SNode nodeToSelect;
-          if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(firstMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).isNotEmpty()) {
-            nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(firstMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first();
+          if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(firstMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).isNotEmpty()) {
+            nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(firstMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).first();
           } else {
             nodeToSelect = firstMethod;
           }

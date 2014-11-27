@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
@@ -88,7 +87,7 @@ public class EditOperandDialog extends DialogWrapper {
       MappingSelectTree.ModelRefNodeData modelData = new MappingSelectTree.ModelRefNodeData(templateModel.getReference());
       DefaultMutableTreeNode modelNode = new DefaultMutableTreeNode(modelData);
       genNode.add(modelNode);
-      for (SNode mapping : SModelOperations.roots(((SModel) templateModel), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
+      for (SNode mapping : SModelOperations.roots(((SModel) templateModel), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
         SNodeReference np = new SNodePointer(mapping);
         MappingSelectTree.NodeRefNodeData nodeData = new MappingSelectTree.NodeRefNodeData(np);
         DefaultMutableTreeNode nodeNode = new DefaultMutableTreeNode(nodeData);

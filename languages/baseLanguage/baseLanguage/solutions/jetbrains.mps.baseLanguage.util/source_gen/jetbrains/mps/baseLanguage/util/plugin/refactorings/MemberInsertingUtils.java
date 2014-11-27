@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class MemberInsertingUtils {
   private static List<String> MEMBERS_ORDER = ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.baseLanguage.structure.StaticInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
@@ -17,13 +16,13 @@ public class MemberInsertingUtils {
   public static void insertClassifierMemberInBestPlace(SNode container, SNode memberToInsert) {
     int memberRank = getMemberRank(memberToInsert);
     int indexToInsert = 0;
-    for (SNode member : ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member")))) {
+    for (SNode member : ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")))) {
       if (getMemberRank(member) > memberRank) {
         break;
       }
       indexToInsert++;
     }
-    ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).insertElement(indexToInsert, memberToInsert);
+    ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).insertElement(indexToInsert, memberToInsert);
   }
   private static int getMemberRank(SNode member) {
     int memberRank = ListSequence.fromList(MEMBERS_ORDER).indexOf(member.getConcept().getQualifiedName());

@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class HidingByNameScope extends Scope {
   private final String hidingRootConceptFqName;
@@ -81,7 +80,7 @@ public class HidingByNameScope extends Scope {
   }
   @Override
   public boolean contains(SNode node) {
-    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) || !(SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(kindConceptFqName)))) {
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) || !(SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(kindConceptFqName)))) {
       return false;
     }
     if (scope.contains(node)) {

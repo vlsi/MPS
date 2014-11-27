@@ -12,7 +12,6 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule extends ComparisonRule_Runtime {
@@ -56,7 +55,7 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
         }
         {
           SNodeReference pointer = SNODE_POINTER_vbthi0_a0a0a0a0b0b0a0a0a0a0a0f;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ityt7t_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"))))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ityt7t_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"))))) {
             return false;
           }
         }

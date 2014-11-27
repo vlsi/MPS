@@ -4,7 +4,6 @@ package jetbrains.mps.lang.actions.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -29,12 +28,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
   public NodeFactory_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700725281l));
+    super(MetaIdFactory.conceptId(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f1f421L));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156235010670l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156235010670l), this) {
+    properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL), this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
@@ -42,7 +41,7 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node) {
         String propertyName = "alias";
-        return "factory for " + SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700725281l, 1158700943156l, "applicableConcept"));
+        return "factory for " + SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f1f421L, 0x10dc7f54734L, "applicableConcept"));
       }
     });
     return properties;
@@ -50,7 +49,7 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700725281l, 1158700943156l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700725281l, 1158700943156l), this) {
+    references.put(MetaIdFactory.refId(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f1f421L, 0x10dc7f54734L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f1f421L, 0x10dc7f54734L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;

@@ -6,14 +6,13 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptErrorReportingRoot = new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.errorReporting.structure.ErrorReportingRoot", MetaIdFactory.conceptId(new UUID(-7375342023419084600L, -9083228953980739588L), 7287346816896104019L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1133920641626L), MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1169194658468L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(7287346816896111112L, "intval")).properties("intval").create();
+  /*package*/ final ConceptDescriptor myConceptErrorReportingRoot = new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.errorReporting.structure.ErrorReportingRoot", MetaIdFactory.conceptId(0x99a58581851840c8L, 0x81f1e364306f5ffcL, 0x6521db51e82a7653L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(7287346816896111112L, "intval")).properties("intval").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

@@ -23,14 +23,14 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 1210674524691l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x119e1d33213L) {
       return new TestNodeReference_Constraints();
     }
-    if (id == 3655334166513314291l) {
+    if (id == 0x32ba5b0ec25fe9f3L) {
       return new ScopesExpectedNode_Constraints();
     }
-    if (id == 511191073233700873l) {
+    if (id == 0x7181d929c720809L) {
       return new ScopesTest_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

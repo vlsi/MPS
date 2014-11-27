@@ -12,7 +12,6 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -69,36 +68,36 @@ public class StubRefUtil {
   }
   public static boolean isStaticMethodCall(SNode staticMethodCall, @NotNull String methodSignature) {
     String classFqName = NameUtil.namespaceFromLongName(methodSignature.substring(0, methodSignature.indexOf("(")));
-    return isReferenceToClass(SNodeOperations.getReference(staticMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept")), classFqName) && isReferenceToMethod(SNodeOperations.getReference(staticMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), methodSignature);
+    return isReferenceToClass(SNodeOperations.getReference(staticMethodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept")), classFqName) && isReferenceToMethod(SNodeOperations.getReference(staticMethodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), methodSignature);
   }
   public static boolean isStaticFieldReference(SNode staticFieldRef, @NotNull String field) {
     String classFqName = NameUtil.namespaceFromLongName(field);
-    return isReferenceToClass(SNodeOperations.getReference(staticFieldRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier")), classFqName) && isReferenceToField(SNodeOperations.getReference(staticFieldRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), field);
+    return isReferenceToClass(SNodeOperations.getReference(staticFieldRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")), classFqName) && isReferenceToField(SNodeOperations.getReference(staticFieldRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), field);
   }
   public static boolean isReferenceTo(@Nullable SReference ref, @NotNull SModelReference targetModel, @NotNull org.jetbrains.mps.openapi.model.SNodeId targetId) {
     return ref != null && targetId.equals(ref.getTargetNodeId()) && targetModel.equals(ref.getTargetSModelReference());
   }
   public static boolean isStaticMethodCall(SNode staticMethodCall, @NotNull String targetModelID, @NotNull String classId, @NotNull String methodId) {
     SModelReference targetModel = PersistenceFacade.getInstance().createModelReference(targetModelID);
-    return isReferenceTo(SNodeOperations.getReference(staticMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept")), targetModel, SNodeId.fromString(classId)) && isReferenceTo(SNodeOperations.getReference(staticMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
+    return isReferenceTo(SNodeOperations.getReference(staticMethodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept")), targetModel, SNodeId.fromString(classId)) && isReferenceTo(SNodeOperations.getReference(staticMethodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
   }
   public static boolean isClassifierType(SNode classifierType, @NotNull String targetModel, @NotNull String classId) {
-    return isReferenceTo(SNodeOperations.getReference(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), PersistenceFacade.getInstance().createModelReference(targetModel), PersistenceFacade.getInstance().createNodeId(classId));
+    return isReferenceTo(SNodeOperations.getReference(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), PersistenceFacade.getInstance().createModelReference(targetModel), PersistenceFacade.getInstance().createNodeId(classId));
   }
   public static boolean isInstanceMethodCall(SNode methodCallOperation, @NotNull String methodSignature) {
-    return isReferenceToMethod(SNodeOperations.getReference(methodCallOperation, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), methodSignature);
+    return isReferenceToMethod(SNodeOperations.getReference(methodCallOperation, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), methodSignature);
   }
   public static boolean isInstanceMethodCall(SNode methodCallOperation, @NotNull SModelReference targetModel, @NotNull String methodId) {
-    return isReferenceTo(SNodeOperations.getReference(methodCallOperation, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
+    return isReferenceTo(SNodeOperations.getReference(methodCallOperation, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
   }
   public static boolean isEnumClassifierReference(SNode ref, String modelRef, String nodeRef) {
-    return isReferenceTo(SNodeOperations.getReference(ref, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass")), PersistenceFacade.getInstance().createModelReference(modelRef), PersistenceFacade.getInstance().createNodeId(nodeRef));
+    return isReferenceTo(SNodeOperations.getReference(ref, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass")), PersistenceFacade.getInstance().createModelReference(modelRef), PersistenceFacade.getInstance().createNodeId(nodeRef));
   }
   public static boolean isClassCreator(SNode creator, @NotNull String creatorSignature) {
-    return isReferenceToMethod(SNodeOperations.getReference(creator, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), creatorSignature);
+    return isReferenceToMethod(SNodeOperations.getReference(creator, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), creatorSignature);
   }
   public static boolean isClassCreator(SNode creator, @NotNull String creatorModel, @NotNull String creatorId) {
-    return isReferenceTo(SNodeOperations.getReference(creator, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), PersistenceFacade.getInstance().createModelReference(creatorModel), PersistenceFacade.getInstance().createNodeId(creatorId));
+    return isReferenceTo(SNodeOperations.getReference(creator, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), PersistenceFacade.getInstance().createModelReference(creatorModel), PersistenceFacade.getInstance().createNodeId(creatorId));
   }
   public static void addRequiredImports(SModel model, SNode newNode) {
     for (SReference ref : ListSequence.fromList(SNodeOperations.getNodeDescendants(newNode, null, true, new SAbstractConcept[]{})).translate(new ITranslator2<SNode, SReference>() {

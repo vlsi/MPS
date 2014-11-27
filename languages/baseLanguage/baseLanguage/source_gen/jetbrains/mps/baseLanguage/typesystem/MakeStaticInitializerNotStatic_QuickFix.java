@@ -6,7 +6,6 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -16,20 +15,20 @@ public class MakeStaticInitializerNotStatic_QuickFix extends QuickFix_Runtime {
   public MakeStaticInitializerNotStatic_QuickFix() {
   }
   public String getDescription(SNode node) {
-    return "Make '" + SPropertyOperations.getString(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " class initializer' not static";
+    return "Make '" + SPropertyOperations.getString(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " class initializer' not static";
   }
   public void execute(SNode node) {
-    int index = ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).indexOf(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
+    int index = ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).indexOf(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
 
-    SNode initializer = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1206629501431l, "jetbrains.mps.baseLanguage.structure.InstanceInitializer")));
-    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(initializer, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206629501431l, 1206629521979l, "statementList")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1221737317277l, 1221737317278l, "statementList")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))));
+    SNode initializer = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer")));
+    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(initializer, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, 0x118f0b95a3bL, "statementList")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, 0x11c7538039eL, "statementList")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))));
 
     SNodeOperations.detachNode(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
 
     if (index == -1) {
-      ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(initializer);
+      ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(initializer);
     } else {
-      ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).insertElement(index, initializer);
+      ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).insertElement(index, initializer);
     }
   }
 }

@@ -32,62 +32,62 @@
   </root>
   <root nodeRef="r:d2b7cfed-de53-404b-aa28-8afd6d7632e0(jetbrains.mps.lang.pattern.testLang.behavior)/394224946578869061">
     <file name="PatternTest_Behavior.java">
-      <node id="394224946578905096" at="16,83,17,201" concept="2" />
-      <node id="7885114646737405087" at="19,78,20,49" concept="1" />
-      <node id="7885114646737405094" at="20,49,21,26" concept="0" />
-      <node id="7885114646737405103" at="21,26,22,19" concept="2" />
-      <node id="2433982077498361212" at="24,75,25,147" concept="2" />
-      <node id="7885114646737540818" at="27,88,28,49" concept="1" />
-      <node id="7885114646737540824" at="28,49,29,26" concept="0" />
-      <node id="7885114646737540829" at="29,26,30,19" concept="2" />
-      <node id="7885114646737405105" at="32,73,33,20" concept="2" />
-      <node id="7885114646737405107" at="35,74,36,24" concept="2" />
-      <node id="3403446150498856037" at="38,88,39,16" concept="2" />
-      <node id="394224946578869061" at="14,0,16,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="394224946578869061" at="16,0,19,0" concept="3" trace="call_getPatternTestName_394224946578869064#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="394224946578869061" at="24,0,27,0" concept="3" trace="virtual_getClassName_1216136193905#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="394224946578869061" at="32,0,35,0" concept="3" trace="virtual_getTestCase_1216134500045#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="394224946578869061" at="35,0,38,0" concept="3" trace="virtual_getTestName_1216136419751#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="394224946578869061" at="38,0,41,0" concept="3" trace="virtual_isMpsStartRequired_3310779261129403089#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="394224946578869061" at="19,0,24,0" concept="3" trace="virtual_getTestSet_1216130724401#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="394224946578869061" at="27,0,32,0" concept="3" trace="virtual_getTestMethods_2148145109766218395#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="394224946578869063" at="14,43,14,43" />
-      <scope id="394224946578869067" at="16,83,17,201" />
-      <scope id="7885114646737540794" at="24,75,25,147" />
-      <scope id="7885114646737405075" at="32,73,33,20" />
-      <scope id="7885114646737405071" at="35,74,36,24" />
-      <scope id="3403446150498856035" at="38,88,39,16" />
-      <scope id="394224946578869061" at="14,0,16,0">
+      <node id="394224946578905096" at="15,83,16,187" concept="2" />
+      <node id="7885114646737405087" at="18,78,19,49" concept="1" />
+      <node id="7885114646737405094" at="19,49,20,26" concept="0" />
+      <node id="7885114646737405103" at="20,26,21,19" concept="2" />
+      <node id="2433982077498361212" at="23,75,24,147" concept="2" />
+      <node id="7885114646737540818" at="26,88,27,49" concept="1" />
+      <node id="7885114646737540824" at="27,49,28,26" concept="0" />
+      <node id="7885114646737540829" at="28,26,29,19" concept="2" />
+      <node id="7885114646737405105" at="31,73,32,20" concept="2" />
+      <node id="7885114646737405107" at="34,74,35,24" concept="2" />
+      <node id="3403446150498856037" at="37,88,38,16" concept="2" />
+      <node id="394224946578869061" at="13,0,15,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="394224946578869061" at="15,0,18,0" concept="3" trace="call_getPatternTestName_394224946578869064#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="394224946578869061" at="23,0,26,0" concept="3" trace="virtual_getClassName_1216136193905#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="394224946578869061" at="31,0,34,0" concept="3" trace="virtual_getTestCase_1216134500045#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="394224946578869061" at="34,0,37,0" concept="3" trace="virtual_getTestName_1216136419751#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="394224946578869061" at="37,0,40,0" concept="3" trace="virtual_isMpsStartRequired_3310779261129403089#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="394224946578869061" at="18,0,23,0" concept="3" trace="virtual_getTestSet_1216130724401#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="394224946578869061" at="26,0,31,0" concept="3" trace="virtual_getTestMethods_2148145109766218395#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <scope id="394224946578869063" at="13,43,13,43" />
+      <scope id="394224946578869067" at="15,83,16,187" />
+      <scope id="7885114646737540794" at="23,75,24,147" />
+      <scope id="7885114646737405075" at="31,73,32,20" />
+      <scope id="7885114646737405071" at="34,74,35,24" />
+      <scope id="3403446150498856035" at="37,88,38,16" />
+      <scope id="394224946578869061" at="13,0,15,0">
         <var name="thisNode" id="394224946578869061" />
       </scope>
-      <scope id="394224946578869061" at="16,0,19,0">
+      <scope id="394224946578869061" at="15,0,18,0">
         <var name="thisNode" id="394224946578869061" />
       </scope>
-      <scope id="7885114646737405065" at="19,78,22,19">
+      <scope id="7885114646737405065" at="18,78,21,19">
         <var name="methods" id="7885114646737405088" />
       </scope>
-      <scope id="394224946578869061" at="24,0,27,0">
+      <scope id="394224946578869061" at="23,0,26,0">
         <var name="thisNode" id="394224946578869061" />
       </scope>
-      <scope id="7885114646737540811" at="27,88,30,19">
+      <scope id="7885114646737540811" at="26,88,29,19">
         <var name="methods" id="7885114646737540819" />
       </scope>
-      <scope id="394224946578869061" at="32,0,35,0">
+      <scope id="394224946578869061" at="31,0,34,0">
         <var name="thisNode" id="394224946578869061" />
       </scope>
-      <scope id="394224946578869061" at="35,0,38,0">
+      <scope id="394224946578869061" at="34,0,37,0">
         <var name="thisNode" id="394224946578869061" />
       </scope>
-      <scope id="394224946578869061" at="38,0,41,0">
+      <scope id="394224946578869061" at="37,0,40,0">
         <var name="thisNode" id="394224946578869061" />
       </scope>
-      <scope id="394224946578869061" at="19,0,24,0">
+      <scope id="394224946578869061" at="18,0,23,0">
         <var name="thisNode" id="394224946578869061" />
       </scope>
-      <scope id="394224946578869061" at="27,0,32,0">
+      <scope id="394224946578869061" at="26,0,31,0">
         <var name="thisNode" id="394224946578869061" />
       </scope>
-      <unit id="394224946578869061" at="13,0,42,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior" />
+      <unit id="394224946578869061" at="12,0,41,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior" />
     </file>
   </root>
 </debug-info>

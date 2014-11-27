@@ -4,7 +4,6 @@ package jetbrains.mps.lang.typesystem.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -27,12 +26,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class WhenConcreteVariableReference_Constraints extends BaseConstraintsDescriptor {
   public WhenConcreteVariableReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8817443762339858024l, -6091446231697526094l), 1205762656241l));
+    super(MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(8817443762339858024l, -6091446231697526094l), 1205762656241l, 1205762683928l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(8817443762339858024l, -6091446231697526094l), 1205762656241l, 1205762683928l), this) {
+    references.put(MetaIdFactory.refId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L, 0x118bd0e7418L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L, 0x118bd0e7418L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -43,10 +42,10 @@ public class WhenConcreteVariableReference_Constraints extends BaseConstraintsDe
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> whenConcreteStatements = SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185805035213l, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"), false);
+            List<SNode> whenConcreteStatements = SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"), false);
             List<SNode> declarations = new ArrayList<SNode>();
             for (SNode whenConcreteStatement : whenConcreteStatements) {
-              SNode variableDeclaration = SLinkOperations.getTarget(whenConcreteStatement, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1185805035213l, 1205761991995l, "argumentRepresentator"));
+              SNode variableDeclaration = SLinkOperations.getTarget(whenConcreteStatement, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL, 0x118bd03e53bL, "argumentRepresentator"));
               if (variableDeclaration != null) {
                 ListSequence.fromList(declarations).addElement(variableDeclaration);
               }

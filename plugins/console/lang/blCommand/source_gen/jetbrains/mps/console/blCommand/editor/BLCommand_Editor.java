@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -41,7 +40,7 @@ public class BLCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_zc016d_a0(SNode node, EditorContext editorContext) {
-    return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 757553790980850366l, "jetbrains.mps.console.base.structure.History"), false, false) == null;
+    return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL, "jetbrains.mps.console.base.structure.History"), false, false) == null;
   }
   private EditorCell createCollection_zc016d_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

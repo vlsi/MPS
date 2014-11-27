@@ -10,7 +10,6 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -30,10 +29,10 @@ public class TryStatement_DeleteBodyEndingBrace {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, final SNode node) {
-      if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1153952380246l, 1164903700860l, "catchClause"))).count() >= 1) {
-        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1153952380246l, 1164903700860l, "catchClause"))).removeElementAt(0);
+      if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).count() >= 1) {
+        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).removeElementAt(0);
       } else {
-        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
+        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
         ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             SNodeOperations.insertPrevSiblingChild(node, it);
@@ -52,10 +51,10 @@ public class TryStatement_DeleteBodyEndingBrace {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, final SNode node) {
-      if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1153952380246l, 1164903700860l, "catchClause"))).count() >= 1) {
-        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1153952380246l, 1164903700860l, "catchClause"))).removeElementAt(0);
+      if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).count() >= 1) {
+        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).removeElementAt(0);
       } else {
-        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
+        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
         ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             SNodeOperations.insertPrevSiblingChild(node, it);

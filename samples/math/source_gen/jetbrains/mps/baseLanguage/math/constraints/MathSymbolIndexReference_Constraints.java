@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.math.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -25,12 +24,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescriptor {
   public MathSymbolIndexReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(3676340747305173022l, -6911132873973321185l), 1236427936913l));
+    super(MetaIdFactory.conceptId(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0d91491L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(3676340747305173022l, -6911132873973321185l), 1236427936913l, 1236427955167l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(3676340747305173022l, -6911132873973321185l), 1236427936913l, 1236427955167l), this) {
+    references.put(MetaIdFactory.refId(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0d91491L, 0x11fe0d95bdfL), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0d91491L, 0x11fe0d95bdfL), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -41,7 +40,7 @@ public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescrip
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode ms = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), true, false);
+            SNode ms = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), true, false);
             List<SNode> msi = MathSymbol_Behavior.call_getEmptyIndexList_1237828382992(ms);
             MathSymbol_Behavior.call_getVisibleIndices_1236440390782(ms, _context.getEnclosingNode(), msi);
             return msi;

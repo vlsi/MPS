@@ -31,7 +31,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -103,10 +102,10 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
             public void visit(SModel it) {
               for (SNode n : it.getRootNodes()) {
                 for (SNode i : SNodeOperations.getNodeDescendants(n, null, true, new SAbstractConcept[]{})) {
-                  SNode ccp = SNodeOperations.as(((jetbrains.mps.smodel.SNode) i).getConceptDeclarationNode(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+                  SNode ccp = SNodeOperations.as(((jetbrains.mps.smodel.SNode) i).getConceptDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
                   if (ccp != null) {
                     total.value++;
-                    if (!(SPropertyOperations.hasValue(ccp, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 5404671619616246344l, "staticScope"), "none", null))) {
+                    if (!(SPropertyOperations.hasValue(ccp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null))) {
                       referenceable.value++;
                       String cname = BehaviorReflection.invokeVirtual(String.class, ccp, "virtual_getFqName_1213877404258", new Object[]{});
                       if (MapSequence.fromMap(used).containsKey(cname)) {

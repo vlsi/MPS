@@ -4,7 +4,6 @@ package jetbrains.mps.lang.dataFlow.analyzers.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -27,12 +26,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ApplicableNodeReference_Constraints extends BaseConstraintsDescriptor {
   public ApplicableNodeReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633102057744l));
+    super(MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788f30110L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633102057744l, 4943044633102057745l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633102057744l, 4943044633102057745l), this) {
+    references.put(MetaIdFactory.refId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788f30110L, 0x449938e788f30111L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788f30110L, 0x449938e788f30111L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -44,9 +43,9 @@ public class ApplicableNodeReference_Constraints extends BaseConstraintsDescript
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            SNode rule = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"), true, false);
-            if (rule != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 3325264799421290838l, "condition")), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633101449694l, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"))) {
-              ListSequence.fromList(result).addElement(SNodeOperations.cast(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 3325264799421290838l, "condition")), MetaAdapterFactory.getConcept(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633101449694l, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition")));
+            SNode rule = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"), true, false);
+            if (rule != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x2e25b6b7919dd956L, "condition")), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788e9b9deL, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"))) {
+              ListSequence.fromList(result).addElement(SNodeOperations.cast(SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x2e25b6b7919dd956L, "condition")), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788e9b9deL, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition")));
             }
             return result;
           }

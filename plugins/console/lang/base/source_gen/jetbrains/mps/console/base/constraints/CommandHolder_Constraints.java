@@ -4,7 +4,6 @@ package jetbrains.mps.console.base.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
@@ -17,7 +16,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class CommandHolder_Constraints extends BaseConstraintsDescriptor {
   public CommandHolder_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2442401883381282302l, -5546511894809623691l), 351968380916615243l));
+    super(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL));
   }
   @Override
   public boolean hasOwnCanBeAncestorMethod() {

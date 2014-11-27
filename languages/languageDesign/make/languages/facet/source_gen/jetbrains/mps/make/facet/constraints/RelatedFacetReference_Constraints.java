@@ -4,7 +4,6 @@ package jetbrains.mps.make.facet.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -26,12 +25,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class RelatedFacetReference_Constraints extends BaseConstraintsDescriptor {
   public RelatedFacetReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(7596465798203917883l, -4873580700227838512l), 8351679702044320297l));
+    super(MetaIdFactory.conceptId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x73e720709e312229L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(7596465798203917883l, -4873580700227838512l), 6447445394688422642l, 6447445394688422643l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(7596465798203917883l, -4873580700227838512l), 6447445394688422642l, 6447445394688422643l), this) {
+    references.put(MetaIdFactory.refId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b21b2f2L, 0x5979ed6d2b21b2f3L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b21b2f2L, 0x5979ed6d2b21b2f3L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -44,7 +43,7 @@ public class RelatedFacetReference_Constraints extends BaseConstraintsDescriptor
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return Sequence.fromIterable(new FacetsScope(_context.getContextNode()).getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
-                return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration"));
+                return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"));
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {

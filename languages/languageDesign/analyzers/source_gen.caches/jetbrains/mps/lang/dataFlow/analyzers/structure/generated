@@ -1,3 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-y0w5ku0edf7q4d3o0tdfxc47bww14j" />
+<dependencies version="2" modelHash="-y0w5ku0edf7q4d3o0tdfxc47bww14j">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="a237ii4p803dkvj3a01l9nndi1k5jpk" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="7va3130h0ufhjdfej6hob440gm3vlqj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-3w51vd6avpj0y99dkotmnfwqd41znrq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3863x0u9flggmckjewdlsmikl6dj9wv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="dyswqfju0dze0vp40q0x5ffcejj7zen" />
+  <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="6tprepqv98k18pjf44u6xpmy9ohonwz" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="7acg7jfloizfkh7fz9512hws89btuf5" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3fcvzpa8v8rf3aly8ijks960qkiha8x" />
+  <common hash="cvoo3tnw4nepmu3lbk0t0rimjlmnxxa" dependsOnNodes="true">
+    <dep root="2045671745393426211" />
+    <dep root="3325264799421290200" />
+    <dep root="3325264799421303651" />
+    <dep root="4217760266503579796" />
+    <dep root="4217760266503638748" />
+    <dep root="430844094082168520" />
+    <dep root="430844094082202272" />
+    <dep root="4746038179140566716" />
+    <dep root="4746038179140566725" />
+    <dep root="4746038179140588744" />
+    <dep root="4746038179140588745" />
+    <dep root="4746038179140588754" />
+    <dep root="4746038179140588756" />
+    <dep root="4943044633101449694" />
+    <dep root="4943044633102057744" />
+    <dep root="6393434056522580745" />
+    <dep root="6618572076229093257" />
+    <dep root="6618572076229093258" />
+    <dep root="752944717341640112" />
+    <dep root="7985661997283714146" />
+    <dep root="8424563347437821087" />
+    <dep root="8424563347437829923" />
+    <dep root="8424563347437829924" />
+    <dep root="9177062368042220422" />
+    <dep root="9177062368042220424" />
+    <dep root="9177062368042220438" />
+    <dep root="9177062368042364839" />
+    <dep root="95073643532950033" />
+    <dep root="95073643532950038" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="6618572076229093257" name="Analyzer" hash="-3mvxsj51b1dw9y8kr8azuf7bgjhx83e" />
+  <source id="6618572076229093258" name="Instruction" hash="-16kh0u6dtznu59dvfuuh0ue4jbrc753" />
+  <source id="6393434056522580745" name="AnalyzerMergeFunction" hash="719hsw2whtdyvjveaku1uu52fk9uv2i" />
+  <source id="4746038179140566716" name="AnalyzerParameterProgram" hash="-aszlzc7hvhip5wqhmfd8iwo5fmwarpg" />
+  <source id="4746038179140566725" name="AnalyzerMergeParameterInput" hash="2epj6g7elscmprdpu5w8j0hdtmyb8nq" />
+  <source id="4746038179140588744" name="AnalyzerInitialFunction" hash="-el2pnz6jnbz2i2o2u0iddwurd7vsiri" />
+  <source id="4746038179140588745" name="AnalyzerFunFunction" hash="7sdbe3j5hnradltf2fj9q6i73vci4c6" />
+  <source id="4746038179140588754" name="AnalyzerFunParameterProgramState" hash="-910ed094f0nw9sy3dpn7atmzvfn7bpr" />
+  <source id="4746038179140588756" name="AnalyzerFunParameterInput" hash="-8lwbdms8zpn19necycl58c9iia97r4w" />
+  <source id="9177062368042220422" name="AnalysisDirection" hash="263pd6ngo4f51moxgeta7p31gyh1wir" />
+  <source id="9177062368042220424" name="ForwardDirection" hash="58gjpcxb8l8uxibvpoceokqlbakk83u" />
+  <source id="9177062368042220438" name="BackwardDirection" hash="cwzcg9a5cqcsqsyzpr08iwi0mjthgnd" />
+  <source id="9177062368042364839" name="AnalyzerFunctionResultType" hash="-ac6vk9sukl07cgjkq0d9hsvgnwbei4r" />
+  <source id="430844094082168520" name="Rule" hash="-acod3614cuir0evykwfcwyv4oa5f9oy" />
+  <source id="430844094082202272" name="InstructionParameter" hash="-5tkxpzmj4p89zwfvw5b3xxmk6xlq3ut" />
+  <source id="3325264799421290200" name="ApplicableCondition" hash="ca4ldesv2ka5km9v7nmibp836hptod6" />
+  <source id="3325264799421303651" name="PatternCondition" hash="8jahqioc6gnlmlqazpqcip7i43dxvxs" />
+  <source id="4217760266503579796" name="EmitInstruction" hash="-3iliqzc64kxc6hwvivwbnca0x7ggf5e" />
+  <source id="4217760266503638748" name="InstructionReference" hash="ona0zt9v6lr7af7qn5rrdx566u4chp" />
+  <source id="752944717341640112" name="RuleReference" hash="-8wnyb9arlmob3uazimec3rrqyw9de3" />
+  <source id="2045671745393426211" name="AnalyzerRunnerType" hash="-bewmmno1rqjoj4ihwxzo146r1xjq3s5" />
+  <source id="95073643532950033" name="AnalyzerRunnerAnalyzeOperation" hash="8z7sz6m2d4258vzegwbv2zxu4nm4orb" />
+  <source id="95073643532950038" name="AnalyzerRunnerCreator" hash="-dlewssbqwn79y74e85ohrbe2ytc3c5e" />
+  <source id="7985661997283714146" name="IsOperation" hash="-7o2e81obclztywvlv3e6y2j1qh9rylu" />
+  <source id="4943044633101449694" name="ConceptCondition" hash="-84rxc424slwm95ebe4bbpr4kin4zawu" />
+  <source id="4943044633102057744" name="ApplicableNodeReference" hash="9dsgm2eae28vxsawmfe60w1gcofvm7y" />
+  <source id="8424563347437821087" name="InsertBeforePosition" hash="-91dcoy0hvqv4fbcerrkxa6mleifw8iw" />
+  <source id="8424563347437829923" name="InsertPosition" hash="c8mbvobolcewxhimocs2akezwxeve0p" />
+  <source id="8424563347437829924" name="InsertAfterPosition" hash="-9jhso2n9heoth7takwoj1yc7ybvfrzk" />
+</dependencies>
 

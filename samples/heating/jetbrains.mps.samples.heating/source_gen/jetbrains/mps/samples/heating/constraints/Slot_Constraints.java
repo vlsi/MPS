@@ -4,7 +4,6 @@ package jetbrains.mps.samples.heating.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -20,12 +19,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Slot_Constraints extends BaseConstraintsDescriptor {
   public Slot_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l));
+    super(MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l), this) {
+    properties.put(MetaIdFactory.propId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL), this) {
       @Override
       public boolean hasOwnValidator() {
         return true;
@@ -33,9 +32,9 @@ public class Slot_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(final SNode node, final String propertyValue) {
         String propertyName = "start";
-        return (SPropertyOperations.getInteger(propertyValue)) >= 0 && (SPropertyOperations.getInteger(propertyValue)) <= 24 && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, "jetbrains.mps.samples.heating.structure.DailyPlan")), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).all(new IWhereFilter<SNode>() {
+        return (SPropertyOperations.getInteger(propertyValue)) >= 0 && (SPropertyOperations.getInteger(propertyValue)) <= 24 && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan")), MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).all(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_wqhmm2_a0a0a0a0a0a0a0b0b0a1a0b0b(it, node) || SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")) != (SPropertyOperations.getInteger(propertyValue));
+            return eq_wqhmm2_a0a0a0a0a0a0a0b0b0a1a0b0b(it, node) || SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start")) != (SPropertyOperations.getInteger(propertyValue));
           }
         });
       }

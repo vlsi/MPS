@@ -7,12 +7,11 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class ParenthesizedExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
-    return BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression")), "virtual_eval_1213877519769", new Object[]{module});
+    return BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression")), "virtual_eval_1213877519769", new Object[]{module});
   }
 }

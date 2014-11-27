@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,10 +23,10 @@ public class check_DuplicatedRules_NonTypesystemRule extends AbstractNonTypesyst
   public check_DuplicatedRules_NonTypesystemRule() {
   }
   public void applyRule(final SNode abstractRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final String name = SPropertyOperations.getString(abstractRule, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
-    if (ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(abstractRule), MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1174648085619l, "jetbrains.mps.lang.typesystem.structure.AbstractRule"))).any(new IWhereFilter<SNode>() {
+    final String name = SPropertyOperations.getString(abstractRule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    if (ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(abstractRule), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, "jetbrains.mps.lang.typesystem.structure.AbstractRule"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != abstractRule && SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
+        return it != abstractRule && SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name);
       }
     })) {
       {

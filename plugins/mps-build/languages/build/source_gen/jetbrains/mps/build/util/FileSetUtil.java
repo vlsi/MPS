@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -21,42 +20,42 @@ public class FileSetUtil {
   public FileSetUtil() {
   }
   public static Iterable<SNode> getImplicitFilesets(SNode container) {
-    Iterable<SNode> result = ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> result = ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1117643560963351145l, "jetbrains.mps.build.structure.BuildLayout_FileSet")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1117643560963351145l, "jetbrains.mps.build.structure.BuildLayout_FileSet")), "virtual_isImplicit_1330375798085107777", new Object[]{});
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xf82aae5acb92269L, "jetbrains.mps.build.structure.BuildLayout_FileSet")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xf82aae5acb92269L, "jetbrains.mps.build.structure.BuildLayout_FileSet")), "virtual_isImplicit_1330375798085107777", new Object[]{});
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1117643560963351145l, "jetbrains.mps.build.structure.BuildLayout_FileSet"));
+        return SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xf82aae5acb92269L, "jetbrains.mps.build.structure.BuildLayout_FileSet"));
       }
     });
 
-    for (SNode folder : ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).where(new IWhereFilter<SNode>() {
+    for (SNode folder : ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036984l, "jetbrains.mps.build.structure.BuildLayout_Folder")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode"));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"));
       }
     })) {
-      result = Sequence.fromIterable(result).concat(Sequence.fromIterable(getImplicitFilesets(SNodeOperations.cast(folder, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, "jetbrains.mps.build.structure.BuildLayout_Container")))));
+      result = Sequence.fromIterable(result).concat(Sequence.fromIterable(getImplicitFilesets(SNodeOperations.cast(folder, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container")))));
     }
     return result;
   }
   public static Iterable<SNode> getExplicitFilemodeRoots(SNode container) {
-    Iterable<SNode> result = ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> result = ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode"));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode"));
+        return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"));
       }
     });
 
-    for (SNode folder : ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).where(new IWhereFilter<SNode>() {
+    for (SNode folder : ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036984l, "jetbrains.mps.build.structure.BuildLayout_Folder")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode"));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"));
       }
     })) {
-      result = Sequence.fromIterable(result).concat(Sequence.fromIterable(getExplicitFilemodeRoots(SNodeOperations.cast(folder, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, "jetbrains.mps.build.structure.BuildLayout_Container")))));
+      result = Sequence.fromIterable(result).concat(Sequence.fromIterable(getExplicitFilemodeRoots(SNodeOperations.cast(folder, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container")))));
     }
     return Sequence.fromIterable(result).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -65,21 +64,21 @@ public class FileSetUtil {
     });
   }
   public static boolean hasExplicitFilesets(SNode container) {
-    return ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !((SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1117643560963351145l, "jetbrains.mps.build.structure.BuildLayout_FileSet")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 1117643560963351145l, "jetbrains.mps.build.structure.BuildLayout_FileSet")), "virtual_isImplicit_1330375798085107777", new Object[]{}))) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode"))) && (!(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036984l, "jetbrains.mps.build.structure.BuildLayout_Folder"))) || hasExplicitFilesets(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, "jetbrains.mps.build.structure.BuildLayout_Container"))));
+        return !((SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xf82aae5acb92269L, "jetbrains.mps.build.structure.BuildLayout_FileSet")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xf82aae5acb92269L, "jetbrains.mps.build.structure.BuildLayout_FileSet")), "virtual_isImplicit_1330375798085107777", new Object[]{}))) && !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"))) && (!(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder"))) || hasExplicitFilesets(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"))));
       }
     });
   }
   public static SNode getFilesetLayoutContainer(SNode contextContainer) {
-    if (SNodeOperations.isInstanceOf(contextContainer, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288166441l, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"))) {
-      return SNodeOperations.cast(contextContainer, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288166441l, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"));
+    if (SNodeOperations.isInstanceOf(contextContainer, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"))) {
+      return SNodeOperations.cast(contextContainer, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"));
     }
-    while (SNodeOperations.isInstanceOf(contextContainer, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036984l, "jetbrains.mps.build.structure.BuildLayout_Folder")) || SNodeOperations.isInstanceOf(contextContainer, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode"))) {
-      contextContainer = SNodeOperations.as(SNodeOperations.getParent(contextContainer), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"));
+    while (SNodeOperations.isInstanceOf(contextContainer, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")) || SNodeOperations.isInstanceOf(contextContainer, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"))) {
+      contextContainer = SNodeOperations.as(SNodeOperations.getParent(contextContainer), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
     }
-    if (SNodeOperations.isInstanceOf(contextContainer, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288166441l, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(contextContainer, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288166441l, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")), "virtual_hasPrefixAttribute_6408167411310575232", new Object[]{})) {
-      return SNodeOperations.cast(contextContainer, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288166441l, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"));
+    if (SNodeOperations.isInstanceOf(contextContainer, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(contextContainer, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")), "virtual_hasPrefixAttribute_6408167411310575232", new Object[]{})) {
+      return SNodeOperations.cast(contextContainer, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"));
     }
     return null;
   }
@@ -89,13 +88,13 @@ public class FileSetUtil {
   }
   public static String getContainerPrefix(SNode container, MacroHelper helper) {
     Stack<String> stack = new Stack<String>();
-    while (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036984l, "jetbrains.mps.build.structure.BuildLayout_Folder")) || SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode"))) {
-      if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036984l, "jetbrains.mps.build.structure.BuildLayout_Folder"))) {
-        stack.push(BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SNodeOperations.cast(container, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036984l, "jetbrains.mps.build.structure.BuildLayout_Folder")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848050060l, 4380385936562148502l, "containerName")), helper));
+    while (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")) || SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"))) {
+      if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder"))) {
+        stack.push(BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SNodeOperations.cast(container, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), helper));
       }
       container = SNodeOperations.getParent(container);
     }
-    if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288166441l, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(container, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288166441l, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")), "virtual_hasPrefixAttribute_6408167411310575232", new Object[]{})) {
+    if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(container, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")), "virtual_hasPrefixAttribute_6408167411310575232", new Object[]{})) {
       StringBuilder sb = new StringBuilder();
       while (!(stack.isEmpty())) {
         String folderName = stack.pop();
@@ -112,24 +111,24 @@ public class FileSetUtil {
     SNode parent = SNodeOperations.getParent(fileset);
     String filemode = null;
     String dirmode = null;
-    while (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036984l, "jetbrains.mps.build.structure.BuildLayout_Folder")) || SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode"))) {
-      if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode"))) {
-        if (filemode == null && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode")), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode")))) {
-          filemode = SPropertyOperations.getString(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode")), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode"));
+    while (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")) || SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"))) {
+      if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"))) {
+        if (filemode == null && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode")), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, 0x6c4335df4e838e44L, "filemode")))) {
+          filemode = SPropertyOperations.getString(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode")), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, 0x6c4335df4e838e44L, "filemode"));
         }
-        if (dirmode == null && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode")), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode")))) {
-          dirmode = SPropertyOperations.getString(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, "jetbrains.mps.build.structure.BuildLayout_Filemode")), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode"));
+        if (dirmode == null && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode")), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, 0x6c4335df4e838e45L, "dirmode")))) {
+          dirmode = SPropertyOperations.getString(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode")), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, 0x6c4335df4e838e45L, "dirmode"));
         }
       }
       parent = SNodeOperations.getParent(parent);
     }
-    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288166441l, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288166441l, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")), "virtual_hasFileModeAttribute_6408167411310575237", new Object[]{})) {
+    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")), "virtual_hasFileModeAttribute_6408167411310575237", new Object[]{})) {
       return (dirmode != null || filemode != null ? new Pair(dirmode, filemode) : null);
     }
     return null;
   }
   public static boolean isExplicit(SNode fileset) {
-    return getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(fileset), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"))) == null || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, fileset, "virtual_isImplicit_1330375798085107777", new Object[]{}));
+    return getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(fileset), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) == null || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, fileset, "virtual_isImplicit_1330375798085107777", new Object[]{}));
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

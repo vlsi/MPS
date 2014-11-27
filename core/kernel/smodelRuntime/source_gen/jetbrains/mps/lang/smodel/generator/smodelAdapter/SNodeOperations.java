@@ -24,7 +24,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -609,16 +608,16 @@ public class SNodeOperations {
   }
   private static void copyAllAttributes(SNode oldChild, SNode newChild) {
     for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
-      if (SNodeOperations.isInstanceOf(attribute, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049750l, "jetbrains.mps.lang.core.structure.PropertyAttribute"))) {
-        String propertyName = AttributeOperations.getPropertyName(SNodeOperations.cast(attribute, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049750l, "jetbrains.mps.lang.core.structure.PropertyAttribute")));
+      if (SNodeOperations.isInstanceOf(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))) {
+        String propertyName = AttributeOperations.getPropertyName(SNodeOperations.cast(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute")));
         if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(newChild)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findPropertyDeclaration_1219835742593", new Object[]{propertyName}) == null)) {
           // no such property in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConcept().getName(), newChild);
           continue;
         }
       }
-      if (SNodeOperations.isInstanceOf(attribute, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049745l, "jetbrains.mps.lang.core.structure.LinkAttribute"))) {
-        String linkRole = AttributeOperations.getLinkRole(SNodeOperations.cast(attribute, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049745l, "jetbrains.mps.lang.core.structure.LinkAttribute")));
+      if (SNodeOperations.isInstanceOf(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))) {
+        String linkRole = AttributeOperations.getLinkRole(SNodeOperations.cast(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute")));
         if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(newChild)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{linkRole}) == null)) {
           // no such link in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConcept().getName(), newChild);
@@ -873,7 +872,7 @@ public class SNodeOperations {
       return null;
     }
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    return node.getReference(SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")));
+    return node.getReference(SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")));
   }
   @Deprecated
   @ToRemove(version = 3.2)

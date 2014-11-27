@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.textGen.TextGen;
@@ -35,8 +34,8 @@ public class ImportsContext {
 
     // init package simple names 
     packageSimpleNames = new HashSet<String>();
-    for (SNode classifier : SModelOperations.roots(SNodeOperations.getModel(rootNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      packageSimpleNames.add(SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+    for (SNode classifier : SModelOperations.roots(SNodeOperations.getModel(rootNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      packageSimpleNames.add(SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     }
   }
   public String getClassifierRefText(String packageName, String fqName, SNode contextNode) {
@@ -106,10 +105,10 @@ public class ImportsContext {
     ImportsContext instance = (ImportsContext) buffer.getUserObject(USER_OBJECT_KEY);
     if (instance == null) {
       SNode rootNode = (SNode) buffer.getUserObject(TextGen.ROOT_NODE);
-      if ((rootNode == null) || !(SNodeOperations.isInstanceOf(rootNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
+      if ((rootNode == null) || !(SNodeOperations.isInstanceOf(rootNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
         throw new IllegalStateException();
       }
-      instance = new ImportsContext(buffer, SNodeOperations.cast(rootNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")));
+      instance = new ImportsContext(buffer, SNodeOperations.cast(rootNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
       buffer.putUserObject(USER_OBJECT_KEY, instance);
     }
     return instance;

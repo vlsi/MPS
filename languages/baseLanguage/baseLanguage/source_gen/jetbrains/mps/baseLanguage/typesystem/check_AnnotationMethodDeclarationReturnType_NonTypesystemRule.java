@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.AnnotationMethodDeclaration_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -20,7 +19,7 @@ public class check_AnnotationMethodDeclarationReturnType_NonTypesystemRule exten
   public check_AnnotationMethodDeclarationReturnType_NonTypesystemRule() {
   }
   public void applyRule(final SNode annotationMethodDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode returnType = SLinkOperations.getTarget(annotationMethodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"));
+    SNode returnType = SLinkOperations.getTarget(annotationMethodDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"));
     if (!(AnnotationMethodDeclaration_Behavior.call_isGoodReturnType_6624237184120289968(annotationMethodDeclaration, returnType))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(returnType, "invalid type for annotation member", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6624237184120343376", null, errorTarget);

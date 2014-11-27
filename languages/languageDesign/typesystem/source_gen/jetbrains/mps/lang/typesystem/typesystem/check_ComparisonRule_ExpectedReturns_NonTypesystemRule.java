@@ -10,14 +10,13 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ComparisonRule_ExpectedReturns_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ComparisonRule_ExpectedReturns_NonTypesystemRule() {
   }
   public void applyRule(final SNode comparisonRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    DataFlowUtil.checkReturns(typeCheckingContext, SLinkOperations.getTarget(comparisonRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1175147569072l, 1175147624276l, "body")));
+    DataFlowUtil.checkReturns(typeCheckingContext, SLinkOperations.getTarget(comparisonRule, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1119c40dfb0L, 0x1119c41b754L, "body")));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.ComparisonRule";

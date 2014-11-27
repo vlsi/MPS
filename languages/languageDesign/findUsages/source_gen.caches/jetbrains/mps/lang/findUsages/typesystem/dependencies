@@ -13,7 +13,6 @@
   <dependency className="jetbrains.mps.lang.findUsages.typesystem.typeof_ConceptFunctionParameter_node_InferenceRule" file="typeof_ConceptFunctionParameter_node_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -29,7 +28,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.typesystem.typeof_ExecuteFindersGetSearchResults_InferenceRule" file="typeof_ExecuteFindersGetSearchResults_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -44,7 +42,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.typesystem.typeof_MakeFindersProvider_InferenceRule" file="typeof_MakeFindersProvider_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
@@ -58,7 +55,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.typesystem.typeof_NewExecuteFinderExpression_InferenceRule" file="typeof_NewExecuteFinderExpression_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -73,7 +69,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.typesystem.typeof_NodeStatement_InferenceRule" file="typeof_NodeStatement_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -88,7 +83,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.typesystem.typeof_ResultStatement_InferenceRule" file="typeof_ResultStatement_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

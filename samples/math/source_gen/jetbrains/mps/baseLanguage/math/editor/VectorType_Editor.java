@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class VectorType_Editor extends DefaultNodeEditor {
@@ -90,7 +89,7 @@ public class VectorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_b50r53_a3a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height")) > 0;
+    return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f775L, 0x42d5783a6268466eL, "height")) > 0;
   }
   private EditorCell createConstant_b50r53_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");

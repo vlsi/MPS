@@ -8,17 +8,16 @@ import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.build.util.JavaExportUtil;
 
 public class BuildSource_JavaExternalJarRef_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Tuples._2<SNode, Boolean> call_getDependencyTarget_5610619299014309566(SNode thisNode, VisibleArtifacts artifacts) {
-    if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014309452l, 5610619299014309453l, "jar")))) {
+    if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar")))) {
       return null;
     }
 
-    return JavaExportUtil.requireJar(artifacts, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014309452l, 5610619299014309453l, "jar")), thisNode);
+    return JavaExportUtil.requireJar(artifacts, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar")), thisNode);
   }
 }

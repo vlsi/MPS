@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -23,7 +22,7 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
     setUserObject(testCase);
     setToggleClickCount(-1);
     setNodeIdentifier(((SNodePointer) myTestCase.getNodePointer()).toString());
-    setText(SPropertyOperations.getString(SNodeOperations.cast(myTestCase.getNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+    setText(SPropertyOperations.getString(SNodeOperations.cast(myTestCase.getNode(), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     setAdditionalText(SModelStereotype.withoutStereotype(myTestCase.getNodePointer().getModelReference().getModelName()));
   }
   public String getClassName() {

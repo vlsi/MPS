@@ -396,8 +396,8 @@ public class ModelWriter9 implements IModelWriter {
     Collections.sort(keys, new Comparator<SPropertyId>() {
       @Override
       public int compare(SPropertyId o1, SPropertyId o2) {
-        long p1 = o1.getPropertyId();
-        long p2 = o2.getPropertyId();
+        long p1 = o1.getIdValue();
+        long p2 = o2.getIdValue();
         if (p1 != p2) return p1 > p2 ? 1 : -1;
 
         return compareConcepts(o1.getConceptId(), o2.getConceptId());
@@ -409,8 +409,8 @@ public class ModelWriter9 implements IModelWriter {
     Collections.sort(keys, new Comparator<SReferenceLinkId>() {
       @Override
       public int compare(SReferenceLinkId o1, SReferenceLinkId o2) {
-        long r1 = o1.getReferenceLinkId();
-        long r2 = o2.getReferenceLinkId();
+        long r1 = o1.getIdValue();
+        long r2 = o2.getIdValue();
         if (r1 != r2) return r1 > r2 ? 1 : -1;
 
         return compareConcepts(o1.getConceptId(), o2.getConceptId());
@@ -422,8 +422,8 @@ public class ModelWriter9 implements IModelWriter {
     Collections.sort(keys, new Comparator<SContainmentLinkId>() {
       @Override
       public int compare(SContainmentLinkId o1, SContainmentLinkId o2) {
-        long l1 = o1.getContainmentLinkId();
-        long l2 = o2.getContainmentLinkId();
+        long l1 = o1.getIdValue();
+        long l2 = o2.getIdValue();
         if (l1 != l2) return l1 > l2 ? 1 : -1;
 
         return compareConcepts(o1.getConceptId(), o2.getConceptId());
@@ -432,9 +432,9 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   private int compareConcepts(SConceptId o1, SConceptId o2) {
-    long c1 = o1.getConceptId();
-    long c2 = o2.getConceptId();
+    long c1 = o1.getIdValue();
+    long c2 = o2.getIdValue();
     if (c1 != c2) return c1 > c2 ? 1 : -1;
-    return o1.getLanguageId().getId().compareTo(o2.getLanguageId().getId());
+    return o1.getLanguageId().getIdValue().compareTo(o2.getLanguageId().getIdValue());
   }
 }

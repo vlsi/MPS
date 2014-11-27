@@ -5,12 +5,11 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class SimpleBuilderExtensionDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getContextDeclaration_6254726786820551255(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 6254726786820459251l, 6254726786820459254l, "extended"));
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x56cd40dfa78dcaf3L, 0x56cd40dfa78dcaf6L, "extended"));
   }
 }

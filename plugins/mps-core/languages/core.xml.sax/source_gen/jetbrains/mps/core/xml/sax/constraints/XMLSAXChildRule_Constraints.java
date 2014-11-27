@@ -4,7 +4,6 @@ package jetbrains.mps.core.xml.sax.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -23,12 +22,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class XMLSAXChildRule_Constraints extends BaseConstraintsDescriptor {
   public XMLSAXChildRule_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l));
+    super(MetaIdFactory.conceptId(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l), this) {
+    references.put(MetaIdFactory.refId(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x1f6c736337b5e2dcL), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x1f6c736337b5e2dcL), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -39,7 +38,7 @@ public class XMLSAXChildRule_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), false, new SAbstractConcept[]{});
+            return SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), false, new SAbstractConcept[]{});
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

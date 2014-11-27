@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -22,10 +21,10 @@ public class check_AbstractEquation_QuickFix_NonTypesystemRule extends AbstractN
   public check_AbstractEquation_QuickFix_NonTypesystemRule() {
   }
   public void applyRule(final SNode abstractEquationStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> intentions = SLinkOperations.getChildren(abstractEquationStatement, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1216204483513l, "helginsIntention"));
+    List<SNode> intentions = SLinkOperations.getChildren(abstractEquationStatement, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x11b2b6fabb9L, "helginsIntention"));
     if (ListSequence.fromList(intentions).count() > 1) {
       for (SNode intention : intentions) {
-        if (SPropertyOperations.getBoolean(intention, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1210784285454l, 1216127910019l, "applyImmediately"))) {
+        if (SPropertyOperations.getBoolean(intention, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, 0x11b26df4083L, "applyImmediately"))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(intention, "can't apply immediately if there are multiple quick fixes", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "4258793651770372636", null, errorTarget);

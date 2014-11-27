@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class delete_ModuleSources_modelsOnly {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -25,7 +24,7 @@ public class delete_ModuleSources_modelsOnly {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, 4643216374596270214l, "modelsOnly"), "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L, 0x407004b11f167886L, "modelsOnly"), "" + (false));
     }
   }
   public static class delete_ModuleSources_modelsOnly_BACKSPACE extends AbstractCellAction {
@@ -37,7 +36,7 @@ public class delete_ModuleSources_modelsOnly {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 1692280246134781712l, 4643216374596270214l, "modelsOnly"), "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L, 0x407004b11f167886L, "modelsOnly"), "" + (false));
     }
   }
 }

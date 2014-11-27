@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.build.util.DependenciesHelper;
@@ -23,17 +22,17 @@ public class BuildModuleTestsPlugin_Behavior {
   }
   public static Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
     BehaviorReflection.invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.build.structure.BuildPlugin", "virtual_getImportedLibraries_4101476690142937969", new Object[]{});
-    return Sequence.<SNode>singleton(SLinkOperations.getTarget(createBwfTaskLibraryDependency_s7wj2j_a0a0b0a(), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target")));
+    return Sequence.<SNode>singleton(SLinkOperations.getTarget(createBwfTaskLibraryDependency_s7wj2j_a0a0b0a(), MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target")));
   }
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     SNode project = artifacts.getProject();
 
     // find mps-test.jar 
     DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), project);
-    SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"));
-    SNode mpsTestModule = SNodeOperations.as(BehaviorReflection.invokeVirtual(Scope.class, originalProject, "virtual_getScope_7722139651431880752", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaModule"), "parts", 0}).resolve(originalProject, "mps-test"), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
+    SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+    SNode mpsTestModule = SNodeOperations.as(BehaviorReflection.invokeVirtual(Scope.class, originalProject, "virtual_getScope_7722139651431880752", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaModule"), "parts", 0}).resolve(originalProject, "mps-test"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
     if ((mpsTestModule != null)) {
-      SNode mpsTestJar = SNodeOperations.as(artifacts.findArtifact(mpsTestModule), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848036997l, "jetbrains.mps.build.structure.BuildLayout_Node"));
+      SNode mpsTestJar = SNodeOperations.as(artifacts.findArtifact(mpsTestModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if ((mpsTestJar != null)) {
         // specify explicitly what we need maybe? 
         helper.artifacts().put("mps-test-folder", SNodeOperations.getParent(mpsTestJar));
@@ -45,7 +44,7 @@ public class BuildModuleTestsPlugin_Behavior {
   private static SNode createBwfTaskLibraryDependency_s7wj2j_a0a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", null, false);
-    n1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target"), n1, facade.createModelReference("r:e6234636-faf1-4112-be6c-55df7ec7314a(jetbrains.mps.build.mps.tests.accessories)"), facade.createNodeId("398731435597190701")));
+    n1.setReference(MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target"), SReference.create(MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target"), n1, facade.createModelReference("r:e6234636-faf1-4112-be6c-55df7ec7314a(jetbrains.mps.build.mps.tests.accessories)"), facade.createNodeId("398731435597190701")));
     return n1;
   }
 }

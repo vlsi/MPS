@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.builders.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class SimpleBuilderPropertyExpression_Constraints extends BaseConstraintsDescriptor {
   public SimpleBuilderPropertyExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(1381097486113260572l, -6346909095260771222l), 5389689214217242850l));
+    super(MetaIdFactory.conceptId(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72c48e2L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -32,7 +31,7 @@ public class SimpleBuilderPropertyExpression_Constraints extends BaseConstraints
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 5389689214216990954l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty"), true, false) != null);
+    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72870eaL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty"), true, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "5389689214217242853");
 }

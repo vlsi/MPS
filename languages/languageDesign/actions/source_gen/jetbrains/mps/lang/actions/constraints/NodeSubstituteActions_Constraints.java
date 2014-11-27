@@ -4,7 +4,6 @@ package jetbrains.mps.lang.actions.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeSubstituteActions_Constraints extends BaseConstraintsDescriptor {
   public NodeSubstituteActions_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-5842916035344972280l, -5840605745428443715l), 1112056943463l));
+    super(MetaIdFactory.conceptId(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L));
   }
   @Override
   public boolean hasOwnCanBeRootMethod() {
