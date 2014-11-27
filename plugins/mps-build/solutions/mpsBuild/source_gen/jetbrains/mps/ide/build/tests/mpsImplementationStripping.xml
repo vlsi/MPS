@@ -95,6 +95,7 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
+        <library jar="../tests/kaja_images.jar" />
         <sources jar="jetbrains.mps.samples.JavaKaja-src.jar" descriptor="JavaKajak.msd" />
       </module>
     </echoxml>
@@ -147,6 +148,9 @@
       <zipfileset file="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/jetbrains.mps.build.stripping.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-test-jetbrains.mps.build.stripping.tests-models" prefix="module/models" />
     </jar>
+    <copy todir="${build.layout}/tests">
+      <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/images" />
+    </copy>
     <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
@@ -331,6 +335,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${basedir}/samples/robot_Kaja/solutions/JavaKajak/images/kaja_images.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -377,6 +382,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.samples.Kaja" />
+        <fileset file="${basedir}/samples/robot_Kaja/solutions/JavaKajak/images/kaja_images.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -411,7 +417,10 @@
       <src>
         <path location="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen" />
       </src>
-      <classpath refid="path.jdk.classpath" />
+      <classpath>
+        <fileset file="${basedir}/samples/robot_Kaja/solutions/JavaKajak/images/kaja_images.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.samples.JavaKaja">
       <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />

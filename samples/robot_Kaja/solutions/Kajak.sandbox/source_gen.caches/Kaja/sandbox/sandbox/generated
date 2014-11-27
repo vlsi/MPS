@@ -15,7 +15,6 @@
   </source>
   <source id="7446293342517103305" name="Sample" hash="bj5uu19v5ji3e6t5w2k8zgzzu4gb6l5">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Sample.java" />
   </source>
@@ -29,7 +28,6 @@
   <source id="3210697320273759353" name="PlaygroundDefinition" hash="-1kvnxq9v9rl2qe8t5xbshjdlbdtiwvz" />
   <source id="3210697320273799179" name="MarkSniffer" hash="-88g7q60s3xhk8m4eztda52848a5pppj">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MarkSniffer.java" />
   </source>
   <source id="8614576427117861066" name="Maze" hash="-ey2z0g31vjpeqgbroiwsvcp33hp583a">
