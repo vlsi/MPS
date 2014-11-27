@@ -10619,7 +10619,7 @@
         <var name="event" id="4998818250317603956" />
       </scope>
       <unit id="4998818250317625998" at="88,127,93,15" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$3" />
-      <unit id="4998818250317610927" at="103,131,108,15" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$3" />
+      <unit id="4998818250317610927" at="103,133,108,15" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$3" />
       <unit id="4998818250317610918" at="101,41,110,11" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$2" />
       <unit id="5938312768539888954" at="85,40,95,11" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$2" />
       <unit id="4998818250317610756" at="79,44,112,7" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1" />
@@ -15543,7 +15543,7 @@
       <unit id="6352952732700052919" at="177,65,181,17" name="jetbrains.mps.ide.actions.DeleteNodesHelper$8" />
       <unit id="6242416087951969711" at="51,64,60,5" name="jetbrains.mps.ide.actions.DeleteNodesHelper$1" />
       <unit id="6485928238834888789" at="93,31,102,15" name="jetbrains.mps.ide.actions.DeleteNodesHelper$5" />
-      <unit id="3632174704715773761" at="174,81,184,13" name="jetbrains.mps.ide.actions.DeleteNodesHelper$7" />
+      <unit id="3632174704715773761" at="174,83,184,13" name="jetbrains.mps.ide.actions.DeleteNodesHelper$7" />
       <unit id="3632174704715695920" at="172,39,186,9" name="jetbrains.mps.ide.actions.DeleteNodesHelper$6" />
       <unit id="5037333854281800990" at="66,53,82,5" name="jetbrains.mps.ide.actions.DeleteNodesHelper$2" />
       <unit id="6485928238834888773" at="86,86,104,11" name="jetbrains.mps.ide.actions.DeleteNodesHelper$4" />

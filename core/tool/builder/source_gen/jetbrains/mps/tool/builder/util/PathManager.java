@@ -22,27 +22,20 @@ import java.util.Properties;
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
-import jetbrains.mps.library.contributor.LibraryContributor;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.tool.common.util.UrlClassLoader;
-import java.util.Collections;
-import java.net.MalformedURLException;
-import jetbrains.mps.library.LibraryInitializer;
 
 public class PathManager {
   @NonNls
-  private static final String PROPERTIES_FILE = "idea.properties.file";
+  private static final String PROPERTIES_FILE = com.intellij.openapi.application.PathManager.PROPERTIES_FILE;
   @NonNls
-  private static final String PROPERTY_SYSTEM_PATH = "idea.system.path";
+  private static final String PROPERTY_SYSTEM_PATH = com.intellij.openapi.application.PathManager.PROPERTY_SYSTEM_PATH;
   @NonNls
-  private static final String PROPERTY_CONFIG_PATH = "idea.config.path";
+  private static final String PROPERTY_CONFIG_PATH = com.intellij.openapi.application.PathManager.PROPERTY_CONFIG_PATH;
   @NonNls
-  private static final String PROPERTY_PLUGINS_PATH = "idea.plugins.path";
+  private static final String PROPERTY_PLUGINS_PATH = com.intellij.openapi.application.PathManager.PROPERTY_PLUGINS_PATH;
   @NonNls
-  private static final String PROPERTY_HOME_PATH = "idea.home.path";
+  private static final String PROPERTY_HOME_PATH = com.intellij.openapi.application.PathManager.PROPERTY_HOME_PATH;
   @NonNls
-  private static final String PROPERTY_LOG_PATH = "idea.log.path";
+  private static final String PROPERTY_LOG_PATH = com.intellij.openapi.application.PathManager.PROPERTY_LOG_PATH;
   @NonNls
   private static String ourHomePath;
   @NonNls
@@ -75,7 +68,6 @@ public class PathManager {
   private static final String OPTIONS_FOLDER = "options";
   private static final String MPS_DASH = "mps-";
   private static final String DOT_JAR = ".jar";
-  private static final String MODULES_PREFIX = "!/modules";
   public static final FilenameFilter JARS = new FilenameFilter() {
     @Override
     public boolean accept(File dir, String name) {
@@ -290,14 +282,14 @@ public class PathManager {
         final Enumeration keys = bundle.getKeys();
         String home = (String) bundle.handleGetObject("idea.home");
         if (home != null && ourHomePath == null) {
-          ourHomePath = PathUtil.getAbsolutePath(PathManager.substitueVars(home));
+          ourHomePath = PathUtil.getAbsolutePath(PathManager.substituteVars(home));
         }
         final Properties sysProperties = System.getProperties();
         while (keys.hasMoreElements()) {
           String key = (String) keys.nextElement();
           if (sysProperties.getProperty(key, null) == null) {
             //  load the property from the property file only if it is not defined yet 
-            final String value = PathManager.substitueVars(bundle.getString(key));
+            final String value = PathManager.substituteVars(bundle.getString(key));
             sysProperties.setProperty(key, value);
           }
         }
@@ -314,7 +306,7 @@ public class PathManager {
       }
     }
   }
-  public static String substitueVars(String s) {
+  public static String substituteVars(String s) {
     final String ideaHomePath = PathManager.getHomePath();
     return PathManager.substituteVars(s, ideaHomePath);
   }
@@ -355,46 +347,6 @@ public class PathManager {
     return jetbrains.mps.util.PathManager.getLanguagesPath();
   }
 
-  public static Collection<LibraryContributor.LibDescriptor> getExtensionsPaths() {
-    String pluginsPath = System.getProperty("plugin.path");
-    List<LibraryContributor.LibDescriptor> paths = new ArrayList<LibraryContributor.LibDescriptor>();
-    if (pluginsPath != null) {
-      for (String plugin : pluginsPath.split(File.pathSeparator)) {
-        File lib = new File(plugin + File.separator + "lib");
-        UrlClassLoader pluginCL = null;
-        if (lib.exists() && lib.isDirectory()) {
-          for (File jar : lib.listFiles(JARS)) {
-            if (pluginCL == null) {
-              pluginCL = createPluginClassLoader(lib);
-            }
-            paths.add(new LibraryContributor.LibDescriptor(jar.getAbsolutePath() + MODULES_PREFIX, pluginCL));
-          }
-        }
-        File languages = new File(plugin + File.separator + "languages");
-        if (languages.exists() && languages.isDirectory()) {
-          if (pluginCL == null) {
-            pluginCL = createPluginClassLoader(lib);
-          }
-          paths.add(new LibraryContributor.LibDescriptor(languages.getAbsolutePath(), pluginCL));
-        }
-      }
-    }
-    return Collections.unmodifiableCollection(paths);
-  }
-  private static UrlClassLoader createPluginClassLoader(File lib) {
-    List<URL> urls = new ArrayList<URL>();
-    File[] files = lib.listFiles(JARS);
-    if (files == null) {
-      return null;
-    }
-    for (File libjar : files) {
-      try {
-        urls.add(libjar.toURI().toURL());
-      } catch (MalformedURLException ignored) {
-      }
-    }
-    return new UrlClassLoader(urls, LibraryInitializer.class.getClassLoader());
-  }
   private static class StringHolder {
     private static final String ourPreinstalledPluginsPath = PathManager.getHomePath() + File.separatorChar + PathManager.PLUGINS_DIRECTORY;
     private StringHolder() {

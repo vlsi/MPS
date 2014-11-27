@@ -61,7 +61,6 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="2565736246230036150" name="jetbrains.mps.lang.core.structure.ExportScopePublic" flags="ig" index="24uvON" />
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
@@ -69,6 +68,7 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="2565736246230036150" name="jetbrains.mps.lang.core.structure.ExportScopePublic" flags="ig" index="24uvON" />
     </language>
   </registry>
   <node concept="QkHVr" id="fKAOsGN">
@@ -298,6 +298,19 @@
   <node concept="PlHQZ" id="8AYOKVCAP5">
     <property role="TrG5h" value="IStubForAnotherConcept" />
   </node>
+  <node concept="AxPO7" id="Fg1jLUVynG">
+    <property role="3GE5qa" value="attributes.editing" />
+    <property role="TrG5h" value="SideTransformSide" />
+    <ref role="M4eZT" node="fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="Fg1jLUVynH" role="M5hS2">
+      <property role="1uS6qo" value="right" />
+      <property role="1uS6qv" value="right" />
+    </node>
+    <node concept="M4N5e" id="Fg1jLUVyTf" role="M5hS2">
+      <property role="1uS6qv" value="left" />
+      <property role="1uS6qo" value="left" />
+    </node>
+  </node>
   <node concept="1TIwiD" id="Fg1jLUUh_d">
     <property role="TrG5h" value="SideTransformInfo" />
     <property role="3GE5qa" value="attributes.editing" />
@@ -322,19 +335,6 @@
       <node concept="tn0Fv" id="Fg1jLUUCsA" role="HhnKV">
         <property role="tnX3d" value="false" />
       </node>
-    </node>
-  </node>
-  <node concept="AxPO7" id="Fg1jLUVynG">
-    <property role="3GE5qa" value="attributes.editing" />
-    <property role="TrG5h" value="SideTransformSide" />
-    <ref role="M4eZT" node="fKAOsGN" resolve="string" />
-    <node concept="M4N5e" id="Fg1jLUVynH" role="M5hS2">
-      <property role="1uS6qo" value="right" />
-      <property role="1uS6qv" value="right" />
-    </node>
-    <node concept="M4N5e" id="Fg1jLUVyTf" role="M5hS2">
-      <property role="1uS6qv" value="left" />
-      <property role="1uS6qo" value="left" />
     </node>
   </node>
 </model>
