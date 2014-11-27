@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:e6234636-faf1-4112-be6c-55df7ec7314a(jetbrains.mps.build.mps.tests.accessories)" concise="true">
+<model ref="r:e6234636-faf1-4112-be6c-55df7ec7314a(jetbrains.mps.build.mps.tests.accessories)">
   <persistence version="9" />
   <languages>
     <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
@@ -13,6 +13,13 @@
   </imports>
   <registry>
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
+      <concept id="7306485738221391506" name="jetbrains.mps.build.workflow.structure.BwfTaskLibrary" flags="ng" index="yghi3">
+        <child id="7306485738221455030" name="imports" index="yg1MB" />
+        <child id="7306485738221391508" name="parts" index="yghi5" />
+      </concept>
+      <concept id="7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" flags="ng" index="ygXWA">
+        <reference id="7306485738221471032" name="target" index="ygXWD" />
+      </concept>
       <concept id="2769948622284574294" name="jetbrains.mps.build.workflow.structure.BwfTaskDependency" flags="ng" index="2VaxJe">
         <reference id="2769948622284574295" name="target" index="2VaxJf" />
       </concept>
@@ -22,13 +29,6 @@
       <concept id="3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" flags="ng" index="3bMsLL">
         <reference id="3961775458390032825" name="task" index="3bMsLK" />
         <child id="3961775458390352322" name="additionalDependencies" index="3bNaKb" />
-      </concept>
-      <concept id="7306485738221391506" name="jetbrains.mps.build.workflow.structure.BwfTaskLibrary" flags="ng" index="yghi3">
-        <child id="7306485738221455030" name="imports" index="yg1MB" />
-        <child id="7306485738221391508" name="parts" index="yghi5" />
-      </concept>
-      <concept id="7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" flags="ng" index="ygXWA">
-        <reference id="7306485738221471032" name="target" index="ygXWD" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">

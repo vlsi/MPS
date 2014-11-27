@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)" concise="true">
+<model ref="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
   <persistence version="9" />
   <languages>
     <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="-1" />
@@ -75,10 +75,6 @@
   </imports>
   <registry>
     <language id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite">
-      <concept id="1280144168199506908" name="jetbrains.mps.testbench.suite.structure.SolutionRef" flags="ig" index="2R4zua">
-        <property id="1280144168199506910" name="moduleID" index="2R4zu8" />
-        <property id="1280144168199506909" name="moduleFQName" index="2R4zub" />
-      </concept>
       <concept id="4504141816188599482" name="jetbrains.mps.testbench.suite.structure.ITestRef" flags="ng" index="lpD6$">
         <property id="8605005254686522462" name="muted" index="1wBEbI" />
       </concept>
@@ -92,8 +88,12 @@
         <reference id="4504141816188599488" name="testCase" index="lpD7u" />
       </concept>
       <concept id="4504141816188599477" name="jetbrains.mps.testbench.suite.structure.ModuleSuite" flags="ng" index="lpD6F">
-        <child id="1280144168199507080" name="moduleRef" index="2R4z3u" />
         <child id="4504141816188599486" name="testRef" index="lpD6w" />
+        <child id="1280144168199507080" name="moduleRef" index="2R4z3u" />
+      </concept>
+      <concept id="1280144168199506908" name="jetbrains.mps.testbench.suite.structure.SolutionRef" flags="ig" index="2R4zua">
+        <property id="1280144168199506910" name="moduleID" index="2R4zu8" />
+        <property id="1280144168199506909" name="moduleFQName" index="2R4zub" />
       </concept>
     </language>
   </registry>

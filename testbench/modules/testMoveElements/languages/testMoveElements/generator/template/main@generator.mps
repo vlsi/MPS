@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:91f3e0f9-55fc-48be-baf7-14b0b674be9a(testMoveElements.generator.template.main@generator)" concise="true">
+<model ref="r:91f3e0f9-55fc-48be-baf7-14b0b674be9a(testMoveElements.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />

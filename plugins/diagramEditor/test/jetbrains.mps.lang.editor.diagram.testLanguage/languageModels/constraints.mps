@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:f56dfe8c-2b17-4ddf-bca2-8224945b3e91(jetbrains.mps.lang.editor.diagram.testLanguage.constraints)" concise="true">
+<model ref="r:f56dfe8c-2b17-4ddf-bca2-8224945b3e91(jetbrains.mps.lang.editor.diagram.testLanguage.constraints)">
   <persistence version="9" />
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />

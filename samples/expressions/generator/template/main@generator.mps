@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:df57ff62-91bd-45c2-9db9-bf1d6f1aaeb1(jetbrains.mps.samples.Expressions.generator.template.main@generator)" concise="true">
+<model ref="r:df57ff62-91bd-45c2-9db9-bf1d6f1aaeb1(jetbrains.mps.samples.Expressions.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />

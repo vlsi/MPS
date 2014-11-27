@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:00000000-0000-4000-0000-011c89590431(jetbrains.mps.samples.secretCompartmentLanguage.sandbox)" concise="true">
+<model ref="r:00000000-0000-4000-0000-011c89590431(jetbrains.mps.samples.secretCompartmentLanguage.sandbox)">
   <persistence version="9" />
   <languages>
     <use id="6986543d-8218-4ebf-a2e9-565e5049c1ce" name="jetbrains.mps.samples.secretCompartmentLanguage" version="-1" />

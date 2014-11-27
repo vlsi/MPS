@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:49557b84-7502-4b9b-9724-3895f647c500(jetbrains.mps.ide.vcs.modelmetadata.typesystem)" concise="true">
+<model ref="r:49557b84-7502-4b9b-9724-3895f647c500(jetbrains.mps.ide.vcs.modelmetadata.typesystem)">
   <persistence version="9" />
   <languages>
     <use id="6df0089f-3288-4998-9d57-e698e7c8e145" name="jetbrains.mps.ide.vcs.modelmetadata" version="-1" />

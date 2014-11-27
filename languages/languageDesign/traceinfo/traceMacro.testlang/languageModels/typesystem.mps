@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:b40e53b8-8ee8-490c-ac75-eb2133c3f7c1(jetbrains.mps.traceInfo.tracemacro.testlang.typesystem)" concise="true">
+<model ref="r:b40e53b8-8ee8-490c-ac75-eb2133c3f7c1(jetbrains.mps.traceInfo.tracemacro.testlang.typesystem)">
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />

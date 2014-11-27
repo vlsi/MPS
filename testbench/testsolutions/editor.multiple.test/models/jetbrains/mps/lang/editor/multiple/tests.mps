@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)" concise="true">
+<model ref="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)">
   <persistence version="9" />
   <languages>
     <use id="7a80051c-66e9-4bfc-9698-b12adfed3d9f" name="jetbrains.mps.lang.editor.multiple.testLanguage" version="-1" />
@@ -14,20 +14,9 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
-      <concept id="1227182079811" name="jetbrains.mps.lang.test.structure.TypeKeyStatement" flags="nn" index="2TK7Tu">
-        <property id="1227184461946" name="keys" index="2TTd_B" />
-      </concept>
-      <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
-        <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
+      <concept id="7011073693661765739" name="jetbrains.mps.lang.test.structure.InvokeActionStatement" flags="nn" index="2HxZob">
+        <child id="1101347953350127927" name="actionReference" index="3iKnsn" />
       </concept>
       <concept id="1229187653856" name="jetbrains.mps.lang.test.structure.EditorTestCase" flags="lg" index="LiM7Y">
         <property id="1883175908513350760" name="description" index="3YCmrE" />
@@ -43,55 +32,66 @@
         <property id="1932269937152561478" name="useLabelSelection" index="OXtK3" />
         <property id="1229432188737" name="isLastPosition" index="ZRATv" />
       </concept>
+      <concept id="1227182079811" name="jetbrains.mps.lang.test.structure.TypeKeyStatement" flags="nn" index="2TK7Tu">
+        <property id="1227184461946" name="keys" index="2TTd_B" />
+      </concept>
+      <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
+        <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
+      </concept>
       <concept id="4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" flags="ng" index="1iFQzN">
         <reference id="4239542196496929559" name="action" index="1iFR8X" />
       </concept>
-      <concept id="7011073693661765739" name="jetbrains.mps.lang.test.structure.InvokeActionStatement" flags="nn" index="2HxZob">
-        <child id="1101347953350127927" name="actionReference" index="3iKnsn" />
-      </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
     </language>
     <language id="7a80051c-66e9-4bfc-9698-b12adfed3d9f" name="jetbrains.mps.lang.editor.multiple.testLanguage">
-      <concept id="6655351613569888021" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot" flags="ng" index="2MuQ0i">
-        <property id="7636045212390435962" name="projectAsCompact" index="2GCwbj" />
-        <property id="7687090409437208833" name="projectionType" index="2KvMrY" />
-        <child id="6822301196698237842" name="compactChild" index="2dhxlo" />
-        <child id="2601164129532819818" name="notSupportedPresentation" index="2zkSAk" />
-        <child id="7636045212390435965" name="conditionallyRichOrCompactChild" index="2GCwbk" />
-        <child id="7687090409437208719" name="conditionallyProjectedChild" index="2KvMtK" />
-        <child id="6655351613569925164" name="richChild" index="2Mt0WF" />
-        <child id="5950344441601491438" name="defaultChild" index="usPXg" />
-      </concept>
-      <concept id="6655351613569889729" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild" flags="ng" index="2MuRF6">
-        <property id="6655351613569904551" name="richProperty" index="2Mta2w" />
-        <property id="6655351613569904549" name="defaultProperty" index="2Mta2y" />
-        <property id="5950344441601550575" name="compactProperty" index="usFph" />
-      </concept>
-      <concept id="5861024100072045177" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeRoot" flags="ng" index="3xAF0$">
-        <property id="1947450138886755613" name="projectAsCompact" index="199YU8" />
-        <property id="1947450138886755612" name="projectionType" index="199YU9" />
-        <child id="5861024100072084610" name="compactChild" index="3xA_Vv" />
-        <child id="5861024100072057278" name="richChild" index="3xAIfz" />
-        <child id="1947450138886755529" name="conditionallyRichOrCompactChild" index="199YXs" />
-        <child id="1947450138886755528" name="conditionallyProjectedChild" index="199YXt" />
-      </concept>
       <concept id="7279578193768898412" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeListRoot" flags="ng" index="7g1Uw">
         <property id="5613016763942517158" name="projectionType" index="2KZ$yB" />
         <property id="554589055677247838" name="projectAsCompact" index="3ch7Eg" />
-        <child id="5613016763942533640" name="conditionallyProjectedChildren" index="2KZwG9" />
-        <child id="554589055677215272" name="conditionallyRichOrCompactChildren" index="3chZBA" />
         <child id="7279578193768938010" name="richChildren" index="7gbJm" />
         <child id="7279578193768938011" name="compactChildren" index="7gbJn" />
+        <child id="5613016763942533640" name="conditionallyProjectedChildren" index="2KZwG9" />
+        <child id="554589055677215272" name="conditionallyRichOrCompactChildren" index="3chZBA" />
       </concept>
       <concept id="8572332134193782048" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificRoot" flags="ng" index="tJ_u8">
         <child id="8572332134193783193" name="mostSpecificChildren" index="tJAGL" />
       </concept>
       <concept id="8572332134193783053" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificChild" flags="ng" index="tJAI_">
         <property id="8572332134193785182" name="richCompactProperty" index="tJAfQ" />
+      </concept>
+      <concept id="6655351613569888021" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot" flags="ng" index="2MuQ0i">
+        <property id="7636045212390435962" name="projectAsCompact" index="2GCwbj" />
+        <property id="7687090409437208833" name="projectionType" index="2KvMrY" />
+        <child id="6822301196698237842" name="compactChild" index="2dhxlo" />
+        <child id="5950344441601491438" name="defaultChild" index="usPXg" />
+        <child id="2601164129532819818" name="notSupportedPresentation" index="2zkSAk" />
+        <child id="7636045212390435965" name="conditionallyRichOrCompactChild" index="2GCwbk" />
+        <child id="7687090409437208719" name="conditionallyProjectedChild" index="2KvMtK" />
+        <child id="6655351613569925164" name="richChild" index="2Mt0WF" />
+      </concept>
+      <concept id="6655351613569889729" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild" flags="ng" index="2MuRF6">
+        <property id="5950344441601550575" name="compactProperty" index="usFph" />
+        <property id="6655351613569904551" name="richProperty" index="2Mta2w" />
+        <property id="6655351613569904549" name="defaultProperty" index="2Mta2y" />
+      </concept>
+      <concept id="5861024100072045177" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeRoot" flags="ng" index="3xAF0$">
+        <property id="1947450138886755613" name="projectAsCompact" index="199YU8" />
+        <property id="1947450138886755612" name="projectionType" index="199YU9" />
+        <child id="1947450138886755529" name="conditionallyRichOrCompactChild" index="199YXs" />
+        <child id="1947450138886755528" name="conditionallyProjectedChild" index="199YXt" />
+        <child id="5861024100072084610" name="compactChild" index="3xA_Vv" />
+        <child id="5861024100072057278" name="richChild" index="3xAIfz" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:39176b67-3f1b-4c69-b735-1b7cc44a78f3(jetbrains.mps.samples.heating.sandbox)" concise="true">
+<model ref="r:39176b67-3f1b-4c69-b735-1b7cc44a78f3(jetbrains.mps.samples.heating.sandbox)">
   <persistence version="9" />
   <languages>
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
@@ -12,14 +12,6 @@
   </imports>
   <registry>
     <language id="a7d67633-e8d9-473b-98ce-995a7aa66941" name="jetbrains.mps.samples.heating">
-      <concept id="4664795093170436346" name="jetbrains.mps.samples.heating.structure.WeekendDay" flags="ng" index="1eP1qm" />
-      <concept id="4664795093170636139" name="jetbrains.mps.samples.heating.structure.DayRange" flags="ng" index="1ePQG7">
-        <property id="4664795093170636193" name="end" index="1ePQJd" />
-      </concept>
-      <concept id="4664795093170605733" name="jetbrains.mps.samples.heating.structure.WeekDays" flags="ng" index="1ePY39" />
-      <concept id="4664795093170605734" name="jetbrains.mps.samples.heating.structure.SpecificDay" flags="ng" index="1ePY3a">
-        <property id="4664795093170605735" name="day" index="1ePY3b" />
-      </concept>
       <concept id="935069066462619696" name="jetbrains.mps.samples.heating.structure.DailyPlanReference" flags="ng" index="2m3Y1G">
         <reference id="935069066462619697" name="target" index="2m3Y1H" />
       </concept>
@@ -27,9 +19,9 @@
         <child id="5063359128232717389" name="dailyPlans" index="2AN$o1" />
       </concept>
       <concept id="5063359128232717391" name="jetbrains.mps.samples.heating.structure.DailyPlan" flags="ng" index="2AN$o3">
-        <child id="4664795093170417662" name="applicability" index="1ePc6i" />
         <child id="935069066462790136" name="customizes" index="2m0CA$" />
         <child id="5063359128232717399" name="items" index="2AN$or" />
+        <child id="4664795093170417662" name="applicability" index="1ePc6i" />
       </concept>
       <concept id="5063359128232717410" name="jetbrains.mps.samples.heating.structure.ChangeEvent" flags="ng" index="2AN$oI">
         <property id="5063359128232717424" name="temperature" index="2AN$oW" />
@@ -37,6 +29,14 @@
       <concept id="5726447348463731062" name="jetbrains.mps.samples.heating.structure.Slot" flags="ng" index="2LkeNN">
         <property id="5726447348463731324" name="start" index="2LkeZT" />
         <child id="5726447348463738321" name="event" index="2Lkf1k" />
+      </concept>
+      <concept id="4664795093170436346" name="jetbrains.mps.samples.heating.structure.WeekendDay" flags="ng" index="1eP1qm" />
+      <concept id="4664795093170636139" name="jetbrains.mps.samples.heating.structure.DayRange" flags="ng" index="1ePQG7">
+        <property id="4664795093170636193" name="end" index="1ePQJd" />
+      </concept>
+      <concept id="4664795093170605733" name="jetbrains.mps.samples.heating.structure.WeekDays" flags="ng" index="1ePY39" />
+      <concept id="4664795093170605734" name="jetbrains.mps.samples.heating.structure.SpecificDay" flags="ng" index="1ePY3a">
+        <property id="4664795093170605735" name="day" index="1ePY3b" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">

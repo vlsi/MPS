@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:d31f9592-7619-4098-b4aa-53d9b210c472(jetbrains.mps.core.xml.sandbox.test)" concise="true">
+<model ref="r:d31f9592-7619-4098-b4aa-53d9b210c472(jetbrains.mps.core.xml.sandbox.test)">
   <persistence version="9" />
   <languages>
     <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
@@ -9,16 +9,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
     <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml">
-      <concept id="3080189811177215998" name="jetbrains.mps.core.xml.structure.XmlCharRefValue" flags="nn" index="1_gtYI">
-        <property id="3080189811177216006" name="charCode" index="1_gt1m" />
-      </concept>
-      <concept id="3080189811177426492" name="jetbrains.mps.core.xml.structure.XmlNoSpaceValue" flags="ng" index="1UJgpG" />
       <concept id="6666499814681515200" name="jetbrains.mps.core.xml.structure.XmlFile" flags="ng" index="2pMbU2">
         <child id="6666499814681515201" name="document" index="2pMbU3" />
       </concept>
@@ -35,8 +26,8 @@
         <child id="1622293396949036151" name="lines" index="3o66t8" />
       </concept>
       <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
-        <property id="6999033275467544021" name="shortEmptyNotation" index="qg3DV" />
         <property id="6666499814681415862" name="tagName" index="2pNNFO" />
+        <property id="6999033275467544021" name="shortEmptyNotation" index="qg3DV" />
         <child id="6666499814681415861" name="attributes" index="2pNNFR" />
         <child id="1622293396948928802" name="content" index="3o6s8t" />
       </concept>
@@ -55,6 +46,15 @@
       </concept>
       <concept id="6786756355279841993" name="jetbrains.mps.core.xml.structure.XmlDocument" flags="ng" index="3rIKKV">
         <child id="6666499814681299055" name="rootElement" index="2pNm8H" />
+      </concept>
+      <concept id="3080189811177215998" name="jetbrains.mps.core.xml.structure.XmlCharRefValue" flags="nn" index="1_gtYI">
+        <property id="3080189811177216006" name="charCode" index="1_gt1m" />
+      </concept>
+      <concept id="3080189811177426492" name="jetbrains.mps.core.xml.structure.XmlNoSpaceValue" flags="ng" index="1UJgpG" />
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>

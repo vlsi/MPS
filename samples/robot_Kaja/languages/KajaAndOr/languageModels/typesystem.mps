@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:dbe0b701-addc-4f0f-9c68-6c511dfcc57c(jetbrains.mps.samples.KajaAndOr.typesystem)" concise="true">
+<model ref="r:dbe0b701-addc-4f0f-9c68-6c511dfcc57c(jetbrains.mps.samples.KajaAndOr.typesystem)">
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />

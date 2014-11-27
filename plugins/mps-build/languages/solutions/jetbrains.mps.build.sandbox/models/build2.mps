@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:d8eea393-bbca-41b6-92f2-0f366b881ba8(jetbrains.mps.build.sandbox.build2)" concise="true">
+<model ref="r:d8eea393-bbca-41b6-92f2-0f366b881ba8(jetbrains.mps.build.sandbox.build2)">
   <persistence version="9" />
   <languages>
     <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
@@ -12,9 +12,62 @@
     <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
   </imports>
   <registry>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
+    <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
+      <concept id="7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" flags="ng" index="ygXWA">
+        <reference id="7306485738221471032" name="target" index="ygXWD" />
+      </concept>
+      <concept id="7306485738221315929" name="jetbrains.mps.build.workflow.structure.BwfJavaDescriptor" flags="ng" index="yhBP8" />
+      <concept id="7926701909975416091" name="jetbrains.mps.build.workflow.structure.BwfFileSet" flags="ng" index="2IvZ1S">
+        <child id="7926701909975416092" name="elements" index="2IvZ1Z" />
+      </concept>
+      <concept id="2769948622284546673" name="jetbrains.mps.build.workflow.structure.BwfProject" flags="ng" index="2VaFvD">
+        <property id="5178006408628608654" name="baseDirectory" index="2KQIvE" />
+        <property id="7385586609667765566" name="temporaryFolder" index="1LnyFq" />
+        <child id="7306485738221455031" name="imports" index="yg1MA" />
+        <child id="2769948622284574304" name="parts" index="2VaxJS" />
+      </concept>
+      <concept id="2769948622284546677" name="jetbrains.mps.build.workflow.structure.BwfSubTask" flags="ng" index="2VaFvH">
+        <child id="2769948622284605953" name="after" index="2VaTYp" />
+        <child id="2769948622284606050" name="statements" index="2VaTZU" />
+      </concept>
+      <concept id="2769948622284605880" name="jetbrains.mps.build.workflow.structure.BwfSubTaskDependency" flags="ng" index="2VaTKw">
+        <reference id="2769948622284605881" name="target" index="2VaTKx" />
+      </concept>
+      <concept id="2769948622284768359" name="jetbrains.mps.build.workflow.structure.BwfAntStatement" flags="ng" index="2Vbh7Z">
+        <child id="2769948622284768360" name="element" index="2Vbh7K" />
+      </concept>
+      <concept id="6647099934207069215" name="jetbrains.mps.build.workflow.structure.BwfPathReference" flags="ng" index="10O78N">
+        <reference id="6647099934207069216" name="target" index="10O78c" />
+      </concept>
+      <concept id="6647099934207069200" name="jetbrains.mps.build.workflow.structure.BwfPathDeclaration" flags="ng" index="10O78W">
+        <child id="6647099934207071047" name="content" index="10O6PF" />
+      </concept>
+      <concept id="6647099934206976119" name="jetbrains.mps.build.workflow.structure.BwfJavaClassPath" flags="ng" index="10OHTr">
+        <child id="7926701909975791137" name="classpath" index="2IxjH2" />
+      </concept>
+      <concept id="3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" flags="ng" index="3bMsLL">
+        <reference id="3961775458390032825" name="task" index="3bMsLK" />
+        <child id="3961775458390032826" name="subTasks" index="3bMsLN" />
+      </concept>
+      <concept id="6896005762093571400" name="jetbrains.mps.build.workflow.structure.BwfMacro" flags="ng" index="1_4tnW">
+        <property id="6896005762093571406" name="exportToProperiesFile" index="1_4tnU" />
+        <property id="6896005762093571407" name="isLocation" index="1_4tnV" />
+        <property id="6896005762093571402" name="defaultValue" index="1_4tnY" />
+      </concept>
+      <concept id="4755209551904389316" name="jetbrains.mps.build.workflow.structure.BwfJavaModuleReference" flags="ng" index="3GcXOw">
+        <reference id="4755209551904389317" name="target" index="3GcXOx" />
+      </concept>
+      <concept id="4755209551904389307" name="jetbrains.mps.build.workflow.structure.BwfJavaModule" flags="ng" index="3GcXPv">
+        <property id="927724900262398947" name="heapSize" index="2_GNG2" />
+        <property id="927724900262398958" name="noWarnings" index="2_GNGf" />
+        <property id="927724900262033861" name="generateDebugInfo" index="2_Ic$$" />
+        <property id="6998860900671418236" name="javaLevelSource" index="TKLQk" />
+        <property id="6998860900671530572" name="javaLevelTarget" index="TLli$" />
+        <property id="1476884141930130693" name="compilerOptions" index="1amtX8" />
+        <property id="7385586609667649463" name="outputFolder" index="1Lov1j" />
+        <child id="7926701909975416101" name="sources" index="2IvZ16" />
+        <child id="1659807394254493213" name="resources" index="3_4Wgq" />
+        <child id="4755209551904389320" name="dependencies" index="3GcXOG" />
       </concept>
     </language>
     <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml">
@@ -25,8 +78,8 @@
         <child id="1622293396949036151" name="lines" index="3o66t8" />
       </concept>
       <concept id="6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" flags="ng" index="2pNNFK">
-        <property id="6999033275467544021" name="shortEmptyNotation" index="qg3DV" />
         <property id="6666499814681415862" name="tagName" index="2pNNFO" />
+        <property id="6999033275467544021" name="shortEmptyNotation" index="qg3DV" />
         <child id="6666499814681415861" name="attributes" index="2pNNFR" />
         <child id="1622293396948928802" name="content" index="3o6s8t" />
       </concept>
@@ -41,62 +94,9 @@
         <property id="1622293396948953704" name="value" index="3o6i5n" />
       </concept>
     </language>
-    <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
-      <concept id="6647099934207069200" name="jetbrains.mps.build.workflow.structure.BwfPathDeclaration" flags="ng" index="10O78W">
-        <child id="6647099934207071047" name="content" index="10O6PF" />
-      </concept>
-      <concept id="6896005762093571400" name="jetbrains.mps.build.workflow.structure.BwfMacro" flags="ng" index="1_4tnW">
-        <property id="6896005762093571406" name="exportToProperiesFile" index="1_4tnU" />
-        <property id="6896005762093571407" name="isLocation" index="1_4tnV" />
-        <property id="6896005762093571402" name="defaultValue" index="1_4tnY" />
-      </concept>
-      <concept id="2769948622284546673" name="jetbrains.mps.build.workflow.structure.BwfProject" flags="ng" index="2VaFvD">
-        <property id="7385586609667765566" name="temporaryFolder" index="1LnyFq" />
-        <property id="5178006408628608654" name="baseDirectory" index="2KQIvE" />
-        <child id="2769948622284574304" name="parts" index="2VaxJS" />
-        <child id="7306485738221455031" name="imports" index="yg1MA" />
-      </concept>
-      <concept id="4755209551904389307" name="jetbrains.mps.build.workflow.structure.BwfJavaModule" flags="ng" index="3GcXPv">
-        <property id="6998860900671418236" name="javaLevelSource" index="TKLQk" />
-        <property id="6998860900671530572" name="javaLevelTarget" index="TLli$" />
-        <property id="1476884141930130693" name="compilerOptions" index="1amtX8" />
-        <property id="7385586609667649463" name="outputFolder" index="1Lov1j" />
-        <property id="927724900262398947" name="heapSize" index="2_GNG2" />
-        <property id="927724900262398958" name="noWarnings" index="2_GNGf" />
-        <property id="927724900262033861" name="generateDebugInfo" index="2_Ic$$" />
-        <child id="7926701909975416101" name="sources" index="2IvZ16" />
-        <child id="1659807394254493213" name="resources" index="3_4Wgq" />
-        <child id="4755209551904389320" name="dependencies" index="3GcXOG" />
-      </concept>
-      <concept id="7306485738221315929" name="jetbrains.mps.build.workflow.structure.BwfJavaDescriptor" flags="ng" index="yhBP8" />
-      <concept id="6647099934207069215" name="jetbrains.mps.build.workflow.structure.BwfPathReference" flags="ng" index="10O78N">
-        <reference id="6647099934207069216" name="target" index="10O78c" />
-      </concept>
-      <concept id="6647099934206976119" name="jetbrains.mps.build.workflow.structure.BwfJavaClassPath" flags="ng" index="10OHTr">
-        <child id="7926701909975791137" name="classpath" index="2IxjH2" />
-      </concept>
-      <concept id="7926701909975416091" name="jetbrains.mps.build.workflow.structure.BwfFileSet" flags="ng" index="2IvZ1S">
-        <child id="7926701909975416092" name="elements" index="2IvZ1Z" />
-      </concept>
-      <concept id="2769948622284546677" name="jetbrains.mps.build.workflow.structure.BwfSubTask" flags="ng" index="2VaFvH">
-        <child id="2769948622284605953" name="after" index="2VaTYp" />
-        <child id="2769948622284606050" name="statements" index="2VaTZU" />
-      </concept>
-      <concept id="2769948622284605880" name="jetbrains.mps.build.workflow.structure.BwfSubTaskDependency" flags="ng" index="2VaTKw">
-        <reference id="2769948622284605881" name="target" index="2VaTKx" />
-      </concept>
-      <concept id="2769948622284768359" name="jetbrains.mps.build.workflow.structure.BwfAntStatement" flags="ng" index="2Vbh7Z">
-        <child id="2769948622284768360" name="element" index="2Vbh7K" />
-      </concept>
-      <concept id="3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" flags="ng" index="3bMsLL">
-        <reference id="3961775458390032825" name="task" index="3bMsLK" />
-        <child id="3961775458390032826" name="subTasks" index="3bMsLN" />
-      </concept>
-      <concept id="4755209551904389316" name="jetbrains.mps.build.workflow.structure.BwfJavaModuleReference" flags="ng" index="3GcXOw">
-        <reference id="4755209551904389317" name="target" index="3GcXOx" />
-      </concept>
-      <concept id="7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" flags="ng" index="ygXWA">
-        <reference id="7306485738221471032" name="target" index="ygXWD" />
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>

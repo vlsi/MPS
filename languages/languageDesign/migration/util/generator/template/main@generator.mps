@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="7cccd7ab-9ecd-44ec-87ef-9caf1c150e83/r:5f0b817f-1ee3-45e6-a54f-3435c7cc5ab5(jetbrains.mps.lang.migration.util#7417095922908537044/jetbrains.mps.lang.migration.util.generator.template.main@generator)" concise="true">
+<model ref="7cccd7ab-9ecd-44ec-87ef-9caf1c150e83/r:5f0b817f-1ee3-45e6-a54f-3435c7cc5ab5(jetbrains.mps.lang.migration.util#7417095922908537044/jetbrains.mps.lang.migration.util.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />

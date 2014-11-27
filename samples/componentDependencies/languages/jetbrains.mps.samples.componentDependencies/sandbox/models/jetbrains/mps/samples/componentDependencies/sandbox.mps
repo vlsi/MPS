@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:436384fb-e97b-487f-9379-826737776648(cg.demo.stateMachine.sandbox)" concise="true">
+<model ref="r:436384fb-e97b-487f-9379-826737776648(cg.demo.stateMachine.sandbox)">
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
@@ -12,11 +12,6 @@
     <import index="ktbj" ref="r:afaf73eb-94a1-4aae-902b-ed4d28124667(jetbrains.mps.samples.componentDependencies.structure)" implicit="true" />
   </imports>
   <registry>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
     <language id="3066bc09-2438-4300-a936-5bd59917ae9b" name="jetbrains.mps.samples.componentDependencies">
       <concept id="6223439730610762144" name="jetbrains.mps.samples.componentDependencies.structure.Dependency" flags="ng" index="1Ihmzm">
         <reference id="6223439730610763348" name="to" index="1IhmWy" />
@@ -35,6 +30,11 @@
         <child id="6223439730610790726" name="out" index="1IhvwK" />
         <child id="6223439730610790722" name="in" index="1IhvwO" />
         <child id="6223439730610336071" name="dep" index="1IiIwL" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:2fc89695-11de-42f3-aaa2-c1d64e5fec72(jetbrains.mps.samples.KajaSceneConstruction.behavior)" concise="true">
+<model ref="r:2fc89695-11de-42f3-aaa2-c1d64e5fec72(jetbrains.mps.samples.KajaSceneConstruction.behavior)">
   <persistence version="9" />
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />

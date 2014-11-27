@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:00000000-0000-4000-0000-011c8959040f(postingrules.agreement)" concise="true">
+<model ref="r:00000000-0000-4000-0000-011c8959040f(postingrules.agreement)">
   <persistence version="9" />
   <languages>
     <use id="144f7012-c2d5-43be-be2b-4bfb7dff6503" name="jetbrains.mps.samples.agreementLanguage" version="-1" />
@@ -12,31 +12,6 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
-    <language id="b1a9bc47-8a26-4792-8b68-4660c531090a" name="jetbrains.mps.samples.formulaLanguage">
-      <concept id="1111784210516" name="jetbrains.mps.samples.formulaLanguage.structure.Formula" flags="ng" index="3rwc5m">
-        <child id="1111784226798" name="expression" index="3rwfVG" />
-      </concept>
-      <concept id="1111784562907" name="jetbrains.mps.samples.formulaLanguage.structure.Operation" flags="ng" index="3rxy7p">
-        <child id="1111784613299" name="leftOperand" index="3rxIiL" />
-        <child id="1111784647019" name="rightOperand" index="3rxQxD" />
-      </concept>
-      <concept id="1111784926012" name="jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant" flags="ng" index="3ryUCY">
-        <property id="1113257000626" name="value" index="NirYL" />
-      </concept>
-      <concept id="1111785030296" name="jetbrains.mps.samples.formulaLanguage.structure.IfFunction" flags="ng" index="3rzkeq">
-        <child id="1111785044750" name="logicalTest" index="3rznCc" />
-        <child id="1111785091720" name="valueIfTrue" index="3rzzea" />
-        <child id="1111785124143" name="valueIfFalse" index="3rzF0H" />
-      </concept>
-      <concept id="1111786301085" name="jetbrains.mps.samples.formulaLanguage.structure.PlusOperation" flags="ng" index="3rCauv" />
-      <concept id="1112384225757" name="jetbrains.mps.samples.formulaLanguage.structure.MultOperation" flags="ng" index="3Zh43v" />
-      <concept id="1112406908640" name="jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation" flags="ng" index="0B_Zz" />
-    </language>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
     <language id="144f7012-c2d5-43be-be2b-4bfb7dff6503" name="jetbrains.mps.samples.agreementLanguage">
       <concept id="1111790951422" name="jetbrains.mps.samples.agreementLanguage.structure.Plan" flags="ng" index="3rTTFW">
         <child id="1111791064925" name="value" index="3rUlpv" />
@@ -75,6 +50,31 @@
         <reference id="1112038462507" name="value" index="3EE5kD" />
       </concept>
       <concept id="1116445695828" name="jetbrains.mps.samples.agreementLanguage.structure.Date_Past" flags="ng" index="3LmlTn" />
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="b1a9bc47-8a26-4792-8b68-4660c531090a" name="jetbrains.mps.samples.formulaLanguage">
+      <concept id="1112406908640" name="jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation" flags="ng" index="0B_Zz" />
+      <concept id="1111784210516" name="jetbrains.mps.samples.formulaLanguage.structure.Formula" flags="ng" index="3rwc5m">
+        <child id="1111784226798" name="expression" index="3rwfVG" />
+      </concept>
+      <concept id="1111784562907" name="jetbrains.mps.samples.formulaLanguage.structure.Operation" flags="ng" index="3rxy7p">
+        <child id="1111784613299" name="leftOperand" index="3rxIiL" />
+        <child id="1111784647019" name="rightOperand" index="3rxQxD" />
+      </concept>
+      <concept id="1111784926012" name="jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant" flags="ng" index="3ryUCY">
+        <property id="1113257000626" name="value" index="NirYL" />
+      </concept>
+      <concept id="1111785030296" name="jetbrains.mps.samples.formulaLanguage.structure.IfFunction" flags="ng" index="3rzkeq">
+        <child id="1111785044750" name="logicalTest" index="3rznCc" />
+        <child id="1111785091720" name="valueIfTrue" index="3rzzea" />
+        <child id="1111785124143" name="valueIfFalse" index="3rzF0H" />
+      </concept>
+      <concept id="1111786301085" name="jetbrains.mps.samples.formulaLanguage.structure.PlusOperation" flags="ng" index="3rCauv" />
+      <concept id="1112384225757" name="jetbrains.mps.samples.formulaLanguage.structure.MultOperation" flags="ng" index="3Zh43v" />
     </language>
   </registry>
   <node concept="3rTTFW" id="gbUtlNG">

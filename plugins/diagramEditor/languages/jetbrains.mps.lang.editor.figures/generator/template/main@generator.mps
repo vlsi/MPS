@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:29a12015-fffe-444b-8977-9278d286b6c9(jetbrains.mps.lang.editor.figures.generator.template.main@generator)" concise="true">
+<model ref="r:29a12015-fffe-444b-8977-9278d286b6c9(jetbrains.mps.lang.editor.figures.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />

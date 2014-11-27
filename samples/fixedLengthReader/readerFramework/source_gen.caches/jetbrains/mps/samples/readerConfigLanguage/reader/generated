@@ -1,14 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="26njd9pkc7j9ztjfffgepfzfa6953yk">
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="5t7vko7lmcdqgrvjfpbb7ytumq3o2g7" />
-  <common hash="b7g3wdtjp2tvzbk9qr5cz2yc42z5lza" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="3515521059660696290" name="ReaderStrategy" hash="-7iuep3oeppghwtnoevd9w13slrfv6vi">
-    <file name="ReaderStrategy.java" />
-  </source>
-  <source id="3515521059660696316" name="Reader" hash="-o53r9x2w3md606c9vksu6hdfn7zkpt">
-    <file name="Reader.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="29v1abwlq21ldhq5wxfuetsobbsxd0b" />
 

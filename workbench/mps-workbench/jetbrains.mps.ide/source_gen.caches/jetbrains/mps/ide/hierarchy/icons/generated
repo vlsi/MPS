@@ -1,11 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8lxc7bztk348i7id0blp1def6o3qt5r">
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="5t7vko7lmcdqgrvjfpbb7ytumq3o2g7" />
-  <common hash="-9bfrbisbjdg8ifm0d4179r2aki2s7s3" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="5797068448049410884" name="Icons" hash="eiyuxlkicxyl49ngwnztb1n3m87jncx">
-    <file name="Icons.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-77nox1b64uootp8vln3gf6git82koi5" />
 

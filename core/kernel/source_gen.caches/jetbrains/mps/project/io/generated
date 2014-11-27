@@ -1,37 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ac8r9meveaioxpssbxnohjomvhajizp">
-  <dep model="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.kernel/jetbrains.mps.project.persistence)" hash="b06t2j03opoh8rmra8dn0w32ktgicv" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3863x0u9flggmckjewdlsmikl6dj9wv" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-c3insuj5q8xzwq7xb0kdlp6g65rvw4k" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="5t7vko7lmcdqgrvjfpbb7ytumq3o2g7" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="cw1h8cyx63y3uqtst8ych98ne4ycg7y" />
-  <common hash="9b1ggkttrbf8tsrj02a5xe1bw9opag7" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="557142600900286111" name="DescriptorIOFacade" hash="4iyt9986x1bzkqh0o7at3axce9p51wn">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <file name="DescriptorIOFacade.java" />
-  </source>
-  <source id="557142600900286148" name="DescriptorIO" hash="-dfo38bn85zq7kxcqx0poq12wbf2fnge">
-    <file name="DescriptorIO.java" />
-  </source>
-  <source id="557142600900532740" name="DescriptorIOProvider" hash="sa52h9dzhyvac04hue6mncq7xtuema">
-    <file name="DescriptorIOProvider.java" />
-  </source>
-  <source id="557142600900539533" name="StandardDescriptorIOProvider" hash="-ewxk28v2i9la4h60hnhp3b4bs89b2on">
-    <dep model="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.kernel/jetbrains.mps.project.persistence)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="StandardDescriptorIOProvider.java" />
-  </source>
-  <source id="3323419009397486857" name="IdeaDescriptorIOProvider" hash="9nda6a5wo3bri58wp8iv4agsmunjwmw">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="IdeaDescriptorIOProvider.java" />
-  </source>
-  <source id="9081946191808704816" name="DescriptorIOException" hash="-36kxcfagwnstxuin4vjhujknvxpx149">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="DescriptorIOException.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-3ohb4hqfromk59fuq1gx4unbekwfddi" />
 

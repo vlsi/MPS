@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:d709d761-11a1-4eca-9881-f611ab973d85(jetbrains.mps.lang.editor.diagram.testLanguage.typesystem)" concise="true">
+<model ref="r:d709d761-11a1-4eca-9881-f611ab973d85(jetbrains.mps.lang.editor.diagram.testLanguage.typesystem)">
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />

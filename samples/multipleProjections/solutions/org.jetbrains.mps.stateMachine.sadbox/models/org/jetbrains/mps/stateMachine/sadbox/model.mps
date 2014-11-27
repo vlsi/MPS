@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:c392e01b-c969-4146-91b4-5620944c9519(org.jetbrains.mps.stateMachine.sadbox.model)" concise="true">
+<model ref="r:c392e01b-c969-4146-91b4-5620944c9519(org.jetbrains.mps.stateMachine.sadbox.model)">
   <persistence version="9" />
   <languages>
     <use id="8d18a45b-ac7e-4d84-a539-75f1d720b09b" name="jetbrains.mps.samples.multipleProjections.requestTracking" version="-1" />
@@ -32,11 +32,6 @@
         <child id="763922957008726948" name="transitions" index="32R9h5" />
       </concept>
     </language>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
     <language id="8d18a45b-ac7e-4d84-a539-75f1d720b09b" name="jetbrains.mps.samples.multipleProjections.requestTracking">
       <concept id="3675491646420739318" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow" flags="ng" index="3OOLNr">
         <property id="3675491646420872268" name="presentation" index="3OPhhx" />
@@ -44,6 +39,11 @@
       </concept>
       <concept id="3675491646420733795" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer" flags="ng" index="3OONte">
         <child id="3675491646420738766" name="workflows" index="3OOLFz" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>

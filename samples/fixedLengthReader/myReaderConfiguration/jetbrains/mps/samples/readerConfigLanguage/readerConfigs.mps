@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:00000000-0000-4000-0000-011c89590433(jetbrains.mps.samples.readerConfigLanguage.readerConfigs)" concise="true">
+<model ref="r:00000000-0000-4000-0000-011c89590433(jetbrains.mps.samples.readerConfigLanguage.readerConfigs)">
   <persistence version="9" />
   <languages>
     <use id="089e26c5-bfc3-4a60-9953-f68169a4608a" name="jetbrains.mps.samples.readerConfigLanguage" version="-1" />
@@ -9,11 +9,6 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
     <language id="089e26c5-bfc3-4a60-9953-f68169a4608a" name="jetbrains.mps.samples.readerConfigLanguage">
       <concept id="1116534870455" name="jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration" flags="ng" index="3QEx2O">
         <child id="1116535202619" name="mapping" index="3QFM8S" />
@@ -26,6 +21,11 @@
       <concept id="1116534962441" name="jetbrains.mps.samples.readerConfigLanguage.structure.Field" flags="ng" index="3QERwa">
         <property id="1116535027491" name="start" index="3QF7ow" />
         <property id="1116535032695" name="end" index="3QF8DO" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:22d2df5f-8d49-41a5-894e-4bb67ea2dfab(jetbrains.mps.build.sandbox.build3)" concise="true">
+<model ref="r:22d2df5f-8d49-41a5-894e-4bb67ea2dfab(jetbrains.mps.build.sandbox.build3)">
   <persistence version="9" />
   <languages>
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
@@ -9,78 +9,8 @@
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" implicit="true" />
   </imports>
   <registry>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
-      <concept id="5617550519002745363" name="jetbrains.mps.build.structure.BuildProject" flags="ng" index="1l3spW">
-        <property id="5204048710541015587" name="internalBaseDirectory" index="2DA0ip" />
-        <property id="4915877860348071612" name="fileName" index="turDy" />
-        <child id="7389400916848080626" name="parts" index="3989C9" />
-        <child id="4796668409958418110" name="scriptsDir" index="auvoZ" />
-        <child id="6647099934206700656" name="plugins" index="10PD9s" />
-        <child id="5617550519002745381" name="dependencies" index="1l3spa" />
-        <child id="5617550519002745372" name="layout" index="1l3spN" />
-      </concept>
-      <concept id="1500819558096177282" name="jetbrains.mps.build.structure.BuildSource_JavaFiles" flags="ng" index="2GAZfH">
-        <child id="1500819558096177283" name="resset" index="2GAZfG" />
-      </concept>
-      <concept id="7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" flags="ng" index="3981dR">
-        <child id="4380385936562148502" name="containerName" index="Nbhlr" />
-      </concept>
-      <concept id="7389400916848073784" name="jetbrains.mps.build.structure.BuildSource_JavaModule" flags="ng" index="398b33">
-        <child id="7389400916848073826" name="sources" index="398b2p" />
-        <child id="2754769020641646251" name="dependencies" index="nCB5Z" />
-      </concept>
-      <concept id="841011766565753074" name="jetbrains.mps.build.structure.BuildLayout_Import" flags="ng" index="3_I8Xc">
-        <reference id="841011766565753076" name="target" index="3_I8Xa" />
-      </concept>
-      <concept id="841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" flags="ng" index="3_J27D" />
-      <concept id="4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" flags="ng" index="3Mxwew">
-        <property id="4903714810883755350" name="text" index="3MwjfP" />
-      </concept>
-      <concept id="2754769020641646247" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyModule" flags="ng" index="nCB5N">
-        <reference id="2754769020641646250" name="module" index="nCB5Y" />
-      </concept>
-      <concept id="4380385936562003279" name="jetbrains.mps.build.structure.BuildString" flags="ng" index="NbPM2">
-        <child id="4903714810883783243" name="parts" index="3MwsjC" />
-      </concept>
-      <concept id="2303926226081001727" name="jetbrains.mps.build.structure.BuildInputSingleFolder" flags="ng" index="TIC1d">
-        <child id="2303926226081001728" name="path" index="TIC6M" />
-      </concept>
-      <concept id="5617550519002745364" name="jetbrains.mps.build.structure.BuildLayout" flags="ng" index="1l3spV" />
-      <concept id="4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" flags="ng" index="1y1bJS">
-        <child id="7389400916848037006" name="children" index="39821P" />
-      </concept>
-      <concept id="6859736767834557908" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar" flags="ng" index="2GhqfE">
-        <property id="6859736767834590422" name="reexport" index="2GhibC" />
-        <child id="5610619299014309674" name="extJar" index="3yrxIG" />
-      </concept>
-      <concept id="8618885170173601777" name="jetbrains.mps.build.structure.BuildCompositePath" flags="nn" index="2Ry0Ak">
-        <property id="8618885170173601779" name="head" index="2Ry0Am" />
-        <child id="8618885170173601778" name="tail" index="2Ry0An" />
-      </concept>
-      <concept id="7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" flags="ng" index="398223" />
-      <concept id="5610619299014309452" name="jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef" flags="ng" index="3yrxFa">
-        <reference id="5610619299014309453" name="jar" index="3yrxFb" />
-      </concept>
       <concept id="5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" flags="ng" index="55IIr" />
-      <concept id="7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" flags="ng" index="iG8Mu">
-        <child id="7321017245477039051" name="compositePart" index="iGT6I" />
-      </concept>
-      <concept id="6057319140845467763" name="jetbrains.mps.build.structure.BuildSource_JavaLibrary" flags="ng" index="PiPfp">
-        <child id="6057319140845478673" name="elements" index="PiKyV" />
-      </concept>
-      <concept id="6647099934206700647" name="jetbrains.mps.build.structure.BuildJavaPlugin" flags="ng" index="10PD9b" />
-      <concept id="7181125477683216329" name="jetbrains.mps.build.structure.BuildExternalLayout" flags="ng" index="13uchq" />
-      <concept id="7181125477683370806" name="jetbrains.mps.build.structure.BuildLayout_FileStub" flags="ng" index="13uQ2_">
-        <child id="7181125477683370900" name="fileName" index="13uQ07" />
-      </concept>
-      <concept id="8577651205286814211" name="jetbrains.mps.build.structure.BuildLayout_Tar" flags="ng" index="1tmT9g">
-        <property id="1979010778009209128" name="compression" index="AB_bT" />
-      </concept>
       <concept id="3717132724152913083" name="jetbrains.mps.build.structure.BuildSource_JavaLibraryCP" flags="ng" index="25yagZ">
         <child id="3717132724152913085" name="classpath" index="25yagT" />
       </concept>
@@ -88,20 +18,83 @@
         <child id="9126048691955220774" name="parameters" index="28jJR8" />
         <child id="9126048691955220762" name="path" index="28jJRO" />
       </concept>
+      <concept id="7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" flags="ng" index="iG8Mu">
+        <child id="7321017245477039051" name="compositePart" index="iGT6I" />
+      </concept>
+      <concept id="2754769020641646247" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyModule" flags="ng" index="nCB5N">
+        <reference id="2754769020641646250" name="module" index="nCB5Y" />
+      </concept>
       <concept id="4993211115183325728" name="jetbrains.mps.build.structure.BuildProjectDependency" flags="ng" index="2sgV4H">
         <reference id="5617550519002745380" name="script" index="1l3spb" />
       </concept>
       <concept id="4993211115183250894" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary" flags="ng" index="2sjeV3">
         <reference id="4993211115183250895" name="library" index="2sjeV2" />
       </concept>
+      <concept id="7801138212747054656" name="jetbrains.mps.build.structure.BuildLayout_Filemode" flags="ng" index="yKbIv">
+        <property id="7801138212747054661" name="dirmode" index="yKbIq" />
+        <property id="7801138212747054660" name="filemode" index="yKbIr" />
+      </concept>
+      <concept id="6859736767834557908" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar" flags="ng" index="2GhqfE">
+        <property id="6859736767834590422" name="reexport" index="2GhibC" />
+        <child id="5610619299014309674" name="extJar" index="3yrxIG" />
+      </concept>
+      <concept id="1500819558096177282" name="jetbrains.mps.build.structure.BuildSource_JavaFiles" flags="ng" index="2GAZfH">
+        <child id="1500819558096177283" name="resset" index="2GAZfG" />
+      </concept>
       <concept id="2750015747481074431" name="jetbrains.mps.build.structure.BuildLayout_Files" flags="ng" index="2HvfSZ">
         <child id="2750015747481074432" name="path" index="2HvfZ0" />
         <child id="2750015747481074433" name="parameters" index="2HvfZ1" />
       </concept>
+      <concept id="4380385936562003279" name="jetbrains.mps.build.structure.BuildString" flags="ng" index="NbPM2">
+        <child id="4903714810883783243" name="parts" index="3MwsjC" />
+      </concept>
+      <concept id="6057319140845467763" name="jetbrains.mps.build.structure.BuildSource_JavaLibrary" flags="ng" index="PiPfp">
+        <child id="6057319140845478673" name="elements" index="PiKyV" />
+      </concept>
+      <concept id="8618885170173601777" name="jetbrains.mps.build.structure.BuildCompositePath" flags="nn" index="2Ry0Ak">
+        <property id="8618885170173601779" name="head" index="2Ry0Am" />
+        <child id="8618885170173601778" name="tail" index="2Ry0An" />
+      </concept>
+      <concept id="2303926226081001727" name="jetbrains.mps.build.structure.BuildInputSingleFolder" flags="ng" index="TIC1d">
+        <child id="2303926226081001728" name="path" index="TIC6M" />
+      </concept>
+      <concept id="6647099934206700647" name="jetbrains.mps.build.structure.BuildJavaPlugin" flags="ng" index="10PD9b" />
+      <concept id="7181125477683216329" name="jetbrains.mps.build.structure.BuildExternalLayout" flags="ng" index="13uchq" />
+      <concept id="7181125477683370806" name="jetbrains.mps.build.structure.BuildLayout_FileStub" flags="ng" index="13uQ2_">
+        <child id="7181125477683370900" name="fileName" index="13uQ07" />
+      </concept>
+      <concept id="7181125477683417252" name="jetbrains.mps.build.structure.BuildExternalLayoutDependency" flags="ng" index="13uUGR">
+        <reference id="7181125477683417255" name="layout" index="13uUGO" />
+        <child id="7181125477683417254" name="artifacts" index="13uUGP" />
+      </concept>
       <concept id="7389400916848050071" name="jetbrains.mps.build.structure.BuildLayout_Zip" flags="ng" index="3981dG" />
+      <concept id="7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" flags="ng" index="3981dR">
+        <child id="4380385936562148502" name="containerName" index="Nbhlr" />
+      </concept>
+      <concept id="7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" flags="ng" index="398223" />
+      <concept id="7389400916848073784" name="jetbrains.mps.build.structure.BuildSource_JavaModule" flags="ng" index="398b33">
+        <child id="2754769020641646251" name="dependencies" index="nCB5Z" />
+        <child id="7389400916848073826" name="sources" index="398b2p" />
+      </concept>
       <concept id="4198392933254416812" name="jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF" flags="ng" index="3co7Ac">
         <property id="4198392933254416822" name="eol" index="3co7Am" />
         <property id="4198392933254551900" name="removeEOF" index="3cpA_W" />
+      </concept>
+      <concept id="5617550519002745364" name="jetbrains.mps.build.structure.BuildLayout" flags="ng" index="1l3spV" />
+      <concept id="5617550519002745363" name="jetbrains.mps.build.structure.BuildProject" flags="ng" index="1l3spW">
+        <property id="4915877860348071612" name="fileName" index="turDy" />
+        <property id="5204048710541015587" name="internalBaseDirectory" index="2DA0ip" />
+        <child id="4796668409958418110" name="scriptsDir" index="auvoZ" />
+        <child id="6647099934206700656" name="plugins" index="10PD9s" />
+        <child id="7389400916848080626" name="parts" index="3989C9" />
+        <child id="5617550519002745381" name="dependencies" index="1l3spa" />
+        <child id="5617550519002745372" name="layout" index="1l3spN" />
+      </concept>
+      <concept id="8577651205286814211" name="jetbrains.mps.build.structure.BuildLayout_Tar" flags="ng" index="1tmT9g">
+        <property id="1979010778009209128" name="compression" index="AB_bT" />
+      </concept>
+      <concept id="4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" flags="ng" index="1y1bJS">
+        <child id="7389400916848037006" name="children" index="39821P" />
       </concept>
       <concept id="5610619299013057363" name="jetbrains.mps.build.structure.BuildLayout_ImportContent" flags="ng" index="3ygNvl">
         <reference id="5610619299013057365" name="target" index="3ygNvj" />
@@ -109,18 +102,25 @@
       <concept id="5610619299014446503" name="jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar" flags="ng" index="3yqu4x">
         <child id="5610619299014446504" name="extJar" index="3yqu4I" />
       </concept>
+      <concept id="5610619299014309452" name="jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef" flags="ng" index="3yrxFa">
+        <reference id="5610619299014309453" name="jar" index="3yrxFb" />
+      </concept>
+      <concept id="841011766565753074" name="jetbrains.mps.build.structure.BuildLayout_Import" flags="ng" index="3_I8Xc">
+        <reference id="841011766565753076" name="target" index="3_I8Xa" />
+      </concept>
+      <concept id="841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" flags="ng" index="3_J27D" />
+      <concept id="6977615362525721939" name="jetbrains.mps.build.structure.BuildLayout_CopyFlattenMapper" flags="ng" index="1AswPB" />
       <concept id="5248329904288051100" name="jetbrains.mps.build.structure.BuildFileIncludeSelector" flags="ng" index="3LWZYx">
         <property id="5248329904288051101" name="pattern" index="3LWZYw" />
       </concept>
-      <concept id="7801138212747054656" name="jetbrains.mps.build.structure.BuildLayout_Filemode" flags="ng" index="yKbIv">
-        <property id="7801138212747054661" name="dirmode" index="yKbIq" />
-        <property id="7801138212747054660" name="filemode" index="yKbIr" />
+      <concept id="4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" flags="ng" index="3Mxwew">
+        <property id="4903714810883755350" name="text" index="3MwjfP" />
       </concept>
-      <concept id="7181125477683417252" name="jetbrains.mps.build.structure.BuildExternalLayoutDependency" flags="ng" index="13uUGR">
-        <reference id="7181125477683417255" name="layout" index="13uUGO" />
-        <child id="7181125477683417254" name="artifacts" index="13uUGP" />
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-      <concept id="6977615362525721939" name="jetbrains.mps.build.structure.BuildLayout_CopyFlattenMapper" flags="ng" index="1AswPB" />
     </language>
   </registry>
   <node concept="1l3spW" id="4zCbl23db48">
