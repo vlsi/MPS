@@ -194,6 +194,8 @@ public final class BinaryPersistence {
   private static final int MODEL_START    = 0xbabababa;
   private static final int REGISTRY_START = 0x5a5a5a5a;
   private static final int REGISTRY_END   = 0xa5a5a5a5;
+  private static final byte STUB_NONE     = 0x12;
+  private static final byte STUB_ID       = 0x13;
 
 
 
@@ -341,7 +343,12 @@ public final class BinaryPersistence {
         assert ul.getName().equals(NameUtil.namespaceFromConceptFQName(ci.getName())) : "We save concept short name. This check ensures we can re-construct fqn based on language name";
         os.writeString(ci.getBriefName());
         os.writeByte(ci.getKind().ordinal() << 4 | ci.getScope().ordinal());
-        // FIXME save stub concept id
+        if (ci.isImplementationWithStub()) {
+          os.writeByte(STUB_ID);
+          os.writeLong(ci.getStubCounterpart().getConceptId());
+        } else {
+          os.writeByte(STUB_NONE);
+        }
         ci.setIntIndex(conceptIndex++);
         //
         List<PropertyInfo> propertiesInUse = ci.getPropertiesInUse();
@@ -393,8 +400,15 @@ public final class BinaryPersistence {
         final SConceptId conceptId = new SConceptId(languageId, is.readLong());
         final String conceptName = NameUtil.conceptFQNameFromNamespaceAndShortName(langName, is.readString());
         int flags = is.readByte();
-        rh.withConcept(conceptId, conceptName, StaticScope.values()[flags & 0x0f], ConceptKind.values()[flags >> 4 & 0x0f], conceptIndex++);
-        // FIXME read stub concept id
+        int stubToken = is.readByte();
+        final SConceptId stubId;
+        if (stubToken == STUB_NONE) {
+          stubId = null;
+        } else {
+          assert stubToken == STUB_ID;
+          stubId = new SConceptId(languageId, is.readLong());
+        }
+        rh.withConcept(conceptId, conceptName, StaticScope.values()[flags & 0x0f], ConceptKind.values()[flags >> 4 & 0x0f], stubId, conceptIndex++);
         //
         int propertyCount = is.readShort();
         while (propertyCount-- > 0) {
