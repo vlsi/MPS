@@ -664,7 +664,7 @@
     <node concept="3Tm1VV" id="4JxJVgt40Xg" role="1B3o_S" />
     <node concept="3s_gsd" id="4JxJVgt40Xh" role="3s_ewO">
       <node concept="3s$Bmu" id="4JxJVgt40Xi" role="3s_gse">
-        <property role="3s$Bm0" value="test" />
+        <property role="3s$Bm0" value="isAvailable" />
         <node concept="3cqZAl" id="4JxJVgt40Xk" role="3clF45" />
         <node concept="3Tm1VV" id="4JxJVgt40Xm" role="1B3o_S" />
         <node concept="3clFbS" id="4JxJVgt40Xn" role="3clF47">

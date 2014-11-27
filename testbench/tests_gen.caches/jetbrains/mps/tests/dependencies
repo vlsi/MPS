@@ -76,6 +76,10 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
+  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_ide_vcs" file="TestModule_jetbrains_mps_ide_vcs.java">
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
+    <classNode dependClassName="org.junit.runner.RunWith" />
+  </dependency>
   <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_ide_vcs_test" file="TestModule_jetbrains_mps_ide_vcs_test.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
@@ -125,6 +129,10 @@
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
   <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_make_tests" file="TestModule_jetbrains_mps_make_tests.java">
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
+    <classNode dependClassName="org.junit.runner.RunWith" />
+  </dependency>
+  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_migration_test" file="TestModule_jetbrains_mps_migration_test.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>

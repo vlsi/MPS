@@ -36,7 +36,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.migration.runtime.base.DataCollector;
 
 public class Migrations_Test extends TestCase {
-  public void test_test() throws Exception {
+  public void test_isAvailable() throws Exception {
 
     SLanguage langA = MetaAdapterFactory.getLanguage(new UUID(239, 0), "langA");
     SLanguage langB = MetaAdapterFactory.getLanguage(new UUID(239, 1), "langB");

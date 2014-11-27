@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)/5467862202907103055">
     <file name="Migrations_Test.java">
-      <node id="650079422456175097" at="39,44,40,0" concept="6" />
+      <node id="650079422456175097" at="39,51,40,0" concept="6" />
       <node id="650079422456178620" at="40,0,41,80" concept="4" />
       <node id="650079422456188164" at="41,80,42,80" concept="4" />
       <node id="650079422456180973" at="42,80,43,0" concept="6" />
@@ -78,7 +78,7 @@
       <node id="650079422456601073" at="103,0,118,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SDependency;" />
       <node id="650079422456599838" at="101,60,118,9" concept="5" />
       <node id="650079422456266711" at="101,0,120,0" concept="3" trace="getDeclaredDependencies#()Ljava/lang/Iterable;" />
-      <node id="5467862202907103058" at="39,0,80,0" concept="3" trace="test_test#()V" />
+      <node id="5467862202907103058" at="39,0,80,0" concept="3" trace="test_isAvailable#()V" />
       <scope id="650079422456209420" at="48,64,49,86" />
       <scope id="650079422456215246" at="54,64,55,86" />
       <scope id="2382269936788903696" at="90,60,91,77" />
@@ -123,7 +123,7 @@
       </scope>
       <scope id="650079422456266716" at="101,60,118,9" />
       <scope id="650079422456266711" at="101,0,120,0" />
-      <scope id="5467862202907103063" at="39,44,78,0">
+      <scope id="5467862202907103063" at="39,51,78,0">
         <var name="cyclicModule1" id="4611400888195017124" />
         <var name="cyclicModule2" id="650079422456660936" />
         <var name="dep1" id="4611400888195079962" />
