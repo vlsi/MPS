@@ -123,6 +123,9 @@ public class ModelWriter9 implements IModelWriter {
         conceptElement.setAttribute(ModelPersistence9.ID, myIdEncoder.toText(ci.getConceptId()));
         conceptElement.setAttribute(ModelPersistence9.NAME, ci.getName());
         conceptElement.setAttribute(ModelPersistence9.FLAGS, ci.getImplementationKindText());
+        if (ci.isImplementationWithStub()) {
+          conceptElement.setAttribute(ModelPersistence9.STUB, myIdEncoder.toText(ci.getStubCounterpart()));
+        }
         conceptElement.setAttribute(ModelPersistence9.INDEX, ci.getIndex());
         for (PropertyInfo pi : ci.getPropertiesInUse()) {
           Element e = new Element(ModelPersistence9.REGISTRY_PROPERTY);
@@ -161,7 +164,6 @@ public class ModelWriter9 implements IModelWriter {
     if (header.isDoNotGenerate()) {
       rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, Boolean.TRUE.toString());
     }
-    rootElement.setAttribute(ModelPersistence9.OPTION_CONCISE, Boolean.TRUE.toString()); // FIXME drop once everyone has been merged
 
     for (Map.Entry<String, String> en : header.getOptionalProperties().entrySet()) {
       if (ModelPersistence9.OPTION_CONCISE.equals(en.getKey())) { // FIXME drop once everyone has been merged

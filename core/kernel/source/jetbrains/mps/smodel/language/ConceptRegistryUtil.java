@@ -21,20 +21,35 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptRegistryUtil {
-  public static ConceptDescriptor getConceptDescriptor(String fqName) {
+  /**
+   * Look up concept registry for specified concept
+   * @param fqName qualified name of a concept to look up
+   * @return <code>null</code> if concept with specified name is not found
+   */
+  @Nullable
+  public static ConceptDescriptor getConceptDescriptor(@NotNull String fqName) {
     ConceptDescriptor result = ConceptRegistry.getInstance().getConceptDescriptor(fqName);
     return result instanceof IllegalConceptDescriptor ? null : result;
   }
 
-  public static ConceptDescriptor getConceptDescriptor(SConceptId conceptId) {
+  /**
+   * Look up concept registry for specified concept
+   * @param conceptId id of a concept to look up
+   * @return <code>null</code> if not found
+   */
+  @Nullable
+  public static ConceptDescriptor getConceptDescriptor(@NotNull SConceptId conceptId) {
     ConceptDescriptor result = ConceptRegistry.getInstance().getConceptDescriptor(conceptId);
     return result instanceof IllegalConceptDescriptor ? null : result;
   }
 
-  public static ConstraintsDescriptor getConstraintsDescriptor(SAbstractConcept concept) {
+  @NotNull
+  public static ConstraintsDescriptor getConstraintsDescriptor(@NotNull SAbstractConcept concept) {
     if (concept instanceof SAbstractConceptAdapterById) {
       return ConceptRegistry.getInstance().getConstraintsDescriptor(((SConceptAdapterById) concept).getId());
     }

@@ -341,6 +341,7 @@ public final class BinaryPersistence {
         assert ul.getName().equals(NameUtil.namespaceFromConceptFQName(ci.getName())) : "We save concept short name. This check ensures we can re-construct fqn based on language name";
         os.writeString(ci.getBriefName());
         os.writeByte(ci.getKind().ordinal() << 4 | ci.getScope().ordinal());
+        // FIXME save stub concept id
         ci.setIntIndex(conceptIndex++);
         //
         List<PropertyInfo> propertiesInUse = ci.getPropertiesInUse();
@@ -393,6 +394,7 @@ public final class BinaryPersistence {
         final String conceptName = NameUtil.conceptFQNameFromNamespaceAndShortName(langName, is.readString());
         int flags = is.readByte();
         rh.withConcept(conceptId, conceptName, StaticScope.values()[flags & 0x0f], ConceptKind.values()[flags >> 4 & 0x0f], conceptIndex++);
+        // FIXME read stub concept id
         //
         int propertyCount = is.readShort();
         while (propertyCount-- > 0) {

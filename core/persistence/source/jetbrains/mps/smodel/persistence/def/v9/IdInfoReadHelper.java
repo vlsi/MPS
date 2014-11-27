@@ -88,7 +88,8 @@ class IdInfoReadHelper {
     myMetaInfoProvider.setLanguageName(languageId, name);
   }
 
-  public void withConcept(String id, String name, String index, String nodeInfo) {
+  // @param stub is optional
+  public void withConcept(String id, String name, String index, String nodeInfo, String stub) {
     assert myActualLang != null;
     SConceptId conceptId = myIdEncoder.parseConceptId(myActualLang.getLanguageId(), id);
     myActualConcept = myInfoCollector.registerConcept(conceptId);
@@ -98,6 +99,12 @@ class IdInfoReadHelper {
     myMetaInfoProvider.setConceptName(conceptId, name);
     myMetaInfoProvider.setKind(conceptId, myActualConcept.getKind());
     myMetaInfoProvider.setScope(conceptId, myActualConcept.getScope());
+    if (stub != null) {
+      // XXX here we imply stub concepts live in the save language as their origin
+      final SConceptId stubId = myIdEncoder.parseConceptId(myActualLang.getLanguageId(), stub);
+      myActualConcept.setStubCounterpart(stubId);
+      myMetaInfoProvider.setStubConcept(conceptId, stubId);
+    }
   }
 
   public void property(String id, String name, String index) {
@@ -156,17 +163,26 @@ class IdInfoReadHelper {
   }
 
   public boolean isImplementation(@NotNull SConcept concept) {
-    ConceptKind kind = myInfoCollector.find(concept).getKind();
-    return kind == ConceptKind.IMPLEMENTATION || kind == ConceptKind.IMPLEMENTATION_WITH_STUB;
+    return myInfoCollector.find(concept).isImplementation();
   }
+  public boolean isImplementationWithStub(@NotNull SConcept concept) {
+    return myInfoCollector.find(concept).isImplementationWithStub();
+  }
+  @Deprecated
   public boolean isImplementationWithStab(@NotNull SConcept concept) {
-    return ConceptKind.IMPLEMENTATION_WITH_STUB == myInfoCollector.find(concept).getKind();
+    return myInfoCollector.find(concept).isImplementationWithStub();
   }
 
+  /**
+   * This method shall be invoked only if {@link #isImplementationWithStub(org.jetbrains.mps.openapi.language.SConcept)} == <code>true</code>
+   */
   @NotNull
   public SConcept getStubConcept(@NotNull SConcept original) {
     final ConceptInfo ci = myInfoCollector.find(original);
-    return ReadHelper9.createStubConcept(ci.getName());
+    assert ci.getKind() == ConceptKind.IMPLEMENTATION_WITH_STUB;
+    final SConceptId stub = ci.getStubCounterpart();
+    assert stub != null;
+    return MetaAdapterFactory.getConcept(stub, ci.constructStubConceptName());
   }
 
   public SLanguage getLanguage(@NotNull SLanguageId langId, @NotNull String langName) {

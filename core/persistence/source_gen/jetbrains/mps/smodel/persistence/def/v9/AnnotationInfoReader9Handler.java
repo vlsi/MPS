@@ -195,7 +195,7 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      my_readHelperParam.withConcept(attrs.getValue("id"), attrs.getValue("name"), attrs.getValue("index"), attrs.getValue("flags"));
+      my_readHelperParam.withConcept(attrs.getValue("id"), attrs.getValue("name"), attrs.getValue("index"), attrs.getValue("flags"), null);
       return null;
     }
     @Override

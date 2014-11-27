@@ -24,12 +24,14 @@ import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -109,6 +111,12 @@ public interface MetaModelInfoProvider {
   Boolean isUnordered(SContainmentLinkId link);
   void setUnordered(SContainmentLinkId link, boolean unordered);
 
+  /**
+   * This method makes sense only for concepts with
+   * {@link #getKind(jetbrains.mps.smodel.adapter.ids.SConceptId) kind} == {@link jetbrains.mps.smodel.runtime.ConceptKind#IMPLEMENTATION_WITH_STUB}
+   */
+  SConceptId getStubConcept(SConceptId origin);
+  void setStubConcept(SConceptId origin, SConceptId stub);
 
   /**
    * Base implementation, clients shall extend this class rather than implement {@link jetbrains.mps.persistence.MetaModelInfoProvider} directly.
@@ -194,6 +202,16 @@ public interface MetaModelInfoProvider {
     @Override
     public void setUnordered(SContainmentLinkId link, boolean unordered) {
       // intentionally no-op
+    }
+
+    @Override
+    public SConceptId getStubConcept(SConceptId origin) {
+      return null;
+    }
+
+    @Override
+    public void setStubConcept(SConceptId origin, SConceptId stub) {
+      // intentionally left no-op
     }
   }
 
@@ -296,6 +314,21 @@ public interface MetaModelInfoProvider {
     }
 
     @Override
+    public SConceptId getStubConcept(SConceptId origin) {
+      String originFQName = getConceptName(origin);
+      if (originFQName == null) {
+        return null;
+      }
+      // FIXME move stub concept id to ConceptDescriptor
+      String stubFQName = ConceptInfo.constructStubConceptName(originFQName);
+      final ConceptDescriptor stubConceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(stubFQName);
+      if(stubConceptDescriptor != null) {
+        return stubConceptDescriptor.getId();
+      }
+      return null;
+    }
+
+    @Override
     public void setLanguageName(SLanguageId lang, String name) {
       DebugRegistry.getInstance().addLanguageName(lang, name);
     }
@@ -335,6 +368,7 @@ public interface MetaModelInfoProvider {
     private final Map<SContainmentLinkId, Boolean> myUnordered = new HashMap<SContainmentLinkId, Boolean>();
     private final Map<SConceptId, StaticScope> myScope = new HashMap<SConceptId, StaticScope>();
     private final Map<SConceptId, ConceptKind> myKind = new HashMap<SConceptId, ConceptKind>();
+    private final Map<SConceptId, SConceptId> myStubs = new HashMap<SConceptId, SConceptId>();
     private final MetaModelInfoProvider myDelegate;
 
     public StuffedMetaModelInfo(@NotNull MetaModelInfoProvider delegate) {
@@ -437,6 +471,16 @@ public interface MetaModelInfoProvider {
       myDelegate.setUnordered(link, unordered);
     }
 
+    @Override
+    public void setStubConcept(SConceptId origin, SConceptId stub) {
+      if (stub == null) {
+        myStubs.remove(origin);
+      } else {
+        myStubs.put(origin, stub);
+      }
+      myDelegate.setStubConcept(origin, stub);
+    }
+
     private static boolean isEmpty(String name) {
       return name == null || name.isEmpty();
     }
@@ -511,6 +555,15 @@ public interface MetaModelInfoProvider {
         return unordered;
       }
       return myDelegate.isUnordered(link);
+    }
+
+    @Override
+    public SConceptId getStubConcept(SConceptId origin) {
+      SConceptId stub = myStubs.get(origin);
+      if (stub != null) {
+        return stub;
+      }
+      return myDelegate.getStubConcept(origin);
     }
   }
 }

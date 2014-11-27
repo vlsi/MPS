@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -79,7 +80,12 @@ public class IdInfoCollector {
       for (AggregationLinkInfo li : ci.getAggregationsInUse()) {
         li.setUnordered(metaInfoProvider.isUnordered(li.getLinkId()));
       }
-      ci.setImplementationKind(metaInfoProvider.getScope(ci.getConceptId()), metaInfoProvider.getKind(ci.getConceptId()));
+      final StaticScope scope = metaInfoProvider.getScope(ci.getConceptId());
+      final ConceptKind kind = metaInfoProvider.getKind(ci.getConceptId());
+      ci.setImplementationKind(scope, kind);
+      if (kind == ConceptKind.IMPLEMENTATION_WITH_STUB) {
+        ci.setStubCounterpart(metaInfoProvider.getStubConcept(ci.getConceptId()));
+      }
 
       if (ci.isNameSet()) {
         continue;
@@ -291,9 +297,14 @@ public class IdInfoCollector {
 
     /*package*/ abstract int internalKey();
 
-    // long to non-negative integer
+    // long to signed integer
     protected static final int ltoi(long l) {
-      return ((int) (l ^ (l>>>32))) & 0x7fffffff;
+      return ((int) (l ^ (l>>>32)));
+    }
+    // FIXME drop this method (make ltoi to return unsigned value). Meanwhile, use non-negative values for comparator purposes only - I'd like to keep
+    // models mostly unchanged to check merge
+    protected static final int unsigned(int i) {
+      return i & 0x7fffffff;
     }
   }
 
@@ -316,6 +327,7 @@ public class IdInfoCollector {
     private final HashMap<SContainmentLinkId, AggregationLinkInfo> myAggregations = new HashMap<SContainmentLinkId, AggregationLinkInfo>(8);
     private ConceptKind myKind = ConceptKind.NORMAL;
     private StaticScope myScope = StaticScope.GLOBAL;
+    private SConceptId myStubCounterpart = null; // makes sense only for ConceptKind.IMPLEMENTATION_WITH_STUB
 
     /*package*/ ConceptInfo(@NotNull SConceptId concept) {
       myConcept = concept;
@@ -355,6 +367,35 @@ public class IdInfoCollector {
 
     public ConceptKind getKind() {
       return myKind;
+    }
+
+    @Nullable
+    public SConceptId getStubCounterpart() {
+      assert myKind == ConceptKind.IMPLEMENTATION_WITH_STUB;
+      return myStubCounterpart;
+    }
+    public void setStubCounterpart(@Nullable SConceptId stub) {
+      myStubCounterpart = stub;
+    }
+    /*package*/ String constructStubConceptName() {
+      return constructStubConceptName(myName);
+    }
+    public static String constructStubConceptName(@NotNull String originalConceptQualifiedName) {
+      String ns = NameUtil.namespaceFromLongName(originalConceptQualifiedName);
+      String sname = NameUtil.shortNameFromLongName(originalConceptQualifiedName);
+      return ((ns == null || ns.isEmpty()) ? "" : ns + '.') + "Stub" + sname;
+    }
+
+    public boolean isImplementation() {
+      return myKind == ConceptKind.IMPLEMENTATION || myKind == ConceptKind.IMPLEMENTATION_WITH_STUB;
+    }
+
+    /**
+     * @return <code>true</code> iff has both appropriate kind and knows stub concept (absence of stub concept is treated as implementation)
+     */
+    public boolean isImplementationWithStub() {
+      // treat ImplementationWithStub without actual stub as mere Implementation
+      return myKind == ConceptKind.IMPLEMENTATION_WITH_STUB && myStubCounterpart != null;
     }
 
     /**
@@ -464,7 +505,7 @@ public class IdInfoCollector {
 
     @Override
     public int compareTo(@NotNull ConceptInfo o) {
-      return  internalKey() - o.internalKey();
+      return  unsigned(internalKey()) - unsigned(o.internalKey());
     }
   }
 
@@ -490,7 +531,7 @@ public class IdInfoCollector {
 
     @Override
     public int compareTo(@NotNull PropertyInfo o) {
-      return  internalKey() - o.internalKey();
+      return unsigned(internalKey()) - unsigned(o.internalKey());
     }
   }
 
@@ -516,7 +557,7 @@ public class IdInfoCollector {
 
     @Override
     public int compareTo(@NotNull AssociationLinkInfo o) {
-      return  internalKey() - o.internalKey();
+      return unsigned(internalKey()) - unsigned(o.internalKey());
     }
   }
 
@@ -553,7 +594,7 @@ public class IdInfoCollector {
 
     @Override
     public int compareTo(@NotNull AggregationLinkInfo o) {
-      return  internalKey() - o.internalKey();
+      return unsigned(internalKey()) - unsigned(o.internalKey());
     }
   }
 }

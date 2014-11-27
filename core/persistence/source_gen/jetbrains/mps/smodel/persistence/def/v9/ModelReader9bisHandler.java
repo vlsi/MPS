@@ -294,7 +294,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      my_readHelperParam.withConcept(attrs.getValue("id"), attrs.getValue("name"), attrs.getValue("index"), attrs.getValue("flags"));
+      my_readHelperParam.withConcept(attrs.getValue("id"), attrs.getValue("name"), attrs.getValue("index"), attrs.getValue("flags"), attrs.getValue("stub"));
       return null;
     }
     @Override

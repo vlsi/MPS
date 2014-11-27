@@ -78,6 +78,7 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String ROLE_ID = "role";
   public static final String VERSION = "version";
   public static final String IMPLICIT = "implicit";
+  public static final String STUB = "stub";
 
 
   @Override
@@ -140,6 +141,7 @@ public class ModelPersistence9 implements IModelPersistence {
   }
 
   private static boolean isConcisePersistenceOption(SModelHeader header) {
-    return Boolean.parseBoolean(header.getOptionalProperty(ModelPersistence9.OPTION_CONCISE));
+    final String p = header.getOptionalProperty(ModelPersistence9.OPTION_CONCISE);
+    return p == null || Boolean.parseBoolean(p);
   }
 }
