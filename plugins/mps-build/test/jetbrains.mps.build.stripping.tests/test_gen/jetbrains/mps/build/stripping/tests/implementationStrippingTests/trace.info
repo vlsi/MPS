@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <root nodeRef="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)/2085316548396379691">
+    <file name="LeftTransformTest_Test.java">
+      <node id="2085316548396379691" at="15,57,16,147" concept="1" />
+      <node id="2085316548396379691" at="16,147,17,138" concept="1" />
+      <node id="2085316548396379691" at="24,51,25,63" concept="1" />
+      <node id="2085316548396384165" at="25,63,26,28" concept="1" />
+      <node id="2085316548396379691" at="12,0,14,0" concept="0" trace="LeftTransformTest_Test#()V" />
+      <node id="2085316548396379691" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="2085316548396379691" at="14,0,19,0" concept="2" trace="test_LeftTransformTest#()V" />
+      <node id="2085316548396379691" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2085316548396379691" at="12,35,12,35" />
+      <scope id="2085316548396379691" at="21,23,21,23" />
+      <scope id="2085316548396379691" at="12,0,14,0" />
+      <scope id="2085316548396379691" at="15,57,17,138" />
+      <scope id="2085316548396379691" at="21,0,23,0" />
+      <scope id="2085316548396379691" at="24,51,26,28" />
+      <scope id="2085316548396379691" at="14,0,19,0" />
+      <scope id="2085316548396379691" at="23,0,28,0" />
+      <unit id="2085316548396379691" at="19,0,29,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.LeftTransformTest_Test$TestBody" />
+      <unit id="2085316548396379691" at="10,0,30,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.LeftTransformTest_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)/5264300948581715473">
+    <file name="RemoveNotTest_Test.java">
+      <node id="5264300948581715473" at="15,53,16,147" concept="1" />
+      <node id="5264300948581715473" at="16,147,17,134" concept="1" />
+      <node id="5264300948581715473" at="24,51,25,63" concept="1" />
+      <node id="5264300948581716467" at="25,63,26,77" concept="1" />
+      <node id="5264300948581715473" at="12,0,14,0" concept="0" trace="RemoveNotTest_Test#()V" />
+      <node id="5264300948581715473" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="5264300948581715473" at="14,0,19,0" concept="2" trace="test_RemoveNotTest#()V" />
+      <node id="5264300948581715473" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5264300948581715473" at="12,31,12,31" />
+      <scope id="5264300948581715473" at="21,23,21,23" />
+      <scope id="5264300948581715473" at="12,0,14,0" />
+      <scope id="5264300948581715473" at="15,53,17,134" />
+      <scope id="5264300948581715473" at="21,0,23,0" />
+      <scope id="5264300948581715473" at="24,51,26,77" />
+      <scope id="5264300948581715473" at="14,0,19,0" />
+      <scope id="5264300948581715473" at="23,0,28,0" />
+      <unit id="5264300948581715473" at="19,0,29,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RemoveNotTest_Test$TestBody" />
+      <unit id="5264300948581715473" at="10,0,30,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RemoveNotTest_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)/5264300948581796844">
+    <file name="AddNotTest_Test.java">
+      <node id="5264300948581796844" at="15,50,16,147" concept="1" />
+      <node id="5264300948581796844" at="16,147,17,131" concept="1" />
+      <node id="5264300948581796844" at="24,51,25,63" concept="1" />
+      <node id="5264300948581797707" at="25,63,26,29" concept="1" />
+      <node id="5264300948581796844" at="12,0,14,0" concept="0" trace="AddNotTest_Test#()V" />
+      <node id="5264300948581796844" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="5264300948581796844" at="14,0,19,0" concept="2" trace="test_AddNotTest#()V" />
+      <node id="5264300948581796844" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5264300948581796844" at="12,28,12,28" />
+      <scope id="5264300948581796844" at="21,23,21,23" />
+      <scope id="5264300948581796844" at="12,0,14,0" />
+      <scope id="5264300948581796844" at="15,50,17,131" />
+      <scope id="5264300948581796844" at="21,0,23,0" />
+      <scope id="5264300948581796844" at="24,51,26,29" />
+      <scope id="5264300948581796844" at="14,0,19,0" />
+      <scope id="5264300948581796844" at="23,0,28,0" />
+      <unit id="5264300948581796844" at="19,0,29,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.AddNotTest_Test$TestBody" />
+      <unit id="5264300948581796844" at="10,0,30,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.AddNotTest_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)/5264300948581797739">
+    <file name="EnterIfTest_Test.java">
+      <node id="5264300948581797739" at="15,51,16,147" concept="1" />
+      <node id="5264300948581797739" at="16,147,17,132" concept="1" />
+      <node id="5264300948581797739" at="24,51,25,63" concept="1" />
+      <node id="5264300948581798059" at="25,63,26,46" concept="1" />
+      <node id="5264300948581797739" at="12,0,14,0" concept="0" trace="EnterIfTest_Test#()V" />
+      <node id="5264300948581797739" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="5264300948581797739" at="14,0,19,0" concept="2" trace="test_EnterIfTest#()V" />
+      <node id="5264300948581797739" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5264300948581797739" at="12,29,12,29" />
+      <scope id="5264300948581797739" at="21,23,21,23" />
+      <scope id="5264300948581797739" at="12,0,14,0" />
+      <scope id="5264300948581797739" at="15,51,17,132" />
+      <scope id="5264300948581797739" at="21,0,23,0" />
+      <scope id="5264300948581797739" at="24,51,26,46" />
+      <scope id="5264300948581797739" at="14,0,19,0" />
+      <scope id="5264300948581797739" at="23,0,28,0" />
+      <unit id="5264300948581797739" at="19,0,29,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.EnterIfTest_Test$TestBody" />
+      <unit id="5264300948581797739" at="10,0,30,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.EnterIfTest_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)/5264300948581798079">
+    <file name="CommentLineTest_Test.java">
+      <node id="5264300948581798079" at="15,55,16,147" concept="1" />
+      <node id="5264300948581798079" at="16,147,17,136" concept="1" />
+      <node id="5264300948581798079" at="24,51,25,63" concept="1" />
+      <node id="5264300948581798095" at="25,63,26,30" concept="1" />
+      <node id="5264300948581798079" at="12,0,14,0" concept="0" trace="CommentLineTest_Test#()V" />
+      <node id="5264300948581798079" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="5264300948581798079" at="14,0,19,0" concept="2" trace="test_CommentLineTest#()V" />
+      <node id="5264300948581798079" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5264300948581798079" at="12,33,12,33" />
+      <scope id="5264300948581798079" at="21,23,21,23" />
+      <scope id="5264300948581798079" at="12,0,14,0" />
+      <scope id="5264300948581798079" at="15,55,17,136" />
+      <scope id="5264300948581798079" at="21,0,23,0" />
+      <scope id="5264300948581798079" at="24,51,26,30" />
+      <scope id="5264300948581798079" at="14,0,19,0" />
+      <scope id="5264300948581798079" at="23,0,28,0" />
+      <unit id="5264300948581798079" at="19,0,29,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.CommentLineTest_Test$TestBody" />
+      <unit id="5264300948581798079" at="10,0,30,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.CommentLineTest_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)/5264300948581800039">
+    <file name="ElseTest_Test.java">
+      <node id="5264300948581800039" at="15,48,16,147" concept="1" />
+      <node id="5264300948581800039" at="16,147,17,129" concept="1" />
+      <node id="5264300948581800039" at="24,51,25,63" concept="1" />
+      <node id="5264300948581800054" at="25,63,26,34" concept="1" />
+      <node id="5264300948581800039" at="12,0,14,0" concept="0" trace="ElseTest_Test#()V" />
+      <node id="5264300948581800039" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="5264300948581800039" at="14,0,19,0" concept="2" trace="test_ElseTest#()V" />
+      <node id="5264300948581800039" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5264300948581800039" at="12,26,12,26" />
+      <scope id="5264300948581800039" at="21,23,21,23" />
+      <scope id="5264300948581800039" at="12,0,14,0" />
+      <scope id="5264300948581800039" at="15,48,17,129" />
+      <scope id="5264300948581800039" at="21,0,23,0" />
+      <scope id="5264300948581800039" at="24,51,26,34" />
+      <scope id="5264300948581800039" at="14,0,19,0" />
+      <scope id="5264300948581800039" at="23,0,28,0" />
+      <unit id="5264300948581800039" at="19,0,29,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.ElseTest_Test$TestBody" />
+      <unit id="5264300948581800039" at="10,0,30,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.ElseTest_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)/5264300948581808816">
+    <file name="RepetitionTest_Test.java">
+      <node id="5264300948581808816" at="18,73,19,154" concept="1" />
+      <node id="5264300948581808816" at="19,154,20,162" concept="1" />
+      <node id="5264300948581808816" at="23,73,24,154" concept="1" />
+      <node id="5264300948581808816" at="24,154,25,162" concept="1" />
+      <node id="5264300948581808816" at="28,77,29,154" concept="1" />
+      <node id="5264300948581808816" at="29,154,30,166" concept="1" />
+      <node id="5264300948581808816" at="34,75,35,249" concept="3" />
+      <node id="5264300948581808816" at="35,249,36,159" concept="1" />
+      <node id="5264300948581808816" at="38,75,39,249" concept="3" />
+      <node id="5264300948581808816" at="39,249,40,159" concept="1" />
+      <node id="5264300948581808816" at="42,79,43,249" concept="3" />
+      <node id="5264300948581808816" at="43,249,44,159" concept="1" />
+      <node id="5264300948581808816" at="34,0,38,0" concept="2" trace="test_NodeErrorCheck5264300948581808886#()V" />
+      <node id="5264300948581808816" at="38,0,42,0" concept="2" trace="test_NodeErrorCheck5264300948581808891#()V" />
+      <node id="5264300948581808816" at="42,0,46,0" concept="2" trace="test_ErrorMessagesCheck5264300948581808827#()V" />
+      <node id="5264300948581808816" at="17,0,22,0" concept="2" trace="test_NodeErrorCheck5264300948581808886#()V" />
+      <node id="5264300948581808816" at="22,0,27,0" concept="2" trace="test_NodeErrorCheck5264300948581808891#()V" />
+      <node id="5264300948581808816" at="27,0,32,0" concept="2" trace="test_ErrorMessagesCheck5264300948581808827#()V" />
+      <scope id="5264300948581808816" at="18,73,20,162" />
+      <scope id="5264300948581808816" at="23,73,25,162" />
+      <scope id="5264300948581808816" at="28,77,30,166" />
+      <scope id="5264300948581808816" at="34,75,36,159">
+        <var name="operation" id="5264300948581808816" />
+      </scope>
+      <scope id="5264300948581808816" at="38,75,40,159">
+        <var name="operation" id="5264300948581808816" />
+      </scope>
+      <scope id="5264300948581808816" at="42,79,44,159">
+        <var name="operation" id="5264300948581808816" />
+      </scope>
+      <scope id="5264300948581808816" at="34,0,38,0" />
+      <scope id="5264300948581808816" at="38,0,42,0" />
+      <scope id="5264300948581808816" at="42,0,46,0" />
+      <scope id="5264300948581808816" at="17,0,22,0" />
+      <scope id="5264300948581808816" at="22,0,27,0" />
+      <scope id="5264300948581808816" at="27,0,32,0" />
+      <unit id="5264300948581808816" at="32,0,47,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RepetitionTest_Test$TestBody" />
+      <unit id="5264300948581808816" at="15,0,48,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RepetitionTest_Test" />
+    </file>
+  </root>
+</debug-info>
+
