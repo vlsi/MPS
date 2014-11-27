@@ -5,7 +5,6 @@ package jetbrains.mps.lang.behavior.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LocalBehaviorMethodCall_Behavior {
@@ -15,11 +14,11 @@ public class LocalBehaviorMethodCall_Behavior {
     return (LocalBehaviorMethodCall_Behavior.call_getVirtualMethodDeclaration_7148319044498527612(thisNode) != null);
   }
   public static SNode call_getVirtualMethodDeclaration_7148319044498527612(SNode thisNode) {
-    SNode methodDeclaration = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
-    if ((SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod")) != null)) {
-      return SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod"));
+    SNode methodDeclaration = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
+    if ((SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod")) != null)) {
+      return SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod"));
     } else
-    if (SPropertyOperations.getBoolean(methodDeclaration, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472832l, "isVirtual"))) {
+    if (SPropertyOperations.getBoolean(methodDeclaration, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d43480580L, "isVirtual"))) {
       return methodDeclaration;
     } else {
       return null;

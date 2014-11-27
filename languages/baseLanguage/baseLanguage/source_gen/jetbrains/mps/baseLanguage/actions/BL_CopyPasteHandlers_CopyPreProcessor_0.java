@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BL_CopyPasteHandlers_CopyPreProcessor_0 implements CopyPreProcessor {
@@ -16,7 +15,7 @@ public class BL_CopyPasteHandlers_CopyPreProcessor_0 implements CopyPreProcessor
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference");
   }
   public void preProcesNode(SNode copy, SNode original) {
-    SNode qualifiedReference = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(copy, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "virtual_getQualifiedReference_4598334504606213641", new Object[]{});
+    SNode qualifiedReference = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(copy, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), "virtual_getQualifiedReference_4598334504606213641", new Object[]{});
     if ((qualifiedReference != null)) {
       SNodeOperations.replaceWithAnother(copy, qualifiedReference);
     }

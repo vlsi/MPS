@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -29,15 +28,15 @@ public class QueryParameter_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode parameterList = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004132277753l, "jetbrains.mps.console.blCommand.structure.QueryParameterList"));
-      if (parameterList != null && ListSequence.fromList(SLinkOperations.getChildren(parameterList, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004132277753l, 4307205004141421222l, "parameter"))).count() == 1 && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameter")) {
+      SNode parameterList = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, "jetbrains.mps.console.blCommand.structure.QueryParameterList"));
+      if (parameterList != null && ListSequence.fromList(SLinkOperations.getChildren(parameterList, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter"))).count() == 1 && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameter")) {
         SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.console.blCommand.structure.QueryParameter");
         return;
       }
 
       SNodeOperations.deleteNode(node);
-      if (parameterList != null && ListSequence.fromList(SLinkOperations.getChildren(parameterList, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004132277753l, 4307205004141421222l, "parameter"))).isEmpty()) {
-        SNode queryExpression = SNodeOperations.as(SNodeOperations.getParent(parameterList), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, "jetbrains.mps.console.blCommand.structure.QueryExpression"));
+      if (parameterList != null && ListSequence.fromList(SLinkOperations.getChildren(parameterList, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter"))).isEmpty()) {
+        SNode queryExpression = SNodeOperations.as(SNodeOperations.getParent(parameterList), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, "jetbrains.mps.console.blCommand.structure.QueryExpression"));
         if (queryExpression != null) {
           SelectionUtil.selectLabelCellAnSetCaret(editorContext, queryExpression, "ALIAS_EDITOR_COMPONENT", -1);
         }
@@ -53,15 +52,15 @@ public class QueryParameter_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode parameterList = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004132277753l, "jetbrains.mps.console.blCommand.structure.QueryParameterList"));
-      if (parameterList != null && ListSequence.fromList(SLinkOperations.getChildren(parameterList, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004132277753l, 4307205004141421222l, "parameter"))).count() == 1 && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameter")) {
+      SNode parameterList = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, "jetbrains.mps.console.blCommand.structure.QueryParameterList"));
+      if (parameterList != null && ListSequence.fromList(SLinkOperations.getChildren(parameterList, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter"))).count() == 1 && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameter")) {
         SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.console.blCommand.structure.QueryParameter");
         return;
       }
 
       SNodeOperations.deleteNode(node);
-      if (parameterList != null && ListSequence.fromList(SLinkOperations.getChildren(parameterList, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004132277753l, 4307205004141421222l, "parameter"))).isEmpty()) {
-        SNode queryExpression = SNodeOperations.as(SNodeOperations.getParent(parameterList), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, "jetbrains.mps.console.blCommand.structure.QueryExpression"));
+      if (parameterList != null && ListSequence.fromList(SLinkOperations.getChildren(parameterList, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter"))).isEmpty()) {
+        SNode queryExpression = SNodeOperations.as(SNodeOperations.getParent(parameterList), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, "jetbrains.mps.console.blCommand.structure.QueryExpression"));
         if (queryExpression != null) {
           SelectionUtil.selectLabelCellAnSetCaret(editorContext, queryExpression, "ALIAS_EDITOR_COMPONENT", -1);
         }

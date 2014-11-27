@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.overloadedOperators.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -36,12 +35,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BinaryOperationReference_Constraints extends BaseConstraintsDescriptor {
   public BinaryOperationReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-248448403205894696l, -5239469005774541060l), 2838654975957155508l));
+    super(MetaIdFactory.conceptId(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d23eb4L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-248448403205894696l, -5239469005774541060l), 2838654975957155508l, 2838654975957155509l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-248448403205894696l, -5239469005774541060l), 2838654975957155508l, 2838654975957155509l), this) {
+    references.put(MetaIdFactory.refId(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d23eb4L, 0x2764eda929d23eb5L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d23eb4L, 0x2764eda929d23eb5L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -59,9 +58,9 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
             for (Language language : langs) {
               SModel strucModelDescriptor = LanguageAspect.STRUCTURE.get(language);
               SModel strucModel = strucModelDescriptor;
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.roots(strucModel, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.roots(strucModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(((SNode) it)), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) && !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract")));
+                  return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(((SNode) it)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) && !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
                 }
               }));
             }

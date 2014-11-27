@@ -34,7 +34,6 @@ import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -109,13 +108,13 @@ public class Binaries_Facet extends IFacet.Stub {
                         final FilesDelta fd = new FilesDelta(outputDir);
                         ListSequence.fromList(deltaList).addElement(fd);
                         new StaleFilesCollector(outputDir).updateDelta(fd);
-                        return ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029898l, "jetbrains.mps.lang.resources.structure.Resource"))).where(new IWhereFilter<SNode>() {
+                        return ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return isNotEmptyString(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029898l, 8974276187400029899l, "path")));
+                            return isNotEmptyString(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")));
                           }
                         }).select(new ISelector<SNode, String>() {
                           public String select(SNode bin) {
-                            return MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(bin, MetaAdapterFactory.getProperty(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029898l, 8974276187400029899l, "path")));
+                            return MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(bin, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")));
                           }
                         }).where(new IWhereFilter<String>() {
                           public boolean accept(String p) {

@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.doubleDispatch.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class DispatchModifier_Constraints extends BaseConstraintsDescriptor {
   public DispatchModifier_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(9057940065237224321l, -4794704520121574714l), 2403002034744698617l));
+    super(MetaIdFactory.conceptId(0x7db4447f913e4b81L, 0xbd75c9a473319ac6L, 0x21592d9e737fa6f9L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -33,7 +32,7 @@ public class DispatchModifier_Constraints extends BaseConstraintsDescriptor {
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     // applicable only to java methods 
-    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025416l, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"));
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3d7b3732-9bef-45a8-98fa-22d696f27853(jetbrains.mps.baseLanguage.doubleDispatch.constraints)", "2403002034744707318");
 }

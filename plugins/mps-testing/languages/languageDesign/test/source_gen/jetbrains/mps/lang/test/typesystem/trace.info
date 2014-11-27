@@ -18,426 +18,426 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/1210676511811">
     <file name="typeof_TestNodeReference_InferenceRule.java">
-      <node id="1210677002368" at="22,124,23,265" concept="7" />
-      <node id="1210676536754" at="24,5,25,53" concept="7" />
-      <node id="1210676536754" at="25,53,26,194" concept="7" />
-      <node id="1210676536754" at="26,194,27,278" concept="3" />
-      <node id="1210676511811" at="30,46,31,65" concept="8" />
-      <node id="1210676511811" at="34,5,35,130" concept="7" />
-      <node id="1210676511811" at="35,130,36,45" concept="8" />
-      <node id="1210676511811" at="39,30,40,17" concept="8" />
-      <node id="1210676830240" at="42,79,43,63" concept="7" />
-      <node id="1210676830240" at="43,63,44,30" concept="7" />
-      <node id="1210676830240" at="44,30,45,132" concept="3" />
-      <node id="1210676830240" at="45,132,46,209" concept="3" />
-      <node id="1210676830240" at="46,209,47,24" concept="8" />
-      <node id="1210676511811" at="20,0,22,0" concept="2" trace="typeof_TestNodeReference_InferenceRule#()V" />
-      <node id="1210676830240" at="44,30,46,209" concept="0" />
-      <node id="1210676830240" at="44,30,46,209" concept="0" />
-      <node id="1210676511811" at="30,0,33,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="1210676511811" at="39,0,42,0" concept="6" trace="overrides#()Z" />
-      <node id="1210676511811" at="33,68,37,5" concept="0" />
-      <node id="1210676536754" at="23,265,28,5" concept="0" />
-      <node id="1210676511811" at="33,0,39,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1210676830240" at="42,0,49,0" concept="9" trace="_quotation_createNode_4fdfzz_a0b0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1210676511811" at="22,0,30,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="1210676511811" at="20,51,20,51" />
-      <scope id="1210676511811" at="30,46,31,65" />
-      <scope id="1210676511811" at="39,30,40,17" />
-      <scope id="1210676511811" at="20,0,22,0" />
-      <scope id="1210676511811" at="34,5,36,45">
+      <node id="1210677002368" at="21,124,22,251" concept="7" />
+      <node id="1210676536754" at="23,5,24,53" concept="7" />
+      <node id="1210676536754" at="24,53,25,194" concept="7" />
+      <node id="1210676536754" at="25,194,26,278" concept="3" />
+      <node id="1210676511811" at="29,46,30,65" concept="8" />
+      <node id="1210676511811" at="33,5,34,130" concept="7" />
+      <node id="1210676511811" at="34,130,35,45" concept="8" />
+      <node id="1210676511811" at="38,30,39,17" concept="8" />
+      <node id="1210676830240" at="41,79,42,63" concept="7" />
+      <node id="1210676830240" at="42,63,43,30" concept="7" />
+      <node id="1210676830240" at="43,30,44,132" concept="3" />
+      <node id="1210676830240" at="44,132,45,196" concept="3" />
+      <node id="1210676830240" at="45,196,46,24" concept="8" />
+      <node id="1210676511811" at="19,0,21,0" concept="2" trace="typeof_TestNodeReference_InferenceRule#()V" />
+      <node id="1210676830240" at="43,30,45,196" concept="0" />
+      <node id="1210676830240" at="43,30,45,196" concept="0" />
+      <node id="1210676511811" at="29,0,32,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1210676511811" at="38,0,41,0" concept="6" trace="overrides#()Z" />
+      <node id="1210676511811" at="32,68,36,5" concept="0" />
+      <node id="1210676536754" at="22,251,27,5" concept="0" />
+      <node id="1210676511811" at="32,0,38,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1210676830240" at="41,0,48,0" concept="9" trace="_quotation_createNode_4fdfzz_a0b0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1210676511811" at="21,0,29,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1210676511811" at="19,51,19,51" />
+      <scope id="1210676511811" at="29,46,30,65" />
+      <scope id="1210676511811" at="38,30,39,17" />
+      <scope id="1210676511811" at="19,0,21,0" />
+      <scope id="1210676511811" at="33,5,35,45">
         <var name="b" id="1210676511811" />
       </scope>
-      <scope id="1210676830240" at="44,30,46,209" />
-      <scope id="1210676536754" at="24,5,27,278">
+      <scope id="1210676830240" at="43,30,45,196" />
+      <scope id="1210676536754" at="23,5,26,278">
         <var name="_info_12389875345" id="1210676536754" />
         <var name="_nodeToCheck_1029348928467" id="1210676536754" />
       </scope>
-      <scope id="1210676511811" at="30,0,33,0" />
-      <scope id="1210676511811" at="39,0,42,0" />
-      <scope id="1210676511811" at="33,68,37,5" />
-      <scope id="1210676830240" at="42,79,47,24">
+      <scope id="1210676511811" at="29,0,32,0" />
+      <scope id="1210676511811" at="38,0,41,0" />
+      <scope id="1210676511811" at="32,68,36,5" />
+      <scope id="1210676830240" at="41,79,46,24">
         <var name="facade" id="1210676830240" />
         <var name="quotedNode_2" id="1210676830240" />
       </scope>
-      <scope id="1210676511812" at="22,124,28,5">
+      <scope id="1210676511812" at="21,124,27,5">
         <var name="concept" id="1210677002369" />
       </scope>
-      <scope id="1210676511811" at="33,0,39,0">
+      <scope id="1210676511811" at="32,0,38,0">
         <var name="argument" id="1210676511811" />
       </scope>
-      <scope id="1210676830240" at="42,0,49,0">
+      <scope id="1210676830240" at="41,0,48,0">
         <var name="parameter_1" id="1210676830240" />
       </scope>
-      <scope id="1210676511811" at="22,0,30,0">
+      <scope id="1210676511811" at="21,0,29,0">
         <var name="nodeToCheck" id="1210676511811" />
         <var name="status" id="1210676511811" />
         <var name="typeCheckingContext" id="1210676511811" />
       </scope>
-      <unit id="1210676511811" at="19,0,50,0" name="jetbrains.mps.lang.test.typesystem.typeof_TestNodeReference_InferenceRule" />
+      <unit id="1210676511811" at="18,0,49,0" name="jetbrains.mps.lang.test.typesystem.typeof_TestNodeReference_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/1211980347427">
     <file name="typeof_AssertMatch_InferenceRule.java">
-      <node id="1211982433132" at="24,7,25,48" concept="7" />
-      <node id="1211982433132" at="25,48,26,196" concept="7" />
-      <node id="1211982433132" at="26,196,27,298" concept="3" />
-      <node id="1211982429078" at="31,7,32,48" concept="7" />
-      <node id="1211982429078" at="32,48,33,196" concept="7" />
-      <node id="1211982429078" at="33,196,34,298" concept="3" />
-      <node id="1214922451305" at="37,5,38,23" concept="7" />
-      <node id="1214922451305" at="38,23,39,22" concept="7" />
-      <node id="1214922451305" at="39,22,40,256" concept="7" />
-      <node id="1214922451305" at="40,256,41,254" concept="7" />
-      <node id="1214922451305" at="43,47,44,16" concept="1" />
-      <node id="1214922451305" at="46,46,47,16" concept="1" />
-      <node id="1214922451305" at="48,9,49,48" concept="3" />
-      <node id="1214922451305" at="49,48,50,46" concept="3" />
-      <node id="1214922658994" at="51,9,52,56" concept="7" />
-      <node id="1214922658994" at="52,56,53,198" concept="7" />
-      <node id="1214922658994" at="53,198,54,377" concept="3" />
-      <node id="1211980347427" at="59,46,60,59" concept="8" />
-      <node id="1211980347427" at="63,5,64,130" concept="7" />
-      <node id="1211980347427" at="64,130,65,45" concept="8" />
-      <node id="1211980347427" at="68,30,69,17" concept="8" />
-      <node id="1211982433137" at="71,63,72,63" concept="7" />
-      <node id="1211982433137" at="72,63,73,30" concept="7" />
-      <node id="1211982433137" at="73,30,74,132" concept="0" />
-      <node id="1211982433137" at="73,30,74,132" concept="0" />
-      <node id="1211982433137" at="73,30,74,132" concept="3" />
-      <node id="1211982433137" at="74,132,75,24" concept="8" />
-      <node id="1211982429083" at="77,63,78,63" concept="7" />
-      <node id="1211982429083" at="78,63,79,30" concept="7" />
-      <node id="1211982429083" at="79,30,80,132" concept="0" />
-      <node id="1211982429083" at="79,30,80,132" concept="0" />
-      <node id="1211982429083" at="79,30,80,132" concept="3" />
-      <node id="1211982429083" at="80,132,81,24" concept="8" />
-      <node id="1211980347427" at="20,0,22,0" concept="2" trace="typeof_AssertMatch_InferenceRule#()V" />
-      <node id="1214922451305" at="42,20,45,9" concept="5" />
-      <node id="1214922451305" at="45,9,48,9" concept="5" />
-      <node id="1211980347427" at="59,0,62,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="1211980347427" at="68,0,71,0" concept="6" trace="overrides#()Z" />
-      <node id="1211980347427" at="62,68,66,5" concept="0" />
-      <node id="1211982433132" at="23,225,28,7" concept="0" />
-      <node id="1211982429078" at="30,224,35,7" concept="0" />
-      <node id="1214922451305" at="50,46,55,9" concept="0" />
-      <node id="1214922658994" at="50,46,55,9" concept="0" />
-      <node id="1211980347427" at="62,0,68,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1211982433137" at="71,0,77,0" concept="9" trace="_quotation_createNode_qwyt5f_a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1211982429083" at="77,0,83,0" concept="9" trace="_quotation_createNode_qwyt5f_a0a0b0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1211980450434" at="22,124,29,5" concept="4" />
-      <node id="1211981351109" at="29,5,36,5" concept="4" />
-      <node id="1214922451305" at="41,254,56,7" concept="10" />
-      <node id="1214922451305" at="36,5,57,5" concept="0" />
-      <node id="1211980347427" at="22,0,59,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="1211980347427" at="20,45,20,45" />
-      <scope id="1214922451305" at="43,47,44,16" />
-      <scope id="1214922451305" at="46,46,47,16" />
-      <scope id="1211980347427" at="59,46,60,59" />
-      <scope id="1211980347427" at="68,30,69,17" />
-      <scope id="1211982433137" at="73,30,74,132" />
-      <scope id="1211982429083" at="79,30,80,132" />
-      <scope id="1211980347427" at="20,0,22,0" />
-      <scope id="1211980347427" at="63,5,65,45">
+      <node id="1211982433132" at="23,7,24,48" concept="7" />
+      <node id="1211982433132" at="24,48,25,196" concept="7" />
+      <node id="1211982433132" at="25,196,26,298" concept="3" />
+      <node id="1211982429078" at="30,7,31,48" concept="7" />
+      <node id="1211982429078" at="31,48,32,196" concept="7" />
+      <node id="1211982429078" at="32,196,33,298" concept="3" />
+      <node id="1214922451305" at="36,5,37,23" concept="7" />
+      <node id="1214922451305" at="37,23,38,22" concept="7" />
+      <node id="1214922451305" at="38,22,39,242" concept="7" />
+      <node id="1214922451305" at="39,242,40,240" concept="7" />
+      <node id="1214922451305" at="42,47,43,16" concept="1" />
+      <node id="1214922451305" at="45,46,46,16" concept="1" />
+      <node id="1214922451305" at="47,9,48,48" concept="3" />
+      <node id="1214922451305" at="48,48,49,46" concept="3" />
+      <node id="1214922658994" at="50,9,51,56" concept="7" />
+      <node id="1214922658994" at="51,56,52,198" concept="7" />
+      <node id="1214922658994" at="52,198,53,377" concept="3" />
+      <node id="1211980347427" at="58,46,59,59" concept="8" />
+      <node id="1211980347427" at="62,5,63,130" concept="7" />
+      <node id="1211980347427" at="63,130,64,45" concept="8" />
+      <node id="1211980347427" at="67,30,68,17" concept="8" />
+      <node id="1211982433137" at="70,63,71,63" concept="7" />
+      <node id="1211982433137" at="71,63,72,30" concept="7" />
+      <node id="1211982433137" at="72,30,73,132" concept="0" />
+      <node id="1211982433137" at="72,30,73,132" concept="0" />
+      <node id="1211982433137" at="72,30,73,132" concept="3" />
+      <node id="1211982433137" at="73,132,74,24" concept="8" />
+      <node id="1211982429083" at="76,63,77,63" concept="7" />
+      <node id="1211982429083" at="77,63,78,30" concept="7" />
+      <node id="1211982429083" at="78,30,79,132" concept="0" />
+      <node id="1211982429083" at="78,30,79,132" concept="0" />
+      <node id="1211982429083" at="78,30,79,132" concept="3" />
+      <node id="1211982429083" at="79,132,80,24" concept="8" />
+      <node id="1211980347427" at="19,0,21,0" concept="2" trace="typeof_AssertMatch_InferenceRule#()V" />
+      <node id="1214922451305" at="41,20,44,9" concept="5" />
+      <node id="1214922451305" at="44,9,47,9" concept="5" />
+      <node id="1211980347427" at="58,0,61,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1211980347427" at="67,0,70,0" concept="6" trace="overrides#()Z" />
+      <node id="1211980347427" at="61,68,65,5" concept="0" />
+      <node id="1211982433132" at="22,211,27,7" concept="0" />
+      <node id="1211982429078" at="29,210,34,7" concept="0" />
+      <node id="1214922451305" at="49,46,54,9" concept="0" />
+      <node id="1214922658994" at="49,46,54,9" concept="0" />
+      <node id="1211980347427" at="61,0,67,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1211982433137" at="70,0,76,0" concept="9" trace="_quotation_createNode_qwyt5f_a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1211982429083" at="76,0,82,0" concept="9" trace="_quotation_createNode_qwyt5f_a0a0b0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1211980450434" at="21,124,28,5" concept="4" />
+      <node id="1211981351109" at="28,5,35,5" concept="4" />
+      <node id="1214922451305" at="40,240,55,7" concept="10" />
+      <node id="1214922451305" at="35,5,56,5" concept="0" />
+      <node id="1211980347427" at="21,0,58,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1211980347427" at="19,45,19,45" />
+      <scope id="1214922451305" at="42,47,43,16" />
+      <scope id="1214922451305" at="45,46,46,16" />
+      <scope id="1211980347427" at="58,46,59,59" />
+      <scope id="1211980347427" at="67,30,68,17" />
+      <scope id="1211982433137" at="72,30,73,132" />
+      <scope id="1211982429083" at="78,30,79,132" />
+      <scope id="1211980347427" at="19,0,21,0" />
+      <scope id="1211980347427" at="62,5,64,45">
         <var name="b" id="1211980347427" />
       </scope>
-      <scope id="1211982433132" at="24,7,27,298">
+      <scope id="1211982433132" at="23,7,26,298">
         <var name="_info_12389875345" id="1211982433132" />
         <var name="_nodeToCheck_1029348928467" id="1211982433132" />
       </scope>
-      <scope id="1211982429078" at="31,7,34,298">
+      <scope id="1211982429078" at="30,7,33,298">
         <var name="_info_12389875345" id="1211982429078" />
         <var name="_nodeToCheck_1029348928467" id="1211982429078" />
       </scope>
-      <scope id="1214922658994" at="51,9,54,377">
+      <scope id="1214922658994" at="50,9,53,377">
         <var name="_info_12389875345" id="1214922658994" />
         <var name="_nodeToCheck_1029348928467" id="1214922658994" />
       </scope>
-      <scope id="1211980347427" at="59,0,62,0" />
-      <scope id="1211980347427" at="68,0,71,0" />
-      <scope id="1211980347427" at="62,68,66,5" />
-      <scope id="1211982433137" at="71,63,75,24">
+      <scope id="1211980347427" at="58,0,61,0" />
+      <scope id="1211980347427" at="67,0,70,0" />
+      <scope id="1211980347427" at="61,68,65,5" />
+      <scope id="1211982433137" at="70,63,74,24">
         <var name="facade" id="1211982433137" />
         <var name="quotedNode_1" id="1211982433137" />
       </scope>
-      <scope id="1211982429083" at="77,63,81,24">
+      <scope id="1211982429083" at="76,63,80,24">
         <var name="facade" id="1211982429083" />
         <var name="quotedNode_1" id="1211982429083" />
       </scope>
-      <scope id="1211980450437" at="23,225,28,7" />
-      <scope id="1211981351114" at="30,224,35,7" />
-      <scope id="1214922451310" at="50,46,55,9" />
-      <scope id="1211980347427" at="62,0,68,0">
+      <scope id="1211980450437" at="22,211,27,7" />
+      <scope id="1211981351114" at="29,210,34,7" />
+      <scope id="1214922451310" at="49,46,54,9" />
+      <scope id="1211980347427" at="61,0,67,0">
         <var name="argument" id="1211980347427" />
       </scope>
-      <scope id="1211982433137" at="71,0,77,0" />
-      <scope id="1211982429083" at="77,0,83,0" />
-      <scope id="1211980450434" at="22,124,29,5">
+      <scope id="1211982433137" at="70,0,76,0" />
+      <scope id="1211982429083" at="76,0,82,0" />
+      <scope id="1211980450434" at="21,124,28,5">
         <var name="node" id="1211980450435" />
       </scope>
-      <scope id="1211981351109" at="29,5,36,5">
+      <scope id="1211981351109" at="28,5,35,5">
         <var name="node" id="1211981351110" />
       </scope>
-      <scope id="1214922451305" at="42,20,55,9" />
-      <scope id="1214922451305" at="37,5,56,7">
+      <scope id="1214922451305" at="41,20,54,9" />
+      <scope id="1214922451305" at="36,5,55,7">
         <var name="nodeAfter" id="1214922621328" />
         <var name="nodeAfter_iterator" id="1214922451305" />
         <var name="nodeBefore" id="1214922451307" />
         <var name="nodeBefore_iterator" id="1214922451305" />
       </scope>
-      <scope id="1211980347428" at="22,124,57,5" />
-      <scope id="1211980347427" at="22,0,59,0">
+      <scope id="1211980347428" at="21,124,56,5" />
+      <scope id="1211980347427" at="21,0,58,0">
         <var name="nodeToCheck" id="1211980347427" />
         <var name="status" id="1211980347427" />
         <var name="typeCheckingContext" id="1211980347427" />
       </scope>
-      <unit id="1211980347427" at="19,0,84,0" name="jetbrains.mps.lang.test.typesystem.typeof_AssertMatch_InferenceRule" />
+      <unit id="1211980347427" at="18,0,83,0" name="jetbrains.mps.lang.test.typesystem.typeof_AssertMatch_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/1217855694003">
     <file name="CheckTestMethodDataflow_NonTypesystemRule.java">
-      <node id="1223643137089" at="19,128,20,230" concept="3" />
-      <node id="1217855694003" at="22,46,23,63" concept="8" />
-      <node id="1217855694003" at="26,5,27,130" concept="7" />
-      <node id="1217855694003" at="27,130,28,45" concept="8" />
-      <node id="1217855694003" at="31,30,32,17" concept="8" />
-      <node id="1217855694003" at="17,0,19,0" concept="2" trace="CheckTestMethodDataflow_NonTypesystemRule#()V" />
-      <node id="1217855694003" at="19,0,22,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <node id="1217855694003" at="22,0,25,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="1217855694003" at="31,0,34,0" concept="6" trace="overrides#()Z" />
-      <node id="1217855694003" at="25,68,29,5" concept="0" />
-      <node id="1217855694003" at="25,0,31,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <scope id="1217855694003" at="17,54,17,54" />
-      <scope id="1217855694004" at="19,128,20,230" />
-      <scope id="1217855694003" at="22,46,23,63" />
-      <scope id="1217855694003" at="31,30,32,17" />
-      <scope id="1217855694003" at="17,0,19,0" />
-      <scope id="1217855694003" at="26,5,28,45">
+      <node id="1223643137089" at="18,128,19,215" concept="3" />
+      <node id="1217855694003" at="21,46,22,63" concept="8" />
+      <node id="1217855694003" at="25,5,26,130" concept="7" />
+      <node id="1217855694003" at="26,130,27,45" concept="8" />
+      <node id="1217855694003" at="30,30,31,17" concept="8" />
+      <node id="1217855694003" at="16,0,18,0" concept="2" trace="CheckTestMethodDataflow_NonTypesystemRule#()V" />
+      <node id="1217855694003" at="18,0,21,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="1217855694003" at="21,0,24,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1217855694003" at="30,0,33,0" concept="6" trace="overrides#()Z" />
+      <node id="1217855694003" at="24,68,28,5" concept="0" />
+      <node id="1217855694003" at="24,0,30,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <scope id="1217855694003" at="16,54,16,54" />
+      <scope id="1217855694004" at="18,128,19,215" />
+      <scope id="1217855694003" at="21,46,22,63" />
+      <scope id="1217855694003" at="30,30,31,17" />
+      <scope id="1217855694003" at="16,0,18,0" />
+      <scope id="1217855694003" at="25,5,27,45">
         <var name="b" id="1217855694003" />
       </scope>
-      <scope id="1217855694003" at="19,0,22,0">
+      <scope id="1217855694003" at="18,0,21,0">
         <var name="nodesTestMethod" id="1217855694003" />
         <var name="status" id="1217855694003" />
         <var name="typeCheckingContext" id="1217855694003" />
       </scope>
-      <scope id="1217855694003" at="22,0,25,0" />
-      <scope id="1217855694003" at="31,0,34,0" />
-      <scope id="1217855694003" at="25,68,29,5" />
-      <scope id="1217855694003" at="25,0,31,0">
+      <scope id="1217855694003" at="21,0,24,0" />
+      <scope id="1217855694003" at="30,0,33,0" />
+      <scope id="1217855694003" at="24,68,28,5" />
+      <scope id="1217855694003" at="24,0,30,0">
         <var name="argument" id="1217855694003" />
       </scope>
-      <unit id="1217855694003" at="16,0,35,0" name="jetbrains.mps.lang.test.typesystem.CheckTestMethodDataflow_NonTypesystemRule" />
+      <unit id="1217855694003" at="15,0,34,0" name="jetbrains.mps.lang.test.typesystem.CheckTestMethodDataflow_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/1225984593084">
     <file name="typeof_EditorExpression_InferenceRule.java">
-      <node id="1225984944721" at="21,5,22,52" concept="7" />
-      <node id="1225984944721" at="22,52,23,194" concept="7" />
-      <node id="1225984944721" at="23,194,24,271" concept="3" />
-      <node id="1225984593084" at="27,46,28,64" concept="8" />
-      <node id="1225984593084" at="31,5,32,130" concept="7" />
-      <node id="1225984593084" at="32,130,33,45" concept="8" />
-      <node id="1225984593084" at="36,30,37,17" concept="8" />
-      <node id="1225985126098" at="39,61,40,63" concept="7" />
-      <node id="1225985126098" at="40,63,41,30" concept="7" />
-      <node id="1225985126098" at="41,30,42,138" concept="3" />
-      <node id="1225985126098" at="42,138,43,569" concept="3" />
-      <node id="1225985126098" at="43,569,44,24" concept="8" />
-      <node id="1225984593084" at="18,0,20,0" concept="2" trace="typeof_EditorExpression_InferenceRule#()V" />
-      <node id="1225985126098" at="41,30,43,569" concept="0" />
-      <node id="1225985126098" at="41,30,43,569" concept="0" />
-      <node id="1225984593084" at="27,0,30,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="1225984593084" at="36,0,39,0" concept="6" trace="overrides#()Z" />
-      <node id="1225984593084" at="30,68,34,5" concept="0" />
-      <node id="1225984944721" at="20,123,25,5" concept="0" />
-      <node id="1225984593084" at="30,0,36,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1225984593084" at="20,0,27,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <node id="1225985126098" at="39,0,46,0" concept="9" trace="_quotation_createNode_a3jan8_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1225984593084" at="18,50,18,50" />
-      <scope id="1225984593084" at="27,46,28,64" />
-      <scope id="1225984593084" at="36,30,37,17" />
-      <scope id="1225984593084" at="18,0,20,0" />
-      <scope id="1225984593084" at="31,5,33,45">
+      <node id="1225984944721" at="20,5,21,52" concept="7" />
+      <node id="1225984944721" at="21,52,22,194" concept="7" />
+      <node id="1225984944721" at="22,194,23,271" concept="3" />
+      <node id="1225984593084" at="26,46,27,64" concept="8" />
+      <node id="1225984593084" at="30,5,31,130" concept="7" />
+      <node id="1225984593084" at="31,130,32,45" concept="8" />
+      <node id="1225984593084" at="35,30,36,17" concept="8" />
+      <node id="1225985126098" at="38,61,39,63" concept="7" />
+      <node id="1225985126098" at="39,63,40,30" concept="7" />
+      <node id="1225985126098" at="40,30,41,138" concept="3" />
+      <node id="1225985126098" at="41,138,42,543" concept="3" />
+      <node id="1225985126098" at="42,543,43,24" concept="8" />
+      <node id="1225984593084" at="17,0,19,0" concept="2" trace="typeof_EditorExpression_InferenceRule#()V" />
+      <node id="1225985126098" at="40,30,42,543" concept="0" />
+      <node id="1225985126098" at="40,30,42,543" concept="0" />
+      <node id="1225984593084" at="26,0,29,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1225984593084" at="35,0,38,0" concept="6" trace="overrides#()Z" />
+      <node id="1225984593084" at="29,68,33,5" concept="0" />
+      <node id="1225984944721" at="19,123,24,5" concept="0" />
+      <node id="1225984593084" at="29,0,35,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1225984593084" at="19,0,26,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="1225985126098" at="38,0,45,0" concept="9" trace="_quotation_createNode_a3jan8_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1225984593084" at="17,50,17,50" />
+      <scope id="1225984593084" at="26,46,27,64" />
+      <scope id="1225984593084" at="35,30,36,17" />
+      <scope id="1225984593084" at="17,0,19,0" />
+      <scope id="1225984593084" at="30,5,32,45">
         <var name="b" id="1225984593084" />
       </scope>
-      <scope id="1225985126098" at="41,30,43,569" />
-      <scope id="1225984944721" at="21,5,24,271">
+      <scope id="1225985126098" at="40,30,42,543" />
+      <scope id="1225984944721" at="20,5,23,271">
         <var name="_info_12389875345" id="1225984944721" />
         <var name="_nodeToCheck_1029348928467" id="1225984944721" />
       </scope>
-      <scope id="1225984593084" at="27,0,30,0" />
-      <scope id="1225984593084" at="36,0,39,0" />
-      <scope id="1225984593084" at="30,68,34,5" />
-      <scope id="1225984593085" at="20,123,25,5" />
-      <scope id="1225985126098" at="39,61,44,24">
+      <scope id="1225984593084" at="26,0,29,0" />
+      <scope id="1225984593084" at="35,0,38,0" />
+      <scope id="1225984593084" at="29,68,33,5" />
+      <scope id="1225984593085" at="19,123,24,5" />
+      <scope id="1225985126098" at="38,61,43,24">
         <var name="facade" id="1225985126098" />
         <var name="quotedNode_1" id="1225985126098" />
       </scope>
-      <scope id="1225984593084" at="30,0,36,0">
+      <scope id="1225984593084" at="29,0,35,0">
         <var name="argument" id="1225984593084" />
       </scope>
-      <scope id="1225984593084" at="20,0,27,0">
+      <scope id="1225984593084" at="19,0,26,0">
         <var name="expression" id="1225984593084" />
         <var name="status" id="1225984593084" />
         <var name="typeCheckingContext" id="1225984593084" />
       </scope>
-      <scope id="1225985126098" at="39,0,46,0" />
-      <unit id="1225984593084" at="17,0,47,0" name="jetbrains.mps.lang.test.typesystem.typeof_EditorExpression_InferenceRule" />
+      <scope id="1225985126098" at="38,0,45,0" />
+      <unit id="1225984593084" at="16,0,46,0" name="jetbrains.mps.lang.test.typesystem.typeof_EditorExpression_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/1228148619872">
     <file name="typeof_ModelExpression_InferenceRule.java">
-      <node id="1228148726945" at="21,5,22,52" concept="7" />
-      <node id="1228148726945" at="22,52,23,194" concept="7" />
-      <node id="1228148726945" at="23,194,24,295" concept="3" />
-      <node id="1228148619872" at="27,46,28,63" concept="8" />
-      <node id="1228148619872" at="31,5,32,130" concept="7" />
-      <node id="1228148619872" at="32,130,33,45" concept="8" />
-      <node id="1228148619872" at="36,30,37,17" concept="8" />
-      <node id="1228148731340" at="39,61,40,63" concept="7" />
-      <node id="1228148731340" at="40,63,41,30" concept="7" />
-      <node id="1228148731340" at="41,30,42,138" concept="3" />
-      <node id="1228148731340" at="42,138,43,576" concept="3" />
-      <node id="1228148731340" at="43,576,44,24" concept="8" />
-      <node id="1228148619872" at="18,0,20,0" concept="2" trace="typeof_ModelExpression_InferenceRule#()V" />
-      <node id="1228148731340" at="41,30,43,576" concept="0" />
-      <node id="1228148731340" at="41,30,43,576" concept="0" />
-      <node id="1228148619872" at="27,0,30,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="1228148619872" at="36,0,39,0" concept="6" trace="overrides#()Z" />
-      <node id="1228148619872" at="30,68,34,5" concept="0" />
-      <node id="1228148726945" at="20,123,25,5" concept="0" />
-      <node id="1228148619872" at="30,0,36,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1228148619872" at="20,0,27,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <node id="1228148731340" at="39,0,46,0" concept="9" trace="_quotation_createNode_1hffo4_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1228148619872" at="18,49,18,49" />
-      <scope id="1228148619872" at="27,46,28,63" />
-      <scope id="1228148619872" at="36,30,37,17" />
-      <scope id="1228148619872" at="18,0,20,0" />
-      <scope id="1228148619872" at="31,5,33,45">
+      <node id="1228148726945" at="20,5,21,52" concept="7" />
+      <node id="1228148726945" at="21,52,22,194" concept="7" />
+      <node id="1228148726945" at="22,194,23,295" concept="3" />
+      <node id="1228148619872" at="26,46,27,63" concept="8" />
+      <node id="1228148619872" at="30,5,31,130" concept="7" />
+      <node id="1228148619872" at="31,130,32,45" concept="8" />
+      <node id="1228148619872" at="35,30,36,17" concept="8" />
+      <node id="1228148731340" at="38,61,39,63" concept="7" />
+      <node id="1228148731340" at="39,63,40,30" concept="7" />
+      <node id="1228148731340" at="40,30,41,138" concept="3" />
+      <node id="1228148731340" at="41,138,42,550" concept="3" />
+      <node id="1228148731340" at="42,550,43,24" concept="8" />
+      <node id="1228148619872" at="17,0,19,0" concept="2" trace="typeof_ModelExpression_InferenceRule#()V" />
+      <node id="1228148731340" at="40,30,42,550" concept="0" />
+      <node id="1228148731340" at="40,30,42,550" concept="0" />
+      <node id="1228148619872" at="26,0,29,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1228148619872" at="35,0,38,0" concept="6" trace="overrides#()Z" />
+      <node id="1228148619872" at="29,68,33,5" concept="0" />
+      <node id="1228148726945" at="19,123,24,5" concept="0" />
+      <node id="1228148619872" at="29,0,35,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1228148619872" at="19,0,26,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="1228148731340" at="38,0,45,0" concept="9" trace="_quotation_createNode_1hffo4_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1228148619872" at="17,49,17,49" />
+      <scope id="1228148619872" at="26,46,27,63" />
+      <scope id="1228148619872" at="35,30,36,17" />
+      <scope id="1228148619872" at="17,0,19,0" />
+      <scope id="1228148619872" at="30,5,32,45">
         <var name="b" id="1228148619872" />
       </scope>
-      <scope id="1228148731340" at="41,30,43,576" />
-      <scope id="1228148726945" at="21,5,24,295">
+      <scope id="1228148731340" at="40,30,42,550" />
+      <scope id="1228148726945" at="20,5,23,295">
         <var name="_info_12389875345" id="1228148726945" />
         <var name="_nodeToCheck_1029348928467" id="1228148726945" />
       </scope>
-      <scope id="1228148619872" at="27,0,30,0" />
-      <scope id="1228148619872" at="36,0,39,0" />
-      <scope id="1228148619872" at="30,68,34,5" />
-      <scope id="1228148619873" at="20,123,25,5" />
-      <scope id="1228148731340" at="39,61,44,24">
+      <scope id="1228148619872" at="26,0,29,0" />
+      <scope id="1228148619872" at="35,0,38,0" />
+      <scope id="1228148619872" at="29,68,33,5" />
+      <scope id="1228148619873" at="19,123,24,5" />
+      <scope id="1228148731340" at="38,61,43,24">
         <var name="facade" id="1228148731340" />
         <var name="quotedNode_1" id="1228148731340" />
       </scope>
-      <scope id="1228148619872" at="30,0,36,0">
+      <scope id="1228148619872" at="29,0,35,0">
         <var name="argument" id="1228148619872" />
       </scope>
-      <scope id="1228148619872" at="20,0,27,0">
+      <scope id="1228148619872" at="19,0,26,0">
         <var name="expression" id="1228148619872" />
         <var name="status" id="1228148619872" />
         <var name="typeCheckingContext" id="1228148619872" />
       </scope>
-      <scope id="1228148731340" at="39,0,46,0" />
-      <unit id="1228148619872" at="17,0,47,0" name="jetbrains.mps.lang.test.typesystem.typeof_ModelExpression_InferenceRule" />
+      <scope id="1228148731340" at="38,0,45,0" />
+      <unit id="1228148619872" at="16,0,46,0" name="jetbrains.mps.lang.test.typesystem.typeof_ModelExpression_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/1228148844375">
     <file name="typeof_ProjectExpression_InferenceRule.java">
-      <node id="1229343523390" at="21,5,22,52" concept="7" />
-      <node id="1229343523390" at="22,52,23,194" concept="7" />
-      <node id="1229343523390" at="23,194,24,271" concept="3" />
-      <node id="1228148844375" at="27,46,28,65" concept="8" />
-      <node id="1228148844375" at="31,5,32,130" concept="7" />
-      <node id="1228148844375" at="32,130,33,45" concept="8" />
-      <node id="1228148844375" at="36,30,37,17" concept="8" />
-      <node id="1229343523395" at="39,61,40,63" concept="7" />
-      <node id="1229343523395" at="40,63,41,30" concept="7" />
-      <node id="1229343523395" at="41,30,42,138" concept="3" />
-      <node id="1229343523395" at="42,138,43,554" concept="3" />
-      <node id="1229343523395" at="43,554,44,24" concept="8" />
-      <node id="1228148844375" at="18,0,20,0" concept="2" trace="typeof_ProjectExpression_InferenceRule#()V" />
-      <node id="1229343523395" at="41,30,43,554" concept="0" />
-      <node id="1229343523395" at="41,30,43,554" concept="0" />
-      <node id="1228148844375" at="27,0,30,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="1228148844375" at="36,0,39,0" concept="6" trace="overrides#()Z" />
-      <node id="1228148844375" at="30,68,34,5" concept="0" />
-      <node id="1229343523390" at="20,123,25,5" concept="0" />
-      <node id="1228148844375" at="30,0,36,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1228148844375" at="20,0,27,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <node id="1229343523395" at="39,0,46,0" concept="9" trace="_quotation_createNode_osiggc_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1228148844375" at="18,51,18,51" />
-      <scope id="1228148844375" at="27,46,28,65" />
-      <scope id="1228148844375" at="36,30,37,17" />
-      <scope id="1228148844375" at="18,0,20,0" />
-      <scope id="1228148844375" at="31,5,33,45">
+      <node id="1229343523390" at="20,5,21,52" concept="7" />
+      <node id="1229343523390" at="21,52,22,194" concept="7" />
+      <node id="1229343523390" at="22,194,23,271" concept="3" />
+      <node id="1228148844375" at="26,46,27,65" concept="8" />
+      <node id="1228148844375" at="30,5,31,130" concept="7" />
+      <node id="1228148844375" at="31,130,32,45" concept="8" />
+      <node id="1228148844375" at="35,30,36,17" concept="8" />
+      <node id="1229343523395" at="38,61,39,63" concept="7" />
+      <node id="1229343523395" at="39,63,40,30" concept="7" />
+      <node id="1229343523395" at="40,30,41,138" concept="3" />
+      <node id="1229343523395" at="41,138,42,528" concept="3" />
+      <node id="1229343523395" at="42,528,43,24" concept="8" />
+      <node id="1228148844375" at="17,0,19,0" concept="2" trace="typeof_ProjectExpression_InferenceRule#()V" />
+      <node id="1229343523395" at="40,30,42,528" concept="0" />
+      <node id="1229343523395" at="40,30,42,528" concept="0" />
+      <node id="1228148844375" at="26,0,29,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1228148844375" at="35,0,38,0" concept="6" trace="overrides#()Z" />
+      <node id="1228148844375" at="29,68,33,5" concept="0" />
+      <node id="1229343523390" at="19,123,24,5" concept="0" />
+      <node id="1228148844375" at="29,0,35,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1228148844375" at="19,0,26,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="1229343523395" at="38,0,45,0" concept="9" trace="_quotation_createNode_osiggc_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1228148844375" at="17,51,17,51" />
+      <scope id="1228148844375" at="26,46,27,65" />
+      <scope id="1228148844375" at="35,30,36,17" />
+      <scope id="1228148844375" at="17,0,19,0" />
+      <scope id="1228148844375" at="30,5,32,45">
         <var name="b" id="1228148844375" />
       </scope>
-      <scope id="1229343523395" at="41,30,43,554" />
-      <scope id="1229343523390" at="21,5,24,271">
+      <scope id="1229343523395" at="40,30,42,528" />
+      <scope id="1229343523390" at="20,5,23,271">
         <var name="_info_12389875345" id="1229343523390" />
         <var name="_nodeToCheck_1029348928467" id="1229343523390" />
       </scope>
-      <scope id="1228148844375" at="27,0,30,0" />
-      <scope id="1228148844375" at="36,0,39,0" />
-      <scope id="1228148844375" at="30,68,34,5" />
-      <scope id="1228148844376" at="20,123,25,5" />
-      <scope id="1229343523395" at="39,61,44,24">
+      <scope id="1228148844375" at="26,0,29,0" />
+      <scope id="1228148844375" at="35,0,38,0" />
+      <scope id="1228148844375" at="29,68,33,5" />
+      <scope id="1228148844376" at="19,123,24,5" />
+      <scope id="1229343523395" at="38,61,43,24">
         <var name="facade" id="1229343523395" />
         <var name="quotedNode_1" id="1229343523395" />
       </scope>
-      <scope id="1228148844375" at="30,0,36,0">
+      <scope id="1228148844375" at="29,0,35,0">
         <var name="argument" id="1228148844375" />
       </scope>
-      <scope id="1228148844375" at="20,0,27,0">
+      <scope id="1228148844375" at="19,0,26,0">
         <var name="expression" id="1228148844375" />
         <var name="status" id="1228148844375" />
         <var name="typeCheckingContext" id="1228148844375" />
       </scope>
-      <scope id="1229343523395" at="39,0,46,0" />
-      <unit id="1228148844375" at="17,0,47,0" name="jetbrains.mps.lang.test.typesystem.typeof_ProjectExpression_InferenceRule" />
+      <scope id="1229343523395" at="38,0,45,0" />
+      <unit id="1228148844375" at="16,0,46,0" name="jetbrains.mps.lang.test.typesystem.typeof_ProjectExpression_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/1558359368029368063">
     <file name="check_ITestCase_And_TestInfo_NonTypesystemRule.java">
-      <node id="1558359368029368278" at="26,7,27,60" concept="7" />
-      <node id="1558359368029368278" at="27,60,28,326" concept="7" />
-      <node id="1558359368029368063" at="32,46,33,69" concept="8" />
-      <node id="1558359368029368063" at="36,5,37,130" concept="7" />
-      <node id="1558359368029368063" at="37,130,38,45" concept="8" />
-      <node id="1558359368029368063" at="41,30,42,17" concept="8" />
-      <node id="1558359368029368063" at="22,0,24,0" concept="2" trace="check_ITestCase_And_TestInfo_NonTypesystemRule#()V" />
-      <node id="1558359368029368063" at="32,0,35,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="1558359368029368063" at="41,0,44,0" concept="6" trace="overrides#()Z" />
-      <node id="1558359368029368278" at="25,385,29,7" concept="0" />
-      <node id="1558359368029368063" at="35,68,39,5" concept="0" />
-      <node id="1558359368029335913" at="24,122,30,5" concept="5" />
-      <node id="1558359368029368063" at="35,0,41,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1558359368029368063" at="24,0,32,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="1558359368029368063" at="22,59,22,59" />
-      <scope id="1558359368029368063" at="32,46,33,69" />
-      <scope id="1558359368029368063" at="41,30,42,17" />
-      <scope id="1558359368029368063" at="22,0,24,0" />
-      <scope id="1558359368029368278" at="26,7,28,326">
+      <node id="1558359368029368278" at="25,7,26,60" concept="7" />
+      <node id="1558359368029368278" at="26,60,27,326" concept="7" />
+      <node id="1558359368029368063" at="31,46,32,69" concept="8" />
+      <node id="1558359368029368063" at="35,5,36,130" concept="7" />
+      <node id="1558359368029368063" at="36,130,37,45" concept="8" />
+      <node id="1558359368029368063" at="40,30,41,17" concept="8" />
+      <node id="1558359368029368063" at="21,0,23,0" concept="2" trace="check_ITestCase_And_TestInfo_NonTypesystemRule#()V" />
+      <node id="1558359368029368063" at="31,0,34,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1558359368029368063" at="40,0,43,0" concept="6" trace="overrides#()Z" />
+      <node id="1558359368029368278" at="24,370,28,7" concept="0" />
+      <node id="1558359368029368063" at="34,68,38,5" concept="0" />
+      <node id="1558359368029335913" at="23,122,29,5" concept="5" />
+      <node id="1558359368029368063" at="34,0,40,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1558359368029368063" at="23,0,31,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1558359368029368063" at="21,59,21,59" />
+      <scope id="1558359368029368063" at="31,46,32,69" />
+      <scope id="1558359368029368063" at="40,30,41,17" />
+      <scope id="1558359368029368063" at="21,0,23,0" />
+      <scope id="1558359368029368278" at="25,7,27,326">
         <var name="_reporter_2309309498" id="1558359368029368278" />
         <var name="errorTarget" id="1558359368029368278" />
       </scope>
-      <scope id="1558359368029368063" at="36,5,38,45">
+      <scope id="1558359368029368063" at="35,5,37,45">
         <var name="b" id="1558359368029368063" />
       </scope>
-      <scope id="1558359368029368063" at="32,0,35,0" />
-      <scope id="1558359368029368063" at="41,0,44,0" />
-      <scope id="1558359368029335915" at="25,385,29,7" />
-      <scope id="1558359368029368063" at="35,68,39,5" />
-      <scope id="1558359368029368064" at="24,122,30,5" />
-      <scope id="1558359368029368063" at="35,0,41,0">
+      <scope id="1558359368029368063" at="31,0,34,0" />
+      <scope id="1558359368029368063" at="40,0,43,0" />
+      <scope id="1558359368029335915" at="24,370,28,7" />
+      <scope id="1558359368029368063" at="34,68,38,5" />
+      <scope id="1558359368029368064" at="23,122,29,5" />
+      <scope id="1558359368029368063" at="34,0,40,0">
         <var name="argument" id="1558359368029368063" />
       </scope>
-      <scope id="1558359368029368063" at="24,0,32,0">
+      <scope id="1558359368029368063" at="23,0,31,0">
         <var name="iTestCase" id="1558359368029368063" />
         <var name="status" id="1558359368029368063" />
         <var name="typeCheckingContext" id="1558359368029368063" />
       </scope>
-      <unit id="1558359368029368063" at="21,0,45,0" name="jetbrains.mps.lang.test.typesystem.check_ITestCase_And_TestInfo_NonTypesystemRule" />
+      <unit id="1558359368029368063" at="20,0,44,0" name="jetbrains.mps.lang.test.typesystem.check_ITestCase_And_TestInfo_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/4196004291146422140">
@@ -485,58 +485,58 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)/5773579205430173663">
     <file name="typeof_EditorComponentExpression_InferenceRule.java">
-      <node id="5773579205430190112" at="21,5,22,52" concept="7" />
-      <node id="5773579205430190112" at="22,52,23,200" concept="7" />
-      <node id="5773579205430190112" at="23,200,24,277" concept="3" />
-      <node id="5773579205430173663" at="27,46,28,73" concept="8" />
-      <node id="5773579205430173663" at="31,5,32,130" concept="7" />
-      <node id="5773579205430173663" at="32,130,33,45" concept="8" />
-      <node id="5773579205430173663" at="36,30,37,17" concept="8" />
-      <node id="5773579205430190114" at="39,61,40,63" concept="7" />
-      <node id="5773579205430190114" at="40,63,41,30" concept="7" />
-      <node id="5773579205430190114" at="41,30,42,138" concept="3" />
-      <node id="5773579205430190114" at="42,138,43,570" concept="3" />
-      <node id="5773579205430190114" at="43,570,44,24" concept="8" />
-      <node id="5773579205430173663" at="18,0,20,0" concept="2" trace="typeof_EditorComponentExpression_InferenceRule#()V" />
-      <node id="5773579205430190114" at="41,30,43,570" concept="0" />
-      <node id="5773579205430190114" at="41,30,43,570" concept="0" />
-      <node id="5773579205430173663" at="27,0,30,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="5773579205430173663" at="36,0,39,0" concept="6" trace="overrides#()Z" />
-      <node id="5773579205430173663" at="30,68,34,5" concept="0" />
-      <node id="5773579205430190112" at="20,123,25,5" concept="0" />
-      <node id="5773579205430173663" at="30,0,36,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="5773579205430173663" at="20,0,27,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <node id="5773579205430190114" at="39,0,46,0" concept="9" trace="_quotation_createNode_1lf6x4_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="5773579205430173663" at="18,59,18,59" />
-      <scope id="5773579205430173663" at="27,46,28,73" />
-      <scope id="5773579205430173663" at="36,30,37,17" />
-      <scope id="5773579205430173663" at="18,0,20,0" />
-      <scope id="5773579205430173663" at="31,5,33,45">
+      <node id="5773579205430190112" at="20,5,21,52" concept="7" />
+      <node id="5773579205430190112" at="21,52,22,200" concept="7" />
+      <node id="5773579205430190112" at="22,200,23,277" concept="3" />
+      <node id="5773579205430173663" at="26,46,27,73" concept="8" />
+      <node id="5773579205430173663" at="30,5,31,130" concept="7" />
+      <node id="5773579205430173663" at="31,130,32,45" concept="8" />
+      <node id="5773579205430173663" at="35,30,36,17" concept="8" />
+      <node id="5773579205430190114" at="38,61,39,63" concept="7" />
+      <node id="5773579205430190114" at="39,63,40,30" concept="7" />
+      <node id="5773579205430190114" at="40,30,41,138" concept="3" />
+      <node id="5773579205430190114" at="41,138,42,544" concept="3" />
+      <node id="5773579205430190114" at="42,544,43,24" concept="8" />
+      <node id="5773579205430173663" at="17,0,19,0" concept="2" trace="typeof_EditorComponentExpression_InferenceRule#()V" />
+      <node id="5773579205430190114" at="40,30,42,544" concept="0" />
+      <node id="5773579205430190114" at="40,30,42,544" concept="0" />
+      <node id="5773579205430173663" at="26,0,29,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="5773579205430173663" at="35,0,38,0" concept="6" trace="overrides#()Z" />
+      <node id="5773579205430173663" at="29,68,33,5" concept="0" />
+      <node id="5773579205430190112" at="19,123,24,5" concept="0" />
+      <node id="5773579205430173663" at="29,0,35,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5773579205430173663" at="19,0,26,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="5773579205430190114" at="38,0,45,0" concept="9" trace="_quotation_createNode_1lf6x4_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="5773579205430173663" at="17,59,17,59" />
+      <scope id="5773579205430173663" at="26,46,27,73" />
+      <scope id="5773579205430173663" at="35,30,36,17" />
+      <scope id="5773579205430173663" at="17,0,19,0" />
+      <scope id="5773579205430173663" at="30,5,32,45">
         <var name="b" id="5773579205430173663" />
       </scope>
-      <scope id="5773579205430190114" at="41,30,43,570" />
-      <scope id="5773579205430190112" at="21,5,24,277">
+      <scope id="5773579205430190114" at="40,30,42,544" />
+      <scope id="5773579205430190112" at="20,5,23,277">
         <var name="_info_12389875345" id="5773579205430190112" />
         <var name="_nodeToCheck_1029348928467" id="5773579205430190112" />
       </scope>
-      <scope id="5773579205430173663" at="27,0,30,0" />
-      <scope id="5773579205430173663" at="36,0,39,0" />
-      <scope id="5773579205430173663" at="30,68,34,5" />
-      <scope id="5773579205430173664" at="20,123,25,5" />
-      <scope id="5773579205430190114" at="39,61,44,24">
+      <scope id="5773579205430173663" at="26,0,29,0" />
+      <scope id="5773579205430173663" at="35,0,38,0" />
+      <scope id="5773579205430173663" at="29,68,33,5" />
+      <scope id="5773579205430173664" at="19,123,24,5" />
+      <scope id="5773579205430190114" at="38,61,43,24">
         <var name="facade" id="5773579205430190114" />
         <var name="quotedNode_1" id="5773579205430190114" />
       </scope>
-      <scope id="5773579205430173663" at="30,0,36,0">
+      <scope id="5773579205430173663" at="29,0,35,0">
         <var name="argument" id="5773579205430173663" />
       </scope>
-      <scope id="5773579205430173663" at="20,0,27,0">
+      <scope id="5773579205430173663" at="19,0,26,0">
         <var name="expression" id="5773579205430173663" />
         <var name="status" id="5773579205430173663" />
         <var name="typeCheckingContext" id="5773579205430173663" />
       </scope>
-      <scope id="5773579205430190114" at="39,0,46,0" />
-      <unit id="5773579205430173663" at="17,0,47,0" name="jetbrains.mps.lang.test.typesystem.typeof_EditorComponentExpression_InferenceRule" />
+      <scope id="5773579205430190114" at="38,0,45,0" />
+      <unit id="5773579205430173663" at="16,0,46,0" name="jetbrains.mps.lang.test.typesystem.typeof_EditorComponentExpression_InferenceRule" />
     </file>
   </root>
 </debug-info>

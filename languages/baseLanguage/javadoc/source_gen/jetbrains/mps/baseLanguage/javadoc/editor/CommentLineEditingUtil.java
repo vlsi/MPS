@@ -6,13 +6,12 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class CommentLineEditingUtil {
   public static void insertLine(EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();
-    SNode commentLinePart = SNodeOperations.as(selectedNode, MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"));
+    SNode commentLinePart = SNodeOperations.as(selectedNode, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"));
     if (commentLinePart == null) {
       return;
     }

@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class ImplementingClasses_Finder extends GeneratedFinder {
@@ -46,15 +45,15 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
       }
       // 
       for (SNode interfaceNode : derivedInterfacesUsages) {
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(interfaceNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(interfaceNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
           // class implements interface case 
-          if (SNodeOperations.hasRole(interfaceNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface"))) {
+          if (SNodeOperations.hasRole(interfaceNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))) {
             ListSequence.fromList(_results).addElement(SNodeOperations.getParent(interfaceNode));
             for (SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(interfaceNode), scope, monitor.subTask(1)))) {
               ListSequence.fromList(_results).addElement(classNode);
             }
           }
-        } else if (SNodeOperations.isInstanceOf(interfaceNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+        } else if (SNodeOperations.isInstanceOf(interfaceNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
           // anonymous class case 
           ListSequence.fromList(_results).addElement(interfaceNode);
         }

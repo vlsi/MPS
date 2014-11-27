@@ -5,7 +5,6 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -17,27 +16,27 @@ public class LambdaExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getOuterApplication_1308935328408190993(SNode thisNode) {
-    if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")) && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")), MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, 4022026349914762720l, "function")) == thisNode)) && SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"))) {
-      return SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"));
+    if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")) && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")), MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, 0x37d11ba7d7ee2de0L, "function")) == thisNode)) && SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"))) {
+      return SNodeOperations.cast(thisNode, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"));
 
-    } else if (SNodeOperations.getParent(thisNode) != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4939219901991602079l, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"))) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349915669385l, "jetbrains.mps.samples.lambdaCalculus.structure.Program")))) {
-      return LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914659049l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")));
+    } else if (SNodeOperations.getParent(thisNode) != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edbfc79fL, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"))) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7fc0389L, "jetbrains.mps.samples.lambdaCalculus.structure.Program")))) {
+      return LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")));
     }
     return null;
   }
   public static boolean call_hasParameterRefs_7397484091645986293(SNode thisNode) {
     SNode node = thisNode;
     node = SNodeOperations.getParent(node);
-    while (node != null && !((SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727759l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")) && !(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727759l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")), "virtual_getVariables_8981808925914841576", new Object[]{})).contains(SNodeOperations.as(thisNode, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727954l, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"))))))) {
+    while (node != null && !((SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")) && !(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")), "virtual_getVariables_8981808925914841576", new Object[]{})).contains(SNodeOperations.as(thisNode, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b12L, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"))))))) {
       node = SNodeOperations.getParent(node);
     }
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4939219901991602079l, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"))) {
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edbfc79fL, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"))) {
       return true;
     }
-    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914659049l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")))) {
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")))) {
       return false;
     }
-    return LambdaExpression_Behavior.call_isInFull_7347119454575591465(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914659049l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")));
+    return LambdaExpression_Behavior.call_isInFull_7347119454575591465(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")));
   }
   public static boolean call_isInFull_7347119454575591465(SNode thisNode) {
     SNode appl = LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(thisNode);
@@ -47,12 +46,12 @@ public class LambdaExpression_Behavior {
     return LambdaApplication_Behavior.call_isFullApplication_1308935328408190838(LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(thisNode));
   }
   public static List<SNode> call_getOuterVariables_5249919352014727828(SNode thisNode) {
-    List<SNode> allVar = SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727954l, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"), false, new SAbstractConcept[]{});
-    List<SNode> allRef = SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"), false, new SAbstractConcept[]{});
+    List<SNode> allVar = SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b12L, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"), false, new SAbstractConcept[]{});
+    List<SNode> allRef = SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"), false, new SAbstractConcept[]{});
     List<SNode> result = new ArrayList<SNode>();
     for (SNode ref : allRef) {
-      if (!(ListSequence.fromList(allVar).contains(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable")))) && !(ListSequence.fromList(result).contains(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable"))))) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable")));
+      if (!(ListSequence.fromList(allVar).contains(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L, "variable")))) && !(ListSequence.fromList(result).contains(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L, "variable"))))) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L, "variable")));
       }
     }
     return result;

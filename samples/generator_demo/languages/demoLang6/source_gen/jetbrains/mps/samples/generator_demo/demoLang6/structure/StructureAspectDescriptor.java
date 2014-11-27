@@ -6,15 +6,14 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptButton = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", MetaIdFactory.conceptId(new UUID(-9008477858049602728L, -6814456189104365393L), 3978102045101855363L)).super_("jetbrains.mps.sampleXML.structure.ElementPart").super_(MetaIdFactory.conceptId(new UUID(8588203744004229367L, -8746957436642952050L), 1225239603390L)).parents("jetbrains.mps.sampleXML.structure.ElementPart").parentIds(MetaIdFactory.conceptId(new UUID(8588203744004229367L, -8746957436642952050L), 1225239603390L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3978102045101855475L, "text")).properties("text").alias("button", "").create();
-  /*package*/ final ConceptDescriptor myConceptLabel = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Label", MetaIdFactory.conceptId(new UUID(-9008477858049602728L, -6814456189104365393L), 3978102045101856876L)).super_("jetbrains.mps.sampleXML.structure.ElementPart").super_(MetaIdFactory.conceptId(new UUID(8588203744004229367L, -8746957436642952050L), 1225239603390L)).parents("jetbrains.mps.sampleXML.structure.ElementPart").parentIds(MetaIdFactory.conceptId(new UUID(8588203744004229367L, -8746957436642952050L), 1225239603390L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3978102045101856886L, "text")).properties("text").alias("label", "").create();
+  /*package*/ final ConceptDescriptor myConceptButton = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", MetaIdFactory.conceptId(0x82fb751df7fb4b58L, 0xa16e303356f8e0afL, 0x37350ebbae8d1283L)).super_("jetbrains.mps.sampleXML.structure.ElementPart").super_(MetaIdFactory.conceptId(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL)).parents("jetbrains.mps.sampleXML.structure.ElementPart").parentIds(MetaIdFactory.conceptId(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3978102045101855475L, "text")).properties("text").alias("button", "").create();
+  /*package*/ final ConceptDescriptor myConceptLabel = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Label", MetaIdFactory.conceptId(0x82fb751df7fb4b58L, 0xa16e303356f8e0afL, 0x37350ebbae8d186cL)).super_("jetbrains.mps.sampleXML.structure.ElementPart").super_(MetaIdFactory.conceptId(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL)).parents("jetbrains.mps.sampleXML.structure.ElementPart").parentIds(MetaIdFactory.conceptId(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3978102045101856886L, "text")).properties("text").alias("label", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

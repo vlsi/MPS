@@ -4,7 +4,6 @@ package jetbrains.mps.build.workflow.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -24,12 +23,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BwfSubTaskDependency_Constraints extends BaseConstraintsDescriptor {
   public BwfSubTaskDependency_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284605880l));
+    super(MetaIdFactory.conceptId(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b49b8L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284605880l, 2769948622284605881l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284605880l, 2769948622284605881l), this) {
+    references.put(MetaIdFactory.refId(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b49b8L, 0x2670d5989d5b49b9L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b49b8L, 0x2670d5989d5b49b9L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;

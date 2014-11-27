@@ -17,7 +17,6 @@ import jetbrains.mps.lang.editor.table.runtime.TableModel;
 import jetbrains.mps.lang.editor.table.runtime.XYCTableModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
 public class DecisionTable_Editor extends DefaultNodeEditor {
@@ -81,7 +80,7 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
   private EditorCell createTable_h1ymql_d0(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
-        return new XYCTableModel(node, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934916l, "colHeaders")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934917l, "rowHeaders")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934918l, "resultValues")), editorContext);
+        return new XYCTableModel(node, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1584L, "colHeaders")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1585L, "rowHeaders")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1586L, "resultValues")), editorContext);
       }
     };
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_h1ymql_d0");

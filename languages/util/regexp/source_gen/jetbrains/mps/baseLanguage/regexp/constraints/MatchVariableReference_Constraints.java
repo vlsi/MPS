@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.regexp.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -20,12 +19,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class MatchVariableReference_Constraints extends BaseConstraintsDescriptor {
   public MatchVariableReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2688747624584492277l, -5722269945249396544l), 1174565027678l));
+    super(MetaIdFactory.conceptId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117987ff5eL));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-2688747624584492277l, -5722269945249396544l), 1174565027678l, 1174565035929l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-2688747624584492277l, -5722269945249396544l), 1174565027678l, 1174565035929l), this) {
+    references.put(MetaIdFactory.refId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117987ff5eL, 0x11179881f99L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117987ff5eL, 0x11179881f99L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;

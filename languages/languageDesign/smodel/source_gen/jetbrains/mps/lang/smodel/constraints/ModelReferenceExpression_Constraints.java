@@ -4,7 +4,6 @@ package jetbrains.mps.lang.smodel.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -16,12 +15,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ModelReferenceExpression_Constraints extends BaseConstraintsDescriptor {
   public ModelReferenceExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l));
+    super(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393041554l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393041554l), this) {
+    properties.put(MetaIdFactory.propId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e98892L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e98892L), this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
@@ -29,10 +28,10 @@ public class ModelReferenceExpression_Constraints extends BaseConstraintsDescrip
       @Override
       public Object getValue(SNode node) {
         String propertyName = "fqName";
-        if (isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393017702l, "name")))) {
+        if (isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e92b66L, "name")))) {
           return null;
         }
-        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393017702l, "name")) + ((isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393021807l, "stereotype"))) ? "" : "@" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393021807l, "stereotype"))));
+        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e92b66L, "name")) + ((isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e93b6fL, "stereotype"))) ? "" : "@" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e93b6fL, "stereotype"))));
       }
     });
     return properties;

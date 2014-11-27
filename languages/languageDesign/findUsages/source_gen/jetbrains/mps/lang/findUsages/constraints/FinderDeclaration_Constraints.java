@@ -4,7 +4,6 @@ package jetbrains.mps.lang.findUsages.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class FinderDeclaration_Constraints extends BaseConstraintsDescriptor {
   public FinderDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(7265238368668241523l, -5766677349071573456l), 1197044488845l));
+    super(MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL));
   }
   @Override
   public boolean hasOwnCanBeRootMethod() {

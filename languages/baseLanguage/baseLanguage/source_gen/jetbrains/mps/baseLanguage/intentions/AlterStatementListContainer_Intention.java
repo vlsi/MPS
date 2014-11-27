@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils;
@@ -71,7 +70,7 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     List<SNode> list = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.WhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoWhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForeachStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"));
     ListSequence.fromList(list).removeElement(SNodeOperations.getConceptDeclaration(node));
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1144226303539l, "jetbrains.mps.baseLanguage.structure.ForeachStatement")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"))) {
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"))) {
       ListSequence.fromList(list).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForeachStatement"));
       ListSequence.fromList(list).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"));
     }
@@ -84,19 +83,19 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
       String targetName;
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(myParameter), MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"))) {
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(myParameter), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"))) {
         targetName = "'for (var in iterable)'";
-      } else if (SConceptOperations.isExactly(SNodeOperations.asSConcept(myParameter), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1144226303539l, "jetbrains.mps.baseLanguage.structure.ForeachStatement"))) {
+      } else if (SConceptOperations.isExactly(SNodeOperations.asSConcept(myParameter), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement"))) {
         targetName = "'for Type var: iterable)'";
       } else {
-        targetName = SPropertyOperations.getString(myParameter, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")) + ((SConceptOperations.isExactly(SNodeOperations.asSConcept(myParameter), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1177666668936l, "jetbrains.mps.baseLanguage.structure.DoWhileStatement")) ? "-While" : ""));
+        targetName = SPropertyOperations.getString(myParameter, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) + ((SConceptOperations.isExactly(SNodeOperations.asSConcept(myParameter), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11232674988L, "jetbrains.mps.baseLanguage.structure.DoWhileStatement")) ? "-While" : ""));
       }
       targetName += " statement";
       targetName = "Change to " + targetName;
       return targetName;
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SNodeOperations.castConcept(myParameter, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1237545921771l, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"))), null);
+      SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SNodeOperations.castConcept(myParameter, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120237c2cebL, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"))), null);
       AlterStatementListContainerFactoryUtils.buildContainerIfPossible(node, newInitializedInstance);
       SNodeOperations.replaceWithAnother(node, newInitializedInstance);
       editorContext.selectWRTFocusPolicy(newInitializedInstance);

@@ -72,85 +72,85 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
-    if (id == 1153944233411l) {
+    if (id == 0x10cac6fa5c3L) {
       return new ForEachVariableReference_Constraints();
     }
-    if (id == 1201225890326l) {
+    if (id == 0x117aea47a16L) {
       return new MapOperation_Constraints();
     }
-    if (id == 1203518072036l) {
+    if (id == 0x118374464e4L) {
       return new SmartClosureParameterDeclaration_Constraints();
     }
-    if (id == 1151701983961l) {
+    if (id == 0x10c26c9a2d9L) {
       return new SequenceOperation_Constraints();
     }
-    if (id == 1226566831166l) {
+    if (id == 0x11d95148c3eL) {
       return new AbstractSetOperation_Constraints();
     }
-    if (id == 1237470736245l) {
+    if (id == 0x1201f00ef75L) {
       return new AbstractIteratorOperation_Constraints();
     }
-    if (id == 1237497044713l) {
+    if (id == 0x12020925ee9L) {
       return new AbstractEnumeratorOperation_Constraints();
     }
-    if (id == 1237783176940l) {
+    if (id == 0x12031a066ecL) {
       return new AllConstant_Constraints();
     }
-    if (id == 1240151544672l) {
+    if (id == 0x120becad360L) {
       return new RemoveOperation_Constraints();
     }
-    if (id == 1240239309184l) {
+    if (id == 0x120c4060180L) {
       return new SortedMapOperation_Constraints();
     }
-    if (id == 1240251169236l) {
+    if (id == 0x120c4baf9d4L) {
       return new SortedSetOperation_Constraints();
     }
-    if (id == 1240325842691l) {
+    if (id == 0x120c92e6703L) {
       return new AsSequenceOperation_Constraints();
     }
-    if (id == 1240687580870l) {
+    if (id == 0x120debe16c6L) {
       return new JoinOperation_Constraints();
     }
-    if (id == 1240824716764l) {
+    if (id == 0x120e6ea9ddcL) {
       return new AbstractMappingOperation_Constraints();
     }
-    if (id == 1227008614712l) {
+    if (id == 0x11daf69a138L) {
       return new LinkedListCreator_Constraints();
     }
-    if (id == 1226516258405l) {
+    if (id == 0x11d9210de65L) {
       return new HashSetCreator_Constraints();
     }
-    if (id == 1240247536947l) {
+    if (id == 0x120c4838d33L) {
       return new TreeSetCreator_Constraints();
     }
-    if (id == 1160600644654l) {
+    if (id == 0x10e39306c2eL) {
       return new ListCreatorWithInit_Constraints();
     }
-    if (id == 1197686869805l) {
+    if (id == 0x116dbb34f2dL) {
       return new HashMapCreator_Constraints();
     }
-    if (id == 1240239494010l) {
+    if (id == 0x120c408d37aL) {
       return new TreeMapCreator_Constraints();
     }
-    if (id == 2141797557973018607l) {
+    if (id == 0x1db93187ffc7e7efL) {
       return new IListOperation_Constraints();
     }
-    if (id == 497032923610827734l) {
+    if (id == 0x6e5d0cf857f4bd6L) {
       return new IQueueOperation_Constraints();
     }
-    if (id == 2141797557972817928l) {
+    if (id == 0x1db93187ffc4d808L) {
       return new IContainerOperation_Constraints();
     }
-    if (id == 6099516049394485216l) {
+    if (id == 0x54a5d587c1f3c7e0L) {
       return new CustomContainerDeclaration_Constraints();
     }
-    if (id == 1331913329176106419l) {
+    if (id == 0x127be81db92655b3L) {
       return new CustomContainerCreator_Constraints();
     }
-    if (id == 1576845966386891367l) {
+    if (id == 0x15e2150d4bff8a67L) {
       return new CustomMapCreator_Constraints();
     }
-    if (id == 8293956702609956630l) {
+    if (id == 0x731a0dad81895f16L) {
       return new MultiForEachVariableReference_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

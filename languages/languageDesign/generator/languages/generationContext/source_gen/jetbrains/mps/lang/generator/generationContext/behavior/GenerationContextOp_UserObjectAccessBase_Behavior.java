@@ -5,7 +5,6 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GenerationContextOp_UserObjectAccessBase_Behavior {
@@ -13,8 +12,8 @@ public class GenerationContextOp_UserObjectAccessBase_Behavior {
   }
   public static boolean call_isLValueInAssignment_1217892546644(SNode thisNode) {
     SNode mayBeAssignment = SNodeOperations.getParent(SNodeOperations.getParent(thisNode));
-    if (SNodeOperations.isInstanceOf(mayBeAssignment, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886294l, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"))) {
-      if (SNodeOperations.getParent(thisNode) == SLinkOperations.getTarget(SNodeOperations.cast(mayBeAssignment, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886294l, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"))) {
+    if (SNodeOperations.isInstanceOf(mayBeAssignment, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"))) {
+      if (SNodeOperations.getParent(thisNode) == SLinkOperations.getTarget(SNodeOperations.cast(mayBeAssignment, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue"))) {
         return true;
       }
     }

@@ -36,31 +36,31 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
-    if (id == 946964771156066561l) {
+    if (id == 0xd244b712f910101L) {
       return new TemplateParameterReference_Constraints();
     }
-    if (id == 946964771156066563l) {
+    if (id == 0xd244b712f910103L) {
       return new ReportConfigurationErrorStatement_Constraints();
     }
-    if (id == 946964771156066574l) {
+    if (id == 0xd244b712f91010eL) {
       return new PersistentPropertyReferenceOperation_Constraints();
     }
-    if (id == 946964771156066588l) {
+    if (id == 0xd244b712f91011cL) {
       return new EditorExpression_Constraints();
     }
-    if (id == 946964771156066606l) {
+    if (id == 0xd244b712f91012eL) {
       return new EditorOperationCall_Constraints();
     }
-    if (id == 946964771156066611l) {
+    if (id == 0xd244b712f910133L) {
       return new EditorPropertyReference_Constraints();
     }
-    if (id == 946964771156066621l) {
+    if (id == 0xd244b712f91013dL) {
       return new SettingsEditor_Constraints();
     }
-    if (id == 5365453833390705317l) {
+    if (id == 0x4a75ebd58602caa5L) {
       return new GetEditorOperation_Constraints();
     }
-    if (id == 946964771156066605l) {
+    if (id == 0xd244b712f91012dL) {
       return new EditorOperationDeclaration_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

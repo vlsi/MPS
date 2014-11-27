@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -13,7 +12,7 @@ public class IndexedTupleLiteral_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
-    for (SNode mexp : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238853782547l, 1238853845806l, "component"))) {
+    for (SNode mexp : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071708c13L, 0x1207171832eL, "component"))) {
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, mexp, "virtual_isLValue_1213877519786", new Object[]{}))) {
         return false;
       }

@@ -4,7 +4,6 @@ package jetbrains.mps.execution.settings.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -32,7 +31,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
   public EditorExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066588l));
+    super(MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011cL));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -51,7 +50,7 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066588l, 946964771156066589l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066588l, 946964771156066589l), this) {
+    references.put(MetaIdFactory.refId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011cL, 0xd244b712f91011dL), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011cL, 0xd244b712f91011dL), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -64,7 +63,7 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ListSequence.fromList(PersistentConfiguration_Behavior.call_getContextPersistentProperties_946964771156066434(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfiguration")), _context.getEnclosingNode())).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), _quotation_createNode_lq9qwe_b0a0a0a0a0a0());
+                return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), _quotation_createNode_lq9qwe_b0a0a0a0a0a0());
               }
             });
           }
@@ -78,7 +77,7 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066605l, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), true, false) != null);
+    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012dL, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), true, false) != null);
   }
   private static SNode _quotation_createNode_lq9qwe_b0a0a0a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

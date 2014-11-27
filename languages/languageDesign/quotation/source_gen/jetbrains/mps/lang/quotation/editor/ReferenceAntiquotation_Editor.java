@@ -27,7 +27,6 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -180,7 +179,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
         if ((parent != null)) {
-          return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(parent), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+          return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(parent), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
         } else {
           return "";
         }

@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
@@ -39,7 +38,7 @@ public class SetPropertyChange extends NodeChange {
       myMergeHintLoaded = true;
       SNode n = getChangeSet().getOldModel().getNode(getAffectedNodeId());
       SNode c = SNodeOperations.getConceptDeclaration(n);
-      SNode propDecl = SNodeOperations.as(SModelSearchUtil.findPropertyDeclaration(c, myPropertyName), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
+      SNode propDecl = SNodeOperations.as(SModelSearchUtil.findPropertyDeclaration(c, myPropertyName), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
       SNode hint = AttributeOperations.getAttribute(propDecl, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint"));
       if ((hint == null)) {
         hint = AttributeOperations.getAttribute(c, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint"));

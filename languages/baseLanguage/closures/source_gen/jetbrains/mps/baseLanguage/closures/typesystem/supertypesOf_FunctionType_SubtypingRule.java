@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,10 +19,10 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
   public supertypesOf_FunctionType_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode ft, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(ft, MetaAdapterFactory.getReferenceLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 100821637069096425l, "runtimeIface")) == null)) {
+    if ((SLinkOperations.getTarget(ft, MetaAdapterFactory.getReferenceLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x16630bea72d45e9L, "runtimeIface")) == null)) {
       return FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(ft);
     } else {
-      return ClosureLiteralUtil.fillParams(_quotation_createNode_8hodjs_a0a0a0a1(SLinkOperations.getTarget(ft, MetaAdapterFactory.getReferenceLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 100821637069096425l, "runtimeIface"))), ft);
+      return ClosureLiteralUtil.fillParams(_quotation_createNode_8hodjs_a0a0a0a1(SLinkOperations.getTarget(ft, MetaAdapterFactory.getReferenceLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x16630bea72d45e9L, "runtimeIface"))), ft);
     }
   }
   public String getApplicableConceptFQName() {
@@ -42,7 +41,7 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -28,9 +27,9 @@ public class SimpleMoveStaticMethod_Test extends BaseTransformationTest {
       this.addNodeById("3014415391767789149");
       this.addNodeById("3014415391767789154");
       this.addNodeById("3014415391767789181");
-      MoveStaticMethodRefactoring refactoring = new MoveStaticMethodRefactoring(SNodeOperations.cast(this.getNodeById("3014415391767789137"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700938l, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), SNodeOperations.cast(this.getNodeById("3014415391767789150"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+      MoveStaticMethodRefactoring refactoring = new MoveStaticMethodRefactoring(SNodeOperations.cast(this.getNodeById("3014415391767789137"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), SNodeOperations.cast(this.getNodeById("3014415391767789150"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
       SearchResults<SNode> results = new SearchResults();
-      results.getSearchResults().add(new SearchResult(SNodeOperations.cast(this.getNodeById("3014415391767789131"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 7812454656619025412l, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")), "usage"));
+      results.getSearchResults().add(new SearchResult(SNodeOperations.cast(this.getNodeById("3014415391767789131"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")), "usage"));
       refactoring.setUssages(results);
       refactoring.doRefactoring();
     }

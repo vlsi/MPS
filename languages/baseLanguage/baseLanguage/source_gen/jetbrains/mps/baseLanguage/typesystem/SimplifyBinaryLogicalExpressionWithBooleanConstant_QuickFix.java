@@ -6,7 +6,6 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix extends QuickFix_Runtime {
@@ -16,14 +15,14 @@ public class SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix extends
     return "Simplify Logical Expression";
   }
   public void execute(SNode node) {
-    if (SNodeOperations.isInstanceOf(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080120340718l, "jetbrains.mps.baseLanguage.structure.AndExpression"))) {
-      if (SPropertyOperations.getBoolean(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value")) == true) {
+    if (SNodeOperations.isInstanceOf(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb7c3070eeL, "jetbrains.mps.baseLanguage.structure.AndExpression"))) {
+      if (SPropertyOperations.getBoolean(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value")) == true) {
         SNodeOperations.replaceWithAnother(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), ((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("remainingNode")[0]));
       } else {
         SNodeOperations.replaceWithAnother(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), ((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]));
       }
-    } else if (SNodeOperations.isInstanceOf(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1080223426719l, "jetbrains.mps.baseLanguage.structure.OrExpression"))) {
-      if (SPropertyOperations.getBoolean(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value")) == true) {
+    } else if (SNodeOperations.isInstanceOf(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb8255689fL, "jetbrains.mps.baseLanguage.structure.OrExpression"))) {
+      if (SPropertyOperations.getBoolean(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value")) == true) {
         SNodeOperations.replaceWithAnother(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), ((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]));
       } else {
         SNodeOperations.replaceWithAnother(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), ((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("remainingNode")[0]));

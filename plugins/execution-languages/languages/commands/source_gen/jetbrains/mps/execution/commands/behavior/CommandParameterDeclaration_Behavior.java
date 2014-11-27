@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
@@ -26,13 +25,13 @@ public class CommandParameterDeclaration_Behavior {
     return "set" + CommandParameterDeclaration_Behavior.call_getUpperCaseName_7327337331549086061(thisNode);
   }
   public static String call_getSetterLongName_3754131050835964459(SNode thisNode) {
-    return CommandParameterDeclaration_Behavior.call_getSetterName_7327337331549086044(thisNode) + "_" + CommandParameterDeclaration_Behavior.call_getTypeSuffix_3754131050835992327(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")));
+    return CommandParameterDeclaration_Behavior.call_getSetterName_7327337331549086044(thisNode) + "_" + CommandParameterDeclaration_Behavior.call_getTypeSuffix_3754131050835992327(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
   }
   public static String call_getUpperCaseName_7327337331549086061(SNode thisNode) {
-    return CommandParameterDeclaration_Behavior.call_getUpperCaseName_7327337331549086070(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration")), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+    return CommandParameterDeclaration_Behavior.call_getUpperCaseName_7327337331549086070(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration")), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static String call_getFieldName_7327337331549117850(SNode thisNode) {
-    return CommandParameterDeclaration_Behavior.call_getFieldName_7327337331549086089(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration")), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) + "_" + CommandParameterDeclaration_Behavior.call_getTypeSuffix_3754131050835992327(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")));
+    return CommandParameterDeclaration_Behavior.call_getFieldName_7327337331549086089(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration")), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_" + CommandParameterDeclaration_Behavior.call_getTypeSuffix_3754131050835992327(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
   }
   public static String call_getFieldName_7327337331549086089(SAbstractConcept thisConcept, String name) {
     return "my" + CommandParameterDeclaration_Behavior.call_getUpperCaseName_7327337331549086070(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration")), name);

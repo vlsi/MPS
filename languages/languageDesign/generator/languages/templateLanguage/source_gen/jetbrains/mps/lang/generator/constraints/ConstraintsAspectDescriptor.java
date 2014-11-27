@@ -48,49 +48,49 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
-    if (id == 1167514355419l) {
+    if (id == 0x10fd54746dbL) {
       return new Root_MappingRule_Constraints();
     }
-    if (id == 1167087469898l) {
+    if (id == 0x10fbbd5854aL) {
       return new CreateRootRule_Constraints();
     }
-    if (id == 1722980698497626400l) {
+    if (id == 0x17e941d108ce3120L) {
       return new ITemplateCall_Constraints();
     }
-    if (id == 4035562641222585520l) {
+    if (id == 0x380132d742e8ccb0L) {
       return new TemplateArgumentQueryExpression_Constraints();
     }
-    if (id == 4665309944889425032l) {
+    if (id == 0x40be82ad503b3c88L) {
       return new TemplateArgumentPatternVarRefExpression_Constraints();
     }
-    if (id == 4816349095291149799l) {
+    if (id == 0x42d71bfbeb1a5de7L) {
       return new TemplateArgumentPropertyPatternRefExpression_Constraints();
     }
-    if (id == 4816349095291149800l) {
+    if (id == 0x42d71bfbeb1a5de8L) {
       return new TemplateArgumentLinkPatternRefExpression_Constraints();
     }
-    if (id == 650531548511911818l) {
+    if (id == 0x90726ff283cbf8aL) {
       return new GeneratorParameterReference_Constraints();
     }
-    if (id == 5005282049925926521l) {
+    if (id == 0x457655815a794e79L) {
       return new TemplateArgumentParameterExpression_Constraints();
     }
-    if (id == 982871510068000147l) {
+    if (id == 0xda3dc6e51747593L) {
       return new TemplateSwitchMacro_Constraints();
     }
-    if (id == 1510949579266781519l) {
+    if (id == 0x14f7f8a311b8f14fL) {
       return new TemplateCallMacro_Constraints();
     }
-    if (id == 1168559333462l) {
+    if (id == 0x11013906056L) {
       return new TemplateDeclarationReference_Constraints();
     }
-    if (id == 1112731569622l) {
+    if (id == 0x10313f84dd6L) {
       return new SwitchMacro_Constraints();
     }
-    if (id == 1112730859144l) {
+    if (id == 0x10313ed7688L) {
       return new TemplateSwitch_Constraints();
     }
-    if (id == 4426797670061482024l) {
+    if (id == 0x3d6f2506d88aa028L) {
       return new TemplateArgumentVariableRefExpression_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

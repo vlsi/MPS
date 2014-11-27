@@ -52,55 +52,55 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
-    if (id == 6666499814681299061l) {
+    if (id == 0x5c842a42c5494875L) {
       return new XmlProcessingInstruction_Constraints();
     }
-    if (id == 6666499814681415858l) {
+    if (id == 0x5c842a42c54b10b2L) {
       return new XmlElement_Constraints();
     }
-    if (id == 6666499814681541921l) {
+    if (id == 0x5c842a42c54cfd21L) {
       return new XmlEntityRefValue_Constraints();
     }
-    if (id == 6666499814681541919l) {
+    if (id == 0x5c842a42c54cfd1fL) {
       return new XmlTextValue_Constraints();
     }
-    if (id == 6666499814681447923l) {
+    if (id == 0x5c842a42c54b8df3L) {
       return new XmlAttribute_Constraints();
     }
-    if (id == 6666499814681299051l) {
+    if (id == 0x5c842a42c549486bL) {
       return new XmlContent_Constraints();
     }
-    if (id == 6666499814681299066l) {
+    if (id == 0x5c842a42c549487aL) {
       return new XmlCDATA_Constraints();
     }
-    if (id == 1622293396949036126l) {
+    if (id == 0x16838b3fce9bec5eL) {
       return new XmlCommentLine_Constraints();
     }
-    if (id == 1622293396949069645l) {
+    if (id == 0x16838b3fce9c6f4dL) {
       return new XmlEntityRef_Constraints();
     }
-    if (id == 1622293396948952339l) {
+    if (id == 0x16838b3fce9aa513L) {
       return new XmlText_Constraints();
     }
-    if (id == 3080189811177199750l) {
+    if (id == 0x2abf08504ffe9886L) {
       return new XmlCharRef_Constraints();
     }
-    if (id == 3080189811177215998l) {
+    if (id == 0x2abf08504ffed7feL) {
       return new XmlCharRefValue_Constraints();
     }
-    if (id == 6666499814681541916l) {
+    if (id == 0x5c842a42c54cfd1cL) {
       return new XmlValuePart_Constraints();
     }
-    if (id == 7604553062773750440l) {
+    if (id == 0x6988ccb84e3cfaa8L) {
       return new XmlWhitespace_Constraints();
     }
-    if (id == 2133624044437898907l) {
+    if (id == 0x1d9c27c394f4069bL) {
       return new XmlDoctypeDeclaration_Constraints();
     }
-    if (id == 2133624044438029119l) {
+    if (id == 0x1d9c27c394f6033fL) {
       return new XmlExternalId_Constraints();
     }
-    if (id == 5228786488744996718l) {
+    if (id == 0x4890619bb401ef6eL) {
       return new XmlDeclaration_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

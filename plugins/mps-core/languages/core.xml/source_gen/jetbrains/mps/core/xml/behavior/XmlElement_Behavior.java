@@ -5,7 +5,6 @@ package jetbrains.mps.core.xml.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -14,11 +13,11 @@ public class XmlElement_Behavior {
   }
   public static boolean call_isMultiline_8886258982030574875(SNode thisNode) {
     boolean multiline = false;
-    for (SNode n : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 1622293396948928802l, "content"))) {
-      if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299053l, "jetbrains.mps.core.xml.structure.XmlBaseElement"))) {
+    for (SNode n : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x16838b3fce9a4922L, "content"))) {
+      if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486dL, "jetbrains.mps.core.xml.structure.XmlBaseElement"))) {
         multiline = true;
-      } else if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, "jetbrains.mps.core.xml.structure.XmlComment"))) {
-        if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, "jetbrains.mps.core.xml.structure.XmlComment")), MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, 1622293396949036151l, "lines"))).count() > 1) {
+      } else if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494878L, "jetbrains.mps.core.xml.structure.XmlComment"))) {
+        if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494878L, "jetbrains.mps.core.xml.structure.XmlComment")), MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494878L, 0x16838b3fce9bec77L, "lines"))).count() > 1) {
           multiline = true;
         }
       } else if ((n != null) && (SNodeOperations.getPrevSibling(n) != null)) {

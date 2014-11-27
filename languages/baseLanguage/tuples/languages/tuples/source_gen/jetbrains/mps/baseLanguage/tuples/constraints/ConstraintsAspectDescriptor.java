@@ -26,16 +26,16 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
-    if (id == 1239462176079l) {
+    if (id == 0x12095b3e54fL) {
       return new NamedTupleComponentDeclaration_Constraints();
     }
-    if (id == 1239560581441l) {
+    if (id == 0x1209b917141L) {
       return new NamedTupleComponentReference_Constraints();
     }
-    if (id == 1239576519914l) {
+    if (id == 0x1209c84a4eaL) {
       return new NamedTupleComponentAccessOperation_Constraints();
     }
-    if (id == 1239531918181l) {
+    if (id == 0x12099dc1365L) {
       return new NamedTupleType_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

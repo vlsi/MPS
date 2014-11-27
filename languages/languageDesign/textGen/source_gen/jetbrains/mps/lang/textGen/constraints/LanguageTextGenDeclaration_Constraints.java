@@ -4,7 +4,6 @@ package jetbrains.mps.lang.textGen.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class LanguageTextGenDeclaration_Constraints extends BaseConstraintsDescriptor {
   public LanguageTextGenDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l));
+    super(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL));
   }
   @Override
   public boolean hasOwnCanBeRootMethod() {

@@ -7,7 +7,6 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -36,19 +35,19 @@ public final class GeneratorUtilEx {
     return RuleUtil.isNodeMacro(conceptQualifiedName) || TemplateLangElements.contains(conceptQualifiedName);
   }
   public static String getMappingName_NodeMacro(SNode node, String defaultValue) {
-    SNode mappingLabel = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, 1200912223215l, "mappingLabel"));
-    String mappingName = (mappingLabel != null ? SPropertyOperations.getString(mappingLabel, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : null);
+    SNode mappingLabel = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel"));
+    String mappingName = (mappingLabel != null ? SPropertyOperations.getString(mappingLabel, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : null);
     if (mappingName == null) {
       return defaultValue;
     }
     return mappingName;
   }
   public static String getMappingName_TemplateFragment(SNode node, String defaultValue) {
-    SNode ld = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, 1200916687663l, "labelDeclaration"));
+    SNode ld = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, 0x1179c366b2fL, "labelDeclaration"));
     if (ld == null) {
       return defaultValue;
     }
-    String v = SPropertyOperations.getString(ld, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    String v = SPropertyOperations.getString(ld, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     return (v == null ? defaultValue : v);
   }
   public static String getPatternVariableName(SNode ref) {
@@ -63,7 +62,7 @@ public final class GeneratorUtilEx {
       SNode subnode = queue.removeFirst();
       // do not look for TemplateFragments in subnode's children as TFs couldn't be nested 
       boolean tfFound = false;
-      for (SNode attr : SLinkOperations.getChildren(subnode, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))) {
+      for (SNode attr : SLinkOperations.getChildren(subnode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))) {
         if (SNodeOperations.getConceptDeclaration(attr) == conceptTemplateFragment) {
           templateFragments.add((SNode) attr);
           tfFound = true;
@@ -77,36 +76,36 @@ public final class GeneratorUtilEx {
     return templateFragments;
   }
   public static void dispatchRuleConsequence(@NotNull SNode ruleConsequence, @NotNull GeneratorUtilEx.ConsequenceDispatch dispatch) {
-    if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168559333462l, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"))) {
+    if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"))) {
       dispatch.templateDeclarationReference(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"))) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"))) {
       dispatch.inlineTemplateWithContext(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"))) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"))) {
       dispatch.inlineTemplate(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1195158154974l, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence"))) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence"))) {
       dispatch.inlineSwitch(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1169569792945l, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence"))) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence"))) {
       dispatch.weaveEach(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1202776937179l, "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence"))) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1180b1792dbL, "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence"))) {
       dispatch.abandonInput(ruleConsequence);
-    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1168559512253l, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule"))) {
+    } else if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013931abdL, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule"))) {
       dispatch.dismissTopRule(ruleConsequence);
     } else {
       dispatch.unknown(ruleConsequence);
     }
   }
   public static String getGeneratorMessage_text(SNode generatorMessage) {
-    return SPropertyOperations.getString(generatorMessage, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1169670156577l, 1169670173015l, "messageText"));
+    return SPropertyOperations.getString(generatorMessage, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, 0x11055c67157L, "messageText"));
   }
   public static DismissTopMappingRuleException.MessageType getGeneratorMessage_kind(SNode generatorMessage) {
     if (generatorMessage == null) {
       // this is how it used to be, although to me default to warn/info might be better 
       return null;
     }
-    if (SPropertyOperations.hasValue(generatorMessage, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1169670156577l, 1169670356567l, "messageType"), "error", "info")) {
+    if (SPropertyOperations.hasValue(generatorMessage, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, 0x11055c93e57L, "messageType"), "error", "info")) {
       return DismissTopMappingRuleException.MessageType.error;
     } else
-    if (SPropertyOperations.hasValue(generatorMessage, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1169670156577l, 1169670356567l, "messageType"), "warning", "info")) {
+    if (SPropertyOperations.hasValue(generatorMessage, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, 0x11055c93e57L, "messageType"), "warning", "info")) {
       return DismissTopMappingRuleException.MessageType.warning;
     } else {
       return DismissTopMappingRuleException.MessageType.info;

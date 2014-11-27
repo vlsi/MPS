@@ -5,7 +5,6 @@ package jetbrains.mps.lang.editor.figures.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class FigureParameterAttributeField_Behavior {
@@ -15,9 +14,9 @@ public class FigureParameterAttributeField_Behavior {
     return FigureParameterAttributeField_Behavior.call_getFieldDeclaration_7911346875269141454(thisNode);
   }
   public static SNode call_getFieldDeclaration_7911346875269141454(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468200l, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
   }
   public static SNode virtual_getParameterType_342110547581236128(SNode thisNode) {
-    return SNodeOperations.as(SLinkOperations.getTarget(FigureParameterAttributeField_Behavior.call_getFieldDeclaration_7911346875269141454(thisNode), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+    return SNodeOperations.as(SLinkOperations.getTarget(FigureParameterAttributeField_Behavior.call_getFieldDeclaration_7911346875269141454(thisNode), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
   }
 }

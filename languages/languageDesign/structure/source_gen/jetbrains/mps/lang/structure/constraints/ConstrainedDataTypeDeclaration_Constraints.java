@@ -4,7 +4,6 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ConstrainedDataTypeDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ConstrainedDataTypeDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978499127l));
+    super(MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L));
   }
   @Override
   public boolean hasOwnCanBeRootMethod() {

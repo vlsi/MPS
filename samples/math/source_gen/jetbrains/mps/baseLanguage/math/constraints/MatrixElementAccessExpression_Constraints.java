@@ -4,10 +4,9 @@ package jetbrains.mps.baseLanguage.math.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 
 public class MatrixElementAccessExpression_Constraints extends BaseConstraintsDescriptor {
   public MatrixElementAccessExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(3676340747305173022l, -6911132873973321185l), 6389121991274611498l));
+    super(MetaIdFactory.conceptId(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x58aab8999c8f432aL));
   }
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.debugger.java.customViewers.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -27,12 +26,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescriptor {
   public HighLevelWatchableCreator_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-393243729685033453l, -4633752096775218313l), 43370322128285902l));
+    super(MetaIdFactory.conceptId(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514044030ceL));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-393243729685033453l, -4633752096775218313l), 43370322128285902l, 43370322128310821l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-393243729685033453l, -4633752096775218313l), 43370322128285902l, 43370322128310821l), this) {
+    references.put(MetaIdFactory.refId(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514044030ceL, 0x9a151404409225L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514044030ceL, 0x9a151404409225L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -44,8 +43,8 @@ public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescri
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            for (SNode container : SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-393243729685033453l, -4633752096775218313l), 5117350825036256317l, "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer"))) {
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-393243729685033453l, -4633752096775218313l), 5117350825036256317l, 5117350825036256318l, "watchable"))));
+            for (SNode container : SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b766556943dL, "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer"))) {
+              ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b766556943dL, 0x47047b766556943eL, "watchable"))));
             }
             return result;
           }

@@ -5,7 +5,6 @@ package jetbrains.mps.samples.agreementLanguage.generator.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -13,26 +12,26 @@ public class QueriesUtil {
   public QueriesUtil() {
   }
   public static boolean isMoney(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, "jetbrains.mps.samples.formulaLanguage.structure.Operation"))) {
-      return isMoney(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, "jetbrains.mps.samples.formulaLanguage.structure.Operation")), MetaAdapterFactory.getContainmentLink(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, 1111784613299l, "leftOperand")));
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation"))) {
+      return isMoney(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation")), MetaAdapterFactory.getContainmentLink(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, 0x102db86e5b3L, "leftOperand")));
     }
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1112036490295l, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"))) {
-      SNode eventVariable = SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1112036490295l, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(1463511629799179198l, -4743614238981921533l), 1112036490295l, 1112036516483l, "eventVariable"));
-      return SPropertyOperations.hasValue(eventVariable, MetaAdapterFactory.getProperty(new UUID(1463511629799179198l, -4743614238981921533l), 1111793755198l, 1111793807574l, "type"), "Money", "Quantity");
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"))) {
+      SNode eventVariable = SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference")), MetaAdapterFactory.getReferenceLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, 0x102ea8aa283L, "eventVariable"));
+      return SPropertyOperations.hasValue(eventVariable, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc12643eL, 0x102dc1330d6L, "type"), "Money", "Quantity");
     }
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"))) {
-      return SPropertyOperations.hasValue(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, "jetbrains.mps.samples.agreementLanguage.structure.Quantity")), MetaAdapterFactory.getProperty(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793358083l, "unit"), "USD", "USD_KWH");
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"))) {
+      return SPropertyOperations.hasValue(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity")), MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "USD", "USD_KWH");
     }
     return false;
   }
   public static boolean isQuantity(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, "jetbrains.mps.samples.formulaLanguage.structure.Operation"))) {
-      return isQuantity(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, "jetbrains.mps.samples.formulaLanguage.structure.Operation")), MetaAdapterFactory.getContainmentLink(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784562907l, 1111784613299l, "leftOperand")));
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation"))) {
+      return isQuantity(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation")), MetaAdapterFactory.getContainmentLink(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, 0x102db86e5b3L, "leftOperand")));
     }
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1112036490295l, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"))) {
-      SNode eventVariable = SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1112036490295l, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference")), MetaAdapterFactory.getReferenceLink(new UUID(1463511629799179198l, -4743614238981921533l), 1112036490295l, 1112036516483l, "eventVariable"));
-      return SPropertyOperations.hasValue(eventVariable, MetaAdapterFactory.getProperty(new UUID(1463511629799179198l, -4743614238981921533l), 1111793755198l, 1111793807574l, "type"), "Quantity", "Quantity");
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"))) {
+      SNode eventVariable = SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference")), MetaAdapterFactory.getReferenceLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, 0x102ea8aa283L, "eventVariable"));
+      return SPropertyOperations.hasValue(eventVariable, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc12643eL, 0x102dc1330d6L, "type"), "Quantity", "Quantity");
     }
-    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"));
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"));
   }
 }

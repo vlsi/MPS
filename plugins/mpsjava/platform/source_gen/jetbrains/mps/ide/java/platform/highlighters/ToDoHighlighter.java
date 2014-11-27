@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -26,14 +25,14 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     SNode node = rootNode;
-    for (SNode remark : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), false, new SAbstractConcept[]{})) {
+    for (SNode remark : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), false, new SAbstractConcept[]{})) {
       if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, remark, "jetbrains.mps.baseLanguage.structure.RemarkStatement", "call_isTodo_1213877427548", new Object[]{})) {
-        SetSequence.fromSet(messages).addElement(new ToDoMessage(remark, SPropertyOperations.getString(remark, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, 1168623065899l, "value")), this));
+        SetSequence.fromSet(messages).addElement(new ToDoMessage(remark, SPropertyOperations.getString(remark, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, 0x110175cdb2bL, "value")), this));
       }
     }
-    for (SNode textCommentPart : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), false, new SAbstractConcept[]{})) {
+    for (SNode textCommentPart : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), false, new SAbstractConcept[]{})) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, textCommentPart, "virtual_isToDo_7236590470026152831", new Object[]{})) {
-        SetSequence.fromSet(messages).addElement(new ToDoMessage(textCommentPart, SPropertyOperations.getString(textCommentPart, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, 6329021646629104958l, "text")), this));
+        SetSequence.fromSet(messages).addElement(new ToDoMessage(textCommentPart, SPropertyOperations.getString(textCommentPart, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text")), this));
       }
     }
     return messages;
@@ -41,12 +40,12 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
   @Override
   public boolean isPropertyEventDramatical(SModelPropertyEvent propertyEvent) {
     SNode node = propertyEvent.getNode();
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, "jetbrains.mps.baseLanguage.structure.RemarkStatement"))) {
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement"))) {
       if (propertyEvent.getPropertyName().equals("value")) {
         return true;
       }
     }
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, "jetbrains.mps.baseLanguage.structure.TextCommentPart"))) {
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"))) {
       if (propertyEvent.getPropertyName().equals("text")) {
         return true;
       }

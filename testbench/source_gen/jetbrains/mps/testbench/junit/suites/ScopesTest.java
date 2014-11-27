@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
@@ -44,7 +43,7 @@ public class ScopesTest {
         for (SModel model : project.getProjectModels()) {
           for (SNode root : model.getRootNodes()) {
             // todo: use fast nodes finder here 
-            ListSequence.fromList(nodesToCheck).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, "jetbrains.mps.lang.test.structure.ScopesTest"), true, new SAbstractConcept[]{})).select(new ISelector<SNode, SNode[]>() {
+            ListSequence.fromList(nodesToCheck).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(root, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"), true, new SAbstractConcept[]{})).select(new ISelector<SNode, SNode[]>() {
               public SNode[] select(SNode it) {
                 return new SNode[]{it};
               }
@@ -67,8 +66,8 @@ public class ScopesTest {
   }
   public List<SNode> getExpectedNodes(SNode forNode) {
     List<SNode> expected = new ArrayList<SNode>();
-    for (SNode child : SLinkOperations.getChildren(forNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 3655334166513314307l, "nodes"))) {
-      expected.add(SLinkOperations.getTarget(child, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 3655334166513314291l, 4052780437578824735l, "ref")));
+    for (SNode child : SLinkOperations.getChildren(forNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x32ba5b0ec25fea03L, "nodes"))) {
+      expected.add(SLinkOperations.getTarget(child, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x32ba5b0ec25fe9f3L, 0x383e5e55de89bc1fL, "ref")));
     }
     return expected;
   }
@@ -81,7 +80,7 @@ public class ScopesTest {
   }
   public StringBuilder getFailMessage(List<SNode> unExpected, List<SNode> notFounded) {
     StringBuilder builder = new StringBuilder(System.getProperty("line.separator"));
-    builder.append("\tIn node " + SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference")));
+    builder.append("\tIn node " + SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference")));
     builder.append(System.getProperty("line.separator"));
 
     if (!(unExpected.isEmpty())) {
@@ -114,7 +113,7 @@ public class ScopesTest {
       public void run() {
         SReference reference = null;
         for (SReference ref : SNodeOperations.getReferences(SNodeOperations.getParent(ScopesTest.this.myNode))) {
-          if (SLinkOperations.getTargetNode(ref) == SLinkOperations.getTarget(ScopesTest.this.myNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference"))) {
+          if (SLinkOperations.getTargetNode(ref) == SLinkOperations.getTarget(ScopesTest.this.myNode, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference"))) {
             reference = ref;
             break;
           }

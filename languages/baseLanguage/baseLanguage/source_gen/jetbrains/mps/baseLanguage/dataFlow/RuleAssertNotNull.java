@@ -9,7 +9,6 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
@@ -37,7 +36,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
           return false;
         }
         {
-          SContainmentLink childRole_7fbm30_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1160998861373l, 1160998896846l, "condition");
+          SContainmentLink childRole_7fbm30_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, 0x10e50ed44ceL, "condition");
           if (!(PatternUtil.hasNChildren(nodeToMatch_7fbm30_a0a, childRole_7fbm30_, 1))) {
             return false;
           }
@@ -115,7 +114,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
             return false;
           }
           {
-            SContainmentLink childRole_7fbm30__0 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
+            SContainmentLink childRole_7fbm30__0 = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression");
             if (!(PatternUtil.hasNChildren(nodeToMatch_7fbm30_a0a0a0, childRole_7fbm30__0, 1))) {
               return false;
             }
@@ -128,7 +127,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
             }
           }
           {
-            SContainmentLink childRole_7fbm30__1 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
+            SContainmentLink childRole_7fbm30__1 = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression");
             if (!(PatternUtil.hasNChildren(nodeToMatch_7fbm30_a0a0a0, childRole_7fbm30__1, 1))) {
               return false;
             }
@@ -166,7 +165,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
             return false;
           }
           {
-            SContainmentLink childRole_7fbm30__2 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
+            SContainmentLink childRole_7fbm30__2 = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression");
             if (!(PatternUtil.hasNChildren(nodeToMatch_7fbm30_a1a0a0, childRole_7fbm30__2, 1))) {
               return false;
             }
@@ -181,7 +180,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
             }
           }
           {
-            SContainmentLink childRole_7fbm30__3 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
+            SContainmentLink childRole_7fbm30__3 = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression");
             if (!(PatternUtil.hasNChildren(nodeToMatch_7fbm30_a1a0a0, childRole_7fbm30__3, 1))) {
               return false;
             }

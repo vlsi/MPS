@@ -4,7 +4,6 @@ package jetbrains.mps.make.facet.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -27,12 +26,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class TargetDeclaration_Constraints extends BaseConstraintsDescriptor {
   public TargetDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l));
+    super(MetaIdFactory.conceptId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, 6418371274763029589l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, 6418371274763029589l), this) {
+    references.put(MetaIdFactory.refId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x5912a2ab1cd24c55L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c3dL, 0x5912a2ab1cd24c55L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -43,9 +42,9 @@ public class TargetDeclaration_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.fromIterable(FacetDeclaration_Behavior.call_allExtends_7854369758457864780(SNodeOperations.as(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, "jetbrains.mps.make.facet.structure.FacetDeclaration")))).skip(1).translate(new ITranslator2<SNode, SNode>() {
+            return Sequence.fromIterable(FacetDeclaration_Behavior.call_allExtends_7854369758457864780(SNodeOperations.as(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration")))).skip(1).translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode fd) {
-                return SLinkOperations.getChildren(fd, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6418371274763146558l, "targetDeclaration"));
+                return SLinkOperations.getChildren(fd, MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, 0x5912a2ab1cd4153eL, "targetDeclaration"));
               }
             });
           }

@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
@@ -30,13 +29,13 @@ public class PropertyDeclarationDeleteActions {
       if (!(CustomActionsHandler.canHandleAbstractConceptDeclarationMemberActions(node, editorContext))) {
         return;
       }
-      SNode containingAbstractConcept = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
-      if (!(CustomActionsHandler.deleteElementFromCollectionAndSetSelection(node, SLinkOperations.getChildren(containingAbstractConcept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration")), editorContext))) {
-        if (SNodeOperations.isInstanceOf(containingAbstractConcept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          SNode cd = SNodeOperations.cast(containingAbstractConcept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+      SNode containingAbstractConcept = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+      if (!(CustomActionsHandler.deleteElementFromCollectionAndSetSelection(node, SLinkOperations.getChildren(containingAbstractConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration")), editorContext))) {
+        if (SNodeOperations.isInstanceOf(containingAbstractConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          SNode cd = SNodeOperations.cast(containingAbstractConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
           SelectionUtil.selectLabelCellAnSetCaret(editorContext, cd, "emptyPropertiesPlaceHolder", 0);
-        } else if (SNodeOperations.isInstanceOf(containingAbstractConcept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
-          SNode id = SNodeOperations.cast(containingAbstractConcept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
+        } else if (SNodeOperations.isInstanceOf(containingAbstractConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
+          SNode id = SNodeOperations.cast(containingAbstractConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
           SelectionUtil.selectLabelCellAnSetCaret(editorContext, id, "emptyPropertiesPlaceHolder", 0);
         }
       }
@@ -54,13 +53,13 @@ public class PropertyDeclarationDeleteActions {
       if (!(CustomActionsHandler.canHandleAbstractConceptDeclarationMemberActions(node, editorContext))) {
         return;
       }
-      SNode containingAbstractConcept = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
-      if (!(CustomActionsHandler.backspaceElementFromCollectionAndSetSelection(node, SLinkOperations.getChildren(containingAbstractConcept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration")), editorContext))) {
-        if (SNodeOperations.isInstanceOf(containingAbstractConcept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          SNode cd = SNodeOperations.cast(containingAbstractConcept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+      SNode containingAbstractConcept = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+      if (!(CustomActionsHandler.backspaceElementFromCollectionAndSetSelection(node, SLinkOperations.getChildren(containingAbstractConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration")), editorContext))) {
+        if (SNodeOperations.isInstanceOf(containingAbstractConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          SNode cd = SNodeOperations.cast(containingAbstractConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
           SelectionUtil.selectLabelCellAnSetCaret(editorContext, cd, "emptyPropertiesPlaceHolder", 0);
-        } else if (SNodeOperations.isInstanceOf(containingAbstractConcept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
-          SNode id = SNodeOperations.cast(containingAbstractConcept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
+        } else if (SNodeOperations.isInstanceOf(containingAbstractConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
+          SNode id = SNodeOperations.cast(containingAbstractConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
           SelectionUtil.selectLabelCellAnSetCaret(editorContext, id, "emptyPropertiesPlaceHolder", 0);
         }
       }

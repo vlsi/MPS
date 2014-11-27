@@ -5,7 +5,6 @@ package jetbrains.mps.lang.plugin.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -17,21 +16,21 @@ public class ActionGroupDeclaration_Behavior {
   }
   public static String call_getGroupPrefix_1213877494242(SNode thisNode) {
     String prefix = "";
-    SNode parentGroup = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203087890642l, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), false, false);
+    SNode parentGroup = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), false, false);
     if (parentGroup != null) {
-      prefix = ActionGroupDeclaration_Behavior.call_getGroupPrefix_1213877494242(parentGroup) + SPropertyOperations.getString(parentGroup, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+      prefix = ActionGroupDeclaration_Behavior.call_getGroupPrefix_1213877494242(parentGroup) + SPropertyOperations.getString(parentGroup, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
     return prefix;
   }
   public static String call_getGeneratedName_1213877494274(SNode thisNode) {
-    return ActionGroupDeclaration_Behavior.call_getGroupPrefix_1213877494242(thisNode) + NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) + "_ActionGroup";
+    return ActionGroupDeclaration_Behavior.call_getGroupPrefix_1213877494242(thisNode) + NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_ActionGroup";
   }
   public static String call_getGeneratedClassFQName_1213877494288(SNode thisNode) {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(thisNode)) + "." + ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(thisNode);
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    SNode type = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1207490810216l, "jetbrains.mps.lang.plugin.structure.GroupType")));
-    SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1207490810216l, 1207490810218l, "actionGroup"), thisNode);
+    SNode type = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119240f9168L, "jetbrains.mps.lang.plugin.structure.GroupType")));
+    SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119240f9168L, 0x119240f916aL, "actionGroup"), thisNode);
     return type;
   }
   public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {

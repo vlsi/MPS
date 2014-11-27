@@ -68,79 +68,79 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
-    if (id == 1205762656241l) {
+    if (id == 0x118bd0e07f1L) {
       return new WhenConcreteVariableReference_Constraints();
     }
-    if (id == 1174989799417l) {
+    if (id == 0x11192d97ff9L) {
       return new PropertyPatternVariableReference_Constraints();
     }
-    if (id == 1174989777619l) {
+    if (id == 0x11192d92ad3L) {
       return new LinkPatternVariableReference_Constraints();
     }
-    if (id == 1174989242422l) {
+    if (id == 0x11192d10036L) {
       return new PatternVariableReference_Constraints();
     }
-    if (id == 1174666260556l) {
+    if (id == 0x1117f90b04cL) {
       return new TypeVarReference_Constraints();
     }
-    if (id == 1174642788531l) {
+    if (id == 0x1117e2a88b3L) {
       return new ConceptReference_Constraints();
     }
-    if (id == 1174650418652l) {
+    if (id == 0x1117e9ef5dcL) {
       return new ApplicableNodeReference_Constraints();
     }
-    if (id == 1210784384552l) {
+    if (id == 0x119e85f8628L) {
       return new TypesystemIntentionArgument_Constraints();
     }
-    if (id == 1216390348809l) {
+    if (id == 0x11b3683c009L) {
       return new QuickFixArgumentReference_Constraints();
     }
-    if (id == 1174643105530l) {
+    if (id == 0x1117e2f5efaL) {
       return new InferenceRule_Constraints();
     }
-    if (id == 1188811367543l) {
+    if (id == 0x114caade477L) {
       return new ComparisonRule_Constraints();
     }
-    if (id == 1216383170661l) {
+    if (id == 0x11b36163865L) {
       return new TypesystemQuickFix_Constraints();
     }
-    if (id == 1201607707634l) {
+    if (id == 0x117c5668bf2L) {
       return new InequationReplacementRule_Constraints();
     }
-    if (id == 1195214364922l) {
+    if (id == 0x1164853e0faL) {
       return new NonTypesystemRule_Constraints();
     }
-    if (id == 1175147670730l) {
+    if (id == 0x1119c426ccaL) {
       return new SubtypingRule_Constraints();
     }
-    if (id == 1227096498176l) {
+    if (id == 0x11db4a6a000L) {
       return new PropertyMessageTarget_Constraints();
     }
-    if (id == 1227096620180l) {
+    if (id == 0x11db4a87c94L) {
       return new ReferenceMessageTarget_Constraints();
     }
-    if (id == 1240322207314l) {
+    if (id == 0x120c8f6ee52L) {
       return new ConceptTypeClause_Constraints();
     }
-    if (id == 1240322303006l) {
+    if (id == 0x120c8f8641eL) {
       return new ConceptClauseLinkInfo_Constraints();
     }
-    if (id == 1227096774658l) {
+    if (id == 0x11db4aad802L) {
       return new MessageStatement_Constraints();
     }
-    if (id == 5622704259074429274l) {
+    if (id == 0x4e07dbbbb735115aL) {
       return new OperationContextExpression_Constraints();
     }
-    if (id == 4778346850551666963l) {
+    if (id == 0x42501924d0bd1913L) {
       return new InequationReference_Constraints();
     }
-    if (id == 8090891477833069917l) {
+    if (id == 0x70489eee8479b55dL) {
       return new QuickFixFieldReference_Constraints();
     }
-    if (id == 1076452857759748206l) {
+    if (id == 0xef0542bbc39506eL) {
       return new WasSelectedNodeOperation_Constraints();
     }
-    if (id == 1076452857759748200l) {
+    if (id == 0xef0542bbc395068L) {
       return new CaretPositionOperation_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

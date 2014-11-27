@@ -38,7 +38,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
@@ -193,8 +192,8 @@ public class NewModuleUtil {
     }
     if (!(alreadyOwnsTemplateModel)) {
       EditableSModel templateModel = SModuleOperations.createModelWithAdjustments(language.getModuleName() + ".generator.template" + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next());
-      SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
-      SPropertyOperations.set(mappingConfiguration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "main");
+      SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
+      SPropertyOperations.set(mappingConfiguration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "main");
       SModelOperations.addRootNode(templateModel, mappingConfiguration);
       templateModel.save();
     }

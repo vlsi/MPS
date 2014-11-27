@@ -32,25 +32,25 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
-    if (id == 1136720037779l) {
+    if (id == 0x108a9cb4793L) {
       return new PatternVariableDeclaration_Constraints();
     }
-    if (id == 1137418540378l) {
+    if (id == 0x108d36d955aL) {
       return new LinkPatternVariableDeclaration_Constraints();
     }
-    if (id == 1136720037781l) {
+    if (id == 0x108a9cb4795L) {
       return new PropertyPatternVariableDeclaration_Constraints();
     }
-    if (id == 4413230749907802464l) {
+    if (id == 0x3d3ef1fc1815d960L) {
       return new ActionStatement_Constraints();
     }
-    if (id == 4413230749907733332l) {
+    if (id == 0x3d3ef1fc1814cb54L) {
       return new ActionAsPattern_Constraints();
     }
-    if (id == 3133930811460119173l) {
+    if (id == 0x2b7df577ffbb6a85L) {
       return new PatternVariableReference_Constraints();
     }
-    if (id == 4264731254635442556l) {
+    if (id == 0x3b2f5e7b070d317cL) {
       return new OrPatternVariableReference_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

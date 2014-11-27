@@ -4,7 +4,6 @@ package jetbrains.mps.testbench.suite.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -24,12 +23,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class JUnit4TestCaseRef_Constraints extends BaseConstraintsDescriptor {
   public JUnit4TestCaseRef_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599480l));
+    super(MetaIdFactory.conceptId(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb8L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599480l, 4504141816188599489l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599480l, 4504141816188599489l), this) {
+    references.put(MetaIdFactory.refId(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb8L, 0x3e81ed1e2be77cc1L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb8L, 0x3e81ed1e2be77cc1L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -40,7 +39,7 @@ public class JUnit4TestCaseRef_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return JUnit4TestCaseRef_Behavior.call_getTestClassesForModule_1514755338276096458(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef")), SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, "jetbrains.mps.testbench.suite.structure.ModuleSuite"), true, false));
+            return JUnit4TestCaseRef_Behavior.call_getTestClassesForModule_1514755338276096458(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef")), SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"), true, false));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

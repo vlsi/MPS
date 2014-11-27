@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -20,8 +19,8 @@ public class check_BuildMpsLayout_TestModules_NonTypesystemRule extends Abstract
   public check_BuildMpsLayout_TestModules_NonTypesystemRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(3891333323013573211l, -7392620776726838882l), 4560297596904469357l, 7206546315286874030l, "haltonfailure")) != null)) {
-      String approxPresentation = BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(3891333323013573211l, -7392620776726838882l), 4560297596904469357l, 7206546315286874030l, "haltonfailure")), null);
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x6402cbb11c1307aeL, "haltonfailure")) != null)) {
+      String approxPresentation = BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x6402cbb11c1307aeL, "haltonfailure")), null);
       if (approxPresentation.contains("${")) {
         return;
       } else if (approxPresentation.equals("true")) {

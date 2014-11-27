@@ -8,7 +8,6 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class RemoveBackslashesFromIconPath_MigrationScript extends BaseMigrationScript {
   public RemoveBackslashesFromIconPath_MigrationScript(IOperationContext operationContext) {
@@ -24,11 +23,11 @@ public class RemoveBackslashesFromIconPath_MigrationScript extends BaseMigration
         return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        String iconPath = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1160488491229l, "iconPath"));
+        String iconPath = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath"));
         return iconPath != null && iconPath.startsWith("${") && iconPath.indexOf('\\') != -1;
       }
       public void doUpdateInstanceNode(SNode node) {
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1160488491229l, "iconPath"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1160488491229l, "iconPath")).replace('\\', '/'));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath")).replace('\\', '/'));
       }
       public boolean isShowAsIntention() {
         return true;

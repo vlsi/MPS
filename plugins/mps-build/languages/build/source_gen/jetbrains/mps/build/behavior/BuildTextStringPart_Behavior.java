@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -14,12 +13,12 @@ public class BuildTextStringPart_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"));
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text"));
   }
   @Nullable
   public static SNode call_getContainer_6083230236994622122(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 4380385936562003279l, "jetbrains.mps.build.structure.BuildString")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456897460l, "jetbrains.mps.build.structure.BuildStringContainer"))) {
-      return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456897460l, "jetbrains.mps.build.structure.BuildStringContainer"));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer"))) {
+      return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer"));
     }
     return null;
   }

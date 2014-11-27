@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2n7rt333prxv8bpru1f6hp15fhuft38" />
+<dependencies version="2" modelHash="2n7rt333prxv8bpru1f6hp15fhuft38">
+  <common hash="4vt4g6gmyhb69wwgndduam6jrnbcl4z" />
+  <source id="3675491646420810827" name="org.jetbrains.workflow" hash="-e4b16jatn0jn0ttbfvz11snsf0rgzub">
+    <file name="org.jetbrains.workflow" />
+  </source>
+</dependencies>
 

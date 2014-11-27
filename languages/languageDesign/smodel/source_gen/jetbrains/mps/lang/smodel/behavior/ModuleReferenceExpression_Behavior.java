@@ -7,7 +7,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.NotNull;
@@ -24,10 +23,10 @@ public class ModuleReferenceExpression_Behavior {
   }
   @Nullable
   public static SModule call_getModule_4040588429969043137(SNode thisNode) {
-    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969021681l, 4040588429969021683l, "moduleId")) == null) {
+    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af3L, "moduleId")) == null) {
       return null;
     }
-    return MPSModuleRepository.getInstance().getModule(ModuleId.fromString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969021681l, 4040588429969021683l, "moduleId"))));
+    return MPSModuleRepository.getInstance().getModule(ModuleId.fromString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af3L, "moduleId"))));
   }
   @NotNull
   public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode) {

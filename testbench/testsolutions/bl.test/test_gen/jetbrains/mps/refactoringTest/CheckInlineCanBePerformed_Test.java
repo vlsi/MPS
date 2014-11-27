@@ -10,7 +10,6 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 @MPSLaunch
 public class CheckInlineCanBePerformed_Test extends BaseTransformationTest {
@@ -23,12 +22,12 @@ public class CheckInlineCanBePerformed_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_CheckInlineCanBePerformed() throws Exception {
       this.addNodeById("1230053187318");
-      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187326"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors());
-      Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187332"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors() != null);
-      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187337"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors());
-      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187342"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors());
-      Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187347"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors() != null);
-      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187351"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1202948039474l, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors());
+      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187326"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors());
+      Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187332"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors() != null);
+      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187337"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors());
+      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187342"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors());
+      Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187347"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors() != null);
+      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187351"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors());
     }
   }
 }

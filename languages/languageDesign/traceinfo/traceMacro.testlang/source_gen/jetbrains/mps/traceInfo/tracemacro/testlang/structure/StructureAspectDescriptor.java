@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
@@ -14,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptGeneratedForeach = new ConceptDescriptorBuilder("jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach", MetaIdFactory.conceptId(new UUID(1444608851612289104L, -4648590198379536324L), 7980748436587788162L)).super_("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").super_(MetaIdFactory.conceptId(new UUID(-8968771020793164004L, -7182180101671965361L), 1153943597977L)).parents("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").parentIds(MetaIdFactory.conceptId(new UUID(-8968771020793164004L, -7182180101671965361L), 1153943597977L)).staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptGeneratedForeach = new ConceptDescriptorBuilder("jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach", MetaIdFactory.conceptId(0x140c4818bfbc4850L, 0xbf7ce3d80739a03cL, 0x6ec1506b5491b782L)).super_("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").super_(MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L)).parents("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").parentIds(MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L)).staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

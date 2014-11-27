@@ -5,25 +5,24 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CellMenuPart_Abstract_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getEditedFeature_1219409924597(SNode thisNode) {
-    return CellMenuUtil.getEditedFeature(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1164824717996l, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor")));
+    return CellMenuUtil.getEditedFeature(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor")));
   }
   public static SNode call_getEditedLink_1219409839992(SNode thisNode) {
     SNode editedFeature = CellMenuPart_Abstract_Behavior.call_getEditedFeature_1219409924597(thisNode);
-    if (SNodeOperations.isInstanceOf(editedFeature, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
-      return SNodeOperations.cast(editedFeature, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+    if (SNodeOperations.isInstanceOf(editedFeature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
+      return SNodeOperations.cast(editedFeature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
     }
     return null;
   }
   public static SNode call_getEditedAggregationLink_1219409809074(SNode thisNode) {
     SNode editedLink = CellMenuPart_Abstract_Behavior.call_getEditedLink_1219409839992(thisNode);
-    if (SPropertyOperations.hasValue(editedLink, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference")) {
+    if (SPropertyOperations.hasValue(editedLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
       return editedLink;
     }
     return null;

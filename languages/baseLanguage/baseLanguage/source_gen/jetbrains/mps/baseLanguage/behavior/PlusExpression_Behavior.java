@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class PlusExpression_Behavior {
@@ -15,8 +14,8 @@ public class PlusExpression_Behavior {
   }
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     Object result;
-    Object leftExpression = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")), "virtual_eval_1213877519769", new Object[]{module});
-    Object rightExpression = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")), "virtual_eval_1213877519769", new Object[]{module});
+    Object leftExpression = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")), "virtual_eval_1213877519769", new Object[]{module});
+    Object rightExpression = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")), "virtual_eval_1213877519769", new Object[]{module});
     if (leftExpression instanceof String) {
       result = "" + leftExpression + rightExpression;
     } else {

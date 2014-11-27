@@ -4,7 +4,6 @@ package jetbrains.mps.console.ideCommands.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
@@ -14,7 +13,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class SubtreeStatisticsTarget_Constraints extends BaseConstraintsDescriptor {
   public SubtreeStatisticsTarget_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-6492820313512655654l, -6146453626538471728l), 2087237500458473003l));
+    super(MetaIdFactory.conceptId(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL));
   }
   @Override
   public boolean hasOwnCanBeAncestorMethod() {

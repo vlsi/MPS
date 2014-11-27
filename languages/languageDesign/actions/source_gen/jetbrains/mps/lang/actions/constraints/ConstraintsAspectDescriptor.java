@@ -40,37 +40,37 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
-    if (id == 1178541723620l) {
+    if (id == 0x112668f8fe4L) {
       return new SubstituteNodeBuilderVariableReference_Constraints();
     }
-    if (id == 1203348041101l) {
+    if (id == 0x1182d21ed8dL) {
       return new SideTransformVariableReference_Constraints();
     }
-    if (id == 1158700725281l) {
+    if (id == 0x10dc7f1f421L) {
       return new NodeFactory_Constraints();
     }
-    if (id == 1158700664498l) {
+    if (id == 0x10dc7f106b2L) {
       return new NodeFactories_Constraints();
     }
-    if (id == 1112056943463l) {
+    if (id == 0x102ebc25367L) {
       return new NodeSubstituteActions_Constraints();
     }
-    if (id == 1221135252814l) {
+    if (id == 0x11c51553d4eL) {
       return new PasteWrappers_Constraints();
     }
-    if (id == 1138079416598l) {
+    if (id == 0x108fad1c116L) {
       return new SideTransformHintSubstituteActions_Constraints();
     }
-    if (id == 1235053713157l) {
+    if (id == 0x11f8ef01705L) {
       return new SmartActionParameterReference_Constraints();
     }
-    if (id == 1177496137779l) {
+    if (id == 0x112283d3033L) {
       return new SideTransformMenuPart_Constraints();
     }
-    if (id == 1177323652379l) {
+    if (id == 0x1121df5451bL) {
       return new SubstituteMenuPart_Constraints();
     }
-    if (id == 5948027493682789918l) {
+    if (id == 0x528ba37dd3383e1eL) {
       return new CopyPasteHandlers_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

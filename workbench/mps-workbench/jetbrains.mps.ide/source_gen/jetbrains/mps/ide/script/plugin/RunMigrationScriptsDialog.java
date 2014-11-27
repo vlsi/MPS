@@ -31,7 +31,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.table.DefaultTableModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.table.TableCellRenderer;
 import java.awt.Component;
@@ -216,13 +215,13 @@ public class RunMigrationScriptsDialog extends JDialog {
         return mySelectedScriptIds.contains(script.getNodeId().toString());
       }
       if (column == 1) {
-        return "  " + SPropertyOperations.getString(sn, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 1177457669450l, "title"));
+        return "  " + SPropertyOperations.getString(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x11225f2354aL, "title"));
       }
       if (column == 2) {
-        if (SPropertyOperations.hasValue(sn, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925395l, "type"), "migration", "enhancement")) {
-          return SPropertyOperations.getString_def(sn, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925395l, "type"), "enhancement") + " (" + SPropertyOperations.getString(sn, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925397l, "toBuild")) + ")";
+        if (SPropertyOperations.hasValue(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "migration", "enhancement")) {
+          return SPropertyOperations.getString_def(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "enhancement") + " (" + SPropertyOperations.getString(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081155L, "toBuild")) + ")";
         } else {
-          return SPropertyOperations.getString_def(sn, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925395l, "type"), "enhancement");
+          return SPropertyOperations.getString_def(sn, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "enhancement");
         }
       }
       if (column == 3) {

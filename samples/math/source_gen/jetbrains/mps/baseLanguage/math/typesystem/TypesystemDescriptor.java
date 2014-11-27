@@ -13,7 +13,6 @@ import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 
@@ -284,7 +283,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106079927l, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106079927l, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"));
+      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200944b8b7L, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200944b8b7L, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
@@ -307,7 +306,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106079927l, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106079927l, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"));
+      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200944b8b7L, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200944b8b7L, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
@@ -330,7 +329,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106079927l, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106079927l, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"));
+      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200944b8b7L, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200944b8b7L, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
@@ -373,7 +372,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106079927l, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237106079927l, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"));
+      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200944b8b7L, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200944b8b7L, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
@@ -396,7 +395,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return !((SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204200696010l, "jetbrains.mps.baseLanguage.structure.NullType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204200696010l, "jetbrains.mps.baseLanguage.structure.NullType"))));
+      return !((SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1185ff468caL, "jetbrains.mps.baseLanguage.structure.NullType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1185ff468caL, "jetbrains.mps.baseLanguage.structure.NullType"))));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
@@ -419,7 +418,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return !((SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204200696010l, "jetbrains.mps.baseLanguage.structure.NullType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204200696010l, "jetbrains.mps.baseLanguage.structure.NullType"))));
+      return !((SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1185ff468caL, "jetbrains.mps.baseLanguage.structure.NullType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1185ff468caL, "jetbrains.mps.baseLanguage.structure.NullType"))));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
@@ -442,7 +441,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return !((SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204200696010l, "jetbrains.mps.baseLanguage.structure.NullType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204200696010l, "jetbrains.mps.baseLanguage.structure.NullType"))));
+      return !((SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1185ff468caL, "jetbrains.mps.baseLanguage.structure.NullType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1185ff468caL, "jetbrains.mps.baseLanguage.structure.NullType"))));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
@@ -465,7 +464,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return !((SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204200696010l, "jetbrains.mps.baseLanguage.structure.NullType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1204200696010l, "jetbrains.mps.baseLanguage.structure.NullType"))));
+      return !((SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1185ff468caL, "jetbrains.mps.baseLanguage.structure.NullType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1185ff468caL, "jetbrains.mps.baseLanguage.structure.NullType"))));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
@@ -488,7 +487,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return MathTypeUtil.join(leftOperandType, rightOperandType);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237218038292l, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237218038292l, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"));
+      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200ff11214L, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200ff11214L, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
@@ -511,7 +510,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return MathTypeUtil.join(leftOperandType, rightOperandType);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237218038292l, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237218038292l, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"));
+      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200ff11214L, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200ff11214L, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
@@ -534,7 +533,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return MathTypeUtil.join(leftOperandType, rightOperandType);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237218038292l, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237218038292l, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"));
+      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200ff11214L, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200ff11214L, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {
@@ -557,7 +556,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       return MathTypeUtil.join(leftOperandType, rightOperandType);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237218038292l, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(new UUID(3676340747305173022l, -6911132873973321185l), 1237218038292l, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"));
+      return SNodeOperations.isInstanceOf(leftOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200ff11214L, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType")) || SNodeOperations.isInstanceOf(rightOperandType, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200ff11214L, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"));
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {

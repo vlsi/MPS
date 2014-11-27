@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -19,14 +18,14 @@ public class typeof_CallInnerFunctionOperation_InferenceRule extends AbstractInf
   public typeof_CallInnerFunctionOperation_InferenceRule() {
   }
   public void applyRule(final SNode opcall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode opdecl = SLinkOperations.getTarget(opcall, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233924848298l, 1234190664409l, "function"));
+    SNode opdecl = SLinkOperations.getTarget(opcall, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4ba6faaaL, 0x11f5b7f02d9L, "function"));
     if (opdecl == null) {
       return;
     }
 
     {
-      Iterator<SNode> pdecl_it = ListSequence.fromList(SLinkOperations.getChildren(opdecl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).iterator();
-      Iterator<SNode> arg_it = ListSequence.fromList(SLinkOperations.getChildren(opcall, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233924848298l, 1234191323697l, "parameter"))).iterator();
+      Iterator<SNode> pdecl_it = ListSequence.fromList(SLinkOperations.getChildren(opdecl, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).iterator();
+      Iterator<SNode> arg_it = ListSequence.fromList(SLinkOperations.getChildren(opcall, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4ba6faaaL, 0x11f5b891231L, "parameter"))).iterator();
       SNode pdecl_var;
       SNode arg_var;
       while (pdecl_it.hasNext() && arg_it.hasNext()) {
@@ -35,7 +34,7 @@ public class typeof_CallInnerFunctionOperation_InferenceRule extends AbstractInf
         {
           SNode _nodeToCheck_1029348928467 = arg_var;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "9033423951287770196", 0, null);
-          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "9033423951287769724", true), (SNode) SLinkOperations.getTarget(pdecl_var, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), false, true, _info_12389875345);
+          typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "9033423951287769724", true), (SNode) SLinkOperations.getTarget(pdecl_var, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), false, true, _info_12389875345);
         }
       }
     }

@@ -4,10 +4,9 @@ package jetbrains.mps.samples.heating.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 
 public class Applicability_Constraints extends BaseConstraintsDescriptor {
   public Applicability_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-6352760259037542597l, -7435837320858277567l), 4664795093170414652l));
+    super(MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68643cL));
   }
 }

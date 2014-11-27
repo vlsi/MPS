@@ -6,14 +6,13 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptMergeHint = new ConceptDescriptorBuilder("jetbrains.mps.vcs.mergehints.structure.MergeHint", MetaIdFactory.conceptId(new UUID(4026282531954969020L, -9049648244592808842L), 7313573869697839898L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 3364660638048049748L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 3364660638048049748L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(8485200647808748986L, "hint")).properties("hint").create();
+  /*package*/ final ConceptDescriptor myConceptMergeHint = new ConceptDescriptorBuilder("jetbrains.mps.vcs.mergehints.structure.MergeHint", MetaIdFactory.conceptId(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(8485200647808748986L, "hint")).properties("hint").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

@@ -40,37 +40,37 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
-    if (id == 856705193941281756l) {
+    if (id == 0xbe3a0d5ba1a2bdcL) {
       return new CommandParameterReference_Constraints();
     }
-    if (id == 856705193941281764l) {
+    if (id == 0xbe3a0d5ba1a2be4L) {
       return new CommandParameterAssignment_Constraints();
     }
-    if (id == 856705193941281777l) {
+    if (id == 0xbe3a0d5ba1a2bf1L) {
       return new CommandDebuggerOperation_Constraints();
     }
-    if (id == 8478830098674460022l) {
+    if (id == 0x75aadb0d4e61a576L) {
       return new DebuggerSettingsCommandParameterDeclaration_Constraints();
     }
-    if (id == 6129022259108579244l) {
+    if (id == 0x550ea9458ea107acL) {
       return new ExecuteCommandPart_Constraints();
     }
-    if (id == 856705193941281810l) {
+    if (id == 0xbe3a0d5ba1a2c12L) {
       return new ProcessType_Constraints();
     }
-    if (id == 612376536074296995l) {
+    if (id == 0x87f99370d7e1ea3L) {
       return new CommandProcessType_Constraints();
     }
-    if (id == 2459753140357918802l) {
+    if (id == 0x2222cc72e62f7052L) {
       return new StartAndWaitOperation_Constraints();
     }
-    if (id == 8234001627573935224l) {
+    if (id == 0x72450cdacb885c78L) {
       return new CommandPartToListOperation_Constraints();
     }
-    if (id == 1616228152992023913l) {
+    if (id == 0x166dfef127134569L) {
       return new CommandPartLengthOperation_Constraints();
     }
-    if (id == 856705193941281780l) {
+    if (id == 0xbe3a0d5ba1a2bf4L) {
       return new CommandBuilderExpression_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

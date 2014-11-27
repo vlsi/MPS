@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.util.ArrayList;
 
 public class MatchParensRegexp_Behavior {
@@ -16,7 +15,7 @@ public class MatchParensRegexp_Behavior {
   }
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     ListSequence.fromList(vars).addElement(thisNode);
-    return "(" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, 1174564160889l, "regexp")), "virtual_getString_1222432436326", new Object[]{vars}) + ")";
+    return "(" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, 0x111797ac579L, "regexp")), "virtual_getString_1222432436326", new Object[]{vars}) + ")";
   }
   public static int call_getIndex_1223361984345(SNode thisNode) {
     SNode parens = thisNode;

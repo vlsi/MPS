@@ -22,10 +22,10 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
-    if (id == 2178507174411801538l) {
+    if (id == 0x1e3b9cbb9f7493c2L) {
       return new ExternalViewFigure_Constraints();
     }
-    if (id == 2178507174411801606l) {
+    if (id == 0x1e3b9cbb9f749406L) {
       return new ExternalViewFigureParameter_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

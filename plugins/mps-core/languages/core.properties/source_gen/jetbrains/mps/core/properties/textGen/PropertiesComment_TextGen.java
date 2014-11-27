@@ -7,12 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.properties.util.PropEscapeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class PropertiesComment_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("# ");
-    this.append(PropEscapeUtil.escapeComment(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(6411313803625843570l, -6660548049992482726l), 3961775458390522585l, 3961775458390522586l, "text"))));
+    this.append(PropEscapeUtil.escapeComment(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ad9L, 0x36fb0dc9fd3a3adaL, "text"))));
     this.appendNewLine();
   }
 }

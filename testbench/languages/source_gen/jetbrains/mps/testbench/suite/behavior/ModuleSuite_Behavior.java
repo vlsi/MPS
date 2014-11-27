@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -26,16 +25,16 @@ public class ModuleSuite_Behavior {
     return m.getModels();
   }
   public static SModule call_module_8756160028287537335(SNode thisNode) {
-    SModuleReference moduleReference = BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, 1280144168199507080l, "moduleRef")), "virtual_moduleReference_1280144168199513544", new Object[]{});
+    SModuleReference moduleReference = BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef")), "virtual_moduleReference_1280144168199513544", new Object[]{});
     if (moduleReference == null) {
       return null;
     }
     return moduleReference.resolve(MPSModuleRepository.getInstance());
   }
   public static Iterable<SNode> call_getNotMutedTests_8605005254686521789(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, 4504141816188599486l, "testRef"))).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599482l, 8605005254686522462l, "muted")));
+        return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, 0x776b1eb017f5bc5eL, "muted")));
       }
     });
   }

@@ -24,7 +24,6 @@ import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -101,8 +100,8 @@ public class CommandUtil {
   }
 
   public static void printClosure(ConsoleStream console, _FunctionTypes._void_P0_E0 closure, String text) {
-    SNode nodeWithClosure = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 1111629987770987206l, "jetbrains.mps.console.base.structure.NodeWithClosure")));
-    SPropertyOperations.set(nodeWithClosure, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250037290416l, 3894227536041201194l, "text"), text);
+    SNode nodeWithClosure = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xf6d4d958ec2f2c6L, "jetbrains.mps.console.base.structure.NodeWithClosure")));
+    SPropertyOperations.set(nodeWithClosure, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), text);
     ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
     console.addNode(nodeWithClosure);
   }
@@ -175,8 +174,8 @@ public class CommandUtil {
   }
 
   public static void addNodeReference(ConsoleStream console, SNode target) {
-    SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250037383180l, "jetbrains.mps.console.base.structure.NodeReferencePresentation")));
-    SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target"), target);
+    SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bbb600cL, "jetbrains.mps.console.base.structure.NodeReferencePresentation")));
+    SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"), target);
     console.addNode(node);
   }
 
@@ -184,9 +183,9 @@ public class CommandUtil {
     StringWriter writer = new StringWriter();
     exception.printStackTrace(new PrintWriter(writer));
 
-    SNode exceptionHolder = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 6558068108107691796l, "jetbrains.mps.console.blCommand.structure.ExceptionHolder")));
-    SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(new UUID(1911026821630280634l, -8343922105556474022l), 6558068108107691796l, 6558068108108282025l, "stackTrace"), writer.toString());
-    SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250037290416l, 3894227536041201194l, "text"), exception.getClass().getName());
+    SNode exceptionHolder = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5b02f032bc93b714L, "jetbrains.mps.console.blCommand.structure.ExceptionHolder")));
+    SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace"), writer.toString());
+    SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), exception.getClass().getName());
     console.addNode(exceptionHolder);
   }
 

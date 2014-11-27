@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.build.behavior.BuildLayout_File_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -97,7 +96,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_1ol6d0_a2a(SNode node, EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955221291l, "filemode"))) || BuildLayout_File_Behavior.call_canHaveFilemode_9126048691955221297(node);
+    return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c32bL, "filemode"))) || BuildLayout_File_Behavior.call_canHaveFilemode_9126048691955221297(node);
   }
   private EditorCell createConstant_1ol6d0_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
@@ -149,7 +148,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_1ol6d0_a3a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220774l, "parameters"))).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c126L, "parameters"))).isEmpty();
   }
   private EditorCell createRefNodeList_1ol6d0_a3a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildLayout_File_Editor.parametersListHandler_1ol6d0_a3a(node, "parameters", editorContext);

@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.util.Map;
 
 @Deprecated
@@ -39,8 +38,8 @@ import java.util.Map;
     if (methods.size() == 1) {
       return ListSequence.fromList(methods).first();
     }
-    SNode classifier = SLinkOperations.getTarget(this.myInstanceType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
-    List<SNode> typeParameters = SLinkOperations.getChildren(this.myInstanceType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"));
+    SNode classifier = SLinkOperations.getTarget(this.myInstanceType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
+    List<SNode> typeParameters = SLinkOperations.getChildren(this.myInstanceType, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"));
     Map<SNode, SNode> typeByTypeVar = MethodResolveUtil.getTypesByTypeVars(classifier, typeParameters);
     return MethodResolveUtil.chooseByParameterType(methods, this.myActualArguments, typeByTypeVar);
   }

@@ -4,7 +4,6 @@ package jetbrains.mps.samples.Expressions.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -17,12 +16,12 @@ import java.util.ArrayList;
 
 public class ArithmeticSimpleMathExpression_Constraints extends BaseConstraintsDescriptor {
   public ArithmeticSimpleMathExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(9090561219821783296l, -5934278934713809676l), 2073504467208672407l));
+    super(MetaIdFactory.conceptId(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b8289497L));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(9090561219821783296l, -5934278934713809676l), 2073504467208672407l, 2073504467208672490l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(9090561219821783296l, -5934278934713809676l), 2073504467208672407l, 2073504467208672490l), this) {
+    properties.put(MetaIdFactory.propId(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b8289497L, 0x1cc69153b82894eaL), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b8289497L, 0x1cc69153b82894eaL), this) {
       @Override
       public boolean hasOwnValidator() {
         return true;

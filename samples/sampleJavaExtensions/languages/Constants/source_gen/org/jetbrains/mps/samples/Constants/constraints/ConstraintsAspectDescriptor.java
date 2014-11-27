@@ -22,10 +22,10 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
-    if (id == 1494751830318912537l) {
+    if (id == 0x14be6cdec1861419L) {
       return new Constant_Constraints();
     }
-    if (id == 3990190717072393829l) {
+    if (id == 0x37600150f5294665L) {
       return new ConstantReference_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

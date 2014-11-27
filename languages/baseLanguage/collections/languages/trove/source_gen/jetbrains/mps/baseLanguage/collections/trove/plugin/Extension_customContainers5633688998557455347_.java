@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class Extension_customContainers5633688998557455347_ extends Extension.Default<_FunctionTypes._return_P0_E0<? extends List<SNode>>> {
   public Extension_customContainers5633688998557455347_() {
@@ -25,7 +24,7 @@ public class Extension_customContainers5633688998557455347_ extends Extension.De
         // Find the model(s) with custom container declarations 
         SModel mdl = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.baseLanguage.collections.trove.containers");
         if (mdl != null) {
-          ListSequence.fromList(res).addSequence(ListSequence.fromList(SModelOperations.nodes(mdl, MetaAdapterFactory.getConcept(new UUID(-8968771020793164004l, -7182180101671965361l), 6099516049394485324l, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers"))));
+          ListSequence.fromList(res).addSequence(ListSequence.fromList(SModelOperations.nodes(mdl, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x54a5d587c1f3c84cL, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers"))));
         }
         return res;
       }

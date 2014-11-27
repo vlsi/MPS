@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.table.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -28,12 +27,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDescriptor {
   public CellModel_HierarchycalTable_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(176436106756638750l, -7048406674469565631l), 2253133157536766818l));
+    super(MetaIdFactory.conceptId(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(176436106756638750l, -7048406674469565631l), 2253133157536766818l, 6216065619544939793l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(176436106756638750l, -7048406674469565631l), 2253133157536766818l, 6216065619544939793l), this) {
+    references.put(MetaIdFactory.refId(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d11L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d11L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -57,7 +56,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
         };
       }
     });
-    references.put(MetaIdFactory.refId(new UUID(176436106756638750l, -7048406674469565631l), 2253133157536766818l, 6216065619544939794l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(176436106756638750l, -7048406674469565631l), 2253133157536766818l, 6216065619544939794l), this) {
+    references.put(MetaIdFactory.refId(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d12L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d12L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -81,7 +80,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
         };
       }
     });
-    references.put(MetaIdFactory.refId(new UUID(176436106756638750l, -7048406674469565631l), 2253133157536766818l, 6216065619544939795l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(176436106756638750l, -7048406674469565631l), 2253133157536766818l, 6216065619544939795l), this) {
+    references.put(MetaIdFactory.refId(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d13L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d13L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -92,10 +91,10 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if ((SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(new UUID(176436106756638750l, -7048406674469565631l), 2253133157536766818l, 6216065619544939794l, "rowsLinkDeclaration")) == null)) {
+            if ((SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d12L, "rowsLinkDeclaration")) == null)) {
               return null;
             }
-            return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(new UUID(176436106756638750l, -7048406674469565631l), 2253133157536766818l, 6216065619544939794l, "rowsLinkDeclaration")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")))).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d12L, "rowsLinkDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(LinkDeclaration_Behavior.call_isSingular_1213877254557(it));
               }

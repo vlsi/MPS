@@ -7,7 +7,6 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -18,13 +17,13 @@ public class ITestCase_Behavior {
     return SNodeOperations.getModelLongName(thisNode.getModel()) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSimpleClassName_1229278847513", new Object[]{});
   }
   public static String virtual_getSimpleClassName_1229278847513(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_Test";
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Test";
   }
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
     return new ArrayList<SNode>();
   }
   public static boolean call_canRunInProcess_6436735966448788391(SNode thisNode) {
     // method is a property 
-    return !(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess")));
+    return !(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, 0x59337dc8dffe0d9dL, "canNotRunInProcess")));
   }
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.CellConditions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class ReplaceRegexpOperation_removeI {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -29,7 +28,7 @@ public class ReplaceRegexpOperation_removeI {
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159272l, "caseInsensitive"), "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee68L, "caseInsensitive"), "" + (false));
       editorContext.getEditorComponent().changeSelection(toSelect);
     }
   }
@@ -44,7 +43,7 @@ public class ReplaceRegexpOperation_removeI {
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159272l, "caseInsensitive"), "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee68L, "caseInsensitive"), "" + (false));
       editorContext.getEditorComponent().changeSelection(toSelect);
     }
   }

@@ -16,7 +16,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
@@ -61,7 +60,7 @@ public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_x6ljyw_a1a(SNode node, EditorContext editorContext) {
-    return neq_x6ljyw_a0a0e(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400376l, "modelUID")), "*");
+    return neq_x6ljyw_a0a0e(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572778L, "modelUID")), "*");
   }
   private EditorCell createConstant_x6ljyw_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");

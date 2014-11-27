@@ -195,81 +195,81 @@
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/2769948622284605897">
     <file name="BwfTask_Behavior.java">
-      <node id="3961775458390497509" at="19,113,20,251" concept="4" />
-      <node id="3961775458390497570" at="22,580,23,282" concept="0" />
-      <node id="2769948622284605916" at="25,7,26,20" concept="5" />
-      <node id="2769948622284605939" at="27,5,28,16" concept="5" />
-      <node id="2059109515400548787" at="30,77,31,15" concept="5" />
-      <node id="2769948622284605897" at="16,0,18,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3961775458390497532" at="21,71,24,9" concept="2" />
-      <node id="2769948622284605897" at="30,0,33,0" concept="7" trace="virtual_getPriority_2059109515400548718#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
-      <node id="3961775458390497517" at="20,251,25,7" concept="1" />
-      <node id="2769948622284605925" at="18,101,27,5" concept="2" />
-      <node id="2769948622284605897" at="18,0,30,0" concept="7" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <scope id="2769948622284605899" at="16,43,16,43" />
-      <scope id="3961775458390497533" at="22,580,23,282" />
-      <scope id="2059109515400548780" at="30,77,31,15" />
-      <scope id="2769948622284605897" at="16,0,18,0">
+      <node id="3961775458390497509" at="18,113,19,236" concept="4" />
+      <node id="3961775458390497570" at="21,537,22,267" concept="0" />
+      <node id="2769948622284605916" at="24,7,25,20" concept="5" />
+      <node id="2769948622284605939" at="26,5,27,16" concept="5" />
+      <node id="2059109515400548787" at="29,77,30,15" concept="5" />
+      <node id="2769948622284605897" at="15,0,17,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3961775458390497532" at="20,71,23,9" concept="2" />
+      <node id="2769948622284605897" at="29,0,32,0" concept="7" trace="virtual_getPriority_2059109515400548718#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
+      <node id="3961775458390497517" at="19,236,24,7" concept="1" />
+      <node id="2769948622284605925" at="17,101,26,5" concept="2" />
+      <node id="2769948622284605897" at="17,0,29,0" concept="7" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="2769948622284605899" at="15,43,15,43" />
+      <scope id="3961775458390497533" at="21,537,22,267" />
+      <scope id="2059109515400548780" at="29,77,30,15" />
+      <scope id="2769948622284605897" at="15,0,17,0">
         <var name="thisNode" id="2769948622284605897" />
       </scope>
-      <scope id="3961775458390497518" at="21,71,24,9" />
-      <scope id="2769948622284605897" at="30,0,33,0">
+      <scope id="3961775458390497518" at="20,71,23,9" />
+      <scope id="2769948622284605897" at="29,0,32,0">
         <var name="thisNode" id="2769948622284605897" />
       </scope>
-      <scope id="3961775458390497517" at="20,251,25,7">
+      <scope id="3961775458390497517" at="19,236,24,7">
         <var name="n" id="3961775458390497520" />
       </scope>
-      <scope id="2769948622284605926" at="19,113,26,20">
+      <scope id="2769948622284605926" at="18,113,25,20">
         <var name="result" id="3961775458390497510" />
       </scope>
-      <scope id="2769948622284605902" at="18,101,28,16" />
-      <scope id="2769948622284605897" at="18,0,30,0">
+      <scope id="2769948622284605902" at="17,101,27,16" />
+      <scope id="2769948622284605897" at="17,0,29,0">
         <var name="child" id="2769948622284605905" />
         <var name="kind" id="2769948622284605903" />
         <var name="thisNode" id="2769948622284605897" />
       </scope>
-      <unit id="2769948622284605897" at="15,0,34,0" name="jetbrains.mps.build.workflow.behavior.BwfTask_Behavior" />
+      <unit id="2769948622284605897" at="14,0,33,0" name="jetbrains.mps.build.workflow.behavior.BwfTask_Behavior" />
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/3961775458390352366">
     <file name="BwfTaskPart_Behavior.java">
-      <node id="3961775458390497445" at="20,113,21,199" concept="4" />
-      <node id="5273009634688959799" at="21,199,22,274" concept="4" />
-      <node id="5273009634688913051" at="22,274,23,69" concept="4" />
-      <node id="5273009634688968450" at="24,25,25,142" concept="0" />
-      <node id="5273009634689149267" at="29,753,30,251" concept="0" />
-      <node id="3961775458390352387" at="33,7,34,19" concept="5" />
-      <node id="3961775458390352394" at="35,5,36,16" concept="5" />
-      <node id="3961775458390352366" at="17,0,19,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3961775458390497453" at="23,69,26,7" concept="2" />
-      <node id="5273009634689125742" at="28,73,31,11" concept="2" />
-      <node id="5273009634689125740" at="27,99,32,9" concept="1" />
-      <node id="5273009634689096498" at="26,7,33,7" concept="2" />
-      <node id="3961775458390352385" at="19,101,35,5" concept="2" />
-      <node id="3961775458390352366" at="19,0,38,0" concept="7" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <scope id="3961775458390352368" at="17,43,17,43" />
-      <scope id="3961775458390497454" at="24,25,25,142" />
-      <scope id="5273009634689125743" at="29,753,30,251" />
-      <scope id="3961775458390352366" at="17,0,19,0">
+      <node id="3961775458390497445" at="19,113,20,184" concept="4" />
+      <node id="5273009634688959799" at="20,184,21,259" concept="4" />
+      <node id="5273009634688913051" at="21,259,22,69" concept="4" />
+      <node id="5273009634688968450" at="23,25,24,142" concept="0" />
+      <node id="5273009634689149267" at="28,695,29,236" concept="0" />
+      <node id="3961775458390352387" at="32,7,33,19" concept="5" />
+      <node id="3961775458390352394" at="34,5,35,16" concept="5" />
+      <node id="3961775458390352366" at="16,0,18,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3961775458390497453" at="22,69,25,7" concept="2" />
+      <node id="5273009634689125742" at="27,73,30,11" concept="2" />
+      <node id="5273009634689125740" at="26,99,31,9" concept="1" />
+      <node id="5273009634689096498" at="25,7,32,7" concept="2" />
+      <node id="3961775458390352385" at="18,101,34,5" concept="2" />
+      <node id="3961775458390352366" at="18,0,37,0" concept="7" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="3961775458390352368" at="16,43,16,43" />
+      <scope id="3961775458390497454" at="23,25,24,142" />
+      <scope id="5273009634689125743" at="28,695,29,236" />
+      <scope id="3961775458390352366" at="16,0,18,0">
         <var name="thisNode" id="3961775458390352366" />
       </scope>
-      <scope id="5273009634689125741" at="28,73,31,11" />
-      <scope id="5273009634689096500" at="27,99,32,9" />
-      <scope id="5273009634689125740" at="27,99,32,9">
+      <scope id="5273009634689125741" at="27,73,30,11" />
+      <scope id="5273009634689096500" at="26,99,31,9" />
+      <scope id="5273009634689125740" at="26,99,31,9">
         <var name="n" id="5273009634689125763" />
       </scope>
-      <scope id="3961775458390352386" at="20,113,34,19">
+      <scope id="3961775458390352386" at="19,113,33,19">
         <var name="currentSubtaskScope" id="5273009634688959800" />
         <var name="scope" id="5273009634688913052" />
         <var name="task" id="3961775458390497446" />
       </scope>
-      <scope id="3961775458390352371" at="19,101,36,16" />
-      <scope id="3961775458390352366" at="19,0,38,0">
+      <scope id="3961775458390352371" at="18,101,35,16" />
+      <scope id="3961775458390352366" at="18,0,37,0">
         <var name="child" id="3961775458390352374" />
         <var name="kind" id="3961775458390352372" />
         <var name="thisNode" id="3961775458390352366" />
       </scope>
-      <unit id="3961775458390352366" at="16,0,39,0" name="jetbrains.mps.build.workflow.behavior.BwfTaskPart_Behavior" />
+      <unit id="3961775458390352366" at="15,0,38,0" name="jetbrains.mps.build.workflow.behavior.BwfTaskPart_Behavior" />
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/3961775458390497598">
@@ -310,24 +310,24 @@
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/6647099934207210772">
     <file name="BwfPathDeclaration_Behavior.java">
-      <node id="6647099934207210780" at="13,75,14,189" concept="5" />
-      <node id="2059109515400548729" at="16,77,17,14" concept="5" />
-      <node id="6647099934207210772" at="11,0,13,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6647099934207210772" at="13,0,16,0" concept="7" trace="call_getPathId_6647099934207210775#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="6647099934207210772" at="16,0,19,0" concept="7" trace="virtual_getPriority_2059109515400548718#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
-      <scope id="6647099934207210774" at="11,43,11,43" />
-      <scope id="6647099934207210778" at="13,75,14,189" />
-      <scope id="2059109515400548727" at="16,77,17,14" />
-      <scope id="6647099934207210772" at="11,0,13,0">
+      <node id="6647099934207210780" at="12,75,13,175" concept="5" />
+      <node id="2059109515400548729" at="15,77,16,14" concept="5" />
+      <node id="6647099934207210772" at="10,0,12,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6647099934207210772" at="12,0,15,0" concept="7" trace="call_getPathId_6647099934207210775#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="6647099934207210772" at="15,0,18,0" concept="7" trace="virtual_getPriority_2059109515400548718#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
+      <scope id="6647099934207210774" at="10,43,10,43" />
+      <scope id="6647099934207210778" at="12,75,13,175" />
+      <scope id="2059109515400548727" at="15,77,16,14" />
+      <scope id="6647099934207210772" at="10,0,12,0">
         <var name="thisNode" id="6647099934207210772" />
       </scope>
-      <scope id="6647099934207210772" at="13,0,16,0">
+      <scope id="6647099934207210772" at="12,0,15,0">
         <var name="thisNode" id="6647099934207210772" />
       </scope>
-      <scope id="6647099934207210772" at="16,0,19,0">
+      <scope id="6647099934207210772" at="15,0,18,0">
         <var name="thisNode" id="6647099934207210772" />
       </scope>
-      <unit id="6647099934207210772" at="10,0,20,0" name="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_Behavior" />
+      <unit id="6647099934207210772" at="9,0,19,0" name="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_Behavior" />
     </file>
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/6647099934207246775">
@@ -373,18 +373,18 @@
   </root>
   <root nodeRef="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)/7385586609667776608">
     <file name="BwfJavaModule_Behavior.java">
-      <node id="7385586609667776622" at="13,82,14,197" concept="5" />
-      <node id="7385586609667776608" at="11,0,13,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7385586609667776608" at="13,0,16,0" concept="7" trace="call_getAntTargetName_7385586609667776611#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="7385586609667776610" at="11,43,11,43" />
-      <scope id="7385586609667776614" at="13,82,14,197" />
-      <scope id="7385586609667776608" at="11,0,13,0">
+      <node id="7385586609667776622" at="12,82,13,183" concept="5" />
+      <node id="7385586609667776608" at="10,0,12,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7385586609667776608" at="12,0,15,0" concept="7" trace="call_getAntTargetName_7385586609667776611#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="7385586609667776610" at="10,43,10,43" />
+      <scope id="7385586609667776614" at="12,82,13,183" />
+      <scope id="7385586609667776608" at="10,0,12,0">
         <var name="thisNode" id="7385586609667776608" />
       </scope>
-      <scope id="7385586609667776608" at="13,0,16,0">
+      <scope id="7385586609667776608" at="12,0,15,0">
         <var name="thisNode" id="7385586609667776608" />
       </scope>
-      <unit id="7385586609667776608" at="10,0,17,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior" />
+      <unit id="7385586609667776608" at="9,0,16,0" name="jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior" />
     </file>
   </root>
 </debug-info>

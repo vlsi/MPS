@@ -9,7 +9,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.varVariable.typesystem.check_VarVariableDeclaration_NonTypesystemRule" file="check_VarVariableDeclaration_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -25,7 +24,6 @@
   <dependency className="jetbrains.mps.baseLanguage.varVariable.typesystem.typeof_VarVariableDeclaration_InferenceRule" file="typeof_VarVariableDeclaration_InferenceRule.java">
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

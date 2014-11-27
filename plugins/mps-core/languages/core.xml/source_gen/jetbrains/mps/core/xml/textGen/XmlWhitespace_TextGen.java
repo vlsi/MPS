@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class XmlWhitespace_TextGen extends SNodeTextGen {
@@ -15,14 +14,14 @@ public class XmlWhitespace_TextGen extends SNodeTextGen {
     boolean needNewLine = BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_2133624044437631588", new Object[]{});
     if (!(needNewLine)) {
       SNode left = SNodeOperations.getPrevSibling(node);
-      if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getInterfaceConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement"))) {
-        needNewLine = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getInterfaceConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement")), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
+      if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L, "jetbrains.mps.core.xml.structure.XmlPrologElement"))) {
+        needNewLine = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L, "jetbrains.mps.core.xml.structure.XmlPrologElement")), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
       }
     }
     if (needNewLine) {
       this.appendNewLine();
       this.indentBuffer();
     }
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, 5228786488744844115l, "value")));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, 0x4890619bb3ff9b53L, "value")));
   }
 }

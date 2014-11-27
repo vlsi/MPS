@@ -6,20 +6,19 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OutputRoot_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append((SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) == null ? "<no name>" : SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
+    this.append((SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) == null ? "<no name>" : SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
     this.append(" : ");
-    this.append((SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1195164732401l, "text")) == null ? "<no text>" : SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1195164732401l, "text"))));
-    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1218735665292l, "specialChild")) != null)) {
+    this.append((SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x116455e8bf1L, "text")) == null ? "<no text>" : SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x116455e8bf1L, "text"))));
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11bc24e708cL, "specialChild")) != null)) {
       this.appendNewLine();
-      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1218735665292l, "specialChild")));
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11bc24e708cL, "specialChild")));
       this.appendNewLine();
     }
-    for (SNode output : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1195169631818l, "outputChild"))) {
+    for (SNode output : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"))) {
       this.appendNewLine();
       this.appendNewLine();
       this.increaseDepth();

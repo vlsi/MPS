@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -27,19 +26,19 @@ public class check_DuplicateEnumConstantMethods_NonTypesystemRule extends Abstra
   public check_DuplicateEnumConstantMethods_NonTypesystemRule() {
   }
   public void applyRule(final SNode enumConstant, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    ListSequence.fromList(SLinkOperations.getChildren(enumConstant, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, 492581319488141108l, "method"))).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SLinkOperations.getChildren(enumConstant, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, 0x6d60019ab157734L, "method"))).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode method) {
         final String erasureSignature = BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(method);
-        SNode foundDuplicate = ListSequence.fromList(SLinkOperations.getChildren(enumConstant, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, 492581319488141108l, "method"))).findFirst(new IWhereFilter<SNode>() {
+        SNode foundDuplicate = ListSequence.fromList(SLinkOperations.getChildren(enumConstant, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, 0x6d60019ab157734L, "method"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode other) {
-            return other != method && eq_pw1hme_a0a0a0a0a0a0a1a0a0a0a0a1(SPropertyOperations.getString(other, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) && erasureSignature.equals(BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(other));
+            return other != method && eq_pw1hme_a0a0a0a0a0a0a1a0a0a0a0a1(SPropertyOperations.getString(other, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && erasureSignature.equals(BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(other));
           }
         });
         if ((foundDuplicate != null)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             errorTarget = new PropertyMessageTarget("name");
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "method has duplicate erasure with " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(enumConstant), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass")), "virtual_getFqName_1213877404258", new Object[]{}) + "." + SPropertyOperations.getString(enumConstant, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "." + SPropertyOperations.getString(foundDuplicate, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(foundDuplicate) + ")", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8960718351576519802", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "method has duplicate erasure with " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(enumConstant), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), "virtual_getFqName_1213877404258", new Object[]{}) + "." + SPropertyOperations.getString(enumConstant, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "." + SPropertyOperations.getString(foundDuplicate, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(foundDuplicate) + ")", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8960718351576519802", null, errorTarget);
           }
         }
       }

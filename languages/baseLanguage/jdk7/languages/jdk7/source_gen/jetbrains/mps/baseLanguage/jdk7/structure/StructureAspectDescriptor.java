@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
@@ -14,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptStringSwitchStatement = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement", MetaIdFactory.conceptId(new UUID(-7570979146397037320L, -7235992903327865839L), 400642802549924137L)).super_("jetbrains.mps.baseLanguage.structure.SwitchStatement").super_(MetaIdFactory.conceptId(new UUID(-935030926396207931L, -6610165693999523818L), 1163670490218L)).parents("jetbrains.mps.baseLanguage.structure.SwitchStatement").parentIds(MetaIdFactory.conceptId(new UUID(-935030926396207931L, -6610165693999523818L), 1163670490218L)).alias("switch", "").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptStringSwitchStatement = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement", MetaIdFactory.conceptId(0x96ee7a94411d4cf8L, 0x9b9496cad7e52411L, 0x58f5e8197ce2129L)).super_("jetbrains.mps.baseLanguage.structure.SwitchStatement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL)).parents("jetbrains.mps.baseLanguage.structure.SwitchStatement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL)).alias("switch", "").staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
