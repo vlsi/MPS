@@ -137,11 +137,7 @@ public class IdInfoCollector {
     final SConcept concept = n.getConcept();
     SConceptId conceptId = IdHelper.getConceptId(concept);
     assert conceptId != null;
-    final ConceptInfo info = registerConcept(conceptId);
-    if (!info.isNameSet()) {
-      info.setName(concept.getQualifiedName()); // XXX meanwhile, keep FQN to produce the same output as the old code.
-      // Shall change to getName once we keep debug registry concepts grouped by language
-    }
+    registerConcept(conceptId);
   }
 
   private void fillProperties(SNode n) {

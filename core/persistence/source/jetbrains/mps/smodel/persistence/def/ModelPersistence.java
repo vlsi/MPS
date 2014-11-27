@@ -318,7 +318,10 @@ public class ModelPersistence {
     if (modelPersistence == null) {
       throw new IllegalArgumentException(String.format("Unknown persistence version %d", persistenceVersion));
     }
-    model.calculateImplicitImports();
+    if (persistenceVersion < 9) {
+      // FIXME perhaps, shall (a) move to appropriate writer not to check <9 here; (b) externalize code to keep SModel clean
+      model.calculateImplicitImports();
+    }
     return modelPersistence.getModelWriter(model instanceof DefaultSModel ? ((DefaultSModel) model).getSModelHeader() : null).saveModel(model);
   }
   //----------------
