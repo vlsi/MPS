@@ -56,9 +56,11 @@ import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.CopyUtil;
@@ -375,7 +377,8 @@ public class ChangesTracking {
         return;
       }
       final SNodeId nodeId = node.getNodeId();
-      final String propertyName = event.getPropertyName();
+      String propertyName = event.getPropertyName();
+      final SProperty property = node.getConcept().getProperty(propertyName);
 
       // get more info for debugging 
       assert node.getModel().getNode(nodeId) != null : "cannot find node " + nodeId + " in model " + node.getModel();
@@ -384,12 +387,12 @@ public class ChangesTracking {
         public void invoke() {
           removeChanges(nodeId, SetPropertyChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetPropertyChange>() {
             public Boolean invoke(SetPropertyChange ch) {
-              return propertyName.equals(ch.getPropertyName());
+              return ch.isAbout(property);
             }
           });
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildForProperty(getOldNode(nodeId), node, propertyName);
+              b.buildForProperty(getOldNode(nodeId), node, property);
             }
           });
         }
@@ -403,12 +406,12 @@ public class ChangesTracking {
         return;
       }
       final SNodeId nodeId = sourceNode.getNodeId();
-      final String role = ref.getRole();
+      final SReferenceLink role = ref.getLink();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           removeChanges(nodeId, SetReferenceChange.class, new _FunctionTypes._return_P1_E0<Boolean, SetReferenceChange>() {
             public Boolean invoke(SetReferenceChange ch) {
-              return role.equals(ch.getRole());
+              return ch.isAbout(role);
             }
           });
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {

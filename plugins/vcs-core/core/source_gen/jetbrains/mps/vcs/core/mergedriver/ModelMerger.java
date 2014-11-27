@@ -108,6 +108,9 @@ import org.apache.log4j.LogManager;
         } else {
           String resultString;
           SModel resultModel = mergeSession.getResultModel();
+          if (LOG.isInfoEnabled()) {
+            LOG.info(String.format("%s: Saving merged model...", myModelName));
+          }
           updateMetaModelInfo(resultModel, baseModel, localModel, latestModel);
           if (MPSExtentions.MODEL_HEADER.equals(myExtension) || MPSExtentions.MODEL_ROOT.equals(myExtension)) {
             // special support for per-root persistence 
@@ -183,7 +186,7 @@ import org.apache.log4j.LogManager;
 
   private static void updateMetaModelInfo(SModel resultModel, SModel baseModel, SModel localModel, SModel remoteModel) {
     // we don't care to fix MetaModelInfoProvider for versions it was not utilized in. 
-    if (resultModel instanceof PersistenceVersionAware && ((PersistenceVersionAware) resultModel).getPersistenceVersion() < 9) {
+    if (getPersistenceVersion(resultModel) < 9) {
       return;
     }
     DefaultSModel resultModelInternal = tryInternalModelData(resultModel);

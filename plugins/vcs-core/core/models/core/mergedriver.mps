@@ -3471,6 +3471,19 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="34ab3g" id="3r8byEJniyS" role="3cqZAp">
+                        <property role="35gtTG" value="info" />
+                        <node concept="2YIFZM" id="5IRXTJLIA1y" role="34bqiv">
+                          <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                          <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                          <node concept="Xl_RD" id="5IRXTJLIAkz" role="37wK5m">
+                            <property role="Xl_RC" value="%s: Saving merged model..." />
+                          </node>
+                          <node concept="37vLTw" id="5IRXTJLIEl9" role="37wK5m">
+                            <ref role="3cqZAo" node="2TzypFyLJdS" resolve="myModelName" />
+                          </node>
+                        </node>
+                      </node>
                       <node concept="3clFbF" id="7vnu9rGRtjf" role="3cqZAp">
                         <node concept="1rXfSq" id="7vnu9rGRtjd" role="3clFbG">
                           <ref role="37wK5l" node="7vnu9rGOHjU" resolve="updateMetaModelInfo" />
@@ -4111,32 +4124,13 @@
           <node concept="3clFbS" id="7vnu9rGQwx4" role="3clFbx">
             <node concept="3cpWs6" id="7vnu9rGQzba" role="3cqZAp" />
           </node>
-          <node concept="1Wc70l" id="7vnu9rGQxqk" role="3clFbw">
-            <node concept="3eOVzh" id="7vnu9rGQz5Z" role="3uHU7w">
-              <node concept="3cmrfG" id="7vnu9rGQz69" role="3uHU7w">
-                <property role="3cmrfH" value="9" />
-              </node>
-              <node concept="2OqwBi" id="7vnu9rGQxDx" role="3uHU7B">
-                <node concept="1eOMI4" id="7vnu9rGQxyM" role="2Oq$k0">
-                  <node concept="10QFUN" id="7vnu9rGQxyJ" role="1eOMHV">
-                    <node concept="3uibUv" id="7vnu9rGQx$b" role="10QFUM">
-                      <ref role="3uigEE" to="d2v5:~PersistenceVersionAware" resolve="PersistenceVersionAware" />
-                    </node>
-                    <node concept="37vLTw" id="7vnu9rGQxAe" role="10QFUP">
-                      <ref role="3cqZAo" node="7vnu9rGPnl_" resolve="resultModel" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="7vnu9rGQxS_" role="2OqNvi">
-                  <ref role="37wK5l" to="d2v5:~PersistenceVersionAware.getPersistenceVersion():int" resolve="getPersistenceVersion" />
-                </node>
-              </node>
+          <node concept="3eOVzh" id="5IRXTJLJ2T_" role="3clFbw">
+            <node concept="3cmrfG" id="5IRXTJLJ2TJ" role="3uHU7w">
+              <property role="3cmrfH" value="9" />
             </node>
-            <node concept="2ZW3vV" id="7vnu9rGQx22" role="3uHU7B">
-              <node concept="3uibUv" id="7vnu9rGQx9H" role="2ZW6by">
-                <ref role="3uigEE" to="d2v5:~PersistenceVersionAware" resolve="PersistenceVersionAware" />
-              </node>
-              <node concept="37vLTw" id="7vnu9rGQwTZ" role="2ZW6bz">
+            <node concept="1rXfSq" id="5IRXTJLJ12$" role="3uHU7B">
+              <ref role="37wK5l" node="13cOvvwCnyL" resolve="getPersistenceVersion" />
+              <node concept="37vLTw" id="5IRXTJLJ1x2" role="37wK5m">
                 <ref role="3cqZAo" node="7vnu9rGPnl_" resolve="resultModel" />
               </node>
             </node>

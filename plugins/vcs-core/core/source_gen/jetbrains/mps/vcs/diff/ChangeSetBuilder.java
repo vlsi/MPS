@@ -8,22 +8,24 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.Set;
-import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.LongestCommonSubsequenceFinder;
@@ -33,7 +35,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.changes.DependencyChange;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
@@ -42,6 +43,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange;
 import jetbrains.mps.vcs.diff.changes.ModelVersionChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class ChangeSetBuilder {
@@ -58,49 +60,48 @@ public class ChangeSetBuilder {
     myChangeSet = changeSet;
   }
   private void buildForProperties(SNode oldNode, SNode newNode) {
-    Set<String> oldProperties = (Set<String>) SNodeOperations.getProperties(oldNode).keySet();
-    Set<String> newProperties = (Set<String>) SNodeOperations.getProperties(newNode).keySet();
-    for (String name : SetSequence.fromSet(oldProperties).union(SetSequence.fromSet(newProperties))) {
-      buildForProperty(oldNode, newNode, name);
+    Iterable<SProperty> oldProperties = oldNode.getProperties();
+    Iterable<SProperty> newProperties = newNode.getProperties();
+    for (SProperty p : Sequence.fromIterable(oldProperties).union(Sequence.fromIterable(newProperties))) {
+      buildForProperty(oldNode, newNode, p);
     }
   }
-  public void buildForProperty(SNode oldNode, SNode newNode, String name) {
+  public void buildForProperty(SNode oldNode, SNode newNode, SProperty property) {
     PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
     if (!(RuntimeFlags.isMergeDriverMode())) {
-      SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) oldNode).getPropertyDeclaration(name);
+      SNode propertyDeclaration = property.getDeclarationNode();
       if (propertyDeclaration != null) {
         propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
       }
     }
-
-    String oldPresentableValue = propertySupport.fromInternalValue(oldNode.getProperty(name));
-    String newPresentableValue = propertySupport.fromInternalValue(newNode.getProperty(name));
+    String oldPresentableValue = propertySupport.fromInternalValue(oldNode.getProperty(property));
+    String newPresentableValue = propertySupport.fromInternalValue(newNode.getProperty(property));
     if (!(EqualUtil.equals(oldPresentableValue, newPresentableValue))) {
-      ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getNodeId(), name, newNode.getProperty(name)));
+      ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getNodeId(), property, newNode.getProperty(property)));
     }
   }
   private void buildForReferences(SNode oldNode, SNode newNode) {
     List<SReference> oldReferences = (List<SReference>) oldNode.getReferences();
     List<SReference> newReferences = (List<SReference>) newNode.getReferences();
-    for (String role : ListSequence.fromList(oldReferences).concat(ListSequence.fromList(newReferences)).select(new ISelector<SReference, String>() {
-      public String select(SReference r) {
-        return r.getRole();
+    for (SReferenceLink role : ListSequence.fromList(oldReferences).concat(ListSequence.fromList(newReferences)).select(new ISelector<SReference, SReferenceLink>() {
+      public SReferenceLink select(SReference r) {
+        return r.getLink();
       }
     }).distinct()) {
       buildForReference(oldNode, newNode, role);
     }
   }
-  public void buildForReference(SNode oldNode, SNode newNode, String role) {
+  public void buildForReference(SNode oldNode, SNode newNode, SReferenceLink role) {
     SReference oldReference = oldNode.getReference(role);
     SReference newReference = newNode.getReference(role);
     SNodeId oldTargetId = (oldReference instanceof DynamicReference ? null : check_nbyrtw_a0a2a9(oldReference));
     SNodeId newTargetId = (newReference instanceof DynamicReference ? null : check_nbyrtw_a0a3a9(newReference));
     SModelReference oldTargetModel = check_nbyrtw_a0e0j(oldReference);
-    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(oldNode).getReference().equals(oldTargetModel)) {
+    if (SNodeOperations.getModel(oldNode).getReference().equals(oldTargetModel)) {
       oldTargetModel = null;
     }
     SModelReference newTargetModel = check_nbyrtw_a0g0j(newReference);
-    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(newNode).getReference().equals(newTargetModel)) {
+    if (SNodeOperations.getModel(newNode).getReference().equals(newTargetModel)) {
       newTargetModel = null;
     }
     if (eq_nbyrtw_a0a0i0j(oldTargetId, newTargetId) && eq_nbyrtw_a0a0i0j_0(oldTargetModel, newTargetModel) && eq_nbyrtw_a0a8a9(check_nbyrtw_a0a8a9(((jetbrains.mps.smodel.SReference) oldReference)), check_nbyrtw_a0a8a9_0(((jetbrains.mps.smodel.SReference) newReference)))) {
@@ -121,9 +122,9 @@ public class ChangeSetBuilder {
       buildForProperties(oldNode, newNode);
       buildForReferences(oldNode, newNode);
 
-      for (String role : SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(newNode))).select(new ISelector<SNode, String>() {
+      for (String role : SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(SNodeOperations.getChildren(newNode))).select(new ISelector<SNode, String>() {
         public String select(SNode ch) {
-          return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLinkRole(ch);
+          return SNodeOperations.getContainingLinkRole(ch);
         }
       }))) {
         buildForNodeRole(oldNode, newNode, role);
