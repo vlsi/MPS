@@ -19,6 +19,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "jetbrains.mps.samples.heating.tabular";
   }
+
+  @Override
+  public int getVersion() {
+    return 0;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("000a73b2-ac88-49d9-bfcf-a3fa90cdb367"));
   }

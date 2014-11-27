@@ -21,6 +21,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "jetbrains.mps.vcs.mergehints";
   }
+
+  @Override
+  public int getVersion() {
+    return 0;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("37e03aa1-7289-49bc-8269-30de5eceec76"));
   }

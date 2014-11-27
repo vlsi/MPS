@@ -23,6 +23,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "jetbrains.mps.samples.secretCompartmentLanguage";
   }
+
+  @Override
+  public int getVersion() {
+    return 0;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("6986543d-8218-4ebf-a2e9-565e5049c1ce"));
   }

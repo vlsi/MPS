@@ -19,6 +19,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "jetbrains.mps.generator.test.crossmodel.property";
   }
+
+  @Override
+  public int getVersion() {
+    return 0;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("dc1cc948-6f43-4687-90cb-17dd5cb27219"));
   }

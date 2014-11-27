@@ -20,6 +20,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "testRefactoring";
   }
+
+  @Override
+  public int getVersion() {
+    return 0;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("343e2a8b-449f-45b3-9da8-1463945cb208"));
   }

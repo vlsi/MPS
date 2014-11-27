@@ -21,6 +21,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "jetbrains.mps.bootstrap.helgins.test";
   }
+
+  @Override
+  public int getVersion() {
+    return 0;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("145670e6-4b63-4079-b9f0-4a07fca69426"));
   }

@@ -20,6 +20,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "jetbrains.mps.samples.multipleProjections.stateMachine.tabular";
   }
+
+  @Override
+  public int getVersion() {
+    return 0;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("9357c0ba-2430-4f01-b20a-cc8947960ac3"));
   }

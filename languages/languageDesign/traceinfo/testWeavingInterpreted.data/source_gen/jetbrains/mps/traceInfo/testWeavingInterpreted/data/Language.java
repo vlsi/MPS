@@ -21,6 +21,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "jetbrains.mps.traceInfo.testWeavingInterpreted.data";
   }
+
+  @Override
+  public int getVersion() {
+    return 0;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("ffafcf63-cbe6-4e5c-9717-541f01743ac7"));
   }

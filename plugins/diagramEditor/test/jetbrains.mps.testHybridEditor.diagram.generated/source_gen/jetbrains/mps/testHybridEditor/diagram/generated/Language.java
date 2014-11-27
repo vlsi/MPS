@@ -20,6 +20,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "jetbrains.mps.testHybridEditor.diagram.generated";
   }
+
+  @Override
+  public int getVersion() {
+    return 0;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("dabb32d7-ce29-4e63-bdf4-c024c25acf62"));
   }

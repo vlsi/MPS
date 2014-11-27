@@ -23,6 +23,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "jetbrains.mps.samples.Shapes";
   }
+
+  @Override
+  public int getVersion() {
+    return 0;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"));
   }
