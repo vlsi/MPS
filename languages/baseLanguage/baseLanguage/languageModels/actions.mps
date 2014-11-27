@@ -34931,5 +34931,101 @@
       </node>
     </node>
   </node>
+  <node concept="3FK_9_" id="3h7Obdl8iGT">
+    <property role="3GE5qa" value="classifiers.members" />
+    <property role="TrG5h" value="StaticFieldInInterface" />
+    <node concept="3FOIzC" id="3h7Obdl8iH_" role="3FOPby">
+      <ref role="3FOWKa" to="tpee:h9ngReX" resolve="ClassifierMember" />
+      <node concept="tYCnQ" id="3h7Obdl8Qds" role="tZc4B">
+        <ref role="uz4UX" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+        <node concept="ucClh" id="3h7Obdl8QA6" role="uz6Si">
+          <node concept="ucgPf" id="3h7Obdl8QA8" role="ucMEw">
+            <node concept="3clFbS" id="3h7Obdl8QAa" role="2VODD2">
+              <node concept="3clFbF" id="3h7Obdl8QYv" role="3cqZAp">
+                <node concept="2OqwBi" id="3h7Obdl8Rd3" role="3clFbG">
+                  <node concept="GyYSE" id="3h7Obdl8QYu" role="2Oq$k0" />
+                  <node concept="2DeJnW" id="3h7Obdl8TAx" role="2OqNvi">
+                    <ref role="1_rbq0" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="uGdhv" id="3h7Obdma1Hy" role="uGu3D">
+            <node concept="3clFbS" id="3h7Obdma1H$" role="2VODD2">
+              <node concept="3clFbJ" id="3h7Obdma20e" role="3cqZAp">
+                <node concept="3clFbS" id="3h7Obdma20f" role="3clFbx">
+                  <node concept="3cpWs6" id="3h7Obdma2w6" role="3cqZAp">
+                    <node concept="Xl_RD" id="3h7Obdma2Km" role="3cqZAk">
+                      <property role="Xl_RC" value="field" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="3h7Obdm9WrS" role="3clFbw">
+                  <node concept="2OqwBi" id="3h7Obdm9UMm" role="2Oq$k0">
+                    <node concept="3bvxqY" id="3h7Obdm9UAi" role="2Oq$k0" />
+                    <node concept="2Xjw5R" id="3h7Obdm9VoL" role="2OqNvi">
+                      <node concept="1xMEDy" id="3h7Obdm9VoN" role="1xVPHs">
+                        <node concept="chp4Y" id="3h7Obdm9VzT" role="ri$Ld">
+                          <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
+                        </node>
+                      </node>
+                      <node concept="1xIGOp" id="3h7Obdm9W6j" role="1xVPHs" />
+                    </node>
+                  </node>
+                  <node concept="3x8VRR" id="3h7Obdm9ZJ9" role="2OqNvi" />
+                </node>
+                <node concept="9aQIb" id="3h7Obdma36q" role="9aQIa">
+                  <node concept="3clFbS" id="3h7Obdma36r" role="9aQI4">
+                    <node concept="3cpWs6" id="3h7Obdma3pM" role="3cqZAp">
+                      <node concept="Xl_RD" id="3h7Obdma3EW" role="3cqZAk">
+                        <property role="Xl_RC" value="static field" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="uGdhv" id="3h7Obdma41O" role="uGvr4">
+            <node concept="3clFbS" id="3h7Obdma41Q" role="2VODD2">
+              <node concept="3clFbJ" id="3h7Obdma4mi" role="3cqZAp">
+                <node concept="3clFbS" id="3h7Obdma4mj" role="3clFbx">
+                  <node concept="3cpWs6" id="3h7Obdma4mk" role="3cqZAp">
+                    <node concept="Xl_RD" id="3h7Obdma4ml" role="3cqZAk">
+                      <property role="Xl_RC" value="static final field declaration" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="3h7Obdma4mm" role="3clFbw">
+                  <node concept="2OqwBi" id="3h7Obdma4mn" role="2Oq$k0">
+                    <node concept="3bvxqY" id="3h7Obdma4mo" role="2Oq$k0" />
+                    <node concept="2Xjw5R" id="3h7Obdma4mp" role="2OqNvi">
+                      <node concept="1xMEDy" id="3h7Obdma4mq" role="1xVPHs">
+                        <node concept="chp4Y" id="3h7Obdma4mr" role="ri$Ld">
+                          <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
+                        </node>
+                      </node>
+                      <node concept="1xIGOp" id="3h7Obdma4ms" role="1xVPHs" />
+                    </node>
+                  </node>
+                  <node concept="3x8VRR" id="3h7Obdma4mt" role="2OqNvi" />
+                </node>
+                <node concept="9aQIb" id="3h7Obdma4mu" role="9aQIa">
+                  <node concept="3clFbS" id="3h7Obdma4mv" role="9aQI4">
+                    <node concept="3cpWs6" id="3h7Obdma4mw" role="3cqZAp">
+                      <node concept="Xl_RD" id="3h7Obdma4mx" role="3cqZAk">
+                        <property role="Xl_RC" value="static field declaration" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

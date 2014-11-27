@@ -708,7 +708,7 @@
       <unit at="13,0,34,0" name="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
     </file>
     <file name="StaticFieldDeclaration_BehaviorDescriptor.java">
-      <unit at="16,0,88,0" name="jetbrains.mps.baseLanguage.behavior.StaticFieldDeclaration_BehaviorDescriptor" />
+      <unit at="17,0,89,0" name="jetbrains.mps.baseLanguage.behavior.StaticFieldDeclaration_BehaviorDescriptor" />
     </file>
     <file name="StaticFieldReference_BehaviorDescriptor.java">
       <unit at="9,0,29,0" name="jetbrains.mps.baseLanguage.behavior.StaticFieldReference_BehaviorDescriptor" />
