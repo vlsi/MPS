@@ -180,6 +180,23 @@
             <property role="VOm3f" value="true" />
           </node>
         </node>
+        <node concept="3F0ifn" id="50LvD1$VlM6" role="3EZMnx">
+          <property role="3F0ifm" value="version" />
+          <ref role="1k5W1q" node="eY0iPzB7gM" resolve="KeyWord" />
+        </node>
+        <node concept="3F0ifn" id="50LvD1$VlM4" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="50LvD1$VlM5" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0A7n" id="50LvD1$VlM2" role="3EZMnx">
+          <property role="1O74Pk" value="true" />
+          <ref role="1NtTu8" to="hypd:50LvD1$V79t" resolve="version" />
+          <node concept="ljvvj" id="50LvD1$VlM3" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
         <node concept="3F0ifn" id="UHCFRHQMkO" role="3EZMnx">
           <property role="3F0ifm" value="compile in MPS" />
           <ref role="1k5W1q" node="eY0iPzB7gM" resolve="KeyWord" />

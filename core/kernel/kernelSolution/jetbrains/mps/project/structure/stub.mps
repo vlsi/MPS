@@ -537,6 +537,26 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="50LvD1$VhxV" role="3cqZAp">
+          <node concept="37vLTI" id="50LvD1$VjQQ" role="3clFbG">
+            <node concept="2OqwBi" id="50LvD1$VoZk" role="37vLTx">
+              <node concept="37vLTw" id="50LvD1$VkNJ" role="2Oq$k0">
+                <ref role="3cqZAo" node="2n3WChpmw8Z" resolve="source" />
+              </node>
+              <node concept="liA8E" id="50LvD1$VpbA" role="2OqNvi">
+                <ref role="37wK5l" to="kqhl:~LanguageDescriptor.getVersion():int" resolve="getVersion" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="50LvD1$VivT" role="37vLTJ">
+              <node concept="37vLTw" id="50LvD1$VhxT" role="2Oq$k0">
+                <ref role="3cqZAo" node="2n3WChpmw8F" resolve="result" />
+              </node>
+              <node concept="3TrcHB" id="50LvD1$VjwD" role="2OqNvi">
+                <ref role="3TsBF5" to="hypd:50LvD1$V79t" resolve="version" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="1DcWWT" id="eY0iPzBC8P" role="3cqZAp">
           <node concept="3clFbS" id="eY0iPzBC8Q" role="2LFqv$">
             <node concept="3clFbF" id="eY0iPzBC_V" role="3cqZAp">
