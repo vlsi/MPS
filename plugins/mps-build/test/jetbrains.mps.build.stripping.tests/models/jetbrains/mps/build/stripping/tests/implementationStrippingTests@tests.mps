@@ -77,6 +77,9 @@
         <child id="3265739055509559116" name="body" index="1x_AGi" />
       </concept>
       <concept id="3265739055509559138" name="jetbrains.mps.samples.Kaja.structure.Step" flags="ng" index="1x_AGW" />
+      <concept id="4394627182934741782" name="jetbrains.mps.samples.Kaja.structure.Library" flags="ng" index="2zTg$P">
+        <child id="4394627182934741783" name="definitions" index="2zTg$O" />
+      </concept>
       <concept id="3308300503039700857" name="jetbrains.mps.samples.Kaja.structure.RoutineDefinition" flags="ng" index="2C11UY">
         <child id="3308300503039700860" name="body" index="2C11UV" />
       </concept>
@@ -393,6 +396,28 @@
         </node>
         <node concept="7CXmI" id="4$ezt8YY7ET" role="lGtFl">
           <node concept="7OXhh" id="4$ezt8YY7EV" role="7EUXB" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1lH9Xt" id="79svzH7ZZLt">
+    <property role="TrG5h" value="DuplicitRoutineNameTest" />
+    <node concept="1qefOq" id="79svzH7ZZLu" role="1SKRRt">
+      <node concept="2zTg$P" id="79svzH7ZZTb" role="1qenE9">
+        <property role="TrG5h" value="Foo" />
+        <node concept="2C11UY" id="79svzH80496" role="2zTg$O">
+          <property role="TrG5h" value="bar" />
+          <node concept="2C6hJS" id="79svzH80497" role="2C11UV" />
+          <node concept="7CXmI" id="79svzH804Ov" role="lGtFl">
+            <node concept="1TM$A" id="79svzH804Ow" role="7EUXB" />
+          </node>
+        </node>
+        <node concept="2C11UY" id="79svzH8049b" role="2zTg$O">
+          <property role="TrG5h" value="bar" />
+          <node concept="2C6hJS" id="79svzH8049c" role="2C11UV" />
+        </node>
+        <node concept="7CXmI" id="79svzH7ZZTd" role="lGtFl">
+          <node concept="7OXhh" id="79svzH800kE" role="7EUXB" />
         </node>
       </node>
     </node>
