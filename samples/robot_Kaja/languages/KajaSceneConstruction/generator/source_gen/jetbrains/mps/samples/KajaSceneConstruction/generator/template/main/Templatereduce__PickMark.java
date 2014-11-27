@@ -12,7 +12,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -51,12 +50,12 @@ public class Templatereduce__PickMark implements TemplateDeclarationWeavingAware
                         final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                         try {
                           environment.nodeCopied(context, tnode6, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073216018");
-                          tnode6.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode6, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273614306")));
+                          tnode6.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode6, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273614306")));
                           {
                             final SNode tnode7 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                             try {
                               environment.nodeCopied(context, tnode7, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273614461");
-                              SNodeAccessUtil.setProperty(tnode7, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273614493(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0b0c))));
+                              SNodeAccessUtil.setProperty(tnode7, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273614493(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0b0c))));
                             } finally {
                             }
                             if (tnode7 != null) {
@@ -68,7 +67,7 @@ public class Templatereduce__PickMark implements TemplateDeclarationWeavingAware
                             final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                             try {
                               environment.nodeCopied(context, tnode8, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273614473");
-                              SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273614502(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0b0c))));
+                              SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273614502(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0b0c))));
                             } finally {
                             }
                             if (tnode8 != null) {
@@ -95,12 +94,12 @@ public class Templatereduce__PickMark implements TemplateDeclarationWeavingAware
                                 final SNode tnode11 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                                 try {
                                   environment.nodeCopied(context, tnode11, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073215215");
-                                  tnode11.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode11, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273550663")));
+                                  tnode11.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode11, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273550663")));
                                   {
                                     final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                                     try {
                                       environment.nodeCopied(context, tnode12, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273614474");
-                                      SNodeAccessUtil.setProperty(tnode12, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273614513(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0b0c))));
+                                      SNodeAccessUtil.setProperty(tnode12, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273614513(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0b0c))));
                                     } finally {
                                     }
                                     if (tnode12 != null) {
@@ -112,7 +111,7 @@ public class Templatereduce__PickMark implements TemplateDeclarationWeavingAware
                                     final SNode tnode13 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                                     try {
                                       environment.nodeCopied(context, tnode13, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273614486");
-                                      SNodeAccessUtil.setProperty(tnode13, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273614524(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0b0c))));
+                                      SNodeAccessUtil.setProperty(tnode13, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273614524(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0b0c))));
                                     } finally {
                                     }
                                     if (tnode13 != null) {
@@ -142,7 +141,7 @@ public class Templatereduce__PickMark implements TemplateDeclarationWeavingAware
                                 final SNode tnode15 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                                 try {
                                   environment.nodeCopied(context, tnode15, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073237184");
-                                  tnode15.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode15, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273550615")));
+                                  tnode15.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode15, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273550615")));
                                 } finally {
                                 }
                                 if (tnode15 != null) {
@@ -180,12 +179,12 @@ public class Templatereduce__PickMark implements TemplateDeclarationWeavingAware
                                     final SNode tnode19 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                                     try {
                                       environment.nodeCopied(context, tnode19, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073295051");
-                                      tnode19.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode19, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039580739")));
+                                      tnode19.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode19, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039580739")));
                                       {
                                         final SNode tnode20 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                         try {
                                           environment.nodeCopied(context, tnode20, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/6405700485436170964");
-                                          SNodeAccessUtil.setProperty(tnode20, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), "Nothing to pick. The cell is empty.");
+                                          SNodeAccessUtil.setProperty(tnode20, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "Nothing to pick. The cell is empty.");
                                         } finally {
                                         }
                                         if (tnode20 != null) {
@@ -254,12 +253,12 @@ public class Templatereduce__PickMark implements TemplateDeclarationWeavingAware
                     final SNode tnode23 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                     try {
                       environment.nodeCopied(context, tnode23, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073258354");
-                      tnode23.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode23, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273648281")));
+                      tnode23.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode23, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273648281")));
                       {
                         final SNode tnode24 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                         try {
                           environment.nodeCopied(context, tnode24, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273648468");
-                          SNodeAccessUtil.setProperty(tnode24, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273648470(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0c0b0b0b0b0b0c))));
+                          SNodeAccessUtil.setProperty(tnode24, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273648470(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0c0b0b0b0b0b0c))));
                         } finally {
                         }
                         if (tnode24 != null) {
@@ -278,12 +277,12 @@ public class Templatereduce__PickMark implements TemplateDeclarationWeavingAware
                     final SNode tnode25 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                     try {
                       environment.nodeCopied(context, tnode25, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073222041");
-                      tnode25.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode25, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273648203")));
+                      tnode25.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode25, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273648203")));
                       {
                         final SNode tnode26 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                         try {
                           environment.nodeCopied(context, tnode26, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273648477");
-                          SNodeAccessUtil.setProperty(tnode26, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273648479(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0c0b0c0b0c0b0b0b0b0b0c))));
+                          SNodeAccessUtil.setProperty(tnode26, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273648479(new PropertyMacroContext(context, "0", propertyMacro_nmfipz_c0a0c0b0b0c0b0c0b0c0b0b0b0b0b0c))));
                         } finally {
                         }
                         if (tnode26 != null) {
@@ -321,12 +320,12 @@ public class Templatereduce__PickMark implements TemplateDeclarationWeavingAware
                             final SNode tnode30 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                             try {
                               environment.nodeCopied(context, tnode30, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073263005");
-                              tnode30.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode30, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039580739")));
+                              tnode30.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode30, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039580739")));
                               {
                                 final SNode tnode31 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                 try {
                                   environment.nodeCopied(context, tnode31, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273648489");
-                                  SNodeAccessUtil.setProperty(tnode31, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), "Attempted to pick marks outside of the playground!");
+                                  SNodeAccessUtil.setProperty(tnode31, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "Attempted to pick marks outside of the playground!");
                                 } finally {
                                 }
                                 if (tnode31 != null) {

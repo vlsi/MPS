@@ -13,7 +13,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
@@ -33,7 +32,7 @@ public class Templatereduce__CommentLine implements TemplateDeclarationWeavingAw
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.TextCommentPart");
         try {
           environment.nodeCopied(context, tnode2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/6405700485436287836");
-          SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, 6329021646629104958l, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6405700485436287841(new PropertyMacroContext(context, "this is a comment", propertyMacro_a1y0jd_c0a0c0b0b0b0b0c))));
+          SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6405700485436287841(new PropertyMacroContext(context, "this is a comment", propertyMacro_a1y0jd_c0a0c0b0b0b0b0c))));
         } finally {
         }
         if (tnode2 != null) {

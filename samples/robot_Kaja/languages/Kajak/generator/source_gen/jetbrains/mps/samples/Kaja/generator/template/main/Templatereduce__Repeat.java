@@ -13,7 +13,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
@@ -34,7 +33,7 @@ public class Templatereduce__Repeat implements TemplateDeclarationWeavingAware {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
         try {
           environment.nodeCopied(context, tnode2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039660399");
-          SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_859008965969411038(new PropertyMacroContext(context, "i", propertyMacro_bc3eh9_c0a0c0b0b0b0b0c))));
+          SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_859008965969411038(new PropertyMacroContext(context, "i", propertyMacro_bc3eh9_c0a0c0b0b0b0b0c))));
           {
             final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerType");
             try {
@@ -50,7 +49,7 @@ public class Templatereduce__Repeat implements TemplateDeclarationWeavingAware {
             final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
             try {
               environment.nodeCopied(context, tnode4, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039660403");
-              SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "0");
+              SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "0");
             } finally {
             }
             if (tnode4 != null) {
@@ -93,7 +92,7 @@ public class Templatereduce__Repeat implements TemplateDeclarationWeavingAware {
             final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
             try {
               environment.nodeCopied(context, tnode9, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039660428");
-              SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3308300503039660463(new PropertyMacroContext(context, "10", propertyMacro_bc3eh9_c0a0c0b0b0b0b0d0b0c))));
+              SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3308300503039660463(new PropertyMacroContext(context, "10", propertyMacro_bc3eh9_c0a0c0b0b0b0b0d0b0c))));
             } finally {
             }
             if (tnode9 != null) {

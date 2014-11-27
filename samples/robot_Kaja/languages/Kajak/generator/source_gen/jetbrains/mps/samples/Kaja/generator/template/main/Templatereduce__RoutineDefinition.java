@@ -14,7 +14,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -32,7 +31,7 @@ public class Templatereduce__RoutineDefinition implements TemplateDeclarationWea
     final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     try {
       environment.nodeCopied(context1, tnode2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039701213");
-      SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3308300503039701227(new PropertyMacroContext(context1, "bar", propertyMacro_18musb_c0a0c0b0d0c))));
+      SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3308300503039701227(new PropertyMacroContext(context1, "bar", propertyMacro_18musb_c0a0c0b0d0c))));
       {
         final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VoidType");
         try {

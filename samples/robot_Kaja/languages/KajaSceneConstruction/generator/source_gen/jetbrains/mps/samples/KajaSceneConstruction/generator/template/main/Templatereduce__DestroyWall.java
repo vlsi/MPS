@@ -12,7 +12,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -51,12 +50,12 @@ public class Templatereduce__DestroyWall implements TemplateDeclarationWeavingAw
                         final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                         try {
                           environment.nodeCopied(context, tnode6, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073220681");
-                          tnode6.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode6, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273550783")));
+                          tnode6.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode6, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273550783")));
                           {
                             final SNode tnode7 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                             try {
                               environment.nodeCopied(context, tnode7, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273608232");
-                              SNodeAccessUtil.setProperty(tnode7, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273608239(new PropertyMacroContext(context, "0", propertyMacro_bs9h6a_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0b0c))));
+                              SNodeAccessUtil.setProperty(tnode7, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273608239(new PropertyMacroContext(context, "0", propertyMacro_bs9h6a_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0b0c))));
                             } finally {
                             }
                             if (tnode7 != null) {
@@ -68,7 +67,7 @@ public class Templatereduce__DestroyWall implements TemplateDeclarationWeavingAw
                             final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                             try {
                               environment.nodeCopied(context, tnode8, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273608234");
-                              SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273608248(new PropertyMacroContext(context, "0", propertyMacro_bs9h6a_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0b0c))));
+                              SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273608248(new PropertyMacroContext(context, "0", propertyMacro_bs9h6a_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0b0c))));
                             } finally {
                             }
                             if (tnode8 != null) {
@@ -98,7 +97,7 @@ public class Templatereduce__DestroyWall implements TemplateDeclarationWeavingAw
                         final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                         try {
                           environment.nodeCopied(context, tnode10, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073300953");
-                          tnode10.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode10, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273550615")));
+                          tnode10.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode10, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273550615")));
                         } finally {
                         }
                         if (tnode10 != null) {
@@ -128,12 +127,12 @@ public class Templatereduce__DestroyWall implements TemplateDeclarationWeavingAw
                     final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                     try {
                       environment.nodeCopied(context, tnode12, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073282762");
-                      tnode12.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode12, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273648281")));
+                      tnode12.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode12, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273648281")));
                       {
                         final SNode tnode13 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                         try {
                           environment.nodeCopied(context, tnode13, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273648395");
-                          SNodeAccessUtil.setProperty(tnode13, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273648397(new PropertyMacroContext(context, "0", propertyMacro_bs9h6a_c0a0c0b0b0c0b0b0b0c0b0b0b0b0b0c))));
+                          SNodeAccessUtil.setProperty(tnode13, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273648397(new PropertyMacroContext(context, "0", propertyMacro_bs9h6a_c0a0c0b0b0c0b0b0b0c0b0b0b0b0b0c))));
                         } finally {
                         }
                         if (tnode13 != null) {
@@ -152,12 +151,12 @@ public class Templatereduce__DestroyWall implements TemplateDeclarationWeavingAw
                     final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                     try {
                       environment.nodeCopied(context, tnode14, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073256581");
-                      tnode14.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode14, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273648203")));
+                      tnode14.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode14, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3210697320273648203")));
                       {
                         final SNode tnode15 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                         try {
                           environment.nodeCopied(context, tnode15, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273648404");
-                          SNodeAccessUtil.setProperty(tnode15, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273648406(new PropertyMacroContext(context, "0", propertyMacro_bs9h6a_c0a0c0b0b0c0b0c0b0c0b0b0b0b0b0c))));
+                          SNodeAccessUtil.setProperty(tnode15, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3210697320273648406(new PropertyMacroContext(context, "0", propertyMacro_bs9h6a_c0a0c0b0b0c0b0c0b0c0b0b0b0b0b0c))));
                         } finally {
                         }
                         if (tnode15 != null) {
@@ -195,12 +194,12 @@ public class Templatereduce__DestroyWall implements TemplateDeclarationWeavingAw
                             final SNode tnode19 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                             try {
                               environment.nodeCopied(context, tnode19, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/4923130412073283103");
-                              tnode19.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode19, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039580739")));
+                              tnode19.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode19, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039580739")));
                               {
                                 final SNode tnode20 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                 try {
                                   environment.nodeCopied(context, tnode20, "tpl/r:262b93f0-fe86-497c-93c5-efd684d05bc6/3210697320273648416");
-                                  SNodeAccessUtil.setProperty(tnode20, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), "Attempted to destroy wall outside of the playground!");
+                                  SNodeAccessUtil.setProperty(tnode20, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "Attempted to destroy wall outside of the playground!");
                                 } finally {
                                 }
                                 if (tnode20 != null) {
