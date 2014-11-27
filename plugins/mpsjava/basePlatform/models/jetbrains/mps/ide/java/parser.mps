@@ -35297,6 +35297,22 @@
                 </node>
               </node>
             </node>
+            <node concept="3cpWs8" id="68UM3L9ql4o" role="3cqZAp">
+              <node concept="3cpWsn" id="68UM3L9ql4r" role="3cpWs9">
+                <property role="TrG5h" value="sourceModel" />
+                <node concept="2OqwBi" id="68UM3L9qmLX" role="33vP2m">
+                  <node concept="37vLTw" id="68UM3L9qlnb" role="2Oq$k0">
+                    <ref role="3cqZAo" node="76A3MtuWIQz" resolve="node" />
+                  </node>
+                  <node concept="liA8E" id="68UM3L9qmXp" role="2OqNvi">
+                    <ref role="37wK5l" to="ec5l:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                  </node>
+                </node>
+                <node concept="3uibUv" id="68UM3L9qUSu" role="1tU5fm">
+                  <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="76A3Mtv1$y0" role="3cqZAp">
               <node concept="2OqwBi" id="76A3Mtv2qTb" role="3clFbG">
                 <node concept="3EllGN" id="76A3Mtv1HDB" role="2Oq$k0">
@@ -35327,30 +35343,52 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="3clFbF" id="3$JID3gByj7" role="3cqZAp">
-                        <node concept="2OqwBi" id="3$JID3gC3Oz" role="3clFbG">
-                          <node concept="1eOMI4" id="3$JID3gByj5" role="2Oq$k0">
-                            <node concept="10QFUN" id="3$JID3gByj2" role="1eOMHV">
-                              <node concept="3uibUv" id="3$JID3gBGEo" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SModelInternal" resolve="SModelInternal" />
-                              </node>
-                              <node concept="2OqwBi" id="3$JID3gBR1Y" role="10QFUP">
-                                <node concept="37vLTw" id="3$JID3gBR1Z" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="76A3MtuWIQz" resolve="node" />
+                      <node concept="3clFbJ" id="68UM3L9qkA$" role="3cqZAp">
+                        <node concept="3clFbS" id="68UM3L9qkAB" role="3clFbx">
+                          <node concept="3SKdUt" id="68UM3L9r6Mg" role="3cqZAp">
+                            <node concept="3SKdUq" id="68UM3L9r6Y8" role="3SKWNk">
+                              <property role="3SKdUp" value="avoiding self-import" />
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="3$JID3gByj7" role="3cqZAp">
+                            <node concept="2OqwBi" id="3$JID3gC3Oz" role="3clFbG">
+                              <node concept="1eOMI4" id="68UM3L9qW0s" role="2Oq$k0">
+                                <node concept="10QFUN" id="68UM3L9qW0p" role="1eOMHV">
+                                  <node concept="3uibUv" id="68UM3L9qWbb" role="10QFUM">
+                                    <ref role="3uigEE" to="cu2c:~SModelInternal" resolve="SModelInternal" />
+                                  </node>
+                                  <node concept="37vLTw" id="68UM3L9qW0u" role="10QFUP">
+                                    <ref role="3cqZAo" node="68UM3L9ql4r" resolve="sourceModel" />
+                                  </node>
                                 </node>
-                                <node concept="liA8E" id="3$JID3gBR20" role="2OqNvi">
-                                  <ref role="37wK5l" to="ec5l:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                              </node>
+                              <node concept="liA8E" id="3$JID3gCfnZ" role="2OqNvi">
+                                <ref role="37wK5l" to="cu2c:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+                                <node concept="37vLTw" id="3$JID3gCq5p" role="37wK5m">
+                                  <ref role="3cqZAo" node="3$JID3g$ZOl" resolve="targetModelRef" />
+                                </node>
+                                <node concept="3clFbT" id="3$JID3gCK$7" role="37wK5m">
+                                  <property role="3clFbU" value="true" />
                                 </node>
                               </node>
                             </node>
                           </node>
-                          <node concept="liA8E" id="3$JID3gCfnZ" role="2OqNvi">
-                            <ref role="37wK5l" to="cu2c:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
-                            <node concept="37vLTw" id="3$JID3gCq5p" role="37wK5m">
-                              <ref role="3cqZAo" node="3$JID3g$ZOl" resolve="targetModelRef" />
+                        </node>
+                        <node concept="3fqX7Q" id="68UM3L9r60m" role="3clFbw">
+                          <node concept="2OqwBi" id="68UM3L9r60o" role="3fr31v">
+                            <node concept="2OqwBi" id="68UM3L9r60p" role="2Oq$k0">
+                              <node concept="37vLTw" id="68UM3L9r60q" role="2Oq$k0">
+                                <ref role="3cqZAo" node="68UM3L9ql4r" resolve="sourceModel" />
+                              </node>
+                              <node concept="liA8E" id="68UM3L9r60r" role="2OqNvi">
+                                <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                              </node>
                             </node>
-                            <node concept="3clFbT" id="3$JID3gCK$7" role="37wK5m">
-                              <property role="3clFbU" value="true" />
+                            <node concept="liA8E" id="68UM3L9r60s" role="2OqNvi">
+                              <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                              <node concept="37vLTw" id="68UM3L9r60t" role="37wK5m">
+                                <ref role="3cqZAo" node="3$JID3g$ZOl" resolve="targetModelRef" />
+                              </node>
                             </node>
                           </node>
                         </node>

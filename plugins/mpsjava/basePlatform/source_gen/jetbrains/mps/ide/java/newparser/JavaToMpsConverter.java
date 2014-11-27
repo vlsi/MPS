@@ -993,11 +993,15 @@ public class JavaToMpsConverter {
       if (node == null) {
         continue;
       }
+      final SModel sourceModel = node.getModel();
       ListSequence.fromList(MapSequence.fromMap(refMap).get(nodeRef)).visitAll(new IVisitor<SReference>() {
         public void visit(SReference it) {
 
           SModelReference targetModelRef = it.getTargetSModelReference();
-          ((SModelInternal) node.getModel()).addModelImport(targetModelRef, true);
+          if (!(sourceModel.getReference().equals(targetModelRef))) {
+            // avoiding self-import 
+            ((SModelInternal) sourceModel).addModelImport(targetModelRef, true);
+          }
 
           node.setReference(it.getRole(), it);
         }
