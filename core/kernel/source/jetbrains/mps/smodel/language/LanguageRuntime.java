@@ -72,9 +72,7 @@ public abstract class LanguageRuntime {
 
   public abstract SLanguageId getId();
 
-  public int getVersion(){
-    return 0;
-  }
+  public abstract int getVersion();
 
   /**
    * @deprecated use {@link #getAspect(Class) getAspect(IHelginsDescriptor.class)} instead
