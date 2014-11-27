@@ -7,14 +7,14 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.apache.log4j.Level;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.AbstractModule;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -26,15 +26,15 @@ public class MigrationsUtil {
   public static String getDescriptorFQName(SModule module) {
     return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript")), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
   }
-  public static boolean isMigrationNeeded(AbstractModule module, MigrationScriptReference languageVersions) {
-    int currentVersion = languageVersions.getLanguage().getLanguageVersion();
-    if (languageVersions.getFromVersion() > currentVersion) {
+  public static boolean isMigrationNeeded(SLanguage language, int importVersion, SModule module) {
+    int currentVersion = language.getLanguageVersion();
+    if (importVersion > currentVersion) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("Module " + module + " depends on version " + languageVersions.getFromVersion() + " of module " + languageVersions.getLanguage() + " which is higher than available version (" + currentVersion + ")");
+        LOG.error("Module " + module + " depends on version " + importVersion + " of language " + language + " which is higher than available version (" + currentVersion + ")");
       }
       return false;
     }
-    return languageVersions.getFromVersion() < currentVersion;
+    return importVersion < currentVersion;
   }
   public static Iterable<MigrationScriptReference> getLanguageVersions(SModule module) {
     List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());

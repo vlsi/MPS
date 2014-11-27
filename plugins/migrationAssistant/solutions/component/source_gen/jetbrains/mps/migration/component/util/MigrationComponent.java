@@ -169,7 +169,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
           public boolean accept(final AbstractModule module) {
             return Sequence.fromIterable(MigrationsUtil.getLanguageVersions(module)).where(new IWhereFilter<MigrationScriptReference>() {
               public boolean accept(MigrationScriptReference item) {
-                return MigrationsUtil.isMigrationNeeded(module, item);
+                return MigrationsUtil.isMigrationNeeded(item.getLanguage(), item.getFromVersion(), module);
               }
             }).isNotEmpty();
           }
@@ -293,7 +293,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       public Iterable<ScriptApplied> translate(final AbstractModule module) {
         return Sequence.fromIterable(MapSequence.fromMap(languageVersions).get(module)).where(new IWhereFilter<MigrationScriptReference>() {
           public boolean accept(MigrationScriptReference it) {
-            return MigrationsUtil.isMigrationNeeded(module, it);
+            return MigrationsUtil.isMigrationNeeded(it.getLanguage(), it.getFromVersion(), module);
           }
         }).select(new ISelector<MigrationScriptReference, MigrationScript>() {
           public MigrationScript select(MigrationScriptReference it) {
