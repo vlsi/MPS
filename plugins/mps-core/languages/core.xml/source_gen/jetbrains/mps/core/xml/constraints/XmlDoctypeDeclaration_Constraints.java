@@ -4,7 +4,6 @@ package jetbrains.mps.core.xml.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -23,7 +22,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class XmlDoctypeDeclaration_Constraints extends BaseConstraintsDescriptor {
   public XmlDoctypeDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437898907l));
+    super(MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -42,7 +41,7 @@ public class XmlDoctypeDeclaration_Constraints extends BaseConstraintsDescriptor
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437898907l, 2133624044437898910l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437898907l, 2133624044437898910l), this) {
+    properties.put(MetaIdFactory.propId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, 0x1d9c27c394f4069eL), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, 0x1d9c27c394f4069eL), this) {
       @Override
       public boolean hasOwnValidator() {
         return true;
@@ -58,7 +57,7 @@ public class XmlDoctypeDeclaration_Constraints extends BaseConstraintsDescriptor
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return ListSequence.fromList(SNodeOperations.getPrevSiblings(node, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437898907l, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"));
       }
     }).isEmpty();
   }

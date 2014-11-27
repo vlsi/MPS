@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -32,11 +31,11 @@ public class MigrationScript_0 extends MigrationScriptBase {
   public SNode execute(SModule m, DataCollector collector_) {
     Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.nodes(it, MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331492l, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"));
+        return SModelOperations.nodes(it, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"));
       }
-    }), MetaAdapterFactory.getConcept(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331492l, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"))).where(new IWhereFilter<SNode>() {
+    }), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode node) {
-        return BehaviorReflection.invokeVirtual(Integer.TYPE, node, "virtual_getMetaLevel_3981318653438234726", new Object[]{}) == 0 && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331492l, 2667874559098216723l, "text")) == null);
+        return BehaviorReflection.invokeVirtual(Integer.TYPE, node, "virtual_getMetaLevel_3981318653438234726", new Object[]{}) == 0 && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, 0x250631c6c859e113L, "text")) == null);
       }
     }).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
@@ -60,7 +59,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
     return null;
   }
   public MigrationScriptReference getDescriptor() {
-    return new MigrationScriptReference(MetaAdapterFactory.getLanguage(new UUID(-972752984950357426L, -4964296947050367098L), "jetbrains.mps.baseLanguage.javadoc"), 0);
+    return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc"), 0);
   }
   public static class Pattern_zc5nt1_a0a0a0a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_zc5nt1_a0a0a0a0a0a0a1() {
@@ -91,7 +90,7 @@ public class MigrationScript_0 extends MigrationScriptBase {
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", null, null, false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null, null, false);
-    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331492l, 2667874559098216723l, "text"), quotedNode_2);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, 0x250631c6c859e113L, "text"), quotedNode_2);
     return quotedNode_1;
   }
 }

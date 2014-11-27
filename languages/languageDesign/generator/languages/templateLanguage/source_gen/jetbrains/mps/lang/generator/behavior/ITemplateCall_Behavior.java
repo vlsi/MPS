@@ -5,7 +5,6 @@ package jetbrains.mps.lang.generator.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -13,12 +12,12 @@ public class ITemplateCall_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
-    if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626405l, "actualArgument"))) {
-      SNode template = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"));
+    if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3125L, "actualArgument"))) {
+      SNode template = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template"));
       int i = SNodeOperations.getIndexInParent(expression);
-      if (i < ListSequence.fromList(SLinkOperations.getChildren(template, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).count()) {
-        SNode parameterDeclaration = ListSequence.fromList(SLinkOperations.getChildren(template, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).getElement(i);
-        SNode rawType = SNodeOperations.copyNode(SLinkOperations.getTarget(parameterDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994415891174l, 1805153994415893199l, "type")));
+      if (i < ListSequence.fromList(SLinkOperations.getChildren(template, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).count()) {
+        SNode parameterDeclaration = ListSequence.fromList(SLinkOperations.getChildren(template, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).getElement(i);
+        SNode rawType = SNodeOperations.copyNode(SLinkOperations.getTarget(parameterDeclaration, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a0962e6L, 0x190d31fe6a096acfL, "type")));
         return rawType;
       }
     }

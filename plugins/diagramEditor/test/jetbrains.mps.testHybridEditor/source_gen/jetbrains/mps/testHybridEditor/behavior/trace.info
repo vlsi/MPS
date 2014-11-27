@@ -42,14 +42,14 @@
   </root>
   <root nodeRef="r:e439f2bb-d621-491c-afa6-8441abb35a00(jetbrains.mps.testHybridEditor.behavior)/3175567003993184846">
     <file name="BlockInstance_Behavior.java">
-      <node id="3175567003993185080" at="11,43,12,190" concept="0" />
-      <node id="3175567003993189884" at="12,190,13,191" concept="0" />
-      <node id="3175567003993184846" at="11,0,15,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="3175567003993184999" at="11,43,13,191" />
-      <scope id="3175567003993184846" at="11,0,15,0">
+      <node id="3175567003993185080" at="10,43,11,174" concept="0" />
+      <node id="3175567003993189884" at="11,174,12,175" concept="0" />
+      <node id="3175567003993184846" at="10,0,14,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="3175567003993184999" at="10,43,12,175" />
+      <scope id="3175567003993184846" at="10,0,14,0">
         <var name="thisNode" id="3175567003993184846" />
       </scope>
-      <unit id="3175567003993184846" at="10,0,16,0" name="jetbrains.mps.testHybridEditor.behavior.BlockInstance_Behavior" />
+      <unit id="3175567003993184846" at="9,0,15,0" name="jetbrains.mps.testHybridEditor.behavior.BlockInstance_Behavior" />
     </file>
   </root>
 </debug-info>

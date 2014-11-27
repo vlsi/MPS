@@ -4,7 +4,6 @@ package jetbrains.mps.lang.plugin.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -22,12 +21,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ShortcutChange_Constraints extends BaseConstraintsDescriptor {
   public ShortcutChange_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(2952642368903463569l, -5856357300648461647l), 6193305307616715384l));
+    super(MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x55f30a5d1e092278L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(2952642368903463569l, -5856357300648461647l), 6193305307616715384l, 6193305307616734326l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(2952642368903463569l, -5856357300648461647l), 6193305307616715384l, 6193305307616734326l), this) {
+    references.put(MetaIdFactory.refId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x55f30a5d1e092278L, 0x55f30a5d1e096c76L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x55f30a5d1e092278L, 0x55f30a5d1e096c76L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -38,7 +37,7 @@ public class ShortcutChange_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 1203071646776l, "jetbrains.mps.lang.plugin.structure.ActionDeclaration"));
+            return SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, "jetbrains.mps.lang.plugin.structure.ActionDeclaration"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

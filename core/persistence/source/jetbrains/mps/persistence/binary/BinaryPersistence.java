@@ -332,20 +332,20 @@ public final class BinaryPersistence {
     int langIndex, conceptIndex, propertyIndex, associationIndex, aggregationIndex;
     langIndex = conceptIndex = propertyIndex = associationIndex = aggregationIndex = 0;
     for(LangInfo ul : languagesInUse) {
-      os.writeUUID(ul.getLanguageId().getId());
+      os.writeUUID(ul.getLanguageId().getIdValue());
       os.writeString(ul.getName());
       ul.setIntIndex(langIndex++);
       //
       List<ConceptInfo> conceptsInUse = ul.getConceptsInUse();
       os.writeShort(conceptsInUse.size());
       for (ConceptInfo ci : conceptsInUse) {
-        os.writeLong(ci.getConceptId().getConceptId());
+        os.writeLong(ci.getConceptId().getIdValue());
         assert ul.getName().equals(NameUtil.namespaceFromConceptFQName(ci.getName())) : "We save concept short name. This check ensures we can re-construct fqn based on language name";
         os.writeString(ci.getBriefName());
         os.writeByte(ci.getKind().ordinal() << 4 | ci.getScope().ordinal());
         if (ci.isImplementationWithStub()) {
           os.writeByte(STUB_ID);
-          os.writeLong(ci.getStubCounterpart().getConceptId());
+          os.writeLong(ci.getStubCounterpart().getIdValue());
         } else {
           os.writeByte(STUB_NONE);
         }
@@ -354,7 +354,7 @@ public final class BinaryPersistence {
         List<PropertyInfo> propertiesInUse = ci.getPropertiesInUse();
         os.writeShort(propertiesInUse.size());
         for(PropertyInfo pi : propertiesInUse) {
-          os.writeLong(pi.getPropertyId().getPropertyId());
+          os.writeLong(pi.getPropertyId().getIdValue());
           os.writeString(pi.getName());
           pi.setIntIndex(propertyIndex++);
         }
@@ -362,7 +362,7 @@ public final class BinaryPersistence {
         List<AssociationLinkInfo> associationsInUse = ci.getAssociationsInUse();
         os.writeShort(associationsInUse.size());
         for (AssociationLinkInfo li : associationsInUse) {
-          os.writeLong(li.getLinkId().getReferenceLinkId());
+          os.writeLong(li.getLinkId().getIdValue());
           os.writeString(li.getName());
           li.setIntIndex(associationIndex++);
         }
@@ -370,7 +370,7 @@ public final class BinaryPersistence {
         List<AggregationLinkInfo> aggregationsInUse = ci.getAggregationsInUse();
         os.writeShort(aggregationsInUse.size());
         for (AggregationLinkInfo li : aggregationsInUse) {
-          os.writeLong(li.getLinkId().getContainmentLinkId());
+          os.writeLong(li.getLinkId().getIdValue());
           os.writeString(li.getName());
           os.writeBoolean(li.isUnordered());
           li.setIntIndex(aggregationIndex++);
@@ -435,7 +435,7 @@ public final class BinaryPersistence {
     os.writeShort(refs.size());
     for (Entry<SLanguage, Integer> e : refs.entrySet()) {
       // id, name, version
-      os.writeUUID(IdHelper.getLanguageId(e.getKey()).getId());
+      os.writeUUID(IdHelper.getLanguageId(e.getKey()).getIdValue());
       os.writeString(e.getKey().getQualifiedName());
       os.writeInt(e.getValue());
     }
@@ -500,7 +500,7 @@ public final class BinaryPersistence {
       }
       for (SConceptId cid : readHelper.getParticipatingConcepts()) {
         // FIXME according to MPS-20646 fix in Indexer9 (rev cebbc90), indexer expects concept node id value as string
-        consumer.consume(Long.toString(cid.getConceptId()));
+        consumer.consume(Long.toString(cid.getIdValue()));
       }
       readHelper.requestInterfaceOnly(false);
       final NodesReader reader = new NodesReader(modelHeader.getModelReference(), mis, readHelper);

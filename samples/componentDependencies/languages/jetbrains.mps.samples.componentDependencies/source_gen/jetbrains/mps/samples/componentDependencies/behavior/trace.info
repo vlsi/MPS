@@ -26,25 +26,25 @@
   </root>
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365528900259">
     <file name="ComponentSet_Behavior.java">
-      <node id="9095678365528919653" at="17,50,18,192" concept="2" />
-      <node id="9095678365528900259" at="13,0,15,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="9095678365528919651" at="17,0,20,0" concept="1" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="9095678365528918751" at="15,95,20,7" concept="2" />
-      <node id="9095678365528900259" at="15,0,22,0" concept="3" trace="call_retrieveDependencies_9095678365528900313#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <scope id="9095678365528900261" at="13,43,13,43" />
-      <scope id="9095678365528919652" at="17,50,18,192" />
-      <scope id="9095678365528900259" at="13,0,15,0">
+      <node id="9095678365528919653" at="16,50,17,177" concept="2" />
+      <node id="9095678365528900259" at="12,0,14,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="9095678365528919651" at="16,0,19,0" concept="1" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="9095678365528918751" at="14,95,19,7" concept="2" />
+      <node id="9095678365528900259" at="14,0,21,0" concept="3" trace="call_retrieveDependencies_9095678365528900313#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <scope id="9095678365528900261" at="12,43,12,43" />
+      <scope id="9095678365528919652" at="16,50,17,177" />
+      <scope id="9095678365528900259" at="12,0,14,0">
         <var name="thisNode" id="9095678365528900259" />
       </scope>
-      <scope id="9095678365528919651" at="17,0,20,0">
+      <scope id="9095678365528919651" at="16,0,19,0">
         <var name="it" id="9095678365528919651" />
       </scope>
-      <scope id="9095678365528900316" at="15,95,20,7" />
-      <scope id="9095678365528900259" at="15,0,22,0">
+      <scope id="9095678365528900316" at="14,95,19,7" />
+      <scope id="9095678365528900259" at="14,0,21,0">
         <var name="thisNode" id="9095678365528900259" />
       </scope>
-      <unit id="9095678365528919651" at="16,237,20,5" name="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_Behavior$1" />
-      <unit id="9095678365528900259" at="12,0,23,0" name="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_Behavior" />
+      <unit id="9095678365528919651" at="15,222,19,5" name="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_Behavior$1" />
+      <unit id="9095678365528900259" at="11,0,22,0" name="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_Behavior" />
     </file>
   </root>
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365529689048">
@@ -59,14 +59,14 @@
   </root>
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365530118209">
     <file name="Component_Behavior.java">
-      <node id="650270285023760663" at="11,43,12,186" concept="0" />
-      <node id="650270285023765500" at="12,186,13,186" concept="0" />
-      <node id="9095678365530118209" at="11,0,15,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="9095678365530118211" at="11,43,13,186" />
-      <scope id="9095678365530118209" at="11,0,15,0">
+      <node id="650270285023760663" at="10,43,11,171" concept="0" />
+      <node id="650270285023765500" at="11,171,12,171" concept="0" />
+      <node id="9095678365530118209" at="10,0,14,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="9095678365530118211" at="10,43,12,171" />
+      <scope id="9095678365530118209" at="10,0,14,0">
         <var name="thisNode" id="9095678365530118209" />
       </scope>
-      <unit id="9095678365530118209" at="10,0,16,0" name="jetbrains.mps.samples.componentDependencies.behavior.Component_Behavior" />
+      <unit id="9095678365530118209" at="9,0,15,0" name="jetbrains.mps.samples.componentDependencies.behavior.Component_Behavior" />
     </file>
   </root>
 </debug-info>

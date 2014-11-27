@@ -4,7 +4,6 @@ package jetbrains.mps.lang.test.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -27,12 +26,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class TestNodeReference_Constraints extends BaseConstraintsDescriptor {
   public TestNodeReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-8825571760360698496l, -7431307307277756308l), 1210674524691l));
+    super(MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1d33213L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-8825571760360698496l, -7431307307277756308l), 1210674524691l, 1210674534086l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-8825571760360698496l, -7431307307277756308l), 1210674524691l, 1210674534086l), this) {
+    references.put(MetaIdFactory.refId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1d33213L, 0x119e1d356c6L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1d33213L, 0x119e1d356c6L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -43,13 +42,13 @@ public class TestNodeReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if (SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1216989428737l, "jetbrains.mps.lang.test.structure.TestNode"), false, false) != null) {
+            if (SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode"), false, false) != null) {
               return new ArrayList<SNode>();
             }
-            SNode test = SNodeOperations.getNodeAncestorWhereConceptInList(_context.getEnclosingNode(), new SAbstractConcept[]{MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, "jetbrains.mps.lang.test.structure.NodesTestCase"), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229187653856l, "jetbrains.mps.lang.test.structure.EditorTestCase")}, true, false);
+            SNode test = SNodeOperations.getNodeAncestorWhereConceptInList(_context.getEnclosingNode(), new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase")}, true, false);
             List<SNode> result = new ArrayList<SNode>();
             if (test != null) {
-              for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(test, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1210673684636l, "jetbrains.mps.lang.test.structure.TestNodeAnnotation"), true, new SAbstractConcept[]{}))) {
+              for (SNode node : ListSequence.fromList(SNodeOperations.getNodeDescendants(test, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1c6609cL, "jetbrains.mps.lang.test.structure.TestNodeAnnotation"), true, new SAbstractConcept[]{}))) {
                 ListSequence.fromList(result).addElement(node);
               }
             }

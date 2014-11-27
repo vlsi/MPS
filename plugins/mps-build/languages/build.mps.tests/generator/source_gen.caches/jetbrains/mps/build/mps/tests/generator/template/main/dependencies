@@ -5,7 +5,6 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.mps.tests.util.ModulePlugins" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.MPSModulesClosure" />

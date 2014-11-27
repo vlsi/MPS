@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class Name2IdMigration implements ProjectMigration {
-  public static final String EXECUTED_PROPERTY = "jetbrains.mps.name2id";
+  public static final String EXECUTED_PROPERTY = "jetbrains.mps.name2id_gen";
   private static final String EXECUTED_VALUE = "executed";
 
   @Override
@@ -32,7 +32,7 @@ public class Name2IdMigration implements ProjectMigration {
       return false;
     }
 
-    for (SModule module : Sequence.fromIterable(p.getModules())) {
+    for (SModule module : Sequence.fromIterable(p.getModulesWithGenerators())) {
       for (SModel model : Sequence.fromIterable(module.getModels())) {
         if (model.isReadOnly()) {
           continue;

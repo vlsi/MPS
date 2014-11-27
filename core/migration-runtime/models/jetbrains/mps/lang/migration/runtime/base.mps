@@ -104,7 +104,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -245,19 +245,6 @@
       <node concept="3Tm1VV" id="2RG318eVG2p" role="1B3o_S" />
       <node concept="3clFbS" id="2RG318eVG2q" role="3clF47" />
     </node>
-    <node concept="3clFb_" id="2RG318eVG28" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="isApplicable" />
-      <node concept="10P_77" id="2RG318eVG29" role="3clF45" />
-      <node concept="3Tm1VV" id="2RG318eVG2a" role="1B3o_S" />
-      <node concept="3clFbS" id="2RG318eVG2b" role="3clF47" />
-      <node concept="37vLTG" id="2RG318eVG2c" role="3clF46">
-        <property role="TrG5h" value="module" />
-        <node concept="3uibUv" id="2RG318eVG2d" role="1tU5fm">
-          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-        </node>
-      </node>
-    </node>
     <node concept="3clFb_" id="2RG318eVG2e" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="execute" />
@@ -370,25 +357,6 @@
                 <ref role="3uigEE" node="2RG318eWpZ8" resolve="MigrationScriptReference" />
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="6d7r2Fq7jdu" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="isApplicable" />
-      <node concept="10P_77" id="6d7r2Fq7jdv" role="3clF45" />
-      <node concept="3Tm1VV" id="6d7r2Fq7jdw" role="1B3o_S" />
-      <node concept="37vLTG" id="6d7r2Fq7jdy" role="3clF46">
-        <property role="TrG5h" value="module" />
-        <node concept="3uibUv" id="6d7r2Fq7jdz" role="1tU5fm">
-          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="6d7r2Fq7jd$" role="3clF47">
-        <node concept="3clFbF" id="6d7r2Fq7jjX" role="3cqZAp">
-          <node concept="3clFbT" id="6d7r2Fq7jjW" role="3clFbG">
-            <property role="3clFbU" value="true" />
           </node>
         </node>
       </node>

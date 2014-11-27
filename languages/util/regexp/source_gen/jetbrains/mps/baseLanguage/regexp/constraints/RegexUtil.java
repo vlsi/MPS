@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -17,23 +16,23 @@ public class RegexUtil {
   }
   public static List<SNode> collectMatchReferences(SNode enclosingNode) {
     List<SNode> matches = new ArrayList<SNode>();
-    for (SNode ruc : SNodeOperations.getNodeAncestors(enclosingNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), true)) {
+    for (SNode ruc : SNodeOperations.getNodeAncestors(enclosingNode, MetaAdapterFactory.getInterfaceConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ecbc07aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), true)) {
       ListSequence.fromList(matches).addSequence(ListSequence.fromList(collectNamedParentheses(ruc)));
     }
-    for (SNode ifst : SNodeOperations.getNodeAncestors(enclosingNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"), true)) {
+    for (SNode ifst : SNodeOperations.getNodeAncestors(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), true)) {
       SNode toCollect = null;
-      if (ListSequence.fromList(SNodeOperations.getNodeAncestors(enclosingNode, null, true)).contains(SLinkOperations.getTarget(ifst, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue")))) {
-        toCollect = SLinkOperations.getTarget(ifst, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"));
+      if (ListSequence.fromList(SNodeOperations.getNodeAncestors(enclosingNode, null, true)).contains(SLinkOperations.getTarget(ifst, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue")))) {
+        toCollect = SLinkOperations.getTarget(ifst, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"));
       } else {
-        for (SNode elseif : SLinkOperations.getChildren(ifst, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"))) {
-          if (ListSequence.fromList(SNodeOperations.getNodeAncestors(enclosingNode, null, true)).contains(SLinkOperations.getTarget(elseif, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060644605l, "statementList")))) {
-            toCollect = SLinkOperations.getTarget(elseif, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060619838l, "condition"));
+        for (SNode elseif : SLinkOperations.getChildren(ifst, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses"))) {
+          if (ListSequence.fromList(SNodeOperations.getNodeAncestors(enclosingNode, null, true)).contains(SLinkOperations.getTarget(elseif, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0f8fdL, "statementList")))) {
+            toCollect = SLinkOperations.getTarget(elseif, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0983eL, "condition"));
             break;
           }
         }
       }
       if (toCollect != null) {
-        for (SNode expr : SNodeOperations.getNodeDescendants(toCollect, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 6129327962763158517l, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"), true, new SAbstractConcept[]{})) {
+        for (SNode expr : SNodeOperations.getNodeDescendants(toCollect, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x550fbf4ebc5de3f5L, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"), true, new SAbstractConcept[]{})) {
           ListSequence.fromList(matches).addSequence(ListSequence.fromList(collectNamedParentheses(expr)));
         }
       }
@@ -41,26 +40,26 @@ public class RegexUtil {
     return matches;
   }
   public static SNode findRegexpUsingConstructionFor(SNode ref) {
-    SNode parens = SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174565027678l, 1174565035929l, "match"));
-    SNode ruc = SNodeOperations.getNodeAncestor(parens, MetaAdapterFactory.getInterfaceConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false, false);
+    SNode parens = SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117987ff5eL, 0x11179881f99L, "match"));
+    SNode ruc = SNodeOperations.getNodeAncestor(parens, MetaAdapterFactory.getInterfaceConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ecbc07aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false, false);
     if (ruc != null) {
       return ruc;
     }
 
-    SNode dcl = SNodeOperations.getNodeAncestor(parens, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174483125581l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration"), false, false);
+    SNode dcl = SNodeOperations.getNodeAncestor(parens, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a6454dL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration"), false, false);
     if (dcl != null) {
-      for (SNode parentRuc : SNodeOperations.getNodeAncestors(ref, MetaAdapterFactory.getInterfaceConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174653354106l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false)) {
-        for (SNode regref : SNodeOperations.getNodeDescendants(parentRuc, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174662605354l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), false, new SAbstractConcept[]{})) {
-          if (SLinkOperations.getTarget(regref, MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174662605354l, 1174662628918l, "regexp")) == dcl) {
+      for (SNode parentRuc : SNodeOperations.getNodeAncestors(ref, MetaAdapterFactory.getInterfaceConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ecbc07aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), false)) {
+        for (SNode regref : SNodeOperations.getNodeDescendants(parentRuc, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), false, new SAbstractConcept[]{})) {
+          if (SLinkOperations.getTarget(regref, MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, 0x1117f594636L, "regexp")) == dcl) {
             return parentRuc;
           }
         }
       }
     }
 
-    for (SNode ifst : SNodeOperations.getNodeAncestors(ref, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"), true)) {
-      for (SNode expr : SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(ifst, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition")), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 6129327962763158517l, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"), true, new SAbstractConcept[]{})) {
-        if (ListSequence.fromList(collectNamedParentheses(expr)).contains(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174565027678l, 1174565035929l, "match")))) {
+    for (SNode ifst : SNodeOperations.getNodeAncestors(ref, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), true)) {
+      for (SNode expr : SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(ifst, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition")), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x550fbf4ebc5de3f5L, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"), true, new SAbstractConcept[]{})) {
+        if (ListSequence.fromList(collectNamedParentheses(expr)).contains(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117987ff5eL, 0x11179881f99L, "match")))) {
           return expr;
         }
       }
@@ -78,19 +77,19 @@ public class RegexUtil {
     }
     ListSequence.fromList(seen).addElement(node);
 
-    for (SNode ref : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174662605354l, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), false, new SAbstractConcept[]{})) {
-      if (SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174662605354l, 1174662628918l, "regexp")) != null) {
-        collectNamedParenthesesInternal(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174662605354l, 1174662628918l, "regexp")), seen, found);
+    for (SNode ref : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), false, new SAbstractConcept[]{})) {
+      if (SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, 0x1117f594636L, "regexp")) != null) {
+        collectNamedParenthesesInternal(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, 0x1117f594636L, "regexp")), seen, found);
       }
     }
-    for (SNode mpe : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), false, new SAbstractConcept[]{})) {
+    for (SNode mpe : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), false, new SAbstractConcept[]{})) {
       ListSequence.fromList(found).addElement(mpe);
     }
   }
   public static SNode getRegexpIfContainer(SNode n) {
-    SNode container = SNodeOperations.getNodeAncestor(n, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123157l, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
-    if ((container != null) && (SNodeOperations.getParent(container) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(container), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList")) && SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"))) {
-      return SNodeOperations.cast(container, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
+    SNode container = SNodeOperations.getNodeAncestor(n, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
+    if ((container != null) && (SNodeOperations.getParent(container) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(container), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList")) && SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"))) {
+      return SNodeOperations.cast(container, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"));
     }
     return null;
   }

@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.regexp.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -29,12 +28,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class MatchVariableReferenceReplacement_Constraints extends BaseConstraintsDescriptor {
   public MatchVariableReferenceReplacement_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137538894l));
+    super(MetaIdFactory.conceptId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94eL));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137538894l, 3796137614137539525l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137538894l, 3796137614137539525l), this) {
+    references.put(MetaIdFactory.refId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94eL, 0x34ae970c192abbc5L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94eL, 0x34ae970c192abbc5L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -49,14 +48,14 @@ public class MatchVariableReferenceReplacement_Constraints extends BaseConstrain
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return (_context.getSmartReference() ? "\\" + SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+            return (_context.getSmartReference() ? "\\" + SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
           }
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> matches = new ArrayList<SNode>();
-            SNode top = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), true, false);
+            SNode top = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), true, false);
             if ((top != null)) {
-              BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(top, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159227l, "search")), "virtual_getString_1222432436326", new Object[]{matches});
+              BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(top, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee3bL, "search")), "virtual_getString_1222432436326", new Object[]{matches});
             }
             return matches;
           }

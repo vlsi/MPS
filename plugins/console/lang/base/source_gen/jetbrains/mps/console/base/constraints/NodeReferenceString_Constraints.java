@@ -4,7 +4,6 @@ package jetbrains.mps.console.base.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -20,12 +19,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class NodeReferenceString_Constraints extends BaseConstraintsDescriptor {
   public NodeReferenceString_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250036118117l));
+    super(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53ba81265L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l), this) {
+    references.put(MetaIdFactory.refId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL), this) {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -36,7 +35,7 @@ public class NodeReferenceString_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return SPropertyOperations.getString(_context.getReferenceNode(), MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588102084l, "referencePresentation"));
+            return SPropertyOperations.getString(_context.getReferenceNode(), MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e75e1c4L, "referencePresentation"));
           }
         };
       }

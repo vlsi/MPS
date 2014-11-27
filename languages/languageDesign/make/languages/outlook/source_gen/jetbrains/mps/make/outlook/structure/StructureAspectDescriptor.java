@@ -6,14 +6,13 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptOutlook = new ConceptDescriptorBuilder("jetbrains.mps.make.outlook.structure.Outlook", MetaIdFactory.conceptId(new UUID(-2570181330441385518L, -8064636954953977302L), 5608160002100057298L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1133920641626L), MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1169194658468L)).childDescriptors(new ConceptDescriptorBuilder.Link(5608160002100058529L, "facet", MetaIdFactory.conceptId(new UUID(7596465798203917883L, -4873580700227838512L), 6447445394688422642L), true, true, false)).children(new String[]{"facet"}, new boolean[]{true}).create();
+  /*package*/ final ConceptDescriptor myConceptOutlook = new ConceptDescriptorBuilder("jetbrains.mps.make.outlook.structure.Outlook", MetaIdFactory.conceptId(0xdc54e1b286b349d2L, 0x9014a76af17af22aL, 0x4dd42fcf00ba54d2L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(5608160002100058529L, "facet", MetaIdFactory.conceptId(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b21b2f2L), true, true, false)).children(new String[]{"facet"}, new boolean[]{true}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

@@ -4,7 +4,6 @@ package jetbrains.mps.core.xml.sax.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -27,7 +26,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class XMLSAXNodeRuleParamRef_Constraints extends BaseConstraintsDescriptor {
   public XMLSAXNodeRuleParamRef_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2542941447088749313l, -6571881616571970461l), 4720003541456852678l));
+    super(MetaIdFactory.conceptId(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x4180d2369b1f16c6L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -46,7 +45,7 @@ public class XMLSAXNodeRuleParamRef_Constraints extends BaseConstraintsDescripto
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-2542941447088749313l, -6571881616571970461l), 4720003541456852678l, 4720003541456852960l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-2542941447088749313l, -6571881616571970461l), 4720003541456852678l, 4720003541456852960l), this) {
+    references.put(MetaIdFactory.refId(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x4180d2369b1f16c6L, 0x4180d2369b1f17e0L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x4180d2369b1f16c6L, 0x4180d2369b1f17e0L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -72,7 +71,7 @@ public class XMLSAXNodeRuleParamRef_Constraints extends BaseConstraintsDescripto
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140417l, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser"), true, false) != null);
+    return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e301L, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser"), true, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "4720003541456856030");
   private static SNodePointer breakingNode_58jyk7_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "4720003541456853031");

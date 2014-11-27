@@ -20,7 +20,6 @@ import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -56,7 +55,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
@@ -439,7 +437,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
         //MPS-19756
         // TODO: get rid of this code - use special descriptor
-        if(mrd.getMemento().get("path") != null) {
+        if (mrd.getMemento().get("path") != null) {
           // See JavaSourceStubModelRoot & JavaClassStubsModelRoot load methods need to replace with super
           String path = mrd.getMemento().get("path");
           String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
@@ -470,7 +468,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
               update = true;
             }
           }
-          if(update)
+          if (update)
             toAdd.add(new ModelRootDescriptor(mrd.getType(), newMemento));
         }
 
@@ -901,24 +899,25 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return testsOutputPath.getPath();
   }
 
-  //todo make it clear what is "bundle home" and then remove this method
-  public IFile getBundleHome() {
-    return FileSystem.getInstance().getBundleHome(getDescriptorFile());
-  }
-
   public void validateLanguageVersions() {
-    Map<SLanguage, Integer> oldLanguageVersions = getModuleDescriptor().getLanguageVersions();
+    ModuleDescriptor md = getModuleDescriptor();
+    Map<SLanguage, Integer> oldLanguageVersions = md.getLanguageVersions();
     Map<SLanguage, Integer> newLanguageVersions = new HashMap<SLanguage, Integer>();
-    for (SLanguage lang : getAllUsedLanguages()) {
-      if (oldLanguageVersions.containsKey(lang)) {
-        newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
-      } else {
-        setChanged();
-        newLanguageVersions.put(lang, lang.getLanguageVersion());
+    if (!md.hasLanguageVersions()) {
+      for (SLanguage lang : getAllUsedLanguages()) {
+        newLanguageVersions.put(lang, 0);
+      }
+      md.setHasLanguageVersions(true);
+    } else {
+      for (SLanguage lang : getAllUsedLanguages()) {
+        if (oldLanguageVersions.containsKey(lang)) {
+          newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
+        } else {
+          newLanguageVersions.put(lang, lang.getLanguageVersion());
+        }
       }
     }
     if (oldLanguageVersions.size() != newLanguageVersions.size()) {
-      setChanged();
       oldLanguageVersions.clear();
       oldLanguageVersions.putAll(newLanguageVersions);
     }
@@ -926,6 +925,16 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public int getUsedLanguageVersion(SLanguage usedLanguage) {
-    return getModuleDescriptor().getLanguageVersions().get(usedLanguage);
+    Integer res = getModuleDescriptor().getLanguageVersions().get(usedLanguage);
+    if (res == null) {
+      LOG.error(
+          "getUsedLanguageVersion can't find a version for language " + usedLanguage.getQualifiedName() +
+          " in module " + getModuleName() + "." +
+          " This can either mean that the language is not imported into this module or that " +
+          "validateLanguageVersions was not called on this module in appropriate moment.",
+          new Throwable());
+      return usedLanguage.getLanguageVersion();
+    }
+    return res;
   }
 }

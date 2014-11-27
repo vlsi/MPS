@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.builders.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -28,12 +27,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class SimpleBuilderDeclaration_Constraints extends BaseConstraintsDescriptor {
   public SimpleBuilderDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l));
+    super(MetaIdFactory.conceptId(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 3816167865390363701l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 3816167865390363701l), this) {
+    references.put(MetaIdFactory.refId(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, 0x34f5c07463da7435L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, 0x34f5c07463da7435L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -45,11 +44,11 @@ public class SimpleBuilderDeclaration_Constraints extends BaseConstraintsDescrip
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            SNode container = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"), true, false);
+            SNode container = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"), true, false);
             for (SNode builders : SimpleBuilders_Behavior.call_getAncestors_6211769134875410554(container)) {
-              for (SNode dcl : SLinkOperations.getChildren(builders, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 7288041816792374845l, "builder"))) {
-                if (SNodeOperations.isInstanceOf(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"))) {
-                  ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")));
+              for (SNode dcl : SLinkOperations.getChildren(builders, MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x6524536b2e1a1e3dL, "builder"))) {
+                if (SNodeOperations.isInstanceOf(dcl, MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"))) {
+                  ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")));
                 }
               }
             }

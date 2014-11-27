@@ -5,12 +5,11 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class ConceptCondition_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getApplicableConcept_4413230749907681652(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633101449694l, 4943044633101738901l, "concept"));
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788e9b9deL, 0x449938e788ee2395L, "concept"));
   }
 }

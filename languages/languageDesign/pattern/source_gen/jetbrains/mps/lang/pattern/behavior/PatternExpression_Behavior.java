@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
@@ -23,12 +22,12 @@ public class PatternExpression_Behavior {
   }
   public static List<SNode> call_getVariables_4855904478357072957(SNode thisNode) {
     List<SNode> variables = new ArrayList<SNode>();
-    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037779l, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), false, new SAbstractConcept[]{})));
-    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1137418540378l, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), false, new SAbstractConcept[]{})));
-    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037781l, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), false, new SAbstractConcept[]{})));
+    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4793L, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), false, new SAbstractConcept[]{})));
+    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), false, new SAbstractConcept[]{})));
+    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(thisNode, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), false, new SAbstractConcept[]{})));
     /*
-      if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 4855904478356877904l, "jetbrains.mps.lang.pattern.structure.OrPatternClause"))) {
-        ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 2879868312062962308l, "jetbrains.mps.lang.pattern.structure.OrPattern")), MetaAdapterFactory.getContainmentLink(new UUID(-3143127453834064983l, -5836335846783251545l), 2879868312062962308l, 4264731254635442558l, "variable"))));
+      if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x4363a36537b0b250L, "jetbrains.mps.lang.pattern.structure.OrPatternClause"))) {
+        ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern")), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, 0x3b2f5e7b070d317eL, "variable"))));
       }
     */
     return variables;
@@ -38,9 +37,9 @@ public class PatternExpression_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     Set<String> names = new HashSet();
     for (SNode var : variables) {
-      if (!(names.contains(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))))) {
+      if (!(names.contains(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
         ListSequence.fromList(result).addElement(var);
-        names.add(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+        names.add(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
     }
     return result;
@@ -49,7 +48,7 @@ public class PatternExpression_Behavior {
     List<SNode> variables = PatternExpression_Behavior.call_getVariables_4855904478357072957(thisNode);
     List<SNode> result = new ArrayList<SNode>();
     for (SNode var : variables) {
-      if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 2879868312062962308l, "jetbrains.mps.lang.pattern.structure.OrPattern")) && SNodeOperations.getParent(var) != thisNode))) {
+      if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern")) && SNodeOperations.getParent(var) != thisNode))) {
         ListSequence.fromList(result).addElement(var);
       }
     }

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.test.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -31,12 +30,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ScopesTest_Constraints extends BaseConstraintsDescriptor {
   public ScopesTest_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l));
+    super(MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l), this) {
+    references.put(MetaIdFactory.refId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -55,7 +54,7 @@ public class ScopesTest_Constraints extends BaseConstraintsDescriptor {
               @Override
               public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
                 List<SNode> nodes = new ArrayList<SNode>();
-                for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.getParent(SNodeOperations.cast(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, "jetbrains.mps.lang.test.structure.ScopesTest")))))) {
+                for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.getParent(SNodeOperations.cast(_context.getContextNode(), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest")))))) {
                   ListSequence.fromList(nodes).addElement(SLinkOperations.getTargetNode(reference));
                 }
                 return nodes;

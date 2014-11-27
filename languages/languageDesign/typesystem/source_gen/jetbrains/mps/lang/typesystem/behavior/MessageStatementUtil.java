@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -17,11 +16,11 @@ public class MessageStatementUtil {
   private static final int MAX_LENGTH = 20;
 
   public static String generateNameFromExpression(SNode expr) {
-    List<SNode> descendants = SNodeOperations.getNodeDescendants(expr, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, "jetbrains.mps.baseLanguage.structure.StringLiteral"), true, new SAbstractConcept[]{});
+    List<SNode> descendants = SNodeOperations.getNodeDescendants(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"), true, new SAbstractConcept[]{});
     if (ListSequence.fromList(descendants).isEmpty()) {
       return null;
     }
-    return convertToCamelCaseNameString(SPropertyOperations.getString(ListSequence.fromList(descendants).last(), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value")));
+    return convertToCamelCaseNameString(SPropertyOperations.getString(ListSequence.fromList(descendants).last(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value")));
   }
 
   private static String convertToCamelCaseNameString(String nameString) {

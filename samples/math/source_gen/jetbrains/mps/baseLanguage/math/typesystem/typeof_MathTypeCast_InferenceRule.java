@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,7 +17,7 @@ public class typeof_MathTypeCast_InferenceRule extends AbstractInferenceRule_Run
   public typeof_MathTypeCast_InferenceRule() {
   }
   public void applyRule(final SNode cast, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    switch (SPropertyOperations.getInteger_def(cast, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1237214346477l, 1237214516967l, "target"), "1")) {
+    switch (SPropertyOperations.getInteger_def(cast, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200fb8bcedL, 0x1200fbb56e7L, "target"), "1")) {
       case 1:
         {
           SNode _nodeToCheck_1029348928467 = cast;

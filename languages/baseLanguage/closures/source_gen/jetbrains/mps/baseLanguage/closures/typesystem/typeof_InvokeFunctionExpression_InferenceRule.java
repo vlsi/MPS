@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil;
 import java.util.Iterator;
@@ -26,7 +25,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
   }
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final List<SNode> ptypes = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode p : SLinkOperations.getChildren(invoke, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199547238293l, 1199548008404l, "parameter"))) {
+    for (SNode p : SLinkOperations.getChildren(invoke, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a964795L, 0x1174aa207d4L, "parameter"))) {
       final SNode T_typevar_642108346586029317 = typeCheckingContext.createNewRuntimeTypesVariable();
       ListSequence.fromList(ptypes).addElement(typeCheckingContext.getRepresentative(T_typevar_642108346586029317));
       {
@@ -43,7 +42,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
     }
     final SNode ftype_typevar_642108346586029342 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(invoke, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199547238293l, 1199547267289l, "function"));
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(invoke, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a964795L, 0x1174a96b8d9L, "function"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "642108346586029343", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(ftype_typevar_642108346586029342), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "642108346586029345", true), _info_12389875345);
     }

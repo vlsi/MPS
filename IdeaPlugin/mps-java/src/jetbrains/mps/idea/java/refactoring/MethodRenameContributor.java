@@ -11,7 +11,7 @@ import com.intellij.psi.search.searches.OverridingMethodsSearch;
 import com.intellij.refactoring.rename.RenameHandler;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RenameMethodDialog;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.refactoring.RenameRefactoringContributor;
@@ -72,7 +72,7 @@ public class MethodRenameContributor implements RenameRefactoringContributor {
 
     IRefactoring psiAwareRefactoring = new PsiMethodRenameRefactoringWrapper();
 
-    RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContext(
+    RefactoringAccessEx.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContext(
       psiAwareRefactoring,
       Arrays.asList("newName", "refactorOverriding"),
       Arrays.asList(newName),

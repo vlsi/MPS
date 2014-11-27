@@ -5,15 +5,14 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class GenerationContextOp_NodePatternRef_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getTarget_1758784108620114792(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2922713684555708516l, -6639802755577912107l), 4589968773278056990l, 4589968773278063829l, "patternVarDecl"));
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x3fb2d847d55fc21eL, 0x3fb2d847d55fdcd5L, "patternVarDecl"));
   }
   public static void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target) {
-    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2922713684555708516l, -6639802755577912107l), 4589968773278056990l, 4589968773278063829l, "patternVarDecl"), null);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x3fb2d847d55fc21eL, 0x3fb2d847d55fdcd5L, "patternVarDecl"), null);
   }
 }

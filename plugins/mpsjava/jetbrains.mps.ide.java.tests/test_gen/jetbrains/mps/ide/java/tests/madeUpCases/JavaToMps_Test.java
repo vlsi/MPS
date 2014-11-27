@@ -10,7 +10,6 @@ import jetbrains.mps.ide.java.tests.utility.Utils;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -64,14 +63,14 @@ public class JavaToMps_Test extends BaseTransformationTest {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/selfref", SNodeOperations.cast(this.getNodeById("4795297196607521155"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/selfref", SNodeOperations.cast(this.getNodeById("4795297196607521155"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
 
     }
     public void test_ClassWInnerInterace() throws Exception {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/classwiface", SNodeOperations.cast(this.getNodeById("1218582063869484741"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/classwiface", SNodeOperations.cast(this.getNodeById("1218582063869484741"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
     }
     public void test_Imports1() throws Exception {
       this.addNodeById("4795297196607520929");
@@ -95,7 +94,7 @@ public class JavaToMps_Test extends BaseTransformationTest {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/nestcontainer", SNodeOperations.cast(this.getNodeById("8083368042256419834"), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/nestcontainer", SNodeOperations.cast(this.getNodeById("8083368042256419834"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
     }
     public void test_FullSource() throws Exception {
       this.addNodeById("4795297196607520929");

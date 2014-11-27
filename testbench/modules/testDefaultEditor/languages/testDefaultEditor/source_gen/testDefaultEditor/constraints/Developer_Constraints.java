@@ -4,7 +4,6 @@ package testDefaultEditor.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -29,12 +28,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class Developer_Constraints extends BaseConstraintsDescriptor {
   public Developer_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431434553l));
+    super(MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431434553l, 938834323431434579l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431434553l, 938834323431434579l), this) {
+    references.put(MetaIdFactory.refId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L, 0xd0768d7cf132953L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L, 0xd0768d7cf132953L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -60,12 +59,12 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
                 List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
                 SNode developer = _context.getReferenceNode();
-                if (SNodeOperations.isInstanceOf(developer, MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431434553l, "testDefaultEditor.structure.Developer"))) {
-                  SNode devnode = SNodeOperations.cast(developer, MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431434553l, "testDefaultEditor.structure.Developer"));
+                if (SNodeOperations.isInstanceOf(developer, MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L, "testDefaultEditor.structure.Developer"))) {
+                  SNode devnode = SNodeOperations.cast(developer, MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L, "testDefaultEditor.structure.Developer"));
                   SNode team = SNodeOperations.getParent(devnode);
-                  if (SNodeOperations.isInstanceOf(team, MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431421842l, "testDefaultEditor.structure.Team"))) {
-                    SNode teamNode = SNodeOperations.cast(team, MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431421842l, "testDefaultEditor.structure.Team"));
-                    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(teamNode, MetaAdapterFactory.getContainmentLink(new UUID(-5371872866919758279l, -7175655179967150885l), 938834323431421842l, 938834323431434551l, "developer"))));
+                  if (SNodeOperations.isInstanceOf(team, MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f792L, "testDefaultEditor.structure.Team"))) {
+                    SNode teamNode = SNodeOperations.cast(team, MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f792L, "testDefaultEditor.structure.Team"));
+                    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(teamNode, MetaAdapterFactory.getContainmentLink(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f792L, 0xd0768d7cf132937L, "developer"))));
                   } else {
                     ListSequence.fromList(result).addElement(devnode);
                   }

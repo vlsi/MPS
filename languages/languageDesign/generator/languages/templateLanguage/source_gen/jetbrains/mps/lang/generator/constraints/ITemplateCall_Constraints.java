@@ -4,7 +4,6 @@ package jetbrains.mps.lang.generator.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
@@ -17,7 +16,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ITemplateCall_Constraints extends BaseConstraintsDescriptor {
   public ITemplateCall_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l));
+    super(MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L));
   }
   @Override
   public boolean hasOwnCanBeParentMethod() {
@@ -34,8 +33,8 @@ public class ITemplateCall_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    if (link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626405l, "actualArgument"))) {
-      return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 4816349095291127781l, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 4035562641222585520l, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression")) || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral");
+    if (link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3125L, "actualArgument"))) {
+      return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a07e5L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x380132d742e8ccb0L, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression")) || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral") || childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral");
     }
     return true;
   }

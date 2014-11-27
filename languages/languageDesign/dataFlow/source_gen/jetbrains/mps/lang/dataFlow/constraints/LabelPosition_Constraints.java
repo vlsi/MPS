@@ -4,7 +4,6 @@ package jetbrains.mps.lang.dataFlow.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -27,12 +26,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class LabelPosition_Constraints extends BaseConstraintsDescriptor {
   public LabelPosition_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(9196683164725627254l, -5405980172761227084l), 1207062697254l));
+    super(MetaIdFactory.conceptId(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a8b1526L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(9196683164725627254l, -5405980172761227084l), 1207062697254l, 1207062703832l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(9196683164725627254l, -5405980172761227084l), 1207062697254l, 1207062703832l), this) {
+    references.put(MetaIdFactory.refId(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a8b1526L, 0x1190a8b2ed8L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a8b1526L, 0x1190a8b2ed8L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -44,8 +43,8 @@ public class LabelPosition_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> labels = new ArrayList<SNode>();
-            SNode builder = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 1206442055221l, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), true, false);
-            ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(builder, MetaAdapterFactory.getConcept(new UUID(9196683164725627254l, -5405980172761227084l), 1207062474157l, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement"), true, new SAbstractConcept[]{})));
+            SNode builder = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), true, false);
+            ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(builder, MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a87adadL, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement"), true, new SAbstractConcept[]{})));
             return labels;
           }
           @Override

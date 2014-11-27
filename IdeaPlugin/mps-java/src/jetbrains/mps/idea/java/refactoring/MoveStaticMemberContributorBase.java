@@ -15,7 +15,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.java.actions.MoveRefactoringRunnable;
 import jetbrains.mps.ide.java.actions.MoveStaticMemberExecutable;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.refactoring.MoveRefactoringContributor;
 import jetbrains.mps.idea.core.refactoring.PsiAwareRefactoring;
@@ -59,7 +59,7 @@ abstract class MoveStaticMemberContributorBase implements MoveRefactoringContrib
     getRefactoringExecutable().execute(mpsProject, target, new MoveRefactoringRunnable() {
       @Override
       public void run(SNode whereToMove) {
-        RefactoringAccess.getInstance().getRefactoringFacade().execute(
+        RefactoringAccessEx.getInstance().getRefactoringFacade().execute(
           RefactoringContext.createRefactoringContext(new MovetStaticMemberRefactoring(),
             Arrays.asList("destination"),
             Arrays.asList(whereToMove),

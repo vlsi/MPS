@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -16,13 +15,13 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class Table_Behavior {
   public static void init(SNode thisNode) {
     for (int i = 0; i < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_getInitialRowCount_1262430001741498094", new Object[]{}); i++) {
-      SNode row = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, "jetbrains.mps.lang.editor.tableTests.structure.Row")));
+      SNode row = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea6L, "jetbrains.mps.lang.editor.tableTests.structure.Row")));
       for (int j = 0; j < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(thisNode)), "virtual_getInitialColumnCount_1262430001741498026", new Object[]{}); j++) {
-        SNode dataCell = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155300l, "jetbrains.mps.lang.editor.tableTests.structure.DataCell")));
-        SPropertyOperations.set(dataCell, MetaAdapterFactory.getProperty(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155300l, 2882388703616155301l, "value"), "$" + i + " " + j + "$");
-        ListSequence.fromList(SLinkOperations.getChildren(row, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).addElement(dataCell);
+        SNode dataCell = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, "jetbrains.mps.lang.editor.tableTests.structure.DataCell")));
+        SPropertyOperations.set(dataCell, MetaAdapterFactory.getProperty(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, 0x28004d411fa3bea5L, "value"), "$" + i + " " + j + "$");
+        ListSequence.fromList(SLinkOperations.getChildren(row, MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea6L, 0x28004d411fa3bea7L, "cells"))).addElement(dataCell);
       }
-      ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows"))).addElement(row);
+      ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea0L, 0x28004d411fa3bea2L, "rows"))).addElement(row);
     }
   }
   public static int virtual_getInitialColumnCount_1262430001741498026(SAbstractConcept thisConcept) {

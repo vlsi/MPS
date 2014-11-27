@@ -150,7 +150,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -631,26 +631,6 @@
             <property role="3SKdUp" value="todo: readOnly" />
           </node>
         </node>
-        <node concept="3cpWs8" id="6H$fNdLyQM$" role="3cqZAp">
-          <node concept="3cpWsn" id="6H$fNdLyQM_" role="3cpWs9">
-            <property role="TrG5h" value="c" />
-            <node concept="3uibUv" id="6H$fNdLyQMv" role="1tU5fm">
-              <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
-            </node>
-            <node concept="2OqwBi" id="6H$fNdLyQMA" role="33vP2m">
-              <node concept="2YIFZM" id="6H$fNdLyQMB" role="2Oq$k0">
-                <ref role="1Pybhc" to="t3eg:~SConceptRepository" resolve="SConceptRepository" />
-                <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="6H$fNdLyQMC" role="2OqNvi">
-                <ref role="37wK5l" to="t3eg:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                <node concept="37vLTw" id="67MRmR$phAF" role="37wK5m">
-                  <ref role="3cqZAo" node="6H$fNdLyI$_" resolve="conceptName" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs6" id="6H$fNdLyI$m" role="3cqZAp">
           <node concept="2OqwBi" id="6H$fNdLyI$n" role="3cqZAk">
             <node concept="2YIFZM" id="6H$fNdLyI$o" role="2Oq$k0">
@@ -670,8 +650,8 @@
               <node concept="2YIFZM" id="6H$fNdLyI$r" role="37wK5m">
                 <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                 <ref role="37wK5l" to="k7g3:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
-                <node concept="37vLTw" id="6H$fNdLyQME" role="37wK5m">
-                  <ref role="3cqZAo" node="6H$fNdLyQM_" resolve="c" />
+                <node concept="37vLTw" id="5Yox2dUVYIY" role="37wK5m">
+                  <ref role="3cqZAo" node="6H$fNdLyI$_" resolve="concept" />
                 </node>
               </node>
               <node concept="3clFbT" id="6H$fNdLz3C$" role="37wK5m">
@@ -697,8 +677,10 @@
         </node>
       </node>
       <node concept="37vLTG" id="6H$fNdLyI$_" role="3clF46">
-        <property role="TrG5h" value="conceptName" />
-        <node concept="17QB3L" id="67MRmR$pe5E" role="1tU5fm" />
+        <property role="TrG5h" value="concept" />
+        <node concept="3uibUv" id="5Yox2dUVZ2x" role="1tU5fm">
+          <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="3J6h25QQc6K" role="jymVt" />

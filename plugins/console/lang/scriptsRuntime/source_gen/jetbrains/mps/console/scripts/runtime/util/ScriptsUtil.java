@@ -14,7 +14,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.ide.refactoring.RefactoringViewItemImpl;
@@ -53,7 +53,7 @@ public class ScriptsUtil {
   public static void refactor(final ConsoleContext context, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super SNode> toExecuteWithEachNode) {
     Project project = ProjectHelper.toIdeaProject(context.getProject());
     SearchResults sr = nodesToRefactoringResult(nodes);
-    RefactoringAccess.getInstance().showRefactoringView(project, new RefactoringViewAction() {
+    RefactoringAccessEx.getInstance().showRefactoringView(project, new RefactoringViewAction() {
       public void performAction(final RefactoringViewItem refactoringViewItem) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {

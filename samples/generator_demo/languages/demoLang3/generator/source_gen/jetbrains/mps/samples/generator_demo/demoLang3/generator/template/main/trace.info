@@ -4,99 +4,99 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="21,0,94,0" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated" />
+      <unit at="20,0,93,0" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:f05f4ec0-762b-442a-a921-833cf0a0eef7(jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main@generator)/1228529813076">
     <file name="QueriesGenerated.java">
-      <node id="5273477653284546106" at="53,109,54,90" concept="1" />
-      <node id="5273477653284544941" at="87,120,88,207" concept="1" />
-      <node id="5273477653284544349" at="90,120,91,207" concept="1" />
-      <scope id="5273477653284546102" at="53,109,54,90" />
-      <scope id="5273477653284544940" at="87,120,88,207" />
-      <scope id="5273477653284544348" at="90,120,91,207" />
+      <node id="5273477653284546106" at="52,109,53,90" concept="1" />
+      <node id="5273477653284544941" at="86,120,87,194" concept="1" />
+      <node id="5273477653284544349" at="89,120,90,194" concept="1" />
+      <scope id="5273477653284546102" at="52,109,53,90" />
+      <scope id="5273477653284544940" at="86,120,87,194" />
+      <scope id="5273477653284544348" at="89,120,90,194" />
     </file>
   </root>
   <root nodeRef="r:f05f4ec0-762b-442a-a921-833cf0a0eef7(jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main@generator)/1228530519256">
     <file name="QueriesGenerated.java">
-      <node id="1228530869179" at="32,39,33,192" concept="1" />
-      <node id="1228531200402" at="37,106,38,72" concept="1" />
-      <node id="1228530791041" at="61,39,62,192" concept="1" />
-      <node id="1228530869177" at="32,0,35,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1228530784580" at="61,0,64,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1228530869170" at="30,106,35,136" concept="1" />
-      <node id="1228530729067" at="59,88,64,16" concept="1" />
-      <scope id="1228530869178" at="32,39,33,192" />
-      <scope id="1228531189339" at="37,106,38,72" />
-      <scope id="1228530784581" at="61,39,62,192" />
-      <scope id="1228530869177" at="32,0,35,0">
+      <node id="1228530869179" at="31,39,32,178" concept="1" />
+      <node id="1228531200402" at="36,106,37,72" concept="1" />
+      <node id="1228530791041" at="60,39,61,178" concept="1" />
+      <node id="1228530869177" at="31,0,34,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1228530784580" at="60,0,63,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1228530869170" at="29,106,34,123" concept="1" />
+      <node id="1228530729067" at="58,88,63,16" concept="1" />
+      <scope id="1228530869178" at="31,39,32,178" />
+      <scope id="1228531189339" at="36,106,37,72" />
+      <scope id="1228530784581" at="60,39,61,178" />
+      <scope id="1228530869177" at="31,0,34,0">
         <var name="it" id="1228530869177" />
       </scope>
-      <scope id="1228530784580" at="61,0,64,0">
+      <scope id="1228530784580" at="60,0,63,0">
         <var name="it" id="1228530784580" />
       </scope>
-      <scope id="1228530847855" at="30,106,35,136" />
-      <scope id="1228530695050" at="59,88,64,16" />
-      <unit id="1228530869177" at="31,265,35,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$1" />
-      <unit id="1228530784580" at="60,236,64,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$3" />
+      <scope id="1228530847855" at="29,106,34,123" />
+      <scope id="1228530695050" at="58,88,63,16" />
+      <unit id="1228530869177" at="30,252,34,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$1" />
+      <unit id="1228530784580" at="59,223,63,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$3" />
     </file>
   </root>
   <root nodeRef="r:f05f4ec0-762b-442a-a921-833cf0a0eef7(jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main@generator)/1228530922030">
     <file name="QueriesGenerated.java">
-      <node id="1228530922058" at="42,39,43,192" concept="1" />
-      <node id="1228531243647" at="47,106,48,72" concept="1" />
-      <node id="1228530922080" at="68,39,69,192" concept="1" />
-      <node id="1228530922056" at="42,0,45,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1228530922078" at="68,0,71,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1228530922049" at="40,106,45,136" concept="1" />
-      <node id="1228530922071" at="66,88,71,16" concept="1" />
-      <scope id="1228530922057" at="42,39,43,192" />
-      <scope id="1228531236412" at="47,106,48,72" />
-      <scope id="1228530922079" at="68,39,69,192" />
-      <scope id="1228530922056" at="42,0,45,0">
+      <node id="1228530922058" at="41,39,42,178" concept="1" />
+      <node id="1228531243647" at="46,106,47,72" concept="1" />
+      <node id="1228530922080" at="67,39,68,178" concept="1" />
+      <node id="1228530922056" at="41,0,44,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1228530922078" at="67,0,70,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1228530922049" at="39,106,44,123" concept="1" />
+      <node id="1228530922071" at="65,88,70,16" concept="1" />
+      <scope id="1228530922057" at="41,39,42,178" />
+      <scope id="1228531236412" at="46,106,47,72" />
+      <scope id="1228530922079" at="67,39,68,178" />
+      <scope id="1228530922056" at="41,0,44,0">
         <var name="it" id="1228530922056" />
       </scope>
-      <scope id="1228530922078" at="68,0,71,0">
+      <scope id="1228530922078" at="67,0,70,0">
         <var name="it" id="1228530922078" />
       </scope>
-      <scope id="1228530922048" at="40,106,45,136" />
-      <scope id="1228530922070" at="66,88,71,16" />
-      <unit id="1228530922056" at="41,265,45,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$2" />
-      <unit id="1228530922078" at="67,236,71,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$4" />
+      <scope id="1228530922048" at="39,106,44,123" />
+      <scope id="1228530922070" at="65,88,70,16" />
+      <unit id="1228530922056" at="40,252,44,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$2" />
+      <unit id="1228530922078" at="66,223,70,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$4" />
     </file>
   </root>
   <root nodeRef="r:f05f4ec0-762b-442a-a921-833cf0a0eef7(jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main@generator)/1228532078977">
     <file name="QueriesGenerated.java">
-      <node id="1228532295649" at="50,106,51,204" concept="1" />
-      <node id="1228532749275" at="56,103,57,189" concept="1" />
-      <node id="1228532242342" at="75,39,76,195" concept="1" />
-      <node id="1228532713798" at="82,39,83,198" concept="1" />
-      <node id="1228532233974" at="75,0,78,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1228532713796" at="82,0,85,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1228532225996" at="73,102,78,7" concept="1" />
-      <node id="1228532713790" at="80,102,85,7" concept="1" />
-      <scope id="1228532289179" at="50,106,51,204" />
-      <scope id="1228532742087" at="56,103,57,189" />
-      <scope id="1228532233975" at="75,39,76,195" />
-      <scope id="1228532713797" at="82,39,83,198" />
-      <scope id="1228532233974" at="75,0,78,0">
+      <node id="1228532295649" at="49,106,50,191" concept="1" />
+      <node id="1228532749275" at="55,103,56,176" concept="1" />
+      <node id="1228532242342" at="74,39,75,181" concept="1" />
+      <node id="1228532713798" at="81,39,82,184" concept="1" />
+      <node id="1228532233974" at="74,0,77,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1228532713796" at="81,0,84,0" concept="0" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1228532225996" at="72,102,77,7" concept="1" />
+      <node id="1228532713790" at="79,102,84,7" concept="1" />
+      <scope id="1228532289179" at="49,106,50,191" />
+      <scope id="1228532742087" at="55,103,56,176" />
+      <scope id="1228532233975" at="74,39,75,181" />
+      <scope id="1228532713797" at="81,39,82,184" />
+      <scope id="1228532233974" at="74,0,77,0">
         <var name="it" id="1228532233974" />
       </scope>
-      <scope id="1228532713796" at="82,0,85,0">
+      <scope id="1228532713796" at="81,0,84,0">
         <var name="it" id="1228532713796" />
       </scope>
-      <scope id="1228532217557" at="73,102,78,7" />
-      <scope id="1228532713789" at="80,102,85,7" />
-      <unit id="1228532233974" at="74,235,78,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$5" />
-      <unit id="1228532713796" at="81,235,85,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$6" />
+      <scope id="1228532217557" at="72,102,77,7" />
+      <scope id="1228532713789" at="79,102,84,7" />
+      <unit id="1228532233974" at="73,222,77,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$5" />
+      <unit id="1228532713796" at="80,222,84,5" name="jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main.QueriesGenerated$6" />
     </file>
   </root>
   <root nodeRef="r:f05f4ec0-762b-442a-a921-833cf0a0eef7(jetbrains.mps.samples.generator_demo.demoLang3.generator.template.main@generator)/5273477653284544316">
     <file name="QueriesGenerated.java">
-      <node id="5273477653284544325" at="24,110,25,206" concept="1" />
-      <node id="5273477653284544334" at="27,110,28,205" concept="1" />
-      <scope id="5273477653284544324" at="24,110,25,206" />
-      <scope id="5273477653284544333" at="27,110,28,205" />
+      <node id="5273477653284544325" at="23,110,24,192" concept="1" />
+      <node id="5273477653284544334" at="26,110,27,191" concept="1" />
+      <scope id="5273477653284544324" at="23,110,24,192" />
+      <scope id="5273477653284544333" at="26,110,27,191" />
     </file>
   </root>
 </debug-info>

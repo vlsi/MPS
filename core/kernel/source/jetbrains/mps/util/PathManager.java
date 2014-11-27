@@ -18,6 +18,7 @@ package jetbrains.mps.util;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -122,25 +123,49 @@ public class PathManager {
   }
 
   public static Collection<String> getBootstrapPaths() {
-    List<String> paths;
-    File lib = new File(getHomePath() + File.separator + "lib");
-    if (lib.exists() && lib.isDirectory()) {
-      paths = new ArrayList<String>();
-      for (File jar : lib.listFiles(MPS_JARS)) {
+    Collection<String> paths = getBootstrapPathsIfPackaged();
+    if (paths != null) return paths;
+    else {
+      paths = new ArrayList<String>(2);
+      paths.add(getCorePath());
+      paths.add(getEditorPath());
+      return Collections.unmodifiableCollection(paths);
+    }
+  }
+
+  @Nullable
+  private static Collection<String> getBootstrapPathsIfPackaged() {
+    File libDir = new File(getPackagedLibPath());
+    if (libDir.exists() && libDir.isDirectory()) {
+      List<String> paths = new ArrayList<String>();
+      for (File jar : libDir.listFiles(MPS_JARS)) {
         paths.add(jar.getAbsolutePath() + MODULES_PREFIX);
       }
       if (paths.size() > 0) {
         return Collections.unmodifiableCollection(paths);
       }
     }
-    paths = new ArrayList<String>(2);
-    paths.add(getHomePath() + File.separator + "core");
-    paths.add(getHomePath() + File.separator + "editor");
-    return Collections.unmodifiableCollection(paths);
+    return null;
+  }
+
+  private static String getPackagedLibPath() {
+    return getHomePath() + File.separator + "lib";
   }
 
   public static String getLanguagesPath() {
     return getHomePath() + File.separator + "languages";
+  }
+
+  public static String getWorkbenchPath() {
+    return getHomePath() + File.separator + "workbench";
+  }
+
+  public static String getCorePath() {
+    return getHomePath() + File.separator + "core";
+  }
+
+  public static String getEditorPath() {
+    return getHomePath() + File.separator + "editor";
   }
 
   private static boolean isMpsDir(File file) {

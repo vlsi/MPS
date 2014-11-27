@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ParallelFor_Editor extends DefaultNodeEditor {
@@ -140,7 +139,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_p0t1np_a6a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool")) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, 0x40a8d217b6d881feL, "threadPool")) != null;
   }
   private EditorCell createRefNode_p0t1np_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -165,7 +164,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_p0t1np_a7a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool")) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, 0x40a8d217b6d881feL, "threadPool")) != null;
   }
   private EditorCell createConstant_p0t1np_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no wait");
@@ -179,7 +178,7 @@ public class ParallelFor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_p0t1np_a8a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 8374756414438970116l, "nowait"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, 0x74391c966b0f1304L, "nowait"));
   }
   private EditorCell createConstant_p0t1np_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");

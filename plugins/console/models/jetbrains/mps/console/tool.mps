@@ -251,7 +251,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -7258,8 +7258,8 @@
                 </node>
                 <node concept="3cpWsn" id="TxhJRbnccR" role="TDEfY">
                   <property role="TrG5h" value="e" />
-                  <node concept="3uibUv" id="TxhJRbnt7d" role="1tU5fm">
-                    <ref role="3uigEE" to="e2lb:~IllegalArgumentException" resolve="IllegalArgumentException" />
+                  <node concept="3uibUv" id="1$s6r068VIA" role="1tU5fm">
+                    <ref role="3uigEE" to="e2lb:~RuntimeException" resolve="RuntimeException" />
                   </node>
                 </node>
               </node>

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.generator.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -26,7 +25,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class TemplateArgumentParameterExpression_Constraints extends BaseConstraintsDescriptor {
   public TemplateArgumentParameterExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-5475912601019530992l, -8082971551085732881l), 5005282049925926521l));
+    super(MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x457655815a794e79L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -45,7 +44,7 @@ public class TemplateArgumentParameterExpression_Constraints extends BaseConstra
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-5475912601019530992l, -8082971551085732881l), 5005282049925926521l, 5005282049925926522l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-5475912601019530992l, -8082971551085732881l), 5005282049925926521l, 5005282049925926522l), this) {
+    references.put(MetaIdFactory.refId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x457655815a794e79L, 0x457655815a794e7aL), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x457655815a794e79L, 0x457655815a794e7aL), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -56,8 +55,8 @@ public class TemplateArgumentParameterExpression_Constraints extends BaseConstra
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getInterfaceConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, "jetbrains.mps.lang.generator.structure.IParameterizedTemplate"))) {
-              return SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getInterfaceConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, "jetbrains.mps.lang.generator.structure.IParameterizedTemplate")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"));
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, "jetbrains.mps.lang.generator.structure.IParameterizedTemplate"))) {
+              return SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, "jetbrains.mps.lang.generator.structure.IParameterizedTemplate")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"));
             }
             return new ArrayList<SNode>();
           }
@@ -71,7 +70,7 @@ public class TemplateArgumentParameterExpression_Constraints extends BaseConstra
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, "jetbrains.mps.lang.generator.structure.ITemplateCall"));
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, "jetbrains.mps.lang.generator.structure.ITemplateCall"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "5005282049925943770");
   private static SNodePointer breakingNode_teh60w_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "5005282049925940096");

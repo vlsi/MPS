@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class Common_Component implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -353,7 +352,7 @@ public class Common_Component implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_tf8r10_a5b0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, 1130859485024l, "attractsFocus"), "0", "0"));
+    return !(SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1074c7a5760L, "attractsFocus"), "0", "0"));
   }
   private EditorCell createConstant_tf8r10_a5b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "focus policy condition");

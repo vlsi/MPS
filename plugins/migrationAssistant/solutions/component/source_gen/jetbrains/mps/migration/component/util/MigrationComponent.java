@@ -80,7 +80,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public MigrationDescriptor loadMigrationDescriptor(final Language module) {
-    final ClassLoader loader = module.getClassLoader();
     final Wrappers._T<String> name = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -88,7 +87,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
     });
     try {
-      Class descriptorClass = Class.forName(name.value, true, loader);
+      Class descriptorClass = module.getClass(name.value);
       return (MigrationDescriptor) descriptorClass.newInstance();
     } catch (Throwable e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -129,9 +128,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public boolean isAvailable(final ScriptApplied p) {
-    if (!(p.getScript().isApplicable(p.getModule()))) {
-      return true;
-    }
     Iterable<MigrationScriptReference> requiresData = p.getScript().requiresData();
     boolean dataDeps = Sequence.fromIterable(requiresData).all(new IWhereFilter<MigrationScriptReference>() {
       public boolean accept(MigrationScriptReference it) {
@@ -158,7 +154,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
-        Iterable<? extends SModule> modules = mpsProject.getModules();
+        Iterable<? extends SModule> modules = mpsProject.getModulesWithGenerators();
         Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
           public void visit(AbstractModule it) {
             it.validateLanguageVersions();
@@ -281,7 +277,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        projectModules.value = mpsProject.getModules();
+        projectModules.value = mpsProject.getModulesWithGenerators();
       }
     });
     ModelAccess.instance().runWriteAction(new Runnable() {
@@ -316,7 +312,11 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     }).toListSequence();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        final ScriptApplied nextScript = calculateNextMigration(allStepScripts);
+        final ScriptApplied nextScript = Sequence.fromIterable(allStepScripts).findFirst(new IWhereFilter<ScriptApplied>() {
+          public boolean accept(ScriptApplied it) {
+            return isAvailable(it);
+          }
+        });
         if (nextScript != null) {
           result.value = new MigrationManager.Step() {
             public String getDescription() {
@@ -337,14 +337,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     });
 
     return result.value;
-  }
-  private ScriptApplied calculateNextMigration(final Iterable<ScriptApplied> allStepScripts) {
-    Iterable<ScriptApplied> availableScripts = Sequence.fromIterable(allStepScripts).where(new IWhereFilter<ScriptApplied>() {
-      public boolean accept(ScriptApplied it) {
-        return isAvailable(it);
-      }
-    });
-    return Sequence.fromIterable(availableScripts).first();
   }
 
   public Map<SModule, SNode> collectData(SModule myModule, final MigrationScriptReference scriptReference) {

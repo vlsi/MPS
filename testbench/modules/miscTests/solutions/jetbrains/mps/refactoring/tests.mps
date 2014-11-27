@@ -125,7 +125,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT" />
@@ -2522,7 +2522,7 @@
                     <ref role="3cqZAo" to="u42p:1TclyuNTOmz" resolve="myLog" />
                   </node>
                   <node concept="liA8E" id="7d4V98p4KyJ" role="2OqNvi">
-                    <ref role="37wK5l" to="ajxo:~Category.error(java.lang.Object):void" resolve="error" />
+                    <ref role="37wK5l" to="ajxo:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
                     <node concept="10Nm6u" id="4t57iE9WRoS" role="37wK5m" />
                     <node concept="37vLTw" id="3GM_nagTwAw" role="37wK5m">
                       <ref role="3cqZAo" node="7d4V98p4KyL" resolve="t" />

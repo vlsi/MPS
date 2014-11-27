@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
@@ -82,13 +81,13 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_o92gz8_a1b0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171392633l, 5925077313451868299l, "canRun"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x523a1a6c9706408bL, "canRun"));
   }
   public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b1a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b1a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171392633l, 5925077313451868299l, "canRun"), "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x523a1a6c9706408bL, "canRun"), "" + (false));
     }
     public String getMatchingText() {
       return "can't run";
@@ -105,13 +104,13 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_o92gz8_a2b0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171392633l, 5925077313451868299l, "canRun")));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x523a1a6c9706408bL, "canRun")));
   }
   public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0c1a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0c1a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171392633l, 5925077313451868299l, "canRun"), "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x523a1a6c9706408bL, "canRun"), "" + (true));
     }
     public String getMatchingText() {
       return "run";
@@ -148,13 +147,13 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_o92gz8_a0d0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, 6226796386650281949l, "canDebug"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug"));
   }
   public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0a3a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0a3a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, 6226796386650281949l, "canDebug"), "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug"), "" + (false));
     }
     public String getMatchingText() {
       return "can't debug";
@@ -171,13 +170,13 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_o92gz8_a1d0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, 6226796386650281949l, "canDebug")));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug")));
   }
   public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b3a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b3a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(2515029821120661198l, -8934183642121722347l), 7806358006983614956l, 6226796386650281949l, "canDebug"), "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug"), "" + (true));
     }
     public String getMatchingText() {
       return "debug";

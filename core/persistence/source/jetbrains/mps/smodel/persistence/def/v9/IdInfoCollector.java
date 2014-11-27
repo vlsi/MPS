@@ -496,7 +496,7 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      return ltoi(myConcept.getConceptId());
+      return ltoi(myConcept.getIdValue());
     }
 
     @Override
@@ -522,7 +522,7 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      return ltoi(myProperty.getPropertyId());
+      return ltoi(myProperty.getIdValue());
     }
 
     @Override
@@ -548,7 +548,7 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      return ltoi(myLink.getReferenceLinkId());
+      return ltoi(myLink.getIdValue());
     }
 
     @Override
@@ -585,7 +585,7 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      return ltoi(myLink.getContainmentLinkId());
+      return ltoi(myLink.getIdValue());
     }
 
     @Override

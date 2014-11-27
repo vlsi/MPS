@@ -8,21 +8,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import java.util.List;
-import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
-import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.SModelStereotype;
 
 public class ModelReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -33,7 +18,7 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_i85no5_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_i85no5_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_i85no5_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_i85no5_b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_i85no5_a0(EditorContext editorContext, SNode node) {
@@ -42,45 +27,8 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_i85no5_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("fqName");
-    provider.setNoTargetText("<no fqName>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_fqName");
-    ModelReference_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ModelReference_Editor.ModelReference_generic_cellMenu_i85no5_a0b0()}));
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
+  private EditorCell createComponent_i85no5_b0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ModelReferenceFQName");
     return editorCell;
-  }
-  public static class ModelReference_generic_cellMenu_i85no5_a0b0 extends AbstractCellMenuPart_Generic_Group {
-    public ModelReference_generic_cellMenu_i85no5_a0b0() {
-    }
-    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return SModelRepository.getInstance().getModelDescriptors();
-    }
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SModel) parameterObject, node, model, operationContext, editorContext);
-    }
-    public void handleAction_impl(SModel parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393017702l, "name"), SNodeOperations.getModelLongName(parameterObject));
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 559557797393017698l, 559557797393021807l, "stereotype"), SModelStereotype.getStereotype(parameterObject));
-    }
-    public boolean isReferentPresentation() {
-      return false;
-    }
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((SModel) parameterObject);
-    }
-    public String getMatchingText_internal(SModel parameterObject) {
-      return SNodeOperations.getModelLongName(parameterObject) + "@" + SModelStereotype.getStereotype(parameterObject);
-    }
   }
 }

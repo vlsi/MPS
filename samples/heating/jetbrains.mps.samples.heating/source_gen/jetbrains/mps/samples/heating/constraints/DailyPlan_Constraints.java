@@ -4,7 +4,6 @@ package jetbrains.mps.samples.heating.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -17,12 +16,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DailyPlan_Constraints extends BaseConstraintsDescriptor {
   public DailyPlan_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l));
+    super(MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 2161719505004866676l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 2161719505004866676l), this) {
+    properties.put(MetaIdFactory.propId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x1dfff86fbfd92c74L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x1dfff86fbfd92c74L), this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
@@ -30,7 +29,7 @@ public class DailyPlan_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node) {
         String propertyName = "displayName";
-        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 4664795093170417662l, "applicability")), "virtual_getPresentation_1213877396640", new Object[]{});
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x40bcae6c0e686ffeL, "applicability")), "virtual_getPresentation_1213877396640", new Object[]{});
       }
     });
     return properties;

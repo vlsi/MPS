@@ -163,7 +163,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -318,6 +318,10 @@
         <reference id="1171323947160" name="concept" index="2SmgA8" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -1819,7 +1823,7 @@
       </node>
     </node>
     <node concept="Wx3nA" id="15H8LO1Gu_m" role="jymVt">
-      <property role="TrG5h" value="link_BaseConcept_attrs" />
+      <property role="TrG5h" value="link_BaseConcept_attrs_name" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="15H8LO1Gu_n" role="1B3o_S" />
       <node concept="prKvN" id="15H8LO1Gu_o" role="33vP2m">
@@ -1827,6 +1831,18 @@
         <ref role="prhl4" to="tpck:gw2VY9q" resolve="BaseConcept" />
       </node>
       <node concept="17QB3L" id="15H8LO1Gu_p" role="1tU5fm" />
+    </node>
+    <node concept="Wx3nA" id="4OwOEWIRLjl" role="jymVt">
+      <property role="TrG5h" value="link_BaseConcept_attrs" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="4OwOEWIRLjm" role="1B3o_S" />
+      <node concept="359W_D" id="4OwOEWIRQzw" role="33vP2m">
+        <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <ref role="359W_F" to="tpck:4uZwTti3__2" />
+      </node>
+      <node concept="3uibUv" id="4OwOEWIRVBP" role="1tU5fm">
+        <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
+      </node>
     </node>
     <node concept="Wx3nA" id="4tvuYCuWYmZ" role="jymVt">
       <property role="TrG5h" value="concept_ExportMacro" />

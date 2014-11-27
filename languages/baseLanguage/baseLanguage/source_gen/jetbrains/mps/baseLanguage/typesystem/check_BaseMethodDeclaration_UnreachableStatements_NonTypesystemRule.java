@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -23,27 +22,27 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isDataFlowChecked_1227714048980", new Object[]{}))) {
       return;
     }
-    if ((SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")) == null)) {
+    if ((SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")) == null)) {
       return;
     }
 
-    SNode parent = SNodeOperations.getNodeAncestor(nodeToCheck, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+    SNode parent = SNodeOperations.getNodeAncestor(nodeToCheck, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     boolean checkReturns = true;
-    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
       checkReturns = false;
     } else if (BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isAbstract_1232982539764", new Object[]{})) {
       checkReturns = false;
     } else if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getExpectedRetType_1239354342632", new Object[]{}) == null)) {
       checkReturns = false;
-    } else if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getExpectedRetType_1239354342632", new Object[]{}), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068581517677l, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+    } else if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getExpectedRetType_1239354342632", new Object[]{}), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       checkReturns = false;
     } else if (BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isReturnsVoid_1234359555698", new Object[]{})) {
       checkReturns = false;
-    } else if (ListSequence.fromList(SNodeOperations.getNodeDescendants(nodeToCheck, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 8412076637103718467l, "jetbrains.mps.baseLanguage.structure.ISkipsReturn"), false, new SAbstractConcept[]{})).isNotEmpty()) {
+    } else if (ListSequence.fromList(SNodeOperations.getNodeDescendants(nodeToCheck, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x74bdb321e1ee0043L, "jetbrains.mps.baseLanguage.structure.ISkipsReturn"), false, new SAbstractConcept[]{})).isNotEmpty()) {
       checkReturns = false;
     }
 
-    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), checkReturns);
+    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), checkReturns);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";

@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.adapter.structure.property;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
@@ -69,6 +68,6 @@ public class SPropertyAdapterById extends SPropertyAdapter {
   @Override
   protected SNode findInConcept(SNode cnode) {
     SModel model = cnode.getModel();
-    return model.getNode(new SNodeId.Regular(myPropertyId.getPropertyId()));
+    return model.getNode(new SNodeId.Regular(myPropertyId.getIdValue()));
   }
 }

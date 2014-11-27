@@ -4,7 +4,6 @@ package jetbrains.mps.samples.Shapes.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -16,12 +15,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class Circle_Constraints extends BaseConstraintsDescriptor {
   public Circle_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l));
+    super(MetaIdFactory.conceptId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l), this) {
+    properties.put(MetaIdFactory.propId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL), this) {
       @Override
       public boolean hasOwnSetter() {
         return true;
@@ -29,8 +28,8 @@ public class Circle_Constraints extends BaseConstraintsDescriptor {
       @Override
       public void setValue(SNode node, String propertyValue) {
         String propertyName = "radius";
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l, "radius"), "" + (11110));
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l, "radius"), "" + ((SPropertyOperations.getInteger(propertyValue))));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius"), "" + (11110));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius"), "" + ((SPropertyOperations.getInteger(propertyValue))));
       }
     });
     return properties;

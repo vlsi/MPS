@@ -4,7 +4,6 @@ package jetbrains.mps.lang.core.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -20,12 +19,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class PropertyAttribute_Constraints extends BaseConstraintsDescriptor {
   public PropertyAttribute_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049750l));
+    super(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049750l, 1757699476691236117l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049750l, 1757699476691236117l), this) {
+    properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L), this) {
       @Override
       public boolean hasOwnValidator() {
         return true;
@@ -35,7 +34,7 @@ public class PropertyAttribute_Constraints extends BaseConstraintsDescriptor {
         String propertyName = "propertyName";
         return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node))))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_34vegv_a0a0a0a0a0a0b0b0a1a0b0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), (SPropertyOperations.getString(propertyValue)));
+            return eq_34vegv_a0a0a0a0a0a0b0b0a1a0b0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), (SPropertyOperations.getString(propertyValue)));
           }
         });
       }

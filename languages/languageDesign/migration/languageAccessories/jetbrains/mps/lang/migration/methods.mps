@@ -50,7 +50,6 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
-      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -75,7 +74,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -230,19 +229,6 @@
       <ref role="2NexVz" to="tpck:fKAOsGN" resolve="string" />
       <node concept="QcxE9" id="2Dhc50dt14h" role="2IRzpu">
         <property role="QcwnP" value="&lt;description&gt;" />
-      </node>
-    </node>
-    <node concept="q3mfq" id="4ubqdNOF9cI" role="QNr5C">
-      <property role="TrG5h" value="isApplicable" />
-      <node concept="10P_77" id="4ubqdNOF9uv" role="q3mfk" />
-      <node concept="q3mfp" id="7fCCGqboj76" role="q3mfl">
-        <property role="TrG5h" value="m" />
-        <node concept="3uibUv" id="7fCCGqboj78" role="q3mfr">
-          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-        </node>
-      </node>
-      <node concept="QcxE9" id="4ubqdNOF9ux" role="2IRzpu">
-        <property role="QcwnP" value="&lt;isApplicable=true&gt;" />
       </node>
     </node>
     <node concept="q3mfq" id="4ubqdNOF9cA" role="QNr5C">

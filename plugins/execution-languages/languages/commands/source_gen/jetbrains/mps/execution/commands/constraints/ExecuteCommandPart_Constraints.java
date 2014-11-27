@@ -4,7 +4,6 @@ package jetbrains.mps.execution.commands.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -30,7 +29,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
   public ExecuteCommandPart_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-921973991802319051l, -8446196034130110353l), 6129022259108579244l));
+    super(MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL));
   }
   @Override
   public boolean hasOwnDefaultScopeProvider() {
@@ -41,7 +40,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
     return new BaseReferenceScopeProvider() {
       @Override
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(new UUID(-921973991802319051l, -8446196034130110353l), 6129022259108579244l, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"))).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SModelOperations.nodesIncludingImported(_context.getModel(), MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isDeprecated_1224609060727", new Object[]{}));
           }
@@ -56,7 +55,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l), this) {
+    properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L), this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
@@ -67,7 +66,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
         return check_kwfdao_a0a0a(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(node));
       }
     });
-    properties.put(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l), this) {
+    properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L), this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
@@ -82,7 +81,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
           }
           String joined = IterableUtils.join(ListSequence.fromList(requiredParameters).select(new ISelector<SNode, String>() {
             public String select(SNode it) {
-              return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ", ";
+              return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ", ";
             }
           }), " ");
           return "(" + joined.substring(0, joined.length() - 2) + ")";
@@ -93,7 +92,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
   }
   private static String check_kwfdao_a0a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return SPropertyOperations.getString(checkedDotOperand, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+      return SPropertyOperations.getString(checkedDotOperand, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
     return null;
   }

@@ -4,7 +4,6 @@ package jetbrains.mps.core.xml.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -15,12 +14,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class XmlCDATA_Constraints extends BaseConstraintsDescriptor {
   public XmlCDATA_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299066l));
+    super(MetaIdFactory.conceptId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549487aL));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299066l, 1622293396948985395l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299066l, 1622293396948985395l), this) {
+    properties.put(MetaIdFactory.propId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549487aL, 0x16838b3fce9b2633L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549487aL, 0x16838b3fce9b2633L), this) {
       @Override
       public boolean hasOwnValidator() {
         return true;

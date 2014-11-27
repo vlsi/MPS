@@ -25,23 +25,48 @@ public abstract class MetaIdFactory {
   public static final SContainmentLinkId INVALID_LINK_ID = new SContainmentLinkId(INVALID_CONCEPT_ID, 0);
   public static final String INVALID_CONCEPT_NAME = "$UnknownConceptName$";
 
+  @Deprecated
   public static SLanguageId langId(UUID lang) {
     return new SLanguageId(lang);
   }
 
+  public static SLanguageId langId(long uuidHigh, long uuidLow) {
+    return new SLanguageId(new UUID(uuidHigh, uuidLow));
+  }
+
+  @Deprecated
   public static SConceptId conceptId(UUID lang, long concept) {
     return new SConceptId(langId(lang), concept);
   }
 
+  public static SConceptId conceptId(long uuidHigh, long uuidLow, long concept) {
+    return new SConceptId(langId(new UUID(uuidHigh, uuidLow)), concept);
+  }
+
+  @Deprecated
   public static SPropertyId propId(UUID lang, long concept, long prop) {
     return new SPropertyId(conceptId(lang, concept), prop);
   }
 
+  public static SPropertyId propId(long uuidHigh, long uuidLow, long concept, long prop) {
+    return new SPropertyId(conceptId(new UUID(uuidHigh, uuidLow), concept), prop);
+  }
+
+  @Deprecated
   public static SReferenceLinkId refId(UUID lang, long concept, long ref) {
     return new SReferenceLinkId(conceptId(lang, concept), ref);
   }
 
+  public static SReferenceLinkId refId(long uuidHigh, long uuidLow, long concept, long ref) {
+    return new SReferenceLinkId(conceptId(new UUID(uuidHigh, uuidLow), concept), ref);
+  }
+
+  @Deprecated
   public static SContainmentLinkId linkId(UUID lang, long concept, long link) {
     return new SContainmentLinkId(conceptId(lang, concept), link);
+  }
+
+  public static SContainmentLinkId linkId(long uuidHigh, long uuidLow, long concept, long link) {
+    return new SContainmentLinkId(conceptId(new UUID(uuidHigh, uuidLow), concept), link);
   }
 }

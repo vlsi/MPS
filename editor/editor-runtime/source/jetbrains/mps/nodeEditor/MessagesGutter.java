@@ -15,21 +15,20 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.util.Disposer;
+import com.intellij.ide.ui.UISettings;
 import com.intellij.ui.ColorUtil;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.icons.Icons;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
-import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 
 import javax.swing.Icon;
 import javax.swing.JButton;
@@ -44,6 +43,7 @@ import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -69,7 +69,6 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     myEditorComponent = editorComponent;
     myRightToLeft = rightToLeft;
 
-    myEditorComponent.getVerticalScrollBar().setPersistentUI(this);
     myUpdateQueue = new MergingUpdateQueue("MessagesGutter", 500, true, editorComponent, null, null, true);
     myUpdateQueue.setRestartTimerOnAdd(true);
     // TODO add update queue to the disposables tree
@@ -100,14 +99,44 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     super.uninstallListeners();
   }
 
+  //copied from com.intellij.openapi.editor.impl.EditorMarkupModelImpl
   @Override
-  protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
-    int shift = myRightToLeft ? -9 : 9;
-    g.translate(shift, 0);
-    super.paintThumb(g, c, thumbBounds);
-    g.translate(-shift, 0);
+  protected Color adjustColor(Color c) {
+    if (isMacOverlayScrollbar()) return super.adjustColor(c);
+
+    if (UIUtil.isUnderDarcula()) {
+      return c;
+    }
+    return ColorUtil.withAlpha(ColorUtil.shift(super.adjustColor(c), 0.9), 0.85);
   }
 
+    //copied from com.intellij.openapi.editor.impl.EditorMarkupModelImpl
+  @Override
+  protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
+
+    if (isMacOverlayScrollbar()) {
+      if (!myRightToLeft) {
+        super.paintThumb(g, c, thumbBounds);
+      }
+      else {
+        Graphics2D g2d = (Graphics2D)g;
+        AffineTransform old = g2d.getTransform();
+
+        AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
+        tx.translate(-c.getWidth(), 0);
+        g2d.transform(tx);
+        g.translate(1, 0);
+        super.paintThumb(g, c, thumbBounds);
+        g2d.setTransform(old);
+      }
+    }
+    else {
+      int shift = myRightToLeft ? -9 : 9;
+      g.translate(shift, 0);
+      super.paintThumb(g, c, thumbBounds);
+      g.translate(-shift, 0);
+    }
+  }
   @Override
   protected void doPaintTrack(Graphics g, JComponent c, Rectangle bounds) {
     g.setColor(ButtonlessScrollBarUI.getTrackBackground());

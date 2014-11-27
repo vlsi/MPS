@@ -6,12 +6,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class TemplateArgumentPropertyPatternRefExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getVariableName_2902001550281937661(SNode thisNode) {
-    return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 4816349095291149799l, 4816349095291149801l, "propertyPattern")));
+    return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a5de7L, 0x42d71bfbeb1a5de9L, "propertyPattern")));
   }
 }

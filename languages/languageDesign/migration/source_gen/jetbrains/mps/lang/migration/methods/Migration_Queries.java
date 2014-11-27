@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.SModelInternal;
@@ -26,7 +25,7 @@ public class Migration_Queries {
     SModule module = SNodeOperations.getModel(c).getModule();
     if (module instanceof Language) {
       int currentVersion = ((Language) module).getLanguageVersion();
-      SPropertyOperations.set(c, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"), "" + (currentVersion));
+      SPropertyOperations.set(c, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"), "" + (currentVersion));
       ((Language) module).getModuleDescriptor().setVersion(currentVersion + 1);
       SLanguage slang = MetaIdByDeclaration.ref2Id(module.getModuleReference());
       if (((Language) module).getModuleDescriptor().getLanguageVersions().containsKey(slang)) {
@@ -51,20 +50,20 @@ public class Migration_Queries {
     mod.addDependency(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)")).getModuleReference(), false);
   }
   public static SNode execute_ret(SNode point) {
-    SNode typeNode = MigrationScript_Behavior.call_getProducedData_8585153554445933384(SNodeOperations.getNodeAncestor(point, MetaAdapterFactory.getConcept(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, "jetbrains.mps.lang.migration.structure.MigrationScript"), false, false));
-    return (typeNode == null ? _quotation_createNode_9iwezb_a0b0a0g() : _quotation_createNode_9iwezb_a0b0a0g_0(typeNode));
+    SNode typeNode = MigrationScript_Behavior.call_getProducedData_8585153554445933384(SNodeOperations.getNodeAncestor(point, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"), false, false));
+    return (typeNode == null ? _quotation_createNode_9iwezb_a0b0a0f() : _quotation_createNode_9iwezb_a0b0a0f_0(typeNode));
   }
-  private static SNode _quotation_createNode_9iwezb_a0b0a0g() {
+  private static SNode _quotation_createNode_9iwezb_a0b0a0f() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_9iwezb_a0b0a0g_0(Object parameter_1) {
+  private static SNode _quotation_createNode_9iwezb_a0b0a0f_0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

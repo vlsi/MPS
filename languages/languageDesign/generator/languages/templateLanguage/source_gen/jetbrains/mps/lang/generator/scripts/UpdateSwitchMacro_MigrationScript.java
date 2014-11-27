@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class UpdateSwitchMacro_MigrationScript extends BaseMigrationScript {
@@ -30,10 +29,10 @@ public class UpdateSwitchMacro_MigrationScript extends BaseMigrationScript {
       }
       public void doUpdateInstanceNode(SNode node) {
         SNode n = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro");
-        SLinkOperations.setTarget(n, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112731569622l, 1112731629154l, "templateSwitch")));
-        SPropertyOperations.set(n, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1227303129915l, 3265704088513289864l, "comment"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1227303129915l, 3265704088513289864l, "comment")));
-        SLinkOperations.setTarget(n, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510068000147l, 982871510068000158l, "sourceNodeQuery"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112731569622l, 1168380395224l, "sourceNodeQuery")));
-        SLinkOperations.setTarget(n, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, 1200912223215l, "mappingLabel"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, 1200912223215l, "mappingLabel")));
+        SLinkOperations.setTarget(n, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, 0x10313f93662L, "templateSwitch")));
+        SPropertyOperations.set(n, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, 0x2d521c90e9601e88L, "comment"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, 0x2d521c90e9601e88L, "comment")));
+        SLinkOperations.setTarget(n, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, 0xda3dc6e5174759eL, "sourceNodeQuery"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, 0x11008e5fed8L, "sourceNodeQuery")));
+        SLinkOperations.setTarget(n, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")));
       }
       public boolean isShowAsIntention() {
         return false;

@@ -6,14 +6,13 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptDispatchModifier = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier", MetaIdFactory.conceptId(new UUID(9057940065237224321L, -4794704520121574714L), 2403002034744698617L)).super_("jetbrains.mps.baseLanguage.structure.Modifier").super_(MetaIdFactory.conceptId(new UUID(-935030926396207931L, -6610165693999523818L), 2403002034744051110L)).parents("jetbrains.mps.baseLanguage.structure.Modifier").parentIds(MetaIdFactory.conceptId(new UUID(-935030926396207931L, -6610165693999523818L), 2403002034744051110L)).alias("dispatch", "").create();
+  /*package*/ final ConceptDescriptor myConceptDispatchModifier = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier", MetaIdFactory.conceptId(0x7db4447f913e4b81L, 0xbd75c9a473319ac6L, 0x21592d9e737fa6f9L)).super_("jetbrains.mps.baseLanguage.structure.Modifier").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x21592d9e7375c5a6L)).parents("jetbrains.mps.baseLanguage.structure.Modifier").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x21592d9e7375c5a6L)).alias("dispatch", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

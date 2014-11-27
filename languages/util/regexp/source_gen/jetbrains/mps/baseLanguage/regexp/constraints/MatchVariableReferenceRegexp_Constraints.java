@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.regexp.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -29,12 +28,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDescriptor {
   public MatchVariableReferenceRegexp_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2688747624584492277l, -5722269945249396544l), 1174909099093l));
+    super(MetaIdFactory.conceptId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-2688747624584492277l, -5722269945249396544l), 1174909099093l, 1174909113141l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-2688747624584492277l, -5722269945249396544l), 1174909099093l, 1174909113141l), this) {
+    references.put(MetaIdFactory.refId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, 0x1118e0a5335L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, 0x1118e0a5335L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -49,18 +48,18 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return (_context.getSmartReference() ? "\\" + SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+            return (_context.getSmartReference() ? "\\" + SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
           }
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> matches = new ArrayList<SNode>();
             SNode top = _context.getEnclosingNode();
-            while (SNodeOperations.getParent(top) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top), MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174482743037l, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))) {
+            while (SNodeOperations.getParent(top) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"))) {
               top = SNodeOperations.getParent(top);
             }
-            ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(top, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), true, new SAbstractConcept[]{})));
-            if (SNodeOperations.isInstanceOf(top, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"))) {
-              ListSequence.fromList(matches).addElement(SNodeOperations.cast(top, MetaAdapterFactory.getConcept(new UUID(-2688747624584492277l, -5722269945249396544l), 1174564062919l, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")));
+            ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(top, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), true, new SAbstractConcept[]{})));
+            if (SNodeOperations.isInstanceOf(top, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"))) {
+              ListSequence.fromList(matches).addElement(SNodeOperations.cast(top, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")));
             }
             return matches;
           }

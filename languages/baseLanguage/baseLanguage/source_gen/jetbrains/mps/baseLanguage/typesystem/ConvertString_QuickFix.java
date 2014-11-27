@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class ConvertString_QuickFix extends QuickFix_Runtime {
   public ConvertString_QuickFix() {
@@ -16,6 +15,6 @@ public class ConvertString_QuickFix extends QuickFix_Runtime {
     return "Convert java.lang.String to string type";
   }
   public void execute(SNode node) {
-    SNodeOperations.replaceWithAnother(((SNode) ConvertString_QuickFix.this.getField("stringToConvert")[0]), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1225271177708l, "jetbrains.mps.baseLanguage.structure.StringType"))));
+    SNodeOperations.replaceWithAnother(((SNode) ConvertString_QuickFix.this.getField("stringToConvert")[0]), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47da71ecL, "jetbrains.mps.baseLanguage.structure.StringType"))));
   }
 }

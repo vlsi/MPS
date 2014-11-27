@@ -117,7 +117,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -303,34 +303,6 @@
                     </node>
                     <node concept="3TrEf2" id="v9c3szSLCh" role="2OqNvi">
                       <ref role="3Tt5mk" to="caxt:67MRmR$vSpU" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="v9c3szVbC$" role="3cqZAp">
-                <node concept="37vLTI" id="v9c3szV$dJ" role="3clFbG">
-                  <node concept="2OqwBi" id="v9c3szVi4C" role="37vLTJ">
-                    <node concept="2OqwBi" id="v9c3szVbU6" role="2Oq$k0">
-                      <node concept="37vLTw" id="v9c3szVbCz" role="2Oq$k0">
-                        <ref role="3cqZAo" node="v9c3szSIhR" resolve="command" />
-                      </node>
-                      <node concept="3TrEf2" id="v9c3szVd5O" role="2OqNvi">
-                        <ref role="3Tt5mk" to="caxt:67MRmR$vSpU" />
-                      </node>
-                    </node>
-                    <node concept="3TrcHB" id="v9c3szVyzV" role="2OqNvi">
-                      <ref role="3TsBF5" to="tp25:v3WHCwUoyi" resolve="fqName" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="v9c3szW9id" role="37vLTx">
-                    <node concept="2OqwBi" id="v9c3szW78K" role="2Oq$k0">
-                      <node concept="2WthIp" id="v9c3szW78N" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="v9c3szW78P" role="2OqNvi">
-                        <ref role="2WH_rO" node="v9c3szVGRY" resolve="model" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="v9c3szWaeM" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SModel.getModelName():java.lang.String" resolve="getModelName" />
                     </node>
                   </node>
                 </node>

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.smodel.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -16,12 +15,12 @@ import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_Behavior;
 
 public class ModuleReferenceExpression_Constraints extends BaseConstraintsDescriptor {
   public ModuleReferenceExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969021681l));
+    super(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969021681l, 4040588429969021682l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(8675788371017092295l, -9098312342032910879l), 4040588429969021681l, 4040588429969021682l), this) {
+    properties.put(MetaIdFactory.propId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af2L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af2L), this) {
       @Override
       public boolean hasOwnGetter() {
         return true;

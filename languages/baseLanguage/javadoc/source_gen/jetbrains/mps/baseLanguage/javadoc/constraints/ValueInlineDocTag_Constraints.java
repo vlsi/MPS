@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.javadoc.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
@@ -13,7 +12,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ValueInlineDocTag_Constraints extends BaseConstraintsDescriptor {
   public ValueInlineDocTag_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-972752984950357426l, -4964296947050367098l), 6962838954693748795l));
+    super(MetaIdFactory.conceptId(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x60a0f9237ac5e83bL));
   }
   @Override
   public boolean hasOwnCanBeParentMethod() {

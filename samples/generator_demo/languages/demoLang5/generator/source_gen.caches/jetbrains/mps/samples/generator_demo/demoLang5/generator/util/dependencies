@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.samples.generator_demo.demoLang5.generator.util.TextUtil" file="TextUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />

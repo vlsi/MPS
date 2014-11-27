@@ -7,17 +7,16 @@ import java.awt.Graphics;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class Circle_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_drawShape_1082824515535573731(SNode thisNode, Graphics graphics) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.samples.Shapes.structure.Shape", "virtual_drawShape_1082824515535573731", new Object[]{graphics});
-    graphics.drawOval(SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474713l, "x")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474715l, "y")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l, "radius")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l, "radius")));
+    graphics.drawOval(SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc199L, "x")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19bL, "y")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")));
   }
   public static void virtual_drawShapeAt_4001135958238383544(SNode thisNode, Graphics graphics, int x, int y) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.samples.Shapes.structure.Shape", "virtual_drawShapeAt_4001135958238383544", new Object[]{graphics, x, y});
-    graphics.drawOval(x, y, SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l, "radius")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474712l, 5898776707557474718l, "radius")));
+    graphics.drawOval(x, y, SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius")));
   }
 }

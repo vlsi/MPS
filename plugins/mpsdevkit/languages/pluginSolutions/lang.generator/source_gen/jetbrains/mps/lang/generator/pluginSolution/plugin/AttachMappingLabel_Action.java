@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -59,7 +58,7 @@ public class AttachMappingLabel_Action extends BaseAction {
       return false;
     }
     //  not inside macro 
-    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1227303129915l, "jetbrains.mps.lang.generator.structure.AbstractMacro"), false, false) != null) {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, "jetbrains.mps.lang.generator.structure.AbstractMacro"), false, false) != null) {
       return false;
     }
     //  in root template - ok 
@@ -67,11 +66,11 @@ public class AttachMappingLabel_Action extends BaseAction {
       return true;
     }
     //  in in-line template - ok 
-    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), false, false) != null) {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), false, false) != null) {
       return true;
     }
     //  in in-line template with context 
-    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"), false, false) != null) {
+    if (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"), false, false) != null) {
       return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
@@ -79,7 +78,7 @@ public class AttachMappingLabel_Action extends BaseAction {
       }) != null;
     }
     //  in template fragment - ok 
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"))) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"))) {
       return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
@@ -124,11 +123,11 @@ public class AttachMappingLabel_Action extends BaseAction {
         Iterable<SModel> ownTemplateModels = ((Generator) module).getOwnTemplateModels();
         mappings = Sequence.fromIterable(ownTemplateModels).translate(new ITranslator2<SModel, SNode>() {
           public Iterable<SNode> translate(SModel it) {
-            return SModelOperations.roots(it, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
+            return SModelOperations.roots(it, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
           }
         });
       } else {
-        mappings = SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
+        mappings = SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
       }
       final List<String> existingLabels = Sequence.fromIterable(mappings).translate(new ITranslator2<SNode, String>() {
         public Iterable<String> translate(final SNode it) {
@@ -145,7 +144,7 @@ __switch__:
                         assert false : "Internal error";
                         return false;
                       case 2:
-                        this._2_label_it = ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1200911492601l, "mappingLabel"))).iterator();
+                        this._2_label_it = ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x1179be725f9L, "mappingLabel"))).iterator();
                       case 3:
                         if (!(this._2_label_it.hasNext())) {
                           this.__CP__ = 1;
@@ -155,7 +154,7 @@ __switch__:
                         this.__CP__ = 4;
                         break;
                       case 5:
-                        if (isNotEmptyString(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
+                        if (isNotEmptyString(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
                           this.__CP__ = 6;
                           break;
                         }
@@ -163,7 +162,7 @@ __switch__:
                         break;
                       case 7:
                         this.__CP__ = 3;
-                        this.yield(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+                        this.yield(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
                         return true;
                       case 0:
                         this.__CP__ = 2;

@@ -10,7 +10,6 @@ import java.util.HashSet;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -27,7 +26,7 @@ public class IStyleContainer_Behavior {
     return result;
   }
   public static void call_fillClassItems_2551781846503685010(SNode thisNode, List<SNode> classItems, SNode itemConcept, Set<SNode> visitedContainers) {
-    for (SNode item : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1219418625346l, 1219418656006l, "styleItem"))) {
+    for (SNode item : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"))) {
       if (SNodeOperations.isInstanceOf(item, SNodeOperations.asSConcept(itemConcept))) {
         ListSequence.fromList(classItems).addElement(item);
       }

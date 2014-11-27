@@ -29,7 +29,6 @@ import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -164,17 +163,17 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     if (unitType == null) {
       return null;
     }
-    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(9053457975011001859l, -9123640110572141707l), 4336756357323803637l, "jetbrains.mps.debugger.java.evaluation.structure.UnitNode")));
+    SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L, "jetbrains.mps.debugger.java.evaluation.structure.UnitNode")));
     SNode lowLevelType = createClassifierType.invoke(unitType);
     SNode highLevelNode = getStaticContextNode();
-    if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 4336756357323803637l, 4544608336420717468l, "debuggedType"), VariableDescription.createDebuggedType(lowLevelType, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(highLevelNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), "virtual_getThisType_3305065273710880775", new Object[]{})));
-    } else if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))) {
-      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 4336756357323803637l, 4544608336420717468l, "debuggedType"), VariableDescription.createDebuggedType(lowLevelType, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(highLevelNode, MetaAdapterFactory.getInterfaceConcept(new UUID(4917733117167750838l, -7710007501170303426l), 1205751982837l, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), "virtual_createType_1213877527970", new Object[]{})));
+    if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L, 0x3f11b1341fa2c39cL, "debuggedType"), VariableDescription.createDebuggedType(lowLevelType, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(highLevelNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), "virtual_getThisType_3305065273710880775", new Object[]{})));
+    } else if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))) {
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L, 0x3f11b1341fa2c39cL, "debuggedType"), VariableDescription.createDebuggedType(lowLevelType, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(highLevelNode, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), "virtual_createType_1213877527970", new Object[]{})));
     } else {
-      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 4336756357323803637l, 4544608336420717468l, "debuggedType"), VariableDescription.createDebuggedType(lowLevelType, null));
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L, 0x3f11b1341fa2c39cL, "debuggedType"), VariableDescription.createDebuggedType(lowLevelType, null));
     }
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(9053457975011001859l, -9123640110572141707l), 4336756357323803637l, 4336756357323803640l, "highLevelNodeId"), check_4zsmpx_a0a6a6(check_4zsmpx_a0a0g0g(highLevelNode)));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L, 0x3c2f40ee0bb3cbf8L, "highLevelNodeId"), check_4zsmpx_a0a6a6(check_4zsmpx_a0a0g0g(highLevelNode)));
     return result;
   }
   private String getStaticContextTypeName() {
@@ -274,14 +273,14 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
   @Override
   public boolean isStaticContextTypeValid(SNode staticContextType) {
-    if (!(SNodeOperations.isInstanceOf(staticContextType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")))) {
+    if (!(SNodeOperations.isInstanceOf(staticContextType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")))) {
       return false;
     }
     String staticContextTypeName = getStaticContextTypeName();
     if ((staticContextTypeName == null || staticContextTypeName.length() == 0)) {
       return false;
     }
-    return staticContextTypeName.equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "virtual_getFqName_1213877404258", new Object[]{}));
+    return staticContextTypeName.equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), "virtual_getFqName_1213877404258", new Object[]{}));
   }
   protected static Logger LOG = LogManager.getLogger(StackFrameContext.class);
   private static String check_4zsmpx_a0a6a6(SNodeId checkedDotOperand) {
@@ -351,7 +350,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
-      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType"), HUtil.copyIfNecessary(quotedNode_3));
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, 0xf940d819f8L, "componentType"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
   }

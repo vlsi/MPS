@@ -6,14 +6,13 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptXMLDocument = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang7.structure.XMLDocument", MetaIdFactory.conceptId(new UUID(-5634908014903737647L, -5919558758737258910L), 3618324829955890003L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1133920641626L)).childDescriptors(new ConceptDescriptorBuilder.Link(3618324829955893152L, "element", MetaIdFactory.conceptId(new UUID(8588203744004229367L, -8746957436642952050L), 1225239603385L), true, true, false)).children(new String[]{"element"}, new boolean[]{true}).create();
+  /*package*/ final ConceptDescriptor myConceptXMLDocument = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang7.structure.XMLDocument", MetaIdFactory.conceptId(0xb1ccc903f5a942d1L, 0xadd980ac0e69d662L, 0x3236df431b7f1b53L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(3618324829955893152L, "element", MetaIdFactory.conceptId(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8b9L), true, true, false)).children(new String[]{"element"}, new boolean[]{true}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

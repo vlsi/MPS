@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.findUsages;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -29,9 +30,29 @@ import java.util.Set;
 public abstract class SearchType<T, R> {
   //--------const---------
 
+  /**
+   * @deprecated Clients using {@link org.jetbrains.mps.openapi.module.FindUsagesFacade} don't need these fields
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static final SearchType<SReference, SNode> USAGES = new UsagesSearchType();
+  /**
+   * @deprecated Clients using {@link org.jetbrains.mps.openapi.module.FindUsagesFacade} don't need these fields
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static final SearchType<SNode, SAbstractConcept> INSTANCES = new InstancesSearchType(false);
+  /**
+   * @deprecated Clients using {@link org.jetbrains.mps.openapi.module.FindUsagesFacade} don't need these fields
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static final SearchType<SNode, SAbstractConcept> EXACT_INSTANCES = new InstancesSearchType(true);
+  /**
+   * @deprecated Clients using {@link org.jetbrains.mps.openapi.module.FindUsagesFacade} don't need these fields
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static final SearchType<SModel, SModelReference> MODEL_USAGES = new ModelUsagesSearchType();
 
 

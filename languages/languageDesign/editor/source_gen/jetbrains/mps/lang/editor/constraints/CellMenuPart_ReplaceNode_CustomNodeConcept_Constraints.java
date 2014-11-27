@@ -4,10 +4,9 @@ package jetbrains.mps.lang.editor.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 
 public class CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints extends BaseConstraintsDescriptor {
   public CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(1782411230332735017l, -6324602048325217350l), 1164914519156l));
+    super(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3a50ec74L));
   }
 }

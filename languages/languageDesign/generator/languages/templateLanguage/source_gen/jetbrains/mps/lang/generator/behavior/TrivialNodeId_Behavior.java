@@ -8,19 +8,18 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class TrivialNodeId_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_instantiate_9032177546941558391(SNode thisNode, SModel model) {
-    SNodeId identity = PersistenceFacade.getInstance().createNodeId(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941580387l, 9032177546941580392l, "nodeId")));
+    SNodeId identity = PersistenceFacade.getInstance().createNodeId(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, 0x7d58bd9fd9b64468L, "nodeId")));
     // could use SModelOperations.createNewNode (which does Behavior.init() in addition to instantiation) 
     // want to be minimalistic, yet not adding new API (#createNode(SConcept) is way too tempting) 
-    return SModelUtil_new.instantiateConceptDeclaration(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941580387l, 9032177546941580390l, "conceptId")), model, identity, false);
+    return SModelUtil_new.instantiateConceptDeclaration(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, 0x7d58bd9fd9b64466L, "conceptId")), model, identity, false);
   }
   public static boolean virtual_match_1662555581307437492(SNode thisNode, SNode n) {
-    return n.getConcept().getQualifiedName().equals(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941580387l, 9032177546941580390l, "conceptId"))) && n.getNodeId().toString().equals(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941580387l, 9032177546941580392l, "nodeId")));
+    return n.getConcept().getQualifiedName().equals(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, 0x7d58bd9fd9b64466L, "conceptId"))) && n.getNodeId().toString().equals(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, 0x7d58bd9fd9b64468L, "nodeId")));
   }
 }

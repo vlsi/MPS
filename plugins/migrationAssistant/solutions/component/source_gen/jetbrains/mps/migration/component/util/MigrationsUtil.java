@@ -15,8 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.Language;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SDependency;
 import java.util.HashSet;
@@ -37,29 +35,22 @@ public class MigrationsUtil {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Module " + module + " depends on version " + languageVersions.getFromVersion() + " of module " + languageVersions.getLanguage() + " which is higher than available version (" + currentVersion + ")");
       }
-    } else if (languageVersions.getFromVersion() < currentVersion) {
-      return true;
+      return false;
     }
-    return false;
+    return languageVersions.getFromVersion() < currentVersion;
   }
   public static Iterable<MigrationScriptReference> getLanguageVersions(SModule module) {
     List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());
-    for (SLanguage lang : SetSequence.fromSet(module.getUsedLanguages())) {
-      Integer ver = ((AbstractModule) module).getModuleDescriptor().getLanguageVersions().get(lang);
-      if (ver == null) {
-        if (LOG.isEnabledFor(Level.WARN)) {
-          LOG.warn("no version for language " + lang.getQualifiedName() + " in " + module.getModuleName());
-        }
-      } else {
-        if (ver != lang.getLanguageVersion()) {
-          ListSequence.fromList(result).addElement(new MigrationScriptReference(lang, ver));
-        }
+    for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
+      int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
+      if (ver != lang.getLanguageVersion()) {
+        ListSequence.fromList(result).addElement(new MigrationScriptReference(lang, ver));
       }
     }
     return result;
   }
   public static boolean isApplied(MigrationScriptReference script, SModule module) {
-    return script.getFromVersion() < module.getUsedLanguageVersion(MetaAdapterByDeclaration.getLanguage((Language) script.getLanguage()));
+    return !(((AbstractModule) module).getAllUsedLanguages().contains(script.getLanguage())) || script.getFromVersion() < module.getUsedLanguageVersion(script.getLanguage());
   }
   public static Set<SModule> getModuleDependencies(final SModule module) {
     Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();

@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -16,7 +15,7 @@ public class MeetType_Behavior {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder("meet(");
-    List<SNode> nodes = SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"));
+    List<SNode> nodes = SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, 0x114b68b040bL, "argument"));
     for (SNode arg : nodes) {
       sb.append(BehaviorReflection.invokeVirtual(String.class, arg, "virtual_getPresentation_1213877396640", new Object[]{}));
       if (SNodeOperations.getIndexInParent(arg) < ListSequence.fromList(nodes).count() - 1) {
@@ -28,9 +27,9 @@ public class MeetType_Behavior {
   }
   public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
     SNode copy = SNodeOperations.copyNode(thisNode);
-    for (SNode arg : ListSequence.fromList(SLinkOperations.getChildren(copy, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))).toListSequence()) {
-      if (SNodeOperations.isInstanceOf(arg, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
-        SNodeOperations.replaceWithAnother(arg, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(arg, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 4107091686347010317l, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_eraseGenerics_5089784887112634594", new Object[]{}));
+    for (SNode arg : ListSequence.fromList(SLinkOperations.getChildren(copy, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, 0x114b68b040bL, "argument"))).toListSequence()) {
+      if (SNodeOperations.isInstanceOf(arg, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType"))) {
+        SNodeOperations.replaceWithAnother(arg, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(arg, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x38ff5220e0ac710dL, "jetbrains.mps.baseLanguage.structure.IGenericType")), "virtual_eraseGenerics_5089784887112634594", new Object[]{}));
       }
     }
     return copy;

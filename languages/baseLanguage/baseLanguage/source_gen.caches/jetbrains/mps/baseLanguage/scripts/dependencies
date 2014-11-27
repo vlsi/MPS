@@ -4,7 +4,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -23,7 +22,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scripts.AddNativeFlagToAllMethods_MigrationScript" file="AddNativeFlagToAllMethods_MigrationScript.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -33,7 +31,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript" file="BaseLanguageEnhancements_MigrationScript.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -52,7 +49,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfig" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.Migrations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.SpecialMigrations" />
@@ -78,7 +74,6 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -96,7 +91,6 @@
   <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateClassifierMembersNodes_MigrationScript" file="MigrateClassifierMembersNodes_MigrationScript.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -111,7 +105,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scripts.MigrateClassifierMembersSModelUsages_MigrationScript" file="MigrateClassifierMembersSModelUsages_MigrationScript.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MembersMigrationUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -181,7 +174,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfig" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.SModelMethodMigration" />
@@ -211,7 +203,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -240,7 +231,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scripts.ReplacePlaceholderMethodDeclaration_MigrationScript" file="ReplacePlaceholderMethodDeclaration_MigrationScript.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -251,7 +241,6 @@
   <dependency className="jetbrains.mps.baseLanguage.scripts.SModelMethodMigration" file="SModelMethodMigration.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfig" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -282,7 +271,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfig" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.SModelMethodMigration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.SimpleMigration" />
@@ -302,7 +290,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scripts.UpdateCastExpressionParens_MigrationScript" file="UpdateCastExpressionParens_MigrationScript.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.PrecedenceUtil" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -316,7 +303,6 @@
   <dependency className="jetbrains.mps.baseLanguage.scripts.UpdateTernaryOperatorExpressionParens_MigrationScript" file="UpdateTernaryOperatorExpressionParens_MigrationScript.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -331,7 +317,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.MigrationConfig" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.Migrations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.SpecialMigrations" />
@@ -351,7 +336,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scripts.WrapNotChildWithParens_MigrationScript" file="WrapNotChildWithParens_MigrationScript.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.PrecedenceUtil" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

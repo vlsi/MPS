@@ -3,15 +3,15 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="11,0,21,0" name="jetbrains.mps.samples.generator_demo.demoLang6.generator.template.main.QueriesGenerated" />
+      <unit at="10,0,20,0" name="jetbrains.mps.samples.generator_demo.demoLang6.generator.template.main.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:a1c78a62-ebdd-4de6-ad38-920fd4804e20(jetbrains.mps.samples.generator_demo.demoLang6.generator.template.main@generator)/3978102045101855019">
     <file name="QueriesGenerated.java">
-      <node id="3978102045101880185" at="14,112,15,201" concept="0" />
-      <node id="3978102045101880680" at="17,112,18,201" concept="0" />
-      <scope id="3978102045101880179" at="14,112,15,201" />
-      <scope id="3978102045101880674" at="17,112,18,201" />
+      <node id="3978102045101880185" at="13,112,14,185" concept="0" />
+      <node id="3978102045101880680" at="16,112,17,185" concept="0" />
+      <scope id="3978102045101880179" at="13,112,14,185" />
+      <scope id="3978102045101880674" at="16,112,17,185" />
     </file>
   </root>
 </debug-info>

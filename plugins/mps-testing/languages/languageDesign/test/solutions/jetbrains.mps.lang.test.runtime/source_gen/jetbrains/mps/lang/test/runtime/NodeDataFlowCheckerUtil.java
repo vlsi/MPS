@@ -15,7 +15,6 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -36,38 +35,38 @@ public class NodeDataFlowCheckerUtil {
     Set<Instruction> unreachable = program.getUnreachableInstructions();
     AnalysisResult<VarSet> initialized = program.analyze(new InitializedVariablesAnalyzer());
     AnalysisResult<VarSet> live = program.analyze(new LivenessAnalyzer());
-    for (SNode child : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode child : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) != null);
       }
     })) {
       assert AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) != null;
       SNode container = AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
-      for (SNode operation : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))) {
+      for (SNode operation : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))) {
         if (ListSequence.fromList(instructions).isNotEmpty()) {
           instruction = program.getInstructionsFor(child).get(0);
         } else {
           continue;
         }
 
-        if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215525678776l, "jetbrains.mps.lang.test.structure.NodeReachable"))) {
+        if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b02f9eeb8L, "jetbrains.mps.lang.test.structure.NodeReachable"))) {
           Assert.assertFalse("instruction <" + instruction + "> is unreachable", SetSequence.fromSet(unreachable).contains(instruction));
         }
 
-        if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215612918969l, "jetbrains.mps.lang.test.structure.NodeUnreachable"))) {
+        if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b082d1cb9L, "jetbrains.mps.lang.test.structure.NodeUnreachable"))) {
           Assert.assertTrue("instruction <" + instruction + "> is reachable", SetSequence.fromSet(unreachable).contains(instruction));
         }
 
-        if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215614394933l, "jetbrains.mps.lang.test.structure.VariableInitialized"))) {
+        if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0843a235L, "jetbrains.mps.lang.test.structure.VariableInitialized"))) {
           Set<Object> vars = (Set<Object>) initialized.get(instruction);
-          SNode var = SLinkOperations.getTarget(SNodeOperations.cast(operation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215614394933l, "jetbrains.mps.lang.test.structure.VariableInitialized")), MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215614394933l, 1215614415465l, "var"));
-          Assert.assertTrue("variable <" + var + "> is not initialized", SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"))));
+          SNode var = SLinkOperations.getTarget(SNodeOperations.cast(operation, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0843a235L, "jetbrains.mps.lang.test.structure.VariableInitialized")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0843a235L, 0x11b0843f269L, "var"));
+          Assert.assertTrue("variable <" + var + "> is not initialized", SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"))));
         }
 
-        if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215616993394l, "jetbrains.mps.lang.test.structure.VariableAlive"))) {
+        if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b086b4872L, "jetbrains.mps.lang.test.structure.VariableAlive"))) {
           Set<Object> vars = (Set<Object>) live.get(instruction);
-          SNode var = SLinkOperations.getTarget(SNodeOperations.cast(operation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1215614394933l, "jetbrains.mps.lang.test.structure.VariableInitialized")), MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215614394933l, 1215614415465l, "var"));
-          Assert.assertTrue("variable <" + var + "> is not alive", SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"))));
+          SNode var = SLinkOperations.getTarget(SNodeOperations.cast(operation, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0843a235L, "jetbrains.mps.lang.test.structure.VariableInitialized")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b0843a235L, 0x11b0843f269L, "var"));
+          Assert.assertTrue("variable <" + var + "> is not alive", SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"))));
         }
       }
     }

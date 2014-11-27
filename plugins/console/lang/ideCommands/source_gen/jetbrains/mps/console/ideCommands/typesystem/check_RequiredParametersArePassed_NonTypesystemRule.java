@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -25,11 +24,11 @@ public class check_RequiredParametersArePassed_NonTypesystemRule extends Abstrac
   public check_RequiredParametersArePassed_NonTypesystemRule() {
   }
   public void applyRule(final SNode callAction, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    Iterable<SNode> requiredParameters = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(callAction, MetaAdapterFactory.getReferenceLink(new UUID(-6492820313512655654l, -6146453626538471728l), 5582028874769074093l, 5582028874769074094l, "action")), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203071646776l, 1217413222820l, "parameter"))).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> requiredParameters = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(callAction, MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, 0x4d7759afce9587aeL, "action")), MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x11b737b91a4L, "parameter"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1217413147516l, 5538333046911298738l, "condition"))).any(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b737a6b7cL, 0x4cdc1c9014f46cb2L, "condition"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(2952642368903463569l, -5856357300648461647l), 5538333046911348654l, "jetbrains.mps.lang.plugin.structure.RequiredCondition"));
+            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4cdc1c9014f52faeL, "jetbrains.mps.lang.plugin.structure.RequiredCondition"));
           }
         });
       }
@@ -38,7 +37,7 @@ public class check_RequiredParametersArePassed_NonTypesystemRule extends Abstrac
         return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{});
       }
     });
-    Iterable<SNode> passedParameters = ListSequence.fromList(SLinkOperations.getChildren(callAction, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 5582028874769074093l, 5582028874769074095l, "parameter"))).select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> passedParameters = ListSequence.fromList(SLinkOperations.getChildren(callAction, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, 0x4d7759afce9587afL, "parameter"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getParameterDeclaration_5582028874769074473", new Object[]{});
       }

@@ -28,7 +28,7 @@ public final class SLanguageId {
   }
 
   @NotNull
-  public UUID getId() {
+  public UUID getIdValue() {
     return myId;
   }
 

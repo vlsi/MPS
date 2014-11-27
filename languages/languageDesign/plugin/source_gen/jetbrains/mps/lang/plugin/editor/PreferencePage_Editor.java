@@ -28,7 +28,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -242,7 +241,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     String path = null;
     SModule module = SNodeOperations.getModel(node).getModule();
     if (module instanceof AbstractModule) {
-      path = MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 1210684385183l, 1210686783787l, "icon")));
+      path = MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, 0x119e28e412bL, "icon")));
     }
     return path != null && FileSystem.getInstance().getFileByPath(path).exists();
   }
@@ -260,7 +259,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     EditorCell_Image editorCell;
     editorCell = EditorCell_Image.createImageCell(editorContext, node, ((_FunctionTypes._return_P0_E0<? extends String>) new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
-        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 1210684385183l, 1210686783787l, "icon"));
+        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119e269a79fL, 0x119e28e412bL, "icon"));
       }
     }).invoke());
     editorCell.setCellId("Image_fl5ndt_a0c1b1a");

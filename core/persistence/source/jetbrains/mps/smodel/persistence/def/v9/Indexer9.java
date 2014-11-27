@@ -40,8 +40,10 @@ public class Indexer9 {
     XmlFastScanner s = new XmlFastScanner(myData);
     int token;
     boolean insideRegistry = false, insideImports = false, underNode = false;
-    final Matcher attrMatcher = Pattern.compile(String.format("\\s(%s|%s|%s)\\s*=\\s*\"([^\"]+)\"", ModelPersistence9.ID, ModelPersistence9.TO, ModelPersistence9.REF)).matcher(
-        "");
+    // <concept id="">
+    // <import ref="">
+    // <ref to="external node" | node="local node">
+    final Matcher attrMatcher = Pattern.compile(String.format("\\s(%s|%s|%s|%s)\\s*=\\s*\"([^\"]+)\"", ModelPersistence9.ID, ModelPersistence9.REF, ModelPersistence9.TO, ModelPersistence9.NODE)).matcher("");
     while ((token = s.next()) != XmlFastScanner.EOI) {
       if (token != XmlFastScanner.OPEN_TAG && token != XmlFastScanner.SIMPLE_TAG) {
         continue;
@@ -57,7 +59,14 @@ public class Indexer9 {
         }
       } else if (underNode) {
         if (ModelPersistence9.NODE_REFERENCE.equals(tokenName) && attrMatcher.reset(s.token()).find()) {
-          handleExternalReference(JDOMUtil.unescapeText(attrMatcher.group(2)));
+          final String attrValue = JDOMUtil.unescapeText(attrMatcher.group(2));
+          final String attr = attrMatcher.group(1);
+          if (ModelPersistence9.TO.equals(attr)) {
+            handleExternalReference(attrValue);
+          } else {
+            assert ModelPersistence9.NODE.equals(attr);
+            handleLocalReference(attrValue);
+          }
         }
       }
       if (s.tagDepth() == 1) {
@@ -88,6 +97,13 @@ public class Indexer9 {
 
   private void handleExternalReference(String outerRef) {
     SNodeId nodeId = myIdEncoder.parseExternalNodeReference(outerRef);
+    if (nodeId != null) {
+      myConsumer.consume(nodeId.toString());
+    }
+  }
+
+  private void handleLocalReference(String localRef) {
+    SNodeId nodeId = myIdEncoder.parseLocalNodeReference(localRef);
     if (nodeId != null) {
       myConsumer.consume(nodeId.toString());
     }

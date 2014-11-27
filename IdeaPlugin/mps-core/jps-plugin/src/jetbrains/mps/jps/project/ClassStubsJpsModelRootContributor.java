@@ -56,6 +56,8 @@ public class ClassStubsJpsModelRootContributor implements JpsModelRootContributo
 
 
       JpsLibrary lib = ((JpsLibraryDependency) dependency).getLibrary();
+      // e.g. missing maven library
+      if (lib == null) continue;
 
 //      LibraryOrderEntry libOrderEntry = new JpsLibraryOrderEntry(null, (JpsLibraryDependency) dependency);
 //      if (!libOrderEntry.isModuleLevel()) continue;

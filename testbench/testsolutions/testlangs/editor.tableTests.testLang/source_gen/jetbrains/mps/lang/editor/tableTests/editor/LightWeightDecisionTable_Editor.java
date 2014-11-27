@@ -11,7 +11,6 @@ import jetbrains.mps.lang.editor.table.runtime.TableModel;
 import jetbrains.mps.lang.editor.table.runtime.XYCTableModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
@@ -22,7 +21,7 @@ public class LightWeightDecisionTable_Editor extends DefaultNodeEditor {
   private EditorCell createTable_qbxdb8_a(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
-        return new XYCTableModel(node, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 7651593722933662687l, 7651593722933678081l, "column")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 7651593722933662687l, 7651593722933678118l, "row")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 7651593722933662687l, 7651593722933678119l, "body")), editorContext) {};
+        return new XYCTableModel(node, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121001L, "column")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121026L, "row")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121027L, "body")), editorContext) {};
       }
     };
     EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_qbxdb8_a");

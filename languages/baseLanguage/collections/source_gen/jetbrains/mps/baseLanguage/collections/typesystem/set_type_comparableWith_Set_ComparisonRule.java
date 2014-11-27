@@ -12,7 +12,6 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SNodePointer;
@@ -59,12 +58,12 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
         }
         {
           SNodeReference pointer = SNODE_POINTER_3k2v7g_a0a0a0a0b0b0a0a0a0a0a0f;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_plg4lh_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_plg4lh_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
             return false;
           }
         }
         {
-          SContainmentLink childRole_plg4lh_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter");
+          SContainmentLink childRole_plg4lh_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter");
           if (!(PatternUtil.hasNChildren(nodeToMatch_plg4lh_a0a, childRole_plg4lh_, 1))) {
             return false;
           }

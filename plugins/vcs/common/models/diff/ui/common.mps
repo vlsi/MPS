@@ -273,7 +273,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -8316,10 +8316,8 @@
                 <node concept="37vLTw" id="2BHiRxgm6tu" role="37wK5m">
                   <ref role="3cqZAo" node="42hl10VHazc" resolve="repository" />
                 </node>
-                <node concept="3fqX7Q" id="6dXf3jYXIYc" role="37wK5m">
-                  <node concept="37vLTw" id="6dXf3jYXJpo" role="3fr31v">
-                    <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />
-                  </node>
+                <node concept="3clFbT" id="1kYn6aTx4pV" role="37wK5m">
+                  <property role="3clFbU" value="true" />
                 </node>
                 <node concept="37vLTw" id="2BHiRxgm7vC" role="37wK5m">
                   <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />
@@ -8338,14 +8336,9 @@
             </node>
             <node concept="2ShNRf" id="42hl10VHazv" role="37vLTx">
               <node concept="1pGfFk" id="42hl10VHazw" role="2ShVmc">
-                <ref role="37wK5l" to="cpzd:~InspectorEditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean,boolean)" resolve="InspectorEditorComponent" />
+                <ref role="37wK5l" to="cpzd:~InspectorEditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean)" resolve="InspectorEditorComponent" />
                 <node concept="37vLTw" id="1clgIweMa5b" role="37wK5m">
                   <ref role="3cqZAo" node="42hl10VHazc" resolve="repository" />
-                </node>
-                <node concept="3fqX7Q" id="6dXf3jYX79j" role="37wK5m">
-                  <node concept="37vLTw" id="6dXf3jYXdUW" role="3fr31v">
-                    <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />
-                  </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxgm7oG" role="37wK5m">
                   <ref role="3cqZAo" node="42hl10VHazi" resolve="isLeftEditor" />

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class MatrixZero_Editor extends DefaultNodeEditor {
@@ -85,7 +84,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_d13tpt_a2a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 3922637823318870907l, 3922637823319028534l, "square")));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x36700251396ecb7bL, 0x3670025139713336L, "square")));
   }
   private EditorCell createRefNode_d13tpt_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -110,7 +109,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_d13tpt_a3a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 3922637823318870907l, 3922637823319028534l, "square")));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x36700251396ecb7bL, 0x3670025139713336L, "square")));
   }
   private EditorCell createCollection_d13tpt_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

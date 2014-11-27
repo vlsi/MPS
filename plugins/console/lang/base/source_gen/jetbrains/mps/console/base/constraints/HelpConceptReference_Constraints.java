@@ -4,7 +4,6 @@ package jetbrains.mps.console.base.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -30,12 +29,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor {
   public HelpConceptReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-2442401883381282302l, -5546511894809623691l), 6928665434433761801l));
+    super(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-2442401883381282302l, -5546511894809623691l), 6928665434433761801l, 6928665434433779926l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-2442401883381282302l, -5546511894809623691l), 6928665434433761801l, 6928665434433779926l), this) {
+    references.put(MetaIdFactory.refId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, 0x60279080c2f3f8d6L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, 0x60279080c2f3f8d6L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -65,7 +64,7 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
             }) {
               @Override
               public boolean isExcluded(SNode node) {
-                return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && !(AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))));
+                return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && !(AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))));
               }
             };
           }

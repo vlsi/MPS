@@ -601,6 +601,9 @@
     <node concept="PrWs8" id="4VKhzNI8Qm" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
+    <node concept="PrWs8" id="3h7Obdma0_T" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
   </node>
   <node concept="1TIwiD" id="f$XkiSu">
     <property role="R4oN_" value="super constructor invocation" />

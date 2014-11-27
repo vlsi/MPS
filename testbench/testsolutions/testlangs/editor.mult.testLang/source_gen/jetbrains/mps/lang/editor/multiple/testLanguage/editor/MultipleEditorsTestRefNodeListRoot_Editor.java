@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.util.Collections;
 
 public class MultipleEditorsTestRefNodeListRoot_Editor extends DefaultNodeEditor {
@@ -344,9 +343,9 @@ public class MultipleEditorsTestRefNodeListRoot_Editor extends DefaultNodeEditor
       }
     }
     private Iterable<String> getEditorHints_or70v3_a9c0(SNode node, EditorContext editorContext) {
-      if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(8827060889189960700l, -7595125973856731745l), 7279578193768898412l, 5613016763942517158l, "projectionType"), "rich", null)) {
+      if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x650641cc62465f6cL, 0x4de57101fd1b39a6L, "projectionType"), "rich", null)) {
         return Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich");
-      } else if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(8827060889189960700l, -7595125973856731745l), 7279578193768898412l, 5613016763942517158l, "projectionType"), "compact", null)) {
+      } else if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x650641cc62465f6cL, 0x4de57101fd1b39a6L, "projectionType"), "compact", null)) {
         return Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact");
       }
       return Collections.emptyList();
@@ -476,10 +475,10 @@ public class MultipleEditorsTestRefNodeListRoot_Editor extends DefaultNodeEditor
       }
     }
     private Iterable<String> getEditorHints_or70v3_a3m2a(SNode node, EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8827060889189960700l, -7595125973856731745l), 7279578193768898412l, 554589055677247838l, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") : Collections.<String>emptyList());
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x650641cc62465f6cL, 0x7b24bcecbf6315eL, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") : Collections.<String>emptyList());
     }
     private Iterable<String> getEditorHints_or70v3_a3m2a_0(SNode node, EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8827060889189960700l, -7595125973856731745l), 7279578193768898412l, 554589055677247838l, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") : Collections.<String>emptyList());
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x650641cc62465f6cL, 0x7b24bcecbf6315eL, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") : Collections.<String>emptyList());
     }
   }
   private EditorCell createConstant_or70v3_e21c0(EditorContext editorContext, SNode node) {

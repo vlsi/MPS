@@ -59,7 +59,7 @@ public final class IdEncoder {
   }
 
   public String toText(SConceptId conceptId) {
-    return Long.toString(conceptId.getConceptId());
+    return Long.toString(conceptId.getIdValue());
   }
 
   public SConceptId parseConceptId(SLanguageId lang, String text) {
@@ -67,21 +67,21 @@ public final class IdEncoder {
   }
 
   public String toText(SPropertyId propertyId) {
-    return Long.toString(propertyId.getPropertyId());
+    return Long.toString(propertyId.getIdValue());
   }
   public SPropertyId parsePropertyId(SConceptId concept, String text) {
     return new SPropertyId(concept, Long.parseLong(text));
   }
 
   public String toText(SReferenceLinkId linkId) {
-    return Long.toString(linkId.getReferenceLinkId());
+    return Long.toString(linkId.getIdValue());
   }
   public SReferenceLinkId parseAssociation(SConceptId concept, String text) {
     return new SReferenceLinkId(concept, Long.parseLong(text));
   }
 
   public String toText(SContainmentLinkId linkId) {
-    return Long.toString(linkId.getContainmentLinkId());
+    return Long.toString(linkId.getIdValue());
   }
   public SContainmentLinkId parseAggregation(SConceptId concept, String text) {
     return new SContainmentLinkId(concept, Long.parseLong(text));

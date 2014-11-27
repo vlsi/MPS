@@ -40,7 +40,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyTree" />
@@ -74,7 +73,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.RefactoringView" file="RefactoringView.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

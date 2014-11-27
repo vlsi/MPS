@@ -34,7 +34,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.AbstractModule;
@@ -147,13 +146,13 @@ public class CollectTests_Action extends BaseAction {
                   ProjectHelper.getModelAccess(((Project) MapSequence.fromMap(_params).get("project"))).executeCommand(new Runnable() {
                     public void run() {
                       if (suite.value == null) {
-                        suite.value = SModelOperations.createNewRootNode(model, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, "jetbrains.mps.testbench.suite.structure.ModuleSuite")));
-                        SNode sref = SLinkOperations.setNewChild(suite.value, MetaAdapterFactory.getContainmentLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, 1280144168199507080l, "moduleRef"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, "jetbrains.mps.testbench.suite.structure.SolutionRef")));
+                        suite.value = SModelOperations.createNewRootNode(model, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite")));
+                        SNode sref = SLinkOperations.setNewChild(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, "jetbrains.mps.testbench.suite.structure.SolutionRef")));
                         SModuleReference mref = module.getModuleReference();
-                        SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, 1280144168199506909l, "moduleFQName"), mref.getModuleName());
-                        SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, 1280144168199506910l, "moduleID"), mref.getModuleId().toString());
+                        SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbddL, "moduleFQName"), mref.getModuleName());
+                        SPropertyOperations.set(sref, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, 0x11c3fc56a6d1cbdeL, "moduleID"), mref.getModuleId().toString());
                       }
-                      ListSequence.fromList(SLinkOperations.getChildren(suite.value, MetaAdapterFactory.getContainmentLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, 4504141816188599486l, "testRef"))).addElement(tref.invoke());
+                      ListSequence.fromList(SLinkOperations.getChildren(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).addElement(tref.invoke());
                       ((SModelInternal) model).addModelImport(smodel.getReference(), false);
                       ((AbstractModule) ((SModel) MapSequence.fromMap(_params).get("modelDesc")).getModule()).addDependency(module.getModuleReference(), false);
                     }
@@ -194,9 +193,9 @@ public class CollectTests_Action extends BaseAction {
     }
   }
   private List<SModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
-    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, "jetbrains.mps.testbench.suite.structure.ModuleSuite"))).select(new ISelector<SNode, SModuleReference>() {
+    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"))).select(new ISelector<SNode, SModuleReference>() {
       public SModuleReference select(SNode ms) {
-        return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(ms, MetaAdapterFactory.getContainmentLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, 1280144168199507080l, "moduleRef")), "virtual_moduleReference_1280144168199513544", new Object[]{});
+        return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(ms, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef")), "virtual_moduleReference_1280144168199513544", new Object[]{});
       }
     }).toListSequence();
   }

@@ -6,15 +6,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Graphics;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class Shape_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_drawShape_1082824515535573731(SNode thisNode, Graphics graphics) {
-    graphics.setColor(ColorReference_Behavior.call_findColor_2097561739636344968(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474657l, 4191445539799470732l, "color"))));
+    graphics.setColor(ColorReference_Behavior.call_findColor_2097561739636344968(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, 0x3a2b0182df24928cL, "color"))));
   }
   public static void virtual_drawShapeAt_4001135958238383544(SNode thisNode, Graphics graphics, int x, int y) {
-    graphics.setColor(ColorReference_Behavior.call_findColor_2097561739636344968(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474657l, 4191445539799470732l, "color"))));
+    graphics.setColor(ColorReference_Behavior.call_findColor_2097561739636344968(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, 0x3a2b0182df24928cL, "color"))));
   }
 }

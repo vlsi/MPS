@@ -5,7 +5,6 @@ package jetbrains.mps.lang.structure.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -13,8 +12,8 @@ public class EnumerationMemberDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523172l, "externalValue")) != null) {
-      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523172l, "externalValue"));
+    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")) != null) {
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
     }
     return "<no external value>";
   }
@@ -22,13 +21,13 @@ public class EnumerationMemberDeclaration_Behavior {
     return NameUtil.toValidIdentifier(EnumerationMemberDeclaration_Behavior.call_getName_1240169660918(thisNode));
   }
   public static String call_getName_1240169660918(SNode thisNode) {
-    SNode enumType = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
-    if (SPropertyOperations.hasValue(enumType, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1197591154882l, "memberIdentifierPolicy"), "derive_from_internal_value", "derive_from_presentation")) {
-      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523171l, "internalValue"));
+    SNode enumType = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
+    if (SPropertyOperations.hasValue(enumType, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_internal_value", "derive_from_presentation")) {
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue"));
     }
-    if (SPropertyOperations.hasValue(enumType, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1197591154882l, "memberIdentifierPolicy"), "derive_from_presentation", "derive_from_presentation")) {
-      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523172l, "externalValue"));
+    if (SPropertyOperations.hasValue(enumType, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation", "derive_from_presentation")) {
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
     }
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1192116978809l, "javaIdentifier"));
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0x1158fb58479L, "javaIdentifier"));
   }
 }

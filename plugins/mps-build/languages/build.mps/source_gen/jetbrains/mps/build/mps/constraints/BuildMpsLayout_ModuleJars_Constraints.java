@@ -4,7 +4,6 @@ package jetbrains.mps.build.mps.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -26,12 +25,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildMpsLayout_ModuleJars_Constraints extends BaseConstraintsDescriptor {
   public BuildMpsLayout_ModuleJars_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(934837630734519964l, -6831122735637083229l), 1265949165890536423l));
+    super(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(934837630734519964l, -6831122735637083229l), 1265949165890536423l, 1265949165890536425l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(934837630734519964l, -6831122735637083229l), 1265949165890536423l, 1265949165890536425l), this) {
+    references.put(MetaIdFactory.refId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -49,7 +48,7 @@ public class BuildMpsLayout_ModuleJars_Constraints extends BaseConstraintsDescri
             return new FilteringScope(Scope.getScope(Scope.parent(_context.getContextNode()), _context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
               @Override
               public boolean isExcluded(SNode node) {
-                return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5507251971038816436l, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
+                return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
               }
             };
           }

@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -20,9 +19,9 @@ public class RemoveRepetition_QuickFix extends QuickFix_Runtime {
   }
   public void execute(SNode node) {
     SNode repeat = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.samples.Kaja.structure.Repeat");
-    SLinkOperations.setTarget(repeat, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039660364l, 3308300503039660367l, "body"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, "jetbrains.mps.samples.Kaja.structure.CommandList"))));
-    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(repeat, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039660364l, 3308300503039660367l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).addElement(SNodeOperations.as(node, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559114l, "jetbrains.mps.samples.Kaja.structure.AbstractCommand")));
-    SPropertyOperations.set(repeat, MetaAdapterFactory.getProperty(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039660364l, 3308300503039660366l, "count"), "" + (2));
+    SLinkOperations.setTarget(repeat, MetaAdapterFactory.getContainmentLink(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecd14cL, 0x2de971c785ecd14fL, "body"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"))));
+    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(repeat, MetaAdapterFactory.getContainmentLink(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecd14cL, 0x2de971c785ecd14fL, "body")), MetaAdapterFactory.getContainmentLink(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, 0x2de971c785f06a40L, "commands"))).addElement(SNodeOperations.as(node, MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL, "jetbrains.mps.samples.Kaja.structure.AbstractCommand")));
+    SPropertyOperations.set(repeat, MetaAdapterFactory.getProperty(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecd14cL, 0x2de971c785ecd14eL, "count"), "" + (2));
     SNodeOperations.deleteNode(SNodeOperations.getPrevSibling(repeat));
   }
 }

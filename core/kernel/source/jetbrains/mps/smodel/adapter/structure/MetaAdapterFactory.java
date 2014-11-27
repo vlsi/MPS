@@ -62,6 +62,12 @@ public abstract class MetaAdapterFactory {
   }
 
   @NotNull
+  public static SLanguage getLanguage(long uuidHigh, long uuidLow, String langName) {
+    return getLanguage(MetaIdFactory.langId(uuidHigh, uuidLow), langName);
+  }
+
+  @NotNull
+  @Deprecated //todo: 2 hex values instead of UUID
   public static SLanguage getLanguage(UUID lang, String langName) {
     return getLanguage(MetaIdFactory.langId(lang), langName);
   }
@@ -74,7 +80,12 @@ public abstract class MetaAdapterFactory {
     return ourConceptIds.get(p);
   }
 
+  public static SConcept getConcept(long uuidHigh, long uuidLow, long concept, String conceptName) {
+    return getConcept(MetaIdFactory.conceptId(uuidHigh, uuidLow, concept), conceptName);
+  }
+
   @NotNull
+  @Deprecated //todo: 2 hex values instead of UUID
   public static SConcept getConcept(UUID lang, long concept, String conceptName) {
     return getConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
   }
@@ -88,6 +99,12 @@ public abstract class MetaAdapterFactory {
   }
 
   @NotNull
+  public static SInterfaceConcept getInterfaceConcept(long uuidHigh, long uuidLow, long concept, String conceptName) {
+    return getInterfaceConcept(MetaIdFactory.conceptId(uuidHigh, uuidLow, concept), conceptName);
+  }
+
+  @NotNull
+  @Deprecated //todo: 2 hex values instead of UUID
   public static SInterfaceConcept getInterfaceConcept(UUID lang, long concept, String conceptName) {
     return getInterfaceConcept(MetaIdFactory.conceptId(lang, concept), conceptName);
   }
@@ -101,6 +118,12 @@ public abstract class MetaAdapterFactory {
   }
 
   @NotNull
+  public static SProperty getProperty(long uuidHigh, long uuidLow, long concept, long prop, String propName) {
+    return getProperty(MetaIdFactory.propId(uuidHigh, uuidLow, concept, prop), propName);
+  }
+
+  @NotNull
+  @Deprecated //todo: 2 hex values instead of UUID
   public static SProperty getProperty(UUID lang, long concept, long prop, String propName) {
     return getProperty(MetaIdFactory.propId(lang, concept, prop), propName);
   }
@@ -114,6 +137,12 @@ public abstract class MetaAdapterFactory {
   }
 
   @NotNull
+  public static SReferenceLink getReferenceLink(long uuidHigh, long uuidLow, long concept, long ref, String refName) {
+    return getReferenceLink(MetaIdFactory.refId(uuidHigh, uuidLow, concept, ref), refName);
+  }
+
+  @NotNull
+  @Deprecated //todo: 2 hex values instead of UUID
   public static SReferenceLink getReferenceLink(UUID lang, long concept, long ref, String refName) {
     return getReferenceLink(MetaIdFactory.refId(lang, concept, ref), refName);
   }
@@ -127,6 +156,12 @@ public abstract class MetaAdapterFactory {
   }
 
   @NotNull
+  public static SContainmentLink getContainmentLink(long uuidHigh, long uuidLow, long concept, long link, String linkName) {
+    return getContainmentLink(MetaIdFactory.linkId(uuidHigh, uuidLow, concept, link), linkName);
+  }
+
+  @NotNull
+  @Deprecated //todo: 2 hex values instead of UUID
   public static SContainmentLink getContainmentLink(UUID lang, long concept, long link, String linkName) {
     return getContainmentLink(MetaIdFactory.linkId(lang, concept, link), linkName);
   }

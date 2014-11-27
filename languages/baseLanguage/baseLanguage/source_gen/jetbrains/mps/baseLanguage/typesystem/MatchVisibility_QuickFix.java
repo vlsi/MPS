@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class MatchVisibility_QuickFix extends QuickFix_Runtime {
   public MatchVisibility_QuickFix() {
@@ -16,6 +15,6 @@ public class MatchVisibility_QuickFix extends QuickFix_Runtime {
     return "Set visibility to " + (((((SNode) MatchVisibility_QuickFix.this.getField("visibility")[0]) == null) ? "Paclage-local" : ((SNode) MatchVisibility_QuickFix.this.getField("visibility")[0])));
   }
   public void execute(SNode node) {
-    SLinkOperations.setTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), SNodeOperations.copyNode(((SNode) MatchVisibility_QuickFix.this.getField("visibility")[0])));
+    SLinkOperations.setTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), SNodeOperations.copyNode(((SNode) MatchVisibility_QuickFix.this.getField("visibility")[0])));
   }
 }

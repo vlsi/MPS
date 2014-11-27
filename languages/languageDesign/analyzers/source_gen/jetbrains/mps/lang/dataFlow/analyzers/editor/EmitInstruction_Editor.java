@@ -17,7 +17,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class EmitInstruction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -70,7 +69,7 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_tx9kns_a2a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037775l, "jetbrains.mps.lang.pattern.structure.Pattern"), false, false) == null;
+    return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478fL, "jetbrains.mps.lang.pattern.structure.Pattern"), false, false) == null;
   }
   private EditorCell createRefNode_tx9kns_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);

@@ -45,7 +45,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -174,10 +174,6 @@
       <ref role="25KYV2" to="slm6:1_lSsE3RFpE" resolve="description" />
       <node concept="3Tm6S6" id="49IRVjgsWsm" role="1B3o_S" />
       <node concept="17QB3L" id="49IRVjgsWsn" role="1tU5fm" />
-    </node>
-    <node concept="3tTeZs" id="49IRVjgsW71" role="jymVt">
-      <property role="3tTeZt" value="&lt;isApplicable=true&gt;" />
-      <ref role="3tTeZr" to="slm6:4ubqdNOF9cI" resolve="isApplicable" />
     </node>
     <node concept="q3mfD" id="49IRVjgsW72" role="jymVt">
       <property role="TrG5h" value="execute" />

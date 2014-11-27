@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Constructor;
@@ -81,9 +80,9 @@ public class RefactoringUtil {
     if (refModelDescriptor != null) {
       SModel refactoringsModel = refModelDescriptor;
       String packageName = SNodeOperations.getModelLongName(refactoringsModel);
-      for (SNode refactoring : SModelOperations.roots(refactoringsModel, MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, "jetbrains.mps.lang.refactoring.structure.Refactoring"))) {
+      for (SNode refactoring : SModelOperations.roots(refactoringsModel, MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring"))) {
         try {
-          String fqName = packageName + "." + SPropertyOperations.getString(refactoring, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+          String fqName = packageName + "." + SPropertyOperations.getString(refactoring, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           Class<IRefactoring> cls = ((Class<IRefactoring>) ClassLoaderManager.getInstance().getClass(language, fqName));
           if (cls == null) {
             LOG.error("Can't find " + fqName);

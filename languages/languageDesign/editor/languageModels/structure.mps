@@ -24,12 +24,6 @@
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
-      <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
-        <property id="6054523464626875854" name="value" index="tnX3d" />
-      </concept>
-      <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
-        <reference id="6054523464627965081" name="concept" index="trN6q" />
-      </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
@@ -42,11 +36,6 @@
       <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
         <property id="1083923523172" name="externalValue" index="1uS6qo" />
         <property id="1083923523171" name="internalValue" index="1uS6qv" />
-      </concept>
-      <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
-        <property id="7588428831955550663" name="role" index="Hh88m" />
-        <child id="7588428831947959310" name="attributed" index="EQaZv" />
-        <child id="7588428831955550186" name="multiple" index="HhnKV" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
@@ -3971,45 +3960,6 @@
     <property role="3GE5qa" value="CellModel" />
     <property role="TrG5h" value="StubCellModel_Block" />
     <ref role="1TJDcQ" node="CzpafHMSVi" resolve="StubEditorCellModel" />
-  </node>
-  <node concept="1TIwiD" id="Fg1jLUUh_d">
-    <property role="TrG5h" value="SideTransformInfo" />
-    <property role="3GE5qa" value="SideTransform" />
-    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
-    <node concept="1TJgyi" id="Fg1jLUVycx" role="1TKVEl">
-      <property role="TrG5h" value="side" />
-      <ref role="AX2Wp" node="Fg1jLUVynG" resolve="SideTransformSide" />
-    </node>
-    <node concept="1TJgyi" id="Fg1jLUWrAV" role="1TKVEl">
-      <property role="TrG5h" value="cellId" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="Fg1jLUWrXo" role="1TKVEl">
-      <property role="TrG5h" value="anchorTag" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="M6xJ_" id="Fg1jLUUBDq" role="lGtFl">
-      <property role="Hh88m" value="sideTransformInfo" />
-      <node concept="trNpa" id="Fg1jLUUC3q" role="EQaZv">
-        <ref role="trN6q" to="tpck:gw2VY9q" resolve="BaseConcept" />
-      </node>
-      <node concept="tn0Fv" id="Fg1jLUUCsA" role="HhnKV">
-        <property role="tnX3d" value="false" />
-      </node>
-    </node>
-  </node>
-  <node concept="AxPO7" id="Fg1jLUVynG">
-    <property role="3GE5qa" value="SideTransform" />
-    <property role="TrG5h" value="SideTransformSide" />
-    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
-    <node concept="M4N5e" id="Fg1jLUVynH" role="M5hS2">
-      <property role="1uS6qo" value="right" />
-      <property role="1uS6qv" value="right" />
-    </node>
-    <node concept="M4N5e" id="Fg1jLUVyTf" role="M5hS2">
-      <property role="1uS6qv" value="left" />
-      <property role="1uS6qo" value="left" />
-    </node>
   </node>
 </model>
 

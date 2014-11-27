@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -24,13 +23,13 @@ public class check_CellModel_Diagram_NonTypesystemRule extends AbstractNonTypesy
   }
   public void applyRule(final SNode diagram, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode topLevelCell = diagram;
-    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(topLevelCell), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
-      topLevelCell = SNodeOperations.cast(SNodeOperations.getParent(topLevelCell), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
+    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(topLevelCell), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+      topLevelCell = SNodeOperations.cast(SNodeOperations.getParent(topLevelCell), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
     }
 
-    for (SNode nonSynchronizeableCellModel : ListSequence.fromList(SNodeOperations.getNodeDescendants(topLevelCell, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"), true, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
+    for (SNode nonSynchronizeableCellModel : ListSequence.fromList(SNodeOperations.getNodeDescendants(topLevelCell, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), true, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)), MetaAdapterFactory.getInterfaceConcept(new UUID(1782411230332735017l, -6324602048325217350l), 8770580973047386957l, "jetbrains.mps.lang.editor.structure.Synchronizeable")));
+        return !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable")));
       }
     })) {
       {

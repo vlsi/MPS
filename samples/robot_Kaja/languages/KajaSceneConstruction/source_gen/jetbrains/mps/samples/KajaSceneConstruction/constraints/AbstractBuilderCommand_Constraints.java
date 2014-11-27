@@ -4,7 +4,6 @@ package jetbrains.mps.samples.KajaSceneConstruction.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -16,12 +15,12 @@ import JavaKaja.runtime.KajaFrame;
 
 public class AbstractBuilderCommand_Constraints extends BaseConstraintsDescriptor {
   public AbstractBuilderCommand_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l));
+    super(MetaIdFactory.conceptId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608257l), this) {
+    properties.put(MetaIdFactory.propId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe41L), this) {
       @Override
       public boolean hasOwnValidator() {
         return true;
@@ -32,7 +31,7 @@ public class AbstractBuilderCommand_Constraints extends BaseConstraintsDescripto
         return (SPropertyOperations.getInteger(propertyValue)) > 0 && (SPropertyOperations.getInteger(propertyValue)) < KajaFrame.WIDTH - 1;
       }
     });
-    properties.put(MetaIdFactory.propId(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-5374744187267758800l, -5706248580699624929l), 3210697320273608255l, 3210697320273608256l), this) {
+    properties.put(MetaIdFactory.propId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, 0x2c8eb033a834fe40L), this) {
       @Override
       public boolean hasOwnValidator() {
         return true;

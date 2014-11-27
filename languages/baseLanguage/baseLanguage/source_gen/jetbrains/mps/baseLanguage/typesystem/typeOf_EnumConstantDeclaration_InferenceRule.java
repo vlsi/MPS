@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,7 +17,7 @@ public class typeOf_EnumConstantDeclaration_InferenceRule extends AbstractInfere
   public typeOf_EnumConstantDeclaration_InferenceRule() {
   }
   public void applyRule(final SNode enumConstantDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode enumClass = SNodeOperations.getNodeAncestor(enumConstantDeclaration, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false);
+    SNode enumClass = SNodeOperations.getNodeAncestor(enumConstantDeclaration, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false);
     if (enumClass == null) {
       return;
     }

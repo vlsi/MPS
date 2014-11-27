@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.apache.log4j.Level;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -38,10 +37,10 @@ public class ContextClassifiersInRoot {
   public Map<String, String> getContextClassifiers(SNode contextNode) {
     // only AnonymousClass has Classifier as reference 
     // todo: make it clearer 
-    if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-935030926396207931l, -6610165693999523818l), 3425520165286454670l, "jetbrains.mps.baseLanguage.structure.IAnonymousClass"))) {
+    if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2f89e470eed6258eL, "jetbrains.mps.baseLanguage.structure.IAnonymousClass"))) {
       contextNode = SNodeOperations.getParent(contextNode);
     }
-    if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+    if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("contextNode is classifier in getContextClassifiers: " + contextNode);
       }
@@ -50,7 +49,7 @@ public class ContextClassifiersInRoot {
 
     // find first classifier in path 
     String sourceChildRole = null;
-    while ((contextNode != null) && !(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
+    while ((contextNode != null) && !(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
       sourceChildRole = contextNode.getRoleInParent();
       contextNode = SNodeOperations.getParent(contextNode);
     }
@@ -60,20 +59,20 @@ public class ContextClassifiersInRoot {
       return Collections.emptyMap();
     }
 
-    return contextClassifiersCache.get(MultiTuple.<SNode,String>from(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")), sourceChildRole));
+    return contextClassifiersCache.get(MultiTuple.<SNode,String>from(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), sourceChildRole));
   }
   private Map<String, String> getContextClassifiers(SNode contextNode, String sourceChildRole) {
     Map<String, String> bindings = new HashMap<String, String>();
 
     SNode current = contextNode;
     while ((current != null)) {
-      if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
         boolean processNestedClassifiers = false;
-        if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) || SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+        if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) || SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
           processNestedClassifiers = true;
-        } else if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+        } else if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
           processNestedClassifiers = !("extendedInterface".equals(sourceChildRole));
-        } else if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+        } else if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
           processNestedClassifiers = !(("superclass".equals(sourceChildRole) || "implementedInterface".equals(sourceChildRole)));
         } else {
           if (LOG.isEnabledFor(Level.WARN)) {
@@ -82,9 +81,9 @@ public class ContextClassifiersInRoot {
         }
 
         // todo: is it true? had a bug with it. Look like nested classifier has more priority then class with same name 
-        addClassifierToBindingMap(bindings, SNodeOperations.cast(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")));
+        addClassifierToBindingMap(bindings, SNodeOperations.cast(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
         if (processNestedClassifiers) {
-          for (Map.Entry<String, String> simpleToFqName : nestedClassifiersCache.get(SNodeOperations.cast(current, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier"))).entrySet()) {
+          for (Map.Entry<String, String> simpleToFqName : nestedClassifiersCache.get(SNodeOperations.cast(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))).entrySet()) {
             if (!(bindings.containsKey(simpleToFqName.getKey()))) {
               bindings.put(simpleToFqName.getKey(), simpleToFqName.getValue());
             }
@@ -105,7 +104,7 @@ public class ContextClassifiersInRoot {
     Map<String, String> nestedClassifiers = new HashMap<String, String>();
 
     // todo: classifiers with same names in different supertypes? 
-    for (SNode superClassifier : Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
+    for (SNode superClassifier : Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
       for (SNode nestedClassifier : Classifier_Behavior.call_nestedClassifiers_5292274854859193142(superClassifier)) {
         addClassifierToBindingMap(nestedClassifiers, nestedClassifier);
       }
@@ -114,7 +113,7 @@ public class ContextClassifiersInRoot {
     return nestedClassifiers;
   }
   private static void addClassifierToBindingMap(Map<String, String> bindings, SNode classifier) {
-    String simpleName = SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    String simpleName = SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     String fqName = BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{});
 
     if (!(bindings.containsKey(simpleName))) {

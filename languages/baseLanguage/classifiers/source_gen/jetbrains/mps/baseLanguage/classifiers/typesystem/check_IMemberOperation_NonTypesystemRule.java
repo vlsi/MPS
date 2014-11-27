@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -31,7 +30,7 @@ public class check_IMemberOperation_NonTypesystemRule extends AbstractNonTypesys
       IMatchingPattern pattern_hm5x7h_b0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
       SNode coercedNode_hm5x7h_b0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, pattern_hm5x7h_b0);
       if (coercedNode_hm5x7h_b0 != null) {
-        if (!(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), coercedNode_hm5x7h_b0, "virtual_getMembers_1213877402148", new Object[]{nodeToCheck})).contains(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member"))))) {
+        if (!(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), coercedNode_hm5x7h_b0, "virtual_getMembers_1213877402148", new Object[]{nodeToCheck})).contains(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member"))))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Declaration is out of scope", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205921883388", null, errorTarget);

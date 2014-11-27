@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class SideTransformWrapperActionMap {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -24,7 +23,7 @@ public class SideTransformWrapperActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-9083571638034871021l, -6862973283068073801l), 5110219550149792114l, 5110219550149792121l, "rightOpen"), "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12ef5172L, 0x46eb259b12ef5179L, "rightOpen"), "" + (true));
     }
   }
 }

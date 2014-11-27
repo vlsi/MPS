@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -25,12 +24,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class CellMenuComponentFeature_Link_Constraints extends BaseConstraintsDescriptor {
   public CellMenuComponentFeature_Link_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(1782411230332735017l, -6324602048325217350l), 1166042131867l));
+    super(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d86ed9bL));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(1782411230332735017l, -6324602048325217350l), 1166041033436l, 1166054297096l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(1782411230332735017l, -6324602048325217350l), 1166041033436l, 1166054297096l), this) {
+    references.put(MetaIdFactory.refId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d762adcL, 0x10f7e408e08L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d762adcL, 0x10f7e408e08L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -42,7 +41,7 @@ public class CellMenuComponentFeature_Link_Constraints extends BaseConstraintsDe
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // links declared in edited concept' hierarchy and not overridden 
-            SNode editorComponent = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1166040637528l, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), true, false);
+            SNode editorComponent = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), true, false);
             SNode editedConcept = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
             return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(editedConcept);
           }

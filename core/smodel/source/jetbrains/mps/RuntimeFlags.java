@@ -59,6 +59,7 @@ public final class RuntimeFlags {
 
   /**
    * Default value: system property <code>"mps.playRefactorings"</code>
+   *
    * @return <code>true</code> if refactorings are to be run.
    */
   public static boolean isPlayRefactoringsMode() {
@@ -74,6 +75,7 @@ public final class RuntimeFlags {
 
   /**
    * Default value: system property <code>"mps.disableNodeCastExceptions"</code>
+   *
    * @return <code>true</code> if node cast shall throw an exception. if <code>false</code>, bad cast results in a log warning only.
    */
   public static boolean isExceptionOnBadCast() {
@@ -85,6 +87,7 @@ public final class RuntimeFlags {
 
   /**
    * Default value: system property <code>"mps.vfs.useIoFile"</code>
+   *
    * @return <code>true</code> if VFS shall use regular java IO files.
    */
   public static boolean isUseIOFile() {

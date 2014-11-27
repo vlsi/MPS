@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.classLike.behavior.ClassLikeMember_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -15,10 +14,10 @@ import jetbrains.mps.lang.classLike.behavior.PlaceholderModifier_Behavior;
 
 public class EditorUtil {
   public static void substitutePlaceholder(SNode ph) {
-    SNodeOperations.replaceWithAnother(ph, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(ph, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308703666l, 6478870542308703669l, "decl")), "virtual_create_8260330507834998478", new Object[]{}));
+    SNodeOperations.replaceWithAnother(ph, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(ph, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db5L, "decl")), "virtual_create_8260330507834998478", new Object[]{}));
   }
   public static void restorePlaceholder(final SNode mi) {
-    if (!((ClassLikeMember_Behavior.call_isRequired_3402736933911994098(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), mi, "virtual_getDeclaration_9097849371503884215", new Object[]{})) && Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(mi, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member")), MetaAdapterFactory.getInterfaceConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308708729l, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance"))).where(new IWhereFilter<SNode>() {
+    if (!((ClassLikeMember_Behavior.call_isRequired_3402736933911994098(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), mi, "virtual_getDeclaration_9097849371503884215", new Object[]{})) && Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(mi, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getDeclaration_9097849371503884215", new Object[]{}) == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), mi, "virtual_getDeclaration_9097849371503884215", new Object[]{});
       }

@@ -151,7 +151,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -1941,10 +1941,10 @@
             <node concept="liA8E" id="67MRmR$za_n" role="2OqNvi">
               <ref role="37wK5l" to="cu2c:~SModelRepository.getModelDescriptor(java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="getModelDescriptor" />
               <node concept="2OqwBi" id="67MRmR$za_o" role="37wK5m">
-                <node concept="13iPFW" id="67MRmR$za_q" role="2Oq$k0" />
-                <node concept="3TrcHB" id="67MRmR$za_s" role="2OqNvi">
-                  <ref role="3TsBF5" to="tp25:v3WHCwUoyi" resolve="fqName" />
+                <node concept="2qgKlT" id="7K4mn_BfkLE" role="2OqNvi">
+                  <ref role="37wK5l" to="tpeu:7K4mn_BeEzv" resolve="getFQName" />
                 </node>
+                <node concept="13iPFW" id="67MRmR$za_q" role="2Oq$k0" />
               </node>
             </node>
           </node>

@@ -29,13 +29,13 @@
     <import index="as9o" ref="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="d2v5" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(jetbrains.mps.persistence@java_stub)" />
+    <import index="51te" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.model(jetbrains.mps.extapi.model@java_stub)" />
     <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
     <import index="qx6n" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(org.jetbrains.mps.openapi.persistence@java_stub)" />
     <import index="gtvp" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.xml.sax.helpers(JDK/org.xml.sax.helpers@java_stub)" />
     <import index="fmpa" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.xml.sax(JDK/org.xml.sax@java_stub)" />
     <import index="7a2w" ref="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.util.xml)" />
     <import index="ep0o" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.persistence(MPS.Core/jetbrains.mps.extapi.persistence@java_stub)" />
-    <import index="51te" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.model(MPS.Core/jetbrains.mps.extapi.model@java_stub)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpib" ref="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
@@ -44,7 +44,12 @@
     <import index="cx9y" ref="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" implicit="true" />
     <import index="9yi" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.xml.parsers(JDK/javax.xml.parsers@java_stub)" implicit="true" />
     <import index="kgxg" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(MPS.Core/jetbrains.mps.components@java_stub)" implicit="true" />
-    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
+    <import index="zofw" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence.def(jetbrains.mps.smodel.persistence.def@java_stub)" implicit="true" />
+    <import index="fwv2" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(jetbrains.mps.smodel.runtime@java_stub)" implicit="true" />
+    <import index="lgzw" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(java.util.regex@java_stub)" implicit="true" />
+    <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" implicit="true" />
+    <import index="t3eg" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
+    <import index="vw5e" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.references(jetbrains.mps.smodel.references@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -211,7 +216,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -2839,6 +2844,27 @@
         </node>
       </node>
       <node concept="3clFbS" id="2TzypFyLJee" role="3clF47">
+        <node concept="3SKdUt" id="CoC$x5IPT9" role="3cqZAp">
+          <node concept="3SKdUq" id="CoC$x5ISrA" role="3SKWNk">
+            <property role="3SKdUp" value="workaround for MPS-20860 Can't merge my feature branch with the current state of MPS master branch" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="CoC$x5ID_k" role="3cqZAp">
+          <node concept="3clFbS" id="CoC$x5ID_n" role="3clFbx">
+            <node concept="3SKdUt" id="CoC$x5IXe6" role="3cqZAp">
+              <node concept="3SKdUq" id="CoC$x5IZcl" role="3SKWNk">
+                <property role="3SKdUp" value="always fail, so the merge will be done in full MPS" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="CoC$x5IGb5" role="3cqZAp">
+              <node concept="10Nm6u" id="CoC$x5II$O" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3clFbT" id="CoC$x5IDFc" role="3clFbw">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="CoC$x5IL2w" role="3cqZAp" />
         <node concept="3clFbF" id="7gEybyFqp_" role="3cqZAp">
           <node concept="2YIFZM" id="7gEybyFwA6" role="3clFbG">
             <ref role="37wK5l" to="1p1s:~RuntimeFlags.setPlayRefactoringsMode(boolean):void" resolve="setPlayRefactoringsMode" />
@@ -2963,9 +2989,6 @@
           <node concept="3cpWsn" id="2TzypFyLJey" role="3cpWs9">
             <property role="TrG5h" value="baseModel" />
             <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="13cOvvwsAsr" role="1tU5fm">
-              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
-            </node>
             <node concept="1rXfSq" id="7vnu9rGMmNW" role="33vP2m">
               <ref role="37wK5l" node="7vnu9rGLyry" resolve="loadModel" />
               <node concept="37vLTw" id="7vnu9rGMo8J" role="37wK5m">
@@ -2975,15 +2998,15 @@
                 <ref role="3cqZAo" node="13cOvvwIR9j" resolve="ext" />
               </node>
             </node>
+            <node concept="3uibUv" id="13cOvvwsAsr" role="1tU5fm">
+              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+            </node>
           </node>
         </node>
         <node concept="3cpWs8" id="2TzypFyLJe$" role="3cqZAp">
           <node concept="3cpWsn" id="2TzypFyLJe_" role="3cpWs9">
             <property role="TrG5h" value="localModel" />
             <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="13cOvvwsOBF" role="1tU5fm">
-              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
-            </node>
             <node concept="1rXfSq" id="7vnu9rGMAPa" role="33vP2m">
               <ref role="37wK5l" node="7vnu9rGLyry" resolve="loadModel" />
               <node concept="37vLTw" id="7vnu9rGMC2F" role="37wK5m">
@@ -2993,15 +3016,15 @@
                 <ref role="3cqZAo" node="13cOvvwIR9j" resolve="ext" />
               </node>
             </node>
+            <node concept="3uibUv" id="13cOvvwsOBF" role="1tU5fm">
+              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+            </node>
           </node>
         </node>
         <node concept="3cpWs8" id="2TzypFyLJeB" role="3cqZAp">
           <node concept="3cpWsn" id="2TzypFyLJeC" role="3cpWs9">
             <property role="TrG5h" value="latestModel" />
             <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="13cOvvwt2PN" role="1tU5fm">
-              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
-            </node>
             <node concept="1rXfSq" id="7vnu9rGMGt9" role="33vP2m">
               <ref role="37wK5l" node="7vnu9rGLyry" resolve="loadModel" />
               <node concept="37vLTw" id="7vnu9rGMHHJ" role="37wK5m">
@@ -3010,6 +3033,9 @@
               <node concept="37vLTw" id="7vnu9rGMJoy" role="37wK5m">
                 <ref role="3cqZAo" node="13cOvvwIR9j" resolve="ext" />
               </node>
+            </node>
+            <node concept="3uibUv" id="13cOvvwt2PN" role="1tU5fm">
+              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
             </node>
           </node>
         </node>
@@ -6306,6 +6332,12 @@
   <node concept="312cEu" id="1nBtCnD$ogx">
     <property role="TrG5h" value="FileContent" />
     <property role="3GE5qa" value="mergers" />
+    <node concept="3uibUv" id="7vnu9rGN4US" role="EKbjA">
+      <ref role="3uigEE" to="qx6n:~StreamDataSource" resolve="StreamDataSource" />
+    </node>
+    <node concept="3uibUv" id="7vnu9rGN4iG" role="1zkMxy">
+      <ref role="3uigEE" to="ep0o:~DataSourceBase" resolve="DataSourceBase" />
+    </node>
     <node concept="312cEg" id="1nBtCnD$YyR" role="jymVt">
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myFile" />
@@ -6434,6 +6466,9 @@
       <property role="TrG5h" value="openInputStream" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
+      <node concept="2AHcQZ" id="7vnu9rGN5d1" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
       <node concept="3clFbS" id="1nBtCnDBwjV" role="3clF47">
         <node concept="3cpWs6" id="7vnu9rGN7MT" role="3cqZAp">
           <node concept="2ShNRf" id="7vnu9rGNtYz" role="3cqZAk">
@@ -6449,9 +6484,6 @@
       <node concept="3Tm1VV" id="1nBtCnDBwcI" role="1B3o_S" />
       <node concept="3uibUv" id="1nBtCnDBwjE" role="3clF45">
         <ref role="3uigEE" to="fxg7:~InputStream" resolve="InputStream" />
-      </node>
-      <node concept="2AHcQZ" id="7vnu9rGN5d1" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="7vnu9rGN5uG" role="jymVt" />
@@ -6530,12 +6562,6 @@
       <node concept="2AHcQZ" id="7vnu9rGO6kS" role="2AJF6D">
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
-    </node>
-    <node concept="3uibUv" id="7vnu9rGN4iG" role="1zkMxy">
-      <ref role="3uigEE" to="ep0o:~DataSourceBase" resolve="DataSourceBase" />
-    </node>
-    <node concept="3uibUv" id="7vnu9rGN4US" role="EKbjA">
-      <ref role="3uigEE" to="qx6n:~StreamDataSource" resolve="StreamDataSource" />
     </node>
   </node>
 </model>

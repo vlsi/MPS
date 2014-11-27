@@ -219,7 +219,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -31068,6 +31068,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="30AOS1d_hbq" role="jymVt" />
     <node concept="2YIFZL" id="45d1QTBBhKZ" role="jymVt">
       <property role="TrG5h" value="isAssignedIllegaly" />
       <node concept="37vLTG" id="45d1QTBBhLm" role="3clF46">
@@ -31263,7 +31264,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="2DQSxTX7duw" role="3cqZAp" />
         <node concept="3cpWs8" id="vYRqsVi$uX" role="3cqZAp">
           <node concept="3cpWsn" id="vYRqsVi$uY" role="3cpWs9">
             <property role="TrG5h" value="classifier" />

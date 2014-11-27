@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
@@ -34,8 +33,8 @@ public class ClassifierScopeUtils {
   public static String createMethodParameterTypesString(SNode method, Map<SNode, SNode> typeByTypeVar) {
     // use MethodSignature instead 
     StringBuilder result = new StringBuilder();
-    for (SNode parm : SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))) {
-      SNode type = SLinkOperations.getTarget(parm, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
+    for (SNode parm : SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))) {
+      SNode type = SLinkOperations.getTarget(parm, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
       type = GenericTypesUtil.getTypeWithResolvedTypeVars(type, typeByTypeVar);
       if (result.length() > 0) {
         result.append(',');
@@ -51,7 +50,7 @@ public class ClassifierScopeUtils {
   @Deprecated
   public static String getMethodSignatureForOverriding(SNode contextClassifier, SNode method) {
     // use MethodSignature instead 
-    return SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "(" + createMethodParameterTypesString(method, resolveClassifierTypeVars(contextClassifier)) + ")";
+    return SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "(" + createMethodParameterTypesString(method, resolveClassifierTypeVars(contextClassifier)) + ")";
   }
   public static Map<SNode, SNode> resolveClassifierTypeVars(@Nullable SNode classifier) {
     if (classifier == null) {
@@ -110,7 +109,7 @@ public class ClassifierScopeUtils {
       SetSequence.fromSet(subClassifiers).addElement(classifier);
 
       if (ListSequence.fromList(typeParms).isNotEmpty()) {
-        Iterator<SNode> typeVars = ListSequence.fromList(SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).iterator();
+        Iterator<SNode> typeVars = ListSequence.fromList(SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).iterator();
         for (SNode typeParm : typeParms) {
           if (!(typeVars.hasNext())) {
             break;
@@ -121,7 +120,7 @@ public class ClassifierScopeUtils {
       }
 
       for (SNode superType : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classifier, "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{})) {
-        if (collectImplementedAndExtended(SLinkOperations.getTarget(superType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), subClassifiers, SLinkOperations.getChildren(superType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter")))) {
+        if (collectImplementedAndExtended(SLinkOperations.getTarget(superType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), subClassifiers, SLinkOperations.getChildren(superType, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter")))) {
           return true;
         }
       }

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.smodel.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -21,12 +20,12 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class CheckedModuleReference_Constraints extends BaseConstraintsDescriptor {
   public CheckedModuleReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8675788371017092295l, -9098312342032910879l), 4357968816427488499l));
+    super(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(8675788371017092295l, -9098312342032910879l), 4357968816427488499l, 4357968816427488500l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(8675788371017092295l, -9098312342032910879l), 4357968816427488499l, 4357968816427488500l), this) {
+    properties.put(MetaIdFactory.propId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L, 0x3c7a9d8c8d63d4f4L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L, 0x3c7a9d8c8d63d4f4L), this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
@@ -35,7 +34,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
       public Object getValue(SNode node) {
         String propertyName = "moduleId";
         {
-          String original = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 4357968816427488499l, 4357968816427488500l, "moduleId"));
+          String original = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L, 0x3c7a9d8c8d63d4f4L, "moduleId"));
           if ((original == null || original.length() == 0)) {
             return original;
           }
@@ -53,7 +52,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
         String propertyName = "moduleId";
         {
           SModule module = MPSModuleRepository.getInstance().getModuleByFqName((SPropertyOperations.getString(propertyValue)));
-          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 4357968816427488499l, 4357968816427488500l, "moduleId"), module.getModuleReference().toString());
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L, 0x3c7a9d8c8d63d4f4L, "moduleId"), module.getModuleReference().toString());
         }
       }
       @Override

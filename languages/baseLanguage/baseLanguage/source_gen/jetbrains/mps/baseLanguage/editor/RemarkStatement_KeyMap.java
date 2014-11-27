@@ -14,7 +14,6 @@ import java.util.List;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -54,10 +53,10 @@ public class RemarkStatement_KeyMap extends KeyMapImpl {
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell_Label label = (EditorCell_Label) editorContext.getContextCell();
       int caretPostion = label.getCaretPosition();
-      String text = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, 1168623065899l, "value"));
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, 1168623065899l, "value"), text.substring(0, caretPostion));
-      SNode newRemark = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, "jetbrains.mps.baseLanguage.structure.RemarkStatement")), null);
-      SPropertyOperations.set(newRemark, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, 1168623065899l, "value"), text.substring(caretPostion));
+      String text = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, 0x110175cdb2bL, "value"));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, 0x110175cdb2bL, "value"), text.substring(0, caretPostion));
+      SNode newRemark = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement")), null);
+      SPropertyOperations.set(newRemark, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, 0x110175cdb2bL, "value"), text.substring(caretPostion));
       SNodeOperations.insertNextSiblingChild(node, newRemark);
     }
     public String getKeyStroke() {

@@ -7,10 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class ClassifierDocReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-972752984950357426l, -4964296947050367098l), 2217234381367530212l, 2217234381367530213l, "classifier")), "virtual_getFqName_1213877404258", new Object[]{}));
+    this.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2e4L, 0x1ec532ec2531d2e5L, "classifier")), "virtual_getFqName_1213877404258", new Object[]{}));
   }
 }

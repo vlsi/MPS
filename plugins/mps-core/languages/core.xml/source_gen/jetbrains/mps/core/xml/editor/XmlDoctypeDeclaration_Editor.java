@@ -23,7 +23,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -143,8 +142,8 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
       return true;
     }
     public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode newId = SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437898907l, 2133624044438029120l, "externalId"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, "jetbrains.mps.core.xml.structure.XmlExternalId")));
-      SPropertyOperations.set(newId, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029125l, "isPublic"), "" + (true));
+      SNode newId = SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, 0x1d9c27c394f60340L, "externalId"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, "jetbrains.mps.core.xml.structure.XmlExternalId")));
+      SPropertyOperations.set(newId, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60345L, "isPublic"), "" + (true));
       return newId;
     }
   }
@@ -158,8 +157,8 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
       return true;
     }
     public SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode newId = SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044437898907l, 2133624044438029120l, "externalId"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, "jetbrains.mps.core.xml.structure.XmlExternalId")));
-      SPropertyOperations.set(newId, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029125l, "isPublic"), "" + (false));
+      SNode newId = SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, 0x1d9c27c394f60340L, "externalId"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, "jetbrains.mps.core.xml.structure.XmlExternalId")));
+      SPropertyOperations.set(newId, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60345L, "isPublic"), "" + (false));
       return newId;
     }
   }

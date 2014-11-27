@@ -4,7 +4,6 @@ package jetbrains.mps.lang.behavior.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -13,7 +12,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ThisNodeExpression_Constraints extends BaseConstraintsDescriptor {
   public ThisNodeExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194691553l));
+    super(MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {

@@ -4,7 +4,6 @@ package org.jetbrains.mps.samples.ParallelFor.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -21,7 +20,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor {
   public ParallelLoopVariable_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477803l));
+    super(MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770abL));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -40,7 +39,7 @@ public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor 
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l), this) {
+    properties.put(MetaIdFactory.propId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL), this) {
       @Override
       public boolean hasOwnValidator() {
         return true;
@@ -54,7 +53,7 @@ public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor 
     return properties;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"));
+    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:30f28ecb-3abe-411d-8f10-86fc65916e39(org.jetbrains.mps.samples.ParallelFor.constraints)", "47688671297852481");
 }

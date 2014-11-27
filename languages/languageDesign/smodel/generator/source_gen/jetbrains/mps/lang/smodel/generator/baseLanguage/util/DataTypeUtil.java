@@ -7,7 +7,6 @@ import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Beha
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class DataTypeUtil {
   public DataTypeUtil() {
@@ -17,6 +16,6 @@ public class DataTypeUtil {
     if (defMember != null) {
       return defMember;
     }
-    return ListSequence.fromList(SLinkOperations.getChildren(enumDatatype, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member"))).first();
+    return ListSequence.fromList(SLinkOperations.getChildren(enumDatatype, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).first();
   }
 }

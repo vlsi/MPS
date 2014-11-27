@@ -5,7 +5,6 @@ package jetbrains.mps.core.xml.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -14,15 +13,15 @@ public class XmlWhitespace_Behavior {
   }
   public static boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
-    if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getInterfaceConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement"))) {
-      SNode leftContent = SNodeOperations.cast(left, MetaAdapterFactory.getInterfaceConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773674213l, "jetbrains.mps.core.xml.structure.XmlPrologElement"));
-      return SNodeOperations.isInstanceOf(leftContent, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, "jetbrains.mps.core.xml.structure.XmlWhitespace")) || isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, 5228786488744844115l, "value"))) && (SNodeOperations.getNextSibling(thisNode) == null);
+    if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L, "jetbrains.mps.core.xml.structure.XmlPrologElement"))) {
+      SNode leftContent = SNodeOperations.cast(left, MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L, "jetbrains.mps.core.xml.structure.XmlPrologElement"));
+      return SNodeOperations.isInstanceOf(leftContent, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace")) || isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, 0x4890619bb3ff9b53L, "value"))) && (SNodeOperations.getNextSibling(thisNode) == null);
     }
     return false;
   }
   public static boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
     BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.core.xml.structure.XmlPrologElement", "virtual_onNewLine_2133624044437631588", new Object[]{});
-    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 7604553062773750440l, 5228786488744844115l, "value"))) && (SNodeOperations.getNextSibling(thisNode) != null)) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, 0x4890619bb3ff9b53L, "value"))) && (SNodeOperations.getNextSibling(thisNode) != null)) {
       return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_onNewLine_2133624044437631588", new Object[]{}));
     }
     return false;

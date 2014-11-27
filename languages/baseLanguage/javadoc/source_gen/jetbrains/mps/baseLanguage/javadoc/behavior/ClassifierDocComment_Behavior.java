@@ -7,12 +7,11 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class ClassifierDocComment_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
-    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}) && ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 2068944020170241612l, 2068944020170241614l, "param"))).isEmpty();
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}) && ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, 0x1cb65d9fe66a764eL, "param"))).isEmpty();
   }
 }

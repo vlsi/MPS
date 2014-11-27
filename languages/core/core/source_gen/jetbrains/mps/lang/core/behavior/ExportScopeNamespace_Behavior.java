@@ -5,12 +5,11 @@ package jetbrains.mps.lang.core.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class ExportScopeNamespace_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 2565736246230036151l, 2565736246230036153l, "namespace")) == null || sourceNamespace.startsWith(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 2565736246230036151l, 2565736246230036153l, "namespace")));
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb7L, 0x239b5385a7e2aeb9L, "namespace")) == null || sourceNamespace.startsWith(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb7L, 0x239b5385a7e2aeb9L, "namespace")));
   }
 }

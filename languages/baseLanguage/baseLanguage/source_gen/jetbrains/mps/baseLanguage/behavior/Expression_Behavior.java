@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class Expression_Behavior {
@@ -29,7 +28,7 @@ public class Expression_Behavior {
     throw new UnsupportedOperationException();
   }
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
-    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104955l, "jetbrains.mps.baseLanguage.structure.CommentPart"))) {
+    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3bL, "jetbrains.mps.baseLanguage.structure.CommentPart"))) {
       return true;
     }
     return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.asSConcept(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(thisNode)), "virtual_legalAsStatement_1262430001741498032", new Object[]{});

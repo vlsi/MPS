@@ -5,14 +5,13 @@ package jetbrains.mps.lang.smodel.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AttributeQualifier_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getAttributeContainerType_6407023681583057388(SNode thisNode) {
-    return AttributeAccess_Behavior.call_getAttributeContainerType_6960953357954139822(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583031218l, "jetbrains.mps.lang.smodel.structure.AttributeAccess")));
+    return AttributeAccess_Behavior.call_getAttributeContainerType_6960953357954139822(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045a3b2L, "jetbrains.mps.lang.smodel.structure.AttributeAccess")));
   }
   public static SNode virtual_getTargetConcept_6407023681583066586(SNode thisNode) {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.Attribute");

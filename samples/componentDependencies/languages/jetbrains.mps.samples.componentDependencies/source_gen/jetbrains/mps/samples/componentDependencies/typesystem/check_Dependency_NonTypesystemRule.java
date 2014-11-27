@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Set;
@@ -28,13 +27,13 @@ public class check_Dependency_NonTypesystemRule extends AbstractNonTypesystemRul
   public check_Dependency_NonTypesystemRule() {
   }
   public void applyRule(final SNode dependency, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode usedComponent : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(dependency, MetaAdapterFactory.getReferenceLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610762144l, 6223439730610763348l, "to")), MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610336071l, "dep"))).where(new IWhereFilter<SNode>() {
+    for (SNode usedComponent : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(dependency, MetaAdapterFactory.getReferenceLink(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e1976381b71a0L, 0x565e1976381b7654L, "to")), MetaAdapterFactory.getContainmentLink(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814f144L, 0x565e19763814f147L, "dep"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610762144l, 6223439730610763348l, "to")) != null);
+        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e1976381b71a0L, 0x565e1976381b7654L, "to")) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610762144l, 6223439730610763348l, "to"));
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e1976381b71a0L, 0x565e1976381b7654L, "to"));
       }
     })) {
       final Set<SNode> visitedComponents = SetSequence.fromSet(new HashSet<SNode>());
@@ -43,20 +42,20 @@ public class check_Dependency_NonTypesystemRule extends AbstractNonTypesystemRul
       while (QueueSequence.fromQueue(queue).isNotEmpty()) {
         SNode nextComponent = QueueSequence.fromQueue(queue).removeFirstElement();
         SetSequence.fromSet(visitedComponents).addElement(nextComponent);
-        if (nextComponent == SLinkOperations.getTarget(dependency, MetaAdapterFactory.getReferenceLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610762144l, 6223439730610763348l, "to"))) {
+        if (nextComponent == SLinkOperations.getTarget(dependency, MetaAdapterFactory.getReferenceLink(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e1976381b71a0L, 0x565e1976381b7654L, "to"))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(dependency, "Cyclic Dependnecy", "r:6c7cc4eb-60e9-407a-94da-5f4d6ac9650c(jetbrains.mps.samples.componentDependencies.typesystem)", "8153794773742437575", null, errorTarget);
           }
           return;
         }
-        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getChildren(nextComponent, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610336071l, "dep"))).where(new IWhereFilter<SNode>() {
+        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getChildren(nextComponent, MetaAdapterFactory.getContainmentLink(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814f144L, 0x565e19763814f147L, "dep"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610762144l, 6223439730610763348l, "to")) != null);
+            return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e1976381b71a0L, 0x565e1976381b7654L, "to")) != null);
           }
         }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
-            return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610762144l, 6223439730610763348l, "to"));
+            return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e1976381b71a0L, 0x565e1976381b7654L, "to"));
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

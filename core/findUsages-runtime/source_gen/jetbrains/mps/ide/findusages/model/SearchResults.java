@@ -35,6 +35,9 @@ public class SearchResults<T> implements UsagesList {
     }
     return resultObjects;
   }
+  public void add(SearchResult<T> r) {
+    mySearchResults.add(r);
+  }
   public void addAll(SearchResults<T> sr) {
     mySearchedNodes.addAll(sr.mySearchedNodes);
     mySearchResults.addAll(sr.mySearchResults);

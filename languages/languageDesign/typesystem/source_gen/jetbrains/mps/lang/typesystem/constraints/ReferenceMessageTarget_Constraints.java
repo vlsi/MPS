@@ -4,7 +4,6 @@ package jetbrains.mps.lang.typesystem.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -30,12 +29,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ReferenceMessageTarget_Constraints extends BaseConstraintsDescriptor {
   public ReferenceMessageTarget_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8817443762339858024l, -6091446231697526094l), 1227096620180l));
+    super(MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a87c94L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(8817443762339858024l, -6091446231697526094l), 1227096620180l, 1227096645744l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(8817443762339858024l, -6091446231697526094l), 1227096620180l, 1227096645744l), this) {
+    references.put(MetaIdFactory.refId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a87c94L, 0x11db4a8e070L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a87c94L, 0x11db4a8e070L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -46,16 +45,16 @@ public class ReferenceMessageTarget_Constraints extends BaseConstraintsDescripto
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode messageStatement = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1227096774658l, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), true, false);
+            SNode messageStatement = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), true, false);
             if (messageStatement == null) {
               return Sequence.fromIterable(Collections.<SNode>emptyList());
             }
-            SNode nodetype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(messageStatement, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1227096774658l, 1227096802790l, "nodeToReport")));
+            SNode nodetype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(messageStatement, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, 0x11db4ab45e6L, "nodeToReport")));
             {
               IMatchingPattern pattern_h95xiq_d0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
               SNode coercedNode_h95xiq_d0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(nodetype, pattern_h95xiq_d0a0);
               if (coercedNode_h95xiq_d0a0 != null) {
-                return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(coercedNode_h95xiq_d0a0, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept")));
+                return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(coercedNode_h95xiq_d0a0, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")));
               } else {
                 return Sequence.fromIterable(Collections.<SNode>emptyList());
               }

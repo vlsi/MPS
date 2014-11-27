@@ -9,7 +9,6 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.ModelAccess;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
@@ -32,7 +31,7 @@ public class CreatePort_Test extends BaseTransformationTest {
       initEditor("2278461409093572745", "2278461409093572838");
       this.getEditorComponent().getOperationContext().getProject().getModelAccess().executeCommandInEDT(new Runnable() {
         public void run() {
-          SNodeFactoryOperations.addNewChild(SNodeOperations.cast(TestBody.this.getNodeById("2278461409093572746"), MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436817l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts")), MetaAdapterFactory.getContainmentLink(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436817l, 5540569706414436946l, "outputs"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(361801763181709765l, -5122951994527979137l), 5540569706414436906l, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort")));
+          SNodeFactoryOperations.addNewChild(SNodeOperations.cast(TestBody.this.getNodeById("2278461409093572746"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts")), MetaAdapterFactory.getContainmentLink(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L, 0x4ce40ecaf41f7252L, "outputs"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f722aL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort")));
         }
       });
       ModelAccess.instance().flushEventQueue();

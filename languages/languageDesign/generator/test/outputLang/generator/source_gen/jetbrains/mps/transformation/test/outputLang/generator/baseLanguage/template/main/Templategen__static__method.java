@@ -13,7 +13,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.Collection;
@@ -31,7 +30,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
     final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
     try {
       environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724041");
-      SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "fact");
+      SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "fact");
       {
         final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
         try {
@@ -63,7 +62,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
                         final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                         try {
                           environment.nodeCopied(context1, tnode8, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724069");
-                          SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "1");
+                          SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "1");
                         } finally {
                         }
                         if (tnode8 != null) {
@@ -105,7 +104,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
                     final SNode tnode11 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                     try {
                       environment.nodeCopied(context1, tnode11, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724066");
-                      SNodeAccessUtil.setProperty(tnode11, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "0");
+                      SNodeAccessUtil.setProperty(tnode11, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "0");
                     } finally {
                     }
                     if (tnode11 != null) {
@@ -160,7 +159,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
                             final SNode tnode17 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                             try {
                               environment.nodeCopied(context1, tnode17, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724055");
-                              SNodeAccessUtil.setProperty(tnode17, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "1");
+                              SNodeAccessUtil.setProperty(tnode17, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "1");
                             } finally {
                             }
                             if (tnode17 != null) {
@@ -230,7 +229,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
         final SNode tnode20 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
         try {
           environment.nodeCopied(context1, tnode20, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048");
-          SNodeAccessUtil.setProperty(tnode20, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "e");
+          SNodeAccessUtil.setProperty(tnode20, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "e");
           {
             final SNode tnode21 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerType");
             try {
@@ -258,7 +257,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
     final SNode tnode22 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
     try {
       environment.nodeCopied(context, tnode22, "tpl/r:00000000-0000-4000-0000-011c89590606/5955416080080987354");
-      SNodeAccessUtil.setProperty(tnode22, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "worker");
+      SNodeAccessUtil.setProperty(tnode22, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "worker");
       {
         final SNode tnode23 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VoidType");
         try {
@@ -308,7 +307,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
                     final SNode tnode28 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                     try {
                       environment.nodeCopied(context, tnode28, "tpl/r:00000000-0000-4000-0000-011c89590606/5955416080080987361");
-                      SNodeAccessUtil.setProperty(tnode28, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "3");
+                      SNodeAccessUtil.setProperty(tnode28, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "3");
                     } finally {
                     }
                     if (tnode28 != null) {

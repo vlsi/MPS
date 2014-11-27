@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -75,6 +76,10 @@ public class ForcedSaveAll_Action extends BaseAction {
         }
         language.updateSModelReferences();
         language.save();
+      }
+      for (Solution solution : Sequence.fromIterable(modules).ofType(Solution.class)) {
+        solution.updateSModelReferences();
+        solution.save();
       }
 
       for (EditableSModel model : ListSequence.fromList(allModels)) {

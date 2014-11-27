@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -237,7 +236,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ngl4rk_a3b1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1165253627126l, 1165254125954l, "presentation"), "custom", null);
+    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4e874cf6L, 0x10f4e8ee982L, "presentation"), "custom", null);
   }
   private EditorCell createConstant_ngl4rk_a3b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
@@ -285,7 +284,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ngl4rk_a4b1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1165253627126l, 1165254125954l, "presentation"), "custom", null);
+    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4e874cf6L, 0x10f4e8ee982L, "presentation"), "custom", null);
   }
   private EditorCell createConstant_ngl4rk_a4b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");

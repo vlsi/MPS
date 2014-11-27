@@ -3,63 +3,63 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="11,0,75,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.QueriesGenerated" />
+      <unit at="10,0,74,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273563034">
     <file name="QueriesGenerated.java">
-      <node id="3210697320273563064" at="14,112,15,201" concept="0" />
-      <node id="3210697320273563073" at="17,112,18,201" concept="0" />
-      <node id="3210697320273648349" at="20,112,21,201" concept="0" />
-      <node id="3210697320273648358" at="23,112,24,201" concept="0" />
-      <scope id="3210697320273563063" at="14,112,15,201" />
-      <scope id="3210697320273563072" at="17,112,18,201" />
-      <scope id="3210697320273648348" at="20,112,21,201" />
-      <scope id="3210697320273648357" at="23,112,24,201" />
+      <node id="3210697320273563064" at="13,112,14,185" concept="0" />
+      <node id="3210697320273563073" at="16,112,17,185" concept="0" />
+      <node id="3210697320273648349" at="19,112,20,185" concept="0" />
+      <node id="3210697320273648358" at="22,112,23,185" concept="0" />
+      <scope id="3210697320273563063" at="13,112,14,185" />
+      <scope id="3210697320273563072" at="16,112,17,185" />
+      <scope id="3210697320273648348" at="19,112,20,185" />
+      <scope id="3210697320273648357" at="22,112,23,185" />
     </file>
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273607275">
     <file name="QueriesGenerated.java">
-      <node id="3210697320273608241" at="26,112,27,201" concept="0" />
-      <node id="3210697320273608250" at="29,112,30,201" concept="0" />
-      <node id="3210697320273648399" at="32,112,33,201" concept="0" />
-      <node id="3210697320273648408" at="35,112,36,201" concept="0" />
-      <scope id="3210697320273608240" at="26,112,27,201" />
-      <scope id="3210697320273608249" at="29,112,30,201" />
-      <scope id="3210697320273648398" at="32,112,33,201" />
-      <scope id="3210697320273648407" at="35,112,36,201" />
+      <node id="3210697320273608241" at="25,112,26,185" concept="0" />
+      <node id="3210697320273608250" at="28,112,29,185" concept="0" />
+      <node id="3210697320273648399" at="31,112,32,185" concept="0" />
+      <node id="3210697320273648408" at="34,112,35,185" concept="0" />
+      <scope id="3210697320273608240" at="25,112,26,185" />
+      <scope id="3210697320273608249" at="28,112,29,185" />
+      <scope id="3210697320273648398" at="31,112,32,185" />
+      <scope id="3210697320273648407" at="34,112,35,185" />
     </file>
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273612346">
     <file name="QueriesGenerated.java">
-      <node id="3210697320273614398" at="38,112,39,201" concept="0" />
-      <node id="3210697320273614407" at="41,112,42,201" concept="0" />
-      <node id="3210697320273614418" at="44,112,45,201" concept="0" />
-      <node id="3210697320273614427" at="47,112,48,201" concept="0" />
-      <node id="3210697320273648553" at="50,112,51,201" concept="0" />
-      <node id="3210697320273648562" at="53,112,54,201" concept="0" />
-      <scope id="3210697320273614397" at="38,112,39,201" />
-      <scope id="3210697320273614406" at="41,112,42,201" />
-      <scope id="3210697320273614417" at="44,112,45,201" />
-      <scope id="3210697320273614426" at="47,112,48,201" />
-      <scope id="3210697320273648552" at="50,112,51,201" />
-      <scope id="3210697320273648561" at="53,112,54,201" />
+      <node id="3210697320273614398" at="37,112,38,185" concept="0" />
+      <node id="3210697320273614407" at="40,112,41,185" concept="0" />
+      <node id="3210697320273614418" at="43,112,44,185" concept="0" />
+      <node id="3210697320273614427" at="46,112,47,185" concept="0" />
+      <node id="3210697320273648553" at="49,112,50,185" concept="0" />
+      <node id="3210697320273648562" at="52,112,53,185" concept="0" />
+      <scope id="3210697320273614397" at="37,112,38,185" />
+      <scope id="3210697320273614406" at="40,112,41,185" />
+      <scope id="3210697320273614417" at="43,112,44,185" />
+      <scope id="3210697320273614426" at="46,112,47,185" />
+      <scope id="3210697320273648552" at="49,112,50,185" />
+      <scope id="3210697320273648561" at="52,112,53,185" />
     </file>
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273614443">
     <file name="QueriesGenerated.java">
-      <node id="3210697320273614495" at="56,112,57,201" concept="0" />
-      <node id="3210697320273614504" at="59,112,60,201" concept="0" />
-      <node id="3210697320273614515" at="62,112,63,201" concept="0" />
-      <node id="3210697320273614526" at="65,112,66,201" concept="0" />
-      <node id="3210697320273648472" at="68,112,69,201" concept="0" />
-      <node id="3210697320273648481" at="71,112,72,201" concept="0" />
-      <scope id="3210697320273614494" at="56,112,57,201" />
-      <scope id="3210697320273614503" at="59,112,60,201" />
-      <scope id="3210697320273614514" at="62,112,63,201" />
-      <scope id="3210697320273614525" at="65,112,66,201" />
-      <scope id="3210697320273648471" at="68,112,69,201" />
-      <scope id="3210697320273648480" at="71,112,72,201" />
+      <node id="3210697320273614495" at="55,112,56,185" concept="0" />
+      <node id="3210697320273614504" at="58,112,59,185" concept="0" />
+      <node id="3210697320273614515" at="61,112,62,185" concept="0" />
+      <node id="3210697320273614526" at="64,112,65,185" concept="0" />
+      <node id="3210697320273648472" at="67,112,68,185" concept="0" />
+      <node id="3210697320273648481" at="70,112,71,185" concept="0" />
+      <scope id="3210697320273614494" at="55,112,56,185" />
+      <scope id="3210697320273614503" at="58,112,59,185" />
+      <scope id="3210697320273614514" at="61,112,62,185" />
+      <scope id="3210697320273614525" at="64,112,65,185" />
+      <scope id="3210697320273648471" at="67,112,68,185" />
+      <scope id="3210697320273648480" at="70,112,71,185" />
     </file>
   </root>
 </debug-info>

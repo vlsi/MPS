@@ -27,7 +27,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
@@ -67,7 +66,7 @@ public class ClassLikes_ActionGroup extends GeneratedActionGroup {
         }
       }).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
-          return SModelOperations.roots(((SModel) it), MetaAdapterFactory.getConcept(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor"));
+          return SModelOperations.roots(((SModel) it), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor"));
         }
       });
 

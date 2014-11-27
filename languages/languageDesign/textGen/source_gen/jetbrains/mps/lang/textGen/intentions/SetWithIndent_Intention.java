@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -47,7 +46,7 @@ public class SetWithIndent_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305557638l, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305334312l, "jetbrains.mps.lang.textGen.structure.NodeAppendPart"));
+    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015251a28L, "jetbrains.mps.lang.textGen.structure.NodeAppendPart"));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:7651b6e0-753b-4bcf-af83-d3dfc31e29e7(jetbrains.mps.lang.textGen.intentions)", "1236698667104");
@@ -69,10 +68,10 @@ public class SetWithIndent_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       boolean indent = BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_withIndent_1237466287046", new Object[]{});
-      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305557638l, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"))) {
-        SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305557638l, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")), MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305557638l, 1237306361677l, "withIndent"), "" + (!(indent)));
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"))) {
+        SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")), MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, 0x1201534c74dL, "withIndent"), "" + (!(indent)));
       } else {
-        SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305334312l, "jetbrains.mps.lang.textGen.structure.NodeAppendPart")), MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305334312l, 1237306318654l, "withIndent"), "" + (!(indent)));
+        SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015251a28L, "jetbrains.mps.lang.textGen.structure.NodeAppendPart")), MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015251a28L, 0x12015341f3eL, "withIndent"), "" + (!(indent)));
       }
     }
     public IntentionDescriptor getDescriptor() {

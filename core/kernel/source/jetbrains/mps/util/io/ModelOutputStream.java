@@ -227,7 +227,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeShort(myLanguage2Index.get(id));
     } else {
       writeByte(LANGUAGE);
-      writeUUID(id.getId());
+      writeUUID(id.getIdValue());
       writeString(lang.getQualifiedName());
       myLanguage2Index.put(id, myLanguageIndex++);
     }
@@ -244,8 +244,8 @@ public class ModelOutputStream extends DataOutputStream {
       writeShort(myConcept2Index.get(id));
     } else {
       writeByte(CONCEPT);
-      writeUUID(id.getLanguageId().getId());
-      writeLong(id.getConceptId());
+      writeUUID(id.getLanguageId().getIdValue());
+      writeLong(id.getIdValue());
       writeString(concept.getQualifiedName()); // FIXME MetaAdapterFactory shall be explicit about what concept name it takes
       myConcept2Index.put(id, myConceptIndex++);
     }
@@ -262,7 +262,7 @@ public class ModelOutputStream extends DataOutputStream {
     } else {
       writeByte(PROPERTY);
       writeConcept(property.getContainingConcept());
-      writeLong(id.getPropertyId());
+      writeLong(id.getIdValue());
       writeString(property.getName());
       myProperty2Index.put(id, myPropertyIndex++);
     }
@@ -279,7 +279,7 @@ public class ModelOutputStream extends DataOutputStream {
     } else {
       writeByte(ASSOCIATION);
       writeConcept(link.getContainingConcept());
-      writeLong(id.getReferenceLinkId());
+      writeLong(id.getIdValue());
       writeString(link.getRoleName());
       myAssociation2Index.put(id, myAssociationIndex++);
     }
@@ -296,7 +296,7 @@ public class ModelOutputStream extends DataOutputStream {
     } else {
       writeByte(AGGREGATION);
       writeConcept(link.getContainingConcept());
-      writeLong(id.getContainmentLinkId());
+      writeLong(id.getIdValue());
       writeString(link.getRoleName());
       myAggregation2Index.put(id, myAggregationIndex++);
     }

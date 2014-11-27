@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -20,40 +19,40 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public final class CrossModelUtil {
   public SNode newEntry(ExportLabelContext labelContext, SNode exportLabel, SModel exports, SModel outputModel) {
-    SNode rv = SModelOperations.createNewNode(exports, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, "jetbrains.mps.lang.generator.structure.ExportEntry")));
-    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546942803148l, "outputModel"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ModelIdentity")), "call_create_9032177546942789358", new Object[]{exports, outputModel}));
-    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546941575207l, "inputNode"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeIdentity")), "call_create_9032177546941796951", new Object[]{exports, labelContext.getInput()}));
-    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546941575209l, "outputNode"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeIdentity")), "call_create_9032177546941796951", new Object[]{exports, labelContext.getOutput()}));
-    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546941575212l, "dataKeeper"), labelContext.getKeeper());
-    SLinkOperations.setTarget(rv, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546941634307l, "label"), exportLabel);
+    SNode rv = SModelOperations.createNewNode(exports, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, "jetbrains.mps.lang.generator.structure.ExportEntry")));
+    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9c8ecccL, "outputModel"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ModelIdentity")), "call_create_9032177546942789358", new Object[]{exports, outputModel}));
+    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63027L, "inputNode"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeIdentity")), "call_create_9032177546941796951", new Object[]{exports, labelContext.getInput()}));
+    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63029L, "outputNode"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeIdentity")), "call_create_9032177546941796951", new Object[]{exports, labelContext.getOutput()}));
+    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b6302cL, "dataKeeper"), labelContext.getKeeper());
+    SLinkOperations.setTarget(rv, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b71703L, "label"), exportLabel);
     return rv;
   }
   public SModel newProxyModel(TransientModelsModule module, SNode exportEntry) {
-    return BehaviorReflection.invokeVirtual((Class<SModel>) ((Class) Object.class), SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546942803148l, "outputModel")), "virtual_create_9032177546944490023", new Object[]{module});
+    return BehaviorReflection.invokeVirtual((Class<SModel>) ((Class) Object.class), SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9c8ecccL, "outputModel")), "virtual_create_9032177546944490023", new Object[]{module});
   }
   public SNode newProxyNode(SNode exportEntry, SModel proxyModel) {
     // we record actual concept of output node, and use it instead of ExportLabel.outputKind, which 
     // will be still there for label validation/code completion purposes 
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546941575209l, "outputNode")), "virtual_instantiate_9032177546941558391", new Object[]{proxyModel});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63029L, "outputNode")), "virtual_instantiate_9032177546941558391", new Object[]{proxyModel});
   }
   public List<SNode> find(SModel exports, final String exportLabelName, final SNode inputNode) {
-    return ListSequence.fromList(SModelOperations.nodes(exports, MetaAdapterFactory.getConcept(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, "jetbrains.mps.lang.generator.structure.ExportEntry"))).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.nodes(exports, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, "jetbrains.mps.lang.generator.structure.ExportEntry"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return exportLabelName.equals(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546941634307l, "label")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546941575207l, "inputNode")), "virtual_match_1662555581307437492", new Object[]{inputNode});
+        return exportLabelName.equals(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b71703L, "label")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63027L, "inputNode")), "virtual_match_1662555581307437492", new Object[]{inputNode});
       }
     }).toListSequence();
   }
   public static String getMarshalFunctionName(SNode exportLabel) {
-    return "marshal_" + SLinkOperations.getTarget(exportLabel, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 494100551407614666l, 494100551407752201l, "marshal")).getNodeId().toString();
+    return "marshal_" + SLinkOperations.getTarget(exportLabel, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x6db65d569f9bacaL, 0x6db65d569fbd409L, "marshal")).getNodeId().toString();
   }
   public static String getUnmarshalFunctionName(SNode exportLabel) {
-    return "unmarshal_" + SLinkOperations.getTarget(exportLabel, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 494100551407614666l, 494100551407752226l, "unmarshal")).getNodeId().toString();
+    return "unmarshal_" + SLinkOperations.getTarget(exportLabel, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x6db65d569f9bacaL, 0x6db65d569fbd422L, "unmarshal")).getNodeId().toString();
   }
   public static String getUnmarshalFunctionNameFromEntry(SNode exportEntry) {
-    return getUnmarshalFunctionName(SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546941634307l, "label")));
+    return getUnmarshalFunctionName(SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b71703L, "label")));
   }
   public static SNode dataKept(SNode exportEntry) {
-    return SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 9032177546941420365l, 9032177546941575212l, "dataKeeper"));
+    return SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b6302cL, "dataKeeper"));
   }
 
 }

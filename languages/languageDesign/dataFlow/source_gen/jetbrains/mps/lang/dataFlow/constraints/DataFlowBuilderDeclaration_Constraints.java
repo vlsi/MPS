@@ -4,7 +4,6 @@ package jetbrains.mps.lang.dataFlow.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
@@ -23,7 +22,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescriptor {
   public DataFlowBuilderDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(9196683164725627254l, -5405980172761227084l), 1206442055221l));
+    super(MetaIdFactory.conceptId(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L));
   }
   @Override
   public boolean hasOwnCanBeRootMethod() {
@@ -42,7 +41,7 @@ public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescr
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l), this) {
+    properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L), this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
@@ -50,7 +49,7 @@ public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescr
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
-        return SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(9196683164725627254l, -5405980172761227084l), 1206442055221l, 1206442096288l, "conceptDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_DataFlow";
+        return SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, 0x118e58d76a0L, "conceptDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_DataFlow";
       }
     });
     return properties;

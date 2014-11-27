@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -20,7 +19,7 @@ public class check_BuildFileExcludeSelector_NonTypesystemRule extends AbstractNo
   public check_BuildFileExcludeSelector_NonTypesystemRule() {
   }
   public void applyRule(final SNode ex, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (isNotEmptyString(SPropertyOperations.getString(ex, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288051111l, 5248329904288051112l, "pattern"))) && (SPropertyOperations.getString(ex, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288051111l, 5248329904288051112l, "pattern")).contains(" ") || SPropertyOperations.getString(ex, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288051111l, 5248329904288051112l, "pattern")).contains("\t") || SPropertyOperations.getString(ex, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288051111l, 5248329904288051112l, "pattern")).contains(","))) {
+    if (isNotEmptyString(SPropertyOperations.getString(ex, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9262fa7L, 0x48d5d03db9262fa8L, "pattern"))) && (SPropertyOperations.getString(ex, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9262fa7L, 0x48d5d03db9262fa8L, "pattern")).contains(" ") || SPropertyOperations.getString(ex, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9262fa7L, 0x48d5d03db9262fa8L, "pattern")).contains("\t") || SPropertyOperations.getString(ex, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9262fa7L, 0x48d5d03db9262fa8L, "pattern")).contains(","))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("pattern");

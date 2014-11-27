@@ -5,12 +5,11 @@ package jetbrains.mps.lang.script.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class FQNameMethodSpecification_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPresentation_7941431147614164371(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 4774682482449847011l, 2291767839160466985l, "snodeId"));
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4243146ba1b412e3L, 0x1fcdfeb518d2fe29L, "snodeId"));
   }
 }

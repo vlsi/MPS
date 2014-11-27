@@ -34,7 +34,6 @@ public class InspectorEditorComponent extends EditorComponent {
     this(p, false, false);
   }
 
-  @Deprecated
   public InspectorEditorComponent(@NotNull SRepository repository, boolean rightToLeft) {
     this(repository, false, rightToLeft);
   }

@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -46,7 +45,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_pubti2_a0(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(784887283248351340l, -6048570108212440173l), 6820702584719416486l, 6820702584719569331l, "customConstructor")), MetaAdapterFactory.getProperty(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701954l, 3330196687714050064l, "leftParenthesis"));
+        return SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, 0x5ea800dcf8cc71b3L, "customConstructor")), MetaAdapterFactory.getProperty(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x7500da2cf0943c2L, 0x2e373c3e4b60e010L, "leftParenthesis"));
       }
       public void setText(String text) {
       }
@@ -74,7 +73,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
             RefNodeListHandler handler = new RefNodeListHandler(node, "element", editorContext) {
               @Override
               public SNode createNodeToInsert(EditorContext p0) {
-                return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression")), null);
+                return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), null);
               }
               @Override
               public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
@@ -94,7 +93,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
                   if (elementNode != null) {
                     elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
                     elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
-                    elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(784887283248351340l, -6048570108212440173l), 6820702584719416486l, 6820702584719569331l, "customConstructor")), MetaAdapterFactory.getProperty(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701954l, 3330196687714050063l, "separator"))));
+                    elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, 0x5ea800dcf8cc71b3L, "customConstructor")), MetaAdapterFactory.getProperty(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x7500da2cf0943c2L, 0x2e373c3e4b60e00fL, "separator"))));
                   }
                   if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
                     elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -102,7 +101,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
                 }
               }
               public EditorCell createSeparatorCell(EditorContext editorContext) {
-                EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(784887283248351340l, -6048570108212440173l), 6820702584719416486l, 6820702584719569331l, "customConstructor")), MetaAdapterFactory.getProperty(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701954l, 3330196687714050063l, "separator")));
+                EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, 0x5ea800dcf8cc71b3L, "customConstructor")), MetaAdapterFactory.getProperty(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x7500da2cf0943c2L, 0x2e373c3e4b60e00fL, "separator")));
                 editorCell.setSelectable(false);
                 editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
                 editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -122,7 +121,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_pubti2_c0(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(784887283248351340l, -6048570108212440173l), 6820702584719416486l, 6820702584719569331l, "customConstructor")), MetaAdapterFactory.getProperty(new UUID(784887283248351340l, -6048570108212440173l), 526936149311701954l, 3330196687714050065l, "rightParenthesis"));
+        return SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, 0x5ea800dcf8cc71b3L, "customConstructor")), MetaAdapterFactory.getProperty(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x7500da2cf0943c2L, 0x2e373c3e4b60e011L, "rightParenthesis"));
       }
       public void setText(String text) {
       }

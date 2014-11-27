@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -21,7 +20,7 @@ public class CopySrcListMacro_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
-    SNode queryType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1114729360583l, 1168278589236l, "sourceNodesQuery")));
+    SNode queryType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1038b0c2cc7L, 0x11002d48f34L, "sourceNodesQuery")));
     {
       GeneratedMatchingPattern pattern_26ny8p_b0a = new CopySrcListMacro_Behavior.Pattern_26ny8p_a0a0a1a1();
       SNode coercedNode_26ny8p_b0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_26ny8p_b0a);
@@ -33,10 +32,10 @@ public class CopySrcListMacro_Behavior {
     return null;
   }
   public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1114729360583l, 1168278589236l, "sourceNodesQuery")) == child) {
+    if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1038b0c2cc7L, 0x11002d48f34L, "sourceNodesQuery")) == child) {
       return false;
     }
-    if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 5169995583184591161l, "jetbrains.mps.lang.core.structure.Attribute")) && ListSequence.fromList(AttributeOperations.getAttributeList(SNodeOperations.getParent(thisNode), new IAttributeDescriptor.AllAttributes())).contains(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 5169995583184591161l, "jetbrains.mps.lang.core.structure.Attribute")))) {
+    if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute")) && ListSequence.fromList(AttributeOperations.getAttributeList(SNodeOperations.getParent(thisNode), new IAttributeDescriptor.AllAttributes())).contains(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute")))) {
       return false;
     }
     return true;
@@ -53,7 +52,7 @@ public class CopySrcListMacro_Behavior {
           return false;
         }
         {
-          SContainmentLink childRole_26ny8p_ = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType");
+          SContainmentLink childRole_26ny8p_ = MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, 0x10c260ee40eL, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_26ny8p_a0a1a0, childRole_26ny8p_, 1))) {
             return false;
           }
@@ -64,7 +63,7 @@ public class CopySrcListMacro_Behavior {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_26ny8p_a0a0b0a.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_26ny8p_a0a0b0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
+              patternVar_concept = nodeToMatch_26ny8p_a0a0b0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));
             }
           }
         }

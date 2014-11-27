@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.build.util.GenerationUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -29,7 +28,7 @@ public class RequiredPlugins {
   private final List<SNode> myPlugins = ListSequence.fromList(new ArrayList<SNode>());
   public RequiredPlugins(SNode project, TemplateQueryContext genContext) {
     myContext = genContext;
-    ListSequence.fromList(myPlugins).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(project, MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"), false, new SAbstractConcept[]{})));
+    ListSequence.fromList(myPlugins).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(project, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"), false, new SAbstractConcept[]{})));
     myRoot = project;
     myDependency = GenerationUtil.<SNode>getSessionSet(project, genContext, KEY);
   }
@@ -37,13 +36,13 @@ public class RequiredPlugins {
     myContext = genContext;
     ListSequence.fromList(myPlugins).addElement(initialPlugin);
     myRoot = SNodeOperations.getContainingRoot(initialPlugin);
-    myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject")), genContext, KEY);
+    myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), genContext, KEY);
   }
   public RequiredPlugins(TemplateQueryContext genContext, SNode root, Iterable<SNode> initialPlugins) {
     myContext = genContext;
     ListSequence.fromList(myPlugins).addSequence(Sequence.fromIterable(initialPlugins));
     myRoot = root;
-    myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject")), genContext, KEY);
+    myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), genContext, KEY);
   }
   public void collectDependencies() {
     Set<SNode> visited = SetSequence.fromSet(new LinkedHashSet<SNode>());
@@ -69,10 +68,10 @@ public class RequiredPlugins {
   }
   private void collectDependencies(SNode plugin, Set<SNode> visited) {
     SetSequence.fromSet(visited).addElement(plugin);
-    for (SNode dependency : ListSequence.fromList(SLinkOperations.getChildren(plugin, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 6592112598314499028l, "dependencies")))) {
-      SNode dependencyPlugin = SLinkOperations.getTarget(dependency, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314499027l, 6592112598314499066l, "target"));
+    for (SNode dependency : ListSequence.fromList(SLinkOperations.getChildren(plugin, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, 0x5b7be37b4de9bbd4L, "dependencies")))) {
+      SNode dependencyPlugin = SLinkOperations.getTarget(dependency, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbd3L, 0x5b7be37b4de9bbfaL, "target"));
       if (SNodeOperations.getContainingRoot(dependencyPlugin) != myRoot) {
-        dependencyPlugin = SNodeOperations.as(DependenciesHelper.getOriginalNode(dependencyPlugin, myContext), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"));
+        dependencyPlugin = SNodeOperations.as(DependenciesHelper.getOriginalNode(dependencyPlugin, myContext), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"));
         if (dependencyPlugin == null) {
           continue;
         }

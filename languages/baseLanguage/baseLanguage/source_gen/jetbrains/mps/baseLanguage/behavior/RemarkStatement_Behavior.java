@@ -5,13 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class RemarkStatement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean call_isTodo_1213877427548(SNode thisNode) {
-    String v = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1168622733562l, 1168623065899l, "value"));
+    String v = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, 0x110175cdb2bL, "value"));
     boolean isToDo = false;
     if (v != null) {
       isToDo = v.startsWith("TODO:") || v.startsWith("FIX:") || v.startsWith("todo:");

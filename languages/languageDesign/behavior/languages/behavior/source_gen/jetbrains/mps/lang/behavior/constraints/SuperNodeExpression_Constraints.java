@@ -4,7 +4,6 @@ package jetbrains.mps.lang.behavior.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -28,7 +27,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
   public SuperNodeExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194628440l));
+    super(MetaIdFactory.conceptId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -47,7 +46,7 @@ public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194628440l, 5299096511375896640l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194628440l, 5299096511375896640l), this) {
+    references.put(MetaIdFactory.refId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, 0x498a2c3387127040L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, 0x498a2c3387127040L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -59,21 +58,21 @@ public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            SNode abstractConceptDeclaration = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getReferenceNode(), MetaAdapterFactory.getConcept(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), false, false), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept"));
-            if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+            SNode abstractConceptDeclaration = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getReferenceNode(), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), false, false), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"));
+            if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
               SNode cd = (SNode) abstractConceptDeclaration;
-              SNode extendsNode = SLinkOperations.getTarget(cd, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
+              SNode extendsNode = SLinkOperations.getTarget(cd, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
               if (extendsNode != null) {
                 ListSequence.fromList(result).addElement(extendsNode);
               }
-              for (SNode itfcRef : SLinkOperations.getChildren(cd, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements"))) {
-                ListSequence.fromList(result).addElement(SLinkOperations.getTarget(itfcRef, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc")));
+              for (SNode itfcRef : SLinkOperations.getChildren(cd, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements"))) {
+                ListSequence.fromList(result).addElement(SLinkOperations.getTarget(itfcRef, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc")));
               }
             }
-            if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
+            if (SNodeOperations.isInstanceOf(abstractConceptDeclaration, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
               SNode itfc = (SNode) abstractConceptDeclaration;
-              for (SNode itfcRef : SLinkOperations.getChildren(itfc, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, 1169127546356l, "extends"))) {
-                ListSequence.fromList(result).addElement(SLinkOperations.getTarget(itfcRef, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc")));
+              for (SNode itfcRef : SLinkOperations.getChildren(itfc, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, 0x110356e9df4L, "extends"))) {
+                ListSequence.fromList(result).addElement(SLinkOperations.getTarget(itfcRef, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc")));
               }
             }
             return result;

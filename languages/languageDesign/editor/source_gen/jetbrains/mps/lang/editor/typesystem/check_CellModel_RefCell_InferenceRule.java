@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -20,7 +19,7 @@ public class check_CellModel_RefCell_InferenceRule extends AbstractInferenceRule
   public check_CellModel_RefCell_InferenceRule() {
   }
   public void applyRule(final SNode refCell, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(refCell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"))))) {
+    if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(refCell, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"))))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(refCell, "multiple cardinality link is not applicable", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180280232711", null, errorTarget);
     }

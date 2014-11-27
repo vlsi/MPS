@@ -7,7 +7,6 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.MacroHelper;
@@ -26,7 +25,7 @@ import jetbrains.mps.vfs.FileSystem;
 
 public class ModuleLoaderUtils {
   public static SNode getOriginalModule(SNode module, TemplateQueryContext genContext) {
-    SNode originalModule = SNodeOperations.as(DependenciesHelper.getOriginalNode(module, genContext), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
+    SNode originalModule = SNodeOperations.as(DependenciesHelper.getOriginalNode(module, genContext), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
     return (originalModule != null ? originalModule : module);
   }
 
@@ -77,13 +76,13 @@ public class ModuleLoaderUtils {
 
         String macroName = path.substring(2, index);
         SNode found = null;
-        for (SNode macro : SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(originalModule, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, "jetbrains.mps.build.structure.BuildProject"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))) {
-          if (!(SNodeOperations.isInstanceOf(macro, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, "jetbrains.mps.build.structure.BuildFolderMacro")))) {
+        for (SNode macro : SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(originalModule, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"))) {
+          if (!(SNodeOperations.isInstanceOf(macro, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro")))) {
             continue;
           }
 
-          if (eq_krgnbt_a0c0f0d0f4(SPropertyOperations.getString(macro, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), macroName)) {
-            found = SNodeOperations.cast(macro, MetaAdapterFactory.getConcept(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, "jetbrains.mps.build.structure.BuildFolderMacro"));
+          if (eq_krgnbt_a0c0f0d0f4(SPropertyOperations.getString(macro, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), macroName)) {
+            found = SNodeOperations.cast(macro, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"));
             break;
           }
         }
@@ -92,7 +91,7 @@ public class ModuleLoaderUtils {
           return path;
         }
 
-        String localPath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(found, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, 7389400916848144618l, "defaultPath")), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())});
+        String localPath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(found, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, 0x668c6cfbafadf0eaL, "defaultPath")), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())});
         if (localPath == null) {
           if (genContext != null) {
             genContext.showWarningMessage(found, "cannot resolve local path: " + path + ", macro has no default value");

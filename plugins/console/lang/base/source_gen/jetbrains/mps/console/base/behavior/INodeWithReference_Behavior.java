@@ -6,10 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -18,18 +15,17 @@ public class INodeWithReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
-    SNode targetNode = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target"));
+    SNode targetNode = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"));
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     if (mpsProject == null) {
       return;
     }
-    IOperationContext context = new ProjectOperationContext(mpsProject);
-    NavigationSupport.getInstance().openNode(context, targetNode, true, !(SNodeOperations.isRoot(targetNode)));
+    NavigationSupport.getInstance().openNode(mpsProject, targetNode, true, !(SNodeOperations.isRoot(targetNode)));
   }
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target")) != null;
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")) != null;
   }
   public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588102084l, "referencePresentation")) + " (deleted node)";
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e75e1c4L, "referencePresentation")) + " (deleted node)";
   }
 }

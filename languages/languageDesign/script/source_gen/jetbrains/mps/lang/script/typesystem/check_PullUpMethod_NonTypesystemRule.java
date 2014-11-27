@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,7 +18,7 @@ public class check_PullUpMethod_NonTypesystemRule extends AbstractNonTypesystemR
   public check_PullUpMethod_NonTypesystemRule() {
   }
   public void applyRule(final SNode pullUpMethod, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(pullUpMethod, MetaAdapterFactory.getReferenceLink(new UUID(1071275047162102839l, -4887287056175405968l), 849077997121870276l, 4242940223545038298l, "newMethodDeclaration")) == null && SLinkOperations.getTarget(pullUpMethod, MetaAdapterFactory.getContainmentLink(new UUID(1071275047162102839l, -4887287056175405968l), 849077997121870276l, 4774682482449846913l, "oldMethodSpecification")) == null) {
+    if (SLinkOperations.getTarget(pullUpMethod, MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0xbc887f0950c99c4L, 0x3ae1f3a73b9e55daL, "newMethodDeclaration")) == null && SLinkOperations.getTarget(pullUpMethod, MetaAdapterFactory.getContainmentLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0xbc887f0950c99c4L, 0x4243146ba1b41281L, "oldMethodSpecification")) == null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(pullUpMethod, "Either old or new method should be specified", "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)", "7867202088808423945", null, errorTarget);

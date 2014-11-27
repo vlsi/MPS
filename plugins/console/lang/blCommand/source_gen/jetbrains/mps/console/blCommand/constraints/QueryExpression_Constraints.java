@@ -4,7 +4,6 @@ package jetbrains.mps.console.blCommand.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
@@ -18,7 +17,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class QueryExpression_Constraints extends BaseConstraintsDescriptor {
   public QueryExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l));
+    super(MetaIdFactory.conceptId(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL));
   }
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
@@ -36,10 +35,10 @@ public class QueryExpression_Constraints extends BaseConstraintsDescriptor {
   }
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
     // QueryParameter is abstract, so it is already highlighted as invalid 
-    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544565l, "jetbrains.mps.console.blCommand.structure.QueryParameter"))) {
+    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L, "jetbrains.mps.console.blCommand.structure.QueryParameter"))) {
       return true;
     }
-    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544565l, "jetbrains.mps.console.blCommand.structure.QueryParameter"))) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L, "jetbrains.mps.console.blCommand.structure.QueryParameter"))) {
       return Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).contains((SNode) childConcept);
     }
     return true;

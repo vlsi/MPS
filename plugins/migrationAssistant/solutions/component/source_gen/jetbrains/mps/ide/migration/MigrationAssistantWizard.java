@@ -7,15 +7,22 @@ import com.intellij.openapi.project.Project;
 import java.util.Arrays;
 import jetbrains.mps.ide.migration.wizard.InitialStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
-import jetbrains.mps.ide.migration.wizard.MigrationsFinishedStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsErrorStep;
+import java.awt.Dimension;
 import jetbrains.mps.ide.migration.wizard.MigrationStep;
 import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.SwingUtilities;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project, MigrationManager manager) {
-    super("Migration Assistant Wizard", project, Arrays.asList(new InitialStep(project), new MigrationsProgressStep(project, manager), new MigrationsFinishedStep(project), new MigrationsErrorStep(project)));
+    super("Migration Assistant Wizard", project, Arrays.asList(new InitialStep(project), new MigrationsProgressStep(project, manager), new MigrationsErrorStep(project)));
+    Dimension oldSize = super.getPreferredSize();
+    setSize(((int) oldSize.getWidth()), ((int) (oldSize.getHeight() + 90)));
+  }
+
+  @Override
+  public boolean isAutoAdjustable() {
+    return false;
   }
   @Override
   protected void updateStep() {
@@ -26,20 +33,21 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   protected void doNextAction() {
     super.doNextAction();
     final Runnable task = ((MigrationStep) getCurrentStepObject()).getAutostartTask();
-    if (task != null) {
-      ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-        @Override
-        public void run() {
-          task.run();
-          SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-              updateStep();
-            }
-          });
-        }
-      });
+    if (task == null) {
+      return;
     }
+
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        task.run();
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            updateStep();
+          }
+        });
+      }
+    });
+
   }
   public boolean isFinishSuccessfull() {
     return ((MigrationsProgressStep) mySteps.get(1)).isSuccessfull();

@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-atdpwxyrohn8y34r7e0n6wp5oevzn6k" />
+<dependencies version="2" modelHash="-3dz9y8ido4cppmmzhnjel7min0uaqr">
+  <dep model="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)" hash="573h4hhjltekhafe7rgrq1w4h75alp6" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="7acg7jfloizfkh7fz9512hws89btuf5" />
+  <common hash="-dxesmjzzbuovd4wx7mnjsejgke1n168" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="4355167635272070277" name="First" hash="b9fp5o972twtymlpm45qkbxaxkksef4">
+    <dep model="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)" />
+    <file name="FirstBeanImpl.java" />
+  </source>
+</dependencies>
 

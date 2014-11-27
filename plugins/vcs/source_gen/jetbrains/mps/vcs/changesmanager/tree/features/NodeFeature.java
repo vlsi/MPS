@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,7 +22,7 @@ public class NodeFeature extends AbstractNodeFeature {
     SNode node = getNodePointer().resolve(MPSModuleRepository.getInstance());
     SNode parentNode = SNodeOperations.getParent(node);
     if (parentNode == null) {
-      String virtualPackage = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"));
+      String virtualPackage = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"));
       if ((virtualPackage == null || virtualPackage.length() == 0)) {
         return null;
       } else {

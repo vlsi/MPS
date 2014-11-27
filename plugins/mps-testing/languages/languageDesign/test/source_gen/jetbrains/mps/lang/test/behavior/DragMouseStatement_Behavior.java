@@ -5,12 +5,11 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class DragMouseStatement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getPressMouseStatement_4196004291146433125(SNode thisNode) {
-    return SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 210559400605421433l, "jetbrains.mps.lang.test.structure.PressMouseStatement"), false, false);
+    return SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2ec0ea8c5348f79L, "jetbrains.mps.lang.test.structure.PressMouseStatement"), false, false);
   }
 }

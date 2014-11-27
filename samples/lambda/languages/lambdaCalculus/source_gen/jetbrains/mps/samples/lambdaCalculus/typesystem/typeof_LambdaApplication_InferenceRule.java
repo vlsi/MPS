@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -30,7 +29,7 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
     }
     SNode result = typeCheckingContext.getRepresentative(R_typevar_247065157659474768);
     List<SNode> reversedNodes = new ArrayList<SNode>();
-    for (SNode node : SLinkOperations.getChildren(lambdaApplication, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, 4022026349914762721l, "argument"))) {
+    for (SNode node : SLinkOperations.getChildren(lambdaApplication, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, 0x37d11ba7d7ee2de1L, "argument"))) {
       ListSequence.fromList(reversedNodes).insertElement(0, node);
     }
     for (SNode node : reversedNodes) {
@@ -43,7 +42,7 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
       result = _quotation_createNode_uumt54_a0c0f0b(typeCheckingContext.getRepresentative(D_typevar_247065157659474805), result);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lambdaApplication, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, 4022026349914762720l, "function"));
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lambdaApplication, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, 0x37d11ba7d7ee2de0L, "function"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474826", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474830", true), (SNode) result, _info_12389875345);
     }
@@ -68,11 +67,11 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.FunctionType", null, null, false);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
-      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4530871765544139496l, 4530871765544139497l, "domain"), HUtil.copyIfNecessary(quotedNode_4));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afae8L, 0x3ee0e3dd7c1afae9L, "domain"), HUtil.copyIfNecessary(quotedNode_4));
     }
     quotedNode_5 = (SNode) parameter_2;
     if (quotedNode_5 != null) {
-      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4530871765544139496l, 4530871765544139498l, "range"), HUtil.copyIfNecessary(quotedNode_5));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afae8L, 0x3ee0e3dd7c1afaeaL, "range"), HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
   }

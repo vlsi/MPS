@@ -11,7 +11,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -23,10 +22,10 @@ public class typeof_DecisionTable_InferenceRule extends AbstractInferenceRule_Ru
     {
       SNode _nodeToCheck_1029348928467 = decisionTable;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607019360", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607019357", true), (SNode) SNodeOperations.copyNode(SLinkOperations.getTarget(decisionTable, MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934914l, "expectedType"))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607019357", true), (SNode) SNodeOperations.copyNode(SLinkOperations.getTarget(decisionTable, MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1582L, "expectedType"))), _info_12389875345);
     }
 
-    for (SNode e : ListSequence.fromList(SLinkOperations.getChildren(decisionTable, MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934917l, "rowHeaders")))) {
+    for (SNode e : ListSequence.fromList(SLinkOperations.getChildren(decisionTable, MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1585L, "rowHeaders")))) {
       if (!(typeCheckingContext.isSingleTypeComputation())) {
         {
           SNode _nodeToCheck_1029348928467 = e;
@@ -35,7 +34,7 @@ public class typeof_DecisionTable_InferenceRule extends AbstractInferenceRule_Ru
         }
       }
     }
-    for (SNode e : ListSequence.fromList(SLinkOperations.getChildren(decisionTable, MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934916l, "colHeaders")))) {
+    for (SNode e : ListSequence.fromList(SLinkOperations.getChildren(decisionTable, MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1584L, "colHeaders")))) {
       if (!(typeCheckingContext.isSingleTypeComputation())) {
         {
           SNode _nodeToCheck_1029348928467 = e;
@@ -44,7 +43,7 @@ public class typeof_DecisionTable_InferenceRule extends AbstractInferenceRule_Ru
         }
       }
     }
-    for (SNode e : ListSequence.fromList(SLinkOperations.getChildren(decisionTable, MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934918l, "resultValues")))) {
+    for (SNode e : ListSequence.fromList(SLinkOperations.getChildren(decisionTable, MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1586L, "resultValues")))) {
       if (!(typeCheckingContext.isSingleTypeComputation())) {
         {
           SNode _nodeToCheck_1029348928467 = e;
@@ -55,7 +54,7 @@ public class typeof_DecisionTable_InferenceRule extends AbstractInferenceRule_Ru
     }
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(decisionTable, MetaAdapterFactory.getContainmentLink(new UUID(7332210280601372309l, -5798294350429609945l), 1987251859606934913l, 1987251859606934915l, "defaultValue"));
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(decisionTable, MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1583L, "defaultValue"));
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015373", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607015375", true), (SNode) typeCheckingContext.typeOf(decisionTable, "r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)", "1987251859607091408", true), true, true, _info_12389875345);
       }

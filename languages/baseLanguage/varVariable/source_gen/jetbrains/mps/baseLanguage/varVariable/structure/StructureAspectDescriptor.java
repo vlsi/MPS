@@ -6,14 +6,13 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptVarVariableDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.varVariable.structure.VarVariableDeclaration", MetaIdFactory.conceptId(new UUID(5860681508984998580L, -7527433366200365435L), 1236693300889L)).super_("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").super_(MetaIdFactory.conceptId(new UUID(-935030926396207931L, -6610165693999523818L), 1068581242863L)).parents("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(new UUID(-935030926396207931L, -6610165693999523818L), 1068581242863L), MetaIdFactory.conceptId(new UUID(-3554657779850784990L, -7236703803128771572L), 1169194658468L)).alias("var", "var definition").create();
+  /*package*/ final ConceptDescriptor myConceptVarVariableDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.varVariable.structure.VarVariableDeclaration", MetaIdFactory.conceptId(0x515552c7fcc04ab4L, 0x97892f3c49344e85L, 0x11ff0aa3699L)).super_("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL)).parents("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).alias("var", "var definition").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

@@ -19,7 +19,6 @@ import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -107,7 +106,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     EditorCell cell = super.getCell(editor);
     if (cell != null && cell.isBig() && !(isDirectCell(cell))) {
       SNode node = getNode();
-      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
         cell = CellFinder.getCellForProperty(editor, node, NAME_PROPERTY);
       }
     }

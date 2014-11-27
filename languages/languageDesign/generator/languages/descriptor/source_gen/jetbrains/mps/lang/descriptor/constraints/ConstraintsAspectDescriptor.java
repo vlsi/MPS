@@ -19,8 +19,8 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 9020561928507175845l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x7d2f7947ef1533a5L) {
       return new LanguageDescriptor_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

@@ -30,7 +30,7 @@ public final class SContainmentLinkId  {
     return myConceptId;
   }
 
-  public long getContainmentLinkId() {
+  public long getIdValue () {
     return myLinkId;
   }
 

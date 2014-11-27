@@ -5,7 +5,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
@@ -23,62 +22,63 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SNodeUtil {
 
-  public static final SConceptId conceptId_BaseConcept = ((SConceptAdapterById) MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept")).getId();
-  public static final SConceptId conceptId_ConceptDeclaration = ((SConceptAdapterById) MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).getId();
-  public static final SConceptId conceptId_InterfaceConceptDeclaration = ((SConceptAdapterById) MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")).getId();
-  public static final SConceptId conceptId_RuntimeTypeVariable = ((SConceptAdapterById) MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")).getId();
-  public static final SPropertyId propertyId_INamedConcept_name = ((SPropertyAdapterById) MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).getId();
+  public static final SConceptId conceptId_BaseConcept = ((SConceptAdapterById) MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")).getId();
+  public static final SConceptId conceptId_ConceptDeclaration = ((SConceptAdapterById) MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).getId();
+  public static final SConceptId conceptId_InterfaceConceptDeclaration = ((SConceptAdapterById) MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")).getId();
+  public static final SConceptId conceptId_RuntimeTypeVariable = ((SConceptAdapterById) MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956fbL, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")).getId();
+  public static final SPropertyId propertyId_INamedConcept_name = ((SPropertyAdapterById) MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).getId();
 
   public static final String conceptName_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
-  public static final SInterfaceConcept concept_IResolveInfo = (SInterfaceConcept) MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, "jetbrains.mps.lang.core.structure.IResolveInfo");
+  public static final SInterfaceConcept concept_IResolveInfo = (SInterfaceConcept) MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo");
   public static final String conceptName_INamedConcept = "jetbrains.mps.lang.core.structure.INamedConcept";
-  public static final SInterfaceConcept concept_INamedConcept = MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept");
+  public static final SInterfaceConcept concept_INamedConcept = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept");
   public static final String conceptName_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
-  public static final SConcept concept_BaseConcept = MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept");
+  public static final SConcept concept_BaseConcept = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
   public static final String conceptName_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
-  public static final SConcept concept_AbstractConceptDeclaration = MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+  public static final SConcept concept_AbstractConceptDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   public static final String conceptName_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
-  public static final SConcept concept_ConceptDeclaration = MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+  public static final SConcept concept_ConceptDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
   public static final String conceptName_InterfaceConceptDeclaration = "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration";
-  public static final SConcept concept_InterfaceConceptDeclaration = MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
+  public static final SConcept concept_InterfaceConceptDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
   public static final String conceptName_LinkDeclaration = "jetbrains.mps.lang.structure.structure.LinkDeclaration";
-  public static final SConcept concept_LinkDeclaration = MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+  public static final SConcept concept_LinkDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
   public static final String conceptName_InterfacePart = "jetbrains.mps.lang.core.structure.InterfacePart";
-  public static final SInterfaceConcept concept_InterfacePart = MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274784973096l, "jetbrains.mps.lang.core.structure.InterfacePart");
+  public static final SInterfaceConcept concept_InterfacePart = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L, "jetbrains.mps.lang.core.structure.InterfacePart");
   public static final String conceptName_ImplementationPart = "jetbrains.mps.lang.core.structure.ImplementationPart";
-  public static final SInterfaceConcept concept_ImplementationPart = MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1319728274783077719l, "jetbrains.mps.lang.core.structure.ImplementationPart");
+  public static final SInterfaceConcept concept_ImplementationPart = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L, "jetbrains.mps.lang.core.structure.ImplementationPart");
   public static final String conceptName_ImplementationWithStubPart = "jetbrains.mps.lang.core.structure.ImplementationWithStubPart";
-  public static final SInterfaceConcept concept_ImplementationWithStubPart = MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 6999738288738427190l, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart");
-  public static final SConcept concept_RuntimeTypeVariable = MetaAdapterFactory.getConcept(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562363l, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable");
+  public static final SInterfaceConcept concept_ImplementationWithStubPart = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart");
+  public static final SConcept concept_RuntimeTypeVariable = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956fbL, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable");
 
   public static final String linkName_ConceptDeclaration_extends = "extends";
-  public static final SReferenceLink link_ConceptDeclaration_extends = MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends");
+  public static final SReferenceLink link_ConceptDeclaration_extends = MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends");
   public static final String linkName_ConceptDeclaration_implements = "implements";
-  public static final SContainmentLink link_ConceptDeclaration_implements = MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements");
+  public static final SContainmentLink link_ConceptDeclaration_implements = MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements");
   public static final String linkName_AbstractConceptDeclaration_linkDeclaration = "linkDeclaration";
-  public static final SContainmentLink link_AbstractConceptDeclaration_linkDeclaration = MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration");
+  public static final SContainmentLink link_AbstractConceptDeclaration_linkDeclaration = MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration");
   public static final String linkName_AbstractConceptDeclaration_propertyDeclaration = "propertyDeclaration";
-  public static final SContainmentLink link_AbstractConceptDeclaration_propertyDeclaration = MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration");
+  public static final SContainmentLink link_AbstractConceptDeclaration_propertyDeclaration = MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration");
 
   public static final String propertyName_AbstractConceptDeclaration_abstract = "abstract";
-  public static final SProperty property_AbstractConceptDeclaration_abstract = MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract");
+  public static final SProperty property_AbstractConceptDeclaration_abstract = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract");
   public static final String propertyName_INamedConcept_name = "name";
-  public static final SProperty property_INamedConcept_name = MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name");
+  public static final SProperty property_INamedConcept_name = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
   public static final String propertyName_LinkDeclaration_role = "role";
-  public static final SProperty property_LinkDeclaration_role = MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role");
+  public static final SProperty property_LinkDeclaration_role = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role");
   public static final String propertyName_IResolveInfo_resolveInfo = "resolveInfo";
-  public static final SProperty property_IResolveInfo_resolveInfo = MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, 1196978656277l, "resolveInfo");
+  public static final SProperty property_IResolveInfo_resolveInfo = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, 0x116b17cd415L, "resolveInfo");
   public static final String propertyName_BaseConcept_virtualPackage = "virtualPackage";
-  public static final SProperty property_BaseConcept_virtualPackage = MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage");
+  public static final SProperty property_BaseConcept_virtualPackage = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage");
   public static final String propertyName_BaseConcept_alias = "alias";
-  public static final SProperty property_BaseConcept_alias = MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156235010670l, "alias");
+  public static final SProperty property_BaseConcept_alias = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias");
   public static final String propertyName_BaseConcept_shortDescription = "shortDescription";
-  public static final SProperty property_BaseConcept_shortDescription = MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l, "shortDescription");
+  public static final SProperty property_BaseConcept_shortDescription = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription");
   public static final String linkName_BaseConcept_smodelAttribute = "smodelAttribute";
-  public static final SContainmentLink link_BaseConcept_smodelAttribute = MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute");
+  public static final SContainmentLink link_BaseConcept_smodelAttribute = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
   public SNodeUtil() {
   }
   public static String getPresentation(SNode node) {
@@ -101,7 +101,7 @@ public class SNodeUtil {
     return BehaviorReflection.invokeVirtual(Integer.TYPE, node, "virtual_getMetaLevel_3981318653438234726", new Object[]{});
   }
   public static String getConceptDeclarationAlias(SNode conceptDeclaration) {
-    return SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156235010670l, "alias"));
+    return SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias"));
   }
   public static boolean isInstanceOfConceptDeclaration(SNode node) {
     if (node == null) {
@@ -123,48 +123,48 @@ public class SNodeUtil {
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
   public static boolean getConceptDeclaration_IsRootable(SNode concept) {
-    return SPropertyOperations.getBoolean(concept, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"));
+    return SPropertyOperations.getBoolean(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
   }
   public static SNode getConceptDeclaration_Extends(SNode concept) {
-    return SLinkOperations.getTarget(concept, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
+    return SLinkOperations.getTarget(concept, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
   }
   public static Iterable<SNode> getConceptDeclaration_Implements(SNode concept) {
-    return ListSequence.fromList(SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements"))).select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc"));
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"));
       }
     });
   }
   public static Iterable<SNode> getConceptDeclaration_ImplementsReferenceNodes(SNode concept) {
-    return SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements"));
+    return SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements"));
   }
   public static Iterable<SNode> getConcept_LinkDeclarations(SNode concept) {
-    return SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"));
+    return SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"));
   }
   public static Iterable<SNode> getConcept_PropertyDeclarations(SNode concept) {
-    return SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727084l, "propertyDeclaration"));
+    return SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"));
   }
   public static Iterable<SNode> getInterfaceConceptDeclaration_Extends(SNode concept) {
-    return ListSequence.fromList(SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, 1169127546356l, "extends"))).select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, 0x110356e9df4L, "extends"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc"));
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"));
       }
     });
   }
   public static Iterable<SNode> getInterfaceConceptDeclaration_ExtendsReferenceNodes(SNode concept) {
-    return SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, 1169127546356l, "extends"));
+    return SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, 0x110356e9df4L, "extends"));
   }
   public static String getNodeShortDescription(SNode node) {
-    return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l, "shortDescription"));
+    return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription"));
   }
   public static String getConceptShortDescription(SNode concept) {
-    return SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765907488l, "conceptShortDescription"));
+    return SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription"));
   }
   public static String getConceptAlias(SNode concept) {
-    return SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
+    return SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
   }
   public static String getResolveInfo(SNode node) {
-    return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1196978630214l, 1196978656277l, "resolveInfo"));
+    return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, 0x116b17cd415L, "resolveInfo"));
   }
   public static boolean isInstanceOfLinkDeclaration(SNode node) {
     if (node == null) {
@@ -181,7 +181,7 @@ public class SNodeUtil {
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
   public static SNode getPropertyDeclaration_DataType(SNode decl) {
-    return SLinkOperations.getTarget(decl, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType"));
+    return SLinkOperations.getTarget(decl, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"));
   }
   public static boolean isInstanceOfPrimitiveDataTypeDeclaration(SNode node) {
     if (node == null) {
@@ -198,25 +198,28 @@ public class SNodeUtil {
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
   }
   public static boolean getLinkDeclaration_IsReference(SNode link) {
-    return SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "reference", "reference");
+    return SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference");
   }
   public static boolean getLinkDeclaration_IsExactlyOneMultiplicity(SNode link) {
-    return SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1", "0..1");
+    return SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1");
   }
   public static boolean getLinkDeclaration_IsUnordered(SNode link) {
-    return SPropertyOperations.getBoolean(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 2395585628928459314l, "unordered"));
+    return SPropertyOperations.getBoolean(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x213ed46fe94fc232L, "unordered"));
   }
   public static boolean getLinkDeclaration_IsAtLeastOneMultiplicity(SNode link) {
-    return SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1", "0..1") || SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1..n", "0..1");
+    return SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1") || SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1..n", "0..1");
   }
   public static boolean getLinkDeclaration_IsSingular(SNode link) {
     SNode genuineLinkDeclaration = ((SNode) SModelUtil.getGenuineLinkDeclaration(link));
-    return SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1", "0..1");
+    return SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1");
   }
   public static boolean hasReferenceMacro(SNode node, String role) {
     return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", role)) != null);
   }
   public static SNode getLinkTarget(SNode link) {
-    return SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
+    return SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
+  }
+  public static boolean isSideTransformInfo(SNode node) {
+    return SNodeOperations.getConcept(node).equals(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo"));
   }
 }

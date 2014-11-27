@@ -23,7 +23,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.ArrayList;
@@ -93,10 +92,10 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
           for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
             if (isInstanceOfClassConcept(nextNode)) {
               SNode classNode = (SNode) nextNode;
-              if (SLinkOperations.getTarget(classNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")) != null) {
-                safeMap(result, SLinkOperations.getTarget(classNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), classNode);
+              if (SLinkOperations.getTarget(classNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")) != null) {
+                safeMap(result, SLinkOperations.getTarget(classNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")), classNode);
               }
-              for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getChildren(classNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface")))) {
+              for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getChildren(classNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface")))) {
                 safeMap(result, implementedInterface, classNode);
               }
               if (isInstanceOfAnonymousClassConcept(classNode)) {
@@ -104,7 +103,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
               }
             } else if (isInstanceOfInterfaceConcept(nextNode)) {
               SNode interfaceNode = (SNode) nextNode;
-              for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getChildren(interfaceNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface")))) {
+              for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getChildren(interfaceNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface")))) {
                 safeMap(result, extendedInterface, interfaceNode);
               }
             }

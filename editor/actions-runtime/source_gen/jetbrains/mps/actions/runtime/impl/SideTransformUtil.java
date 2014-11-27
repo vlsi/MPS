@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -60,9 +59,9 @@ public class SideTransformUtil {
       if (actionsModelDescriptor == null) {
         continue;
       }
-      result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(actionsModelDescriptor, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079416598l, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"))).translate(new ITranslator2<SNode, SNode>() {
+      result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(actionsModelDescriptor, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"))).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
-          return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079416598l, 1138079416599l, "actionsBuilder"));
+          return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, 0x108fad1c117L, "actionsBuilder"));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -79,16 +78,16 @@ public class SideTransformUtil {
     List<SubstituteAction> result = ListSequence.fromList(new LinkedList<SubstituteAction>());
 
     for (SNode actionBuilder : Sequence.fromIterable(getApplicableActionsBuilders(node, stringTags, cellSide, context))) {
-      SetSequence.fromSet(conceptsToRemove).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(actionBuilder, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177409831820l, "jetbrains.mps.lang.actions.structure.RemovePart"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
+      SetSequence.fromSet(conceptsToRemove).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(actionBuilder, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, "jetbrains.mps.lang.actions.structure.RemovePart"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177409831820l, 1177409838946l, "conceptToRemove")) != null);
+          return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, 0x11223185f62L, "conceptToRemove")) != null);
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177409831820l, 1177409838946l, "conceptToRemove"));
+          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, 0x11223185f62L, "conceptToRemove"));
         }
       }));
-      ListSequence.fromList(removeByConditions).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(actionBuilder, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1197454626277l, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart"), false, new SAbstractConcept[]{})));
+      ListSequence.fromList(removeByConditions).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(actionBuilder, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116cddb8de5L, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart"), false, new SAbstractConcept[]{})));
       ListSequence.fromList(result).addSequence(ListSequence.fromList(invokeActionBuilder(actionBuilder, node, cellSide, context)));
     }
 
@@ -100,7 +99,7 @@ public class SideTransformUtil {
     // remove with remove concept 
     for (Iterator<SubstituteAction> it = ListSequence.fromList(result).iterator(); it.hasNext();) {
       SubstituteAction action = it.next();
-      SNode concept = SNodeOperations.cast(action.getOutputConcept(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+      SNode concept = SNodeOperations.cast(action.getOutputConcept(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
       if (SetSequence.fromSet(conceptsToRemove).contains(concept)) {
         it.remove();
       }
@@ -109,17 +108,17 @@ public class SideTransformUtil {
     return result;
   }
   private static boolean isApplicable(SNode node, Set<SNode> tags, CellSide cellSide, SNode actionsBuilder, IOperationContext context) {
-    if (!(SetSequence.fromSet(tags).contains(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), SPropertyOperations.getString_def(actionsBuilder, MetaAdapterFactory.getProperty(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1140829165817l, "transformTag"), "default_RTransform"))))) {
+    if (!(SetSequence.fromSet(tags).contains(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), SPropertyOperations.getString_def(actionsBuilder, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x1099eb798f9L, "transformTag"), "default_RTransform"))))) {
       return false;
     }
-    if ((cellSide == CellSide.LEFT ? SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1215605257730l, "side"), null, null) : SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1215605257730l, "side"), "left", null))) {
+    if ((cellSide == CellSide.LEFT ? SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x11b07b83602L, "side"), null, null) : SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x11b07b83602L, "side"), "left", null))) {
       return false;
     }
-    if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), SNodeOperations.asSConcept(SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1138079221462l, "applicableConcept")))))) {
+    if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), SNodeOperations.asSConcept(SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x108facec6d6L, "applicableConcept")))))) {
       return false;
     }
 
-    SNode precondition = SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1138079221458l, 1154622757656l, "precondition"));
+    SNode precondition = SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x10cd4e11b18L, "precondition"));
     if (precondition != null) {
       try {
         return (Boolean) QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "call_getPreconditionQueryMethodName_1220279571415", new Object[]{}), context, new SideTransformPreconditionContext(node), SNodeOperations.getModel(actionsBuilder));

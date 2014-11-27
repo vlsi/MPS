@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.scripts;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public abstract class SModelMethodMigration extends SimpleMigration {
   private final SNode sourceConcept;
@@ -17,6 +16,6 @@ public abstract class SModelMethodMigration extends SimpleMigration {
   }
   @Override
   public String getName() {
-    return "Migrate " + SPropertyOperations.getString(sourceConcept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " usages";
+    return "Migrate " + SPropertyOperations.getString(sourceConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " usages";
   }
 }

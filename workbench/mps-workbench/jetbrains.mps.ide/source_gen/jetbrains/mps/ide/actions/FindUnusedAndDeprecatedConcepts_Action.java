@@ -27,7 +27,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.Logger;
@@ -84,7 +83,7 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
           final Wrappers._boolean isOk = new Wrappers._boolean(false);
           ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runReadAction(new Runnable() {
             public void run() {
-              SNode concept = SNodeOperations.cast(it.resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+              SNode concept = SNodeOperations.cast(it.resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
               isOk.value = (concept != null) && (BehaviorReflection.invokeVirtual(Boolean.TYPE, concept, "virtual_isDeprecated_1224609060727", new Object[]{}) || !(SetSequence.fromSet(usedConcepts).contains(NameUtil.nodeFQName(concept))));
             }
           });

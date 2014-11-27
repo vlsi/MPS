@@ -9,7 +9,6 @@ import javax.swing.Icon;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -28,12 +27,12 @@ public class BaseConcept_Behavior {
     return new ArrayList<Icon>();
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-      String name = SPropertyOperations.getString(SNodeOperations.cast(thisNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+      String name = SPropertyOperations.getString(SNodeOperations.cast(thisNode, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       if (name != null) {
         return name;
       }
-      return "<no name>[" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "]";
+      return "<no name>[" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "]";
     }
     // -- 
     String smartRefPresentation = ReferenceConceptUtil.getPresentation(thisNode);
@@ -41,12 +40,12 @@ public class BaseConcept_Behavior {
       return smartRefPresentation;
     }
     // -- 
-    String conceptAlias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
+    String conceptAlias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
     if (conceptAlias != null) {
       return conceptAlias;
     }
     // -- 
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static String virtual_getDetailedPresentation_2354269628709769373(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{});
@@ -56,7 +55,7 @@ public class BaseConcept_Behavior {
       return 0;
     }
     int metalevel = 0;
-    for (SNode metaLevelChanger : SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getInterfaceConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 201537367881071930l, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), false)) {
+    for (SNode metaLevelChanger : SNodeOperations.getNodeAncestors(thisNode, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), false)) {
       metalevel += BehaviorReflection.invokeVirtual(Integer.TYPE, metaLevelChanger, "virtual_getMetaLevelChange_201537367881074474", new Object[]{});
     }
     return metalevel;

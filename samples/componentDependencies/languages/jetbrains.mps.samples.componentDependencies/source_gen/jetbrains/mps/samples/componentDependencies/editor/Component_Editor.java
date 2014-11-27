@@ -13,7 +13,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -60,8 +59,8 @@ public class Component_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_3k4y3b_a0a(SNode node, EditorContext editorContext) {
-    String query = SPropertyOperations.getString(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet"), false, false), MetaAdapterFactory.getProperty(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 7433225748201903774l, "query"));
-    return ((query == null || query.length() == 0) ? true : SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).contains(query));
+    String query = SPropertyOperations.getString(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814242bL, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet"), false, false), MetaAdapterFactory.getProperty(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814242bL, 0x67281f6f60dc969eL, "query"));
+    return ((query == null || query.length() == 0) ? true : SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).contains(query));
   }
   private EditorCell createConstant_3k4y3b_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "component");

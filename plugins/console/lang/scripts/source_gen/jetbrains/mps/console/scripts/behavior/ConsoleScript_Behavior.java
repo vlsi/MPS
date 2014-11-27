@@ -5,12 +5,11 @@ package jetbrains.mps.console.scripts.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class ConsoleScript_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Iterable<SNode> virtual_getCommands_1734392475491235554(SNode thisNode) {
-    return SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-979935537543558138l, -5852941492434571100l), 1734392475491235550l, 1734392475491235551l, "command"));
+    return SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf26691d20def4c06L, 0xaec62cb90c4af0a4L, 0x1811ccc46ac3f6deL, 0x1811ccc46ac3f6dfL, "command"));
   }
 }

@@ -38,6 +38,9 @@
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
+      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
+        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
+      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -93,7 +96,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -153,6 +156,7 @@
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -2997,6 +3001,36 @@
         <node concept="3Tqbb2" id="64qxNob4Ssc" role="1tU5fm">
           <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
         </node>
+      </node>
+    </node>
+    <node concept="2YIFZL" id="5hkhCOa5zXt" role="jymVt">
+      <property role="IEkAT" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="isSideTransformInfo" />
+      <node concept="3clFbS" id="5hkhCOa5yYU" role="3clF47">
+        <node concept="3cpWs6" id="5hkhCOa5FE2" role="3cqZAp">
+          <node concept="2OqwBi" id="5hkhCOa5Av8" role="3cqZAk">
+            <node concept="2OqwBi" id="5hkhCOa5A5D" role="2Oq$k0">
+              <node concept="37vLTw" id="5hkhCOa5_Tq" role="2Oq$k0">
+                <ref role="3cqZAo" node="5hkhCOa5$W4" resolve="node" />
+              </node>
+              <node concept="2yIwOk" id="5hkhCOa5Aoo" role="2OqNvi" />
+            </node>
+            <node concept="liA8E" id="5hkhCOa5F4Y" role="2OqNvi">
+              <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <node concept="35c_gC" id="5hkhCOa5F7t" role="37wK5m">
+                <ref role="35c_gD" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="5hkhCOa5$VZ" role="3clF45" />
+      <node concept="3Tm1VV" id="5hkhCOa5yYT" role="1B3o_S" />
+      <node concept="37vLTG" id="5hkhCOa5$W4" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="5hkhCOa5$W3" role="1tU5fm" />
       </node>
     </node>
   </node>

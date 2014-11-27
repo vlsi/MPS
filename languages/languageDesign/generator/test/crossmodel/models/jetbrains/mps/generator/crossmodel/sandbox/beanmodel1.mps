@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:24638668-c917-4da1-8069-8ddef862314d(jetbrains.mps.generator.crossmodel.sandbox.beanmodel1)">
-  <persistence version="8" />
-  <language namespace="dc1cc948-6f43-4687-90cb-17dd5cb27219(jetbrains.mps.generator.test.crossmodel.property)" />
-  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="sroc" modelUID="r:0bb4ff75-d79d-4390-9b6c-e01faee2c7e6(jetbrains.mps.generator.test.crossmodel.property.structure)" version="-1" implicit="yes" />
-  <root type="sroc.Bean" typeId="sroc.5533782486491987565" id="5176577547833280834" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="Bean1" />
-    <node role="properties" roleId="sroc.5533782486491987582" type="sroc.BeanProperty" typeId="sroc.5533782486491987568" id="5176577547833280835" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="prop1" />
+<model ref="r:24638668-c917-4da1-8069-8ddef862314d(jetbrains.mps.generator.crossmodel.sandbox.beanmodel1)" concise="true">
+  <persistence version="9" />
+  <languages>
+    <use id="dc1cc948-6f43-4687-90cb-17dd5cb27219" name="jetbrains.mps.generator.test.crossmodel.property" version="-1" />
+  </languages>
+  <imports>
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="sroc" ref="r:0bb4ff75-d79d-4390-9b6c-e01faee2c7e6(jetbrains.mps.generator.test.crossmodel.property.structure)" implicit="true" />
+  </imports>
+  <registry>
+    <language id="dc1cc948-6f43-4687-90cb-17dd5cb27219" name="jetbrains.mps.generator.test.crossmodel.property">
+      <concept id="5533782486491987568" name="jetbrains.mps.generator.test.crossmodel.property.structure.BeanProperty" flags="ng" index="1BqwYE" />
+      <concept id="5533782486491987565" name="jetbrains.mps.generator.test.crossmodel.property.structure.Bean" flags="ng" index="1BqwYR">
+        <child id="5533782486491987582" name="properties" index="1BqwY$" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1BqwYR" id="4vmTtDyRo_2">
+    <property role="TrG5h" value="Bean1" />
+    <node concept="1BqwYE" id="4vmTtDyRo_3" role="1BqwY$">
+      <property role="TrG5h" value="prop1" />
     </node>
-    <node role="properties" roleId="sroc.5533782486491987582" type="sroc.BeanProperty" typeId="sroc.5533782486491987568" id="5176577547833280841" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="prop2" />
+    <node concept="1BqwYE" id="4vmTtDyRo_9" role="1BqwY$">
+      <property role="TrG5h" value="prop2" />
     </node>
-  </root>
+  </node>
 </model>
 

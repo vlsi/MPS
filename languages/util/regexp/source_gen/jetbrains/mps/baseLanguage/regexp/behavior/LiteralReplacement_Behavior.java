@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -13,13 +12,13 @@ public class LiteralReplacement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_toString_3796137614137538905(SNode thisNode, SNode search) {
-    return LiteralReplacement_Behavior.call_toRegexp_3796137614137565586(thisNode, SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137538892l, 3796137614137565243l, "text")));
+    return LiteralReplacement_Behavior.call_toRegexp_3796137614137565586(thisNode, SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, 0x34ae970c192b203bL, "text")));
   }
   public static boolean call_isValid_3796137614137567952(SNode thisNode) {
-    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137538892l, 3796137614137565243l, "text")))) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, 0x34ae970c192b203bL, "text")))) {
       return false;
     }
-    return LiteralReplacement_Behavior.call_toRegexp_3796137614137565586(thisNode, SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137538892l, 3796137614137565243l, "text"))) != null;
+    return LiteralReplacement_Behavior.call_toRegexp_3796137614137565586(thisNode, SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, 0x34ae970c192b203bL, "text"))) != null;
   }
   public static String call_toRegexp_3796137614137565586(SNode thisNode, String s) {
     StringBuilder sb = new StringBuilder();

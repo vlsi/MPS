@@ -4,7 +4,6 @@ package jetbrains.mps.build.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -16,7 +15,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor {
   public BuildLayout_Filemode_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l));
+    super(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -33,7 +32,7 @@ public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor 
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    SNode archive = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getInterfaceConcept(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288166441l, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), true, false);
+    SNode archive = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), true, false);
     return archive != null && BehaviorReflection.invokeVirtual(Boolean.TYPE, archive, "virtual_hasFileModeAttribute_6408167411310575237", new Object[]{}) || parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator");
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "7801138212747054670");

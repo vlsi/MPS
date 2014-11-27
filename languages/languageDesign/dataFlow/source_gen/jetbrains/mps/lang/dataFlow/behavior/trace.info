@@ -174,25 +174,25 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877439994">
     <file name="DataFlowBuilderDeclaration_Behavior.java">
-      <node id="8952337903384725416" at="13,82,14,193" concept="3" />
-      <node id="6261424444345978720" at="16,100,17,199" concept="1" />
-      <node id="1213877439994" at="11,0,13,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877439994" at="13,0,16,0" concept="4" trace="virtual_getBaseConcept_2621449412040133768#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877439994" at="16,0,19,0" concept="4" trace="virtual_setBaseConcept_6261424444345963020#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1213877439996" at="11,43,11,43" />
-      <scope id="8952337903384725406" at="13,82,14,193" />
-      <scope id="6261424444345978711" at="16,100,17,199" />
-      <scope id="1213877439994" at="11,0,13,0">
+      <node id="8952337903384725416" at="12,82,13,180" concept="3" />
+      <node id="6261424444345978720" at="15,100,16,186" concept="1" />
+      <node id="1213877439994" at="10,0,12,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1213877439994" at="12,0,15,0" concept="4" trace="virtual_getBaseConcept_2621449412040133768#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1213877439994" at="15,0,18,0" concept="4" trace="virtual_setBaseConcept_6261424444345963020#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1213877439996" at="10,43,10,43" />
+      <scope id="8952337903384725406" at="12,82,13,180" />
+      <scope id="6261424444345978711" at="15,100,16,186" />
+      <scope id="1213877439994" at="10,0,12,0">
         <var name="thisNode" id="1213877439994" />
       </scope>
-      <scope id="1213877439994" at="13,0,16,0">
+      <scope id="1213877439994" at="12,0,15,0">
         <var name="thisNode" id="1213877439994" />
       </scope>
-      <scope id="1213877439994" at="16,0,19,0">
+      <scope id="1213877439994" at="15,0,18,0">
         <var name="baseConcept" id="6261424444345978712" />
         <var name="thisNode" id="1213877439994" />
       </scope>
-      <unit id="1213877439994" at="10,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_Behavior" />
+      <unit id="1213877439994" at="9,0,19,0" name="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877480940">

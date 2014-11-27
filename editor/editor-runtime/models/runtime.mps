@@ -3,8 +3,6 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
@@ -152,7 +150,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -1612,12 +1610,12 @@
           <node concept="3cpWsn" id="Fg1jLUXABO" role="3cpWs9">
             <property role="TrG5h" value="info" />
             <node concept="3Tqbb2" id="Fg1jLUXABL" role="1tU5fm">
-              <ref role="ehGHo" to="tpc2:Fg1jLUUh_d" resolve="SideTransformInfo" />
+              <ref role="ehGHo" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
             </node>
             <node concept="2ShNRf" id="Fg1jLUXABP" role="33vP2m">
               <node concept="3zrR0B" id="Fg1jLUXABQ" role="2ShVmc">
                 <node concept="3Tqbb2" id="Fg1jLUXABR" role="3zrR0E">
-                  <ref role="ehGHo" to="tpc2:Fg1jLUUh_d" resolve="SideTransformInfo" />
+                  <ref role="ehGHo" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
                 </node>
               </node>
             </node>
@@ -1633,7 +1631,7 @@
                 <ref role="3cqZAo" node="Fg1jLUXABO" resolve="info" />
               </node>
               <node concept="3TrcHB" id="Fg1jLUXB3q" role="2OqNvi">
-                <ref role="3TsBF5" to="tpc2:Fg1jLUWrAV" resolve="cellId" />
+                <ref role="3TsBF5" to="tpck:Fg1jLUWrAV" resolve="cellId" />
               </node>
             </node>
           </node>
@@ -1648,7 +1646,7 @@
                 <ref role="3cqZAo" node="Fg1jLUXABO" resolve="info" />
               </node>
               <node concept="3TrcHB" id="Fg1jLUXBDW" role="2OqNvi">
-                <ref role="3TsBF5" to="tpc2:Fg1jLUWrXo" resolve="anchorTag" />
+                <ref role="3TsBF5" to="tpck:Fg1jLUWrXo" resolve="anchorTag" />
               </node>
             </node>
           </node>
@@ -1660,12 +1658,12 @@
                 <ref role="3cqZAo" node="Fg1jLUY9Wu" resolve="isRight" />
               </node>
               <node concept="3f7Wdw" id="Fg1jLUYb2$" role="3K4E3e">
-                <ref role="3f7vo2" to="tpc2:Fg1jLUVynG" resolve="SideTransformSide" />
-                <ref role="3f7u_j" to="tpc2:Fg1jLUVynH" />
+                <ref role="3f7vo2" to="tpck:Fg1jLUVynG" resolve="SideTransformSide" />
+                <ref role="3f7u_j" to="tpck:Fg1jLUVynH" />
               </node>
               <node concept="3f7Wdw" id="Fg1jLUYb4s" role="3K4GZi">
-                <ref role="3f7vo2" to="tpc2:Fg1jLUVynG" resolve="SideTransformSide" />
-                <ref role="3f7u_j" to="tpc2:Fg1jLUVyTf" />
+                <ref role="3f7vo2" to="tpck:Fg1jLUVynG" resolve="SideTransformSide" />
+                <ref role="3f7u_j" to="tpck:Fg1jLUVyTf" />
               </node>
             </node>
             <node concept="2OqwBi" id="Fg1jLUYaeP" role="37vLTJ">
@@ -1673,7 +1671,7 @@
                 <ref role="3cqZAo" node="Fg1jLUXABO" resolve="info" />
               </node>
               <node concept="3TrcHB" id="Fg1jLUYaq6" role="2OqNvi">
-                <ref role="3TsBF5" to="tpc2:Fg1jLUVycx" resolve="side" />
+                <ref role="3TsBF5" to="tpck:Fg1jLUVycx" resolve="side" />
               </node>
             </node>
           </node>
@@ -1689,7 +1687,7 @@
               </node>
               <node concept="3CFZ6_" id="Fg1jLUX_Zl" role="2OqNvi">
                 <node concept="3CFYIy" id="Fg1jLUXA0N" role="3CFYIz">
-                  <ref role="3CFYIx" to="tpc2:Fg1jLUUh_d" resolve="SideTransformInfo" />
+                  <ref role="3CFYIx" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
                 </node>
               </node>
             </node>
@@ -1740,17 +1738,17 @@
                 </node>
                 <node concept="3CFZ6_" id="Fg1jLUZ$UL" role="2OqNvi">
                   <node concept="3CFYIy" id="Fg1jLUZ$X6" role="3CFYIz">
-                    <ref role="3CFYIx" to="tpc2:Fg1jLUUh_d" resolve="SideTransformInfo" />
+                    <ref role="3CFYIx" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
                   </node>
                 </node>
               </node>
               <node concept="3TrcHB" id="Fg1jLUZ_ep" role="2OqNvi">
-                <ref role="3TsBF5" to="tpc2:Fg1jLUVycx" resolve="side" />
+                <ref role="3TsBF5" to="tpck:Fg1jLUVycx" resolve="side" />
               </node>
             </node>
             <node concept="3t7uKx" id="Fg1jLUZA5S" role="2OqNvi">
               <node concept="uoxfO" id="Fg1jLUZA5U" role="3t7uKA">
-                <ref role="uo_Cq" to="tpc2:Fg1jLUVynH" />
+                <ref role="uo_Cq" to="tpck:Fg1jLUVynH" />
               </node>
             </node>
           </node>
@@ -1779,17 +1777,17 @@
                 </node>
                 <node concept="3CFZ6_" id="Fg1jLUZAqo" role="2OqNvi">
                   <node concept="3CFYIy" id="Fg1jLUZAqp" role="3CFYIz">
-                    <ref role="3CFYIx" to="tpc2:Fg1jLUUh_d" resolve="SideTransformInfo" />
+                    <ref role="3CFYIx" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
                   </node>
                 </node>
               </node>
               <node concept="3TrcHB" id="Fg1jLUZAqq" role="2OqNvi">
-                <ref role="3TsBF5" to="tpc2:Fg1jLUVycx" resolve="side" />
+                <ref role="3TsBF5" to="tpck:Fg1jLUVycx" resolve="side" />
               </node>
             </node>
             <node concept="3t7uKx" id="Fg1jLUZAqr" role="2OqNvi">
               <node concept="uoxfO" id="Fg1jLUZAqs" role="3t7uKA">
-                <ref role="uo_Cq" to="tpc2:Fg1jLUVyTf" />
+                <ref role="uo_Cq" to="tpck:Fg1jLUVyTf" />
               </node>
             </node>
           </node>
@@ -1818,7 +1816,7 @@
               </node>
               <node concept="3CFZ6_" id="Fg1jLUZEkM" role="2OqNvi">
                 <node concept="3CFYIy" id="Fg1jLUZEmr" role="3CFYIz">
-                  <ref role="3CFYIx" to="tpc2:Fg1jLUUh_d" resolve="SideTransformInfo" />
+                  <ref role="3CFYIx" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
                 </node>
               </node>
             </node>
@@ -1847,12 +1845,12 @@
               </node>
               <node concept="3CFZ6_" id="Fg1jLUZFIn" role="2OqNvi">
                 <node concept="3CFYIy" id="Fg1jLUZFJP" role="3CFYIz">
-                  <ref role="3CFYIx" to="tpc2:Fg1jLUUh_d" resolve="SideTransformInfo" />
+                  <ref role="3CFYIx" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
                 </node>
               </node>
             </node>
             <node concept="3TrcHB" id="Fg1jLUZG1K" role="2OqNvi">
-              <ref role="3TsBF5" to="tpc2:Fg1jLUWrAV" resolve="cellId" />
+              <ref role="3TsBF5" to="tpck:Fg1jLUWrAV" resolve="cellId" />
             </node>
           </node>
         </node>
@@ -1879,12 +1877,12 @@
               </node>
               <node concept="3CFZ6_" id="Fg1jLUZICY" role="2OqNvi">
                 <node concept="3CFYIy" id="Fg1jLUZIIA" role="3CFYIz">
-                  <ref role="3CFYIx" to="tpc2:Fg1jLUUh_d" resolve="SideTransformInfo" />
+                  <ref role="3CFYIx" to="tpck:Fg1jLUUh_d" resolve="SideTransformInfo" />
                 </node>
               </node>
             </node>
             <node concept="3TrcHB" id="Fg1jLUZJ4_" role="2OqNvi">
-              <ref role="3TsBF5" to="tpc2:Fg1jLUWrXo" resolve="anchorTag" />
+              <ref role="3TsBF5" to="tpck:Fg1jLUWrXo" resolve="anchorTag" />
             </node>
           </node>
         </node>

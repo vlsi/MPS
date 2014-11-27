@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test" file="ClosureLiteraltargetFunType_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget" />
@@ -25,7 +24,6 @@
   <dependency className="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test" file="ClosureLiteraltargetIface_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Values" />
@@ -48,7 +46,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
