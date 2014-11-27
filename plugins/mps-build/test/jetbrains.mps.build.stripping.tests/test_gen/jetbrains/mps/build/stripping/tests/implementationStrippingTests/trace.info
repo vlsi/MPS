@@ -182,30 +182,42 @@
     <file name="DuplicitRoutineNameTest_Test.java">
       <node id="8240600211257293917" at="17,73,18,154" concept="1" />
       <node id="8240600211257293917" at="18,154,19,171" concept="1" />
-      <node id="8240600211257293917" at="22,77,23,154" concept="1" />
-      <node id="8240600211257293917" at="23,154,24,175" concept="1" />
-      <node id="8240600211257293917" at="28,75,29,235" concept="3" />
-      <node id="8240600211257293917" at="29,235,30,159" concept="1" />
-      <node id="8240600211257293917" at="32,79,33,235" concept="3" />
-      <node id="8240600211257293917" at="33,235,34,159" concept="1" />
-      <node id="8240600211257293917" at="28,0,32,0" concept="2" trace="test_NodeErrorCheck8240600211257314592#()V" />
-      <node id="8240600211257293917" at="32,0,36,0" concept="2" trace="test_ErrorMessagesCheck8240600211257296170#()V" />
+      <node id="8240600211257293917" at="22,73,23,154" concept="1" />
+      <node id="8240600211257293917" at="23,154,24,171" concept="1" />
+      <node id="8240600211257293917" at="27,77,28,154" concept="1" />
+      <node id="8240600211257293917" at="28,154,29,175" concept="1" />
+      <node id="8240600211257293917" at="33,75,34,235" concept="3" />
+      <node id="8240600211257293917" at="34,235,35,159" concept="1" />
+      <node id="8240600211257293917" at="37,75,38,235" concept="3" />
+      <node id="8240600211257293917" at="38,235,39,159" concept="1" />
+      <node id="8240600211257293917" at="41,79,42,235" concept="3" />
+      <node id="8240600211257293917" at="42,235,43,159" concept="1" />
+      <node id="8240600211257293917" at="33,0,37,0" concept="2" trace="test_NodeErrorCheck8240600211257314592#()V" />
+      <node id="8240600211257293917" at="37,0,41,0" concept="2" trace="test_NodeErrorCheck8240600211257423129#()V" />
+      <node id="8240600211257293917" at="41,0,45,0" concept="2" trace="test_ErrorMessagesCheck8240600211257296170#()V" />
       <node id="8240600211257293917" at="16,0,21,0" concept="2" trace="test_NodeErrorCheck8240600211257314592#()V" />
-      <node id="8240600211257293917" at="21,0,26,0" concept="2" trace="test_ErrorMessagesCheck8240600211257296170#()V" />
+      <node id="8240600211257293917" at="21,0,26,0" concept="2" trace="test_NodeErrorCheck8240600211257423129#()V" />
+      <node id="8240600211257293917" at="26,0,31,0" concept="2" trace="test_ErrorMessagesCheck8240600211257296170#()V" />
       <scope id="8240600211257293917" at="17,73,19,171" />
-      <scope id="8240600211257293917" at="22,77,24,175" />
-      <scope id="8240600211257293917" at="28,75,30,159">
+      <scope id="8240600211257293917" at="22,73,24,171" />
+      <scope id="8240600211257293917" at="27,77,29,175" />
+      <scope id="8240600211257293917" at="33,75,35,159">
         <var name="operation" id="8240600211257293917" />
       </scope>
-      <scope id="8240600211257293917" at="32,79,34,159">
+      <scope id="8240600211257293917" at="37,75,39,159">
         <var name="operation" id="8240600211257293917" />
       </scope>
-      <scope id="8240600211257293917" at="28,0,32,0" />
-      <scope id="8240600211257293917" at="32,0,36,0" />
+      <scope id="8240600211257293917" at="41,79,43,159">
+        <var name="operation" id="8240600211257293917" />
+      </scope>
+      <scope id="8240600211257293917" at="33,0,37,0" />
+      <scope id="8240600211257293917" at="37,0,41,0" />
+      <scope id="8240600211257293917" at="41,0,45,0" />
       <scope id="8240600211257293917" at="16,0,21,0" />
       <scope id="8240600211257293917" at="21,0,26,0" />
-      <unit id="8240600211257293917" at="26,0,37,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.DuplicitRoutineNameTest_Test$TestBody" />
-      <unit id="8240600211257293917" at="14,0,38,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.DuplicitRoutineNameTest_Test" />
+      <scope id="8240600211257293917" at="26,0,31,0" />
+      <unit id="8240600211257293917" at="31,0,46,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.DuplicitRoutineNameTest_Test$TestBody" />
+      <unit id="8240600211257293917" at="14,0,47,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.DuplicitRoutineNameTest_Test" />
     </file>
   </root>
 </debug-info>
