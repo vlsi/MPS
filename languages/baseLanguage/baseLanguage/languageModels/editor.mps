@@ -3274,6 +3274,7 @@
     <node concept="3F0A7n" id="fPFbK_L" role="2wV5jI">
       <ref role="1NtTu8" to="tpee:fzclF82" resolve="value" />
       <ref role="1k5W1q" node="hgVS8CF" resolve="KeyWord" />
+      <ref role="1ERwB7" node="4C5gHMoLv7$" resolve="DeleteBooleanConstantWithUnmatchedParen" />
     </node>
   </node>
   <node concept="24kQdi" id="fDxjDEl">
@@ -27459,6 +27460,24 @@
                 <ref role="37wK5l" to="srng:~EditorContext.selectWRTFocusPolicy(org.jetbrains.mps.openapi.model.SNode):void" resolve="selectWRTFocusPolicy" />
                 <node concept="0IXxy" id="6LqDQNmto1M" role="37wK5m" />
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="4C5gHMoLv7$">
+    <property role="3GE5qa" value="primitive" />
+    <property role="TrG5h" value="DeleteBooleanConstantWithUnmatchedParen" />
+    <ref role="1h_SK9" to="tpee:fzclF81" resolve="BooleanConstant" />
+    <node concept="1hA7zw" id="4C5gHMoLv7_" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="4C5gHMoLv7A" role="1hA7z_">
+        <node concept="3clFbS" id="4C5gHMoLv7B" role="2VODD2">
+          <node concept="3clFbF" id="4C5gHMoL$bT" role="3cqZAp">
+            <node concept="2OqwBi" id="4C5gHMoL$e4" role="3clFbG">
+              <node concept="0IXxy" id="4C5gHMoL$bR" role="2Oq$k0" />
+              <node concept="1PgB_6" id="4C5gHMoL$Ac" role="2OqNvi" />
             </node>
           </node>
         </node>
