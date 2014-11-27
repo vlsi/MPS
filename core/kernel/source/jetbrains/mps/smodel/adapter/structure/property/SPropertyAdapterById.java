@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -47,6 +48,9 @@ public class SPropertyAdapterById extends SPropertyAdapter {
 
   @Override
   public String getName() {
+    if (RuntimeFlags.isMergeDriverMode()) {
+      return myPropertyName;
+    }
     PropertyDescriptor d = getPropertyDescriptor();
     if (d == null) {
       //invalid property, needed for propertyRead event in SNode until event is rewritten

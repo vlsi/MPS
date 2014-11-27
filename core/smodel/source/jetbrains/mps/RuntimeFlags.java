@@ -44,6 +44,11 @@ public final class RuntimeFlags {
     ourTestMode = testMode;
   }
 
+  /**
+   * FIXME bad name, it's not necessarily merge we run at, e.g. ConvertToBinary task uses it as well (set to true),
+   * it's rather 'No MPS runtime' mode
+   * @return <code>true</code> if no regular MPS facilities shall be expected (e.g. LanguageRegistry, ConceptRegistry and alike).
+   */
   public static boolean isMergeDriverMode() {
     return ourMergeDriverMode;
   }

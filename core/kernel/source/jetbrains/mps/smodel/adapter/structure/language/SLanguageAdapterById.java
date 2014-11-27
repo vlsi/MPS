@@ -25,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
-public class SLanguageAdapterById extends SLanguageAdapter{
+public class SLanguageAdapterById extends SLanguageAdapter {
   private SLanguageId myLanguage;
 
   public SLanguageAdapterById(@NotNull SLanguageId language, @NotNull String fqName) {

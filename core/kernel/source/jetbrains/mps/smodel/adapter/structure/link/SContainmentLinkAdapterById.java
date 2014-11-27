@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.link;
 
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -48,6 +49,9 @@ public class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
 
   @Override
   public String getRoleName() {
+    if (RuntimeFlags.isMergeDriverMode()) {
+      return myName;
+    }
     LinkDescriptor d = getLinkDescriptor();
     if (d == null) {
       //invalid property, needed for propertyRead event in SNode until event is rewritten
