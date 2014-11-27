@@ -82,7 +82,7 @@ public abstract class SLanguageAdapter implements SLanguage {
   }
 
   public int getLanguageVersion() {
-    return getSourceModule().getLanguageVersion();
+    return getLanguageDescriptor().getVersion();
   }
 
   @Override
