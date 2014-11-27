@@ -25,8 +25,7 @@ import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.LongestCommonSubsequenceFinder;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -43,6 +42,8 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange;
 import jetbrains.mps.vcs.diff.changes.ModelVersionChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
@@ -122,19 +123,19 @@ public class ChangeSetBuilder {
       buildForProperties(oldNode, newNode);
       buildForReferences(oldNode, newNode);
 
-      for (String role : SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(SNodeOperations.getChildren(newNode))).select(new ISelector<SNode, String>() {
-        public String select(SNode ch) {
-          return SNodeOperations.getContainingLinkRole(ch);
+      for (SContainmentLink role : ListSequence.fromList(SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(SNodeOperations.getChildren(newNode))).select(new ISelector<SNode, SContainmentLink>() {
+        public SContainmentLink select(SNode ch) {
+          return ch.getContainmentLink();
         }
-      }))) {
+      }).distinct()) {
         buildForNodeRole(oldNode, newNode, role);
       }
     }
   }
-  private void buildForNodeRole(SNode oldNode, SNode newNode, String role) {
+  private void buildForNodeRole(SNode oldNode, SNode newNode, SContainmentLink role) {
     buildForNodeRole(IterableUtil.asList(oldNode.getChildren(role)), IterableUtil.asList(newNode.getChildren(role)), oldNode.getNodeId(), role);
   }
-  public void buildForNodeRole(final List<? extends SNode> oldChildren, List<? extends SNode> newChildren, SNodeId parentId, String role) {
+  public void buildForNodeRole(final List<? extends SNode> oldChildren, List<? extends SNode> newChildren, SNodeId parentId, SContainmentLink role) {
     List<SNodeId> oldIds = ListSequence.fromList(oldChildren).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getNodeId();

@@ -63,6 +63,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -428,7 +429,7 @@ public class ChangesTracking {
       if (parent.getModel() == null) {
         return;
       }
-      final String childRole = event.getChildRole();
+      final String childRoleName = event.getChildRole();
 
       // tyring to avoid update task execution for the same child role twice 
       Set<String> childRoles = MapSequence.fromMap(childChanged).get(parent);
@@ -436,12 +437,13 @@ public class ChangesTracking {
         childRoles = SetSequence.fromSet(new HashSet<String>());
         MapSequence.fromMap(childChanged).put(parent, childRoles);
       }
-      if (SetSequence.fromSet(childRoles).contains(childRole)) {
+      if (SetSequence.fromSet(childRoles).contains(childRoleName)) {
         return;
       } else {
-        SetSequence.fromSet(childRoles).addElement(childRole);
+        SetSequence.fromSet(childRoles).addElement(childRoleName);
       }
       final SNodeId parentId = parent.getNodeId();
+      final SContainmentLink childRole = (SContainmentLink) parent.getConcept().getLink(childRoleName);
 
       final Wrappers._T<List<? extends SNode>> childrenRightAfterEvent = new Wrappers._T<List<? extends SNode>>(IterableUtil.asList(parent.getChildren(childRole)));
       childrenRightAfterEvent.value = ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNode>() {
@@ -454,10 +456,10 @@ public class ChangesTracking {
 
           removeChanges(parentId, NodeGroupChange.class, new _FunctionTypes._return_P1_E0<Boolean, NodeGroupChange>() {
             public Boolean invoke(NodeGroupChange ch) {
-              return childRole.equals(ch.getRole());
+              return ch.isAbout(childRole);
             }
           });
-          removeDescendantChanges(parentId, childRole);
+          removeDescendantChanges(parentId, childRoleName);
           myLastParentAndNewChildrenIds = MultiTuple.<SNodeId,List<SNodeId>>from(parentId, ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNodeId>() {
             public SNodeId select(SNode n) {
               return n.getNodeId();

@@ -7687,7 +7687,7 @@
           </node>
           <node concept="3cpWs8" id="2QnDi8QvAQe" role="3cqZAp">
             <node concept="3cpWsn" id="2QnDi8QvAQf" role="3cpWs9">
-              <property role="TrG5h" value="childRole" />
+              <property role="TrG5h" value="childRoleName" />
               <node concept="17QB3L" id="2QnDi8QvARz" role="1tU5fm" />
               <node concept="2OqwBi" id="2QnDi8QvAQh" role="33vP2m">
                 <node concept="37vLTw" id="2BHiRxgm8k7" role="2Oq$k0">
@@ -7768,7 +7768,7 @@
               </node>
               <node concept="3JPx81" id="2QnDi8QvAVc" role="2OqNvi">
                 <node concept="37vLTw" id="3GM_nagTym3" role="25WWJ7">
-                  <ref role="3cqZAo" node="2QnDi8QvAQf" resolve="childRole" />
+                  <ref role="3cqZAo" node="2QnDi8QvAQf" resolve="childRoleName" />
                 </node>
               </node>
             </node>
@@ -7781,7 +7781,7 @@
                     </node>
                     <node concept="TSZUe" id="2QnDi8QvAVK" role="2OqNvi">
                       <node concept="37vLTw" id="3GM_nagTsSg" role="25WWJ7">
-                        <ref role="3cqZAo" node="2QnDi8QvAQf" resolve="childRole" />
+                        <ref role="3cqZAo" node="2QnDi8QvAQf" resolve="childRoleName" />
                       </node>
                     </node>
                   </node>
@@ -7805,6 +7805,35 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="58$PzbkbxHO" role="3cqZAp">
+            <node concept="3cpWsn" id="58$PzbkbxHP" role="3cpWs9">
+              <property role="TrG5h" value="childRole" />
+              <node concept="3uibUv" id="58$PzbkbxHQ" role="1tU5fm">
+                <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
+              </node>
+              <node concept="10QFUN" id="58$PzbkbJwm" role="33vP2m">
+                <node concept="2OqwBi" id="58$Pzbkb$gS" role="10QFUP">
+                  <node concept="2OqwBi" id="58$Pzbkb$0Q" role="2Oq$k0">
+                    <node concept="37vLTw" id="58$PzbkbzZ7" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2QnDi8QvAPX" resolve="parent" />
+                    </node>
+                    <node concept="liA8E" id="58$Pzbkb$dW" role="2OqNvi">
+                      <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="58$Pzbkb$MK" role="2OqNvi">
+                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getLink(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractLink" resolve="getLink" />
+                    <node concept="37vLTw" id="58$PzbkbJca" role="37wK5m">
+                      <ref role="3cqZAo" node="2QnDi8QvAQf" resolve="childRoleName" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3uibUv" id="58$PzbkbJwn" role="10QFUM">
+                  <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbH" id="2QnDi8QvARE" role="3cqZAp" />
           <node concept="3cpWs8" id="2QnDi8QvAOf" role="3cqZAp">
             <node concept="3cpWsn" id="2QnDi8QvAOg" role="3cpWs9">
@@ -7817,9 +7846,9 @@
                     <ref role="3cqZAo" node="2QnDi8QvAPX" resolve="parent" />
                   </node>
                   <node concept="liA8E" id="2QnDi8QvAOn" role="2OqNvi">
-                    <ref role="37wK5l" to="ec5l:~SNode.getChildren(java.lang.String):java.lang.Iterable" resolve="getChildren" />
-                    <node concept="37vLTw" id="3GM_nagTtL5" role="37wK5m">
-                      <ref role="3cqZAo" node="2QnDi8QvAQf" resolve="childRole" />
+                    <ref role="37wK5l" to="ec5l:~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink):java.lang.Iterable" resolve="getChildren" />
+                    <node concept="37vLTw" id="58$PzbkbJB2" role="37wK5m">
+                      <ref role="3cqZAo" node="58$PzbkbxHP" resolve="childRole" />
                     </node>
                   </node>
                 </node>
@@ -7894,19 +7923,14 @@
                         </node>
                         <node concept="3clFbS" id="2QnDi8QvAP5" role="1bW5cS">
                           <node concept="3clFbF" id="2QnDi8QvAP6" role="3cqZAp">
-                            <node concept="2OqwBi" id="2QnDi8QvAP7" role="3clFbG">
-                              <node concept="37vLTw" id="3GM_nagTuGl" role="2Oq$k0">
-                                <ref role="3cqZAo" node="2QnDi8QvAQf" resolve="childRole" />
+                            <node concept="2OqwBi" id="58$PzbkcDCG" role="3clFbG">
+                              <node concept="37vLTw" id="58$PzbkcCTt" role="2Oq$k0">
+                                <ref role="3cqZAo" node="2QnDi8QvAP3" resolve="ch" />
                               </node>
-                              <node concept="liA8E" id="2QnDi8QvAP9" role="2OqNvi">
-                                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                                <node concept="2OqwBi" id="2QnDi8QvAPa" role="37wK5m">
-                                  <node concept="37vLTw" id="2BHiRxghfIR" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="2QnDi8QvAP3" resolve="ch" />
-                                  </node>
-                                  <node concept="liA8E" id="2QnDi8QvAPc" role="2OqNvi">
-                                    <ref role="37wK5l" to="btf5:4k3fuHGtdrF" resolve="getRole" />
-                                  </node>
+                              <node concept="liA8E" id="58$PzbkcF5t" role="2OqNvi">
+                                <ref role="37wK5l" to="btf5:58$PzbkbSxg" resolve="isAbout" />
+                                <node concept="37vLTw" id="58$PzbkcH4P" role="37wK5m">
+                                  <ref role="3cqZAo" node="58$PzbkbxHP" resolve="childRole" />
                                 </node>
                               </node>
                             </node>
@@ -7922,7 +7946,7 @@
                         <ref role="3cqZAo" node="2QnDi8QvAOK" resolve="parentId" />
                       </node>
                       <node concept="37vLTw" id="3GM_nagTxAq" role="37wK5m">
-                        <ref role="3cqZAo" node="2QnDi8QvAQf" resolve="childRole" />
+                        <ref role="3cqZAo" node="2QnDi8QvAQf" resolve="childRoleName" />
                       </node>
                     </node>
                   </node>
@@ -7995,9 +8019,9 @@
                                       </node>
                                     </node>
                                     <node concept="liA8E" id="2QnDi8QvAPK" role="2OqNvi">
-                                      <ref role="37wK5l" to="ec5l:~SNode.getChildren(java.lang.String):java.lang.Iterable" resolve="getChildren" />
-                                      <node concept="37vLTw" id="3GM_nagTsoc" role="37wK5m">
-                                        <ref role="3cqZAo" node="2QnDi8QvAQf" resolve="childRole" />
+                                      <ref role="37wK5l" to="ec5l:~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink):java.lang.Iterable" resolve="getChildren" />
+                                      <node concept="37vLTw" id="58$PzbkcLoR" role="37wK5m">
+                                        <ref role="3cqZAo" node="58$PzbkbxHP" resolve="childRole" />
                                       </node>
                                     </node>
                                   </node>
@@ -8008,8 +8032,8 @@
                                 <node concept="37vLTw" id="3GM_nagTwt_" role="37wK5m">
                                   <ref role="3cqZAo" node="2QnDi8QvAOK" resolve="parentId" />
                                 </node>
-                                <node concept="37vLTw" id="3GM_nagT$F$" role="37wK5m">
-                                  <ref role="3cqZAo" node="2QnDi8QvAQf" resolve="childRole" />
+                                <node concept="37vLTw" id="58$PzbkcMUG" role="37wK5m">
+                                  <ref role="3cqZAo" node="58$PzbkbxHP" resolve="childRole" />
                                 </node>
                               </node>
                             </node>
