@@ -14634,9 +14634,9 @@
             </node>
             <node concept="3cpWs8" id="62fUrLXUcfY" role="3cqZAp">
               <node concept="3cpWsn" id="62fUrLXUcfZ" role="3cpWs9">
-                <property role="TrG5h" value="classConcept" />
+                <property role="TrG5h" value="classifier" />
                 <node concept="3Tqbb2" id="62fUrLXUcg0" role="1tU5fm">
-                  <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+                  <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
                 </node>
                 <node concept="3K4zz7" id="62fUrLXUdNO" role="33vP2m">
                   <node concept="2OqwBi" id="62fUrLXUdOc" role="3K4GZi">
@@ -14645,8 +14645,8 @@
                     </node>
                     <node concept="2Xjw5R" id="62fUrLXUdOl" role="2OqNvi">
                       <node concept="1xMEDy" id="62fUrLXUdOm" role="1xVPHs">
-                        <node concept="chp4Y" id="62fUrLXUdOu" role="ri$Ld">
-                          <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                        <node concept="chp4Y" id="1kuOZsiOKha" role="ri$Ld">
+                          <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                         </node>
                       </node>
                     </node>
@@ -14707,7 +14707,7 @@
                         <ref role="37wK5l" to="fnmy:2BGX2rDG44q" resolve="visibleStaticMethods" />
                         <ref role="1Pybhc" to="fnmy:2BGX2rDG2lb" resolve="Members" />
                         <node concept="37vLTw" id="3GM_nagTB_W" role="37wK5m">
-                          <ref role="3cqZAo" node="62fUrLXUcfZ" resolve="classConcept" />
+                          <ref role="3cqZAo" node="62fUrLXUcfZ" resolve="classifier" />
                         </node>
                         <node concept="QwW4i" id="2BGX2rDGd$F" role="37wK5m">
                           <ref role="QwW4h" node="hH5RllU" resolve="methodCall" />
@@ -39472,8 +39472,8 @@
             </node>
             <node concept="2Xjw5R" id="1$AwQro$3q4" role="2OqNvi">
               <node concept="1xMEDy" id="1$AwQro$3q6" role="1xVPHs">
-                <node concept="chp4Y" id="1$AwQro$4hP" role="ri$Ld">
-                  <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                <node concept="chp4Y" id="1kuOZsiP6qG" role="ri$Ld">
+                  <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                 </node>
               </node>
             </node>

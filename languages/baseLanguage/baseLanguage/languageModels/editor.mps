@@ -9119,11 +9119,8 @@
         <node concept="3clFbF" id="4RXh7QRr0Li" role="3cqZAp">
           <node concept="2OqwBi" id="4RXh7QRr0Lj" role="3clFbG">
             <node concept="2oxUTD" id="4RXh7QRr0Ln" role="2OqNvi">
-              <node concept="1PxgMI" id="4RXh7QRr0Lo" role="2oxUTC">
-                <ref role="1PxNhF" to="tpee:fz12cDA" resolve="ClassConcept" />
-                <node concept="37vLTw" id="2BHiRxgmzq3" role="1PxMeX">
-                  <ref role="3cqZAo" node="4RXh7QRr0L0" resolve="classifier" />
-                </node>
+              <node concept="37vLTw" id="2BHiRxgmzq3" role="2oxUTC">
+                <ref role="3cqZAo" node="4RXh7QRr0L0" resolve="classifier" />
               </node>
             </node>
             <node concept="2OqwBi" id="4RXh7QRr0Lk" role="2Oq$k0">

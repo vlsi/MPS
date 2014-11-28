@@ -96,6 +96,7 @@ public class SuperInterfaceMethodCall_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
+    SuperInterfaceMethodCall_actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 }
