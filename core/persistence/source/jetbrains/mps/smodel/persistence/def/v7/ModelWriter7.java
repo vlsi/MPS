@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.persistence.def.v7;
 
-import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
@@ -108,7 +107,7 @@ public class ModelWriter7 implements IModelWriter {
       elem.setAttribute(ModelPersistence.VERSION, Integer.toString(importElement.getUsedVersion()));
       rootElement.addContent(elem);
     }
-    for (ImportElement importElement : sourceModel.getAdditionalModelVersions()) {
+    for (ImportElement importElement : sourceModel.getImplicitImportsSupport().getAdditionalModelVersions()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);

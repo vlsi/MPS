@@ -29,12 +29,6 @@
     <import index="kgxg" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(MPS.Core/jetbrains.mps.components@java_stub)" />
     <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <import index="fo6t" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence.def.v9(jetbrains.mps.smodel.persistence.def.v9@java_stub)" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
-    <import index="tpib" ref="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" implicit="true" />
-    <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
-    <import index="nv7r" ref="r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)" implicit="true" />
-    <import index="cx9y" ref="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -2965,11 +2959,16 @@
           <node concept="3clFbS" id="3McbO0WUe9d" role="3clFbx">
             <node concept="3clFbF" id="3McbO0WUe9h" role="3cqZAp">
               <node concept="2OqwBi" id="3McbO0WUe9p" role="3clFbG">
-                <node concept="37vLTw" id="62HG2toyEkb" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3McbO0WUe89" resolve="model" />
+                <node concept="2OqwBi" id="7FmuP_qr731" role="2Oq$k0">
+                  <node concept="37vLTw" id="62HG2toyEkb" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3McbO0WUe89" resolve="model" />
+                  </node>
+                  <node concept="liA8E" id="7FmuP_qr889" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~SModel.getImplicitImportsSupport():jetbrains.mps.smodel.ImplicitImportsLegacyHolder" resolve="getImplicitImportsSupport" />
+                  </node>
                 </node>
                 <node concept="liA8E" id="3McbO0WUe9t" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~SModel.addAdditionalModelVersion(jetbrains.mps.smodel.SModel$ImportElement):void" resolve="addAdditionalModelVersion" />
+                  <ref role="37wK5l" to="cu2c:~ImplicitImportsLegacyHolder.addAdditionalModelVersion(jetbrains.mps.smodel.SModel$ImportElement):void" resolve="addAdditionalModelVersion" />
                   <node concept="37vLTw" id="3GM_nagTw9w" role="37wK5m">
                     <ref role="3cqZAo" node="3McbO0WUe90" resolve="elem" />
                   </node>
@@ -5581,47 +5580,29 @@
           </node>
           <node concept="3clFbJ" id="1AqOJynttg_" role="3cqZAp">
             <node concept="3clFbS" id="1AqOJynttgC" role="3clFbx">
-              <node concept="3clFbF" id="1AqOJyntucm" role="3cqZAp">
-                <node concept="2OqwBi" id="1AqOJyntuhz" role="3clFbG">
-                  <node concept="CQp63" id="1AqOJyntucl" role="2Oq$k0">
+              <node concept="3clFbF" id="1AqOJyntvPO" role="3cqZAp">
+                <node concept="2OqwBi" id="1AqOJyntvW3" role="3clFbG">
+                  <node concept="CQp63" id="1AqOJyntvPN" role="2Oq$k0">
                     <ref role="CQp62" node="4Kem6uXVngS" resolve="model" />
                   </node>
-                  <node concept="liA8E" id="1AqOJyntuxP" role="2OqNvi">
-                    <ref role="37wK5l" to="cu2c:~SModel.addAdditionalModelVersion(org.jetbrains.mps.openapi.model.SModelReference,int):void" resolve="addAdditionalModelVersion" />
-                    <node concept="37vLTw" id="1AqOJyntvbL" role="37wK5m">
+                  <node concept="liA8E" id="1AqOJyntwLY" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~SModel.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+                    <node concept="37vLTw" id="1AqOJyntwSt" role="37wK5m">
                       <ref role="3cqZAo" node="1AqOJyntrjT" resolve="modelRef" />
                     </node>
-                    <node concept="3cmrfG" id="1AqOJyntv$0" role="37wK5m">
-                      <property role="3cmrfH" value="-1" />
+                    <node concept="3clFbT" id="1AqOJyntA18" role="37wK5m">
+                      <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="2YIFZM" id="1AqOJynttv1" role="3clFbw">
-              <ref role="37wK5l" to="e2lb:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
-              <ref role="1Pybhc" to="e2lb:~Boolean" resolve="Boolean" />
-              <node concept="CQp6E" id="1AqOJyntu7H" role="37wK5m">
-                <ref role="CQp6D" node="4Kem6uXVnn8" resolve="implicit" />
-              </node>
-            </node>
-            <node concept="9aQIb" id="1AqOJyntvJQ" role="9aQIa">
-              <node concept="3clFbS" id="1AqOJyntvJR" role="9aQI4">
-                <node concept="3clFbF" id="1AqOJyntvPO" role="3cqZAp">
-                  <node concept="2OqwBi" id="1AqOJyntvW3" role="3clFbG">
-                    <node concept="CQp63" id="1AqOJyntvPN" role="2Oq$k0">
-                      <ref role="CQp62" node="4Kem6uXVngS" resolve="model" />
-                    </node>
-                    <node concept="liA8E" id="1AqOJyntwLY" role="2OqNvi">
-                      <ref role="37wK5l" to="cu2c:~SModel.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
-                      <node concept="37vLTw" id="1AqOJyntwSt" role="37wK5m">
-                        <ref role="3cqZAo" node="1AqOJyntrjT" resolve="modelRef" />
-                      </node>
-                      <node concept="3clFbT" id="1AqOJyntA18" role="37wK5m">
-                        <property role="3clFbU" value="true" />
-                      </node>
-                    </node>
-                  </node>
+            <node concept="3fqX7Q" id="7FmuP_qrcrl" role="3clFbw">
+              <node concept="2YIFZM" id="7FmuP_qrcrn" role="3fr31v">
+                <ref role="37wK5l" to="e2lb:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
+                <ref role="1Pybhc" to="e2lb:~Boolean" resolve="Boolean" />
+                <node concept="CQp6E" id="7FmuP_qrcro" role="37wK5m">
+                  <ref role="CQp6D" node="4Kem6uXVnn8" resolve="implicit" />
                 </node>
               </node>
             </node>

@@ -47,7 +47,7 @@ public class ReadHelper9 {
   public void addImportToModel(SModel model, String index, SModelReference ref, boolean implicit) {
     SModel.ImportElement elem = new SModel.ImportElement(ref);
     if (implicit) {
-      model.addAdditionalModelVersion(elem);
+      model.getImplicitImportsSupport().addAdditionalModelVersion(elem);
     } else {
       model.addModelImport(elem);
     }

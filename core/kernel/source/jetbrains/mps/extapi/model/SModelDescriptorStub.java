@@ -275,7 +275,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final void calculateImplicitImports() {
-    getSModelInternal().calculateImplicitImports();
+    getSModelInternal().getImplicitImportsSupport().calculateImplicitImports();
   }
 
   @Override
@@ -300,7 +300,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final List<ImportElement> getAdditionalModelVersions() {
-    return getSModelInternal().getAdditionalModelVersions();
+    return getSModelInternal().getImplicitImportsSupport().getAdditionalModelVersions();
   }
 
   @Override

@@ -423,9 +423,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     protected Object createObject(Attributes attrs) throws SAXException {
       SModelReference modelRef = my_idEncoderField.parseModelReference(attrs.getValue("ref"));
       my_importHelperField.addModelImport(attrs.getValue("index"), modelRef);
-      if (Boolean.parseBoolean(attrs.getValue("implicit"))) {
-        my_modelField.addAdditionalModelVersion(modelRef, -1);
-      } else {
+      if (!(Boolean.parseBoolean(attrs.getValue("implicit")))) {
         my_modelField.addModelImport(modelRef, true);
       }
       return null;

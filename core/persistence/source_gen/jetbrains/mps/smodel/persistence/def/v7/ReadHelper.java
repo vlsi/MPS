@@ -43,7 +43,7 @@ public class ReadHelper {
     SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(modelUID);
     SModel.ImportElement elem = new SModel.ImportElement(modelRef, ++myMaxImportIndex, version);
     if (implicit) {
-      model.addAdditionalModelVersion(elem);
+      model.getImplicitImportsSupport().addAdditionalModelVersion(elem);
     } else {
       model.addModelImport(elem);
     }

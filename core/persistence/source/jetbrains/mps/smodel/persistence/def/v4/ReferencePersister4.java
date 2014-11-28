@@ -195,7 +195,7 @@ public class ReferencePersister4 implements IReferencePersister {
       } else {
         SModelReference targetModelReference = reference.getTargetSModelReference();
         if (targetModelReference != null) {
-          jetbrains.mps.smodel.SModel.ImportElement importElement = SModelOperations.getImportElement(node.getModel(), targetModelReference);
+          jetbrains.mps.smodel.SModel.ImportElement importElement = VersionUtil.getImportElement(node.getModel(), targetModelReference);
           if (importElement != null) {
             int importIndex = importElement.getReferenceID();
             targetModelInfo = importIndex + ".";

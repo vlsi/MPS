@@ -50,7 +50,7 @@ public class VersionUtil {
     for (ImportElement elem : model.importedModels()) {
       myImports.put(elem.getModelReference(), elem);
     }
-    for (ImportElement elem : model.getAdditionalModelVersions()) {
+    for (ImportElement elem : model.getImplicitImportsSupport().getAdditionalModelVersions()) {
       myImports.put(elem.getModelReference(), elem);
     }
   }
@@ -61,13 +61,13 @@ public class VersionUtil {
     for (ImportElement elem : model.importedModels()) {
       maxImport = Math.max(elem.getReferenceID(), maxImport);
     }
-    for (ImportElement elem : model.getAdditionalModelVersions()) {
+    for (ImportElement elem : model.getImplicitImportsSupport().getAdditionalModelVersions()) {
       maxImport = Math.max(elem.getReferenceID(), maxImport);
     }
     for (ImportElement elem : model.importedModels()) {
       if (elem.getReferenceID() < 0) elem.setReferenceID(++maxImport);
     }
-    for (ImportElement elem : model.getAdditionalModelVersions()) {
+    for (ImportElement elem : model.getImplicitImportsSupport().getAdditionalModelVersions()) {
       if (elem.getReferenceID() < 0) elem.setReferenceID(++maxImport);
     }
   }
@@ -139,7 +139,7 @@ public class VersionUtil {
     myImports.put(modelRef, elem);
     myImportByIx.put(ix, elem);
     if (implicit)
-      model.addAdditionalModelVersion(elem);
+      model.getImplicitImportsSupport().addAdditionalModelVersion(elem);
     else
       model.addModelImport(elem);
   }

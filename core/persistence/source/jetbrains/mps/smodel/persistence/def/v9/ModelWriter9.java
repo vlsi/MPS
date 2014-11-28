@@ -20,6 +20,7 @@ import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
@@ -32,6 +33,7 @@ import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.AssociationLinkIn
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.LangInfo;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.PropertyInfo;
+import jetbrains.mps.util.ToStringComparator;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -41,13 +43,17 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class ModelWriter9 implements IModelWriter {
   public static final int VERSION = 9;
@@ -177,16 +183,38 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   private void saveImports(Element rootElement, SModel sourceModel) {
+    Set<SModelReference> crossModelReferences = collectCrossModelReferences(sourceModel);
     for (ImportElement importElement : sourceModel.importedModels()) {
       SModelReference modelRef = importElement.getModelReference();
+      crossModelReferences.remove(modelRef);
       final String index = myImportsHelper.addModelImport(modelRef);
       rootElement.addContent(createImportElement(modelRef, index, false));
     }
-    for (ImportElement importElement : sourceModel.getAdditionalModelVersions()) {
-      SModelReference modelRef = importElement.getModelReference();
-      final String index = myImportsHelper.addModelImport(modelRef);
-      rootElement.addContent(createImportElement(modelRef, index, true));
+    SModelReference[] implicitImports = crossModelReferences.toArray(new SModelReference[crossModelReferences.size()]);
+    Arrays.sort(implicitImports, new ToStringComparator());
+    for (SModelReference implicitImport : crossModelReferences) {
+      final String index = myImportsHelper.addModelImport(implicitImport);
+      rootElement.addContent(createImportElement(implicitImport, index, true));
     }
+  }
+
+  private Set<SModelReference> collectCrossModelReferences(SModel model) {
+//    Would be nice to re-use existing code, but don't have openapi.SModel here, unfortunately
+//    ModelDependencyScanner depScan = new ModelDependencyScanner().crossModelReferences(true).usedLanguages(false);
+//    depScan.walk(sourceModel);
+    HashSet<SModelReference> crossModelRefs = new HashSet<SModelReference>();
+    for (SNode r : model.getRootNodes()) {
+      for (SNode n : SNodeUtil.getDescendants(r)) {
+        for (SReference ref : n.getReferences()) {
+          SModelReference target = ref.getTargetSModelReference();
+          if (target != null) {
+            crossModelRefs.add(target);
+          }
+        }
+      }
+    }
+    crossModelRefs.remove(myImportsHelper.localModel());
+    return crossModelRefs;
   }
 
   private Element createImportElement(SModelReference modelRef, String index, boolean implicit) {
