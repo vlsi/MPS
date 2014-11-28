@@ -17,14 +17,11 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.smodel.SModel.ImportElement;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,35 +38,13 @@ public final class CopyUtil {
     }
   }
 
-  public static void copyModelContentAndPreserveIds(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
+  private static void copyModelContentAndPreserveIds(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
     for (SNode root : from.getRootNodes()) {
       to.addRootNode(copyAndPreserveId(root, true));
     }
   }
 
-  public static void clearModelProperties(SModel model) {
-    for (ImportElement ie : new ArrayList<ImportElement>(((jetbrains.mps.smodel.SModelInternal) model).getAdditionalModelVersions())) {
-      ((jetbrains.mps.smodel.SModelInternal) model).deleteModelImport(ie.getModelReference());
-    }
-    for (ImportElement ie : new ArrayList<ImportElement>(((jetbrains.mps.smodel.SModelInternal) model).importedModels())) {
-      ((jetbrains.mps.smodel.SModelInternal) model).deleteModelImport(ie.getModelReference());
-    }
-    for (SModuleReference mr : new ArrayList<SModuleReference>(((jetbrains.mps.smodel.SModelInternal) model).importedDevkits())) {
-      ((jetbrains.mps.smodel.SModelInternal) model).deleteDevKit(mr);
-    }
-    for (SModuleReference mr : new ArrayList<SModuleReference>(((jetbrains.mps.smodel.SModelInternal) model).importedLanguages())) {
-      ((jetbrains.mps.smodel.SModelInternal) model).deleteLanguage(mr);
-    }
-    for (SModuleReference mr : new ArrayList<SModuleReference>(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages())) {
-      ((jetbrains.mps.smodel.SModelInternal) model).removeEngagedOnGenerationLanguage(mr);
-    }
-    for (SLanguage mr : new ArrayList<SLanguage>(((jetbrains.mps.smodel.SModelInternal) model).importedLanguageIds())) {
-      ((jetbrains.mps.smodel.SModelInternal) model).deleteLanguageId(mr);
-    }
-    ((jetbrains.mps.smodel.SModelInternal) model).calculateImplicitImports();
-  }
-
-  public static void copyModelProperties(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
+  private static void copyModelProperties(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
     from.copyPropertiesTo(to);
   }
 
