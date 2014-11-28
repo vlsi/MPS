@@ -60,8 +60,6 @@ public class ReadHelper9 {
     registerLanguage(index, ref);
   }
   public void addImplicitlyUsedLanguage(SModel model, String index, SLanguageId ref, int version) {
-    String name = DebugRegistry.getInstance().getLanguageName(ref);
-    model.addImplicitlyUsedLanguage(MetaAdapterFactory.getLanguage(ref, name), version);
     registerLanguage(index, ref);
   }
   public void registerLanguage(String index, SLanguageId ref) {

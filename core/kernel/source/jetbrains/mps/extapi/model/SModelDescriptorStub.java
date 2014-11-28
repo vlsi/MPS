@@ -219,11 +219,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public Map<SLanguage, Integer> implicitLanguageIdsWithVersions() {
-    return getSModelInternal().implicitlyUsedLanguagesWithVersions();
-  }
-
-  @Override
   public void deleteLanguageId(@NotNull SLanguage ref) {
     getSModelInternal().deleteLanguage(ref);
   }
@@ -276,11 +271,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   @Override
   public final void calculateImplicitImports() {
     getSModelInternal().getImplicitImportsSupport().calculateImplicitImports();
-  }
-
-  @Override
-  public void calculateImplicitLanguages() {
-    getSModelInternal().validateImplicitlyUsedLanguages();
   }
 
   @Override

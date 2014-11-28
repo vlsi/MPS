@@ -3101,49 +3101,6 @@
         <node concept="17QB3L" id="74QcnkFn5KL" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="74QcnkFn5KM" role="3clF47">
-        <node concept="3cpWs8" id="2G4N_X5IloM" role="3cqZAp">
-          <node concept="3cpWsn" id="2G4N_X5IloN" role="3cpWs9">
-            <property role="TrG5h" value="name" />
-            <node concept="3uibUv" id="2G4N_X5IloK" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-            </node>
-            <node concept="2OqwBi" id="2G4N_X5IloO" role="33vP2m">
-              <node concept="2YIFZM" id="2G4N_X5IloP" role="2Oq$k0">
-                <ref role="1Pybhc" to="cu2c:~DebugRegistry" resolve="DebugRegistry" />
-                <ref role="37wK5l" to="cu2c:~DebugRegistry.getInstance():jetbrains.mps.smodel.DebugRegistry" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="2G4N_X5IloQ" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~DebugRegistry.getLanguageName(jetbrains.mps.smodel.adapter.ids.SLanguageId):java.lang.String" resolve="getLanguageName" />
-                <node concept="37vLTw" id="2G4N_X5IloR" role="37wK5m">
-                  <ref role="3cqZAo" node="74QcnkFn5KZ" resolve="ref" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3nu4Rn9nemN" role="3cqZAp">
-          <node concept="2OqwBi" id="3nu4Rn9nC4c" role="3clFbG">
-            <node concept="37vLTw" id="3nu4Rn9nemL" role="2Oq$k0">
-              <ref role="3cqZAo" node="3nu4Rn9nem1" resolve="model" />
-            </node>
-            <node concept="liA8E" id="3nu4Rn9nCqj" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~SModel.addImplicitlyUsedLanguage(org.jetbrains.mps.openapi.language.SLanguage,int):void" resolve="addImplicitlyUsedLanguage" />
-              <node concept="2YIFZM" id="2G4N_X5IlGZ" role="37wK5m">
-                <ref role="37wK5l" to="hy6y:~MetaAdapterFactory.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
-                <ref role="1Pybhc" to="hy6y:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
-                <node concept="37vLTw" id="2G4N_X5IlH0" role="37wK5m">
-                  <ref role="3cqZAo" node="74QcnkFn5KZ" resolve="ref" />
-                </node>
-                <node concept="37vLTw" id="2G4N_X5IlH1" role="37wK5m">
-                  <ref role="3cqZAo" node="2G4N_X5IloN" resolve="name" />
-                </node>
-              </node>
-              <node concept="37vLTw" id="3nu4Rn9nCvn" role="37wK5m">
-                <ref role="3cqZAo" node="3nu4Rn9nCs8" resolve="version" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="7viym4AGq6g" role="3cqZAp">
           <node concept="1rXfSq" id="7viym4AGq6e" role="3clFbG">
             <ref role="37wK5l" node="7viym4AGn3H" resolve="registerLanguage" />

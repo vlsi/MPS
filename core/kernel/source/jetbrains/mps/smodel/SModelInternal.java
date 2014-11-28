@@ -48,8 +48,6 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   Map<SLanguage, Integer> importedLanguageIdsWithVersions();
 
-  Map<SLanguage, Integer> implicitLanguageIdsWithVersions();
-
   void deleteLanguageId(@NotNull SLanguage ref);
 
   void addLanguage(Language language);
@@ -92,6 +90,4 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
   void changeModelReference(SModelReference newModelReference);
 
   boolean updateModuleReferences();
-
-  void calculateImplicitLanguages();
 }

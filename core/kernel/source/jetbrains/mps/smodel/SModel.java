@@ -89,7 +89,6 @@ public class SModel implements SModelData {
   private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
   private Map<SLanguage, Integer> myLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
-  private Map<SLanguage, Integer> myImplicitLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
   private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
@@ -587,59 +586,6 @@ public class SModel implements SModelData {
     }
   }
 
-  public void validateImplicitlyUsedLanguages() {
-    Set<SLanguage> myUsedLanguages = new HashSet<SLanguage>();
-
-    for (org.jetbrains.mps.openapi.model.SNode root : getRootNodes()) {
-      for (org.jetbrains.mps.openapi.model.SNode n : SNodeUtil.getDescendants(root)) {
-        SConcept conceptId = n.getConcept();
-        myUsedLanguages.add(conceptId.getLanguage());
-
-        if (n.getParent() != null) {
-          SContainmentLink roleId = n.getContainmentLink();
-          myUsedLanguages.add(roleId.getContainingConcept().getLanguage());
-        }
-        for (SProperty pid : n.getProperties()) {
-          myUsedLanguages.add(pid.getContainingConcept().getLanguage());
-        }
-
-        for (SReference ref : n.getReferences()) {
-          myUsedLanguages.add(ref.getLink().getContainingConcept().getLanguage());
-        }
-      }
-    }
-
-    Map<SLanguage, Integer> myNewImplicitLanguagesIds = new HashMap<SLanguage, Integer>(myUsedLanguages.size());
-
-    for (SLanguage lang : myLanguagesIds.keySet()) {
-      myUsedLanguages.remove(lang);
-    }
-
-    for (Entry<SLanguage, Integer> lang : myImplicitLanguagesIds.entrySet()) {
-      if (myUsedLanguages.remove(lang.getKey())) {
-        myNewImplicitLanguagesIds.put(lang.getKey(), lang.getValue());
-      }
-    }
-
-    for (SLanguage lang : myUsedLanguages) {
-      SModule sm = lang.getSourceModule();
-      if (sm == null) continue;
-      int version = ((Language) sm).getLanguageVersion();
-      myNewImplicitLanguagesIds.put(lang, version);
-    }
-
-    myImplicitLanguagesIds = myNewImplicitLanguagesIds;
-  }
-
-  // for persistence
-  public void addImplicitlyUsedLanguage(SLanguage id, int version) {
-    myImplicitLanguagesIds.put(id, version);
-  }
-
-  public Map<SLanguage, Integer> implicitlyUsedLanguagesWithVersions() {
-    return myImplicitLanguagesIds;
-  }
-
   public Collection<SLanguage> usedLanguages() {
     return Collections.unmodifiableSet(myLanguagesIds.keySet());
   }
@@ -658,7 +604,6 @@ public class SModel implements SModelData {
     assertLegalChange();
 
     if (myLanguages.remove(ref)) {
-      //calculateImplicitImports();
       invalidateModelDepsManager();
       fireLanguageRemovedEvent(ref);
       markChanged();

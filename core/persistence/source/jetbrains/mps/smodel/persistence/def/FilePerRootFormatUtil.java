@@ -164,7 +164,6 @@ public class FilePerRootFormatUtil {
     // save into JDOM
     if (persistenceVersion < 9) {
       modelData.getImplicitImportsSupport().calculateImplicitImports();
-      modelData.validateImplicitlyUsedLanguages();
     }
     Map<String, Document> result = ModelPersistence.getModelPersistence(persistenceVersion).getModelWriter(modelHeader).saveModelAsMultiStream(modelData);
 

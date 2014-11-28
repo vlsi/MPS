@@ -67,7 +67,6 @@ public final class CopyUtil {
       ((jetbrains.mps.smodel.SModelInternal) model).deleteLanguageId(mr);
     }
     ((jetbrains.mps.smodel.SModelInternal) model).calculateImplicitImports();
-    ((jetbrains.mps.smodel.SModelInternal) model).calculateImplicitLanguages();
   }
 
   public static void copyModelProperties(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
