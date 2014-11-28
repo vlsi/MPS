@@ -649,6 +649,7 @@
     <dep root="8972672481958095232" />
     <dep root="9100188248702352244" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_Identifier_String_PropertySupport.java" />
   </source>
   <source id="1083245097125" name="EnumClass" hash="-1x9vcteei37ba2a7yhply4182xkjn8o" />
@@ -953,6 +954,7 @@
     <dep root="8972672481958095232" />
     <dep root="9100188248702352244" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_FPNumber_String_PropertySupport.java" />
   </source>
   <source id="1116615150612" name="ClassifierClassExpression" hash="cz8wlfum4nwzkgjkz3mquyd38gu2e0m" />
@@ -1952,7 +1954,6 @@
     <dep root="8473865358220097975" />
     <dep root="8972672481958095232" />
     <dep root="9100188248702352244" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_LongType_String_PropertySupport.java" />
   </source>
   <source id="5279705229678483898" name="_FloatNumberValue" hash="-e8fz6fyhl5oeqkvebv84azlm24orill" dependsOnNodes="true">
@@ -2244,6 +2245,7 @@
     <dep root="8473865358220097975" />
     <dep root="8972672481958095232" />
     <dep root="9100188248702352244" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_FloatNumberValue_PropertySupport.java" />
   </source>
   <source id="6734604082923916973" name="_HexNumberValue" hash="-djbosuz34xk6qn6pl33aa0p85ayjab2" dependsOnNodes="true">
@@ -2535,6 +2537,7 @@
     <dep root="8473865358220097975" />
     <dep root="8972672481958095232" />
     <dep root="9100188248702352244" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_HexNumberValue_PropertySupport.java" />
   </source>
   <source id="4972933694980447171" name="BaseVariableDeclaration" hash="-8b3wxzf9rxwszzxzvk5jzp7ouhykgs1" />
