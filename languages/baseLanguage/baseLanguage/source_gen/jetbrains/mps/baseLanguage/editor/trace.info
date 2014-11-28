@@ -39108,43 +39108,51 @@
       <node id="5333742848913568228" at="14,146,15,152" concept="5" />
       <node id="5333742848913568228" at="18,0,19,0" concept="6" trace="myNode" />
       <node id="5333742848913568228" at="19,71,20,25" concept="5" />
-      <node id="5333742848913568228" at="22,54,23,56" concept="5" />
-      <node id="5333742848913588985" at="25,75,26,39" concept="5" />
-      <node id="5333742848913568228" at="30,0,31,0" concept="6" trace="myNode" />
-      <node id="5333742848913568228" at="31,74,32,25" concept="5" />
-      <node id="5333742848913568228" at="34,54,35,56" concept="5" />
-      <node id="5333742848913588985" at="37,75,38,39" concept="5" />
+      <node id="5333742848913568228" at="22,40,23,76" concept="12" />
+      <node id="5333742848913568228" at="25,54,26,56" concept="5" />
+      <node id="5333742848913588985" at="28,75,29,39" concept="5" />
+      <node id="5333742848913568228" at="33,0,34,0" concept="6" trace="myNode" />
+      <node id="5333742848913568228" at="34,74,35,25" concept="5" />
+      <node id="5333742848913568228" at="37,40,38,76" concept="12" />
+      <node id="5333742848913568228" at="40,54,41,56" concept="5" />
+      <node id="5333742848913588985" at="43,75,44,39" concept="5" />
       <node id="5333742848913568228" at="19,0,22,0" concept="3" trace="DeleteBooleanConstantWithUnmatchedParen_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5333742848913568228" at="22,0,25,0" concept="10" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="5333742848913568228" at="25,0,28,0" concept="10" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5333742848913568228" at="31,0,34,0" concept="3" trace="DeleteBooleanConstantWithUnmatchedParen_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5333742848913568228" at="34,0,37,0" concept="10" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="5333742848913568228" at="37,0,40,0" concept="10" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5333742848913568228" at="22,0,25,0" concept="10" trace="getDescriptionText#()Ljava/lang/String;" />
+      <node id="5333742848913568228" at="25,0,28,0" concept="10" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="5333742848913568228" at="28,0,31,0" concept="10" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5333742848913568228" at="34,0,37,0" concept="3" trace="DeleteBooleanConstantWithUnmatchedParen_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5333742848913568228" at="37,0,40,0" concept="10" trace="getDescriptionText#()Ljava/lang/String;" />
+      <node id="5333742848913568228" at="40,0,43,0" concept="10" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="5333742848913568228" at="43,0,46,0" concept="10" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5333742848913568228" at="13,0,17,0" concept="15" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="5333742848913568228" at="19,71,20,25" />
-      <scope id="5333742848913568228" at="22,54,23,56" />
-      <scope id="5333742848913568231" at="25,75,26,39" />
-      <scope id="5333742848913568228" at="31,74,32,25" />
-      <scope id="5333742848913568228" at="34,54,35,56" />
-      <scope id="5333742848913568231" at="37,75,38,39" />
+      <scope id="5333742848913568228" at="22,40,23,76" />
+      <scope id="5333742848913568228" at="25,54,26,56" />
+      <scope id="5333742848913568231" at="28,75,29,39" />
+      <scope id="5333742848913568228" at="34,74,35,25" />
+      <scope id="5333742848913568228" at="37,40,38,76" />
+      <scope id="5333742848913568228" at="40,54,41,56" />
+      <scope id="5333742848913568231" at="43,75,44,39" />
       <scope id="5333742848913568228" at="13,95,15,152" />
       <scope id="5333742848913568228" at="19,0,22,0">
         <var name="node" id="5333742848913568228" />
       </scope>
-      <scope id="5333742848913568228" at="22,0,25,0">
-        <var name="editorContext" id="5333742848913568228" />
-      </scope>
+      <scope id="5333742848913568228" at="22,0,25,0" />
       <scope id="5333742848913568228" at="25,0,28,0">
         <var name="editorContext" id="5333742848913568228" />
-        <var name="node" id="5333742848913568228" />
       </scope>
-      <scope id="5333742848913568228" at="31,0,34,0">
+      <scope id="5333742848913568228" at="28,0,31,0">
+        <var name="editorContext" id="5333742848913568228" />
         <var name="node" id="5333742848913568228" />
       </scope>
       <scope id="5333742848913568228" at="34,0,37,0">
+        <var name="node" id="5333742848913568228" />
+      </scope>
+      <scope id="5333742848913568228" at="37,0,40,0" />
+      <scope id="5333742848913568228" at="40,0,43,0">
         <var name="editorContext" id="5333742848913568228" />
       </scope>
-      <scope id="5333742848913568228" at="37,0,40,0">
+      <scope id="5333742848913568228" at="43,0,46,0">
         <var name="editorContext" id="5333742848913568228" />
         <var name="node" id="5333742848913568228" />
       </scope>
@@ -39153,9 +39161,9 @@
         <var name="editorCell" id="5333742848913568228" />
         <var name="node" id="5333742848913568228" />
       </scope>
-      <unit id="5333742848913568228" at="17,0,29,0" name="jetbrains.mps.baseLanguage.editor.DeleteBooleanConstantWithUnmatchedParen$DeleteBooleanConstantWithUnmatchedParen_DELETE" />
-      <unit id="5333742848913568228" at="29,0,41,0" name="jetbrains.mps.baseLanguage.editor.DeleteBooleanConstantWithUnmatchedParen$DeleteBooleanConstantWithUnmatchedParen_BACKSPACE" />
-      <unit id="5333742848913568228" at="12,0,42,0" name="jetbrains.mps.baseLanguage.editor.DeleteBooleanConstantWithUnmatchedParen" />
+      <unit id="5333742848913568228" at="17,0,32,0" name="jetbrains.mps.baseLanguage.editor.DeleteBooleanConstantWithUnmatchedParen$DeleteBooleanConstantWithUnmatchedParen_DELETE" />
+      <unit id="5333742848913568228" at="32,0,47,0" name="jetbrains.mps.baseLanguage.editor.DeleteBooleanConstantWithUnmatchedParen$DeleteBooleanConstantWithUnmatchedParen_BACKSPACE" />
+      <unit id="5333742848913568228" at="12,0,48,0" name="jetbrains.mps.baseLanguage.editor.DeleteBooleanConstantWithUnmatchedParen" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)/5497648299878491910">
