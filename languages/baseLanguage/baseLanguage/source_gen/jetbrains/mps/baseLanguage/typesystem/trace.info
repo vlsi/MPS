@@ -8931,8 +8931,8 @@
     <file name="ChooseAppropriateMethodDeclaration_QuickFix.java">
       <node id="1216647945691" at="27,44,28,51" concept="13" />
       <node id="901167123042830975" at="31,1216,32,88" concept="14" />
-      <node id="6958036945086235646" at="32,88,33,1027" concept="12" />
-      <node id="3671207155728948009" at="33,1027,34,446" concept="12" />
+      <node id="6958036945086235646" at="32,88,33,1023" concept="12" />
+      <node id="3671207155728948009" at="33,1023,34,446" concept="12" />
       <node id="3021057898025376075" at="36,41,37,196" concept="13" />
       <node id="7778014252725745939" at="42,41,43,195" concept="13" />
       <node id="5505770415436817941" at="45,11,46,324" concept="12" />
@@ -9066,7 +9066,7 @@
         <var name="scope" id="1239133820045" />
       </scope>
       <scope id="7778014252725745854" at="31,1216,52,13">
-        <var name="classConcept" id="6958036945086235647" />
+        <var name="classifier" id="6958036945086235647" />
         <var name="name" id="3671207155728948010" />
         <var name="staticMethods" id="3671207155728948081" />
       </scope>
@@ -9074,7 +9074,7 @@
       <scope id="1216647860300" at="30,0,108,0">
         <var name="node" id="1216647860300" />
       </scope>
-      <unit id="3021057898025376071" at="35,262,39,7" name="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$1" />
+      <unit id="3021057898025376071" at="35,260,39,7" name="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$1" />
       <unit id="7778014252725745937" at="41,254,45,9" name="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix$2" />
       <unit id="1216647860300" at="24,0,109,0" name="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix" />
     </file>
@@ -15464,8 +15464,8 @@
       <node id="1812280377806301402" at="41,5,42,0" concept="15" />
       <node id="1812280377806428646" at="42,0,43,57" concept="14" />
       <node id="3151797052699686297" at="43,57,44,243" concept="12" />
-      <node id="3151797052699686303" at="44,243,45,385" concept="6" />
-      <node id="3151797052699686309" at="45,385,46,380" concept="6" />
+      <node id="3151797052699686303" at="44,243,45,383" concept="6" />
+      <node id="3151797052699686309" at="45,383,46,380" concept="6" />
       <node id="1812280377806505981" at="46,380,47,63" concept="6" />
       <node id="1812280377806509901" at="47,63,48,61" concept="6" />
       <node id="3151797052703994605" at="48,61,49,0" concept="15" />
