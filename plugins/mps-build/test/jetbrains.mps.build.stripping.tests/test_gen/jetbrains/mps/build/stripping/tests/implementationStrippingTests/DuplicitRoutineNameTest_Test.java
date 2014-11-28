@@ -28,6 +28,11 @@ public class DuplicitRoutineNameTest_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)", false);
     this.runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.DuplicitRoutineNameTest_Test$TestBody", "test_ErrorMessagesCheck8240600211257296170", true);
   }
+  @Test
+  public void test_NodeErrorCheck5096525813410407861() throws Throwable {
+    this.initTest("${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)", false);
+    this.runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.DuplicitRoutineNameTest_Test$TestBody", "test_NodeErrorCheck5096525813410407861", true);
+  }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_NodeErrorCheck8240600211257314592() throws Exception {
@@ -41,6 +46,10 @@ public class DuplicitRoutineNameTest_Test extends BaseTransformationTest {
     public void test_ErrorMessagesCheck8240600211257296170() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8240600211257296170"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("8240600211257294411")});
+    }
+    public void test_NodeErrorCheck5096525813410407861() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("5096525813410407861"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("5096525813410407848")});
     }
   }
 }
