@@ -63,6 +63,7 @@
     <import index="qyr2" ref="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)" />
     <import index="bmv6" ref="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)" />
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(jetbrains.mps.util@java_stub)" />
+    <import index="jrbx" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
@@ -74,7 +75,6 @@
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
-    <import index="jrbx" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" implicit="true" />
     <import index="pxpg" ref="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" implicit="true" />
   </imports>
   <registry>
@@ -99,7 +99,9 @@
         <reference id="1205756909548" name="member" index="2WH_rO" />
       </concept>
       <concept id="1205769003971" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" flags="ng" index="2XrIbr" />
-      <concept id="1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" flags="nn" index="2XshWL" />
+      <concept id="1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" flags="nn" index="2XshWL">
+        <child id="1205770614681" name="actualArgument" index="2XxRq1" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -279,14 +281,14 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
+      <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
+        <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
         <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
         <reference id="1144432896254" name="enumClass" index="1Px2BO" />
-      </concept>
-      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
-      <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
-        <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
       </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -2593,7 +2595,7 @@
       <node concept="3clFbS" id="7yFo2E9ZaYL" role="2VODD2">
         <node concept="3cpWs8" id="27DL58Tyt9q" role="3cqZAp">
           <node concept="3cpWsn" id="27DL58Tyt9t" role="3cpWs9">
-            <property role="TrG5h" value="conflictedFiles" />
+            <property role="TrG5h" value="conflictedModelFiles" />
             <node concept="_YKpA" id="27DL58Tyt9m" role="1tU5fm">
               <node concept="3uibUv" id="27DL58TyuZA" role="_ZDj9">
                 <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
@@ -2602,7 +2604,18 @@
             <node concept="2OqwBi" id="27DL58Tyvd8" role="33vP2m">
               <node concept="2WthIp" id="27DL58Tyvdb" role="2Oq$k0" />
               <node concept="2XshWL" id="27DL58Tyvdd" role="2OqNvi">
-                <ref role="2WH_rO" node="27DL58TxU9q" resolve="getConflictedFIles" />
+                <ref role="2WH_rO" node="27DL58TxU9q" resolve="getConflictingModelFiles" />
+                <node concept="2OqwBi" id="68MS4n2Gaz1" role="2XxRq1">
+                  <node concept="2OqwBi" id="68MS4n2Gaz2" role="2Oq$k0">
+                    <node concept="2WthIp" id="68MS4n2Gaz3" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="68MS4n2Gaz4" role="2OqNvi">
+                      <ref role="2WH_rO" node="7yFo2E9ZbMd" resolve="project" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="68MS4n2Gaz5" role="2OqNvi">
+                    <ref role="37wK5l" to="jrbx:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -2663,7 +2676,7 @@
                 <node concept="liA8E" id="7yFo2Ea1nHR" role="2OqNvi">
                   <ref role="37wK5l" to="hcps:~MergeProvider2.createMergeSession(java.util.List):com.intellij.openapi.vcs.merge.MergeSession" resolve="createMergeSession" />
                   <node concept="37vLTw" id="7yFo2Ea1nJ2" role="37wK5m">
-                    <ref role="3cqZAo" node="27DL58Tyt9t" resolve="conflictedFiles" />
+                    <ref role="3cqZAo" node="27DL58Tyt9t" resolve="conflictedModelFiles" />
                   </node>
                 </node>
               </node>
@@ -2685,43 +2698,58 @@
             <property role="TrG5h" value="file" />
           </node>
           <node concept="3clFbS" id="7yFo2Ea1tdh" role="2LFqv$">
-            <node concept="3cpWs8" id="7yFo2Ea1v0T" role="3cqZAp">
-              <node concept="3cpWsn" id="7yFo2Ea1v0U" role="3cpWs9">
-                <property role="TrG5h" value="fileType" />
-                <node concept="3uibUv" id="7yFo2Ea1v0V" role="1tU5fm">
-                  <ref role="3uigEE" to="f7f1:~FileType" resolve="FileType" />
+            <node concept="3cpWs8" id="7yFo2Ea2Jpb" role="3cqZAp">
+              <node concept="3cpWsn" id="7yFo2Ea2Jpc" role="3cpWs9">
+                <property role="TrG5h" value="mergeData" />
+                <node concept="3uibUv" id="7yFo2Ea2Jpd" role="1tU5fm">
+                  <ref role="3uigEE" to="hcps:~MergeData" resolve="MergeData" />
                 </node>
-                <node concept="2OqwBi" id="7yFo2Ea1vkL" role="33vP2m">
-                  <node concept="2GrUjf" id="7yFo2Ea1v1P" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="7yFo2Ea1tdf" resolve="file" />
-                  </node>
-                  <node concept="liA8E" id="7yFo2Ea1wR1" role="2OqNvi">
-                    <ref role="37wK5l" to="3df7:~VirtualFile.getFileType():com.intellij.openapi.fileTypes.FileType" resolve="getFileType" />
-                  </node>
-                </node>
+                <node concept="10Nm6u" id="7yFo2Ea7iCF" role="33vP2m" />
               </node>
             </node>
-            <node concept="3clFbJ" id="7yFo2Ea1xob" role="3cqZAp">
-              <node concept="3clFbS" id="7yFo2Ea1xoe" role="3clFbx">
-                <node concept="3N13vt" id="7yFo2Ea2$L$" role="3cqZAp" />
-              </node>
-              <node concept="3fqX7Q" id="7yFo2Ea1xFD" role="3clFbw">
-                <node concept="1eOMI4" id="7yFo2Ea1xGr" role="3fr31v">
-                  <node concept="2OqwBi" id="7yFo2Ea2y7m" role="1eOMHV">
-                    <node concept="10M0yZ" id="7yFo2Ea1yor" role="2Oq$k0">
-                      <ref role="1PxDUh" to="qyr2:5eJvzs3Q6DI" resolve="ModelMergeTool" />
-                      <ref role="3cqZAo" to="qyr2:4e9OAPLWjQv" resolve="SUPPORTED_TYPES" />
-                    </node>
-                    <node concept="3JPx81" id="7yFo2Ea2$CN" role="2OqNvi">
-                      <node concept="37vLTw" id="7yFo2Ea2$Fd" role="25WWJ7">
-                        <ref role="3cqZAo" node="7yFo2Ea1v0U" resolve="fileType" />
+            <node concept="SfApY" id="7yFo2Ea7fkl" role="3cqZAp">
+              <node concept="3clFbS" id="7yFo2Ea7fkm" role="SfCbr">
+                <node concept="3clFbF" id="7yFo2Ea7fkn" role="3cqZAp">
+                  <node concept="37vLTI" id="7yFo2Ea7fko" role="3clFbG">
+                    <node concept="2OqwBi" id="7yFo2Ea7fkp" role="37vLTx">
+                      <node concept="37vLTw" id="7yFo2Ea7fkq" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7yFo2Ea1dCX" resolve="provider" />
+                      </node>
+                      <node concept="liA8E" id="7yFo2Ea7fkr" role="2OqNvi">
+                        <ref role="37wK5l" to="hcps:~MergeProvider.loadRevisions(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.merge.MergeData" resolve="loadRevisions" />
+                        <node concept="2GrUjf" id="7yFo2Ea7fks" role="37wK5m">
+                          <ref role="2Gs0qQ" node="7yFo2Ea1tdf" resolve="file" />
+                        </node>
                       </node>
                     </node>
+                    <node concept="37vLTw" id="7yFo2Ea7fkt" role="37vLTJ">
+                      <ref role="3cqZAo" node="7yFo2Ea2Jpc" resolve="mergeData" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="TDmWw" id="7yFo2Ea7fku" role="TEbGg">
+                <node concept="3clFbS" id="7yFo2Ea7fkv" role="TDEfX">
+                  <node concept="34ab3g" id="7yFo2Ea7fkw" role="3cqZAp">
+                    <property role="35gtTG" value="error" />
+                    <property role="34fQS0" value="true" />
+                    <node concept="Xl_RD" id="7yFo2Ea7fkx" role="34bqiv">
+                      <property role="Xl_RC" value="Error loading revisions to merge" />
+                    </node>
+                    <node concept="37vLTw" id="7yFo2Ea7fky" role="34bMjA">
+                      <ref role="3cqZAo" node="7yFo2Ea7fkz" resolve="e" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWsn" id="7yFo2Ea7fkz" role="TDEfY">
+                  <property role="TrG5h" value="e" />
+                  <node concept="3uibUv" id="7yFo2Ea7fk$" role="1tU5fm">
+                    <ref role="3uigEE" to="3dcm:~VcsException" resolve="VcsException" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="7yFo2Ea2$LK" role="3cqZAp" />
+            <node concept="3clFbH" id="7yFo2Ea2I0P" role="3cqZAp" />
             <node concept="3cpWs8" id="7yFo2Ea2Ai1" role="3cqZAp">
               <node concept="3cpWsn" id="7yFo2Ea2Ai2" role="3cpWs9">
                 <property role="TrG5h" value="iFile" />
@@ -2780,58 +2808,6 @@
                 <ref role="1Pybhc" to="d2v5:~FilePerRootDataSource" resolve="FilePerRootDataSource" />
                 <node concept="37vLTw" id="7yFo2Ea2HrO" role="37wK5m">
                   <ref role="3cqZAo" node="7yFo2Ea2Ai2" resolve="iFile" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="7yFo2Ea2I0P" role="3cqZAp" />
-            <node concept="3cpWs8" id="7yFo2Ea2Jpb" role="3cqZAp">
-              <node concept="3cpWsn" id="7yFo2Ea2Jpc" role="3cpWs9">
-                <property role="TrG5h" value="mergeData" />
-                <node concept="3uibUv" id="7yFo2Ea2Jpd" role="1tU5fm">
-                  <ref role="3uigEE" to="hcps:~MergeData" resolve="MergeData" />
-                </node>
-                <node concept="10Nm6u" id="7yFo2Ea7iCF" role="33vP2m" />
-              </node>
-            </node>
-            <node concept="SfApY" id="7yFo2Ea7fkl" role="3cqZAp">
-              <node concept="3clFbS" id="7yFo2Ea7fkm" role="SfCbr">
-                <node concept="3clFbF" id="7yFo2Ea7fkn" role="3cqZAp">
-                  <node concept="37vLTI" id="7yFo2Ea7fko" role="3clFbG">
-                    <node concept="2OqwBi" id="7yFo2Ea7fkp" role="37vLTx">
-                      <node concept="37vLTw" id="7yFo2Ea7fkq" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7yFo2Ea1dCX" resolve="provider" />
-                      </node>
-                      <node concept="liA8E" id="7yFo2Ea7fkr" role="2OqNvi">
-                        <ref role="37wK5l" to="hcps:~MergeProvider.loadRevisions(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.merge.MergeData" resolve="loadRevisions" />
-                        <node concept="2GrUjf" id="7yFo2Ea7fks" role="37wK5m">
-                          <ref role="2Gs0qQ" node="7yFo2Ea1tdf" resolve="file" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="37vLTw" id="7yFo2Ea7fkt" role="37vLTJ">
-                      <ref role="3cqZAo" node="7yFo2Ea2Jpc" resolve="mergeData" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="TDmWw" id="7yFo2Ea7fku" role="TEbGg">
-                <node concept="3clFbS" id="7yFo2Ea7fkv" role="TDEfX">
-                  <node concept="34ab3g" id="7yFo2Ea7fkw" role="3cqZAp">
-                    <property role="35gtTG" value="error" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="Xl_RD" id="7yFo2Ea7fkx" role="34bqiv">
-                      <property role="Xl_RC" value="Error loading revisions to merge" />
-                    </node>
-                    <node concept="37vLTw" id="7yFo2Ea7fky" role="34bMjA">
-                      <ref role="3cqZAo" node="7yFo2Ea7fkz" resolve="e" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWsn" id="7yFo2Ea7fkz" role="TDEfY">
-                  <property role="TrG5h" value="e" />
-                  <node concept="3uibUv" id="7yFo2Ea7fk$" role="1tU5fm">
-                    <ref role="3uigEE" to="3dcm:~VcsException" resolve="VcsException" />
-                  </node>
                 </node>
               </node>
             </node>
@@ -3270,7 +3246,7 @@
             </node>
           </node>
           <node concept="37vLTw" id="7yFo2Ea1ut0" role="2GsD0m">
-            <ref role="3cqZAo" node="27DL58Tyt9t" resolve="conflictedFiles" />
+            <ref role="3cqZAo" node="27DL58Tyt9t" resolve="conflictedModelFiles" />
           </node>
         </node>
       </node>
@@ -3311,43 +3287,58 @@
             <property role="TrG5h" value="file" />
           </node>
           <node concept="3clFbS" id="7yFo2Ea62wB" role="2LFqv$">
-            <node concept="3cpWs8" id="7yFo2Ea61t3" role="3cqZAp">
-              <node concept="3cpWsn" id="7yFo2Ea61t4" role="3cpWs9">
-                <property role="TrG5h" value="fileType" />
-                <node concept="3uibUv" id="7yFo2Ea61t5" role="1tU5fm">
-                  <ref role="3uigEE" to="f7f1:~FileType" resolve="FileType" />
+            <node concept="3cpWs8" id="7yFo2Ea679j" role="3cqZAp">
+              <node concept="3cpWsn" id="7yFo2Ea679k" role="3cpWs9">
+                <property role="TrG5h" value="mergeData" />
+                <node concept="3uibUv" id="7yFo2Ea679l" role="1tU5fm">
+                  <ref role="3uigEE" to="hcps:~MergeData" resolve="MergeData" />
                 </node>
-                <node concept="2OqwBi" id="7yFo2Ea61t6" role="33vP2m">
-                  <node concept="2GrUjf" id="7yFo2Ea65oJ" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="7yFo2Ea62w_" resolve="file" />
-                  </node>
-                  <node concept="liA8E" id="7yFo2Ea61t8" role="2OqNvi">
-                    <ref role="37wK5l" to="3df7:~VirtualFile.getFileType():com.intellij.openapi.fileTypes.FileType" resolve="getFileType" />
-                  </node>
-                </node>
+                <node concept="10Nm6u" id="7yFo2Ea7aBo" role="33vP2m" />
               </node>
             </node>
-            <node concept="3clFbJ" id="7yFo2Ea61t9" role="3cqZAp">
-              <node concept="3clFbS" id="7yFo2Ea61ta" role="3clFbx">
-                <node concept="3N13vt" id="7yFo2Ea61tb" role="3cqZAp" />
-              </node>
-              <node concept="3fqX7Q" id="7yFo2Ea61tc" role="3clFbw">
-                <node concept="1eOMI4" id="7yFo2Ea61td" role="3fr31v">
-                  <node concept="2OqwBi" id="7yFo2Ea61te" role="1eOMHV">
-                    <node concept="10M0yZ" id="7yFo2Ea61tf" role="2Oq$k0">
-                      <ref role="1PxDUh" to="qyr2:5eJvzs3Q6DI" resolve="ModelMergeTool" />
-                      <ref role="3cqZAo" to="qyr2:4e9OAPLWjQv" resolve="SUPPORTED_TYPES" />
-                    </node>
-                    <node concept="3JPx81" id="7yFo2Ea61tg" role="2OqNvi">
-                      <node concept="37vLTw" id="7yFo2Ea61th" role="25WWJ7">
-                        <ref role="3cqZAo" node="7yFo2Ea61t4" resolve="fileType" />
+            <node concept="SfApY" id="7yFo2Ea6Q4l" role="3cqZAp">
+              <node concept="3clFbS" id="7yFo2Ea6Q4n" role="SfCbr">
+                <node concept="3clFbF" id="7yFo2Ea6T9W" role="3cqZAp">
+                  <node concept="37vLTI" id="7yFo2Ea6UnJ" role="3clFbG">
+                    <node concept="2OqwBi" id="7yFo2Ea6VZ0" role="37vLTx">
+                      <node concept="37vLTw" id="7yFo2Ea6V5$" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7yFo2Ea69c6" resolve="provider" />
+                      </node>
+                      <node concept="liA8E" id="7yFo2Ea6WNt" role="2OqNvi">
+                        <ref role="37wK5l" to="hcps:~MergeProvider.loadRevisions(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.merge.MergeData" resolve="loadRevisions" />
+                        <node concept="2GrUjf" id="7yFo2Ea6XGd" role="37wK5m">
+                          <ref role="2Gs0qQ" node="7yFo2Ea62w_" resolve="file" />
+                        </node>
                       </node>
                     </node>
+                    <node concept="37vLTw" id="7yFo2Ea6T9U" role="37vLTJ">
+                      <ref role="3cqZAo" node="7yFo2Ea679k" resolve="mergeData" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="TDmWw" id="7yFo2Ea6Q4o" role="TEbGg">
+                <node concept="3clFbS" id="7yFo2Ea6Q4q" role="TDEfX">
+                  <node concept="34ab3g" id="7yFo2Ea6YYG" role="3cqZAp">
+                    <property role="35gtTG" value="error" />
+                    <property role="34fQS0" value="true" />
+                    <node concept="Xl_RD" id="7yFo2Ea6YYI" role="34bqiv">
+                      <property role="Xl_RC" value="Error loading revisions to merge" />
+                    </node>
+                    <node concept="37vLTw" id="7yFo2Ea6YYK" role="34bMjA">
+                      <ref role="3cqZAo" node="7yFo2Ea6Q4s" resolve="e" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWsn" id="7yFo2Ea6Q4s" role="TDEfY">
+                  <property role="TrG5h" value="e" />
+                  <node concept="3uibUv" id="7yFo2Ea6RnX" role="1tU5fm">
+                    <ref role="3uigEE" to="3dcm:~VcsException" resolve="VcsException" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="7yFo2Ea6879" role="3cqZAp" />
+            <node concept="3clFbH" id="7yFo2Ea679i" role="3cqZAp" />
             <node concept="3cpWs8" id="7yFo2Ea678V" role="3cqZAp">
               <node concept="3cpWsn" id="7yFo2Ea678W" role="3cpWs9">
                 <property role="TrG5h" value="iFile" />
@@ -3406,58 +3397,6 @@
                 <ref role="1Pybhc" to="d2v5:~FilePerRootDataSource" resolve="FilePerRootDataSource" />
                 <node concept="37vLTw" id="7yFo2Ea679h" role="37wK5m">
                   <ref role="3cqZAo" node="7yFo2Ea678W" resolve="iFile" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="7yFo2Ea679i" role="3cqZAp" />
-            <node concept="3cpWs8" id="7yFo2Ea679j" role="3cqZAp">
-              <node concept="3cpWsn" id="7yFo2Ea679k" role="3cpWs9">
-                <property role="TrG5h" value="mergeData" />
-                <node concept="3uibUv" id="7yFo2Ea679l" role="1tU5fm">
-                  <ref role="3uigEE" to="hcps:~MergeData" resolve="MergeData" />
-                </node>
-                <node concept="10Nm6u" id="7yFo2Ea7aBo" role="33vP2m" />
-              </node>
-            </node>
-            <node concept="SfApY" id="7yFo2Ea6Q4l" role="3cqZAp">
-              <node concept="3clFbS" id="7yFo2Ea6Q4n" role="SfCbr">
-                <node concept="3clFbF" id="7yFo2Ea6T9W" role="3cqZAp">
-                  <node concept="37vLTI" id="7yFo2Ea6UnJ" role="3clFbG">
-                    <node concept="2OqwBi" id="7yFo2Ea6VZ0" role="37vLTx">
-                      <node concept="37vLTw" id="7yFo2Ea6V5$" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7yFo2Ea69c6" resolve="provider" />
-                      </node>
-                      <node concept="liA8E" id="7yFo2Ea6WNt" role="2OqNvi">
-                        <ref role="37wK5l" to="hcps:~MergeProvider.loadRevisions(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.merge.MergeData" resolve="loadRevisions" />
-                        <node concept="2GrUjf" id="7yFo2Ea6XGd" role="37wK5m">
-                          <ref role="2Gs0qQ" node="7yFo2Ea62w_" resolve="file" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="37vLTw" id="7yFo2Ea6T9U" role="37vLTJ">
-                      <ref role="3cqZAo" node="7yFo2Ea679k" resolve="mergeData" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="TDmWw" id="7yFo2Ea6Q4o" role="TEbGg">
-                <node concept="3clFbS" id="7yFo2Ea6Q4q" role="TDEfX">
-                  <node concept="34ab3g" id="7yFo2Ea6YYG" role="3cqZAp">
-                    <property role="35gtTG" value="error" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="Xl_RD" id="7yFo2Ea6YYI" role="34bqiv">
-                      <property role="Xl_RC" value="Error loading revisions to merge" />
-                    </node>
-                    <node concept="37vLTw" id="7yFo2Ea6YYK" role="34bMjA">
-                      <ref role="3cqZAo" node="7yFo2Ea6Q4s" resolve="e" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWsn" id="7yFo2Ea6Q4s" role="TDEfY">
-                  <property role="TrG5h" value="e" />
-                  <node concept="3uibUv" id="7yFo2Ea6RnX" role="1tU5fm">
-                    <ref role="3uigEE" to="3dcm:~VcsException" resolve="VcsException" />
-                  </node>
                 </node>
               </node>
             </node>
@@ -3631,7 +3570,18 @@
           <node concept="2OqwBi" id="27DL58TyoZt" role="2GsD0m">
             <node concept="2WthIp" id="27DL58TyoZw" role="2Oq$k0" />
             <node concept="2XshWL" id="27DL58TyoZy" role="2OqNvi">
-              <ref role="2WH_rO" node="27DL58TxU9q" resolve="getConflictedFIles" />
+              <ref role="2WH_rO" node="27DL58TxU9q" resolve="getConflictingModelFiles" />
+              <node concept="2OqwBi" id="68MS4n2Gc3m" role="2XxRq1">
+                <node concept="2OqwBi" id="68MS4n2Gc3n" role="2Oq$k0">
+                  <node concept="2WthIp" id="68MS4n2Gc3o" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="68MS4n2Gc3p" role="2OqNvi">
+                    <ref role="2WH_rO" node="7yFo2E9ZbMd" resolve="project" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="68MS4n2Gc3q" role="2OqNvi">
+                  <ref role="37wK5l" to="jrbx:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -3642,7 +3592,13 @@
       </node>
     </node>
     <node concept="2XrIbr" id="27DL58TxU9q" role="32lrUH">
-      <property role="TrG5h" value="getConflictedFIles" />
+      <property role="TrG5h" value="getConflictingModelFiles" />
+      <node concept="37vLTG" id="68MS4n2G0_N" role="3clF46">
+        <property role="TrG5h" value="proj" />
+        <node concept="3uibUv" id="68MS4n2G2BH" role="1tU5fm">
+          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+        </node>
+      </node>
       <node concept="3Tm6S6" id="27DL58TxU9r" role="1B3o_S" />
       <node concept="_YKpA" id="27DL58Tyk6I" role="3clF45">
         <node concept="3uibUv" id="27DL58Tyk6K" role="_ZDj9">
@@ -3876,16 +3832,8 @@
             <node concept="2YIFZM" id="27DL58TxU9d" role="2Oq$k0">
               <ref role="37wK5l" to="o84r:~ChangeListManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.vcs.changes.ChangeListManager" resolve="getInstance" />
               <ref role="1Pybhc" to="o84r:~ChangeListManager" resolve="ChangeListManager" />
-              <node concept="2OqwBi" id="27DL58TxU9e" role="37wK5m">
-                <node concept="2OqwBi" id="27DL58TxU9f" role="2Oq$k0">
-                  <node concept="2WthIp" id="27DL58TxU9g" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="27DL58TxU9h" role="2OqNvi">
-                    <ref role="2WH_rO" node="7yFo2E9ZbMd" resolve="project" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="27DL58TxU9i" role="2OqNvi">
-                  <ref role="37wK5l" to="jrbx:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-                </node>
+              <node concept="37vLTw" id="68MS4n2G8dT" role="37wK5m">
+                <ref role="3cqZAo" node="68MS4n2G0_N" resolve="proj" />
               </node>
             </node>
             <node concept="liA8E" id="27DL58TxU9j" role="2OqNvi">
@@ -3895,8 +3843,38 @@
         </node>
         <node concept="3cpWs6" id="27DL58TxU9k" role="3cqZAp">
           <node concept="2OqwBi" id="27DL58TyfDl" role="3cqZAk">
-            <node concept="37vLTw" id="27DL58TxU9l" role="2Oq$k0">
-              <ref role="3cqZAo" node="27DL58TxU7N" resolve="conflictedFiles" />
+            <node concept="2OqwBi" id="68MS4n2FaFy" role="2Oq$k0">
+              <node concept="37vLTw" id="27DL58TxU9l" role="2Oq$k0">
+                <ref role="3cqZAo" node="27DL58TxU7N" resolve="conflictedFiles" />
+              </node>
+              <node concept="3zZkjj" id="68MS4n2FcyP" role="2OqNvi">
+                <node concept="1bVj0M" id="68MS4n2FcyR" role="23t8la">
+                  <node concept="3clFbS" id="68MS4n2FcyS" role="1bW5cS">
+                    <node concept="3clFbF" id="68MS4n2FfS$" role="3cqZAp">
+                      <node concept="2OqwBi" id="68MS4n2FfSA" role="3clFbG">
+                        <node concept="10M0yZ" id="68MS4n2FfSB" role="2Oq$k0">
+                          <ref role="3cqZAo" to="qyr2:4e9OAPLWjQv" resolve="SUPPORTED_TYPES" />
+                          <ref role="1PxDUh" to="qyr2:5eJvzs3Q6DI" resolve="ModelMergeTool" />
+                        </node>
+                        <node concept="3JPx81" id="68MS4n2FfSC" role="2OqNvi">
+                          <node concept="2OqwBi" id="68MS4n2Fi_P" role="25WWJ7">
+                            <node concept="37vLTw" id="68MS4n2FhOf" role="2Oq$k0">
+                              <ref role="3cqZAo" node="68MS4n2FcyT" resolve="f" />
+                            </node>
+                            <node concept="liA8E" id="68MS4n2Flpq" role="2OqNvi">
+                              <ref role="37wK5l" to="3df7:~VirtualFile.getFileType():com.intellij.openapi.fileTypes.FileType" resolve="getFileType" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="68MS4n2FcyT" role="1bW2Oz">
+                    <property role="TrG5h" value="f" />
+                    <node concept="2jxLKc" id="68MS4n2FcyU" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
             </node>
             <node concept="ANE8D" id="27DL58TyiMM" role="2OqNvi" />
           </node>

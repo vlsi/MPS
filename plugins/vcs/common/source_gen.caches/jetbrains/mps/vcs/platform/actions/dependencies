@@ -135,7 +135,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.actions.ResolveNonconflictingChanges_Action" file="ResolveNonconflictingChanges_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.fileTypes.FileType" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.Change" />
