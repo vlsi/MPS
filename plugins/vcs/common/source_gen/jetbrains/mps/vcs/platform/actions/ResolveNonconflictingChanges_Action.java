@@ -6,46 +6,19 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import com.intellij.openapi.vcs.merge.MergeProvider;
-import git4idea.GitVcs;
+import java.util.List;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.vcs.merge.MergeData;
-import com.intellij.openapi.vcs.VcsException;
-import org.apache.log4j.Level;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.persistence.FilePerRootDataSource;
-import jetbrains.mps.project.MPSExtentions;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.vcs.diff.merge.MergeSession;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
+import com.intellij.openapi.vcs.merge.MergeProvider;
+import git4idea.GitVcs;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import java.util.List;
+import com.intellij.openapi.vcs.merge.MergeSession;
 import com.intellij.openapi.vcs.merge.MergeProvider2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.FileUtil;
-import java.io.IOException;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import com.intellij.openapi.project.Project;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.TreeSet;
-import java.util.Comparator;
-import com.intellij.openapi.vcs.changes.Change;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import com.intellij.openapi.vcs.changes.ChangeListManager;
-import com.intellij.openapi.vcs.FileStatus;
-import com.intellij.openapi.vcs.changes.ContentRevision;
-import jetbrains.mps.vcs.platform.integration.ModelMergeTool;
+import com.intellij.openapi.progress.ProgressManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -54,46 +27,17 @@ public class ResolveNonconflictingChanges_Action extends BaseAction {
   public ResolveNonconflictingChanges_Action() {
     super("Resolve changes in nonconflicting MPS models", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    List<VirtualFile> conflictedModelFiles = ConflictingModelsUtil.getConflictingModelFiles(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
     MergeProvider provider = GitVcs.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject()).getMergeProvider();
 
-    for (VirtualFile file : ListSequence.fromList(ResolveNonconflictingChanges_Action.this.getConflictingModelFiles(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), _params))) {
-      MergeData mergeData = null;
-      try {
-        mergeData = provider.loadRevisions(file);
-      } catch (VcsException e) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Error loading revisions to merge", e);
-        }
-      }
-
-      IFile iFile = FileSystem.getInstance().getFileByPath(file.getPath());
-      String ext = file.getExtension();
-      if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
-        ext = MPSExtentions.MODEL;
-      }
-      SModel baseModel = PersistenceUtil.loadModel(new String(mergeData.ORIGINAL), ext);
-      SModel mineModel = PersistenceUtil.loadModel(new String(mergeData.CURRENT), ext);
-      SModel repoModel = PersistenceUtil.loadModel(new String(mergeData.LAST), ext);
-      // read action: 
-      final MergeSession mergeSession = MergeSession.createMergeSession(baseModel, mineModel, repoModel);
-      int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
-        public boolean accept(ModelChange c) {
-          return Sequence.fromIterable(mergeSession.getConflictedWith(c)).isNotEmpty();
-        }
-      }).count();
-      if (conflictingChangesCount == 0) {
-        return true;
-      }
-    }
-
-    return false;
+    return ConflictingModelsUtil.hasResolvableConflicts(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), provider, conflictedModelFiles);
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -120,120 +64,17 @@ public class ResolveNonconflictingChanges_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<VirtualFile> conflictedModelFiles = ResolveNonconflictingChanges_Action.this.getConflictingModelFiles(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), _params);
-
+      List<VirtualFile> conflictedModelFiles = ConflictingModelsUtil.getConflictingModelFiles(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
       // merge with git provider 
       MergeProvider provider = GitVcs.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject()).getMergeProvider();
-      com.intellij.openapi.vcs.merge.MergeSession session = (provider instanceof MergeProvider2 ? ((MergeProvider2) provider).createMergeSession(conflictedModelFiles) : null);
+      MergeSession session = (provider instanceof MergeProvider2 ? ((MergeProvider2) provider).createMergeSession(conflictedModelFiles) : null);
 
-
-      for (final VirtualFile file : ListSequence.fromList(conflictedModelFiles)) {
-        MergeData mergeData = null;
-        try {
-          mergeData = provider.loadRevisions(file);
-        } catch (VcsException e) {
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Error loading revisions to merge", e);
-          }
-        }
-
-        IFile iFile = FileSystem.getInstance().getFileByPath(file.getPath());
-        String ext = file.getExtension();
-        if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
-          ext = MPSExtentions.MODEL;
-        }
-        SModel baseModel = PersistenceUtil.loadModel(new String(mergeData.ORIGINAL), ext);
-        SModel mineModel = PersistenceUtil.loadModel(new String(mergeData.CURRENT), ext);
-        SModel repoModel = PersistenceUtil.loadModel(new String(mergeData.LAST), ext);
-        // read action: 
-        final MergeSession mergeSession = MergeSession.createMergeSession(baseModel, mineModel, repoModel);
-        int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
-          public boolean accept(ModelChange c) {
-            return Sequence.fromIterable(mergeSession.getConflictedWith(c)).isNotEmpty();
-          }
-        }).count();
-        if (conflictingChangesCount != 0) {
-          if (LOG.isInfoEnabled()) {
-            LOG.info("there are still conflicted changes in " + SModelOperations.getModelName(baseModel));
-          }
-          continue;
-        }
-        if (LOG.isInfoEnabled()) {
-          LOG.info("no conflicted changes in " + SModelOperations.getModelName(baseModel));
-        }
-        mergeSession.applyChanges(mergeSession.getAllChanges());
-        if (mergeSession.hasIdsToRestore()) {
-          if (LOG.isInfoEnabled()) {
-            LOG.info(String.format("%s: node id duplication detected, should merge in UI.", SModelOperations.getModelName(baseModel)));
-          }
-          continue;
-        }
-
-        SModel resultModel = mergeSession.getResultModel();
-        if (resultModel != null) {
-          final Wrappers._T<String> resultContent = new Wrappers._T<String>();
-          if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
-            resultContent.value = PersistenceUtil.savePerRootModel(resultModel, file.getExtension().equals(MPSExtentions.MODEL_HEADER));
-          } else {
-            resultContent.value = PersistenceUtil.saveModel(resultModel, ext);
-          }
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
-            public void run() {
-              try {
-                file.setBinaryContent(resultContent.value.getBytes(FileUtil.DEFAULT_CHARSET));
-              } catch (IOException e) {
-                if (LOG.isEnabledFor(Level.ERROR)) {
-                  LOG.error("", e);
-                }
-              }
-            }
-          });
-
-          check_nkvzp6_a4a81a7a0(session, file);
-          VcsDirtyScopeManager.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject()).fileDirty(file);
-        }
-      }
+      ProgressManager.getInstance().run(ConflictingModelsUtil.getModelConflictResolverTask(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), provider, session, conflictedModelFiles));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ResolveNonconflictingChanges", t);
       }
     }
   }
-  private List<VirtualFile> getConflictingModelFiles(Project proj, final Map<String, Object> _params) {
-    Set<VirtualFile> conflictedFiles = SetSequence.fromSet(new TreeSet<VirtualFile>(new Comparator<VirtualFile>() {
-      public int compare(VirtualFile a, VirtualFile b) {
-        return a.getPresentableUrl().compareTo(b.getPresentableUrl());
-      }
-    }));
-    for (Change change : CollectionSequence.fromCollection(ChangeListManager.getInstance(proj).getAllChanges())) {
-      if (change.getFileStatus() == FileStatus.MERGED_WITH_CONFLICTS) {
-        ContentRevision before = change.getBeforeRevision();
-        ContentRevision after = change.getAfterRevision();
-        if (before != null) {
-          VirtualFile file = before.getFile().getVirtualFile();
-          if (file != null) {
-            SetSequence.fromSet(conflictedFiles).addElement(file);
-          }
-        }
-        if (after != null) {
-          VirtualFile file = after.getFile().getVirtualFile();
-          if (file != null) {
-            SetSequence.fromSet(conflictedFiles).addElement(file);
-          }
-        }
-      }
-    }
-    return SetSequence.fromSet(conflictedFiles).where(new IWhereFilter<VirtualFile>() {
-      public boolean accept(VirtualFile f) {
-        return SetSequence.fromSet(ModelMergeTool.SUPPORTED_TYPES).contains(f.getFileType());
-      }
-    }).toListSequence();
-  }
   protected static Logger LOG = LogManager.getLogger(ResolveNonconflictingChanges_Action.class);
-  private static void check_nkvzp6_a4a81a7a0(com.intellij.openapi.vcs.merge.MergeSession checkedDotOperand, VirtualFile file) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.conflictResolvedForFile(file, com.intellij.openapi.vcs.merge.MergeSession.Resolution.Merged);
-    }
-
-  }
 }
