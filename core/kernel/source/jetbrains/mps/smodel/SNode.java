@@ -20,10 +20,15 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -1115,7 +1120,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated
   @Override
   public final String getProperty(String propertyName) {
-    return getProperty(MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName));
+    String prop = getProperty(MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName));
+    if (prop!=null)    return prop;
+
+    return getProperty(convertToProp(propertyName));
   }
 
   @Deprecated
@@ -1143,13 +1151,19 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated
   @Override
   public SNode getReferenceTarget(String role) {
-    return getReferenceTarget(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role));
+    SNode res = getReferenceTarget(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role));
+    if (res!=null) return res;
+
+    return getReferenceTarget(convertToRef(role));
   }
 
   @Deprecated
   @Override
   public SReference getReference(String role) {
-    return getReference(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role));
+    SReference res = getReference(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role));
+    if (res!=null)return res;
+
+    return getReference(convertToRef(role));
   }
 
   @Deprecated
@@ -1174,7 +1188,25 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(String role) {
-    return getChildren(MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), role));
+    List<SNode> res = getChildren(MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), role));
+    if (!res.isEmpty()) return  res;
+
+    return getChildren(convertToLink(role));
+  }
+
+  private SContainmentLink convertToLink(String role) {
+    SContainmentLink link = MetaAdapterFactoryByName.getContainmentLink(getConcept().getQualifiedName(), role);
+    return MetaAdapterFactory.getContainmentLink(((SContainmentLinkAdapter) link).getRoleId(),role);
+  }
+
+  private SReferenceLink convertToRef(String role) {
+    SReferenceLink link = MetaAdapterFactoryByName.getReferenceLink(getConcept().getQualifiedName(), role);
+    return MetaAdapterFactory.getReferenceLink(((SReferenceLinkAdapter) link).getRoleId(), role);
+  }
+
+  private SProperty convertToProp(String role) {
+    SProperty link = MetaAdapterFactoryByName.getProperty(getConcept().getQualifiedName(), role);
+    return MetaAdapterFactory.getProperty(((SPropertyAdapter) link).getId(), role);
   }
 
   private static class ChildrenList extends AbstractSequentialList<SNode> {
