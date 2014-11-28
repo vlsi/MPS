@@ -17,6 +17,7 @@ package jetbrains.mps.module;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleClassLoader;
+import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.vfs.IFile;
@@ -42,19 +43,18 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
 
   @Nullable
   @Override
-  public Class<?> getClass(String classFqName) throws ClassNotFoundException {
+  public Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException {
     return getClass(classFqName, false);
   }
 
   @Nullable
   @Override
-  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException {
+  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException {
     return getClass(classFqName, true);
   }
 
   @Nullable
-  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException {
-    if (!willLoad()) return null;
+  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException, ModuleIsNotLoadableException {
     ClassLoader classLoader = getClassLoader();
     if (classLoader == null) return null;
     String internClassName = InternUtil.intern(classFqName);
@@ -67,7 +67,6 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   @Nullable
   @Override
   public ClassLoader getClassLoader() {
-    if (!willLoad()) return null;
     return myManager.getClassLoader(this);
   }
 
@@ -85,6 +84,7 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
 
   @Override
   protected void dependenciesChanged() {
+    if (!willLoad()) return;
     super.dependenciesChanged();
     fireDependenciesChanged();
   }

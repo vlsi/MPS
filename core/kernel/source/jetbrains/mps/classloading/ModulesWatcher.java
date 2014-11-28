@@ -66,6 +66,7 @@ public class ModulesWatcher {
 
   private final ModuleUpdater myModuleUpdater;
   private final GraphHolder<SModuleReference> myDepGraphHolder = new GraphHolder<SModuleReference>(); // deps graph
+  private Collection<SModuleReference> myCurrentInvalidModules;
 
 
   public ModulesWatcher(SRepository repository, final Condition<ReloadableModule> watchableCondition) {
@@ -82,26 +83,26 @@ public class ModulesWatcher {
     return myStatusMap.get(mRef);
   }
 
-  public void onModulesReloaded(@NotNull Collection<? extends ReloadableModule> modules) {
+  public void updateModules(@NotNull Collection<? extends ReloadableModule> modules) {
     if (modules.isEmpty()) return;
     synchronized (LOCK) {
-      myModuleUpdater.onModulesReloaded(modules);
+      myModuleUpdater.updateModules(modules);
       myChanged = true;
     }
   }
 
-  public void onModulesAdded(@NotNull Collection<? extends ReloadableModule> modules) {
+  public void addModules(@NotNull Collection<? extends ReloadableModule> modules) {
     if (modules.isEmpty()) return;
     synchronized (LOCK) {
-      myModuleUpdater.onModulesAdded(modules);
+      myModuleUpdater.addModules(modules);
       myChanged = true;
     }
   }
 
-  public void onModuleRemoved(@NotNull Collection<? extends SModuleReference> mRefs) {
+  public void removeModules(@NotNull Collection<? extends SModuleReference> mRefs) {
     if (mRefs.isEmpty()) return;
     synchronized (LOCK) {
-      myModuleUpdater.onModuleRemoved(mRefs);
+      myModuleUpdater.removeModules(mRefs);
       myChanged = true;
     }
   }
@@ -119,14 +120,21 @@ public class ModulesWatcher {
           if (!isChanged()) return;
           myChanged = false;
           LOG.debug("Recount status map for modules");
-          myModuleUpdater.updateGraph();
-          Collection<? extends SModuleReference> invalidModules = findInvalidModules();
-          refillStatusMap(invalidModules);
+          boolean updated = myModuleUpdater.updateGraph();
+          Collection<SModuleReference> invalidModules = findInvalidModules();
+          updated |= (!invalidModules.equals(myCurrentInvalidModules));
+          if (updated) {
+            myCurrentInvalidModules = invalidModules;
+            refillStatusMap(invalidModules);
+          }
         }
       }
     });
   }
 
+  /**
+   * costly because of backDeps request
+   */
   private void refillStatusMap(Collection<? extends SModuleReference> invalidModules) {
     myStatusMap.clear();
     for (SModuleReference mRef : getAllModules()) myStatusMap.put(mRef, VALID);
@@ -152,7 +160,7 @@ public class ModulesWatcher {
     return myRefStorage.resolveRef(ref);
   }
 
-  private Collection<? extends SModuleReference> findInvalidModules() {
+  private Collection<SModuleReference> findInvalidModules() {
     myRepository.getModelAccess().checkReadAccess();
 
     Collection<SModuleReference> result = new HashSet<SModuleReference>();
@@ -289,7 +297,6 @@ public class ModulesWatcher {
   boolean isModuleWatched(ReloadableModuleBase module) {
     return getAllModules().contains(module.getModuleReference());
   }
-
 
   static enum ClassLoadingStatus {
     /**

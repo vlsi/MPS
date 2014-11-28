@@ -71,13 +71,13 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
   /**
    * flushes all the events to get the actual state in the repository
    */
-  void refresh() {
-    myDispatcher.flush();
+  boolean refresh() {
+    return myDispatcher.flush();
   }
 
-  private void loadModules(List<? extends ReloadableModuleBase> modules) {
+  private void addModules(List<? extends ReloadableModuleBase> modules) {
     Collections.sort(modules, MODULE_COMPARATOR);
-    myModulesWatcher.onModulesAdded(modules);
+    myModulesWatcher.addModules(modules);
     myManager.preLoadModules(modules, new EmptyProgressMonitor());
   }
 
@@ -86,10 +86,10 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
     myManager.reloadModules(modules);
   }
 
-  private void unloadModules(List<SModuleReference> modules) {
+  private void removeModules(List<SModuleReference> modules) {
     Collections.sort(modules, MODULE_COMPARATOR);
     myManager.unloadModules(modules);
-    myModulesWatcher.onModuleRemoved(modules);
+    myModulesWatcher.removeModules(modules);
   }
 
   @Override
@@ -103,8 +103,8 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
     List<SModuleReference> modulesToUnload = visitor.getModulesToUnload();
     List<ReloadableModuleBase> modulesToUpdate = visitor.getModulesToUpdate();
     List<ReloadableModuleBase> modulesToLoad = visitor.getModulesToLoad();
-    if (modulesToUnload.size() > 0) unloadModules(modulesToUnload);
-    if (modulesToLoad.size() > 0) loadModules(modulesToLoad);
+    if (modulesToUnload.size() > 0) removeModules(modulesToUnload);
+    if (modulesToLoad.size() > 0) addModules(modulesToLoad);
     if (modulesToUpdate.size() > 0) updateModules(modulesToUpdate);
   }
 

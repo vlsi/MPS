@@ -58,21 +58,29 @@ public class ModuleClassLoader extends ClassLoader {
     if (myDisposed) throw new IllegalStateException("MPS ClassLoader is disposed and not operable!");
   }
 
-  public ModuleClassLoader(ModuleClassLoaderSupport classLoaderSupport) {
-    super(getParentPluginClassLoader(classLoaderSupport.getModule()));
-    mySupport = classLoaderSupport;
+  public ModuleClassLoader(ModuleClassLoaderSupport support) {
+    super(getParentPluginClassLoader(support.getModule()));
+    mySupport = support;
   }
 
   @NotNull
-  public Class<?> loadOwnClass(String name) throws ClassNotFoundException {
+  public Class<?> loadOwnClass(String name) throws ClassNotFoundException, ModuleIsNotLoadableException {
     Class<?> aClass = loadClass(name, false, true);
-    if (aClass == null) throw new ClassNotFoundException(name);
+    if (aClass == null) throw new ModuleClassNotFoundException(getModule());
     return aClass;
+  }
+
+  private SModule getModule() {
+    return mySupport.getModule();
   }
 
   @Override
   protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-    return loadClass(name, resolve, false);
+    try {
+      return loadClass(name, resolve, false);
+    } catch (ModuleIsNotLoadableException e) {
+      throw new ModuleClassNotFoundException(getModule(), e.getMessage(), e);
+    }
   }
 
   /**
@@ -81,10 +89,12 @@ public class ModuleClassLoader extends ClassLoader {
    *
    * synchronization on some internal lock object leads to a dead lock.
    */
-  private Class<?> loadClass(String name, boolean resolve, boolean onlyFromSelf) throws ClassNotFoundException {
+  private Class<?> loadClass(String name, boolean resolve, boolean onlyFromSelf) throws ClassNotFoundException, ModuleIsNotLoadableException {
     if (name.startsWith("java.")) {
       return Class.forName(name, false, BOOTSTRAP_CLASSLOADER);
     }
+
+    mySupport.checkWillLoad();
 
     Class<?> aClass = getClassFromCache(name);
     if (aClass != null) return aClass;
@@ -109,19 +119,16 @@ public class ModuleClassLoader extends ClassLoader {
         if (resolve) resolveClass(aClass);
 
         return aClass;
-      } catch (RuntimeException re) {
-        LOG.error("Exception during class loading", re);
-        throw new ClassNotFoundException(name, re);
       } finally {
         myClasses.put(name, aClass);
       }
     }
-
   }
 
-  private ClassNotFoundException createCLNFException(String name) {
-    return new ClassNotFoundException("Unable to load class: " + name +
-        " using ModuleClassLoader of " + mySupport.getModule().getModuleName() + " module", new Throwable());
+  private ModuleClassNotFoundException createCLNFException(String name) {
+    SModule module = mySupport.getModule();
+    return new ModuleClassNotFoundException(module, "Unable to load class: " + name +
+        " using ModuleClassLoader of " + module.getModuleName() + " module");
   }
 
   /**
@@ -135,7 +142,7 @@ public class ModuleClassLoader extends ClassLoader {
     return aClass;
   }
 
-  private Class<?> loadFromSelf(String name) {
+  private Class<?> loadFromSelf(String name) throws ModuleIsNotLoadableException {
     byte[] bytes = mySupport.findClassBytes(name);
     if (bytes != null) {
       String pack = NameUtil.namespaceFromLongName(name);
@@ -148,7 +155,7 @@ public class ModuleClassLoader extends ClassLoader {
     return null;
   }
 
-  private Class<?> loadFromDeps(String name) throws ClassNotFoundException {
+  private Class<?> loadFromDeps(String name) throws ClassNotFoundException, ModuleIsNotLoadableException {
     Collection<? extends ClassLoader> dependencyClassLoaders = getDependencyClassLoaders();
 
     // loading from ModuleClassLoaders firstly; it's faster, we can tell right here if we can find class there.
@@ -156,9 +163,10 @@ public class ModuleClassLoader extends ClassLoader {
       if (depCL instanceof ModuleClassLoader) {
         if (depCL == this) continue;
 
-        if (((ModuleClassLoader) depCL).mySupport.canFindClass(name)) {
+        ModuleClassLoader depCL1 = (ModuleClassLoader) depCL;
+        if (depCL1.mySupport.canFindClass(name)) {
           //here it will certainly load with class loader depCL
-          return ((ModuleClassLoader) depCL).loadOwnClass(name);
+          return depCL1.loadOwnClass(name);
         }
       }
     }
@@ -184,14 +192,17 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected URL findResource(String name) {
-//    checkNotDisposed();
-
     List<ClassLoader> classLoadersToCheck = new ArrayList<ClassLoader>();
     classLoadersToCheck.add(this);
     classLoadersToCheck.addAll(getDependencyClassLoaders());
     for (ClassLoader dep : classLoadersToCheck) {
       if (dep instanceof ModuleClassLoader) {
-        URL res = ((ModuleClassLoader) dep).mySupport.findResource(name);
+        URL res;
+        try {
+          res = ((ModuleClassLoader) dep).mySupport.findResource(name);
+        } catch (ModuleIsNotLoadableException e) {
+          throw new RuntimeException(e);
+        }
         if (res != null) return res;
       }
     }
@@ -201,14 +212,18 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
-//    checkNotDisposed();
     List<ClassLoader> classLoadersToCheck = new ArrayList<ClassLoader>();
     classLoadersToCheck.add(this);
     classLoadersToCheck.addAll(getDependencyClassLoaders());
     List<URL> result = new ArrayList<URL>();
     for (ClassLoader dep : classLoadersToCheck) {
       if (dep instanceof ModuleClassLoader) {
-        Enumeration<URL> resources = ((ModuleClassLoader) dep).mySupport.findResources(name);
+        Enumeration<URL> resources;
+        try {
+          resources = ((ModuleClassLoader) dep).mySupport.findResources(name);
+        } catch (ModuleIsNotLoadableException e) {
+          throw new RuntimeException(e);
+        }
         while (resources.hasMoreElements()) result.add(resources.nextElement());
       }
     }
@@ -255,4 +270,5 @@ public class ModuleClassLoader extends ClassLoader {
     String path = moduleHome.getPath();
     return LibraryInitializer.getInstance().getPluginClassLoaderForPath(path);
   }
+
 }

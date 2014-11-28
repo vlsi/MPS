@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
+import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
@@ -383,7 +384,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @Nullable
-  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException {
+  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException, ModuleIsNotLoadableException {
     // first check if class comes from stubs
     if (classFqName.startsWith(getModuleName() + ".stubs.")) {
       try {

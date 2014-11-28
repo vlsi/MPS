@@ -28,13 +28,11 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
 import java.util.Set;
 
 public class ModuleUpdater {
@@ -55,20 +53,18 @@ public class ModuleUpdater {
     myRefStorage = refStorage;
   }
 
-  public void onModulesReloaded(@NotNull Collection<? extends ReloadableModule> modules) {
+  public void updateModules(@NotNull Collection<? extends ReloadableModule> modules) {
     for (ReloadableModule module : modules) {
       if (myWatchableCondition.met(module)) {
         hackGeneratorReloaded(module);
         myModulesToReload.add(module);
-      } else {
-        myModulesToRemove.add(((ReloadableModuleBase) module).getModuleReference());
       }
-      // need this call because we might get #onModulesAdded notification later than this one
+      // need this call because we might get #addModules notification later than this one
       myRefStorage.moduleAdded((ReloadableModuleBase) module);
     }
   }
 
-  public void onModulesAdded(@NotNull Collection<? extends ReloadableModule> modules) {
+  public void addModules(@NotNull Collection<? extends ReloadableModule> modules) {
     for (ReloadableModule module : modules) {
       if (myWatchableCondition.met(module)) {
         hackGeneratorAdded(module);
@@ -99,7 +95,7 @@ public class ModuleUpdater {
     }
   }
 
-  public void onModuleRemoved(@NotNull Collection<? extends SModuleReference> mRefs) {
+  public void removeModules(@NotNull Collection<? extends SModuleReference> mRefs) {
     for (SModuleReference mRef : mRefs) {
       // need to clean up myModulesToLoad and myModulesToReload
       removeMRefFromModules(mRef, myModulesToAdd);
@@ -245,11 +241,7 @@ public class ModuleUpdater {
       Collection<? extends ReloadableModuleBase> deps = getModuleDeps(reloadableModule);
       for (ReloadableModuleBase dep : deps) {
         if (modules.contains(dep)) {
-          boolean edgeAdded = myDepGraph.addEdge(backRef, dep.getModuleReference());
-          // FIXME hack happened because of 'unfair' method ModulesWatcher#getModuleDescriptorDeps()
-          if (edgeAdded) {
-            ClassLoaderManager.getInstance().unloadModules(Collections.singleton(backRef));
-          }
+          myDepGraph.addEdge(backRef, dep.getModuleReference());
         }
       }
     }
@@ -268,5 +260,4 @@ public class ModuleUpdater {
     }
     return deps;
   }
-
 }

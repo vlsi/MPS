@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -28,7 +28,7 @@ import java.util.Collection;
 import java.util.Enumeration;
 
 public class ModuleClassLoaderSupport {
-  private final SModule myModule;
+  private final ReloadableModule myModule;
   private final IClassPathItem myClassPathItem;
   private final Collection<? extends ReloadableModule> myCompileDependencies;
 
@@ -60,30 +60,44 @@ public class ModuleClassLoaderSupport {
   }
 
   public SModule getModule() {
-    return myModule;
+    return (SModule) myModule;
   }
 
   public IClassPathItem getClassPathItem() {
     return myClassPathItem;
   }
 
+  public boolean willLoad() {
+    return myModule.willLoad();
+  }
+
   public boolean canFindClass(String name) {
     return myClassPathItem.hasClass(name);
   }
 
-  public byte[] findClassBytes(String name) {
+  public byte[] findClassBytes(String name) throws ModuleIsNotLoadableException {
+    checkWillLoad();
     return myClassPathItem.getClass(name);
   }
 
-  public URL findResource(String name) {
+  public URL findResource(String name) throws ModuleIsNotLoadableException {
+    checkWillLoad();
     return myClassPathItem.getResource(name);
   }
 
-  public Enumeration<URL> findResources(String name) {
+  public Enumeration<URL> findResources(String name) throws ModuleIsNotLoadableException {
+    checkWillLoad();
     return myClassPathItem.getResources(name);
   }
 
   public Collection<? extends ReloadableModule> getCompileDependencies() {
     return myCompileDependencies;
   }
+
+  void checkWillLoad() throws ModuleIsNotLoadableException {
+    if (!willLoad()) throw new ModuleIsNotLoadableException(getModule(), "The solution " + getModule() +
+        " is asked for classloader though it does not possess valid class loading facet.\n" +
+        "Try changing solution kind in the module properties dialog or adding new idea plugin facet for this module.");
+  }
+
 }

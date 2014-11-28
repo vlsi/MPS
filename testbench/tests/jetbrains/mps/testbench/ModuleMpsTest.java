@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.testbench;
 
+import com.sun.javaws.jnl.LaunchDesc;
 import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.DevKit;
@@ -22,14 +23,17 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.TestLanguage;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.After;
@@ -48,6 +52,7 @@ public class ModuleMpsTest extends CoreMpsTest {
   private static final String TEST_PREFIX_LANG = "TEST_LNG";
   private static final String TEST_PREFIX_SOLUTION = "TEST_SLN";
   private static final String TEST_PREFIX_DEVKIT = "TEST_DVK";
+  private static final String TEST_PREFIX_GENERATOR = "TEST_GEN";
   private static int ourId = 0;
   protected final ModelAccess myAccess = MPSModuleRepository.getInstance().getModelAccess();
 
@@ -72,11 +77,11 @@ public class ModuleMpsTest extends CoreMpsTest {
     myAccess.runWriteAction(new Runnable() {
       @Override
       public void run() {
-        SolutionDescriptor d = new SolutionDescriptor();
+        SolutionDescriptor descriptor = new SolutionDescriptor();
         String uuid = UUID.randomUUID().toString();
-        d.setNamespace(TEST_PREFIX_SOLUTION + "_" + getNewId() + "_" + uuid);
-        d.setId(ModuleId.fromString(uuid));
-        solutions[0] = StubSolution.newInstance(d, OWNER);
+        descriptor.setNamespace(TEST_PREFIX_SOLUTION + "_" + getNewId() + "_" + uuid);
+        descriptor.setId(ModuleId.fromString(uuid));
+        solutions[0] = StubSolution.newInstance(descriptor, OWNER);
       }
     });
     return solutions[0];
@@ -86,20 +91,42 @@ public class ModuleMpsTest extends CoreMpsTest {
     return (++ourId);
   }
 
-  protected Language createLanguage() {
+  protected Language createLanguageWithGenerator() {
+    GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
+    String uuid = UUID.randomUUID().toString();
+    generatorDescriptor.setNamespace(TEST_PREFIX_GENERATOR + "_" + getNewId() + "_" + uuid);
+    generatorDescriptor.setId(ModuleId.fromString(uuid));
+    LanguageDescriptor languageDescriptor = createLanguageDescriptor();
+    languageDescriptor.getGenerators().add(generatorDescriptor);
+    return createLanguageFromDescriptor(languageDescriptor);
+  }
+
+  private LanguageDescriptor createLanguageDescriptor(final ModuleId id, final String name) {
+    LanguageDescriptor descriptor = new LanguageDescriptor();
+    descriptor.setNamespace(name);
+    descriptor.setId(id);
+    return descriptor;
+  }
+
+  private LanguageDescriptor createLanguageDescriptor() {
     String id = UUID.randomUUID().toString();
-    return createLanguage(ModuleId.fromString(id), TEST_PREFIX_LANG + "_" + getNewId() + "_" + id);
+    return createLanguageDescriptor(ModuleId.fromString(id), TEST_PREFIX_LANG + "_" + getNewId() + "_" + id);
+  }
+
+  protected Language createLanguage() {
+    return createLanguageFromDescriptor(createLanguageDescriptor());
   }
 
   protected Language createLanguage(final ModuleId id, final String name) {
+    return createLanguageFromDescriptor(createLanguageDescriptor(id, name));
+  }
+
+  private Language createLanguageFromDescriptor(final LanguageDescriptor descriptor) {
     final Language[] languages = new Language[1];
     myAccess.runWriteAction(new Runnable() {
       @Override
       public void run() {
-        LanguageDescriptor d = new LanguageDescriptor();
-        d.setNamespace(name);
-        d.setId(id);
-        languages[0] = TestLanguage.newInstance(d, OWNER);
+        languages[0] = TestLanguage.newInstance(descriptor, OWNER);
       }
     });
     return languages[0];
@@ -118,6 +145,12 @@ public class ModuleMpsTest extends CoreMpsTest {
       }
     });
     return devKits[0];
+  }
+
+  @NotNull
+  protected Generator createGenerator() {
+    Language sourceLang = createLanguageWithGenerator();
+    return sourceLang.getGenerators().toArray(new Generator[1])[0];
   }
 
   protected void removeModule(final SModule module) {

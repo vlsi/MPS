@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.module;
 
+import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -36,7 +37,7 @@ public interface ReloadableModule {
    * {@link #getClassLoader()} method.
    */
   @Nullable
-  public Class<?> getClass(String classFqName) throws ClassNotFoundException;
+  public Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException;
 
   /**
    * @return a class which can be obtained by calling #getClass from
@@ -47,7 +48,7 @@ public interface ReloadableModule {
    * @see jetbrains.mps.classloading.ModuleClassLoader#loadOwnClass(String)
    */
   @Nullable
-  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException;
+  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException;
 
   /**
    * @return the class loader associated with the module.

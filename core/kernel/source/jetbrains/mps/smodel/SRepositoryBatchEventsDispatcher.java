@@ -63,15 +63,16 @@ public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
     myBatchEventsProcessor.startBatching();
   }
 
-  public void flush() {
+  public boolean flush() {
     final List<SRepositoryEvent> batchedEvents = myBatchEventsProcessor.flush();
-    if (batchedEvents.isEmpty()) return;
+    if (batchedEvents.isEmpty()) return false;
     myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         fireModuleEvents(batchedEvents);
       }
     });
+    return true;
   }
 
   @Override

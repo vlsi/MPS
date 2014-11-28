@@ -57,7 +57,7 @@ public class Generator extends ReloadableModuleBase {
   private Language mySourceLanguage;
   private GeneratorDescriptor myGeneratorDescriptor;
 
-  Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
+  public Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
 

@@ -174,16 +174,6 @@ public class Solution extends ReloadableModuleBase {
     return (Solution) ModuleRepositoryFacade.createModule(handle, moduleOwner);
   }
 
-  @Nullable
-  @Override
-  public ClassLoader getClassLoader() {
-    if (!willLoad()) {
-      LOG.warn("The solution " + this + " is asked for classloader. [Try changing solution kind in the properties dialog]");
-      return null;
-    }
-    return super.getClassLoader();
-  }
-
   @Override
   public boolean willLoad() {
     // TODO mps facet from this [like IDEA plugin facet]
