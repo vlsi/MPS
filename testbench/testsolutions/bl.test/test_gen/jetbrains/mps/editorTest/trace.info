@@ -9298,6 +9298,159 @@
       <unit id="6386137884199284577" at="10,0,30,0" name="jetbrains.mps.editorTest.LT_ListElementAccess_with_PlusOperation_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6450120067538677210">
+    <file name="BooleanConstantDelete1_Test.java">
+      <node id="6450120067538677210" at="15,62,16,107" concept="2" />
+      <node id="6450120067538677210" at="16,107,17,103" concept="2" />
+      <node id="6450120067538677210" at="24,51,25,63" concept="2" />
+      <node id="6450120067538813741" at="25,63,26,77" concept="2" />
+      <node id="6450120067538813748" at="26,77,27,77" concept="2" />
+      <node id="6450120067538813754" at="27,77,28,77" concept="2" />
+      <node id="6450120067538813762" at="28,77,29,77" concept="2" />
+      <node id="6450120067538677210" at="12,0,14,0" concept="1" trace="BooleanConstantDelete1_Test#()V" />
+      <node id="6450120067538677210" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6450120067538677210" at="14,0,19,0" concept="5" trace="test_BooleanConstantDelete1#()V" />
+      <node id="6450120067538677210" at="23,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6450120067538677210" at="12,40,12,40" />
+      <scope id="6450120067538677210" at="21,23,21,23" />
+      <scope id="6450120067538677210" at="12,0,14,0" />
+      <scope id="6450120067538677210" at="15,62,17,103" />
+      <scope id="6450120067538677210" at="21,0,23,0" />
+      <scope id="6450120067538677210" at="14,0,19,0" />
+      <scope id="6450120067538677210" at="24,51,29,77" />
+      <scope id="6450120067538677210" at="23,0,31,0" />
+      <unit id="6450120067538677210" at="19,0,32,0" name="jetbrains.mps.editorTest.BooleanConstantDelete1_Test$TestBody" />
+      <unit id="6450120067538677210" at="10,0,33,0" name="jetbrains.mps.editorTest.BooleanConstantDelete1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6450120067538813812">
+    <file name="BooleanConstantDelete3_Test.java">
+      <node id="6450120067538813812" at="15,62,16,107" concept="2" />
+      <node id="6450120067538813812" at="16,107,17,103" concept="2" />
+      <node id="6450120067538813812" at="24,51,25,63" concept="2" />
+      <node id="6450120067538813814" at="25,63,26,77" concept="2" />
+      <node id="6450120067538813816" at="26,77,27,77" concept="2" />
+      <node id="6450120067538813818" at="27,77,28,77" concept="2" />
+      <node id="6450120067538813820" at="28,77,29,77" concept="2" />
+      <node id="6450120067538813822" at="29,77,30,77" concept="2" />
+      <node id="6450120067538813943" at="30,77,31,77" concept="2" />
+      <node id="6450120067538813812" at="12,0,14,0" concept="1" trace="BooleanConstantDelete3_Test#()V" />
+      <node id="6450120067538813812" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6450120067538813812" at="14,0,19,0" concept="5" trace="test_BooleanConstantDelete3#()V" />
+      <node id="6450120067538813812" at="23,0,33,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6450120067538813812" at="12,40,12,40" />
+      <scope id="6450120067538813812" at="21,23,21,23" />
+      <scope id="6450120067538813812" at="12,0,14,0" />
+      <scope id="6450120067538813812" at="15,62,17,103" />
+      <scope id="6450120067538813812" at="21,0,23,0" />
+      <scope id="6450120067538813812" at="14,0,19,0" />
+      <scope id="6450120067538813812" at="24,51,31,77" />
+      <scope id="6450120067538813812" at="23,0,33,0" />
+      <unit id="6450120067538813812" at="19,0,34,0" name="jetbrains.mps.editorTest.BooleanConstantDelete3_Test$TestBody" />
+      <unit id="6450120067538813812" at="10,0,35,0" name="jetbrains.mps.editorTest.BooleanConstantDelete3_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6450120067538813957">
+    <file name="BooleanConstantDelete2_Test.java">
+      <node id="6450120067538813957" at="15,62,16,107" concept="2" />
+      <node id="6450120067538813957" at="16,107,17,103" concept="2" />
+      <node id="6450120067538813957" at="24,51,25,63" concept="2" />
+      <node id="6450120067538813959" at="25,63,26,77" concept="2" />
+      <node id="6450120067538813961" at="26,77,27,77" concept="2" />
+      <node id="6450120067538813963" at="27,77,28,77" concept="2" />
+      <node id="6450120067538813965" at="28,77,29,77" concept="2" />
+      <node id="6450120067538813967" at="29,77,30,77" concept="2" />
+      <node id="6450120067538813957" at="12,0,14,0" concept="1" trace="BooleanConstantDelete2_Test#()V" />
+      <node id="6450120067538813957" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6450120067538813957" at="14,0,19,0" concept="5" trace="test_BooleanConstantDelete2#()V" />
+      <node id="6450120067538813957" at="23,0,32,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6450120067538813957" at="12,40,12,40" />
+      <scope id="6450120067538813957" at="21,23,21,23" />
+      <scope id="6450120067538813957" at="12,0,14,0" />
+      <scope id="6450120067538813957" at="15,62,17,103" />
+      <scope id="6450120067538813957" at="21,0,23,0" />
+      <scope id="6450120067538813957" at="14,0,19,0" />
+      <scope id="6450120067538813957" at="24,51,30,77" />
+      <scope id="6450120067538813957" at="23,0,32,0" />
+      <unit id="6450120067538813957" at="19,0,33,0" name="jetbrains.mps.editorTest.BooleanConstantDelete2_Test$TestBody" />
+      <unit id="6450120067538813957" at="10,0,34,0" name="jetbrains.mps.editorTest.BooleanConstantDelete2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6450120067538814179">
+    <file name="BooleanConstantDeleteWithParen2_Test.java">
+      <node id="6450120067538814179" at="15,71,16,107" concept="2" />
+      <node id="6450120067538814179" at="16,107,17,112" concept="2" />
+      <node id="6450120067538814179" at="24,51,25,63" concept="2" />
+      <node id="6450120067538814181" at="25,63,26,77" concept="2" />
+      <node id="6450120067538814183" at="26,77,27,77" concept="2" />
+      <node id="6450120067538814185" at="27,77,28,77" concept="2" />
+      <node id="6450120067538814187" at="28,77,29,77" concept="2" />
+      <node id="6450120067538818297" at="29,77,30,77" concept="2" />
+      <node id="6450120067538814179" at="12,0,14,0" concept="1" trace="BooleanConstantDeleteWithParen2_Test#()V" />
+      <node id="6450120067538814179" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6450120067538814179" at="14,0,19,0" concept="5" trace="test_BooleanConstantDeleteWithParen2#()V" />
+      <node id="6450120067538814179" at="23,0,32,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6450120067538814179" at="12,49,12,49" />
+      <scope id="6450120067538814179" at="21,23,21,23" />
+      <scope id="6450120067538814179" at="12,0,14,0" />
+      <scope id="6450120067538814179" at="15,71,17,112" />
+      <scope id="6450120067538814179" at="21,0,23,0" />
+      <scope id="6450120067538814179" at="14,0,19,0" />
+      <scope id="6450120067538814179" at="24,51,30,77" />
+      <scope id="6450120067538814179" at="23,0,32,0" />
+      <unit id="6450120067538814179" at="19,0,33,0" name="jetbrains.mps.editorTest.BooleanConstantDeleteWithParen2_Test$TestBody" />
+      <unit id="6450120067538814179" at="10,0,34,0" name="jetbrains.mps.editorTest.BooleanConstantDeleteWithParen2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6450120067538818309">
+    <file name="BooleanConstantDeleteWithParen1_Test.java">
+      <node id="6450120067538818309" at="15,71,16,107" concept="2" />
+      <node id="6450120067538818309" at="16,107,17,112" concept="2" />
+      <node id="6450120067538818309" at="24,51,25,63" concept="2" />
+      <node id="6450120067538818311" at="25,63,26,77" concept="2" />
+      <node id="6450120067538818309" at="12,0,14,0" concept="1" trace="BooleanConstantDeleteWithParen1_Test#()V" />
+      <node id="6450120067538818309" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6450120067538818309" at="14,0,19,0" concept="5" trace="test_BooleanConstantDeleteWithParen1#()V" />
+      <node id="6450120067538818309" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6450120067538818309" at="12,49,12,49" />
+      <scope id="6450120067538818309" at="21,23,21,23" />
+      <scope id="6450120067538818309" at="12,0,14,0" />
+      <scope id="6450120067538818309" at="15,71,17,112" />
+      <scope id="6450120067538818309" at="21,0,23,0" />
+      <scope id="6450120067538818309" at="24,51,26,77" />
+      <scope id="6450120067538818309" at="14,0,19,0" />
+      <scope id="6450120067538818309" at="23,0,28,0" />
+      <unit id="6450120067538818309" at="19,0,29,0" name="jetbrains.mps.editorTest.BooleanConstantDeleteWithParen1_Test$TestBody" />
+      <unit id="6450120067538818309" at="10,0,30,0" name="jetbrains.mps.editorTest.BooleanConstantDeleteWithParen1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6450120067538819173">
+    <file name="BooleanConstantDeleteWithParen3_Test.java">
+      <node id="6450120067538819173" at="15,71,16,107" concept="2" />
+      <node id="6450120067538819173" at="16,107,17,112" concept="2" />
+      <node id="6450120067538819173" at="24,51,25,63" concept="2" />
+      <node id="6450120067538819175" at="25,63,26,77" concept="2" />
+      <node id="6450120067538819177" at="26,77,27,77" concept="2" />
+      <node id="6450120067538819179" at="27,77,28,77" concept="2" />
+      <node id="6450120067538819181" at="28,77,29,77" concept="2" />
+      <node id="6450120067538819183" at="29,77,30,77" concept="2" />
+      <node id="6450120067538819887" at="30,77,31,77" concept="2" />
+      <node id="6450120067538819173" at="12,0,14,0" concept="1" trace="BooleanConstantDeleteWithParen3_Test#()V" />
+      <node id="6450120067538819173" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6450120067538819173" at="14,0,19,0" concept="5" trace="test_BooleanConstantDeleteWithParen3#()V" />
+      <node id="6450120067538819173" at="23,0,33,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6450120067538819173" at="12,49,12,49" />
+      <scope id="6450120067538819173" at="21,23,21,23" />
+      <scope id="6450120067538819173" at="12,0,14,0" />
+      <scope id="6450120067538819173" at="15,71,17,112" />
+      <scope id="6450120067538819173" at="21,0,23,0" />
+      <scope id="6450120067538819173" at="14,0,19,0" />
+      <scope id="6450120067538819173" at="24,51,31,77" />
+      <scope id="6450120067538819173" at="23,0,33,0" />
+      <unit id="6450120067538819173" at="19,0,34,0" name="jetbrains.mps.editorTest.BooleanConstantDeleteWithParen3_Test$TestBody" />
+      <unit id="6450120067538819173" at="10,0,35,0" name="jetbrains.mps.editorTest.BooleanConstantDeleteWithParen3_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6517948727589782823">
     <file name="PasteStatementBefore_Test.java">
       <node id="6517948727589782823" at="15,60,16,107" concept="2" />

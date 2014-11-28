@@ -19,6 +19,9 @@ public class DeleteBooleanConstantWithUnmatchedParen {
     public DeleteBooleanConstantWithUnmatchedParen_DELETE(SNode node) {
       this.myNode = node;
     }
+    public String getDescriptionText() {
+      return "only needed for BooleanConstants with an annotation attached";
+    }
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
@@ -30,6 +33,9 @@ public class DeleteBooleanConstantWithUnmatchedParen {
     /*package*/ SNode myNode;
     public DeleteBooleanConstantWithUnmatchedParen_BACKSPACE(SNode node) {
       this.myNode = node;
+    }
+    public String getDescriptionText() {
+      return "only needed for BooleanConstants with an annotation attached";
     }
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);

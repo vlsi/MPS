@@ -27472,6 +27472,7 @@
     <ref role="1h_SK9" to="tpee:fzclF81" resolve="BooleanConstant" />
     <node concept="1hA7zw" id="4C5gHMoLv7_" role="1h_SK8">
       <property role="1hAc7j" value="delete_action_id" />
+      <property role="1hHO97" value="only needed for BooleanConstants with an annotation attached" />
       <node concept="1hAIg9" id="4C5gHMoLv7A" role="1hA7z_">
         <node concept="3clFbS" id="4C5gHMoLv7B" role="2VODD2">
           <node concept="3clFbF" id="4C5gHMoL$bT" role="3cqZAp">
