@@ -51,13 +51,14 @@ public abstract class BasePluginManager<T> {
         public void run() {
           List<T> plugins = new ArrayList<T>();
 
+          LOG.debug("Loading plugins from " + contributors.size() + " contributors");
           for (PluginContributor c : contributors) {
             T plugin = null;
 
             try {
               plugin = createPlugin(c);
-            } catch (Throwable t) {
-              LOG.error("Contributor " + c + " threw an exception during plugin creation " + t.getMessage(), t);
+            } catch (Exception e) {
+              LOG.error("Contributor " + c + " threw an exception during plugin creation " + e.getMessage(), e);
             }
 
             if (plugin != null) {
@@ -80,6 +81,7 @@ public abstract class BasePluginManager<T> {
   public void unloadPlugins(List<PluginContributor> contributors) {
     assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
 
+    LOG.debug("Unloading plugins from " + contributors.size() + " contributors");
     synchronized (myPluginsLock) {
       final List<T> plugins = new ArrayList<T>();
 
@@ -102,8 +104,8 @@ public abstract class BasePluginManager<T> {
           for (T plugin : plugins) {
             try {
               disposePlugin(plugin);
-            } catch (Throwable t) {
-              LOG.error("Plugin " + plugin + " threw an exception during disposing " + t.getMessage(), t);
+            } catch (Exception e) {
+              LOG.error("Plugin " + plugin + " threw an exception during disposing " + e.getMessage(), e);
             }
           }
         }
