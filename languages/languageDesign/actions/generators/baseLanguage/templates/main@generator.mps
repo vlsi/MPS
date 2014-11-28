@@ -40,10 +40,6 @@
     <import index="r9fo" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(MPS.OpenAPI/org.jetbrains.mps.util@java_stub)" />
     <import index="ymbg" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.constraints(MPS.Core/jetbrains.mps.smodel.constraints@java_stub)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" implicit="true" />
-    <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
-    <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" implicit="true" />
-    <import index="tpf3" ref="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -8613,7 +8609,7 @@
         <ref role="1Pybhc" to="7hml:~SNodeFactoryOperations" resolve="SNodeFactoryOperations" />
         <node concept="10Nm6u" id="4w5s_OWHbj" role="37wK5m">
           <node concept="xERo3" id="4w5s_OWHbk" role="lGtFl">
-            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_AbstractConceptDeclaration_SAbstractConcept" />
+            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_Concept2SConcept" />
             <node concept="3NFfHV" id="4w5s_OWHbl" role="xEYEz">
               <node concept="3clFbS" id="4w5s_OWHbm" role="2VODD2">
                 <node concept="3clFbF" id="4w5s_OWHbn" role="3cqZAp">
@@ -8794,7 +8790,7 @@
         <ref role="1Pybhc" to="7hml:~SNodeFactoryOperations" resolve="SNodeFactoryOperations" />
         <node concept="10Nm6u" id="4w5s_OWKP3" role="37wK5m">
           <node concept="xERo3" id="4w5s_OWKP4" role="lGtFl">
-            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_AbstractConceptDeclaration_SAbstractConcept" />
+            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_Concept2SConcept" />
             <node concept="3NFfHV" id="4w5s_OWKP5" role="xEYEz">
               <node concept="3clFbS" id="4w5s_OWKP6" role="2VODD2">
                 <node concept="3clFbF" id="4w5s_OWKP7" role="3cqZAp">
@@ -8877,7 +8873,7 @@
         <ref role="1Pybhc" to="7hml:~SNodeFactoryOperations" resolve="SNodeFactoryOperations" />
         <node concept="10Nm6u" id="4w5s_OWM2p" role="37wK5m">
           <node concept="xERo3" id="4w5s_OWM2q" role="lGtFl">
-            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_AbstractConceptDeclaration_SAbstractConcept" />
+            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_Concept2SConcept" />
             <node concept="3NFfHV" id="4w5s_OWM2r" role="xEYEz">
               <node concept="3clFbS" id="4w5s_OWM2s" role="2VODD2">
                 <node concept="3clFbF" id="4w5s_OWM2t" role="3cqZAp">
@@ -8982,7 +8978,7 @@
         <ref role="1Pybhc" to="7hml:~SNodeFactoryOperations" resolve="SNodeFactoryOperations" />
         <node concept="10Nm6u" id="4w5s_OW_T9" role="37wK5m">
           <node concept="xERo3" id="4w5s_OW_Ta" role="lGtFl">
-            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_AbstractConceptDeclaration_SAbstractConcept" />
+            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_Concept2SConcept" />
             <node concept="3NFfHV" id="4w5s_OW_Tb" role="xEYEz">
               <node concept="3clFbS" id="4w5s_OW_Tc" role="2VODD2">
                 <node concept="3cpWs8" id="4w5s_OW_Td" role="3cqZAp">
@@ -9126,7 +9122,7 @@
               <ref role="1Pybhc" to="7hml:~SNodeFactoryOperations" resolve="SNodeFactoryOperations" />
               <node concept="10Nm6u" id="4w5s_OWAyV" role="37wK5m">
                 <node concept="xERo3" id="4w5s_OWAyW" role="lGtFl">
-                  <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_AbstractConceptDeclaration_SAbstractConcept" />
+                  <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_Concept2SConcept" />
                   <node concept="3NFfHV" id="4w5s_OWAyX" role="xEYEz">
                     <node concept="3clFbS" id="4w5s_OWAyY" role="2VODD2">
                       <node concept="3cpWs8" id="4w5s_OWAyZ" role="3cqZAp">
@@ -9248,7 +9244,7 @@
         <ref role="1Pybhc" to="7hml:~SNodeFactoryOperations" resolve="SNodeFactoryOperations" />
         <node concept="10Nm6u" id="4w5s_OWFPP" role="37wK5m">
           <node concept="xERo3" id="4w5s_OWFPQ" role="lGtFl">
-            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_AbstractConceptDeclaration_SAbstractConcept" />
+            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_Concept2SConcept" />
             <node concept="3NFfHV" id="4w5s_OWFPR" role="xEYEz">
               <node concept="3clFbS" id="4w5s_OWFPS" role="2VODD2">
                 <node concept="3cpWs8" id="4w5s_OWFPT" role="3cqZAp">
@@ -9392,7 +9388,7 @@
               <ref role="1Pybhc" to="7hml:~SNodeFactoryOperations" resolve="SNodeFactoryOperations" />
               <node concept="10Nm6u" id="4w5s_OWFQQ" role="37wK5m">
                 <node concept="xERo3" id="4w5s_OWFQR" role="lGtFl">
-                  <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_AbstractConceptDeclaration_SAbstractConcept" />
+                  <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_Concept2SConcept" />
                   <node concept="3NFfHV" id="4w5s_OWFQS" role="xEYEz">
                     <node concept="3clFbS" id="4w5s_OWFQT" role="2VODD2">
                       <node concept="3cpWs8" id="4w5s_OWFQU" role="3cqZAp">
@@ -9492,7 +9488,7 @@
         <ref role="1Pybhc" to="7hml:~SNodeFactoryOperations" resolve="SNodeFactoryOperations" />
         <node concept="10Nm6u" id="4w5s_OWN5i" role="37wK5m">
           <node concept="xERo3" id="4w5s_OWN5j" role="lGtFl">
-            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_AbstractConceptDeclaration_SAbstractConcept" />
+            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_Concept2SConcept" />
             <node concept="3NFfHV" id="4w5s_OWN5k" role="xEYEz">
               <node concept="3clFbS" id="4w5s_OWN5l" role="2VODD2">
                 <node concept="3clFbF" id="4w5s_OWN5m" role="3cqZAp">
@@ -9539,7 +9535,7 @@
         <ref role="1Pybhc" to="7hml:~SNodeFactoryOperations" resolve="SNodeFactoryOperations" />
         <node concept="10Nm6u" id="4w5s_OWNUF" role="37wK5m">
           <node concept="xERo3" id="4w5s_OWNUG" role="lGtFl">
-            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_AbstractConceptDeclaration_SAbstractConcept" />
+            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_Concept2SConcept" />
             <node concept="3NFfHV" id="4w5s_OWNUH" role="xEYEz">
               <node concept="3clFbS" id="4w5s_OWNUI" role="2VODD2">
                 <node concept="3clFbF" id="4w5s_OWNUJ" role="3cqZAp">
@@ -9586,7 +9582,7 @@
         <ref role="1Pybhc" to="7hml:~SNodeFactoryOperations" resolve="SNodeFactoryOperations" />
         <node concept="10Nm6u" id="4w5s_OWOJS" role="37wK5m">
           <node concept="xERo3" id="4w5s_OWOJT" role="lGtFl">
-            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_AbstractConceptDeclaration_SAbstractConcept" />
+            <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_Concept2SConcept" />
             <node concept="3NFfHV" id="4w5s_OWOJU" role="xEYEz">
               <node concept="3clFbS" id="4w5s_OWOJV" role="2VODD2">
                 <node concept="3clFbF" id="4w5s_OWOJW" role="3cqZAp">

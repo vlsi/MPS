@@ -4,10 +4,7 @@
   <languages>
     <use id="f8fecd49-3abe-4733-9741-0c637123d219" name="jetbrains.mps.samples.theSimplestLanguage" version="-1" />
   </languages>
-  <imports>
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="jfvl" ref="r:7621c011-92d8-4afe-81d5-6da125ff596f(jetbrains.mps.samples.theSimplestLanguage.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
     <language id="f8fecd49-3abe-4733-9741-0c637123d219" name="jetbrains.mps.samples.theSimplestLanguage">
       <concept id="1222954937628" name="jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept" flags="ng" index="2XMQK0">

@@ -4,10 +4,7 @@
   <languages>
     <use id="089e26c5-bfc3-4a60-9953-f68169a4608a" name="jetbrains.mps.samples.readerConfigLanguage" version="-1" />
   </languages>
-  <imports>
-    <import index="tpnu" ref="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
     <language id="089e26c5-bfc3-4a60-9953-f68169a4608a" name="jetbrains.mps.samples.readerConfigLanguage">
       <concept id="1116534870455" name="jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration" flags="ng" index="3QEx2O">

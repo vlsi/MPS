@@ -6,11 +6,7 @@
     <use id="82fb751d-f7fb-4b58-a16e-303356f8e0af" name="jetbrains.mps.samples.generator_demo.demoLang6" version="-1" />
     <generationPart ref="594bd850-39e3-46a5-9ef2-40c70d782c8c(jetbrains.mps.samples.generator_demo.demoLang5)" />
   </languages>
-  <imports>
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="dghb" ref="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" implicit="true" />
-    <import index="2k81" ref="r:5a5bef13-c898-42e0-9736-2063b8209071(jetbrains.mps.samples.generator_demo.demoLang6.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
     <language id="82fb751d-f7fb-4b58-a16e-303356f8e0af" name="jetbrains.mps.samples.generator_demo.demoLang6">
       <concept id="3978102045101856876" name="jetbrains.mps.samples.generator_demo.demoLang6.structure.Label" flags="ng" index="2pI1rn">

@@ -5,11 +5,7 @@
     <use id="8d18a45b-ac7e-4d84-a539-75f1d720b09b" name="jetbrains.mps.samples.multipleProjections.requestTracking" version="-1" />
     <use id="530533ee-f789-4c1e-ba56-de1bbf3afda7" name="jetbrains.mps.samples.multipleProjections.stateMachine" version="-1" />
   </languages>
-  <imports>
-    <import index="f4vt" ref="r:fa417a98-a00c-4f7c-9ba5-6ec71a5b205a(jetbrains.mps.samples.multipleProjections.requestTracking.structure)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="owg1" ref="r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
     <language id="530533ee-f789-4c1e-ba56-de1bbf3afda7" name="jetbrains.mps.samples.multipleProjections.stateMachine">
       <concept id="763922957008729154" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.State" flags="ng" index="32R8Iz" />

@@ -6,10 +6,7 @@
     <use id="a7d67633-e8d9-473b-98ce-995a7aa66941" name="jetbrains.mps.samples.heating" version="-1" />
     <use id="000a73b2-ac88-49d9-bfcf-a3fa90cdb367" name="jetbrains.mps.samples.heating.tabular" version="-1" />
   </languages>
-  <imports>
-    <import index="vw7d" ref="r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
     <language id="a7d67633-e8d9-473b-98ce-995a7aa66941" name="jetbrains.mps.samples.heating">
       <concept id="935069066462619696" name="jetbrains.mps.samples.heating.structure.DailyPlanReference" flags="ng" index="2m3Y1G">

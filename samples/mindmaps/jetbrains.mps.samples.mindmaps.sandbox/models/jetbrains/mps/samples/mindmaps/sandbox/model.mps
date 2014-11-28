@@ -4,10 +4,7 @@
   <languages>
     <use id="33f294fd-370a-4a40-999b-43f382910018" name="jetbrains.mps.samples.mindmaps" version="-1" />
   </languages>
-  <imports>
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="3g6l" ref="r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
     <language id="33f294fd-370a-4a40-999b-43f382910018" name="jetbrains.mps.samples.mindmaps">
       <concept id="5058522826399262785" name="jetbrains.mps.samples.mindmaps.structure.Specializes" flags="ng" index="3tydfO" />

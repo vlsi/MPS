@@ -9,9 +9,6 @@
     <import index="7t7g" ref="f:java_stub#134ef213-c518-42b0-b12c-c109aa13d320#gnu.trove.decorator(collections_trove.runtime/gnu.trove.decorator@java_stub)" />
     <import index="geq7" ref="f:java_stub#134ef213-c518-42b0-b12c-c109aa13d320#gnu.trove(collections_trove.runtime/gnu.trove@java_stub)" />
     <import index="h8nn" ref="f:java_stub#134ef213-c518-42b0-b12c-c109aa13d320#jetbrains.mps.baseLanguage.collections.trove.runtime(collections_trove.runtime/jetbrains.mps.baseLanguage.collections.trove.runtime@java_stub)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
