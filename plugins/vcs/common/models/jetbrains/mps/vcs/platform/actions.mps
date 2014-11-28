@@ -2572,7 +2572,7 @@
   <node concept="sE7Ow" id="7yFo2E9ZaYJ">
     <property role="3GE5qa" value="Actions" />
     <property role="TrG5h" value="ResolveNonconflictingChanges" />
-    <property role="2uzpH1" value="Resolve changes in nonconflicting MPS models" />
+    <property role="2uzpH1" value="Resolve non-conflicting changes in MPS models" />
     <node concept="1DS2jV" id="7yFo2E9ZbMd" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -2830,18 +2830,13 @@
                 <node concept="H_c77" id="5O9exHkXIHE" role="1tU5fm" />
                 <node concept="2YIFZM" id="5O9exHkXIHF" role="33vP2m">
                   <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
-                  <node concept="2ShNRf" id="5O9exHkXIHG" role="37wK5m">
-                    <node concept="1pGfFk" id="5O9exHkXIHH" role="2ShVmc">
-                      <ref role="37wK5l" to="e2lb:~String.&lt;init&gt;(byte[])" resolve="String" />
-                      <node concept="2OqwBi" id="5O9exHkXIHI" role="37wK5m">
-                        <node concept="37vLTw" id="5O9exHkXIHJ" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7yFo2Ea2Jpc" resolve="mergeData" />
-                        </node>
-                        <node concept="2OwXpG" id="5O9exHkXIHK" role="2OqNvi">
-                          <ref role="2Oxat5" to="hcps:~MergeData.ORIGINAL" resolve="ORIGINAL" />
-                        </node>
-                      </node>
+                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(byte[],java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
+                  <node concept="2OqwBi" id="5O9exHkXIHI" role="37wK5m">
+                    <node concept="37vLTw" id="5O9exHkXIHJ" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7yFo2Ea2Jpc" resolve="mergeData" />
+                    </node>
+                    <node concept="2OwXpG" id="5O9exHkXIHK" role="2OqNvi">
+                      <ref role="2Oxat5" to="hcps:~MergeData.ORIGINAL" resolve="ORIGINAL" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5O9exHkXIHL" role="37wK5m">
@@ -2856,18 +2851,13 @@
                 <node concept="H_c77" id="5O9exHkXIHO" role="1tU5fm" />
                 <node concept="2YIFZM" id="5O9exHkXIHP" role="33vP2m">
                   <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
-                  <node concept="2ShNRf" id="5O9exHkXIHQ" role="37wK5m">
-                    <node concept="1pGfFk" id="5O9exHkXIHR" role="2ShVmc">
-                      <ref role="37wK5l" to="e2lb:~String.&lt;init&gt;(byte[])" resolve="String" />
-                      <node concept="2OqwBi" id="5O9exHkXIHS" role="37wK5m">
-                        <node concept="37vLTw" id="5O9exHkXIHT" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7yFo2Ea2Jpc" resolve="mergeData" />
-                        </node>
-                        <node concept="2OwXpG" id="5O9exHkXIHU" role="2OqNvi">
-                          <ref role="2Oxat5" to="hcps:~MergeData.CURRENT" resolve="CURRENT" />
-                        </node>
-                      </node>
+                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(byte[],java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
+                  <node concept="2OqwBi" id="5O9exHkXIHS" role="37wK5m">
+                    <node concept="37vLTw" id="5O9exHkXIHT" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7yFo2Ea2Jpc" resolve="mergeData" />
+                    </node>
+                    <node concept="2OwXpG" id="5O9exHkXIHU" role="2OqNvi">
+                      <ref role="2Oxat5" to="hcps:~MergeData.CURRENT" resolve="CURRENT" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5O9exHkXIHV" role="37wK5m">
@@ -2882,18 +2872,13 @@
                 <node concept="H_c77" id="5O9exHkXIHY" role="1tU5fm" />
                 <node concept="2YIFZM" id="5O9exHkXIHZ" role="33vP2m">
                   <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
-                  <node concept="2ShNRf" id="5O9exHkXII0" role="37wK5m">
-                    <node concept="1pGfFk" id="5O9exHkXII1" role="2ShVmc">
-                      <ref role="37wK5l" to="e2lb:~String.&lt;init&gt;(byte[])" resolve="String" />
-                      <node concept="2OqwBi" id="5O9exHkXII2" role="37wK5m">
-                        <node concept="37vLTw" id="5O9exHkXII3" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7yFo2Ea2Jpc" resolve="mergeData" />
-                        </node>
-                        <node concept="2OwXpG" id="5O9exHkXII4" role="2OqNvi">
-                          <ref role="2Oxat5" to="hcps:~MergeData.LAST" resolve="LAST" />
-                        </node>
-                      </node>
+                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(byte[],java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
+                  <node concept="2OqwBi" id="5O9exHkXII2" role="37wK5m">
+                    <node concept="37vLTw" id="5O9exHkXII3" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7yFo2Ea2Jpc" resolve="mergeData" />
+                    </node>
+                    <node concept="2OwXpG" id="5O9exHkXII4" role="2OqNvi">
+                      <ref role="2Oxat5" to="hcps:~MergeData.LAST" resolve="LAST" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5O9exHkXII5" role="37wK5m">
@@ -3150,7 +3135,7 @@
                 <node concept="3clFbF" id="5eJvzs3Q6DY" role="3cqZAp">
                   <node concept="2OqwBi" id="5eJvzs3Q6DZ" role="3clFbG">
                     <node concept="liA8E" id="5eJvzs3Q6E1" role="2OqNvi">
-                      <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
+                      <ref role="37wK5l" to="88zw:~ModelAccess.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
                       <node concept="1bVj0M" id="5eJvzs3Q6E2" role="37wK5m">
                         <node concept="3clFbS" id="5eJvzs3Q6E3" role="1bW5cS">
                           <node concept="SfApY" id="5eJvzs3Q6E4" role="3cqZAp">
@@ -3200,9 +3185,16 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="5eJvzs3Q6E0" role="2Oq$k0">
-                      <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-                      <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                    <node concept="2OqwBi" id="35oJ7ckI1qR" role="2Oq$k0">
+                      <node concept="2OqwBi" id="35oJ7ckHYfc" role="2Oq$k0">
+                        <node concept="2WthIp" id="35oJ7ckHYff" role="2Oq$k0" />
+                        <node concept="1DTwFV" id="35oJ7ckHYfh" role="2OqNvi">
+                          <ref role="2WH_rO" node="7yFo2E9ZbMd" resolve="project" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="35oJ7ckI40x" role="2OqNvi">
+                        <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -3455,19 +3447,14 @@
                 <property role="TrG5h" value="baseModel" />
                 <node concept="H_c77" id="7yFo2Ea679s" role="1tU5fm" />
                 <node concept="2YIFZM" id="5O9exHkXtlV" role="33vP2m">
-                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
                   <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-                  <node concept="2ShNRf" id="5O9exHkXtlW" role="37wK5m">
-                    <node concept="1pGfFk" id="5O9exHkXtlX" role="2ShVmc">
-                      <ref role="37wK5l" to="e2lb:~String.&lt;init&gt;(byte[])" resolve="String" />
-                      <node concept="2OqwBi" id="5O9exHkXtlY" role="37wK5m">
-                        <node concept="37vLTw" id="5O9exHkXtlZ" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7yFo2Ea679k" resolve="mergeData" />
-                        </node>
-                        <node concept="2OwXpG" id="5O9exHkXtm0" role="2OqNvi">
-                          <ref role="2Oxat5" to="hcps:~MergeData.ORIGINAL" resolve="ORIGINAL" />
-                        </node>
-                      </node>
+                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(byte[],java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
+                  <node concept="2OqwBi" id="5O9exHkXtlY" role="37wK5m">
+                    <node concept="37vLTw" id="5O9exHkXtlZ" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7yFo2Ea679k" resolve="mergeData" />
+                    </node>
+                    <node concept="2OwXpG" id="5O9exHkXtm0" role="2OqNvi">
+                      <ref role="2Oxat5" to="hcps:~MergeData.ORIGINAL" resolve="ORIGINAL" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5O9exHkXtm1" role="37wK5m">
@@ -3481,19 +3468,14 @@
                 <property role="TrG5h" value="mineModel" />
                 <node concept="H_c77" id="7yFo2Ea679$" role="1tU5fm" />
                 <node concept="2YIFZM" id="5O9exHkXBsd" role="33vP2m">
-                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
                   <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-                  <node concept="2ShNRf" id="5O9exHkXBse" role="37wK5m">
-                    <node concept="1pGfFk" id="5O9exHkXBsf" role="2ShVmc">
-                      <ref role="37wK5l" to="e2lb:~String.&lt;init&gt;(byte[])" resolve="String" />
-                      <node concept="2OqwBi" id="5O9exHkXBsg" role="37wK5m">
-                        <node concept="37vLTw" id="5O9exHkXBsh" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7yFo2Ea679k" resolve="mergeData" />
-                        </node>
-                        <node concept="2OwXpG" id="5O9exHkXBsi" role="2OqNvi">
-                          <ref role="2Oxat5" to="hcps:~MergeData.CURRENT" resolve="CURRENT" />
-                        </node>
-                      </node>
+                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(byte[],java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
+                  <node concept="2OqwBi" id="5O9exHkXBsg" role="37wK5m">
+                    <node concept="37vLTw" id="5O9exHkXBsh" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7yFo2Ea679k" resolve="mergeData" />
+                    </node>
+                    <node concept="2OwXpG" id="5O9exHkXBsi" role="2OqNvi">
+                      <ref role="2Oxat5" to="hcps:~MergeData.CURRENT" resolve="CURRENT" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5O9exHkXBsj" role="37wK5m">
@@ -3507,19 +3489,14 @@
                 <property role="TrG5h" value="repoModel" />
                 <node concept="H_c77" id="7yFo2Ea679G" role="1tU5fm" />
                 <node concept="2YIFZM" id="5O9exHkXHLC" role="33vP2m">
-                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
                   <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-                  <node concept="2ShNRf" id="5O9exHkXHLD" role="37wK5m">
-                    <node concept="1pGfFk" id="5O9exHkXHLE" role="2ShVmc">
-                      <ref role="37wK5l" to="e2lb:~String.&lt;init&gt;(byte[])" resolve="String" />
-                      <node concept="2OqwBi" id="5O9exHkXHLF" role="37wK5m">
-                        <node concept="37vLTw" id="5O9exHkXHLG" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7yFo2Ea679k" resolve="mergeData" />
-                        </node>
-                        <node concept="2OwXpG" id="5O9exHkXHLH" role="2OqNvi">
-                          <ref role="2Oxat5" to="hcps:~MergeData.LAST" resolve="LAST" />
-                        </node>
-                      </node>
+                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(byte[],java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
+                  <node concept="2OqwBi" id="5O9exHkXHLF" role="37wK5m">
+                    <node concept="37vLTw" id="5O9exHkXHLG" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7yFo2Ea679k" resolve="mergeData" />
+                    </node>
+                    <node concept="2OwXpG" id="5O9exHkXHLH" role="2OqNvi">
+                      <ref role="2Oxat5" to="hcps:~MergeData.LAST" resolve="LAST" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5O9exHkXHLI" role="37wK5m">

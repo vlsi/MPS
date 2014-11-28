@@ -34,7 +34,6 @@ import java.util.List;
 import com.intellij.openapi.vcs.merge.MergeProvider2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
@@ -52,7 +51,7 @@ import org.apache.log4j.LogManager;
 public class ResolveNonconflictingChanges_Action extends BaseAction {
   private static final Icon ICON = null;
   public ResolveNonconflictingChanges_Action() {
-    super("Resolve changes in nonconflicting MPS models", "", ICON);
+    super("Resolve non-conflicting changes in MPS models", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -83,9 +82,9 @@ public class ResolveNonconflictingChanges_Action extends BaseAction {
           LOG.error("Error loading revisions to merge", e);
         }
       }
-      SModel baseModel = PersistenceUtil.loadModel(new String(mergeData.ORIGINAL), ext);
-      SModel mineModel = PersistenceUtil.loadModel(new String(mergeData.CURRENT), ext);
-      SModel repoModel = PersistenceUtil.loadModel(new String(mergeData.LAST), ext);
+      SModel baseModel = PersistenceUtil.loadModel(mergeData.ORIGINAL, ext);
+      SModel mineModel = PersistenceUtil.loadModel(mergeData.CURRENT, ext);
+      SModel repoModel = PersistenceUtil.loadModel(mergeData.LAST, ext);
       // read action: 
       final MergeSession mergeSession = MergeSession.createMergeSession(baseModel, mineModel, repoModel);
       int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
@@ -152,9 +151,9 @@ public class ResolveNonconflictingChanges_Action extends BaseAction {
             LOG.error("Error loading revisions to merge", e);
           }
         }
-        SModel baseModel = PersistenceUtil.loadModel(new String(mergeData.ORIGINAL), ext);
-        SModel mineModel = PersistenceUtil.loadModel(new String(mergeData.CURRENT), ext);
-        SModel repoModel = PersistenceUtil.loadModel(new String(mergeData.LAST), ext);
+        SModel baseModel = PersistenceUtil.loadModel(mergeData.ORIGINAL, ext);
+        SModel mineModel = PersistenceUtil.loadModel(mergeData.CURRENT, ext);
+        SModel repoModel = PersistenceUtil.loadModel(mergeData.LAST, ext);
         // read action: 
         final MergeSession mergeSession = MergeSession.createMergeSession(baseModel, mineModel, repoModel);
         int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
@@ -187,7 +186,7 @@ public class ResolveNonconflictingChanges_Action extends BaseAction {
           } else {
             resultContent.value = PersistenceUtil.saveModel(resultModel, ext);
           }
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
+          ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runWriteInEDT(new Runnable() {
             public void run() {
               try {
                 file.setBinaryContent(resultContent.value.getBytes(FileUtil.DEFAULT_CHARSET));
