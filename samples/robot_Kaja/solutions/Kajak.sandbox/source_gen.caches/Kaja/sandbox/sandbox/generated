@@ -15,6 +15,7 @@
   </source>
   <source id="7446293342517103305" name="Sample" hash="bj5uu19v5ji3e6t5w2k8zgzzu4gb6l5">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Sample.java" />
   </source>
