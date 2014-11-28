@@ -423,7 +423,7 @@
           <node concept="7OXhh" id="79svzH800kE" role="7EUXB" />
         </node>
         <node concept="2C11UY" id="4qUvNA8VUmC" role="2zTg$O">
-          <property role="TrG5h" value="bar" />
+          <property role="TrG5h" value="baz" />
           <node concept="2C6hJS" id="4qUvNA8VUmD" role="2C11UV" />
         </node>
       </node>
