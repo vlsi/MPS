@@ -12,13 +12,12 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.vcs.diff.merge.MergeSession;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.model.SModelBase;
 import java.util.zip.ZipOutputStream;
@@ -81,30 +80,31 @@ public class MergeData {
   private boolean generateAndCheckResultData() throws ModelReadException {
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
 
-    SModel baseModel = PersistenceUtil.loadModel(myBaseModelString, "mps");
-    SModel mineModel = PersistenceUtil.loadModel(myMineModelString, "mps");
-    SModel repositoryModel = PersistenceUtil.loadModel(myRepositoryModelString, "mps");
+    final SModel baseModel = PersistenceUtil.loadModel(myBaseModelString, "mps");
+    final SModel mineModel = PersistenceUtil.loadModel(myMineModelString, "mps");
+    final SModel repositoryModel = PersistenceUtil.loadModel(myRepositoryModelString, "mps");
 
-    final MergeSession session = MergeSession.createMergeSession(baseModel, mineModel, repositoryModel);
+    final Wrappers._T<MergeSession> session = new Wrappers._T<MergeSession>(null);
     final Wrappers._T<String> resultModelString = new Wrappers._T<String>(null);
-    if (Sequence.fromIterable(session.getAllChanges()).all(new IWhereFilter<ModelChange>() {
-      public boolean accept(ModelChange c) {
-        return Sequence.fromIterable(session.getConflictedWith(c)).isEmpty();
-      }
-    })) {
-      // no conflicts 
-      ModelAccess.instance().runReadAction(new Computable<String>() {
-        public String compute() {
-          session.applyChanges(Sequence.fromIterable(session.getAllChanges()).toListSequence());
-          return resultModelString.value = ModelPersistence.modelToString(as_u0rai9_a0a0a1a0a0a0a1a8a71(session.getResultModel(), SModelBase.class).getSModelInternal());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        session.value = MergeSession.createMergeSession(baseModel, mineModel, repositoryModel);
+        if (Sequence.fromIterable(session.value.getAllChanges()).all(new IWhereFilter<ModelChange>() {
+          public boolean accept(ModelChange c) {
+            return Sequence.fromIterable(session.value.getConflictedWith(c)).isEmpty();
+          }
+        })) {
+          // no conflicts 
+          session.value.applyChanges(Sequence.fromIterable(session.value.getAllChanges()).toListSequence());
+          resultModelString.value = ModelPersistence.modelToString(as_u0rai9_a0a0a2a1a0a0a0a8a71(session.value.getResultModel(), SModelBase.class).getSModelInternal());
         }
-      });
-    }
+      }
+    });
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(null);
 
 
-    String changesMineString = dumpChangeSet(session.getMyChangeSet(), session);
-    String changesRepositoryString = dumpChangeSet(session.getRepositoryChangeSet(), session);
+    String changesMineString = dumpChangeSet(session.value.getMyChangeSet(), session.value);
+    String changesRepositoryString = dumpChangeSet(session.value.getRepositoryChangeSet(), session.value);
 
     if (check("result model", myResultModelString, resultModelString.value) & check("my change list", myChangesMineString, changesMineString) & check("my repository list", myChangesRepositoryString, changesRepositoryString)) {
       return true;
@@ -198,7 +198,7 @@ public class MergeData {
       return false;
     }
   }
-  private static <T> T as_u0rai9_a0a0a1a0a0a0a1a8a71(Object o, Class<T> type) {
+  private static <T> T as_u0rai9_a0a0a2a1a0a0a0a8a71(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

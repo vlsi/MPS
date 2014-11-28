@@ -10,12 +10,13 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.apache.log4j.Level;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.FileUtil;
@@ -62,9 +63,9 @@ import org.apache.log4j.LogManager;
     if (LOG.isInfoEnabled()) {
       LOG.info("Reading models...");
     }
-    SModel baseModel = loadModel(baseContent, ext);
-    SModel localModel = loadModel(localContent, ext);
-    SModel latestModel = loadModel(latestContent, ext);
+    final SModel baseModel = loadModel(baseContent, ext);
+    final SModel localModel = loadModel(localContent, ext);
+    final SModel latestModel = loadModel(latestContent, ext);
     if (baseModel == null || localModel == null || latestModel == null) {
       return backup(baseContent, localContent, latestContent);
     }
@@ -92,54 +93,55 @@ import org.apache.log4j.LogManager;
       if (LOG.isInfoEnabled()) {
         LOG.info("Merging " + baseModel.getReference() + "...");
       }
-      final MergeSession mergeSession = MergeSession.createMergeSession(baseModel, localModel, latestModel);
-      int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
-        public boolean accept(ModelChange c) {
-          return Sequence.fromIterable(mergeSession.getConflictedWith(c)).isNotEmpty();
-        }
-      }).count();
-      if (conflictingChangesCount == 0) {
-        if (LOG.isInfoEnabled()) {
-          LOG.info(String.format("%s: %d changes detected: %d local and %d latest.", myModelName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), ListSequence.fromList(mergeSession.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeSession.getRepositoryChangeSet().getModelChanges()).count()));
-        }
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            mergeSession.applyChanges(mergeSession.getAllChanges());
-          }
-        });
-        if (mergeSession.hasIdsToRestore()) {
-          if (LOG.isInfoEnabled()) {
-            LOG.info(String.format("%s: node id duplication detected, should merge in UI.", myModelName));
-          }
-        } else {
-          String resultString;
-          SModel resultModel = mergeSession.getResultModel();
-          if (LOG.isInfoEnabled()) {
-            LOG.info(String.format("%s: Saving merged model...", myModelName));
-          }
-          updateMetaModelInfo(resultModel, baseModel, localModel, latestModel);
-          if (MPSExtentions.MODEL_HEADER.equals(myExtension) || MPSExtentions.MODEL_ROOT.equals(myExtension)) {
-            // special support for per-root persistence 
-            resultString = PersistenceUtil.savePerRootModel(resultModel, MPSExtentions.MODEL_HEADER.equals(myExtension));
-          } else {
-            resultString = PersistenceUtil.saveModel(resultModel, ext);
-          }
-          if (resultString == null) {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error("Error while saving result model");
+      final Wrappers._T<MergeSession> mergeSession = new Wrappers._T<MergeSession>(null);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          mergeSession.value = MergeSession.createMergeSession(baseModel, localModel, latestModel);
+          int conflictingChangesCount = Sequence.fromIterable(mergeSession.value.getAllChanges()).where(new IWhereFilter<ModelChange>() {
+            public boolean accept(ModelChange c) {
+              return Sequence.fromIterable(mergeSession.value.getConflictedWith(c)).isNotEmpty();
             }
-            return backup(baseContent, localContent, latestContent);
+          }).count();
+          if (conflictingChangesCount == 0) {
+            if (LOG.isInfoEnabled()) {
+              LOG.info(String.format("%s: %d changes detected: %d local and %d latest.", myModelName, Sequence.fromIterable(mergeSession.value.getAllChanges()).count(), ListSequence.fromList(mergeSession.value.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeSession.value.getRepositoryChangeSet().getModelChanges()).count()));
+            }
+            mergeSession.value.applyChanges(mergeSession.value.getAllChanges());
+          } else {
+            if (LOG.isInfoEnabled()) {
+              LOG.info(String.format("%s: %d changes detected, %d of them are conflicting", myModelName, Sequence.fromIterable(mergeSession.value.getAllChanges()).count(), conflictingChangesCount));
+            }
           }
-          if (LOG.isInfoEnabled()) {
-            LOG.info(String.format("%s: merged successfully.", myModelName));
-          }
-          backup(baseContent, localContent, latestContent);
-          return MultiTuple.<Integer,byte[]>from(MERGED, resultString.getBytes(FileUtil.DEFAULT_CHARSET));
+        }
+      });
+      if (mergeSession.value.hasIdsToRestore()) {
+        if (LOG.isInfoEnabled()) {
+          LOG.info(String.format("%s: node id duplication detected, should merge in UI.", myModelName));
         }
       } else {
+        String resultString;
+        SModel resultModel = mergeSession.value.getResultModel();
         if (LOG.isInfoEnabled()) {
-          LOG.info(String.format("%s: %d changes detected, %d of them are conflicting", myModelName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), conflictingChangesCount));
+          LOG.info(String.format("%s: Saving merged model...", myModelName));
         }
+        updateMetaModelInfo(resultModel, baseModel, localModel, latestModel);
+        if (MPSExtentions.MODEL_HEADER.equals(myExtension) || MPSExtentions.MODEL_ROOT.equals(myExtension)) {
+          // special support for per-root persistence 
+          resultString = PersistenceUtil.savePerRootModel(resultModel, MPSExtentions.MODEL_HEADER.equals(myExtension));
+        } else {
+          resultString = PersistenceUtil.saveModel(resultModel, ext);
+        }
+        if (resultString == null) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error("Error while saving result model");
+          }
+          return backup(baseContent, localContent, latestContent);
+        }
+        if (LOG.isInfoEnabled()) {
+          LOG.info(String.format("%s: merged successfully.", myModelName));
+        }
+        backup(baseContent, localContent, latestContent);
+        return MultiTuple.<Integer,byte[]>from(MERGED, resultString.getBytes(FileUtil.DEFAULT_CHARSET));
       }
     } catch (Throwable e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
