@@ -294,7 +294,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      my_readHelperParam.withConcept(attrs.getValue("id"), attrs.getValue("name"), attrs.getValue("index"), attrs.getValue("flags"));
+      my_readHelperParam.withConcept(attrs.getValue("id"), attrs.getValue("name"), attrs.getValue("index"), attrs.getValue("flags"), attrs.getValue("stub"));
       return null;
     }
     @Override
@@ -423,9 +423,7 @@ public class ModelReader9bisHandler extends XMLSAXHandler<ModelLoadResult> {
     protected Object createObject(Attributes attrs) throws SAXException {
       SModelReference modelRef = my_idEncoderField.parseModelReference(attrs.getValue("ref"));
       my_importHelperField.addModelImport(attrs.getValue("index"), modelRef);
-      if (Boolean.parseBoolean(attrs.getValue("implicit"))) {
-        my_modelField.addAdditionalModelVersion(modelRef, -1);
-      } else {
+      if (!(Boolean.parseBoolean(attrs.getValue("implicit")))) {
         my_modelField.addModelImport(modelRef, true);
       }
       return null;

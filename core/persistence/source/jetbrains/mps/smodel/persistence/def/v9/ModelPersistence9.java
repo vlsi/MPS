@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
+import jetbrains.mps.persistence.MetaModelInfoProvider;
+import jetbrains.mps.persistence.MetaModelInfoProvider.BaseMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
+import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -32,43 +35,27 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import java.util.List;
 
 public class ModelPersistence9 implements IModelPersistence {
-  //common
-  public static final String REF = "ref";
-  // model properties
-  public static final String DEBUG_INFO = "debugInfo";
+  public static final String OPTION_CONCISE = "concise"; // FIXME remove once everyone had merged their branches.
+
+  // per-root
+  public static final String FILE_CONTENT = ModelPersistence.FILE_CONTENT;
+
+  // elements
+  public static final String MODEL = "model";
+  public static final String MODEL_ATTRIBUTE = "attribute";
+  public static final String MODEL_PERSISTENCE = ModelPersistence.PERSISTENCE;
+
+  public static final String NODE = "node";
+  public static final String NODE_PROPERTY = ModelPersistence.PROPERTY;
+  public static final String NODE_REFERENCE = "ref";
+
   public static final String LANGUAGES = "languages";
   public static final String USED_LANGUAGE = "use";
   public static final String ENGAGED_ON_GENERATION_LANGUAGE = "generationPart";
   public static final String DEVKIT = "devkit";
   public static final String IMPORTS = "imports";
   public static final String IMPORT = "import";
-  public static final String IMPORT_INDEX = "index";
-  public static final String USE_INDEX = "index";
-  public static final String IMPLICIT = "implicit";
-  public static final String CONTENTS = "contents";
-  public static final String VERSION = "version";
-  // nodes
-  public static final String CONCEPT_ID = "concept";
-  public static final String ROLE_ID = "role";
-  public static final String TARGET_NODE_ID = "target";
-  public static final String REFERENCE = "reference";
-  public static final String PROPERTY = "property";
-  public static final String RESOLVE_INFO = "resolveInfo";
-  public static final String NODE_INFO = "info";
-  // per-root
-  public static final String FILE_CONTENT = "content";
-  // debug info
-  public static final String DEBUG_INFO_LANG = "lang";
-  public static final String DEBUG_INFO_NAME = "name";
-  public static final String DEBUG_INFO_MODEL = "model";
-  public static final String DEBUG_INFO_CONCEPT = "concept";
-  public static final String DEBUG_INFO_PROP = "property";
-  public static final String DEBUG_INFO_REF_ROLE = "refRole";
-  public static final String DEBUG_INFO_CHILD_ROLE = "childRole";
 
-  public static final String OPTION_CONCISE = "concise";
-
-  // elements
   public static final String REGISTRY = "registry";
   public static final String REGISTRY_LANGUAGE = ModelPersistence.LANGUAGE;
   public static final String REGISTRY_CONCEPT = "concept";
@@ -76,15 +63,9 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String REGISTRY_ASSOCIATION = "reference";
   public static final String REGISTRY_AGGREGATION = "child";
 
-  public static final String MODEL = "model";
-  public static final String MODEL_ATTRIBUTE = "attribute";
-  public static final String MODEL_PERSISTENCE = ModelPersistence.PERSISTENCE;
-  public static final String NODE = "node";
-  public static final String NODE_PROPERTY = ModelPersistence.PROPERTY;
-  public static final String NODE_REFERENCE = "ref";
-
   // attributes
 
+  public static final String REF = "ref";
   public static final String ID = ModelPersistence.ID;
   public static final String NAME = ModelPersistence.NAME;
   public static final String VALUE = ModelPersistence.VALUE;
@@ -93,6 +74,11 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String UNORDERED = "unordered";
   public static final String TO = "to";
   public static final String RESOLVE = "resolve";
+  public static final String CONCEPT_ID = "concept";
+  public static final String ROLE_ID = "role";
+  public static final String VERSION = "version";
+  public static final String IMPLICIT = "implicit";
+  public static final String STUB = "stub";
 
 
   @Override
@@ -102,12 +88,18 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public IModelWriter getModelWriter() {
-    return new ModelWriter9bis(new RegularMetaModelInfo());
+    return new ModelWriter9(new RegularMetaModelInfo());
   }
 
   @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
-    return new ModelWriter9bis(new RegularMetaModelInfo());
+    final MetaModelInfoProvider mmiProvider;
+    if (header != null && header.getMetaInfoProvider() != null) {
+      mmiProvider = header.getMetaInfoProvider();
+    } else {
+      mmiProvider = new RegularMetaModelInfo();
+    }
+    return new ModelWriter9(mmiProvider);
   }
 
   @Override
@@ -125,7 +117,11 @@ public class ModelPersistence9 implements IModelPersistence {
     final boolean interfaceOnly = state == ModelLoadingState.INTERFACE_LOADED;
     final boolean stripImplementation = state == ModelLoadingState.NO_IMPLEMENTATION;
     if (isConcisePersistenceOption(header)) {
-      IdInfoReadHelper readHelper = new IdInfoReadHelper(new RegularMetaModelInfo(), interfaceOnly, stripImplementation);
+      MetaModelInfoProvider mmiProvider = header.getMetaInfoProvider();
+      if (mmiProvider == null) {
+        mmiProvider = new RegularMetaModelInfo();
+      }
+      IdInfoReadHelper readHelper = new IdInfoReadHelper(mmiProvider, interfaceOnly, stripImplementation);
       return new ModelReader9bisHandler(header, readHelper);
     }
     return new ModelReader9Handler(interfaceOnly, stripImplementation, header);
@@ -133,7 +129,10 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
-    return new AnnotationInfoReader9Handler();
+    // for annotation purposes, we don't need to publish meta-model or to query outer world, information from model file should be sufficient
+    MetaModelInfoProvider mmiProvider = new StuffedMetaModelInfo(new BaseMetaModelInfo());
+    IdInfoReadHelper readHelper = new IdInfoReadHelper(mmiProvider, true, true);
+    return new AnnotationInfoReader9Handler(readHelper);
   }
 
   @Override
@@ -142,6 +141,7 @@ public class ModelPersistence9 implements IModelPersistence {
   }
 
   private static boolean isConcisePersistenceOption(SModelHeader header) {
-    return Boolean.parseBoolean(header.getOptionalProperty(ModelPersistence9.OPTION_CONCISE));
+    final String p = header.getOptionalProperty(ModelPersistence9.OPTION_CONCISE);
+    return p == null || Boolean.parseBoolean(p);
   }
 }

@@ -6,7 +6,6 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class XmlDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -15,22 +14,22 @@ public class XmlDeclaration_TextGen extends SNodeTextGen {
     this.append("version");
     this.append(" = ");
     this.append("\"");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, 5491461270226117667l, "version")));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x4c3596ee25a4a423L, "version")));
     this.append("\"");
-    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, 3374336260035925078l, "encoding")))) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x2ed40cf354295456L, "encoding")))) {
       this.append(" ");
       this.append("encoding");
       this.append(" = ");
       this.append("\"");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, 3374336260035925078l, "encoding")));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x2ed40cf354295456L, "encoding")));
       this.append("\"");
     }
-    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, 3374336260035925080l, "standalone")))) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x2ed40cf354295458L, "standalone")))) {
       this.append(" ");
       this.append("standalone");
       this.append(" = ");
       this.append("\"");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 5228786488744996718l, 3374336260035925080l, "standalone")));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x2ed40cf354295458L, "standalone")));
       this.append("\"");
     }
     this.append("?>");

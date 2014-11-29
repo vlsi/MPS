@@ -4,7 +4,6 @@ package jetbrains.mps.execution.settings.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -33,12 +32,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
   public EditorOperationCall_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066606l));
+    super(MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066606l, 946964771156066609l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066606l, 946964771156066609l), this) {
+    references.put(MetaIdFactory.refId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL, 0xd244b712f910131L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL, 0xd244b712f910131L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -49,15 +48,15 @@ public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
+            SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
             SNode editorType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.settings.structure.SettingsEditorType"), false);
-            if ((editorType == null) || (SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066618l, 946964771156066619l, "configuration")) == null)) {
+            if ((editorType == null) || (SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, 0xd244b712f91013bL, "configuration")) == null)) {
               return Sequence.fromIterable(Collections.<SNode>emptyList());
             }
-            List<SNode> operations = SettingsEditor_Behavior.call_getDeclaredOperations_946964771156067031(SLinkOperations.getTarget(SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066618l, 946964771156066619l, "configuration")), MetaAdapterFactory.getContainmentLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066336l, 946964771156066337l, "editor")));
+            List<SNode> operations = SettingsEditor_Behavior.call_getDeclaredOperations_946964771156067031(SLinkOperations.getTarget(SLinkOperations.getTarget(editorType, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, 0xd244b712f91013bL, "configuration")), MetaAdapterFactory.getContainmentLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, 0xd244b712f910021L, "editor")));
             return ListSequence.fromList(operations).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return ((SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066621l, "jetbrains.mps.execution.settings.structure.SettingsEditor"), false, false) != null) ? (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getJavaMethod_946964771156066991", new Object[]{}) != null) : (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{}) != null));
+                return ((SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"), false, false) != null) ? (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getJavaMethod_946964771156066991", new Object[]{}) != null) : (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{}) != null));
               }
             });
           }

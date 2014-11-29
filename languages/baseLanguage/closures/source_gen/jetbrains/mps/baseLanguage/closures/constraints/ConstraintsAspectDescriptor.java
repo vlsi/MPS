@@ -33,29 +33,29 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 1203252195462l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x118276b7086L) {
       return new UnboundClosureParameterDeclaration_Constraints();
     }
-    if (id == 1225797177491l) {
+    if (id == 0x11d67349093L) {
       return new InvokeFunctionOperation_Constraints();
     }
-    if (id == 1229599750256l) {
+    if (id == 0x11e49db3870L) {
       return new ControlAbstractionContainer_Constraints();
     }
-    if (id == 1199542442495l) {
+    if (id == 0x1174a4d19ffL) {
       return new FunctionType_Constraints();
     }
-    if (id == 4816492477345855364l) {
+    if (id == 0x42d79e63a78a7784L) {
       return new FunctionMethodDeclaration_Constraints();
     }
-    if (id == 1235746970280l) {
+    if (id == 0x11fb8425aa8L) {
       return new CompactInvokeFunctionExpression_Constraints();
     }
-    if (id == 5612111951671407997l) {
+    if (id == 0x4de23a15f719357dL) {
       return new AbstractFunctionType_Constraints();
     }
-    if (id == 1229599834263l) {
+    if (id == 0x11e49dc8097L) {
       return new ControlAbstractionDeclaration_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

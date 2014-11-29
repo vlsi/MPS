@@ -41,6 +41,20 @@ public class MergeTemporaryModel extends EditableSModelBase implements Persisten
     }
     return mySModel;
   }
+  /*package*/ void setSModelInternal(SModel model) {
+    assert model == null || getReference().equals(model.getReference());
+    synchronized (this) {
+      final SModel oldModel = mySModel;
+      if (oldModel != null) {
+        fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+      }
+      mySModel = model;
+      if (model != null) {
+        model.setModelDescriptor(this);
+        fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+      }
+    }
+  }
   @Override
   public boolean isLoaded() {
     return mySModel != null;

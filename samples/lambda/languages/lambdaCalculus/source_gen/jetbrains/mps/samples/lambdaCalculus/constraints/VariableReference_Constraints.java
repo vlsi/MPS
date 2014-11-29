@@ -4,7 +4,6 @@ package jetbrains.mps.samples.lambdaCalculus.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -27,12 +26,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class VariableReference_Constraints extends BaseConstraintsDescriptor {
   public VariableReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l));
+    super(MetaIdFactory.conceptId(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l), this) {
+    references.put(MetaIdFactory.refId(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -43,7 +42,7 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getInterfaceConcept(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727759l, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), true);
+            List<SNode> nodes = SNodeOperations.getNodeAncestors(_context.getEnclosingNode(), MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), true);
             List<SNode> result = new ArrayList<SNode>();
             for (SNode node : nodes) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getVariables_8981808925914841576", new Object[]{})));

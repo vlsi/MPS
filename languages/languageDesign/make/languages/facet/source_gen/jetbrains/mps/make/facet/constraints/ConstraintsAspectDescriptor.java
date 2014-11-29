@@ -39,38 +39,38 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 6418371274763029565l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x5912a2ab1cd24c3dL) {
       return new TargetDeclaration_Constraints();
     }
-    if (id == 6418371274763029523l) {
+    if (id == 0x5912a2ab1cd24c13L) {
       return new FacetDeclaration_Constraints();
     }
-    if (id == 6447445394688555033l) {
+    if (id == 0x5979ed6d2b23b819L) {
       return new ExtendsFacetReference_Constraints();
     }
-    if (id == 6447445394688422642l) {
+    if (id == 0x5979ed6d2b21b2f2L) {
       return new FacetReference_Constraints();
     }
-    if (id == 8351679702044320297l) {
+    if (id == 0x73e720709e312229L) {
       return new RelatedFacetReference_Constraints();
     }
-    if (id == 6418371274763029600l) {
+    if (id == 0x5912a2ab1cd24c60L) {
       return new TargetDependency_Constraints();
     }
-    if (id == 3344436107830227888l) {
+    if (id == 0x2e69d2eba535f3b0L) {
       return new ForeignParametersExpression_Constraints();
     }
-    if (id == 119022571401949652l) {
+    if (id == 0x1a6da65e8aab1d4L) {
       return new ResourceTypeDeclaration_Constraints();
     }
-    if (id == 119022571402207412l) {
+    if (id == 0x1a6da65e8aea0b4L) {
       return new ResourceClassifierType_Constraints();
     }
-    if (id == 1919086248986845077l) {
+    if (id == 0x1aa1f6c694329f95L) {
       return new NamedFacetReference_Constraints();
     }
-    if (id == 8703512757937156087l) {
+    if (id == 0x78c916bd7aecaff7L) {
       return new TargetReferenceExpression_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

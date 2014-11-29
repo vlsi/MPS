@@ -55,6 +55,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.MPSTypesystem" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.util.PathManager" file="PathManager.java">
+    <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="java.io.BufferedInputStream" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
@@ -68,23 +69,16 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.net.MalformedURLException" />
     <classNode dependClassName="java.net.URL" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Enumeration" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Properties" />
     <classNode dependClassName="java.util.PropertyResourceBundle" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
-    <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.StringUtil" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.SystemInfo" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.URLUtil" />
-    <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.util.PathUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

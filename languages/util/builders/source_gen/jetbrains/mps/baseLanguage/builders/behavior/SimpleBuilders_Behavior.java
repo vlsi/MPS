@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
@@ -19,14 +18,14 @@ public class SimpleBuilders_Behavior {
     if (thisNode == b) {
       return true;
     }
-    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 5199967550912384274l, "extendsBuilder")) == null)) {
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")) == null)) {
       return false;
     }
-    return SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 5199967550912384274l, "extendsBuilder")), b);
+    return SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")), b);
   }
   public static List<SNode> call_getDescendands_5199967550912479741(SNode thisNode, SModel context) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode sb : SModelOperations.rootsIncludingImported(context, MetaAdapterFactory.getConcept(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))) {
+    for (SNode sb : SModelOperations.rootsIncludingImported(context, MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))) {
       if (SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(sb, thisNode)) {
         ListSequence.fromList(result).addElement(sb);
       }
@@ -38,7 +37,7 @@ public class SimpleBuilders_Behavior {
     SNode current = thisNode;
     while (current != null) {
       ListSequence.fromList(result).addElement(current);
-      current = SLinkOperations.getTarget(current, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 5199967550912384274l, "extendsBuilder"));
+      current = SLinkOperations.getTarget(current, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder"));
     }
     return result;
   }

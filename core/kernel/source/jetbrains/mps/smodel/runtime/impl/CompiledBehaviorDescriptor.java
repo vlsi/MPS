@@ -84,6 +84,7 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
       throw new RuntimeException(e);
     } catch (InvocationTargetException e) {
       Throwable cause = e.getCause();
+      cause.printStackTrace();
       if (cause instanceof RuntimeException) {
         throw (RuntimeException) cause;
       } else if (cause instanceof Error) {

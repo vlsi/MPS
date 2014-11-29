@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.closures.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -16,7 +15,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ControlAbstractionContainer_Constraints extends BaseConstraintsDescriptor {
   public ControlAbstractionContainer_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-200093298712821347l, -8038623698278341771l), 1229599750256l));
+    super(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49db3870L));
   }
   @Override
   public boolean hasOwnDefaultScopeProvider() {

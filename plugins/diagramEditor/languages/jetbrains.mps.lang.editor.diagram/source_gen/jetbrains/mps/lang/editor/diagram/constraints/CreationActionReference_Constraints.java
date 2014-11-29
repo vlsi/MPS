@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.diagram.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -30,12 +29,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class CreationActionReference_Constraints extends BaseConstraintsDescriptor {
   public CreationActionReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(6991546026468590289l, -9160623158338601007l), 6619018968335599081l));
+    super(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(6991546026468590289l, -9160623158338601007l), 6619018968335599081l, 6619018968336102388l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(6991546026468590289l, -9160623158338601007l), 6619018968335599081l, 6619018968336102388l), this) {
+    references.put(MetaIdFactory.refId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x5bdb7aaec13ef3f4L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x5bdb7aaec13ef3f4L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -52,8 +51,8 @@ public class CreationActionReference_Constraints extends BaseConstraintsDescript
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               List<SNode> creationBlocks = ListSequence.fromList(new ArrayList<SNode>());
-              ListSequence.fromList(creationBlocks).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 6306886970791033847l, "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram")), MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 6306886970791033847l, 8570854907290721333l, "elementsCreation"))));
-              ListSequence.fromList(creationBlocks).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(new UUID(6991546026468590289l, -9160623158338601007l), 6306886970791033847l, "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram")), MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 6306886970791033847l, 939897302409114961l, "connectorCreation"))));
+              ListSequence.fromList(creationBlocks).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram")), MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, 0x76f1cb20ba7a1c35L, "elementsCreation"))));
+              ListSequence.fromList(creationBlocks).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(_context.getEnclosingNode()), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram")), MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, 0xd0b2f9de3717551L, "connectorCreation"))));
               return new SimpleScope(creationBlocks) {
                 @Nullable
                 public String getReferenceText(@NotNull SNode target) {

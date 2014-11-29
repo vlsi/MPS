@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -17,11 +16,11 @@ public class ScopesTest_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SReference call_getCheckingReference_5449224527592367549(SNode thisNode) {
-    if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference")) == null) {
+    if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference")) == null) {
       return ((SNode) SNodeOperations.getParent(thisNode)).getReferences().iterator().next();
     }
     for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(SNodeOperations.getParent(thisNode)))) {
-      if (SLinkOperations.getTargetNode(reference) == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference"))) {
+      if (SLinkOperations.getTargetNode(reference) == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference"))) {
         return (jetbrains.mps.smodel.SReference) reference;
       }
     }
@@ -31,6 +30,6 @@ public class ScopesTest_Behavior {
     return ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1;
   }
   public static boolean call_isApplicable_5449224527592368025(SAbstractConcept thisConcept, SNode node) {
-    return ListSequence.fromList(SNodeOperations.getReferences(node)).isNotEmpty() && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.ScopesTest")) == null) && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, "jetbrains.mps.lang.test.structure.ScopesTest")));
+    return ListSequence.fromList(SNodeOperations.getReferences(node)).isNotEmpty() && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.ScopesTest")) == null) && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest")));
   }
 }

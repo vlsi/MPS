@@ -4,7 +4,6 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -16,7 +15,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class DataTypeDeclaration_Constraints extends BaseConstraintsDescriptor {
   public DataTypeDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164218l));
+    super(MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL));
   }
   @Override
   public boolean hasOwnDefaultScopeProvider() {

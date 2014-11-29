@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:bfc3cc23-55a3-453e-8ef5-e40fe2c110a4(jetbrains.mps.testHybridEditor.sandbox.testModel)" concise="true">
+<model ref="r:bfc3cc23-55a3-453e-8ef5-e40fe2c110a4(jetbrains.mps.testHybridEditor.sandbox.testModel)">
   <persistence version="9" />
   <languages>
     <use id="913a1d63-9e19-48fa-ad03-e33ecccd3814" name="jetbrains.mps.testHybridEditor" version="-1" />
   </languages>
-  <imports>
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="adck" ref="r:2a464ec2-aa44-4a2f-a388-e0917332ac68(jetbrains.mps.testHybridEditor.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
     <language id="913a1d63-9e19-48fa-ad03-e33ecccd3814" name="jetbrains.mps.testHybridEditor">
+      <concept id="2353136177973871304" name="jetbrains.mps.testHybridEditor.structure.MetaBlock" flags="ng" index="3cUcoE">
+        <property id="9168054762589307856" name="iconPath" index="ijrFF" />
+        <child id="2353136177973888134" name="inMetaPorts" index="3cUg1$" />
+        <child id="3229274890675219468" name="outMetaPorts" index="1S65LF" />
+      </concept>
+      <concept id="2353136177973886045" name="jetbrains.mps.testHybridEditor.structure.MetaPort" flags="ng" index="3cUfyZ" />
+      <concept id="2353136177974080669" name="jetbrains.mps.testHybridEditor.structure.BlockInstance" flags="ng" index="3cUZ1Z">
+        <property id="3175567003993184638" name="width" index="2HpJwz" />
+        <property id="3175567003993184686" name="height" index="2HpJzN" />
+        <property id="2353136177974084746" name="y" index="3cV01C" />
+        <property id="2353136177974084745" name="x" index="3cV01F" />
+        <reference id="2353136177974084777" name="metaBlock" index="3cV01b" />
+      </concept>
+      <concept id="2353136177974088982" name="jetbrains.mps.testHybridEditor.structure.ConnectorInstance" flags="ng" index="3cV17O">
+        <child id="5288989961863964096" name="source" index="1gT66p" />
+        <child id="5288989961863964102" name="target" index="1gT66v" />
+      </concept>
       <concept id="5288989961863963745" name="jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance" flags="ng" index="1gT60S">
         <reference id="5288989961863964093" name="metaPort" index="1gT67$" />
         <reference id="5288989961863964092" name="block" index="1gT67_" />
@@ -31,32 +50,10 @@
         <reference id="725186580883451924" name="outputPort" index="1Jo55e" />
       </concept>
       <concept id="725186580883451585" name="jetbrains.mps.testHybridEditor.structure.Diagram" flags="ng" index="1Jo4Yr">
-        <child id="725186580883451866" name="connectors" index="1Jo4U0" />
-        <child id="725186580883451864" name="blocks" index="1Jo4U2" />
         <child id="2353136177974080694" name="newBlocks" index="3cUZ1k" />
         <child id="2353136177974093280" name="newConnectors" index="3cV242" />
-      </concept>
-      <concept id="2353136177973871304" name="jetbrains.mps.testHybridEditor.structure.MetaBlock" flags="ng" index="3cUcoE">
-        <property id="9168054762589307856" name="iconPath" index="ijrFF" />
-        <child id="3229274890675219468" name="outMetaPorts" index="1S65LF" />
-        <child id="2353136177973888134" name="inMetaPorts" index="3cUg1$" />
-      </concept>
-      <concept id="2353136177973886045" name="jetbrains.mps.testHybridEditor.structure.MetaPort" flags="ng" index="3cUfyZ" />
-      <concept id="2353136177974080669" name="jetbrains.mps.testHybridEditor.structure.BlockInstance" flags="ng" index="3cUZ1Z">
-        <property id="3175567003993184638" name="width" index="2HpJwz" />
-        <property id="3175567003993184686" name="height" index="2HpJzN" />
-        <property id="2353136177974084746" name="y" index="3cV01C" />
-        <property id="2353136177974084745" name="x" index="3cV01F" />
-        <reference id="2353136177974084777" name="metaBlock" index="3cV01b" />
-      </concept>
-      <concept id="2353136177974088982" name="jetbrains.mps.testHybridEditor.structure.ConnectorInstance" flags="ng" index="3cV17O">
-        <child id="5288989961863964096" name="source" index="1gT66p" />
-        <child id="5288989961863964102" name="target" index="1gT66v" />
-      </concept>
-    </language>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
+        <child id="725186580883451866" name="connectors" index="1Jo4U0" />
+        <child id="725186580883451864" name="blocks" index="1Jo4U2" />
       </concept>
     </language>
   </registry>

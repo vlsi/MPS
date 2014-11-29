@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.ide.migration.MigrationAssistantWizard" file="MigrationAssistantWizard.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.Arrays" />
@@ -11,7 +12,6 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.InitialStep" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationStep" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsErrorStep" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsFinishedStep" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep" />
     <classNode extendsClassName="com.intellij.ide.wizard.AbstractWizardEx" />
   </dependency>

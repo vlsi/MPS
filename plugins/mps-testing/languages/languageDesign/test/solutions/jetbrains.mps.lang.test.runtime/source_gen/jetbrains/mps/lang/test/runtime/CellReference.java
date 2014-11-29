@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -29,7 +28,7 @@ public class CellReference {
   private Map<SNode, SNode> myMap;
   public CellReference(SNode node, SNode annotation, Map<SNode, SNode> map) {
     this.myNode = node;
-    this.myAnnotation = SNodeOperations.cast(annotation, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"));
+    this.myAnnotation = SNodeOperations.cast(annotation, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"));
     this.myMap = map;
   }
   public SNode getNode() {
@@ -40,7 +39,7 @@ public class CellReference {
     final Wrappers._T<String> result = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = "(node " + CellReference.this.myNode.getNodeId().toString() + ", id " + SPropertyOperations.getString(CellReference.this.myAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1229194968595l, "cellId")) + ")";
+        result.value = "(node " + CellReference.this.myNode.getNodeId().toString() + ", id " + SPropertyOperations.getString(CellReference.this.myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e31babe13L, "cellId")) + ")";
       }
     });
     return result.value;
@@ -51,30 +50,30 @@ public class CellReference {
   }
   public void assertEditor(Editor editor, Map<SNode, SNode> map) {
     EditorComponent component = (EditorComponent) editor.getCurrentEditorComponent();
-    if (SPropertyOperations.getBoolean(this.myAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1977980803835239937l, "isInInspector"))) {
+    if (SPropertyOperations.getBoolean(this.myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1b73330fb1241e01L, "isInInspector"))) {
       component = ((NodeEditorComponent) component).getInspector();
     }
-    SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203469l, "nodeRangeSelectionEnd"));
+    SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9acdL, "nodeRangeSelectionEnd"));
 
     Selection selection = component.getSelectionManager().getSelection();
     assert selection != null : "Selection was not set in the resulting editor";
     if (selection instanceof SingularSelection) {
       EditorCell selectedCell = ((SingularSelection) selection).getEditorCell();
       Assert.assertSame(this.getNode(), MapSequence.fromMap(map).get(selectedCell.getSNode()));
-      Assert.assertEquals(selectedCell.getCellId(), SPropertyOperations.getString(this.myAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1229194968595l, "cellId")));
+      Assert.assertEquals(selectedCell.getCellId(), SPropertyOperations.getString(this.myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e31babe13L, "cellId")));
       if (selectedCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) selectedCell;
-        Assert.assertEquals(SPropertyOperations.getInteger(myAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 6268941039745498163l, "selectionStart")), label.getSelectionStart());
-        Assert.assertEquals(SPropertyOperations.getInteger(myAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 6268941039745498165l, "selectionEnd")), label.getSelectionEnd());
+        Assert.assertEquals(SPropertyOperations.getInteger(myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x56ffc0a94fe5fc33L, "selectionStart")), label.getSelectionStart());
+        Assert.assertEquals(SPropertyOperations.getInteger(myAnnotation, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x56ffc0a94fe5fc35L, "selectionEnd")), label.getSelectionEnd());
       }
-      Assert.assertNull(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203468l, "nodeRangeSelectionStart")));
-      Assert.assertNull(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203469l, "nodeRangeSelectionEnd")));
+      Assert.assertNull(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9accL, "nodeRangeSelectionStart")));
+      Assert.assertNull(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9acdL, "nodeRangeSelectionEnd")));
     } else if (selection instanceof NodeRangeSelection) {
       NodeRangeSelection rangeSelection = (NodeRangeSelection) selection;
-      Assert.assertNotNull(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203468l, "nodeRangeSelectionStart")));
-      Assert.assertNotNull(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203469l, "nodeRangeSelectionEnd")));
-      Assert.assertEquals(MapSequence.fromMap(myMap).get(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203468l, "nodeRangeSelectionStart"))), MapSequence.fromMap(map).get(rangeSelection.getFirstNode()));
-      Assert.assertEquals(MapSequence.fromMap(myMap).get(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203469l, "nodeRangeSelectionEnd"))), MapSequence.fromMap(map).get(rangeSelection.getLastNode()));
+      Assert.assertNotNull(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9accL, "nodeRangeSelectionStart")));
+      Assert.assertNotNull(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9acdL, "nodeRangeSelectionEnd")));
+      Assert.assertEquals(MapSequence.fromMap(myMap).get(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9accL, "nodeRangeSelectionStart"))), MapSequence.fromMap(map).get(rangeSelection.getFirstNode()));
+      Assert.assertEquals(MapSequence.fromMap(myMap).get(SLinkOperations.getTarget(myAnnotation, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e1f9acdL, "nodeRangeSelectionEnd"))), MapSequence.fromMap(map).get(rangeSelection.getLastNode()));
     } else {
       Assert.fail("Selection of unsupported type: " + selection.getClass());
     }

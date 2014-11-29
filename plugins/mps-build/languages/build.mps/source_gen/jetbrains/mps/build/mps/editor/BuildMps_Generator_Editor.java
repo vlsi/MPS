@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet;
@@ -159,7 +158,7 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_leuqor_a3a(SNode node, EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840248l, "jetbrains.mps.build.mps.structure.BuildMps_Language")));
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")));
   }
   private EditorCell createConstant_leuqor_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source language");
@@ -261,7 +260,7 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_leuqor_a1e0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, 1500819558096356884l, "doNotCompile"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x14d3fb6fb84ac614L, "doNotCompile"));
   }
   private EditorCell createRefNodeList_leuqor_c4a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildMps_Generator_Editor.sourcesListHandler_leuqor_c4a(node, "sources", editorContext);
@@ -493,7 +492,7 @@ public class BuildMps_Generator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_leuqor_a1b0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, 1500819558096356884l, "doNotCompile"));
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x14d3fb6fb84ac614L, "doNotCompile"));
   }
   private EditorCell createRefNodeList_leuqor_c1a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildMps_Generator_Editor.sourcesListHandler_leuqor_c1a0(node, "sources", editorContext);

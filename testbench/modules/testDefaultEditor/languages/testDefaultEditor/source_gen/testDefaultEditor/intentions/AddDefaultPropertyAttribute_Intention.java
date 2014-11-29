@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -71,7 +70,7 @@ public class AddDefaultPropertyAttribute_Intention implements IntentionFactory {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("testDefaultEditor.structure.DefaultPropertyAttribute", "age")) != null)) {
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("testDefaultEditor.structure.DefaultPropertyAttribute", "age")));
       } else {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.PropertyAttribute("testDefaultEditor.structure.DefaultPropertyAttribute", "age"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-5371872866919758279l, -7175655179967150885l), 2870455723671203428l, "testDefaultEditor.structure.DefaultPropertyAttribute"))));
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.PropertyAttribute("testDefaultEditor.structure.DefaultPropertyAttribute", "age"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x27d5e845b8e8ae64L, "testDefaultEditor.structure.DefaultPropertyAttribute"))));
         SelectionUtil.selectCell(editorContext, AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("testDefaultEditor.structure.DefaultPropertyAttribute", "age")), "const");
       }
 

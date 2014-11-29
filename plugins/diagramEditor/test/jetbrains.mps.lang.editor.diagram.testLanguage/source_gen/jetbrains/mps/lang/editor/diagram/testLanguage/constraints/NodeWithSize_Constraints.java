@@ -4,10 +4,9 @@ package jetbrains.mps.lang.editor.diagram.testLanguage.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 
 public class NodeWithSize_Constraints extends BaseConstraintsDescriptor {
   public NodeWithSize_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374242986l));
+    super(MetaIdFactory.conceptId(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL));
   }
 }

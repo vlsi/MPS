@@ -31,7 +31,7 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
-    myChooser = RefactoringAccess.getInstance().createTargetChooser(myProject, myModel);
+    myChooser = RefactoringAccessEx.getInstance().createTargetChooser(myProject, myModel);
     JComponent centerPanel = myChooser.getComponent();
     centerPanel.setPreferredSize(new Dimension(400, 900));
     return centerPanel;

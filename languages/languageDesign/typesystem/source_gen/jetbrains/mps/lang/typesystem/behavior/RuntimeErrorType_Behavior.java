@@ -5,12 +5,11 @@ package jetbrains.mps.lang.typesystem.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class RuntimeErrorType_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return "error[" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562361l, 1185281562362l, "errorText")) + "]";
+    return "error[" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, 0x113f84956faL, "errorText")) + "]";
   }
 }

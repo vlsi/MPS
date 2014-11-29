@@ -12,7 +12,6 @@ import org.jetbrains.org.objectweb.asm.Opcodes;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.io.InputStream;
@@ -69,8 +68,8 @@ public class ClassifierLoader {
 
       getClassifier(file.getParent().getDescendant(name + ".class"), new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode n) {
-          SPropertyOperations.set(n, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 521412098689998745l, "nonStatic"), "" + (!(isStatic)));
-          ListSequence.fromList(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(n);
+          SPropertyOperations.set(n, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x73c6d8a8c021f99L, "nonStatic"), "" + (!(isStatic)));
+          ListSequence.fromList(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(n);
         }
       });
     }

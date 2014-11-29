@@ -128,7 +128,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   private static LanguageRuntime createRuntime(Language l) {
     LanguageRuntime lr = getObjectByClassNameForLanguage(l.getModuleName() + ".Language", LanguageRuntime.class, l);
     if (lr != null) return lr;
-    return new InterpretedLanguageRuntime(l);
+    return null;
   }
 
   public String toString() {

@@ -8,7 +8,6 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -35,8 +34,8 @@ public class TaskLibrariesHelper {
   }
   public void importLibs() {
     Set<SNode> libsSet = new LinkedHashSet<SNode>();
-    for (SNode tldep : SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546673l, 7306485738221455031l, "imports"))) {
-      libsSet.add(SLinkOperations.getTarget(tldep, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target")));
+    for (SNode tldep : SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6271L, 0x6565da114725c6b7L, "imports"))) {
+      libsSet.add(SLinkOperations.getTarget(tldep, MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target")));
     }
     closure(libsSet);
     List<SNode> libs = new ArrayList<SNode>(libsSet);
@@ -45,21 +44,21 @@ public class TaskLibrariesHelper {
         for (SReference ref : SNodeOperations.getReferences(n)) {
           SNode targetNode = SNodeOperations.getTargetNodeSilently(ref);
           if (targetNode == null) {
-            genContext.showErrorMessage(n, "cannot import library `" + SPropertyOperations.getString(lib, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "': unresolved reference");
+            genContext.showErrorMessage(n, "cannot import library `" + SPropertyOperations.getString(lib, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "': unresolved reference");
           } else if (!(libsSet.contains(targetNode.getContainingRoot()))) {
-            genContext.showErrorMessage(n, "cannot import library `" + SPropertyOperations.getString(lib, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "': broken reference, target is not imported");
+            genContext.showErrorMessage(n, "cannot import library `" + SPropertyOperations.getString(lib, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "': broken reference, target is not imported");
           }
         }
       }
     }
     List<SNode> parts = ListSequence.fromList(libs).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221391506l, 7306485738221391508l, "parts"));
+        return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114724ce92L, 0x6565da114724ce94L, "parts"));
       }
     }).toListSequence();
     Map<SNode, SNode> map = new HashMap<SNode, SNode>();
     parts = (List<SNode>) CopyUtil.copy((List<SNode>) parts, map);
-    ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546673l, 7306485738221455031l, "imports"))).clear();
+    ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6271L, 0x6565da114725c6b7L, "imports"))).clear();
     for (SNode n : SNodeUtil.getDescendants(project)) {
       for (SReference ref : n.getReferences()) {
         SNode targetNode = SNodeOperations.getTargetNodeSilently(ref);
@@ -67,7 +66,7 @@ public class TaskLibrariesHelper {
           SNodeAccessUtil.setReferenceTarget(n, ref.getRole(), map.get(targetNode));
         } else {
           SNode containingRoot = targetNode.getContainingRoot();
-          if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(containingRoot, MetaAdapterFactory.getConcept(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221391506l, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary"))) {
+          if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(containingRoot, MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114724ce92L, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary"))) {
             genContext.showErrorMessage(n, "task library is not imported");
           }
         }
@@ -75,7 +74,7 @@ public class TaskLibrariesHelper {
     }
     // we add everything in the beginning 
     for (int i = parts.size() - 1; i >= 0; i--) {
-      ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546673l, 2769948622284574304l, "parts"))).insertElement(0, parts.get(i));
+      ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6271L, 0x2670d5989d5ace60L, "parts"))).insertElement(0, parts.get(i));
     }
   }
   public static void closure(Set<SNode> libs) {
@@ -83,10 +82,10 @@ public class TaskLibrariesHelper {
     QueueSequence.fromQueue(queue).addSequence(SetSequence.fromSet(libs));
     while (!(QueueSequence.fromQueue(queue).isEmpty())) {
       SNode lib = QueueSequence.fromQueue(queue).removeFirstElement();
-      for (SNode dep : SLinkOperations.getChildren(lib, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221391506l, 7306485738221455030l, "imports"))) {
-        if (!(libs.contains(SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target"))))) {
-          libs.add(SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target")));
-          QueueSequence.fromQueue(queue).addLastElement(SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target")));
+      for (SNode dep : SLinkOperations.getChildren(lib, MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114724ce92L, 0x6565da114725c6b6L, "imports"))) {
+        if (!(libs.contains(SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target"))))) {
+          libs.add(SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target")));
+          QueueSequence.fromQueue(queue).addLastElement(SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target")));
         }
       }
     }

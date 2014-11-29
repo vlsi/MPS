@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
@@ -86,8 +85,8 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
           SNode sourceNode = (SNode) oldChild;
           SNode result = (SNode) newChild;
           SNodeOperations.replaceWithAnother(sourceNode, result);
-          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), SLinkOperations.getTarget(sourceNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
-          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), SLinkOperations.getTarget(sourceNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")));
+          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), SLinkOperations.getTarget(sourceNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")));
+          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), SLinkOperations.getTarget(sourceNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")));
           return result;
         }
       }, operationContext);
@@ -98,7 +97,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
     public void handleAction_impl(SubstituteAction parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode resultNode = parameterObject.substitute(editorContext, parameterObject.getMatchingText(null));
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(resultNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), "ALIAS_EDITOR_COMPONENT", -1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(resultNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), "ALIAS_EDITOR_COMPONENT", -1);
     }
     public boolean isReferentPresentation() {
       return false;
@@ -127,8 +126,8 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
           SNode sourceNode = (SNode) oldChild;
           SNode result = (SNode) newChild;
           SNodeOperations.replaceWithAnother(sourceNode, result);
-          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"), SLinkOperations.getTarget(sourceNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
-          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"), SLinkOperations.getTarget(sourceNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")));
+          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue"), SLinkOperations.getTarget(sourceNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")));
+          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue"), SLinkOperations.getTarget(sourceNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")));
           return result;
         }
       }, operationContext);
@@ -139,7 +138,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
     public void handleAction_impl(SubstituteAction parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode resultNode = parameterObject.substitute(editorContext, parameterObject.getMatchingText(null));
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(resultNode, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")), "ALIAS_EDITOR_COMPONENT", -1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(resultNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")), "ALIAS_EDITOR_COMPONENT", -1);
     }
     public boolean isReferentPresentation() {
       return false;

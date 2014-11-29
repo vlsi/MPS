@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:ad28332d-4f2f-44e3-a5cc-8828525ac9ee(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.structure)" concise="true">
+<model ref="r:ad28332d-4f2f-44e3-a5cc-8828525ac9ee(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.structure)">
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />

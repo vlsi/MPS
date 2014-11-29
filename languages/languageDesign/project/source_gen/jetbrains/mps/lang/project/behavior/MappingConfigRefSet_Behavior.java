@@ -6,14 +6,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MappingConfigRefSet_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
-    for (SNode r : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110391051l, 2721285250110391052l, "refs")))) {
+    for (SNode r : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f2845957030bL, 0x25c3f2845957030cL, "refs")))) {
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, r, "virtual_isComplete_2721285250110257005", new Object[]{}))) {
         return false;
       }

@@ -9,51 +9,51 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:06347ba9-55db-4390-a23e-cfba36a9507f(jetbrains.mps.lang.constraints.scripts)/6243486444683604044">
     <file name="ShowGetNameUsages_MigrationScript.java">
-      <node id="6243486444683604044" at="15,80,16,44" concept="6" />
-      <node id="6243486444683604045" at="18,31,19,48" concept="4" />
-      <node id="6243486444683604045" at="21,41,22,48" concept="4" />
-      <node id="6243486444683604045" at="24,59,25,81" concept="4" />
-      <node id="6243486444683698873" at="27,59,28,387" concept="4" />
-      <node id="6243486444683604045" at="32,42,33,21" concept="4" />
-      <node id="6243486444683713666" at="37,72,38,46" concept="4" />
-      <node id="6243486444683604045" at="30,0,32,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6243486444683604045" at="18,0,21,0" concept="3" trace="getName#()Ljava/lang/String;" />
-      <node id="6243486444683604045" at="21,0,24,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
-      <node id="6243486444683604045" at="24,0,27,0" concept="3" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-      <node id="6243486444683604045" at="27,0,30,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6243486444683604045" at="32,0,35,0" concept="3" trace="isShowAsIntention#()Z" />
-      <node id="6243486444683713666" at="37,0,40,0" concept="5" trace="eq_th6w08_a0a0d0a0a0a0b0a#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="6243486444683604044" at="16,44,35,7" concept="0" />
-      <node id="6243486444683604045" at="16,44,35,7" concept="2" />
-      <node id="6243486444683604044" at="15,0,37,0" concept="1" trace="ShowGetNameUsages_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-      <scope id="6243486444683604047" at="30,52,30,52" />
-      <scope id="6243486444683604045" at="18,31,19,48" />
-      <scope id="6243486444683604045" at="21,41,22,48" />
-      <scope id="6243486444683604045" at="24,59,25,81" />
-      <scope id="6243486444683690986" at="27,59,28,387" />
-      <scope id="6243486444683604045" at="32,42,33,21" />
-      <scope id="6243486444683713666" at="37,72,38,46" />
-      <scope id="6243486444683604045" at="30,0,32,0">
+      <node id="6243486444683604044" at="14,80,15,44" concept="6" />
+      <node id="6243486444683604045" at="17,31,18,48" concept="4" />
+      <node id="6243486444683604045" at="20,41,21,48" concept="4" />
+      <node id="6243486444683604045" at="23,59,24,81" concept="4" />
+      <node id="6243486444683698873" at="26,59,27,360" concept="4" />
+      <node id="6243486444683604045" at="31,42,32,21" concept="4" />
+      <node id="6243486444683713666" at="36,72,37,46" concept="4" />
+      <node id="6243486444683604045" at="29,0,31,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6243486444683604045" at="17,0,20,0" concept="3" trace="getName#()Ljava/lang/String;" />
+      <node id="6243486444683604045" at="20,0,23,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="6243486444683604045" at="23,0,26,0" concept="3" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="6243486444683604045" at="26,0,29,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6243486444683604045" at="31,0,34,0" concept="3" trace="isShowAsIntention#()Z" />
+      <node id="6243486444683713666" at="36,0,39,0" concept="5" trace="eq_th6w08_a0a0d0a0a0a0b0a#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="6243486444683604044" at="15,44,34,7" concept="0" />
+      <node id="6243486444683604045" at="15,44,34,7" concept="2" />
+      <node id="6243486444683604044" at="14,0,36,0" concept="1" trace="ShowGetNameUsages_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <scope id="6243486444683604047" at="29,52,29,52" />
+      <scope id="6243486444683604045" at="17,31,18,48" />
+      <scope id="6243486444683604045" at="20,41,21,48" />
+      <scope id="6243486444683604045" at="23,59,24,81" />
+      <scope id="6243486444683690986" at="26,59,27,360" />
+      <scope id="6243486444683604045" at="31,42,32,21" />
+      <scope id="6243486444683713666" at="36,72,37,46" />
+      <scope id="6243486444683604045" at="29,0,31,0">
         <var name="node" id="6243486444683604045" />
       </scope>
-      <scope id="6243486444683604045" at="18,0,21,0" />
-      <scope id="6243486444683604045" at="21,0,24,0" />
-      <scope id="6243486444683604045" at="24,0,27,0" />
-      <scope id="6243486444683604045" at="27,0,30,0">
+      <scope id="6243486444683604045" at="17,0,20,0" />
+      <scope id="6243486444683604045" at="20,0,23,0" />
+      <scope id="6243486444683604045" at="23,0,26,0" />
+      <scope id="6243486444683604045" at="26,0,29,0">
         <var name="node" id="6243486444683604045" />
       </scope>
-      <scope id="6243486444683604045" at="32,0,35,0" />
-      <scope id="6243486444683713666" at="37,0,40,0">
+      <scope id="6243486444683604045" at="31,0,34,0" />
+      <scope id="6243486444683713666" at="36,0,39,0">
         <var name="a" id="6243486444683713666" />
         <var name="b" id="6243486444683713666" />
       </scope>
-      <scope id="6243486444683604045" at="16,44,35,7" />
-      <scope id="6243486444683604044" at="15,80,35,7" />
-      <scope id="6243486444683604044" at="15,0,37,0">
+      <scope id="6243486444683604045" at="15,44,34,7" />
+      <scope id="6243486444683604044" at="14,80,34,7" />
+      <scope id="6243486444683604044" at="14,0,36,0">
         <var name="operationContext" id="6243486444683604044" />
       </scope>
-      <unit id="6243486444683604045" at="17,28,35,5" name="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript$1" />
-      <unit id="6243486444683604044" at="14,0,41,0" name="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript" />
+      <unit id="6243486444683604045" at="16,28,34,5" name="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript$1" />
+      <unit id="6243486444683604044" at="13,0,40,0" name="jetbrains.mps.lang.constraints.scripts.ShowGetNameUsages_MigrationScript" />
     </file>
   </root>
 </debug-info>

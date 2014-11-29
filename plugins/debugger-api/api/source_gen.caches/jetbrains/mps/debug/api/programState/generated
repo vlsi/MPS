@@ -1,38 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cpj0vknmxybox4j7v7z84ugtneqa6ie">
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3863x0u9flggmckjewdlsmikl6dj9wv" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-c3insuj5q8xzwq7xb0kdlp6g65rvw4k" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="5t7vko7lmcdqgrvjfpbb7ytumq3o2g7" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="cw1h8cyx63y3uqtst8ych98ne4ycg7y" />
-  <common hash="-dhena0thp856al68k6ox8fmvfxz5rui" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="4474271214082913243" name="IThread" hash="-4ew1c79y4a47w2x6e88w34hpl5wiavs">
-    <file name="IThread.java" />
-  </source>
-  <source id="4474271214082913347" name="NullLocation" hash="-393tziw5tbqxm9gz1pqm5l2ztqhaw8j">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="NullLocation.java" />
-  </source>
-  <source id="4474271214082913394" name="WatchablesCategory" hash="-98vwm0h5c235sla2586vnyo4457q8gd">
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <file name="WatchablesCategory.java" />
-  </source>
-  <source id="4474271214082914121" name="IStackFrame" hash="-1dz2aq1m4wf2gqliadi0eg2iufopoz3">
-    <file name="IStackFrame.java" />
-  </source>
-  <source id="4474271214082914148" name="ILocation" hash="3yddbxo6gc68bfz5ic8kf96e830wuaj">
-    <file name="ILocation.java" />
-  </source>
-  <source id="4474271214082915199" name="IValue" hash="7hcz7cp7lczbgu8caxnvee37kf8n7ha">
-    <file name="IValue.java" />
-  </source>
-  <source id="4474271214082916598" name="IWatchable" hash="2yc2aw0qd1fo7l1wwkxo64ter37wqfs">
-    <file name="IWatchable.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-do200eg3f6s6lr86vce17vknrw5umn" />
 

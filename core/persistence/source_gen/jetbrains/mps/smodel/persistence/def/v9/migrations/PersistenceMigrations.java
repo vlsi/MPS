@@ -7,7 +7,7 @@ import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 
 public class PersistenceMigrations implements CoreComponent {
-  private final ProjectMigration[] myMigrations = new ProjectMigration[]{new Name2IdMigration()};
+  private final ProjectMigration[] myMigrations = new ProjectMigration[]{new ReSaveModulesMigration(), new Name2IdMigration()};
 
   @Override
   public void init() {

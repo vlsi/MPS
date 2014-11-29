@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
@@ -33,7 +32,6 @@ import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
 import jetbrains.mps.smodel.persistence.def.v8.ModelPersistence8;
 import jetbrains.mps.smodel.persistence.def.v9.ModelPersistence9;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
@@ -320,7 +318,9 @@ public class ModelPersistence {
     if (modelPersistence == null) {
       throw new IllegalArgumentException(String.format("Unknown persistence version %d", persistenceVersion));
     }
-    model.calculateImplicitImports();
+    if (persistenceVersion < 9) {
+      model.getImplicitImportsSupport().calculateImplicitImports();
+    }
     return modelPersistence.getModelWriter(model instanceof DefaultSModel ? ((DefaultSModel) model).getSModelHeader() : null).saveModel(model);
   }
   //----------------
@@ -353,12 +353,6 @@ public class ModelPersistence {
       result.put(GeneratableSModel.FILE, ModelDigestUtil.hashText(content));
     }
     return result;
-  }
-
-  @NotNull
-  public static DefaultSModel readModelWithoutImplementation(@NotNull final StreamDataSource source) throws ModelReadException {
-    SModelHeader header = loadDescriptor(source);
-    return (DefaultSModel) readModel(header, source, ModelLoadingState.NO_IMPLEMENTATION).getModel();
   }
 
   @NotNull

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class Quantity_Editor extends DefaultNodeEditor {
@@ -61,7 +60,7 @@ public class Quantity_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_e4lyhc_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793358083l, "unit"), "USD", "USD_KWH");
+    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "USD", "USD_KWH");
   }
   private EditorCell createRefNode_e4lyhc_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -104,6 +103,6 @@ public class Quantity_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_e4lyhc_a2a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793358083l, "unit"), "USD", "USD_KWH"));
+    return !(SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "USD", "USD_KWH"));
   }
 }

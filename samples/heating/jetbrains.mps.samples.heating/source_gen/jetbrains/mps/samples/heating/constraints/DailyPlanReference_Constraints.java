@@ -4,7 +4,6 @@ package jetbrains.mps.samples.heating.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -31,12 +30,12 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
   public DailyPlanReference_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-6352760259037542597l, -7435837320858277567l), 935069066462619696l));
+    super(MetaIdFactory.conceptId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0xcfa085c9af5e830L));
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-6352760259037542597l, -7435837320858277567l), 935069066462619696l, 935069066462619697l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-6352760259037542597l, -7435837320858277567l), 935069066462619696l, 935069066462619697l), this) {
+    references.put(MetaIdFactory.refId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0xcfa085c9af5e830L, 0xcfa085c9af5e831L), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0xcfa085c9af5e830L, 0xcfa085c9af5e831L), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -51,7 +50,7 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 2161719505004866676l, "displayName"));
+            return SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x1dfff86fbfd92c74L, "displayName"));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
@@ -59,13 +58,13 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ListScope(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232698866l, "jetbrains.mps.samples.heating.structure.HeatingPlan"), false, false), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232698866l, 5063359128232717389l, "dailyPlans"))).where(new IWhereFilter<SNode>() {
+            return new ListScope(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aa3f2L, "jetbrains.mps.samples.heating.structure.HeatingPlan"), false, false), MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aa3f2L, 0x4644aa4ce08aec4dL, "dailyPlans"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a1(it, _context.getContextNode());
               }
             })) {
               public String getName(SNode child) {
-                return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, "jetbrains.mps.samples.heating.structure.DailyPlan")), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 4664795093170417662l, "applicability")), "virtual_getPresentation_1213877396640", new Object[]{});
+                return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan")), MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x40bcae6c0e686ffeL, "applicability")), "virtual_getPresentation_1213877396640", new Object[]{});
               }
             };
           }

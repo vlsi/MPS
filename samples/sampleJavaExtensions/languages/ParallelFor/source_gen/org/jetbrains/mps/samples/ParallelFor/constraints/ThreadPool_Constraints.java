@@ -4,7 +4,6 @@ package org.jetbrains.mps.samples.ParallelFor.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -15,12 +14,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ThreadPool_Constraints extends BaseConstraintsDescriptor {
   public ThreadPool_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-3786532327622816550l, -4790818904192366506l), 633195941006921788l));
+    super(MetaIdFactory.conceptId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x8c9905a80efd03cL));
   }
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-3786532327622816550l, -4790818904192366506l), 633195941006921788l, 633195941006921797l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-3786532327622816550l, -4790818904192366506l), 633195941006921788l, 633195941006921797l), this) {
+    properties.put(MetaIdFactory.propId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x8c9905a80efd03cL, 0x8c9905a80efd045L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x8c9905a80efd03cL, 0x8c9905a80efd045L), this) {
       @Override
       public boolean hasOwnValidator() {
         return true;

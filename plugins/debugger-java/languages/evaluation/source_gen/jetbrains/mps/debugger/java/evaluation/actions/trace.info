@@ -6,26 +6,26 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="29,49,51,5" name="jetbrains.mps.debugger.java.evaluation.actions.QueriesGenerated$1" />
-      <unit at="26,0,58,0" name="jetbrains.mps.debugger.java.evaluation.actions.QueriesGenerated" />
+      <unit at="28,49,50,5" name="jetbrains.mps.debugger.java.evaluation.actions.QueriesGenerated$1" />
+      <unit at="25,0,57,0" name="jetbrains.mps.debugger.java.evaluation.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:04e6e456-215e-4b1c-87a4-b311105e46e8(jetbrains.mps.debugger.java.evaluation.actions)/7915630211773500742">
     <file name="QueriesGenerated.java">
-      <node id="7915630211773500898" at="30,94,31,315" concept="1" />
-      <node id="7915630211773500914" at="31,315,32,222" concept="0" />
-      <node id="7915630211773500932" at="32,222,33,24" concept="2" />
-      <node id="7915630211773500891" at="35,53,36,19" concept="2" />
-      <node id="7915630211773500896" at="41,56,42,44" concept="2" />
-      <node id="7915630211773500839" at="54,202,55,253" concept="2" />
-      <node id="7915630211773500744" at="54,0,57,0" concept="3" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7915630211773500744#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <scope id="7915630211773500890" at="35,53,36,19" />
-      <scope id="7915630211773500895" at="41,56,42,44" />
-      <scope id="7915630211773500745" at="54,202,55,253" />
-      <scope id="7915630211773500885" at="30,94,33,24">
+      <node id="7915630211773500898" at="29,94,30,301" concept="1" />
+      <node id="7915630211773500914" at="30,301,31,207" concept="0" />
+      <node id="7915630211773500932" at="31,207,32,24" concept="2" />
+      <node id="7915630211773500891" at="34,53,35,19" concept="2" />
+      <node id="7915630211773500896" at="40,56,41,44" concept="2" />
+      <node id="7915630211773500839" at="53,202,54,253" concept="2" />
+      <node id="7915630211773500744" at="53,0,56,0" concept="3" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7915630211773500744#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
+      <scope id="7915630211773500890" at="34,53,35,19" />
+      <scope id="7915630211773500895" at="40,56,41,44" />
+      <scope id="7915630211773500745" at="53,202,54,253" />
+      <scope id="7915630211773500885" at="29,94,32,24">
         <var name="downcast" id="7915630211773500899" />
       </scope>
-      <scope id="7915630211773500744" at="54,0,57,0">
+      <scope id="7915630211773500744" at="53,0,56,0">
         <var name="_context" id="7915630211773500744" />
         <var name="operationContext" id="7915630211773500744" />
       </scope>

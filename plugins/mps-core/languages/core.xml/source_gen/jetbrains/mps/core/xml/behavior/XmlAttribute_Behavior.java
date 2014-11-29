@@ -5,7 +5,6 @@ package jetbrains.mps.core.xml.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlAttribute_Behavior {
@@ -13,7 +12,7 @@ public class XmlAttribute_Behavior {
   }
   public static boolean virtual_isMultiline_3080189811177259788(SNode thisNode) {
     boolean result = false;
-    for (SNode part : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"))) {
+    for (SNode part : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54cfd1eL, "value"))) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, part, "virtual_onNewLine_3080189811177340422", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, part, "virtual_hasNewLineAfter_3080189811177340429", new Object[]{})) {
         result = true;
       }

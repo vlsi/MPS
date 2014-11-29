@@ -27,7 +27,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 
 @Generated
@@ -94,7 +93,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
           try {
             environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150737045");
-            SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), "my expression");
+            SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "my expression");
           } finally {
           }
           if (tnode2 != null) {

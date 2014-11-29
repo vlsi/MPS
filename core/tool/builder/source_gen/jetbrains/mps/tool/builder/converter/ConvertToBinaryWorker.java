@@ -9,17 +9,18 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
 import jetbrains.mps.smodel.ModelAccess;
-import java.io.IOException;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.FileUtil;
+import java.util.HashMap;
+import jetbrains.mps.persistence.DefaultModelPersistence;
+import jetbrains.mps.persistence.MetaModelInfoProvider;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import java.util.Collections;
-import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.project.MPSExtentions;
+import java.io.IOException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 
 public class ConvertToBinaryWorker {
@@ -36,12 +37,8 @@ public class ConvertToBinaryWorker {
     try {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          try {
-            for (Map.Entry<String, String> entry : map.entrySet()) {
-              convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
-            }
-          } catch (IOException ex) {
-            throw new RuntimeException(ex);
+          for (Map.Entry<String, String> entry : map.entrySet()) {
+            convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
           }
         }
       });
@@ -51,7 +48,7 @@ public class ConvertToBinaryWorker {
       mpsCore.dispose();
     }
   }
-  private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) throws IOException {
+  private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) {
     IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(FileUtil.getExtension(source.getName()));
     if (modelFactory == null) {
@@ -59,10 +56,19 @@ public class ConvertToBinaryWorker {
       modelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
     }
     try {
-      SModel model = modelFactory.load(new FileDataSource(source), Collections.singletonMap(DefaultModelPersistence.OPTION_STRIP_IMPLEMENTATION, Boolean.toString(stripImplementation)));
+      HashMap<String, String> options = new HashMap<String, String>();
+      options.put(DefaultModelPersistence.OPTION_STRIP_IMPLEMENTATION, Boolean.toString(stripImplementation));
+      options.put(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO, Boolean.TRUE.toString());
+      SModel model = modelFactory.load(new FileDataSource(source), options);
       PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY).save(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
+    } catch (RuntimeException ex) {
+      System.out.printf("Conversion of %s\n", sourceFile);
+      ex.printStackTrace();
+      throw ex;
+    } catch (IOException ex) {
+      throw new RuntimeException(String.format("Failed to read model from file %s", sourceFile), ex);
     } catch (ModelSaveException e) {
-      throw new IOException(String.format("Failed to write model in binary format to file %s", destFile), e);
+      throw new RuntimeException(String.format("Failed to write model in binary format to file %s", destFile), e);
     }
   }
 }

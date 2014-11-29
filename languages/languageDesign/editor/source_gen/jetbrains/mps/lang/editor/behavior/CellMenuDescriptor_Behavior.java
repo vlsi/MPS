@@ -6,21 +6,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CellMenuDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getEditedFeature_1220342015727(SNode thisNode) {
-    SNode owner = SNodeOperations.getNodeAncestorWhereConceptInList(thisNode, new SAbstractConcept[]{MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1166040637528l, "jetbrains.mps.lang.editor.structure.CellMenuComponent")}, false, false);
-    if (SNodeOperations.isInstanceOf(owner, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"))) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(owner, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, "jetbrains.mps.lang.editor.structure.CellModel_WithRole")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"));
-    } else if (SNodeOperations.isInstanceOf(owner, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1166040637528l, "jetbrains.mps.lang.editor.structure.CellMenuComponent"))) {
-      SNode component = SNodeOperations.cast(owner, MetaAdapterFactory.getConcept(new UUID(1782411230332735017l, -6324602048325217350l), 1166040637528l, "jetbrains.mps.lang.editor.structure.CellMenuComponent"));
-      SNode feature = SLinkOperations.getTarget(component, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166040637528l, 1166040865497l, "applicableFeature"));
+    SNode owner = SNodeOperations.getNodeAncestorWhereConceptInList(thisNode, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, "jetbrains.mps.lang.editor.structure.CellMenuComponent")}, false, false);
+    if (SNodeOperations.isInstanceOf(owner, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"))) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(owner, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, "jetbrains.mps.lang.editor.structure.CellModel_WithRole")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"));
+    } else if (SNodeOperations.isInstanceOf(owner, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, "jetbrains.mps.lang.editor.structure.CellMenuComponent"))) {
+      SNode component = SNodeOperations.cast(owner, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, "jetbrains.mps.lang.editor.structure.CellMenuComponent"));
+      SNode feature = SLinkOperations.getTarget(component, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, 0x10f7d739ad9L, "applicableFeature"));
       if ((feature != null)) {
-        return SLinkOperations.getTarget(feature, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166041033436l, 1166054297096l, "relationDeclaration"));
+        return SLinkOperations.getTarget(feature, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d762adcL, 0x10f7e408e08L, "relationDeclaration"));
       }
       return null;
     } else {

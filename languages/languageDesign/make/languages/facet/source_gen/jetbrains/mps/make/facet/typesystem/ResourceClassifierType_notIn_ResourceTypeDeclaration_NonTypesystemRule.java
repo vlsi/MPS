@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -20,7 +19,7 @@ public class ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemR
   public ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode rct, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(rct), MetaAdapterFactory.getConcept(new UUID(7596465798203917883l, -4873580700227838512l), 119022571401949652l, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration")))) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(rct), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aab1d4L, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(rct, "Invalid usage of concept", "r:e67eab7b-bc9a-4900-b958-c99ccf24a565(jetbrains.mps.make.facet.typesystem)", "4902420589280088721", null, errorTarget);

@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.closures.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class AbstractFunctionType_Constraints extends BaseConstraintsDescriptor {
   public AbstractFunctionType_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-200093298712821347l, -8038623698278341771l), 5612111951671407997l));
+    super(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL));
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {

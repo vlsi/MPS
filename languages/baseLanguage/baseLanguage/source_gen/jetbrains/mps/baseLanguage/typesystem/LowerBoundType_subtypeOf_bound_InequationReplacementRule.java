@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 
@@ -67,7 +66,7 @@ public class LowerBoundType_subtypeOf_bound_InequationReplacementRule extends Ab
           return false;
         }
         {
-          SContainmentLink childRole_4vpl4k_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound");
+          SContainmentLink childRole_4vpl4k_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, 0x110dae9f25bL, "bound");
           if (!(PatternUtil.hasNChildren(nodeToMatch_4vpl4k_a0a, childRole_4vpl4k_, 1))) {
             return false;
           }

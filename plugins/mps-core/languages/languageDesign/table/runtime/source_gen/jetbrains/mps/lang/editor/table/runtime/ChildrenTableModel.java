@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
@@ -51,9 +50,9 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
   public void createNewRow(int index) {
     int rowCount = getRowCount();
     assert index <= rowCount;
-    SNode newRowNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SLinkOperations.getTarget(myChildLinkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))));
+    SNode newRowNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SLinkOperations.getTarget(myChildLinkDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"))));
     if (index == rowCount) {
-      myParentNode.addChild(SPropertyOperations.getString(myChildLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), newRowNode);
+      myParentNode.addChild(SPropertyOperations.getString(myChildLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), newRowNode);
     } else {
       SNodeOperations.insertPrevSiblingChild(MapSequence.fromMap(myRowToNodeMap).get(getRow(index)), newRowNode);
     }

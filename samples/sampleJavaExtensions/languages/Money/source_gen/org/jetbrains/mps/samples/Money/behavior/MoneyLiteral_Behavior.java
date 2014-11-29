@@ -5,7 +5,6 @@ package org.jetbrains.mps.samples.Money.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Map;
@@ -16,8 +15,8 @@ public class MoneyLiteral_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
-    String text = MoneyLiteral_Behavior.call_convertAmountAdvanced_595452003767176013(thisNode, SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(7361871549399452950l, -7685266567827134434l), 5447719361346490674l, 5447719361346490755l, "amount")));
-    text += NameUtil.pluralize(NameUtil.capitalize(NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(7361871549399452950l, -7685266567827134434l), 5447719361346490674l, 3607579524910560680l, "unit")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))));
+    String text = MoneyLiteral_Behavior.call_convertAmountAdvanced_595452003767176013(thisNode, SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, 0x4b9a2fe559135183L, "amount")));
+    text += NameUtil.pluralize(NameUtil.capitalize(NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, 0x3210b276d14435a8L, "unit")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))));
     return text;
   }
   public static String call_convertAmountAdvanced_595452003767176013(SNode thisNode, final int amount) {

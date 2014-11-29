@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,21 +14,21 @@ public class LambdaAbstraction_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getInnerBody_5066394162984540354(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, 4022026349914762693l, "body")), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"))) {
-      return LambdaAbstraction_Behavior.call_getInnerBody_5066394162984540354(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, 4022026349914762693l, "body")), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction")));
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, 0x37d11ba7d7ee2dc5L, "body")), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"))) {
+      return LambdaAbstraction_Behavior.call_getInnerBody_5066394162984540354(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, 0x37d11ba7d7ee2dc5L, "body")), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction")));
     }
-    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, 4022026349914762693l, "body"));
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, 0x37d11ba7d7ee2dc5L, "body"));
   }
   public static List<SNode> call_getAllVariables_5066394162984559815(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     // Is it OK to create lists recursively? 
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, 4022026349914762681l, "variable"))));
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, 4022026349914762693l, "body")), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"))) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(LambdaAbstraction_Behavior.call_getAllVariables_5066394162984559815(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, 4022026349914762693l, "body")), MetaAdapterFactory.getConcept(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction")))));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, 0x37d11ba7d7ee2db9L, "variable"))));
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, 0x37d11ba7d7ee2dc5L, "body")), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"))) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(LambdaAbstraction_Behavior.call_getAllVariables_5066394162984559815(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, 0x37d11ba7d7ee2dc5L, "body")), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction")))));
     }
     return result;
   }
   public static List<SNode> virtual_getVariables_8981808925914841576(SNode thisNode) {
-    return SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, 4022026349914762681l, "variable"));
+    return SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, 0x37d11ba7d7ee2db9L, "variable"));
   }
 }

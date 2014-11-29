@@ -4,7 +4,6 @@ package jetbrains.mps.lang.textGen.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -21,7 +20,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class UtilityMethodDeclaration_Constraints extends BaseConstraintsDescriptor {
   public UtilityMethodDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-5173455103397510980l, -8487484424797171117l), 1234524838116l));
+    super(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6f6a18e4L));
   }
   @Override
   public boolean hasOwnDefaultScopeProvider() {
@@ -33,14 +32,14 @@ public class UtilityMethodDeclaration_Constraints extends BaseConstraintsDescrip
       @Override
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         List<SNode> methods = new ArrayList<SNode>();
-        SNode textGen = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"), false, false);
+        SNode textGen = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"), false, false);
         if (textGen != null) {
           while (true) {
-            ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(textGen, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1234526822589l, "function"))));
-            if ((SLinkOperations.getTarget(textGen, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1234781160172l, "baseTextGen")) == null)) {
+            ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(textGen, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f6f8860bdL, "function"))));
+            if ((SLinkOperations.getTarget(textGen, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")) == null)) {
               break;
             }
-            textGen = SLinkOperations.getTarget(textGen, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1234781160172l, "baseTextGen"));
+            textGen = SLinkOperations.getTarget(textGen, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen"));
           }
         }
         return methods;

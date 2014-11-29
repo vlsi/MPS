@@ -11,7 +11,6 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -27,8 +26,8 @@ public class check_BwfTaskLibrary_NonTypesystemRule extends AbstractNonTypesyste
   public void applyRule(final SNode lib, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Set<SNode> libsSet = new LinkedHashSet<SNode>();
     libsSet.add(lib);
-    for (SNode tldep : SLinkOperations.getChildren(lib, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221391506l, 7306485738221455030l, "imports"))) {
-      libsSet.add(SLinkOperations.getTarget(tldep, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target")));
+    for (SNode tldep : SLinkOperations.getChildren(lib, MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114724ce92L, 0x6565da114725c6b6L, "imports"))) {
+      libsSet.add(SLinkOperations.getTarget(tldep, MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target")));
     }
 
     TaskLibrariesHelper.closure(libsSet);

@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -132,11 +131,11 @@ public final class IconManager {
   }
   private static Icon getIconForConcept(SNode conceptDeclaration) {
     while (conceptDeclaration != null) {
-      Icon icon = getIconForConcept(conceptDeclaration, SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1160488491229l, "iconPath")));
+      Icon icon = getIconForConcept(conceptDeclaration, SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath")));
       if (icon != null) {
         return icon;
       }
-      conceptDeclaration = SLinkOperations.getTarget(conceptDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
+      conceptDeclaration = SLinkOperations.getTarget(conceptDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
     }
     return null;
   }
@@ -168,7 +167,7 @@ public final class IconManager {
     SNode cd = null;
     Icon icon = null;
     if (SNodeUtil.isInstanceOfConceptDeclaration(acd)) {
-      cd = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(acd, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+      cd = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(acd, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
       icon = getIconForConcept(cd);
     }
     if (icon == null) {

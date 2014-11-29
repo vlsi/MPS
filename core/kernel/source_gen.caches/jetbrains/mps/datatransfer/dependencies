@@ -22,7 +22,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.datatransfer.CopyPreProcessor" />
     <classNode dependClassName="jetbrains.mps.datatransfer.PastePostProcessor" />

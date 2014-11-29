@@ -4,7 +4,6 @@ package jetbrains.mps.lang.refactoring.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
@@ -16,7 +15,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class UpdateModelClause_Constraints extends BaseConstraintsDescriptor {
   public UpdateModelClause_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(4525410110408967646l, -8616490689189267646l), 1189694434958l));
+    super(MetaIdFactory.conceptId(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x114ff506e8eL));
   }
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
@@ -33,7 +32,7 @@ public class UpdateModelClause_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
-    return SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, "jetbrains.mps.baseLanguage.structure.StatementList")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(new UUID(4525410110408967646l, -8616490689189267646l), 1197382578687l, "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation"));
+    return SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList")) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x116c99031ffL, "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation"));
   }
   private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "2210862369564128647");
 }

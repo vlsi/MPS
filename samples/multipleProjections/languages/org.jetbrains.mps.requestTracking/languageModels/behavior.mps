@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:278a3f75-5e39-40aa-b856-796916d3bfaa(jetbrains.mps.samples.multipleProjections.requestTracking.behavior)" concise="true">
+<model ref="r:278a3f75-5e39-40aa-b856-796916d3bfaa(jetbrains.mps.samples.multipleProjections.requestTracking.behavior)">
   <persistence version="9" />
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />

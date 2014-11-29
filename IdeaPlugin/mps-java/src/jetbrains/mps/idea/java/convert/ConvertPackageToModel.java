@@ -206,7 +206,10 @@ public class ConvertPackageToModel extends AnAction {
 
           SModel sourceModel = source.getModel();
           ((SModelBase) sourceModel).deleteModelImport(targetModelRef);
-          ((SModelBase) sourceModel).addModelImport(newModelRef, false);
+          if (!newModelRef.equals(sourceModel.getReference())) {
+            // avoiding self-import
+            ((SModelBase) sourceModel).addModelImport(newModelRef, false);
+          }
 
           // better create static references right away
           // changing reference to a static reference pointing to mps node

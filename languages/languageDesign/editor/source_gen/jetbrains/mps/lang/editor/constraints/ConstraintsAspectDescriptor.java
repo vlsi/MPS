@@ -69,83 +69,83 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 1078939183254l) {
+    long id = conceptId.getIdValue();
+    if (id == 0xfb35c96896L) {
       return new CellModel_Component_Constraints();
     }
-    if (id == 1166042131867l) {
+    if (id == 0x10f7d86ed9bL) {
       return new CellMenuComponentFeature_Link_Constraints();
     }
-    if (id == 1088013125922l) {
+    if (id == 0xfd52a2c922L) {
       return new CellModel_RefCell_Constraints();
     }
-    if (id == 1071666914219l) {
+    if (id == 0xf9845363abL) {
       return new ConceptEditorDeclaration_Constraints();
     }
-    if (id == 1073389658414l) {
+    if (id == 0xf9eb02612eL) {
       return new CellModel_Property_Constraints();
     }
-    if (id == 1166041748520l) {
+    if (id == 0x10f7d811428L) {
       return new CellMenuComponentFeature_Property_Constraints();
     }
-    if (id == 1139848536355l) {
+    if (id == 0x10964446123L) {
       return new CellModel_WithRole_Constraints();
     }
-    if (id == 1164914519156l) {
+    if (id == 0x10f3a50ec74L) {
       return new CellMenuPart_ReplaceNode_CustomNodeConcept_Constraints();
     }
-    if (id == 1073390211982l) {
+    if (id == 0xf9eb0ad38eL) {
       return new CellModel_RefNodeList_Constraints();
     }
-    if (id == 1073389882823l) {
+    if (id == 0xf9eb05cdc7L) {
       return new CellModel_RefNode_Constraints();
     }
-    if (id == 1186402475462l) {
+    if (id == 0x1143b191dc6L) {
       return new StyleClassItem_Constraints();
     }
-    if (id == 1216380990741l) {
+    if (id == 0x11b35f4f515L) {
       return new CellModel_TransactionalProperty_Constraints();
     }
-    if (id == 1225456267680l) {
+    if (id == 0x11d52e2b1a0L) {
       return new RGBColor_Constraints();
     }
-    if (id == 1139535219966l) {
+    if (id == 0x10951978cfeL) {
       return new CellActionMapDeclaration_Constraints();
     }
-    if (id == 1078938745671l) {
+    if (id == 0xfb35c2bb47L) {
       return new EditorComponentDeclaration_Constraints();
     }
-    if (id == 1081293058843l) {
+    if (id == 0xfbc216b31bL) {
       return new CellKeyMapDeclaration_Constraints();
     }
-    if (id == 1166040637528l) {
+    if (id == 0x10f7d702058L) {
       return new CellMenuComponent_Constraints();
     }
-    if (id == 1186402211651l) {
+    if (id == 0x1143b151743L) {
       return new StyleSheet_Constraints();
     }
-    if (id == 1227861515039l) {
+    if (id == 0x11de23fdb1fL) {
       return new NavigatableReferenceStyleClassItem_Constraints();
     }
-    if (id == 625126330682908270l) {
+    if (id == 0x8ace515f0191e6eL) {
       return new CellModel_ReferencePresentation_Constraints();
     }
-    if (id == 9122903797320402872l) {
+    if (id == 0x7e9b10ab1f5847b8L) {
       return new IStyle_Constraints();
     }
-    if (id == 5944657839003601246l) {
+    if (id == 0x527faacef50d095eL) {
       return new ConceptEditorHintDeclaration_Constraints();
     }
-    if (id == 1166049232041l) {
+    if (id == 0x10f7df344a9L) {
       return new AbstractComponent_Constraints();
     }
-    if (id == 4510086454722552739l) {
+    if (id == 0x3e970bbc3009e3a3L) {
       return new PropertyDeclarationCellSelector_Constraints();
     }
-    if (id == 4323500428136740385l) {
+    if (id == 0x3c0028bb8556f621L) {
       return new CellIdReferenceSelector_Constraints();
     }
-    if (id == 3982520150122341378l) {
+    if (id == 0x3744c0f9eae0a402L) {
       return new AttributeStyleClassItem_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

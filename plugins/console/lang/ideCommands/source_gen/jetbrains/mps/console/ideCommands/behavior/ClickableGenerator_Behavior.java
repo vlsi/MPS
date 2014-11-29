@@ -9,7 +9,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
@@ -27,7 +26,7 @@ public class ClickableGenerator_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_execute_8517397753922085153(SNode thisNode, final Project project) {
-    final SModule module = check_cte1s_a0a0a0(ProjectHelper.toMPSProject(project)).getModule(ModuleId.fromString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-6492820313512655654l, -6146453626538471728l), 3894227536041114995l, 3894227536041893247l, "moduleId"))));
+    final SModule module = check_cte1s_a0a0a0(ProjectHelper.toMPSProject(project)).getModule(ModuleId.fromString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"))));
 
     final MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(module, ProjectHelper.toMPSProject(project));
     Iterable<Tab> tabs = Sequence.fromClosure(new ISequenceClosure<Tab>() {
@@ -98,7 +97,7 @@ __switch__:
     });
   }
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return isNotEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-6492820313512655654l, -6146453626538471728l), 3894227536041114995l, 3894227536041893247l, "moduleId")));
+    return isNotEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId")));
   }
   private static SRepository check_cte1s_a0a0a0(jetbrains.mps.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {

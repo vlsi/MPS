@@ -31,26 +31,26 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 3242588059496701743l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x2cfffca8ff395f2fL) {
       return new RefactoringAction_Constraints();
     }
-    if (id == 1197382578687l) {
+    if (id == 0x116c99031ffL) {
       return new UpdateModelByDefaultOperation_Constraints();
     }
-    if (id == 5497648299878398634l) {
+    if (id == 0x4c4b92003e483aaaL) {
       return new RefactoringFieldReference_Constraints();
     }
-    if (id == 6895093993902496262l) {
+    if (id == 0x5fb04b74a77cda06L) {
       return new RefactoringParameterReference_Constraints();
     }
-    if (id == 7953996722066252909l) {
+    if (id == 0x6e6245e06b61646dL) {
       return new ContextMemberOperation_Constraints();
     }
-    if (id == 4347648036456711197l) {
+    if (id == 0x3c55f2dab56d441dL) {
       return new ModelsToGenerateByDefault_Constraints();
     }
-    if (id == 1189694434958l) {
+    if (id == 0x114ff506e8eL) {
       return new UpdateModelClause_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

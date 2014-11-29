@@ -41,6 +41,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+/**
+ * Base implementation of {@link org.jetbrains.mps.openapi.model.SModel}, with actual
+ * {@link jetbrains.mps.extapi.model.SModelData model data} kept separately, ready for e.g. re-load.
+ *
+ * {@link #getModelData()} provides access to actual node storage.
+ */
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
   private static Logger LOG = LogManager.getLogger(SModelBase.class);
 
@@ -202,6 +208,15 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   public boolean isRegistered() {
     SModule copy = myModule;
     return copy != null && copy.getRepository() != null;
+  }
+
+  /**
+   * Access actual node storage. Might trigger model load if model is not yet loaded.
+   * XXX perhaps, this method shall live in SModelDescriptorStub?
+   * @return node storage. Generally, shall not return <code>null</code> (FIXME revisit contract, enforce)
+   */
+  public SModelData getModelData() {
+    return getSModelInternal();
   }
 
   @NotNull

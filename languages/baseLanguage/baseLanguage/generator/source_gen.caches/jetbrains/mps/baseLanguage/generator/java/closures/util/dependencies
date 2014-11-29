@@ -13,7 +13,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="java.util.concurrent.ConcurrentHashMap" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSessionContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
@@ -34,7 +33,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil" file="QueriesUtil.java">
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -55,7 +53,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresMappingId" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil" />

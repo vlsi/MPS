@@ -44,6 +44,11 @@ public final class RuntimeFlags {
     ourTestMode = testMode;
   }
 
+  /**
+   * FIXME bad name, it's not necessarily merge we run at, e.g. ConvertToBinary task uses it as well (set to true),
+   * it's rather 'No MPS runtime' mode
+   * @return <code>true</code> if no regular MPS facilities shall be expected (e.g. LanguageRegistry, ConceptRegistry and alike).
+   */
   public static boolean isMergeDriverMode() {
     return ourMergeDriverMode;
   }
@@ -54,6 +59,7 @@ public final class RuntimeFlags {
 
   /**
    * Default value: system property <code>"mps.playRefactorings"</code>
+   *
    * @return <code>true</code> if refactorings are to be run.
    */
   public static boolean isPlayRefactoringsMode() {
@@ -69,6 +75,7 @@ public final class RuntimeFlags {
 
   /**
    * Default value: system property <code>"mps.disableNodeCastExceptions"</code>
+   *
    * @return <code>true</code> if node cast shall throw an exception. if <code>false</code>, bad cast results in a log warning only.
    */
   public static boolean isExceptionOnBadCast() {
@@ -80,6 +87,7 @@ public final class RuntimeFlags {
 
   /**
    * Default value: system property <code>"mps.vfs.useIoFile"</code>
+   *
    * @return <code>true</code> if VFS shall use regular java IO files.
    */
   public static boolean isUseIOFile() {

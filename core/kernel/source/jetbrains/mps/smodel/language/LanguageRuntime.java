@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
-import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.FacetDescriptor;
@@ -60,7 +59,7 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
  * this class shall be generic and aware of {@link jetbrains.mps.smodel.runtime.LanguageAspectDescriptor} only.
  * It shall not load any classes through reflection (any class-loading of generated code/aspects is responsibility of
  * generated language runtime class).
- *
+ * <p/>
  * Language runtime keeps track of aspects queried (instantiates them lazily).
  */
 public abstract class LanguageRuntime {
@@ -72,6 +71,8 @@ public abstract class LanguageRuntime {
   public abstract String getNamespace();
 
   public abstract SLanguageId getId();
+
+  public abstract int getVersion();
 
   /**
    * @deprecated use {@link #getAspect(Class) getAspect(IHelginsDescriptor.class)} instead
@@ -121,16 +122,11 @@ public abstract class LanguageRuntime {
    */
   @Deprecated
   @ToRemove(version = 3.2)
-  @NotNull
   public StructureAspectDescriptor getStructureAspectDescriptor() {
     String className = getNamespace() + ".structure.StructureAspectDescriptor";
     Object compiled = getObjectByClassNameForLanguage(className, getLanguage());
 
-    if (compiled instanceof StructureAspectDescriptor) {
-      return (StructureAspectDescriptor) compiled;
-    } else {
-      return new StructureAspectInterpreted(getLanguage());
-    }
+    return (StructureAspectDescriptor) compiled;
   }
 
   /**
@@ -182,7 +178,7 @@ public abstract class LanguageRuntime {
    * all aspects), a new method was introduced to hide 'all aspects' logic for 3.1-generated runtimes.
    * Alternative is to try both alternatives (getAspectDescriptor and e.g. getTypesystem) wherever descriptor is queried.
    *
-   * @deprecated  use {@link #getAspect(Class)} instead
+   * @deprecated use {@link #getAspect(Class)} instead
    */
   @Deprecated
   @ToRemove(version = 3.2)
@@ -254,6 +250,7 @@ public abstract class LanguageRuntime {
 
   /**
    * Closure of all languages that extend this one, exclusive.
+   *
    * @return unmodifiable collection of languages
    */
   @NotNull
@@ -265,7 +262,7 @@ public abstract class LanguageRuntime {
    * Closure of all languages this language extends, exclusive.
    * Referenced languages are from the same LanguageRegistry as this one.
    * (Although there's only one LanguageRegistry at the moment, it's likely to change in the future)
-   *
+   * <p/>
    * Collection captures only languages actually available, and might not reflect all dependencies of the language, i.e.
    * presents state of language relationship through a LanguageRegistry perspective. E.g. if language descriptor states 'extends' dependency
    * from a language missing in the LanguageRegistry instance, that extended language will be ignored and collection returned won't mention it.

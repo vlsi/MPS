@@ -33,29 +33,29 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 6832197706140518104l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x5ed0d79d7dbe86d8L) {
       return new DocMethodParameterReference_Constraints();
     }
-    if (id == 6832197706140518107l) {
+    if (id == 0x5ed0d79d7dbe86dbL) {
       return new DocTypeParameterReference_Constraints();
     }
-    if (id == 5858074156537516430l) {
+    if (id == 0x514c0f687050918eL) {
       return new ReturnBlockDocTag_Constraints();
     }
-    if (id == 2217234381367188008l) {
+    if (id == 0x1ec532ec252c9a28L) {
       return new FieldDocReference_Constraints();
     }
-    if (id == 2217234381367530212l) {
+    if (id == 0x1ec532ec2531d2e4L) {
       return new ClassifierDocReference_Constraints();
     }
-    if (id == 2217234381367530195l) {
+    if (id == 0x1ec532ec2531d2d3L) {
       return new MethodDocReference_Constraints();
     }
-    if (id == 6501140109493894267l) {
+    if (id == 0x5a38b07c2d6d7c7bL) {
       return new StaticFieldDocReference_Constraints();
     }
-    if (id == 6962838954693748795l) {
+    if (id == 0x60a0f9237ac5e83bL) {
       return new ValueInlineDocTag_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

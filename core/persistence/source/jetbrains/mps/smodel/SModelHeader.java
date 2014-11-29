@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
@@ -52,6 +53,7 @@ public class SModelHeader {
   private int myVersion = -1;
   private boolean doNotGenerate = false;
   private Map<String, String> myOptionalProperties = new HashMap<String, String>();
+  private MetaModelInfoProvider myMetaInfoProvider;
 
   public SModelHeader() {
   }
@@ -134,6 +136,27 @@ public class SModelHeader {
 
   public void removeOptionalProperty(String key) {
     myOptionalProperties.remove(key);
+  }
+
+  /**
+   * PROVISIONAL, DO NOT USE (unless your name starts with 'A' and you know what you're doing)
+   *
+   * This is per-model mechanism to alter meta-model (aka structure model) information used in persistence.
+   * Generally, this mechanism shall not be in use, and <code>null</code> value is legitimate default, which means
+   * native MPS mechanism of SConcept (and ConceptDescriptors) would be in use.
+   * However, certain scenarios (command-line merge and ant task to convert models to binary) can't yet afford starting whole
+   * MPS and thus shall rely on meta-information read from model files (which is generally sufficient to write the files back).
+   *
+   * For these scenarios, we used to have global {@link jetbrains.mps.persistence.ModelEnvironmentInfo}, which is global and a bit
+   * outdated for modern persistence, hence it has been replaced with MetaModelInfoProvider, although this solution is provisional
+   * and likely to get changed in future (perhaps, class known now as IdInfoCollector would replace it).
+   */
+  public void setMetaInfoProvider(@Nullable MetaModelInfoProvider mmiProvider) {
+    myMetaInfoProvider = mmiProvider;
+  }
+  @Nullable
+  public MetaModelInfoProvider getMetaInfoProvider() {
+    return myMetaInfoProvider;
   }
 
   public static SModelHeader create(int persistenceVersion) {

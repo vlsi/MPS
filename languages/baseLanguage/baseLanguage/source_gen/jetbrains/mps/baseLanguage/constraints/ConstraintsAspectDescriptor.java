@@ -127,170 +127,170 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
-    long id = conceptId.getConceptId();
-    if (id == 1153179560115l) {
+    long id = conceptId.getIdValue();
+    if (id == 0x10c7edba8b3L) {
       return new ClosureParameterReference_Constraints();
     }
-    if (id == 1081236700937l) {
+    if (id == 0xfbbebabf09L) {
       return new StaticMethodCall_Constraints();
     }
-    if (id == 1068581242866l) {
+    if (id == 0xf8cc67c7f2L) {
       return new LocalVariableReference_Constraints();
     }
-    if (id == 1170345865475l) {
+    if (id == 0x1107e0cb103L) {
       return new AnonymousClass_Constraints();
     }
-    if (id == 1188206331916l) {
+    if (id == 0x114a69dc80cL) {
       return new Annotation_Constraints();
     }
-    if (id == 1212685548494l) {
+    if (id == 0x11a59b0fbceL) {
       return new ClassCreator_Constraints();
     }
-    if (id == 1109283449304l) {
+    if (id == 0x102467229d8L) {
       return new TypeVariableReference_Constraints();
     }
-    if (id == 1107461130800l) {
+    if (id == 0x101d9d3ca30L) {
       return new Classifier_Constraints();
     }
-    if (id == 1070475354124l) {
+    if (id == 0xf93d4da00cL) {
       return new ThisExpression_Constraints();
     }
-    if (id == 1070475587102l) {
+    if (id == 0xf93d512e1eL) {
       return new SuperConstructorInvocation_Constraints();
     }
-    if (id == 1070533707846l) {
+    if (id == 0xf940c80846L) {
       return new StaticFieldReference_Constraints();
     }
-    if (id == 1201370618622l) {
+    if (id == 0x117b744dafeL) {
       return new Property_Constraints();
     }
-    if (id == 1107796713796l) {
+    if (id == 0x101edd46144L) {
       return new Interface_Constraints();
     }
-    if (id == 1068390468198l) {
+    if (id == 0xf8c108ca66L) {
       return new ClassConcept_Constraints();
     }
-    if (id == 1073063089578l) {
+    if (id == 0xf9d78b55aaL) {
       return new SuperMethodCall_Constraints();
     }
-    if (id == 1068581242863l) {
+    if (id == 0xf8cc67c7efL) {
       return new LocalVariableDeclaration_Constraints();
     }
-    if (id == 1178893518978l) {
+    if (id == 0x1127b878882L) {
       return new ThisConstructorInvocation_Constraints();
     }
-    if (id == 1068580123140l) {
+    if (id == 0xf8cc56b204L) {
       return new ConstructorDeclaration_Constraints();
     }
-    if (id == 1178285077437l) {
+    if (id == 0x112574373bdL) {
       return new ClassifierMember_Constraints();
     }
-    if (id == 1212170275853l) {
+    if (id == 0x11a3afa8c0dL) {
       return new IValidIdentifier_Constraints();
     }
-    if (id == 1083260308424l) {
+    if (id == 0xfc37588bc8L) {
       return new EnumConstantReference_Constraints();
     }
-    if (id == 1068581242874l) {
+    if (id == 0xf8cc67c7faL) {
       return new ParameterReference_Constraints();
     }
-    if (id == 1202948039474l) {
+    if (id == 0x118154a6332L) {
       return new InstanceMethodCallOperation_Constraints();
     }
-    if (id == 1188214545140l) {
+    if (id == 0x114a71b1af4L) {
       return new AnnotationInstanceValue_Constraints();
     }
-    if (id == 1172008963197l) {
+    if (id == 0x110e12d8c7dL) {
       return new LocalStaticFieldReference_Constraints();
     }
-    if (id == 1172058436953l) {
+    if (id == 0x110e4207559L) {
       return new LocalStaticMethodCall_Constraints();
     }
-    if (id == 1201385106094l) {
+    if (id == 0x117b821eaaeL) {
       return new PropertyReference_Constraints();
     }
-    if (id == 1197029447546l) {
+    if (id == 0x116b483d77aL) {
       return new FieldReferenceOperation_Constraints();
     }
-    if (id == 1208890769693l) {
+    if (id == 0x1197781411dL) {
       return new ArrayLengthOperation_Constraints();
     }
-    if (id == 1188206574119l) {
+    if (id == 0x114a6a17a27L) {
       return new AnnotationMethodDeclaration_Constraints();
     }
-    if (id == 1225271315873l) {
+    if (id == 0x11d47dc8da1L) {
       return new BaseStringOperation_Constraints();
     }
-    if (id == 1197027803184l) {
+    if (id == 0x116b46ac030L) {
       return new IOperation_Constraints();
     }
-    if (id == 4898614932449915862l) {
+    if (id == 0x43fb6053bc19f3d6L) {
       return new PlaceholderMethodDeclaration_Constraints();
     }
-    if (id == 1116615150612l) {
+    if (id == 0x103fb730c14L) {
       return new ClassifierClassExpression_Constraints();
     }
-    if (id == 1070462154015l) {
+    if (id == 0xf93c84351fL) {
       return new StaticFieldDeclaration_Constraints();
     }
-    if (id == 363746191845183785l) {
+    if (id == 0x50c493bf9555129L) {
       return new LoopLabelReference_Constraints();
     }
-    if (id == 1224575136086l) {
+    if (id == 0x11d1e5db156L) {
       return new EnumValueOfExpression_Constraints();
     }
-    if (id == 1224573963862l) {
+    if (id == 0x11d1e4bce56L) {
       return new EnumValuesExpression_Constraints();
     }
-    if (id == 1068580123132l) {
+    if (id == 0xf8cc56b1fcL) {
       return new BaseMethodDeclaration_Constraints();
     }
-    if (id == 1188220165133l) {
+    if (id == 0x114a770dc0dL) {
       return new ArrayLiteral_Constraints();
     }
-    if (id == 2580416627845338977l) {
+    if (id == 0x23cf7b405b3b9761L) {
       return new ImplicitAnnotationInstanceValue_Constraints();
     }
-    if (id == 1830039279190439966l) {
+    if (id == 0x19659b074928781eL) {
       return new AdditionalForLoopVariable_Constraints();
     }
-    if (id == 3066917033203108594l) {
+    if (id == 0x2a8fe0cadfaa8af2L) {
       return new LocalInstanceMethodCall_Constraints();
     }
-    if (id == 7785501532031639928l) {
+    if (id == 0x6c0ba864df016178L) {
       return new LocalInstanceFieldReference_Constraints();
     }
-    if (id == 5205855332950442198l) {
+    if (id == 0x483ee9d7f09580d6L) {
       return new ArrayCloneOperation_Constraints();
     }
-    if (id == 1068580123165l) {
+    if (id == 0xf8cc56b21dL) {
       return new InstanceMethodDeclaration_Constraints();
     }
-    if (id == 1188207840427l) {
+    if (id == 0x114a6b4ccabL) {
       return new AnnotationInstance_Constraints();
     }
-    if (id == 4972933694980447171l) {
+    if (id == 0x450368d90ce15bc3L) {
       return new BaseVariableDeclaration_Constraints();
     }
-    if (id == 5862977038373003187l) {
+    if (id == 0x515d7a8d927e9fb3L) {
       return new LocalPropertyReference_Constraints();
     }
-    if (id == 1068498886296l) {
+    if (id == 0xf8c77f1e98L) {
       return new VariableReference_Constraints();
     }
-    if (id == 7812454656619025412l) {
+    if (id == 0x6c6b6a1e379f9404L) {
       return new LocalMethodCall_Constraints();
     }
-    if (id == 1083245299891l) {
+    if (id == 0xfc367388b3L) {
       return new EnumConstantDeclaration_Constraints();
     }
-    if (id == 1107535904670l) {
+    if (id == 0x101de48bf9eL) {
       return new ClassifierType_Constraints();
     }
-    if (id == 2820489544401957797l) {
+    if (id == 0x2724644c0ac833a5L) {
       return new DefaultClassCreator_Constraints();
     }
-    if (id == 2622108313324567541l) {
+    if (id == 0x2463999e524f3bf5L) {
       return new PropertyValueReference_Constraints();
     }
     return new BaseConstraintsDescriptor(conceptId);

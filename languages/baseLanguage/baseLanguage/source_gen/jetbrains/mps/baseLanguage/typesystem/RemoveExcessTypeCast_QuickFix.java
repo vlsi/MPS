@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class RemoveExcessTypeCast_QuickFix extends QuickFix_Runtime {
   public RemoveExcessTypeCast_QuickFix() {
@@ -16,6 +15,6 @@ public class RemoveExcessTypeCast_QuickFix extends QuickFix_Runtime {
     return "Remove Excess Typecast";
   }
   public void execute(SNode node) {
-    SNodeOperations.replaceWithAnother(((SNode) RemoveExcessTypeCast_QuickFix.this.getField("castExpr")[0]), SLinkOperations.getTarget(((SNode) RemoveExcessTypeCast_QuickFix.this.getField("castExpr")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")));
+    SNodeOperations.replaceWithAnother(((SNode) RemoveExcessTypeCast_QuickFix.this.getField("castExpr")[0]), SLinkOperations.getTarget(((SNode) RemoveExcessTypeCast_QuickFix.this.getField("castExpr")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression")));
   }
 }

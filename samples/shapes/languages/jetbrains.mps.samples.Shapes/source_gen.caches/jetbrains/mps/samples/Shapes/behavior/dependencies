@@ -12,7 +12,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior" file="Canvas_Behavior.java">
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="javax.swing.JFrame" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -36,7 +35,6 @@
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
@@ -57,7 +55,6 @@
     <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.NoSuchFieldException" />
     <classNode dependClassName="java.lang.SecurityException" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -76,7 +73,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.border.Border" />
     <classNode dependClassName="javax.swing.border.TitledBorder" />
@@ -90,7 +86,6 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.behavior.Shape_Behavior" file="Shape_Behavior.java">
     <classNode dependClassName="java.awt.Graphics" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.ColorReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -109,7 +104,6 @@
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />

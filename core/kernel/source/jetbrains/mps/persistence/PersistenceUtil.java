@@ -48,29 +48,31 @@ public class PersistenceUtil {
   private PersistenceUtil() {
   }
 
+  /**
+   * Try to load a model using {@link org.jetbrains.mps.openapi.persistence.ModelFactory}
+   * identified by <code>extension</code> from supplied textual <code>content</code>.
+   *
+   * @return <code>null</code> if fails to load model from the content supplied (either model read error, no model factory for the extension, or factory
+   * doesn't support textual content)
+   */
   public static SModel loadModel(final String content, String extension) {
     ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(extension);
     if (factory == null || factory.isBinary()) {
       return null;
     }
-    try {
-      SModel model = factory.load(new StreamDataSourceBase() {
-        @Override
-        public InputStream openInputStream() throws IOException {
-          byte[] bytes = content.getBytes(FileUtil.DEFAULT_CHARSET);
-          return new ByteArrayInputStream(bytes);
-        }
-      }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
-      model.load();
-      return model;
-    } catch (IOException ex) {
-      return null;
-    }
+    byte[] bytes = content.getBytes(FileUtil.DEFAULT_CHARSET);
+    return loadModel(bytes, extension);
   }
 
+  /**
+   * Try to load a model using {@link org.jetbrains.mps.openapi.persistence.ModelFactory}
+   * identified by <code>extension</code> from supplied <code>content</code>.
+   *
+   * @return <code>null</code> if fails to load model from the content supplied (either model read error, no model factory for the extension)
+   */
   public static SModel loadModel(final byte[] content, String extension) {
     ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(extension);
-    if (factory == null || !factory.isBinary()) {
+    if (factory == null) {
       return null;
     }
     try {
@@ -88,19 +90,7 @@ public class PersistenceUtil {
   }
 
   public static SModel loadBinaryModel(final byte[] content) {
-    ModelFactory factory = new BinaryModelPersistence();
-    try {
-      SModel model = factory.load(new StreamDataSourceBase() {
-        @Override
-        public InputStream openInputStream() throws IOException {
-          return new ByteArrayInputStream(content);
-        }
-      }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
-      model.load();
-      return model;
-    } catch (IOException ex) {
-      return null;
-    }
+    return loadModel(content, MPSExtentions.MODEL_BINARY);
   }
 
   public static SModel loadModel(IFile file) {
@@ -112,14 +102,14 @@ public class PersistenceUtil {
     if (factory == null) {
       return null;
     }
+    // FIXME why do we check here factory instanceof for FolderModelFactory, but didn't check the same in the rest of #loadModel methods?
     try {
       SModel model;
+      final Map<String, String> options = Collections.singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString());
       if(factory instanceof FolderModelFactory) {
-        model = factory.load(new FolderDataSource(file.getParent(), null), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY,
-          Boolean.TRUE.toString()));
+        model = factory.load(new FolderDataSource(file.getParent(), null), options);
       } else {
-        model = factory.load(new FileDataSource(file), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY,
-          Boolean.TRUE.toString()));
+        model = factory.load(new FileDataSource(file), options);
       }
       model.load();
       return model;

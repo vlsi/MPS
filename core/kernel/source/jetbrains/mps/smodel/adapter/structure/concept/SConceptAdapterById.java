@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -45,6 +45,9 @@ public class SConceptAdapterById extends SConceptAdapter implements SConcept, SA
 
   @Override
   public String getQualifiedName() {
+    if (RuntimeFlags.isMergeDriverMode()) {
+      return myFqName;
+    }
     ConceptDescriptor cd = getConceptDescriptor();
     if (cd == null) {
       //invalid concept
@@ -70,6 +73,6 @@ public class SConceptAdapterById extends SConceptAdapter implements SConcept, SA
 
   @Override
   protected SNode findInModel(SModel strucModel) {
-    return strucModel.getNode(new Regular(myConceptId.getConceptId()));
+    return strucModel.getNode(new Regular(myConceptId.getIdValue()));
   }
 }

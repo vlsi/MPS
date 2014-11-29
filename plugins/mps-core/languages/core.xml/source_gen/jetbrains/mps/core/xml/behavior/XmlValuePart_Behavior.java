@@ -5,17 +5,16 @@ package jetbrains.mps.core.xml.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlValuePart_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isFirstPositionAllowed_3080189811177340436(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541916l, "jetbrains.mps.core.xml.structure.XmlValuePart"))) {
-      SNode left = SNodeOperations.cast(SNodeOperations.getPrevSibling(thisNode), MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541916l, "jetbrains.mps.core.xml.structure.XmlValuePart"));
-      if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, "jetbrains.mps.core.xml.structure.XmlTextValue"))) {
-        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, "jetbrains.mps.core.xml.structure.XmlTextValue")), "virtual_hasNewLineAfter_3080189811177340429", new Object[]{});
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart"))) {
+      SNode left = SNodeOperations.cast(SNodeOperations.getPrevSibling(thisNode), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart"));
+      if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"))) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue")), "virtual_hasNewLineAfter_3080189811177340429", new Object[]{});
       }
       return false;
     }
@@ -23,8 +22,8 @@ public class XmlValuePart_Behavior {
   }
   public static boolean virtual_isLastPositionAllowed_3080189811177340441(SNode thisNode) {
     SNode right = SNodeOperations.getNextSibling(thisNode);
-    if (SNodeOperations.isInstanceOf(right, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, "jetbrains.mps.core.xml.structure.XmlTextValue"))) {
-      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(right, MetaAdapterFactory.getConcept(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, "jetbrains.mps.core.xml.structure.XmlTextValue")), "virtual_onNewLine_3080189811177340422", new Object[]{});
+    if (SNodeOperations.isInstanceOf(right, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"))) {
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(right, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue")), "virtual_onNewLine_3080189811177340422", new Object[]{});
     }
     return true;
   }

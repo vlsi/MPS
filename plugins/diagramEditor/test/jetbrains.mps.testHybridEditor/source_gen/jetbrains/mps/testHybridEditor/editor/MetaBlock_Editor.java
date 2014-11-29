@@ -29,7 +29,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -268,7 +267,7 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     if (!(module instanceof AbstractModule)) {
       return false;
     }
-    String s = MacrosFactory.forModule(((AbstractModule) module)).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177973871304l, 9168054762589307856l, "iconPath")));
+    String s = MacrosFactory.forModule(((AbstractModule) module)).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x7f3b793b6d76c3d0L, "iconPath")));
     if (s == null) {
       return false;
     }
@@ -279,7 +278,7 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     EditorCell_Image editorCell;
     editorCell = EditorCell_Image.createImageCell(editorContext, node, ((_FunctionTypes._return_P0_E0<? extends String>) new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
-        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177973871304l, 9168054762589307856l, "iconPath"));
+        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x7f3b793b6d76c3d0L, "iconPath"));
       }
     }).invoke());
     editorCell.setCellId("Image_liyxwi_a0a");

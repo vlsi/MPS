@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -108,7 +107,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   private CellReference findCellReference(SNode node) {
-    List<SNode> annotations = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), false, new SAbstractConcept[]{});
+    List<SNode> annotations = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), false, new SAbstractConcept[]{});
     if (ListSequence.fromList(annotations).isEmpty()) {
       return null;
     }

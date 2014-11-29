@@ -4,10 +4,9 @@ package jetbrains.mps.baseLanguage.closures.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 
 public class CompactInvokeFunctionExpression_Constraints extends BaseConstraintsDescriptor {
   public CompactInvokeFunctionExpression_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-200093298712821347l, -8038623698278341771l), 1235746970280l));
+    super(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L));
   }
 }

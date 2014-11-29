@@ -74,8 +74,8 @@ public class ModelAssert {
   }
 
   private static void assertSameLanguageAspects(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
-    List<ImportElement> expectedLanguageAspects = (expectedModel).getAdditionalModelVersions();
-    List<ImportElement> actualLanguageAspects = (actualModel).getAdditionalModelVersions();
+    List<ImportElement> expectedLanguageAspects = expectedModel.getImplicitImportsSupport().getAdditionalModelVersions();
+    List<ImportElement> actualLanguageAspects = actualModel.getImplicitImportsSupport().getAdditionalModelVersions();
 
     for (ImportElement expectedEl : expectedLanguageAspects) {
       boolean found = false;
@@ -107,8 +107,8 @@ public class ModelAssert {
   }
 
   private static void assertSameImports(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
-    assertListsEqual((expectedModel).getAdditionalModelVersions(),
-        (actualModel).getAdditionalModelVersions(), new Comparator<ImportElement>() {
+    assertListsEqual(expectedModel.getImplicitImportsSupport().getAdditionalModelVersions(),
+        actualModel.getImplicitImportsSupport().getAdditionalModelVersions(), new Comparator<ImportElement>() {
           @Override
           public int compare(ImportElement import1, ImportElement import2) {
             return import1.getModelReference().equals(import2.getModelReference()) ? 0 : 1;

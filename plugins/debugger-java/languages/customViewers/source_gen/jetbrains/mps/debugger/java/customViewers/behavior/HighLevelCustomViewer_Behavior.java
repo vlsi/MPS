@@ -6,17 +6,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class HighLevelCustomViewer_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getValueTypeCopy_43370322128260022(SNode thisNode) {
-    return SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-393243729685033453l, -4633752096775218313l), 680105146889009728l, 43370322128256026l, "valueType")));
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, 0x9a1514043fbc1aL, "valueType")));
   }
   public static String call_getClassName_7570572250661284600(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_WrapperFactory";
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_WrapperFactory";
   }
   public static String call_getClassFqName_7570572250661287362(SNode thisNode) {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(thisNode)) + "." + HighLevelCustomViewer_Behavior.call_getClassName_7570572250661284600(thisNode);

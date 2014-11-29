@@ -13,7 +13,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateUtil;
@@ -32,7 +31,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412775");
-      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "RootCustom");
+      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "RootCustom");
       {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
         try {
@@ -48,7 +47,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
         final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         try {
           environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761135");
-          SNodeAccessUtil.setProperty(tnode3, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "q");
+          SNodeAccessUtil.setProperty(tnode3, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "q");
           {
             final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility");
             try {
@@ -119,7 +118,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
                     final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
                     try {
                       environment.nodeCopied(context11, tnode12, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761103");
-                      SNodeAccessUtil.setProperty(tnode12, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "i");
+                      SNodeAccessUtil.setProperty(tnode12, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "i");
                       {
                         final SNode tnode13 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerType");
                         try {
@@ -135,7 +134,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
                         final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                         try {
                           environment.nodeCopied(context11, tnode14, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761106");
-                          SNodeAccessUtil.setProperty(tnode14, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2721957369897795324(new PropertyMacroContext(context11, "0", propertyMacro_kyghau_c0a0c0b0b0d0e0b0b0b0b0d0b0e0b0c))));
+                          SNodeAccessUtil.setProperty(tnode14, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2721957369897795324(new PropertyMacroContext(context11, "0", propertyMacro_kyghau_c0a0c0b0b0d0e0b0b0b0b0d0b0e0b0c))));
                         } finally {
                         }
                         if (tnode14 != null) {
@@ -222,7 +221,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
         final SNode tnode20 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         try {
           environment.nodeCopied(context, tnode20, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412782");
-          SNodeAccessUtil.setProperty(tnode20, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "main");
+          SNodeAccessUtil.setProperty(tnode20, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "main");
           {
             final SNode tnode21 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VoidType");
             try {

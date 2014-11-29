@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -17,11 +16,11 @@ public class ConceptRef {
     SNode concept2 = SNodeOperations.getConceptDeclaration(node);
     if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(concept1), SNodeOperations.asSConcept(concept2))) {
     }
-    boolean b2 = SConceptOperations.isExactly(SNodeOperations.asSConcept(concept1), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
+    boolean b2 = SConceptOperations.isExactly(SNodeOperations.asSConcept(concept1), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"));
     boolean b3 = SConceptOperations.isExactly(SNodeOperations.asSConcept(concept1), SNodeOperations.asSConcept(concept2));
   }
   public void instanceOf_1(SNode node, SNode concept1, SNode concept2) {
-    SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, "jetbrains.mps.baseLanguage.structure.IfStatement"));
+    SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"));
     SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")));
     SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
     SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(concept1));
@@ -48,8 +47,8 @@ public class ConceptRef {
     exprConcept = n2;
     // ====== to concept 
     // - ok - 
-    SNode exprConc = SNodeOperations.castConcept(c1, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
-    SNode bExprConc = SNodeOperations.castConcept(exprConcept, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+    SNode exprConc = SNodeOperations.castConcept(c1, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
+    SNode bExprConc = SNodeOperations.castConcept(exprConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
     exprConc = bExprConc;
     // -- not ok -- 
     bExprConc = exprConc;
@@ -64,9 +63,9 @@ public class ConceptRef {
     List<SNode> supers_direct = SConceptOperations.getDirectSuperConcepts(concept, false);
     List<SNode> supers_direct_inclusive = SConceptOperations.getDirectSuperConcepts(concept, true);
     // ====== 
-    boolean yes1 = SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+    boolean yes1 = SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
     boolean yes2 = SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression")), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation")));
-    boolean yes3 = SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation")), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068431790191l, "jetbrains.mps.baseLanguage.structure.Expression"));
+    boolean yes3 = SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
     boolean yes4 = SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation")), SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression")));
     SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), SNodeOperations.asSConcept(concept));
     SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(concept), SNodeOperations.asSConcept(concept));

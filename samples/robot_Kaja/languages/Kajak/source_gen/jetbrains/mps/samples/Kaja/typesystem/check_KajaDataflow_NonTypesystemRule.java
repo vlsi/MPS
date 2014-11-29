@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -40,10 +39,10 @@ public class check_KajaDataflow_NonTypesystemRule extends AbstractNonTypesystemR
 
       for (Instruction n : unreachableInstructions) {
         SNode source = (SNode) n.getSource();
-        if (source == null || SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039740438l, "jetbrains.mps.samples.Kaja.structure.EmptyLine")) || SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 6405700485436287811l, "jetbrains.mps.samples.Kaja.structure.CommentLine"))) {
+        if (source == null || SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine")) || SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713fa2b43L, "jetbrains.mps.samples.Kaja.structure.CommentLine"))) {
           continue;
         }
-        if (SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(new UUID(331587165301851084l, -4784639992745830411l), 3265739055509559114l, "jetbrains.mps.samples.Kaja.structure.AbstractCommand"))) {
+        if (SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL, "jetbrains.mps.samples.Kaja.structure.AbstractCommand"))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(source, "Unreachable command", "r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)", "1223640538234", null, errorTarget);

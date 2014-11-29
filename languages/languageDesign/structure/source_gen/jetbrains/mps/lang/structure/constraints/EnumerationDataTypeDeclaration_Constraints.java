@@ -4,7 +4,6 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
@@ -32,7 +31,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsDescriptor {
   public EnumerationDataTypeDeclaration_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l));
+    super(MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL));
   }
   @Override
   public boolean hasOwnCanBeRootMethod() {
@@ -51,7 +50,7 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
   @Override
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
-    properties.put(MetaIdFactory.propId(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1212080844762l), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1212080844762l), this) {
+    properties.put(MetaIdFactory.propId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL), this) {
       @Override
       public boolean hasOwnSetter() {
         return true;
@@ -59,9 +58,9 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
       @Override
       public void setValue(SNode node, String propertyValue) {
         String propertyName = "hasNoDefaultMember";
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1212080844762l, "hasNoDefaultMember"), "" + ((SPropertyOperations.getBoolean(propertyValue))));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL, "hasNoDefaultMember"), "" + ((SPropertyOperations.getBoolean(propertyValue))));
         if ((SPropertyOperations.getBoolean(propertyValue)) == true) {
-          SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083241965437l, "defaultMember"), null);
+          SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3640a77dL, "defaultMember"), null);
         }
       }
     });
@@ -70,7 +69,7 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
     Map<SReferenceLinkId, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLinkId, ReferenceConstraintsDescriptor>();
-    references.put(MetaIdFactory.refId(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083241965437l), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083241965437l), this) {
+    references.put(MetaIdFactory.refId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3640a77dL), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3640a77dL), this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;

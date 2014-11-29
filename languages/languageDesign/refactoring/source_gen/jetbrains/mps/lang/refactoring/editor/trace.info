@@ -2718,138 +2718,138 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590315(jetbrains.mps.lang.refactoring.editor)/6274191862073635312">
     <file name="ExecuteRefactoringHint.java">
-      <node id="6274191862073635329" at="17,78,18,221" concept="7" />
-      <node id="6274191862073684622" at="20,137,21,72" concept="2" />
-      <node id="6274191862073635342" at="23,98,24,16" concept="7" />
-      <node id="6274191862073635312" at="15,0,17,0" concept="1" trace="ExecuteRefactoringHint#()V" />
-      <node id="6274191862073635312" at="17,0,20,0" concept="5" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
-      <node id="6274191862073635312" at="20,0,23,0" concept="5" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
-      <node id="6274191862073635312" at="23,0,26,0" concept="5" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="6274191862073635312" at="15,35,15,35" />
-      <scope id="6274191862073635315" at="17,78,18,221" />
-      <scope id="6274191862073635312" at="20,137,21,72" />
-      <scope id="6274191862073635312" at="23,98,24,16" />
-      <scope id="6274191862073635312" at="15,0,17,0" />
-      <scope id="6274191862073635312" at="17,0,20,0">
+      <node id="6274191862073635329" at="16,78,17,206" concept="7" />
+      <node id="6274191862073684622" at="19,137,20,72" concept="2" />
+      <node id="6274191862073635342" at="22,98,23,16" concept="7" />
+      <node id="6274191862073635312" at="14,0,16,0" concept="1" trace="ExecuteRefactoringHint#()V" />
+      <node id="6274191862073635312" at="16,0,19,0" concept="5" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
+      <node id="6274191862073635312" at="19,0,22,0" concept="5" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
+      <node id="6274191862073635312" at="22,0,25,0" concept="5" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="6274191862073635312" at="14,35,14,35" />
+      <scope id="6274191862073635315" at="16,78,17,206" />
+      <scope id="6274191862073635312" at="19,137,20,72" />
+      <scope id="6274191862073635312" at="22,98,23,16" />
+      <scope id="6274191862073635312" at="14,0,16,0" />
+      <scope id="6274191862073635312" at="16,0,19,0">
         <var name="editorContext" id="6274191862073635312" />
         <var name="node" id="6274191862073635312" />
       </scope>
-      <scope id="6274191862073635312" at="20,0,23,0">
+      <scope id="6274191862073635312" at="19,0,22,0">
         <var name="editorContext" id="6274191862073635312" />
         <var name="node" id="6274191862073635312" />
         <var name="parameterObject" id="6274191862073635312" />
         <var name="styledText" id="6274191862073635312" />
       </scope>
-      <scope id="6274191862073635312" at="23,0,26,0">
+      <scope id="6274191862073635312" at="22,0,25,0">
         <var name="editorContext" id="6274191862073635312" />
         <var name="node" id="6274191862073635312" />
         <var name="parameterObject" id="6274191862073635312" />
       </scope>
-      <unit id="6274191862073635312" at="14,0,27,0" name="jetbrains.mps.lang.refactoring.editor.ExecuteRefactoringHint" />
+      <unit id="6274191862073635312" at="13,0,26,0" name="jetbrains.mps.lang.refactoring.editor.ExecuteRefactoringHint" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590315(jetbrains.mps.lang.refactoring.editor)/6274191862073682954">
     <file name="RefExpressionParamUtil.java">
-      <node id="6274191862073682974" at="18,103,19,436" concept="2" />
-      <node id="6274191862073682992" at="19,436,20,32" concept="6" />
-      <node id="6274191862073689322" at="20,32,21,380" concept="6" />
-      <node id="6274191862073682998" at="22,382,23,756" concept="2" />
-      <node id="6274191862073683021" at="24,390,25,50" concept="2" />
-      <node id="6274191862073683033" at="26,391,27,54" concept="2" />
-      <node id="6274191862073683058" at="28,5,29,48" concept="2" />
-      <node id="6274191862073683066" at="30,25,31,49" concept="2" />
-      <node id="6274191862073683077" at="32,234,33,509" concept="2" />
-      <node id="6274191862073683097" at="35,5,36,27" concept="2" />
-      <node id="6274191862073682956" at="16,0,18,0" concept="1" trace="RefExpressionParamUtil#()V" />
-      <node id="6274191862073683071" at="31,49,34,7" concept="3" />
-      <node id="6274191862073684613" at="29,48,35,5" concept="4" />
-      <node id="6274191862073682996" at="21,380,28,5" concept="4" />
-      <node id="6274191862073682960" at="18,0,38,0" concept="8" trace="xxx#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;Z)V" />
-      <scope id="6274191862073682959" at="16,35,16,35" />
-      <scope id="6274191862073682997" at="22,382,23,756" />
-      <scope id="6274191862073683020" at="24,390,25,50" />
-      <scope id="6274191862073683032" at="26,391,27,54" />
-      <scope id="6274191862073683076" at="32,234,33,509" />
-      <scope id="6274191862073682956" at="16,0,18,0" />
-      <scope id="6274191862073683071" at="31,49,34,7">
+      <node id="6274191862073682974" at="17,103,18,407" concept="2" />
+      <node id="6274191862073682992" at="18,407,19,32" concept="6" />
+      <node id="6274191862073689322" at="19,32,20,350" concept="6" />
+      <node id="6274191862073682998" at="21,353,22,698" concept="2" />
+      <node id="6274191862073683021" at="23,361,24,50" concept="2" />
+      <node id="6274191862073683033" at="25,362,26,54" concept="2" />
+      <node id="6274191862073683058" at="27,5,28,48" concept="2" />
+      <node id="6274191862073683066" at="29,25,30,49" concept="2" />
+      <node id="6274191862073683077" at="31,219,32,480" concept="2" />
+      <node id="6274191862073683097" at="34,5,35,27" concept="2" />
+      <node id="6274191862073682956" at="15,0,17,0" concept="1" trace="RefExpressionParamUtil#()V" />
+      <node id="6274191862073683071" at="30,49,33,7" concept="3" />
+      <node id="6274191862073684613" at="28,48,34,5" concept="4" />
+      <node id="6274191862073682996" at="20,350,27,5" concept="4" />
+      <node id="6274191862073682960" at="17,0,37,0" concept="8" trace="xxx#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;Z)V" />
+      <scope id="6274191862073682959" at="15,35,15,35" />
+      <scope id="6274191862073682997" at="21,353,22,698" />
+      <scope id="6274191862073683020" at="23,361,24,50" />
+      <scope id="6274191862073683032" at="25,362,26,54" />
+      <scope id="6274191862073683076" at="31,219,32,480" />
+      <scope id="6274191862073682956" at="15,0,17,0" />
+      <scope id="6274191862073683071" at="30,49,33,7">
         <var name="param" id="6274191862073683072" />
       </scope>
-      <scope id="6274191862073684614" at="30,25,34,7" />
-      <scope id="6274191862073682963" at="18,103,36,27">
+      <scope id="6274191862073684614" at="29,25,33,7" />
+      <scope id="6274191862073682963" at="17,103,35,27">
         <var name="isList" id="6274191862073689323" />
         <var name="target" id="6274191862073682993" />
       </scope>
-      <scope id="6274191862073682960" at="18,0,38,0">
+      <scope id="6274191862073682960" at="17,0,37,0">
         <var name="node" id="6274191862073682964" />
         <var name="ref" id="6274191862073682966" />
         <var name="showParameters" id="6274191862073684604" />
         <var name="styledText" id="6274191862073682970" />
       </scope>
-      <unit id="6274191862073682954" at="15,0,39,0" name="jetbrains.mps.lang.refactoring.editor.RefExpressionParamUtil" />
+      <unit id="6274191862073682954" at="14,0,38,0" name="jetbrains.mps.lang.refactoring.editor.RefExpressionParamUtil" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590315(jetbrains.mps.lang.refactoring.editor)/6274191862073683116">
     <file name="CreateRefcontextHint.java">
-      <node id="6274191862073683125" at="17,78,18,221" concept="7" />
-      <node id="6274191862073683135" at="20,137,21,72" concept="2" />
-      <node id="6274191862073683133" at="23,98,24,16" concept="7" />
-      <node id="6274191862073683116" at="15,0,17,0" concept="1" trace="CreateRefcontextHint#()V" />
-      <node id="6274191862073683116" at="17,0,20,0" concept="5" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
-      <node id="6274191862073683116" at="20,0,23,0" concept="5" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
-      <node id="6274191862073683116" at="23,0,26,0" concept="5" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="6274191862073683116" at="15,33,15,33" />
-      <scope id="6274191862073683119" at="17,78,18,221" />
-      <scope id="6274191862073683116" at="20,137,21,72" />
-      <scope id="6274191862073683116" at="23,98,24,16" />
-      <scope id="6274191862073683116" at="15,0,17,0" />
-      <scope id="6274191862073683116" at="17,0,20,0">
+      <node id="6274191862073683125" at="16,78,17,206" concept="7" />
+      <node id="6274191862073683135" at="19,137,20,72" concept="2" />
+      <node id="6274191862073683133" at="22,98,23,16" concept="7" />
+      <node id="6274191862073683116" at="14,0,16,0" concept="1" trace="CreateRefcontextHint#()V" />
+      <node id="6274191862073683116" at="16,0,19,0" concept="5" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
+      <node id="6274191862073683116" at="19,0,22,0" concept="5" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
+      <node id="6274191862073683116" at="22,0,25,0" concept="5" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="6274191862073683116" at="14,33,14,33" />
+      <scope id="6274191862073683119" at="16,78,17,206" />
+      <scope id="6274191862073683116" at="19,137,20,72" />
+      <scope id="6274191862073683116" at="22,98,23,16" />
+      <scope id="6274191862073683116" at="14,0,16,0" />
+      <scope id="6274191862073683116" at="16,0,19,0">
         <var name="editorContext" id="6274191862073683116" />
         <var name="node" id="6274191862073683116" />
       </scope>
-      <scope id="6274191862073683116" at="20,0,23,0">
+      <scope id="6274191862073683116" at="19,0,22,0">
         <var name="editorContext" id="6274191862073683116" />
         <var name="node" id="6274191862073683116" />
         <var name="parameterObject" id="6274191862073683116" />
         <var name="styledText" id="6274191862073683116" />
       </scope>
-      <scope id="6274191862073683116" at="23,0,26,0">
+      <scope id="6274191862073683116" at="22,0,25,0">
         <var name="editorContext" id="6274191862073683116" />
         <var name="node" id="6274191862073683116" />
         <var name="parameterObject" id="6274191862073683116" />
       </scope>
-      <unit id="6274191862073683116" at="14,0,27,0" name="jetbrains.mps.lang.refactoring.editor.CreateRefcontextHint" />
+      <unit id="6274191862073683116" at="13,0,26,0" name="jetbrains.mps.lang.refactoring.editor.CreateRefcontextHint" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590315(jetbrains.mps.lang.refactoring.editor)/6274191862073684572">
     <file name="IsRefactoringApplicableHint.java">
-      <node id="6274191862073684581" at="17,78,18,221" concept="7" />
-      <node id="6274191862073684591" at="20,137,21,73" concept="2" />
-      <node id="6274191862073684589" at="23,98,24,16" concept="7" />
-      <node id="6274191862073684572" at="15,0,17,0" concept="1" trace="IsRefactoringApplicableHint#()V" />
-      <node id="6274191862073684572" at="17,0,20,0" concept="5" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
-      <node id="6274191862073684572" at="20,0,23,0" concept="5" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
-      <node id="6274191862073684572" at="23,0,26,0" concept="5" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="6274191862073684572" at="15,40,15,40" />
-      <scope id="6274191862073684575" at="17,78,18,221" />
-      <scope id="6274191862073684572" at="20,137,21,73" />
-      <scope id="6274191862073684572" at="23,98,24,16" />
-      <scope id="6274191862073684572" at="15,0,17,0" />
-      <scope id="6274191862073684572" at="17,0,20,0">
+      <node id="6274191862073684581" at="16,78,17,206" concept="7" />
+      <node id="6274191862073684591" at="19,137,20,73" concept="2" />
+      <node id="6274191862073684589" at="22,98,23,16" concept="7" />
+      <node id="6274191862073684572" at="14,0,16,0" concept="1" trace="IsRefactoringApplicableHint#()V" />
+      <node id="6274191862073684572" at="16,0,19,0" concept="5" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
+      <node id="6274191862073684572" at="19,0,22,0" concept="5" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
+      <node id="6274191862073684572" at="22,0,25,0" concept="5" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="6274191862073684572" at="14,40,14,40" />
+      <scope id="6274191862073684575" at="16,78,17,206" />
+      <scope id="6274191862073684572" at="19,137,20,73" />
+      <scope id="6274191862073684572" at="22,98,23,16" />
+      <scope id="6274191862073684572" at="14,0,16,0" />
+      <scope id="6274191862073684572" at="16,0,19,0">
         <var name="editorContext" id="6274191862073684572" />
         <var name="node" id="6274191862073684572" />
       </scope>
-      <scope id="6274191862073684572" at="20,0,23,0">
+      <scope id="6274191862073684572" at="19,0,22,0">
         <var name="editorContext" id="6274191862073684572" />
         <var name="node" id="6274191862073684572" />
         <var name="parameterObject" id="6274191862073684572" />
         <var name="styledText" id="6274191862073684572" />
       </scope>
-      <scope id="6274191862073684572" at="23,0,26,0">
+      <scope id="6274191862073684572" at="22,0,25,0">
         <var name="editorContext" id="6274191862073684572" />
         <var name="node" id="6274191862073684572" />
         <var name="parameterObject" id="6274191862073684572" />
       </scope>
-      <unit id="6274191862073684572" at="14,0,27,0" name="jetbrains.mps.lang.refactoring.editor.IsRefactoringApplicableHint" />
+      <unit id="6274191862073684572" at="13,0,26,0" name="jetbrains.mps.lang.refactoring.editor.IsRefactoringApplicableHint" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590315(jetbrains.mps.lang.refactoring.editor)/6598645150040036519">

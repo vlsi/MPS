@@ -17,8 +17,6 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
-import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -26,7 +24,9 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -40,7 +40,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Build a data structure that keeps meta-information actually used for the nodes supplied.
@@ -53,37 +52,15 @@ import java.util.Map;
 public class IdInfoCollector {
   private final HashMap<SConceptId, ConceptInfo> myRegistry;
   private final HashMap<SLanguageId, LangInfo> myLanguagesInUse;
-  private final MetaModelInfoProvider myMetaInfoProvider;
 
-  public IdInfoCollector(@NotNull MetaModelInfoProvider mmiProvider) {
-    myMetaInfoProvider = mmiProvider;
+  public IdInfoCollector() {
     myRegistry = new HashMap<SConceptId, ConceptInfo>();
     myLanguagesInUse = new HashMap<SLanguageId, LangInfo>();
   }
 
-  public void getDebugInfoById(Map<SConceptId, String> conceptIds, Map<SPropertyId, String> propIds,
-      Map<SReferenceLinkId, String> refIds, Map<SContainmentLinkId, String> linkIds) {
-    for (LangInfo langInfo : getLanguagesInUse()) {
-      for (ConceptInfo ci : langInfo.getConceptsInUse()) {
-        if (!MetaIdFactory.INVALID_CONCEPT_NAME.equals(ci.getName())) {
-          conceptIds.put(ci.getConceptId(), ci.getName());
-        }
-        for (PropertyInfo pi : ci.getPropertiesInUse()) {
-          propIds.put(pi.getPropertyId(), pi.getName());
-        }
-        for (AssociationLinkInfo li : ci.getAssociationsInUse()) {
-          refIds.put(li.getLinkId(), li.getName());
-        }
-        for (AggregationLinkInfo li : ci.getAggregationsInUse()) {
-          linkIds.put(li.getLinkId(), li.getName());
-        }
-      }
-    }
-  }
-
   ////////////////////////
 
-  public void fill(Iterable<SNode> nodes) {
+  public void fill(Iterable<SNode> nodes, MetaModelInfoProvider metaInfoProvider) {
     for (SNode n1 : nodes) {
       fillConcept(n1);
       fillProperties(n1);
@@ -101,20 +78,25 @@ public class IdInfoCollector {
     // ensure we keep name of each concept in use (i.e. those coming from used properties/links), fill in other persistence-relevant aspects
     for (ConceptInfo ci : myRegistry.values()) {
       for (AggregationLinkInfo li : ci.getAggregationsInUse()) {
-        li.setUnordered(myMetaInfoProvider.isUnordered(li.getLinkId()));
+        li.setUnordered(metaInfoProvider.isUnordered(li.getLinkId()));
       }
-      ci.setImplementationKind(myMetaInfoProvider.getScope(ci.getConceptId()), myMetaInfoProvider.getKind(ci.getConceptId()));
+      final StaticScope scope = metaInfoProvider.getScope(ci.getConceptId());
+      final ConceptKind kind = metaInfoProvider.getKind(ci.getConceptId());
+      ci.setImplementationKind(scope, kind);
+      if (kind == ConceptKind.IMPLEMENTATION_WITH_STUB) {
+        ci.setStubCounterpart(metaInfoProvider.getStubConcept(ci.getConceptId()));
+      }
 
       if (ci.isNameSet()) {
         continue;
       }
-      String conceptName = myMetaInfoProvider.getConceptName(ci.getConceptId());
+      String conceptName = metaInfoProvider.getConceptName(ci.getConceptId());
       // FIXME we don't really need concept fqn in new registry, own name is enough (we know the language anyway)
       ci.setName(conceptName);
     }
     // record name of the languages
     for (LangInfo li : myLanguagesInUse.values()) {
-      li.setName(myMetaInfoProvider.getLanguageName(li.getLanguageId()));
+      li.setName(metaInfoProvider.getLanguageName(li.getLanguageId()));
     }
 
     initializeIndexValues();
@@ -126,23 +108,23 @@ public class IdInfoCollector {
     return rv;
   }
 
-  ConceptInfo find(@NotNull SConcept concept) {
+  public ConceptInfo find(@NotNull SConcept concept) {
     final SConceptId id = IdHelper.getConceptId(concept);
     assert id != null; // original ModelWriter9.saveNode assumed this
     assert myRegistry.containsKey(id); // the way IdInfoCollector is built shall ensure concept of any node in a model is registered
     return myRegistry.get(id);
   }
-  PropertyInfo find(@NotNull SProperty property) {
+  public PropertyInfo find(@NotNull SProperty property) {
     SPropertyId id = IdHelper.getPropertyId(property);
     assert id != null;
     return myRegistry.get(id.getConceptId()).find(id);
   }
-  AssociationLinkInfo find(@NotNull SReferenceLink link) {
+  public AssociationLinkInfo find(@NotNull SReferenceLink link) {
     SReferenceLinkId id = IdHelper.getRefId(link);
     assert id != null;
     return myRegistry.get(id.getConceptId()).find(id);
   }
-  AggregationLinkInfo find(@NotNull SContainmentLink link) {
+  public AggregationLinkInfo find(@NotNull SContainmentLink link) {
     SContainmentLinkId id = IdHelper.getLinkId(link);
     assert id != null;
     return myRegistry.get(id.getConceptId()).find(id);
@@ -155,11 +137,7 @@ public class IdInfoCollector {
     final SConcept concept = n.getConcept();
     SConceptId conceptId = IdHelper.getConceptId(concept);
     assert conceptId != null;
-    final ConceptInfo info = registerConcept(conceptId);
-    if (!info.isNameSet()) {
-      info.setName(concept.getQualifiedName()); // XXX meanwhile, keep FQN to produce the same output as the old code.
-      // Shall change to getName once we keep debug registry concepts grouped by language
-    }
+    registerConcept(conceptId);
   }
 
   private void fillProperties(SNode n) {
@@ -188,7 +166,7 @@ public class IdInfoCollector {
    * @return utility object that keeps concept information essential for persistence
    */
   @NotNull
-  /*package*/ ConceptInfo registerConcept(SConceptId concept) {
+  public ConceptInfo registerConcept(SConceptId concept) {
     ConceptInfo conceptInfo = myRegistry.get(concept);
     if (conceptInfo == null) {
       myRegistry.put(concept, conceptInfo = new ConceptInfo(concept));
@@ -203,7 +181,7 @@ public class IdInfoCollector {
    * @return utility object that keeps language information essential for persistence
    */
   @NotNull
-  /*package*/ LangInfo registerLanguage(SLanguageId lang) {
+  public LangInfo registerLanguage(SLanguageId lang) {
     LangInfo langInfo = myLanguagesInUse.get(lang);
     if (langInfo == null) {
       myLanguagesInUse.put(lang, langInfo = new LangInfo(lang));
@@ -245,7 +223,7 @@ public class IdInfoCollector {
     bi.setIndex(s);
   }
 
-  /*package*/ static final class LangInfo implements Comparable<LangInfo> {
+  public static final class LangInfo extends BaseInfo implements Comparable<LangInfo> {
     private final SLanguageId myLanguageId;
     private String myName;
     private final List<ConceptInfo> myConcepts = new ArrayList<ConceptInfo>();
@@ -260,7 +238,7 @@ public class IdInfoCollector {
       return myName;
     }
 
-    /*package*/void setName(String name) {
+    public void setName(String name) {
       if (myName != null) {
         throw new IllegalStateException(String.format("Name of the language in the debug registry is not supposed to get changed (present: %s, new: %s)", myName, name));
       }
@@ -278,8 +256,9 @@ public class IdInfoCollector {
       return rv;
     }
 
-    private int internalKey() {
-      return myLanguageId.hashCode();
+    @Override
+    /*package*/ int internalKey() {
+      return (myLanguageId.hashCode() & 0x7fffffff);
     }
 
     @Override
@@ -288,12 +267,24 @@ public class IdInfoCollector {
     }
   }
 
+  /**
+   * we use text index for xml files, and ordering/integer index for binary files.
+   * Index values either persisted or initialized by intrinsic ordering of meta-model information saved in the model
+   */
   /*package*/ static abstract class BaseInfo {
     private String myIndex;
+    private int myIntIndex = -1;
 
     public String getIndex() {
       assert myIndex != null;
       return myIndex;
+    }
+
+    public int getIntIndex() {
+      return myIntIndex;
+    }
+    public void setIntIndex(int index) {
+      myIntIndex = index;
     }
 
     /*package*/ void setIndex(String index) {
@@ -301,6 +292,16 @@ public class IdInfoCollector {
     }
 
     /*package*/ abstract int internalKey();
+
+    // long to signed integer
+    protected static final int ltoi(long l) {
+      return ((int) (l ^ (l>>>32)));
+    }
+    // FIXME drop this method (make ltoi to return unsigned value). Meanwhile, use non-negative values for comparator purposes only - I'd like to keep
+    // models mostly unchanged to check merge
+    protected static final int unsigned(int i) {
+      return i & 0x7fffffff;
+    }
   }
 
   /**
@@ -313,7 +314,7 @@ public class IdInfoCollector {
    * I.e. from the code that operates with node instances (may encounter few uses of the same SProperty), use #registerProperty();
    * when the meta-info registry is read back (with single property element), use #addProperty();
    */
-  /*package*/ static final class ConceptInfo extends BaseInfo implements Comparable<ConceptInfo> {
+  public static final class ConceptInfo extends BaseInfo implements Comparable<ConceptInfo> {
     private final SConceptId myConcept;
     // set once
     private String myName;
@@ -322,6 +323,7 @@ public class IdInfoCollector {
     private final HashMap<SContainmentLinkId, AggregationLinkInfo> myAggregations = new HashMap<SContainmentLinkId, AggregationLinkInfo>(8);
     private ConceptKind myKind = ConceptKind.NORMAL;
     private StaticScope myScope = StaticScope.GLOBAL;
+    private SConceptId myStubCounterpart = null; // makes sense only for ConceptKind.IMPLEMENTATION_WITH_STUB
 
     /*package*/ ConceptInfo(@NotNull SConceptId concept) {
       myConcept = concept;
@@ -348,12 +350,48 @@ public class IdInfoCollector {
       return myName;
     }
 
+    /**
+     * Towards non-qualified concept names: meanwhile use in binary persistence only. Once it's ok, use this name as the only one (i.e. in xml persistence, too)
+     */
+    public String getBriefName() {
+      return NameUtil.shortNameFromLongName(myName);
+    }
+
     public StaticScope getScope() {
       return myScope;
     }
 
     public ConceptKind getKind() {
       return myKind;
+    }
+
+    @Nullable
+    public SConceptId getStubCounterpart() {
+      assert myKind == ConceptKind.IMPLEMENTATION_WITH_STUB;
+      return myStubCounterpart;
+    }
+    public void setStubCounterpart(@Nullable SConceptId stub) {
+      myStubCounterpart = stub;
+    }
+    /*package*/ String constructStubConceptName() {
+      return constructStubConceptName(myName);
+    }
+    public static String constructStubConceptName(@NotNull String originalConceptQualifiedName) {
+      String ns = NameUtil.namespaceFromLongName(originalConceptQualifiedName);
+      String sname = NameUtil.shortNameFromLongName(originalConceptQualifiedName);
+      return ((ns == null || ns.isEmpty()) ? "" : ns + '.') + "Stub" + sname;
+    }
+
+    public boolean isImplementation() {
+      return myKind == ConceptKind.IMPLEMENTATION || myKind == ConceptKind.IMPLEMENTATION_WITH_STUB;
+    }
+
+    /**
+     * @return <code>true</code> iff has both appropriate kind and knows stub concept (absence of stub concept is treated as implementation)
+     */
+    public boolean isImplementationWithStub() {
+      // treat ImplementationWithStub without actual stub as mere Implementation
+      return myKind == ConceptKind.IMPLEMENTATION_WITH_STUB && myStubCounterpart != null;
     }
 
     /**
@@ -379,14 +417,14 @@ public class IdInfoCollector {
     /*package*/boolean isNameSet() {
       return myName != null;
     }
-    /*package*/void setName(@NotNull String name) {
+    public void setName(@NotNull String name) {
       assert !isNameSet();
       if (myName != null) {
         throw new IllegalStateException(String.format("Name of the concept in the debug registry is not supposed to get changed (present: %s, new: %s)", myName, name));
       }
       myName = name;
     }
-    /*package*/void setImplementationKind(StaticScope scope, ConceptKind kind) {
+    public void setImplementationKind(StaticScope scope, ConceptKind kind) {
       myKind = kind;
       myScope = scope;
     }
@@ -404,17 +442,24 @@ public class IdInfoCollector {
       }
     }
 
-    /*package*/void addProperty(SPropertyId propertyId, String name) {
+    public PropertyInfo addProperty(SPropertyId propertyId, String name) {
       assert !myProperties.containsKey(propertyId);
-      myProperties.put(propertyId, new PropertyInfo(propertyId, name));
+      PropertyInfo rv = new PropertyInfo(propertyId, name);
+      myProperties.put(propertyId, rv);
+      return rv;
     }
-    /*package*/void addLink(SReferenceLinkId linkId, String roleName) {
+    public AssociationLinkInfo addLink(SReferenceLinkId linkId, String roleName) {
       assert !myAssociations.containsKey(linkId);
-      myAssociations.put(linkId, new AssociationLinkInfo(linkId, roleName));
+      AssociationLinkInfo rv = new AssociationLinkInfo(linkId, roleName);
+      myAssociations.put(linkId, rv);
+      return rv;
     }
-    /*package*/void addLink(SContainmentLinkId linkId, String roleName) {
+    public AggregationLinkInfo addLink(SContainmentLinkId linkId, String roleName, boolean unordered) {
       assert !myAggregations.containsKey(linkId);
-      myAggregations.put(linkId, new AggregationLinkInfo(linkId, roleName));
+      final AggregationLinkInfo l = new AggregationLinkInfo(linkId, roleName);
+      l.setUnordered(unordered);
+      myAggregations.put(linkId, l);
+      return l;
     }
     /*package*/void registerProperty(SPropertyId propertyId, SProperty property) {
       final PropertyInfo info = myProperties.get(propertyId);
@@ -432,7 +477,7 @@ public class IdInfoCollector {
     /*package*/void registerLink(SContainmentLinkId linkId, SContainmentLink link) {
       final AggregationLinkInfo info = myAggregations.get(linkId);
       if (info == null) {
-        addLink(linkId, link.getRoleName());
+        myAggregations.put(linkId, new AggregationLinkInfo(linkId, link.getRoleName()));
       }
     }
 
@@ -451,17 +496,16 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      long l = myConcept.getConceptId();
-      return (int) (l ^ (l >>> 32));
+      return ltoi(myConcept.getIdValue());
     }
 
     @Override
     public int compareTo(@NotNull ConceptInfo o) {
-      return  internalKey() - o.internalKey();
+      return  unsigned(internalKey()) - unsigned(o.internalKey());
     }
   }
 
-  /*package*/ static final class PropertyInfo extends BaseInfo implements Comparable<PropertyInfo> {
+  public static final class PropertyInfo extends BaseInfo implements Comparable<PropertyInfo> {
     private final SPropertyId myProperty;
     private final String myName;
 
@@ -476,23 +520,18 @@ public class IdInfoCollector {
       return myName;
     }
 
-    public String getIndex(StorageIndexHelper9 helper) {
-      return helper.getPropertyIndex(getPropertyId());
-    }
-
     @Override
     /*package*/ int internalKey() {
-      long l = myProperty.getPropertyId();
-      return (int) (l ^ (l >>> 32));
+      return ltoi(myProperty.getIdValue());
     }
 
     @Override
     public int compareTo(@NotNull PropertyInfo o) {
-      return  internalKey() - o.internalKey();
+      return unsigned(internalKey()) - unsigned(o.internalKey());
     }
   }
 
-  /*package*/ static final class AssociationLinkInfo extends BaseInfo implements Comparable<AssociationLinkInfo> {
+  public static final class AssociationLinkInfo extends BaseInfo implements Comparable<AssociationLinkInfo> {
     private final SReferenceLinkId myLink;
     private final String myName;
 
@@ -509,20 +548,19 @@ public class IdInfoCollector {
 
     @Override
     /*package*/ int internalKey() {
-      long l = myLink.getReferenceLinkId();
-      return (int) (l ^ (l >>> 32));
+      return ltoi(myLink.getIdValue());
     }
 
     @Override
     public int compareTo(@NotNull AssociationLinkInfo o) {
-      return  internalKey() - o.internalKey();
+      return unsigned(internalKey()) - unsigned(o.internalKey());
     }
   }
 
   /**
    *
    */
-  /*package*/ static final class AggregationLinkInfo extends BaseInfo implements Comparable<AggregationLinkInfo> {
+  public static final class AggregationLinkInfo extends BaseInfo implements Comparable<AggregationLinkInfo> {
     private final SContainmentLinkId myLink;
     private final String myName;
     private boolean myUnordered;
@@ -541,19 +579,18 @@ public class IdInfoCollector {
     public boolean isUnordered() {
       return myUnordered;
     }
-    /*package*/ void setUnordered(boolean unordered) {
+    public void setUnordered(boolean unordered) {
       myUnordered = unordered;
     }
 
     @Override
     /*package*/ int internalKey() {
-      long l = myLink.getContainmentLinkId();
-      return (int) (l ^ (l >>> 32));
+      return ltoi(myLink.getIdValue());
     }
 
     @Override
     public int compareTo(@NotNull AggregationLinkInfo o) {
-      return  internalKey() - o.internalKey();
+      return unsigned(internalKey()) - unsigned(o.internalKey());
     }
   }
 }

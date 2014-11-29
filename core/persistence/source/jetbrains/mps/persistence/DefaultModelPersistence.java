@@ -19,6 +19,8 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
+import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -90,8 +92,12 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     try {
       header = pf.readHeader();
       assert header.getModelReference() != null : "wrong model: " + source.getLocation();
-
       LOG.debug("Getting model " + header.getModelReference() + " from " + dataSource.getLocation());
+
+      if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
+        header.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo()));
+      }
+
       // If there are any load options, process them and fill the model with desired model data, otherwise return a lightweight descriptor.
       final DefaultSModelDescriptor rv = new DefaultSModelDescriptor(pf, header);
       if (options.containsKey(OPTION_STRIP_IMPLEMENTATION) && Boolean.parseBoolean(options.get(OPTION_STRIP_IMPLEMENTATION))) {

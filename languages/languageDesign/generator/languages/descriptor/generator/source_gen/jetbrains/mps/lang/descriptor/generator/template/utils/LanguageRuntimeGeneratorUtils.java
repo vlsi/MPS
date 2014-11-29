@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -44,26 +43,26 @@ public class LanguageRuntimeGeneratorUtils {
     if (editorModel == null) {
       return false;
     }
-    List<SNode> roots = SModelOperations.roots(((SModel) editorModel), MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    List<SNode> roots = SModelOperations.roots(((SModel) editorModel), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     return ListSequence.fromList(roots).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return "EditorAspectDescriptorImpl".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+        return "EditorAspectDescriptorImpl".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
     });
   }
   private static SModel getAspectModel(SNode modelReference, LanguageAspect aspect, TemplateQueryContext genContext) {
-    SNode language = SNodeOperations.cast(SNodeOperations.getParent(modelReference), MetaAdapterFactory.getConcept(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540895l, "jetbrains.mps.lang.project.structure.Language"));
+    SNode language = SNodeOperations.cast(SNodeOperations.getParent(modelReference), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, "jetbrains.mps.lang.project.structure.Language"));
     if (language == null) {
-      genContext.showErrorMessage(modelReference, "Parent of ModelReference is not a Language: " + SPropertyOperations.getString(modelReference, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540910l, "qualifiedName")));
+      genContext.showErrorMessage(modelReference, "Parent of ModelReference is not a Language: " + SPropertyOperations.getString(modelReference, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName")));
       return null;
     }
     SModuleReference moduleReference = PersistenceFacade.getInstance().createModuleReference(BehaviorReflection.invokeVirtual(String.class, language, "virtual_getModuleReference_9020561928507315628", new Object[]{}));
     Language languageModule = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
     if (languageModule == null) {
-      genContext.showErrorMessage(language, "No language in repository: " + SPropertyOperations.getString(language, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540899l, "namespace")));
+      genContext.showErrorMessage(language, "No language in repository: " + SPropertyOperations.getString(language, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe23L, "namespace")));
       return null;
     }
     SModel aspectModel = aspect.get(languageModule);
-    return (aspectModel == null || !(aspectModel.getModelId().toString().equals(SPropertyOperations.getString(modelReference, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540903l, 6370754048397540909l, "uuid")))) ? null : aspectModel);
+    return (aspectModel == null || !(aspectModel.getModelId().toString().equals(SPropertyOperations.getString(modelReference, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid")))) ? null : aspectModel);
   }
 }

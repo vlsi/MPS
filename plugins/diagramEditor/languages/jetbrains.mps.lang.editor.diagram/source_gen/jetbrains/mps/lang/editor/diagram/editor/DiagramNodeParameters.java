@@ -8,7 +8,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -25,32 +24,32 @@ public class DiagramNodeParameters implements ParametersInformation<SNode> {
   public DiagramNodeParameters() {
   }
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
-    return Collections.singletonList(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, 1094405431463455193l, "figure")));
+    return Collections.singletonList(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0xf301bf106a329d9L, "figure")));
   }
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
-    if (SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, 1094405431463455193l, "figure"))) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference")) {
+    if (SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0xf301bf106a329d9L, "figure"))) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference")) {
       styledText.append("null()");
       return;
     }
-    styledText.append(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, 1094405431463455193l, "figure")).getPresentation());
+    styledText.append(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0xf301bf106a329d9L, "figure")).getPresentation());
     styledText.append("(");
     SNode selectedNode = editorContext.getSelectedNode();
 
     List<String> definedParameters = ListSequence.fromListWithValues(new LinkedList<String>(), BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), parameterObject, "virtual_getFigureParameterNames_1491555030356445722", new Object[]{}));
     Set<String> specifiedParameters = SetSequence.fromSet(new HashSet<String>());
 
-    for (SNode nextSpecifiedParameter : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, 1094405431463761842l, "parameters")))) {
-      if (ListSequence.fromList(definedParameters).contains(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
-        SetSequence.fromSet(specifiedParameters).addElement(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
-        ListSequence.fromList(definedParameters).removeElement(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+    for (SNode nextSpecifiedParameter : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0xf301bf106a7d7b2L, "parameters")))) {
+      if (ListSequence.fromList(definedParameters).contains(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+        SetSequence.fromSet(specifiedParameters).addElement(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        ListSequence.fromList(definedParameters).removeElement(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
     }
 
     boolean isEmpty = true;
-    for (SNode nextSpecifiedParameter : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, 1094405431463761842l, "parameters")))) {
-      if (SetSequence.fromSet(specifiedParameters).contains(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
-        SetSequence.fromSet(specifiedParameters).removeElement(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
-        this.appendParameter(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), styledText, isEmpty, nextSpecifiedParameter == selectedNode);
+    for (SNode nextSpecifiedParameter : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0xf301bf106a7d7b2L, "parameters")))) {
+      if (SetSequence.fromSet(specifiedParameters).contains(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+        SetSequence.fromSet(specifiedParameters).removeElement(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        this.appendParameter(SPropertyOperations.getString(nextSpecifiedParameter, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), styledText, isEmpty, nextSpecifiedParameter == selectedNode);
         isEmpty = false;
       } else if (ListSequence.fromList(definedParameters).isNotEmpty()) {
         this.appendParameter(ListSequence.fromList(definedParameters).removeElementAt(0), styledText, isEmpty, nextSpecifiedParameter == selectedNode);
@@ -65,7 +64,7 @@ public class DiagramNodeParameters implements ParametersInformation<SNode> {
     styledText.append(")");
   }
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463454433l, 1094405431463455193l, "figure")) == parameterObject;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0xf301bf106a329d9L, "figure")) == parameterObject;
   }
   private void appendParameter(String parameterName, StyledTextPrinter styledText, boolean isEmpty, boolean isBold) {
     if (!(isEmpty)) {

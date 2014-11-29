@@ -14,7 +14,7 @@ import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
-import jetbrains.mps.testbench.IdeaEnvironment;
+import jetbrains.mps.ide.platform.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;

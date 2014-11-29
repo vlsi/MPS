@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class editoMute_Intention implements IntentionFactory {
@@ -57,10 +56,10 @@ public class editoMute_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599482l, 8605005254686522462l, "muted")) ? "Unmute TestCase" : "Mute TestCase");
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, 0x776b1eb017f5bc5eL, "muted")) ? "Unmute TestCase" : "Mute TestCase");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599482l, 8605005254686522462l, "muted"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599482l, 8605005254686522462l, "muted")))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, 0x776b1eb017f5bc5eL, "muted"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, 0x776b1eb017f5bc5eL, "muted")))));
       editorContext.getEditorComponent().rebuildEditorContent();
     }
     public IntentionDescriptor getDescriptor() {

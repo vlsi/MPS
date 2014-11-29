@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import java.io.File;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
@@ -30,7 +29,7 @@ public class SelectImageFileButton extends JButton {
     this.setFont(EditorSettings.getInstance().getDefaultEditorFont());
     this.setBorder(new MetalBorders.ButtonBorder());
     final Language language = Language.getLanguageFor(SNodeOperations.getModel(this.myNode));
-    String filename = MacrosFactory.forModule(language).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1139744628335l, 1139746504291l, "imageFile")));
+    String filename = MacrosFactory.forModule(language).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1095e12de6fL, 0x1095e2f7e63L, "imageFile")));
     final File baseFile = (filename == null ? null : new File(filename));
     this.setAction(new AbstractAction(" ... ") {
       @Override
@@ -50,7 +49,7 @@ public class SelectImageFileButton extends JButton {
           final String pathToShow = MacrosFactory.forModule(language).shrinkPath(selectedPath);
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              SPropertyOperations.set(SelectImageFileButton.this.myNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1139744628335l, 1139746504291l, "imageFile"), pathToShow);
+              SPropertyOperations.set(SelectImageFileButton.this.myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1095e12de6fL, 0x1095e2f7e63L, "imageFile"), pathToShow);
             }
           });
         }

@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ReplaceRegexpOperation_Behavior {
@@ -13,9 +12,9 @@ public class ReplaceRegexpOperation_Behavior {
   }
   public static String call_getReplacementString_3796137614137207007(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
-    for (SNode rep : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137086347l, "replacement"))) {
+    for (SNode rep : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1923d18bL, "replacement"))) {
       if ((rep != null)) {
-        sb.append(BehaviorReflection.invokeVirtual(String.class, rep, "virtual_toString_3796137614137538905", new Object[]{SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159227l, "search"))}));
+        sb.append(BehaviorReflection.invokeVirtual(String.class, rep, "virtual_toString_3796137614137538905", new Object[]{SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee3bL, "search"))}));
       }
     }
     return sb.toString();

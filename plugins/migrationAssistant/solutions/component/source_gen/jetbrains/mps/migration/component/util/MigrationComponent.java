@@ -80,7 +80,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public MigrationDescriptor loadMigrationDescriptor(final Language module) {
-    final ClassLoader loader = module.getClassLoader();
     final Wrappers._T<String> name = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -88,7 +87,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
     });
     try {
-      Class descriptorClass = Class.forName(name.value, true, loader);
+      Class descriptorClass = module.getClass(name.value);
       return (MigrationDescriptor) descriptorClass.newInstance();
     } catch (Throwable e) {
       if (LOG.isEnabledFor(Level.ERROR)) {

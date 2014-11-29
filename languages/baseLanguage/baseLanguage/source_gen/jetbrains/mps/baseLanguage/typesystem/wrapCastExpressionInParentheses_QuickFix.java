@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class wrapCastExpressionInParentheses_QuickFix extends QuickFix_Runtime {
@@ -17,8 +16,8 @@ public class wrapCastExpressionInParentheses_QuickFix extends QuickFix_Runtime {
     return "Wrap expression with parentheses";
   }
   public void execute(SNode node) {
-    SNode parens = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
+    SNode parens = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
     SNodeOperations.replaceWithAnother(((SNode) wrapCastExpressionInParentheses_QuickFix.this.getField("expression")[0]), parens);
-    SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), ((SNode) wrapCastExpressionInParentheses_QuickFix.this.getField("expression")[0]));
+    SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), ((SNode) wrapCastExpressionInParentheses_QuickFix.this.getField("expression")[0]));
   }
 }

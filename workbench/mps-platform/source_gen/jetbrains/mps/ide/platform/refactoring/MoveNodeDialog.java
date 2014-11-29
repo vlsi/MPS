@@ -52,7 +52,7 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   protected JComponent createCenterPanel() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myChooser = RefactoringAccess.getInstance().createTargetChooser(myProject, myNodeToMove);
+        myChooser = RefactoringAccessEx.getInstance().createTargetChooser(myProject, myNodeToMove);
       }
     });
     JComponent centerPanel = myChooser.getComponent();

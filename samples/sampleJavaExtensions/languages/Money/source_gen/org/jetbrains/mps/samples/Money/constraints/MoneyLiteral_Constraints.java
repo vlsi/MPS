@@ -4,10 +4,9 @@ package org.jetbrains.mps.samples.Money.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 
 public class MoneyLiteral_Constraints extends BaseConstraintsDescriptor {
   public MoneyLiteral_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(7361871549399452950l, -7685266567827134434l), 5447719361346490674l));
+    super(MetaIdFactory.conceptId(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L));
   }
 }

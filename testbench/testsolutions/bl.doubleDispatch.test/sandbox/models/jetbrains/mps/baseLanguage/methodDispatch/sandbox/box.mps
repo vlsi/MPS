@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)">
+<model ref="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)" concise="false">
   <persistence version="9" />
   <debugInfo>
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />

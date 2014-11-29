@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -21,7 +20,7 @@ public class StaticMethodDeclarationScope extends BaseMethodsScope {
   }
   @Override
   public String getSignatureForOverriding(SNode method, SNode contextClassifier) {
-    return SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(method) + ")";
+    return SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(method) + ")";
   }
   @Nullable
   @Override

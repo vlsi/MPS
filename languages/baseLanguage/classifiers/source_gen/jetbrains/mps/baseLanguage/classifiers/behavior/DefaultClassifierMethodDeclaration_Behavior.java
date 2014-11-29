@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import javax.swing.Icon;
 import jetbrains.mps.baseLanguage.behavior.IVisible_Behavior;
 import java.util.List;
@@ -18,7 +17,7 @@ public class DefaultClassifierMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getVisiblity_1213877352965(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"));
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"));
   }
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;

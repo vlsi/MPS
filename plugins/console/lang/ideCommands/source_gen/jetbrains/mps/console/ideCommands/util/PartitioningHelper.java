@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.project.Project;
@@ -78,9 +77,9 @@ public class PartitioningHelper {
       console.addText(" [ " + (step + 1) + " ]\n");
       List<Pair<String, TemplateMappingConfiguration>> strings = GenerationPartitioningUtil.toStrings(mappingSet);
       for (Pair<String, TemplateMappingConfiguration> string : strings) {
-        SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(new UUID(-6492820313512655654l, -6146453626538471728l), 3894227536041114995l, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator")));
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-6492820313512655654l, -6146453626538471728l), 3894227536041114995l, 3894227536041893247l, "moduleId"), string.o2.getModel().getSModelReference().resolve(MPSModuleRepository.getInstance()).getModule().getModuleId().toString());
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250037290416l, 3894227536041201194l, "text"), string.o1);
+        SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator")));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"), string.o2.getModel().getSModelReference().resolve(MPSModuleRepository.getInstance()).getModule().getModuleId().toString());
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), string.o1);
         console.addText(" ");
         console.addNode(node);
         console.addText("\n");

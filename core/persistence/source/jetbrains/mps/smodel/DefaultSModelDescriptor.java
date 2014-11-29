@@ -79,7 +79,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     try {
       result = myPersistence.readModel(myHeader, state);
     } catch (ModelReadException e) {
-      LOG.warning(e.getMessage());
+      LOG.warning(String.format("Failed to load model %s: %s", getSource().getLocation(), e.toString()));
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       LazySModel newModel = new InvalidDefaultSModel(getReference(), e);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);

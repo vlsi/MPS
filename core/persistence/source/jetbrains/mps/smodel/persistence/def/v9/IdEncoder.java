@@ -45,6 +45,7 @@ import java.util.Arrays;
 public final class IdEncoder {
   // separator for import in serialized reference target
   private static final char REF_TARGET_IMPORT_SEPARATOR = ':';
+  private static final String DYNAMIC_REFERENCE_ID = "^";
 
   public IdEncoder() {
   }
@@ -58,7 +59,7 @@ public final class IdEncoder {
   }
 
   public String toText(SConceptId conceptId) {
-    return Long.toString(conceptId.getConceptId());
+    return Long.toString(conceptId.getIdValue());
   }
 
   public SConceptId parseConceptId(SLanguageId lang, String text) {
@@ -66,21 +67,21 @@ public final class IdEncoder {
   }
 
   public String toText(SPropertyId propertyId) {
-    return Long.toString(propertyId.getPropertyId());
+    return Long.toString(propertyId.getIdValue());
   }
   public SPropertyId parsePropertyId(SConceptId concept, String text) {
     return new SPropertyId(concept, Long.parseLong(text));
   }
 
   public String toText(SReferenceLinkId linkId) {
-    return Long.toString(linkId.getReferenceLinkId());
+    return Long.toString(linkId.getIdValue());
   }
   public SReferenceLinkId parseAssociation(SConceptId concept, String text) {
     return new SReferenceLinkId(concept, Long.parseLong(text));
   }
 
   public String toText(SContainmentLinkId linkId) {
-    return Long.toString(linkId.getContainmentLinkId());
+    return Long.toString(linkId.getIdValue());
   }
   public SContainmentLinkId parseAggregation(SConceptId concept, String text) {
     return new SContainmentLinkId(concept, Long.parseLong(text));
@@ -126,7 +127,7 @@ public final class IdEncoder {
       assert targetNodeId != null;
       target = toText(targetNodeId);
     } else {
-      target = StorageIndexHelper9.DYNAMIC_REFERENCE_ID;
+      target = DYNAMIC_REFERENCE_ID;
     }
     return target;
   }
@@ -152,7 +153,7 @@ public final class IdEncoder {
 
   @Nullable
   public SNodeId parseLocalNodeReference(String text) {
-    if (StorageIndexHelper9.DYNAMIC_REFERENCE_ID.equals(text)) {
+    if (DYNAMIC_REFERENCE_ID.equals(text)) {
       return null;
     }
     return parseNodeId(text);

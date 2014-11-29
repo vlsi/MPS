@@ -166,7 +166,7 @@ public class ModelLinkMap {
         element.setModelReference(newModel);
       }
     }
-    for (SModel.ImportElement element : ListSequence.fromList(myModel.getAdditionalModelVersions())) {
+    for (SModel.ImportElement element : ListSequence.fromList(myModel.getImplicitImportsSupport().getAdditionalModelVersions())) {
       if (model.equals(element.getModelReference())) {
         element.setModelReference(newModel);
       }
@@ -220,7 +220,7 @@ public class ModelLinkMap {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModel.ImportElement i : ListSequence.fromList(myModel.getAdditionalModelVersions())) {
+        for (SModel.ImportElement i : ListSequence.fromList(myModel.getImplicitImportsSupport().getAdditionalModelVersions())) {
           info.modelVersionRead(i);
         }
         for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {

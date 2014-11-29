@@ -4,7 +4,6 @@ package jetbrains.mps.testHybridEditor.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -15,13 +14,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class MetaBlock_Constraints extends BaseConstraintsDescriptor {
   public MetaBlock_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177973871304l));
+    super(MetaIdFactory.conceptId(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L));
   }
   public String getAlternativeIcon(SNode node) {
     SModule module = SNodeOperations.getModel(node).getModule();
     if (!(module instanceof AbstractModule)) {
       return null;
     }
-    return MacrosFactory.forModule(((AbstractModule) module)).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177973871304l, 9168054762589307856l, "iconPath")));
+    return MacrosFactory.forModule(((AbstractModule) module)).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x7f3b793b6d76c3d0L, "iconPath")));
   }
 }

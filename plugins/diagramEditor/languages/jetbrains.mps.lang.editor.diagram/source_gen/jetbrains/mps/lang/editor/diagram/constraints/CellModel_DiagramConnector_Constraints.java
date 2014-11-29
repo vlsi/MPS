@@ -4,10 +4,9 @@ package jetbrains.mps.lang.editor.diagram.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 
 public class CellModel_DiagramConnector_Constraints extends BaseConstraintsDescriptor {
   public CellModel_DiagramConnector_Constraints() {
-    super(MetaIdFactory.conceptId(new UUID(6991546026468590289l, -9160623158338601007l), 6382742553261733065l));
+    super(MetaIdFactory.conceptId(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x58940e88f3ef74c9L));
   }
 }

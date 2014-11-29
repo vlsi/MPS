@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
@@ -42,10 +41,10 @@ public class ChildSubstituteActionsUtil {
   public static SNode getRefinedChildConcept(SNode currentChild) {
     SNode childConcept = SNodeOperations.getConceptDeclaration(currentChild);
     SNode baseConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
-    if (SNodeOperations.isInstanceOf(childConcept, MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-      SNode concreteChildConcept = SNodeOperations.cast(((SNode) childConcept), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
-      while ((SLinkOperations.getTarget(concreteChildConcept, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends")) != null) && SLinkOperations.getTarget(concreteChildConcept, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends")) != baseConcept) {
-        concreteChildConcept = SLinkOperations.getTarget(concreteChildConcept, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
+    if (SNodeOperations.isInstanceOf(childConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+      SNode concreteChildConcept = SNodeOperations.cast(((SNode) childConcept), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+      while ((SLinkOperations.getTarget(concreteChildConcept, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) != null) && SLinkOperations.getTarget(concreteChildConcept, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) != baseConcept) {
+        concreteChildConcept = SLinkOperations.getTarget(concreteChildConcept, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
       }
       childConcept = concreteChildConcept;
     }
@@ -54,14 +53,14 @@ public class ChildSubstituteActionsUtil {
   public static List<SNode> getActionsBuilders(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     SNode link = null;
     if (childSetter instanceof DefaultChildNodeSetter) {
-      link = SNodeOperations.cast(((DefaultChildNodeSetter) childSetter).getLinkDeclaration(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+      link = SNodeOperations.cast(((DefaultChildNodeSetter) childSetter).getLinkDeclaration(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
     }
 
     List<SNode> allBuilders = new ArrayList<SNode>();
     List<Language> languages = SModelOperations.getLanguages(SNodeOperations.getModel(parentNode));
     boolean wrapped = !(childSetter instanceof DefaultChildNodeSetter);
     for (SNode actionsBuilder : ListSequence.fromList(getAllActionsBuilders(languages))) {
-      SNode applicableConcept = SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1112058088712l, "applicableConcept"));
+      SNode applicableConcept = SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x102ebd3cd08L, "applicableConcept"));
       if (applicableConcept == null) {
         continue;
       }
@@ -76,9 +75,9 @@ public class ChildSubstituteActionsUtil {
   public static boolean containsRemoveDefaults(List<SNode> builders) {
     return ListSequence.fromList(builders).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1177324142645l, "part"))).any(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x1121dfcc035L, "part"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode part) {
-            return SNodeOperations.isInstanceOf(part, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177614709184l, "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart"));
+            return SNodeOperations.isInstanceOf(part, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122f4e71c0L, "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart"));
           }
         });
       }
@@ -97,28 +96,28 @@ public class ChildSubstituteActionsUtil {
   public static List<SubstituteAction> applyActionFilter(SNode builder, List<SubstituteAction> actions, SNode parentNode, SNode currentChild, SNode childConcept, IOperationContext context) {
 
     // remove banned concepts 
-    Set<SNode> conceptsToRemove = SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1177324142645l, "part"))).where(new IWhereFilter<SNode>() {
+    Set<SNode> conceptsToRemove = SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x1121dfcc035L, "part"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177409831820l, "jetbrains.mps.lang.actions.structure.RemovePart")) && (SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177409831820l, "jetbrains.mps.lang.actions.structure.RemovePart")), MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177409831820l, 1177409838946l, "conceptToRemove")) != null);
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, "jetbrains.mps.lang.actions.structure.RemovePart")) && (SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, "jetbrains.mps.lang.actions.structure.RemovePart")), MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, 0x11223185f62L, "conceptToRemove")) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177409831820l, "jetbrains.mps.lang.actions.structure.RemovePart")), MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177409831820l, 1177409838946l, "conceptToRemove"));
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, "jetbrains.mps.lang.actions.structure.RemovePart")), MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, 0x11223185f62L, "conceptToRemove"));
       }
     }));
     if (SetSequence.fromSet(conceptsToRemove).isNotEmpty()) {
       for (Iterator<SubstituteAction> it = ListSequence.fromList(actions).iterator(); it.hasNext();) {
         SubstituteAction action = it.next();
-        if (SetSequence.fromSet(conceptsToRemove).contains(SNodeOperations.as(action.getOutputConcept(), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
+        if (SetSequence.fromSet(conceptsToRemove).contains(SNodeOperations.as(action.getOutputConcept(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
           it.remove();
         }
       }
     }
 
     // apply custom filters 
-    for (SNode removeByCondition : ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1177324142645l, "part"))).where(new IWhereFilter<SNode>() {
+    for (SNode removeByCondition : ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x1121dfcc035L, "part"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1177413882405l, "jetbrains.mps.lang.actions.structure.RemoveByConditionPart"));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11223561225L, "jetbrains.mps.lang.actions.structure.RemoveByConditionPart"));
       }
     })) {
       String methodName = "removeActionsByCondition_" + removeByCondition.getNodeId();
@@ -139,9 +138,9 @@ public class ChildSubstituteActionsUtil {
         continue;
       }
       SModel sModel = actionsModelDescr;
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(new UUID(-5842916035344972280l, -5840605745428443715l), 1112056943463l, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"))).translate(new ITranslator2<SNode, SNode>() {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"))).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
-          return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112056943463l, 1112058057696l, "actionsBuilder"));
+          return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, 0x102ebd353e0L, "actionsBuilder"));
         }
       }));
     }
@@ -149,7 +148,7 @@ public class ChildSubstituteActionsUtil {
   }
   private static boolean satisfiesPrecondition(SNode actionsBuilder, SNode parentNode, SNode concept, SNode link, SNode currentTarget, boolean wrapped, IOperationContext context) {
 
-    SNode precondition = SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1154465386371l, "precondition"));
+    SNode precondition = SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x10ccb7fcf83L, "precondition"));
     if (precondition != null) {
       String methodName = BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "call_getPreconditionQueryMethodName_1220278671791", new Object[]{});
       try {

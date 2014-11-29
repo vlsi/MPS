@@ -52,6 +52,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   /**
    * Migration to 3.0. Loads and returns model data.
+   * @deprecated use {@link SModelBase#getModelData()} or {@link #getSModel()}
    */
   @Deprecated
   public abstract jetbrains.mps.smodel.SModel getSModelInternal();
@@ -170,7 +171,9 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     }
   }
 
-  // likely has to return SModelData
+  /**
+   * Use {@link SModelBase#getModelData()} wherever possible
+   */
   public jetbrains.mps.smodel.SModel getSModel() {
     return getSModelInternal();
   }
@@ -213,11 +216,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   @Override
   public Map<SLanguage, Integer> importedLanguageIdsWithVersions() {
     return getSModelInternal().usedLanguagesWithVersions();
-  }
-
-  @Override
-  public Map<SLanguage, Integer> implicitLanguageIdsWithVersions() {
-    return getSModelInternal().implicitlyUsedLanguagesWithVersions();
   }
 
   @Override
@@ -272,12 +270,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final void calculateImplicitImports() {
-    getSModelInternal().calculateImplicitImports();
-  }
-
-  @Override
-  public void calculateImplicitLanguages() {
-    getSModelInternal().validateImplicitlyUsedLanguages();
+    getSModelInternal().getImplicitImportsSupport().calculateImplicitImports();
   }
 
   @Override
@@ -297,7 +290,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final List<ImportElement> getAdditionalModelVersions() {
-    return getSModelInternal().getAdditionalModelVersions();
+    return getSModelInternal().getImplicitImportsSupport().getAdditionalModelVersions();
   }
 
   @Override
