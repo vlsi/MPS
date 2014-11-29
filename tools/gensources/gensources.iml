@@ -431,7 +431,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/demo/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/demo/pluginSolution/classes_gen" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/migrationAssistant/solutions">
+    <content url="file://$MODULE_DIR$/../../plugins/migrationAssistant/solutions/test">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/migrationAssistant/solutions/test/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/migrationAssistant/solutions/test/classes_gen" />
     </content>
