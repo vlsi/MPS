@@ -24,6 +24,12 @@ public class Language extends LanguageRuntime {
   public String getNamespace() {
     return "jetbrains.mps.baseLanguage.javadoc";
   }
+
+  @Override
+  public int getVersion() {
+    return 1;
+  }
+
   public SLanguageId getId() {
     return new SLanguageId(UUID.fromString("f2801650-65d5-424e-bb1b-463a8781b786"));
   }

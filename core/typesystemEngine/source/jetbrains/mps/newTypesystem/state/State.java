@@ -376,7 +376,7 @@ public class State {
           SNode node = myNodeMaps.getNode(wCBlock.getArgument());
           if (node != null) {
             SConcept concept = node.getConcept();
-            boolean isRuntime = concept.equals(SConceptRepository.getInstance().getInstanceConcept("jetbrains.mps.lang.typesystem.RuntimeTypeVariable"));
+            boolean isRuntime = concept.equals(SConceptRepository.getInstance().getInstanceConcept("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
             if (!concept.isAbstract() && !isRuntime) {
               myTypeCheckingContext.reportWarning(node, "argument of WHEN CONCRETE block is never concrete",
                   wCBlock.getNodeModel(), wCBlock.getNodeId(), null, new NodeMessageTarget());

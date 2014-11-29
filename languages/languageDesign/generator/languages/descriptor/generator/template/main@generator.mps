@@ -64,6 +64,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -117,6 +118,7 @@
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
@@ -171,7 +173,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -533,6 +535,46 @@
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="50LvD1$UHtt" role="jymVt" />
+    <node concept="3clFb_" id="50LvD1$UT_j" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getVersion" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="50LvD1$UT_k" role="1B3o_S" />
+      <node concept="10Oyi0" id="50LvD1$V2u0" role="3clF45" />
+      <node concept="3clFbS" id="50LvD1$UT_n" role="3clF47">
+        <node concept="3clFbF" id="50LvD1$UT_q" role="3cqZAp">
+          <node concept="3cmrfG" id="50LvD1$V1ZS" role="3clFbG">
+            <property role="3cmrfH" value="0" />
+            <node concept="17Uvod" id="50LvD1$V208" role="lGtFl">
+              <property role="2qtEX9" value="value" />
+              <node concept="3zFVjK" id="50LvD1$V209" role="3zH0cK">
+                <node concept="3clFbS" id="50LvD1$V20a" role="2VODD2">
+                  <node concept="3clFbF" id="50LvD1$V4OO" role="3cqZAp">
+                    <node concept="2OqwBi" id="50LvD1$V6vL" role="3clFbG">
+                      <node concept="2OqwBi" id="50LvD1$V5gP" role="2Oq$k0">
+                        <node concept="30H73N" id="50LvD1$V4ON" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="50LvD1$V64R" role="2OqNvi">
+                          <ref role="3Tt5mk" to="yv2q:1uh_eNRS9kV" />
+                        </node>
+                      </node>
+                      <node concept="3TrcHB" id="50LvD1$V9Ci" role="2OqNvi">
+                        <ref role="3TsBF5" to="hypd:50LvD1$V79t" resolve="version" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="50LvD1$UT_o" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="50LvD1$UV9q" role="jymVt" />
     <node concept="3clFb_" id="5RJlpHdaf$O" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getId" />

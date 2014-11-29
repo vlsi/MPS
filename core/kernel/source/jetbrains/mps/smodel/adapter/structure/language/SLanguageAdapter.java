@@ -3,14 +3,16 @@ package jetbrains.mps.smodel.adapter.structure.language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -42,14 +44,16 @@ public abstract class SLanguageAdapter implements SLanguage {
   @Override
   public Iterable<SAbstractConcept> getConcepts() {
     LanguageRuntime runtime = getLanguageDescriptor();
-    if (runtime == null) {
-      return Collections.<SAbstractConcept>emptySet();
-    }
+    if (runtime == null) return Collections.<SAbstractConcept>emptySet();
 
-    // TODO rewrite using LanguageRuntime
+    StructureAspectDescriptor struc = getLanguageDescriptor().getAspect(StructureAspectDescriptor.class);
     ArrayList<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
-    for (SNode root : LanguageAspect.STRUCTURE.get(getSourceModule()).getRootNodes()) {
-      result.add(MetaAdapterByDeclaration.getConcept(((jetbrains.mps.smodel.SNode) root)));
+    for (ConceptDescriptor cd : ((BaseStructureAspectDescriptor) struc).getDescriptors()) {
+      if (cd.isInterfaceConcept()) {
+        result.add(new SInterfaceConceptAdapterById(cd.getId(), cd.getConceptFqName()));
+      } else {
+        result.add(new SConceptAdapterById(cd.getId(), cd.getConceptFqName()));
+      }
     }
     return result;
   }
@@ -73,7 +77,9 @@ public abstract class SLanguageAdapter implements SLanguage {
   }
 
   public int getLanguageVersion() {
-    return getSourceModule().getLanguageVersion();
+    LanguageRuntime languageDescriptor = getLanguageDescriptor();
+    if (languageDescriptor == null) return -1;
+    return languageDescriptor.getVersion();
   }
 
   @Override

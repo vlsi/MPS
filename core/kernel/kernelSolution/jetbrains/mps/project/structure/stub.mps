@@ -92,7 +92,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -529,6 +529,26 @@
               </node>
               <node concept="liA8E" id="5Vtmfoip9pf" role="2OqNvi">
                 <ref role="37wK5l" to="59et:~IFile.getPath():java.lang.String" resolve="getPath" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="50LvD1$VhxV" role="3cqZAp">
+          <node concept="37vLTI" id="50LvD1$VjQQ" role="3clFbG">
+            <node concept="2OqwBi" id="50LvD1$VoZk" role="37vLTx">
+              <node concept="37vLTw" id="50LvD1$VkNJ" role="2Oq$k0">
+                <ref role="3cqZAo" node="2n3WChpmw8Z" resolve="source" />
+              </node>
+              <node concept="liA8E" id="50LvD1$VpbA" role="2OqNvi">
+                <ref role="37wK5l" to="kqhl:~LanguageDescriptor.getVersion():int" resolve="getVersion" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="50LvD1$VivT" role="37vLTJ">
+              <node concept="37vLTw" id="50LvD1$VhxT" role="2Oq$k0">
+                <ref role="3cqZAo" node="2n3WChpmw8F" resolve="result" />
+              </node>
+              <node concept="3TrcHB" id="50LvD1$VjwD" role="2OqNvi">
+                <ref role="3TsBF5" to="hypd:50LvD1$V79t" resolve="version" />
               </node>
             </node>
           </node>
