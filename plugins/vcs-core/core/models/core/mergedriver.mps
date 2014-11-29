@@ -2832,24 +2832,23 @@
         </node>
       </node>
       <node concept="3clFbS" id="2TzypFyLJee" role="3clF47">
-        <node concept="3SKdUt" id="CoC$x5IPT9" role="3cqZAp">
-          <node concept="3SKdUq" id="CoC$x5ISrA" role="3SKWNk">
-            <property role="3SKdUp" value="workaround for MPS-20860 Can't merge my feature branch with the current state of MPS master branch" />
-          </node>
-        </node>
         <node concept="3clFbJ" id="CoC$x5ID_k" role="3cqZAp">
           <node concept="3clFbS" id="CoC$x5ID_n" role="3clFbx">
             <node concept="3SKdUt" id="CoC$x5IXe6" role="3cqZAp">
               <node concept="3SKdUq" id="CoC$x5IZcl" role="3SKWNk">
-                <property role="3SKdUp" value="always fail, so the merge will be done in full MPS" />
+                <property role="3SKdUp" value="fail, so the merge will be done in full MPS" />
               </node>
             </node>
             <node concept="3cpWs6" id="CoC$x5IGb5" role="3cqZAp">
               <node concept="10Nm6u" id="CoC$x5II$O" role="3cqZAk" />
             </node>
           </node>
-          <node concept="3clFbT" id="CoC$x5IDFc" role="3clFbw">
-            <property role="3clFbU" value="true" />
+          <node concept="2YIFZM" id="6Ro6jphLm1i" role="3clFbw">
+            <ref role="37wK5l" to="e2lb:~Boolean.getBoolean(java.lang.String):boolean" resolve="getBoolean" />
+            <ref role="1Pybhc" to="e2lb:~Boolean" resolve="Boolean" />
+            <node concept="Xl_RD" id="6Ro6jphLoaK" role="37wK5m">
+              <property role="Xl_RC" value="mps.mergedriver.model.fail" />
+            </node>
           </node>
         </node>
         <node concept="3clFbH" id="CoC$x5IL2w" role="3cqZAp" />
