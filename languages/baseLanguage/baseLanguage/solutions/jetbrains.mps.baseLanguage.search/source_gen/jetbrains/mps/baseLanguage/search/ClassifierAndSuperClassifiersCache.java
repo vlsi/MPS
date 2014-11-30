@@ -272,6 +272,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       List<SNode> result = new ArrayList<SNode>();
       for (List<SNode> list : MapSequence.fromMap(this.myMethodsByName).values()) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(list));
+
       }
       return result;
     }
@@ -296,9 +297,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
       for (SNode classifier : classifiers) {
         ListSequence.fromList(allMethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})));
-        if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-          ListSequence.fromList(allMethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, "jetbrains.mps.baseLanguage.structure.ClassConcept"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticMethods_5292274854859435867", new Object[]{})));
-        }
+        ListSequence.fromList(allMethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_staticMethods_8353022880012524412", new Object[]{})));
       }
       this.myMethodsByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
       this.myOverriddenMethods = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
