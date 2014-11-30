@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4a0wlb1ryiu75ciyjzfhwipdstj969b">
+<dependencies version="2" modelHash="6k1d038icasdeu0ddfe4d1uqgndnb0m">
   <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="aiklw6b22t1otjgxi1irwae1mvf9rao" />
   <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)" hash="4wt5t45o0bnk1iamfvha76r6l7x61vp" />
@@ -56,7 +56,7 @@
   <dep model="r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)" hash="deizwxnga37avgcupocm1c3rnaltuj4" />
   <dep model="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)" hash="cga1znmq2nay4fa8tmtx6tldkqf92g2" />
   <dep model="r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)" hash="8jginqon4fh71c56c1cbc0iwvrqb6l4" />
-  <dep model="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" hash="-bqat77rekoowjctk453vgtqv59i27t3" />
+  <dep model="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" hash="av0suy6vj03gck9x67yvujr473564id" />
   <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)" hash="-874r9rehc857i8550tanfj86f8dmxs8" />
   <dep model="r:e318478c-edb7-4caf-bafe-2e5906944dde(jetbrains.mps.baseLanguage.math.tests)" hash="2emdvx1echqfux4bi0gikuna9dp1n3x" />
   <dep model="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)" hash="b6hbfb9h0wacukk8ak4n8xlzd5w97fx" />
@@ -282,7 +282,7 @@
     <dep model="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" />
     <file name="TestModule_jetbrains_mps_ide_vcs_test.java" />
   </source>
-  <source id="4684187485931196474" name="jetbrains.mps.migration.test" hash="3t2mpplwtwrw5n2ifgqnn63pdgd5gtz">
+  <source id="4684187485931196474" name="jetbrains.mps.migration.test" hash="-6lejb81dsglzbb91i6mfi228q3gnj5l">
     <dep model="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" />
     <file name="TestModule_jetbrains_mps_migration_test.java" />
   </source>
