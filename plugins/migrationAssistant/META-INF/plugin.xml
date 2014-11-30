@@ -30,7 +30,6 @@
     </group>
   </actions>
 
-  <depends>jetbrains.mps.ide.mpsmigration</depends>
   <project-components>
     <component>
       <implementation-class>jetbrains.mps.ide.migration.StartupMigrationExecutor</implementation-class>
