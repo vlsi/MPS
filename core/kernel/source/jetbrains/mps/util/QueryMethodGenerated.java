@@ -120,8 +120,7 @@ public class QueryMethodGenerated implements CoreComponent {
     Class queriesClass = null;
     try {
       queriesClass = ((ReloadableModule) module).getClass(className);
-    } catch (ModuleIsNotLoadableException i) {
-
+    } catch (ModuleIsNotLoadableException ignored) {
     }
     if (queriesClass == null) {
       reportErrorWhileClassLoading(className, suppressErrorLogging, String.format("couldn't find class '%s' for model '%s' : TRY TO GENERATE", className, sm));
