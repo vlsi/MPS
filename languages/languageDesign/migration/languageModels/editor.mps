@@ -270,9 +270,6 @@
       <node concept="3F1sOY" id="4SSaNAQkMKe" role="3EZMnx">
         <ref role="1NtTu8" to="53vh:4SSaNAQkDVK" />
       </node>
-      <node concept="3F0ifn" id="4SSaNAQmQdl" role="3EZMnx">
-        <property role="3F0ifm" value=";" />
-      </node>
       <node concept="2iRfu4" id="4SSaNAQkMJP" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="4SSaNAQkMKk" role="6VMZX">
