@@ -62,7 +62,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     if (parent == null) {
       return null;
     }
-    SNode hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", null);
+    SNode hole = SModelUtil_new.instantiateConceptDeclaration(jetbrains.mps.smodel.SNodeUtil.conceptName_BaseConcept, null, true);
     SNodeUtil.replaceWithAnother(nodeToEquate, hole);
     InequalitySystem inequalitiesForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, false);
     return inequalitiesForHole;

@@ -15,17 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.classloading.MPSClassesListener;
-import jetbrains.mps.classloading.MPSClassesListenerAdapter;
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.impl.StructureAspectChangeTracker;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
@@ -34,13 +30,14 @@ import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
-import java.util.Set;
 
 public class SModelUtil_new {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelUtil_new.class));
@@ -57,14 +54,6 @@ public class SModelUtil_new {
     return new ConceptAndSuperConceptsScope(topConcept).getConcepts();
   }
 
-  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(String conceptFQName, SModel model) {
-    return instantiateConceptDeclaration(conceptFQName, model, true);
-  }
-
-  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model) {
-    return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model);
-  }
-
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model, boolean fullNodeStructure) {
     return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, fullNodeStructure);
   }
@@ -74,44 +63,49 @@ public class SModelUtil_new {
     return instantiateConceptDeclaration(conceptFqName, model, null, fullNodeStructure);
   }
 
+  @Deprecated
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId,
       boolean fullNodeStructure) {
-    boolean isNotProjectModel = model==null || !TemporaryModels.isTemporary(model);
+    return instantiateConceptDeclaration(new SConceptAdapterByName(conceptFqName), model, nodeId, fullNodeStructure);
+  }
+
+  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull SAbstractConcept concept, @Nullable SModel model, SNodeId nodeId,
+      boolean fullNodeStructure) {
+    boolean isNotProjectModel = model == null || !TemporaryModels.isTemporary(model);
     if (isNotProjectModel) {
-      String fqName = ModelConstraints.getDefaultConcreteConceptFqName(conceptFqName);
-      if (fqName != null) {
-        conceptFqName = fqName;
+      SConcept concreteConcept = ModelConstraints.getDefaultConcreteConcept(concept);
+      if (concreteConcept != null) {
+        concept = concreteConcept;
       }
     }
 
-    jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(conceptFqName);
+    if (!(concept instanceof SConcept)){
+      concept = MetaAdapterByDeclaration.asInstanceConcept(concept);
+    }
+
+    jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(((SConcept) concept));
     if (nodeId != null) {
       newNode.setId(nodeId);
     }
     // create the node structure
     if (fullNodeStructure &&
-      isNotProjectModel) { //project models can be created and used
+        isNotProjectModel) { //project models can be created and used
       //before project language is loaded
-      SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName);
-      createNodeStructure(conceptDeclaration, newNode, model);
+      createNodeStructure(((SConcept) concept), newNode, model);
     }
     return newNode;
   }
 
-  private static void createNodeStructure(SNode nodeConcept,
-                                          SNode newNode, SModel model) {
-    for (SNode linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
-      String role = SModelUtil.getGenuineLinkRole(linkDeclaration);
-      SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-      if (!SNodeUtil.getLinkDeclaration_IsReference(genuineLinkDeclaration) &&
-        SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(genuineLinkDeclaration)) {
+  private static void createNodeStructure(SConcept concept,
+      SNode newNode, SModel model) {
+    for (SContainmentLink linkDeclaration : concept.getContainmentLinks()) {
+      if (linkDeclaration.isOptional()) continue;
 
-        SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-        LOG.assertLog(targetConcept != null, "link target is null");
-        if (!newNode.getChildren(role).iterator().hasNext()) {
-          SNode childNode = instantiateConceptDeclaration(targetConcept, model);
-          newNode.addChild(role, childNode);
-        }
+      SAbstractConcept target = linkDeclaration.getTargetConcept();
+      LOG.assertLog(target != null, "link target is null");
+      if (!newNode.getChildren(linkDeclaration).iterator().hasNext()) {
+        SNode childNode = instantiateConceptDeclaration(target, model, null, true);
+        newNode.addChild(linkDeclaration, childNode);
       }
     }
   }
@@ -120,7 +114,8 @@ public class SModelUtil_new {
     SNode conceptDeclaration = ((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode();
     SNode linkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(conceptDeclaration, role);
     if (linkDeclaration == null) {
-      LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + SNodeOperations.getDebugText(conceptDeclaration), sourceNode);
+      LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + SNodeOperations.getDebugText(conceptDeclaration),
+          sourceNode);
       return false;
     }
     return SModelUtil.isAcceptableTarget(linkDeclaration, targetNode);

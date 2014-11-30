@@ -33,7 +33,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
   public SConceptAdapterByName(@NotNull String fqName) {
-    super(fqName);
+     super(fqName);
   }
 
   @Override

@@ -82,7 +82,7 @@ public class ExportsSessionContext {
       myExportsModel = myExportsVault.newExportsModel(myContext.getOriginalInputModel());
     }
     for (SNode v : values) {
-      SNode keeper = SModelUtil_new.instantiateConceptDeclaration(keeperConcept, null);
+      SNode keeper = SModelUtil_new.instantiateConceptDeclaration(keeperConcept, null, true);
       ExportLabelContext ctx = new ExportLabelContextImpl(templateContext.getInput(), v, keeper);
       invokeExportFunction(exportLabel.getModel(), functionName, ctx);
       SModel outputModel = v.getModel() != null ? v.getModel() : templateContext.getEnvironment().getOutputModel();

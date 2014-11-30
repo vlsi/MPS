@@ -880,22 +880,25 @@
                 <node concept="3uibUv" id="1Z_xaSi2jXk" role="1tU5fm">
                   <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
                 </node>
-                <node concept="2YIFZM" id="1Z_xaSi2jXl" role="33vP2m">
-                  <ref role="37wK5l" to="cu2c:~SModelUtil_new.instantiateConceptDeclaration(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.SNode" resolve="instantiateConceptDeclaration" />
+                <node concept="2YIFZM" id="4PZEGlYUqWZ" role="33vP2m">
+                  <ref role="37wK5l" to="cu2c:~SModelUtil_new.instantiateConceptDeclaration(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SModel,boolean):jetbrains.mps.smodel.SNode" resolve="instantiateConceptDeclaration" />
                   <ref role="1Pybhc" to="cu2c:~SModelUtil_new" resolve="SModelUtil_new" />
-                  <node concept="2OqwBi" id="1Z_xaSi2jXm" role="37wK5m">
-                    <node concept="37vLTw" id="2BHiRxeudgL" role="2Oq$k0">
+                  <node concept="2OqwBi" id="4PZEGlYUqX0" role="37wK5m">
+                    <node concept="37vLTw" id="4PZEGlYUqX1" role="2Oq$k0">
                       <ref role="3cqZAo" node="1Z_xaSi0xnZ" resolve="myLink" />
                     </node>
-                    <node concept="3TrEf2" id="1Z_xaSi2jXo" role="2OqNvi">
+                    <node concept="3TrEf2" id="4PZEGlYUqX2" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpce:fA0lvVK" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="1Z_xaSi2jXp" role="37wK5m">
-                    <node concept="37vLTw" id="2BHiRxeufOU" role="2Oq$k0">
+                  <node concept="2OqwBi" id="4PZEGlYUqX3" role="37wK5m">
+                    <node concept="37vLTw" id="4PZEGlYUqX4" role="2Oq$k0">
                       <ref role="3cqZAo" node="1Z_xaSi0xnW" resolve="mySource" />
                     </node>
-                    <node concept="I4A8Y" id="1Z_xaSi2jXr" role="2OqNvi" />
+                    <node concept="I4A8Y" id="4PZEGlYUqX5" role="2OqNvi" />
+                  </node>
+                  <node concept="3clFbT" id="4PZEGlYUruv" role="37wK5m">
+                    <property role="3clFbU" value="true" />
                   </node>
                 </node>
               </node>
