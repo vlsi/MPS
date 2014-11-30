@@ -7,6 +7,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root nodeRef="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)/5467862202907103055">
     <file name="Migrations_Test.java">
       <node id="650079422456175097" at="39,51,40,0" concept="6" />
@@ -145,6 +146,23 @@
       <unit id="650079422456601073" at="102,62,118,7" name="jetbrains.mps.migration.test.tests.Migrations_Test$2" />
       <unit id="6393689836352689168" at="80,0,121,0" name="jetbrains.mps.migration.test.tests.Migrations_Test$MockModule" />
       <unit id="5467862202907103055" at="38,0,138,0" name="jetbrains.mps.migration.test.tests.Migrations_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)/8150591076113040395">
+    <file name="MigrationAssistant_Test.java">
+      <node id="8150591076113041475" at="15,0,16,0" concept="7" trace="MODULES_DIR" />
+      <node id="8150591076113148069" at="16,0,17,0" concept="2" trace="project" />
+      <node id="8150591076113170878" at="17,44,18,121" concept="1" />
+      <node id="8150591076113041932" at="20,23,21,124" concept="1" />
+      <node id="8150591076113041939" at="21,124,22,81" concept="1" />
+      <node id="8150591076113152345" at="22,81,23,57" concept="1" />
+      <node id="8150591076113153069" at="17,0,20,0" concept="3" trace="test_test#()V" />
+      <node id="8150591076113040395" at="20,0,25,0" concept="3" trace="setUp#()V" />
+      <scope id="8150591076113153074" at="17,44,18,121" />
+      <scope id="8150591076113153069" at="17,0,20,0" />
+      <scope id="8150591076113041524" at="20,23,23,57" />
+      <scope id="8150591076113040395" at="20,0,25,0" />
+      <unit id="8150591076113040395" at="14,0,26,0" name="jetbrains.mps.migration.test.tests.MigrationAssistant_Test" />
     </file>
   </root>
 </debug-info>
