@@ -36,7 +36,7 @@ public class StartupMigrationExecutor extends AbstractProjectComponent implement
         if (!(finished)) {
           return;
         }
-        if (!(wizard.isFinishSuccessful())) {
+        if (!(wizard.isFinishSuccessfull())) {
           return;
         }
         ModelAccess.instance().runWriteAction(new Runnable() {
