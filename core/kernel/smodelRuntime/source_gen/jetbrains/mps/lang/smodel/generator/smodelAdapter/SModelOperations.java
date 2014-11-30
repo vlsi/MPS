@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.annotation.ToRemove;
 import java.util.Collections;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.IterableUtil;
@@ -19,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -56,11 +56,6 @@ public class SModelOperations {
       list.add(node);
     }
     return list;
-  }
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static List<SNode> getRoots(SModel model, final String conceptFqName) {
-    return roots(model, SNodeOperations.stringToConcept(conceptFqName));
   }
   public static List<SNode> rootsIncludingImported(SModel model, SAbstractConcept concept) {
     if (model == null) {
@@ -175,7 +170,7 @@ public class SModelOperations {
       SNode l = ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, "jetbrains.mps.lang.project.structure.Language"))).first();
       return (l == null ? null : ListSequence.fromList(SLinkOperations.getChildren(l, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5869770da61dfe37L, "generator"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_kkj9n5_a0a0a0a0a0a4a1a21(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe22L, "uuid")), module.getModuleReference().getModuleId().toString());
+          return eq_kkj9n5_a0a0a0a0a0a4a1a11(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe22L, "uuid")), module.getModuleReference().getModuleId().toString());
         }
       }));
     } else {
@@ -183,7 +178,7 @@ public class SModelOperations {
       return (m == null ? null : ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, "jetbrains.mps.lang.project.structure.Module"))).first());
     }
   }
-  private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a21(Object a, Object b) {
+  private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a11(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

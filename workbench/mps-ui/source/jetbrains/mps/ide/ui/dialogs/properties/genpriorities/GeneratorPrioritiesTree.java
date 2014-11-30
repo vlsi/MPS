@@ -23,6 +23,7 @@ import com.intellij.ui.ColoredSideBorder;
 import com.intellij.ui.ColoredTreeCellRenderer;
 import com.intellij.ui.JBColor;
 import com.intellij.ui.LayeredIcon;
+import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.Nodes.Models;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -109,7 +110,7 @@ public class GeneratorPrioritiesTree {
       String modelName = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(templateModel.getModelName()));
       CheckedTreeNodeEx templateNode = new CheckedTreeNodeEx(templateModel.getReference(), modelName, Models.TemplatesModel);
       generatorNode.add(templateNode);
-      for (SNode mapping : SModelOperations.getRoots(templateModel, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
+      for (SNode mapping : SModelOperations.roots(templateModel, RuleUtil.sconcept_MappingConfiguration)) {
         CheckedTreeNodeEx mappingNode = new CheckedTreeNodeEx(mapping.getReference(), mapping.getName(), Nodes.MappingConfig);
         templateNode.add(mappingNode);
       }

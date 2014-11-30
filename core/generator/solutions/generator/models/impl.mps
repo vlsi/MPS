@@ -43,6 +43,9 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
+      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
+        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
+      </concept>
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
@@ -78,8 +81,8 @@
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
         <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
       </concept>
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
@@ -1710,6 +1713,17 @@
       <node concept="17QB3L" id="6b_0Q3U$4KR" role="1tU5fm" />
       <node concept="3nh3qo" id="6b_0Q3U$4KU" role="33vP2m">
         <ref role="3nh3qp" to="tpf8:fWbUwhP" resolve="MappingConfiguration" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="9AzU_NObZH" role="jymVt">
+      <property role="TrG5h" value="sconcept_MappingConfiguration" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="9AzU_NObZI" role="1B3o_S" />
+      <node concept="3uibUv" id="9AzU_NOfGe" role="1tU5fm">
+        <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
+      </node>
+      <node concept="35c_gC" id="9AzU_NOqI1" role="33vP2m">
+        <ref role="35c_gD" to="tpf8:fWbUwhP" resolve="MappingConfiguration" />
       </node>
     </node>
     <node concept="Wx3nA" id="1mY1T$jzO_y" role="jymVt">
