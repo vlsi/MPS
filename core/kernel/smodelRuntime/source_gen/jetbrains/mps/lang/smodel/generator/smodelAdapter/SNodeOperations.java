@@ -495,7 +495,8 @@ public class SNodeOperations {
       return null;
     }
     SNode parent = node.getParent();
-    SNode newChild = SModelOperations.createNewNode(node.getModel(), conceptFQName);
+    SModel model = node.getModel();
+    SNode newChild = SModelOperations.createNewNode(model, null, conceptFQName);
     if (newChild == null) {
       return null;
     }
@@ -531,7 +532,8 @@ public class SNodeOperations {
     if (parent == null) {
       return null;
     }
-    SNode newChild = SModelOperations.createNewNode(node.getModel(), conceptFqName);
+    SModel model = node.getModel();
+    SNode newChild = SModelOperations.createNewNode(model, null, conceptFqName);
     if (newChild == null) {
       return null;
     }
@@ -598,7 +600,7 @@ public class SNodeOperations {
       return null;
     }
     SModel model = oldChild.getModel();
-    SNode newChild = SModelOperations.createNewNode(model, conceptFqName);
+    SNode newChild = SModelOperations.createNewNode(model, null, conceptFqName);
     if (newChild == null) {
       return null;
     }

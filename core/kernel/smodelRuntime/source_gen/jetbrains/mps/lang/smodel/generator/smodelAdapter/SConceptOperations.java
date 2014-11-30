@@ -183,13 +183,15 @@ public final class SConceptOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static SNode createNewNode(String conceptFqName) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName);
+    SModel model = null;
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(model, null, conceptFqName);
   }
   public static SNode createNewNode(SConcept concept) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, null, concept);
   }
   @Deprecated
   public static jetbrains.mps.smodel.SNode createNewNode(String conceptFqName, SNode prototypeNode) {
-    return ((jetbrains.mps.smodel.SNode) jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName));
+    SModel model = null;
+    return ((jetbrains.mps.smodel.SNode) jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(model, null, conceptFqName));
   }
 }

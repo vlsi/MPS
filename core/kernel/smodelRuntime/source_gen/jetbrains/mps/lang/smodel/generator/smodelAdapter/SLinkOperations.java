@@ -12,6 +12,7 @@ import jetbrains.mps.util.SNodeOperations;
 import java.util.Iterator;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -126,7 +127,8 @@ public class SLinkOperations {
   @ToRemove(version = 3.2)
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
-      SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
+      SModel model = node.getModel();
+      SNode newChild = SModelOperations.createNewNode(model, null, childConceptFQName);
       SLinkOperations.setTarget(node, role, newChild, true);
       return newChild;
     }
@@ -158,7 +160,8 @@ public class SLinkOperations {
   @ToRemove(version = 3.2)
   public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
-      SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
+      SModel model = node.getModel();
+      SNode newChild = SModelOperations.createNewNode(model, null, childConceptFQName);
       node.addChild(role, newChild);
       return newChild;
     }

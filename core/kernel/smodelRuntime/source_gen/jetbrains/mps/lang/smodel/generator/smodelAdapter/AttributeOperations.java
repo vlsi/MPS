@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 
 public class AttributeOperations {
@@ -68,10 +69,12 @@ public class AttributeOperations {
     return ((node == null) ? null : new AttributeOperations.AttributeList(node, descriptor));
   }
   public static SNode createAndSetAttrbiute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
-    return setAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node), newConceptFqname));
+    SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
+    return setAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(model, null, newConceptFqname));
   }
   public static SNode createAndAddAttribute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
-    return addAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node), newConceptFqname));
+    SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
+    return addAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(model, null, newConceptFqname));
   }
   public static SNode getLinkDeclaration(SNode attribute) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelSearchUtil.findLinkDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(attribute)), getLinkRole(attribute)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
