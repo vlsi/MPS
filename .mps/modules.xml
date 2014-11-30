@@ -197,7 +197,6 @@
       <modulePath path="$PROJECT_DIR$/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/jetpad/solutions/jetbrains.jetpad/jetbrains.jetpad.msd" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/solutions/component/jetbrains.mps.migration.component.msd" folder="platform.migration" />
-      <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/solutions/test/jetbrains.mps.migration.test.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/platform/jetbrains.mps.ide.modelchecker.platform.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.mps.tests/jetbrains.mps.build.mps.tests.mpl" folder="platform.build" />
@@ -326,6 +325,7 @@
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" folder="samples.persistence" />
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence/jetbrains.mps.samples.xmlPersistence.msd" folder="samples.persistence" />
       <modulePath path="$PROJECT_DIR$/testbench/ideatestsolutions/ide.vcs.test/jetbrains.mps.ide.vcs.test.msd" folder="platform.vcs" />
+      <modulePath path="$PROJECT_DIR$/testbench/ideatestsolutions/migration.test/jetbrains.mps.migration.test.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/jetbrains.mps.testbench.suite.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/solutions/pluginSolution/jetbrains.mps.testbench.suite.pluginSolution.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/miscTests/solutions/jetbrains.mps.refactoring.tests.msd" folder="tests" />
