@@ -14,7 +14,6 @@ import java.util.Collections;
 import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 import com.intellij.ui.components.JBScrollPane;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;

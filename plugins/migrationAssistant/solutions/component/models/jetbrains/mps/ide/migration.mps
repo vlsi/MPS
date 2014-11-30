@@ -1415,6 +1415,21 @@
       <node concept="3cqZAl" id="4D3Y1hNyJna" role="3clF45" />
       <node concept="3Tm1VV" id="4D3Y1hNyJnb" role="1B3o_S" />
       <node concept="3clFbS" id="4D3Y1hNyJnf" role="3clF47">
+        <node concept="3clFbJ" id="2Bgy8EwliLv" role="3cqZAp">
+          <node concept="3fqX7Q" id="2Bgy8EwliLw" role="3clFbw">
+            <node concept="2OqwBi" id="2Bgy8EwliLC" role="3fr31v">
+              <node concept="37vLTw" id="2Bgy8EwliLB" role="2Oq$k0">
+                <ref role="3cqZAo" node="4D3Y1hNyY1x" resolve="myMigrationManager" />
+              </node>
+              <node concept="liA8E" id="2Bgy8EwliLD" role="2OqNvi">
+                <ref role="37wK5l" node="5SsFeroaac6" resolve="isMigrationRequired" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="2Bgy8EwliL$" role="3clFbx">
+            <node concept="3cpWs6" id="2Bgy8EwliL_" role="3cqZAp" />
+          </node>
+        </node>
         <node concept="3clFbF" id="4D3Y1hNyYck" role="3cqZAp">
           <node concept="2OqwBi" id="4D3Y1hNzd3p" role="3clFbG">
             <node concept="2OqwBi" id="4D3Y1hNzcUs" role="2Oq$k0">
@@ -1448,9 +1463,44 @@
       <node concept="3Tm1VV" id="4D3Y1hNyKaQ" role="1B3o_S" />
       <node concept="3cqZAl" id="4D3Y1hNyKaS" role="3clF45" />
       <node concept="3clFbS" id="4D3Y1hNyKaT" role="3clF47">
-        <node concept="3clFbF" id="4D3Y1hNyLAR" role="3cqZAp">
-          <node concept="1rXfSq" id="4D3Y1hNyLAQ" role="3clFbG">
-            <ref role="37wK5l" node="4D3Y1hNyJn9" resolve="executeWizard" />
+        <node concept="3clFbF" id="2Bgy8EwliYk" role="3cqZAp">
+          <node concept="2OqwBi" id="2Bgy8EwliYl" role="3clFbG">
+            <node concept="2YIFZM" id="2Bgy8EwliY$" role="2Oq$k0">
+              <ref role="1Pybhc" to="xf8t:~StartupManager" resolve="StartupManager" />
+              <ref role="37wK5l" to="xf8t:~StartupManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.startup.StartupManager" resolve="getInstance" />
+              <node concept="37vLTw" id="2Bgy8EwliYn" role="37wK5m">
+                <ref role="3cqZAo" to="iiw6:~AbstractProjectComponent.myProject" resolve="myProject" />
+              </node>
+            </node>
+            <node concept="liA8E" id="2Bgy8EwliYo" role="2OqNvi">
+              <ref role="37wK5l" to="xf8t:~StartupManager.registerPostStartupActivity(java.lang.Runnable):void" resolve="registerPostStartupActivity" />
+              <node concept="2ShNRf" id="2Bgy8EwliYp" role="37wK5m">
+                <node concept="YeOm9" id="2Bgy8EwliYq" role="2ShVmc">
+                  <node concept="1Y3b0j" id="2Bgy8EwliYr" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <property role="1sVAO0" value="false" />
+                    <property role="1EXbeo" value="false" />
+                    <ref role="1Y3XeK" to="e2lb:~Runnable" resolve="Runnable" />
+                    <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                    <node concept="3Tm1VV" id="2Bgy8EwliYs" role="1B3o_S" />
+                    <node concept="3clFb_" id="2Bgy8EwliYt" role="jymVt">
+                      <property role="TrG5h" value="run" />
+                      <property role="DiZV1" value="false" />
+                      <property role="od$2w" value="false" />
+                      <node concept="3clFbS" id="2Bgy8EwliYu" role="3clF47">
+                        <node concept="3clFbF" id="2Bgy8EwliYv" role="3cqZAp">
+                          <node concept="1rXfSq" id="2Bgy8EwliYw" role="3clFbG">
+                            <ref role="37wK5l" node="4D3Y1hNyJn9" resolve="executeWizard" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3Tm1VV" id="2Bgy8EwliYx" role="1B3o_S" />
+                      <node concept="3cqZAl" id="2Bgy8EwliYy" role="3clF45" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

@@ -4,10 +4,8 @@ package jetbrains.mps.ide.migration;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
-
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.startup.StartupManager;
 
 public class HeadlessMigrationExecutor extends AbstractProjectComponent implements StartupMigrationExecutorI {
   private MigrationManager myMigrationManager;
