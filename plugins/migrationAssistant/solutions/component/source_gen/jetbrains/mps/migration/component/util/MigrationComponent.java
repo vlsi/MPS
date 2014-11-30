@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.RuntimeFlags;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -328,6 +327,9 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
               });
               return res.value;
             }
+          };
+        } else {
+          result.value = new MigrationManager.Finished() {
           };
         }
       }
