@@ -96,4 +96,7 @@ public class JpsLibSolution extends Solution {
     return path;
   }
 
+  public String toString() {
+    return getModuleName() + " [ jps_lib_solution]";
+  }
 }
