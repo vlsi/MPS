@@ -13,21 +13,24 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptMigratingConcept = new ConceptDescriptorBuilder("updatedLanguage.structure.MigratingConcept", MetaIdFactory.conceptId(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ImplementationPart").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(297352798234498958L, "value"), new ConceptDescriptorBuilder.Prop(297352798234520719L, "newvalue")).properties("value", "newvalue").create();
+  /*package*/ final ConceptDescriptor myConceptRootConcept = new ConceptDescriptorBuilder("updatedLanguage.structure.RootConcept", MetaIdFactory.conceptId(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x74e74ebb927d8fe9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(8423788195543476700L, "child", MetaIdFactory.conceptId(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L), false, false, false)).children(new String[]{"child"}, new boolean[]{false}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptMigratingConcept);
+    return Arrays.asList(myConceptMigratingConcept, myConceptRootConcept);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
       case 0:
         return myConceptMigratingConcept;
+      case 1:
+        return myConceptRootConcept;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"updatedLanguage.structure.MigratingConcept"};
+  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"updatedLanguage.structure.MigratingConcept", "updatedLanguage.structure.RootConcept"};
 }
