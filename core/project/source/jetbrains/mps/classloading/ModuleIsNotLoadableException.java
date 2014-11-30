@@ -18,9 +18,16 @@ package jetbrains.mps.classloading;
 import org.jetbrains.mps.openapi.module.SModule;
 
 /**
- * Is thrown when a module does not have a suitable facet (or does not have solution kind)
+ * Internal MPS exception which is thrown specifically from the MPS class loading system.
+ * It is thrown when a module does not have a suitable facet (or does not have a correct solution kind).
+ * It should be processed by clients of
+ * {@link jetbrains.mps.module.ReloadableModule#getClass()}
+ * {@link jetbrains.mps.module.ReloadableModule#getOwnClass(String)}
+ * as well as
+ * {@link jetbrains.mps.classloading.ClassLoaderManager#getClass}
+ * {@link jetbrains.mps.classloading.ClassLoaderManager#getOwnClass}
  */
-public class ModuleIsNotLoadableException extends IllegalStateException {
+public class ModuleIsNotLoadableException extends ClassNotFoundException {
   private final SModule myModule;
 
   public ModuleIsNotLoadableException(SModule module, String message) {

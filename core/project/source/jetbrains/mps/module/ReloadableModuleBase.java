@@ -17,6 +17,7 @@ package jetbrains.mps.module;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleClassLoader;
+import jetbrains.mps.classloading.ModuleClassNotFoundException;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.InternUtil;
@@ -54,7 +55,7 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   }
 
   @Nullable
-  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException, ModuleIsNotLoadableException {
+  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException {
     ClassLoader classLoader = getClassLoader();
     if (classLoader == null) return null;
     String internClassName = InternUtil.intern(classFqName);

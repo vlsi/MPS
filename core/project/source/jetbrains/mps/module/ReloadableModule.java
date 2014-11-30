@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.module;
 
+import jetbrains.mps.classloading.ModuleClassNotFoundException;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,20 +36,28 @@ public interface ReloadableModule {
   /**
    * @return a class which can be obtained by calling #getclass from
    * {@link #getClassLoader()} method.
+   * a ModuleClassLoader. ModuleClassLoader's #loadClass method yields some additional information
+   * about the reasons of not-found-class.
+   * Clients of this API are supposed to process it on their own behalf.
+   *
+   * @see jetbrains.mps.classloading.ModuleClassNotFoundException
+   * @see jetbrains.mps.classloading.ModuleIsNotLoadableException
    */
   @Nullable
-  public Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException;
+  public Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
 
   /**
    * @return a class which can be obtained by calling #getClass from
    * {@link #getClassLoader()} method in the case when the defining class loader is
    * a ModuleClassLoader.
    *
+   * @see jetbrains.mps.classloading.ModuleClassNotFoundException
+   * @see jetbrains.mps.classloading.ModuleIsNotLoadableException
    * @see jetbrains.mps.classloading.ModuleClassLoader
    * @see jetbrains.mps.classloading.ModuleClassLoader#loadOwnClass(String)
    */
   @Nullable
-  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException;
+  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
 
   /**
    * @return the class loader associated with the module.
