@@ -56,8 +56,6 @@ public class MigrationsProgressStep extends MigrationStep {
   }
 
   private void doRun() {
-    // if this assert fails, following invokeLater()s is not needed 
-    assert !(SwingUtilities.isEventDispatchThread());
     PersistenceRegistry.getInstance().disableFastFindUsages();
 
     while (executeSingleStep(myManager.nextProjectStep())) {
@@ -69,7 +67,7 @@ public class MigrationsProgressStep extends MigrationStep {
     }
 
     addElementToMigrationList("Saving changed models... Please wait.");
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         MPSModuleRepository.getInstance().saveAll();
       }
@@ -105,7 +103,6 @@ public class MigrationsProgressStep extends MigrationStep {
       addElementToMigrationList(step);
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
-
           mySuccess = ((MigrationManager.Step) result).execute();
         }
       });
