@@ -38,13 +38,13 @@ public interface SAbstractConcept {
   /**
    * Returns all the references this concept has, including inherited
    */
-  Iterable<SReferenceLink> getReferences();
+  Iterable<SReferenceLink> getReferenceLinks();
 
   /**
    * Returns all the links this concept has, including inherited
    * There's no "specialized links" at the compiled language level, all links are "original"
    */
-  Iterable<SContainmentLink> getChildren();
+  Iterable<SContainmentLink> getContainmentLinks();
 
   /**
      * Returns all the properties this concept has, including inherited

@@ -253,7 +253,7 @@ class IntelligentNodeMover {
 
   private boolean haveSimilarLink(SNode current) {
     for (SAbstractConcept concept : new UniqueIterator<SAbstractConcept>(new BreadthConceptHierarchyIterator(current.getConcept()))) {
-      for (SContainmentLink currentLink : concept.getChildren()) {
+      for (SContainmentLink currentLink : concept.getContainmentLinks()) {
         if (currentLink.getRoleName().equals(myLink.getRoleName()) && currentLink.isMultiple() &&
             currentLink.getTargetConcept().equals(myLink.getTargetConcept())) {
           return true;

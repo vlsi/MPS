@@ -59,7 +59,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   }
 
   @Override
-  public Iterable<SReferenceLink> getReferences() {
+  public Iterable<SReferenceLink> getReferenceLinks() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
 
@@ -71,7 +71,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   }
 
   @Override
-  public Iterable<SContainmentLink> getChildren() {
+  public Iterable<SContainmentLink> getContainmentLinks() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return Collections.emptyList();
 
