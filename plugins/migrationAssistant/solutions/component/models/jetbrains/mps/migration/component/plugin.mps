@@ -140,12 +140,12 @@
               <node concept="liA8E" id="6MUcJMtCgbC" role="2OqNvi">
                 <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="6MUcJMtCgke" role="37wK5m">
-                  <ref role="3VsUkX" to="bim2:5SsFeroaajZ" resolve="StartupMigrationExecutor" />
+                  <ref role="3VsUkX" to="bim2:4D3Y1hNxTJF" resolve="StartupMigrationExecutorI" />
                 </node>
               </node>
             </node>
             <node concept="liA8E" id="6MUcJMtChNb" role="2OqNvi">
-              <ref role="37wK5l" to="bim2:6MUcJMtBBjy" resolve="executeWizard" />
+              <ref role="37wK5l" to="bim2:4D3Y1hNyymu" resolve="executeWizard" />
             </node>
           </node>
         </node>
