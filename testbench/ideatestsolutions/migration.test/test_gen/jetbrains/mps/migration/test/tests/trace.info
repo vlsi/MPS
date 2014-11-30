@@ -150,19 +150,63 @@
   </root>
   <root nodeRef="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)/8150591076113040395">
     <file name="MigrationAssistant_Test.java">
-      <node id="8150591076113041475" at="15,0,16,0" concept="7" trace="MODULES_DIR" />
-      <node id="8150591076113148069" at="16,0,17,0" concept="2" trace="project" />
-      <node id="268484797645829145" at="17,44,18,120" concept="1" />
-      <node id="8150591076113041932" at="20,23,21,124" concept="1" />
-      <node id="8150591076113041939" at="21,124,22,81" concept="1" />
-      <node id="8150591076113152345" at="22,81,23,57" concept="1" />
-      <node id="8150591076113153069" at="17,0,20,0" concept="3" trace="test_test#()V" />
-      <node id="8150591076113040395" at="20,0,25,0" concept="3" trace="setUp#()V" />
-      <scope id="8150591076113153074" at="17,44,18,120" />
-      <scope id="8150591076113153069" at="17,0,20,0" />
-      <scope id="8150591076113041524" at="20,23,23,57" />
-      <scope id="8150591076113040395" at="20,0,25,0" />
-      <unit id="8150591076113040395" at="14,0,26,0" name="jetbrains.mps.migration.test.tests.MigrationAssistant_Test" />
+      <node id="8150591076113041475" at="27,0,28,0" concept="7" trace="PROJECT_PATH" />
+      <node id="8150591076113148069" at="28,0,29,0" concept="2" trace="project" />
+      <node id="268484797645829145" at="29,44,30,120" concept="1" />
+      <node id="8423788195543226123" at="30,120,31,0" concept="6" />
+      <node id="8423788195542744126" at="31,0,32,87" concept="4" />
+      <node id="8423788195542733064" at="32,87,33,61" concept="4" />
+      <node id="8423788195542703114" at="35,25,36,67" concept="4" />
+      <node id="8423788195542719883" at="36,67,37,99" concept="4" />
+      <node id="8423788195542724463" at="37,99,38,69" concept="4" />
+      <node id="8423788195543269999" at="38,69,39,69" concept="1" />
+      <node id="8423788195542781921" at="41,46,42,32" concept="5" />
+      <node id="8423788195543303268" at="46,7,47,76" concept="1" />
+      <node id="8423788195543300388" at="47,76,48,0" concept="6" />
+      <node id="8423788195543149079" at="48,0,49,65" concept="4" />
+      <node id="8423788195543154290" at="49,65,50,65" concept="4" />
+      <node id="8423788195543192516" at="52,25,53,101" concept="1" />
+      <node id="8423788195543195438" at="53,101,54,101" concept="1" />
+      <node id="8423788195542875666" at="56,7,57,103" concept="1" />
+      <node id="8423788195542890874" at="57,103,58,50" concept="1" />
+      <node id="8423788195542736897" at="58,50,59,106" concept="1" />
+      <node id="8423788195542918652" at="59,106,60,50" concept="1" />
+      <node id="8150591076113041932" at="62,23,63,123" concept="1" />
+      <node id="8150591076113041939" at="63,123,64,82" concept="1" />
+      <node id="8150591076113152345" at="64,82,65,57" concept="1" />
+      <node id="8423788195542778079" at="41,0,44,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/language/SProperty;)Ljava/lang/String;" />
+      <node id="8423788195543264367" at="52,0,56,0" concept="3" trace="run#()V" />
+      <node id="8423788195543178944" at="39,69,44,35" concept="1" />
+      <node id="8150591076113040395" at="62,0,67,0" concept="3" trace="setUp#()V" />
+      <node id="8423788195543264365" at="50,65,56,7" concept="1" />
+      <node id="8423788195543111123" at="35,0,46,0" concept="3" trace="run#()V" />
+      <node id="8423788195543111121" at="33,61,46,7" concept="1" />
+      <node id="8150591076113153069" at="29,0,62,0" concept="3" trace="test_test#()V" />
+      <scope id="8423788195542778080" at="41,46,42,32" />
+      <scope id="8423788195543264369" at="52,25,54,101" />
+      <scope id="8423788195542778079" at="41,0,44,0">
+        <var name="it" id="8423788195542778079" />
+      </scope>
+      <scope id="8150591076113041524" at="62,23,65,57" />
+      <scope id="8423788195543264367" at="52,0,56,0" />
+      <scope id="8150591076113040395" at="62,0,67,0" />
+      <scope id="8423788195543111125" at="35,25,44,35">
+        <var name="migratingModel" id="8423788195542724464" />
+        <var name="migratingSolution" id="8423788195542719884" />
+        <var name="modules" id="8423788195542703115" />
+      </scope>
+      <scope id="8423788195543111123" at="35,0,46,0" />
+      <scope id="8150591076113153074" at="29,44,60,50">
+        <var name="properties" id="8423788195542744127" />
+        <var name="root" id="8423788195542733065" />
+        <var name="value0" id="8423788195543149080" />
+        <var name="value1" id="8423788195543154291" />
+      </scope>
+      <scope id="8150591076113153069" at="29,0,62,0" />
+      <unit id="8423788195542778079" at="40,147,44,9" name="jetbrains.mps.migration.test.tests.MigrationAssistant_Test$2" />
+      <unit id="8423788195543264367" at="51,45,56,5" name="jetbrains.mps.migration.test.tests.MigrationAssistant_Test$2" />
+      <unit id="8423788195543111123" at="34,45,46,5" name="jetbrains.mps.migration.test.tests.MigrationAssistant_Test$1" />
+      <unit id="8150591076113040395" at="26,0,68,0" name="jetbrains.mps.migration.test.tests.MigrationAssistant_Test" />
     </file>
   </root>
 </debug-info>
