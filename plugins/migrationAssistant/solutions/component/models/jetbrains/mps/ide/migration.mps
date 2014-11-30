@@ -398,6 +398,9 @@
         <ref role="3uigEE" node="5SsFeroaak2" resolve="StartupMigrationExecutor.MyState" />
       </node>
     </node>
+    <node concept="3uibUv" id="4D3Y1hNyzvs" role="EKbjA">
+      <ref role="3uigEE" node="4D3Y1hNxTJF" resolve="StartupMigrationExecutorI" />
+    </node>
     <node concept="312cEg" id="5SsFeroaaki" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -646,6 +649,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="4D3Y1hNy$77" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="3clFb_" id="5SsFeroaakD" role="jymVt">
@@ -1341,6 +1347,123 @@
       <node concept="3uibUv" id="5SsFeroaaeZ" role="3clF45">
         <ref role="3uigEE" node="5SsFeroaatc" resolve="ScriptApplied" />
       </node>
+    </node>
+  </node>
+  <node concept="3HP615" id="4D3Y1hNxTJF">
+    <property role="TrG5h" value="StartupMigrationExecutorI" />
+    <node concept="3clFb_" id="4D3Y1hNyymu" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="executeWizard" />
+      <node concept="3cqZAl" id="4D3Y1hNyymw" role="3clF45" />
+      <node concept="3Tm1VV" id="4D3Y1hNyymx" role="1B3o_S" />
+      <node concept="3clFbS" id="4D3Y1hNyymy" role="3clF47" />
+    </node>
+    <node concept="3Tm1VV" id="4D3Y1hNxTJG" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="4D3Y1hNyApY">
+    <property role="TrG5h" value="HeadlessMigrationExecutor" />
+    <property role="2bfB8j" value="true" />
+    <property role="1sVAO0" value="false" />
+    <property role="1EXbeo" value="false" />
+    <node concept="312cEg" id="4D3Y1hNyY1x" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myMigrationManager" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3uibUv" id="4D3Y1hNyXYL" role="1tU5fm">
+        <ref role="3uigEE" node="5SsFeroaabl" resolve="MigrationManager" />
+      </node>
+      <node concept="3Tm6S6" id="4D3Y1hNyY4k" role="1B3o_S" />
+    </node>
+    <node concept="3clFbW" id="4D3Y1hNyLMS" role="jymVt">
+      <node concept="3cqZAl" id="4D3Y1hNyLMU" role="3clF45" />
+      <node concept="3Tm1VV" id="4D3Y1hNyLMV" role="1B3o_S" />
+      <node concept="3clFbS" id="4D3Y1hNyLMW" role="3clF47">
+        <node concept="XkiVB" id="4D3Y1hNyLTE" role="3cqZAp">
+          <ref role="37wK5l" to="iiw6:~AbstractProjectComponent.&lt;init&gt;(com.intellij.openapi.project.Project)" resolve="AbstractProjectComponent" />
+          <node concept="37vLTw" id="4D3Y1hNyLVn" role="37wK5m">
+            <ref role="3cqZAo" node="4D3Y1hNyLRM" resolve="project" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4D3Y1hNyY6i" role="3cqZAp">
+          <node concept="37vLTI" id="4D3Y1hNyY92" role="3clFbG">
+            <node concept="37vLTw" id="4D3Y1hNyYbo" role="37vLTx">
+              <ref role="3cqZAo" node="4D3Y1hNyXMA" resolve="migrationManager" />
+            </node>
+            <node concept="37vLTw" id="4D3Y1hNyY6g" role="37vLTJ">
+              <ref role="3cqZAo" node="4D3Y1hNyY1x" resolve="myMigrationManager" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4D3Y1hNyLRM" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="4D3Y1hNyLRL" role="1tU5fm">
+          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4D3Y1hNyXMA" role="3clF46">
+        <property role="TrG5h" value="migrationManager" />
+        <node concept="3uibUv" id="4D3Y1hNyXOw" role="1tU5fm">
+          <ref role="3uigEE" node="5SsFeroaabl" resolve="MigrationManager" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="4D3Y1hNyJn9" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="executeWizard" />
+      <node concept="3cqZAl" id="4D3Y1hNyJna" role="3clF45" />
+      <node concept="3Tm1VV" id="4D3Y1hNyJnb" role="1B3o_S" />
+      <node concept="3clFbS" id="4D3Y1hNyJnf" role="3clF47">
+        <node concept="3clFbF" id="4D3Y1hNyYck" role="3cqZAp">
+          <node concept="2OqwBi" id="4D3Y1hNzd3p" role="3clFbG">
+            <node concept="2OqwBi" id="4D3Y1hNzcUs" role="2Oq$k0">
+              <node concept="2ShNRf" id="4D3Y1hNyYci" role="2Oq$k0">
+                <node concept="1pGfFk" id="4D3Y1hNzc31" role="2ShVmc">
+                  <ref role="37wK5l" to="o8ag:5SsFeroaawc" resolve="MigrationsProgressStep" />
+                  <node concept="37vLTw" id="4D3Y1hNzcIJ" role="37wK5m">
+                    <ref role="3cqZAo" to="iiw6:~AbstractProjectComponent.myProject" resolve="myProject" />
+                  </node>
+                  <node concept="37vLTw" id="4D3Y1hNzcP_" role="37wK5m">
+                    <ref role="3cqZAo" node="4D3Y1hNyY1x" resolve="myMigrationManager" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="4D3Y1hNzd08" role="2OqNvi">
+                <ref role="37wK5l" to="o8ag:5SsFeroaaxk" resolve="getAutostartTask" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4D3Y1hNzdae" role="2OqNvi">
+              <ref role="37wK5l" to="e2lb:~Runnable.run():void" resolve="run" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="4D3Y1hNyKaP" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="projectOpened" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="4D3Y1hNyKaQ" role="1B3o_S" />
+      <node concept="3cqZAl" id="4D3Y1hNyKaS" role="3clF45" />
+      <node concept="3clFbS" id="4D3Y1hNyKaT" role="3clF47">
+        <node concept="3clFbF" id="4D3Y1hNyLAR" role="3cqZAp">
+          <node concept="1rXfSq" id="4D3Y1hNyLAQ" role="3clFbG">
+            <ref role="37wK5l" node="4D3Y1hNyJn9" resolve="executeWizard" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="4D3Y1hNyKaU" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="4D3Y1hNyApZ" role="1B3o_S" />
+    <node concept="3uibUv" id="4D3Y1hNyAqb" role="EKbjA">
+      <ref role="3uigEE" node="4D3Y1hNxTJF" resolve="StartupMigrationExecutorI" />
+    </node>
+    <node concept="3uibUv" id="4D3Y1hNyJn2" role="1zkMxy">
+      <ref role="3uigEE" to="iiw6:~AbstractProjectComponent" resolve="AbstractProjectComponent" />
     </node>
   </node>
 </model>

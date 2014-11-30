@@ -2985,6 +2985,27 @@
                     </node>
                   </node>
                 </node>
+                <node concept="9aQIb" id="eTQo0ZiC4a" role="9aQIa">
+                  <node concept="3clFbS" id="eTQo0ZiC4b" role="9aQI4">
+                    <node concept="3clFbF" id="eTQo0ZiHXq" role="3cqZAp">
+                      <node concept="37vLTI" id="eTQo0ZiIm6" role="3clFbG">
+                        <node concept="2ShNRf" id="eTQo0ZiIxl" role="37vLTx">
+                          <node concept="YeOm9" id="eTQo0ZiQI8" role="2ShVmc">
+                            <node concept="1Y3b0j" id="eTQo0ZiQIb" role="YeSDq">
+                              <property role="2bfB8j" value="true" />
+                              <ref role="1Y3XeK" to="bim2:5SsFeroaabQ" resolve="MigrationManager.Finished" />
+                              <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                              <node concept="3Tm1VV" id="eTQo0ZiQIc" role="1B3o_S" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="eTQo0ZiHXp" role="37vLTJ">
+                          <ref role="3cqZAo" node="1NDJCs$te5Z" resolve="result" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

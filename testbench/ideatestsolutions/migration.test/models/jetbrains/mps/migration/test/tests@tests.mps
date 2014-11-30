@@ -1189,12 +1189,12 @@
         <node concept="3cqZAl" id="74sHQpDcnKJ" role="3clF45" />
         <node concept="3Tm1VV" id="74sHQpDcnKL" role="1B3o_S" />
         <node concept="3clFbS" id="74sHQpDcnKM" role="3clF47">
-          <node concept="3vwNmj" id="74sHQpDcs6Y" role="3cqZAp">
-            <node concept="2OqwBi" id="74sHQpDcrE7" role="3vwVQn">
+          <node concept="3vFxKo" id="eTQo0Zhrgp" role="3cqZAp">
+            <node concept="2OqwBi" id="74sHQpDcrE7" role="3vFALc">
               <node concept="2OqwBi" id="74sHQpDcr9l" role="2Oq$k0">
                 <node concept="2YIFZM" id="74sHQpDcnWp" role="2Oq$k0">
-                  <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
                   <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                  <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
                   <node concept="37vLTw" id="74sHQpDcr7g" role="37wK5m">
                     <ref role="3cqZAo" node="74sHQpDcmy_" resolve="project" />
                   </node>
@@ -1202,12 +1202,12 @@
                 <node concept="liA8E" id="74sHQpDcrqn" role="2OqNvi">
                   <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                   <node concept="3VsKOn" id="74sHQpDcrvh" role="37wK5m">
-                    <ref role="3VsUkX" to="auc7:tdUHv2l0Sg" resolve="MigrationComponent" />
+                    <ref role="3VsUkX" to="bim2:5SsFeroaabl" resolve="MigrationManager" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="74sHQpDcrZj" role="2OqNvi">
-                <ref role="37wK5l" to="auc7:1hucSHYiO1k" resolve="isMigrationRequired" />
+                <ref role="37wK5l" to="bim2:5SsFeroaac6" resolve="isMigrationRequired" />
               </node>
             </node>
           </node>

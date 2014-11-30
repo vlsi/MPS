@@ -329,8 +329,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
             }
           };
         } else {
-          result.value = new MigrationManager.Finished() {
-          };
+          result.value = new MigrationManager.Finished() {};
         }
       }
     });
