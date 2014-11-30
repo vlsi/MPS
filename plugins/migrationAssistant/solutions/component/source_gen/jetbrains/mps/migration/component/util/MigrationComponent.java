@@ -147,9 +147,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public boolean isMigrationRequired() {
-    if (RuntimeFlags.isTestMode()) {
-      return false;
-    }
     final Wrappers._boolean result = new Wrappers._boolean(false);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
