@@ -10,6 +10,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
 
 public interface IAttributeDescriptor {
@@ -54,11 +55,19 @@ public interface IAttributeDescriptor {
     @ToRemove(version = 3.2)
     public LinkAttribute(@NotNull String attributeConceptName, String linkRole) {
       super(attributeConceptName);
-      myLink = MetaAdapterFactoryByName.getReferenceLink(attributeConceptName, linkRole);
+      myLink = MetaAdapterFactoryByName.getReferenceLink(MetaIdFactory.INVALID_CONCEPT_NAME, linkRole);
     }
     public LinkAttribute(@NotNull SConcept attributeDeclaration, SReferenceLink link) {
       super(attributeDeclaration);
       myLink = link;
+    }
+    /**
+     * strings can be passed from user-written code
+     */
+    @Deprecated
+    public LinkAttribute(@NotNull SConcept attributeDeclaration, String linkRole) {
+      super(attributeDeclaration);
+      myLink = MetaAdapterFactoryByName.getReferenceLink(MetaIdFactory.INVALID_CONCEPT_NAME, linkRole);
     }
     @Override
     public boolean match(@NotNull SNode attribute) {
@@ -75,11 +84,19 @@ public interface IAttributeDescriptor {
     @ToRemove(version = 3.2)
     public PropertyAttribute(@NotNull String attributeConceptName, String propertyName) {
       super(attributeConceptName);
-      myProperty = MetaAdapterFactoryByName.getProperty(attributeConceptName, propertyName);
+      myProperty = MetaAdapterFactoryByName.getProperty(MetaIdFactory.INVALID_CONCEPT_NAME, propertyName);
     }
     public PropertyAttribute(@NotNull SConcept attributeDeclaration, @NotNull SProperty property) {
       super(attributeDeclaration);
       myProperty = property;
+    }
+    /**
+     * strings can be passed from user-written code
+     */
+    @Deprecated
+    public PropertyAttribute(@NotNull SConcept attributeDeclaration, @NotNull String propertyName) {
+      super(attributeDeclaration);
+      myProperty = MetaAdapterFactoryByName.getProperty(MetaIdFactory.INVALID_CONCEPT_NAME, propertyName);
     }
     @Override
     public boolean match(@NotNull SNode attribute) {
