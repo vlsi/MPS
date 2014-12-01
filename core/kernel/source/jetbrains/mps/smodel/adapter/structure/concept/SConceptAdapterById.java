@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -44,6 +45,9 @@ public class SConceptAdapterById extends SConceptAdapter implements SConcept, SA
 
   @Override
   public String getQualifiedName() {
+    if (RuntimeFlags.isMergeDriverMode()) {
+      return myFqName;
+    }
     ConceptDescriptor cd = getConceptDescriptor();
     if (cd == null) {
       //invalid concept

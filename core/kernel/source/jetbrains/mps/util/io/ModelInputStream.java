@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,23 @@
  */
 package jetbrains.mps.util.io;
 
+import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.project.ModuleId;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId.Regular;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.BufferedInputStream;
@@ -33,14 +43,22 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
+import static jetbrains.mps.util.io.ModelOutputStream.*;
+
 /**
  * Evgeny Gryaznov, Sep 27, 2010
  */
 public class ModelInputStream extends DataInputStream {
 
-  private List<String> myStrings = new ArrayList<String>(2048);
-  private List<SModelReference> myModelRefs = new ArrayList<SModelReference>(1024);
-  private List<SModuleReference> myModuleRefs = new ArrayList<SModuleReference>(128);
+  private final List<String> myStrings = new ArrayList<String>(2048);
+  private final List<SModelReference> myModelRefs = new ArrayList<SModelReference>(1024);
+  private final List<SModuleReference> myModuleRefs = new ArrayList<SModuleReference>(128);
+  private final List<SLanguage> myLanguages = new ArrayList<SLanguage>(128);
+  private final List<SConcept> myConcepts = new ArrayList<SConcept>(128);
+  private final List<SProperty> myProperties = new ArrayList<SProperty>(128);
+  private final List<SReferenceLink> myAssociations = new ArrayList<SReferenceLink>(128);
+  private final List<SContainmentLink> myAggregations = new ArrayList<SContainmentLink>(128);
+
 
   public ModelInputStream(InputStream in) {
     super(new BufferedInputStream(in, 65536));
@@ -60,7 +78,7 @@ public class ModelInputStream extends DataInputStream {
 
   public String readString() throws IOException {
     int c = readByte();
-    if (c == 0x70) {
+    if (c == NULL) {
       return null;
     } else if (c == 1) {
       int index = readInt();
@@ -88,15 +106,15 @@ public class ModelInputStream extends DataInputStream {
 
   public SModuleReference readModuleReference() throws IOException {
     int c = readByte();
-    if (c == 0x70) {
+    if (c == NULL) {
       return null;
-    } else if (c == 0x19) {
+    } else if (c == MODULEREF_INDEX) {
       int index = readInt();
       return myModuleRefs.get(index);
     }
 
     ModuleId id = null;
-    if (c == 0x17) {
+    if (c == MODULEREF_MODULEID) {
       id = readModuleID();
     }
     SModuleReference ref = new jetbrains.mps.project.structure.modules.ModuleReference(readString(), id);
@@ -106,12 +124,12 @@ public class ModelInputStream extends DataInputStream {
 
   public ModuleId readModuleID() throws IOException {
     int c = readByte();
-    if (c == 0x70) {
+    if (c == NULL) {
       return null;
-    } else if (c == 0x48) {
+    } else if (c == MODULEID_REGULAR) {
       UUID uuid = new UUID(readLong(), readLong());
       return ModuleId.regular(uuid);
-    } else if (c == 0x47) {
+    } else if (c == MODULEID_FOREIGN) {
       return ModuleId.foreign(readString());
     } else {
       throw new IOException("unknown id");
@@ -120,9 +138,9 @@ public class ModelInputStream extends DataInputStream {
 
   public SModelReference readModelReference() throws IOException {
     int c = readByte();
-    if (c == 0x70) {
+    if (c == NULL) {
       return null;
-    } else if (c == 9) {
+    } else if (c == MODELREF_INDEX) {
       int index = readInt();
       return myModelRefs.get(index);
     }
@@ -137,14 +155,13 @@ public class ModelInputStream extends DataInputStream {
 
   public SModelId readModelID() throws IOException {
     int c = readByte();
-    if (c == 0x70) {
+    if (c == NULL) {
       return null;
-    } else if (c == 0x28) {
-      UUID uuid = new UUID(readLong(), readLong());
-      return jetbrains.mps.smodel.SModelId.regular(uuid);
-    } else if (c == 0x27) {
+    } else if (c == MODELID_REGULAR) {
+      return jetbrains.mps.smodel.SModelId.regular(readUUID());
+    } else if (c == MODELID_FOREIGN) {
       return jetbrains.mps.smodel.SModelId.foreign(readString());
-    } else if (c == 0x26) {
+    } else if (c == MODELID_STRING) {
       return PersistenceFacade.getInstance().createModelId(readString());
     } else {
       throw new IOException("unknown id");
@@ -153,11 +170,11 @@ public class ModelInputStream extends DataInputStream {
 
   public SNodeId readNodeId() throws IOException {
     int c = readByte();
-    if (c == 0x70) {
+    if (c == NULL) {
       return null;
-    } else if (c == 0x18) {
+    } else if (c == NODEID_LONG) {
       return new Regular(readLong());
-    } else if (c == 0x17) {
+    } else if (c == NODEID_STRING) {
       return PersistenceFacade.getInstance().createNodeId(readString());
     }
     throw new IOException("no id");
@@ -165,10 +182,94 @@ public class ModelInputStream extends DataInputStream {
 
   public SNodeReference readNodePointer() throws IOException {
     int b = readByte();
-    if (b == 0x70) {
+    if (b == NULL) {
       return null;
     } else {
       return new jetbrains.mps.smodel.SNodePointer(readModelReference(), readNodeId());
     }
+  }
+
+  public UUID readUUID() throws IOException {
+    long headBits = readLong();
+    long tailBits = readLong();
+    return new UUID(headBits, tailBits);
+  }
+  public SLanguage readLanguage() throws IOException {
+    byte b = readByte();
+    if (b == NULL) {
+      return null;
+    }
+    if (b == LANGUAGE_INDEX) {
+      return myLanguages.get(readShort());
+    }
+    if (b != LANGUAGE) {
+      throw new IOException(Integer.toHexString(b));
+    }
+    SLanguage l = MetaAdapterFactory.getLanguage(readUUID(), readString());
+    myLanguages.add(l);
+    return l;
+  }
+  public SConcept readConcept() throws IOException {
+    byte b = readByte();
+    if (b == NULL) {
+      return null;
+    }
+    if (b == CONCEPT_INDEX) {
+      return myConcepts.get(readShort());
+    }
+    if (b != CONCEPT) {
+      throw new IOException(Integer.toHexString(b));
+    }
+    SConcept c = MetaAdapterFactory.getConcept(readUUID(), readLong(), readString());
+    myConcepts.add(c);
+    return c;
+  }
+  public SProperty readProperty() throws IOException {
+    byte b = readByte();
+    if (b == NULL) {
+      return null;
+    }
+    if (b == PROPERTY_INDEX) {
+      return myProperties.get(readShort());
+    }
+    if (b != PROPERTY) {
+      throw new IOException(Integer.toHexString(b));
+    }
+    final SConcept c = readConcept();
+    SProperty p = MetaAdapterFactory.getProperty(new SPropertyId(IdHelper.getConceptId(c), readLong()), readString());
+    myProperties.add(p);
+    return p;
+  }
+  public SReferenceLink readReferenceLink() throws IOException {
+    byte b = readByte();
+    if (b == NULL) {
+      return null;
+    }
+    if (b == ASSOCIATION_INDEX) {
+      return myAssociations.get(readShort());
+    }
+    if (b != ASSOCIATION) {
+      throw new IOException(Integer.toHexString(b));
+    }
+    final SConcept c = readConcept();
+    SReferenceLink l = MetaAdapterFactory.getReferenceLink(new SReferenceLinkId(IdHelper.getConceptId(c), readLong()), readString());
+    myAssociations.add(l);
+    return l;
+  }
+  public SContainmentLink readContainmentLink() throws IOException {
+    byte b = readByte();
+    if (b == NULL) {
+      return null;
+    }
+    if (b == AGGREGATION_INDEX) {
+      return myAggregations.get(readShort());
+    }
+    if (b != AGGREGATION) {
+      throw new IOException(Integer.toHexString(b));
+    }
+    final SConcept c = readConcept();
+    SContainmentLink l = MetaAdapterFactory.getContainmentLink(new SContainmentLinkId(IdHelper.getConceptId(c), readLong()), readString());
+    myAggregations.add(l);
+    return l;
   }
 }

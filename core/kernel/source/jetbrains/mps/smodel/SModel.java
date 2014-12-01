@@ -89,13 +89,12 @@ public class SModel implements SModelData {
   private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
   private Map<SLanguage, Integer> myLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
-  private Map<SLanguage, Integer> myImplicitLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
-  private List<ImportElement> myImplicitImports = new ArrayList<ImportElement>();
   private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
+  private ImplicitImportsLegacyHolder myLegacyImplicitImports;
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -115,48 +114,6 @@ public class SModel implements SModelData {
     return new jetbrains.mps.smodel.SNodeId.Regular(id);
   }
 
-  @NotNull
-  public static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
-    ModelEnvironmentInfo env = PersistenceRegistry.getInstance().getModelEnvironmentInfo();
-    for (org.jetbrains.mps.openapi.model.SNode node : model.myIdToNodeMap.values()) {
-      SNodeReference ptrConcept = env.getConceptId(node);
-      if (ptrConcept == null) {
-        LOG.warn("concept not found for node " + SNodeOperations.getDebugText(node));
-      } else {
-        result.add(ptrConcept.getModelReference());
-      }
-      for (String propname : node.getPropertyNames()) {
-        SNodeReference ptrDecl = env.getPropertyId(node, propname);
-        if (ptrDecl == null) {
-          LOG.warn("undeclared property: '" + propname + "' in node " + SNodeOperations.getDebugText(node));
-        } else {
-          result.add(ptrDecl.getModelReference());
-        }
-      }
-      for (SReference ref : node.getReferences()) {
-        if (ref.getTargetSModelReference() != null) {
-          result.add(ref.getTargetSModelReference());
-        }
-        SNodeReference ptrDecl = env.getReferenceRoleId(ref);
-        if (ptrDecl == null) {
-          LOG.warn("undeclared link role: '" + ref.getRole() + "' in node " + SNodeOperations.getDebugText(node));
-        } else {
-          result.add(ptrDecl.getModelReference());
-        }
-      }
-      for (org.jetbrains.mps.openapi.model.SNode child : node.getChildren()) {
-        SNodeReference ptrDecl = env.getNodeRoleId(child);
-        if (ptrDecl == null) {
-          LOG.warn(
-              "undeclared child role: '" + child.getRoleInParent() + "' in node " + SNodeOperations.getDebugText(
-                  node));
-        } else {
-          result.add(ptrDecl.getModelReference());
-        }
-      }
-    }
-    return result;
-  }
 
   public SModelId getModelId() {
     return myReference.getModelId();
@@ -629,59 +586,6 @@ public class SModel implements SModelData {
     }
   }
 
-  public void validateImplicitlyUsedLanguages() {
-    Set<SLanguage> myUsedLanguages = new HashSet<SLanguage>();
-
-    for (org.jetbrains.mps.openapi.model.SNode root : getRootNodes()) {
-      for (org.jetbrains.mps.openapi.model.SNode n : SNodeUtil.getDescendants(root)) {
-        SConcept conceptId = n.getConcept();
-        myUsedLanguages.add(conceptId.getLanguage());
-
-        if (n.getParent() != null) {
-          SContainmentLink roleId = n.getContainmentLink();
-          myUsedLanguages.add(roleId.getContainingConcept().getLanguage());
-        }
-        for (SProperty pid : n.getProperties()) {
-          myUsedLanguages.add(pid.getContainingConcept().getLanguage());
-        }
-
-        for (SReference ref : n.getReferences()) {
-          myUsedLanguages.add(ref.getLink().getContainingConcept().getLanguage());
-        }
-      }
-    }
-
-    Map<SLanguage, Integer> myNewImplicitLanguagesIds = new HashMap<SLanguage, Integer>(myUsedLanguages.size());
-
-    for (SLanguage lang : myLanguagesIds.keySet()) {
-      myUsedLanguages.remove(lang);
-    }
-
-    for (Entry<SLanguage, Integer> lang : myImplicitLanguagesIds.entrySet()) {
-      if (myUsedLanguages.remove(lang.getKey())) {
-        myNewImplicitLanguagesIds.put(lang.getKey(), lang.getValue());
-      }
-    }
-
-    for (SLanguage lang : myUsedLanguages) {
-      SModule sm = lang.getSourceModule();
-      if (sm == null) continue;
-      int version = ((Language) sm).getLanguageVersion();
-      myNewImplicitLanguagesIds.put(lang, version);
-    }
-
-    myImplicitLanguagesIds = myNewImplicitLanguagesIds;
-  }
-
-  // for persistence
-  public void addImplicitlyUsedLanguage(SLanguage id, int version) {
-    myImplicitLanguagesIds.put(id, version);
-  }
-
-  public Map<SLanguage, Integer> implicitlyUsedLanguagesWithVersions() {
-    return myImplicitLanguagesIds;
-  }
-
   public Collection<SLanguage> usedLanguages() {
     return Collections.unmodifiableSet(myLanguagesIds.keySet());
   }
@@ -700,7 +604,6 @@ public class SModel implements SModelData {
     assertLegalChange();
 
     if (myLanguages.remove(ref)) {
-      //calculateImplicitImports();
       invalidateModelDepsManager();
       fireLanguageRemovedEvent(ref);
       markChanged();
@@ -805,8 +708,12 @@ public class SModel implements SModelData {
     assertLegalChange();
 
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
-    if (importElement != null) return;
-    importElement = SModelOperations.getAdditionalModelElement(this, modelReference);
+    if (importElement != null) {
+      return;
+    }
+    if (myLegacyImplicitImports != null) {
+      importElement = myLegacyImplicitImports.find(modelReference);
+    }
     if (importElement == null) {
       org.jetbrains.mps.openapi.model.SModel modelDescriptor =
           RuntimeFlags.isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
@@ -834,30 +741,43 @@ public class SModel implements SModelData {
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
     if (importElement != null) {
       myImports.remove(importElement);
-      myImplicitImports.add(importElement);  // to save version and ID if model was imported implicitly
+      if (myLegacyImplicitImports != null) {
+        // shall keep only if we do track implicit imports
+        myLegacyImplicitImports.addAdditionalModelVersion(importElement);  // to save version and ID if model was imported implicitly
+      }
       fireImportRemovedEvent(modelReference);
       markChanged();
     }
   }
 
-  // create new implicit import list based on used models, explicit import and old implicit import list
-  public void calculateImplicitImports() {
-    Set<SModelReference> usedModels = collectUsedModels(this, new HashSet<SModelReference>());
-    usedModels.remove(myReference);   // do not import self
-    for (ImportElement elem : myImports) {
-      usedModels.remove(elem.getModelReference());    // do not add explicit imports to implicit
+  /**
+   * This is compatibility method with legacy persistence mechanism, unless used, no implicit imports are tracked.
+   * Drop once we no longer need to support serialization of old persistence formats (there's no reason to track
+   * implicit imports if we aren't going to serialize them afterwards)
+   */
+  @NotNull
+  public ImplicitImportsLegacyHolder getImplicitImportsSupport() {
+    if (myLegacyImplicitImports == null) {
+      myLegacyImplicitImports = new ImplicitImportsLegacyHolder(this);
     }
-    List<ImportElement> implicitImports = new ArrayList<ImportElement>(usedModels.size());
-    for (ImportElement elem : myImplicitImports) {
-      if (usedModels.remove(elem.getModelReference())) {
-        implicitImports.add(elem);   // already added elements save their version and id
-      }
+    return myLegacyImplicitImports;
+  }
+  // this method is for sole use of ImplicitImportsLegacyHolder, which used to access myIdToNodeMap, and I don't want to change this
+  // (i.e. re-write with model iteration using OpenAPI). Drop it along with getImplicitImportsSupport()
+  /*package*/Iterable<org.jetbrains.mps.openapi.model.SNode> allNodes() {
+    return myIdToNodeMap.values();
+  }
+
+  // this method is for transition period, shall be removed once there are no uses of SModelOperations.getAllImportElements()
+  // Once we drop refactorings, there is no need for the method
+  @ToRemove(version = 3.2)
+  /*package*/List<ImportElement> getAllImportElements() {
+    List<ImportElement> result = new ArrayList<ImportElement>();
+    result.addAll(myImports);
+    if (myLegacyImplicitImports != null) {
+      result.addAll(myLegacyImplicitImports.getAdditionalModelVersions());
     }
-    for (SModelReference ref : usedModels) {
-      int version = PersistenceRegistry.getInstance().getModelEnvironmentInfo().getModelVersion(ref);
-      implicitImports.add(new ImportElement(ref, -1, version));  // for compatibility index will be assigned on save
-    }
-    myImplicitImports = implicitImports;
+    return result;
   }
 
   public List<SModuleReference> engagedOnGenerationLanguages() {
@@ -916,25 +836,8 @@ public class SModel implements SModelData {
 
   //aspects / additional
 
-  public List<ImportElement> getAdditionalModelVersions() {
-    return Collections.unmodifiableList(myImplicitImports);
-  }
-
-  public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
-    addAdditionalModelVersion(new ImportElement(modelReference, -1, usedVersion));
-  }
-
-  public void addAdditionalModelVersion(@NotNull ImportElement element) {
-    assertLegalChange();
-    myImplicitImports.add(element);
-  }
-
   public boolean isUpdateMode() {
     return false;
-  }
-
-  public int getNodesCount() {
-    return myIdToNodeMap != null ? myIdToNodeMap.size() : 0;
   }
 
   //to use only from SNode
@@ -968,14 +871,16 @@ public class SModel implements SModelData {
     assertLegalChange();
 
     ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
-    if (importElement == null) {
-      importElement = SModelOperations.getAdditionalModelElement(this, sModelReference);
+    if (importElement == null && myLegacyImplicitImports != null) {
+      importElement = myLegacyImplicitImports.find(sModelReference);
     }
 
     if (importElement != null) {
       importElement.myUsedVersion = currentVersion;
     } else {
-      addAdditionalModelVersion((sModelReference), currentVersion);
+      if (myLegacyImplicitImports != null) {
+        myLegacyImplicitImports.addAdditionalModelVersion(sModelReference, currentVersion);
+      }
     }
   }
 
@@ -1008,14 +913,8 @@ public class SModel implements SModelData {
         e.myModelReference = newRef;
       }
     }
-
-    for (ImportElement e : myImplicitImports) {
-      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.myModelReference;
-      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
-      if (newRef.differs(oldSRef)) {
-        changed = true;
-        e.myModelReference = newRef;
-      }
+    if (myLegacyImplicitImports != null) {
+      changed |= myLegacyImplicitImports.updateSModelReferences();
     }
 
     return changed;
@@ -1077,8 +976,10 @@ public class SModel implements SModelData {
   }
 
   public void copyPropertiesTo(SModel to) {
-    for (ImportElement ie : getAdditionalModelVersions()) {
-      to.addAdditionalModelVersion(ie.copy());
+    if (myLegacyImplicitImports != null) {
+      for (ImportElement ie : myLegacyImplicitImports.getAdditionalModelVersions()) {
+        to.getImplicitImportsSupport().addAdditionalModelVersion(ie.copy());
+      }
     }
     for (ImportElement ie : importedModels()) {
       to.addModelImport(ie.copy());

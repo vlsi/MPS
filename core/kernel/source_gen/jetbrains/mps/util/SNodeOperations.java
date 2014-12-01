@@ -12,12 +12,13 @@ import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.util.Map;
 import java.util.LinkedHashMap;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -85,8 +86,8 @@ public class SNodeOperations {
   }
   public static Map<String, String> getProperties(SNode node) {
     Map<String, String> result = new LinkedHashMap<String, String>();
-    for (String name : node.getPropertyNames()) {
-      result.put(name, node.getProperty(name));
+    for (SProperty p : Sequence.fromIterable(node.getProperties())) {
+      result.put(p.getName(), node.getProperty(p));
     }
     return result;
   }
@@ -255,8 +256,8 @@ public class SNodeOperations {
     return SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(n, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static void copyProperties(SNode from, final SNode to) {
-    for (String name : from.getPropertyNames()) {
-      to.setProperty(name, from.getProperty(name));
+    for (SProperty p : Sequence.fromIterable(from.getProperties())) {
+      to.setProperty(p, from.getProperty(p));
     }
   }
   public static Language getLanguage(SNode node) {

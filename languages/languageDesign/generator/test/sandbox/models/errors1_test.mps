@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:65fc685c-7150-448a-852d-28be5daa3af8(errors1_test)" doNotGenerate="true" concise="true">
+<model ref="r:65fc685c-7150-448a-852d-28be5daa3af8(errors1_test)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
     <use id="99a58581-8518-40c8-81f1-e364306f5ffc" name="jetbrains.mps.transformation.test.errorReporting" version="-1" />
   </languages>
-  <imports>
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="qq7j" ref="r:13099be6-e9be-4c1b-a5cd-d0d83a6c9f0a(jetbrains.mps.transformation.test.errorReporting.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
     <language id="99a58581-8518-40c8-81f1-e364306f5ffc" name="jetbrains.mps.transformation.test.errorReporting">
       <concept id="7287346816896104019" name="jetbrains.mps.transformation.test.errorReporting.structure.ErrorReportingRoot" flags="ng" index="2d2UO2">

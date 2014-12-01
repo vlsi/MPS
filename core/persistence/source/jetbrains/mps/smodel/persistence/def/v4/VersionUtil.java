@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.smodel.persistence.def.v4;
 
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModel.ImportElement;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelOperations;
@@ -110,12 +114,12 @@ public class VersionUtil {
     SModuleReference moduleRef = new jetbrains.mps.project.structure.modules.ModuleReference(NameUtil.namespaceFromConceptFQName(node.getConcept().getQualifiedName()));
     Language lang = (Language) moduleRef.resolve(MPSModuleRepository.getInstance());
     SModelReference reference = LanguageAspect.STRUCTURE.get(lang).getReference();
-    return SModelOperations.getUsedVersion(node.getModel(), reference);
+    return VersionUtil.getUsedVersion(node.getModel(), reference);
   }
 
   public static int getReferenceToNodeVersion(SNode node, SModelReference targetModelReference) {
     if (targetModelReference == null) return -1;//target model reference is nullable in postponed references
-    return SModelOperations.getUsedVersion(node.getModel(), targetModelReference);
+    return VersionUtil.getUsedVersion(node.getModel(), targetModelReference);
   }
 
   //for children's roles version: finds a parent's concept, its version is a version of a role
@@ -133,5 +137,28 @@ public class VersionUtil {
       versionsInfo.addLinkTargetIdVersion(node, role, version);
     }
     return linkRole;
+  }
+  static int getUsedVersion(SModel sModel, SModelReference sModelReference) {
+    ImportElement importElement = getImportElement(sModel, sModelReference);
+    if (importElement == null) {
+      if (sModel instanceof SModelBase) {
+        return getLanguageAspectModelVersion(((SModelBase) sModel).getSModel(), sModelReference);
+      }
+      return -1;
+    }
+    return importElement.getUsedVersion();
+  }
+  static ImportElement getImportElement(SModel model, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) model).importedModels()) {
+      if (importElement.getModelReference().equals(modelReference)) {
+        return importElement;
+      }
+    }
+    return null;
+  }
+  static int getLanguageAspectModelVersion(jetbrains.mps.smodel.SModel sModel, SModelReference sModelReference) {
+    ImportElement importElement = sModel.getImplicitImportsSupport().find(sModelReference);
+    if (importElement == null) return -1;
+    return importElement.getUsedVersion();
   }
 }

@@ -20,21 +20,17 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
+import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
-import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.util.io.ModelOutputStream;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -43,28 +39,27 @@ import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.LinkedHashMap;
+import java.io.InputStream;
 import java.util.Map;
-
-import static jetbrains.mps.generator.ModelDigestUtil.DigestBuilderOutputStream;
 
 /**
  * evgeny, 11/20/12
  */
-public class BinaryModelPersistence implements CoreComponent, ModelFactory {
-  private static final Logger LOG = LogManager.getLogger(BinaryModelPersistence.class);
+public class BinaryModelPersistence implements CoreComponent, ModelFactory, IndexAwareModelFactory {
+  private final PersistenceRegistry myRegistry;
 
-  BinaryModelPersistence() {
+  BinaryModelPersistence(@NotNull PersistenceRegistry registry) {
+    myRegistry = registry;
   }
 
   @Override
   public void init() {
-    PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL_BINARY, this);
+    myRegistry.setModelFactory(MPSExtentions.MODEL_BINARY, this);
   }
 
   @Override
   public void dispose() {
-    PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL_BINARY, null);
+    myRegistry.setModelFactory(MPSExtentions.MODEL_BINARY, null);
   }
 
   @NotNull
@@ -79,8 +74,13 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     try {
       binaryModelHeader = BinaryPersistence.readHeader(source);
     } catch (ModelReadException e) {
-      LOG.debug(e.getMessageEx());
-      throw new RuntimeException(e);
+      if (e.getCause() instanceof IOException) {
+        throw (IOException) e.getCause();
+      }
+      throw new IOException(e.getMessageEx(), e);
+    }
+    if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
+      binaryModelHeader.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo()));
     }
     return new DefaultSModelDescriptor(new PersistenceFacility(this, source), binaryModelHeader);
   }
@@ -145,10 +145,15 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     return "Universal binary format";
   }
 
+  @Override
+  public void index(@NotNull InputStream input, @NotNull Callback callback) throws IOException {
+    BinaryPersistence.index(input, callback);
+  }
+
   public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {
     try {
       jetbrains.mps.smodel.SModel model = BinaryPersistence.readModel(source.openInputStream());
-      Map<String, String> result = getDigestMap(model);
+      Map<String, String> result = BinaryPersistence.getDigestMap(model);
       result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(source.openInputStream()));
       return result;
     } catch (ModelReadException ignored) {
@@ -162,7 +167,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
   public static Map<String, String> getDigestMap(byte[] input) {
     try {
       jetbrains.mps.smodel.SModel model = BinaryPersistence.readModel(new ByteArrayInputStream(input));
-      Map<String, String> result = getDigestMap(model);
+      Map<String, String> result = BinaryPersistence.getDigestMap(model);
       result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(input));
       return result;
 
@@ -170,38 +175,6 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     }
 
     return null;
-  }
-
-  private static Map<String, String> getDigestMap(jetbrains.mps.smodel.SModel model) {
-    Map<String, String> result = new LinkedHashMap<String, String>();
-
-    for (SNode node : model.getRootNodes()) {
-      DigestBuilderOutputStream os = ModelDigestUtil.createDigestBuilderOutputStream();
-      try {
-        ModelOutputStream mos = new ModelOutputStream(os);
-        new NodesWriter(model.getReference(), null).writeNode(node, mos);
-        mos.flush();
-      } catch (IOException ignored) {
-        assert false;
-        /* should never happen */
-      }
-      SNodeId nodeId = node.getNodeId();
-      if (nodeId != null) {
-        result.put(nodeId.toString(), os.getResult());
-      }
-    }
-
-    DigestBuilderOutputStream os = ModelDigestUtil.createDigestBuilderOutputStream();
-    try {
-      ModelOutputStream mos = new ModelOutputStream(os);
-      BinaryPersistence.saveModelProperties(model, mos);
-      mos.flush();
-    } catch (IOException ignored) {
-      assert false;
-      /* should never happen */
-    }
-    result.put(GeneratableSModel.HEADER, os.getResult());
-    return result;
   }
 
   /**

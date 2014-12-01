@@ -27,7 +27,11 @@ import org.jetbrains.mps.openapi.model.SReference;
  * This interface allows implementers of merge or conversion tools emulate the environment by reusing data
  * from the persisted models.
  * see {@link jetbrains.mps.persistence.PersistenceRegistry#getModelEnvironmentInfo()}
+ *
+ * @deprecated since persistence v9, this class has been replaced with {@link jetbrains.mps.persistence.MetaModelInfoProvider} and shall be used
+ * for compatibility purposes with earlier persistence versions only.
  */
+@Deprecated
 public interface ModelEnvironmentInfo {
 
   SNodeReference getConceptId(SNode node);

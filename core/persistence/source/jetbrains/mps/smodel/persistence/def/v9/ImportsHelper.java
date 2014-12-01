@@ -36,6 +36,9 @@ class ImportsHelper {
   private final HashMap<SModelReference, String> myModel2Index = new HashMap<SModelReference, String>();
   private final HashMap<String, SModelReference> myIndex2Model = new HashMap<String, SModelReference>();
 
+  private static final int HASH_BASE = 10 + 26;
+  private static final int HASH_SIZE = HASH_BASE * HASH_BASE * HASH_BASE * HASH_BASE;
+
   public ImportsHelper(@NotNull SModelReference model) {
     myModelRef = model;
   }
@@ -76,11 +79,11 @@ class ImportsHelper {
    * with {@link jetbrains.mps.smodel.persistence.def.v9.IdEncoder#REF_TARGET_IMPORT_SEPARATOR} as separator
    */
   private String createIndexFor(int initialHash, Set<String> usedIndex) {
-    int hash = (initialHash % StorageIndexHelper9.HASH_SIZE + StorageIndexHelper9.HASH_SIZE) % StorageIndexHelper9.HASH_SIZE;
+    int hash = (initialHash % HASH_SIZE + HASH_SIZE) % HASH_SIZE;
     String rv;
     do {
-      rv = Integer.toString(hash, StorageIndexHelper9.HASH_BASE);
-      hash = (hash + 1) % StorageIndexHelper9.HASH_SIZE;
+      rv = Integer.toString(hash, HASH_BASE);
+      hash = (hash + 1) % HASH_SIZE;
     } while (usedIndex.contains(rv));
     return rv;
   }

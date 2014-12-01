@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:9f91e69b-a9d5-42ac-94cb-04bdbf483b6a(jetbrains.mps.samples.heating.tabular.behavior)" concise="true">
+<model ref="r:9f91e69b-a9d5-42ac-94cb-04bdbf483b6a(jetbrains.mps.samples.heating.tabular.behavior)">
   <persistence version="9" />
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />

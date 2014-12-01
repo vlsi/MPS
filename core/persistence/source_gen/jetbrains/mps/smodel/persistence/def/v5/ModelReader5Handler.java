@@ -220,23 +220,23 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_2286463592495498109(Object resultObject, Object value) throws SAXException {
       String[] child = (String[]) value;
       int version = Integer.parseInt(child[1]);
-      (my_modelField).addAdditionalModelVersion(PersistenceFacade.getInstance().createModelReference(child[0]), version);
+      my_modelField.getImplicitImportsSupport().addAdditionalModelVersion(PersistenceFacade.getInstance().createModelReference(child[0]), version);
     }
     private void handleChild_2286463592495498227(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      (my_modelField).addLanguage(PersistenceFacade.getInstance().createModuleReference(child));
+      my_modelField.addLanguage(PersistenceFacade.getInstance().createModuleReference(child));
     }
     private void handleChild_2286463592495498259(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      (my_modelField).addEngagedOnGenerationLanguage(PersistenceFacade.getInstance().createModuleReference(child));
+      my_modelField.addEngagedOnGenerationLanguage(PersistenceFacade.getInstance().createModuleReference(child));
     }
     private void handleChild_2286463592495498276(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
-      (my_modelField).addDevKit(PersistenceFacade.getInstance().createModuleReference(child));
+      my_modelField.addDevKit(PersistenceFacade.getInstance().createModuleReference(child));
     }
     private void handleChild_2286463592495498335(Object resultObject, Object value) throws SAXException {
       SModel.ImportElement child = (SModel.ImportElement) value;
-      (my_modelField).addModelImport(child);
+      my_modelField.addModelImport(child);
     }
     private void handleChild_2286463592495515690(Object resultObject, Object value) throws SAXException {
       SNode child = (SNode) value;

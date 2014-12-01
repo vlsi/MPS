@@ -24,12 +24,14 @@ import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -76,6 +78,13 @@ import java.util.Map;
  * @author Artem Tikhomirov
  */
 public interface MetaModelInfoProvider {
+  /**
+   * Boolean attribute to indicate whether we intend to use model read without access to regular (MPS instance) meta info.
+   * The models read with this option set to true, could be serialized without access to concept registry of MPS (of course,
+   * if respective ModelFactory supports this. Our default(aka xml) and binary do).
+   */
+  public static final String OPTION_KEEP_READ_METAINFO = "keep-metainfo";
+
   String getLanguageName(SLanguageId lang);
   void setLanguageName(SLanguageId lang, String name);
   /**
@@ -102,6 +111,12 @@ public interface MetaModelInfoProvider {
   Boolean isUnordered(SContainmentLinkId link);
   void setUnordered(SContainmentLinkId link, boolean unordered);
 
+  /**
+   * This method makes sense only for concepts with
+   * {@link #getKind(jetbrains.mps.smodel.adapter.ids.SConceptId) kind} == {@link jetbrains.mps.smodel.runtime.ConceptKind#IMPLEMENTATION_WITH_STUB}
+   */
+  SConceptId getStubConcept(SConceptId origin);
+  void setStubConcept(SConceptId origin, SConceptId stub);
 
   /**
    * Base implementation, clients shall extend this class rather than implement {@link jetbrains.mps.persistence.MetaModelInfoProvider} directly.
@@ -187,6 +202,16 @@ public interface MetaModelInfoProvider {
     @Override
     public void setUnordered(SContainmentLinkId link, boolean unordered) {
       // intentionally no-op
+    }
+
+    @Override
+    public SConceptId getStubConcept(SConceptId origin) {
+      return null;
+    }
+
+    @Override
+    public void setStubConcept(SConceptId origin, SConceptId stub) {
+      // intentionally left no-op
     }
   }
 
@@ -289,6 +314,21 @@ public interface MetaModelInfoProvider {
     }
 
     @Override
+    public SConceptId getStubConcept(SConceptId origin) {
+      String originFQName = getConceptName(origin);
+      if (originFQName == null) {
+        return null;
+      }
+      // FIXME move stub concept id to ConceptDescriptor
+      String stubFQName = ConceptInfo.constructStubConceptName(originFQName);
+      final ConceptDescriptor stubConceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(stubFQName);
+      if(stubConceptDescriptor != null) {
+        return stubConceptDescriptor.getId();
+      }
+      return null;
+    }
+
+    @Override
     public void setLanguageName(SLanguageId lang, String name) {
       DebugRegistry.getInstance().addLanguageName(lang, name);
     }
@@ -328,10 +368,31 @@ public interface MetaModelInfoProvider {
     private final Map<SContainmentLinkId, Boolean> myUnordered = new HashMap<SContainmentLinkId, Boolean>();
     private final Map<SConceptId, StaticScope> myScope = new HashMap<SConceptId, StaticScope>();
     private final Map<SConceptId, ConceptKind> myKind = new HashMap<SConceptId, ConceptKind>();
+    private final Map<SConceptId, SConceptId> myStubs = new HashMap<SConceptId, SConceptId>();
     private final MetaModelInfoProvider myDelegate;
 
     public StuffedMetaModelInfo(@NotNull MetaModelInfoProvider delegate) {
       myDelegate = delegate;
+    }
+
+    /**
+     * Fill another StuffedMetaModelInfo instance with information known to this one.
+     * It might be necessary if we don't want to use this provider as is due to delegate.
+     *
+     * There would be no need in this method if we could pass proper StuffedMetaModelInfo
+     * instance right into modelFactory.load(). However, given Map(String,String) for options,
+     * we have to assume there might be inappropriate delegate which we can't rely on (i.e. merge has to
+     * combine few stuffed sources, asks them one by one, first one to answer wins)
+     */
+    public void populate(@NotNull StuffedMetaModelInfo other) {
+      other.myLanguageNames.putAll(myLanguageNames);
+      other.myConceptNames.putAll(myConceptNames);
+      other.myPropertyNames.putAll(myPropertyNames);
+      other.myAssociationNames.putAll(myAssociationNames);
+      other.myAggregationNames.putAll(myAggregationNames);
+      other.myUnordered.putAll(myUnordered);
+      other.myScope.putAll(myScope);
+      other.myKind.putAll(myKind);
     }
 
     @Override
@@ -410,6 +471,16 @@ public interface MetaModelInfoProvider {
       myDelegate.setUnordered(link, unordered);
     }
 
+    @Override
+    public void setStubConcept(SConceptId origin, SConceptId stub) {
+      if (stub == null) {
+        myStubs.remove(origin);
+      } else {
+        myStubs.put(origin, stub);
+      }
+      myDelegate.setStubConcept(origin, stub);
+    }
+
     private static boolean isEmpty(String name) {
       return name == null || name.isEmpty();
     }
@@ -484,6 +555,15 @@ public interface MetaModelInfoProvider {
         return unordered;
       }
       return myDelegate.isUnordered(link);
+    }
+
+    @Override
+    public SConceptId getStubConcept(SConceptId origin) {
+      SConceptId stub = myStubs.get(origin);
+      if (stub != null) {
+        return stub;
+      }
+      return myDelegate.getStubConcept(origin);
     }
   }
 }

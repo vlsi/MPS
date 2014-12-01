@@ -35,10 +35,12 @@
     <dependency reexport="false">444220d9-055e-44dd-a551-ed91c97d5067(jetbrains.mps.baseLanguage.unitTest.sandbox)</dependency>
     <dependency reexport="false">e60b351d-8d80-4c13-8ad4-3e4759e2a3ea(jetbrains.mps.baseLanguage.unittest)</dependency>
     <dependency reexport="false">4831e627-794e-416a-983a-50889cae21f8(jetbrains.mps.baseLanguageInternal.test)</dependency>
+    <dependency reexport="false">c9bc8834-ad52-4c80-83d0-64827cf13fae(jetbrains.mps.build.stripping.tests)</dependency>
     <dependency reexport="false">39742b07-848c-43a7-be0a-845055dd3333(jetbrains.mps.build.tests)</dependency>
     <dependency reexport="false">70b17f0c-ff72-43e8-9468-eda69efb2b71(jetbrains.mps.debugger.java.runtime.tests)</dependency>
     <dependency reexport="false">50fc24f9-2bc9-4702-84ed-7f00cd088aca(jetbrains.mps.generator.tests)</dependency>
     <dependency reexport="false">c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)</dependency>
+    <dependency reexport="false">9dc77d7d-3b66-403c-b568-37677f157448(jetbrains.mps.ide.vcs.test)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">4076bab3-4981-4035-94aa-19b6b4c51a84(jetbrains.mps.kernel.tests)</dependency>
     <dependency reexport="false">6ed0339f-b777-4ada-9cf7-73354b12f191(jetbrains.mps.lang.actions.test)</dependency>
@@ -57,6 +59,7 @@
     <dependency reexport="false">f8e20673-3f65-44e9-84c0-c4a4b6ede37e(jetbrains.mps.make.facets)</dependency>
     <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
     <dependency reexport="false">ad44d830-d9b6-4c92-9e56-821fcc11b493(jetbrains.mps.make.tests)</dependency>
+    <dependency reexport="false">5cc84139-6daa-4cf6-9a75-d1505100aeb4(jetbrains.mps.migration.test)</dependency>
     <dependency reexport="false">45571709-5529-4a2c-94c9-5b0e2469ad35(jetbrains.mps.samples.agreement.framework)</dependency>
     <dependency reexport="false">086f6299-eca0-43c4-bbca-fab3f95963aa(jetbrains.mps.samples.secretCompartment.runtime)</dependency>
     <dependency reexport="false">761394b7-dc42-4fe5-adc7-1d9ff2aa76e6(jetbrains.mps.samples.xmlPersistence)</dependency>

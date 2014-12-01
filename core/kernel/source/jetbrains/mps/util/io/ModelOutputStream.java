@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,24 @@
  */
 package jetbrains.mps.util.io;
 
+import gnu.trove.TObjectIntHashMap;
+import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -33,21 +45,48 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 /**
  * Evgeny Gryaznov, Sep 27, 2010
  */
 public class ModelOutputStream extends DataOutputStream {
+  static final byte NULL = 0x70;
+  static final byte NODEID_STRING = 0x17;
+  static final byte NODEID_LONG = 0x18;
+  static final byte MODELID_STRING = 0x26;
+  static final byte MODELID_REGULAR = 0x28;
+  static final byte MODELID_FOREIGN = 0x27;
+  static final byte NODEPTR = 0x44;
+  static final byte MODULEID_FOREIGN = 0x47;
+  static final byte MODULEID_REGULAR = 0x48;
+  static final byte MODELREF = 7;
+  static final byte MODELREF_INDEX = 9;
+  static final byte MODULEREF_MODULEID = 0x17;
+  static final byte MODULEREF_NAMEONLY = 0x18;
+  static final byte MODULEREF_INDEX = 0x19;
+  static final byte LANGUAGE = 0x30;
+  static final byte LANGUAGE_INDEX = 0x31;
+  static final byte CONCEPT = 0x32;
+  static final byte CONCEPT_INDEX = 0x33;
+  static final byte PROPERTY = 0x34;
+  static final byte PROPERTY_INDEX = 0x35;
+  static final byte ASSOCIATION = 0x36;
+  static final byte ASSOCIATION_INDEX = 0x37;
+  static final byte AGGREGATION = 0x38;
+  static final byte AGGREGATION_INDEX = 0x39;
 
-  private Map<String, Integer> stringToIndex = new HashMap<String, Integer>();
-  private Map<SModelReference, Integer> modelrefToIndex = new HashMap<SModelReference, Integer>();
-  private Map<SModuleReference, Integer> moduleRefToIndex = new HashMap<SModuleReference, Integer>();
-  private int myStringIndex = 0;
-  private int myRefIndex = 0;
-  private int myModuleRefIndex = 0;
+
+  private TObjectIntHashMap<String> stringToIndex = new TObjectIntHashMap<String>();
+  private TObjectIntHashMap<SModelReference> modelrefToIndex = new TObjectIntHashMap<SModelReference>();
+  private TObjectIntHashMap<SModuleReference> moduleRefToIndex = new TObjectIntHashMap<SModuleReference>();
+  private TObjectIntHashMap<SLanguageId> myLanguage2Index = new TObjectIntHashMap<SLanguageId>();
+  private TObjectIntHashMap<SConceptId> myConcept2Index = new TObjectIntHashMap<SConceptId>();
+  private TObjectIntHashMap<SPropertyId> myProperty2Index = new TObjectIntHashMap<SPropertyId>();
+  private TObjectIntHashMap<SReferenceLinkId> myAssociation2Index = new TObjectIntHashMap<SReferenceLinkId>();
+  private TObjectIntHashMap<SContainmentLinkId> myAggregation2Index = new TObjectIntHashMap<SContainmentLinkId>();
+  private int myStringIndex, myRefIndex, myModuleRefIndex = 0;
+  private int myLanguageIndex, myConceptIndex, myPropertyIndex, myAssociationIndex, myAggregationIndex;
 
   public ModelOutputStream(OutputStream out) {
     super(new BufferedOutputStream(out, 65536));
@@ -64,10 +103,9 @@ public class ModelOutputStream extends DataOutputStream {
 
   public void writeString(@Nullable String s) throws IOException {
     if (s == null) {
-      writeByte(0x70);
+      writeByte(NULL);
     } else {
-      Integer index = stringToIndex.get(s);
-      if (index == null) {
+      if (!stringToIndex.containsKey(s)) {
         stringToIndex.put(s, myStringIndex++);
         while (s.length() > 16384) {
           String prefix = s.substring(0, 16384);
@@ -79,42 +117,39 @@ public class ModelOutputStream extends DataOutputStream {
         writeUTF(s);
       } else {
         writeByte(1);
-        writeInt(index);
+        writeInt(stringToIndex.get(s));
       }
     }
   }
 
   public void writeModuleReference(SModuleReference ref) throws IOException {
     if (ref == null) {
-      writeByte(0x70);
+      writeByte(NULL);
     } else {
-      Integer index = moduleRefToIndex.get(ref);
-      if (index == null) {
+      if (!moduleRefToIndex.containsKey(ref)) {
         moduleRefToIndex.put(ref, myModuleRefIndex++);
         if (ref.getModuleId() != null) {
-          writeByte(0x17);
+          writeByte(MODULEREF_MODULEID);
           writeModuleID(ref.getModuleId());
         } else {
-          writeByte(0x18);
+          writeByte(MODULEREF_NAMEONLY);
         }
         writeString(ref.getModuleName());
       } else {
-        writeByte(0x19);
-        writeInt(index);
+        writeByte(MODULEREF_INDEX);
+        writeInt(moduleRefToIndex.get(ref));
       }
     }
   }
 
   public void writeModuleID(SModuleId id) throws IOException {
     if (id == null) {
-      writeByte(0x70);
+      writeByte(NULL);
     } else if (id instanceof ModuleId.Regular) {
-      writeByte(0x48);
-      UUID uuid = ((ModuleId.Regular) id).getUUID();
-      writeLong(uuid.getMostSignificantBits());
-      writeLong(uuid.getLeastSignificantBits());
+      writeByte(MODULEID_REGULAR);
+      writeUUID(((ModuleId.Regular) id).getUUID());
     } else if (id instanceof ModuleId.Foreign) {
-      writeByte(0x47);
+      writeByte(MODULEID_FOREIGN);
       writeString(((ModuleId.Foreign) id).getName());
     } else {
       throw new IOException("unknown id");
@@ -124,35 +159,32 @@ public class ModelOutputStream extends DataOutputStream {
 
   public void writeModelReference(SModelReference ref) throws IOException {
     if (ref == null) {
-      writeByte(0x70);
+      writeByte(NULL);
     } else {
-      Integer index = modelrefToIndex.get(ref);
-      if (index == null) {
+      if (!modelrefToIndex.containsKey(ref)) {
         modelrefToIndex.put(ref, myRefIndex++);
-        writeByte(7);
+        writeByte(MODELREF);
         writeModelID(ref.getModelId());
         writeString(ref.getModelName());
         writeModuleReference(ref.getModuleReference());
       } else {
-        writeByte(9);
-        writeInt(index);
+        writeByte(MODELREF_INDEX);
+        writeInt(modelrefToIndex.get(ref));
       }
     }
   }
 
   public void writeModelID(SModelId id) throws IOException {
     if (id == null) {
-      writeByte(0x70);
+      writeByte(NULL);
     } else if (id instanceof RegularSModelId) {
-      writeByte(0x28);
-      UUID uuid = ((RegularSModelId) id).getId();
-      writeLong(uuid.getMostSignificantBits());
-      writeLong(uuid.getLeastSignificantBits());
+      writeByte(MODELID_REGULAR);
+      writeUUID(((RegularSModelId) id).getId());
     } else if (id instanceof ForeignSModelId) {
-      writeByte(0x27);
+      writeByte(MODELID_FOREIGN);
       writeString(((ForeignSModelId) id).getId());
     } else {
-      writeByte(0x26);
+      writeByte(MODELID_STRING);
       writeString(id.toString());
     }
 
@@ -160,23 +192,113 @@ public class ModelOutputStream extends DataOutputStream {
 
   public void writeNodeId(SNodeId id) throws IOException {
     if (id == null) {
-      writeByte(0x70);
+      writeByte(NULL);
     } else if (id instanceof Regular) {
-      writeByte(0x18);
+      writeByte(NODEID_LONG);
       writeLong(((Regular) id).getId());
     } else {
-      writeByte(0x17);
+      writeByte(NODEID_STRING);
       writeString(id.toString());
     }
   }
 
   public void writeNodePointer(SNodeReference ptr) throws IOException {
     if (ptr == null) {
-      writeByte(0x70);
+      writeByte(NULL);
     } else {
-      writeByte(0x44);
+      writeByte(NODEPTR);
       writeModelReference(ptr.getModelReference());
       writeNodeId(((SNodePointer) ptr).getNodeId());
+    }
+  }
+
+  public void writeUUID(UUID uuid) throws IOException {
+    writeLong(uuid.getMostSignificantBits());
+    writeLong(uuid.getLeastSignificantBits());
+  }
+  public void writeLanguage(SLanguage lang) throws IOException {
+    if (lang == null) {
+      writeByte(NULL);
+      return;
+    }
+    final SLanguageId id = IdHelper.getLanguageId(lang);
+    if (myLanguage2Index.containsKey(id)) {
+      writeByte(LANGUAGE_INDEX);
+      writeShort(myLanguage2Index.get(id));
+    } else {
+      writeByte(LANGUAGE);
+      writeUUID(id.getIdValue());
+      writeString(lang.getQualifiedName());
+      myLanguage2Index.put(id, myLanguageIndex++);
+    }
+  }
+
+  public void writeConcept(SAbstractConcept concept) throws IOException {
+    if (concept == null) {
+      writeByte(NULL);
+      return;
+    }
+    final SConceptId id = IdHelper.getConceptId(concept);
+    if (myConcept2Index.containsKey(id)) {
+      writeByte(CONCEPT_INDEX);
+      writeShort(myConcept2Index.get(id));
+    } else {
+      writeByte(CONCEPT);
+      writeUUID(id.getLanguageId().getIdValue());
+      writeLong(id.getIdValue());
+      writeString(concept.getQualifiedName()); // FIXME MetaAdapterFactory shall be explicit about what concept name it takes
+      myConcept2Index.put(id, myConceptIndex++);
+    }
+  }
+  public void writeProperty(SProperty property) throws IOException {
+    if (property == null) {
+      writeByte(NULL);
+      return;
+    }
+    final SPropertyId id = IdHelper.getPropertyId(property);
+    if (myProperty2Index.containsKey(id)) {
+      writeByte(PROPERTY_INDEX);
+      writeShort(myProperty2Index.get(id));
+    } else {
+      writeByte(PROPERTY);
+      writeConcept(property.getContainingConcept());
+      writeLong(id.getIdValue());
+      writeString(property.getName());
+      myProperty2Index.put(id, myPropertyIndex++);
+    }
+  }
+  public void writeReferenceLink(SReferenceLink link) throws IOException {
+    if (link == null) {
+      writeByte(NULL);
+      return;
+    }
+    final SReferenceLinkId id = IdHelper.getRefId(link);
+    if (myAssociation2Index.containsKey(id)) {
+      writeByte(ASSOCIATION_INDEX);
+      writeShort(myAssociation2Index.get(id));
+    } else {
+      writeByte(ASSOCIATION);
+      writeConcept(link.getContainingConcept());
+      writeLong(id.getIdValue());
+      writeString(link.getRoleName());
+      myAssociation2Index.put(id, myAssociationIndex++);
+    }
+  }
+  public void writeContainmentLink(SContainmentLink link) throws IOException {
+    if (link == null) {
+      writeByte(NULL);
+      return;
+    }
+    final SContainmentLinkId id = IdHelper.getLinkId(link);
+    if (myAggregation2Index.containsKey(id)) {
+      writeByte(AGGREGATION_INDEX);
+      writeShort(myAggregation2Index.get(id));
+    } else {
+      writeByte(AGGREGATION);
+      writeConcept(link.getContainingConcept());
+      writeLong(id.getIdValue());
+      writeString(link.getRoleName());
+      myAggregation2Index.put(id, myAggregationIndex++);
     }
   }
 }

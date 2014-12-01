@@ -25,12 +25,12 @@ import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.vcs.util.MergeConstants;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
 import com.intellij.openapi.ui.DialogWrapper;
+import jetbrains.mps.util.FileUtil;
 
 public class ModelMergeTool extends MergeTool {
   private static final Logger LOG = LogManager.getLogger(ModelMergeTool.class);
@@ -57,8 +57,8 @@ public class ModelMergeTool extends MergeTool {
         ext.value = MPSExtentions.MODEL;
       }
       SModel baseModel = PersistenceUtil.loadModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), ext.value);
-      SModel mineModel = PersistenceUtil.loadModel(new String(contents[MergeConstants.CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), ext.value);
-      SModel newModel = PersistenceUtil.loadModel(new String(contents[MergeConstants.LAST_REVISION].getBytes(), FileUtil.DEFAULT_CHARSET), ext.value);
+      SModel mineModel = PersistenceUtil.loadModel(contents[MergeConstants.CURRENT].getBytes(), ext.value);
+      SModel newModel = PersistenceUtil.loadModel(contents[MergeConstants.LAST_REVISION].getBytes(), ext.value);
       if (baseModel == null || mineModel == null || newModel == null) {
         if (LOG_705910402.isEnabledFor(Level.WARN)) {
           LOG_705910402.warn("Couldn't read model, invoking text merge");

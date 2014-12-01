@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)" concise="true">
+<model ref="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)">
   <persistence version="9" />
   <languages>
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
   </languages>
-  <imports>
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="tp4k" ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" implicit="true" />
-    <import index="tgbt" ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
-      <concept id="5864553086652219116" name="jetbrains.mps.lang.plugin.structure.IdeaPluginDependency" flags="lg" index="2Tc6Op">
-        <property id="5864553086652219119" name="pluginId" index="2Tc6Oq" />
-      </concept>
       <concept id="5023285075122009364" name="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" flags="ng" index="9BnSX">
-        <property id="8842945788826116904" name="loadModules" index="2PJ1tZ" />
-        <property id="1573568368168371217" name="handleErrors" index="3FCvg6" />
         <property id="5023285075122009369" name="version" index="9BnSK" />
         <property id="5023285075122009368" name="descripttion" index="9BnSL" />
         <property id="5023285075122009371" name="vendor" index="9BnSM" />
         <property id="5023285075122009373" name="ideaVersion" index="9BnSO" />
         <property id="5023285075122009372" name="vendorUrl" index="9BnSP" />
         <property id="5023285075122009366" name="id" index="9BnSZ" />
+        <property id="8842945788826116904" name="loadModules" index="2PJ1tZ" />
         <property id="4167053799973858143" name="vendorLogo" index="1qHB85" />
+        <property id="1573568368168371217" name="handleErrors" index="3FCvg6" />
         <child id="5864553086652219115" name="dependency" index="2Tc6Ou" />
+      </concept>
+      <concept id="5864553086652219116" name="jetbrains.mps.lang.plugin.structure.IdeaPluginDependency" flags="lg" index="2Tc6Op">
+        <property id="5864553086652219119" name="pluginId" index="2Tc6Oq" />
       </concept>
     </language>
     <language id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone">

@@ -66,7 +66,7 @@ public class ModelWriter4 implements IModelWriter {
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
-    for (ImportElement aspectElement : sourceModel.getAdditionalModelVersions()) {
+    for (ImportElement aspectElement : sourceModel.getImplicitImportsSupport().getAdditionalModelVersions()) {
       SModelReference modelReference = aspectElement.getModelReference();
       if (modelReference == null) continue;
       if (!writtenAspects.contains(modelReference.toString())) {
@@ -148,7 +148,7 @@ public class ModelWriter4 implements IModelWriter {
   }
 
   private void writeAspect(SModel sourceModel, Element parent, SModelReference aspectReference) {
-    int modelVersion = SModelOperations.getLanguageAspectModelVersion(sourceModel.getModelDescriptor(), aspectReference);
+    int modelVersion = VersionUtil.getLanguageAspectModelVersion(sourceModel, aspectReference);
     Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
     aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, aspectReference.toString());
     aspectModelElement.setAttribute(ModelPersistence.VERSION, "" + modelVersion);

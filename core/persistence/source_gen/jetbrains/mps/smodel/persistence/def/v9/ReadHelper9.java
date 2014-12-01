@@ -47,7 +47,7 @@ public class ReadHelper9 {
   public void addImportToModel(SModel model, String index, SModelReference ref, boolean implicit) {
     SModel.ImportElement elem = new SModel.ImportElement(ref);
     if (implicit) {
-      model.addAdditionalModelVersion(elem);
+      model.getImplicitImportsSupport().addAdditionalModelVersion(elem);
     } else {
       model.addModelImport(elem);
     }
@@ -60,8 +60,6 @@ public class ReadHelper9 {
     registerLanguage(index, ref);
   }
   public void addImplicitlyUsedLanguage(SModel model, String index, SLanguageId ref, int version) {
-    String name = DebugRegistry.getInstance().getLanguageName(ref);
-    model.addImplicitlyUsedLanguage(MetaAdapterFactory.getLanguage(ref, name), version);
     registerLanguage(index, ref);
   }
   public void registerLanguage(String index, SLanguageId ref) {

@@ -30,10 +30,12 @@ public final class MPSPersistence extends ComponentPlugin {
   @Override
   public void init() {
     super.init();
-    init(new DefaultModelPersistence());
-    init(new FilePerRootModelPersistence());
-    init(new BinaryModelPersistence());
-    init(new JavaClassesPersistence());
+    // FIXME pass MPSCore instance to MPSPersistence and use it as source
+    PersistenceRegistry persistenceRegistry = PersistenceRegistry.getInstance();
+    init(new DefaultModelPersistence(persistenceRegistry));
+    init(new FilePerRootModelPersistence(persistenceRegistry));
+    init(new BinaryModelPersistence(persistenceRegistry));
+    init(new JavaClassesPersistence(persistenceRegistry));
     init(new PersistenceMigrations());
   }
 }

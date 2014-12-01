@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:46f53b30-44a8-4c39-ba0f-5abf40394bee(sandboxModel2)" concise="true">
+<model ref="r:46f53b30-44a8-4c39-ba0f-5abf40394bee(sandboxModel2)">
   <persistence version="9" />
   <languages>
     <use id="7c9e2807-94ad-4afc-adf0-aaee45eb2895" name="jetbrains.mps.samples.lambdaCalculus" version="-1" />
   </languages>
-  <imports>
-    <import index="qjd" ref="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
     <language id="7c9e2807-94ad-4afc-adf0-aaee45eb2895" name="jetbrains.mps.samples.lambdaCalculus">
+      <concept id="1934341835352312169" name="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation" flags="ng" index="28wy3f" />
+      <concept id="1934341835352312155" name="jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation" flags="ng" index="28wy3X">
+        <child id="1934341835352312156" name="left" index="28wy3U" />
+        <child id="1934341835352312157" name="right" index="28wy3V" />
+      </concept>
+      <concept id="5249919352014727944" name="jetbrains.mps.samples.lambdaCalculus.structure.VariableReference" flags="ng" index="2k$xVt">
+        <reference id="5249919352014732020" name="variable" index="2k$wWx" />
+      </concept>
       <concept id="4939219901991602079" name="jetbrains.mps.samples.lambdaCalculus.structure.LetExpression" flags="ng" index="2Dd6nb">
         <child id="4939219901991602080" name="value" index="2Dd6nO" />
         <child id="4939219901991602081" name="expression" index="2Dd6nP" />
         <child id="8360767178776358704" name="variable" index="3oGGp3" />
       </concept>
+      <concept id="4939219901992083820" name="jetbrains.mps.samples.lambdaCalculus.structure.LetRef" flags="ng" index="2Dj8cS" />
+      <concept id="6645816968628162282" name="jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation" flags="ng" index="PoI6S" />
+      <concept id="6645816968628162284" name="jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation" flags="ng" index="PoI6Y" />
+      <concept id="8360767178776325736" name="jetbrains.mps.samples.lambdaCalculus.structure.LetVariable" flags="ng" index="3oG$sr" />
       <concept id="4022026349915669385" name="jetbrains.mps.samples.lambdaCalculus.structure.Program" flags="ng" index="3wbhwI">
         <child id="4022026349915669386" name="expression" index="3wbhwH" />
       </concept>
+      <concept id="4022026349915821199" name="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef" flags="ng" index="3wbOWC" />
       <concept id="4022026349914673025" name="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable" flags="ng" index="3wftgA" />
       <concept id="4022026349914673024" name="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction" flags="ng" index="3wftgB">
         <child id="4022026349914762681" name="variable" index="3wfNou" />
@@ -35,22 +40,14 @@
         <child id="4022026349914762721" name="argument" index="3wfNp6" />
         <child id="4022026349914762720" name="function" index="3wfNp7" />
       </concept>
-      <concept id="6645816968628162282" name="jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation" flags="ng" index="PoI6S" />
       <concept id="3978364766705449817" name="jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression" flags="ng" index="1_norO">
         <child id="3978364766705449818" name="expression" index="1_norR" />
       </concept>
-      <concept id="1934341835352312169" name="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation" flags="ng" index="28wy3f" />
-      <concept id="1934341835352312155" name="jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation" flags="ng" index="28wy3X">
-        <child id="1934341835352312156" name="left" index="28wy3U" />
-        <child id="1934341835352312157" name="right" index="28wy3V" />
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-      <concept id="4022026349915821199" name="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef" flags="ng" index="3wbOWC" />
-      <concept id="6645816968628162284" name="jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation" flags="ng" index="PoI6Y" />
-      <concept id="5249919352014727944" name="jetbrains.mps.samples.lambdaCalculus.structure.VariableReference" flags="ng" index="2k$xVt">
-        <reference id="5249919352014732020" name="variable" index="2k$wWx" />
-      </concept>
-      <concept id="4939219901992083820" name="jetbrains.mps.samples.lambdaCalculus.structure.LetRef" flags="ng" index="2Dj8cS" />
-      <concept id="8360767178776325736" name="jetbrains.mps.samples.lambdaCalculus.structure.LetVariable" flags="ng" index="3oG$sr" />
     </language>
   </registry>
   <node concept="3wbhwI" id="HjuzWK6KSS">

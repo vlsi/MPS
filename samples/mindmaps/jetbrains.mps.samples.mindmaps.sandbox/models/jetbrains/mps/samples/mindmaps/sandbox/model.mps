@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:c7a7a9f3-0c2b-433c-8f15-ea1325dc7241(jetbrains.mps.samples.mindmaps.sandbox.model)" concise="true">
+<model ref="r:c7a7a9f3-0c2b-433c-8f15-ea1325dc7241(jetbrains.mps.samples.mindmaps.sandbox.model)">
   <persistence version="9" />
   <languages>
     <use id="33f294fd-370a-4a40-999b-43f382910018" name="jetbrains.mps.samples.mindmaps" version="-1" />
   </languages>
-  <imports>
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="3g6l" ref="r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
-        <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
     <language id="33f294fd-370a-4a40-999b-43f382910018" name="jetbrains.mps.samples.mindmaps">
       <concept id="5058522826399262785" name="jetbrains.mps.samples.mindmaps.structure.Specializes" flags="ng" index="3tydfO" />
       <concept id="5058522826399342676" name="jetbrains.mps.samples.mindmaps.structure.CoreThrought" flags="ng" index="3tzTJx" />
       <concept id="79242395703953958" name="jetbrains.mps.samples.mindmaps.structure.VisualBox" flags="ng" index="3Y34MJ">
+        <property id="5871420002487302178" name="myIsClicked" index="66S50" />
         <property id="79242395703953961" name="y" index="3Y34Mw" />
         <property id="79242395703953959" name="x" index="3Y34MI" />
-        <property id="5871420002487302178" name="myIsClicked" index="66S50" />
       </concept>
       <concept id="79242395703884488" name="jetbrains.mps.samples.mindmaps.structure.Thought" flags="ng" index="3Y3jL1" />
       <concept id="79242395703884499" name="jetbrains.mps.samples.mindmaps.structure.Relationship" flags="ng" index="3Y3jLq">
-        <reference id="79242395703887327" name="target" index="3Y3kdm" />
         <reference id="5871420002487876254" name="source" index="64GfW" />
+        <reference id="79242395703887327" name="target" index="3Y3kdm" />
       </concept>
       <concept id="79242395703866767" name="jetbrains.mps.samples.mindmaps.structure.MindMap" flags="ng" index="3Y3vc6">
         <child id="79242395703887323" name="relationships" index="3Y3kdi" />
         <child id="79242395703887318" name="thoughts" index="3Y3kdv" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>

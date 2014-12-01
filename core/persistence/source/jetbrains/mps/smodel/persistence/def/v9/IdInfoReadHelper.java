@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.LangInfo;
+import jetbrains.mps.smodel.runtime.ConceptKind;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -37,10 +38,9 @@ import java.util.Map;
 
 /**
  * Facility to read meta-model information persisted in a model file, to fill {@link jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector} back from the
- * serialized registry. Serves as the way to parametrize ModelReader.
+ * serialized registry. Serves the task to parametrize ModelReader as well.
  *
- * Deals with the way meta-object identifiers are de-serialized, although marshal/unmarshal code shall be kept together, pending refactoring.
- * I'd prefer to have utility objects being used both from read and write, rather than dedicated set of reader utilities and writer utilities as it used to be.
+ * Although barely a mediator to few other facilities, grabs great portion of code one would otherwise write in ModelReaderHandler.
  *
  * Stateful, withLanguage() identifies language for subsequent withConcept, which, furthermore, identify concept for any
  * subsequent #property(), #association() and #aggregation call.
@@ -61,7 +61,7 @@ class IdInfoReadHelper {
   public IdInfoReadHelper(@NotNull MetaModelInfoProvider mmiProvider, boolean interfaceOnly, boolean stripImplementation) {
     myMetaInfoProvider = mmiProvider;
     myIdEncoder = new IdEncoder();
-    myInfoCollector = new IdInfoCollector(mmiProvider);
+    myInfoCollector = new IdInfoCollector();
     myInterfaceOnly = interfaceOnly;
     myStripImplementation = stripImplementation;
   }
@@ -88,7 +88,8 @@ class IdInfoReadHelper {
     myMetaInfoProvider.setLanguageName(languageId, name);
   }
 
-  public void withConcept(String id, String name, String index, String nodeInfo) {
+  // @param stub is optional
+  public void withConcept(String id, String name, String index, String nodeInfo, String stub) {
     assert myActualLang != null;
     SConceptId conceptId = myIdEncoder.parseConceptId(myActualLang.getLanguageId(), id);
     myActualConcept = myInfoCollector.registerConcept(conceptId);
@@ -98,6 +99,12 @@ class IdInfoReadHelper {
     myMetaInfoProvider.setConceptName(conceptId, name);
     myMetaInfoProvider.setKind(conceptId, myActualConcept.getKind());
     myMetaInfoProvider.setScope(conceptId, myActualConcept.getScope());
+    if (stub != null) {
+      // XXX here we imply stub concepts live in the save language as their origin
+      final SConceptId stubId = myIdEncoder.parseConceptId(myActualLang.getLanguageId(), stub);
+      myActualConcept.setStubCounterpart(stubId);
+      myMetaInfoProvider.setStubConcept(conceptId, stubId);
+    }
   }
 
   public void property(String id, String name, String index) {
@@ -119,7 +126,7 @@ class IdInfoReadHelper {
   public void aggregation(String id, String name, String index, boolean unordered) {
     assert myActualConcept != null;
     SContainmentLinkId linkId = myIdEncoder.parseAggregation(myActualConcept.getConceptId(), id);
-    myActualConcept.addLink(linkId, name);
+    myActualConcept.addLink(linkId, name, unordered);
     myAggregations.put(index, MetaAdapterFactory.getContainmentLink(linkId, name));
     myMetaInfoProvider.setAggregationName(linkId, name);
     myMetaInfoProvider.setUnordered(linkId, unordered);
@@ -152,26 +159,30 @@ class IdInfoReadHelper {
   }
 
   public boolean isInterface(@NotNull SConcept concept) {
-    // ReadHelper9.readNodeInfo
-    String nodeInfo = myInfoCollector.find(concept).getImplementationKindText();
-    return nodeInfo.charAt(0) == 'i';
+    return ConceptKind.INTERFACE == myInfoCollector.find(concept).getKind();
   }
 
   public boolean isImplementation(@NotNull SConcept concept) {
-    String nodeInfo = myInfoCollector.find(concept).getImplementationKindText();
-    final char c = nodeInfo.charAt(0);
-    return c == 's' || c == 'l';
+    return myInfoCollector.find(concept).isImplementation();
   }
+  public boolean isImplementationWithStub(@NotNull SConcept concept) {
+    return myInfoCollector.find(concept).isImplementationWithStub();
+  }
+  @Deprecated
   public boolean isImplementationWithStab(@NotNull SConcept concept) {
-    // ReadHelper9.isImplementationWithStab
-    String nodeInfo = myInfoCollector.find(concept).getImplementationKindText();
-    return nodeInfo.charAt(0) == 's';
+    return myInfoCollector.find(concept).isImplementationWithStub();
   }
 
+  /**
+   * This method shall be invoked only if {@link #isImplementationWithStub(org.jetbrains.mps.openapi.language.SConcept)} == <code>true</code>
+   */
   @NotNull
   public SConcept getStubConcept(@NotNull SConcept original) {
     final ConceptInfo ci = myInfoCollector.find(original);
-    return ReadHelper9.createStubConcept(ci.getName());
+    assert ci.getKind() == ConceptKind.IMPLEMENTATION_WITH_STUB;
+    final SConceptId stub = ci.getStubCounterpart();
+    assert stub != null;
+    return MetaAdapterFactory.getConcept(stub, ci.constructStubConceptName());
   }
 
   public SLanguage getLanguage(@NotNull SLanguageId langId, @NotNull String langName) {

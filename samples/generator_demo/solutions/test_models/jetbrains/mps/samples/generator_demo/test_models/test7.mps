@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:28292228-dd23-49f9-b60b-1b769a5866b8(jetbrains.mps.samples.generator_demo.test_models.test7)" concise="true">
+<model ref="r:28292228-dd23-49f9-b60b-1b769a5866b8(jetbrains.mps.samples.generator_demo.test_models.test7)">
   <persistence version="9" />
   <languages>
     <use id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML" version="-1" />
     <use id="b1ccc903-f5a9-42d1-add9-80ac0e69d662" name="jetbrains.mps.samples.generator_demo.demoLang7" version="-1" />
   </languages>
-  <imports>
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="dghb" ref="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" implicit="true" />
-    <import index="e3ke" ref="r:45723a22-341f-445c-b1e4-1a01f6efecf1(jetbrains.mps.samples.generator_demo.demoLang7.structure)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
-    <language id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML">
-      <concept id="1225239603385" name="jetbrains.mps.sampleXML.structure.Element" flags="ng" index="15YaA$">
-        <child id="1225239603386" name="attribute" index="15YaAB" />
-      </concept>
-      <concept id="1225239603361" name="jetbrains.mps.sampleXML.structure.Attribute" flags="ng" index="15YaAW">
-        <property id="1225239603363" name="value" index="15YaAY" />
-      </concept>
-    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -27,6 +15,14 @@
     <language id="b1ccc903-f5a9-42d1-add9-80ac0e69d662" name="jetbrains.mps.samples.generator_demo.demoLang7">
       <concept id="3618324829955890003" name="jetbrains.mps.samples.generator_demo.demoLang7.structure.XMLDocument" flags="ng" index="Disgg">
         <child id="3618324829955893152" name="element" index="Divzz" />
+      </concept>
+    </language>
+    <language id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML">
+      <concept id="1225239603385" name="jetbrains.mps.sampleXML.structure.Element" flags="ng" index="15YaA$">
+        <child id="1225239603386" name="attribute" index="15YaAB" />
+      </concept>
+      <concept id="1225239603361" name="jetbrains.mps.sampleXML.structure.Attribute" flags="ng" index="15YaAW">
+        <property id="1225239603363" name="value" index="15YaAY" />
       </concept>
     </language>
   </registry>

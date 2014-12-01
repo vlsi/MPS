@@ -1,11 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5waav0reo31m1ufch0gg9xtumtfn8n2">
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="7acg7jfloizfkh7fz9512hws89btuf5" />
-  <common hash="enqs8s1dr29fbdxjk5o00l2ps8lg48x" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="5294483648489409055" name="IRefactoringTester" hash="-ddims3oyhp4hxb5zyutx6zpoeqhucoz">
-    <file name="IRefactoringTester.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="6uffko6ky16c6mazgqm1zkstag7qw4i" />
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:a6b69945-eb25-45ac-a080-6c7ff0f8497d(jetbrains.mps.lang.editor.styleTests.behavior)" concise="true">
+<model ref="r:a6b69945-eb25-45ac-a080-6c7ff0f8497d(jetbrains.mps.lang.editor.styleTests.behavior)">
   <persistence version="9" />
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />

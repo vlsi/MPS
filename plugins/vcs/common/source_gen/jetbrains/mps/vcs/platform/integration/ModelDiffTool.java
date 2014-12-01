@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import com.intellij.openapi.diff.DocumentContent;
@@ -111,7 +110,7 @@ public class ModelDiffTool implements DiffTool {
       if (contentType != null && !((contentType.equals(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) || contentType.equals(MPSFileTypeFactory.MPS_HEADER_FILE_TYPE)))) {
         contentType.getDefaultExtension();
       }
-      return PersistenceUtil.loadModel(new String(bytes, FileUtil.DEFAULT_CHARSET), ext);
+      return PersistenceUtil.loadModel(bytes, ext);
     } catch (IOException ioe) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Couldn't read content: " + ioe.getMessage(), ioe);

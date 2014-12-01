@@ -174,7 +174,7 @@ public class ModelReader4 implements IModelReader {
         }
       }
       if (aspectModelUID != null) {
-        model.addAdditionalModelVersion(PersistenceFacade.getInstance().createModelReference(aspectModelUID), version);
+        model.getImplicitImportsSupport().addAdditionalModelVersion(PersistenceFacade.getInstance().createModelReference(aspectModelUID), version);
       }
     }
   }

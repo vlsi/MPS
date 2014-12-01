@@ -21,6 +21,7 @@ import com.intellij.openapi.fileTypes.FileTypeConsumer;
 import com.intellij.openapi.fileTypes.FileTypeFactory;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class MPSFileTypeFactory extends FileTypeFactory {
 
@@ -49,5 +50,19 @@ public class MPSFileTypeFactory extends FileTypeFactory {
     consumer.consume(MPS_NODE_FILE_TYPE);
     consumer.consume(MPS_MODEL_FILE_TYPE);
     consumer.consume(MPS_HEADER_FILE_TYPE, new ExactFileNameMatcher(".model"));
+  }
+
+  /**
+   * Find corresponding Idea file type if one is registered by MPS
+   * @return <code>null</code> if MPS doesn't register idea file type for a given extension
+   */
+  @Nullable
+  public static FileType findByExtension(String extension) {
+    for (FileType ft : MPS_FILE_TYPES) {
+      if (ft.getDefaultExtension().equals(extension)) {
+        return ft;
+      }
+    }
+    return null;
   }
 }

@@ -19,6 +19,8 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
+import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -64,17 +66,20 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
    */
   public static final String OPTION_INTERFACE_ONLY = "load-interface-only";
 
-  DefaultModelPersistence() {
+  private final PersistenceRegistry myRegistry;
+
+  DefaultModelPersistence(@NotNull PersistenceRegistry persistenceRegistry) {
+    myRegistry = persistenceRegistry;
   }
 
   @Override
   public void init() {
-    PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL, this);
+    myRegistry.setModelFactory(MPSExtentions.MODEL, this);
   }
 
   @Override
   public void dispose() {
-    PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL, null);
+    myRegistry.setModelFactory(MPSExtentions.MODEL, null);
   }
 
   @NotNull
@@ -90,8 +95,12 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     try {
       header = pf.readHeader();
       assert header.getModelReference() != null : "wrong model: " + source.getLocation();
-
       LOG.debug("Getting model " + header.getModelReference() + " from " + dataSource.getLocation());
+
+      if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
+        header.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo()));
+      }
+
       // If there are any load options, process them and fill the model with desired model data, otherwise return a lightweight descriptor.
       final DefaultSModelDescriptor rv = new DefaultSModelDescriptor(pf, header);
       if (options.containsKey(OPTION_STRIP_IMPLEMENTATION) && Boolean.parseBoolean(options.get(OPTION_STRIP_IMPLEMENTATION))) {
@@ -164,8 +173,6 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
 
       SModelHeader header = ModelPersistence.loadDescriptor(source);
       return header.getPersistenceVersion() < ModelPersistence.LAST_VERSION;
-    } catch (ModelReadException ex) {
-      throw new IOException(ex.getMessage(), ex);
     } finally {
       FileUtil.closeFileSafe(in);
     }
@@ -240,7 +247,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   public static Map<String, String> getDigestMap(Reader input) {
     try {
       return ModelPersistence.calculateHashes(FileUtil.read(input));
-    } catch (ModelReadException e) {
+    } catch (IOException e) {
       return null;
     }
   }

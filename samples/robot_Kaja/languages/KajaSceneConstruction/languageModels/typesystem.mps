@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:51084303-7aff-48f9-ad2c-085e46b32c5e(jetbrains.mps.samples.KajaSceneConstruction.typesystem)" concise="true">
+<model ref="r:51084303-7aff-48f9-ad2c-085e46b32c5e(jetbrains.mps.samples.KajaSceneConstruction.typesystem)">
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />

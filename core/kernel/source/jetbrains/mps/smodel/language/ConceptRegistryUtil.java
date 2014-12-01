@@ -21,9 +21,17 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptRegistryUtil {
+  /**
+   * Look up concept registry for specified concept
+   * @param fqName qualified name of a concept to look up
+   * @return <code>null</code> if concept with specified name is not found
+   */
+  @Nullable
   public static ConceptDescriptor getConceptDescriptor(String fqName) {
     ConceptRegistry cr = ConceptRegistry.getInstance();
     if (cr==null) return null;
@@ -31,6 +39,12 @@ public class ConceptRegistryUtil {
     return result instanceof IllegalConceptDescriptor ? null : result;
   }
 
+  /**
+   * Look up concept registry for specified concept
+   * @param conceptId id of a concept to look up
+   * @return <code>null</code> if not found
+   */
+  @Nullable
   public static ConceptDescriptor getConceptDescriptor(SConceptId conceptId) {
     ConceptRegistry cr = ConceptRegistry.getInstance();
     if (cr==null) return null;
@@ -38,6 +52,7 @@ public class ConceptRegistryUtil {
     return result instanceof IllegalConceptDescriptor ? null : result;
   }
 
+  @NotNull
   public static ConstraintsDescriptor getConstraintsDescriptor(SAbstractConcept concept) {
     ConceptRegistry cr = ConceptRegistry.getInstance();
     if (cr==null) return null;

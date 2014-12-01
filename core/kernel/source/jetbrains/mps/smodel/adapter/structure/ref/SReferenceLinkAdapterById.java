@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.ref;
 
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
@@ -45,6 +46,9 @@ public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   }
   @Override
   public String getRoleName() {
+    if (RuntimeFlags.isMergeDriverMode()) {
+      return myName;
+    }
     ReferenceDescriptor d = getReferenceDescriptor();
     if (d == null) {
       //invalid property, needed for propertyRead event in SNode until event is rewritten

@@ -11,7 +11,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.migration.StartupMigrationExecutor;
+import jetbrains.mps.ide.migration.StartupMigrationExecutorI;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -48,7 +48,7 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(StartupMigrationExecutor.class).executeWizard();
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(StartupMigrationExecutorI.class).executeWizard();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ExecuteMigrationAssistant", t);
