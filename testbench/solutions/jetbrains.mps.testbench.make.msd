@@ -35,6 +35,7 @@
     <dependency reexport="false">444220d9-055e-44dd-a551-ed91c97d5067(jetbrains.mps.baseLanguage.unitTest.sandbox)</dependency>
     <dependency reexport="false">e60b351d-8d80-4c13-8ad4-3e4759e2a3ea(jetbrains.mps.baseLanguage.unittest)</dependency>
     <dependency reexport="false">4831e627-794e-416a-983a-50889cae21f8(jetbrains.mps.baseLanguageInternal.test)</dependency>
+    <dependency reexport="false">c9bc8834-ad52-4c80-83d0-64827cf13fae(jetbrains.mps.build.stripping.tests)</dependency>
     <dependency reexport="false">39742b07-848c-43a7-be0a-845055dd3333(jetbrains.mps.build.tests)</dependency>
     <dependency reexport="false">70b17f0c-ff72-43e8-9468-eda69efb2b71(jetbrains.mps.debugger.java.runtime.tests)</dependency>
     <dependency reexport="false">50fc24f9-2bc9-4702-84ed-7f00cd088aca(jetbrains.mps.generator.tests)</dependency>

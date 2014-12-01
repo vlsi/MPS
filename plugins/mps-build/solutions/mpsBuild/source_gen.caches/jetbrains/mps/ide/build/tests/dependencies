@@ -7,6 +7,7 @@
   <dependency className="jetbrains.mps.ide.build.tests.mpsEditorDiagram" file="mpsEditorDiagram.xml" />
   <dependency className="jetbrains.mps.ide.build.tests.mpsExecution" file="mpsExecution.xml" />
   <dependency className="jetbrains.mps.ide.build.tests.mpsGenerator" file="mpsGenerator.xml" />
+  <dependency className="jetbrains.mps.ide.build.tests.mpsImplementationStripping" file="mpsImplementationStripping.xml" />
   <dependency className="jetbrains.mps.ide.build.tests.mpsJava" file="mpsJava.xml" />
   <dependency className="jetbrains.mps.ide.build.tests.mpsSModel" file="mpsSModel.xml" />
 </dependenciesRoot>
