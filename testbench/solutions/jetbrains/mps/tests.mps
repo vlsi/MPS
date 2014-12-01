@@ -2835,6 +2835,9 @@
     <node concept="lpD6D" id="3fsGbyalM7r" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3fsGbyakZet" resolve="Del_OnInitializerAssignment" />
     </node>
+    <node concept="lpD6D" id="64WA21bXcJY" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:64WA21bWWIA" resolve="AddFirstStaticFieldToInterface" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRPT7S" role="lpD6w">
       <ref role="lpD7u" to="ryl9:50rBX$kF$Ci" resolve="AddSingleLineComment1" />
     </node>
@@ -2864,6 +2867,9 @@
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3da" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7v6iz75B6aI" resolve="EditorCellSomeProblem" />
+    </node>
+    <node concept="lpD6D" id="64WA21bXdd1" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:64WA21bX8VR" resolve="FocusAfterRemovingStaticField" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3dp" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6sm8I7pq1p_" resolve="SelectionOfWrappedCell" />

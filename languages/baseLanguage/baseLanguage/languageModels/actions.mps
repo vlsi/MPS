@@ -34926,7 +34926,7 @@
   </node>
   <node concept="3FK_9_" id="3h7Obdl8iGT">
     <property role="3GE5qa" value="classifiers.members" />
-    <property role="TrG5h" value="StaticFieldInInterface" />
+    <property role="TrG5h" value="StaticFieldInClassifier" />
     <node concept="3FOIzC" id="3h7Obdl8iH_" role="3FOPby">
       <ref role="3FOWKa" to="tpee:h9ngReX" resolve="ClassifierMember" />
       <node concept="tYCnQ" id="3h7Obdl8Qds" role="tZc4B">
@@ -34934,11 +34934,60 @@
         <node concept="ucClh" id="3h7Obdl8QA6" role="uz6Si">
           <node concept="ucgPf" id="3h7Obdl8QA8" role="ucMEw">
             <node concept="3clFbS" id="3h7Obdl8QAa" role="2VODD2">
-              <node concept="3clFbF" id="3h7Obdl8QYv" role="3cqZAp">
-                <node concept="2OqwBi" id="3h7Obdl8Rd3" role="3clFbG">
-                  <node concept="GyYSE" id="3h7Obdl8QYu" role="2Oq$k0" />
-                  <node concept="2DeJnW" id="3h7Obdl8TAx" role="2OqNvi">
-                    <ref role="1_rbq0" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+              <node concept="3clFbJ" id="64WA21bUm11" role="3cqZAp">
+                <node concept="3clFbS" id="64WA21bUm14" role="3clFbx">
+                  <node concept="3cpWs8" id="64WA21bUDdr" role="3cqZAp">
+                    <node concept="3cpWsn" id="64WA21bUDds" role="3cpWs9">
+                      <property role="TrG5h" value="createdNode" />
+                      <node concept="3Tqbb2" id="64WA21bUDdp" role="1tU5fm">
+                        <ref role="ehGHo" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+                      </node>
+                      <node concept="2OqwBi" id="64WA21bUDdt" role="33vP2m">
+                        <node concept="2OqwBi" id="64WA21bUDdu" role="2Oq$k0">
+                          <node concept="1PxgMI" id="64WA21bUDdv" role="2Oq$k0">
+                            <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
+                            <node concept="3bvxqY" id="64WA21bUFVs" role="1PxMeX" />
+                          </node>
+                          <node concept="3Tsc0h" id="64WA21bUDdx" role="2OqNvi">
+                            <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" />
+                          </node>
+                        </node>
+                        <node concept="2DeJg1" id="64WA21bUDdy" role="2OqNvi">
+                          <ref role="1A0vxQ" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs6" id="64WA21bUoFF" role="3cqZAp">
+                    <node concept="37vLTw" id="64WA21bUEt8" role="3cqZAk">
+                      <ref role="3cqZAo" node="64WA21bUDds" resolve="createdNode" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="1Wc70l" id="64WA21bUEV8" role="3clFbw">
+                  <node concept="3clFbC" id="64WA21bUFyI" role="3uHU7B">
+                    <node concept="10Nm6u" id="64WA21bUFFt" role="3uHU7w" />
+                    <node concept="GyYSE" id="64WA21bUFgn" role="3uHU7B" />
+                  </node>
+                  <node concept="2OqwBi" id="64WA21bUmBX" role="3uHU7w">
+                    <node concept="3bvxqY" id="64WA21bUEFH" role="2Oq$k0" />
+                    <node concept="1mIQ4w" id="64WA21bUn3f" role="2OqNvi">
+                      <node concept="chp4Y" id="64WA21bUnrN" role="cj9EA">
+                        <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="9aQIb" id="64WA21bUnKQ" role="9aQIa">
+                  <node concept="3clFbS" id="64WA21bUnKR" role="9aQI4">
+                    <node concept="3cpWs6" id="64WA21bUoro" role="3cqZAp">
+                      <node concept="2OqwBi" id="64WA21bUorq" role="3cqZAk">
+                        <node concept="GyYSE" id="64WA21bUorr" role="2Oq$k0" />
+                        <node concept="2DeJnW" id="64WA21bUors" role="2OqNvi">
+                          <ref role="1_rbq0" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

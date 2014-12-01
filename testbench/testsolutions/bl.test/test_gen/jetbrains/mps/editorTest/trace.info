@@ -9983,6 +9983,50 @@
       <unit id="6887089401953614954" at="10,0,30,0" name="jetbrains.mps.editorTest.DeleteUnaryMinus_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7006642384762293158">
+    <file name="AddFirstStaticFieldToInterface_Test.java">
+      <node id="7006642384762293158" at="15,70,16,107" concept="2" />
+      <node id="7006642384762293158" at="16,107,17,111" concept="2" />
+      <node id="7006642384762293158" at="24,51,25,63" concept="2" />
+      <node id="7006642384762293175" at="25,63,26,31" concept="2" />
+      <node id="7006642384762293158" at="12,0,14,0" concept="1" trace="AddFirstStaticFieldToInterface_Test#()V" />
+      <node id="7006642384762293158" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7006642384762293158" at="14,0,19,0" concept="5" trace="test_AddFirstStaticFieldToInterface#()V" />
+      <node id="7006642384762293158" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7006642384762293158" at="12,48,12,48" />
+      <scope id="7006642384762293158" at="21,23,21,23" />
+      <scope id="7006642384762293158" at="12,0,14,0" />
+      <scope id="7006642384762293158" at="15,70,17,111" />
+      <scope id="7006642384762293158" at="21,0,23,0" />
+      <scope id="7006642384762293158" at="24,51,26,31" />
+      <scope id="7006642384762293158" at="14,0,19,0" />
+      <scope id="7006642384762293158" at="23,0,28,0" />
+      <unit id="7006642384762293158" at="19,0,29,0" name="jetbrains.mps.editorTest.AddFirstStaticFieldToInterface_Test$TestBody" />
+      <unit id="7006642384762293158" at="10,0,30,0" name="jetbrains.mps.editorTest.AddFirstStaticFieldToInterface_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7006642384762343159">
+    <file name="FocusAfterRemovingStaticField_Test.java">
+      <node id="7006642384762343159" at="15,69,16,107" concept="2" />
+      <node id="7006642384762343159" at="16,107,17,110" concept="2" />
+      <node id="7006642384762343159" at="24,51,25,63" concept="2" />
+      <node id="7006642384762345448" at="25,63,26,77" concept="2" />
+      <node id="7006642384762343159" at="12,0,14,0" concept="1" trace="FocusAfterRemovingStaticField_Test#()V" />
+      <node id="7006642384762343159" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7006642384762343159" at="14,0,19,0" concept="5" trace="test_FocusAfterRemovingStaticField#()V" />
+      <node id="7006642384762343159" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7006642384762343159" at="12,47,12,47" />
+      <scope id="7006642384762343159" at="21,23,21,23" />
+      <scope id="7006642384762343159" at="12,0,14,0" />
+      <scope id="7006642384762343159" at="15,69,17,110" />
+      <scope id="7006642384762343159" at="21,0,23,0" />
+      <scope id="7006642384762343159" at="24,51,26,77" />
+      <scope id="7006642384762343159" at="14,0,19,0" />
+      <scope id="7006642384762343159" at="23,0,28,0" />
+      <unit id="7006642384762343159" at="19,0,29,0" name="jetbrains.mps.editorTest.FocusAfterRemovingStaticField_Test$TestBody" />
+      <unit id="7006642384762343159" at="10,0,30,0" name="jetbrains.mps.editorTest.FocusAfterRemovingStaticField_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7011073693661692260">
     <file name="SimpleUndoTest_Test.java">
       <node id="7011073693661692260" at="15,54,16,107" concept="2" />
