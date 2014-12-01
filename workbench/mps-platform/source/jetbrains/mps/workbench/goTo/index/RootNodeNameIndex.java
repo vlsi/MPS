@@ -164,7 +164,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
             if (model == null) return;
 
             for (final SNode node : getRootsToIterate(model)) {
-              String persistentName = node.getProperty(SNodeUtil.propertyName_INamedConcept_name);
+              String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
               String nodeName = (persistentName == null) ? "null" : persistentName;
               String conceptFqName = node.getConcept().getQualifiedName();
               SModelReference modelRef = model.getReference();
