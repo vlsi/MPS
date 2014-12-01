@@ -20,6 +20,8 @@ import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -28,6 +30,8 @@ import java.util.Collection;
 import java.util.Enumeration;
 
 public class ModuleClassLoaderSupport {
+  private static final Logger LOG = LogManager.getLogger(ModuleClassLoader.class);
+
   private final ReloadableModule myModule;
   private final IClassPathItem myClassPathItem;
   private final Collection<? extends ReloadableModule> myCompileDependencies;
@@ -94,12 +98,17 @@ public class ModuleClassLoaderSupport {
     return myCompileDependencies;
   }
 
-  // TODO will be enabled after 3.2 release
+  /**
+   * TODO the ModuleIsNotLoadableException will be enabled after 3.2 release
+   */
   void checkWillLoad() throws ModuleIsNotLoadableException {
     if (!willLoad()) {
+      LOG.warn("The solution " + getModule() +
+          " is asked for classloader though it does not possess a valid class loading facet.\n" +
+          "Try changing solution kind in the module properties dialog or adding a new idea plugin facet for this module.");
 //      throw new ModuleIsNotLoadableException(getModule(), "The solution " + getModule() +
-//          " is asked for classloader though it does not possess valid class loading facet.\n" +
-//          "Try changing solution kind in the module properties dialog or adding new idea plugin facet for this module.");
+//          " is asked for classloader though it does not possess a valid class loading facet.\n" +
+//          "Try changing solution kind in the module properties dialog or adding a new idea plugin facet for this module.");
     }
   }
 
