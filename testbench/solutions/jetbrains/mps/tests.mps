@@ -1039,6 +1039,9 @@
     <node concept="lpD6D" id="2TdQhrRQntK" role="lpD6w">
       <ref role="lpD7u" to="tpej:55LA2AKaNhV" resolve="FloatConstantType" />
     </node>
+    <node concept="lpD6D" id="4h_NvYnOdnY" role="lpD6w">
+      <ref role="lpD7u" to="tpej:4h_NvYnN3DI" resolve="FreshStaticFieldWithAbstractInitializerHasNoErrorOnType" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRQnAK" role="lpD6w">
       <ref role="lpD7u" to="tpej:4dpvBJBcBY2" resolve="GenericNewExpressionTypeParameters" />
     </node>
@@ -2623,6 +2626,9 @@
     <node concept="lpD6D" id="3FJ0r$qO3cI" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hVY9YLZ" resolve="SidedeleteAtTheEnd" />
     </node>
+    <node concept="lpD6D" id="64WA21c31wj" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:64WA21bY5Zq" resolve="SidedeleteAtEndWithOneStatementVariableDeclaration" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3dV" role="lpD6w">
       <ref role="lpD7u" to="ryl9:w4320im4Gp" resolve="LT_AssignmentRValue_with_PlusAssignment" />
     </node>
@@ -2836,6 +2842,9 @@
     <node concept="lpD6D" id="3fsGbyalM7r" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3fsGbyakZet" resolve="Del_OnInitializerAssignment" />
     </node>
+    <node concept="lpD6D" id="64WA21bXcJY" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:64WA21bWWIA" resolve="AddFirstStaticFieldToInterface" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRPT7S" role="lpD6w">
       <ref role="lpD7u" to="ryl9:50rBX$kF$Ci" resolve="AddSingleLineComment1" />
     </node>
@@ -2865,6 +2874,9 @@
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3da" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7v6iz75B6aI" resolve="EditorCellSomeProblem" />
+    </node>
+    <node concept="lpD6D" id="64WA21bXdd1" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:64WA21bX8VR" resolve="FocusAfterRemovingStaticField" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3dp" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6sm8I7pq1p_" resolve="SelectionOfWrappedCell" />

@@ -19708,5 +19708,41 @@
       </node>
     </node>
   </node>
+  <node concept="1lH9Xt" id="4h_NvYnN3DI">
+    <property role="3GE5qa" value="typeSystem" />
+    <property role="TrG5h" value="FreshStaticFieldWithAbstractInitializerHasNoErrorOnType" />
+    <node concept="1qefOq" id="4h_NvYnN3DJ" role="1SKRRt">
+      <node concept="3HP615" id="4h_NvYnN70$" role="1qenE9">
+        <property role="2bfB8j" value="true" />
+        <property role="TrG5h" value="Foo" />
+        <node concept="3Tm1VV" id="4h_NvYnN70_" role="1B3o_S" />
+        <node concept="Wx3nA" id="4h_NvYnNjdv" role="jymVt">
+          <property role="TrG5h" value="bar" />
+          <node concept="10Oyi0" id="4h_NvYnNnQo" role="1tU5fm" />
+          <node concept="3Tm1VV" id="4h_NvYnNjdy" role="1B3o_S" />
+          <node concept="33vP2n" id="4h_NvYnNjd$" role="33vP2m">
+            <node concept="7CXmI" id="4h_NvYnNnQV" role="lGtFl">
+              <node concept="1TM$A" id="4h_NvYnNnQW" role="7EUXB" />
+            </node>
+          </node>
+        </node>
+        <node concept="Wx3nA" id="4h_NvYnNxlL" role="jymVt">
+          <property role="3TUv4t" value="true" />
+          <property role="TrG5h" value="baz" />
+          <node concept="3Tm1VV" id="4h_NvYnNxlN" role="1B3o_S" />
+          <node concept="Xl_RD" id="4h_NvYnNxog" role="33vP2m">
+            <property role="Xl_RC" value="" />
+          </node>
+          <node concept="10Oyi0" id="4h_NvYnNxnY" role="1tU5fm" />
+          <node concept="7CXmI" id="4h_NvYnNxx2" role="lGtFl">
+            <node concept="1TM$A" id="4h_NvYnNxx3" role="7EUXB" />
+          </node>
+        </node>
+        <node concept="7CXmI" id="4h_NvYnNnQz" role="lGtFl">
+          <node concept="7OXhh" id="4h_NvYnNnQC" role="7EUXB" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
