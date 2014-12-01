@@ -102,14 +102,11 @@ public class ModuleClassLoaderSupport {
    * TODO the ModuleIsNotLoadableException will be enabled after 3.2 release
    */
   void checkWillLoad() throws ModuleIsNotLoadableException {
-    if (!willLoad()) {
-      LOG.warn("The solution " + getModule() +
-          " is asked for classloader though it does not possess a valid class loading facet.\n" +
-          "Try changing solution kind in the module properties dialog or adding a new idea plugin facet for this module.");
+//    if (!willLoad()) {
 //      throw new ModuleIsNotLoadableException(getModule(), "The solution " + getModule() +
 //          " is asked for classloader though it does not possess a valid class loading facet.\n" +
 //          "Try changing solution kind in the module properties dialog or adding a new idea plugin facet for this module.");
-    }
+//    }
   }
 
 }
