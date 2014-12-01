@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bs2qlcbc0o65dy48qel21li7kkbjgb5" />
+<dependencies version="2" modelHash="-bs2qlcbc0o65dy48qel21li7kkbjgb5">
+  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="chlp6s3bg6xt2ilfeauwy1dwznhfvvy" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7hjj6380di9z6lpczodq9bu0abl64gv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9xnvt31u9gr2qexvi5bxnf71s04o6o5" />
+  <dep model="r:419b1c2d-945c-46d8-a974-f8d9b9c30aa5(jetbrains.mps.console.internalCommands.constraints)" hash="dljwbsqhaxuzlwfd5ggkjeksm2zc96w" />
+  <dep model="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)" hash="-45a6xylbrtt1if79jc30f55peq2gbrs" />
+  <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" hash="3jxbvv1klbipjfbt78bglnth202mrnd" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-awwe9jm0em9t0z02whbenqtgowhkh7l" />
+  <dep model="r:c72b5e4e-2400-4bf3-9dfe-086eb4fcaced(jetbrains.mps.console.internalCommands.editor)" hash="-60fpwhbxg9ophrnzvpn8ew7adergk7y" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8iidkdf4srxzkbm3a3s8bo4lb455op2" />
+  <dep model="r:f6cc4106-f54e-489b-b767-4f4927728385(jetbrains.mps.console.internalCommands.typesystem)" hash="1gtkjwyprq6671vsw572995j4iwzr5d" />
+  <common dependsOnNodes="true">
+    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:419b1c2d-945c-46d8-a974-f8d9b9c30aa5(jetbrains.mps.console.internalCommands.constraints)" />
+    <dep model="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)" />
+    <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c72b5e4e-2400-4bf3-9dfe-086eb4fcaced(jetbrains.mps.console.internalCommands.editor)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <dep model="r:f6cc4106-f54e-489b-b767-4f4927728385(jetbrains.mps.console.internalCommands.typesystem)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
 

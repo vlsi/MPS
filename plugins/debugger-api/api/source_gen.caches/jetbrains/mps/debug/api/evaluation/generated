@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dxy2txdsnaos067jum6i3qmsgeelqj0" />
+<dependencies version="2" modelHash="dxy2txdsnaos067jum6i3qmsgeelqj0">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-awwe9jm0em9t0z02whbenqtgowhkh7l" />
+  <common hash="2n8g3g38r7nwssurh1c7oyyp9ku2htp" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="4474271214082914177" name="IEvaluationProvider" hash="8aaqqbyiowwn9cj5ohyms6e4oze0een">
+    <file name="IEvaluationProvider.java" />
+  </source>
+</dependencies>
 

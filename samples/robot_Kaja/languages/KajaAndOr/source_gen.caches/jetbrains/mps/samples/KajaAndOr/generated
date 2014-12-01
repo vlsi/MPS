@@ -1,3 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6wrax7q0snzk87k9psil4by38a0wh4y" />
+<dependencies version="2" modelHash="6wrax7q0snzk87k9psil4by38a0wh4y">
+  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="chlp6s3bg6xt2ilfeauwy1dwznhfvvy" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7hjj6380di9z6lpczodq9bu0abl64gv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9xnvt31u9gr2qexvi5bxnf71s04o6o5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-ag49z01g1rvjvgwmm1fjonj9u3in0vo" />
+  <dep model="r:68ff4d81-c742-4f6c-8cc1-cdf3e94f2c2e(jetbrains.mps.samples.KajaAndOr.generator.template.main@generator)" hash="ah82cc8fd3n8075i181pti6q3ppj06n" />
+  <dep model="r:6aa6f228-56c3-4d3a-b03e-4204df10c967(jetbrains.mps.samples.KajaAndOr.editor)" hash="2p0qyl8n8bmqx2sr9g04axces60hotr" />
+  <dep model="r:6fbadff6-71c3-43f7-8664-f726f0905ebc(jetbrains.mps.samples.KajaAndOr.constraints)" hash="1dmgj2c7rzecj3wrvuq5xzcfkjetotk" />
+  <dep model="r:95c64ded-19ca-44d7-9e0e-1d6b23955171(jetbrains.mps.samples.KajaAndOr.behavior)" hash="-c7cokloieir1wul99dhptelsk5xq02p" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-awwe9jm0em9t0z02whbenqtgowhkh7l" />
+  <dep model="r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)" hash="b9chap1fe05zuf6aw72go6132ek7be4" />
+  <dep model="r:dbe0b701-addc-4f0f-9c68-6c511dfcc57c(jetbrains.mps.samples.KajaAndOr.typesystem)" hash="-3oxbpr2mqlyyap4755bsasnmpx1ai91" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8iidkdf4srxzkbm3a3s8bo4lb455op2" />
+  <common dependsOnNodes="true">
+    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:68ff4d81-c742-4f6c-8cc1-cdf3e94f2c2e(jetbrains.mps.samples.KajaAndOr.generator.template.main@generator)" />
+    <dep model="r:6aa6f228-56c3-4d3a-b03e-4204df10c967(jetbrains.mps.samples.KajaAndOr.editor)" />
+    <dep model="r:6fbadff6-71c3-43f7-8664-f726f0905ebc(jetbrains.mps.samples.KajaAndOr.constraints)" />
+    <dep model="r:95c64ded-19ca-44d7-9e0e-1d6b23955171(jetbrains.mps.samples.KajaAndOr.behavior)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)" />
+    <dep model="r:dbe0b701-addc-4f0f-9c68-6c511dfcc57c(jetbrains.mps.samples.KajaAndOr.typesystem)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Generator.java" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
 

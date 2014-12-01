@@ -1,3 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3zr9gxjo0sprswgvremse4gi96cp11p" />
+<dependencies version="2" modelHash="-3zr9gxjo0sprswgvremse4gi96cp11p">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-awwe9jm0em9t0z02whbenqtgowhkh7l" />
+  <common hash="-bolldd2gb5kavzvyqrnjediayo5xdto" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="2939287019638088102" name="IconResourceBundle" hash="ejrzzjm02nr25a24t0rq2b1zmg1crby">
+    <file name="IconResourceBundle.java" />
+  </source>
+  <source id="2939287019638088106" name="PluginResourceBundle" hash="-4xtomis9wn1p0s67ggr9w78z074hsr6">
+    <file name="PluginResourceBundle.java" />
+  </source>
+</dependencies>
 

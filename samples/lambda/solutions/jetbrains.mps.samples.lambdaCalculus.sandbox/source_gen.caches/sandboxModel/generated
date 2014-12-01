@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-63wcpoeufetv43mnz2klaekuz3io61g">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="c4rzltjxh0py1utw119nmxblfk6uyyg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="dyswqfju0dze0vp40q0x5ffcejj7zen" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="7acg7jfloizfkh7fz9512hws89btuf5" />
-  <dep model="r:d2f1f29a-ca9b-4289-8061-76aebd89bc21(jetbrains.mps.samples.lambdaCalculus.generator.template.main@generator)" hash="-2mc9ttl3y9ros383vfuay8wjbqwf18i" />
-  <dep model="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" hash="-4suri33748cqhhh7zv3viatshn2n8fz" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3fcvzpa8v8rf3aly8ijks960qkiha8x" />
-  <common hash="-c9z6mdozlx7behdwnnts0f7f3yccz7s" dependsOnNodes="true">
+<dependencies version="2" modelHash="-287x0julpgbwgwv6jkqbnmvyxlncodd">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7hjj6380di9z6lpczodq9bu0abl64gv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9xnvt31u9gr2qexvi5bxnf71s04o6o5" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-awwe9jm0em9t0z02whbenqtgowhkh7l" />
+  <dep model="r:d2f1f29a-ca9b-4289-8061-76aebd89bc21(jetbrains.mps.samples.lambdaCalculus.generator.template.main@generator)" hash="dag58htneqah0ug90r2ls6r39rx74rs" />
+  <dep model="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" hash="3rr3ht60zqch8szaobvpln1vv811hua" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8iidkdf4srxzkbm3a3s8bo4lb455op2" />
+  <common hash="-8ptw9wm3febc0acr3a7pubswiz03it6" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="5277476162361142416" name="test2" hash="brpr3voehxz4npvgqe4x5byj602uxjy">
@@ -28,6 +28,7 @@
   </source>
   <source id="816130369292750457" name="sumsq" hash="-b9ozqoxz8iy1eypnw7sxz47dkoajacu">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:d2f1f29a-ca9b-4289-8061-76aebd89bc21(jetbrains.mps.samples.lambdaCalculus.generator.template.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="sumsq.java" />

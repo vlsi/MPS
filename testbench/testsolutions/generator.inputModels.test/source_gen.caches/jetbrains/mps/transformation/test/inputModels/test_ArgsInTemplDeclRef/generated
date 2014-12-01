@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b66nguw90bpijlqsmhzrm71l0uwancy" />
+<dependencies version="2" modelHash="-b66nguw90bpijlqsmhzrm71l0uwancy">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-awwe9jm0em9t0z02whbenqtgowhkh7l" />
+  <common hash="792cvjul3kuurnnn5xw094zvg3cu7ti" dependsOnNodes="true">
+    <dep root="7496726876599962828" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="7496726876599962828" name="MyInputRoot1" hash="-2oeyz2hsf6j1pasmv1q2y0v68cxziu5">
+    <file name="MyOutputRoot1" />
+  </source>
+</dependencies>
 
