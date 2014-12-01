@@ -34936,31 +34936,52 @@
             <node concept="3clFbS" id="3h7Obdl8QAa" role="2VODD2">
               <node concept="3clFbJ" id="64WA21bUm11" role="3cqZAp">
                 <node concept="3clFbS" id="64WA21bUm14" role="3clFbx">
-                  <node concept="3cpWs8" id="64WA21bUDdr" role="3cqZAp">
-                    <node concept="3cpWsn" id="64WA21bUDds" role="3cpWs9">
-                      <property role="TrG5h" value="createdNode" />
-                      <node concept="3Tqbb2" id="64WA21bUDdp" role="1tU5fm">
+                  <node concept="3cpWs8" id="20qo0wuxo63" role="3cqZAp">
+                    <node concept="3cpWsn" id="20qo0wuxo64" role="3cpWs9">
+                      <property role="TrG5h" value="field" />
+                      <node concept="3Tqbb2" id="20qo0wuxo61" role="1tU5fm">
                         <ref role="ehGHo" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
                       </node>
-                      <node concept="2OqwBi" id="64WA21bUDdt" role="33vP2m">
-                        <node concept="2OqwBi" id="64WA21bUDdu" role="2Oq$k0">
-                          <node concept="1PxgMI" id="64WA21bUDdv" role="2Oq$k0">
-                            <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
-                            <node concept="3bvxqY" id="64WA21bUFVs" role="1PxMeX" />
+                      <node concept="2ShNRf" id="20qo0wuxo65" role="33vP2m">
+                        <node concept="2fJWfE" id="20qo0wuxo66" role="2ShVmc">
+                          <node concept="3Tqbb2" id="20qo0wuxo67" role="3zrR0E">
+                            <ref role="ehGHo" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
                           </node>
-                          <node concept="3Tsc0h" id="64WA21bUDdx" role="2OqNvi">
-                            <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" />
-                          </node>
-                        </node>
-                        <node concept="2DeJg1" id="64WA21bUDdy" role="2OqNvi">
-                          <ref role="1A0vxQ" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWs6" id="64WA21bUoFF" role="3cqZAp">
-                    <node concept="37vLTw" id="64WA21bUEt8" role="3cqZAk">
-                      <ref role="3cqZAo" node="64WA21bUDds" resolve="createdNode" />
+                  <node concept="3clFbF" id="20qo0wuxoYI" role="3cqZAp">
+                    <node concept="2OqwBi" id="20qo0wuxuf3" role="3clFbG">
+                      <node concept="2OqwBi" id="20qo0wuxqrU" role="2Oq$k0">
+                        <node concept="37vLTw" id="20qo0wuxoYG" role="2Oq$k0">
+                          <ref role="3cqZAo" node="20qo0wuxo64" resolve="field" />
+                        </node>
+                        <node concept="3TrEf2" id="20qo0wuxtqe" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+                        </node>
+                      </node>
+                      <node concept="2DeJnY" id="20qo0wuxwgQ" role="2OqNvi">
+                        <ref role="1A9B2P" to="tpee:gFTm1ZL" resolve="PublicVisibility" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="20qo0wuxwVU" role="3cqZAp">
+                    <node concept="2OqwBi" id="20qo0wux_TH" role="3clFbG">
+                      <node concept="2OqwBi" id="20qo0wuxxel" role="2Oq$k0">
+                        <node concept="37vLTw" id="20qo0wuxwVS" role="2Oq$k0">
+                          <ref role="3cqZAo" node="20qo0wuxo64" resolve="field" />
+                        </node>
+                        <node concept="3TrEf2" id="20qo0wux$c4" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpee:fz3vP1I" />
+                        </node>
+                      </node>
+                      <node concept="2DeJnY" id="20qo0wuxBfh" role="2OqNvi" />
+                    </node>
+                  </node>
+                  <node concept="3cpWs6" id="64WA21c3CEs" role="3cqZAp">
+                    <node concept="37vLTw" id="20qo0wuxo68" role="3cqZAk">
+                      <ref role="3cqZAo" node="20qo0wuxo64" resolve="field" />
                     </node>
                   </node>
                 </node>

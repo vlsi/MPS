@@ -2622,6 +2622,9 @@
     <node concept="lpD6D" id="3FJ0r$qO3cI" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hVY9YLZ" resolve="SidedeleteAtTheEnd" />
     </node>
+    <node concept="lpD6D" id="64WA21c31wj" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:64WA21bY5Zq" resolve="SidedeleteAtEndWithOneStatementVariableDeclaration" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3dV" role="lpD6w">
       <ref role="lpD7u" to="ryl9:w4320im4Gp" resolve="LT_AssignmentRValue_with_PlusAssignment" />
     </node>

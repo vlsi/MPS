@@ -22,8 +22,8 @@ public class AddFirstStaticFieldToInterface_Test extends BaseTransformationTest 
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7006642384762342835", "7006642384762342854");
-      this.typeString("field");
+      initEditor("7006642384763887663", "7006642384762342854");
+      this.typeString("field int");
     }
   }
 }
