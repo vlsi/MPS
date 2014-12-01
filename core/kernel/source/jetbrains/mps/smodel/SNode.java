@@ -18,18 +18,16 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SNodeBase;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractSequentialList;
@@ -855,7 +853,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     if (myProperties == null) return new EmptyIterable<SProperty>();
-    List<SProperty> result = new ArrayList<SProperty>(myProperties.length/2);
+    List<SProperty> result = new ArrayList<SProperty>(myProperties.length / 2);
     for (int i = 0; i < myProperties.length; i += 2) {
       result.add((SProperty) myProperties[i]);
     }
@@ -1021,7 +1019,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
 
-    if (firstChild == null)  return Collections.emptyList();
+    if (firstChild == null) return Collections.emptyList();
 
     return new ChildrenList(firstChild, role);
   }
@@ -1108,34 +1106,52 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   public void setRoleInParent(String newRole) {
-    setRoleInParent(MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), newRole));
+    SContainmentLink link = convertToLink(newRole);
+    if (link == null) {
+      link = MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), newRole);
+    }
+    setRoleInParent(link);
   }
 
   @Deprecated
   @Override
   public final boolean hasProperty(String propertyName) {
-    return hasProperty(MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName));
+    SProperty prop = MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName);
+    if (hasProperty(prop)) return true;
+
+    prop = convertToProp(propertyName);
+    if (prop == null) return false;
+
+    return hasProperty(prop);
   }
 
   @Deprecated
   @Override
   public final String getProperty(String propertyName) {
-    String prop = getProperty(MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName));
-    if (prop!=null)    return prop;
+    SProperty prop = MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName);
+    String res = getProperty(prop);
+    if (res != null) return res;
 
-    return getProperty(convertToProp(propertyName));
+    prop = convertToProp(propertyName);
+    if (prop == null) return res;
+
+    return getProperty(prop);
   }
 
   @Deprecated
   @Override
   public void setProperty(String propertyName, String propertyValue) {
-    setProperty(MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName), propertyValue);
+    SProperty prop = convertToProp(propertyName);
+    if (prop == null) {
+      prop = MetaAdapterFactoryByName.getProperty(myConcept.getQualifiedName(), propertyName);
+    }
+    setProperty(prop, propertyValue);
   }
 
   @Deprecated
   @Override
   public Collection<String> getPropertyNames() {
-    List<String> res = new ArrayList<String>(myProperties == null ? 0 : myProperties.length/2);
+    List<String> res = new ArrayList<String>(myProperties == null ? 0 : myProperties.length / 2);
     for (SProperty p : getProperties()) {
       res.add(p.getName());
     }
@@ -1145,37 +1161,58 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated
   @Override
   public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
-    setReferenceTarget(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role), target);
+    SReferenceLink ref = convertToRef(role);
+    if (ref == null) {
+      ref = MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role);
+    }
+    setReferenceTarget(ref, target);
   }
 
   @Deprecated
   @Override
   public SNode getReferenceTarget(String role) {
-    SNode res = getReferenceTarget(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role));
-    if (res!=null) return res;
+    SReferenceLink ref = MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role);
 
-    return getReferenceTarget(convertToRef(role));
+    SNode res = getReferenceTarget(ref);
+    if (res != null) return res;
+
+    ref = convertToRef(role);
+    if (ref == null) return res;
+
+    return getReferenceTarget(ref);
   }
 
   @Deprecated
   @Override
   public SReference getReference(String role) {
-    SReference res = getReference(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role));
-    if (res!=null)return res;
+    SReferenceLink ref = MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role);
+    SReference res = getReference(ref);
+    if (res != null) return res;
 
-    return getReference(convertToRef(role));
+    ref = convertToRef(role);
+    if (ref == null) return res;
+
+    return getReference(ref);
   }
 
   @Deprecated
   @Override
   public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
-    setReference(MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role), reference);
+    SReferenceLink ref = convertToRef(role);
+    if (ref == null) {
+      ref = MetaAdapterFactoryByName.getReferenceLink(myConcept.getQualifiedName(), role);
+    }
+    setReference(ref, reference);
   }
 
   @Deprecated
   public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    insertChildBefore(MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), role), child, anchor);
+    SContainmentLink link = convertToLink(role);
+    if (link == null) {
+      link = MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), role);
+    }
+    insertChildBefore(link, child, anchor);
   }
 
   @Deprecated
@@ -1189,24 +1226,39 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   public List<SNode> getChildren(String role) {
     List<SNode> res = getChildren(MetaAdapterFactoryByName.getContainmentLink(myConcept.getQualifiedName(), role));
-    if (!res.isEmpty()) return  res;
+    if (!res.isEmpty()) return res;
 
-    return getChildren(convertToLink(role));
+    SContainmentLink linkById = convertToLink(role);
+    if (linkById == null) return res;
+
+    return getChildren(linkById);
   }
 
+  @Nullable
   private SContainmentLink convertToLink(String role) {
     SContainmentLink link = MetaAdapterFactoryByName.getContainmentLink(getConcept().getQualifiedName(), role);
-    return MetaAdapterFactory.getContainmentLink(((SContainmentLinkAdapter) link).getRoleId(),role);
+    SContainmentLinkId id = ((SContainmentLinkAdapter) link).getRoleId();
+    if (id.equals(MetaIdFactory.INVALID_LINK_ID)) return null;
+
+    return MetaAdapterFactory.getContainmentLink(id, role);
   }
 
+  @Nullable
   private SReferenceLink convertToRef(String role) {
     SReferenceLink link = MetaAdapterFactoryByName.getReferenceLink(getConcept().getQualifiedName(), role);
-    return MetaAdapterFactory.getReferenceLink(((SReferenceLinkAdapter) link).getRoleId(), role);
+    SReferenceLinkId id = ((SReferenceLinkAdapter) link).getRoleId();
+    if (id.equals(MetaIdFactory.INVALID_REF_ID)) return null;
+
+    return MetaAdapterFactory.getReferenceLink(id, role);
   }
 
+  @Nullable
   private SProperty convertToProp(String role) {
     SProperty link = MetaAdapterFactoryByName.getProperty(getConcept().getQualifiedName(), role);
-    return MetaAdapterFactory.getProperty(((SPropertyAdapter) link).getId(), role);
+    SPropertyId id = ((SPropertyAdapter) link).getId();
+    if (id.equals(MetaIdFactory.INVALID_PROP_ID)) return null;
+
+    return MetaAdapterFactory.getProperty(id, role);
   }
 
   private static class ChildrenList extends AbstractSequentialList<SNode> {
