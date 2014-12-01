@@ -59,9 +59,9 @@
   </root>
   <root nodeRef="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)/5636302460526286563">
     <file name="TransformStatement_Behavior.java">
-      <node id="5636302460526288123" at="17,82,18,399" concept="4" />
+      <node id="5636302460526288123" at="17,82,18,388" concept="4" />
       <node id="5636302460526326712" at="21,376,22,18" concept="4" />
-      <node id="5636302460526311668" at="23,5,24,744" concept="4" />
+      <node id="5636302460526311668" at="23,5,24,733" concept="4" />
       <node id="3220955710218395637" at="27,892,28,320" concept="4" />
       <node id="6129256022887649493" at="29,5,30,0" concept="5" />
       <node id="6129256022887650648" at="30,0,31,16" concept="4" />
@@ -72,7 +72,7 @@
       <node id="5636302460526286563" at="20,0,26,0" concept="6" trace="call_getQuotationConcept_5636302460526311664#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5636302460526286563" at="26,0,33,0" concept="6" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
       <scope id="5636302460526286565" at="15,43,15,43" />
-      <scope id="5636302460526286902" at="17,82,18,399" />
+      <scope id="5636302460526286902" at="17,82,18,388" />
       <scope id="5636302460526319392" at="21,376,22,18" />
       <scope id="3220955710218395636" at="27,892,28,320" />
       <scope id="5636302460526286563" at="15,0,17,0">
@@ -81,7 +81,7 @@
       <scope id="5636302460526286563" at="17,0,20,0">
         <var name="thisNode" id="5636302460526286563" />
       </scope>
-      <scope id="5636302460526311667" at="20,84,24,744" />
+      <scope id="5636302460526311667" at="20,84,24,733" />
       <scope id="5636302460527314920" at="26,101,31,16" />
       <scope id="5636302460526286563" at="20,0,26,0">
         <var name="thisNode" id="5636302460526286563" />

@@ -160,6 +160,7 @@
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
@@ -181,7 +182,6 @@
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
@@ -805,7 +805,7 @@
                   <ref role="3Tt5mk" to="tp3t:gyDMOui" />
                 </node>
               </node>
-              <node concept="3NT_Vc" id="4SSaNAQkWRj" role="2OqNvi" />
+              <node concept="2yIwOk" id="1avfQ4BEvV_" role="2OqNvi" />
             </node>
             <node concept="FGMqu" id="4SSaNAQkXxW" role="2OqNvi" />
           </node>
@@ -865,7 +865,7 @@
                   <ref role="3Tt5mk" to="tp3r:hqc44pq" />
                 </node>
               </node>
-              <node concept="3NT_Vc" id="4SSaNAQlbzW" role="2OqNvi" />
+              <node concept="2yIwOk" id="1avfQ4BEw3K" role="2OqNvi" />
             </node>
             <node concept="FGMqu" id="4SSaNAQlbzX" role="2OqNvi" />
           </node>
