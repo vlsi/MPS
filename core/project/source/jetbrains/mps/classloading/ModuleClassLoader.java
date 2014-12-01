@@ -101,8 +101,6 @@ public class ModuleClassLoader extends ClassLoader {
       return Class.forName(name, false, BOOTSTRAP_CLASSLOADER);
     }
 
-    mySupport.checkWillLoad();
-
     Class<?> aClass = getClassFromCache(name);
     if (aClass != null) return aClass;
 

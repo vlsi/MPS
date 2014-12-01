@@ -94,10 +94,13 @@ public class ModuleClassLoaderSupport {
     return myCompileDependencies;
   }
 
+  // TODO will be enabled after 3.2 release
   void checkWillLoad() throws ModuleIsNotLoadableException {
-    if (!willLoad()) throw new ModuleIsNotLoadableException(getModule(), "The solution " + getModule() +
-        " is asked for classloader though it does not possess valid class loading facet.\n" +
-        "Try changing solution kind in the module properties dialog or adding new idea plugin facet for this module.");
+    if (!willLoad()) {
+//      throw new ModuleIsNotLoadableException(getModule(), "The solution " + getModule() +
+//          " is asked for classloader though it does not possess valid class loading facet.\n" +
+//          "Try changing solution kind in the module properties dialog or adding new idea plugin facet for this module.");
+    }
   }
 
 }
