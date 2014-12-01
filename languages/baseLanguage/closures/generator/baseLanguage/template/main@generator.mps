@@ -362,6 +362,10 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1144195091934" name="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" flags="nn" index="1BlSNk">
+        <reference id="1144195362400" name="conceptOfParent" index="1BmUXE" />
+        <reference id="1144195396777" name="linkInParent" index="1Bn3mz" />
+      </concept>
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
@@ -13178,18 +13182,13 @@
                   </node>
                   <node concept="22lmx$" id="1qkP$i76yl3" role="3clFbw">
                     <node concept="3fqX7Q" id="1qkP$i76J$c" role="3uHU7w">
-                      <node concept="2OqwBi" id="1qkP$i76J$e" role="3fr31v">
-                        <node concept="2OqwBi" id="1qkP$i76J$f" role="2Oq$k0">
-                          <node concept="37vLTw" id="1qkP$i76J$g" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1T6Xy_tk0Dy" resolve="cl" />
-                          </node>
-                          <node concept="13GOg" id="1qkP$i76J$h" role="2OqNvi" />
+                      <node concept="2OqwBi" id="1qkP$i76J$f" role="3fr31v">
+                        <node concept="37vLTw" id="1qkP$i76J$g" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1T6Xy_tk0Dy" resolve="cl" />
                         </node>
-                        <node concept="liA8E" id="1qkP$i76J$i" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                          <node concept="Xl_RD" id="1qkP$i76J$j" role="37wK5m">
-                            <property role="Xl_RC" value="actualArgument" />
-                          </node>
+                        <node concept="1BlSNk" id="39sKqjMyWXT" role="2OqNvi">
+                          <ref role="1BmUXE" to="tpee:hxndl_i" resolve="IMethodCall" />
+                          <ref role="1Bn3mz" to="tpee:fz7wK6I" />
                         </node>
                       </node>
                     </node>

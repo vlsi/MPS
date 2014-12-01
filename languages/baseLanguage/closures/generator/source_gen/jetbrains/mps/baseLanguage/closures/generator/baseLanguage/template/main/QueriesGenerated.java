@@ -2813,7 +2813,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static void mappingScript_CodeBlock_1204637450606(final MappingScriptContext _context) {
     if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
       for (SNode cl : SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"))) {
-        if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(cl), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))) || !(SNodeOperations.getContainingLinkRole(cl).equals("actualArgument"))) {
+        if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(cl), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))) || !(SNodeOperations.hasRole(cl, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument")))) {
           // TODO in case there's method call with more than one closure arg, we'll process it again, guard against this 
           continue;
         }
