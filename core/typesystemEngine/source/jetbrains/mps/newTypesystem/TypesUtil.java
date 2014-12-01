@@ -23,6 +23,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
@@ -76,10 +77,9 @@ public class TypesUtil {
         childDepth = depth;
       }
     }
-    if (sNode.getReference("concept") != null) {
-      childDepth++;
-    }
-    return childDepth + 1;
+    if (!SNodeOperations.isInstanceOf(sNode, SNodeUtil.concept_SNodeType)) return childDepth + 1;
+    if (sNode.getReference(SNodeUtil.ref_SNodeType_concept) == null) return childDepth + 1;
+    return childDepth + 2;
   }
 
 
@@ -176,7 +176,7 @@ public class TypesUtil {
     return false;
   }
 
-    @Deprecated
+  @Deprecated
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info) {
     THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
     boolean match = match(left, right, matchingPairs);
@@ -191,8 +191,8 @@ public class TypesUtil {
     Set<SNode> newArgs = new THashSet<SNode>();
     final List<SNode> arguments = LatticeUtil.getMeetArguments(type);
     boolean addTheRest = false;
-    for (SNode arg: arguments) {
-      if (arg != null && (addTheRest || !SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+    for (SNode arg : arguments) {
+      if (arg != null && (addTheRest || !SNodeOperations.isInstanceOf(arg, SNodeUtil.concept_VoidType))) {
         newArgs.add(arg);
       } else {
         addTheRest = true;
@@ -230,8 +230,7 @@ public class TypesUtil {
   }
 
   public static SNode createRuntimeErrorType() {
-    return SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType",
-        null, false);
+    return SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_RuntimeErrorType, null, null, false);
   }
 
 }
