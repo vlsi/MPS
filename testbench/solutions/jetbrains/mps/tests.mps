@@ -66,6 +66,8 @@
     <import index="4o0x" ref="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)" />
     <import index="e6od" ref="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)" />
     <import index="7fk5" ref="r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)" />
+    <import index="cl80" ref="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" />
+    <import index="s223" ref="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -1036,6 +1038,9 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRQntK" role="lpD6w">
       <ref role="lpD7u" to="tpej:55LA2AKaNhV" resolve="FloatConstantType" />
+    </node>
+    <node concept="lpD6D" id="4h_NvYnOdnY" role="lpD6w">
+      <ref role="lpD7u" to="tpej:4h_NvYnN3DI" resolve="FreshStaticFieldWithAbstractInitializerHasNoErrorOnType" />
     </node>
     <node concept="lpD6D" id="2TdQhrRQnAK" role="lpD6w">
       <ref role="lpD7u" to="tpej:4dpvBJBcBY2" resolve="GenericNewExpressionTypeParameters" />
@@ -2621,6 +2626,9 @@
     <node concept="lpD6D" id="3FJ0r$qO3cI" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hVY9YLZ" resolve="SidedeleteAtTheEnd" />
     </node>
+    <node concept="lpD6D" id="64WA21c31wj" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:64WA21bY5Zq" resolve="SidedeleteAtEndWithOneStatementVariableDeclaration" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3dV" role="lpD6w">
       <ref role="lpD7u" to="ryl9:w4320im4Gp" resolve="LT_AssignmentRValue_with_PlusAssignment" />
     </node>
@@ -2834,6 +2842,9 @@
     <node concept="lpD6D" id="3fsGbyalM7r" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3fsGbyakZet" resolve="Del_OnInitializerAssignment" />
     </node>
+    <node concept="lpD6D" id="64WA21bXcJY" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:64WA21bWWIA" resolve="AddFirstStaticFieldToInterface" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRPT7S" role="lpD6w">
       <ref role="lpD7u" to="ryl9:50rBX$kF$Ci" resolve="AddSingleLineComment1" />
     </node>
@@ -2863,6 +2874,9 @@
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3da" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7v6iz75B6aI" resolve="EditorCellSomeProblem" />
+    </node>
+    <node concept="lpD6D" id="64WA21bXdd1" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:64WA21bX8VR" resolve="FocusAfterRemovingStaticField" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3dp" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6sm8I7pq1p_" resolve="SelectionOfWrappedCell" />
@@ -3562,6 +3576,48 @@
     <node concept="2R4zua" id="7Psq8BycRtk" role="2R4z3u">
       <property role="2R4zub" value="jetbrains.mps.ide.vcs.test" />
       <property role="2R4zu8" value="9dc77d7d-3b66-403c-b568-37677f157448" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="441$Vdog_0U">
+    <node concept="lpD6D" id="441$VdogCzw" role="lpD6w">
+      <ref role="lpD7u" to="cl80:4JxJVgt40Xf" resolve="Migrations_Test" />
+    </node>
+    <node concept="lpD6D" id="4sZg1XOxVb" role="lpD6w">
+      <ref role="lpD7u" to="cl80:74sHQpDbWgb" resolve="MigrationAssistant_Test" />
+    </node>
+    <node concept="2R4zua" id="441$VdogCcI" role="2R4z3u">
+      <property role="2R4zub" value="jetbrains.mps.migration.test" />
+      <property role="2R4zu8" value="5cc84139-6daa-4cf6-9a75-d1505100aeb4" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="4$ezt8YQUyf">
+    <node concept="lpD6D" id="4$ezt8YRb0E" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY4JG" resolve="AddNotTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5OP" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY52Z" resolve="CommentLineTest" />
+    </node>
+    <node concept="lpD6D" id="4qUvNA8WaDH" role="lpD6w">
+      <ref role="lpD7u" to="s223:79svzH7ZZLt" resolve="DuplicitRoutineNameTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5OT" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY5xB" resolve="ElseTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5OY" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY4XF" resolve="EnterIfTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5z1" role="lpD6w">
+      <ref role="lpD7u" to="s223:1NKy5CJqeSF" resolve="LeftTransformTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY5P4" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YXKSh" resolve="RemoveNotTest" />
+    </node>
+    <node concept="lpD6D" id="4$ezt8YY7H8" role="lpD6w">
+      <ref role="lpD7u" to="s223:4$ezt8YY7EK" resolve="RepetitionTest" />
+    </node>
+    <node concept="2R4zua" id="4$ezt8YR0Bz" role="2R4z3u">
+      <property role="2R4zub" value="jetbrains.mps.build.stripping.tests" />
+      <property role="2R4zu8" value="c9bc8834-ad52-4c80-83d0-64827cf13fae" />
     </node>
   </node>
 </model>

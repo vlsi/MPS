@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import java.beans.PropertyChangeListener;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.openapi.fileEditor.FileEditorLocation;
@@ -17,24 +19,50 @@ import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.editor.Document;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 
 public class ConsoleFileEditor implements DocumentsEditor {
   private EditorComponent myEditor;
-  private FileEditorState myState = new FileEditorState() {
-    public boolean canBeMergedWith(FileEditorState p0, FileEditorStateLevel p1) {
+
+  private static class MyFileEditorState implements FileEditorState {
+    private Object memento;
+    public MyFileEditorState(Object memento) {
+      this.memento = memento;
+    }
+    @Override
+    public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
       return false;
     }
-  };
+    public Object getMemento() {
+      return memento;
+    }
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      ConsoleFileEditor.MyFileEditorState that = (ConsoleFileEditor.MyFileEditorState) o;
+      if (!(memento.equals(that.memento))) {
+        return false;
+      }
+      return true;
+    }
+    @Override
+    public int hashCode() {
+      return memento.hashCode();
+    }
+  }
 
   public ConsoleFileEditor(EditorComponent editor) {
     myEditor = editor;
   }
   @NotNull
   public JComponent getComponent() {
-    return null;
+    return myEditor;
   }
   @Nullable
   public JComponent getPreferredFocusedComponent() {
@@ -43,14 +71,27 @@ public class ConsoleFileEditor implements DocumentsEditor {
   @NonNls
   @NotNull
   public String getName() {
-    return null;
+    return myEditor.getName();
   }
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
-    return myState;
+    final Wrappers._T<ConsoleFileEditor.MyFileEditorState> result = new Wrappers._T<ConsoleFileEditor.MyFileEditorState>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        result.value = new ConsoleFileEditor.MyFileEditorState(myEditor.getEditorContext().createMemento());
+      }
+    });
+    return result.value;
   }
-  public void setState(@NotNull FileEditorState state) {
-    myState = state;
+  public void setState(@NotNull final FileEditorState state) {
+    if (state instanceof ConsoleFileEditor.MyFileEditorState) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          myEditor.getEditorContext().setMemento(((ConsoleFileEditor.MyFileEditorState) state).getMemento());
+          myEditor.rebuildEditorContent();
+        }
+      });
+    }
   }
   public boolean isModified() {
     return false;

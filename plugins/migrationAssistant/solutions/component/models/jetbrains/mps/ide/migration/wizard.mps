@@ -158,9 +158,6 @@
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
-      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
-        <child id="1160998896846" name="condition" index="1gVkn0" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -203,15 +200,9 @@
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
     </language>
-    <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
-      <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
-      <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
-        <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
-      </concept>
-      <concept id="8974276187400348183" name="jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement" flags="nn" index="1QHqEM" />
-    </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <property id="890797661671409019" name="forceMultiLine" index="3yWfEV" />
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
@@ -1168,19 +1159,6 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="5SsFeroaax_" role="3clF47">
-        <node concept="3SKdUt" id="5SsFeroaa$p" role="3cqZAp">
-          <node concept="3SKdUq" id="5SsFeroaa$o" role="3SKWNk">
-            <property role="3SKdUp" value="if this assert fails, following invokeLater()s is not needed" />
-          </node>
-        </node>
-        <node concept="1gVbGN" id="5SsFeroaaxC" role="3cqZAp">
-          <node concept="3fqX7Q" id="5SsFeroaaxA" role="1gVkn0">
-            <node concept="2YIFZM" id="5SsFerobo7i" role="3fr31v">
-              <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
-              <ref role="37wK5l" to="dbrf:~SwingUtilities.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="5SsFeroaaxD" role="3cqZAp">
           <node concept="2OqwBi" id="5SsFeroaaxE" role="3clFbG">
             <node concept="2YIFZM" id="5SsFeroblPL" role="2Oq$k0">
@@ -1243,17 +1221,27 @@
             </node>
           </node>
         </node>
-        <node concept="1QHqEM" id="1ks7_ldrAhM" role="3cqZAp">
-          <node concept="1QHqEC" id="1ks7_ldrAhO" role="1QHqEI">
-            <node concept="3clFbS" id="1ks7_ldrAhQ" role="1bW5cS">
-              <node concept="3clFbF" id="513ZrA4wOEC" role="3cqZAp">
-                <node concept="2OqwBi" id="513ZrA4wPTR" role="3clFbG">
-                  <node concept="2YIFZM" id="513ZrA4wPwq" role="2Oq$k0">
-                    <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                    <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                  </node>
-                  <node concept="liA8E" id="513ZrA4wQkQ" role="2OqNvi">
-                    <ref role="37wK5l" to="cu2c:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
+        <node concept="3clFbF" id="2Bgy8Ewlxdw" role="3cqZAp">
+          <node concept="2OqwBi" id="2Bgy8Ewlxun" role="3clFbG">
+            <node concept="2YIFZM" id="2Bgy8EwlxmR" role="2Oq$k0">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            </node>
+            <node concept="liA8E" id="2Bgy8EwlxCg" role="2OqNvi">
+              <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
+              <node concept="1bVj0M" id="2Bgy8EwlxEh" role="37wK5m">
+                <property role="3yWfEV" value="true" />
+                <node concept="3clFbS" id="2Bgy8EwlxEi" role="1bW5cS">
+                  <node concept="3clFbF" id="513ZrA4wOEC" role="3cqZAp">
+                    <node concept="2OqwBi" id="513ZrA4wPTR" role="3clFbG">
+                      <node concept="2YIFZM" id="513ZrA4wPwq" role="2Oq$k0">
+                        <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                        <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                      </node>
+                      <node concept="liA8E" id="513ZrA4wQkQ" role="2OqNvi">
+                        <ref role="37wK5l" to="cu2c:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1480,8 +1468,8 @@
                 <ref role="37wK5l" to="86um:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
                 <ref role="1Pybhc" to="86um:~ThreadUtils" resolve="ThreadUtils" />
                 <node concept="1bVj0M" id="513ZrA4wEkb" role="37wK5m">
+                  <property role="3yWfEV" value="true" />
                   <node concept="3clFbS" id="513ZrA4wEkl" role="1bW5cS">
-                    <node concept="3clFbH" id="513ZrA4xjXv" role="3cqZAp" />
                     <node concept="3clFbF" id="5SsFeroblR4" role="3cqZAp">
                       <node concept="37vLTI" id="5SsFeroblR5" role="3clFbG">
                         <node concept="37vLTw" id="5SsFeroblR7" role="37vLTJ">

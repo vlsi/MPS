@@ -37,7 +37,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   public Collection<TemplateModule> getGenerators() {
-    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "b4e19835-6919-44a5-8b70-73791426c235(jetbrains.mps.samples.KajaSceneConstruction#3210697320273563026)"));
+    return TemplateUtil.<TemplateModule>asCollection(new Generator(this));
   }
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {

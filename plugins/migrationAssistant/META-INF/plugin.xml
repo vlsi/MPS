@@ -30,15 +30,17 @@
     </group>
   </actions>
 
-  <depends>jetbrains.mps.ide.mpsmigration</depends>
   <project-components>
     <component>
+      <interface-class>jetbrains.mps.ide.migration.StartupMigrationExecutorI</interface-class>
       <implementation-class>jetbrains.mps.ide.migration.StartupMigrationExecutor</implementation-class>
+      <headless-implementation-class>jetbrains.mps.ide.migration.HeadlessMigrationExecutor</headless-implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.migration.storage.StorageAssistant</implementation-class>
     </component>
     <component>
+      <interface-class>jetbrains.mps.ide.migration.MigrationManager</interface-class>
       <implementation-class>jetbrains.mps.migration.component.util.MigrationComponent</implementation-class>
     </component>
   </project-components>

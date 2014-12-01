@@ -19,6 +19,7 @@
     <import index="gq52" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.impl(MPS.IDEA/com.intellij.ide.impl@java_stub)" />
     <import index="yla8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
     <import index="tz4y" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.project(MPS.Workbench/jetbrains.mps.project@java_stub)" />
+    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -556,6 +557,9 @@
                                         <node concept="3Tm1VV" id="5SsFeroaah1" role="1B3o_S" />
                                         <node concept="3uibUv" id="5SsFeroaah2" role="3clF45">
                                           <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                                        </node>
+                                        <node concept="2AHcQZ" id="2Bgy8EwkyFZ" role="2AJF6D">
+                                          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
                                         </node>
                                       </node>
                                     </node>

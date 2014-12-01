@@ -14,6 +14,7 @@ import com.intellij.openapi.project.ex.ProjectEx;
 import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.ui.DialogWrapper;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -62,6 +63,7 @@ public class StorageAssistant extends AbstractProjectComponent implements Persis
               return true;
             }
             @Override
+            @NotNull
             public String getDoNotShowMessage() {
               return "Do not ask me again";
             }
