@@ -1038,6 +1038,9 @@
     <node concept="lpD6D" id="2TdQhrRQntK" role="lpD6w">
       <ref role="lpD7u" to="tpej:55LA2AKaNhV" resolve="FloatConstantType" />
     </node>
+    <node concept="lpD6D" id="4h_NvYnOdnY" role="lpD6w">
+      <ref role="lpD7u" to="tpej:4h_NvYnN3DI" resolve="FreshStaticFieldWithAbstractInitializerHasNoErrorOnType" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRQnAK" role="lpD6w">
       <ref role="lpD7u" to="tpej:4dpvBJBcBY2" resolve="GenericNewExpressionTypeParameters" />
     </node>
