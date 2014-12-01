@@ -39,23 +39,27 @@ import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
 
 /**
  * evgeny, 11/20/12
  */
-public class BinaryModelPersistence implements CoreComponent, ModelFactory {
-  BinaryModelPersistence() {
+public class BinaryModelPersistence implements CoreComponent, ModelFactory, IndexAwareModelFactory {
+  private final PersistenceRegistry myRegistry;
+
+  BinaryModelPersistence(@NotNull PersistenceRegistry registry) {
+    myRegistry = registry;
   }
 
   @Override
   public void init() {
-    PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL_BINARY, this);
+    myRegistry.setModelFactory(MPSExtentions.MODEL_BINARY, this);
   }
 
   @Override
   public void dispose() {
-    PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL_BINARY, null);
+    myRegistry.setModelFactory(MPSExtentions.MODEL_BINARY, null);
   }
 
   @NotNull
@@ -139,6 +143,11 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
   @Override
   public String getFormatTitle() {
     return "Universal binary format";
+  }
+
+  @Override
+  public void index(@NotNull InputStream input, @NotNull Callback callback) throws IOException {
+    BinaryPersistence.index(input, callback);
   }
 
   public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {

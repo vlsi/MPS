@@ -136,7 +136,7 @@ public class PersistenceUtil {
   }
 
   public static byte[] saveBinaryModel(final SModel model) {
-    ModelFactory factory = new BinaryModelPersistence();
+    ModelFactory factory = PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY);
     try {
       InMemoryStreamDataSource source = new InMemoryStreamDataSource();
       factory.save(model, source);

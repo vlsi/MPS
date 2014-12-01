@@ -19,6 +19,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.generator.ModelDigestUtil.DigestBuilderOutputStream;
 import jetbrains.mps.persistence.IdHelper;
+import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.persistence.MetaModelInfoProvider.BaseMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
@@ -58,10 +59,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
-import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.io.BufferedInputStream;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -487,31 +486,33 @@ public final class BinaryPersistence {
     return result;
   }
 
-  public static void index(byte[] content, final Consumer<String> consumer) throws ModelReadException {
+  public static void index(InputStream content, final Callback consumer) throws IOException {
     ModelInputStream mis = null;
     try {
-      mis = new ModelInputStream(new ByteArrayInputStream(content));
+      mis = new ModelInputStream(content);
       SModelHeader modelHeader = loadHeader(mis);
       SModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
       BinaryPersistence bp = new BinaryPersistence(new StuffedMetaModelInfo(new BaseMetaModelInfo()), model);
       final ReadHelper readHelper = bp.loadModelProperties(mis);
       for (ImportElement element : model.importedModels()) {
-        consumer.consume(element.getModelReference().getModelName());
+        consumer.imports(element.getModelReference());
       }
       for (SConceptId cid : readHelper.getParticipatingConcepts()) {
-        // FIXME according to MPS-20646 fix in Indexer9 (rev cebbc90), indexer expects concept node id value as string
-        consumer.consume(Long.toString(cid.getIdValue()));
+        consumer.instances(cid);
       }
       readHelper.requestInterfaceOnly(false);
       final NodesReader reader = new NodesReader(modelHeader.getModelReference(), mis, readHelper);
       HashSet<SNodeId> externalNodes = new HashSet<SNodeId>();
-      reader.collectExternalNodeIds(externalNodes);
+      HashSet<SNodeId> localNodes = new HashSet<SNodeId>();
+      reader.collectExternalTargets(externalNodes);
+      reader.collectLocalTargets(localNodes);
       reader.readChildren(null);
       for (SNodeId n : externalNodes) {
-        consumer.consume(n.toString());
+        consumer.externalNodeRef(n);
       }
-    } catch (IOException e) {
-      throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
+      for (SNodeId n : localNodes) {
+        consumer.localNodeRef(n);
+      }
     } finally {
       FileUtil.closeFileSafe(mis);
     }

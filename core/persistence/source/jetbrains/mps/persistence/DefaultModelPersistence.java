@@ -66,17 +66,20 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
    */
   public static final String OPTION_INTERFACE_ONLY = "load-interface-only";
 
-  DefaultModelPersistence() {
+  private final PersistenceRegistry myRegistry;
+
+  DefaultModelPersistence(@NotNull PersistenceRegistry persistenceRegistry) {
+    myRegistry = persistenceRegistry;
   }
 
   @Override
   public void init() {
-    PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL, this);
+    myRegistry.setModelFactory(MPSExtentions.MODEL, this);
   }
 
   @Override
   public void dispose() {
-    PersistenceRegistry.getInstance().setModelFactory(MPSExtentions.MODEL, null);
+    myRegistry.setModelFactory(MPSExtentions.MODEL, null);
   }
 
   @NotNull
@@ -170,8 +173,6 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
 
       SModelHeader header = ModelPersistence.loadDescriptor(source);
       return header.getPersistenceVersion() < ModelPersistence.LAST_VERSION;
-    } catch (ModelReadException ex) {
-      throw new IOException(ex.getMessage(), ex);
     } finally {
       FileUtil.closeFileSafe(in);
     }
@@ -246,7 +247,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   public static Map<String, String> getDigestMap(Reader input) {
     try {
       return ModelPersistence.calculateHashes(FileUtil.read(input));
-    } catch (ModelReadException e) {
+    } catch (IOException e) {
       return null;
     }
   }

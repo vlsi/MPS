@@ -15,43 +15,59 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
+import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
+import jetbrains.mps.persistence.xml.XMLPersistence.Indexer;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.persistence.def.XmlFastScanner;
 import jetbrains.mps.util.JDOMUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.util.Consumer;
 
+import java.io.CharArrayWriter;
+import java.io.IOException;
+import java.io.Reader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Indexer9 {
-  private final char[] myData;
-  private final Consumer<String> myConsumer;
+public class Indexer9 implements Indexer{
+  private final Callback myConsumer;
   private final IdEncoder myIdEncoder = new IdEncoder();
 
 
-  public Indexer9(@NotNull char[] data, @NotNull Consumer<String> consumer) {
-    myData = data;
+  public Indexer9(@NotNull Callback consumer) {
     myConsumer = consumer;
   }
 
-  public void index() {
-    XmlFastScanner s = new XmlFastScanner(myData);
+  public void index(@NotNull Reader input) throws IOException {
+    char buf[] = new char[8196];
+    CharArrayWriter w = new CharArrayWriter(buf.length * 10);
+    int x;
+    while ((x = input.read(buf, 0, buf.length)) != -1) {
+      w.write(buf, 0, x);
+    }
+    w.flush();
+    w.close();
+    char[] data = w.toCharArray();
+
+    XmlFastScanner s = new XmlFastScanner(data);
     int token;
     boolean insideRegistry = false, insideImports = false, underNode = false;
+    // <language id="">
     // <concept id="">
     // <import ref="">
     // <ref to="external node" | node="local node">
     final Matcher attrMatcher = Pattern.compile(String.format("\\s(%s|%s|%s|%s)\\s*=\\s*\"([^\"]+)\"", ModelPersistence9.ID, ModelPersistence9.REF, ModelPersistence9.TO, ModelPersistence9.NODE)).matcher("");
+    SLanguageId currentLanguage = null;
     while ((token = s.next()) != XmlFastScanner.EOI) {
       if (token != XmlFastScanner.OPEN_TAG && token != XmlFastScanner.SIMPLE_TAG) {
         continue;
       }
       final String tokenName = s.getName();
       if (insideRegistry) {
-        if (ModelPersistence9.REGISTRY_CONCEPT.equals(tokenName) && attrMatcher.reset(s.token()).find()) {
-          handleConceptId(attrMatcher.group(2));
+        if (ModelPersistence9.REGISTRY_LANGUAGE.equals(tokenName) && attrMatcher.reset(s.token()).find()) {
+          currentLanguage = myIdEncoder.parseLanguageId(attrMatcher.group(2));
+        } else if (ModelPersistence9.REGISTRY_CONCEPT.equals(tokenName) && attrMatcher.reset(s.token()).find()) {
+          handleConceptId(currentLanguage, attrMatcher.group(2));
         }
       } else if (insideImports) {
         if (ModelPersistence9.IMPORT.equals(tokenName) && attrMatcher.reset(s.token()).find()) {
@@ -84,28 +100,25 @@ public class Indexer9 {
     }
   }
 
-  private void handleConceptId(String conceptId) {
-    // XXX Would be better to use IdEncoder here, as it's bare assumption conceptId string in xml file is
-    // identical to what clients expect to use in FindUsages. Now it seems to expect Long.toString(conceptId)
-    myConsumer.consume(conceptId);
+  private void handleConceptId(SLanguageId lang, String conceptId) {
+    myConsumer.instances(myIdEncoder.parseConceptId(lang, conceptId));
   }
 
   private void handleModelImportRef(String modelRef) {
-    final SModelReference mr = myIdEncoder.parseModelReference(modelRef);
-    myConsumer.consume(mr.getModelName());
+    myConsumer.imports(myIdEncoder.parseModelReference(modelRef));
   }
 
   private void handleExternalReference(String outerRef) {
     SNodeId nodeId = myIdEncoder.parseExternalNodeReference(outerRef);
     if (nodeId != null) {
-      myConsumer.consume(nodeId.toString());
+      myConsumer.externalNodeRef(nodeId);
     }
   }
 
   private void handleLocalReference(String localRef) {
     SNodeId nodeId = myIdEncoder.parseLocalNodeReference(localRef);
     if (nodeId != null) {
-      myConsumer.consume(nodeId.toString());
+      myConsumer.localNodeRef(nodeId);
     }
   }
 }

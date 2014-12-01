@@ -21,6 +21,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -64,17 +65,22 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   private static final Logger LOG = LogManager.getLogger(FilePerRootModelPersistence.class);
   public static final String FACTORY_ID = "file-per-root";
 
-  FilePerRootModelPersistence() {
+  private final PersistenceRegistry myRegistry;
+
+  FilePerRootModelPersistence(PersistenceRegistry persistenceRegistry) {
+    myRegistry = persistenceRegistry;
   }
 
   @Override
   public void init() {
-    PersistenceRegistry.getInstance().addFolderModelFactory(this);
+    myRegistry.addFolderModelFactory(this);
+    myRegistry.setModelFactory(MPSExtentions.MODEL_HEADER, this);
   }
 
   @Override
   public void dispose() {
-    PersistenceRegistry.getInstance().removeFolderModelFactory(this);
+    myRegistry.setModelFactory(MPSExtentions.MODEL_HEADER, null);
+    myRegistry.removeFolderModelFactory(this);
   }
 
   @NotNull
@@ -140,8 +146,6 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
 
       SModelHeader header = ModelPersistence.loadDescriptor(source);
       return header.getPersistenceVersion() < ModelPersistence.LAST_VERSION;
-    } catch (ModelReadException ex) {
-      throw new IOException(ex.getMessage(), ex);
     } finally {
       FileUtil.closeFileSafe(in);
     }
