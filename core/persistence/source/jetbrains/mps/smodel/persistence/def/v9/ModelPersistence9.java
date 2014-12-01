@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
+import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.persistence.MetaModelInfoProvider.BaseMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
+import jetbrains.mps.persistence.xml.XMLPersistence;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -29,12 +31,13 @@ import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.List;
 
-public class ModelPersistence9 implements IModelPersistence {
+public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
   public static final String OPTION_CONCISE = "concise"; // FIXME remove once everyone had merged their branches.
 
   // per-root
@@ -137,7 +140,12 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public void index(char[] data, Consumer<String> consumer) {
-    new Indexer9(data, consumer).index();
+    throw new UnsupportedOperationException(String.format("Use facilities of %s instead", XMLPersistence.class));
+  }
+
+  @Override
+  public Indexer getIndexSupport(@NotNull Callback callback) {
+    return new Indexer9(callback);
   }
 
   private static boolean isConcisePersistenceOption(SModelHeader header) {

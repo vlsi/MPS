@@ -31,8 +31,11 @@ public class ModelFactoryRegister implements ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(ModelFactoryRegister.class);
   private final List<ModelFactory> myRegisteredFactories = new ArrayList<ModelFactory>();
 
+  private PersistenceRegistry myPersistenceRegistry;
+
   @Override
   public void initComponent() {
+    myPersistenceRegistry = PersistenceRegistry.getInstance();
     for (ModelFactoryProvider provider : ModelFactoryProvider.EP_MODEL_FACTORY.getExtensions()) {
       try {
         String implementationClassName = provider.getImplementationClass();
@@ -44,7 +47,7 @@ public class ModelFactoryRegister implements ApplicationComponent {
             (Class<ModelFactory>) Class.forName(implementationClassName, true, provider.getLoaderForClass());
         ModelFactory modelFactory = implementationClass.newInstance();
         myRegisteredFactories.add(modelFactory);
-        PersistenceRegistry.getInstance().setModelFactory(modelFactory.getFileExtension(), modelFactory);
+        myPersistenceRegistry.setModelFactory(modelFactory.getFileExtension(), modelFactory);
       } catch (ClassNotFoundException e) {
         LOG.error("Can not load ModelFactoryProvider in plugin " + provider.getPluginDescriptor().getPluginId(), e);
       } catch (InstantiationException e) {
@@ -58,8 +61,14 @@ public class ModelFactoryRegister implements ApplicationComponent {
   @Override
   public void disposeComponent() {
     for (ModelFactory factory : myRegisteredFactories) {
-      PersistenceRegistry.getInstance().setModelFactory(factory.getFileExtension(), null);
+      myPersistenceRegistry.setModelFactory(factory.getFileExtension(), null);
     }
+    myPersistenceRegistry = null;
+  }
+
+  // it's preferable to use this method instead of static getInstance()
+  public PersistenceRegistry getPersistenceRegistry() {
+    return myPersistenceRegistry;
   }
 
   @NotNull

@@ -18,6 +18,9 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
+import jetbrains.mps.persistence.xml.XMLPersistence;
+import jetbrains.mps.persistence.xml.XMLPersistence.Indexer;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
@@ -54,7 +57,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.CharArrayReader;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -151,12 +154,12 @@ public class ModelPersistence {
     }
   }
 
-  static void loadDescriptor(SModelHeader result, InputSource source) throws ModelReadException {
+  static void loadDescriptor(SModelHeader result, InputSource source) throws IOException {
     parseAndHandleExceptions(source, new MyDescriptorHandler(result), "model descriptor");
   }
 
   @NotNull
-  public static SModelHeader loadDescriptor(InputSource source) throws ModelReadException {
+  public static SModelHeader loadDescriptor(InputSource source) throws IOException {
     SModelHeader result = new SModelHeader();
     loadDescriptor(result, source);
     return result;
@@ -185,7 +188,7 @@ public class ModelPersistence {
     return result;
   }
 
-  private static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) throws ModelReadException {
+  private static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) throws IOException, ModelReadException {
     IModelPersistence mp = getModelPersistence(header.getPersistenceVersion());
     if (header.getPersistenceVersion() < 0) {
       throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
@@ -228,16 +231,20 @@ public class ModelPersistence {
 
   @Nullable
   public static List<LineContent> getLineToContentMap(String content) throws ModelReadException {
-    SModelHeader header;
-    header = loadDescriptor(new InputSource(new StringReader(content)));
-    IModelPersistence mp = getModelPersistence(header.getPersistenceVersion());
+    try {
+      SModelHeader header;
+      header = loadDescriptor(new InputSource(new StringReader(content)));
+      IModelPersistence mp = getModelPersistence(header.getPersistenceVersion());
 
-    if (mp != null) {
-      XMLSAXHandler<List<LineContent>> handler = mp.getLineToContentMapReaderHandler();
-      if (handler != null) {
-        parseAndHandleExceptions(new InputSource(new StringReader(content)), handler, "line to content map");
-        return handler.getResult();
+      if (mp != null) {
+        XMLSAXHandler<List<LineContent>> handler = mp.getLineToContentMapReaderHandler();
+        if (handler != null) {
+          parseAndHandleExceptions(new InputSource(new StringReader(content)), handler, "line to content map");
+          return handler.getResult();
+        }
       }
+    } catch (IOException ex) {
+      throw new ModelReadException(ex.toString(), ex);
     }
     return null;
   }
@@ -326,13 +333,11 @@ public class ModelPersistence {
   //----------------
 
   @NotNull
-  private static Document loadModelDocument(@NotNull InputSource source) throws ModelReadException {
+  private static Document loadModelDocument(@NotNull InputSource source) throws IOException {
     try {
       return JDOMUtil.loadDocument(source);
     } catch (JDOMException e) {
-      throw new ModelReadException("Exception on loading model from " + source, e);
-    } catch (IOException e) {
-      throw new ModelReadException("Exception on loading model from " + source, e);
+      throw new IOException("Exception on loading model from " + source, e);
     }
   }
 
@@ -340,7 +345,7 @@ public class ModelPersistence {
     return ModelPersistence.LAST_VERSION;
   }
 
-  public static Map<String, String> calculateHashes(String content) throws ModelReadException {
+  public static Map<String, String> calculateHashes(String content) throws IOException {
     SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
     IModelPersistence mp = getModelPersistence(header.getPersistenceVersion());
     Map<String, String> result;
@@ -364,9 +369,13 @@ public class ModelPersistence {
 
   @NotNull
   public static DefaultSModel readModel(@NotNull final String content, boolean interfaceOnly) throws ModelReadException {
-    SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
-    ModelLoadingState state = interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED;
-    return (DefaultSModel) readModel(header, new InputSource(new StringReader(content)), state).getModel();
+    try {
+      SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
+      ModelLoadingState state = interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED;
+      return (DefaultSModel) readModel(header, new InputSource(new StringReader(content)), state).getModel();
+    } catch (IOException ex) {
+      throw new ModelReadException(ex.toString(), ex);
+    }
   }
 
   @NotNull
@@ -394,26 +403,30 @@ public class ModelPersistence {
     return FileSystem.getInstance().getFileByPath(versionPath);
   }
 
-  static void parseAndHandleExceptions(InputSource source, DefaultHandler handler, String what) throws ModelReadException {
+  static void parseAndHandleExceptions(InputSource source, DefaultHandler handler, String what) throws IOException {
     try {
       JDOMUtil.createSAXParser().parse(source, handler);
     } catch (BreakParseSAXException e) {
       /* used to break SAX parsing flow */
     } catch (ParserConfigurationException e) {
       LOG.error(e.toString(), e);
-      throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);
+      throw new IOException(String.format("Couldn't read %s: %s", what, e.getMessage()), e);
     } catch (SAXException e) {
-      throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);
-    } catch (IOException e) {
-      throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);
+      throw new IOException(String.format("Couldn't read %s: %s", what, e.getMessage()), e);
     }
   }
 
-  public static void index(char[] data, Consumer<String> consumer) throws ModelReadException {
-    SModelHeader header = loadDescriptor(new InputSource(new CharArrayReader(data)));
+  public static void index(byte[] data, Consumer<String> legacyConsumer, Callback newConsumer) throws IOException {
+    SModelHeader header = loadDescriptor(new InputSource(new InputStreamReader(new ByteArrayInputStream(data), FileUtil.DEFAULT_CHARSET)));
     IModelPersistence mp = getModelPersistence(header.getPersistenceVersion());
     assert mp != null : "Using unsupported persistence version: " + header.getPersistenceVersion();
-    mp.index(data, consumer);
+    if (mp instanceof XMLPersistence) {
+      final Indexer indexSupport = ((XMLPersistence) mp).getIndexSupport(newConsumer);
+      indexSupport.index(new InputStreamReader(new ByteArrayInputStream(data), FileUtil.DEFAULT_CHARSET));
+    } else {
+      // FIXME throw away indexing of legacy persistence versions ASAP
+      mp.index(new String(data, FileUtil.DEFAULT_CHARSET).toCharArray(), legacyConsumer);
+    }
   }
 
   private static class MyDescriptorHandler extends DefaultHandler {

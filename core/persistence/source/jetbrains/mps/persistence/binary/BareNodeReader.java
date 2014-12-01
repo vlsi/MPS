@@ -137,6 +137,7 @@ public class BareNodeReader {
       externalNodeReferenceRead(modelRef, targetNodeId);
     } else {
       modelRef = myModelReference;
+      localNodeReferenceRead(targetNodeId);
     }
     String resolveInfo = myIn.readString();
     if (kind == 1) {
@@ -164,6 +165,9 @@ public class BareNodeReader {
     }
   }
 
+  protected void localNodeReferenceRead(SNodeId nodeId) {
+    // no-op, left for subclasses  to override
+  }
   protected void externalNodeReferenceRead(SModelReference targetModel, SNodeId nodeId) {
     // no-op, left for subclasses  to override
   }

@@ -142,13 +142,13 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
       scopeFiles.addLink(sm, vf);
     }
 
+    // filter files with usages
+    ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
     // process indexes
     MultiMap<SModel, T> result = new SetBasedMultiMap<SModel, T>();
     for (T elem : elems) {
       String nodeId = id == null ? elem.toString() : id.value(elem);
 
-      // filter files with usages
-      ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
       Collection<VirtualFile> matchingFiles = FileBasedIndex.getInstance().getContainingFiles(IdIndex.NAME, new IdIndexEntry(nodeId, true), allFiles);
 
       // back-transform

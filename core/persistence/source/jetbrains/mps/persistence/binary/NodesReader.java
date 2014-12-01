@@ -33,15 +33,19 @@ import java.util.Collection;
 public final class NodesReader extends BareNodeReader {
   private final ReadHelper myReadHelper;
   private boolean hasSkippedNodes = false;
-  private Collection<SNodeId> myExternalNodeStore;
+  private Collection<SNodeId> myExternalRefs;
+  private Collection<SNodeId> myLocalRefs;
 
   public NodesReader(@NotNull SModelReference modelReference, @NotNull ModelInputStream is, ReadHelper readHelper) {
     super(modelReference, is);
     myReadHelper = readHelper;
   }
 
-  /*package*/ void collectExternalNodeIds(@Nullable Collection<SNodeId> store) {
-    myExternalNodeStore = store;
+  /*package*/ void collectExternalTargets(@Nullable Collection<SNodeId> store) {
+    myExternalRefs = store;
+  }
+  /*package*/ void collectLocalTargets(@Nullable Collection<SNodeId> store) {
+    myLocalRefs = store;
   }
 
   public boolean hasSkippedNodes() {
@@ -76,9 +80,16 @@ public final class NodesReader extends BareNodeReader {
   }
 
   @Override
+  protected void localNodeReferenceRead(SNodeId nodeId) {
+    if (nodeId != null && myLocalRefs != null) {
+      myLocalRefs.add(nodeId);
+    }
+  }
+
+  @Override
   protected void externalNodeReferenceRead(SModelReference targetModel, SNodeId targetNodeId) {
-    if (targetNodeId != null && myExternalNodeStore != null) {
-      myExternalNodeStore.add(targetNodeId);
+    if (targetNodeId != null && myExternalRefs != null) {
+      myExternalRefs.add(targetNodeId);
     }
   }
 

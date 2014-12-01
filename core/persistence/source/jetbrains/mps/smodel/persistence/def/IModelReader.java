@@ -24,6 +24,7 @@ import org.jdom.Document;
  * Oct 9, 2007
  */
 public interface IModelReader {
+  // FIXME superfluous version, IModelPeristence provides one
   int getVersion();
 
   DefaultSModel readModel(Document document, SModelHeader header);
