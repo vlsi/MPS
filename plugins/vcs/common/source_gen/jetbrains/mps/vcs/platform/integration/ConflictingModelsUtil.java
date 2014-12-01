@@ -91,9 +91,9 @@ public class ConflictingModelsUtil {
       if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
         ext = MPSExtentions.MODEL;
       }
-      final SModel baseModel = PersistenceUtil.loadModel(new String(mergeData.ORIGINAL), ext);
-      final SModel mineModel = PersistenceUtil.loadModel(new String(mergeData.CURRENT), ext);
-      final SModel repoModel = PersistenceUtil.loadModel(new String(mergeData.LAST), ext);
+      final SModel baseModel = PersistenceUtil.loadModel(mergeData.ORIGINAL, ext);
+      final SModel mineModel = PersistenceUtil.loadModel(mergeData.CURRENT, ext);
+      final SModel repoModel = PersistenceUtil.loadModel(mergeData.LAST, ext);
       // read action: 
       final Wrappers._T<MergeSession> mergeSession = new Wrappers._T<MergeSession>();
       ProjectHelper.getModelAccess(project).runReadAction(new Runnable() {
@@ -153,9 +153,9 @@ public class ConflictingModelsUtil {
           if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
             ext.value = MPSExtentions.MODEL;
           }
-          final SModel baseModel = PersistenceUtil.loadModel(new String(mergeData.ORIGINAL), ext.value);
-          final SModel mineModel = PersistenceUtil.loadModel(new String(mergeData.CURRENT), ext.value);
-          final SModel repoModel = PersistenceUtil.loadModel(new String(mergeData.LAST), ext.value);
+          final SModel baseModel = PersistenceUtil.loadModel(mergeData.ORIGINAL, ext.value);
+          final SModel mineModel = PersistenceUtil.loadModel(mergeData.CURRENT, ext.value);
+          final SModel repoModel = PersistenceUtil.loadModel(mergeData.LAST, ext.value);
 
           final Wrappers._T<MergeSession> mergeSession = new Wrappers._T<MergeSession>(null);
           // read action: 
