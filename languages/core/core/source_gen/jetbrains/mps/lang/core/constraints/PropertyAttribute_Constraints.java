@@ -10,12 +10,13 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class PropertyAttribute_Constraints extends BaseConstraintsDescriptor {
   public PropertyAttribute_Constraints() {
@@ -26,22 +27,68 @@ public class PropertyAttribute_Constraints extends BaseConstraintsDescriptor {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
     properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L), this) {
       @Override
+      public boolean hasOwnGetter() {
+        return true;
+      }
+      @Override
+      public Object getValue(SNode node) {
+        String propertyName = "propertyName";
+        if (isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId")))) {
+          return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"));
+        } else {
+          return PropertyAttribute_Behavior.call_getProperty_1341860900488756504(node).getName();
+        }
+      }
+      @Override
       public boolean hasOwnValidator() {
         return true;
       }
       @Override
       public boolean validateValue(SNode node, final String propertyValue) {
         String propertyName = "propertyName";
-        return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node))))).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return eq_34vegv_a0a0a0a0a0a0b0b0a1a0b0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), (SPropertyOperations.getString(propertyValue)));
+        {
+          Iterable<SProperty> properties = SNodeOperations.getConcept(SNodeOperations.getParent(node)).getProperties();
+          return Sequence.fromIterable(properties).any(new IWhereFilter<SProperty>() {
+            public boolean accept(SProperty it) {
+              return eq_34vegv_a0a0a0a0a0b0b0d0a1a0b0b(it.getName(), (SPropertyOperations.getString(propertyValue)));
+            }
+          });
+        }
+      }
+    });
+    properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL), this) {
+      @Override
+      public boolean hasOwnValidator() {
+        return true;
+      }
+      @Override
+      public boolean validateValue(final SNode node, final String propertyValue) {
+        String propertyName = "propertyId";
+        {
+          if (isEmptyString((SPropertyOperations.getString(propertyValue)))) {
+            return true;
           }
-        });
+          if (isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName")))) {
+            return true;
+          }
+          Iterable<SProperty> properties = SNodeOperations.getConcept(SNodeOperations.getParent(node)).getProperties();
+          return Sequence.fromIterable(properties).any(new IWhereFilter<SProperty>() {
+            public boolean accept(SProperty it) {
+              return eq_34vegv_a0a0a0a0a0d0b0b0a1a0c0b(it, MetaAdapterFactory.getProperty(SPropertyId.deserialize((SPropertyOperations.getString(propertyValue))), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"))));
+            }
+          });
+        }
       }
     });
     return properties;
   }
-  private static boolean eq_34vegv_a0a0a0a0a0a0b0b0a1a0b0b(Object a, Object b) {
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
+  }
+  private static boolean eq_34vegv_a0a0a0a0a0b0b0d0a1a0b0b(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_34vegv_a0a0a0a0a0d0b0b0a1a0c0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

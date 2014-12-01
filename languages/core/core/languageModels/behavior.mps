@@ -23,6 +23,9 @@
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
+    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
+    <import index="hy6y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure(MPS.Core/jetbrains.mps.smodel.adapter.structure@java_stub)" />
+    <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" implicit="true" />
   </imports>
@@ -100,6 +103,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -198,6 +202,7 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -205,6 +210,7 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -1513,6 +1519,156 @@
     </node>
     <node concept="13hLZK" id="19gBtYEvioF" role="13h7CW">
       <node concept="3clFbS" id="19gBtYEvioG" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1avfQ4B$VUX">
+    <property role="3GE5qa" value="attributes" />
+    <ref role="13h7C2" to="tpck:2ULFgo8_XDm" resolve="PropertyAttribute" />
+    <node concept="13i0hz" id="1avfQ4BBzOo" role="13h7CS">
+      <property role="TrG5h" value="getProperty" />
+      <node concept="3Tm1VV" id="1avfQ4BBzOp" role="1B3o_S" />
+      <node concept="3uibUv" id="1avfQ4BBMkC" role="3clF45">
+        <ref role="3uigEE" to="t3eg:~SProperty" resolve="SProperty" />
+      </node>
+      <node concept="3clFbS" id="1avfQ4BBzOr" role="3clF47">
+        <node concept="3clFbJ" id="1avfQ4BALQX" role="3cqZAp">
+          <node concept="3clFbS" id="1avfQ4BALR0" role="3clFbx">
+            <node concept="3cpWs6" id="1avfQ4BAN53" role="3cqZAp">
+              <node concept="2YIFZM" id="1avfQ4BATv2" role="3cqZAk">
+                <ref role="1Pybhc" to="hy6y:~MetaAdapterFactoryByName" resolve="MetaAdapterFactoryByName" />
+                <ref role="37wK5l" to="hy6y:~MetaAdapterFactoryByName.getProperty(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.language.SProperty" resolve="getProperty" />
+                <node concept="2OqwBi" id="1avfQ4BCZiN" role="37wK5m">
+                  <node concept="2OqwBi" id="1avfQ4BCYBX" role="2Oq$k0">
+                    <node concept="2OqwBi" id="1avfQ4BBSEc" role="2Oq$k0">
+                      <node concept="13iPFW" id="1avfQ4BBS$J" role="2Oq$k0" />
+                      <node concept="1mfA1w" id="1avfQ4BBSPP" role="2OqNvi" />
+                    </node>
+                    <node concept="2yIwOk" id="1avfQ4BCYK_" role="2OqNvi" />
+                  </node>
+                  <node concept="liA8E" id="1avfQ4BCZth" role="2OqNvi">
+                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="1avfQ4BCYSz" role="37wK5m">
+                  <node concept="13iPFW" id="1avfQ4BCYOp" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="1avfQ4BCZ5s" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpck:1x$A_M24zkl" resolve="propertyName" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1avfQ4BDc8P" role="3clFbw">
+            <node concept="2OqwBi" id="1avfQ4BBMB9" role="2Oq$k0">
+              <node concept="13iPFW" id="1avfQ4BBM_8" role="2Oq$k0" />
+              <node concept="3TrcHB" id="1avfQ4BBMKE" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:1avfQ4BzllH" resolve="propertyId" />
+              </node>
+            </node>
+            <node concept="17RlXB" id="1avfQ4BDcVR" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1avfQ4BAPsO" role="3cqZAp">
+          <node concept="2YIFZM" id="1avfQ4BAQgF" role="3cqZAk">
+            <ref role="37wK5l" to="hy6y:~MetaAdapterFactory.getProperty(jetbrains.mps.smodel.adapter.ids.SPropertyId,java.lang.String):org.jetbrains.mps.openapi.language.SProperty" resolve="getProperty" />
+            <ref role="1Pybhc" to="hy6y:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
+            <node concept="2YIFZM" id="1avfQ4BCZM0" role="37wK5m">
+              <ref role="37wK5l" to="a7z3:~SPropertyId.deserialize(java.lang.String):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="deserialize" />
+              <ref role="1Pybhc" to="a7z3:~SPropertyId" resolve="SPropertyId" />
+              <node concept="2OqwBi" id="1avfQ4BCZWy" role="37wK5m">
+                <node concept="13iPFW" id="1avfQ4BCZPX" role="2Oq$k0" />
+                <node concept="3TrcHB" id="1avfQ4BD09x" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:1avfQ4BzllH" resolve="propertyId" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1avfQ4BD0kS" role="37wK5m">
+              <node concept="13iPFW" id="1avfQ4BD0dZ" role="2Oq$k0" />
+              <node concept="3TrcHB" id="1avfQ4BD0yd" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:1x$A_M24zkl" resolve="propertyName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="1avfQ4B$VUY" role="13h7CW">
+      <node concept="3clFbS" id="1avfQ4B$VUZ" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1avfQ4BEEV4">
+    <property role="3GE5qa" value="attributes" />
+    <ref role="13h7C2" to="tpck:2ULFgo8_XDh" resolve="LinkAttribute" />
+    <node concept="13i0hz" id="1avfQ4BEFo6" role="13h7CS">
+      <property role="TrG5h" value="getLink" />
+      <node concept="3Tm1VV" id="1avfQ4BEFo7" role="1B3o_S" />
+      <node concept="3uibUv" id="1avfQ4BEFvF" role="3clF45">
+        <ref role="3uigEE" to="t3eg:~SReferenceLink" resolve="SReferenceLink" />
+      </node>
+      <node concept="3clFbS" id="1avfQ4BEFo9" role="3clF47">
+        <node concept="3clFbJ" id="1avfQ4BEFoa" role="3cqZAp">
+          <node concept="3clFbS" id="1avfQ4BEFob" role="3clFbx">
+            <node concept="3cpWs6" id="1avfQ4BEFoc" role="3cqZAp">
+              <node concept="2YIFZM" id="1avfQ4BEGal" role="3cqZAk">
+                <ref role="37wK5l" to="hy6y:~MetaAdapterFactoryByName.getReferenceLink(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getReferenceLink" />
+                <ref role="1Pybhc" to="hy6y:~MetaAdapterFactoryByName" resolve="MetaAdapterFactoryByName" />
+                <node concept="2OqwBi" id="1avfQ4BEGam" role="37wK5m">
+                  <node concept="2OqwBi" id="1avfQ4BEGan" role="2Oq$k0">
+                    <node concept="2OqwBi" id="1avfQ4BEGao" role="2Oq$k0">
+                      <node concept="13iPFW" id="1avfQ4BEGap" role="2Oq$k0" />
+                      <node concept="1mfA1w" id="1avfQ4BEGaq" role="2OqNvi" />
+                    </node>
+                    <node concept="2yIwOk" id="1avfQ4BEGar" role="2OqNvi" />
+                  </node>
+                  <node concept="liA8E" id="1avfQ4BEGas" role="2OqNvi">
+                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="1avfQ4BEGat" role="37wK5m">
+                  <node concept="13iPFW" id="1avfQ4BEGau" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="1avfQ4BEGoX" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpck:1x$A_M24zkk" resolve="linkRole" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1avfQ4BEFoo" role="3clFbw">
+            <node concept="2OqwBi" id="1avfQ4BEFop" role="2Oq$k0">
+              <node concept="13iPFW" id="1avfQ4BEFoq" role="2Oq$k0" />
+              <node concept="3TrcHB" id="1avfQ4BEG7A" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:1avfQ4B$JLs" resolve="linkId" />
+              </node>
+            </node>
+            <node concept="17RlXB" id="1avfQ4BEFos" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1avfQ4BEFot" role="3cqZAp">
+          <node concept="2YIFZM" id="1avfQ4BEGuh" role="3cqZAk">
+            <ref role="37wK5l" to="hy6y:~MetaAdapterFactory.getReferenceLink(jetbrains.mps.smodel.adapter.ids.SReferenceLinkId,java.lang.String):org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getReferenceLink" />
+            <ref role="1Pybhc" to="hy6y:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
+            <node concept="2YIFZM" id="1avfQ4BEH8U" role="37wK5m">
+              <ref role="37wK5l" to="a7z3:~SReferenceLinkId.deserialize(java.lang.String):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="deserialize" />
+              <ref role="1Pybhc" to="a7z3:~SReferenceLinkId" resolve="SReferenceLinkId" />
+              <node concept="2OqwBi" id="1avfQ4BEH8V" role="37wK5m">
+                <node concept="13iPFW" id="1avfQ4BEH8W" role="2Oq$k0" />
+                <node concept="3TrcHB" id="1avfQ4BEH8X" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:1avfQ4B$JLs" resolve="linkId" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1avfQ4BEGum" role="37wK5m">
+              <node concept="13iPFW" id="1avfQ4BEGun" role="2Oq$k0" />
+              <node concept="3TrcHB" id="1avfQ4BEGUI" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:1x$A_M24zkk" resolve="linkRole" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="1avfQ4BEEV5" role="13h7CW">
+      <node concept="3clFbS" id="1avfQ4BEEV6" role="2VODD2" />
     </node>
   </node>
 </model>

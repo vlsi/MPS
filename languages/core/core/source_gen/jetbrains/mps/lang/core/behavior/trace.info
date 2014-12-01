@@ -300,6 +300,56 @@
       <unit id="1319728274783151658" at="7,0,11,0" name="jetbrains.mps.lang.core.behavior.ImplementationContainer_Behavior" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1341860900488068797">
+    <file name="PropertyAttribute_Behavior.java">
+      <node id="1341860900488556867" at="17,195,18,307" concept="6" />
+      <node id="1341860900488566580" at="19,5,20,411" concept="6" />
+      <node id="1341860900489187063" at="22,52,23,44" concept="6" />
+      <node id="1341860900488068797" at="14,0,16,0" concept="9" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1341860900488551869" at="16,80,19,5" concept="3" />
+      <node id="1341860900489187063" at="22,0,25,0" concept="9" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="1341860900488068797" at="16,0,22,0" concept="9" trace="call_getProperty_1341860900488756504#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SProperty;" />
+      <scope id="1341860900488068799" at="14,43,14,43" />
+      <scope id="1341860900488551872" at="17,195,18,307" />
+      <scope id="1341860900489187063" at="22,52,23,44" />
+      <scope id="1341860900488068797" at="14,0,16,0">
+        <var name="thisNode" id="1341860900488068797" />
+      </scope>
+      <scope id="1341860900489187063" at="22,0,25,0">
+        <var name="str" id="1341860900489187063" />
+      </scope>
+      <scope id="1341860900488756507" at="16,80,20,411" />
+      <scope id="1341860900488068797" at="16,0,22,0">
+        <var name="thisNode" id="1341860900488068797" />
+      </scope>
+      <unit id="1341860900488068797" at="13,0,26,0" name="jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1341860900489572036">
+    <file name="LinkAttribute_Behavior.java">
+      <node id="1341860900489573900" at="17,191,18,308" concept="6" />
+      <node id="1341860900489573917" at="19,5,20,413" concept="6" />
+      <node id="1341860900489573916" at="22,52,23,44" concept="6" />
+      <node id="1341860900489572036" at="14,0,16,0" concept="9" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1341860900489573898" at="16,81,19,5" concept="3" />
+      <node id="1341860900489573916" at="22,0,25,0" concept="9" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="1341860900489572036" at="16,0,22,0" concept="9" trace="call_getLink_1341860900489573894#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SReferenceLink;" />
+      <scope id="1341860900489572038" at="14,43,14,43" />
+      <scope id="1341860900489573899" at="17,191,18,308" />
+      <scope id="1341860900489573916" at="22,52,23,44" />
+      <scope id="1341860900489572036" at="14,0,16,0">
+        <var name="thisNode" id="1341860900489572036" />
+      </scope>
+      <scope id="1341860900489573916" at="22,0,25,0">
+        <var name="str" id="1341860900489573916" />
+      </scope>
+      <scope id="1341860900489573897" at="16,81,20,413" />
+      <scope id="1341860900489572036" at="16,0,22,0">
+        <var name="thisNode" id="1341860900489572036" />
+      </scope>
+      <unit id="1341860900489572036" at="13,0,26,0" name="jetbrains.mps.lang.core.behavior.LinkAttribute_Behavior" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/201537367881074471">
     <file name="IMetaLevelChanger_Behavior.java">
       <node id="201537367881074471" at="8,0,10,0" concept="9" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

@@ -212,6 +212,10 @@
       <property role="TrG5h" value="linkRole" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
+    <node concept="1TJgyi" id="1avfQ4B$JLs" role="1TKVEl">
+      <property role="TrG5h" value="linkId" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
     <node concept="M6xJ_" id="6_gUeuqOeP3" role="lGtFl">
       <property role="Hh88m" value="" />
     </node>
@@ -234,6 +238,10 @@
     <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
     <node concept="1TJgyi" id="1x$A_M24zkl" role="1TKVEl">
       <property role="TrG5h" value="propertyName" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="1avfQ4BzllH" role="1TKVEl">
+      <property role="TrG5h" value="propertyId" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
     </node>
     <node concept="M6xJ_" id="6_gUeuqOeQZ" role="lGtFl">
