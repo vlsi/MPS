@@ -1127,7 +1127,7 @@ public class QueriesGenerated {
   }
   private static SNode createStyleClassReferenceList_vu8rqe_a0a0a0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClassReferenceList", null, false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1cb5b6d8L, "jetbrains.mps.lang.editor.structure.StyleClassReferenceList"), null, null, false);
     for (SNode n : (Iterable<SNode>) p0) {
       n1.addChild(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1cb5b6d8L, 0x7e9b10ab1cb5b959L, "element"), n);
     }

@@ -30,6 +30,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class GeneratePluginSolution_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Nodes.Plugin;
@@ -113,7 +114,7 @@ public class GeneratePluginSolution_Action extends BaseAction {
   private static SNode _quotation_createNode_ljjiw0_a0a41a0f0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor", null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x685ef16bc1750e9cL, "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor"), null, null, false);
     return quotedNode_1;
   }
 }

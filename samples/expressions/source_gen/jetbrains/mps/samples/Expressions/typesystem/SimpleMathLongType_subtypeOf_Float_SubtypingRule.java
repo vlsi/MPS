@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class SimpleMathLongType_subtypeOf_Float_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public SimpleMathLongType_subtypeOf_Float_SubtypingRule() {
@@ -33,7 +34,7 @@ public class SimpleMathLongType_subtypeOf_Float_SubtypingRule extends SubtypingR
   }
   private static SNode createSimpleMathFloatType_rmkbnt_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType", null, false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b84b3e3eL, "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType"), null, null, false);
     return n1;
   }
 }

@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorIsSusbtypeOfEditor_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public EditorIsSusbtypeOfEditor_SubtypingRule() {
@@ -34,7 +35,7 @@ public class EditorIsSusbtypeOfEditor_SubtypingRule extends SubtypingRule_Runtim
   private static SNode _quotation_createNode_naixql_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.SettingsEditorType", null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, "jetbrains.mps.execution.settings.structure.SettingsEditorType"), null, null, false);
     return quotedNode_1;
   }
 }

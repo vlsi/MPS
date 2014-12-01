@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DebuggerTypeIsDebuggerType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public DebuggerTypeIsDebuggerType_SubtypingRule() {
@@ -34,7 +35,7 @@ public class DebuggerTypeIsDebuggerType_SubtypingRule extends SubtypingRule_Runt
   private static SNode _quotation_createNode_ueeq0q_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.api.lang.structure.DebuggerType", null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912bd83L, "jetbrains.mps.debugger.api.lang.structure.DebuggerType"), null, null, false);
     return quotedNode_1;
   }
 }

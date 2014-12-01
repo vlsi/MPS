@@ -38,7 +38,7 @@ public class typeof_ComplexExpression_InferenceRule extends AbstractInferenceRul
   private static SNode _quotation_createNode_l75no8_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686a0422aL, "jetbrains.mps.samples.complex.structure.ComplexType"), null, null, false);
     return quotedNode_1;
   }
 }

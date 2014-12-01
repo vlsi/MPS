@@ -29,10 +29,10 @@
       <node id="1810236057992543712" at="229,7,230,18" concept="6" />
       <node id="1810236057992552419" at="238,63,239,63" concept="5" />
       <node id="1810236057992552419" at="239,63,240,30" concept="5" />
-      <node id="1810236057992552419" at="240,30,241,148" concept="0" />
-      <node id="1810236057992552419" at="240,30,241,148" concept="0" />
-      <node id="1810236057992552419" at="240,30,241,148" concept="1" />
-      <node id="1810236057992552419" at="241,148,242,24" concept="6" />
+      <node id="1810236057992552419" at="240,30,241,241" concept="0" />
+      <node id="1810236057992552419" at="240,30,241,241" concept="0" />
+      <node id="1810236057992552419" at="240,30,241,241" concept="1" />
+      <node id="1810236057992552419" at="241,241,242,24" concept="6" />
       <node id="1810236057992543712" at="207,0,210,0" concept="4" trace="doSubstitute#(Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1810236057992543712" at="210,0,213,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1810236057992543712" at="213,0,216,0" concept="4" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -48,7 +48,7 @@
       <scope id="1810236057992543712" at="213,60,214,40" />
       <scope id="1810236057992543712" at="216,56,217,33" />
       <scope id="1810236057992543723" at="219,50,220,54" />
-      <scope id="1810236057992552419" at="240,30,241,148" />
+      <scope id="1810236057992552419" at="240,30,241,241" />
       <scope id="1810236057992543712" at="207,0,210,0">
         <var name="editorContext" id="1810236057992543712" />
         <var name="pattern" id="1810236057992543712" />
@@ -268,14 +268,14 @@
       <node id="5365453833390719314" at="201,202,202,172" concept="6" />
       <node id="5365453833390719316" at="232,63,233,63" concept="5" />
       <node id="5365453833390719316" at="233,63,234,30" concept="5" />
-      <node id="5365453833390719316" at="234,30,235,141" concept="0" />
-      <node id="5365453833390719316" at="234,30,235,141" concept="0" />
-      <node id="5365453833390719316" at="234,30,235,141" concept="1" />
-      <node id="5365453833390719316" at="235,141,236,24" concept="6" />
+      <node id="5365453833390719316" at="234,30,235,234" concept="0" />
+      <node id="5365453833390719316" at="234,30,235,234" concept="0" />
+      <node id="5365453833390719316" at="234,30,235,234" concept="1" />
+      <node id="5365453833390719316" at="235,234,236,24" concept="6" />
       <node id="5365453833390719312" at="201,0,204,0" concept="7" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_5365453833390719312#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
       <node id="5365453833390719316" at="232,0,238,0" concept="7" trace="_quotation_createNode_ytzany_b0a0a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="5365453833390719313" at="201,202,202,172" />
-      <scope id="5365453833390719316" at="234,30,235,141" />
+      <scope id="5365453833390719316" at="234,30,235,234" />
       <scope id="5365453833390719312" at="201,0,204,0">
         <var name="_context" id="5365453833390719312" />
         <var name="operationContext" id="5365453833390719312" />

@@ -6,7 +6,6 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="c4rzltjxh0py1utw119nmxblfk6uyyg" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="dyswqfju0dze0vp40q0x5ffcejj7zen" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-4731u4zpl1qudqetsodkf59bfv6uryd" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="cubn2w31vddik37ilbttpxjmii6p88r" />
   <dep model="r:3a5df19a-24e4-45dd-b626-7b1cda9f9622(jetbrains.mps.traceInfo.tracemacro.testlang.editor)" hash="-e8njzbeyh0bk49b7pyj3v50qtzqjtfj" />
   <dep model="r:3c5c2287-454d-47c6-87da-b63f6fee004b(jetbrains.mps.traceInfo.tracemacro.testlang.constraints)" hash="20wevs61c2bxpxyy4cph7zd6e3s2xj2" />
   <dep model="r:6f85713e-cea3-45a9-84b5-17320f53325d(jetbrains.mps.traceInfo.tracemacro.testlang.behavior)" hash="-1jz8fe0zwcrzh63qhs1jsi0bnax5v8i" />
@@ -22,7 +21,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:3a5df19a-24e4-45dd-b626-7b1cda9f9622(jetbrains.mps.traceInfo.tracemacro.testlang.editor)" />
     <dep model="r:3c5c2287-454d-47c6-87da-b63f6fee004b(jetbrains.mps.traceInfo.tracemacro.testlang.constraints)" />
     <dep model="r:6f85713e-cea3-45a9-84b5-17320f53325d(jetbrains.mps.traceInfo.tracemacro.testlang.behavior)" />

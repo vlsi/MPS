@@ -125,31 +125,31 @@
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/658365993681963374">
     <file name="ExtensionFunction_Behavior.java">
-      <node id="658365993681963558" at="12,83,13,47" concept="4" />
-      <node id="658365993681963554" at="15,60,16,63" concept="3" />
-      <node id="658365993681963554" at="16,63,17,30" concept="3" />
-      <node id="658365993681963554" at="17,30,18,132" concept="0" />
-      <node id="658365993681963554" at="17,30,18,132" concept="0" />
-      <node id="658365993681963554" at="17,30,18,132" concept="1" />
-      <node id="658365993681963554" at="18,132,19,24" concept="4" />
-      <node id="658365993681963374" at="10,0,12,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="658365993681963374" at="12,0,15,0" concept="5" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="658365993681963554" at="15,0,21,0" concept="5" trace="_quotation_createNode_9zpzd9_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="658365993681963376" at="10,43,10,43" />
-      <scope id="658365993681963557" at="12,83,13,47" />
-      <scope id="658365993681963554" at="17,30,18,132" />
-      <scope id="658365993681963374" at="10,0,12,0">
+      <node id="658365993681963558" at="13,83,14,47" concept="4" />
+      <node id="658365993681963554" at="16,60,17,63" concept="3" />
+      <node id="658365993681963554" at="17,63,18,30" concept="3" />
+      <node id="658365993681963554" at="18,30,19,220" concept="0" />
+      <node id="658365993681963554" at="18,30,19,220" concept="0" />
+      <node id="658365993681963554" at="18,30,19,220" concept="1" />
+      <node id="658365993681963554" at="19,220,20,24" concept="4" />
+      <node id="658365993681963374" at="11,0,13,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="658365993681963374" at="13,0,16,0" concept="5" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="658365993681963554" at="16,0,22,0" concept="5" trace="_quotation_createNode_9zpzd9_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="658365993681963376" at="11,43,11,43" />
+      <scope id="658365993681963557" at="13,83,14,47" />
+      <scope id="658365993681963554" at="18,30,19,220" />
+      <scope id="658365993681963374" at="11,0,13,0">
         <var name="thisNode" id="658365993681963374" />
       </scope>
-      <scope id="658365993681963374" at="12,0,15,0">
+      <scope id="658365993681963374" at="13,0,16,0">
         <var name="thisNode" id="658365993681963374" />
       </scope>
-      <scope id="658365993681963554" at="15,60,19,24">
+      <scope id="658365993681963554" at="16,60,20,24">
         <var name="facade" id="658365993681963554" />
         <var name="quotedNode_1" id="658365993681963554" />
       </scope>
-      <scope id="658365993681963554" at="15,0,21,0" />
-      <unit id="658365993681963374" at="9,0,22,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFunction_Behavior" />
+      <scope id="658365993681963554" at="16,0,22,0" />
+      <unit id="658365993681963374" at="10,0,23,0" name="jetbrains.mps.lang.extension.behavior.ExtensionFunction_Behavior" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/6626851894249712499">

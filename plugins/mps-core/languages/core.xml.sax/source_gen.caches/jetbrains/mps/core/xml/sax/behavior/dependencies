@@ -54,6 +54,7 @@
   </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler_value_Behavior" file="XMLSAXAttributeHandler_value_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
@@ -183,6 +184,7 @@
   </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXDefaultChildHandler_tagName_Behavior" file="XMLSAXDefaultChildHandler_tagName_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
@@ -335,6 +337,7 @@
   </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeValidator_Behavior" file="XMLSAXNodeValidator_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
@@ -390,6 +393,7 @@
   </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_value_Behavior" file="XMLSAXTextHandler_value_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>

@@ -10,9 +10,11 @@
     <file name="Main.java" />
   </source>
   <source id="3453667744252544858" name="Simple" hash="-a7rvahyl70d8qjfpcmwiy3v12m656er">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Simple.java" />
   </source>
   <source id="3453667744252546022" name="TypeError" hash="4ob4cchxcaw3qdb4rkfkqhusnr4w220">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TypeError.java" />
   </source>
 </dependencies>

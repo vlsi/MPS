@@ -509,7 +509,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   private static SNode _quotation_createNode_6q36mf_a0a0a1a1a0a0a0a94(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResponseItem", null, null, false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, "jetbrains.mps.console.base.structure.TextResponseItem"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, 0x4e3b035171b35d11L, "text"), (String) parameter_1);
     return quotedNode_2;
   }

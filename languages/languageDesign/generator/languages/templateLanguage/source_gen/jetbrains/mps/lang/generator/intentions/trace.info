@@ -2963,10 +2963,10 @@
       <node id="3462145372628306980" at="83,30,84,30" concept="7" />
       <node id="3462145372628306980" at="84,30,85,30" concept="7" />
       <node id="3462145372628306980" at="85,30,86,30" concept="7" />
-      <node id="3462145372628306980" at="86,30,87,138" concept="2" />
-      <node id="3462145372628306980" at="87,138,88,137" concept="2" />
-      <node id="3462145372628306980" at="88,137,89,143" concept="2" />
-      <node id="3462145372628306980" at="89,143,90,39" concept="2" />
+      <node id="3462145372628306980" at="86,30,87,226" concept="2" />
+      <node id="3462145372628306980" at="87,226,88,225" concept="2" />
+      <node id="3462145372628306980" at="88,225,89,231" concept="2" />
+      <node id="3462145372628306980" at="89,231,90,39" concept="2" />
       <node id="3462145372628306980" at="91,31,92,190" concept="2" />
       <node id="3462145372628306980" at="93,5,94,164" concept="2" />
       <node id="3462145372628306980" at="94,164,95,165" concept="2" />
@@ -2987,14 +2987,14 @@
       <node id="3462145372628250475" at="63,0,66,0" concept="6" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
       <node id="3462145372628250475" at="77,0,80,0" concept="6" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
       <node id="3462145372628306980" at="90,39,93,5" concept="5" />
-      <node id="3462145372628306980" at="89,143,93,5" concept="0" />
-      <node id="3462145372628306980" at="89,143,93,5" concept="0" />
+      <node id="3462145372628306980" at="89,231,93,5" concept="0" />
+      <node id="3462145372628306980" at="89,231,93,5" concept="0" />
       <node id="3462145372628306132" at="69,147,74,7" concept="5" />
       <node id="3462145372628250475" at="54,0,60,0" concept="6" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-      <node id="3462145372628306980" at="88,137,94,164" concept="0" />
-      <node id="3462145372628306980" at="88,137,94,164" concept="0" />
-      <node id="3462145372628306980" at="87,138,95,165" concept="0" />
-      <node id="3462145372628306980" at="87,138,95,165" concept="0" />
+      <node id="3462145372628306980" at="88,225,94,164" concept="0" />
+      <node id="3462145372628306980" at="88,225,94,164" concept="0" />
+      <node id="3462145372628306980" at="87,226,95,165" concept="0" />
+      <node id="3462145372628306980" at="87,226,95,165" concept="0" />
       <node id="3462145372628306980" at="86,30,95,165" concept="0" />
       <node id="3462145372628306980" at="86,30,95,165" concept="0" />
       <node id="3462145372628250475" at="66,0,77,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -3036,13 +3036,13 @@
       </scope>
       <scope id="3462145372628250475" at="77,0,80,0" />
       <scope id="3462145372628250475" at="54,99,58,30" />
-      <scope id="3462145372628306980" at="89,143,93,5" />
+      <scope id="3462145372628306980" at="89,231,93,5" />
       <scope id="3462145372628250475" at="54,0,60,0">
         <var name="context" id="3462145372628250475" />
         <var name="node" id="3462145372628250475" />
       </scope>
-      <scope id="3462145372628306980" at="88,137,94,164" />
-      <scope id="3462145372628306980" at="87,138,95,165" />
+      <scope id="3462145372628306980" at="88,225,94,164" />
+      <scope id="3462145372628306980" at="87,226,95,165" />
       <scope id="3462145372628250479" at="66,78,75,48">
         <var name="result" id="3462145372628305264" />
         <var name="tNode" id="3462145372628348493" />

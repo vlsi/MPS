@@ -32,7 +32,7 @@
       <node id="1238854059794" at="46,79,47,63" concept="7" />
       <node id="1238854059794" at="47,63,48,30" concept="7" />
       <node id="1238854059794" at="48,30,49,30" concept="7" />
-      <node id="1238854059794" at="49,30,50,147" concept="3" />
+      <node id="1238854059794" at="49,30,50,236" concept="3" />
       <node id="1238854059794" at="51,5,52,52" concept="7" />
       <node id="1238854059794" at="53,33,54,190" concept="3" />
       <node id="1238854059794" at="56,5,57,24" concept="8" />
@@ -44,8 +44,8 @@
       <node id="1238853976031" at="37,68,41,5" concept="0" />
       <node id="1238854056178" at="27,5,32,5" concept="0" />
       <node id="1238853976031" at="37,0,43,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1238854059794" at="50,147,56,5" concept="0" />
-      <node id="1238854059794" at="50,147,56,5" concept="0" />
+      <node id="1238854059794" at="50,236,56,5" concept="0" />
+      <node id="1238854059794" at="50,236,56,5" concept="0" />
       <node id="1238854059794" at="49,30,56,5" concept="0" />
       <node id="1238854059794" at="49,30,56,5" concept="0" />
       <node id="1238853976031" at="23,0,34,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
@@ -78,7 +78,7 @@
       <scope id="1238853976031" at="37,0,43,0">
         <var name="argument" id="1238853976031" />
       </scope>
-      <scope id="1238854059794" at="50,147,56,5" />
+      <scope id="1238854059794" at="50,236,56,5" />
       <scope id="1238854059794" at="49,30,56,5" />
       <scope id="1238853976032" at="23,118,32,5">
         <var name="memberTypes" id="1238854144245" />
@@ -263,10 +263,10 @@
       <node id="1238857867840" at="83,30,84,17" concept="8" />
       <node id="1238858002477" at="86,61,87,63" concept="7" />
       <node id="1238858002477" at="87,63,88,30" concept="7" />
-      <node id="1238858002477" at="88,30,89,135" concept="0" />
-      <node id="1238858002477" at="88,30,89,135" concept="0" />
-      <node id="1238858002477" at="88,30,89,135" concept="3" />
-      <node id="1238858002477" at="89,135,90,24" concept="8" />
+      <node id="1238858002477" at="88,30,89,223" concept="0" />
+      <node id="1238858002477" at="88,30,89,223" concept="0" />
+      <node id="1238858002477" at="88,30,89,223" concept="3" />
+      <node id="1238858002477" at="89,223,90,24" concept="8" />
       <node id="1238857867840" at="27,0,29,0" concept="2" trace="typeof_IndexedTupleMemberAccessExpression_InferenceRule#()V" />
       <node id="1238857867840" at="74,0,77,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1238857867840" at="83,0,86,0" concept="6" trace="overrides#()Z" />
@@ -290,7 +290,7 @@
       <scope id="1238857867840" at="27,68,27,68" />
       <scope id="1238857867840" at="74,46,75,92" />
       <scope id="1238857867840" at="83,30,84,17" />
-      <scope id="1238858002477" at="88,30,89,135" />
+      <scope id="1238858002477" at="88,30,89,223" />
       <scope id="1238857867840" at="27,0,29,0" />
       <scope id="1238859427576" at="30,277,32,254">
         <var name="_reporter_2309309498" id="1238859427576" />
@@ -386,8 +386,8 @@
       <node id="1212781606030" at="90,99,91,63" concept="7" />
       <node id="1212781606030" at="91,63,92,30" concept="7" />
       <node id="1212781606030" at="92,30,93,30" concept="7" />
-      <node id="1212781606030" at="93,30,94,145" concept="3" />
-      <node id="1212781606030" at="94,145,95,199" concept="3" />
+      <node id="1212781606030" at="93,30,94,234" concept="3" />
+      <node id="1212781606030" at="94,234,95,199" concept="3" />
       <node id="1212781606030" at="96,5,97,52" concept="7" />
       <node id="1212781606030" at="98,33,99,186" concept="3" />
       <node id="1212781606030" at="101,5,102,24" concept="8" />
@@ -675,8 +675,8 @@
       <node id="3862929002918414723" at="72,99,73,63" concept="7" />
       <node id="3862929002918414723" at="73,63,74,30" concept="7" />
       <node id="3862929002918414723" at="74,30,75,30" concept="7" />
-      <node id="3862929002918414723" at="75,30,76,145" concept="3" />
-      <node id="3862929002918414723" at="76,145,77,199" concept="3" />
+      <node id="3862929002918414723" at="75,30,76,234" concept="3" />
+      <node id="3862929002918414723" at="76,234,77,199" concept="3" />
       <node id="3862929002918414723" at="78,5,79,52" concept="7" />
       <node id="3862929002918414723" at="80,33,81,186" concept="3" />
       <node id="3862929002918414723" at="83,5,84,24" concept="8" />
@@ -781,8 +781,8 @@
       <node id="1239883383056" at="37,98,38,63" concept="7" />
       <node id="1239883383056" at="38,63,39,30" concept="7" />
       <node id="1239883383056" at="39,30,40,30" concept="7" />
-      <node id="1239883383056" at="40,30,41,138" concept="3" />
-      <node id="1239883383056" at="41,138,42,199" concept="3" />
+      <node id="1239883383056" at="40,30,41,227" concept="3" />
+      <node id="1239883383056" at="41,227,42,199" concept="3" />
       <node id="1239883383056" at="43,5,44,52" concept="7" />
       <node id="1239883383056" at="45,33,46,186" concept="3" />
       <node id="1239883383056" at="48,5,49,24" concept="8" />
@@ -858,7 +858,7 @@
       <node id="1239722403690" at="63,78,64,63" concept="7" />
       <node id="1239722403690" at="64,63,65,30" concept="7" />
       <node id="1239722403690" at="65,30,66,30" concept="7" />
-      <node id="1239722403690" at="66,30,67,147" concept="3" />
+      <node id="1239722403690" at="66,30,67,236" concept="3" />
       <node id="1239722403690" at="68,5,69,52" concept="7" />
       <node id="1239722403690" at="70,33,71,190" concept="3" />
       <node id="1239722403690" at="73,5,74,24" concept="8" />
@@ -871,8 +871,8 @@
       <node id="1239972928930" at="41,16,45,11" concept="0" />
       <node id="1239722373118" at="54,68,58,5" concept="0" />
       <node id="1239722373118" at="54,0,60,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1239722403690" at="67,147,73,5" concept="0" />
-      <node id="1239722403690" at="67,147,73,5" concept="0" />
+      <node id="1239722403690" at="67,236,73,5" concept="0" />
+      <node id="1239722403690" at="67,236,73,5" concept="0" />
       <node id="1239722403690" at="66,30,73,5" concept="0" />
       <node id="1239722403690" at="66,30,73,5" concept="0" />
       <node id="1239972928902" at="35,68,45,11" concept="5" />
@@ -910,7 +910,7 @@
       <scope id="1239722373118" at="54,0,60,0">
         <var name="argument" id="1239722373118" />
       </scope>
-      <scope id="1239722403690" at="67,147,73,5" />
+      <scope id="1239722403690" at="67,236,73,5" />
       <scope id="1239722403690" at="66,30,73,5" />
       <scope id="1239972928895" at="34,59,45,11">
         <var name="t" id="1239972928897" />
@@ -1058,8 +1058,8 @@
       <node id="1654804677203434347" at="39,47,40,65" concept="8" />
       <node id="1654804677203434363" at="42,62,43,63" concept="7" />
       <node id="1654804677203434363" at="43,63,44,30" concept="7" />
-      <node id="1654804677203434363" at="44,30,45,138" concept="3" />
-      <node id="1654804677203434363" at="45,138,46,498" concept="3" />
+      <node id="1654804677203434363" at="44,30,45,227" concept="3" />
+      <node id="1654804677203434363" at="45,227,46,498" concept="3" />
       <node id="1654804677203434363" at="46,498,47,24" concept="8" />
       <node id="1654804677203434347" at="16,0,18,0" concept="2" trace="comparable_IndexedTupleType_Object_ComparisonRule#()V" />
       <node id="1654804677203434363" at="44,30,46,498" concept="0" />
@@ -1122,8 +1122,8 @@
       <node id="1654804677203434372" at="39,47,40,65" concept="8" />
       <node id="1654804677203434378" at="42,62,43,63" concept="7" />
       <node id="1654804677203434378" at="43,63,44,30" concept="7" />
-      <node id="1654804677203434378" at="44,30,45,138" concept="3" />
-      <node id="1654804677203434378" at="45,138,46,498" concept="3" />
+      <node id="1654804677203434378" at="44,30,45,227" concept="3" />
+      <node id="1654804677203434378" at="45,227,46,498" concept="3" />
       <node id="1654804677203434378" at="46,498,47,24" concept="8" />
       <node id="1654804677203434372" at="16,0,18,0" concept="2" trace="comparable_NamedTupleType_Object_ComparisonRule#()V" />
       <node id="1654804677203434378" at="44,30,46,498" concept="0" />
@@ -1185,10 +1185,10 @@
       <node id="2213502935616202017" at="40,82,41,63" concept="7" />
       <node id="2213502935616202017" at="41,63,42,30" concept="7" />
       <node id="2213502935616202017" at="42,30,43,30" concept="7" />
-      <node id="2213502935616202017" at="43,30,44,145" concept="3" />
-      <node id="2213502935616202017" at="44,145,45,199" concept="3" />
-      <node id="2213502935616202017" at="45,199,46,128" concept="3" />
-      <node id="2213502935616202017" at="46,128,47,166" concept="3" />
+      <node id="2213502935616202017" at="43,30,44,234" concept="3" />
+      <node id="2213502935616202017" at="44,234,45,199" concept="3" />
+      <node id="2213502935616202017" at="45,199,46,216" concept="3" />
+      <node id="2213502935616202017" at="46,216,47,166" concept="3" />
       <node id="2213502935616202017" at="47,166,48,24" concept="8" />
       <node id="2213502935616190236" at="20,0,22,0" concept="2" trace="NamedTuple_subtypeOf_extended_SubtypingRule#()V" />
       <node id="2213502935616202017" at="45,199,47,166" concept="0" />
@@ -1299,13 +1299,13 @@
       <node id="5264858465808079239" at="54,27,55,16" concept="8" />
       <node id="4690171080785822021" at="57,64,58,63" concept="7" />
       <node id="4690171080785822021" at="58,63,59,30" concept="7" />
-      <node id="4690171080785822021" at="59,30,60,138" concept="3" />
-      <node id="4690171080785822021" at="60,138,61,465" concept="3" />
+      <node id="4690171080785822021" at="59,30,60,227" concept="3" />
+      <node id="4690171080785822021" at="60,227,61,465" concept="3" />
       <node id="4690171080785822021" at="61,465,62,24" concept="8" />
       <node id="4690171080785822368" at="64,79,65,63" concept="7" />
       <node id="4690171080785822368" at="65,63,66,30" concept="7" />
-      <node id="4690171080785822368" at="66,30,67,138" concept="3" />
-      <node id="4690171080785822368" at="67,138,68,199" concept="3" />
+      <node id="4690171080785822368" at="66,30,67,227" concept="3" />
+      <node id="4690171080785822368" at="67,227,68,199" concept="3" />
       <node id="4690171080785822368" at="68,199,69,24" concept="8" />
       <node id="5264858465808079239" at="27,0,29,0" concept="2" trace="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule#()V" />
       <node id="4690171080785822021" at="59,30,61,465" concept="0" />

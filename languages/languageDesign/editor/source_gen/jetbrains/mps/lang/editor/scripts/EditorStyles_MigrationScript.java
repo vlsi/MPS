@@ -73,15 +73,15 @@ public class EditorStyles_MigrationScript extends BaseMigrationScript {
   }
   private static SNode createStyleReference_s4lgfb_a0c0a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleReference", null, false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1edbd2fbL, "jetbrains.mps.lang.editor.structure.StyleReference"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1edbd2fbL, 0x7e9b10ab1edbd57eL, "style"), (SNode) p0);
     return n1;
   }
   private static SNode createApplyStyleClass_s4lgfb_a0a0a1a0b(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ApplyStyleClass", null, false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e648b4b2L, "jetbrains.mps.lang.editor.structure.ApplyStyleClass"), null, null, false);
     {
-      SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleReference", null, false);
+      SNode n2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1edbd2fbL, "jetbrains.mps.lang.editor.structure.StyleReference"), null, null, false);
       n2.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1edbd2fbL, 0x7e9b10ab1edbd57eL, "style"), (SNode) p0);
       n1.addChild(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e648b4b2L, 0x1b1161f6e66c1a3cL, "target"), n2);
     }

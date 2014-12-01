@@ -6,7 +6,6 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="c4rzltjxh0py1utw119nmxblfk6uyyg" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="dyswqfju0dze0vp40q0x5ffcejj7zen" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-4731u4zpl1qudqetsodkf59bfv6uryd" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="cubn2w31vddik37ilbttpxjmii6p88r" />
   <dep model="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)" hash="pvyxpm6es9dldhsfb5bawgiht6lmfy" />
   <dep model="r:37f1d471-dcaa-4655-ad67-56eeecf8ca2c(jetbrains.mps.lang.descriptor.behavior)" hash="-6w9zminl8g8rgwez3inkcl9qc0gbn1a" />
   <dep model="r:6c8689b4-7e32-4a3b-a4f7-e167320d47c9(jetbrains.mps.lang.descriptor.constraints)" hash="-2snb0nfp298zqvcm6pft0n5s6sfyyi5" />
@@ -23,7 +22,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)" />
     <dep model="r:37f1d471-dcaa-4655-ad67-56eeecf8ca2c(jetbrains.mps.lang.descriptor.behavior)" />
     <dep model="r:6c8689b4-7e32-4a3b-a4f7-e167320d47c9(jetbrains.mps.lang.descriptor.constraints)" />

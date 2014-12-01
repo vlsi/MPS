@@ -38,7 +38,7 @@ public class typeof_DebuggerConfiguration_InferenceRule extends AbstractInferenc
   private static SNode _quotation_createNode_p6alym_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.api.lang.structure.DebuggerType", null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912bd83L, "jetbrains.mps.debugger.api.lang.structure.DebuggerType"), null, null, false);
     return quotedNode_1;
   }
 }

@@ -69,7 +69,7 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
   private static SNode _quotation_createNode_2cenap_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120bfe51421L, "jetbrains.mps.lang.smodel.structure.SEnumMemberType"), null, null, false);
     return quotedNode_1;
   }
   private static SNodePointer SNODE_POINTER_2cenap_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");

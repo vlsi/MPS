@@ -43,7 +43,7 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
   public void execute(EditorContext context) {
     SNodeOperations.deleteNode(myTarget);
     if (!(myCanBeNull)) {
-      SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(SLinkOperations.getTarget(myLink, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")), SNodeOperations.getModel(mySource),true);
+      SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(SLinkOperations.getTarget(myLink, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")), SNodeOperations.getModel(mySource), true);
       SLinkOperations.setTarget(mySource, myRole, defaultTarget, true);
     }
   }

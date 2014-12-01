@@ -452,7 +452,7 @@
       <node id="1235748173357" at="81,63,82,30" concept="7" />
       <node id="1235748173357" at="82,30,83,30" concept="7" />
       <node id="1235748173357" at="83,30,84,30" concept="7" />
-      <node id="1235748173357" at="84,30,85,164" concept="2" />
+      <node id="1235748173357" at="84,30,85,253" concept="2" />
       <node id="1235748173357" at="86,5,87,52" concept="7" />
       <node id="1235748173357" at="88,33,89,186" concept="2" />
       <node id="1235748173357" at="91,5,92,39" concept="2" />
@@ -480,8 +480,8 @@
       <node id="1235748173357" at="91,5,95,5" concept="0" />
       <node id="1235748072133" at="45,0,51,0" concept="6" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="1235748072133" at="60,0,66,0" concept="6" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-      <node id="1235748173357" at="85,164,91,5" concept="0" />
-      <node id="1235748173357" at="85,164,91,5" concept="0" />
+      <node id="1235748173357" at="85,253,91,5" concept="0" />
+      <node id="1235748173357" at="85,253,91,5" concept="0" />
       <node id="1235748173357" at="84,30,95,5" concept="0" />
       <node id="1235748173357" at="84,30,95,5" concept="0" />
       <node id="1235748173357" at="80,0,98,0" concept="9" trace="_quotation_createNode_7ste6_a0a1a0#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -545,7 +545,7 @@
         <var name="context" id="1235748072133" />
         <var name="node" id="1235748072133" />
       </scope>
-      <scope id="1235748173357" at="85,164,91,5" />
+      <scope id="1235748173357" at="85,253,91,5" />
       <scope id="1235748173357" at="84,30,95,5" />
       <scope id="1235748173357" at="80,99,96,24">
         <var name="facade" id="1235748173357" />

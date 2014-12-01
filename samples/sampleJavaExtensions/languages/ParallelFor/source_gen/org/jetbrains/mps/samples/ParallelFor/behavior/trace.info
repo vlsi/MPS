@@ -67,8 +67,8 @@
       <node id="7704855178165139298" at="65,5,66,16" concept="4" />
       <node id="7704855178166514891" at="68,65,69,63" concept="3" />
       <node id="7704855178166514891" at="69,63,70,30" concept="3" />
-      <node id="7704855178166514891" at="70,30,71,138" concept="1" />
-      <node id="7704855178166514891" at="71,138,72,529" concept="1" />
+      <node id="7704855178166514891" at="70,30,71,227" concept="1" />
+      <node id="7704855178166514891" at="71,227,72,529" concept="1" />
       <node id="7704855178166514891" at="72,529,73,24" concept="4" />
       <node id="4120418308311043819" at="27,0,29,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4120418308311043819" at="40,0,42,0" concept="6" trace="virtual_collectUncaughtMethodThrowables_5412515780383134223#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;Z)V" />

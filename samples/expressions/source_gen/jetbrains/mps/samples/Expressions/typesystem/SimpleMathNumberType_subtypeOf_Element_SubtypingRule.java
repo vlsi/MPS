@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class SimpleMathNumberType_subtypeOf_Element_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public SimpleMathNumberType_subtypeOf_Element_SubtypingRule() {
@@ -33,7 +34,7 @@ public class SimpleMathNumberType_subtypeOf_Element_SubtypingRule extends Subtyp
   }
   private static SNode createSimpleMathElementType_wcy28w_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathElementType", null, false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b835454eL, "jetbrains.mps.samples.Expressions.structure.SimpleMathElementType"), null, null, false);
     return n1;
   }
 }

@@ -49,7 +49,7 @@ public class typeof_LogicalSimpleMathExpression_InferenceRule extends AbstractIn
   }
   private static SNode createSimpleMathBooleanType_ngq3xd_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType", null, false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81f9f68L, "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType"), null, null, false);
     return n1;
   }
 }

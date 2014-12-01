@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ConceptFunctionParameter_StyledText_Behavior {
   public static void init(SNode thisNode) {
@@ -15,7 +16,7 @@ public class ConceptFunctionParameter_StyledText_Behavior {
   private static SNode _quotation_createNode_70zdzh_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyledTextType", null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x362b8be848e5c49bL, "jetbrains.mps.lang.editor.structure.StyledTextType"), null, null, false);
     return quotedNode_1;
   }
 }
