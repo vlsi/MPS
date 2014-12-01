@@ -25,18 +25,25 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptRegistryUtil {
   public static ConceptDescriptor getConceptDescriptor(String fqName) {
-    ConceptDescriptor result = ConceptRegistry.getInstance().getConceptDescriptor(fqName);
+    ConceptRegistry cr = ConceptRegistry.getInstance();
+    if (cr==null) return null;
+    ConceptDescriptor result = cr.getConceptDescriptor(fqName);
     return result instanceof IllegalConceptDescriptor ? null : result;
   }
 
   public static ConceptDescriptor getConceptDescriptor(SConceptId conceptId) {
-    ConceptDescriptor result = ConceptRegistry.getInstance().getConceptDescriptor(conceptId);
+    ConceptRegistry cr = ConceptRegistry.getInstance();
+    if (cr==null) return null;
+    ConceptDescriptor result = cr.getConceptDescriptor(conceptId);
     return result instanceof IllegalConceptDescriptor ? null : result;
   }
 
   public static ConstraintsDescriptor getConstraintsDescriptor(SAbstractConcept concept) {
+    ConceptRegistry cr = ConceptRegistry.getInstance();
+    if (cr==null) return null;
+
     if (concept instanceof SAbstractConceptAdapterById) {
-      return ConceptRegistry.getInstance().getConstraintsDescriptor(((SConceptAdapterById) concept).getId());
+      return cr.getConstraintsDescriptor(((SConceptAdapterById) concept).getId());
     }
     return ConceptRegistry.getInstance().getConstraintsDescriptor(concept.getQualifiedName());
   }
