@@ -43,8 +43,8 @@ public class check_SuperInterfaceMethodCall_NonTypesystemRule extends AbstractNo
     if (project == null) {
       return;
     }
-    String sourceJavaVersion = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project).getSourceJavaVersion();
-    if (!(sourceJavaVersion.equals("1.8"))) {
+    JavaCompilerOptionsComponent.JavaVersion sourceJavaVersion = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project).getSourceJavaVersion();
+    if (sourceJavaVersion.compareTo(JavaCompilerOptionsComponent.JavaVersion.VERSION_1_8) < 0) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(superInterfaceMethodCall, "Super interface method invocations are not supported in java " + sourceJavaVersion + ". Use java 1.8", "r:0396c9ff-0a4d-4e54-9678-835fc58468cd(jetbrains.mps.baseLanguage.jdk8.typesystem)", "7510080655530197744", null, errorTarget);

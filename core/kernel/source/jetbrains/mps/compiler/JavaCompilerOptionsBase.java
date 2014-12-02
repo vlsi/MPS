@@ -15,22 +15,24 @@
  */
 package jetbrains.mps.compiler;
 
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
+
 /**
  * Created by simon on 24/11/14.
  */
 public class JavaCompilerOptionsBase implements JavaCompilerOptions {
-  private String myTargetJavaVersion;
-  private String mySourceJavaVersion;
-  public JavaCompilerOptionsBase(String sourceJavaVersion, String targetJavaVersion) {
+  private JavaVersion myTargetJavaVersion;
+  private JavaVersion mySourceJavaVersion;
+  public JavaCompilerOptionsBase(JavaVersion sourceJavaVersion, JavaVersion targetJavaVersion) {
     mySourceJavaVersion = sourceJavaVersion;
     myTargetJavaVersion = targetJavaVersion;
   }
   @Override
-  public String getTargetJavaVersion() {
+  public JavaVersion getTargetJavaVersion() {
     return myTargetJavaVersion;
   }
 
-  public String getSourceJavaVersion() {
+  public JavaVersion getSourceJavaVersion() {
     return mySourceJavaVersion;
   }
 }

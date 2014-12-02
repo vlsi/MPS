@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.java;
 
 import jetbrains.mps.compiler.JavaCompilerOptions;
-import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
@@ -25,30 +25,38 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CompilerSettingsPreferencePage {
 
-  private final static String DEFAULT_JDK_VERSION = "JDK Default";
-  private final static String[] MY_OPTION_ITEMS = new String[]{CompilerOptions.VERSION_1_1,
-      CompilerOptions.VERSION_1_2, CompilerOptions.VERSION_1_3, CompilerOptions.VERSION_1_4, CompilerOptions.VERSION_1_5, CompilerOptions.VERSION_1_6, CompilerOptions.VERSION_1_7, CompilerOptions.VERSION_1_8, DEFAULT_JDK_VERSION};
+  private final List<JavaVersionPresentationItem> mySourceVersionItems = new ArrayList<JavaVersionPresentationItem>();
+  private final List<JavaVersionPresentationItem> myTargetVersionItems = new ArrayList<JavaVersionPresentationItem>();
+  private static final JavaVersionPresentationItem DEFAULT_VERSION_ITEM = new JavaVersionPresentationItem(null, "JDK Default");
   private JPanel myMainPanel;
   private JComboBox mySourceJavaVersionComboBox;
   private JComboBox myTargetJavaVersionComboBox;
-  private String myInitialTargetJavaVersion;
-  private String myInitialSourceJavaVersion;
+  private JavaVersionPresentationItem myInitialSourceJavaVersion;
+  private JavaVersionPresentationItem myInitialTargetJavaVersion;
 
-  public CompilerSettingsPreferencePage(JavaCompilerOptions options) {
-    String sourceJavaVersion = options.getSourceJavaVersion();
-    if (sourceJavaVersion == null) {
-      myInitialSourceJavaVersion = DEFAULT_JDK_VERSION;
-    } else {
-      myInitialSourceJavaVersion = sourceJavaVersion;
+  {
+    for (JavaVersion version : JavaVersion.values()) {
+      mySourceVersionItems.add(new JavaVersionPresentationItem(version, version.getCompilerVersion()));
+      myTargetVersionItems.add(new JavaVersionPresentationItem(version, version.getCompilerVersion()));
     }
-    String targetJavaVersion = options.getTargetJavaVersion();
-    if (targetJavaVersion == null) {
-      myInitialTargetJavaVersion = DEFAULT_JDK_VERSION;
+  }
+  public CompilerSettingsPreferencePage(JavaCompilerOptions options) {
+    JavaVersion sourceJavaVersion = options.getSourceJavaVersion();
+    if (sourceJavaVersion == null) {
+      myInitialSourceJavaVersion = DEFAULT_VERSION_ITEM;
     } else {
-      myInitialTargetJavaVersion = targetJavaVersion;
+      myInitialSourceJavaVersion = new JavaVersionPresentationItem(sourceJavaVersion, sourceJavaVersion.getCompilerVersion());
+    }
+    JavaVersion targetJavaVersion = options.getTargetJavaVersion();
+    if (targetJavaVersion == null) {
+      myInitialTargetJavaVersion = DEFAULT_VERSION_ITEM;
+    } else {
+      myInitialTargetJavaVersion = new JavaVersionPresentationItem(targetJavaVersion, targetJavaVersion.getCompilerVersion());
     }
   }
 
@@ -78,9 +86,9 @@ public class CompilerSettingsPreferencePage {
     c.weightx = 1;
     c.insets.top = 4;
     c.insets.left = 5;
-    mySourceJavaVersionComboBox = new JComboBox(new DefaultComboBoxModel(MY_OPTION_ITEMS));
+    mySourceJavaVersionComboBox = new JComboBox(new DefaultComboBoxModel(mySourceVersionItems.toArray()));
     mySourceJavaVersionComboBox.setSelectedItem(myInitialSourceJavaVersion);
-    myTargetJavaVersionComboBox = new JComboBox(new DefaultComboBoxModel(MY_OPTION_ITEMS));
+    myTargetJavaVersionComboBox = new JComboBox(new DefaultComboBoxModel(myTargetVersionItems.toArray()));
     myTargetJavaVersionComboBox.setSelectedItem(myInitialTargetJavaVersion);
 
     panel.add(new JLabel("Java language level"), c);
@@ -99,22 +107,14 @@ public class CompilerSettingsPreferencePage {
   }
 
 
-  String getSelectedTargetJavaVersion() {
-    String selectedItem = (String) myTargetJavaVersionComboBox.getSelectedItem();
-    if (selectedItem.equals(DEFAULT_JDK_VERSION)) {
-      return null;
-    } else {
-      return selectedItem;
-    }
+  JavaVersion getSelectedTargetJavaVersion() {
+    JavaVersionPresentationItem selectedItem = (JavaVersionPresentationItem) myTargetJavaVersionComboBox.getSelectedItem();
+    return selectedItem.getJavaVersion();
   }
 
-  String getSelectedSourceJavaVersion() {
-    String selectedItem = (String) mySourceJavaVersionComboBox.getSelectedItem();
-    if (selectedItem.equals(DEFAULT_JDK_VERSION)) {
-      return null;
-    } else {
-      return selectedItem;
-    }
+  JavaVersion getSelectedSourceJavaVersion() {
+    JavaVersionPresentationItem selectedItem = (JavaVersionPresentationItem) mySourceJavaVersionComboBox.getSelectedItem();
+    return selectedItem.getJavaVersion();
   }
 
   boolean isModified() {
@@ -123,12 +123,54 @@ public class CompilerSettingsPreferencePage {
   }
 
   void commit() {
-    myInitialSourceJavaVersion = ((String) mySourceJavaVersionComboBox.getSelectedItem());
-    myInitialTargetJavaVersion = ((String) myTargetJavaVersionComboBox.getSelectedItem());
+    myInitialSourceJavaVersion = ((JavaVersionPresentationItem) mySourceJavaVersionComboBox.getSelectedItem());
+    myInitialTargetJavaVersion = ((JavaVersionPresentationItem) myTargetJavaVersionComboBox.getSelectedItem());
   }
 
   void reset() {
     mySourceJavaVersionComboBox.setSelectedItem(myInitialSourceJavaVersion);
     myTargetJavaVersionComboBox.setSelectedItem(myInitialTargetJavaVersion);
+  }
+
+  private static class JavaVersionPresentationItem {
+    private JavaVersion myJavaVersion;
+    private final String myDescription;
+
+    JavaVersionPresentationItem(JavaVersion javaVersion, String description) {
+      myJavaVersion = javaVersion;
+      myDescription = description;
+    }
+
+    public JavaVersion getJavaVersion() {
+      return myJavaVersion;
+    }
+
+    public String getDescription() {
+      return myDescription;
+    }
+
+    @Override
+    public String toString() {
+      return myDescription;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof JavaVersionPresentationItem)) {
+        return false;
+      }
+      if (this == obj) {
+        return true;
+      }
+      if (myJavaVersion == null) {
+        return ((JavaVersionPresentationItem) obj).myJavaVersion == null;
+      }
+      return myJavaVersion.equals(((JavaVersionPresentationItem) obj).myJavaVersion);
+    }
+
+    @Override
+    public int hashCode() {
+      return 17 + 37 * (myJavaVersion == null ? 0 : myJavaVersion.hashCode());
+    }
   }
 }

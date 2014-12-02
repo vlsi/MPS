@@ -25,6 +25,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsBase;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
 import jetbrains.mps.compiler.JavaCompilerOptionsProvider;
 import jetbrains.mps.ide.java.CompilerSettingsComponent.CompilerState;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -116,21 +117,21 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
   }
 
   public static class CompilerState {
-    private String myTargetVersion;
-    private String mySourceVersion;
+    private JavaVersion myTargetVersion;
+    private JavaVersion mySourceVersion;
 
-    public String getTargetVersion() {
+    public JavaVersion getTargetVersion() {
       return myTargetVersion;
     }
 
-    public String getSourceVersion() {
+    public JavaVersion getSourceVersion() {
       return mySourceVersion;
     }
 
-    public void setTargetVersion(String targetVersion) {
+    public void setTargetVersion(JavaVersion targetVersion) {
       myTargetVersion = targetVersion;
     }
-    public void setSourceVersion(String sourceVersion) {
+    public void setSourceVersion(JavaVersion sourceVersion) {
       mySourceVersion = sourceVersion;
     }
   }

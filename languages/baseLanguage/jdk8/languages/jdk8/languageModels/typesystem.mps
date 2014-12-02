@@ -38,10 +38,6 @@
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
-        <child id="1197027771414" name="operand" index="2Oq$k0" />
-        <child id="1197027833540" name="operation" index="2OqNvi" />
-      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -53,41 +49,45 @@
         <reference id="1107535924139" name="classifier" index="3uigEE" />
         <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
-      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
-      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
-        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
-        <child id="1068499141038" name="actualArgument" index="37wK5m" />
+      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
+        <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
-      <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
-        <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
-      </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
+      </concept>
+      <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
+        <child id="1068498886297" name="rValue" index="37vLTx" />
+        <child id="1068498886295" name="lValue" index="37vLTJ" />
+      </concept>
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+        <child id="1068499141038" name="actualArgument" index="37wK5m" />
+      </concept>
+      <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
+        <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
-        <child id="1068498886297" name="rValue" index="37vLTx" />
-        <child id="1068498886295" name="lValue" index="37vLTJ" />
-      </concept>
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
-      </concept>
-      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
-        <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
       <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
         <child id="1144226360166" name="iterable" index="1DdaDG" />
@@ -107,18 +107,23 @@
       </concept>
       <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6" />
       <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
         <child id="1206060619838" name="condition" index="3eO9$A" />
         <child id="1206060644605" name="statementList" index="3eOfB_" />
       </concept>
-      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
-        <child id="1081516765348" name="expression" index="3fr31v" />
-      </concept>
+      <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -325,27 +330,27 @@
           </node>
         </node>
       </node>
-      <node concept="3cpWs8" id="6wTaD3FqHHv" role="3cqZAp">
-        <node concept="3cpWsn" id="6wTaD3FqHHw" role="3cpWs9">
+      <node concept="3cpWs8" id="6wTaD3FwK7v" role="3cqZAp">
+        <node concept="3cpWsn" id="6wTaD3FwK7w" role="3cpWs9">
           <property role="TrG5h" value="sourceJavaVersion" />
-          <node concept="3uibUv" id="6wTaD3FqHHp" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <node concept="3uibUv" id="6wTaD3FwK7r" role="1tU5fm">
+            <ref role="3uigEE" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
           </node>
-          <node concept="2OqwBi" id="6wTaD3FqHHx" role="33vP2m">
-            <node concept="2OqwBi" id="6wTaD3FqHHy" role="2Oq$k0">
-              <node concept="2YIFZM" id="6wTaD3FqHHz" role="2Oq$k0">
+          <node concept="2OqwBi" id="6wTaD3FwK7x" role="33vP2m">
+            <node concept="2OqwBi" id="6wTaD3FwK7y" role="2Oq$k0">
+              <node concept="2YIFZM" id="6wTaD3FwK7z" role="2Oq$k0">
                 <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
                 <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
               </node>
-              <node concept="liA8E" id="6wTaD3FqHH$" role="2OqNvi">
+              <node concept="liA8E" id="6wTaD3FwK7$" role="2OqNvi">
                 <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getJavaCompilerOptions(jetbrains.mps.project.Project):jetbrains.mps.compiler.JavaCompilerOptions" resolve="getJavaCompilerOptions" />
-                <node concept="37vLTw" id="6wTaD3FqHH_" role="37wK5m">
+                <node concept="37vLTw" id="6wTaD3FwK7_" role="37wK5m">
                   <ref role="3cqZAo" node="6wTaD3Fq3ok" resolve="project" />
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="6wTaD3FqHHA" role="2OqNvi">
-              <ref role="37wK5l" to="i119:~JavaCompilerOptions.getSourceJavaVersion():java.lang.String" resolve="getSourceJavaVersion" />
+            <node concept="liA8E" id="6wTaD3FwK7A" role="2OqNvi">
+              <ref role="37wK5l" to="i119:~JavaCompilerOptions.getSourceJavaVersion():jetbrains.mps.compiler.JavaCompilerOptionsComponent$JavaVersion" resolve="getSourceJavaVersion" />
             </node>
           </node>
         </node>
@@ -361,8 +366,8 @@
                 <node concept="Xl_RD" id="6wTaD3Fqgc5" role="3uHU7B">
                   <property role="Xl_RC" value="Super interface method invocations are not supported in java " />
                 </node>
-                <node concept="37vLTw" id="6wTaD3FqIFQ" role="3uHU7w">
-                  <ref role="3cqZAo" node="6wTaD3FqHHw" resolve="sourceJavaVersion" />
+                <node concept="37vLTw" id="6wTaD3FwIO8" role="3uHU7w">
+                  <ref role="3cqZAo" node="6wTaD3FwK7w" resolve="sourceJavaVersion" />
                 </node>
               </node>
               <node concept="Xl_RD" id="6wTaD3FqJ8C" role="3uHU7w">
@@ -371,15 +376,19 @@
             </node>
           </node>
         </node>
-        <node concept="3fqX7Q" id="6wTaD3Fqe_u" role="3clFbw">
-          <node concept="2OqwBi" id="6wTaD3FqeQk" role="3fr31v">
-            <node concept="37vLTw" id="6wTaD3FqHHB" role="2Oq$k0">
-              <ref role="3cqZAo" node="6wTaD3FqHHw" resolve="sourceJavaVersion" />
+        <node concept="3eOVzh" id="6wTaD3FwQXS" role="3clFbw">
+          <node concept="3cmrfG" id="6wTaD3FwQXV" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="6wTaD3FqeQk" role="3uHU7B">
+            <node concept="37vLTw" id="6wTaD3FwIOa" role="2Oq$k0">
+              <ref role="3cqZAo" node="6wTaD3FwK7w" resolve="sourceJavaVersion" />
             </node>
             <node concept="liA8E" id="6wTaD3FqfWX" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-              <node concept="Xl_RD" id="6wTaD3FqfZu" role="37wK5m">
-                <property role="Xl_RC" value="1.8" />
+              <ref role="37wK5l" to="e2lb:~Enum.compareTo(java.lang.Enum):int" resolve="compareTo" />
+              <node concept="Rm8GO" id="6wTaD3FwPLU" role="37wK5m">
+                <ref role="Rm8GQ" to="i119:~JavaCompilerOptionsComponent$JavaVersion.VERSION_1_8" resolve="VERSION_1_8" />
+                <ref role="1Px2BO" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
               </node>
             </node>
           </node>

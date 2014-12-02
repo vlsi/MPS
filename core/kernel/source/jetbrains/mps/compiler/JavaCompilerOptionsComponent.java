@@ -25,7 +25,7 @@ import java.util.Map;
 public class JavaCompilerOptionsComponent {
   private Map<Project, JavaCompilerOptionsProvider> myProjectToProvider = new HashMap<Project, JavaCompilerOptionsProvider>();
   private static JavaCompilerOptionsComponent INSTANCE;
-  private static String DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
+  private static JavaVersion DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
   public static JavaCompilerOptions DEFAULT_JAVA_COMPILER_OPTIONS = new DefaultJavaCompilerOptions();
 
   private JavaCompilerOptionsComponent() {
@@ -61,26 +61,26 @@ public class JavaCompilerOptionsComponent {
     return DEFAULT_JAVA_COMPILER_OPTIONS;
   }
 
-  private static String getDefaultJavaVersion() {
+  private static JavaVersion getDefaultJavaVersion() {
     String property = System.getProperty("java.version");
     if (property.startsWith("1.6")) {
-      return CompilerOptions.VERSION_1_6;
+      return JavaVersion.VERSION_1_6;
     } else if (property.startsWith("1.7")) {
-      return CompilerOptions.VERSION_1_7;
+      return JavaVersion.VERSION_1_7;
     } else if (property.startsWith("1.8")) {
-      return CompilerOptions.VERSION_1_8;
+      return JavaVersion.VERSION_1_8;
     }
-    return CompilerOptions.VERSION_1_6;
+    return JavaVersion.VERSION_1_6;
   }
 
   private static class DefaultJavaCompilerOptions implements JavaCompilerOptions {
     @Override
-    public String getTargetJavaVersion() {
+    public JavaVersion getTargetJavaVersion() {
       return DEFAULT_JAVA_VERSION;
     }
 
     @Override
-    public String getSourceJavaVersion() {
+    public JavaVersion getSourceJavaVersion() {
       return DEFAULT_JAVA_VERSION;
     }
   }
@@ -92,8 +92,8 @@ public class JavaCompilerOptionsComponent {
     }
 
     @Override
-    public String getTargetJavaVersion() {
-      String targetJavaVersion = myWrappedCompilerOptions.getTargetJavaVersion();
+    public JavaVersion getTargetJavaVersion() {
+      JavaVersion targetJavaVersion = myWrappedCompilerOptions.getTargetJavaVersion();
       if (targetJavaVersion != null) {
         return targetJavaVersion;
       }
@@ -101,12 +101,27 @@ public class JavaCompilerOptionsComponent {
     }
 
     @Override
-    public String getSourceJavaVersion() {
-      String sourceJavaVersion = myWrappedCompilerOptions.getSourceJavaVersion();
+    public JavaVersion getSourceJavaVersion() {
+      JavaVersion sourceJavaVersion = myWrappedCompilerOptions.getSourceJavaVersion();
       if (sourceJavaVersion != null) {
         return sourceJavaVersion;
       }
       return DEFAULT_JAVA_VERSION;
     }
+  }
+
+  public static enum JavaVersion {
+    VERSION_1_6(CompilerOptions.VERSION_1_6),
+    VERSION_1_7(CompilerOptions.VERSION_1_7),
+    VERSION_1_8(CompilerOptions.VERSION_1_8);
+    private String myCompilerVersion;
+    JavaVersion(String compilerVersion) {
+      myCompilerVersion = compilerVersion;
+    }
+
+    public String getCompilerVersion() {
+      return myCompilerVersion;
+    }
+
   }
 }
