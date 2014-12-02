@@ -20,8 +20,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 @Generated
 public class QueriesGenerated {
@@ -52,7 +50,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x8c9905a80efd03cL, 0x8c9905a80efd045L, "numberOfThreads"));
   }
   public static Object referenceMacro_GetReferent_7865129668867189303(final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getNode().getReferenceTarget("exc"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+    return _context.getNode();
   }
   public static Object referenceMacro_GetReferent_7793246093815939787(final ReferenceMacroContext _context) {
     return "localA";
@@ -95,12 +93,6 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return it != SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException");
       }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        SNode n = SModelOperations.createNewNode(_context.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
-        n.setReferenceTarget("exc", it);
-        return n;
-      }
-    }).toListSequence();
+    });
   }
 }
