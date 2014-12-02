@@ -21,6 +21,7 @@ import com.intellij.openapi.vfs.ex.dummy.DummyFileIdGenerator;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -167,7 +168,7 @@ public class MPSModelVirtualFile extends NewVirtualFile {
   }
 
   private VirtualFile getSourceVirtualFile(SModel model) {
-    if (!(model.getSource() instanceof FileDataSource)) return null;
+    if (!(model.getSource() instanceof FileSystemBasedDataSource)) return null;
     final VirtualFile fileByModel = ModelUtil.getFileByModel(model);
     if (fileByModel == null) return null;
     return fileByModel;
