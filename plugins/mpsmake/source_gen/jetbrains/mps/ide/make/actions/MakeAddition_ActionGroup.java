@@ -26,6 +26,7 @@ public class MakeAddition_ActionGroup extends GeneratedActionGroup {
       MakeAddition_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.BuildAllActions_Action");
       MakeAddition_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.BuildAllRefactorings_Action");
       MakeAddition_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.BuildAllDataFlows_Action");
+      MakeAddition_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.BuildAllGeneratableGenerators_Action");
       MakeAddition_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

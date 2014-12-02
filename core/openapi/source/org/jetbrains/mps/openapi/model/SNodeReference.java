@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
@@ -23,7 +24,22 @@ import org.jetbrains.mps.openapi.module.SRepository;
  * SNodeReferences will consistently retrieve the same node.
  */
 public interface SNodeReference {
+  /**
+   * Find actual instance of the node represented by this pointer.
+   * @return node if known in the repository, or <code>null</code>
+   */
+  @Nullable
   SNode resolve(SRepository repo);
 
+  /**
+   * @return pointer to the node's model, if known, or <code>null</code>
+   */
+  @Nullable
   SModelReference getModelReference();
+
+  /**
+   * @return  identity of the node, if known, or <code>null</code>
+   */
+  @Nullable
+  SNodeId getNodeId();
 }

@@ -54,6 +54,7 @@ public class SNodePointer implements SNodeReference {
     myNodeId = nodeId;
   }
 
+  @Nullable
   @Override
   public SNode resolve(SRepository repo) {
     if (myNodeId == null) return null;
@@ -76,6 +77,7 @@ public class SNodePointer implements SNodeReference {
     return null;
   }
 
+  @Nullable
   @Override
   public SModelReference getModelReference() {
     return myModelReference;
@@ -122,13 +124,8 @@ public class SNodePointer implements SNodeReference {
     return new jetbrains.mps.smodel.SNodePointer(modelReference, nodeId);
   }
 
-  //-----------------deprecated----------------------
-
-  @Deprecated
-  /**
-   * Was mostly used for serialization and obtaining debug info. Use corresponding methods instead
-   * @Deprecated in 3.0
-   */
+  @Nullable
+  @Override
   public SNodeId getNodeId() {
     return myNodeId;
   }
