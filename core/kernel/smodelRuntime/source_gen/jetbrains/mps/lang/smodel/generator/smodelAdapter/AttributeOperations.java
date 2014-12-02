@@ -14,7 +14,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.persistence.IdHelper;
@@ -94,11 +93,12 @@ public class AttributeOperations {
   public static String getLinkRole(SNode attribute) {
     return SPropertyOperations.getString(attribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole"));
   }
-  public static SReferenceLink getLink(SNode attribute, SAbstractConcept parentConcept) {
+  public static SReferenceLink getLink(SNode attribute) {
     String linkId = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId"));
     String linkName = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole"));
     if (linkId == null) {
-      return MetaAdapterFactoryByName.getReferenceLink(parentConcept.getQualifiedName(), linkName);
+      String conceptName = attribute.getParent().getConcept().getQualifiedName();
+      return MetaAdapterFactoryByName.getReferenceLink(conceptName, linkName);
     }
     SReferenceLinkId lid = SReferenceLinkId.deserialize(linkId);
     return MetaAdapterFactory.getReferenceLink(lid, linkName);
@@ -117,11 +117,12 @@ public class AttributeOperations {
   public static String getPropertyName(SNode attribute) {
     return SPropertyOperations.getString(attribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"));
   }
-  public static SProperty getProperty(SNode attribute, SAbstractConcept parentConcept) {
+  public static SProperty getProperty(SNode attribute) {
     String propertyId = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"));
     String propertyName = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"));
     if (propertyId == null) {
-      return MetaAdapterFactoryByName.getProperty(parentConcept.getQualifiedName(), propertyName);
+      String conceptName = attribute.getParent().getConcept().getQualifiedName();
+      return MetaAdapterFactoryByName.getProperty(conceptName, propertyName);
     }
     SPropertyId pid = SPropertyId.deserialize(propertyId);
     return MetaAdapterFactory.getProperty(pid, propertyName);

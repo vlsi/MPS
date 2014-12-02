@@ -71,7 +71,7 @@ public interface IAttributeDescriptor {
     }
     @Override
     public boolean match(@NotNull SNode attribute) {
-      return super.match(attribute) && (myLink == null || myLink.equals(AttributeOperations.getLink(attribute, myLink.getContainingConcept())));
+      return super.match(attribute) && (myLink == null || myLink.equals(AttributeOperations.getLink(attribute)));
     }
     @Override
     public void update(@NotNull SNode attribute) {
@@ -100,7 +100,7 @@ public interface IAttributeDescriptor {
     }
     @Override
     public boolean match(@NotNull SNode attribute) {
-      return super.match(attribute) && (myProperty == null || myProperty.equals(AttributeOperations.getProperty(attribute, myProperty.getContainingConcept())));
+      return super.match(attribute) && (myProperty == null || myProperty.equals(AttributeOperations.getProperty(attribute)));
     }
     @Override
     public void update(@NotNull SNode attribute) {
