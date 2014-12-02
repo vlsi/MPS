@@ -71,7 +71,7 @@ public class CompilerSettingsPreferencePage {
   }
 
   private JPanel createCompilerOptionsPanel() {
-    JPanel panel = new JPanel();
+    JPanel panel = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
     c.anchor = GridBagConstraints.NORTHWEST;
     c.weighty = 1;
@@ -123,8 +123,8 @@ public class CompilerSettingsPreferencePage {
   }
 
   void commit() {
-    myInitialSourceJavaVersion = ((String) myTargetJavaVersionComboBox.getSelectedItem());
-    myInitialTargetJavaVersion = ((String) mySourceJavaVersionComboBox.getSelectedItem());
+    myInitialSourceJavaVersion = ((String) mySourceJavaVersionComboBox.getSelectedItem());
+    myInitialTargetJavaVersion = ((String) myTargetJavaVersionComboBox.getSelectedItem());
   }
 
   void reset() {
