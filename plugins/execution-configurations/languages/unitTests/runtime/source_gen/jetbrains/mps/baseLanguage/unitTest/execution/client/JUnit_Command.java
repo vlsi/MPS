@@ -39,7 +39,7 @@ public class JUnit_Command {
   private String myDebuggerSettings_String;
   private String myVirtualMachineParameter_String;
   private String myJrePath_String;
-  private File myWorkingDirectory_File = new File(System.getProperty("user.home"));
+  private File myWorkingDirectory_File = new File(".");
   public JUnit_Command() {
   }
   public JUnit_Command setDebuggerSettings_String(String debuggerSettings) {

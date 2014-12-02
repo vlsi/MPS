@@ -39,6 +39,10 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
 
+/**
+ * TODO: rewrite class loading functional : it must not extend ReloadableModuleBase and be maintained by ClassLoaderManager.
+ * TODO: it does not belong to any repository
+ */
 public class TempModule extends ReloadableModuleBase implements SModule, MPSModuleOwner {
   private final static Logger LOG = LogManager.getLogger(TempModule.class);
   private final ModuleDescriptor myDescriptor;

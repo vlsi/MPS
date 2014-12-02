@@ -21,6 +21,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -28,6 +29,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -57,9 +59,11 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<LanguageRegistryListener>();
 
+  private final SRepository myRepository;
   private final ClassLoaderManager myClassLoaderManager;
 
-  public LanguageRegistry(ClassLoaderManager loaderManager) {
+  public LanguageRegistry(SRepository repository, ClassLoaderManager loaderManager) {
+    myRepository = repository;
     myClassLoaderManager = loaderManager;
   }
 
@@ -86,28 +90,38 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     INSTANCE = null;
   }
 
-  private void notifyUnload(Collection<LanguageRuntime> languages) {
+  private void notifyUnload(final Collection<LanguageRuntime> languages) {
     if (languages.isEmpty()) return;
 
-    for (LanguageRegistryListener l : myLanguageListeners) {
-      try {
-        l.beforeLanguagesUnloaded(languages);
-      } catch (Exception ex) {
-        LOG.error(format("Exception on language unloading; languages: %s; listener: %s", languages, l), ex);
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        for (LanguageRegistryListener l : myLanguageListeners) {
+          try {
+            l.beforeLanguagesUnloaded(languages);
+          } catch (Exception ex) {
+            LOG.error(format("Exception on language unloading; languages: %s; listener: %s", languages, l), ex);
+          }
+        }
       }
-    }
+    });
   }
 
-  private void notifyLoad(Collection<LanguageRuntime> languages) {
+  private void notifyLoad(final Collection<LanguageRuntime> languages) {
     if (languages.isEmpty()) return;
 
-    for (LanguageRegistryListener l : myLanguageListeners) {
-      try {
-        l.afterLanguagesLoaded(languages);
-      } catch (Throwable ex) {
-        LOG.error(format("Exception on language loading; languages: %s; listener: %s", languages, l), ex);
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        for (LanguageRegistryListener l : myLanguageListeners) {
+          try {
+            l.afterLanguagesLoaded(languages);
+          } catch (Exception ex) {
+            LOG.error(format("Exception on language loading; languages: %s; listener: %s", languages, l), ex);
+          }
+        }
       }
-    }
+    });
   }
 
   @Nullable

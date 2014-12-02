@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
+import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
@@ -185,8 +186,8 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   private void revalidateGenerators() {
     MPSModuleRepository repo = MPSModuleRepository.getInstance();
-    for (Generator g : getGenerators()) {
-      repo.unregisterModule(g, this);
+    for (Generator generator : getGenerators()) {
+      repo.unregisterModule(generator, this);
     }
     for (GeneratorDescriptor generatorDescriptor : getModuleDescriptor().getGenerators()) {
       Generator generator = new Generator(this, generatorDescriptor);
@@ -206,26 +207,18 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
-    setLanguageDescriptor((LanguageDescriptor) moduleDescriptor);
+  public void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    assert moduleDescriptor instanceof LanguageDescriptor;
+    myLanguageDescriptor = (LanguageDescriptor) moduleDescriptor;
+    SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getId());
+    setModuleReference(reference);
+    MPSModuleRepository.getInstance().invalidateCaches();
   }
 
-  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
-    assertCanChange();
-
-    myLanguageDescriptor = newDescriptor;
-
-    SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(myLanguageDescriptor.getNamespace(),
-        myLanguageDescriptor.getId());
-    setModuleReference(reference);
-
-    setChanged();
-    reloadAfterDescriptorChange();
-    fireChanged();
-
-    MPSModuleRepository.getInstance().invalidateCaches();
-
-    dependenciesChanged();
+  // fixme: remove, use #setModuleDescriptor instead
+  @Deprecated
+  public void setLanguageDescriptor(final LanguageDescriptor moduleDescriptor) {
+    setModuleDescriptor(moduleDescriptor);
   }
 
   public boolean isBootstrap() {
@@ -391,7 +384,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @Nullable
-  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException {
+  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException, ModuleIsNotLoadableException {
     // first check if class comes from stubs
     if (classFqName.startsWith(getModuleName() + ".stubs.")) {
       try {

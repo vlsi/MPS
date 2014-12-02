@@ -39,6 +39,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -357,6 +358,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void update(ProgressMonitor monitor, FileSystemEvent event) {
+    if (IterableUtil.asSet(event.getCreated()).isEmpty()) return;
     readModules();
   }
 }

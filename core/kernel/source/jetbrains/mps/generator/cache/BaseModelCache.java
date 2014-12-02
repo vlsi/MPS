@@ -175,7 +175,6 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
   }
 
   private class MyRepositoryListener extends SRepositoryContentAdapter {
-
     @Override
     public void beforeModelRemoved(SModule module, SModel model) {
       clean(model);

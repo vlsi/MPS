@@ -75,8 +75,6 @@ public class CleanupManager implements CoreComponent {
   }
 
   public void cleanup() {
-    ModelAccess.assertLegalWrite();
-
     List<CleanupListener> listenersToInvoke = new ArrayList<CleanupListener>();
     synchronized (myLock) {
       listenersToInvoke.addAll(myCleanupListeners);

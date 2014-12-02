@@ -895,7 +895,6 @@
     <content url="file://$MODULE_DIR$/../../testbench/testsolutions">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/actions.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.closures.unittest/test_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.doubleDispatch.test/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.doubleDispatch.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.internal.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.internalCollections.test/source_gen" isTestSource="false" />
@@ -936,7 +935,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/actions.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.closures.unittest/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.doubleDispatch.test/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.doubleDispatch.test/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.internal.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.internalCollections.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.test/classes_gen" />

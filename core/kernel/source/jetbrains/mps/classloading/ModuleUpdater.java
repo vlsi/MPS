@@ -28,9 +28,9 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -53,20 +53,18 @@ public class ModuleUpdater {
     myRefStorage = refStorage;
   }
 
-  public void onModulesReloaded(@NotNull Collection<? extends ReloadableModule> modules) {
+  public void updateModules(@NotNull Collection<? extends ReloadableModule> modules) {
     for (ReloadableModule module : modules) {
       if (myWatchableCondition.met(module)) {
         hackGeneratorReloaded(module);
         myModulesToReload.add(module);
-      } else {
-        myModulesToRemove.add(((ReloadableModuleBase) module).getModuleReference());
       }
-      // need this call because we might get #onModulesAdded notification later than this one
+      // need this call because we might get #addModules notification later than this one
       myRefStorage.moduleAdded((ReloadableModuleBase) module);
     }
   }
 
-  public void onModulesAdded(@NotNull Collection<? extends ReloadableModule> modules) {
+  public void addModules(@NotNull Collection<? extends ReloadableModule> modules) {
     for (ReloadableModule module : modules) {
       if (myWatchableCondition.met(module)) {
         hackGeneratorAdded(module);
@@ -97,7 +95,7 @@ public class ModuleUpdater {
     }
   }
 
-  public void onModuleRemoved(@NotNull Collection<? extends SModuleReference> mRefs) {
+  public void removeModules(@NotNull Collection<? extends SModuleReference> mRefs) {
     for (SModuleReference mRef : mRefs) {
       // need to clean up myModulesToLoad and myModulesToReload
       removeMRefFromModules(mRef, myModulesToAdd);
@@ -115,21 +113,26 @@ public class ModuleUpdater {
     }
   }
 
-  public void updateGraph() {
+  /**
+   * @return if graph did change (some edges or vertices added/removed)
+   */
+  public boolean updateGraph() {
     myRepository.getModelAccess().checkReadAccess();
     myDepGraph.checkGraphsCorrectness();
     int wasEdges = myDepGraph.getEdgesCount();
     int wasVertices = myDepGraph.getVerticesCount();
 
+    boolean updated = !myModulesToAdd.isEmpty() || !myModulesToRemove.isEmpty();
     updateRemoved(myModulesToRemove);
     updateAdded(myModulesToAdd);
-    updateReloaded(myModulesToReload);
+    updated |= updateReloaded(myModulesToReload);
     myModulesToRemove.clear();
     myModulesToAdd.clear();
     myModulesToReload.clear();
 
     LOG.debug("Difference in the vertex count after validation " + (myDepGraph.getVerticesCount() - wasVertices));
     LOG.debug("Difference in the edge count after validation " + (myDepGraph.getEdgesCount() - wasEdges));
+    return updated;
   }
 
   private void updateRemoved(Set<? extends SModuleReference> modulesToRemove) {
@@ -146,10 +149,14 @@ public class ModuleUpdater {
     updateAddedEdges(modulesToAdd);
   }
 
-  private void updateReloaded(final Set<? extends ReloadableModule> modulesToReload) {
-    if (modulesToReload.isEmpty()) return;
-    updateReloadedVertices(modulesToReload);
-    updateReloadedEdges(modulesToReload);
+  /**
+   * @return true if actual update happened
+   */
+  private boolean updateReloaded(final Set<? extends ReloadableModule> modulesToReload) {
+    if (modulesToReload.isEmpty()) return false;
+    boolean updated = updateReloadedVertices(modulesToReload);
+    updated |= updateReloadedEdges(modulesToReload);
+    return updated;
   }
 
   private void updateAddedVertices(Set<? extends ReloadableModule> modulesToAdd) {
@@ -170,30 +177,46 @@ public class ModuleUpdater {
     updateBackDeps(modulesToAdd);
   }
 
-  private void updateReloadedVertices(Set<? extends ReloadableModule> modulesToReload) {
+  private boolean updateReloadedVertices(Set<? extends ReloadableModule> modulesToReload) {
+    boolean updated = false;
     for (ReloadableModule module : modulesToReload) {
       LOG.debug("Reloading module " + module);
       assert myWatchableCondition.met(module);
       ReloadableModuleBase reloadableModule = (ReloadableModuleBase) module;
       assert reloadableModule.getRepository() != null;
       SModuleReference mRef = reloadableModule.getModuleReference();
-      if (!myDepGraph.contains(mRef)) myDepGraph.add(mRef);
+      if (!myDepGraph.contains(mRef)) {
+        myDepGraph.add(mRef);
+        updated = true;
+      }
     }
+    return updated;
   }
 
-  private void updateReloadedEdges(Set<? extends ReloadableModule> modulesToReload) {
+  private boolean updateReloadedEdges(Set<? extends ReloadableModule> modulesToReload) {
+    boolean updated = false;
     myRepository.getModelAccess().checkReadAccess();
+    Collection<? extends SModuleReference> allRefs = myDepGraph.getVertices();
     for (ReloadableModule module : modulesToReload) {
       ReloadableModuleBase reloadableModule = (ReloadableModuleBase) module;
-      removeModuleDeps(reloadableModule);
-      putModuleDeps(reloadableModule);
+      SModuleReference mRef = reloadableModule.getModuleReference();
+      Collection<? extends SModuleReference> currentDeps = new HashSet<SModuleReference>(myDepGraph.getOutgoingEdges(mRef));
+      Collection<? extends ReloadableModuleBase> newModuleDeps = getModuleDeps(reloadableModule);
+      for (ReloadableModuleBase moduleDep : newModuleDeps) {
+        SModuleReference depRef = moduleDep.getModuleReference();
+        if (!currentDeps.contains(depRef)) {
+          if (allRefs.contains(depRef)) {
+            myDepGraph.addEdge(mRef, depRef);
+            updated = true;
+          }
+        } else currentDeps.remove(depRef);
+      }
+      for (SModuleReference curDep : currentDeps) {
+        myDepGraph.removeEdge(mRef, curDep);
+        updated = true;
+      }
     }
-  }
-
-  private void removeModuleDeps(@NotNull ReloadableModuleBase module) {
-    SModuleReference mRef = module.getModuleReference();
-    Collection<? extends SModuleReference> currentDeps = new ArrayList<SModuleReference>(myDepGraph.getOutgoingEdges(mRef));
-    for (SModuleReference dep : currentDeps) myDepGraph.removeEdge(mRef, dep);
+    return updated;
   }
 
   private void putModuleDeps(@NotNull ReloadableModuleBase module) {
@@ -218,11 +241,7 @@ public class ModuleUpdater {
       Collection<? extends ReloadableModuleBase> deps = getModuleDeps(reloadableModule);
       for (ReloadableModuleBase dep : deps) {
         if (modules.contains(dep)) {
-          boolean edgeAdded = myDepGraph.addEdge(backRef, dep.getModuleReference());
-          // FIXME hack happened because of 'unfair' method ModulesWatcher#getModuleDescriptorDeps()
-          if (edgeAdded) {
-            ClassLoaderManager.getInstance().unloadModules(Collections.singleton(backRef));
-          }
+          myDepGraph.addEdge(backRef, dep.getModuleReference());
         }
       }
     }
@@ -241,5 +260,4 @@ public class ModuleUpdater {
     }
     return deps;
   }
-
 }

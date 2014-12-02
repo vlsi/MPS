@@ -648,8 +648,6 @@
     <dep root="8473865358220097975" />
     <dep root="8972672481958095232" />
     <dep root="9100188248702352244" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_Identifier_String_PropertySupport.java" />
   </source>
   <source id="1083245097125" name="EnumClass" hash="-1x9vcteei37ba2a7yhply4182xkjn8o" />
@@ -953,7 +951,6 @@
     <dep root="8473865358220097975" />
     <dep root="8972672481958095232" />
     <dep root="9100188248702352244" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_FPNumber_String_PropertySupport.java" />
   </source>
   <source id="1116615150612" name="ClassifierClassExpression" hash="cz8wlfum4nwzkgjkz3mquyd38gu2e0m" />
@@ -1299,7 +1296,6 @@
     <dep root="8473865358220097975" />
     <dep root="8972672481958095232" />
     <dep root="9100188248702352244" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_CharConstant_String_PropertySupport.java" />
   </source>
   <source id="1201183863028" name="TypeDerivable" hash="avmrjnxmon0lu1oputn20rfgnxsn7ut" />
@@ -1645,7 +1641,7 @@
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TrimKind.java" />
     <file name="TrimKind_PropertySupport.java" />
@@ -1954,7 +1950,6 @@
     <dep root="8473865358220097975" />
     <dep root="8972672481958095232" />
     <dep root="9100188248702352244" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_LongType_String_PropertySupport.java" />
   </source>
   <source id="5279705229678483898" name="_FloatNumberValue" hash="-e8fz6fyhl5oeqkvebv84azlm24orill" dependsOnNodes="true">

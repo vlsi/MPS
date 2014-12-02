@@ -32,7 +32,7 @@ public class SolutionRenamer {
   public void rename() {
     SolutionDescriptor solutionDescriptor = mySolution.getModuleDescriptor();
     solutionDescriptor.setNamespace(myNewName);
-    mySolution.setSolutionDescriptor(solutionDescriptor);
+    mySolution.setModuleDescriptor(solutionDescriptor);
     ClassLoaderManager.getInstance().reloadModule(mySolution);
     mySolution.save();
 

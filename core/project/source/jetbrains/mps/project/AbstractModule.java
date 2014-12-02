@@ -41,6 +41,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.language.ConceptRepository;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
@@ -243,7 +244,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   //todo should be replaced with events
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  public final void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    assertCanChange();
+    doSetModuleDescriptor(moduleDescriptor);
+    setChanged();
+    reloadAfterDescriptorChange();
+    fireChanged();
+    dependenciesChanged();
+  }
+
+  // no notifications are sent
+  protected void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     throw new UnsupportedOperationException();
   }
 
@@ -379,7 +390,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   //----stubs
 
-  // todo: remove, should be done in module packing
+  // FIXME: MPS-19756
+  // TODO: get rid of this code - generate the deployment descriptor during build process
   protected void updatePackagedDescriptor() {
     // things to do:
     // 1) load/prepare stub libraries (getAdditionalJavaStubPaths) from sources descriptor
@@ -388,15 +400,15 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     // possible cases:
     // 1) without deployment descriptor (nothing to do; todo: ?)
-    // 2) with dd, without sources (to do: 3)
-    // 3) with dd, with sources (to do: 1,2,3)
+    // 2) with deployment descriptor, without sources (to do: 3)
+    // 3) with deployment descriptor, with sources (to do: 1,2,3)
 
     if (!isPackaged()) return;
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
-    DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
-    if (dd == null) return;
+    DeploymentDescriptor deplDescriptor = descriptor.getDeploymentDescriptor();
+    if (deplDescriptor == null) return;
 
     final IFile bundleHomeFile = FileSystem.getInstance().getBundleHome(getDescriptorFile());
     if (bundleHomeFile == null) return;
@@ -404,7 +416,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     IFile bundleParent = bundleHomeFile.getParent();
     if (bundleParent == null || !bundleParent.exists()) return;
 
-    IFile sourcesDescriptorFile = ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
+    IFile sourcesDescriptorFile = ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), deplDescriptor);
     if (sourcesDescriptorFile == null) {
       // todo: for now it's impossible
       assert descriptor instanceof DeploymentDescriptor;
@@ -417,69 +429,53 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       // stub libraries
       // todo: looks like module.xml contains info about model libs
       // ignore stub libraries from source module descriptor, use libs from DeploymentDescriptor
-//      Set<String> libPaths = new LinkedHashSet<String>();
-//      for (String path : descriptor.getAdditionalJavaStubPaths()) {
-//        String converted = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
-//        if (converted != null) {
-//          libPaths.add(converted);
-//        }
-//      }
       descriptor.getAdditionalJavaStubPaths().clear();
-//      descriptor.getAdditionalJavaStubPaths().addAll(libPaths);
 
       // stub model roots
       List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
       List<ModelRootDescriptor> toAdd = new ArrayList<ModelRootDescriptor>();
-      for (ModelRootDescriptor mrd : descriptor.getModelRootDescriptors()) {
-        if (!mrd.getType().equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) continue;
-
-        List<String> paths = new LinkedList<String>();
-
-        //MPS-19756
-        // TODO: get rid of this code - use special descriptor
-        if (mrd.getMemento().get("path") != null) {
-          // See JavaSourceStubModelRoot & JavaClassStubsModelRoot load methods need to replace with super
-          String path = mrd.getMemento().get("path");
-          String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
-
-          if (convertedPath != null) {
-            Memento newMemento = new MementoImpl();
-            newMemento.put("path", convertedPath);
-            toAdd.add(new ModelRootDescriptor(mrd.getType(), newMemento));
-          }
-        } else {
-
-
-          String contentPath = mrd.getMemento().get("contentPath");
-          for (Memento sr : mrd.getMemento().getChildren("sourceRoot")) {
-            paths.add(contentPath + File.separator + sr.get("location"));
-          }
-
-          Memento newMemento = new MementoImpl();
-          newMemento.put("contentPath", contentPath.replaceAll("[^\\/]+[.]jar!/module", ""));
-          Memento newMementoChild = newMemento.createChild("sourceRoot");
-
+      for (ModelRootDescriptor rootDescriptor : descriptor.getModelRootDescriptors()) {
+        String rootDescriptorType = rootDescriptor.getType();
+        if (rootDescriptorType.equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) {
+          // trying to load old format from deployment descriptor
+          String pathElement = rootDescriptor.getMemento().get("path");
           boolean update = false;
-          for (String path : paths) {
-            String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
+          Memento newMemento = new MementoImpl();
+          if (pathElement != null) {
+            // See JavaSourceStubModelRoot & JavaClassStubsModelRoot load methods need to replace with super
+            String convertedPath = convertPath(pathElement, bundleHomeFile, sourcesDescriptorFile, descriptor);
 
             if (convertedPath != null) {
-              newMementoChild.put("location", convertedPath.replace(newMemento.get("contentPath"), ""));
+              newMemento.put("path", convertedPath);
               update = true;
             }
+          } else {
+            // trying to load new format : replacing paths like **.jar!/module ->
+            String contentPath = rootDescriptor.getMemento().get("contentPath");
+            List<String> paths = new LinkedList<String>();
+            for (Memento sourceRoot : rootDescriptor.getMemento().getChildren("sourceRoot")) {
+              paths.add(contentPath + File.separator + sourceRoot.get("location"));
+            }
+            newMemento.put("contentPath", bundleParent.getPath());
+            Memento newMementoChild = newMemento.createChild("sourceRoot");
+            for (String path : paths) {
+              String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
+              if (convertedPath != null) {
+                newMementoChild.put("location", convertedPath.replace(newMemento.get("contentPath"), ""));
+                update = true;
+              }
+            }
           }
-          if (update)
-            toAdd.add(new ModelRootDescriptor(mrd.getType(), newMemento));
+          if (update) toAdd.add(new ModelRootDescriptor(rootDescriptorType, newMemento));
+          toRemove.add(rootDescriptor);
         }
-
-        toRemove.add(mrd);
       }
       descriptor.getModelRootDescriptors().removeAll(toRemove);
       descriptor.getModelRootDescriptors().addAll(toAdd);
     }
 
     // 3
-    for (String jarFile : dd.getLibraries()) {
+    for (String jarFile : deplDescriptor.getLibraries()) {
       IFile jar = jarFile.startsWith("/")
           ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
           : bundleParent.getDescendant(jarFile);
@@ -539,8 +535,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return Collections.unmodifiableCollection(mySModelRoots);
   }
 
-  // do not use, used only from ModuleRepositoryFacade
-  public void reloadAfterDescriptorChange() {
+  protected void reloadAfterDescriptorChange() {
     updatePackagedDescriptor();
     updateFacets();
     updateModelsSet();
@@ -681,6 +676,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public void update(ProgressMonitor monitor, FileSystemEvent event) {
+    assertCanChange();
     for (IFile file : event.getRemoved()) {
       if (file.equals(myDescriptorFile)) {
         ModuleRepositoryFacade.getInstance().removeModuleForced(this);

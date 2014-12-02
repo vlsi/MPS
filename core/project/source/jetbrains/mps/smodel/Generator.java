@@ -57,7 +57,7 @@ public class Generator extends ReloadableModuleBase {
   private Language mySourceLanguage;
   private GeneratorDescriptor myGeneratorDescriptor;
 
-  Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
+  public Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
     myGeneratorDescriptor = generatorDescriptor;
 
@@ -108,19 +108,13 @@ public class Generator extends ReloadableModuleBase {
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+  protected void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
-
-    assertCanChange();
-
     LanguageDescriptor languageDescriptor = getSourceLanguage().getModuleDescriptor();
     int index = languageDescriptor.getGenerators().indexOf(getModuleDescriptor());
     languageDescriptor.getGenerators().remove(index);
     languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
-    getSourceLanguage().setLanguageDescriptor(languageDescriptor);
-
-    setChanged();
-    dependenciesChanged();
+    getSourceLanguage().setModuleDescriptor(languageDescriptor);
   }
 
   public String getName() {

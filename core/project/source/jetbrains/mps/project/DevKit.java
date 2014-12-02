@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -54,25 +52,13 @@ public class DevKit extends AbstractModule {
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
-    setDevKitDescriptor((DevkitDescriptor) moduleDescriptor);
-  }
-
-  public void setDevKitDescriptor(DevkitDescriptor descriptor) {
-    assertCanChange();
-
-    myDescriptor = descriptor;
+  public void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    myDescriptor = (DevkitDescriptor) moduleDescriptor;
 
     if (myDescriptor.getNamespace() != null) {
       SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myDescriptor.getNamespace(), myDescriptor.getId());
       setModuleReference(mp);
     }
-
-    setChanged();
-    reloadAfterDescriptorChange();
-    fireChanged();
-
-    dependenciesChanged();
   }
 
   @Override

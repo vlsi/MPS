@@ -269,11 +269,13 @@ public class PluginReloader implements ApplicationComponent {
     // runInEDTWithProgressSynchronously block
     private void schedulePluginsReload() {
     //write action is needed the because user can acquire write action inside of this [see MPS-9139]
+      LOG.debug("Scheduling plugins' reload");
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           if (isDisposed()) return;
 
+          LOG.debug("Starting plugins' reload");
           Set<SModule> toLoad = new HashSet<SModule>(), toUnload = new HashSet<SModule>();
           for (Map.Entry<SModule, ModuleLoadingState> entry : states.entrySet()) {
             if (entry.getValue() == ModuleLoadingState.UNLOAD || entry.getValue() == ModuleLoadingState.RELOAD) {

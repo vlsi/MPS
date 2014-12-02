@@ -18,6 +18,7 @@ package jetbrains.mps.util;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -116,7 +117,12 @@ public class QueryMethodGenerated implements CoreComponent {
       return null;
     }
 
-    Class queriesClass = ((ReloadableModule) module).getClass(className);
+    Class queriesClass = null;
+    try {
+      queriesClass = ((ReloadableModule) module).getClass(className);
+    } catch (ModuleIsNotLoadableException e) {
+      LOG.error("Please check the module " + e.getModule() + " is eligible for class loading");
+    }
     if (queriesClass == null) {
       reportErrorWhileClassLoading(className, suppressErrorLogging, String.format("couldn't find class '%s' for model '%s' : TRY TO GENERATE", className, sm));
     }

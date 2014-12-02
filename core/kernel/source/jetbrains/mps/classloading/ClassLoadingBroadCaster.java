@@ -29,6 +29,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+/**
+ * Broadcasting class loading load/unload events.
+ * May be triggered at any time of #getClass calls due to laziness
+ */
 public class ClassLoadingBroadCaster {
   private static final Logger LOG = LogManager.getLogger(ClassLoadingBroadCaster.class);
   private final LinkedHashSet<ReloadableModule> myLoadedModules = new LinkedHashSet<ReloadableModule>();
@@ -60,18 +64,14 @@ public class ClassLoadingBroadCaster {
     if (modulesToUnload.size() != refsToUnload.size()) throw new IllegalArgumentException("Loaded modules do not match given refs");
     myLoadedModules.removeAll(modulesToUnload);
 
-    myModelAccess.runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        for (MPSClassesListener listener : myClassesHandlers) {
-          try {
-            listener.beforeClassesUnloaded(modulesToUnload);
-          } catch (LinkageError linkageError) {
-            processLinkageErrorInListener(listener, linkageError);
-          }
-        }
+    for (MPSClassesListener listener : myClassesHandlers) {
+      try {
+        listener.beforeClassesUnloaded(modulesToUnload);
+      } catch (LinkageError linkageError) {
+        processLinkageErrorInListener(listener, linkageError);
       }
-    });
+    }
+
     return modulesToUnload;
   }
 
@@ -81,23 +81,18 @@ public class ClassLoadingBroadCaster {
     for (ReloadableModule module : toLoad) modulesToLoad.add((ReloadableModuleBase) module);
     myLoadedModules.addAll(modulesToLoad);
 
-    myModelAccess.runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        for (MPSClassesListener listener : myClassesHandlers) {
-          try {
-            listener.afterClassesLoaded(modulesToLoad);
-          } catch (LinkageError linkageError) {
-            processLinkageErrorInListener(listener, linkageError);
-          }
-        }
+    for (MPSClassesListener listener : myClassesHandlers) {
+      try {
+        listener.afterClassesLoaded(modulesToLoad);
+      } catch (LinkageError linkageError) {
+        processLinkageErrorInListener(listener, linkageError);
       }
-    });
+    }
   }
 
   private void processLinkageErrorInListener(MPSClassesListener listener, LinkageError linkageError) {
-    LOG.error("Caught a linkage error from the `" + listener + "` listener. Probably 'classes_gen' folders are outdated, try cleaning them.");
+    LOG.error("Caught a linkage error from the `" + listener + "` listener. Probably some languages are outdated, try rebuilding the project.");
     linkageError.printStackTrace();
-    LOG.error("MPS will try to continue running in a inconsistent state.");
+    LOG.error("MPS will attempt running in a inconsistent state.");
   }
 }

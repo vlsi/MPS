@@ -19,6 +19,9 @@ package jetbrains.mps.jps.model;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.CustomClassLoadingFacet;
+import jetbrains.mps.classloading.DumbIdeaPluginFacet;
+import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.module.CachedModuleData;
@@ -32,9 +35,11 @@ import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.MPSPersistence;
+import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -58,6 +63,7 @@ import org.jetbrains.jps.model.module.JpsModule;
 import org.jetbrains.jps.model.module.JpsSdkDependency;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
@@ -313,6 +319,11 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       SModule existingModule = repo.getModule(jdkId);
       if (existingModule != null) {
         desc.setNamespace(existingModule.getModuleName());
+        CustomClassLoadingFacet facet = existingModule.getFacet(CustomClassLoadingFacet.class);
+        assert facet != null;
+        Memento memento = new MementoImpl();
+        facet.save(memento);
+        desc.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(((ModuleFacetBase) facet).getFacetType(), memento));
         Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(repo.getOwners(existingModule));
         for (MPSModuleOwner owner : owners) {
 //          if (owner == this) continue;

@@ -21,6 +21,7 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.testbench.ModuleMpsTest;
 import jetbrains.mps.util.FileUtil;
@@ -60,7 +61,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
 
   private static File createTempDir() {
     File tempDir = FileUtil.createTmpDir();
-    Assume.assumeTrue("Cannot write the " + tempDir + " directory", tempDir.canWrite());
+    Assume.assumeTrue("Cannot write the " + tempDir + " directory", tempDir.canRead());
     return tempDir;
   }
 
@@ -110,6 +111,20 @@ public class ModulesReloadTest extends ModuleMpsTest {
   }
 
   @Test
+  public void testGeneratorIsLoadable() {
+    final Generator generator = createGenerator();
+    Assert.assertTrue(safeGetClass(generator, CLASS_TO_LOAD) == null);
+    addClassTo(generator);
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        generator.reload();
+        Assert.assertTrue(classIsLoadableFromModule(generator));
+      }
+    });
+  }
+
+  @Test
   public void testPluginSolutionIsLoadable() {
     final Solution solution = createSolution();
     addClassTo(solution);
@@ -124,25 +139,114 @@ public class ModulesReloadTest extends ModuleMpsTest {
   }
 
   @Test
-  public void testNonPluginSolutionIsNotLoadable() {
-    Solution solution = createSolution();
+  public void testNotLoadableDepsAreNotLoadable() {
+    final Solution solution = createSolution();
     addClassTo(solution);
     solution.getModuleDescriptor().setKind(SolutionKind.NONE);
-    Assert.assertTrue(!classIsLoadableFromModule(solution));
+    final Language l1 = createLanguage();
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        ClassLoaderManager.getInstance().reloadModule(solution);
+        l1.addDependency(solution.getModuleReference(), false);
+        ClassLoaderManager.getInstance().reloadModule(solution);
+//        Assert.assertFalse(classIsLoadableFromModule(l1)); // the class must be available already here FIXME: enable after 3.2
+      }
+    });
   }
 
   @Test
-  public void testDepsAreLoadable() {
+  public void testNonPluginSolutionIsNotLoadable() {
+    final Solution solution = createSolution();
+    addClassTo(solution);
+    solution.getModuleDescriptor().setKind(SolutionKind.NONE);
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        ClassLoaderManager.getInstance().reloadModule(solution);
+//        Assert.assertFalse(classIsLoadableFromModule(solution)); FIXME: enable after 3.2
+      }
+    });
+//    Assert.assertFalse(classIsLoadableFromModule(solution));
+  }
+  @Test
+  public void testReloadNonLoadableSolution() {
+    final Solution solution = createSolution();
+    solution.getModuleDescriptor().setKind(SolutionKind.NONE);
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        solution.reload();
+        ClassLoaderManager.getInstance().reloadModule(solution);
+      }
+    });
+  }
+
+  @Test
+  public void testReloadingSolutionKinds() {
+    final Solution solution = createSolution();
+    addClassTo(solution);
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        solution.getModuleDescriptor().setKind(SolutionKind.NONE);
+        ClassLoaderManager.getInstance().reloadModule(solution);
+        Assert.assertTrue(myManager.getModulesWatcher().isModuleWatched(solution));
+//        Assert.assertFalse(classIsLoadableFromModule(solution)); FIXME: enable after 3.2
+        solution.getModuleDescriptor().setKind(SolutionKind.PLUGIN_CORE);
+        ClassLoaderManager.getInstance().reloadModule(solution);
+        Assert.assertTrue(classIsLoadableFromModule(solution));
+        Assert.assertTrue(myManager.getModulesWatcher().isModuleWatched(solution));
+        solution.getModuleDescriptor().setKind(SolutionKind.NONE);
+        ClassLoaderManager.getInstance().reloadModule(solution);
+        Assert.assertTrue(myManager.getModulesWatcher().isModuleWatched(solution));
+//        Assert.assertFalse(classIsLoadableFromModule(solution)); FIXME: enable after 3.2
+      }
+    });
+  }
+
+  @Test
+  public void testDepsAreLoadable1() {
     final Language l1 = createLanguage();
     final Language l2 = createLanguage();
     myAccess.runWriteAction(new Runnable() {
       @Override
       public void run() {
-        l1.addDependency(l2.getModuleReference(), false);
         addClassTo(l2);
-        l1.reload();
         l2.reload();
+        l1.addDependency(l2.getModuleReference(), false);
         Assert.assertTrue(classIsLoadableFromModule(l1)); // the class must be available already here
+      }
+    });
+  }
+
+  @Test
+  public void testDepsAreLoadable2() {
+    final Language l = createLanguage();
+    final Solution s = createSolution();
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        addClassTo(s);
+        l.addDependency(s.getModuleReference(), false);
+//        Assert.assertFalse(classIsLoadableFromModule(l)); FIXME turn on after 3.2
+        s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_CORE);
+        s.reload();
+        Assert.assertTrue(classIsLoadableFromModule(l)); // the class must be available already here
+      }
+    });
+  }
+
+  @Test
+  public void testNonLoadableDepsThrows() {
+    final Language l = createLanguage();
+    final Solution s = createSolution();
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        addClassTo(s);
+        l.addDependency(s.getModuleReference(), false);
+//        Assert.assertFalse(classIsLoadableFromModule(l)); // the class must be available already here FIXME: enable after 3.2
       }
     });
   }
@@ -323,7 +427,6 @@ public class ModulesReloadTest extends ModuleMpsTest {
     Assert.assertTrue(classIsLoadableFromModule(l1));
     removeModule(l2);
     Assert.assertTrue(!classIsLoadableFromModule(l1));
-    Assert.assertTrue(!classIsLoadableFromModule(l3));
     removeModule(l3);
     Assert.assertTrue(!classIsLoadableFromModule(l1));
     myAccess.runWriteAction(new Runnable() {
