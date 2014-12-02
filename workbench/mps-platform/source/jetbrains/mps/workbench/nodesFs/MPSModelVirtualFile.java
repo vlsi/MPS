@@ -18,6 +18,8 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.ex.dummy.DummyFileIdGenerator;
+import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
+import com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -34,12 +36,14 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * User: fyodor
  * Date: 3/6/13
  */
-public class MPSModelVirtualFile extends VirtualFile {
+public class MPSModelVirtualFile extends NewVirtualFile {
   private static final Logger LOG = LogManager.getLogger(MPSModelVirtualFile.class);
   private static final byte[] ZERO_BYTES = new byte[0];
   public static final String MODEL_PREFIX = "model://";
@@ -85,7 +89,7 @@ public class MPSModelVirtualFile extends VirtualFile {
 
   @NotNull
   @Override
-  public VirtualFileSystem getFileSystem() {
+  public NewVirtualFileSystem getFileSystem() {
     return MPSNodesVirtualFileSystem.getInstance();
   }
 
@@ -110,18 +114,20 @@ public class MPSModelVirtualFile extends VirtualFile {
   }
 
   @Override
-  public VirtualFile getParent() {
+  public NewVirtualFile getParent() {
     // hack
-    return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+    return ModelAccess.instance().runReadAction(new Computable<NewVirtualFile>() {
       @Override
-      public VirtualFile compute() {
+      public NewVirtualFile compute() {
         if (myModelReference == null) return null;
         VirtualFile fileByModel = getSourceVirtualFile(myModelReference.resolve(MPSModuleRepository.getInstance()));
         if (fileByModel == null) return null;
-        return fileByModel.getParent();
+        return (NewVirtualFile) fileByModel.getParent();
       }
     });
   }
+
+
 
   @Override
   public VirtualFile[] getChildren() {
@@ -167,4 +173,79 @@ public class MPSModelVirtualFile extends VirtualFile {
     return fileByModel;
   }
 
+  // NewVirtualFile methods
+
+  @Nullable
+  @Override
+  public NewVirtualFile getCanonicalFile() {
+    return this;
+  }
+
+  @Nullable
+  @Override
+  public NewVirtualFile findChild(@NotNull String name) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public NewVirtualFile refreshAndFindChild(@NotNull String name) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public NewVirtualFile findChildIfCached(@NotNull String name) {
+    return null;
+  }
+
+  @Override
+  public void setTimeStamp(long time) throws IOException {
+  }
+
+  @NotNull
+  @Override
+  public CharSequence getNameSequence() {
+    return myName;
+  }
+
+  @Override
+  public int getId() {
+    return myId;
+  }
+
+  @Override
+  public void setWritable(boolean writable) throws IOException {
+  }
+
+  @Override
+  public void markDirty() {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public void markDirtyRecursively() {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean isDirty() {
+    return false;
+  }
+
+  @Override
+  public void markClean() {
+  }
+
+  @NotNull
+  @Override
+  public Collection<VirtualFile> getCachedChildren() {
+    return Collections.emptyList();
+  }
+
+  @NotNull
+  @Override
+  public Iterable<VirtualFile> iterInDbChildren() {
+    return Collections.emptyList();
+  }
 }

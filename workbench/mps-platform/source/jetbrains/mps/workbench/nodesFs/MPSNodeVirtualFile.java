@@ -17,6 +17,9 @@ package jetbrains.mps.workbench.nodesFs;
 
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
+import com.intellij.openapi.vfs.ex.dummy.DummyFileIdGenerator;
+import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
+import com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -34,8 +37,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Collection;
+import java.util.Collections;
 
-public class MPSNodeVirtualFile extends VirtualFile {
+public class MPSNodeVirtualFile extends NewVirtualFile {
   private static final byte[] CONTENTS = new byte[0];
   private static final Logger LOG = LogManager.getLogger(MPSNodeVirtualFile.class);
   public static final String NODE_PREFIX = "node://";
@@ -46,6 +51,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
   private String myPresentationName;
   private long myModificationStamp = LocalTimeCounter.currentTime();
   private long myTimeStamp = -1;
+  private final int myId = DummyFileIdGenerator.next();
 
   MPSNodeVirtualFile(@NotNull SNodeReference nodePointer) {
     myNode = nodePointer;
@@ -96,7 +102,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
 
   @Override
   @NotNull
-  public VirtualFileSystem getFileSystem() {
+  public NewVirtualFileSystem getFileSystem() {
     return MPSNodesVirtualFileSystem.getInstance();
   }
 
@@ -141,7 +147,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
 
   @Override
   @Nullable
-  public VirtualFile getParent() {
+  public NewVirtualFile getParent() {
     // Returning the parent of this node's model virtial file
     // i.e. a real directory wherein the model file lives
     // Needed for idea scope to work (see PsiSearchScopeUtil.isInScope)
@@ -151,15 +157,40 @@ public class MPSNodeVirtualFile extends VirtualFile {
       return null;
     }
     MPSModelVirtualFile modelVFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(modelRef);
-    if (modelVFile != null) {
-      return modelVFile.getParent();
-    }
+    return modelVFile;
+//    if (modelVFile != null) {
+//      return modelVFile.getParent();
+//    }
+//    return null;
+  }
+
+  @Nullable
+  @Override
+  public NewVirtualFile getCanonicalFile() {
+    return this;
+  }
+
+  @Nullable
+  @Override
+  public NewVirtualFile findChild(@NotNull @NonNls String name) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public NewVirtualFile refreshAndFindChild(@NotNull String name) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public NewVirtualFile findChildIfCached(@NotNull String name) {
     return null;
   }
 
   @Override
   public VirtualFile[] getChildren() {
-    return null;
+    return VirtualFile.EMPTY_ARRAY;
   }
 
   @Override
@@ -196,6 +227,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
     myTimeStamp = newTimeStamp;
   }
 
+
   @Override
   public long getModificationStamp() {
     return myModificationStamp;
@@ -204,4 +236,52 @@ public class MPSNodeVirtualFile extends VirtualFile {
   public void setModificationStamp(long newValue) {
     myModificationStamp = newValue;
   }
+
+  // NewVirtualFile methods
+
+
+  @Override
+  public void setWritable(boolean writable) throws IOException {
+  }
+
+  @Override
+  public void markDirty() {
+  }
+
+  @Override
+  public void markDirtyRecursively() {
+  }
+
+  @Override
+  public boolean isDirty() {
+    return false;
+  }
+
+  @Override
+  public void markClean() {
+  }
+
+  @NotNull
+  @Override
+  public Collection<VirtualFile> getCachedChildren() {
+    return Collections.emptyList();
+  }
+
+  @NotNull
+  @Override
+  public Iterable<VirtualFile> iterInDbChildren() {
+    return Collections.emptyList();
+  }
+
+  @NotNull
+  @Override
+  public CharSequence getNameSequence() {
+    return myName;
+  }
+
+  @Override
+  public int getId() {
+    return myId;
+  }
+
 }
