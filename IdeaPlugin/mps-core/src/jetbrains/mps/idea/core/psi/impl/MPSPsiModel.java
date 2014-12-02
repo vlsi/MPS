@@ -22,6 +22,7 @@ import com.intellij.lang.FileASTNode;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -319,7 +320,26 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
   @Override
   public PsiFile getContainingFile() {
-    return null;
+    // if it's singe-file model then return that file
+    final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
+    final Ref<PsiFile> result = new Ref<PsiFile>(null);
+
+    repository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SModel model = myModelReference.resolve(repository);
+        if (model.getSource() instanceof FileDataSource) {
+          IFile iModelFile = ((FileDataSource) model.getSource()).getFile();
+          VirtualFile vModelFile = VirtualFileManager.getInstance().findFileByUrl("file://" + iModelFile.getPath());
+          PsiFile psiFile = PsiManager.getInstance(getProject()).findFile(vModelFile);
+          result.set(psiFile);
+        }
+        // otherwise null
+      }
+    });
+
+    return result.get();
+
   }
 
   /* package */

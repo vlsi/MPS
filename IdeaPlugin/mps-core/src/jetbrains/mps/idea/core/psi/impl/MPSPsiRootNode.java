@@ -62,9 +62,11 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRea
   private final SNodeId myNodeId;
   private String myName;
   private MPSPsiModel myModel;
+  private boolean separateFile;
 
   public MPSPsiRootNode (SNodeId nodeId, String name,  PsiManager manager) {
     this(nodeId, name, manager, null);
+    separateFile = false;
   }
 
   public MPSPsiRootNode (SNodeId nodeId, String name,  PsiManager manager, @Nullable VirtualFile virtualFile) {
@@ -74,6 +76,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRea
     myViewProvider = virtualFile == null
       ? new SingleRootFileViewProvider(manager, new LightVirtualFile(), false)
       : new SingleRootFileViewProvider(manager, virtualFile);
+    separateFile = true;
   }
 
   @Override
@@ -239,7 +242,11 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRea
   // see PsiSearchScopeUtil.isInScope
   @Override
   public PsiElement getContext() {
-    return null;
+    if (separateFile) {
+      return null;
+    } else {
+      return getParent();
+    }
   }
 
   @Override
