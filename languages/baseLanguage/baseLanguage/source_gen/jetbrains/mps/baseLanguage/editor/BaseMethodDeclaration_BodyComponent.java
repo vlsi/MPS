@@ -87,6 +87,7 @@ public class BaseMethodDeclaration_BodyComponent implements ConceptEditorCompone
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.POSITION, 0, "next-line");
     editorCell.getStyle().putAll(style);
+    DeleteClassifierMember.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

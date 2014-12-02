@@ -222,7 +222,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     editorCell.getStyle().putAll(style);
-    DeleteVariableDeclaration.setCellActions(editorCell, node, editorContext);
+    DeleteClassifierMember.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

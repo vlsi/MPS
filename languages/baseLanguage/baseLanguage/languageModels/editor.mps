@@ -1594,6 +1594,7 @@
         <node concept="3F0ifn" id="h3anWtY" role="3EZMnx">
           <property role="3F0ifm" value="}" />
           <ref role="1k5W1q" node="hFD5_7H" resolve="RightBrace" />
+          <ref role="1ERwB7" node="64WA21b_Rbu" resolve="DeleteClassifierMember" />
         </node>
         <node concept="PMmxH" id="7zuBzrp$swo" role="AHCbl">
           <ref role="PMmxG" node="7zuBzrp$swk" resolve="GenericDeclaration_FoldedCodeBlock_Component" />
@@ -2576,7 +2577,7 @@
       <node concept="3F0ifn" id="hiARCQW" role="3EZMnx">
         <property role="3F0ifm" value=";" />
         <ref role="1k5W1q" node="hFDgi_W" resolve="Semicolon" />
-        <ref role="1ERwB7" node="64WA21b_Rbu" resolve="DeleteVariableDeclaration" />
+        <ref role="1ERwB7" node="64WA21b_Rbu" resolve="DeleteClassifierMember" />
         <node concept="ljvvj" id="i0DzcnC" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -5117,7 +5118,7 @@
       <node concept="3F0ifn" id="hiARKer" role="3EZMnx">
         <property role="3F0ifm" value=";" />
         <ref role="1k5W1q" node="hFDgi_W" resolve="Semicolon" />
-        <ref role="1ERwB7" node="64WA21b_Rbu" resolve="DeleteVariableDeclaration" />
+        <ref role="1ERwB7" node="64WA21b_Rbu" resolve="DeleteClassifierMember" />
         <node concept="ljvvj" id="i0I1pxm" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -5516,6 +5517,7 @@
         <node concept="3F0ifn" id="fMVQ5Op" role="3EZMnx">
           <property role="3F0ifm" value="}" />
           <ref role="1k5W1q" node="hFD5_7H" resolve="RightBrace" />
+          <ref role="1ERwB7" node="64WA21b_Rbu" resolve="DeleteClassifierMember" />
         </node>
         <node concept="pkWqt" id="6dNQRbCEha5" role="2xiA_6">
           <node concept="3clFbS" id="6dNQRbCEha6" role="2VODD2">
@@ -6011,6 +6013,7 @@
         <node concept="3F0ifn" id="g7HPBW$" role="3EZMnx">
           <property role="3F0ifm" value="}" />
           <ref role="1k5W1q" node="hFD5_7H" resolve="RightBrace" />
+          <ref role="1ERwB7" node="64WA21b_Rbu" resolve="DeleteClassifierMember" />
         </node>
         <node concept="pkWqt" id="1_9L3A4Gl1G" role="2xiA_6">
           <node concept="3clFbS" id="1_9L3A4Gl1H" role="2VODD2">
@@ -14717,6 +14720,7 @@
       <node concept="3F0ifn" id="hLESnDI" role="3EZMnx">
         <property role="3F0ifm" value="}" />
         <ref role="1k5W1q" node="hFD5_7H" resolve="RightBrace" />
+        <ref role="1ERwB7" node="64WA21b_Rbu" resolve="DeleteClassifierMember" />
         <node concept="ljvvj" id="i0Dam$N" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -15451,6 +15455,7 @@
       <node concept="3F0ifn" id="hLPjyNV" role="3EZMnx">
         <property role="3F0ifm" value="static" />
         <ref role="1k5W1q" node="hgVS8CF" resolve="KeyWord" />
+        <ref role="1ERwB7" node="64WA21b_Rbu" resolve="DeleteClassifierMember" />
       </node>
       <node concept="3F0ifn" id="hLPj_8V" role="3EZMnx">
         <property role="3F0ifm" value="{" />
@@ -15471,6 +15476,7 @@
       <node concept="3F0ifn" id="hLPejVE" role="3EZMnx">
         <property role="3F0ifm" value="}" />
         <ref role="1k5W1q" node="hFD5_7H" resolve="RightBrace" />
+        <ref role="1ERwB7" node="64WA21b_Rbu" resolve="DeleteClassifierMember" />
         <node concept="ljvvj" id="i0DaqJW" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -19648,6 +19654,7 @@
       <node concept="3F0ifn" id="5UYpxeVafBd" role="3EZMnx">
         <property role="3F0ifm" value="}" />
         <ref role="1k5W1q" node="hFD5_7H" resolve="RightBrace" />
+        <ref role="1ERwB7" node="64WA21b_Rbu" resolve="DeleteClassifierMember" />
         <node concept="LD5Jc" id="5UYpxeVajTR" role="3F10Kt">
           <property role="LDHlv" value="next-line" />
         </node>
@@ -27480,17 +27487,42 @@
   </node>
   <node concept="1h_SRR" id="64WA21b_Rbu">
     <property role="3GE5qa" value="classifiers.members" />
-    <property role="TrG5h" value="DeleteVariableDeclaration" />
-    <ref role="1h_SK9" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
+    <property role="TrG5h" value="DeleteClassifierMember" />
+    <ref role="1h_SK9" to="tpee:h9ngReX" resolve="ClassifierMember" />
     <node concept="1hA7zw" id="64WA21b_TV7" role="1h_SK8">
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="64WA21b_TV8" role="1hA7z_">
         <node concept="3clFbS" id="64WA21b_TV9" role="2VODD2">
-          <node concept="3clFbF" id="64WA21bAgu0" role="3cqZAp">
-            <node concept="2OqwBi" id="64WA21bAhdS" role="3clFbG">
-              <node concept="0IXxy" id="64WA21bAgtZ" role="2Oq$k0" />
-              <node concept="2DeJnW" id="64WA21bAspU" role="2OqNvi">
-                <ref role="1_rbq0" to="tpee:1hodSy9TH5A" resolve="PlaceholderMember" />
+          <node concept="3clFbJ" id="54EXSX9OUUZ" role="3cqZAp">
+            <node concept="3clFbS" id="54EXSX9OUV2" role="3clFbx">
+              <node concept="3clFbF" id="64WA21bAgu0" role="3cqZAp">
+                <node concept="2OqwBi" id="64WA21bAhdS" role="3clFbG">
+                  <node concept="0IXxy" id="64WA21bAgtZ" role="2Oq$k0" />
+                  <node concept="2DeJnW" id="64WA21bAspU" role="2OqNvi">
+                    <ref role="1_rbq0" to="tpee:1hodSy9TH5A" resolve="PlaceholderMember" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="54EXSX9P5Wu" role="3clFbw">
+              <node concept="2OqwBi" id="54EXSX9OVCY" role="2Oq$k0">
+                <node concept="0IXxy" id="54EXSX9OUVL" role="2Oq$k0" />
+                <node concept="1mfA1w" id="54EXSX9P5Jl" role="2OqNvi" />
+              </node>
+              <node concept="1mIQ4w" id="54EXSX9P69E" role="2OqNvi">
+                <node concept="chp4Y" id="54EXSX9P6b3" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                </node>
+              </node>
+            </node>
+            <node concept="9aQIb" id="54EXSX9P6jR" role="9aQIa">
+              <node concept="3clFbS" id="54EXSX9P6jS" role="9aQI4">
+                <node concept="3clFbF" id="54EXSX9P6o0" role="3cqZAp">
+                  <node concept="2OqwBi" id="54EXSX9P6pK" role="3clFbG">
+                    <node concept="0IXxy" id="54EXSX9P6nZ" role="2Oq$k0" />
+                    <node concept="1PgB_6" id="54EXSX9P6Wp" role="2OqNvi" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
