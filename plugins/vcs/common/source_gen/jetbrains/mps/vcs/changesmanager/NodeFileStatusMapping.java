@@ -8,14 +8,13 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -30,8 +29,7 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -41,9 +39,11 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   private final CurrentDifferenceRegistry myRegistry;
   private final Map<SNodeReference, FileStatus> myFileStatusMap = MapSequence.fromMap(new HashMap<SNodeReference, FileStatus>());
   private final CurrentDifferenceListener myGlobalListener = new NodeFileStatusMapping.MyGlobalListener();
-  public NodeFileStatusMapping(Project project, CurrentDifferenceRegistry registry) {
-    super(project);
+  private final MPSProject myMPSProject;
+  public NodeFileStatusMapping(MPSProject project, CurrentDifferenceRegistry registry) {
+    super(project.getProject());
     myRegistry = registry;
+    myMPSProject = project;
   }
   @Override
   public void projectOpened() {
@@ -54,11 +54,11 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     myRegistry.removeGlobalDifferenceListener(myGlobalListener);
   }
   private void statusChanged(@NotNull final SNodeReference nodePointer) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myMPSProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         FileStatusManager fsm = FileStatusManager.getInstance(myProject);
         MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
-        SNode currentNode = ((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance());
+        SNode currentNode = nodePointer.resolve(MPSModuleRepository.getInstance());
         if (currentNode == null) {
           return;
         }
@@ -79,7 +79,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     });
   }
   private boolean calcStatus(@NotNull final SNodeReference root) {
-    FileStatus status = ModelAccess.instance().runReadAction(new Computable<FileStatus>() {
+    ComputeRunnable<FileStatus> cr = new ComputeRunnable<FileStatus>(new Computable<FileStatus>() {
       public FileStatus compute() {
         SModel m = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
         if (m instanceof EditableSModel && m.getSource() instanceof FileDataSource && !(m.isReadOnly())) {
@@ -88,10 +88,10 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
             return FileStatus.MERGED_WITH_CONFLICTS;
           }
           CurrentDifference diff = myRegistry.getCurrentDifference(model);
-          List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0j(diff.getChangeSet());
+          List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0k(diff.getChangeSet());
           List<ModelChange> rootChanges = ListSequence.fromList(modelChanges).where(new IWhereFilter<ModelChange>() {
             public boolean accept(ModelChange ch) {
-              return ((SNodePointer) root).getNodeId().equals(ch.getRootId());
+              return root.getNodeId().equals(ch.getRootId());
             }
           }).toListSequence();
           if (ListSequence.fromList(rootChanges).count() != 0) {
@@ -111,6 +111,8 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
         return FileStatus.NOT_CHANGED;
       }
     });
+    myMPSProject.getModelAccess().runReadAction(cr);
+    FileStatus status = cr.getResult();
     synchronized (myFileStatusMap) {
       if (MapSequence.fromMap(myFileStatusMap).get(root) != status) {
         MapSequence.fromMap(myFileStatusMap).put(root, status);
@@ -122,29 +124,25 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   }
   @Nullable
   public FileStatus getStatus(@NotNull final SNode root) {
-    final Wrappers._T<SNodeReference> nodePointer = new Wrappers._T<SNodeReference>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final SNodeReference nodePointer = new SNodePointer(root);
+    myRegistry.getCommandQueue().runTask(new Runnable() {
       public void run() {
-        nodePointer.value = new SNodePointer(root);
-        myRegistry.getCommandQueue().runTask(new Runnable() {
+        myMPSProject.getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                SModel md = null;
-                if (SNodeUtil.isAccessible(root, MPSModuleRepository.getInstance())) {
-                  md = SNodeOperations.getModel(root);
-                }
-                if (md instanceof EditableSModel && !(md.isReadOnly())) {
-                  myRegistry.getCurrentDifference((EditableSModel) md).setEnabled(true);
-                }
-              }
-            });
+            SModel md = null;
+            SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
+            if (node != null) {
+              md = SNodeOperations.getModel(root);
+            }
+            if (md instanceof EditableSModel && !(md.isReadOnly())) {
+              myRegistry.getCurrentDifference((EditableSModel) md).setEnabled(true);
+            }
           }
         });
       }
     });
     synchronized (myFileStatusMap) {
-      return MapSequence.fromMap(myFileStatusMap).get(nodePointer.value);
+      return MapSequence.fromMap(myFileStatusMap).get(nodePointer);
     }
   }
   @Nullable
@@ -180,7 +178,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       addAffectedRoot(change);
     }
   }
-  private static List<ModelChange> check_onkh7z_a0d0b0a0a0a0j(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_onkh7z_a0d0b0a0a0a0k(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }

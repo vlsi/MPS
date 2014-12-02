@@ -23,7 +23,6 @@ import jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.Typ
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
@@ -368,7 +367,7 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_7830092509120089906(final PropertyMacroContext _context) {
     SNode rule = _context.getOriginalCopiedInputNode(((SNode) _context.getVariable("var:rule")));
-    return ((SNodePointer) rule.getReference()).getNodeId().toString();
+    return String.valueOf(rule.getReference().getNodeId());
   }
   public static Object propertyMacro_GetPropertyValue_7806648416361380890(final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4a641fL, 0x11ff554a52cL, "leftIsExact"));
@@ -388,7 +387,7 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_7830092509120127012(final PropertyMacroContext _context) {
     SNode rule = _context.getOriginalCopiedInputNode(_context.getNode());
-    return ((SNodePointer) rule.getReference()).getNodeId().toString();
+    return String.valueOf(rule.getReference().getNodeId());
   }
   public static Object propertyMacro_GetPropertyValue_7806648416361380827(final PropertyMacroContext _context) {
     return _context.createUniqueName("CustomOverloadedOperationsTypesProvider", null);
