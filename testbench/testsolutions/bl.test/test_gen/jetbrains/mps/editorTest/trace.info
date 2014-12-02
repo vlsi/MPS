@@ -1013,20 +1013,21 @@
       <node id="403806536168445189" at="28,76,29,76" concept="2" />
       <node id="403806536168445193" at="29,76,30,76" concept="2" />
       <node id="1315230867830149623" at="30,76,31,77" concept="2" />
+      <node id="5732053020524716710" at="31,77,32,77" concept="2" />
       <node id="1236090523881" at="12,0,14,0" concept="1" trace="SideDeleteAtEndWithBackSpace_Test#()V" />
       <node id="1236090523881" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="1236090523881" at="14,0,19,0" concept="5" trace="test_SideDeleteAtEndWithBackSpace#()V" />
-      <node id="1236090523881" at="23,0,33,0" concept="5" trace="testMethodImpl#()V" />
+      <node id="1236090523881" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
       <scope id="1236090523881" at="12,46,12,46" />
       <scope id="1236090523881" at="21,23,21,23" />
       <scope id="1236090523881" at="12,0,14,0" />
       <scope id="1236090523881" at="15,68,17,109" />
       <scope id="1236090523881" at="21,0,23,0" />
       <scope id="1236090523881" at="14,0,19,0" />
-      <scope id="1236090523881" at="24,51,31,77" />
-      <scope id="1236090523881" at="23,0,33,0" />
-      <unit id="1236090523881" at="19,0,34,0" name="jetbrains.mps.editorTest.SideDeleteAtEndWithBackSpace_Test$TestBody" />
-      <unit id="1236090523881" at="10,0,35,0" name="jetbrains.mps.editorTest.SideDeleteAtEndWithBackSpace_Test" />
+      <scope id="1236090523881" at="24,51,32,77" />
+      <scope id="1236090523881" at="23,0,34,0" />
+      <unit id="1236090523881" at="19,0,35,0" name="jetbrains.mps.editorTest.SideDeleteAtEndWithBackSpace_Test$TestBody" />
+      <unit id="1236090523881" at="10,0,36,0" name="jetbrains.mps.editorTest.SideDeleteAtEndWithBackSpace_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1236160248682577253">
@@ -7404,6 +7405,182 @@
       <scope id="5681344316174495391" at="23,0,28,0" />
       <unit id="5681344316174495391" at="19,0,29,0" name="jetbrains.mps.editorTest.psvmLiveTemplate_Test$TestBody" />
       <unit id="5681344316174495391" at="10,0,30,0" name="jetbrains.mps.editorTest.psvmLiveTemplate_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5732053020525090668">
+    <file name="SideDeleteStaticInitializerAtEndWithBackSpace_Test.java">
+      <node id="5732053020525090668" at="15,85,16,107" concept="2" />
+      <node id="5732053020525090668" at="16,107,17,126" concept="2" />
+      <node id="5732053020525090668" at="24,51,25,63" concept="2" />
+      <node id="5732053020525090670" at="25,63,26,77" concept="2" />
+      <node id="5732053020525090668" at="12,0,14,0" concept="1" trace="SideDeleteStaticInitializerAtEndWithBackSpace_Test#()V" />
+      <node id="5732053020525090668" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5732053020525090668" at="14,0,19,0" concept="5" trace="test_SideDeleteStaticInitializerAtEndWithBackSpace#()V" />
+      <node id="5732053020525090668" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5732053020525090668" at="12,63,12,63" />
+      <scope id="5732053020525090668" at="21,23,21,23" />
+      <scope id="5732053020525090668" at="12,0,14,0" />
+      <scope id="5732053020525090668" at="15,85,17,126" />
+      <scope id="5732053020525090668" at="21,0,23,0" />
+      <scope id="5732053020525090668" at="24,51,26,77" />
+      <scope id="5732053020525090668" at="14,0,19,0" />
+      <scope id="5732053020525090668" at="23,0,28,0" />
+      <unit id="5732053020525090668" at="19,0,29,0" name="jetbrains.mps.editorTest.SideDeleteStaticInitializerAtEndWithBackSpace_Test$TestBody" />
+      <unit id="5732053020525090668" at="10,0,30,0" name="jetbrains.mps.editorTest.SideDeleteStaticInitializerAtEndWithBackSpace_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5732053020525121378">
+    <file name="SideDeleteStaticInitializer_Test.java">
+      <node id="5732053020525121378" at="15,67,16,107" concept="2" />
+      <node id="5732053020525121378" at="16,107,17,108" concept="2" />
+      <node id="5732053020525121378" at="24,51,25,63" concept="2" />
+      <node id="5732053020525121380" at="25,63,26,74" concept="2" />
+      <node id="5732053020525121378" at="12,0,14,0" concept="1" trace="SideDeleteStaticInitializer_Test#()V" />
+      <node id="5732053020525121378" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5732053020525121378" at="14,0,19,0" concept="5" trace="test_SideDeleteStaticInitializer#()V" />
+      <node id="5732053020525121378" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5732053020525121378" at="12,45,12,45" />
+      <scope id="5732053020525121378" at="21,23,21,23" />
+      <scope id="5732053020525121378" at="12,0,14,0" />
+      <scope id="5732053020525121378" at="15,67,17,108" />
+      <scope id="5732053020525121378" at="21,0,23,0" />
+      <scope id="5732053020525121378" at="24,51,26,74" />
+      <scope id="5732053020525121378" at="14,0,19,0" />
+      <scope id="5732053020525121378" at="23,0,28,0" />
+      <unit id="5732053020525121378" at="19,0,29,0" name="jetbrains.mps.editorTest.SideDeleteStaticInitializer_Test$TestBody" />
+      <unit id="5732053020525121378" at="10,0,30,0" name="jetbrains.mps.editorTest.SideDeleteStaticInitializer_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5732053020525122215">
+    <file name="SideDeleteMethod_Test.java">
+      <node id="5732053020525122215" at="15,56,16,107" concept="2" />
+      <node id="5732053020525122215" at="16,107,17,97" concept="2" />
+      <node id="5732053020525122215" at="24,51,25,63" concept="2" />
+      <node id="5732053020525122217" at="25,63,26,74" concept="2" />
+      <node id="5732053020525122215" at="12,0,14,0" concept="1" trace="SideDeleteMethod_Test#()V" />
+      <node id="5732053020525122215" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5732053020525122215" at="14,0,19,0" concept="5" trace="test_SideDeleteMethod#()V" />
+      <node id="5732053020525122215" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5732053020525122215" at="12,34,12,34" />
+      <scope id="5732053020525122215" at="21,23,21,23" />
+      <scope id="5732053020525122215" at="12,0,14,0" />
+      <scope id="5732053020525122215" at="15,56,17,97" />
+      <scope id="5732053020525122215" at="21,0,23,0" />
+      <scope id="5732053020525122215" at="24,51,26,74" />
+      <scope id="5732053020525122215" at="14,0,19,0" />
+      <scope id="5732053020525122215" at="23,0,28,0" />
+      <unit id="5732053020525122215" at="19,0,29,0" name="jetbrains.mps.editorTest.SideDeleteMethod_Test$TestBody" />
+      <unit id="5732053020525122215" at="10,0,30,0" name="jetbrains.mps.editorTest.SideDeleteMethod_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5732053020525161197">
+    <file name="SideDeleteMethodAtEndWithBackSpace_Test.java">
+      <node id="5732053020525161197" at="15,74,16,107" concept="2" />
+      <node id="5732053020525161197" at="16,107,17,115" concept="2" />
+      <node id="5732053020525161197" at="24,51,25,63" concept="2" />
+      <node id="5732053020525161199" at="25,63,26,77" concept="2" />
+      <node id="5732053020525161197" at="12,0,14,0" concept="1" trace="SideDeleteMethodAtEndWithBackSpace_Test#()V" />
+      <node id="5732053020525161197" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5732053020525161197" at="14,0,19,0" concept="5" trace="test_SideDeleteMethodAtEndWithBackSpace#()V" />
+      <node id="5732053020525161197" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5732053020525161197" at="12,52,12,52" />
+      <scope id="5732053020525161197" at="21,23,21,23" />
+      <scope id="5732053020525161197" at="12,0,14,0" />
+      <scope id="5732053020525161197" at="15,74,17,115" />
+      <scope id="5732053020525161197" at="21,0,23,0" />
+      <scope id="5732053020525161197" at="24,51,26,77" />
+      <scope id="5732053020525161197" at="14,0,19,0" />
+      <scope id="5732053020525161197" at="23,0,28,0" />
+      <unit id="5732053020525161197" at="19,0,29,0" name="jetbrains.mps.editorTest.SideDeleteMethodAtEndWithBackSpace_Test$TestBody" />
+      <unit id="5732053020525161197" at="10,0,30,0" name="jetbrains.mps.editorTest.SideDeleteMethodAtEndWithBackSpace_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5732053020525161406">
+    <file name="SideDeleteInterface_Test.java">
+      <node id="5732053020525161406" at="15,59,16,107" concept="2" />
+      <node id="5732053020525161406" at="16,107,17,100" concept="2" />
+      <node id="5732053020525161406" at="24,51,25,63" concept="2" />
+      <node id="5732053020525161408" at="25,63,26,74" concept="2" />
+      <node id="5732053020525161406" at="12,0,14,0" concept="1" trace="SideDeleteInterface_Test#()V" />
+      <node id="5732053020525161406" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5732053020525161406" at="14,0,19,0" concept="5" trace="test_SideDeleteInterface#()V" />
+      <node id="5732053020525161406" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5732053020525161406" at="12,37,12,37" />
+      <scope id="5732053020525161406" at="21,23,21,23" />
+      <scope id="5732053020525161406" at="12,0,14,0" />
+      <scope id="5732053020525161406" at="15,59,17,100" />
+      <scope id="5732053020525161406" at="21,0,23,0" />
+      <scope id="5732053020525161406" at="24,51,26,74" />
+      <scope id="5732053020525161406" at="14,0,19,0" />
+      <scope id="5732053020525161406" at="23,0,28,0" />
+      <unit id="5732053020525161406" at="19,0,29,0" name="jetbrains.mps.editorTest.SideDeleteInterface_Test$TestBody" />
+      <unit id="5732053020525161406" at="10,0,30,0" name="jetbrains.mps.editorTest.SideDeleteInterface_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5732053020525161805">
+    <file name="SideDeleteInterfaceAtEndWithBackSpace_Test.java">
+      <node id="5732053020525161805" at="15,77,16,107" concept="2" />
+      <node id="5732053020525161805" at="16,107,17,118" concept="2" />
+      <node id="5732053020525161805" at="24,51,25,63" concept="2" />
+      <node id="5732053020525161807" at="25,63,26,77" concept="2" />
+      <node id="5732053020525161805" at="12,0,14,0" concept="1" trace="SideDeleteInterfaceAtEndWithBackSpace_Test#()V" />
+      <node id="5732053020525161805" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5732053020525161805" at="14,0,19,0" concept="5" trace="test_SideDeleteInterfaceAtEndWithBackSpace#()V" />
+      <node id="5732053020525161805" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5732053020525161805" at="12,55,12,55" />
+      <scope id="5732053020525161805" at="21,23,21,23" />
+      <scope id="5732053020525161805" at="12,0,14,0" />
+      <scope id="5732053020525161805" at="15,77,17,118" />
+      <scope id="5732053020525161805" at="21,0,23,0" />
+      <scope id="5732053020525161805" at="24,51,26,77" />
+      <scope id="5732053020525161805" at="14,0,19,0" />
+      <scope id="5732053020525161805" at="23,0,28,0" />
+      <unit id="5732053020525161805" at="19,0,29,0" name="jetbrains.mps.editorTest.SideDeleteInterfaceAtEndWithBackSpace_Test$TestBody" />
+      <unit id="5732053020525161805" at="10,0,30,0" name="jetbrains.mps.editorTest.SideDeleteInterfaceAtEndWithBackSpace_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5732053020525161952">
+    <file name="SideDeleteEnum_Test.java">
+      <node id="5732053020525161952" at="15,54,16,107" concept="2" />
+      <node id="5732053020525161952" at="16,107,17,95" concept="2" />
+      <node id="5732053020525161952" at="24,51,25,63" concept="2" />
+      <node id="5732053020525161954" at="25,63,26,74" concept="2" />
+      <node id="5732053020525161952" at="12,0,14,0" concept="1" trace="SideDeleteEnum_Test#()V" />
+      <node id="5732053020525161952" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5732053020525161952" at="14,0,19,0" concept="5" trace="test_SideDeleteEnum#()V" />
+      <node id="5732053020525161952" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5732053020525161952" at="12,32,12,32" />
+      <scope id="5732053020525161952" at="21,23,21,23" />
+      <scope id="5732053020525161952" at="12,0,14,0" />
+      <scope id="5732053020525161952" at="15,54,17,95" />
+      <scope id="5732053020525161952" at="21,0,23,0" />
+      <scope id="5732053020525161952" at="24,51,26,74" />
+      <scope id="5732053020525161952" at="14,0,19,0" />
+      <scope id="5732053020525161952" at="23,0,28,0" />
+      <unit id="5732053020525161952" at="19,0,29,0" name="jetbrains.mps.editorTest.SideDeleteEnum_Test$TestBody" />
+      <unit id="5732053020525161952" at="10,0,30,0" name="jetbrains.mps.editorTest.SideDeleteEnum_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5732053020525162664">
+    <file name="SideDeleteEnumAtEndWithBackSpace_Test.java">
+      <node id="5732053020525162664" at="15,72,16,107" concept="2" />
+      <node id="5732053020525162664" at="16,107,17,113" concept="2" />
+      <node id="5732053020525162664" at="24,51,25,63" concept="2" />
+      <node id="5732053020525162666" at="25,63,26,77" concept="2" />
+      <node id="5732053020525162664" at="12,0,14,0" concept="1" trace="SideDeleteEnumAtEndWithBackSpace_Test#()V" />
+      <node id="5732053020525162664" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5732053020525162664" at="14,0,19,0" concept="5" trace="test_SideDeleteEnumAtEndWithBackSpace#()V" />
+      <node id="5732053020525162664" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5732053020525162664" at="12,50,12,50" />
+      <scope id="5732053020525162664" at="21,23,21,23" />
+      <scope id="5732053020525162664" at="12,0,14,0" />
+      <scope id="5732053020525162664" at="15,72,17,113" />
+      <scope id="5732053020525162664" at="21,0,23,0" />
+      <scope id="5732053020525162664" at="24,51,26,77" />
+      <scope id="5732053020525162664" at="14,0,19,0" />
+      <scope id="5732053020525162664" at="23,0,28,0" />
+      <unit id="5732053020525162664" at="19,0,29,0" name="jetbrains.mps.editorTest.SideDeleteEnumAtEndWithBackSpace_Test$TestBody" />
+      <unit id="5732053020525162664" at="10,0,30,0" name="jetbrains.mps.editorTest.SideDeleteEnumAtEndWithBackSpace_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5772383102109108754">

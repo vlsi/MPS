@@ -22,12 +22,13 @@ public class SideDeleteAtEndWithBackSpace_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4784396099375357250", "4784396099375331532");
+      initEditor("4784396099375357250", "5732053020524716262");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
