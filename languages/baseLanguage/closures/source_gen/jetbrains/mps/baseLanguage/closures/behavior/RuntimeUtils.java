@@ -15,6 +15,8 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import java.util.Set;
 import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -49,6 +51,16 @@ public class RuntimeUtils {
             ClassLoaderManager.getInstance().removeClassesHandler(this);
           }
         });
+
+        SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
+          @Override
+          public void modelsReplaced(Set<SModel> set) {
+            synchronized (RuntimeUtils.class) {
+              RUNTIME_CLASSIFIERS = null;
+            }
+            SModelRepository.getInstance().addModelRepositoryListener(this);
+          }
+        });
       }
     }
     return RUNTIME_CLASSIFIERS;
@@ -79,6 +91,16 @@ public class RuntimeUtils {
               STATIC_RUNTIME_CLASSIFIERS = null;
             }
             ClassLoaderManager.getInstance().removeClassesHandler(this);
+          }
+        });
+
+        SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
+          @Override
+          public void modelsReplaced(Set<SModel> set) {
+            synchronized (RuntimeUtils.class) {
+              STATIC_RUNTIME_CLASSIFIERS = null;
+            }
+            SModelRepository.getInstance().addModelRepositoryListener(this);
           }
         });
       }
