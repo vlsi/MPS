@@ -88,7 +88,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.GeneratorParameterReference_BehaviorDescriptor" />
     </file>
     <file name="IGeneratorParameter_BehaviorDescriptor.java">
-      <unit at="7,0,9,0" name="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor" />
+      <unit at="8,0,11,0" name="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor" />
     </file>
     <file name="IParameterizedTemplate_BehaviorDescriptor.java">
       <unit at="7,0,9,0" name="jetbrains.mps.lang.generator.behavior.IParameterizedTemplate_BehaviorDescriptor" />
@@ -220,7 +220,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentParameterExpression_BehaviorDescriptor" />
     </file>
     <file name="TemplateArgumentPatternRef_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_BehaviorDescriptor" />
+      <unit at="8,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_BehaviorDescriptor" />
     </file>
     <file name="TemplateArgumentPatternVarRefExpression_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternVarRefExpression_BehaviorDescriptor" />
