@@ -20,23 +20,25 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 final class GenerationTracerTree extends MPSTree {
   private final GenerationTracerView myView;
   private TraceNodeUI myRootTracerNode;
   private Project myProject;
+  private final SNodeId myUserFocus;
 
-  public GenerationTracerTree(@NotNull GenerationTracerView view, @NotNull TraceNodeUI root, @NotNull Project project) {
+  public GenerationTracerTree(@NotNull GenerationTracerView view, @NotNull TraceNodeUI root, @NotNull Project project, @Nullable SNodeReference userFocus) {
     myView = view;
     myRootTracerNode = root;
     myProject = project;
+    myUserFocus = userFocus == null ? null : userFocus.getNodeId();
   }
 
   void setRoot(@NotNull TraceNodeUI root) {
@@ -48,8 +50,7 @@ final class GenerationTracerTree extends MPSTree {
   }
 
   private static MPSTreeNode create(TraceNodeUI n) {
-    MPSTreeNode treeNode = new MPSTreeNode(null);
-    treeNode.setUserObject(n);
+    MPSTreeNode treeNode = new MPSTreeNode(n);
     treeNode.setNodeIdentifier(n.getNodeIdentifier());
     treeNode.setText(n.getText());
     final SNodeReference target = n.getNavigateTarget();
@@ -79,22 +80,24 @@ final class GenerationTracerTree extends MPSTree {
   @Override
   protected void autoscroll(@NotNull MPSTreeNode node) {
     TraceNodeUI traceNode = (TraceNodeUI) node.getUserObject();
-    ModelAccess.instance().runWriteInEDT(new Navigate(myProject, traceNode.getNavigateTarget()));
+    new Navigate(myProject, traceNode.getNavigateTarget(), myUserFocus).go();
   }
 
   @Override
   protected void doubleClick(@NotNull MPSTreeNode node) {
     TraceNodeUI traceNode = (TraceNodeUI) node.getUserObject();
-    ModelAccess.instance().runWriteInEDT(new Navigate(myProject, traceNode.getNavigateTarget()));
+    new Navigate(myProject, traceNode.getNavigateTarget(), myUserFocus).go();
   }
 
   private static final class Navigate implements Runnable {
     private final Project myProject;
     private final SNodeReference myNode;
+    private final SNodeId myTrueTarget;
 
-    public Navigate(Project mpsProject, SNodeReference node) {
+    Navigate(Project mpsProject, SNodeReference node, @Nullable SNodeId mostSpecificNode) {
       myProject = mpsProject;
       myNode = node;
+      myTrueTarget = mostSpecificNode;
     }
 
     @Override
@@ -106,9 +109,24 @@ final class GenerationTracerTree extends MPSTree {
       if (node == null) {
         return;
       }
-      IOperationContext context = new ProjectOperationContext(myProject);
+      if (myTrueTarget != null) {
+        // tracer could not report node of interest as it records input and output, while user might select any child of a node tracer keeps record for.
+        // hence, we try to find node with id matching to the one of the node selected by user, in assumption tracer never goes down hierarchy, but rather
+        // upwards, finding possible parent. Here, we walk the opposite direction trying to find matches for node of true user interest.
+        for (SNode n : SNodeUtil.getDescendants(node)) {
+          if (myTrueTarget.equals(n.getNodeId())) {
+            node = n;
+            break;
+          }
+        }
+      }
+
       // do not select top-level nodes - don't know the reason, but this is the way it used to be
-      NavigationSupport.getInstance().openNode(context, node, true, node.getModel() == null || node.getParent() != null);
+      NavigationSupport.getInstance().openNode(myProject, node, true, node.getModel() == null || node.getParent() != null);
+    }
+
+    /*package*/ void go() {
+      myProject.getModelAccess().runWriteInEDT(this);
     }
   }
 }

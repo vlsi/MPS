@@ -20,6 +20,7 @@ import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.ide.devkit.generator.TraceNodeUI.Kind;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.containers.MultiMap;
@@ -105,7 +106,18 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
 
   @Override
   public void beginStep(@NotNull SModelReference input, @NotNull SModelReference output) {
-    myStepNode = new TraceNodeUI(String.format("Phase %s->%s", input.getModelName(), output.getModelName()), Icons.COLLECTION, null);
+    final String modelName1 = input.getModelName();
+    final String modelName2 = output.getModelName();
+    final String from;
+    final String to;
+    if (SModelStereotype.withoutStereotype(modelName1).equals(SModelStereotype.withoutStereotype(modelName2))) {
+      from = SModelStereotype.getStereotype(modelName1);
+      to = SModelStereotype.getStereotype(modelName2);
+    } else {
+      from = modelName1;
+      to = modelName2;
+    }
+    myStepNode = new TraceNodeUI(String.format("Phase %s->%s", from, to), Icons.COLLECTION, null);
     myStepChange = new StepChanges();
   }
 
