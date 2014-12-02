@@ -559,10 +559,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_7635689088545006189(final PropertyMacroContext _context) {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(_context.getOriginalInputModel());
   }
-  public static Object propertyMacro_GetPropertyValue_2990947723228973244(final PropertyMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).count();
-  }
-  public static Object propertyMacro_GetPropertyValue_2990947723229288051(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_2100259113989702578(final PropertyMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).count();
   }
   public static Object propertyMacro_GetPropertyValue_2990947723228973264(final PropertyMacroContext _context) {

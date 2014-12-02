@@ -25680,14 +25680,6 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="6ctrts7Lj5h" role="jymVt">
-      <property role="TrG5h" value="templateModule" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="6ctrts7Lj5i" role="1B3o_S" />
-      <node concept="3uibUv" id="6ctrts7Lj5k" role="1tU5fm">
-        <ref role="3uigEE" to="icf3:~TemplateModule" resolve="TemplateModule" />
-      </node>
-    </node>
     <node concept="312cEg" id="1yZSNuVaMiQ" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -25700,6 +25692,12 @@
     </node>
     <node concept="3clFbW" id="2ELICwm$CKn" role="jymVt">
       <node concept="3clFbS" id="2ELICwm$CKq" role="3clF47">
+        <node concept="XkiVB" id="2XRu$uixWTo" role="3cqZAp">
+          <ref role="37wK5l" to="icf3:~BaseTemplateModel.&lt;init&gt;(jetbrains.mps.generator.runtime.TemplateModule)" resolve="BaseTemplateModel" />
+          <node concept="37vLTw" id="2XRu$uixYGK" role="37wK5m">
+            <ref role="3cqZAo" node="6ctrts7Lj5f" resolve="module" />
+          </node>
+        </node>
         <node concept="3clFbF" id="2ELICwm$Dch" role="3cqZAp">
           <node concept="37vLTI" id="2ELICwm$Dcj" role="3clFbG">
             <node concept="2YIFZM" id="6BRqGkU3ia6" role="37vLTx">
@@ -25818,16 +25816,6 @@
             </node>
             <node concept="37vLTw" id="2BHiRxeuyOO" role="37vLTJ">
               <ref role="3cqZAo" node="2ELICwm$DbZ" resolve="switches" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6ctrts7Lj5m" role="3cqZAp">
-          <node concept="37vLTI" id="6ctrts7Lj5t" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgm9V9" role="37vLTx">
-              <ref role="3cqZAo" node="6ctrts7Lj5f" resolve="module" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxeul_d" role="37vLTJ">
-              <ref role="3cqZAo" node="6ctrts7Lj5h" resolve="templateModule" />
             </node>
           </node>
         </node>
@@ -25996,80 +25984,39 @@
         </node>
         <node concept="3clFbJ" id="2A1YLI8OSyN" role="3cqZAp">
           <node concept="3clFbS" id="2A1YLI8OSyO" role="3clFbx">
-            <node concept="3clFbJ" id="2A1YLI8OSyP" role="3cqZAp">
-              <node concept="3y3z36" id="2A1YLI8OSyQ" role="3clFbw">
-                <node concept="2OqwBi" id="2A1YLI8OSyR" role="3uHU7B">
-                  <node concept="37vLTw" id="2A1YLI8OSyS" role="2Oq$k0">
-                    <ref role="3cqZAo" node="imtYTLqxeh" resolve="arguments" />
-                  </node>
-                  <node concept="1Rwk04" id="2A1YLI8OSyT" role="2OqNvi" />
+            <node concept="3clFbF" id="1O_BC_pCoOW" role="3cqZAp">
+              <node concept="2YIFZM" id="1O_BC_pCry5" role="3clFbG">
+                <ref role="37wK5l" to="icf3:~TemplateUtil.assertTemplateParametersCount(org.jetbrains.mps.openapi.model.SNodeReference,int,int):void" resolve="assertTemplateParametersCount" />
+                <ref role="1Pybhc" to="icf3:~TemplateUtil" resolve="TemplateUtil" />
+                <node concept="37vLTw" id="1O_BC_pCvSM" role="37wK5m">
+                  <ref role="3cqZAo" node="imtYTLqxef" resolve="template" />
                 </node>
-                <node concept="3cmrfG" id="2A1YLI8OSyU" role="3uHU7w">
+                <node concept="3cmrfG" id="1O_BC_pCweK" role="37wK5m">
                   <property role="3cmrfH" value="0" />
-                  <node concept="17Uvod" id="2A1YLI8OSyV" role="lGtFl">
+                  <node concept="17Uvod" id="1O_BC_pCweL" role="lGtFl">
                     <property role="2qtEX9" value="value" />
-                    <node concept="3zFVjK" id="2A1YLI8OSyW" role="3zH0cK">
-                      <node concept="3clFbS" id="2A1YLI8OSyX" role="2VODD2">
-                        <node concept="3clFbF" id="2A1YLI8OSyY" role="3cqZAp">
-                          <node concept="2OqwBi" id="2A1YLI8OSyZ" role="3clFbG">
-                            <node concept="2OqwBi" id="2A1YLI8OSz0" role="2Oq$k0">
-                              <node concept="3Tsc0h" id="2A1YLI8OSz1" role="2OqNvi">
+                    <node concept="3zFVjK" id="1O_BC_pCweM" role="3zH0cK">
+                      <node concept="3clFbS" id="1O_BC_pCweN" role="2VODD2">
+                        <node concept="3clFbF" id="1O_BC_pCweO" role="3cqZAp">
+                          <node concept="2OqwBi" id="1O_BC_pCweP" role="3clFbG">
+                            <node concept="2OqwBi" id="1O_BC_pCweQ" role="2Oq$k0">
+                              <node concept="3Tsc0h" id="1O_BC_pCweR" role="2OqNvi">
                                 <ref role="3TtcxE" to="tpf8:QzR6ThdYDm" />
                               </node>
-                              <node concept="30H73N" id="2A1YLI8OSz2" role="2Oq$k0" />
+                              <node concept="30H73N" id="1O_BC_pCweS" role="2Oq$k0" />
                             </node>
-                            <node concept="34oBXx" id="2A1YLI8OSz3" role="2OqNvi" />
+                            <node concept="34oBXx" id="1O_BC_pCweT" role="2OqNvi" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node concept="3clFbS" id="2A1YLI8OSz4" role="3clFbx">
-                <node concept="YS8fn" id="2A1YLI8PTm3" role="3cqZAp">
-                  <node concept="2ShNRf" id="2A1YLI8PVm$" role="YScLw">
-                    <node concept="1pGfFk" id="2A1YLI8Q1cn" role="2ShVmc">
-                      <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
-                      <node concept="2YIFZM" id="2A1YLI8Q2li" role="37wK5m">
-                        <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
-                        <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
-                        <node concept="Xl_RD" id="2A1YLI8Q30I" role="37wK5m">
-                          <property role="Xl_RC" value="Wrong number of arguments for template %s. Expected %d, actual count is %d" />
-                        </node>
-                        <node concept="37vLTw" id="2A1YLI8Q55l" role="37wK5m">
-                          <ref role="3cqZAo" node="imtYTLqxef" resolve="template" />
-                        </node>
-                        <node concept="3cmrfG" id="2A1YLI8Q5pL" role="37wK5m">
-                          <property role="3cmrfH" value="0" />
-                          <node concept="17Uvod" id="2A1YLI8Q5pM" role="lGtFl">
-                            <property role="2qtEX9" value="value" />
-                            <node concept="3zFVjK" id="2A1YLI8Q5pN" role="3zH0cK">
-                              <node concept="3clFbS" id="2A1YLI8Q5pO" role="2VODD2">
-                                <node concept="3clFbF" id="2A1YLI8Q5pP" role="3cqZAp">
-                                  <node concept="2OqwBi" id="2A1YLI8Q5pQ" role="3clFbG">
-                                    <node concept="2OqwBi" id="2A1YLI8Q5pR" role="2Oq$k0">
-                                      <node concept="3Tsc0h" id="2A1YLI8Q5pS" role="2OqNvi">
-                                        <ref role="3TtcxE" to="tpf8:QzR6ThdYDm" />
-                                      </node>
-                                      <node concept="30H73N" id="2A1YLI8Q5pT" role="2Oq$k0" />
-                                    </node>
-                                    <node concept="34oBXx" id="2A1YLI8Q5pU" role="2OqNvi" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="2OqwBi" id="2A1YLI8Q7JK" role="37wK5m">
-                          <node concept="37vLTw" id="2A1YLI8Q6VB" role="2Oq$k0">
-                            <ref role="3cqZAo" node="imtYTLqxeh" resolve="arguments" />
-                          </node>
-                          <node concept="1Rwk04" id="2A1YLI8Q8w2" role="2OqNvi" />
-                        </node>
-                      </node>
-                    </node>
+                <node concept="2OqwBi" id="1O_BC_pCyHA" role="37wK5m">
+                  <node concept="37vLTw" id="1O_BC_pCxaW" role="2Oq$k0">
+                    <ref role="3cqZAo" node="imtYTLqxeh" resolve="arguments" />
                   </node>
+                  <node concept="1Rwk04" id="1O_BC_pCznm" role="2OqNvi" />
                 </node>
               </node>
             </node>
@@ -26278,41 +26225,21 @@
             </node>
           </node>
           <node concept="3clFbS" id="2A1YLI8OYyE" role="3clFbx">
-            <node concept="3clFbJ" id="2A1YLI8OYyF" role="3cqZAp">
-              <node concept="3clFbS" id="2A1YLI8OYyG" role="3clFbx">
-                <node concept="YS8fn" id="2A1YLI8Qezd" role="3cqZAp">
-                  <node concept="2ShNRf" id="2A1YLI8Qeze" role="YScLw">
-                    <node concept="1pGfFk" id="2A1YLI8Qezf" role="2ShVmc">
-                      <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
-                      <node concept="2YIFZM" id="2A1YLI8Qezg" role="37wK5m">
-                        <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
-                        <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
-                        <node concept="Xl_RD" id="2A1YLI8Qezh" role="37wK5m">
-                          <property role="Xl_RC" value="Wrong number of arguments for template %s - %d. Root templates don't accept parameters" />
-                        </node>
-                        <node concept="37vLTw" id="2A1YLI8Qezi" role="37wK5m">
-                          <ref role="3cqZAo" node="imtYTLqxef" resolve="template" />
-                        </node>
-                        <node concept="2OqwBi" id="2A1YLI8Qezt" role="37wK5m">
-                          <node concept="37vLTw" id="2A1YLI8Qezu" role="2Oq$k0">
-                            <ref role="3cqZAo" node="imtYTLqxeh" resolve="arguments" />
-                          </node>
-                          <node concept="1Rwk04" id="2A1YLI8Qezv" role="2OqNvi" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+            <node concept="3clFbF" id="1O_BC_pCDdF" role="3cqZAp">
+              <node concept="2YIFZM" id="1O_BC_pCDdG" role="3clFbG">
+                <ref role="1Pybhc" to="icf3:~TemplateUtil" resolve="TemplateUtil" />
+                <ref role="37wK5l" to="icf3:~TemplateUtil.assertTemplateParametersCount(org.jetbrains.mps.openapi.model.SNodeReference,int,int):void" resolve="assertTemplateParametersCount" />
+                <node concept="37vLTw" id="1O_BC_pCDdH" role="37wK5m">
+                  <ref role="3cqZAo" node="imtYTLqxef" resolve="template" />
                 </node>
-              </node>
-              <node concept="3y3z36" id="2A1YLI8OYyL" role="3clFbw">
-                <node concept="2OqwBi" id="2A1YLI8OYyM" role="3uHU7B">
-                  <node concept="37vLTw" id="2A1YLI8OYyN" role="2Oq$k0">
+                <node concept="3cmrfG" id="1O_BC_pCDdI" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="2OqwBi" id="1O_BC_pCDdS" role="37wK5m">
+                  <node concept="37vLTw" id="1O_BC_pCDdT" role="2Oq$k0">
                     <ref role="3cqZAo" node="imtYTLqxeh" resolve="arguments" />
                   </node>
-                  <node concept="1Rwk04" id="2A1YLI8OYyO" role="2OqNvi" />
-                </node>
-                <node concept="3cmrfG" id="2A1YLI8OYyP" role="3uHU7w">
-                  <property role="3cmrfH" value="0" />
+                  <node concept="1Rwk04" id="1O_BC_pCDdU" role="2OqNvi" />
                 </node>
               </node>
             </node>
@@ -26385,24 +26312,13 @@
       </node>
       <node concept="3Tm1VV" id="imtYTLqxed" role="1B3o_S" />
     </node>
-    <node concept="3clFb_" id="6ctrts7Lj5z" role="jymVt">
-      <property role="TrG5h" value="getModule" />
-      <node concept="3uibUv" id="6ctrts7Lj5_" role="3clF45">
-        <ref role="3uigEE" to="icf3:~TemplateModule" resolve="TemplateModule" />
-      </node>
-      <node concept="3Tm1VV" id="6ctrts7Lj5$" role="1B3o_S" />
-      <node concept="3clFbS" id="6ctrts7Lj5A" role="3clF47">
-        <node concept="3clFbF" id="6ctrts7Lj5E" role="3cqZAp">
-          <node concept="37vLTw" id="2BHiRxeu_5Y" role="3clFbG">
-            <ref role="3cqZAo" node="6ctrts7Lj5h" resolve="templateModule" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3Tm1VV" id="2ELICwm$CKm" role="1B3o_S" />
     <node concept="n94m4" id="2ELICwm$CKr" role="lGtFl" />
     <node concept="3uibUv" id="2ELICwm$CKs" role="EKbjA">
       <ref role="3uigEE" to="icf3:~TemplateModel" resolve="TemplateModel" />
+    </node>
+    <node concept="3uibUv" id="1O_BC_pChq$" role="1zkMxy">
+      <ref role="3uigEE" to="icf3:~BaseTemplateModel" resolve="BaseTemplateModel" />
     </node>
   </node>
   <node concept="13MO4I" id="7gHSFcXreEF">

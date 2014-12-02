@@ -21,7 +21,7 @@
       <unit at="30,0,187,0" name="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
-      <unit at="19,0,99,0" name="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.TemplateModelImpl" />
+      <unit at="19,0,73,0" name="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.TemplateModelImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)/1197044812173">
