@@ -59,7 +59,7 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
   public SReferenceLinkId getRoleId() {
     ReferenceDescriptor d = getReferenceDescriptor();
     if (d == null) {
-      LOG.error("ref descriptor not found for ref " + myName);
+      //LOG.error("ref descriptor not found for ref " + myName);
       return MetaIdFactory.INVALID_REF_ID ;
     }
     return d.getId();

@@ -59,7 +59,7 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
   public SPropertyId getId() {
     PropertyDescriptor d = getPropertyDescriptor();
     if (d == null) {
-      LOG.error("property descriptor not found for property " + myPropertyName);
+      //LOG.error("property descriptor not found for property " + myPropertyName);
       return MetaIdFactory.INVALID_PROP_ID;
     }
     return d.getId();

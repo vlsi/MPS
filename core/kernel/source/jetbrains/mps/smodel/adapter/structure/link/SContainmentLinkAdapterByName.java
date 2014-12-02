@@ -55,7 +55,7 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
   public SContainmentLinkId getRoleId() {
     LinkDescriptor d = getLinkDescriptor();
     if (d == null) {
-      LOG.error("link descriptor not found for link " + myName);
+      //LOG.error("link descriptor not found for link " + myName);
       return MetaIdFactory.INVALID_LINK_ID;
     }
     return d.getId();
