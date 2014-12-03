@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ed33ky5q265qbu1albxjjqssisdou3r">
+<dependencies version="2" modelHash="akabymtkxkrzrf38kg55qg6rpd2hvti">
   <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="bikhx9rodh3x9akhzqhxouigyapebgd" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="156tvklhubrxb91negc1wfrfkh91n49" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-awwe9jm0em9t0z02whbenqtgowhkh7l" />
-  <common hash="e3ojiu5zvi9bkaq0b34xnzziniepb52" dependsOnNodes="true">
+  <common hash="bioe7n5umjew34vhx7yopphf87jg41i" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="1293230950168428284" name="InternalClassifier" hash="-3po66j5v1m4slu86vybku9sumq82ssh">
