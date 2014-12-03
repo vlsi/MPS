@@ -6,14 +6,13 @@ import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptSuperInterfaceMethodCall = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.jdk8.structure.SuperInterfaceMethodCall", MetaIdFactory.conceptId(new UUID(-158254290210109391L, -6163639281827995632L), 1719162360409810393L)).super_("jetbrains.mps.baseLanguage.structure.SuperMethodCall").super_(MetaIdFactory.conceptId(new UUID(-935030926396207931L, -6610165693999523818L), 1073063089578L)).parents("jetbrains.mps.baseLanguage.structure.SuperMethodCall").parentIds(MetaIdFactory.conceptId(new UUID(-935030926396207931L, -6610165693999523818L), 1073063089578L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1719162360409958622L, "classifier", MetaIdFactory.conceptId(new UUID(-935030926396207931L, -6610165693999523818L), 1107461130800L), false)).references("classifier").create();
+  /*package*/ final ConceptDescriptor myConceptSuperInterfaceMethodCall = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.jdk8.structure.SuperInterfaceMethodCall", MetaIdFactory.conceptId(0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x17dbb10eeb72e5d9L)).super_("jetbrains.mps.baseLanguage.structure.SuperMethodCall").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9d78b55aaL)).parents("jetbrains.mps.baseLanguage.structure.SuperMethodCall").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9d78b55aaL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1719162360409958622L, "classifier", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L), false)).references("classifier").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
