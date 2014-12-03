@@ -70,7 +70,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
         SNode node = painter.getSNode();
         if (node != null && EditorComponentUtil.isNodeShownInTheComponent(editorComponent, node)) {
           editorComponent.addAdditionalPainter(painter);
-          editorComponent.repaint();
+          editorComponent.repaintExternalComponent();
         }
       }
     });
@@ -83,7 +83,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
         SNode node = painter.getSNode();
         if (node == null || EditorComponentUtil.isNodeShownInTheComponent(editorComponent, node)) {
           editorComponent.removeAdditionalPainter(painter);
-          editorComponent.repaint();
+          editorComponent.repaintExternalComponent();
         }
       }
     });
@@ -188,7 +188,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
       @Override
       public void run() {
         for (EditorComponent editorComponent : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
-          editorComponent.repaint();
+          editorComponent.repaintExternalComponent();
         }
       }
     });

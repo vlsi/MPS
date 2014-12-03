@@ -1615,7 +1615,7 @@
               <ref role="3cqZAo" node="3SnNvqCbyJo" resolve="editorComponent" />
             </node>
             <node concept="liA8E" id="3SnNvqCbyKf" role="2OqNvi">
-              <ref role="37wK5l" to="9a8:~EditorComponent.repaint():void" resolve="repaint" />
+              <ref role="37wK5l" to="9a8:~EditorComponent.repaintExternalComponent():void" resolve="repaintExternalComponent" />
             </node>
           </node>
         </node>
@@ -1821,7 +1821,7 @@
                   <ref role="3cqZAo" node="3SnNvqCbyRC" resolve="editorComponent" />
                 </node>
                 <node concept="liA8E" id="3SnNvqCbyRZ" role="2OqNvi">
-                  <ref role="37wK5l" to="9a8:~EditorComponent.repaint():void" resolve="repaint" />
+                  <ref role="37wK5l" to="9a8:~EditorComponent.repaintExternalComponent():void" resolve="repaintExternalComponent" />
                 </node>
               </node>
             </node>
@@ -1922,7 +1922,7 @@
                   <ref role="3cqZAo" node="3SnNvqCbySe" resolve="editorComponent" />
                 </node>
                 <node concept="liA8E" id="3SnNvqCbyS_" role="2OqNvi">
-                  <ref role="37wK5l" to="9a8:~EditorComponent.repaint():void" resolve="repaint" />
+                  <ref role="37wK5l" to="9a8:~EditorComponent.repaintExternalComponent():void" resolve="repaintExternalComponent" />
                 </node>
               </node>
             </node>
@@ -1993,7 +1993,7 @@
                                   <ref role="2Gs0qQ" node="1VInrN6DoTU" resolve="component" />
                                 </node>
                                 <node concept="liA8E" id="1VInrN6Dpmf" role="2OqNvi">
-                                  <ref role="37wK5l" to="9a8:~EditorComponent.repaint():void" resolve="repaint" />
+                                  <ref role="37wK5l" to="9a8:~EditorComponent.repaintExternalComponent():void" resolve="repaintExternalComponent" />
                                 </node>
                               </node>
                             </node>
