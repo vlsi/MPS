@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="gaqgnh3y58tkzxrgsj6ru44iqjphfv">
+<dependencies version="2" modelHash="kr6jvsx8gpxvbsh0eaxr0bs4ktce48">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7hjj6380di9z6lpczodq9bu0abl64gv" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9xnvt31u9gr2qexvi5bxnf71s04o6o5" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-7cc24t8ou1tohcnplqtcwxmtl8o7lcl" />
-  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-3gt5m23u4ei8g6u6p9x2j2poa9htn0v" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-45ic2f01k96oq17d5smtbxfatq8n881" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-6rmyucnjsi5aenvito4sib6lrz8441v" />
+  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-5pezovfnqk0hdu95z447ut980iknpey" />
   <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="bikhx9rodh3x9akhzqhxouigyapebgd" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="156tvklhubrxb91negc1wfrfkh91n49" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-awwe9jm0em9t0z02whbenqtgowhkh7l" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8iidkdf4srxzkbm3a3s8bo4lb455op2" />
-  <common hash="9boxu5y7yyzhxxehizylo4rwc9os65h" dependsOnNodes="true">
+  <common hash="1vdbx26h6qco65hopucsqeacuys3zm5" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="6420745394459121798" name="DefaultEditorComponent" hash="-719j7vr1h3sdfwjn5li5emqd0hw0vt0" dependsOnNodes="true">
@@ -33,9 +33,7 @@
     <dep root="6420745394459130264" />
     <dep root="6420745394459902267" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="EditorComponentSpecifiedBy_context_hint_Test.java" />
   </source>
   <source id="6420745394459130264" name="MostSpecificEditorComponent" hash="934vb6gh8xk5qweymy531zz23fquovz" dependsOnNodes="true">
