@@ -45,9 +45,6 @@
         <property id="2059109515400425365" name="compiler" index="3fwGa$" />
         <child id="927724900262033863" name="resourceSelectors" index="2_Ic$A" />
       </concept>
-      <concept id="2750015747481074431" name="jetbrains.mps.build.structure.BuildLayout_Files" flags="ng" index="2HvfSZ">
-        <child id="2750015747481074432" name="path" index="2HvfZ0" />
-      </concept>
       <concept id="4380385936562003279" name="jetbrains.mps.build.structure.BuildString" flags="ng" index="NbPM2">
         <child id="4903714810883783243" name="parts" index="3MwsjC" />
       </concept>
@@ -108,6 +105,7 @@
       <concept id="1265949165890536423" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars" flags="ng" index="L2wRC">
         <property id="7918752904810477378" name="stripImplementation" index="2IHNyd" />
         <reference id="1265949165890536425" name="module" index="L2wRA" />
+        <child id="4356762679305730677" name="jarLocations" index="3yL2VB" />
       </concept>
       <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
       <concept id="5253498789149381388" name="jetbrains.mps.build.mps.structure.BuildMps_Module" flags="ng" index="3bQrTs">
@@ -119,6 +117,10 @@
         <reference id="5253498789149547705" name="module" index="3bR37D" />
       </concept>
       <concept id="5507251971038816436" name="jetbrains.mps.build.mps.structure.BuildMps_Generator" flags="ng" index="1yeLz9" />
+      <concept id="4356762679305675652" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation" flags="ng" index="3yLZsm">
+        <property id="4356762679305675654" name="packagedLocation" index="3yLZsk" />
+        <child id="4356762679305675653" name="path" index="3yLZsn" />
+      </concept>
       <concept id="4278635856200826393" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar" flags="ng" index="1BurEX">
         <child id="4278635856200826394" name="path" index="1BurEY" />
       </concept>
@@ -2543,28 +2545,32 @@
         <node concept="L2wRC" id="7OJG$uc2DS" role="39821P">
           <property role="2IHNyd" value="true" />
           <ref role="L2wRA" node="1vCYg$WBasC" resolve="jetbrains.mps.samples.JavaKaja" />
-        </node>
-        <node concept="L2wRC" id="7OJG$uc2Gm" role="39821P">
-          <ref role="L2wRA" node="1NKy5CJqdGu" resolve="jetbrains.mps.build.stripping.tests" />
-        </node>
-        <node concept="2HvfSZ" id="79svzH7Zldl" role="39821P">
-          <node concept="55IIr" id="79svzH7Zldn" role="2HvfZ0">
-            <node concept="2Ry0Ak" id="79svzH7Zlex" role="iGT6I">
-              <property role="2Ry0Am" value="samples" />
-              <node concept="2Ry0Ak" id="79svzH7ZleA" role="2Ry0An">
-                <property role="2Ry0Am" value="robot_Kaja" />
-                <node concept="2Ry0Ak" id="79svzH7ZleF" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="79svzH7ZleK" role="2Ry0An">
-                    <property role="2Ry0Am" value="JavaKajak" />
-                    <node concept="2Ry0Ak" id="79svzH7ZleP" role="2Ry0An">
-                      <property role="2Ry0Am" value="images" />
+          <node concept="3yLZsm" id="2BNbCPkeITw" role="3yL2VB">
+            <property role="3yLZsk" value="kaja_images.jar" />
+            <node concept="55IIr" id="2BNbCPkeITx" role="3yLZsn">
+              <node concept="2Ry0Ak" id="2BNbCPkf3D6" role="iGT6I">
+                <property role="2Ry0Am" value="samples" />
+                <node concept="2Ry0Ak" id="2BNbCPkf3Db" role="2Ry0An">
+                  <property role="2Ry0Am" value="robot_Kaja" />
+                  <node concept="2Ry0Ak" id="2BNbCPkf3Dg" role="2Ry0An">
+                    <property role="2Ry0Am" value="solutions" />
+                    <node concept="2Ry0Ak" id="2BNbCPkf3Dl" role="2Ry0An">
+                      <property role="2Ry0Am" value="JavaKajak" />
+                      <node concept="2Ry0Ak" id="2BNbCPkf3Dq" role="2Ry0An">
+                        <property role="2Ry0Am" value="images" />
+                        <node concept="2Ry0Ak" id="2BNbCPkfent" role="2Ry0An">
+                          <property role="2Ry0Am" value="kaja_images.jar" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
+        </node>
+        <node concept="L2wRC" id="7OJG$uc2Gm" role="39821P">
+          <ref role="L2wRA" node="1NKy5CJqdGu" resolve="jetbrains.mps.build.stripping.tests" />
         </node>
         <node concept="3_J27D" id="1NKy5CJqdH6" role="Nbhlr">
           <node concept="3Mxwew" id="1NKy5CJqdH7" role="3MwsjC">
