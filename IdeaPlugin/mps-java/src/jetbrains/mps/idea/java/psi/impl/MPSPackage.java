@@ -34,11 +34,14 @@ import com.intellij.psi.scope.PsiScopeProcessor;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.util.PsiUtil;
 import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import javax.swing.Icon;
 
 /**
  * danilla 5/14/13
@@ -79,6 +82,12 @@ public class MPSPackage extends MPSPsiNodeBase implements PsiPackage {
       }
     }
     return true;
+  }
+
+  @Nullable
+  @Override
+  public Icon getIcon(int flags) {
+    return MPSIcons.MODELS_TAB_ICON;
   }
 
   @NotNull
