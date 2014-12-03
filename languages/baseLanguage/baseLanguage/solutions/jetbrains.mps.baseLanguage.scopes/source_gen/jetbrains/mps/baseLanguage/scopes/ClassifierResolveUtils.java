@@ -207,8 +207,8 @@ public class ClassifierResolveUtils {
   }
   public static SNode resolveAndCache(final String refText, final SNode contextNode, final ModelPlusImportedScope modelPlusImported, final boolean includeAncestors) {
 
-    SNode claz = SNodeOperations.getNodeAncestor(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false);
-    Pair<SNode, String> key = new Pair(claz, refText);
+    SNode classifier = SNodeOperations.getNodeAncestor(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false);
+    Pair<SNode, String> key = new Pair(classifier, refText);
     ResolveResult result = RepositoryStateCacheUtils.getFromCache("Classifiers_scope", key, new _FunctionTypes._return_P0_E0<ResolveResult>() {
       public ResolveResult invoke() {
         return new ResolveResult(resolve(refText, contextNode, modelPlusImported, includeAncestors));
