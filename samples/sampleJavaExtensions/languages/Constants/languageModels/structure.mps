@@ -11,7 +11,9 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -21,6 +23,9 @@
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
+      </concept>
+      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <reference id="1082985295845" name="dataType" index="AX2Wp" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
         <property id="1071599776563" name="role" index="20kJfa" />
@@ -74,6 +79,33 @@
       <property role="20kJfa" value="original" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="1iYrdV1xxgp" resolve="Constant" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2lb0lXX1H4v">
+    <property role="TrG5h" value="DistantConstantReference" />
+    <property role="34LRSv" value="distant" />
+    <ref role="1TJDcQ" node="3tw0l3Pakp_" resolve="ConstantReference" />
+    <node concept="1TJgyj" id="2lb0lXX1H8n" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="targetSetOfConstants" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1iYrdV1xxgn" resolve="Constants" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2lb0lXX3Md_">
+    <property role="TrG5h" value="ConstantReferenceKeeper" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="2lb0lXX3MdC" role="1TKVEl">
+      <property role="TrG5h" value="constantName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2lb0lXX3TWw">
+    <property role="TrG5h" value="GeneratedClassKeeper" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="2lb0lXX3TWx" role="1TKVEl">
+      <property role="TrG5h" value="setOfConstantsName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

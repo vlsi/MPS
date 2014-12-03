@@ -16,6 +16,8 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new Constant_Constraints();
       case 1:
         return new ConstantReference_Constraints();
+      case 2:
+        return new DistantConstantReference_Constraints();
       default:
         return new BaseConstraintsDescriptor(fqName);
     }
@@ -28,7 +30,10 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x37600150f5294665L) {
       return new ConstantReference_Constraints();
     }
+    if (id == 0x254b015f7d06d11fL) {
+      return new DistantConstantReference_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.DistantConstantReference"};
 }

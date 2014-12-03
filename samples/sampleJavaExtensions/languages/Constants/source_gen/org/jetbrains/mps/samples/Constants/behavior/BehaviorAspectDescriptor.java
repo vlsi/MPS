@@ -11,15 +11,21 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 2:
+      case 3:
         return new Constants_BehaviorDescriptor();
       case 0:
         return new Constant_BehaviorDescriptor();
       case 1:
         return new ConstantReference_BehaviorDescriptor();
+      case 4:
+        return new DistantConstantReference_BehaviorDescriptor();
+      case 2:
+        return new ConstantReferenceKeeper_BehaviorDescriptor();
+      case 5:
+        return new GeneratedClassKeeper_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.Constants"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.ConstantReferenceKeeper", "org.jetbrains.mps.samples.Constants.structure.Constants", "org.jetbrains.mps.samples.Constants.structure.DistantConstantReference", "org.jetbrains.mps.samples.Constants.structure.GeneratedClassKeeper"};
 }
