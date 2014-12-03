@@ -8643,10 +8643,10 @@
           <node concept="3cpWsn" id="hTOH$_E" role="3cpWs9">
             <property role="TrG5h" value="classConcept" />
             <node concept="3Tqbb2" id="hTOH$_F" role="1tU5fm">
-              <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+              <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
             </node>
             <node concept="1PxgMI" id="hTOH$_G" role="33vP2m">
-              <ref role="1PxNhF" to="tpee:fz12cDA" resolve="ClassConcept" />
+              <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
               <node concept="2OqwBi" id="hTOH$_H" role="1PxMeX">
                 <node concept="37vLTw" id="6LFqxSREoDA" role="2Oq$k0">
                   <ref role="3cqZAo" node="6LFqxSREoCJ" resolve="method" />

@@ -271,6 +271,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       List<SNode> result = new ArrayList<SNode>();
       for (List<SNode> list : MapSequence.fromMap(this.myMethodsByName).values()) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(list));
+
       }
       return result;
     }

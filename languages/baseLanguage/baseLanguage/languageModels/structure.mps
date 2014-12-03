@@ -821,7 +821,7 @@
     <node concept="1TJgyj" id="gDPybl6" role="1TKVEi">
       <property role="20kJfa" value="classConcept" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="fz12cDA" resolve="ClassConcept" />
+      <ref role="20lvS9" node="g7pOWCK" resolve="Classifier" />
     </node>
     <node concept="1TJgyj" id="fIYIWN3" role="1TKVEi">
       <property role="20kJfa" value="staticMethodDeclaration" />

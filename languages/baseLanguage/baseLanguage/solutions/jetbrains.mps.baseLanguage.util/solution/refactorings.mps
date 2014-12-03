@@ -7784,7 +7784,7 @@
                     </node>
                   </node>
                   <node concept="1PxgMI" id="7nrhK3uHd4r" role="37vLTx">
-                    <ref role="1PxNhF" to="tpee:fz12cDA" resolve="ClassConcept" />
+                    <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
                     <node concept="2OqwBi" id="7nrhK3uHd4s" role="1PxMeX">
                       <node concept="37vLTw" id="2BHiRxgl8W0" role="2Oq$k0">
                         <ref role="3cqZAo" node="7nrhK3uHd4P" resolve="declaration" />
@@ -18311,7 +18311,7 @@
               </node>
             </node>
             <node concept="1PxgMI" id="7nrhK3uHfeK" role="37vLTx">
-              <ref role="1PxNhF" to="tpee:fz12cDA" resolve="ClassConcept" />
+              <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
               <node concept="2OqwBi" id="7nrhK3uHfeL" role="1PxMeX">
                 <node concept="2OwXpG" id="7nrhK3uHfeM" role="2OqNvi">
                   <ref role="2Oxat5" node="2AmPJnOxBRY" resolve="myStaticContainer" />
