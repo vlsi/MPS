@@ -28,6 +28,12 @@ public class MigrationsUtil {
   }
   public static boolean isMigrationNeeded(SLanguage language, int importVersion, SModule module) {
     int currentVersion = language.getLanguageVersion();
+
+    // broken language 
+    if (currentVersion == -1) {
+      return false;
+    }
+
     // if we don't have version, it's simply 0 
     if (importVersion == -1) {
       importVersion = 0;
