@@ -73,9 +73,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRea
     super(manager);
     myNodeId = nodeId;
     myName = name;
-    myViewProvider = virtualFile == null
-      ? new SingleRootFileViewProvider(manager, new LightVirtualFile(), false)
-      : new SingleRootFileViewProvider(manager, virtualFile);
+    myViewProvider = new SingleRootFileViewProvider(manager, new LightVirtualFile(), false);
     separateFile = true;
   }
 
@@ -100,8 +98,6 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRea
   @Nullable
   @Override
   public VirtualFile getVirtualFile() {
-    if(!(myViewProvider.getVirtualFile() instanceof LightVirtualFile))
-      return myViewProvider.getVirtualFile();
     return MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNodeReference());
   }
 
@@ -242,6 +238,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRea
   // see PsiSearchScopeUtil.isInScope
   @Override
   public PsiElement getContext() {
+    if (1>0) return null;
     if (separateFile) {
       return null;
     } else {
