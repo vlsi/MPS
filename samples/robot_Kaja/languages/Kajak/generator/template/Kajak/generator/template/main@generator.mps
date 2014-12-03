@@ -192,10 +192,6 @@
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -238,6 +234,9 @@
       <concept id="1195500722856" name="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock" flags="in" index="1pplIY" />
       <concept id="1195502151594" name="jetbrains.mps.lang.generator.structure.MappingScriptReference" flags="lg" index="1puMqW">
         <reference id="1195502167610" name="mappingScript" index="1puQsG" />
+      </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
@@ -2512,9 +2511,9 @@
               <ref role="37wK5l" node="67X5IgzDhSX" resolve="heading" />
               <node concept="raruj" id="67X5IgzDhSV" role="lGtFl" />
               <node concept="10Nm6u" id="67X5IgzDhSN" role="37wK5m">
-                <node concept="jY4Nl" id="67X5IgzOW_x" role="lGtFl">
-                  <ref role="jYjtx" node="67X5IgzODx$" resolve="ReduceDirectionEnum" />
-                  <node concept="3NFfHV" id="67X5IgzOWAV" role="8TvZ8">
+                <node concept="1sPUBX" id="1WfddY$XHRD" role="lGtFl">
+                  <ref role="v9R2y" node="67X5IgzODx$" resolve="ReduceDirectionEnum" />
+                  <node concept="3NFfHV" id="67X5IgzOWAV" role="1sPUBK">
                     <node concept="3clFbS" id="67X5IgzOWAW" role="2VODD2">
                       <node concept="3clFbF" id="67X5IgzOWBO" role="3cqZAp">
                         <node concept="30H73N" id="67X5IgzOWBN" role="3clFbG" />

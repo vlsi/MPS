@@ -101,12 +101,11 @@
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
+      </concept>
+      <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
+        <reference id="1722980698497626483" name="template" index="v9R2y" />
       </concept>
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
@@ -126,6 +125,9 @@
       <concept id="1169670156577" name="jetbrains.mps.lang.generator.structure.GeneratorMessage" flags="lg" index="1lLz0L">
         <property id="1169670173015" name="messageText" index="1lLB17" />
         <property id="1169670356567" name="messageType" index="1lMjX7" />
+      </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1168024337012" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" flags="in" index="3NFfHV" />
@@ -252,9 +254,9 @@
             <node concept="liA8E" id="hS4dfGm" role="2OqNvi">
               <ref role="37wK5l" to="1t7x:~Container.add(java.awt.Component):java.awt.Component" resolve="add" />
               <node concept="10Nm6u" id="hS4dg8V" role="37wK5m">
-                <node concept="jY4Nl" id="hS4eoK6" role="lGtFl">
-                  <ref role="jYjtx" node="hS4dAXZ" resolve="switch_JComponentByElementName" />
-                  <node concept="3NFfHV" id="hS4eqWJ" role="8TvZ8">
+                <node concept="1sPUBX" id="1WfddY$XHNf" role="lGtFl">
+                  <ref role="v9R2y" node="hS4dAXZ" resolve="switch_JComponentByElementName" />
+                  <node concept="3NFfHV" id="hS4eqWJ" role="1sPUBK">
                     <node concept="3clFbS" id="hS4eqWK" role="2VODD2">
                       <node concept="3clFbF" id="hS4erqN" role="3cqZAp">
                         <node concept="2OqwBi" id="hS4ersi" role="3clFbG">

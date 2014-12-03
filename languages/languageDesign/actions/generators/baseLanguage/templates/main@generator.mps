@@ -257,9 +257,6 @@
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -1440,8 +1437,8 @@
                 </node>
               </node>
             </node>
-            <node concept="jY4Nl" id="44uAAgJVKRv" role="lGtFl">
-              <ref role="jYjtx" node="44uAAgJVvfM" resolve="RegisterMenuBuilder_subst" />
+            <node concept="1sPUBX" id="1WfddY$XHSh" role="lGtFl">
+              <ref role="v9R2y" node="44uAAgJVvfM" resolve="RegisterMenuBuilder_subst" />
             </node>
           </node>
           <node concept="3cpWs6" id="h8uhm4b" role="3cqZAp">
@@ -1518,8 +1515,8 @@
             </node>
           </node>
         </node>
-        <node concept="jY4Nl" id="44uAAgKAAqm" role="lGtFl">
-          <ref role="jYjtx" node="44uAAgKAvyj" resolve="MenuBuilderPartMethod_subst" />
+        <node concept="1sPUBX" id="1WfddY$XHQ4" role="lGtFl">
+          <ref role="v9R2y" node="44uAAgKAvyj" resolve="MenuBuilderPartMethod_subst" />
         </node>
       </node>
       <node concept="3Tm1VV" id="h9B3LmX" role="1B3o_S" />
@@ -4640,8 +4637,8 @@
                 </node>
               </node>
             </node>
-            <node concept="jY4Nl" id="44uAAgK9AOM" role="lGtFl">
-              <ref role="jYjtx" node="44uAAgK9riQ" resolve="RegisterMenuBuilder_st" />
+            <node concept="1sPUBX" id="1WfddY$XIA3" role="lGtFl">
+              <ref role="v9R2y" node="44uAAgK9riQ" resolve="RegisterMenuBuilder_st" />
             </node>
           </node>
           <node concept="3cpWs6" id="h8_0iXL" role="3cqZAp">
@@ -4738,8 +4735,8 @@
             </node>
           </node>
         </node>
-        <node concept="jY4Nl" id="44uAAgKAMmf" role="lGtFl">
-          <ref role="jYjtx" node="44uAAgKAE_4" resolve="MenuBuilderPartMethod_st" />
+        <node concept="1sPUBX" id="1WfddY$XI6O" role="lGtFl">
+          <ref role="v9R2y" node="44uAAgKAE_4" resolve="MenuBuilderPartMethod_st" />
         </node>
       </node>
       <node concept="3Tm1VV" id="h9B3Lu$" role="1B3o_S" />
@@ -9703,8 +9700,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="jY4Nl" id="44uAAgKa9Bf" role="lGtFl">
-                <ref role="jYjtx" node="h8_0XWC" resolve="RegisterMenuPart_st" />
+              <node concept="1sPUBX" id="1WfddY$XIBm" role="lGtFl">
+                <ref role="v9R2y" node="h8_0XWC" resolve="RegisterMenuPart_st" />
               </node>
             </node>
           </node>
@@ -9759,8 +9756,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="jY4Nl" id="44uAAgJW$bE" role="lGtFl">
-                <ref role="jYjtx" node="h8ujc2f" resolve="RegisterMenuPart_subst" />
+              <node concept="1sPUBX" id="1WfddY$XHPN" role="lGtFl">
+                <ref role="v9R2y" node="h8ujc2f" resolve="RegisterMenuPart_subst" />
               </node>
             </node>
           </node>

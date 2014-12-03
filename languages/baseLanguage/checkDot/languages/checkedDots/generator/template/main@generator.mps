@@ -145,10 +145,6 @@
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
         <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
@@ -178,6 +174,9 @@
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
       </concept>
       <concept id="1131073187192" name="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" flags="ln" index="1pdMLZ" />
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
+      </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
@@ -570,9 +569,9 @@
           </node>
           <node concept="3cpWs6" id="2Z7S13ZGlG" role="3cqZAp">
             <node concept="10Nm6u" id="2Z7S13ZGlI" role="3cqZAk" />
-            <node concept="jY4Nl" id="2Z7S13ZGlK" role="lGtFl">
-              <ref role="jYjtx" node="2Z7S13ZGlL" resolve="ReturnTypeSwitch" />
-              <node concept="3NFfHV" id="2Z7S13ZGmk" role="8TvZ8">
+            <node concept="1sPUBX" id="1WfddY$XHNP" role="lGtFl">
+              <ref role="v9R2y" node="2Z7S13ZGlL" resolve="ReturnTypeSwitch" />
+              <node concept="3NFfHV" id="2Z7S13ZGmk" role="1sPUBK">
                 <node concept="3clFbS" id="2Z7S13ZGml" role="2VODD2">
                   <node concept="3clFbF" id="2Z7S13ZGmm" role="3cqZAp">
                     <node concept="2OqwBi" id="2Z7S13ZO3I" role="3clFbG">

@@ -138,14 +138,13 @@
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
         <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
         <reference id="1200913004646" name="targetConcept" index="2rZz_L" />
+      </concept>
+      <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
+        <reference id="1722980698497626483" name="template" index="v9R2y" />
       </concept>
       <concept id="1194565793557" name="jetbrains.mps.lang.generator.structure.IncludeMacro" flags="ln" index="xERo3">
         <reference id="1194566366375" name="includeTemplate" index="xH3mL" />
@@ -180,6 +179,9 @@
       </concept>
       <concept id="1131073187192" name="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" flags="ln" index="1pdMLZ">
         <child id="1168281849769" name="sourceNodeQuery" index="31$UT" />
+      </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
@@ -369,13 +371,13 @@
                 </node>
               </node>
               <node concept="3clFbH" id="i0eotgD" role="3cqZAp">
-                <node concept="jY4Nl" id="i0eotgE" role="lGtFl">
-                  <ref role="jYjtx" node="i09DRMf" resolve="MathSymbolInitializer" />
+                <node concept="1sPUBX" id="1WfddY$XI1P" role="lGtFl">
+                  <ref role="v9R2y" node="i09DRMf" resolve="MathSymbolInitializer" />
                 </node>
               </node>
               <node concept="3clFbH" id="i0eotgF" role="3cqZAp">
-                <node concept="jY4Nl" id="i0eotgG" role="lGtFl">
-                  <ref role="jYjtx" node="i09_T6d" resolve="MathSymbolLoopSwitch" />
+                <node concept="1sPUBX" id="1WfddY$XHNb" role="lGtFl">
+                  <ref role="v9R2y" node="i09_T6d" resolve="MathSymbolLoopSwitch" />
                 </node>
               </node>
               <node concept="3cpWs6" id="i0eotgH" role="3cqZAp">
@@ -395,9 +397,9 @@
       <ref role="30HIoZ" to="39kg:hZwQhih" resolve="MathSymbolIndexReference" />
       <node concept="gft3U" id="i09HRg2" role="1lVwrX">
         <node concept="2VYdi" id="i09Tp_k" role="gfFT$">
-          <node concept="jY4Nl" id="i09HVMp" role="lGtFl">
-            <ref role="jYjtx" node="i09G54T" resolve="MathIndexReference" />
-            <node concept="3NFfHV" id="i09SAzi" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XIzl" role="lGtFl">
+            <ref role="v9R2y" node="i09G54T" resolve="MathIndexReference" />
+            <node concept="3NFfHV" id="i09SAzi" role="1sPUBK">
               <node concept="3clFbS" id="i09SAzj" role="2VODD2">
                 <node concept="3clFbF" id="i09SBjE" role="3cqZAp">
                   <node concept="2OqwBi" id="i09TxRY" role="3clFbG">
@@ -530,8 +532,8 @@
           </node>
           <node concept="3clFbS" id="i09AIRn" role="2LFqv$">
             <node concept="3clFbH" id="i0ae0sq" role="3cqZAp">
-              <node concept="jY4Nl" id="i0ae4Mc" role="lGtFl">
-                <ref role="jYjtx" node="i09DkwG" resolve="MathSymbolConditionSwitch" />
+              <node concept="1sPUBX" id="1WfddY$XHNN" role="lGtFl">
+                <ref role="v9R2y" node="i09DkwG" resolve="MathSymbolConditionSwitch" />
               </node>
             </node>
           </node>
@@ -627,8 +629,8 @@
               </node>
             </node>
             <node concept="3clFbH" id="i0ae08C" role="3cqZAp">
-              <node concept="jY4Nl" id="i0ae3Av" role="lGtFl">
-                <ref role="jYjtx" node="i09DkwG" resolve="MathSymbolConditionSwitch" />
+              <node concept="1sPUBX" id="1WfddY$XI_Z" role="lGtFl">
+                <ref role="v9R2y" node="i09DkwG" resolve="MathSymbolConditionSwitch" />
               </node>
             </node>
           </node>
@@ -794,8 +796,8 @@
             <node concept="3clFbJ" id="i09E2ZB" role="gfFT$">
               <node concept="3clFbS" id="i09E2ZC" role="3clFbx">
                 <node concept="3clFbH" id="i09E2ZD" role="3cqZAp">
-                  <node concept="jY4Nl" id="i09E7s3" role="lGtFl">
-                    <ref role="jYjtx" node="i09DXfC" resolve="MathSymbolIterator" />
+                  <node concept="1sPUBX" id="1WfddY$XI3Q" role="lGtFl">
+                    <ref role="v9R2y" node="i09DXfC" resolve="MathSymbolIterator" />
                   </node>
                 </node>
               </node>
@@ -820,8 +822,8 @@
         </node>
         <node concept="gft3U" id="i09Eaol" role="14YRTM">
           <node concept="2VYdi" id="i09Eaom" role="gfFT$">
-            <node concept="jY4Nl" id="i09EbcR" role="lGtFl">
-              <ref role="jYjtx" node="i09DXfC" resolve="MathSymbolIterator" />
+            <node concept="1sPUBX" id="1WfddY$XI6m" role="lGtFl">
+              <ref role="v9R2y" node="i09DXfC" resolve="MathSymbolIterator" />
             </node>
           </node>
         </node>

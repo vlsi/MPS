@@ -155,7 +155,6 @@
         <child id="1169669152123" name="generatorMessage" index="1lHHLF" />
       </concept>
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub" />
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl" />
       <concept id="1170725621272" name="jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction" flags="in" index="2kFOW8" />
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
@@ -227,6 +226,7 @@
       <concept id="982871510064032177" name="jetbrains.mps.lang.generator.structure.IParameterizedTemplate" flags="ng" index="1s_3nv">
         <child id="982871510064032342" name="parameter" index="1s_3oS" />
       </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
@@ -327,7 +327,7 @@
           <node concept="3cpWsn" id="hz3Diui" role="3cpWs9">
             <property role="TrG5h" value="i" />
             <node concept="10Oyi0" id="hz3Diuj" role="1tU5fm">
-              <node concept="jY4Nl" id="hz4ePpy" role="lGtFl" />
+              <node concept="1sPUBX" id="1WfddY$XHRB" role="lGtFl" />
             </node>
             <node concept="3cmrfG" id="hz3DoL3" role="33vP2m">
               <property role="3cmrfH" value="10" />
@@ -342,7 +342,7 @@
                   <node concept="3clFbS" id="hz7V3$v" role="2VODD2" />
                 </node>
               </node>
-              <node concept="jY4Nl" id="hz3F8Br" role="lGtFl" />
+              <node concept="1sPUBX" id="1WfddY$XHPW" role="lGtFl" />
             </node>
             <node concept="17Uvod" id="hz4eNo5" role="lGtFl">
               <property role="2qtEX9" value="name" />
@@ -360,7 +360,7 @@
         <node concept="3clFbF" id="hz4eS1r" role="3cqZAp">
           <node concept="2OqwBi" id="hz4eSj2" role="3clFbG">
             <node concept="Xjq3P" id="hz4eS1s" role="2Oq$k0">
-              <node concept="jY4Nl" id="hz4eUNM" role="lGtFl" />
+              <node concept="1sPUBX" id="1WfddY$XHP7" role="lGtFl" />
             </node>
             <node concept="liA8E" id="hz4eSK7" role="2OqNvi">
               <ref role="37wK5l" node="huf7HkX" resolve="aaa" />
@@ -425,7 +425,7 @@
               <node concept="10Oyi0" id="hz3cYLQ" role="1tU5fm" />
               <node concept="3cmrfG" id="hz3cZHd" role="33vP2m">
                 <property role="3cmrfH" value="100" />
-                <node concept="jY4Nl" id="hz3UtWO" role="lGtFl">
+                <node concept="1sPUBX" id="1WfddY$XHMT" role="lGtFl">
                   <ref role="2rW$FS" node="h$Kb0v_" resolve="aaa" />
                 </node>
               </node>

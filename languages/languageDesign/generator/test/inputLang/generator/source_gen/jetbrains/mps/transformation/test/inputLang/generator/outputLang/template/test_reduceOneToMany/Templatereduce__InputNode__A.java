@@ -70,19 +70,18 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
   protected Collection<SNode> applyPart3(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist5 = null;
     try {
-      try {
-        tlist5 = environment.trySwitch(templateSwitchNodeNoInput_b8tv7e_a0a0a0a0b0f, context);
-        if (tlist5 == null) {
-          final SNode tnode6 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
-          try {
-            environment.nodeCopied(context, tnode6, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480310362");
-          } finally {
-          }
-          if (tnode6 != null) {
-            tlist5 = TemplateUtil.singletonList(tnode6);
-          }
+      TemplateContext switchContext5;
+      switchContext5 = context;
+      tlist5 = environment.trySwitch(templateSwitchNodeNoInput_b8tv7e_a0a0c0b0f, switchContext5);
+      if (tlist5 == null) {
+        final SNode tnode6 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+        try {
+          environment.nodeCopied(context, tnode6, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480310362");
+        } finally {
         }
-      } finally {
+        if (tnode6 != null) {
+          tlist5 = TemplateUtil.singletonList(tnode6);
+        }
       }
     } finally {
     }
@@ -113,7 +112,7 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
     return TemplateUtil.asList(tlistpart0, tnodepart1, tlistpart2, tlistpart3);
   }
   private static SNodePointer loopMacroRef_b8tv7e_b0a0a1a2 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414161782");
-  private static SNodePointer templateSwitchNodeNoInput_b8tv7e_a0a0a0a0b0f = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
+  private static SNodePointer templateSwitchNodeNoInput_b8tv7e_a0a0c0b0f = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
   private static SNodePointer weaveTfConst_b8tv7e_a0b0h = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100173");
   private static SNodePointer weaveTfConst_b8tv7e_a0e0h = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1391450457158185609");
   private static SNodePointer weaveTfConst_b8tv7e_a0h0h = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480068637");

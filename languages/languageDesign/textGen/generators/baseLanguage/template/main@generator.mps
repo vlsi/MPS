@@ -194,9 +194,6 @@
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -227,6 +224,7 @@
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
         <reference id="1167514355421" name="template" index="3lhOvi" />
       </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
@@ -3108,8 +3106,8 @@
                     </node>
                   </node>
                 </node>
-                <node concept="jY4Nl" id="i0uXzrc" role="lGtFl">
-                  <ref role="jYjtx" node="i0uUJBp" resolve="PartInConcept_switch" />
+                <node concept="1sPUBX" id="1WfddY$XHNt" role="lGtFl">
+                  <ref role="v9R2y" node="i0uUJBp" resolve="PartInConcept_switch" />
                 </node>
               </node>
               <node concept="3clFbF" id="i0uWY3Z" role="3cqZAp">
@@ -3155,8 +3153,8 @@
                     </node>
                   </node>
                 </node>
-                <node concept="jY4Nl" id="i0uX$dK" role="lGtFl">
-                  <ref role="jYjtx" node="hZik$0t" resolve="PartInLang_switch" />
+                <node concept="1sPUBX" id="1WfddY$XHMz" role="lGtFl">
+                  <ref role="v9R2y" node="hZik$0t" resolve="PartInLang_switch" />
                 </node>
               </node>
             </node>

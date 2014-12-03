@@ -196,9 +196,6 @@
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4" />
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
@@ -237,6 +234,7 @@
       <concept id="982871510064032177" name="jetbrains.mps.lang.generator.structure.IParameterizedTemplate" flags="ng" index="1s_3nv">
         <child id="982871510064032342" name="parameter" index="1s_3oS" />
       </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
@@ -4098,8 +4096,8 @@
         <property role="TrG5h" value="myPatternVarField" />
         <node concept="3uibUv" id="hO6zkna" role="1tU5fm">
           <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-          <node concept="jY4Nl" id="hO6zknb" role="lGtFl">
-            <ref role="jYjtx" node="h68Ga$4" resolve="PatternVariableType_switch" />
+          <node concept="1sPUBX" id="1WfddY$XHR_" role="lGtFl">
+            <ref role="v9R2y" node="h68Ga$4" resolve="PatternVariableType_switch" />
           </node>
         </node>
         <node concept="1WS0z7" id="hO6zknc" role="lGtFl">
@@ -5277,8 +5275,8 @@
           <property role="TrG5h" value="myPatternVarField" />
           <node concept="3uibUv" id="6g4rMXipSsp" role="1tU5fm">
             <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-            <node concept="jY4Nl" id="6g4rMXipSsq" role="lGtFl">
-              <ref role="jYjtx" node="h68Ga$4" resolve="PatternVariableType_switch" />
+            <node concept="1sPUBX" id="1WfddY$XHMV" role="lGtFl">
+              <ref role="v9R2y" node="h68Ga$4" resolve="PatternVariableType_switch" />
             </node>
           </node>
           <node concept="17Uvod" id="6g4rMXipSsr" role="lGtFl">
@@ -5563,8 +5561,8 @@
                     <node concept="10QFUN" id="4MMyJY3S7IT" role="37vLTx">
                       <node concept="3uibUv" id="4MMyJY3S7Jm" role="10QFUM">
                         <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-                        <node concept="jY4Nl" id="ULsjj1L7jg" role="lGtFl">
-                          <ref role="jYjtx" node="h68Ga$4" resolve="PatternVariableType_switch" />
+                        <node concept="1sPUBX" id="1WfddY$XI28" role="lGtFl">
+                          <ref role="v9R2y" node="h68Ga$4" resolve="PatternVariableType_switch" />
                         </node>
                       </node>
                       <node concept="2OqwBi" id="4MMyJY3S7IW" role="10QFUP">

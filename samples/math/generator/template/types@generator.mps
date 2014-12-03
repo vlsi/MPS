@@ -206,9 +206,6 @@
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-      </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
         <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
@@ -251,6 +248,7 @@
       <concept id="1131073187192" name="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" flags="ln" index="1pdMLZ">
         <child id="1168281849769" name="sourceNodeQuery" index="31$UT" />
       </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
@@ -1052,8 +1050,8 @@
       </node>
       <node concept="gft3U" id="i0g3OzC" role="1lVwrX">
         <node concept="2VYdi" id="i0g3OzD" role="gfFT$">
-          <node concept="jY4Nl" id="i0g3Pq7" role="lGtFl">
-            <ref role="jYjtx" node="i0g0ZEQ" resolve="BinaryOperationSwitch" />
+          <node concept="1sPUBX" id="1WfddY$XIzz" role="lGtFl">
+            <ref role="v9R2y" node="i0g0ZEQ" resolve="BinaryOperationSwitch" />
           </node>
         </node>
       </node>
@@ -2197,8 +2195,8 @@
       <ref role="30HIoZ" to="39kg:i1j1V1B" resolve="MathFuncExpression" />
       <node concept="gft3U" id="i1j6tdT" role="1lVwrX">
         <node concept="2VYdi" id="i1j6tdU" role="gfFT$">
-          <node concept="jY4Nl" id="i1j6voh" role="lGtFl">
-            <ref role="jYjtx" node="i1j6n8c" resolve="MathFuncSwitch" />
+          <node concept="1sPUBX" id="1WfddY$XHP5" role="lGtFl">
+            <ref role="v9R2y" node="i1j6n8c" resolve="MathFuncSwitch" />
           </node>
         </node>
       </node>
@@ -8393,8 +8391,8 @@
       <node concept="gft3U" id="i1nXVAy" role="1lVwrX">
         <node concept="37vLTI" id="i1nXVAz" role="gfFT$">
           <node concept="2VYdi" id="i1nXVA$" role="37vLTx">
-            <node concept="jY4Nl" id="i1nXVA_" role="lGtFl">
-              <ref role="jYjtx" node="i0yOmwx" resolve="AssignmentOperationSwitch" />
+            <node concept="1sPUBX" id="1WfddY$XHR7" role="lGtFl">
+              <ref role="v9R2y" node="i0yOmwx" resolve="AssignmentOperationSwitch" />
             </node>
           </node>
           <node concept="33vP2n" id="i1nXVAA" role="37vLTJ">

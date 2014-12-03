@@ -105,11 +105,10 @@
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4" />
+      <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
+        <reference id="1722980698497626483" name="template" index="v9R2y" />
+      </concept>
       <concept id="1167087469898" name="jetbrains.mps.lang.generator.structure.CreateRootRule" flags="lg" index="2VPoh5">
         <reference id="1167087469901" name="templateNode" index="2VPoh2" />
       </concept>
@@ -125,6 +124,9 @@
       <concept id="1169670156577" name="jetbrains.mps.lang.generator.structure.GeneratorMessage" flags="lg" index="1lLz0L">
         <property id="1169670173015" name="messageText" index="1lLB17" />
         <property id="1169670356567" name="messageType" index="1lMjX7" />
+      </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
       </concept>
       <concept id="1167951910403" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" flags="in" index="3JmXsc" />
       <concept id="1168024337012" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" flags="in" index="3NFfHV" />
@@ -243,9 +245,9 @@
             <node concept="liA8E" id="hS9mpRx" role="2OqNvi">
               <ref role="37wK5l" to="1t7x:~Component.add(java.awt.PopupMenu):void" resolve="add" />
               <node concept="10Nm6u" id="hS9mpRy" role="37wK5m">
-                <node concept="jY4Nl" id="hS9mpRz" role="lGtFl">
-                  <ref role="jYjtx" node="hS9n23H" resolve="switch_JComponentByElementName" />
-                  <node concept="3NFfHV" id="hS9mpR$" role="8TvZ8">
+                <node concept="1sPUBX" id="1WfddY$XIB8" role="lGtFl">
+                  <ref role="v9R2y" node="hS9n23H" resolve="switch_JComponentByElementName" />
+                  <node concept="3NFfHV" id="hS9mpR$" role="1sPUBK">
                     <node concept="3clFbS" id="hS9mpR_" role="2VODD2">
                       <node concept="3clFbF" id="hS9mpRA" role="3cqZAp">
                         <node concept="2OqwBi" id="hS9mpRB" role="3clFbG">

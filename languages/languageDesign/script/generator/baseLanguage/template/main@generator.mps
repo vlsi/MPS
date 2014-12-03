@@ -200,10 +200,6 @@
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -227,6 +223,9 @@
       </concept>
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
         <reference id="1167514355421" name="template" index="3lhOvi" />
+      </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
@@ -1112,9 +1111,9 @@
         <node concept="_Y34e" id="6a4BSIWrZTC" role="_XDHO">
           <node concept="3clFbS" id="6a4BSIWrZTD" role="2VODD2">
             <node concept="3cpWs6" id="4HFrnGEv6$u" role="3cqZAp">
-              <node concept="jY4Nl" id="4HFrnGEv7DY" role="lGtFl">
-                <ref role="jYjtx" node="4HFrnGEuSoP" resolve="ClassifierTypeApplicabilityCondition" />
-                <node concept="3NFfHV" id="4HFrnGEv8cb" role="8TvZ8">
+              <node concept="1sPUBX" id="1WfddY$XIyP" role="lGtFl">
+                <ref role="v9R2y" node="4HFrnGEuSoP" resolve="ClassifierTypeApplicabilityCondition" />
+                <node concept="3NFfHV" id="4HFrnGEv8cb" role="1sPUBK">
                   <node concept="3clFbS" id="4HFrnGEv8cc" role="2VODD2">
                     <node concept="3clFbF" id="4HFrnGEv8xc" role="3cqZAp">
                       <node concept="2OqwBi" id="4HFrnGEv8C$" role="3clFbG">
@@ -1398,9 +1397,9 @@
         <node concept="_Y34e" id="5P5FNO9l$ba" role="_XDHO">
           <node concept="3clFbS" id="5P5FNO9l$bb" role="2VODD2">
             <node concept="3cpWs6" id="5P5FNO9me6g" role="3cqZAp">
-              <node concept="jY4Nl" id="5P5FNO9mt$b" role="lGtFl">
-                <ref role="jYjtx" node="5P5FNO9p326" resolve="StaticFieldReferenceApplicabilityCondition" />
-                <node concept="3NFfHV" id="5P5FNO9muhJ" role="8TvZ8">
+              <node concept="1sPUBX" id="1WfddY$XI6o" role="lGtFl">
+                <ref role="v9R2y" node="5P5FNO9p326" resolve="StaticFieldReferenceApplicabilityCondition" />
+                <node concept="3NFfHV" id="5P5FNO9muhJ" role="1sPUBK">
                   <node concept="3clFbS" id="5P5FNO9muhK" role="2VODD2">
                     <node concept="3clFbF" id="5P5FNO9mujN" role="3cqZAp">
                       <node concept="2OqwBi" id="5P5FNO9mujO" role="3clFbG">
@@ -3749,9 +3748,9 @@
         <node concept="_Y34e" id="20m38kqKM4w" role="_XDHO">
           <node concept="3clFbS" id="20m38kqKM4x" role="2VODD2">
             <node concept="3cpWs6" id="20m38kqNVE5" role="3cqZAp">
-              <node concept="jY4Nl" id="20m38kqNWjG" role="lGtFl">
-                <ref role="jYjtx" node="20m38kqNITY" resolve="ClassCreatorApplicabilityCondition" />
-                <node concept="3NFfHV" id="20m38kqNXN9" role="8TvZ8">
+              <node concept="1sPUBX" id="1WfddY$XHO7" role="lGtFl">
+                <ref role="v9R2y" node="20m38kqNITY" resolve="ClassCreatorApplicabilityCondition" />
+                <node concept="3NFfHV" id="20m38kqNXN9" role="1sPUBK">
                   <node concept="3clFbS" id="20m38kqNXNa" role="2VODD2">
                     <node concept="3clFbF" id="20m38kqNXOY" role="3cqZAp">
                       <node concept="2OqwBi" id="20m38kqNXVk" role="3clFbG">

@@ -30,12 +30,14 @@ public class Templatereduce__Looking implements TemplateDeclarationWeavingAware 
       environment.resolveInTemplateLater(tnode1, "baseMethodDeclaration", templateNode_pmalv5_c0a1a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/7060824959893184061", "heading", context);
       {
         Collection<SNode> tlist2 = null;
-        try {
+        {
           final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_7060824959896242619(new SourceSubstituteMacroNodeContext(context, switchMacroRef_pmalv5_b0a0a0a1a2a1a2));
           if (switchInput2 == null) {
             tlist2 = Collections.emptyList();
           } else {
-            tlist2 = environment.trySwitch(templateSwitchNode_pmalv5_a0a0a0a1a1a2a1a2, context.subContext(null, switchInput2));
+            TemplateContext switchContext2;
+            switchContext2 = context.subContext(null, switchInput2);
+            tlist2 = environment.trySwitch(templateSwitchNode_pmalv5_a0a0c0a1a1a2a1a2, switchContext2);
             if (tlist2 == null) {
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.NullLiteral");
               try {
@@ -47,7 +49,6 @@ public class Templatereduce__Looking implements TemplateDeclarationWeavingAware 
               }
             }
           }
-        } finally {
         }
         for (SNode child4 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild("actualArgument", child4);
@@ -68,7 +69,7 @@ public class Templatereduce__Looking implements TemplateDeclarationWeavingAware 
     return TemplateUtil.singletonList(tnodepart0);
   }
   private static SNodePointer templateNode_pmalv5_c0a1a1a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4923130412073306264");
-  private static SNodePointer switchMacroRef_pmalv5_b0a0a0a1a2a1a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "7060824959896242529");
-  private static SNodePointer templateSwitchNode_pmalv5_a0a0a0a1a1a2a1a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "7060824959896164452");
+  private static SNodePointer switchMacroRef_pmalv5_b0a0a0a1a2a1a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "2238065674976419305");
+  private static SNodePointer templateSwitchNode_pmalv5_a0a0c0a1a1a2a1a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "7060824959896164452");
   private static SNodePointer weaveTfConst_pmalv5_a0b0e = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "7060824959893184059");
 }

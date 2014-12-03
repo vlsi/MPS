@@ -59,9 +59,6 @@
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -95,6 +92,7 @@
         <property id="1169670173015" name="messageText" index="1lLB17" />
         <property id="1169670356567" name="messageType" index="1lMjX7" />
       </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
       <concept id="1167951910403" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" flags="in" index="3JmXsc" />
       <concept id="1118786554307" name="jetbrains.mps.lang.generator.structure.LoopMacro" flags="ln" index="1WS0z7">
         <child id="1167952069335" name="sourceNodesQuery" index="3Jn$fo" />
@@ -259,8 +257,8 @@
       </node>
       <node concept="15pagK" id="1D5gQ4cy51q" role="15EkXs">
         <node concept="raruj" id="1D5gQ4cy51r" role="lGtFl" />
-        <node concept="jY4Nl" id="1D5gQ4cy51t" role="lGtFl">
-          <ref role="jYjtx" node="1D5gQ4cy51u" resolve="switch_InputNode_A" />
+        <node concept="1sPUBX" id="1WfddY$XI0B" role="lGtFl">
+          <ref role="v9R2y" node="1D5gQ4cy51u" resolve="switch_InputNode_A" />
         </node>
       </node>
     </node>
