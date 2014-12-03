@@ -137,7 +137,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void projectOpened() {
-    LOG.info("Project opened");
+    LOG.info("Project '" + getName() + "' opened");
     super.projectOpened();
     initProject();
   }
