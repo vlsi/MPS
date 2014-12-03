@@ -4,6 +4,7 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class PluginDependency_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ImplementationPart_BehaviorDescriptor {
   public PluginDependency_BehaviorDescriptor() {
@@ -12,4 +13,5 @@ public abstract class PluginDependency_BehaviorDescriptor extends BaseConcept_Be
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.PluginDependency";
   }
+  public abstract String virtual_getPluginId_5864553086652219131(SNode thisNode);
 }
