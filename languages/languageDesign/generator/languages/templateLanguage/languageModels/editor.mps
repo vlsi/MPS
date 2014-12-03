@@ -529,7 +529,7 @@
     <node concept="3EZMnI" id="fPc6lnO" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="fPclVR9" role="3EZMnx">
-        <property role="3F0ifm" value="property macro" />
+        <property role="3F0ifm" value="property value" />
         <node concept="VPM3Z" id="hEU$PHY" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -545,26 +545,8 @@
           <property role="VOm3f" value="false" />
         </node>
       </node>
-      <node concept="3EZMnI" id="7yIPXhIhq_F" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
-        <node concept="3F0ifn" id="7yIPXhIhq_G" role="3EZMnx">
-          <property role="3F0ifm" value="comment" />
-        </node>
-        <node concept="3F0ifn" id="7yIPXhIhq_H" role="3EZMnx">
-          <property role="3F0ifm" value=":" />
-          <node concept="VPM3Z" id="7yIPXhIhq_I" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-        </node>
-        <node concept="3F0A7n" id="7yIPXhIhq_J" role="3EZMnx">
-          <property role="1O74Pk" value="true" />
-          <property role="1$x2rV" value="&lt;none&gt;" />
-          <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-        </node>
-        <node concept="VPM3Z" id="7yIPXhIhq_K" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="2iRfu4" id="7yIPXhIhq_L" role="2iSdaV" />
+      <node concept="PMmxH" id="1WfddY$VyTn" role="3EZMnx">
+        <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
       </node>
       <node concept="3EZMnI" id="gZzIfuG" role="3EZMnx">
         <property role="1cu_pB" value="0" />
@@ -718,7 +700,7 @@
     <node concept="3EZMnI" id="fPZlpi8" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="gZ$yDS1" role="3EZMnx">
-        <property role="3F0ifm" value="reference macro" />
+        <property role="3F0ifm" value="reference target" />
         <node concept="VPM3Z" id="hEU$OWX" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -734,26 +716,8 @@
           <property role="VOm3f" value="false" />
         </node>
       </node>
-      <node concept="3EZMnI" id="7yIPXhIhq_M" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
-        <node concept="3F0ifn" id="7yIPXhIhq_N" role="3EZMnx">
-          <property role="3F0ifm" value="comment" />
-        </node>
-        <node concept="3F0ifn" id="7yIPXhIhq_O" role="3EZMnx">
-          <property role="3F0ifm" value=":" />
-          <node concept="VPM3Z" id="7yIPXhIhq_P" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-        </node>
-        <node concept="3F0A7n" id="7yIPXhIhq_Q" role="3EZMnx">
-          <property role="1O74Pk" value="true" />
-          <property role="1$x2rV" value="&lt;none&gt;" />
-          <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-        </node>
-        <node concept="VPM3Z" id="7yIPXhIhq_R" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="2iRfu4" id="7yIPXhIhq_S" role="2iSdaV" />
+      <node concept="PMmxH" id="1WfddY$VzLq" role="3EZMnx">
+        <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
       </node>
       <node concept="3EZMnI" id="gZ$yDSe" role="3EZMnx">
         <node concept="3F0ifn" id="gZ$yDSf" role="3EZMnx">
@@ -1681,7 +1645,7 @@
     <node concept="3EZMnI" id="gcjZI$F" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h08TNzV" role="3EZMnx">
-        <property role="3F0ifm" value="switch-macro" />
+        <property role="3F0ifm" value="switch" />
         <node concept="VPM3Z" id="hEU$PVh" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -1700,53 +1664,11 @@
       <node concept="3EZMnI" id="h08TNzX" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="7yIPXhIhq_$" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="7yIPXhIhq__" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="7yIPXhIhq_A" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="7yIPXhIhq_B" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="7yIPXhIhq_C" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="7yIPXhIhq_D" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="7yIPXhIhq_E" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$V$Yg" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="hurX3vy" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="hurX3vz" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="hurX3v$" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="hEU$PEC" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="hurX3v_" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="hurX3vA" role="1sWHZn">
-              <node concept="3F0A7n" id="hurX3vB" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="hEU$PGi" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="i2IBXXa" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$V$Yh" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="h08TN$s" role="3EZMnx">
           <node concept="3F0ifn" id="h08TN$t" role="3EZMnx">
@@ -2051,7 +1973,7 @@
     <node concept="3EZMnI" id="ge9S5YP" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="ge9Spvp" role="3EZMnx">
-        <property role="3F0ifm" value="if-macro" />
+        <property role="3F0ifm" value="conditional branch" />
         <node concept="VPM3Z" id="hEU$PIc" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -2070,53 +1992,11 @@
       <node concept="3EZMnI" id="gZJ1dj9" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="7yIPXhIhq$U" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="7yIPXhIhq$V" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="7yIPXhIhq$W" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="7yIPXhIhq$X" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="7yIPXhIhq$Y" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="7yIPXhIhq$Z" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="7yIPXhIhq_0" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$Vrtm" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="hurWLEI" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="hurWLEJ" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="hurWLEK" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="hEU$PtC" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="hurWLEL" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="hurWLEM" role="1sWHZn">
-              <node concept="3F0A7n" id="hurWLEN" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="hEU$POO" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="i2IBXVv" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$Vrtn" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="gZJ1fE7" role="3EZMnx">
           <node concept="3F0ifn" id="gZJ1fE8" role="3EZMnx">
@@ -2259,7 +2139,7 @@
     <node concept="3EZMnI" id="geb3XPz" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h02PzAR" role="3EZMnx">
-        <property role="3F0ifm" value="copy/reduce node list macro" />
+        <property role="3F0ifm" value="copy/reduce list of nodes" />
         <node concept="VPM3Z" id="hEU$Pzn" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -2278,53 +2158,11 @@
       <node concept="3EZMnI" id="h02PzAT" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="7yIPXhIhq_1" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="7yIPXhIhq_2" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="7yIPXhIhq_3" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="7yIPXhIhq_4" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="7yIPXhIhq_5" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="7yIPXhIhq_6" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="7yIPXhIhq_7" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$Vr76" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="hurWKjW" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="hurWKjX" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="hurWKjY" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="hEU$Pig" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="hurWKjZ" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="hurWKk0" role="1sWHZn">
-              <node concept="3F0A7n" id="hurWKk1" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="hEU$Pp8" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="i2IBXX8" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$Vr7J" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="h02PzBg" role="3EZMnx">
           <node concept="3F0ifn" id="h02PzBh" role="3EZMnx">
@@ -2397,8 +2235,66 @@
       </node>
       <node concept="2iRfu4" id="i2IBXWV" role="2iSdaV" />
     </node>
-    <node concept="PMmxH" id="heSF$4M" role="6VMZX">
-      <ref role="PMmxG" node="heSF0Km" resolve="CopyScrNodeMacro_inspector" />
+    <node concept="3EZMnI" id="heSFwpk" role="6VMZX">
+      <property role="3EZMnw" value="true" />
+      <node concept="3F0ifn" id="heSFwpl" role="3EZMnx">
+        <property role="3F0ifm" value="copy/reduce node" />
+        <node concept="VPM3Z" id="hEU$PQZ" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="VechU" id="hEZR8ts" role="3F10Kt">
+          <property role="Vb096" value="DARK_BLUE" />
+        </node>
+        <node concept="30gYXW" id="hF0kJSK" role="3F10Kt">
+          <property role="Vb096" value="lightGray" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="heSFwpm" role="3EZMnx">
+        <node concept="VPM3Z" id="hEU$Q00" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="heSFwpn" role="3EZMnx">
+        <property role="3EZMnw" value="true" />
+        <property role="3EZMnz" value="true" />
+        <node concept="PMmxH" id="1WfddY$VrcF" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
+        </node>
+        <node concept="PMmxH" id="1WfddY$VrcG" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
+        </node>
+        <node concept="3EZMnI" id="heSFwpL" role="3EZMnx">
+          <node concept="3F0ifn" id="heSFwpM" role="3EZMnx">
+            <property role="3F0ifm" value="mapped node" />
+            <node concept="VPM3Z" id="hEU$P9Z" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+          </node>
+          <node concept="3F0ifn" id="heSFwpN" role="3EZMnx">
+            <property role="3F0ifm" value=":" />
+            <node concept="VPM3Z" id="hEU$P5k" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+          </node>
+          <node concept="3F1sOY" id="heSFwpO" role="3EZMnx">
+            <property role="1cu_pB" value="2" />
+            <property role="1$x2rV" value="&lt;current source node&gt;" />
+            <ref role="1NtTu8" to="tpf8:gZNFE_I" />
+          </node>
+          <node concept="VPM3Z" id="hEU$PbS" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="2iRfu4" id="i2IBXVf" role="2iSdaV" />
+        </node>
+        <node concept="VPM3Z" id="hEU$PFF" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="2EHx9g" id="i2IBXWZ" role="2iSdaV" />
+      </node>
+      <node concept="VPM3Z" id="hEU$PbC" role="3F10Kt">
+        <property role="VOm3f" value="false" />
+      </node>
+      <node concept="2iRkQZ" id="i2IBXUA" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="ghWSb2P">
@@ -2407,7 +2303,7 @@
     <node concept="3EZMnI" id="ghWSb2R" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="gZJoa3i" role="3EZMnx">
-        <property role="3F0ifm" value="loop-macro" />
+        <property role="3F0ifm" value="iterate over sequence of nodes" />
         <node concept="VPM3Z" id="hEU$PvE" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -2426,57 +2322,15 @@
       <node concept="3EZMnI" id="gZJoa3k" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="7yIPXhIhq_f" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="7yIPXhIhq_g" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="7yIPXhIhq_h" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="7yIPXhIhq_i" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="7yIPXhIhq_j" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="7yIPXhIhq_k" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="7yIPXhIhq_l" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VuCw" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="hurWOox" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="hurWOoy" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="hurWOoz" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="hEU$PCf" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="hurWOo$" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="hurWOo_" role="1sWHZn">
-              <node concept="3F0A7n" id="hurWOoA" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="hEU$PRV" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="i2IBXVW" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VuCx" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="gZJoa3_" role="3EZMnx">
           <node concept="3F0ifn" id="gZJoa3A" role="3EZMnx">
-            <property role="3F0ifm" value="mapped nodes" />
+            <property role="3F0ifm" value="iteration sequence" />
             <node concept="VPM3Z" id="hEU$P_c" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
@@ -2550,53 +2404,11 @@
       <node concept="3EZMnI" id="h031GGl" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="7yIPXhIhq_t" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="7yIPXhIhq_u" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="7yIPXhIhq_v" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="7yIPXhIhq_w" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="7yIPXhIhq_x" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="7yIPXhIhq_y" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="7yIPXhIhq_z" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VvWe" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="hurWXfq" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="hurWXfr" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="hurWXfs" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="hEU$Pgq" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="hurWXft" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="hurWXfu" role="1sWHZn">
-              <node concept="3F0A7n" id="hurWXfv" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="hEU$P39" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="i2IBXVp" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VvWf" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="h031GGA" role="3EZMnx">
           <node concept="3F0ifn" id="h031GGB" role="3EZMnx">
@@ -2718,53 +2530,11 @@
       <node concept="3EZMnI" id="h03AM7W" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="7yIPXhIhq_m" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="7yIPXhIhq_n" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="7yIPXhIhq_o" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="7yIPXhIhq_p" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="7yIPXhIhq_q" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="7yIPXhIhq_r" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="7yIPXhIhq_s" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$Vvl2" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="hurWPS6" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="hurWPS7" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="hurWPS8" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="hEU$Phu" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="hurWPS9" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="hurWPSa" role="1sWHZn">
-              <node concept="3F0A7n" id="hurWPSb" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="hEU$P9h" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="i2IBXUt" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$Vvl3" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="h03AM8j" role="3EZMnx">
           <node concept="3F0ifn" id="h03AM8k" role="3EZMnx">
@@ -4374,118 +4144,13 @@
       <node concept="2iRfu4" id="i2IBXTd" role="2iSdaV" />
     </node>
   </node>
-  <node concept="PKFIW" id="heSF0Km">
-    <property role="TrG5h" value="CopyScrNodeMacro_inspector" />
-    <ref role="1XX52x" to="tpf8:ge9HgZJ" resolve="CopySrcNodeMacro" />
-    <node concept="3EZMnI" id="heSFwpk" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
-      <node concept="3F0ifn" id="heSFwpl" role="3EZMnx">
-        <property role="3F0ifm" value="copy/reduce node macro" />
-        <node concept="VPM3Z" id="hEU$PQZ" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="VechU" id="hEZR8ts" role="3F10Kt">
-          <property role="Vb096" value="DARK_BLUE" />
-        </node>
-        <node concept="30gYXW" id="hF0kJSK" role="3F10Kt">
-          <property role="Vb096" value="lightGray" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="heSFwpm" role="3EZMnx">
-        <node concept="VPM3Z" id="hEU$Q00" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-      </node>
-      <node concept="3EZMnI" id="heSFwpn" role="3EZMnx">
-        <property role="3EZMnw" value="true" />
-        <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="2Pi793Do2fI" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="2Pi793Do2fJ" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="2Pi793Do2fK" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="2Pi793Do2fL" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="2Pi793Do2fR" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="2Pi793Do2fP" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="2Pi793Do2fQ" role="2iSdaV" />
-        </node>
-        <node concept="3EZMnI" id="hurWCqC" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="hurWCBQ" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="hurWDxg" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="hEU$OXa" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="hurWErD" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="hurWErE" role="1sWHZn">
-              <node concept="3F0A7n" id="hurWEGi" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="hEU$PbO" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="i2IBXTh" role="2iSdaV" />
-        </node>
-        <node concept="3EZMnI" id="heSFwpL" role="3EZMnx">
-          <node concept="3F0ifn" id="heSFwpM" role="3EZMnx">
-            <property role="3F0ifm" value="mapped node" />
-            <node concept="VPM3Z" id="hEU$P9Z" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0ifn" id="heSFwpN" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="hEU$P5k" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F1sOY" id="heSFwpO" role="3EZMnx">
-            <property role="1cu_pB" value="2" />
-            <property role="1$x2rV" value="&lt;current source node&gt;" />
-            <ref role="1NtTu8" to="tpf8:gZNFE_I" />
-          </node>
-          <node concept="VPM3Z" id="hEU$PbS" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="i2IBXVf" role="2iSdaV" />
-        </node>
-        <node concept="VPM3Z" id="hEU$PFF" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="2EHx9g" id="i2IBXWZ" role="2iSdaV" />
-      </node>
-      <node concept="VPM3Z" id="hEU$PbC" role="3F10Kt">
-        <property role="VOm3f" value="false" />
-      </node>
-      <node concept="2iRkQZ" id="i2IBXUA" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="PKFIW" id="hfvraJP">
     <property role="TrG5h" value="NodeMacro_postfix" />
+    <property role="3GE5qa" value="macro" />
     <ref role="1XX52x" to="tpf8:fP7Vmt2" resolve="NodeMacro" />
     <node concept="3EZMnI" id="hfvurhb" role="2wV5jI">
       <property role="3EZMnw" value="false" />
+      <node concept="35HoNQ" id="1WfddY$Vo6t" role="3EZMnx" />
       <node concept="3EZMnI" id="hfvursU" role="3EZMnx">
         <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hfvursV" role="3EZMnx">
@@ -4575,26 +4240,6 @@
                   <node concept="pncrf" id="hurYq0F" role="2Oq$k0" />
                   <node concept="3TrEf2" id="hurYqA6" role="2OqNvi">
                     <ref role="3Tt5mk" to="tpf8:hurW$JJ" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3F0A7n" id="2Pi793Do2fU" role="3EZMnx">
-        <property role="1O74Pk" value="true" />
-        <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-        <ref role="1k5W1q" node="7yIPXhIhYym" resolve="macroDescriptionText" />
-        <node concept="pkWqt" id="2Pi793Do2fV" role="pqm2j">
-          <node concept="3clFbS" id="2Pi793Do2fW" role="2VODD2">
-            <node concept="3clFbF" id="2Pi793Do2fX" role="3cqZAp">
-              <node concept="3y3z36" id="2Pi793Do2g4" role="3clFbG">
-                <node concept="10Nm6u" id="2Pi793Do2g7" role="3uHU7w" />
-                <node concept="2OqwBi" id="2Pi793Do2fZ" role="3uHU7B">
-                  <node concept="pncrf" id="2Pi793Do2fY" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="2Pi793Do2g3" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpf8:2Pi793Do1U8" resolve="comment" />
                   </node>
                 </node>
               </node>
@@ -4697,7 +4342,7 @@
     <node concept="3EZMnI" id="hoxHGC1" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hoxHGC2" role="3EZMnx">
-        <property role="3F0ifm" value="include-macro" />
+        <property role="3F0ifm" value="include outcome of a template" />
         <node concept="VPM3Z" id="hEU$PG7" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -4716,57 +4361,15 @@
       <node concept="3EZMnI" id="hoxHGC4" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="7yIPXhIhq_8" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="7yIPXhIhq_9" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="7yIPXhIhq_a" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="7yIPXhIhq_b" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="7yIPXhIhq_c" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="7yIPXhIhq_d" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="7yIPXhIhq_e" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VsOy" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="hurWMSH" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="hurWMSI" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="hurWMSJ" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="hEU$PNR" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="hurWMSK" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="hurWMSL" role="1sWHZn">
-              <node concept="3F0A7n" id="hurWMSM" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="hEU$PXI" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="i2IBXXd" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VsOz" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="hoxHGCI" role="3EZMnx">
           <node concept="3F0ifn" id="hoxHGCJ" role="3EZMnx">
-            <property role="3F0ifm" value="mapped node" />
+            <property role="3F0ifm" value="use input" />
             <node concept="VPM3Z" id="hEU$Pup" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
@@ -5763,7 +5366,7 @@
     <node concept="3EZMnI" id="1jRYachIAPI" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="1jRYachIAPJ" role="3EZMnx">
-        <property role="3F0ifm" value="template-call-macro" />
+        <property role="3F0ifm" value="call template and insert its outcome" />
         <node concept="VPM3Z" id="1jRYachIAPK" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -5782,53 +5385,11 @@
       <node concept="3EZMnI" id="1jRYachIAPP" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="1jRYachIAPQ" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="1jRYachIAPR" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="1jRYachIAPS" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="1jRYachIAPT" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="1jRYachIAPU" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="1jRYachIAPV" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="1jRYachIAPW" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VBu6" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="1jRYachIAPX" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="1jRYachIAPY" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="1jRYachIAPZ" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="1jRYachIAQ0" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="1jRYachIAQ1" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="1jRYachIAQ2" role="1sWHZn">
-              <node concept="3F0A7n" id="1jRYachIAQ3" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="1jRYachIAQ4" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="1jRYachIAQ5" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VBu7" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="1jRYachIAQ6" role="3EZMnx">
           <node concept="3F0ifn" id="1jRYachIAQ7" role="3EZMnx">
@@ -5860,7 +5421,7 @@
         <node concept="3EZMnI" id="1jRYachIAQg" role="3EZMnx">
           <property role="3EZMnw" value="false" />
           <node concept="3F0ifn" id="1jRYachIAQh" role="3EZMnx">
-            <property role="3F0ifm" value="call template" />
+            <property role="3F0ifm" value="template" />
             <node concept="VPM3Z" id="1jRYachIAQi" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
@@ -6705,7 +6266,7 @@
     <node concept="3EZMnI" id="4sWLrFSCvNl" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="4sWLrFSCvNm" role="3EZMnx">
-        <property role="3F0ifm" value="label node macro" />
+        <property role="3F0ifm" value="associate a label " />
         <node concept="VPM3Z" id="4sWLrFSCvNn" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -6724,53 +6285,11 @@
       <node concept="3EZMnI" id="4sWLrFSCvNs" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="4sWLrFSCvNt" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="4sWLrFSCvNu" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="4sWLrFSCvNv" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="4sWLrFSCvNw" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="4sWLrFSCvNx" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="4sWLrFSCvNy" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="4sWLrFSCvNz" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VtWc" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="4sWLrFSCvN$" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="4sWLrFSCvN_" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="4sWLrFSCvNA" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="4sWLrFSCvNB" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="4sWLrFSCvNC" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="4sWLrFSCvND" role="1sWHZn">
-              <node concept="3F0A7n" id="4sWLrFSCvNE" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="4sWLrFSCvNF" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="4sWLrFSCvNG" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VtWd" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="VPM3Z" id="4sWLrFSCvO5" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -6806,7 +6325,7 @@
     <node concept="3EZMnI" id="18LSMZREuYD" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="18LSMZREuYE" role="3EZMnx">
-        <property role="3F0ifm" value="insert node macro" />
+        <property role="3F0ifm" value="insert a node " />
         <node concept="VPM3Z" id="18LSMZREuYF" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -6825,53 +6344,11 @@
       <node concept="3EZMnI" id="18LSMZREuYK" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="18LSMZREuYL" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="18LSMZREuYM" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="18LSMZREuYN" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="18LSMZREuYO" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="18LSMZREuYP" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="18LSMZREuYQ" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="18LSMZREuYR" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VtU7" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="18LSMZREuYS" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="18LSMZREuYT" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="18LSMZREuYU" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="18LSMZREuYV" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="18LSMZREuYW" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="18LSMZREuYX" role="1sWHZn">
-              <node concept="3F0A7n" id="18LSMZREuYY" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="18LSMZREuYZ" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="18LSMZREuZ0" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VtU8" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="18LSMZREuZ1" role="3EZMnx">
           <node concept="3F0ifn" id="18LSMZREuZ2" role="3EZMnx">
@@ -6933,7 +6410,7 @@
     <node concept="3EZMnI" id="30c0HY8gA8n" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="30c0HY8gA8o" role="3EZMnx">
-        <property role="3F0ifm" value="weave-macro" />
+        <property role="3F0ifm" value="weave nodes under output node" />
         <node concept="VPM3Z" id="30c0HY8gA8p" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -6952,57 +6429,15 @@
       <node concept="3EZMnI" id="30c0HY8gA8u" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="30c0HY8gA8v" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="30c0HY8gA8w" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="30c0HY8gA8x" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="30c0HY8gA8y" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="30c0HY8gA8z" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="30c0HY8gA8$" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="30c0HY8gA8_" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VDkJ" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="30c0HY8gA8A" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="30c0HY8gA8B" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="30c0HY8gA8C" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="30c0HY8gA8D" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="30c0HY8gA8E" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="30c0HY8gA8F" role="1sWHZn">
-              <node concept="3F0A7n" id="30c0HY8gA8G" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="30c0HY8gA8H" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="30c0HY8gA8I" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VDkK" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="30c0HY8gA93" role="3EZMnx">
           <node concept="3F0ifn" id="30c0HY8gA94" role="3EZMnx">
-            <property role="3F0ifm" value="nodes to weave" />
+            <property role="3F0ifm" value="use input" />
             <node concept="VPM3Z" id="30c0HY8gA95" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
@@ -7091,7 +6526,7 @@
     <node concept="3EZMnI" id="4mp7qFmD2qS" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="4mp7qFmD2qT" role="3EZMnx">
-        <property role="3F0ifm" value="var node macro" />
+        <property role="3F0ifm" value="declare variable" />
         <node concept="VPM3Z" id="4mp7qFmD2qU" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -7110,53 +6545,11 @@
       <node concept="3EZMnI" id="4mp7qFmD2qZ" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="4mp7qFmD2r0" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="4mp7qFmD2r1" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="4mp7qFmD2r2" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="4mp7qFmD2r3" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="4mp7qFmD2r4" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="4mp7qFmD2r5" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="4mp7qFmD2r6" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VCDY" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="4mp7qFmD2r7" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="4mp7qFmD2r8" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="4mp7qFmD2r9" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="4mp7qFmD2ra" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="4mp7qFmD2rb" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="4mp7qFmD2rc" role="1sWHZn">
-              <node concept="3F0A7n" id="4mp7qFmD2rd" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="4mp7qFmD2re" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="4mp7qFmD2rf" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VCDZ" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="4mp7qFmD$jO" role="3EZMnx">
           <property role="3EZMnw" value="false" />
@@ -7231,7 +6624,7 @@
     <node concept="3EZMnI" id="2H5po9pnBeC" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="2H5po9pnBeD" role="3EZMnx">
-        <property role="3F0ifm" value="input node macro" />
+        <property role="3F0ifm" value="record input node as origin of the output" />
         <node concept="VPM3Z" id="2H5po9pnBeE" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -7250,53 +6643,11 @@
       <node concept="3EZMnI" id="2H5po9pnBeJ" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="2H5po9pnBeK" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="2H5po9pnBeL" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="2H5po9pnBeM" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="2H5po9pnBeN" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="2H5po9pnBeO" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="2H5po9pnBeP" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="2H5po9pnBeQ" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VCAw" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="2H5po9pnBeR" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="2H5po9pnBeS" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="2H5po9pnBeT" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="2H5po9pnBeU" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="2H5po9pnBeV" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="2H5po9pnBeW" role="1sWHZn">
-              <node concept="3F0A7n" id="2H5po9pnBeX" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="2H5po9pnBeY" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="2H5po9pnBeZ" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VCAx" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="2H5po9pnCDf" role="3EZMnx">
           <property role="3EZMnw" value="false" />
@@ -7459,7 +6810,7 @@
     <node concept="3EZMnI" id="QzR6ThJirH" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="QzR6ThJirI" role="3EZMnx">
-        <property role="3F0ifm" value="switch-macro" />
+        <property role="3F0ifm" value="switch templates by input node" />
         <node concept="VPM3Z" id="QzR6ThJirJ" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -7478,57 +6829,15 @@
       <node concept="3EZMnI" id="QzR6ThJirO" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="QzR6ThJirP" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="QzR6ThJirQ" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="QzR6ThJirR" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="QzR6ThJirS" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="QzR6ThJirT" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="QzR6ThJirU" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="QzR6ThJirV" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VC$F" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
-        <node concept="3EZMnI" id="QzR6ThJirW" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="QzR6ThJirX" role="3EZMnx">
-            <property role="3F0ifm" value="mapping label" />
-          </node>
-          <node concept="3F0ifn" id="QzR6ThJirY" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="QzR6ThJirZ" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="1iCGBv" id="QzR6ThJis0" role="3EZMnx">
-            <property role="1$x2rV" value="&lt;no label&gt;" />
-            <ref role="1NtTu8" to="tpf8:hurW$JJ" />
-            <node concept="1sVBvm" id="QzR6ThJis1" role="1sWHZn">
-              <node concept="3F0A7n" id="QzR6ThJis2" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-                <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
-              </node>
-            </node>
-          </node>
-          <node concept="VPM3Z" id="QzR6ThJis3" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="QzR6ThJis4" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$VC$G" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$UDDx" resolve="NodeMacro_label_inspector" />
         </node>
         <node concept="3EZMnI" id="QzR6ThJis5" role="3EZMnx">
           <node concept="3F0ifn" id="QzR6ThJis6" role="3EZMnx">
-            <property role="3F0ifm" value="mapped node" />
+            <property role="3F0ifm" value="use input" />
             <node concept="VPM3Z" id="QzR6ThJis7" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
@@ -7758,7 +7067,7 @@
     <ref role="1XX52x" to="tpf8:7ITVRipEFo6" resolve="ExportMacro" />
     <node concept="3EZMnI" id="1yjqjC7KGuS" role="2wV5jI">
       <node concept="3F0ifn" id="1yjqjC7KGuT" role="3EZMnx">
-        <property role="3F0ifm" value="$EXPOSE$" />
+        <property role="3F0ifm" value="$EXPORT$" />
         <property role="1cu_pB" value="1" />
         <ref role="1k5W1q" node="hG2hEjs" resolve="macroStart" />
         <ref role="1ERwB7" node="gZDQqLq" resolve="MacroSymbol_Actions" />
@@ -7776,6 +7085,7 @@
           <node concept="3F0A7n" id="7ITVRipEJDO" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
           </node>
         </node>
       </node>
@@ -7786,7 +7096,7 @@
     <node concept="3EZMnI" id="1yjqjC7KGuY" role="6VMZX">
       <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="1yjqjC7KGuZ" role="3EZMnx">
-        <property role="3F0ifm" value="expose node macro" />
+        <property role="3F0ifm" value="expose node for external references" />
         <node concept="VPM3Z" id="1yjqjC7KGv0" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -7805,26 +7115,8 @@
       <node concept="3EZMnI" id="1yjqjC7KGv5" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <property role="3EZMnz" value="true" />
-        <node concept="3EZMnI" id="1yjqjC7KGv6" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
-          <node concept="3F0ifn" id="1yjqjC7KGv7" role="3EZMnx">
-            <property role="3F0ifm" value="comment" />
-          </node>
-          <node concept="3F0ifn" id="1yjqjC7KGv8" role="3EZMnx">
-            <property role="3F0ifm" value=":" />
-            <node concept="VPM3Z" id="1yjqjC7KGv9" role="3F10Kt">
-              <property role="VOm3f" value="false" />
-            </node>
-          </node>
-          <node concept="3F0A7n" id="1yjqjC7KGva" role="3EZMnx">
-            <property role="1O74Pk" value="true" />
-            <property role="1$x2rV" value="&lt;none&gt;" />
-            <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
-          </node>
-          <node concept="VPM3Z" id="1yjqjC7KGvb" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="2iRfu4" id="1yjqjC7KGvc" role="2iSdaV" />
+        <node concept="PMmxH" id="1WfddY$Vr6n" role="3EZMnx">
+          <ref role="PMmxG" node="1WfddY$Vo$b" resolve="AbstractMacro_comment_inspector" />
         </node>
         <node concept="VPM3Z" id="1yjqjC7KGvd" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -7835,6 +7127,65 @@
         <property role="VOm3f" value="false" />
       </node>
       <node concept="2iRkQZ" id="1yjqjC7KGvg" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="1WfddY$UDDx">
+    <property role="3GE5qa" value="macro" />
+    <property role="TrG5h" value="NodeMacro_label_inspector" />
+    <ref role="1XX52x" to="tpf8:fP7Vmt2" resolve="NodeMacro" />
+    <node concept="3EZMnI" id="1WfddY$UJm$" role="2wV5jI">
+      <property role="3EZMnw" value="false" />
+      <node concept="3F0ifn" id="1WfddY$UJm_" role="3EZMnx">
+        <property role="3F0ifm" value="mapping label" />
+      </node>
+      <node concept="3F0ifn" id="1WfddY$UJmA" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="VPM3Z" id="1WfddY$UJmB" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+      </node>
+      <node concept="1iCGBv" id="1WfddY$UJmC" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;no label&gt;" />
+        <ref role="1NtTu8" to="tpf8:hurW$JJ" />
+        <node concept="1sVBvm" id="1WfddY$UJmD" role="1sWHZn">
+          <node concept="3F0A7n" id="1WfddY$UJmE" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            <ref role="1k5W1q" node="hHcji$G" resolve="mappingLabelReference" />
+          </node>
+        </node>
+      </node>
+      <node concept="VPM3Z" id="1WfddY$UJmF" role="3F10Kt">
+        <property role="VOm3f" value="false" />
+      </node>
+      <node concept="2iRfu4" id="1WfddY$UJmG" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="1WfddY$Vo$b">
+    <property role="3GE5qa" value="macro" />
+    <property role="TrG5h" value="AbstractMacro_comment_inspector" />
+    <ref role="1XX52x" to="tpf8:hR0XTcV" resolve="AbstractMacro" />
+    <node concept="3EZMnI" id="1WfddY$Vo$d" role="2wV5jI">
+      <property role="3EZMnw" value="false" />
+      <node concept="3F0ifn" id="1WfddY$Vo$e" role="3EZMnx">
+        <property role="3F0ifm" value="comment" />
+      </node>
+      <node concept="3F0ifn" id="1WfddY$Vo$f" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="VPM3Z" id="1WfddY$Vo$g" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+      </node>
+      <node concept="3F0A7n" id="1WfddY$Vo$h" role="3EZMnx">
+        <property role="1O74Pk" value="true" />
+        <property role="1$x2rV" value="&lt;none&gt;" />
+        <ref role="1k5W1q" node="7yIPXhIhYym" resolve="macroDescriptionText" />
+        <ref role="1NtTu8" to="tpf8:2Pi793Do1U8" resolve="comment" />
+      </node>
+      <node concept="VPM3Z" id="1WfddY$Vo$i" role="3F10Kt">
+        <property role="VOm3f" value="false" />
+      </node>
+      <node concept="2iRfu4" id="1WfddY$Vo$j" role="2iSdaV" />
     </node>
   </node>
 </model>
