@@ -545,7 +545,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell &&
             selectedCell instanceof EditorCell_Label) {
           ((EditorCell_Label) selectedCell).selectWordOrAll();
-          repaint();
+          repaintExternalComponent();
         }
       }
 
@@ -2909,7 +2909,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void editorWillBeDisposed(EditorComponent component);
   }
 
-  void repaint(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public void repaint(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     repaint(0, cell.getY(), getWidth(), cell.getHeight());
   }
 
@@ -2997,7 +2997,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (myLastReferenceCell != null) {
         myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, false);
         setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-        repaint();
+        repaintExternalComponent();
       }
     }
 
@@ -3005,7 +3005,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (myLastReferenceCell != null) {
         myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, true);
         setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        repaint();
+        repaintExternalComponent();
       }
     }
   }

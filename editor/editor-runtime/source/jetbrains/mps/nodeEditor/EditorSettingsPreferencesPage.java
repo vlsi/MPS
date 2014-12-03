@@ -199,7 +199,7 @@ class EditorSettingsPreferencesPage {
     ActionListener listener = new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        myBlinkingDemo.repaint();
+        myBlinkingDemo.repaintExternalComponent();
         EditorCell rootCell = myBlinkingDemo.getRootCell();
         if (rootCell != null) {
           rootCell.switchCaretVisible();
