@@ -7,6 +7,8 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.migration.global.MigrationPropertiesManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -30,6 +32,16 @@ public class Name2IdMigration implements ProjectMigration {
     String value = MigrationPropertiesManager.getInstance().getProperties(p).getProperty(Name2IdMigration.EXECUTED_PROPERTY);
     if (EXECUTED_VALUE.equals(value)) {
       return false;
+    }
+
+    // check all languages are available 
+    for (SModule module : Sequence.fromIterable(p.getModules())) {
+      if (!((module instanceof Language))) {
+        continue;
+      }
+      if (LanguageRegistry.getInstance().getLanguage(((Language) module)) == null) {
+        return false;
+      }
     }
 
     for (SModule module : Sequence.fromIterable(p.getModulesWithGenerators())) {
