@@ -54,6 +54,7 @@ public class ClassLoadingBroadCaster {
   }
 
   public Collection<? extends ReloadableModule> onUnload(Collection<? extends SModuleReference> refsToUnload) {
+    myModelAccess.checkWriteAccess();
     if (refsToUnload.size() == 0) return Collections.emptySet();
     final Set<ReloadableModuleBase> modulesToUnload = new LinkedHashSet<ReloadableModuleBase>();
     for (ReloadableModule loadedModule : myLoadedModules) {
@@ -76,6 +77,7 @@ public class ClassLoadingBroadCaster {
   }
 
   public void onLoad(Collection<? extends ReloadableModule> toLoad) {
+    myModelAccess.checkWriteAccess();
     if (toLoad.size() == 0) return;
     final Set<ReloadableModuleBase> modulesToLoad = new LinkedHashSet<ReloadableModuleBase>(toLoad.size());
     for (ReloadableModule module : toLoad) modulesToLoad.add((ReloadableModuleBase) module);

@@ -39,6 +39,13 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * We batch all events during write actions. (modules' events like module adding/removing/changing)
+ * @see jetbrains.mps.smodel.BatchEventsProcessor
+ *
+ * We flush the events both at the end of write action and on request (triggered by #getClass, #getClassLoader or #reloadModules)
+ * No such module events can happen outside of write action.
+ */
 class CLManagerRepositoryListener implements SRepositoryBatchListener {
   private ClassLoaderManager myManager;
   private final ModulesWatcher myModulesWatcher;
@@ -88,7 +95,7 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
 
   private void removeModules(List<SModuleReference> modules) {
     Collections.sort(modules, MODULE_COMPARATOR);
-    myManager.unloadModules(modules);
+    myManager.unloadModules(modules, new EmptyProgressMonitor());
     myModulesWatcher.removeModules(modules);
   }
 

@@ -7,6 +7,8 @@ import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Computable;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class RepositoryStateCacheUtils {
   public static <K, V> V getFromCache(String repositoryKey, K key, final _FunctionTypes._return_P0_E0<? extends V> creator) {
@@ -14,10 +16,15 @@ public class RepositoryStateCacheUtils {
     if (cache == null) {
       return creator.invoke();
     }
-
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("Getting repository state cache");
+    }
     V v = cache.get(key);
     if (v != null) {
       return v;
+    }
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("Creating repository state cache");
     }
     v = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<V>() {
       @Override
@@ -28,9 +35,13 @@ public class RepositoryStateCacheUtils {
     if (v != null) {
       cache.putIfAbsent(key, v);
     }
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("Created repository state cache");
+    }
     return v;
   }
   public static <K, V> V getFromCache(Class clazz, K key, final _FunctionTypes._return_P0_E0<? extends V> creator) {
     return getFromCache(clazz.getName(), key, creator);
   }
+  protected static Logger LOG = LogManager.getLogger(RepositoryStateCacheUtils.class);
 }

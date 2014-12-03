@@ -22,6 +22,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -197,12 +198,13 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
       return cache;
     }
     cache = new ConcurrentHashMap<K, V>();
+    LOG.trace("Creating a new repository state cache");
     ConcurrentHashMap<K, V> existingCache = (ConcurrentHashMap<K, V>) myRepositoryStateCaches.putIfAbsent(repositoryKey, (ConcurrentMap<Object, Object>) cache);
     return existingCache != null ? existingCache : cache;
   }
 
   public void clearRepositoryStateCaches() {
-//    LOG.warn("Clearing model state caches");
+    LOG.debug("Clearing repository state caches");
     myRepositoryStateCaches.clear();
   }
 

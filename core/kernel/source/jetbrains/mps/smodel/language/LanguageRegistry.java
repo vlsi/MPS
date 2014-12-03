@@ -93,35 +93,25 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   private void notifyUnload(final Collection<LanguageRuntime> languages) {
     if (languages.isEmpty()) return;
 
-    myRepository.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        for (LanguageRegistryListener l : myLanguageListeners) {
-          try {
-            l.beforeLanguagesUnloaded(languages);
-          } catch (Exception ex) {
-            LOG.error(format("Exception on language unloading; languages: %s; listener: %s", languages, l), ex);
-          }
-        }
+    for (LanguageRegistryListener l : myLanguageListeners) {
+      try {
+        l.beforeLanguagesUnloaded(languages);
+      } catch (Exception ex) {
+        LOG.error(format("Exception on language unloading; languages: %s; listener: %s", languages, l), ex);
       }
-    });
+    }
   }
 
   private void notifyLoad(final Collection<LanguageRuntime> languages) {
     if (languages.isEmpty()) return;
 
-    myRepository.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        for (LanguageRegistryListener l : myLanguageListeners) {
-          try {
-            l.afterLanguagesLoaded(languages);
-          } catch (Exception ex) {
-            LOG.error(format("Exception on language loading; languages: %s; listener: %s", languages, l), ex);
-          }
-        }
+    for (LanguageRegistryListener l : myLanguageListeners) {
+      try {
+        l.afterLanguagesLoaded(languages);
+      } catch (Exception ex) {
+        LOG.error(format("Exception on language loading; languages: %s; listener: %s", languages, l), ex);
       }
-    });
+    }
   }
 
   @Nullable

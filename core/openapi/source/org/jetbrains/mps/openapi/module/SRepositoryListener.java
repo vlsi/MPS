@@ -19,6 +19,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Receives notifications whenever a repository gets updated.
+ * All method calls are made within write action.
+ * @see ModelAccess#checkWriteAccess()
  */
 public interface SRepositoryListener {
   void moduleAdded(@NotNull SModule module);
