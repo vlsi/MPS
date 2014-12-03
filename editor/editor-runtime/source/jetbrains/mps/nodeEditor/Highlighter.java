@@ -30,17 +30,16 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
-import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.repository.CommandListener;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -62,6 +61,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -375,9 +375,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
 
     final boolean[] isUpdated = {false};
-    final boolean[] inspectorIsUpdated = {false};
-    EditorComponent inspector = null;
-
     for (final EditorComponent editorComponent : allEditorComponents) {
       if (myStopThread || myCancellable.isCancelled()) {
         return;
@@ -397,31 +394,13 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
 
     if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
-      inspector = myInspectorTool.getInspector();
-      final EditorComponent finalInspector = inspector;
-      TypeContextManager.getInstance().runTypecheckingAction(inspector, new Runnable() {
+      final EditorComponent finalInspector = myInspectorTool.getInspector();
+      TypeContextManager.getInstance().runTypecheckingAction(finalInspector, new Runnable() {
         @Override
         public void run() {
-          if (updateEditorComponent(finalInspector, events, checkers, checkersToRemove, isUpdated[0], essentialOnly)) {
-            inspectorIsUpdated[0] = true;
-          }
+          updateEditorComponent(finalInspector, events, checkers, checkersToRemove, isUpdated[0], essentialOnly);
         }
       });
-    }
-
-    if (myStopThread || myCancellable.isCancelled()) {
-      return;
-    }
-
-    if (isUpdated[0]) {
-      for (EditorComponent editorComponent : allEditorComponents) {
-        editorComponent.repaint();
-        editorComponent.getVerticalScrollBar().repaint();
-      }
-    }
-    if (inspectorIsUpdated[0]) {
-      inspector.repaint();
-      inspector.getVerticalScrollBar().repaint();
     }
   }
 
@@ -628,7 +607,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   private static <T> T runLoPrioRead(final Computable<T> computable) {
-    assert !ModelAccess.instance().canRead():"Lo-prio read with acquired read can be a reason of a deadlock";
+    assert !ModelAccess.instance().canRead() : "Lo-prio read with acquired read can be a reason of a deadlock";
     T result;
     do {
       while (IMakeService.INSTANCE.isSessionActive()) {
