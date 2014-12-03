@@ -28,6 +28,10 @@ public class MigrationsUtil {
   }
   public static boolean isMigrationNeeded(SLanguage language, int importVersion, SModule module) {
     int currentVersion = language.getLanguageVersion();
+    // if we don't have version, it's simply 0 
+    if (importVersion == -1) {
+      importVersion = 0;
+    }
     if (importVersion > currentVersion) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Module " + module + " depends on version " + importVersion + " of language " + language + " which is higher than available version (" + currentVersion + ")");
