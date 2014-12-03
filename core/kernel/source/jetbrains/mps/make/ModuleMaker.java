@@ -210,21 +210,10 @@ public class ModuleMaker {
 
     Project project = null;
     for (SModule m : modules) {
-      if (project == null) {
-        SRepository repository = m.getRepository();
-        if (repository instanceof ProjectRepository) {
-          project = ((ProjectRepository) repository).getProject();
-        } else if (repository instanceof MPSModuleRepository) {
-          Set<MPSModuleOwner> owners = ((MPSModuleRepository) repository).getOwners(m);
-          for (MPSModuleOwner owner : owners) {
-            if (owner instanceof Project) {
-              project = ((Project) owner);
-            }
-          }
-        }
-      }
-
       if (isExcluded(m)) continue;
+      if (project == null) {
+        project = SModuleOperations.getProjectForModule(m);
+      }
 
       hasAnythingToCompile = true;
     }
