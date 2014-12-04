@@ -202,6 +202,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
@@ -900,9 +901,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         jetbrains.mps.openapi.editor.cells.EditorCell selection = getSelectedCell();
         String info = "";
         if (selection != null) {
-          List<HighlighterMessage> messages = getHighlighterMessagesFor(selection);
-          if (!messages.isEmpty()) {
-            info = messages.get(0).getMessage();
+          HighlighterMessage message = getHighlighterMessageFor(selection);
+          if (message != null) {
+            info = message.getMessage();
           }
         }
 
@@ -942,7 +943,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return null;
     }
     StringBuilder result = new StringBuilder();
-    for (HighlighterMessage message : messages) {
+    for (ListIterator<HighlighterMessage> it = messages.listIterator(messages.size()); it.hasPrevious(); ) {
+      SimpleEditorMessage message = it.previous();
       if (result.length() != 0) {
         result.append("\n");
       }
@@ -969,8 +971,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private HighlighterMessage getHighlighterMessageFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    List<HighlighterMessage> highlighterMessages = getHighlighterMessagesFor(cell);
-    return highlighterMessages.isEmpty() ? null : highlighterMessages.get(0);
+    List<HighlighterMessage> messages = getHighlighterMessagesFor(cell);
+    ListIterator<HighlighterMessage> it = messages.listIterator(messages.size());
+    return it.hasPrevious() ? it.previous() : null;
   }
 
   @Nullable
