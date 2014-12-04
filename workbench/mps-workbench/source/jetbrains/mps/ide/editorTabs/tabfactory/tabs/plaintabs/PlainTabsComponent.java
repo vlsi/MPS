@@ -20,7 +20,9 @@ import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.PrevNextActionsDescriptor;
+import com.intellij.ui.TabbedPaneWrapper;
 import com.intellij.ui.TabbedPaneWrapper.AsJBTabs;
+import com.intellij.ui.tabs.UiDecorator;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
@@ -40,10 +42,12 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Insets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -68,10 +72,15 @@ public class PlainTabsComponent extends BaseTabsComponent {
     super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback, project);
 
     PrevNextActionsDescriptor navigation = new PrevNextActionsDescriptor(IdeActions.ACTION_NEXT_EDITOR_TAB, IdeActions.ACTION_PREVIOUS_EDITOR_TAB);
-    myJbTabs = new AsJBTabs(project, SwingConstants.BOTTOM, navigation, myJbTabsDisposable);
-    myJbTabs.getTabs().getPresentation()
-        .setPaintBorder(0, 0, 0, 0)
-        .setGhostsAlwaysVisible(true);
+    myJbTabs = new TabbedPaneWrapper.AsJBTabs(project, SwingConstants.BOTTOM, navigation, myJbTabsDisposable);
+    myJbTabs.getTabs().getPresentation().setPaintBorder(0, 0, 0, 0).setTabSidePaintBorder(1).setGhostsAlwaysVisible(true).setUiDecorator(new UiDecorator() {
+      @Override
+      @NotNull
+      public UiDecoration getDecoration() {
+        return new UiDecoration(null, new Insets(0, 8, 0, 8));
+      }
+    });
+    myJbTabs.getTabs().getComponent().setBorder(new EmptyBorder(0, 0, 1, 0));
 
     getComponent().add(myJbTabs.getTabs().getComponent(), BorderLayout.CENTER);
 
@@ -202,19 +211,18 @@ public class PlainTabsComponent extends BaseTabsComponent {
       TabEditorLayout newContent = updateDocumentsAndNodes();
 
       //todo sort nodes inside aspect
-      JLabel fill = new JLabel("");
       for (RelationDescriptor tab : tabs) {
         if (newContent.covers(tab)) {
           for (Entry tabDescriptor : newContent.get(tab)) {
             final PlainEditorTab pet = new PlainEditorTab(tabDescriptor);
             myRealTabs.add(pet);
             SNode node = pet.getNode().resolve(MPSModuleRepository.getInstance());
-            myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
+            myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), new JLabel(""), "");
             myJbTabs.getTabs().getTabAt(myJbTabs.getTabs().getTabCount() - 1).setPreferredFocusableComponent(myEditor);
           }
         } else if (myShowGrayed) {
           myRealTabs.add(new PlainEditorTab(tab));
-          myJbTabs.addTab(tab.getTitle(), fill);
+          myJbTabs.addTab(tab.getTitle(), new JLabel(""));
           myJbTabs.getTabs().getTabAt(myJbTabs.getTabs().getTabCount() - 1).setPreferredFocusableComponent(myEditor);
           myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, Color.GRAY);
         }
