@@ -35,10 +35,10 @@ public final class WriteActionDispatcher {
     if (myWriteActionLevel == 0) onActionStarted();
     ++myWriteActionLevel;
     try {
-      LOG.debug("Starting write action");
+      LOG.debug("Write action started");
       r.run();
     } finally {
-      LOG.debug("Finishing write action");
+      LOG.debug("Write action finished");
       --myWriteActionLevel;
       if (myWriteActionLevel == 0) onActionFinished();
     }
