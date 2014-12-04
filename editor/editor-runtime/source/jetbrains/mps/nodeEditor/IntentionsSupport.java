@@ -238,7 +238,7 @@ public class IntentionsSupport {
     myLightBulb.setIcon(icon);
     myEditor.add(myLightBulb);
     myLightBulb.setLocation(myLightBulbLocation);
-    myEditor.repaint();
+    myEditor.repaintExternalComponent();
   }
 
   private void hideLightBulb() {

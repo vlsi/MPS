@@ -29,9 +29,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Deque;
 import java.util.Iterator;
+import java.util.List;
 
 public class HighlighterMessage extends EditorMessageWithTarget {
   private IErrorReporter myErrorReporter;
@@ -74,28 +76,20 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   @Override
   public void paint(Graphics g, EditorComponent editorComponent, jetbrains.mps.nodeEditor.cells.EditorCell cell) {
     if (cell != null) {
-      drawWaveUnderCell(g, getColor(), cell);
+      for (Region nextRegion : getCellToUnderline(cell)) {
+        nextRegion.drawWaveUnderCell(g, getColor());
+      }
     }
   }
 
-  private void drawWaveUnderCell(Graphics g, Color c, EditorCell cell) {
-    EditorCell targetCell = getCellToUnderline(cell);
-    int x = targetCell.getX();
-    int y = targetCell.getY();
-    int height = targetCell.getHeight();
-    int leftInternalInset = targetCell.getLeftInset();
-    int effectiveWidth = targetCell.getEffectiveWidth();
-    g.setColor(c);
-    ColorAndGraphicsUtil.drawWave(g, x + leftInternalInset, x + leftInternalInset + effectiveWidth, y + height - ColorAndGraphicsUtil.WAVE_HEIGHT);
-  }
-
-  private EditorCell getCellToUnderline(EditorCell cell) {
+  private List<Region> getCellToUnderline(EditorCell cell) {
     Deque<Iterator<EditorCell>> iteratorsStack = new LinkedList<Iterator<EditorCell>>();
     if (cell instanceof EditorCell_Collection) {
       iteratorsStack.addLast(((EditorCell_Collection) cell).iterator());
     } else {
       iteratorsStack.addLast(Collections.singletonList(cell).iterator());
     }
+    List<Region> regions = new ArrayList<Region>();
     while (!iteratorsStack.isEmpty()) {
       Iterator<EditorCell> currentIterator = iteratorsStack.peekLast();
       if (!currentIterator.hasNext()) {
@@ -109,9 +103,80 @@ public class HighlighterMessage extends EditorMessageWithTarget {
       if (nextCell instanceof EditorCell_Collection) {
         iteratorsStack.addLast(((EditorCell_Collection) nextCell).iterator());
       } else {
-        return nextCell;
+        Region nextRegion = new Region(nextCell);
+        if (!regions.isEmpty() && regions.get(regions.size() - 1).canMerge(nextRegion)) {
+          nextRegion = regions.get(regions.size() - 1).merge(nextRegion);
+          regions.set(regions.size() - 1, nextRegion);
+        } else {
+          regions.add(nextRegion);
+        }
       }
     }
-    return cell;
+    return highlightContainingCollection(regions) ? Collections.singletonList(new Region(cell)) : regions;
+  }
+
+  /**
+   * return true if all regions are located on the same "line", so in this case we will underline
+   * containing collection instead of drawing separate errors.
+   *
+   * In case of multi-line cells we are still drawing messages as merged cell regions in order to try to highlight editor lines..
+   */
+  private boolean highlightContainingCollection(Iterable<Region> regions) {
+    Region firstRegion = null;
+    for (Region region : regions) {
+      if (firstRegion == null) {
+        firstRegion = region;
+        continue;
+      }
+      if (!firstRegion.isSameY(region)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private class Region {
+    private int myX;
+    private int myLeftInset;
+    private int myWidth;
+    private int myEffectiveWidth;
+    private int myY;
+
+    public Region(EditorCell cell) {
+      this(cell.getX(), cell.getY() + cell.getHeight(), cell.getLeftInset(), cell.getEffectiveWidth(), cell.getWidth());
+    }
+
+    private Region(int x, int y, int leftInset, int effectiveWidth, int width) {
+      myX = x;
+      myY = y;
+      myLeftInset = leftInset;
+      myEffectiveWidth = effectiveWidth;
+      myWidth = width;
+    }
+
+    public boolean canMerge(Region another) {
+      return myY == another.myY && (myX + myWidth == another.myX || myX == another.myX + myWidth);
+    }
+
+    public Region merge(Region another) {
+      assert canMerge(another);
+      int y = myY;
+      boolean isFirst = myX + myWidth == another.myX;
+      int x = isFirst ? myX : another.myX;
+      int leftInset = isFirst ? myLeftInset : another.myLeftInset;
+      int width = myWidth + another.myWidth;
+      int effectiveWidth = isFirst ? myWidth - myLeftInset + another.myLeftInset + another.myEffectiveWidth :
+          another.myWidth - another.myLeftInset + myLeftInset + myEffectiveWidth;
+      return new Region(x, y, leftInset, effectiveWidth, width);
+    }
+
+    public void drawWaveUnderCell(Graphics g, Color color) {
+      g.setColor(color);
+      ColorAndGraphicsUtil.drawWave(g, myX + myLeftInset, myX + myLeftInset + myEffectiveWidth, myY - ColorAndGraphicsUtil.WAVE_HEIGHT);
+    }
+
+    public boolean isSameY(Region another) {
+      return myY == another.myY;
+    }
   }
 }

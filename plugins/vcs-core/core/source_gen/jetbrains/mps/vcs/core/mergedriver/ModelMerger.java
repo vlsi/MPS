@@ -96,23 +96,28 @@ import org.apache.log4j.LogManager;
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           mergeSession.value = MergeSession.createMergeSession(baseModel, localModel, latestModel);
-          int conflictingChangesCount = Sequence.fromIterable(mergeSession.value.getAllChanges()).where(new IWhereFilter<ModelChange>() {
-            public boolean accept(ModelChange c) {
-              return Sequence.fromIterable(mergeSession.value.getConflictedWith(c)).isNotEmpty();
-            }
-          }).count();
-          if (conflictingChangesCount == 0) {
-            if (LOG.isInfoEnabled()) {
-              LOG.info(String.format("%s: %d changes detected: %d local and %d latest.", myModelName, Sequence.fromIterable(mergeSession.value.getAllChanges()).count(), ListSequence.fromList(mergeSession.value.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeSession.value.getRepositoryChangeSet().getModelChanges()).count()));
-            }
-            mergeSession.value.applyChanges(mergeSession.value.getAllChanges());
-          } else {
-            if (LOG.isInfoEnabled()) {
-              LOG.info(String.format("%s: %d changes detected, %d of them are conflicting", myModelName, Sequence.fromIterable(mergeSession.value.getAllChanges()).count(), conflictingChangesCount));
-            }
-          }
         }
       });
+      int conflictingChangesCount = Sequence.fromIterable(mergeSession.value.getAllChanges()).where(new IWhereFilter<ModelChange>() {
+        public boolean accept(ModelChange c) {
+          return Sequence.fromIterable(mergeSession.value.getConflictedWith(c)).isNotEmpty();
+        }
+      }).count();
+      if (conflictingChangesCount == 0) {
+        if (LOG.isInfoEnabled()) {
+          LOG.info(String.format("%s: %d changes detected: %d local and %d latest.", myModelName, Sequence.fromIterable(mergeSession.value.getAllChanges()).count(), ListSequence.fromList(mergeSession.value.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeSession.value.getRepositoryChangeSet().getModelChanges()).count()));
+        }
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            mergeSession.value.applyChanges(mergeSession.value.getAllChanges());
+          }
+        });
+      } else {
+        if (LOG.isInfoEnabled()) {
+          LOG.info(String.format("%s: %d changes detected, %d of them are conflicting", myModelName, Sequence.fromIterable(mergeSession.value.getAllChanges()).count(), conflictingChangesCount));
+        }
+        return backup(baseContent, localContent, latestContent);
+      }
       if (mergeSession.value.hasIdsToRestore()) {
         if (LOG.isInfoEnabled()) {
           LOG.info(String.format("%s: node id duplication detected, should merge in UI.", myModelName));
@@ -146,7 +151,6 @@ import org.apache.log4j.LogManager;
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Exception while merging", e);
       }
-      return backup(baseContent, localContent, latestContent);
     }
 
     return backup(baseContent, localContent, latestContent);

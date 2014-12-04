@@ -88,6 +88,8 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     try {
       Class descriptorClass = module.getClass(name.value);
       return (MigrationDescriptor) descriptorClass.newInstance();
+    } catch (ClassNotFoundException e) {
+      return null;
     } catch (Throwable e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Exception on migration descriptor instantiation", e);
@@ -163,11 +165,11 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         });
         boolean languageMig = Sequence.fromIterable(modules).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
           public boolean accept(final AbstractModule module) {
-            return Sequence.fromIterable(MigrationsUtil.getLanguageVersions(module)).where(new IWhereFilter<MigrationScriptReference>() {
+            return Sequence.fromIterable(MigrationsUtil.getLanguageVersions(module)).any(new IWhereFilter<MigrationScriptReference>() {
               public boolean accept(MigrationScriptReference item) {
                 return MigrationsUtil.isMigrationNeeded(item.getLanguage(), item.getFromVersion(), module);
               }
-            }).isNotEmpty();
+            });
           }
         });
         result.value = projectMig || languageMig;

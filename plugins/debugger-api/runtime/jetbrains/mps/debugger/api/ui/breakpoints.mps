@@ -10334,7 +10334,7 @@
                                         <ref role="3cqZAo" node="3SnNvqCbyWK" resolve="editorComponent" />
                                       </node>
                                       <node concept="liA8E" id="3SnNvqCbyWQ" role="2OqNvi">
-                                        <ref role="37wK5l" to="9a8:~EditorComponent.repaint():void" resolve="repaint" />
+                                        <ref role="37wK5l" to="9a8:~EditorComponent.repaintExternalComponent():void" resolve="repaintExternalComponent" />
                                       </node>
                                     </node>
                                   </node>
@@ -10514,7 +10514,7 @@
                                       <ref role="3cqZAo" node="3SnNvqCbyXq" resolve="editorComponent" />
                                     </node>
                                     <node concept="liA8E" id="3SnNvqCbyXw" role="2OqNvi">
-                                      <ref role="37wK5l" to="9a8:~EditorComponent.repaint():void" resolve="repaint" />
+                                      <ref role="37wK5l" to="9a8:~EditorComponent.repaintExternalComponent():void" resolve="repaintExternalComponent" />
                                     </node>
                                   </node>
                                 </node>

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.ide.ui.UISettings;
 import com.intellij.ui.ColorUtil;
+import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
 import com.intellij.util.ui.update.MergingUpdateQueue;
@@ -55,6 +55,16 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComponent, MouseMotionListener, MouseListener {
+  private static final Comparator<SimpleEditorMessage> EDITOR_MESSAGES_COMPARATOR = new Comparator<SimpleEditorMessage>() {
+    @Override
+    public int compare(SimpleEditorMessage m1, SimpleEditorMessage m2) {
+      if (m2.getPriority() != m1.getPriority()) {
+        return m2.getPriority() - m1.getPriority();
+      }
+      return m2.getStatus().ordinal() - m1.getStatus().ordinal();
+    }
+  };
+
   private EditorComponent myEditorComponent;
   private MyErrorsButton myErrorsButton = new MyErrorsButton();
   private List<SimpleEditorMessage> myMessages = new CopyOnWriteArrayList<SimpleEditorMessage>();
@@ -110,16 +120,15 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     return ColorUtil.withAlpha(ColorUtil.shift(super.adjustColor(c), 0.9), 0.85);
   }
 
-    //copied from com.intellij.openapi.editor.impl.EditorMarkupModelImpl
+  //copied from com.intellij.openapi.editor.impl.EditorMarkupModelImpl
   @Override
   protected void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds) {
 
     if (isMacOverlayScrollbar()) {
       if (!myRightToLeft) {
         super.paintThumb(g, c, thumbBounds);
-      }
-      else {
-        Graphics2D g2d = (Graphics2D)g;
+      } else {
+        Graphics2D g2d = (Graphics2D) g;
         AffineTransform old = g2d.getTransform();
 
         AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
@@ -129,14 +138,14 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
         super.paintThumb(g, c, thumbBounds);
         g2d.setTransform(old);
       }
-    }
-    else {
+    } else {
       int shift = myRightToLeft ? -9 : 9;
       g.translate(shift, 0);
       super.paintThumb(g, c, thumbBounds);
       g.translate(-shift, 0);
     }
   }
+
   @Override
   protected void doPaintTrack(Graphics g, JComponent c, Rectangle bounds) {
     g.setColor(ButtonlessScrollBarUI.getTrackBackground());
@@ -396,7 +405,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
         while (cell instanceof EditorCell_Collection) {
           cell = ((EditorCell_Collection) cell).lastCell();
         }
-        if(cell != null) {
+        if (cell != null) {
           height -= cell.getHeight();
         }
       }
@@ -409,7 +418,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   }
 
   private List<SimpleEditorMessage> getMessagesAt(int y) {
-    List<SimpleEditorMessage> result = new ArrayList<SimpleEditorMessage>();
+    List<SimpleEditorMessage> result = new SortedList<SimpleEditorMessage>(EDITOR_MESSAGES_COMPARATOR);
     Set<SimpleEditorMessage> messagesToRemove = new HashSet<SimpleEditorMessage>();
     for (SimpleEditorMessage msg : myMessages) {
       if (!(msg instanceof EditorMessage && ((EditorMessage) msg).isValid(myEditorComponent))) continue;

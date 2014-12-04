@@ -176,7 +176,7 @@ public class SearchPanel extends AbstractSearchPanel {
       myText.setBackground(myDefaultBackground);
       if (requestFocus) {
         myText.requestFocus();
-        myEditor.repaint();
+        myEditor.repaintExternalComponent();
       }
       return;
     }

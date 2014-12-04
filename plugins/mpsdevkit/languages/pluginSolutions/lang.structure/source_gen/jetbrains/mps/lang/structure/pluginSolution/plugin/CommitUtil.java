@@ -12,6 +12,14 @@ import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import javax.swing.SwingUtilities;
+import jetbrains.mps.smodel.ModelAccess;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 
 public class CommitUtil {
   public static boolean commitRename(EditorContext editorContext, SNode node, String oldValue, String newValue) {
@@ -19,6 +27,8 @@ public class CommitUtil {
     if (!(lang instanceof Language) || !(node instanceof jetbrains.mps.smodel.SNode)) {
       return false;
     }
+
+    invalidateLanguageLater(((Language) lang));
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       DebugRegistry.getInstance().addConceptName(MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) node), BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), "virtual_getFqName_1213877404258", new Object[]{}));
     }
@@ -33,5 +43,26 @@ public class CommitUtil {
       }
     }
     return false;
+  }
+
+  public static void invalidateLanguageLater(final Language lang) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            List<SModel> models = lang.getModels();
+            ListSequence.fromList(models).where(new IWhereFilter<SModel>() {
+              public boolean accept(SModel it) {
+                return jetbrains.mps.util.SNodeOperations.isGeneratable(it);
+              }
+            }).visitAll(new IVisitor<SModel>() {
+              public void visit(SModel it) {
+                GenerationDependenciesCache.getInstance().discard(it);
+              }
+            });
+          }
+        });
+      }
+    });
   }
 }
