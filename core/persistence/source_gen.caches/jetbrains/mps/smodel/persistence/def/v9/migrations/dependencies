@@ -36,8 +36,6 @@
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationPropertiesManager" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceVersionAware" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
