@@ -451,14 +451,17 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     setRootNode(new TextTreeNode("Empty"));
   }
 
-  private void setRootNode(MPSTreeNode root) {
-    if (getModel().getRoot() instanceof MPSTreeNode) {
-      getRootNode().removeThisAndChildren();
-      getRootNode().setTree(null);
+  private void setRootNode(@Nullable MPSTreeNode root) {
+    final Object oldRoot = getModel().getRoot();
+    if (oldRoot instanceof MPSTreeNode) {
+      ((MPSTreeNode) oldRoot).removeThisAndChildren();
+      ((MPSTreeNode) oldRoot).setTree(null);
     }
 
-    root.setTree(this);
-    root.addThisAndChildren();
+    if (root != null) {
+      root.setTree(this);
+      root.addThisAndChildren();
+    }
 
     DefaultTreeModel model = new DefaultTreeModel(root);
     setModel(model);
@@ -633,9 +636,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     fireBeforeTreeDisposed();
     myDisposed = true;
-    if (getModel().getRoot() instanceof MPSTreeNode) {
-      ((MPSTreeNode) getModel().getRoot()).removeThisAndChildren();
-    }
+    setRootNode(null);
     myTreeNodeListeners.clear();
   }
 

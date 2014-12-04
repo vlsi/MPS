@@ -251,6 +251,8 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     for (MPSTreeNode node : this) {
       node.removeThisAndChildren();
     }
+    setParent(null);
+    children = null;
   }
 
   final void addThisAndChildren() {
