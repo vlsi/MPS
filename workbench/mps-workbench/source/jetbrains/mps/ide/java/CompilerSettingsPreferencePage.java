@@ -44,6 +44,8 @@ public class CompilerSettingsPreferencePage {
       mySourceVersionItems.add(new JavaVersionPresentationItem(version, version.getCompilerVersion()));
       myTargetVersionItems.add(new JavaVersionPresentationItem(version, version.getCompilerVersion()));
     }
+    mySourceVersionItems.add(DEFAULT_VERSION_ITEM);
+    myTargetVersionItems.add(DEFAULT_VERSION_ITEM);
   }
   public CompilerSettingsPreferencePage(JavaCompilerOptions options) {
     JavaVersion sourceJavaVersion = options.getSourceJavaVersion();

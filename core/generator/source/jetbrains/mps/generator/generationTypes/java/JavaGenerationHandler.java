@@ -17,6 +17,8 @@ package jetbrains.mps.generator.generationTypes.java;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.compiler.JavaCompilerOptions;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
@@ -27,6 +29,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.textgen.TextFacility;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
@@ -143,7 +146,12 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
         for (Pair<SModule, List<SModel>> moduleListPair : input) {
           SModule module = moduleListPair.o1;
           if (module instanceof ReloadableModule) modulesToReload.add(module);
-          boolean compilationResult = compileModuleInMPS(module, monitor.subTask(4));
+          JavaCompilerOptions options = null;
+          Project project = operationContext.getProject();
+          if (project != null) {
+            options = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project);
+          }
+          boolean compilationResult = compileModuleInMPS(module, monitor.subTask(4), options);
           monitor.advance(0);
           compiledSuccessfully = compiledSuccessfully && compilationResult;
         }
@@ -160,7 +168,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     }
   }
 
-  protected boolean compileModuleInMPS(SModule module, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
+  protected boolean compileModuleInMPS(SModule module, ProgressMonitor monitor, JavaCompilerOptions compilerOptions) throws IOException, GenerationCanceledException {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
 
     if (facet == null) {
@@ -179,7 +187,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     try {
       monitor.start(info, 10);
       info(info);
-      MPSCompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressMonitor());
+      MPSCompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressMonitor(), compilerOptions);
       if (compilationResult == null || compilationResult.getErrors() > 0) {
         compiledSuccessfully = false;
       }

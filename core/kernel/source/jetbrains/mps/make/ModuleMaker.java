@@ -127,8 +127,12 @@ public class ModuleMaker {
     }
   }
 
-  // TODO: get rid of push and pop tracer calls -- they are needed only for performance checks
   public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
+    return make(modules, monitor, null);
+  }
+
+  // TODO: get rid of push and pop tracer calls -- they are needed only for performance checks
+  public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor, final JavaCompilerOptions compilerOptions) {
     monitor.start("Compiling", 12);
     myTracer.push("making " + modules.size() + " modules", false);
     try {
@@ -169,7 +173,7 @@ public class ModuleMaker {
 
           inner.step("compiling " + cycle);
           myTracer.push("processing cycle", false);
-          MPSCompilationResult result = compile(cycle);
+          MPSCompilationResult result = compile(cycle, compilerOptions);
           inner.advance(cycle.size());
           myTracer.pop();
           errorCount += result.getErrors();
@@ -204,16 +208,12 @@ public class ModuleMaker {
     }
   }
 
-  private MPSCompilationResult compile(Set<SModule> modules) {
+  private MPSCompilationResult compile(Set<SModule> modules, JavaCompilerOptions compilerOptions) {
     boolean hasAnythingToCompile = false;
     List<IMessage> messages = new ArrayList<IMessage>();
 
-    Project project = null;
     for (SModule m : modules) {
       if (isExcluded(m)) continue;
-      if (project == null) {
-        project = SModuleOperations.getProjectForModule(m);
-      }
 
       hasAnythingToCompile = true;
     }
@@ -274,11 +274,10 @@ public class ModuleMaker {
       compiler.addCompilationResultListener(listener);
       myTracer.push("eclipse compiler", true);
 
-      if (project == null) {
+      if (compilerOptions == null) {
         compiler.compile(classPathItems);
       } else {
-        JavaCompilerOptions javaCompilerOptions = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(project);
-        compiler.compile(classPathItems, javaCompilerOptions);
+        compiler.compile(classPathItems, compilerOptions);
       }
       myTracer.pop();
       changedModules.addAll(listener.myChangedModules);
