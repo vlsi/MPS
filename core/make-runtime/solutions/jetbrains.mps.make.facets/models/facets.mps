@@ -29,6 +29,7 @@
     <import index="kgxg" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(MPS.Core/jetbrains.mps.components@java_stub)" />
     <import index="rk9m" ref="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" />
     <import index="1kj4" ref="r:0bcaf439-5bc6-429b-a457-4e0d9746449f(jetbrains.mps.make.delta)" />
+    <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
     <import index="z8de" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -199,6 +200,7 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
+      <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -517,6 +519,50 @@
                   <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
                   <node concept="1bVj0M" id="1KUoCipvGqy" role="37wK5m">
                     <node concept="3clFbS" id="1KUoCipvGqz" role="1bW5cS">
+                      <node concept="3cpWs8" id="6gfLObM0ifZ" role="3cqZAp">
+                        <node concept="3cpWsn" id="6gfLObM0ig0" role="3cpWs9">
+                          <property role="TrG5h" value="project" />
+                          <node concept="3uibUv" id="6gfLObM0if1" role="1tU5fm">
+                            <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+                          </node>
+                          <node concept="10Nm6u" id="6gfLObM0j7P" role="33vP2m" />
+                        </node>
+                      </node>
+                      <node concept="2Gpval" id="6gfLObM0gCk" role="3cqZAp">
+                        <node concept="2GrKxI" id="6gfLObM0gCm" role="2Gsz3X">
+                          <property role="TrG5h" value="module" />
+                        </node>
+                        <node concept="3clFbS" id="6gfLObM0gCo" role="2LFqv$">
+                          <node concept="3clFbF" id="6gfLObM0itx" role="3cqZAp">
+                            <node concept="37vLTI" id="6gfLObM0itz" role="3clFbG">
+                              <node concept="2YIFZM" id="6gfLObM0ig1" role="37vLTx">
+                                <ref role="37wK5l" to="vsqj:~SModuleOperations.getProjectForModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.project.Project" resolve="getProjectForModule" />
+                                <ref role="1Pybhc" to="vsqj:~SModuleOperations" resolve="SModuleOperations" />
+                                <node concept="2GrUjf" id="6gfLObM0ig2" role="37wK5m">
+                                  <ref role="2Gs0qQ" node="6gfLObM0gCm" resolve="module" />
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="6gfLObM0itB" role="37vLTJ">
+                                <ref role="3cqZAo" node="6gfLObM0ig0" resolve="project" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbJ" id="6gfLObM0jLc" role="3cqZAp">
+                            <node concept="3clFbS" id="6gfLObM0jLf" role="3clFbx">
+                              <node concept="3zACq4" id="6gfLObM0lXF" role="3cqZAp" />
+                            </node>
+                            <node concept="3y3z36" id="6gfLObM0kjJ" role="3clFbw">
+                              <node concept="10Nm6u" id="6gfLObM0kwm" role="3uHU7w" />
+                              <node concept="37vLTw" id="6gfLObM0k1o" role="3uHU7B">
+                                <ref role="3cqZAo" node="6gfLObM0ig0" resolve="project" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="6gfLObM0gZB" role="2GsD0m">
+                          <ref role="3cqZAo" node="3W4A8dypiCw" resolve="toCompile" />
+                        </node>
+                      </node>
                       <node concept="3clFbF" id="1KUoCipvGq$" role="3cqZAp">
                         <node concept="37vLTI" id="1KUoCipvGq_" role="3clFbG">
                           <node concept="2OqwBi" id="1KUoCipvGqA" role="37vLTx">
@@ -526,11 +572,23 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="1KUoCipvGqD" role="2OqNvi">
-                              <ref role="37wK5l" to="hb0s:~ModuleMaker.make(java.util.Collection,org.jetbrains.mps.openapi.util.ProgressMonitor):jetbrains.mps.make.MPSCompilationResult" resolve="make" />
+                              <ref role="37wK5l" to="hb0s:~ModuleMaker.make(java.util.Collection,org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.compiler.JavaCompilerOptions):jetbrains.mps.make.MPSCompilationResult" resolve="make" />
                               <node concept="37vLTw" id="1KUoCipvGqE" role="37wK5m">
                                 <ref role="3cqZAo" node="3W4A8dypiCw" resolve="toCompile" />
                               </node>
                               <node concept="EWnkA" id="1KUoCipvGqF" role="37wK5m" />
+                              <node concept="2OqwBi" id="6gfLObM0n_b" role="37wK5m">
+                                <node concept="2YIFZM" id="6gfLObM0nll" role="2Oq$k0">
+                                  <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
+                                  <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
+                                </node>
+                                <node concept="liA8E" id="6gfLObM0nTT" role="2OqNvi">
+                                  <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getJavaCompilerOptions(jetbrains.mps.project.Project):jetbrains.mps.compiler.JavaCompilerOptions" resolve="getJavaCompilerOptions" />
+                                  <node concept="37vLTw" id="6gfLObM0ob5" role="37wK5m">
+                                    <ref role="3cqZAo" node="6gfLObM0ig0" resolve="project" />
+                                  </node>
+                                </node>
+                              </node>
                             </node>
                           </node>
                           <node concept="37vLTw" id="3GM_nagTx9u" role="37vLTJ">

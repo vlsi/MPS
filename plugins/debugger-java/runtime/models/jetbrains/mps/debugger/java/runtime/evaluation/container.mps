@@ -2493,13 +2493,62 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="3cpWs8" id="6gfLObM1hpf" role="3cqZAp">
+                      <node concept="3cpWsn" id="6gfLObM1hpg" role="3cpWs9">
+                        <property role="TrG5h" value="options" />
+                        <node concept="3uibUv" id="6gfLObM1hph" role="1tU5fm">
+                          <ref role="3uigEE" to="i119:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbJ" id="6gfLObM0YZ4" role="3cqZAp">
+                      <node concept="3clFbS" id="6gfLObM0YZ7" role="3clFbx">
+                        <node concept="3clFbF" id="6gfLObM1jL_" role="3cqZAp">
+                          <node concept="37vLTI" id="6gfLObM1jXT" role="3clFbG">
+                            <node concept="10Nm6u" id="6gfLObM1k04" role="37vLTx" />
+                            <node concept="37vLTw" id="6gfLObM1jL$" role="37vLTJ">
+                              <ref role="3cqZAo" node="6gfLObM1hpg" resolve="options" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbC" id="6gfLObM11d_" role="3clFbw">
+                        <node concept="10Nm6u" id="6gfLObM11dR" role="3uHU7w" />
+                        <node concept="37vLTw" id="6gfLObM115p" role="3uHU7B">
+                          <ref role="3cqZAo" node="IYmOvntYfq" resolve="project" />
+                        </node>
+                      </node>
+                      <node concept="9aQIb" id="6gfLObM1k_n" role="9aQIa">
+                        <node concept="3clFbS" id="6gfLObM1k_o" role="9aQI4">
+                          <node concept="3clFbF" id="6gfLObM1lTi" role="3cqZAp">
+                            <node concept="37vLTI" id="6gfLObM1n73" role="3clFbG">
+                              <node concept="2OqwBi" id="6gfLObM1qCj" role="37vLTx">
+                                <node concept="2YIFZM" id="6gfLObM1pz4" role="2Oq$k0">
+                                  <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
+                                  <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
+                                </node>
+                                <node concept="liA8E" id="6gfLObM1rTJ" role="2OqNvi">
+                                  <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getJavaCompilerOptions(jetbrains.mps.project.Project):jetbrains.mps.compiler.JavaCompilerOptions" resolve="getJavaCompilerOptions" />
+                                  <node concept="37vLTw" id="6gfLObM1stR" role="37wK5m">
+                                    <ref role="3cqZAo" node="IYmOvntYfq" resolve="project" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="6gfLObM1lTh" role="37vLTJ">
+                                <ref role="3cqZAo" node="6gfLObM1hpg" resolve="options" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3clFbF" id="6zsZmIC49Zf" role="3cqZAp">
                       <node concept="2OqwBi" id="6zsZmIC4apI" role="3clFbG">
                         <node concept="37vLTw" id="6zsZmIC49Zd" role="2Oq$k0">
                           <ref role="3cqZAo" node="6zsZmIC2DTo" resolve="javaCompiler" />
                         </node>
                         <node concept="liA8E" id="6zsZmIC4bXA" role="2OqNvi">
-                          <ref role="37wK5l" to="i119:~JavaCompiler.compile(jetbrains.mps.reloading.IClassPathItem):void" resolve="compile" />
+                          <ref role="37wK5l" to="i119:~JavaCompiler.compile(jetbrains.mps.reloading.IClassPathItem,jetbrains.mps.compiler.JavaCompilerOptions):void" resolve="compile" />
                           <node concept="2YIFZM" id="6zsZmIC4N2O" role="37wK5m">
                             <ref role="37wK5l" to="nhkf:~JavaModuleOperations.createClassPathItem(java.lang.Iterable,java.lang.String):jetbrains.mps.reloading.CompositeClassPathItem" resolve="createClassPathItem" />
                             <ref role="1Pybhc" to="nhkf:~JavaModuleOperations" resolve="JavaModuleOperations" />
@@ -2523,6 +2572,9 @@
                                 <ref role="37wK5l" to="e2lb:~Class.getName():java.lang.String" resolve="getName" />
                               </node>
                             </node>
+                          </node>
+                          <node concept="37vLTw" id="6gfLObM1uZJ" role="37wK5m">
+                            <ref role="3cqZAo" node="6gfLObM1hpg" resolve="options" />
                           </node>
                         </node>
                       </node>

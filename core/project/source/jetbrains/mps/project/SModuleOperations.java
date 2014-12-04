@@ -28,6 +28,7 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -230,12 +231,18 @@ public class SModuleOperations {
     if (repository instanceof ProjectRepository) {
       project = ((ProjectRepository) repository).getProject();
     } else if (repository instanceof MPSModuleRepository) {
+      Language language = null;
       Set<MPSModuleOwner> owners = ((MPSModuleRepository) repository).getOwners(module);
       for (MPSModuleOwner owner : owners) {
         if (owner instanceof Project) {
           project = ((Project) owner);
           break;
+        } else if (owner instanceof Language) {
+          language = (Language) owner;
         }
+      }
+      if (project == null && language != null) {
+        project = getProjectForModule(language);
       }
     }
     return project;
