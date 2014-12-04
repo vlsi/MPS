@@ -21,6 +21,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,10 +50,10 @@ public class TemplateModelInterpreted implements TemplateModel {
 
   private void init() {
     for (SNode root : myModel.getRootNodes()) {
-      String conceptName = root.getConcept().getQualifiedName();
-      if (conceptName.equals(RuleUtil.concept_TemplateSwitch)) {
+      SConcept c = root.getConcept();
+      if (RuleUtil.concept_TemplateSwitch.equals(c)) {
         mySwitches.add(new TemplateSwitchMappingInterpreted(root));
-      } else if (conceptName.equals(RuleUtil.concept_MappingConfiguration) || conceptName.equals("jetbrains.mps.lang.generator.crossmodel.structure.MapConfigExt")) {
+      } else if (RuleUtil.concept_MappingConfiguration.equals(c)) {
         myMappings.add(new TemplateMappingConfigurationInterpreted(this, root));
       }
     }
@@ -72,7 +73,7 @@ public class TemplateModelInterpreted implements TemplateModel {
   public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
     assert template.getModelReference().equals(getSModelReference());
     SNode templateNode = template.resolve(myModel.getRepository());
-    if (templateNode == null || !RuleUtil.concept_TemplateDeclaration.equals(templateNode.getConcept().getQualifiedName())) {
+    if (templateNode == null || !RuleUtil.concept_TemplateDeclaration.equals(templateNode.getConcept())) {
       return null;
     }
 

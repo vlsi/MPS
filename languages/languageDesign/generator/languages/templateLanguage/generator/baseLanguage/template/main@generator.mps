@@ -8953,10 +8953,10 @@
                                 <node concept="3clFbS" id="3AFg8NT6hm_" role="1bW5cS">
                                   <node concept="3clFbF" id="3AFg8NT6hmA" role="3cqZAp">
                                     <node concept="3fqX7Q" id="3AFg8NT6hmB" role="3clFbG">
-                                      <node concept="2YIFZM" id="3AFg8NT6hmC" role="3fr31v">
-                                        <ref role="1Pybhc" to="ojcp:~GeneratorUtilEx" resolve="GeneratorUtilEx" />
-                                        <ref role="37wK5l" to="ojcp:~GeneratorUtilEx.isTemplateLanguageElement(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isTemplateLanguageElement" />
-                                        <node concept="37vLTw" id="2BHiRxgmajh" role="37wK5m">
+                                      <node concept="2YIFZM" id="7BGolr1fYpS" role="3fr31v">
+                                        <ref role="37wK5l" to="ojcp:~RuleUtil.isTemplateLanguageElement(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isTemplateLanguageElement" />
+                                        <ref role="1Pybhc" to="ojcp:~RuleUtil" resolve="RuleUtil" />
+                                        <node concept="37vLTw" id="7BGolr1fYzR" role="37wK5m">
                                           <ref role="3cqZAo" node="3AFg8NT6hmG" resolve="it" />
                                         </node>
                                       </node>

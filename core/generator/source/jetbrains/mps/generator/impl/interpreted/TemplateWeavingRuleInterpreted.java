@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
@@ -33,6 +32,7 @@ import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -63,11 +63,11 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       myConsequence = null;
       myTemplate = null;
     } else {
-      String consequenceConceptFQName = myConsequenceNode.getConcept().getQualifiedName();
-      if (consequenceConceptFQName.equals(RuleUtil.concept_TemplateDeclarationReference)) {
+      SConcept consequenceConcept = myConsequenceNode.getConcept();
+      if (RuleUtil.concept_TemplateDeclarationReference.equals(consequenceConcept)) {
         myConsequence = new TemplateDeclarationConsequence();
         myTemplate = RuleUtil.getTemplateDeclarationReference_Template(myConsequenceNode);
-      } else if (consequenceConceptFQName.equals(RuleUtil.concept_WeaveEach_RuleConsequence)) {
+      } else if (RuleUtil.concept_WeaveEach_RuleConsequence.equals(consequenceConcept)) {
         myConsequence = new ForeachConsequence(myConsequenceNode);
         myTemplate = RuleUtil.getWeaveEach_Template(myConsequenceNode);
       } else {

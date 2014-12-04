@@ -28,6 +28,7 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -74,25 +75,25 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
       ArrayList<TemplateReductionRule> patternRules = new ArrayList<TemplateReductionRule>(5);
 
       for (SNode child : myMappingConfiguration.getChildren()) {
-        String conceptName = child.getConcept().getQualifiedName();
-        if (conceptName.equals(RuleUtil.concept_Reduction_MappingRule)) {
+        final SConcept childConcept = child.getConcept();
+        if (RuleUtil.concept_Reduction_MappingRule.equals(childConcept)) {
           reductionRules.add(new TemplateReductionRuleInterpreted(child));
-        } else if (conceptName.equals(RuleUtil.concept_Root_MappingRule)) {
+        } else if (RuleUtil.concept_Root_MappingRule.equals(childConcept)) {
           myRootMappingRules.add(new TemplateRootMappingRuleInterpreted(child));
-        } else if (conceptName.equals(RuleUtil.concept_PatternReduction_MappingRule)) {
+        } else if (RuleUtil.concept_PatternReduction_MappingRule.equals(childConcept)) {
           patternRules.add(new TemplateReductionPatternRuleInterpreted(child));
-        } else if (conceptName.equals(RuleUtil.concept_CreateRootRule)) {
+        } else if (RuleUtil.concept_CreateRootRule.equals(childConcept)) {
           myCreateRootRules.add(new TemplateCreateRootRuleInterpreted(child));
-        } else if (conceptName.equals(RuleUtil.concept_Weaving_MappingRule)) {
+        } else if (RuleUtil.concept_Weaving_MappingRule.equals(childConcept)) {
           myWeavingRules.add(new TemplateWeavingRuleInterpreted(child));
-        } else if (conceptName.equals(RuleUtil.concept_DropRootRule)) {
+        } else if (RuleUtil.concept_DropRootRule.equals(childConcept)) {
           myDropRootRules.add(new TemplateDropRuleInterpreted(child));
-        } else if (conceptName.equals(RuleUtil.concept_MappingScriptReference)) {
+        } else if (RuleUtil.concept_MappingScriptReference.equals(childConcept)) {
           SNode mappingScript = RuleUtil.getMappingScriptReference_Script(child);
           if (mappingScript == null) {
             continue;
           }
-          if (child.getRoleInParent().equals(RuleUtil.link_MappingConfiguration_preMappingScript)) {
+          if (RuleUtil.link_MappingConfiguration_preMappingScript.equals(child.getContainmentLink())) {
             myPreScripts.add(new TemplateMappingScriptInterpreted(mappingScript));
           } else {
             myPostScripts.add(new TemplateMappingScriptInterpreted(mappingScript));

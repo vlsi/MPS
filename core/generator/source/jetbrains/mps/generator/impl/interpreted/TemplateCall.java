@@ -22,7 +22,6 @@ import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -82,13 +81,13 @@ public class TemplateCall {
     int i = 1;
     for (SNode argExpr : args) {
       final SConcept argConcept = argExpr.getConcept();
-      if (argConcept.isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentParameterExpression))) {
+      if (argConcept.isSubConceptOf(RuleUtil.concept_TemplateArgumentParameterExpression)) {
         ae.add(new TemplateParameterExpr(argExpr, i));
-      } else if (argConcept.isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentPatternRef))) {
+      } else if (argConcept.isSubConceptOf(RuleUtil.concept_TemplateArgumentPatternRef)) {
         ae.add(new PatternRefExpr(argExpr, i));
-      } else if (argConcept.isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentQueryExpression))) {
+      } else if (argConcept.isSubConceptOf(RuleUtil.concept_TemplateArgumentQueryExpression)) {
         ae.add(new QueryExpr(argExpr));
-      } else if (argConcept.isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentVarRefExpression))) {
+      } else if (argConcept.isSubConceptOf(RuleUtil.concept_TemplateArgumentVarRefExpression)) {
         ae.add(new VarRefExpr(argExpr));
       } else {
         ae.add(new OtherExpr(argExpr, i));

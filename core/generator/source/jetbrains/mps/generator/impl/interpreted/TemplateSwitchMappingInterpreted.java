@@ -46,8 +46,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
     mySwitch = aSwitch;
     rules = new ArrayList<TemplateReductionRule>();
     for (SNode child : mySwitch.getChildren()) {
-      String conceptName = child.getConcept().getQualifiedName();
-      if (conceptName.equals(RuleUtil.concept_Reduction_MappingRule)) {
+      if (RuleUtil.concept_Reduction_MappingRule.equals(child.getConcept())) {
         rules.add(new TemplateReductionRuleInterpreted(child));
       }
     }

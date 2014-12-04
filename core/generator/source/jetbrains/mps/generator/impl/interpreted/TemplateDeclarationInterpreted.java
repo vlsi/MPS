@@ -24,7 +24,6 @@ import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -52,7 +51,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
     myArguments = arguments;
     myParameterNames = parameterNames;
     myNodeRef = new SNodePointer(templateNode);
-    myIsTemplateDeclNode = templateNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateDeclaration));
+    myIsTemplateDeclNode = templateNode.getConcept().isSubConceptOf(RuleUtil.concept_TemplateDeclaration);
   }
 
   @Override
