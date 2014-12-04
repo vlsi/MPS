@@ -360,11 +360,10 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       if (sNode.getContainingRoot() == sNode && sNode.getModel().getSource() instanceof FilePerRootDataSource) {
         final String name = extractName(sNode);
         final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) sNode.getModel().getSource()).getFile(name + MPSExtentions.DOT_MODEL_ROOT));
-        replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), name, getManager(), virtualFile);
+        replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), name, this, getManager(), virtualFile);
       } else {
-        replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), extractName(sNode), getManager());
+        replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), extractName(sNode), this, getManager());
       }
-      replacementRoot.setModel(this);
       replaceChild(rootNode, replacementRoot);
       ((PsiManagerImpl) getManager()).getFileManager().setViewProvider(rootNode.getVirtualFile(), null);
       replacementRoot.addChildLast(replacement);
@@ -410,12 +409,11 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
         PsiFile psiFile = virtualFile != null ? tryReuseRootPsiFile(virtualFile) : null;
         rootNode = psiFile != null && psiFile instanceof MPSPsiRootNode
           ? (MPSPsiRootNode) psiFile :
-          new MPSPsiRootNode(root.getNodeId(), rootName, getManager(), virtualFile);
+          new MPSPsiRootNode(root.getNodeId(), rootName, this, getManager(), virtualFile);
 
       } else {
-        rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, getManager());
+        rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, this, getManager());
       }
-      rootNode.setModel(this);
 
       addChildLast(rootNode);
       if (rootNode.getChildren().length == 0)
