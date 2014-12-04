@@ -277,26 +277,9 @@ public class CreateProjectWizard extends DialogWrapper {
     myProjectPath.addPropertyChangeListener("path", new PropertyChangeListener() {
       @Override
       public void propertyChange(PropertyChangeEvent evt) {
-        fireProjectPathChanged((String) evt.getNewValue());
-        final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile((String) evt.getNewValue());
-        //check if there is project in folder (both directory and file based)
-        boolean isProjectPath = virtualFile != null ? OpenMPSProjectFileChooserDescriptor.isMpsProjectDirectory(virtualFile) : false;
-        if(virtualFile != null && !isProjectPath) {
-          for (VirtualFile child : virtualFile.getChildren()) {
-            if (OpenMPSProjectFileChooserDescriptor.isMpsProjectFile(child)) {
-              isProjectPath = true;
-              break;
-            }
-          }
-        }
-        if(isProjectPath){
-          //show error and disable apply
-          setErrorText("Project under this path already exists!");
-          getOKAction().setEnabled(false);
-        } else {
-          setErrorText(null);
-          getOKAction().setEnabled(true);
-        }
+        String newProjectPath = (String) evt.getNewValue();
+        fireProjectPathChanged(newProjectPath);
+        checkProjectPath(newProjectPath);
       }
     });
     myProjectName.addCaretListener(new CaretListener() {
@@ -341,6 +324,28 @@ public class CreateProjectWizard extends DialogWrapper {
         new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_SOUTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
   }
 
+  private void checkProjectPath(String newProjectPath) {
+    final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(newProjectPath);
+    //check if there is project in folder (both directory and file based)
+    boolean isProjectPath = virtualFile != null ? OpenMPSProjectFileChooserDescriptor.isMpsProjectDirectory(virtualFile) : false;
+    if(virtualFile != null && !isProjectPath) {
+      for (VirtualFile child : virtualFile.getChildren()) {
+        if (OpenMPSProjectFileChooserDescriptor.isMpsProjectFile(child)) {
+          isProjectPath = true;
+          break;
+        }
+      }
+    }
+    if(isProjectPath){
+      //show error and disable apply
+      setErrorText("Project under this path already exists!");
+      getOKAction().setEnabled(false);
+    } else {
+      setErrorText(null);
+      getOKAction().setEnabled(true);
+    }
+  }
+
   private String getDefaultProjectName() {
     int n = 1;
     while (true) {
@@ -365,6 +370,7 @@ public class CreateProjectWizard extends DialogWrapper {
 
   private void updateRightPanel() {
     setOKActionEnabled(myCurrentTemplateItem != null);
+    checkProjectPath(myProjectPath.getPath());
 
     String description = myCurrentTemplateItem != null ? myCurrentTemplateItem.getDescription() : null;
     if (StringUtil.isNotEmpty(description)) {
