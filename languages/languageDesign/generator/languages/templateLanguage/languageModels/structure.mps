@@ -1613,7 +1613,7 @@
   <node concept="1TIwiD" id="7ITVRipEFo6">
     <property role="3GE5qa" value="macro" />
     <property role="TrG5h" value="ExportMacro" />
-    <property role="34LRSv" value="$EXPOSE$" />
+    <property role="34LRSv" value="$EXPORT$" />
     <property role="R4oN_" value="expose output node to facilitate external references to generator outcome" />
     <ref role="1TJDcQ" node="fP7Vmt2" resolve="NodeMacro" />
     <node concept="1TJgyj" id="7ITVRipEFoU" role="1TKVEi">

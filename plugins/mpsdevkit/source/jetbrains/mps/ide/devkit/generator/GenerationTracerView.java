@@ -29,9 +29,10 @@ import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -53,6 +54,9 @@ import java.util.Map;
  * Tree of trace elements and an action bar
  */
 final class GenerationTracerView {
+
+  private final Project myProject;
+
   enum Kind { TraceForward, TraceBackward }
 
   private final JPanel myPanel;
@@ -66,7 +70,8 @@ final class GenerationTracerView {
     myInputNode = inputNode;
     myViewToken = viewToken;
     myPanel = new JPanel(new BorderLayout());
-    myTree = new GenerationTracerTree(this, tracerNode, ProjectHelper.toMPSProject(tool.getProject()));
+    myProject = ProjectHelper.toMPSProject(tool.getProject());
+    myTree = new GenerationTracerTree(this, tracerNode, myProject, inputNode);
     myTree.setRootVisible(false);
     myPanel.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
     myPanel.add(createActionsToolbar(), BorderLayout.WEST);
@@ -120,7 +125,7 @@ final class GenerationTracerView {
       return null;
     }
     if (selected.hasPrevStep() || selected.hasNextStep()) {
-      return ModelAccess.instance().runReadAction(new NodeActionGroup(selected));
+      return new ComputeRunnable<ActionGroup>(new NodeActionGroup(selected)).runRead(myProject.getModelAccess());
     }
     return null;
   }
@@ -144,7 +149,7 @@ final class GenerationTracerView {
   }
 
   void viewSettingsChanged() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         rebuildTree();

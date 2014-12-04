@@ -25,7 +25,6 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.apache.log4j.Level;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.SNodePointer;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -441,7 +440,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         }
         return;
       }
-      StaticReference ref = new StaticReference(my_helperField.readRole(child[0]), result, ptr.getModelReference(), ((SNodePointer) ptr).getNodeId(), child[2]);
+      StaticReference ref = new StaticReference(my_helperField.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
       my_linkMapField.addTargetLocation(ptr, ref);
 
       result.setReference(ref.getRole(), ref);

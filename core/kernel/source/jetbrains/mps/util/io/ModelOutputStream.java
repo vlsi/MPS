@@ -208,7 +208,7 @@ public class ModelOutputStream extends DataOutputStream {
     } else {
       writeByte(NODEPTR);
       writeModelReference(ptr.getModelReference());
-      writeNodeId(((SNodePointer) ptr).getNodeId());
+      writeNodeId(ptr.getNodeId());
     }
   }
 

@@ -151,10 +151,6 @@
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -192,6 +188,9 @@
         <reference id="1167514355421" name="template" index="3lhOvi" />
       </concept>
       <concept id="1131073187192" name="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" flags="ln" index="1pdMLZ" />
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
+      </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
@@ -834,9 +833,9 @@
             <node concept="liA8E" id="hzArYy0" role="2OqNvi">
               <ref role="37wK5l" to="hxuy:~StructuralProgramBuilder.emitIfJump(jetbrains.mps.lang.dataFlow.framework.StructuralProgramBuilder$Position,int,java.lang.String):void" resolve="emitIfJump" />
               <node concept="10Nm6u" id="hzArZsn" role="37wK5m">
-                <node concept="jY4Nl" id="hzAsYEe" role="lGtFl">
-                  <ref role="jYjtx" node="hzAsziS" resolve="Positions" />
-                  <node concept="3NFfHV" id="hzAsZQD" role="8TvZ8">
+                <node concept="1sPUBX" id="1WfddY$XI1n" role="lGtFl">
+                  <ref role="v9R2y" node="hzAsziS" resolve="Positions" />
+                  <node concept="3NFfHV" id="hzAsZQD" role="1sPUBK">
                     <node concept="3clFbS" id="hzAsZQE" role="2VODD2">
                       <node concept="3clFbF" id="hzAt09Y" role="3cqZAp">
                         <node concept="2OqwBi" id="hzAt0h5" role="3clFbG">
@@ -947,9 +946,9 @@
             <node concept="liA8E" id="hzAs3Uh" role="2OqNvi">
               <ref role="37wK5l" to="hxuy:~StructuralProgramBuilder.emitJump(jetbrains.mps.lang.dataFlow.framework.StructuralProgramBuilder$Position,java.lang.String):void" resolve="emitJump" />
               <node concept="10Nm6u" id="hzAs3Ui" role="37wK5m">
-                <node concept="jY4Nl" id="hzAt5cG" role="lGtFl">
-                  <ref role="jYjtx" node="hzAsziS" resolve="Positions" />
-                  <node concept="3NFfHV" id="hzAt6FU" role="8TvZ8">
+                <node concept="1sPUBX" id="1WfddY$XI$b" role="lGtFl">
+                  <ref role="v9R2y" node="hzAsziS" resolve="Positions" />
+                  <node concept="3NFfHV" id="hzAt6FU" role="1sPUBK">
                     <node concept="3clFbS" id="hzAt6FV" role="2VODD2">
                       <node concept="3clFbF" id="hzAt77M" role="3cqZAp">
                         <node concept="2OqwBi" id="hzAt7cG" role="3clFbG">

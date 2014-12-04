@@ -16,6 +16,7 @@
 package jetbrains.mps.util;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 /**
  * @author Artem Tikhomirov
@@ -30,5 +31,13 @@ public class ComputeRunnable<T> extends AbstractComputeRunnable<T> {
   @Override
   protected T compute() {
     return myComputable.compute();
+  }
+
+  /**
+   * Handy alternative to <code>ComputeRunnable cr = ...; modelAccess.runReadAction(cr); return cr.getResult()</code>
+   */
+  public T runRead(@NotNull ModelAccess modelAccess) {
+    modelAccess.runReadAction(this);
+    return getResult();
   }
 }

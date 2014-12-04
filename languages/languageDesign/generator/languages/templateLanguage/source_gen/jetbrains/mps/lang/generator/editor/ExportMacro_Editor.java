@@ -49,7 +49,7 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_gzv99m_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$EXPOSE$");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$EXPORT$");
     editorCell.setCellId("Constant_gzv99m_a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_macroStart(style, editorCell);
@@ -117,6 +117,9 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
+      Style style = new StyleImpl();
+      Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -150,7 +153,7 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_gzv99m_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expose node macro");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expose node for external references");
     editorCell.setCellId("Constant_gzv99m_a0_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
@@ -176,51 +179,11 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createCollection_gzv99m_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_gzv99m_a2a(editorContext, node));
     return editorCell;
   }
-  private EditorCell createCollection_gzv99m_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_gzv99m_a2a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_gzv99m_a0c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_gzv99m_b0c0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_gzv99m_c0c0(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createConstant_gzv99m_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
-    editorCell.setCellId("Constant_gzv99m_a0c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_gzv99m_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_gzv99m_b0c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createProperty_gzv99m_c0c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("comment");
-    provider.setNoTargetText("<none>");
-    provider.setAllowsEmptyTarget(true);
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_comment");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
+  private EditorCell createComponent_gzv99m_a2a(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.AbstractMacro_comment_inspector");
     return editorCell;
   }
 }

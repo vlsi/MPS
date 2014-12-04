@@ -107,7 +107,7 @@ public class BookmarksUIComponent implements ProjectComponent {
       for (Pair<SNode, Integer> bookmark : myBookmarkManager.getBookmarks(editedNode.getContainingRoot())) {
         modified |= addRenderer(editorComponent, bookmark.o1, bookmark.o2);
       }
-      if (modified) editorComponent.repaint();
+      if (modified) editorComponent.repaintExternalComponent();
     }
   }
 
@@ -144,7 +144,7 @@ public class BookmarksUIComponent implements ProjectComponent {
     List<EditorComponent> editorComponents = findComponentsForNode(node);
     for (EditorComponent editorComponent : editorComponents) {
       if (addRenderer(editorComponent, node, number)) {
-        editorComponent.repaint();
+        editorComponent.repaintExternalComponent();
       }
     }
   }
@@ -170,7 +170,7 @@ public class BookmarksUIComponent implements ProjectComponent {
         continue;
       }
       editorComponent.getLeftEditorHighlighter().removeIconRenderer(node, BookmarkIconRenderer.TYPE);
-      editorComponent.repaint();
+      editorComponent.repaintExternalComponent();
       // todo should it be executed in ED thread?
     }
   }

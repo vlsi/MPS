@@ -47,7 +47,6 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
   @Override
   public void activate() {
     ((jetbrains.mps.nodeEditor.EditorComponent) getEditorComponent()).scrollRectToVisible(GeometryUtil.getBounds(getFirstCell(), getLastCell()));
-    ((jetbrains.mps.nodeEditor.EditorComponent) getEditorComponent()).repaint();
   }
 
   @Override

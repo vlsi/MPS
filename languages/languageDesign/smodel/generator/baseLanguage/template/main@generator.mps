@@ -207,10 +207,6 @@
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
@@ -7454,9 +7450,9 @@
           </node>
           <node concept="Xl_RD" id="7hIo0Wc1vAH" role="37wK5m">
             <property role="Xl_RC" value="role" />
-            <node concept="jY4Nl" id="7hIo0Wc1vAI" role="lGtFl">
-              <ref role="jYjtx" node="hyDntTh" resolve="switch_toLinkRoleSLinkExp" />
-              <node concept="3NFfHV" id="7hIo0Wc1vAJ" role="8TvZ8">
+            <node concept="1sPUBX" id="1WfddY$XI2q" role="lGtFl">
+              <ref role="v9R2y" node="hyDntTh" resolve="switch_toLinkRoleSLinkExp" />
+              <node concept="3NFfHV" id="7hIo0Wc1vAJ" role="1sPUBK">
                 <node concept="3clFbS" id="7hIo0Wc1vAK" role="2VODD2">
                   <node concept="3clFbF" id="7hIo0Wc1vAL" role="3cqZAp">
                     <node concept="2OqwBi" id="7hIo0Wc1vAM" role="3clFbG">
@@ -9782,9 +9778,9 @@
               </node>
             </node>
             <node concept="10Nm6u" id="1x$A_M25nRO" role="37wK5m">
-              <node concept="jY4Nl" id="1x$A_M25nRP" role="lGtFl">
-                <ref role="jYjtx" node="5zEkxuKhszE" resolve="switch_toLinkName" />
-                <node concept="3NFfHV" id="1x$A_M25nRQ" role="8TvZ8">
+              <node concept="1sPUBX" id="1WfddY$XHMX" role="lGtFl">
+                <ref role="v9R2y" node="5zEkxuKhszE" resolve="switch_toLinkName" />
+                <node concept="3NFfHV" id="1x$A_M25nRQ" role="1sPUBK">
                   <node concept="3clFbS" id="1x$A_M25nRR" role="2VODD2">
                     <node concept="3clFbF" id="1x$A_M25nRS" role="3cqZAp">
                       <node concept="2OqwBi" id="1x$A_M25nRT" role="3clFbG">
@@ -9831,9 +9827,9 @@
               </node>
             </node>
             <node concept="10Nm6u" id="1x$A_M25nRx" role="37wK5m">
-              <node concept="jY4Nl" id="1x$A_M25nRy" role="lGtFl">
-                <ref role="jYjtx" node="5zEkxuKhsAW" resolve="switch_IPropertyQualifier" />
-                <node concept="3NFfHV" id="1x$A_M25nRz" role="8TvZ8">
+              <node concept="1sPUBX" id="1WfddY$XI0p" role="lGtFl">
+                <ref role="v9R2y" node="5zEkxuKhsAW" resolve="switch_IPropertyQualifier" />
+                <node concept="3NFfHV" id="1x$A_M25nRz" role="1sPUBK">
                   <node concept="3clFbS" id="1x$A_M25nR$" role="2VODD2">
                     <node concept="3clFbF" id="1x$A_M25nR_" role="3cqZAp">
                       <node concept="2OqwBi" id="1x$A_M25nRA" role="3clFbG">

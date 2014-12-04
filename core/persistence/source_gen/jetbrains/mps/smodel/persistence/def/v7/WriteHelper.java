@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
@@ -72,7 +71,7 @@ public class WriteHelper {
   }
   @Nullable
   public String genReferenceId(@Nullable SNodeReference pointer) {
-    return (pointer == null ? null : genReferenceString(pointer.getModelReference(), ((SNodePointer) pointer).getNodeId().toString()));
+    return (pointer == null ? null : genReferenceString(pointer.getModelReference(), pointer.getNodeId().toString()));
   }
   public String genType(@NotNull SNode node) {
     // return fqName prefixed with "." if we can't find model or name of concept 

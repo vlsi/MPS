@@ -179,10 +179,6 @@
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
@@ -203,6 +199,9 @@
       </concept>
       <concept id="1167327847730" name="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" flags="lg" index="3aamgX">
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
+      </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
@@ -416,9 +415,9 @@
                     <node concept="2OqwBi" id="7Joh5OuynBs" role="37wK5m">
                       <node concept="37vLTw" id="3GM_nagTsFj" role="2Oq$k0">
                         <ref role="3cqZAo" node="7Joh5OuynBm" resolve="inputSequence" />
-                        <node concept="jY4Nl" id="6OAzscTcCG1" role="lGtFl">
-                          <ref role="jYjtx" node="6OAzscTcCG3" resolve="CollectionSwitch" />
-                          <node concept="3NFfHV" id="6OAzscTcN$Y" role="8TvZ8">
+                        <node concept="1sPUBX" id="1WfddY$XHO_" role="lGtFl">
+                          <ref role="v9R2y" node="6OAzscTcCG3" resolve="CollectionSwitch" />
+                          <node concept="3NFfHV" id="6OAzscTcN$Y" role="1sPUBK">
                             <node concept="3clFbS" id="6OAzscTcN$Z" role="2VODD2">
                               <node concept="3clFbF" id="6OAzscTcN_0" role="3cqZAp">
                                 <node concept="2OqwBi" id="6OAzscTdj4r" role="3clFbG">
@@ -893,9 +892,9 @@
                 <node concept="Tc6Ow" id="z9$5E0Vwbm" role="2ShVmc">
                   <node concept="10Oyi0" id="z9$5E0VOu0" role="HW$YZ" />
                 </node>
-                <node concept="jY4Nl" id="6OAzscTcKdW" role="lGtFl">
-                  <ref role="jYjtx" node="6OAzscTcCG3" resolve="CollectionSwitch" />
-                  <node concept="3NFfHV" id="6OAzscTcN_U" role="8TvZ8">
+                <node concept="1sPUBX" id="1WfddY$XIAq" role="lGtFl">
+                  <ref role="v9R2y" node="6OAzscTcCG3" resolve="CollectionSwitch" />
+                  <node concept="3NFfHV" id="6OAzscTcN_U" role="1sPUBK">
                     <node concept="3clFbS" id="6OAzscTcN_V" role="2VODD2">
                       <node concept="3clFbF" id="6OAzscTcN_W" role="3cqZAp">
                         <node concept="2OqwBi" id="6OAzscTcN_X" role="3clFbG">

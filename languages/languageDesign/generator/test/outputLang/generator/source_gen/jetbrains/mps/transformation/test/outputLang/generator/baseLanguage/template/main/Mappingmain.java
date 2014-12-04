@@ -648,19 +648,18 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       try {
-        try {
-          tlist1 = environment.trySwitch(templateSwitchNodeNoInput_417xrn_a0a0a0a0c0c92, context);
-          if (tlist1 == null) {
-            final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.NullLiteral");
-            try {
-              environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/8371596541809088649");
-            } finally {
-            }
-            if (tnode2 != null) {
-              tlist1 = TemplateUtil.singletonList(tnode2);
-            }
+        TemplateContext switchContext1;
+        switchContext1 = context;
+        tlist1 = environment.trySwitch(templateSwitchNodeNoInput_417xrn_a0a0c0c0c92, switchContext1);
+        if (tlist1 == null) {
+          final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.NullLiteral");
+          try {
+            environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/8371596541809088649");
+          } finally {
           }
-        } finally {
+          if (tnode2 != null) {
+            tlist1 = TemplateUtil.singletonList(tnode2);
+          }
         }
       } finally {
       }
@@ -742,7 +741,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer copySrcMacro_417xrn_b0a0c0c0c0c42 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288387820");
   private static SNodePointer templArgCall_417xrn_b0a0a0a0a0b0c52 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4816349095291000367");
   private static SNodePointer propertyMacro_417xrn_c0a0c0b0b0b0b0c0b0b0c0c62 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913945866");
-  private static SNodePointer templateSwitchNodeNoInput_417xrn_a0a0a0a0c0c92 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088655");
+  private static SNodePointer templateSwitchNodeNoInput_417xrn_a0a0c0c0c92 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088655");
   private static SNodePointer rootMappingRule_417xrn_a0a1eb = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412767");
   private static SNodePointer weavingRule_417xrn_a0a1fb = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918064");
   private static SNodePointer weavingConseq_417xrn_b0a0a1a6fb = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918068");

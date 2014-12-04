@@ -192,9 +192,6 @@
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-      </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj">
         <reference id="1200916687663" name="labelDeclaration" index="2sdACS" />
       </concept>
@@ -230,6 +227,7 @@
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
       </concept>
       <concept id="1184616041890" name="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" flags="in" index="3gB$ML" />
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
@@ -1759,8 +1757,8 @@
         <node concept="Xl_RD" id="3W386ViUTOO" role="3uHU7w">
           <property role="Xl_RC" value="value" />
         </node>
-        <node concept="jY4Nl" id="3W386ViWE1M" role="lGtFl">
-          <ref role="jYjtx" node="3W386ViWE8P" resolve="OperationAssignmentRValueSwitch" />
+        <node concept="1sPUBX" id="1WfddY$XI6Y" role="lGtFl">
+          <ref role="v9R2y" node="3W386ViWE8P" resolve="OperationAssignmentRValueSwitch" />
         </node>
       </node>
       <node concept="3cqZAl" id="3W386ViUTOW" role="1Ez5kq" />
@@ -2311,8 +2309,8 @@
               <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="3cmrfG" id="3W386VjJo6U" role="37wK5m">
                 <property role="3cmrfH" value="1" />
-                <node concept="jY4Nl" id="3W386VjJp8w" role="lGtFl">
-                  <ref role="jYjtx" node="3W386ViWE8P" resolve="OperationAssignmentRValueSwitch" />
+                <node concept="1sPUBX" id="1WfddY$XI3S" role="lGtFl">
+                  <ref role="v9R2y" node="3W386ViWE8P" resolve="OperationAssignmentRValueSwitch" />
                 </node>
               </node>
               <node concept="raruj" id="3W386VjJo72" role="lGtFl" />

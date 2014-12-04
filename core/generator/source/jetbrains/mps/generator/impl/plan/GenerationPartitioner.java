@@ -211,7 +211,7 @@ public class GenerationPartitioner {
     for (TemplateMappingConfiguration mc : cfgs) {
       final MappingConfig_SimpleRef e = new MappingConfig_SimpleRef();
       e.setModelUID(mc.getMappingNode().getModelReference().toString());
-      e.setNodeID(((SNodePointer) mc.getMappingNode()).getNodeId().toString());
+      e.setNodeID(mc.getMappingNode().getNodeId().toString());
       set.getMappingConfigs().add(e);
     }
     return ext;

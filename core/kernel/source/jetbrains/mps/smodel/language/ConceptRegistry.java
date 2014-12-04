@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
@@ -122,7 +121,9 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
         if (languageRuntime != null) {
           StructureAspectDescriptor structureAspectDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
-          descriptor = structureAspectDescriptor.getDescriptor(fqName);
+          if (structureAspectDescriptor != null) {
+            descriptor = structureAspectDescriptor.getDescriptor(fqName);
+          }
         }
       } catch (Throwable e) {
         LOG.error("Exception while structure descriptor creating for the concept " + fqName, e);

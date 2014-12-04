@@ -30,11 +30,13 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.lang.reflect.Array;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -107,17 +109,17 @@ public class TemplateUtil {
   }
 
   public static <T> Collection<T> asCollection(final T... objects) {
-    return new AbstractCollection<T>() {
-      @Override
-      public Iterator<T> iterator() {
-        return new ArrayIterator<T>(objects);
-      }
+    return Arrays.asList(objects);
+  }
 
-      @Override
-      public int size() {
-        return objects.length;
-      }
-    };
+  /**
+   * @throws IllegalArgumentException if actual number of arguments doesn't match expected
+   */
+  public static void assertTemplateParametersCount(SNodeReference template, int expected, int actual) throws IllegalArgumentException {
+    if (expected != actual) {
+      final String msg = String.format("Wrong number of arguments for template %s. Expected %d, actual count is %d", template, 0, actual);
+      throw new IllegalArgumentException(msg);
+    }
   }
 
   public static TemplateModule createInterpretedGenerator(LanguageRuntime sourceLanguage, String moduleReference) {
@@ -197,32 +199,5 @@ public class TemplateUtil {
     result.setGenerator(PersistenceFacade.getInstance().createModuleReference(moduleReference));
     result.setMappingConfig((MappingConfig_AbstractRef) inner);
     return result;
-  }
-
-  private static class ArrayIterator<T> implements Iterator<T> {
-    private int idx = 0;
-    private Object array;
-    private int length;
-
-    private ArrayIterator(Object array) {
-      this.array = array;
-      this.length = Array.getLength(array);
-    }
-
-    @Override
-    public boolean hasNext() {
-      return idx < length;
-    }
-
-    @Override
-    @SuppressWarnings(value = "unchecked")
-    public T next() {
-      return (T) Array.get(array, idx++);
-    }
-
-    @Override
-    public void remove() {
-      throw new UnsupportedOperationException();
-    }
   }
 }

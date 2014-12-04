@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,11 @@ package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,9 +93,9 @@ public class PersistenceProblem implements SModel.Problem {
       return null;
     }
     SNode anchor = message.getHintObject() instanceof SNode ? (SNode) message.getHintObject() : null;
-    if (anchor == null && model != null && message.getHintObject() instanceof SNodePointer) {
-      SNodePointer ptr = (SNodePointer) message.getHintObject();
-      if (ptr.getModelReference().equals(model.getReference())) {
+    if (anchor == null && model != null && message.getHintObject() instanceof SNodeReference) {
+      SNodeReference ptr = (SNodeReference) message.getHintObject();
+      if (model.getReference().equals(ptr.getModelReference())) {
         anchor = model.getNode(ptr.getNodeId());
       }
     }

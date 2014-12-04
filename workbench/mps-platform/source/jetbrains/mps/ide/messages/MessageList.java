@@ -56,12 +56,12 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.AbstractAction;
 import javax.swing.AbstractListModel;
@@ -457,7 +457,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
       group.add(new CopyToClipboardAction("Copy Text").setTextToCopy(sb.toString()));
       Object hintObj;
       if (selectedValues.length == 1 && (hintObj = ((IMessage) selectedValues[0]).getHintObject()) != null) {
-        SNodeId nodeId = hintObj instanceof SNodePointer ? ((SNodePointer) hintObj).getNodeId(): null;
+        SNodeId nodeId = hintObj instanceof SNodeReference ? ((SNodeReference) hintObj).getNodeId(): null;
         if (nodeId != null) {
           group.add(new CopyToClipboardAction("Copy Node Id").setTextToCopy(nodeId.toString()));
         }

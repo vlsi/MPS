@@ -134,6 +134,13 @@ public class Generator extends ReloadableModuleBase {
     return mySourceLanguage;
   }
 
+  /**
+   * @return <code>true</code> if templates for this generator should be generated into Java code instead of being interpreted at runtime
+   */
+  public boolean generateTemplates() {
+    return myGeneratorDescriptor.isGenerateTemplates();
+  }
+
   public String toString() {
     return getAlias() + " [generator]";
   }

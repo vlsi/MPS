@@ -299,10 +299,6 @@
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -355,6 +351,9 @@
       <concept id="1195500722856" name="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock" flags="in" index="1pplIY" />
       <concept id="1195502151594" name="jetbrains.mps.lang.generator.structure.MappingScriptReference" flags="lg" index="1puMqW">
         <reference id="1195502167610" name="mappingScript" index="1puQsG" />
+      </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
@@ -1012,9 +1011,9 @@
           <property role="3VnrPo" value="source" />
           <node concept="3uibUv" id="4WBk1A5S9K4" role="3Vn4Tt">
             <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
-            <node concept="jY4Nl" id="4WBk1A5S9Kg" role="lGtFl">
-              <ref role="jYjtx" node="4WBk1A5S9GI" resolve="SwitchSourceType" />
-              <node concept="3NFfHV" id="4WBk1A5S9Kh" role="8TvZ8">
+            <node concept="1sPUBX" id="1WfddY$XI$p" role="lGtFl">
+              <ref role="v9R2y" node="4WBk1A5S9GI" resolve="SwitchSourceType" />
+              <node concept="3NFfHV" id="4WBk1A5S9Kh" role="1sPUBK">
                 <node concept="3clFbS" id="4WBk1A5S9Ki" role="2VODD2">
                   <node concept="3clFbF" id="4WBk1A5S9Kj" role="3cqZAp">
                     <node concept="2OqwBi" id="4WBk1A5S9Ku" role="3clFbG">
@@ -5451,9 +5450,9 @@
         <ref role="3uigEE" to="eibu:7pREJKpbIgR" resolve="BaseMpsProducer" />
         <node concept="3uibUv" id="6TtxjrBVW0P" role="11_B2D">
           <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
-          <node concept="jY4Nl" id="6TtxjrBVW0U" role="lGtFl">
-            <ref role="jYjtx" node="4WBk1A5S9GI" resolve="SwitchSourceType" />
-            <node concept="3NFfHV" id="6TtxjrBVW0Y" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XIAU" role="lGtFl">
+            <ref role="v9R2y" node="4WBk1A5S9GI" resolve="SwitchSourceType" />
+            <node concept="3NFfHV" id="6TtxjrBVW0Y" role="1sPUBK">
               <node concept="3clFbS" id="6TtxjrBVW0Z" role="2VODD2">
                 <node concept="3clFbF" id="6TtxjrBVW10" role="3cqZAp">
                   <node concept="2OqwBi" id="6TtxjrBVW14" role="3clFbG">
@@ -5550,9 +5549,9 @@
         <node concept="3clFbS" id="3uNEAUKvTjz" role="3clF47">
           <node concept="3clFbF" id="3uNEAUKvTjE" role="3cqZAp">
             <node concept="3clFbT" id="3uNEAUKvTjF" role="3clFbG" />
-            <node concept="jY4Nl" id="4WBk1A5S819" role="lGtFl">
-              <ref role="jYjtx" node="3uNEAUKvBqb" resolve="SwitchIsApplicableToSource" />
-              <node concept="3NFfHV" id="4WBk1A5S81f" role="8TvZ8">
+            <node concept="1sPUBX" id="1WfddY$XI2a" role="lGtFl">
+              <ref role="v9R2y" node="3uNEAUKvBqb" resolve="SwitchIsApplicableToSource" />
+              <node concept="3NFfHV" id="4WBk1A5S81f" role="1sPUBK">
                 <node concept="3clFbS" id="4WBk1A5S81g" role="2VODD2">
                   <node concept="3clFbF" id="4WBk1A5S81i" role="3cqZAp">
                     <node concept="2OqwBi" id="4WBk1A5S81m" role="3clFbG">
@@ -5602,9 +5601,9 @@
           <property role="3TUv4t" value="true" />
           <node concept="3uibUv" id="3uNEAUKvTjC" role="1tU5fm">
             <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
-            <node concept="jY4Nl" id="4WBk1A5S9JF" role="lGtFl">
-              <ref role="jYjtx" node="4WBk1A5S9GI" resolve="SwitchSourceType" />
-              <node concept="3NFfHV" id="4WBk1A5S9JH" role="8TvZ8">
+            <node concept="1sPUBX" id="1WfddY$XI_6" role="lGtFl">
+              <ref role="v9R2y" node="4WBk1A5S9GI" resolve="SwitchSourceType" />
+              <node concept="3NFfHV" id="4WBk1A5S9JH" role="1sPUBK">
                 <node concept="3clFbS" id="4WBk1A5S9JI" role="2VODD2">
                   <node concept="3clFbF" id="4WBk1A5S9JK" role="3cqZAp">
                     <node concept="2OqwBi" id="4WBk1A5S9JO" role="3clFbG">

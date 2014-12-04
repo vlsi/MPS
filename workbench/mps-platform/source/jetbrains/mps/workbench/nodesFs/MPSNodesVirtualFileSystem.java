@@ -15,11 +15,18 @@
  */
 package jetbrains.mps.workbench.nodesFs;
 
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.io.FileAttributes;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem;
+import com.intellij.openapi.vfs.newvfs.events.VFileDeleteEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.util.LocalTimeCounter;
+import com.intellij.util.messages.MessageBus;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -46,6 +53,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.SwingUtilities;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -56,7 +65,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
+public class MPSNodesVirtualFileSystem extends NewVirtualFileSystem implements ApplicationComponent {
 
   public static MPSNodesVirtualFileSystem getInstance() {
     return ApplicationManager.getApplication().getComponent(MPSNodesVirtualFileSystem.class);
@@ -175,33 +184,39 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   @Override
-  protected void deleteFile(Object requestor, @NotNull VirtualFile vFile) throws IOException {
+  public void deleteFile(Object requestor, @NotNull VirtualFile vFile) throws IOException {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  protected void moveFile(Object requestor, @NotNull VirtualFile vFile, @NotNull VirtualFile newParent) throws IOException {
+  public void moveFile(Object requestor, @NotNull VirtualFile vFile, @NotNull VirtualFile newParent) throws IOException {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  protected void renameFile(Object requestor, @NotNull VirtualFile vFile, @NotNull String newName) throws IOException {
+  public void renameFile(Object requestor, @NotNull VirtualFile vFile, @NotNull String newName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Nullable
   @Override
-  protected VirtualFile createChildFile(Object requestor, @NotNull VirtualFile vDir, @NotNull String fileName) throws IOException {
+  public FileAttributes getAttributes(@NotNull VirtualFile file) {
+    return null;
+  }
+
+  @Override
+  public VirtualFile createChildFile(Object requestor, @NotNull VirtualFile vDir, @NotNull String fileName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
   @Override
   @NotNull
-  protected VirtualFile createChildDirectory(Object requestor, @NotNull VirtualFile vDir, @NotNull String dirName) throws IOException {
+  public VirtualFile createChildDirectory(Object requestor, @NotNull VirtualFile vDir, @NotNull String dirName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  protected VirtualFile copyFile(Object requestor, @NotNull VirtualFile virtualFile, @NotNull VirtualFile newParent, @NotNull String copyName) throws
+  public VirtualFile copyFile(Object requestor, @NotNull VirtualFile virtualFile, @NotNull VirtualFile newParent, @NotNull String copyName) throws
       IOException {
     throw new UnsupportedOperationException();
   }
@@ -350,11 +365,18 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       if (myDisposed) {
         return;
       }
+
+      MessageBus bus = ApplicationManager.getApplication().getMessageBus();
+      List<VFileEvent> events = new ArrayList<VFileEvent>();
       for (MPSNodeVirtualFile deletedFile : myDeleterFiles) {
-        fireBeforeFileDeletion(this, deletedFile);
-        deletedFile.invalidate();
-        fireFileDeleted(this, deletedFile, deletedFile.getName(), null);
+        VFileDeleteEvent event = new VFileDeleteEvent(MPSNodesVirtualFileSystem.this, deletedFile, false);
+        events.add(event);
       }
+      bus.syncPublisher(VirtualFileManager.VFS_CHANGES).before(events);
+      for (MPSNodeVirtualFile deletedFile : myDeleterFiles) {
+        deletedFile.invalidate();
+      }
+      bus.syncPublisher(VirtualFileManager.VFS_CHANGES).after(events);
 
       for (Pair<MPSNodeVirtualFile, String> renamedFile : myRenamedFiles) {
         MPSNodeVirtualFile vf = renamedFile.o1;
@@ -366,4 +388,83 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       return !myDeleterFiles.isEmpty() || !myRenamedFiles.isEmpty();
     }
   }
+
+  // NewVirtualFileSystem methods
+
+  @NotNull
+  @Override
+  public String[] list(@NotNull VirtualFile file) {
+    return new String[0];
+  }
+
+  @Override
+  public boolean isDirectory(@NotNull VirtualFile file) {
+    return false;
+  }
+
+  @Override
+  public long getTimeStamp(@NotNull VirtualFile file) {
+    return 0;
+  }
+
+  @Override
+  public void setTimeStamp(@NotNull VirtualFile file, long timeStamp) throws IOException {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean isWritable(@NotNull VirtualFile file) {
+    return false;
+  }
+
+  @Override
+  public void setWritable(@NotNull VirtualFile file, boolean writableFlag) throws IOException {
+    throw new UnsupportedOperationException();
+  }
+
+  @Nullable
+  @Override
+  public VirtualFile findFileByPathIfCached(@NotNull @NonNls String path) {
+    return null;
+  }
+
+  @NotNull
+  @Override
+  protected String extractRootPath(@NotNull String path) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public int getRank() {
+    return 0;
+  }
+
+  @NotNull
+  @Override
+  public byte[] contentsToByteArray(@NotNull VirtualFile file) throws IOException {
+    return new byte[0];
+  }
+
+  @NotNull
+  @Override
+  public InputStream getInputStream(@NotNull VirtualFile file) throws IOException {
+    throw new UnsupportedOperationException();
+  }
+
+  @NotNull
+  @Override
+  public OutputStream getOutputStream(@NotNull VirtualFile file, Object requestor, long modStamp, long timeStamp) throws IOException {
+    return null;
+  }
+
+  @Override
+  public long getLength(@NotNull VirtualFile file) {
+    return 0;
+  }
+
+  @Override
+  public boolean exists(@NotNull VirtualFile file) {
+    return false;
+  }
+
 }

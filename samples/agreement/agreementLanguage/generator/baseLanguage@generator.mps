@@ -154,10 +154,6 @@
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4" />
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
@@ -183,6 +179,9 @@
       </concept>
       <concept id="1167327847730" name="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" flags="lg" index="3aamgX">
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
+      </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
@@ -555,9 +554,9 @@
                 </node>
               </node>
               <node concept="10Nm6u" id="gfQbVkF" role="37wK5m">
-                <node concept="jY4Nl" id="gfQbYFP" role="lGtFl">
-                  <ref role="jYjtx" node="gfQailg" resolve="SWITCH_RegisterValue" />
-                  <node concept="3NFfHV" id="hrqovoi" role="8TvZ8">
+                <node concept="1sPUBX" id="1WfddY$XHS1" role="lGtFl">
+                  <ref role="v9R2y" node="gfQailg" resolve="SWITCH_RegisterValue" />
+                  <node concept="3NFfHV" id="hrqovoi" role="1sPUBK">
                     <node concept="3clFbS" id="hrqovoj" role="2VODD2">
                       <node concept="3clFbF" id="hrqow5f" role="3cqZAp">
                         <node concept="2OqwBi" id="hER69J8" role="3clFbG">
@@ -572,9 +571,9 @@
                 </node>
               </node>
               <node concept="10Nm6u" id="hrqslBj" role="37wK5m">
-                <node concept="jY4Nl" id="hrqsmMx" role="lGtFl">
-                  <ref role="jYjtx" node="gfLvths" resolve="SWITCH_Date" />
-                  <node concept="3NFfHV" id="hrqspT1" role="8TvZ8">
+                <node concept="1sPUBX" id="1WfddY$XHRN" role="lGtFl">
+                  <ref role="v9R2y" node="gfLvths" resolve="SWITCH_Date" />
+                  <node concept="3NFfHV" id="hrqspT1" role="1sPUBK">
                     <node concept="3clFbS" id="hrqspT2" role="2VODD2">
                       <node concept="3clFbF" id="hrqspT3" role="3cqZAp">
                         <node concept="2OqwBi" id="hER6aMr" role="3clFbG">
@@ -998,9 +997,9 @@
                     </node>
                   </node>
                   <node concept="10Nm6u" id="gckjZRy" role="37wK5m">
-                    <node concept="jY4Nl" id="gckk66Y" role="lGtFl">
-                      <ref role="jYjtx" node="gcz5IYJ" resolve="SWITCH_AgreementExpression_NewFunction_Money" />
-                      <node concept="3NFfHV" id="hrq_ObN" role="8TvZ8">
+                    <node concept="1sPUBX" id="1WfddY$XI2S" role="lGtFl">
+                      <ref role="v9R2y" node="gcz5IYJ" resolve="SWITCH_AgreementExpression_NewFunction_Money" />
+                      <node concept="3NFfHV" id="hrq_ObN" role="1sPUBK">
                         <node concept="3clFbS" id="hrq_ObO" role="2VODD2">
                           <node concept="3clFbF" id="hrq_OKH" role="3cqZAp">
                             <node concept="2OqwBi" id="hER69Dz" role="3clFbG">
@@ -1022,9 +1021,9 @@
                 </node>
               </node>
               <node concept="10Nm6u" id="gfLzvfH" role="37wK5m">
-                <node concept="jY4Nl" id="gfLzwCQ" role="lGtFl">
-                  <ref role="jYjtx" node="gfLvths" resolve="SWITCH_Date" />
-                  <node concept="3NFfHV" id="hrqsOer" role="8TvZ8">
+                <node concept="1sPUBX" id="1WfddY$XI3C" role="lGtFl">
+                  <ref role="v9R2y" node="gfLvths" resolve="SWITCH_Date" />
+                  <node concept="3NFfHV" id="hrqsOer" role="1sPUBK">
                     <node concept="3clFbS" id="hrqsOes" role="2VODD2">
                       <node concept="3clFbF" id="hrqsOHt" role="3cqZAp">
                         <node concept="2OqwBi" id="hER6b5f" role="3clFbG">
@@ -1398,9 +1397,9 @@
       <node concept="1pGfFk" id="hERbgjE" role="2ShVmc">
         <ref role="37wK5l" to="kz93:5xQAfEzeW3p" resolve="MoneyAddOperation" />
         <node concept="10Nm6u" id="gcoksbf" role="37wK5m">
-          <node concept="jY4Nl" id="gcokW0x" role="lGtFl">
-            <ref role="jYjtx" node="gck6LVz" resolve="SWITCH_AgreementExpression_NewFunction_Default" />
-            <node concept="3NFfHV" id="hrqGwtV" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XI5c" role="lGtFl">
+            <ref role="v9R2y" node="gck6LVz" resolve="SWITCH_AgreementExpression_NewFunction_Default" />
+            <node concept="3NFfHV" id="hrqGwtV" role="1sPUBK">
               <node concept="3clFbS" id="hrqGwtW" role="2VODD2">
                 <node concept="3clFbF" id="hrqGwWI" role="3cqZAp">
                   <node concept="2OqwBi" id="hER6avD" role="3clFbG">
@@ -1415,9 +1414,9 @@
           </node>
         </node>
         <node concept="10Nm6u" id="gcoktp9" role="37wK5m">
-          <node concept="jY4Nl" id="gcokW0y" role="lGtFl">
-            <ref role="jYjtx" node="gck6LVz" resolve="SWITCH_AgreementExpression_NewFunction_Default" />
-            <node concept="3NFfHV" id="hrqTAAP" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XI0E" role="lGtFl">
+            <ref role="v9R2y" node="gck6LVz" resolve="SWITCH_AgreementExpression_NewFunction_Default" />
+            <node concept="3NFfHV" id="hrqTAAP" role="1sPUBK">
               <node concept="3clFbS" id="hrqTAAQ" role="2VODD2">
                 <node concept="3clFbF" id="hrqTBcm" role="3cqZAp">
                   <node concept="2OqwBi" id="hER6b0U" role="3clFbG">
@@ -1481,9 +1480,9 @@
       <node concept="1pGfFk" id="hERbgxs" role="2ShVmc">
         <ref role="37wK5l" to="kz93:5xQAfEzeW50" resolve="MoneyMultiplyOperation" />
         <node concept="10Nm6u" id="gctEcsk" role="37wK5m">
-          <node concept="jY4Nl" id="gctEBzJ" role="lGtFl">
-            <ref role="jYjtx" node="gck6LVz" resolve="SWITCH_AgreementExpression_NewFunction_Default" />
-            <node concept="3NFfHV" id="hrqLCNl" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XHPn" role="lGtFl">
+            <ref role="v9R2y" node="gck6LVz" resolve="SWITCH_AgreementExpression_NewFunction_Default" />
+            <node concept="3NFfHV" id="hrqLCNl" role="1sPUBK">
               <node concept="3clFbS" id="hrqLCNm" role="2VODD2">
                 <node concept="3clFbF" id="hrqLDly" role="3cqZAp">
                   <node concept="2OqwBi" id="hER69KW" role="3clFbG">
@@ -1498,9 +1497,9 @@
           </node>
         </node>
         <node concept="10Nm6u" id="gctEdfR" role="37wK5m">
-          <node concept="jY4Nl" id="gctEBzK" role="lGtFl">
-            <ref role="jYjtx" node="gcuU6jQ" resolve="SWITCH_AgreementExpression_NewFunction_Double" />
-            <node concept="3NFfHV" id="hrqLLUd" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XI3U" role="lGtFl">
+            <ref role="v9R2y" node="gcuU6jQ" resolve="SWITCH_AgreementExpression_NewFunction_Double" />
+            <node concept="3NFfHV" id="hrqLLUd" role="1sPUBK">
               <node concept="3clFbS" id="hrqLLUe" role="2VODD2">
                 <node concept="3clFbF" id="hrqLMlm" role="3cqZAp">
                   <node concept="2OqwBi" id="hER6ac_" role="3clFbG">
@@ -1564,9 +1563,9 @@
       <node concept="1pGfFk" id="hERbglI" role="2ShVmc">
         <ref role="37wK5l" to="kz93:5xQAfEzeW6L" resolve="QuantityGreaterThanOperation" />
         <node concept="10Nm6u" id="gcuaDuk" role="37wK5m">
-          <node concept="jY4Nl" id="gcuaRck" role="lGtFl">
-            <ref role="jYjtx" node="gcuYDdR" resolve="SWITCH_AgreementExpression_NewFunction_Quantity" />
-            <node concept="3NFfHV" id="hrqLYHF" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XI_L" role="lGtFl">
+            <ref role="v9R2y" node="gcuYDdR" resolve="SWITCH_AgreementExpression_NewFunction_Quantity" />
+            <node concept="3NFfHV" id="hrqLYHF" role="1sPUBK">
               <node concept="3clFbS" id="hrqLYHG" role="2VODD2">
                 <node concept="3clFbF" id="hrqLZ6B" role="3cqZAp">
                   <node concept="2OqwBi" id="hER6aGA" role="3clFbG">
@@ -1581,9 +1580,9 @@
           </node>
         </node>
         <node concept="10Nm6u" id="gcuaE5T" role="37wK5m">
-          <node concept="jY4Nl" id="gcuaRcl" role="lGtFl">
-            <ref role="jYjtx" node="gcuYDdR" resolve="SWITCH_AgreementExpression_NewFunction_Quantity" />
-            <node concept="3NFfHV" id="hrqM3Bx" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XI1_" role="lGtFl">
+            <ref role="v9R2y" node="gcuYDdR" resolve="SWITCH_AgreementExpression_NewFunction_Quantity" />
+            <node concept="3NFfHV" id="hrqM3Bx" role="1sPUBK">
               <node concept="3clFbS" id="hrqM3By" role="2VODD2">
                 <node concept="3clFbF" id="hrqM41c" role="3cqZAp">
                   <node concept="2OqwBi" id="hER6atR" role="3clFbG">
@@ -1978,9 +1977,9 @@
           <ref role="3uigEE" to="fw8r:5E$kzZSw81B" resolve="Money" />
         </node>
         <node concept="10Nm6u" id="gcz6YMK" role="37wK5m">
-          <node concept="jY4Nl" id="gcz6YML" role="lGtFl">
-            <ref role="jYjtx" node="gck6LVz" resolve="SWITCH_AgreementExpression_NewFunction_Default" />
-            <node concept="3NFfHV" id="hrqQRa2" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XHP9" role="lGtFl">
+            <ref role="v9R2y" node="gck6LVz" resolve="SWITCH_AgreementExpression_NewFunction_Default" />
+            <node concept="3NFfHV" id="hrqQRa2" role="1sPUBK">
               <node concept="3clFbS" id="hrqQRa3" role="2VODD2">
                 <node concept="3clFbF" id="hrqQR$V" role="3cqZAp">
                   <node concept="2OqwBi" id="hER6a5v" role="3clFbG">
@@ -1995,9 +1994,9 @@
           </node>
         </node>
         <node concept="10Nm6u" id="gcz6YMM" role="37wK5m">
-          <node concept="jY4Nl" id="gcz6YMN" role="lGtFl">
-            <ref role="jYjtx" node="gcz5IYJ" resolve="SWITCH_AgreementExpression_NewFunction_Money" />
-            <node concept="3NFfHV" id="hrqQYq2" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XIAG" role="lGtFl">
+            <ref role="v9R2y" node="gcz5IYJ" resolve="SWITCH_AgreementExpression_NewFunction_Money" />
+            <node concept="3NFfHV" id="hrqQYq2" role="1sPUBK">
               <node concept="3clFbS" id="hrqQYq3" role="2VODD2">
                 <node concept="3clFbF" id="hrqQZdl" role="3cqZAp">
                   <node concept="2OqwBi" id="hER6amh" role="3clFbG">
@@ -2012,9 +2011,9 @@
           </node>
         </node>
         <node concept="10Nm6u" id="gcz6YMO" role="37wK5m">
-          <node concept="jY4Nl" id="gcz6YMP" role="lGtFl">
-            <ref role="jYjtx" node="gcz5IYJ" resolve="SWITCH_AgreementExpression_NewFunction_Money" />
-            <node concept="3NFfHV" id="hrqR2LW" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XI6A" role="lGtFl">
+            <ref role="v9R2y" node="gcz5IYJ" resolve="SWITCH_AgreementExpression_NewFunction_Money" />
+            <node concept="3NFfHV" id="hrqR2LW" role="1sPUBK">
               <node concept="3clFbS" id="hrqR2LX" role="2VODD2">
                 <node concept="3clFbF" id="hrqR3ap" role="3cqZAp">
                   <node concept="2OqwBi" id="hER6aJ8" role="3clFbG">
@@ -2039,8 +2038,8 @@
       <node concept="1pGfFk" id="hERbgvC" role="2ShVmc">
         <ref role="37wK5l" to="kz93:5xQAfEzeW2E" resolve="MoneyAdapter" />
         <node concept="10Nm6u" id="gczhRxN" role="37wK5m">
-          <node concept="jY4Nl" id="gczifPk" role="lGtFl">
-            <ref role="jYjtx" node="gcuU6jQ" resolve="SWITCH_AgreementExpression_NewFunction_Double" />
+          <node concept="1sPUBX" id="1WfddY$XHSf" role="lGtFl">
+            <ref role="v9R2y" node="gcuU6jQ" resolve="SWITCH_AgreementExpression_NewFunction_Double" />
           </node>
         </node>
         <node concept="10M0yZ" id="gczhY80" role="37wK5m">

@@ -136,6 +136,7 @@ public class IdInfoCollector {
   private void fillConcept(SNode n) {
     final SConcept concept = n.getConcept();
     SConceptId conceptId = IdHelper.getConceptId(concept);
+
     assert conceptId != null;
     registerConcept(conceptId);
   }

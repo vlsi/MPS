@@ -387,10 +387,6 @@
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -5867,8 +5863,8 @@
             <node concept="3cpWsn" id="g_Cet49" role="3cpWs9">
               <property role="TrG5h" value="provider" />
               <node concept="2ShNRf" id="55my_QL13JR" role="33vP2m">
-                <node concept="jY4Nl" id="55my_QL1uX4" role="lGtFl">
-                  <ref role="jYjtx" node="55my_QKXKCI" resolve="CellProviderWithRoleInitializer" />
+                <node concept="1sPUBX" id="1WfddY$XHR5" role="lGtFl">
+                  <ref role="v9R2y" node="55my_QKXKCI" resolve="CellProviderWithRoleInitializer" />
                 </node>
                 <node concept="1pGfFk" id="55my_QL18tH" role="2ShVmc">
                   <ref role="37wK5l" node="55my_QKZNvS" resolve="_context_class_.CellProviderWithRoleImpl" />
@@ -9924,13 +9920,13 @@
                 <node concept="liA8E" id="5hGzT1zWLYZ" role="2OqNvi">
                   <ref role="37wK5l" to="qe67:~Style.set(jetbrains.mps.openapi.editor.style.StyleAttribute,java.lang.Object):void" resolve="set" />
                   <node concept="10Nm6u" id="5hGzT1zWLZ0" role="37wK5m">
-                    <node concept="jY4Nl" id="5hGzT1zWOCK" role="lGtFl">
-                      <ref role="jYjtx" node="5hGzT1$4cwp" resolve="StyleAttribute" />
+                    <node concept="1sPUBX" id="1WfddY$XIyN" role="lGtFl">
+                      <ref role="v9R2y" node="5hGzT1$4cwp" resolve="StyleAttribute" />
                     </node>
                   </node>
                   <node concept="10Nm6u" id="5hGzT1zWLZ1" role="37wK5m">
-                    <node concept="jY4Nl" id="4A7H4Ezuymz" role="lGtFl">
-                      <ref role="jYjtx" node="hgVfGhP" resolve="StyleAttributeValue" />
+                    <node concept="1sPUBX" id="1WfddY$XI0S" role="lGtFl">
+                      <ref role="v9R2y" node="hgVfGhP" resolve="StyleAttributeValue" />
                     </node>
                   </node>
                 </node>
@@ -10259,9 +10255,9 @@
           </node>
         </node>
         <node concept="2tJIrI" id="4R_sg7WWPg_" role="jymVt">
-          <node concept="jY4Nl" id="4R_sg7WXjht" role="lGtFl">
-            <ref role="jYjtx" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
-            <node concept="3NFfHV" id="4R_sg7WYUhc" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XI70" role="lGtFl">
+            <ref role="v9R2y" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
+            <node concept="3NFfHV" id="4R_sg7WYUhc" role="1sPUBK">
               <node concept="3clFbS" id="4R_sg7WYUhd" role="2VODD2">
                 <node concept="3clFbF" id="4R_sg7WZwZd" role="3cqZAp">
                   <node concept="2OqwBi" id="4R_sg7WZx8V" role="3clFbG">
@@ -10276,9 +10272,9 @@
           </node>
         </node>
         <node concept="2tJIrI" id="4R_sg7X0wV4" role="jymVt">
-          <node concept="jY4Nl" id="4R_sg7X0wV5" role="lGtFl">
-            <ref role="jYjtx" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
-            <node concept="3NFfHV" id="4R_sg7X0wV6" role="8TvZ8">
+          <node concept="1sPUBX" id="1WfddY$XI$J" role="lGtFl">
+            <ref role="v9R2y" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
+            <node concept="3NFfHV" id="4R_sg7X0wV6" role="1sPUBK">
               <node concept="3clFbS" id="4R_sg7X0wV7" role="2VODD2">
                 <node concept="3clFbF" id="4R_sg7X0wV8" role="3cqZAp">
                   <node concept="2OqwBi" id="4R_sg7X0wV9" role="3clFbG">
@@ -13608,9 +13604,9 @@
                   <node concept="10M0yZ" id="4N_nDX8sqCN" role="37wK5m">
                     <ref role="3cqZAo" to="1t7x:~Color.white" resolve="white" />
                     <ref role="1PxDUh" to="9a8:~MPSColors" resolve="MPSColors" />
-                    <node concept="jY4Nl" id="4N_nDX8vTXx" role="lGtFl">
-                      <ref role="jYjtx" node="hgVfGhP" resolve="StyleAttributeValue" />
-                      <node concept="3NFfHV" id="4N_nDX8vTYT" role="8TvZ8">
+                    <node concept="1sPUBX" id="1WfddY$XI5q" role="lGtFl">
+                      <ref role="v9R2y" node="hgVfGhP" resolve="StyleAttributeValue" />
+                      <node concept="3NFfHV" id="4N_nDX8vTYT" role="1sPUBK">
                         <node concept="3clFbS" id="4N_nDX8vTYU" role="2VODD2">
                           <node concept="3clFbF" id="4N_nDX8s_k2" role="3cqZAp">
                             <node concept="2OqwBi" id="4N_nDX8s_k4" role="3clFbG">
@@ -19415,8 +19411,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="jY4Nl" id="2dv1ickEbvR" role="lGtFl">
-                <ref role="jYjtx" node="2dv1ick$axh" resolve="StyleClassItemQueryMethods" />
+              <node concept="1sPUBX" id="1WfddY$XI4o" role="lGtFl">
+                <ref role="v9R2y" node="2dv1ick$axh" resolve="StyleClassItemQueryMethods" />
               </node>
             </node>
             <node concept="3clFbH" id="48TKAW3Vg0h" role="3cqZAp">
@@ -19561,9 +19557,9 @@
             </node>
             <node concept="3clFbH" id="1G6ITli5bGl" role="3cqZAp">
               <node concept="raruj" id="1G6ITli5bGm" role="lGtFl" />
-              <node concept="jY4Nl" id="1G6ITli5bGn" role="lGtFl">
-                <ref role="jYjtx" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
-                <node concept="3NFfHV" id="1G6ITli5bGo" role="8TvZ8">
+              <node concept="1sPUBX" id="1WfddY$XI1T" role="lGtFl">
+                <ref role="v9R2y" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
+                <node concept="3NFfHV" id="1G6ITli5bGo" role="1sPUBK">
                   <node concept="3clFbS" id="1G6ITli5bGp" role="2VODD2">
                     <node concept="3clFbF" id="1G6ITli5bGq" role="3cqZAp">
                       <node concept="2OqwBi" id="1G6ITli5bGr" role="3clFbG">
@@ -19579,9 +19575,9 @@
             </node>
             <node concept="3clFbH" id="1G6ITli5bGu" role="3cqZAp">
               <node concept="raruj" id="1G6ITli5bGv" role="lGtFl" />
-              <node concept="jY4Nl" id="1G6ITli5bGw" role="lGtFl">
-                <ref role="jYjtx" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
-                <node concept="3NFfHV" id="1G6ITli5bGx" role="8TvZ8">
+              <node concept="1sPUBX" id="1WfddY$XI18" role="lGtFl">
+                <ref role="v9R2y" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
+                <node concept="3NFfHV" id="1G6ITli5bGx" role="1sPUBK">
                   <node concept="3clFbS" id="1G6ITli5bGy" role="2VODD2">
                     <node concept="3clFbF" id="1G6ITli5bGz" role="3cqZAp">
                       <node concept="2OqwBi" id="1G6ITli5bG$" role="3clFbG">
@@ -19757,9 +19753,9 @@
             </node>
             <node concept="3clFbH" id="4b_UkfrG6Mp" role="3cqZAp">
               <node concept="raruj" id="4b_UkfrG8yQ" role="lGtFl" />
-              <node concept="jY4Nl" id="4b_UkfrJKWd" role="lGtFl">
-                <ref role="jYjtx" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
-                <node concept="3NFfHV" id="4b_UkfrJU2L" role="8TvZ8">
+              <node concept="1sPUBX" id="1WfddY$XI_k" role="lGtFl">
+                <ref role="v9R2y" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
+                <node concept="3NFfHV" id="4b_UkfrJU2L" role="1sPUBK">
                   <node concept="3clFbS" id="4b_UkfrJU2M" role="2VODD2">
                     <node concept="3clFbF" id="4b_UkfrJVMz" role="3cqZAp">
                       <node concept="2OqwBi" id="4b_UkfrJVTJ" role="3clFbG">
@@ -19775,9 +19771,9 @@
             </node>
             <node concept="3clFbH" id="4b_UkfrGOFu" role="3cqZAp">
               <node concept="raruj" id="4b_UkfrGOFv" role="lGtFl" />
-              <node concept="jY4Nl" id="4b_UkfrK5r9" role="lGtFl">
-                <ref role="jYjtx" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
-                <node concept="3NFfHV" id="4b_UkfrKa$W" role="8TvZ8">
+              <node concept="1sPUBX" id="1WfddY$XIzE" role="lGtFl">
+                <ref role="v9R2y" node="4b_UkfrJBBl" resolve="ContextHintsSpecificationQueryMethod" />
+                <node concept="3NFfHV" id="4b_UkfrKa$W" role="1sPUBK">
                   <node concept="3clFbS" id="4b_UkfrKa$X" role="2VODD2">
                     <node concept="3clFbF" id="4b_UkfrKckl" role="3cqZAp">
                       <node concept="2OqwBi" id="4b_UkfrKcrx" role="3clFbG">
@@ -21214,8 +21210,8 @@
             </node>
           </node>
         </node>
-        <node concept="jY4Nl" id="2dv1ickC81a" role="lGtFl">
-          <ref role="jYjtx" node="2dv1ick$axh" resolve="StyleClassItemQueryMethods" />
+        <node concept="1sPUBX" id="1WfddY$XHSq" role="lGtFl">
+          <ref role="v9R2y" node="2dv1ick$axh" resolve="StyleClassItemQueryMethods" />
         </node>
       </node>
       <node concept="2YIFZL" id="2dv1icknF9Y" role="jymVt">
@@ -21305,8 +21301,8 @@
       </node>
       <node concept="2tJIrI" id="2dv1icklxy8" role="jymVt">
         <node concept="raruj" id="2dv1ickly1G" role="lGtFl" />
-        <node concept="jY4Nl" id="2dv1icklyx4" role="lGtFl">
-          <ref role="jYjtx" node="2dv1icjJR$E" resolve="CellModelChildrenIterator" />
+        <node concept="1sPUBX" id="1WfddY$XIzB" role="lGtFl">
+          <ref role="v9R2y" node="2dv1icjJR$E" resolve="CellModelChildrenIterator" />
         </node>
       </node>
       <node concept="3Tm1VV" id="2dv1ickkkKu" role="1B3o_S" />

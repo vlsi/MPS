@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,6 +30,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ModelLinkMap {
   private SModel myModel;
@@ -72,13 +72,13 @@ public class ModelLinkMap {
     res |= move(myTargetMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<StaticReference>() {
       public void invoke(StaticReference ref) {
         ref.setTargetSModelReference(newPtr.getModelReference());
-        ref.setTargetNodeId(((SNodePointer) newPtr).getNodeId());
+        ref.setTargetNodeId(newPtr.getNodeId());
       }
     });
     res |= move(myNodeTypeMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
         String modelName = SModelStereotype.withoutStereotype(newPtr.getModelReference().getModelName());
-        String name = NameUtil.shortNameFromLongName(node.getConcept().getQualifiedName());
+        String name = node.getConcept().getName();
         ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(modelName, name));
       }
     });
@@ -113,7 +113,7 @@ public class ModelLinkMap {
     });
     res |= delete(myRefRoleMap, ptr, new _FunctionTypes._void_P1_E0<SReference>() {
       public void invoke(SReference ref) {
-        ref.getSourceNode().setReference(ref.getRole(), null);
+        ref.getSourceNode().setReference(ref.getLink(), null);
       }
     });
     res |= delete(myPropNameMap, ptr, new _FunctionTypes._void_P1_E0<Pair<SNode, String>>() {
@@ -311,11 +311,8 @@ public class ModelLinkMap {
     }).toListSequence();
     for (SNodeReference ptr : ListSequence.fromList(ptrList)) {
       List<T> list = MapSequence.fromMap(map).removeKey(ptr);
-      MapSequence.fromMap(map).put(new SNodePointer(newModel, ((SNodePointer) ptr).getNodeId()), list);
+      MapSequence.fromMap(map).put(new SNodePointer(newModel, ptr.getNodeId()), list);
     }
-  }
-  private static SNodeReference ptr(SNode node) {
-    return ((node == null) ? null : new SNodePointer(node));
   }
   private static <T> T as_1o71zw_a0a0a22(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

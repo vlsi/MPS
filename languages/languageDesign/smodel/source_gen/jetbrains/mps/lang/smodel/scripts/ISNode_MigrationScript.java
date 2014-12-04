@@ -282,6 +282,9 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNodeReference.getModelReference():org.jetbrains.mps.openapi.model.SModelReference").equals(targetNodeId)) {
           return true;
         }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SNodeReference.getNodeId():org.jetbrains.mps.openapi.model.SNodeId").equals(targetNodeId)) {
+          return true;
+        }
         return false;
       }
       public void doUpdateInstanceNode(SNode node) {

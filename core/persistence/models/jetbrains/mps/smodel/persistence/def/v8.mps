@@ -1218,18 +1218,11 @@
                       </node>
                     </node>
                     <node concept="2OqwBi" id="57cvaO42fho" role="37wK5m">
-                      <node concept="1eOMI4" id="2q2JH_NuHK3" role="2Oq$k0">
-                        <node concept="10QFUN" id="2q2JH_NuHK4" role="1eOMHV">
-                          <node concept="3uibUv" id="2q2JH_NuHK5" role="10QFUM">
-                            <ref role="3uigEE" to="cu2c:~SNodePointer" resolve="SNodePointer" />
-                          </node>
-                          <node concept="37vLTw" id="3GM_nagTztv" role="10QFUP">
-                            <ref role="3cqZAo" node="4sT5ZRDP0xM" resolve="ptr" />
-                          </node>
-                        </node>
+                      <node concept="37vLTw" id="3GM_nagTztv" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4sT5ZRDP0xM" resolve="ptr" />
                       </node>
                       <node concept="liA8E" id="57cvaO42fhq" role="2OqNvi">
-                        <ref role="37wK5l" to="cu2c:~SNodePointer.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                        <ref role="37wK5l" to="ec5l:~SNodeReference.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
                       </node>
                     </node>
                     <node concept="AH0OO" id="57cvaO42fhr" role="37wK5m">

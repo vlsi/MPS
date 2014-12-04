@@ -214,9 +214,6 @@
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
       <concept id="1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" flags="ln" index="j$656" />
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -256,6 +253,7 @@
       <concept id="1131073187192" name="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" flags="ln" index="1pdMLZ">
         <child id="1168281849769" name="sourceNodeQuery" index="31$UT" />
       </concept>
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
@@ -1653,14 +1651,14 @@
             </node>
             <node concept="Xl_RD" id="1c3IlG3J$w3" role="37wK5m">
               <property role="Xl_RC" value="groupId" />
-              <node concept="jY4Nl" id="1c3IlG3J$w4" role="lGtFl">
-                <ref role="jYjtx" to="tp4l:hRSK_cT" resolve="switch_ModifierType" />
+              <node concept="1sPUBX" id="1WfddY$XI4m" role="lGtFl">
+                <ref role="v9R2y" to="tp4l:hRSK_cT" resolve="switch_ModifierType" />
               </node>
             </node>
             <node concept="Xl_RD" id="hRSRLB1" role="37wK5m">
               <property role="Xl_RC" value="labelId" />
-              <node concept="jY4Nl" id="hRSRNqx" role="lGtFl">
-                <ref role="jYjtx" to="tp4l:hRSRFDR" resolve="switch_LabelType" />
+              <node concept="1sPUBX" id="1WfddY$XHOz" role="lGtFl">
+                <ref role="v9R2y" to="tp4l:hRSRFDR" resolve="switch_LabelType" />
               </node>
             </node>
           </node>
@@ -1859,14 +1857,14 @@
             </node>
             <node concept="Xl_RD" id="1c3IlG3J$w9" role="37wK5m">
               <property role="Xl_RC" value="groupId" />
-              <node concept="jY4Nl" id="1c3IlG3J$wa" role="lGtFl">
-                <ref role="jYjtx" to="tp4l:hRSK_cT" resolve="switch_ModifierType" />
+              <node concept="1sPUBX" id="1WfddY$XI2o" role="lGtFl">
+                <ref role="v9R2y" to="tp4l:hRSK_cT" resolve="switch_ModifierType" />
               </node>
             </node>
             <node concept="Xl_RD" id="5tfnuC2TWmL" role="37wK5m">
               <property role="Xl_RC" value="labelId" />
-              <node concept="jY4Nl" id="5tfnuC2TWmM" role="lGtFl">
-                <ref role="jYjtx" to="tp4l:hRSRFDR" resolve="switch_LabelType" />
+              <node concept="1sPUBX" id="1WfddY$XIz_" role="lGtFl">
+                <ref role="v9R2y" to="tp4l:hRSRFDR" resolve="switch_LabelType" />
               </node>
             </node>
           </node>

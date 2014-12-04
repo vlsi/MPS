@@ -352,10 +352,6 @@
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" flags="ln" index="jY4Nl">
-        <reference id="1112731629154" name="templateSwitch" index="jYjtx" />
-        <child id="1168380395224" name="sourceNodeQuery" index="8TvZ8" />
-      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -430,7 +426,9 @@
       <concept id="982871510064032177" name="jetbrains.mps.lang.generator.structure.IParameterizedTemplate" flags="ng" index="1s_3nv">
         <child id="982871510064032342" name="parameter" index="1s_3oS" />
       </concept>
-      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
+      </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
@@ -1077,8 +1075,8 @@
             <node concept="liA8E" id="OZ1mID2RT1" role="2OqNvi">
               <ref role="37wK5l" to="pvwh:~BaseAction.addPlace(jetbrains.mps.workbench.ActionPlace):void" resolve="addPlace" />
               <node concept="10Nm6u" id="OZ1mID2RT2" role="37wK5m">
-                <node concept="jY4Nl" id="OZ1mID2RTi" role="lGtFl">
-                  <ref role="jYjtx" node="OZ1mID2RTm" resolve="switch_Places" />
+                <node concept="1sPUBX" id="1WfddY$XIzj" role="lGtFl">
+                  <ref role="v9R2y" node="OZ1mID2RTm" resolve="switch_Places" />
                 </node>
               </node>
             </node>
@@ -2843,9 +2841,9 @@
           </node>
           <node concept="3clFbS" id="hDXLW5h" role="SfCbr">
             <node concept="3clFbH" id="4lITsQs8ysq" role="3cqZAp">
-              <node concept="jY4Nl" id="4lITsQs8yss" role="lGtFl">
-                <ref role="jYjtx" node="4lITsQs8yst" resolve="switch_GroupConstruction" />
-                <node concept="3NFfHV" id="4lITsQs8ysu" role="8TvZ8">
+              <node concept="1sPUBX" id="1WfddY$XHR9" role="lGtFl">
+                <ref role="v9R2y" node="4lITsQs8yst" resolve="switch_GroupConstruction" />
+                <node concept="3NFfHV" id="4lITsQs8ysu" role="1sPUBK">
                   <node concept="3clFbS" id="4lITsQs8ysv" role="2VODD2">
                     <node concept="3clFbF" id="4lITsQs8ysw" role="3cqZAp">
                       <node concept="2OqwBi" id="4lITsQs8ysy" role="3clFbG">
@@ -14011,8 +14009,8 @@
                     </node>
                   </node>
                 </node>
-                <node concept="jY4Nl" id="1XGsQcRFa9S" role="lGtFl">
-                  <ref role="jYjtx" node="5xxKcMGfo0K" resolve="group_element" />
+                <node concept="1sPUBX" id="1WfddY$XHQe" role="lGtFl">
+                  <ref role="v9R2y" node="5xxKcMGfo0K" resolve="group_element" />
                 </node>
               </node>
               <node concept="2pNNFK" id="1XGsQcRFaa0" role="3o6s8t">
