@@ -400,7 +400,7 @@
                   <node concept="2yIwOk" id="1avfQ4BBiXG" role="2OqNvi" />
                 </node>
                 <node concept="liA8E" id="1avfQ4BBiXH" role="2OqNvi">
-                  <ref role="37wK5l" to="t3eg:~SAbstractConcept.getReferences():java.lang.Iterable" resolve="getReferences" />
+                  <ref role="37wK5l" to="t3eg:~SAbstractConcept.getReferenceLinks():java.lang.Iterable" resolve="getReferenceLinks" />
                 </node>
               </node>
             </node>
@@ -532,7 +532,7 @@
                   <node concept="2yIwOk" id="1avfQ4BELXV" role="2OqNvi" />
                 </node>
                 <node concept="liA8E" id="1avfQ4BELXW" role="2OqNvi">
-                  <ref role="37wK5l" to="t3eg:~SAbstractConcept.getReferences():java.lang.Iterable" resolve="getReferences" />
+                  <ref role="37wK5l" to="t3eg:~SAbstractConcept.getReferenceLinks():java.lang.Iterable" resolve="getReferenceLinks" />
                 </node>
               </node>
             </node>
