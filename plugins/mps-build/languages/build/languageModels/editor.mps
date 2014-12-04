@@ -4419,6 +4419,49 @@
             </node>
           </node>
         </node>
+        <node concept="3F0ifn" id="6cnZvE9EzNl" role="3EZMnx">
+          <property role="3F0ifm" value="java source level" />
+          <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
+        </node>
+        <node concept="3F0A7n" id="6cnZvE9E$16" role="3EZMnx">
+          <property role="1O74Pk" value="true" />
+          <property role="1$x2rV" value="&lt;default&gt;" />
+          <ref role="1NtTu8" to="3ior:6cnZvE9ExUF" resolve="javaSourceLevel" />
+          <node concept="ljvvj" id="6cnZvE9E$17" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="OXEIz" id="6cnZvE9E$18" role="P5bDN">
+            <node concept="PvTIS" id="6cnZvE9E$19" role="OY2wv">
+              <node concept="MLZmj" id="6cnZvE9E$1a" role="PvTIR">
+                <node concept="3clFbS" id="6cnZvE9E$1b" role="2VODD2">
+                  <node concept="3clFbF" id="6cnZvE9E$1c" role="3cqZAp">
+                    <node concept="2YIFZM" id="6cnZvE9E$1d" role="3clFbG">
+                      <ref role="1Pybhc" to="k7g3:~Arrays" resolve="Arrays" />
+                      <ref role="37wK5l" to="k7g3:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                      <node concept="2ShNRf" id="6cnZvE9E$1e" role="37wK5m">
+                        <node concept="3g6Rrh" id="6cnZvE9E$1f" role="2ShVmc">
+                          <node concept="17QB3L" id="6cnZvE9E$1g" role="3g7fb8" />
+                          <node concept="Xl_RD" id="6cnZvE9E$1h" role="3g7hyw">
+                            <property role="Xl_RC" value="1.5" />
+                          </node>
+                          <node concept="Xl_RD" id="6cnZvE9E$1i" role="3g7hyw">
+                            <property role="Xl_RC" value="1.6" />
+                          </node>
+                          <node concept="Xl_RD" id="6cnZvE9E$1j" role="3g7hyw">
+                            <property role="Xl_RC" value="1.7" />
+                          </node>
+                          <node concept="Xl_RD" id="6cnZvE9E$1k" role="3g7hyw">
+                            <property role="Xl_RC" value="1.8" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3F0ifn" id="64wWIxoS7qv" role="3EZMnx">
           <property role="3F0ifm" value="java compliance level" />
           <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
