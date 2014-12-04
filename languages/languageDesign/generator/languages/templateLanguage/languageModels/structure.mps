@@ -462,6 +462,13 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="gZJmXo3" resolve="SourceSubstituteMacro_SourceNodesQuery" />
     </node>
+    <node concept="PrWs8" id="6suuiWX_$D3" role="PzmwI">
+      <ref role="PrY4T" node="6suuiWX$OMG" resolve="ContextVariableProvider" />
+    </node>
+    <node concept="1TJgyi" id="6suuiWX_Ud4" role="1TKVEl">
+      <property role="TrG5h" value="counterVarName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gtpdMPS">
     <property role="R5$K7" value="false" />
@@ -1748,6 +1755,24 @@
     <property role="34LRSv" value="inputNode" />
     <property role="3GE5qa" value="crossmodel" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="PlHQZ" id="6suuiWX$OMG">
+    <property role="3GE5qa" value="macro" />
+    <property role="TrG5h" value="ContextVariableProvider" />
+  </node>
+  <node concept="1TIwiD" id="6suuiWX_9yv">
+    <property role="3GE5qa" value="macro" />
+    <property role="TrG5h" value="ContextVariableDeclaration" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6suuiWX_o3O" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="6suuiWX_9KY" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
   </node>
 </model>
 

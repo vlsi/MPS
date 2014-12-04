@@ -512,5 +512,14 @@
       <ref role="20lvS9" to="tpf8:rrptlDYrFa" resolve="ExportLabel" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6suuiWXJvTY">
+    <property role="TrG5h" value="GenerationContextOp_ContextVarRef" />
+    <property role="34LRSv" value="#context variable#" />
+    <ref role="1TJDcQ" node="hHiwH3j" resolve="GenerationContextOp_Base" />
+    <node concept="1TJgyi" id="6suuiWXJvYy" role="1TKVEl">
+      <property role="TrG5h" value="contextVarName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
 </model>
 

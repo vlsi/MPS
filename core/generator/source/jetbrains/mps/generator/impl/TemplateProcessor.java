@@ -393,10 +393,18 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (newInputNodes.isEmpty()) {
         return Collections.emptyList();
       }
+      String counterVarName = macro.getProperty(RuleUtil.property_LoopCounterVarName);
       ArrayList<SNode> outputNodes = new ArrayList<SNode>();
+      int i = 0;
       for (SNode newInputNode : newInputNodes) {
-        List<SNode> _outputNodes = nextMacro(templateContext.subContext(newInputNode));
+        TemplateContext ctx = templateContext;
+        if (counterVarName != null) {
+          ctx = ctx.subContext(Collections.<String,Object>singletonMap("cv:" + counterVarName, i));
+        }
+        ctx = ctx.subContext(newInputNode);
+        List<SNode> _outputNodes = nextMacro(ctx);
         outputNodes.addAll(_outputNodes);
+        i++;
       }
       return outputNodes;
     }
