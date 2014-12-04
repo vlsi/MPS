@@ -50,6 +50,9 @@
 
     <group id="FindMenuGroup" popup="true">
       <add-to-group group-id="EditCreateDeleteGroup" anchor="before" relative-to-action="EditSelectGroup"/>
+      <action id="SelectNextOccurrence" class="com.intellij.openapi.editor.actions.SelectNextOccurrenceAction"/>
+      <action id="UnselectPreviousOccurrence" class="com.intellij.openapi.editor.actions.UnselectPreviousOccurrenceAction"/>
+      <action id="SelectAllOccurrences" class="com.intellij.openapi.editor.actions.SelectAllOccurrencesAction"/>
     </group>
 
     <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction" icon="/actions/menu-find.png"/>
