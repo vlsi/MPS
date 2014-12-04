@@ -12,18 +12,20 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 2:
-        return new GenerationContextOp_NodePatternRef_Constraints();
       case 3:
-        return new GenerationContextOp_ParameterRef_Constraints();
-      case 1:
-        return new GenerationContextOp_LinkPatternRef_Constraints();
+        return new GenerationContextOp_NodePatternRef_Constraints();
       case 4:
-        return new GenerationContextOp_PropertyPatternRef_Constraints();
-      case 0:
-        return new GenerationContextOp_GenParameterRef_Constraints();
+        return new GenerationContextOp_ParameterRef_Constraints();
+      case 2:
+        return new GenerationContextOp_LinkPatternRef_Constraints();
       case 5:
+        return new GenerationContextOp_PropertyPatternRef_Constraints();
+      case 1:
+        return new GenerationContextOp_GenParameterRef_Constraints();
+      case 6:
         return new GenerationContextOp_VarRef_Constraints();
+      case 0:
+        return new GenerationContextOp_ContextVarRef_Constraints();
       default:
         return new BaseConstraintsDescriptor(fqName);
     }
@@ -48,7 +50,10 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x25c655ce6e80fdd8L) {
       return new GenerationContextOp_VarRef_Constraints();
     }
+    if (id == 0x671e792f3dbdfe7eL) {
+      return new GenerationContextOp_ContextVarRef_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef"};
 }

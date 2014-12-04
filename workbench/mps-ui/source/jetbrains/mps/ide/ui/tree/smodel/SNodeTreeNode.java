@@ -24,6 +24,7 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.util.NodeAttributesUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
@@ -115,6 +116,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     setAutoExpandable(myNode.getModel() == null || myNode.getParent() != null);
   }
 
+  @Nullable
   public SModelTreeNode getSModelModelTreeNode() {
     if (getParent() instanceof SModelTreeNode) {
       return (SModelTreeNode) getParent();
@@ -126,7 +128,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
     if (getParent() instanceof SNodeGroupTreeNode) {
       TreeNode node = getParent();
-      while (!(node instanceof SModelTreeNode)) {
+      while (node != null && !(node instanceof SModelTreeNode)) {
         node = node.getParent();
       }
       return (SModelTreeNode) node;

@@ -1393,11 +1393,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)/1203003871206">
     <file name="QueriesGenerated.java">
-      <node id="1203007546817" at="2807,71,2808,337" concept="4" />
+      <node id="1203007546817" at="2807,71,2808,167" concept="4" />
       <node id="2462801720470464423" at="2806,83,2809,9" concept="7" />
       <node id="1203007508894" at="2805,219,2810,7" concept="6" />
       <node id="1203007508882" at="2804,97,2811,5" concept="6" />
-      <scope id="2462801720470464424" at="2807,71,2808,337" />
+      <scope id="2462801720470464424" at="2807,71,2808,167" />
       <scope id="1203007508895" at="2806,83,2809,9" />
       <scope id="1203007508883" at="2805,219,2810,7" />
       <scope id="1203007508894" at="2805,219,2810,7">

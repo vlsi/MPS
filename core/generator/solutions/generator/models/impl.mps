@@ -314,6 +314,10 @@
         <reference id="1171323947160" name="concept" index="2SmgA8" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
+      <concept id="2644386474302386080" name="jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression" flags="nn" index="355D3s">
+        <reference id="2644386474302386081" name="conceptDeclaration" index="355D3t" />
+        <reference id="2644386474302386082" name="propertyDeclaration" index="355D3u" />
+      </concept>
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
         <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
@@ -1880,6 +1884,21 @@
       <node concept="17QB3L" id="62KRWj_QGgg" role="1tU5fm" />
       <node concept="3nh3qo" id="62KRWj_QGgh" role="33vP2m">
         <ref role="3nh3qp" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4Eh_7JwtesV" role="jymVt" />
+    <node concept="Wx3nA" id="4Eh_7JwtizA" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="property_LoopCounterVarName" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="4Eh_7Jwthkg" role="1B3o_S" />
+      <node concept="3uibUv" id="4Eh_7Jwtixk" role="1tU5fm">
+        <ref role="3uigEE" to="t3eg:~SProperty" resolve="SProperty" />
+      </node>
+      <node concept="355D3s" id="4Eh_7JwtjGh" role="33vP2m">
+        <ref role="355D3t" to="tpf8:ghWS0B3" resolve="LoopMacro" />
+        <ref role="355D3u" to="tpf8:6suuiWX_Ud4" resolve="counterVarName" />
       </node>
     </node>
     <node concept="2tJIrI" id="62KRWj_Q_Dr" role="jymVt" />

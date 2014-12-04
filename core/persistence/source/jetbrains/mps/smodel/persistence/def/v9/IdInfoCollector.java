@@ -137,13 +137,15 @@ public class IdInfoCollector {
     final SConcept concept = n.getConcept();
     SConceptId conceptId = IdHelper.getConceptId(concept);
 
-    assert conceptId != null;
+    assert conceptId != null : "Can't get identity of concept " + concept;
+
     registerConcept(conceptId);
   }
 
   private void fillProperties(SNode n) {
     for (SProperty prop : n.getProperties()) {
       SPropertyId propId = IdHelper.getPropertyId(prop);
+      assert propId != null : "Can't get identity of property " + prop;
       registerConcept(propId.getConceptId()).registerProperty(propId, prop);
     }
   }
@@ -151,6 +153,7 @@ public class IdInfoCollector {
     for (SReference ref : n.getReferences()) {
       final SReferenceLink l = ref.getLink();
       SReferenceLinkId linkId = IdHelper.getRefId(l);
+      assert linkId != null : "Can't get identity of association " + l;
       registerConcept(linkId.getConceptId()).registerLink(linkId, l);
     }
   }
@@ -159,6 +162,7 @@ public class IdInfoCollector {
   private void fillAggregation(SNode n) {
     final SContainmentLink l = n.getContainmentLink();
     SContainmentLinkId linkId = IdHelper.getLinkId(l);
+    assert linkId != null : "Can't get identity of aggregation " + l;
     registerConcept(linkId.getConceptId()).registerLink(linkId, l);
   }
 

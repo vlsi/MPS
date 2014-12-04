@@ -32,7 +32,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.ComputeRunnable;
+import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -125,7 +125,7 @@ final class GenerationTracerView {
       return null;
     }
     if (selected.hasPrevStep() || selected.hasNextStep()) {
-      return new ComputeRunnable<ActionGroup>(new NodeActionGroup(selected)).runRead(myProject.getModelAccess());
+      return new ModelComputeRunnable<ActionGroup>(new NodeActionGroup(selected)).runRead(myProject.getModelAccess());
     }
     return null;
   }

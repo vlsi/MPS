@@ -89,6 +89,9 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
         }
 
         final ProjectModuleTreeNode moduleNode = getContainingModuleNode(modelNode);
+        if (moduleNode == null) {
+          return;
+        }
         if (moduleNode.getModule().isReadOnly()) {
           new StatusUpdate(modelNode).update(GenerationStatus.READONLY);
           new StatusUpdate(moduleNode).update(GenerationStatus.READONLY);
@@ -98,7 +101,10 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
         new StatusUpdate(modelNode).update();
         GenerationStatus s = new StatusUpdate(moduleNode).update();
         if (moduleNode.getModule() instanceof Generator) {
-          new StatusUpdate(getContainingModuleNode(moduleNode)).update(s);
+          final ProjectModuleTreeNode languageNode = getContainingModuleNode(moduleNode);
+          if (languageNode != null) {
+            new StatusUpdate(languageNode).update(s);
+          }
         }
         propagateStatusToNamespaceNodes(moduleNode, s);
       }

@@ -5,6 +5,7 @@ package jetbrains.mps.generator.impl;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -71,6 +72,8 @@ public final class RuleUtil {
 
   public static final String concept_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   public static final String concept_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
+
+  public static final SProperty property_LoopCounterVarName = MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, 0x671e792f3d97a344L, "counterVarName");
 
   private static final String concept_ModelNewNodeOp = "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation";
   private static final String concept_ModelNewRootOp = "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation";
