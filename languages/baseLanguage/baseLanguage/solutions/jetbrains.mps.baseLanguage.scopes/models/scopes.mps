@@ -1436,6 +1436,26 @@
         <property role="TrG5h" value="K" />
       </node>
       <node concept="3clFbS" id="_HxOdnhk$N" role="3clF47">
+        <node concept="3clFbJ" id="1I9TJ5KJYlD" role="3cqZAp">
+          <node concept="3clFbS" id="1I9TJ5KJYlG" role="3clFbx">
+            <node concept="3cpWs6" id="1I9TJ5KK5b0" role="3cqZAp">
+              <node concept="2Sg_IR" id="1I9TJ5KK5Od" role="3cqZAk">
+                <node concept="37vLTw" id="1I9TJ5KK5Oe" role="2SgG2M">
+                  <ref role="3cqZAo" node="_HxOdnhk_O" resolve="creator" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1I9TJ5KK4OI" role="3clFbw">
+            <node concept="2YIFZM" id="1I9TJ5KK3qP" role="2Oq$k0">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            </node>
+            <node concept="liA8E" id="1I9TJ5KK58T" role="2OqNvi">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.canWrite():boolean" resolve="canWrite" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="_HxOdnhk$O" role="3cqZAp">
           <node concept="3cpWsn" id="_HxOdnhk$P" role="3cpWs9">
             <property role="TrG5h" value="cache" />
@@ -1479,12 +1499,6 @@
             </node>
           </node>
         </node>
-        <node concept="34ab3g" id="2ofVBhFzpzK" role="3cqZAp">
-          <property role="35gtTG" value="debug" />
-          <node concept="Xl_RD" id="2ofVBhFzpzM" role="34bqiv">
-            <property role="Xl_RC" value="Getting repository state cache" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="_HxOdnhk_8" role="3cqZAp">
           <node concept="3cpWsn" id="_HxOdnhk_9" role="3cpWs9">
             <property role="TrG5h" value="v" />
@@ -1517,12 +1531,6 @@
                 <ref role="3cqZAo" node="_HxOdnhk_9" resolve="v" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="34ab3g" id="2ofVBhFzq0D" role="3cqZAp">
-          <property role="35gtTG" value="debug" />
-          <node concept="Xl_RD" id="2ofVBhFzq0E" role="34bqiv">
-            <property role="Xl_RC" value="Creating repository state cache" />
           </node>
         </node>
         <node concept="3clFbF" id="_HxOdnhk_m" role="3cqZAp">
@@ -1595,12 +1603,6 @@
             <node concept="37vLTw" id="37ZUNu$npKW" role="3uHU7B">
               <ref role="3cqZAo" node="_HxOdnhk_9" resolve="v" />
             </node>
-          </node>
-        </node>
-        <node concept="34ab3g" id="2ofVBhFzses" role="3cqZAp">
-          <property role="35gtTG" value="debug" />
-          <node concept="Xl_RD" id="2ofVBhFzset" role="34bqiv">
-            <property role="Xl_RC" value="Created repository state cache" />
           </node>
         </node>
         <node concept="3cpWs6" id="_HxOdnhk_G" role="3cqZAp">
