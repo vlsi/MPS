@@ -3,6 +3,7 @@
   <dependency className="org.jetbrains.mps.samples.Constants.generator.template.generator.template.generator.template.main.ExportLabelFunctions" file="ExportLabelFunctions.java">
     <classNode dependClassName="jetbrains.mps.generator.crossmodel.ExportLabelContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
   </dependency>
