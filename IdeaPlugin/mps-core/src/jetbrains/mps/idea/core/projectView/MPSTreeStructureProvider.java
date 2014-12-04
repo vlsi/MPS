@@ -98,7 +98,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     return newChildren;
   }
 
-  private Collection<AbstractTreeNode> modifyDirectoryChildren(AbstractTreeNode treeNode, Collection<AbstractTreeNode> children, ViewSettings settings) {
+  private Collection<AbstractTreeNode> modifyDirectoryChildren(final AbstractTreeNode treeNode, Collection<AbstractTreeNode> children, final ViewSettings settings) {
     List<AbstractTreeNode> updatedChildren = null;
     MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(treeNode.getProject());
 
@@ -146,6 +146,16 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
                   dialog.show();
                 }
               });
+            }
+
+            @Override
+            public Collection<AbstractTreeNode> getChildrenImpl() {
+              ArrayList<AbstractTreeNode> children = new ArrayList<AbstractTreeNode>();
+              children.addAll(super.getChildrenImpl());
+              for (PsiElement psiElement : MPSPsiProvider.getInstance(getProject()).getPsi(perRootModel).getChildren()) {
+                children.add(new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) psiElement, settings));
+              }
+              return children;
             }
           });
         }
