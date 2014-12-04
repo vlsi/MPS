@@ -1784,7 +1784,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)/7952422520064688960">
     <file name="check_TemplateDeclaration_NonTypesystemRule.java">
       <node id="7952422520064723850" at="25,7,26,60" concept="11" />
-      <node id="7952422520064723850" at="26,60,27,242" concept="11" />
+      <node id="7952422520064723850" at="26,60,27,395" concept="11" />
       <node id="7952422520064688960" at="31,46,32,72" concept="12" />
       <node id="7952422520064688960" at="35,5,36,130" concept="11" />
       <node id="7952422520064688960" at="36,130,37,45" concept="12" />
@@ -1801,7 +1801,7 @@
       <scope id="7952422520064688960" at="31,46,32,72" />
       <scope id="7952422520064688960" at="40,30,41,17" />
       <scope id="7952422520064688960" at="21,0,23,0" />
-      <scope id="7952422520064723850" at="25,7,27,242">
+      <scope id="7952422520064723850" at="25,7,27,395">
         <var name="_reporter_2309309498" id="7952422520064723850" />
         <var name="errorTarget" id="7952422520064723850" />
       </scope>

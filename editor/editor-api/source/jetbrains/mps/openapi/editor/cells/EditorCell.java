@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * evgeny, 11/17/11
@@ -140,7 +141,12 @@ public interface EditorCell {
 
   Collection<CellActionType> getAvailableActions();
 
-  Iterable<SimpleEditorMessage> getMessages();
+  /**
+   * This method can be used to access sorted  List of {@link jetbrains.mps.openapi.editor.message.SimpleEditorMessage}s
+   * associated with this cell. Resulting list is sorted from less-important to most-important messages, so most-important
+   * messages are added in the end of this list.
+   */
+  List<SimpleEditorMessage> getMessages();
 
   void setSubstituteInfo(SubstituteInfo info);
 
