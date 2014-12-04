@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:cc7b5e1c-ee7b-4a20-b906-00c367627af2(Samples)">
+<model ref="r:a5ab82d1-49f2-4bf1-961e-9d05d76f3f5d(Samples)">
   <persistence version="9" />
   <languages />
   <imports>
     <import index="vi5j" ref="r:8a83b4bb-5556-4799-a811-f71c11235499(org.jetbrains.mps.samples.Constants.generator.template.generator.template.generator.template.main@generator)" implicit="true" />
-    <import index="vm6x" ref="d8e06f11-ec9c-4e24-be52-e786e8718f33/r:8fa9901c-8509-499d-ab61-ec9695fe1e0e(org.jetbrains.mps.samples.SampleJavaExtensions.sandbox@transient109/Samples@0)" implicit="true" />
+    <import index="pnas" ref="e42e2cf1-5fa9-4819-a61f-27195265ff39/r:427b2731-9a3f-42f2-a38f-7bfc8dbefc0b(org.jetbrains.mps.samples.SampleJavaExtensions.sandbox@transient12/Samples@0)" implicit="true" />
   </imports>
   <registry>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
@@ -32,123 +32,123 @@
       </concept>
     </language>
   </registry>
-  <node concept="2$UQVi" id="2lb0lXXt8JB">
+  <node concept="2$UQVi" id="71$ET_6OF8W">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3MRh" resolve="exportedConstants" />
-    <node concept="2$$0lk" id="2lb0lXXt8JC" role="2$$55j">
+    <node concept="2$$0lk" id="71$ET_6OF8X" role="2$$55j">
       <property role="2$$0lg" value="Samples" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt8JD" role="2$VCQS">
+    <node concept="2$VJBW" id="71$ET_6OF8Y" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constant" />
       <property role="2$VJBR" value="1603335834236229183" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt8JE" role="2$VCQQ">
+    <node concept="2$VJBW" id="71$ET_6OF8Z" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-      <property role="2$VJBR" value="2687243112294943706" />
+      <property role="2$VJBR" value="8098786704725553711" />
     </node>
-    <node concept="1oh28U" id="2lb0lXXt8JA" role="2$VCQN">
+    <node concept="1oh28U" id="71$ET_6OF8V" role="2$VCQN">
       <property role="1oh28R" value="MINIMUM" />
     </node>
   </node>
-  <node concept="2$UQVi" id="2lb0lXXt8Yr">
+  <node concept="2$UQVi" id="71$ET_6OFnK">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3MRh" resolve="exportedConstants" />
-    <node concept="2$$0lk" id="2lb0lXXt8Ys" role="2$$55j">
+    <node concept="2$$0lk" id="71$ET_6OFnL" role="2$$55j">
       <property role="2$$0lg" value="Samples" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt8Yt" role="2$VCQS">
+    <node concept="2$VJBW" id="71$ET_6OFnM" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constant" />
       <property role="2$VJBR" value="1603335834236229186" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt8Yu" role="2$VCQQ">
+    <node concept="2$VJBW" id="71$ET_6OFnN" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-      <property role="2$VJBR" value="2687243112294943723" />
+      <property role="2$VJBR" value="8098786704725553728" />
     </node>
-    <node concept="1oh28U" id="2lb0lXXt8Yq" role="2$VCQN">
+    <node concept="1oh28U" id="71$ET_6OFnJ" role="2$VCQN">
       <property role="1oh28R" value="DEFAULT" />
     </node>
   </node>
-  <node concept="2$UQVi" id="2lb0lXXt8Z0">
+  <node concept="2$UQVi" id="71$ET_6OFol">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3MRh" resolve="exportedConstants" />
-    <node concept="2$$0lk" id="2lb0lXXt8Z1" role="2$$55j">
+    <node concept="2$$0lk" id="71$ET_6OFom" role="2$$55j">
       <property role="2$$0lg" value="Samples" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt8Z2" role="2$VCQS">
+    <node concept="2$VJBW" id="71$ET_6OFon" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constant" />
       <property role="2$VJBR" value="1603335834236229195" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt8Z3" role="2$VCQQ">
+    <node concept="2$VJBW" id="71$ET_6OFoo" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-      <property role="2$VJBR" value="2687243112294944671" />
+      <property role="2$VJBR" value="8098786704725554676" />
     </node>
-    <node concept="1oh28U" id="2lb0lXXt8YZ" role="2$VCQN">
+    <node concept="1oh28U" id="71$ET_6OFok" role="2$VCQN">
       <property role="1oh28R" value="MAXIMUM" />
     </node>
   </node>
-  <node concept="2$UQVi" id="2lb0lXXt8Zh">
+  <node concept="2$UQVi" id="71$ET_6OFoA">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3MRh" resolve="exportedConstants" />
-    <node concept="2$$0lk" id="2lb0lXXt8Zi" role="2$$55j">
+    <node concept="2$$0lk" id="71$ET_6OFoB" role="2$$55j">
       <property role="2$$0lg" value="Samples" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt8Zj" role="2$VCQS">
+    <node concept="2$VJBW" id="71$ET_6OFoC" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constant" />
       <property role="2$VJBR" value="1603335834236229210" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt8Zk" role="2$VCQQ">
+    <node concept="2$VJBW" id="71$ET_6OFoD" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-      <property role="2$VJBR" value="2687243112294944708" />
+      <property role="2$VJBR" value="8098786704725554713" />
     </node>
-    <node concept="1oh28U" id="2lb0lXXt8Zg" role="2$VCQN">
+    <node concept="1oh28U" id="71$ET_6OFo_" role="2$VCQN">
       <property role="1oh28R" value="NAME" />
     </node>
   </node>
-  <node concept="2$UQVi" id="2lb0lXXt8Zy">
+  <node concept="2$UQVi" id="71$ET_6OFoR">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3MRh" resolve="exportedConstants" />
-    <node concept="2$$0lk" id="2lb0lXXt8Zz" role="2$$55j">
+    <node concept="2$$0lk" id="71$ET_6OFoS" role="2$$55j">
       <property role="2$$0lg" value="Samples" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt8Z$" role="2$VCQS">
+    <node concept="2$VJBW" id="71$ET_6OFoT" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constant" />
       <property role="2$VJBR" value="1603335834236229213" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt8Z_" role="2$VCQQ">
+    <node concept="2$VJBW" id="71$ET_6OFoU" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-      <property role="2$VJBR" value="2687243112294944725" />
+      <property role="2$VJBR" value="8098786704725554730" />
     </node>
-    <node concept="1oh28U" id="2lb0lXXt8Zx" role="2$VCQN">
+    <node concept="1oh28U" id="71$ET_6OFoQ" role="2$VCQN">
       <property role="1oh28R" value="flag" />
     </node>
   </node>
-  <node concept="2$UQVi" id="2lb0lXXt909">
+  <node concept="2$UQVi" id="71$ET_6OFpu">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3MRh" resolve="exportedConstants" />
-    <node concept="2$$0lk" id="2lb0lXXt90a" role="2$$55j">
+    <node concept="2$$0lk" id="71$ET_6OFpv" role="2$$55j">
       <property role="2$$0lg" value="Samples" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt90b" role="2$VCQS">
+    <node concept="2$VJBW" id="71$ET_6OFpw" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constant" />
       <property role="2$VJBR" value="1603335834236229216" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt90c" role="2$VCQQ">
+    <node concept="2$VJBW" id="71$ET_6OFpx" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-      <property role="2$VJBR" value="2687243112294944742" />
+      <property role="2$VJBR" value="8098786704725554747" />
     </node>
-    <node concept="1oh28U" id="2lb0lXXt908" role="2$VCQN">
+    <node concept="1oh28U" id="71$ET_6OFpt" role="2$VCQN">
       <property role="1oh28R" value="FULL_NAME" />
     </node>
   </node>
-  <node concept="2$UQVi" id="2lb0lXXt90i">
+  <node concept="2$UQVi" id="71$ET_6OFpB">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3THt" resolve="exportedSetsOfConstants" />
-    <node concept="2$$0lk" id="2lb0lXXt90j" role="2$$55j">
+    <node concept="2$$0lk" id="71$ET_6OFpC" role="2$$55j">
       <property role="2$$0lg" value="Samples" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt90k" role="2$VCQS">
+    <node concept="2$VJBW" id="71$ET_6OFpD" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constants" />
       <property role="2$VJBR" value="1603335834236229182" />
     </node>
-    <node concept="2$VJBW" id="2lb0lXXt90l" role="2$VCQQ">
+    <node concept="2$VJBW" id="71$ET_6OFpE" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <property role="2$VJBR" value="2687243112294943704" />
+      <property role="2$VJBR" value="8098786704725553709" />
     </node>
-    <node concept="1oh9TZ" id="2lb0lXXt90h" role="2$VCQN">
-      <ref role="1onHWt" to="vm6x:2lb0lXXt8Jo" resolve="MyConstants" />
+    <node concept="1oh9TZ" id="71$ET_6OFpA" role="2$VCQN">
+      <ref role="1onHWt" to="pnas:71$ET_6OF8H" resolve="MyConstants" />
     </node>
   </node>
 </model>
