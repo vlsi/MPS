@@ -8655,16 +8655,6 @@
                     <node concept="3clFbS" id="4RXh7QRr0Hx" role="1bW5cS">
                       <node concept="3clFbF" id="4RXh7QRr0Hy" role="3cqZAp">
                         <node concept="22lmx$" id="4RXh7QRr0Hz" role="3clFbG">
-                          <node concept="2OqwBi" id="4RXh7QRr0H$" role="3uHU7w">
-                            <node concept="1mIQ4w" id="4RXh7QRr0HA" role="2OqNvi">
-                              <node concept="chp4Y" id="4RXh7QRr0HB" role="cj9EA">
-                                <ref role="cht4Q" to="tpee:fKQsSyN" resolve="EnumConstantDeclaration" />
-                              </node>
-                            </node>
-                            <node concept="37vLTw" id="2BHiRxglnmD" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4RXh7QRr0H7" resolve="it" />
-                            </node>
-                          </node>
                           <node concept="22lmx$" id="4RXh7QRr0HC" role="3uHU7B">
                             <node concept="2OqwBi" id="4RXh7QRr0HH" role="3uHU7B">
                               <node concept="37vLTw" id="2BHiRxgl00K" role="2Oq$k0">
@@ -8685,6 +8675,16 @@
                                   <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                                 </node>
                               </node>
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="4RXh7QRr0H$" role="3uHU7w">
+                            <node concept="1mIQ4w" id="4RXh7QRr0HA" role="2OqNvi">
+                              <node concept="chp4Y" id="4RXh7QRr0HB" role="cj9EA">
+                                <ref role="cht4Q" to="tpee:fKQsSyN" resolve="EnumConstantDeclaration" />
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="2BHiRxglnmD" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4RXh7QRr0H7" resolve="it" />
                             </node>
                           </node>
                         </node>
