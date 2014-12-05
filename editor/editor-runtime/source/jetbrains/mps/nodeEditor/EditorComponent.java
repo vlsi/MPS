@@ -2045,10 +2045,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         @Override
         public void stateChanged(ChangeEvent e) {
           if (!getVisibleRect().isEmpty()) {
+            viewport.removeChangeListener(this);
             if (getSelectedCell() != null) {
               scrollToCell(getSelectedCell());
             }
-            viewport.removeChangeListener(this);
           }
         }
       });
