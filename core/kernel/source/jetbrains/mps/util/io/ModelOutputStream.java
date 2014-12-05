@@ -239,6 +239,7 @@ public class ModelOutputStream extends DataOutputStream {
       return;
     }
     final SConceptId id = IdHelper.getConceptId(concept);
+    assert id != null : "Can't get identity of concept " + concept;
     if (myConcept2Index.containsKey(id)) {
       writeByte(CONCEPT_INDEX);
       writeShort(myConcept2Index.get(id));
@@ -256,6 +257,7 @@ public class ModelOutputStream extends DataOutputStream {
       return;
     }
     final SPropertyId id = IdHelper.getPropertyId(property);
+    assert id != null : "Can't get identity of property " + property;
     if (myProperty2Index.containsKey(id)) {
       writeByte(PROPERTY_INDEX);
       writeShort(myProperty2Index.get(id));
@@ -273,6 +275,7 @@ public class ModelOutputStream extends DataOutputStream {
       return;
     }
     final SReferenceLinkId id = IdHelper.getRefId(link);
+    assert id != null : "Can't get identity of association " + link;
     if (myAssociation2Index.containsKey(id)) {
       writeByte(ASSOCIATION_INDEX);
       writeShort(myAssociation2Index.get(id));
@@ -290,6 +293,7 @@ public class ModelOutputStream extends DataOutputStream {
       return;
     }
     final SContainmentLinkId id = IdHelper.getLinkId(link);
+    assert id != null : "Can't get identity of aggregation " + link;
     if (myAggregation2Index.containsKey(id)) {
       writeByte(AGGREGATION_INDEX);
       writeShort(myAggregation2Index.get(id));

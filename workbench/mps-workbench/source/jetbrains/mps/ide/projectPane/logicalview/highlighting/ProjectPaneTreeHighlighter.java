@@ -77,6 +77,7 @@ public class ProjectPaneTreeHighlighter {
       myModelListeners.stopListening();
       myModelListeners = null;
     }
+    myExecutor.shutdownNow();
     myGenStatusVisitor.setUpdater(null).setExecutor(null);
     myErrorVisitor.setUpdater(null).setExecutor(null);
     myModifiedMarker.setUpdater(null).setExecutor(null);

@@ -1436,6 +1436,26 @@
         <property role="TrG5h" value="K" />
       </node>
       <node concept="3clFbS" id="_HxOdnhk$N" role="3clF47">
+        <node concept="3clFbJ" id="1I9TJ5KJYlD" role="3cqZAp">
+          <node concept="3clFbS" id="1I9TJ5KJYlG" role="3clFbx">
+            <node concept="3cpWs6" id="1I9TJ5KK5b0" role="3cqZAp">
+              <node concept="2Sg_IR" id="1I9TJ5KK5Od" role="3cqZAk">
+                <node concept="37vLTw" id="1I9TJ5KK5Oe" role="2SgG2M">
+                  <ref role="3cqZAo" node="_HxOdnhk_O" resolve="creator" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1I9TJ5KK4OI" role="3clFbw">
+            <node concept="2YIFZM" id="1I9TJ5KK3qP" role="2Oq$k0">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            </node>
+            <node concept="liA8E" id="1I9TJ5KK58T" role="2OqNvi">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.canWrite():boolean" resolve="canWrite" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="_HxOdnhk$O" role="3cqZAp">
           <node concept="3cpWsn" id="_HxOdnhk$P" role="3cpWs9">
             <property role="TrG5h" value="cache" />
@@ -1479,7 +1499,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="_HxOdnhk_7" role="3cqZAp" />
         <node concept="3cpWs8" id="_HxOdnhk_8" role="3cqZAp">
           <node concept="3cpWsn" id="_HxOdnhk_9" role="3cpWs9">
             <property role="TrG5h" value="v" />
@@ -12576,7 +12595,7 @@
         <node concept="3clFbH" id="3cUwrvXvLNj" role="3cqZAp" />
         <node concept="3cpWs8" id="3cUwrvXzhBw" role="3cqZAp">
           <node concept="3cpWsn" id="3cUwrvXzhBz" role="3cpWs9">
-            <property role="TrG5h" value="claz" />
+            <property role="TrG5h" value="classifier" />
             <node concept="3Tqbb2" id="3cUwrvXzhBu" role="1tU5fm">
               <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
             </node>
@@ -12607,7 +12626,7 @@
               <node concept="1pGfFk" id="3cUwrvXvV0q" role="2ShVmc">
                 <ref role="37wK5l" to="msyo:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
                 <node concept="37vLTw" id="3cUwrvXzinW" role="37wK5m">
-                  <ref role="3cqZAo" node="3cUwrvXzhBz" resolve="claz" />
+                  <ref role="3cqZAo" node="3cUwrvXzhBz" resolve="classifier" />
                 </node>
                 <node concept="37vLTw" id="3cUwrvXvVfS" role="37wK5m">
                   <ref role="3cqZAo" node="3cUwrvXvLru" resolve="refText" />

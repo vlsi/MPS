@@ -299,26 +299,6 @@ public class ModulesReloadTest extends ModuleMpsTest {
   }
 
   @Test
-  public void testUnload2() {
-    final Language l1 = createLanguage();
-    final Language l2 = createLanguage();
-    final Language l3 = createLanguage();
-    myAccess.runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        l1.addDependency(l2.getModuleReference(), false);
-        l2.addDependency(l3.getModuleReference(), false);
-        addClassTo(l3);
-        l3.reload();
-        Assert.assertTrue(classIsLoadableFromModule(l1));
-        myManager.unloadModules(Collections.singleton(l3.getModuleReference()));
-        Assert.assertTrue(classIsLoadableFromModule(l1)); // lazy mechanism implies a new load
-      }
-    });
-    Assert.assertTrue(classIsLoadableFromModule(l1)); // delayed notifications did not spoil anything
-  }
-
-  @Test
   public void testModuleRemoval() {
     final Language l1 = createLanguage();
     final Language l2 = createLanguage();
@@ -332,11 +312,11 @@ public class ModulesReloadTest extends ModuleMpsTest {
         l2.reload();
         Assert.assertTrue(classIsLoadableFromModule(l1));
         removeModule(l3);
-        Assert.assertTrue(!classIsLoadableFromModule(l1));
-        Assert.assertTrue(!myManager.getModulesWatcher().isModuleWatched(l3));
+        Assert.assertFalse(classIsLoadableFromModule(l1));
+        Assert.assertFalse(myManager.getModulesWatcher().isModuleWatched(l3));
       }
     });
-    Assert.assertTrue(!classIsLoadableFromModule(l1));
+    Assert.assertFalse(classIsLoadableFromModule(l1));
   }
 
   @Test

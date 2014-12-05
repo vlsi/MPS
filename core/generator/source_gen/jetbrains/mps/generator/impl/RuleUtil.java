@@ -5,13 +5,15 @@ package jetbrains.mps.generator.impl;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -19,58 +21,55 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public final class RuleUtil {
-  public static final String concept_AbstractMacro = "jetbrains.mps.lang.generator.structure.AbstractMacro";
-  public static final String concept_ITemplateCall = "jetbrains.mps.lang.generator.structure.ITemplateCall";
-  public static final String concept_NodeMacro = "jetbrains.mps.lang.generator.structure.NodeMacro";
-  public static final String concept_IfMacro = "jetbrains.mps.lang.generator.structure.IfMacro";
-  public static final String concept_SourceSubstituteMacro = "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro";
-  public static final String concept_CopySrcNodeMacro = "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro";
-  public static final String concept_CopySrcListMacro = "jetbrains.mps.lang.generator.structure.CopySrcListMacro";
-  public static final String concept_IncludeMacro = "jetbrains.mps.lang.generator.structure.IncludeMacro";
-  public static final String concept_LoopMacro = "jetbrains.mps.lang.generator.structure.LoopMacro";
-  public static final String concept_LabelMacro = "jetbrains.mps.lang.generator.structure.LabelMacro";
-  public static final String concept_VarMacro = "jetbrains.mps.lang.generator.structure.VarMacro";
-  public static final String concept_InsertMacro = "jetbrains.mps.lang.generator.structure.InsertMacro";
-  public static final String concept_WeaveMacro = "jetbrains.mps.lang.generator.structure.WeaveMacro";
-  public static final String concept_MapSrcNodeMacro = "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro";
-  public static final String concept_MapSrcListMacro = "jetbrains.mps.lang.generator.structure.MapSrcListMacro";
-  public static final String concept_SwitchMacro = "jetbrains.mps.lang.generator.structure.SwitchMacro";
-  public static final String concept_TemplateCallMacro = "jetbrains.mps.lang.generator.structure.TemplateCallMacro";
-  public static final String concept_PropertyMacro = "jetbrains.mps.lang.generator.structure.PropertyMacro";
-  public static final String concept_ReferenceMacro = "jetbrains.mps.lang.generator.structure.ReferenceMacro";
-  public static final String concept_TraceMacro = "jetbrains.mps.lang.generator.structure.TraceMacro";
-  public static final String concept_BaseMappingRule = "jetbrains.mps.lang.generator.structure.BaseMappingRule";
-  public static final String concept_Reduction_MappingRule = "jetbrains.mps.lang.generator.structure.Reduction_MappingRule";
-  public static final String concept_Root_MappingRule = "jetbrains.mps.lang.generator.structure.Root_MappingRule";
-  public static final String concept_Weaving_MappingRule = "jetbrains.mps.lang.generator.structure.Weaving_MappingRule";
-  public static final String concept_TemplateSwitch = "jetbrains.mps.lang.generator.structure.TemplateSwitch";
-  public static final String concept_PatternReduction_MappingRule = "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule";
-  public static final String concept_CreateRootRule = "jetbrains.mps.lang.generator.structure.CreateRootRule";
-  public static final String concept_DropRootRule = "jetbrains.mps.lang.generator.structure.DropRootRule";
-  public static final String concept_MappingScriptReference = "jetbrains.mps.lang.generator.structure.MappingScriptReference";
-  public static final String concept_TemplateDeclarationReference = "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference";
-  public static final String concept_TemplateDeclaration = "jetbrains.mps.lang.generator.structure.TemplateDeclaration";
-  public static final String concept_WeaveEach_RuleConsequence = "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence";
-  public static final String concept_MappingConfiguration = "jetbrains.mps.lang.generator.structure.MappingConfiguration";
-  public static final SConcept sconcept_MappingConfiguration = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
-  public static final String concept_TemplateArgumentPatternRef = "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef";
-  public static final String concept_TemplateArgumentQueryExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression";
-  public static final String concept_TemplateArgumentParameterExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression";
-  public static final String concept_TemplateArgumentVarRefExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression";
-  public static final String concept_TemplateSwitchMacro = "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro";
-  public static final String concept_TemplateQueryBase = "jetbrains.mps.lang.generator.structure.TemplateQueryBase";
-  public static final String concept_TemplateFragment = "jetbrains.mps.lang.generator.structure.TemplateFragment";
-  public static final String concept_RootTemplateAnnotation = "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation";
-  public static final String concept_InlineTemplate_RuleConsequence = "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence";
-  public static final String concept_MappingScript = "jetbrains.mps.lang.generator.structure.MappingScript";
-  public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
-  public static final String link_TemplateSwitch_modifiedSwitch = "modifiedSwitch";
-  public static final String link_BaseConcept_attrs_name = "smodelAttribute";
-  public static final SContainmentLink link_BaseConcept_attrs = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
-  public static final String concept_ExportMacro = "jetbrains.mps.lang.generator.structure.ExportMacro";
+  public static final SConcept concept_NodeMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, "jetbrains.mps.lang.generator.structure.NodeMacro");
+  public static final SConcept concept_IfMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047c1472deL, "jetbrains.mps.lang.generator.structure.IfMacro");
+  public static final SConcept concept_CopySrcNodeMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10389b50fefL, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro");
+  public static final SConcept concept_CopySrcListMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1038b0c2cc7L, "jetbrains.mps.lang.generator.structure.CopySrcListMacro");
+  public static final SConcept concept_IncludeMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11621ab7715L, "jetbrains.mps.lang.generator.structure.IncludeMacro");
+  public static final SConcept concept_LoopMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, "jetbrains.mps.lang.generator.structure.LoopMacro");
+  public static final SConcept concept_LabelMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x473cc5baf8a1e7a4L, "jetbrains.mps.lang.generator.structure.LabelMacro");
+  public static final SConcept concept_VarMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x45991daad6a3d34eL, "jetbrains.mps.lang.generator.structure.VarMacro");
+  public static final SConcept concept_InsertMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1231e32ff7a958ceL, "jetbrains.mps.lang.generator.structure.InsertMacro");
+  public static final SConcept concept_WeaveMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x300c02df884235d3L, "jetbrains.mps.lang.generator.structure.WeaveMacro");
+  public static final SConcept concept_MapSrcNodeMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10759372d78L, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro");
+  public static final SConcept concept_MapSrcListMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, "jetbrains.mps.lang.generator.structure.MapSrcListMacro");
+  public static final SConcept concept_SwitchMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, "jetbrains.mps.lang.generator.structure.SwitchMacro");
+  public static final SConcept concept_TemplateCallMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x14f7f8a311b8f14fL, "jetbrains.mps.lang.generator.structure.TemplateCallMacro");
+  public static final SConcept concept_TraceMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x2b456582595e739bL, "jetbrains.mps.lang.generator.structure.TraceMacro");
+  public static final SConcept concept_TemplateSwitchMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro");
+  public static final SConcept concept_ExportMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7bb9ef7499aab606L, "jetbrains.mps.lang.generator.structure.ExportMacro");
+  public static final SConcept concept_PropertyMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro");
+  public static final SConcept concept_ReferenceMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro");
 
-  public static final String concept_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
-  public static final String concept_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
+  public static final SConcept concept_Reduction_MappingRule = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fca296532L, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
+  public static final SConcept concept_Root_MappingRule = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, "jetbrains.mps.lang.generator.structure.Root_MappingRule");
+  public static final SConcept concept_Weaving_MappingRule = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule");
+  public static final SConcept concept_TemplateSwitch = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch");
+  public static final SConcept concept_PatternReduction_MappingRule = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule");
+  public static final SConcept concept_CreateRootRule = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd5854aL, "jetbrains.mps.lang.generator.structure.CreateRootRule");
+  public static final SConcept concept_DropRootRule = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11c0acf58efL, "jetbrains.mps.lang.generator.structure.DropRootRule");
+  public static final SConcept concept_MappingScriptReference = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, "jetbrains.mps.lang.generator.structure.MappingScriptReference");
+  public static final SConcept concept_TemplateDeclaration = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
+  public static final SConcept concept_TemplateDeclarationReference = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
+  public static final SConcept concept_WeaveEach_RuleConsequence = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence");
+  public static final SConcept concept_MappingConfiguration = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+  public static final SConcept concept_TemplateArgumentPatternRef = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a07e5L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef");
+  public static final SConcept concept_TemplateArgumentQueryExpression = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x380132d742e8ccb0L, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression");
+  public static final SConcept concept_TemplateArgumentParameterExpression = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x457655815a794e79L, "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression");
+  public static final SConcept concept_TemplateArgumentVarRefExpression = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3d6f2506d88aa028L, "jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression");
+  public static final SConcept concept_TemplateQueryBase = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11b4d0ca830L, "jetbrains.mps.lang.generator.structure.TemplateQueryBase");
+  public static final SConcept concept_TemplateFragment = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment");
+  public static final SConcept concept_RootTemplateAnnotation = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
+  public static final SConcept concept_InlineTemplate_RuleConsequence = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
+  public static final SConcept concept_MappingScript = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1165958fcd6L, "jetbrains.mps.lang.generator.structure.MappingScript");
+  public static final SContainmentLink link_MappingConfiguration_preMappingScript = MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x116597a610dL, "preMappingScript");
+  public static final SReferenceLink link_TemplateSwitch_modifiedSwitch = MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x1031947e414L, "modifiedSwitch");
+  public static final SContainmentLink link_BaseConcept_attrs = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
+
+  public static final String link_BaseConcept_attrs_name = "smodelAttribute";
+
+  public static final SConcept concept_AbstractConceptDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+  public static final SConcept concept_ConceptDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
 
   private static final String concept_ModelNewNodeOp = "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation";
   private static final String concept_ModelNewRootOp = "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation";
@@ -86,7 +85,7 @@ public final class RuleUtil {
    * no reason to perform dynamic check where static check is possible.
    * Plain NodeMacro, although abstract, is included as there were usages of abstract $$ macro to add a label
    */
-  private static final Set<String> NodeMacroConcepts = SetSequence.fromSet(new HashSet<String>());
+  private static final Set<SConcept> NodeMacroConcepts = SetSequence.fromSet(new HashSet<SConcept>());
   static {
     NodeMacroConcepts.add(concept_IfMacro);
     NodeMacroConcepts.add(concept_InsertMacro);
@@ -107,11 +106,30 @@ public final class RuleUtil {
     NodeMacroConcepts.add(concept_ExportMacro);
   }
   /**
+   * Template language concepts one may expect in template models and that are not node macros
+   */
+  private static final Set<SConcept> TemplateLangElements = new HashSet<SConcept>();
+  static {
+    TemplateLangElements.add(concept_ReferenceMacro);
+    TemplateLangElements.add(concept_PropertyMacro);
+    TemplateLangElements.add(concept_TemplateFragment);
+    TemplateLangElements.add(concept_RootTemplateAnnotation);
+  }
+  /**
+   * Macro that can't proceed without input node query
+   */
+  private static final Set<SConcept> MandatoryQueryMacro = new HashSet<SConcept>();
+  static {
+    MandatoryQueryMacro.add(concept_LoopMacro);
+    MandatoryQueryMacro.add(concept_MapSrcListMacro);
+    MandatoryQueryMacro.add(concept_CopySrcListMacro);
+  }
+  /**
    * Set of operations that might alter model (insertion of new nodes, replacement)
    */
   private static final Set<String> ModelChangeOperations = SetSequence.fromSet(new HashSet<String>());
-  {
-    ModelChangeOperations.add(concept_AbstractConceptDeclaration);
+  static {
+    ModelChangeOperations.add(concept_ModelNewNodeOp);
     ModelChangeOperations.add(concept_ModelNewRootOp);
     ModelChangeOperations.add(concept_InsertNewNextOp);
     ModelChangeOperations.add(concept_InsertNewPrevOp);
@@ -121,11 +139,21 @@ public final class RuleUtil {
     ModelChangeOperations.add(concept_ReplaceOp);
   }
   public static boolean isNodeMacro(SNode n) {
-    return isNodeMacro(n.getConcept().getQualifiedName());
+    return isNodeMacro(SNodeOperations.getConcept(n));
   }
-  public static boolean isNodeMacro(String conceptQualifiedName) {
-    return NodeMacroConcepts.contains(conceptQualifiedName);
+  public static boolean isNodeMacro(SAbstractConcept concept) {
+    return NodeMacroConcepts.contains(concept);
   }
+  public static boolean isTemplateLanguageElement(SNode n) {
+    return isTemplateLanguageElement(SNodeOperations.getConcept(n));
+  }
+  public static boolean isTemplateLanguageElement(SAbstractConcept concept) {
+    return RuleUtil.isNodeMacro(concept) || TemplateLangElements.contains(concept);
+  }
+  public static boolean doesMacroRequireInput(SNode nodeMacro) {
+    return MandatoryQueryMacro.contains(SNodeOperations.getConcept(nodeMacro));
+  }
+
   private static String getMappingLabelName(SNode mappingLabelDeclaration) {
     if (mappingLabelDeclaration == null) {
       return null;
@@ -388,6 +416,9 @@ public final class RuleUtil {
   }
   public static SNode getDismissTopRule_message(SNode dismissTopRuleConsequence) {
     return SLinkOperations.getTarget(dismissTopRuleConsequence, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013931abdL, 0x11055b6dd7bL, "generatorMessage"));
+  }
+  public static String getLoopMacroCounterVarName(SNode loopMacro) {
+    return SPropertyOperations.getString(loopMacro, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, 0x671e792f3d97a344L, "counterVarName"));
   }
   public static Iterable<String> getModelChangeOperations() {
     return ModelChangeOperations;

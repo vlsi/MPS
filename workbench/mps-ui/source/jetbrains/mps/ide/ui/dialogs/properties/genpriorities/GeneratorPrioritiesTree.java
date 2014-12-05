@@ -110,7 +110,7 @@ public class GeneratorPrioritiesTree {
       String modelName = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(templateModel.getModelName()));
       CheckedTreeNodeEx templateNode = new CheckedTreeNodeEx(templateModel.getReference(), modelName, Models.TemplatesModel);
       generatorNode.add(templateNode);
-      for (SNode mapping : SModelOperations.roots(templateModel, RuleUtil.sconcept_MappingConfiguration)) {
+      for (SNode mapping : SModelOperations.roots(templateModel, RuleUtil.concept_MappingConfiguration)) {
         CheckedTreeNodeEx mappingNode = new CheckedTreeNodeEx(mapping.getReference(), mapping.getName(), Nodes.MappingConfig);
         templateNode.add(mappingNode);
       }

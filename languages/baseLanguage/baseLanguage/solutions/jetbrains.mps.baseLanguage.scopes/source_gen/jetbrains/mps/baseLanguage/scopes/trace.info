@@ -1557,8 +1557,8 @@
       <node id="4743451173534511962" at="198,5,199,16" concept="12" />
       <node id="1767138591788780331" at="203,39,204,195" concept="12" />
       <node id="3691405471815507155" at="208,166,209,0" concept="14" />
-      <node id="3691405471816423904" at="209,0,210,215" concept="11" />
-      <node id="3691405471815507457" at="210,215,211,54" concept="11" />
+      <node id="3691405471816423904" at="209,0,210,221" concept="11" />
+      <node id="3691405471815507457" at="210,221,211,60" concept="11" />
       <node id="2567798629835990091" at="213,37,214,101" concept="12" />
       <node id="2567798629837576847" at="216,7,217,0" concept="14" />
       <node id="3691405471815546575" at="217,0,218,192" concept="12" />
@@ -1864,7 +1864,7 @@
       <node id="4743451173534443516" at="151,116,156,7" concept="12" />
       <node id="3956096721963142846" at="182,71,187,5" concept="8" />
       <node id="1767138591788753664" at="201,70,206,7" concept="12" />
-      <node id="2567798629834810376" at="211,54,216,7" concept="11" />
+      <node id="2567798629834810376" at="211,60,216,7" concept="11" />
       <node id="6687420996807733498" at="247,0,252,5" concept="9" />
       <node id="6050519299854600888" at="252,5,257,5" concept="8" />
       <node id="6050519299854799440" at="265,7,270,7" concept="8" />
@@ -2185,7 +2185,7 @@
         <var name="targetNodeFqName" id="4743451173534380903" />
       </scope>
       <scope id="3691405471815487039" at="208,166,218,192">
-        <var name="claz" id="3691405471816423907" />
+        <var name="classifier" id="3691405471816423907" />
         <var name="key" id="3691405471815507458" />
         <var name="result" id="2567798629834810377" />
       </scope>
@@ -2428,44 +2428,46 @@
   </root>
   <root nodeRef="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)/4748674287775003937">
     <file name="RepositoryStateCacheUtils.java">
-      <node id="679347842099530036" at="12,125,13,94" concept="11" />
-      <node id="679347842099530052" at="14,24,15,30" concept="12" />
-      <node id="679347842099530055" at="16,5,17,0" concept="14" />
-      <node id="679347842099530056" at="17,0,18,25" concept="11" />
-      <node id="679347842099530068" at="19,20,20,15" concept="12" />
-      <node id="679347842099530083" at="24,26,25,32" concept="12" />
-      <node id="679347842099530086" at="28,20,29,32" concept="5" />
-      <node id="679347842099530092" at="30,5,31,13" concept="12" />
-      <node id="679347842100083459" at="33,116,34,55" concept="12" />
-      <node id="679347842099530047" at="13,94,16,5" concept="9" />
-      <node id="679347842099530063" at="18,25,21,5" concept="9" />
-      <node id="3602856851133011643" at="27,7,30,5" concept="9" />
-      <node id="4748674287775012009" at="33,0,36,0" concept="16" trace="getFromCache#(Ljava/lang/Class;nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
-      <node id="679347842099530079" at="23,0,27,0" concept="10" trace="compute#()null" />
-      <node id="679347842099530070" at="21,5,27,7" concept="5" />
-      <node id="679347842099530032" at="12,0,33,0" concept="16" trace="getFromCache#(Ljava/lang/String;nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
-      <scope id="679347842099530051" at="14,24,15,30" />
-      <scope id="679347842099530067" at="19,20,20,15" />
-      <scope id="679347842099530082" at="24,26,25,32" />
-      <scope id="3602856851133011646" at="28,20,29,32" />
-      <scope id="4748674287775012012" at="33,116,34,55" />
-      <scope id="4748674287775012009" at="33,0,36,0">
+      <node id="1984371035486573248" at="13,44,14,30" concept="12" />
+      <node id="679347842099530036" at="15,5,16,94" concept="11" />
+      <node id="679347842099530052" at="17,24,18,30" concept="12" />
+      <node id="679347842099530056" at="19,5,20,25" concept="11" />
+      <node id="679347842099530068" at="21,20,22,15" concept="12" />
+      <node id="679347842099530083" at="26,26,27,32" concept="12" />
+      <node id="679347842099530086" at="30,20,31,32" concept="5" />
+      <node id="679347842099530092" at="32,5,33,13" concept="12" />
+      <node id="679347842100083459" at="35,116,36,55" concept="12" />
+      <node id="1984371035486545257" at="12,125,15,5" concept="9" />
+      <node id="679347842099530047" at="16,94,19,5" concept="9" />
+      <node id="679347842099530063" at="20,25,23,5" concept="9" />
+      <node id="3602856851133011643" at="29,7,32,5" concept="9" />
+      <node id="4748674287775012009" at="35,0,38,0" concept="16" trace="getFromCache#(Ljava/lang/Class;nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
+      <node id="679347842099530079" at="25,0,29,0" concept="10" trace="compute#()null" />
+      <node id="679347842099530070" at="23,5,29,7" concept="5" />
+      <node id="679347842099530032" at="12,0,35,0" concept="16" trace="getFromCache#(Ljava/lang/String;nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
+      <scope id="1984371035486545260" at="13,44,14,30" />
+      <scope id="679347842099530051" at="17,24,18,30" />
+      <scope id="679347842099530067" at="21,20,22,15" />
+      <scope id="679347842099530082" at="26,26,27,32" />
+      <scope id="3602856851133011646" at="30,20,31,32" />
+      <scope id="4748674287775012012" at="35,116,36,55" />
+      <scope id="4748674287775012009" at="35,0,38,0">
         <var name="clazz" id="4748674287775012017" />
         <var name="creator" id="4748674287775012023" />
         <var name="key" id="4748674287775012019" />
       </scope>
-      <scope id="679347842099530079" at="23,0,27,0" />
-      <scope id="679347842099530035" at="12,125,31,13">
+      <scope id="679347842099530079" at="25,0,29,0" />
+      <scope id="679347842099530035" at="12,125,33,13">
         <var name="cache" id="679347842099530037" />
         <var name="v" id="679347842099530057" />
       </scope>
-      <scope id="679347842099530032" at="12,0,33,0">
+      <scope id="679347842099530032" at="12,0,35,0">
         <var name="creator" id="679347842099530100" />
         <var name="key" id="679347842099530096" />
         <var name="repositoryKey" id="679347842099530094" />
       </scope>
-      <unit id="679347842099530076" at="22,66,27,5" name="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils$1" />
-      <unit id="4748674287775003937" at="11,0,37,0" name="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils" />
+      <unit id="679347842099530076" at="24,66,29,5" name="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils$1" />
+      <unit id="4748674287775003937" at="11,0,39,0" name="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils" />
     </file>
   </root>
   <root nodeRef="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)/4897271867538783584">

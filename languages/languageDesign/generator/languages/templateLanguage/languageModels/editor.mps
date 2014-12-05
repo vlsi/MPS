@@ -2351,6 +2351,29 @@
           </node>
           <node concept="2iRfu4" id="i2IBXWe" role="2iSdaV" />
         </node>
+        <node concept="3EZMnI" id="4Eh_7JwmGt3" role="3EZMnx">
+          <node concept="3F0ifn" id="4Eh_7JwmGt4" role="3EZMnx">
+            <property role="3F0ifm" value="counter variable" />
+            <node concept="VPM3Z" id="4Eh_7JwmGt5" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+          </node>
+          <node concept="3F0ifn" id="4Eh_7JwmGt6" role="3EZMnx">
+            <property role="3F0ifm" value=":" />
+            <node concept="VPM3Z" id="4Eh_7JwmGt7" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+          </node>
+          <node concept="3F0A7n" id="4Eh_7JwmHXQ" role="3EZMnx">
+            <property role="1O74Pk" value="true" />
+            <property role="1$x2rV" value="&lt;no variable&gt;" />
+            <ref role="1NtTu8" to="tpf8:6suuiWX_Ud4" resolve="counterVarName" />
+          </node>
+          <node concept="VPM3Z" id="4Eh_7JwmGt9" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="2iRfu4" id="4Eh_7JwmGta" role="2iSdaV" />
+        </node>
         <node concept="VPM3Z" id="hEU$PXq" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>

@@ -26,7 +26,6 @@ import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
-import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.impl.template.QueryExecutor;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -36,9 +35,9 @@ import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -171,7 +170,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
   private static class MacroImplFactory implements MacroNode.Factory {
     private final TemplateProcessor myTemplateProcessor;
-    private final Map<String, Integer> macroImplMap = new HashMap<String, Integer>(32);
+    private final Map<SConcept, Integer> macroImplMap = new HashMap<SConcept, Integer>(32);
 
     MacroImplFactory(@NotNull TemplateProcessor templateProcessor) {
       myTemplateProcessor = templateProcessor;
@@ -196,8 +195,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     @Override
     public MacroNode create(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next) {
-      final String concept = macro.getConcept().getQualifiedName();
-      Integer k = macroImplMap.get(concept);
+      Integer k = macroImplMap.get(macro.getConcept());
       if (k == null) {
         return new NoMacro(macro, templateNode, next, myTemplateProcessor);
       }
@@ -333,6 +331,10 @@ public final class TemplateProcessor implements ITemplateProcessor {
       return result;
     }
 
+    static <T> List<T> wrapAsList(T node) {
+      return node == null ? Collections.<T>emptyList() : Collections.singletonList(node);
+    }
+
     private void checkInputNodesForNulls(TemplateContext context, Iterable<SNode> result) throws GenerationFailureException {
       for (SNode n : result) {
         if (n == null) {
@@ -365,7 +367,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (nodesQuery != null) {
         return myTemplateProcessor.getQueryProvider(getMacroNodeRef()).getSourceNodesQuery(nodesQuery);
       }
-      if (InputQueryUtil.doesMacroRequireInput(macro)) {
+      if (RuleUtil.doesMacroRequireInput(macro)) {
         return null;
       }
       // <default> : propagate  current input node
@@ -373,7 +375,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         @NotNull
         @Override
         public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
-          return InputQueryUtil.wrapAsList(context.getInputNode());
+          return wrapAsList(context.getInputNode());
         }
       };
     }
@@ -393,10 +395,18 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (newInputNodes.isEmpty()) {
         return Collections.emptyList();
       }
+      String counterVarName = RuleUtil.getLoopMacroCounterVarName(macro);
       ArrayList<SNode> outputNodes = new ArrayList<SNode>();
+      int i = 0;
       for (SNode newInputNode : newInputNodes) {
-        List<SNode> _outputNodes = nextMacro(templateContext.subContext(newInputNode));
+        TemplateContext ctx = templateContext;
+        if (counterVarName != null) {
+          ctx = ctx.subContext(Collections.<String,Object>singletonMap("cv:" + counterVarName, i));
+        }
+        ctx = ctx.subContext(newInputNode);
+        List<SNode> _outputNodes = nextMacro(ctx);
         outputNodes.addAll(_outputNodes);
+        i++;
       }
       return outputNodes;
     }
@@ -417,7 +427,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         GenerationCanceledException {
       final Collection<SNode> newInputNodes;
       if (myIsSoleInput) {
-        newInputNodes = InputQueryUtil.wrapAsList(getNewInputNode(templateContext));
+        newInputNodes = wrapAsList(getNewInputNode(templateContext));
       } else {
         newInputNodes = getNewInputNodes(templateContext);
       }
@@ -592,7 +602,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       SNode macro_mapperFunction = RuleUtil.getMapSrc_MapperFunction(macro);
       final Collection<SNode> newInputNodes;
       if (myIsSoleInput) {
-        newInputNodes = InputQueryUtil.wrapAsList(getNewInputNode(templateContext));
+        newInputNodes = wrapAsList(getNewInputNode(templateContext));
       } else {
         newInputNodes = getNewInputNodes(templateContext);
       }

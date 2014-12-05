@@ -3055,6 +3055,21 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="4Eh_7Jwr3Vf" role="3cqZAp">
+          <node concept="2OqwBi" id="4Eh_7Jwr3Vg" role="3clFbG">
+            <node concept="37vLTw" id="4Eh_7Jwr3Vh" role="2Oq$k0">
+              <ref role="3cqZAo" node="3sLEknL8P1C" resolve="nodes" />
+            </node>
+            <node concept="X8dFx" id="4Eh_7Jwr3Vi" role="2OqNvi">
+              <node concept="2OqwBi" id="4Eh_7Jwr3Vj" role="25WWJ7">
+                <node concept="1Q6Npb" id="4Eh_7Jwr3Vk" role="2Oq$k0" />
+                <node concept="2SmgA7" id="4Eh_7Jwr3Vl" role="2OqNvi">
+                  <ref role="2SmgA8" to="tpf3:6suuiWXJvTY" resolve="GenerationContextOp_ContextVarRef" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="1DcWWT" id="3sLEknLa1Jz" role="3cqZAp">
           <node concept="3clFbS" id="3sLEknLa1J$" role="2LFqv$">
             <node concept="3cpWs8" id="3sLEknLauLG" role="3cqZAp">
@@ -8938,10 +8953,10 @@
                                 <node concept="3clFbS" id="3AFg8NT6hm_" role="1bW5cS">
                                   <node concept="3clFbF" id="3AFg8NT6hmA" role="3cqZAp">
                                     <node concept="3fqX7Q" id="3AFg8NT6hmB" role="3clFbG">
-                                      <node concept="2YIFZM" id="3AFg8NT6hmC" role="3fr31v">
-                                        <ref role="1Pybhc" to="ojcp:~GeneratorUtilEx" resolve="GeneratorUtilEx" />
-                                        <ref role="37wK5l" to="ojcp:~GeneratorUtilEx.isTemplateLanguageElement(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isTemplateLanguageElement" />
-                                        <node concept="37vLTw" id="2BHiRxgmajh" role="37wK5m">
+                                      <node concept="2YIFZM" id="7BGolr1fYpS" role="3fr31v">
+                                        <ref role="37wK5l" to="ojcp:~RuleUtil.isTemplateLanguageElement(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isTemplateLanguageElement" />
+                                        <ref role="1Pybhc" to="ojcp:~RuleUtil" resolve="RuleUtil" />
+                                        <node concept="37vLTw" id="7BGolr1fYzR" role="37wK5m">
                                           <ref role="3cqZAo" node="3AFg8NT6hmG" resolve="it" />
                                         </node>
                                       </node>

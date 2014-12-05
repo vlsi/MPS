@@ -95,7 +95,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
    * @return true if new value was committed to model / false if nothing was changed
    */
   public boolean commit() {
-    assert getModelAccess().canWrite();
+    getModelAccess().checkWriteAccess();
     // a solution for MPS-13531
     // better solution is to redispatch all currently waiting EDT commands inside MPSProject.dispose() method
     // currently not available - not possible to redispatch all waiting commands from AWT Thread.

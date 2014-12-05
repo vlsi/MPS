@@ -162,23 +162,23 @@ public class ClassLoaderManager implements CoreComponent {
    *
    * @see jetbrains.mps.module.ReloadableModule
    * @see jetbrains.mps.module.ReloadableModuleBase
-     * @see ModuleIsNotLoadableException
-     * @see ModuleClassNotFoundException
-     */
-    @Deprecated
-    @ToRemove(version = 3.2)
-    @Nullable
-    public Class<?> getClass(@NotNull SModule module, String classFqName) {
-      assertCanLoad(module);
-      try {
-        return ((ReloadableModule) module).getClass(classFqName);
-      } catch (ModuleIsNotLoadableException e) {
-        LOG.error("Exception during class loading. Probably one of the solutions has no solution kind set or lacks in Idea plugin facet.", e);
-      } catch (ClassNotFoundException e) {
-        LOG.error("Exception during class loading", e);
-      }
-      return null;
+   * @see ModuleIsNotLoadableException
+   * @see ModuleClassNotFoundException
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
+  @Nullable
+  public Class<?> getClass(@NotNull SModule module, String classFqName) {
+    assertCanLoad(module);
+    try {
+      return ((ReloadableModule) module).getClass(classFqName);
+    } catch (ModuleIsNotLoadableException e) {
+      LOG.error("Exception during class loading. Probably one of the solutions has no solution kind set or lacks in Idea plugin facet.", e);
+    } catch (ClassNotFoundException e) {
+      LOG.error("Exception during class loading", e);
     }
+    return null;
+  }
 
   /**
    * TODO refactor all usages of getOwnClass()
@@ -203,8 +203,17 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /**
-   * @return the class loader associated with the module.
-   * Also can return the class loader of the IDEA plugin which manages the module's classes.
+   * @return the class loader associated with the module. Note that may return "outdated" ClassLoader.
+   * To be exact it returns the classloader for module, which was actual for the moment of last refresh event.
+   * @see #refresh()
+   *
+   * No #refresh() may happen here.
+   * Refresh happens
+   * 1. During #getClassLoader calls inside the write action
+   * 2. At the end of write action.
+   * 3. Also it may be triggered explicitly by #reloadModules(), #reloadModule(), etc. call.
+   *
+   * This method can return the class loader of the IDEA plugin which manages the module's classes.
    * Use it if you want to get a class from the module with IdeaPluginFacet.
    *
    * @deprecated use module-specific methods which throw ClassNotFoundException,
@@ -219,7 +228,7 @@ public class ClassLoaderManager implements CoreComponent {
   public ClassLoader getClassLoader(final SModule module) {
     if (!myLoadableCondition.met(module)) return null;
 
-    refresh();
+    if (myRepository.getModelAccess().canWrite()) refresh();
     ReloadableModule reloadableModule = (ReloadableModule) module;
     if (!myValidCondition.met(reloadableModule)) return null;
     doLoadModules(Collections.singleton(reloadableModule), new EmptyProgressMonitor());
@@ -241,6 +250,7 @@ public class ClassLoaderManager implements CoreComponent {
    * @return if refresh actually happened
    */
   private boolean refresh() {
+    checkWriteAccess();
     return myRepositoryListener.refresh();
   }
 
@@ -254,6 +264,7 @@ public class ClassLoaderManager implements CoreComponent {
    * @deprecated there is an intention to get rid of {@link MPSClassesListener} clients. When it's done we are able to remove this method.
    */
   Collection<? extends ReloadableModule> preLoadModules(Iterable<? extends ReloadableModule> modules, ProgressMonitor monitor) {
+    checkWriteAccess();
     monitor.start("Pre-loading modules...", 1);
     try {
       Set<ReloadableModule> modulesPreLoad = filterModules(modules, myValidCondition);
@@ -280,14 +291,8 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /**
-   * @param modules are modules to unload. This method is not lazy.
-   */
-  void unloadModules(Iterable<? extends SModuleReference> modules) {
-    doUnloadModules(modules, new EmptyProgressMonitor());
-  }
-
-  /**
    * Creates ModuleClassLoader for those modules which are MPS-loadable and valid
+   *
    * @see #myMPSLoadableCondition
    * @see #myValidCondition
    */
@@ -306,8 +311,8 @@ public class ClassLoaderManager implements CoreComponent {
 
       LOG.debug("Loading " + modulesToLoad.size() + " modules");
       monitor.advance(1);
-      Collection<? extends ReloadableModule> modulesToNotify = myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
-      myBroadCaster.onLoad(modulesToNotify);
+      Collection<? extends ReloadableModule> notNotifiedModules = myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
+      assert notNotifiedModules.isEmpty();
 
       return modulesToLoad;
     } finally {
@@ -318,16 +323,19 @@ public class ClassLoaderManager implements CoreComponent {
   /**
    * Stops watching at all the {@code modules}, which are MPS-loadable
    * Disposes all class loaders for these modules
+   * Method is not lazy
    *
    * @see #myMPSLoadableCondition
    */
   @NotNull
-  private Collection<? extends ReloadableModule> doUnloadModules(Iterable<? extends SModuleReference> modules, @NotNull ProgressMonitor monitor) {
+  Collection<? extends ReloadableModule> unloadModules(Iterable<? extends SModuleReference> modules, @NotNull ProgressMonitor monitor) {
+    checkWriteAccess();
     monitor.start("Unloading modules...", 1);
     try {
       Condition<SModuleReference> loadedCondition = negateCondition(myUnloadedRefCondition);
       Set<SModuleReference> modulesToUnload = filterModules(modules, loadedCondition);
       if (modulesToUnload.isEmpty()) return Collections.emptySet();
+
 
       // transitive closure
       Collection<? extends SModuleReference> modulesAndBackDeps = myModulesWatcher.getBackDependencies(modulesToUnload);
@@ -377,6 +385,7 @@ public class ClassLoaderManager implements CoreComponent {
    */
   @Deprecated
   public Collection<ReloadableModule> reloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+    checkWriteAccess();
     if (IterableUtils.isEmpty(modules)) {
       LOG.info("Reloaded 0 modules");
       return new ArrayList();
@@ -393,7 +402,7 @@ public class ClassLoaderManager implements CoreComponent {
       Collection<ReloadableModule> modulesToReload = new LinkedHashSet();
       for (SModule module : modules) {
         if (!(module instanceof TempModule) && module.getRepository() == null) throw new IllegalStateException("Cannot reload the module " + module + " which does not belong to a repository");
-        if (canLoad(module)) {
+        if (module instanceof ReloadableModule) {
           modulesToReload.add((ReloadableModule) module);
         }
       }
@@ -401,7 +410,7 @@ public class ClassLoaderManager implements CoreComponent {
 
       refresh();
       myModulesWatcher.updateModules(modulesToReload);
-      Collection<? extends ReloadableModule> unloadedModules = doUnloadModules(myModulesWatcher.getModuleRefs(modulesToReload), monitor.subTask(1));
+      Collection<? extends ReloadableModule> unloadedModules = unloadModules(myModulesWatcher.getModuleRefs(modulesToReload), monitor.subTask(1));
       modulesToReload.addAll(unloadedModules);
       Collection<? extends ReloadableModule> loadedModules = preLoadModules(modulesToReload, monitor.subTask(1));
 
@@ -433,8 +442,11 @@ public class ClassLoaderManager implements CoreComponent {
    * Please take a look at {@link #reloadModule} and {@link #reloadModules} methods.
    */
   public void reloadAll(@NotNull ProgressMonitor monitor) {
-    ModelAccess.assertLegalRead();
     reloadModules(myRepository.getModules(), monitor);
+  }
+
+  private void checkWriteAccess() {
+    myRepository.getModelAccess().checkWriteAccess();
   }
 
   // conditions part
