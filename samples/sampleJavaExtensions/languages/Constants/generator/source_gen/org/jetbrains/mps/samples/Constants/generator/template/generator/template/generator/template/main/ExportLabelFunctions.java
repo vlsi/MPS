@@ -4,14 +4,13 @@ package org.jetbrains.mps.samples.Constants.generator.template.generator.templat
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.crossmodel.ExportLabelContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @Generated
 public class ExportLabelFunctions {
   public static void marshal_2687243112288328542(ExportLabelContext ctx) {
-    SLinkOperations.setTarget(ctx.getKeeper(), MetaAdapterFactory.getReferenceLink(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f9f20L, 0x254b015f7d15de42L, "clazz"), ctx.getOutput());
+    SPropertyOperations.set(ctx.getKeeper(), MetaAdapterFactory.getProperty(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f9f20L, 0x509450762bec97f8L, "className"), SPropertyOperations.getString(ctx.getOutput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static void marshal_2687243112288300498(ExportLabelContext ctx) {
     SPropertyOperations.set(ctx.getKeeper(), MetaAdapterFactory.getProperty(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f2365L, 0x254b015f7d0f2368L, "constantName"), SPropertyOperations.getString(ctx.getInput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
