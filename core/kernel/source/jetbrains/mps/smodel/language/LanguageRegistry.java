@@ -203,10 +203,14 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       if (module instanceof Language) {
         String namespace = module.getModuleName();
         assert (!myLanguages.containsKey(namespace));
-        LanguageRuntime runtime = createRuntime((Language) module);
+        final Language langModule = (Language) module;
+        LanguageRuntime runtime = createRuntime(langModule);
         if (runtime != null) {
           myLanguages.put(namespace, runtime);
-          myLanguagesById.put(MetaIdByDeclaration.getLanguageId(((Language) module)), runtime);
+          if (runtime.getId() == null) {
+            runtime.setId(MetaIdByDeclaration.getLanguageId(langModule));
+          }
+          myLanguagesById.put(runtime.getId(), runtime);
           loadedRuntimes.add(runtime);
         }
       }

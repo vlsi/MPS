@@ -68,11 +68,41 @@ public abstract class LanguageRuntime {
   private final List<LanguageRuntime> myExtendingLanguages = new ArrayList<LanguageRuntime>();
   private final List<LanguageRuntime> myExtendedLanguages = new ArrayList<LanguageRuntime>();
 
+  @ToRemove(version = 3.2)
+  private SLanguageId myLanguageId;
+
   public abstract String getNamespace();
 
-  public abstract SLanguageId getId();
+  /**
+   * FIXME This method shall become abstract post 3.2, it's non-abstract for binary compatibility with legacy LanguageRuntime classes
+   * @return now value of the field, <code>null</code> if not set. Generated LanguageRuntime classes shall override return value
+   * Denoted with @ToRemove just to ease later discovery, it's method implementation to be removed, not the method itself
+   */
+  @ToRemove(version = 3.2)
+  public SLanguageId getId() {
+    return myLanguageId;
+  }
 
-  public abstract int getVersion();
+  /**
+   * Sole purpose of this method is to supply language id for runtimes generated with 3.1 when loaded into 3.2
+   */
+  @ToRemove(version = 3.2)
+  /*package*/void setId(SLanguageId languageId) {
+    assert languageId == null || myLanguageId == null : "shall not change id once set";
+    myLanguageId = languageId;
+  }
+
+  /**
+   * Generated LanguageRuntime classes shall override this method
+   * FIXME This method shall become abstract post 3.2, and is non-abstract for binary compatibility of languages generated in 3.1 when loaded into 3.2
+   * Denoted with @ToRemove just to ease later discovery, it's method implementation to be removed, not the method itself
+   * @since 3.2
+   * @return 0 now
+   */
+  @ToRemove(version = 3.2)
+  public int getVersion() {
+    return 0;
+  }
 
   /**
    * @deprecated use {@link #getAspect(Class) getAspect(IHelginsDescriptor.class)} instead
