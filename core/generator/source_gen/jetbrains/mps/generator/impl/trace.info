@@ -210,7 +210,7 @@
       <node id="7007487250399120552" at="414,54,415,176" concept="10" />
       <node id="8986013878447086141" at="417,82,418,197" concept="10" />
       <node id="7914477976583023014" at="420,68,421,181" concept="10" />
-      <node id="7527312772557310955" at="423,61,424,33" concept="10" />
+      <node id="7527312772557310955" at="423,63,424,33" concept="10" />
       <node id="7006097710431222814" at="141,0,144,0" concept="14" trace="isNodeMacro#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2288466875851129884" at="144,0,147,0" concept="14" trace="isNodeMacro#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <node id="3381130103055826399" at="147,0,150,0" concept="14" trace="isTemplateLanguageElement#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -385,7 +385,7 @@
       <scope id="7007487250399120551" at="414,54,415,176" />
       <scope id="8986013878447081931" at="417,82,418,197" />
       <scope id="7914477976583014930" at="420,68,421,181" />
-      <scope id="7527312772557296391" at="423,61,424,33" />
+      <scope id="7527312772557296391" at="423,63,424,33" />
       <scope id="3787796982867056163" at="368,68,370,0" />
       <scope id="8632039839642676892" at="122,10,125,54" />
       <scope id="7006097710431222814" at="141,0,144,0">
