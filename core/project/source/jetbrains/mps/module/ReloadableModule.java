@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.module;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleClassNotFoundException;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import org.jetbrains.annotations.Nullable;
@@ -37,7 +38,7 @@ public interface ReloadableModule {
    * @return a class which can be obtained by calling #getclass from
    * {@link #getClassLoader()} method.
    * a ModuleClassLoader. ModuleClassLoader's #loadClass method yields some additional information
-   * about the reasons of not-found-class.
+   * about the reasons of class which could not be found.
    * Clients of this API are supposed to process it on their own behalf.
    *
    * @see jetbrains.mps.classloading.ModuleClassNotFoundException
@@ -72,13 +73,13 @@ public interface ReloadableModule {
   /**
    * Call it to replace the old class loader of this module with a new one.
    * To reload more than one module all together
-   * check {@link jetbrains.mps.classloading.ClassLoaderManager#reloadModules(Iterable)} methods.
+   * check out {@link ClassLoaderManager#reloadModules(Iterable)} method.
    */
   public void reload();
 
   /**
-   * @return true, if it will load classes. For some subclasses it is possible to disable class loading
-   * for ReloadableModule.
+   * @return true if it will load classes.
+   * For some subclasses it is possible to disable class loading for <code>ReloadableModule</code>.
    * @see jetbrains.mps.project.Solution
    */
   public boolean willLoad();

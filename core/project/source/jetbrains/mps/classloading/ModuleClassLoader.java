@@ -40,8 +40,8 @@ import java.util.Set;
 
 /**
  * MPS realisation of ClassLoader which uses non-standard way of class loading delegation.
- * Its method #loadClass, findResources are called by JVM during JVM class loading process and also
- * by explicit user call of #getClass and #getOwnClass methods in {@link ReloadableModule} and
+ * Its methods #loadClass, #findResources are called by JVM during JVM class loading process and also
+ * by an explicit user call of #getClass and #getOwnClass methods in {@link ReloadableModule} and
  * in {@link ClassLoaderManager} instance (old deprecated way).
  * Note that these methods yield additional error information in the case of failure.
  * Users of class loading API are supposed to process it on their own behalf.
@@ -63,6 +63,9 @@ public class ModuleClassLoader extends ClassLoader {
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
 
+  /**
+   * for debugging needs
+   */
   public boolean isDisposed() {
     return myDisposed;
   }

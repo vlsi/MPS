@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * This class deals only with loadable modules
+ * This class stores a map SModuleReference->ModuleClassLoader
  * @see ClassLoaderManager#myLoadableCondition
  */
 public class ClassLoadersHolder {
@@ -234,16 +234,18 @@ public class ClassLoadersHolder {
    * Class loading progress of each MPS-loadable module.
    *
    * Module lifecycle:
-   * At first the module is UNLOADED. It comes to repository, then a call of {@link ClassLoaderManager#preLoadModules(Iterable, org.jetbrains.mps.openapi.util.ProgressMonitor)} happens.
+   * At first the module is UNLOADED. It comes to repository and a call of {@link ClassLoaderManager#preLoadModules(Iterable, org.jetbrains.mps.openapi.util.ProgressMonitor)} happens.
    * Then we check whether the module's dependencies are valid to load (and some other conditions). If everything is okay then we send
-   * broadcast notification to the clients of {@link jetbrains.mps.classloading.MPSClassesListener}. The state of module is changed to
-   * LAZY_LOADED at that moment.
-   * When the classes of module are requested the actual ClassLoader construction happens and then the module is marked as LOADED.
-   * When user calls {@link ClassLoaderManager#unloadModules(Iterable)}, state comes to UNLOADED (no matter what).
+   * broadcast notification to the clients of {@link jetbrains.mps.classloading.MPSClassesListener}.
+   * The state of module is changed to LAZY_LOADED at that moment.
+   * When the classes of module are requested [through #getClass(), #getOwnClass(), #getClassLoader()] methods,
+   * the actual ClassLoader construction happens and then the module is marked as LOADED.
+   * LAZY_LOADED state could not be skipped.
+   *
+   * When #reloadModules happens, module ClassLoader's are unloaded and then preLoaded (!) again. [back to lazy state again]
+   *
    * So the state diagram looks like this:
-   * UNLOADED -> LAZY_LOADED
-   * UNLOADED -> LOADED
-   * LAZY_LOADED -> LOADED
+   * UNLOADED -> LAZY_LOADED -> LOADED
    * LAZY_LOADED -> UNLOADED
    * LOADED -> UNLOADED
    */

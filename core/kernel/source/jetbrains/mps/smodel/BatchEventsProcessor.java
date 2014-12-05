@@ -87,7 +87,10 @@ public class BatchEventsProcessor {
     myRepository.removeRepositoryListener(mySRepositoryListener);
   }
 
-  // repository listener picks only few events
+  /**
+   *  This class listens for module's add/removal, for 'moduleChanged' event (triggered by AbstractModule)
+   *  and for internal (so far) 'dependenciesChanged' event.
+   */
   private class MySRepositoryListener extends SRepositoryContentAdapter implements SModuleDependenciesListener{
     private void addEventToList(@NotNull SRepositoryEvent event) {
       synchronized (LOCK) {

@@ -31,7 +31,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Broadcasting class loading load/unload events.
- * May be triggered at any time of #getClass calls due to laziness
+ * Guarantees that the listeners are invoked in write action
  */
 public class ClassLoadingBroadCaster {
   private static final Logger LOG = LogManager.getLogger(ClassLoadingBroadCaster.class);
