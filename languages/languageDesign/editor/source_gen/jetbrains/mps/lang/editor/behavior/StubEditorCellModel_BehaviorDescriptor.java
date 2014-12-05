@@ -4,10 +4,11 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IStubForAnotherConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
 
-public class StubEditorCellModel_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
+public class StubEditorCellModel_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor, IStubForAnotherConcept_BehaviorDescriptor {
   public StubEditorCellModel_BehaviorDescriptor() {
   }
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
