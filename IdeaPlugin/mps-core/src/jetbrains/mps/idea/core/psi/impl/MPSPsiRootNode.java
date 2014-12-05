@@ -64,16 +64,19 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRea
   private MPSPsiModel myModel;
   private boolean separateFile;
 
-  public MPSPsiRootNode (SNodeId nodeId, String name,  PsiManager manager) {
-    this(nodeId, name, manager, null);
+  public MPSPsiRootNode (SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager) {
+    this(nodeId, name, containingModel, manager, null);
     separateFile = false;
   }
 
-  public MPSPsiRootNode (SNodeId nodeId, String name,  PsiManager manager, @Nullable VirtualFile virtualFile) {
+  public MPSPsiRootNode (SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager, @Nullable VirtualFile virtualFile) {
     super(manager);
     myNodeId = nodeId;
+    myModel = containingModel;
+
     myName = name;
-    myViewProvider = new SingleRootFileViewProvider(manager, new LightVirtualFile(), false);
+    myViewProvider = new SingleRootFileViewProvider(manager, MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNodeReference()), false);
+//    myViewProvider = new SingleRootFileViewProvider(manager, virtualFile == null ? new LightVirtualFile() : virtualFile, false);
     separateFile = true;
   }
 
@@ -104,10 +107,6 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRea
   @Override
   public boolean processChildren(PsiElementProcessor<PsiFileSystemItem> processor) {
     return false;
-  }
-
-  public void setModel(MPSPsiModel model) {
-    myModel = model;
   }
 
   @Override

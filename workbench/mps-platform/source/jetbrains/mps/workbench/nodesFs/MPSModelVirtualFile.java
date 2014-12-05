@@ -19,18 +19,19 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.ex.dummy.DummyFileIdGenerator;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
+import jetbrains.mps.extapi.persistence.FolderDataSource;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.workbench.ModelUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -117,9 +118,15 @@ public class MPSModelVirtualFile extends VirtualFile {
       @Override
       public VirtualFile compute() {
         if (myModelReference == null) return null;
-        VirtualFile fileByModel = getSourceVirtualFile(myModelReference.resolve(MPSModuleRepository.getInstance()));
-        if (fileByModel == null) return null;
-        return fileByModel.getParent();
+        SModel model = myModelReference.resolve(MPSModuleRepository.getInstance());
+        DataSource ds = model.getSource();
+        if (ds instanceof FileDataSource) {
+          return VirtualFileUtils.getVirtualFile(((FileDataSource) ds).getFile());
+        } else if (ds instanceof FolderDataSource) {
+          return VirtualFileUtils.getVirtualFile(((FolderDataSource) ds).getFolder());
+        } else {
+          return null;
+        }
       }
     });
   }
@@ -160,12 +167,4 @@ public class MPSModelVirtualFile extends VirtualFile {
   public InputStream getInputStream() throws IOException {
     throw new UnsupportedOperationException();
   }
-
-  private VirtualFile getSourceVirtualFile(SModel model) {
-    if (!(model.getSource() instanceof FileSystemBasedDataSource)) return null;
-    final VirtualFile fileByModel = ModelUtil.getFileByModel(model);
-    if (fileByModel == null) return null;
-    return fileByModel;
-  }
-
 }
