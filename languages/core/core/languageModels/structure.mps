@@ -295,6 +295,9 @@
   </node>
   <node concept="PlHQZ" id="8AYOKVCAP5">
     <property role="TrG5h" value="IStubForAnotherConcept" />
+    <node concept="PrWs8" id="4SdtvCa$cju" role="PrDN$">
+      <ref role="PrY4T" node="19gBtYEAf4C" resolve="InterfacePart" />
+    </node>
   </node>
   <node concept="1TIwiD" id="Fg1jLUUh_d">
     <property role="TrG5h" value="SideTransformInfo" />

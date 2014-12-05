@@ -76,6 +76,9 @@
     <node concept="PrWs8" id="6fGfUP7BHqK" role="PzmwI">
       <ref role="PrY4T" to="tpc2:7ARneOGixdd" resolve="Synchronizeable" />
     </node>
+    <node concept="PrWs8" id="4SdtvCaAl9_" role="PzmwI">
+      <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
+    </node>
   </node>
   <node concept="1TIwiD" id="WK6Z46CMBm">
     <property role="TrG5h" value="AbstractFigureReference" />
@@ -143,6 +146,9 @@
     <node concept="PrWs8" id="6fGfUP7BHf0" role="PzmwI">
       <ref role="PrY4T" to="tpc2:7ARneOGixdd" resolve="Synchronizeable" />
     </node>
+    <node concept="PrWs8" id="4SdtvCaAl87" role="PzmwI">
+      <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5yk3CzNVRj9">
     <property role="TrG5h" value="CellModel_DiagramConnector" />
@@ -162,6 +168,9 @@
     </node>
     <node concept="PrWs8" id="6fGfUP7BHtH" role="PzmwI">
       <ref role="PrY4T" to="tpc2:7ARneOGixdd" resolve="Synchronizeable" />
+    </node>
+    <node concept="PrWs8" id="4SdtvCaAl9u" role="PzmwI">
+      <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
     </node>
   </node>
   <node concept="1TIwiD" id="4H19mAw_rje">
@@ -228,6 +237,9 @@
     </node>
     <node concept="PrWs8" id="6fGfUP7BHsG" role="PzmwI">
       <ref role="PrY4T" to="tpc2:7ARneOGixdd" resolve="Synchronizeable" />
+    </node>
+    <node concept="PrWs8" id="4SdtvCaAl9G" role="PzmwI">
+      <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
     </node>
   </node>
   <node concept="1TIwiD" id="fQU43XxJyI">

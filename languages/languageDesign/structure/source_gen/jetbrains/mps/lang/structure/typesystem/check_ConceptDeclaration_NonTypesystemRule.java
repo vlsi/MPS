@@ -15,6 +15,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -22,18 +25,46 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
   }
   public void applyRule(final SNode conceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Iterable<SNode> allSuperConcepts = AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(conceptDeclaration, false);
+    boolean isStub = Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_idyjwe_a0a0a0a0a0a1a1(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x226fb4c3ba26d45L, "jetbrains.mps.lang.core.structure.IStubForAnotherConcept")));
+      }
+    });
+    if (isStub) {
+      return;
+    }
+
     if (Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0a1a1(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L, "jetbrains.mps.lang.core.structure.InterfacePart")));
+        return eq_idyjwe_a0a0a0a0a0a4a1(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L, "jetbrains.mps.lang.core.structure.InterfacePart")));
       }
     }) && Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0a0b0b_0(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L, "jetbrains.mps.lang.core.structure.ImplementationPart"))) || eq_idyjwe_a0a0a0a0a0a0b0b(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart")));
+        return eq_idyjwe_a0a0a0a0a0a0e0b_0(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L, "jetbrains.mps.lang.core.structure.ImplementationPart"))) || eq_idyjwe_a0a0a0a0a0a0e0b(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart")));
       }
     })) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(conceptDeclaration, "The concept is marked both as an InterfacePart and an ImplementationPart. It will be treated as InterfacePart ", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "6579840439426263826", null, errorTarget);
+      }
+    }
+
+    if (Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_idyjwe_a0a0a0a0a0g0b(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart")));
+      }
+    })) {
+      final String stubName = "Stub" + SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      boolean stubExists = ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(conceptDeclaration), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_idyjwe_a0a0a0a0a0a0a1a6a1_0(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), stubName) && eq_idyjwe_a0a0a0a0a0a0a1a6a1(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")), SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
+        }
+      }).isNotEmpty();
+      if (!(stubExists)) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(conceptDeclaration, "Missing stub for a non-stub ImplementationWithStubPart concept", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "5624281226435558417", null, errorTarget);
+        }
       }
     }
   }
@@ -49,13 +80,25 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
   public boolean overrides() {
     return false;
   }
-  private static boolean eq_idyjwe_a0a0a0a0a0a0b0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_idyjwe_a0a0a0a0a0a0b0b_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static boolean eq_idyjwe_a0a0a0a0a0a1a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_idyjwe_a0a0a0a0a0a0e0b(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_idyjwe_a0a0a0a0a0a0e0b_0(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_idyjwe_a0a0a0a0a0a4a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_idyjwe_a0a0a0a0a0a0a1a6a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_idyjwe_a0a0a0a0a0a0a1a6a1_0(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_idyjwe_a0a0a0a0a0g0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
