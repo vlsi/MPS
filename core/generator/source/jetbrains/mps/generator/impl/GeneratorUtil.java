@@ -40,6 +40,7 @@ public class GeneratorUtil {
    * to get concept fqn given the concept's node (not an instance of the concept, where node.getContainingConcept().getQualifiedName is possible)
    */
   public static String getConceptQualifiedName(SNode applicableConceptOfRule) {
+    // FIXME there's MetaAdapterByDeclaration, but it deals with smodel.SNode
     return NameUtil.nodeFQName(applicableConceptOfRule);
   }
 

@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -76,9 +77,9 @@ public final class ModelScanner {
         return RuleUtil.getInlineTemplate_templateNode(rc);
       }
     };
-    processTemplateNode(fnf.getNodes(RuleUtil.concept_TemplateFragment, false), parentExtractor);
-    processTemplateNode(fnf.getNodes(RuleUtil.concept_RootTemplateAnnotation, false), parentExtractor);
-    processTemplateNode(fnf.getNodes(RuleUtil.concept_InlineTemplate_RuleConsequence, false), inlineTemplateExtractor);
+    processTemplateNode(fnf.getNodes(RuleUtil.concept_TemplateFragment.getQualifiedName(), false), parentExtractor);
+    processTemplateNode(fnf.getNodes(RuleUtil.concept_RootTemplateAnnotation.getQualifiedName(), false), parentExtractor);
+    processTemplateNode(fnf.getNodes(RuleUtil.concept_InlineTemplate_RuleConsequence.getQualifiedName(), false), inlineTemplateExtractor);
     //
     // Mapping scripts: pre/readonly - to queries only, modify - both to queries and templateNodes if create anything
     // XXX What about utility models with change operations?
@@ -86,7 +87,7 @@ public final class ModelScanner {
     scanScriptsForChangeOperations(fnf);
 
     // MappingScript_CodeBlock is subclass of TemplateQueryBase
-    processQueryNodes(fnf.getNodes(RuleUtil.concept_TemplateQueryBase, true));
+    processQueryNodes(fnf.getNodes(RuleUtil.concept_TemplateQueryBase.getQualifiedName(), true));
     return this;
   }
 
@@ -176,7 +177,7 @@ public final class ModelScanner {
           if (tn == null) {
             continue;
           }
-          String targetNodeConcept = tn.getConcept().getQualifiedName();
+          SConcept targetNodeConcept = tn.getConcept();
           if (RuleUtil.concept_AbstractConceptDeclaration.equals(targetNodeConcept) || RuleUtil.concept_ConceptDeclaration.equals(targetNodeConcept)) {
             // n points with r to a concept node tn
             myConceptsInUse.add(GeneratorUtil.getConceptQualifiedName(tn));
@@ -210,10 +211,10 @@ public final class ModelScanner {
 
     @Override
     public boolean met(SNode node) {
-      if (!RuleUtil.link_BaseConcept_attrs.equals(node.getRoleInParent())) {
-        return false;
+      if (RuleUtil.link_BaseConcept_attrs.equals(node.getContainmentLink())) {
+        return RuleUtil.isTemplateLanguageElement(node);
       }
-      return GeneratorUtilEx.isTemplateLanguageElement(node);
+      return false;
     }
   }
 }

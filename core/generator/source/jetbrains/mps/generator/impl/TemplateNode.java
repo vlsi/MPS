@@ -182,8 +182,8 @@ class TemplateNode {
 
       // process property and reference macros
       for (SNode templateChildNode : templateNode.getChildren()) {
-        String templateChildNodeConcept = templateChildNode.getConcept().getQualifiedName();
-        if (GeneratorUtilEx.isTemplateLanguageElement(templateChildNodeConcept)) {
+        SConcept templateChildNodeConcept = templateChildNode.getConcept();
+        if (RuleUtil.isTemplateLanguageElement(templateChildNodeConcept)) {
           if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
             final String propertyName = AttributeOperations.getPropertyName(templateChildNode);
             propsHandledWithMacro.add(propertyName);
