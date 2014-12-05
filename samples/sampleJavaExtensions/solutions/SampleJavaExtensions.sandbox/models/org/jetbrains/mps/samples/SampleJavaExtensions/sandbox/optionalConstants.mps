@@ -13,6 +13,7 @@
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
+      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -29,6 +30,9 @@
       <concept id="1494751830318912535" name="org.jetbrains.mps.samples.Constants.structure.Constants" flags="ng" index="3le7z9">
         <child id="1494751830318912552" name="constants" index="3le7zQ" />
       </concept>
+      <concept id="2687243112287752479" name="org.jetbrains.mps.samples.Constants.structure.DistantConstantReference" flags="ng" index="1ojt10">
+        <reference id="2687243112287752727" name="targetSetOfConstants" index="1ojtd8" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -40,15 +44,27 @@
     <property role="TrG5h" value="OtherConstants" />
     <node concept="3le7z7" id="2lb0lXX3IBl" role="3le7zQ">
       <property role="TrG5h" value="C" />
-      <node concept="3cmrfG" id="2lb0lXX3Jk0" role="2G6nb5">
-        <property role="3cmrfH" value="1" />
+      <node concept="3cpWs3" id="2lb0lXX3JjX" role="2G6nb5">
+        <node concept="3cmrfG" id="2lb0lXX3Jk0" role="3uHU7w">
+          <property role="3cmrfH" value="1" />
+        </node>
+        <node concept="1ojt10" id="2lb0lXX3IBD" role="3uHU7B">
+          <ref role="32iksQ" to="wwul:2lb0lXX3nvu" resolve="A" />
+          <ref role="1ojtd8" to="wwul:2lb0lXX3nek" resolve="CoreConstants" />
+        </node>
       </node>
     </node>
     <node concept="3le7z7" id="2lb0lXX3J_V" role="3le7zQ">
       <property role="TrG5h" value="D" />
       <node concept="3cpWsd" id="2lb0lXX3K$C" role="2G6nb5">
-        <node concept="32iksP" id="2lb0lXX3K4b" role="3uHU7B">
-          <ref role="32iksQ" node="2lb0lXX3IBl" resolve="C" />
+        <node concept="3cpWs3" id="2lb0lXX3K48" role="3uHU7B">
+          <node concept="1ojt10" id="2lb0lXX3JAj" role="3uHU7B">
+            <ref role="32iksQ" to="wwul:2lb0lXX3oLb" resolve="B" />
+            <ref role="1ojtd8" to="wwul:2lb0lXX3nek" resolve="CoreConstants" />
+          </node>
+          <node concept="32iksP" id="2lb0lXX3K4b" role="3uHU7w">
+            <ref role="32iksQ" node="2lb0lXX3IBl" resolve="C" />
+          </node>
         </node>
         <node concept="3cmrfG" id="2lb0lXX3L9T" role="3uHU7w">
           <property role="3cmrfH" value="4" />
