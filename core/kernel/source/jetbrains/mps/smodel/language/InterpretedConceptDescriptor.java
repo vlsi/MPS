@@ -22,6 +22,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeId.Regular;
@@ -41,6 +42,7 @@ import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -117,20 +119,27 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   public static ConceptDescriptor create(String name) {
     String langName = NameUtil.namespaceFromConceptFQName(name);
-    String conceptName = NameUtil.shortNameFromLongName(name);
+    final String conceptName = NameUtil.shortNameFromLongName(name);
 
     Language lang = ModuleRepositoryFacade.getInstance().getModule(langName, Language.class);
     if (lang != null) {
-      SModel strucModel = LanguageAspect.STRUCTURE.get(lang);
+      final SModel strucModel = LanguageAspect.STRUCTURE.get(lang);
       if (strucModel != null) {
         //search for a node in the structure model that q matches given name
-        for (SNode n : strucModel.getRootNodes()) {
-          if (SNodeOperations.isInstanceOf(n, SNodeUtil.conceptName_AbstractConceptDeclaration)) {
-            if (conceptName.equals(n.getProperty(SNodeUtil.property_INamedConcept_name))) {
-              return new InterpretedConceptDescriptor(n);
+        ConceptDescriptor cd = ModelAccess.instance().runReadAction(new Computable<ConceptDescriptor>() {
+          @Override
+          public ConceptDescriptor compute() {
+            for (SNode n : strucModel.getRootNodes()) {
+              if (SNodeOperations.isInstanceOf(n, SNodeUtil.conceptName_AbstractConceptDeclaration)) {
+                if (conceptName.equals(n.getProperty(SNodeUtil.property_INamedConcept_name))) {
+                  return new InterpretedConceptDescriptor(n);
+                }
+              }
             }
+            return null;
           }
-        }
+        });
+        if (cd != null) return cd;
       }
     }
 
