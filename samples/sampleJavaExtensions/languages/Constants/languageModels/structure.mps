@@ -103,6 +103,10 @@
   <node concept="1TIwiD" id="2lb0lXX3TWw">
     <property role="TrG5h" value="GeneratedClassKeeper" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="52kk7oFV9vS" role="1TKVEl">
+      <property role="TrG5h" value="className" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyj" id="2lb0lXX5tT2" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="clazz" />

@@ -195,15 +195,10 @@
         <node concept="3clFbS" id="2lb0lXX3THx" role="2VODD2">
           <node concept="3clFbF" id="2lb0lXX6z3W" role="3cqZAp">
             <node concept="37vLTI" id="2lb0lXX6$NL" role="3clFbG">
-              <node concept="2OqwBi" id="2lb0lXX6_$J" role="37vLTx">
-                <node concept="2OqwBi" id="2lb0lXX6$QG" role="2Oq$k0">
-                  <node concept="3y7DeQ" id="2lb0lXX6$OA" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="2lb0lXX6_7W" role="2OqNvi">
-                    <ref role="3Tt5mk" to="nd9w:2lb0lXX5tT2" />
-                  </node>
-                </node>
-                <node concept="3TrcHB" id="2lb0lXX6Alr" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              <node concept="2OqwBi" id="2lb0lXX6$QG" role="37vLTx">
+                <node concept="3y7DeQ" id="2lb0lXX6$OA" role="2Oq$k0" />
+                <node concept="3TrcHB" id="52kk7oFVnyO" role="2OqNvi">
+                  <ref role="3TsBF5" to="nd9w:52kk7oFV9vS" resolve="className" />
                 </node>
               </node>
               <node concept="2OqwBi" id="2lb0lXX6zeG" role="37vLTJ">
@@ -416,7 +411,7 @@
         </node>
       </node>
     </node>
-    <node concept="3y4P_M" id="2lb0lXX40hY" role="lGtFl">
+    <node concept="3y4P_M" id="52kk7oFUaNo" role="lGtFl">
       <ref role="3y4P_e" node="2lb0lXX3THt" resolve="exportedSetsOfConstants" />
     </node>
   </node>

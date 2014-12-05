@@ -17,7 +17,7 @@ public class ExportLabelFunctions {
     SPropertyOperations.set(ctx.getKeeper(), MetaAdapterFactory.getProperty(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f2365L, 0x254b015f7d0f2368L, "constantName"), SPropertyOperations.getString(ctx.getInput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static void unmarshal_2687243112288328544(ExportLabelContext ctx) {
-    SPropertyOperations.set(ctx.getOutput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getKeeper(), MetaAdapterFactory.getReferenceLink(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f9f20L, 0x254b015f7d15de42L, "clazz")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    SPropertyOperations.set(ctx.getOutput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(ctx.getKeeper(), MetaAdapterFactory.getProperty(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f9f20L, 0x509450762bec97f8L, "className")));
   }
   public static void unmarshal_2687243112288300500(ExportLabelContext ctx) {
     SPropertyOperations.set(ctx.getOutput(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(ctx.getKeeper(), MetaAdapterFactory.getProperty(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f2365L, 0x254b015f7d0f2368L, "constantName")));
