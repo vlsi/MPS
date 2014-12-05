@@ -16,14 +16,18 @@
 package jetbrains.mps.smodel.runtime.interpreted;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
@@ -43,6 +47,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -97,11 +102,51 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private Map<String, ReferenceDescriptor> directReferencesByName = new HashMap<String, ReferenceDescriptor>();
   private Map<String, LinkDescriptor> directLinksByName = new HashMap<String, LinkDescriptor>();
 
-  private InterpretedConceptDescriptor(final SNode declaration) {
+  public InterpretedConceptDescriptor(SConceptId id) {
+    SModule lang = MPSModuleRepository.getInstance().getModule(ModuleId.Regular.regular(id.getLanguageId().getIdValue()));
+    if (lang instanceof Language) {
+      SModel strucModel = LanguageAspect.STRUCTURE.get(((Language) lang));
+      if (strucModel != null) {
+        SNode prototype = strucModel.getNode(new Regular(myId.getIdValue()));
+        if (prototype != null) {
+          init(prototype);
+          return;
+        }
+      }
+    }
+
+    myName = "unknown concept";
+    myId = id;
+  }
+
+  public InterpretedConceptDescriptor(String name) {
+    String langName = NameUtil.namespaceFromConceptFQName(name);
+    String conceptName = NameUtil.shortNameFromLongName(name);
+
+    Language lang = ModuleRepositoryFacade.getInstance().getModule(langName, Language.class);
+    if (lang != null) {
+      SModel strucModel = LanguageAspect.STRUCTURE.get(lang);
+      if (strucModel != null) {
+        //search for a node in the structure model that q matches given name
+        for (SNode n : strucModel.getRootNodes()) {
+          if (SNodeOperations.isInstanceOf(n, SNodeUtil.conceptName_AbstractConceptDeclaration)) {
+            if (conceptName.equals(n.getProperty(SNodeUtil.property_INamedConcept_name))) {
+              init(n);
+              return;
+            }
+          }
+        }
+      }
+    }
+
+    myName = name;
+    myId = MetaIdFactory.INVALID_CONCEPT_ID;
+  }
+
+  private void init(final SNode declaration) {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
-
         myName = declaration.getProperty(SNodeUtil.property_INamedConcept_name);
         myId = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) declaration);
 
