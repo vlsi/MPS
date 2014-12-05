@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -27,7 +28,18 @@ import java.util.List;
  */
 public interface FastNodeFinder {
 
+  /**
+   * Legacy instance retrieve mechanism, use {@link #getNodes(org.jetbrains.mps.openapi.language.SAbstractConcept, boolean)} instead
+   */
+  @NotNull
   List<SNode> getNodes(String conceptFqName, boolean includeInherited);
+
+  /**
+   * @since 3.2
+   * @return list of instances, or empty list, if none found
+   */
+  @NotNull
+  List<SNode> getNodes(@NotNull SAbstractConcept concept, boolean includeInherited);
 
   void dispose();
 
