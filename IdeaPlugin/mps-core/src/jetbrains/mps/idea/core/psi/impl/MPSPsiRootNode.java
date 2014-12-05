@@ -73,9 +73,10 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRea
     super(manager);
     myNodeId = nodeId;
     myModel = containingModel;
+
     myName = name;
-//    myViewProvider = new SingleRootFileViewProvider(manager, MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNodeReference()), false);
-    myViewProvider = new SingleRootFileViewProvider(manager, new LightVirtualFile(), false);
+    myViewProvider = new SingleRootFileViewProvider(manager, MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNodeReference()), false);
+//    myViewProvider = new SingleRootFileViewProvider(manager, virtualFile == null ? new LightVirtualFile() : virtualFile, false);
     separateFile = true;
   }
 
