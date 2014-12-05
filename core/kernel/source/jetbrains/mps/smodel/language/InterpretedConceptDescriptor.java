@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.runtime.interpreted;
+package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,12 +27,10 @@ import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.BaseLinkDescriptor;
 import jetbrains.mps.smodel.runtime.BasePropertyDescriptor;
 import jetbrains.mps.smodel.runtime.BaseReferenceDescriptor;
@@ -102,24 +100,22 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private Map<String, ReferenceDescriptor> directReferencesByName = new HashMap<String, ReferenceDescriptor>();
   private Map<String, LinkDescriptor> directLinksByName = new HashMap<String, LinkDescriptor>();
 
-  public InterpretedConceptDescriptor(SConceptId id) {
+  public static ConceptDescriptor create(SConceptId id) {
     SModule lang = MPSModuleRepository.getInstance().getModule(ModuleId.Regular.regular(id.getLanguageId().getIdValue()));
     if (lang instanceof Language) {
       SModel strucModel = LanguageAspect.STRUCTURE.get(((Language) lang));
       if (strucModel != null) {
-        SNode prototype = strucModel.getNode(new Regular(myId.getIdValue()));
+        SNode prototype = strucModel.getNode(new Regular(id.getIdValue()));
         if (prototype != null) {
-          init(prototype);
-          return;
+          return new InterpretedConceptDescriptor(prototype);
         }
       }
     }
 
-    myName = "unknown concept";
-    myId = id;
+    return new IllegalConceptDescriptor(id);
   }
 
-  public InterpretedConceptDescriptor(String name) {
+  public static ConceptDescriptor create(String name) {
     String langName = NameUtil.namespaceFromConceptFQName(name);
     String conceptName = NameUtil.shortNameFromLongName(name);
 
@@ -131,19 +127,17 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         for (SNode n : strucModel.getRootNodes()) {
           if (SNodeOperations.isInstanceOf(n, SNodeUtil.conceptName_AbstractConceptDeclaration)) {
             if (conceptName.equals(n.getProperty(SNodeUtil.property_INamedConcept_name))) {
-              init(n);
-              return;
+              return new InterpretedConceptDescriptor(n);
             }
           }
         }
       }
     }
 
-    myName = name;
-    myId = MetaIdFactory.INVALID_CONCEPT_ID;
+    return new IllegalConceptDescriptor(name);
   }
 
-  private void init(final SNode declaration) {
+  private InterpretedConceptDescriptor(final SNode declaration) {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {

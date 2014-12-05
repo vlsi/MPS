@@ -130,7 +130,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       }
 
       if (descriptor == null) {
-        descriptor = new IllegalConceptDescriptor(fqName);
+        descriptor = InterpretedConceptDescriptor.create(fqName);
       }
 
       if (!(descriptor instanceof IllegalConceptDescriptor)) {
@@ -167,7 +167,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       }
 
       if (descriptor == null) {
-        descriptor = new IllegalConceptDescriptor(id);
+        descriptor  = InterpretedConceptDescriptor.create(id);
       }
 
       if (!(descriptor instanceof IllegalConceptDescriptor)) {
