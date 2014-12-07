@@ -132,7 +132,6 @@
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
-      <concept id="1068431790191" name="jetbrains.mps.baseLanguage.structure.Expression" flags="nn" index="33vP2n" />
       <concept id="1092119917967" name="jetbrains.mps.baseLanguage.structure.MulExpression" flags="nn" index="17qRlL" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
@@ -1484,7 +1483,6 @@
                       <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
                     </node>
                   </node>
-                  <node concept="33vP2n" id="4mB3QPjvULt" role="1eOMHV" />
                 </node>
                 <node concept="liA8E" id="fSGYFh8knx" role="2OqNvi">
                   <ref role="37wK5l" to="cu2c:~SNode.setId(org.jetbrains.mps.openapi.model.SNodeId):void" resolve="setId" />

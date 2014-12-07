@@ -91,9 +91,6 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
-      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
-        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -618,12 +615,12 @@
         <node concept="3clFbF" id="25gV4Ls_gHd" role="3cqZAp">
           <node concept="2OqwBi" id="25gV4Ls_iHl" role="3clFbG">
             <node concept="2ShNRf" id="25gV4Ls_gHb" role="2Oq$k0">
-              <node concept="HV5vD" id="25gV4Ls_iG6" role="2ShVmc">
-                <ref role="HV5vE" to="fzoq:25gV4Ls$QFv" resolve="Name2IdMigration" />
+              <node concept="1pGfFk" id="2hzfP9XC6kg" role="2ShVmc">
+                <ref role="37wK5l" to="fzoq:22T75mlVzKi" resolve="Name2IdMigration" />
               </node>
             </node>
             <node concept="liA8E" id="25gV4Ls_iQe" role="2OqNvi">
-              <ref role="37wK5l" to="fzoq:25gV4Ls$QG4" resolve="execute" />
+              <ref role="37wK5l" to="fzoq:25gV4Ls$QG4" resolve="doExecute" />
               <node concept="2OqwBi" id="25gV4Ls_iRf" role="37wK5m">
                 <node concept="2WthIp" id="25gV4Ls_iRi" role="2Oq$k0" />
                 <node concept="1DTwFV" id="25gV4Ls_iRk" role="2OqNvi">
