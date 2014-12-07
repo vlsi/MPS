@@ -18,6 +18,7 @@ package jetbrains.mps.compiler;
 import jetbrains.mps.project.Project;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -48,11 +49,14 @@ public class JavaCompilerOptionsComponent {
     }
   }
 
-  public JavaCompilerOptionsProvider getJavaCompilerOptionsProvider(@NotNull Project project) {
+  public JavaCompilerOptionsProvider getJavaCompilerOptionsProvider(Project project) {
     return myProjectToProvider.get(project);
   }
 
-  public JavaCompilerOptions getJavaCompilerOptions(@NotNull Project project) {
+  public JavaCompilerOptions getJavaCompilerOptions(Project project) {
+    if (project == null) {
+      return DEFAULT_JAVA_COMPILER_OPTIONS;
+    }
     if (myProjectToProvider.containsKey(project)) {
       JavaCompilerOptionsProvider javaCompilerOptionsProvider = myProjectToProvider.get(project);
       assert javaCompilerOptionsProvider != null;
@@ -121,6 +125,17 @@ public class JavaCompilerOptionsComponent {
 
     public String getCompilerVersion() {
       return myCompilerVersion;
+    }
+    public boolean isAtLeast(@NotNull JavaVersion version) {
+      return compareTo(version) >= 0;
+    }
+
+    @Nullable
+    public static JavaVersion parse(@Nullable String value) {
+      if ("1.6".equals(value)) return VERSION_1_6;
+      if ("1.7".equals(value)) return VERSION_1_7;
+      if ("1.8".equals(value)) return VERSION_1_8;
+      return null;
     }
 
   }

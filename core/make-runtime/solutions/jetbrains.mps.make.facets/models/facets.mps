@@ -200,7 +200,6 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
-      <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -519,50 +518,6 @@
                   <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
                   <node concept="1bVj0M" id="1KUoCipvGqy" role="37wK5m">
                     <node concept="3clFbS" id="1KUoCipvGqz" role="1bW5cS">
-                      <node concept="3cpWs8" id="6gfLObM0ifZ" role="3cqZAp">
-                        <node concept="3cpWsn" id="6gfLObM0ig0" role="3cpWs9">
-                          <property role="TrG5h" value="project" />
-                          <node concept="3uibUv" id="6gfLObM0if1" role="1tU5fm">
-                            <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
-                          </node>
-                          <node concept="10Nm6u" id="6gfLObM0j7P" role="33vP2m" />
-                        </node>
-                      </node>
-                      <node concept="2Gpval" id="6gfLObM0gCk" role="3cqZAp">
-                        <node concept="2GrKxI" id="6gfLObM0gCm" role="2Gsz3X">
-                          <property role="TrG5h" value="module" />
-                        </node>
-                        <node concept="3clFbS" id="6gfLObM0gCo" role="2LFqv$">
-                          <node concept="3clFbF" id="6gfLObM0itx" role="3cqZAp">
-                            <node concept="37vLTI" id="6gfLObM0itz" role="3clFbG">
-                              <node concept="2YIFZM" id="6gfLObM0ig1" role="37vLTx">
-                                <ref role="37wK5l" to="vsqj:~SModuleOperations.getProjectForModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.project.Project" resolve="getProjectForModule" />
-                                <ref role="1Pybhc" to="vsqj:~SModuleOperations" resolve="SModuleOperations" />
-                                <node concept="2GrUjf" id="6gfLObM0ig2" role="37wK5m">
-                                  <ref role="2Gs0qQ" node="6gfLObM0gCm" resolve="module" />
-                                </node>
-                              </node>
-                              <node concept="37vLTw" id="6gfLObM0itB" role="37vLTJ">
-                                <ref role="3cqZAo" node="6gfLObM0ig0" resolve="project" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbJ" id="6gfLObM0jLc" role="3cqZAp">
-                            <node concept="3clFbS" id="6gfLObM0jLf" role="3clFbx">
-                              <node concept="3zACq4" id="6gfLObM0lXF" role="3cqZAp" />
-                            </node>
-                            <node concept="3y3z36" id="6gfLObM0kjJ" role="3clFbw">
-                              <node concept="10Nm6u" id="6gfLObM0kwm" role="3uHU7w" />
-                              <node concept="37vLTw" id="6gfLObM0k1o" role="3uHU7B">
-                                <ref role="3cqZAo" node="6gfLObM0ig0" resolve="project" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="37vLTw" id="6gfLObM0gZB" role="2GsD0m">
-                          <ref role="3cqZAo" node="3W4A8dypiCw" resolve="toCompile" />
-                        </node>
-                      </node>
                       <node concept="3clFbF" id="1KUoCipvGq$" role="3cqZAp">
                         <node concept="37vLTI" id="1KUoCipvGq_" role="3clFbG">
                           <node concept="2OqwBi" id="1KUoCipvGqA" role="37vLTx">
@@ -577,16 +532,10 @@
                                 <ref role="3cqZAo" node="3W4A8dypiCw" resolve="toCompile" />
                               </node>
                               <node concept="EWnkA" id="1KUoCipvGqF" role="37wK5m" />
-                              <node concept="2OqwBi" id="6gfLObM0n_b" role="37wK5m">
-                                <node concept="2YIFZM" id="6gfLObM0nll" role="2Oq$k0">
-                                  <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getInstance():jetbrains.mps.compiler.JavaCompilerOptionsComponent" resolve="getInstance" />
-                                  <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent" resolve="JavaCompilerOptionsComponent" />
-                                </node>
-                                <node concept="liA8E" id="6gfLObM0nTT" role="2OqNvi">
-                                  <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent.getJavaCompilerOptions(jetbrains.mps.project.Project):jetbrains.mps.compiler.JavaCompilerOptions" resolve="getJavaCompilerOptions" />
-                                  <node concept="37vLTw" id="6gfLObM0ob5" role="37wK5m">
-                                    <ref role="3cqZAo" node="6gfLObM0ig0" resolve="project" />
-                                  </node>
+                              <node concept="1aIXbY" id="26I8knZGBrp" role="37wK5m">
+                                <node concept="1aIXbZ" id="26I8knZGBro" role="2Oq$k0" />
+                                <node concept="2sxana" id="26I8knZGBrs" role="2OqNvi">
+                                  <ref role="2sxfKC" node="bvkaYAFSqh" resolve="options" />
                                 </node>
                               </node>
                             </node>
@@ -837,6 +786,13 @@
           <property role="TrG5h" value="skipCompilation" />
           <node concept="3uibUv" id="5uk1WWiP3hB" role="2lK19J">
             <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          </node>
+        </node>
+        <node concept="2lGYhJ" id="bvkaYAFSqh" role="2pHZQ9">
+          <property role="3dDGau" value="false" />
+          <property role="TrG5h" value="options" />
+          <node concept="3uibUv" id="26I8knZG$C4" role="2lK19J">
+            <ref role="3uigEE" to="i119:~JavaCompilerOptions" resolve="JavaCompilerOptions" />
           </node>
         </node>
       </node>

@@ -57,6 +57,8 @@ import com.intellij.openapi.application.impl.ApplicationImpl;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IProgress;
@@ -348,6 +350,8 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         tparams._0(GenerationSettings.getInstance().isFailOnMissingTextGen());
         tparams._1(GenerationSettings.getInstance().isGenerateDebugInfo());
       }
+
+      new JavaCompileFacetInitializer().setJavaCompileOptions(JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(getSession().getContext().getProject())).populate(ppool);
 
       if (delegateScrCtr != null) {
         delegateScrCtr.setup(ppool, targets, input);
