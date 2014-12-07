@@ -21,13 +21,7 @@ public class ReSaveModulesMigration extends BaseProjectMigration {
   }
   @Override
   public boolean doShouldBeExecuted(Project p) {
-    Iterable<? extends SModule> modulesWithGenerators = p.getModulesWithGenerators();
-    for (AbstractModule module : Sequence.fromIterable(modulesWithGenerators).ofType(AbstractModule.class)) {
-      if (!(module.getModuleDescriptor().hasLanguageVersions())) {
-        return true;
-      }
-    }
-    return false;
+    return true;
   }
   @Override
   public boolean doExecute(Project p) {

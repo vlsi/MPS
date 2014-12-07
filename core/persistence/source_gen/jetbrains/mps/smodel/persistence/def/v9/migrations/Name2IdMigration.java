@@ -5,12 +5,12 @@ package jetbrains.mps.smodel.persistence.def.v9.migrations;
 import jetbrains.mps.migration.global.BaseProjectMigration;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.persistence.PersistenceVersionAware;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.persistence.PersistenceVersionAware;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -28,20 +28,7 @@ public class Name2IdMigration extends BaseProjectMigration {
   }
   @Override
   public boolean doShouldBeExecuted(Project p) {
-    for (SModule module : Sequence.fromIterable(p.getModulesWithGenerators())) {
-      for (SModel model : Sequence.fromIterable(module.getModels())) {
-        if (model.isReadOnly()) {
-          continue;
-        }
-        if (!((model instanceof PersistenceVersionAware))) {
-          continue;
-        }
-        if (((PersistenceVersionAware) model).getPersistenceVersion() < 9) {
-          return true;
-        }
-      }
-    }
-    return false;
+    return true;
   }
   @Override
   public boolean doExecute(Project p) {
