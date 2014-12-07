@@ -17,7 +17,7 @@ package jetbrains.mps.migration.global;
 
 import jetbrains.mps.project.Project;
 
-public abstract class BaseProjectMigration implements ProjectMigration {
+public abstract class BaseProjectMigration implements ProjectMigration, SingleRunProjectMigration {
   public static final String EXECUTED_VALUE = "executed";
   public final String migrationId;
 
@@ -26,7 +26,7 @@ public abstract class BaseProjectMigration implements ProjectMigration {
   }
   @Override
   public boolean shouldBeExecuted(Project p) {
-    if (EXECUTED_VALUE.equals(MigrationPropertiesManager.getInstance().getProperties(p).getProperty(migrationId))) {
+    if (isExecuted(p)) {
       return false;
     }
     return doShouldBeExecuted(p);
@@ -37,9 +37,24 @@ public abstract class BaseProjectMigration implements ProjectMigration {
   @Override
   public void execute(Project p) {
     if (doExecute(p)) {
-      MigrationPropertiesManager.getInstance().getProperties(p).setProperty(migrationId, EXECUTED_VALUE);
+      setExecuted(p);
     }
   }
 
   public abstract boolean doExecute(Project p);
+
+  @Override
+  public void setExecuted(Project p) {
+    MigrationPropertiesManager.getInstance().getProperties(p).setProperty(migrationId, EXECUTED_VALUE);
+  }
+
+  @Override
+  public boolean isExecuted(Project p) {
+    return EXECUTED_VALUE.equals(MigrationPropertiesManager.getInstance().getProperties(p).getProperty(migrationId));
+  }
+
+  @Override
+  public boolean skipOnNewProject() {
+    return true;
+  }
 }

@@ -25,6 +25,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.platform.ProjectBaseDirectory;
+import jetbrains.mps.migration.global.ProjectMigrationUtil;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -119,6 +120,7 @@ public class ProjectFactory {
   public void activate() {
     if (myCreatedProject == null) return;
     myCreatedProject.getComponent(MPSProjectVersion.class).setVersion(MPSProjectVersion.CURRENT);
+    ProjectMigrationUtil.skipMigrationsOnProjectCreation(myCreatedProject);
 
     ProjectBaseDirectory.getInstance(myCreatedProject).setBaseDir(myCreatedProject.getBaseDir());
 
