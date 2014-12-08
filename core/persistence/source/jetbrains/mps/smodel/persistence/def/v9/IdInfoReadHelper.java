@@ -83,8 +83,7 @@ class IdInfoReadHelper {
 
   public void withLanguage(String id, String name) {
     final SLanguageId languageId = myIdEncoder.parseLanguageId(id);
-    myActualLang = myInfoCollector.registerLanguage(languageId);
-    myActualLang.setName(name);
+    myActualLang = myInfoCollector.registerLanguage(languageId, name);
     myMetaInfoProvider.setLanguageName(languageId, name);
   }
 
@@ -92,8 +91,7 @@ class IdInfoReadHelper {
   public void withConcept(String id, String name, String index, String nodeInfo, String stub) {
     assert myActualLang != null;
     SConceptId conceptId = myIdEncoder.parseConceptId(myActualLang.getLanguageId(), id);
-    myActualConcept = myInfoCollector.registerConcept(conceptId);
-    myActualConcept.setName(name);
+    myActualConcept = myInfoCollector.registerConcept(conceptId, name);
     myActualConcept.parseImplementationKind(nodeInfo);
     myConcepts.put(index, MetaAdapterFactory.getConcept(conceptId, name));
     myMetaInfoProvider.setConceptName(conceptId, name);

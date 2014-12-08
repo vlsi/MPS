@@ -66,16 +66,14 @@ class ReadHelper {
   }
 
   public void withLanguage(SLanguageId lang, String name, int index) {
-    final LangInfo langInfo = myMetaInfo.registerLanguage(lang);
-    langInfo.setName(name);
+    final LangInfo langInfo = myMetaInfo.registerLanguage(lang, name);
     langInfo.setIntIndex(index);
     myMetaInfoProvider.setLanguageName(lang, name);
   }
 
   // @param stub is optional
   public void withConcept(SConceptId concept, String name, StaticScope scope, ConceptKind kind, SConceptId stub, int index) {
-    myActualConcept = myMetaInfo.registerConcept(concept);
-    myActualConcept.setName(name);
+    myActualConcept = myMetaInfo.registerConcept(concept, name);
     myActualConcept.setImplementationKind(scope, kind);
     myActualConcept.setIntIndex(index);
     myConcepts.put(index, MetaAdapterFactory.getConcept(concept, name));
