@@ -73,7 +73,7 @@
       <node id="1178562976728" at="23,0,25,0" concept="3" trace="typeof_Root_MappingRule_InferenceRule#()V" />
       <node id="1178562976728" at="43,0,46,0" concept="10" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1178562976728" at="52,0,55,0" concept="10" trace="overrides#()Z" />
-      <node id="1183153521354" at="33,159,37,13" concept="1" />
+      <node id="1183153521354" at="33,103,37,13" concept="1" />
       <node id="1178562976728" at="46,68,50,5" concept="1" />
       <node id="1183153521352" at="32,85,38,11" concept="9" />
       <node id="1178562976728" at="46,0,52,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -94,7 +94,7 @@
       </scope>
       <scope id="1178562976728" at="43,0,46,0" />
       <scope id="1178562976728" at="52,0,55,0" />
-      <scope id="1183153521353" at="33,159,37,13" />
+      <scope id="1183153521353" at="33,103,37,13" />
       <scope id="1178562976728" at="46,68,50,5" />
       <scope id="1183153521351" at="32,85,38,11" />
       <scope id="1178562976728" at="46,0,52,0">
@@ -1240,7 +1240,7 @@
       <node id="1722980698497666402" at="22,0,24,0" concept="3" trace="typeof_TemplateDeclarationReference_InferenceRule#()V" />
       <node id="1722980698497666402" at="39,0,42,0" concept="10" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1722980698497666402" at="48,0,51,0" concept="10" trace="overrides#()Z" />
-      <node id="1722980698497666436" at="30,157,34,11" concept="1" />
+      <node id="1722980698497666436" at="30,101,34,11" concept="1" />
       <node id="1722980698497666402" at="42,68,46,5" concept="1" />
       <node id="1722980698497666434" at="29,79,35,9" concept="9" />
       <node id="1722980698497666402" at="42,0,48,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -1260,7 +1260,7 @@
       </scope>
       <scope id="1722980698497666402" at="39,0,42,0" />
       <scope id="1722980698497666402" at="48,0,51,0" />
-      <scope id="1722980698497666435" at="30,157,34,11" />
+      <scope id="1722980698497666435" at="30,101,34,11" />
       <scope id="1722980698497666402" at="42,68,46,5" />
       <scope id="1722980698497666433" at="29,79,35,9" />
       <scope id="1722980698497666402" at="42,0,48,0">

@@ -6045,7 +6045,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1226598928538">
     <file name="set_type_equivalent_to_subconcepts_InequationReplacementRule.java">
-      <node id="1240249913658" at="26,201,27,58" concept="9" />
+      <node id="1240249913658" at="26,179,27,58" concept="9" />
       <node id="1240249913658" at="27,58,28,264" concept="9" />
       <node id="1240249913658" at="28,264,29,77" concept="4" />
       <node id="1241473625701" at="31,5,32,73" concept="9" />
@@ -6053,7 +6053,7 @@
       <node id="1241473625701" at="33,209,34,62" concept="4" />
       <node id="1241473625701" at="34,62,35,406" concept="4" />
       <node id="1226598928538" at="38,207,39,35" concept="9" />
-      <node id="1240249913658" at="40,201,41,30" concept="4" />
+      <node id="1240249913658" at="40,179,41,30" concept="4" />
       <node id="1241473625701" at="42,5,43,411" concept="0" />
       <node id="1241473625701" at="42,5,43,411" concept="4" />
       <node id="1226598928538" at="43,411,44,27" concept="10" />
@@ -6079,7 +6079,7 @@
       <node id="1226598928538" at="38,0,46,0" concept="8" trace="checkInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)Z" />
       <node id="1226598928538" at="25,0,38,0" concept="8" trace="processInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
       <scope id="1226598928538" at="23,73,23,73" />
-      <scope id="1240249913658" at="40,201,41,30" />
+      <scope id="1240249913658" at="40,179,41,30" />
       <scope id="1241473625701" at="42,5,43,411" />
       <scope id="1226598928538" at="46,27,47,16" />
       <scope id="1226598928538" at="61,53,62,70" />
@@ -6091,7 +6091,7 @@
       <scope id="1226598928538" at="56,5,58,45">
         <var name="b" id="1226598928538" />
       </scope>
-      <scope id="1240249913658" at="26,201,29,77">
+      <scope id="1240249913658" at="26,179,29,77">
         <var name="_reporter_2309309498" id="1240249913658" />
         <var name="errorTarget" id="1240249913658" />
       </scope>
@@ -7328,7 +7328,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1237470007043">
     <file name="iterator_subtypeOf_iterator_InequationReplacementRule.java">
-      <node id="1240153585729" at="26,201,27,58" concept="9" />
+      <node id="1240153585729" at="26,179,27,58" concept="9" />
       <node id="1240153585729" at="27,58,28,264" concept="9" />
       <node id="1240153585729" at="28,264,29,77" concept="4" />
       <node id="1237470147423" at="31,5,32,73" concept="9" />
@@ -7336,7 +7336,7 @@
       <node id="1237470147423" at="33,209,34,62" concept="4" />
       <node id="1237470147423" at="34,62,35,451" concept="4" />
       <node id="1237470007043" at="38,207,39,35" concept="9" />
-      <node id="1240153585729" at="40,201,41,30" concept="4" />
+      <node id="1240153585729" at="40,179,41,30" concept="4" />
       <node id="1237470147423" at="42,5,43,451" concept="0" />
       <node id="1237470147423" at="42,5,43,451" concept="4" />
       <node id="1237470007043" at="43,451,44,27" concept="10" />
@@ -7362,7 +7362,7 @@
       <node id="1237470007043" at="38,0,46,0" concept="8" trace="checkInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)Z" />
       <node id="1237470007043" at="25,0,38,0" concept="8" trace="processInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
       <scope id="1237470007043" at="23,66,23,66" />
-      <scope id="1240153585729" at="40,201,41,30" />
+      <scope id="1240153585729" at="40,179,41,30" />
       <scope id="1237470147423" at="42,5,43,451" />
       <scope id="1237470007043" at="46,27,47,16" />
       <scope id="1237470007043" at="61,53,62,75" />
@@ -7374,7 +7374,7 @@
       <scope id="1237470007043" at="56,5,58,45">
         <var name="b" id="1237470007043" />
       </scope>
-      <scope id="1240153585729" at="26,201,29,77">
+      <scope id="1240153585729" at="26,179,29,77">
         <var name="_reporter_2309309498" id="1240153585729" />
         <var name="errorTarget" id="1240153585729" />
       </scope>
@@ -14745,7 +14745,7 @@
         <var name="subtype" id="4498918741262504537" />
         <var name="supertype" id="4498918741262504537" />
       </scope>
-      <unit id="4498918741262504599" at="22,274,26,5" name="jetbrains.mps.baseLanguage.collections.typesystem.setType_with_vars_subtypeOf_setType_InequationReplacementRule$2" />
+      <unit id="4498918741262504599" at="22,252,26,5" name="jetbrains.mps.baseLanguage.collections.typesystem.setType_with_vars_subtypeOf_setType_InequationReplacementRule$2" />
       <unit id="4498918741262504716" at="26,79,30,5" name="jetbrains.mps.baseLanguage.collections.typesystem.setType_with_vars_subtypeOf_setType_InequationReplacementRule$1" />
       <unit id="4498918741262504537" at="18,0,62,0" name="jetbrains.mps.baseLanguage.collections.typesystem.setType_with_vars_subtypeOf_setType_InequationReplacementRule" />
     </file>

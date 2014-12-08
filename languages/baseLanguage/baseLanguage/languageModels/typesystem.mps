@@ -59,6 +59,7 @@
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="wqua" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" />
     <import index="ff4b" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" />
+    <import index="qy1n" ref="r:0589449e-3b3b-4a1f-a4d9-4ecd41d0a397(jetbrains.mps.lang.smodel.util.concept)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -10987,12 +10988,12 @@
             <node concept="3cpWs8" id="hr5tzwA" role="3cqZAp">
               <node concept="3cpWsn" id="hr5tzwB" role="3cpWs9">
                 <property role="TrG5h" value="parameterConcept" />
-                <node concept="3THzug" id="hr5tzwC" role="1tU5fm" />
+                <node concept="3bZ5Sz" id="27AGqGEApA9" role="1tU5fm" />
                 <node concept="2OqwBi" id="hxiFqYj" role="33vP2m">
                   <node concept="1YBJjd" id="hr5tvH7" role="2Oq$k0">
                     <ref role="1YBMHb" node="hr5slnk" resolve="parameter" />
                   </node>
-                  <node concept="3NT_Vc" id="hr5twFF" role="2OqNvi" />
+                  <node concept="2yIwOk" id="27AGqGEAp3U" role="2OqNvi" />
                 </node>
               </node>
             </node>
@@ -18275,8 +18276,10 @@
                 </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="hRW$sEd" role="3clFbw">
-              <node concept="2OqwBi" id="hRWvX4H" role="2Oq$k0">
+            <node concept="2YIFZM" id="27AGqGE_2KJ" role="3clFbw">
+              <ref role="1Pybhc" to="qy1n:27AGqGEzknF" resolve="ConceptHierarchyUtil" />
+              <ref role="37wK5l" to="qy1n:27AGqGEzkoI" resolve="isSubconcept" />
+              <node concept="2OqwBi" id="hRWvX4H" role="37wK5m">
                 <node concept="1PxgMI" id="hRWvU3D" role="2Oq$k0">
                   <ref role="1PxNhF" to="tp25:gzTqbfa" resolve="SNodeType" />
                   <node concept="37vLTw" id="3GM_nagTsS5" role="1PxMeX">
@@ -18287,10 +18290,8 @@
                   <ref role="3Tt5mk" to="tp25:g$ehGDh" />
                 </node>
               </node>
-              <node concept="2Zo12i" id="hRW$tvW" role="2OqNvi">
-                <node concept="chp4Y" id="hRW$ult" role="2Zo12j">
-                  <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
-                </node>
+              <node concept="3B5_sB" id="27AGqGE_F$G" role="37wK5m">
+                <ref role="3B5MYn" to="tpee:g7pOWCK" resolve="Classifier" />
               </node>
             </node>
           </node>

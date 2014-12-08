@@ -34,6 +34,7 @@
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
+    <import index="qy1n" ref="r:0589449e-3b3b-4a1f-a4d9-4ecd41d0a397(jetbrains.mps.lang.smodel.util.concept)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -311,9 +312,6 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
-        <child id="1204834868751" name="expression" index="25KhWn" />
-      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -333,9 +331,6 @@
       <concept id="1181949435690" name="jetbrains.mps.lang.smodel.structure.Concept_NewInstance" flags="nn" index="LFhST" />
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
-      </concept>
-      <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
-        <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
       </concept>
       <concept id="1240170042401" name="jetbrains.mps.lang.smodel.structure.SEnumMemberType" flags="in" index="2ZThk1" />
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
@@ -3326,16 +3321,14 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="hx2Fva$" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxgmvzh" role="2Oq$k0">
+          <node concept="2YIFZM" id="27AGqGE_2KJ" role="3clFbw">
+            <ref role="37wK5l" to="qy1n:27AGqGEzkoI" resolve="isSubconcept" />
+            <ref role="1Pybhc" to="qy1n:27AGqGEzknF" resolve="ConceptHierarchyUtil" />
+            <node concept="37vLTw" id="27AGqGE_huz" role="37wK5m">
               <ref role="3cqZAo" node="h9nq4jY" resolve="fromConcept" />
             </node>
-            <node concept="2Zo12i" id="haZqlri" role="2OqNvi">
-              <node concept="25Kdxt" id="h$s0CKx" role="2Zo12j">
-                <node concept="37vLTw" id="2BHiRxglbmu" role="25KhWn">
-                  <ref role="3cqZAo" node="h9nq4jX" resolve="toConcept" />
-                </node>
-              </node>
+            <node concept="37vLTw" id="27AGqGE_h$i" role="37wK5m">
+              <ref role="3cqZAo" node="h9nq4jX" resolve="toConcept" />
             </node>
           </node>
         </node>
@@ -3388,11 +3381,15 @@
       </node>
       <node concept="37vLTG" id="h9nq4jY" role="3clF46">
         <property role="TrG5h" value="fromConcept" />
-        <node concept="3THzug" id="h9nq4EU" role="1tU5fm" />
+        <node concept="3Tqbb2" id="27AGqGE_frd" role="1tU5fm">
+          <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+        </node>
       </node>
       <node concept="37vLTG" id="h9nq4jX" role="3clF46">
         <property role="TrG5h" value="toConcept" />
-        <node concept="3THzug" id="h9nq4EV" role="1tU5fm" />
+        <node concept="3Tqbb2" id="27AGqGE_fx0" role="1tU5fm">
+          <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+        </node>
       </node>
       <node concept="37vLTG" id="h9nq4k2" role="3clF46">
         <property role="TrG5h" value="nodeToReportError" />
