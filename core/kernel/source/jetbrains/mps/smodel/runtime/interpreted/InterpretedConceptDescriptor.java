@@ -13,25 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.language;
+package jetbrains.mps.smodel.runtime.interpreted;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.BaseLinkDescriptor;
 import jetbrains.mps.smodel.runtime.BasePropertyDescriptor;
 import jetbrains.mps.smodel.runtime.BaseReferenceDescriptor;
@@ -42,12 +35,8 @@ import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -59,9 +48,8 @@ import java.util.Map;
 import java.util.Set;
 
 class InterpretedConceptDescriptor extends BaseConceptDescriptor {
-  private String myName;
-  private SConceptId myId;
-  private boolean isLegal;
+  private final String myQualifiedName;
+  private final SConceptId myId;
 
   private boolean isInterface;
   private String superConcept;
@@ -102,66 +90,13 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   private Map<String, ReferenceDescriptor> directReferencesByName = new HashMap<String, ReferenceDescriptor>();
   private Map<String, LinkDescriptor> directLinksByName = new HashMap<String, LinkDescriptor>();
 
-  public static ConceptDescriptor create(SConceptId id) {
-    SModule lang = MPSModuleRepository.getInstance().getModule(ModuleId.Regular.regular(id.getLanguageId().getIdValue()));
-    if (lang instanceof Language) {
-      SModel strucModel = LanguageAspect.STRUCTURE.get(((Language) lang));
-      if (strucModel != null) {
-        SNode prototype = strucModel.getNode(new Regular(id.getIdValue()));
-        if (prototype != null) {
-          return new InterpretedConceptDescriptor(prototype);
-        }
-      }
-    }
+  InterpretedConceptDescriptor(final SNode declaration, SConceptId id, final String qualifiedName) {
+    myId = id;
+    myQualifiedName = qualifiedName;
 
-    return new IllegalConceptDescriptor(id);
-  }
-
-  public static ConceptDescriptor create(String name) {
-    String langName = NameUtil.namespaceFromConceptFQName(name);
-    final String conceptName = NameUtil.shortNameFromLongName(name);
-
-    Language lang = ModuleRepositoryFacade.getInstance().getModule(langName, Language.class);
-    if (lang != null) {
-      final SModel strucModel = LanguageAspect.STRUCTURE.get(lang);
-      if (strucModel != null) {
-        //search for a node in the structure model that q matches given name
-        ConceptDescriptor cd = ModelAccess.instance().runReadAction(new Computable<ConceptDescriptor>() {
-          @Override
-          public ConceptDescriptor compute() {
-            for (SNode n : strucModel.getRootNodes()) {
-              if (SNodeOperations.isInstanceOf(n, SNodeUtil.conceptName_AbstractConceptDeclaration)) {
-                if (conceptName.equals(n.getProperty(SNodeUtil.property_INamedConcept_name))) {
-                  return new InterpretedConceptDescriptor(n);
-                }
-              }
-            }
-            return null;
-          }
-        });
-        if (cd != null) return cd;
-      }
-    }
-
-    return new IllegalConceptDescriptor(name);
-  }
-
-  private InterpretedConceptDescriptor(final SNode declaration) {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
-        myName = declaration.getProperty(SNodeUtil.property_INamedConcept_name);
-        myId = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) declaration);
-
-        if (declaration == null || !SNodeUtil.isInstanceOfAbstractConceptDeclaration(declaration)) {
-          // todo: ?
-          isLegal = false;
-          return;
-        } else {
-          isLegal = true;
-        }
-
-
         // isInterface
         isInterface = SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration);
 
@@ -176,40 +111,37 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         String scopeVal = SPropertyOperations.getString(declaration, "staticScope");
         staticScope = "none".equals(scopeVal) ? StaticScope.NONE : ("root".equals(scopeVal) ? StaticScope.ROOT : StaticScope.GLOBAL);
 
-        // superconcept
-        if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
-          SNode superConceptNode = SNodeUtil.getConceptDeclaration_Extends(declaration);
-
-          if (superConceptNode == null && !SNodeUtil.conceptName_BaseConcept.equals(myName)) {
-            superConcept = SNodeUtil.conceptName_BaseConcept;
-            superConceptId = SNodeUtil.conceptId_BaseConcept;
-          } else {
-            superConcept = conceptFQName(superConceptNode);
-            superConceptId = superConceptNode == null ? null : MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) superConceptNode));
-          }
-        }
-
         // parents
         Set<String> parentsSet = new LinkedHashSet<String>();
         Set<SConceptId> parentsIdsSet = new LinkedHashSet<SConceptId>();
 
         if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
+          // superconcept
+          SNode superConceptNode = SNodeUtil.getConceptDeclaration_Extends(declaration);
+
+          if (superConceptNode == null && !SNodeUtil.conceptName_BaseConcept.equals(myQualifiedName)) {
+            superConcept = SNodeUtil.conceptName_BaseConcept;
+            superConceptId = SNodeUtil.conceptId_BaseConcept;
+          } else {
+            superConcept = StructureAspectInterpreted.conceptFQName(superConceptNode);
+            superConceptId = superConceptNode == null ? null : MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) superConceptNode));
+          }
           parentsSet.add(superConcept);
           parentsIdsSet.add(superConceptId);
 
           for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
-            parentsSet.add(conceptFQName(interfaceConcept));
+            parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
             parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
           }
         } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
           for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
-            parentsSet.add(conceptFQName(interfaceConcept));
+            parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
             parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
           }
         }
 
         parentsSet.remove(null);
-        if (superConcept == null && !SNodeUtil.conceptName_BaseConcept.equals(myName)) {
+        if (superConcept == null && !SNodeUtil.conceptName_BaseConcept.equals(myQualifiedName)) {
           parentsSet.add(SNodeUtil.conceptName_BaseConcept);
           parentsIdsSet.add(SNodeUtil.conceptId_BaseConcept);
         }
@@ -275,7 +207,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
     synchronized (this) {
       if (myIsInitialized) return;
 
-      assert isLegal : "check isLegal and return a default value before calling init()";
       // get parent descriptors
       List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(parents.size());
       for (String parent : parents) {
@@ -289,7 +220,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       ancestorsIds = new HashSet<SConceptId>(parentsIds);
       ancestors = new HashSet<String>(parents);
       ancestorsIds.add(myId);
-      ancestors.add(myName);
+      ancestors.add(myQualifiedName);
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
         ancestorsIds.addAll(parentDescriptor.getAncestorsIds());
         ancestors.addAll(parentDescriptor.getAncestorsNames());
@@ -384,7 +315,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public String getConceptFqName() {
-    return myName;
+    return myQualifiedName;
   }
 
   @Override
@@ -399,32 +330,24 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public Set<String> getPropertyNames() {
-    if (!isLegal) return Collections.emptySet();
-
     init();
     return propertyNames;
   }
 
   @Override
   public Set<String> getReferenceNames() {
-    if (!isLegal) return Collections.emptySet();
-
     init();
     return referenceNames;
   }
 
   @Override
   public Set<String> getChildrenNames() {
-    if (!isLegal) return Collections.emptySet();
-
     init();
     return childrenNames;
   }
 
   @Override
   public Set<String> getUnorderedChildrenNames() {
-    if (!isLegal) return Collections.emptySet();
-
     init();
     return unorderedChildren;
   }
@@ -436,23 +359,17 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public List<String> getParentsNames() {
-    if (!isLegal) return Collections.emptyList();
-
     return parents;
   }
 
   @Override
   public Set<String> getAncestorsNames() {
-    if (!isLegal) return Collections.emptySet();
-
     init();
     return ancestors;
   }
 
   @Override
   public boolean isMultipleChild(String name) {
-    if (!isLegal) return true;
-
     init();
     return childrenMap.get(name);
   }
@@ -495,8 +412,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public List<SConceptId> getParentsIds() {
-    if (!isLegal) return Collections.emptyList();
-
     init();
     return parentsIds;
   }
@@ -509,86 +424,55 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   @Override
   public Set<SPropertyId> getPropertyIds() {
-    if (!isLegal) return Collections.emptySet();
-
     init();
     return myProperties.keySet();
   }
 
   @Override
   public PropertyDescriptor getPropertyDescriptor(SPropertyId id) {
-    if (!isLegal) return null;
-
     init();
     return myProperties.get(id);
   }
 
   @Override
   public PropertyDescriptor getPropertyDescriptor(String name) {
-    if (!isLegal) return null;
-
     init();
     return myPropertiesByName.get(name);
   }
 
   @Override
   public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
-    if (!isLegal) return null;
-
     init();
     return myReferences.get(id);
   }
 
   @Override
   public ReferenceDescriptor getRefDescriptor(String name) {
-    if (!isLegal) return null;
-
     init();
     return myReferencesByName.get(name);
   }
 
   @Override
   public Set<SContainmentLinkId> getLinkIds() {
-    if (!isLegal) return Collections.emptySet();
-
     init();
     return myLinks.keySet();
   }
 
   @Override
   public Set<SReferenceLinkId> getReferenceIds() {
-    if (!isLegal) return Collections.emptySet();
-
     init();
     return myReferences.keySet();
   }
 
   @Override
   public LinkDescriptor getLinkDescriptor(SContainmentLinkId id) {
-    if (!isLegal) return null;
-
     init();
     return myLinks.get(id);
   }
 
   @Override
   public LinkDescriptor getLinkDescriptor(String name) {
-    if (!isLegal) return null;
-
     init();
     return myLinksByName.get(name);
-  }
-
-  //this allows to get concept fq name w/o trying constraints
-  //uses the fact that concept's name can't be overridden in constraints
-  public static String conceptFQName(SNode node) {
-    if (node == null) {
-      return null;
-    }
-    String name = node.getProperty(SNodeUtil.property_INamedConcept_name);
-    SModel model = node.getModel();
-    if (model == null) return name;
-
-    return NameUtil.getModelLongName(model) + "." + name;
   }
 }

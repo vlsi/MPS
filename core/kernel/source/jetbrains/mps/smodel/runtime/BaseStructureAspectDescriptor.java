@@ -34,12 +34,6 @@ public abstract class BaseStructureAspectDescriptor implements StructureAspectDe
   public abstract Collection<ConceptDescriptor> getDescriptors();
 
   @Override
-  public Collection<SConceptId> getConceptIds() {
-    ensureInitialized();
-    return myDescriptors.keySet();
-  }
-
-  @Override
   public ConceptDescriptor getDescriptor(SConceptId id) {
     ensureInitialized();
     return myDescriptors.get(id);

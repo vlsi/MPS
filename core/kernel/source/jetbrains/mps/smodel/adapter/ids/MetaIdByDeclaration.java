@@ -22,6 +22,10 @@ public class MetaIdByDeclaration {
   }
 
   public static SConceptId getConceptId(SNode c) {
+    return getConceptId((org.jetbrains.mps.openapi.model.SNode) c);
+  }
+
+  public static SConceptId getConceptId(org.jetbrains.mps.openapi.model.SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();

@@ -16,7 +16,6 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
@@ -34,6 +33,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SNode;
 
 @Deprecated
 @ToRemove(version = 3.2)
@@ -50,9 +50,11 @@ public class IdHelper {
     if (c instanceof SAbstractConceptAdapterById) {
       return ((SAbstractConceptAdapterById) c).getId();
     } else {
-      org.jetbrains.mps.openapi.model.SNode dn = c.getDeclarationNode();
-      if (dn == null) return null;
-      return MetaIdByDeclaration.getConceptId(((SNode) dn));
+      SNode dn = c.getDeclarationNode();
+      if (dn == null) {
+        return null;
+      }
+      return MetaIdByDeclaration.getConceptId(dn);
     }
   }
 
