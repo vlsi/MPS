@@ -3920,7 +3920,7 @@
         </node>
         <node concept="1SiIV0" id="2a9bszgruO$" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgruOz" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
@@ -3940,12 +3940,6 @@
           <node concept="3bR9La" id="2a9bszgruOH" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1TaHNgiHrmy" resolve="stubUtils" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="5k2Rpy7XWUm" role="3bR37C">
-          <node concept="3bR9La" id="5k2Rpy7XWUn" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="568PkTlOK5Q" resolve="jetbrains.mps.core.xml" />
           </node>
         </node>
       </node>
