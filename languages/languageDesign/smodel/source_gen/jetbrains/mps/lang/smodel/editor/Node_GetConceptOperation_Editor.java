@@ -19,7 +19,7 @@ public class Node_GetConceptOperation_Editor extends DefaultNodeEditor {
     return this.createConstant_7x7o5m_a(editorContext, node);
   }
   private EditorCell createConstant_7x7o5m_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "conceptNode");
     editorCell.setCellId("Constant_7x7o5m_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();

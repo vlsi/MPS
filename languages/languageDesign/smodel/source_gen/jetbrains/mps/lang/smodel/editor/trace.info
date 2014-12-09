@@ -6095,8 +6095,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/1172323101046">
     <file name="Node_GetConceptOperation_Editor.java">
       <node id="1172323101046" at="18,79,19,61" concept="8" />
-      <node id="1172323109267" at="21,87,22,93" concept="7" />
-      <node id="1172323109267" at="22,93,23,46" concept="2" />
+      <node id="1172323109267" at="21,87,22,97" concept="7" />
+      <node id="1172323109267" at="22,97,23,46" concept="2" />
       <node id="1172323109267" at="23,46,24,28" concept="2" />
       <node id="1172323109267" at="24,28,25,34" concept="7" />
       <node id="1172323109267" at="25,34,26,49" concept="2" />
@@ -15991,8 +15991,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/7453996997717780755">
     <file name="Node_GetSConceptOperation_Editor.java">
       <node id="7453996997717780755" at="18,79,19,60" concept="8" />
-      <node id="7453996997717780756" at="21,86,22,94" concept="7" />
-      <node id="7453996997717780756" at="22,94,23,45" concept="2" />
+      <node id="7453996997717780756" at="21,86,22,93" concept="7" />
+      <node id="7453996997717780756" at="22,93,23,45" concept="2" />
       <node id="7453996997717780756" at="23,45,24,28" concept="2" />
       <node id="7453996997717780756" at="24,28,25,34" concept="7" />
       <node id="7453996997717780756" at="25,34,26,49" concept="2" />

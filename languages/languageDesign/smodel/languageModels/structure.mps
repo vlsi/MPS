@@ -722,11 +722,11 @@
   <node concept="1TIwiD" id="h3NT_Zs">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="get node's concept declaration" />
+    <property role="R4oN_" value="node's concept declaration" />
     <property role="TrG5h" value="Node_GetConceptOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="operation.node" />
-    <property role="34LRSv" value="concept" />
+    <property role="34LRSv" value="conceptNode" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
     <node concept="asaX9" id="6tLUGr5UwqR" role="lGtFl" />
   </node>
@@ -2011,11 +2011,11 @@
   <node concept="1TIwiD" id="6tLUGr5MYvi">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="get node's concept declaration" />
+    <property role="R4oN_" value="node's concept" />
     <property role="TrG5h" value="Node_GetSConceptOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="operation.node" />
-    <property role="34LRSv" value="sconcept" />
+    <property role="34LRSv" value="concept" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
 </model>

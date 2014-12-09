@@ -1777,7 +1777,7 @@
     <property role="3GE5qa" value="operation.node" />
     <ref role="1XX52x" to="tp25:h3NT_Zs" resolve="Node_GetConceptOperation" />
     <node concept="3F0ifn" id="h3NTKAj" role="2wV5jI">
-      <property role="3F0ifm" value="concept" />
+      <property role="3F0ifm" value="conceptNode" />
       <property role="1cu_pB" value="1" />
       <node concept="VPxyj" id="hEZKQyk" role="3F10Kt">
         <property role="VOm3f" value="true" />
@@ -4574,7 +4574,7 @@
     <property role="3GE5qa" value="operation.node" />
     <ref role="1XX52x" to="tp25:6tLUGr5MYvi" resolve="Node_GetSConceptOperation" />
     <node concept="3F0ifn" id="6tLUGr5MY$k" role="2wV5jI">
-      <property role="3F0ifm" value="sconcept" />
+      <property role="3F0ifm" value="concept" />
       <property role="1cu_pB" value="1" />
       <node concept="VPxyj" id="6tLUGr5MY$l" role="3F10Kt">
         <property role="VOm3f" value="true" />
