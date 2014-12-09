@@ -71,14 +71,14 @@ public final class RuleUtil {
   public static final SConcept concept_AbstractConceptDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   public static final SConcept concept_ConceptDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
 
-  private static final String concept_ModelNewNodeOp = "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation";
-  private static final String concept_ModelNewRootOp = "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation";
-  private static final String concept_InsertNewNextOp = "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation";
-  private static final String concept_InsertNextOp = "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation";
-  private static final String concept_InsertNewPrevOp = "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation";
-  private static final String concept_InsertPrevOp = "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation";
-  private static final String concept_ReplaceNewOp = "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation";
-  private static final String concept_ReplaceOp = "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation";
+  private static final SConcept concept_ModelNewNodeOp = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2e210544L, "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation");
+  private static final SConcept concept_ModelNewRootOp = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10fa1ac23f2L, "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation");
+  private static final SConcept concept_InsertNewNextOp = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10964e26717L, "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation");
+  private static final SConcept concept_InsertNextOp = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d76e31eL, "jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation");
+  private static final SConcept concept_InsertNewPrevOp = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d494062L, "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation");
+  private static final SConcept concept_InsertPrevOp = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a2d77d0e1L, "jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation");
+  private static final SConcept concept_ReplaceNewOp = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975273750L, "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation");
+  private static final SConcept concept_ReplaceOp = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10965697d7aL, "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation");
 
   /**
    * Alternative to isInstanceOf check in isNodeMacro: supported node macros are known at generation time,
@@ -127,7 +127,7 @@ public final class RuleUtil {
   /**
    * Set of operations that might alter model (insertion of new nodes, replacement)
    */
-  private static final Set<String> ModelChangeOperations = SetSequence.fromSet(new HashSet<String>());
+  private static final Set<SConcept> ModelChangeOperations = SetSequence.fromSet(new HashSet<SConcept>());
   static {
     ModelChangeOperations.add(concept_ModelNewNodeOp);
     ModelChangeOperations.add(concept_ModelNewRootOp);
@@ -420,7 +420,7 @@ public final class RuleUtil {
   public static String getLoopMacroCounterVarName(SNode loopMacro) {
     return SPropertyOperations.getString(loopMacro, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, 0x671e792f3d97a344L, "counterVarName"));
   }
-  public static Iterable<String> getModelChangeOperations() {
+  public static Iterable<SConcept> getModelChangeOperations() {
     return ModelChangeOperations;
   }
 }

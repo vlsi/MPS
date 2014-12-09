@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@ package jetbrains.mps.smodel;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -90,6 +92,7 @@ public class BaseFastNodeFinder implements FastNodeFinder {
   }
 
   @Override
+  @NotNull
   public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
     // notify 'model nodes read access'
     myModel.getRootNodes().iterator();
@@ -107,6 +110,13 @@ public class BaseFastNodeFinder implements FastNodeFinder {
     }
   }
 
+  @NotNull
+  @Override
+  public List<SNode> getNodes(@NotNull SAbstractConcept concept, boolean includeInherited) {
+    return getNodes(concept.getQualifiedName(), includeInherited);
+  }
+
+  @NotNull
   private List<SNode> getNodesImpl(String conceptFQName, boolean includeInherited) {
     if (includeInherited) {
       Set<String> allDescendantsOfConcept = ConceptDescendantsCache.getInstance().getDescendants(conceptFQName);

@@ -130,10 +130,8 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       }
 
       if (descriptor == null) {
-        descriptor = InterpretedConceptDescriptor.create(fqName);
-      }
-
-      if (!(descriptor instanceof IllegalConceptDescriptor)) {
+        descriptor = new IllegalConceptDescriptor(fqName);
+      } else {
         conceptDescriptors.put(fqName, descriptor);
       }
 
@@ -167,10 +165,8 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       }
 
       if (descriptor == null) {
-        descriptor  = InterpretedConceptDescriptor.create(id);
-      }
-
-      if (!(descriptor instanceof IllegalConceptDescriptor)) {
+        descriptor = new IllegalConceptDescriptor(id);
+      } else {
         conceptDescriptorsById.put(id, descriptor);
       }
 
@@ -198,7 +194,8 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         if (languageRuntime == null) {
           LOG.warn("No language for: " + fqName + ", while looking for behavior descriptor.", new Throwable());
         } else {
-          descriptor = languageRuntime.getAspect(BehaviorAspectDescriptor.class).getDescriptor(fqName);
+          final BehaviorAspectDescriptor behaviorAspect = languageRuntime.getAspect(BehaviorAspectDescriptor.class);
+          descriptor = behaviorAspect != null ? behaviorAspect.getDescriptor(fqName) : null;
         }
       } catch (Throwable e) {
         LOG.warn("Exception while behavior descriptor creating", e);
@@ -256,7 +253,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         } else {
           constraintsAspectDescriptor = languageRuntime.getAspect(ConstraintsAspectDescriptor.class);
         }
-        descriptor = constraintsAspectDescriptor.getDescriptor(conceptDescriptor.getId());
+        descriptor = constraintsAspectDescriptor != null ? constraintsAspectDescriptor.getDescriptor(conceptDescriptor.getId()) : null;
       } catch (Throwable e) {
         LOG.warn("Exception while constraints descriptor creating", e);
       }

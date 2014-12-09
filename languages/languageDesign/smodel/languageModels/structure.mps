@@ -722,11 +722,11 @@
   <node concept="1TIwiD" id="h3NT_Zs">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="get node's concept declaration" />
+    <property role="R4oN_" value="node's concept declaration" />
     <property role="TrG5h" value="Node_GetConceptOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="operation.node" />
-    <property role="34LRSv" value="concept" />
+    <property role="34LRSv" value="conceptNode" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
     <node concept="asaX9" id="6tLUGr5UwqR" role="lGtFl" />
   </node>
@@ -749,11 +749,11 @@
   <node concept="1TIwiD" id="h3THzq0">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="concept type" />
+    <property role="R4oN_" value="node&lt;AbstractConceptDeclaration&gt;" />
     <property role="TrG5h" value="SConceptType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="type" />
-    <property role="34LRSv" value="concept&lt; &gt;" />
+    <property role="34LRSv" value="conceptNode&lt; &gt;" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
     <node concept="1TJgyj" id="hbqa45m" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaraton" />
@@ -764,11 +764,11 @@
   <node concept="1TIwiD" id="h3TUQj6">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="concept reference" />
+    <property role="R4oN_" value="concept declaration node" />
     <property role="TrG5h" value="ConceptRefExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
-    <property role="34LRSv" value="concept/&lt;name&gt;/" />
+    <property role="34LRSv" value="conceptNode/&lt;name&gt;/" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="h3TV0KE" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
@@ -1151,11 +1151,11 @@
   <node concept="1TIwiD" id="hQ8GBOl">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="link reference" />
+    <property role="R4oN_" value="link declaration node" />
     <property role="TrG5h" value="LinkRefExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
-    <property role="34LRSv" value="link/&lt;role&gt;/" />
+    <property role="34LRSv" value="linkNode/&lt;role&gt;/" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="hQ8GBOm" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
@@ -1521,7 +1521,8 @@
     <property role="TrG5h" value="ConceptFqNameRefExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
-    <property role="34LRSv" value="concept qualified name/&lt;name&gt;/" />
+    <property role="34LRSv" value="conceptFqName/&lt;name&gt;/" />
+    <property role="R4oN_" value="full qualified name" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="7eX9cM$Yh9l" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
@@ -1584,7 +1585,7 @@
     <property role="TrG5h" value="LinkNameRefExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
-    <property role="34LRSv" value="link name/&lt;role&gt;/" />
+    <property role="34LRSv" value="linkName/&lt;role&gt;/" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="4zASA_hyZsH" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
@@ -1605,7 +1606,7 @@
     <property role="TrG5h" value="PropertyNameRefExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
-    <property role="34LRSv" value="property name/&lt;role&gt;/" />
+    <property role="34LRSv" value="propertyName/&lt;name&gt;/" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="4zASA_hz8BS" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
@@ -1935,8 +1936,8 @@
     <property role="TrG5h" value="ConceptIdRefExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
-    <property role="34LRSv" value="sconcept/&lt;name&gt;/" />
-    <property role="R4oN_" value="concept reference" />
+    <property role="34LRSv" value="concept/&lt;name&gt;/" />
+    <property role="R4oN_" value="openapi SAbstractConcept" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="2iMJRNxweHl" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
@@ -1951,7 +1952,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
     <property role="34LRSv" value="link/&lt;role&gt;/" />
-    <property role="R4oN_" value="name" />
+    <property role="R4oN_" value="SContainmentLink or SReferenceLink" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="2iMJRNx_nom" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
@@ -1971,7 +1972,8 @@
     <property role="TrG5h" value="PropertyIdRefExpression" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
-    <property role="34LRSv" value="property/&lt;role&gt;/" />
+    <property role="34LRSv" value="property/&lt;name&gt;/" />
+    <property role="R4oN_" value="openapi SProperty" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="2iMJRNxD2Yx" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaration" />
@@ -1989,7 +1991,7 @@
     <property role="TrG5h" value="AsSConcept" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="operation" />
-    <property role="34LRSv" value="asSConcept" />
+    <property role="34LRSv" value="asConcept" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
   <node concept="1TIwiD" id="5MFgGQnlLNI">
@@ -1999,7 +2001,7 @@
     <property role="TrG5h" value="SConceptTypeSConcept" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="type" />
-    <property role="34LRSv" value="sconcept&lt; &gt;" />
+    <property role="34LRSv" value="concept&lt; &gt;" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
     <node concept="1TJgyj" id="5MFgGQnlLNJ" role="1TKVEi">
       <property role="20kJfa" value="conceptDeclaraton" />
@@ -2009,11 +2011,11 @@
   <node concept="1TIwiD" id="6tLUGr5MYvi">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="get node's concept declaration" />
+    <property role="R4oN_" value="node's concept" />
     <property role="TrG5h" value="Node_GetSConceptOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="operation.node" />
-    <property role="34LRSv" value="sconcept" />
+    <property role="34LRSv" value="concept" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
 </model>

@@ -28,8 +28,17 @@ import java.util.Collection;
  * @see jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor
  */
 public interface StructureAspectDescriptor extends LanguageAspectDescriptor {
+  /**
+   *
+   * @param fqName qualified name of the concept to load, not-<code>null</code>
+   * @return <code>null</code> if no concept with the specified name is known to this descriptor
+   */
   ConceptDescriptor getDescriptor(String fqName);
 
-  Collection<SConceptId> getConceptIds();
+  /**
+   *
+   * @param id concept identity, not <code>null</code>
+   * @return <code>null</code> if no concept with specified id is known to this descriptor
+   */
   ConceptDescriptor getDescriptor(SConceptId id);
 }

@@ -32,14 +32,15 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.openapi.progress.Task;
+import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.FileUtil;
-import java.io.IOException;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -114,15 +115,16 @@ public class ConflictingModelsUtil {
     return false;
   }
 
-  public static Task getModelConflictResolverTask(Project project, MergeProvider provider, com.intellij.openapi.vcs.merge.MergeSession session, List<VirtualFile> conflictedFiles) {
+  public static ConflictingModelsUtil.ModelConflictResolver getModelConflictResolverTask(Project project, MergeProvider provider, com.intellij.openapi.vcs.merge.MergeSession session, List<VirtualFile> conflictedFiles) {
     return new ConflictingModelsUtil.ModelConflictResolver(project, provider, session, conflictedFiles);
   }
 
-  private static class ModelConflictResolver extends Task.Modal {
+  public static class ModelConflictResolver extends Task.Modal {
     private Project myProject;
     private MergeProvider myProvider;
     private com.intellij.openapi.vcs.merge.MergeSession mySession;
     private List<VirtualFile> myConflictedModelFiles;
+    private List<VirtualFile> myResolvedModelFiles = ListSequence.fromList(new ArrayList<VirtualFile>());
 
     public ModelConflictResolver(Project project, MergeProvider provider, com.intellij.openapi.vcs.merge.MergeSession session, List<VirtualFile> conflictedFiles) {
       super(project, "Resolving conflicts in models", true);
@@ -130,6 +132,10 @@ public class ConflictingModelsUtil {
       mySession = session;
       myProject = project;
       myConflictedModelFiles = conflictedFiles;
+    }
+
+    public List<VirtualFile> getResolvedFiles() {
+      return myResolvedModelFiles;
     }
 
     public void run(@NotNull ProgressIndicator indicator) {
@@ -200,14 +206,15 @@ public class ConflictingModelsUtil {
                 }
                 try {
                   file.setBinaryContent(resultContent.getBytes(FileUtil.DEFAULT_CHARSET));
+                  check_2bxr1q_a1a2a0c0a0a81a0a2a01g(mySession, file);
+                  VcsDirtyScopeManager.getInstance(myProject).fileDirty(file);
+                  ListSequence.fromList(myResolvedModelFiles).addElement(file);
                 } catch (IOException e) {
                   if (LOG.isEnabledFor(Level.ERROR)) {
-                    LOG.error("", e);
+                    LOG.error("Cannot save merge result into " + file.getPath(), e);
                   }
                 }
 
-                check_2bxr1q_a4a0c0a0a81a0a2a7g(mySession, file);
-                VcsDirtyScopeManager.getInstance(myProject).fileDirty(file);
               }
             }
           });
@@ -221,7 +228,7 @@ public class ConflictingModelsUtil {
         monitor.done();
       }
     }
-    private static void check_2bxr1q_a4a0c0a0a81a0a2a7g(com.intellij.openapi.vcs.merge.MergeSession checkedDotOperand, VirtualFile file) {
+    private static void check_2bxr1q_a1a2a0c0a0a81a0a2a01g(com.intellij.openapi.vcs.merge.MergeSession checkedDotOperand, VirtualFile file) {
       if (null != checkedDotOperand) {
         checkedDotOperand.conflictResolvedForFile(file, com.intellij.openapi.vcs.merge.MergeSession.Resolution.Merged);
       }

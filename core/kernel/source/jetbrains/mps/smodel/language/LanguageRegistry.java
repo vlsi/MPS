@@ -21,7 +21,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -40,7 +39,6 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import static java.lang.String.format;
-import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguage;
 
 /**
  * evgeny, 3/11/11
@@ -116,8 +114,29 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   @Nullable
   private static LanguageRuntime createRuntime(Language l) {
-    LanguageRuntime lr = getObjectByClassNameForLanguage(l.getModuleName() + ".Language", LanguageRuntime.class, l);
-    if (lr != null) return lr;
+    final String rtClassName = l.getModuleName() + ".Language";
+    // Here, we consider few cases:
+    // (a) there's no LR class
+    // (b) there's legacy (previous MPS version, 3.1 at the moment) LR class (if we did changes to LR this release)
+    // (c) LR in accordance with actual MPS version
+    // Both (b) and (c) may fail during class-loading, which we treat as invalid language, although
+    // for legacy versions and careless class evolution we might face otherwise valid languages which
+    // fail to load due to class validation errors. Now (as of 3.2) we assume classes from 3.1 are either
+    // deleted, or loaded successfully (although not complete functional, i.e. load succeeds only from Java perspective)
+    // Thus, for missing LR we assume 'Migrate from 3.1' scenario and provide interpreted LR to support migration, and
+    // otherwise we treat an error as invalid/missing language.
+    try {
+      final Class<?> rtClass = l.getOwnClass(rtClassName);
+      if (rtClass != null && LanguageRuntime.class.isAssignableFrom(rtClass)) {
+        return ((Class<LanguageRuntime>) rtClass).newInstance();
+      }
+    } catch(ClassNotFoundException ex) {
+      return new InterpretedLanguageRuntime(l);
+    } catch (InstantiationException e) {
+      return null;
+    } catch (IllegalAccessException e) {
+      return null;
+    }
     return null;
   }
 
@@ -203,10 +222,14 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       if (module instanceof Language) {
         String namespace = module.getModuleName();
         assert (!myLanguages.containsKey(namespace));
-        LanguageRuntime runtime = createRuntime((Language) module);
+        final Language langModule = (Language) module;
+        LanguageRuntime runtime = createRuntime(langModule);
         if (runtime != null) {
           myLanguages.put(namespace, runtime);
-          myLanguagesById.put(MetaIdByDeclaration.getLanguageId(((Language) module)), runtime);
+          if (runtime.getId() == null) {
+            runtime.setId(MetaIdByDeclaration.getLanguageId(langModule));
+          }
+          myLanguagesById.put(runtime.getId(), runtime);
           loadedRuntimes.add(runtime);
         }
       }

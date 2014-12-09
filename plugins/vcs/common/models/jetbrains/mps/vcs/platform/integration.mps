@@ -64,6 +64,10 @@
     <import index="hcps" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vcs.merge(com.intellij.openapi.vcs.merge@java_stub)" />
     <import index="z8de" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(org.jetbrains.mps.openapi.util@java_stub)" />
     <import index="x609" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.progress(jetbrains.mps.progress@java_stub)" />
+    <import index="15tk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vcs.impl(MPS.IDEA/com.intellij.openapi.vcs.impl@java_stub)" />
+    <import index="8q6x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
+    <import index="xqpa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
+    <import index="yq2y" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.uiDesigner.core(MPS.Platform/com.intellij.uiDesigner.core@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -373,9 +377,13 @@
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
+      <concept id="1176906603202" name="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" flags="nn" index="56pJg">
+        <child id="1176906787974" name="rightExpression" index="576Qk" />
+      </concept>
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
         <child id="540871147943773366" name="argument" index="25WWJ7" />
       </concept>
+      <concept id="1176923520476" name="jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation" flags="nn" index="66VNe" />
       <concept id="1172664342967" name="jetbrains.mps.baseLanguage.collections.structure.TakeOperation" flags="nn" index="8ftyA">
         <child id="1172664372046" name="elementsToTake" index="8f$Dv" />
       </concept>
@@ -404,6 +412,7 @@
         <child id="1237731803878" name="copyFrom" index="I$8f6" />
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1162934736510" name="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" flags="nn" index="34jXtK" />
@@ -7150,8 +7159,8 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="68MS4n2MIYE" role="1B3o_S" />
-      <node concept="3uibUv" id="68MS4n2MK$3" role="3clF45">
-        <ref role="3uigEE" to="fw3h:~Task" resolve="Task" />
+      <node concept="3uibUv" id="3xywf4w3E5D" role="3clF45">
+        <ref role="3uigEE" node="68MS4n2IA6m" resolve="ConflictingModelsUtil.ModelConflictResolver" />
       </node>
     </node>
     <node concept="2tJIrI" id="68MS4n2Nawa" role="jymVt" />
@@ -7201,6 +7210,25 @@
           </node>
         </node>
         <node concept="3Tm6S6" id="68MS4n2ITpf" role="1B3o_S" />
+      </node>
+      <node concept="312cEg" id="3xywf4w2_T1" role="jymVt">
+        <property role="34CwA1" value="false" />
+        <property role="eg7rD" value="false" />
+        <property role="TrG5h" value="myResolvedModelFiles" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3Tm6S6" id="3xywf4w2$9T" role="1B3o_S" />
+        <node concept="_YKpA" id="3xywf4w2_sD" role="1tU5fm">
+          <node concept="3uibUv" id="3xywf4w2_SA" role="_ZDj9">
+            <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+          </node>
+        </node>
+        <node concept="2ShNRf" id="3xywf4w2I7N" role="33vP2m">
+          <node concept="Tc6Ow" id="3xywf4w2BNO" role="2ShVmc">
+            <node concept="3uibUv" id="3xywf4w2BNP" role="HW$YZ">
+              <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="2tJIrI" id="68MS4n2ICnw" role="jymVt" />
       <node concept="3clFbW" id="68MS4n2IH0v" role="jymVt">
@@ -7288,6 +7316,27 @@
         </node>
       </node>
       <node concept="2tJIrI" id="68MS4n2IGSS" role="jymVt" />
+      <node concept="3clFb_" id="3xywf4w2OR$" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getResolvedFiles" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="3xywf4w2ORB" role="3clF47">
+          <node concept="3clFbF" id="3xywf4w2SuO" role="3cqZAp">
+            <node concept="37vLTw" id="3xywf4w2SuN" role="3clFbG">
+              <ref role="3cqZAo" node="3xywf4w2_T1" resolve="myResolvedModelFiles" />
+            </node>
+          </node>
+        </node>
+        <node concept="_YKpA" id="3xywf4w2NaN" role="3clF45">
+          <node concept="3uibUv" id="3xywf4w2OR5" role="_ZDj9">
+            <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="3xywf4w2Q$v" role="1B3o_S" />
+      </node>
+      <node concept="2tJIrI" id="3xywf4w2JMs" role="jymVt" />
       <node concept="3clFb_" id="68MS4n2IAbg" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="run" />
@@ -7862,7 +7911,19 @@
                                           <node concept="37vLTw" id="68MS4n2ITA2" role="34bMjA">
                                             <ref role="3cqZAo" node="68MS4n2ITA4" resolve="e" />
                                           </node>
-                                          <node concept="Xl_RD" id="68MS4n2ITA3" role="34bqiv" />
+                                          <node concept="3cpWs3" id="2KwMPsppKrT" role="34bqiv">
+                                            <node concept="2OqwBi" id="2KwMPsppOuA" role="3uHU7w">
+                                              <node concept="2GrUjf" id="2KwMPsppN3s" role="2Oq$k0">
+                                                <ref role="2Gs0qQ" node="7yFo2Ea1tdf" resolve="file" />
+                                              </node>
+                                              <node concept="liA8E" id="2KwMPsppQwv" role="2OqNvi">
+                                                <ref role="37wK5l" to="3df7:~VirtualFile.getPath():java.lang.String" resolve="getPath" />
+                                              </node>
+                                            </node>
+                                            <node concept="Xl_RD" id="68MS4n2ITA3" role="3uHU7B">
+                                              <property role="Xl_RC" value="Cannot save merge result into " />
+                                            </node>
+                                          </node>
                                         </node>
                                       </node>
                                       <node concept="3cpWsn" id="68MS4n2ITA4" role="TDEfY">
@@ -7895,43 +7956,55 @@
                                           </node>
                                         </node>
                                       </node>
+                                      <node concept="3clFbF" id="7yFo2Ea4bQD" role="3cqZAp">
+                                        <node concept="2EnYce" id="7yFo2Ea5ywe" role="3clFbG">
+                                          <node concept="37vLTw" id="7yFo2Ea4bQB" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="68MS4n2IGQd" resolve="mySession" />
+                                          </node>
+                                          <node concept="liA8E" id="7yFo2Ea4cEF" role="2OqNvi">
+                                            <ref role="37wK5l" to="hcps:~MergeSession.conflictResolvedForFile(com.intellij.openapi.vfs.VirtualFile,com.intellij.openapi.vcs.merge.MergeSession$Resolution):void" resolve="conflictResolvedForFile" />
+                                            <node concept="2GrUjf" id="7yFo2Ea4d1D" role="37wK5m">
+                                              <ref role="2Gs0qQ" node="7yFo2Ea1tdf" resolve="file" />
+                                            </node>
+                                            <node concept="Rm8GO" id="7yFo2Ea4qA9" role="37wK5m">
+                                              <ref role="1Px2BO" to="hcps:~MergeSession$Resolution" resolve="MergeSession.Resolution" />
+                                              <ref role="Rm8GQ" to="hcps:~MergeSession$Resolution.Merged" resolve="Merged" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="3clFbF" id="7yFo2Ea4fff" role="3cqZAp">
+                                        <node concept="2OqwBi" id="7yFo2Ea4jmL" role="3clFbG">
+                                          <node concept="2YIFZM" id="7yFo2Ea4gnG" role="2Oq$k0">
+                                            <ref role="37wK5l" to="o84r:~VcsDirtyScopeManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.vcs.changes.VcsDirtyScopeManager" resolve="getInstance" />
+                                            <ref role="1Pybhc" to="o84r:~VcsDirtyScopeManager" resolve="VcsDirtyScopeManager" />
+                                            <node concept="37vLTw" id="68MS4n2IZdd" role="37wK5m">
+                                              <ref role="3cqZAo" node="68MS4n2ILJ8" resolve="myProject" />
+                                            </node>
+                                          </node>
+                                          <node concept="liA8E" id="7yFo2Ea4jJf" role="2OqNvi">
+                                            <ref role="37wK5l" to="o84r:~VcsDirtyScopeManager.fileDirty(com.intellij.openapi.vfs.VirtualFile):void" resolve="fileDirty" />
+                                            <node concept="2GrUjf" id="7yFo2Ea4kaA" role="37wK5m">
+                                              <ref role="2Gs0qQ" node="7yFo2Ea1tdf" resolve="file" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="3clFbF" id="3xywf4w2TQV" role="3cqZAp">
+                                        <node concept="2OqwBi" id="3xywf4w2VzM" role="3clFbG">
+                                          <node concept="37vLTw" id="3xywf4w2TQT" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="3xywf4w2_T1" resolve="myResolvedModelFiles" />
+                                          </node>
+                                          <node concept="TSZUe" id="3xywf4w2Xzb" role="2OqNvi">
+                                            <node concept="2GrUjf" id="3xywf4w32ww" role="25WWJ7">
+                                              <ref role="2Gs0qQ" node="7yFo2Ea1tdf" resolve="file" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
                                     </node>
                                   </node>
                                   <node concept="3clFbH" id="7yFo2Ea3zuB" role="3cqZAp" />
-                                  <node concept="3clFbF" id="7yFo2Ea4bQD" role="3cqZAp">
-                                    <node concept="2EnYce" id="7yFo2Ea5ywe" role="3clFbG">
-                                      <node concept="37vLTw" id="7yFo2Ea4bQB" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="68MS4n2IGQd" resolve="mySession" />
-                                      </node>
-                                      <node concept="liA8E" id="7yFo2Ea4cEF" role="2OqNvi">
-                                        <ref role="37wK5l" to="hcps:~MergeSession.conflictResolvedForFile(com.intellij.openapi.vfs.VirtualFile,com.intellij.openapi.vcs.merge.MergeSession$Resolution):void" resolve="conflictResolvedForFile" />
-                                        <node concept="2GrUjf" id="7yFo2Ea4d1D" role="37wK5m">
-                                          <ref role="2Gs0qQ" node="7yFo2Ea1tdf" resolve="file" />
-                                        </node>
-                                        <node concept="Rm8GO" id="7yFo2Ea4qA9" role="37wK5m">
-                                          <ref role="1Px2BO" to="hcps:~MergeSession$Resolution" resolve="MergeSession.Resolution" />
-                                          <ref role="Rm8GQ" to="hcps:~MergeSession$Resolution.Merged" resolve="Merged" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="3clFbF" id="7yFo2Ea4fff" role="3cqZAp">
-                                    <node concept="2OqwBi" id="7yFo2Ea4jmL" role="3clFbG">
-                                      <node concept="2YIFZM" id="7yFo2Ea4gnG" role="2Oq$k0">
-                                        <ref role="37wK5l" to="o84r:~VcsDirtyScopeManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.vcs.changes.VcsDirtyScopeManager" resolve="getInstance" />
-                                        <ref role="1Pybhc" to="o84r:~VcsDirtyScopeManager" resolve="VcsDirtyScopeManager" />
-                                        <node concept="37vLTw" id="68MS4n2IZdd" role="37wK5m">
-                                          <ref role="3cqZAo" node="68MS4n2ILJ8" resolve="myProject" />
-                                        </node>
-                                      </node>
-                                      <node concept="liA8E" id="7yFo2Ea4jJf" role="2OqNvi">
-                                        <ref role="37wK5l" to="o84r:~VcsDirtyScopeManager.fileDirty(com.intellij.openapi.vfs.VirtualFile):void" resolve="fileDirty" />
-                                        <node concept="2GrUjf" id="7yFo2Ea4kaA" role="37wK5m">
-                                          <ref role="2Gs0qQ" node="7yFo2Ea1tdf" resolve="file" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
                                 </node>
                               </node>
                             </node>
@@ -7998,9 +8071,335 @@
       <node concept="3uibUv" id="68MS4n2IAaX" role="1zkMxy">
         <ref role="3uigEE" to="fw3h:~Task$Modal" resolve="Task.Modal" />
       </node>
-      <node concept="3Tm6S6" id="68MS4n2MNNk" role="1B3o_S" />
+      <node concept="3Tm1VV" id="3xywf4w2Ia$" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="68MS4n2I8HS" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="3oPvWSRo4RF">
+    <property role="TrG5h" value="MPSVcsHelper" />
+    <node concept="3clFbW" id="3oPvWSRpQsh" role="jymVt">
+      <node concept="3cqZAl" id="3oPvWSRpQsj" role="3clF45" />
+      <node concept="3Tm1VV" id="3oPvWSRpQsk" role="1B3o_S" />
+      <node concept="3clFbS" id="3oPvWSRpQsl" role="3clF47">
+        <node concept="XkiVB" id="3oPvWSRpUSm" role="3cqZAp">
+          <ref role="37wK5l" to="15tk:~AbstractVcsHelperImpl.&lt;init&gt;(com.intellij.openapi.project.Project)" resolve="AbstractVcsHelperImpl" />
+          <node concept="37vLTw" id="3oPvWSRpUS_" role="37wK5m">
+            <ref role="3cqZAo" node="3oPvWSRpQvq" resolve="project" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3oPvWSRpQvq" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="3oPvWSRpQvp" role="1tU5fm">
+          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3oPvWSRr8F8" role="jymVt" />
+    <node concept="3clFb_" id="3oPvWSRpVET" role="jymVt">
+      <property role="TrG5h" value="showMergeDialog" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="2AHcQZ" id="3oPvWSRpVEU" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="2AHcQZ" id="3oPvWSRpVEV" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+      <node concept="37vLTG" id="3oPvWSRpVEW" role="3clF46">
+        <property role="TrG5h" value="files" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="3oPvWSRpVEX" role="1tU5fm">
+          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+          <node concept="3uibUv" id="3oPvWSRpVEY" role="11_B2D">
+            <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3oPvWSRpVEZ" role="3clF46">
+        <property role="TrG5h" value="provider" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="3oPvWSRpVF0" role="1tU5fm">
+          <ref role="3uigEE" to="hcps:~MergeProvider" resolve="MergeProvider" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="3oPvWSRpVF1" role="3clF46">
+        <property role="TrG5h" value="customizer" />
+        <property role="3TUv4t" value="false" />
+        <node concept="2AHcQZ" id="3oPvWSRpVF2" role="2AJF6D">
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+        </node>
+        <node concept="3uibUv" id="3oPvWSRpVF3" role="1tU5fm">
+          <ref role="3uigEE" to="hcps:~MergeDialogCustomizer" resolve="MergeDialogCustomizer" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3oPvWSRpVF4" role="3clF47">
+        <node concept="3clFbH" id="7UDnPJKjM5v" role="3cqZAp" />
+        <node concept="3clFbJ" id="7UDnPJKk2_1" role="3cqZAp">
+          <node concept="3clFbS" id="7UDnPJKk2_4" role="3clFbx">
+            <node concept="3clFbH" id="7UDnPJKk5X8" role="3cqZAp" />
+            <node concept="3cpWs8" id="7UDnPJKkDhs" role="3cqZAp">
+              <node concept="3cpWsn" id="7UDnPJKkDhv" role="3cpWs9">
+                <property role="TrG5h" value="answer" />
+                <node concept="10Oyi0" id="7UDnPJKkDhq" role="1tU5fm" />
+                <node concept="2YIFZM" id="7UDnPJKkDIs" role="33vP2m">
+                  <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
+                  <ref role="37wK5l" to="810:~Messages.showYesNoCancelDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):int" resolve="showYesNoCancelDialog" />
+                  <node concept="37vLTw" id="7UDnPJKkDIt" role="37wK5m">
+                    <ref role="3cqZAo" to="3dcm:~AbstractVcsHelper.myProject" resolve="myProject" />
+                  </node>
+                  <node concept="Xl_RD" id="7UDnPJKkDIu" role="37wK5m">
+                    <property role="Xl_RC" value="Some conflicts in MPS models can be autoresolved. Resolve such conflicts automatically?" />
+                  </node>
+                  <node concept="Xl_RD" id="7UDnPJKkDIv" role="37wK5m">
+                    <property role="Xl_RC" value="Conflict Resolver" />
+                  </node>
+                  <node concept="2YIFZM" id="3xywf4w10ZG" role="37wK5m">
+                    <ref role="37wK5l" to="810:~Messages.getQuestionIcon():javax.swing.Icon" resolve="getQuestionIcon" />
+                    <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="7UDnPJKlRH4" role="3cqZAp">
+              <node concept="3clFbS" id="7UDnPJKlRH7" role="3clFbx">
+                <node concept="3cpWs6" id="7UDnPJKlTBU" role="3cqZAp">
+                  <node concept="2YIFZM" id="7UDnPJKlUTc" role="3cqZAk">
+                    <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+                    <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbC" id="7UDnPJKlSsZ" role="3clFbw">
+                <node concept="10M0yZ" id="7UDnPJKlStU" role="3uHU7w">
+                  <ref role="1PxDUh" to="810:~Messages" resolve="Messages" />
+                  <ref role="3cqZAo" to="810:~Messages.CANCEL" resolve="CANCEL" />
+                </node>
+                <node concept="37vLTw" id="7UDnPJKlRRI" role="3uHU7B">
+                  <ref role="3cqZAo" node="7UDnPJKkDhv" resolve="answer" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="7UDnPJKlVBq" role="3cqZAp">
+              <node concept="3clFbS" id="7UDnPJKlVBt" role="3clFbx">
+                <node concept="3cpWs8" id="7yFo2Ea1kAj" role="3cqZAp">
+                  <node concept="3cpWsn" id="7yFo2Ea1kAk" role="3cpWs9">
+                    <property role="TrG5h" value="session" />
+                    <node concept="3uibUv" id="7yFo2Ea1kAl" role="1tU5fm">
+                      <ref role="3uigEE" to="hcps:~MergeSession" resolve="MergeSession" />
+                    </node>
+                    <node concept="3K4zz7" id="7yFo2Ea1mpT" role="33vP2m">
+                      <node concept="10Nm6u" id="7yFo2Ea1rb1" role="3K4GZi" />
+                      <node concept="2OqwBi" id="7yFo2Ea1mJr" role="3K4E3e">
+                        <node concept="1eOMI4" id="7yFo2Ea1mrF" role="2Oq$k0">
+                          <node concept="10QFUN" id="7yFo2Ea1mrC" role="1eOMHV">
+                            <node concept="3uibUv" id="7yFo2Ea1mDs" role="10QFUM">
+                              <ref role="3uigEE" to="hcps:~MergeProvider2" resolve="MergeProvider2" />
+                            </node>
+                            <node concept="37vLTw" id="7yFo2Ea1mEh" role="10QFUP">
+                              <ref role="3cqZAo" node="3oPvWSRpVEZ" resolve="provider" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="7yFo2Ea1nHR" role="2OqNvi">
+                          <ref role="37wK5l" to="hcps:~MergeProvider2.createMergeSession(java.util.List):com.intellij.openapi.vcs.merge.MergeSession" resolve="createMergeSession" />
+                          <node concept="37vLTw" id="7UDnPJKk8Y1" role="37wK5m">
+                            <ref role="3cqZAo" node="3oPvWSRpVEW" resolve="files" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2ZW3vV" id="7yFo2Ea1lrq" role="3K4Cdx">
+                        <node concept="3uibUv" id="7yFo2Ea1lRl" role="2ZW6by">
+                          <ref role="3uigEE" to="hcps:~MergeProvider2" resolve="MergeProvider2" />
+                        </node>
+                        <node concept="37vLTw" id="7yFo2Ea1lnR" role="2ZW6bz">
+                          <ref role="3cqZAo" node="3oPvWSRpVEZ" resolve="provider" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="3xywf4w3r7N" role="3cqZAp">
+                  <node concept="3cpWsn" id="3xywf4w3r7O" role="3cpWs9">
+                    <property role="TrG5h" value="modelConflictResolverTask" />
+                    <node concept="3uibUv" id="3xywf4w3rFk" role="1tU5fm">
+                      <ref role="3uigEE" node="68MS4n2IA6m" resolve="ConflictingModelsUtil.ModelConflictResolver" />
+                    </node>
+                    <node concept="2YIFZM" id="3xywf4w3r7P" role="33vP2m">
+                      <ref role="37wK5l" node="68MS4n2MKAn" resolve="getModelConflictResolverTask" />
+                      <ref role="1Pybhc" node="68MS4n2I8HR" resolve="ConflictingModelsUtil" />
+                      <node concept="37vLTw" id="3xywf4w3r7Q" role="37wK5m">
+                        <ref role="3cqZAo" to="3dcm:~AbstractVcsHelper.myProject" resolve="myProject" />
+                      </node>
+                      <node concept="37vLTw" id="3xywf4w3r7R" role="37wK5m">
+                        <ref role="3cqZAo" node="3oPvWSRpVEZ" resolve="provider" />
+                      </node>
+                      <node concept="37vLTw" id="3xywf4w3r7S" role="37wK5m">
+                        <ref role="3cqZAo" node="7yFo2Ea1kAk" resolve="session" />
+                      </node>
+                      <node concept="37vLTw" id="3xywf4w3r7T" role="37wK5m">
+                        <ref role="3cqZAo" node="3oPvWSRpVEW" resolve="files" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="68MS4n2MqhO" role="3cqZAp">
+                  <node concept="2OqwBi" id="68MS4n2MumT" role="3clFbG">
+                    <node concept="2YIFZM" id="68MS4n2Mt6y" role="2Oq$k0">
+                      <ref role="1Pybhc" to="fw3h:~ProgressManager" resolve="ProgressManager" />
+                      <ref role="37wK5l" to="fw3h:~ProgressManager.getInstance():com.intellij.openapi.progress.ProgressManager" resolve="getInstance" />
+                    </node>
+                    <node concept="liA8E" id="68MS4n2Mw2u" role="2OqNvi">
+                      <ref role="37wK5l" to="fw3h:~ProgressManager.run(com.intellij.openapi.progress.Task):void" resolve="run" />
+                      <node concept="37vLTw" id="3xywf4w3r7U" role="37wK5m">
+                        <ref role="3cqZAo" node="3xywf4w3r7O" resolve="modelConflictResolverTask" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="7UDnPJKmeRs" role="3cqZAp">
+                  <node concept="3SKdUq" id="7UDnPJKmf06" role="3SKWNk">
+                    <property role="3SKdUp" value="update list of files" />
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="2KwMPspmaUC" role="3cqZAp">
+                  <node concept="3cpWsn" id="2KwMPspmaUD" role="3cpWs9">
+                    <property role="TrG5h" value="autoResolvedFiles" />
+                    <node concept="_YKpA" id="2KwMPspmaUq" role="1tU5fm">
+                      <node concept="3uibUv" id="2KwMPspmaUt" role="_ZDj9">
+                        <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="2KwMPspmaUE" role="33vP2m">
+                      <node concept="37vLTw" id="2KwMPspmaUF" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3xywf4w3r7O" resolve="modelConflictResolverTask" />
+                      </node>
+                      <node concept="liA8E" id="2KwMPspmaUG" role="2OqNvi">
+                        <ref role="37wK5l" node="3xywf4w2OR$" resolve="getResolvedFiles" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="2KwMPspmy_r" role="3cqZAp">
+                  <node concept="3cpWsn" id="2KwMPspmy_u" role="3cpWs9">
+                    <property role="TrG5h" value="toResolve" />
+                    <node concept="_YKpA" id="2KwMPspmy_n" role="1tU5fm">
+                      <node concept="3uibUv" id="2KwMPspmz7s" role="_ZDj9">
+                        <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="2KwMPspmUqk" role="33vP2m">
+                      <node concept="2OqwBi" id="2KwMPspmSkD" role="2Oq$k0">
+                        <node concept="1eOMI4" id="2KwMPspmSkE" role="2Oq$k0">
+                          <node concept="10QFUN" id="2KwMPspmSkF" role="1eOMHV">
+                            <node concept="37vLTw" id="2KwMPspmSkG" role="10QFUP">
+                              <ref role="3cqZAo" node="3oPvWSRpVEW" resolve="files" />
+                            </node>
+                            <node concept="_YKpA" id="2KwMPspmSkH" role="10QFUM">
+                              <node concept="3uibUv" id="2KwMPspmSkI" role="_ZDj9">
+                                <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="66VNe" id="2KwMPspmSkJ" role="2OqNvi">
+                          <node concept="37vLTw" id="2KwMPspmSkK" role="576Qk">
+                            <ref role="3cqZAo" node="2KwMPspmaUD" resolve="autoResolvedFiles" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="ANE8D" id="2KwMPspmVNg" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="2KwMPspmhrK" role="3cqZAp">
+                  <node concept="3cpWsn" id="2KwMPspmhrL" role="3cpWs9">
+                    <property role="TrG5h" value="resolvedFiles" />
+                    <node concept="_YKpA" id="2KwMPspmnk8" role="1tU5fm">
+                      <node concept="3uibUv" id="2KwMPspmnka" role="_ZDj9">
+                        <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+                      </node>
+                    </node>
+                    <node concept="3nyPlj" id="2KwMPspmhrM" role="33vP2m">
+                      <ref role="37wK5l" to="15tk:~AbstractVcsHelperImpl.showMergeDialog(java.util.List,com.intellij.openapi.vcs.merge.MergeProvider,com.intellij.openapi.vcs.merge.MergeDialogCustomizer):java.util.List" resolve="showMergeDialog" />
+                      <node concept="37vLTw" id="2KwMPspmT9p" role="37wK5m">
+                        <ref role="3cqZAo" node="2KwMPspmy_u" resolve="toResolve" />
+                      </node>
+                      <node concept="37vLTw" id="2KwMPspmhrX" role="37wK5m">
+                        <ref role="3cqZAo" node="3oPvWSRpVEZ" resolve="provider" />
+                      </node>
+                      <node concept="37vLTw" id="2KwMPspmhrY" role="37wK5m">
+                        <ref role="3cqZAo" node="3oPvWSRpVF1" resolve="customizer" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs6" id="2KwMPspm29J" role="3cqZAp">
+                  <node concept="2OqwBi" id="2KwMPspmoXp" role="3cqZAk">
+                    <node concept="37vLTw" id="2KwMPspmo20" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2KwMPspmaUD" resolve="autoResolvedFiles" />
+                    </node>
+                    <node concept="X8dFx" id="2KwMPspmrdR" role="2OqNvi">
+                      <node concept="37vLTw" id="2KwMPspmvce" role="25WWJ7">
+                        <ref role="3cqZAo" node="2KwMPspmhrL" resolve="resolvedFiles" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbC" id="7UDnPJKlW_p" role="3clFbw">
+                <node concept="10M0yZ" id="7UDnPJKlWAK" role="3uHU7w">
+                  <ref role="1PxDUh" to="810:~Messages" resolve="Messages" />
+                  <ref role="3cqZAo" to="810:~Messages.YES" resolve="YES" />
+                </node>
+                <node concept="37vLTw" id="7UDnPJKlVYI" role="3uHU7B">
+                  <ref role="3cqZAo" node="7UDnPJKkDhv" resolve="answer" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2YIFZM" id="68MS4n2NLTA" role="3clFbw">
+            <ref role="37wK5l" node="68MS4n2NqGe" resolve="hasResolvableConflicts" />
+            <ref role="1Pybhc" node="68MS4n2I8HR" resolve="ConflictingModelsUtil" />
+            <node concept="37vLTw" id="7UDnPJKk2S4" role="37wK5m">
+              <ref role="3cqZAo" to="3dcm:~AbstractVcsHelper.myProject" resolve="myProject" />
+            </node>
+            <node concept="37vLTw" id="68MS4n2NW7A" role="37wK5m">
+              <ref role="3cqZAo" node="3oPvWSRpVEZ" resolve="provider" />
+            </node>
+            <node concept="37vLTw" id="7UDnPJKk38l" role="37wK5m">
+              <ref role="3cqZAo" node="3oPvWSRpVEW" resolve="files" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="7UDnPJKjMf7" role="3cqZAp" />
+        <node concept="3clFbF" id="7UDnPJKkacY" role="3cqZAp">
+          <node concept="3nyPlj" id="7UDnPJKkacW" role="3clFbG">
+            <ref role="37wK5l" to="15tk:~AbstractVcsHelperImpl.showMergeDialog(java.util.List,com.intellij.openapi.vcs.merge.MergeProvider,com.intellij.openapi.vcs.merge.MergeDialogCustomizer):java.util.List" resolve="showMergeDialog" />
+            <node concept="37vLTw" id="7UDnPJKkaA9" role="37wK5m">
+              <ref role="3cqZAo" node="3oPvWSRpVEW" resolve="files" />
+            </node>
+            <node concept="37vLTw" id="7UDnPJKkaBU" role="37wK5m">
+              <ref role="3cqZAo" node="3oPvWSRpVEZ" resolve="provider" />
+            </node>
+            <node concept="37vLTw" id="7UDnPJKkaHL" role="37wK5m">
+              <ref role="3cqZAo" node="3oPvWSRpVF1" resolve="customizer" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3oPvWSRpVFn" role="1B3o_S" />
+      <node concept="3uibUv" id="3oPvWSRpVFo" role="3clF45">
+        <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+        <node concept="3uibUv" id="3oPvWSRpVFp" role="11_B2D">
+          <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="3oPvWSRo4RG" role="1B3o_S" />
+    <node concept="3uibUv" id="3oPvWSRpbfn" role="1zkMxy">
+      <ref role="3uigEE" to="15tk:~AbstractVcsHelperImpl" resolve="AbstractVcsHelperImpl" />
+    </node>
   </node>
 </model>
 
