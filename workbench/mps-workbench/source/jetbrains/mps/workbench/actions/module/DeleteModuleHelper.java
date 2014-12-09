@@ -102,6 +102,7 @@ public class DeleteModuleHelper {
     if (project.isProjectModule(module)) {
       project.removeModule(module.getModuleReference());
       ((StandaloneMPSProject) project).update();
+      MPSModuleRepository.getInstance().unregisterModule(module, project);
       project.save();
     }
 
@@ -114,7 +115,7 @@ public class DeleteModuleHelper {
     file.delete();
   }
 
-  private static boolean deleteDirIfEmpty(IFile file) {
+  private static boolean deleteDirIfEmpty(IFile   file) {
     if (!file.exists())
       return true;
 
