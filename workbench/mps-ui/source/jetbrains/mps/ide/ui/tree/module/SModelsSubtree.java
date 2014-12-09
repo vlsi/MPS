@@ -21,7 +21,6 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -43,7 +42,7 @@ public class SModelsSubtree {
     create(rootTreeNode, module, IterableUtil.asList(module.getModels()), false);
   }
 
-  private static void create(MPSTreeNode rootTreeNode, SModule contextModule, List<SModel> models, boolean dropMiddleNodes) {
+  public static void create(MPSTreeNode rootTreeNode, SModule contextModule, List<SModel> models, boolean dropMiddleNodes) {
     List<SModel> regularModels = new ArrayList<SModel>();
     List<SModel> tests = new ArrayList<SModel>();
     List<SModel> stubs = new ArrayList<SModel>();
