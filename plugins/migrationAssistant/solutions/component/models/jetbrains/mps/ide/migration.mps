@@ -30,6 +30,7 @@
     <import index="8d8y" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
     <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
     <import index="1t7x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(java.awt@java_stub)" />
+    <import index="4xk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide(MPS.IDEA/com.intellij.ide@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -677,6 +678,36 @@
             <node concept="3cpWs6" id="5SsFeroaakJ" role="3cqZAp" />
           </node>
         </node>
+        <node concept="3cpWs8" id="7i6kNaReHXe" role="3cqZAp">
+          <node concept="3cpWsn" id="7i6kNaReHXf" role="3cpWs9">
+            <property role="TrG5h" value="showTipsOnStartup" />
+            <property role="3TUv4t" value="true" />
+            <node concept="10P_77" id="7i6kNaReHXd" role="1tU5fm" />
+            <node concept="2OqwBi" id="7i6kNaReHXg" role="33vP2m">
+              <node concept="2YIFZM" id="7i6kNaReHXh" role="2Oq$k0">
+                <ref role="37wK5l" to="4xk:~GeneralSettings.getInstance():com.intellij.ide.GeneralSettings" resolve="getInstance" />
+                <ref role="1Pybhc" to="4xk:~GeneralSettings" resolve="GeneralSettings" />
+              </node>
+              <node concept="liA8E" id="7i6kNaReHXi" role="2OqNvi">
+                <ref role="37wK5l" to="4xk:~GeneralSettings.showTipsOnStartup():boolean" resolve="showTipsOnStartup" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7i6kNaReR8j" role="3cqZAp">
+          <node concept="2OqwBi" id="7i6kNaReRtV" role="3clFbG">
+            <node concept="2YIFZM" id="7i6kNaReRnK" role="2Oq$k0">
+              <ref role="37wK5l" to="4xk:~GeneralSettings.getInstance():com.intellij.ide.GeneralSettings" resolve="getInstance" />
+              <ref role="1Pybhc" to="4xk:~GeneralSettings" resolve="GeneralSettings" />
+            </node>
+            <node concept="liA8E" id="7i6kNaReRAK" role="2OqNvi">
+              <ref role="37wK5l" to="4xk:~GeneralSettings.setShowTipsOnStartup(boolean):void" resolve="setShowTipsOnStartup" />
+              <node concept="3clFbT" id="7i6kNaReRWn" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="5SsFeroaakL" role="3cqZAp">
           <node concept="2OqwBi" id="5SsFeroaakM" role="3clFbG">
             <node concept="2YIFZM" id="5SsFeroaaQN" role="2Oq$k0">
@@ -796,6 +827,20 @@
                                     </node>
                                   </node>
                                 </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="7i6kNaReSdK" role="3cqZAp">
+                          <node concept="2OqwBi" id="7i6kNaReS$Z" role="3clFbG">
+                            <node concept="2YIFZM" id="7i6kNaReSug" role="2Oq$k0">
+                              <ref role="37wK5l" to="4xk:~GeneralSettings.getInstance():com.intellij.ide.GeneralSettings" resolve="getInstance" />
+                              <ref role="1Pybhc" to="4xk:~GeneralSettings" resolve="GeneralSettings" />
+                            </node>
+                            <node concept="liA8E" id="7i6kNaReSIm" role="2OqNvi">
+                              <ref role="37wK5l" to="4xk:~GeneralSettings.setShowTipsOnStartup(boolean):void" resolve="setShowTipsOnStartup" />
+                              <node concept="37vLTw" id="7i6kNaReSK6" role="37wK5m">
+                                <ref role="3cqZAo" node="7i6kNaReHXf" resolve="showTipsOnStartup" />
                               </node>
                             </node>
                           </node>

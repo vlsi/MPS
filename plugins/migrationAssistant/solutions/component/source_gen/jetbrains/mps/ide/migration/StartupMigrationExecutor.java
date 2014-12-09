@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.ide.GeneralSettings;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import org.jetbrains.annotations.Nullable;
@@ -59,6 +60,8 @@ public class StartupMigrationExecutor extends AbstractProjectComponent implement
     if (!(myMigrationManager.isMigrationRequired())) {
       return;
     }
+    final boolean showTipsOnStartup = GeneralSettings.getInstance().showTipsOnStartup();
+    GeneralSettings.getInstance().setShowTipsOnStartup(false);
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
         if (!(myState.reloadFinished)) {
@@ -73,6 +76,7 @@ public class StartupMigrationExecutor extends AbstractProjectComponent implement
         } else {
           executeWizard();
         }
+        GeneralSettings.getInstance().setShowTipsOnStartup(showTipsOnStartup);
       }
     });
   }
