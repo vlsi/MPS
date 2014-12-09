@@ -714,6 +714,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -8202,6 +8203,7 @@
                       <node concept="2c44tb" id="1QpbsSZ6Vx" role="lGtFl">
                         <property role="2qtEX8" value="script" />
                         <property role="3hQQBS" value="BuildProjectDependency" />
+                        <property role="P3scX" value="798100da-4f0a-421a-b991-71f8c50ce5d2/4993211115183325728/5617550519002745380" />
                         <node concept="2GrUjf" id="1QpbsSZ6YV" role="2c44t1">
                           <ref role="2Gs0qQ" node="1QpbsSYltN" resolve="projectNode" />
                         </node>
@@ -8255,6 +8257,7 @@
                     <node concept="3_I8Xc" id="1QpbsSZNz$" role="2c44tc">
                       <node concept="2c44tb" id="1QpbsSZNBa" role="lGtFl">
                         <property role="2qtEX8" value="target" />
+                        <property role="P3scX" value="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766565753074/841011766565753076" />
                         <node concept="2GrUjf" id="1QpbsSZNDp" role="2c44t1">
                           <ref role="2Gs0qQ" node="1QpbsSZ7Si" resolve="plugin" />
                         </node>

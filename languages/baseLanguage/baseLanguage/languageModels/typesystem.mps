@@ -6,11 +6,11 @@
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <use id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers" version="-1" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -729,9 +729,11 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -2058,6 +2060,7 @@
                       <node concept="2c44tb" id="ajSLJfTwZu" role="lGtFl">
                         <property role="2qtEX8" value="classifier" />
                         <property role="3hQQBS" value="ClassifierType" />
+                        <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                         <node concept="2OqwBi" id="ajSLJfTwZv" role="2c44t1">
                           <node concept="1PxgMI" id="ajSLJfTwZw" role="2Oq$k0">
                             <ref role="1PxNhF" to="tpee:g7uibYu" resolve="ClassifierType" />
@@ -3598,6 +3601,7 @@
                     </node>
                     <node concept="2c44tb" id="5_djyLgVOMf" role="lGtFl">
                       <property role="2qtEX8" value="classifier" />
+                      <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                       <node concept="37vLTw" id="2BHiRxgm8Rh" role="2c44t1">
                         <ref role="3cqZAo" node="hwMctJq" resolve="genericClassifier" />
                       </node>
@@ -3752,6 +3756,7 @@
                 <node concept="2c44tb" id="7GtasJs$L3B" role="lGtFl">
                   <property role="2qtEX8" value="classifier" />
                   <property role="3hQQBS" value="ClassifierType" />
+                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                   <node concept="37vLTw" id="3GM_nagTx4c" role="2c44t1">
                     <ref role="3cqZAo" node="7GtasJs$L39" resolve="parentIT" />
                   </node>
@@ -7689,6 +7694,7 @@
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                 <node concept="2c44tb" id="5_djyLgVOKF" role="lGtFl">
                   <property role="2qtEX8" value="classifier" />
+                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                   <node concept="2OqwBi" id="5_djyLgVOKG" role="2c44t1">
                     <node concept="1YBJjd" id="5_djyLgVOKH" role="2Oq$k0">
                       <ref role="1YBMHb" node="h84D8nB" resolve="classExpr" />
@@ -9419,6 +9425,7 @@
               <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               <node concept="2c44tb" id="5_djyLgVOLJ" role="lGtFl">
                 <property role="2qtEX8" value="classifier" />
+                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                 <node concept="37vLTw" id="3GM_nagTtk3" role="2c44t1">
                   <ref role="3cqZAo" node="hiBxDm9" resolve="annotation" />
                 </node>
@@ -9818,6 +9825,7 @@
               <ref role="3uigEE" to="k7g3:~ArrayList" resolve="ArrayList" />
               <node concept="2c44tb" id="4Ix49W7o$Jp" role="lGtFl">
                 <property role="2qtEX8" value="classifier" />
+                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                 <node concept="1YBJjd" id="7PtaNzUhS1D" role="2c44t1">
                   <ref role="1YBMHb" node="ho_8iwu" resolve="anonymousClass" />
                 </node>
@@ -11146,6 +11154,7 @@
                   <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                   <node concept="2c44tb" id="5_djyLgVOLg" role="lGtFl">
                     <property role="2qtEX8" value="classifier" />
+                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                     <node concept="2OqwBi" id="5_djyLgVOLh" role="2c44t1">
                       <node concept="37vLTw" id="3GM_nagT$N9" role="2Oq$k0">
                         <ref role="3cqZAo" node="huX4sYu" resolve="property" />
@@ -11402,6 +11411,7 @@
               <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               <node concept="2c44tb" id="5_djyLgVOLe" role="lGtFl">
                 <property role="2qtEX8" value="classifier" />
+                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                 <node concept="37vLTw" id="3GM_nagT_5s" role="2c44t1">
                   <ref role="3cqZAo" node="hxnUGQf" resolve="methodClassifier" />
                 </node>
@@ -14101,6 +14111,7 @@
                   <ref role="3uigEE" to="k7g3:~ArrayList" resolve="ArrayList" />
                   <node concept="2c44tb" id="4qyz6djvuBh" role="lGtFl">
                     <property role="2qtEX8" value="classifier" />
+                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                     <node concept="37vLTw" id="4qyz6djvuBi" role="2c44t1">
                       <ref role="3cqZAo" node="hDvqFi2" resolve="classifier" />
                     </node>
@@ -14188,6 +14199,7 @@
                     <ref role="3uigEE" to="k7g3:~ArrayList" resolve="ArrayList" />
                     <node concept="2c44tb" id="5_djyLgVOLX" role="lGtFl">
                       <property role="2qtEX8" value="classifier" />
+                      <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                       <node concept="37vLTw" id="3GM_nagTBtO" role="2c44t1">
                         <ref role="3cqZAo" node="hDvqFi2" resolve="classifier" />
                       </node>
@@ -14476,6 +14488,7 @@
                       <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
                       <node concept="2c44tb" id="5_djyLgVOL2" role="lGtFl">
                         <property role="2qtEX8" value="classifier" />
+                        <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                         <node concept="2OqwBi" id="5_djyLgVOL3" role="2c44t1">
                           <node concept="1YBJjd" id="5_djyLgVOL4" role="2Oq$k0">
                             <ref role="1YBMHb" node="hFzUM12" resolve="anonymousClass" />
@@ -17721,6 +17734,7 @@
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                 <node concept="2c44tb" id="5_djyLgVOMb" role="lGtFl">
                   <property role="2qtEX8" value="classifier" />
+                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                   <node concept="2OqwBi" id="5_djyLgVOMc" role="2c44t1">
                     <node concept="1YBJjd" id="5_djyLgVOMd" role="2Oq$k0">
                       <ref role="1YBMHb" node="hOumDvH" resolve="expression" />
@@ -17758,6 +17772,7 @@
             <node concept="3uibUv" id="hOupCog" role="2c44tc">
               <node concept="2c44tb" id="5_djyLgVOLv" role="lGtFl">
                 <property role="2qtEX8" value="classifier" />
+                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                 <node concept="2OqwBi" id="5_djyLgVOLw" role="2c44t1">
                   <node concept="1YBJjd" id="5_djyLgVOLx" role="2Oq$k0">
                     <ref role="1YBMHb" node="hOupqac" resolve="expression" />
@@ -23499,6 +23514,7 @@
                                       <node concept="2c44tb" id="5_djyLgVOLL" role="lGtFl">
                                         <property role="2qtEX8" value="classifier" />
                                         <property role="3hQQBS" value="ClassifierType" />
+                                        <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                                         <node concept="37vLTw" id="2BHiRxglK8C" role="2c44t1">
                                           <ref role="3cqZAo" node="7oysyrldiQd" resolve="t" />
                                         </node>
@@ -23515,6 +23531,7 @@
                                       <node concept="2c44tb" id="5_djyLgVOLN" role="lGtFl">
                                         <property role="2qtEX8" value="classifier" />
                                         <property role="3hQQBS" value="ClassifierType" />
+                                        <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                                         <node concept="37vLTw" id="2BHiRxglI8B" role="2c44t1">
                                           <ref role="3cqZAo" node="7oysyrldiQd" resolve="t" />
                                         </node>
@@ -23892,6 +23909,7 @@
                       <node concept="2c44tb" id="5_djyLgVOLH" role="lGtFl">
                         <property role="2qtEX8" value="classifier" />
                         <property role="3hQQBS" value="ClassifierType" />
+                        <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                         <node concept="37vLTw" id="3GM_nagTsXQ" role="2c44t1">
                           <ref role="3cqZAo" node="47u3iKcY$Cq" resolve="classifier" />
                         </node>
@@ -24416,6 +24434,7 @@
                     <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                     <node concept="2c44tb" id="5_djyLgVOLo" role="lGtFl">
                       <property role="2qtEX8" value="classifier" />
+                      <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                       <node concept="2OqwBi" id="5_djyLgVOLp" role="2c44t1">
                         <node concept="1PxgMI" id="5_djyLgVOLq" role="2Oq$k0">
                           <ref role="1PxNhF" to="tpee:g7uibYu" resolve="ClassifierType" />
@@ -32067,6 +32086,7 @@
               <node concept="2c44tb" id="5_djyLgVOKQ" role="lGtFl">
                 <property role="2qtEX8" value="classifier" />
                 <property role="3hQQBS" value="ClassifierType" />
+                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                 <node concept="2OqwBi" id="5_djyLgVOKR" role="2c44t1">
                   <node concept="1YBJjd" id="5_djyLgVOKS" role="2Oq$k0">
                     <ref role="1YBMHb" node="1KGiBRsAFh0" resolve="annotationInstance" />
@@ -34733,6 +34753,7 @@
                   <node concept="2EMmih" id="3KWzedcewKl" role="lGtFl">
                     <property role="2qtEX9" value="value" />
                     <property role="3hQQBS" value="BooleanConstant" />
+                    <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" />
                     <node concept="2OqwBi" id="3KWzedcfaV3" role="2c44t1">
                       <node concept="QwW4i" id="3KWzedcfaV2" role="2Oq$k0">
                         <ref role="QwW4h" node="3KWzedcewFN" resolve="value" />
@@ -35436,6 +35457,7 @@
                             </node>
                             <node concept="2c44tb" id="7HZRMj75C7x" role="lGtFl">
                               <property role="2qtEX8" value="classifier" />
+                              <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/2820489544401957797/2820489544401957798" />
                               <node concept="37vLTw" id="3GM_nagT$3r" role="2c44t1">
                                 <ref role="3cqZAo" node="7HZRMj75B_4" resolve="clazz" />
                               </node>
@@ -35763,6 +35785,7 @@
               <ref role="3uigEE" to="k7g3:~ArrayList" resolve="ArrayList" />
               <node concept="2c44tb" id="6exSE_bwpvZ" role="lGtFl">
                 <property role="2qtEX8" value="classifier" />
+                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                 <node concept="2OqwBi" id="6exSE_bwpx_" role="2c44t1">
                   <node concept="1YBJjd" id="6exSE_bwpxg" role="2Oq$k0">
                     <ref role="1YBMHb" node="6exSE_bwpwE" resolve="defaultClassCreator" />
@@ -36396,6 +36419,7 @@
               <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               <node concept="2c44tb" id="4D5N7rjsIxq" role="lGtFl">
                 <property role="2qtEX8" value="classifier" />
+                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                 <node concept="2OqwBi" id="4D5N7rjsIxr" role="2c44t1">
                   <node concept="1YBJjd" id="4D5N7rjsIxs" role="2Oq$k0">
                     <ref role="1YBMHb" node="2nBe90sUHnO" resolve="ctRight" />
@@ -36478,6 +36502,7 @@
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                 <node concept="2c44tb" id="4D5N7rjsIwJ" role="lGtFl">
                   <property role="2qtEX8" value="classifier" />
+                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                   <node concept="2OqwBi" id="4D5N7rjsIx6" role="2c44t1">
                     <node concept="1YBJjd" id="4D5N7rjsIwL" role="2Oq$k0">
                       <ref role="1YBMHb" node="2nBe90sUHnO" resolve="ctRight" />
@@ -37540,6 +37565,7 @@
                     </node>
                     <node concept="2c44tb" id="7HZRMj73OTl" role="lGtFl">
                       <property role="2qtEX8" value="baseMethodDeclaration" />
+                      <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
                       <node concept="37vLTw" id="3GM_nagTyvI" role="2c44t1">
                         <ref role="3cqZAo" node="7HZRMj73KXq" resolve="constructor" />
                       </node>

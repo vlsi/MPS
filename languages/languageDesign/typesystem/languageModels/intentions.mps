@@ -228,9 +228,11 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -582,6 +584,7 @@
                 <ref role="QpYPw" node="2Rjnwer$mCQ" resolve="fix_" />
                 <node concept="2c44tb" id="2Rjnwer$mDo" role="lGtFl">
                   <property role="2qtEX8" value="quickFix" />
+                  <property role="P3scX" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1210784285454/1216388525179" />
                   <node concept="37vLTw" id="3GM_nagT_5y" role="2c44t1">
                     <ref role="3cqZAo" node="2Rjnwer$mCN" resolve="quickFixNode" />
                   </node>
@@ -1144,6 +1147,7 @@
                               <node concept="2EMmih" id="7cq3qQ1_dNR" role="lGtFl">
                                 <property role="2qtEX9" value="name" />
                                 <property role="3hQQBS" value="MultiForEachVariable" />
+                                <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
                                 <node concept="2OqwBi" id="7cq3qQ1_dNS" role="2c44t1">
                                   <node concept="2OqwBi" id="7cq3qQ1_dNT" role="2Oq$k0">
                                     <node concept="37vLTw" id="2BHiRxgm8Rl" role="2Oq$k0">
@@ -1367,6 +1371,7 @@
                             <node concept="2c44tb" id="7cq3qQ1_dRd" role="lGtFl">
                               <property role="2qtEX8" value="variable" />
                               <property role="3hQQBS" value="MultiForEachVariableReference" />
+                              <property role="P3scX" value="83888646-71ce-4f1c-9c53-c54016f6ad4f/8293956702609956630/8293956702609966325" />
                               <node concept="2OqwBi" id="7cq3qQ1_dRn" role="2c44t1">
                                 <node concept="1y4W85" id="7cq3qQ1_dRk" role="2Oq$k0">
                                   <node concept="2OqwBi" id="7cq3qQ1_dRE" role="1y58nS">

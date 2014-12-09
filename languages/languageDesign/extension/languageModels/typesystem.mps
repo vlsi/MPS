@@ -119,6 +119,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -208,6 +209,7 @@
             <node concept="Sf$Xq" id="2KgYA8kbIUq" role="2c44tc">
               <node concept="2c44tb" id="2KgYA8kbIUr" role="lGtFl">
                 <property role="2qtEX8" value="extensionPoint" />
+                <property role="P3scX" value="c0080a47-7e37-4558-bee9-9ae18e690549/3175313036448544056/3175313036448544057" />
                 <node concept="2OqwBi" id="2KgYA8kbIUw" role="2c44t1">
                   <node concept="1YBJjd" id="2KgYA8kbIUt" role="2Oq$k0">
                     <ref role="1YBMHb" node="5JRjEZJSeHk" resolve="epe" />

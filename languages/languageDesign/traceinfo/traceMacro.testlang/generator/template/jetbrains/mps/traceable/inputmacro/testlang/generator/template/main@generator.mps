@@ -110,9 +110,11 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -170,6 +172,7 @@
             <property role="TrG5h" value="var" />
             <node concept="17Uvod" id="6V1k6Hk$sN2" role="lGtFl">
               <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
               <node concept="3zFVjK" id="6V1k6Hk$sN3" role="3zH0cK">
                 <node concept="3clFbS" id="6V1k6Hk$sN4" role="2VODD2">
                   <node concept="3clFbF" id="6V1k6Hk$sN5" role="3cqZAp">
@@ -217,6 +220,7 @@
         <node concept="2GrUjf" id="6V1k6Hk$sOW" role="gfFT$">
           <node concept="1ZhdrF" id="6V1k6Hk$sOX" role="lGtFl">
             <property role="2qtEX8" value="variable" />
+            <property role="P3scX" value="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944233411/1153944258490" />
             <node concept="3$xsQk" id="6V1k6Hk$sOY" role="3$ytzL">
               <node concept="3clFbS" id="6V1k6Hk$sOZ" role="2VODD2">
                 <node concept="3clFbF" id="6V1k6Hk$sP0" role="3cqZAp">

@@ -37,7 +37,7 @@
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
@@ -245,9 +245,11 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -460,6 +462,7 @@
                   <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
                   <node concept="2EMmih" id="5YKiRiBuyb2" role="lGtFl">
                     <property role="2qtEX9" value="role" />
+                    <property role="P4ACc" value="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" />
                     <node concept="2YIFZM" id="5YKiRiBuyb4" role="2c44t1">
                       <ref role="37wK5l" to="msyo:~NameUtil.decapitalize(java.lang.String):java.lang.String" resolve="decapitalize" />
                       <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
@@ -473,11 +476,13 @@
                   </node>
                   <node concept="2c44tb" id="5YKiRiBuyb8" role="lGtFl">
                     <property role="2qtEX8" value="target" />
+                    <property role="P3scX" value="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" />
                     <node concept="2Sf5sV" id="5YKiRiBuybk" role="2c44t1" />
                   </node>
                 </node>
                 <node concept="2EMmih" id="5YKiRiBuyaA" role="lGtFl">
                   <property role="2qtEX9" value="name" />
+                  <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
                   <node concept="3cpWs3" id="5YKiRiBuybg" role="2c44t1">
                     <node concept="Xl_RD" id="5YKiRiBuybj" role="3uHU7w">
                       <property role="Xl_RC" value="Reference" />
@@ -605,6 +610,7 @@
                 <ref role="1XX52x" to="tpck:gw2VY9q" resolve="BaseConcept" />
                 <node concept="2c44tb" id="5YKiRiBuybz" role="lGtFl">
                   <property role="2qtEX8" value="conceptDeclaration" />
+                  <property role="P3scX" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041/1166049300910" />
                   <node concept="37vLTw" id="3GM_nagTwgg" role="2c44t1">
                     <ref role="3cqZAo" node="5YKiRiBuwq1" resolve="concept" />
                   </node>
@@ -618,6 +624,7 @@
                   </node>
                   <node concept="2c44tb" id="5YKiRiBuybM" role="lGtFl">
                     <property role="2qtEX8" value="relationDeclaration" />
+                    <property role="P3scX" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" />
                     <node concept="37vLTw" id="3GM_nagT_Jy" role="2c44t1">
                       <ref role="3cqZAo" node="5YKiRiBuycq" resolve="link" />
                     </node>

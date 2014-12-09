@@ -139,9 +139,11 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -256,10 +258,12 @@
           <node concept="3jrphi" id="1mO8VfSNWEU" role="lGtFl">
             <property role="3jrwYG" value="field" />
             <property role="2qtEX8" value="variableDeclaration" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
           </node>
           <node concept="3jrphi" id="1mO8VfSNXjt" role="lGtFl">
             <property role="3jrwYG" value="className" />
             <property role="2qtEX8" value="classifier" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" />
           </node>
         </node>
         <node concept="liA8E" id="1mO8VfSNWEL" role="2OqNvi">
@@ -272,6 +276,7 @@
           <node concept="3jrphi" id="1mO8VfSNWET" role="lGtFl">
             <property role="3jrwYG" value="method" />
             <property role="2qtEX8" value="baseMethodDeclaration" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
           </node>
         </node>
       </node>
@@ -313,10 +318,12 @@
           <node concept="3jrphi" id="1mO8VfSO68n" role="lGtFl">
             <property role="3jrwYG" value="field" />
             <property role="2qtEX8" value="variableDeclaration" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
           </node>
           <node concept="3jrphi" id="1mO8VfSO68o" role="lGtFl">
             <property role="3jrwYG" value="className" />
             <property role="2qtEX8" value="classifier" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" />
           </node>
         </node>
         <node concept="liA8E" id="1mO8VfSO68p" role="2OqNvi">
@@ -332,6 +339,7 @@
           <node concept="3jrphi" id="1mO8VfSO68s" role="lGtFl">
             <property role="3jrwYG" value="method" />
             <property role="2qtEX8" value="baseMethodDeclaration" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
           </node>
         </node>
       </node>
@@ -373,10 +381,12 @@
           <node concept="3jrphi" id="1mO8VfSNXW7" role="lGtFl">
             <property role="3jrwYG" value="field" />
             <property role="2qtEX8" value="variableDeclaration" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
           </node>
           <node concept="3jrphi" id="1mO8VfSNXW8" role="lGtFl">
             <property role="3jrwYG" value="className" />
             <property role="2qtEX8" value="classifier" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" />
           </node>
         </node>
         <node concept="liA8E" id="1mO8VfSNXW9" role="2OqNvi">
@@ -386,11 +396,13 @@
             <node concept="2DMOqt" id="1mO8VfSNXWi" role="lGtFl">
               <property role="2DMOqu" value="printed" />
               <property role="2qtEX9" value="value" />
+              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
             </node>
           </node>
           <node concept="3jrphi" id="1mO8VfSNXWc" role="lGtFl">
             <property role="3jrwYG" value="method" />
             <property role="2qtEX8" value="baseMethodDeclaration" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
           </node>
         </node>
       </node>
@@ -432,10 +444,12 @@
           <node concept="3jrphi" id="1mO8VfSOiQE" role="lGtFl">
             <property role="3jrwYG" value="field" />
             <property role="2qtEX8" value="variableDeclaration" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
           </node>
           <node concept="3jrphi" id="1mO8VfSOiQF" role="lGtFl">
             <property role="3jrwYG" value="className" />
             <property role="2qtEX8" value="classifier" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" />
           </node>
         </node>
         <node concept="liA8E" id="1mO8VfSOiQG" role="2OqNvi">
@@ -451,6 +465,7 @@
           <node concept="3jrphi" id="1mO8VfSOiQK" role="lGtFl">
             <property role="3jrwYG" value="method" />
             <property role="2qtEX8" value="baseMethodDeclaration" />
+            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
           </node>
         </node>
       </node>

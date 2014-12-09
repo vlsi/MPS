@@ -239,6 +239,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -1166,6 +1167,7 @@
                       <node concept="2c44tb" id="5QhlLxSHfzq" role="lGtFl">
                         <property role="2qtEX8" value="typeVariableDeclaration" />
                         <property role="3hQQBS" value="TypeVariableReference" />
+                        <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304/1109283546497" />
                         <node concept="37vLTw" id="2BHiRxglGUY" role="2c44t1">
                           <ref role="3cqZAo" node="4EEbfpkyyhI" resolve="tvr" />
                         </node>
@@ -1182,6 +1184,7 @@
             <node concept="2pR195" id="5QhlLxSHfrr" role="2c44tc">
               <node concept="2c44tb" id="5QhlLxSHfrs" role="lGtFl">
                 <property role="2qtEX8" value="classifier" />
+                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                 <node concept="13iPFW" id="5QhlLxSHfrx" role="2c44t1" />
               </node>
               <node concept="33vP2l" id="5QhlLxSHfru" role="11_B2D">

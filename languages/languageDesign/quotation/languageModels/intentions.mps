@@ -280,6 +280,7 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -1941,6 +1942,7 @@
                             <node concept="2EMmih" id="5oUXqOrkpv1" role="lGtFl">
                               <property role="2qtEX9" value="value" />
                               <property role="3hQQBS" value="BooleanConstant" />
+                              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" />
                               <node concept="2OqwBi" id="5oUXqOrkzL8" role="2c44t1">
                                 <node concept="2JrnkZ" id="5oUXqOrkzL9" role="2Oq$k0">
                                   <node concept="37vLTw" id="2BHiRxgm7bQ" role="2JrQYb">
@@ -1963,6 +1965,7 @@
                               <node concept="2EMmih" id="5oUXqOrkpuT" role="lGtFl">
                                 <property role="2qtEX9" value="value" />
                                 <property role="3hQQBS" value="IntegerConstant" />
+                                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020/1068580320021" />
                                 <node concept="2OqwBi" id="5oUXqOrkpv4" role="2c44t1">
                                   <node concept="2JrnkZ" id="5oUXqOrkpv5" role="2Oq$k0">
                                     <node concept="37vLTw" id="2BHiRxglI4S" role="2JrQYb">
@@ -1991,6 +1994,7 @@
                             <node concept="Xl_RD" id="76efOMRDFT3" role="2c44tc">
                               <node concept="2EMmih" id="76efOMRDFT5" role="lGtFl">
                                 <property role="2qtEX9" value="value" />
+                                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
                                 <node concept="2YIFZM" id="5oUXqOrkhJ8" role="2c44t1">
                                   <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
                                   <ref role="37wK5l" to="msyo:~NameUtil.escapeString(java.lang.String):java.lang.String" resolve="escapeString" />
