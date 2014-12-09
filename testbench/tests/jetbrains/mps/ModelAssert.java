@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -178,15 +179,15 @@ public class ModelAssert {
   }
 
   private static void assertDeepChildrenEquals(SNode expectedNode, SNode actualNode) {
-    Set<String> roles = new HashSet<String>();
+    Set<SContainmentLink> roles = new HashSet<SContainmentLink>();
     for (SNode child : expectedNode.getChildren()) {
-      roles.add(child.getRoleInParent());
+      roles.add(child.getContainmentLink());
     }
     for (SNode child : actualNode.getChildren()) {
-      roles.add(child.getRoleInParent());
+      roles.add(child.getContainmentLink());
     }
 
-    for (String role : roles) {
+    for (SContainmentLink role : roles) {
       Iterable<? extends SNode> expectedChildren = expectedNode.getChildren(role);
       Iterable<? extends SNode> actualChildren = actualNode.getChildren(role);
 

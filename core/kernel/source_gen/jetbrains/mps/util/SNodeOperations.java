@@ -222,11 +222,11 @@ public class SNodeOperations {
     }
     return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + modelName;
   }
-  public static Set<String> getChildRoles(SNode n, boolean includeAttributeRoles) {
-    final Set<String> augend = new HashSet<String>();
+  public static Set<SContainmentLink> getChildRoles(SNode n, boolean includeAttributeRoles) {
+    final Set<SContainmentLink> augend = new HashSet<SContainmentLink>();
     for (SNode child : n.getChildren()) {
       if (includeAttributeRoles || !((AttributeOperations.isAttribute(child)))) {
-        augend.add(child.getRoleInParent());
+        augend.add(child.getContainmentLink());
       }
     }
     return augend;
