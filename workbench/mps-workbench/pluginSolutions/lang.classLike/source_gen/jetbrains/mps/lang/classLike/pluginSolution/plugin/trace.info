@@ -133,8 +133,8 @@
       <node id="3402736933910478500" at="72,5,73,16" concept="8" />
       <node id="3402736933910993997" at="76,9,77,231" concept="7" />
       <node id="3384419124890909909" at="77,231,78,81" concept="2" />
-      <node id="3402736933911010699" at="78,81,79,376" concept="2" />
-      <node id="3402736933910988348" at="79,376,80,345" concept="2" />
+      <node id="3402736933911010699" at="78,81,79,470" concept="2" />
+      <node id="3402736933910988348" at="79,470,80,439" concept="2" />
       <node id="6478870542308645504" at="82,37,83,119" concept="2" />
       <node id="3384419124890816989" at="85,9,86,121" concept="2" />
       <node id="5174336506434611794" at="86,121,87,0" concept="10" />
@@ -170,7 +170,7 @@
       <node id="3402736933910478500" at="47,0,51,0" concept="6" trace="isDumbAware#()Z" />
       <node id="3402736933910478500" at="64,5,68,5" concept="0" />
       <node id="3402736933910478500" at="68,5,72,5" concept="0" />
-      <node id="3402736933911962352" at="80,345,85,9" concept="2" />
+      <node id="3402736933911962352" at="80,439,85,9" concept="2" />
       <node id="3402736933910478500" at="41,0,47,0" concept="1" trace="NewClassLike_Action#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3402736933910478500" at="51,89,59,5" concept="14" />
       <node id="3402736933910478500" at="105,0,114,0" concept="6" trace="getActionId#()Ljava/lang/String;" />

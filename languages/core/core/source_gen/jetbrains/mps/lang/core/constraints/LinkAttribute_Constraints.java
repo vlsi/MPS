@@ -48,7 +48,7 @@ public class LinkAttribute_Constraints extends BaseConstraintsDescriptor {
       public boolean validateValue(SNode node, final String propertyValue) {
         String propertyName = "linkRole";
         {
-          Iterable<SReferenceLink> references = SNodeOperations.getConcept(SNodeOperations.getParent(node)).getReferences();
+          Iterable<SReferenceLink> references = SNodeOperations.getConcept(SNodeOperations.getParent(node)).getReferenceLinks();
           return Sequence.fromIterable(references).any(new IWhereFilter<SReferenceLink>() {
             public boolean accept(SReferenceLink it) {
               return eq_eprrss_a0a0a0a0a0b0b0d0a1a0b0b(it.getRoleName(), (SPropertyOperations.getString(propertyValue)));
@@ -72,7 +72,7 @@ public class LinkAttribute_Constraints extends BaseConstraintsDescriptor {
           if (isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole")))) {
             return true;
           }
-          Iterable<SReferenceLink> references = SNodeOperations.getConcept(SNodeOperations.getParent(node)).getReferences();
+          Iterable<SReferenceLink> references = SNodeOperations.getConcept(SNodeOperations.getParent(node)).getReferenceLinks();
           return Sequence.fromIterable(references).any(new IWhereFilter<SReferenceLink>() {
             public boolean accept(SReferenceLink it) {
               return eq_eprrss_a0a0a0a0a0d0b0b0a1a0c0b(it, MetaAdapterFactory.getReferenceLink(SReferenceLinkId.deserialize((SPropertyOperations.getString(propertyValue))), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole"))));

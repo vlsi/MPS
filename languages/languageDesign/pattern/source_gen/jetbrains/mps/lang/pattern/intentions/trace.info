@@ -124,7 +124,7 @@
       <node id="3514655265371756788" at="73,78,74,87" concept="6" />
       <node id="3514655265371756796" at="74,87,75,91" concept="6" />
       <node id="8843103228116965300" at="75,91,76,39" concept="6" />
-      <node id="8843103228116965308" at="76,39,77,394" concept="1" />
+      <node id="8843103228116965308" at="76,39,77,483" concept="1" />
       <node id="3514655265371724198" at="79,48,80,58" concept="7" />
       <node id="3514655265371724198" at="25,0,27,0" concept="0" trace="CreatePropertyPatternVariable_Intention#()V" />
       <node id="3514655265371724198" at="68,0,70,0" concept="0" trace="IntentionImplementation#()V" />
@@ -182,7 +182,7 @@
         <var name="node" id="3514655265371724198" />
       </scope>
       <scope id="3514655265371724198" at="61,99,65,30" />
-      <scope id="3514655265371724202" at="73,78,77,394">
+      <scope id="3514655265371724202" at="73,78,77,483">
         <var name="cell" id="3514655265371756789" />
         <var name="cellNode" id="8843103228116965301" />
         <var name="propertyName" id="3514655265371756797" />
@@ -223,7 +223,7 @@
       <node id="3514655265371789393" at="69,87,70,35" concept="7" />
       <node id="8134378564421757189" at="72,78,73,58" concept="6" />
       <node id="3514655265371789412" at="73,58,74,80" concept="6" />
-      <node id="3514655265371789418" at="74,80,75,331" concept="1" />
+      <node id="3514655265371789418" at="74,80,75,420" concept="1" />
       <node id="3514655265371789430" at="76,38,77,44" concept="1" />
       <node id="3514655265371785881" at="80,48,81,46" concept="7" />
       <node id="3514655265371785881" at="24,0,26,0" concept="0" trace="CreateListPattern_Intention#()V" />
@@ -239,7 +239,7 @@
       <node id="3514655265371785881" at="57,0,60,0" concept="5" trace="isSurroundWith#()Z" />
       <node id="3514655265371785881" at="60,99,63,5" concept="4" />
       <node id="3514655265371785881" at="69,0,72,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="3514655265371789425" at="75,331,78,7" concept="3" />
+      <node id="3514655265371789425" at="75,420,78,7" concept="3" />
       <node id="3514655265371785881" at="80,0,83,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
       <node id="3514655265371785881" at="50,0,54,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="3514655265371785881" at="44,0,50,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
@@ -277,7 +277,7 @@
         <var name="editorContext" id="3514655265371785881" />
         <var name="node" id="3514655265371785881" />
       </scope>
-      <scope id="3514655265371789425" at="75,331,78,7">
+      <scope id="3514655265371789425" at="75,420,78,7">
         <var name="sibling" id="3514655265371789427" />
       </scope>
       <scope id="3514655265371785881" at="80,0,83,0" />
@@ -325,7 +325,7 @@
       <node id="3514655265371789444" at="60,5,61,30" concept="7" />
       <node id="3514655265371789449" at="66,87,67,31" concept="7" />
       <node id="8134378564421759415" at="69,78,70,58" concept="6" />
-      <node id="8843103228116876382" at="70,58,71,333" concept="1" />
+      <node id="8843103228116876382" at="70,58,71,422" concept="1" />
       <node id="3514655265371789444" at="73,48,74,50" concept="7" />
       <node id="3514655265371789444" at="22,0,24,0" concept="0" trace="CreateWildcardPattern_Intention#()V" />
       <node id="3514655265371789444" at="64,0,66,0" concept="0" trace="IntentionImplementation#()V" />
@@ -362,7 +362,7 @@
       <scope id="3514655265371789444" at="73,48,74,50" />
       <scope id="3514655265371789444" at="22,0,24,0" />
       <scope id="3514655265371789444" at="64,0,66,0" />
-      <scope id="3514655265371789448" at="69,78,71,333">
+      <scope id="3514655265371789448" at="69,78,71,422">
         <var name="currentNode" id="8134378564421759416" />
       </scope>
       <scope id="3514655265371789444" at="24,0,27,0" />
@@ -418,7 +418,7 @@
       <node id="3514655265371789469" at="60,5,61,30" concept="7" />
       <node id="3514655265371789474" at="66,87,67,33" concept="7" />
       <node id="8134378564421759406" at="69,78,70,58" concept="6" />
-      <node id="3514655265371789481" at="70,58,71,329" concept="1" />
+      <node id="3514655265371789481" at="70,58,71,418" concept="1" />
       <node id="3514655265371789469" at="73,48,74,44" concept="7" />
       <node id="3514655265371789469" at="22,0,24,0" concept="0" trace="CreateAsPattern_Intention#()V" />
       <node id="3514655265371789469" at="64,0,66,0" concept="0" trace="IntentionImplementation#()V" />
@@ -455,7 +455,7 @@
       <scope id="3514655265371789469" at="73,48,74,44" />
       <scope id="3514655265371789469" at="22,0,24,0" />
       <scope id="3514655265371789469" at="64,0,66,0" />
-      <scope id="3514655265371789473" at="69,78,71,329">
+      <scope id="3514655265371789473" at="69,78,71,418">
         <var name="currentNode" id="8134378564421759407" />
       </scope>
       <scope id="3514655265371789469" at="24,0,27,0" />
@@ -511,8 +511,8 @@
       <node id="4413230749907735528" at="62,5,63,30" concept="7" />
       <node id="4413230749907743482" at="68,87,69,37" concept="7" />
       <node id="4413230749907743485" at="71,78,72,58" concept="6" />
-      <node id="4413230749907743491" at="72,58,73,340" concept="1" />
-      <node id="1508313647019622814" at="73,340,74,336" concept="1" />
+      <node id="4413230749907743491" at="72,58,73,429" concept="1" />
+      <node id="1508313647019622814" at="73,429,74,425" concept="1" />
       <node id="4413230749907735528" at="76,48,77,50" concept="7" />
       <node id="4413230749907735528" at="24,0,26,0" concept="0" trace="CreateActionAsPattern_Intention#()V" />
       <node id="4413230749907735528" at="66,0,68,0" concept="0" trace="IntentionImplementation#()V" />
@@ -565,7 +565,7 @@
         <var name="editorContext" id="4413230749907735528" />
         <var name="node" id="4413230749907735528" />
       </scope>
-      <scope id="4413230749907735532" at="71,78,74,336">
+      <scope id="4413230749907735532" at="71,78,74,425">
         <var name="currentNode" id="4413230749907743486" />
       </scope>
       <scope id="4413230749907735528" at="76,0,79,0" />

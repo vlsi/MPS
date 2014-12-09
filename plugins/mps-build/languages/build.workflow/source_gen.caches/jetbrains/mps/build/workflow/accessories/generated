@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="3b1nqkol7hbo3iv79ho64ds826p8vms">
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="m99pf64baa4c7icacfe2l0gvq858o6" />
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-3khbx2ncpqz95jm59vnx58456igc9jp" />
   <common hash="-9f95xuowzl2jokuaqyq4n1ec3stlbnz" />
   <source id="7306485738221408314" name="java" hash="-eztcc38il0gfkvatgk1se7uvjpuhcq">
     <dep root="7306485738221408315" />

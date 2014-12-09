@@ -71,7 +71,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
       }
       // Check for unresolved references 
       for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
-        if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", SLinkOperations.getRole(ref))) != null)) {
+        if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), SLinkOperations.getRole(ref))) != null)) {
           continue;
         }
         SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);

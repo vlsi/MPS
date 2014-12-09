@@ -1,3 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9qqwp6opzxd23vxll29mxnms5vexfsk" />
+<dependencies version="2" modelHash="9qqwp6opzxd23vxll29mxnms5vexfsk">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="87zb9zl48w18mihs5lboex16eywwdnx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="48944b1cfwqxvdpezeq6prmp0dpw0a7" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="8ku9t72il53favkb9fpub7z9cxkwgjr" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="9nmpjzyk7tjixmqzredudadb93zhigl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7hjj6380di9z6lpczodq9bu0abl64gv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-45ic2f01k96oq17d5smtbxfatq8n881" />
+  <dep model="r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)" hash="ddugat2bt8ly7br9knsfrljih7lfmx7" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-awwe9jm0em9t0z02whbenqtgowhkh7l" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8iidkdf4srxzkbm3a3s8bo4lb455op2" />
+  <common hash="-34qzlsicmabxltupzfhqfzsvze4up7" dependsOnNodes="true">
+    <dep root="1094405431463454433" />
+    <dep root="1094405431463455190" />
+    <dep root="1094405431463663051" />
+    <dep root="1094405431463761863" />
+    <dep root="1220375669566347117" />
+    <dep root="1301388602725986966" />
+    <dep root="2721249134706026944" />
+    <dep root="285670992205972098" />
+    <dep root="285670992213637294" />
+    <dep root="285670992213637367" />
+    <dep root="285670992213637559" />
+    <dep root="285670992217672837" />
+    <dep root="3229274890673749551" />
+    <dep root="526297864816328066" />
+    <dep root="526297864816328067" />
+    <dep root="526297864816328068" />
+    <dep root="526297864816328069" />
+    <dep root="526297864816328070" />
+    <dep root="5355858557208538577" />
+    <dep root="5355858557208817201" />
+    <dep root="5422656561926747342" />
+    <dep root="6306886970791033847" />
+    <dep root="6382742553261733065" />
+    <dep root="6619018968335599080" />
+    <dep root="6619018968335599081" />
+    <dep root="730538219795567478" />
+    <dep root="730538219795610242" />
+    <dep root="730538219795610279" />
+    <dep root="730538219795610316" />
+    <dep root="8570854907290423690" />
+    <dep root="8570854907290527479" />
+    <dep root="8570854907290717911" />
+    <dep root="8570854907290717918" />
+    <dep root="8570854907290717922" />
+    <dep root="939897302409084996" />
+    <dep root="939897302409085052" />
+    <dep root="939897302409110350" />
+    <dep root="939897302409170265" />
+    <dep root="939897302409170270" />
+    <dep root="939897302409170275" />
+    <dep root="939897302409170280" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1094405431463454433" name="CellModel_DiagramNode" hash="abcdl0y64h181zgvx5ge5skxhe6690q" />
+  <source id="1094405431463455190" name="AbstractFigureReference" hash="4oq8u9k408ns3kvqxvvr3j2f5djdtgo" />
+  <source id="1094405431463663051" name="ExternalFigureReference" hash="2us7bwa0ecrlzu5pswk7j4ltpc9uujo" />
+  <source id="1094405431463761863" name="FigureParameterMapping" hash="-bzd408z27if7xyj3uzct3ugucg5ikvb" />
+  <source id="6306886970791033847" name="CellModel_Diagram" hash="4ja55ttt3cwxclrspe1jfj10py098i3" />
+  <source id="6382742553261733065" name="CellModel_DiagramConnector" hash="1dtv6tzo6i0t1dl48pknf3yjaxrcdsu" />
+  <source id="5422656561926747342" name="AttributedFigureReference" hash="6itn6577gtp7bmkybxiiv95m8gpepg7" />
+  <source id="3229274890673749551" name="ThisEditorNodeExpression" hash="-vi0q9x82fi0j8tdfyq4xk3s72bdysl" />
+  <source id="1220375669566347117" name="ConnectionEndBLQuery" hash="-eqxeh788m107qf8ezxl7p4hi7buwpk2" />
+  <source id="2721249134706026944" name="ConnectionEnd" hash="5jgfm91y939bubek6a89s45voueld7o" />
+  <source id="5355858557208538577" name="DiagramElement" hash="ewcnc7v64kop055njhbc61i8vsmonjf" />
+  <source id="5355858557208817201" name="DiagramElementBLQuery" hash="-et074qtp4vlk47j1se0udz2m3u59yaz" />
+  <source id="285670992205972098" name="CellModel_DiagramPort" hash="-95r0woxg8l1jnxcdfa06t71c7a7ynac" />
+  <source id="285670992213637294" name="AbstractArgument" hash="-19t3jwaec0so7q0ljan1g5sobgdk7cd" />
+  <source id="285670992213637367" name="BLQueryArgument" hash="6ghmg42qpi7clzqy4x8g221isgyshxw" />
+  <source id="285670992213637559" name="LinkArgument" hash="-5bb0viavst2sdnz5rlylnzjz7trbtx8" />
+  <source id="285670992217672837" name="PropertyArgument" hash="cd1c4q8ear02n2r2q2hgkrosxci5yag" />
+  <source id="8570854907290423690" name="DiagramElementsCreation" hash="59bvpqulxi4jsnsstua090nsphmnpcc" />
+  <source id="8570854907290527479" name="DiagramElementCreationHandler" hash="zcowk1mhtdg4mcg38mbsw1036740v" />
+  <source id="8570854907290717911" name="YFunctionParameter" hash="87tysg143hv8zy2q97dub9lwjuryw3v" />
+  <source id="8570854907290717918" name="NodeFunctionParameter" hash="-4kpdwtdl4erdiiu4cigennuh9dg3cqs" />
+  <source id="8570854907290717922" name="XFunctionParameter" hash="48mqxkndvbckid7a6gpvz89q2g9bkdr" />
+  <source id="939897302409084996" name="DiagramConnectorCreation" hash="-3477fskkp3gvbjoc17hro17j2hi3iky" />
+  <source id="939897302409085052" name="DiagramConnectorCreationHandler" hash="-1hju7rv0arsgjop3w3xien69p1z9o7p" />
+  <source id="939897302409110350" name="DiagramConnectorCanCreateHandler" hash="ak08z0orzd1vkljqhokxp0fhtm8wmp7" />
+  <source id="939897302409170265" name="FromNodeFunctionParameter" hash="1gkueu85sjyshx5gqqv213jgyt1sx1t" />
+  <source id="939897302409170270" name="ToNodeFunctionParameter" hash="-cfrp1fvqoveoafdtxz1yf5p0safn0nq" />
+  <source id="939897302409170275" name="FromIdFunctionParameter" hash="-9uukh5dvzg40bhora2ic073160in7nu" />
+  <source id="939897302409170280" name="ToIdFunctionParameter" hash="-8voudm5h00o8pf6de61e6bk8kzfso38" />
+  <source id="6619018968335599081" name="CreationActionReference" hash="45tfd6p541bfh8arts43oci3y6gk44a" />
+  <source id="6619018968335599080" name="CustomElementReference" hash="byawhnb3zlm1vst8r7p8zykrrikvriy" />
+  <source id="526297864816328066" name="ActionReference" hash="-em8jcb6hu932bnicgy8opnc5m096vbl" />
+  <source id="1301388602725986966" name="AbstractDiagramCreation" hash="249yghrhmbamlhw3gtvqhyngg2erxjo" />
+  <source id="526297864816328067" name="ActionGroup" hash="-aifz1t9j8beofpv6fc7y0l4mdn6jrqd" />
+  <source id="526297864816328068" name="Palette" hash="2up7gjmf28s88yune9q7t8snc3bwq0f" />
+  <source id="526297864816328069" name="PaletteElement" hash="4f781el2lsesaksjsfs6xcqzq609pq8" />
+  <source id="526297864816328070" name="Separator" hash="7b3kk83ube9losqh1palk4feyy44unl" />
+  <source id="730538219795567478" name="StubCellModel_Diagram" hash="-e71jkjhlozb9ke1xa5rk7zvqsmlkk19" />
+  <source id="730538219795610242" name="StubCellModel_DiagramConnector" hash="yc1szdbc0sjehmtbgdbkkswv8apun2" />
+  <source id="730538219795610279" name="StubCellModel_DiagramNode" hash="-h8ok8b1iz21g38b05duum00khvz38" />
+  <source id="730538219795610316" name="StubCellModel_DiagramPort" hash="-4tftnbuso7drh2bdrjjvwqd16dygn0n" />
+</dependencies>
 
