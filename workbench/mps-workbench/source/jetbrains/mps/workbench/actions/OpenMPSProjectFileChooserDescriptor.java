@@ -37,13 +37,7 @@ public class OpenMPSProjectFileChooserDescriptor extends FileChooserDescriptor{
   }
 
   // TODO: create better icon
-  private final static Icon MPSProjectDirIcon = craeteMPSProjectDirIcon();
-  private final static Icon craeteMPSProjectDirIcon() {
-    LayeredIcon layeredIcon = new LayeredIcon(2);
-    layeredIcon.setIcon(MPSIcons.MPS16x16, 0);
-    layeredIcon.setIcon(ProjectPane.LogicalView, 1, 5, 5);
-    return layeredIcon;
-  }
+  private final static Icon MPSProjectDirIcon = MPSIcons.MPS16x16;
 
   @Override
   public Icon getIcon(VirtualFile file) {
