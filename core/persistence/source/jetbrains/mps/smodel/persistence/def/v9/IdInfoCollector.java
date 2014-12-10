@@ -126,7 +126,7 @@ public class IdInfoCollector {
     final SConcept concept = n.getConcept();
     SConceptId conceptId = IdHelper.getConceptId(concept);
 
-    assert conceptId != null : "Can't get identity of concept " + concept;
+    assert conceptId != null : String.format("Can't get identity of concept %s of node %s", concept, n.getReference());
 
     registerConcept(conceptId, concept.getQualifiedName());
   }
@@ -134,7 +134,7 @@ public class IdInfoCollector {
   private void fillProperties(SNode n, MetaModelInfoProvider metaInfoProvider) {
     for (SProperty prop : n.getProperties()) {
       SPropertyId propId = IdHelper.getPropertyId(prop);
-      assert propId != null : "Can't get identity of property " + prop;
+      assert propId != null : String.format("Can't get identity of property %s of node %s", prop, n.getReference());
       SConceptId conceptId = propId.getConceptId();
       registerConcept(conceptId, metaInfoProvider.getConceptName(conceptId)).registerProperty(propId, prop);
     }
@@ -143,7 +143,7 @@ public class IdInfoCollector {
     for (SReference ref : n.getReferences()) {
       final SReferenceLink l = ref.getLink();
       SReferenceLinkId linkId = IdHelper.getRefId(l);
-      assert linkId != null : "Can't get identity of association " + l;
+      assert linkId != null : String.format("Can't get identity of association %s of node %s", l, n.getReference());
       SConceptId conceptId = linkId.getConceptId();
       registerConcept(conceptId, metaInfoProvider.getConceptName(conceptId)).registerLink(linkId, l);
     }
@@ -153,7 +153,7 @@ public class IdInfoCollector {
   private void fillAggregation(SNode n, MetaModelInfoProvider metaInfoProvider) {
     final SContainmentLink l = n.getContainmentLink();
     SContainmentLinkId linkId = IdHelper.getLinkId(l);
-    assert linkId != null : "Can't get identity of aggregation " + l;
+    assert linkId != null : String.format("Can't get identity of aggregation %s of node %s", l, n.getReference());
     SConceptId conceptId = linkId.getConceptId();
     registerConcept(conceptId, metaInfoProvider.getConceptName(conceptId)).registerLink(linkId, l);
   }
