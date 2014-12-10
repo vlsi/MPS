@@ -15,6 +15,7 @@ import jetbrains.mps.execution.lib.PointerUtils;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -169,32 +170,26 @@ public enum JUnitRunTypes {
   JUnitRunTypes() {
   }
 
-  public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
-    return collect(configuration, project, false);
-  }
 
-  public final Iterable<ITestNodeWrapper> collect(final JUnitSettings_Configuration configuration, final Project project, boolean recollect) {
-    if (recollect || cachedTests == null) {
-      ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(project), "Collecting Tests to Run", true) {
-        @Override
-        public void run(@NotNull ProgressIndicator indicator) {
-          final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              cachedTests = Sequence.fromIterable(doCollect(configuration, project, monitor)).toListSequence();
-            }
-          });
-        }
-      });
-    }
-    return cachedTests;
+  public final Iterable<ITestNodeWrapper> collect(final JUnitSettings_Configuration configuration, final Project project) {
+    final Wrappers._T<Iterable<ITestNodeWrapper>> result = new Wrappers._T<Iterable<ITestNodeWrapper>>();
+    ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(project), "Collecting Tests to Run", true) {
+      @Override
+      public void run(@NotNull ProgressIndicator indicator) {
+        final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            result.value = Sequence.fromIterable(doCollect(configuration, project, monitor)).toListSequence();
+          }
+        });
+      }
+    });
+    return result.value;
   }
 
   protected abstract Iterable<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, Project project, ProgressMonitor monitor);
 
   public abstract boolean hasTests(JUnitSettings_Configuration configuration, Project project);
-
-  private Iterable<ITestNodeWrapper> cachedTests = null;
 
   public abstract String check(JUnitSettings_Configuration configuration, Project project);
   private static boolean isEmptyString(String str) {

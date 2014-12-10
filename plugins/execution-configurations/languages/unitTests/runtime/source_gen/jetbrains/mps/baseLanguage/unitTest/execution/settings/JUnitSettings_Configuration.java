@@ -15,8 +15,8 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.execution.lib.ClonableList;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager;
 import java.util.List;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -92,6 +92,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public ClonableList<String> getTestMethods() {
     return myState.myTestMethods;
   }
+  public Iterable<ITestNodeWrapper> getTestNodes() {
+    return myState.myTestNodes;
+  }
   public JUnitRunTypes getRunType() {
     return myState.myRunType;
   }
@@ -119,6 +122,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public void setTestMethods(ClonableList<String> value) {
     myState.myTestMethods = value;
   }
+  public void setTestNodes(Iterable<ITestNodeWrapper> value) {
+    myState.myTestNodes = value;
+  }
   public void setRunType(JUnitRunTypes value) {
     myState.myRunType = value;
   }
@@ -135,8 +141,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     if (this.getRunType() == null) {
       return null;
     }
-    Iterable<ITestNodeWrapper> testNodes = this.getRunType().collect(this, project);
-    return Sequence.fromIterable(testNodes).toListSequence();
+    return Sequence.fromIterable(collectTests(project)).toListSequence();
   }
   public boolean hasTests(final Project project) {
     final boolean[] hasTests = {true};
@@ -154,7 +159,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     if (this.getRunType() == null) {
       return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
     }
-    return Sequence.fromIterable(this.getRunType().collect(this, project, true)).toListSequence();
+    return Sequence.fromIterable(collectTests(project)).toListSequence();
   }
   public List<SNodeReference> getTestsToMake(final Project project) {
     final List<ITestNodeWrapper>[] stuffToTest = (List<ITestNodeWrapper>[]) new List[1];
@@ -169,6 +174,12 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
         return it.getNodePointer();
       }
     }).toListSequence();
+  }
+  private Iterable<ITestNodeWrapper> collectTests(final Project project) {
+    if (this.getTestNodes() == null) {
+      this.setTestNodes(this.getRunType().collect(this, project));
+    }
+    return this.getTestNodes();
   }
   @Override
   public JUnitSettings_Configuration clone() {
@@ -193,6 +204,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     public String myCachesPath = getDefaultPath();
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
+    public Iterable<ITestNodeWrapper> myTestNodes;
     public JUnitRunTypes myRunType = JUnitRunTypes.PROJECT;
     public MyState() {
     }
@@ -211,6 +223,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       if (myTestMethods != null) {
         state.myTestMethods = myTestMethods.clone();
       }
+      state.myTestNodes = myTestNodes;
       state.myRunType = myRunType;
       return state;
     }
