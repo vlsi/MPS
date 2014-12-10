@@ -41,8 +41,10 @@ public class IdHelper {
   public static SLanguageId getLanguageId(SLanguage l) {
     if (l instanceof SLanguageAdapterById) {
       return ((SLanguageAdapterById) l).getId();
-    } else {
+    } else if (l.getSourceModule() instanceof Language) {
       return MetaIdByDeclaration.getLanguageId(((Language) l.getSourceModule()));
+    } else {
+      return null;
     }
   }
 
