@@ -24,10 +24,12 @@ import com.intellij.openapi.progress.ProgressIndicator;
 public class RenameModelDialog extends RenameDialog {
   private JCheckBox myUpdateAllReferences;
   private Project myProject;
+  private jetbrains.mps.project.Project myMpsProject;
   private EditableSModel myModelDescriptor;
-  public RenameModelDialog(Project project, EditableSModel sm) throws HeadlessException {
+  public RenameModelDialog(Project project, EditableSModel sm, jetbrains.mps.project.Project mpsProject) throws HeadlessException {
     super(project, sm.getModelName(), "model");
     myProject = project;
+    myMpsProject = mpsProject;
     myModelDescriptor = sm;
     setTitle("Rename Model");
   }
@@ -74,7 +76,7 @@ public class RenameModelDialog extends RenameDialog {
             ModelAccess.instance().runWriteAction(new Runnable() {
               @Override
               public void run() {
-                renamer.updateReferencesIfNeeded();
+                renamer.updateReferencesIfNeeded(myMpsProject);
               }
             });
           } finally {

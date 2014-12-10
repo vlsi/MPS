@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.refactoring.renameModel;
 
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ReferenceUpdater;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 
@@ -33,10 +34,9 @@ public class ModelRenamer {
     myModelDescriptor.rename(myModelName, true);
   }
 
-  public void updateReferencesIfNeeded() {
+  public void updateReferencesIfNeeded(Project project) {
     if (!myLazy) {
-      ReferenceUpdater.getInstance().updateModelReferences();
-      ReferenceUpdater.getInstance().updateModuleReferences();
+      ReferenceUpdater.getInstance().updateModelAndModuleReferences(project);
     }
   }
 }

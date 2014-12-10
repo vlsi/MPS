@@ -4,7 +4,7 @@ package jetbrains.mps.ide.refactoring;
 
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.project.Solution;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import java.awt.HeadlessException;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -14,9 +14,11 @@ import jetbrains.mps.refactoring.renameSolution.SolutionRenamer;
 
 public class RenameSolutionDialog extends RenameDialog {
   private Solution mySolution;
-  public RenameSolutionDialog(Project project, Solution solution) throws HeadlessException {
+  private Project myProject;
+  public RenameSolutionDialog(com.intellij.openapi.project.Project project, Solution solution, Project mpsProject) throws HeadlessException {
     super(project, solution.getModuleName(), "solution");
     mySolution = solution;
+    myProject = mpsProject;
     setTitle("Rename Solution");
   }
   @Override
@@ -29,7 +31,7 @@ public class RenameSolutionDialog extends RenameDialog {
           setErrorText("Duplicate solution name");
           return false;
         }
-        new SolutionRenamer(mySolution, fqName).rename();
+        new SolutionRenamer(mySolution, fqName, myProject).rename();
         return true;
       }
     });
