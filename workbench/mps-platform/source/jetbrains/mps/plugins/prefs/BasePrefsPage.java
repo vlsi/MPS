@@ -18,7 +18,6 @@ package jetbrains.mps.plugins.prefs;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurableEP;
-import com.intellij.openapi.options.NonDefaultProjectConfigurable;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -30,6 +29,11 @@ public abstract class BasePrefsPage extends ConfigurableEP<Configurable> impleme
   protected BasePrefsPage(Project project, BaseProjectPrefsComponent prefsComponent) {
     myProject = project;
     myPrefsComponent = prefsComponent;
+  }
+
+  @Override
+  public boolean canCreateConfigurable() {
+    return true;
   }
 
   @Override
