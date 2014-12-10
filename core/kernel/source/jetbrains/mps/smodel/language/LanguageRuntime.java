@@ -17,10 +17,14 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.make.facet.IFacetManifest;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
@@ -340,7 +344,20 @@ public abstract class LanguageRuntime {
     return getNamespace() + " runtime";
   }
 
+  @ToRemove(version = 3.2)
+  @Deprecated
   private Language getLanguage() {
-    return ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class);
+    final Language[] result = new Language[1];
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        if (getId() != null) {
+          result[0] = ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.regular(getId().getIdValue())));
+        } else {
+          result[0] = ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class);
+        }
+      }
+    });
+    return result[0];
   }
 }
