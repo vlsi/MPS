@@ -23,7 +23,6 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.compiler.JavaCompilerOptions;
-import jetbrains.mps.compiler.JavaCompilerOptionsBase;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
 import jetbrains.mps.compiler.JavaCompilerOptionsProvider;
@@ -138,6 +137,6 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
 
   @Override
   public JavaCompilerOptions getJavaCompilerOptions() {
-    return new JavaCompilerOptionsBase(myState.getSourceVersion(), myState.getTargetVersion());
+    return new JavaCompilerOptions(myState.getSourceVersion(), myState.getTargetVersion());
   }
 }

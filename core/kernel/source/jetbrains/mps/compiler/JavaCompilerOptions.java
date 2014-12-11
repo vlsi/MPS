@@ -17,7 +17,18 @@ package jetbrains.mps.compiler;
 
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
 
-public interface JavaCompilerOptions {
-  JavaVersion getTargetJavaVersion();
-  JavaVersion getSourceJavaVersion();
+public class JavaCompilerOptions {
+  private JavaVersion mySourceVersion;
+  private JavaVersion myTargetVersion;
+  public JavaCompilerOptions(JavaVersion sourceVersion, JavaVersion targetVersion) {
+    mySourceVersion = sourceVersion;;
+    myTargetVersion = targetVersion;
+  }
+  public JavaVersion getTargetJavaVersion() {
+    return myTargetVersion;
+  }
+
+  public JavaVersion getSourceJavaVersion() {
+    return mySourceVersion;
+  }
 }
