@@ -66,11 +66,7 @@ public class ClassLoadingBroadCaster {
     myLoadedModules.removeAll(modulesToUnload);
 
     for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.beforeClassesUnloaded(modulesToUnload);
-      } catch (LinkageError linkageError) {
-        processLinkageErrorInListener(listener, linkageError);
-      }
+      listener.beforeClassesUnloaded(modulesToUnload);
     }
 
     return modulesToUnload;
@@ -84,17 +80,7 @@ public class ClassLoadingBroadCaster {
     myLoadedModules.addAll(modulesToLoad);
 
     for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.afterClassesLoaded(modulesToLoad);
-      } catch (LinkageError linkageError) {
-        processLinkageErrorInListener(listener, linkageError);
-      }
+      listener.afterClassesLoaded(modulesToLoad);
     }
-  }
-
-  private void processLinkageErrorInListener(MPSClassesListener listener, LinkageError linkageError) {
-    LOG.error("Caught a linkage error from the `" + listener + "` listener. Probably some languages are outdated, try rebuilding the project.");
-    linkageError.printStackTrace();
-    LOG.error("MPS will attempt running in a inconsistent state.");
   }
 }

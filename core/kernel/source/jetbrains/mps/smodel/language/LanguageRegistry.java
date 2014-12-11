@@ -221,20 +221,24 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     Set<LanguageRuntime> loadedRuntimes = new HashSet<LanguageRuntime>();
     for (SModule module : loadedModules) {
       if (module instanceof Language) {
-        final Language langModule = (Language) module;
-        SLanguageId languageId = MetaIdByDeclaration.getLanguageId(langModule);
+        final Language language = (Language) module;
+        SLanguageId languageId = MetaIdByDeclaration.getLanguageId(language);
         assert (!myLanguagesById.containsKey(languageId));
-        LanguageRuntime runtime = createRuntime(langModule);
-        if (runtime != null) {
-          if (runtime.getId() == null) {
-            runtime.setId(MetaIdByDeclaration.getLanguageId(langModule));
+        try {
+          LanguageRuntime runtime = createRuntime(language);
+          if (runtime != null) {
+            if (runtime.getId() == null) {
+              runtime.setId(MetaIdByDeclaration.getLanguageId(language));
+            }
+            String namespace = runtime.getNamespace();
+            assert languageId.equals(runtime.getId());
+            assert (!myLanguages.containsKey(namespace));
+            myLanguages.put(namespace, runtime);
+            myLanguagesById.put(languageId, runtime);
+            loadedRuntimes.add(runtime);
           }
-          String namespace = runtime.getNamespace();
-          assert languageId.equals(runtime.getId());
-          assert (!myLanguages.containsKey(namespace));
-          myLanguages.put(namespace, runtime);
-          myLanguagesById.put(languageId, runtime);
-          loadedRuntimes.add(runtime);
+        } catch (LinkageError le) {
+          processLinkageErrorForLanguage(language, le);
         }
       }
     }
@@ -249,5 +253,11 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     for (LanguageRuntime languageRuntime : myLanguages.values()) {
       languageRuntime.initialize(this);
     }
+  }
+
+  private static void processLinkageErrorForLanguage(Language language, LinkageError linkageError) {
+    LOG.error("Caught a linkage error while creating LanguageRuntime for the `" + language + "` language." +
+        "Probably the language sources/classes are outdated, try rebuilding the project.", linkageError);
+    LOG.warn("MPS will attempt running in a inconsistent state.");
   }
 }

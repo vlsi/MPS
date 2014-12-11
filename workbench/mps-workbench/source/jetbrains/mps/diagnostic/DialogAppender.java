@@ -74,7 +74,7 @@ public class DialogAppender extends AppenderSkeleton {
   }
 
   private void appendToLoggers(final Collection<LoggingEvent> events, final ErrorLogger[] errorLoggers) {
-    if (myDialogRunnable.get() != null) {
+    if (!canAppendToLoggers()) {
       // not now!
       return;
     }
