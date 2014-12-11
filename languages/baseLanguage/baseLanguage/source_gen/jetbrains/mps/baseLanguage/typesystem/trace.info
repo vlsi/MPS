@@ -17121,27 +17121,26 @@
       <node id="4017912752400293015" at="26,5,27,527" concept="13" />
       <node id="3527492638300240758" at="30,240,31,13" concept="13" />
       <node id="4017912752408337022" at="32,5,33,406" concept="12" />
-      <node id="4017912752408330878" at="33,406,34,0" concept="15" />
-      <node id="4017912752400181055" at="34,0,35,167" concept="12" />
-      <node id="4017912752400139440" at="35,167,36,220" concept="6" />
-      <node id="4017912752400281629" at="36,220,37,193" concept="6" />
-      <node id="4017912752400226559" at="37,193,38,99" concept="12" />
-      <node id="4017912752400268804" at="39,42,40,241" concept="12" />
-      <node id="4017912752400226834" at="40,241,41,224" concept="6" />
-      <node id="4017912752400274823" at="41,224,42,171" concept="6" />
+      <node id="4017912752400181055" at="33,406,34,167" concept="12" />
+      <node id="4017912752400139440" at="34,167,35,220" concept="6" />
+      <node id="4017912752400281629" at="35,220,36,193" concept="6" />
+      <node id="4017912752400226559" at="36,193,37,99" concept="12" />
+      <node id="4017912752400268804" at="38,42,39,241" concept="12" />
+      <node id="4017912752400226834" at="39,241,40,224" concept="6" />
+      <node id="4017912752400274823" at="40,224,41,171" concept="6" />
       <node id="4017912752400074243" at="16,0,18,0" concept="3" trace="AddCast_QuickFix#()V" />
       <node id="3527492638300199551" at="29,35,32,5" concept="10" />
-      <node id="4017912752400226722" at="38,99,43,5" concept="10" />
+      <node id="4017912752400226722" at="37,99,42,5" concept="10" />
       <node id="4017912752405167608" at="19,31,26,5" concept="10" />
       <node id="4017912752400074243" at="18,0,29,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="4017912752400074243" at="29,0,45,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4017912752400074243" at="29,0,44,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="4017912752400074243" at="16,29,16,29" />
       <scope id="4017912752405167611" at="20,199,21,40" />
       <scope id="4017912752405251973" at="22,200,23,27" />
       <scope id="4017912752406008657" at="24,553,25,25" />
       <scope id="3527492638300199554" at="30,240,31,13" />
       <scope id="4017912752400074243" at="16,0,18,0" />
-      <scope id="4017912752400226725" at="39,42,42,171">
+      <scope id="4017912752400226725" at="38,42,41,171">
         <var name="parens" id="4017912752400268805" />
       </scope>
       <scope id="4017912752400292321" at="18,44,27,527">
@@ -17150,15 +17149,15 @@
       <scope id="4017912752400074243" at="18,0,29,0">
         <var name="node" id="4017912752400074243" />
       </scope>
-      <scope id="4017912752400074584" at="29,35,43,5">
+      <scope id="4017912752400074584" at="29,35,42,5">
         <var name="actualType" id="4017912752408337023" />
         <var name="cast" id="4017912752400181056" />
         <var name="needsParensAroundCastExpression" id="4017912752400226560" />
       </scope>
-      <scope id="4017912752400074243" at="29,0,45,0">
+      <scope id="4017912752400074243" at="29,0,44,0">
         <var name="node" id="4017912752400074243" />
       </scope>
-      <unit id="4017912752400074243" at="15,0,46,0" name="jetbrains.mps.baseLanguage.typesystem.AddCast_QuickFix" />
+      <unit id="4017912752400074243" at="15,0,45,0" name="jetbrains.mps.baseLanguage.typesystem.AddCast_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/4017912752406060665">
