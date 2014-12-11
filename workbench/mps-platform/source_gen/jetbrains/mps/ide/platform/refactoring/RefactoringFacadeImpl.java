@@ -73,7 +73,7 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
             updateModels(context);
           }
         } catch (Throwable t) {
-          myLog.error("An exception occured while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
+          myLog.error("An exception occurred while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
         }
       }
     });

@@ -55,7 +55,6 @@ public class LanguageRenamer {
     renameLanguage(oldFqName);
     renameGenerators(oldFqName);
 
-    RefactoringAccess.getInstance().getRefactoringFacade().writeIntoLog(myContext);
     SModelRepository.getInstance().saveAll();
 
     if (deleteOldFiles) {
