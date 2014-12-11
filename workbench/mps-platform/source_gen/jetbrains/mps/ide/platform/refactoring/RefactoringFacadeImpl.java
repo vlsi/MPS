@@ -73,7 +73,7 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
             updateModels(context);
           }
         } catch (Throwable t) {
-          myLog.error("An exception occurred while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
+          myLog.error("An exception occured while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
         }
       }
     });
@@ -214,7 +214,7 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
     try {
       result = refactoring.getModelsToGenerate(context);
     } catch (Throwable t) {
-      myLog.error("An error occured while trying to collect models to generate from refactoring " + refactoring.getUserFriendlyName() + ". No models will be generated", t);
+      myLog.error("An error occurred while trying to collect models to generate from refactoring " + refactoring.getUserFriendlyName() + ". No models will be generated", t);
     }
 
     return result;
