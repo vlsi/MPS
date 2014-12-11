@@ -18,6 +18,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -64,6 +65,10 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(conceptDeclaration, "Missing stub for a non-stub ImplementationWithStubPart concept", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "5624281226435558417", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.CreateMissingStub_QuickFix", false);
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
         }
       }
     }
