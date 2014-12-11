@@ -880,7 +880,7 @@
           <node concept="3clFbS" id="hEwIqRA" role="3clFbx">
             <node concept="3cpWs6" id="hEwIqRB" role="3cqZAp">
               <node concept="Xl_RD" id="hEwIqRC" role="3cqZAk">
-                <property role="Xl_RC" value="concept&lt; &gt;" />
+                <property role="Xl_RC" value="conceptNode&lt; &gt;" />
               </node>
             </node>
           </node>
@@ -893,7 +893,7 @@
                   </node>
                   <node concept="3cpWs3" id="hEwIqRG" role="3uHU7B">
                     <node concept="Xl_RD" id="hEwIqRM" role="3uHU7B">
-                      <property role="Xl_RC" value="concept&lt;" />
+                      <property role="Xl_RC" value="conceptNode&lt;" />
                     </node>
                     <node concept="2OqwBi" id="hEwIqRJ" role="3uHU7w">
                       <node concept="37vLTw" id="3GM_nagTBep" role="2Oq$k0">
