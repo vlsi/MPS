@@ -19,12 +19,12 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -32,6 +32,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -109,7 +110,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     MapSequence.fromMap(loadedDescriptors).clear();
   }
 
-  public MigrationScript fetchScriptForModule(AbstractModule module, MigrationScriptReference scriptReference) {
+  public MigrationScript fetchScript(MigrationScriptReference scriptReference) {
     SLanguage depLanguage = scriptReference.getLanguage();
     int current = scriptReference.getFromVersion();
     MigrationDescriptor md = getMigrationDescriptor((Language) depLanguage.getSourceModule());
@@ -287,30 +288,35 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         });
       }
     });
-    final Iterable<ScriptApplied> allStepScripts = Sequence.fromIterable(projectModules.value).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, ScriptApplied>() {
-      public Iterable<ScriptApplied> translate(final AbstractModule module) {
-        return Sequence.fromIterable(MapSequence.fromMap(languageVersions).get(module)).where(new IWhereFilter<MigrationScriptReference>() {
-          public boolean accept(MigrationScriptReference it) {
-            return MigrationsUtil.isMigrationNeeded(it.getLanguage(), it.getFromVersion(), module);
-          }
-        }).select(new ISelector<MigrationScriptReference, MigrationScript>() {
-          public MigrationScript select(MigrationScriptReference it) {
-            return fetchScriptForModule(module, it);
-          }
-        }).where(new IWhereFilter<MigrationScript>() {
-          public boolean accept(MigrationScript script) {
-            return script != null;
-          }
-        }).select(new ISelector<MigrationScript, ScriptApplied>() {
-          public ScriptApplied select(MigrationScript script) {
-            return new ScriptApplied(script, module);
-          }
-        });
-      }
-    }).toListSequence();
+    final List<ScriptApplied> allStepScripts = ListSequence.fromList(new ArrayList<ScriptApplied>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        final ScriptApplied nextScript = Sequence.fromIterable(allStepScripts).findFirst(new IWhereFilter<ScriptApplied>() {
+        ListSequence.fromList(allStepScripts).addSequence(Sequence.fromIterable(projectModules.value).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, ScriptApplied>() {
+          public Iterable<ScriptApplied> translate(final AbstractModule module) {
+            return Sequence.fromIterable(MapSequence.fromMap(languageVersions).get(module)).where(new IWhereFilter<MigrationScriptReference>() {
+              public boolean accept(MigrationScriptReference it) {
+                return MigrationsUtil.isMigrationNeeded(it.getLanguage(), it.getFromVersion(), module);
+              }
+            }).select(new ISelector<MigrationScriptReference, MigrationScript>() {
+              public MigrationScript select(MigrationScriptReference it) {
+                return fetchScript(it);
+              }
+            }).where(new IWhereFilter<MigrationScript>() {
+              public boolean accept(MigrationScript script) {
+                return script != null;
+              }
+            }).select(new ISelector<MigrationScript, ScriptApplied>() {
+              public ScriptApplied select(MigrationScript script) {
+                return new ScriptApplied(script, module);
+              }
+            });
+          }
+        }));
+      }
+    });
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        final ScriptApplied nextScript = ListSequence.fromList(allStepScripts).findFirst(new IWhereFilter<ScriptApplied>() {
           public boolean accept(ScriptApplied it) {
             return isAvailable(it);
           }
