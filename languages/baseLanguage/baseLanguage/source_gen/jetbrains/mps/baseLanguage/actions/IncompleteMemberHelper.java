@@ -4,12 +4,13 @@ package jetbrains.mps.baseLanguage.actions;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.util.IdentifierConstraintsUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.IncompleteMemberDeclaration_Behavior;
@@ -20,10 +21,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class IncompleteMemberHelper {
 
   /*package*/ static boolean isJavaKeyWordNotApplicableAsModifier(SNode member, String pattern) {
-    List<SNode> subConcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveType"), SNodeOperations.getModel(member));
-    Iterable<String> aliases = ListSequence.fromList(subConcepts).select(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    List<SAbstractConcept> subConcepts = SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType"), SNodeOperations.getModel(member));
+    Iterable<String> aliases = ListSequence.fromList(subConcepts).select(new ISelector<SAbstractConcept, String>() {
+      public String select(SAbstractConcept it) {
+        return SPropertyOperations.getString(SNodeOperations.asNode(it), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
       }
     });
 
