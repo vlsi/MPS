@@ -65,6 +65,7 @@ public interface IAttributeDescriptor {
      * strings can be passed from user-written code
      */
     @Deprecated
+    @ToRemove(version = 3.2)
     public LinkAttribute(@NotNull SConcept attributeDeclaration, String linkRole) {
       super(attributeDeclaration);
       myLink = MetaAdapterFactoryByName.getReferenceLink(MetaIdFactory.INVALID_CONCEPT_NAME, linkRole);
@@ -75,6 +76,10 @@ public interface IAttributeDescriptor {
     }
     @Override
     public void update(@NotNull SNode attribute) {
+      //todo: remove this hack
+      if (myLink.getContainingConcept().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
+        myLink = MetaAdapterFactoryByName.getReferenceLink(attribute.getParent().getConcept().getQualifiedName(), myLink.getRoleName());
+      }
       AttributeOperations.setLink(attribute, myLink);
     }
   }
@@ -94,6 +99,7 @@ public interface IAttributeDescriptor {
      * strings can be passed from user-written code
      */
     @Deprecated
+    @ToRemove(version = 3.2)
     public PropertyAttribute(@NotNull SConcept attributeDeclaration, @NotNull String propertyName) {
       super(attributeDeclaration);
       myProperty = MetaAdapterFactoryByName.getProperty(MetaIdFactory.INVALID_CONCEPT_NAME, propertyName);
@@ -104,6 +110,10 @@ public interface IAttributeDescriptor {
     }
     @Override
     public void update(@NotNull SNode attribute) {
+      //todo: remove this hack
+      if (myProperty.getContainingConcept().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
+        myProperty = MetaAdapterFactoryByName.getProperty(attribute.getParent().getConcept().getQualifiedName(), myProperty.getName());
+      }
       AttributeOperations.setProperty(attribute, myProperty);
     }
   }
