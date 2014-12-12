@@ -381,41 +381,64 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/4082234026705847530">
     <file name="CreateMissingStub_QuickFix.java">
-      <node id="4082234026705850182" at="18,44,19,33" concept="12" />
-      <node id="4082234026705861678" at="21,35,22,200" concept="11" />
-      <node id="4082234026705863287" at="22,200,23,175" concept="11" />
-      <node id="4082234026705865990" at="23,175,24,195" concept="11" />
-      <node id="4082234026705871595" at="24,195,25,275" concept="11" />
-      <node id="4082234026705866196" at="25,275,26,163" concept="6" />
-      <node id="4082234026705877677" at="26,163,27,174" concept="6" />
-      <node id="4082234026705882900" at="27,174,28,169" concept="6" />
-      <node id="4082234026705967639" at="28,169,29,242" concept="11" />
-      <node id="4082234026705969667" at="29,242,30,345" concept="6" />
-      <node id="4082234026705886928" at="30,345,31,204" concept="6" />
-      <node id="4082234026705977729" at="31,204,32,242" concept="11" />
-      <node id="4082234026705977735" at="32,242,33,342" concept="6" />
-      <node id="4082234026705977744" at="33,342,34,204" concept="6" />
-      <node id="4082234026705847530" at="16,0,18,0" concept="3" trace="CreateMissingStub_QuickFix#()V" />
-      <node id="4082234026705847530" at="18,0,21,0" concept="10" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="4082234026705847530" at="21,0,36,0" concept="10" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="4082234026705847530" at="16,39,16,39" />
-      <scope id="4082234026705848344" at="18,44,19,33" />
-      <scope id="4082234026705847530" at="16,0,18,0" />
-      <scope id="4082234026705847530" at="18,0,21,0">
+      <node id="4082234026705850182" at="22,44,23,33" concept="12" />
+      <node id="4082234026705861678" at="25,35,26,200" concept="11" />
+      <node id="4082234026705863287" at="26,200,27,175" concept="11" />
+      <node id="4082234026705865990" at="27,175,28,195" concept="11" />
+      <node id="4082234026705871595" at="28,195,29,275" concept="11" />
+      <node id="4082234026705866196" at="29,275,30,163" concept="6" />
+      <node id="4082234026705877677" at="30,163,31,174" concept="6" />
+      <node id="4082234026705882900" at="31,174,32,169" concept="6" />
+      <node id="4082234026705967639" at="32,169,33,242" concept="11" />
+      <node id="4082234026705969667" at="33,242,34,345" concept="6" />
+      <node id="4082234026705886928" at="34,345,35,204" concept="6" />
+      <node id="4082234026705977729" at="35,204,36,242" concept="11" />
+      <node id="4082234026705977735" at="36,242,37,342" concept="6" />
+      <node id="4082234026705977744" at="37,342,38,204" concept="6" />
+      <node id="2737713837019572923" at="38,204,39,0" concept="14" />
+      <node id="6243792783972011440" at="39,0,40,42" concept="11" />
+      <node id="6243792783972014034" at="41,24,42,13" concept="12" />
+      <node id="6243792783970043522" at="43,5,44,41" concept="11" />
+      <node id="6243792783970131963" at="44,41,45,72" concept="11" />
+      <node id="6108181796397558529" at="46,30,47,13" concept="12" />
+      <node id="6243792783970503763" at="48,5,49,0" concept="14" />
+      <node id="6243792783970405020" at="49,0,50,239" concept="11" />
+      <node id="4082234026708424749" at="50,239,51,177" concept="6" />
+      <node id="6108181796397082969" at="51,177,52,176" concept="6" />
+      <node id="6108181796397255700" at="52,176,53,237" concept="11" />
+      <node id="6108181796397258188" at="53,237,54,291" concept="6" />
+      <node id="6108181796397168509" at="54,291,55,173" concept="6" />
+      <node id="6243792783970194380" at="55,173,56,36" concept="6" />
+      <node id="4082234026705847530" at="20,0,22,0" concept="3" trace="CreateMissingStub_QuickFix#()V" />
+      <node id="4082234026705847530" at="22,0,25,0" concept="10" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="6243792783972012906" at="40,42,43,5" concept="9" />
+      <node id="6108181796397557889" at="45,72,48,5" concept="9" />
+      <node id="4082234026705847530" at="25,0,58,0" concept="10" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="4082234026705847530" at="20,39,20,39" />
+      <scope id="4082234026705848344" at="22,44,23,33" />
+      <scope id="6243792783972012909" at="41,24,42,13" />
+      <scope id="6108181796397557892" at="46,30,47,13" />
+      <scope id="4082234026705847530" at="20,0,22,0" />
+      <scope id="4082234026705847530" at="22,0,25,0">
         <var name="node" id="4082234026705847530" />
       </scope>
-      <scope id="4082234026705847532" at="21,35,34,204">
+      <scope id="4082234026705847532" at="25,35,56,36">
+        <var name="component" id="6108181796397255701" />
         <var name="declaration" id="4082234026705861679" />
+        <var name="editor" id="6243792783970405021" />
+        <var name="editorModel" id="6243792783970131964" />
+        <var name="language" id="6243792783970043523" />
+        <var name="model" id="6243792783972011441" />
         <var name="name" id="4082234026705863288" />
         <var name="ref1" id="4082234026705967640" />
         <var name="ref2" id="4082234026705977730" />
         <var name="stub" id="4082234026705871596" />
         <var name="virtualPackage" id="4082234026705865991" />
       </scope>
-      <scope id="4082234026705847530" at="21,0,36,0">
+      <scope id="4082234026705847530" at="25,0,58,0">
         <var name="node" id="4082234026705847530" />
       </scope>
-      <unit id="4082234026705847530" at="15,0,37,0" name="jetbrains.mps.lang.structure.typesystem.CreateMissingStub_QuickFix" />
+      <unit id="4082234026705847530" at="19,0,59,0" name="jetbrains.mps.lang.structure.typesystem.CreateMissingStub_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/4376713410984013095">
