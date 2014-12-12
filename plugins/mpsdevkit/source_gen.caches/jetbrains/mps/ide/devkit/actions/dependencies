@@ -934,6 +934,7 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowGenerationTraceback_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowNodeInExplorer_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowNodeIn_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowOriginNode_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowStructure_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowTypeSystemTrace_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.StructureAdditions_ActionGroup" />
@@ -1312,14 +1313,11 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.generator.GenerationTracerViewTool" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -1331,22 +1329,20 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.ShowGenerationTraceback_Action" file="ShowGenerationTraceback_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.generator.GenerationTracerViewTool" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
@@ -1381,6 +1377,29 @@
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.devkit.actions.ShowOriginNode_Action" file="ShowOriginNode_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.TransientSModel" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.textgen.trace.TracingUtil" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.ShowStructure_Action" file="ShowStructure_Action.java">
     <classNode dependClassName="com.intellij.ide.structureView.StructureView" />
