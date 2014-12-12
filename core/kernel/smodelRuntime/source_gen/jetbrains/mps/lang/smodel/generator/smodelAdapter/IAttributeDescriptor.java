@@ -76,7 +76,7 @@ public interface IAttributeDescriptor {
     }
     @Override
     public void update(@NotNull SNode attribute) {
-      //todo: remove this hack
+      // todo: remove this hack 
       if (myLink.getContainingConcept().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
         myLink = MetaAdapterFactoryByName.getReferenceLink(attribute.getParent().getConcept().getQualifiedName(), myLink.getRoleName());
       }
@@ -110,7 +110,7 @@ public interface IAttributeDescriptor {
     }
     @Override
     public void update(@NotNull SNode attribute) {
-      //todo: remove this hack
+      // todo: remove this hack 
       if (myProperty.getContainingConcept().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
         myProperty = MetaAdapterFactoryByName.getProperty(attribute.getParent().getConcept().getQualifiedName(), myProperty.getName());
       }

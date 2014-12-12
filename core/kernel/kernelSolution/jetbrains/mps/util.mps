@@ -1975,14 +1975,14 @@
                     <property role="3clFbU" value="true" />
                   </node>
                 </node>
-                <node concept="3uibUv" id="6kZNNdikoCD" role="HW$YZ">
-                  <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                <node concept="3uibUv" id="5WN7Ue4y8zw" role="HW$YZ">
+                  <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
                 </node>
               </node>
             </node>
             <node concept="2hMVRd" id="6kZNNdikoC_" role="1tU5fm">
-              <node concept="3uibUv" id="6kZNNdikoCA" role="2hN53Y">
-                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+              <node concept="3uibUv" id="5WN7Ue4y9rB" role="2hN53Y">
+                <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
               </node>
             </node>
           </node>
@@ -2022,7 +2022,7 @@
                       <ref role="3cqZAo" node="6kZNNdikoCs" resolve="a" />
                     </node>
                     <node concept="liA8E" id="6kZNNdikoDR" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SNode.getChildren(java.lang.String):java.lang.Iterable" resolve="getChildren" />
+                      <ref role="37wK5l" to="ec5l:~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink):java.lang.Iterable" resolve="getChildren" />
                       <node concept="2GrUjf" id="6kZNNdikoDS" role="37wK5m">
                         <ref role="2Gs0qQ" node="6kZNNdikoCP" resolve="r" />
                       </node>
@@ -2047,7 +2047,7 @@
                   <ref role="1Pybhc" to="msyo:~IterableUtil" resolve="IterableUtil" />
                   <node concept="2OqwBi" id="5RC8IUNu2jW" role="37wK5m">
                     <node concept="liA8E" id="5RC8IUNu2jY" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SNode.getChildren(java.lang.String):java.lang.Iterable" resolve="getChildren" />
+                      <ref role="37wK5l" to="ec5l:~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink):java.lang.Iterable" resolve="getChildren" />
                       <node concept="2GrUjf" id="5RC8IUNu2jZ" role="37wK5m">
                         <ref role="2Gs0qQ" node="6kZNNdikoCP" resolve="r" />
                       </node>
@@ -4906,15 +4906,15 @@
             <node concept="2ShNRf" id="5a6ZoiZ19vT" role="33vP2m">
               <node concept="1pGfFk" id="5a6ZoiZ1a7S" role="2ShVmc">
                 <ref role="37wK5l" to="k7g3:~HashSet.&lt;init&gt;()" resolve="HashSet" />
-                <node concept="3uibUv" id="1K7tYdF$FnV" role="1pMfVU">
-                  <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                <node concept="3uibUv" id="5WN7Ue4xxSK" role="1pMfVU">
+                  <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
                 </node>
               </node>
             </node>
             <node concept="3uibUv" id="2mTpoiCttyl" role="1tU5fm">
               <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-              <node concept="3uibUv" id="2mTpoiCttym" role="11_B2D">
-                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+              <node concept="3uibUv" id="5WN7Ue4xxCa" role="11_B2D">
+                <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
               </node>
             </node>
           </node>
@@ -4966,7 +4966,7 @@
                           <ref role="3cqZAo" node="2mTpoiCttyF" resolve="child" />
                         </node>
                         <node concept="liA8E" id="2mTpoiCtzGB" role="2OqNvi">
-                          <ref role="37wK5l" to="ec5l:~SNode.getRoleInParent():java.lang.String" resolve="getRoleInParent" />
+                          <ref role="37wK5l" to="ec5l:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                         </node>
                       </node>
                     </node>
@@ -4985,8 +4985,8 @@
       <node concept="3Tm1VV" id="2mTpoiCttyM" role="1B3o_S" />
       <node concept="3uibUv" id="2mTpoiCttyN" role="3clF45">
         <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-        <node concept="3uibUv" id="2mTpoiCttyO" role="11_B2D">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <node concept="3uibUv" id="5WN7Ue4xwAL" role="11_B2D">
+          <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
         </node>
       </node>
     </node>
