@@ -58,7 +58,9 @@ public abstract class BasePluginManager<T> {
             try {
               plugin = createPlugin(c);
             } catch (Exception e) {
-              LOG.error("Contributor " + c + " threw an exception during plugin creation " + e.getMessage(), e);
+              LOG.error("Contributor " + c + " threw an exception during plugin creation ", e);
+            } catch (LinkageError le) {
+              LOG.error("Contributor " + c + " threw a linkage error during plugin creation ", le);
             }
 
             if (plugin != null) {
@@ -97,7 +99,6 @@ public abstract class BasePluginManager<T> {
 
       beforePluginsDisposed(plugins);
 
-
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
@@ -106,6 +107,8 @@ public abstract class BasePluginManager<T> {
               disposePlugin(plugin);
             } catch (Exception e) {
               LOG.error("Plugin " + plugin + " threw an exception during disposing " + e.getMessage(), e);
+            } catch (LinkageError le) {
+              LOG.error("Plugin " + plugin + " threw a linkage error during disposing", le);
             }
           }
         }
