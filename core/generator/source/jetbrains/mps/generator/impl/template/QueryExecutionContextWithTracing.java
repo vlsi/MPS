@@ -123,7 +123,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Object evaluate(@NotNull PropertyValueQuery query, @NotNull PropertyMacroContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName(String.format("property macro(name: %s)", query.getPropertyName()), (SNodeReference) null), true);
+      tracer.push(taskName(String.format("property macro(name: %s)", query.getProperty()), (SNodeReference) null), true);
       return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();

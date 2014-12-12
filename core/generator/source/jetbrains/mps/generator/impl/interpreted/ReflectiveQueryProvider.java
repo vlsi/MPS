@@ -55,6 +55,7 @@ import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.QueryMethodGenerated.QueryMethod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -184,14 +185,14 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   @Override
   public PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro) {
     SNode function = RuleUtil.getPropertyMacro_ValueFunction(propertyMacro);
-    final String propertyName = AttributeOperations.getPropertyName(propertyMacro);
-    if (function == null || propertyName == null) {
+    final SProperty property = AttributeOperations.getProperty(propertyMacro);
+    if (function == null || property == null) {
       return super.getPropertyValueQuery(propertyMacro);
     }
     String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
     SNode templateNode = propertyMacro.getParent();
-    final Object templateValue = SNodeAccessUtil.getProperty(templateNode, propertyName);
-    return new PropMacro(propertyMacro.getReference(), methodName, propertyName, templateValue);
+    final Object templateValue = SNodeAccessUtil.getProperty(templateNode, property);
+    return new PropMacro(propertyMacro.getReference(), methodName, property, templateValue);
   }
 
   @NotNull
@@ -386,8 +387,8 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     private final String myMethodName;
     private QueryMethod<Object> myMethod;
 
-    public PropMacro(@NotNull SNodeReference macro, @NotNull String methodName, @NotNull String propertyName, Object templateValue) {
-      super(macro, propertyName, templateValue);
+    public PropMacro(@NotNull SNodeReference macro, @NotNull String methodName, @NotNull SProperty property, Object templateValue) {
+      super(macro, property, templateValue);
       myMethodName = methodName;
     }
 
