@@ -9,7 +9,9 @@
   <imports />
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -211,6 +213,9 @@
     <node concept="1TJgyi" id="1x$A_M24zkk" role="1TKVEl">
       <property role="TrG5h" value="linkRole" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="7R2Gq48DAB9" role="lGtFl">
+        <property role="YLQ7P" value="linkRole and linkId should be used directly. Use getLink() behaviour method or AttributeOperations.getLink(node&lt;LinkAttribute&gt;)" />
+      </node>
     </node>
     <node concept="1TJgyi" id="1avfQ4B$JLs" role="1TKVEl">
       <property role="TrG5h" value="linkId" />
@@ -239,6 +244,9 @@
     <node concept="1TJgyi" id="1x$A_M24zkl" role="1TKVEl">
       <property role="TrG5h" value="propertyName" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="7R2Gq48DzZK" role="lGtFl">
+        <property role="YLQ7P" value="propertyName and propertyId should be used directly. Use getProperty() behaviour method or AttributeOperations.getProperty(node&lt;PropertyAttribute&gt;)" />
+      </node>
     </node>
     <node concept="1TJgyi" id="1avfQ4BzllH" role="1TKVEl">
       <property role="TrG5h" value="propertyId" />
