@@ -4,26 +4,20 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.Arrays;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -38,15 +32,9 @@ public class RenameLink_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.structure.refactorings" + "." + "RenameLink"), ((SNode) MapSequence.fromMap(_params).get("target")));
-  }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "RenameLink", t);
@@ -90,13 +78,9 @@ public class RenameLink_Action extends BaseAction {
         return;
       }
 
-      modelAccess.runReadInEDT(new Runnable() {
+      modelAccess.executeCommand(new Runnable() {
         public void run() {
-          SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
-          if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
-            return;
-          }
-          RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.RenameLink", Arrays.asList("newName"), Arrays.asList(newName), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+          SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"), newName);
         }
       });
 
