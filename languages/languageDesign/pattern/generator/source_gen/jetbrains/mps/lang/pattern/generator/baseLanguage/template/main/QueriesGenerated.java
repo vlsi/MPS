@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -398,7 +399,7 @@ public class QueriesGenerated {
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"));
+        return PropertyAttribute_Behavior.call_getProperty_1341860900488756504(it).getName();
       }
     }, true).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
