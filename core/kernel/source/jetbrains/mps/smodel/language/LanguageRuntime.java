@@ -105,7 +105,7 @@ public abstract class LanguageRuntime {
    */
   @ToRemove(version = 3.2)
   public int getVersion() {
-    return 0;
+    return -1;
   }
 
   /**
