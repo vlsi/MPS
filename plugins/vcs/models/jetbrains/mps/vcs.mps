@@ -3013,19 +3013,6 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="6m1MVDkVd2a" role="1B3o_S" />
-    <node concept="Wx3nA" id="6m1MVDkVd2b" role="jymVt">
-      <property role="TrG5h" value="ourEditorManager" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3uibUv" id="6m1MVDkVdyn" role="1tU5fm">
-        <ref role="3uigEE" to="9a8:~EditorManager" resolve="EditorManager" />
-      </node>
-      <node concept="3Tm6S6" id="6m1MVDkVd2d" role="1B3o_S" />
-      <node concept="2ShNRf" id="6m1MVDkVd2e" role="33vP2m">
-        <node concept="1pGfFk" id="6m1MVDkVd2f" role="2ShVmc">
-          <ref role="37wK5l" to="9a8:~EditorManager.&lt;init&gt;()" resolve="EditorManager" />
-        </node>
-      </node>
-    </node>
     <node concept="Wx3nA" id="6m1MVDkVd2g" role="jymVt">
       <property role="TrG5h" value="myParentDisposable" />
       <property role="3TUv4t" value="false" />
@@ -3110,29 +3097,6 @@
                 </node>
               </node>
               <node concept="3clFbS" id="6m1MVDkVd2x" role="3clF47">
-                <node concept="3clFbJ" id="6m1MVDkVd2y" role="3cqZAp">
-                  <node concept="3clFbC" id="6m1MVDkVd2z" role="3clFbw">
-                    <node concept="37vLTw" id="2BHiRxgmuXa" role="3uHU7B">
-                      <ref role="3cqZAo" node="6m1MVDkVd2u" resolve="interfaceClass" />
-                    </node>
-                    <node concept="3VsKOn" id="6m1MVDkVdHF" role="3uHU7w">
-                      <ref role="3VsUkX" to="9a8:~EditorManager" resolve="EditorManager" />
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="6m1MVDkVd2A" role="3clFbx">
-                    <node concept="3cpWs6" id="6m1MVDkVd2B" role="3cqZAp">
-                      <node concept="10QFUN" id="6m1MVDkVd2C" role="3cqZAk">
-                        <node concept="10M0yZ" id="6m1MVDkVd2D" role="10QFUP">
-                          <ref role="3cqZAo" node="6m1MVDkVd2b" resolve="ourEditorManager" />
-                          <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
-                        </node>
-                        <node concept="16syzq" id="6m1MVDkVd2E" role="10QFUM">
-                          <ref role="16sUi3" node="6m1MVDkVd2s" resolve="T" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node concept="3clFbJ" id="6m1MVDkVd2F" role="3cqZAp">
                   <node concept="3clFbC" id="6m1MVDkVd2G" role="3clFbw">
                     <node concept="37vLTw" id="2BHiRxglVvg" role="3uHU7B">
