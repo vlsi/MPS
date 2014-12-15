@@ -166,7 +166,7 @@ public abstract class ModelCheckerViewer extends JPanel {
 
   }
   public void prepareAndCheckModules(List<SModule> modules, String taskTargetTitle, Icon taskIcon) {
-    IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
+    IResultProvider resultProvider = FindUtils.makeProvider(newModelChecker());
     SearchQuery searchQuery = new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence()), myProject.getScope());
     myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
 
@@ -190,7 +190,7 @@ public abstract class ModelCheckerViewer extends JPanel {
     runCheck();
   }
   public void prepareAndCheckModels(List<SModel> modelDescriptors, String taskTargetTitle, Icon taskIcon) {
-    prepareAndCheckModels(modelDescriptors, taskTargetTitle, taskIcon, new ModelCheckerIssueFinder());
+    prepareAndCheckModels(modelDescriptors, taskTargetTitle, taskIcon, newModelChecker());
   }
   public void setTabProperties(String title, Icon icon) {
     myTabTitle = title;
@@ -207,6 +207,9 @@ public abstract class ModelCheckerViewer extends JPanel {
   }
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myUsagesView.getSearchResults();
+  }
+  private ModelCheckerIssueFinder newModelChecker() {
+    return new ModelCheckerIssueFinder(ModelCheckerSettings.getInstance().getSpecificCheckers(myProject));
   }
   public static class MyNodeRepresentator implements INodeRepresentator<ModelCheckerIssue> {
     public MyNodeRepresentator() {

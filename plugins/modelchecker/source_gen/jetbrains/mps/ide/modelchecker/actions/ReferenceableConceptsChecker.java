@@ -8,7 +8,6 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -30,7 +29,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
   public ReferenceableConceptsChecker() {
   }
   @Override
-  public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, final ProgressMonitor monitor, SRepository repository) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, final ProgressMonitor monitor) {
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
     if (model == null || model == null || model.getModule() == null) {
       return results;

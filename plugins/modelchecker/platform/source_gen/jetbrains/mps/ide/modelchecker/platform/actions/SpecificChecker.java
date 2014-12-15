@@ -6,7 +6,6 @@ import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
@@ -22,7 +21,7 @@ import org.apache.log4j.LogManager;
 public abstract class SpecificChecker {
   public SpecificChecker() {
   }
-  public abstract List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor progressContext, SRepository repository);
+  public abstract List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor progressContext);
   protected static void addIssue(List<SearchResult<ModelCheckerIssue>> results, SNode node, String message, String severity, String issueType, IModelCheckerFix fix) {
     if (filterIssue(node)) {
       if (SNodeOperations.getContainingRoot(node) == null) {

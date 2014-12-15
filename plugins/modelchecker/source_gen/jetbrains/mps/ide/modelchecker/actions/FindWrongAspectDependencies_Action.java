@@ -9,21 +9,19 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssueFinder;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssueFinder;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
@@ -55,35 +53,35 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     return true;
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors())).where(new IWhereFilter<SModel>() {
+      List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules())).where(new IWhereFilter<SModule>() {
+        public boolean accept(SModule it) {
+          return FindWrongAspectDependencies_Action.this.needsProcessing(it, _params);
+        }
+      }).translate(new ITranslator2<SModule, SModel>() {
+        public Iterable<SModel> translate(SModule it) {
+          return it.getModels();
+        }
+      }).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel md) {
-          return FindWrongAspectDependencies_Action.this.needsProcessing(md, _params);
+          return SModelStereotype.isUserModel(md);
         }
       }));
-      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(models, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new ModelCheckerIssueFinder(new AspectDependenciesChecker()));
+      ModelCheckerTool.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject()).checkModels(models, null, true, new ModelCheckerIssueFinder(new AspectDependenciesChecker(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")))));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindWrongAspectDependencies", t);
       }
     }
   }
-  /*package*/ boolean needsProcessing(SModel model, final Map<String, Object> _params) {
-    if (!(SModelStereotype.isUserModel(model))) {
-      return false;
-    }
-    SModule module = model.getModule();
+  /*package*/ boolean needsProcessing(SModule module, final Map<String, Object> _params) {
     if (module instanceof Language) {
       return true;
     } else if (module instanceof Solution) {

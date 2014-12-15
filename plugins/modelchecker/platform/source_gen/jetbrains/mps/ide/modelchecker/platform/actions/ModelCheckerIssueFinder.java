@@ -24,16 +24,13 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
 public class ModelCheckerIssueFinder implements IFinder {
   private final List<SpecificChecker> myExtraCheckers;
 
-  public ModelCheckerIssueFinder() {
-    myExtraCheckers = null;
-  }
   public ModelCheckerIssueFinder(List<SpecificChecker> extraCheckers) {
     myExtraCheckers = extraCheckers;
   }
   public ModelCheckerIssueFinder(SpecificChecker... extraCheckers) {
     this(Arrays.asList(extraCheckers));
   }
-  protected List<SpecificChecker> getSpecificCheckers() {
+  protected final List<SpecificChecker> getSpecificCheckers() {
     return myExtraCheckers;
   }
   @Override
@@ -77,8 +74,7 @@ public class ModelCheckerIssueFinder implements IFinder {
       }
       monitor.advance(0);
 
-      ModelChecker modelChecker = new ModelChecker();
-      modelChecker.setSpecificCheckers(getSpecificCheckers());
+      ModelChecker modelChecker = new ModelChecker(getSpecificCheckers());
       monitor.advance(1);
       for (SModel modelDescriptor : ListSequence.fromList(models)) {
         modelChecker.checkModel(modelDescriptor, monitor.subTask(1, SubProgressKind.REPLACING));
