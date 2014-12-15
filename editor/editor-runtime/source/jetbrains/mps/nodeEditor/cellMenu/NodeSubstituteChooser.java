@@ -143,7 +143,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     myIsSmart = isSmart;
   }
 
-  protected NodeSubstitutePatternEditor getPatternEditor() {
+  public NodeSubstitutePatternEditor getPatternEditor() {
     if (myPatternEditor == null) {
       myPatternEditor = new NodeSubstitutePatternEditor();
     }
