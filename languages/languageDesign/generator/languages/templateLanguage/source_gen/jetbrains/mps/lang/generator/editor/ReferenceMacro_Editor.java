@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -66,8 +65,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -76,8 +74,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11dc0f7933bL, 0x2d521c90e9601e88L, "comment")) != null;
   }
   private EditorCell createAttributedLinkCell_9o3sb9_c0(EditorContext editorContext, SNode node) {
-    IOperationContext opContext = editorContext.getOperationContext();
-    EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+    EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Reference.class);
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_nodeUnderMacro(style, editorCell);
@@ -156,8 +153,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;

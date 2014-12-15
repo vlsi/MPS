@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -64,8 +63,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createAttributedNodeCell_62u4bw_c0(EditorContext editorContext, SNode node) {
-    IOperationContext opContext = editorContext.getOperationContext();
-    EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+    EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     return editorCell;
   }

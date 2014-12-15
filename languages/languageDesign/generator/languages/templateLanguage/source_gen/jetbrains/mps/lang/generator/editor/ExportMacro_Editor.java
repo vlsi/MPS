@@ -23,7 +23,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -93,8 +92,7 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -124,16 +122,14 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
         return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
     }
   }
   private EditorCell createAttributedNodeCell_gzv99m_d0(EditorContext editorContext, SNode node) {
-    IOperationContext opContext = editorContext.getOperationContext();
-    EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+    EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_nodeUnderMacro(style, editorCell);
