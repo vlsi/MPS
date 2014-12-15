@@ -4,15 +4,16 @@ package jetbrains.mps.lang.core.typesystem;
 
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class RemoveUnknownReference_QuickFix extends QuickFix_Runtime {
   public RemoveUnknownReference_QuickFix() {
   }
   public String getDescription(SNode node) {
-    return "Reference in undeclared role \"" + ((String) RemoveUnknownReference_QuickFix.this.getField("role")[0]) + "\"";
+    return "Reference in undeclared role \"" + ((SReferenceLink) RemoveUnknownReference_QuickFix.this.getField("role")[0]).getRoleName() + "\"";
   }
   public void execute(SNode node) {
-    SNodeAccessUtil.setReferenceTarget(node, ((String) RemoveUnknownReference_QuickFix.this.getField("role")[0]), null);
+    SNodeAccessUtil.setReferenceTarget(node, ((SReferenceLink) RemoveUnknownReference_QuickFix.this.getField("role")[0]), null);
   }
 }

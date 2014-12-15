@@ -70,7 +70,7 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
 
   @Override
   @Nullable
-  protected LinkDescriptor getLinkDescriptor() {
+  public LinkDescriptor getLinkDescriptor() {
     ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId());
     if (cd == null) return null;
     return cd.getLinkDescriptor(myRoleId);
