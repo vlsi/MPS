@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
@@ -72,21 +71,24 @@ public class EditorManager {
 
   @Nullable
   public static EditorManager getInstanceFromContext(EditorContext editorContext) {
-    // TODO: Create API interface for EditorManager & move this method to EditorContext
-    // TODO: get rid of all usages of getInstanceFromContext(Project project) / getInstanceFromContext(IOperationContext context) methods
-    IOperationContext operationContext = editorContext.getOperationContext();
-    return operationContext.getComponent(EditorManager.class);
+    // TODO: Create API interface for EditorManager & use this method always here
+    return ((jetbrains.mps.nodeEditor.EditorContext) editorContext).getEditorManager();
   }
 
+  /**
+   * @deprecated since MPS 3.2 use getInstanceFromContext(EditorContext editorContext) method
+   */
   @Nullable
+  @Deprecated
   public static EditorManager getInstanceFromContext(Project project) {
-    if (project == null) return null;
-    com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
-    if (ideaProject == null) return null;
-    return ideaProject.getComponent(EditorManager.class);
+    return null;
   }
 
+  /**
+   * @deprecated since MPS 3.2 use getInstanceFromContext(EditorContext editorContext) method
+   */
   @Nullable
+  @Deprecated
   public static EditorManager getInstanceFromContext(IOperationContext context) {
     return context.getComponent(EditorManager.class);
   }
