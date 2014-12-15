@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="Kaja.sandbox.sandbox.Dog" file="Dog.java">
+    <classNode dependClassName="JavaKaja.runtime.Direction" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="JavaKaja.runtime.KajaFrame" />
   </dependency>
