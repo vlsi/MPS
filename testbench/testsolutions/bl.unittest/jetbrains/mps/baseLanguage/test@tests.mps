@@ -19744,5 +19744,35 @@
       </node>
     </node>
   </node>
+  <node concept="1lH9Xt" id="1C72Z0GmWpB">
+    <property role="3GE5qa" value="dataFlow" />
+    <property role="TrG5h" value="Cardinalities" />
+    <node concept="1qefOq" id="1C72Z0Gn8tk" role="1SKRRt">
+      <node concept="3fqX7Q" id="1C72Z0GpHEv" role="1qenE9">
+        <node concept="7CXmI" id="1C72Z0GpMlt" role="lGtFl">
+          <node concept="1TM$A" id="1C72Z0GpMlu" role="7EUXB" />
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="1C72Z0Gn8EP" role="1SKRRt">
+      <node concept="2YIFZM" id="1C72Z0GoMcE" role="1qenE9">
+        <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+        <node concept="7CXmI" id="1C72Z0GoMcY" role="lGtFl">
+          <node concept="1TM$A" id="1C72Z0GoMcZ" role="7EUXB" />
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="1C72Z0GnOcD" role="1SKRRt">
+      <node concept="3fqX7Q" id="1C72Z0GnSwC" role="1qenE9">
+        <node concept="3clFbT" id="1C72Z0GnSxp" role="3fr31v">
+          <property role="3clFbU" value="true" />
+        </node>
+        <node concept="7CXmI" id="1C72Z0GnSzQ" role="lGtFl">
+          <node concept="1TM$A" id="1C72Z0GnSzR" role="7EUXB" />
+        </node>
+        <node concept="3clFbT" id="1C72Z0GpPL3" role="3fr31v" />
+      </node>
+    </node>
+  </node>
 </model>
 
