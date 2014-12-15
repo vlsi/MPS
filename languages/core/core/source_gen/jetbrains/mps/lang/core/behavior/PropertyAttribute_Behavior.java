@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.persistence.IdHelper;
 
 public class PropertyAttribute_Behavior {
   public static void init(SNode thisNode) {
@@ -18,6 +19,10 @@ public class PropertyAttribute_Behavior {
       return MetaAdapterFactoryByName.getProperty(SNodeOperations.getConcept(SNodeOperations.getParent(thisNode)).getQualifiedName(), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName")));
     }
     return MetaAdapterFactory.getProperty(SPropertyId.deserialize(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"))), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName")));
+  }
+  public static void call_setProperty_7714691473529670203(SNode thisNode, SProperty metaProperty) {
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"), metaProperty.getName());
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"), IdHelper.getPropertyId(metaProperty).serialize());
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;

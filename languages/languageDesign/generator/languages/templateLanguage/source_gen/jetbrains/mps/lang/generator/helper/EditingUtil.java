@@ -12,6 +12,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.lang.core.behavior.LinkAttribute_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -110,6 +115,10 @@ public final class EditingUtil {
     }
     String propertyName = EditingUtil.getEditedPropertyName(cell);
     SNode propertyMacro = SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro"), propertyName), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro")));
+    SProperty metaProperty = SNodeOperations.getConcept(node).getProperty(propertyName);
+    if (metaProperty != null) {
+      PropertyAttribute_Behavior.call_setProperty_7714691473529670203(propertyMacro, metaProperty);
+    }
     return propertyMacro;
   }
   public static SNode addReferenceMacro(SNode node, EditorCell cell) {
@@ -122,6 +131,10 @@ public final class EditingUtil {
       }
     }
     SNode referenceMacro = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), linkRole), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro")));
+    SAbstractLink link = SNodeOperations.getConcept(node).getLink(linkRole);
+    if (link instanceof SReferenceLink) {
+      LinkAttribute_Behavior.call_setLink_7714691473529772139(referenceMacro, (SReferenceLink) link);
+    }
     return referenceMacro;
   }
   public static boolean isInsideTemplateFragment(SNode node) {
