@@ -15,7 +15,7 @@ public class AsSConcept_Behavior {
     return true;
   }
   public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
-    return false;
+    return true;
   }
   public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return true;

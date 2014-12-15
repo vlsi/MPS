@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project;
+import jetbrains.mps.project.structure.modules.RefUpdateUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -33,26 +35,24 @@ public class ReferenceUpdater {
     return INSTANCE;
   }
 
-  public void updateModelReferences() {
+  public void updateModelAndModuleReferences(Project project) {
     ModelAccess.assertLegalWrite();
 
-    for (SModel sm : SModelRepository.getInstance().getModelDescriptors()) {
-      if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(sm))) continue;
+    RefUpdateUtil.updateModuleRefs(project.getModuleReferences());
 
-      final SModelInternal model = (SModelInternal) sm;
-      if ((model.updateSModelReferences() | model.updateModuleReferences()) && (sm instanceof EditableSModel)) {
-        ((EditableSModel) sm).setChanged(true);
-      }
-    }
-  }
-
-  public void updateModuleReferences() {
-    ModelAccess.assertLegalWrite();
-
-    for (SModule m : MPSModuleRepository.getInstance().getModules()) {
+    for (SModule m : project.getModulesWithGenerators()) {
       AbstractModule module = (AbstractModule) m;
       module.updateSModelReferences();
       module.updateModuleReferences();
+
+      for (SModel sm : m.getModels()) {
+        if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(sm))) continue;
+
+        final SModelInternal model = (SModelInternal) sm;
+        if ((model.updateSModelReferences() | model.updateModuleReferences()) && (sm instanceof EditableSModel)) {
+          ((EditableSModel) sm).setChanged(true);
+        }
+      }
     }
   }
 }

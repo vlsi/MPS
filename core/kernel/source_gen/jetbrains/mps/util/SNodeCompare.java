@@ -6,13 +6,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.DynamicReference;
 import java.util.Set;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import java.util.HashSet;
 import java.util.List;
 
@@ -30,20 +31,20 @@ public class SNodeCompare {
     return true;
   }
   private static boolean nodeReferencesEquals(SNode a, SNode b) {
-    final Map<String, SReference> aMap = MapSequence.fromMap(new HashMap<String, SReference>());
-    final Map<String, SReference> bMap = MapSequence.fromMap(new HashMap<String, SReference>());
+    final Map<SReferenceLink, SReference> aMap = MapSequence.fromMap(new HashMap<SReferenceLink, SReference>());
+    final Map<SReferenceLink, SReference> bMap = MapSequence.fromMap(new HashMap<SReferenceLink, SReference>());
     Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences((SNode) a)).visitAll(new IVisitor<SReference>() {
       public void visit(SReference ref) {
-        MapSequence.fromMap(aMap).put(SLinkOperations.getRole(ref), ref);
+        MapSequence.fromMap(aMap).put(ref.getLink(), ref);
       }
     });
     Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences((SNode) b)).visitAll(new IVisitor<SReference>() {
       public void visit(SReference ref) {
-        MapSequence.fromMap(bMap).put(SLinkOperations.getRole(ref), ref);
+        MapSequence.fromMap(bMap).put(ref.getLink(), ref);
       }
     });
 
-    for (String r : SetSequence.fromSet(MapSequence.fromMap(aMap).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(bMap).keySet()))) {
+    for (SReferenceLink r : SetSequence.fromSet(MapSequence.fromMap(aMap).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(bMap).keySet()))) {
       SReference aRef = a.getReference(r);
       SReference bRef = b.getReference(r);
       if (aRef == null || bRef == null) {
@@ -74,9 +75,9 @@ public class SNodeCompare {
     return true;
   }
   private static boolean nodeChildrenEquals(SNode a, SNode b) {
-    Set<String> roles = SetSequence.fromSetWithValues(new HashSet<String>(), SNodeOperations.getChildRoles(a, true));
+    Set<SContainmentLink> roles = SetSequence.fromSetWithValues(new HashSet<SContainmentLink>(), SNodeOperations.getChildRoles(a, true));
     SetSequence.fromSet(roles).addSequence(SetSequence.fromSet(SNodeOperations.getChildRoles(b, true)));
-    for (String r : roles) {
+    for (SContainmentLink r : SetSequence.fromSet(roles)) {
       List<? extends SNode> aChildren = IterableUtil.asList(a.getChildren(r));
       List<? extends SNode> bChildren = IterableUtil.asList(b.getChildren(r));
       if (aChildren.size() != bChildren.size()) {
@@ -91,7 +92,7 @@ public class SNodeCompare {
     return true;
   }
   public static boolean nodeEquals(SNode a, SNode b) {
-    return eq_acety0_a0a0a0a0e(a.getConcept().getQualifiedName(), b.getConcept().getQualifiedName()) && eq_acety0_a0a0a0a0e_0(a.getNodeId(), b.getNodeId()) && nodePropertiesEquals(a, b) && nodeReferencesEquals(a, b) && nodeChildrenEquals(a, b);
+    return eq_acety0_a0a0a0a0e(a.getConcept(), b.getConcept()) && eq_acety0_a0a0a0a0e_0(a.getNodeId(), b.getNodeId()) && nodePropertiesEquals(a, b) && nodeReferencesEquals(a, b) && nodeChildrenEquals(a, b);
   }
   private static boolean neq_acety0_a0a0c0b(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

@@ -40,8 +40,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
-import jetbrains.mps.smodel.language.ConceptRepository;
-import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
@@ -161,7 +160,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     for (SLanguage direct : directlyUsed) {
       result.add(direct);
       for (Language ext : ((Language) direct.getSourceModule()).getAllExtendedLanguages()) {
-        result.add(ConceptRepository.getInstance().getLanguage(ext.getModuleName()));
+        result.add(MetaAdapterByDeclaration.getLanguage(ext));
       }
     }
     return result;
@@ -179,7 +178,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     for (SModuleReference usedLanguage : getModuleDescriptor().getUsedLanguages()) {
       Language language = ModuleRepositoryFacade.getInstance().getModule(usedLanguage, Language.class);
       if (language != null) {
-        languages.add(ConceptRepository.getInstance().getLanguage(language.getModuleName()));
+        languages.add(MetaAdapterByDeclaration.getLanguage(language));
       }
     }
 
@@ -188,7 +187,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (devKit != null) {
         for (Language language : devKit.getAllExportedLanguages()) {
           if (language != null) {
-            languages.add(ConceptRepository.getInstance().getLanguage(language.getModuleName()));
+            languages.add(MetaAdapterByDeclaration.getLanguage(language));
           }
         }
       }
@@ -196,7 +195,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     if (BootstrapLanguages.coreLanguage() != null) {
       // todo: ???
-      languages.add(ConceptRepository.getInstance().getLanguage(BootstrapLanguages.CORE_NAMESPACE));
+      languages.add(MetaAdapterByDeclaration.getLanguage(BootstrapLanguages.coreLanguage()));
     }
 
     return languages; // todo: maybe collect extended languages here

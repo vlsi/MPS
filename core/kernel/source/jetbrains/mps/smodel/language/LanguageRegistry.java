@@ -22,6 +22,7 @@ import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import org.apache.log4j.LogManager;
@@ -199,9 +200,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     Set<LanguageRuntime> languagesToUnload = new HashSet<LanguageRuntime>();
     for (SModule module : unloadedModules) {
       if (module instanceof Language) {
-        String namespace = module.getModuleName();
-        if (myLanguages.containsKey(namespace)) {
-          languagesToUnload.add(myLanguages.get(namespace));
+        SLanguageId languageId = MetaIdByDeclaration.getLanguageId((Language) module);
+        if (myLanguagesById.containsKey(languageId)) {
+          languagesToUnload.add(myLanguagesById.get(languageId));
         }
       }
     }
@@ -220,16 +221,19 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     Set<LanguageRuntime> loadedRuntimes = new HashSet<LanguageRuntime>();
     for (SModule module : loadedModules) {
       if (module instanceof Language) {
-        String namespace = module.getModuleName();
-        assert (!myLanguages.containsKey(namespace));
         final Language langModule = (Language) module;
+        SLanguageId languageId = MetaIdByDeclaration.getLanguageId(langModule);
+        assert (!myLanguagesById.containsKey(languageId));
         LanguageRuntime runtime = createRuntime(langModule);
         if (runtime != null) {
-          myLanguages.put(namespace, runtime);
           if (runtime.getId() == null) {
             runtime.setId(MetaIdByDeclaration.getLanguageId(langModule));
           }
-          myLanguagesById.put(runtime.getId(), runtime);
+          String namespace = runtime.getNamespace();
+          assert languageId.equals(runtime.getId());
+          assert (!myLanguages.containsKey(namespace));
+          myLanguages.put(namespace, runtime);
+          myLanguagesById.put(languageId, runtime);
           loadedRuntimes.add(runtime);
         }
       }

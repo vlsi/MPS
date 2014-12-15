@@ -146,6 +146,7 @@
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
+        <property id="8606350594693632173" name="isTransient" index="eg7rD" />
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
@@ -3043,6 +3044,16 @@
       </node>
       <node concept="3Tm6S6" id="29N7xYwTG4v" role="1B3o_S" />
     </node>
+    <node concept="312cEg" id="3_F3cCDBnK" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myMpsProject" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="3_F3cCD_WK" role="1B3o_S" />
+      <node concept="3uibUv" id="3_F3cCDB1_" role="1tU5fm">
+        <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+      </node>
+    </node>
     <node concept="312cEg" id="29N7xYwTG4w" role="jymVt">
       <property role="TrG5h" value="myModelDescriptor" />
       <property role="34CwA1" value="false" />
@@ -3067,6 +3078,12 @@
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="1HT8bsPZmKp" role="1tU5fm">
           <ref role="3uigEE" to="ec5l:~EditableSModel" resolve="EditableSModel" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="3_F3cCD$5F" role="3clF46">
+        <property role="TrG5h" value="mpsProject" />
+        <node concept="3uibUv" id="3_F3cCD$I3" role="1tU5fm">
+          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="3clFbS" id="29N7xYwTG4L" role="3clF47">
@@ -3094,6 +3111,16 @@
             </node>
             <node concept="37vLTw" id="2BHiRxghfZw" role="37vLTx">
               <ref role="3cqZAo" node="29N7xYwTG4D" resolve="project" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3_F3cCDCEg" role="3cqZAp">
+          <node concept="37vLTI" id="3_F3cCDD26" role="3clFbG">
+            <node concept="37vLTw" id="3_F3cCDDrW" role="37vLTx">
+              <ref role="3cqZAo" node="3_F3cCD$5F" resolve="mpsProject" />
+            </node>
+            <node concept="37vLTw" id="3_F3cCDCEe" role="37vLTJ">
+              <ref role="3cqZAo" node="3_F3cCDBnK" resolve="myMpsProject" />
             </node>
           </node>
         </node>
@@ -3574,7 +3601,10 @@
                                                       <ref role="3cqZAo" node="2174XWuQEe$" resolve="renamer" />
                                                     </node>
                                                     <node concept="liA8E" id="2174XWuQEfF" role="2OqNvi">
-                                                      <ref role="37wK5l" to="opvq:~ModelRenamer.updateReferencesIfNeeded():void" resolve="updateReferencesIfNeeded" />
+                                                      <ref role="37wK5l" to="opvq:~ModelRenamer.updateReferencesIfNeeded(jetbrains.mps.project.Project):void" resolve="updateReferencesIfNeeded" />
+                                                      <node concept="37vLTw" id="3_F3cCDJNg" role="37wK5m">
+                                                        <ref role="3cqZAo" node="3_F3cCDBnK" resolve="myMpsProject" />
+                                                      </node>
                                                     </node>
                                                   </node>
                                                 </node>
@@ -3633,6 +3663,15 @@
       </node>
       <node concept="3Tm6S6" id="29N7xYwTGoX" role="1B3o_S" />
     </node>
+    <node concept="312cEg" id="3_F3cCDgiN" role="jymVt">
+      <property role="TrG5h" value="myProject" />
+      <property role="34CwA1" value="false" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3uibUv" id="3_F3cCDj85" role="1tU5fm">
+        <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+      </node>
+      <node concept="3Tm6S6" id="3_F3cCDgiP" role="1B3o_S" />
+    </node>
     <node concept="3clFbW" id="29N7xYwTGoY" role="jymVt">
       <node concept="37vLTG" id="50dRo6PLsAr" role="3clF46">
         <property role="TrG5h" value="project" />
@@ -3647,6 +3686,12 @@
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="29N7xYwTGp4" role="1tU5fm">
           <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="3_F3cCDiGZ" role="3clF46">
+        <property role="TrG5h" value="mpsProject" />
+        <node concept="3uibUv" id="3_F3cCDiXh" role="1tU5fm">
+          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="3clFbS" id="29N7xYwTGp5" role="3clF47">
@@ -3674,6 +3719,16 @@
             </node>
             <node concept="37vLTw" id="2BHiRxgm9xX" role="37vLTx">
               <ref role="3cqZAo" node="29N7xYwTGp3" resolve="solution" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3_F3cCDhyj" role="3cqZAp">
+          <node concept="37vLTI" id="3_F3cCDhF0" role="3clFbG">
+            <node concept="37vLTw" id="3_F3cCDjki" role="37vLTx">
+              <ref role="3cqZAo" node="3_F3cCDiGZ" resolve="mpsProject" />
+            </node>
+            <node concept="37vLTw" id="3_F3cCDhyh" role="37vLTJ">
+              <ref role="3cqZAo" node="3_F3cCDgiN" resolve="myProject" />
             </node>
           </node>
         </node>
@@ -3781,12 +3836,15 @@
                             <node concept="2OqwBi" id="5_EKmHbXML" role="3clFbG">
                               <node concept="2ShNRf" id="5_EKmHbXMM" role="2Oq$k0">
                                 <node concept="1pGfFk" id="5_EKmHbXMN" role="2ShVmc">
-                                  <ref role="37wK5l" to="v1j0:~SolutionRenamer.&lt;init&gt;(jetbrains.mps.project.Solution,java.lang.String)" resolve="SolutionRenamer" />
+                                  <ref role="37wK5l" to="v1j0:~SolutionRenamer.&lt;init&gt;(jetbrains.mps.project.Solution,java.lang.String,jetbrains.mps.project.Project)" resolve="SolutionRenamer" />
                                   <node concept="37vLTw" id="2BHiRxeuyQO" role="37wK5m">
                                     <ref role="3cqZAo" node="29N7xYwTGoV" resolve="mySolution" />
                                   </node>
                                   <node concept="37vLTw" id="3GM_nagTzoo" role="37wK5m">
                                     <ref role="3cqZAo" node="5_EKmHbXMu" resolve="fqName" />
+                                  </node>
+                                  <node concept="37vLTw" id="3_F3cCDjvL" role="37wK5m">
+                                    <ref role="3cqZAo" node="3_F3cCDgiN" resolve="myProject" />
                                   </node>
                                 </node>
                               </node>

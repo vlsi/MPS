@@ -132,7 +132,7 @@ public class NodePresentationUtil {
       return node.getConcept().getName() + " (" + NameUtil.compactModelName(node.getModel().getReference()) + ")";
     }
 
-    return node.getRoleInParent() + " (" + NameUtil.compactNodeFQName(node.getContainingRoot()) + ")";
+    return node.getContainmentLink().getRoleName() + " (" + NameUtil.compactNodeFQName(node.getContainingRoot()) + ")";
   }
 
   public static String getAliasOrConceptName(SNode node) {

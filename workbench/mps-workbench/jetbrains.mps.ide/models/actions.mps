@@ -12039,6 +12039,12 @@
                     </node>
                   </node>
                 </node>
+                <node concept="2OqwBi" id="3_F3cCFawX" role="37wK5m">
+                  <node concept="2WthIp" id="3_F3cCFax0" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="3_F3cCFax2" role="2OqNvi">
+                    <ref role="2WH_rO" node="3_F3cCEPQc" resolve="mpsProject" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="liA8E" id="5VIEYrBjNnz" role="2OqNvi">
@@ -12052,6 +12058,11 @@
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="7HZe2EwZDkX" role="1oa70y" />
+    </node>
+    <node concept="1DS2jV" id="3_F3cCEPQc" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="3_F3cCEPQd" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="5VIEYrBjMRG" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
@@ -12415,6 +12426,12 @@
                     <node concept="3uibUv" id="3fhZBTgeaEX" role="10QFUM">
                       <ref role="3uigEE" to="vsqj:~Solution" resolve="Solution" />
                     </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="3_F3cCEG_S" role="37wK5m">
+                  <node concept="2WthIp" id="3_F3cCEG_V" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="3_F3cCEG_X" role="2OqNvi">
+                    <ref role="2WH_rO" node="cvGLnZnRlO" resolve="project" />
                   </node>
                 </node>
               </node>

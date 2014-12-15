@@ -20,7 +20,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -73,9 +75,14 @@ public class MatchingUtil {
     }
 
     //-- matching references
-    Set<String> referenceRoles = jetbrains.mps.util.SNodeOperations.getReferenceRoles(node1);
-    referenceRoles.addAll(jetbrains.mps.util.SNodeOperations.getReferenceRoles(node2));
-    for (String role : referenceRoles) {
+    Set<SReferenceLink> referenceRoles = new HashSet<SReferenceLink>();
+    for (SReference ref : node1.getReferences()) {
+      referenceRoles.add(ref.getLink());
+    }
+    for (SReference ref : node2.getReferences()) {
+      referenceRoles.add(ref.getLink());
+    }
+    for (SReferenceLink role : referenceRoles) {
       SNode target1 = node1.getReferenceTarget(role);
       SNode target2 = node2.getReferenceTarget(role);
       if (matchModifier.accept(target1, target2)) {
@@ -86,9 +93,9 @@ public class MatchingUtil {
     }
 
     // children
-    Set<String> childRoles = jetbrains.mps.util.SNodeOperations.getChildRoles(node1, matchAttributes);
+    Set<SContainmentLink> childRoles = jetbrains.mps.util.SNodeOperations.getChildRoles(node1, matchAttributes);
     childRoles.addAll(jetbrains.mps.util.SNodeOperations.getChildRoles(node2, matchAttributes));
-    for (String role : childRoles) {
+    for (SContainmentLink role : childRoles) {
       List<SNode> children1 = IterableUtil.asList(node1.getChildren(role));
       List<SNode> children2 = IterableUtil.asList(node2.getChildren(role));
       if (matchModifier.acceptList(children1, children2)) {
@@ -119,11 +126,11 @@ public class MatchingUtil {
   }
 
   public static int hash(SNode node) {
-    int result = node.getConcept().getQualifiedName().hashCode();
+    int result = node.getConcept().hashCode();
     for (SReference reference : node.getReferences()) {
       SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
       if (targetNode != null) {
-        result = 31 * result + reference.getRole().hashCode();
+        result = 31 * result + reference.getLink().hashCode();
         result = 31 * result + targetNode.hashCode();
       }
     }
@@ -136,7 +143,7 @@ public class MatchingUtil {
     }
     for (SNode child : node.getChildren()) {
       if (AttributeOperations.isAttribute(child)) continue;
-      result = 31 * result + child.getRoleInParent().hashCode();
+      result = 31 * result + child.getContainmentLink().hashCode();
       result = 31 * result + hash(child);
     }
     return result;

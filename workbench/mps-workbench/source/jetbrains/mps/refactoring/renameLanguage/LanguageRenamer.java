@@ -37,11 +37,13 @@ public class LanguageRenamer {
   private Language myLanguage;
   private String myNewName;
   private RefactoringContext myContext;
+  private Project myProject;
 
   public LanguageRenamer(Project project, Language language, String newName) {
     myLanguage = language;
     myNewName = newName;
     myContext = new RefactoringContext(project, OldRefactoringAdapter.createAdapterFor(new MyRefactoring()));
+    myProject = project;
   }
 
   public void rename(boolean deleteOldFiles) {
@@ -53,7 +55,6 @@ public class LanguageRenamer {
     renameLanguage(oldFqName);
     renameGenerators(oldFqName);
 
-    RefactoringAccess.getInstance().getRefactoringFacade().writeIntoLog(myContext);
     SModelRepository.getInstance().saveAll();
 
     if (deleteOldFiles) {
@@ -104,14 +105,13 @@ public class LanguageRenamer {
   }
 
   public void update() {
-    updateReferences();
+    updateReferences(myProject);
     RefactoringAccess.getInstance().getRefactoringFacade().updateLoadedModels(myContext);
     SModelRepository.getInstance().saveAll();
   }
 
-  private void updateReferences() {
-    ReferenceUpdater.getInstance().updateModelReferences();
-    ReferenceUpdater.getInstance().updateModuleReferences();
+  private void updateReferences(Project project) {
+    ReferenceUpdater.getInstance().updateModelAndModuleReferences(project);
   }
 
   public static class MyRefactoring extends AbstractLoggableRefactoring {

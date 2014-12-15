@@ -114,7 +114,7 @@ public class ModelRenameHandler implements RenameHandler {
           try {
             ProjectHelper.getModelAccess(project).runWriteAction(new Runnable() {
               public void run() {
-                renamer.updateReferencesIfNeeded();
+                renamer.updateReferencesIfNeeded(project);
               }
             });
           } finally {
@@ -218,10 +218,9 @@ public class ModelRenameHandler implements RenameHandler {
       myModelDescriptor.rename(myNewName, true);
     }
 
-    public void updateReferencesIfNeeded() {
+    public void updateReferencesIfNeeded(Project project) {
       if (!myLazy) {
-        ReferenceUpdater.getInstance().updateModelReferences();
-        ReferenceUpdater.getInstance().updateModuleReferences();
+        ReferenceUpdater.getInstance().updateModelAndModuleReferences(ProjectHelper.toMPSProject(project));
       }
     }
   }

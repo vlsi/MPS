@@ -31,6 +31,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.generator.behavior.VarMacro_Behavior;
 import java.util.List;
+import jetbrains.mps.persistence.IdHelper;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior;
 import jetbrains.mps.generator.impl.CrossModelUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
@@ -816,8 +818,24 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3188250212959938105(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
-  public static Object propertyMacro_GetPropertyValue_1547633452932886888(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"));
+  public static Object propertyMacro_GetPropertyValue_8269982547288486710(final PropertyMacroContext _context) {
+    long msb = IdHelper.getPropertyId(PropertyAttribute_Behavior.call_getProperty_1341860900488756504(_context.getNode())).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
+    return "0x" + Long.toHexString(msb) + "L";
+  }
+  public static Object propertyMacro_GetPropertyValue_8269982547288486727(final PropertyMacroContext _context) {
+    long lsb = IdHelper.getPropertyId(PropertyAttribute_Behavior.call_getProperty_1341860900488756504(_context.getNode())).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
+    return "0x" + Long.toHexString(lsb) + "L";
+  }
+  public static Object propertyMacro_GetPropertyValue_8269982547288486744(final PropertyMacroContext _context) {
+    long id = IdHelper.getPropertyId(PropertyAttribute_Behavior.call_getProperty_1341860900488756504(_context.getNode())).getConceptId().getIdValue();
+    return "0x" + Long.toHexString(id) + "L";
+  }
+  public static Object propertyMacro_GetPropertyValue_8269982547288497124(final PropertyMacroContext _context) {
+    long id = IdHelper.getPropertyId(PropertyAttribute_Behavior.call_getProperty_1341860900488756504(_context.getNode())).getIdValue();
+    return "0x" + Long.toHexString(id) + "L";
+  }
+  public static Object propertyMacro_GetPropertyValue_8269982547288486757(final PropertyMacroContext _context) {
+    return PropertyAttribute_Behavior.call_getProperty_1341860900488756504(_context.getNode()).getName();
   }
   public static Object propertyMacro_GetPropertyValue_1547633452932955847(final PropertyMacroContext _context) {
     return SNodeOperations.getParent(_context.getNode()).getProperty(MetaAdapterByDeclaration.getProperty((jetbrains.mps.smodel.SNode) AttributeOperations.getPropertyDeclaration(_context.getNode())));

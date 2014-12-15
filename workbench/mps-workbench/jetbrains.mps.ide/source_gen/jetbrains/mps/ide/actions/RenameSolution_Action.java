@@ -63,7 +63,7 @@ public class RenameSolution_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((Solution) ((SModule) MapSequence.fromMap(_params).get("module")))).show();
+      new RenameSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((Solution) ((SModule) MapSequence.fromMap(_params).get("module"))), ((MPSProject) MapSequence.fromMap(_params).get("project"))).show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "RenameSolution", t);

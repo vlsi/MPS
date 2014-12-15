@@ -216,7 +216,7 @@ public class ChildSubstituteActionsHelper {
     int index = 0;
     if (currentChild != null) {
       linkDeclaration = ((jetbrains.mps.smodel.SNode) currentChild).getRoleLink();
-      index = ((jetbrains.mps.smodel.SNode) parentNode).getChildren(currentChild.getRoleInParent()).indexOf(currentChild);
+      index = ((jetbrains.mps.smodel.SNode) parentNode).getChildren(currentChild.getContainmentLink()).indexOf(currentChild);
     }
 //    TODO generate wrapping setter to have access to original link
 //    if(childSetter instanceof WrappingSetter) {
