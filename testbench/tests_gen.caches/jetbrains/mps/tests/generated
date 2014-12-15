@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="evxg6wownnllqj6z84l02jj8s6y2dx6">
+<dependencies version="2" modelHash="-cxvvnp8hq20cvvfc4a2ipjdebszyz6k">
   <dep model="83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="-9939z7v33d6tjgov445givgysejoiys" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="49sfpjpij5jt8s6qt6hg3iqcn682p4l" />
   <dep model="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)" hash="-6haksykcw6rmrzvt09ocbv1x84j9vqt" />
   <dep model="r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)" hash="-54yslyfja2ehxw6a62pqc68kqx7kmwx" />
   <dep model="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)" hash="-8fr7tkwmzon60uzx1i4pkpi4m8rvyzt" />
@@ -66,10 +66,11 @@
   <dep model="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)" hash="-cmn6iz9ouudobb5hvte05dp19kzucfp" />
   <dep model="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)" hash="-592v55gwvlj7ya05iee0u0vqbifx2qq" />
   <dep model="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)" hash="bgf5nwygyg3vrarone3ssza9xhk88os" />
+  <dep model="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" hash="4223hr262yvq668prkypa1yx19bl8do" />
   <dep model="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)" hash="5dlpw8irhtxv1mjrfabszcjhnxnxpdz" />
   <dep model="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)" hash="kr6jvsx8gpxvbsh0eaxr0bs4ktce48" />
   <dep model="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)" hash="1w20vi69vsfrixe77qnzt2rx7drvg4q" />
-  <common hash="ryswn5siwx4yc3gd5ll8iolx3wefj3" dependsOnNodes="true">
+  <common hash="-3axokychxb7o0xs2q4bgsgetfjhnldj" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="2712670354707832463" name="closures.test" hash="-6umafvzpgbk3vu3vy7qmmghyqkiszfh">
@@ -286,6 +287,10 @@
   <source id="5264300948579920015" name="jetbrains.mps.build.stripping.tests" hash="b6jogbaut55cywvvmqvc0ddemu1zo4y">
     <dep model="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)" />
     <file name="TestModule_jetbrains_mps_build_stripping_tests.java" />
+  </source>
+  <source id="1549542843040185004" name="testSubtypingTest" hash="-d4f42l82ilrliba5fw2tf3ng8l1jiqo">
+    <dep model="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
+    <file name="TestModule_testSubtypingTest.java" />
   </source>
 </dependencies>
 

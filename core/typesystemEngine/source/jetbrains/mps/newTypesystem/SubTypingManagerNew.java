@@ -16,8 +16,11 @@
 package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -27,7 +30,10 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -52,9 +58,8 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (TypesUtil.isVariable(subType)) return false;
     if (TypesUtil.isVariable(superType)) return false;
 
-    return LanguageScopeExecutor.execWithTwoLanguageScope(
-      subType != null ? jetbrains.mps.util.SNodeOperations.getLanguage(subType) : null,
-      superType != null ? jetbrains.mps.util.SNodeOperations.getLanguage(superType) : null,
+    return LanguageScopeExecutor.execWithMultiLanguageScope(
+        collectLanguagesRecursively(subType, superType),
       new Computable<Boolean>() {
         @Override
         public Boolean compute() {
@@ -66,18 +71,17 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   @Override
   public boolean isSubTypeByReplacementRules(final SNode subType, final SNode superType, final boolean isWeak) {
-    return LanguageScopeExecutor.execWithTwoLanguageScope(
-      subType != null ? jetbrains.mps.util.SNodeOperations.getLanguage(subType) : null,
-      superType != null ? jetbrains.mps.util.SNodeOperations.getLanguage(superType) : null,
-      new Computable<Boolean>() {
-        @Override
-        public Boolean compute() {
-          for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
-            if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2, isWeak)) {
-              return true;
+    return LanguageScopeExecutor.execWithMultiLanguageScope(
+        collectLanguagesRecursively(subType, superType),
+        new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
+              if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2, isWeak)) {
+                return true;
+              }
             }
-          }
-          return false;
+            return false;
         }
       });
   }
@@ -148,9 +152,8 @@ public class SubTypingManagerNew extends SubtypingManager {
       return false;
     }
 
-    return LanguageScopeExecutor.execWithTwoLanguageScope(
-        jetbrains.mps.util.SNodeOperations.getLanguage(left),
-        jetbrains.mps.util.SNodeOperations.getLanguage(right),
+    return LanguageScopeExecutor.execWithMultiLanguageScope(
+        collectLanguagesRecursively(left, right),
         new Computable<Boolean>() {
           @Override
           public Boolean compute() {
@@ -179,6 +182,19 @@ public class SubTypingManagerNew extends SubtypingManager {
     List<SNode> typesList = SubtypingUtil.eliminateSubTypes(types);
     return new HashSet<SNode>(SubtypingUtil.leastCommonSuperTypes(typesList, null));
   }
+
+  public static Iterable<Language> collectLanguagesRecursively(SNode... type) {
+    Collection<Language> langs = new ArrayList<Language>();
+
+    for (SNode node : type) {
+      for(SNode desc: SNodeUtil.getDescendants(node, null, true)) {
+        langs.add(jetbrains.mps.util.SNodeOperations.getLanguage(desc));
+      }
+    }
+
+    return langs;
+  }
+
 
   // TODO: wtf
   /*package*/ SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final TypeCheckingContext context) {
