@@ -77,6 +77,20 @@ public class LanguageScopeFactory {
   }
 
   /**
+   * Produces a new <code>LanguageScope</code> from the ones corresponding to the collections in parameter <code>multiLangs</code>.
+   * @param multiLangs
+   * @return
+   */
+  public LanguageScope getMultiLanguageScope (Iterable<? extends Iterable<SModuleReference>> multiLangs) {
+    LanguageScope langScope = null;
+    for(Iterable<SModuleReference> langs: multiLangs) {
+      LanguageScope tmp = getLanguageScope(langs);
+      langScope = langScope == null? tmp : langScope.disjunction(tmp);
+    }
+    return langScope;
+  }
+
+  /**
    * The parameter <code>langs</code> is expected to change relatively seldom. As a result, we can cache the calculated
    * scope value and index it with the identity hash of the parameter.
    * @param langs the dependencies collection; all languages included in this scope
