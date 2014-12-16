@@ -35,6 +35,7 @@
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.typesystem.RepetitionCheck_NonTypesystemRule" file="RepetitionCheck_NonTypesystemRule.java">
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />

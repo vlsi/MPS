@@ -2104,6 +2104,48 @@
         </node>
       </node>
       <node concept="3clFbH" id="4SdtvCazS0u" role="3cqZAp" />
+      <node concept="3cpWs8" id="2XA_ayKhycb" role="3cqZAp">
+        <node concept="3cpWsn" id="2XA_ayKhycc" role="3cpWs9">
+          <property role="TrG5h" value="isInterfacePart" />
+          <node concept="10P_77" id="2XA_ayKhycd" role="1tU5fm" />
+          <node concept="2OqwBi" id="2XA_ayKhyce" role="33vP2m">
+            <node concept="37vLTw" id="2XA_ayKhycf" role="2Oq$k0">
+              <ref role="3cqZAo" node="5HgiwiAJZSr" resolve="allSuperConcepts" />
+            </node>
+            <node concept="2HwmR7" id="2XA_ayKhycg" role="2OqNvi">
+              <node concept="1bVj0M" id="2XA_ayKhych" role="23t8la">
+                <node concept="3clFbS" id="2XA_ayKhyci" role="1bW5cS">
+                  <node concept="3clFbF" id="2XA_ayKhycj" role="3cqZAp">
+                    <node concept="17R0WA" id="2XA_ayKhyck" role="3clFbG">
+                      <node concept="37vLTw" id="2XA_ayKhycl" role="3uHU7B">
+                        <ref role="3cqZAo" node="2XA_ayKhycp" resolve="it" />
+                      </node>
+                      <node concept="2OqwBi" id="2XA_ayKhycm" role="3uHU7w">
+                        <node concept="35c_gC" id="2XA_ayKhycn" role="2Oq$k0">
+                          <ref role="35c_gD" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
+                        </node>
+                        <node concept="FGMqu" id="2XA_ayKhyco" role="2OqNvi" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="2XA_ayKhycp" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="2XA_ayKhycq" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="2XA_ayKhegz" role="3cqZAp">
+        <node concept="3clFbS" id="2XA_ayKhegA" role="3clFbx">
+          <node concept="3cpWs6" id="2XA_ayKhfo9" role="3cqZAp" />
+        </node>
+        <node concept="37vLTw" id="2XA_ayKhzdB" role="3clFbw">
+          <ref role="3cqZAo" node="2XA_ayKhycc" resolve="isInterfacePart" />
+        </node>
+      </node>
       <node concept="3clFbJ" id="4SdtvCazUhE" role="3cqZAp">
         <node concept="3clFbS" id="4SdtvCazUhH" role="3clFbx">
           <node concept="3cpWs8" id="4SdtvCa$4VN" role="3cqZAp">

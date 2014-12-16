@@ -50,15 +50,23 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
       }
     }
 
+    boolean isInterfacePart = Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_idyjwe_a0a0a0a0a0a6a1(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L, "jetbrains.mps.lang.core.structure.InterfacePart")));
+      }
+    });
+    if (isInterfacePart) {
+      return;
+    }
     if (Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0g0b(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart")));
+        return eq_idyjwe_a0a0a0a0a0i0b(it, SNodeOperations.asNode(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart")));
       }
     })) {
       final String stubName = "Stub" + SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       boolean stubExists = ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(conceptDeclaration), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_idyjwe_a0a0a0a0a0a0a1a6a1_0(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), stubName) && eq_idyjwe_a0a0a0a0a0a0a1a6a1(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")), SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
+          return eq_idyjwe_a0a0a0a0a0a0a1a8a1_0(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), stubName) && eq_idyjwe_a0a0a0a0a0a0a1a8a1(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")), SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
         }
       }).isNotEmpty();
       if (!(stubExists)) {
@@ -97,13 +105,16 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
   private static boolean eq_idyjwe_a0a0a0a0a0a4a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_idyjwe_a0a0a0a0a0a0a1a6a1(Object a, Object b) {
+  private static boolean eq_idyjwe_a0a0a0a0a0a6a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_idyjwe_a0a0a0a0a0a0a1a6a1_0(Object a, Object b) {
+  private static boolean eq_idyjwe_a0a0a0a0a0a0a1a8a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_idyjwe_a0a0a0a0a0g0b(Object a, Object b) {
+  private static boolean eq_idyjwe_a0a0a0a0a0a0a1a8a1_0(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_idyjwe_a0a0a0a0a0i0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

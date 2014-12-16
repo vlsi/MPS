@@ -576,7 +576,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="4xhLyTUSCYF" role="2OqNvi">
-                    <ref role="37wK5l" to="ajxo:~Category.error(java.lang.Object):void" resolve="error" />
+                    <ref role="37wK5l" to="ajxo:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
                     <node concept="10Nm6u" id="4t57iE9WT3_" role="37wK5m" />
                     <node concept="37vLTw" id="3GM_nagTBEK" role="37wK5m">
                       <ref role="3cqZAo" node="hZL7gVO" resolve="e" />

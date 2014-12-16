@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Children {
   public void accessToChildren_1(SNode statementList) {
@@ -50,13 +49,13 @@ public class Children {
       }
     });
     SNode abcdef;
-    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(statement)), false, new SAbstractConcept[]{});
+    // <node> 
     SNodeOperations.getNodeDescendants(statement, null, false, new SAbstractConcept[]{});
-    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(statement)), false, new SAbstractConcept[]{});
+    // <node> 
     SNodeOperations.getNodeDescendants(statement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), false, new SAbstractConcept[]{});
-    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant")), false, new SAbstractConcept[]{});
-    SNode aConcept = null;
-    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(aConcept), false, new SAbstractConcept[]{});
+    // <node> 
+    SAbstractConcept aConcept = null;
+    // <node> 
   }
   public void accessToChildren_4(SNode statement) {
     List<SNode> children1 = SNodeOperations.getNodeDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression")), new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant")}, false, new SAbstractConcept[]{});
