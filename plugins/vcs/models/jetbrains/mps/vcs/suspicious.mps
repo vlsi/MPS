@@ -1762,25 +1762,6 @@
                       <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteActionInCommand(java.lang.Runnable):void" resolve="runWriteActionInCommand" />
                       <node concept="1bVj0M" id="1KUoCiqb7nf" role="37wK5m">
                         <node concept="3clFbS" id="1KUoCiqb7ng" role="1bW5cS">
-                          <node concept="3cpWs8" id="75V64qGZ8N8" role="3cqZAp">
-                            <node concept="3cpWsn" id="75V64qGZ8N9" role="3cpWs9">
-                              <property role="TrG5h" value="modulesToReload" />
-                              <node concept="3uibUv" id="75V64qGZ8N6" role="1tU5fm">
-                                <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
-                                <node concept="3uibUv" id="75V64qGZ9su" role="11_B2D">
-                                  <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                                </node>
-                              </node>
-                              <node concept="2ShNRf" id="75V64qGZcCl" role="33vP2m">
-                                <node concept="1pGfFk" id="75V64qGZoi9" role="2ShVmc">
-                                  <ref role="37wK5l" to="k7g3:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
-                                  <node concept="3uibUv" id="75V64qGZpO7" role="1pMfVU">
-                                    <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
                           <node concept="1DcWWT" id="1KUoCiqb7nh" role="3cqZAp">
                             <node concept="37vLTw" id="3GM_nagT$1A" role="1DdaDG">
                               <ref role="3cqZAo" node="3zgutK7os$w" resolve="toReload" />
@@ -1800,57 +1781,6 @@
                                   <node concept="liA8E" id="1KUoCiqb7nr" role="2OqNvi">
                                     <ref role="37wK5l" node="3zgutK7osCh" resolve="reloadFromDisk" />
                                   </node>
-                                </node>
-                              </node>
-                              <node concept="3clFbJ" id="75V64qGZrk_" role="3cqZAp">
-                                <node concept="3clFbS" id="75V64qGZrkC" role="3clFbx">
-                                  <node concept="3clFbF" id="75V64qGZEzw" role="3cqZAp">
-                                    <node concept="2OqwBi" id="75V64qGZFmK" role="3clFbG">
-                                      <node concept="37vLTw" id="75V64qGZEzu" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="75V64qGZ8N9" resolve="modulesToReload" />
-                                      </node>
-                                      <node concept="liA8E" id="75V64qGZGvV" role="2OqNvi">
-                                        <ref role="37wK5l" to="k7g3:~Collection.add(java.lang.Object):boolean" resolve="add" />
-                                        <node concept="2OqwBi" id="75V64qGZynI" role="37wK5m">
-                                          <node concept="1eOMI4" id="75V64qGZwM_" role="2Oq$k0">
-                                            <node concept="10QFUN" id="75V64qGZwMA" role="1eOMHV">
-                                              <node concept="37vLTw" id="75V64qGZwM$" role="10QFUP">
-                                                <ref role="3cqZAo" node="1KUoCiqb7nk" resolve="conflictable" />
-                                              </node>
-                                              <node concept="3uibUv" id="75V64qGZx$t" role="10QFUM">
-                                                <ref role="3uigEE" node="3zgutK7osDM" resolve="ConflictableModuleAdapter" />
-                                              </node>
-                                            </node>
-                                          </node>
-                                          <node concept="liA8E" id="75V64qGZBrf" role="2OqNvi">
-                                            <ref role="37wK5l" node="75V64qGZ$8R" resolve="getModule" />
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="2ZW3vV" id="75V64qGZsRf" role="3clFbw">
-                                  <node concept="3uibUv" id="75V64qGZtGE" role="2ZW6by">
-                                    <ref role="3uigEE" node="3zgutK7osDM" resolve="ConflictableModuleAdapter" />
-                                  </node>
-                                  <node concept="37vLTw" id="75V64qGZs5k" role="2ZW6bz">
-                                    <ref role="3cqZAo" node="1KUoCiqb7nk" resolve="conflictable" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="75V64qGZ1Mv" role="3cqZAp">
-                            <node concept="2OqwBi" id="75V64qGZ2Nn" role="3clFbG">
-                              <node concept="2YIFZM" id="75V64qGZ2ip" role="2Oq$k0">
-                                <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
-                                <ref role="1Pybhc" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
-                              </node>
-                              <node concept="liA8E" id="75V64qGZ3sk" role="2OqNvi">
-                                <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadModules(java.lang.Iterable):java.util.Collection" resolve="reloadModules" />
-                                <node concept="37vLTw" id="75V64qGZIKz" role="37wK5m">
-                                  <ref role="3cqZAo" node="75V64qGZ8N9" resolve="modulesToReload" />
                                 </node>
                               </node>
                             </node>

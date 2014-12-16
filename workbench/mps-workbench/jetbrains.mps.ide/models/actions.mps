@@ -6710,24 +6710,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbH" id="2VydZlihQP_" role="3cqZAp" />
-                  <node concept="3clFbF" id="3VvwvxwthZI" role="3cqZAp">
-                    <node concept="2OqwBi" id="3VvwvxwthZJ" role="3clFbG">
-                      <node concept="2YIFZM" id="3VvwvxwthZK" role="2Oq$k0">
-                        <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
-                        <ref role="1Pybhc" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
-                      </node>
-                      <node concept="liA8E" id="3VvwvxwthZL" role="2OqNvi">
-                        <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadModules(java.lang.Iterable):java.util.Collection" resolve="reloadModules" />
-                        <node concept="2OqwBi" id="5VUIqm1Luv$" role="37wK5m">
-                          <node concept="2WthIp" id="5VUIqm1LrJg" role="2Oq$k0" />
-                          <node concept="1DTwFV" id="5VUIqm1Lw21" role="2OqNvi">
-                            <ref role="2WH_rO" node="hZsb5Sf" resolve="modules" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                 </node>
               </node>
             </node>
