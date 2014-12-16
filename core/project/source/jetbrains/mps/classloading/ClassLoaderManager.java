@@ -427,7 +427,6 @@ public class ClassLoaderManager implements CoreComponent {
 
   /**
    * Use this method to invalidate modules (namely, recreate their class loaders)
-   * @return modules which were reloaded successfully
    * There are also useful {@link #reloadModules(Iterable)} and {@link #reloadModule(SModule)}.
    * @deprecated the module is reloaded automatically on events like moduleChanged, dependenciesChanged, etc.
    * [!] no need to call this method directly anymore
@@ -435,7 +434,18 @@ public class ClassLoaderManager implements CoreComponent {
    * FIXME: remove TempModule: it should not be processed by CLManager. It maintains only repository modules!
    */
   @Deprecated
-  public Collection<ReloadableModule> reloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+  public void reloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+    checkWriteAccess();
+    try {
+      monitor.start("Reloading modules' class loaders...", 1);
+      refresh();
+      doReloadModules(modules, monitor.subTask(1));
+    } finally {
+      monitor.done();
+    }
+  }
+
+  Collection<ReloadableModule> doReloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     checkWriteAccess();
     if (IterableUtils.isEmpty(modules)) {
       LOG.info("Reloaded 0 modules");
@@ -459,7 +469,6 @@ public class ClassLoaderManager implements CoreComponent {
       }
       if (modulesToReload.isEmpty()) return Collections.emptySet();
 
-      refresh();
       myModulesWatcher.updateModules(modulesToReload);
       Collection<? extends ReloadableModule> unloadedModules = unloadModules(myModulesWatcher.getModuleRefs(modulesToReload), monitor.subTask(1));
       modulesToReload.addAll(unloadedModules);
@@ -478,8 +487,8 @@ public class ClassLoaderManager implements CoreComponent {
    * @see #reloadModules(Iterable, org.jetbrains.mps.openapi.util.ProgressMonitor)
    */
   @Deprecated
-  public Collection<ReloadableModule> reloadModules(Iterable<? extends SModule> modules) {
-    return reloadModules(modules, new EmptyProgressMonitor());
+  public void reloadModules(Iterable<? extends SModule> modules) {
+    reloadModules(modules, new EmptyProgressMonitor());
   }
 
   /**
@@ -489,8 +498,8 @@ public class ClassLoaderManager implements CoreComponent {
    */
   @Deprecated
   @ToRemove(version = 3.2)
-  public Collection<ReloadableModule> reloadModule(SModule module) {
-    return reloadModules(Collections.singleton(module), new EmptyProgressMonitor());
+  public void reloadModule(SModule module) {
+    reloadModules(Collections.singleton(module), new EmptyProgressMonitor());
   }
 
   /**

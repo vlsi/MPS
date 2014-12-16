@@ -77,6 +77,7 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
 
   /**
    * flushes all the events to get the actual state in the repository
+   * @return true if refresh happened
    */
   boolean refresh() {
     return myDispatcher.flush();
@@ -89,8 +90,10 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
   }
 
   private void updateModules(List<? extends ReloadableModuleBase> modules) {
-    Collections.sort(modules, MODULE_COMPARATOR);
-    myManager.reloadModules(modules);
+    List<SModule> modulesToReload = new ArrayList<SModule>();
+    for (ReloadableModuleBase module : modules) modulesToReload.add(module);
+    Collections.sort(modulesToReload, MODULE_COMPARATOR);
+    myManager.doReloadModules(modulesToReload, new EmptyProgressMonitor());
   }
 
   private void removeModules(List<SModuleReference> modules) {
