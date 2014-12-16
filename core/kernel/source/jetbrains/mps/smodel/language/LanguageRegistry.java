@@ -223,20 +223,18 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       if (module instanceof Language) {
         final Language language = (Language) module;
         SLanguageId languageId = MetaIdByDeclaration.getLanguageId(language);
-        assert (!myLanguagesById.containsKey(languageId));
+        assert !myLanguagesById.containsKey(languageId);
         try {
           LanguageRuntime runtime = createRuntime(language);
-          if (runtime != null) {
-            if (runtime.getId() == null) {
-              runtime.setId(MetaIdByDeclaration.getLanguageId(language));
-            }
-            String namespace = runtime.getNamespace();
-            assert languageId.equals(runtime.getId());
-            assert (!myLanguages.containsKey(namespace));
-            myLanguages.put(namespace, runtime);
-            myLanguagesById.put(languageId, runtime);
-            loadedRuntimes.add(runtime);
-          }
+          if (runtime == null) continue;
+          if (runtime.getId() == null) runtime.setId(MetaIdByDeclaration.getLanguageId(language));
+
+          assert languageId.equals(runtime.getId());
+          String namespace = runtime.getNamespace();
+          assert !myLanguages.containsKey(namespace);
+          myLanguages.put(namespace, runtime);
+          myLanguagesById.put(languageId, runtime);
+          loadedRuntimes.add(runtime);
         } catch (LinkageError le) {
           processLinkageErrorForLanguage(language, le);
         }
