@@ -49,13 +49,13 @@ public class Children {
       }
     });
     SNode abcdef;
-    // <node> 
+    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(SNodeOperations.getConcept(statement)), false, new SAbstractConcept[]{});
     SNodeOperations.getNodeDescendants(statement, null, false, new SAbstractConcept[]{});
-    // <node> 
+    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(SNodeOperations.getConcept(statement)), false, new SAbstractConcept[]{});
     SNodeOperations.getNodeDescendants(statement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), false, new SAbstractConcept[]{});
-    // <node> 
+    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")), false, new SAbstractConcept[]{});
     SAbstractConcept aConcept = null;
-    // <node> 
+    SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(aConcept), false, new SAbstractConcept[]{});
   }
   public void accessToChildren_4(SNode statement) {
     List<SNode> children1 = SNodeOperations.getNodeDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression")), new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant")}, false, new SAbstractConcept[]{});
