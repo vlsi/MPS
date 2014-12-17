@@ -50,6 +50,9 @@ public class MigrationsUtil {
     List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());
     for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
       int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
+      if (ver == -1) {
+        ver = 0;
+      }
       if (ver != lang.getLanguageVersion()) {
         ListSequence.fromList(result).addElement(new MigrationScriptReference(lang, ver));
       }
