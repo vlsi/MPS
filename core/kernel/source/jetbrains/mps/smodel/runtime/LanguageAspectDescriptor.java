@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel.runtime;
 
 /**
- * User: shatalin
- * Date: 4/8/13
+ * Marker for a language extension, known as 'Language Aspect'.
+ * @see jetbrains.mps.smodel.language.LanguageRuntime#getAspect(Class)
  */
 public interface LanguageAspectDescriptor {
 }
