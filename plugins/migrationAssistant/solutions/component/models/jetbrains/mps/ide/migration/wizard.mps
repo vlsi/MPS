@@ -1415,8 +1415,8 @@
             <node concept="37vLTw" id="25gV4LszmWV" role="2ZW6bz">
               <ref role="3cqZAo" node="25gV4Lszlrg" resolve="result" />
             </node>
-            <node concept="3uibUv" id="25gV4LsyA67" role="2ZW6by">
-              <ref role="3uigEE" to="bim2:5SsFeroaabQ" resolve="MigrationManager.Finished" />
+            <node concept="3uibUv" id="3Chm5EXJBlE" role="2ZW6by">
+              <ref role="3uigEE" to="bim2:3Chm5EXJu3H" resolve="MigrationManager.Finished" />
             </node>
           </node>
         </node>

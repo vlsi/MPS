@@ -46,7 +46,7 @@ public class MigrationsUtil {
     }
     return importVersion < currentVersion;
   }
-  public static Iterable<MigrationScriptReference> getLanguageVersions(SModule module) {
+  public static Iterable<MigrationScriptReference> getNextStepScripts(SModule module) {
     List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());
     for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
       int currentLangVersion = lang.getLanguageVersion();

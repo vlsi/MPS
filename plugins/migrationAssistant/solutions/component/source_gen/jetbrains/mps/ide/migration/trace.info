@@ -61,7 +61,7 @@
       <scope id="6781485246382121695" at="16,0,17,0" />
       <scope id="6781485246382121699" at="17,0,18,0" />
       <unit id="6781485246382121688" at="13,0,15,0" name="jetbrains.mps.ide.migration.MigrationManager$MigrationState" />
-      <unit id="6781485246382121718" at="19,0,21,0" name="jetbrains.mps.ide.migration.MigrationManager$Finished" />
+      <unit id="4184222675557540077" at="19,0,21,0" name="jetbrains.mps.ide.migration.MigrationManager$Finished" />
       <unit id="6781485246382121691" at="15,0,19,0" name="jetbrains.mps.ide.migration.MigrationManager$Step" />
       <unit id="6781485246382121685" at="6,0,22,0" name="jetbrains.mps.ide.migration.MigrationManager" />
     </file>

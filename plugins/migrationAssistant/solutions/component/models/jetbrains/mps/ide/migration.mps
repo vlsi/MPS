@@ -1312,11 +1312,10 @@
         <node concept="10P_77" id="5SsFeroaabA" role="3clF45" />
       </node>
     </node>
-    <node concept="3HP615" id="5SsFeroaabQ" role="jymVt">
+    <node concept="312cEu" id="3Chm5EXJu3H" role="jymVt">
       <property role="TrG5h" value="Finished" />
-      <property role="2bfB8j" value="true" />
-      <node concept="3Tm1VV" id="5SsFeroaabS" role="1B3o_S" />
-      <node concept="3uibUv" id="5SsFeroaabT" role="3HQHJm">
+      <node concept="3Tm1VV" id="3Chm5EXJu3I" role="1B3o_S" />
+      <node concept="3uibUv" id="3Chm5EXJuaT" role="EKbjA">
         <ref role="3uigEE" node="5SsFeroaabo" resolve="MigrationManager.MigrationState" />
       </node>
     </node>
