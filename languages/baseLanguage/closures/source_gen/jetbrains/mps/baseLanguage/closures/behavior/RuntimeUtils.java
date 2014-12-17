@@ -11,12 +11,12 @@ import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import java.util.Set;
 import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -41,6 +41,18 @@ public class RuntimeUtils {
         for (SNode cls : SModelOperations.nodes(getRuntimeModel(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
           MapSequence.fromMap(RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName")), cls);
         }
+
+        final SRepositoryContentAdapter rcAdapter = new SRepositoryContentAdapter() {
+          @Override
+          public void modelReplaced(SModel model) {
+            synchronized (RuntimeUtils.class) {
+              RUNTIME_CLASSIFIERS = null;
+            }
+            SRepositoryRegistry.getInstance().removeGlobalListener(this);
+          }
+        };
+        SRepositoryRegistry.getInstance().addGlobalListener(rcAdapter);
+
         // FIXME looks bad 
         ClassLoaderManager.getInstance().addClassesHandler(new MPSClassesListenerAdapter() {
           @Override
@@ -49,18 +61,10 @@ public class RuntimeUtils {
               RuntimeUtils.RUNTIME_CLASSIFIERS = null;
             }
             ClassLoaderManager.getInstance().removeClassesHandler(this);
+            SRepositoryRegistry.getInstance().removeGlobalListener(rcAdapter);
           }
         });
 
-        SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
-          @Override
-          public void modelsReplaced(Set<SModel> set) {
-            synchronized (RuntimeUtils.class) {
-              RUNTIME_CLASSIFIERS = null;
-            }
-            SModelRepository.getInstance().addModelRepositoryListener(this);
-          }
-        });
       }
     }
     return RUNTIME_CLASSIFIERS;
@@ -84,6 +88,18 @@ public class RuntimeUtils {
         })) {
           MapSequence.fromMap(STATIC_RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName")), cls);
         }
+
+        final SRepositoryContentAdapter rcAdapter = new SRepositoryContentAdapter() {
+          @Override
+          public void modelReplaced(SModel model) {
+            synchronized (RuntimeUtils.class) {
+              STATIC_RUNTIME_CLASSIFIERS = null;
+            }
+            SRepositoryRegistry.getInstance().removeGlobalListener(this);
+          }
+        };
+        SRepositoryRegistry.getInstance().addGlobalListener(rcAdapter);
+
         ClassLoaderManager.getInstance().addClassesHandler(new MPSClassesListenerAdapter() {
           @Override
           public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
@@ -91,16 +107,7 @@ public class RuntimeUtils {
               STATIC_RUNTIME_CLASSIFIERS = null;
             }
             ClassLoaderManager.getInstance().removeClassesHandler(this);
-          }
-        });
-
-        SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
-          @Override
-          public void modelsReplaced(Set<SModel> set) {
-            synchronized (RuntimeUtils.class) {
-              STATIC_RUNTIME_CLASSIFIERS = null;
-            }
-            SModelRepository.getInstance().addModelRepositoryListener(this);
+            SRepositoryRegistry.getInstance().removeGlobalListener(rcAdapter);
           }
         });
       }
