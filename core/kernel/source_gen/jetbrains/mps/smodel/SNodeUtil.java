@@ -67,13 +67,19 @@ public class SNodeUtil {
   public static final SReferenceLink link_ConceptDeclaration_extends = MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends");
   public static final String linkName_ConceptDeclaration_implements = "implements";
   public static final SContainmentLink link_ConceptDeclaration_implements = MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements");
+  public static final SContainmentLink link_InterfaceConceptDeclaration_extends = MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, 0x110356e9df4L, "extends");
+  public static final SProperty property_ConceptDeclaration_staticScope = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope");
+
   public static final String linkName_AbstractConceptDeclaration_linkDeclaration = "linkDeclaration";
   public static final SContainmentLink link_AbstractConceptDeclaration_linkDeclaration = MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration");
   public static final String linkName_AbstractConceptDeclaration_propertyDeclaration = "propertyDeclaration";
   public static final SContainmentLink link_AbstractConceptDeclaration_propertyDeclaration = MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration");
-
-  public static final String propertyName_AbstractConceptDeclaration_abstract = "abstract";
   public static final SProperty property_AbstractConceptDeclaration_abstract = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract");
+  public static final SProperty property_AbstractConceptDeclaration_helpURL = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL");
+  public static final SProperty property_AbstractConceptDeclaration_final = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec7L, "final");
+  public static final SProperty property_AbstractConceptDeclaration_conceptAlias = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias");
+  public static final SProperty property_AbstractConceptDeclaration_conceptShortDescription = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription");
+
   public static final String propertyName_INamedConcept_name = "name";
   public static final SProperty property_INamedConcept_name = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
   public static final String propertyName_LinkDeclaration_role = "role";
