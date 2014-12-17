@@ -460,150 +460,150 @@ public class QueriesGenerated {
     return _context.createUniqueName("node", null);
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288486710(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getPropId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getPropId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288486727(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getPropId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getPropId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288486744(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getPropId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getIdValue();
+    long id = MetaIdByDeclaration.getPropId(_context.getNode()).getConceptId().getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288497124(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getPropId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue();
+    long id = MetaIdByDeclaration.getPropId(_context.getNode()).getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288486757(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288599751(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getLinkId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288599770(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getLinkId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288599789(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getIdValue();
+    long id = MetaIdByDeclaration.getLinkId(_context.getNode()).getConceptId().getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288599804(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue();
+    long id = MetaIdByDeclaration.getLinkId(_context.getNode()).getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288599817(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288668317(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getRefRoleId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288668336(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getRefRoleId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288668355(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getIdValue();
+    long id = MetaIdByDeclaration.getRefRoleId(_context.getNode()).getConceptId().getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288668370(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue();
+    long id = MetaIdByDeclaration.getRefRoleId(_context.getNode()).getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288668383(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288325753(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) _context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288403552(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) _context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288411858(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue();
+    long id = MetaIdByDeclaration.getConceptId(_context.getNode()).getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_8269982547288435644(final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_6638738203687387540(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) _context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_6638738203687387557(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) _context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_6638738203687387574(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue();
+    long id = MetaIdByDeclaration.getConceptId(_context.getNode()).getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_6638738203687387587(final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110094844(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) _context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110094861(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) _context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getConceptId(_context.getNode()).getLanguageId().getIdValue().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110094878(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue();
+    long id = MetaIdByDeclaration.getConceptId(_context.getNode()).getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110114471(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getPropId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getPropId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110114490(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getPropId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getPropId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110114509(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getPropId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getIdValue();
+    long id = MetaIdByDeclaration.getPropId(_context.getNode()).getConceptId().getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110114524(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getPropId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue();
+    long id = MetaIdByDeclaration.getPropId(_context.getNode()).getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110140881(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getLinkId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110140900(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getLinkId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110140919(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getIdValue();
+    long id = MetaIdByDeclaration.getLinkId(_context.getNode()).getConceptId().getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110140934(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue();
+    long id = MetaIdByDeclaration.getLinkId(_context.getNode()).getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110150635(final PropertyMacroContext _context) {
-    long msb = MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
+    long msb = MetaIdByDeclaration.getRefRoleId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getMostSignificantBits();
     return "0x" + Long.toHexString(msb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110150654(final PropertyMacroContext _context) {
-    long lsb = MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
+    long lsb = MetaIdByDeclaration.getRefRoleId(_context.getNode()).getConceptId().getLanguageId().getIdValue().getLeastSignificantBits();
     return "0x" + Long.toHexString(lsb) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110150673(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getConceptId().getIdValue();
+    long id = MetaIdByDeclaration.getRefRoleId(_context.getNode()).getConceptId().getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_2196823097110150688(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue();
+    long id = MetaIdByDeclaration.getRefRoleId(_context.getNode()).getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object referenceMacro_GetReferent_1170457360268(final ReferenceMacroContext _context) {

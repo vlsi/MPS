@@ -3214,15 +3214,10 @@
                 <node concept="liA8E" id="7h7C11nHNEy" role="2OqNvi">
                   <ref role="37wK5l" to="cu2c:~DebugRegistry.addConceptName(jetbrains.mps.smodel.adapter.ids.SConceptId,java.lang.String):void" resolve="addConceptName" />
                   <node concept="2YIFZM" id="5HtX7Em0x_o" role="37wK5m">
-                    <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                     <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                    <node concept="10QFUN" id="5HtX7Em0x_p" role="37wK5m">
-                      <node concept="37vLTw" id="5HtX7Em0x_q" role="10QFUP">
-                        <ref role="3cqZAo" node="6UyJMA9G8hp" resolve="node" />
-                      </node>
-                      <node concept="3uibUv" id="5HtX7Em0x_r" role="10QFUM">
-                        <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                      </node>
+                    <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                    <node concept="37vLTw" id="5HtX7Em0x_q" role="37wK5m">
+                      <ref role="3cqZAo" node="6UyJMA9G8hp" resolve="node" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="5HtX7Em0zqJ" role="37wK5m">
@@ -3262,15 +3257,10 @@
                 <node concept="liA8E" id="7h7C11nHPWc" role="2OqNvi">
                   <ref role="37wK5l" to="cu2c:~DebugRegistry.addPropertyName(jetbrains.mps.smodel.adapter.ids.SPropertyId,java.lang.String):void" resolve="addPropertyName" />
                   <node concept="2YIFZM" id="5HtX7Em0_5g" role="37wK5m">
-                    <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
                     <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                    <node concept="10QFUN" id="5HtX7Em0_5h" role="37wK5m">
-                      <node concept="37vLTw" id="5HtX7Em0_5i" role="10QFUP">
-                        <ref role="3cqZAo" node="6UyJMA9G8hp" resolve="node" />
-                      </node>
-                      <node concept="3uibUv" id="5HtX7Em0_5j" role="10QFUM">
-                        <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                      </node>
+                    <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
+                    <node concept="37vLTw" id="5HtX7Em0_5i" role="37wK5m">
+                      <ref role="3cqZAo" node="6UyJMA9G8hp" resolve="node" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="7h7C11nHPWh" role="37wK5m">
@@ -3304,15 +3294,10 @@
                     <node concept="liA8E" id="7h7C11nHQqO" role="2OqNvi">
                       <ref role="37wK5l" to="cu2c:~DebugRegistry.addLinkName(jetbrains.mps.smodel.adapter.ids.SContainmentLinkId,java.lang.String):void" resolve="addLinkName" />
                       <node concept="2YIFZM" id="5HtX7Em0_dS" role="37wK5m">
-                        <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
                         <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                        <node concept="10QFUN" id="5HtX7Em0_dT" role="37wK5m">
-                          <node concept="37vLTw" id="5HtX7Em0_dU" role="10QFUP">
-                            <ref role="3cqZAo" node="6UyJMA9G8hp" resolve="node" />
-                          </node>
-                          <node concept="3uibUv" id="5HtX7Em0_dV" role="10QFUM">
-                            <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                          </node>
+                        <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
+                        <node concept="37vLTw" id="5HtX7Em0_dU" role="37wK5m">
+                          <ref role="3cqZAo" node="6UyJMA9G8hp" resolve="node" />
                         </node>
                       </node>
                       <node concept="37vLTw" id="7h7C11nHQqT" role="37wK5m">
@@ -3351,15 +3336,10 @@
                       <node concept="liA8E" id="7h7C11nHVjU" role="2OqNvi">
                         <ref role="37wK5l" to="cu2c:~DebugRegistry.addRefName(jetbrains.mps.smodel.adapter.ids.SReferenceLinkId,java.lang.String):void" resolve="addRefName" />
                         <node concept="2YIFZM" id="5HtX7Em0_mv" role="37wK5m">
-                          <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
                           <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                          <node concept="10QFUN" id="5HtX7Em0_mw" role="37wK5m">
-                            <node concept="37vLTw" id="5HtX7Em0_mx" role="10QFUP">
-                              <ref role="3cqZAo" node="6UyJMA9G8hp" resolve="node" />
-                            </node>
-                            <node concept="3uibUv" id="5HtX7Em0_my" role="10QFUM">
-                              <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                            </node>
+                          <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
+                          <node concept="37vLTw" id="5HtX7Em0_mx" role="37wK5m">
+                            <ref role="3cqZAo" node="6UyJMA9G8hp" resolve="node" />
                           </node>
                         </node>
                         <node concept="37vLTw" id="7h7C11nHVjZ" role="37wK5m">

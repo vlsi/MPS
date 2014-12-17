@@ -11265,14 +11265,9 @@
                       <node concept="2OqwBi" id="23CHI7KMsCG" role="2Oq$k0">
                         <node concept="2OqwBi" id="23CHI7KMsCH" role="2Oq$k0">
                           <node concept="2YIFZM" id="23CHI7KMsCI" role="2Oq$k0">
-                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
                             <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                            <node concept="10QFUN" id="23CHI7KMsCJ" role="37wK5m">
-                              <node concept="30H73N" id="23CHI7KMsCK" role="10QFUP" />
-                              <node concept="3uibUv" id="23CHI7KMsCL" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                              </node>
-                            </node>
+                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
+                            <node concept="30H73N" id="23CHI7KMsCK" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KMsCM" role="2OqNvi">
                             <ref role="37wK5l" to="a7z3:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -11332,13 +11327,8 @@
                         <node concept="2OqwBi" id="23CHI7KMy9k" role="2Oq$k0">
                           <node concept="2YIFZM" id="23CHI7KMy9l" role="2Oq$k0">
                             <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
-                            <node concept="10QFUN" id="23CHI7KMy9m" role="37wK5m">
-                              <node concept="30H73N" id="23CHI7KMy9n" role="10QFUP" />
-                              <node concept="3uibUv" id="23CHI7KMy9o" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                              </node>
-                            </node>
+                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
+                            <node concept="30H73N" id="23CHI7KMy9n" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KMy9p" role="2OqNvi">
                             <ref role="37wK5l" to="a7z3:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -11395,14 +11385,9 @@
                   <node concept="2OqwBi" id="23CHI7KMv12" role="33vP2m">
                     <node concept="2OqwBi" id="23CHI7KMv13" role="2Oq$k0">
                       <node concept="2YIFZM" id="23CHI7KMv14" role="2Oq$k0">
-                        <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
                         <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                        <node concept="10QFUN" id="23CHI7KMv15" role="37wK5m">
-                          <node concept="30H73N" id="23CHI7KMv16" role="10QFUP" />
-                          <node concept="3uibUv" id="23CHI7KMv17" role="10QFUM">
-                            <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                          </node>
-                        </node>
+                        <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
+                        <node concept="30H73N" id="23CHI7KMv16" role="37wK5m" />
                       </node>
                       <node concept="liA8E" id="23CHI7KMv18" role="2OqNvi">
                         <ref role="37wK5l" to="a7z3:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -11451,13 +11436,8 @@
                   <node concept="2OqwBi" id="23CHI7KMoJV" role="33vP2m">
                     <node concept="2YIFZM" id="23CHI7KMoJW" role="2Oq$k0">
                       <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
-                      <node concept="10QFUN" id="23CHI7KMoJX" role="37wK5m">
-                        <node concept="30H73N" id="23CHI7KMoJY" role="10QFUP" />
-                        <node concept="3uibUv" id="23CHI7KMoJZ" role="10QFUM">
-                          <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                        </node>
-                      </node>
+                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
+                      <node concept="30H73N" id="23CHI7KMoJY" role="37wK5m" />
                     </node>
                     <node concept="liA8E" id="23CHI7KMoK0" role="2OqNvi">
                       <ref role="37wK5l" to="a7z3:~SPropertyId.getIdValue():long" resolve="getIdValue" />
@@ -11533,14 +11513,9 @@
                       <node concept="2OqwBi" id="23CHI7KLVPA" role="2Oq$k0">
                         <node concept="2OqwBi" id="23CHI7KLVPB" role="2Oq$k0">
                           <node concept="2YIFZM" id="23CHI7KLVPC" role="2Oq$k0">
-                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
                             <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                            <node concept="10QFUN" id="23CHI7KLVPD" role="37wK5m">
-                              <node concept="30H73N" id="23CHI7KLVPE" role="10QFUP" />
-                              <node concept="3uibUv" id="23CHI7KLVPF" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                              </node>
-                            </node>
+                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
+                            <node concept="30H73N" id="23CHI7KLVPE" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KLVPG" role="2OqNvi">
                             <ref role="37wK5l" to="a7z3:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -11600,13 +11575,8 @@
                         <node concept="2OqwBi" id="23CHI7KLYrL" role="2Oq$k0">
                           <node concept="2YIFZM" id="23CHI7KLYrM" role="2Oq$k0">
                             <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
-                            <node concept="10QFUN" id="23CHI7KLYrN" role="37wK5m">
-                              <node concept="30H73N" id="23CHI7KLYrO" role="10QFUP" />
-                              <node concept="3uibUv" id="23CHI7KLYrP" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                              </node>
-                            </node>
+                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
+                            <node concept="30H73N" id="23CHI7KLYrO" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KLYrQ" role="2OqNvi">
                             <ref role="37wK5l" to="a7z3:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -11663,14 +11633,9 @@
                   <node concept="2OqwBi" id="23CHI7KM6sP" role="33vP2m">
                     <node concept="2OqwBi" id="23CHI7KM6sQ" role="2Oq$k0">
                       <node concept="2YIFZM" id="23CHI7KM6sR" role="2Oq$k0">
-                        <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
                         <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                        <node concept="10QFUN" id="23CHI7KM6sS" role="37wK5m">
-                          <node concept="30H73N" id="23CHI7KM6sT" role="10QFUP" />
-                          <node concept="3uibUv" id="23CHI7KM6sU" role="10QFUM">
-                            <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                          </node>
-                        </node>
+                        <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
+                        <node concept="30H73N" id="23CHI7KM6sT" role="37wK5m" />
                       </node>
                       <node concept="liA8E" id="23CHI7KM6sV" role="2OqNvi">
                         <ref role="37wK5l" to="a7z3:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -11718,14 +11683,9 @@
                   <node concept="3cpWsb" id="23CHI7KM2hZ" role="1tU5fm" />
                   <node concept="2OqwBi" id="23CHI7KM2i2" role="33vP2m">
                     <node concept="2YIFZM" id="23CHI7KM2i3" role="2Oq$k0">
-                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
                       <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                      <node concept="10QFUN" id="23CHI7KM2i4" role="37wK5m">
-                        <node concept="30H73N" id="23CHI7KM2i5" role="10QFUP" />
-                        <node concept="3uibUv" id="23CHI7KM2i6" role="10QFUM">
-                          <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                        </node>
-                      </node>
+                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
+                      <node concept="30H73N" id="23CHI7KM2i5" role="37wK5m" />
                     </node>
                     <node concept="liA8E" id="23CHI7KM2i7" role="2OqNvi">
                       <ref role="37wK5l" to="a7z3:~SContainmentLinkId.getIdValue():long" resolve="getIdValue" />
@@ -11817,13 +11777,8 @@
                               <node concept="2OqwBi" id="23CHI7KMhJG" role="2Oq$k0">
                                 <node concept="2YIFZM" id="23CHI7KMhJH" role="2Oq$k0">
                                   <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                                  <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
-                                  <node concept="10QFUN" id="23CHI7KMhJI" role="37wK5m">
-                                    <node concept="30H73N" id="23CHI7KMhJJ" role="10QFUP" />
-                                    <node concept="3uibUv" id="23CHI7KMhJK" role="10QFUM">
-                                      <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                                    </node>
-                                  </node>
+                                  <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
+                                  <node concept="30H73N" id="23CHI7KMhJJ" role="37wK5m" />
                                 </node>
                                 <node concept="liA8E" id="23CHI7KMhJL" role="2OqNvi">
                                   <ref role="37wK5l" to="a7z3:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -11882,14 +11837,9 @@
                             <node concept="2OqwBi" id="23CHI7KMeul" role="2Oq$k0">
                               <node concept="2OqwBi" id="23CHI7KMeum" role="2Oq$k0">
                                 <node concept="2YIFZM" id="23CHI7KMeun" role="2Oq$k0">
-                                  <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
                                   <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                                  <node concept="10QFUN" id="23CHI7KMeuo" role="37wK5m">
-                                    <node concept="30H73N" id="23CHI7KMeup" role="10QFUP" />
-                                    <node concept="3uibUv" id="23CHI7KMeuq" role="10QFUM">
-                                      <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                                    </node>
-                                  </node>
+                                  <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
+                                  <node concept="30H73N" id="23CHI7KMeup" role="37wK5m" />
                                 </node>
                                 <node concept="liA8E" id="23CHI7KMeur" role="2OqNvi">
                                   <ref role="37wK5l" to="a7z3:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -11946,14 +11896,9 @@
                         <node concept="2OqwBi" id="23CHI7KMbjV" role="33vP2m">
                           <node concept="2OqwBi" id="23CHI7KMbjW" role="2Oq$k0">
                             <node concept="2YIFZM" id="23CHI7KMbjX" role="2Oq$k0">
-                              <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
                               <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                              <node concept="10QFUN" id="23CHI7KMbjY" role="37wK5m">
-                                <node concept="30H73N" id="23CHI7KMbjZ" role="10QFUP" />
-                                <node concept="3uibUv" id="23CHI7KMbk0" role="10QFUM">
-                                  <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                                </node>
-                              </node>
+                              <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
+                              <node concept="30H73N" id="23CHI7KMbjZ" role="37wK5m" />
                             </node>
                             <node concept="liA8E" id="23CHI7KMbk1" role="2OqNvi">
                               <ref role="37wK5l" to="a7z3:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -12001,14 +11946,9 @@
                         <node concept="3cpWsb" id="23CHI7KMk8b" role="1tU5fm" />
                         <node concept="2OqwBi" id="23CHI7KMk8f" role="33vP2m">
                           <node concept="2YIFZM" id="23CHI7KMk8g" role="2Oq$k0">
-                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
                             <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                            <node concept="10QFUN" id="23CHI7KMk8h" role="37wK5m">
-                              <node concept="30H73N" id="23CHI7KMk8i" role="10QFUP" />
-                              <node concept="3uibUv" id="23CHI7KMk8j" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                              </node>
-                            </node>
+                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
+                            <node concept="30H73N" id="23CHI7KMk8i" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KMk8k" role="2OqNvi">
                             <ref role="37wK5l" to="a7z3:~SReferenceLinkId.getIdValue():long" resolve="getIdValue" />
@@ -12084,15 +12024,10 @@
                   <node concept="2OqwBi" id="23CHI7KLMW3" role="33vP2m">
                     <node concept="2OqwBi" id="23CHI7KLMW4" role="2Oq$k0">
                       <node concept="2OqwBi" id="23CHI7KLMW5" role="2Oq$k0">
-                        <node concept="2YIFZM" id="23CHI7KLMW6" role="2Oq$k0">
-                          <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                        <node concept="2YIFZM" id="18MdLntxClC" role="2Oq$k0">
+                          <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                          <node concept="10QFUN" id="23CHI7KLMW7" role="37wK5m">
-                            <node concept="30H73N" id="23CHI7KLMW8" role="10QFUP" />
-                            <node concept="3uibUv" id="23CHI7KLMW9" role="10QFUM">
-                              <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                            </node>
-                          </node>
+                          <node concept="30H73N" id="18MdLntxCvB" role="37wK5m" />
                         </node>
                         <node concept="liA8E" id="23CHI7KLMWa" role="2OqNvi">
                           <ref role="37wK5l" to="a7z3:~SConceptId.getLanguageId():jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
@@ -12146,14 +12081,9 @@
                     <node concept="2OqwBi" id="23CHI7KLPAl" role="2Oq$k0">
                       <node concept="2OqwBi" id="23CHI7KLPAm" role="2Oq$k0">
                         <node concept="2YIFZM" id="23CHI7KLPAn" role="2Oq$k0">
-                          <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                          <node concept="10QFUN" id="23CHI7KLPAo" role="37wK5m">
-                            <node concept="30H73N" id="23CHI7KLPAp" role="10QFUP" />
-                            <node concept="3uibUv" id="23CHI7KLPAq" role="10QFUM">
-                              <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                            </node>
-                          </node>
+                          <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                          <node concept="30H73N" id="23CHI7KLPAp" role="37wK5m" />
                         </node>
                         <node concept="liA8E" id="23CHI7KLPAr" role="2OqNvi">
                           <ref role="37wK5l" to="a7z3:~SConceptId.getLanguageId():jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
@@ -12205,14 +12135,9 @@
                   <node concept="3cpWsb" id="23CHI7KLEX1" role="1tU5fm" />
                   <node concept="2OqwBi" id="23CHI7KLEX5" role="33vP2m">
                     <node concept="2YIFZM" id="23CHI7KLEX6" role="2Oq$k0">
-                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                       <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                      <node concept="10QFUN" id="23CHI7KLEX7" role="37wK5m">
-                        <node concept="30H73N" id="23CHI7KLEX8" role="10QFUP" />
-                        <node concept="3uibUv" id="23CHI7KLEX9" role="10QFUM">
-                          <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                        </node>
-                      </node>
+                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                      <node concept="30H73N" id="23CHI7KLEX8" role="37wK5m" />
                     </node>
                     <node concept="liA8E" id="23CHI7KLEXa" role="2OqNvi">
                       <ref role="37wK5l" to="a7z3:~SConceptId.getIdValue():long" resolve="getIdValue" />
@@ -12296,14 +12221,9 @@
                           <node concept="2OqwBi" id="23CHI7KL$Mp" role="2Oq$k0">
                             <node concept="2OqwBi" id="23CHI7KL$Mq" role="2Oq$k0">
                               <node concept="2YIFZM" id="23CHI7KL$Mr" role="2Oq$k0">
-                                <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                                 <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                                <node concept="10QFUN" id="23CHI7KL$Ms" role="37wK5m">
-                                  <node concept="30H73N" id="23CHI7KL$Mt" role="10QFUP" />
-                                  <node concept="3uibUv" id="23CHI7KL$Mu" role="10QFUM">
-                                    <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                                  </node>
-                                </node>
+                                <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                                <node concept="30H73N" id="23CHI7KL$Mt" role="37wK5m" />
                               </node>
                               <node concept="liA8E" id="23CHI7KL$Mv" role="2OqNvi">
                                 <ref role="37wK5l" to="a7z3:~SConceptId.getLanguageId():jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
@@ -12357,14 +12277,9 @@
                           <node concept="2OqwBi" id="23CHI7KLBpY" role="2Oq$k0">
                             <node concept="2OqwBi" id="23CHI7KLBpZ" role="2Oq$k0">
                               <node concept="2YIFZM" id="23CHI7KLBq0" role="2Oq$k0">
-                                <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                                 <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                                <node concept="10QFUN" id="23CHI7KLBq1" role="37wK5m">
-                                  <node concept="30H73N" id="23CHI7KLBq2" role="10QFUP" />
-                                  <node concept="3uibUv" id="23CHI7KLBq3" role="10QFUM">
-                                    <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                                  </node>
-                                </node>
+                                <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                                <node concept="30H73N" id="23CHI7KLBq2" role="37wK5m" />
                               </node>
                               <node concept="liA8E" id="23CHI7KLBq4" role="2OqNvi">
                                 <ref role="37wK5l" to="a7z3:~SConceptId.getLanguageId():jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
@@ -12417,13 +12332,8 @@
                         <node concept="2OqwBi" id="23CHI7KLJ4d" role="33vP2m">
                           <node concept="2YIFZM" id="23CHI7KLJ4e" role="2Oq$k0">
                             <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
-                            <node concept="10QFUN" id="23CHI7KLJ4f" role="37wK5m">
-                              <node concept="30H73N" id="23CHI7KLJ4g" role="10QFUP" />
-                              <node concept="3uibUv" id="23CHI7KLJ4h" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                              </node>
-                            </node>
+                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                            <node concept="30H73N" id="23CHI7KLJ4g" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KLJ4i" role="2OqNvi">
                             <ref role="37wK5l" to="a7z3:~SConceptId.getIdValue():long" resolve="getIdValue" />
@@ -12499,14 +12409,9 @@
                     <node concept="2OqwBi" id="23CHI7KI$iM" role="2Oq$k0">
                       <node concept="2OqwBi" id="23CHI7KI$iN" role="2Oq$k0">
                         <node concept="2YIFZM" id="23CHI7KI$iO" role="2Oq$k0">
-                          <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                          <node concept="10QFUN" id="23CHI7KI$iP" role="37wK5m">
-                            <node concept="30H73N" id="23CHI7KI$iQ" role="10QFUP" />
-                            <node concept="3uibUv" id="23CHI7KI$iR" role="10QFUM">
-                              <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                            </node>
-                          </node>
+                          <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                          <node concept="30H73N" id="23CHI7KI$iQ" role="37wK5m" />
                         </node>
                         <node concept="liA8E" id="23CHI7KI$iS" role="2OqNvi">
                           <ref role="37wK5l" to="a7z3:~SConceptId.getLanguageId():jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
@@ -12560,14 +12465,9 @@
                     <node concept="2OqwBi" id="23CHI7KJ8xE" role="2Oq$k0">
                       <node concept="2OqwBi" id="23CHI7KJ8xF" role="2Oq$k0">
                         <node concept="2YIFZM" id="23CHI7KJ8xG" role="2Oq$k0">
-                          <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                           <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                          <node concept="10QFUN" id="23CHI7KJ8xH" role="37wK5m">
-                            <node concept="30H73N" id="23CHI7KJ8xI" role="10QFUP" />
-                            <node concept="3uibUv" id="23CHI7KJ8xJ" role="10QFUM">
-                              <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                            </node>
-                          </node>
+                          <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                          <node concept="30H73N" id="23CHI7KJ8xI" role="37wK5m" />
                         </node>
                         <node concept="liA8E" id="23CHI7KJ8xK" role="2OqNvi">
                           <ref role="37wK5l" to="a7z3:~SConceptId.getLanguageId():jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
@@ -12619,14 +12519,9 @@
                   <node concept="3cpWsb" id="23CHI7KJa$u" role="1tU5fm" />
                   <node concept="2OqwBi" id="23CHI7KJa$z" role="33vP2m">
                     <node concept="2YIFZM" id="23CHI7KJa$$" role="2Oq$k0">
-                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
                       <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                      <node concept="10QFUN" id="23CHI7KJa$_" role="37wK5m">
-                        <node concept="30H73N" id="23CHI7KJa$A" role="10QFUP" />
-                        <node concept="3uibUv" id="23CHI7KJa$B" role="10QFUM">
-                          <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                        </node>
-                      </node>
+                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getConceptId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
+                      <node concept="30H73N" id="23CHI7KJa$A" role="37wK5m" />
                     </node>
                     <node concept="liA8E" id="23CHI7KJa$C" role="2OqNvi">
                       <ref role="37wK5l" to="a7z3:~SConceptId.getIdValue():long" resolve="getIdValue" />
@@ -12683,14 +12578,9 @@
                       <node concept="2OqwBi" id="23CHI7KMGOj" role="2Oq$k0">
                         <node concept="2OqwBi" id="23CHI7KMGOk" role="2Oq$k0">
                           <node concept="2YIFZM" id="23CHI7KMGOl" role="2Oq$k0">
-                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
                             <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                            <node concept="10QFUN" id="23CHI7KMGOm" role="37wK5m">
-                              <node concept="30H73N" id="23CHI7KMGOn" role="10QFUP" />
-                              <node concept="3uibUv" id="23CHI7KMGOo" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                              </node>
-                            </node>
+                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
+                            <node concept="30H73N" id="23CHI7KMGOn" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KMGOp" role="2OqNvi">
                             <ref role="37wK5l" to="a7z3:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -12749,14 +12639,9 @@
                       <node concept="2OqwBi" id="23CHI7KMJnI" role="2Oq$k0">
                         <node concept="2OqwBi" id="23CHI7KMJnJ" role="2Oq$k0">
                           <node concept="2YIFZM" id="23CHI7KMJnK" role="2Oq$k0">
-                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
                             <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                            <node concept="10QFUN" id="23CHI7KMJnL" role="37wK5m">
-                              <node concept="30H73N" id="23CHI7KMJnM" role="10QFUP" />
-                              <node concept="3uibUv" id="23CHI7KMJnN" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                              </node>
-                            </node>
+                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
+                            <node concept="30H73N" id="23CHI7KMJnM" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KMJnO" role="2OqNvi">
                             <ref role="37wK5l" to="a7z3:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -12814,13 +12699,8 @@
                     <node concept="2OqwBi" id="23CHI7KMAkx" role="2Oq$k0">
                       <node concept="2YIFZM" id="23CHI7KMAky" role="2Oq$k0">
                         <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                        <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
-                        <node concept="10QFUN" id="23CHI7KMAkz" role="37wK5m">
-                          <node concept="30H73N" id="23CHI7KMAk$" role="10QFUP" />
-                          <node concept="3uibUv" id="23CHI7KMAk_" role="10QFUM">
-                            <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                          </node>
-                        </node>
+                        <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
+                        <node concept="30H73N" id="23CHI7KMAk$" role="37wK5m" />
                       </node>
                       <node concept="liA8E" id="23CHI7KMAkA" role="2OqNvi">
                         <ref role="37wK5l" to="a7z3:~SPropertyId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -12869,13 +12749,8 @@
                   <node concept="2OqwBi" id="23CHI7KMD_A" role="33vP2m">
                     <node concept="2YIFZM" id="23CHI7KMD_B" role="2Oq$k0">
                       <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
-                      <node concept="10QFUN" id="23CHI7KMD_C" role="37wK5m">
-                        <node concept="30H73N" id="23CHI7KMD_D" role="10QFUP" />
-                        <node concept="3uibUv" id="23CHI7KMD_E" role="10QFUM">
-                          <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                        </node>
-                      </node>
+                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getPropId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropId" />
+                      <node concept="30H73N" id="23CHI7KMD_D" role="37wK5m" />
                     </node>
                     <node concept="liA8E" id="23CHI7KMD_F" role="2OqNvi">
                       <ref role="37wK5l" to="a7z3:~SPropertyId.getIdValue():long" resolve="getIdValue" />
@@ -12933,13 +12808,8 @@
                         <node concept="2OqwBi" id="23CHI7KKPP1" role="2Oq$k0">
                           <node concept="2YIFZM" id="23CHI7KKPP2" role="2Oq$k0">
                             <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
-                            <node concept="10QFUN" id="23CHI7KKPP3" role="37wK5m">
-                              <node concept="30H73N" id="23CHI7KKPP4" role="10QFUP" />
-                              <node concept="3uibUv" id="23CHI7KKPP5" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                              </node>
-                            </node>
+                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
+                            <node concept="30H73N" id="23CHI7KKPP4" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KKPP6" role="2OqNvi">
                             <ref role="37wK5l" to="a7z3:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -12999,13 +12869,8 @@
                         <node concept="2OqwBi" id="23CHI7KKVJj" role="2Oq$k0">
                           <node concept="2YIFZM" id="23CHI7KKVJk" role="2Oq$k0">
                             <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
-                            <node concept="10QFUN" id="23CHI7KKVJl" role="37wK5m">
-                              <node concept="30H73N" id="23CHI7KKVJm" role="10QFUP" />
-                              <node concept="3uibUv" id="23CHI7KKVJn" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                              </node>
-                            </node>
+                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
+                            <node concept="30H73N" id="23CHI7KKVJm" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KKVJo" role="2OqNvi">
                             <ref role="37wK5l" to="a7z3:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -13062,14 +12927,9 @@
                   <node concept="2OqwBi" id="23CHI7KKZDA" role="33vP2m">
                     <node concept="2OqwBi" id="23CHI7KKZDB" role="2Oq$k0">
                       <node concept="2YIFZM" id="23CHI7KKZDC" role="2Oq$k0">
-                        <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
                         <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                        <node concept="10QFUN" id="23CHI7KKZDD" role="37wK5m">
-                          <node concept="30H73N" id="23CHI7KKZDE" role="10QFUP" />
-                          <node concept="3uibUv" id="23CHI7KKZDF" role="10QFUM">
-                            <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                          </node>
-                        </node>
+                        <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
+                        <node concept="30H73N" id="23CHI7KKZDE" role="37wK5m" />
                       </node>
                       <node concept="liA8E" id="23CHI7KKZDG" role="2OqNvi">
                         <ref role="37wK5l" to="a7z3:~SContainmentLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -13118,13 +12978,8 @@
                   <node concept="2OqwBi" id="23CHI7KL3tf" role="33vP2m">
                     <node concept="2YIFZM" id="23CHI7KL3tg" role="2Oq$k0">
                       <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
-                      <node concept="10QFUN" id="23CHI7KL3th" role="37wK5m">
-                        <node concept="30H73N" id="23CHI7KL3ti" role="10QFUP" />
-                        <node concept="3uibUv" id="23CHI7KL3tj" role="10QFUM">
-                          <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                        </node>
-                      </node>
+                      <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getLinkId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
+                      <node concept="30H73N" id="23CHI7KL3ti" role="37wK5m" />
                     </node>
                     <node concept="liA8E" id="23CHI7KL3tk" role="2OqNvi">
                       <ref role="37wK5l" to="a7z3:~SContainmentLinkId.getIdValue():long" resolve="getIdValue" />
@@ -13197,13 +13052,8 @@
                               <node concept="2OqwBi" id="23CHI7KL7e7" role="2Oq$k0">
                                 <node concept="2YIFZM" id="23CHI7KL7e8" role="2Oq$k0">
                                   <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                                  <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
-                                  <node concept="10QFUN" id="23CHI7KL7e9" role="37wK5m">
-                                    <node concept="30H73N" id="23CHI7KL7ea" role="10QFUP" />
-                                    <node concept="3uibUv" id="23CHI7KL7eb" role="10QFUM">
-                                      <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                                    </node>
-                                  </node>
+                                  <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
+                                  <node concept="30H73N" id="23CHI7KL7ea" role="37wK5m" />
                                 </node>
                                 <node concept="liA8E" id="23CHI7KL7ec" role="2OqNvi">
                                   <ref role="37wK5l" to="a7z3:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -13262,14 +13112,9 @@
                             <node concept="2OqwBi" id="23CHI7KL9LI" role="2Oq$k0">
                               <node concept="2OqwBi" id="23CHI7KL9LJ" role="2Oq$k0">
                                 <node concept="2YIFZM" id="23CHI7KL9LK" role="2Oq$k0">
-                                  <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
                                   <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                                  <node concept="10QFUN" id="23CHI7KL9LL" role="37wK5m">
-                                    <node concept="30H73N" id="23CHI7KL9LM" role="10QFUP" />
-                                    <node concept="3uibUv" id="23CHI7KL9LN" role="10QFUM">
-                                      <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                                    </node>
-                                  </node>
+                                  <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
+                                  <node concept="30H73N" id="23CHI7KL9LM" role="37wK5m" />
                                 </node>
                                 <node concept="liA8E" id="23CHI7KL9LO" role="2OqNvi">
                                   <ref role="37wK5l" to="a7z3:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -13326,14 +13171,9 @@
                         <node concept="2OqwBi" id="23CHI7KLecC" role="33vP2m">
                           <node concept="2OqwBi" id="23CHI7KLecD" role="2Oq$k0">
                             <node concept="2YIFZM" id="23CHI7KLecE" role="2Oq$k0">
-                              <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
                               <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                              <node concept="10QFUN" id="23CHI7KLecF" role="37wK5m">
-                                <node concept="30H73N" id="23CHI7KLecG" role="10QFUP" />
-                                <node concept="3uibUv" id="23CHI7KLecH" role="10QFUM">
-                                  <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                                </node>
-                              </node>
+                              <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
+                              <node concept="30H73N" id="23CHI7KLecG" role="37wK5m" />
                             </node>
                             <node concept="liA8E" id="23CHI7KLecI" role="2OqNvi">
                               <ref role="37wK5l" to="a7z3:~SReferenceLinkId.getConceptId():jetbrains.mps.smodel.adapter.ids.SConceptId" resolve="getConceptId" />
@@ -13382,13 +13222,8 @@
                         <node concept="2OqwBi" id="23CHI7KLhlJ" role="33vP2m">
                           <node concept="2YIFZM" id="23CHI7KLhlK" role="2Oq$k0">
                             <ref role="1Pybhc" to="a7z3:~MetaIdByDeclaration" resolve="MetaIdByDeclaration" />
-                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
-                            <node concept="10QFUN" id="23CHI7KLhlL" role="37wK5m">
-                              <node concept="30H73N" id="23CHI7KLhlM" role="10QFUP" />
-                              <node concept="3uibUv" id="23CHI7KLhlN" role="10QFUM">
-                                <ref role="3uigEE" to="cu2c:~SNode" resolve="SNode" />
-                              </node>
-                            </node>
+                            <ref role="37wK5l" to="a7z3:~MetaIdByDeclaration.getRefRoleId(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefRoleId" />
+                            <node concept="30H73N" id="23CHI7KLhlM" role="37wK5m" />
                           </node>
                           <node concept="liA8E" id="23CHI7KLhlO" role="2OqNvi">
                             <ref role="37wK5l" to="a7z3:~SReferenceLinkId.getIdValue():long" resolve="getIdValue" />
