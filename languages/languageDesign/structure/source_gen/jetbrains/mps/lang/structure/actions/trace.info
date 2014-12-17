@@ -20,13 +20,14 @@
       <unit at="217,55,235,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$8" />
       <unit at="246,49,264,5" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$9" />
       <unit at="195,45,214,7" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$7" />
+      <unit at="548,49,569,5" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$21" />
       <unit at="512,55,537,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$20" />
       <unit at="325,55,351,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$12" />
       <unit at="419,55,445,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$16" />
       <unit at="460,49,495,5" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$18" />
       <unit at="272,49,308,5" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$10" />
       <unit at="366,49,402,5" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$14" />
-      <unit at="39,0,547,0" name="jetbrains.mps.lang.structure.actions.QueriesGenerated" />
+      <unit at="39,0,576,0" name="jetbrains.mps.lang.structure.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028a(jetbrains.mps.lang.structure.actions)/100768563187634382">
@@ -372,6 +373,24 @@
         <var name="_context" id="6375966607167242574" />
         <var name="operationContext" id="6375966607167242574" />
       </scope>
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959028a(jetbrains.mps.lang.structure.actions)/8450601683519847315">
+    <file name="QueriesGenerated.java">
+      <node id="8450601683520618637" at="550,245,551,672" concept="6" />
+      <node id="8450601683520619867" at="552,16,553,680" concept="6" />
+      <node id="8450601683520547218" at="572,217,573,794" concept="6" />
+      <node id="8450601683520611008" at="552,14,554,9" concept="0" />
+      <node id="8450601683520546270" at="572,0,575,0" concept="7" trace="sideTransformHintSubstituteActionsBuilder_Precondition_InterfaceConceptReference_8450601683520546270#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
+      <node id="8450601683520586799" at="549,94,554,9" concept="3" />
+      <scope id="8450601683520586802" at="550,245,551,672" />
+      <scope id="8450601683520611009" at="552,16,553,680" />
+      <scope id="8450601683520546271" at="572,217,573,794" />
+      <scope id="8450601683520546270" at="572,0,575,0">
+        <var name="_context" id="8450601683520546270" />
+        <var name="operationContext" id="8450601683520546270" />
+      </scope>
+      <scope id="8450601683519854144" at="549,94,554,9" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028a(jetbrains.mps.lang.structure.actions)/850862791448021510">
