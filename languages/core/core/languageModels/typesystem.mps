@@ -1532,21 +1532,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="2IGzuM5QfJV" role="3cqZAp" />
-        <node concept="3clFbF" id="2IGzuM5Qgo5" role="3cqZAp">
-          <node concept="2OqwBi" id="2IGzuM5Qh03" role="3clFbG">
-            <node concept="2YIFZM" id="2IGzuM5QgGU" role="2Oq$k0">
-              <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
-              <ref role="1Pybhc" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
-            </node>
-            <node concept="liA8E" id="2IGzuM5QhwI" role="2OqNvi">
-              <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadModule(org.jetbrains.mps.openapi.module.SModule):java.util.Collection" resolve="reloadModule" />
-              <node concept="37vLTw" id="5CJoUBnUWhF" role="37wK5m">
-                <ref role="3cqZAo" node="5rYR3QhLnQs" resolve="languageModule" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node concept="QznSV" id="5rYR3QhHipU" role="QzAvj">

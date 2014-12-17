@@ -18,7 +18,6 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -64,7 +63,6 @@ public class ResolveStubReferencesToMPS_Action extends BaseAction {
       for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("models"))) {
         SetSequence.fromSet(modulesToReload).addElement(model.getModule());
       }
-      ClassLoaderManager.getInstance().reloadModules(modulesToReload);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ResolveStubReferencesToMPS", t);

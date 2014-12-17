@@ -3346,7 +3346,7 @@
                       <node concept="3clFbF" id="43Ra3NM_Jyj" role="3cqZAp">
                         <node concept="2OqwBi" id="43Ra3NM_Jyk" role="3clFbG">
                           <node concept="liA8E" id="43Ra3NM_Jyl" role="2OqNvi">
-                            <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadModules(java.lang.Iterable):java.util.Collection" resolve="reloadModules" />
+                            <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadModules(java.lang.Iterable):void" resolve="reloadModules" />
                             <node concept="2OqwBi" id="3IZXeSR$nJr" role="37wK5m">
                               <node concept="37vLTw" id="3IZXeSR$nFs" role="2Oq$k0">
                                 <ref role="3cqZAo" node="3IZXeSR$nkw" resolve="mpsCompilationResult" />

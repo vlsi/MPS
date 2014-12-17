@@ -52,21 +52,26 @@ public abstract class BasePluginManager<T> {
           List<T> plugins = new ArrayList<T>();
 
           LOG.debug("Loading plugins from " + contributors.size() + " contributors");
-          for (PluginContributor c : contributors) {
+          for (PluginContributor contributor : contributors) {
             T plugin = null;
 
             try {
-              plugin = createPlugin(c);
-            } catch (Exception e) {
-              LOG.error("Contributor " + c + " threw an exception during plugin creation " + e.getMessage(), e);
+              plugin = createPlugin(contributor);
+            } catch (LinkageError le) {
+              LOG.error("Contributor " + contributor + " threw a linkage error during plugin creation ", le);
+            } catch (Throwable t) {
+              LOG.error("Contributor " + contributor + " threw an exception during plugin creation " + t.getMessage(), t);
             }
 
             if (plugin != null) {
               plugins.add(plugin);
             }
 
-            assert !myContributorToPlugin.containsKey(c);
-            myContributorToPlugin.put(c, plugin);
+            if (myContributorToPlugin.containsKey(contributor)) {
+              LOG.error("", new IllegalStateException("Contributor " + contributor + " is already registered"));
+              continue;
+            }
+            myContributorToPlugin.put(contributor, plugin);
           }
 
           mySortedPlugins.addAll(plugins);
@@ -86,7 +91,10 @@ public abstract class BasePluginManager<T> {
       final List<T> plugins = new ArrayList<T>();
 
       for (PluginContributor contributor : contributors) {
-        assert myContributorToPlugin.containsKey(contributor);
+        if (!myContributorToPlugin.containsKey(contributor)) {
+          LOG.error("", new IllegalStateException("Contributor " + contributor + " was not registered"));
+          continue;
+        }
         T plugin = myContributorToPlugin.get(contributor);
         myContributorToPlugin.remove(contributor);
 
@@ -97,15 +105,16 @@ public abstract class BasePluginManager<T> {
 
       beforePluginsDisposed(plugins);
 
-
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
           for (T plugin : plugins) {
             try {
               disposePlugin(plugin);
-            } catch (Exception e) {
-              LOG.error("Plugin " + plugin + " threw an exception during disposing " + e.getMessage(), e);
+            } catch (LinkageError le) {
+              LOG.error("Plugin " + plugin + " threw a linkage error during disposing", le);
+            } catch (Throwable t) {
+              LOG.error("Plugin " + plugin + " threw an exception during disposing " + t.getMessage(), t);
             }
           }
         }

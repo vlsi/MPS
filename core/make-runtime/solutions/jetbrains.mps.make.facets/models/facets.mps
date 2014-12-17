@@ -1317,7 +1317,7 @@
                       <node concept="3clFbF" id="5$SFEs5zo35" role="3cqZAp">
                         <node concept="2OqwBi" id="5$SFEs5zoH9" role="3clFbG">
                           <node concept="liA8E" id="5$SFEs5zpQg" role="2OqNvi">
-                            <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadModules(java.lang.Iterable):java.util.Collection" resolve="reloadModules" />
+                            <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadModules(java.lang.Iterable):void" resolve="reloadModules" />
                             <node concept="37vLTw" id="4xf2wkFFw_0" role="37wK5m">
                               <ref role="3cqZAo" node="1iBNvmC$N8$" resolve="toReload" />
                             </node>
