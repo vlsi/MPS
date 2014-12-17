@@ -55,7 +55,7 @@ public class MigrationsUtil {
       ver = Math.max(ver, 0);
       currentLangVersion = Math.max(currentLangVersion, 0);
 
-      if (ver != currentLangVersion) {
+      if (ver < currentLangVersion) {
         ListSequence.fromList(result).addElement(new MigrationScriptReference(lang, ver));
       }
     }
