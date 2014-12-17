@@ -2023,28 +2023,56 @@
             </node>
           </node>
         </node>
-        <node concept="1gVbGN" id="6QXKeyZ6MXo" role="3cqZAp">
-          <node concept="3clFbC" id="25$eykQ5Uep" role="1gVkn0">
-            <node concept="2OqwBi" id="25$eykQ6FCY" role="3uHU7B">
-              <node concept="2OqwBi" id="25$eykQ6FCZ" role="2Oq$k0">
-                <node concept="2OqwBi" id="25$eykQ6FD0" role="2Oq$k0">
-                  <node concept="37vLTw" id="6nqztBEtja4" role="2Oq$k0">
+        <node concept="3cpWs8" id="4oC9W$Bjy$U" role="3cqZAp">
+          <node concept="3cpWsn" id="4oC9W$Bjy$V" role="3cpWs9">
+            <property role="TrG5h" value="usedVersion" />
+            <node concept="3uibUv" id="4oC9W$Bjy$r" role="1tU5fm">
+              <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+            </node>
+            <node concept="2OqwBi" id="4oC9W$Bjy$W" role="33vP2m">
+              <node concept="2OqwBi" id="4oC9W$Bjy$X" role="2Oq$k0">
+                <node concept="2OqwBi" id="4oC9W$Bjy$Y" role="2Oq$k0">
+                  <node concept="37vLTw" id="4oC9W$Bjy$Z" role="2Oq$k0">
                     <ref role="3cqZAo" node="6nqztBEtja0" resolve="module" />
                   </node>
-                  <node concept="liA8E" id="25$eykQ6FD2" role="2OqNvi">
+                  <node concept="liA8E" id="4oC9W$Bjy_0" role="2OqNvi">
                     <ref role="37wK5l" to="vsqj:~AbstractModule.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolve="getModuleDescriptor" />
                   </node>
                 </node>
-                <node concept="liA8E" id="25$eykQ6FD3" role="2OqNvi">
+                <node concept="liA8E" id="4oC9W$Bjy_1" role="2OqNvi">
                   <ref role="37wK5l" to="kqhl:~ModuleDescriptor.getLanguageVersions():java.util.Map" resolve="getLanguageVersions" />
                 </node>
               </node>
-              <node concept="liA8E" id="25$eykQ6FD4" role="2OqNvi">
+              <node concept="liA8E" id="4oC9W$Bjy_2" role="2OqNvi">
                 <ref role="37wK5l" to="k7g3:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-                <node concept="37vLTw" id="25$eykQ6FD5" role="37wK5m">
+                <node concept="37vLTw" id="4oC9W$Bjy_3" role="37wK5m">
                   <ref role="3cqZAo" node="6QXKeyZ7YRz" resolve="language" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4oC9W$BjJN2" role="3cqZAp">
+          <node concept="37vLTI" id="4oC9W$BjN7k" role="3clFbG">
+            <node concept="2YIFZM" id="4oC9W$BjOoA" role="37vLTx">
+              <ref role="1Pybhc" to="e2lb:~Math" resolve="Math" />
+              <ref role="37wK5l" to="e2lb:~Math.max(int,int):int" resolve="max" />
+              <node concept="37vLTw" id="4oC9W$BjP0X" role="37wK5m">
+                <ref role="3cqZAo" node="4oC9W$Bjy$V" resolve="usedVersion" />
+              </node>
+              <node concept="3cmrfG" id="4oC9W$BjQBV" role="37wK5m">
+                <property role="3cmrfH" value="0" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="4oC9W$BjJN0" role="37vLTJ">
+              <ref role="3cqZAo" node="4oC9W$Bjy$V" resolve="usedVersion" />
+            </node>
+          </node>
+        </node>
+        <node concept="1gVbGN" id="6QXKeyZ6MXo" role="3cqZAp">
+          <node concept="3clFbC" id="25$eykQ5Uep" role="1gVkn0">
+            <node concept="37vLTw" id="4oC9W$Bjy_4" role="3uHU7B">
+              <ref role="3cqZAo" node="4oC9W$Bjy$V" resolve="usedVersion" />
             </node>
             <node concept="2OqwBi" id="25$eykQ6FD6" role="3uHU7w">
               <node concept="2OqwBi" id="25$eykQ6FD7" role="2Oq$k0">

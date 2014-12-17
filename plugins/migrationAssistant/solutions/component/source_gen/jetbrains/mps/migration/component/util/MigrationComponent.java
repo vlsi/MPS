@@ -183,7 +183,9 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     MigrationScript script = sa.getScript();
     AbstractModule module = ((AbstractModule) sa.getModule());
     SLanguage language = script.getDescriptor().getLanguage();
-    assert module.getModuleDescriptor().getLanguageVersions().get(language) == script.getDescriptor().getFromVersion();
+    Integer usedVersion = module.getModuleDescriptor().getLanguageVersions().get(language);
+    usedVersion = Math.max(usedVersion, 0);
+    assert usedVersion == script.getDescriptor().getFromVersion();
     try {
       SNode data = script.execute(module, this);
       if (data != null) {
