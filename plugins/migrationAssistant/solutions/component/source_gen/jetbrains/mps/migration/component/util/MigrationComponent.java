@@ -32,7 +32,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -288,10 +287,9 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         });
       }
     });
-    final List<ScriptApplied> allStepScripts = ListSequence.fromList(new ArrayList<ScriptApplied>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ListSequence.fromList(allStepScripts).addSequence(Sequence.fromIterable(projectModules.value).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, ScriptApplied>() {
+        Iterable<ScriptApplied> scripts = Sequence.fromIterable(projectModules.value).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, ScriptApplied>() {
           public Iterable<ScriptApplied> translate(final AbstractModule module) {
             return Sequence.fromIterable(MapSequence.fromMap(languageVersions).get(module)).where(new IWhereFilter<MigrationScriptReference>() {
               public boolean accept(MigrationScriptReference it) {
@@ -311,12 +309,9 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
               }
             });
           }
-        }));
-      }
-    });
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        final ScriptApplied nextScript = ListSequence.fromList(allStepScripts).findFirst(new IWhereFilter<ScriptApplied>() {
+        });
+
+        final ScriptApplied nextScript = Sequence.fromIterable(scripts).findFirst(new IWhereFilter<ScriptApplied>() {
           public boolean accept(ScriptApplied it) {
             return isAvailable(it);
           }
