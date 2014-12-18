@@ -30,30 +30,19 @@ import java.util.List;
 
 public class CompilerSettingsPreferencePage {
 
-  private final List<JavaVersionPresentationItem> mySourceVersionItems = new ArrayList<JavaVersionPresentationItem>();
   private final List<JavaVersionPresentationItem> myTargetVersionItems = new ArrayList<JavaVersionPresentationItem>();
   private static final JavaVersionPresentationItem DEFAULT_VERSION_ITEM = new JavaVersionPresentationItem(null, "JDK Default");
   private JPanel myMainPanel;
-  private JComboBox mySourceJavaVersionComboBox;
   private JComboBox myTargetJavaVersionComboBox;
-  private JavaVersionPresentationItem myInitialSourceJavaVersion;
   private JavaVersionPresentationItem myInitialTargetJavaVersion;
 
   {
     for (JavaVersion version : JavaVersion.values()) {
-      mySourceVersionItems.add(new JavaVersionPresentationItem(version, version.getCompilerVersion()));
       myTargetVersionItems.add(new JavaVersionPresentationItem(version, version.getCompilerVersion()));
     }
-    mySourceVersionItems.add(DEFAULT_VERSION_ITEM);
     myTargetVersionItems.add(DEFAULT_VERSION_ITEM);
   }
   public CompilerSettingsPreferencePage(JavaCompilerOptions options) {
-    JavaVersion sourceJavaVersion = options.getSourceJavaVersion();
-    if (sourceJavaVersion == null) {
-      myInitialSourceJavaVersion = DEFAULT_VERSION_ITEM;
-    } else {
-      myInitialSourceJavaVersion = new JavaVersionPresentationItem(sourceJavaVersion, sourceJavaVersion.getCompilerVersion());
-    }
     JavaVersion targetJavaVersion = options.getTargetJavaVersion();
     if (targetJavaVersion == null) {
       myInitialTargetJavaVersion = DEFAULT_VERSION_ITEM;
@@ -88,21 +77,12 @@ public class CompilerSettingsPreferencePage {
     c.weightx = 1;
     c.insets.top = 4;
     c.insets.left = 5;
-    mySourceJavaVersionComboBox = new JComboBox(new DefaultComboBoxModel(mySourceVersionItems.toArray()));
-    mySourceJavaVersionComboBox.setSelectedItem(myInitialSourceJavaVersion);
     myTargetJavaVersionComboBox = new JComboBox(new DefaultComboBoxModel(myTargetVersionItems.toArray()));
     myTargetJavaVersionComboBox.setSelectedItem(myInitialTargetJavaVersion);
 
-    panel.add(new JLabel("Java language level"), c);
+    panel.add(new JLabel("Java target bytecode version"), c);
     c.gridx = 1;
     c.insets.top = 0;
-    panel.add(mySourceJavaVersionComboBox, c);
-
-    c.gridy = 1;
-    c.gridx = 0;
-    panel.add(new JLabel("Java target bytecode version"), c);
-
-    c.gridx = 1;
     panel.add(myTargetJavaVersionComboBox, c);
 
     return panel;
@@ -114,23 +94,15 @@ public class CompilerSettingsPreferencePage {
     return selectedItem.getJavaVersion();
   }
 
-  JavaVersion getSelectedSourceJavaVersion() {
-    JavaVersionPresentationItem selectedItem = (JavaVersionPresentationItem) mySourceJavaVersionComboBox.getSelectedItem();
-    return selectedItem.getJavaVersion();
-  }
-
   boolean isModified() {
-    return !(myInitialTargetJavaVersion.equals(myTargetJavaVersionComboBox.getSelectedItem()) &&
-        myInitialSourceJavaVersion.equals(mySourceJavaVersionComboBox.getSelectedItem()));
+    return !(myInitialTargetJavaVersion.equals(myTargetJavaVersionComboBox.getSelectedItem()));
   }
 
   void commit() {
-    myInitialSourceJavaVersion = ((JavaVersionPresentationItem) mySourceJavaVersionComboBox.getSelectedItem());
     myInitialTargetJavaVersion = ((JavaVersionPresentationItem) myTargetJavaVersionComboBox.getSelectedItem());
   }
 
   void reset() {
-    mySourceJavaVersionComboBox.setSelectedItem(myInitialSourceJavaVersion);
     myTargetJavaVersionComboBox.setSelectedItem(myInitialTargetJavaVersion);
   }
 

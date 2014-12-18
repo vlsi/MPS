@@ -27,7 +27,7 @@ public class JavaCompilerOptionsComponent {
   private Map<Project, JavaCompilerOptionsProvider> myProjectToProvider = new HashMap<Project, JavaCompilerOptionsProvider>();
   private static JavaCompilerOptionsComponent INSTANCE;
   private static JavaVersion DEFAULT_JAVA_VERSION = getDefaultJavaVersion();
-  public static JavaCompilerOptions DEFAULT_JAVA_COMPILER_OPTIONS = new JavaCompilerOptions(DEFAULT_JAVA_VERSION, DEFAULT_JAVA_VERSION);
+  public static JavaCompilerOptions DEFAULT_JAVA_COMPILER_OPTIONS = new JavaCompilerOptions(DEFAULT_JAVA_VERSION);
 
   private JavaCompilerOptionsComponent() {
   }
@@ -63,8 +63,7 @@ public class JavaCompilerOptionsComponent {
       JavaCompilerOptions javaCompilerOptions = javaCompilerOptionsProvider.getJavaCompilerOptions();
       JavaVersion sourceJavaVersion = javaCompilerOptions.getSourceJavaVersion();
       JavaVersion targetJavaVersion = javaCompilerOptions.getTargetJavaVersion();
-      return new JavaCompilerOptions(sourceJavaVersion == null ? DEFAULT_JAVA_VERSION : sourceJavaVersion,
-          targetJavaVersion == null ? DEFAULT_JAVA_VERSION : targetJavaVersion);
+      return new JavaCompilerOptions(targetJavaVersion == null ? DEFAULT_JAVA_VERSION : targetJavaVersion);
     }
     return DEFAULT_JAVA_COMPILER_OPTIONS;
   }

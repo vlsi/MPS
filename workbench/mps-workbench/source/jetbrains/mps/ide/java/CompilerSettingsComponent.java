@@ -56,7 +56,6 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
   public CompilerState getState() {
     CompilerState state = new CompilerState();
     state.setTargetVersion(myState.getTargetVersion());
-    state.setSourceVersion(myState.getSourceVersion());
     return state;
   }
 
@@ -64,7 +63,6 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
   public void loadState(CompilerState state) {
     myState = new CompilerState();
     myState.setTargetVersion(state.getTargetVersion());
-    myState.setSourceVersion(state.getSourceVersion());
   }
 
   @Override
@@ -98,7 +96,6 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
   void commit() {
     myCompilerSettingsPreferencePage.commit();
     myState = new CompilerState();
-    myState.setSourceVersion(myCompilerSettingsPreferencePage.getSelectedSourceJavaVersion());
     myState.setTargetVersion(myCompilerSettingsPreferencePage.getSelectedTargetJavaVersion());
   }
 
@@ -117,26 +114,19 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
 
   public static class CompilerState {
     private JavaVersion myTargetVersion;
-    private JavaVersion mySourceVersion;
 
     public JavaVersion getTargetVersion() {
       return myTargetVersion;
     }
 
-    public JavaVersion getSourceVersion() {
-      return mySourceVersion;
-    }
 
     public void setTargetVersion(JavaVersion targetVersion) {
       myTargetVersion = targetVersion;
-    }
-    public void setSourceVersion(JavaVersion sourceVersion) {
-      mySourceVersion = sourceVersion;
     }
   }
 
   @Override
   public JavaCompilerOptions getJavaCompilerOptions() {
-    return new JavaCompilerOptions(myState.getSourceVersion(), myState.getTargetVersion());
+    return new JavaCompilerOptions(myState.getTargetVersion());
   }
 }
