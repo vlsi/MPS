@@ -93,14 +93,14 @@ public class AddModelImportByRoot_Action extends BaseAction {
       NodeSubstituteChooser nodeSubstituteChooser = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser();
       if (check_a68f4j_a4a0(nodeSubstituteChooser)) {
         String pattern = nodeSubstituteChooser.getPatternEditor().getPattern();
-        if ((pattern != null && pattern.length() > 0)) {
+        if (check_a68f4j_a1a4a0(pattern)) {
           initialText.value = pattern;
         }
       }
       if (isEmptyString(initialText.value)) {
         EditorCell_Label label = AddModelImportByRoot_Action.this.getCellLabel(_params);
         String selectedText = check_a68f4j_a0b0f0a(label);
-        if (!(check_a68f4j_a0c0f0a(selectedText))) {
+        if (selectedText != null && !(selectedText.isEmpty())) {
           initialText.value = selectedText;
         }
       }
@@ -163,6 +163,12 @@ public class AddModelImportByRoot_Action extends BaseAction {
     return null;
   }
   protected static Logger LOG = LogManager.getLogger(AddModelImportByRoot_Action.class);
+  private static boolean check_a68f4j_a1a4a0(String checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return (checkedDotOperand != null && checkedDotOperand.length() > 0);
+    }
+    return false;
+  }
   private static boolean check_a68f4j_a4a0(NodeSubstituteChooser checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isVisible();
@@ -174,12 +180,6 @@ public class AddModelImportByRoot_Action extends BaseAction {
       return checkedDotOperand.getSelectedText();
     }
     return null;
-  }
-  private static boolean check_a68f4j_a0c0f0a(String checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.isEmpty();
-    }
-    return false;
   }
   private static boolean check_a68f4j_a1a0(EditorCell_Label checkedDotOperand) {
     if (null != checkedDotOperand) {

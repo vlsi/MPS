@@ -8796,7 +8796,7 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="1C72Z0Grvmo" role="3clFbw">
+              <node concept="2EnYce" id="4qFgCTNRc1D" role="3clFbw">
                 <node concept="37vLTw" id="1C72Z0Grvcq" role="2Oq$k0">
                   <ref role="3cqZAo" node="1C72Z0GroC6" resolve="pattern" />
                 </node>
@@ -8858,13 +8858,21 @@
                   </node>
                 </node>
               </node>
-              <node concept="3fqX7Q" id="1C72Z0GtTk4" role="3clFbw">
-                <node concept="2EnYce" id="1C72Z0GtQ2X" role="3fr31v">
-                  <node concept="37vLTw" id="1C72Z0GtTJU" role="2Oq$k0">
+              <node concept="1Wc70l" id="4qFgCTNR01m" role="3clFbw">
+                <node concept="3y3z36" id="4qFgCTNR5g4" role="3uHU7B">
+                  <node concept="10Nm6u" id="4qFgCTNR5hX" role="3uHU7w" />
+                  <node concept="37vLTw" id="4qFgCTNR4L0" role="3uHU7B">
                     <ref role="3cqZAo" node="1C72Z0GtTJQ" resolve="selectedText" />
                   </node>
-                  <node concept="liA8E" id="1C72Z0GtSui" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.isEmpty():boolean" resolve="isEmpty" />
+                </node>
+                <node concept="3fqX7Q" id="1C72Z0GtTk4" role="3uHU7w">
+                  <node concept="2OqwBi" id="4qFgCTNQZ97" role="3fr31v">
+                    <node concept="37vLTw" id="1C72Z0GtTJU" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1C72Z0GtTJQ" resolve="selectedText" />
+                    </node>
+                    <node concept="liA8E" id="1C72Z0GtSui" role="2OqNvi">
+                      <ref role="37wK5l" to="e2lb:~String.isEmpty():boolean" resolve="isEmpty" />
+                    </node>
                   </node>
                 </node>
               </node>
