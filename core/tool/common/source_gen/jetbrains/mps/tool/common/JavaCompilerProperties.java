@@ -13,16 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.compiler;
+package jetbrains.mps.tool.common;
 
-import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
+public class JavaCompilerProperties {
+  private static final String TARGET_JAVA_VERSION = "target";
+  private Script myScript;
 
-public class JavaCompilerOptions {
-  private JavaVersion myTargetVersion;
-  public JavaCompilerOptions(JavaVersion targetVersion) {
-    myTargetVersion = targetVersion;
+  public JavaCompilerProperties(Script script) {
+    myScript = script;
   }
-  public JavaVersion getTargetJavaVersion() {
-    return myTargetVersion;
+  public JavaCompilerProperties setTargetJavaVersion(String targetJavaVersion) {
+    myScript.putProperty(TARGET_JAVA_VERSION, targetJavaVersion);
+    return this;
+  }
+  public String getTargetJavaVersion() {
+    return myScript.getProperty(TARGET_JAVA_VERSION);
   }
 }

@@ -61,7 +61,6 @@ public class JavaCompilerOptionsComponent {
       JavaCompilerOptionsProvider javaCompilerOptionsProvider = myProjectToProvider.get(project);
       assert javaCompilerOptionsProvider != null;
       JavaCompilerOptions javaCompilerOptions = javaCompilerOptionsProvider.getJavaCompilerOptions();
-      JavaVersion sourceJavaVersion = javaCompilerOptions.getSourceJavaVersion();
       JavaVersion targetJavaVersion = javaCompilerOptions.getTargetJavaVersion();
       return new JavaCompilerOptions(targetJavaVersion == null ? DEFAULT_JAVA_VERSION : targetJavaVersion);
     }
