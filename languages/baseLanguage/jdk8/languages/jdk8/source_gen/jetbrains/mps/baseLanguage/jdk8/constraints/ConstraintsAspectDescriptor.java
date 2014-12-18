@@ -12,8 +12,10 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 0:
+      case 1:
         return new SuperInterfaceMethodCall_Constraints();
+      case 0:
+        return new StaticInterfaceMethodCall_Constraints();
       default:
         return new BaseConstraintsDescriptor(fqName);
     }
@@ -23,7 +25,10 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x17dbb10eeb72e5d9L) {
       return new SuperInterfaceMethodCall_Constraints();
     }
+    if (id == 0x33d1c89f047e8c0cL) {
+      return new StaticInterfaceMethodCall_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.jdk8.structure.SuperInterfaceMethodCall"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.jdk8.structure.StaticInterfaceMethodCall", "jetbrains.mps.baseLanguage.jdk8.structure.SuperInterfaceMethodCall"};
 }

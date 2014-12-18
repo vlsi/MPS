@@ -23,6 +23,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.scopes.MethodsScope;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.scope.FilteringScope;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
@@ -78,7 +80,13 @@ public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
                 return new EmptyScope();
               }
               Scope visibleClassifiersScope = ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), true);
-              return visibleClassifiersScope;
+              return new FilteringScope(visibleClassifiersScope) {
+
+                @Override
+                public boolean isExcluded(SNode node) {
+                  return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+                }
+              };
             }
           }
         };
