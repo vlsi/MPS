@@ -283,7 +283,7 @@ public class TabbedEditor extends BaseNodeEditor {
     @Override
     public void propertyChanged(SModelPropertyEvent event) {
       SNodeReference pointer = new jetbrains.mps.smodel.SNodePointer(event.getNode());
-      if (event.getPropertyName().equals(SNodeUtil.propertyName_INamedConcept_name) && pointer.equals(getCurrentlyEditedNode())) {
+      if (SNodeUtil.property_INamedConcept_name.getName().equals(event.getPropertyName()) && pointer.equals(getCurrentlyEditedNode())) {
         updateProperties();
       }
     }

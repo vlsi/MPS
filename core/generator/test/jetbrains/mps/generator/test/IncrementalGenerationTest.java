@@ -65,7 +65,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
             }
           }
           Assert.assertNotNull("no method in class", found);
-          SNodeAccessUtil.setProperty(found, SNodeUtil.propertyName_INamedConcept_name, "testRename3");
+          SNodeAccessUtil.setProperty(found, SNodeUtil.property_INamedConcept_name, "testRename3");
         }
       });
   }
@@ -86,7 +86,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
             SModel model = descr;
             SNode root = SModelOperations.getRootByName(model, "GoToFile");
             Assert.assertNotNull("No root in model", root);
-            SNodeAccessUtil.setProperty(root, SNodeUtil.propertyName_INamedConcept_name, "GoToFile2");
+            SNodeAccessUtil.setProperty(root, SNodeUtil.property_INamedConcept_name, "GoToFile2");
           }
         });
   }
@@ -106,7 +106,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
           SModel model = descr;
           SNode root = SModelOperations.getRootByName(model,"Expression");
           Assert.assertNotNull("No root in model", root);
-          SNodeAccessUtil.setProperty(root, SNodeUtil.propertyName_INamedConcept_name, "ReExpression");
+          SNodeAccessUtil.setProperty(root, SNodeUtil.property_INamedConcept_name, "ReExpression");
         }
       });
   }

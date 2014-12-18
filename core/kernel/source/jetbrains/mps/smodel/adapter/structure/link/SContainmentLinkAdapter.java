@@ -70,7 +70,9 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   @Override
   public SAbstractConcept getTargetConcept() {
     LinkDescriptor ld = getLinkDescriptor();
-    if (ld == null) return MetaAdapterFactory.getConcept(SNodeUtil.conceptId_BaseConcept, SNodeUtil.conceptName_BaseConcept);
+    if (ld == null) {
+      return SNodeUtil.concept_BaseConcept;
+    }
 
     SConceptId id = ld.getTargetConcept();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);

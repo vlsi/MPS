@@ -11,7 +11,6 @@ import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
@@ -150,7 +149,7 @@ public class ConceptDescendantsCache implements CoreComponent {
     org.jetbrains.mps.openapi.model.SModel structureModel = language.getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptySet();
     Set<ConceptDescriptor> result = new LinkedHashSet<ConceptDescriptor>();
-    SAbstractConcept abstractConceptDeclaration = SConceptRepository.getInstance().getConcept(SNodeUtil.conceptName_AbstractConceptDeclaration);
+    SAbstractConcept abstractConceptDeclaration = SNodeUtil.concept_AbstractConceptDeclaration;
     if (abstractConceptDeclaration == null) {
       LOG.error("The structure language is not loaded yet, cannot get all concepts from the language " +
           "'" + language.getModuleName() + "'", new Throwable());

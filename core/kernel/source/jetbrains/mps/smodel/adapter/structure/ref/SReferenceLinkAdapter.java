@@ -20,8 +20,6 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
@@ -72,7 +70,9 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @Override
   public SAbstractConcept getTargetConcept() {
     ReferenceDescriptor rd = getReferenceDescriptor();
-    if (rd == null) return MetaAdapterFactory.getConcept(SNodeUtil.conceptId_BaseConcept,SNodeUtil.conceptName_BaseConcept);
+    if (rd == null) {
+      return SNodeUtil.concept_BaseConcept;
+    }
 
     SConceptId id = rd.getTargetConcept();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);

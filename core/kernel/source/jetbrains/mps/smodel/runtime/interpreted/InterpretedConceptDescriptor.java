@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -93,7 +92,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   InterpretedConceptDescriptor(final SNode declaration, SConceptId id, final String qualifiedName) {
     myId = id;
     myQualifiedName = qualifiedName;
-    Logger.getLogger(getClass()).info("InterpretedConceptDescriptor. START " + qualifiedName);
 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
@@ -216,7 +214,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         }
       }
     });
-    Logger.getLogger(getClass()).info("InterpretedConceptDescriptor. FINISH " + qualifiedName);
   }
 
   private void init() {

@@ -22,8 +22,6 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
@@ -141,7 +139,9 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   public boolean isSubConceptOf(SAbstractConcept concept) {
     // todo: hack, need for working node attributes on nodes of not generated concepts
     // todo: remove
-    if (SNodeUtil.conceptName_BaseConcept.equals(concept.getQualifiedName())) return true;
+    if (SNodeUtil.concept_BaseConcept.equals(concept)) {
+      return true;
+    }
 
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) return false;

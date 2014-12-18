@@ -70,10 +70,10 @@
       <node id="5267619756757953727" at="195,38,196,99" concept="5" />
       <node id="5267619756757953741" at="197,5,198,27" concept="11" />
       <node id="5267619756757953744" at="198,27,199,21" concept="11" />
-      <node id="5267619756758156902" at="201,101,202,122" concept="11" />
+      <node id="5267619756758156902" at="201,101,202,118" concept="11" />
       <node id="5267619756758168028" at="203,50,204,40" concept="5" />
       <node id="5267619756757953770" at="205,16,206,32" concept="5" />
-      <node id="3912018899959033062" at="208,106,209,120" concept="11" />
+      <node id="3912018899959033062" at="208,106,209,116" concept="11" />
       <node id="3912018899959033070" at="210,50,211,40" concept="5" />
       <node id="3912018899959033083" at="212,16,213,33" concept="5" />
       <node id="5267619756757953774" at="215,7,216,57" concept="5" />
@@ -148,8 +148,8 @@
       <node id="2089287822043606648" at="72,0,77,0" concept="15" trace="getDescendants#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/util/Condition;Z)Ljava/lang/Iterable;" />
       <node id="2089287822043606718" at="94,0,99,0" concept="15" trace="getDescendants#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/util/Condition;)Ljava/util/List;" />
       <node id="559469824002200129" at="150,104,155,5" concept="9" />
-      <node id="5267619756758162845" at="202,122,207,9" concept="9" />
-      <node id="3912018899959033068" at="209,120,214,9" concept="9" />
+      <node id="5267619756758162845" at="202,118,207,9" concept="9" />
+      <node id="3912018899959033068" at="209,116,214,9" concept="9" />
       <node id="2718315470531188889" at="226,73,231,5" concept="8" />
       <node id="8441062577042923658" at="258,0,263,0" concept="15" trace="copyProperties#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8441062577042956614" at="270,0,275,0" concept="15" trace="copyUserObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />

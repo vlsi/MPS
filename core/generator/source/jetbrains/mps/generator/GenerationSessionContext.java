@@ -31,8 +31,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -85,7 +83,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
   // these objects survive through all steps of generation
   private final ConcurrentMap<SNodeReference, Set<String>> myUsedNames;
-  private final SAbstractConcept myNamedConcept;
   private final SNodeReference myFakeNameTopContextNode = new SNodePointer((SModelReference) null, null);
   private final Map<SNode, String> topToSuffix = new ConcurrentHashMap<SNode, String>();
 
@@ -102,7 +99,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myQueryProviders = new QueryProviderCache(logger); // for now, once per input model, however can span complete make phase
     myGenerationPlan = null;
     myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
-    myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.conceptName_INamedConcept);
     myExportsSession = new ExportsSessionContext(environment.getExportModels(), this);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
@@ -120,7 +116,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
     myValidation = prevContext.myValidation;
-    myNamedConcept = prevContext.myNamedConcept;
     myQueryProviders = prevContext.myQueryProviders;
     myGenerationPlan = generationPlan;
     myExportsSession = prevContext.myExportsSession;
@@ -141,7 +136,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
     myValidation = prevContext.myValidation;
-    myNamedConcept = prevContext.myNamedConcept;
     myGenerationPlan = prevContext.myGenerationPlan;
     myQueryProviders = prevContext.myQueryProviders;
     myExportsSession = prevContext.myExportsSession;
@@ -245,7 +239,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
       SNode topmostNamed = null;
       SNode node_ = contextNode;
       while (node_ != null) {
-        if (node_.getConcept().isSubConceptOf(myNamedConcept)) {
+        if (node_.getConcept().isSubConceptOf(SNodeUtil.concept_INamedConcept)) {
           topmostNamed = node_;
         }
         node_ = node_.getParent();
