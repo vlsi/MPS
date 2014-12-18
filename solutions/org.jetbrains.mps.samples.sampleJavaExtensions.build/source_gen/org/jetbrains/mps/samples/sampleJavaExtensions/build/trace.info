@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root nodeRef="r:e9f00ed6-e816-4101-9df6-671d90efa500(org.jetbrains.mps.samples.sampleJavaExtensions.build)/6243792783970022557">
-    <file name="MPS.xml">
-      <unit id="6243792783970022557" at="1,0,756,10" name="org.jetbrains.mps.samples.sampleJavaExtensions.build.MPS" />
-    </file>
-  </root>
-</debug-info>
-
