@@ -400,7 +400,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="4D3Y1hNyzvs" role="EKbjA">
-      <ref role="3uigEE" node="4D3Y1hNxTJF" resolve="StartupMigrationExecutorI" />
+      <ref role="3uigEE" node="4D3Y1hNxTJF" resolve="IStartupMigrationExecutor" />
     </node>
     <node concept="312cEg" id="5SsFeroaaki" role="jymVt">
       <property role="34CwA1" value="false" />
@@ -1394,7 +1394,7 @@
     </node>
   </node>
   <node concept="3HP615" id="4D3Y1hNxTJF">
-    <property role="TrG5h" value="StartupMigrationExecutorI" />
+    <property role="TrG5h" value="IStartupMigrationExecutor" />
     <node concept="3clFb_" id="4D3Y1hNyymu" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="executeWizard" />
@@ -1554,7 +1554,7 @@
     </node>
     <node concept="3Tm1VV" id="4D3Y1hNyApZ" role="1B3o_S" />
     <node concept="3uibUv" id="4D3Y1hNyAqb" role="EKbjA">
-      <ref role="3uigEE" node="4D3Y1hNxTJF" resolve="StartupMigrationExecutorI" />
+      <ref role="3uigEE" node="4D3Y1hNxTJF" resolve="IStartupMigrationExecutor" />
     </node>
     <node concept="3uibUv" id="4D3Y1hNyJn2" role="1zkMxy">
       <ref role="3uigEE" to="iiw6:~AbstractProjectComponent" resolve="AbstractProjectComponent" />

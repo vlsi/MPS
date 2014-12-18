@@ -8,8 +8,9 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsProgressStep" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.ide.migration.StartupMigrationExecutorI" />
+    <classNode extendsClassName="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.migration.IStartupMigrationExecutor" file="IStartupMigrationExecutor.java" />
   <dependency className="jetbrains.mps.ide.migration.MigrationAssistantWizard" file="MigrationAssistantWizard.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -64,8 +65,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
-    <classNode extendsClassName="jetbrains.mps.ide.migration.StartupMigrationExecutorI" />
+    <classNode extendsClassName="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.migration.StartupMigrationExecutorI" file="StartupMigrationExecutorI.java" />
 </dependenciesRoot>
 

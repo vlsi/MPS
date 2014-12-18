@@ -20,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 
 @State(name = "StartupMigrationExecutor", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
 })
-public class StartupMigrationExecutor extends AbstractProjectComponent implements PersistentStateComponent<StartupMigrationExecutor.MyState>, StartupMigrationExecutorI {
+public class StartupMigrationExecutor extends AbstractProjectComponent implements PersistentStateComponent<StartupMigrationExecutor.MyState>, IStartupMigrationExecutor {
   private final MigrationManager myMigrationManager;
   private StartupMigrationExecutor.MyState myState = new StartupMigrationExecutor.MyState();
   protected StartupMigrationExecutor(Project project, MigrationManager migrationManager) {

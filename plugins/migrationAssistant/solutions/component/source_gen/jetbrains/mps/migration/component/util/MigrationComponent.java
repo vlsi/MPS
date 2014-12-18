@@ -154,7 +154,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
-        Iterable<? extends SModule> modules = mpsProject.getModulesWithGenerators();
+        Iterable<SModule> modules = ((Iterable<SModule>) mpsProject.getModulesWithGenerators());
         Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
           public void visit(AbstractModule it) {
             it.validateLanguageVersions();
@@ -165,20 +165,25 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
             return it.shouldBeExecuted(mpsProject);
           }
         });
-        boolean languageMig = Sequence.fromIterable(modules).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
-          public boolean accept(final AbstractModule module) {
-            return Sequence.fromIterable(MigrationsUtil.getNextStepScripts(module)).any(new IWhereFilter<MigrationScriptReference>() {
-              public boolean accept(MigrationScriptReference item) {
-                return MigrationsUtil.isMigrationNeeded(item.getLanguage(), item.getFromVersion(), module);
-              }
-            });
-          }
-        });
+        boolean languageMig = isLanguageMigrationRequired(modules);
         result.value = projectMig || languageMig;
       }
     });
     return result.value;
   }
+
+  public static boolean isLanguageMigrationRequired(Iterable<SModule> modules) {
+    return Sequence.fromIterable(modules).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
+      public boolean accept(final AbstractModule module) {
+        return Sequence.fromIterable(MigrationsUtil.getNextStepScripts(module)).any(new IWhereFilter<MigrationScriptReference>() {
+          public boolean accept(MigrationScriptReference item) {
+            return MigrationsUtil.isMigrationNeeded(item.getLanguage(), item.getFromVersion(), module);
+          }
+        });
+      }
+    });
+  }
+
   public boolean executeScript(ScriptApplied sa) {
     MigrationScript script = sa.getScript();
     AbstractModule module = ((AbstractModule) sa.getModule());

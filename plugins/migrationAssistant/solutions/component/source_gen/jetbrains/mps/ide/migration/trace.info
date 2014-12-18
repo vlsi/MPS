@@ -12,10 +12,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/5351393548967582699">
-    <file name="StartupMigrationExecutorI.java">
+    <file name="IStartupMigrationExecutor.java">
       <node id="5351393548967749022" at="7,0,8,0" concept="5" trace="executeWizard#()V" />
       <scope id="5351393548967749022" at="7,0,8,0" />
-      <unit id="5351393548967582699" at="6,0,9,0" name="jetbrains.mps.ide.migration.StartupMigrationExecutorI" />
+      <unit id="5351393548967582699" at="6,0,9,0" name="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/5351393548967765630">
