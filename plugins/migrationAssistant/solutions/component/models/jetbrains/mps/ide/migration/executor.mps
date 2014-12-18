@@ -31,6 +31,7 @@
     <import index="9nge" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.fileGenerator(MPS.Core/jetbrains.mps.generator.fileGenerator@java_stub)" />
     <import index="wqua" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" />
     <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
+    <import index="ji0" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project.ex(MPS.IDEA/com.intellij.openapi.project.ex@java_stub)" />
     <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -1016,9 +1017,18 @@
                                 <property role="3SKdUp" value="reload project and start migration assist" />
                               </node>
                             </node>
-                            <node concept="3clFbF" id="1AzqgyAkfYz" role="3cqZAp">
-                              <node concept="3cmrfG" id="1AzqgyAkfYy" role="3clFbG">
-                                <property role="3cmrfH" value="123" />
+                            <node concept="3clFbF" id="1AzqgyAkJsI" role="3cqZAp">
+                              <node concept="2OqwBi" id="1AzqgyAkKe8" role="3clFbG">
+                                <node concept="2YIFZM" id="1AzqgyAkJZX" role="2Oq$k0">
+                                  <ref role="37wK5l" to="b2mh:~ProjectManager.getInstance():com.intellij.openapi.project.ProjectManager" resolve="getInstance" />
+                                  <ref role="1Pybhc" to="ji0:~ProjectManagerEx" resolve="ProjectManagerEx" />
+                                </node>
+                                <node concept="liA8E" id="1AzqgyAkKx3" role="2OqNvi">
+                                  <ref role="37wK5l" to="b2mh:~ProjectManager.reloadProject(com.intellij.openapi.project.Project):void" resolve="reloadProject" />
+                                  <node concept="37vLTw" id="1AzqgyAkLmW" role="37wK5m">
+                                    <ref role="3cqZAo" node="1AzqgyAhjM5" resolve="ideaProject" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
