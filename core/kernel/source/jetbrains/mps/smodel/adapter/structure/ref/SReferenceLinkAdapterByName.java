@@ -26,10 +26,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
+public final class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
   private static final Logger LOG = Logger.wrap(org.apache.log4j.Logger.getLogger(SReferenceLinkAdapterByName.class));
 
-  protected String myConceptName;
+  private final String myConceptName;
 
   public SReferenceLinkAdapterByName(@NotNull String conceptName, @NotNull String role) {
     super(role);

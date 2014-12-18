@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -28,12 +29,17 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter implements SInterfaceConcept, SAbstractConceptAdapterById {
-  protected SConceptId myConceptId;
+public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter implements SInterfaceConcept, SAbstractConceptAdapterById {
+  private final SConceptId myConceptId;
+  private final boolean myIsBootstrap;
 
   public SInterfaceConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname) {
+    this(conceptId, fqname, false);
+  }
+  public SInterfaceConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname, boolean bootstrap) {
     super(fqname);
     myConceptId = conceptId;
+    myIsBootstrap = bootstrap;
   }
 
   @Override
@@ -55,10 +61,12 @@ public class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter imple
 
   @Override
   public String getQualifiedName() {
+    if (RuntimeFlags.isMergeDriverMode() || myIsBootstrap) {
+      return myFqName;
+    }
     ConceptDescriptor cd = getConceptDescriptor();
     if (cd == null) {
-      //invalid concept
-      return myFqName;
+      return myFqName; //invalid concept
     }
     return cd.getConceptFqName();
   }

@@ -26,12 +26,21 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SPropertyAdapterById extends SPropertyAdapter {
-  private SPropertyId myPropertyId;
+public final class SPropertyAdapterById extends SPropertyAdapter {
+  private final SPropertyId myPropertyId;
+  private final boolean myIsBootstrap;
 
   public SPropertyAdapterById(@NotNull SPropertyId propertyId, @NotNull String propName) {
+    this(propertyId, propName, false);
+  }
+
+  /**
+   * @param bootstrap see BOOTSTRAP META OBJECTS javadoc for {@link jetbrains.mps.smodel.adapter.BootstrapAdapterFactory}
+   */
+  public SPropertyAdapterById(@NotNull SPropertyId propertyId, @NotNull String propName, boolean bootstrap) {
     super(propName);
-    this.myPropertyId = propertyId;
+    myPropertyId = propertyId;
+    myIsBootstrap = bootstrap;
   }
 
   public SPropertyId getId() {
@@ -47,7 +56,7 @@ public class SPropertyAdapterById extends SPropertyAdapter {
 
   @Override
   public String getName() {
-    if (RuntimeFlags.isMergeDriverMode()) {
+    if (RuntimeFlags.isMergeDriverMode() || myIsBootstrap) {
       return myPropertyName;
     }
     PropertyDescriptor d = getPropertyDescriptor();

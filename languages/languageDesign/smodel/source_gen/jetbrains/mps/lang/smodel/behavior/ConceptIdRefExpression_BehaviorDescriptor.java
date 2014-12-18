@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 
-public class ConceptIdRefExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
+public class ConceptIdRefExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements BootstrapAwareMetaObject_BehaviorDescriptor {
   public ConceptIdRefExpression_BehaviorDescriptor() {
   }
   @Override
