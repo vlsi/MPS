@@ -181,7 +181,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public String getName() {
     if (getConcept().isSubConceptOf(SNodeUtil.concept_INamedConcept)) {
-      return SNodeAccessUtil.getProperty(this, SNodeUtil.propertyName_INamedConcept_name);
+      return SNodeAccessUtil.getProperty(this, SNodeUtil.property_INamedConcept_name);
     } else {
       fireNodeReadAccess();
       return null;
