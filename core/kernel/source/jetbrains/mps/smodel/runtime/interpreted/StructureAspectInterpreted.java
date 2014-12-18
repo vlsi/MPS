@@ -72,25 +72,28 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
     synchronized (this) {
       if (myDescriptors != null) return;
 
-      SModel struct = LanguageAspect.STRUCTURE.get(myLanguage);
+      final SModel struct = LanguageAspect.STRUCTURE.get(myLanguage);
+      struct.getRepository().getModelAccess().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
+          ConcurrentHashMap<String, ConceptDescriptor> descriptorsByName = new ConcurrentHashMap<String, ConceptDescriptor>();
+          for (SNode root : struct.getRootNodes()) {
+            SConcept concept = root.getConcept();
+            if (!isConceptDeclaration(concept)) {
+              continue;
+            }
+            SConceptId conceptId = MetaIdByDeclaration.getConceptId(root);
+            String conceptName = conceptFQName(root);
+            ConceptDescriptor cd = new InterpretedConceptDescriptor(root, conceptId, conceptName);
 
-      ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
-      ConcurrentHashMap<String, ConceptDescriptor> descriptorsByName = new ConcurrentHashMap<String, ConceptDescriptor>();
-      for (SNode root : struct.getRootNodes()) {
-        SConcept concept = root.getConcept();
-        if (!isConceptDeclaration(concept)) {
-          continue;
+            descriptors.put(conceptId, cd);
+            descriptorsByName.put(conceptName, cd);
+          }
+          myDescriptorByName = descriptorsByName;
+          myDescriptors = descriptors;
         }
-
-        SConceptId conceptId = MetaIdByDeclaration.getConceptId(root);
-        String conceptName = conceptFQName(root);
-        ConceptDescriptor cd = new InterpretedConceptDescriptor(root, conceptId, conceptName);
-
-        descriptors.put(conceptId, cd);
-        descriptorsByName.put(conceptName, cd);
-      }
-      myDescriptorByName = descriptorsByName;
-      myDescriptors = descriptors;
+      });
     }
   }
 
