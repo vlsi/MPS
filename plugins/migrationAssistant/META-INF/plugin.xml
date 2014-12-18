@@ -40,6 +40,9 @@
       <implementation-class>jetbrains.mps.ide.migration.storage.StorageAssistant</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.ide.migration.executor.MigrationTrigger</implementation-class>
+    </component>
+    <component>
       <interface-class>jetbrains.mps.ide.migration.MigrationManager</interface-class>
       <implementation-class>jetbrains.mps.migration.component.util.MigrationComponent</implementation-class>
     </component>
