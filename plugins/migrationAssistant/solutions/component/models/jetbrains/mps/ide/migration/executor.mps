@@ -29,6 +29,8 @@
     <import index="59et" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" />
     <import index="nhkf" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.facets(MPS.Core/jetbrains.mps.project.facets@java_stub)" />
     <import index="9nge" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.fileGenerator(MPS.Core/jetbrains.mps.generator.fileGenerator@java_stub)" />
+    <import index="wqua" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" />
+    <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
     <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -260,6 +262,21 @@
         <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
       </node>
     </node>
+    <node concept="312cEg" id="1AzqgyAkkmg" role="jymVt">
+      <property role="TrG5h" value="myRepo" />
+      <node concept="3Tm6S6" id="1AzqgyAkkmh" role="1B3o_S" />
+      <node concept="3uibUv" id="1AzqgyAkkmj" role="1tU5fm">
+        <ref role="3uigEE" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+      </node>
+    </node>
+    <node concept="312cEg" id="1AzqgyAkr0p" role="jymVt">
+      <property role="TrG5h" value="myClassManager" />
+      <node concept="3Tm6S6" id="1AzqgyAkr0q" role="1B3o_S" />
+      <node concept="3uibUv" id="1AzqgyAksH5" role="1tU5fm">
+        <ref role="3uigEE" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1AzqgyAkntZ" role="jymVt" />
     <node concept="312cEg" id="1AzqgyAfdcG" role="jymVt">
       <property role="34CwA1" value="true" />
       <property role="eg7rD" value="false" />
@@ -272,7 +289,7 @@
       </node>
     </node>
     <node concept="312cEg" id="1AzqgyAfyJP" role="jymVt">
-      <property role="TrG5h" value="myListener" />
+      <property role="TrG5h" value="myRepoListener" />
       <node concept="3Tm6S6" id="1AzqgyAfyJN" role="1B3o_S" />
       <node concept="3uibUv" id="1AzqgyAfyJO" role="1tU5fm">
         <ref role="3uigEE" node="1AzqgyAfxXw" resolve="MigrationTrigger.MyRepoListener" />
@@ -280,6 +297,18 @@
       <node concept="2ShNRf" id="1AzqgyAfzqY" role="33vP2m">
         <node concept="1pGfFk" id="1AzqgyAfzqX" role="2ShVmc">
           <ref role="37wK5l" node="1AzqgyAfxX$" resolve="MigrationTrigger.MyRepoListener" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="1AzqgyAkAi2" role="jymVt">
+      <property role="TrG5h" value="myClassesListener" />
+      <node concept="3Tm6S6" id="1AzqgyAkAhY" role="1B3o_S" />
+      <node concept="3uibUv" id="1AzqgyAkAhZ" role="1tU5fm">
+        <ref role="3uigEE" node="1AzqgyAk$AV" resolve="MigrationTrigger.MyClassesListener" />
+      </node>
+      <node concept="2ShNRf" id="1AzqgyAkAi0" role="33vP2m">
+        <node concept="1pGfFk" id="1AzqgyAkAi1" role="2ShVmc">
+          <ref role="37wK5l" node="1AzqgyAk$AZ" resolve="MigrationTrigger.MyClassesListener" />
         </node>
       </node>
     </node>
@@ -298,11 +327,43 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1AzqgyAkkmk" role="3cqZAp">
+          <node concept="37vLTI" id="1AzqgyAkkmm" role="3clFbG">
+            <node concept="37vLTw" id="1AzqgyAkqVc" role="37vLTJ">
+              <ref role="3cqZAo" node="1AzqgyAkkmg" resolve="myRepo" />
+            </node>
+            <node concept="37vLTw" id="1AzqgyAkkmu" role="37vLTx">
+              <ref role="3cqZAo" node="1AzqgyAkkac" resolve="repo" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1AzqgyAksW8" role="3cqZAp">
+          <node concept="37vLTI" id="1AzqgyAkt41" role="3clFbG">
+            <node concept="37vLTw" id="1AzqgyAkt9W" role="37vLTx">
+              <ref role="3cqZAo" node="1AzqgyAkkg7" resolve="classManager" />
+            </node>
+            <node concept="37vLTw" id="1AzqgyAksW6" role="37vLTJ">
+              <ref role="3cqZAo" node="1AzqgyAkr0p" resolve="myClassManager" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="1AzqgyAfbcR" role="3clF46">
         <property role="TrG5h" value="p" />
         <node concept="3uibUv" id="1AzqgyAfbcQ" role="1tU5fm">
           <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1AzqgyAkkac" role="3clF46">
+        <property role="TrG5h" value="repo" />
+        <node concept="3uibUv" id="1AzqgyAkkfj" role="1tU5fm">
+          <ref role="3uigEE" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1AzqgyAkkg7" role="3clF46">
+        <property role="TrG5h" value="classManager" />
+        <node concept="3uibUv" id="1AzqgyAkklg" role="1tU5fm">
+          <ref role="3uigEE" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
         </node>
       </node>
     </node>
@@ -414,16 +475,31 @@
       <node concept="3clFbS" id="1AzqgyAfgg$" role="3clF47">
         <node concept="3clFbF" id="1AzqgyAfi0t" role="3cqZAp">
           <node concept="2OqwBi" id="1AzqgyAfi2A" role="3clFbG">
-            <node concept="2YIFZM" id="1AzqgyAfi1F" role="2Oq$k0">
-              <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-              <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+            <node concept="37vLTw" id="1AzqgyAktgB" role="2Oq$k0">
+              <ref role="3cqZAo" node="1AzqgyAkkmg" resolve="myRepo" />
             </node>
             <node concept="liA8E" id="1AzqgyAficI" role="2OqNvi">
               <ref role="37wK5l" to="l077:~SRepositoryBase.addRepositoryListener(org.jetbrains.mps.openapi.module.SRepositoryListener):void" resolve="addRepositoryListener" />
               <node concept="2OqwBi" id="1AzqgyAfyK4" role="37wK5m">
                 <node concept="Xjq3P" id="1AzqgyAfyK5" role="2Oq$k0" />
                 <node concept="2OwXpG" id="1AzqgyAfyK6" role="2OqNvi">
-                  <ref role="2Oxat5" node="1AzqgyAfyJP" resolve="myListener" />
+                  <ref role="2Oxat5" node="1AzqgyAfyJP" resolve="myRepoListener" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1AzqgyAkjYy" role="3cqZAp">
+          <node concept="2OqwBi" id="1AzqgyAku1$" role="3clFbG">
+            <node concept="37vLTw" id="1AzqgyAktOG" role="2Oq$k0">
+              <ref role="3cqZAo" node="1AzqgyAkr0p" resolve="myClassManager" />
+            </node>
+            <node concept="liA8E" id="1AzqgyAkuo6" role="2OqNvi">
+              <ref role="37wK5l" to="wqua:~ClassLoaderManager.addClassesHandler(jetbrains.mps.classloading.MPSClassesListener):void" resolve="addClassesHandler" />
+              <node concept="2OqwBi" id="1AzqgyAkAia" role="37wK5m">
+                <node concept="Xjq3P" id="1AzqgyAkAib" role="2Oq$k0" />
+                <node concept="2OwXpG" id="1AzqgyAkAic" role="2OqNvi">
+                  <ref role="2Oxat5" node="1AzqgyAkAi2" resolve="myClassesListener" />
                 </node>
               </node>
             </node>
@@ -441,18 +517,30 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="1AzqgyAfgqG" role="3clF47">
+        <node concept="3clFbF" id="1AzqgyAkEHZ" role="3cqZAp">
+          <node concept="2OqwBi" id="1AzqgyAkEUX" role="3clFbG">
+            <node concept="37vLTw" id="1AzqgyAkEHX" role="2Oq$k0">
+              <ref role="3cqZAo" node="1AzqgyAkr0p" resolve="myClassManager" />
+            </node>
+            <node concept="liA8E" id="1AzqgyAkFhv" role="2OqNvi">
+              <ref role="37wK5l" to="wqua:~ClassLoaderManager.removeClassesHandler(jetbrains.mps.classloading.MPSClassesListener):void" resolve="removeClassesHandler" />
+              <node concept="37vLTw" id="1AzqgyAkFk5" role="37wK5m">
+                <ref role="3cqZAo" node="1AzqgyAkAi2" resolve="myClassesListener" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="1AzqgyAfzXe" role="3cqZAp">
           <node concept="2OqwBi" id="1AzqgyAfzXf" role="3clFbG">
-            <node concept="2YIFZM" id="1AzqgyAfzXg" role="2Oq$k0">
-              <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-              <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+            <node concept="37vLTw" id="1AzqgyAktx4" role="2Oq$k0">
+              <ref role="3cqZAo" node="1AzqgyAkkmg" resolve="myRepo" />
             </node>
             <node concept="liA8E" id="1AzqgyAfzXh" role="2OqNvi">
               <ref role="37wK5l" to="l077:~SRepositoryBase.removeRepositoryListener(org.jetbrains.mps.openapi.module.SRepositoryListener):void" resolve="removeRepositoryListener" />
               <node concept="2OqwBi" id="1AzqgyAfzXi" role="37wK5m">
                 <node concept="Xjq3P" id="1AzqgyAfzXj" role="2Oq$k0" />
                 <node concept="2OwXpG" id="1AzqgyAfzXk" role="2OqNvi">
-                  <ref role="2Oxat5" node="1AzqgyAfyJP" resolve="myListener" />
+                  <ref role="2Oxat5" node="1AzqgyAfyJP" resolve="myRepoListener" />
                 </node>
               </node>
             </node>
@@ -1360,6 +1448,58 @@
       </node>
       <node concept="3uibUv" id="1AzqgyAfxXz" role="1zkMxy">
         <ref role="3uigEE" to="88zw:~SRepositoryContentAdapter" resolve="SRepositoryContentAdapter" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1AzqgyAkFza" role="jymVt" />
+    <node concept="312cEu" id="1AzqgyAk$AV" role="jymVt">
+      <property role="TrG5h" value="MyClassesListener" />
+      <property role="2bfB8j" value="true" />
+      <node concept="3clFbW" id="1AzqgyAk$AZ" role="jymVt">
+        <node concept="3clFbS" id="1AzqgyAk$B0" role="3clF47" />
+        <node concept="3Tm1VV" id="1AzqgyAk$B1" role="1B3o_S" />
+        <node concept="3cqZAl" id="1AzqgyAk$B2" role="3clF45" />
+      </node>
+      <node concept="3Tm6S6" id="1AzqgyAk$AX" role="1B3o_S" />
+      <node concept="3clFb_" id="1AzqgyAkxzo" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="afterClassesLoaded" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="1AzqgyAkxzp" role="1B3o_S" />
+        <node concept="3cqZAl" id="1AzqgyAkxzr" role="3clF45" />
+        <node concept="37vLTG" id="1AzqgyAkxzs" role="3clF46">
+          <property role="TrG5h" value="modules" />
+          <node concept="2hMVRd" id="1AzqgyAkyZh" role="1tU5fm">
+            <node concept="3qUE_q" id="1AzqgyAkyZj" role="2hN53Y">
+              <node concept="3uibUv" id="1AzqgyAkyZk" role="3qUE_r">
+                <ref role="3uigEE" to="42ru:~ReloadableModuleBase" resolve="ReloadableModuleBase" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="1AzqgyAkxzx" role="3clF47">
+          <node concept="3clFbF" id="1AzqgyAk$fp" role="3cqZAp">
+            <node concept="1rXfSq" id="1AzqgyAk$fn" role="3clFbG">
+              <ref role="37wK5l" node="1AzqgyAgwck" resolve="postponeMigrationIfNeededOnLanguageReload" />
+              <node concept="2OqwBi" id="1AzqgyAkznn" role="37wK5m">
+                <node concept="37vLTw" id="1AzqgyAkzca" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1AzqgyAkxzs" resolve="modules" />
+                </node>
+                <node concept="UnYns" id="1AzqgyAk$3E" role="2OqNvi">
+                  <node concept="3uibUv" id="1AzqgyAk$6a" role="UnYnz">
+                    <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="1AzqgyAkxzy" role="2AJF6D">
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="1AzqgyAk$AY" role="1zkMxy">
+        <ref role="3uigEE" to="wqua:~MPSClassesListenerAdapter" resolve="MPSClassesListenerAdapter" />
       </node>
     </node>
   </node>
