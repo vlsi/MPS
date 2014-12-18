@@ -58,9 +58,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.NullLiteral" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ParameterizedQualifiedTypeReference" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ParameterizedSingleTypeReference" />
-    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.QualifiedNameReference" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference" />
-    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.SingleNameReference" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.SingleTypeReference" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.TypeDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.TypeParameter" />
