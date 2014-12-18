@@ -27,6 +27,6 @@ public class JavaCompilerOptions {
   }
 
   public JavaVersion getSourceJavaVersion() {
-    return mySourceVersion;
+    return myTargetVersion;
   }
 }
