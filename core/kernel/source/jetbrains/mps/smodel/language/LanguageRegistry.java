@@ -129,6 +129,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     // otherwise we treat an error as invalid/missing language.
     try {
       final Class<?> rtClass = l.getOwnClass(rtClassName);
+      if (rtClass == null) {
+        return new InterpretedLanguageRuntime(l);
+      }
       if (rtClass != null && LanguageRuntime.class.isAssignableFrom(rtClass)) {
         return ((Class<LanguageRuntime>) rtClass).newInstance();
       }
