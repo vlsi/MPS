@@ -143,7 +143,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
           for (SNode/*<InterfaceConceptReference>*/ implementsLink : declaration.getChildren(SNodeUtil.link_ConceptDeclaration_implements)) {
             SNode interfaceConcept = implementsLink.getReferenceTarget(SNodeUtil.link_InterfaceConceptReference_intfc);
             if (interfaceConcept == null) {
-              LOG.error("Interface concept is null, declaration: " + declaration);
+              LOG.error("Interface concept (implements link) is null, declaration: " + declaration);
               continue;
             }
             parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
@@ -152,6 +152,10 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         } else if (isInterface) {
           for (SNode/*<InterfaceConceptReference>*/ extendsLink : declaration.getChildren(SNodeUtil.link_InterfaceConceptDeclaration_extends)) {
             SNode interfaceConcept = extendsLink.getReferenceTarget(SNodeUtil.link_InterfaceConceptReference_intfc);
+            if (interfaceConcept == null) {
+              LOG.error("Interface concept (extends link) is null, declaration: " + declaration);
+              continue;
+            }
             parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
             parentsIdsSet.add(MetaIdByDeclaration.getConceptId(interfaceConcept));
           }
