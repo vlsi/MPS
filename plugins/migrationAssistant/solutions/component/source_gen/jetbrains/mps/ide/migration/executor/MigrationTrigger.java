@@ -42,10 +42,10 @@ public class MigrationTrigger implements ProjectComponent {
   private MigrationTrigger.MyRepoListener myRepoListener = new MigrationTrigger.MyRepoListener();
   private MigrationTrigger.MyClassesListener myClassesListener = new MigrationTrigger.MyClassesListener();
 
-  public MigrationTrigger(Project p, MPSModuleRepository repo, ClassLoaderManager classManager) {
+  public MigrationTrigger(Project p) {
     myProject = p;
-    myRepo = repo;
-    myClassManager = classManager;
+    myRepo = MPSModuleRepository.getInstance();
+    myClassManager = ClassLoaderManager.getInstance();
   }
 
   public void projectOpened() {
@@ -199,11 +199,17 @@ public class MigrationTrigger implements ProjectComponent {
     }
     @Override
     public void moduleAdded(@NotNull SModule module) {
+      if (!(myRepo.getOwners(module).contains(myProject))) {
+        return;
+      }
       postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
     }
 
     @Override
     public void moduleChanged(SModule module) {
+      if (!(myRepo.getOwners(module).contains(myProject))) {
+        return;
+      }
       postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
     }
   }

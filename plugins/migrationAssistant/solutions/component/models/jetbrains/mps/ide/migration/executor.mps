@@ -333,15 +333,17 @@
             <node concept="37vLTw" id="1AzqgyAkqVc" role="37vLTJ">
               <ref role="3cqZAo" node="1AzqgyAkkmg" resolve="myRepo" />
             </node>
-            <node concept="37vLTw" id="1AzqgyAkkmu" role="37vLTx">
-              <ref role="3cqZAo" node="1AzqgyAkkac" resolve="repo" />
+            <node concept="2YIFZM" id="68mwpVbN$4v" role="37vLTx">
+              <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+              <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="1AzqgyAksW8" role="3cqZAp">
           <node concept="37vLTI" id="1AzqgyAkt41" role="3clFbG">
-            <node concept="37vLTw" id="1AzqgyAkt9W" role="37vLTx">
-              <ref role="3cqZAo" node="1AzqgyAkkg7" resolve="classManager" />
+            <node concept="2YIFZM" id="68mwpVbN$8_" role="37vLTx">
+              <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
             </node>
             <node concept="37vLTw" id="1AzqgyAksW6" role="37vLTJ">
               <ref role="3cqZAo" node="1AzqgyAkr0p" resolve="myClassManager" />
@@ -353,18 +355,6 @@
         <property role="TrG5h" value="p" />
         <node concept="3uibUv" id="1AzqgyAfbcQ" role="1tU5fm">
           <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1AzqgyAkkac" role="3clF46">
-        <property role="TrG5h" value="repo" />
-        <node concept="3uibUv" id="1AzqgyAkkfj" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1AzqgyAkkg7" role="3clF46">
-        <property role="TrG5h" value="classManager" />
-        <node concept="3uibUv" id="1AzqgyAkklg" role="1tU5fm">
-          <ref role="3uigEE" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
         </node>
       </node>
     </node>
@@ -1401,6 +1391,32 @@
           </node>
         </node>
         <node concept="3clFbS" id="1AzqgyAfmjG" role="3clF47">
+          <node concept="3clFbJ" id="68mwpVbO6SF" role="3cqZAp">
+            <node concept="3clFbS" id="68mwpVbO6SI" role="3clFbx">
+              <node concept="3cpWs6" id="68mwpVbOiRP" role="3cqZAp" />
+            </node>
+            <node concept="3fqX7Q" id="68mwpVbOgNL" role="3clFbw">
+              <node concept="2OqwBi" id="68mwpVbOi0X" role="3fr31v">
+                <node concept="2OqwBi" id="68mwpVbOhfC" role="2Oq$k0">
+                  <node concept="37vLTw" id="68mwpVbOhbz" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1AzqgyAkkmg" resolve="myRepo" />
+                  </node>
+                  <node concept="liA8E" id="68mwpVbOhwS" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getOwners(org.jetbrains.mps.openapi.module.SModule):java.util.Set" resolve="getOwners" />
+                    <node concept="37vLTw" id="68mwpVbOhHJ" role="37wK5m">
+                      <ref role="3cqZAo" node="1AzqgyAfmjC" resolve="module" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="68mwpVbOixS" role="2OqNvi">
+                  <ref role="37wK5l" to="k7g3:~Set.contains(java.lang.Object):boolean" resolve="contains" />
+                  <node concept="37vLTw" id="68mwpVbOiFh" role="37wK5m">
+                    <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myProject" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1AzqgyAfrlK" role="3cqZAp">
             <node concept="1rXfSq" id="1AzqgyAfrlJ" role="3clFbG">
               <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
@@ -1436,6 +1452,32 @@
           </node>
         </node>
         <node concept="3clFbS" id="1AzqgyAfr8o" role="3clF47">
+          <node concept="3clFbJ" id="68mwpVbOj6P" role="3cqZAp">
+            <node concept="3clFbS" id="68mwpVbOj6Q" role="3clFbx">
+              <node concept="3cpWs6" id="68mwpVbOj6R" role="3cqZAp" />
+            </node>
+            <node concept="3fqX7Q" id="68mwpVbOj6S" role="3clFbw">
+              <node concept="2OqwBi" id="68mwpVbOj6T" role="3fr31v">
+                <node concept="2OqwBi" id="68mwpVbOj6U" role="2Oq$k0">
+                  <node concept="37vLTw" id="68mwpVbOj6V" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1AzqgyAkkmg" resolve="myRepo" />
+                  </node>
+                  <node concept="liA8E" id="68mwpVbOj6W" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getOwners(org.jetbrains.mps.openapi.module.SModule):java.util.Set" resolve="getOwners" />
+                    <node concept="37vLTw" id="68mwpVbOj6X" role="37wK5m">
+                      <ref role="3cqZAo" node="1AzqgyAfr8l" resolve="module" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="68mwpVbOj6Y" role="2OqNvi">
+                  <ref role="37wK5l" to="k7g3:~Set.contains(java.lang.Object):boolean" resolve="contains" />
+                  <node concept="37vLTw" id="68mwpVbOj6Z" role="37wK5m">
+                    <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myProject" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1AzqgyAfvjY" role="3cqZAp">
             <node concept="1rXfSq" id="1AzqgyAfvjZ" role="3clFbG">
               <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
