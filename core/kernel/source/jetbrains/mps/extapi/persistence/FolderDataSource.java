@@ -49,7 +49,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     this.myModelRoot = modelRoot;
   }
 
-  protected boolean isIncluded(IFile file) {
+  public boolean isIncluded(IFile file) {
     return myFolder.equals(file.getParent());
   }
 

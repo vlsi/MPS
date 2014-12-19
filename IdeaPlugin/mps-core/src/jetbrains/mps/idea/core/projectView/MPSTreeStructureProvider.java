@@ -48,7 +48,6 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
-import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
@@ -57,11 +56,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
@@ -83,23 +81,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
   }
 
   @Override
-  public Collection<AbstractTreeNode> modify(AbstractTreeNode treeNode, Collection<AbstractTreeNode> children, ViewSettings settings) {
-    if (treeNode instanceof PsiDirectoryNode && !(treeNode instanceof MPSPsiModelTreeNode)) {
-      return modifyDirectoryChildren(treeNode, children, settings);
-    }
-    if (!(treeNode instanceof MPSPsiModelTreeNode)) return children;
-
-    MPSPsiModel psiModel = ((MPSPsiModelTreeNode) treeNode).getValue();
-
-    List<AbstractTreeNode> newChildren = new ArrayList<AbstractTreeNode>();
-    for (PsiElement psiElement : psiModel.getChildren()) {
-      newChildren.add(new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) psiElement, settings));
-    }
-
-    return newChildren;
-  }
-
-  private Collection<AbstractTreeNode> modifyDirectoryChildren(final AbstractTreeNode treeNode, final Collection<AbstractTreeNode> children, final ViewSettings settings) {
+  public Collection<AbstractTreeNode> modify(final AbstractTreeNode treeNode, final Collection<AbstractTreeNode> children, final ViewSettings settings) {
     final Ref<Collection<AbstractTreeNode>> result = new Ref<Collection<AbstractTreeNode>>(children);
 
     // we're actually in EDT here, but we work with SModels, and various routines assert that we can read, thus read action
@@ -108,6 +90,37 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
       public void run() {
         List<AbstractTreeNode> updatedChildren = null;
         final MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(treeNode.getProject());
+
+        // if current dir is data source from some model
+        FolderDataSource currentDirectoryDataSource = null;
+
+        if (treeNode instanceof PsiDirectoryNode) {
+          // let's if we have a model built from this dir, e.g. in per-root persistence
+          SModel sModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) treeNode).getVirtualFile()));
+          if (sModel != null) {
+            // adding root nodes (removing their corresponding files' nodes from the tree is further below)
+            List<MPSPsiElementTreeNode> rootsTreeNodes = new ArrayList<MPSPsiElementTreeNode>();
+            for (SNode root : sModel.getRootNodes()) {
+              rootsTreeNodes.add(new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) mpsPsiProvider.getPsi(root).getContainingFile(), settings));
+            }
+            if (!rootsTreeNodes.isEmpty() && updatedChildren == null) {
+              updatedChildren = new ArrayList<AbstractTreeNode>(children);
+              updatedChildren.addAll(rootsTreeNodes);
+            }
+
+            DataSource dataSource = sModel.getSource();
+            if (dataSource instanceof FolderDataSource) {
+              // could be assert as currently SModelFileTracker only tracks FileDataSource and FolderDataSource
+              currentDirectoryDataSource = (FolderDataSource) dataSource;
+            }
+          }
+        } else if (treeNode instanceof MPSPsiModelTreeNode) {
+          MPSPsiModel psiModel = ((MPSPsiModelTreeNode) treeNode).extractPsiFromValue();
+          updatedChildren = new ArrayList<AbstractTreeNode>();
+          for (PsiElement psiElement : psiModel.getChildren()) {
+            updatedChildren.add(new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) psiElement, settings));
+          }
+        }
 
         for (final AbstractTreeNode child : children) {
           if (child instanceof PsiFileNode) {
@@ -123,23 +136,16 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
               continue;
             }
 
-            if (value instanceof FileSourcePsiFile) {
-              SModelReference modelReference = ((FileSourcePsiFile) value).getModelReference();
-
-              MPSPsiModel psiModel = mpsPsiProvider.getPsi(modelReference);
-
-              if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
-
-              int idx = updatedChildren.indexOf(child);
-              updatedChildren.remove(idx);
-              updatedChildren.add(idx, new MPSPsiModelTreeNode(treeNode.getProject(), psiModel, settings));
-            } else if (value instanceof MPSPsiRootNode) {
+            if (currentDirectoryDataSource != null && currentDirectoryDataSource.isIncluded(VirtualFileUtils.toIFile(((PsiFileNode) child).getVirtualFile()))) {
+              // it's a file that constitutes a FolderDataSource-backed model, remove it from the tree (root nodes are shown instead)
               if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
               int idx = updatedChildren.indexOf(child);
               updatedChildren.remove(idx);
-              updatedChildren.add(idx, new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) value, settings));
             }
+
           } else if (child instanceof PsiDirectoryNode) {
+            // below code only attaches our action to the directory and makes it show added children - our root nodes
+
             final SModel perRootModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) child).getVirtualFile()));
             if (perRootModel != null) {
               if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
@@ -168,16 +174,6 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
                       dialog.show();
                     }
                   });
-                }
-
-                @Override
-                public Collection<AbstractTreeNode> getChildrenImpl() {
-                  ArrayList<AbstractTreeNode> children = new ArrayList<AbstractTreeNode>();
-                  children.addAll(super.getChildrenImpl());
-                  for (PsiElement psiElement : MPSPsiProvider.getInstance(getProject()).getPsi(perRootModel).getChildren()) {
-                    children.add(new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) psiElement, settings));
-                  }
-                  return children;
                 }
               });
             }

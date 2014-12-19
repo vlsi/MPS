@@ -38,7 +38,7 @@ public class FilePerRootDataSource extends FolderDataSource {
   }
 
   @Override
-  protected boolean isIncluded(IFile file) {
+  public boolean isIncluded(IFile file) {
     if (!super.isIncluded(file)) return false;
 
     return isPerRootPersistenceFile(file);
