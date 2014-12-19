@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._3;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._4;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -56,12 +56,20 @@ public class CellAction_CopyNode extends AbstractCellAction {
 
   @Override
   public void execute(EditorContext context) {
-    _3<List<SNode>, Map<SNode, Set<SNode>>, String> tuple = extractSelection(context);
+    _4<List<SNode>, List<SNode>, Map<SNode, Set<SNode>>, String> tuple = extractSelection(context);
     if (tuple == null) return;
-    CopyPasteUtil.copyNodesAndTextToClipboard(tuple._0(), tuple._1(), tuple._2());
+    CopyPasteUtil.copyNodesAndTextToClipboard(tuple._0(), tuple._2(), tuple._3());
   }
 
-  protected _3<List<SNode>, Map<SNode, Set<SNode>>, String> extractSelection (EditorContext context) {
+  /**
+   * Returns two collection of nodes (among other things) - nodes to copy and nodes to remove.
+   * These collections may differ slightly - when a Copy/Cut action is invoked on a Attribute node, its parent node (the one annotated with the attribute) must be copied,
+   * but only the attribute should be deleted from the source (in case of Cut).
+   *
+   * @param context The EditorContext
+   * @return A four-element tuple - nodes to pass through clipboard, nodes to remove from the source, map of attributes per copied node, text representation of the copied nodes
+   */
+  protected _4<List<SNode>, List<SNode>, Map<SNode, Set<SNode>>, String> extractSelection (EditorContext context) {
     EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
     TextBuilder textBuilder = TextRenderUtil.getTextBuilderForSelectedCellsOfEditor(editorComponent);
 
@@ -80,6 +88,7 @@ public class CellAction_CopyNode extends AbstractCellAction {
     }
 
     List<SNode> copyNodeList = new ArrayList<SNode>();
+    List<SNode> deleteNodeList = new ArrayList<SNode>();
     Map<SNode, Set<SNode>> nodesAndAttributes = new HashMap<SNode, Set<SNode>>();
     for (EditorCell selectedCell : selectedCells) {
       SNode node = selectedCell.getSNode();
@@ -95,7 +104,7 @@ public class CellAction_CopyNode extends AbstractCellAction {
         };
 
         //Store the attribute by default. Store the parent only of it is also part of the selection.
-        SNode nodeToAdd = node;
+        SNode nodeToDelete = node;
         Set<SNode> selectedAttributes = new HashSet<SNode>();
         selectedAttributes.add(node);
         if (selectedCell instanceof EditorCell_Collection) {
@@ -104,17 +113,19 @@ public class CellAction_CopyNode extends AbstractCellAction {
               selectedAttributes.add(cell.getSNode());
             }
             if (cell.getSNode() == parent) {  //Is the parent part of the selection
-              nodeToAdd = parent;
+              nodeToDelete = parent;
             }
           }
         }
 
-        copyNodeList.add(nodeToAdd);
-        nodesAndAttributes.put(nodeToAdd, selectedAttributes);
+        copyNodeList.add(parent);
+        deleteNodeList.add(nodeToDelete);
+        nodesAndAttributes.put(parent, selectedAttributes);
       } else {
         copyNodeList.add(node);
+        deleteNodeList.add(node);
       }
     }
-    return new MultiTuple._3<List<SNode>, Map<SNode, Set<SNode>>, String> (copyNodeList, nodesAndAttributes, textBuilder.getText()); 
+    return new MultiTuple._4<List<SNode>, List<SNode>, Map<SNode, Set<SNode>>, String> (copyNodeList, deleteNodeList, nodesAndAttributes, textBuilder.getText());
   }
 }

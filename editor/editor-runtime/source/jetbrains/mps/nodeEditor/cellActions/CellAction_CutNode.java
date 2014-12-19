@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._3;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._4;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -42,10 +42,10 @@ public class CellAction_CutNode extends CellAction_CopyNode {
 
   @Override
   public void execute(EditorContext context) {
-    _3<List<SNode>, Map<SNode, Set<SNode>>, String> tuple = extractSelection(context);
+    _4<List<SNode>, List<SNode>, Map<SNode, Set<SNode>>, String> tuple = extractSelection(context);
     if (tuple == null) return;
-    final List<SNode> sNodes = tuple._0();
-    CopyPasteUtil.copyNodesAndTextToClipboard(sNodes, tuple._1(), tuple._2());
+    final List<SNode> sNodes = tuple._1();
+    CopyPasteUtil.copyNodesAndTextToClipboard(tuple._0(), tuple._2(), tuple._3());
     SNode nodeToSelect = null;
     for (SNode node : sNodes) {
       nodeToSelect = findNodeToSelect(node);
