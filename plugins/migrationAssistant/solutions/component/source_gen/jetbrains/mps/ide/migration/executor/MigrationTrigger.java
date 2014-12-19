@@ -6,10 +6,10 @@ import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -51,7 +51,11 @@ public class MigrationTrigger implements ProjectComponent {
 
   public void projectOpened() {
     addListeners();
-    postponeMigrationIfNeededOnModuleChange(((Iterable<SModule>) myProject.getModulesWithGenerators()));
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        postponeMigrationIfNeededOnModuleChange(((Iterable<SModule>) myProject.getModulesWithGenerators()));
+      }
+    });
   }
 
   public void projectClosed() {
@@ -208,6 +212,7 @@ public class MigrationTrigger implements ProjectComponent {
     }
     @Override
     public void moduleAdded(@NotNull SModule module) {
+      ModelAccess.assertLegalWrite();
       if (!(myRepo.getOwners(module).contains(myProject))) {
         return;
       }
@@ -216,6 +221,7 @@ public class MigrationTrigger implements ProjectComponent {
 
     @Override
     public void moduleChanged(SModule module) {
+      ModelAccess.assertLegalWrite();
       if (!(myRepo.getOwners(module).contains(myProject))) {
         return;
       }
@@ -228,6 +234,7 @@ public class MigrationTrigger implements ProjectComponent {
     }
     @Override
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
+      ModelAccess.assertLegalWrite();
       postponeMigrationIfNeededOnLanguageReload(SetSequence.fromSet(modules).ofType(Language.class));
     }
   }

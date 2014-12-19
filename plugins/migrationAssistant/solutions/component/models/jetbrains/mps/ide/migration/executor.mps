@@ -198,6 +198,7 @@
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
+      <concept id="8974276187400348183" name="jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement" flags="nn" index="1QHqEM" />
     </language>
     <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
       <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
@@ -380,22 +381,28 @@
             <ref role="37wK5l" node="1AzqgyAfggx" resolve="addListeners" />
           </node>
         </node>
-        <node concept="3clFbF" id="1AzqgyAfdM7" role="3cqZAp">
-          <node concept="1rXfSq" id="1AzqgyAfdM5" role="3clFbG">
-            <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
-            <node concept="1eOMI4" id="1AzqgyAhil_" role="37wK5m">
-              <node concept="10QFUN" id="1AzqgyAhilA" role="1eOMHV">
-                <node concept="2OqwBi" id="1AzqgyAhily" role="10QFUP">
-                  <node concept="liA8E" id="1AzqgyAhilz" role="2OqNvi">
-                    <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
-                  </node>
-                  <node concept="37vLTw" id="1AzqgyAhil$" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myProject" />
-                  </node>
-                </node>
-                <node concept="A3Dl8" id="1AzqgyAhilw" role="10QFUM">
-                  <node concept="3uibUv" id="1AzqgyAhilx" role="A3Ik2">
-                    <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+        <node concept="1QHqEM" id="1Yn1nOeJP5x" role="3cqZAp">
+          <node concept="1QHqEC" id="1Yn1nOeJP5z" role="1QHqEI">
+            <node concept="3clFbS" id="1Yn1nOeJP5_" role="1bW5cS">
+              <node concept="3clFbF" id="1AzqgyAfdM7" role="3cqZAp">
+                <node concept="1rXfSq" id="1AzqgyAfdM5" role="3clFbG">
+                  <ref role="37wK5l" node="1AzqgyAfcGx" resolve="postponeMigrationIfNeededOnModuleChange" />
+                  <node concept="1eOMI4" id="1AzqgyAhil_" role="37wK5m">
+                    <node concept="10QFUN" id="1AzqgyAhilA" role="1eOMHV">
+                      <node concept="2OqwBi" id="1AzqgyAhily" role="10QFUP">
+                        <node concept="liA8E" id="1AzqgyAhilz" role="2OqNvi">
+                          <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
+                        </node>
+                        <node concept="37vLTw" id="1AzqgyAhil$" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myProject" />
+                        </node>
+                      </node>
+                      <node concept="A3Dl8" id="1AzqgyAhilw" role="10QFUM">
+                        <node concept="3uibUv" id="1AzqgyAhilx" role="A3Ik2">
+                          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1411,6 +1418,12 @@
           </node>
         </node>
         <node concept="3clFbS" id="1AzqgyAfmjG" role="3clF47">
+          <node concept="3clFbF" id="1Yn1nOeKoem" role="3cqZAp">
+            <node concept="2YIFZM" id="1Yn1nOeKoen" role="3clFbG">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalWrite():void" resolve="assertLegalWrite" />
+              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            </node>
+          </node>
           <node concept="3clFbJ" id="68mwpVbO6SF" role="3cqZAp">
             <node concept="3clFbS" id="68mwpVbO6SI" role="3clFbx">
               <node concept="3cpWs6" id="68mwpVbOiRP" role="3cqZAp" />
@@ -1472,6 +1485,12 @@
           </node>
         </node>
         <node concept="3clFbS" id="1AzqgyAfr8o" role="3clF47">
+          <node concept="3clFbF" id="1Yn1nOeKnRw" role="3cqZAp">
+            <node concept="2YIFZM" id="1Yn1nOeKnRx" role="3clFbG">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalWrite():void" resolve="assertLegalWrite" />
+              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            </node>
+          </node>
           <node concept="3clFbJ" id="68mwpVbOj6P" role="3cqZAp">
             <node concept="3clFbS" id="68mwpVbOj6Q" role="3clFbx">
               <node concept="3cpWs6" id="68mwpVbOj6R" role="3cqZAp" />
@@ -1550,6 +1569,12 @@
           </node>
         </node>
         <node concept="3clFbS" id="1AzqgyAkxzx" role="3clF47">
+          <node concept="3clFbF" id="1Yn1nOeKmgz" role="3cqZAp">
+            <node concept="2YIFZM" id="1Yn1nOeKnzu" role="3clFbG">
+              <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalWrite():void" resolve="assertLegalWrite" />
+              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            </node>
+          </node>
           <node concept="3clFbF" id="1AzqgyAk$fp" role="3cqZAp">
             <node concept="1rXfSq" id="1AzqgyAk$fn" role="3clFbG">
               <ref role="37wK5l" node="1AzqgyAgwck" resolve="postponeMigrationIfNeededOnLanguageReload" />
