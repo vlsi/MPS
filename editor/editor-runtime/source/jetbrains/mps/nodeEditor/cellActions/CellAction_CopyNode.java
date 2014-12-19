@@ -94,6 +94,8 @@ public class CellAction_CopyNode extends AbstractCellAction {
           }
         };
 
+        //Store the attribute by default. Store the parent only of it is also part of the selection.
+        SNode nodeToAdd = node;
         Set<SNode> selectedAttributes = new HashSet<SNode>();
         selectedAttributes.add(node);
         if (selectedCell instanceof EditorCell_Collection) {
@@ -101,10 +103,14 @@ public class CellAction_CopyNode extends AbstractCellAction {
             if (condition.met(cell)) {
               selectedAttributes.add(cell.getSNode());
             }
+            if (cell.getSNode() == parent) {  //Is the parent part of the selection
+              nodeToAdd = parent;
+            }
           }
         }
-        copyNodeList.add(parent);
-        nodesAndAttributes.put(parent, selectedAttributes);
+
+        copyNodeList.add(nodeToAdd);
+        nodesAndAttributes.put(nodeToAdd, selectedAttributes);
       } else {
         copyNodeList.add(node);
       }
