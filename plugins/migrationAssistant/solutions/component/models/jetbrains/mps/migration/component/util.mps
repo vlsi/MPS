@@ -1792,40 +1792,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="5TtkZMZ67rQ" role="3cqZAp">
-                <node concept="2OqwBi" id="5TtkZMZ6b1U" role="3clFbG">
-                  <node concept="2OqwBi" id="5TtkZMZ68kb" role="2Oq$k0">
-                    <node concept="37vLTw" id="5TtkZMZ67rO" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1hucSHYjLwF" resolve="modules" />
-                    </node>
-                    <node concept="UnYns" id="5TtkZMZ69Cl" role="2OqNvi">
-                      <node concept="3uibUv" id="5TtkZMZ6abr" role="UnYnz">
-                        <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2es0OD" id="5TtkZMZ6ch5" role="2OqNvi">
-                    <node concept="1bVj0M" id="5TtkZMZ6ch7" role="23t8la">
-                      <node concept="3clFbS" id="5TtkZMZ6ch8" role="1bW5cS">
-                        <node concept="3clFbF" id="5TtkZMZ6cPN" role="3cqZAp">
-                          <node concept="2OqwBi" id="5TtkZMZ6dlh" role="3clFbG">
-                            <node concept="37vLTw" id="5TtkZMZ6cPM" role="2Oq$k0">
-                              <ref role="3cqZAo" node="5TtkZMZ6ch9" resolve="it" />
-                            </node>
-                            <node concept="liA8E" id="5TtkZMZ6e7R" role="2OqNvi">
-                              <ref role="37wK5l" to="vsqj:~AbstractModule.validateLanguageVersions():void" resolve="validateLanguageVersions" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Rh6nW" id="5TtkZMZ6ch9" role="1bW2Oz">
-                        <property role="TrG5h" value="it" />
-                        <node concept="2jxLKc" id="5TtkZMZ6cha" role="1tU5fm" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3cpWs8" id="25gV4LspBhP" role="3cqZAp">
                 <node concept="3cpWsn" id="25gV4LspBhQ" role="3cpWs9">
                   <property role="TrG5h" value="projectMig" />
@@ -1919,6 +1885,16 @@
             <node concept="2HwmR7" id="1AzqgyAfUKy" role="2OqNvi">
               <node concept="1bVj0M" id="1AzqgyAfUKz" role="23t8la">
                 <node concept="3clFbS" id="1AzqgyAfUK$" role="1bW5cS">
+                  <node concept="3clFbF" id="3sX_2fQT64w" role="3cqZAp">
+                    <node concept="2OqwBi" id="3sX_2fQT6B9" role="3clFbG">
+                      <node concept="37vLTw" id="3sX_2fQT64u" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1AzqgyAfUKR" resolve="module" />
+                      </node>
+                      <node concept="liA8E" id="3sX_2fQT7VV" role="2OqNvi">
+                        <ref role="37wK5l" to="vsqj:~AbstractModule.validateLanguageVersions():void" resolve="validateLanguageVersions" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="1AzqgyAfUK_" role="3cqZAp">
                     <node concept="2OqwBi" id="1AzqgyAfUKA" role="3clFbG">
                       <node concept="2YIFZM" id="1AzqgyAfUKB" role="2Oq$k0">

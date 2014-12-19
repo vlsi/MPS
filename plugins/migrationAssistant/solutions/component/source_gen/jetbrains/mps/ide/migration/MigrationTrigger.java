@@ -196,7 +196,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     myMigrationQueued = true;
   }
 
-
   /**
    * todo. Was originally copied from IdeCommandUtil, then changed. Check whether they could 
    * be combined into one piece of universal code
@@ -206,7 +205,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         IFile outputDir = it.getOutputPath();
-        IFile testDir = check_feb5zp_a0b0a0a1a32(it.getFacet(TestsFacet.class));
+        IFile testDir = check_feb5zp_a0b0a0a1a22(it.getFacet(TestsFacet.class));
         if (outputDir != null) {
           IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
           outputDir.delete();
@@ -226,14 +225,13 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         IFile outputDir = it.getOutputPath();
-        IFile classesGen = check_feb5zp_a0b0a0a1a52(it.getFacet(JavaModuleFacet.class));
+        IFile classesGen = check_feb5zp_a0b0a0a1a42(it.getFacet(JavaModuleFacet.class));
         if (classesGen != null) {
           classesGen.delete();
         }
       }
     });
   }
-
 
   private class MyRepoListener extends SRepositoryContentAdapter {
     public MyRepoListener() {
@@ -305,13 +303,13 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public static class MyState {
     public boolean migrationRequired = false;
   }
-  private static IFile check_feb5zp_a0b0a0a1a32(TestsFacet checkedDotOperand) {
+  private static IFile check_feb5zp_a0b0a0a1a22(TestsFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestsOutputPath();
     }
     return null;
   }
-  private static IFile check_feb5zp_a0b0a0a1a52(JavaModuleFacet checkedDotOperand) {
+  private static IFile check_feb5zp_a0b0a0a1a42(JavaModuleFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassesGen();
     }

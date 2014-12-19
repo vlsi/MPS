@@ -27,7 +27,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -37,6 +36,7 @@ import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -155,11 +155,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       public void run() {
         List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
         Iterable<SModule> modules = ((Iterable<SModule>) mpsProject.getModulesWithGenerators());
-        Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-          public void visit(AbstractModule it) {
-            it.validateLanguageVersions();
-          }
-        });
         boolean projectMig = ListSequence.fromList(pMig).any(new IWhereFilter<ProjectMigration>() {
           public boolean accept(ProjectMigration it) {
             return it.shouldBeExecuted(mpsProject);
@@ -175,6 +170,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   public static boolean isLanguageMigrationRequired(Iterable<SModule> modules) {
     return Sequence.fromIterable(modules).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
       public boolean accept(final AbstractModule module) {
+        module.validateLanguageVersions();
         return Sequence.fromIterable(MigrationsUtil.getNextStepScripts(module)).any(new IWhereFilter<MigrationScriptReference>() {
           public boolean accept(MigrationScriptReference item) {
             return MigrationsUtil.isMigrationNeeded(item.getLanguage(), item.getFromVersion(), module);
