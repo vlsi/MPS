@@ -2,11 +2,10 @@ package jetbrains.mps.smodel.adapter.ids;
 
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -22,10 +21,6 @@ public class MetaIdByDeclaration {
   }
 
   public static SConceptId getConceptId(SNode c) {
-    return getConceptId((org.jetbrains.mps.openapi.model.SNode) c);
-  }
-
-  public static SConceptId getConceptId(org.jetbrains.mps.openapi.model.SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();

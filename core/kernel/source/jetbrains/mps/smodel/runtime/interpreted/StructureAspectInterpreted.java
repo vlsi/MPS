@@ -15,61 +15,44 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class StructureAspectInterpreted implements StructureAspectDescriptor {
-  private static final Object LOCK = new Object();
-  private final SModelCommandListener myStructureChangeListener = new SModelCommandListener() {
-    @Override
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      for (SModelEvent e : events) {
-        if (!LanguageAspect.STRUCTURE.is(e.getModelDescriptor())) continue;
-        invalidateDescriptors();
-      }
-    }
-  };
-  private SRepositoryContentAdapter myModuleListener = new SRepositoryContentAdapter() {
-    @Override
-    public void repositoryChanged() {
-      invalidateDescriptors();
-    }
-  };
-
+/**
+ * Migration and bootstrap structure utility. Initialized once, intentionally doesn't track
+ * model changed as its primary purpose is to facilitate initial model loading when MPS 3.1 projects with
+ * cleaned classes and sources get migrated to 3.2. Once migrated, languages are generated and
+ * compiled StructureAspectDescriptors are in use.
+ */
+public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
   private volatile Map<SConceptId, ConceptDescriptor> myDescriptors;
   private volatile Map<String, ConceptDescriptor> myDescriptorByName;
 
-  private Language myLanguage;
+  private final Language myLanguage;
 
   public StructureAspectInterpreted(Language language) {
     myLanguage = language;
-    myModuleListener.subscribeTo(MPSModuleRepository.getInstance());
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myStructureChangeListener);
   }
 
-  public void dispose() {
-    myModuleListener.unsubscribeFrom(MPSModuleRepository.getInstance());
-    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myStructureChangeListener);
+  @Override
+  public Collection<ConceptDescriptor> getDescriptors() {
+    ensureInitialized();
+    return myDescriptors.values();
   }
 
   @Override
@@ -86,23 +69,25 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor {
 
   protected void ensureInitialized() {
     if (myDescriptors != null) return;
-    synchronized (LOCK) {
+    synchronized (this) {
       if (myDescriptors != null) return;
 
       SModel struct = LanguageAspect.STRUCTURE.get(myLanguage);
 
       ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
       ConcurrentHashMap<String, ConceptDescriptor> descriptorsByName = new ConcurrentHashMap<String, ConceptDescriptor>();
-      for (SNode root: struct.getRootNodes()){
+      for (SNode root : struct.getRootNodes()) {
         SConcept concept = root.getConcept();
-        if (!isConceptDeclaration(concept)) continue;
+        if (!isConceptDeclaration(concept)) {
+          continue;
+        }
 
         SConceptId conceptId = MetaIdByDeclaration.getConceptId(root);
         String conceptName = conceptFQName(root);
         ConceptDescriptor cd = new InterpretedConceptDescriptor(root, conceptId, conceptName);
 
         descriptors.put(conceptId, cd);
-        descriptorsByName.put(conceptName,cd);
+        descriptorsByName.put(conceptName, cd);
       }
       myDescriptorByName = descriptorsByName;
       myDescriptors = descriptors;
@@ -122,22 +107,15 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor {
     return NameUtil.getModelLongName(model) + "." + name;
   }
 
-  private void invalidateDescriptors() {
-    synchronized (LOCK) {
-      myDescriptors = null;
-      myDescriptorByName = null;
-    }
-  }
-
   //this method MUST NOT call any concept methods (not to get into infinite recursion)
   private boolean isConceptDeclaration(SConcept concept) {
-    if (concept instanceof SConceptAdapterByName){
+    if (concept instanceof SConceptAdapterByName) {
       String fqname = concept.getQualifiedName();
       return fqname.equals(SNodeUtil.conceptName_ConceptDeclaration) || fqname.equals(SNodeUtil.conceptName_InterfaceConceptDeclaration);
-    } else if (concept instanceof SConceptAdapterById){
+    } else if (concept instanceof SConceptAdapterById) {
       SConceptId id = ((SConceptAdapterById) concept).getId();
       return id.equals(SNodeUtil.conceptId_ConceptDeclaration) || id.equals(SNodeUtil.conceptId_InterfaceConceptDeclaration);
-    } else{
+    } else {
       throw new IllegalArgumentException(concept.getClass().getName());
     }
   }

@@ -16,6 +16,6 @@ public interface MigrationManager {
     public String getDescription();
     public boolean execute();
   }
-  public static interface Finished extends MigrationManager.MigrationState {
+  public static class Finished implements MigrationManager.MigrationState {
   }
 }

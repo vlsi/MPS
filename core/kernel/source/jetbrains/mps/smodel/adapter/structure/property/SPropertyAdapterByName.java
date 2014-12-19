@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
@@ -27,10 +25,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SPropertyAdapterByName extends SPropertyAdapter {
-  private static final Logger LOG = Logger.wrap(org.apache.log4j.Logger.getLogger(SPropertyAdapterByName.class));
-
-  protected String myConceptName;
+public final class SPropertyAdapterByName extends SPropertyAdapter {
+  private final String myConceptName;
 
   public SPropertyAdapterByName(@NotNull String conceptName, @NotNull String propName) {
     super(propName);
@@ -59,7 +55,6 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
   public SPropertyId getId() {
     PropertyDescriptor d = getPropertyDescriptor();
     if (d == null) {
-      //LOG.error("property descriptor not found for property " + myPropertyName);
       return MetaIdFactory.INVALID_PROP_ID;
     }
     return d.getId();

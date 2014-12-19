@@ -27,12 +27,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
-  protected SContainmentLinkId myRoleId;
+public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
+  private final SContainmentLinkId myRoleId;
+  private final boolean myIsBootstrap;
 
   public SContainmentLinkAdapterById(@NotNull SContainmentLinkId roleId, @NotNull String name) {
+    this(roleId, name, false);
+  }
+
+  /**
+   * @param bootstrap see BOOTSTRAP META OBJECTS javadoc for {@link jetbrains.mps.smodel.adapter.BootstrapAdapterFactory}
+   */
+  public SContainmentLinkAdapterById(@NotNull SContainmentLinkId roleId, @NotNull String name, boolean bootstrap) {
     super(name);
     myRoleId = roleId;
+    myIsBootstrap = bootstrap;
   }
 
   @Override
@@ -48,7 +57,7 @@ public class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
 
   @Override
   public String getRoleName() {
-    if (RuntimeFlags.isMergeDriverMode()) {
+    if (RuntimeFlags.isMergeDriverMode() || myIsBootstrap) {
       return myName;
     }
     LinkDescriptor d = getLinkDescriptor();

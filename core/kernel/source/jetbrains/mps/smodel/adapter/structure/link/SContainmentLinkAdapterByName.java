@@ -27,10 +27,10 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
+public final class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
   private static final Logger LOG = Logger.wrap(org.apache.log4j.Logger.getLogger(SContainmentLinkAdapterByName.class));
 
-  protected String myConceptName;
+  private final String myConceptName;
 
   public SContainmentLinkAdapterByName(@NotNull String conceptName, @NotNull String name) {
     super(name);

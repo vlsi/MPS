@@ -45,9 +45,6 @@ public class Migration_Queries {
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.language@java_stub").getReference(), true);
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.module@java_stub").getReference(), true);
     mod.addDependency(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)")).getModuleReference(), false);
-
-    m.addModelImport(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.smodel.adapter").getReference(), true);
-    mod.addDependency(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)")).getModuleReference(), false);
   }
   public static SNode execute_ret(SNode point) {
     SNode typeNode = MigrationScript_Behavior.call_getProducedData_8585153554445933384(SNodeOperations.getNodeAncestor(point, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"), false, false));

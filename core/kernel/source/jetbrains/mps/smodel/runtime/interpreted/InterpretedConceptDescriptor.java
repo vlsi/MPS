@@ -100,16 +100,21 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         // isInterface
         isInterface = SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration);
 
-        isFinal = SPropertyOperations.getBoolean(declaration, "isFinal");
-        isAbstract = SPropertyOperations.getBoolean(declaration, "isAbstract");
-        helpURL = SPropertyOperations.getString(declaration, "helpUrl");
+        // FIXME perhaps, we shall do declaration.getProperty directly, instead of SPropertyOperations and SNodeAccessUtil+constraints
+        isFinal = SPropertyOperations.getBoolean(declaration, SNodeUtil.property_AbstractConceptDeclaration_final);
+        isAbstract = SPropertyOperations.getBoolean(declaration, SNodeUtil.property_AbstractConceptDeclaration_abstract);
+        helpURL = SPropertyOperations.getString(declaration, SNodeUtil.property_AbstractConceptDeclaration_helpURL);
 
-        conceptAlias = SNodeUtil.getConceptAlias(declaration);
-        shortDescription = SNodeUtil.getConceptShortDescription(declaration);
+        conceptAlias = SPropertyOperations.getString(declaration, SNodeUtil.property_AbstractConceptDeclaration_conceptAlias);
+        shortDescription = SPropertyOperations.getString(declaration, SNodeUtil.property_AbstractConceptDeclaration_conceptShortDescription);
 
         // scope
-        String scopeVal = SPropertyOperations.getString(declaration, "staticScope");
-        staticScope = "none".equals(scopeVal) ? StaticScope.NONE : ("root".equals(scopeVal) ? StaticScope.ROOT : StaticScope.GLOBAL);
+        if (isInterface) {
+          staticScope = StaticScope.GLOBAL;
+        } else {
+          String scopeVal = SPropertyOperations.getString(declaration, SNodeUtil.property_ConceptDeclaration_staticScope);
+          staticScope = "none".equals(scopeVal) ? StaticScope.NONE : ("root".equals(scopeVal) ? StaticScope.ROOT : StaticScope.GLOBAL);
+        }
 
         // parents
         Set<String> parentsSet = new LinkedHashSet<String>();
@@ -124,19 +129,19 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
             superConceptId = SNodeUtil.conceptId_BaseConcept;
           } else {
             superConcept = StructureAspectInterpreted.conceptFQName(superConceptNode);
-            superConceptId = superConceptNode == null ? null : MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) superConceptNode));
+            superConceptId = superConceptNode == null ? null : MetaIdByDeclaration.getConceptId(superConceptNode);
           }
           parentsSet.add(superConcept);
           parentsIdsSet.add(superConceptId);
 
           for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
             parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
-            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
+            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(interfaceConcept));
           }
-        } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
+        } else if (isInterface) {
           for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
             parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
-            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
+            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(interfaceConcept));
           }
         }
 
@@ -155,7 +160,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
           if (name != null) {
             directProperties.add(name);
 
-            SPropertyId propId = MetaIdByDeclaration.getPropId(((jetbrains.mps.smodel.SNode) property));
+            SPropertyId propId = MetaIdByDeclaration.getPropId(property);
             BasePropertyDescriptor pd = new BasePropertyDescriptor(propId, name);
 
             directPropertiesByIds.put(propId, pd);

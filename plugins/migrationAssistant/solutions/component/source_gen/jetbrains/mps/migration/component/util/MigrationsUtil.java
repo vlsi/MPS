@@ -46,11 +46,16 @@ public class MigrationsUtil {
     }
     return importVersion < currentVersion;
   }
-  public static Iterable<MigrationScriptReference> getLanguageVersions(SModule module) {
+  public static Iterable<MigrationScriptReference> getNextStepScripts(SModule module) {
     List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());
     for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
+      int currentLangVersion = lang.getLanguageVersion();
       int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
-      if (ver != lang.getLanguageVersion()) {
+
+      ver = Math.max(ver, 0);
+      currentLangVersion = Math.max(currentLangVersion, 0);
+
+      if (ver < currentLangVersion) {
         ListSequence.fromList(result).addElement(new MigrationScriptReference(lang, ver));
       }
     }
