@@ -33,14 +33,11 @@
   <project-components>
     <component>
       <interface-class>jetbrains.mps.ide.migration.IStartupMigrationExecutor</interface-class>
-      <implementation-class>jetbrains.mps.ide.migration.StartupMigrationExecutor</implementation-class>
+      <implementation-class>jetbrains.mps.ide.migration.MigrationTrigger</implementation-class>
       <headless-implementation-class>jetbrains.mps.ide.migration.HeadlessMigrationExecutor</headless-implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.migration.storage.StorageAssistant</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.migration.executor.MigrationTrigger</implementation-class>
     </component>
     <component>
       <interface-class>jetbrains.mps.ide.migration.MigrationManager</interface-class>
