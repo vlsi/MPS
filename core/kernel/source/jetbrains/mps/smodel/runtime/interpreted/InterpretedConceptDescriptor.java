@@ -34,6 +34,8 @@ import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -47,6 +49,7 @@ import java.util.Map;
 import java.util.Set;
 
 class InterpretedConceptDescriptor extends BaseConceptDescriptor {
+  private final static Logger LOG = LogManager.getLogger(InterpretedConceptDescriptor.class);
   private final String myQualifiedName;
   private final SConceptId myId;
 
@@ -139,6 +142,10 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
           for (SNode/*<InterfaceConceptReference>*/ implementsLink : declaration.getChildren(SNodeUtil.link_ConceptDeclaration_implements)) {
             SNode interfaceConcept = implementsLink.getReferenceTarget(SNodeUtil.link_InterfaceConceptReference_intfc);
+            if (interfaceConcept == null) {
+              LOG.error("Interface concept is null, declaration: " + declaration);
+              continue;
+            }
             parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
             parentsIdsSet.add(MetaIdByDeclaration.getConceptId(interfaceConcept));
           }
