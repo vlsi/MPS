@@ -53,6 +53,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.DocumentationCommentStyleSheet_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.InsertAnEmptyCommentLine" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.RemoveDocComment" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -312,6 +313,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.DocumentationCommentStyleSheet_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.InsertAnEmptyCommentLine" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.RemoveDocComment" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -500,6 +502,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.DeleteDeprecationOnAttributedNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.InsertAnEmptyCommentLine" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.RemoveDocComment" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
