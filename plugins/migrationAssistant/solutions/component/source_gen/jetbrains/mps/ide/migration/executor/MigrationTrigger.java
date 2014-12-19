@@ -9,6 +9,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -70,13 +71,21 @@ public class MigrationTrigger implements ProjectComponent {
   }
 
   private void addListeners() {
-    myRepo.addRepositoryListener(this.myRepoListener);
-    myClassManager.addClassesHandler(this.myClassesListener);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myRepo.addRepositoryListener(MigrationTrigger.this.myRepoListener);
+        myClassManager.addClassesHandler(MigrationTrigger.this.myClassesListener);
+      }
+    });
   }
 
   private void removeListeners() {
-    myClassManager.removeClassesHandler(myClassesListener);
-    myRepo.removeRepositoryListener(this.myRepoListener);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myClassManager.removeClassesHandler(myClassesListener);
+        myRepo.removeRepositoryListener(MigrationTrigger.this.myRepoListener);
+      }
+    });
   }
 
   private void postponeMigrationIfNeededOnModuleChange(Iterable<SModule> modules) {
