@@ -323,9 +323,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
           SModel model = myModelReference.resolve(repo);
           DataSource source = model.getSource();
           if (source instanceof FileDataSource) {
-            File file = new File(((FileDataSource) source).getFile().getPath());
-            VirtualFile vfile = LocalFileSystem.getInstance().findFileByIoFile(file);
-            mySourceVirtualFile = vfile;
+            mySourceVirtualFile = VirtualFileUtils.getVirtualFile(((FileDataSource) source).getFile());
           } else if (source instanceof FilePerRootDataSource) {
             // todo remove knowledge about particular PerRoot persistence, should be more generic
             mySourceVirtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) source).getFolder()).findChild(MPSExtentions.DOT_MODEL_HEADER);
