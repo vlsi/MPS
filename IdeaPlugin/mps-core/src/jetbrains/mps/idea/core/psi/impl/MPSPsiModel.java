@@ -315,6 +315,24 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   }
 
   public VirtualFile getSourceVirtualFile() {
+    if (mySourceVirtualFile == null) {
+      final SRepository repo = ProjectHelper.getProjectRepository(getProject());
+      repo.getModelAccess().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          SModel model = myModelReference.resolve(repo);
+          DataSource source = model.getSource();
+          if (source instanceof FileDataSource) {
+            File file = new File(((FileDataSource) source).getFile().getPath());
+            VirtualFile vfile = LocalFileSystem.getInstance().findFileByIoFile(file);
+            mySourceVirtualFile = vfile;
+          } else if (source instanceof FilePerRootDataSource) {
+            // todo remove knowledge about particular PerRoot persistence, should be more generic
+            mySourceVirtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) source).getFolder()).findChild(MPSExtentions.DOT_MODEL_HEADER);
+          }
+        }
+      });
+    }
     return mySourceVirtualFile;
   }
 
@@ -426,16 +444,8 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
     enumerateNodes();
 
-    // TODO use ModelUtil
-    DataSource source = model.getSource();
-    if (source instanceof FileDataSource) {
-      File file = new File(((FileDataSource) source).getFile().getPath());
-      VirtualFile vfile = LocalFileSystem.getInstance().findFileByIoFile(file);
-      this.mySourceVirtualFile = vfile;
-    } else if (source instanceof FilePerRootDataSource) {
-      this.mySourceVirtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) source).getFolder()).findChild(MPSExtentions.DOT_MODEL_HEADER);
-    }
-    if (getSourceVirtualFile() == null || getSourceVirtualFile().getParent() == null)
+    getSourceVirtualFile();
+    if (mySourceVirtualFile == null || mySourceVirtualFile.getParent() == null)
       myPsiDirectory = null;
     else
       myPsiDirectory = new PsiDirectoryImpl((PsiManagerImpl) myManager, getSourceVirtualFile().getParent());
