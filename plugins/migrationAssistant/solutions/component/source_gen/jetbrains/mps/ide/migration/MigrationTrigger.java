@@ -23,9 +23,11 @@ import java.util.HashSet;
 import jetbrains.mps.migration.component.util.MigrationComponent;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
@@ -140,7 +142,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     // should be checked for whether their migration is needed  
     final Set<SModule> modules2Check = SetSequence.fromSet(new HashSet<SModule>());
     Iterable<? extends SModule> projectModules = myMpsProject.getModulesWithGenerators();
-    final List<Language> addedLanguages = Sequence.fromIterable(languages).ofType(Language.class).toListSequence();
+    final List<SLanguage> addedLanguages = Sequence.fromIterable(languages).ofType(Language.class).select(new ISelector<Language, SLanguage>() {
+      public SLanguage select(Language it) {
+        return MetaIdByDeclaration.ref2Id(it.getModuleReference());
+      }
+    }).toListSequence();
     Sequence.fromIterable(projectModules).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
         Set<SLanguage> used = new HashSet<SLanguage>(it.getUsedLanguages());
