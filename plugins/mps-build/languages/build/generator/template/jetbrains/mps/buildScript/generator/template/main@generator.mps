@@ -8758,8 +8758,8 @@
                         <ref role="1bhEwk" node="1s8OwvM8e8O" resolve="javaOpts" />
                       </node>
                     </node>
-                    <node concept="3TrcHB" id="6cnZvE9EUvV" role="2OqNvi">
-                      <ref role="3TsBF5" to="3ior:6cnZvE9ExUF" resolve="javaSourceLevel" />
+                    <node concept="3TrcHB" id="64wWIxoZX5j" role="2OqNvi">
+                      <ref role="3TsBF5" to="3ior:64wWIxoRWZs" resolve="javaLevel" />
                     </node>
                   </node>
                 </node>

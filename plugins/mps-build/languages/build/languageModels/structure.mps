@@ -1116,10 +1116,6 @@
       <property role="TrG5h" value="compiler" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="1TJgyi" id="6cnZvE9ExUF" role="1TKVEl">
-      <property role="TrG5h" value="javaSourceLevel" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
     <node concept="1TJgyi" id="64wWIxoRWZs" role="1TKVEl">
       <property role="TrG5h" value="javaLevel" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
