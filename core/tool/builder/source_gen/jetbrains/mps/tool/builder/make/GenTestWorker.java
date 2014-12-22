@@ -38,6 +38,8 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
+import java.util.concurrent.Future;
+import jetbrains.mps.make.script.IResult;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.library.LibraryInitializer;
@@ -211,9 +213,14 @@ public class GenTestWorker extends GeneratorWorker {
           return scriptBuilder.toScript();
         }
       };
-      bms.make(ms, collectResources(context, go.getModules(), go.getModels()), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat)).get();
-    } catch (InterruptedException ignore) {
-    } catch (ExecutionException ignore) {
+      Future<IResult> result = bms.make(ms, collectResources(context, go.getModules(), go.getModels()), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat));
+      if (!(result.get().isSucessful())) {
+        myErrors.add("Make was not successful " + result.get().output());
+      }
+    } catch (InterruptedException e) {
+      myErrors.add(e.toString());
+    } catch (ExecutionException e) {
+      myErrors.add(e.toString());
     }
   }
   private void loadAndMake(final MpsWorker.ObjectsToProcess go) {
