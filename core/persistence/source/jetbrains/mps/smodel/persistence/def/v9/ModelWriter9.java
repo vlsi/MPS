@@ -19,8 +19,13 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
+import jetbrains.mps.persistence.registry.AggregationLinkInfo;
+import jetbrains.mps.persistence.registry.AssociationLinkInfo;
+import jetbrains.mps.persistence.registry.ConceptInfo;
+import jetbrains.mps.persistence.registry.IdInfoRegistry;
+import jetbrains.mps.persistence.registry.LangInfo;
+import jetbrains.mps.persistence.registry.PropertyInfo;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
@@ -28,11 +33,6 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.AggregationLinkInfo;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.AssociationLinkInfo;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.LangInfo;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.PropertyInfo;
 import jetbrains.mps.util.ToStringComparator;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -59,7 +59,7 @@ public class ModelWriter9 implements IModelWriter {
   public static final int VERSION = 9;
   private final MetaModelInfoProvider myMetaInfoProvider;
 
-  private IdInfoCollector myMetaInfo;
+  private IdInfoRegistry myMetaInfo;
   private ImportsHelper myImportsHelper;
   private final IdEncoder myIdEncoder = new IdEncoder();
 
@@ -70,8 +70,8 @@ public class ModelWriter9 implements IModelWriter {
   @Override
   public Document saveModel(SModel sourceModel) {
 
-    myMetaInfo = new IdInfoCollector();
-    myMetaInfo.fill(sourceModel.getRootNodes(), myMetaInfoProvider);
+    myMetaInfo = new IdInfoRegistry();
+    new IdInfoCollector(myMetaInfo, myMetaInfoProvider).fill(sourceModel.getRootNodes());
     myImportsHelper = new ImportsHelper(sourceModel.getReference());
 
     // root element
@@ -331,8 +331,8 @@ public class ModelWriter9 implements IModelWriter {
         }
       };
       // and its meta-info
-      myMetaInfo = new IdInfoCollector();
-      myMetaInfo.fill(Collections.singleton(root), myMetaInfoProvider);
+      myMetaInfo = new IdInfoRegistry();
+      new IdInfoCollector(myMetaInfo, myMetaInfoProvider).fill(Collections.singleton(root));
       Element childElement = saveNode(root);
 
       // record model imports

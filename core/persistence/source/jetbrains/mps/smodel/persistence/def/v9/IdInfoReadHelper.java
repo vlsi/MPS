@@ -16,14 +16,15 @@
 package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.MetaModelInfoProvider;
+import jetbrains.mps.persistence.registry.ConceptInfo;
+import jetbrains.mps.persistence.registry.IdInfoRegistry;
+import jetbrains.mps.persistence.registry.LangInfo;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.LangInfo;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -46,7 +47,7 @@ import java.util.Map;
  * subsequent #property(), #association() and #aggregation call.
  */
 class IdInfoReadHelper {
-  private final IdInfoCollector myInfoCollector;
+  private final IdInfoRegistry myMetaRegistry;
   private final IdEncoder myIdEncoder;
   private final MetaModelInfoProvider myMetaInfoProvider;
   private LangInfo myActualLang;
@@ -61,7 +62,7 @@ class IdInfoReadHelper {
   public IdInfoReadHelper(@NotNull MetaModelInfoProvider mmiProvider, boolean interfaceOnly, boolean stripImplementation) {
     myMetaInfoProvider = mmiProvider;
     myIdEncoder = new IdEncoder();
-    myInfoCollector = new IdInfoCollector();
+    myMetaRegistry = new IdInfoRegistry();
     myInterfaceOnly = interfaceOnly;
     myStripImplementation = stripImplementation;
   }
@@ -83,7 +84,7 @@ class IdInfoReadHelper {
 
   public void withLanguage(String id, String name) {
     final SLanguageId languageId = myIdEncoder.parseLanguageId(id);
-    myActualLang = myInfoCollector.registerLanguage(languageId, name);
+    myActualLang = myMetaRegistry.registerLanguage(languageId, name);
     myMetaInfoProvider.setLanguageName(languageId, name);
   }
 
@@ -91,7 +92,7 @@ class IdInfoReadHelper {
   public void withConcept(String id, String name, String index, String nodeInfo, String stub) {
     assert myActualLang != null;
     SConceptId conceptId = myIdEncoder.parseConceptId(myActualLang.getLanguageId(), id);
-    myActualConcept = myInfoCollector.registerConcept(conceptId, name);
+    myActualConcept = myMetaRegistry.registerConcept(conceptId, name);
     myActualConcept.parseImplementationKind(nodeInfo);
     myConcepts.put(index, MetaAdapterFactory.getConcept(conceptId, name));
     myMetaInfoProvider.setConceptName(conceptId, name);
@@ -157,18 +158,18 @@ class IdInfoReadHelper {
   }
 
   public boolean isInterface(@NotNull SConcept concept) {
-    return ConceptKind.INTERFACE == myInfoCollector.find(concept).getKind();
+    return ConceptKind.INTERFACE == myMetaRegistry.find(concept).getKind();
   }
 
   public boolean isImplementation(@NotNull SConcept concept) {
-    return myInfoCollector.find(concept).isImplementation();
+    return myMetaRegistry.find(concept).isImplementation();
   }
   public boolean isImplementationWithStub(@NotNull SConcept concept) {
-    return myInfoCollector.find(concept).isImplementationWithStub();
+    return myMetaRegistry.find(concept).isImplementationWithStub();
   }
   @Deprecated
   public boolean isImplementationWithStab(@NotNull SConcept concept) {
-    return myInfoCollector.find(concept).isImplementationWithStub();
+    return myMetaRegistry.find(concept).isImplementationWithStub();
   }
 
   /**
@@ -176,7 +177,7 @@ class IdInfoReadHelper {
    */
   @NotNull
   public SConcept getStubConcept(@NotNull SConcept original) {
-    final ConceptInfo ci = myInfoCollector.find(original);
+    final ConceptInfo ci = myMetaRegistry.find(original);
     assert ci.getKind() == ConceptKind.IMPLEMENTATION_WITH_STUB;
     final SConceptId stub = ci.getStubCounterpart();
     assert stub != null;

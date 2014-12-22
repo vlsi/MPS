@@ -24,6 +24,12 @@ import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.persistence.MetaModelInfoProvider.BaseMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
+import jetbrains.mps.persistence.registry.AggregationLinkInfo;
+import jetbrains.mps.persistence.registry.AssociationLinkInfo;
+import jetbrains.mps.persistence.registry.ConceptInfo;
+import jetbrains.mps.persistence.registry.IdInfoRegistry;
+import jetbrains.mps.persistence.registry.LangInfo;
+import jetbrains.mps.persistence.registry.PropertyInfo;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
@@ -38,11 +44,6 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.AggregationLinkInfo;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.AssociationLinkInfo;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.LangInfo;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.PropertyInfo;
 import jetbrains.mps.smodel.persistence.def.v9.ModelPersistence9;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
@@ -144,7 +145,7 @@ public final class BinaryPersistence {
 
   public static Map<String, String> getDigestMap(jetbrains.mps.smodel.SModel model) {
     Map<String, String> result = new LinkedHashMap<String, String>();
-    IdInfoCollector meta = null;
+    IdInfoRegistry meta = null;
     DigestBuilderOutputStream os = ModelDigestUtil.createDigestBuilderOutputStream();
     try {
       BinaryPersistence bp = new BinaryPersistence(new RegularMetaModelInfo(), model);
@@ -259,7 +260,7 @@ public final class BinaryPersistence {
       mmiProvider = new RegularMetaModelInfo();
     }
     BinaryPersistence bp = new BinaryPersistence(mmiProvider, model);
-    IdInfoCollector meta = bp.saveModelProperties(os);
+    IdInfoRegistry meta = bp.saveModelProperties(os);
 
     Collection<SNode> roots = IterableUtil.asCollection(model.getRootNodes());
     new NodesWriter(model.getReference(), os, meta).writeNodes(roots);
@@ -285,7 +286,7 @@ public final class BinaryPersistence {
     return readHelper;
   }
 
-  private IdInfoCollector saveModelProperties(ModelOutputStream os) throws IOException {
+  private IdInfoRegistry saveModelProperties(ModelOutputStream os) throws IOException {
     // header
     os.writeInt(HEADER_START);
     os.writeInt(STREAM_ID);
@@ -305,7 +306,7 @@ public final class BinaryPersistence {
     }
     os.writeInt(HEADER_END);
 
-    final IdInfoCollector rv = saveRegistry(os);
+    final IdInfoRegistry rv = saveRegistry(os);
 
     //languages
     saveUsedLanguages(os);
@@ -320,10 +321,10 @@ public final class BinaryPersistence {
     return rv;
   }
 
-  private IdInfoCollector saveRegistry(ModelOutputStream os) throws IOException {
+  private IdInfoRegistry saveRegistry(ModelOutputStream os) throws IOException {
     os.writeInt(REGISTRY_START);
-    IdInfoCollector metaInfo = new IdInfoCollector();
-    metaInfo.fill(myModelData.getRootNodes(), myMetaInfoProvider);
+    IdInfoRegistry metaInfo = new IdInfoRegistry();
+    new IdInfoCollector(metaInfo, myMetaInfoProvider).fill(myModelData.getRootNodes());
     List<LangInfo> languagesInUse = metaInfo.getLanguagesInUse();
     os.writeShort(languagesInUse.size());
     // We use position of an element during persistence as its index, thus don't need to

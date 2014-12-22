@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.persistence.binary;
 
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.PropertyInfo;
+import jetbrains.mps.persistence.registry.ConceptInfo;
+import jetbrains.mps.persistence.registry.IdInfoRegistry;
+import jetbrains.mps.persistence.registry.PropertyInfo;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -32,9 +32,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public final class NodesWriter extends BareNodeWriter {
-  private final IdInfoCollector myInfo;
+  private final IdInfoRegistry myInfo;
 
-  public NodesWriter(@NotNull SModelReference modelReference, @NotNull ModelOutputStream os, @NotNull IdInfoCollector idInfo) {
+  public NodesWriter(@NotNull SModelReference modelReference, @NotNull ModelOutputStream os, @NotNull IdInfoRegistry idInfo) {
     super(modelReference, os);
     myInfo = idInfo;
   }
