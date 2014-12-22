@@ -476,7 +476,7 @@
     <mkdir dir="${mps_home}/workbench/mps-workbench/source" />
     <mkdir dir="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-workbench" />
-    <javac2 destdir="${build.tmp}/java/out/mps-workbench" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/mps-workbench" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/workbench/mps-workbench/source" />
