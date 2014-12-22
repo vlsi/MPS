@@ -172,18 +172,23 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             String[] choises = new String[]{"Clean sources and migrate", "Migrate", "Postpone"};
-            int result = Messages.showChooseDialog(ideaProject, "Some of the modules in project require migration.\n" + "It is advised to clean generated files before you start the migration.\n" + "Would you like to reload project and start the migration immediately?", "Migration required", null, choises, choises[0]);
+            final int result = Messages.showChooseDialog(ideaProject, "Some of the modules in project require migration.\n" + "It is advised to clean generated files before you start the migration.\n" + "Would you like to reload project and start the migration immediately?", "Migration required", null, choises, choises[0]);
             if (result == 2) {
               return;
             }
-            if (result == 0) {
-              removeGenSources();
-            }
 
-            // clean genclasses 
-            removeClassesGen();
-            // invalidate FS caches (see InvalidateCachesAction) 
-            FSRecords.invalidateCaches();
+            ApplicationManager.getApplication().runWriteAction(new Runnable() {
+              public void run() {
+                if (result == 0) {
+                  removeGenSources();
+                }
+
+                // clean genclasses 
+                removeClassesGen();
+                // invalidate FS caches (see InvalidateCachesAction) 
+                FSRecords.invalidateCaches();
+              }
+            });
             // set flag to execute migration after startup 
             myState.migrationRequired = true;
             // reload project and start migration assist 

@@ -1265,43 +1265,59 @@
                                 </node>
                               </node>
                             </node>
-                            <node concept="3clFbJ" id="1AzqgyAiLtw" role="3cqZAp">
-                              <node concept="3clFbS" id="1AzqgyAiLtz" role="3clFbx">
-                                <node concept="3clFbF" id="1AzqgyAjOWJ" role="3cqZAp">
-                                  <node concept="1rXfSq" id="1AzqgyAjOWH" role="3clFbG">
-                                    <ref role="37wK5l" node="1AzqgyAjYWy" resolve="removeGenSources" />
+                            <node concept="3clFbH" id="1G0sYk64yg1" role="3cqZAp" />
+                            <node concept="3clFbF" id="1G0sYk64CWt" role="3cqZAp">
+                              <node concept="2OqwBi" id="1G0sYk64Erx" role="3clFbG">
+                                <node concept="2YIFZM" id="1G0sYk64E83" role="2Oq$k0">
+                                  <ref role="37wK5l" to="yla8:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                                  <ref role="1Pybhc" to="yla8:~ApplicationManager" resolve="ApplicationManager" />
+                                </node>
+                                <node concept="liA8E" id="1G0sYk64EVS" role="2OqNvi">
+                                  <ref role="37wK5l" to="yla8:~Application.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+                                  <node concept="1bVj0M" id="1G0sYk64FeI" role="37wK5m">
+                                    <node concept="3clFbS" id="1G0sYk64FeJ" role="1bW5cS">
+                                      <node concept="3clFbJ" id="1AzqgyAiLtw" role="3cqZAp">
+                                        <node concept="3clFbS" id="1AzqgyAiLtz" role="3clFbx">
+                                          <node concept="3clFbF" id="1AzqgyAjOWJ" role="3cqZAp">
+                                            <node concept="1rXfSq" id="1AzqgyAjOWH" role="3clFbG">
+                                              <ref role="37wK5l" node="1AzqgyAjYWy" resolve="removeGenSources" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="3clFbC" id="1AzqgyAiMpr" role="3clFbw">
+                                          <node concept="3cmrfG" id="1AzqgyAiMBK" role="3uHU7w">
+                                            <property role="3cmrfH" value="0" />
+                                          </node>
+                                          <node concept="37vLTw" id="1AzqgyAiLIb" role="3uHU7B">
+                                            <ref role="3cqZAo" node="1AzqgyAiINa" resolve="result" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="3clFbH" id="1AzqgyAiOQW" role="3cqZAp" />
+                                      <node concept="3SKdUt" id="1AzqgyAj4PV" role="3cqZAp">
+                                        <node concept="3SKdUq" id="1AzqgyAj54o" role="3SKWNk">
+                                          <property role="3SKdUp" value="clean genclasses" />
+                                        </node>
+                                      </node>
+                                      <node concept="3clFbF" id="1AzqgyAkfsh" role="3cqZAp">
+                                        <node concept="1rXfSq" id="1AzqgyAkfsf" role="3clFbG">
+                                          <ref role="37wK5l" node="1AzqgyAk4Vd" resolve="removeClassesGen" />
+                                        </node>
+                                      </node>
+                                      <node concept="3SKdUt" id="1AzqgyAfnNl" role="3cqZAp">
+                                        <node concept="3SKdUq" id="1AzqgyAfnOX" role="3SKWNk">
+                                          <property role="3SKdUp" value="invalidate FS caches (see InvalidateCachesAction)" />
+                                        </node>
+                                      </node>
+                                      <node concept="3clFbF" id="1AzqgyAiQ$n" role="3cqZAp">
+                                        <node concept="2YIFZM" id="1AzqgyAiZhC" role="3clFbG">
+                                          <ref role="37wK5l" to="a093:~FSRecords.invalidateCaches():void" resolve="invalidateCaches" />
+                                          <ref role="1Pybhc" to="a093:~FSRecords" resolve="FSRecords" />
+                                        </node>
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
-                              </node>
-                              <node concept="3clFbC" id="1AzqgyAiMpr" role="3clFbw">
-                                <node concept="3cmrfG" id="1AzqgyAiMBK" role="3uHU7w">
-                                  <property role="3cmrfH" value="0" />
-                                </node>
-                                <node concept="37vLTw" id="1AzqgyAiLIb" role="3uHU7B">
-                                  <ref role="3cqZAo" node="1AzqgyAiINa" resolve="result" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3clFbH" id="1AzqgyAiOQW" role="3cqZAp" />
-                            <node concept="3SKdUt" id="1AzqgyAj4PV" role="3cqZAp">
-                              <node concept="3SKdUq" id="1AzqgyAj54o" role="3SKWNk">
-                                <property role="3SKdUp" value="clean genclasses" />
-                              </node>
-                            </node>
-                            <node concept="3clFbF" id="1AzqgyAkfsh" role="3cqZAp">
-                              <node concept="1rXfSq" id="1AzqgyAkfsf" role="3clFbG">
-                                <ref role="37wK5l" node="1AzqgyAk4Vd" resolve="removeClassesGen" />
-                              </node>
-                            </node>
-                            <node concept="3SKdUt" id="1AzqgyAfnNl" role="3cqZAp">
-                              <node concept="3SKdUq" id="1AzqgyAfnOX" role="3SKWNk">
-                                <property role="3SKdUp" value="invalidate FS caches (see InvalidateCachesAction)" />
-                              </node>
-                            </node>
-                            <node concept="3clFbF" id="1AzqgyAiQ$n" role="3cqZAp">
-                              <node concept="2YIFZM" id="1AzqgyAiZhC" role="3clFbG">
-                                <ref role="37wK5l" to="a093:~FSRecords.invalidateCaches():void" resolve="invalidateCaches" />
-                                <ref role="1Pybhc" to="a093:~FSRecords" resolve="FSRecords" />
                               </node>
                             </node>
                             <node concept="3SKdUt" id="3gptLqNHhOV" role="3cqZAp">
@@ -2523,8 +2539,10 @@
     <node concept="3HP615" id="5SsFeroaabo" role="jymVt">
       <property role="TrG5h" value="MigrationState" />
       <property role="2bfB8j" value="true" />
+      <node concept="2tJIrI" id="75DJ9xiF1Hr" role="jymVt" />
       <node concept="3Tm1VV" id="5SsFeroaabq" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="75DJ9xiF38f" role="jymVt" />
     <node concept="3HP615" id="5SsFeroaabr" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="Step" />
@@ -2553,12 +2571,14 @@
         <node concept="10P_77" id="5SsFeroaabA" role="3clF45" />
       </node>
     </node>
+    <node concept="2tJIrI" id="75DJ9xiF44S" role="jymVt" />
     <node concept="312cEu" id="3Chm5EXJu3H" role="jymVt">
       <property role="TrG5h" value="Finished" />
       <node concept="3Tm1VV" id="3Chm5EXJu3I" role="1B3o_S" />
       <node concept="3uibUv" id="3Chm5EXJuaT" role="EKbjA">
         <ref role="3uigEE" node="5SsFeroaabo" resolve="MigrationManager.MigrationState" />
       </node>
+      <node concept="2tJIrI" id="75DJ9xiF51y" role="jymVt" />
     </node>
   </node>
   <node concept="312cEu" id="5SsFeroaaez">
