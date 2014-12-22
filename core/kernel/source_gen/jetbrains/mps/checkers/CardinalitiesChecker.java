@@ -29,7 +29,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
       if (SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1") || SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1..n", "0..1")) {
         if (SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
           if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
-            // TODO this is a hack for constructor declarations 
+            // TODO this is a hack for constructor declarations
             if ("returnType".equals(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"))) && "ConstructorDeclaration".equals(SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
               continue;
             }

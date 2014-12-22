@@ -40,12 +40,7 @@ public class QueriesUtil {
   public static SNode replaceNodeMenu_createNewNode(SNode classifier, SNode parameterObject, SNode oldNode) {
     SModel model = SNodeOperations.getModel(classifier);
     if (SNodeOperations.isInstanceOf(parameterObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
-      SNode newNode;
-      if (SNodeOperations.isInstanceOf(oldNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"))) {
-        newNode = SNodeOperations.cast(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SNodeOperations.getConcept(oldNode)), null), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
-      } else {
-        newNode = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")), null);
-      }
+      SNode newNode = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")), null);
       return QueriesUtil.fillStaticMethodCall(newNode, parameterObject, classifier, oldNode);
     }
     if (SNodeOperations.isInstanceOf(parameterObject, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {

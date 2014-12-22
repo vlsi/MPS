@@ -17,6 +17,7 @@ import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
 
 public class DefaultMakeTask extends Task.Modal {
@@ -44,7 +45,12 @@ public class DefaultMakeTask extends Task.Modal {
           if (needClean) {
             maker.clean(modules, monitor.subTask(1));
           }
-          mpsCompilationResult[0] = maker.make(modules, monitor.subTask(7));
+          if (myProject != null) {
+            mpsCompilationResult[0] = maker.make(modules, monitor.subTask(7), JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myProject));
+          } else {
+            mpsCompilationResult[0] = maker.make(modules, monitor.subTask(7));
+          }
+
         }
       });
 

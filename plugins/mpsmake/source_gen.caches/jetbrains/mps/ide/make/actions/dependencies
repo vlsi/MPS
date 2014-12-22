@@ -486,6 +486,7 @@
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
+    <classNode dependClassName="jetbrains.mps.compiler.JavaCompilerOptionsComponent" />
     <classNode dependClassName="jetbrains.mps.ide.messages.MessagesViewTool" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />

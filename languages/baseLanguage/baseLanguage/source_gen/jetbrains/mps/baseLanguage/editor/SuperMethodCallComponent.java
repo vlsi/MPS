@@ -15,7 +15,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -55,9 +54,6 @@ public class SuperMethodCallComponent implements ConceptEditorComponent {
   private EditorCell createConstant_pxtadd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "super");
     editorCell.setCellId("Constant_pxtadd_a0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -65,14 +61,13 @@ public class SuperMethodCallComponent implements ConceptEditorComponent {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_pxtadd_b0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createComponent_pxtadd_c0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
@@ -96,8 +91,7 @@ public class SuperMethodCallComponent implements ConceptEditorComponent {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -120,15 +114,11 @@ public class SuperMethodCallComponent implements ConceptEditorComponent {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("SMCC_property_name");
-      Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_MPSMethodCall(style, editorCell);
-      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
         return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
@@ -137,9 +127,6 @@ public class SuperMethodCallComponent implements ConceptEditorComponent {
   private EditorCell createConstant_pxtadd_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_pxtadd_e0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -211,9 +198,6 @@ public class SuperMethodCallComponent implements ConceptEditorComponent {
   private EditorCell createConstant_pxtadd_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_pxtadd_g0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    editorCell.getStyle().putAll(style);
     if (renderingCondition_pxtadd_a6a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
