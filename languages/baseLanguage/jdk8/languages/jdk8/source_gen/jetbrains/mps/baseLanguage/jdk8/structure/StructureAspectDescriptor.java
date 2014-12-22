@@ -12,25 +12,22 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptStaticInterfaceMethodCall = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.jdk8.structure.StaticInterfaceMethodCall", MetaIdFactory.conceptId(0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x33d1c89f047e8c0cL)).super_("jetbrains.mps.baseLanguage.structure.StaticMethodCall").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L)).parents("jetbrains.mps.baseLanguage.structure.StaticMethodCall").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L)).alias(".<static interface method>", "").create();
   /*package*/ final ConceptDescriptor myConceptSuperInterfaceMethodCall = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.jdk8.structure.SuperInterfaceMethodCall", MetaIdFactory.conceptId(0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x17dbb10eeb72e5d9L)).super_("jetbrains.mps.baseLanguage.structure.SuperMethodCall").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9d78b55aaL)).parents("jetbrains.mps.baseLanguage.structure.SuperMethodCall").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9d78b55aaL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1719162360409958622L, "classifier", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L), false)).references("classifier").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptStaticInterfaceMethodCall, myConceptSuperInterfaceMethodCall);
+    return Arrays.asList(myConceptSuperInterfaceMethodCall);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
-        return myConceptStaticInterfaceMethodCall;
-      case 1:
         return myConceptSuperInterfaceMethodCall;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.baseLanguage.jdk8.structure.StaticInterfaceMethodCall", "jetbrains.mps.baseLanguage.jdk8.structure.SuperInterfaceMethodCall"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.baseLanguage.jdk8.structure.SuperInterfaceMethodCall"};
 }

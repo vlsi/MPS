@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:c97f7798-14e8-47eb-b3f8-b032ba7575c4(jetbrains.mps.baseLanguage.jdk8.structure)">
+<model ref="r:c97f7798-14e8-47eb-b3f8-b032ba7575c4(jetbrains.mps.baseLanguage.jdk8.structure)" concise="true">
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
-        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
@@ -21,7 +22,6 @@
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
-        <reference id="1071599698500" name="specializedLink" index="20ksaX" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -39,18 +39,6 @@
       <property role="20kJfa" value="classifier" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:g7pOWCK" resolve="Classifier" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="3fhM9W4vCKc">
-    <property role="TrG5h" value="StaticInterfaceMethodCall" />
-    <property role="34LRSv" value=".&lt;static interface method&gt;" />
-    <ref role="1TJDcQ" to="tpee:fIYIFW9" resolve="StaticMethodCall" />
-    <node concept="1TJgyj" id="3fhM9W4vGoF" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="interface" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:g7HP654" resolve="Interface" />
-      <ref role="20ksaX" to="tpee:gDPybl6" />
     </node>
   </node>
 </model>
