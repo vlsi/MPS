@@ -4,10 +4,9 @@ package jetbrains.mps.build.ant.generation;
 
 import jetbrains.mps.build.ant.MpsLoadTask;
 import jetbrains.mps.tool.common.GeneratorProperties;
+import jetbrains.mps.tool.common.JavaCompilerProperties;
 import jetbrains.mps.build.ant.LibraryDataType;
 import java.io.File;
-
-import jetbrains.mps.tool.common.JavaCompilerProperties;
 import jetbrains.mps.tool.common.ScriptProperties;
 import java.util.Set;
 import java.util.List;
@@ -16,14 +15,15 @@ import org.apache.tools.ant.BuildException;
 import java.util.LinkedHashSet;
 
 public class GenerateTask extends MpsLoadTask {
-  public static final String DEFAULT_TARGET_JAVA_VERSION = "1.6";
   private final GeneratorProperties myGenProps;
   private final JavaCompilerProperties myJavaCompilerProperties;
+  public static final String DEFAULT_TARGET_JAVA_VERSION = "1.6";
   public GenerateTask() {
     myGenProps = new GeneratorProperties(myWhatToDo);
     myGenProps.setStrictMode(true).setParallelMode(false).setInplaceTransform(false).setHideWarnings(false);
     myJavaCompilerProperties = new JavaCompilerProperties(myWhatToDo);
     myJavaCompilerProperties.setTargetJavaVersion(DEFAULT_TARGET_JAVA_VERSION);
+
   }
   @Override
   protected String getWorkerClass() {
@@ -53,10 +53,6 @@ public class GenerateTask extends MpsLoadTask {
   public void setHideWarnings(boolean hideWarnings) {
     myGenProps.setHideWarnings(hideWarnings);
   }
-
-  public void setTargetJavaVersion(String targetJavaVersion) {
-    myJavaCompilerProperties.setTargetJavaVersion(targetJavaVersion);
-  }
   public void addConfiguredPlugin(Plugin plugin) {
     String property = myWhatToDo.getProperty(ScriptProperties.PLUGIN_PATHS);
     if ((property == null || property.length() == 0)) {
@@ -65,6 +61,9 @@ public class GenerateTask extends MpsLoadTask {
       property += File.pathSeparator + plugin.getPath().getAbsolutePath();
     }
     myWhatToDo.putProperty(ScriptProperties.PLUGIN_PATHS, property);
+  }
+  public void setTargetJavaVersion(String targetJavaVersion) {
+    myJavaCompilerProperties.setTargetJavaVersion(targetJavaVersion);
   }
 
   @Override

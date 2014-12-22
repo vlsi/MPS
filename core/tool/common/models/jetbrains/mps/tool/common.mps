@@ -17,7 +17,7 @@
     <import index="g5ty" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom.input(MPS.Core/org.jdom.input@java_stub)" />
     <import index="fmpa" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.xml.sax(JDK/org.xml.sax@java_stub)" />
     <import index="jhs5" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom.output(MPS.Core/org.jdom.output@java_stub)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -108,6 +108,7 @@
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
+        <property id="8606350594693632173" name="isTransient" index="eg7rD" />
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
@@ -9010,6 +9011,116 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="312cEu" id="3pzB6wMWmOx">
+    <property role="TrG5h" value="JavaCompilerProperties" />
+    <node concept="Wx3nA" id="3pzB6wMWswf" role="jymVt">
+      <property role="TrG5h" value="TARGET_JAVA_VERSION" />
+      <property role="3TUv4t" value="true" />
+      <node concept="17QB3L" id="3pzB6wMWtuV" role="1tU5fm" />
+      <node concept="Xl_RD" id="3pzB6wMWswh" role="33vP2m">
+        <property role="Xl_RC" value="target" />
+      </node>
+      <node concept="3Tm6S6" id="3pzB6wMWswi" role="1B3o_S" />
+    </node>
+    <node concept="312cEg" id="3pzB6wMWswj" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myScript" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3uibUv" id="3pzB6wMWswl" role="1tU5fm">
+        <ref role="3uigEE" node="KL8Aql8enO" resolve="Script" />
+      </node>
+      <node concept="3Tm6S6" id="3pzB6wMWswm" role="1B3o_S" />
+    </node>
+    <node concept="3clFbW" id="3pzB6wMWswn" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3cqZAl" id="3pzB6wMWswo" role="3clF45" />
+      <node concept="37vLTG" id="3pzB6wMWswp" role="3clF46">
+        <property role="TrG5h" value="script" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="3pzB6wMWswq" role="1tU5fm">
+          <ref role="3uigEE" node="KL8Aql8enO" resolve="Script" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3pzB6wMWswr" role="3clF47">
+        <node concept="3clFbF" id="3pzB6wMWsws" role="3cqZAp">
+          <node concept="37vLTI" id="3pzB6wMWswt" role="3clFbG">
+            <node concept="37vLTw" id="3pzB6wMWswu" role="37vLTJ">
+              <ref role="3cqZAo" node="3pzB6wMWswj" resolve="myScript" />
+            </node>
+            <node concept="37vLTw" id="3pzB6wMWswv" role="37vLTx">
+              <ref role="3cqZAo" node="3pzB6wMWswp" resolve="script" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3pzB6wMWsww" role="1B3o_S" />
+    </node>
+    <node concept="3clFb_" id="3pzB6wMWswx" role="jymVt">
+      <property role="TrG5h" value="setTargetJavaVersion" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="37vLTG" id="3pzB6wMWswy" role="3clF46">
+        <property role="TrG5h" value="targetJavaVersion" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="3pzB6wMWswz" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3pzB6wMWsw$" role="3clF47">
+        <node concept="3clFbF" id="3pzB6wMWsw_" role="3cqZAp">
+          <node concept="2OqwBi" id="3pzB6wMWswR" role="3clFbG">
+            <node concept="37vLTw" id="3pzB6wMWswQ" role="2Oq$k0">
+              <ref role="3cqZAo" node="3pzB6wMWswj" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="3pzB6wMWswS" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBe" resolve="putProperty" />
+              <node concept="37vLTw" id="3pzB6wMWswB" role="37wK5m">
+                <ref role="3cqZAo" node="3pzB6wMWswf" resolve="TARGET_JAVA_VERSION" />
+              </node>
+              <node concept="37vLTw" id="3pzB6wMWswC" role="37wK5m">
+                <ref role="3cqZAo" node="3pzB6wMWswy" resolve="targetJavaVersion" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="3pzB6wMWswD" role="3cqZAp">
+          <node concept="Xjq3P" id="3pzB6wMWswE" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3pzB6wMWswF" role="1B3o_S" />
+      <node concept="3uibUv" id="3pzB6wMWswG" role="3clF45">
+        <ref role="3uigEE" node="3pzB6wMWmOx" resolve="JavaCompilerProperties" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="3pzB6wMWswH" role="jymVt">
+      <property role="TrG5h" value="getTargetJavaVersion" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="3pzB6wMWswI" role="3clF47">
+        <node concept="3cpWs6" id="3pzB6wMWswJ" role="3cqZAp">
+          <node concept="2OqwBi" id="3pzB6wMWswW" role="3cqZAk">
+            <node concept="37vLTw" id="3pzB6wMWswV" role="2Oq$k0">
+              <ref role="3cqZAo" node="3pzB6wMWswj" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="3pzB6wMWswX" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBs" resolve="getProperty" />
+              <node concept="37vLTw" id="3pzB6wMWswL" role="37wK5m">
+                <ref role="3cqZAo" node="3pzB6wMWswf" resolve="TARGET_JAVA_VERSION" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3pzB6wMWswM" role="1B3o_S" />
+      <node concept="3uibUv" id="3pzB6wMWswN" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3pzB6wMWsw6" role="jymVt" />
+    <node concept="3Tm1VV" id="3pzB6wMWmOy" role="1B3o_S" />
   </node>
 </model>
 

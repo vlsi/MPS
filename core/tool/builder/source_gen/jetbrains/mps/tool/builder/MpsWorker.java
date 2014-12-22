@@ -19,9 +19,12 @@ import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.tool.common.JavaCompilerProperties;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.compiler.JavaCompilerOptions;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Set;
 import jetbrains.mps.project.MPSExtentions;
@@ -115,7 +118,8 @@ public abstract class MpsWorker {
     MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
         ModuleMaker maker = new ModuleMaker();
-        return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
+        final JavaCompilerProperties properties = new JavaCompilerProperties(myWhatToDo);
+        return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor(), new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(properties.getTargetJavaVersion())));
       }
     });
     reload(mpsCompilationResult);

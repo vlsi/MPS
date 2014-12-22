@@ -42,6 +42,7 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -57,7 +58,10 @@
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
-      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
+      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
+        <property id="8606350594693632173" name="isTransient" index="eg7rD" />
+        <property id="1240249534625" name="isVolatile" index="34CwA1" />
+      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
@@ -374,6 +378,27 @@
         <ref role="3uigEE" to="asz6:2XB5puvk9rk" resolve="GeneratorProperties" />
       </node>
     </node>
+    <node concept="312cEg" id="3pzB6wMWzXv" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myJavaCompilerProperties" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="3pzB6wMWzXx" role="1tU5fm">
+        <ref role="3uigEE" to="asz6:3pzB6wMWmOx" resolve="JavaCompilerProperties" />
+      </node>
+      <node concept="3Tm6S6" id="3pzB6wMWzXy" role="1B3o_S" />
+    </node>
+    <node concept="Wx3nA" id="3pzB6wMW_qC" role="jymVt">
+      <property role="TrG5h" value="DEFAULT_TARGET_JAVA_VERSION" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="3pzB6wMW_qD" role="1tU5fm">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="Xl_RD" id="3pzB6wMW_qE" role="33vP2m">
+        <property role="Xl_RC" value="1.6" />
+      </node>
+      <node concept="3Tm1VV" id="3pzB6wMW_qF" role="1B3o_S" />
+    </node>
     <node concept="3clFbW" id="4VsuddjqnLq" role="jymVt">
       <node concept="3cqZAl" id="4VsuddjqnLr" role="3clF45" />
       <node concept="3clFbS" id="4VsuddjqnLs" role="3clF47">
@@ -427,6 +452,35 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="3pzB6wMWANY" role="3cqZAp">
+          <node concept="37vLTI" id="3pzB6wMWANZ" role="3clFbG">
+            <node concept="37vLTw" id="3pzB6wMWAO0" role="37vLTJ">
+              <ref role="3cqZAo" node="3pzB6wMWzXv" resolve="myJavaCompilerProperties" />
+            </node>
+            <node concept="2ShNRf" id="3pzB6wMWAO6" role="37vLTx">
+              <node concept="1pGfFk" id="3pzB6wMWAO7" role="2ShVmc">
+                <ref role="37wK5l" to="asz6:3pzB6wMWswn" resolve="JavaCompilerProperties" />
+                <node concept="37vLTw" id="3pzB6wMWAO2" role="37wK5m">
+                  <ref role="3cqZAo" to="644x:3ufQioQQtje" resolve="myWhatToDo" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3pzB6wMWAO3" role="3cqZAp">
+          <node concept="2OqwBi" id="3pzB6wMWAOa" role="3clFbG">
+            <node concept="37vLTw" id="3pzB6wMWAO9" role="2Oq$k0">
+              <ref role="3cqZAo" node="3pzB6wMWzXv" resolve="myJavaCompilerProperties" />
+            </node>
+            <node concept="liA8E" id="3pzB6wMWAOb" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:3pzB6wMWswx" resolve="setTargetJavaVersion" />
+              <node concept="37vLTw" id="3pzB6wMWAO5" role="37wK5m">
+                <ref role="3cqZAo" node="3pzB6wMW_qC" resolve="DEFAULT_TARGET_JAVA_VERSION" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3pzB6wMWAJM" role="3cqZAp" />
       </node>
       <node concept="3Tm1VV" id="4VsuddjqnLt" role="1B3o_S" />
     </node>
@@ -776,6 +830,35 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3clFb_" id="3pzB6wMWAYn" role="jymVt">
+      <property role="TrG5h" value="setTargetJavaVersion" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="37vLTG" id="3pzB6wMWAYo" role="3clF46">
+        <property role="TrG5h" value="targetJavaVersion" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="3pzB6wMWAYp" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3pzB6wMWAYq" role="3clF47">
+        <node concept="3clFbF" id="3pzB6wMWAYr" role="3cqZAp">
+          <node concept="2OqwBi" id="3pzB6wMWAYy" role="3clFbG">
+            <node concept="37vLTw" id="3pzB6wMWAYx" role="2Oq$k0">
+              <ref role="3cqZAo" node="3pzB6wMWzXv" resolve="myJavaCompilerProperties" />
+            </node>
+            <node concept="liA8E" id="3pzB6wMWAYz" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:3pzB6wMWswx" resolve="setTargetJavaVersion" />
+              <node concept="37vLTw" id="3pzB6wMWAYt" role="37wK5m">
+                <ref role="3cqZAo" node="3pzB6wMWAYo" resolve="targetJavaVersion" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3pzB6wMWAYu" role="1B3o_S" />
+      <node concept="3cqZAl" id="3pzB6wMWAYv" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="4Vsuddjx8oG" role="jymVt" />
     <node concept="3clFb_" id="4Vsuddjh5le" role="jymVt">

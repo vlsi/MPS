@@ -32,6 +32,10 @@ import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Set;
 import jetbrains.mps.tool.builder.unittest.UnitTestListener;
+import jetbrains.mps.tool.common.JavaCompilerProperties;
+import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
+import jetbrains.mps.compiler.JavaCompilerOptions;
+import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.MakeSession;
@@ -194,6 +198,9 @@ public class GenTestWorker extends GeneratorWorker {
         }
         myReporter.finishRun();
         myReporter.startRun(GenTestWorker.this.myWhatToDo.getProperty("ant.project.name"));
+        final JavaCompilerProperties properties = new JavaCompilerProperties(myWhatToDo);
+        new JavaCompileFacetInitializer().setJavaCompileOptions(new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(properties.getTargetJavaVersion()))).populate(ppool);
+
       }
     };
     IOperationContext context = new ProjectOperationContext(project);
@@ -223,6 +230,7 @@ public class GenTestWorker extends GeneratorWorker {
         LibraryInitializer.getInstance().update();
       }
     });
+    final JavaCompilerProperties properties = new JavaCompilerProperties(myWhatToDo);
     ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
         return new ModuleMaker().make(go.getModules(), new EmptyProgressMonitor() {
@@ -234,7 +242,7 @@ public class GenTestWorker extends GeneratorWorker {
           public void start(String taskName, int work) {
             // silently 
           }
-        });
+        }, new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(properties.getTargetJavaVersion())));
       }
     });
     // load classes 

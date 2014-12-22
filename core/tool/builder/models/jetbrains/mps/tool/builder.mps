@@ -38,6 +38,7 @@
     <import index="ajxo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(org.apache.log4j@java_stub)" />
     <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" />
     <import index="1p1s" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" />
+    <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -867,13 +868,30 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="3cpWs8" id="3pzB6wMXmr7" role="3cqZAp">
+                      <node concept="3cpWsn" id="3pzB6wMXmr6" role="3cpWs9">
+                        <property role="3TUv4t" value="true" />
+                        <property role="TrG5h" value="properties" />
+                        <node concept="3uibUv" id="3pzB6wMXmr8" role="1tU5fm">
+                          <ref role="3uigEE" to="asz6:3pzB6wMWmOx" resolve="JavaCompilerProperties" />
+                        </node>
+                        <node concept="2ShNRf" id="3pzB6wMXmrb" role="33vP2m">
+                          <node concept="1pGfFk" id="3pzB6wMXmrc" role="2ShVmc">
+                            <ref role="37wK5l" to="asz6:3pzB6wMWswn" resolve="JavaCompilerProperties" />
+                            <node concept="37vLTw" id="3pzB6wMXmra" role="37wK5m">
+                              <ref role="3cqZAo" node="KL8Aqlj5lG" resolve="myWhatToDo" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3clFbF" id="KL8Aqlj5p0" role="3cqZAp">
                       <node concept="2OqwBi" id="KL8Aqlj5p1" role="3clFbG">
                         <node concept="37vLTw" id="3GM_nagTBRQ" role="2Oq$k0">
                           <ref role="3cqZAo" node="KL8Aqlj5oW" resolve="maker" />
                         </node>
                         <node concept="liA8E" id="KL8Aqlj5p3" role="2OqNvi">
-                          <ref role="37wK5l" to="hb0s:~ModuleMaker.make(java.util.Collection,org.jetbrains.mps.openapi.util.ProgressMonitor):jetbrains.mps.make.MPSCompilationResult" resolve="make" />
+                          <ref role="37wK5l" to="hb0s:~ModuleMaker.make(java.util.Collection,org.jetbrains.mps.openapi.util.ProgressMonitor,jetbrains.mps.compiler.JavaCompilerOptions):jetbrains.mps.make.MPSCompilationResult" resolve="make" />
                           <node concept="2YIFZM" id="4r0sY_pQ7iI" role="37wK5m">
                             <ref role="37wK5l" to="msyo:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
                             <ref role="1Pybhc" to="msyo:~IterableUtil" resolve="IterableUtil" />
@@ -890,6 +908,23 @@
                           <node concept="2ShNRf" id="KL8Aqlj5p7" role="37wK5m">
                             <node concept="1pGfFk" id="KL8Aqlj5p8" role="2ShVmc">
                               <ref role="37wK5l" to="ff4b:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
+                            </node>
+                          </node>
+                          <node concept="2ShNRf" id="3pzB6wMXnHS" role="37wK5m">
+                            <node concept="1pGfFk" id="3pzB6wMXnHT" role="2ShVmc">
+                              <ref role="37wK5l" to="i119:~JavaCompilerOptions.&lt;init&gt;(jetbrains.mps.compiler.JavaCompilerOptionsComponent$JavaVersion)" resolve="JavaCompilerOptions" />
+                              <node concept="2YIFZM" id="3pzB6wMXnHU" role="37wK5m">
+                                <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent$JavaVersion.parse(java.lang.String):jetbrains.mps.compiler.JavaCompilerOptionsComponent$JavaVersion" resolve="parse" />
+                                <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
+                                <node concept="2OqwBi" id="3pzB6wMXnHV" role="37wK5m">
+                                  <node concept="37vLTw" id="3pzB6wMXnHW" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="3pzB6wMXmr6" resolve="properties" />
+                                  </node>
+                                  <node concept="liA8E" id="3pzB6wMXnHX" role="2OqNvi">
+                                    <ref role="37wK5l" to="asz6:3pzB6wMWswH" resolve="getTargetJavaVersion" />
+                                  </node>
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>

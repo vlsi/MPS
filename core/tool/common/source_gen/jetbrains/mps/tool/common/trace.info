@@ -137,6 +137,30 @@
       <unit id="3415722583340914388" at="6,0,65,0" name="jetbrains.mps.tool.common.GeneratorProperties" />
     </file>
   </root>
+  <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/3919148072087678241">
+    <file name="JavaCompilerProperties.java">
+      <node id="3919148072087701519" at="7,0,8,0" concept="14" trace="TARGET_JAVA_VERSION" />
+      <node id="3919148072087701523" at="8,0,9,0" concept="5" trace="myScript" />
+      <node id="3919148072087701532" at="9,48,10,22" concept="4" />
+      <node id="3919148072087701541" at="12,80,13,65" concept="4" />
+      <node id="3919148072087701545" at="13,65,14,16" concept="11" />
+      <node id="3919148072087701551" at="16,40,17,53" concept="11" />
+      <node id="3919148072087701527" at="9,0,12,0" concept="3" trace="JavaCompilerProperties#(Ljetbrains/mps/tool/common/Script;)V" />
+      <node id="3919148072087701549" at="16,0,19,0" concept="9" trace="getTargetJavaVersion#()Ljava/lang/String;" />
+      <node id="3919148072087701537" at="12,0,16,0" concept="9" trace="setTargetJavaVersion#(Ljava/lang/String;)Ljetbrains/mps/tool/common/JavaCompilerProperties;" />
+      <scope id="3919148072087701531" at="9,48,10,22" />
+      <scope id="3919148072087701550" at="16,40,17,53" />
+      <scope id="3919148072087701540" at="12,80,14,16" />
+      <scope id="3919148072087701527" at="9,0,12,0">
+        <var name="script" id="3919148072087701529" />
+      </scope>
+      <scope id="3919148072087701549" at="16,0,19,0" />
+      <scope id="3919148072087701537" at="12,0,16,0">
+        <var name="targetJavaVersion" id="3919148072087701538" />
+      </scope>
+      <unit id="3919148072087678241" at="6,0,21,0" name="jetbrains.mps.tool.common.JavaCompilerProperties" />
+    </file>
+  </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/7910428321252775322">
     <file name="TeamCityMessageFormat.java">
       <node id="7910428321252775325" at="10,0,11,0" concept="14" trace="LINES_SEPARATOR" />
