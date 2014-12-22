@@ -199,14 +199,14 @@ public class SNodeOperations {
     String modelName;
     try {
       if (node.getConcept().isSubConceptOf(jetbrains.mps.smodel.SNodeUtil.concept_LinkDeclaration)) {
-        String role = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.propertyName_LinkDeclaration_role);
+        String role = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.property_LinkDeclaration_role);
         if ((role != null && role.length() > 0)) {
           nameText = '\"' + role + '\"';
         } else {
           nameText = "<no ref>";
         }
       } else if (node.getConcept().isSubConceptOf(jetbrains.mps.smodel.SNodeUtil.concept_INamedConcept)) {
-        String name = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.propertyName_INamedConcept_name);
+        String name = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
         if ((name != null && name.length() > 0)) {
           nameText = '\"' + name + '\"';
         } else {
@@ -222,11 +222,11 @@ public class SNodeOperations {
     }
     return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + modelName;
   }
-  public static Set<String> getChildRoles(SNode n, boolean includeAttributeRoles) {
-    final Set<String> augend = new HashSet<String>();
+  public static Set<SContainmentLink> getChildRoles(SNode n, boolean includeAttributeRoles) {
+    final Set<SContainmentLink> augend = new HashSet<SContainmentLink>();
     for (SNode child : n.getChildren()) {
       if (includeAttributeRoles || !((AttributeOperations.isAttribute(child)))) {
-        augend.add(child.getRoleInParent());
+        augend.add(child.getContainmentLink());
       }
     }
     return augend;

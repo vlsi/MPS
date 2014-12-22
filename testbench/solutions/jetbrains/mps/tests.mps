@@ -68,6 +68,7 @@
     <import index="7fk5" ref="r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)" />
     <import index="cl80" ref="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" />
     <import index="s223" ref="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)" />
+    <import index="tw7x" ref="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -1566,6 +1567,21 @@
     </node>
     <node concept="lpD6D" id="2axhso1GoGU" role="lpD6w">
       <ref role="lpD7u" to="ryl9:O7qdvf4DFS" resolve="TypeName" />
+    </node>
+    <node concept="lpD6D" id="tOAaiuM9Ov" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:tOAaiuH$YQ" resolve="CutClassComment" />
+    </node>
+    <node concept="lpD6D" id="tOAaiuMaaM" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:tOAaiuHuLv" resolve="CutFieldComment" />
+    </node>
+    <node concept="lpD6D" id="tOAaiuMax8" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:tOAaiuxffT" resolve="CutMethodComment" />
+    </node>
+    <node concept="lpD6D" id="tOAaiuMaRy" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:tOAaiu_mA1" resolve="CutMethodWithComment" />
+    </node>
+    <node concept="lpD6D" id="tOAaiuMbe0" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:tOAaiuHuJl" resolve="CutMethodWithoutComment" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3cZ" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6saOdXS9EVO" resolve="EnterAfterElseIf" />
@@ -3642,6 +3658,15 @@
     <node concept="2R4zua" id="4$ezt8YR0Bz" role="2R4z3u">
       <property role="2R4zub" value="jetbrains.mps.build.stripping.tests" />
       <property role="2R4zu8" value="c9bc8834-ad52-4c80-83d0-64827cf13fae" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="1m15g63EbEG">
+    <node concept="2R4zua" id="1m15g63EbEH" role="2R4z3u">
+      <property role="2R4zub" value="testSubtypingTest" />
+      <property role="2R4zu8" value="b3170ec7-82d9-4e10-a3f0-31baa75ffc0c" />
+    </node>
+    <node concept="lpD6D" id="1m15g63EbEI" role="lpD6w">
+      <ref role="lpD7u" to="tw7x:1NmRLF_DeDu" resolve="Subtyping" />
     </node>
   </node>
 </model>

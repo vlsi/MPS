@@ -31,7 +31,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Broadcasting class loading load/unload events.
- * May be triggered at any time of #getClass calls due to laziness
+ * Guarantees that the listeners are invoked in write action
  */
 public class ClassLoadingBroadCaster {
   private static final Logger LOG = LogManager.getLogger(ClassLoadingBroadCaster.class);
@@ -54,6 +54,7 @@ public class ClassLoadingBroadCaster {
   }
 
   public Collection<? extends ReloadableModule> onUnload(Collection<? extends SModuleReference> refsToUnload) {
+    myModelAccess.checkWriteAccess();
     if (refsToUnload.size() == 0) return Collections.emptySet();
     final Set<ReloadableModuleBase> modulesToUnload = new LinkedHashSet<ReloadableModuleBase>();
     for (ReloadableModule loadedModule : myLoadedModules) {
@@ -65,34 +66,21 @@ public class ClassLoadingBroadCaster {
     myLoadedModules.removeAll(modulesToUnload);
 
     for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.beforeClassesUnloaded(modulesToUnload);
-      } catch (LinkageError linkageError) {
-        processLinkageErrorInListener(listener, linkageError);
-      }
+      listener.beforeClassesUnloaded(modulesToUnload);
     }
 
     return modulesToUnload;
   }
 
   public void onLoad(Collection<? extends ReloadableModule> toLoad) {
+    myModelAccess.checkWriteAccess();
     if (toLoad.size() == 0) return;
     final Set<ReloadableModuleBase> modulesToLoad = new LinkedHashSet<ReloadableModuleBase>(toLoad.size());
     for (ReloadableModule module : toLoad) modulesToLoad.add((ReloadableModuleBase) module);
     myLoadedModules.addAll(modulesToLoad);
 
     for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.afterClassesLoaded(modulesToLoad);
-      } catch (LinkageError linkageError) {
-        processLinkageErrorInListener(listener, linkageError);
-      }
+      listener.afterClassesLoaded(modulesToLoad);
     }
-  }
-
-  private void processLinkageErrorInListener(MPSClassesListener listener, LinkageError linkageError) {
-    LOG.error("Caught a linkage error from the `" + listener + "` listener. Probably some languages are outdated, try rebuilding the project.");
-    linkageError.printStackTrace();
-    LOG.error("MPS will attempt running in a inconsistent state.");
   }
 }

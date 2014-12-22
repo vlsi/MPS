@@ -425,7 +425,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     myTextLine.setCaretByXCoord(e.getX() - myX);
     myTextLine.resetSelection();
     makePositionValid();
-    getEditor().repaint();
+    getEditor().repaint(this);
     return true;
   }
 

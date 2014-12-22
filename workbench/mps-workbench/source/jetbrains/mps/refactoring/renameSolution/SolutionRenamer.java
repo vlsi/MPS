@@ -16,6 +16,7 @@
 package jetbrains.mps.refactoring.renameSolution;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -23,10 +24,12 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 public class SolutionRenamer {
   private Solution mySolution;
   private String myNewName;
+  private Project myProject;
 
-  public SolutionRenamer(Solution solution, String newName) {
+  public SolutionRenamer(Solution solution, String newName, Project project) {
     mySolution = solution;
     myNewName = newName;
+    myProject = project;
   }
 
   public void rename() {
@@ -36,6 +39,6 @@ public class SolutionRenamer {
     ClassLoaderManager.getInstance().reloadModule(mySolution);
     mySolution.save();
 
-    ReferenceUpdater.getInstance().updateModuleReferences();
+    ReferenceUpdater.getInstance().updateModelAndModuleReferences(myProject);
   }
 }

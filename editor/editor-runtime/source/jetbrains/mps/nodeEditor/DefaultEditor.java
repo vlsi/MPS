@@ -321,7 +321,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(myEditorContext.getOperationContext());
+      EditorManager manager = EditorManager.getInstanceFromContext(myEditorContext);
       if (manager != null) {
         return manager.createNodeRoleAttributeCell(myEditorContext, attributeConcept, attributeKind, editorCell);
       }

@@ -1257,7 +1257,7 @@
                                   <ref role="3cqZAo" node="4U88gsho6g4" resolve="editorComponent" />
                                 </node>
                                 <node concept="liA8E" id="4U88gsho6gJ" role="2OqNvi">
-                                  <ref role="37wK5l" to="9a8:~EditorComponent.repaint():void" resolve="repaint" />
+                                  <ref role="37wK5l" to="9a8:~EditorComponent.repaintExternalComponent():void" resolve="repaintExternalComponent" />
                                 </node>
                               </node>
                             </node>
@@ -1391,7 +1391,7 @@
                                   <ref role="3cqZAo" node="4U88gsho6gR" resolve="editorComponent" />
                                 </node>
                                 <node concept="liA8E" id="4U88gsho6hp" role="2OqNvi">
-                                  <ref role="37wK5l" to="9a8:~EditorComponent.repaint():void" resolve="repaint" />
+                                  <ref role="37wK5l" to="9a8:~EditorComponent.repaintExternalComponent():void" resolve="repaintExternalComponent" />
                                 </node>
                               </node>
                             </node>
@@ -2261,7 +2261,7 @@
                                   <ref role="3cqZAo" node="4U88gsho6mI" resolve="editorComponent" />
                                 </node>
                                 <node concept="liA8E" id="4U88gsho6mO" role="2OqNvi">
-                                  <ref role="37wK5l" to="9a8:~EditorComponent.repaint():void" resolve="repaint" />
+                                  <ref role="37wK5l" to="9a8:~EditorComponent.repaintExternalComponent():void" resolve="repaintExternalComponent" />
                                 </node>
                               </node>
                             </node>

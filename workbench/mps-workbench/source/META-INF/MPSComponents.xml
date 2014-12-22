@@ -114,7 +114,7 @@
       <implementation-class>jetbrains.mps.workbench.structureview.NodeStructureViewProviderImpl</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.diagnostic.DiagnosticUpdater</implementation-class>
+      <implementation-class>jetbrains.mps.diagnostic.MPSDialogAppender</implementation-class>
     </component>
   </application-components>
 
@@ -123,7 +123,7 @@
       <implementation-class>jetbrains.mps.project.MPSProjectVersion</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ProjectMigrationProperties</implementation-class>
+      <implementation-class>jetbrains.mps.migration.global.ProjectMigrationProperties</implementation-class>
     </component>
     <component>
       <interface-class>jetbrains.mps.project.MPSProject</interface-class>

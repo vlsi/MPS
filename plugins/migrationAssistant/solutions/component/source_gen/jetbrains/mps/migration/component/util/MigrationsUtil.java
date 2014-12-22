@@ -28,6 +28,16 @@ public class MigrationsUtil {
   }
   public static boolean isMigrationNeeded(SLanguage language, int importVersion, SModule module) {
     int currentVersion = language.getLanguageVersion();
+
+    // broken language 
+    if (currentVersion == -1) {
+      return false;
+    }
+
+    // if we don't have version, it's simply 0 
+    if (importVersion == -1) {
+      importVersion = 0;
+    }
     if (importVersion > currentVersion) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Module " + module + " depends on version " + importVersion + " of language " + language + " which is higher than available version (" + currentVersion + ")");
@@ -36,11 +46,16 @@ public class MigrationsUtil {
     }
     return importVersion < currentVersion;
   }
-  public static Iterable<MigrationScriptReference> getLanguageVersions(SModule module) {
+  public static Iterable<MigrationScriptReference> getNextStepScripts(SModule module) {
     List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());
     for (SLanguage lang : SetSequence.fromSet(((AbstractModule) module).getAllUsedLanguages())) {
+      int currentLangVersion = lang.getLanguageVersion();
       int ver = ((AbstractModule) module).getUsedLanguageVersion(lang);
-      if (ver != lang.getLanguageVersion()) {
+
+      ver = Math.max(ver, 0);
+      currentLangVersion = Math.max(currentLangVersion, 0);
+
+      if (ver < currentLangVersion) {
         ListSequence.fromList(result).addElement(new MigrationScriptReference(lang, ver));
       }
     }

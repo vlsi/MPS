@@ -48,7 +48,7 @@ public class MigrateIds_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new Name2IdMigration().execute(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      new Name2IdMigration().doExecute(((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MigrateIds", t);

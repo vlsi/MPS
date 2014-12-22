@@ -3484,7 +3484,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="4_5hYVHKxAT">
-    <property role="R4oN_" value="floating point constant (float)" />
+    <property role="R4oN_" value="floating point constant (float) " />
     <property role="TrG5h" value="FloatingPointFloatConstant" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="primitive" />

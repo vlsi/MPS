@@ -308,7 +308,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
           if (breakpoint instanceof ILocationBreakpoint) {
             List<EditorComponent> editorComponents = findComponentForLocationBreakpoint((ILocationBreakpoint) breakpoint);
             for (EditorComponent editorComponent : editorComponents) {
-              editorComponent.repaint();
+              editorComponent.repaintExternalComponent();
             }
           }
         }
@@ -336,7 +336,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
         @Override
         public void run() {
           for (EditorComponent editorComponent : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
-            editorComponent.repaint();
+            editorComponent.repaintExternalComponent();
           }
         }
       }));

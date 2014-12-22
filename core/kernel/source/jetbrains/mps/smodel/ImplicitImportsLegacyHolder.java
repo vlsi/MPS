@@ -123,7 +123,7 @@ public final class ImplicitImportsLegacyHolder {
         SNodeReference ptrDecl = env.getNodeRoleId(child);
         if (ptrDecl == null) {
           LOG.warn(
-              "undeclared child role: '" + child.getRoleInParent() + "' in node " + SNodeOperations.getDebugText(
+              "undeclared child role: '" + child.getContainmentLink().getRoleName() + "' in node " + SNodeOperations.getDebugText(
                   node));
         } else {
           result.add(ptrDecl.getModelReference());

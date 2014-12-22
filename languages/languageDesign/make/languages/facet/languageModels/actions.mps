@@ -282,6 +282,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -662,6 +663,7 @@
                       <node concept="2c44tb" id="6moN$OJ8U3G" role="lGtFl">
                         <property role="2qtEX8" value="component" />
                         <property role="3hQQBS" value="NamedTupleComponentAccessOperation" />
+                        <property role="P3scX" value="a247e09e-2435-45ba-b8d2-07e93feba96a/1239576519914/1239576542472" />
                         <node concept="uNquD" id="6moN$OJ8U3I" role="2c44t1" />
                       </node>
                     </node>
@@ -879,6 +881,7 @@
                       <node concept="2c44tb" id="2TDOII_d_7r" role="lGtFl">
                         <property role="2qtEX8" value="target" />
                         <property role="3hQQBS" value="ForeignVarialblesExpression" />
+                        <property role="P3scX" value="696c1165-4a59-463b-bc5d-902caab85dd0/3344436107830227888/3344436107830227902" />
                         <node concept="2OqwBi" id="2TDOII_d_7s" role="2c44t1">
                           <node concept="uNquD" id="2TDOII_d_7t" role="2Oq$k0" />
                           <node concept="2Xjw5R" id="2TDOII_d_7u" role="2OqNvi">
@@ -905,6 +908,7 @@
                       <node concept="2c44tb" id="2TDOII_d_7Y" role="lGtFl">
                         <property role="2qtEX8" value="component" />
                         <property role="3hQQBS" value="NamedTupleComponentAccessOperation" />
+                        <property role="P3scX" value="a247e09e-2435-45ba-b8d2-07e93feba96a/1239576519914/1239576542472" />
                         <node concept="uNquD" id="2TDOII_d_7Z" role="2c44t1" />
                       </node>
                     </node>
@@ -1023,6 +1027,7 @@
                       <node concept="2c44tb" id="1ExXGqkcFBL" role="lGtFl">
                         <property role="2qtEX8" value="facet" />
                         <property role="3hQQBS" value="NamedFacetReference" />
+                        <property role="P3scX" value="696c1165-4a59-463b-bc5d-902caab85dd0/6447445394688422642/6447445394688422643" />
                         <node concept="uNquD" id="1ExXGqkcFBO" role="2c44t1" />
                       </node>
                     </node>

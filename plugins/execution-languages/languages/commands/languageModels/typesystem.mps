@@ -142,6 +142,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -183,6 +184,7 @@
             <node concept="50ouk" id="1$vg1Ecg_5$" role="2c44tc">
               <node concept="2c44tb" id="1$vg1Ecg_5_" role="lGtFl">
                 <property role="2qtEX8" value="commandDeclaration" />
+                <property role="P3scX" value="f3347d8a-0e79-4f35-8ac9-1574f25c986f/612376536074296995/612376536074296996" />
                 <node concept="2OqwBi" id="1$vg1Ecg_d0" role="2c44t1">
                   <node concept="2OqwBi" id="1$vg1Ecg_cU" role="2Oq$k0">
                     <node concept="1YBJjd" id="1$vg1Ecg_cT" role="2Oq$k0">
@@ -291,6 +293,7 @@
             <node concept="2LYoG3" id="O$iR4JBiG0" role="2c44tc">
               <node concept="2c44tb" id="O$iR4JBiG5" role="lGtFl">
                 <property role="2qtEX8" value="classifier" />
+                <property role="P3scX" value="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205752906494/1205752917136" />
                 <node concept="2OqwBi" id="O$iR4JBiG6" role="2c44t1">
                   <node concept="1YBJjd" id="O$iR4JBiG7" role="2Oq$k0">
                     <ref role="1YBMHb" node="O$iR4JBiGc" resolve="commandReferenceExpression" />

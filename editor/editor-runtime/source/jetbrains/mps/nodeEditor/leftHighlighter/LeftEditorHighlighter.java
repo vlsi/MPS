@@ -33,7 +33,6 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
@@ -41,6 +40,7 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -165,13 +165,14 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     if (MPSToolTipManager.getInstance() != null) {
       MPSToolTipManager.getInstance().registerComponent(this);
     }
-    editorComponent.addRebuildListener(new RebuildListener() {
+    editorComponent.getUpdater().addListener(new UpdaterListenerAdapter() {
       @Override
-      public void editorRebuilt(EditorComponent editor) {
+      public void editorUpdated(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
         assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter$RebuildListener should be called in eventDispatchThread";
         for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
           painter.editorRebuilt();
         }
+        relayout(true);
       }
     });
     myBracketsPainter = new BracketsPainter(this, myRightToLeft);
@@ -361,12 +362,16 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   public void unHighlight(EditorCell cell) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.unHighlight() should be called in eventDispatchThread";
     myBracketsPainter.removeBracket(cell);
+    relayout(true);
+    repaint();
   }
 
   public void highlight(EditorCell cell, EditorCell cell2, Color c) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.unHighlight() should be called in eventDispatchThread";
     assert cell.getEditorComponent() == myEditorComponent : "cell must be from my editor";
     myBracketsPainter.addBracket(cell, cell2, c);
+    relayout(true);
+    repaint();
   }
 
   public void relayout(boolean updateFolding) {

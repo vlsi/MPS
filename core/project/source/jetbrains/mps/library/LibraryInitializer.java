@@ -188,12 +188,12 @@ public class LibraryInitializer implements CoreComponent {
   private List<LibraryContributor> myContributors = new CopyOnWriteArrayList<LibraryContributor>();
 
   public void addContributor(LibraryContributor c) {
-    LOG.info("Adding libraries from " + c);
+    LOG.info("Adding libraries from " + c.getClass().getName());
     myContributors.add(c);
   }
 
   public void removeContributor(LibraryContributor c) {
-    LOG.info("Removing libraries from " + c);
+    LOG.info("Removing libraries from " + c.getClass().getName());
     myContributors.remove(c);
   }
 }

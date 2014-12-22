@@ -42,6 +42,7 @@ import java.util.Set;
 public class IllegalConceptDescriptor implements ConceptDescriptor {
   private static final Logger LOG = LogManager.getLogger(IllegalConceptDescriptor.class);
   private static final Set<SConceptId> ourReportedConcepts = new ConcurrentHashSet<SConceptId>();
+  private boolean myReported = false;
 
   private String fqName;
   private SConceptId myConceptId;
@@ -60,11 +61,19 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
     }
     this.fqName = fqName == null ? DebugRegistry.getInstance().getConceptName(conceptId) : fqName;
     this.myConceptId = conceptId == null ? MetaIdFactory.INVALID_CONCEPT_ID : conceptId;
+  }
 
-    String languageName = NameUtil.namespaceFromConceptFQName(fqName);
+  private void reportWarn() {
+    if (myReported) {
+      return;
+    }
+    myReported = true;
+
+    String languageName = NameUtil.namespaceFromConceptFQName(this.fqName);
+    SConceptId conceptId = myConceptId == MetaIdFactory.INVALID_CONCEPT_ID ? null : myConceptId;
     SLanguageId languageId = conceptId == null ? null : conceptId.getLanguageId();
 
-    String msg = "IllegalConceptDescriptor created for concept " + (fqName == null ? "" : fqName) + (conceptId == null ? "" : " with id " + conceptId) +
+    String msg = "IllegalConceptDescriptor created for concept " + (this.fqName == null ? "" : this.fqName) + (conceptId == null ? "" : " with id " + conceptId) +
         ". Please check the language " + (languageName == null ? "" : languageName) + (languageId == null ? "" : " with id " + languageId) +
         " is built and compiled.";
     if (conceptId == null) {
@@ -75,13 +84,16 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
     }
   }
 
+  @NotNull
   @Override
   public SConceptId getId() {
+    reportWarn();
     return myConceptId;
   }
 
   @Override
   public String getConceptFqName() {
+    reportWarn();
     if (fqName == null) {
       fqName = DebugRegistry.getInstance().getConceptName(myConceptId);
     }
@@ -90,173 +102,207 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
 
   @Override
   public String getSuperConcept() {
+    reportWarn();
     return null;
   }
 
   @Override
   public boolean isInterfaceConcept() {
+    reportWarn();
     return false;
   }
 
   @Override
   public Set<String> getPropertyNames() {
+    reportWarn();
     return Collections.emptySet();
   }
 
   @Override
   public boolean hasProperty(String name) {
+    reportWarn();
     return false;
   }
 
   @Override
   public Set<SReferenceLinkId> getReferenceIds() {
+    reportWarn();
     return Collections.emptySet();
   }
 
   @Override
   public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
+    reportWarn();
     return null;
   }
 
   @Override
   public PropertyDescriptor getPropertyDescriptor(String name) {
+    reportWarn();
     return null;
   }
 
   @Override
   public ReferenceDescriptor getRefDescriptor(String name) {
+    reportWarn();
     return null;
   }
 
   @Override
   public LinkDescriptor getLinkDescriptor(String name) {
+    reportWarn();
     return null;
   }
 
   @Override
   public Set<String> getReferenceNames() {
+    reportWarn();
     return Collections.emptySet();
   }
 
   @Override
   public boolean hasReference(String name) {
+    reportWarn();
     return false;
   }
 
   @Override
   public Set<SContainmentLinkId> getLinkIds() {
+    reportWarn();
     return Collections.emptySet();
   }
 
   @Override
   public LinkDescriptor getLinkDescriptor(SContainmentLinkId id) {
+    reportWarn();
     return null;
   }
 
   @Override
   public Set<String> getChildrenNames() {
+    reportWarn();
     return Collections.emptySet();
   }
 
   @Override
   public boolean isUnorderedChild(String name) {
+    reportWarn();
     return false;
   }
 
   @Override
   public Set<String> getUnorderedChildrenNames() {
+    reportWarn();
     return Collections.emptySet();
   }
 
   @Override
   public boolean hasChild(String name) {
+    reportWarn();
     return false;
   }
 
   @Override
   public StaticScope getStaticScope() {
+    reportWarn();
     return StaticScope.GLOBAL;
   }
 
   @Override
   public boolean isMultipleChild(String name) {
+    reportWarn();
     return false;
   }
 
   @Override
   public List<String> getParentsNames() {
+    reportWarn();
     return Collections.emptyList();
   }
 
   @Override
   public boolean isAssignableTo(String toConceptFqName) {
+    reportWarn();
     return false;
   }
 
   @Override
   public Set<String> getAncestorsNames() {
+    reportWarn();
     return Collections.emptySet();
   }
 
   @Override
   public Set<SPropertyId> getPropertyIds() {
+    reportWarn();
     return Collections.emptySet();
   }
 
   @Override
   public PropertyDescriptor getPropertyDescriptor(SPropertyId id) {
+    reportWarn();
     return null;
   }
 
   @Override
   public ConceptKind getConceptKind() {
+    reportWarn();
     return ConceptKind.NORMAL;
   }
 
   @Override
   public boolean isAbstract() {
+    reportWarn();
     return false;
   }
 
   @Override
   public boolean isFinal() {
+    reportWarn();
     return false;
   }
 
 
   @Override
   public String getConceptAlias() {
+    reportWarn();
     return "";
   }
 
   @Override
   public String getConceptShortDescription() {
+    reportWarn();
     return "";
   }
 
   @Override
   public String getHelpUrl() {
+    reportWarn();
     return "";
   }
 
   @Nullable
   @Override
   public SConceptId getSuperConceptId() {
+    reportWarn();
     return MetaIdFactory.INVALID_CONCEPT_ID;
   }
 
   @Override
   public List<SConceptId> getParentsIds() {
+    reportWarn();
     return Collections.emptyList();
   }
 
   @Override
   public boolean isAssignableTo(SConceptId conceptId) {
+    reportWarn();
     return false;
   }
 
   @Override
   public Set<SConceptId> getAncestorsIds() {
+    reportWarn();
     return Collections.emptySet();
   }
 }

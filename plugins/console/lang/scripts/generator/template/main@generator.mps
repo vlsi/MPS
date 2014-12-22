@@ -145,6 +145,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -216,6 +217,7 @@
               <node concept="3B5_sB" id="1whNchEKZ9$" role="37wK5m">
                 <node concept="1ZhdrF" id="1whNchEKZ9_" role="lGtFl">
                   <property role="2qtEX8" value="referentNode" />
+                  <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1219352745532/1219352800908" />
                   <node concept="3$xsQk" id="1whNchEKZ9A" role="3$ytzL">
                     <node concept="3clFbS" id="1whNchEKZ9B" role="2VODD2">
                       <node concept="3clFbF" id="1whNchEKZ9C" role="3cqZAp">
@@ -269,6 +271,7 @@
                 <ref role="3cqZAo" node="23X86fnVai2" resolve="context" />
                 <node concept="1ZhdrF" id="23X86fnXRei" role="lGtFl">
                   <property role="2qtEX8" value="variableDeclaration" />
+                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
                   <node concept="3$xsQk" id="23X86fnXRej" role="3$ytzL">
                     <node concept="3clFbS" id="23X86fnXRek" role="2VODD2">
                       <node concept="3clFbF" id="23X86fnXRva" role="3cqZAp">

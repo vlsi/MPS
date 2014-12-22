@@ -18,9 +18,9 @@ package jetbrains.mps.classloading;
 import org.jetbrains.mps.openapi.module.SModule;
 
 /**
- * Internal MPS exception which is thrown specifically from the MPS class loading system.
+ * Internal MPS exception which is thrown from the MPS class loading system.
  * It is thrown when a module does not have a suitable facet (or does not have a correct solution kind).
- * It should be processed by clients of
+ * It should be processed by the clients of the MPS ClassLoading system.
  * {@link jetbrains.mps.module.ReloadableModule#getClass()}
  * {@link jetbrains.mps.module.ReloadableModule#getOwnClass(String)}
  * as well as

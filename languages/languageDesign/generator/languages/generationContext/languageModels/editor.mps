@@ -663,5 +663,17 @@
       <node concept="l2Vlx" id="1yjqjC7KErO" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="6suuiWXJvYV">
+    <ref role="1XX52x" to="tpf3:6suuiWXJvTY" resolve="GenerationContextOp_ContextVarRef" />
+    <node concept="3F0A7n" id="6suuiWXJwq7" role="2wV5jI">
+      <ref role="1NtTu8" to="tpf3:6suuiWXJvYy" resolve="contextVarName" />
+      <node concept="Vb9p2" id="6suuiWXJExA" role="3F10Kt">
+        <property role="Vbekb" value="BOLD" />
+      </node>
+      <node concept="VechU" id="6suuiWXJExB" role="3F10Kt">
+        <property role="Vb096" value="DARK_MAGENTA" />
+      </node>
+    </node>
+  </node>
 </model>
 

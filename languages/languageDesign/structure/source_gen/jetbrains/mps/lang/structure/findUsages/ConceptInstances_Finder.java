@@ -10,8 +10,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
@@ -36,7 +35,13 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
-      SAbstractConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(node));
+      SNode c = node;
+      SAbstractConcept concept = SNodeOperations.asSConcept(c);
+      if (concept == null) {
+        // just in case, generally it shall not happen provided our concept (and descriptor) registries are correct 
+        // However, doesn't hurt to protect finder implementation from unexpected input 
+        return;
+      }
       List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesFacade.getInstance().findInstances(scope, Collections.singleton(concept), false, monitor));
       for (SNode resNode : resNodes) {
         ListSequence.fromList(_results).addElement(((SNode) resNode));

@@ -4,8 +4,8 @@
   <languages>
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
     <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -190,6 +190,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -224,6 +225,7 @@
             <node concept="yHkHH" id="63yBSeEXfs$" role="2c44tc">
               <node concept="2c44tb" id="63yBSeEXfs_" role="lGtFl">
                 <property role="2qtEX8" value="persistentConfiguration" />
+                <property role="P3scX" value="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066332/946964771156066333" />
                 <node concept="1Z$b5t" id="63yBSeEXfsB" role="2c44t1">
                   <ref role="1Z$eMM" node="63yBSeEXfsa" resolve="T" />
                 </node>
@@ -256,6 +258,7 @@
             <node concept="yHkDb" id="63yBSeEXfs8" role="2c44tc">
               <node concept="2c44tb" id="63yBSeEXfsC" role="lGtFl">
                 <property role="2qtEX8" value="configuration" />
+                <property role="P3scX" value="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066618/946964771156066619" />
                 <node concept="1Z$b5t" id="63yBSeEXfsE" role="2c44t1">
                   <ref role="1Z$eMM" node="63yBSeEXfsa" resolve="T" />
                 </node>
@@ -428,6 +431,7 @@
           <node concept="yHkHH" id="63yBSeEXxGz" role="2c44tc">
             <node concept="2c44tb" id="63yBSeEXxG$" role="lGtFl">
               <property role="2qtEX8" value="persistentConfiguration" />
+              <property role="P3scX" value="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066332/946964771156066333" />
               <node concept="2OqwBi" id="63yBSeEXxG_" role="2c44t1">
                 <node concept="1YBJjd" id="63yBSeEXxGA" role="2Oq$k0">
                   <ref role="1YBMHb" node="63yBSeEXxGC" resolve="templatePersistentPropertyType" />
@@ -456,6 +460,7 @@
             <node concept="yHkIc" id="63yBSeEXxGO" role="2c44tc">
               <node concept="2c44tb" id="63yBSeEXMy8" role="lGtFl">
                 <property role="2qtEX8" value="persistentConfiguration" />
+                <property role="P3scX" value="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066332/946964771156066333" />
                 <node concept="2OqwBi" id="63yBSeEXMyb" role="2c44t1">
                   <node concept="1YBJjd" id="63yBSeEXMya" role="2Oq$k0">
                     <ref role="1YBMHb" node="63yBSeEXxHI" resolve="configurationTemplateInitializer" />
@@ -638,6 +643,7 @@
             <node concept="yHkHH" id="63yBSeEXxI1" role="2c44tc">
               <node concept="2c44tb" id="63yBSeEXxI2" role="lGtFl">
                 <property role="2qtEX8" value="persistentConfiguration" />
+                <property role="P3scX" value="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066332/946964771156066333" />
                 <node concept="1Z$b5t" id="63yBSeEXxI3" role="2c44t1">
                   <ref role="1Z$eMM" node="63yBSeEXxHS" resolve="T" />
                 </node>
@@ -652,6 +658,7 @@
             <node concept="yHkDb" id="63yBSeEXxI8" role="2c44tc">
               <node concept="2c44tb" id="63yBSeEXxI9" role="lGtFl">
                 <property role="2qtEX8" value="configuration" />
+                <property role="P3scX" value="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066618/946964771156066619" />
                 <node concept="1Z$b5t" id="63yBSeEXxIa" role="2c44t1">
                   <ref role="1Z$eMM" node="63yBSeEXxHS" resolve="T" />
                 </node>

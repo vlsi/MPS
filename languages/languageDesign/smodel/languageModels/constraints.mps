@@ -303,6 +303,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -1301,6 +1302,7 @@
                               <node concept="3jrphi" id="74tNGm6e6X$" role="lGtFl">
                                 <property role="2qtEX8" value="concept" />
                                 <property role="3jrwYG" value="nodeType" />
+                                <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
                               </node>
                             </node>
                           </node>
@@ -1346,6 +1348,7 @@
                       <node concept="3jrphi" id="74tNGm6oayp" role="lGtFl">
                         <property role="2qtEX8" value="concept" />
                         <property role="3jrwYG" value="nodeType" />
+                        <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
                       </node>
                     </node>
                   </node>

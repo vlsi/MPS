@@ -480,6 +480,9 @@
     <node concept="PrWs8" id="2IGJLB$lVP1" role="PzmwI">
       <ref role="PrY4T" to="tpck:2WmWrdnSpX3" resolve="ISuppressErrors" />
     </node>
+    <node concept="PrWs8" id="6zab3hlrRrY" role="PzmwI">
+      <ref role="PrY4T" to="tpck:8AYOKVCAP5" resolve="IStubForAnotherConcept" />
+    </node>
   </node>
 </model>
 

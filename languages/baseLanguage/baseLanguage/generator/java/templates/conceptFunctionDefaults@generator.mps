@@ -116,9 +116,11 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -145,6 +147,7 @@
                 <ref role="3cqZAo" node="gCCYkhD" resolve="_parameter_" />
                 <node concept="1ZhdrF" id="gCCYkhC" role="lGtFl">
                   <property role="2qtEX8" value="variableDeclaration" />
+                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
                   <node concept="3$xsQk" id="h1YqihQ" role="3$ytzL">
                     <node concept="3clFbS" id="h1YqihR" role="2VODD2">
                       <node concept="3clFbF" id="hGRJV$o" role="3cqZAp">
@@ -187,6 +190,7 @@
                         <ref role="3cqZAo" node="gCCYkhD" resolve="_parameter_" />
                         <node concept="1ZhdrF" id="htzT244" role="lGtFl">
                           <property role="2qtEX8" value="variableDeclaration" />
+                          <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
                           <node concept="3$xsQk" id="htzT245" role="3$ytzL">
                             <node concept="3clFbS" id="htzT246" role="2VODD2">
                               <node concept="3clFbF" id="htzT5lm" role="3cqZAp">
@@ -200,6 +204,7 @@
                       </node>
                       <node concept="17Uvod" id="htuplMA" role="lGtFl">
                         <property role="2qtEX9" value="methodName" />
+                        <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1174294166120/1174294288199" />
                         <node concept="3zFVjK" id="htuplMB" role="3zH0cK">
                           <node concept="3clFbS" id="htuplMC" role="2VODD2">
                             <node concept="3clFbF" id="htupGX2" role="3cqZAp">

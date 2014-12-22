@@ -15,26 +15,35 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptConstant = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.Constant", MetaIdFactory.conceptId(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861419L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(2001769927721010657L, "initializer", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"initializer"}, new boolean[]{false}).create();
   /*package*/ final ConceptDescriptor myConceptConstantReference = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.ConstantReference", MetaIdFactory.conceptId(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x37600150f5294665L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(3990190717072393830L, "original", MetaIdFactory.conceptId(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861419L), false)).references("original").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptConstantReferenceKeeper = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.ConstantReferenceKeeper", MetaIdFactory.conceptId(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f2365L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(2687243112288297832L, "constantName")).properties("constantName").create();
   /*package*/ final ConceptDescriptor myConceptConstants = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.Constants", MetaIdFactory.conceptId(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861417L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L)).childDescriptors(new ConceptDescriptorBuilder.Link(1494751830318912552L, "constants", MetaIdFactory.conceptId(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861419L), true, true, false)).children(new String[]{"constants"}, new boolean[]{true}).create();
+  /*package*/ final ConceptDescriptor myConceptDistantConstantReference = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.DistantConstantReference", MetaIdFactory.conceptId(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d06d11fL)).super_("org.jetbrains.mps.samples.Constants.structure.ConstantReference").super_(MetaIdFactory.conceptId(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x37600150f5294665L)).parents("org.jetbrains.mps.samples.Constants.structure.ConstantReference").parentIds(MetaIdFactory.conceptId(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x37600150f5294665L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(2687243112287752727L, "targetSetOfConstants", MetaIdFactory.conceptId(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861417L), false)).references("targetSetOfConstants").alias("distant", "").create();
+  /*package*/ final ConceptDescriptor myConceptGeneratedClassKeeper = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.GeneratedClassKeeper", MetaIdFactory.conceptId(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f9f20L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(5806354288060700664L, "className")).properties("className").referenceDescriptors(new ConceptDescriptorBuilder.Ref(2687243112288738882L, "clazz", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L), false)).references("clazz").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptConstant, myConceptConstantReference, myConceptConstants);
+    return Arrays.asList(myConceptConstant, myConceptConstantReference, myConceptConstantReferenceKeeper, myConceptConstants, myConceptDistantConstantReference, myConceptGeneratedClassKeeper);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0k, conceptFqName)) {
       case 0:
         return myConceptConstant;
       case 1:
         return myConceptConstantReference;
       case 2:
+        return myConceptConstantReferenceKeeper;
+      case 3:
         return myConceptConstants;
+      case 4:
+        return myConceptDistantConstantReference;
+      case 5:
+        return myConceptGeneratedClassKeeper;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.Constants"};
+  private static String[] stringSwitchCases_1htk8d_a0a0k = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.ConstantReferenceKeeper", "org.jetbrains.mps.samples.Constants.structure.Constants", "org.jetbrains.mps.samples.Constants.structure.DistantConstantReference", "org.jetbrains.mps.samples.Constants.structure.GeneratedClassKeeper"};
 }

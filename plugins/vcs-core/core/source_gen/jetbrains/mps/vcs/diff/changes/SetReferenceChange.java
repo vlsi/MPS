@@ -87,9 +87,9 @@ public class SetReferenceChange extends NodeChange {
       SNode n = getChangeSet().getOldModel().getNode(getAffectedNodeId());
       SNode c = SNodeOperations.getConceptDeclaration(n);
       SNode linkDecl = SNodeOperations.as(myRole.getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
-      SNode hint = AttributeOperations.getAttribute(linkDecl, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint"));
+      SNode hint = AttributeOperations.getAttribute(linkDecl, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint")));
       if ((hint == null)) {
-        hint = AttributeOperations.getAttribute(c, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint"));
+        hint = AttributeOperations.getAttribute(c, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint")));
       }
       if ((hint != null)) {
         myMergeHint = new SNodePointer(hint);

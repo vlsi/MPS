@@ -16,10 +16,8 @@
 package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -38,7 +36,7 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
   public SConcept getSuperConcept() {
     ConceptDescriptor d = getConceptDescriptor();
     if (d == null) {
-      return MetaAdapterFactory.getConcept(SNodeUtil.conceptId_BaseConcept, SNodeUtil.conceptName_BaseConcept);
+      return SNodeUtil.concept_BaseConcept;
     }
 
     SConceptId superConcept = d.getSuperConceptId();

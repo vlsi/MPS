@@ -270,6 +270,7 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -2176,6 +2177,7 @@
             <node concept="Xl_RD" id="3m06JgserZc" role="2c44tc">
               <node concept="2EMmih" id="3m06Jgses2d" role="lGtFl">
                 <property role="2qtEX9" value="value" />
+                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
                 <node concept="2OqwBi" id="3m06Jgsesfw" role="2c44t1">
                   <node concept="13iPFW" id="3m06Jgses3U" role="2Oq$k0" />
                   <node concept="3TrcHB" id="3m06Jgsetsy" role="2OqNvi">
@@ -2211,6 +2213,7 @@
               <node concept="2EMmih" id="3m06JgseBbd" role="lGtFl">
                 <property role="2qtEX9" value="value" />
                 <property role="3hQQBS" value="BooleanConstant" />
+                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" />
                 <node concept="2YIFZM" id="3m06JgseAX7" role="2c44t1">
                   <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
                   <ref role="37wK5l" to="e2lb:~String.valueOf(boolean):java.lang.String" resolve="valueOf" />
@@ -2250,6 +2253,7 @@
               <node concept="2EMmih" id="3m06JgsetBY" role="lGtFl">
                 <property role="2qtEX9" value="value" />
                 <property role="3hQQBS" value="IntegerConstant" />
+                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020/1068580320021" />
                 <node concept="2YIFZM" id="3m06JgseABw" role="2c44t1">
                   <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
                   <ref role="37wK5l" to="e2lb:~String.valueOf(int):java.lang.String" resolve="valueOf" />

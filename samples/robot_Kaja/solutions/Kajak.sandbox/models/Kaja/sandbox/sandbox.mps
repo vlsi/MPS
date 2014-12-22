@@ -14,6 +14,7 @@
         <child id="1904811872814253580" name="left" index="1Tpgp2" />
         <child id="1904811872814253581" name="right" index="1Tpgp3" />
       </concept>
+      <concept id="1904811872814253755" name="jetbrains.mps.samples.KajaAndOr.structure.Or" flags="ng" index="1TpgrP" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -62,6 +63,9 @@
       <concept id="3308300503039740438" name="jetbrains.mps.samples.Kaja.structure.EmptyLine" flags="ng" index="2C1RJh" />
       <concept id="3308300503039896127" name="jetbrains.mps.samples.Kaja.structure.CommandList" flags="ng" index="2C6hJS">
         <child id="3308300503039896128" name="commands" index="2C6hI7" />
+      </concept>
+      <concept id="7060824959893078082" name="jetbrains.mps.samples.Kaja.structure.Looking" flags="ng" index="12nDqA">
+        <property id="7060824959893078083" name="direction" index="12nDqB" />
       </concept>
       <concept id="6405700485436120871" name="jetbrains.mps.samples.Kaja.structure.Drop" flags="ng" index="1b4w60" />
       <concept id="6405700485436186598" name="jetbrains.mps.samples.Kaja.structure.IsMark" flags="ng" index="1b7g51" />
@@ -239,7 +243,6 @@
         <property role="TrG5h" value="fetch" />
         <node concept="2C6hJS" id="JFO1DNueQz" role="2C11UV">
           <node concept="2C1uTT" id="JFO1DNueQZ" role="2C6hI7">
-            <node concept="1b7g51" id="JFO1DNueR3" role="2C1uS7" />
             <node concept="2C6hJS" id="JFO1DNueR1" role="2C1uS3">
               <node concept="1b7s6U" id="JFO1DNueR5" role="2C6hI7" />
               <node concept="2C11Tl" id="JFO1DNueR7" role="2C6hI7">
@@ -252,6 +255,17 @@
                 <ref role="2C198b" node="JFO1DNueQy" resolve="fetch" />
               </node>
               <node concept="1x_AGW" id="JFO1DNueRd" role="2C6hI7" />
+            </node>
+            <node concept="1TpgrP" id="2XA_ayKy7Pp" role="2C1uS7">
+              <node concept="1Tpgp4" id="2XA_ayKy7PB" role="1Tpgp3">
+                <node concept="2C1t7F" id="2XA_ayKy7PI" role="1Tpgp3" />
+                <node concept="12nDqA" id="2XA_ayKy7PE" role="1Tpgp2">
+                  <property role="12nDqB" value="north" />
+                </node>
+              </node>
+              <node concept="2C15Q6" id="2XA_ayKy7Ps" role="1Tpgp2">
+                <node concept="2C17Mc" id="2XA_ayKy7Pt" role="2C15Q5" />
+              </node>
             </node>
           </node>
         </node>

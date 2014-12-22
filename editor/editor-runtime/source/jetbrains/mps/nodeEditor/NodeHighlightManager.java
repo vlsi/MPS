@@ -26,7 +26,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
@@ -312,8 +311,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
       @Override
       public void run() {
         refreshMessagesCache();
-        myEditor.getExternalComponent().repaint();
         refreshLeftHighlighterMessages();
+        myEditor.getExternalComponent().repaint();
       }
     });
   }

@@ -14,6 +14,7 @@ public class GenerationTraceActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
+      GenerationTraceActions_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ShowOriginNode_Action");
       GenerationTraceActions_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ShowGenerationTrace_Action");
       GenerationTraceActions_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ShowGenerationTraceback_Action");
     } catch (Throwable t) {

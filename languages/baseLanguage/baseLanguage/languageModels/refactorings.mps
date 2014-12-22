@@ -244,9 +244,11 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -922,6 +924,7 @@
                 </node>
                 <node concept="2EMmih" id="7UcKRu2PYhA" role="lGtFl">
                   <property role="2qtEX9" value="name" />
+                  <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
                   <node concept="2OqwBi" id="7UcKRu2PYtN" role="2c44t1">
                     <node concept="1M0UyE" id="7UcKRu2PYtM" role="2Oq$k0">
                       <ref role="1M0zk5" node="7UcKRu2PUDc" resolve="declaration" />
@@ -1063,12 +1066,14 @@
                       <node concept="10M0yZ" id="7CcFuG9hbFC" role="2c44tc">
                         <node concept="2c44tb" id="7CcFuG9hbFD" role="lGtFl">
                           <property role="2qtEX8" value="classifier" />
+                          <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" />
                           <node concept="37vLTw" id="3GM_nagT_Ji" role="2c44t1">
                             <ref role="3cqZAo" node="7UcKRu2Q3mx" resolve="declarationClassifier" />
                           </node>
                         </node>
                         <node concept="2c44tb" id="7CcFuG9hbFF" role="lGtFl">
                           <property role="2qtEX8" value="variableDeclaration" />
+                          <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
                           <node concept="37vLTw" id="3GM_nagTrX9" role="2c44t1">
                             <ref role="3cqZAo" node="7UcKRu2PYhg" resolve="newDeclaration" />
                           </node>
@@ -1107,6 +1112,7 @@
                           <node concept="2c44tb" id="7UcKRu2Q3n4" role="lGtFl">
                             <property role="2qtEX8" value="variableDeclaration" />
                             <property role="3hQQBS" value="LocalStaticFieldReference" />
+                            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
                             <node concept="37vLTw" id="3GM_nagTyLT" role="2c44t1">
                               <ref role="3cqZAo" node="7UcKRu2PYhg" resolve="newDeclaration" />
                             </node>

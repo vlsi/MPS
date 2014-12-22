@@ -222,6 +222,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -470,6 +471,7 @@
             <node concept="2LYoG3" id="JzCdmU6yPe" role="2c44tc">
               <node concept="2c44tb" id="JzCdmU6yPh" role="lGtFl">
                 <property role="2qtEX8" value="classifier" />
+                <property role="P3scX" value="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205752906494/1205752917136" />
                 <node concept="13iPFW" id="JzCdmU6yPi" role="2c44t1" />
               </node>
             </node>

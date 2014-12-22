@@ -26,12 +26,21 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
-  protected SReferenceLinkId myRoleId;
+public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
+  private final SReferenceLinkId myRoleId;
+  private final boolean myIsBootstrap;
 
   public SReferenceLinkAdapterById(@NotNull SReferenceLinkId roleId, @NotNull String refName) {
+    this(roleId, refName, false);
+  }
+
+  /**
+   * @param bootstrap see BOOTSTRAP META OBJECTS javadoc for {@link jetbrains.mps.smodel.adapter.BootstrapAdapterFactory}
+   */
+  public SReferenceLinkAdapterById(@NotNull SReferenceLinkId roleId, @NotNull String refName, boolean bootstrap) {
     super(refName);
     myRoleId = roleId;
+    myIsBootstrap = bootstrap;
   }
 
   @Override
@@ -46,7 +55,7 @@ public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   }
   @Override
   public String getRoleName() {
-    if (RuntimeFlags.isMergeDriverMode()) {
+    if (RuntimeFlags.isMergeDriverMode() || myIsBootstrap) {
       return myName;
     }
     ReferenceDescriptor d = getReferenceDescriptor();

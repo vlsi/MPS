@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.generator.impl.GeneratorUtilEx;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -47,17 +45,17 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 public final class ModelScanner {
-  private final Set<String> myTargetLanguages = new HashSet<String>();
-  private final Set<String> myQueryLanguages = new HashSet<String>();
+  private final Set<SLanguage> myTargetLanguages = new HashSet<SLanguage>();
+  private final Set<SLanguage> myQueryLanguages = new HashSet<SLanguage>();
 
   public ModelScanner() {
   }
 
-  public Set<String> getTargetLanguages() {
+  public Set<SLanguage> getTargetLanguages() {
     return myTargetLanguages;
   }
 
-  public Set<String> getQueryLanguages() {
+  public Set<SLanguage> getQueryLanguages() {
     return myQueryLanguages;
   }
 
@@ -109,7 +107,7 @@ public final class ModelScanner {
 
   private void scanScriptsForChangeOperations(FastNodeFinder fnf) {
     NodeScanner refScanner = new NodeScanner();
-    for (String modelChangeOperation : RuleUtil.getModelChangeOperations()) {
+    for (SConcept modelChangeOperation : RuleUtil.getModelChangeOperations()) {
       // Though it's possible to be quite specific and to look for particular instantiated concepts referenced
       // from within change operation, present approach is to find scripts with change operations and process
       // references to concept declarations in bulk.
@@ -120,7 +118,7 @@ public final class ModelScanner {
         roots.add(op.getContainingRoot());
       }
       for (SNode rootWithChangeOps : roots) {
-        if (!RuleUtil.concept_MappingScript.equals(rootWithChangeOps.getConcept().getQualifiedName())) {
+        if (!RuleUtil.concept_MappingScript.equals(rootWithChangeOps.getConcept())) {
           continue;
         }
         refScanner.scanReferences(rootWithChangeOps);
@@ -141,8 +139,8 @@ public final class ModelScanner {
    */
   private static final class NodeScanner {
     private final Condition<SNode> myCondition;
-    private final Set<String> myConceptsInUse = new HashSet<String>();
-    private Set<String> myLanguagesInUse;
+    private final Set<SConcept> myConceptsInUse = new HashSet<SConcept>();
+    private Set<SLanguage> myLanguagesInUse;
 
     public NodeScanner() {
       myCondition = null;
@@ -159,7 +157,7 @@ public final class ModelScanner {
       myLanguagesInUse = null;
       for (Iterator<SNode> it = getNodeIterator(node); it.hasNext(); ) {
         SNode n = it.next();
-        myConceptsInUse.add(n.getConcept().getQualifiedName());
+        myConceptsInUse.add(n.getConcept());
       }
       return this;
     }
@@ -176,10 +174,10 @@ public final class ModelScanner {
           if (tn == null) {
             continue;
           }
-          String targetNodeConcept = tn.getConcept().getQualifiedName();
+          SConcept targetNodeConcept = tn.getConcept();
           if (RuleUtil.concept_AbstractConceptDeclaration.equals(targetNodeConcept) || RuleUtil.concept_ConceptDeclaration.equals(targetNodeConcept)) {
             // n points with r to a concept node tn
-            myConceptsInUse.add(GeneratorUtil.getConceptQualifiedName(tn));
+            myConceptsInUse.add(targetNodeConcept);
           }
         }
       }
@@ -191,14 +189,14 @@ public final class ModelScanner {
       return myCondition == null ? new DescendantsTreeIterator(node) : new TreeFilterIterator<SNode>(new DescendantsTreeIterator(node), myCondition);
     }
 
-    public Set<String> getUsedLanguages() {
+    public Set<SLanguage> getUsedLanguages() {
       if(myLanguagesInUse == null) {
-        final HashSet<String> usedLanguageQualifiedNames = new HashSet<String>(myConceptsInUse.size());
-        for (String conceptInUse : myConceptsInUse) {
-          final SLanguage language = SConceptRepository.getInstance().getInstanceConcept(conceptInUse).getLanguage();
-          usedLanguageQualifiedNames.add(language.getQualifiedName());
+        final HashSet<SLanguage> usedLanguages = new HashSet<SLanguage>(myConceptsInUse.size());
+        for (SConcept conceptInUse : myConceptsInUse) {
+          final SLanguage language = conceptInUse.getLanguage();
+          usedLanguages.add(language);
         }
-        myLanguagesInUse = usedLanguageQualifiedNames;
+        myLanguagesInUse = usedLanguages;
       }
       return myLanguagesInUse;
     }
@@ -210,10 +208,10 @@ public final class ModelScanner {
 
     @Override
     public boolean met(SNode node) {
-      if (!RuleUtil.link_BaseConcept_attrs.equals(node.getRoleInParent())) {
-        return false;
+      if (RuleUtil.link_BaseConcept_attrs.equals(node.getContainmentLink())) {
+        return RuleUtil.isTemplateLanguageElement(node);
       }
-      return GeneratorUtilEx.isTemplateLanguageElement(node);
+      return false;
     }
   }
 }

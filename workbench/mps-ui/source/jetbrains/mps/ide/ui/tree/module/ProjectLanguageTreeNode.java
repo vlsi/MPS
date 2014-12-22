@@ -21,10 +21,8 @@ import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelReferenceTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -93,7 +91,6 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       for (SModel model : sortedModels) {
         SModule m = model.getModule();
         boolean currentModule = m == null || m == getModule();
-        SModule module = m == null ? getModule() : m;
         if (!currentModule) {
           accessories.add(new SModelReferenceTreeNode(model, myProject));
         } else {
@@ -118,7 +115,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     if (getModule().getUtilModels().size() > 0) {
       TextTreeNode utilModels = new SModelGroupTreeNode();
-      SModelsSubtree.create(utilModels, getModule());
+      SModelsSubtree.create(utilModels, getModule(), getModule().getUtilModels(), false);
       this.add(utilModels);
     }
 

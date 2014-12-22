@@ -19,7 +19,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -32,6 +31,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.findusages.ConcreteFilesGlobalSearchScope;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
@@ -85,7 +85,7 @@ public class MPSModelNavigationContributor implements ApplicationComponent, Navi
       boolean needToLoad = false;
       for (NavigationTarget snd : descriptors.get(0)) {
         PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(snd.getConcept().getQualifiedName()).getProperty(
-          SNodeUtil.propertyName_INamedConcept_name);
+          SNodeUtil.property_INamedConcept_name.getName());
         if (descriptor instanceof BasePropertyConstraintsDescriptor && !((BasePropertyConstraintsDescriptor) descriptor).isGetterDefault()) {
           needToLoad = true;
           break;

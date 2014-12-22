@@ -58,7 +58,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.editor.behavior.BaseLineCell_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,476,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,472,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BooleanStyleSheetItem_BehaviorDescriptor.java">
       <unit at="8,0,20,0" name="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
@@ -247,7 +247,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellModel_AbstractLabel_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Alternation_BehaviorDescriptor.java">
-      <unit at="7,0,24,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Alternation_BehaviorDescriptor" />
+      <unit at="8,0,25,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Alternation_BehaviorDescriptor" />
     </file>
     <file name="CellModel_AttributedLinkCell_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.editor.behavior.CellModel_AttributedLinkCell_BehaviorDescriptor" />
@@ -265,67 +265,67 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellModel_BlockStart_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Block_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Block_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Block_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Collection_BehaviorDescriptor.java">
-      <unit at="7,0,27,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Collection_BehaviorDescriptor" />
+      <unit at="8,0,28,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Collection_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Component_BehaviorDescriptor.java">
-      <unit at="7,0,27,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Component_BehaviorDescriptor" />
+      <unit at="8,0,28,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Component_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Constant_BehaviorDescriptor.java">
-      <unit at="7,0,24,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Constant_BehaviorDescriptor" />
+      <unit at="8,0,25,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Constant_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Custom_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Custom_BehaviorDescriptor" />
+      <unit at="8,0,22,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Custom_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Empty_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Empty_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Error_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Error_BehaviorDescriptor" />
+      <unit at="8,0,22,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Error_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Image_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Image_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Image_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Indent_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Indent_BehaviorDescriptor" />
     </file>
     <file name="CellModel_JComponent_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellModel_JComponent_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.CellModel_JComponent_BehaviorDescriptor" />
     </file>
     <file name="CellModel_ListWithRole_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_BehaviorDescriptor" />
     </file>
     <file name="CellModel_ModelAccess_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.behavior.CellModel_ModelAccess_BehaviorDescriptor" />
+      <unit at="8,0,22,0" name="jetbrains.mps.lang.editor.behavior.CellModel_ModelAccess_BehaviorDescriptor" />
     </file>
     <file name="CellModel_NonEmptyProperty_BehaviorDescriptor.java">
-      <unit at="8,0,22,0" name="jetbrains.mps.lang.editor.behavior.CellModel_NonEmptyProperty_BehaviorDescriptor" />
+      <unit at="9,0,23,0" name="jetbrains.mps.lang.editor.behavior.CellModel_NonEmptyProperty_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Property_BehaviorDescriptor.java">
-      <unit at="7,0,33,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Property_BehaviorDescriptor" />
+      <unit at="8,0,34,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Property_BehaviorDescriptor" />
     </file>
     <file name="CellModel_ReadOnlyModelAccessor_BehaviorDescriptor.java">
-      <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.behavior.CellModel_ReadOnlyModelAccessor_BehaviorDescriptor" />
+      <unit at="8,0,22,0" name="jetbrains.mps.lang.editor.behavior.CellModel_ReadOnlyModelAccessor_BehaviorDescriptor" />
     </file>
     <file name="CellModel_RefCell_BehaviorDescriptor.java">
-      <unit at="7,0,30,0" name="jetbrains.mps.lang.editor.behavior.CellModel_RefCell_BehaviorDescriptor" />
+      <unit at="8,0,31,0" name="jetbrains.mps.lang.editor.behavior.CellModel_RefCell_BehaviorDescriptor" />
     </file>
     <file name="CellModel_RefNodeList_BehaviorDescriptor.java">
-      <unit at="7,0,27,0" name="jetbrains.mps.lang.editor.behavior.CellModel_RefNodeList_BehaviorDescriptor" />
+      <unit at="8,0,28,0" name="jetbrains.mps.lang.editor.behavior.CellModel_RefNodeList_BehaviorDescriptor" />
     </file>
     <file name="CellModel_RefNode_BehaviorDescriptor.java">
-      <unit at="7,0,30,0" name="jetbrains.mps.lang.editor.behavior.CellModel_RefNode_BehaviorDescriptor" />
+      <unit at="8,0,31,0" name="jetbrains.mps.lang.editor.behavior.CellModel_RefNode_BehaviorDescriptor" />
     </file>
     <file name="CellModel_ReferencePresentation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellModel_ReferencePresentation_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.CellModel_ReferencePresentation_BehaviorDescriptor" />
     </file>
     <file name="CellModel_TransactionalProperty_BehaviorDescriptor.java">
-      <unit at="8,0,22,0" name="jetbrains.mps.lang.editor.behavior.CellModel_TransactionalProperty_BehaviorDescriptor" />
+      <unit at="9,0,23,0" name="jetbrains.mps.lang.editor.behavior.CellModel_TransactionalProperty_BehaviorDescriptor" />
     </file>
     <file name="CellModel_URL_BehaviorDescriptor.java">
-      <unit at="7,0,24,0" name="jetbrains.mps.lang.editor.behavior.CellModel_URL_BehaviorDescriptor" />
+      <unit at="8,0,25,0" name="jetbrains.mps.lang.editor.behavior.CellModel_URL_BehaviorDescriptor" />
     </file>
     <file name="CellModel_WithRole_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.editor.behavior.CellModel_WithRole_BehaviorDescriptor" />
@@ -403,7 +403,7 @@
       <unit at="11,0,22,0" name="jetbrains.mps.lang.editor.behavior.EditorCellId_BehaviorDescriptor" />
     </file>
     <file name="EditorCellModel_BehaviorDescriptor.java">
-      <unit at="9,0,35,0" name="jetbrains.mps.lang.editor.behavior.EditorCellModel_BehaviorDescriptor" />
+      <unit at="8,0,34,0" name="jetbrains.mps.lang.editor.behavior.EditorCellModel_BehaviorDescriptor" />
     </file>
     <file name="EditorComponentDeclarationReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.EditorComponentDeclarationReference_BehaviorDescriptor" />
@@ -657,8 +657,8 @@
     <file name="StrikeOutStyleSheet_BehaviorDescriptor.java">
       <unit at="8,0,22,0" name="jetbrains.mps.lang.editor.behavior.StrikeOutStyleSheet_BehaviorDescriptor" />
     </file>
-    <file name="StubCellModel_Alteration_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_Alteration_BehaviorDescriptor" />
+    <file name="StubCellModel_Alternation_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_Alternation_BehaviorDescriptor" />
     </file>
     <file name="StubCellModel_Block_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_Block_BehaviorDescriptor" />
@@ -675,14 +675,8 @@
     <file name="StubCellModel_Custom_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_Custom_BehaviorDescriptor" />
     </file>
-    <file name="StubCellModel_Empty_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_Empty_BehaviorDescriptor" />
-    </file>
     <file name="StubCellModel_Error_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_Error_BehaviorDescriptor" />
-    </file>
-    <file name="StubCellModel_HierarchycalTable_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_HierarchycalTable_BehaviorDescriptor" />
     </file>
     <file name="StubCellModel_Image_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_Image_BehaviorDescriptor" />
@@ -724,7 +718,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_URL_BehaviorDescriptor" />
     </file>
     <file name="StubEditorCellModel_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.behavior.StubEditorCellModel_BehaviorDescriptor" />
+      <unit at="11,0,22,0" name="jetbrains.mps.lang.editor.behavior.StubEditorCellModel_BehaviorDescriptor" />
     </file>
     <file name="StyleAttributeDeclaration_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.editor.behavior.StyleAttributeDeclaration_BehaviorDescriptor" />

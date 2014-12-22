@@ -182,8 +182,8 @@ class TemplateNode {
 
       // process property and reference macros
       for (SNode templateChildNode : templateNode.getChildren()) {
-        String templateChildNodeConcept = templateChildNode.getConcept().getQualifiedName();
-        if (GeneratorUtilEx.isTemplateLanguageElement(templateChildNodeConcept)) {
+        SConcept templateChildNodeConcept = templateChildNode.getConcept();
+        if (RuleUtil.isTemplateLanguageElement(templateChildNodeConcept)) {
           if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
             final String propertyName = AttributeOperations.getPropertyName(templateChildNode);
             propsHandledWithMacro.add(propertyName);
@@ -294,7 +294,7 @@ class TemplateNode {
       PropertyMacroContext pmc = new PropertyMacroContext(context, myTemplateValue, myMacro);
       Object macroValue = context.getEnvironment().getQueryExecutor().evaluate(myQuery, pmc);
       String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
-      SNodeAccessUtil.setProperty(outputNode, myQuery.getPropertyName(), propertyValue);
+      SNodeAccessUtil.setProperty(outputNode, myQuery.getProperty(), propertyValue);
     }
   }
 }

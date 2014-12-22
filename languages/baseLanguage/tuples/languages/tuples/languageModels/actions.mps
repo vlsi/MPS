@@ -253,6 +253,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -598,6 +599,7 @@
                   <node concept="3uibUv" id="i3nrc0j" role="2c44tc">
                     <node concept="2c44tb" id="i3nrcTv" role="lGtFl">
                       <property role="2qtEX8" value="classifier" />
+                      <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                       <node concept="uNquD" id="i3nrds8" role="2c44t1" />
                     </node>
                   </node>
@@ -686,6 +688,7 @@
                             <node concept="33vP2n" id="5XXv8qw4A6D" role="2r_lH1" />
                             <node concept="2c44tb" id="5XXv8qw4A6E" role="lGtFl">
                               <property role="2qtEX8" value="componentDeclaration" />
+                              <property role="P3scX" value="a247e09e-2435-45ba-b8d2-07e93feba96a/1239560581441/1239560595302" />
                               <node concept="37vLTw" id="2BHiRxgm$Qh" role="2c44t1">
                                 <ref role="3cqZAo" node="4EEbfpkyyBW" resolve="cmp" />
                               </node>
@@ -748,6 +751,7 @@
                     </node>
                     <node concept="2c44tb" id="5XXv8qw4_fa" role="lGtFl">
                       <property role="2qtEX8" value="tupleDeclaration" />
+                      <property role="P3scX" value="a247e09e-2435-45ba-b8d2-07e93feba96a/1239559992092/1239560008022" />
                       <node concept="uNquD" id="5XXv8qw4_fc" role="2c44t1" />
                     </node>
                   </node>
@@ -827,6 +831,7 @@
                   <node concept="2pR195" id="5XXv8qw4FRp" role="2c44tc">
                     <node concept="2c44tb" id="5XXv8qw4FRq" role="lGtFl">
                       <property role="2qtEX8" value="classifier" />
+                      <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                       <node concept="uNquD" id="5XXv8qw4FRs" role="2c44t1" />
                     </node>
                   </node>

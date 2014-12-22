@@ -156,6 +156,7 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -184,6 +185,7 @@
             <node concept="3Qg3mb" id="2cgI0d$wIO$" role="2c44tc">
               <node concept="2EMmih" id="2cgI0d$wIOB" role="lGtFl">
                 <property role="2qtEX9" value="name" />
+                <property role="P4ACc" value="fbc14279-5e2a-4c87-a5d1-5f7061e6c456/1104094430779063683/2569394751388009837" />
                 <node concept="2OqwBi" id="2cgI0d$wIOE" role="2c44t1">
                   <node concept="1YBJjd" id="2cgI0d$wIOD" role="2Oq$k0">
                     <ref role="1YBMHb" node="2cgI0d$wEWE" resolve="debuggerReference" />

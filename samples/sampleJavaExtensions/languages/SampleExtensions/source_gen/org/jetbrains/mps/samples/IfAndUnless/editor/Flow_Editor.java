@@ -43,7 +43,7 @@ public class Flow_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_gc1fin_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getTitle_1262430001741498056", new Object[]{});
+        return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), "virtual_getTitle_1262430001741498056", new Object[]{});
       }
       public void setText(String s) {
       }

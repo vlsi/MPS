@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -50,7 +48,7 @@ public class FindUsagesUtil {
    */
   public static void collectInstances(SModel model, Collection<SAbstractConcept> concepts, Consumer<SNode> consumer) {
     for (SAbstractConcept concept : concepts) {
-      for (SNode instance : FastNodeFinderManager.get(model).getNodes(concept.getQualifiedName(), false)) {
+      for (SNode instance : FastNodeFinderManager.get(model).getNodes(concept, false)) {
         consumer.consume(instance);
       }
     }

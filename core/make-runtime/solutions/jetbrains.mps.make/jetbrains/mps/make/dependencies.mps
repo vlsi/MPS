@@ -279,6 +279,9 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
+      <concept id="1224414427926" name="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" flags="nn" index="kMnCb">
+        <child id="1224414456414" name="elementType" index="kMuH3" />
+      </concept>
       <concept id="1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" flags="nn" index="2l5eF5">
         <child id="1226567214363" name="argument" index="2l6Ag6" />
       </concept>
@@ -2988,6 +2991,34 @@
                 </node>
               </node>
             </node>
+            <node concept="3cpWs8" id="4vrWHlzyD7S" role="3cqZAp">
+              <node concept="3cpWsn" id="4vrWHlzyD7T" role="3cpWs9">
+                <property role="TrG5h" value="aspect" />
+                <node concept="3uibUv" id="4vrWHlzyD7K" role="1tU5fm">
+                  <ref role="3uigEE" to="fwv2:~MakeAspectDescriptor" resolve="MakeAspectDescriptor" />
+                </node>
+                <node concept="3K4zz7" id="4vrWHlzyK2w" role="33vP2m">
+                  <node concept="10Nm6u" id="4vrWHlzyK4S" role="3K4E3e" />
+                  <node concept="3clFbC" id="4vrWHlzyJxD" role="3K4Cdx">
+                    <node concept="10Nm6u" id="4vrWHlzyJM2" role="3uHU7w" />
+                    <node concept="37vLTw" id="4vrWHlzyJv3" role="3uHU7B">
+                      <ref role="3cqZAo" node="41innpAfQge" resolve="lr" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="4vrWHlzyD7U" role="3K4GZi">
+                    <node concept="37vLTw" id="4vrWHlzyD7V" role="2Oq$k0">
+                      <ref role="3cqZAo" node="41innpAfQge" resolve="lr" />
+                    </node>
+                    <node concept="liA8E" id="4vrWHlzyD7W" role="2OqNvi">
+                      <ref role="37wK5l" to="n55e:~LanguageRuntime.getAspect(java.lang.Class):jetbrains.mps.smodel.runtime.LanguageAspectDescriptor" resolve="getAspect" />
+                      <node concept="3VsKOn" id="4vrWHlzyD7X" role="37wK5m">
+                        <ref role="3VsUkX" to="fwv2:~MakeAspectDescriptor" resolve="MakeAspectDescriptor" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="41innpAfQgk" role="3cqZAp">
               <node concept="3cpWsn" id="41innpAfQgl" role="3cpWs9">
                 <property role="TrG5h" value="fcts" />
@@ -2996,25 +3027,32 @@
                     <ref role="3uigEE" to="wcph:~IFacet" resolve="IFacet" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="41innpAfQgo" role="33vP2m">
-                  <node concept="2OqwBi" id="41innpAfQgp" role="2Oq$k0">
-                    <node concept="2OqwBi" id="41innpAfQgr" role="2Oq$k0">
-                      <node concept="37vLTw" id="41innpAfQgs" role="2Oq$k0">
-                        <ref role="3cqZAo" node="41innpAfQge" resolve="lr" />
+                <node concept="3K4zz7" id="4vrWHlzyKTM" role="33vP2m">
+                  <node concept="2ShNRf" id="4vrWHlzyL1e" role="3K4E3e">
+                    <node concept="kMnCb" id="4vrWHlzyU9I" role="2ShVmc">
+                      <node concept="3uibUv" id="4vrWHlzz5BV" role="kMuH3">
+                        <ref role="3uigEE" to="wcph:~IFacet" resolve="IFacet" />
                       </node>
-                      <node concept="liA8E" id="41innpAfQgt" role="2OqNvi">
-                        <ref role="37wK5l" to="n55e:~LanguageRuntime.getAspect(java.lang.Class):jetbrains.mps.smodel.runtime.LanguageAspectDescriptor" resolve="getAspect" />
-                        <node concept="3VsKOn" id="7_1la9pBzoQ" role="37wK5m">
-                          <ref role="3VsUkX" to="fwv2:~MakeAspectDescriptor" resolve="MakeAspectDescriptor" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="41innpAfQgw" role="2OqNvi">
-                      <ref role="37wK5l" to="fwv2:~MakeAspectDescriptor.getManifest():jetbrains.mps.make.facet.IFacetManifest" resolve="getManifest" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="41innpAfQgx" role="2OqNvi">
-                    <ref role="37wK5l" to="wcph:~IFacetManifest.facets():java.lang.Iterable" resolve="facets" />
+                  <node concept="3clFbC" id="4vrWHlzyKyv" role="3K4Cdx">
+                    <node concept="10Nm6u" id="4vrWHlzyKI6" role="3uHU7w" />
+                    <node concept="37vLTw" id="4vrWHlzyKo7" role="3uHU7B">
+                      <ref role="3cqZAo" node="4vrWHlzyD7T" resolve="aspect" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="41innpAfQgo" role="3K4GZi">
+                    <node concept="2OqwBi" id="41innpAfQgp" role="2Oq$k0">
+                      <node concept="37vLTw" id="4vrWHlzyD7Y" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4vrWHlzyD7T" resolve="aspect" />
+                      </node>
+                      <node concept="liA8E" id="41innpAfQgw" role="2OqNvi">
+                        <ref role="37wK5l" to="fwv2:~MakeAspectDescriptor.getManifest():jetbrains.mps.make.facet.IFacetManifest" resolve="getManifest" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="41innpAfQgx" role="2OqNvi">
+                      <ref role="37wK5l" to="wcph:~IFacetManifest.facets():java.lang.Iterable" resolve="facets" />
+                    </node>
                   </node>
                 </node>
               </node>

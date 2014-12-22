@@ -22,7 +22,6 @@
     <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
     <import index="wqua" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" />
-    <import index="ff4b" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1529,21 +1528,6 @@
                 <node concept="liA8E" id="5rYR3QhLJy7" role="2OqNvi">
                   <ref role="37wK5l" to="vsqj:~AbstractModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="2IGzuM5QfJV" role="3cqZAp" />
-        <node concept="3clFbF" id="2IGzuM5Qgo5" role="3cqZAp">
-          <node concept="2OqwBi" id="2IGzuM5Qh03" role="3clFbG">
-            <node concept="2YIFZM" id="2IGzuM5QgGU" role="2Oq$k0">
-              <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
-              <ref role="1Pybhc" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
-            </node>
-            <node concept="liA8E" id="2IGzuM5QhwI" role="2OqNvi">
-              <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadModule(org.jetbrains.mps.openapi.module.SModule):java.util.Collection" resolve="reloadModule" />
-              <node concept="37vLTw" id="5CJoUBnUWhF" role="37wK5m">
-                <ref role="3cqZAo" node="5rYR3QhLnQs" resolve="languageModule" />
               </node>
             </node>
           </node>

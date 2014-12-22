@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import java.util.List;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.application.ApplicationManager;
@@ -53,12 +54,12 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     }
     return myPreferences;
   }
-  public List<SpecificChecker> getSpecificCheckers() {
+  public List<SpecificChecker> getSpecificCheckers(@NotNull Project mpsProject) {
     List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
 
     if (myMigrationMode) {
-      // todo this is a hack ti use model chacker in migration tool 
-      ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
+      // todo this is a hack to use model checker in migration tool 
+      ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker(mpsProject));
     } else {
       ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
       if (isCheckModelProperties()) {
@@ -66,9 +67,9 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
       }
       ListSequence.fromList(specificCheckers).addElement(new GeneratorTemplatesChecker());
       if (isCheckUnresolvedReferences()) {
-        ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
+        ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker(mpsProject));
       }
-      ListSequence.fromList(specificCheckers).addElement(new SpecificModelChecker());
+      ListSequence.fromList(specificCheckers).addElement(new SpecificModelChecker(mpsProject));
     }
     return specificCheckers;
   }

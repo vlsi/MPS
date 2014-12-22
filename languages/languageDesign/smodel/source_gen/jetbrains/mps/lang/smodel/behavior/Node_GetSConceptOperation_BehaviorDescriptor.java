@@ -7,6 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class Node_GetSConceptOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Node_GetSConceptOperation_BehaviorDescriptor() {
   }
+  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+    return Node_GetSConceptOperation_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
+  }
   public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return Node_GetSConceptOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
   }

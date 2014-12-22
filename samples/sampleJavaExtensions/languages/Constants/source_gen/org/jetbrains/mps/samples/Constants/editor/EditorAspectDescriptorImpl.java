@@ -20,6 +20,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new ConstantReference_Editor());
       case 2:
         return Collections.<ConceptEditor>singletonList(new Constants_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new DistantConstantReference_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -29,5 +31,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.Constants"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.Constants", "org.jetbrains.mps.samples.Constants.structure.DistantConstantReference"};
 }

@@ -218,9 +218,11 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -472,6 +474,7 @@
                     <node concept="33vP2n" id="3bEKrlZKBl2" role="1daK9t" />
                     <node concept="2EMmih" id="3bEKrlZKBl3" role="lGtFl">
                       <property role="2qtEX9" value="feedback" />
+                      <property role="P4ACc" value="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b/3668957831723333672/3668957831723333678" />
                       <node concept="2OqwBi" id="3bEKrlZKBl6" role="2c44t1">
                         <node concept="uNquD" id="3bEKrlZKBl5" role="2Oq$k0" />
                         <node concept="2ZYiMu" id="3bEKrlZKBla" role="2OqNvi" />
@@ -603,6 +606,7 @@
                     <node concept="33vP2n" id="2R293h5kj$K" role="1u1xPX" />
                     <node concept="2c44tb" id="_U7e4opDqi" role="lGtFl">
                       <property role="2qtEX8" value="workStatement" />
+                      <property role="P3scX" value="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b/187226666892683652/682890046602395482" />
                       <node concept="uNquD" id="_U7e4opDrD" role="2c44t1" />
                     </node>
                   </node>
@@ -682,6 +686,7 @@
                   <node concept="1u1O0I" id="2R293h5kriT" role="2c44tc">
                     <node concept="2c44tb" id="_U7e4opDrF" role="lGtFl">
                       <property role="2qtEX8" value="workStatement" />
+                      <property role="P3scX" value="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b/187226666892683655/682890046602397405" />
                       <node concept="uNquD" id="_U7e4opDrH" role="2c44t1" />
                     </node>
                   </node>

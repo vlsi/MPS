@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -190,9 +190,11 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -389,6 +391,7 @@
           <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
           <node concept="1ZhdrF" id="2VRROcY7tLu" role="lGtFl">
             <property role="2qtEX8" value="concept" />
+            <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
             <node concept="3$xsQk" id="2VRROcY7tLv" role="3$ytzL">
               <node concept="3clFbS" id="2VRROcY7tLw" role="2VODD2">
                 <node concept="3clFbF" id="2VRROcY7tPz" role="3cqZAp">
@@ -405,6 +408,7 @@
         </node>
         <node concept="17Uvod" id="2VRROcY7upj" role="lGtFl">
           <property role="2qtEX9" value="name" />
+          <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
           <node concept="3zFVjK" id="2VRROcY7upk" role="3zH0cK">
             <node concept="3clFbS" id="2VRROcY7upl" role="2VODD2">
               <node concept="3clFbF" id="2VRROcY7uFc" role="3cqZAp">
@@ -564,6 +568,7 @@
       </node>
       <node concept="17Uvod" id="3geGFOI1yoo" role="lGtFl">
         <property role="2qtEX9" value="name" />
+        <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="3geGFOI1yop" role="3zH0cK">
           <node concept="3clFbS" id="3geGFOI1yoq" role="2VODD2">
             <node concept="3clFbF" id="3geGFOI1yor" role="3cqZAp">
@@ -602,6 +607,7 @@
     </node>
     <node concept="17Uvod" id="2VRROcY7p66" role="lGtFl">
       <property role="2qtEX9" value="name" />
+      <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
       <node concept="3zFVjK" id="2VRROcY7p67" role="3zH0cK">
         <node concept="3clFbS" id="2VRROcY7p68" role="2VODD2">
           <node concept="3clFbF" id="2VRROcY7pRi" role="3cqZAp">
@@ -676,6 +682,7 @@
       <node concept="raruj" id="3crTN2Y1D98" role="lGtFl" />
       <node concept="17Uvod" id="3crTN2Y1D9a" role="lGtFl">
         <property role="2qtEX9" value="name" />
+        <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="3crTN2Y1D9b" role="3zH0cK">
           <node concept="3clFbS" id="3crTN2Y1D9c" role="2VODD2">
             <node concept="3clFbF" id="3crTN2Y1DmT" role="3cqZAp">
@@ -760,6 +767,7 @@
       <node concept="raruj" id="3m06Jgse9wF" role="lGtFl" />
       <node concept="17Uvod" id="3m06Jgse9wG" role="lGtFl">
         <property role="2qtEX9" value="name" />
+        <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="3m06Jgse9wH" role="3zH0cK">
           <node concept="3clFbS" id="3m06Jgse9wI" role="2VODD2">
             <node concept="3clFbF" id="3m06Jgse9wJ" role="3cqZAp">

@@ -322,6 +322,8 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     }
 
     public void invalidate() {
+
+      changeModelReference(getSModelReference(myModule));
       myHash = null;
     }
   }

@@ -1824,7 +1824,7 @@
                     <node concept="3cpWs3" id="1TclyuNTOpv" role="37wK5m">
                       <node concept="3cpWs3" id="1TclyuNTOpw" role="3uHU7B">
                         <node concept="Xl_RD" id="1TclyuNTOpx" role="3uHU7B">
-                          <property role="Xl_RC" value="An error occured while trying to collect models to generate from refactoring " />
+                          <property role="Xl_RC" value="An error occurred while trying to collect models to generate from refactoring " />
                         </node>
                         <node concept="2OqwBi" id="1TclyuNTOpy" role="3uHU7w">
                           <node concept="37vLTw" id="2BHiRxgha3g" role="2Oq$k0">

@@ -85,8 +85,8 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
 
   @Override
   protected void dependenciesChanged() {
-    if (!willLoad()) return;
     super.dependenciesChanged();
+    if (!willLoad()) return;
     fireDependenciesChanged();
   }
 

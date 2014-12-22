@@ -27,6 +27,9 @@ public abstract class AbstractComputeRunnable<T> implements Runnable {
     myResult = compute();
   }
 
+  /**
+   * @return outcome of most recent {@link #compute()} call
+   */
   public T getResult() {
     return myResult;
   }

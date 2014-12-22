@@ -71,6 +71,7 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -142,6 +143,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
@@ -158,6 +160,7 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -230,25 +233,45 @@
     <ref role="3gKJdq" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     <node concept="2PqlIu" id="hroutJp" role="3gKxsI">
       <node concept="3clFbS" id="hroutJq" role="2VODD2">
+        <node concept="3cpWs8" id="3KKAe$JGDv4" role="3cqZAp">
+          <node concept="3cpWsn" id="3KKAe$JGDv7" role="3cpWs9">
+            <property role="TrG5h" value="c" />
+            <node concept="39LhUk" id="3KKAe$JGDA2" role="33vP2m" />
+            <node concept="3THzug" id="3KKAe$JGINL" role="1tU5fm" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="5TsiQeH8iMO" role="3cqZAp">
           <node concept="3cpWsn" id="5TsiQeH8iMP" role="3cpWs9">
             <property role="TrG5h" value="concept" />
             <node concept="3uibUv" id="4Qrd9RfAFko" role="1tU5fm">
               <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
             </node>
-            <node concept="2OqwBi" id="5TsiQeH8iMR" role="33vP2m">
-              <node concept="liA8E" id="5TsiQeH8iMS" role="2OqNvi">
-                <ref role="37wK5l" to="t3eg:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                <node concept="2YIFZM" id="5TsiQeH8iMT" role="37wK5m">
-                  <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                  <ref role="37wK5l" to="msyo:~NameUtil.nodeFQName(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="nodeFQName" />
-                  <node concept="39LhUk" id="5TsiQeH8iMU" role="37wK5m" />
-                </node>
+            <node concept="2OqwBi" id="3KKAe$JGVaE" role="33vP2m">
+              <node concept="37vLTw" id="3KKAe$JGUFP" role="2Oq$k0">
+                <ref role="3cqZAo" node="3KKAe$JGDv7" resolve="c" />
               </node>
-              <node concept="2YIFZM" id="5TsiQeH8iMV" role="2Oq$k0">
-                <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-                <ref role="1Pybhc" to="t3eg:~SConceptRepository" resolve="SConceptRepository" />
+              <node concept="1rGIog" id="3KKAe$JGVWI" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="3KKAe$JGXhj" role="3cqZAp">
+          <node concept="3clFbS" id="3KKAe$JGXhm" role="3clFbx">
+            <node concept="3SKdUt" id="3KKAe$JGZdk" role="3cqZAp">
+              <node concept="3SKdUq" id="3KKAe$JGZdy" role="3SKWNk">
+                <property role="3SKdUp" value="just in case, generally it shall not happen provided our concept (and descriptor) registries are correct" />
               </node>
+            </node>
+            <node concept="3SKdUt" id="3KKAe$JGZhr" role="3cqZAp">
+              <node concept="3SKdUq" id="3KKAe$JGZhF" role="3SKWNk">
+                <property role="3SKdUp" value="However, doesn't hurt to protect finder implementation from unexpected input" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="3KKAe$JGZcT" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="3KKAe$JGY$X" role="3clFbw">
+            <node concept="10Nm6u" id="3KKAe$JGZaw" role="3uHU7w" />
+            <node concept="37vLTw" id="3KKAe$JGXX4" role="3uHU7B">
+              <ref role="3cqZAo" node="5TsiQeH8iMP" resolve="concept" />
             </node>
           </node>
         </node>

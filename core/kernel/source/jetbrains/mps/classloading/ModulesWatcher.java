@@ -44,10 +44,22 @@ import static jetbrains.mps.classloading.ModulesWatcher.ClassLoadingStatus.VALID
 
 /**
  * This class watches all the reloadable modules, which satisfy #myWatchableCondition in the repository and dependencies between them.
+ * It aims to store a status for each tracked module
+ * @see jetbrains.mps.classloading.ModulesWatcher.ClassLoadingStatus
+ * and to return all compile depedencies of module within repository
+ * @see #getDependencies(Iterable)
+ * Also it keeps a dependency graph to be able to calculate back dependencies for any module
+ * @see #getBackDependencies(Iterable)
  *
- * Note: due to lazy implementation of module unloading, there is a possible situation,
+ * Note: due to the lazy implementation of module unloading, there is a possible situation,
  * when there are some disposed modules in ModulesWatcher.
- * We may be asked about their dependencies etc.
+ * We may be asked about their dependencies etc. Therefore <code>ModulesWatcher</code> tracks references to modules not modules themselves.
+ * The add/remove/update module methods are triggered from above. This class updates its state accordingly.
+ *
+ * A lazy mechanism is used here: when the state is 'dirty', refresh happens at any request.
+ * @see #recountStatus()
+ *
+ * Notice, that read action is required on every update.
  *
  * @see ClassLoaderManager#myLoadableCondition
  * @see #myWatchableCondition
@@ -75,6 +87,11 @@ public class ModulesWatcher {
     myModuleUpdater = new ModuleUpdater(repository, watchableCondition, myDepGraphHolder, myRefStorage);
   }
 
+  /**
+   * @param mRef is a module reference. <code>ModulesWatcher</code> maintains references, not modules themselves.
+   * @return the status for the given module reference
+   * @see jetbrains.mps.classloading.ModulesWatcher.ClassLoadingStatus
+   */
   @NotNull
   public ClassLoadingStatus getStatus(@NotNull SModuleReference mRef) {
     if (isChanged()) recountStatus();
@@ -303,7 +320,9 @@ public class ModulesWatcher {
 
   static enum ClassLoadingStatus {
     /**
-     * module is not loadable OR it is loadable has some loadable dependency (transitive) which does not belong to the repository
+     * module is not loadable OR
+     * module is loadable and disposed from the repository OR
+     * module is loadable and it has some loadable dependency (transitively) which does not belong to the repository
      */
     INVALID,
     /**

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="chlp6s3bg6xt2ilfeauwy1dwznhfvvy">
+<dependencies version="2" modelHash="9nmpjzyk7tjixmqzredudadb93zhigl">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5der0wv6wpzv36r1kpy4fwtbek2cc8t" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="87zb9zl48w18mihs5lboex16eywwdnx" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="48944b1cfwqxvdpezeq6prmp0dpw0a7" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="8ku9t72il53favkb9fpub7z9cxkwgjr" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="77e7vrxwktrwtif07h81po81o0pd60t" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7hjj6380di9z6lpczodq9bu0abl64gv" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9xnvt31u9gr2qexvi5bxnf71s04o6o5" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-ajsbgwxj7crwy9oqyin0k0t70v6l2lo" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-dt8to0e3awhqgsnd0xitpnu1mljmtfr" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-9lny1bcgmsj6ddbjr6zjn9kth8r4tee" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="3979htvmzyt37hmn9o5mgxs1v4qsbir" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-awwe9jm0em9t0z02whbenqtgowhkh7l" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8iidkdf4srxzkbm3a3s8bo4lb455op2" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="clelklcyyrltwc0s7skmek9f9pkvicn" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="4yuncavoqhqnvwytey6u777j2u1wj3r" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="eqxetffw2bixf5c415pipp3oosuwnec" />
   <common hash="91wyd8m8rq3mewx0614mh8t0j5dh8ld" dependsOnNodes="true">
     <dep root="1071666914219" />
@@ -275,8 +275,6 @@
     <dep root="8104358048506729361" />
     <dep root="8104358048506730066" />
     <dep root="8104358048506730068" />
-    <dep root="8104358048506730159" />
-    <dep root="8104358048506730324" />
     <dep root="8104358048506731195" />
     <dep root="8104358048506731196" />
     <dep root="8104358048506731197" />
@@ -304,17 +302,17 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="1071666914219" name="ConceptEditorDeclaration" hash="ebojsnuxo54jpwc5ntusvugv0stospg" />
-  <source id="1073389214265" name="EditorCellModel" hash="-7avxwq1nbo2qi6gkqvjjfivwzbdtvxy" />
-  <source id="1073389446423" name="CellModel_Collection" hash="-4bployfypibw0vx89vdi9vo6om6ch1k" />
-  <source id="1073389577006" name="CellModel_Constant" hash="-6anenido8obzqgjhrqb1uxqf71ye3kc" />
-  <source id="1073389658414" name="CellModel_Property" hash="-9xsenatg7wr1t0u6ppjax6vvfbn1cc4" />
-  <source id="1073389882823" name="CellModel_RefNode" hash="-az7qd6bq25fswp9jnre5p5uhd3p6jxl" />
-  <source id="1073390211982" name="CellModel_RefNodeList" hash="-6qxlkvji4p56zjrencehuwd7grvyim1" />
-  <source id="1074767920765" name="CellModel_ModelAccess" hash="bu6mux9dxwmfz5lvszglba9lia2r769" />
-  <source id="1075375595203" name="CellModel_Error" hash="-5m8z8phc7gr5bbmc21ltjb7ch4y1n73" />
-  <source id="1078308402140" name="CellModel_Custom" hash="3eqd30dhaa9gdz1gn04d1bqjvqci3bw" />
+  <source id="1073389214265" name="EditorCellModel" hash="dhewhdg980pt1rrioc3ulyks7isd78j" />
+  <source id="1073389446423" name="CellModel_Collection" hash="2s77kjl15w21a10r1idc0jcoi4e78f2" />
+  <source id="1073389577006" name="CellModel_Constant" hash="9btimvw1jf7ypmzbyje85ra7no36w2n" />
+  <source id="1073389658414" name="CellModel_Property" hash="4aocfamjf7qnpwppqwomipa2mog2e3x" />
+  <source id="1073389882823" name="CellModel_RefNode" hash="c03cfmz96qxhxkk75uqwjhoje5ijf3t" />
+  <source id="1073390211982" name="CellModel_RefNodeList" hash="6khkysy4r6qgbwb78m026r862wfe47s" />
+  <source id="1074767920765" name="CellModel_ModelAccess" hash="-a97nt2ayr9q35xiw3x9qihrmvjdat56" />
+  <source id="1075375595203" name="CellModel_Error" hash="-ceoof4zd81igwili0a2akeiu0pzup6i" />
+  <source id="1078308402140" name="CellModel_Custom" hash="1jlo76844j9chwn8eazm7sz7v2ysblk" />
   <source id="1078938745671" name="EditorComponentDeclaration" hash="-xrcukpehsqod5bi8a0bxnx9dobno71" />
-  <source id="1078939183254" name="CellModel_Component" hash="-9v6d9g7nacyogbacj326qx05eg11iqy" />
+  <source id="1078939183254" name="CellModel_Component" hash="-bvy96gyp5lsipyhuw4rqgltwev7efkx" />
   <source id="1079353555532" name="CellModel_AbstractLabel" hash="7l86elagwcqqos7rf7083w9n4lirgk0" />
   <source id="1080736578640" name="BaseEditorComponent" hash="-5xugg9i6njb5y7ydsr0stvvmu6qazqq" />
   <source id="1081293058843" name="CellKeyMapDeclaration" hash="-5dslee90n2fqwkk99r3l703x45xkzej" />
@@ -325,7 +323,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="_YesNoDefault_Enum.java" />
     <file name="_YesNoDefault_Enum_PropertySupport.java" />
@@ -336,26 +333,24 @@
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="_Colors_Enum.java" />
     <file name="_Colors_Enum_PropertySupport.java" />
   </source>
-  <source id="1088013125922" name="CellModel_RefCell" hash="-3u16cayxhh3rfer7tbryf1hcv99sg9m" />
+  <source id="1088013125922" name="CellModel_RefCell" hash="3eh3uvm1xam3k52qsa4bshry2j1ay3m" />
   <source id="1088185857835" name="InlineEditorComponent" hash="-74qjmf480rcpu2x42env9xyswjbw9s1" />
-  <source id="1088612959204" name="CellModel_Alternation" hash="-e3dq6nx4s619b5be0tp4vihi49mqdmr" />
+  <source id="1088612959204" name="CellModel_Alternation" hash="2a8tmkv06ztdfeo1xrloxrt1b8gw56a" />
   <source id="1101211480448" name="_FontStyle_Enum" hash="67mht4hrfjubho3vzlc6snl7g82zikp">
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="_FontStyle_Enum.java" />
     <file name="_FontStyle_Enum_PropertySupport.java" />
   </source>
-  <source id="1103016434866" name="CellModel_JComponent" hash="-ba0q8ues2v9r66jxcaj8oam2b30cxut" />
+  <source id="1103016434866" name="CellModel_JComponent" hash="ew2zztrikb4infza0cs5v716zp94825" />
   <source id="1106270491082" name="CellLayout" hash="-ak7i1gqo2f7xlilm8gqag1d9gv1m7ja" />
   <source id="1106270549637" name="CellLayout_Horizontal" hash="-3dd4tt2puzkllihniyzu1gm4cltpq2j" />
   <source id="1106270571710" name="CellLayout_Vertical" hash="-7peefp2lyoynbl93z0wtgd1xfo8w7e6" />
@@ -366,7 +361,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UnderlineStyle.java" />
     <file name="UnderlineStyle_PropertySupport.java" />
@@ -421,7 +415,7 @@
     <file name="_ImageAlignment_Enum.java" />
     <file name="_ImageAlignment_Enum_PropertySupport.java" />
   </source>
-  <source id="1139744628335" name="CellModel_Image" hash="-3qtt72651yr6a51txb98n5xi4z6d5oa" />
+  <source id="1139744628335" name="CellModel_Image" hash="4seru22jrc4gde8xzv6hzxshgsnd16b" />
   <source id="1139848536355" name="CellModel_WithRole" hash="9q42h420goz400qcrsipisl1zwatk7d" />
   <source id="1140524381322" name="CellModel_ListWithRole" hash="-on0jmwqd0u3ww2ngqsqc6kfwh2o4yr" />
   <source id="1140813780565" name="RightTransformAnchorTag" hash="-548xe2jl4oymh1w6sbe83gliyv2mim9">
@@ -507,7 +501,7 @@
   <source id="1180616057533" name="CellMenuPart_PropertyPostfixHints_GetPostfixes" hash="ekaa533nb9k5lts5qaygrjr53oawy6n" />
   <source id="1182191800432" name="QueryFunction_NodeListFilter" hash="-csdeoxam8br5le7or5gzivlu1ujc5hi" />
   <source id="1182233249301" name="ConceptFunctionParameter_childNode" hash="-cguxlchhx2kyx9x07dbh0rzu5y91hb0" />
-  <source id="1184319644772" name="CellModel_NonEmptyProperty" hash="53yp3wjsabilpxqmw0cc1ell34ru50r" />
+  <source id="1184319644772" name="CellModel_NonEmptyProperty" hash="-dw225wbz8f27wgvnw0qho4suyeh1kno" />
   <source id="1186402211651" name="StyleSheet" hash="ctu1w3epofu75eeh9d9jx877n85vx05" />
   <source id="1186402373407" name="StyleSheetClass" hash="-7zf2x24g6i8trwc3b6egnfcqs81ssyk" />
   <source id="1186402475462" name="StyleClassItem" hash="-4gsduypinwtsstdwpqa701xr4uhh0r1" />
@@ -538,7 +532,7 @@
   <source id="1198256887712" name="CellModel_Indent" hash="5f0ojka4vblmrscczbmkeiz3bw8c17v" />
   <source id="1198257632966" name="CellModel_BlockStart" hash="cxjtn5bexqmcmdlah5qtgajgbp1kqw4" />
   <source id="1198257747917" name="CellModel_BlockEnd" hash="1lol7utnolfhvqpw62llrc9v5ded7gp" />
-  <source id="1198489924438" name="CellModel_Block" hash="-e79n2sgzurxo9bk73ttvctbevct5tzi" />
+  <source id="1198489924438" name="CellModel_Block" hash="-32z9aqn9mskdgn4fjsdqtmmrafnrpl5" />
   <source id="1201266127262" name="SelectParameter" hash="aue6d1zk83uldz8pvyuvkfaslb8ffug" />
   <source id="1201268783309" name="SelectPositionParameter" hash="b7iyqo63g6094p5p4s9ua0hghz3n15o" />
   <source id="1201268793545" name="SelectPosition" hash="9lqjfydi39zy18tlfwgphf7w23dph8s">
@@ -573,7 +567,7 @@
     <file name="_NextLine_Enum_PropertySupport.java" />
   </source>
   <source id="1216308599511" name="PositionStyleClassItem" hash="-b8g3omswpnr3nejbdoxwqtmd0lq0oy3" />
-  <source id="1216380990741" name="CellModel_TransactionalProperty" hash="-4uhfukjnymzu6250w7q77cboo50g8pj" />
+  <source id="1216380990741" name="CellModel_TransactionalProperty" hash="stp42ksluxx98zq539um8nf6j3422p" />
   <source id="1216381054717" name="TransactionalPropertyHandler" hash="-b3l6c5612vz22xfwm89rmmtu5uok8iq" />
   <source id="1216381117100" name="TransactionPropertyHandler_oldValue" hash="d0bhw6bm3eudz3alvudvksoulatpzz" />
   <source id="1216381148013" name="TransactionPropertyHandler_newValue" hash="-epypjwd9lc3vmdy5kdxysm4qd8v2lqf" />
@@ -590,7 +584,7 @@
   <source id="1225456097782" name="IQueryFunction_Color" hash="-eschz4549errd0r9lc74a1p1gc3w8pp" />
   <source id="1225456267680" name="RGBColor" hash="-9nuzy2i4opv8oyi379p9qp2u6srfbzs" />
   <source id="1225898583838" name="ReadOnlyModelAccessor" hash="btq5z51kgqhz6ays4g9p0ii65dmuprp" />
-  <source id="1225900081164" name="CellModel_ReadOnlyModelAccessor" hash="efha46cidkkvks8c7jbai8h0novrt7w" />
+  <source id="1225900081164" name="CellModel_ReadOnlyModelAccessor" hash="-k1gsaf4xd4og1mweyuigketm6tb5f5" />
   <source id="1226339751946" name="PaddingTopStyleClassItem" hash="5g9jnpafagjp6stsi14khmp8j73ianh" />
   <source id="1226339813308" name="PaddingBottomStyleClassItem" hash="7eyv7h3k17zy5oxz1w5jd43cdafpfa7" />
   <source id="1226339938453" name="AbstractPaddingStyleClassItem" hash="-6fbstngirp6ekiuo8ivrip0x5jl26ie" />
@@ -634,7 +628,7 @@
   </source>
   <source id="1239814640496" name="CellLayout_VerticalGrid" hash="-4aozpzqch1ndjx75yc0y4vut9kbcrkl" />
   <source id="1240253180846" name="IndentLayoutNoWrapClassItem" hash="-4m5u8jixiqtuch5898udplevveyns9g" />
-  <source id="625126330682908270" name="CellModel_ReferencePresentation" hash="-2694ba1rj9tk2a4p3g1l02692zjx3yl" />
+  <source id="625126330682908270" name="CellModel_ReferencePresentation" hash="-8li7nels3xf4m4p8tx6ua2q2bcl41w6" />
   <source id="7667276221847570194" name="ParametersInformationStyleClassItem" hash="-24pqcws893860aswgs9oesifixwi0ap" />
   <source id="7667276221847612622" name="ParametersInformationQuery" hash="-9xev6m2u869dm830wbasg6jr3aos8rw" />
   <source id="7667276221847612943" name="QueryFunction_ParametersList" hash="-3sx43u40qg4jfdro6x1viqatzvims2m" />
@@ -685,7 +679,7 @@
   <source id="8313721352726366579" name="CellModel_Empty" hash="cq8l166uzf9gkdxtrj36yrg6ux9nng6" />
   <source id="7597241200646296617" name="NavigatableNodeStyleClassItem" hash="4r83f7ongrm9jkajbk4bjlsn61bwrs6" />
   <source id="7597241200646296619" name="QueryFunction_SNode" hash="-1h1wwoviuerc8pe5eoh02klnfxnclsl" />
-  <source id="3696012239575138270" name="CellModel_URL" hash="-6xhn922nh8h8iq0mbh4tlm9uxxi6bm3" />
+  <source id="3696012239575138270" name="CellModel_URL" hash="caz9oxdduv8xzirso624iv48jik9be8" />
   <source id="3608226089191997415" name="RightTransformAnchorTagWrapper" hash="-aogkd15zlgzf54y4dznuvsuyv0e4x7q" />
   <source id="709996738298806197" name="QueryFunction_SeparatorText" hash="7tbbfpj4lgma9mg9qq5qq3xscpoufyb" />
   <source id="7651593722933768974" name="MaxWidthStyleClassItem" hash="-c2bpnlq210fcuywvpxxmsjg9boniyq6" />
@@ -764,14 +758,12 @@
   <source id="730538219795961225" name="StubCellModel_ReferencePresentation" hash="2kvxbwewa78ek7p2fus4b2cuiguuunf" />
   <source id="730538219796134133" name="StubCellModel_Property" hash="9ylj17nhoy1a8vf7k86r4l1j6jhrwgi" />
   <source id="730538219796134178" name="StubCellModel_NonEmptyProperty" hash="-8jmf1h958653ho535oe1zv2t0c4a8mc" />
-  <source id="730538219796139730" name="StubEditorCellModel" hash="-einb3qyclujpiycyltnbp6imkz8qt3m" />
+  <source id="730538219796139730" name="StubEditorCellModel" hash="-7da8owov8yvqdrp88ec38liyokogly5" />
   <source id="2794558372793454595" name="StubCellModel_RefNodeList" hash="-4q4p0fsd3133u2o6uca36xbgx59rk7f" />
   <source id="8104358048506731195" name="StubCellModel_Image" hash="-2nai34j2ruspopxhmtgkthnc1602nye" />
   <source id="8104358048506731196" name="StubCellModel_JComponent" hash="3fqrdhjgq5ymqk8483io3bvcn2nb4fk" />
   <source id="8104358048506731197" name="StubCellModel_Table" hash="-ekr88mhiv0r6wwdvmtxipx3qvvmtqd9" />
-  <source id="8104358048506729361" name="StubCellModel_Alteration" hash="-41bfetcx6owgs52wwu7gagj0jqxag27" />
-  <source id="8104358048506730324" name="StubCellModel_HierarchycalTable" hash="-dfuph9nruz3yrxq4mfg2borknrmrwsc" />
-  <source id="8104358048506730159" name="StubCellModel_Empty" hash="4866dlg2jhzperpy3309ry00fgzd7eq" />
+  <source id="8104358048506729361" name="StubCellModel_Alternation" hash="-2mrdx82djn31stwaaht7yzchd6ifnqz" />
   <source id="8104358048506729359" name="StubCellModel_URL" hash="-819dim07865jqtyzl6iewjrr3h473um" />
   <source id="8104358048506729358" name="StubCellModel_TransactionalProperty" hash="8azcksbfhdaie81edumte6yklyrl4x7" />
   <source id="8104358048506729357" name="StubCellModel_ModelAccess" hash="-3acqsh357ga55lifrndvv3jm1y5kp0b" />

@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.classloading.ClassLoaderManager;
 
 public class ImportUsedLanguage_QuickFix extends QuickFix_Runtime {
   public ImportUsedLanguage_QuickFix() {
@@ -25,7 +24,5 @@ public class ImportUsedLanguage_QuickFix extends QuickFix_Runtime {
     // todo: use SLanguage for used languages in model and module! 
     ((SModelInternal) SNodeOperations.getModel(node)).addLanguage(languageModule.getModuleReference());
     ((AbstractModule) SNodeOperations.getModel(node).getModule()).addUsedLanguage(languageModule.getModuleReference());
-
-    ClassLoaderManager.getInstance().reloadModule(languageModule);
   }
 }

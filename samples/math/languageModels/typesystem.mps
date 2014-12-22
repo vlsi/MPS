@@ -356,6 +356,7 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -8970,6 +8971,7 @@
                         </node>
                         <node concept="2EMmih" id="5yEI9As_c_i" role="lGtFl">
                           <property role="2qtEX9" value="height" />
+                          <property role="P4ACc" value="3304fc6e-7c6b-401e-a016-b944934bb21f/4815887568697030517/4815887568697050734" />
                           <node concept="3cpWs3" id="5yEI9As_c_q" role="2c44t1">
                             <node concept="Xl_RD" id="5yEI9As_c_t" role="3uHU7B">
                               <property role="Xl_RC" value="" />
@@ -10139,6 +10141,7 @@
             </node>
             <node concept="2EMmih" id="4blu3Dyr4ix" role="lGtFl">
               <property role="2qtEX9" value="rows" />
+              <property role="P4ACc" value="3304fc6e-7c6b-401e-a016-b944934bb21f/4815887568697030518/4815887568697048492" />
               <node concept="3cpWs3" id="4blu3Dyr4iy" role="2c44t1">
                 <node concept="2OqwBi" id="4blu3Dyr4iz" role="3uHU7w">
                   <node concept="1YBJjd" id="4blu3Dyr4i$" role="2Oq$k0">

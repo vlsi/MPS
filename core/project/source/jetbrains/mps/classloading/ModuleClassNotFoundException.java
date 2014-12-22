@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * Internal MPS exception which is thrown specifically from MPS class loading system.
- * May contain the cause of ClassNotFound and the corresponding module as well.
+ * May contain the cause of ClassNotFoundException and the corresponding module as well.
  */
 public class ModuleClassNotFoundException extends ClassNotFoundException {
   private final SModule myModule;

@@ -5,10 +5,19 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
+    <classNode dependClassName="org.jetbrains.mps.samples.Constants.behavior.ConstantReferenceKeeper_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.behavior.ConstantReference_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.behavior.Constant_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.behavior.Constants_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.Constants.behavior.DistantConstantReference_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.samples.Constants.behavior.GeneratedClassKeeper_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.Constants.behavior.ConstantReferenceKeeper_BehaviorDescriptor" file="ConstantReferenceKeeper_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.Constants.behavior.ConstantReference_BehaviorDescriptor" file="ConstantReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -49,6 +58,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.Constants.behavior.Constants_Behavior" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.Constants.behavior.DistantConstantReference_BehaviorDescriptor" file="DistantConstantReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.samples.Constants.behavior.ConstantReference_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="org.jetbrains.mps.samples.Constants.behavior.GeneratedClassKeeper_BehaviorDescriptor" file="GeneratedClassKeeper_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>

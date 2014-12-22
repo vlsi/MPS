@@ -167,7 +167,6 @@ import java.awt.Adjustable;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.ComponentOrientation;
 import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -203,6 +202,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
@@ -546,7 +546,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell &&
             selectedCell instanceof EditorCell_Label) {
           ((EditorCell_Label) selectedCell).selectWordOrAll();
-          repaint();
+          repaintExternalComponent();
         }
       }
 
@@ -633,19 +633,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             }
             if (toSelect == null) toSelect = rootCell;
             changeSelection(toSelect);
-            repaint();
+            repaintExternalComponent();
             return;
           }
           if (rootCell != null && rootCell.isSelectable()) {
             changeSelection(rootCell);
           }
         }
-        repaint();
+        repaintExternalComponent();
       }
 
       @Override
       public void focusLost(FocusEvent e) {
-        repaint();
+        repaintExternalComponent();
         if (myNodeSubstituteChooser.getWindow() != null &&
             (myNodeSubstituteChooser.getWindow().isAncestorOf(
                 e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
@@ -695,6 +695,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
         deactivateSubstituteChooser();
         updateStatusBarMessage();
+
+        if (oldSelection != null) {
+          for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : oldSelection.getSelectedCells()) {
+            repaint(editorCell);
+          }
+        }
+        if (newSelection != null) {
+          for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : newSelection.getSelectedCells()) {
+            repaint(editorCell);
+          }
+        }
       }
     });
   }
@@ -879,6 +890,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void updateStatusBarMessage() {
+    if (!isFocusOwner()) return;
     getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
@@ -889,9 +901,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         jetbrains.mps.openapi.editor.cells.EditorCell selection = getSelectedCell();
         String info = "";
         if (selection != null) {
-          List<HighlighterMessage> messages = getHighlighterMessagesFor(selection);
-          if (!messages.isEmpty()) {
-            info = messages.get(0).getMessage();
+          HighlighterMessage message = getHighlighterMessageFor(selection);
+          if (message != null) {
+            info = message.getMessage();
           }
         }
 
@@ -931,7 +943,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return null;
     }
     StringBuilder result = new StringBuilder();
-    for (HighlighterMessage message : messages) {
+    for (ListIterator<HighlighterMessage> it = messages.listIterator(messages.size()); it.hasPrevious(); ) {
+      SimpleEditorMessage message = it.previous();
       if (result.length() != 0) {
         result.append("\n");
       }
@@ -958,8 +971,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private HighlighterMessage getHighlighterMessageFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    List<HighlighterMessage> highlighterMessages = getHighlighterMessagesFor(cell);
-    return highlighterMessages.isEmpty() ? null : highlighterMessages.get(0);
+    List<HighlighterMessage> messages = getHighlighterMessagesFor(cell);
+    ListIterator<HighlighterMessage> it = messages.listIterator(messages.size());
+    return it.hasPrevious() ? it.previous() : null;
   }
 
   @Nullable
@@ -1161,12 +1175,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  public void updateMessages() {
-
-    //todo remove
-    getExternalComponent().repaint();
-  }
-
   protected Set<SimpleEditorMessage> getMessages() {
     return new LinkedHashSet<SimpleEditorMessage>(myHighlightManager.getMessages());
   }
@@ -1275,6 +1283,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   public JComponent getExternalComponent() {
     return myContainer;
+  }
+
+  public void repaintExternalComponent() {
+    getExternalComponent().repaint();
   }
 
   @NotNull
@@ -1483,8 +1495,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myCellSwapInProgress = cellSwapInProgress;
     }
     revalidate();
-    repaint();
-    updateMessages();
   }
 
   @Override
@@ -1608,17 +1618,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void relayout() {
-    getEditorContext().pushTracerTask("Relayouting", true);
     doRelayout();
     revalidate();
-    repaint();
-    getVerticalScrollBar().repaint();
-    getEditorContext().popTracerTask();
-  }
-
-  public void revalidateAndRepaint() {
-    myLeftHighlighter.relayout(false);
-    repaint();
+    repaintExternalComponent();
   }
 
   private void doRelayout() {
@@ -1986,7 +1988,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || !isUnderSelection(getSelectionManager().getSelection(), newSelectedCell))) {
       mySelectionManager.setSelection(newSelectedCell);
       newSelectedCell.processMousePressed(mouseEvent);
-      revalidateAndRepaint();
     }
   }
 
@@ -2034,7 +2035,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public final void changeSelection(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell) {
     mySelectionManager.setSelection(newSelectedCell);
     showCellInViewPort(newSelectedCell);
-    repaint();
   }
 
   // TODO: think about replacing this method with one of ensureVisible()/scrollToCell()
@@ -2045,10 +2045,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         @Override
         public void stateChanged(ChangeEvent e) {
           if (!getVisibleRect().isEmpty()) {
+            viewport.removeChangeListener(this);
             if (getSelectedCell() != null) {
               scrollToCell(getSelectedCell());
             }
-            viewport.removeChangeListener(this);
           }
         }
       });
@@ -2384,7 +2384,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (isKeyboardHandlerProcessingEnabled(keyEvent) && peekKeyboardHandler().processKeyPressed(getEditorContext(), keyEvent)) {
       keyEvent.consume();
     }
-    revalidateAndRepaint();
+    repaintExternalComponent();
   }
 
   public void processKeyReleased(final KeyEvent keyEvent) {
@@ -2393,8 +2393,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (isKeyboardHandlerProcessingEnabled(keyEvent) && peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent)) {
       keyEvent.consume();
     }
-
-    revalidateAndRepaint();
+    repaintExternalComponent();
   }
 
   public void processKeyTyped(final KeyEvent keyEvent) {
@@ -2403,8 +2402,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (isKeyboardHandlerProcessingEnabled(keyEvent) && peekKeyboardHandler().processKeyTyped(getEditorContext(), keyEvent)) {
       keyEvent.consume();
     }
-
-    revalidateAndRepaint();
+    repaintExternalComponent();
   }
 
   private boolean isKeyboardHandlerProcessingEnabled(KeyEvent keyEvent) {
@@ -2914,12 +2912,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void editorWillBeDisposed(EditorComponent component);
   }
 
-  @Override
-  public void repaint() {
-    super.repaint();
-    if (myLeftHighlighter != null) {
-      myLeftHighlighter.repaint();
-    }
+  public void repaint(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    repaint(0, cell.getY(), getWidth(), cell.getHeight());
   }
 
   @Override
@@ -3006,7 +3000,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (myLastReferenceCell != null) {
         myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, false);
         setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-        repaint();
+        repaintExternalComponent();
       }
     }
 
@@ -3014,7 +3008,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (myLastReferenceCell != null) {
         myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, true);
         setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        repaint();
+        repaintExternalComponent();
       }
     }
   }

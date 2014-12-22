@@ -26,109 +26,113 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * IMPLEMENTATION NOTE: this is our internal interface and it's not part of generated language/structure aspect code. There's
+ * ConceptDescriptorBuilder which creates appropriate instance, thus giving us freedom to modify this interface as we see fit.
+ */
 public interface ConceptDescriptor {
 
   //------------ concept props
 
   @NotNull
-  SConceptId getId();
+  SConceptId getId(); // since 3.2
 
-  String getConceptFqName();
+  String getConceptFqName(); // since 3.0
 
-  boolean isAbstract();
+  boolean isAbstract(); // since 3.0
 
-  boolean isFinal();
+  boolean isFinal(); // since 3.0
 
-  String getConceptAlias();
+  String getConceptAlias(); // since 3.0
 
-  ConceptKind getConceptKind();
+  ConceptKind getConceptKind(); // since 3.0
 
-  boolean isInterfaceConcept();
+  boolean isInterfaceConcept(); // since 3.0
 
-  String getConceptShortDescription();
+  String getConceptShortDescription(); // since 3.0
 
-  String getHelpUrl();
+  String getHelpUrl(); // since 3.0
 
   //------------ hierarchy
 
   @Nullable
-  SConceptId getSuperConceptId();
+  SConceptId getSuperConceptId(); // since 3.2
 
-  boolean isAssignableTo(SConceptId conceptId);
+  boolean isAssignableTo(SConceptId conceptId); // since 3.2
 
-  List<SConceptId> getParentsIds();
+  List<SConceptId> getParentsIds(); // since 3.2
 
-  Set<SConceptId> getAncestorsIds();
+  Set<SConceptId> getAncestorsIds(); // since 3.2
 
   @Deprecated
   @Nullable
-  String getSuperConcept();
+  String getSuperConcept(); // since 3.0
 
   @Deprecated
-  boolean isAssignableTo(String toConceptFqName);
+  boolean isAssignableTo(String toConceptFqName); // since 3.0
 
   @Deprecated
-  List<String> getParentsNames();
+  List<String> getParentsNames(); // since 3.0
 
   @Deprecated
-  Set<String> getAncestorsNames();
+  Set<String> getAncestorsNames(); // since 3.0
 
   //------------ props
 
-  Set<SPropertyId> getPropertyIds();
+  Set<SPropertyId> getPropertyIds(); // since 3.2
 
-  PropertyDescriptor getPropertyDescriptor(SPropertyId id);
-
-  @Deprecated
-  PropertyDescriptor getPropertyDescriptor(String name);
+  PropertyDescriptor getPropertyDescriptor(SPropertyId id); // since 3.2
 
   @Deprecated
-  Set<String> getPropertyNames();
+  PropertyDescriptor getPropertyDescriptor(String name); // since 3.2
 
   @Deprecated
-  boolean hasProperty(String name);
+  Set<String> getPropertyNames(); // since 3.0
+
+  @Deprecated
+  boolean hasProperty(String name); // since 3.0
 
   //------------ refs
 
-  Set<SReferenceLinkId> getReferenceIds();
+  Set<SReferenceLinkId> getReferenceIds(); // since 3.2
 
-  ReferenceDescriptor getRefDescriptor(SReferenceLinkId id);
-
-  @Deprecated
-  ReferenceDescriptor getRefDescriptor(String name);
+  ReferenceDescriptor getRefDescriptor(SReferenceLinkId id); // since 3.2
 
   @Deprecated
-  Set<String> getReferenceNames();
+  ReferenceDescriptor getRefDescriptor(String name); // since 3.2
 
   @Deprecated
-  boolean hasReference(String name);
+  Set<String> getReferenceNames(); // since 3.0
+
+  @Deprecated
+  boolean hasReference(String name); // since 3.0
 
   //------------ children
 
-  Set<SContainmentLinkId> getLinkIds();
+  Set<SContainmentLinkId> getLinkIds(); // since 3.2
 
-  LinkDescriptor getLinkDescriptor(SContainmentLinkId id);
-
-  @Deprecated
-  LinkDescriptor getLinkDescriptor(String name);
+  LinkDescriptor getLinkDescriptor(SContainmentLinkId id); // since 3.2
 
   @Deprecated
-  Set<String> getChildrenNames();
+  LinkDescriptor getLinkDescriptor(String name); // since 3.2
 
   @Deprecated
-  boolean hasChild(String name);
+  Set<String> getChildrenNames(); // since 3.0
+
+  @Deprecated
+  boolean hasChild(String name); // since 3.0
 
   @Deprecated //obtain from descriptor
-  Set<String> getUnorderedChildrenNames();
+  Set<String> getUnorderedChildrenNames(); // since 3.0
 
   @Deprecated //obtain from descriptor
     //true if true, false if false or !hasChild(name);
-  boolean isMultipleChild(String name);
+  boolean isMultipleChild(String name); // since 3.0
 
   @Deprecated //obtain from descriptor
-  boolean isUnorderedChild(String name);
+  boolean isUnorderedChild(String name); // since 3.0
 
   //------------
 
-  StaticScope getStaticScope();
+  StaticScope getStaticScope(); // since 3.0
 }

@@ -33,16 +33,16 @@
       <unit at="9,0,88,0" name="jetbrains.mps.lang.editor.diagram.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CellModel_DiagramConnector_BehaviorDescriptor.java">
-      <unit at="9,0,29,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_BehaviorDescriptor" />
+      <unit at="10,0,30,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_BehaviorDescriptor" />
     </file>
     <file name="CellModel_DiagramNode_BehaviorDescriptor.java">
-      <unit at="9,0,29,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" />
+      <unit at="10,0,30,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" />
     </file>
     <file name="CellModel_DiagramPort_BehaviorDescriptor.java">
-      <unit at="9,0,23,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramPort_BehaviorDescriptor" />
+      <unit at="10,0,24,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramPort_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Diagram_BehaviorDescriptor.java">
-      <unit at="9,0,29,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" />
+      <unit at="10,0,30,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" />
     </file>
     <file name="ConnectionEndBLQuery_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.diagram.behavior.ConnectionEndBLQuery_BehaviorDescriptor" />

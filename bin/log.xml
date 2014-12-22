@@ -54,7 +54,7 @@
   </appender>
 
 
-  <appender name="DIALOG" class="jetbrains.mps.diagnostic.DialogAppender">
+  <appender name="DIALOG" class="jetbrains.mps.diagnostic.MPSDialogAppender">
       <filter class="org.apache.log4j.varia.LevelRangeFilter">
           <param name="LevelMin" value="ERROR"/>
       </filter>
@@ -63,7 +63,7 @@
   <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
       <param name="MaxFileSize" value="1Mb"/>
       <param name="MaxBackupIndex" value="3"/>
-      <param name="file" value="$LOG_DIR$/mps.log"/>
+      <param name="file" value="$LOG_DIR$/idea.log"/>
       <layout class="org.apache.log4j.PatternLayout">
           <param name="ConversionPattern" value="%d [%7r] %6p - %30.60c - %m \n"/>
       </layout>

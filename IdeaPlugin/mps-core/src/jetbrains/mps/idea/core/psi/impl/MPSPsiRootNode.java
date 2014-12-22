@@ -20,6 +20,7 @@ import com.intellij.lang.FileASTNode;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.FileViewProvider;
+import com.intellij.psi.PsiBinaryFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -56,7 +57,7 @@ import javax.swing.Icon;
  * User: fyodor
  * Date: 3/5/13
  */
-public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRealNode {
+public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinaryFile, MPSPsiRealNode {
 
   private final FileViewProvider myViewProvider;
   private final SNodeId myNodeId;
@@ -64,16 +65,19 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRea
   private MPSPsiModel myModel;
   private boolean separateFile;
 
-  public MPSPsiRootNode (SNodeId nodeId, String name,  PsiManager manager) {
-    this(nodeId, name, manager, null);
+  public MPSPsiRootNode (SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager) {
+    this(nodeId, name, containingModel, manager, null);
     separateFile = false;
   }
 
-  public MPSPsiRootNode (SNodeId nodeId, String name,  PsiManager manager, @Nullable VirtualFile virtualFile) {
+  public MPSPsiRootNode (SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager, @Nullable VirtualFile virtualFile) {
     super(manager);
     myNodeId = nodeId;
+    myModel = containingModel;
+
     myName = name;
-    myViewProvider = new SingleRootFileViewProvider(manager, new LightVirtualFile(), false);
+    myViewProvider = new SingleRootFileViewProvider(manager, MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNodeReference()), false);
+//    myViewProvider = new SingleRootFileViewProvider(manager, virtualFile == null ? new LightVirtualFile() : virtualFile, false);
     separateFile = true;
   }
 
@@ -104,10 +108,6 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRea
   @Override
   public boolean processChildren(PsiElementProcessor<PsiFileSystemItem> processor) {
     return false;
-  }
-
-  public void setModel(MPSPsiModel model) {
-    myModel = model;
   }
 
   @Override

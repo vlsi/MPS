@@ -197,6 +197,7 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -1198,6 +1199,7 @@
                         <node concept="2EMmih" id="7B9bSSBH7j6" role="lGtFl">
                           <property role="2qtEX9" value="text" />
                           <property role="3hQQBS" value="XmlTextValue" />
+                          <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
                           <node concept="37vLTw" id="3GM_nagTtgC" role="2c44t1">
                             <ref role="3cqZAo" node="5bUGwboXCc1" resolve="val" />
                           </node>
@@ -1337,6 +1339,7 @@
                         <node concept="2EMmih" id="7B9bSSBH7jR" role="lGtFl">
                           <property role="2qtEX9" value="text" />
                           <property role="3hQQBS" value="XmlTextValue" />
+                          <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
                           <node concept="37vLTw" id="3GM_nagTwLP" role="2c44t1">
                             <ref role="3cqZAo" node="7B9bSSBH7jc" resolve="val" />
                           </node>

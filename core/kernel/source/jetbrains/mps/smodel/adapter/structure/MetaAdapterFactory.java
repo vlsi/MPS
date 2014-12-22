@@ -80,6 +80,7 @@ public abstract class MetaAdapterFactory {
     return ourConceptIds.get(p);
   }
 
+  @NotNull
   public static SConcept getConcept(long uuidHigh, long uuidLow, long concept, String conceptName) {
     return getConcept(MetaIdFactory.conceptId(uuidHigh, uuidLow, concept), conceptName);
   }

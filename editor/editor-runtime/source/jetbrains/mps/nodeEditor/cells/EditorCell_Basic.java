@@ -21,7 +21,6 @@ import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -717,7 +716,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public Iterable<SimpleEditorMessage> getMessages() {
+  public List<SimpleEditorMessage> getMessages() {
     return getEditor().getHighlightManager().getMessages(this);
   }
 
@@ -727,13 +726,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   @Deprecated
   @Override
   public <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz) {
-    List<T> result = new ArrayList<T>();
-    for (SimpleEditorMessage message : getMessages()) {
-      if (clazz.isInstance(message)) {
-        result.add((T) message);
-      }
-    }
-    return result;
+    return CellMessagesUtil.getMessages(this, clazz);
   }
 
   /**
@@ -757,12 +750,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   @Deprecated
   @Override
   public boolean hasErrorMessages() {
-    for (SimpleEditorMessage message : getMessages()) {
-      if (message.getStatus() == MessageStatus.ERROR) {
-        return true;
-      }
-    }
-    return false;
+    return CellMessagesUtil.hasErrorMessages(this);
   }
 
   /**

@@ -4,25 +4,31 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public interface IAttributeDescriptor {
   public boolean match(@NotNull SNode attribute);
   public void update(@NotNull SNode attribute);
   public static class AttributeDescriptor implements IAttributeDescriptor {
-    protected String myAttributeConceptName;
-    public AttributeDescriptor(@Nullable String attributeConceptName) {
-      myAttributeConceptName = attributeConceptName;
-    }
+    protected SAbstractConcept myAttributeConcept;
     @Deprecated
-    public AttributeDescriptor(@NotNull SNode attributeDeclaration) {
-      myAttributeConceptName = NameUtil.nodeFQName(attributeDeclaration);
+    @ToRemove(version = 3.2)
+    public AttributeDescriptor(@Nullable String attributeConceptName) {
+      myAttributeConcept = MetaAdapterFactoryByName.getConcept(attributeConceptName);
+    }
+    public AttributeDescriptor(@Nullable SAbstractConcept attributeConceptName) {
+      myAttributeConcept = attributeConceptName;
     }
     @Override
     public boolean match(@NotNull SNode attribute) {
-      return myAttributeConceptName == null || SNodeOperations.isInstanceOf(attribute, myAttributeConceptName);
+      return myAttributeConcept == null || SNodeOperations.isInstanceOf(attribute, myAttributeConcept);
     }
     @Override
     public void update(@NotNull SNode attribute) {
@@ -30,54 +36,85 @@ public interface IAttributeDescriptor {
   }
   public static class AllAttributes extends IAttributeDescriptor.AttributeDescriptor {
     public AllAttributes() {
-      super((String) null);
+      super((SAbstractConcept) null);
     }
   }
   public static class NodeAttribute extends IAttributeDescriptor.AttributeDescriptor {
+    @Deprecated
+    @ToRemove(version = 3.2)
     public NodeAttribute(@NotNull String attributeConceptName) {
       super(attributeConceptName);
     }
-    @Deprecated
-    public NodeAttribute(@NotNull SNode attributeDeclaration) {
-      this(NameUtil.nodeFQName(attributeDeclaration));
+    public NodeAttribute(@NotNull SConcept attributeDeclaration) {
+      super(attributeDeclaration);
     }
   }
   public static class LinkAttribute extends IAttributeDescriptor.AttributeDescriptor {
-    private String myLinkRole;
+    private SReferenceLink myLink;
+    @Deprecated
+    @ToRemove(version = 3.2)
     public LinkAttribute(@NotNull String attributeConceptName, String linkRole) {
       super(attributeConceptName);
-      myLinkRole = linkRole;
+      myLink = MetaAdapterFactoryByName.getReferenceLink(MetaIdFactory.INVALID_CONCEPT_NAME, linkRole);
     }
+    public LinkAttribute(@NotNull SConcept attributeDeclaration, SReferenceLink link) {
+      super(attributeDeclaration);
+      myLink = link;
+    }
+    /**
+     * strings can be passed from user-written code
+     */
     @Deprecated
-    public LinkAttribute(@NotNull SNode attributeDeclaration, String linkRole) {
-      this(NameUtil.nodeFQName(attributeDeclaration), linkRole);
+    @ToRemove(version = 3.2)
+    public LinkAttribute(@NotNull SConcept attributeDeclaration, String linkRole) {
+      super(attributeDeclaration);
+      myLink = MetaAdapterFactoryByName.getReferenceLink(MetaIdFactory.INVALID_CONCEPT_NAME, linkRole);
     }
     @Override
     public boolean match(@NotNull SNode attribute) {
-      return super.match(attribute) && (myLinkRole == null || myLinkRole.equals(SNodeAccessUtil.getProperty(attribute, "linkRole")));
+      return super.match(attribute) && (myLink == null || myLink.equals(AttributeOperations.getLink(attribute)));
     }
     @Override
     public void update(@NotNull SNode attribute) {
-      SNodeAccessUtil.setProperty(attribute, "linkRole", myLinkRole);
+      // todo: remove this hack 
+      if (myLink.getContainingConcept().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
+        myLink = MetaAdapterFactoryByName.getReferenceLink(attribute.getParent().getConcept().getQualifiedName(), myLink.getRoleName());
+      }
+      AttributeOperations.setLink(attribute, myLink);
     }
   }
   public static class PropertyAttribute extends IAttributeDescriptor.AttributeDescriptor {
-    private String myPropertyName;
+    private SProperty myProperty;
+    @Deprecated
+    @ToRemove(version = 3.2)
     public PropertyAttribute(@NotNull String attributeConceptName, String propertyName) {
       super(attributeConceptName);
-      myPropertyName = propertyName;
+      myProperty = MetaAdapterFactoryByName.getProperty(MetaIdFactory.INVALID_CONCEPT_NAME, propertyName);
     }
+    public PropertyAttribute(@NotNull SConcept attributeDeclaration, @NotNull SProperty property) {
+      super(attributeDeclaration);
+      myProperty = property;
+    }
+    /**
+     * strings can be passed from user-written code
+     */
     @Deprecated
-    public PropertyAttribute(@NotNull SNode attributeDeclaration, String propertyName) {
-      this(NameUtil.nodeFQName(attributeDeclaration), propertyName);
+    @ToRemove(version = 3.2)
+    public PropertyAttribute(@NotNull SConcept attributeDeclaration, @NotNull String propertyName) {
+      super(attributeDeclaration);
+      myProperty = MetaAdapterFactoryByName.getProperty(MetaIdFactory.INVALID_CONCEPT_NAME, propertyName);
     }
     @Override
     public boolean match(@NotNull SNode attribute) {
-      return super.match(attribute) && (myPropertyName == null || myPropertyName.equals(SNodeAccessUtil.getProperty(attribute, "propertyName")));
+      return super.match(attribute) && (myProperty == null || myProperty.equals(AttributeOperations.getProperty(attribute)));
     }
     @Override
     public void update(@NotNull SNode attribute) {
-      SNodeAccessUtil.setProperty(attribute, "propertyName", myPropertyName);
+      // todo: remove this hack 
+      if (myProperty.getContainingConcept().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
+        myProperty = MetaAdapterFactoryByName.getProperty(attribute.getParent().getConcept().getQualifiedName(), myProperty.getName());
+      }
+      AttributeOperations.setProperty(attribute, myProperty);
     }
   }
 }

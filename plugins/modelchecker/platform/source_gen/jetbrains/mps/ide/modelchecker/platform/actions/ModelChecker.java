@@ -4,6 +4,7 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import java.util.List;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,15 +20,13 @@ public class ModelChecker {
   public static final String SEVERITY_WARNING = "Warnings";
   public static final String SEVERITY_INFO = "Infos";
   private final SearchResults<ModelCheckerIssue> myResults;
-  private List<SpecificChecker> mySpecificCheckers;
-  public ModelChecker() {
+  private final List<SpecificChecker> mySpecificCheckers;
+  public ModelChecker(@NotNull List<SpecificChecker> specificCheckers) {
     myResults = new SearchResults<ModelCheckerIssue>();
+    mySpecificCheckers = specificCheckers;
   }
   public void checkModel(SModel model, ProgressMonitor monitor) {
     List<SpecificChecker> specificCheckers = mySpecificCheckers;
-    if (specificCheckers == null) {
-      specificCheckers = ModelCheckerSettings.getInstance().getSpecificCheckers();
-    }
 
     monitor.start("Checking " + model.getModelName(), ListSequence.fromList(specificCheckers).count());
     try {
@@ -42,7 +41,7 @@ public class ModelChecker {
       if (module != null) {
         for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers)) {
           try {
-            List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT), module.getRepository());
+            List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT));
             myResults.getSearchResults().addAll(specificCheckerResults);
           } catch (Throwable t) {
             if (LOG.isEnabledFor(Level.ERROR)) {
@@ -60,9 +59,6 @@ public class ModelChecker {
   }
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myResults;
-  }
-  public void setSpecificCheckers(List<SpecificChecker> specificCheckers) {
-    mySpecificCheckers = specificCheckers;
   }
   protected static Logger LOG = LogManager.getLogger(ModelChecker.class);
 }

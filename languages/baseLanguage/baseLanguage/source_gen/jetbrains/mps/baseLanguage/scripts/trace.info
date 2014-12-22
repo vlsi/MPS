@@ -446,6 +446,52 @@
       <unit id="1704189004094297789" at="13,0,87,0" name="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/2214637407304092437">
+    <file name="MigrateFloatConstants_MigrationScript.java">
+      <node id="2214637407304092437" at="14,84,15,37" concept="14" />
+      <node id="2214637407304092438" at="17,31,18,110" concept="9" />
+      <node id="2214637407304092438" at="20,41,21,110" concept="9" />
+      <node id="2214637407304092438" at="23,59,24,76" concept="9" />
+      <node id="2214637407304125294" at="26,59,27,512" concept="9" />
+      <node id="2214637407304167256" at="29,52,30,270" concept="8" />
+      <node id="2214637407304168068" at="30,270,31,312" concept="3" />
+      <node id="2214637407304092438" at="33,42,34,21" concept="9" />
+      <node id="2214637407304092438" at="17,0,20,0" concept="7" trace="getName#()Ljava/lang/String;" />
+      <node id="2214637407304092438" at="20,0,23,0" concept="7" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="2214637407304092438" at="23,0,26,0" concept="7" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="2214637407304092438" at="26,0,29,0" concept="7" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2214637407304092438" at="33,0,36,0" concept="7" trace="isShowAsIntention#()Z" />
+      <node id="2214637407304092438" at="29,0,33,0" concept="7" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2214637407304092437" at="15,37,36,7" concept="0" />
+      <node id="2214637407304092438" at="15,37,36,7" concept="3" />
+      <node id="2214637407304092437" at="14,0,38,0" concept="1" trace="MigrateFloatConstants_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <scope id="2214637407304092438" at="17,31,18,110" />
+      <scope id="2214637407304092438" at="20,41,21,110" />
+      <scope id="2214637407304092438" at="23,59,24,76" />
+      <scope id="2214637407304092461" at="26,59,27,512" />
+      <scope id="2214637407304092438" at="33,42,34,21" />
+      <scope id="2214637407304092440" at="29,52,31,312">
+        <var name="f" id="2214637407304167257" />
+      </scope>
+      <scope id="2214637407304092438" at="17,0,20,0" />
+      <scope id="2214637407304092438" at="20,0,23,0" />
+      <scope id="2214637407304092438" at="23,0,26,0" />
+      <scope id="2214637407304092438" at="26,0,29,0">
+        <var name="node" id="2214637407304092438" />
+      </scope>
+      <scope id="2214637407304092438" at="33,0,36,0" />
+      <scope id="2214637407304092438" at="29,0,33,0">
+        <var name="node" id="2214637407304092438" />
+      </scope>
+      <scope id="2214637407304092438" at="15,37,36,7" />
+      <scope id="2214637407304092437" at="14,84,36,7" />
+      <scope id="2214637407304092437" at="14,0,38,0">
+        <var name="operationContext" id="2214637407304092437" />
+      </scope>
+      <unit id="2214637407304092438" at="16,28,36,5" name="jetbrains.mps.baseLanguage.scripts.MigrateFloatConstants_MigrationScript$1" />
+      <unit id="2214637407304092437" at="13,0,39,0" name="jetbrains.mps.baseLanguage.scripts.MigrateFloatConstants_MigrationScript" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/2242608743097729323">
     <file name="MigrateLocalVariableReference_MigrationScript.java">
       <node id="2242608743097729323" at="11,92,12,65" concept="14" />

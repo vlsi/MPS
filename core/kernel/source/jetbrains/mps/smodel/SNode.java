@@ -181,7 +181,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public String getName() {
     if (getConcept().isSubConceptOf(SNodeUtil.concept_INamedConcept)) {
-      return SNodeAccessUtil.getProperty(this, SNodeUtil.propertyName_INamedConcept_name);
+      return SNodeAccessUtil.getProperty(this, SNodeUtil.property_INamedConcept_name);
     } else {
       fireNodeReadAccess();
       return null;
@@ -277,7 +277,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public String getPresentation() {
     if (SNodeOperations.isUnknown(this)) {
-      String persistentName = getProperty(SNodeUtil.propertyName_INamedConcept_name);
+      String persistentName = getProperty(SNodeUtil.property_INamedConcept_name);
       if (persistentName == null) {
         String conceptName = myConcept.getQualifiedName();
         return "?" + (conceptName == null ? myConcept.toString() : NameUtil.shortNameFromLongName(conceptName)) + "?";
@@ -296,7 +296,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     String s = null;
     try {
-      s = getProperty(SNodeUtil.propertyName_BaseConcept_alias);
+      s = getProperty(SNodeUtil.property_BaseConcept_alias);
       if (s == null) {
         s = getPresentation();
       }

@@ -16,13 +16,13 @@
   </root>
   <root nodeRef="r:dafed770-9895-4759-9aa8-4b79aa8a5f0f(jetbrains.mps.execution.settings.actions)/943668161921858892">
     <file name="QueriesGenerated.java">
-      <node id="943668161921929152" at="37,47,38,177" concept="3" />
+      <node id="943668161921929152" at="37,47,38,271" concept="3" />
       <node id="943668161921866878" at="46,98,47,289" concept="2" />
       <node id="943668161921866886" at="47,289,48,202" concept="0" />
       <node id="943668161921859106" at="48,202,49,28" concept="3" />
       <node id="943668161921859028" at="51,64,52,195" concept="3" />
       <node id="943668161921858949" at="61,183,62,235" concept="3" />
-      <node id="943668161921929034" at="73,47,74,177" concept="3" />
+      <node id="943668161921929034" at="73,47,74,271" concept="3" />
       <node id="943668161921866960" at="82,98,83,281" concept="2" />
       <node id="943668161921866966" at="83,281,84,202" concept="0" />
       <node id="943668161921866973" at="84,202,85,28" concept="3" />
@@ -34,10 +34,10 @@
       <node id="943668161921866947" at="97,0,100,0" concept="4" trace="nodeSubstituteActionsBuilder_Precondition_Type_943668161921866947#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
       <node id="943668161921858991" at="35,44,40,32" concept="3" />
       <node id="943668161921866953" at="71,44,76,32" concept="3" />
-      <scope id="943668161921929149" at="37,47,38,177" />
+      <scope id="943668161921929149" at="37,47,38,271" />
       <scope id="943668161921859027" at="51,64,52,195" />
       <scope id="943668161921858895" at="61,183,62,235" />
-      <scope id="943668161921929031" at="73,47,74,177" />
+      <scope id="943668161921929031" at="73,47,74,271" />
       <scope id="943668161921866977" at="87,64,88,200" />
       <scope id="943668161921866948" at="97,183,98,238" />
       <scope id="943668161921929148" at="37,0,40,0">

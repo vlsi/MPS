@@ -98,6 +98,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.psi.impl.MPSPsiProvider</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.project.UpgradeModelsPersistence</implementation-class>
+    </component>
   </project-components>
 
   <extensionPoints>
@@ -137,6 +140,9 @@
     <iconLayerProvider implementation="jetbrains.mps.idea.core.psi.impl.ModelFileIconLayerProvider"/>
     <getDataRule key="MPS_SModel" implementationClass="jetbrains.mps.idea.core.data.ModelDataRule"/>
     <getDataRule key="MPS_SModel_List" implementationClass="jetbrains.mps.idea.core.data.ModelsDataRule"/>
+    <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"
+                    serviceImplementation="jetbrains.mps.idea.core.project.MPSProjectScopeBuilder"
+                    overrides="true"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">

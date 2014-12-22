@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-akdjmqgtuab742idw05bv1w8mao72kv">
-  <common hash="-b1jmzt55ttr8ocqx9fsoduci46ec7qi" />
-  <source id="5871420002487602285" name="JetBrains Products" hash="-b75zao41tuf9ih2dx2hzdn5hk8gr25o">
-    <file name="JetBrains Products" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-akdjmqgtuab742idw05bv1w8mao72kv" />
 

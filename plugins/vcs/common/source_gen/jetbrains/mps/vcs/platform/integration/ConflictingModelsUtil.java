@@ -32,14 +32,17 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.openapi.progress.Task;
+import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.util.FileUtil;
-import java.io.IOException;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -114,15 +117,16 @@ public class ConflictingModelsUtil {
     return false;
   }
 
-  public static Task getModelConflictResolverTask(Project project, MergeProvider provider, com.intellij.openapi.vcs.merge.MergeSession session, List<VirtualFile> conflictedFiles) {
+  public static ConflictingModelsUtil.ModelConflictResolver getModelConflictResolverTask(Project project, MergeProvider provider, com.intellij.openapi.vcs.merge.MergeSession session, List<VirtualFile> conflictedFiles) {
     return new ConflictingModelsUtil.ModelConflictResolver(project, provider, session, conflictedFiles);
   }
 
-  private static class ModelConflictResolver extends Task.Modal {
+  public static class ModelConflictResolver extends Task.Modal {
     private Project myProject;
     private MergeProvider myProvider;
     private com.intellij.openapi.vcs.merge.MergeSession mySession;
     private List<VirtualFile> myConflictedModelFiles;
+    private List<VirtualFile> myResolvedModelFiles = ListSequence.fromList(new ArrayList<VirtualFile>());
 
     public ModelConflictResolver(Project project, MergeProvider provider, com.intellij.openapi.vcs.merge.MergeSession session, List<VirtualFile> conflictedFiles) {
       super(project, "Resolving conflicts in models", true);
@@ -132,9 +136,14 @@ public class ConflictingModelsUtil {
       myConflictedModelFiles = conflictedFiles;
     }
 
+    public List<VirtualFile> getResolvedFiles() {
+      return myResolvedModelFiles;
+    }
+
     public void run(@NotNull ProgressIndicator indicator) {
       final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
       monitor.start("Resolving...", ListSequence.fromList(myConflictedModelFiles).count());
+      final ModelAccess ma = ProjectHelper.getModelAccess(myProject);
       try {
         for (final VirtualFile file : ListSequence.fromList(myConflictedModelFiles)) {
           monitor.step(file.getCanonicalPath());
@@ -159,7 +168,7 @@ public class ConflictingModelsUtil {
 
           final Wrappers._T<MergeSession> mergeSession = new Wrappers._T<MergeSession>(null);
           // read action: 
-          ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
+          ma.runReadAction(new Runnable() {
             public void run() {
               mergeSession.value = MergeSession.createMergeSession(baseModel, mineModel, repoModel);
             }
@@ -182,33 +191,44 @@ public class ConflictingModelsUtil {
           if (LOG.isInfoEnabled()) {
             LOG.info("no conflicted changes in " + SModelOperations.getModelName(baseModel));
           }
-          ProjectHelper.getModelAccess(myProject).runWriteInEDT(new Runnable() {
+          ma.runReadAction(new Runnable() {
             public void run() {
               mergeSession.value.applyChanges(mergeSession.value.getAllChanges());
-              SModel resultModel = mergeSession.value.getResultModel();
-              if (resultModel == null) {
-              } else if (mergeSession.value.hasIdsToRestore()) {
-                if (LOG.isInfoEnabled()) {
-                  LOG.info(String.format("%s: node id duplication detected, should merge in UI.", SModelOperations.getModelName(baseModel)));
-                }
-              } else {
-                String resultContent;
-                if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
-                  resultContent = PersistenceUtil.savePerRootModel(resultModel, file.getExtension().equals(MPSExtentions.MODEL_HEADER));
-                } else {
-                  resultContent = PersistenceUtil.saveModel(resultModel, ext.value);
-                }
-                try {
-                  file.setBinaryContent(resultContent.getBytes(FileUtil.DEFAULT_CHARSET));
-                } catch (IOException e) {
-                  if (LOG.isEnabledFor(Level.ERROR)) {
-                    LOG.error("", e);
+            }
+          });
+
+          ThreadUtils.runInUIThreadAndWait(new Runnable() {
+            public void run() {
+              ma.runWriteAction(new Runnable() {
+                public void run() {
+                  SModel resultModel = mergeSession.value.getResultModel();
+                  if (resultModel == null) {
+                  } else if (mergeSession.value.hasIdsToRestore()) {
+                    if (LOG.isInfoEnabled()) {
+                      LOG.info(String.format("%s: node id duplication detected, should merge in UI.", SModelOperations.getModelName(baseModel)));
+                    }
+                  } else {
+                    String resultContent;
+                    if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
+                      resultContent = PersistenceUtil.savePerRootModel(resultModel, file.getExtension().equals(MPSExtentions.MODEL_HEADER));
+                    } else {
+                      resultContent = PersistenceUtil.saveModel(resultModel, ext.value);
+                    }
+                    try {
+                      file.setBinaryContent(resultContent.getBytes(FileUtil.DEFAULT_CHARSET));
+                      check_2bxr1q_a1a2a0b0a0a0a0a02a0a3a01g(mySession, file);
+                      VcsDirtyScopeManager.getInstance(myProject).fileDirty(file);
+                      ListSequence.fromList(myResolvedModelFiles).addElement(file);
+                    } catch (IOException e) {
+                      if (LOG.isEnabledFor(Level.ERROR)) {
+                        LOG.error("Cannot save merge result into " + file.getPath(), e);
+                      }
+                    }
+
                   }
                 }
+              });
 
-                check_2bxr1q_a4a0c0a0a81a0a2a7g(mySession, file);
-                VcsDirtyScopeManager.getInstance(myProject).fileDirty(file);
-              }
             }
           });
 
@@ -221,7 +241,7 @@ public class ConflictingModelsUtil {
         monitor.done();
       }
     }
-    private static void check_2bxr1q_a4a0c0a0a81a0a2a7g(com.intellij.openapi.vcs.merge.MergeSession checkedDotOperand, VirtualFile file) {
+    private static void check_2bxr1q_a1a2a0b0a0a0a0a02a0a3a01g(com.intellij.openapi.vcs.merge.MergeSession checkedDotOperand, VirtualFile file) {
       if (null != checkedDotOperand) {
         checkedDotOperand.conflictResolvedForFile(file, com.intellij.openapi.vcs.merge.MergeSession.Resolution.Merged);
       }

@@ -20,6 +20,7 @@ import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * User: shatalin
@@ -37,7 +38,9 @@ public class CellMessagesUtil {
   }
 
   public static boolean hasErrorMessages(EditorCell cell) {
-    for (SimpleEditorMessage message : cell.getMessages()) {
+    List<SimpleEditorMessage> messages = cell.getMessages();
+    for (ListIterator<SimpleEditorMessage> it = messages.listIterator(messages.size()); it.hasPrevious(); ) {
+      SimpleEditorMessage message = it.previous();
       if (message.getStatus() == MessageStatus.ERROR) {
         return true;
       }

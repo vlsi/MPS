@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.NameUtil;
@@ -62,17 +63,17 @@ public class IdInfoCollector {
 
   public void fill(Iterable<SNode> nodes, MetaModelInfoProvider metaInfoProvider) {
     for (SNode n1 : nodes) {
-      fillConcept(n1);
-      fillProperties(n1);
-      fillAssociations(n1);
+      fillConcept(n1, metaInfoProvider);
+      fillProperties(n1, metaInfoProvider);
+      fillAssociations(n1, metaInfoProvider);
       if (n1.getParent() != null) {
-        fillAggregation(n1);
+        fillAggregation(n1, metaInfoProvider);
       }
       for (SNode n2 : SNodeUtil.getDescendants(n1, null, false)) {
-        fillConcept(n2);
-        fillProperties(n2);
-        fillAssociations(n2);
-        fillAggregation(n2);
+        fillConcept(n2, metaInfoProvider);
+        fillProperties(n2, metaInfoProvider);
+        fillAssociations(n2, metaInfoProvider);
+        fillAggregation(n2, metaInfoProvider);
       }
     }
     // ensure we keep name of each concept in use (i.e. those coming from used properties/links), fill in other persistence-relevant aspects
@@ -86,19 +87,7 @@ public class IdInfoCollector {
       if (kind == ConceptKind.IMPLEMENTATION_WITH_STUB) {
         ci.setStubCounterpart(metaInfoProvider.getStubConcept(ci.getConceptId()));
       }
-
-      if (ci.isNameSet()) {
-        continue;
-      }
-      String conceptName = metaInfoProvider.getConceptName(ci.getConceptId());
-      // FIXME we don't really need concept fqn in new registry, own name is enough (we know the language anyway)
-      ci.setName(conceptName);
     }
-    // record name of the languages
-    for (LangInfo li : myLanguagesInUse.values()) {
-      li.setName(metaInfoProvider.getLanguageName(li.getLanguageId()));
-    }
-
     initializeIndexValues();
   }
 
@@ -133,32 +122,40 @@ public class IdInfoCollector {
   ////////////////
 
 
-  private void fillConcept(SNode n) {
+  private void fillConcept(SNode n, MetaModelInfoProvider metaInfoProvider) {
     final SConcept concept = n.getConcept();
     SConceptId conceptId = IdHelper.getConceptId(concept);
-    assert conceptId != null;
-    registerConcept(conceptId);
+
+    assert conceptId != null : String.format("Can't get identity of concept %s of node %s", concept, n.getReference());
+
+    registerConcept(conceptId, concept.getQualifiedName());
   }
 
-  private void fillProperties(SNode n) {
+  private void fillProperties(SNode n, MetaModelInfoProvider metaInfoProvider) {
     for (SProperty prop : n.getProperties()) {
       SPropertyId propId = IdHelper.getPropertyId(prop);
-      registerConcept(propId.getConceptId()).registerProperty(propId, prop);
+      assert propId != null : String.format("Can't get identity of property %s of node %s", prop, n.getReference());
+      SConceptId conceptId = propId.getConceptId();
+      registerConcept(conceptId, metaInfoProvider.getConceptName(conceptId)).registerProperty(propId, prop);
     }
   }
-  private void fillAssociations(SNode n) {
+  private void fillAssociations(SNode n, MetaModelInfoProvider metaInfoProvider) {
     for (SReference ref : n.getReferences()) {
       final SReferenceLink l = ref.getLink();
       SReferenceLinkId linkId = IdHelper.getRefId(l);
-      registerConcept(linkId.getConceptId()).registerLink(linkId, l);
+      assert linkId != null : String.format("Can't get identity of association %s of node %s", l, n.getReference());
+      SConceptId conceptId = linkId.getConceptId();
+      registerConcept(conceptId, metaInfoProvider.getConceptName(conceptId)).registerLink(linkId, l);
     }
   }
 
   // unlike association, records link to parent node
-  private void fillAggregation(SNode n) {
+  private void fillAggregation(SNode n, MetaModelInfoProvider metaInfoProvider) {
     final SContainmentLink l = n.getContainmentLink();
     SContainmentLinkId linkId = IdHelper.getLinkId(l);
-    registerConcept(linkId.getConceptId()).registerLink(linkId, l);
+    assert linkId != null : String.format("Can't get identity of aggregation %s of node %s", l, n.getReference());
+    SConceptId conceptId = linkId.getConceptId();
+    registerConcept(conceptId, metaInfoProvider.getConceptName(conceptId)).registerLink(linkId, l);
   }
 
   /**
@@ -166,12 +163,12 @@ public class IdInfoCollector {
    * @return utility object that keeps concept information essential for persistence
    */
   @NotNull
-  public ConceptInfo registerConcept(SConceptId concept) {
+  public ConceptInfo registerConcept(SConceptId concept, String conceptName) {
     ConceptInfo conceptInfo = myRegistry.get(concept);
     if (conceptInfo == null) {
-      myRegistry.put(concept, conceptInfo = new ConceptInfo(concept));
+      myRegistry.put(concept, conceptInfo = new ConceptInfo(concept, conceptName));
       // this is the first time we encounter the concept, it's the only time then we register it with its language
-      registerLanguage(concept.getLanguageId()).register(conceptInfo);
+      registerLanguage(concept.getLanguageId(), MetaAdapterFactory.getConcept(concept, conceptName).getLanguage().getQualifiedName()).register(conceptInfo);
     }
     return conceptInfo;
   }
@@ -181,10 +178,10 @@ public class IdInfoCollector {
    * @return utility object that keeps language information essential for persistence
    */
   @NotNull
-  public LangInfo registerLanguage(SLanguageId lang) {
+  public LangInfo registerLanguage(SLanguageId lang, String languageName) {
     LangInfo langInfo = myLanguagesInUse.get(lang);
     if (langInfo == null) {
-      myLanguagesInUse.put(lang, langInfo = new LangInfo(lang));
+      myLanguagesInUse.put(lang, langInfo = new LangInfo(lang, languageName));
     }
     return langInfo;
   }
@@ -225,11 +222,12 @@ public class IdInfoCollector {
 
   public static final class LangInfo extends BaseInfo implements Comparable<LangInfo> {
     private final SLanguageId myLanguageId;
-    private String myName;
+    private final String myName;
     private final List<ConceptInfo> myConcepts = new ArrayList<ConceptInfo>();
 
-    /*package*/LangInfo(@NotNull SLanguageId languageId) {
+    /*package*/LangInfo(@NotNull SLanguageId languageId, @NotNull String langaugeName) {
       myLanguageId = languageId;
+      myName = langaugeName;
     }
     public SLanguageId getLanguageId() {
       return myLanguageId;
@@ -238,12 +236,6 @@ public class IdInfoCollector {
       return myName;
     }
 
-    public void setName(String name) {
-      if (myName != null) {
-        throw new IllegalStateException(String.format("Name of the language in the debug registry is not supposed to get changed (present: %s, new: %s)", myName, name));
-      }
-      myName = name;
-    }
     private void register(@NotNull ConceptInfo ci) {
       // the reason we pass ConceptInfo here and do not check for duplicates is the fact we ensure single
       // concept occurrence with IdInfoCollector.myRegistry. LangInfo merely serves as a view for myRegistry of concepts
@@ -316,8 +308,7 @@ public class IdInfoCollector {
    */
   public static final class ConceptInfo extends BaseInfo implements Comparable<ConceptInfo> {
     private final SConceptId myConcept;
-    // set once
-    private String myName;
+    private final String myName;
     private final HashMap<SPropertyId, PropertyInfo> myProperties = new HashMap<SPropertyId, PropertyInfo>();
     private final HashMap<SReferenceLinkId, AssociationLinkInfo> myAssociations = new HashMap<SReferenceLinkId, AssociationLinkInfo>();
     private final HashMap<SContainmentLinkId, AggregationLinkInfo> myAggregations = new HashMap<SContainmentLinkId, AggregationLinkInfo>(8);
@@ -325,8 +316,9 @@ public class IdInfoCollector {
     private StaticScope myScope = StaticScope.GLOBAL;
     private SConceptId myStubCounterpart = null; // makes sense only for ConceptKind.IMPLEMENTATION_WITH_STUB
 
-    /*package*/ ConceptInfo(@NotNull SConceptId concept) {
+    /*package*/ ConceptInfo(@NotNull SConceptId concept, @NotNull String conceptName) {
       myConcept = concept;
+      myName = conceptName;
     }
     public SConceptId getConceptId() {
       return myConcept;
@@ -414,16 +406,6 @@ public class IdInfoCollector {
       return new String(res);
     }
 
-    /*package*/boolean isNameSet() {
-      return myName != null;
-    }
-    public void setName(@NotNull String name) {
-      assert !isNameSet();
-      if (myName != null) {
-        throw new IllegalStateException(String.format("Name of the concept in the debug registry is not supposed to get changed (present: %s, new: %s)", myName, name));
-      }
-      myName = name;
-    }
     public void setImplementationKind(StaticScope scope, ConceptKind kind) {
       myKind = kind;
       myScope = scope;

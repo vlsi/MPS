@@ -18,33 +18,30 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.ex.dummy.DummyFileIdGenerator;
-import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
-import com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
+import jetbrains.mps.extapi.persistence.FolderDataSource;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.workbench.ModelUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Collection;
-import java.util.Collections;
 
 /**
  * User: fyodor
  * Date: 3/6/13
  */
-public class MPSModelVirtualFile extends NewVirtualFile {
+public class MPSModelVirtualFile extends VirtualFile {
   private static final Logger LOG = LogManager.getLogger(MPSModelVirtualFile.class);
   private static final byte[] ZERO_BYTES = new byte[0];
   public static final String MODEL_PREFIX = "model://";
@@ -90,7 +87,7 @@ public class MPSModelVirtualFile extends NewVirtualFile {
 
   @NotNull
   @Override
-  public NewVirtualFileSystem getFileSystem() {
+  public VirtualFileSystem getFileSystem() {
     return MPSNodesVirtualFileSystem.getInstance();
   }
 
@@ -115,20 +112,24 @@ public class MPSModelVirtualFile extends NewVirtualFile {
   }
 
   @Override
-  public NewVirtualFile getParent() {
+  public VirtualFile getParent() {
     // hack
-    return ModelAccess.instance().runReadAction(new Computable<NewVirtualFile>() {
+    return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
       @Override
-      public NewVirtualFile compute() {
+      public VirtualFile compute() {
         if (myModelReference == null) return null;
-        VirtualFile fileByModel = getSourceVirtualFile(myModelReference.resolve(MPSModuleRepository.getInstance()));
-        if (fileByModel == null) return null;
-        return (NewVirtualFile) fileByModel.getParent();
+        SModel model = myModelReference.resolve(MPSModuleRepository.getInstance());
+        DataSource ds = model.getSource();
+        if (ds instanceof FileDataSource) {
+          return VirtualFileUtils.getVirtualFile(((FileDataSource) ds).getFile());
+        } else if (ds instanceof FolderDataSource) {
+          return VirtualFileUtils.getVirtualFile(((FolderDataSource) ds).getFolder());
+        } else {
+          return null;
+        }
       }
     });
   }
-
-
 
   @Override
   public VirtualFile[] getChildren() {
@@ -165,88 +166,5 @@ public class MPSModelVirtualFile extends NewVirtualFile {
   @Override
   public InputStream getInputStream() throws IOException {
     throw new UnsupportedOperationException();
-  }
-
-  private VirtualFile getSourceVirtualFile(SModel model) {
-    if (!(model.getSource() instanceof FileSystemBasedDataSource)) return null;
-    final VirtualFile fileByModel = ModelUtil.getFileByModel(model);
-    if (fileByModel == null) return null;
-    return fileByModel;
-  }
-
-  // NewVirtualFile methods
-
-  @Nullable
-  @Override
-  public NewVirtualFile getCanonicalFile() {
-    return this;
-  }
-
-  @Nullable
-  @Override
-  public NewVirtualFile findChild(@NotNull String name) {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public NewVirtualFile refreshAndFindChild(@NotNull String name) {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public NewVirtualFile findChildIfCached(@NotNull String name) {
-    return null;
-  }
-
-  @Override
-  public void setTimeStamp(long time) throws IOException {
-  }
-
-  @NotNull
-  @Override
-  public CharSequence getNameSequence() {
-    return myName;
-  }
-
-  @Override
-  public int getId() {
-    return myId;
-  }
-
-  @Override
-  public void setWritable(boolean writable) throws IOException {
-  }
-
-  @Override
-  public void markDirty() {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public void markDirtyRecursively() {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public boolean isDirty() {
-    return false;
-  }
-
-  @Override
-  public void markClean() {
-  }
-
-  @NotNull
-  @Override
-  public Collection<VirtualFile> getCachedChildren() {
-    return Collections.emptyList();
-  }
-
-  @NotNull
-  @Override
-  public Iterable<VirtualFile> iterInDbChildren() {
-    return Collections.emptyList();
   }
 }

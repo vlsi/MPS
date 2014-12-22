@@ -18,11 +18,13 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.TreeSet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -45,6 +47,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings" file="ConflictingModelsWarnings.java">
@@ -68,6 +71,23 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.warningPanel.EditorWarningsProvider" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.platform.integration.MPSVcsHelper" file="MPSVcsHelper.java">
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="com.intellij.openapi.vcs.merge.MergeDialogCustomizer" />
+    <classNode dependClassName="com.intellij.openapi.vcs.merge.MergeProvider" />
+    <classNode dependClassName="com.intellij.openapi.vcs.merge.MergeProvider2" />
+    <classNode dependClassName="com.intellij.openapi.vcs.merge.MergeSession" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.ModelDiffTool" file="ModelDiffTool.java">
     <classNode dependClassName="com.intellij.openapi.Disposable" />

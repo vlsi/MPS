@@ -116,7 +116,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
       editorComponent.addAdditionalPainter(createPainter(breakpoint));
       editorComponent.getLeftEditorHighlighter().addIconRenderer(createRenderrer(breakpoint, editorComponent));
     }
-    editorComponent.repaint();
+    editorComponent.repaintExternalComponent();
   }
   protected void editorComponentDisposed(@Nullable EditorComponent editorComponent) {
     if (editorComponent == null) {
@@ -134,7 +134,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     for (EditorComponent editorComponent : editorComponents) {
       editorComponent.addAdditionalPainter(createPainter(breakpoint));
       editorComponent.getLeftEditorHighlighter().addIconRenderer(createRenderrer(breakpoint, editorComponent));
-      editorComponent.repaint();
+      editorComponent.repaintExternalComponent();
     }
   }
   protected void removeLocationBreakpoint(L breakpoint, SNode node) {
@@ -142,7 +142,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     for (EditorComponent editorComponent : editorComponents) {
       editorComponent.removeAdditionalPainterByItem(breakpoint);
       editorComponent.getLeftEditorHighlighter().removeIconRenderer(node, BreakpointIconRenderrerEx.TYPE);
-      editorComponent.repaint();
+      editorComponent.repaintExternalComponent();
     }
   }
   public void repaintBreakpoints() {
@@ -151,7 +151,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
       public void run() {
         List<EditorComponent> allEditorComponents = EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true);
         for (EditorComponent component : ListSequence.fromList(allEditorComponents)) {
-          component.repaint();
+          component.repaintExternalComponent();
         }
       }
     });

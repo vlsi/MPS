@@ -29,12 +29,21 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SConceptAdapterById extends SConceptAdapter implements SConcept, SAbstractConceptAdapterById {
-  protected SConceptId myConceptId;
+public final class SConceptAdapterById extends SConceptAdapter implements SConcept, SAbstractConceptAdapterById {
+  private final SConceptId myConceptId;
+  private final boolean myIsBootstrap;
 
   public SConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname) {
+    this(conceptId, fqname, false);
+  }
+
+  /**
+   * @param bootstrap see BOOTSTRAP META OBJECTS javadoc for {@link jetbrains.mps.smodel.adapter.BootstrapAdapterFactory}
+   */
+  public SConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname, boolean bootstrap) {
     super(fqname);
     myConceptId = conceptId;
+    myIsBootstrap = bootstrap;
   }
 
   @Override
@@ -45,7 +54,7 @@ public class SConceptAdapterById extends SConceptAdapter implements SConcept, SA
 
   @Override
   public String getQualifiedName() {
-    if (RuntimeFlags.isMergeDriverMode()) {
+    if (RuntimeFlags.isMergeDriverMode() || myIsBootstrap) {
       return myFqName;
     }
     ConceptDescriptor cd = getConceptDescriptor();

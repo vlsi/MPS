@@ -24,12 +24,9 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.TreeMap;
-import java.util.TreeSet;
 
 /**
  * This class captures persistence and editing aspects of SModule. Client code shall not use this class
@@ -37,9 +34,6 @@ import java.util.TreeSet;
  * to read module dependencies and identity information.
  */
 public class ModuleDescriptor {
-  private static final SModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new SModuleReferenceComparator();
-  private static final DependencyComparator DEPENDENCY_COMPARATOR = new DependencyComparator(MODULE_REFERENCE_COMPARATOR);
-  private static final SLanguageComparator LANGUAGE_COMPARATOR = new SLanguageComparator();
 
   private ModuleId myId;
   private String myNamespace;
@@ -62,10 +56,10 @@ public class ModuleDescriptor {
   public ModuleDescriptor() {
     myModelRoots = new LinkedHashSet<ModelRootDescriptor>();
     myFacets = new LinkedHashSet<ModuleFacetDescriptor>();
-    myDependencies = new TreeSet<Dependency>(DEPENDENCY_COMPARATOR);
-    myUsedLanguages = new TreeSet<SModuleReference>(MODULE_REFERENCE_COMPARATOR);
-    myUsedDevkits = new TreeSet<SModuleReference>(MODULE_REFERENCE_COMPARATOR);
-    myLanguageVersions = new TreeMap<SLanguage, Integer>(LANGUAGE_COMPARATOR);
+    myDependencies = new LinkedHashSet<Dependency>();
+    myUsedLanguages = new LinkedHashSet<SModuleReference>();
+    myUsedDevkits = new LinkedHashSet<SModuleReference>();
+    myLanguageVersions = new LinkedHashMap<SLanguage, Integer>();
     myAdditionalJavaStubPaths = new LinkedHashSet<String>();
     mySourcePaths = new LinkedHashSet<String>();
   }
@@ -280,38 +274,4 @@ public class ModuleDescriptor {
     return myHasLanguageVersions;
   }
 
-  private static class SModuleReferenceComparator implements Comparator<SModuleReference> {
-    @Override
-    public int compare(SModuleReference ref1, SModuleReference ref2) {
-      String moduleFqName1 = ref1.getModuleName();
-      String moduleFqName2 = ref2.getModuleName();
-      if (moduleFqName1 == null) {
-        return moduleFqName2 == null ? 0 : 1;
-      }
-      if (moduleFqName2 == null) {
-        return -1;
-      }
-      return moduleFqName1.compareTo(moduleFqName2);
-    }
-  }
-
-  private static class SLanguageComparator implements Comparator<SLanguage> {
-    @Override
-    public int compare(SLanguage lang1, SLanguage lang2) {
-      return lang1.getQualifiedName().compareTo(lang2.getQualifiedName());
-    }
-  }
-
-  private static class DependencyComparator implements Comparator<Dependency> {
-    private Comparator<SModuleReference> myModuleRefComparator;
-
-    DependencyComparator(Comparator<SModuleReference> moduleReferComparator) {
-      myModuleRefComparator = moduleReferComparator;
-    }
-
-    @Override
-    public int compare(Dependency dependency1, Dependency dependency2) {
-      return myModuleRefComparator.compare(dependency1.getModuleRef(), dependency2.getModuleRef());
-    }
-  }
 }

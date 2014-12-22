@@ -11,4 +11,7 @@ public class Node_GetSConceptOperation_Behavior {
   public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return true;
   }
+  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
+    return true;
+  }
 }

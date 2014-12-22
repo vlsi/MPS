@@ -50,6 +50,7 @@ public class Java_Configuration_RunProfileState extends DebuggerRunProfileState 
     console.addMessageFilter(new StandaloneMPSStackTraceFilter(project));
     SNodePointer pointer = myRunConfiguration.getNode().getNodePointer();
     if (pointer == null) {
+      console.dispose();
       throw new ExecutionException("No node selected.");
     }
     {

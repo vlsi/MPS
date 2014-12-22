@@ -214,7 +214,7 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
     try {
       result = refactoring.getModelsToGenerate(context);
     } catch (Throwable t) {
-      myLog.error("An error occured while trying to collect models to generate from refactoring " + refactoring.getUserFriendlyName() + ". No models will be generated", t);
+      myLog.error("An error occurred while trying to collect models to generate from refactoring " + refactoring.getUserFriendlyName() + ". No models will be generated", t);
     }
 
     return result;

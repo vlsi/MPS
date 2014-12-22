@@ -318,6 +318,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -3031,6 +3032,7 @@
                   <node concept="2c44tb" id="5TtLaVg$PK5" role="lGtFl">
                     <property role="2qtEX8" value="classifier" />
                     <property role="3hQQBS" value="ClassifierType" />
+                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                     <node concept="37vLTw" id="5TtLaVg$PKb" role="2c44t1">
                       <ref role="3cqZAo" node="5TtLaVg$q9Q" resolve="classifier" />
                     </node>
@@ -3392,6 +3394,7 @@
                   <node concept="2c44tb" id="5TtLaVg_lrn" role="lGtFl">
                     <property role="2qtEX8" value="classifier" />
                     <property role="3hQQBS" value="ClassifierType" />
+                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
                     <node concept="37vLTw" id="5TtLaVg_lro" role="2c44t1">
                       <ref role="3cqZAo" node="5TtLaVg_lqV" resolve="classifier" />
                     </node>

@@ -218,6 +218,7 @@
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
         <property id="1757699476691236116" name="linkRole" index="2qtEX8" />
+        <property id="1341860900488019036" name="linkId" index="P3scX" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -483,6 +484,7 @@
                 <node concept="3THzug" id="4MNYYw$1C2K" role="2c44tc">
                   <node concept="2c44tb" id="4MNYYw$1C3f" role="lGtFl">
                     <property role="2qtEX8" value="conceptDeclaraton" />
+                    <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172420572800/1180481110358" />
                     <node concept="37vLTw" id="4MNYYw$1C4k" role="2c44t1">
                       <ref role="3cqZAo" node="hP3kV_x" resolve="superConcept" />
                     </node>
@@ -515,6 +517,7 @@
                     <ref role="ehGHo" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
                     <node concept="2c44tb" id="hP3kVAc" role="lGtFl">
                       <property role="2qtEX8" value="concept" />
+                      <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
                       <node concept="37vLTw" id="3GM_nagTvXT" role="2c44t1">
                         <ref role="3cqZAo" node="hP3kV_x" resolve="superConcept" />
                       </node>
@@ -599,6 +602,7 @@
                 <node concept="3THzug" id="6kiT6ahK2Q" role="2c44tc">
                   <node concept="2c44tb" id="6kiT6ahK2Z" role="lGtFl">
                     <property role="2qtEX8" value="conceptDeclaraton" />
+                    <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172420572800/1180481110358" />
                     <node concept="2OqwBi" id="6kiT6ahKdT" role="2c44t1">
                       <node concept="3TrEf2" id="6kiT6ahMQQ" role="2OqNvi">
                         <ref role="3Tt5mk" to="1i04:hP3h7Gv" />
@@ -629,6 +633,7 @@
                     <ref role="ehGHo" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
                     <node concept="2c44tb" id="hP3pWYg" role="lGtFl">
                       <property role="2qtEX8" value="concept" />
+                      <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
                       <node concept="2OqwBi" id="hP3pWYh" role="2c44t1">
                         <node concept="37vLTw" id="3GM_nagTydE" role="2Oq$k0">
                           <ref role="3cqZAo" node="hP3pWY1" resolve="behaviour" />

@@ -3,8 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest" version="-1" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
   </languages>
   <imports>
     <import index="kqxz" ref="r:aaff0f7f-e57d-4430-aea6-ff86ed5c75ae(jetbrains.mps.lang.editor.editorTest.intentions)" />
@@ -53,6 +53,7 @@
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
         <property id="1757699476691236117" name="propertyName" index="2qtEX9" />
+        <property id="1341860900487648621" name="propertyId" index="P4ACc" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -88,15 +89,16 @@
     </node>
     <node concept="fCmwY" id="2ZnZLV$gto1" role="LiZbd">
       <property role="fCmzX" value="10" />
-      <node concept="fC6md" id="2ZnZLV$gto2" role="lGtFl">
-        <property role="2qtEX9" value="property" />
-      </node>
       <node concept="LIFWc" id="2ZnZLV$gto3" role="lGtFl">
         <property role="LIFWa" value="0" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
         <property role="LIFWd" value="property_property" />
+      </node>
+      <node concept="fC6md" id="7uUMd3DM61A" role="lGtFl">
+        <property role="P4ACc" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940803614/3195708693940803805" />
+        <property role="2qtEX9" value="property" />
       </node>
     </node>
   </node>
@@ -107,6 +109,7 @@
       <property role="fCmzX" value="10" />
       <node concept="fC6md" id="2ZnZLV$gto6" role="lGtFl">
         <property role="2qtEX9" value="property" />
+        <property role="P4ACc" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940803614/3195708693940803805" />
       </node>
       <node concept="LIFWc" id="2ZnZLV$gto7" role="lGtFl">
         <property role="LIFWa" value="0" />
@@ -142,6 +145,7 @@
         <property role="fCmzX" value="10" />
         <node concept="fC6md" id="2ZnZLV$gtoh" role="lGtFl">
           <property role="2qtEX9" value="property" />
+          <property role="P4ACc" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940803614/3195708693940803805" />
         </node>
         <node concept="LIFWc" id="7BzI3N6IB9E" role="lGtFl">
           <property role="LIFWa" value="0" />
@@ -157,6 +161,7 @@
         <property role="fCmzX" value="10" />
         <node concept="fC6md" id="2ZnZLV$gtom" role="lGtFl">
           <property role="2qtEX9" value="property" />
+          <property role="P4ACc" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940803614/3195708693940803805" />
         </node>
         <node concept="LIFWc" id="7BzI3N6IB9I" role="lGtFl">
           <property role="ZRATv" value="true" />
@@ -194,6 +199,7 @@
         <property role="fCmzX" value="10" />
         <node concept="fC6md" id="7BzI3N6HPtu" role="lGtFl">
           <property role="2qtEX9" value="property" />
+          <property role="P4ACc" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940803614/3195708693940803805" />
         </node>
         <node concept="LIFWc" id="7BzI3N6IA6X" role="lGtFl">
           <property role="LIFWa" value="0" />
@@ -218,6 +224,7 @@
         <property role="fCmzX" value="10" />
         <node concept="fC6md" id="7BzI3N6IA7i" role="lGtFl">
           <property role="2qtEX9" value="property" />
+          <property role="P4ACc" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940803614/3195708693940803805" />
         </node>
       </node>
     </node>
@@ -233,6 +240,7 @@
         <property role="fCmzX" value="10" />
         <node concept="fC6md" id="2ZnZLV$g_aG" role="lGtFl">
           <property role="2qtEX9" value="property" />
+          <property role="P4ACc" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940803614/3195708693940803805" />
         </node>
         <node concept="LIFWc" id="2ZnZLV$g_aH" role="lGtFl">
           <property role="ZRATv" value="true" />
@@ -248,6 +256,7 @@
         <property role="fCmzX" value="10" />
         <node concept="fC6md" id="2ZnZLV$g_aL" role="lGtFl">
           <property role="2qtEX9" value="property" />
+          <property role="P4ACc" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940803614/3195708693940803805" />
         </node>
         <node concept="LIFWc" id="2ZnZLV$g_aM" role="lGtFl">
           <property role="ZRATv" value="true" />
@@ -277,6 +286,7 @@
         <property role="fCmzX" value="10" />
         <node concept="fC6md" id="2ZnZLV$g_aV" role="lGtFl">
           <property role="2qtEX9" value="property" />
+          <property role="P4ACc" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940803614/3195708693940803805" />
         </node>
         <node concept="LIFWc" id="2ZnZLV$g_aW" role="lGtFl">
           <property role="ZRATv" value="true" />
@@ -292,6 +302,7 @@
         <property role="fCmzX" value="10" />
         <node concept="fC6md" id="2ZnZLV$g_b0" role="lGtFl">
           <property role="2qtEX9" value="property" />
+          <property role="P4ACc" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940803614/3195708693940803805" />
         </node>
       </node>
       <node concept="fCmwY" id="2ZnZLV$g_b1" role="3bUgA1">
