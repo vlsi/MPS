@@ -38,6 +38,8 @@
     <import index="ajxo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(org.apache.log4j@java_stub)" />
     <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" />
     <import index="1p1s" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" />
+    <import index="bw6v" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.diagnostic(MPS.IDEA/com.intellij.openapi.diagnostic@java_stub)" />
+    <import index="gwo9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.idea(MPS.IDEA/com.intellij.idea@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -51,6 +53,7 @@
       </concept>
       <concept id="1215695189714" name="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" flags="nn" index="d57v9" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
@@ -346,6 +349,48 @@
     <property role="TrG5h" value="MpsWorker" />
     <property role="1sVAO0" value="true" />
     <property role="1EXbeo" value="false" />
+    <node concept="1Pe0a1" id="3Pdq2ILxfaD" role="jymVt">
+      <node concept="3clFbS" id="3Pdq2ILxfaE" role="1Pe0a2">
+        <node concept="3clFbF" id="2HmhDwzjP4z" role="3cqZAp">
+          <node concept="1rXfSq" id="2HmhDwzjP4y" role="3clFbG">
+            <ref role="37wK5l" node="2HmhDwzjNfX" resolve="initLoggingSystem" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2YIFZL" id="2HmhDwzjNfX" role="jymVt">
+      <property role="TrG5h" value="initLoggingSystem" />
+      <property role="IEkAT" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="2HmhDwzjGN_" role="3clF47">
+        <node concept="3clFbF" id="2HmhDwzjGNA" role="3cqZAp">
+          <node concept="2YIFZM" id="2HmhDwzjGNB" role="3clFbG">
+            <ref role="37wK5l" to="bw6v:~Logger.setFactory(java.lang.Class):void" resolve="setFactory" />
+            <ref role="1Pybhc" to="bw6v:~Logger" resolve="Logger" />
+            <node concept="3VsKOn" id="2HmhDwzjGNC" role="37wK5m">
+              <ref role="3VsUkX" to="gwo9:~LoggerFactory" resolve="LoggerFactory" />
+            </node>
+          </node>
+        </node>
+        <node concept="1gVbGN" id="2HmhDwzjGND" role="3cqZAp">
+          <node concept="2YIFZM" id="2HmhDwzjGNE" role="1gVkn0">
+            <ref role="1Pybhc" to="bw6v:~Logger" resolve="Logger" />
+            <ref role="37wK5l" to="bw6v:~Logger.isInitialized():boolean" resolve="isInitialized" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="2lE4mF2Mhdz" role="3cqZAp">
+          <node concept="2YIFZM" id="2lE4mF2Mhi1" role="3clFbG">
+            <ref role="1Pybhc" to="bw6v:~Logger" resolve="Logger" />
+            <ref role="37wK5l" to="bw6v:~Logger.getInstance(java.lang.String):com.intellij.openapi.diagnostic.Logger" resolve="getInstance" />
+            <node concept="Xl_RD" id="2lE4mF2Mhkn" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="2HmhDwzjGN$" role="3clF45" />
+      <node concept="3Tm6S6" id="2HmhDwzjGNz" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="2HmhDwzk30X" role="jymVt" />
     <node concept="3Tm1VV" id="KL8Aqlj5lo" role="1B3o_S" />
     <node concept="Wx3nA" id="KL8Aqlj5lp" role="jymVt">
       <property role="TrG5h" value="LOG" />
