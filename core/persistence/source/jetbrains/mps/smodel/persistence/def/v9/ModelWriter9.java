@@ -172,9 +172,6 @@ public class ModelWriter9 implements IModelWriter {
     }
 
     for (Map.Entry<String, String> en : header.getOptionalProperties().entrySet()) {
-      if (ModelPersistence9.OPTION_CONCISE.equals(en.getKey())) { // FIXME drop once everyone has been merged
-        continue;
-      }
       Element attr = new Element(ModelPersistence9.MODEL_ATTRIBUTE);
       attr.setAttribute(ModelPersistence9.NAME, en.getKey());
       attr.setAttribute(ModelPersistence9.VALUE, en.getValue());

@@ -12,46 +12,36 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.DebugRegistry;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.runtime.ConceptKind;
-import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.InterfaceSNode;
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.InterfaceSNode;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Pair;
 
 public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   private ModelReader9Handler.ModelElementHandler modelHandler = new ModelReader9Handler.ModelElementHandler();
   private ModelReader9Handler.PersistenceElementHandler persistenceHandler = new ModelReader9Handler.PersistenceElementHandler();
-  private ModelReader9Handler.DebugInfoElementHandler debugInfoHandler = new ModelReader9Handler.DebugInfoElementHandler();
-  private ModelReader9Handler.Debug_languageElementHandler debug_languageHandler = new ModelReader9Handler.Debug_languageElementHandler();
-  private ModelReader9Handler.Debug_modelElementHandler debug_modelHandler = new ModelReader9Handler.Debug_modelElementHandler();
-  private ModelReader9Handler.Debug_conceptElementHandler debug_conceptHandler = new ModelReader9Handler.Debug_conceptElementHandler();
-  private ModelReader9Handler.Debug_propertyElementHandler debug_propertyHandler = new ModelReader9Handler.Debug_propertyElementHandler();
-  private ModelReader9Handler.Debug_ref_roleElementHandler debug_ref_roleHandler = new ModelReader9Handler.Debug_ref_roleElementHandler();
-  private ModelReader9Handler.Debug_child_roleElementHandler debug_child_roleHandler = new ModelReader9Handler.Debug_child_roleElementHandler();
+  private ModelReader9Handler.Model_attributeElementHandler model_attributeHandler = new ModelReader9Handler.Model_attributeElementHandler();
+  private ModelReader9Handler.RegistryElementHandler registryHandler = new ModelReader9Handler.RegistryElementHandler();
+  private ModelReader9Handler.Registry_languageElementHandler registry_languageHandler = new ModelReader9Handler.Registry_languageElementHandler();
+  private ModelReader9Handler.Registry_conceptElementHandler registry_conceptHandler = new ModelReader9Handler.Registry_conceptElementHandler();
+  private ModelReader9Handler.Registry_propertyElementHandler registry_propertyHandler = new ModelReader9Handler.Registry_propertyElementHandler();
+  private ModelReader9Handler.Registry_associationElementHandler registry_associationHandler = new ModelReader9Handler.Registry_associationElementHandler();
+  private ModelReader9Handler.Registry_aggregationElementHandler registry_aggregationHandler = new ModelReader9Handler.Registry_aggregationElementHandler();
   private ModelReader9Handler.LanguagesElementHandler languagesHandler = new ModelReader9Handler.LanguagesElementHandler();
   private ModelReader9Handler.Used_languageElementHandler used_languageHandler = new ModelReader9Handler.Used_languageElementHandler();
   private ModelReader9Handler.Module_referenceElementHandler module_referenceHandler = new ModelReader9Handler.Module_referenceElementHandler();
   private ModelReader9Handler.ImportsElementHandler importsHandler = new ModelReader9Handler.ImportsElementHandler();
   private ModelReader9Handler.Model_importElementHandler model_importHandler = new ModelReader9Handler.Model_importElementHandler();
-  private ModelReader9Handler.ContentsElementHandler contentsHandler = new ModelReader9Handler.ContentsElementHandler();
   private ModelReader9Handler.NodeElementHandler nodeHandler = new ModelReader9Handler.NodeElementHandler();
   private ModelReader9Handler.PropertyElementHandler propertyHandler = new ModelReader9Handler.PropertyElementHandler();
   private ModelReader9Handler.ReferenceElementHandler referenceHandler = new ModelReader9Handler.ReferenceElementHandler();
@@ -63,15 +53,14 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
   private ModelLoadResult myResult;
-  private boolean my_interfaceOnlyParam;
-  private boolean my_stripImplementationParam;
   private SModelHeader my_headerParam;
+  private IdInfoReadHelper my_readHelperParam;
   private DefaultSModel my_modelField;
-  private ReadHelper9 my_helperField;
-  public ModelReader9Handler(boolean interfaceOnly, boolean stripImplementation, SModelHeader header) {
-    my_interfaceOnlyParam = interfaceOnly;
-    my_stripImplementationParam = stripImplementation;
+  private ImportsHelper my_importHelperField;
+  private IdEncoder my_idEncoderField;
+  public ModelReader9Handler(SModelHeader header, IdInfoReadHelper readHelper) {
     my_headerParam = header;
+    my_readHelperParam = readHelper;
   }
   public ModelLoadResult getResult() {
     return myResult;
@@ -169,12 +158,13 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
-      SModelReference ref = PersistenceFacade.getInstance().createModelReference(attrs.getValue("ref"));
+      my_idEncoderField = my_readHelperParam.getIdEncoder();
+      SModelReference ref = my_idEncoderField.parseModelReference(attrs.getValue("ref"));
       my_modelField = new DefaultSModel(ref, my_headerParam);
       my_modelField.getSModelHeader().setPersistenceVersion(9);
-      my_helperField = new ReadHelper9(my_modelField.getReference());
+      my_importHelperField = new ImportsHelper(ref);
       ModelLoadResult result = new ModelLoadResult(my_modelField, ModelLoadingState.NOT_LOADED);
-      result.setState((my_interfaceOnlyParam ? ModelLoadingState.INTERFACE_LOADED : ((my_stripImplementationParam ? ModelLoadingState.NO_IMPLEMENTATION : ModelLoadingState.FULLY_LOADED))));
+      result.setState((my_readHelperParam.isRequestedInterfaceOnly() ? ModelLoadingState.INTERFACE_LOADED : ((my_readHelperParam.isRequestedStripImplementation() ? ModelLoadingState.NO_IMPLEMENTATION : ModelLoadingState.FULLY_LOADED))));
       return result;
     }
     @Override
@@ -198,13 +188,31 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected ModelReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
+      if ("node".equals(tagName) && checknode_8237920533349931304(resultObject, attrs)) {
+        myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_8237920533349931271(resultObject, value);
+          }
+        });
+        return ignoredNodeHandler;
+      }
+      if ("node".equals(tagName)) {
+        myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
+          @Override
+          public void apply(Object resultObject, Object value) throws SAXException {
+            handleChild_8237920533349931307(resultObject, value);
+          }
+        });
+        return nodeHandler;
+      }
       if ("persistence".equals(tagName)) {
         myChildHandlersStack.push(null);
         return persistenceHandler;
       }
-      if ("debugInfo".equals(tagName)) {
+      if ("attribute".equals(tagName)) {
         myChildHandlersStack.push(null);
-        return debugInfoHandler;
+        return model_attributeHandler;
       }
       if ("languages".equals(tagName)) {
         myChildHandlersStack.push(null);
@@ -214,106 +222,125 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
         myChildHandlersStack.push(null);
         return importsHandler;
       }
-      if ("contents".equals(tagName)) {
+      if ("registry".equals(tagName)) {
         myChildHandlersStack.push(null);
-        return contentsHandler;
+        return registryHandler;
       }
       return super.createChild(resultObject, tagName, attrs);
+    }
+    private boolean checknode_8237920533349931304(Object resultObject, Attributes attrs) {
+      return my_readHelperParam.isRequestedStripImplementation() && my_readHelperParam.isImplementation(my_readHelperParam.readConcept(attrs.getValue("concept")));
+    }
+    private void handleChild_8237920533349931271(Object resultObject, Object value) throws SAXException {
+      Tuples._2<SContainmentLink, SConcept> child = (Tuples._2<SContainmentLink, SConcept>) value;
+      SConcept concept = child._1();
+      if (my_readHelperParam.isImplementationWithStab(concept)) {
+        SConcept stubConcept = my_readHelperParam.getStubConcept(concept);
+        my_modelField.addRootNode(new SNode(stubConcept));
+      }
+    }
+    private void handleChild_8237920533349931307(Object resultObject, Object value) throws SAXException {
+      Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink> child = (Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink>) value;
+      my_modelField.addRootNode(child._0());
     }
   }
   public class PersistenceElementHandler extends ModelReader9Handler.ElementHandler {
     public PersistenceElementHandler() {
     }
   }
-  public class DebugInfoElementHandler extends ModelReader9Handler.ElementHandler {
-    public DebugInfoElementHandler() {
+  public class Model_attributeElementHandler extends ModelReader9Handler.ElementHandler {
+    public Model_attributeElementHandler() {
+      setRequiredAttributes("name", "value");
+    }
+    @Override
+    protected Object createObject(Attributes attrs) throws SAXException {
+      my_modelField.getSModelHeader().setOptionalProperty(attrs.getValue("name"), attrs.getValue("value"));
+      return null;
+    }
+  }
+  public class RegistryElementHandler extends ModelReader9Handler.ElementHandler {
+    public RegistryElementHandler() {
     }
     @Override
     protected ModelReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
-      if ("lang".equals(tagName)) {
+      if ("language".equals(tagName)) {
         myChildHandlersStack.push(null);
-        return debug_languageHandler;
-      }
-      if ("model".equals(tagName)) {
-        myChildHandlersStack.push(null);
-        return debug_modelHandler;
-      }
-      if ("concept".equals(tagName)) {
-        myChildHandlersStack.push(null);
-        return debug_conceptHandler;
-      }
-      if ("property".equals(tagName)) {
-        myChildHandlersStack.push(null);
-        return debug_propertyHandler;
-      }
-      if ("refRole".equals(tagName)) {
-        myChildHandlersStack.push(null);
-        return debug_ref_roleHandler;
-      }
-      if ("childRole".equals(tagName)) {
-        myChildHandlersStack.push(null);
-        return debug_child_roleHandler;
+        return registry_languageHandler;
       }
       return super.createChild(resultObject, tagName, attrs);
     }
   }
-  public class Debug_languageElementHandler extends ModelReader9Handler.ElementHandler {
-    public Debug_languageElementHandler() {
+  public class Registry_languageElementHandler extends ModelReader9Handler.ElementHandler {
+    public Registry_languageElementHandler() {
       setRequiredAttributes("id", "name");
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      DebugRegistry.getInstance().addLanguageName(SLanguageId.deserialize(attrs.getValue("id")), attrs.getValue("name"));
+      my_readHelperParam.withLanguage(attrs.getValue("id"), attrs.getValue("name"));
       return null;
     }
+    @Override
+    protected ModelReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
+      if ("concept".equals(tagName)) {
+        myChildHandlersStack.push(null);
+        return registry_conceptHandler;
+      }
+      return super.createChild(resultObject, tagName, attrs);
+    }
   }
-  public class Debug_modelElementHandler extends ModelReader9Handler.ElementHandler {
-    public Debug_modelElementHandler() {
-      setRequiredAttributes("ref", "name");
+  public class Registry_conceptElementHandler extends ModelReader9Handler.ElementHandler {
+    public Registry_conceptElementHandler() {
+      setRequiredAttributes("id", "name", "index", "flags");
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      DebugRegistry.getInstance().addModelName(jetbrains.mps.smodel.SModelReference.parseReference(attrs.getValue("ref")), attrs.getValue("name"));
+      my_readHelperParam.withConcept(attrs.getValue("id"), attrs.getValue("name"), attrs.getValue("index"), attrs.getValue("flags"), attrs.getValue("stub"));
       return null;
     }
+    @Override
+    protected ModelReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
+      if ("property".equals(tagName)) {
+        myChildHandlersStack.push(null);
+        return registry_propertyHandler;
+      }
+      if ("reference".equals(tagName)) {
+        myChildHandlersStack.push(null);
+        return registry_associationHandler;
+      }
+      if ("child".equals(tagName)) {
+        myChildHandlersStack.push(null);
+        return registry_aggregationHandler;
+      }
+      return super.createChild(resultObject, tagName, attrs);
+    }
   }
-  public class Debug_conceptElementHandler extends ModelReader9Handler.ElementHandler {
-    public Debug_conceptElementHandler() {
-      setRequiredAttributes("id", "name");
+  public class Registry_propertyElementHandler extends ModelReader9Handler.ElementHandler {
+    public Registry_propertyElementHandler() {
+      setRequiredAttributes("id", "name", "index");
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      DebugRegistry.getInstance().addConceptName(SConceptId.deserialize(attrs.getValue("id")), attrs.getValue("name"));
+      my_readHelperParam.property(attrs.getValue("id"), attrs.getValue("name"), attrs.getValue("index"));
       return null;
     }
   }
-  public class Debug_propertyElementHandler extends ModelReader9Handler.ElementHandler {
-    public Debug_propertyElementHandler() {
-      setRequiredAttributes("id", "name");
+  public class Registry_associationElementHandler extends ModelReader9Handler.ElementHandler {
+    public Registry_associationElementHandler() {
+      setRequiredAttributes("id", "name", "index");
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      DebugRegistry.getInstance().addPropertyName(SPropertyId.deserialize(attrs.getValue("id")), attrs.getValue("name"));
+      my_readHelperParam.association(attrs.getValue("id"), attrs.getValue("name"), attrs.getValue("index"));
       return null;
     }
   }
-  public class Debug_ref_roleElementHandler extends ModelReader9Handler.ElementHandler {
-    public Debug_ref_roleElementHandler() {
-      setRequiredAttributes("id", "name");
+  public class Registry_aggregationElementHandler extends ModelReader9Handler.ElementHandler {
+    public Registry_aggregationElementHandler() {
+      setRequiredAttributes("id", "name", "index");
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      DebugRegistry.getInstance().addRefName(SReferenceLinkId.deserialize(attrs.getValue("id")), attrs.getValue("name"));
-      return null;
-    }
-  }
-  public class Debug_child_roleElementHandler extends ModelReader9Handler.ElementHandler {
-    public Debug_child_roleElementHandler() {
-      setRequiredAttributes("id", "name");
-    }
-    @Override
-    protected Object createObject(Attributes attrs) throws SAXException {
-      DebugRegistry.getInstance().addLinkName(SContainmentLinkId.deserialize(attrs.getValue("id")), attrs.getValue("name"));
+      my_readHelperParam.aggregation(attrs.getValue("id"), attrs.getValue("name"), attrs.getValue("index"), Boolean.parseBoolean(attrs.getValue("unordered")));
       return null;
     }
   }
@@ -323,19 +350,14 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     @Override
     protected ModelReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("use".equals(tagName)) {
-        myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
-          @Override
-          public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_7167172773708890285(resultObject, value);
-          }
-        });
+        myChildHandlersStack.push(null);
         return used_languageHandler;
       }
       if ("generationPart".equals(tagName)) {
         myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
           @Override
           public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_7167172773708890293(resultObject, value);
+            handleChild_5480414999147804036(resultObject, value);
           }
         });
         return module_referenceHandler;
@@ -344,37 +366,32 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
         myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
           @Override
           public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_7167172773708890301(resultObject, value);
+            handleChild_5480414999147804044(resultObject, value);
           }
         });
         return module_referenceHandler;
       }
       return super.createChild(resultObject, tagName, attrs);
     }
-    private void handleChild_7167172773708890285(Object resultObject, Object value) throws SAXException {
-      Tuples._4<SLanguageId, String, Integer, Boolean> child = (Tuples._4<SLanguageId, String, Integer, Boolean>) value;
-      if ((boolean) child._3()) {
-        my_helperField.addImplicitlyUsedLanguage(my_modelField, child._1(), child._0(), (int) child._2());
-      } else {
-        my_helperField.addUsedLanguage(my_modelField, child._1(), child._0(), (int) child._2());
-      }
-    }
-    private void handleChild_7167172773708890293(Object resultObject, Object value) throws SAXException {
+    private void handleChild_5480414999147804036(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
       my_modelField.addEngagedOnGenerationLanguage(child);
     }
-    private void handleChild_7167172773708890301(Object resultObject, Object value) throws SAXException {
+    private void handleChild_5480414999147804044(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
       my_modelField.addDevKit(child);
     }
   }
   public class Used_languageElementHandler extends ModelReader9Handler.ElementHandler {
     public Used_languageElementHandler() {
-      setRequiredAttributes("id", "index", "version");
+      setRequiredAttributes("id", "version", "name");
     }
     @Override
-    protected Tuples._4<SLanguageId, String, Integer, Boolean> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<SLanguageId,String,Integer,Boolean>from(SLanguageId.deserialize(attrs.getValue("id")), attrs.getValue("index"), Integer.parseInt(attrs.getValue("version")), Boolean.parseBoolean(attrs.getValue("implicit")));
+    protected Object createObject(Attributes attrs) throws SAXException {
+      SLanguageId langId = my_idEncoderField.parseLanguageId(attrs.getValue("id"));
+      int langVersion = Integer.parseInt(attrs.getValue("version"));
+      my_modelField.addLanguage(my_readHelperParam.getLanguage(langId, attrs.getValue("name")), langVersion);
+      return null;
     }
   }
   public class Module_referenceElementHandler extends ModelReader9Handler.ElementHandler {
@@ -383,7 +400,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected SModuleReference createObject(Attributes attrs) throws SAXException {
-      return PersistenceFacade.getInstance().createModuleReference(attrs.getValue("ref"));
+      return my_idEncoderField.parseModuleReference(attrs.getValue("ref"));
     }
   }
   public class ImportsElementHandler extends ModelReader9Handler.ElementHandler {
@@ -392,19 +409,10 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     @Override
     protected ModelReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("import".equals(tagName)) {
-        myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
-          @Override
-          public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_7167172773708890309(resultObject, value);
-          }
-        });
+        myChildHandlersStack.push(null);
         return model_importHandler;
       }
       return super.createChild(resultObject, tagName, attrs);
-    }
-    private void handleChild_7167172773708890309(Object resultObject, Object value) throws SAXException {
-      Tuples._3<String, SModelReference, Boolean> child = (Tuples._3<String, SModelReference, Boolean>) value;
-      my_helperField.addImportToModel(my_modelField, child._0(), child._1(), (boolean) child._2());
     }
   }
   public class Model_importElementHandler extends ModelReader9Handler.ElementHandler {
@@ -412,73 +420,30 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       setRequiredAttributes("index", "ref");
     }
     @Override
-    protected Tuples._3<String, SModelReference, Boolean> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<String,SModelReference,Boolean>from(attrs.getValue("index"), PersistenceFacade.getInstance().createModelReference(attrs.getValue("ref")), attrs.getValue("implicit") != null);
-    }
-  }
-  public class ContentsElementHandler extends ModelReader9Handler.ElementHandler {
-    public ContentsElementHandler() {
-    }
-    @Override
-    protected ModelReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
-      if ("node".equals(tagName) && checknode_7167172773708890351(resultObject, attrs)) {
-        myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
-          @Override
-          public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_7167172773708890339(resultObject, value);
-          }
-        });
-        return nodeHandler;
+    protected Object createObject(Attributes attrs) throws SAXException {
+      SModelReference modelRef = my_idEncoderField.parseModelReference(attrs.getValue("ref"));
+      my_importHelperField.addModelImport(attrs.getValue("index"), modelRef);
+      if (!(Boolean.parseBoolean(attrs.getValue("implicit")))) {
+        my_modelField.addModelImport(modelRef, true);
       }
-      if ("node".equals(tagName)) {
-        myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
-          @Override
-          public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_7167172773708890362(resultObject, value);
-          }
-        });
-        return ignoredNodeHandler;
-      }
-      return super.createChild(resultObject, tagName, attrs);
-    }
-    private boolean checknode_7167172773708890351(Object resultObject, Attributes attrs) {
-      return !((my_stripImplementationParam && my_helperField.isImplementationNode(attrs.getValue("info"))));
-    }
-    private void handleChild_7167172773708890339(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SNode, SContainmentLinkId> child = (Tuples._2<SNode, SContainmentLinkId>) value;
-      my_modelField.addRootNode(child._0());
-    }
-    private void handleChild_7167172773708890362(Object resultObject, Object value) throws SAXException {
-      Tuples._3<SContainmentLinkId, SConceptId, String> child = (Tuples._3<SContainmentLinkId, SConceptId, String>) value;
-      if (my_helperField.isImplementationWithStubNode(child._2())) {
-        SConcept stubConcept = my_helperField.getStubConcept(child._1());
-        if (stubConcept != null) {
-          my_modelField.addRootNode(new jetbrains.mps.smodel.SNode(stubConcept));
-        }
-      }
+      return null;
     }
   }
   public class NodeElementHandler extends ModelReader9Handler.ElementHandler {
     public NodeElementHandler() {
-      setRequiredAttributes("concept", "info");
+      setRequiredAttributes("concept", "id");
     }
     @Override
-    protected Tuples._2<SNode, SContainmentLinkId> createObject(Attributes attrs) throws SAXException {
-      Tuples._3<ConceptKind, StaticScope, Boolean> parsed = my_helperField.readNodeInfo(attrs.getValue("info"));
-      if (parsed == null) {
-        throw new SAXParseException("bad typeInfo attribute", null);
-      }
+    protected Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink> createObject(Attributes attrs) throws SAXException {
+      SConcept concept = my_readHelperParam.readConcept(attrs.getValue("concept"));
       boolean interfaceNode = false;
-      if (my_interfaceOnlyParam) {
-        interfaceNode = (parsed._0() == ConceptKind.INTERFACE || attrs.getValue("role") == null);
+      if (my_readHelperParam.isRequestedInterfaceOnly()) {
+        interfaceNode = (my_readHelperParam.isInterface(concept) || attrs.getValue("role") == null);
       }
-      SConceptId conceptId = my_helperField.readConceptId(attrs.getValue("concept"));
-      String name = DebugRegistry.getInstance().getConceptName(conceptId);
-      SConcept concept = MetaAdapterFactory.getConcept(conceptId, name);
-      jetbrains.mps.smodel.SNode result = (interfaceNode ? new InterfaceSNode(concept) : new jetbrains.mps.smodel.SNode(concept));
-      result.setId(SNodeId.fromString(attrs.getValue("id")));
+      SNode result = (interfaceNode ? new InterfaceSNode(concept) : new SNode(concept));
+      result.setId(my_idEncoderField.parseNodeId(attrs.getValue("id")));
       // can be root 
-      return MultiTuple.<SNode,SContainmentLinkId>from(((SNode) result), my_helperField.readNodeRole(attrs.getValue("role")));
+      return MultiTuple.<org.jetbrains.mps.openapi.model.SNode,SContainmentLink>from(((org.jetbrains.mps.openapi.model.SNode) result), my_readHelperParam.readAggregation(attrs.getValue("role")));
     }
     @Override
     protected ModelReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
@@ -486,86 +451,82 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
         myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
           @Override
           public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_7167172773708890516(resultObject, value);
+            handleChild_5480414999147804176(resultObject, value);
           }
         });
         return propertyHandler;
       }
-      if ("reference".equals(tagName)) {
+      if ("ref".equals(tagName)) {
         myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
           @Override
           public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_7167172773708890553(resultObject, value);
+            handleChild_4968492044127349726(resultObject, value);
           }
         });
         return referenceHandler;
       }
-      if ("node".equals(tagName) && checknode_7167172773708890671(resultObject, attrs)) {
+      if ("node".equals(tagName) && checknode_8237920533350080210(resultObject, attrs)) {
         myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
           @Override
           public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_7167172773708890646(resultObject, value);
+            handleChild_5480414999147804300(resultObject, value);
           }
         });
-        return nodeHandler;
+        return ignoredNodeHandler;
       }
       if ("node".equals(tagName)) {
         myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
           @Override
           public void apply(Object resultObject, Object value) throws SAXException {
-            handleChild_7167172773708890694(resultObject, value);
+            handleChild_5480414999147804248(resultObject, value);
           }
         });
-        return ignoredNodeHandler;
+        return nodeHandler;
       }
       return super.createChild(resultObject, tagName, attrs);
     }
-    private boolean checknode_7167172773708890671(Object resultObject, Attributes attrs) {
-      Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
-      if (my_stripImplementationParam && my_helperField.isImplementationNode(attrs.getValue("info"))) {
-        return false;
+    private boolean checknode_8237920533350080210(Object resultObject, Attributes attrs) {
+      Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink> result = (Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink>) resultObject;
+      SConcept childConcept = my_readHelperParam.readConcept(attrs.getValue("concept"));
+      if (my_readHelperParam.isRequestedStripImplementation() && my_readHelperParam.isImplementation(childConcept)) {
+        return true;
       }
-      return !(result._0() instanceof InterfaceSNode) || my_helperField.isInterfaceNode(attrs.getValue("info"));
+      return result._0() instanceof InterfaceSNode && !(my_readHelperParam.isInterface(childConcept));
     }
-    private void handleChild_7167172773708890516(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
-      Tuples._2<SPropertyId, String> child = (Tuples._2<SPropertyId, String>) value;
-      String name = DebugRegistry.getInstance().getPropertyName(child._0());
-      result._0().setProperty(MetaAdapterFactory.getProperty(child._0(), name), child._1());
+    private void handleChild_5480414999147804176(Object resultObject, Object value) throws SAXException {
+      Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink> result = (Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink>) resultObject;
+      Tuples._2<SProperty, String> child = (Tuples._2<SProperty, String>) value;
+      result._0().setProperty(child._0(), child._1());
     }
-    private void handleChild_7167172773708890553(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
-      Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String> child = (Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String>) value;
-      SNodePointer target = child._1();
-      String name = DebugRegistry.getInstance().getRefName(child._0());
-      SReferenceLink link = MetaAdapterFactory.getReferenceLink(child._0(), name);
-      StaticReference ref = new StaticReference(link, result._0(), target.getModelReference(), target.getNodeId(), child._3());
+    private void handleChild_4968492044127349726(Object resultObject, Object value) throws SAXException {
+      Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink> result = (Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink>) resultObject;
+      Tuples._4<SReferenceLink, SModelReference, SNodeId, String> child = (Tuples._4<SReferenceLink, SModelReference, SNodeId, String>) value;
+      SModelReference targetModel = child._1();
+      SNodeId nodeId = child._2();
+      SReferenceLink link = child._0();
+      String resolveInfo = child._3();
+      StaticReference ref = new StaticReference(link, result._0(), targetModel, nodeId, resolveInfo);
       result._0().setReference(link, ref);
     }
-    private void handleChild_7167172773708890646(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
-      Tuples._2<SNode, SContainmentLinkId> child = (Tuples._2<SNode, SContainmentLinkId>) value;
-      if (child != null) {
-        String name = DebugRegistry.getInstance().getLinkName(child._1());
-        result._0().addChild(MetaAdapterFactory.getContainmentLink(child._1(), name), child._0());
-      }
-    }
-    private void handleChild_7167172773708890694(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
-      Tuples._3<SContainmentLinkId, SConceptId, String> child = (Tuples._3<SContainmentLinkId, SConceptId, String>) value;
-      String name = DebugRegistry.getInstance().getLinkName(child._0());
-      SContainmentLink link = MetaAdapterFactory.getContainmentLink(child._0(), name);
-      if (my_stripImplementationParam && my_helperField.isImplementationWithStubNode(child._2())) {
-        SConcept stubConcept = my_helperField.getStubConcept(child._1());
-        if (stubConcept != null) {
-          jetbrains.mps.smodel.SNode childNode = new jetbrains.mps.smodel.SNode(stubConcept);
-          result._0().addChild(link, childNode);
-          return;
-        }
+    private void handleChild_5480414999147804300(Object resultObject, Object value) throws SAXException {
+      Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink> result = (Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink>) resultObject;
+      Tuples._2<SContainmentLink, SConcept> child = (Tuples._2<SContainmentLink, SConcept>) value;
+      SContainmentLink link = child._0();
+      SConcept concept = child._1();
+      if (my_readHelperParam.isRequestedStripImplementation() && my_readHelperParam.isImplementationWithStab(concept)) {
+        SConcept stubConcept = my_readHelperParam.getStubConcept(concept);
+        SNode childNode = new SNode(stubConcept);
+        result._0().addChild(link, childNode);
+        return;
       }
       if (result._0() instanceof InterfaceSNode) {
         ((InterfaceSNode) result._0()).skipRole(link);
       }
+    }
+    private void handleChild_5480414999147804248(Object resultObject, Object value) throws SAXException {
+      Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink> result = (Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink>) resultObject;
+      Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink> child = (Tuples._2<org.jetbrains.mps.openapi.model.SNode, SContainmentLink>) value;
+      result._0().addChild(child._1(), child._0());
     }
   }
   public class PropertyElementHandler extends ModelReader9Handler.ElementHandler {
@@ -573,26 +534,34 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       setRequiredAttributes("role");
     }
     @Override
-    protected Tuples._2<SPropertyId, String> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<SPropertyId,String>from(my_helperField.readPropId(attrs.getValue("role")), attrs.getValue("value"));
+    protected Tuples._2<SProperty, String> createObject(Attributes attrs) throws SAXException {
+      return MultiTuple.<SProperty,String>from(my_readHelperParam.readProperty(attrs.getValue("role")), attrs.getValue("value"));
     }
   }
   public class ReferenceElementHandler extends ModelReader9Handler.ElementHandler {
     public ReferenceElementHandler() {
-      setRequiredAttributes("role", "target");
+      setRequiredAttributes("role");
     }
     @Override
-    protected Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String> createObject(Attributes attrs) throws SAXException {
-      Pair<Boolean, SNodePointer> linkInfo = my_helperField.readLink(attrs.getValue("target"));
-      return MultiTuple.<SReferenceLinkId,SNodePointer,Boolean,String>from(my_helperField.readRefRole(attrs.getValue("role")), linkInfo.o2, linkInfo.o1, attrs.getValue("resolveInfo"));
+    protected Tuples._4<SReferenceLink, SModelReference, SNodeId, String> createObject(Attributes attrs) throws SAXException {
+      SReferenceLink association = my_readHelperParam.readAssociation(attrs.getValue("role"));
+      if (attrs.getValue("node") != null) {
+        // local reference 
+        SNodeId targetNode = my_idEncoderField.parseLocalNodeReference(attrs.getValue("node"));
+        return MultiTuple.<SReferenceLink,SModelReference,SNodeId,String>from(association, my_modelField.getReference(), targetNode, attrs.getValue("resolve"));
+      } else {
+        Pair<SModelReference, SNodeId> r = my_idEncoderField.parseExternalNodeReference(my_importHelperField, attrs.getValue("to"));
+        return MultiTuple.<SReferenceLink,SModelReference,SNodeId,String>from(association, r.o1, r.o2, attrs.getValue("resolve"));
+      }
     }
   }
   public class IgnoredNodeElementHandler extends ModelReader9Handler.ElementHandler {
     public IgnoredNodeElementHandler() {
+      setRequiredAttributes("concept");
     }
     @Override
-    protected Tuples._3<SContainmentLinkId, SConceptId, String> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<SContainmentLinkId,SConceptId,String>from(my_helperField.readNodeRole(attrs.getValue("role")), my_helperField.readConceptId(attrs.getValue("concept")), attrs.getValue("info"));
+    protected Tuples._2<SContainmentLink, SConcept> createObject(Attributes attrs) throws SAXException {
+      return MultiTuple.<SContainmentLink,SConcept>from(my_readHelperParam.readAggregation(attrs.getValue("role")), my_readHelperParam.readConcept(attrs.getValue("concept")));
     }
     @Override
     protected ModelReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
@@ -600,7 +569,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
         myChildHandlersStack.push(null);
         return ignoredPropertyHandler;
       }
-      if ("reference".equals(tagName)) {
+      if ("ref".equals(tagName)) {
         myChildHandlersStack.push(null);
         return ignoredReferenceHandler;
       }

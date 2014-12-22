@@ -44,7 +44,6 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
-import jetbrains.mps.smodel.persistence.def.v9.ModelPersistence9;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.FileUtil;
@@ -297,7 +296,6 @@ public final class BinaryPersistence {
       SModelHeader mh = ((DefaultSModel) myModelData).getSModelHeader();
       os.writeBoolean(mh.isDoNotGenerate());
       Map<String, String> props = new HashMap<String, String>(mh.getOptionalProperties());
-      props.remove(ModelPersistence9.OPTION_CONCISE); // FIXME drop once everyone had merged
       os.writeShort(props.size());
       for (Entry<String, String> e : props.entrySet()) {
         os.writeString(e.getKey());
