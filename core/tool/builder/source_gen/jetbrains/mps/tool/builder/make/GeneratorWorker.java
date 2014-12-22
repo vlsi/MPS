@@ -88,7 +88,6 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       error("Could not find anything to generate.");
     }
 
-    environment.dispose();
     dispose();
     showStatistic();
   }

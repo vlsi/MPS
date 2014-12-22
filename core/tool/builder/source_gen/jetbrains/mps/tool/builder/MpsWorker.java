@@ -113,6 +113,7 @@ public abstract class MpsWorker {
   protected void dispose() {
     if (myEnvironment != null) {
       myEnvironment.dispose();
+      myEnvironment = null;
     }
   }
   protected void setupEnvironment() {
