@@ -44,6 +44,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
@@ -54,7 +55,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
+import org.jetbrains.mps.openapi.model.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -393,7 +398,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   }
 
   public void reloadAll() {
-    ModelAccess.assertLegalWrite();
+    ModelAccess.assertLegalRead();
     SModel sModel = myModelReference.resolve(MPSModuleRepository.getInstance());
     for (SNode root : sModel.getRootNodes()) {
       MPSPsiNode mpsPsiNode = lookupNode(root.getNodeId());
