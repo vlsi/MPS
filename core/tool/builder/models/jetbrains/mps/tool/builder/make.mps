@@ -9736,19 +9736,14 @@
       <node concept="3Tmbuc" id="KL8Aqll5iB" role="1B3o_S" />
       <node concept="3cqZAl" id="KL8Aqll5iC" role="3clF45" />
       <node concept="3clFbS" id="KL8Aqll5iD" role="3clF47">
+        <node concept="3clFbF" id="1DbHXPu$I5v" role="3cqZAp">
+          <node concept="3nyPlj" id="1DbHXPu$I5t" role="3clFbG">
+            <ref role="37wK5l" node="KL8Aqll4ot" resolve="showStatistic" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="KL8Aqll5iE" role="3cqZAp">
-          <node concept="1Wc70l" id="KL8Aqll5iF" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxeuyUX" role="3uHU7B">
-              <ref role="3cqZAo" node="KL8Aqll4Tp" resolve="myTestFailed" />
-            </node>
-            <node concept="2OqwBi" id="KL8Aqll5iH" role="3uHU7w">
-              <node concept="37vLTw" id="2BHiRxeu$sP" role="2Oq$k0">
-                <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
-              </node>
-              <node concept="liA8E" id="KL8Aqll5iJ" role="2OqNvi">
-                <ref role="37wK5l" to="asz6:KL8Aql8etu" resolve="getFailOnError" />
-              </node>
-            </node>
+          <node concept="37vLTw" id="2BHiRxeuyUX" role="3clFbw">
+            <ref role="3cqZAo" node="KL8Aqll4Tp" resolve="myTestFailed" />
           </node>
           <node concept="3clFbS" id="KL8Aqll5iK" role="3clFbx">
             <node concept="YS8fn" id="KL8Aqll5iL" role="3cqZAp">

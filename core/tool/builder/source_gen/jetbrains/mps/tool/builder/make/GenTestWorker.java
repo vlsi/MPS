@@ -359,7 +359,8 @@ public class GenTestWorker extends GeneratorWorker {
   }
   @Override
   protected void showStatistic() {
-    if (myTestFailed && myWhatToDo.getFailOnError()) {
+    super.showStatistic();
+    if (myTestFailed) {
       throw new RuntimeException("Tests Failed");
     }
   }
