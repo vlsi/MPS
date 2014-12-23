@@ -135,7 +135,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.QueueSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.MakeFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.TextGenFacetInitializer" />
@@ -198,6 +197,7 @@
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.net.MalformedURLException" />
     <classNode dependClassName="java.net.URL" />

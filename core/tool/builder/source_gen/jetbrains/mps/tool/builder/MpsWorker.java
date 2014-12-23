@@ -197,38 +197,32 @@ public abstract class MpsWorker {
       }
     }
   }
-  protected void collectFromModuleFiles(Set<SModule> modules) {
-    for (File moduleFile : myWhatToDo.getModules()) {
-      processModuleFile(moduleFile, modules);
-    }
+  protected void collectFromModuleFiles(final Set<SModule> modules) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        for (File moduleFile : myWhatToDo.getModules()) {
+          processModuleFile(moduleFile, modules);
+        }
+      }
+    });
   }
   protected void processModuleFile(final File moduleFile, final Set<SModule> modules) {
     if (DescriptorIOFacade.getInstance().fromFileType(FileSystem.getInstance().getFileByPath(moduleFile.getPath())) == null) {
       return;
     }
-    List<SModule> tmpmodules;
-    SModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<SModule>() {
-      public SModule compute() {
-        return ModuleFileTracker.getInstance().getModuleByFile(FileSystem.getInstance().getFileByPath(moduleFile.getAbsolutePath()));
-      }
-    });
+    List<SModule> tmpmodules = new ArrayList<SModule>();
+    SModule moduleByFile = ModuleFileTracker.getInstance().getModuleByFile(FileSystem.getInstance().getFileByPath(moduleFile.getAbsolutePath()));
     if (moduleByFile != null) {
       tmpmodules = Collections.singletonList(moduleByFile);
     } else {
-      tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<SModule>>() {
-        public List<SModule> compute() {
-          IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
-          BaseMPSModuleOwner owner = new BaseMPSModuleOwner() {};
-          List<SModule> modules = new ArrayList<SModule>();
-          for (ModulesMiner.ModuleHandle moduleHandle : ModulesMiner.getInstance().collectModules(file, false)) {
-            SModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
-            if (module != null) {
-              modules.add(module);
-            }
-          }
-          return modules;
+      IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
+      BaseMPSModuleOwner owner = new BaseMPSModuleOwner();
+      for (ModulesMiner.ModuleHandle moduleHandle : ModulesMiner.getInstance().collectModules(file, false)) {
+        SModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
+        if (module != null) {
+          tmpmodules.add(module);
         }
-      });
+      }
     }
     for (SModule module : tmpmodules) {
       info("Loaded module " + module);

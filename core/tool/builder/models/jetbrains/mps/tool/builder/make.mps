@@ -3853,7 +3853,7 @@
               <node concept="3cpWsn" id="3ag$5R8QIx9" role="3cpWs9">
                 <property role="TrG5h" value="modules" />
                 <node concept="3uibUv" id="3ag$5R8QIxa" role="1tU5fm">
-                  <ref role="3uigEE" to="k7g3:~LinkedHashSet" resolve="LinkedHashSet" />
+                  <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
                   <node concept="3uibUv" id="5reM9ADe2M3" role="11_B2D">
                     <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
                   </node>
@@ -3868,30 +3868,49 @@
                 </node>
               </node>
             </node>
-            <node concept="2Gpval" id="3ag$5R8QJFg" role="3cqZAp">
-              <node concept="2GrKxI" id="3ag$5R8QJFh" role="2Gsz3X">
-                <property role="TrG5h" value="modulePath" />
-              </node>
-              <node concept="3clFbS" id="3ag$5R8QJFj" role="2LFqv$">
-                <node concept="3clFbF" id="3ag$5R8QKjA" role="3cqZAp">
-                  <node concept="1rXfSq" id="4hiugqyz8Xp" role="3clFbG">
-                    <ref role="37wK5l" to="jo3e:KL8Aqlj5tW" resolve="processModuleFile" />
-                    <node concept="2ShNRf" id="3ag$5R8QKjD" role="37wK5m">
-                      <node concept="1pGfFk" id="3ag$5R8QKjG" role="2ShVmc">
-                        <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                        <node concept="2GrUjf" id="3ag$5R8QKjM" role="37wK5m">
-                          <ref role="2Gs0qQ" node="3ag$5R8QJFh" resolve="modulePath" />
+            <node concept="3clFbF" id="3$4ceq7zBJO" role="3cqZAp">
+              <node concept="2OqwBi" id="3$4ceq7zCHJ" role="3clFbG">
+                <node concept="2OqwBi" id="3$4ceq7zCoM" role="2Oq$k0">
+                  <node concept="37vLTw" id="3$4ceq7zBJM" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3ag$5R8QIxZ" resolve="project" />
+                  </node>
+                  <node concept="liA8E" id="3$4ceq7zCGl" role="2OqNvi">
+                    <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3$4ceq7zCUn" role="2OqNvi">
+                  <ref role="37wK5l" to="88zw:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+                  <node concept="1bVj0M" id="3$4ceq7zDH6" role="37wK5m">
+                    <node concept="3clFbS" id="3$4ceq7zDH7" role="1bW5cS">
+                      <node concept="2Gpval" id="3ag$5R8QJFg" role="3cqZAp">
+                        <node concept="2GrKxI" id="3ag$5R8QJFh" role="2Gsz3X">
+                          <property role="TrG5h" value="modulePath" />
+                        </node>
+                        <node concept="3clFbS" id="3ag$5R8QJFj" role="2LFqv$">
+                          <node concept="3clFbF" id="3ag$5R8QKjA" role="3cqZAp">
+                            <node concept="1rXfSq" id="4hiugqyz8Xp" role="3clFbG">
+                              <ref role="37wK5l" to="jo3e:KL8Aqlj5tW" resolve="processModuleFile" />
+                              <node concept="2ShNRf" id="3ag$5R8QKjD" role="37wK5m">
+                                <node concept="1pGfFk" id="3ag$5R8QKjG" role="2ShVmc">
+                                  <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                                  <node concept="2GrUjf" id="3ag$5R8QKjM" role="37wK5m">
+                                    <ref role="2Gs0qQ" node="3ag$5R8QJFh" resolve="modulePath" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="5reM9ADe3A$" role="37wK5m">
+                                <ref role="3cqZAo" node="3ag$5R8QIx9" resolve="modules" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="3GM_nagTAOP" role="2GsD0m">
+                          <ref role="3cqZAo" node="3ag$5R8QJCC" resolve="modulePaths" />
                         </node>
                       </node>
                     </node>
-                    <node concept="37vLTw" id="5reM9ADe3A$" role="37wK5m">
-                      <ref role="3cqZAo" node="3ag$5R8QIx9" resolve="modules" />
-                    </node>
                   </node>
                 </node>
-              </node>
-              <node concept="37vLTw" id="3GM_nagTAOP" role="2GsD0m">
-                <ref role="3cqZAo" node="3ag$5R8QJCC" resolve="modulePaths" />
               </node>
             </node>
             <node concept="3cpWs8" id="3ag$5R8QJDi" role="3cqZAp">
@@ -7364,7 +7383,7 @@
           <node concept="3cpWsn" id="1cjXdtLMu4b" role="3cpWs9">
             <property role="TrG5h" value="modules" />
             <node concept="3uibUv" id="1cjXdtLMu4c" role="1tU5fm">
-              <ref role="3uigEE" to="k7g3:~LinkedHashSet" resolve="LinkedHashSet" />
+              <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
               <node concept="3uibUv" id="1cjXdtLMu4d" role="11_B2D">
                 <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
               </node>
@@ -7379,29 +7398,30 @@
             </node>
           </node>
         </node>
-        <node concept="2Gpval" id="1cjXdtLMu4h" role="3cqZAp">
-          <node concept="2GrKxI" id="1cjXdtLMu4i" role="2Gsz3X">
-            <property role="TrG5h" value="moduleFilePath" />
-          </node>
-          <node concept="3clFbS" id="1cjXdtLMu4j" role="2LFqv$">
-            <node concept="3clFbF" id="1cjXdtLMu4k" role="3cqZAp">
-              <node concept="1rXfSq" id="4hiugqyz9CW" role="3clFbG">
-                <ref role="37wK5l" to="jo3e:KL8Aqlj5tW" resolve="processModuleFile" />
-                <node concept="2GrUjf" id="1cjXdtLNTSX" role="37wK5m">
-                  <ref role="2Gs0qQ" node="1cjXdtLMu4i" resolve="moduleFilePath" />
-                </node>
-                <node concept="37vLTw" id="1cjXdtLMu4p" role="37wK5m">
-                  <ref role="3cqZAo" node="1cjXdtLMu4b" resolve="modules" />
-                </node>
+        <node concept="3clFbF" id="3$4ceq7_7iU" role="3cqZAp">
+          <node concept="2OqwBi" id="3$4ceq7_8Na" role="3clFbG">
+            <node concept="2OqwBi" id="3$4ceq7_7$D" role="2Oq$k0">
+              <node concept="37vLTw" id="3$4ceq7_7iS" role="2Oq$k0">
+                <ref role="3cqZAo" node="1cjXdtLMu3T" resolve="project" />
+              </node>
+              <node concept="liA8E" id="3$4ceq7_8l7" role="2OqNvi">
+                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
               </node>
             </node>
-          </node>
-          <node concept="2OqwBi" id="1cjXdtLNjMO" role="2GsD0m">
-            <node concept="liA8E" id="1cjXdtLNq6c" role="2OqNvi">
-              <ref role="37wK5l" to="asz6:KL8Aql8esM" resolve="getModules" />
-            </node>
-            <node concept="37vLTw" id="1cjXdtLNjGR" role="2Oq$k0">
-              <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
+            <node concept="liA8E" id="3$4ceq7_9ij" role="2OqNvi">
+              <ref role="37wK5l" to="88zw:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+              <node concept="1bVj0M" id="3$4ceq7_abj" role="37wK5m">
+                <node concept="3clFbS" id="3$4ceq7_abk" role="1bW5cS">
+                  <node concept="3clFbF" id="3$4ceq7Be_$" role="3cqZAp">
+                    <node concept="1rXfSq" id="3$4ceq7Be_y" role="3clFbG">
+                      <ref role="37wK5l" to="jo3e:KL8Aqlj5tE" resolve="collectFromModuleFiles" />
+                      <node concept="37vLTw" id="3$4ceq7BfCR" role="37wK5m">
+                        <ref role="3cqZAo" node="1cjXdtLMu4b" resolve="modules" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
