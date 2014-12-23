@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4vybtneetdyd3zwn1iv2rqfwhq41p1r">
+<dependencies version="2" modelHash="-6ork6tqnge5kw883f4msdaw3g4o2k7i">
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.wizard(MPS.IDEA/com.intellij.ide.wizard@java_stub)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
@@ -45,7 +45,7 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ScriptApplied.java" />
   </source>
-  <source id="6781485246382122239" name="MigrationTrigger" hash="1hu6hcwkgcxbq293ezivvzgxxqyeg45">
+  <source id="6781485246382122239" name="MigrationTrigger" hash="2fhn6lgjeqc2xa957984w3rtenbxdi4">
     <dep root="5351393548967582699" />
     <dep root="6781485246382121685" />
     <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
@@ -92,13 +92,13 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MigrationAssistantWizard.java" />
   </source>
   <source id="6781485246382121685" name="MigrationManager" hash="-awjy1e2wag0fqmzjpuzks322ejqrss8">
     <file name="MigrationManager.java" />
   </source>
   <source id="6781485246382121891" name="ResolveConflictDialog" hash="-2ay7jputickp14p5ehaa1jx1oo6o6ke">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ResolveConflictDialog.java" />
   </source>
   <source id="5351393548967582699" name="IStartupMigrationExecutor" hash="-eqv32nl7k7k0s247esrgc4aedn0nyxk">
@@ -106,8 +106,6 @@
   </source>
   <source id="5351393548967765630" name="HeadlessMigrationExecutor" hash="7bqzvbqvww3gay7ssq1rrwyhdolvbwb">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="HeadlessMigrationExecutor.java" />
   </source>
 </dependencies>

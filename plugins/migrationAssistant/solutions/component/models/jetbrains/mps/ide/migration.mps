@@ -466,7 +466,7 @@
             <property role="Xl_RC" value="Some of the modules in project require migration.\n" />
           </node>
           <node concept="Xl_RD" id="73_poD1h_3L" role="3uHU7w">
-            <property role="Xl_RC" value="It is advised to clean generated files before you start the migration.\n" />
+            <property role="Xl_RC" value="It is recommended to clean generated files before you start the migration.\n" />
           </node>
         </node>
         <node concept="Xl_RD" id="73_poD1h_3M" role="3uHU7w">
@@ -1292,7 +1292,7 @@
                                     <ref role="3cqZAo" node="1AzqgyAhz5T" resolve="choises" />
                                   </node>
                                   <node concept="Xl_RD" id="1AzqgyAhz5X" role="37wK5m">
-                                    <property role="Xl_RC" value="Clean sources and migrate" />
+                                    <property role="Xl_RC" value="Clean generated sources" />
                                   </node>
                                   <node concept="3clFbT" id="73_poD1hIky" role="37wK5m">
                                     <property role="3clFbU" value="true" />

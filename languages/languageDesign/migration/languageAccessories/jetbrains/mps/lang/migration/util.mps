@@ -307,7 +307,7 @@
                           <node concept="3clFbS" id="Czdt9t1kFT" role="1bW5cS">
                             <node concept="3clFbF" id="Czdt9t6id9" role="3cqZAp">
                               <node concept="1rXfSq" id="Czdt9t6id8" role="3clFbG">
-                                <ref role="37wK5l" node="Czdt9t5xsZ" resolve="allScriptdependencies" />
+                                <ref role="37wK5l" node="Czdt9t5xsZ" resolve="allScriptependencies" />
                                 <node concept="37vLTw" id="Czdt9t6jLZ" role="37wK5m">
                                   <ref role="3cqZAo" node="Czdt9t1kG0" resolve="it" />
                                 </node>
@@ -385,7 +385,7 @@
       <node concept="3Tm1VV" id="Czdt9sZxd4" role="1B3o_S" />
     </node>
     <node concept="2YIFZL" id="Czdt9t5xsZ" role="jymVt">
-      <property role="TrG5h" value="allScriptdependencies" />
+      <property role="TrG5h" value="allScriptependencies" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />

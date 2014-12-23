@@ -419,7 +419,7 @@
       <unit id="3754162703778200320" at="308,63,312,9" name="jetbrains.mps.ide.migration.MigrationTrigger$11" />
       <unit id="3754162703778107929" at="81,47,86,7" name="jetbrains.mps.ide.migration.MigrationTrigger$1" />
       <unit id="3754162703778115823" at="116,45,121,5" name="jetbrains.mps.ide.migration.MigrationTrigger$4" />
-      <unit id="8135019946389831579" at="188,161,195,13" name="jetbrains.mps.ide.migration.MigrationTrigger$9" />
+      <unit id="8135019946389831579" at="188,159,195,13" name="jetbrains.mps.ide.migration.MigrationTrigger$9" />
       <unit id="1847435758022034241" at="157,55,165,5" name="jetbrains.mps.ide.migration.MigrationTrigger$6" />
       <unit id="1847435758022971102" at="250,77,258,5" name="jetbrains.mps.ide.migration.MigrationTrigger$9" />
       <unit id="1847435758023100859" at="283,0,292,0" name="jetbrains.mps.ide.migration.MigrationTrigger$MyClassesListener" />

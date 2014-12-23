@@ -60,7 +60,7 @@ import org.jetbrains.annotations.Nullable;
 @State(name = "MigrationTrigger", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
 })
 public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor {
-  private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "It is advised to clean generated files before you start the migration.\n" + "Would you like to reload project and start the migration immediately?";
+  private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "It is recommended to clean generated files before you start the migration.\n" + "Would you like to reload project and start the migration immediately?";
 
   private Project myMpsProject;
   private final MigrationManager myMigrationManager;
@@ -185,7 +185,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             String[] choises = new String[]{"Migrate", "Postpone"};
-            final int result = Messages.showCheckboxMessageDialog(DIALOG_TEXT, "Migration required", choises, "Clean sources and migrate", true, 0, 0, null, new PairFunction<Integer, JCheckBox, Integer>() {
+            final int result = Messages.showCheckboxMessageDialog(DIALOG_TEXT, "Migration required", choises, "Clean generated sources", true, 0, 0, null, new PairFunction<Integer, JCheckBox, Integer>() {
               public Integer fun(Integer selected, JCheckBox cb) {
                 if (selected == 1) {
                   return 2;
