@@ -164,7 +164,6 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="559557797393017698" name="jetbrains.mps.lang.smodel.structure.ModelReferenceExpression" flags="nn" index="BaHAS">
-        <property id="559557797393041554" name="fqName" index="BaBD8" />
         <property id="559557797393021807" name="stereotype" index="BaGAP" />
         <property id="559557797393017702" name="name" index="BaHAW" />
       </concept>
@@ -682,55 +681,6 @@
                 </node>
               </node>
               <node concept="3clFbT" id="3qjQ36DCpsF" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="3qjQ36DCoI6" role="3cqZAp" />
-        <node concept="3clFbF" id="3qjQ36D$$qi" role="3cqZAp">
-          <node concept="2OqwBi" id="3qjQ36D$$qj" role="3clFbG">
-            <node concept="37vLTw" id="7fCCGqbnLt$" role="2Oq$k0">
-              <ref role="3cqZAo" node="7fCCGqbnLtr" resolve="m" />
-            </node>
-            <node concept="liA8E" id="3qjQ36DAVd8" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
-              <node concept="2OqwBi" id="3qjQ36DB8Zr" role="37wK5m">
-                <node concept="2JrnkZ" id="3qjQ36DB8Wp" role="2Oq$k0">
-                  <node concept="BaHAS" id="3qjQ36DAWmT" role="2JrQYb">
-                    <property role="BaHAW" value="jetbrains.mps.smodel.adapter" />
-                    <property role="BaGAP" value="" />
-                    <property role="BaBD8" value="smo" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="3qjQ36DB9h3" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                </node>
-              </node>
-              <node concept="3clFbT" id="3qjQ36DAWvE" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3qjQ36DCue7" role="3cqZAp">
-          <node concept="2OqwBi" id="3qjQ36DCue8" role="3clFbG">
-            <node concept="37vLTw" id="7fCCGqbnZYF" role="2Oq$k0">
-              <ref role="3cqZAo" node="7fCCGqbnRMP" resolve="mod" />
-            </node>
-            <node concept="liA8E" id="3qjQ36DCued" role="2OqNvi">
-              <ref role="37wK5l" to="vsqj:~AbstractModule.addDependency(org.jetbrains.mps.openapi.module.SModuleReference,boolean):jetbrains.mps.project.structure.modules.Dependency" resolve="addDependency" />
-              <node concept="2OqwBi" id="3qjQ36DCuee" role="37wK5m">
-                <node concept="2JrnkZ" id="3qjQ36DCuef" role="2Oq$k0">
-                  <node concept="3rM5sP" id="3qjQ36DCueg" role="2JrQYb">
-                    <property role="3rM5sR" value="2d3c70e9-aab2-4870-8d8d-6036800e4103" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="3qjQ36DCueh" role="2OqNvi">
-                  <ref role="37wK5l" to="88zw:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
-                </node>
-              </node>
-              <node concept="3clFbT" id="3qjQ36DCuei" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
             </node>

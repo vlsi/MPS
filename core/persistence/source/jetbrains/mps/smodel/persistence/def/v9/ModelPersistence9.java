@@ -38,8 +38,6 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import java.util.List;
 
 public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
-  public static final String OPTION_CONCISE = "concise"; // FIXME remove once everyone had merged their branches.
-
   // per-root
   public static final String FILE_CONTENT = ModelPersistence.FILE_CONTENT;
 
@@ -119,15 +117,12 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
     final boolean interfaceOnly = state == ModelLoadingState.INTERFACE_LOADED;
     final boolean stripImplementation = state == ModelLoadingState.NO_IMPLEMENTATION;
-    if (isConcisePersistenceOption(header)) {
-      MetaModelInfoProvider mmiProvider = header.getMetaInfoProvider();
-      if (mmiProvider == null) {
-        mmiProvider = new RegularMetaModelInfo();
-      }
-      IdInfoReadHelper readHelper = new IdInfoReadHelper(mmiProvider, interfaceOnly, stripImplementation);
-      return new ModelReader9bisHandler(header, readHelper);
+    MetaModelInfoProvider mmiProvider = header.getMetaInfoProvider();
+    if (mmiProvider == null) {
+      mmiProvider = new RegularMetaModelInfo();
     }
-    return new ModelReader9Handler(interfaceOnly, stripImplementation, header);
+    IdInfoReadHelper readHelper = new IdInfoReadHelper(mmiProvider, interfaceOnly, stripImplementation);
+    return new ModelReader9Handler(header, readHelper);
   }
 
   @Override
@@ -146,10 +141,5 @@ public class ModelPersistence9 implements IModelPersistence, XMLPersistence {
   @Override
   public Indexer getIndexSupport(@NotNull Callback callback) {
     return new Indexer9(callback);
-  }
-
-  private static boolean isConcisePersistenceOption(SModelHeader header) {
-    final String p = header.getOptionalProperty(ModelPersistence9.OPTION_CONCISE);
-    return p == null || Boolean.parseBoolean(p);
   }
 }

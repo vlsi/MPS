@@ -7,75 +7,31 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import java.util.Map;
+import java.util.Collection;
+import jetbrains.mps.lang.migration.util.MigrationsCheckUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.Language;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class MigrationScriptVersions_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public MigrationScriptVersions_NonTypesystemRule() {
   }
   public void applyRule(final SNode ms, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.getModel(ms).getModule() instanceof Language)) {
-      return;
-    }
-    List<SNode> scripts = SModelOperations.roots(SNodeOperations.getModel(ms), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
-    int scNum = ListSequence.fromList(scripts).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) == SPropertyOperations.getInteger(ms, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
-      }
-    }).count();
-    if (scNum > 1) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ms, "" + scNum + " scripts found for version " + SPropertyOperations.getInteger(ms, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")), "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "3334914821927938382", null, errorTarget);
-      }
-    }
-
-    Language language = (Language) SNodeOperations.getModel(ms).getModule();
-    int langVersion = language.getLanguageVersion();
-    final int msTargetVer = SPropertyOperations.getInteger(ms, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) + 1;
-    int delta = msTargetVer - langVersion;
-    if (delta == 0) {
-      return;
-    }
-
-    if (ListSequence.fromList(scripts).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) == msTargetVer;
-      }
-    }).isEmpty()) {
-      if (ListSequence.fromList(scripts).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) > msTargetVer;
-        }
-      }).isEmpty()) {
+    Map<SNode, Collection<String>> errors = MigrationsCheckUtil.checkMigrationsVersions(SNodeOperations.getModel(ms).getModule());
+    CollectionSequence.fromCollection(MapSequence.fromMap(errors).get(ms)).visitAll(new IVisitor<String>() {
+      public void visit(String it) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ms, "Language version (" + langVersion + ") is greater than the targert version of last migration script (" + msTargetVer + ")", "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "3334914821928372740", null, errorTarget);
-          {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.migration.typesystem.FixLanguageVersion_QuickFix", false);
-            intentionProvider.putArgument("wanted", msTargetVer);
-            intentionProvider.putArgument("l", language);
-            _reporter_2309309498.addIntentionProvider(intentionProvider);
-          }
-        }
-      } else {
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ms, "Script not found for version " + msTargetVer, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "3334914821928228337", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ms, it, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "1987432259747751432", null, errorTarget);
         }
       }
-    }
+    });
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.migration.structure.MigrationScript";

@@ -4592,15 +4592,15 @@
                   <node concept="3cpWsn" id="4$qm49Xp$pD" role="3cpWs9">
                     <property role="TrG5h" value="role" />
                     <node concept="17QB3L" id="4$qm49Xp$p$" role="1tU5fm" />
-                    <node concept="2YIFZM" id="4$qm49XpyGv" role="33vP2m">
-                      <ref role="37wK5l" to="ec5l:~SNodeAccessUtil.getProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String):java.lang.String" resolve="getProperty" />
+                    <node concept="2YIFZM" id="5CLLdhjZDPB" role="33vP2m">
+                      <ref role="37wK5l" to="ec5l:~SNodeAccessUtil.getProperty(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SProperty):java.lang.String" resolve="getProperty" />
                       <ref role="1Pybhc" to="ec5l:~SNodeAccessUtil" resolve="SNodeAccessUtil" />
-                      <node concept="37vLTw" id="4$qm49XpyGw" role="37wK5m">
+                      <node concept="37vLTw" id="5CLLdhjZDZA" role="37wK5m">
                         <ref role="3cqZAo" node="7U87j6$6AV$" resolve="node" />
                       </node>
-                      <node concept="10M0yZ" id="4$qm49XpyGx" role="37wK5m">
+                      <node concept="10M0yZ" id="5CLLdhjZDZB" role="37wK5m">
                         <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                        <ref role="3cqZAo" to="cu2c:~SNodeUtil.propertyName_LinkDeclaration_role" resolve="propertyName_LinkDeclaration_role" />
+                        <ref role="3cqZAo" to="cu2c:~SNodeUtil.property_LinkDeclaration_role" resolve="property_LinkDeclaration_role" />
                       </node>
                     </node>
                   </node>
@@ -4673,15 +4673,15 @@
                     <node concept="3cpWsn" id="3pai7pQF2NB" role="3cpWs9">
                       <property role="TrG5h" value="name" />
                       <node concept="17QB3L" id="3pai7pQF2NC" role="1tU5fm" />
-                      <node concept="2YIFZM" id="3pai7pQF2ND" role="33vP2m">
+                      <node concept="2YIFZM" id="5CLLdhjZFj0" role="33vP2m">
+                        <ref role="37wK5l" to="ec5l:~SNodeAccessUtil.getProperty(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SProperty):java.lang.String" resolve="getProperty" />
                         <ref role="1Pybhc" to="ec5l:~SNodeAccessUtil" resolve="SNodeAccessUtil" />
-                        <ref role="37wK5l" to="ec5l:~SNodeAccessUtil.getProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String):java.lang.String" resolve="getProperty" />
-                        <node concept="37vLTw" id="3pai7pQF2NE" role="37wK5m">
+                        <node concept="37vLTw" id="5CLLdhjZFj1" role="37wK5m">
                           <ref role="3cqZAo" node="7U87j6$6AV$" resolve="node" />
                         </node>
-                        <node concept="10M0yZ" id="3pai7pQF2NF" role="37wK5m">
+                        <node concept="10M0yZ" id="5CLLdhjZFj2" role="37wK5m">
                           <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                          <ref role="3cqZAo" to="cu2c:~SNodeUtil.propertyName_INamedConcept_name" resolve="propertyName_INamedConcept_name" />
+                          <ref role="3cqZAo" to="cu2c:~SNodeUtil.property_INamedConcept_name" resolve="property_INamedConcept_name" />
                         </node>
                       </node>
                     </node>

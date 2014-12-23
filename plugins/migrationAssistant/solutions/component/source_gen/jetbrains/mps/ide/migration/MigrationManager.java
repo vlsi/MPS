@@ -11,11 +11,15 @@ public interface MigrationManager {
   public MigrationManager.MigrationState nextStep();
 
   public static interface MigrationState {
+
   }
+
   public static interface Step extends MigrationManager.MigrationState {
     public String getDescription();
     public boolean execute();
   }
-  public static interface Finished extends MigrationManager.MigrationState {
+
+  public static class Finished implements MigrationManager.MigrationState {
+
   }
 }

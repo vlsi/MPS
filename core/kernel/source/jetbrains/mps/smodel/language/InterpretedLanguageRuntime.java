@@ -49,6 +49,10 @@ class InterpretedLanguageRuntime extends LanguageRuntime {
       return (T) new StructureAspectInterpreted(myLang);
     }
     if (descriptorInterface == ConstraintsAspectDescriptor.class) {
+      // FIXME In fact, interpreted constraints are of no use, and ConstraintsAspectInterpreted for legacy reasons
+      // FIXME does a lot of job (within BaseConstraintsDescriptor) which is likely to break with interpreted (no source code) languages
+      // (see BaseConstraintsDescriptor#calcInheritance).
+      // We shall supply constraints aspect that would yield 'no constrains' (and do no initialization code)
       return (T) ConstraintsAspectInterpreted.getInstance();
     }
     return null;

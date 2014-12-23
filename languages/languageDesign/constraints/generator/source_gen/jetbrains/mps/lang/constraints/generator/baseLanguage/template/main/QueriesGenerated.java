@@ -109,7 +109,7 @@ public class QueriesGenerated {
     return SModelOperations.getModelName(_context.getOriginalInputModel()) + "." + SPropertyOperations.getString(SNodeOperations.cast(constraints, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_2196823097109740280(final PropertyMacroContext _context) {
-    long id = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) _context.getNode()).getIdValue();
+    long id = MetaIdByDeclaration.getConceptId(_context.getNode()).getIdValue();
     return "0x" + Long.toHexString(id) + "L";
   }
   public static Object propertyMacro_GetPropertyValue_5934496548013422568(final PropertyMacroContext _context) {

@@ -7,7 +7,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
 import com.intellij.openapi.startup.StartupManager;
 
-public class HeadlessMigrationExecutor extends AbstractProjectComponent implements StartupMigrationExecutorI {
+public class HeadlessMigrationExecutor extends AbstractProjectComponent implements IStartupMigrationExecutor {
   private MigrationManager myMigrationManager;
   public HeadlessMigrationExecutor(Project project, MigrationManager migrationManager) {
     super(project);

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.adapter.structure.link;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
@@ -27,10 +26,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
-  private static final Logger LOG = Logger.wrap(org.apache.log4j.Logger.getLogger(SContainmentLinkAdapterByName.class));
-
-  protected String myConceptName;
+public final class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
+  private final String myConceptName;
 
   public SContainmentLinkAdapterByName(@NotNull String conceptName, @NotNull String name) {
     super(name);
@@ -55,7 +52,6 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
   public SContainmentLinkId getRoleId() {
     LinkDescriptor d = getLinkDescriptor();
     if (d == null) {
-      //LOG.error("link descriptor not found for link " + myName);
       return MetaIdFactory.INVALID_LINK_ID;
     }
     return d.getId();
@@ -68,10 +64,14 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
 
   @Override
   protected SNode findInConcept(SNode cnode) {
-    Iterable<? extends SNode> links = cnode.getChildren(SNodeUtil.linkName_AbstractConceptDeclaration_linkDeclaration);
+    Iterable<? extends SNode> links = cnode.getChildren(SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration);
     for (SNode l : links) {
-      if (SNodeUtil.getLinkDeclaration_IsReference(l)) continue;
-      if (l.getProperty(SNodeUtil.propertyName_LinkDeclaration_role).equals(myName)) return l;
+      if (SNodeUtil.getLinkDeclaration_IsReference(l)) {
+        continue;
+      }
+      if (myName.equals(l.getProperty(SNodeUtil.property_LinkDeclaration_role))) {
+        return l;
+      }
     }
     return null;
   }

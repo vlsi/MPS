@@ -14,10 +14,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.migration.util.MigrationsCheckUtil;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.util.List;
-import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
+import java.util.Map;
+import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.Language;
@@ -26,7 +30,6 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.migration.behavior.TransformStatement_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import org.apache.log4j.Logger;
@@ -72,14 +75,15 @@ public class QueriesGenerated {
     return SModelOperations.getModelName(_context.getInputModel()) + "." + MigrationScript_Behavior.call_getClassName_6547769411406912356(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_6547769411407089660(final PropertyMacroContext _context) {
-    List<String> errors = ListSequence.fromList(new ArrayList<String>());
     SModule module = _context.getOriginalInputModel().getModule();
-    MigrationsCheckUtil.checkLanguageVersionMatchesMigrations(module, errors);
-    ListSequence.fromList(errors).visitAll(new IVisitor<String>() {
-      public void visit(String it) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error(it);
-        }
+    Map<SNode, Collection<String>> errors = MigrationsCheckUtil.checkMigrationsVersions(module);
+    MapSequence.fromMap(errors).visitAll(new IVisitor<IMapping<SNode, Collection<String>>>() {
+      public void visit(final IMapping<SNode, Collection<String>> entry) {
+        CollectionSequence.fromCollection(entry.value()).visitAll(new IVisitor<String>() {
+          public void visit(String error) {
+            _context.showErrorMessage(entry.key(), error);
+          }
+        });
       }
     });
     return MigrationScript_Behavior.call_getGeneratedClassName_8648538385393994830(SNodeOperations.asSConcept(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript")));

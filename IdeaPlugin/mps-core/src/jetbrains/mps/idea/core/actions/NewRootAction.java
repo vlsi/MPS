@@ -118,7 +118,7 @@ public class NewRootAction extends AnAction {
             SNode concept = conceptPointer.resolve(MPSModuleRepository.getInstance());
             SModel model = myModelDescriptor;
             SNode newNode = NodeFactoryManager.createNode(concept, null, null, model);
-            SNodeAccessUtil.setProperty(newNode, SNodeUtil.propertyName_INamedConcept_name, getNameField().getText());
+            SNodeAccessUtil.setProperty(newNode, SNodeUtil.property_INamedConcept_name, getNameField().getText());
             model.addRootNode(newNode);
             myModelDescriptor.save();
           }

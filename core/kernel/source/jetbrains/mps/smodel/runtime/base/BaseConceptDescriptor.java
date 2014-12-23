@@ -52,9 +52,9 @@ public abstract class BaseConceptDescriptor implements ConceptDescriptor {
   @Override
   public ConceptKind getConceptKind() {
     Set<String> ancestors = getAncestorsNames();
-    return ancestors.contains(SNodeUtil.conceptName_InterfacePart) ? ConceptKind.INTERFACE
-        : ancestors.contains(SNodeUtil.conceptName_ImplementationWithStubPart) ? ConceptKind.IMPLEMENTATION_WITH_STUB
-        : ancestors.contains(SNodeUtil.conceptName_ImplementationPart) ? ConceptKind.IMPLEMENTATION
+    return ancestors.contains(SNodeUtil.concept_InterfacePart.getQualifiedName()) ? ConceptKind.INTERFACE
+        : ancestors.contains(SNodeUtil.concept_ImplementationWithStubPart.getQualifiedName()) ? ConceptKind.IMPLEMENTATION_WITH_STUB
+        : ancestors.contains(SNodeUtil.concept_ImplementationPart.getQualifiedName()) ? ConceptKind.IMPLEMENTATION
         : ConceptKind.NORMAL;
   }
 

@@ -112,7 +112,7 @@ public enum LanguageAspect {
 
     @Override
     public String getHelpURL() {
-      return "";
+      return CONFLUENCE_BASE + "Refactoring";
     }
   },
 
@@ -161,7 +161,7 @@ public enum LanguageAspect {
 
     @Override
     public String getHelpURL() {
-      return "";
+      return CONFLUENCE_BASE + "Plugin";
     }
   },
 
@@ -197,7 +197,7 @@ public enum LanguageAspect {
 
     @Override
     public String getHelpURL() {
-      return "";
+      return CONFLUENCE_BASE + "TextGen";
     }
   },
 
@@ -209,11 +209,11 @@ public enum LanguageAspect {
 
     @Override
     public String getHelpURL() {
-      return "";
+      return CONFLUENCE_BASE + "Migrations";
     }
   };
 
-  public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD31/";
+  public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD32/";
 
   private String myName;
 

@@ -7296,6 +7296,127 @@
       <unit id="5331479185384370996" at="10,0,30,0" name="jetbrains.mps.editorTest.LT_PlusExpressionRArgument_with_Plus_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/537222088365503481">
+    <file name="CutMethodComment_Test.java">
+      <node id="537222088365503481" at="15,56,16,107" concept="2" />
+      <node id="537222088365503481" at="16,107,17,97" concept="2" />
+      <node id="537222088365503481" at="24,51,25,61" concept="2" />
+      <node id="537222088367702071" at="25,61,26,32" concept="2" />
+      <node id="537222088367702090" at="26,32,27,32" concept="2" />
+      <node id="537222088367702109" at="27,32,28,32" concept="2" />
+      <node id="537222088365503481" at="12,0,14,0" concept="1" trace="CutMethodComment_Test#()V" />
+      <node id="537222088365503481" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="537222088365503481" at="14,0,19,0" concept="5" trace="test_CutMethodComment#()V" />
+      <node id="537222088365503481" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="537222088365503481" at="12,34,12,34" />
+      <scope id="537222088365503481" at="21,23,21,23" />
+      <scope id="537222088365503481" at="12,0,14,0" />
+      <scope id="537222088365503481" at="15,56,17,97" />
+      <scope id="537222088365503481" at="21,0,23,0" />
+      <scope id="537222088365503481" at="24,51,28,32" />
+      <scope id="537222088365503481" at="14,0,19,0" />
+      <scope id="537222088365503481" at="23,0,30,0" />
+      <unit id="537222088365503481" at="19,0,31,0" name="jetbrains.mps.editorTest.CutMethodComment_Test$TestBody" />
+      <unit id="537222088365503481" at="10,0,32,0" name="jetbrains.mps.editorTest.CutMethodComment_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/537222088366582145">
+    <file name="CutMethodWithComment_Test.java">
+      <node id="537222088366582145" at="15,60,16,107" concept="2" />
+      <node id="537222088366582145" at="16,107,17,101" concept="2" />
+      <node id="537222088366582145" at="24,51,25,61" concept="2" />
+      <node id="537222088366582786" at="25,61,26,76" concept="2" />
+      <node id="537222088366582819" at="26,76,27,76" concept="2" />
+      <node id="537222088366582851" at="27,76,28,76" concept="2" />
+      <node id="537222088367702181" at="28,76,29,32" concept="2" />
+      <node id="537222088366582145" at="12,0,14,0" concept="1" trace="CutMethodWithComment_Test#()V" />
+      <node id="537222088366582145" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="537222088366582145" at="14,0,19,0" concept="5" trace="test_CutMethodWithComment#()V" />
+      <node id="537222088366582145" at="23,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="537222088366582145" at="12,38,12,38" />
+      <scope id="537222088366582145" at="21,23,21,23" />
+      <scope id="537222088366582145" at="12,0,14,0" />
+      <scope id="537222088366582145" at="15,60,17,101" />
+      <scope id="537222088366582145" at="21,0,23,0" />
+      <scope id="537222088366582145" at="14,0,19,0" />
+      <scope id="537222088366582145" at="24,51,29,32" />
+      <scope id="537222088366582145" at="23,0,31,0" />
+      <unit id="537222088366582145" at="19,0,32,0" name="jetbrains.mps.editorTest.CutMethodWithComment_Test$TestBody" />
+      <unit id="537222088366582145" at="10,0,33,0" name="jetbrains.mps.editorTest.CutMethodWithComment_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/537222088368712661">
+    <file name="CutMethodWithoutComment_Test.java">
+      <node id="537222088368712661" at="15,63,16,107" concept="2" />
+      <node id="537222088368712661" at="16,107,17,104" concept="2" />
+      <node id="537222088368712661" at="24,51,25,61" concept="2" />
+      <node id="537222088368712672" at="25,61,26,76" concept="2" />
+      <node id="537222088368712674" at="26,76,27,76" concept="2" />
+      <node id="537222088368712678" at="27,76,28,32" concept="2" />
+      <node id="537222088368712661" at="12,0,14,0" concept="1" trace="CutMethodWithoutComment_Test#()V" />
+      <node id="537222088368712661" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="537222088368712661" at="14,0,19,0" concept="5" trace="test_CutMethodWithoutComment#()V" />
+      <node id="537222088368712661" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="537222088368712661" at="12,41,12,41" />
+      <scope id="537222088368712661" at="21,23,21,23" />
+      <scope id="537222088368712661" at="12,0,14,0" />
+      <scope id="537222088368712661" at="15,63,17,104" />
+      <scope id="537222088368712661" at="21,0,23,0" />
+      <scope id="537222088368712661" at="24,51,28,32" />
+      <scope id="537222088368712661" at="14,0,19,0" />
+      <scope id="537222088368712661" at="23,0,30,0" />
+      <unit id="537222088368712661" at="19,0,31,0" name="jetbrains.mps.editorTest.CutMethodWithoutComment_Test$TestBody" />
+      <unit id="537222088368712661" at="10,0,32,0" name="jetbrains.mps.editorTest.CutMethodWithoutComment_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/537222088368712799">
+    <file name="CutFieldComment_Test.java">
+      <node id="537222088368712799" at="15,55,16,107" concept="2" />
+      <node id="537222088368712799" at="16,107,17,96" concept="2" />
+      <node id="537222088368712799" at="24,51,25,61" concept="2" />
+      <node id="537222088368712810" at="25,61,26,32" concept="2" />
+      <node id="537222088368712812" at="26,32,27,32" concept="2" />
+      <node id="537222088368712814" at="27,32,28,32" concept="2" />
+      <node id="537222088368712799" at="12,0,14,0" concept="1" trace="CutFieldComment_Test#()V" />
+      <node id="537222088368712799" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="537222088368712799" at="14,0,19,0" concept="5" trace="test_CutFieldComment#()V" />
+      <node id="537222088368712799" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="537222088368712799" at="12,33,12,33" />
+      <scope id="537222088368712799" at="21,23,21,23" />
+      <scope id="537222088368712799" at="12,0,14,0" />
+      <scope id="537222088368712799" at="15,55,17,96" />
+      <scope id="537222088368712799" at="21,0,23,0" />
+      <scope id="537222088368712799" at="24,51,28,32" />
+      <scope id="537222088368712799" at="14,0,19,0" />
+      <scope id="537222088368712799" at="23,0,30,0" />
+      <unit id="537222088368712799" at="19,0,31,0" name="jetbrains.mps.editorTest.CutFieldComment_Test$TestBody" />
+      <unit id="537222088368712799" at="10,0,32,0" name="jetbrains.mps.editorTest.CutFieldComment_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/537222088368738230">
+    <file name="CutClassComment_Test.java">
+      <node id="537222088368738230" at="15,55,16,107" concept="2" />
+      <node id="537222088368738230" at="16,107,17,96" concept="2" />
+      <node id="537222088368738230" at="24,51,25,61" concept="2" />
+      <node id="537222088368738242" at="25,61,26,32" concept="2" />
+      <node id="537222088368738244" at="26,32,27,32" concept="2" />
+      <node id="537222088368738246" at="27,32,28,32" concept="2" />
+      <node id="537222088368738230" at="12,0,14,0" concept="1" trace="CutClassComment_Test#()V" />
+      <node id="537222088368738230" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="537222088368738230" at="14,0,19,0" concept="5" trace="test_CutClassComment#()V" />
+      <node id="537222088368738230" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="537222088368738230" at="12,33,12,33" />
+      <scope id="537222088368738230" at="21,23,21,23" />
+      <scope id="537222088368738230" at="12,0,14,0" />
+      <scope id="537222088368738230" at="15,55,17,96" />
+      <scope id="537222088368738230" at="21,0,23,0" />
+      <scope id="537222088368738230" at="24,51,28,32" />
+      <scope id="537222088368738230" at="14,0,19,0" />
+      <scope id="537222088368738230" at="23,0,30,0" />
+      <unit id="537222088368738230" at="19,0,31,0" name="jetbrains.mps.editorTest.CutClassComment_Test$TestBody" />
+      <unit id="537222088368738230" at="10,0,32,0" name="jetbrains.mps.editorTest.CutClassComment_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5527013591529129291">
     <file name="ManyStatementsList_Test.java">
       <node id="5527013591529129291" at="15,58,16,107" concept="2" />

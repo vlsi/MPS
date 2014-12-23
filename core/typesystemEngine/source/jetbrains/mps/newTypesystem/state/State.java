@@ -53,7 +53,6 @@ import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -376,7 +375,7 @@ public class State {
           SNode node = myNodeMaps.getNode(wCBlock.getArgument());
           if (node != null) {
             SConcept concept = node.getConcept();
-            boolean isRuntime = concept.equals(SConceptRepository.getInstance().getInstanceConcept("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
+            boolean isRuntime = concept.equals(SNodeUtil.concept_RuntimeTypeVariable);
             if (!concept.isAbstract() && !isRuntime) {
               myTypeCheckingContext.reportWarning(node, "argument of WHEN CONCRETE block is never concrete",
                   wCBlock.getNodeModel(), wCBlock.getNodeId(), null, new NodeMessageTarget());
@@ -432,10 +431,9 @@ public class State {
   }
 
   public SNode createNewRuntimeTypesVariable() {
-    SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
-        null, false);
+    SNode typeVar = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_RuntimeTypeVariable, null, null, false);
     //todo this code should be moved into MPS
-    SNodeAccessUtil.setProperty(typeVar, SNodeUtil.propertyName_INamedConcept_name, myVariableIdentifier.getNewVarName());
+    SNodeAccessUtil.setProperty(typeVar, SNodeUtil.property_INamedConcept_name, myVariableIdentifier.getNewVarName());
     return typeVar;
   }
 

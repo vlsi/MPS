@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -98,49 +97,61 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       @Override
       public void run() {
         // isInterface
-        isInterface = SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration);
+        isInterface = declaration.getConcept().equals(SNodeUtil.concept_InterfaceConceptDeclaration);
 
-        isFinal = SPropertyOperations.getBoolean(declaration, "isFinal");
-        isAbstract = SPropertyOperations.getBoolean(declaration, "isAbstract");
-        helpURL = SPropertyOperations.getString(declaration, "helpUrl");
+        // We use declaration.getProperty directly, instead of SPropertyOperations and SNodeAccessUtil+constraints
+        // (a) we know our core.structure language doesn't define any constraints for these properties
+        // (b) they would require compiled code which we don't support for interpreted languages (IL being primary users of this class, ICD).
+        // Otherwise, if we use SPropertyOperations+SNodeAccessUtil, ConstraintsDescriptors come into play,
+        // and might query concept descriptor we are trying to initialize right now, which is not what we would like to encounter.
+        isFinal = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_final));
+        isAbstract = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_abstract));
+        helpURL = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_helpURL);
 
-        conceptAlias = SNodeUtil.getConceptAlias(declaration);
-        shortDescription = SNodeUtil.getConceptShortDescription(declaration);
+        conceptAlias = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptAlias);
+        shortDescription = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptShortDescription);
 
         // scope
-        String scopeVal = SPropertyOperations.getString(declaration, "staticScope");
-        staticScope = "none".equals(scopeVal) ? StaticScope.NONE : ("root".equals(scopeVal) ? StaticScope.ROOT : StaticScope.GLOBAL);
+        if (isInterface) {
+          staticScope = StaticScope.GLOBAL;
+        } else {
+          String scopeVal = declaration.getProperty(SNodeUtil.property_ConceptDeclaration_staticScope);
+          staticScope = "none".equals(scopeVal) ? StaticScope.NONE : ("root".equals(scopeVal) ? StaticScope.ROOT : StaticScope.GLOBAL);
+        }
 
         // parents
         Set<String> parentsSet = new LinkedHashSet<String>();
         Set<SConceptId> parentsIdsSet = new LinkedHashSet<SConceptId>();
 
-        if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
-          // superconcept
-          SNode superConceptNode = SNodeUtil.getConceptDeclaration_Extends(declaration);
+        if (declaration.getConcept().equals(SNodeUtil.concept_ConceptDeclaration)) {
+          // super-concept
+          SNode superConceptNode = declaration.getReferenceTarget(SNodeUtil.link_ConceptDeclaration_extends);
 
           if (superConceptNode == null && !SNodeUtil.conceptName_BaseConcept.equals(myQualifiedName)) {
             superConcept = SNodeUtil.conceptName_BaseConcept;
             superConceptId = SNodeUtil.conceptId_BaseConcept;
           } else {
             superConcept = StructureAspectInterpreted.conceptFQName(superConceptNode);
-            superConceptId = superConceptNode == null ? null : MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) superConceptNode));
+            superConceptId = superConceptNode == null ? null : MetaIdByDeclaration.getConceptId(superConceptNode);
           }
           parentsSet.add(superConcept);
           parentsIdsSet.add(superConceptId);
 
-          for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
+          for (SNode/*<InterfaceConceptReference>*/ implementsLink : declaration.getChildren(SNodeUtil.link_ConceptDeclaration_implements)) {
+            SNode interfaceConcept = implementsLink.getReferenceTarget(SNodeUtil.link_InterfaceConceptReference_intfc);
             parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
-            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
+            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(interfaceConcept));
           }
-        } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
-          for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
+        } else if (isInterface) {
+          for (SNode/*<InterfaceConceptReference>*/ extendsLink : declaration.getChildren(SNodeUtil.link_InterfaceConceptDeclaration_extends)) {
+            SNode interfaceConcept = extendsLink.getReferenceTarget(SNodeUtil.link_InterfaceConceptReference_intfc);
             parentsSet.add(StructureAspectInterpreted.conceptFQName(interfaceConcept));
-            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
+            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(interfaceConcept));
           }
         }
 
         parentsSet.remove(null);
+        parentsIdsSet.remove(null);
         if (superConcept == null && !SNodeUtil.conceptName_BaseConcept.equals(myQualifiedName)) {
           parentsSet.add(SNodeUtil.conceptName_BaseConcept);
           parentsIdsSet.add(SNodeUtil.conceptId_BaseConcept);
@@ -150,12 +161,12 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         parentsIds = new ArrayList<SConceptId>(parentsIdsSet);
 
         // direct properties
-        for (SNode property : SNodeUtil.getConcept_PropertyDeclarations(declaration)) {
-          String name = property.getName();
+        for (SNode property : declaration.getChildren(SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration)) {
+          String name = property.getProperty(SNodeUtil.property_INamedConcept_name);
           if (name != null) {
             directProperties.add(name);
 
-            SPropertyId propId = MetaIdByDeclaration.getPropId(((jetbrains.mps.smodel.SNode) property));
+            SPropertyId propId = MetaIdByDeclaration.getPropId(property);
             BasePropertyDescriptor pd = new BasePropertyDescriptor(propId, name);
 
             directPropertiesByIds.put(propId, pd);
@@ -165,36 +176,40 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
         // direct references and children
         unorderedChildren = new HashSet<String>();
-        for (SNode link : SNodeUtil.getConcept_LinkDeclarations(declaration)) {
-          String role = SModelUtil.getLinkDeclarationRole(link);
-          if (role != null) {
-            boolean unordered = SNodeUtil.getLinkDeclaration_IsUnordered(link);
-            if (unordered) {
-              unorderedChildren.add(role);
-            }
-            if (SNodeUtil.getLinkDeclaration_IsReference(link)) {
-              directReferences.add(role);
+        for (SNode link : declaration.getChildren(SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration)) {
+          // process link declarations, excluding those that specialize some other link.
+          // We don't generate anything for such links, thus exclude them here as well.
+          if (link.getReference(SNodeUtil.link_LinkDeclaration_specializedLink) != null) {
+            continue;
+          }
+          String role = link.getProperty(SNodeUtil.property_LinkDeclaration_role);
+          if (role == null) {
+            continue;
+          }
+          boolean unordered = SPropertyOperations.getBoolean(link.getProperty(SNodeUtil.property_LinkDeclaration_unordered));
+          if (unordered) {
+            unorderedChildren.add(role);
+          }
+          final SConceptId targetConceptId = MetaIdByDeclaration.getConceptId(link.getReferenceTarget(SNodeUtil.link_LinkDeclaration_target));
+          final String linkCardinality = link.getProperty(SNodeUtil.property_LinkDeclaration_sourceCardinality);
+          final boolean isOptional = !SNodeUtil.isAtLeastOne(linkCardinality);
+          if (SNodeUtil.isAssociationLink(link.getProperty(SNodeUtil.property_LinkDeclaration_metaClass))) {
+            directReferences.add(role);
 
-              SReferenceLinkId refId = MetaIdByDeclaration.getRefRoleId(((jetbrains.mps.smodel.SNode) link));
-              BaseReferenceDescriptor pd = new BaseReferenceDescriptor(refId, role,
-                  MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) SNodeUtil.getLinkTarget(link))),
-                  SNodeUtil.getLinkDeclaration_IsExactlyOneMultiplicity(link));
+            SReferenceLinkId refId = MetaIdByDeclaration.getRefRoleId(link);
+            BaseReferenceDescriptor pd = new BaseReferenceDescriptor(refId, role, targetConceptId, isOptional);
 
-              directReferencesByIds.put(refId, pd);
-              directReferencesByName.put(role, pd);
-            } else {
-              childrenMap.put(role, !SNodeUtil.getLinkDeclaration_IsSingular(link));
+            directReferencesByIds.put(refId, pd);
+            directReferencesByName.put(role, pd);
+          } else {
+            final boolean isMultiple = !SNodeUtil.isAtMostOne(linkCardinality);
+            childrenMap.put(role, isMultiple);
 
-              SContainmentLinkId linkId = MetaIdByDeclaration.getLinkId(((jetbrains.mps.smodel.SNode) link));
-              BaseLinkDescriptor pd = new BaseLinkDescriptor(linkId, role,
-                  MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) SNodeUtil.getLinkTarget(link))),
-                  SNodeUtil.getLinkDeclaration_IsExactlyOneMultiplicity(link),
-                  SNodeUtil.getLinkDeclaration_IsSingular(link),
-                  unordered);
+            SContainmentLinkId linkId = MetaIdByDeclaration.getLinkId(link);
+            BaseLinkDescriptor pd = new BaseLinkDescriptor(linkId, role, targetConceptId, isOptional, isMultiple, unordered);
 
-              directLinksByIds.put(linkId, pd);
-              directLinksByName.put(role, pd);
-            }
+            directLinksByIds.put(linkId, pd);
+            directLinksByName.put(role, pd);
           }
         }
       }

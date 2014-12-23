@@ -141,6 +141,7 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
@@ -203,6 +204,9 @@
       </concept>
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
+      </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
@@ -5916,53 +5920,16 @@
               </node>
             </node>
             <node concept="3clFbS" id="7mY9WXbe9k$" role="3clFbx">
-              <node concept="3cpWs8" id="7mY9WXbe9k_" role="3cqZAp">
-                <node concept="3cpWsn" id="7mY9WXbe9kA" role="3cpWs9">
-                  <property role="TrG5h" value="role" />
-                  <property role="3TUv4t" value="false" />
-                  <node concept="3uibUv" id="7mY9WXbe9kB" role="1tU5fm">
-                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-                  </node>
-                  <node concept="2OqwBi" id="7mY9WXbe9kC" role="33vP2m">
-                    <node concept="37vLTw" id="2BHiRxgm_yk" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7mY9WXbe9kq" resolve="event" />
-                    </node>
-                    <node concept="liA8E" id="7mY9WXbe9kE" role="2OqNvi">
-                      <ref role="37wK5l" to="87kw:~SModelChildEvent.getChildRole():java.lang.String" resolve="getChildRole" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3SKdUt" id="7mY9WXbe9kF" role="3cqZAp">
                 <node concept="3SKdUq" id="7mY9WXbe9kG" role="3SKWNk">
                   <property role="3SKdUp" value=" don't process adding of smth. to concept unless it is extended/implemented interface-concept" />
                 </node>
               </node>
               <node concept="3clFbJ" id="7mY9WXbe9kH" role="3cqZAp">
-                <node concept="22lmx$" id="7mY9WXbe9kI" role="3clFbw">
-                  <node concept="2OqwBi" id="7mY9WXbe9kJ" role="3uHU7B">
-                    <node concept="10M0yZ" id="7mY9WXbe9kK" role="2Oq$k0">
-                      <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                      <ref role="3cqZAo" to="cu2c:~SNodeUtil.linkName_ConceptDeclaration_implements" resolve="linkName_ConceptDeclaration_implements" />
-                    </node>
-                    <node concept="liA8E" id="7mY9WXbe9kL" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                      <node concept="37vLTw" id="3GM_nagTsrZ" role="37wK5m">
-                        <ref role="3cqZAo" node="7mY9WXbe9kA" resolve="role" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="7mY9WXbe9kN" role="3uHU7w">
-                    <node concept="10M0yZ" id="7mY9WXbe9kO" role="2Oq$k0">
-                      <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                      <ref role="3cqZAo" to="cu2c:~SNodeUtil.linkName_ConceptDeclaration_extends" resolve="linkName_ConceptDeclaration_extends" />
-                    </node>
-                    <node concept="liA8E" id="7mY9WXbe9kP" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                      <node concept="37vLTw" id="3GM_nagTw5E" role="37wK5m">
-                        <ref role="3cqZAo" node="7mY9WXbe9kA" resolve="role" />
-                      </node>
-                    </node>
+                <node concept="1rXfSq" id="5CLLdhk1R28" role="3clFbw">
+                  <ref role="37wK5l" node="5CLLdhk1xmc" resolve="isExtendsImplementsRole" />
+                  <node concept="37vLTw" id="5CLLdhk1RAz" role="37wK5m">
+                    <ref role="3cqZAo" node="7mY9WXbe9kq" resolve="event" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="7mY9WXbe9kR" role="3clFbx">
@@ -6011,53 +5978,16 @@
               </node>
             </node>
             <node concept="3clFbS" id="7mY9WXbe9l6" role="3clFbx">
-              <node concept="3cpWs8" id="7mY9WXbe9l7" role="3cqZAp">
-                <node concept="3cpWsn" id="7mY9WXbe9l8" role="3cpWs9">
-                  <property role="TrG5h" value="role" />
-                  <property role="3TUv4t" value="false" />
-                  <node concept="3uibUv" id="7mY9WXbe9l9" role="1tU5fm">
-                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-                  </node>
-                  <node concept="2OqwBi" id="7mY9WXbe9la" role="33vP2m">
-                    <node concept="37vLTw" id="2BHiRxghizd" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7mY9WXbe9kY" resolve="event" />
-                    </node>
-                    <node concept="liA8E" id="7mY9WXbe9lc" role="2OqNvi">
-                      <ref role="37wK5l" to="87kw:~SModelChildEvent.getChildRole():java.lang.String" resolve="getChildRole" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3SKdUt" id="7mY9WXbe9ld" role="3cqZAp">
                 <node concept="3SKdUq" id="7mY9WXbe9le" role="3SKWNk">
                   <property role="3SKdUp" value=" don't process removing of smth. from concept unless it is extended/implemented interface-concept" />
                 </node>
               </node>
               <node concept="3clFbJ" id="7mY9WXbe9lf" role="3cqZAp">
-                <node concept="22lmx$" id="7mY9WXbe9lg" role="3clFbw">
-                  <node concept="2OqwBi" id="7mY9WXbe9lh" role="3uHU7B">
-                    <node concept="10M0yZ" id="7mY9WXbe9li" role="2Oq$k0">
-                      <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                      <ref role="3cqZAo" to="cu2c:~SNodeUtil.linkName_ConceptDeclaration_implements" resolve="linkName_ConceptDeclaration_implements" />
-                    </node>
-                    <node concept="liA8E" id="7mY9WXbe9lj" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                      <node concept="37vLTw" id="3GM_nagTrpK" role="37wK5m">
-                        <ref role="3cqZAo" node="7mY9WXbe9l8" resolve="role" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="7mY9WXbe9ll" role="3uHU7w">
-                    <node concept="10M0yZ" id="7mY9WXbe9lm" role="2Oq$k0">
-                      <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                      <ref role="3cqZAo" to="cu2c:~SNodeUtil.linkName_ConceptDeclaration_extends" resolve="linkName_ConceptDeclaration_extends" />
-                    </node>
-                    <node concept="liA8E" id="7mY9WXbe9ln" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                      <node concept="37vLTw" id="3GM_nagTrvU" role="37wK5m">
-                        <ref role="3cqZAo" node="7mY9WXbe9l8" resolve="role" />
-                      </node>
-                    </node>
+                <node concept="1rXfSq" id="5CLLdhk1HCH" role="3clFbw">
+                  <ref role="37wK5l" node="5CLLdhk1xmc" resolve="isExtendsImplementsRole" />
+                  <node concept="37vLTw" id="5CLLdhk1HLP" role="37wK5m">
+                    <ref role="3cqZAo" node="7mY9WXbe9kY" resolve="event" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="7mY9WXbe9lp" role="3clFbx">
@@ -6076,6 +6006,79 @@
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sR$X" role="2AJF6D">
           <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3clFb_" id="5CLLdhk1xmc" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="isExtendsImplementsRole" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="5CLLdhk1xmf" role="3clF47">
+          <node concept="3cpWs8" id="7mY9WXbe9l7" role="3cqZAp">
+            <node concept="3cpWsn" id="7mY9WXbe9l8" role="3cpWs9">
+              <property role="TrG5h" value="role" />
+              <property role="3TUv4t" value="false" />
+              <node concept="3uibUv" id="7mY9WXbe9l9" role="1tU5fm">
+                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+              </node>
+              <node concept="2OqwBi" id="7mY9WXbe9la" role="33vP2m">
+                <node concept="37vLTw" id="2BHiRxghizd" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5CLLdhk1HRd" resolve="event" />
+                </node>
+                <node concept="liA8E" id="7mY9WXbe9lc" role="2OqNvi">
+                  <ref role="37wK5l" to="87kw:~SModelChildEvent.getChildRole():java.lang.String" resolve="getChildRole" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs6" id="5CLLdhk1F$W" role="3cqZAp">
+            <node concept="22lmx$" id="5CLLdhk1GwH" role="3cqZAk">
+              <node concept="2OqwBi" id="5CLLdhk1GwI" role="3uHU7B">
+                <node concept="2OqwBi" id="5CLLdhk1GwJ" role="2Oq$k0">
+                  <node concept="10M0yZ" id="5CLLdhk1GwK" role="2Oq$k0">
+                    <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
+                    <ref role="3cqZAo" to="cu2c:~SNodeUtil.link_ConceptDeclaration_implements" resolve="link_ConceptDeclaration_implements" />
+                  </node>
+                  <node concept="liA8E" id="5CLLdhk1GwL" role="2OqNvi">
+                    <ref role="37wK5l" to="t3eg:~SContainmentLink.getRoleName():java.lang.String" resolve="getRoleName" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="5CLLdhk1GwM" role="2OqNvi">
+                  <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <node concept="37vLTw" id="5CLLdhk1GwN" role="37wK5m">
+                    <ref role="3cqZAo" node="7mY9WXbe9l8" resolve="role" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="5CLLdhk1GwO" role="3uHU7w">
+                <node concept="2OqwBi" id="5CLLdhk1GwP" role="2Oq$k0">
+                  <node concept="10M0yZ" id="5CLLdhk1GwQ" role="2Oq$k0">
+                    <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
+                    <ref role="3cqZAo" to="cu2c:~SNodeUtil.link_ConceptDeclaration_extends" resolve="link_ConceptDeclaration_extends" />
+                  </node>
+                  <node concept="liA8E" id="5CLLdhk1GwR" role="2OqNvi">
+                    <ref role="37wK5l" to="t3eg:~SReferenceLink.getRoleName():java.lang.String" resolve="getRoleName" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="5CLLdhk1GwS" role="2OqNvi">
+                  <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <node concept="37vLTw" id="5CLLdhk1GwT" role="37wK5m">
+                    <ref role="3cqZAo" node="7mY9WXbe9l8" resolve="role" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm6S6" id="5CLLdhk1wau" role="1B3o_S" />
+        <node concept="10P_77" id="5CLLdhk1xiO" role="3clF45" />
+        <node concept="37vLTG" id="5CLLdhk1HRd" role="3clF46">
+          <property role="TrG5h" value="event" />
+          <property role="3TUv4t" value="false" />
+          <node concept="3uibUv" id="5CLLdhk1HRe" role="1tU5fm">
+            <ref role="3uigEE" to="87kw:~SModelChildEvent" resolve="SModelChildEvent" />
+          </node>
         </node>
       </node>
       <node concept="3clFb_" id="7mY9WXbe9lt" role="jymVt">
@@ -6687,39 +6690,16 @@
               </node>
             </node>
             <node concept="3clFbS" id="7mY9WXbe9p9" role="3clFbx">
-              <node concept="3cpWs8" id="7mY9WXbe9pa" role="3cqZAp">
-                <node concept="3cpWsn" id="7mY9WXbe9pb" role="3cpWs9">
-                  <property role="TrG5h" value="role" />
-                  <property role="3TUv4t" value="false" />
-                  <node concept="3uibUv" id="7mY9WXbe9pc" role="1tU5fm">
-                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-                  </node>
-                  <node concept="2OqwBi" id="7mY9WXbe9pd" role="33vP2m">
-                    <node concept="37vLTw" id="2BHiRxgl6wJ" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7mY9WXbe9oZ" resolve="event" />
-                    </node>
-                    <node concept="liA8E" id="7mY9WXbe9pf" role="2OqNvi">
-                      <ref role="37wK5l" to="87kw:~SModelChildEvent.getChildRole():java.lang.String" resolve="getChildRole" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3SKdUt" id="7mY9WXbe9pg" role="3cqZAp">
                 <node concept="3SKdUq" id="7mY9WXbe9ph" role="3SKWNk">
                   <property role="3SKdUp" value=" don't process adding of smth. to concept unless it is property-declaration" />
                 </node>
               </node>
               <node concept="3clFbJ" id="7mY9WXbe9pi" role="3cqZAp">
-                <node concept="2OqwBi" id="7mY9WXbe9pj" role="3clFbw">
-                  <node concept="10M0yZ" id="7mY9WXbe9pk" role="2Oq$k0">
-                    <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                    <ref role="3cqZAo" to="cu2c:~SNodeUtil.linkName_AbstractConceptDeclaration_propertyDeclaration" resolve="linkName_AbstractConceptDeclaration_propertyDeclaration" />
-                  </node>
-                  <node concept="liA8E" id="7mY9WXbe9pl" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="37vLTw" id="3GM_nagTBZG" role="37wK5m">
-                      <ref role="3cqZAo" node="7mY9WXbe9pb" resolve="role" />
-                    </node>
+                <node concept="1rXfSq" id="5CLLdhk34Il" role="3clFbw">
+                  <ref role="37wK5l" node="5CLLdhk2nsv" resolve="isPropertyDeclarationRole" />
+                  <node concept="37vLTw" id="5CLLdhk3aZt" role="37wK5m">
+                    <ref role="3cqZAo" node="7mY9WXbe9oZ" resolve="event" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="7mY9WXbe9pn" role="3clFbx">
@@ -6768,39 +6748,16 @@
               </node>
             </node>
             <node concept="3clFbS" id="7mY9WXbe9pA" role="3clFbx">
-              <node concept="3cpWs8" id="7mY9WXbe9pB" role="3cqZAp">
-                <node concept="3cpWsn" id="7mY9WXbe9pC" role="3cpWs9">
-                  <property role="TrG5h" value="role" />
-                  <property role="3TUv4t" value="false" />
-                  <node concept="3uibUv" id="7mY9WXbe9pD" role="1tU5fm">
-                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-                  </node>
-                  <node concept="2OqwBi" id="7mY9WXbe9pE" role="33vP2m">
-                    <node concept="37vLTw" id="2BHiRxglqOZ" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7mY9WXbe9pu" resolve="event" />
-                    </node>
-                    <node concept="liA8E" id="7mY9WXbe9pG" role="2OqNvi">
-                      <ref role="37wK5l" to="87kw:~SModelChildEvent.getChildRole():java.lang.String" resolve="getChildRole" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3SKdUt" id="7mY9WXbe9pH" role="3cqZAp">
                 <node concept="3SKdUq" id="7mY9WXbe9pI" role="3SKWNk">
                   <property role="3SKdUp" value=" don't process removing of smth. from concept unless it is property-declaration" />
                 </node>
               </node>
               <node concept="3clFbJ" id="7mY9WXbe9pJ" role="3cqZAp">
-                <node concept="2OqwBi" id="7mY9WXbe9pK" role="3clFbw">
-                  <node concept="10M0yZ" id="7mY9WXbe9pL" role="2Oq$k0">
-                    <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                    <ref role="3cqZAo" to="cu2c:~SNodeUtil.linkName_AbstractConceptDeclaration_propertyDeclaration" resolve="linkName_AbstractConceptDeclaration_propertyDeclaration" />
-                  </node>
-                  <node concept="liA8E" id="7mY9WXbe9pM" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="37vLTw" id="3GM_nagT$SE" role="37wK5m">
-                      <ref role="3cqZAo" node="7mY9WXbe9pC" resolve="role" />
-                    </node>
+                <node concept="1rXfSq" id="5CLLdhk2VRM" role="3clFbw">
+                  <ref role="37wK5l" node="5CLLdhk2nsv" resolve="isPropertyDeclarationRole" />
+                  <node concept="37vLTw" id="5CLLdhk2Y4b" role="37wK5m">
+                    <ref role="3cqZAo" node="7mY9WXbe9pu" resolve="event" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="7mY9WXbe9pO" role="3clFbx">
@@ -6819,6 +6776,55 @@
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sT1L" role="2AJF6D">
           <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3clFb_" id="5CLLdhk2nsv" role="jymVt">
+        <property role="TrG5h" value="isPropertyDeclarationRole" />
+        <node concept="10P_77" id="5CLLdhk2wIw" role="3clF45" />
+        <node concept="3clFbS" id="5CLLdhk2nsy" role="3clF47">
+          <node concept="3cpWs8" id="5CLLdhk2LPW" role="3cqZAp">
+            <node concept="3cpWsn" id="5CLLdhk2LPX" role="3cpWs9">
+              <property role="TrG5h" value="role" />
+              <property role="3TUv4t" value="false" />
+              <node concept="3uibUv" id="5CLLdhk2LPY" role="1tU5fm">
+                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+              </node>
+              <node concept="2OqwBi" id="5CLLdhk2LPZ" role="33vP2m">
+                <node concept="37vLTw" id="5CLLdhk2LQ0" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5CLLdhk2Jus" resolve="event" />
+                </node>
+                <node concept="liA8E" id="5CLLdhk2LQ1" role="2OqNvi">
+                  <ref role="37wK5l" to="87kw:~SModelChildEvent.getChildRole():java.lang.String" resolve="getChildRole" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs6" id="5CLLdhk2LRM" role="3cqZAp">
+            <node concept="2OqwBi" id="5CLLdhk2O9_" role="3cqZAk">
+              <node concept="2OqwBi" id="5CLLdhk2Roe" role="2Oq$k0">
+                <node concept="10M0yZ" id="5CLLdhk2O9A" role="2Oq$k0">
+                  <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
+                  <ref role="3cqZAo" to="cu2c:~SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration" resolve="link_AbstractConceptDeclaration_propertyDeclaration" />
+                </node>
+                <node concept="liA8E" id="5CLLdhk2TMI" role="2OqNvi">
+                  <ref role="37wK5l" to="t3eg:~SContainmentLink.getRoleName():java.lang.String" resolve="getRoleName" />
+                </node>
+              </node>
+              <node concept="liA8E" id="5CLLdhk2O9B" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="37vLTw" id="5CLLdhk2O9C" role="37wK5m">
+                  <ref role="3cqZAo" node="5CLLdhk2LPX" resolve="role" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm6S6" id="5CLLdhk2uu3" role="1B3o_S" />
+        <node concept="37vLTG" id="5CLLdhk2Jus" role="3clF46">
+          <property role="TrG5h" value="event" />
+          <node concept="3uibUv" id="5CLLdhk2Jur" role="1tU5fm">
+            <ref role="3uigEE" to="87kw:~SModelChildEvent" resolve="SModelChildEvent" />
+          </node>
         </node>
       </node>
       <node concept="3clFb_" id="7mY9WXbe9pS" role="jymVt">
@@ -7771,39 +7777,16 @@
               </node>
             </node>
             <node concept="3clFbS" id="7mY9WXbe9vC" role="3clFbx">
-              <node concept="3cpWs8" id="7mY9WXbe9vD" role="3cqZAp">
-                <node concept="3cpWsn" id="7mY9WXbe9vE" role="3cpWs9">
-                  <property role="TrG5h" value="role" />
-                  <property role="3TUv4t" value="false" />
-                  <node concept="3uibUv" id="7mY9WXbe9vF" role="1tU5fm">
-                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-                  </node>
-                  <node concept="2OqwBi" id="7mY9WXbe9vG" role="33vP2m">
-                    <node concept="37vLTw" id="2BHiRxgm5Pz" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7mY9WXbe9vu" resolve="event" />
-                    </node>
-                    <node concept="liA8E" id="7mY9WXbe9vI" role="2OqNvi">
-                      <ref role="37wK5l" to="87kw:~SModelChildEvent.getChildRole():java.lang.String" resolve="getChildRole" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3SKdUt" id="7mY9WXbe9vJ" role="3cqZAp">
                 <node concept="3SKdUq" id="7mY9WXbe9vK" role="3SKWNk">
                   <property role="3SKdUp" value=" don't process adding of smth. to concept unless it is link-declaration" />
                 </node>
               </node>
               <node concept="3clFbJ" id="7mY9WXbe9vL" role="3cqZAp">
-                <node concept="2OqwBi" id="7mY9WXbe9vM" role="3clFbw">
-                  <node concept="10M0yZ" id="7mY9WXbe9vN" role="2Oq$k0">
-                    <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                    <ref role="3cqZAo" to="cu2c:~SNodeUtil.linkName_AbstractConceptDeclaration_linkDeclaration" resolve="linkName_AbstractConceptDeclaration_linkDeclaration" />
-                  </node>
-                  <node concept="liA8E" id="7mY9WXbe9vO" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="37vLTw" id="3GM_nagTtwd" role="37wK5m">
-                      <ref role="3cqZAo" node="7mY9WXbe9vE" resolve="role" />
-                    </node>
+                <node concept="1rXfSq" id="5CLLdhk3PVk" role="3clFbw">
+                  <ref role="37wK5l" node="5CLLdhk3eiV" resolve="isLinkDeclarationRole" />
+                  <node concept="37vLTw" id="5CLLdhk3PZV" role="37wK5m">
+                    <ref role="3cqZAo" node="7mY9WXbe9vu" resolve="event" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="7mY9WXbe9vQ" role="3clFbx">
@@ -7852,41 +7835,12 @@
               </node>
             </node>
             <node concept="3clFbS" id="7mY9WXbe9w5" role="3clFbx">
-              <node concept="3cpWs8" id="7mY9WXbe9w6" role="3cqZAp">
-                <node concept="3cpWsn" id="7mY9WXbe9w7" role="3cpWs9">
-                  <property role="TrG5h" value="role" />
-                  <property role="3TUv4t" value="false" />
-                  <node concept="3uibUv" id="7mY9WXbe9w8" role="1tU5fm">
-                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-                  </node>
-                  <node concept="2OqwBi" id="7mY9WXbe9w9" role="33vP2m">
-                    <node concept="37vLTw" id="2BHiRxgmlfd" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7mY9WXbe9vX" resolve="event" />
-                    </node>
-                    <node concept="liA8E" id="7mY9WXbe9wb" role="2OqNvi">
-                      <ref role="37wK5l" to="87kw:~SModelChildEvent.getChildRole():java.lang.String" resolve="getChildRole" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3SKdUt" id="7mY9WXbe9wc" role="3cqZAp">
                 <node concept="3SKdUq" id="7mY9WXbe9wd" role="3SKWNk">
                   <property role="3SKdUp" value=" don't process removing of smth. from concept unless it is link-declaration" />
                 </node>
               </node>
               <node concept="3clFbJ" id="7mY9WXbe9we" role="3cqZAp">
-                <node concept="2OqwBi" id="7mY9WXbe9wf" role="3clFbw">
-                  <node concept="10M0yZ" id="7mY9WXbe9wg" role="2Oq$k0">
-                    <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                    <ref role="3cqZAo" to="cu2c:~SNodeUtil.linkName_AbstractConceptDeclaration_linkDeclaration" resolve="linkName_AbstractConceptDeclaration_linkDeclaration" />
-                  </node>
-                  <node concept="liA8E" id="7mY9WXbe9wh" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="37vLTw" id="3GM_nagTvlG" role="37wK5m">
-                      <ref role="3cqZAo" node="7mY9WXbe9w7" resolve="role" />
-                    </node>
-                  </node>
-                </node>
                 <node concept="3clFbS" id="7mY9WXbe9wj" role="3clFbx">
                   <node concept="3clFbF" id="7mY9WXbe9wk" role="3cqZAp">
                     <node concept="3nyPlj" id="7mY9WXbe9wl" role="3clFbG">
@@ -7897,12 +7851,67 @@
                     </node>
                   </node>
                 </node>
+                <node concept="1rXfSq" id="5CLLdhk3GbL" role="3clFbw">
+                  <ref role="37wK5l" node="5CLLdhk3eiV" resolve="isLinkDeclarationRole" />
+                  <node concept="37vLTw" id="5CLLdhk3Ghm" role="37wK5m">
+                    <ref role="3cqZAo" node="7mY9WXbe9vX" resolve="event" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="3tYsUK_sS9F" role="2AJF6D">
           <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3clFb_" id="5CLLdhk3eiV" role="jymVt">
+        <property role="TrG5h" value="isLinkDeclarationRole" />
+        <node concept="10P_77" id="5CLLdhk3iPb" role="3clF45" />
+        <node concept="3clFbS" id="5CLLdhk3eiY" role="3clF47">
+          <node concept="3cpWs8" id="7mY9WXbe9w6" role="3cqZAp">
+            <node concept="3cpWsn" id="7mY9WXbe9w7" role="3cpWs9">
+              <property role="TrG5h" value="role" />
+              <property role="3TUv4t" value="false" />
+              <node concept="3uibUv" id="7mY9WXbe9w8" role="1tU5fm">
+                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+              </node>
+              <node concept="2OqwBi" id="7mY9WXbe9w9" role="33vP2m">
+                <node concept="37vLTw" id="2BHiRxgmlfd" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5CLLdhk3Akr" resolve="event" />
+                </node>
+                <node concept="liA8E" id="7mY9WXbe9wb" role="2OqNvi">
+                  <ref role="37wK5l" to="87kw:~SModelChildEvent.getChildRole():java.lang.String" resolve="getChildRole" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs6" id="5CLLdhk3DgG" role="3cqZAp">
+            <node concept="2OqwBi" id="7mY9WXbe9wf" role="3cqZAk">
+              <node concept="2OqwBi" id="5CLLdhk0VL_" role="2Oq$k0">
+                <node concept="10M0yZ" id="7mY9WXbe9wg" role="2Oq$k0">
+                  <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
+                  <ref role="3cqZAo" to="cu2c:~SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration" resolve="link_AbstractConceptDeclaration_linkDeclaration" />
+                </node>
+                <node concept="liA8E" id="5CLLdhk0W21" role="2OqNvi">
+                  <ref role="37wK5l" to="t3eg:~SContainmentLink.getRoleName():java.lang.String" resolve="getRoleName" />
+                </node>
+              </node>
+              <node concept="liA8E" id="7mY9WXbe9wh" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="37vLTw" id="5CLLdhk3N91" role="37wK5m">
+                  <ref role="3cqZAo" node="7mY9WXbe9w7" resolve="role" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm6S6" id="5CLLdhk3hmS" role="1B3o_S" />
+        <node concept="37vLTG" id="5CLLdhk3Akr" role="3clF46">
+          <property role="TrG5h" value="event" />
+          <node concept="3uibUv" id="5CLLdhk3Akq" role="1tU5fm">
+            <ref role="3uigEE" to="87kw:~SModelChildEvent" resolve="SModelChildEvent" />
+          </node>
         </node>
       </node>
       <node concept="3clFb_" id="7mY9WXbe9wn" role="jymVt">
@@ -7928,9 +7937,14 @@
             <node concept="22lmx$" id="7mY9WXbe9ww" role="3clFbw">
               <node concept="3fqX7Q" id="7mY9WXbe9wx" role="3uHU7B">
                 <node concept="2OqwBi" id="7mY9WXbe9wy" role="3fr31v">
-                  <node concept="10M0yZ" id="7mY9WXbe9wz" role="2Oq$k0">
-                    <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                    <ref role="3cqZAo" to="cu2c:~SNodeUtil.propertyName_LinkDeclaration_role" resolve="propertyName_LinkDeclaration_role" />
+                  <node concept="2OqwBi" id="5CLLdhk0Qav" role="2Oq$k0">
+                    <node concept="10M0yZ" id="7mY9WXbe9wz" role="2Oq$k0">
+                      <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
+                      <ref role="3cqZAo" to="cu2c:~SNodeUtil.property_LinkDeclaration_role" resolve="property_LinkDeclaration_role" />
+                    </node>
+                    <node concept="liA8E" id="5CLLdhk0QI3" role="2OqNvi">
+                      <ref role="37wK5l" to="t3eg:~SProperty.getName():java.lang.String" resolve="getName" />
+                    </node>
                   </node>
                   <node concept="liA8E" id="7mY9WXbe9w$" role="2OqNvi">
                     <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />

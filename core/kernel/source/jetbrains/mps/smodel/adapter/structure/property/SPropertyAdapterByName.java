@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
@@ -27,10 +25,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SPropertyAdapterByName extends SPropertyAdapter {
-  private static final Logger LOG = Logger.wrap(org.apache.log4j.Logger.getLogger(SPropertyAdapterByName.class));
-
-  protected String myConceptName;
+public final class SPropertyAdapterByName extends SPropertyAdapter {
+  private final String myConceptName;
 
   public SPropertyAdapterByName(@NotNull String conceptName, @NotNull String propName) {
     super(propName);
@@ -59,7 +55,6 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
   public SPropertyId getId() {
     PropertyDescriptor d = getPropertyDescriptor();
     if (d == null) {
-      //LOG.error("property descriptor not found for property " + myPropertyName);
       return MetaIdFactory.INVALID_PROP_ID;
     }
     return d.getId();
@@ -67,9 +62,9 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
 
   @Override
   protected SNode findInConcept(SNode cnode) {
-    Iterable<? extends SNode> props = cnode.getChildren(SNodeUtil.linkName_AbstractConceptDeclaration_propertyDeclaration);
+    Iterable<? extends SNode> props = cnode.getChildren(SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration);
     for (SNode p : props) {
-      if (p.getProperty(SNodeUtil.propertyName_INamedConcept_name).equals(myPropertyName)) return p;
+      if (myPropertyName.equals(p.getProperty(SNodeUtil.property_INamedConcept_name))) return p;
     }
     return null;
   }
