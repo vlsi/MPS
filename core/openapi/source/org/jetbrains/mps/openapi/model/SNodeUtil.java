@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
@@ -78,7 +79,7 @@ public class SNodeUtil {
       return replacer;
     }
 
-    String role = node.getRoleInParent();
+    SContainmentLink role = node.getContainmentLink();
     assert role != null;
 
     if (replacer != null) {

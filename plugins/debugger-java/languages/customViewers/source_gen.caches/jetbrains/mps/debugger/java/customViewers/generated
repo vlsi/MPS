@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="-8lpltzoze355t4lbdphmpntmd7cwptg">
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="9nmpjzyk7tjixmqzredudadb93zhigl" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7hjj6380di9z6lpczodq9bu0abl64gv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5hny7p25qix0fnl0s92ajx6z9cpyqk3" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-dt8to0e3awhqgsnd0xitpnu1mljmtfr" />
   <dep model="r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)" hash="6y158max1aso8yp69wrepozqwr3ejbp" />
   <dep model="r:5b646244-9348-4892-8868-7e2e5cb2c7d9(jetbrains.mps.debugger.java.customViewers.editor)" hash="9shyctb19fxdnvup2z9hgiq4h4tstnf" />

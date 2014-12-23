@@ -15,7 +15,7 @@
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
-      <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="sg" index="2czfm3">
+      <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
       </concept>
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
@@ -44,10 +44,10 @@
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
-      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="sg" index="1$h60E">
+      <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
-      <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="sg" stub="730538219796139730" index="3EYTF0">
+      <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
         <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
@@ -69,7 +69,7 @@
         <child id="1225900141900" name="modelAccessor" index="1HlULh" />
       </concept>
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
-      <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="sg" index="3XFhqQ" />
+      <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -94,7 +94,7 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
     </language>
   </registry>
   <node concept="24kQdi" id="lPhVsfdHKv">
@@ -189,7 +189,7 @@
                     <ref role="37wK5l" to="wu4v:1653mnvAgr8" resolve="getTitle" />
                   </node>
                   <node concept="2OqwBi" id="1653mnvCjaB" role="2Oq$k0">
-                    <node concept="3NT_Vc" id="1653mnvCjaC" role="2OqNvi" />
+                    <node concept="2yIwOk" id="2XA_ayKqqXC" role="2OqNvi" />
                     <node concept="pncrf" id="1653mnvCja$" role="2Oq$k0" />
                   </node>
                 </node>

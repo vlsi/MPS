@@ -56,7 +56,7 @@ public class ConceptDeclarationLookup {
           for (SNode root : strucModel.getRootNodes()) {
             if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(root))) continue;
 
-            String name = root.getProperty(SNodeUtil.propertyName_INamedConcept_name);
+            String name = root.getProperty(SNodeUtil.property_INamedConcept_name);
             if (name == null) continue;
             myNameToConceptCache.putIfAbsent(name, root);
           }

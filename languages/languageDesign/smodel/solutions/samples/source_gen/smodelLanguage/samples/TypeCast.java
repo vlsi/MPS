@@ -7,6 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class TypeCast {
   public void cast_node_to_SNode(SNode ifStatement) {
@@ -32,7 +34,11 @@ public class TypeCast {
   }
   public void cast_children_to_List(SNode statements) {
     List list1 = SLinkOperations.getChildren(statements, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
-    List<SNode> list2 = SLinkOperations.getChildren(statements, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
+    List<SNode> list2 = ListSequence.fromList(SLinkOperations.getChildren(statements, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return it;
+      }
+    }).toListSequence();
     List<SNode> list3 = (List<SNode>) SLinkOperations.getChildren(statements, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
   }
 }

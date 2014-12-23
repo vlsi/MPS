@@ -17,8 +17,11 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.make.facet.IFacetManifest;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
@@ -44,12 +47,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguage;
 
@@ -63,8 +66,8 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
  * Language runtime keeps track of aspects queried (instantiates them lazily).
  */
 public abstract class LanguageRuntime {
-  private final Map<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor> myAspectDescriptors =
-      new HashMap<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor>();
+  private final ConcurrentMap<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor> myAspectDescriptors =
+      new ConcurrentHashMap<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor>();
   private final List<LanguageRuntime> myExtendingLanguages = new ArrayList<LanguageRuntime>();
   private final List<LanguageRuntime> myExtendedLanguages = new ArrayList<LanguageRuntime>();
 
@@ -101,7 +104,7 @@ public abstract class LanguageRuntime {
    */
   @ToRemove(version = 3.2)
   public int getVersion() {
-    return 0;
+    return -1;
   }
 
   /**
@@ -218,6 +221,19 @@ public abstract class LanguageRuntime {
     return null;
   }
 
+  /**
+   * Provide aspect instance associated with the language. Aspect is instantiated only once, lazily (the first time asked)
+   * and the same instance is returned for each subsequent calls.
+   *
+   * At the moment, sole mechanism to supply new aspect is code in generated language runtime subclass (i.e. there's no mechanism yet to
+   * add aspects dynamically).
+   *
+   * @see #createAspectDescriptor(Class)
+   * @see jetbrains.mps.smodel.runtime.LanguageAspectDescriptor
+   * @param descriptorInterface identifies aspect to retrieve
+   * @param <T> subtype of {@link jetbrains.mps.smodel.runtime.LanguageAspectDescriptor}
+   * @return instance of aspect implementation if there's one for the language
+   */
   public final <T extends LanguageAspectDescriptor> T getAspect(@NotNull Class<T> descriptorInterface) {
     @SuppressWarnings("unchecked")
     T aspectDescriptor = (T) myAspectDescriptors.get(descriptorInterface);
@@ -231,7 +247,11 @@ public abstract class LanguageRuntime {
           return null;
         }
       }
-      myAspectDescriptors.put(descriptorInterface, aspectDescriptor);
+      @SuppressWarnings("unchecked")
+      T alreadyThere = (T) myAspectDescriptors.putIfAbsent(descriptorInterface, aspectDescriptor);
+      if (alreadyThere != null) {
+        return alreadyThere;
+      }
     }
     return aspectDescriptor;
   }
@@ -340,7 +360,20 @@ public abstract class LanguageRuntime {
     return getNamespace() + " runtime";
   }
 
+  @ToRemove(version = 3.2)
+  @Deprecated
   private Language getLanguage() {
-    return ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class);
+    final Language[] result = new Language[1];
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        if (getId() != null) {
+          result[0] = ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.regular(getId().getIdValue())));
+        } else {
+          result[0] = ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class);
+        }
+      }
+    });
+    return result[0];
   }
 }

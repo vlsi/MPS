@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -301,16 +302,16 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
   {
     int i = 0;
-    pvqMethods.put("1269198486696304714", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1269198486696304731", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("1269198486696304791", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1269198486696304801", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("1269198486696304868", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1269198486696304885", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("2021770776238986615", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("2021770776238986639", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("1269198486696305002", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1269198486696305019", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("1269198486696304714", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), null));
+    pvqMethods.put("1269198486696304731", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x11745b5371dL, "label"), "label"));
+    pvqMethods.put("1269198486696304791", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), null));
+    pvqMethods.put("1269198486696304801", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x11745b5371dL, "label"), "label"));
+    pvqMethods.put("1269198486696304868", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), null));
+    pvqMethods.put("1269198486696304885", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x11745b5371dL, "label"), "label"));
+    pvqMethods.put("2021770776238986615", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), null));
+    pvqMethods.put("2021770776238986639", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x11745b5371dL, "label"), "label"));
+    pvqMethods.put("1269198486696305002", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), null));
+    pvqMethods.put("1269198486696305019", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x11745b5371dL, "label"), "label"));
   }
   @NotNull
   @Override
@@ -323,8 +324,8 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   private static class PVQ extends PropertyValueQuery.Base {
     private final int methodKey;
-    /*package*/ PVQ(int methodKey, String propertyName, String templateValue) {
-      super(propertyName, templateValue);
+    /*package*/ PVQ(int methodKey, SProperty property, String templateValue) {
+      super(property, templateValue);
       this.methodKey = methodKey;
     }
     @Nullable

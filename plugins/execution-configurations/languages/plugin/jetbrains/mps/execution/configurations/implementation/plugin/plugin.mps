@@ -123,6 +123,7 @@
     <import index="inrv" ref="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)" />
     <import index="fnd7" ref="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
+    <import index="auou" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1369,6 +1370,16 @@
         </node>
         <node concept="3clFbJ" id="25rknuvH4Ne" role="3cqZAp">
           <node concept="3clFbS" id="25rknuvH4Nh" role="3clFbx">
+            <node concept="3clFbF" id="6wvy$c2F7Ip" role="3cqZAp">
+              <node concept="2OqwBi" id="6wvy$c2F877" role="3clFbG">
+                <node concept="37vLTw" id="6wvy$c2F7In" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5gyVhZ17Jmo" resolve="console" />
+                </node>
+                <node concept="liA8E" id="6wvy$c2F8Kx" role="2OqNvi">
+                  <ref role="37wK5l" to="auou:~Disposable.dispose():void" resolve="dispose" />
+                </node>
+              </node>
+            </node>
             <node concept="2LYoGF" id="25rknuvH5yh" role="3cqZAp">
               <node concept="Xl_RD" id="25rknuvH5DP" role="2LYoNm">
                 <property role="Xl_RC" value="No node selected." />

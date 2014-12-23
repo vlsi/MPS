@@ -44,6 +44,7 @@ import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import java.util.Collection;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
@@ -3154,17 +3155,17 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
   {
     int i = 0;
-    pvqMethods.put("4100552184032705875", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("4100552184032705897", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("6651873253983907048", new QueriesGenerated.PVQ(i++, "value", "false"));
-    pvqMethods.put("6651873253983907102", new QueriesGenerated.PVQ(i++, "value", "false"));
-    pvqMethods.put("8293956702610522454", new QueriesGenerated.PVQ(i++, "name", "it"));
-    pvqMethods.put("8293956702610522738", new QueriesGenerated.PVQ(i++, "name", "var"));
-    pvqMethods.put("5187796033875769912", new QueriesGenerated.PVQ(i++, "fqClassName", "Sequence"));
-    pvqMethods.put("5187796033877735984", new QueriesGenerated.PVQ(i++, "fqClassName", "MapSequence"));
-    pvqMethods.put("5187796033878715842", new QueriesGenerated.PVQ(i++, "fqClassName", "SortedMapSequence"));
-    pvqMethods.put("5187796033879074558", new QueriesGenerated.PVQ(i++, "fqClassName", "MapSequence"));
-    pvqMethods.put("5187796033879438914", new QueriesGenerated.PVQ(i++, "fqClassName", "MapSequence"));
+    pvqMethods.put("4100552184032705875", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x11745bfb2d8L, "label"), "label"));
+    pvqMethods.put("4100552184032705897", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, 0x11745fca58eL, "label"), "label"));
+    pvqMethods.put("6651873253983907048", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "false"));
+    pvqMethods.put("6651873253983907102", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "false"));
+    pvqMethods.put("8293956702610522454", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "it"));
+    pvqMethods.put("8293956702610522738", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "var"));
+    pvqMethods.put("5187796033875769912", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x1115767a8eeL, "fqClassName"), "Sequence"));
+    pvqMethods.put("5187796033877735984", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x1115767a8eeL, "fqClassName"), "MapSequence"));
+    pvqMethods.put("5187796033878715842", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x1115767a8eeL, "fqClassName"), "SortedMapSequence"));
+    pvqMethods.put("5187796033879074558", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x1115767a8eeL, "fqClassName"), "MapSequence"));
+    pvqMethods.put("5187796033879438914", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x1115767a8eeL, "fqClassName"), "MapSequence"));
   }
   @NotNull
   @Override
@@ -3177,8 +3178,8 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   private static class PVQ extends PropertyValueQuery.Base {
     private final int methodKey;
-    /*package*/ PVQ(int methodKey, String propertyName, String templateValue) {
-      super(propertyName, templateValue);
+    /*package*/ PVQ(int methodKey, SProperty property, String templateValue) {
+      super(property, templateValue);
       this.methodKey = methodKey;
     }
     @Nullable

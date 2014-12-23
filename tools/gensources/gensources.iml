@@ -894,6 +894,18 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoringTargetLang/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/classes_gen" />
     </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/testSubtyping">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testSubtyping/languages/testSubtypingA/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testSubtyping/languages/testSubtypingA/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testSubtyping/languages/testSubtypingB/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testSubtyping/languages/testSubtypingB/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testSubtyping/solutions/testSubtypingTest/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testSubtyping/languages/testSubtypingA/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testSubtyping/languages/testSubtypingA/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testSubtyping/languages/testSubtypingB/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testSubtyping/languages/testSubtypingB/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testSubtyping/solutions/testSubtypingTest/classes_gen" />
+    </content>
     <content url="file://$MODULE_DIR$/../../testbench/testsolutions">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/actions.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/bl.closures.unittest/test_gen" isTestSource="false" />

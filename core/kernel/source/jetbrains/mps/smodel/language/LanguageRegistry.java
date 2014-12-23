@@ -22,6 +22,7 @@ import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import org.apache.log4j.LogManager;
@@ -199,9 +200,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     Set<LanguageRuntime> languagesToUnload = new HashSet<LanguageRuntime>();
     for (SModule module : unloadedModules) {
       if (module instanceof Language) {
-        String namespace = module.getModuleName();
-        if (myLanguages.containsKey(namespace)) {
-          languagesToUnload.add(myLanguages.get(namespace));
+        SLanguageId languageId = MetaIdByDeclaration.getLanguageId((Language) module);
+        if (myLanguagesById.containsKey(languageId)) {
+          languagesToUnload.add(myLanguagesById.get(languageId));
         }
       }
     }
@@ -220,17 +221,22 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     Set<LanguageRuntime> loadedRuntimes = new HashSet<LanguageRuntime>();
     for (SModule module : loadedModules) {
       if (module instanceof Language) {
-        String namespace = module.getModuleName();
-        assert (!myLanguages.containsKey(namespace));
-        final Language langModule = (Language) module;
-        LanguageRuntime runtime = createRuntime(langModule);
-        if (runtime != null) {
+        final Language language = (Language) module;
+        SLanguageId languageId = MetaIdByDeclaration.getLanguageId(language);
+        assert !myLanguagesById.containsKey(languageId);
+        try {
+          LanguageRuntime runtime = createRuntime(language);
+          if (runtime == null) continue;
+          if (runtime.getId() == null) runtime.setId(MetaIdByDeclaration.getLanguageId(language));
+
+          assert languageId.equals(runtime.getId());
+          String namespace = runtime.getNamespace();
+          assert !myLanguages.containsKey(namespace);
           myLanguages.put(namespace, runtime);
-          if (runtime.getId() == null) {
-            runtime.setId(MetaIdByDeclaration.getLanguageId(langModule));
-          }
-          myLanguagesById.put(runtime.getId(), runtime);
+          myLanguagesById.put(languageId, runtime);
           loadedRuntimes.add(runtime);
+        } catch (LinkageError le) {
+          processLinkageErrorForLanguage(language, le);
         }
       }
     }
@@ -245,5 +251,11 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     for (LanguageRuntime languageRuntime : myLanguages.values()) {
       languageRuntime.initialize(this);
     }
+  }
+
+  private static void processLinkageErrorForLanguage(Language language, LinkageError linkageError) {
+    LOG.error("Caught a linkage error while creating LanguageRuntime for the `" + language + "` language." +
+        "Probably the language sources/classes are outdated, try rebuilding the project.", linkageError);
+    LOG.warn("MPS will attempt running in a inconsistent state.");
   }
 }

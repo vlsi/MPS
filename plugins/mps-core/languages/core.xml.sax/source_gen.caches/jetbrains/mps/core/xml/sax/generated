@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="-1s8u662zg36jhj239ro54ihhtj8j4b6">
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="9nmpjzyk7tjixmqzredudadb93zhigl" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7hjj6380di9z6lpczodq9bu0abl64gv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5hny7p25qix0fnl0s92ajx6z9cpyqk3" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-dt8to0e3awhqgsnd0xitpnu1mljmtfr" />
   <dep model="r:1c9826ed-1ac5-4a4a-a16c-c4f33a9e7348(jetbrains.mps.core.xml.sax.editor)" hash="-1r6880r7ebckujcq3kx5i1skehzmzdz" />
   <dep model="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)" hash="1y2wmknkikuyojhwhlvbhjmhnd9jj3h" />

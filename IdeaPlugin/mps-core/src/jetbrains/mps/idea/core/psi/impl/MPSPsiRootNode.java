@@ -20,6 +20,7 @@ import com.intellij.lang.FileASTNode;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.FileViewProvider;
+import com.intellij.psi.PsiBinaryFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -56,7 +57,7 @@ import javax.swing.Icon;
  * User: fyodor
  * Date: 3/5/13
  */
-public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRealNode {
+public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinaryFile, MPSPsiRealNode {
 
   private final FileViewProvider myViewProvider;
   private final SNodeId myNodeId;

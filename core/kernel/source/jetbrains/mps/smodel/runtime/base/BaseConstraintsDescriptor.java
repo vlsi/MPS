@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
-  private SConceptId myConcept;
+  private final SConceptId myConcept;
 
   private ConstraintsDescriptor canBeChildDescriptor;
   private ConstraintsDescriptor canBeRootDescriptor;
@@ -58,9 +58,6 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   @ToRemove(version = 3.2)
   public BaseConstraintsDescriptor(String fqName) {
     this(ConceptRegistry.getInstance().getConceptDescriptor(fqName).getId());
-  }
-
-  protected BaseConstraintsDescriptor() {
   }
 
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {

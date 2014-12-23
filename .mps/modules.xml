@@ -311,6 +311,7 @@
       <modulePath path="$PROJECT_DIR$/samples/sampleJavaExtensions/languages/Money/org.jetbrains.mps.samples.Money.mpl" folder="samples.sampleJavaExtensions" />
       <modulePath path="$PROJECT_DIR$/samples/sampleJavaExtensions/languages/ParallelFor/org.jetbrains.mps.samples.ParallelFor.mpl" folder="samples.sampleJavaExtensions" />
       <modulePath path="$PROJECT_DIR$/samples/sampleJavaExtensions/languages/SampleExtensions/org.jetbrains.mps.samples.IfAndUnless.mpl" folder="samples.sampleJavaExtensions" />
+      <modulePath path="$PROJECT_DIR$/samples/sampleJavaExtensions/solutions/Build/org.jetbrains.mps.samples.Build.msd" folder="samples.sampleJavaExtensions" />
       <modulePath path="$PROJECT_DIR$/samples/sampleJavaExtensions/solutions/MoneyRuntime/org.jetbrains.mps.samples.MoneyRuntime.msd" folder="samples.sampleJavaExtensions" />
       <modulePath path="$PROJECT_DIR$/samples/sampleJavaExtensions/solutions/ParallelForUtils/org.jetbrains.mps.samples.ParallelForUtils.msd" folder="samples.sampleJavaExtensions" />
       <modulePath path="$PROJECT_DIR$/samples/sampleJavaExtensions/solutions/SampleJavaExtensions.sandbox/org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.msd" folder="samples.sampleJavaExtensions" />
@@ -326,7 +327,6 @@
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence.build/jetbrains.mps.samples.xmlPersistence.build.msd" folder="samples.persistence" />
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" folder="samples.persistence" />
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence/jetbrains.mps.samples.xmlPersistence.msd" folder="samples.persistence" />
-      <modulePath path="$PROJECT_DIR$/solutions/org.jetbrains.mps.samples.sampleJavaExtensions.build/org.jetbrains.mps.samples.sampleJavaExtensions.build.msd" folder="samples.sampleJavaExtensions" />
       <modulePath path="$PROJECT_DIR$/testbench/ideatestsolutions/ide.vcs.test/jetbrains.mps.ide.vcs.test.msd" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/testbench/ideatestsolutions/migration.test/jetbrains.mps.migration.test.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/jetbrains.mps.testbench.suite.mpl" folder="tests" />
@@ -339,6 +339,9 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/testRefactoring/testRefactoring.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/testRefactoringTargetLang.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/testRefactoring.sandbox.msd" folder="tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testSubtyping/languages/testSubtypingA/testSubtypingA.mpl" folder="tests.subtyping" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testSubtyping/languages/testSubtypingB/testSubtypingB.mpl" folder="tests.subtyping" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testSubtyping/solutions/testSubtypingTest/testSubtypingTest.msd" folder="tests.subtyping" />
       <modulePath path="$PROJECT_DIR$/testbench/solution/jetbrains.mps.testbench.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/actions.test/jetbrains.mps.lang.actions.test.msd" folder="core.aspects.actions" />

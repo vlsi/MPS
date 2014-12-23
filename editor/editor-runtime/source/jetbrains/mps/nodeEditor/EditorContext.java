@@ -55,6 +55,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private final EditorComponent myNodeEditorComponent;
   private final SRepository myRepository;
   private final SModel myModel;
+  private EditorManager myEditorManager;
 
   private EditorCell myContextCell;
   private IPerformanceTracer myPerformanceTracer = null;
@@ -125,12 +126,36 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   @Override
   public IOperationContext getOperationContext() {
     Project project = ProjectHelper.getProject(myRepository);
-    if (project == null) return new GlobalOperationContext();
+    if (project == null) return new GlobalOperationContext() {
+      @Override
+      public <T> T getComponent(Class<T> clazz) {
+        if (EditorManager.class == clazz) {
+          return (T) getEditorManager();
+        }
+        return super.getComponent(clazz);
+      }
+    };
 
     SModule module = myModel == null ? null : myModel.getModule();
-    if (module == null) return new ProjectOperationContext(project);
+    if (module == null) return new ProjectOperationContext(project) {
+      @Override
+      public <T> T getComponent(@NotNull Class<T> clazz) {
+        if (EditorManager.class == clazz) {
+          return (T) getEditorManager();
+        }
+        return super.getComponent(clazz);
+      }
+    };
 
-    return new ModuleContext(module, project);
+    return new ModuleContext(module, project) {
+      @Override
+      public <T> T getComponent(@NotNull Class<T> clazz) {
+        if (EditorManager.class == clazz) {
+          return (T) getEditorManager();
+        }
+        return super.getComponent(clazz);
+      }
+    };
   }
 
   public final Frame getMainFrame() {
@@ -398,5 +423,12 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   @Override
   public SelectionManager getSelectionManager() {
     return myNodeEditorComponent.getSelectionManager();
+  }
+
+  public EditorManager getEditorManager() {
+    if (myEditorManager == null) {
+      myEditorManager = new EditorManager();
+    }
+    return myEditorManager;
   }
 }

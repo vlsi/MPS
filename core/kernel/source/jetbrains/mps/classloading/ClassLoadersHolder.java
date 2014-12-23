@@ -210,8 +210,8 @@ public class ClassLoadersHolder {
     private void onLoaded(SModuleReference module) {
       assert myClassLoaders.containsKey(module);
       ClassLoadingProgress classLoadingProgress = myMPSLoadableModules.get(module);
-      if (classLoadingProgress == ClassLoadingProgress.LOADED) {
-        LOG.error("Illegal state: module is already loaded " + module, new Throwable());
+      if (classLoadingProgress != ClassLoadingProgress.LAZY_LOADED) {
+        LOG.error("Illegal state: module has not been lazy loaded " + module, new Throwable());
       }
       myMPSLoadableModules.put(module, ClassLoadingProgress.LOADED);
     }

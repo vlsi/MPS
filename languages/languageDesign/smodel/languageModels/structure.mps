@@ -1944,6 +1944,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
+    <node concept="PrWs8" id="2epClk4wBjw" role="PzmwI">
+      <ref role="PrY4T" node="2epClk4w$j5" resolve="BootstrapAwareMetaObject" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2iMJRNx_nol">
     <property role="R5$K7" value="false" />
@@ -1965,6 +1968,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
     </node>
+    <node concept="PrWs8" id="2epClk4wBeA" role="PzmwI">
+      <ref role="PrY4T" node="2epClk4w$j5" resolve="BootstrapAwareMetaObject" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2iMJRNxD2Yw">
     <property role="R5$K7" value="false" />
@@ -1985,6 +1991,9 @@
       <property role="20kJfa" value="propertyDeclaration" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
+    </node>
+    <node concept="PrWs8" id="2epClk4wB9H" role="PzmwI">
+      <ref role="PrY4T" node="2epClk4w$j5" resolve="BootstrapAwareMetaObject" />
     </node>
   </node>
   <node concept="1TIwiD" id="i$PM5v5z4L">
@@ -2017,6 +2026,14 @@
     <property role="3GE5qa" value="operation.node" />
     <property role="34LRSv" value="concept" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
+  </node>
+  <node concept="PlHQZ" id="2epClk4w$j5">
+    <property role="3GE5qa" value="reference" />
+    <property role="TrG5h" value="BootstrapAwareMetaObject" />
+    <node concept="1TJgyi" id="2epClk4wB9F" role="1TKVEl">
+      <property role="TrG5h" value="bootstrap" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
   </node>
 </model>
 

@@ -32,8 +32,8 @@
 
   <project-components>
     <component>
-      <interface-class>jetbrains.mps.ide.migration.StartupMigrationExecutorI</interface-class>
-      <implementation-class>jetbrains.mps.ide.migration.StartupMigrationExecutor</implementation-class>
+      <interface-class>jetbrains.mps.ide.migration.IStartupMigrationExecutor</interface-class>
+      <implementation-class>jetbrains.mps.ide.migration.MigrationTrigger</implementation-class>
       <headless-implementation-class>jetbrains.mps.ide.migration.HeadlessMigrationExecutor</headless-implementation-class>
     </component>
     <component>

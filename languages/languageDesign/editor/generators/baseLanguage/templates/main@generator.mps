@@ -5348,33 +5348,17 @@
           <ref role="3uigEE" to="nu8v:~EditorCell" resolve="EditorCell" />
         </node>
         <node concept="3clFbS" id="gypQEYz" role="3clF47">
-          <node concept="3cpWs8" id="gypQQaj" role="3cqZAp">
-            <node concept="3cpWsn" id="gypQQai" role="3cpWs9">
-              <property role="TrG5h" value="opContext" />
-              <node concept="3uibUv" id="gypQQah" role="1tU5fm">
-                <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-              </node>
-              <node concept="2OqwBi" id="h_XJ7e_" role="33vP2m">
-                <node concept="liA8E" id="h_XJ7eA" role="2OqNvi">
-                  <ref role="37wK5l" to="srng:~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgm82j" role="2Oq$k0">
-                  <ref role="3cqZAo" node="gw_fALi" resolve="editorContext" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3cpWs8" id="gypQZhq" role="3cqZAp">
             <node concept="3cpWsn" id="gypQZhp" role="3cpWs9">
               <property role="TrG5h" value="manager" />
               <node concept="3uibUv" id="gypQZho" role="1tU5fm">
                 <ref role="3uigEE" to="9a8:~EditorManager" resolve="EditorManager" />
               </node>
-              <node concept="2YIFZM" id="gypR3Ks" role="33vP2m">
-                <ref role="37wK5l" to="9a8:~EditorManager.getInstanceFromContext(jetbrains.mps.smodel.IOperationContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
+              <node concept="2YIFZM" id="2zQtOjTEIjb" role="33vP2m">
+                <ref role="37wK5l" to="9a8:~EditorManager.getInstanceFromContext(jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
                 <ref role="1Pybhc" to="9a8:~EditorManager" resolve="EditorManager" />
-                <node concept="37vLTw" id="3GM_nagTA8t" role="37wK5m">
-                  <ref role="3cqZAo" node="gypQQai" resolve="opContext" />
+                <node concept="37vLTw" id="2zQtOjTEIjc" role="37wK5m">
+                  <ref role="3cqZAo" node="gw_fALi" resolve="editorContext" />
                 </node>
               </node>
             </node>
@@ -5465,34 +5449,18 @@
           <ref role="3uigEE" to="nu8v:~EditorCell" resolve="EditorCell" />
         </node>
         <node concept="3clFbS" id="gywzUQO" role="3clF47">
-          <node concept="3cpWs8" id="gywzUQP" role="3cqZAp">
-            <node concept="3cpWsn" id="gywzUQQ" role="3cpWs9">
-              <property role="TrG5h" value="opContext" />
-              <node concept="3uibUv" id="gywzUQR" role="1tU5fm">
-                <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-              </node>
-              <node concept="2OqwBi" id="h_XJ9Wc" role="33vP2m">
-                <node concept="37vLTw" id="2BHiRxgmaUp" role="2Oq$k0">
-                  <ref role="3cqZAo" node="gywzUQH" resolve="editorContext" />
-                </node>
-                <node concept="liA8E" id="h_XJ9Wd" role="2OqNvi">
-                  <ref role="37wK5l" to="srng:~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3cpWs8" id="gywzUQU" role="3cqZAp">
             <node concept="3cpWsn" id="gywzUQV" role="3cpWs9">
               <property role="TrG5h" value="manager" />
-              <node concept="2YIFZM" id="gywzUQX" role="33vP2m">
-                <ref role="37wK5l" to="9a8:~EditorManager.getInstanceFromContext(jetbrains.mps.smodel.IOperationContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
-                <ref role="1Pybhc" to="9a8:~EditorManager" resolve="EditorManager" />
-                <node concept="37vLTw" id="3GM_nagTByf" role="37wK5m">
-                  <ref role="3cqZAo" node="gywzUQQ" resolve="opContext" />
-                </node>
-              </node>
               <node concept="3uibUv" id="gywzUQW" role="1tU5fm">
                 <ref role="3uigEE" to="9a8:~EditorManager" resolve="EditorManager" />
+              </node>
+              <node concept="2YIFZM" id="2zQtOjTEgwy" role="33vP2m">
+                <ref role="37wK5l" to="9a8:~EditorManager.getInstanceFromContext(jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
+                <ref role="1Pybhc" to="9a8:~EditorManager" resolve="EditorManager" />
+                <node concept="37vLTw" id="2zQtOjTEgxx" role="37wK5m">
+                  <ref role="3cqZAo" node="gywzUQH" resolve="editorContext" />
+                </node>
               </node>
             </node>
           </node>
@@ -6436,33 +6404,17 @@
               </node>
             </node>
             <node concept="3clFbS" id="g_CeiMC" role="3clFbx">
-              <node concept="3cpWs8" id="g_CeiMD" role="3cqZAp">
-                <node concept="3cpWsn" id="g_CeiME" role="3cpWs9">
-                  <property role="TrG5h" value="opContext" />
-                  <node concept="3uibUv" id="g_CeiMF" role="1tU5fm">
-                    <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-                  </node>
-                  <node concept="2OqwBi" id="h_XJ7bP" role="33vP2m">
-                    <node concept="37vLTw" id="2BHiRxglgu5" role="2Oq$k0">
-                      <ref role="3cqZAo" node="g_CeiMc" resolve="editorContext" />
-                    </node>
-                    <node concept="liA8E" id="h_XJ7bQ" role="2OqNvi">
-                      <ref role="37wK5l" to="srng:~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3cpWs8" id="g_CeiMI" role="3cqZAp">
                 <node concept="3cpWsn" id="g_CeiMJ" role="3cpWs9">
                   <property role="TrG5h" value="manager" />
                   <node concept="3uibUv" id="g_CeiMK" role="1tU5fm">
                     <ref role="3uigEE" to="9a8:~EditorManager" resolve="EditorManager" />
                   </node>
-                  <node concept="2YIFZM" id="g_CeiML" role="33vP2m">
-                    <ref role="37wK5l" to="9a8:~EditorManager.getInstanceFromContext(jetbrains.mps.smodel.IOperationContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
+                  <node concept="2YIFZM" id="2zQtOjTE_Hr" role="33vP2m">
+                    <ref role="37wK5l" to="9a8:~EditorManager.getInstanceFromContext(jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
                     <ref role="1Pybhc" to="9a8:~EditorManager" resolve="EditorManager" />
-                    <node concept="37vLTw" id="3GM_nagTyco" role="37wK5m">
-                      <ref role="3cqZAo" node="g_CeiME" resolve="opContext" />
+                    <node concept="37vLTw" id="2zQtOjTE_Hs" role="37wK5m">
+                      <ref role="3cqZAo" node="g_CeiMc" resolve="editorContext" />
                     </node>
                   </node>
                 </node>
@@ -7310,33 +7262,17 @@
           <ref role="2sdACS" node="hG092h3" resolve="cellFactoryMethod" />
         </node>
         <node concept="3clFbS" id="gISvERH" role="3clF47">
-          <node concept="3cpWs8" id="gISvERI" role="3cqZAp">
-            <node concept="3cpWsn" id="gISvERJ" role="3cpWs9">
-              <property role="TrG5h" value="opContext" />
-              <node concept="2OqwBi" id="h_XJcjv" role="33vP2m">
-                <node concept="liA8E" id="h_XJcjw" role="2OqNvi">
-                  <ref role="37wK5l" to="srng:~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxglKY$" role="2Oq$k0">
-                  <ref role="3cqZAo" node="gISvERA" resolve="editorContext" />
-                </node>
-              </node>
-              <node concept="3uibUv" id="gISvERK" role="1tU5fm">
-                <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-              </node>
-            </node>
-          </node>
           <node concept="3cpWs8" id="gISvERN" role="3cqZAp">
             <node concept="3cpWsn" id="gISvERO" role="3cpWs9">
               <property role="TrG5h" value="manager" />
               <node concept="3uibUv" id="gISvERP" role="1tU5fm">
                 <ref role="3uigEE" to="9a8:~EditorManager" resolve="EditorManager" />
               </node>
-              <node concept="2YIFZM" id="gISvERQ" role="33vP2m">
-                <ref role="37wK5l" to="9a8:~EditorManager.getInstanceFromContext(jetbrains.mps.smodel.IOperationContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
+              <node concept="2YIFZM" id="2zQtOjTEnNl" role="33vP2m">
+                <ref role="37wK5l" to="9a8:~EditorManager.getInstanceFromContext(jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
                 <ref role="1Pybhc" to="9a8:~EditorManager" resolve="EditorManager" />
-                <node concept="37vLTw" id="3GM_nagT_so" role="37wK5m">
-                  <ref role="3cqZAo" node="gISvERJ" resolve="opContext" />
+                <node concept="37vLTw" id="2zQtOjTEnNm" role="37wK5m">
+                  <ref role="3cqZAo" node="gISvERA" resolve="editorContext" />
                 </node>
               </node>
             </node>
@@ -17125,34 +17061,18 @@
               </node>
             </node>
             <node concept="3clFbS" id="i0tV1Fh" role="3clFbx">
-              <node concept="3cpWs8" id="i0tV1Fi" role="3cqZAp">
-                <node concept="3cpWsn" id="i0tV1Fj" role="3cpWs9">
-                  <property role="TrG5h" value="opContext" />
-                  <node concept="2OqwBi" id="i0tV1Fl" role="33vP2m">
-                    <node concept="liA8E" id="i0tV1Fn" role="2OqNvi">
-                      <ref role="37wK5l" to="srng:~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
-                    </node>
-                    <node concept="37vLTw" id="2BHiRxgmepM" role="2Oq$k0">
-                      <ref role="3cqZAo" node="i0tV1Cu" resolve="editorContext" />
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="i0tV1Fk" role="1tU5fm">
-                    <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-                  </node>
-                </node>
-              </node>
               <node concept="3cpWs8" id="i0tV1Fo" role="3cqZAp">
                 <node concept="3cpWsn" id="i0tV1Fp" role="3cpWs9">
                   <property role="TrG5h" value="manager" />
-                  <node concept="2YIFZM" id="i0tV1Fr" role="33vP2m">
-                    <ref role="1Pybhc" to="9a8:~EditorManager" resolve="EditorManager" />
-                    <ref role="37wK5l" to="9a8:~EditorManager.getInstanceFromContext(jetbrains.mps.smodel.IOperationContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
-                    <node concept="37vLTw" id="3GM_nagTvYC" role="37wK5m">
-                      <ref role="3cqZAo" node="i0tV1Fj" resolve="opContext" />
-                    </node>
-                  </node>
                   <node concept="3uibUv" id="i0tV1Fq" role="1tU5fm">
                     <ref role="3uigEE" to="9a8:~EditorManager" resolve="EditorManager" />
+                  </node>
+                  <node concept="2YIFZM" id="2zQtOjTEtou" role="33vP2m">
+                    <ref role="37wK5l" to="9a8:~EditorManager.getInstanceFromContext(jetbrains.mps.openapi.editor.EditorContext):jetbrains.mps.nodeEditor.EditorManager" resolve="getInstanceFromContext" />
+                    <ref role="1Pybhc" to="9a8:~EditorManager" resolve="EditorManager" />
+                    <node concept="37vLTw" id="2zQtOjTEtov" role="37wK5m">
+                      <ref role="3cqZAo" node="i0tV1Cu" resolve="editorContext" />
+                    </node>
                   </node>
                 </node>
               </node>

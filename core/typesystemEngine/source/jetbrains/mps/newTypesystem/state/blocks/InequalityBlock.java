@@ -85,13 +85,14 @@ public class InequalityBlock extends RelationBlock {
     final TypeChecker typeChecker = TypeChecker.getInstance();
 
     List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> replacementRules =
-      LanguageScopeExecutor.execWithTwoLanguageScope(jetbrains.mps.util.SNodeOperations.getLanguage(subType), jetbrains.mps.util.SNodeOperations.getLanguage(superType),
-        new Computable<List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>>() {
-      @Override
-      public List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> compute() {
-        return typeChecker.getRulesManager().getReplacementRules(subType, superType);
-      }
-    });
+      LanguageScopeExecutor.execWithMultiLanguageScope(
+          SubTypingManagerNew.collectLanguagesRecursively(subType, superType),
+          new Computable<List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>>() {
+            @Override
+            public List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> compute() {
+              return typeChecker.getRulesManager().getReplacementRules(subType, superType);
+            }
+          });
 
     for (jetbrains.mps.util.Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequalityReplacementRule : replacementRules) {
       final InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;

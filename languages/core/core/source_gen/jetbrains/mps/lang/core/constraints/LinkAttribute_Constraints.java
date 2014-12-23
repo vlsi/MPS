@@ -10,13 +10,12 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.core.behavior.LinkAttribute_Behavior;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 
 public class LinkAttribute_Constraints extends BaseConstraintsDescriptor {
@@ -28,19 +27,6 @@ public class LinkAttribute_Constraints extends BaseConstraintsDescriptor {
     Map<SPropertyId, PropertyConstraintsDescriptor> properties = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();
     properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L), this) {
       @Override
-      public boolean hasOwnGetter() {
-        return true;
-      }
-      @Override
-      public Object getValue(SNode node) {
-        String propertyName = "linkRole";
-        if (isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId")))) {
-          return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole"));
-        } else {
-          return LinkAttribute_Behavior.call_getLink_1341860900489573894(node).getRoleName();
-        }
-      }
-      @Override
       public boolean hasOwnValidator() {
         return true;
       }
@@ -51,7 +37,7 @@ public class LinkAttribute_Constraints extends BaseConstraintsDescriptor {
           Iterable<SReferenceLink> references = SNodeOperations.getConcept(SNodeOperations.getParent(node)).getReferenceLinks();
           return Sequence.fromIterable(references).any(new IWhereFilter<SReferenceLink>() {
             public boolean accept(SReferenceLink it) {
-              return eq_eprrss_a0a0a0a0a0b0b0d0a1a0b0b(it.getRoleName(), (SPropertyOperations.getString(propertyValue)));
+              return eq_eprrss_a0a0a0a0a0b0b0b0a1a0b0b(it.getRoleName(), (SPropertyOperations.getString(propertyValue)));
             }
           });
         }
@@ -83,11 +69,11 @@ public class LinkAttribute_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
+  private static boolean eq_eprrss_a0a0a0a0a0b0b0b0a1a0b0b(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
-  }
-  private static boolean eq_eprrss_a0a0a0a0a0b0b0d0a1a0b0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_eprrss_a0a0a0a0a0d0b0b0a1a0c0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

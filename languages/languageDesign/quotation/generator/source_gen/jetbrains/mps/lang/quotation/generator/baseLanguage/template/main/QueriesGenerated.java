@@ -35,6 +35,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -408,7 +409,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_1196871487533(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(AttributeOperations.getAttributeList(_context.getNode(), new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"))).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"));
+        return PropertyAttribute_Behavior.call_getProperty_1341860900488756504(it).getName();
       }
     }, true);
   }

@@ -944,7 +944,7 @@
                             <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
                           </node>
                           <node concept="liA8E" id="KL8Aqlj5pt" role="2OqNvi">
-                            <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadModules(java.lang.Iterable):java.util.Collection" resolve="reloadModules" />
+                            <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadModules(java.lang.Iterable):void" resolve="reloadModules" />
                             <node concept="2OqwBi" id="3IZXeSR_44B" role="37wK5m">
                               <node concept="37vLTw" id="3IZXeSR_42g" role="2Oq$k0">
                                 <ref role="3cqZAo" node="3IZXeSR_11v" resolve="mpsCompilationResult" />

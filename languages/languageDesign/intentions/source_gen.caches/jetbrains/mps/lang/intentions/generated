@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="3x6fb0n9p0nhmezyfeeimlvn92jl461">
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="9nmpjzyk7tjixmqzredudadb93zhigl" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7hjj6380di9z6lpczodq9bu0abl64gv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5hny7p25qix0fnl0s92ajx6z9cpyqk3" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-dt8to0e3awhqgsnd0xitpnu1mljmtfr" />
   <dep model="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)" hash="-1sy5p6wkfb1xptb0ind1j2f5v72xv1t" />
   <dep model="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" hash="3xhcs7pjbgii6k9oc9eyioka64zosc0" />

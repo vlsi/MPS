@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
@@ -237,9 +238,9 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       return descriptor;
     }
 
-    ConceptDescriptor conceptDescriptor = getConceptDescriptor(conceptId);
     if (!startLoad(conceptId, LanguageAspect.CONSTRAINTS)) {
-      return new IllegalConstraintsDescriptor(conceptId, conceptDescriptor.getConceptFqName());
+      // method ConstraintsDescriptor.getConceptFqName() is not in use, therefor we don't care to supply meaningful value
+      return new IllegalConstraintsDescriptor(conceptId, MetaIdFactory.INVALID_CONCEPT_NAME);
     }
 
     try {
@@ -253,13 +254,13 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         } else {
           constraintsAspectDescriptor = languageRuntime.getAspect(ConstraintsAspectDescriptor.class);
         }
-        descriptor = constraintsAspectDescriptor != null ? constraintsAspectDescriptor.getDescriptor(conceptDescriptor.getId()) : null;
+        descriptor = constraintsAspectDescriptor != null ? constraintsAspectDescriptor.getDescriptor(conceptId) : null;
       } catch (Throwable e) {
         LOG.warn("Exception while constraints descriptor creating", e);
       }
 
       if (descriptor == null) {
-        descriptor = new IllegalConstraintsDescriptor(conceptId, conceptDescriptor.getConceptFqName());
+        descriptor = new IllegalConstraintsDescriptor(conceptId, MetaIdFactory.INVALID_CONCEPT_NAME);
       }
 
       constraintsDescriptors.put(conceptId, descriptor);

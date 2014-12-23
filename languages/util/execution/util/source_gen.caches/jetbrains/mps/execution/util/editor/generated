@@ -1,14 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-aedb6zf8mj2pdywew29hxko0diq6vit">
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="77e7vrxwktrwtif07h81po81o0pd60t" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="-efcx934qdce197j6x4fopns8n6n72zx" />
-  <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="aad1xfe8oikwjk7jczrodn9spbn83a6" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="clelklcyyrltwc0s7skmek9f9pkvicn" />
-  <common hash="-aedb6zf8mj2pdywew29hxko0diq6vit" dependsOnNodes="true">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-</dependencies>
+<dependencies version="2" modelHash="-aedb6zf8mj2pdywew29hxko0diq6vit" />
 

@@ -180,5 +180,9 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
+  <dependency className="jetbrains.mps.tests.TestModule_testSubtypingTest" file="TestModule_testSubtypingTest.java">
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
+    <classNode dependClassName="org.junit.runner.RunWith" />
+  </dependency>
 </dependenciesRoot>
 

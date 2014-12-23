@@ -281,9 +281,6 @@
         <property role="1ZOk41" value="true" />
         <ref role="m$_yA" node="7ZoWiKcez7S" resolve="jetbrains.mps.samples.xmlPersistence" />
       </node>
-      <node concept="m$_yB" id="7ZoWiKcezcW" role="m$_yh">
-        <ref role="m$_yA" node="7ZoWiKcez8a" resolve="jetbrains.mps.samples.xmlPersistence.build" />
-      </node>
       <node concept="m$_yB" id="7ZoWiKcezd3" role="m$_yh">
         <ref role="m$_yA" node="7ZoWiKcez8p" resolve="jetbrains.mps.samples.xmlPersistence.ideaPlugin" />
       </node>

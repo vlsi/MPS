@@ -35,6 +35,9 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="9,0,284,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="BootstrapAwareMetaObject_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.smodel.behavior.BootstrapAwareMetaObject_BehaviorDescriptor" />
+    </file>
     <file name="CheckedModuleQualifiedName_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.CheckedModuleQualifiedName_BehaviorDescriptor" />
     </file>
@@ -2630,7 +2633,7 @@
     <file name="AsSConcept_Behavior.java">
       <node id="8828148184963785531" at="11,104,12,16" concept="7" />
       <node id="334628810661448912" at="14,103,15,16" concept="7" />
-      <node id="1341860900488869921" at="17,100,18,17" concept="7" />
+      <node id="955802970101580897" at="17,100,18,16" concept="7" />
       <node id="9116031298980456186" at="20,100,21,16" concept="7" />
       <node id="334628810661446364" at="9,0,11,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="334628810661446364" at="11,0,14,0" concept="8" trace="virtual_applicableToSConcept_8828148184963745087#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
@@ -2640,7 +2643,7 @@
       <scope id="334628810661446366" at="9,43,9,43" />
       <scope id="8828148184963785530" at="11,104,12,16" />
       <scope id="334628810661448902" at="14,103,15,16" />
-      <scope id="9116031298980170722" at="17,100,18,17" />
+      <scope id="9116031298980170722" at="17,100,18,16" />
       <scope id="9116031298980456185" at="20,100,21,16" />
       <scope id="334628810661446364" at="9,0,11,0">
         <var name="thisNode" id="334628810661446364" />

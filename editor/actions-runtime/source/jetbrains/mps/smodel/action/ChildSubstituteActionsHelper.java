@@ -70,7 +70,7 @@ public class ChildSubstituteActionsHelper {
       IOperationContext context) {
     // special case
     if (childConcept == SModelUtil.getBaseConcept()) {
-      if ((currentChild == null || currentChild.getConcept().getQualifiedName().equals(SNodeUtil.conceptName_BaseConcept))) {
+      if ((currentChild == null || currentChild.getConcept().equals(SNodeUtil.concept_BaseConcept))) {
         ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true);
         List<SNode> allVisibleConcepts = conceptsSearchScope.getNodes();
         List<SubstituteAction> resultActions = new ArrayList<SubstituteAction>(allVisibleConcepts.size());
@@ -216,7 +216,7 @@ public class ChildSubstituteActionsHelper {
     int index = 0;
     if (currentChild != null) {
       linkDeclaration = ((jetbrains.mps.smodel.SNode) currentChild).getRoleLink();
-      index = ((jetbrains.mps.smodel.SNode) parentNode).getChildren(currentChild.getRoleInParent()).indexOf(currentChild);
+      index = ((jetbrains.mps.smodel.SNode) parentNode).getChildren(currentChild.getContainmentLink()).indexOf(currentChild);
     }
 //    TODO generate wrapping setter to have access to original link
 //    if(childSetter instanceof WrappingSetter) {

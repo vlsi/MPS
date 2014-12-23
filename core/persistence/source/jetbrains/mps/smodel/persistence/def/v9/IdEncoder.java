@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
+import jetbrains.mps.persistence.registry.IdInfoRegistry;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.StaticReference;
@@ -42,7 +43,7 @@ import java.util.Arrays;
  * This class is not thread-safe, uses internal buffers to save memory on (de-)serialize, do not share it between thread (although unlikely to happen as
  * persistence demands single thread access).
  */
-public final class IdEncoder {
+public final class IdEncoder implements IdInfoRegistry.IndexEncoder {
   // separator for import in serialized reference target
   private static final char REF_TARGET_IMPORT_SEPARATOR = ':';
   private static final String DYNAMIC_REFERENCE_ID = "^";
@@ -222,7 +223,7 @@ public final class IdEncoder {
   }
 
   // at least 5, at most 6 character string encoding. Leading zero is removed only if it's sixth symbol.
-  /*package*/ String indexValue(int v) {
+  private String indexValue(int v) {
     myBufferInt[5] = myIndexChars[v & 0x3F];
     v >>= 6;
     myBufferInt[4] = myIndexChars[v & 0x3F];
@@ -240,6 +241,11 @@ public final class IdEncoder {
       return new String(myBufferInt);
     }
     return new String(myBufferInt, 1, 5);
+  }
+
+  @Override
+  public String index(int key) {
+    return indexValue(key);
   }
 
   public static void main(String[] args) {

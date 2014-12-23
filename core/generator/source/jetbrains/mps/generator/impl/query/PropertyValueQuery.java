@@ -17,8 +17,12 @@ package jetbrains.mps.generator.impl.query;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
@@ -26,7 +30,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  */
 public interface PropertyValueQuery extends Query {
   @NotNull
-  public String getPropertyName();
+  public SProperty getProperty();
   public Object getTemplateValue();
   @NotNull
   public SNodeReference getMacro();
@@ -35,23 +39,29 @@ public interface PropertyValueQuery extends Query {
 
   public abstract class Base implements PropertyValueQuery {
     private final SNodeReference myMacro;
-    private final String myPropertyName;
+    private final SProperty myProperty;
     private final Object myTemplateValue;
 
-    protected Base(@NotNull SNodeReference macro, @NotNull String propertyName, Object templateValue) {
+    protected Base(@NotNull SNodeReference macro, @NotNull SProperty property, Object templateValue) {
       myMacro = macro;
-      myPropertyName = propertyName;
+      myProperty = property;
       myTemplateValue = templateValue;
     }
+
+    @Deprecated
+    @ToRemove(version = 3.2)
     protected Base(@NotNull String propertyName, Object templateValue) {
+      this(MetaAdapterFactoryByName.getProperty(MetaIdFactory.INVALID_CONCEPT_NAME, propertyName), templateValue);
+    }
+    protected Base(@NotNull SProperty property, Object templateValue) {
       myMacro = null;
-      myPropertyName = propertyName;
+      myProperty = property;
       myTemplateValue = templateValue;
     }
 
     @NotNull
-    public String getPropertyName() {
-      return myPropertyName;
+    public SProperty getProperty() {
+      return myProperty;
     }
 
     public Object getTemplateValue() {

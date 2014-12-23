@@ -14,12 +14,13 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -40,17 +41,17 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
-        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
-          public Iterable<SNode> compute() {
-            return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
+        Iterable<SAbstractConcept> queryResult = new Computable<Iterable<SAbstractConcept>>() {
+          public Iterable<SAbstractConcept> compute() {
+            return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
+              public boolean accept(SAbstractConcept it) {
+                return !(it.isAbstract());
               }
             });
           }
         }.compute();
         if (queryResult != null) {
-          for (final SNode item : queryResult) {
+          for (final SAbstractConcept item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);
@@ -59,13 +60,13 @@ public class QueriesGenerated {
                 return newInitializedInstance;
               }
               public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+                return SPropertyOperations.getString(SNodeOperations.asNode((item)), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
               public String getDescriptionText(String pattern) {
-                return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+                return (item).getName();
               }
             });
           }
@@ -163,17 +164,17 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Heading_642541832611943584(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
-        public Iterable<SNode> compute() {
-          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
+      Iterable<SAbstractConcept> parameterObjects = new Computable<Iterable<SAbstractConcept>>() {
+        public Iterable<SAbstractConcept> compute() {
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
+            public boolean accept(SAbstractConcept it) {
+              return !(it.isAbstract());
             }
           }).toListSequence();
         }
       }.compute();
       if (parameterObjects != null) {
-        for (final SNode item : parameterObjects) {
+        for (final SAbstractConcept item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);
@@ -182,13 +183,13 @@ public class QueriesGenerated {
               return SLinkOperations.getTarget(newInitializedInstance, MetaAdapterFactory.getContainmentLink(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, 0x1a6f404e630a460dL, "right"));
             }
             public String getMatchingText(String pattern) {
-              return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+              return SPropertyOperations.getString(SNodeOperations.asNode((item)), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
             }
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
             public String getDescriptionText(String pattern) {
-              return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+              return (item).getName();
             }
             @Override
             protected boolean isEnabled() {
@@ -206,17 +207,17 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Looking_7060824959894576633(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
-        public Iterable<SNode> compute() {
-          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
+      Iterable<SAbstractConcept> parameterObjects = new Computable<Iterable<SAbstractConcept>>() {
+        public Iterable<SAbstractConcept> compute() {
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
+            public boolean accept(SAbstractConcept it) {
+              return !(it.isAbstract());
             }
           }).toListSequence();
         }
       }.compute();
       if (parameterObjects != null) {
-        for (final SNode item : parameterObjects) {
+        for (final SAbstractConcept item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);
@@ -225,13 +226,13 @@ public class QueriesGenerated {
               return SLinkOperations.getTarget(newInitializedInstance, MetaAdapterFactory.getContainmentLink(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, 0x1a6f404e630a460dL, "right"));
             }
             public String getMatchingText(String pattern) {
-              return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+              return SPropertyOperations.getString(SNodeOperations.asNode((item)), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
             }
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
             public String getDescriptionText(String pattern) {
-              return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+              return (item).getName();
             }
             @Override
             protected boolean isEnabled() {

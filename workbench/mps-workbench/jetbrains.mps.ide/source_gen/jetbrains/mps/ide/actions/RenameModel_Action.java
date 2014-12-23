@@ -16,6 +16,7 @@ import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.refactoring.RenameModelDialog;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -60,6 +61,10 @@ public class RenameModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
@@ -79,7 +84,7 @@ public class RenameModel_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).show();
+      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).show();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "RenameModel", t);

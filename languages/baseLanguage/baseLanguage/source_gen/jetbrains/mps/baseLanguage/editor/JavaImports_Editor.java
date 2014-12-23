@@ -20,7 +20,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 
@@ -79,8 +78,7 @@ public class JavaImports_Editor extends DefaultNodeEditor {
     }
   }
   private EditorCell createAttributedNodeCell_1bs0fk_b0(EditorContext editorContext, SNode node) {
-    IOperationContext opContext = editorContext.getOperationContext();
-    EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+    EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     return editorCell;
   }

@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="5m3d754kal8w7f4chdfl1298etrdvpr">
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="9nmpjzyk7tjixmqzredudadb93zhigl" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7hjj6380di9z6lpczodq9bu0abl64gv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5hny7p25qix0fnl0s92ajx6z9cpyqk3" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-dt8to0e3awhqgsnd0xitpnu1mljmtfr" />
   <dep model="r:2f49c513-6922-493f-ba73-f4cec836a400(jetbrains.mps.baseLanguage.collections.trove.structure)" hash="-3ue0gohlb5ufrjxq9a1nxs5mv66xbyk" />
   <dep model="r:731a4a6a-e19a-4d5b-9532-04af5dcf9b4e(jetbrains.mps.baseLanguage.collections.trove.behavior)" hash="1fzbgdw28kp0y1jq0q8rlfnm303wj8p" />

@@ -14,6 +14,7 @@
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="-1" />
   </languages>
   <imports>
     <import index="c1ko" ref="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)" />
@@ -1614,20 +1615,6 @@
             <node concept="2WthIp" id="5Scu6nd6Z56" role="2Oq$k0" />
             <node concept="1DTwFV" id="5Scu6nd6Z58" role="2OqNvi">
               <ref role="2WH_rO" node="1N_sel8h_Yv" resolve="models" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7WIQM6zDrk9" role="3cqZAp">
-          <node concept="2OqwBi" id="7WIQM6zDrkc" role="3clFbG">
-            <node concept="2YIFZM" id="7WIQM6zDrkb" role="2Oq$k0">
-              <ref role="1Pybhc" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
-              <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
-            </node>
-            <node concept="liA8E" id="7WIQM6zDrkg" role="2OqNvi">
-              <ref role="37wK5l" to="wqua:~ClassLoaderManager.reloadModules(java.lang.Iterable):java.util.Collection" resolve="reloadModules" />
-              <node concept="37vLTw" id="5Scu6nd74L0" role="37wK5m">
-                <ref role="3cqZAo" node="5Scu6nd6VN5" resolve="modulesToReload" />
-              </node>
             </node>
           </node>
         </node>

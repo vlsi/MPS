@@ -17,15 +17,15 @@ package jetbrains.mps.persistence.binary;
 
 import gnu.trove.TIntObjectHashMap;
 import jetbrains.mps.persistence.MetaModelInfoProvider;
+import jetbrains.mps.persistence.registry.ConceptInfo;
+import jetbrains.mps.persistence.registry.IdInfoRegistry;
+import jetbrains.mps.persistence.registry.LangInfo;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.ConceptInfo;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector.LangInfo;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.annotations.NotNull;
@@ -43,7 +43,7 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 class ReadHelper {
-  private final IdInfoCollector myMetaInfo;
+  private final IdInfoRegistry myMetaInfo;
   private final MetaModelInfoProvider myMetaInfoProvider;
   private boolean myInterfaceOnly;
   private ConceptInfo myActualConcept;
@@ -54,7 +54,7 @@ class ReadHelper {
   private final TIntObjectHashMap<SContainmentLink> myAggregations = new TIntObjectHashMap<SContainmentLink>();
 
   public ReadHelper(@NotNull MetaModelInfoProvider mmiProvider) {
-    myMetaInfo = new IdInfoCollector();
+    myMetaInfo = new IdInfoRegistry();
     myMetaInfoProvider = mmiProvider;
   }
   /**/void requestInterfaceOnly(boolean interfaceOnly) {

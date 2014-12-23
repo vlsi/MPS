@@ -38,6 +38,15 @@ public class SLanguageAdapterById extends SLanguageAdapter {
   }
 
   @Override
+  public String getQualifiedName() {
+    LanguageRuntime ld = getLanguageDescriptor();
+    if (ld == null) {
+      return myLanguageFqName;
+    }
+    return ld.getNamespace();
+  }
+
+  @Override
   @Nullable
   public LanguageRuntime getLanguageDescriptor() {
     return LanguageRegistry.getInstance().getLanguage(myLanguage);

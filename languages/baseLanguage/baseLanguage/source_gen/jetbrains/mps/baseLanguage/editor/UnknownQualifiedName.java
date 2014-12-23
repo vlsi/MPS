@@ -18,10 +18,10 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -56,8 +56,7 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;

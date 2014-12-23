@@ -16,11 +16,18 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Map;
+import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
+import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class MigrationsCheckUtil {
   public static boolean hasCycles(SNode migrationScript) {
@@ -63,44 +70,107 @@ public class MigrationsCheckUtil {
       }
     }));
   }
-  public static void checkLanguageVersionMatchesMigrations(SModule module, List<String> errors) {
+  public static Map<SNode, Collection<String>> checkMigrationsVersions(SModule module) {
+    // check whether scripts are really migrations for some language 
     if (!(module instanceof Language)) {
-      return;
+      return Collections.emptyMap();
     }
     SModel migModel = LanguageAspect.MIGRATION.get(((Language) module));
     if (migModel == null) {
-      return;
+      return Collections.emptyMap();
     }
     if (!(migModel.isLoaded())) {
-      return;
+      return Collections.emptyMap();
     }
-    boolean hasIncompleteScript = false;
-    List<Integer> scripts = new ArrayList<Integer>();
-    for (SNode root : SModelOperations.roots(migModel, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"))) {
-      if (root.getProperty(MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) == null) {
-        hasIncompleteScript = true;
-        continue;
+
+    List<SNode> allScripts = SModelOperations.roots(migModel, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
+
+    // scripts with no versions set 
+    final Map<SNode, Collection<String>> result = MapSequence.fromMap(new HashMap<SNode, Collection<String>>());
+    Iterable<SNode> noVersionScripts = ListSequence.fromList(allScripts).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(MigrationsCheckUtil.isVersionSet(it));
       }
-      scripts.add(SPropertyOperations.getInteger(root, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")));
-    }
-    if (scripts.isEmpty()) {
-      return;
-    }
-    // check that script versions form exactly an interval [x..currentVersion] for some x 
-    Integer[] scriptVersions = scripts.toArray(new Integer[scripts.size()]);
-    Arrays.sort(scriptVersions);
-    int currentVersion = ((Language) module).getLanguageVersion();
-    for (int index = 1; index < scriptVersions.length; index++) {
-      if (scriptVersions[index - 1].equals(scriptVersions[index])) {
-        errors.add("Some scripts have the same 'from' version: " + scriptVersions[index - 1]);
-      } else
-      if (scriptVersions[index - 1] + 1 != scriptVersions[index]) {
-        int noscriptVersion = scriptVersions[index - 1] + 1;
-        errors.add("No script found for version " + noscriptVersion);
+    });
+    Sequence.fromIterable(noVersionScripts).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        MigrationsCheckUtil.ensureInitialized(result, it);
+        CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Script does not have version");
       }
+    });
+
+    // no scripts with versions? 
+    if (Sequence.fromIterable(noVersionScripts).count() == ListSequence.fromList(allScripts).count()) {
+      return result;
     }
-    if (scriptVersions[scriptVersions.length - 1] != currentVersion - 1 && !(hasIncompleteScript)) {
-      errors.add("Can't find a migration script corresponding to current language version (" + currentVersion + ")");
+
+    Iterable<SNode> scriptsWithVersions = ListSequence.fromList(allScripts).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return MigrationsCheckUtil.isVersionSet(it);
+      }
+    });
+
+    final Map<Integer, Integer> versions = MapSequence.fromMap(new HashMap<Integer, Integer>());
+    Sequence.fromIterable(scriptsWithVersions).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        if (MapSequence.fromMap(versions).get(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"))) == null) {
+          MapSequence.fromMap(versions).put(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")), 0);
+        }
+        MapSequence.fromMap(versions).put(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")), MapSequence.fromMap(versions).get(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"))) + 1);
+      }
+    });
+
+    final int minVersion = SetSequence.fromSet(MapSequence.fromMap(versions).keySet()).sort(new ISelector<Integer, Integer>() {
+      public Integer select(Integer it) {
+        return it;
+      }
+    }, true).first();
+    final int maxVersion = SetSequence.fromSet(MapSequence.fromMap(versions).keySet()).sort(new ISelector<Integer, Integer>() {
+      public Integer select(Integer it) {
+        return it;
+      }
+    }, false).first();
+    final int langVersion = ((Language) module).getLanguageVersion();
+
+    // last version+1 == version of a language? 
+    if (maxVersion != langVersion - 1) {
+      Sequence.fromIterable(scriptsWithVersions).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) == maxVersion;
+        }
+      }).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          ensureInitialized(result, it);
+          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Language version (" + langVersion + ") is greater than the targert version of last migration script (" + maxVersion + ")");
+        }
+      });
     }
+
+    Sequence.fromIterable(scriptsWithVersions).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        // multiple scripts for one version? 
+        if (MapSequence.fromMap(versions).get(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"))) > 1) {
+          ensureInitialized(result, it);
+          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Multiple scripts for version " + SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) + " found");
+        }
+
+        // version with no scripts for it? 
+        if (SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) != minVersion && MapSequence.fromMap(versions).get(SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) - 1) == null) {
+          ensureInitialized(result, it);
+          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Missing script for version " + (SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) - 1));
+        }
+      }
+    });
+
+    return result;
+  }
+  private static void ensureInitialized(Map<SNode, Collection<String>> coll, SNode index) {
+    if (MapSequence.fromMap(coll).get(index) == null) {
+      MapSequence.fromMap(coll).put(index, CollectionSequence.fromCollection(new ArrayList<String>()));
+    }
+  }
+
+  private static boolean isVersionSet(SNode it) {
+    return it.getProperty(MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) != null;
   }
 }

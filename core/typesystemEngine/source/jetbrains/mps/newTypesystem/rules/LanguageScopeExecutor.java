@@ -16,10 +16,15 @@
 package jetbrains.mps.newTypesystem.rules;
 
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+
+import java.util.ArrayList;
+import java.util.Set;
 
 public class LanguageScopeExecutor {
 
@@ -54,6 +59,23 @@ public class LanguageScopeExecutor {
     LanguageScope languageScope = LanguageScopeFactory.getInstance().getLanguageScope(
       LanguageDependenciesManager.getAllExtendedLanguageReferences(lang1),
       LanguageDependenciesManager.getAllExtendedLanguageReferences(lang2));
+    try{
+      LanguageScope.pushCurrent(languageScope, computable);
+      return computable.compute();
+    }
+    finally {
+      LanguageScope.popCurrent(languageScope, computable);
+    }
+  }
+
+  public static <T> T execWithMultiLanguageScope(Iterable<Language> langs, Computable<T> computable) {
+
+    ArrayList<Set<SModuleReference>> multiLangs = new ArrayList<Set<SModuleReference>>();
+    for(Language lang: langs) {
+      multiLangs.add(LanguageDependenciesManager.getAllExtendedLanguageReferences(lang));
+    }
+
+    LanguageScope languageScope = LanguageScopeFactory.getInstance().getMultiLanguageScope(multiLangs);
     try{
       LanguageScope.pushCurrent(languageScope, computable);
       return computable.compute();

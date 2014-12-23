@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,6 +27,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
@@ -77,8 +77,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -153,8 +152,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -184,8 +182,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
         return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
@@ -248,8 +245,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -316,8 +312,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -347,8 +342,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
         return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
@@ -388,8 +382,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -502,8 +495,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -533,8 +525,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
         return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
@@ -573,8 +564,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -612,8 +602,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -649,8 +638,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -703,8 +691,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -739,8 +726,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -796,8 +782,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -842,8 +827,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -914,8 +898,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -956,8 +939,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -992,8 +974,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -1031,8 +1012,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -1074,8 +1054,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -1102,8 +1081,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
         return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
@@ -1145,8 +1123,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -1185,8 +1162,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
@@ -1225,8 +1201,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;

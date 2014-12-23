@@ -465,14 +465,22 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
       <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
         <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="e228eea1-07ef-499c-8826-9c47a7e369db" name="testMoveElements">
       <concept id="7465696304914830357" name="testMoveElements.structure.DummyBlock" flags="ng" index="2oZAWI" />
@@ -41039,6 +41047,335 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="4YclXCU6QPq" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="tOAaiuxffT">
+    <property role="3GE5qa" value="editorCell" />
+    <property role="TrG5h" value="CutMethodComment" />
+    <node concept="312cEu" id="tOAaiuxj1_" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="3clFb_" id="tOAaiuxmWj" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="foo" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="tOAaiuxmWm" role="3clF47" />
+        <node concept="3cqZAl" id="tOAaiuxmW7" role="3clF45" />
+        <node concept="P$JXv" id="tOAaiuxn0B" role="lGtFl">
+          <node concept="TZ5HA" id="tOAaiuxn0C" role="TZ5H$">
+            <node concept="1dT_AC" id="tOAaiuxn0D" role="1dT_Ay">
+              <property role="1dT_AB" value="comment" />
+              <node concept="LIFWc" id="tOAaiuxn1G" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="7" />
+                <property role="p6zMs" value="7" />
+                <property role="LIFWd" value="ModelAccess_x1gmbt_a0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="tOAaiuxj1A" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="tOAaiuxnhM" role="LjaKd">
+      <node concept="2HxZob" id="tOAaiuDC0R" role="3cqZAp">
+        <node concept="3iKlGA" id="tOAaiuDC0S" role="3iKnsn">
+          <property role="3iKnse" value="$Cut" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="tOAaiuDC1a" role="3cqZAp">
+        <node concept="3iKlGA" id="tOAaiuDC1b" role="3iKnsn">
+          <property role="3iKnse" value="$Cut" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="tOAaiuDC1t" role="3cqZAp">
+        <node concept="3iKlGA" id="tOAaiuDC1u" role="3iKnsn">
+          <property role="3iKnse" value="$Cut" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="tOAaiuxnv7" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="3clFb_" id="tOAaiuxnv8" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="foo" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="tOAaiuxnv9" role="3clF47" />
+        <node concept="3cqZAl" id="tOAaiuxnva" role="3clF45">
+          <node concept="LIFWc" id="tOAaiuxnvE" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="4" />
+            <property role="p6zMs" value="4" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="tOAaiuxnvf" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="tOAaiu_mA1">
+    <property role="3GE5qa" value="editorCell" />
+    <property role="TrG5h" value="CutMethodWithComment" />
+    <node concept="312cEu" id="tOAaiu_mA2" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="3clFb_" id="tOAaiu_mA3" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="foo" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="tOAaiu_mA4" role="3clF47" />
+        <node concept="3cqZAl" id="tOAaiu_mA5" role="3clF45">
+          <node concept="LIFWc" id="tOAaiu_mC8" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="4" />
+            <property role="p6zMs" value="4" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+        <node concept="P$JXv" id="tOAaiu_mA6" role="lGtFl">
+          <node concept="TZ5HA" id="tOAaiu_mA7" role="TZ5H$">
+            <node concept="1dT_AC" id="tOAaiu_mA8" role="1dT_Ay">
+              <property role="1dT_AB" value="comment" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="tOAaiu_mAa" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="tOAaiu_mAb" role="LjaKd">
+      <node concept="2HxZob" id="tOAaiu_mK2" role="3cqZAp">
+        <node concept="1iFQzN" id="tOAaiu_mKe" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="tOAaiu_mKz" role="3cqZAp">
+        <node concept="1iFQzN" id="tOAaiu_mK$" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="tOAaiu_mL3" role="3cqZAp">
+        <node concept="1iFQzN" id="tOAaiu_mL4" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="tOAaiuDC2_" role="3cqZAp">
+        <node concept="3iKlGA" id="tOAaiuDC2A" role="3iKnsn">
+          <property role="3iKnse" value="$Cut" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="tOAaiu_mBu" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="3Tm1VV" id="tOAaiu_mBA" role="1B3o_S">
+        <node concept="LIFWc" id="tOAaiu_mM9" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="6" />
+          <property role="p6zMs" value="6" />
+          <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="tOAaiuHuJl">
+    <property role="3GE5qa" value="editorCell" />
+    <property role="TrG5h" value="CutMethodWithoutComment" />
+    <node concept="312cEu" id="tOAaiuHuJm" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="3clFb_" id="tOAaiuHuJn" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="foo" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="tOAaiuHuJo" role="3clF47" />
+        <node concept="3cqZAl" id="tOAaiuHuJp" role="3clF45">
+          <node concept="LIFWc" id="tOAaiuHuJq" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="4" />
+            <property role="p6zMs" value="4" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+        <node concept="P$JXv" id="tOAaiuHuJr" role="lGtFl">
+          <node concept="TZ5HA" id="tOAaiuHuJs" role="TZ5H$">
+            <node concept="1dT_AC" id="tOAaiuHuJt" role="1dT_Ay">
+              <property role="1dT_AB" value="comment" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="tOAaiuHuJu" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="tOAaiuHuJv" role="LjaKd">
+      <node concept="2HxZob" id="tOAaiuHuJw" role="3cqZAp">
+        <node concept="1iFQzN" id="tOAaiuHuJx" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="tOAaiuHuJy" role="3cqZAp">
+        <node concept="1iFQzN" id="tOAaiuHuJz" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="tOAaiuHuJA" role="3cqZAp">
+        <node concept="3iKlGA" id="tOAaiuHuJB" role="3iKnsn">
+          <property role="3iKnse" value="$Cut" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="tOAaiuHuKC" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="3Tm1VV" id="tOAaiuHuKK" role="1B3o_S">
+        <node concept="LIFWc" id="tOAaiuHuLl" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="6" />
+          <property role="p6zMs" value="6" />
+          <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="tOAaiuHuLv">
+    <property role="3GE5qa" value="editorCell" />
+    <property role="TrG5h" value="CutFieldComment" />
+    <node concept="312cEu" id="tOAaiuHuLw" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="312cEg" id="tOAaiuH$Rg" role="jymVt">
+        <property role="34CwA1" value="false" />
+        <property role="eg7rD" value="false" />
+        <property role="TrG5h" value="foo" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3Tm6S6" id="tOAaiuHuQe" role="1B3o_S" />
+        <node concept="10Oyi0" id="tOAaiuH$Re" role="1tU5fm" />
+        <node concept="3cmrfG" id="tOAaiuH$Ry" role="33vP2m">
+          <property role="3cmrfH" value="10" />
+        </node>
+        <node concept="z59LJ" id="tOAaiuH$W0" role="lGtFl">
+          <node concept="TZ5HA" id="tOAaiuH$W1" role="TZ5H$">
+            <node concept="1dT_AC" id="tOAaiuH$W2" role="1dT_Ay">
+              <property role="1dT_AB" value="Comment" />
+              <node concept="LIFWc" id="tOAaiuH$Yn" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="7" />
+                <property role="p6zMs" value="7" />
+                <property role="LIFWd" value="ModelAccess_x1gmbt_a0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="tOAaiuHuLC" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="tOAaiuHuLD" role="LjaKd">
+      <node concept="2HxZob" id="tOAaiuHuLE" role="3cqZAp">
+        <node concept="3iKlGA" id="tOAaiuHuLF" role="3iKnsn">
+          <property role="3iKnse" value="$Cut" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="tOAaiuHuLG" role="3cqZAp">
+        <node concept="3iKlGA" id="tOAaiuHuLH" role="3iKnsn">
+          <property role="3iKnse" value="$Cut" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="tOAaiuHuLI" role="3cqZAp">
+        <node concept="3iKlGA" id="tOAaiuHuLJ" role="3iKnsn">
+          <property role="3iKnse" value="$Cut" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="tOAaiuH$WX" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="312cEg" id="tOAaiuH$WZ" role="jymVt">
+        <property role="34CwA1" value="false" />
+        <property role="eg7rD" value="false" />
+        <property role="TrG5h" value="foo" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3Tm6S6" id="tOAaiuH$X0" role="1B3o_S" />
+        <node concept="10Oyi0" id="tOAaiuH$X1" role="1tU5fm" />
+        <node concept="3cmrfG" id="tOAaiuH$X2" role="33vP2m">
+          <property role="3cmrfH" value="10" />
+        </node>
+        <node concept="LIFWc" id="tOAaiuH$YC" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="3" />
+          <property role="p6zMs" value="3" />
+          <property role="LIFWd" value="VDNCC_property_name" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="tOAaiuH$X6" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="tOAaiuH$YQ">
+    <property role="3GE5qa" value="editorCell" />
+    <property role="TrG5h" value="CutClassComment" />
+    <node concept="312cEu" id="tOAaiuH$YR" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="3Tm1VV" id="tOAaiuH$Z0" role="1B3o_S" />
+      <node concept="3UR2Jj" id="tOAaiuH_0l" role="lGtFl">
+        <node concept="TZ5HA" id="tOAaiuH_0m" role="TZ5H$">
+          <node concept="1dT_AC" id="tOAaiuH_0n" role="1dT_Ay">
+            <property role="1dT_AB" value="Comment" />
+            <node concept="LIFWc" id="tOAaiuH_1a" role="lGtFl">
+              <property role="ZRATv" value="true" />
+              <property role="OXtK3" value="true" />
+              <property role="p6zMq" value="7" />
+              <property role="p6zMs" value="7" />
+              <property role="LIFWd" value="ModelAccess_x1gmbt_a0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="tOAaiuH$Z1" role="LjaKd">
+      <node concept="2HxZob" id="tOAaiuH$Z2" role="3cqZAp">
+        <node concept="3iKlGA" id="tOAaiuH$Z3" role="3iKnsn">
+          <property role="3iKnse" value="$Cut" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="tOAaiuH$Z4" role="3cqZAp">
+        <node concept="3iKlGA" id="tOAaiuH$Z5" role="3iKnsn">
+          <property role="3iKnse" value="$Cut" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="tOAaiuH$Z6" role="3cqZAp">
+        <node concept="3iKlGA" id="tOAaiuH$Z7" role="3iKnsn">
+          <property role="3iKnse" value="$Cut" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="tOAaiuH_0T" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Foo" />
+      <node concept="3Tm1VV" id="tOAaiuH_0U" role="1B3o_S">
+        <node concept="LIFWc" id="tOAaiuH_1m" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="6" />
+          <property role="p6zMs" value="6" />
+          <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

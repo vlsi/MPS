@@ -21,6 +21,10 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.containers.MultiMap;
 import junit.framework.Assert;
+import org.custommonkey.xmlunit.Diff;
+import org.custommonkey.xmlunit.ElementNameAndAttributeQualifier;
+import org.custommonkey.xmlunit.XMLAssert;
+import org.custommonkey.xmlunit.XMLUnit;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -28,6 +32,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.xml.sax.SAXException;
 
 import java.io.File;
 import java.io.IOException;
@@ -65,10 +70,12 @@ public class GenSourcesAndCompilerXmlGenerationTest {
   }
 
   @Test
-  public void testCompilerXml() throws JDOMException, IOException {
+  public void testCompilerXml() throws JDOMException, IOException, SAXException {
     String previousCompilerXml = FileUtil.read(GeneratorsRunner.COMPILER_XML_FILE);
     GeneratorsRunner.generateCompilerXmlFile();
-    Assert.assertEquals("Regenerate compiler.xml. Run GeneratorsRunner run configuration.", FileUtil.read(GeneratorsRunner.COMPILER_XML_FILE), previousCompilerXml);
+    Diff diff = new Diff(FileUtil.read(GeneratorsRunner.COMPILER_XML_FILE), previousCompilerXml);
+    diff.overrideElementQualifier(new ElementNameAndAttributeQualifier());
+    XMLAssert.assertXMLEqual("Regenerate compiler.xml. Run GeneratorsRunner run configuration.", diff, true);
   }
 
   @Test

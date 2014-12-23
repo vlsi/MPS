@@ -10,21 +10,23 @@ import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+import jetbrains.mps.smodel.adapter.BootstrapAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class SNodeUtil {
+public final class SNodeUtil {
 
   public static final SConceptId conceptId_BaseConcept = ((SConceptAdapterById) MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")).getId();
   public static final SConceptId conceptId_ConceptDeclaration = ((SConceptAdapterById) MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).getId();
@@ -41,54 +43,50 @@ public class SNodeUtil {
   public static final SConcept concept_RuntimeErrorType = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType");
   public static final SReferenceLink ref_SNodeType_concept = MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept");
 
-  public static final String conceptName_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
-  public static final SInterfaceConcept concept_IResolveInfo = (SInterfaceConcept) MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo");
-  public static final String conceptName_INamedConcept = "jetbrains.mps.lang.core.structure.INamedConcept";
-  public static final SInterfaceConcept concept_INamedConcept = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept");
+  public static final SInterfaceConcept concept_IResolveInfo = BootstrapAdapterFactory.getInterface(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo");
+  public static final SInterfaceConcept concept_INamedConcept = BootstrapAdapterFactory.getInterface(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept");
   public static final String conceptName_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
-  public static final SConcept concept_BaseConcept = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
-  public static final String conceptName_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
-  public static final SConcept concept_AbstractConceptDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+  public static final SConcept concept_BaseConcept = BootstrapAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
+  public static final SConcept concept_AbstractConceptDeclaration = BootstrapAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   public static final String conceptName_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
-  public static final SConcept concept_ConceptDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+  public static final SConcept concept_ConceptDeclaration = BootstrapAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
   public static final String conceptName_InterfaceConceptDeclaration = "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration";
-  public static final SConcept concept_InterfaceConceptDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
-  public static final String conceptName_LinkDeclaration = "jetbrains.mps.lang.structure.structure.LinkDeclaration";
-  public static final SConcept concept_LinkDeclaration = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-  public static final String conceptName_InterfacePart = "jetbrains.mps.lang.core.structure.InterfacePart";
-  public static final SInterfaceConcept concept_InterfacePart = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L, "jetbrains.mps.lang.core.structure.InterfacePart");
-  public static final String conceptName_ImplementationPart = "jetbrains.mps.lang.core.structure.ImplementationPart";
-  public static final SInterfaceConcept concept_ImplementationPart = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L, "jetbrains.mps.lang.core.structure.ImplementationPart");
-  public static final String conceptName_ImplementationWithStubPart = "jetbrains.mps.lang.core.structure.ImplementationWithStubPart";
-  public static final SInterfaceConcept concept_ImplementationWithStubPart = MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart");
-  public static final SConcept concept_RuntimeTypeVariable = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956fbL, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable");
+  public static final SConcept concept_InterfaceConceptDeclaration = BootstrapAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
+  public static final SConcept concept_LinkDeclaration = BootstrapAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+  public static final SInterfaceConcept concept_InterfacePart = BootstrapAdapterFactory.getInterface(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa98f128L, "jetbrains.mps.lang.core.structure.InterfacePart");
+  public static final SInterfaceConcept concept_ImplementationPart = BootstrapAdapterFactory.getInterface(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L, "jetbrains.mps.lang.core.structure.ImplementationPart");
+  public static final SInterfaceConcept concept_ImplementationWithStubPart = BootstrapAdapterFactory.getInterface(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart");
+  public static final SConcept concept_RuntimeTypeVariable = BootstrapAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956fbL, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable");
 
-  public static final String linkName_ConceptDeclaration_extends = "extends";
-  public static final SReferenceLink link_ConceptDeclaration_extends = MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends");
-  public static final String linkName_ConceptDeclaration_implements = "implements";
-  public static final SContainmentLink link_ConceptDeclaration_implements = MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements");
-  public static final String linkName_AbstractConceptDeclaration_linkDeclaration = "linkDeclaration";
-  public static final SContainmentLink link_AbstractConceptDeclaration_linkDeclaration = MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration");
-  public static final String linkName_AbstractConceptDeclaration_propertyDeclaration = "propertyDeclaration";
-  public static final SContainmentLink link_AbstractConceptDeclaration_propertyDeclaration = MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration");
+  public static final SReferenceLink link_ConceptDeclaration_extends = BootstrapAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends");
+  public static final SContainmentLink link_ConceptDeclaration_implements = BootstrapAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements");
+  public static final SContainmentLink link_InterfaceConceptDeclaration_extends = BootstrapAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, 0x110356e9df4L, "extends");
+  public static final SProperty property_ConceptDeclaration_staticScope = BootstrapAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope");
 
-  public static final String propertyName_AbstractConceptDeclaration_abstract = "abstract";
-  public static final SProperty property_AbstractConceptDeclaration_abstract = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract");
-  public static final String propertyName_INamedConcept_name = "name";
-  public static final SProperty property_INamedConcept_name = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-  public static final String propertyName_LinkDeclaration_role = "role";
-  public static final SProperty property_LinkDeclaration_role = MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role");
-  public static final String propertyName_IResolveInfo_resolveInfo = "resolveInfo";
-  public static final SProperty property_IResolveInfo_resolveInfo = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, 0x116b17cd415L, "resolveInfo");
+  public static final SContainmentLink link_AbstractConceptDeclaration_linkDeclaration = BootstrapAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration");
+  public static final SContainmentLink link_AbstractConceptDeclaration_propertyDeclaration = BootstrapAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration");
+  public static final SProperty property_AbstractConceptDeclaration_abstract = BootstrapAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract");
+  public static final SProperty property_AbstractConceptDeclaration_helpURL = BootstrapAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL");
+  public static final SProperty property_AbstractConceptDeclaration_final = BootstrapAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec7L, "final");
+  public static final SProperty property_AbstractConceptDeclaration_conceptAlias = BootstrapAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias");
+  public static final SProperty property_AbstractConceptDeclaration_conceptShortDescription = BootstrapAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription");
+
+  public static final SReferenceLink link_InterfaceConceptReference_intfc = BootstrapAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc");
+
+  public static final SProperty property_INamedConcept_name = BootstrapAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+  public static final SProperty property_LinkDeclaration_role = BootstrapAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role");
+  public static final SProperty property_LinkDeclaration_unordered = BootstrapAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x213ed46fe94fc232L, "unordered");
+  public static final SProperty property_LinkDeclaration_metaClass = BootstrapAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass");
+  public static final SProperty property_LinkDeclaration_sourceCardinality = BootstrapAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality");
+  public static final SReferenceLink link_LinkDeclaration_target = BootstrapAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target");
+  public static final SReferenceLink link_LinkDeclaration_specializedLink = BootstrapAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink");
+  public static final SProperty property_IResolveInfo_resolveInfo = BootstrapAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, 0x116b17cd415L, "resolveInfo");
   public static final String propertyName_BaseConcept_virtualPackage = "virtualPackage";
-  public static final SProperty property_BaseConcept_virtualPackage = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage");
-  public static final String propertyName_BaseConcept_alias = "alias";
-  public static final SProperty property_BaseConcept_alias = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias");
-  public static final String propertyName_BaseConcept_shortDescription = "shortDescription";
-  public static final SProperty property_BaseConcept_shortDescription = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription");
-  public static final String linkName_BaseConcept_smodelAttribute = "smodelAttribute";
-  public static final SContainmentLink link_BaseConcept_smodelAttribute = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
-  public SNodeUtil() {
+  public static final SProperty property_BaseConcept_virtualPackage = BootstrapAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage");
+  public static final SProperty property_BaseConcept_alias = BootstrapAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias");
+  public static final SProperty property_BaseConcept_shortDescription = BootstrapAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription");
+  public static final SContainmentLink link_BaseConcept_smodelAttribute = BootstrapAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
+  private SNodeUtil() {
   }
   public static String getPresentation(SNode node) {
     try {
@@ -116,20 +114,20 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    return node.getConcept().getQualifiedName().equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+    return SNodeOperations.getConcept(node).equals(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
   }
   public static boolean isInstanceOfInterfaceConceptDeclaration(SNode node) {
     if (node == null) {
       return false;
     }
-    return node.getConcept().getQualifiedName().equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
+    return SNodeOperations.getConcept(node).equals(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
   }
   public static boolean isInstanceOfAbstractConceptDeclaration(SNode node) {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+    SAbstractConcept c = SNodeOperations.getConcept(node);
+    return c.equals(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) || c.equals(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) || c.equals(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
   public static boolean getConceptDeclaration_IsRootable(SNode concept) {
     return SPropertyOperations.getBoolean(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
@@ -179,15 +177,13 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    return SNodeOperations.getConcept(node).equals(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
   }
   public static boolean isInstanceOfPropertyDeclaration(SNode node) {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+    return SNodeOperations.getConcept(node).equals(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
   }
   public static SNode getPropertyDeclaration_DataType(SNode decl) {
     return SLinkOperations.getTarget(decl, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"));
@@ -196,24 +192,19 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
+    return SNodeOperations.getConcept(node).equals(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"));
   }
   public static boolean isInstanceOfEnumerationDataTypeDeclaration(SNode node) {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
+    return SNodeOperations.getConcept(node).equals(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
   public static boolean getLinkDeclaration_IsReference(SNode link) {
     return SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference");
   }
   public static boolean getLinkDeclaration_IsExactlyOneMultiplicity(SNode link) {
     return SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1");
-  }
-  public static boolean getLinkDeclaration_IsUnordered(SNode link) {
-    return SPropertyOperations.getBoolean(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x213ed46fe94fc232L, "unordered"));
   }
   public static boolean getLinkDeclaration_IsAtLeastOneMultiplicity(SNode link) {
     return SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1") || SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1..n", "0..1");
@@ -225,10 +216,25 @@ public class SNodeUtil {
   public static boolean hasReferenceMacro(SNode node, String role) {
     return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), role)) != null);
   }
-  public static SNode getLinkTarget(SNode link) {
-    return SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
-  }
   public static boolean isSideTransformInfo(SNode node) {
     return SNodeOperations.getConcept(node).equals(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo"));
+  }
+  public static boolean isAtLeastOne(String cardinality) {
+    cardinality = defaultCardinalityIfNotSet(cardinality);
+    return "1".equals(cardinality) || "1..n".equals(cardinality);
+  }
+  public static boolean isAtMostOne(String cardinality) {
+    cardinality = defaultCardinalityIfNotSet(cardinality);
+    return "1".equals(cardinality) || "0..1".equals(cardinality);
+  }
+  private static String defaultCardinalityIfNotSet(String cardinality) {
+    // couldn't use type for cardinality (enummember<Cardinality> is SNode) 
+    // can't use link.sourceCardinality.is because I need sourceCardinality to be *bootstrap* property, which is possible at the moment 
+    // only for PropertyIdRefExpression, and not for SPropertyAccess 
+    return (cardinality == null ? "0..1" : cardinality);
+  }
+  public static boolean isAssociationLink(String metaclass) {
+    // same as cardinality, would like to access LinkDeclaration.metaClass via bootstrap property 
+    return metaclass == null || "reference".equals(metaclass);
   }
 }

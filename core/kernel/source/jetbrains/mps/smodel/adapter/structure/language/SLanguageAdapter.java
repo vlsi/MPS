@@ -65,11 +65,13 @@ public abstract class SLanguageAdapter implements SLanguage {
     assert sourceModule != null;
     for (Language language : SetSequence.fromSet(LanguageDependenciesManager.getAllExtendedLanguages(sourceModule))) {
       runtimes.addAll(language.getRuntimeModulesReferences());
+      // GeneratesInto doesn't qualify as 'true' language runtime, it's rather generator aspect, however, for the time being,
+      // while we transit from using 'Extends' between languages to 'GenerateInto' to grab runtime modules, keep them together
+      // although GlobalModuleDependenciesManager might be better place to care about this kind of dependency. Anyway,
+      // we likely need to move both true RT and 'GeneratesInto' to LanguageRuntime to get rid of source module use here.
       for (SDependency dep : language.getDeclaredDependencies()) {
-        if (dep.getScope() == SDependencyScope.GENERATES_INTO) {
-          Object o = dep.getTarget();
-          Language generatesIntoLang = (Language.class.isInstance(o) ? (Language) o : null);
-          runtimes.addAll(generatesIntoLang.getRuntimeModulesReferences());
+        if (dep.getScope() == SDependencyScope.GENERATES_INTO && dep.getTarget() instanceof Language) {
+          runtimes.addAll(((Language) dep.getTarget()).getRuntimeModulesReferences());
         }
       }
     }

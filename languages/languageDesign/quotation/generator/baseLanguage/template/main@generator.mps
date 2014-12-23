@@ -33,6 +33,7 @@
     <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <import index="y5px" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" implicit="true" />
+    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1168,12 +1169,17 @@
                               <node concept="1bVj0M" id="2tlCPPzY_yC" role="23t8la">
                                 <node concept="3clFbS" id="2tlCPPzY_yD" role="1bW5cS">
                                   <node concept="3clFbF" id="2tlCPPzY_Bb" role="3cqZAp">
-                                    <node concept="2OqwBi" id="2tlCPPzY_Bx" role="3clFbG">
-                                      <node concept="37vLTw" id="2BHiRxgmjjJ" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="2tlCPPzY_yE" resolve="it" />
+                                    <node concept="2OqwBi" id="7R2Gq48MpPo" role="3clFbG">
+                                      <node concept="2OqwBi" id="2tlCPPzY_Bx" role="2Oq$k0">
+                                        <node concept="37vLTw" id="2BHiRxgmjjJ" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="2tlCPPzY_yE" resolve="it" />
+                                        </node>
+                                        <node concept="2qgKlT" id="7R2Gq48Moz5" role="2OqNvi">
+                                          <ref role="37wK5l" to="tpcu:1avfQ4BBzOo" resolve="getProperty" />
+                                        </node>
                                       </node>
-                                      <node concept="3TrcHB" id="2tlCPPzY_BL" role="2OqNvi">
-                                        <ref role="3TsBF5" to="tpck:1x$A_M24zkl" resolve="propertyName" />
+                                      <node concept="liA8E" id="7R2Gq48MqB2" role="2OqNvi">
+                                        <ref role="37wK5l" to="t3eg:~SProperty.getName():java.lang.String" resolve="getName" />
                                       </node>
                                     </node>
                                   </node>

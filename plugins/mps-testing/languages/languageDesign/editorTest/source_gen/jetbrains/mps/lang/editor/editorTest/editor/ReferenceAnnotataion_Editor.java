@@ -8,7 +8,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -35,8 +34,7 @@ public class ReferenceAnnotataion_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createAttributedLinkCell_q5i94r_b0(EditorContext editorContext, SNode node) {
-    IOperationContext opContext = editorContext.getOperationContext();
-    EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+    EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Reference.class);
     return editorCell;
   }

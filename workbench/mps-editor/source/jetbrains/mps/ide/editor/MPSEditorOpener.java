@@ -210,7 +210,10 @@ public class MPSEditorOpener {
       currentSelectionTarget = currentSelectionTarget.getParent();
     }
 
-    component.changeSelection(component.getRootCell());
+    EditorCell rootCell = component.getRootCell();
+    if (rootCell != null) {
+      component.changeSelection(rootCell);
+    }
   }
 
   private void unfoldAllParentCells(EditorCell cell) {

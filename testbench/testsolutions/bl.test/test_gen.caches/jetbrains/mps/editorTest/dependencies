@@ -2084,6 +2084,51 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="jetbrains.mps.editorTest.CutClassComment_Test" file="CutClassComment_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.CutFieldComment_Test" file="CutFieldComment_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.CutMethodComment_Test" file="CutMethodComment_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.CutMethodWithComment_Test" file="CutMethodWithComment_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.CutMethodWithoutComment_Test" file="CutMethodWithoutComment_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
   <dependency className="jetbrains.mps.editorTest.DefaultCellInfoTest_Test" file="DefaultCellInfoTest_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />

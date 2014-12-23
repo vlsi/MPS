@@ -33,6 +33,7 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -218,7 +219,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
     @NotNull
     @Override
-    public String getPropertyName() {
+    public SProperty getProperty() {
       throw new IllegalStateException();
     }
 
