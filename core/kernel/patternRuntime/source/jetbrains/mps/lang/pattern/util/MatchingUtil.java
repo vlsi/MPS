@@ -52,22 +52,16 @@ public class MatchingUtil {
     properties.addAll(IterableUtil.asSet(node1.getProperties()));
     properties.addAll(IterableUtil.asSet(node2.getProperties()));
 
-    final HashMap<String, SProperty> propertyDeclarations = new HashMap<String, SProperty>();
-    for (SProperty p : node1.getConcept().getProperties()) {
-      propertyDeclarations.put(p.getName(), p);
-    }
-
     for (SProperty property : properties) {
-      SProperty propertyDeclaration = propertyDeclarations.get(property);
       // use of SNode.getProperty() directly (not SNodeAccessUtil.getProperty())
       // as we are checking for structural equality. If there's e.g. a 'derived' property
       // == getName() + getNodeId(), its values from SNodeAccessUtil would differ and nodes would not match
       // (assuming NodeId is different and nodes otherwise match).
       String stringValue1 = node1.getProperty(property);
       String stringValue2 = node2.getProperty(property);
-      if (propertyDeclaration == null) {
+      if (!IterableUtil.asCollection(node1.getConcept().getProperties()).contains(property)) {
         SNode diagnosticsNode = stringValue1 != null ? node1 : node2;
-        LOG.warning("can't find a property declaration for property " + property + " in a concept " + diagnosticsNode.getConcept().getQualifiedName(), diagnosticsNode);
+        LOG.warning("can't find a property declaration for property `" + property.getName() + "` in a concept " + diagnosticsNode.getConcept().getQualifiedName(), diagnosticsNode);
         LOG.warning("try to compare just properties' internal values");
       }
 
