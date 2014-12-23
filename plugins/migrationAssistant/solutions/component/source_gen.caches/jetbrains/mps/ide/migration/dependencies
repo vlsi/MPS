@@ -42,7 +42,9 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.persistent.FSRecords" />
     <classNode dependClassName="com.intellij.util.Consumer" />
+    <classNode dependClassName="com.intellij.util.PairFunction" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -50,6 +52,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.classloading.MPSClassesListenerAdapter" />
     <classNode dependClassName="jetbrains.mps.generator.fileGenerator.FileGenerationUtil" />
