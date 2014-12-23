@@ -236,10 +236,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   public void setLanguageVersion(int version) {
     getModuleDescriptor().setVersion(version);
-    SLanguage langId = MetaIdByDeclaration.ref2Id(getModuleReference());
-    if (getModuleDescriptor().getLanguageVersions().containsKey(langId)) {
-      getModuleDescriptor().getLanguageVersions().put(langId, version);
-    }
+    fireChanged();
     setChanged();
   }
 
