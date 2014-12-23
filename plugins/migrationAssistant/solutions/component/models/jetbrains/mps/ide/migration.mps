@@ -460,17 +460,27 @@
       <property role="TrG5h" value="DIALOG_TEXT" />
       <node concept="3Tm6S6" id="73_poD1h_3G" role="1B3o_S" />
       <node concept="17QB3L" id="73_poD1h_3H" role="1tU5fm" />
-      <node concept="3cpWs3" id="73_poD1h_3I" role="33vP2m">
-        <node concept="3cpWs3" id="73_poD1h_3J" role="3uHU7B">
-          <node concept="Xl_RD" id="73_poD1h_3K" role="3uHU7B">
-            <property role="Xl_RC" value="Some of the modules in project require migration.\n" />
-          </node>
-          <node concept="Xl_RD" id="73_poD1h_3L" role="3uHU7w">
-            <property role="Xl_RC" value="It is recommended to clean generated files before you start the migration.\n" />
-          </node>
-        </node>
+      <node concept="3cpWs3" id="1RNu34Rw2S0" role="33vP2m">
         <node concept="Xl_RD" id="73_poD1h_3M" role="3uHU7w">
           <property role="Xl_RC" value="Would you like to reload project and start the migration immediately?" />
+        </node>
+        <node concept="3cpWs3" id="1RNu34RvuFT" role="3uHU7B">
+          <node concept="3cpWs3" id="73_poD1h_3I" role="3uHU7B">
+            <node concept="3cpWs3" id="73_poD1h_3J" role="3uHU7B">
+              <node concept="Xl_RD" id="73_poD1h_3K" role="3uHU7B">
+                <property role="Xl_RC" value="Some of the modules in project require migration.\n" />
+              </node>
+              <node concept="Xl_RD" id="73_poD1h_3L" role="3uHU7w">
+                <property role="Xl_RC" value="It is recommended to clean generated files before you start the migration.\n" />
+              </node>
+            </node>
+            <node concept="Xl_RD" id="1RNu34Rvxaz" role="3uHU7w">
+              <property role="Xl_RC" value="In case the migration is postponed, this notification will not appear until the project is reopened.\n" />
+            </node>
+          </node>
+          <node concept="Xl_RD" id="1RNu34Rw7X6" role="3uHU7w">
+            <property role="Xl_RC" value="Migration assistnt can be invoked at any time by clicking Tools-&gt;Run Migration Assistant.\n" />
+          </node>
         </node>
       </node>
     </node>
