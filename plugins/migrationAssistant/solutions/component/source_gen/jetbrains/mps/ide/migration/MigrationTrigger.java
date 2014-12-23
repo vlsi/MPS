@@ -88,12 +88,15 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
-    if (!(myMigrationManager.isMigrationRequired())) {
-      return;
-    }
-
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
+        // this line should be executed in post-startup activity as we can have language in the same project 
+        // with the solution to migrate, and in this case classes of this language will be cleared, but after 
+        // they are compiled at startup, they are only reloaded in a pre-startuo activity 
+        if (!(myMigrationManager.isMigrationRequired())) {
+          return;
+        }
+
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           public void run() {
             VirtualFileManager.getInstance().syncRefresh();

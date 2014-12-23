@@ -702,22 +702,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="3gptLqNJxpy" role="3cqZAp" />
-        <node concept="3clFbJ" id="5SsFeroaakG" role="3cqZAp">
-          <node concept="3fqX7Q" id="5SsFeroaakH" role="3clFbw">
-            <node concept="2OqwBi" id="5SsFeroaaPR" role="3fr31v">
-              <node concept="37vLTw" id="3gptLqNIQnj" role="2Oq$k0">
-                <ref role="3cqZAo" node="5SsFeroaaki" resolve="myMigrationManager" />
-              </node>
-              <node concept="liA8E" id="5SsFeroaaPS" role="2OqNvi">
-                <ref role="37wK5l" node="5SsFeroaac6" resolve="isMigrationRequired" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="5SsFeroaakK" role="3clFbx">
-            <node concept="3cpWs6" id="5SsFeroaakJ" role="3cqZAp" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="3gptLqNGlVB" role="3cqZAp" />
         <node concept="3clFbF" id="5SsFeroaakL" role="3cqZAp">
           <node concept="2OqwBi" id="5SsFeroaakM" role="3clFbG">
             <node concept="2YIFZM" id="5SsFeroaaQN" role="2Oq$k0">
@@ -731,6 +715,37 @@
               <ref role="37wK5l" to="xf8t:~StartupManager.registerPostStartupActivity(java.lang.Runnable):void" resolve="registerPostStartupActivity" />
               <node concept="1bVj0M" id="3gptLqNGl11" role="37wK5m">
                 <node concept="3clFbS" id="3gptLqNGl1a" role="1bW5cS">
+                  <node concept="3SKdUt" id="73_poD1ft5Z" role="3cqZAp">
+                    <node concept="3SKdUq" id="73_poD1ft6m" role="3SKWNk">
+                      <property role="3SKdUp" value="this line should be executed in post-startup activity as we can have language in the same project" />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="73_poD1fx_k" role="3cqZAp">
+                    <node concept="3SKdUq" id="73_poD1fxHX" role="3SKWNk">
+                      <property role="3SKdUp" value="with the solution to migrate, and in this case classes of this language will be cleared, but after" />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="73_poD1fA08" role="3cqZAp">
+                    <node concept="3SKdUq" id="73_poD1fA8P" role="3SKWNk">
+                      <property role="3SKdUp" value="they are compiled at startup, they are only reloaded in a pre-startuo activity" />
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="5SsFeroaakG" role="3cqZAp">
+                    <node concept="3fqX7Q" id="5SsFeroaakH" role="3clFbw">
+                      <node concept="2OqwBi" id="5SsFeroaaPR" role="3fr31v">
+                        <node concept="37vLTw" id="3gptLqNIQnj" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5SsFeroaaki" resolve="myMigrationManager" />
+                        </node>
+                        <node concept="liA8E" id="5SsFeroaaPS" role="2OqNvi">
+                          <ref role="37wK5l" node="5SsFeroaac6" resolve="isMigrationRequired" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="5SsFeroaakK" role="3clFbx">
+                      <node concept="3cpWs6" id="5SsFeroaakJ" role="3cqZAp" />
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="73_poD1fp$o" role="3cqZAp" />
                   <node concept="3clFbF" id="5SsFeroaal1" role="3cqZAp">
                     <node concept="2OqwBi" id="5SsFeroaal2" role="3clFbG">
                       <node concept="2YIFZM" id="5SsFeroaeVC" role="2Oq$k0">
