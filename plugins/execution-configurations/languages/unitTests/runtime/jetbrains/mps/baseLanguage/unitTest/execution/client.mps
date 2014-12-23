@@ -419,6 +419,7 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -442,6 +443,9 @@
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
+      <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
+        <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
+      </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <reference id="1140138128738" name="concept" index="1PxNhF" />
         <child id="1140138123956" name="leftExpression" index="1PxMeX" />
@@ -1085,7 +1089,7 @@
                         <node concept="37vLTw" id="3GM_nagTwcg" role="2Oq$k0">
                           <ref role="3cqZAo" node="56tRMpP_ei1" resolve="node" />
                         </node>
-                        <node concept="3NT_Vc" id="3x87pLJS$Zl" role="2OqNvi" />
+                        <node concept="2yIwOk" id="6hI7daPQads" role="2OqNvi" />
                       </node>
                       <node concept="Xl_RD" id="3x87pLJS$Zm" role="3uHU7B">
                         <property role="Xl_RC" value="Should override getName for not INamedConcept: " />
@@ -1179,7 +1183,7 @@
                             <node concept="37vLTw" id="3GM_nagTtId" role="2Oq$k0">
                               <ref role="3cqZAo" node="56tRMpP_eiq" resolve="node" />
                             </node>
-                            <node concept="3NT_Vc" id="3x87pLJS$Z7" role="2OqNvi" />
+                            <node concept="2yIwOk" id="6hI7daPQblt" role="2OqNvi" />
                           </node>
                           <node concept="Xl_RD" id="3x87pLJS$YY" role="3uHU7B">
                             <property role="Xl_RC" value="Should override getFqName for not INamedConcept: " />
@@ -6812,15 +6816,17 @@
                 </node>
               </node>
             </node>
-            <node concept="17R0WA" id="1KnTQt4Oirx" role="3clFbw">
-              <node concept="2OqwBi" id="1KnTQt4Oiry" role="3uHU7B">
+            <node concept="2OqwBi" id="6hI7daPQhPP" role="3clFbw">
+              <node concept="2OqwBi" id="1KnTQt4Oiry" role="2Oq$k0">
                 <node concept="37vLTw" id="2BHiRxgmkEP" role="2Oq$k0">
                   <ref role="3cqZAo" node="1KnTQt4Oiq$" resolve="node" />
                 </node>
-                <node concept="3NT_Vc" id="1KnTQt4Oir$" role="2OqNvi" />
+                <node concept="2yIwOk" id="6hI7daPQh4p" role="2OqNvi" />
               </node>
-              <node concept="3TUQnm" id="1KnTQt4Oir_" role="3uHU7w">
-                <ref role="3TV0OU" to="tpee:fz12cDA" resolve="ClassConcept" />
+              <node concept="3O6GUB" id="6hI7daPQimE" role="2OqNvi">
+                <node concept="chp4Y" id="6hI7daPRyQq" role="3QVz_e">
+                  <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                </node>
               </node>
             </node>
           </node>

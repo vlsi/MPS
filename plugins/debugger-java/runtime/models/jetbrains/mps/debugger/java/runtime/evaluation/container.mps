@@ -369,6 +369,7 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="8758390115029295477" name="jetbrains.mps.lang.smodel.structure.SReferenceType" flags="in" index="2z4iKi" />
       <concept id="8758390115028452779" name="jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation" flags="nn" index="2z74zc" />
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
@@ -3647,7 +3648,7 @@
               <node concept="37vLTw" id="2BHiRxgmLat" role="2Oq$k0">
                 <ref role="3cqZAo" node="IYmOvnWD0Z" resolve="expression" />
               </node>
-              <node concept="3NT_Vc" id="1653mnvBkj2" role="2OqNvi" />
+              <node concept="2yIwOk" id="6hI7daPP75o" role="2OqNvi" />
             </node>
             <node concept="2qgKlT" id="1653mnvBkj3" role="2OqNvi">
               <ref role="37wK5l" to="tpek:1653mnvAgr2" resolve="constant" />
