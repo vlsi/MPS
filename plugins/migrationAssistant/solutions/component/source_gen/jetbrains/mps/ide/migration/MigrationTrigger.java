@@ -30,6 +30,8 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.util.PairFunction;
+import javax.swing.JCheckBox;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.project.AbstractModule;
@@ -58,6 +60,8 @@ import org.jetbrains.annotations.Nullable;
 @State(name = "MigrationTrigger", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
 })
 public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor {
+  private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "It is advised to clean generated files before you start the migration.\n" + "Would you like to reload project and start the migration immediately?";
+
   private Project myMpsProject;
   private final MigrationManager myMigrationManager;
   private MigrationTrigger.MyState myState = new MigrationTrigger.MyState();
@@ -180,8 +184,15 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         // as we use ui, postpone to EDT 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            String[] choises = new String[]{"Clean sources and migrate", "Migrate", "Postpone"};
-            final int result = Messages.showChooseDialog(ideaProject, "Some of the modules in project require migration.\n" + "It is advised to clean generated files before you start the migration.\n" + "Would you like to reload project and start the migration immediately?", "Migration required", null, choises, choises[0]);
+            String[] choises = new String[]{"Migrate", "Postpone"};
+            final int result = Messages.showCheckboxMessageDialog(DIALOG_TEXT, "Migration required", choises, "Clean sources and migrate", true, 0, 0, null, new PairFunction<Integer, JCheckBox, Integer>() {
+              public Integer fun(Integer selected, JCheckBox cb) {
+                if (selected == 1) {
+                  return 2;
+                }
+                return (cb.isSelected() ? 0 : 1);
+              }
+            });
             if (result == 2) {
               return;
             }
@@ -219,7 +230,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         IFile outputDir = it.getOutputPath();
-        IFile testDir = check_feb5zp_a0b0a0a1a22(it.getFacet(TestsFacet.class));
+        IFile testDir = check_feb5zp_a0b0a0a1a42(it.getFacet(TestsFacet.class));
         if (outputDir != null) {
           IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
           outputDir.delete();
@@ -239,7 +250,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         IFile outputDir = it.getOutputPath();
-        IFile classesGen = check_feb5zp_a0b0a0a1a42(it.getFacet(JavaModuleFacet.class));
+        IFile classesGen = check_feb5zp_a0b0a0a1a62(it.getFacet(JavaModuleFacet.class));
         if (classesGen != null) {
           classesGen.delete();
         }
@@ -317,13 +328,13 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public static class MyState {
     public boolean migrationRequired = false;
   }
-  private static IFile check_feb5zp_a0b0a0a1a22(TestsFacet checkedDotOperand) {
+  private static IFile check_feb5zp_a0b0a0a1a42(TestsFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestsOutputPath();
     }
     return null;
   }
-  private static IFile check_feb5zp_a0b0a0a1a42(JavaModuleFacet checkedDotOperand) {
+  private static IFile check_feb5zp_a0b0a0a1a62(JavaModuleFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassesGen();
     }
