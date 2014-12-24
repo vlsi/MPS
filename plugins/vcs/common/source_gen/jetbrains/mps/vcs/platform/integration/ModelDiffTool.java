@@ -13,6 +13,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.diff.DiffManager;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.diff.DiffViewer;
 import java.awt.Window;
@@ -76,6 +78,42 @@ public class ModelDiffTool implements DiffTool {
 
     DiffManager.getInstance().getIdeaDiffTool().show(request);
   }
+  public JComponent getDiffView(final DiffRequest request) {
+    DiffContent[] contents = request.getContents();
+    String[] titles = request.getContentTitles();
+    FileType[] types = {contents[0].getContentType(), contents[1].getContentType()};
+    FileType type = ((types[1] == null ? types[0] : types[1]));
+    // trying to fix null content type 
+    if (type == null) {
+      for (int i = 0; i < contents.length; i++) {
+        if (contents[i] instanceof FileContent && contents[i].getFile() != null) {
+          type = contents[i].getFile().getFileType();
+          break;
+        }
+      }
+    }
+    // support per-root persistence 
+    if (MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(type) || MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.equals(type)) {
+      Tuples._2<SModel, SNodeId> oldModel = getModelAndRoot(contents[0]);
+      Tuples._2<SModel, SNodeId> newModel = getModelAndRoot(contents[1]);
+      if (oldModel != null && newModel != null) {
+        SNodeId rootId = (newModel._1() != null ? newModel._1() : oldModel._1());
+        ModelDifferenceDialog.showRootDifference(request.getProject(), oldModel._0(), newModel._0(), rootId, titles[0], titles[1], null, request);
+        final ModelDifferenceDialog dialog = new ModelDifferenceDialog(request.getProject(), oldModel._0(), newModel._0(), titles[0], titles[1], request);
+        dialog.setCurrentRoot(rootId);
+        return dialog.getContentPanel();
+      }
+    } else {
+      SModel oldModel = getModel(contents[0]);
+      SModel newModel = getModel(contents[1]);
+      if (oldModel != null && newModel != null) {
+        ModelDifferenceDialog modelDifferenceDialog = new ModelDifferenceDialog(request.getProject(), oldModel, newModel, titles[0], titles[1], request);
+        return modelDifferenceDialog.getContentPanel();
+      }
+    }
+    return new JLabel("Something went wrong...");
+  }
+
   @Override
   public boolean canShow(DiffRequest request) {
     DiffContent[] contents = request.getContents();
