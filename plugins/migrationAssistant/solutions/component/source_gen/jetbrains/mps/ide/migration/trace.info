@@ -21,50 +21,58 @@
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/5351393548967765630">
     <file name="HeadlessMigrationExecutor.java">
-      <node id="5351393548967862369" at="11,0,12,0" concept="2" trace="myMigrationManager" />
-      <node id="5351393548967812714" at="12,88,13,19" concept="11" />
-      <node id="5351393548967862674" at="13,19,14,42" concept="1" />
-      <node id="3013058279687662693" at="17,54,18,13" concept="6" />
-      <node id="5351393548967863060" at="19,5,20,87" concept="1" />
-      <node id="3013058279687663519" at="25,25,26,24" concept="1" />
-      <node id="3013058279687662687" at="16,31,19,5" concept="3" />
-      <node id="3013058279687663517" at="25,0,28,0" concept="4" trace="run#()V" />
-      <node id="5351393548967812280" at="12,0,16,0" concept="0" trace="HeadlessMigrationExecutor#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/migration/MigrationManager;)V" />
-      <node id="3013058279687663508" at="23,31,28,7" concept="1" />
-      <node id="5351393548967802313" at="16,0,22,0" concept="4" trace="executeWizard#()V" />
-      <node id="5351393548967805621" at="22,0,30,0" concept="4" trace="projectOpened#()V" />
-      <scope id="3013058279687662692" at="17,54,18,13" />
-      <scope id="3013058279687663518" at="25,25,26,24" />
-      <scope id="5351393548967812284" at="12,88,14,42" />
-      <scope id="3013058279687663517" at="25,0,28,0" />
-      <scope id="5351393548967812280" at="12,0,16,0">
+      <node id="5351393548967862369" at="12,0,13,0" concept="2" trace="myMigrationManager" />
+      <node id="5351393548967812714" at="13,88,14,19" concept="11" />
+      <node id="5351393548967862674" at="14,19,15,42" concept="1" />
+      <node id="3013058279687662693" at="18,54,19,13" concept="6" />
+      <node id="3013058279687663519" at="29,25,30,24" concept="1" />
+      <node id="8570387127138805332" at="22,0,24,0" concept="4" trace="invoke#()V" />
+      <node id="3013058279687662687" at="17,31,20,5" concept="3" />
+      <node id="3013058279687663517" at="29,0,32,0" concept="4" trace="run#()V" />
+      <node id="5351393548967812280" at="13,0,17,0" concept="0" trace="HeadlessMigrationExecutor#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/migration/MigrationManager;)V" />
+      <node id="5351393548967863060" at="20,5,24,7" concept="1" />
+      <node id="3013058279687663508" at="27,31,32,7" concept="1" />
+      <node id="5351393548967805621" at="26,0,34,0" concept="4" trace="projectOpened#()V" />
+      <node id="5351393548967802313" at="17,0,26,0" concept="4" trace="executeWizard#()V" />
+      <scope id="8570387127138805333" at="22,28,22,28" />
+      <scope id="3013058279687662692" at="18,54,19,13" />
+      <scope id="3013058279687663518" at="29,25,30,24" />
+      <scope id="5351393548967812284" at="13,88,15,42" />
+      <scope id="8570387127138805332" at="22,0,24,0" />
+      <scope id="3013058279687663517" at="29,0,32,0" />
+      <scope id="5351393548967812280" at="13,0,17,0">
         <var name="migrationManager" id="5351393548967861414" />
         <var name="project" id="5351393548967812594" />
       </scope>
-      <scope id="5351393548967802319" at="16,31,20,87" />
-      <scope id="5351393548967805625" at="23,31,28,7" />
-      <scope id="5351393548967802313" at="16,0,22,0" />
-      <scope id="5351393548967805621" at="22,0,30,0" />
-      <unit id="3013058279687663515" at="24,74,28,5" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor$1" />
-      <unit id="5351393548967765630" at="10,0,31,0" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor" />
+      <scope id="5351393548967805625" at="27,31,32,7" />
+      <scope id="5351393548967802319" at="17,31,24,7" />
+      <scope id="5351393548967805621" at="26,0,34,0" />
+      <scope id="5351393548967802313" at="17,0,26,0" />
+      <unit id="8570387127138805332" at="21,76,24,5" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor$1" />
+      <unit id="3013058279687663515" at="28,74,32,5" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor$2" />
+      <unit id="5351393548967765630" at="11,0,35,0" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor" />
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/6781485246382121685">
     <file name="MigrationManager.java">
       <node id="6781485246382121734" at="7,0,8,0" concept="4" trace="isMigrationRequired#()Z" />
-      <node id="2400678414100434057" at="9,0,10,0" concept="4" trace="nextProjectStep#()Ljetbrains/mps/ide/migration/MigrationManager/MigrationState;" />
-      <node id="6781485246382121738" at="11,0,12,0" concept="4" trace="nextStep#()Ljetbrains/mps/ide/migration/MigrationManager/MigrationState;" />
-      <node id="6781485246382121695" at="18,0,19,0" concept="4" trace="getDescription#()Ljava/lang/String;" />
-      <node id="6781485246382121699" at="19,0,20,0" concept="4" trace="execute#()Z" />
+      <node id="8570387127138876086" at="9,0,10,0" concept="4" trace="projectStepsCount#()I" />
+      <node id="2400678414100434057" at="11,0,12,0" concept="4" trace="nextProjectStep#()Ljetbrains/mps/ide/migration/MigrationManager/MigrationState;" />
+      <node id="8570387127138876373" at="13,0,14,0" concept="4" trace="languageStepsCount#()I" />
+      <node id="6781485246382121738" at="15,0,16,0" concept="4" trace="nextLanguageStep#()Ljetbrains/mps/ide/migration/MigrationManager/MigrationState;" />
+      <node id="6781485246382121695" at="22,0,23,0" concept="4" trace="getDescription#()Ljava/lang/String;" />
+      <node id="6781485246382121699" at="23,0,24,0" concept="4" trace="execute#()Z" />
       <scope id="6781485246382121734" at="7,0,8,0" />
-      <scope id="2400678414100434057" at="9,0,10,0" />
-      <scope id="6781485246382121738" at="11,0,12,0" />
-      <scope id="6781485246382121695" at="18,0,19,0" />
-      <scope id="6781485246382121699" at="19,0,20,0" />
-      <unit id="6781485246382121688" at="13,0,16,0" name="jetbrains.mps.ide.migration.MigrationManager$MigrationState" />
-      <unit id="4184222675557540077" at="22,0,25,0" name="jetbrains.mps.ide.migration.MigrationManager$Finished" />
-      <unit id="6781485246382121691" at="17,0,21,0" name="jetbrains.mps.ide.migration.MigrationManager$Step" />
-      <unit id="6781485246382121685" at="6,0,26,0" name="jetbrains.mps.ide.migration.MigrationManager" />
+      <scope id="8570387127138876086" at="9,0,10,0" />
+      <scope id="2400678414100434057" at="11,0,12,0" />
+      <scope id="8570387127138876373" at="13,0,14,0" />
+      <scope id="6781485246382121738" at="15,0,16,0" />
+      <scope id="6781485246382121695" at="22,0,23,0" />
+      <scope id="6781485246382121699" at="23,0,24,0" />
+      <unit id="6781485246382121688" at="17,0,20,0" name="jetbrains.mps.ide.migration.MigrationManager$MigrationState" />
+      <unit id="4184222675557540077" at="26,0,29,0" name="jetbrains.mps.ide.migration.MigrationManager$Finished" />
+      <unit id="6781485246382121691" at="21,0,25,0" name="jetbrains.mps.ide.migration.MigrationManager$Step" />
+      <unit id="6781485246382121685" at="6,0,30,0" name="jetbrains.mps.ide.migration.MigrationManager" />
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/6781485246382121891">
@@ -469,48 +477,39 @@
       <node id="6781485246382122913" at="28,31,29,23" concept="1" />
       <node id="6781485246382122915" at="29,23,30,92" concept="1" />
       <node id="6781485246382122930" at="33,33,34,25" concept="1" />
-      <node id="6781485246382122933" at="34,25,35,86" concept="5" />
-      <node id="5783745319707632860" at="36,23,37,13" concept="6" />
-      <node id="5783745319707633213" at="38,5,39,0" concept="8" />
-      <node id="6781485246382122958" at="41,25,42,19" concept="1" />
-      <node id="6781485246382469247" at="44,29,45,25" concept="1" />
-      <node id="5783745319707633362" at="49,7,50,0" concept="8" />
-      <node id="2400678414103170381" at="52,40,53,69" concept="6" />
-      <node id="6781485246382122941" at="35,86,38,5" concept="3" />
-      <node id="5783745319707636194" at="44,0,47,0" concept="4" trace="run#()V" />
-      <node id="2400678414103167362" at="52,0,55,0" concept="4" trace="isFinishSuccessfull#()Z" />
+      <node id="8570387127138634472" at="38,29,39,25" concept="1" />
+      <node id="2400678414103170381" at="45,40,46,69" concept="6" />
+      <node id="8570387127138634183" at="38,0,41,0" concept="4" trace="run#()V" />
+      <node id="2400678414103167362" at="45,0,48,0" concept="4" trace="isFinishSuccessfull#()Z" />
       <node id="4022063101753957485" at="23,0,27,0" concept="4" trace="isAutoAdjustable#()Z" />
       <node id="6781485246382122887" at="17,0,22,0" concept="0" trace="MigrationAssistantWizard#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/migration/MigrationManager;)V" />
       <node id="6781485246382122910" at="27,0,32,0" concept="4" trace="updateStep#()V" />
-      <node id="6781485246382122960" at="42,19,47,11" concept="1" />
-      <node id="5783745319707634955" at="41,0,49,0" concept="4" trace="run#()V" />
-      <node id="6781485246382122947" at="39,0,49,7" concept="1" />
-      <node id="6781485246382122927" at="32,0,52,0" concept="4" trace="doNextAction#()V" />
+      <node id="8570387127138598072" at="36,28,41,11" concept="1" />
+      <node id="8570387127138597736" at="36,0,43,0" concept="4" trace="invoke#()V" />
+      <node id="8570387127138318135" at="34,25,43,7" concept="1" />
+      <node id="6781485246382122927" at="32,0,45,0" concept="4" trace="doNextAction#()V" />
       <scope id="4022063101753957492" at="24,37,25,17" />
-      <scope id="5783745319707614031" at="36,23,37,13" />
-      <scope id="5783745319707636204" at="44,29,45,25" />
-      <scope id="2400678414103167365" at="52,40,53,69" />
+      <scope id="8570387127138634184" at="38,29,39,25" />
+      <scope id="2400678414103167365" at="45,40,46,69" />
       <scope id="6781485246382122912" at="28,31,30,92" />
       <scope id="6781485246382122896" at="17,78,20,76">
         <var name="oldSize" id="4022063101753925730" />
       </scope>
-      <scope id="5783745319707636194" at="44,0,47,0" />
-      <scope id="2400678414103167362" at="52,0,55,0" />
+      <scope id="8570387127138634183" at="38,0,41,0" />
+      <scope id="2400678414103167362" at="45,0,48,0" />
       <scope id="4022063101753957485" at="23,0,27,0" />
       <scope id="6781485246382122887" at="17,0,22,0">
         <var name="manager" id="6781485246382122891" />
         <var name="project" id="6781485246382122889" />
       </scope>
       <scope id="6781485246382122910" at="27,0,32,0" />
-      <scope id="5783745319707634965" at="41,25,47,11" />
-      <scope id="5783745319707634955" at="41,0,49,0" />
-      <scope id="6781485246382122929" at="33,33,50,0">
-        <var name="task" id="6781485246382122932" />
-      </scope>
-      <scope id="6781485246382122927" at="32,0,52,0" />
-      <unit id="5783745319707636194" at="43,39,47,9" name="jetbrains.mps.ide.migration.MigrationAssistantWizard$2" />
-      <unit id="5783745319707634955" at="40,66,49,5" name="jetbrains.mps.ide.migration.MigrationAssistantWizard$1" />
-      <unit id="6781485246382122883" at="16,0,56,0" name="jetbrains.mps.ide.migration.MigrationAssistantWizard" />
+      <scope id="8570387127138597737" at="36,28,41,11" />
+      <scope id="8570387127138597736" at="36,0,43,0" />
+      <scope id="6781485246382122929" at="33,33,43,7" />
+      <scope id="6781485246382122927" at="32,0,45,0" />
+      <unit id="8570387127138634183" at="37,39,41,9" name="jetbrains.mps.ide.migration.MigrationAssistantWizard$2" />
+      <unit id="8570387127138597736" at="35,59,43,5" name="jetbrains.mps.ide.migration.MigrationAssistantWizard$1" />
+      <unit id="6781485246382122883" at="16,0,49,0" name="jetbrains.mps.ide.migration.MigrationAssistantWizard" />
     </file>
   </root>
 </debug-info>

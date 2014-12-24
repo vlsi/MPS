@@ -23,6 +23,8 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
     <classNode dependClassName="jetbrains.mps.ide.migration.Step" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
