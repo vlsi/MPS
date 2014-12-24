@@ -348,7 +348,8 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
 
   @Override
   public boolean hasModifierProperty(@ModifierConstant @NonNls @NotNull String name) {
-    return getModifierList().hasModifierProperty(name);
+    final PsiModifierList modlist = getModifierList();
+    return modlist != null && modlist.hasModifierProperty(name);
   }
 
   @Override
