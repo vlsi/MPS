@@ -29,6 +29,7 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.facets.TestsFacet;
 import java.util.Map;
@@ -147,6 +148,7 @@ public class IdeCommandUtil {
       public void visit(SModel model) {
         String outputPath = SModuleOperations.getOutputPathFor(model);
         String cachePath = FileGenerationUtil.getCachesPath(outputPath);
+
         IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(outputPath));
         IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(cachePath));
 
@@ -171,12 +173,29 @@ public class IdeCommandUtil {
             it.delete();
           }
         });
+
+        JavaModuleFacet javaFacet = model.getModule().getFacet(JavaModuleFacet.class);
+        if (javaFacet != null) {
+          IFile classesRootPath = check_nf7729_a0a0n0a0a1a4(javaFacet);
+          IFile classesDir = FileGenerationUtil.getDefaultOutputDir(model, classesRootPath);
+          Iterable<IFile> classesItems = classesDir.getChildren();
+          Sequence.fromIterable(classesItems).where(new IWhereFilter<IFile>() {
+            public boolean accept(IFile it) {
+              return !(it.isDirectory());
+            }
+          }).visitAll(new IVisitor<IFile>() {
+            public void visit(IFile it) {
+              it.delete();
+            }
+          });
+        }
       }
     });
     Sequence.fromIterable(_modules.value).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-      public void visit(AbstractModule it) {
-        IFile outputDir = it.getOutputPath();
-        IFile testDir = check_nf7729_a0b0a0a2a4(it.getFacet(TestsFacet.class));
+      public void visit(AbstractModule module) {
+        IFile outputDir = module.getOutputPath();
+        IFile testDir = check_nf7729_a0b0a0a2a4(module.getFacet(TestsFacet.class));
+        IFile classesDir = check_nf7729_a0c0a0a2a4(module.getFacet(JavaModuleFacet.class));
         if (outputDir != null) {
           IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
           outputDir.delete();
@@ -186,6 +205,9 @@ public class IdeCommandUtil {
           IFile testCacheDir = FileGenerationUtil.getCachesDir(testDir);
           testDir.delete();
           testCacheDir.delete();
+        }
+        if (classesDir != null) {
+          classesDir.delete();
         }
       }
     });
@@ -209,9 +231,21 @@ public class IdeCommandUtil {
     }));
   }
 
+  private static IFile check_nf7729_a0a0n0a0a1a4(JavaModuleFacet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getClassesGen();
+    }
+    return null;
+  }
   private static IFile check_nf7729_a0b0a0a2a4(TestsFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestsOutputPath();
+    }
+    return null;
+  }
+  private static IFile check_nf7729_a0c0a0a2a4(JavaModuleFacet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getClassesGen();
     }
     return null;
   }
