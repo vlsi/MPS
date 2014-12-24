@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="epj3cv6k5ynomu0bvh0a2yt2fsjrj0y">
+<dependencies version="2" modelHash="-aelvah5v9f7iz9ilnbmt3370jlx4dku">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(JDK/java.net@java_stub)" />
@@ -46,7 +46,7 @@
   <dep model="r:6e2bf134-8b14-4a22-a511-dbed551042c1(jetbrains.mps.make.reduced.plugin)" hash="-9wvs4bs7hg1pk2cd3lw160c3kfnynkc" />
   <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" hash="aoxm7gps5u5btd8brdm7ablqm6skb90" />
   <dep model="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.tool.gentest.plugin)" hash="6ofvglw6doj2iz8nd1zjfa4ffnbc0gh" />
-  <dep model="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" hash="-cgglahf5otzfd43gzf7u5ycsx7cspuf" />
+  <dep model="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" hash="df4oru5dp8ti6blqj3bodsvdnp2xbul" />
   <dep model="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)" hash="c61865ivf7qpcj2aylgf5ozngp7z1r6" />
   <dep model="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" hash="dlvo4ehyob7qneriphmjzlzult7zaj8" />
   <dep model="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)" hash="-8z722osl7m5ekokd37lepi75w4f87bt" />
@@ -179,7 +179,7 @@
   <source id="2546981710034407607" name="ConsoleMessageFormat" hash="4dcw8pfjvjqngidcfawbz49s53meapy">
     <file name="ConsoleMessageFormat.java" />
   </source>
-  <source id="878521226301293996" name="BaseGeneratorWorker" hash="-2tuwrt4676gffim2g6p4lwbwmpr0a6u">
+  <source id="878521226301293996" name="BaseGeneratorWorker" hash="-9btkdykvtumnzdtkoesgc1pfipihuwh">
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -211,7 +211,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BaseGeneratorWorker.java" />
   </source>
-  <source id="878521226301296209" name="GenTestWorker" hash="-2wbkhgt4qfuns54kufufju7s7kpdtgi">
+  <source id="878521226301296209" name="GenTestWorker" hash="-7iyr79fozepsvvqpq9fqz69x2ctiy54">
     <dep root="4263887295358465244" />
     <dep root="878521226301293996" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />

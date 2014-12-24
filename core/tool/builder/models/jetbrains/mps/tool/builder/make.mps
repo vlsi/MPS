@@ -5655,23 +5655,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="3pzB6wMVHVH" role="3cqZAp">
-          <node concept="3cpWsn" id="3pzB6wMVHVG" role="3cpWs9">
-            <property role="3TUv4t" value="true" />
-            <property role="TrG5h" value="properties" />
-            <node concept="3uibUv" id="3pzB6wMVHVI" role="1tU5fm">
-              <ref role="3uigEE" to="asz6:3pzB6wMWmOx" resolve="JavaCompilerProperties" />
-            </node>
-            <node concept="2ShNRf" id="3pzB6wMWFSX" role="33vP2m">
-              <node concept="1pGfFk" id="3pzB6wMWFSY" role="2ShVmc">
-                <ref role="37wK5l" to="asz6:3pzB6wMWswn" resolve="JavaCompilerProperties" />
-                <node concept="37vLTw" id="3pzB6wMVHVK" role="37wK5m">
-                  <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="3pzB6wMVHVM" role="3cqZAp">
           <node concept="3cpWsn" id="3pzB6wMVHVL" role="3cpWs9">
             <property role="3TUv4t" value="false" />
@@ -5720,8 +5703,8 @@
                                     <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent$JavaVersion.parse(java.lang.String):jetbrains.mps.compiler.JavaCompilerOptionsComponent$JavaVersion" resolve="parse" />
                                     <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
                                     <node concept="2OqwBi" id="3pzB6wMWSzF" role="37wK5m">
-                                      <node concept="37vLTw" id="3pzB6wMWSur" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="3pzB6wMVHVG" resolve="properties" />
+                                      <node concept="37vLTw" id="6K365XRf3Yx" role="2Oq$k0">
+                                        <ref role="3cqZAo" to="jo3e:6K365XReaA4" resolve="myJavaProperties" />
                                       </node>
                                       <node concept="liA8E" id="3pzB6wMWSPq" role="2OqNvi">
                                         <ref role="37wK5l" to="asz6:3pzB6wMWswH" resolve="getTargetJavaVersion" />
@@ -6264,23 +6247,6 @@
                 <node concept="1bVj0M" id="KL8Aqll4tM" role="37wK5m">
                   <property role="3yWfEV" value="true" />
                   <node concept="3clFbS" id="KL8Aqll4tN" role="1bW5cS">
-                    <node concept="3cpWs8" id="3pzB6wMXmr7" role="3cqZAp">
-                      <node concept="3cpWsn" id="3pzB6wMXmr6" role="3cpWs9">
-                        <property role="3TUv4t" value="true" />
-                        <property role="TrG5h" value="properties" />
-                        <node concept="3uibUv" id="3pzB6wMXmr8" role="1tU5fm">
-                          <ref role="3uigEE" to="asz6:3pzB6wMWmOx" resolve="JavaCompilerProperties" />
-                        </node>
-                        <node concept="2ShNRf" id="3pzB6wMXmrb" role="33vP2m">
-                          <node concept="1pGfFk" id="3pzB6wMXmrc" role="2ShVmc">
-                            <ref role="37wK5l" to="asz6:3pzB6wMWswn" resolve="JavaCompilerProperties" />
-                            <node concept="37vLTw" id="3pzB6wMXmra" role="37wK5m">
-                              <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                     <node concept="3clFbF" id="KL8Aqll4tS" role="3cqZAp">
                       <node concept="2OqwBi" id="KL8Aqll4tT" role="3clFbG">
                         <node concept="2ShNRf" id="KL8Aqll4tU" role="2Oq$k0">
@@ -6315,8 +6281,8 @@
                                 <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
                                 <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent$JavaVersion.parse(java.lang.String):jetbrains.mps.compiler.JavaCompilerOptionsComponent$JavaVersion" resolve="parse" />
                                 <node concept="2OqwBi" id="3pzB6wMXnHV" role="37wK5m">
-                                  <node concept="37vLTw" id="3pzB6wMXnHW" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="3pzB6wMXmr6" resolve="properties" />
+                                  <node concept="37vLTw" id="6K365XRf4Dc" role="2Oq$k0">
+                                    <ref role="3cqZAo" to="jo3e:6K365XReaA4" resolve="myJavaProperties" />
                                   </node>
                                   <node concept="liA8E" id="3pzB6wMXnHX" role="2OqNvi">
                                     <ref role="37wK5l" to="asz6:3pzB6wMWswH" resolve="getTargetJavaVersion" />
@@ -8296,23 +8262,6 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="3cpWs8" id="3pzB6wMYwBg" role="3cqZAp">
-                        <node concept="3cpWsn" id="3pzB6wMYwBh" role="3cpWs9">
-                          <property role="3TUv4t" value="true" />
-                          <property role="TrG5h" value="properties" />
-                          <node concept="3uibUv" id="3pzB6wMYwBi" role="1tU5fm">
-                            <ref role="3uigEE" to="asz6:3pzB6wMWmOx" resolve="JavaCompilerProperties" />
-                          </node>
-                          <node concept="2ShNRf" id="3pzB6wMYwBj" role="33vP2m">
-                            <node concept="1pGfFk" id="3pzB6wMYwBk" role="2ShVmc">
-                              <ref role="37wK5l" to="asz6:3pzB6wMWswn" resolve="JavaCompilerProperties" />
-                              <node concept="37vLTw" id="3pzB6wMYwBl" role="37wK5m">
-                                <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                       <node concept="3clFbF" id="3pzB6wMYk5g" role="3cqZAp">
                         <node concept="2OqwBi" id="3pzB6wMYk5h" role="3clFbG">
                           <node concept="2OqwBi" id="3pzB6wMYk5i" role="2Oq$k0">
@@ -8330,8 +8279,8 @@
                                     <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent$JavaVersion.parse(java.lang.String):jetbrains.mps.compiler.JavaCompilerOptionsComponent$JavaVersion" resolve="parse" />
                                     <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
                                     <node concept="2OqwBi" id="3pzB6wMYk5p" role="37wK5m">
-                                      <node concept="37vLTw" id="3pzB6wMYk5q" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="3pzB6wMYwBh" resolve="properties" />
+                                      <node concept="37vLTw" id="6K365XRfi5G" role="2Oq$k0">
+                                        <ref role="3cqZAo" to="jo3e:6K365XReaA4" resolve="myJavaProperties" />
                                       </node>
                                       <node concept="liA8E" id="3pzB6wMYk5r" role="2OqNvi">
                                         <ref role="37wK5l" to="asz6:3pzB6wMWswH" resolve="getTargetJavaVersion" />
@@ -8627,23 +8576,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="3pzB6wMZ869" role="3cqZAp">
-          <node concept="3cpWsn" id="3pzB6wMZ86a" role="3cpWs9">
-            <property role="3TUv4t" value="true" />
-            <property role="TrG5h" value="properties" />
-            <node concept="3uibUv" id="3pzB6wMZ86b" role="1tU5fm">
-              <ref role="3uigEE" to="asz6:3pzB6wMWmOx" resolve="JavaCompilerProperties" />
-            </node>
-            <node concept="2ShNRf" id="3pzB6wMZ86c" role="33vP2m">
-              <node concept="1pGfFk" id="3pzB6wMZ86d" role="2ShVmc">
-                <ref role="37wK5l" to="asz6:3pzB6wMWswn" resolve="JavaCompilerProperties" />
-                <node concept="37vLTw" id="3pzB6wMZ86e" role="37wK5m">
-                  <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="4mAqGgjLQZX" role="3cqZAp">
           <node concept="2OqwBi" id="1cjXdtLLeYD" role="3clFbG">
             <node concept="2YIFZM" id="1cjXdtLLeYE" role="2Oq$k0">
@@ -8736,8 +8668,8 @@
                               <ref role="1Pybhc" to="i119:~JavaCompilerOptionsComponent$JavaVersion" resolve="JavaCompilerOptionsComponent.JavaVersion" />
                               <ref role="37wK5l" to="i119:~JavaCompilerOptionsComponent$JavaVersion.parse(java.lang.String):jetbrains.mps.compiler.JavaCompilerOptionsComponent$JavaVersion" resolve="parse" />
                               <node concept="2OqwBi" id="3pzB6wMZl4f" role="37wK5m">
-                                <node concept="37vLTw" id="3pzB6wMZl4g" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="3pzB6wMZ86a" resolve="properties" />
+                                <node concept="37vLTw" id="6K365XRfkFW" role="2Oq$k0">
+                                  <ref role="3cqZAo" to="jo3e:6K365XReaA4" resolve="myJavaProperties" />
                                 </node>
                                 <node concept="liA8E" id="3pzB6wMZl4h" role="2OqNvi">
                                   <ref role="37wK5l" to="asz6:3pzB6wMWswH" resolve="getTargetJavaVersion" />

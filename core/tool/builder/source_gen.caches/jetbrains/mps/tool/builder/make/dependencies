@@ -51,7 +51,6 @@
     <classNode dependClassName="jetbrains.mps.tool.builder.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.tool.builder.make.BuildMakeService" />
     <classNode dependClassName="jetbrains.mps.tool.common.GeneratorProperties" />
-    <classNode dependClassName="jetbrains.mps.tool.common.JavaCompilerProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
@@ -186,7 +185,6 @@
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestListener" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.XmlTestReporter" />
     <classNode dependClassName="jetbrains.mps.tool.common.IMessageFormat" />
-    <classNode dependClassName="jetbrains.mps.tool.common.JavaCompilerProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.TeamCityMessageFormat" />

@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.service.AbstractMakeService;
-import jetbrains.mps.tool.common.JavaCompilerProperties;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
@@ -120,11 +119,10 @@ public class BaseGeneratorWorker extends MpsWorker {
     ModelAccess.instance().flushEventQueue();
     MakeSession session = new MakeSession(ctx, myMessageHandler, true);
     AbstractMakeService.DefaultMonitor defaultMonitor = new AbstractMakeService.DefaultMonitor(session);
-    final JavaCompilerProperties properties = new JavaCompilerProperties(myWhatToDo);
     IScriptController.Stub controller = new IScriptController.Stub(defaultMonitor, defaultMonitor) {
       @Override
       public void setup(IPropertiesPool ppool) {
-        new JavaCompileFacetInitializer().setJavaCompileOptions(new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(properties.getTargetJavaVersion()))).populate(ppool);
+        new JavaCompileFacetInitializer().setJavaCompileOptions(new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(myJavaProperties.getTargetJavaVersion()))).populate(ppool);
       }
     };
     Future<IResult> res = new BuildMakeService().make(session, resources, null, controller, new EmptyProgressMonitor());
@@ -181,8 +179,7 @@ public class BaseGeneratorWorker extends MpsWorker {
   protected void makeProject() {
     final MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
-        final JavaCompilerProperties properties = new JavaCompilerProperties(myWhatToDo);
-        return new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor(), new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(properties.getTargetJavaVersion())));
+        return new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor(), new JavaCompilerOptions(JavaCompilerOptionsComponent.JavaVersion.parse(myJavaProperties.getTargetJavaVersion())));
       }
     });
     if (mpsCompilationResult.isReloadingNeeded()) {
