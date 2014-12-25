@@ -535,6 +535,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   protected void reloadAfterDescriptorChange() {
+    initFacetsAndModels();
+  }
+
+  private void initFacetsAndModels() {
     updatePackagedDescriptor();
     updateFacets();
     updateModelsSet();
@@ -654,7 +658,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (myDescriptorFile != null) {
       FileSystem.getInstance().addListener(this);
     }
-    this.reloadAfterDescriptorChange();
+    initFacetsAndModels();
   }
 
   @Override
