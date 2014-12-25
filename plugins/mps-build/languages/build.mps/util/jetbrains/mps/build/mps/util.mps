@@ -5018,6 +5018,29 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbF" id="1Ok2Yb136m5" role="3cqZAp">
+              <node concept="2OqwBi" id="1Ok2Yb15eQH" role="3clFbG">
+                <node concept="37vLTw" id="1Ok2Yb15eh3" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6xJrZo0GW9x" resolve="modules" />
+                </node>
+                <node concept="liA8E" id="1Ok2Yb15gQa" role="2OqNvi">
+                  <ref role="37wK5l" to="k7g3:~AbstractCollection.addAll(java.util.Collection):boolean" resolve="addAll" />
+                  <node concept="2OqwBi" id="1Ok2Yb15_Fj" role="37wK5m">
+                    <node concept="2OqwBi" id="1Ok2Yb15sPw" role="2Oq$k0">
+                      <node concept="37vLTw" id="1Ok2Yb15rRL" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4fCiNXE$I5l" resolve="deps" />
+                      </node>
+                      <node concept="v3k3i" id="1Ok2Yb15tWP" role="2OqNvi">
+                        <node concept="chp4Y" id="1Ok2Yb15ut8" role="v3oSu">
+                          <ref role="cht4Q" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="ANE8D" id="1Ok2Yb15AzL" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node concept="3cpWsn" id="4fCiNXE$G3j" role="1Duv9x">
             <property role="TrG5h" value="g" />

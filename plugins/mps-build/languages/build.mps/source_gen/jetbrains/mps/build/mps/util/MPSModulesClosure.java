@@ -259,6 +259,7 @@ public class MPSModulesClosure {
       }));
       // any language generator depends from are better to be there, too. 
       SetSequence.fromSet(extraLangs).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(deps, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"))));
+      modules.addAll(Sequence.fromIterable(SNodeOperations.ofConcept(deps, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"))).toListSequence());
     }
     SetSequence.fromSet(extraLangs).removeSequence(SetSequence.fromSet(modules));
     modules.addAll(extraLangs);
