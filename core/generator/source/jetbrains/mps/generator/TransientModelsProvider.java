@@ -42,8 +42,7 @@ public class TransientModelsProvider {
   private int myKeptModels;
   private final TransientSwapOwner myTransientSwapOwner;
   private String mySessionId;
-  private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {
-  };
+  private final MPSModuleOwner myOwner = new BaseMPSModuleOwner();
 
   public TransientModelsProvider(Project project, TransientSwapOwner owner) {
     myProject = project;

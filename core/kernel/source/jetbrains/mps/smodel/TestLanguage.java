@@ -23,10 +23,14 @@ public class TestLanguage extends Language {
     super(descriptor, file);
   }
 
-  //this is for tests only. Can be later converted into subclass
+  // this is for tests only. Can be later converted into subclass
   public static Language newInstance(LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    Language language = new TestLanguage(descriptor, null);
+    Language newLanguage = new TestLanguage(descriptor, null);
 
-    return MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
+    Language language = MPSModuleRepository.getInstance().registerModule(newLanguage, moduleOwner);
+    if (language == newLanguage) {
+      language.revalidateGenerators();
+    }
+    return language;
   }
 }
